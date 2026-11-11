@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 
 const env=process.env;
-const provider=(env.AI_PROVIDER||(env.OPENROUTER_API_KEY?'openrouter':env.OPENAI_API_KEY?'openai':'gemini')).toLowerCase();
+const provider=(env.AI_PROVIDER||(env.OPENROUTER_API_KEY?'openrouter':env.OPENAI_API_KEY?'openai':env.GEMINI_API_KEY?'gemini':'groq')).toLowerCase();
 const maxPerRun=Math.max(1,Number.isFinite(Number(env.MAX_PER_RUN))?Number(env.MAX_PER_RUN):3);
 const gamesWindowDays=Math.max(1,Number.isFinite(Number(env.GAMES_WINDOW_DAYS))?Number(env.GAMES_WINDOW_DAYS):90);
 const outDir='src/content/reviews',processedPath='data/processed.json';
@@ -55,10 +55,19 @@ async function generateWithOpenAI(prompt){
  if(!content)throw new Error('لم يرجع OpenAI محتوى نصياً');
  return parseJson(content);
 }
+async function generateWithGroq(prompt){
+ const model=env.GROQ_MODEL||'openai/gpt-oss-120b',key=required('GROQ_API_KEY');
+ const r=await fetch('https://api.groq.com/openai/v1/chat/completions',{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key},body:JSON.stringify({model,temperature:.3,response_format:{type:'json_object'},messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]})});
+ if(!r.ok)throw new Error('Groq HTTP '+r.status+': '+await r.text());
+ const content=(await r.json()).choices?.[0]?.message?.content;
+ if(!content)throw new Error('لم يرجع Groq محتوى نصياً');
+ return parseJson(content);
+}
 async function generateFallback(prompt){
  const errors=[];
  if(env.OPENAI_API_KEY){try{console.warn('التحويل الاحتياطي إلى OpenAI.');return await generateWithOpenAI(prompt);}catch(e){errors.push(e.message);console.warn('فشل OpenAI الاحتياطي:',e.message);}}
  if(env.GEMINI_API_KEY){try{console.warn('التحويل الاحتياطي إلى Gemini.');return await generateWithGemini(prompt);}catch(e){errors.push(e.message);console.warn('فشل Gemini الاحتياطي:',e.message);}}
+ if(env.GROQ_API_KEY){try{console.warn('التحويل الاحتياطي إلى Groq.');return await generateWithGroq(prompt);}catch(e){errors.push(e.message);console.warn('فشل Groq الاحتياطي:',e.message);}}
  throw new Error('تعذر استخدام مزودي الذكاء الاصطناعي الاحتياطيين: '+errors.join(' | '));
 }
 
@@ -96,23 +105,24 @@ async function generateReview(item){
  ].join('\n');
  let text,parsed=null;
  if(provider==='openai'){
-  parsed=await generateWithOpenAI(prompt); }else if(provider==='openrouter'){
+  parsed=await generateWithOpenAI(prompt); }else if(provider==='groq'){
+  parsed=await generateWithGroq(prompt); }else if(provider==='openrouter'){
   if(openRouterFallbackActive){parsed=await generateFallback(prompt);}else{
   const endpoint='https://openrouter.ai/api/v1/chat/completions',headers={'content-type':'application/json',authorization:'Bearer '+required('OPENROUTER_API_KEY'),'HTTP-Referer':'https://vibecritic.pages.dev/','X-Title':'VibeCritic'};
   let messages=[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بكل محاور المراجعة المطلوبة.'},{role:'user',content:prompt}],lastIssue='رد فارغ';
   for(let attempt=0;attempt<3&&!parsed;attempt++){
    let r=await fetch(endpoint,{method:'POST',headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,response_format:{type:'json_object'},messages})});
    if(!r.ok&&r.status===400)r=await fetch(endpoint,{method:'POST',headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,messages})});
-   if(!r.ok){const detail=await r.text();if(env.OPENAI_API_KEY||env.GEMINI_API_KEY){openRouterFallbackActive=true;parsed=await generateFallback(prompt);break;}throw new Error('OpenRouter HTTP '+r.status+': '+detail);}
+   if(!r.ok){const detail=await r.text();if(env.OPENAI_API_KEY||env.GEMINI_API_KEY||env.GROQ_API_KEY){openRouterFallbackActive=true;parsed=await generateFallback(prompt);break;}throw new Error('OpenRouter HTTP '+r.status+': '+detail);}
    const response=await r.json(),message=response.choices?.[0]?.message;text=message?.content;if(Array.isArray(text))text=text.map(part=>part.text||'').join('');
    if(message?.refusal)lastIssue='رفض النموذج إنشاء المراجعة';else if(typeof text==='string'&&text.trim()){try{parsed=parseJson(text);}catch(e){lastIssue=e.message;}}else lastIssue='لم يرجع النموذج محتوى نصياً';
    if(!parsed&&attempt<2){const previous=typeof text==='string'&&text.trim()?text.slice(0,5000):'(لا يوجد محتوى)';messages=[...messages,{role:'assistant',content:previous},{role:'user',content:'أعد JSON صالحاً بالمفاتيح hook وheadline وsummary وscore وpros وcons وtags وverdict وreview مع كل عناوين المحاور المطلوبة. لا تشرح الخطأ.'}];}
   }
-  if(!parsed&&(env.OPENAI_API_KEY||env.GEMINI_API_KEY)){openRouterFallbackActive=true;parsed=await generateFallback(prompt);}if(!parsed)throw new Error('تعذر الحصول على JSON صالح بعد 3 محاولات: '+lastIssue);
+  if(!parsed&&(env.OPENAI_API_KEY||env.GEMINI_API_KEY||env.GROQ_API_KEY)){openRouterFallbackActive=true;parsed=await generateFallback(prompt);}if(!parsed)throw new Error('تعذر الحصول على JSON صالح بعد 3 محاولات: '+lastIssue);
  }
  }else if(provider==='gemini'){
   parsed=await generateWithGemini(prompt);
- }else throw new Error('AI_PROVIDER يجب أن يكون openai أو gemini أو openrouter');
+ }else throw new Error('AI_PROVIDER يجب أن يكون openai أو gemini أو groq أو openrouter');
  const d=parsed||parseJson(text),review=String(d.review||'').replace(/<[^>]*>/g,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').trim();
  if(review.length<700)throw new Error('المراجعة المولّدة أقصر من الحد المطلوب للتحليل المتكامل');
  const pros=Array.isArray(d.pros)?d.pros.map(clean).filter(Boolean).slice(0,4):[],cons=Array.isArray(d.cons)?d.cons.map(clean).filter(Boolean).slice(0,3):[];
