@@ -7,7 +7,7 @@ export const url = (p = '') => {
   let base = import.meta.env.BASE_URL;
   if (base.endsWith('/')) base = base.slice(0, -1);
   if (p.startsWith('/')) p = p.slice(1);
-  return \`\${base}/\${p}\`;
+  return `${base}/${p}`;
 };
 export const normalizeAr = (s: string) =>
   s.toLowerCase().replace(/[\u064B-\u065F\u0670\u0640]/g, '').replace(/[إأآ]/g, 'ا').replace(/ى/g, 'ي').replace(/ة/g, 'ه').trim();
