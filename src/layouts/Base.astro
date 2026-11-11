@@ -20,7 +20,7 @@ const searchItems = (await getCollection('reviews')).map((review) => ({
   type: review.data.type,
   href: url(`reviews/${review.id}/`),
   date: review.data.date.toISOString(),
-}));
+})).sort((a, b) => b.date.localeCompare(a.date));
 const structuredData = pageType === 'article'
   ? {
       '@context': 'https://schema.org',
@@ -134,16 +134,15 @@ const normalizeSearch = (value) => String(value || '')
 function renderSearchResults() {
   if (!searchResults || !searchStatus || !searchInput) return;
   const query = normalizeSearch(searchInput.value);
-  const matches = searchItems
-    .filter((item) => !query || normalizeSearch(`${item.title} ${item.headline} ${item.type}`).includes(query))
-    .slice(0, 12);
+  const filtered = searchItems.filter((item) => !query || normalizeSearch(`${item.title} ${item.headline} ${item.type}`).includes(query));
+  const matches = filtered.slice(0, 12);
   searchResults.replaceChildren();
   if (!matches.length) {
     searchStatus.textContent = 'لا توجد نتائج مطابقة. جرّب اسماً آخر.';
     return;
   }
   searchStatus.textContent = query
-    ? `عُثر على ${matches.length} نتيجة مطابقة.`
+    ? `عُثر على ${filtered.length} نتيجة؛ يتم عرض أول ${matches.length}.`
     : 'أحدث المراجعات في المكتبة:';
   for (const item of matches) {
     const link = document.createElement('a');
