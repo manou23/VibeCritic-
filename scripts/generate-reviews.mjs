@@ -69,9 +69,9 @@ async function tmdb(type){
   getJson(`https://api.themoviedb.org/3/trending/${endpoint}/week?api_key=${key}&language=ar`),
   getJson(`https://api.themoviedb.org/3/discover/${endpoint}?api_key=${key}&language=ar&sort_by=${type==='movie'?'primary_release_date':'first_air_date'}.desc&${type==='movie'?'primary_release_date':'first_air_date'}.gte=${since}&${type==='movie'?'primary_release_date':'first_air_date'}.lte=${today}&include_adult=false`)
  ]);
- const map=x=>({id:String(x.id),type,name:x.title||x.name||'بدون عنوان',description:x.overview||'',date:x.release_date||x.first_air_date||'',poster:x.poster_path?`https://image.tmdb.org/t/p/w500${x.poster_path}`:'',backdrop:x.backdrop_path?`https://image.tmdb.org/t/p/w1280${x.backdrop_path}`:'',rating:Number(x.vote_average)||0,genres:[],sourceUrl:`https://www.themoviedb.org/${endpoint}/${x.id}`,popularity:Number(x.popularity)||0});
+ const map=(x,trendRank=999)=>({id:String(x.id),type,name:x.title||x.name||'بدون عنوان',description:x.overview||'',date:x.release_date||x.first_air_date||'',poster:x.poster_path?`https://image.tmdb.org/t/p/w500${x.poster_path}`:'',backdrop:x.backdrop_path?`https://image.tmdb.org/t/p/w1280${x.backdrop_path}`:'',rating:Number(x.vote_average)||0,genres:[],sourceUrl:`https://www.themoviedb.org/${endpoint}/${x.id}`,popularity:Number(x.popularity)||0,trendRank});
  const merged=new Map();
- for(const item of [...(trend.results||[]).map(map),...(discover.results||[]).map(map)])if(!merged.has(item.id))merged.set(item.id,item);
+ for(const item of [...(trend.results||[]).map((x,i)=>map(x,i+1)),...(discover.results||[]).map(x=>map(x))])if(!merged.has(item.id))merged.set(item.id,item);
  return [...merged.values()].sort((a,b)=>(a.trendRank??999)-(b.trendRank??999)||b.popularity-a.popularity||(b.date||'').localeCompare(a.date||''));
 }
 async function games(){
