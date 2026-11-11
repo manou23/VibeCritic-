@@ -84,7 +84,7 @@ if(hero){
  const progress=hero.querySelector<HTMLElement>('.spotlight-progress span');
  const prev=hero.querySelector<HTMLButtonElement>('.spotlight-prev');
  const next=hero.querySelector<HTMLButtonElement>('.spotlight-next');
- let current=0,activeImage=0,timer:number|undefined,progressTimer:number|undefined,started=0;
+ let current=0,activeImage=0,timer:number|undefined,textTimer:number|undefined;
  const duration=7000;
  const labels:Record<string,string>={game:'ترند الألعاب',series:'ترند المسلسلات',movie:'ترند الأفلام'};
  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -112,7 +112,9 @@ if(hero){
    if(images[nextImage].complete)activateImage();
   }
   hero.querySelector('.spotlight-copy')?.classList.add('is-changing');
-  window.setTimeout(()=>{
+  if(textTimer)window.clearTimeout(textTimer);
+  textTimer=window.setTimeout(()=>{
+   if(current!==target)return;
    if(title)title.textContent=item.title||'ترند عالمي';
    if(summary)summary.textContent=item.summary||'هذا العمل ضمن أبرز المواضيع الرائجة عالمياً حالياً.';
    if(category)category.textContent=(labels[item.type]||'ترند عالمي')+' · '+(item.source||'TRENDING');
@@ -129,7 +131,7 @@ if(hero){
  hero.addEventListener('mouseenter',stop);
  hero.addEventListener('mouseleave',start);
  hero.addEventListener('focusin',stop);
- hero.addEventListener('focusout',start);
+ hero.addEventListener('focusout',(event)=>{if(!(event.relatedTarget instanceof Node)||!hero.contains(event.relatedTarget))start();});
  document.addEventListener('visibilitychange',()=>document.hidden?stop():start());
  if(data.length>1)start();
 }
