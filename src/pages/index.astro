@@ -8,7 +8,7 @@ const reviews=(await getCollection('reviews')).sort((a,b)=>b.data.date.valueOf()
 const byType={game:reviews.filter(x=>x.data.type==='game'),series:reviews.filter(x=>x.data.type==='series'),movie:reviews.filter(x=>x.data.type==='movie')};
 const trendReviews=trending.slice(0,5).map(item=>{
  const review=reviews.find(entry=>entry.data.type===item.type&&entry.data.sourceId===item.sourceId);
- return {...item,poster:optimizeImage(item.poster),backdrop:optimizeImage(item.backdrop||item.poster,'backdrop'),review,href:review?url(`reviews/${review.id}/`):item.sourceUrl};
+ return {...item,poster:optimizeImage(item.poster),backdrop:optimizeImage(item.backdrop||item.poster,'backdrop'),review,href:review?url(`reviews/${review.id}/`):url(`category/${item.type}/`)};
 });
 const spotlight=trendReviews[0]||null;
 const latest=reviews.slice(0,12);
@@ -26,7 +26,7 @@ const latest=reviews.slice(0,12);
   <h1 class="spotlight-title">{spotlight?.title||'أبرز المواضيع الرائجة'}</h1>
   <p class="discovery-description spotlight-description">{spotlight?.summary||'اكتشف أبرز ما يتصدر الاهتمام حول العالم الآن.'}</p>
   <div class="discovery-actions">
-   <a class="discovery-primary spotlight-link" href={spotlight?.href||'#trending'} target={spotlight?.review?undefined:'_blank'} rel={spotlight?.review?undefined:'noreferrer'}>اكتشف الترند <span>↗</span></a>
+   <a class="discovery-primary spotlight-link" href={spotlight?.href||'#trending'}>اكتشف الترند <span>↗</span></a>
    <a class="discovery-secondary" href="#trending">كل الترندات</a>
   </div>
  </div>
@@ -43,7 +43,7 @@ const latest=reviews.slice(0,12);
 <section class="wrap catalog-section" id="trending">
  <div class="catalog-heading"><div><p class="catalog-eyebrow">WHAT'S POPULAR</p><h2>الرائج الآن</h2><p>الأعمال التي يتحدث عنها الجميع حول العالم</p></div><a href="#new-releases" class="catalog-more">اكتشف الجديد <span>←</span></a></div>
  {trendReviews.length>0?<div class="catalog-rail trend-rail">
- {trendReviews.map((item,i)=><a class="catalog-poster-card trend-poster-card" href={item.href} target={item.review?undefined:'_blank'} rel={item.review?undefined:'noreferrer'}>
+ {trendReviews.map((item,i)=><a class="catalog-poster-card trend-poster-card" href={item.href}>
   <div class="catalog-poster">{item.poster?<img src={item.poster} alt={item.title} loading="lazy" decoding="async"/>:<div class="poster-fallback">V/C</div>}<span class="catalog-rank">{String(i+1).padStart(2,'0')}</span></div>
   <div class="catalog-poster-info"><span>{item.type==='game'?'لعبة':item.type==='series'?'مسلسل':'فيلم'} · {item.source}</span><h3>{item.title}</h3><small>{item.review?'اقرأ مراجعة VibeCritic':'اكتشف العمل'} ↗</small></div>
  </a>)}
@@ -117,7 +117,7 @@ if(hero){
    if(title)title.textContent=item.title||'ترند عالمي';
    if(summary)summary.textContent=item.summary||'هذا العمل ضمن أبرز المواضيع الرائجة عالمياً حالياً.';
    if(category)category.textContent=(labels[item.type]||'ترند عالمي')+' · '+(item.source||'TRENDING');
-   if(link){link.href=item.href||'#trending';link.target=item.review==='yes'?'_self':'_blank';link.rel=item.review==='yes'?'':'noreferrer';}
+   if(link){link.href=item.href||'#trending';link.removeAttribute('target');link.removeAttribute('rel');}
    if(count)count.textContent=String(current+1).padStart(2,'0');
    hero.querySelector('.spotlight-copy')?.classList.remove('is-changing');
   },reduced?0:220);
