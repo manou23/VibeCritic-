@@ -2,17 +2,62 @@
 import Base from '../../layouts/Base.astro';
 import ScoreCard from '../../components/ScoreCard.astro';
 import { getCollection, render } from 'astro:content';
-import { TYPE_LABEL, fmtDate, url, optimizeImage } from '../../consts';
+import { TYPE_LABEL, fmtDate, url, optimizeImage, SITE_NAME } from '../../consts';
 export async function getStaticPaths(){const reviews=await getCollection('reviews');return reviews.map(review=>({params:{slug:review.id},props:{review}}));}
 const {review}=Astro.props;const {Content}=await render(review);const d=review.data;
+
+const typeLabel = TYPE_LABEL[d.type];
+const typeKeyword = d.type === 'game' ? 'لعبة' : d.type === 'series' ? 'مسلسل' : 'فيلم';
+const cleanKeyword = (value) => String(value || '').replace(/[<>"']/g, '').replace(/\\s+/g, ' ').trim();
+const reviewKeywords = [...new Set([
+  d.title,
+  d.originalTitle,
+  typeKeyword + ' ' + d.title,
+  'مراجعة ' + d.title,
+  'تقييم ' + d.title,
+  'قصة ' + d.title,
+  'مراجعة ' + typeKeyword,
+  'تقييم ' + typeKeyword,
+  'مراجعة نقدية',
+  'تحليل فني',
+  ...(d.genres || []),
+  ...(d.tags || []),
+].map(cleanKeyword).filter(Boolean))].slice(0, 20);
+const reviewDescription = d.title + ' — مراجعة ' + typeKeyword + ' وتحليل نقدي للقصة والعناصر الفنية. ' + d.summary + ' تقييم VibeCritic: ' + d.score + '/10.';
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+const schemaType = d.type === 'game' ? 'Game' : d.type === 'series' ? 'CreativeWorkSeries' : 'Movie';
+const reviewStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Review',
+  name: d.title + ' — مراجعة وتقييم',
+  url: canonicalUrl,
+  datePublished: d.date.toISOString().slice(0, 10),
+  reviewBody: [d.summary, d.verdict, d.hook].filter(Boolean).join(' '),
+  reviewRating: {
+    '@type': 'Rating',
+    ratingValue: d.score,
+    bestRating: 10,
+    worstRating: 0,
+  },
+  author: { '@type': 'Organization', name: SITE_NAME },
+  itemReviewed: {
+    '@type': schemaType,
+    name: d.title,
+    ...(d.originalTitle ? { alternateName: d.originalTitle } : {}),
+    ...(d.genres?.length ? { genre: d.genres } : {}),
+    ...(d.releaseDate ? { datePublished: d.releaseDate } : {}),
+    ...(d.poster ? { image: optimizeImage(d.poster) } : {}),
+  },
+};
+
 ---
-<Base title={d.title} description={d.summary} image={optimizeImage(d.backdrop || d.poster, 'backdrop')} pageType="article" publishedAt={d.date.toISOString()}>
+<Base title={`${d.title} — مراجعة وتقييم`} description={reviewDescription} keywords={reviewKeywords} structuredData={reviewStructuredData} image={optimizeImage(d.backdrop || d.poster, 'backdrop')} pageType="article" publishedAt={d.date.toISOString()}>
 <article class="wrap article-page">
   <a href={url('')} class="article-back">← العودة إلى VibeCritic</a>
   <header class="article-header">
     <p class="eyebrow">VIBECRITIC / قراءة نقدية تحريرية</p>
     <div class="article-meta">
-      <span class="article-category">{TYPE_LABEL[d.type]}</span>
+      <span class="article-category">{typeLabel}</span>
       <time datetime={d.date.toISOString()}>{fmtDate(d.date)}</time>
       {d.aiGenerated&&<span class="article-ai">تحليل مدعوم بالذكاء الاصطناعي</span>}
     </div>
