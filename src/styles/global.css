@@ -137,3 +137,47 @@ button,input{font:inherit}
 .dark-mode .article-poster{box-shadow:12px 12px 0 #302d26}
 @media(max-width:760px){.article-layout{grid-template-columns:1fr;gap:26px}.article-aside{position:static;display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:center;order:-1}.article-poster{width:110px;box-shadow:7px 7px 0 #ded7ca}.article-score-wrap{margin:0;padding:13px}.article-score-wrap .eyebrow{font-size:9px}.article-score-note{font-size:10px}.article-header h1{letter-spacing:-1px}.article-verdict-grid{gap:8px}.verdict-panel{padding:14px 12px}}
 @media(max-width:480px){.article-page{padding-top:25px}.article-back{margin-bottom:24px}.article-header{margin-bottom:22px}.article-meta{gap:8px}.article-deck{font-size:15px}.article-backdrop{margin:24px 0 30px}.article-body{font-size:14px}.article-body h2{font-size:21px}.verdict-panel h2{font-size:14px}.verdict-panel ul{font-size:12px}}
+
+
+/* Worldwide trending carousel */
+.trending-section{padding:12px 0 34px;border-bottom:1px solid #d9d3c7}
+.trending-heading{margin-top:34px;align-items:center}
+.trending-subtitle{margin-top:7px;color:#777066;font-size:12px}
+.trending-controls{display:flex;gap:8px;direction:ltr}
+.trending-controls button{width:42px;height:42px;border:1px solid #cfc7b9;background:transparent;color:#191919;font-size:20px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.trending-controls button:hover{background:#e45c38;border-color:#e45c38;color:white}
+.trending-track{display:flex;gap:16px;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scrollbar-width:none;direction:ltr;padding:7px 2px 18px}
+.trending-track::-webkit-scrollbar{display:none}
+.trend-card{direction:rtl;display:grid;grid-template-columns:.92fr 1.08fr;flex:0 0 min(520px,86vw);min-height:270px;overflow:hidden;background:#fff;border:1px solid #e2ddd3;scroll-snap-align:center;transition:transform .25s,box-shadow .25s}
+.trend-card:hover{transform:translateY(-4px);box-shadow:0 16px 35px #28201914}
+.trend-art{position:relative;display:block;min-width:0;overflow:hidden;background:#d9d1c4}
+.trend-art:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,#19191980)}
+.trend-art img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;transition:transform .6s}
+.trend-card:hover .trend-art img{transform:scale(1.06)}
+.trend-art-fallback{height:100%;min-height:270px;display:grid;place-items:center;background:#24221d;color:#f3f0e8;font-size:42px;font-weight:950}
+.trend-rank{position:absolute;z-index:2;top:13px;right:13px;color:#fff;font-size:35px;font-weight:950;line-height:1;text-shadow:0 2px 12px #0008}
+.trend-source{position:absolute;z-index:2;bottom:13px;right:14px;color:#fff;font-size:9px;font-weight:900;letter-spacing:1.4px}
+.trend-copy{display:flex;flex-direction:column;align-items:flex-start;padding:22px 20px}
+.trend-type{color:#b34b30;font-size:10px;font-weight:950;letter-spacing:.8px}
+.trend-copy h3{margin-top:10px;font-size:clamp(19px,2.3vw,25px);font-weight:950;line-height:1.45}
+.trend-summary{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-top:10px;color:#777066;font-size:12px;line-height:1.9}
+.trend-link{display:inline-flex;align-items:center;gap:9px;margin-top:auto;padding-top:16px;color:#b34b30;font-size:12px;font-weight:950}
+.trend-link span{font-size:16px;transition:transform .2s}
+.trend-link:hover span{transform:translate(3px,-3px)}
+.trending-note{margin-top:2px;color:#91897e;font-size:10px}
+.dark-mode .trending-section{border-color:#38352e}
+.dark-mode .trending-subtitle,.dark-mode .trend-summary,.dark-mode .trending-note{color:#aaa092}
+.dark-mode .trending-controls button{color:#f3f0e8;border-color:#504a40}
+.dark-mode .trending-controls button:hover{background:#e45c38;border-color:#e45c38}
+.dark-mode .trend-card{background:#211f1a;border-color:#38352e}
+@media(max-width:600px){
+ .trending-heading{margin-top:28px;align-items:flex-end}
+ .trending-controls button{width:36px;height:36px}
+ .trend-card{grid-template-columns:1fr;flex-basis:min(86vw,390px)}
+ .trend-art{aspect-ratio:16/9;min-height:0}
+ .trend-art-fallback{min-height:160px}
+ .trend-copy{min-height:185px;padding:15px}
+ .trend-copy h3{font-size:19px}
+ .trend-summary{-webkit-line-clamp:2}
+}
+@media(prefers-reduced-motion:reduce){.trending-track{scroll-behavior:auto;scroll-snap-type:x proximity}.trend-card,.trend-art img,.trend-link span{transition:none!important}}
