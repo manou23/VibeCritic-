@@ -99,7 +99,7 @@ async function generateReview(item){
  }else if(provider==='gemini'){
   parsed=await generateWithGemini(prompt);
  }else throw new Error('AI_PROVIDER يجب أن يكون openai أو gemini أو openrouter');
- const d=provider==='openrouter'?parsed:parseJson(text),review=String(d.review||'').replace(/<[^>]*>/g,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').trim();
+ const d=parsed||parseJson(text),review=String(d.review||'').replace(/<[^>]*>/g,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').trim();
  if(review.length<700)throw new Error('المراجعة المولّدة أقصر من الحد المطلوب للتحليل المتكامل');
  const pros=Array.isArray(d.pros)?d.pros.map(clean).filter(Boolean).slice(0,4):[],cons=Array.isArray(d.cons)?d.cons.map(clean).filter(Boolean).slice(0,3):[];
  if(pros.length<3||cons.length<2)throw new Error('قوائم نقاط القوة والضعف غير مكتملة');
