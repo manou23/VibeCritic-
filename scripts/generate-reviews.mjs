@@ -158,7 +158,7 @@ async function globalTrending(){
  const games=[...gameList].sort((a,b)=>(a.trendRank||999)-(b.trendRank||999)).slice(0,3).map(x=>({
   id:String(x.id),sourceId:String(x.id),type:'game',title:x.name||'بدون عنوان',
   poster:x.cover?.image_id?`https://images.igdb.com/igdb/image/upload/t_cover_big/${x.cover.image_id}.jpg`:'',
-  backdrop:x.cover?.image_id?`https://images.igdb.com/igdb/image/upload/t_1080p/${x.cover.image_id}.jpg`:'',
+  backdrop:x.cover?.image_id?`https://images.igdb.com/igdb/image/upload/t_720p/${x.cover.image_id}.jpg`:'',
   summary:x.summary||'',sourceUrl:x.url||`https://www.igdb.com/games/${x.id}`,
   source:'IGDB',sourceRank:Number(x.trendSignal)||Number(x.follows)||0,trendRank:Number(x.trendRank)||999,updatedAt:new Date().toISOString()
  }));
