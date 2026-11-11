@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import ReviewCard from '../../components/ReviewCard.astro';
 import { getCollection } from 'astro:content';
-import { TYPE_LABEL, TYPE_PLURAL, type ReviewType, url } from '../../consts';
+import { TYPE_LABEL, TYPE_PLURAL, type ReviewType, url, optimizeImage } from '../../consts';
 export function getStaticPaths(){return ['game','movie','series'].map(type=>({params:{type}}));}
 const type=Astro.params.type as ReviewType;
 const all=await getCollection('reviews',({data})=>data.type===type);
@@ -12,7 +12,7 @@ const copy={game:{en:'GAMES & INTERACTIVE',title:'اكتشف عالم الألع
 ---
 <Base title={TYPE_PLURAL[type]} description={copy.desc} noindex={reviews.length === 0}>
 <section class="wrap category-discovery">
- {featured?.data.backdrop&&<img src={featured.data.backdrop} alt="" class="category-backdrop"/>}
+ {featured?.data.backdrop&&<img src={optimizeImage(featured.data.backdrop, 'backdrop')} alt="" class="category-backdrop" loading="lazy" decoding="async"/>}
  <div class="category-overlay"></div>
  <div class="category-discovery-copy"><p class="catalog-eyebrow">{copy.en}</p><h1>{copy.title}</h1><p>{copy.desc}</p><div class="category-stat"><strong>{reviews.length}</strong><span>مراجعة منشورة في {TYPE_PLURAL[type]}</span></div></div>
 </section>
