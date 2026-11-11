@@ -70,7 +70,8 @@ const safeJson = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
 <header class="site-header">
  <div class="wrap site-nav">
   <a href={url('')} class="brand" aria-label="VibeCritic الصفحة الرئيسية"><span>Vibe</span><span class="brand-accent">Critic</span><small>THE ENTERTAINMENT GUIDE</small></a>
-  <nav class="site-links" aria-label="التنقل الرئيسي">
+  <button class="menu-toggle" id="menu-toggle" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
+  <nav class="site-links" id="primary-navigation" aria-label="التنقل الرئيسي">
    <a href={url('')}>الرئيسية</a><a href={url('category/game/')}>الألعاب</a><a href={url('category/movie/')}>الأفلام</a><a href={url('category/series/')}>المسلسلات</a>
   </nav>
   <button class="header-search" id="site-search-open" type="button" aria-haspopup="dialog" aria-controls="site-search-dialog"><span aria-hidden="true">⌕</span><span class="header-search-label">بحث</span></button>
@@ -100,6 +101,24 @@ const safeJson = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
  </div>
 </footer>
 <script>
+const menuButton = document.getElementById('menu-toggle');
+const primaryNavigation = document.getElementById('primary-navigation');
+const closeMenu = () => {
+  primaryNavigation?.classList.remove('is-open');
+  menuButton?.setAttribute('aria-expanded', 'false');
+  menuButton?.setAttribute('aria-label', 'فتح القائمة');
+};
+menuButton?.addEventListener('click', () => {
+  const open = primaryNavigation?.classList.toggle('is-open') ?? false;
+  menuButton.setAttribute('aria-expanded', String(open));
+  menuButton.setAttribute('aria-label', open ? 'إغلاق القائمة' : 'فتح القائمة');
+});
+primaryNavigation?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeMenu(); });
+document.addEventListener('click', (event) => {
+  if (event.target instanceof Node && !primaryNavigation?.contains(event.target) && !menuButton?.contains(event.target)) closeMenu();
+});
+
 const themeButton = document.getElementById('theme-toggle');
 try {
   const savedTheme = localStorage.getItem('vc-theme');
