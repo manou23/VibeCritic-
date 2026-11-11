@@ -12,7 +12,19 @@ const clean=v=>String(v??'').replace(/[\r\n]+/g,' ').trim();
 const slugify=v=>clean(v).toLowerCase().normalize('NFKD').replace(/[^\p{L}\p{N}]+/gu,'-').replace(/^-|-$/g,'').slice(0,70)||'review';
 const y=v=>JSON.stringify(String(v??''));
 const arr=a=>a?.length?a.map(v=>`  - ${y(v)}`).join('\n'):'  []';
-function parseJson(t){const raw=String(t||'').replace(/^```(?:json)?\s*/i,'').replace(/\s*```$/,'').trim();const s=raw.indexOf('{'),e=raw.lastIndexOf('}');if(s<0||e<=s)throw new Error('لم يرجع النموذج JSON صالحاً');return JSON.parse(raw.slice(s,e+1));}
+function parseJson(t){
+ const raw=String(t||'').replace(/^\\s*```(?:json)?\\s*/i,'').replace(/\\s*```\\s*$/,'').trim();
+ let start=-1,depth=0,inString=false,escaped=false;
+ for(let i=0;i<raw.length;i++){
+  const ch=raw[i];
+  if(start<0){if(ch==='{'){start=i;depth=1;}continue;}
+  if(inString){if(escaped)escaped=false;else if(ch==='\\\\')escaped=true;else if(ch==='\"')inString=false;continue;}
+  if(ch==='\"'){inString=true;continue;}
+  if(ch==='{')depth++;
+  else if(ch==='}'&&--depth===0){try{return JSON.parse(raw.slice(start,i+1));}catch(e){start=-1;}}
+ }
+ throw new Error('لم يرجع النموذج JSON صالحاً بعد تنظيف الرد');
+}
 async function generateReview(item){
  const prompt=`اكتب مراجعة عربية أصلية ومتوازنة. لا تدّع أنك شاهدت أو لعبت العمل، ولا تخترع معلومات، ولا تحرق الأحداث. أعد JSON فقط: headline جملة جذابة، summary ملخص موجز، score رقم 0-10 كتقدير تحريري لا كتقييم رسمي، pros ثلاث نقاط، cons نقطتان أو ثلاث، tags ثلاثة وسوم، review ثلاث فقرات.\nالنوع: ${item.type}\nالاسم: ${item.name}\nالوصف المتاح: ${item.description||'غير متوفر'}\nالتصنيفات: ${(item.genres||[]).join('، ')}`;
  let text;
@@ -20,8 +32,14 @@ async function generateReview(item){
   const r=await fetch('https://api.openai.com/v1/chat/completions',{method:'POST',headers:{'content-type':'application/json',authorization:`Bearer ${required('OPENAI_API_KEY')}`},body:JSON.stringify({model:env.OPENAI_MODEL||'gpt-4o-mini',temperature:.65,messages:[{role:'system',content:'أنت محرر مراجعات عربي دقيق. أعد JSON صالحاً فقط.'},{role:'user',content:prompt}]})});
   if(!r.ok)throw new Error(`OpenAI HTTP ${r.status}: ${await r.text()}`);text=(await r.json()).choices?.[0]?.message?.content;
  }else if(provider==='openrouter'){
-  const r=await fetch('https://openrouter.ai/api/v1/chat/completions',{method:'POST',headers:{'content-type':'application/json',authorization:`Bearer ${required('OPENROUTER_API_KEY')}`,'HTTP-Referer':'https://vibecritic.pages.dev','X-Title':'VibeCritic'},body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.65,messages:[{role:'system',content:'أنت محرر مراجعات عربي دقيق. أعد JSON صالحاً فقط.'},{role:'user',content:prompt}]})});
-  if(!r.ok)throw new Error(`OpenRouter HTTP ${r.status}: ${await r.text()}`);text=(await r.json()).choices?.[0]?.message?.content;
+  const endpoint='https://openrouter.ai/api/v1/chat/completions';
+  const headers={'content-type':'application/json',authorization:`Bearer ${required('OPENROUTER_API_KEY')}`,'HTTP-Referer':'https://manou23.github.io/VibeCritic-/','X-Title':'VibeCritic'};
+  const messages=[{role:'system',content:'أنت محرر مراجعات عربي دقيق. أعد كائن JSON صالحاً فقط، دون Markdown أو أي نص خارجه.'},{role:'user',content:prompt}];
+  let r=await fetch(endpoint,{method:'POST',headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.45,response_format:{type:'json_object'},messages})});
+  if(!r.ok&&r.status===400)r=await fetch(endpoint,{method:'POST',headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.45,messages})});
+  if(!r.ok)throw new Error(`OpenRouter HTTP ${r.status}: ${await r.text()}`);
+  const response=await r.json();text=response.choices?.[0]?.message?.content;
+  if(Array.isArray(text))text=text.map(part=>part.text||'').join('');
  }else if(provider==='gemini'){
   const model=env.GEMINI_MODEL||'gemini-2.5-flash',key=required('GEMINI_API_KEY');
   const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{temperature:.65,responseMimeType:'application/json'}})});
