@@ -2,19 +2,25 @@
 import Base from '../../layouts/Base.astro';
 import ReviewCard from '../../components/ReviewCard.astro';
 import { getCollection } from 'astro:content';
-import { TYPE_LABEL, TYPE_PLURAL, type ReviewType } from '../../consts';
+import { TYPE_LABEL, TYPE_PLURAL, type ReviewType, url } from '../../consts';
 export function getStaticPaths(){return ['game','movie','series'].map(type=>({params:{type}}));}
 const type=Astro.params.type as ReviewType;
 const all=await getCollection('reviews',({data})=>data.type===type);
 const reviews=all.sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
+const featured=reviews[0];
+const copy={game:{en:'GAMES & INTERACTIVE',title:'اكتشف عالم الألعاب',desc:'إصدارات جديدة، تجارب تستحق وقتك، ومراجعات تساعدك تختار لعبتك القادمة.'},series:{en:'SERIES & TV',title:'اكتشف عالم المسلسلات',desc:'تابع أحدث المسلسلات، الأعمال الرائجة، والمراجعات قبل أن تبدأ المشاهدة.'},movie:{en:'MOVIES & CINEMA',title:'اكتشف عالم الأفلام',desc:'أحدث الأفلام، اختيارات السهرة، ومراجعات صريحة بلا حرق.'}}[type];
 ---
-<Base title={TYPE_PLURAL[type]}>
-<section class="wrap py-12">
-<p class="eyebrow">VIBECRITIC / التصنيفات</p>
-<div class="mt-5 flex flex-wrap items-end justify-between gap-4 border-b border-[#d9d3c7] pb-7">
-<div><h1 class="text-5xl font-black tracking-tight">{TYPE_PLURAL[type]}</h1><p class="mt-3 text-sm text-[#777066]">قراءات ومراجعات {TYPE_PLURAL[type]}، دون حرق وبلا مجاملة.</p></div>
-<span class="text-xs font-bold text-[#b34b30]">{reviews.length} مراجعة</span>
-</div>
-{reviews.length?<div class="review-grid mt-8">{reviews.map(review=><ReviewCard review={review}/>)}</div>:<div class="empty-state mt-8"><p class="text-4xl">✳</p><p class="mt-4 text-lg font-black">لا توجد مراجعات منشورة بعد</p><p class="mt-2 text-sm text-[#777066]">ستظهر مراجعات {TYPE_LABEL[type]} هنا عند نشرها.</p></div>}
+<Base title={TYPE_PLURAL[type]} description={copy.desc}>
+<section class="wrap category-discovery">
+ {featured?.data.backdrop&&<img src={featured.data.backdrop} alt="" class="category-backdrop"/>}
+ <div class="category-overlay"></div>
+ <div class="category-discovery-copy"><p class="catalog-eyebrow">{copy.en}</p><h1>{copy.title}</h1><p>{copy.desc}</p><div class="category-stat"><strong>{reviews.length}</strong><span>مراجعة منشورة في {TYPE_PLURAL[type]}</span></div></div>
+</section>
+<section class="wrap catalog-section">
+ <div class="catalog-heading"><div><p class="catalog-eyebrow">LATEST REVIEWS</p><h2>أحدث {TYPE_PLURAL[type]}</h2><p>آخر الإضافات إلى مكتبة VibeCritic</p></div><span class="catalog-total">{reviews.length} مراجعة</span></div>
+ {reviews.length?<div class="category-review-grid">{reviews.map(review=><ReviewCard review={review}/>)}</div>:<div class="catalog-empty">قسم {TYPE_PLURAL[type]} قيد الإثراء. ستظهر هنا الأعمال الجديدة ومراجعاتها تلقائياً.</div>}
+</section>
+<section class="wrap category-switcher">
+ <a href={url('category/game/')} class={type==='game'?'active':''}>الألعاب</a><a href={url('category/series/')} class={type==='series'?'active':''}>المسلسلات</a><a href={url('category/movie/')} class={type==='movie'?'active':''}>الأفلام</a>
 </section>
 </Base>
