@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 
 const env=process.env;
-const provider=(env.AI_PROVIDER||(env.OPENAI_API_KEY?'openai':'gemini')).toLowerCase();
+const provider=(env.AI_PROVIDER||(env.OPENROUTER_API_KEY?'openrouter':env.OPENAI_API_KEY?'openai':'gemini')).toLowerCase();
 const maxPerRun=Math.max(1,Number(env.MAX_PER_RUN||3));
 const gamesWindowDays=Math.max(1,Number(env.GAMES_WINDOW_DAYS||14));
 const outDir='src/content/reviews',processedPath='data/processed.json';
@@ -19,11 +19,14 @@ async function generateReview(item){
  if(provider==='openai'){
   const r=await fetch('https://api.openai.com/v1/chat/completions',{method:'POST',headers:{'content-type':'application/json',authorization:`Bearer ${required('OPENAI_API_KEY')}`},body:JSON.stringify({model:env.OPENAI_MODEL||'gpt-4o-mini',temperature:.65,messages:[{role:'system',content:'أنت محرر مراجعات عربي دقيق. أعد JSON صالحاً فقط.'},{role:'user',content:prompt}]})});
   if(!r.ok)throw new Error(`OpenAI HTTP ${r.status}: ${await r.text()}`);text=(await r.json()).choices?.[0]?.message?.content;
+ }else if(provider==='openrouter'){
+  const r=await fetch('https://openrouter.ai/api/v1/chat/completions',{method:'POST',headers:{'content-type':'application/json',authorization:`Bearer ${required('OPENROUTER_API_KEY')}`,'HTTP-Referer':'https://vibecritic.pages.dev','X-Title':'VibeCritic'},body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.65,messages:[{role:'system',content:'أنت محرر مراجعات عربي دقيق. أعد JSON صالحاً فقط.'},{role:'user',content:prompt}]})});
+  if(!r.ok)throw new Error(`OpenRouter HTTP ${r.status}: ${await r.text()}`);text=(await r.json()).choices?.[0]?.message?.content;
  }else if(provider==='gemini'){
   const model=env.GEMINI_MODEL||'gemini-2.5-flash',key=required('GEMINI_API_KEY');
   const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{temperature:.65,responseMimeType:'application/json'}})});
   if(!r.ok)throw new Error(`Gemini HTTP ${r.status}: ${await r.text()}`);text=(await r.json()).candidates?.[0]?.content?.parts?.map(p=>p.text||'').join('');
- }else throw new Error('AI_PROVIDER يجب أن يكون openai أو gemini');
+ }else throw new Error('AI_PROVIDER يجب أن يكون openai أو gemini أو openrouter');
  const d=parseJson(text);
  return {headline:clean(d.headline),summary:clean(d.summary),score:Math.min(10,Math.max(0,Number(d.score)||0)),pros:Array.isArray(d.pros)?d.pros.slice(0,5).map(clean):[],cons:Array.isArray(d.cons)?d.cons.slice(0,5).map(clean):[],tags:Array.isArray(d.tags)?d.tags.slice(0,8).map(clean):[],review:String(d.review||'').trim()};
 }
