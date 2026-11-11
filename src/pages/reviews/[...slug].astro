@@ -6,14 +6,14 @@ import { TYPE_LABEL, fmtDate, url } from '../../consts';
 export async function getStaticPaths(){const reviews=await getCollection('reviews');return reviews.map(review=>({params:{slug:review.id},props:{review}}));}
 const {review}=Astro.props;const {Content}=await render(review);const d=review.data;
 ---
-<Base title={d.title} description={d.summary}>
+<Base title={d.title} description={d.summary} image={d.backdrop || d.poster} pageType="article" publishedAt={d.date.toISOString()}>
 <article class="wrap article-page">
   <a href={url('')} class="article-back">← العودة إلى VibeCritic</a>
   <header class="article-header">
     <p class="eyebrow">VIBECRITIC / مراجعة مستقلة</p>
     <div class="article-meta">
       <span class="article-category">{TYPE_LABEL[d.type]}</span>
-      <time>{fmtDate(d.date)}</time>
+      <time datetime={d.date.toISOString()}>{fmtDate(d.date)}</time>
       {d.aiGenerated&&<span class="article-ai">مراجعة بمساعدة الذكاء الاصطناعي</span>}
     </div>
     <h1>{d.title}</h1>
