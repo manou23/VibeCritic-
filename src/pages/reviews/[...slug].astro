@@ -10,11 +10,11 @@ const {review}=Astro.props;const {Content}=await render(review);const d=review.d
 <article class="wrap article-page">
   <a href={url('')} class="article-back">← العودة إلى VibeCritic</a>
   <header class="article-header">
-    <p class="eyebrow">VIBECRITIC / مراجعة مستقلة</p>
+    <p class="eyebrow">VIBECRITIC / قراءة نقدية تحريرية</p>
     <div class="article-meta">
       <span class="article-category">{TYPE_LABEL[d.type]}</span>
       <time datetime={d.date.toISOString()}>{fmtDate(d.date)}</time>
-      {d.aiGenerated&&<span class="article-ai">مراجعة بمساعدة الذكاء الاصطناعي</span>}
+      {d.aiGenerated&&<span class="article-ai">تحليل مدعوم بالذكاء الاصطناعي</span>}
     </div>
     <h1>{d.title}</h1>
     <p class="article-deck">{d.headline}</p>
@@ -24,8 +24,12 @@ const {review}=Astro.props;const {Content}=await render(review);const d=review.d
 
   <div class="article-layout">
     <div class="article-main">
+      <section class="article-hook">
+        <p class="eyebrow">المدخل النقدي</p>
+        <p>{d.hook || d.headline}</p>
+      </section>
       <section class="article-summary">
-        <p class="eyebrow">الحكم المختصر</p>
+        <p class="eyebrow">عن العمل</p>
         <p>{d.summary}</p>
       </section>
       <div class="article-body prose"><Content/></div>
@@ -39,6 +43,12 @@ const {review}=Astro.props;const {Content}=await render(review);const d=review.d
           <ul>{d.cons.map(x=><li>{x}</li>)}</ul>
         </section>
       </div>
+      <section class="article-final-verdict">
+        <p class="eyebrow">الحكم النهائي</p>
+        <h2>هل يستحق وقتك؟</h2>
+        <p>{d.verdict || 'تتحدد قيمة هذا العمل بحسب مدى اهتمامك بنوعه وعناصره الفنية، مع مراعاة نقاط القوة والتحفظات المذكورة أعلاه.'}</p>
+      </section>
+      <p class="review-method-note">منهجية VibeCritic: هذا تقييم تحريري مبني على المعلومات المنشورة والبيانات المتاحة، وليس ادعاءً باختبار مباشر للعمل. الدرجة تقدير نقدي مستقل وليست تقييماً رسمياً.</p>
       <a href={url('')} class="article-return">اكتشف مراجعات أخرى <span>←</span></a>
     </div>
     <aside class="article-aside">
