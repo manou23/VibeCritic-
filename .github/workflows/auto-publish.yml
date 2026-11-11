@@ -63,7 +63,17 @@ jobs:
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add src/content/reviews data/processed.json src/data/trending.json
             git commit -m "chore: update generated reviews"
-            git push
+            for attempt in 1 2 3; do
+              if git push origin HEAD:main; then
+                break
+              fi
+              if [ "$attempt" -eq 3 ]; then
+                echo "Unable to push generated content after 3 attempts."
+                exit 1
+              fi
+              git fetch origin main
+              git rebase origin/main
+            done
           fi
       - name: Build site
         run: npm run build
