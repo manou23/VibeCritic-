@@ -4,7 +4,7 @@ import path from 'node:path';
 const env=process.env;
 const provider=(env.AI_PROVIDER||(env.OPENROUTER_API_KEY?'openrouter':env.OPENAI_API_KEY?'openai':'gemini')).toLowerCase();
 const maxPerRun=Math.max(1,Number(env.MAX_PER_RUN||3));
-const gamesWindowDays=Math.max(1,Number(env.GAMES_WINDOW_DAYS||14));
+const gamesWindowDays=Math.max(1,Number(env.GAMES_WINDOW_DAYS||90));
 const outDir='src/content/reviews',processedPath='data/processed.json';
 function required(name){if(!env[name])throw new Error(`متغير البيئة ${name} غير مضبوط في GitHub Secrets`);return env[name];}
 async function getJson(url){const r=await fetch(url);if(!r.ok)throw new Error(`HTTP ${r.status}: ${url}`);return r.json();}
@@ -63,8 +63,16 @@ async function generateReview(item){
 }
 async function tmdb(type){
  const key=required('TMDB_API_KEY'),endpoint=type==='movie'?'movie':'tv';
- const d=await getJson(`https://api.themoviedb.org/3/trending/${endpoint}/week?api_key=${key}&language=ar`);
- return(d.results||[]).map(x=>({id:String(x.id),type,name:x.title||x.name||'بدون عنوان',description:x.overview||'',date:x.release_date||x.first_air_date||'',poster:x.poster_path?`https://image.tmdb.org/t/p/w500${x.poster_path}`:'',backdrop:x.backdrop_path?`https://image.tmdb.org/t/p/w1280${x.backdrop_path}`:'',rating:Number(x.vote_average)||0,genres:[],sourceUrl:`https://www.themoviedb.org/${endpoint}/${x.id}`}));
+ const today=new Date().toISOString().slice(0,10);
+ const since=new Date(Date.now()-90*86400000).toISOString().slice(0,10);
+ const [trend,discover]=await Promise.all([
+  getJson(`https://api.themoviedb.org/3/trending/${endpoint}/week?api_key=${key}&language=ar`),
+  getJson(`https://api.themoviedb.org/3/discover/${endpoint}?api_key=${key}&language=ar&sort_by=${type==='movie'?'primary_release_date':'first_air_date'}.desc&${type==='movie'?'primary_release_date':'first_air_date'}.gte=${since}&${type==='movie'?'primary_release_date':'first_air_date'}.lte=${today}&include_adult=false`)
+ ]);
+ const map=x=>({id:String(x.id),type,name:x.title||x.name||'بدون عنوان',description:x.overview||'',date:x.release_date||x.first_air_date||'',poster:x.poster_path?`https://image.tmdb.org/t/p/w500${x.poster_path}`:'',backdrop:x.backdrop_path?`https://image.tmdb.org/t/p/w1280${x.backdrop_path}`:'',rating:Number(x.vote_average)||0,genres:[],sourceUrl:`https://www.themoviedb.org/${endpoint}/${x.id}`,popularity:Number(x.popularity)||0});
+ const merged=new Map();
+ for(const item of [...(trend.results||[]).map(map),...(discover.results||[]).map(map)])if(!merged.has(item.id))merged.set(item.id,item);
+ return [...merged.values()].sort((a,b)=>(b.date||'').localeCompare(a.date||'')||b.popularity-a.popularity);
 }
 async function games(){
  const clientId=required('IGDB_CLIENT_ID'),clientSecret=required('IGDB_CLIENT_SECRET');
@@ -115,34 +123,44 @@ async function writeReview(item){
  await fs.writeFile(path.join(outDir,`${item.type}-${slugify(item.name)}-${item.id}.md`),fm,'utf8');return `${item.type}:${item.id}`;
 }
 async function main(){
- await fs.mkdir(outDir,{recursive:true});await fs.mkdir('data',{recursive:true});
- await fs.mkdir('src/data',{recursive:true});
+ await fs.mkdir(outDir,{recursive:true});await fs.mkdir('data',{recursive:true});await fs.mkdir('src/data',{recursive:true});
  try{
   const top=await globalTrending();
-  await fs.writeFile('src/data/trending.json',JSON.stringify(top,null,2)+'\n','utf8');
+  await fs.writeFile('src/data/trending.json',JSON.stringify(top,null,2)+'\\n','utf8');
   console.log(`تم تحديث قائمة الترندات العالمية: ${top.length} أعمال.`);
  }catch(e){console.error('تعذر تحديث الترندات العالمية، سيتم الاحتفاظ بآخر قائمة:',e.message);}
-
  let done=[];try{done=JSON.parse(await fs.readFile(processedPath,'utf8'));}catch{}
- const types=['movie','series','game'];
+ const types=['game','series','movie'];
  const pools={
-  movie:(await tmdb('movie')).filter(x=>!done.includes(`${x.type}:${x.id}`)),
+  game:(await games()).filter(x=>!done.includes(`${x.type}:${x.id}`)),
   series:(await tmdb('series')).filter(x=>!done.includes(`${x.type}:${x.id}`)),
-  game:(await games()).filter(x=>!done.includes(`${x.type}:${x.id}`))
+  movie:(await tmdb('movie')).filter(x=>!done.includes(`${x.type}:${x.id}`))
  };
- // امنح كل نوع فرصة أولاً، ثم املأ المقاعد المتبقية بالتناوب.
+ const files=await fs.readdir(outDir);
+ const counts={game:0,series:0,movie:0};
+ for(const file of files){for(const type of types){if(file.startsWith(type+'-')&&file.endsWith('.md'))counts[type]++;}}
+ console.log('عدد المراجعات المنشورة حسب النوع:',JSON.stringify(counts));
  const fresh=[];
- for(const type of types){if(fresh.length<maxPerRun&&pools[type].length)fresh.push(pools[type].shift());}
  while(fresh.length<maxPerRun){
-  let added=false;
-  for(const type of types){
-   if(fresh.length>=maxPerRun)break;
-   if(pools[type].length){fresh.push(pools[type].shift());added=true;}
+  const available=types.filter(type=>pools[type].length>0);
+  if(!available.length)break;
+  const values=available.map(type=>counts[type]);
+  const gap=Math.max(...values)-Math.min(...values);
+  let chosenType;
+  if(gap>1){
+   chosenType=available.sort((a,b)=>counts[a]-counts[b]||(a==='game'?-1:b==='game'?1:a.localeCompare(b)))[0];
+  }else{
+   const newest=available.flatMap(type=>pools[type].map(item=>({type,item}))).sort((a,b)=>(b.item.date||'').localeCompare(a.item.date||'')||(b.item.popularity||0)-(a.item.popularity||0))[0];
+   chosenType=newest.type;
   }
-  if(!added)break;
+  const item=pools[chosenType].shift();
+  try{
+   done.push(await writeReview(item));counts[chosenType]++;
+   fresh.push(item);
+   console.log('تم إنشاء مراجعة:',item.name,'|',chosenType,'| التوازن الحالي:',JSON.stringify(counts));
+  }catch(e){console.error('تعذر إنشاء مراجعة:',item.name,e.message);}
  }
- if(!fresh.length){console.log('لا توجد أعمال جديدة للمراجعة.');return;}
- for(const item of fresh){try{done.push(await writeReview(item));console.log('تم إنشاء مراجعة:',item.name);}catch(e){console.error('تعذر إنشاء مراجعة:',item.name,e.message);}}
- await fs.writeFile(processedPath,JSON.stringify([...new Set(done)],null,2)+'\n');
+ if(!fresh.length)console.log('لا توجد أعمال جديدة صالحة للنشر في هذه الدفعة.');
+ await fs.writeFile(processedPath,JSON.stringify([...new Set(done)],null,2)+'\\n');
 }
 main().catch(e=>{console.error(e);process.exitCode=1;});
