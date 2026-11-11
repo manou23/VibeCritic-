@@ -27,7 +27,7 @@ function parseJson(t){
 }
 async function generateReview(item){
  const prompt=`اكتب مراجعة عربية أصلية ومتوازنة. لا تدّع أنك شاهدت أو لعبت العمل، ولا تخترع معلومات، ولا تحرق الأحداث. أعد JSON فقط: headline جملة جذابة، summary ملخص موجز، score رقم 0-10 كتقدير تحريري لا كتقييم رسمي، pros ثلاث نقاط، cons نقطتان أو ثلاث، tags ثلاثة وسوم، review ثلاث فقرات.\nالنوع: ${item.type}\nالاسم: ${item.name}\nالوصف المتاح: ${item.description||'غير متوفر'}\nالتصنيفات: ${(item.genres||[]).join('، ')}`;
- let text;
+ let text,parsed=null;
  if(provider==='openai'){
   const r=await fetch('https://api.openai.com/v1/chat/completions',{method:'POST',headers:{'content-type':'application/json',authorization:`Bearer ${required('OPENAI_API_KEY')}`},body:JSON.stringify({model:env.OPENAI_MODEL||'gpt-4o-mini',temperature:.65,messages:[{role:'system',content:'أنت محرر مراجعات عربي دقيق. أعد JSON صالحاً فقط.'},{role:'user',content:prompt}]})});
   if(!r.ok)throw new Error(`OpenAI HTTP ${r.status}: ${await r.text()}`);text=(await r.json()).choices?.[0]?.message?.content;
@@ -35,7 +35,7 @@ async function generateReview(item){
   const endpoint='https://openrouter.ai/api/v1/chat/completions';
   const headers={'content-type':'application/json',authorization:`Bearer ${required('OPENROUTER_API_KEY')}`,'HTTP-Referer':'https://manou23.github.io/VibeCritic-/','X-Title':'VibeCritic'};
   let messages=[{role:'system',content:'أنت محرر مراجعات عربي دقيق. أعد كائن JSON صالحاً فقط، دون Markdown أو أي نص خارجه.'},{role:'user',content:prompt}];
-  let parsed=null,lastIssue='رد فارغ';
+  let lastIssue='رد فارغ';
   for(let attempt=0;attempt<3&&!parsed;attempt++){
    let r=await fetch(endpoint,{method:'POST',headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,response_format:{type:'json_object'},messages})});
    if(!r.ok&&r.status===400)r=await fetch(endpoint,{method:'POST',headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,messages})});
