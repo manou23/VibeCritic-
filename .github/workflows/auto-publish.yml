@@ -33,6 +33,7 @@ jobs:
           IGDB_CLIENT_SECRET: ${{ secrets.IGDB_CLIENT_SECRET }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           AI_PROVIDER: ${{ vars.AI_PROVIDER }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
@@ -43,7 +44,8 @@ jobs:
           echo "IGDB_CLIENT_SECRET configured: $([ -n "$IGDB_CLIENT_SECRET" ] && echo yes || echo no)"
           echo "OPENAI_API_KEY configured: $([ -n "$OPENAI_API_KEY" ] && echo yes || echo no)"
           echo "GEMINI_API_KEY configured: $([ -n "$GEMINI_API_KEY" ] && echo yes || echo no)"
-          if [ -n "$TMDB_API_KEY" ] && [ -n "$IGDB_CLIENT_ID" ] && [ -n "$IGDB_CLIENT_SECRET" ] && { [ -n "$OPENAI_API_KEY" ] || [ -n "$GEMINI_API_KEY" ]; }; then
+          echo "OPENROUTER_API_KEY configured: $([ -n "$OPENROUTER_API_KEY" ] && echo yes || echo no)"
+          if [ -n "$TMDB_API_KEY" ] && [ -n "$IGDB_CLIENT_ID" ] && [ -n "$IGDB_CLIENT_SECRET" ] && { [ -n "$OPENAI_API_KEY" ] || [ -n "$GEMINI_API_KEY" ] || [ -n "$OPENROUTER_API_KEY" ]; }; then
             npm run generate
           else
             echo "API secrets are not fully configured; skipping generation and continuing the site build."
