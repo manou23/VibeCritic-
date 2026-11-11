@@ -38,6 +38,11 @@ jobs:
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           MAX_PER_RUN: '3'
         run: |
+          echo "TMDB_API_KEY configured: $([ -n "$TMDB_API_KEY" ] && echo yes || echo no)"
+          echo "IGDB_CLIENT_ID configured: $([ -n "$IGDB_CLIENT_ID" ] && echo yes || echo no)"
+          echo "IGDB_CLIENT_SECRET configured: $([ -n "$IGDB_CLIENT_SECRET" ] && echo yes || echo no)"
+          echo "OPENAI_API_KEY configured: $([ -n "$OPENAI_API_KEY" ] && echo yes || echo no)"
+          echo "GEMINI_API_KEY configured: $([ -n "$GEMINI_API_KEY" ] && echo yes || echo no)"
           if [ -n "$TMDB_API_KEY" ] && [ -n "$IGDB_CLIENT_ID" ] && [ -n "$IGDB_CLIENT_SECRET" ] && { [ -n "$OPENAI_API_KEY" ] || [ -n "$GEMINI_API_KEY" ]; }; then
             npm run generate
           else
