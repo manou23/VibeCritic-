@@ -10,7 +10,7 @@ const reviews=all.sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
 const featured=reviews[0];
 const copy={game:{en:'GAMES & INTERACTIVE',title:'اكتشف عالم الألعاب',desc:'إصدارات جديدة، تجارب تستحق وقتك، ومراجعات تساعدك تختار لعبتك القادمة.'},series:{en:'SERIES & TV',title:'اكتشف عالم المسلسلات',desc:'تابع أحدث المسلسلات، الأعمال الرائجة، والمراجعات قبل أن تبدأ المشاهدة.'},movie:{en:'MOVIES & CINEMA',title:'اكتشف عالم الأفلام',desc:'أحدث الأفلام، اختيارات السهرة، ومراجعات صريحة بلا حرق.'}}[type];
 ---
-<Base title={TYPE_PLURAL[type]} description={copy.desc}>
+<Base title={TYPE_PLURAL[type]} description={copy.desc} noindex={reviews.length === 0}>
 <section class="wrap category-discovery">
  {featured?.data.backdrop&&<img src={featured.data.backdrop} alt="" class="category-backdrop"/>}
  <div class="category-overlay"></div>
