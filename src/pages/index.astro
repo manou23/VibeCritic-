@@ -124,7 +124,7 @@ if(hero){
   },reduced?0:220);
   if(progress)progress.style.width=((current+1)/data.length*100)+'%';
  }
- function stop(){if(timer)window.clearInterval(timer);if(progressTimer)window.clearInterval(progressTimer);}
+ function stop(){if(timer){window.clearInterval(timer);timer=undefined;}}
  function start(){stop();if(data.length<2||reduced)return;timer=window.setInterval(()=>show(current+1),duration);}
  prev?.addEventListener('click',()=>{show(current-1);start();});
  next?.addEventListener('click',()=>{show(current+1);start();});
