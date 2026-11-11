@@ -10,23 +10,35 @@ const trendReviews=trending.slice(0,5).map(item=>{
  const review=reviews.find(entry=>entry.data.type===item.type&&entry.data.sourceId===item.sourceId);
  return {...item,review,href:review?url(`reviews/${review.id}/`):item.sourceUrl};
 });
-const spotlight=trendReviews[0]|| (reviews[0]?{title:reviews[0].data.title,summary:reviews[0].data.summary,backdrop:reviews[0].data.backdrop,poster:reviews[0].data.poster,href:url(`reviews/${reviews[0].id}/`),type:reviews[0].data.type,source:'VibeCritic'}:null);
+const spotlight=trendReviews[0]||null;
 const latest=reviews.slice(0,12);
 ---
 <Base title="اكتشف عالم الترفيه" description="اكتشف أحدث الأفلام والمسلسلات والألعاب، تابع الترندات العالمية واقرأ مراجعات VibeCritic.">
-<section class="wrap discovery-hero">
- {spotlight?.backdrop&&<img class="discovery-backdrop" src={spotlight.backdrop} alt="" fetchpriority="high"/>}
+<section class="wrap discovery-hero spotlight-slider" aria-label="أبرز الترندات">
+ <div class="spotlight-backdrops" aria-hidden="true">
+  <img class="spotlight-image is-active" src={spotlight?.backdrop||spotlight?.poster||''} alt="" fetchpriority="high"/>
+  <img class="spotlight-image" src="" alt="" loading="lazy"/>
+ </div>
  <div class="discovery-shade"></div>
- <div class="discovery-content">
-  <p class="discovery-kicker"><span></span> VIBECRITIC ORIGINAL / اكتشف الآن</p>
-  <h1>{spotlight?.title||'كل ما يستحق المشاهدة واللعب'}</h1>
-  <p class="discovery-description">{spotlight?.summary||'وجهتك لاكتشاف أحدث الألعاب والأفلام والمسلسلات ومتابعة أكثر الأعمال رواجاً.'}</p>
+ <div class="discovery-content spotlight-copy" aria-live="polite">
+  <p class="discovery-kicker"><span></span> VIBECRITIC / الرائج عالمياً</p>
+  <p class="spotlight-category">{spotlight?.type==='game'?'ترند الألعاب':spotlight?.type==='series'?'ترند المسلسلات':'ترند الأفلام'} · {spotlight?.source||'TRENDING'}</p>
+  <h1 class="spotlight-title">{spotlight?.title||'أبرز المواضيع الرائجة'}</h1>
+  <p class="discovery-description spotlight-description">{spotlight?.summary||'اكتشف ما يتصدر الاهتمام الآن حول العالم.'}</p>
   <div class="discovery-actions">
-   {spotlight?.href&&<a class="discovery-primary" href={spotlight.href}>اكتشف التفاصيل <span>↗</span></a>}
-   <a class="discovery-secondary" href="#trending">استكشف الأكثر رواجاً</a>
+   <a class="discovery-primary spotlight-link" href={spotlight?.href||'#trending'} target={spotlight?.review?undefined:'_blank'} rel={spotlight?.review?undefined:'noreferrer'}>اكتشف الترند <span>↗</span></a>
+   <a class="discovery-secondary" href="#trending">كل الترندات</a>
   </div>
  </div>
- <div class="discovery-index"><strong>01</strong><span>اختيار VibeCritic</span></div>
+ <div class="spotlight-controls">
+  <button type="button" class="spotlight-prev" aria-label="الترند السابق">‹</button>
+  <span class="discovery-index"><strong class="spotlight-count">01</strong><span>من <b class="spotlight-total">{String(Math.max(1,trendReviews.length)).padStart(2,'0')}</b> ترندات</span></span>
+  <button type="button" class="spotlight-next" aria-label="الترند التالي">›</button>
+ </div>
+ <div class="spotlight-progress" aria-hidden="true"><span></span></div>
+ <div class="spotlight-data" hidden>
+  {trendReviews.map(item=><i data-title={item.title} data-summary={item.summary||''} data-backdrop={item.backdrop||item.poster||''} data-poster={item.poster||''} data-type={item.type} data-source={item.source||''} data-href={item.href} data-review={item.review?'yes':'no'}></i>)}
+ </div>
 </section>
 <section class="wrap catalog-section" id="trending">
  <div class="catalog-heading"><div><p class="catalog-eyebrow">WHAT'S POPULAR</p><h2>الرائج الآن</h2><p>الأعمال التي يتحدث عنها الجميع حول العالم</p></div><a href="#new-releases" class="catalog-more">اكتشف الجديد <span>←</span></a></div>
@@ -58,3 +70,55 @@ const empty=document.querySelector<HTMLElement>('#empty-search');
 input?.addEventListener('input',()=>{const q=input.value.toLowerCase().trim();let count=0;cards.forEach(card=>{const show=card.dataset.search?.toLowerCase().includes(q)??false;card.hidden=!show;if(show)count++;});if(empty)empty.hidden=count!==0||!q;});
 </script>
 </Base>
+
+<script>
+const hero=document.querySelector<HTMLElement>('.spotlight-slider');
+if(hero){
+ const data=[...hero.querySelectorAll<HTMLElement>('.spotlight-data i')].map(el=>({...el.dataset}));
+ const images=[...hero.querySelectorAll<HTMLImageElement>('.spotlight-image')];
+ const title=hero.querySelector<HTMLElement>('.spotlight-title');
+ const summary=hero.querySelector<HTMLElement>('.spotlight-description');
+ const category=hero.querySelector<HTMLElement>('.spotlight-category');
+ const link=hero.querySelector<HTMLAnchorElement>('.spotlight-link');
+ const count=hero.querySelector<HTMLElement>('.spotlight-count');
+ const progress=hero.querySelector<HTMLElement>('.spotlight-progress span');
+ const prev=hero.querySelector<HTMLButtonElement>('.spotlight-prev');
+ const next=hero.querySelector<HTMLButtonElement>('.spotlight-next');
+ let current=0,activeImage=0,timer:number|undefined,progressTimer:number|undefined,started=0;
+ const duration=7000;
+ const labels:Record<string,string>={game:'ترند الألعاب',series:'ترند المسلسلات',movie:'ترند الأفلام'};
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ function show(index:number){
+  if(!data.length)return;
+  current=(index+data.length)%data.length;
+  const item=data[current];
+  const nextImage=1-activeImage;
+  const src=item.backdrop||item.poster||'';
+  if(src){
+   images[nextImage].onload=()=>{images[nextImage].classList.add('is-active');images[activeImage].classList.remove('is-active');activeImage=nextImage;};
+   images[nextImage].src=src;
+   if(images[nextImage].complete) {images[nextImage].classList.add('is-active');images[activeImage].classList.remove('is-active');activeImage=nextImage;}
+  }
+  hero.querySelector('.spotlight-copy')?.classList.add('is-changing');
+  window.setTimeout(()=>{
+   if(title)title.textContent=item.title||'ترند عالمي';
+   if(summary)summary.textContent=item.summary||'اكتشف هذا الموضوع الرائج الآن.';
+   if(category)category.textContent=(labels[item.type]||'ترند عالمي')+' · '+(item.source||'TRENDING');
+   if(link){link.href=item.href||'#trending';link.target=item.review==='yes'?'_self':'_blank';link.rel=item.review==='yes'?'':'noreferrer';}
+   if(count)count.textContent=String(current+1).padStart(2,'0');
+   hero.querySelector('.spotlight-copy')?.classList.remove('is-changing');
+  },reduced?0:220);
+  if(progress)progress.style.width=((current+1)/data.length*100)+'%';
+ }
+ function stop(){if(timer)window.clearInterval(timer);if(progressTimer)window.clearInterval(progressTimer);}
+ function start(){stop();if(data.length<2||reduced)return;timer=window.setInterval(()=>show(current+1),duration);}
+ prev?.addEventListener('click',()=>{show(current-1);start();});
+ next?.addEventListener('click',()=>{show(current+1);start();});
+ hero.addEventListener('mouseenter',stop);
+ hero.addEventListener('mouseleave',start);
+ hero.addEventListener('focusin',stop);
+ hero.addEventListener('focusout',start);
+ document.addEventListener('visibilitychange',()=>document.hidden?stop():start());
+ if(data.length>1)start();
+}
+</script>
