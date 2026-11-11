@@ -119,7 +119,7 @@ async function main(){
  await fs.mkdir('src/data',{recursive:true});
  try{
   const top=await globalTrending();
-  await fs.writeFile('src/data/trending.json',JSON.stringify(top,null,2)+'\\n','utf8');
+  await fs.writeFile('src/data/trending.json',JSON.stringify(top,null,2)+'\n','utf8');
   console.log(`تم تحديث قائمة الترندات العالمية: ${top.length} أعمال.`);
  }catch(e){console.error('تعذر تحديث الترندات العالمية، سيتم الاحتفاظ بآخر قائمة:',e.message);}
 
