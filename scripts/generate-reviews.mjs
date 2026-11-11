@@ -147,7 +147,7 @@ async function globalTrending(){
   if(!fallback.ok)throw new Error(`IGDB trending fallback HTTP ${fallback.status}: ${await fallback.text()}`);
   gameList=(await fallback.json()).map((x,i)=>({...x,trendRank:i+1,trendSignal:Number(x.follows)||0}));
  }
- const games=gameList.slice(0,3).map(x=>({
+ const games=[...gameList].sort((a,b)=>(a.trendRank||999)-(b.trendRank||999)).slice(0,3).map(x=>({
   id:String(x.id),sourceId:String(x.id),type:'game',title:x.name||'بدون عنوان',
   poster:x.cover?.image_id?`https://images.igdb.com/igdb/image/upload/t_cover_big/${x.cover.image_id}.jpg`:'',
   backdrop:x.cover?.image_id?`https://images.igdb.com/igdb/image/upload/t_1080p/${x.cover.image_id}.jpg`:'',
