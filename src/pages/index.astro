@@ -2,71 +2,59 @@
 import Base from '../layouts/Base.astro';
 import ReviewCard from '../components/ReviewCard.astro';
 import { getCollection } from 'astro:content';
-import { url } from '../consts';
+import { url, TYPE_PLURAL } from '../consts';
 import trending from '../data/trending.json';
-const reviews = (await getCollection('reviews')).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
-const featured = reviews[0];
-const trendingCards = trending.slice(0,5).map(item => {
-  const review = reviews.find(entry => entry.data.type === item.type && entry.data.sourceId === item.sourceId);
-  return { ...item, review, href: review ? url(`reviews/${review.id}/`) : item.sourceUrl, action: review ? 'اقرأ المراجعة' : 'اكتشف العمل' };
+const reviews=(await getCollection('reviews')).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
+const byType={game:reviews.filter(x=>x.data.type==='game'),series:reviews.filter(x=>x.data.type==='series'),movie:reviews.filter(x=>x.data.type==='movie')};
+const trendReviews=trending.slice(0,5).map(item=>{
+ const review=reviews.find(entry=>entry.data.type===item.type&&entry.data.sourceId===item.sourceId);
+ return {...item,review,href:review?url(`reviews/${review.id}/`):item.sourceUrl};
 });
+const spotlight=trendReviews[0]|| (reviews[0]?{title:reviews[0].data.title,summary:reviews[0].data.summary,backdrop:reviews[0].data.backdrop,poster:reviews[0].data.poster,href:url(`reviews/${reviews[0].id}/`),type:reviews[0].data.type,source:'VibeCritic'}:null);
+const latest=reviews.slice(0,12);
 ---
-<Base title="اكتشف ما يستحق وقتك" description="مراجعات مستقلة للألعاب والأفلام والمسلسلات، بآراء واضحة وتقييمات صريحة.">
-<section class="wrap home-hero">
-<div>
-<p class="eyebrow">THE CULTURE OF ENTERTAINMENT</p>
-<h1 class="hero-title">ليس كل ما يُعرض<br/>يستحق <em>وقتك.</em></h1>
-<p class="hero-description">نقرأ التفاصيل، نختبر التجربة، ونقول رأينا بصراحة. مراجعات تساعدك تختار لعبتك القادمة أو فيلم سهرتك.</p>
-<div class="hero-actions"><a href="#latest" class="primary-action">اكتشف آخر المراجعات ↙</a><a href="#categories" class="text-action">تصفّح الأقسام</a></div>
-</div>
-<div class="hero-visual" aria-label="اختيارات VibeCritic">
-<div class="hero-orbit"></div>
-<div class="hero-stamp">رأي واضح<br/>بلا مجاملة<br/>VIB/01</div>
-{featured?.data.poster ? <img class="featured-poster" src={featured.data.poster} alt={featured.data.title} fetchpriority="high"/> : <div class="featured-fallback">V/C<br/><span class="text-sm tracking-widest">EDITOR'S PICK</span></div>}
-{featured ? <div class="featured-score"><small>أحدث تقييم</small>{featured.data.score.toFixed(1)} / 10</div> : <div class="featured-score"><small>VIBE SCORE</small>10 / 10</div>}
-</div>
+<Base title="اكتشف عالم الترفيه" description="اكتشف أحدث الأفلام والمسلسلات والألعاب، تابع الترندات العالمية واقرأ مراجعات VibeCritic.">
+<section class="wrap discovery-hero">
+ {spotlight?.backdrop&&<img class="discovery-backdrop" src={spotlight.backdrop} alt="" fetchpriority="high"/>}
+ <div class="discovery-shade"></div>
+ <div class="discovery-content">
+  <p class="discovery-kicker"><span></span> VIBECRITIC ORIGINAL / اكتشف الآن</p>
+  <h1>{spotlight?.title||'كل ما يستحق المشاهدة واللعب'}</h1>
+  <p class="discovery-description">{spotlight?.summary||'وجهتك لاكتشاف أحدث الألعاب والأفلام والمسلسلات ومتابعة أكثر الأعمال رواجاً.'}</p>
+  <div class="discovery-actions">
+   {spotlight?.href&&<a class="discovery-primary" href={spotlight.href}>اكتشف التفاصيل <span>↗</span></a>}
+   <a class="discovery-secondary" href="#trending">استكشف الأكثر رواجاً</a>
+  </div>
+ </div>
+ <div class="discovery-index"><strong>01</strong><span>اختيار VibeCritic</span></div>
 </section>
-{trendingCards.length > 0 && <section class="wrap trending-section" aria-labelledby="trending-title">
-<div class="section-heading trending-heading"><div><p class="section-kicker">WORLDWIDE / الآن في الواجهة</p><h2 id="trending-title" class="section-title">Top 5 Trending Worldwide</h2><p class="trending-subtitle">خمسة أعمال تتصدر حديث الجمهور حول العالم</p></div><div class="trending-controls"><button id="trend-prev" type="button" aria-label="الترند السابق">←</button><button id="trend-next" type="button" aria-label="الترند التالي">→</button></div></div>
-<div id="trending-track" class="trending-track" tabindex="0" aria-label="أكثر خمسة أعمال رواجاً حول العالم">
-{trendingCards.map(item => <article class="trend-card">
-<a class="trend-art" href={item.href} target={item.review ? undefined : '_blank'} rel={item.review ? undefined : 'noreferrer'}>
-{item.poster ? <img src={item.backdrop || item.poster} alt={item.title} loading="lazy"/> : <div class="trend-art-fallback">V/C</div>}
-<span class="trend-rank">0{item.rank}</span><span class="trend-source">{item.source} TREND</span>
-</a>
-<div class="trend-copy"><p class="trend-type">{item.type === 'game' ? 'لعبة' : item.type === 'movie' ? 'فيلم' : 'مسلسل'} · عالمي</p><h3>{item.title}</h3><p class="trend-summary">{item.summary || 'عمل يتصدر قوائم الرواج حالياً.'}</p><a class="trend-link" href={item.href} target={item.review ? undefined : '_blank'} rel={item.review ? undefined : 'noreferrer'}>{item.action} <span>↗</span></a></div>
-</article>)}
-</div><p class="trending-note">يُحدّث القسم تلقائياً من قوائم الرواج في TMDB وIGDB.</p>
-</section>}
-<section id="categories" class="wrap pb-8">
-<div class="section-heading"><div><p class="section-kicker">اختَر عالمك</p><h2 class="section-title">ثلاثة عوالم. رأي واحد صريح.</h2></div></div>
-<div class="category-grid">
-<a href={url('category/game/')} class="category-tile"><span class="category-icon">🎮</span><strong>الألعاب</strong><small>تجارب تستحق اللعب ←</small></a>
-<a href={url('category/movie/')} class="category-tile"><span class="category-icon">🎬</span><strong>الأفلام</strong><small>قبل أن تختار سهرتك ←</small></a>
-<a href={url('category/series/')} class="category-tile"><span class="category-icon">▣</span><strong>المسلسلات</strong><small>ما يستحق المتابعة ←</small></a>
-</div>
+<section class="wrap catalog-section" id="trending">
+ <div class="catalog-heading"><div><p class="catalog-eyebrow">WHAT'S POPULAR</p><h2>الرائج الآن</h2><p>الأعمال التي يتحدث عنها الجميع حول العالم</p></div><a href="#new-releases" class="catalog-more">اكتشف الجديد <span>←</span></a></div>
+ {trendReviews.length>0?<div class="catalog-rail trend-rail">
+ {trendReviews.map((item,i)=><a class="catalog-poster-card trend-poster-card" href={item.href} target={item.review?undefined:'_blank'} rel={item.review?undefined:'noreferrer'}>
+  <div class="catalog-poster">{item.poster?<img src={item.poster} alt={item.title} loading="lazy"/>:<div class="poster-fallback">V/C</div>}<span class="catalog-rank">{String(i+1).padStart(2,'0')}</span></div>
+  <div class="catalog-poster-info"><span>{item.type==='game'?'لعبة':item.type==='series'?'مسلسل':'فيلم'} · {item.source}</span><h3>{item.title}</h3><small>{item.review?'اقرأ مراجعة VibeCritic':'اكتشف العمل'} ↗</small></div>
+ </a>)}
+ </div>:<div class="catalog-empty">سيظهر ترتيب الترندات العالمي هنا بعد أول تحديث تلقائي.</div>}
 </section>
-<section id="latest" class="wrap pb-10">
-<div class="section-heading"><div><p class="section-kicker">FRESH TAKES / جديدنا</p><h2 class="section-title">أحدث المراجعات</h2></div><span class="section-count">{reviews.length} مراجعة منشورة</span></div>
-<div class="mb-5"><input id="review-search" aria-label="ابحث عن مراجعة" placeholder="ابحث عن لعبة أو فيلم أو مسلسل..." class="search-field"/></div>
-{reviews.length ? <div id="review-grid" class="review-grid">{reviews.map(review=><div data-search={`${review.data.title} ${review.data.headline} ${review.data.tags.join(' ')}`}><ReviewCard review={review}/></div>)}</div> : <div class="empty-state"><p class="text-4xl">✳</p><h3 class="mt-4 text-xl font-black">المراجعات الأولى في الطريق</h3><p class="mt-2 text-sm text-[#777066]">ستظهر هنا المراجعات فور نشر أول محتوى.</p></div>}
-<p id="empty-search" class="hidden py-8 text-center text-sm text-[#777066]">لا توجد نتائج مطابقة لبحثك.</p>
+<section class="wrap catalog-section" id="new-releases">
+ <div class="catalog-heading"><div><p class="catalog-eyebrow">JUST ADDED</p><h2>أحدث الإضافات</h2><p>آخر الأعمال التي وصلت إلى مكتبة VibeCritic</p></div><a href="#all-reviews" class="catalog-more">كل المراجعات <span>←</span></a></div>
+ {latest.length>0?<div class="catalog-rail">{latest.map(review=><ReviewCard review={review}/>)}</div>:<div class="catalog-empty">المكتبة في بداية انطلاقتها. ستظهر الإضافات الجديدة هنا.</div>}
+</section>
+{(['game','series','movie'] as const).map(type=><section class="wrap catalog-section type-section">
+ <div class="catalog-heading"><div><p class="catalog-eyebrow">{type==='game'?'PLAY YOUR NEXT':type==='series'?'BINGE YOUR NEXT':'YOUR NEXT MOVIE'}</p><h2>{type==='game'?'أحدث الألعاب':type==='series'?'أحدث المسلسلات':'أحدث الأفلام'}</h2><p>اكتشف جديد قسم {TYPE_PLURAL[type]} ومراجعاته</p></div><a href={url(`category/${type}/`)} class="catalog-more">عرض الكل <span>←</span></a></div>
+ {byType[type].length>0?<div class="catalog-rail">{byType[type].slice(0,8).map(review=><ReviewCard review={review}/>)}</div>:<div class="catalog-empty">نعمل على إثراء قسم {TYPE_PLURAL[type]} بمحتوى جديد ومتوازن.</div>}
+</section>)}
+<section class="wrap catalog-section" id="all-reviews">
+ <div class="catalog-heading"><div><p class="catalog-eyebrow">THE WHOLE LIBRARY</p><h2>استكشف المكتبة</h2><p>ابحث في جميع مراجعات الألعاب والأفلام والمسلسلات</p></div><span class="catalog-total">{reviews.length} مراجعة</span></div>
+ <input id="review-search" class="catalog-search" placeholder="ابحث عن عنوان لعبة أو فيلم أو مسلسل..." aria-label="ابحث في المراجعات"/>
+ <div id="review-grid" class="catalog-rail">{reviews.map(review=><div data-search={`${review.data.title} ${review.data.headline} ${review.data.tags.join(' ')}`}><ReviewCard review={review}/></div>)}</div>
+ <p id="empty-search" class="catalog-empty" hidden>لا توجد نتائج مطابقة لبحثك.</p>
 </section>
 <script>
-const track=document.querySelector<HTMLElement>('#trending-track');
-if(track){
- const slides=[...track.querySelectorAll<HTMLElement>('.trend-card')];
- const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
- let active=0;let timer:number|undefined;
- const show=(next:number)=>{active=(next+slides.length)%slides.length;slides[active]?.scrollIntoView({behavior:reduced?'auto':'smooth',inline:'center',block:'nearest'});};
- const stop=()=>{if(timer!==undefined)window.clearInterval(timer);timer=undefined;};
- const start=()=>{if(reduced||slides.length<2||timer!==undefined)return;timer=window.setInterval(()=>show(active+1),4800);};
- document.querySelector('#trend-prev')?.addEventListener('click',()=>{show(active-1);stop();start();});
- document.querySelector('#trend-next')?.addEventListener('click',()=>{show(active+1);stop();start();});
- track.addEventListener('mouseenter',stop);track.addEventListener('mouseleave',start);
- track.addEventListener('focusin',stop);track.addEventListener('focusout',start);
- start();
-}
-const input=document.querySelector<HTMLInputElement>('#review-search');const cards=[...document.querySelectorAll<HTMLElement>('#review-grid [data-search]')];const empty=document.querySelector('#empty-search');input?.addEventListener('input',()=>{const q=input.value.toLowerCase().trim();let count=0;cards.forEach(card=>{const show=card.dataset.search?.toLowerCase().includes(q)??false;card.classList.toggle('hidden',!show);if(show)count++});empty?.classList.toggle('hidden',count!==0||!q)});
+const input=document.querySelector<HTMLInputElement>('#review-search');
+const cards=[...document.querySelectorAll<HTMLElement>('#review-grid [data-search]')];
+const empty=document.querySelector<HTMLElement>('#empty-search');
+input?.addEventListener('input',()=>{const q=input.value.toLowerCase().trim();let count=0;cards.forEach(card=>{const show=card.dataset.search?.toLowerCase().includes(q)??false;card.hidden=!show;if(show)count++;});if(empty)empty.hidden=count!==0||!q;});
 </script>
 </Base>
