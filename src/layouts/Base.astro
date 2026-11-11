@@ -1,41 +1,172 @@
 ---
 import '../styles/global.css';
+import { getCollection } from 'astro:content';
 import { SITE_NAME, SITE_DESC, url } from '../consts';
-const { title = SITE_NAME, description = SITE_DESC } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site);
+const {
+  title = SITE_NAME,
+  description = SITE_DESC,
+  image = '',
+  pageType = 'website',
+  publishedAt = '',
+  noindex = false,
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const searchItems = (await getCollection('reviews')).map((review) => ({
+  title: review.data.title,
+  headline: review.data.headline,
+  type: review.data.type,
+  href: url(\`reviews/\${review.id}/\`),
+  date: review.data.date.toISOString(),
+}));
+const structuredData = pageType === 'article'
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: title,
+      description,
+      mainEntityOfPage: canonical,
+      ...(image ? { image: [image] } : {}),
+      ...(publishedAt ? { datePublished: publishedAt } : {}),
+      publisher: { '@type': 'Organization', name: SITE_NAME },
+    }
+  : {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: SITE_NAME,
+      url: Astro.site?.href || canonical,
+      inLanguage: 'ar',
+    };
+const safeJson = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
 ---
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta name="description" content={description} /><meta name="theme-color" content="#f3f0e8" />
-<link rel="icon" type="image/svg+xml" href={url('favicon.svg')} /><link rel="canonical" href={canonical} />
-<meta property="og:type" content="website" /><meta property="og:title" content={title} /><meta property="og:description" content={description} />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="description" content={description} />
+<meta name="theme-color" content="#f3f0e8" />
+<meta name="robots" content={noindex ? 'noindex,nofollow' : 'index,follow'} />
+<link rel="icon" type="image/svg+xml" href={url('favicon.svg')} />
+<link rel="canonical" href={canonical} />
+<meta property="og:locale" content="ar_DZ" />
+<meta property="og:type" content={pageType === 'article' ? 'article' : 'website'} />
+<meta property="og:site_name" content={SITE_NAME} />
+<meta property="og:url" content={canonical} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+{image && <meta property="og:image" content={image} />}
+<meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+{image && <meta name="twitter:image" content={image} />}
 <title>{title} | {SITE_NAME}</title>
+<script type="application/ld+json" set:html={safeJson(structuredData)}></script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">تجاوز إلى المحتوى</a>
 <header class="site-header">
  <div class="wrap site-nav">
   <a href={url('')} class="brand" aria-label="VibeCritic الصفحة الرئيسية"><span>Vibe</span><span class="brand-accent">Critic</span><small>THE ENTERTAINMENT GUIDE</small></a>
   <nav class="site-links" aria-label="التنقل الرئيسي">
    <a href={url('')}>الرئيسية</a><a href={url('category/game/')}>الألعاب</a><a href={url('category/movie/')}>الأفلام</a><a href={url('category/series/')}>المسلسلات</a>
   </nav>
-  <a class="header-search" href={url('') + '#all-reviews'} aria-label="ابحث في المكتبة"><span>⌕</span><span class="header-search-label">بحث</span></a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="تبديل المظهر">◐</button>
+  <button class="header-search" id="site-search-open" type="button" aria-haspopup="dialog" aria-controls="site-search-dialog"><span aria-hidden="true">⌕</span><span class="header-search-label">بحث</span></button>
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="تبديل المظهر" aria-pressed="false">◐</button>
  </div>
 </header>
-<main><slot /></main>
+<dialog class="site-search-dialog" id="site-search-dialog" aria-labelledby="site-search-title">
+ <div class="site-search-panel">
+  <div class="site-search-heading">
+   <div><p class="catalog-eyebrow">VIBECRITIC SEARCH</p><h2 id="site-search-title">ابحث في مكتبة VibeCritic</h2></div>
+   <button class="site-search-close" id="site-search-close" type="button" aria-label="إغلاق البحث">×</button>
+  </div>
+  <label class="site-search-label" for="site-search-input">اسم لعبة أو فيلم أو مسلسل</label>
+  <input id="site-search-input" class="catalog-search" type="search" autocomplete="off" placeholder="اكتب ما تريد البحث عنه..." />
+  <p class="site-search-hint" id="site-search-status" aria-live="polite">ابدأ الكتابة للبحث في جميع المراجعات.</p>
+  <div class="site-search-results" id="site-search-results"></div>
+ </div>
+</dialog>
+<script type="application/json" id="site-search-data" set:html={safeJson(searchItems)}></script>
+<main id="main-content"><slot /></main>
 <footer class="site-footer">
  <div class="wrap footer-inner">
   <a href={url('')} class="footer-brand">Vibe<span>Critic</span></a>
   <p>© {new Date().getFullYear()} {SITE_NAME}. نراجع بوضوح، ونترك القرار لك.</p>
-  <p>بيانات الأفلام والمسلسلات مقدمة عبر <a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer">TMDb</a>. هذا المنتج يستخدم TMDb API لكنه غير معتمد أو مصادق عليه من TMDb.</p>
-  <p>بيانات الألعاب مقدمة عبر <a href="https://www.igdb.com/" target="_blank" rel="noreferrer">IGDB</a>.</p>
+  <p>بيانات الأفلام والمسلسلات مقدمة عبر <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer">TMDb</a>. هذا المنتج يستخدم TMDb API لكنه غير معتمد أو مصادق عليه من TMDb.</p>
+  <p>بيانات الألعاب مقدمة عبر <a href="https://www.igdb.com/" target="_blank" rel="noopener noreferrer">IGDB</a>.</p>
  </div>
 </footer>
-<script is:inline>
-const btn=document.getElementById('theme-toggle');
-const saved=localStorage.getItem('vc-theme');
-if(saved==='dark')document.documentElement.classList.add('dark-mode');
-btn?.addEventListener('click',()=>{document.documentElement.classList.toggle('dark-mode');localStorage.setItem('vc-theme',document.documentElement.classList.contains('dark-mode')?'dark':'light')});
+<script>
+const themeButton = document.getElementById('theme-toggle');
+try {
+  const savedTheme = localStorage.getItem('vc-theme');
+  if (savedTheme === 'dark') document.documentElement.classList.add('dark-mode');
+} catch {}
+const updateThemeButton = () => themeButton?.setAttribute('aria-pressed', String(document.documentElement.classList.contains('dark-mode')));
+updateThemeButton();
+themeButton?.addEventListener('click', () => {
+  const dark = document.documentElement.classList.toggle('dark-mode');
+  try { localStorage.setItem('vc-theme', dark ? 'dark' : 'light'); } catch {}
+  updateThemeButton();
+});
+
+const searchDialog = document.getElementById('site-search-dialog');
+const searchOpen = document.getElementById('site-search-open');
+const searchClose = document.getElementById('site-search-close');
+const searchInput = document.getElementById('site-search-input');
+const searchResults = document.getElementById('site-search-results');
+const searchStatus = document.getElementById('site-search-status');
+const searchDataElement = document.getElementById('site-search-data');
+let searchItems = [];
+try { searchItems = JSON.parse(searchDataElement?.textContent || '[]'); } catch {}
+const normalizeSearch = (value) => String(value || '')
+  .toLocaleLowerCase('ar')
+  .normalize('NFKD')
+  .replace(/[\u064B-\u065F\u0670\u0640]/g, '')
+  .replace(/[أإآ]/g, 'ا')
+  .replace(/ى/g, 'ي')
+  .replace(/ة/g, 'ه')
+  .trim();
+
+function renderSearchResults() {
+  if (!searchResults || !searchStatus || !searchInput) return;
+  const query = normalizeSearch(searchInput.value);
+  const matches = searchItems
+    .filter((item) => !query || normalizeSearch(\`\${item.title} \${item.headline} \${item.type}\`).includes(query))
+    .slice(0, 12);
+  searchResults.replaceChildren();
+  if (!matches.length) {
+    searchStatus.textContent = 'لا توجد نتائج مطابقة. جرّب اسماً آخر.';
+    return;
+  }
+  searchStatus.textContent = query
+    ? \`عُثر على \${matches.length} نتيجة مطابقة.\`
+    : 'أحدث المراجعات في المكتبة:';
+  for (const item of matches) {
+    const link = document.createElement('a');
+    link.className = 'site-search-result';
+    link.href = item.href;
+    const title = document.createElement('strong');
+    title.textContent = item.title;
+    const detail = document.createElement('span');
+    const typeLabel = item.type === 'game' ? 'لعبة' : item.type === 'series' ? 'مسلسل' : 'فيلم';
+    detail.textContent = \`\${typeLabel} · \${item.headline || 'مراجعة VibeCritic'}\`;
+    link.append(title, detail);
+    searchResults.append(link);
+  }
+}
+searchOpen?.addEventListener('click', () => {
+  if (searchDialog instanceof HTMLDialogElement && !searchDialog.open) searchDialog.showModal();
+  searchInput?.focus();
+  renderSearchResults();
+});
+searchClose?.addEventListener('click', () => {
+  if (searchDialog instanceof HTMLDialogElement) searchDialog.close();
+});
+searchDialog?.addEventListener('click', (event) => {
+  if (event.target === searchDialog && searchDialog instanceof HTMLDialogElement) searchDialog.close();
+});
+searchInput?.addEventListener('input', renderSearchResults);
 </script>
-</body></html>
+</body>
+</html>
