@@ -33,9 +33,20 @@ async function tmdb(type){
  return(d.results||[]).map(x=>({id:String(x.id),type,name:x.title||x.name||'بدون عنوان',description:x.overview||'',date:x.release_date||x.first_air_date||'',poster:x.poster_path?`https://image.tmdb.org/t/p/w500${x.poster_path}`:'',backdrop:x.backdrop_path?`https://image.tmdb.org/t/p/w1280${x.backdrop_path}`:'',rating:Number(x.vote_average)||0,genres:[],sourceUrl:`https://www.themoviedb.org/${endpoint}/${x.id}`}));
 }
 async function games(){
- const key=required('RAWG_API_KEY'),since=new Date(Date.now()-gamesWindowDays*86400000).toISOString().slice(0,10),until=new Date().toISOString().slice(0,10);
- const d=await getJson(`https://api.rawg.io/api/games?key=${key}&dates=${since},${until}&ordering=-added&page_size=20`);
- return(d.results||[]).map(x=>({id:String(x.id),type:'game',name:x.name,description:'',date:x.released||'',poster:x.background_image||'',backdrop:x.background_image||'',rating:Number(x.rating)||0,genres:(x.genres||[]).map(g=>g.name),sourceUrl:x.slug?`https://rawg.io/games/${x.slug}`:`https://rawg.io/games/${x.id}`}));
+ const clientId=required('IGDB_CLIENT_ID'),clientSecret=required('IGDB_CLIENT_SECRET');
+ const tokenResponse=await fetch('https://id.twitch.tv/oauth2/token',{method:'POST',headers:{'content-type':'application/x-www-form-urlencoded'},body:new URLSearchParams({client_id:clientId,client_secret:clientSecret,grant_type:'client_credentials'})});
+ if(!tokenResponse.ok)throw new Error(`Twitch OAuth HTTP ${tokenResponse.status}: ${await tokenResponse.text()}`);
+ const {access_token}=await tokenResponse.json();
+ if(!access_token)throw new Error('لم يرجع Twitch access token صالحاً');
+ const since=Math.floor((Date.now()-gamesWindowDays*86400000)/1000);
+ const query=`fields name,summary,first_release_date,cover.image_id,genres.name,rating,url; where first_release_date >= ${since}; sort first_release_date desc; limit 30;`;
+ const r=await fetch('https://api.igdb.com/v4/games',{method:'POST',headers:{'Client-ID':clientId,Authorization:`Bearer ${access_token}`,Accept:'application/json','Content-Type':'text/plain'},body:query});
+ if(!r.ok)throw new Error(`IGDB HTTP ${r.status}: ${await r.text()}`);
+ const data=await r.json();
+ return data.map(x=>{
+  const image=x.cover?.image_id?`https://images.igdb.com/igdb/image/upload/t_cover_big/${x.cover.image_id}.jpg`:'';
+  return {id:String(x.id),type:'game',name:x.name||'بدون عنوان',description:x.summary||'',date:x.first_release_date?new Date(x.first_release_date*1000).toISOString().slice(0,10):'',poster:image,backdrop:image,rating:Number(x.rating)||0,genres:(x.genres||[]).map(g=>g.name),sourceUrl:x.url||`https://www.igdb.com/games/${x.id}`};
+ });
 }
 async function writeReview(item){
  const a=await generateReview(item),date=new Date().toISOString().slice(0,10);
