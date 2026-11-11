@@ -6,10 +6,12 @@ import { url, TYPE_PLURAL, optimizeImage } from '../consts';
 import trending from '../data/trending.json';
 const reviews=(await getCollection('reviews')).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
 const byType={game:reviews.filter(x=>x.data.type==='game'),series:reviews.filter(x=>x.data.type==='series'),movie:reviews.filter(x=>x.data.type==='movie')};
-const trendReviews=trending.slice(0,5).map(item=>{
+// اعرض في الترندات الأعمال التي تملك مراجعة منشورة داخل VibeCritic فقط.
+const trendReviews=trending.flatMap(item=>{
  const review=reviews.find(entry=>entry.data.type===item.type&&entry.data.sourceId===item.sourceId);
- return {...item,poster:optimizeImage(item.poster),backdrop:optimizeImage(item.backdrop||item.poster,'backdrop'),review,href:review?url(`reviews/${review.id}/`):url(`category/${item.type}/`)};
-});
+ if(!review)return [];
+ return [{...item,poster:optimizeImage(item.poster),backdrop:optimizeImage(item.backdrop||item.poster,'backdrop'),review,href:url(`reviews/${review.id}/`)}];
+}).slice(0,5);
 const spotlight=trendReviews[0]||null;
 const latest=reviews.slice(0,12);
 ---
@@ -26,7 +28,7 @@ const latest=reviews.slice(0,12);
   <h1 class="spotlight-title">{spotlight?.title||'أبرز المواضيع الرائجة'}</h1>
   <p class="discovery-description spotlight-description">{spotlight?.summary||'اكتشف أبرز ما يتصدر الاهتمام حول العالم الآن.'}</p>
   <div class="discovery-actions">
-   <a class="discovery-primary spotlight-link" href={spotlight?.href||'#trending'}>اكتشف الترند <span>↗</span></a>
+   {spotlight&&<a class="discovery-primary spotlight-link" href={spotlight.href}>اقرأ المراجعة <span>↗</span></a>}
    <a class="discovery-secondary" href="#trending">كل الترندات</a>
   </div>
  </div>
@@ -37,7 +39,7 @@ const latest=reviews.slice(0,12);
  </div>
  <div class="spotlight-progress" aria-hidden="true"><span></span></div>
  <div class="spotlight-data" hidden>
-  {trendReviews.map(item=><i data-title={item.title} data-summary={item.summary||''} data-backdrop={item.backdrop||item.poster||''} data-poster={item.poster||''} data-type={item.type} data-source={item.source||''} data-href={item.href} data-review={item.review?'yes':'no'}></i>)}
+  {trendReviews.map(item=><i data-title={item.title} data-summary={item.summary||''} data-backdrop={item.backdrop||item.poster||''} data-poster={item.poster||''} data-type={item.type} data-source={item.source||''} data-href={item.href}></i>)}
  </div>
 </section>
 <section class="wrap catalog-section" id="trending">
@@ -45,7 +47,7 @@ const latest=reviews.slice(0,12);
  {trendReviews.length>0?<div class="catalog-rail trend-rail">
  {trendReviews.map((item,i)=><a class="catalog-poster-card trend-poster-card" href={item.href}>
   <div class="catalog-poster">{item.poster?<img src={item.poster} alt={item.title} loading="lazy" decoding="async"/>:<div class="poster-fallback">V/C</div>}<span class="catalog-rank">{String(i+1).padStart(2,'0')}</span></div>
-  <div class="catalog-poster-info"><span>{item.type==='game'?'لعبة':item.type==='series'?'مسلسل':'فيلم'} · {item.source}</span><h3>{item.title}</h3><small>{item.review?'اقرأ مراجعة VibeCritic':'اكتشف العمل'} ↗</small></div>
+  <div class="catalog-poster-info"><span>{item.type==='game'?'لعبة':item.type==='series'?'مسلسل':'فيلم'} · {item.source}</span><h3>{item.title}</h3><small>اقرأ مراجعة VibeCritic ↗</small></div>
  </a>)}
  </div>:<div class="catalog-empty">سيظهر ترتيب الترندات العالمي هنا بعد أول تحديث تلقائي.</div>}
 </section>
@@ -117,7 +119,7 @@ if(hero){
    if(title)title.textContent=item.title||'ترند عالمي';
    if(summary)summary.textContent=item.summary||'هذا العمل ضمن أبرز المواضيع الرائجة عالمياً حالياً.';
    if(category)category.textContent=(labels[item.type]||'ترند عالمي')+' · '+(item.source||'TRENDING');
-   if(link){link.href=item.href||'#trending';link.removeAttribute('target');link.removeAttribute('rel');}
+   if(link){link.href=item.href;link.removeAttribute('target');link.removeAttribute('rel');}
    if(count)count.textContent=String(current+1).padStart(2,'0');
    hero.querySelector('.spotlight-copy')?.classList.remove('is-changing');
   },reduced?0:220);
