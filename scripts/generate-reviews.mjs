@@ -72,7 +72,7 @@ async function tmdb(type){
  const map=x=>({id:String(x.id),type,name:x.title||x.name||'بدون عنوان',description:x.overview||'',date:x.release_date||x.first_air_date||'',poster:x.poster_path?`https://image.tmdb.org/t/p/w500${x.poster_path}`:'',backdrop:x.backdrop_path?`https://image.tmdb.org/t/p/w1280${x.backdrop_path}`:'',rating:Number(x.vote_average)||0,genres:[],sourceUrl:`https://www.themoviedb.org/${endpoint}/${x.id}`,popularity:Number(x.popularity)||0});
  const merged=new Map();
  for(const item of [...(trend.results||[]).map(map),...(discover.results||[]).map(map)])if(!merged.has(item.id))merged.set(item.id,item);
- return [...merged.values()].sort((a,b)=>(b.date||'').localeCompare(a.date||'')||b.popularity-a.popularity);
+ return [...merged.values()].sort((a,b)=>(a.trendRank??999)-(b.trendRank??999)||b.popularity-a.popularity||(b.date||'').localeCompare(a.date||''));
 }
 async function games(){
  const clientId=required('IGDB_CLIENT_ID'),clientSecret=required('IGDB_CLIENT_SECRET');
@@ -80,51 +80,83 @@ async function games(){
  if(!tokenResponse.ok)throw new Error(`Twitch OAuth HTTP ${tokenResponse.status}: ${await tokenResponse.text()}`);
  const {access_token}=await tokenResponse.json();
  if(!access_token)throw new Error('لم يرجع Twitch access token صالحاً');
+ const headers={'Client-ID':clientId,Authorization:`Bearer ${access_token}`,Accept:'application/json','Content-Type':'text/plain'};
  const since=Math.floor((Date.now()-gamesWindowDays*86400000)/1000);
- const query=`fields name,summary,first_release_date,cover.image_id,genres.name,rating,url; where first_release_date >= ${since}; sort first_release_date desc; limit 30;`;
- const r=await fetch('https://api.igdb.com/v4/games',{method:'POST',headers:{'Client-ID':clientId,Authorization:`Bearer ${access_token}`,Accept:'application/json','Content-Type':'text/plain'},body:query});
- if(!r.ok)throw new Error(`IGDB HTTP ${r.status}: ${await r.text()}`);
- const data=await r.json();
- return data.map(x=>{
+ const recentQuery=`fields name,summary,first_release_date,cover.image_id,genres.name,rating,follows,hypes,rating_count,url; where first_release_date >= ${since}; sort first_release_date desc; limit 30;`;
+ const recentResponse=await fetch('https://api.igdb.com/v4/games',{method:'POST',headers,body:recentQuery});
+ if(!recentResponse.ok)throw new Error(`IGDB recent games HTTP ${recentResponse.status}: ${await recentResponse.text()}`);
+ let trendingGames=[];
+ try{
+  const popularityQuery='fields game_id,popularity_type,value; where popularity_type = 1; sort value desc; limit 60;';
+  const popularityResponse=await fetch('https://api.igdb.com/v4/popularity_primitives',{method:'POST',headers,body:popularityQuery});
+  if(popularityResponse.ok){
+   const primitives=await popularityResponse.json();
+   const ids=[...new Set(primitives.map(x=>Number(x.game_id)).filter(Boolean))].slice(0,40);
+   if(ids.length){
+    const detailResponse=await fetch('https://api.igdb.com/v4/games',{method:'POST',headers,body:`fields name,summary,first_release_date,cover.image_id,genres.name,rating,follows,hypes,rating_count,url; where id = (${ids.join(',')}); limit 40;`});
+    if(detailResponse.ok){
+     const details=await detailResponse.json(),rankById=new Map(primitives.map((x,i)=>[String(x.game_id),{rank:i+1,signal:Number(x.value)||0}]));
+     trendingGames=details.map(x=>({...x,trendRank:rankById.get(String(x.id))?.rank||999,trendSignal:rankById.get(String(x.id))?.signal||0}));
+    }
+   }
+  }else console.warn('IGDB popularity endpoint unavailable; using follows and hypes:',popularityResponse.status);
+ }catch(e){console.warn('تعذر جلب مؤشرات شعبية IGDB؛ سيتم استخدام مؤشرات الألعاب البديلة:',e.message);}
+ const recent=await recentResponse.json();
+ const byId=new Map();
+ for(const x of [...trendingGames,...recent]){
+  const previous=byId.get(String(x.id));
+  if(!previous||Number(x.trendRank||999)<Number(previous.trendRank||999))byId.set(String(x.id),x);
+ }
+ return [...byId.values()].map(x=>{
   const image=x.cover?.image_id?`https://images.igdb.com/igdb/image/upload/t_cover_big/${x.cover.image_id}.jpg`:'';
-  return {id:String(x.id),type:'game',name:x.name||'بدون عنوان',description:x.summary||'',date:x.first_release_date?new Date(x.first_release_date*1000).toISOString().slice(0,10):'',poster:image,backdrop:image,rating:Number(x.rating)||0,genres:(x.genres||[]).map(g=>g.name),sourceUrl:x.url||`https://www.igdb.com/games/${x.id}`};
- });
+  return {id:String(x.id),type:'game',name:x.name||'بدون عنوان',description:x.summary||'',date:x.first_release_date?new Date(x.first_release_date*1000).toISOString().slice(0,10):'',poster:image,backdrop:image,rating:Number(x.rating)||0,genres:(x.genres||[]).map(g=>g.name),sourceUrl:x.url||`https://www.igdb.com/games/${x.id}`,popularity:Number(x.trendSignal)||0,trendRank:Number(x.trendRank)||999,follows:Number(x.follows)||0,hypes:Number(x.hypes)||0,ratingCount:Number(x.rating_count)||0};
+ }).sort((a,b)=>a.trendRank-b.trendRank||((b.hypes*3+b.follows+b.ratingCount)-(a.hypes*3+a.follows+a.ratingCount))||b.popularity-a.popularity);
 }
 async function globalTrending(){
  const key=required('TMDB_API_KEY');
  const trending=await getJson(`https://api.themoviedb.org/3/trending/all/week?api_key=${key}&language=ar`);
- const media=(trending.results||[]).filter(x=>x.media_type==='movie'||x.media_type==='tv').slice(0,3).map(x=>({
+ const media=(trending.results||[]).filter(x=>x.media_type==='movie'||x.media_type==='tv').map((x,i)=>({
   id:String(x.id),sourceId:String(x.id),type:x.media_type==='tv'?'series':'movie',
   title:x.title||x.name||'بدون عنوان',poster:x.poster_path?`https://image.tmdb.org/t/p/w500${x.poster_path}`:'',
   backdrop:x.backdrop_path?`https://image.tmdb.org/t/p/w1280${x.backdrop_path}`:'',
   summary:x.overview||'',sourceUrl:`https://www.themoviedb.org/${x.media_type==='tv'?'tv':'movie'}/${x.id}`,
-  source:'TMDB',sourceRank:Number(x.popularity)||0
+  source:'TMDB',sourceRank:Number(x.popularity)||0,trendRank:i+1,updatedAt:new Date().toISOString()
  }));
  const clientId=required('IGDB_CLIENT_ID'),clientSecret=required('IGDB_CLIENT_SECRET');
  const tokenResponse=await fetch('https://id.twitch.tv/oauth2/token',{method:'POST',headers:{'content-type':'application/x-www-form-urlencoded'},body:new URLSearchParams({client_id:clientId,client_secret:clientSecret,grant_type:'client_credentials'})});
  if(!tokenResponse.ok)throw new Error(`Twitch OAuth HTTP ${tokenResponse.status}: ${await tokenResponse.text()}`);
  const {access_token}=await tokenResponse.json();
  if(!access_token)throw new Error('لم يرجع Twitch access token صالحاً');
- const gtaQuery='search "Grand Theft Auto VI"; fields name,summary,cover.image_id,follows,url,first_release_date; limit 5;';
- const popularQuery='fields name,summary,cover.image_id,follows,url,first_release_date; where follows > 0; sort follows desc; limit 20;';
- const [gtaResponse,popularResponse]=await Promise.all([
-  fetch('https://api.igdb.com/v4/games',{method:'POST',headers:{'Client-ID':clientId,Authorization:`Bearer ${access_token}`,Accept:'application/json','Content-Type':'text/plain'},body:gtaQuery}),
-  fetch('https://api.igdb.com/v4/games',{method:'POST',headers:{'Client-ID':clientId,Authorization:`Bearer ${access_token}`,Accept:'application/json','Content-Type':'text/plain'},body:popularQuery})
- ]);
- if(!gtaResponse.ok)throw new Error(`IGDB GTA VI search HTTP ${gtaResponse.status}: ${await gtaResponse.text()}`);
- if(!popularResponse.ok)throw new Error(`IGDB trending HTTP ${popularResponse.status}: ${await popularResponse.text()}`);
- const gtaResults=await gtaResponse.json();
- const popularResults=await popularResponse.json();
- const gta=gtaResults.find(x=>/grand theft auto vi|gta.?6/i.test(x.name||''));
- const gameItems=[...(gta?[gta]:[]),...popularResults.filter(x=>!gta||String(x.id)!==String(gta.id))];
- const games=gameItems.slice(0,3).map(x=>({
+ const headers={'Client-ID':clientId,Authorization:`Bearer ${access_token}`,Accept:'application/json','Content-Type':'text/plain'};
+ let gameList=[];
+ try{
+  const popularityResponse=await fetch('https://api.igdb.com/v4/popularity_primitives',{method:'POST',headers,body:'fields game_id,popularity_type,value; where popularity_type = 1; sort value desc; limit 30;'});
+  if(popularityResponse.ok){
+   const primitives=await popularityResponse.json(),ids=[...new Set(primitives.map(x=>Number(x.game_id)).filter(Boolean))].slice(0,20);
+   if(ids.length){
+    const detailResponse=await fetch('https://api.igdb.com/v4/games',{method:'POST',headers,body:`fields name,summary,cover.image_id,follows,hypes,rating_count,url; where id = (${ids.join(',')}); limit 20;`});
+    if(detailResponse.ok){
+     const details=await detailResponse.json(),rankById=new Map(primitives.map((x,i)=>[String(x.game_id),{rank:i+1,signal:Number(x.value)||0}]));
+     gameList=details.map(x=>({...x,trendRank:rankById.get(String(x.id))?.rank||999,trendSignal:rankById.get(String(x.id))?.signal||0}));
+    }
+   }
+  }else console.warn('تعذر الوصول إلى مؤشرات ترند IGDB:',popularityResponse.status);
+ }catch(e){console.warn('تعذر جلب ترند الألعاب من IGDB:',e.message);}
+ if(!gameList.length){
+  const fallback=await fetch('https://api.igdb.com/v4/games',{method:'POST',headers,body:'fields name,summary,cover.image_id,follows,hypes,rating_count,url; where follows > 0 | hypes > 0; sort follows desc; limit 20;'});
+  if(!fallback.ok)throw new Error(`IGDB trending fallback HTTP ${fallback.status}: ${await fallback.text()}`);
+  gameList=(await fallback.json()).map((x,i)=>({...x,trendRank:i+1,trendSignal:Number(x.follows)||0}));
+ }
+ const games=gameList.slice(0,3).map(x=>({
   id:String(x.id),sourceId:String(x.id),type:'game',title:x.name||'بدون عنوان',
   poster:x.cover?.image_id?`https://images.igdb.com/igdb/image/upload/t_cover_big/${x.cover.image_id}.jpg`:'',
   backdrop:x.cover?.image_id?`https://images.igdb.com/igdb/image/upload/t_1080p/${x.cover.image_id}.jpg`:'',
-  summary:x.summary||'',sourceUrl:x.url||`https://www.igdb.com/games/${x.id}`,source:'IGDB',sourceRank:Number(x.follows)||0
+  summary:x.summary||'',sourceUrl:x.url||`https://www.igdb.com/games/${x.id}`,
+  source:'IGDB',sourceRank:Number(x.trendSignal)||Number(x.follows)||0,trendRank:Number(x.trendRank)||999,updatedAt:new Date().toISOString()
  }));
- const picks=[...(gta?games.slice(0,1):[]),media[0],media[1],games[gta?1:0],media[2]].filter(Boolean).slice(0,5);
- return picks.map((x,i)=>({...x,rank:i+1,updatedAt:new Date().toISOString()}));
+ const picks=[];
+ for(let i=0;i<3;i++){if(media[i])picks.push(media[i]);if(games[i])picks.push(games[i]);}
+ return picks.slice(0,6).map((x,i)=>({...x,rank:i+1}));
 }
 async function writeReview(item){
  const a=await generateReview(item),date=new Date().toISOString().slice(0,10);
@@ -159,7 +191,7 @@ async function main(){
   if(gap>1){
    chosenType=available.sort((a,b)=>counts[a]-counts[b]||(a==='game'?-1:b==='game'?1:a.localeCompare(b)))[0];
   }else{
-   const newest=available.flatMap(type=>pools[type].map(item=>({type,item}))).sort((a,b)=>(b.item.date||'').localeCompare(a.item.date||'')||(b.item.popularity||0)-(a.item.popularity||0))[0];
+   const newest=available.flatMap(type=>pools[type].map(item=>({type,item}))).sort((a,b)=>(a.item.trendRank??999)-(b.item.trendRank??999)||(b.item.popularity||0)-(a.item.popularity||0)||(b.item.date||'').localeCompare(a.item.date||''))[0];
    chosenType=newest.type;
   }
   const item=pools[chosenType].shift();
