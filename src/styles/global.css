@@ -255,3 +255,21 @@ button,input{font:inherit}
  .catalog-heading h2{font-size:21px}.catalog-heading p:not(.catalog-eyebrow){font-size:10px}.catalog-more{font-size:10px}
 }
 @media(prefers-reduced-motion:reduce){.catalog-rail{scroll-behavior:auto;scroll-snap-type:x proximity}.catalog-poster-card,.catalog-poster img,.catalog-more span{transition:none!important}}
+
+
+.category-discovery{position:relative;isolation:isolate;min-height:285px;margin-top:24px;overflow:hidden;background:#24211d;color:#fff;display:flex;align-items:flex-end}
+.category-backdrop{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;opacity:.55}
+.category-overlay{position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,#171613 0%,rgba(23,22,19,.55) 100%)}
+.category-discovery-copy{padding:38px 42px;max-width:760px}
+.category-discovery-copy h1{margin:10px 0;font-size:clamp(32px,4.5vw,52px);font-weight:950;line-height:1.2}
+.category-discovery-copy>p:not(.catalog-eyebrow){max-width:640px;color:#e3dbd0;font-size:13px;line-height:1.9}
+.category-stat{display:flex;align-items:center;gap:10px;margin-top:19px;color:#e6ddd2;font-size:11px}
+.category-stat strong{font-size:24px;color:#e45c38}
+.category-review-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
+.category-switcher{display:flex;gap:8px;padding:30px 0 10px}
+.category-switcher a{padding:10px 18px;border:1px solid #d9d3c7;color:#665e54;font-size:11px;font-weight:900}
+.category-switcher a.active,.category-switcher a:hover{background:#e45c38;border-color:#e45c38;color:#fff}
+.dark-mode .category-switcher a{border-color:#504a40;color:#d2cabc}
+.dark-mode .category-switcher a.active,.dark-mode .category-switcher a:hover{background:#e45c38;color:#fff;border-color:#e45c38}
+@media(max-width:900px){.category-review-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:650px){.category-discovery{min-height:250px;margin-top:14px}.category-discovery-copy{padding:27px 20px}.category-discovery-copy h1{font-size:32px}.category-discovery-copy>p:not(.catalog-eyebrow){font-size:11px}.category-review-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
