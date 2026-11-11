@@ -95,9 +95,20 @@ if(hero){
   const nextImage=1-activeImage;
   const src=item.backdrop||item.poster||'';
   if(src){
-   images[nextImage].onload=()=>{images[nextImage].classList.add('is-active');images[activeImage].classList.remove('is-active');activeImage=nextImage;};
+   images[nextImage].onload=null;
+   images[nextImage].removeAttribute('src');
+   let activated=false;
+   const activateImage=()=>{
+    if(activated||current!==index||!images[nextImage].naturalWidth)return;
+    activated=true;
+    images[nextImage].onload=null;
+    images[nextImage].classList.add('is-active');
+    images[activeImage].classList.remove('is-active');
+    activeImage=nextImage;
+   };
+   images[nextImage].onload=activateImage;
    images[nextImage].src=src;
-   if(images[nextImage].complete&&images[nextImage].naturalWidth>0) {images[nextImage].classList.add('is-active');images[activeImage].classList.remove('is-active');activeImage=nextImage;}
+   if(images[nextImage].complete)activateImage();
   }
   hero.querySelector('.spotlight-copy')?.classList.add('is-changing');
   window.setTimeout(()=>{
