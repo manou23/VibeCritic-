@@ -109,6 +109,7 @@ async function generateReview(item){
    if(!parsed&&attempt<2){const previous=typeof text==='string'&&text.trim()?text.slice(0,5000):'(لا يوجد محتوى)';messages=[...messages,{role:'assistant',content:previous},{role:'user',content:'أعد JSON صالحاً بالمفاتيح hook وheadline وsummary وscore وpros وcons وtags وverdict وreview مع كل عناوين المحاور المطلوبة. لا تشرح الخطأ.'}];}
   }
   if(!parsed&&(env.OPENAI_API_KEY||env.GEMINI_API_KEY)){openRouterFallbackActive=true;parsed=await generateFallback(prompt);}if(!parsed)throw new Error('تعذر الحصول على JSON صالح بعد 3 محاولات: '+lastIssue);
+ }
  }else if(provider==='gemini'){
   parsed=await generateWithGemini(prompt);
  }else throw new Error('AI_PROVIDER يجب أن يكون openai أو gemini أو openrouter');
