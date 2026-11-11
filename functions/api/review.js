@@ -1,15 +1,15 @@
 const DEFAULTS = [
-  {name:'OpenRouter',base:'https://openrouter.ai/api/v1',model:'openrouter/free',list:'OPENROUTER_API_KEYS',single:'OPENROUTER_API_KEY'},
-  {name:'Groq',base:'https://api.groq.com/openai/v1',model:'openai/gpt-oss-120b',list:'GROQ_API_KEYS',single:'GROQ_API_KEY'},
-  {name:'Google AI Studio',base:'https://generativelanguage.googleapis.com/v1beta/openai',model:'gemini-2.5-flash',list:'GEMINI_API_KEYS',single:'GEMINI_API_KEY'},
-  {name:'OpenAI',base:'https://api.openai.com/v1',model:'gpt-4o-mini',list:'OPENAI_API_KEYS',single:'OPENAI_API_KEY'}
+  {name:'OpenRouter',base:'https://openrouter.ai/api/v1',model:'openrouter/free',modelEnv:'OPENROUTER_MODEL',list:'OPENROUTER_API_KEYS',single:'OPENROUTER_API_KEY'},
+  {name:'Groq',base:'https://api.groq.com/openai/v1',model:'openai/gpt-oss-120b',modelEnv:'GROQ_MODEL',list:'GROQ_API_KEYS',single:'GROQ_API_KEY'},
+  {name:'Google AI Studio',base:'https://generativelanguage.googleapis.com/v1beta/openai',model:'gemini-2.5-flash',modelEnv:'GEMINI_MODEL',list:'GEMINI_API_KEYS',single:'GEMINI_API_KEY'},
+  {name:'OpenAI',base:'https://api.openai.com/v1',model:'gpt-4o-mini',modelEnv:'OPENAI_MODEL',list:'OPENAI_API_KEYS',single:'OPENAI_API_KEY'}
 ];
 const SYSTEM = 'أنت ناقد فني مخضرم ومتخصص في السينما والألعاب. اكتب مراجعة عربية عميقة وجريئة وصادقة، وادخل مباشرة إلى الفكرة النقدية دون مقدمات مستهلكة. كن صريحاً بلا دعاية أو مجاملة. لا تدّع أنك شاهدت أو لعبت العمل بنفسك، ولا تختلق أحداثاً أو أسماء أو تفاصيل إنتاج أو معلومات غير مؤكدة. تجنب حرق الأحداث الجوهرية. أعد JSON صالحاً فقط بهذه المفاتيح: title, hook, story, style, visuals, audio, pros, cons, verdict, score. اجعل story تحليلاً للقصة والسرد، وstyle لأسلوب اللعب في الألعاب أو الإخراج والأداء في الأفلام، وvisuals للرسوميات والتصميم الفني أو التصوير واللغة البصرية، وaudio للصوتيات والموسيقى. pros مصفوفة من 3 نقاط محددة، cons مصفوفة من نقطتين محددتين، verdict خلاصة نقدية، score رقم من 0 إلى 10 بخطوة عشرية. لا تخترع معلومات عند عدم اليقين، واذكر حدود المعرفة.';
 function keys(value){if(!value)return[];const s=String(value).trim();try{const v=JSON.parse(s);if(Array.isArray(v))return v.map(String).map(x=>x.trim()).filter(Boolean)}catch{}return s.split(/[\n,;]+/).map(x=>x.trim()).filter(Boolean)}
 function providers(env){
  let cfg=DEFAULTS;
  if(env.AI_PROVIDERS){try{cfg=JSON.parse(env.AI_PROVIDERS);if(!Array.isArray(cfg))throw Error()}catch{throw Error('AI_PROVIDERS يجب أن يكون مصفوفة JSON صحيحة.')}}
- return cfg.map((p,i)=>({name:String(p.name||('Provider '+(i+1))),base:String(p.baseUrl||p.base||'').replace(/\/+$/,''),model:String(p.model||''),keys:[...new Set([...keys(p.keysEnv?env[p.keysEnv]:''),...keys(p.singleKeyEnv?env[p.singleKeyEnv]:''),...keys(p.list?env[p.list]:''),...keys(p.single?env[p.single]:''),...keys(p.keys),...keys(p.apiKeys)])],headers:p.headers||{}})).filter(p=>p.base&&p.model&&p.keys.length);
+ return cfg.map((p,i)=>({name:String(p.name||('Provider '+(i+1))),base:String(p.baseUrl||p.base||'').replace(/\/+$/,''),model:String((p.modelEnv&&env[p.modelEnv])||p.model||''),keys:[...new Set([...keys(p.keysEnv?env[p.keysEnv]:''),...keys(p.singleKeyEnv?env[p.singleKeyEnv]:''),...keys(p.list?env[p.list]:''),...keys(p.single?env[p.single]:''),...keys(p.keys),...keys(p.apiKeys)])],headers:p.headers||{}})).filter(p=>p.base&&p.model&&p.keys.length);
 }
 function parseContent(t){const s=String(t||'').replace(/^\s*\`\`\`(?:json)?\s*/i,'').replace(/\s*\`\`\`\s*$/,'').trim();const a=s.indexOf('{'),b=s.lastIndexOf('}');if(a<0||b<=a)throw Error('رد النموذج ليس JSON صالحاً');return JSON.parse(s.slice(a,b+1))}
 function clean(v,n){return String(v??'').replace(/\u0000/g,'').trim().slice(0,n)}
