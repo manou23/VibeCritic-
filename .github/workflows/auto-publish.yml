@@ -1,4 +1,5 @@
 name: Generate reviews and publish
+# Review content is versioned independently; existing reviews follow reviewVersion: 2.
 on:
   workflow_dispatch:
   schedule:
