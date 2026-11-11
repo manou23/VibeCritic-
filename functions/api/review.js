@@ -1,7 +1,7 @@
 const DEFAULTS = [
   {name:'OpenRouter',base:'https://openrouter.ai/api/v1',model:'openrouter/free',modelEnv:'OPENROUTER_MODEL',list:'OPENROUTER_API_KEYS',single:'OPENROUTER_API_KEY'},
   {name:'Groq',base:'https://api.groq.com/openai/v1',model:'openai/gpt-oss-120b',modelEnv:'GROQ_MODEL',list:'GROQ_API_KEYS',single:'GROQ_API_KEY'},
-  {name:'Google AI Studio',base:'https://generativelanguage.googleapis.com/v1beta/openai',model:'gemini-2.5-flash',modelEnv:'GEMINI_MODEL',list:'GEMINI_API_KEYS',single:'GEMINI_API_KEY'},
+  {name:'Google AI Studio',base:'https://generativelanguage.googleapis.com/v1beta/openai',model:'gemini-3.8-flash',modelEnv:'GEMINI_MODEL',list:'GEMINI_API_KEYS',single:'GEMINI_API_KEY'},
   {name:'OpenAI',base:'https://api.openai.com/v1',model:'gpt-4o-mini',modelEnv:'OPENAI_MODEL',list:'OPENAI_API_KEYS',single:'OPENAI_API_KEY'}
 ];
 const SYSTEM = 'أنت ناقد فني مخضرم ومتخصص في السينما والألعاب. اكتب مراجعة عربية عميقة وجريئة وصادقة، وادخل مباشرة إلى الفكرة النقدية دون مقدمات مستهلكة. كن صريحاً بلا دعاية أو مجاملة. لا تدّع أنك شاهدت أو لعبت العمل بنفسك، ولا تختلق أحداثاً أو أسماء أو تفاصيل إنتاج أو معلومات غير مؤكدة. تجنب حرق الأحداث الجوهرية. أعد JSON صالحاً فقط بهذه المفاتيح: title, hook, story, style, visuals, audio, pros, cons, verdict, score. اجعل story تحليلاً للقصة والسرد، وstyle لأسلوب اللعب في الألعاب أو الإخراج والأداء في الأفلام، وvisuals للرسوميات والتصميم الفني أو التصوير واللغة البصرية، وaudio للصوتيات والموسيقى. pros مصفوفة من 3 نقاط محددة، cons مصفوفة من نقطتين محددتين، verdict خلاصة نقدية، score رقم من 0 إلى 10 بخطوة عشرية. لا تخترع معلومات عند عدم اليقين، واذكر حدود المعرفة.';
