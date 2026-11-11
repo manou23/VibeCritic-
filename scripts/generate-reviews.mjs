@@ -34,7 +34,7 @@ function parseJson(t){
  throw new Error('لم يرجع النموذج JSON صالحاً بعد تنظيف الرد');
 }
 async function generateWithGemini(prompt){
- const model=env.GEMINI_MODEL||'gemini-2.5-flash',key=required('GEMINI_API_KEY');
+ const model=env.GEMINI_MODEL||'gemini-3.8-flash',key=required('GEMINI_API_KEY');
  const endpoint='https://generativelanguage.googleapis.com/v1beta/models/'+model+':generateContent?key='+key;
  let lastError='رد Gemini فارغ أو غير صالح';
  for(let attempt=0;attempt<2;attempt++){
@@ -57,8 +57,22 @@ async function generateWithOpenAI(prompt){
 }
 async function generateWithGroq(prompt){
  const model=env.GROQ_MODEL||'openai/gpt-oss-120b',key=required('GROQ_API_KEY');
- const r=await fetch('https://api.groq.com/openai/v1/chat/completions',{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key},body:JSON.stringify({model,temperature:.3,response_format:{type:'json_object'},messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]})});
- if(!r.ok)throw new Error('Groq HTTP '+r.status+': '+await r.text());
+ const url='https://api.groq.com/openai/v1/chat/completions';
+ const body=JSON.stringify({model,temperature:.3,max_tokens:1800,response_format:{type:'json_object'},messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]});
+ let r,detail='';
+ for(let attempt=0;attempt<4;attempt++){
+  r=await fetch(url,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key},body});
+  if(r.ok)break;
+  detail=await r.text();
+  const retryable=r.status===429||[500,502,503,504].includes(r.status);
+  if(!retryable||attempt===3)throw new Error('Groq HTTP '+r.status+': '+detail);
+  const retryHeader=Number(r.headers.get('retry-after'))*1000;
+  const retryBody=Number(detail.match(/try again in\\s+([0-9.]+)s/i)?.[1])*1000;
+  const wait=Math.min(30000,Math.max(retryHeader||0,retryBody||0,1500*(attempt+1)));
+  console.warn('Groq rate/server limit; retry '+(attempt+1)+' after '+wait+'ms');
+  await new Promise(resolve=>setTimeout(resolve,wait));
+ }
+ if(!r?.ok)throw new Error('Groq request failed: '+detail);
  const content=(await r.json()).choices?.[0]?.message?.content;
  if(!content)throw new Error('لم يرجع Groq محتوى نصياً');
  return parseJson(content);
