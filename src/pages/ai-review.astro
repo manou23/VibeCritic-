@@ -1,0 +1,98 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="المراجع الذكي" description="أنشئ مراجعة نقدية عربية للأفلام والألعاب بمساعدة الذكاء الاصطناعي." keywords={['مراجع أفلام بالذكاء الاصطناعي','مراجعة ألعاب','VibeCritic AI']}>
+<section class="ai-review-page">
+ <div class="ai-review-shell">
+  <div class="ai-review-intro">
+   <p class="ai-eyebrow">VIBECRITIC INTELLIGENCE / 01</p>
+   <h1>رأيك يبدأ من <span>تحليل أعمق.</span></h1>
+   <p>أدخل اسم فيلم أو لعبة، ودع الناقد الذكي يفكك التجربة: من الفكرة والسرد إلى الصورة والصوت، بلا مجاملات مجانية.</p>
+  </div>
+  <form id="ai-review-form" class="ai-review-form">
+   <div class="ai-field"><label for="ai-title">اسم العمل</label><input id="ai-title" name="title" type="text" maxlength="120" minlength="2" required autocomplete="off" placeholder="مثلاً: Dune: Part Two أو Elden Ring" /></div>
+   <fieldset class="ai-kind-field"><legend>نوع العمل</legend>
+    <label class="ai-kind-option"><input type="radio" name="kind" value="movie" checked /><span>فيلم سينمائي</span></label>
+    <label class="ai-kind-option"><input type="radio" name="kind" value="game" /><span>لعبة فيديو</span></label>
+   </fieldset>
+   <button id="ai-submit" class="ai-submit" type="submit"><span>أنشئ المراجعة</span><span aria-hidden="true">↗</span></button>
+   <p class="ai-privacy-note">مفاتيح الذكاء الاصطناعي محمية على الخادم ولا تُرسل إلى متصفحك.</p>
+  </form>
+  <div id="ai-status" class="ai-status" role="status" aria-live="polite" hidden></div>
+  <article id="ai-result" class="ai-result" hidden aria-live="polite">
+   <header class="ai-result-header"><div><p class="ai-eyebrow">VIBECRITIC / AI REVIEW</p><h2 id="result-title"></h2><p id="result-hook" class="ai-hook"></p></div><div class="ai-score"><strong id="result-score"></strong><span>/ 10</span><small>التقييم النقدي</small></div></header>
+   <div class="ai-review-sections">
+    <section><span>01 / STORY</span><h3>القصة والسرد</h3><p id="result-story"></p></section>
+    <section><span>02 / EXPERIENCE</span><h3 id="result-style-title">الأسلوب والتجربة</h3><p id="result-style"></p></section>
+    <section><span>03 / VISUALS</span><h3 id="result-visual-title">الصورة والتصميم</h3><p id="result-visuals"></p></section>
+    <section><span>04 / SOUND</span><h3>الصوتيات والموسيقى</h3><p id="result-audio"></p></section>
+   </div>
+   <div class="ai-pros-cons"><section class="ai-pros"><h3>ما ينجح فيه</h3><ul id="result-pros"></ul></section><section class="ai-cons"><h3>ما يعيبه</h3><ul id="result-cons"></ul></section></div>
+   <section class="ai-verdict"><span>FINAL VERDICT</span><h3>الحكم النهائي</h3><p id="result-verdict"></p></section>
+   <footer class="ai-result-footer"><span id="result-provider"></span><button id="ai-copy" type="button">نسخ المراجعة <span aria-hidden="true">⧉</span></button></footer>
+  </article>
+  <p class="ai-disclaimer">المراجعة مولّدة بالذكاء الاصطناعي وقد تخطئ في بعض التفاصيل. يُنصح بالتحقق من المعلومات قبل اعتمادها أو نشرها.</p>
+ </div>
+</section>
+<style>
+.ai-review-page{padding:clamp(48px,8vw,104px) 20px 90px;background:var(--page-bg,#f3f0e8);color:var(--text,#171717);min-height:70vh}
+.ai-review-shell{width:min(920px,100%);margin:auto}.ai-review-intro{max-width:720px;margin-bottom:38px}
+.ai-eyebrow{font:700 11px/1.4 ui-monospace,monospace;letter-spacing:.16em;color:#e46d35;margin:0 0 17px}
+.ai-review-intro h1{font-size:clamp(38px,7vw,68px);line-height:1.08;letter-spacing:-.055em;margin:0 0 18px;font-weight:850}.ai-review-intro h1 span{color:#e46d35}
+.ai-review-intro>p:last-child{font-size:17px;line-height:1.9;max-width:650px;color:var(--muted,#666)}
+.ai-review-form{background:var(--surface,#fff);border:1px solid var(--line,#e6e1d7);border-radius:22px;padding:clamp(20px,4vw,34px);box-shadow:0 16px 50px #1c17100b}
+.ai-field label,.ai-kind-field legend{display:block;font-weight:750;font-size:14px;margin-bottom:10px}
+.ai-field input{width:100%;min-height:54px;border:1px solid var(--line,#ddd);border-radius:12px;padding:0 16px;background:var(--page-bg,#f8f6f0);color:inherit;font:inherit;outline:none}
+.ai-field input:focus{border-color:#e46d35;box-shadow:0 0 0 3px #e46d3520}
+.ai-kind-field{border:0;padding:0;margin:24px 0;display:flex;gap:10px;flex-wrap:wrap}.ai-kind-field legend{width:100%}
+.ai-kind-option{cursor:pointer}.ai-kind-option input{position:absolute;opacity:0;pointer-events:none}
+.ai-kind-option span{display:inline-flex;min-height:44px;align-items:center;padding:0 17px;border:1px solid var(--line,#ddd);border-radius:999px;font-size:14px;font-weight:650}
+.ai-kind-option input:checked+span{background:#171717;color:white;border-color:#171717}
+.ai-submit{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:56px;border:0;border-radius:12px;background:#e46d35;color:#fff;padding:0 20px;font:inherit;font-weight:800;cursor:pointer;transition:transform .2s,background .2s}
+.ai-submit:hover{background:#cf5725;transform:translateY(-1px)}.ai-submit:disabled{opacity:.6;cursor:wait;transform:none}
+.ai-privacy-note,.ai-disclaimer{font-size:12px;color:var(--muted,#777);line-height:1.8}.ai-privacy-note{margin:13px 0 0;text-align:center}
+.ai-status{margin:22px 0;padding:16px 18px;border-radius:12px;background:var(--surface,#fff);border:1px solid var(--line,#ddd);line-height:1.8}.ai-status[data-error="true"]{border-color:#d65b4b;color:#a73529}
+.ai-result{margin-top:28px;background:var(--surface,#fff);border:1px solid var(--line,#e6e1d7);border-radius:22px;padding:clamp(20px,4vw,38px);box-shadow:0 16px 50px #1c17100b}
+.ai-result-header{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;padding-bottom:26px;border-bottom:1px solid var(--line,#e6e1d7)}
+.ai-result-header h2{font-size:clamp(26px,4vw,40px);margin:0 0 12px;line-height:1.2}.ai-hook{font-size:16px;line-height:1.9;color:var(--muted,#666);max-width:650px}
+.ai-score{width:112px;height:112px;border:1px solid #e46d35;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center}.ai-score strong{font-size:38px;line-height:1;color:#e46d35}.ai-score span{font-size:12px;color:var(--muted,#777)}.ai-score small{font-size:10px;margin-top:6px;color:var(--muted,#777)}
+.ai-review-sections{display:grid;grid-template-columns:1fr 1fr;gap:0 30px}.ai-review-sections section{padding:25px 0;border-bottom:1px solid var(--line,#e6e1d7)}
+.ai-review-sections section>span,.ai-verdict>span{font:700 10px/1.4 ui-monospace,monospace;letter-spacing:.13em;color:#e46d35}
+.ai-review-sections h3,.ai-pros-cons h3,.ai-verdict h3{font-size:19px;margin:9px 0}.ai-review-sections p,.ai-verdict p{font-size:14px;line-height:2;color:var(--muted,#555);margin:0}
+.ai-pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:25px 0}.ai-pros-cons section{border-radius:14px;padding:18px;background:var(--page-bg,#f8f6f0)}
+.ai-pros-cons h3{margin-top:0}.ai-pros-cons ul{padding-right:20px;margin:0}.ai-pros-cons li{font-size:13px;line-height:1.9;margin:7px 0;color:var(--muted,#555)}
+.ai-pros h3{color:#2f805e}.ai-cons h3{color:#c45c43}.ai-verdict{border-top:1px solid var(--line,#e6e1d7);padding-top:24px}
+.ai-result-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px;padding-top:17px;border-top:1px solid var(--line,#e6e1d7);font-size:11px;color:var(--muted,#777)}
+.ai-result-footer button{border:1px solid var(--line,#ddd);background:transparent;color:inherit;border-radius:9px;min-height:42px;padding:0 14px;cursor:pointer;font:inherit}
+.ai-disclaimer{margin:18px 2px}
+@media(max-width:650px){.ai-review-sections,.ai-pros-cons{grid-template-columns:1fr}.ai-result-header{grid-template-columns:1fr auto;gap:12px}.ai-score{width:84px;height:84px}.ai-score strong{font-size:30px}.ai-review-intro>p:last-child{font-size:15px}}
+</style>
+<script>
+const form=document.querySelector('#ai-review-form');
+const titleInput=document.querySelector('#ai-title');
+const submitButton=document.querySelector('#ai-submit');
+const statusBox=document.querySelector('#ai-status');
+const resultBox=document.querySelector('#ai-result');
+let latestReview=null;
+function put(id,value){const el=document.getElementById(id);if(el)el.textContent=value||''}
+function putList(id,values){const list=document.getElementById(id);if(!list)return;list.replaceChildren();(values||[]).forEach(value=>{const li=document.createElement('li');li.textContent=value;list.append(li)})}
+function status(message,error=false){if(!statusBox)return;statusBox.hidden=false;statusBox.dataset.error=String(error);statusBox.textContent=message}
+function render(r,provider){
+ latestReview=r;put('result-title',r.title);put('result-hook',r.hook);put('result-score',Number(r.score).toFixed(1));put('result-story',r.story);put('result-style',r.style);put('result-visuals',r.visuals);put('result-audio',r.audio);put('result-verdict',r.verdict);put('result-provider','تم الإنشاء عبر '+provider);putList('result-pros',r.pros);putList('result-cons',r.cons);
+ put('result-style-title',r.kind==='game'?'أسلوب اللعب والتجربة':'الإخراج والأداء');put('result-visual-title',r.kind==='game'?'الرسوميات والتصميم الفني':'التصوير واللغة البصرية');
+ resultBox.hidden=false;resultBox.scrollIntoView({behavior:'smooth',block:'start'});
+}
+form?.addEventListener('submit',async event=>{
+ event.preventDefault();const title=titleInput.value.trim(),kind=String(new FormData(form).get('kind')||'movie');
+ submitButton.disabled=true;submitButton.querySelector('span').textContent='جارٍ إعداد المراجعة...';resultBox.hidden=true;status('يجري إعداد التحليل النقدي وتجربة المزوّدات المتاحة. قد يستغرق ذلك لحظات.');
+ try{const res=await fetch('/api/review',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({title,kind})});const data=await res.json();if(!res.ok||!data.ok)throw Error(data.error||'تعذر إنشاء المراجعة');statusBox.hidden=true;render(data.review,data.provider||'AI')}
+ catch(e){status(e.message||'حدث خطأ. حاول مرة أخرى.',true)}
+ finally{submitButton.disabled=false;submitButton.querySelector('span').textContent='أنشئ المراجعة'}
+});
+document.getElementById('ai-copy')?.addEventListener('click',async()=>{
+ if(!latestReview)return;const r=latestReview;
+ const text=[r.title+' — '+r.score+'/10',r.hook,'القصة والسرد\\n'+r.story,'الأسلوب والتجربة\\n'+r.style,'الصورة والتصميم\\n'+r.visuals,'الصوتيات والموسيقى\\n'+r.audio,'الإيجابيات\\n'+r.pros.map(x=>'• '+x).join('\\n'),'السلبيات\\n'+r.cons.map(x=>'• '+x).join('\\n'),'الحكم النهائي\\n'+r.verdict].join('\\n\\n');
+ try{await navigator.clipboard.writeText(text);document.getElementById('ai-copy').textContent='تم النسخ ✓'}catch{status('تعذر النسخ تلقائياً. حدد النص وانسخه يدوياً.',true)}
+});
+</script>
+</Base>
