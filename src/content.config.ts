@@ -16,6 +16,8 @@ const reviews = defineCollection({
     releaseDate: z.string().optional(),
     poster: z.string().optional(),
     backdrop: z.string().optional(),
+    youtubeVideoId: z.string().regex(/^[A-Za-z0-9_-]{11}$/).optional(),
+    youtubeVideoTitle: z.string().optional(),
     score: z.number().min(0).max(10),
     pros: z.array(z.string()),
     cons: z.array(z.string()),
