@@ -19,3 +19,17 @@ export function scoreTone(score: number) {
 }
 export const fmtDate = (d: string | Date) =>
   new Intl.DateTimeFormat('ar-u-ca-gregory', { dateStyle: 'long' }).format(new Date(d));
+ // Request lighter CDN renditions for large hero and poster images.
+ export const optimizeImage = (src?: string, kind: 'poster' | 'backdrop' = 'poster') => {
+   if (!src) return '';
+   try {
+     const image = new URL(src);
+     if (image.hostname === 'image.tmdb.org') {
+       image.pathname = image.pathname.replace(/\/w(?:92|154|185|342|500|780|1280|original)\//, kind === 'backdrop' ? '/w780/' : '/w342/');
+     } else if (image.hostname === 'images.igdb.com') {
+       image.pathname = image.pathname.replace('/t_1080p/', '/t_720p/');
+     }
+     return image.href;
+   } catch { return src; }
+ };
+ 
