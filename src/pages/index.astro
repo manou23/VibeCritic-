@@ -63,6 +63,8 @@ const latest=reviews.slice(0,12);
  <div id="review-grid" class="catalog-rail">{reviews.map(review=><div data-search={`${review.data.title} ${review.data.headline} ${review.data.tags.join(' ')}`}><ReviewCard review={review}/></div>)}</div>
  <p id="empty-search" class="catalog-empty" hidden>لا توجد نتائج مطابقة لبحثك.</p>
 </section>
+</Base>
+
 <script>
 const input=document.querySelector<HTMLInputElement>('#review-search');
 const cards=[...document.querySelectorAll<HTMLElement>('#review-grid [data-search]')];
@@ -72,7 +74,6 @@ input?.addEventListener('input',()=>{const q=normalizeReviewSearch(input.value);
 </script>
 </Base>
 
-<script>
 const hero=document.querySelector<HTMLElement>('.spotlight-slider');
 if(hero){
  const data=[...hero.querySelectorAll<HTMLElement>('.spotlight-data i')].map(el=>({...el.dataset}));
