@@ -8,7 +8,7 @@ const {review}=Astro.props;const {Content}=await render(review);const d=review.d
 
 const typeLabel = TYPE_LABEL[d.type];
 const typeKeyword = d.type === 'game' ? 'لعبة' : d.type === 'series' ? 'مسلسل' : 'فيلم';
-const cleanKeyword = (value) => String(value || '').replace(/[<>"']/g, '').replace(/\\s+/g, ' ').trim();
+const cleanKeyword = (value) => String(value || '').replace(/[<>"']/g, '').replace(/\s+/g, ' ').trim();
 const reviewKeywords = [...new Set([
   d.title,
   d.originalTitle,
