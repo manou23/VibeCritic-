@@ -67,7 +67,7 @@ const latest=reviews.slice(0,12);
 const input=document.querySelector<HTMLInputElement>('#review-search');
 const cards=[...document.querySelectorAll<HTMLElement>('#review-grid [data-search]')];
 const empty=document.querySelector<HTMLElement>('#empty-search');
-const normalizeReviewSearch=(value:string)=>String(value||'').toLocaleLowerCase('ar').normalize('NFKD').replace(/[\\u064B-\\u065F\\u0670\\u0640]/g,'').replace(/[أإآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').trim();
+const normalizeReviewSearch=(value:string)=>String(value||'').toLocaleLowerCase('ar').normalize('NFKD').replace(/[\u064B-\u065F\u0670\u0640]/g,'').replace(/[أإآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').trim();
 input?.addEventListener('input',()=>{const q=normalizeReviewSearch(input.value);let count=0;cards.forEach(card=>{const show=normalizeReviewSearch(card.dataset.search||'').includes(q);card.hidden=!show;if(show)count++;});if(empty)empty.hidden=count!==0||!q;});
 </script>
 </Base>
