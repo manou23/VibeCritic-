@@ -29,7 +29,8 @@ jobs:
       - name: Generate reviews
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
-          RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
+          IGDB_CLIENT_ID: ${{ secrets.IGDB_CLIENT_ID }}
+          IGDB_CLIENT_SECRET: ${{ secrets.IGDB_CLIENT_SECRET }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           AI_PROVIDER: ${{ vars.AI_PROVIDER }}
@@ -37,7 +38,7 @@ jobs:
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           MAX_PER_RUN: '3'
         run: |
-          if [ -n "$TMDB_API_KEY" ] && [ -n "$RAWG_API_KEY" ] && { [ -n "$OPENAI_API_KEY" ] || [ -n "$GEMINI_API_KEY" ]; }; then
+          if [ -n "$TMDB_API_KEY" ] && [ -n "$IGDB_CLIENT_ID" ] && [ -n "$IGDB_CLIENT_SECRET" ] && { [ -n "$OPENAI_API_KEY" ] || [ -n "$GEMINI_API_KEY" ]; }; then
             npm run generate
           else
             echo "API secrets are not fully configured; skipping generation and continuing the site build."
