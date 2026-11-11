@@ -115,7 +115,7 @@ async function globalTrending(){
  if(!popularResponse.ok)throw new Error(`IGDB trending HTTP ${popularResponse.status}: ${await popularResponse.text()}`);
  const gtaResults=await gtaResponse.json();
  const popularResults=await popularResponse.json();
- const gta=gtaResults.find(x=>/grand theft auto vi|gta\\s*6/i.test(x.name||''));
+ const gta=gtaResults.find(x=>/grand theft auto vi|gta.?6/i.test(x.name||''));
  const gameItems=[...(gta?[gta]:[]),...popularResults.filter(x=>!gta||String(x.id)!==String(gta.id))];
  const games=gameItems.slice(0,3).map(x=>({
   id:String(x.id),sourceId:String(x.id),type:'game',title:x.name||'بدون عنوان',
