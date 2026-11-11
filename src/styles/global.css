@@ -305,3 +305,33 @@ button,input{font:inherit}
 @media(prefers-reduced-motion:reduce){
  .spotlight-image,.spotlight-copy,.spotlight-progress span{transition:none!important}
 }
+
+
+/* Accessible global search and keyboard navigation */
+.skip-link{position:fixed;top:10px;right:10px;z-index:2000;padding:12px 18px;background:#191919;color:#fff;transform:translateY(-160%);transition:transform .2s;font-size:13px;font-weight:900}
+.skip-link:focus{transform:translateY(0)}
+.header-search{border:0;background:transparent;padding:7px 10px;cursor:pointer;font:inherit}
+.header-search:focus-visible,.theme-toggle:focus-visible,.site-search-close:focus-visible,.spotlight-controls button:focus-visible{outline:3px solid #e45c38;outline-offset:3px}
+.site-search-dialog{width:min(620px,calc(100% - 28px));max-height:min(82vh,760px);padding:0;border:1px solid #d9d3c7;background:#f3f0e8;color:#191919;box-shadow:0 24px 90px #0005}
+.site-search-dialog::backdrop{background:#171613b8;backdrop-filter:blur(4px)}
+.site-search-panel{padding:clamp(18px,4vw,30px)}
+.site-search-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:22px}
+.site-search-heading h2{margin-top:6px;font-size:clamp(20px,4vw,27px);font-weight:950}
+.site-search-close{width:42px;height:42px;flex:0 0 auto;border:1px solid #d9d3c7;background:transparent;color:#191919;font-size:27px;line-height:1;cursor:pointer}
+.site-search-label{display:block;margin-bottom:8px;font-size:12px;font-weight:900}
+.site-search-dialog .catalog-search{margin:0;min-height:48px}
+.site-search-hint{margin:12px 0;color:#777066;font-size:11px}
+.site-search-results{display:grid;gap:8px;max-height:42vh;overflow:auto}
+.site-search-result{display:flex;flex-direction:column;gap:4px;padding:12px 14px;border:1px solid #ded8cd;background:#fff;transition:border-color .2s,transform .2s}
+.site-search-result:hover{border-color:#e45c38;transform:translateX(-2px)}
+.site-search-result strong{font-size:13px;font-weight:950}
+.site-search-result span{font-size:10px;line-height:1.7;color:#777066}
+.dark-mode .site-search-dialog{background:#211f1a;color:#f3f0e8;border-color:#504a40}
+.dark-mode .site-search-close{color:#f3f0e8;border-color:#504a40}
+.dark-mode .site-search-hint,.dark-mode .site-search-result span{color:#aaa092}
+.dark-mode .site-search-result{background:#171613;border-color:#38352e}
+@media(max-width:430px){
+ .site-search-panel{padding:17px}
+ .site-search-heading h2{font-size:19px}
+ .site-search-result{padding:11px}
+}
