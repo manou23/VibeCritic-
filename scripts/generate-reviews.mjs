@@ -82,6 +82,33 @@ async function games(){
   return {id:String(x.id),type:'game',name:x.name||'بدون عنوان',description:x.summary||'',date:x.first_release_date?new Date(x.first_release_date*1000).toISOString().slice(0,10):'',poster:image,backdrop:image,rating:Number(x.rating)||0,genres:(x.genres||[]).map(g=>g.name),sourceUrl:x.url||`https://www.igdb.com/games/${x.id}`};
  });
 }
+async function globalTrending(){
+ const key=required('TMDB_API_KEY');
+ const trending=await getJson(`https://api.themoviedb.org/3/trending/all/week?api_key=${key}&language=ar`);
+ const media=(trending.results||[]).filter(x=>x.media_type==='movie'||x.media_type==='tv').slice(0,3).map(x=>({
+  id:String(x.id),sourceId:String(x.id),type:x.media_type==='tv'?'series':'movie',
+  title:x.title||x.name||'بدون عنوان',poster:x.poster_path?`https://image.tmdb.org/t/p/w500${x.poster_path}`:'',
+  backdrop:x.backdrop_path?`https://image.tmdb.org/t/p/w1280${x.backdrop_path}`:'',
+  summary:x.overview||'',sourceUrl:`https://www.themoviedb.org/${x.media_type==='tv'?'tv':'movie'}/${x.id}`,
+  source:'TMDB',sourceRank:Number(x.popularity)||0
+ }));
+ const clientId=required('IGDB_CLIENT_ID'),clientSecret=required('IGDB_CLIENT_SECRET');
+ const tokenResponse=await fetch('https://id.twitch.tv/oauth2/token',{method:'POST',headers:{'content-type':'application/x-www-form-urlencoded'},body:new URLSearchParams({client_id:clientId,client_secret:clientSecret,grant_type:'client_credentials'})});
+ if(!tokenResponse.ok)throw new Error(`Twitch OAuth HTTP ${tokenResponse.status}: ${await tokenResponse.text()}`);
+ const {access_token}=await tokenResponse.json();
+ if(!access_token)throw new Error('لم يرجع Twitch access token صالحاً');
+ const query='fields name,summary,cover.image_id,follows,url; where follows > 0; sort follows desc; limit 10;';
+ const r=await fetch('https://api.igdb.com/v4/games',{method:'POST',headers:{'Client-ID':clientId,Authorization:`Bearer ${access_token}`,Accept:'application/json','Content-Type':'text/plain'},body:query});
+ if(!r.ok)throw new Error(`IGDB trending HTTP ${r.status}: ${await r.text()}`);
+ const games=(await r.json()).slice(0,2).map(x=>({
+  id:String(x.id),sourceId:String(x.id),type:'game',title:x.name||'بدون عنوان',
+  poster:x.cover?.image_id?`https://images.igdb.com/igdb/image/upload/t_cover_big/${x.cover.image_id}.jpg`:'',
+  backdrop:x.cover?.image_id?`https://images.igdb.com/igdb/image/upload/t_1080p/${x.cover.image_id}.jpg`:'',
+  summary:x.summary||'',sourceUrl:x.url||`https://www.igdb.com/games/${x.id}`,source:'IGDB',sourceRank:Number(x.follows)||0
+ }));
+ const picks=[media[0],games[0],media[1],media[2],games[1]].filter(Boolean);
+ return picks.map((x,i)=>({...x,rank:i+1,updatedAt:new Date().toISOString()}));
+}
 async function writeReview(item){
  const a=await generateReview(item),date=new Date().toISOString().slice(0,10);
  const fm=['---',`title: ${y(item.name)}`,`headline: ${y(a.headline)}`,`summary: ${y(a.summary)}`,`type: ${item.type}`,`date: ${date}`,`releaseDate: ${y(item.date)}`,`poster: ${y(item.poster)}`,`backdrop: ${y(item.backdrop)}`,`score: ${a.score}`,'pros:',arr(a.pros),'cons:',arr(a.cons),'tags:',arr(a.tags),'genres:',arr(item.genres),`sourceRating: ${item.rating}`,`sourceId: ${y(item.id)}`,`sourceUrl: ${y(item.sourceUrl)}`,'aiGenerated: true','---','',a.review,'','> مراجعة تحريرية مولّدة بمساعدة الذكاء الاصطناعي اعتماداً على البيانات المتاحة، وليست تقييماً رسمياً من المصدر.',''].join('\n');
@@ -89,6 +116,13 @@ async function writeReview(item){
 }
 async function main(){
  await fs.mkdir(outDir,{recursive:true});await fs.mkdir('data',{recursive:true});
+ await fs.mkdir('src/data',{recursive:true});
+ try{
+  const top=await globalTrending();
+  await fs.writeFile('src/data/trending.json',JSON.stringify(top,null,2)+'\\n','utf8');
+  console.log(`تم تحديث قائمة الترندات العالمية: ${top.length} أعمال.`);
+ }catch(e){console.error('تعذر تحديث الترندات العالمية، سيتم الاحتفاظ بآخر قائمة:',e.message);}
+
  let done=[];try{done=JSON.parse(await fs.readFile(processedPath,'utf8'));}catch{}
  const types=['movie','series','game'];
  const pools={
