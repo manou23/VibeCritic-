@@ -46,6 +46,9 @@ const safeJson = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="color-scheme" content="light dark" />
+<link rel="preconnect" href="https://image.tmdb.org" crossorigin />
+<link rel="preconnect" href="https://images.igdb.com" crossorigin />
 <script is:inline>try{if(localStorage.getItem("vc-theme")==="dark")document.documentElement.classList.add("dark-mode")}catch{}</script>
 <meta name="description" content={metaDescription} />
 <meta name="theme-color" content="#f3f0e8" />
@@ -129,6 +132,7 @@ const updateThemeButton = () => {
   const dark = document.documentElement.classList.contains('dark-mode');
   themeButton?.setAttribute('aria-pressed', String(dark));
   themeButton?.setAttribute('aria-label', dark ? 'التبديل إلى الوضع الفاتح' : 'التبديل إلى الوضع المظلم');
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#171613' : '#f3f0e8');
   if (themeButton) themeButton.textContent = dark ? '☀' : '☾';
 };
 updateThemeButton();
