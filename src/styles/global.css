@@ -593,3 +593,26 @@ img{max-width:100%}
 @media(prefers-reduced-motion:reduce){
  .dark-mode *, .dark-mode *::before, .dark-mode *::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
 }
+
+.article-hook{margin:0 0 22px;padding:24px 26px;border:1px solid var(--vc-border);border-right:3px solid var(--vc-accent);border-radius:12px;background:linear-gradient(135deg,var(--vc-surface-muted),var(--vc-surface))}
+.article-hook>p:last-child{margin:8px 0 0;color:var(--vc-text);font-size:clamp(17px,2vw,21px);font-weight:750;line-height:2}
+.article-summary{border-block:1px solid var(--vc-border);padding:21px 0;margin-bottom:30px}
+.article-body{max-width:790px;font-size:16px;line-height:2.15}
+.article-body>h2:first-child{margin-top:0}
+.article-body h2{margin:2.2em 0 .85em;padding:0 16px 10px 0;border-right:3px solid var(--vc-accent);border-bottom:1px solid var(--vc-border);font-size:clamp(22px,3vw,28px);line-height:1.5}
+.article-body h3{margin:1.8em 0 .55em;color:var(--vc-accent-deep);font-size:19px;line-height:1.6}
+.article-body p{margin:0 0 1.35em}
+.article-body ul,.article-body ol{padding-right:24px}
+.article-body li{padding-right:4px;margin:.55em 0}
+.article-final-verdict{margin-top:30px;padding:24px 26px;border:1px solid rgba(242,166,74,.35);border-radius:14px;background:linear-gradient(135deg,rgba(242,166,74,.10),var(--vc-surface))}
+.article-final-verdict h2{margin:7px 0 10px;font-size:22px;font-weight:950}
+.article-final-verdict>p:last-child{margin:0;color:var(--vc-text);font-size:15px;line-height:2}
+.review-method-note{margin:22px 0 0;padding:13px 15px;border:1px solid var(--vc-border);border-radius:9px;color:var(--vc-muted);font-size:11px;line-height:1.9}
+.dark-mode .article-hook{background:linear-gradient(135deg,#1a2028,#13171d);border-color:#303946;border-right-color:#f2a64a}
+.dark-mode .article-hook>p:last-child{color:#f2f5f8}
+.dark-mode .article-summary{border-color:#2b333e}
+.dark-mode .article-body h2{border-bottom-color:#2b333e}
+.dark-mode .article-body h3{color:#ffc06b}
+.dark-mode .article-final-verdict{background:linear-gradient(135deg,rgba(242,166,74,.12),#141920);border-color:rgba(242,166,74,.34)}
+.dark-mode .review-method-note{border-color:#303946;color:#a5afbb}
+@media(max-width:600px){.article-hook{padding:18px 17px;margin-bottom:18px}.article-hook>p:last-child{font-size:16px;line-height:1.95}.article-body{font-size:14px;line-height:2.05}.article-body h2{font-size:21px;margin-top:1.8em}.article-body h3{font-size:17px}.article-final-verdict{padding:19px 17px}.article-final-verdict h2{font-size:20px}.article-final-verdict>p:last-child{font-size:14px}}
