@@ -47,6 +47,21 @@ async function generateWithGemini(prompt){
  throw new Error('تعذر توليد JSON صالح من Gemini: '+lastError);
 }
 let openRouterFallbackActive=false;
+async function generateWithOpenAI(prompt){
+ const model=env.OPENAI_MODEL||'gpt-4o-mini',key=required('OPENAI_API_KEY');
+ const r=await fetch('https://api.openai.com/v1/chat/completions',{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key},body:JSON.stringify({model,temperature:.3,response_format:{type:'json_object'},messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]})});
+ if(!r.ok)throw new Error('OpenAI HTTP '+r.status+': '+await r.text());
+ const content=(await r.json()).choices?.[0]?.message?.content;
+ if(!content)throw new Error('لم يرجع OpenAI محتوى نصياً');
+ return parseJson(content);
+}
+async function generateFallback(prompt){
+ const errors=[];
+ if(env.OPENAI_API_KEY){try{console.warn('التحويل الاحتياطي إلى OpenAI.');return await generateWithOpenAI(prompt);}catch(e){errors.push(e.message);console.warn('فشل OpenAI الاحتياطي:',e.message);}}
+ if(env.GEMINI_API_KEY){try{console.warn('التحويل الاحتياطي إلى Gemini.');return await generateWithGemini(prompt);}catch(e){errors.push(e.message);console.warn('فشل Gemini الاحتياطي:',e.message);}}
+ throw new Error('تعذر استخدام مزودي الذكاء الاصطناعي الاحتياطيين: '+errors.join(' | '));
+}
+
 async function enrichItem(item){
  if(item.type==='game')return item;
  try{
@@ -81,21 +96,19 @@ async function generateReview(item){
  ].join('\n');
  let text,parsed=null;
  if(provider==='openai'){
-  const r=await fetch('https://api.openai.com/v1/chat/completions',{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+required('OPENAI_API_KEY')},body:JSON.stringify({model:env.OPENAI_MODEL||'gpt-4o-mini',temperature:.35,messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. التزم بالنزاهة النقدية وبنية JSON المطلوبة، ولا تختلق معلومات.'},{role:'user',content:prompt}]})});
-  if(!r.ok)throw new Error('OpenAI HTTP '+r.status+': '+await r.text());text=(await r.json()).choices?.[0]?.message?.content;
- }else if(provider==='openrouter'){
-  if(openRouterFallbackActive&&env.GEMINI_API_KEY){console.warn('OpenRouter غير متاح في هذه الدفعة؛ سيتم استخدام Gemini مباشرة.');parsed=await generateWithGemini(prompt);}
+  parsed=await generateWithOpenAI(prompt); }else if(provider==='openrouter'){
+  if(openRouterFallbackActive){parsed=await generateFallback(prompt);}else{
   const endpoint='https://openrouter.ai/api/v1/chat/completions',headers={'content-type':'application/json',authorization:'Bearer '+required('OPENROUTER_API_KEY'),'HTTP-Referer':'https://vibecritic.pages.dev/','X-Title':'VibeCritic'};
   let messages=[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بكل محاور المراجعة المطلوبة.'},{role:'user',content:prompt}],lastIssue='رد فارغ';
   for(let attempt=0;attempt<3&&!parsed;attempt++){
    let r=await fetch(endpoint,{method:'POST',headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,response_format:{type:'json_object'},messages})});
    if(!r.ok&&r.status===400)r=await fetch(endpoint,{method:'POST',headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,messages})});
-   if(!r.ok){const detail=await r.text();if(env.GEMINI_API_KEY){openRouterFallbackActive=true;console.warn('تعذر OpenRouter (HTTP '+r.status+'). التحويل إلى Gemini تلقائياً.');parsed=await generateWithGemini(prompt);break;}throw new Error('OpenRouter HTTP '+r.status+': '+detail);}
+   if(!r.ok){const detail=await r.text();if(env.OPENAI_API_KEY||env.GEMINI_API_KEY){openRouterFallbackActive=true;parsed=await generateFallback(prompt);break;}throw new Error('OpenRouter HTTP '+r.status+': '+detail);}
    const response=await r.json(),message=response.choices?.[0]?.message;text=message?.content;if(Array.isArray(text))text=text.map(part=>part.text||'').join('');
    if(message?.refusal)lastIssue='رفض النموذج إنشاء المراجعة';else if(typeof text==='string'&&text.trim()){try{parsed=parseJson(text);}catch(e){lastIssue=e.message;}}else lastIssue='لم يرجع النموذج محتوى نصياً';
    if(!parsed&&attempt<2){const previous=typeof text==='string'&&text.trim()?text.slice(0,5000):'(لا يوجد محتوى)';messages=[...messages,{role:'assistant',content:previous},{role:'user',content:'أعد JSON صالحاً بالمفاتيح hook وheadline وsummary وscore وpros وcons وtags وverdict وreview مع كل عناوين المحاور المطلوبة. لا تشرح الخطأ.'}];}
   }
-  if(!parsed&&env.GEMINI_API_KEY){openRouterFallbackActive=true;console.warn('فشل OpenRouter في إنتاج JSON صالح؛ التحويل إلى Gemini.');parsed=await generateWithGemini(prompt);}if(!parsed)throw new Error('تعذر الحصول على JSON صالح بعد 3 محاولات: '+lastIssue);
+  if(!parsed&&(env.OPENAI_API_KEY||env.GEMINI_API_KEY)){openRouterFallbackActive=true;parsed=await generateFallback(prompt);}if(!parsed)throw new Error('تعذر الحصول على JSON صالح بعد 3 محاولات: '+lastIssue);
  }else if(provider==='gemini'){
   parsed=await generateWithGemini(prompt);
  }else throw new Error('AI_PROVIDER يجب أن يكون openai أو gemini أو openrouter');
