@@ -26,6 +26,7 @@ jobs:
           node-version: 22
       - name: Install dependencies
         run: npm install
+      # OpenRouter is supported as an AI generation provider.
       - name: Generate reviews
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
