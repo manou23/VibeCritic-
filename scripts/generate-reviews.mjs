@@ -33,51 +33,73 @@ function parseJson(t){
  }
  throw new Error('لم يرجع النموذج JSON صالحاً بعد تنظيف الرد');
 }
+async function enrichItem(item){
+ if(item.type==='game')return item;
+ try{
+  const key=required('TMDB_API_KEY'),endpoint=item.type==='movie'?'movie':'tv';
+  const detail=await getJson('https://api.themoviedb.org/3/'+endpoint+'/'+item.id+'?api_key='+key+'&language=ar&append_to_response=credits');
+  const cast=(detail.credits?.cast||[]).slice(0,7).map(x=>x.character?x.name+' بدور '+x.character:x.name).filter(Boolean);
+  const directors=(detail.credits?.crew||[]).filter(x=>x.job==='Director').slice(0,2).map(x=>x.name);
+  const creators=(detail.created_by||[]).map(x=>x.name).filter(Boolean);
+  return {...item,genres:(detail.genres||[]).map(x=>x.name).filter(Boolean),metadata:{genres:(detail.genres||[]).map(x=>x.name).filter(Boolean),directors,creators,cast,runtime:detail.runtime||null,episodeRuntime:Array.isArray(detail.episode_run_time)?detail.episode_run_time.slice(0,3):[],seasons:detail.number_of_seasons||null,episodes:detail.number_of_episodes||null,productionCompanies:(detail.production_companies||[]).slice(0,5).map(x=>x.name)}};
+ }catch(error){console.warn('تعذر إثراء بيانات العمل من TMDB، سيُستخدم الوصف المتاح:',error.message);return item;}
+}
 async function generateReview(item){
- const prompt=`اكتب مراجعة عربية أصلية ومتوازنة. لا تدّع أنك شاهدت أو لعبت العمل، ولا تخترع معلومات، ولا تحرق الأحداث. أعد JSON فقط: headline جملة جذابة، summary ملخص موجز، score رقم 0-10 كتقدير تحريري لا كتقييم رسمي، pros ثلاث نقاط، cons نقطتان أو ثلاث، tags ثلاثة وسوم، review ثلاث فقرات.\nالنوع: ${item.type}\nالاسم: ${item.name}\nالوصف المتاح: ${item.description||'غير متوفر'}\nالتصنيفات: ${(item.genres||[]).join('، ')}`;
+ const isGame=item.type==='game';
+ const headings=isGame?['أسلوب اللعب والأنظمة','التصميم الفني والعالم','القصة وبناء الشخصيات','الأداء التقني والثبات','التقدم والتجربة على المدى الطويل']:['الحبكة والسيناريو','الأداء والشخصيات','الإخراج واللغة البصرية','الموسيقى والتصميم الصوتي',item.type==='series'?'بناء الموسم والإيقاع':'الإيقاع والتماسك الدرامي'];
+ const metadata=JSON.stringify(item.metadata||{genres:item.genres||[],platforms:item.platforms||[],developers:item.developers||[],gameModes:item.gameModes||[],perspectives:item.perspectives||[],engines:item.engines||[],sourceRating:item.rating||null,releaseDate:item.date||null});
+ const prompt=[
+ 'اكتب مراجعة نقدية عربية احترافية ومتوازنة ومفصلة، وليست دعاية أو ملخصاً دعائياً.',
+ 'لا تدّع أنك شاهدت أو لعبت العمل بنفسك. لا تخترع أسماء ممثلين أو مطورين أو منصات أو مشاهد أو أحداثاً أو تفاصيل أداء تقني غير موجودة في البيانات. إذا لم تتوفر معلومات موثوقة عن جانب ما، صرّح بأن البيانات لا تكفي للحكم عليه ثم حلّل ما يمكن استنتاجه فقط. لا تحرق الأحداث. لا تكرر الوصف المصدر حرفياً. تجنب المبالغة والعبارات العامة.',
+ 'اكتب عربية فصيحة طبيعية بنبرة ناقد متخصص وفقرات مترابطة.',
+ 'أعد JSON صالحاً فقط بالمفاتيح: hook, headline, summary, score, pros, cons, tags, verdict, review.',
+ 'hook: افتتاحية جذابة من 2-3 جمل دون حرق. headline: عنوان نقدي موجز. summary: تعريف مركز في جملتين أو ثلاث.',
+ 'review: مراجعة Markdown بين 450 و650 كلمة تقريباً، تبدأ بعنوان ## التحليل الفني والقصصي، ثم تستخدم العناوين الفرعية التالية حرفياً وبالترتيب:',
+ ...headings.map((h,i)=>(i+1)+') ### '+h),
+ 'ناقش في كل محور ما تسمح به البيانات فقط وأثر الاختيارات الفنية على التجربة. اختم بفقرة تلخص المحصلة النقدية.',
+ 'pros: أربع نقاط قوة محددة. cons: نقطتان أو ثلاث تحفظات حقيقية؛ لا تخترع عيباً لملء القائمة.',
+ 'verdict: 3-4 جمل تجيب هل يستحق المشاهدة/اللعب، ولمن يناسب، والتحفظ الأهم، وسبب الدرجة.',
+ 'score: درجة من 0 إلى 10 بخطوة عشرية واحدة، تقدير تحريري مبرر لا تقييم رسمي ولا نقل آلي لتقييم المصدر. tags: ثلاثة إلى ستة وسوم.',
+ 'بيانات العمل:','النوع: '+(isGame?'لعبة':item.type==='series'?'مسلسل':'فيلم'),'الاسم: '+item.name,'تاريخ الإصدار: '+(item.date||'غير متاح'),'الوصف المصدر: '+(item.description||'غير متوفر'),'التصنيفات: '+((item.genres||[]).join('، ')||'غير متاحة'),'بيانات إضافية موثوقة: '+metadata,'تقييم المصدر (للاستئناس فقط): '+(item.rating||'غير متاح')
+ ].join('\n');
  let text,parsed=null;
  if(provider==='openai'){
-  const r=await fetch('https://api.openai.com/v1/chat/completions',{method:'POST',headers:{'content-type':'application/json',authorization:`Bearer ${required('OPENAI_API_KEY')}`},body:JSON.stringify({model:env.OPENAI_MODEL||'gpt-4o-mini',temperature:.65,messages:[{role:'system',content:'أنت محرر مراجعات عربي دقيق. أعد JSON صالحاً فقط.'},{role:'user',content:prompt}]})});
-  if(!r.ok)throw new Error(`OpenAI HTTP ${r.status}: ${await r.text()}`);text=(await r.json()).choices?.[0]?.message?.content;
+  const r=await fetch('https://api.openai.com/v1/chat/completions',{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+required('OPENAI_API_KEY')},body:JSON.stringify({model:env.OPENAI_MODEL||'gpt-4o-mini',temperature:.35,messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. التزم بالنزاهة النقدية وبنية JSON المطلوبة، ولا تختلق معلومات.'},{role:'user',content:prompt}]})});
+  if(!r.ok)throw new Error('OpenAI HTTP '+r.status+': '+await r.text());text=(await r.json()).choices?.[0]?.message?.content;
  }else if(provider==='openrouter'){
-  const endpoint='https://openrouter.ai/api/v1/chat/completions';
-  const headers={'content-type':'application/json',authorization:`Bearer ${required('OPENROUTER_API_KEY')}`,'HTTP-Referer':'https://manou23.github.io/VibeCritic-/','X-Title':'VibeCritic'};
-  let messages=[{role:'system',content:'أنت محرر مراجعات عربي دقيق. أعد كائن JSON صالحاً فقط، دون Markdown أو أي نص خارجه.'},{role:'user',content:prompt}];
-  let lastIssue='رد فارغ';
+  const endpoint='https://openrouter.ai/api/v1/chat/completions',headers={'content-type':'application/json',authorization:'Bearer '+required('OPENROUTER_API_KEY'),'HTTP-Referer':'https://vibecritic.pages.dev/','X-Title':'VibeCritic'};
+  let messages=[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بكل محاور المراجعة المطلوبة.'},{role:'user',content:prompt}],lastIssue='رد فارغ';
   for(let attempt=0;attempt<3&&!parsed;attempt++){
    let r=await fetch(endpoint,{method:'POST',headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,response_format:{type:'json_object'},messages})});
    if(!r.ok&&r.status===400)r=await fetch(endpoint,{method:'POST',headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,messages})});
-   if(!r.ok)throw new Error(`OpenRouter HTTP ${r.status}: ${await r.text()}`);
-   const response=await r.json(),choice=response.choices?.[0],message=choice?.message;
-   text=message?.content;
-   if(Array.isArray(text))text=text.map(part=>part.text||'').join('');
-   if(message?.refusal)lastIssue='رفض النموذج إنشاء المراجعة';
-   else if(typeof text==='string'&&text.trim()){
-    try{parsed=parseJson(text);}catch(e){lastIssue=e.message;}
-   }else lastIssue='لم يرجع النموذج محتوى نصياً';
-   if(!parsed&&attempt<2){
-    const previous=typeof text==='string'&&text.trim()?text.slice(0,5000):'(لا يوجد محتوى)';
-    messages=[...messages,{role:'assistant',content:previous},{role:'user',content:'أعد المحاولة. حوّل طلب المراجعة السابق إلى كائن JSON صالح فقط، دون Markdown أو مقدمات. يجب أن يحتوي headline وsummary وscore وpros وcons وtags وreview. لا تشرح سبب الخطأ.'}];
-   }
+   if(!r.ok)throw new Error('OpenRouter HTTP '+r.status+': '+await r.text());
+   const response=await r.json(),message=response.choices?.[0]?.message;text=message?.content;if(Array.isArray(text))text=text.map(part=>part.text||'').join('');
+   if(message?.refusal)lastIssue='رفض النموذج إنشاء المراجعة';else if(typeof text==='string'&&text.trim()){try{parsed=parseJson(text);}catch(e){lastIssue=e.message;}}else lastIssue='لم يرجع النموذج محتوى نصياً';
+   if(!parsed&&attempt<2){const previous=typeof text==='string'&&text.trim()?text.slice(0,5000):'(لا يوجد محتوى)';messages=[...messages,{role:'assistant',content:previous},{role:'user',content:'أعد JSON صالحاً بالمفاتيح hook وheadline وsummary وscore وpros وcons وtags وverdict وreview مع كل عناوين المحاور المطلوبة. لا تشرح الخطأ.'}];}
   }
-  if(!parsed)throw new Error(`تعذر الحصول على JSON صالح بعد 3 محاولات: ${lastIssue}`);
+  if(!parsed)throw new Error('تعذر الحصول على JSON صالح بعد 3 محاولات: '+lastIssue);
  }else if(provider==='gemini'){
   const model=env.GEMINI_MODEL||'gemini-2.5-flash',key=required('GEMINI_API_KEY');
-  const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{temperature:.65,responseMimeType:'application/json'}})});
-  if(!r.ok)throw new Error(`Gemini HTTP ${r.status}: ${await r.text()}`);text=(await r.json()).candidates?.[0]?.content?.parts?.map(p=>p.text||'').join('');
+  const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+model+':generateContent?key='+key,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{temperature:.35,responseMimeType:'application/json'}})});
+  if(!r.ok)throw new Error('Gemini HTTP '+r.status+': '+await r.text());text=(await r.json()).candidates?.[0]?.content?.parts?.map(p=>p.text||'').join('');
  }else throw new Error('AI_PROVIDER يجب أن يكون openai أو gemini أو openrouter');
- const d=provider==='openrouter'?parsed:parseJson(text);
- return {headline:clean(d.headline),summary:clean(d.summary),score:Math.min(10,Math.max(0,Number(d.score)||0)),pros:Array.isArray(d.pros)?d.pros.slice(0,5).map(clean):[],cons:Array.isArray(d.cons)?d.cons.slice(0,5).map(clean):[],tags:Array.isArray(d.tags)?d.tags.slice(0,8).map(clean):[],review:String(d.review||'').replace(/<[^>]*>/g,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').trim()};
+ const d=provider==='openrouter'?parsed:parseJson(text),review=String(d.review||'').replace(/<[^>]*>/g,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').trim();
+ if(review.length<700)throw new Error('المراجعة المولّدة أقصر من الحد المطلوب للتحليل المتكامل');
+ const pros=Array.isArray(d.pros)?d.pros.map(clean).filter(Boolean).slice(0,4):[],cons=Array.isArray(d.cons)?d.cons.map(clean).filter(Boolean).slice(0,3):[];
+ if(pros.length<3||cons.length<2)throw new Error('قوائم نقاط القوة والضعف غير مكتملة');
+ return {hook:clean(d.hook),headline:clean(d.headline),summary:clean(d.summary),verdict:clean(d.verdict),score:Math.round(Math.min(10,Math.max(0,Number(d.score)||0))*10)/10,pros,cons,tags:Array.isArray(d.tags)?d.tags.slice(0,8).map(clean):[],review};
 }
 async function tmdb(type){
  const key=required('TMDB_API_KEY'),endpoint=type==='movie'?'movie':'tv';
  const today=new Date().toISOString().slice(0,10);
  const since=new Date(Date.now()-90*86400000).toISOString().slice(0,10);
- const [trend,discover]=await Promise.all([
+ const [trend,discover,genreData]=await Promise.all([
   getJson(`https://api.themoviedb.org/3/trending/${endpoint}/week?api_key=${key}&language=ar`),
-  getJson(`https://api.themoviedb.org/3/discover/${endpoint}?api_key=${key}&language=ar&sort_by=${type==='movie'?'primary_release_date':'first_air_date'}.desc&${type==='movie'?'primary_release_date':'first_air_date'}.gte=${since}&${type==='movie'?'primary_release_date':'first_air_date'}.lte=${today}&include_adult=false`)
+  getJson(`https://api.themoviedb.org/3/discover/${endpoint}?api_key=${key}&language=ar&sort_by=${type==='movie'?'primary_release_date':'first_air_date'}.desc&${type==='movie'?'primary_release_date':'first_air_date'}.gte=${since}&${type==='movie'?'primary_release_date':'first_air_date'}.lte=${today}&include_adult=false`),
+  getJson(`https://api.themoviedb.org/3/genre/${endpoint}/list?api_key=${key}&language=ar`)
  ]);
- const map=(x,trendRank=999)=>({id:String(x.id),type,name:x.title||x.name||'بدون عنوان',description:x.overview||'',date:x.release_date||x.first_air_date||'',poster:x.poster_path?`https://image.tmdb.org/t/p/w500${x.poster_path}`:'',backdrop:x.backdrop_path?`https://image.tmdb.org/t/p/w780${x.backdrop_path}`:'',rating:Number(x.vote_average)||0,genres:[],sourceUrl:`https://www.themoviedb.org/${endpoint}/${x.id}`,popularity:Number(x.popularity)||0,trendRank});
+ const genreNames=new Map((genreData.genres||[]).map(g=>[g.id,g.name]));
+ const map=(x,trendRank=999)=>({id:String(x.id),type,name:x.title||x.name||'بدون عنوان',description:x.overview||'',date:x.release_date||x.first_air_date||'',poster:x.poster_path?`https://image.tmdb.org/t/p/w500${x.poster_path}`:'',backdrop:x.backdrop_path?`https://image.tmdb.org/t/p/w780${x.backdrop_path}`:'',rating:Number(x.vote_average)||0,genres:(x.genre_ids||[]).map(id=>genreNames.get(id)).filter(Boolean),sourceUrl:`https://www.themoviedb.org/${endpoint}/${x.id}`,popularity:Number(x.popularity)||0,trendRank});
  const merged=new Map();
  for(const item of [...(trend.results||[]).map((x,i)=>map(x,i+1)),...(discover.results||[]).map(x=>map(x))])if(!merged.has(item.id))merged.set(item.id,item);
  return [...merged.values()].sort((a,b)=>(a.trendRank??999)-(b.trendRank??999)||b.popularity-a.popularity||(b.date||'').localeCompare(a.date||''));
@@ -90,7 +112,7 @@ async function games(){
  if(!access_token)throw new Error('لم يرجع Twitch access token صالحاً');
  const headers={'Client-ID':clientId,Authorization:`Bearer ${access_token}`,Accept:'application/json','Content-Type':'text/plain'};
  const since=Math.floor((Date.now()-gamesWindowDays*86400000)/1000);
- const recentQuery=`fields name,summary,first_release_date,cover.image_id,genres.name,rating,follows,hypes,rating_count,url; where first_release_date >= ${since}; sort first_release_date desc; limit 30;`;
+ const recentQuery=`fields name,summary,first_release_date,cover.image_id,genres.name,rating,follows,hypes,rating_count,url,platforms.name,game_modes.name,player_perspectives.name,involved_companies.company.name,involved_companies.developer,game_engines.name; where first_release_date >= ${since}; sort first_release_date desc; limit 30;`;
  const recentResponse=await fetch('https://api.igdb.com/v4/games',{method:'POST',headers,body:recentQuery});
  if(!recentResponse.ok)throw new Error(`IGDB recent games HTTP ${recentResponse.status}: ${await recentResponse.text()}`);
  let trendingGames=[];
@@ -117,7 +139,7 @@ async function games(){
  }
  return [...byId.values()].map(x=>{
   const image=x.cover?.image_id?`https://images.igdb.com/igdb/image/upload/t_cover_big/${x.cover.image_id}.jpg`:'';
-  return {id:String(x.id),type:'game',name:x.name||'بدون عنوان',description:x.summary||'',date:x.first_release_date?new Date(x.first_release_date*1000).toISOString().slice(0,10):'',poster:image,backdrop:image,rating:Number(x.rating)||0,genres:(x.genres||[]).map(g=>g.name),sourceUrl:x.url||`https://www.igdb.com/games/${x.id}`,popularity:Number(x.trendSignal)||0,trendRank:Number(x.trendRank)||999,follows:Number(x.follows)||0,hypes:Number(x.hypes)||0,ratingCount:Number(x.rating_count)||0};
+  return {id:String(x.id),type:'game',name:x.name||'بدون عنوان',description:x.summary||'',date:x.first_release_date?new Date(x.first_release_date*1000).toISOString().slice(0,10):'',poster:image,backdrop:image,rating:Number(x.rating)||0,genres:(x.genres||[]).map(g=>g.name),sourceUrl:x.url||`https://www.igdb.com/games/${x.id}`,popularity:Number(x.trendSignal)||0,trendRank:Number(x.trendRank)||999,follows:Number(x.follows)||0,hypes:Number(x.hypes)||0,ratingCount:Number(x.rating_count)||0,platforms:(x.platforms||[]).map(p=>p.name).filter(Boolean),developers:(x.involved_companies||[]).filter(c=>c.developer).map(c=>c.company?.name).filter(Boolean),gameModes:(x.game_modes||[]).map(v=>v.name).filter(Boolean),perspectives:(x.player_perspectives||[]).map(v=>v.name).filter(Boolean),engines:(x.game_engines||[]).map(v=>v.name).filter(Boolean)};
  }).sort((a,b)=>a.trendRank-b.trendRank||((b.hypes*3+b.follows+b.ratingCount)-(a.hypes*3+a.follows+a.ratingCount))||b.popularity-a.popularity);
 }
 async function globalTrending(){
@@ -167,9 +189,9 @@ async function globalTrending(){
  return picks.slice(0,6).map((x,i)=>({...x,rank:i+1}));
 }
 async function writeReview(item){
- const a=await generateReview(item),date=new Date().toISOString().slice(0,10);
- const fm=['---',`title: ${y(item.name)}`,`headline: ${y(a.headline)}`,`summary: ${y(a.summary)}`,`type: ${item.type}`,`date: ${date}`,`releaseDate: ${y(item.date)}`,`poster: ${y(item.poster)}`,`backdrop: ${y(item.backdrop)}`,`score: ${a.score}`,'pros:',arr(a.pros),'cons:',arr(a.cons),'tags:',arr(a.tags),'genres:',arr(item.genres),`sourceRating: ${item.rating}`,`sourceId: ${y(item.id)}`,`sourceUrl: ${y(item.sourceUrl)}`,'aiGenerated: true','---','',a.review,'','> مراجعة تحريرية مولّدة بمساعدة الذكاء الاصطناعي اعتماداً على البيانات المتاحة، وليست تقييماً رسمياً من المصدر.',''].join('\n');
- await fs.writeFile(path.join(outDir,`${item.type}-${slugify(item.name)}-${item.id}.md`),fm,'utf8');return `${item.type}:${item.id}`;
+ const enriched=await enrichItem(item),a=await generateReview(enriched),date=new Date().toISOString().slice(0,10);
+ const fm=['---','title: '+y(item.name),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 2','type: '+item.type,'date: '+date,'releaseDate: '+y(item.date),'poster: '+y(item.poster),'backdrop: '+y(item.backdrop),'score: '+a.score,'pros:',arr(a.pros),'cons:',arr(a.cons),'tags:',arr(a.tags),'genres:',arr(enriched.genres||[]),'sourceRating: '+item.rating,'sourceId: '+y(item.id),'sourceUrl: '+y(item.sourceUrl),'aiGenerated: true','---','',a.review,'','> قراءة نقدية تحريرية مولّدة بمساعدة الذكاء الاصطناعي، مبنية على البيانات المنشورة المتاحة. لا تمثل تجربة مشاهدة أو لعب مباشرة، ولا تقييماً رسمياً من المصدر.',''].join('\n');
+ await fs.writeFile(path.join(outDir,item.type+'-'+slugify(item.name)+'-'+item.id+'.md'),fm,'utf8');return item.type+':'+item.id;
 }
 async function main(){
  await fs.mkdir(outDir,{recursive:true});await fs.mkdir('data',{recursive:true});await fs.mkdir('src/data',{recursive:true});
