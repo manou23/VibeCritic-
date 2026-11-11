@@ -2,11 +2,11 @@
 import Base from '../../layouts/Base.astro';
 import ScoreCard from '../../components/ScoreCard.astro';
 import { getCollection, render } from 'astro:content';
-import { TYPE_LABEL, fmtDate, url } from '../../consts';
+import { TYPE_LABEL, fmtDate, url, optimizeImage } from '../../consts';
 export async function getStaticPaths(){const reviews=await getCollection('reviews');return reviews.map(review=>({params:{slug:review.id},props:{review}}));}
 const {review}=Astro.props;const {Content}=await render(review);const d=review.data;
 ---
-<Base title={d.title} description={d.summary} image={d.backdrop || d.poster} pageType="article" publishedAt={d.date.toISOString()}>
+<Base title={d.title} description={d.summary} image={optimizeImage(d.backdrop || d.poster, 'backdrop')} pageType="article" publishedAt={d.date.toISOString()}>
 <article class="wrap article-page">
   <a href={url('')} class="article-back">← العودة إلى VibeCritic</a>
   <header class="article-header">
@@ -20,7 +20,7 @@ const {review}=Astro.props;const {Content}=await render(review);const d=review.d
     <p class="article-deck">{d.headline}</p>
   </header>
 
-  {d.backdrop&&<figure class="article-backdrop"><img src={d.backdrop} alt={d.title} loading="eager"/><figcaption>VibeCritic — قراءة نقدية بلا مجاملة</figcaption></figure>}
+  {d.backdrop&&<figure class="article-backdrop"><img src={optimizeImage(d.backdrop, 'backdrop')} alt={d.title} loading="eager" fetchpriority="high" decoding="async"/><figcaption>VibeCritic — قراءة نقدية بلا مجاملة</figcaption></figure>}
 
   <div class="article-layout">
     <div class="article-main">
@@ -43,7 +43,7 @@ const {review}=Astro.props;const {Content}=await render(review);const d=review.d
       <a href={url('')} class="article-return">اكتشف مراجعات أخرى <span>←</span></a>
     </div>
     <aside class="article-aside">
-      {d.poster&&<img class="article-poster" src={d.poster} alt={d.title} loading="lazy"/>}
+      {d.poster&&<img class="article-poster" src={optimizeImage(d.poster)} alt={d.title} loading="lazy" decoding="async"/>}
       <div class="article-score-wrap"><p class="eyebrow">تقييم VibeCritic</p><ScoreCard score={d.score}/><p class="article-score-note">من 10 — رأينا، والقرار لك.</p></div>
     </aside>
   </div>
