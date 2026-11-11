@@ -3,8 +3,8 @@ import path from 'node:path';
 
 const env=process.env;
 const provider=(env.AI_PROVIDER||(env.OPENROUTER_API_KEY?'openrouter':env.OPENAI_API_KEY?'openai':'gemini')).toLowerCase();
-const maxPerRun=Math.max(1,Number(env.MAX_PER_RUN||3));
-const gamesWindowDays=Math.max(1,Number(env.GAMES_WINDOW_DAYS||90));
+const maxPerRun=Math.max(1,Number.isFinite(Number(env.MAX_PER_RUN))?Number(env.MAX_PER_RUN):3);
+const gamesWindowDays=Math.max(1,Number.isFinite(Number(env.GAMES_WINDOW_DAYS))?Number(env.GAMES_WINDOW_DAYS):90);
 const outDir='src/content/reviews',processedPath='data/processed.json';
 function required(name){if(!env[name])throw new Error(`متغير البيئة ${name} غير مضبوط في GitHub Secrets`);return env[name];}
 async function getJson(url){const r=await fetch(url);if(!r.ok)throw new Error(`HTTP ${r.status}: ${url}`);return r.json();}
@@ -13,15 +13,23 @@ const slugify=v=>clean(v).toLowerCase().normalize('NFKD').replace(/[^\p{L}\p{N}]
 const y=v=>JSON.stringify(String(v??''));
 const arr=a=>a?.length?a.map(v=>`  - ${y(v)}`).join('\n'):'  []';
 function parseJson(t){
- const raw=String(t||'').replace(/^\\s*```(?:json)?\\s*/i,'').replace(/\\s*```\\s*$/,'').trim();
+ const raw=String(t||'').replace(/^\s*[\x60]{3}(?:json)?\s*/i,'').replace(/\s*[\x60]{3}\s*$/,'').trim();
  let start=-1,depth=0,inString=false,escaped=false;
  for(let i=0;i<raw.length;i++){
   const ch=raw[i];
   if(start<0){if(ch==='{'){start=i;depth=1;}continue;}
-  if(inString){if(escaped)escaped=false;else if(ch==='\\\\')escaped=true;else if(ch==='\"')inString=false;continue;}
-  if(ch==='\"'){inString=true;continue;}
+  if(inString){
+   if(escaped)escaped=false;
+   else if(ch==='\\')escaped=true;
+   else if(ch==='"')inString=false;
+   continue;
+  }
+  if(ch==='"'){inString=true;continue;}
   if(ch==='{')depth++;
-  else if(ch==='}'&&--depth===0){try{return JSON.parse(raw.slice(start,i+1));}catch(e){start=-1;}}
+  else if(ch==='}'&&--depth===0){
+   try{return JSON.parse(raw.slice(start,i+1));}
+   catch{start=-1;depth=0;}
+  }
  }
  throw new Error('لم يرجع النموذج JSON صالحاً بعد تنظيف الرد');
 }
