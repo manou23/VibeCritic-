@@ -34,18 +34,31 @@ async function generateReview(item){
  }else if(provider==='openrouter'){
   const endpoint='https://openrouter.ai/api/v1/chat/completions';
   const headers={'content-type':'application/json',authorization:`Bearer ${required('OPENROUTER_API_KEY')}`,'HTTP-Referer':'https://manou23.github.io/VibeCritic-/','X-Title':'VibeCritic'};
-  const messages=[{role:'system',content:'أنت محرر مراجعات عربي دقيق. أعد كائن JSON صالحاً فقط، دون Markdown أو أي نص خارجه.'},{role:'user',content:prompt}];
-  let r=await fetch(endpoint,{method:'POST',headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.45,response_format:{type:'json_object'},messages})});
-  if(!r.ok&&r.status===400)r=await fetch(endpoint,{method:'POST',headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.45,messages})});
-  if(!r.ok)throw new Error(`OpenRouter HTTP ${r.status}: ${await r.text()}`);
-  const response=await r.json();text=response.choices?.[0]?.message?.content;
-  if(Array.isArray(text))text=text.map(part=>part.text||'').join('');
+  let messages=[{role:'system',content:'أنت محرر مراجعات عربي دقيق. أعد كائن JSON صالحاً فقط، دون Markdown أو أي نص خارجه.'},{role:'user',content:prompt}];
+  let parsed=null,lastIssue='رد فارغ';
+  for(let attempt=0;attempt<3&&!parsed;attempt++){
+   let r=await fetch(endpoint,{method:'POST',headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,response_format:{type:'json_object'},messages})});
+   if(!r.ok&&r.status===400)r=await fetch(endpoint,{method:'POST',headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,messages})});
+   if(!r.ok)throw new Error(`OpenRouter HTTP ${r.status}: ${await r.text()}`);
+   const response=await r.json(),choice=response.choices?.[0],message=choice?.message;
+   text=message?.content;
+   if(Array.isArray(text))text=text.map(part=>part.text||'').join('');
+   if(message?.refusal)lastIssue='رفض النموذج إنشاء المراجعة';
+   else if(typeof text==='string'&&text.trim()){
+    try{parsed=parseJson(text);}catch(e){lastIssue=e.message;}
+   }else lastIssue='لم يرجع النموذج محتوى نصياً';
+   if(!parsed&&attempt<2){
+    const previous=typeof text==='string'&&text.trim()?text.slice(0,5000):'(لا يوجد محتوى)';
+    messages=[...messages,{role:'assistant',content:previous},{role:'user',content:'أعد المحاولة. حوّل طلب المراجعة السابق إلى كائن JSON صالح فقط، دون Markdown أو مقدمات. يجب أن يحتوي headline وsummary وscore وpros وcons وtags وreview. لا تشرح سبب الخطأ.'}];
+   }
+  }
+  if(!parsed)throw new Error(`تعذر الحصول على JSON صالح بعد 3 محاولات: ${lastIssue}`);
  }else if(provider==='gemini'){
   const model=env.GEMINI_MODEL||'gemini-2.5-flash',key=required('GEMINI_API_KEY');
   const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{temperature:.65,responseMimeType:'application/json'}})});
   if(!r.ok)throw new Error(`Gemini HTTP ${r.status}: ${await r.text()}`);text=(await r.json()).candidates?.[0]?.content?.parts?.map(p=>p.text||'').join('');
  }else throw new Error('AI_PROVIDER يجب أن يكون openai أو gemini أو openrouter');
- const d=parseJson(text);
+ const d=provider==='openrouter'?parsed:parseJson(text);
  return {headline:clean(d.headline),summary:clean(d.summary),score:Math.min(10,Math.max(0,Number(d.score)||0)),pros:Array.isArray(d.pros)?d.pros.slice(0,5).map(clean):[],cons:Array.isArray(d.cons)?d.cons.slice(0,5).map(clean):[],tags:Array.isArray(d.tags)?d.tags.slice(0,8).map(clean):[],review:String(d.review||'').trim()};
 }
 async function tmdb(type){
