@@ -37,11 +37,14 @@ async function enrichItem(item){
  if(item.type==='game')return item;
  try{
   const key=required('TMDB_API_KEY'),endpoint=item.type==='movie'?'movie':'tv';
-  const detail=await getJson('https://api.themoviedb.org/3/'+endpoint+'/'+item.id+'?api_key='+key+'&language=ar&append_to_response=credits');
+  const detail=await getJson('https://api.themoviedb.org/3/'+endpoint+'/'+item.id+'?api_key='+key+'&language=ar&append_to_response=credits,videos');
   const cast=(detail.credits?.cast||[]).slice(0,7).map(x=>x.character?x.name+' بدور '+x.character:x.name).filter(Boolean);
   const directors=(detail.credits?.crew||[]).filter(x=>x.job==='Director').slice(0,2).map(x=>x.name);
   const creators=(detail.created_by||[]).map(x=>x.name).filter(Boolean);
-  return {...item,genres:(detail.genres||[]).map(x=>x.name).filter(Boolean),metadata:{genres:(detail.genres||[]).map(x=>x.name).filter(Boolean),directors,creators,cast,runtime:detail.runtime||null,episodeRuntime:Array.isArray(detail.episode_run_time)?detail.episode_run_time.slice(0,3):[],seasons:detail.number_of_seasons||null,episodes:detail.number_of_episodes||null,productionCompanies:(detail.production_companies||[]).slice(0,5).map(x=>x.name)}};
+  const officialVideo=(detail.videos?.results||[])
+   .filter(video=>video.site==='YouTube'&&video.official===true&&['Trailer','Teaser'].includes(video.type)&&/^[A-Za-z0-9_-]{11}$/.test(video.key||''))
+   .sort((a,b)=>(a.type==='Trailer'?0:1)-(b.type==='Trailer'?0:1)||String(b.published_at||'').localeCompare(String(a.published_at||'')))[0];
+  return {...item,genres:(detail.genres||[]).map(x=>x.name).filter(Boolean),metadata:{youtubeVideoId:officialVideo?.key||null,youtubeVideoTitle:officialVideo?.name||null,genres:(detail.genres||[]).map(x=>x.name).filter(Boolean),directors,creators,cast,runtime:detail.runtime||null,episodeRuntime:Array.isArray(detail.episode_run_time)?detail.episode_run_time.slice(0,3):[],seasons:detail.number_of_seasons||null,episodes:detail.number_of_episodes||null,productionCompanies:(detail.production_companies||[]).slice(0,5).map(x=>x.name)}};
  }catch(error){console.warn('تعذر إثراء بيانات العمل من TMDB، سيُستخدم الوصف المتاح:',error.message);return item;}
 }
 async function generateReview(item){
@@ -190,7 +193,8 @@ async function globalTrending(){
 }
 async function writeReview(item){
  const enriched=await enrichItem(item),a=await generateReview(enriched),date=new Date().toISOString().slice(0,10);
- const fm=['---','title: '+y(item.name),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 2','type: '+item.type,'date: '+date,'releaseDate: '+y(item.date),'poster: '+y(item.poster),'backdrop: '+y(item.backdrop),'score: '+a.score,'pros:',arr(a.pros),'cons:',arr(a.cons),'tags:',arr(a.tags),'genres:',arr(enriched.genres||[]),'sourceRating: '+item.rating,'sourceId: '+y(item.id),'sourceUrl: '+y(item.sourceUrl),'aiGenerated: true','---','',a.review,'','> قراءة نقدية تحريرية مولّدة بمساعدة الذكاء الاصطناعي، مبنية على البيانات المنشورة المتاحة. لا تمثل تجربة مشاهدة أو لعب مباشرة، ولا تقييماً رسمياً من المصدر.',''].join('\n');
+ const videoFields=enriched.metadata?.youtubeVideoId?['youtubeVideoId: '+y(enriched.metadata.youtubeVideoId),'youtubeVideoTitle: '+y(enriched.metadata.youtubeVideoTitle)]:[];
+  const fm=['---','title: '+y(item.name),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 2','type: '+item.type,'date: '+date,'releaseDate: '+y(item.date),'poster: '+y(item.poster),'backdrop: '+y(item.backdrop),...videoFields,'score: '+a.score,'pros:',arr(a.pros),'cons:',arr(a.cons),'tags:',arr(a.tags),'genres:',arr(enriched.genres||[]),'sourceRating: '+item.rating,'sourceId: '+y(item.id),'sourceUrl: '+y(item.sourceUrl),'aiGenerated: true','---','',a.review,'','> قراءة نقدية تحريرية مولّدة بمساعدة الذكاء الاصطناعي، مبنية على البيانات المنشورة المتاحة. لا تمثل تجربة مشاهدة أو لعب مباشرة، ولا تقييماً رسمياً من المصدر.',''].join('\n');
  await fs.writeFile(path.join(outDir,item.type+'-'+slugify(item.name)+'-'+item.id+'.md'),fm,'utf8');return item.type+':'+item.id;
 }
 async function main(){
