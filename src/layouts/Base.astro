@@ -20,7 +20,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
   <nav class="site-links" aria-label="التنقل الرئيسي">
    <a href={url('')}>الرئيسية</a><a href={url('category/game/')}>الألعاب</a><a href={url('category/movie/')}>الأفلام</a><a href={url('category/series/')}>المسلسلات</a>
   </nav>
-  <a class="header-search" href={url('')}#all-reviews aria-label="ابحث في المكتبة"><span>⌕</span><span class="header-search-label">بحث</span></a>
+  <a class="header-search" href={url('') + '#all-reviews'} aria-label="ابحث في المكتبة"><span>⌕</span><span class="header-search-label">بحث</span></a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="تبديل المظهر">◐</button>
  </div>
 </header>
 <main><slot /></main>
