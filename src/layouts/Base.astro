@@ -8,28 +8,34 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta name="description" content={description} /><meta name="theme-color" content="#080a12" />
+<meta name="description" content={description} /><meta name="theme-color" content="#f3f0e8" />
 <link rel="icon" type="image/svg+xml" href={url('favicon.svg')} />
 <link rel="canonical" href={canonical} />
 <meta property="og:type" content="website" /><meta property="og:title" content={title} /><meta property="og:description" content={description} />
 <title>{title} | {SITE_NAME}</title>
 </head>
 <body>
-<header class="sticky top-0 z-50 border-b border-white/10 bg-[#090b14]/85 backdrop-blur-xl">
-<div class="container flex min-h-16 items-center justify-between gap-4">
-<a href={url('')} class="text-2xl font-black tracking-tight"><span class="gradient-text">Vibe</span><span class="text-white">Critic</span><span class="mr-1 text-violet-400">✦</span></a>
-<nav class="flex items-center gap-3 text-sm text-zinc-300 sm:gap-6">
-<a class="hover:text-white" href={url('')}>الرئيسية</a><a class="hover:text-white" href={url('category/game/')}>الألعاب</a><a class="hover:text-white" href={url('category/movie/')}>الأفلام</a><a class="hover:text-white" href={url('category/series/')}>المسلسلات</a>
+<header class="site-header">
+<div class="wrap site-nav">
+<a href={url('')} class="brand" aria-label="VibeCritic الصفحة الرئيسية"><span>Vibe</span><span class="brand-accent">Critic</span><small>THE REVIEW JOURNAL</small></a>
+<nav class="site-links" aria-label="التنقل الرئيسي">
+<a href={url('')}>الرئيسية</a><a href={url('category/game/')}>الألعاب</a><a href={url('category/movie/')}>الأفلام</a><a href={url('category/series/')}>المسلسلات</a>
 </nav>
-<button id="theme-toggle" aria-label="تبديل المظهر" class="rounded-full border border-white/15 px-3 py-2 text-sm hover:bg-white/10">☼</button>
-</div></header>
+<button id="theme-toggle" aria-label="تبديل المظهر" class="theme-toggle" type="button">◐</button>
+</div>
+</header>
 <main><slot /></main>
-<footer class="mt-20 border-t border-white/10 py-8 text-center text-sm leading-7 text-zinc-500"><p>© {new Date().getFullYear()} {SITE_NAME}. مراجعات للترفيه، بآراء واضحة وشفافية.</p><p class="mt-2">بيانات الأفلام والمسلسلات مقدمة عبر <a class="text-violet-300 underline" href="https://www.themoviedb.org/" target="_blank" rel="noreferrer">TMDb</a>. هذا المنتج يستخدم TMDb API لكنه غير معتمد أو مصادق عليه من TMDb.</p><p>بيانات الألعاب مقدمة عبر <a class="text-violet-300 underline" href="https://rawg.io/" target="_blank" rel="noreferrer">RAWG</a>.</p></footer>
+<footer class="site-footer">
+<div class="wrap">
+<p>© {new Date().getFullYear()} {SITE_NAME}. نراجع بوضوح، ونترك القرار لك.</p>
+<p>بيانات الأفلام والمسلسلات مقدمة عبر <a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer">TMDb</a>. هذا المنتج يستخدم TMDb API لكنه غير معتمد أو مصادق عليه من TMDb.</p>
+<p>بيانات الألعاب مقدمة عبر <a href="https://rawg.io/" target="_blank" rel="noreferrer">RAWG</a>.</p>
+</div>
+</footer>
 <script is:inline>
-const btn=document.getElementById('theme-toggle');const saved=localStorage.getItem('vc-theme');if(saved==='light'){document.documentElement.classList.add('light');}
-btn?.addEventListener('click',()=>{document.documentElement.classList.toggle('light');localStorage.setItem('vc-theme',document.documentElement.classList.contains('light')?'light':'dark')});
+const btn=document.getElementById('theme-toggle');
+const saved=localStorage.getItem('vc-theme');
+if(saved==='dark'){document.documentElement.classList.add('dark-mode');}
+btn?.addEventListener('click',()=>{document.documentElement.classList.toggle('dark-mode');localStorage.setItem('vc-theme',document.documentElement.classList.contains('dark-mode')?'dark':'light')});
 </script>
-<style is:global>
-.light body{background:#f4f5fb;color:#181827}.light header{background:rgba(255,255,255,.88)}.light .glass{background:rgba(255,255,255,.82);border-color:#ddd}.light nav{color:#38384a}.light footer{color:#666}
-</style>
 </body></html>
