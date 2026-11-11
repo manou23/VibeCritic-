@@ -11,6 +11,9 @@ const {
   noindex = false,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const rawTitle = `${title} | ${SITE_NAME}`;
+const pageTitle = rawTitle.length > 60 ? `${String(title).slice(0, 46).trimEnd()}… | ${SITE_NAME}` : rawTitle;
+const metaDescription = String(description).replace(/\s+/g, ' ').trim().slice(0, 152).trimEnd() + (String(description).trim().length > 152 ? '…' : '');
 const searchItems = (await getCollection('reviews')).map((review) => ({
   title: review.data.title,
   headline: review.data.headline,
@@ -43,7 +46,7 @@ const safeJson = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta name="description" content={description} />
+<meta name="description" content={metaDescription} />
 <meta name="theme-color" content="#f3f0e8" />
 <meta name="robots" content={noindex ? 'noindex,nofollow' : 'index,follow'} />
 <link rel="icon" type="image/svg+xml" href={url('favicon.svg')} />
@@ -52,14 +55,14 @@ const safeJson = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
 <meta property="og:type" content={pageType === 'article' ? 'article' : 'website'} />
 <meta property="og:site_name" content={SITE_NAME} />
 <meta property="og:url" content={canonical} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-{image && <meta property="og:image" content={image} />}
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={metaDescription} />
+{image && <><meta property="og:image" content={image} /><meta property="og:image:alt" content={title} /></>}
 <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
-<meta name="twitter:title" content={title} />
-<meta name="twitter:description" content={description} />
+<meta name="twitter:title" content={pageTitle} />
+<meta name="twitter:description" content={metaDescription} />
 {image && <meta name="twitter:image" content={image} />}
-<title>{title} | {SITE_NAME}</title>
+<title>{pageTitle}</title>
 <script type="application/ld+json" set:html={safeJson(structuredData)}></script>
 </head>
 <body>
