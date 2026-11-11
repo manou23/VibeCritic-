@@ -129,13 +129,13 @@ document.addEventListener('click', (event) => {
 const themeButton = document.getElementById('theme-toggle');
 try {
   const savedTheme = localStorage.getItem('vc-theme');
-  if (savedTheme === 'dark') document.documentElement.classList.add('dark-mode');
+  document.documentElement.classList.toggle('dark-mode', savedTheme !== 'light');
 } catch {}
 const updateThemeButton = () => {
   const dark = document.documentElement.classList.contains('dark-mode');
   themeButton?.setAttribute('aria-pressed', String(dark));
   themeButton?.setAttribute('aria-label', dark ? 'التبديل إلى الوضع الفاتح' : 'التبديل إلى الوضع المظلم');
-  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#171613' : '#f3f0e8');
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#0d0f12' : '#f3f0e8');
   if (themeButton) themeButton.textContent = dark ? '☀' : '☾';
 };
 updateThemeButton();
