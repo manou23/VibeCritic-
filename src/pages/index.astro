@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import ReviewCard from '../components/ReviewCard.astro';
+import { getCollection } from 'astro:content';
+import { url } from '../consts';
+const reviews = (await getCollection('reviews')).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
+const featured = reviews[0];
+---
+<Base title="اكتشف ما يستحق وقتك" description="مراجعات صريحة للألعاب والأفلام والمسلسلات.">
+<section class="container py-14 sm:py-20">
+<div class="glass relative overflow-hidden rounded-[2rem] px-6 py-14 text-center sm:px-12">
+<div class="absolute -left-20 -top-24 h-64 w-64 rounded-full bg-violet-600/20 blur-3xl"></div>
+<p class="mb-4 text-sm font-bold tracking-widest text-violet-300">YOUR NEXT FAVORITE STARTS HERE</p>
+<h1 class="mx-auto max-w-3xl text-4xl font-black leading-tight sm:text-6xl">لا تضيع وقتك… اكتشف <span class="gradient-text">ما يستحق التجربة</span></h1>
+<p class="mx-auto mt-5 max-w-2xl leading-8 text-zinc-400">مراجعات الألعاب والأفلام والمسلسلات الرائجة، بإيجابياتها وسلبياتها وتقييم واضح من 10.</p>
+<div class="mx-auto mt-8 flex max-w-xl flex-col gap-3 sm:flex-row"><input id="review-search" aria-label="ابحث عن مراجعة" placeholder="ابحث عن لعبة أو فيلم أو مسلسل..." class="min-h-12 flex-1 rounded-xl border border-white/15 bg-black/25 px-4 outline-none focus:border-violet-400"/><a href="#latest" class="rounded-xl bg-violet-600 px-6 py-3 font-bold hover:bg-violet-500">اكتشف المراجعات</a></div>
+</div></section>
+<section class="container pb-16">
+<div class="mb-6 flex items-end justify-between"><div><p class="text-sm text-violet-300">اختَر مزاجك</p><h2 class="mt-1 text-2xl font-black">تصفّح التصنيفات</h2></div></div>
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+{[['game','🎮','الألعاب','category/game/'],['movie','🎬','الأفلام','category/movie/'],['series','📺','المسلسلات','category/series/']].map(([id,icon,label,path])=><a href={url(path)} class="glass rounded-2xl p-6 transition hover:-translate-y-1 hover:border-violet-400"><span class="text-3xl">{icon}</span><h3 class="mt-3 text-lg font-bold">{label}</h3><p class="mt-1 text-sm text-zinc-500">اكتشف أحدث المراجعات</p></a>)}
+</div></section>
+<section id="latest" class="container pb-20">
+<div class="mb-6 flex items-end justify-between"><div><p class="text-sm text-violet-300">تحديثاتنا الأخيرة</p><h2 class="mt-1 text-2xl font-black">أحدث المراجعات</h2></div><span class="text-sm text-zinc-500">{reviews.length} مراجعة</span></div>
+{reviews.length ? <div id="review-grid" class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">{reviews.map(review=><div data-search={`${review.data.title} ${review.data.headline} ${review.data.tags.join(' ')}`}><ReviewCard review={review}/></div>)}</div> : <div class="glass rounded-2xl p-10 text-center"><p class="text-4xl">✦</p><h3 class="mt-4 text-xl font-bold">المراجعات قادمة قريباً</h3><p class="mt-2 text-zinc-400">سيظهر هنا المحتوى فور تشغيل التوليد التلقائي وإضافة أول مراجعة.</p></div>}
+<p id="empty-search" class="hidden py-8 text-center text-zinc-400">لا توجد نتائج مطابقة لبحثك.</p>
+</section>
+<script>
+const input=document.querySelector<HTMLInputElement>('#review-search');const cards=[...document.querySelectorAll<HTMLElement>('#review-grid [data-search]')];const empty=document.querySelector('#empty-search');input?.addEventListener('input',()=>{const q=input.value.toLowerCase().trim();let count=0;cards.forEach(card=>{const show=card.dataset.search?.toLowerCase().includes(q)??false;card.classList.toggle('hidden',!show);if(show)count++});empty?.classList.toggle('hidden',count!==0||!q)});
+</script>
+</Base>

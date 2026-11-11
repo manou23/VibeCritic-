@@ -1,0 +1,11 @@
+---
+import { scoreTone } from '../consts';
+const { score } = Astro.props;
+const tone = scoreTone(score);
+const circumference = 2 * Math.PI * 34;
+const dash = circumference * Math.max(0,Math.min(10,score)) / 10;
+---
+<div class="glass flex items-center gap-4 rounded-2xl p-4">
+<svg viewBox="0 0 80 80" class="h-20 w-20 -rotate-90"><circle cx="40" cy="40" r="34" fill="none" stroke="currentColor" stroke-opacity=".12" stroke-width="7"/><circle cx="40" cy="40" r="34" fill="none" class={tone.stroke} stroke-width="7" stroke-linecap="round" stroke-dasharray={`${dash} ${circumference}`}/><text x="40" y="45" text-anchor="middle" fill="currentColor" font-size="19" font-weight="800" transform="rotate(90 40 40)">{score.toFixed(1)}</text></svg>
+<div><p class="text-sm text-zinc-400">تقييم VibeCritic</p><p class:list={["text-xl font-bold",tone.text]}>{tone.label}</p><p class="text-xs text-zinc-500">من 10 نقاط</p></div>
+</div>

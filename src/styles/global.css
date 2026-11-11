@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+:root{color-scheme:dark;font-family:Tahoma,Arial,sans-serif;background:#080a12;color:#f4f4f5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px;background:radial-gradient(ellipse at 80% -15%,#27205b 0,transparent 38%),#080a12;color:#f4f4f5}
+a{color:inherit;text-decoration:none}button,input{font:inherit}.container{width:min(1160px,calc(100% - 36px));margin-inline:auto}
+.glass{background:rgba(20,23,39,.76);border:1px solid rgba(255,255,255,.09);backdrop-filter:blur(16px)}
+.gradient-text{background:linear-gradient(100deg,#a5b4fc,#c4b5fd 45%,#f0abfc);-webkit-background-clip:text;background-clip:text;color:transparent}
+.poster{background:linear-gradient(145deg,#29264c,#151827);aspect-ratio:2/3;object-fit:cover}
+.review-card{transition:transform .25s,border-color .25s}.review-card:hover{transform:translateY(-5px);border-color:#7770e8}
+.prose{color:#d4d4dc}.prose h2,.prose h3{color:#fff}.prose a{color:#a5b4fc}
