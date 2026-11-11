@@ -90,7 +90,23 @@ async function writeReview(item){
 async function main(){
  await fs.mkdir(outDir,{recursive:true});await fs.mkdir('data',{recursive:true});
  let done=[];try{done=JSON.parse(await fs.readFile(processedPath,'utf8'));}catch{}
- const items=[...(await tmdb('movie')),...(await tmdb('series')),...(await games())],fresh=items.filter(x=>!done.includes(`${x.type}:${x.id}`)).slice(0,maxPerRun);
+ const types=['movie','series','game'];
+ const pools={
+  movie:(await tmdb('movie')).filter(x=>!done.includes(`${x.type}:${x.id}`)),
+  series:(await tmdb('series')).filter(x=>!done.includes(`${x.type}:${x.id}`)),
+  game:(await games()).filter(x=>!done.includes(`${x.type}:${x.id}`))
+ };
+ // امنح كل نوع فرصة أولاً، ثم املأ المقاعد المتبقية بالتناوب.
+ const fresh=[];
+ for(const type of types){if(fresh.length<maxPerRun&&pools[type].length)fresh.push(pools[type].shift());}
+ while(fresh.length<maxPerRun){
+  let added=false;
+  for(const type of types){
+   if(fresh.length>=maxPerRun)break;
+   if(pools[type].length){fresh.push(pools[type].shift());added=true;}
+  }
+  if(!added)break;
+ }
  if(!fresh.length){console.log('لا توجد أعمال جديدة للمراجعة.');return;}
  for(const item of fresh){try{done.push(await writeReview(item));console.log('تم إنشاء مراجعة:',item.name);}catch(e){console.error('تعذر إنشاء مراجعة:',item.name,e.message);}}
  await fs.writeFile(processedPath,JSON.stringify([...new Set(done)],null,2)+'\n');
