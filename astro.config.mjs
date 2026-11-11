@@ -15,5 +15,8 @@ export default defineConfig({
   base: isCloudflarePages ? '/' : '/VibeCritic-',
   trailingSlash: 'always',
   integrations: [sitemap()],
-  vite: { plugins: [tailwindcss()] },
+  vite: {
+    plugins: [tailwindcss()],
+    build: { minify: 'esbuild', cssMinify: 'esbuild' },
+  },
 });
