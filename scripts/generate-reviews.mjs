@@ -126,7 +126,7 @@ async function main(){
  await fs.mkdir(outDir,{recursive:true});await fs.mkdir('data',{recursive:true});await fs.mkdir('src/data',{recursive:true});
  try{
   const top=await globalTrending();
-  await fs.writeFile('src/data/trending.json',JSON.stringify(top,null,2)+'\\n','utf8');
+  await fs.writeFile('src/data/trending.json',JSON.stringify(top,null,2)+'\n','utf8');
   console.log(`تم تحديث قائمة الترندات العالمية: ${top.length} أعمال.`);
  }catch(e){console.error('تعذر تحديث الترندات العالمية، سيتم الاحتفاظ بآخر قائمة:',e.message);}
  let done=[];try{done=JSON.parse(await fs.readFile(processedPath,'utf8'));}catch{}
@@ -161,6 +161,6 @@ async function main(){
   }catch(e){console.error('تعذر إنشاء مراجعة:',item.name,e.message);}
  }
  if(!fresh.length)console.log('لا توجد أعمال جديدة صالحة للنشر في هذه الدفعة.');
- await fs.writeFile(processedPath,JSON.stringify([...new Set(done)],null,2)+'\\n');
+ await fs.writeFile(processedPath,JSON.stringify([...new Set(done)],null,2)+'\n');
 }
 main().catch(e=>{console.error(e);process.exitCode=1;});
