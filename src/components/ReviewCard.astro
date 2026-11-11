@@ -1,12 +1,12 @@
 ---
-import { TYPE_LABEL, url, fmtDate } from '../consts';
+import { TYPE_LABEL, url, fmtDate, optimizeImage } from '../consts';
 const { review } = Astro.props;
 const data = review.data;
 const href = url(`reviews/${review.id}/`);
 ---
 <a href={href} class="review-card group">
 <div class="review-poster-wrap">
-{data.poster ? <img src={data.poster} alt={data.title} loading="lazy" class="review-poster"/> : <div class="review-poster grid place-items-center text-5xl text-[#e45c38]">✦</div>}
+{data.poster ? <img src={optimizeImage(data.poster)} alt={data.title} loading="lazy" decoding="async" class="review-poster"/> : <div class="review-poster grid place-items-center text-5xl text-[#e45c38]">✦</div>}
 <span class="review-type">{TYPE_LABEL[data.type]}</span>
 <span class="review-score">{data.score.toFixed(1)} <small>/10</small></span>
 </div>
