@@ -3,8 +3,13 @@ import Base from '../layouts/Base.astro';
 import ReviewCard from '../components/ReviewCard.astro';
 import { getCollection } from 'astro:content';
 import { url } from '../consts';
+import trending from '../data/trending.json';
 const reviews = (await getCollection('reviews')).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
 const featured = reviews[0];
+const trendingCards = trending.slice(0,5).map(item => {
+  const review = reviews.find(entry => entry.data.type === item.type && entry.data.sourceId === item.sourceId);
+  return { ...item, review, href: review ? url(`reviews/${review.id}/`) : item.sourceUrl, action: review ? 'اقرأ المراجعة' : 'اكتشف العمل' };
+});
 ---
 <Base title="اكتشف ما يستحق وقتك" description="مراجعات مستقلة للألعاب والأفلام والمسلسلات، بآراء واضحة وتقييمات صريحة.">
 <section class="wrap home-hero">
@@ -21,6 +26,18 @@ const featured = reviews[0];
 {featured ? <div class="featured-score"><small>أحدث تقييم</small>{featured.data.score.toFixed(1)} / 10</div> : <div class="featured-score"><small>VIBE SCORE</small>10 / 10</div>}
 </div>
 </section>
+{trendingCards.length > 0 && <section class="wrap trending-section" aria-labelledby="trending-title">
+<div class="section-heading trending-heading"><div><p class="section-kicker">WORLDWIDE / الآن في الواجهة</p><h2 id="trending-title" class="section-title">Top 5 Trending Worldwide</h2><p class="trending-subtitle">خمسة أعمال تتصدر حديث الجمهور حول العالم</p></div><div class="trending-controls"><button id="trend-prev" type="button" aria-label="الترند السابق">←</button><button id="trend-next" type="button" aria-label="الترند التالي">→</button></div></div>
+<div id="trending-track" class="trending-track" tabindex="0" aria-label="أكثر خمسة أعمال رواجاً حول العالم">
+{trendingCards.map(item => <article class="trend-card">
+<a class="trend-art" href={item.href} target={item.review ? undefined : '_blank'} rel={item.review ? undefined : 'noreferrer'}>
+{item.poster ? <img src={item.backdrop || item.poster} alt={item.title} loading="lazy"/> : <div class="trend-art-fallback">V/C</div>}
+<span class="trend-rank">0{item.rank}</span><span class="trend-source">{item.source} TREND</span>
+</a>
+<div class="trend-copy"><p class="trend-type">{item.type === 'game' ? 'لعبة' : item.type === 'movie' ? 'فيلم' : 'مسلسل'} · عالمي</p><h3>{item.title}</h3><p class="trend-summary">{item.summary || 'عمل يتصدر قوائم الرواج حالياً.'}</p><a class="trend-link" href={item.href} target={item.review ? undefined : '_blank'} rel={item.review ? undefined : 'noreferrer'}>{item.action} <span>↗</span></a></div>
+</article>)}
+</div><p class="trending-note">يُحدّث القسم تلقائياً من قوائم الرواج في TMDB وIGDB.</p>
+</section>}
 <section id="categories" class="wrap pb-8">
 <div class="section-heading"><div><p class="section-kicker">اختَر عالمك</p><h2 class="section-title">ثلاثة عوالم. رأي واحد صريح.</h2></div></div>
 <div class="category-grid">
@@ -36,6 +53,20 @@ const featured = reviews[0];
 <p id="empty-search" class="hidden py-8 text-center text-sm text-[#777066]">لا توجد نتائج مطابقة لبحثك.</p>
 </section>
 <script>
+const track=document.querySelector<HTMLElement>('#trending-track');
+if(track){
+ const slides=[...track.querySelectorAll<HTMLElement>('.trend-card')];
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ let active=0;let timer:number|undefined;
+ const show=(next:number)=>{active=(next+slides.length)%slides.length;slides[active]?.scrollIntoView({behavior:reduced?'auto':'smooth',inline:'center',block:'nearest'});};
+ const stop=()=>{if(timer!==undefined)window.clearInterval(timer);timer=undefined;};
+ const start=()=>{if(reduced||slides.length<2||timer!==undefined)return;timer=window.setInterval(()=>show(active+1),4800);};
+ document.querySelector('#trend-prev')?.addEventListener('click',()=>{show(active-1);stop();start();});
+ document.querySelector('#trend-next')?.addEventListener('click',()=>{show(active+1);stop();start();});
+ track.addEventListener('mouseenter',stop);track.addEventListener('mouseleave',start);
+ track.addEventListener('focusin',stop);track.addEventListener('focusout',start);
+ start();
+}
 const input=document.querySelector<HTMLInputElement>('#review-search');const cards=[...document.querySelectorAll<HTMLElement>('#review-grid [data-search]')];const empty=document.querySelector('#empty-search');input?.addEventListener('input',()=>{const q=input.value.toLowerCase().trim();let count=0;cards.forEach(card=>{const show=card.dataset.search?.toLowerCase().includes(q)??false;card.classList.toggle('hidden',!show);if(show)count++});empty?.classList.toggle('hidden',count!==0||!q)});
 </script>
 </Base>
