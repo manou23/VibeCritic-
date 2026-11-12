@@ -11,10 +11,10 @@ function required(name){if(!env[name])throw new Error(`متغير البيئة $
 async function getJson(url){const r=await fetch(url,{signal:AbortSignal.timeout(30000)});if(!r.ok){const safeUrl=url.replace(/([?&](?:api_key|key)=)[^&]+/i,'$1[REDACTED]');throw new Error(`HTTP ${r.status}: ${safeUrl}`);}return r.json();}
 const clean=v=>String(v??'').replace(/[\r\n]+/g,' ').trim();
 const editorialPriorityNames=['grand theft auto vi','grand theft auto 6','gta vi','gta 6','the witcher 4','the witcher iv','marvels wolverine','marvel wolverine','elder scrolls vi','the elder scrolls 6','resident evil requiem','tomb raider catalyst','007 first light','intergalactic the heretic prophet','pragmata','control resonant'];
-function normalizedTitle(value){return String(value||'').toLowerCase().normalize('NFKD').replace(/[\\u0300-\\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim();}
+function normalizedTitle(value){return String(value||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim();}
 function editorialPriority(item){const title=normalizedTitle(item.name||item.title),rank=editorialPriorityNames.findIndex(name=>title.includes(normalizedTitle(name)));return rank<0?999:rank;}
 function communityDemand(item){const source=String(item.source||'').toUpperCase(),metric=Number(item.sourceMetricValue??item.popularity)||0;if(source==='RAWG')return metric>=100?3:metric>=25?2:0;if(source==='IGDB')return metric>=50?3:metric>=15?2:0;return metric>0?1:0;}
-function isPreviewUpgrade(item,publishedModes,today){const key=String(item.type)+':'+String(item.id);return publishedModes.get(key)==='preview'&&/^\\d{4}-\\d{2}-\\d{2}$/.test(String(item.date||''))&&String(item.date).slice(0,10)<=today;}
+function isPreviewUpgrade(item,publishedModes,today){const key=String(item.type)+':'+String(item.id);return publishedModes.get(key)==='preview'&&/^\d{4}-\d{2}-\d{2}$/.test(String(item.date||''))&&String(item.date).slice(0,10)<=today;}
 
 function algeriaDate(){const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Africa/Algiers',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());const values=Object.fromEntries(parts.filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));return `${values.year}-${values.month}-${values.day}`;}
 function addDays(date,days){const value=new Date(`${date}T00:00:00Z`);value.setUTCDate(value.getUTCDate()+days);return value.toISOString().slice(0,10);}
@@ -149,7 +149,7 @@ async function findOfficialGameTrailer(item){
   const ids=candidates.map(x=>x.id.videoId).join(',');
   const details=await getJson('https://www.googleapis.com/youtube/v3/videos?'+new URLSearchParams({part:'snippet,status',id:ids,key}).toString());
   const byId=new Map((details.items||[]).map(x=>[x.id,x]));
-  const tokens=String(item.name||'').toLowerCase().normalize('NFKD').replace(/[\\u0300-\\u036f]/g,'').split(/[^a-z0-9]+/).filter(x=>x.length>2);
+  const tokens=String(item.name||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').split(/[^a-z0-9]+/).filter(x=>x.length>2);
   const ranked=candidates.map(candidate=>{
    const video=byId.get(candidate.id.videoId);
    if(!video||video.status?.privacyStatus!=='public'||video.status?.embeddable!==true)return null;
@@ -157,7 +157,7 @@ async function findOfficialGameTrailer(item){
    if(/fan.?made|concept trailer|reaction|review|parody|trailer breakdown|gameplay walkthrough/i.test(title))return null;
    const official=/\\bofficial\\b/i.test(title)||/\\bofficial\\b/i.test(channel);
    if(!official||!/\\b(trailer|teaser)\\b/i.test(title))return null;
-   const words=title.toLowerCase().normalize('NFKD').replace(/[\\u0300-\\u036f]/g,'').split(/[^a-z0-9]+/);
+   const words=title.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').split(/[^a-z0-9]+/);
    const overlap=tokens.filter(t=>words.includes(t)).length;
    return {score:overlap,videoId:candidate.id.videoId,title,channelTitle:channel};
   }).filter(x=>x&&x.score>0).sort((a,b)=>b.score-a.score);
