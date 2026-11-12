@@ -32,6 +32,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Check JavaScript syntax
+        run: |
+          node --check scripts/generate-reviews.mjs
+          node --check functions/api/review.js
       - name: Install dependencies
         run: npm install
       # OpenRouter is supported as an AI generation provider.
