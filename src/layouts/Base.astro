@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { getCollection } from 'astro:content';
+import PagefindConfig from 'astro-pagefind/components/PagefindConfig.astro';
 import { SITE_NAME, SITE_DESC, url } from '../consts';
 const {
   title = SITE_NAME,
@@ -90,6 +91,7 @@ const searchReviews = await getCollection('reviews');
    <button class="site-search-close" id="site-search-close" type="button" aria-label="إغلاق البحث">×</button>
   </div>
   <p class="site-search-hint">بحث عربي ذكي يدعم اختلاف الألف والهمزة والتاء المربوطة والتشكيل، مع اقتراحات فورية.</p>
+  <PagefindConfig />
   <div class="site-search-enhanced">
    <label for="normalized-site-search">عنوان العمل أو كلمة من المراجعة</label>
    <input id="normalized-site-search" type="search" list="normalized-site-suggestions" placeholder="مثال: إنتَرستيلر أو Minecraft" autocomplete="off"/>
