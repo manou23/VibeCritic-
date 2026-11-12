@@ -880,7 +880,7 @@ img{max-width:100%}
 .trend-type-group{margin-top:28px}
 .trend-type-group>.catalog-heading h3{font-size:20px}
 .trend-review-card .review-headline{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-@media(max-width:640px){.score-breakdown{padding:12px}.article-share-links a,.game-store-links a{min-height:44px}}
+@media(max-width:640px){.score-breakdown{padding:12px}.game-store-links a{min-height:44px}}
 
 .site-search-enhanced{display:grid;gap:10px}
 .site-search-enhanced>label{font-size:13px;font-weight:800}
