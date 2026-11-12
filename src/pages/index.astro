@@ -60,19 +60,12 @@ const latest=reviews.slice(0,12);
  {byType[type].length>0?<div class="catalog-rail">{byType[type].slice(0,8).map(review=><ReviewCard review={review}/>)}</div>:<div class="catalog-empty">نعمل على إثراء قسم {TYPE_PLURAL[type]} بمحتوى جديد ومتوازن.</div>}
 </section>)}
 <section class="wrap catalog-section" id="all-reviews">
- <div class="catalog-heading"><div><p class="catalog-eyebrow">THE WHOLE LIBRARY</p><h2>استكشف المكتبة</h2><p>ابحث في جميع مراجعات الألعاب والأفلام والمسلسلات</p></div><span class="catalog-total">{reviews.length} مراجعة</span></div>
- <input id="review-search" class="catalog-search" placeholder="ابحث عن عنوان لعبة أو فيلم أو مسلسل..." aria-label="ابحث في المراجعات"/>
- <div id="review-grid" class="catalog-rail">{reviews.map(review=><div data-search={`${review.data.title} ${review.data.headline} ${review.data.tags.join(' ')}`}><ReviewCard review={review}/></div>)}</div>
- <p id="empty-search" class="catalog-empty" hidden>لا توجد نتائج مطابقة لبحثك.</p>
+ <div class="catalog-heading"><div><p class="catalog-eyebrow">THE WHOLE LIBRARY</p><h2>استكشف المكتبة</h2><p>بحث نصي سريع في جميع مراجعات الألعاب والأفلام والمسلسلات</p></div><span class="catalog-total">{reviews.length} مراجعة</span></div>
+ <pagefind-searchbox placeholder="ابحث عن لعبة أو فيلم أو مسلسل..." max-results="15" hide-shortcut></pagefind-searchbox>
 </section>
 </Base>
 
 <script>
-const input=document.querySelector<HTMLInputElement>('#review-search');
-const cards=[...document.querySelectorAll<HTMLElement>('#review-grid [data-search]')];
-const empty=document.querySelector<HTMLElement>('#empty-search');
-const normalizeReviewSearch=(value:string)=>String(value||'').toLocaleLowerCase('ar').normalize('NFKD').replace(/[\u064B-\u065F\u0670\u0640]/g,'').replace(/[أإآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').trim();
-input?.addEventListener('input',()=>{const q=normalizeReviewSearch(input.value);let count=0;cards.forEach(card=>{const show=normalizeReviewSearch(card.dataset.search||'').includes(q);card.hidden=!show;if(show)count++;});if(empty)empty.hidden=count!==0||!q;});
 const hero=document.querySelector<HTMLElement>('.spotlight-slider');
 if(hero){
  const data=[...hero.querySelectorAll<HTMLElement>('.spotlight-data i')].map(el=>({...el.dataset}));
