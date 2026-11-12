@@ -440,7 +440,7 @@ async function main(){
  }else{
   rawPools={game:await games(),series:await tmdb('series','releases'),movie:await tmdb('movie','releases')};
  }
- const eligible=items=>items.filter(x=>String(x.description||'').trim().length>=60&&!done.includes(`${x.type}:${x.id}`)&&!publishedKeys.has(`${x.type}:${x.id}`));
+ const eligible=items=>{const seen=new Set();return items.filter(x=>{const key=`${x.type}:${x.id}`;if(seen.has(key)||String(x.description||'').trim().length<60||done.includes(key)||publishedKeys.has(key))return false;seen.add(key);return true;});};
  const pools={game:eligible(rawPools.game),series:eligible(rawPools.series),movie:eligible(rawPools.movie)};
  const skippedThinSources=Object.values(rawPools).reduce((total,items)=>total+items.filter(x=>String(x.description||'').trim().length<60).length,0);
  if(skippedThinSources)console.warn('تم استبعاد '+skippedThinSources+' أعمال لعدم توفر وصف مصدر كافٍ لتوليد مراجعة موثوقة.');
