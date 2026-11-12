@@ -13,7 +13,8 @@ const trendReviews=trending.filter(item=>['مرتفع','متوسط'].includes(it
  return [{...item,summary:review.data.summary||item.summary,poster:optimizeImage(item.poster),backdrop:optimizeImage(item.backdrop||item.poster,'backdrop'),review,href:url(`reviews/${review.id}/`)}];
 }).slice(0,5);
 const spotlight=trendReviews[0]||null;
-const latest=reviews.slice(0,12);
+const topRated=[...reviews].filter(review=>review.data.score>0).sort((a,b)=>b.data.score-a.data.score).slice(0,8);
+const upcoming=reviews.filter(review=>review.data.reviewMode==='preview').sort((a,b)=>String(a.data.releaseDate||'').localeCompare(String(b.data.releaseDate||''))).slice(0,8);
 ---
 <Base title="اكتشف عالم الترفيه" description="اكتشف أحدث الأفلام والمسلسلات والألعاب، تابع الترندات العالمية واقرأ مراجعات VibeCritic." image={spotlight?.backdrop || spotlight?.poster}>
 <section class="wrap discovery-hero spotlight-slider" aria-label="أبرز الترندات">
@@ -57,9 +58,13 @@ const latest=reviews.slice(0,12);
   <span class="ai-review-promo-spark spark-two">✧</span>
  </div>
 </aside>
-<section class="wrap catalog-section" id="new-releases">
- <div class="catalog-heading"><div><p class="catalog-eyebrow">JUST ADDED</p><h2>أحدث الإضافات</h2><p>آخر الأعمال التي وصلت إلى مكتبة VibeCritic</p></div><a href="#all-reviews" class="catalog-more">كل المراجعات <span>←</span></a></div>
- {latest.length>0?<div class="catalog-rail">{latest.map(review=><ReviewCard review={review}/>)}</div>:<div class="catalog-empty">المكتبة في بداية انطلاقتها. ستظهر الإضافات الجديدة هنا.</div>}
+<section class="wrap catalog-section" id="top-rated">
+ <div class="catalog-heading"><div><p class="catalog-eyebrow">EDITOR'S HIGHEST SCORES</p><h2>الأعلى تقييماً</h2><p>الأعمال التي حصلت على أعلى درجات VibeCritic التحريرية</p></div><a href="#all-reviews" class="catalog-more">كل المراجعات <span>←</span></a></div>
+ {topRated.length>0?<div class="catalog-rail">{topRated.map(review=><ReviewCard review={review}/>)}</div>:<div class="catalog-empty">ستظهر هنا الأعمال بعد اكتمال مراجعاتها وتقييمها.</div>}
+</section>
+<section class="wrap catalog-section" id="coming-soon">
+ <div class="catalog-heading"><div><p class="catalog-eyebrow">ADVANCE READINGS</p><h2>قريباً — قراءات استباقية</h2><p>مواد تمهيدية للأعمال التي لم تصدر بعد، وليست مراجعات نهائية</p></div></div>
+ {upcoming.length>0?<div class="catalog-rail">{upcoming.map(review=><ReviewCard review={review}/>)}</div>:<div class="catalog-empty">لا توجد قراءات استباقية منشورة حالياً. لن نضيف عملاً قادماً دون بيانات كافية.</div>}
 </section>
 {(['game','series','movie'] as const).map(type=><section class="wrap catalog-section type-section">
  <div class="catalog-heading"><div><p class="catalog-eyebrow">{type==='game'?'PLAY YOUR NEXT':type==='series'?'BINGE YOUR NEXT':'YOUR NEXT MOVIE'}</p><h2>{type==='game'?'أحدث الألعاب':type==='series'?'أحدث المسلسلات':'أحدث الأفلام'}</h2><p>اكتشف جديد قسم {TYPE_PLURAL[type]} ومراجعاته</p></div><a href={url(`category/${type}/`)} class="catalog-more">عرض الكل <span>←</span></a></div>
