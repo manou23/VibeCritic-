@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import ReviewCard from '../../components/ReviewCard.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import { url } from '../../consts';
 
 const collections = {
@@ -10,7 +10,7 @@ const collections = {
     title: 'أفلام الرعب',
     eyebrow: 'HORROR FILMS',
     description: 'مراجعات أفلام الرعب، من الرعب النفسي إلى الخوارق والبقاء، مع تقييم واضح لعناصر كل تجربة.',
-    matches: (review) => [...(review.data.genres || []), ...(review.data.tags || [])].some(value => /horror|رعب/i.test(value)),
+    matches: (review: CollectionEntry<'reviews'>) => [...(review.data.genres || []), ...(review.data.tags || [])].some(value => /horror|رعب/i.test(value)),
   },
   'android-games': {
     type: 'game',
