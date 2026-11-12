@@ -23,6 +23,7 @@ const reviews = defineCollection({
     sourceName: z.string().optional(),
     sourceVoteCount: z.number().int().nonnegative().optional(),
     sourceRatingScale: z.number().positive().optional(),
+    metacriticScore: z.number().nonnegative().optional(),
     cast: z.array(z.string()).default([]),
     crew: z.array(z.string()).default([]),
     watchProviders: z.array(z.string()).default([]),
