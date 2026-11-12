@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Report dependency security advisories
-        run: npm audit --audit-level=high || true
+        run: npm audit --audit-level=low
       - name: Check JavaScript syntax
         run: |
           node --check scripts/generate-reviews.mjs
