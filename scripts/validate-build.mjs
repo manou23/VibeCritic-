@@ -93,7 +93,8 @@ for (const relative of reviewPages) {
   const metaTag = (attribute, value) => metaTags.find(tag => new RegExp('\\b' + attribute + '=["\']' + value + '["\']', 'i').test(tag)) || '';
   const metaContent = (attribute, value) => {
     const tag = metaTag(attribute, value);
-    return tag.match(/\bcontent=["']([^"']*)["']/i)?.[1] || '';
+    const match = tag.match(/\bcontent="([^"]*)"|\bcontent='([^']*)'/i);
+    return match?.[1] ?? match?.[2] ?? '';
   };
   const ogTitle = metaContent('property', 'og:title');
   const ogDescription = metaContent('property', 'og:description');
