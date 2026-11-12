@@ -98,11 +98,6 @@ jobs:
         env:
           RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
         run: npm run backfill:games
-      - name: Publish new reviews to Telegram channel
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
-        run: npm run publish:telegram
       - name: Commit generated reviews
         run: |
           if [[ -n "$(git status --porcelain src/content/reviews data/processed.json src/data/trending.json)" ]]; then
@@ -126,3 +121,8 @@ jobs:
         run: CF_PAGES=1 npm run build
       - name: Validate production build, SEO and sitemap
         run: npm run validate:build
+      - name: Publish new reviews to Telegram channel
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        run: npm run publish:telegram
