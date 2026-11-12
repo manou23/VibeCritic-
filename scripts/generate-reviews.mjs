@@ -9,6 +9,7 @@ const outDir='src/content/reviews',processedPath='data/processed.json';
 function required(name){if(!env[name])throw new Error(`متغير البيئة ${name} غير مضبوط في GitHub Secrets`);return env[name];}
 async function getJson(url){const r=await fetch(url,{signal:AbortSignal.timeout(30000)});if(!r.ok){const safeUrl=url.replace(/([?&](?:api_key|key)=)[^&]+/i,'$1[REDACTED]');throw new Error(`HTTP ${r.status}: ${safeUrl}`);}return r.json();}
 const clean=v=>String(v??'').replace(/[\r\n]+/g,' ').trim();
+function algeriaDate(){const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Africa/Algiers',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());const values=Object.fromEntries(parts.filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));return `${values.year}-${values.month}-${values.day}`;}
 const slugify=v=>clean(v).toLowerCase().normalize('NFKD').replace(/[^\p{L}\p{N}]+/gu,'-').replace(/^-|-$/g,'').slice(0,70)||'review';
 const y=v=>JSON.stringify(String(v??''));
 const arr=a=>a?.length?a.map(v=>`  - ${y(v)}`).join('\n'):'  []';
@@ -38,7 +39,7 @@ async function generateWithGemini(prompt){
  const endpoint='https://generativelanguage.googleapis.com/v1beta/models/'+model+':generateContent?key='+key;
  let lastError='رد Gemini فارغ أو غير صالح';
  for(let attempt=0;attempt<2;attempt++){
-  const r=await fetch(endpoint,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{temperature:.3,responseMimeType:'application/json'}}),signal:AbortSignal.timeout(90000)});
+  const r=await fetch(endpoint,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{maxOutputTokens:4096,thinkingConfig:{thinkingLevel:'LOW'},responseMimeType:'application/json'}}),signal:AbortSignal.timeout(90000)});
   if(!r.ok)throw new Error('Gemini HTTP '+r.status+': '+await r.text());
   const payload=await r.json(),content=payload.candidates?.[0]?.content?.parts?.map(p=>p.text||'').join('');
   if(content){try{return parseJson(content);}catch(e){lastError=e.message;}}
@@ -57,7 +58,7 @@ async function generateWithOpenAI(prompt){
 async function generateWithGroq(prompt){
  const model=env.GROQ_MODEL||'openai/gpt-oss-120b',key=required('GROQ_API_KEY');
  const url='https://api.groq.com/openai/v1/chat/completions';
- const body=JSON.stringify({model,temperature:.3,max_tokens:1800,response_format:{type:'json_object'},messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]});
+ const body=JSON.stringify({model,temperature:.3,max_tokens:4096,response_format:{type:'json_object'},messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]});
  let r,detail='';
  for(let attempt=0;attempt<4;attempt++){
   r=await fetch(url,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key},body,signal:AbortSignal.timeout(90000)});
@@ -81,8 +82,8 @@ async function generateWithOpenRouter(prompt){
  const headers={'content-type':'application/json',authorization:'Bearer '+required('OPENROUTER_API_KEY'),'HTTP-Referer':'https://vibecritic.pages.dev/','X-Title':'VibeCritic'};
  let messages=[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بكل محاور المراجعة المطلوبة.'},{role:'user',content:prompt}],lastIssue='رد فارغ';
  for(let attempt=0;attempt<3;attempt++){
-  let r=await fetch(endpoint,{method:'POST',headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,response_format:{type:'json_object'},messages}),signal:AbortSignal.timeout(90000)});
-  if(!r.ok&&r.status===400)r=await fetch(endpoint,{method:'POST',headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,messages}),signal:AbortSignal.timeout(90000)});
+  let r=await fetch(endpoint,{method:'POST',headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,max_tokens:4096,response_format:{type:'json_object'},messages}),signal:AbortSignal.timeout(90000)});
+  if(!r.ok&&r.status===400)r=await fetch(endpoint,{method:'POST',headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,max_tokens:4096,messages}),signal:AbortSignal.timeout(90000)});
   if(!r.ok)throw new Error('OpenRouter HTTP '+r.status+': '+(await r.text()).slice(0,700));
   const response=await r.json(),message=response.choices?.[0]?.message;
   let content=message?.content;if(Array.isArray(content))content=content.map(part=>part.text||'').join('');
@@ -269,7 +270,7 @@ async function globalTrending(){
  return picks.slice(0,6).map((x,i)=>({...x,rank:i+1}));
 }
 async function writeReview(item){
- const enriched=await enrichItem(item),a=await generateReview(enriched),date=new Date().toISOString().slice(0,10);
+ const enriched=await enrichItem(item),a=await generateReview(enriched),date=algeriaDate();
  const videoFields=enriched.metadata?.youtubeVideoId?['youtubeVideoId: '+y(enriched.metadata.youtubeVideoId),'youtubeVideoTitle: '+y(enriched.metadata.youtubeVideoTitle)]:[];
   const fm=['---','title: '+y(item.name),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 2','type: '+item.type,'date: '+date,'releaseDate: '+y(item.date),'poster: '+y(item.poster),'backdrop: '+y(item.backdrop),...videoFields,'score: '+a.score,'pros:',arr(a.pros),'cons:',arr(a.cons),'tags:',arr(a.tags),'genres:',arr(enriched.genres||[]),'sourceRating: '+item.rating,'sourceId: '+y(item.id),'sourceUrl: '+y(item.sourceUrl),'aiGenerated: true','---','',a.review,'','> قراءة نقدية تحريرية مولّدة بمساعدة الذكاء الاصطناعي، مبنية على البيانات المنشورة المتاحة. لا تمثل تجربة مشاهدة أو لعب مباشرة، ولا تقييماً رسمياً من المصدر.',''].join('\n');
  await fs.writeFile(path.join(outDir,item.type+'-'+slugify(item.name)+'-'+item.id+'.md'),fm,'utf8');return item.type+':'+item.id;
@@ -284,8 +285,8 @@ async function main(){
  let done=[];try{done=JSON.parse(await fs.readFile(processedPath,'utf8'));}catch{}
  const types=['game','series','movie'];
  const publishedFiles=await fs.readdir(outDir);
- const publishedIds=new Set(publishedFiles.filter(name=>name.endsWith('.md')).map(name=>name.match(/-(\d+)\.md$/)?.[1]).filter(Boolean));
- const eligible=(items)=>items.filter(x=>String(x.description||'').trim().length>=60&&!done.includes(`${x.type}:${x.id}`)&&!publishedIds.has(String(x.id)));
+ const publishedKeys=new Set(publishedFiles.map(name=>{const type=types.find(type=>name.startsWith(type+'-'));const id=name.match(/-(\d+)\.md$/)?.[1];return type&&id?`${type}:${id}`:null;}).filter(Boolean));
+ const eligible=(items)=>items.filter(x=>String(x.description||'').trim().length>=60&&!done.includes(`${x.type}:${x.id}`)&&!publishedKeys.has(`${x.type}:${x.id}`));
  const rawPools={game:await games(),series:await tmdb('series'),movie:await tmdb('movie')};
  const pools={game:eligible(rawPools.game),series:eligible(rawPools.series),movie:eligible(rawPools.movie)};
  const skippedThinSources=Object.values(rawPools).reduce((total,items)=>total+items.filter(x=>String(x.description||'').trim().length<60).length,0);
@@ -294,8 +295,12 @@ async function main(){
  const counts={game:0,series:0,movie:0};
  for(const file of files){for(const type of types){if(file.startsWith(type+'-')&&file.endsWith('.md'))counts[type]++;}}
  console.log('عدد المراجعات المنشورة حسب النوع:',JSON.stringify(counts));
+ const today=algeriaDate();let publishedToday=0;
+ for(const file of publishedFiles.filter(name=>name.endsWith('.md'))){const content=await fs.readFile(path.join(outDir,file),'utf8');const match=content.match(/^date:\\s*[\"']?(\\d{4}-\\d{2}-\\d{2})/m);if(match?.[1]===today)publishedToday++;}
+ const remainingToday=Math.max(0,maxPerRun-publishedToday);
+ console.log(`حد النشر اليومي: ${maxPerRun}، المنشور اليوم: ${publishedToday}، المتبقي: ${remainingToday}.`);
  const fresh=[];let generationFailures=0;
- while(fresh.length<maxPerRun){
+ while(fresh.length<remainingToday){
   const available=types.filter(type=>pools[type].length>0);
   if(!available.length)break;
   const chosenType=available.sort((a,b)=>{
