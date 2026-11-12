@@ -50,7 +50,7 @@ const schemaType = d.type === 'game' ? 'Game' : d.type === 'series' ? 'CreativeW
 const reviewStructuredData = {
   '@context': 'https://schema.org',
   '@type': d.reviewMode === 'preview' ? 'Article' : 'Review',
-  name: d.title + ' — مراجعة وتقييم',
+  name: d.title + (d.reviewMode === 'preview' ? ' — قراءة استباقية' : ' — مراجعة وتقييم'),
   url: canonicalUrl,
   datePublished: d.date.toISOString().slice(0, 10),
   reviewBody: [d.summary, d.verdict, d.hook].filter(Boolean).join(' '),
@@ -74,7 +74,7 @@ const reviewStructuredData = {
 };
 
 ---
-<Base title={`${d.title} — مراجعة وتقييم`} description={reviewDescription} keywords={reviewKeywords} structuredData={reviewStructuredData} image={optimizeImage(d.backdrop || d.poster, 'backdrop')} pageType="article" publishedAt={d.date.toISOString()} articleSection={typeLabel}>
+<Base title={`${d.title} — ${d.reviewMode === 'preview' ? 'قراءة استباقية' : 'مراجعة وتقييم'}`} description={reviewDescription} keywords={reviewKeywords} structuredData={reviewStructuredData} image={optimizeImage(d.backdrop || d.poster, 'backdrop')} pageType="article" publishedAt={d.date.toISOString()} articleSection={typeLabel}>
 <article class="wrap article-page">
   <a href={url('')} class="article-back">← العودة إلى VibeCritic</a>
   <header class="article-header">
@@ -144,7 +144,7 @@ const reviewStructuredData = {
       </section>)}
       {similarReviews.length>0 && <section class="article-facts" aria-label="مراجعات مشابهة">
         <h2>مراجعات مشابهة</h2>
-        <ul>{similarReviews.map(entry=><li><a href={url('reviews/'+entry.id+'/')}>{entry.data.title} — {entry.data.score.toFixed(1)}/10</a></li>)}</ul>
+        <ul>{similarReviews.map(entry=><li><a href={url('reviews/'+entry.id+'/')}>{entry.data.title} — {entry.data.reviewMode === 'preview' ? 'قراءة استباقية' : entry.data.score.toFixed(1) + '/10'}</a></li>)}</ul>
       </section>}
       <p class="review-method-note">{d.reviewMode === 'preview' ? 'منهجية VibeCritic: هذه قراءة استباقية تفصل المعلومات الرسمية عن التوقعات، ولا تمنح العمل تقييماً نهائياً قبل صدوره.' : 'منهجية VibeCritic: هذا تحليل نقدي مبني على المعلومات المنشورة والبيانات المتاحة، وليس ادعاءً باختبار مباشر للعمل. التقييم تقدير تحريري مستقل وليس تقييماً رسمياً.'}</p>
       <section class="article-facts article-feedback" aria-labelledby="review-feedback-title">
