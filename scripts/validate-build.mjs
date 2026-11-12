@@ -90,10 +90,10 @@ if (!reviewPages.length) throw new Error('لم يتم العثور على صفح
 for (const relative of reviewPages) {
   const html = await fs.readFile(path.join(reviewOutput, relative), 'utf8');
   const metaTags = html.match(/<meta\b[^>]*>/gi) || [];
-  const metaTag = (attribute, value) => metaTags.find(tag => new RegExp('\\b' + attribute + '=["\\']' + value + '["\\']', 'i').test(tag)) || '';
+  const metaTag = (attribute, value) => metaTags.find(tag => tag.toLowerCase().includes(attribute.toLowerCase() + '="' + value.toLowerCase() + '"')) || '';
   const metaContent = (attribute, value) => {
     const tag = metaTag(attribute, value);
-    const match = tag.match(/\bcontent=["\\']([^"\\']*)["\\']/i);
+    const match = tag.match(/\\bcontent="([^"]*)"/i);
     return match?.[1] ?? '';
   };
   const ogTitle = metaContent('property', 'og:title');
@@ -101,7 +101,7 @@ for (const relative of reviewPages) {
   const ogUrl = metaContent('property', 'og:url');
   const twitterCard = metaContent('name', 'twitter:card');
   const publishedTime = metaContent('property', 'article:published_time');
-  const jsonLdTag = html.match(/<script\b[^>]*type=["\\']application\/ld\+json["\\'][^>]*>([\s\S]*?)<\/script>/i);
+  const jsonLdTag = html.match(/<script\\b[^>]*type="application\\/ld\\+json"[^>]*>([\\s\\S]*?)<\\/script>/i);
   let structuredType = '';
   try {
     const structured = JSON.parse(jsonLdTag?.[1] || 'null');
@@ -117,8 +117,8 @@ for (const relative of reviewPages) {
   if (failedMeta.length) {
     throw new Error('وسوم SEO غير مكتملة في صفحة ' + relative + '؛ العناصر: ' + failedMeta.join(', '));
   }
-  const canonicalTag = (html.match(/<link\b[^>]*>/gi) || []).find(tag => /\brel=["\\']canonical["\\']/i.test(tag));
-  const pageCanonical = canonicalTag?.match(/\bhref=["\\']([^"\\']+)["\\']/i)?.[1];
+  const canonicalTag = (html.match(/<link\\b[^>]*>/gi) || []).find(tag => /\\brel="canonical"/i.test(tag));
+  const pageCanonical = canonicalTag?.match(/\\bhref="([^"]+)"/i)?.[1];
   if (!pageCanonical || !pageCanonical.startsWith('https://')) {
     throw new Error('رابط canonical مفقود أو غير مطلق في صفحة ' + relative);
   }
