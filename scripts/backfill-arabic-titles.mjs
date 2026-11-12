@@ -12,7 +12,7 @@ const files = (await fs.readdir(root)).filter(file => file.endsWith('.md')).sort
 const isArabic = value => /[\u0600-\u06FF]/.test(String(value || ''));
 
 function readScalar(frontmatter, key) {
-  const line = frontmatter.match(new RegExp('^' + key + ':\\\\s*(.*)$', 'm'));
+  const line = frontmatter.match(new RegExp('^' + key + ':\\s*(.*)$', 'm'));
   if (!line) return '';
   const raw = line[1].trim();
   try { return JSON.parse(raw); } catch { return raw.replace(/^['"]|['"]$/g, ''); }
