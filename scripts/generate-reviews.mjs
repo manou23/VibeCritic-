@@ -331,20 +331,20 @@ async function main(){
  await fs.mkdir(outDir,{recursive:true});await fs.mkdir('data',{recursive:true});await fs.mkdir('src/data',{recursive:true});
  try{
   const top=await globalTrending();
-  await fs.writeFile('src/data/trending.json',JSON.stringify(top,null,2)+'\\n','utf8');
+  await fs.writeFile('src/data/trending.json',JSON.stringify(top,null,2)+'\n','utf8');
   console.log(`تم تحديث قائمة الترندات العالمية: ${top.length} أعمال.`);
  }catch(e){console.error('تعذر تحديث الترندات العالمية، سيتم الاحتفاظ بآخر قائمة:',e.message);}
  let done=[];try{done=JSON.parse(await fs.readFile(processedPath,'utf8'));}catch{}
  const types=['game','series','movie'];
  const publishedFiles=(await fs.readdir(outDir)).filter(name=>name.endsWith('.md'));
- const publishedKeys=new Set(publishedFiles.map(name=>{const type=types.find(type=>name.startsWith(type+'-'));const id=name.match(/-(\\d+)\\.md$/)?.[1];return type&&id?`${type}:${id}`:null;}).filter(Boolean));
+ const publishedKeys=new Set(publishedFiles.map(name=>{const type=types.find(type=>name.startsWith(type+'-'));const id=name.match(/-(\d+)\.md$/)?.[1];return type&&id?`${type}:${id}`:null;}).filter(Boolean));
  const counts={game:0,series:0,movie:0},todayCounts={game:0,series:0,movie:0};
  const today=algeriaDate();
  for(const file of publishedFiles){
   const type=types.find(value=>file.startsWith(value+'-'));if(!type)continue;
   counts[type]++;
   const content=await fs.readFile(path.join(outDir,file),'utf8');
-  const date=content.match(/^date:\\s*["']?(\\d{4}-\\d{2}-\\d{2})/m)?.[1];
+  const date=content.match(/^date:\s*["']?(\d{4}-\d{2}-\d{2})/m)?.[1];
   if(date===today)todayCounts[type]++;
  }
  const totalPublished=Object.values(counts).reduce((sum,value)=>sum+value,0);
@@ -402,7 +402,7 @@ async function main(){
  if(!fresh.length&&generationFailures>0)throw new Error('فشلت جميع محاولات توليد المراجعات في هذه الدفعة؛ راجع سجلات المزوّدات ومفاتيح API.');
  if(!fresh.length)console.log(buildPhase?'لا توجد أعمال جديدة صالحة لاستكمال المكتبة في هذه الدفعة.':'لم يتم العثور على إصدارات جديدة مؤهلة خلال آخر 7 أيام.');
  if(generationFailures>0)console.warn('تم تجاوز '+generationFailures+' أعمال بسبب أخطاء توليد، مع الاحتفاظ بالمراجعات الناجحة.');
- await fs.writeFile(processedPath,JSON.stringify([...new Set(done)],null,2)+'\\n');
+ await fs.writeFile(processedPath,JSON.stringify([...new Set(done)],null,2)+'\n');
  const finalTotal=Object.values(counts).reduce((sum,value)=>sum+value,0);
  console.log(finalTotal>=targetTotal?'تم بلوغ هدف 100 مقالة؛ سيعمل التشغيل القادم بوضع رصد الإصدارات الجديدة.':`المتبقي للوصول إلى 100 مقالة: ${targetTotal-finalTotal}`);
 }
