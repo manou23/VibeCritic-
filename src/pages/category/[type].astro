@@ -41,6 +41,8 @@ const copy={game:{en:'GAMES & INTERACTIVE',title:'اكتشف عالم الألع
  {reviews.length?<div class="category-review-grid" id="category-review-grid">{reviews.map(review=><div class="category-review-item" data-title={normalizeArabic([review.data.title,review.data.originalTitle,review.data.headline,...(review.data.tags||[]),...(review.data.genres||[])].join(' '))} data-year={review.data.releaseDate?.slice(0,4)||String(review.data.date.getFullYear())} data-score={review.data.score} data-date={review.data.date.toISOString()} data-genres={(review.data.genres||[]).join('|').toLowerCase()}><ReviewCard review={review}/></div>)}</div>:<div class="catalog-empty">قسم {TYPE_PLURAL[type]} قيد الإثراء. ستظهر هنا الأعمال الجديدة ومراجعاتها تلقائياً.</div>}
  <div class="catalog-empty" id="category-filter-empty" hidden>لا توجد مراجعات تطابق خيارات التصفية الحالية.</div>
 </section>
+{type === 'movie' && <section class="wrap curated-links" aria-label="تصنيفات الأفلام الدقيقة"><h2>استكشف حسب النوع</h2><a href={url('collections/horror-films/')}>أفلام الرعب <span>←</span></a></section>}
+{type === 'game' && <section class="wrap curated-links" aria-label="تصنيفات الألعاب الدقيقة"><h2>استكشف حسب المنصة</h2><a href={url('collections/android-games/')}>ألعاب أندرويد <span>←</span></a></section>}
 <section class="wrap category-switcher">
  <a href={url('category/game/')} class={type==='game'?'active':''}>الألعاب</a><a href={url('category/series/')} class={type==='series'?'active':''}>المسلسلات</a><a href={url('category/movie/')} class={type==='movie'?'active':''}>الأفلام</a>
 </section>
