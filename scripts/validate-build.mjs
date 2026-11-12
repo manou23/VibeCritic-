@@ -60,7 +60,7 @@ for (const locale of ['en', 'fr']) {
     const html = await fs.readFile(path.join(dist, relative), 'utf8').catch(() => {
       throw new Error('Localized pilot review is missing: dist/' + relative);
     });
-    if (!new RegExp('<html[^>]*lang=["\\\\']' + locale + '["\\\\']', 'i').test(html)) {
+    if (!html.includes('<html lang="' + locale + '" dir="ltr">')) {
       throw new Error('Incorrect language metadata in ' + relative);
     }
     if (!/<html[^>]*dir=["']ltr["']/i.test(html)) {
