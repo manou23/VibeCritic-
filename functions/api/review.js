@@ -141,7 +141,7 @@ async function verifyTurnstile(token,request,env){
  return result.success===true;
 }
 async function reviewCacheKey(title,kind,request){
- const normalized='v2|'+kind+'|'+title.toLocaleLowerCase().replace(/\s+/g,' ').trim();
+ const normalized='v3|'+kind+'|'+title.toLocaleLowerCase().replace(/\s+/g,' ').trim();
  const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(normalized));
  const hash=[...new Uint8Array(digest)].map(byte=>byte.toString(16).padStart(2,'0')).join('');
  return new Request(new URL('/__ai-review-cache/'+hash,request.url).href);
