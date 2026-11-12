@@ -483,7 +483,7 @@ async function main(){
   }
  }
  if(!fresh.length&&generationFailures>0)throw new Error('فشلت جميع محاولات توليد المراجعات في هذه الدفعة؛ راجع سجلات المزوّدات ومفاتيح API.');
- await fs.writeFile('data/new-reviews.json',JSON.stringify(fresh.map(item=>({type:item.type,id:String(item.id)})),null,2)+'\\n','utf8');
+ await fs.writeFile('data/new-reviews.json',JSON.stringify(fresh.map(item=>({type:item.type,id:String(item.id)})),null,2),'utf8');
  if(!fresh.length)console.log(buildPhase?'لا توجد أعمال جديدة صالحة لاستكمال المكتبة في هذه الدفعة.':'لم يتم العثور على إصدارات جديدة مؤهلة خلال آخر 7 أيام.');
  if(generationFailures>0)console.warn('تم تجاوز '+generationFailures+' أعمال بسبب أخطاء توليد، مع الاحتفاظ بالمراجعات الناجحة.');
  await fs.writeFile(processedPath,JSON.stringify([...new Set(done)],null,2)+'\n');
