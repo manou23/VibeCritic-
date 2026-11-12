@@ -6,7 +6,7 @@ import { TYPE_LABEL, fmtDate, url, optimizeImage, SITE_NAME } from '../../consts
 export async function getStaticPaths(){const reviews=await getCollection('reviews');return reviews.map(review=>({params:{slug:review.id},props:{review}}));}
 const {review}=Astro.props;const {Content}=await render(review);const d=review.data;
 const allReviews=await getCollection('reviews');
-const normalizeSimilarity=value=>String(value||'').toLocaleLowerCase('ar').normalize('NFKD').replace(/\\p{M}/gu,'').replace(/[أإآٱ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/[^\\p{L}\\p{N}\\s]/gu,' ').trim().replace(/\\s+/g,' ');
+const normalizeSimilarity=value=>String(value||'').toLocaleLowerCase('ar').normalize('NFKD').replace(/\p{M}/gu,'').replace(/[أإآٱ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/[^\p{L}\p{N}\s]/gu,' ').trim().replace(/\s+/g,' ');
 const setOf=values=>new Set((values||[]).map(normalizeSimilarity).filter(Boolean));
 const currentTags=setOf(d.tags),currentGenres=setOf(d.genres),currentYear=Number(String(d.releaseDate||'').slice(0,4))||null;
 const similarityFor=entry=>{
