@@ -9,11 +9,11 @@ const escapeXml = (value: unknown) => String(value ?? '')
   .replace(/"/g, '&quot;')
   .replace(/'/g, '&apos;');
 
-export async function GET({ site }: { site: URL }) {
+export async function GET({ site }: { site?: URL }) {
   const reviews = (await getCollection('reviews'))
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
     .slice(0, 100);
-  const base = site.href.replace(/\/$/, '');
+  const base = (site || new URL('https://vibecritic.pages.dev')).href.replace(/\/$/, '');
   const items = reviews.map((review) => {
     const link = new URL('/reviews/' + review.id + '/', base).href;
     const title = review.data.title + ' — مراجعة VibeCritic';
