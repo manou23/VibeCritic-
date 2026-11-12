@@ -1,0 +1,38 @@
+name: Validate article comments
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/pages/reviews/**'
+      - 'src/styles/**'
+      - 'functions/api/comments.js'
+      - 'migrations/**'
+      - 'docs/comments-setup.md'
+      - 'package.json'
+      - 'astro.config.mjs'
+      - '.github/workflows/validate-comments.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check comments API syntax
+        run: node --check functions/api/comments.js
+      - name: Install dependencies
+        run: npm install
+      - name: Build production site
+        run: CF_PAGES=1 npm run build
+      - name: Validate production build
+        run: npm run validate:build
