@@ -195,12 +195,12 @@ function headlineSimilarity(left,right){
  const overlap=[...a].filter(word=>b.has(word)).length;
  return overlap/(a.size+b.size-overlap);
 }
-async function assertDistinctHeadline(headline,hook='',summary=''){
+async function assertDistinctHeadline(headline,hook='',summary='',review=''){
  const previous=await existingHeadlines();
  const duplicate=previous.find(value=>headlineSimilarity(headline,value)>=0.72);
  if(duplicate)throw new Error('العنوان النقدي متشابه جداً مع عنوان سابق؛ يلزم صياغة أكثر تميزاً.');
  const cliches=['بين الطموح والواقع','مزجٌ غير متوقع','مزج غير متوقع','مزيج غير متوقع','رحلة لا تُنسى','رحلة لا تنسى','تجربة لا مثيل لها','أكثر من مجرد','ليس مجرد','ما بين الحلم والواقع','على حافة الطموح','يقدم تجربة فريدة'];
- const editorialText=[headline,hook,summary].join(' ').toLocaleLowerCase('ar');
+ const editorialText=[headline,hook,summary,review].join(' ').toLocaleLowerCase('ar');
  const repeated=cliches.find(phrase=>editorialText.includes(phrase.toLocaleLowerCase('ar')));
  if(repeated)throw new Error('صياغة قالبية مرفوضة في المقدمة أو العنوان: '+repeated);
  if(String(headline||'').length<12||String(headline||'').length>115)throw new Error('العنوان النقدي يجب أن يكون محدداً وموجزاً (12–115 حرفاً).');
@@ -412,7 +412,7 @@ async function globalTrending(){
 }
 async function writeReview(item){
  const enriched=await enrichItem(item),reviewMode=validateSourceQuality(enriched),a=await generateReview(enriched),date=algeriaDate();
- await assertDistinctHeadline(a.headline,a.hook,a.summary);
+ await assertDistinctHeadline(a.headline,a.hook,a.summary,a.review);
  const videoFields=enriched.metadata?.youtubeVideoId?['youtubeVideoId: '+y(enriched.metadata.youtubeVideoId),'youtubeVideoTitle: '+y(enriched.metadata.youtubeVideoTitle)]:[];
  const watchFields=enriched.metadata?.watchProviderUrl?['watchProviderUrl: '+y(enriched.metadata.watchProviderUrl)]:[];
  const gameStoreFields=(enriched.metadata?.stores||[]).map(store=>'  - name: '+y(store.name)+(store.url?'\n    url: '+y(store.url):''));
