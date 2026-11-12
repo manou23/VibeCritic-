@@ -1,0 +1,88 @@
+name: Temporary Sitemap HTTP Diagnostic
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect-sitemaps:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Inspect sitemap responses
+        shell: bash
+        run: |
+          set -uo pipefail
+          BASE="https://vibecritic.pages.dev"
+          FAILED=0
+
+          inspect_url() {
+            local path="$1"
+            local body headers status content_type last_location
+            body="$(mktemp)"
+            headers="$(mktemp)"
+
+            echo "::group::${BASE}${path}"
+            status="$(curl --silent --show-error --location --compressed \
+              --connect-timeout 15 --max-time 45 \
+              --dump-header "$headers" --output "$body" \
+              --write-out '%{http_code}' "${BASE}${path}" || true)"
+            content_type="$(grep -i '^content-type:' "$headers" | tail -n 1 | tr -d '\r' || true)"
+            last_location="$(grep -i '^location:' "$headers" | tail -n 1 | tr -d '\r' || true)"
+
+            echo "Final HTTP status: ${status:-curl-error}"
+            echo "Final Content-Type: ${content_type:-missing}"
+            echo "Last redirect header (if any): ${last_location:-none}"
+            echo "Response bytes: $(wc -c < "$body" | tr -d ' ')"
+            echo "Response preview:"
+            head -c 350 "$body" | tr '\n' ' '
+            echo
+
+            if [[ "$status" != "200" ]]; then
+              echo "ERROR: Expected HTTP 200."
+              FAILED=1
+            fi
+
+            if ! python3 - "$body" <<'PY'
+          import sys
+          import xml.etree.ElementTree as ET
+
+          path = sys.argv[1]
+          try:
+              root = ET.parse(path).getroot()
+          except Exception as exc:
+              print(f"XML_PARSE_ERROR: {exc}")
+              raise SystemExit(1)
+
+          tag = root.tag.rsplit("}", 1)[-1]
+          if tag not in {"urlset", "sitemapindex"}:
+              print(f"UNEXPECTED_XML_ROOT: {tag}")
+              raise SystemExit(1)
+
+          ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+          if tag == "urlset":
+              print(f"XML_OK: urlset; URL entries: {len(root.findall('sm:url', ns))}")
+          else:
+              print(f"XML_OK: sitemapindex; child sitemaps: {len(root.findall('sm:sitemap', ns))}")
+              for item in root.findall("sm:sitemap/sm:loc", ns):
+                  print(f"CHILD_SITEMAP: {item.text}")
+          PY
+            then
+              FAILED=1
+            fi
+
+            rm -f "$body" "$headers"
+            echo "::endgroup::"
+          }
+
+          inspect_url "/sitemap-index.xml"
+          inspect_url "/sitemap-0.xml"
+
+          if [[ "$FAILED" -ne 0 ]]; then
+            echo "One or more sitemap checks failed."
+            exit 1
+          fi
+
+          echo "Both sitemap endpoints returned HTTP 200 and valid sitemap XML."
