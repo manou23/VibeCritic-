@@ -5,6 +5,9 @@ import { getCollection, render } from 'astro:content';
 import { TYPE_LABEL, fmtDate, url, optimizeImage, SITE_NAME } from '../../consts';
 export async function getStaticPaths(){const reviews=await getCollection('reviews');return reviews.map(review=>({params:{slug:review.id},props:{review}}));}
 const {review}=Astro.props;const {Content}=await render(review);const d=review.data;
+const allReviews=await getCollection('reviews');
+const reviewGenres=new Set(d.genres||[]);
+const similarReviews=allReviews.filter(entry=>entry.id!==review.id&&entry.data.type===d.type&&(entry.data.genres||[]).some(genre=>reviewGenres.has(genre))).sort((a,b)=>(b.data.genres||[]).filter(genre=>reviewGenres.has(genre)).length-(a.data.genres||[]).filter(genre=>reviewGenres.has(genre)).length).slice(0,3);
 
 const typeLabel = TYPE_LABEL[d.type];
 const youtubeVideoId = /^[A-Za-z0-9_-]{11}$/.test(d.youtubeVideoId || '') ? d.youtubeVideoId : null;
@@ -25,31 +28,33 @@ const reviewKeywords = [...new Set([
   ...(d.genres || []),
   ...(d.tags || []),
 ].map(cleanKeyword).filter(Boolean))].slice(0, 20);
-const reviewDescription = d.title + ' — مراجعة ' + typeKeyword + ' وتحليل نقدي للقصة والعناصر الفنية. ' + d.summary + ' تقييم VibeCritic: ' + d.score + '/10.';
+const reviewDescription = d.title + ' — ' + (d.reviewMode === 'preview' ? 'قراءة استباقية لـ' : 'مراجعة ') + typeKeyword + ' وتحليل نقدي للقصة والعناصر الفنية. ' + d.summary + (d.reviewMode === 'preview' ? ' التقدير الاستباقي: ' : ' تقييم VibeCritic: ') + d.score + '/10.';
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 const schemaType = d.type === 'game' ? 'Game' : d.type === 'series' ? 'CreativeWorkSeries' : 'Movie';
 const reviewStructuredData = {
   '@context': 'https://schema.org',
-  '@type': 'Review',
+  '@type': d.reviewMode === 'preview' ? 'Article' : 'Review',
   name: d.title + ' — مراجعة وتقييم',
   url: canonicalUrl,
   datePublished: d.date.toISOString().slice(0, 10),
   reviewBody: [d.summary, d.verdict, d.hook].filter(Boolean).join(' '),
-  reviewRating: {
+  ...(d.reviewMode === 'preview' ? {} : { reviewRating: {
     '@type': 'Rating',
     ratingValue: d.score,
     bestRating: 10,
     worstRating: 0,
-  },
+  } }),
   author: { '@type': 'Organization', name: SITE_NAME },
-  itemReviewed: {
+  ...(d.reviewMode === 'preview' ? {} : { itemReviewed: {
     '@type': schemaType,
     name: d.title,
     ...(d.originalTitle ? { alternateName: d.originalTitle } : {}),
     ...(d.genres?.length ? { genre: d.genres } : {}),
     ...(d.releaseDate ? { datePublished: d.releaseDate } : {}),
     ...(d.poster ? { image: optimizeImage(d.poster) } : {}),
-  },
+    ...(Number(d.sourceRating) > 0 && Number(d.sourceVoteCount) > 0 ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: d.sourceRating, bestRating: d.sourceRatingScale || 10, worstRating: 0, ratingCount: d.sourceVoteCount } } : {}),
+  }, }),
+
 };
 
 ---
@@ -62,6 +67,7 @@ const reviewStructuredData = {
       <span class="article-category">{typeLabel}</span>
       <time datetime={d.date.toISOString()}>{fmtDate(d.date)}</time>
       {d.aiGenerated&&<span class="article-ai">تحليل مدعوم بالذكاء الاصطناعي</span>}
+      {d.reviewMode === 'preview' && <span class="article-ai">قراءة استباقية — قبل الإصدار</span>}
     </div>
     <h1>{d.title}</h1>
     <p class="article-deck">{d.headline}</p>
@@ -112,12 +118,28 @@ const reviewStructuredData = {
         <h2>هل يستحق وقتك؟</h2>
         <p>{d.verdict || 'تتحدد قيمة هذا العمل بحسب مدى اهتمامك بنوعه وعناصره الفنية، مع مراعاة نقاط القوة والتحفظات المذكورة أعلاه.'}</p>
       </section>
+      {(d.cast?.length || d.crew?.length) && <section class="article-facts" aria-label="طاقم العمل">
+        <h2>طاقم العمل</h2>
+        {d.cast?.length>0 && <p><strong>أبرز المشاركين:</strong> {d.cast.join('، ')}</p>}
+        {d.crew?.length>0 && <p><strong>الإخراج / الإبداع:</strong> {d.crew.join('، ')}</p>}
+      </section>}
+      <section class="article-facts" aria-label="أماكن المشاهدة">
+        <h2>أين أشاهده؟</h2>
+        {d.watchProviders?.length>0 ? <p>المنصات المتاحة في الجزائر بحسب بيانات TMDB: {d.watchProviders.join('، ')}</p> : <p>لم تُسجّل بيانات منصات المشاهدة لهذا العمل بعد.</p>}
+        {d.watchProviderUrl && <a href={d.watchProviderUrl} target="_blank" rel="noopener noreferrer">تحقق من خيارات المشاهدة على TMDB ↗</a>}
+      </section>
+      {similarReviews.length>0 && <section class="article-facts" aria-label="مراجعات مشابهة">
+        <h2>مراجعات مشابهة</h2>
+        <ul>{similarReviews.map(entry=><li><a href={url('reviews/'+entry.id+'/')}>{entry.data.title} — {entry.data.score.toFixed(1)}/10</a></li>)}</ul>
+      </section>}
       <p class="review-method-note">منهجية VibeCritic: هذا تقييم تحريري مبني على المعلومات المنشورة والبيانات المتاحة، وليس ادعاءً باختبار مباشر للعمل. الدرجة تقدير نقدي مستقل وليست تقييماً رسمياً.</p>
       <a href={url('')} class="article-return">اكتشف مراجعات أخرى <span>←</span></a>
     </div>
     <aside class="article-aside" aria-label="ملخص ومعلومات العمل">
       {d.poster&&<img class="article-poster" src={optimizeImage(d.poster)} alt={d.title} loading="lazy" decoding="async" width="600" height="900"/>}
-      <div class="article-score-wrap"><p class="eyebrow">تقييم VibeCritic</p><ScoreCard score={d.score}/><p class="article-score-note">من 10 — رأينا، والقرار لك.</p></div>
+      <div class="article-score-wrap"><p class="eyebrow">تقييم VibeCritic</p><ScoreCard score={d.score} label={d.reviewMode === 'preview' ? 'تقدير استباقي' : 'تقييم VibeCritic'}/><p class="article-score-note">من 10 — رأينا، والقرار لك.</p>
+        {Number(d.sourceRating) > 0 && <p class="article-score-note">تقييم {d.sourceName || 'المصدر'}: {Number(d.sourceRating).toFixed(1)}/{d.sourceRatingScale || 10}{Number(d.sourceVoteCount) > 0 ? ` · ${d.sourceVoteCount} تقييم` : ''}</p>}
+        {Number(d.metacriticScore) > 0 && <p class="article-score-note">Metacritic: {Number(d.metacriticScore).toFixed(0)}/100</p>}</div>
       {(d.releaseDate || d.creator || d.genres?.length) && <section class="article-facts" aria-label="معلومات العمل">
         <h2>بطاقة العمل</h2>
         <dl>

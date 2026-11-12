@@ -1,4 +1,5 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
 
 const reviews = defineCollection({
@@ -18,7 +19,16 @@ const reviews = defineCollection({
     backdrop: z.string().optional(),
     youtubeVideoId: z.string().regex(/^[A-Za-z0-9_-]{11}$/).optional(),
     youtubeVideoTitle: z.string().optional(),
-    score: z.number().min(0).max(10),
+    score: z.number().gt(0).max(10),
+    reviewMode: z.enum(['review', 'preview']).default('review'),
+    sourceName: z.string().optional(),
+    sourceVoteCount: z.number().int().nonnegative().optional(),
+    sourceRatingScale: z.number().positive().optional(),
+    metacriticScore: z.number().nonnegative().optional(),
+    cast: z.array(z.string()).default([]),
+    crew: z.array(z.string()).default([]),
+    watchProviders: z.array(z.string()).default([]),
+    watchProviderUrl: z.url().optional(),
     pros: z.array(z.string()),
     cons: z.array(z.string()),
     tags: z.array(z.string()).default([]),

@@ -71,6 +71,18 @@ The endpoint appends `/chat/completions` to `baseUrl` unless it already ends wit
 
 The interactive endpoint tries configured keys for each provider in its configured order (OpenRouter, Groq, Gemini, OpenAI by default). On quota/rate-limit, invalid-key, server, timeout, or response errors, it moves to the next key and then the next provider. The scheduled generator uses the provider order documented above. The endpoint returns only the generated review and provider name, never the API key. It has request-size and best-effort per-IP limits; configure Cloudflare Rate Limiting/WAF rules for stronger production abuse protection and monitor provider spending.
 
+## Abuse protection, caching, and share links
+
+The API supports the following optional Cloudflare protections:
+
+- PUBLIC_TURNSTILE_SITE_KEY: build-time public Turnstile site key used by the /ai-review/ form.
+- TURNSTILE_SECRET_KEY: private Pages runtime secret used to verify Turnstile tokens. Configure both keys together; never expose the secret as a PUBLIC_* variable.
+- AI_REVIEW_LIMITER: optional Cloudflare Rate Limiting binding. When present, the API uses it for per-IP distributed limits; otherwise it falls back to a best-effort isolate-local limit. For a production site, also configure a Cloudflare WAF rate-limiting rule for POST /api/review and tune it to the site's expected traffic.
+
+For the WAF rule, match `(http.request.method eq "POST" and http.request.uri.path eq "/api/review")`, use the client IP as the counting characteristic, and begin with a conservative threshold such as 8 requests per 10 minutes per IP. Adjust after observing real traffic. If you add the Rate Limiting binding, name it exactly `AI_REVIEW_LIMITER`; the code fails closed if that binding reports an error.
+
+Successful AI review responses are cached at the Cloudflare edge for up to six hours, reducing repeated provider calls for the same normalized title and media type. Share links encode the generated result in the URL fragment; the result is not stored as a public server-side record. Anyone with the link can read the encoded review, so do not include private information in a review request.
+
 ## Review format
 
 The interactive output is structured into story, style/gameplay or direction/performance, visuals, audio, pros, cons, verdict, and a score out of 10. Scheduled reviews include dedicated editorial sections by media type. Prompts ask models to avoid fabricated facts and major spoilers. AI output can still be inaccurate, so verify factual claims before publishing.

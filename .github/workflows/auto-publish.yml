@@ -44,6 +44,8 @@ jobs:
           node --check functions/api/review.js
       - name: Install dependencies
         run: npm install
+      - name: Validate review score integrity
+        run: npm run validate:reviews
       # OpenRouter is supported as an AI generation provider.
       - name: Generate reviews
         if: github.event_name != 'push'
@@ -78,6 +80,8 @@ jobs:
           else
             echo "API secrets are not fully configured; skipping generation and continuing the site build."
           fi
+      - name: Validate generated review scores and quality metadata
+        run: npm run validate:reviews
       - name: Add videos to previously published reviews
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
