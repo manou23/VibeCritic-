@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 
 const env=process.env;
-const provider=(env.AI_PROVIDER||(env.OPENROUTER_API_KEY?'openrouter':env.OPENAI_API_KEY?'openai':env.GEMINI_API_KEY?'gemini':'groq')).toLowerCase();
+const provider=(env.AI_PROVIDER||(env.OPENAI_API_KEY?'openai':env.GEMINI_API_KEY?'gemini':env.GROQ_API_KEY?'groq':'openrouter')).toLowerCase();
 const maxPerRun=Math.max(1,Number.isFinite(Number(env.MAX_PER_RUN))?Number(env.MAX_PER_RUN):3);
 const gamesWindowDays=Math.max(1,Number.isFinite(Number(env.GAMES_WINDOW_DAYS))&&env.GAMES_WINDOW_DAYS?Number(env.GAMES_WINDOW_DAYS):14);
 const outDir='src/content/reviews',processedPath='data/processed.json';
@@ -106,10 +106,10 @@ async function generateFallback(prompt,excluded=[],primaryError=null){
  const errors=[];
  if(primaryError)errors.push(provider+': '+primaryError.message);
  const attempts=[
-  ['openrouter',env.OPENROUTER_API_KEY,()=>generateWithOpenRouter(prompt)],
   ['openai',env.OPENAI_API_KEY,()=>generateWithOpenAI(prompt)],
   ['gemini',env.GEMINI_API_KEY,()=>generateWithGemini(prompt)],
-  ['groq',env.GROQ_API_KEY,()=>generateWithGroq(prompt)]
+  ['groq',env.GROQ_API_KEY,()=>generateWithGroq(prompt)],
+  ['openrouter',env.OPENROUTER_API_KEY,()=>generateWithOpenRouter(prompt)]
  ];
  for(const [name,key,run] of attempts){
   if(!key||excluded.includes(name))continue;
@@ -229,7 +229,9 @@ async function gamesFromIgdb(){
   return {id:String(x.id),type:'game',name:x.name||'بدون عنوان',description:x.summary||'',date:x.first_release_date?new Date(x.first_release_date*1000).toISOString().slice(0,10):'',poster:image,backdrop:image,rating:Number(x.rating)||0,genres:(x.genres||[]).map(g=>g.name),sourceUrl:x.url||`https://www.igdb.com/games/${x.id}`,source:'IGDB',popularity:Number(x.hypes||0)+Number(x.follows||0),trendRank:i+1,platforms:(x.platforms||[]).map(p=>p.name).filter(Boolean),developers:(x.involved_companies||[]).filter(c=>c.developer).map(c=>c.company?.name).filter(Boolean)};
  }).filter(x=>x.description.trim().length>=60);
 }
+let gamesCachePromise;
 async function games(){
+ if(!gamesCachePromise)gamesCachePromise=(async()=>{
  if(env.RAWG_API_KEY){
   try{
    const results=await gamesFromRawg();
@@ -240,6 +242,9 @@ async function games(){
  if(env.IGDB_CLIENT_ID&&env.IGDB_CLIENT_SECRET)return gamesFromIgdb();
  if(env.RAWG_API_KEY)return [];
  throw new Error('اضبط RAWG_API_KEY (موصى به) أو IGDB_CLIENT_ID وIGDB_CLIENT_SECRET لجلب الألعاب.');
+
+ })();
+ return gamesCachePromise;
 }
 async function globalTrending(){
  const key=required('TMDB_API_KEY');
