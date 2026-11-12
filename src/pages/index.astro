@@ -4,7 +4,7 @@ import ReviewCard from '../components/ReviewCard.astro';
 import { getCollection } from 'astro:content';
 import { url, TYPE_PLURAL, optimizeImage } from '../consts';
 import trending from '../data/trending.json';
-const reviews=(await getCollection('reviews')).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
+const reviews=(await getCollection('reviews',({data})=>!data.locale)).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
 const byType={game:reviews.filter(x=>x.data.type==='game'),series:reviews.filter(x=>x.data.type==='series'),movie:reviews.filter(x=>x.data.type==='movie')};
 // اعرض في الترندات الأعمال التي تملك مراجعة منشورة داخل VibeCritic فقط.
 const trendReviews=trending.filter(item=>['مرتفع','متوسط'].includes(item.trendConfidence)).flatMap(item=>{
