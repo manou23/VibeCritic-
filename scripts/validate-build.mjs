@@ -93,7 +93,7 @@ for (const relative of reviewPages) {
     /<meta[^>]+property=["']og:title["'][^>]+content=["'][^"']{8,}["']/i,
     /<meta[^>]+property=["']og:description["'][^>]+content=["'][^"']{30,}["']/i,
     /<meta[^>]+property=["']og:url["'][^>]+content=["']https:\/\//i,
-    /<meta[^>]+name=["']twitter:card["'][^>]+content=["']summary_large_image["']/i,
+    /<meta[^>]+name=["']twitter:card["'][^>]+content=["']summary(?:_large_image)?["']/i,
     /<meta[^>]+property=["']article:published_time["'][^>]+content=["']\d{4}-\d{2}-\d{2}T/i,
     /<script[^>]+type=["']application\/ld\+json["'][^>]*>[\s\S]*?["@]type["']\s*:\s*["'](?:Review|Article)["']/i,
   ];
