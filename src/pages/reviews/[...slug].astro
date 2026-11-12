@@ -104,7 +104,7 @@ const reviewStructuredData = {
         </section>
         <section class="verdict-panel cons-panel">
           <h2><span>−</span> نقاط الضعف</h2>
-          <ul>{d.cons.map(x=><li>{x}</li>)}</ul>
+          {d.cons.length>0?<ul>{d.cons.map(x=><li>{x}</li>)}</ul>:<p>لم تتوفر تحفظات موثوقة كافية لإثبات نقاط ضعف محددة.</p>}
         </section>
       </div>
       <section class="article-final-verdict">
