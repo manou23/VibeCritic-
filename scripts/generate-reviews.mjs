@@ -178,6 +178,30 @@ async function enrichItem(item){
   return {...item,originalTitle:detail.original_title||detail.original_name||item.originalTitle||'',date:detail.release_date||detail.first_air_date||item.date,rating:Number(detail.vote_average??item.rating)||0,sourceVoteCount:Number(detail.vote_count)||0,genres:(detail.genres||[]).map(x=>x.name).filter(Boolean),metadata:{voteAverage:Number(detail.vote_average)||0,voteCount:Number(detail.vote_count)||0,youtubeVideoId:officialVideo?.key||null,youtubeVideoTitle:officialVideo?.name||null,genres:(detail.genres||[]).map(x=>x.name).filter(Boolean),directors,creators,cast,runtime:detail.runtime||null,episodeRuntime:Array.isArray(detail.episode_run_time)?detail.episode_run_time.slice(0,3):[],seasons:detail.number_of_seasons||null,episodes:detail.number_of_episodes||null,productionCompanies:(detail.production_companies||[]).slice(0,5).map(x=>x.name),watchProviders:[...(watchRegion?.flatrate||[]),...(watchRegion?.rent||[]),...(watchRegion?.buy||[])].map(x=>x.provider_name).filter((name,index,all)=>all.indexOf(name)===index),watchProviderUrl:watchRegion?.link||null,communityReviews,similar:(detail.similar?.results||[]).slice(0,5).map(x=>({id:String(x.id),title:x.title||x.name||''}))}};
  }catch(error){console.warn('تعذر إثراء بيانات العمل من TMDB، سيُستخدم الوصف المتاح:',error.message);return item;}
 }
+async function existingHeadlines(){
+ const files=(await fs.readdir(outDir)).filter(file=>file.endsWith('.md')).slice(-60);
+ const headlines=[];
+ for(const file of files){
+  try{
+   const content=await fs.readFile(path.join(outDir,file),'utf8');
+   const match=content.match(/^headline:\s*("(?:\\.|[^"])*")\s*$/m);
+   if(match)headlines.push(JSON.parse(match[1]));
+  }catch{}
+ }
+ return headlines;
+}
+function headlineSimilarity(left,right){
+ const words=value=>new Set(String(value||'').toLowerCase().replace(/[^\p{L}\p{N}\s]/gu,' ').split(/\s+/).filter(word=>word.length>2));
+ const a=words(left),b=words(right);
+ if(!a.size||!b.size)return 0;
+ const overlap=[...a].filter(word=>b.has(word)).length;
+ return overlap/(a.size+b.size-overlap);
+}
+async function assertDistinctHeadline(headline){
+ const previous=await existingHeadlines();
+ const duplicate=previous.find(value=>headlineSimilarity(headline,value)>=0.72);
+ if(duplicate)throw new Error('العنوان النقدي متشابه جداً مع عنوان سابق؛ يلزم صياغة أكثر تميزاً.');
+}
 function validateSourceQuality(item){
  const today=algeriaDate();
  const releaseDate=String(item.date||'').slice(0,10);
@@ -211,6 +235,7 @@ async function generateReview(item){
  const isGame=item.type==='game';
  const headings=isGame?['أسلوب اللعب والأنظمة','التصميم الفني والعالم','القصة وبناء الشخصيات','الأداء التقني والثبات','التقدم والتجربة على المدى الطويل']:['الحبكة والسيناريو','الأداء والشخصيات','الإخراج واللغة البصرية','الموسيقى والتصميم الصوتي',item.type==='series'?'بناء الموسم والإيقاع':'الإيقاع والتماسك الدرامي'];
  const metadata=JSON.stringify({...((item.metadata&&typeof item.metadata==='object')?item.metadata:{genres:item.genres||[],platforms:item.platforms||[],developers:item.developers||[],gameModes:item.gameModes||[],perspectives:item.perspectives||[],engines:item.engines||[],sourceRating:item.rating||null,releaseDate:item.date||null}),trendContext:{source:item.source||'غير محدد',rank:Number(item.trendRank)||null,sourceMetricName:item.sourceMetricName||null,sourceMetricValue:Number.isFinite(Number(item.sourceMetricValue))?Number(item.sourceMetricValue):null,popularity:Number.isFinite(Number(item.popularity))&&Number(item.popularity)>0?Number(item.popularity):null,confidence:item.trendConfidence||'غير محدد',window:item.type==='game'?gamesWindowDays+' يوماً':'أسبوع TMDB'}});
+ const previousHeadlines=await existingHeadlines();
  const prompt=[
  'اكتب مراجعة نقدية عربية احترافية ومتوازنة ومفصلة، وليست دعاية أو ملخصاً دعائياً.',
  'لا تدّع أنك شاهدت أو لعبت العمل بنفسك. لا تخترع أسماء ممثلين أو مطورين أو منصات أو مشاهد أو أحداثاً أو تفاصيل أداء تقني غير موجودة في البيانات. إذا لم تتوفر معلومات موثوقة عن جانب ما، صرّح بأن البيانات لا تكفي للحكم عليه ثم حلّل ما يمكن استنتاجه فقط. لا تحرق الأحداث. لا تكرر الوصف المصدر حرفياً. تجنب المبالغة والعبارات العامة.',
@@ -218,6 +243,7 @@ async function generateReview(item){
  'اكتب عربية فصيحة طبيعية بنبرة ناقد متخصص وفقرات مترابطة، وراجع تطابق الضمائر وجنس الشخصيات وأسمائها قبل إخراج النتيجة.',
  'أعد JSON صالحاً فقط بالمفاتيح: hook, headline, summary, score, pros, cons, tags, verdict, review.',
  'hook: افتتاحية جذابة من 2-3 جمل دون حرق. headline: عنوان نقدي موجز. summary: تعريف مركز في جملتين أو ثلاث.',
+ 'تجنب إعادة استخدام العناوين السابقة أو صيغها العامة: '+previousHeadlines.slice(-30).join(' | '),
  'review: مراجعة Markdown بين 450 و650 كلمة تقريباً، تبدأ بعنوان ## التحليل الفني والقصصي، ثم تستخدم العناوين الفرعية التالية حرفياً وبالترتيب:',
  ...headings.map((h,i)=>(i+1)+') ### '+h),
  'ناقش في كل محور ما تسمح به البيانات فقط وأثر الاختيارات الفنية على التجربة. اختم بفقرة تلخص المحصلة النقدية.',
@@ -360,6 +386,7 @@ async function globalTrending(){
 }
 async function writeReview(item){
  const enriched=await enrichItem(item),reviewMode=validateSourceQuality(enriched),a=await generateReview(enriched),date=algeriaDate();
+ await assertDistinctHeadline(a.headline);
  const videoFields=enriched.metadata?.youtubeVideoId?['youtubeVideoId: '+y(enriched.metadata.youtubeVideoId),'youtubeVideoTitle: '+y(enriched.metadata.youtubeVideoTitle)]:[];
  const watchFields=enriched.metadata?.watchProviderUrl?['watchProviderUrl: '+y(enriched.metadata.watchProviderUrl)]:[];
   const fm=['---','title: '+y(item.name),'originalTitle: '+y(enriched.originalTitle||''),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 2','reviewMode: '+reviewMode,'sourceName: '+y(item.source||''),'sourceVoteCount: '+(Number(enriched.sourceVoteCount)||0),'sourceRatingScale: '+(item.source==='RAWG'?5:item.source==='IGDB'?100:10),'metacriticScore: '+(Number(enriched.metadata?.metacritic)||0),'cast:',arr(enriched.metadata?.cast||[]),'crew:',arr([...(enriched.metadata?.directors||[]),...(enriched.metadata?.creators||[])]),'watchProviders:',arr(enriched.metadata?.watchProviders||[]),...watchFields,'type: '+item.type,'date: '+date,'releaseDate: '+y(enriched.date),'poster: '+y(item.poster),'backdrop: '+y(item.backdrop),...videoFields,'score: '+a.score,'trendRank: '+(Number(item.trendRank)||0),'trendSource: '+y(item.source||''),'trendPopularity: '+(Number(item.popularity)||0),'pros:',arr(a.pros),'cons:',arr(a.cons),'tags:',arr(a.tags),'genres:',arr(enriched.genres||[]),'sourceRating: '+(Number(enriched.rating)||0),'sourceId: '+y(item.id),'sourceUrl: '+y(item.sourceUrl),'aiGenerated: true','---','',a.review,'','> قراءة نقدية تحريرية مولّدة بمساعدة الذكاء الاصطناعي، مبنية على البيانات المنشورة المتاحة. لا تمثل تجربة مشاهدة أو لعب مباشرة، ولا تقييماً رسمياً من المصدر.',''].join('\n');
