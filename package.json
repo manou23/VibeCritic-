@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "generate": "node scripts/generate-reviews.mjs",
-    "validate:build": "node scripts/validate-build.mjs"
+    "validate:build": "node scripts/validate-build.mjs",
+    "backfill:videos": "node scripts/backfill-review-videos.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.2.0",
