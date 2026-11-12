@@ -22,6 +22,7 @@ const reviews = defineCollection({
     reviewMode: z.enum(['review', 'preview']).default('review'),
     sourceName: z.string().optional(),
     sourceVoteCount: z.number().int().nonnegative().optional(),
+    sourceRatingScale: z.number().positive().optional(),
     pros: z.array(z.string()),
     cons: z.array(z.string()),
     tags: z.array(z.string()).default([]),
