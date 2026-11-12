@@ -11,6 +11,7 @@ const {
   noindex = false,
   keywords = [],
   structuredData: pageStructuredData = null,
+  alternates = [],
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const rawTitle = `${title} | ${SITE_NAME}`;
@@ -53,6 +54,7 @@ const safeJson = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
 <meta name="robots" content={noindex ? 'noindex,nofollow' : 'index,follow'} />
 <link rel="icon" type="image/svg+xml" href={url('favicon.svg')} />
 <link rel="canonical" href={canonical} />
+{alternates.map((item) => <link rel="alternate" hreflang={item.lang} href={item.href} />)}
 <meta property="og:locale" content="ar_DZ" />
 <meta property="og:type" content={pageType === 'article' ? 'article' : 'website'} />
 <meta property="og:site_name" content={SITE_NAME} />
