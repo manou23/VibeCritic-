@@ -9,7 +9,7 @@ const byType={game:reviews.filter(x=>x.data.type==='game'),series:reviews.filter
 // اعرض الترندات الموثوقة حتى عندما لم تُنشر مراجعة VibeCritic للعمل بعد.
 const trendReviews=trending.filter(item=>['مرتفع','متوسط'].includes(item.trendConfidence)).map(item=>{
  const review=reviews.find(entry=>entry.data.type===item.type&&entry.data.sourceId===item.sourceId);
- return {...item,summary:review?.data.summary||item.summary,poster:optimizeImage(item.poster),backdrop:optimizeImage(item.backdrop||item.poster,'backdrop'),review,href:review?url(`reviews/${review.id}/`):item.sourceUrl,external:!review};
+ return {...item,title:review?.data.title||item.title,summary:review?.data.summary||item.summary,poster:optimizeImage(item.poster),backdrop:optimizeImage(item.backdrop||item.poster,'backdrop'),review,href:review?url(`reviews/${review.id}/`):item.sourceUrl,external:!review};
 }).filter(item=>item.href).slice(0,9);
 const trendGroups={movie:trendReviews.filter(item=>item.type==='movie'),series:trendReviews.filter(item=>item.type==='series'),game:trendReviews.filter(item=>item.type==='game')};
 const spotlight=trendReviews[0]||null;
