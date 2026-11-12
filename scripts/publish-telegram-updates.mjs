@@ -49,8 +49,8 @@ for (const item of queue) {
     if (attempt < 18) await new Promise(resolve => setTimeout(resolve, 10000));
   }
   if (!published) {
-    console.warn('Review is not live yet; Telegram post skipped: ' + url);
-    continue;
+    console.warn('Production review URL is not live; Telegram publishing is stopping for this batch: ' + url);
+    break;
   }
   const message = '<b>' + escapeHtml(title) + '</b>\n' +
     typeLabel + (score ? ' · تقييم VibeCritic: ' + escapeHtml(score) + '/10' : '') + '\n\n' +
