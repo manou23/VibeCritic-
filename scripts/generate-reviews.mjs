@@ -158,7 +158,7 @@ async function findOfficialGameTrailer(item){
  }
 }
 async function enrichItem(item){
- if(item.type==='game'){const trailer=await findOfficialGameTrailer(item);return trailer?{...item,metadata:{...(item.metadata||{}),...trailer}}:item;}
+ if(item.type==='game'){const trailer=await findOfficialGameTrailer(item);return {...item,metadata:{...(item.metadata||{}),...(trailer||{})}};}
  try{
   const key=required('TMDB_API_KEY'),endpoint=item.type==='movie'?'movie':'tv';
   const detail=await getJson('https://api.themoviedb.org/3/'+endpoint+'/'+item.id+'?api_key='+key+'&language=ar&append_to_response=credits,videos');
@@ -168,8 +168,37 @@ async function enrichItem(item){
   const officialVideo=(detail.videos?.results||[])
    .filter(video=>video.site==='YouTube'&&video.official===true&&['Trailer','Teaser'].includes(video.type)&&/^[A-Za-z0-9_-]{11}$/.test(video.key||''))
    .sort((a,b)=>(a.type==='Trailer'?0:1)-(b.type==='Trailer'?0:1)||String(b.published_at||'').localeCompare(String(a.published_at||'')))[0];
-  return {...item,genres:(detail.genres||[]).map(x=>x.name).filter(Boolean),metadata:{youtubeVideoId:officialVideo?.key||null,youtubeVideoTitle:officialVideo?.name||null,genres:(detail.genres||[]).map(x=>x.name).filter(Boolean),directors,creators,cast,runtime:detail.runtime||null,episodeRuntime:Array.isArray(detail.episode_run_time)?detail.episode_run_time.slice(0,3):[],seasons:detail.number_of_seasons||null,episodes:detail.number_of_episodes||null,productionCompanies:(detail.production_companies||[]).slice(0,5).map(x=>x.name)}};
+  return {...item,date:detail.release_date||detail.first_air_date||item.date,rating:Number(detail.vote_average??item.rating)||0,sourceVoteCount:Number(detail.vote_count)||0,genres:(detail.genres||[]).map(x=>x.name).filter(Boolean),metadata:{voteAverage:Number(detail.vote_average)||0,voteCount:Number(detail.vote_count)||0,youtubeVideoId:officialVideo?.key||null,youtubeVideoTitle:officialVideo?.name||null,genres:(detail.genres||[]).map(x=>x.name).filter(Boolean),directors,creators,cast,runtime:detail.runtime||null,episodeRuntime:Array.isArray(detail.episode_run_time)?detail.episode_run_time.slice(0,3):[],seasons:detail.number_of_seasons||null,episodes:detail.number_of_episodes||null,productionCompanies:(detail.production_companies||[]).slice(0,5).map(x=>x.name)}};
  }catch(error){console.warn('تعذر إثراء بيانات العمل من TMDB، سيُستخدم الوصف المتاح:',error.message);return item;}
+}
+function validateSourceQuality(item){
+ const today=algeriaDate();
+ const releaseDate=String(item.date||'').slice(0,10);
+ if(!/^\d{4}-\d{2}-\d{2}$/.test(releaseDate)||Number.isNaN(Date.parse(releaseDate)))throw new Error('تاريخ الإصدار غير موثوق أو مفقود');
+ if(String(item.description||'').trim().length<140)throw new Error('الوصف المصدر أقصر من الحد الأدنى المطلوب (140 حرفاً)');
+ if(!Array.isArray(item.genres)||item.genres.length===0)throw new Error('لا تتوفر تصنيفات موثوقة للعمل');
+ const isPreview=releaseDate>today;
+ const metadata=item.metadata||{};
+ if(item.type==='game'){
+  const platforms=metadata.platforms||item.platforms||[];
+  const developers=metadata.developers||item.developers||[];
+  if(platforms.length===0||developers.length===0)throw new Error('بيانات اللعبة لا تتضمن منصات ومطوراً موثقاً');
+  if(!isPreview){
+   const count=Number(item.sourceVoteCount??metadata.ratingCount)||0;
+   const rating=Number(item.rating)||0;
+   const metacritic=Number(metadata.metacritic)||0;
+   if(!(count>=5&&rating>0)&&metacritic<60)throw new Error('بيانات تقييم اللعبة غير كافية (يلزم 5 تقييمات مصدرية أو Metacritic موثوق ≥60)');
+  }
+ }else{
+  const cast=metadata.cast||[];
+  const leadership=item.type==='movie'?(metadata.directors||[]):(metadata.creators||[]);
+  if(cast.length<3||leadership.length===0)throw new Error('بيانات الطاقم الإبداعي غير كافية للتحليل');
+  if(!isPreview){
+   const count=Number(item.sourceVoteCount)||0;
+   if(!(Number(item.rating)>0&&count>=5))throw new Error('بيانات تقييم الجمهور غير كافية (يلزم 5 أصوات مصدرية على الأقل)');
+  }
+ }
+ return isPreview?'preview':'review';
 }
 async function generateReview(item){
  const isGame=item.type==='game';
@@ -255,12 +284,12 @@ async function gamesFromRawg(){
     id:String(item.id),type:'game',name:item.name||'بدون عنوان',description,
     date:item.released||'',poster:item.background_image||detail.background_image||'',
     backdrop:item.background_image||detail.background_image||'',
-    rating:Number(item.rating)||0,genres:(detail.genres||item.genres||[]).map(x=>x.name).filter(Boolean),
+    rating:Number(detail.rating??item.rating)||0,sourceVoteCount:Number(detail.ratings_count??item.ratings_count)||0,genres:(detail.genres||item.genres||[]).map(x=>x.name).filter(Boolean),
     sourceUrl:'https://rawg.io/games/'+item.slug,source:'RAWG',
     popularity:Number(item.added)||0,sourceMetricName:'RAWG added count',sourceMetricValue:Number(item.added)||0,trendConfidence:Number(item.added)>=10?'مرتفع':Number(item.added)>0?'متوسط':'منخفض',added:Number(item.added)||0,trendRank:candidates.indexOf(item)+1,
     platforms:(detail.platforms||item.platforms||[]).map(x=>x.platform?.name).filter(Boolean),
     developers:(detail.developers||[]).map(x=>x.name).filter(Boolean),
-    metadata:{metacritic:item.metacritic||detail.metacritic||null,added:Number(item.added)||0,platforms:(detail.platforms||item.platforms||[]).map(x=>x.platform?.name).filter(Boolean),developers:(detail.developers||[]).map(x=>x.name).filter(Boolean)}
+    metadata:{metacritic:item.metacritic||detail.metacritic||null,ratingCount:Number(detail.ratings_count??item.ratings_count)||0,added:Number(item.added)||0,platforms:(detail.platforms||item.platforms||[]).map(x=>x.platform?.name).filter(Boolean),developers:(detail.developers||[]).map(x=>x.name).filter(Boolean)}
    };
   }catch(error){console.warn('تعذر جلب تفاصيل RAWG للعبة '+item.name+':',error.message);return null;}
  }));
@@ -279,7 +308,7 @@ async function gamesFromIgdb(){
  if(!response.ok)throw new Error(`IGDB recent games HTTP ${response.status}: ${await response.text()}`);
  return (await response.json()).map((x,i)=>{
   const image=x.cover?.image_id?`https://images.igdb.com/igdb/image/upload/t_cover_big/${x.cover.image_id}.jpg`:'';
-  return {id:String(x.id),type:'game',name:x.name||'بدون عنوان',description:x.summary||'',date:x.first_release_date?new Date(x.first_release_date*1000).toISOString().slice(0,10):'',poster:image,backdrop:image,rating:Number(x.rating)||0,genres:(x.genres||[]).map(g=>g.name),sourceUrl:x.url||`https://www.igdb.com/games/${x.id}`,source:'IGDB',popularity:Number(x.hypes||0)+Number(x.follows||0),sourceMetricName:'IGDB hypes + follows',sourceMetricValue:Number(x.hypes||0)+Number(x.follows||0),trendConfidence:(Number(x.hypes||0)+Number(x.follows||0))>=10?'متوسط':'منخفض',trendRank:i+1,platforms:(x.platforms||[]).map(p=>p.name).filter(Boolean),developers:(x.involved_companies||[]).filter(c=>c.developer).map(c=>c.company?.name).filter(Boolean)};
+  return {id:String(x.id),type:'game',name:x.name||'بدون عنوان',description:x.summary||'',date:x.first_release_date?new Date(x.first_release_date*1000).toISOString().slice(0,10):'',poster:image,backdrop:image,rating:Number(x.rating)||0,genres:(x.genres||[]).map(g=>g.name),sourceUrl:x.url||`https://www.igdb.com/games/${x.id}`,source:'IGDB',popularity:Number(x.hypes||0)+Number(x.follows||0),sourceMetricName:'IGDB hypes + follows',sourceMetricValue:Number(x.hypes||0)+Number(x.follows||0),trendConfidence:(Number(x.hypes||0)+Number(x.follows||0))>=10?'متوسط':'منخفض',trendRank:i+1,platforms:(x.platforms||[]).map(p=>p.name).filter(Boolean),developers:(x.involved_companies||[]).filter(c=>c.developer).map(c=>c.company?.name).filter(Boolean),metadata:{ratingCount:Number(x.rating_count)||0,platforms:(x.platforms||[]).map(p=>p.name).filter(Boolean),developers:(x.involved_companies||[]).filter(c=>c.developer).map(c=>c.company?.name).filter(Boolean)}};
  }).filter(x=>x.description.trim().length>=60&&x.popularity>0).sort((a,b)=>b.popularity-a.popularity);
 }
 let gamesCachePromise;
@@ -322,9 +351,9 @@ async function globalTrending(){
  return picks.slice(0,6).map((x,i)=>({...x,rank:i+1,trendRank:i+1}));
 }
 async function writeReview(item){
- const enriched=await enrichItem(item),a=await generateReview(enriched),date=algeriaDate();
+ const enriched=await enrichItem(item),reviewMode=validateSourceQuality(enriched),a=await generateReview(enriched),date=algeriaDate();
  const videoFields=enriched.metadata?.youtubeVideoId?['youtubeVideoId: '+y(enriched.metadata.youtubeVideoId),'youtubeVideoTitle: '+y(enriched.metadata.youtubeVideoTitle)]:[];
-  const fm=['---','title: '+y(item.name),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 2','type: '+item.type,'date: '+date,'releaseDate: '+y(item.date),'poster: '+y(item.poster),'backdrop: '+y(item.backdrop),...videoFields,'score: '+a.score,'trendRank: '+(Number(item.trendRank)||0),'trendSource: '+y(item.source||''),'trendPopularity: '+(Number(item.popularity)||0),'pros:',arr(a.pros),'cons:',arr(a.cons),'tags:',arr(a.tags),'genres:',arr(enriched.genres||[]),'sourceRating: '+item.rating,'sourceId: '+y(item.id),'sourceUrl: '+y(item.sourceUrl),'aiGenerated: true','---','',a.review,'','> قراءة نقدية تحريرية مولّدة بمساعدة الذكاء الاصطناعي، مبنية على البيانات المنشورة المتاحة. لا تمثل تجربة مشاهدة أو لعب مباشرة، ولا تقييماً رسمياً من المصدر.',''].join('\n');
+  const fm=['---','title: '+y(item.name),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 2','reviewMode: '+reviewMode,'sourceName: '+y(item.source||''),'sourceVoteCount: '+(Number(enriched.sourceVoteCount)||0),'type: '+item.type,'date: '+date,'releaseDate: '+y(enriched.date),'poster: '+y(item.poster),'backdrop: '+y(item.backdrop),...videoFields,'score: '+a.score,'trendRank: '+(Number(item.trendRank)||0),'trendSource: '+y(item.source||''),'trendPopularity: '+(Number(item.popularity)||0),'pros:',arr(a.pros),'cons:',arr(a.cons),'tags:',arr(a.tags),'genres:',arr(enriched.genres||[]),'sourceRating: '+(Number(enriched.rating)||0),'sourceId: '+y(item.id),'sourceUrl: '+y(item.sourceUrl),'aiGenerated: true','---','',a.review,'','> قراءة نقدية تحريرية مولّدة بمساعدة الذكاء الاصطناعي، مبنية على البيانات المنشورة المتاحة. لا تمثل تجربة مشاهدة أو لعب مباشرة، ولا تقييماً رسمياً من المصدر.',''].join('\n');
  await fs.writeFile(path.join(outDir,item.type+'-'+slugify(item.name)+'-'+item.id+'.md'),fm,'utf8');return item.type+':'+item.id;
 }
 async function main(){
