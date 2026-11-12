@@ -62,6 +62,7 @@ const reviewStructuredData = {
       <span class="article-category">{typeLabel}</span>
       <time datetime={d.date.toISOString()}>{fmtDate(d.date)}</time>
       {d.aiGenerated&&<span class="article-ai">تحليل مدعوم بالذكاء الاصطناعي</span>}
+      {d.reviewMode === 'preview' && <span class="article-ai">قراءة استباقية — قبل الإصدار</span>}
     </div>
     <h1>{d.title}</h1>
     <p class="article-deck">{d.headline}</p>
@@ -117,7 +118,8 @@ const reviewStructuredData = {
     </div>
     <aside class="article-aside" aria-label="ملخص ومعلومات العمل">
       {d.poster&&<img class="article-poster" src={optimizeImage(d.poster)} alt={d.title} loading="lazy" decoding="async" width="600" height="900"/>}
-      <div class="article-score-wrap"><p class="eyebrow">تقييم VibeCritic</p><ScoreCard score={d.score}/><p class="article-score-note">من 10 — رأينا، والقرار لك.</p></div>
+      <div class="article-score-wrap"><p class="eyebrow">تقييم VibeCritic</p><ScoreCard score={d.score}/><p class="article-score-note">من 10 — رأينا، والقرار لك.</p>
+        {Number(d.sourceRating) > 0 && <p class="article-score-note">تقييم {d.sourceName || 'المصدر'}: {Number(d.sourceRating).toFixed(1)}/{d.sourceRatingScale || 10}{Number(d.sourceVoteCount) > 0 ? ` · ${d.sourceVoteCount} تقييم` : ''}</p>}</div>
       {(d.releaseDate || d.creator || d.genres?.length) && <section class="article-facts" aria-label="معلومات العمل">
         <h2>بطاقة العمل</h2>
         <dl>
