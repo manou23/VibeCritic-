@@ -138,7 +138,7 @@ const reviewStructuredData = {
         <h2>أين تلعبه؟</h2>
         {d.platforms?.length > 0 && <p><strong>المنصات:</strong> {d.platforms.join('، ')}</p>}
         {d.gameStores?.some(store=>store.url) && <p class="game-store-links"><strong>المتاجر:</strong> {d.gameStores.filter(store=>store.url).map(store=><a href={store.url} target="_blank" rel="noopener noreferrer">{store.name}</a>)}</p>}
-      </section>) : ((d.watchProviders?.length || d.watchProviderUrl) > 0 && <section class="article-facts" aria-label="أماكن المشاهدة">
+      </section>) : (((d.watchProviders?.length ?? 0) > 0 || Boolean(d.watchProviderUrl)) && <section class="article-facts" aria-label="أماكن المشاهدة">
         <h2>أين أشاهده؟</h2>
         {d.watchProviders?.length>0 && <p>المنصات المتاحة في الجزائر بحسب بيانات TMDB: {d.watchProviders.join('، ')}</p>}
         {d.watchProviderUrl && <a href={d.watchProviderUrl} target="_blank" rel="noopener noreferrer">تحقق من خيارات المشاهدة على TMDB ↗</a>}
