@@ -147,11 +147,19 @@ Only paths from EDITABLE FILE sections may be changed. No new/deleted/renamed fi
 def validate_patch(raw, editable):
     patch = raw.strip()
     fence = chr(96) * 3
+    # Models sometimes prepend prose or wrap the diff in Markdown.
+    # Extract only the unified diff; surrounding prose is never applied.
+    marker = patch.find("diff --git ")
+    if marker >= 0:
+        patch = patch[marker:].strip()
     if patch.startswith(fence):
         patch = re.sub(r"^" + re.escape(fence) + r"(?:diff)?\s*", "", patch)
-        patch = re.sub(r"\s*" + re.escape(fence) + r"$", "", patch)
-    if len(patch) > 30000 or not patch.startswith("diff --git "):
-        raise RuntimeError("Invalid or oversized unified diff.")
+    patch = re.sub(r"\s*" + re.escape(fence) + r"\s*$", "", patch)
+    if len(patch) > 30000:
+        raise RuntimeError("Unified diff exceeded the 30000-character safety limit.")
+    if not patch.startswith("diff --git "):
+        preview = re.sub(r"\s+", " ", patch)[:180]
+        raise RuntimeError("Model response did not contain a unified diff: " + preview)
     sections = re.split(r"(?=^diff --git )", patch, flags=re.M)
     changed = []
     for section in sections:
