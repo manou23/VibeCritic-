@@ -76,7 +76,7 @@ const reviewStructuredData = {
 };
 
 ---
-<Base title={`${d.title} — مراجعة وتقييم`} description={reviewDescription} keywords={reviewKeywords} structuredData={reviewStructuredData} image={optimizeImage(d.backdrop || d.poster, 'backdrop')} pageType="article" publishedAt={d.date.toISOString()}>
+<Base title={`${d.title} — مراجعة وتقييم`} description={reviewDescription} keywords={reviewKeywords} structuredData={reviewStructuredData} image={optimizeImage(d.backdrop || d.poster, 'backdrop')} pageType="article" publishedAt={d.date.toISOString()} articleSection={typeLabel}>
 <article class="wrap article-page">
   <a href={url('')} class="article-back">← العودة إلى VibeCritic</a>
   <header class="article-header">
