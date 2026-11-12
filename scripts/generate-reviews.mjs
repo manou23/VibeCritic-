@@ -476,7 +476,7 @@ async function main(){
   counts[type]++;
   const content=await fs.readFile(path.join(outDir,file),'utf8');
   const id=file.match(/-(\d+)\.md$/)?.[1];
-  if(id){const key=type+':'+id;publishedKeys.add(key);publishedModes.set(key,content.match(/^reviewMode:\s*(preview|review)\s*$/m)?.[1]||'review');}
+  if(id){const key=type+':'+id,declaredMode=content.match(/^reviewMode:\s*(preview|review)\s*$/m)?.[1],legacyPreview=!declaredMode&&/(?:قراءة استباقية|لم تصدر بعد|لم يصدر بعد)/i.test(content.slice(0,5000));publishedKeys.add(key);publishedModes.set(key,declaredMode||(legacyPreview?'preview':'review'));}
   const date=content.match(/^date:\s*["']?(\d{4}-\d{2}-\d{2})/m)?.[1];
   if(date===today)todayCounts[type]++;
  }
