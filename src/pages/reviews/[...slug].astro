@@ -171,8 +171,8 @@ const reviewStructuredData = {
         {d.reviewMode !== 'preview' && (d.storyScore !== undefined || d.visualsScore !== undefined || d.soundScore !== undefined || d.pacingScore !== undefined) && <div class="score-breakdown" aria-label="الدرجات الفرعية">
           {([{label:'القصة',value:d.storyScore},{label:'الصورة',value:d.visualsScore},{label:'الصوت',value:d.soundScore},{label:'الإيقاع',value:d.pacingScore}]).filter(item=>Number.isFinite(item.value)).map(item=><div class="score-breakdown-row"><div><span>{item.label}</span><strong>{Number(item.value).toFixed(1)}/10</strong></div><span class="score-breakdown-track"><i style={`--score-fill:${Number(item.value)*10}%`}></i></span></div>)}
         </div>}
-        {Number(d.sourceRating) > 0 && <p class="article-score-note">تقييم {d.sourceName || 'المصدر'}: {Number(d.sourceRating).toFixed(1)}/{d.sourceRatingScale || 10}{Number(d.sourceVoteCount) > 0 ? ` · ${d.sourceVoteCount} تقييم` : ''}</p>}
-        {Number(d.metacriticScore) > 0 && <p class="article-score-note">Metacritic: {Number(d.metacriticScore).toFixed(0)}/100</p>}</div>
+        {d.reviewMode !== 'preview' && Number(d.sourceRating) > 0 && <p class="article-score-note">تقييم {d.sourceName || 'المصدر'}: {Number(d.sourceRating).toFixed(1)}/{d.sourceRatingScale || 10}{Number(d.sourceVoteCount) > 0 ? ` · ${d.sourceVoteCount} تقييم` : ''}</p>}
+        {d.reviewMode !== 'preview' && Number(d.metacriticScore) > 0 && <p class="article-score-note">Metacritic: {Number(d.metacriticScore).toFixed(0)}/100</p>}</div>
       {(d.releaseDate || d.creator || d.genres?.length) && <section class="article-facts" aria-label="معلومات العمل">
         <h2>بطاقة العمل</h2>
         <dl>
