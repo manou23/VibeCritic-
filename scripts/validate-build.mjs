@@ -48,4 +48,43 @@ const canonical=[...home.matchAll(/<link\s+rel=["']canonical["']\s+href=["']([^"
 if(canonical.length!==1)throw new Error('يجب أن يحتوي الصفحة الرئيسية على رابط canonical واحد فقط.');
 if(new URL(canonical[0][1]).origin!==site.origin)throw new Error('نطاق canonical للصفحة الرئيسية لا يطابق نطاق الإنتاج.');
 if(!/<meta\s+name=["']description["']\s+content=["'][^"']{30,}["'][^>]*>/i.test(home))throw new Error('وصف Meta للصفحة الرئيسية مفقود أو قصير جداً.');
+
+const pilotReviews = [
+  { slug: 'game-minecraft-135400', arabic: 'game-minecraft-135400', score: '8.7' },
+  { slug: 'movie-model-citizen-1792170', arabic: 'movie-model-citizen-1792170', score: '7.0' },
+  { slug: 'series-the-body-291507', arabic: 'series-the-body-291507', score: '5.5' },
+];
+for (const locale of ['en', 'fr']) {
+  for (const review of pilotReviews) {
+    const relative = path.join(locale, 'reviews', review.slug, 'index.html');
+    const html = await fs.readFile(path.join(dist, relative), 'utf8').catch(() => {
+      throw new Error('Localized pilot review is missing: dist/' + relative);
+    });
+    if (!new RegExp('<html[^>]*lang=["\\\\']' + locale + '["\\\\']', 'i').test(html)) {
+      throw new Error('Incorrect language metadata in ' + relative);
+    }
+    if (!/<html[^>]*dir=["']ltr["']/i.test(html)) {
+      throw new Error('Localized review must use LTR direction: ' + relative);
+    }
+    const canonicalUrl = site.origin + '/' + locale + '/reviews/' + review.slug + '/';
+    if (!html.includes('rel="canonical" href="' + canonicalUrl + '"')) {
+      throw new Error('Missing or incorrect canonical URL in ' + relative);
+    }
+    if (!html.includes('hreflang="ar"') || !html.includes('hreflang="' + (locale === 'en' ? 'fr' : 'en') + '"')) {
+      throw new Error('Missing reciprocal language alternates in ' + relative);
+    }
+    if (!html.includes(review.score)) {
+      throw new Error('Expected preserved score not found in ' + relative);
+    }
+  }
+}
+for (const review of pilotReviews) {
+  const relative = path.join('reviews', review.arabic, 'index.html');
+  const html = await fs.readFile(path.join(dist, relative), 'utf8').catch(() => {
+    throw new Error('Arabic source review is missing: dist/' + relative);
+  });
+  if (!html.includes('hreflang="ar"') || !html.includes('hreflang="en"') || !html.includes('hreflang="fr"')) {
+    throw new Error('Arabic source review is missing reciprocal hreflang links: ' + relative);
+  }
+}
 console.log('Build validation passed: '+sitemapUrls.length+' sitemap file(s), '+pageCount+' unique page URL(s), robots.txt and homepage SEO metadata verified for '+site.origin+'.');
