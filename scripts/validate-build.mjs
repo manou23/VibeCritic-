@@ -81,6 +81,30 @@ const robots = await read('robots.txt');
 if (!robots.includes(new URL('sitemap.xml', site).href)) {
   throw new Error('robots.txt لا يشير إلى ملف sitemap.xml المباشر.');
 }
+
+// Every review must ship its own share metadata and structured review/article data.
+const reviewOutput = path.join(dist, 'reviews');
+const reviewHtmlPaths = await fs.readdir(reviewOutput, { recursive: true }).catch(() => []);
+const reviewPages = reviewHtmlPaths.filter(file => String(file).endsWith('index.html'));
+if (!reviewPages.length) throw new Error('لم يتم العثور على صفحات مراجعات HTML لفحص SEO.');
+for (const relative of reviewPages) {
+  const html = await fs.readFile(path.join(reviewOutput, relative), 'utf8');
+  const requiredMeta = [
+    /<meta[^>]+property=["']og:title["'][^>]+content=["'][^"']{8,}["']/i,
+    /<meta[^>]+property=["']og:description["'][^>]+content=["'][^"']{30,}["']/i,
+    /<meta[^>]+property=["']og:url["'][^>]+content=["']https:\/\//i,
+    /<meta[^>]+name=["']twitter:card["'][^>]+content=["']summary_large_image["']/i,
+    /<meta[^>]+property=["']article:published_time["'][^>]+content=["']\d{4}-\d{2}-\d{2}T/i,
+    /<script[^>]+type=["']application\/ld\+json["'][^>]*>[\s\S]*?["@]type["']\s*:\s*["'](?:Review|Article)["']/i,
+  ];
+  if (requiredMeta.some(pattern => !pattern.test(html))) {
+    throw new Error('وسوم Open Graph أو Twitter أو بيانات Article/Review غير مكتملة في صفحة: ' + relative);
+  }
+  const pageCanonical = html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i)?.[1];
+  if (!pageCanonical || new URL(pageCanonical).origin !== site.origin) {
+    throw new Error('Canonical مفقود أو يستخدم نطاقاً خاطئاً في صفحة: ' + relative);
+  }
+}
 // Review-content integrity checks also run after the production build.
 const reviewRoot = path.resolve('src/content/reviews');
 const reviewFiles = (await fs.readdir(reviewRoot)).filter(name => name.endsWith('.md'));
@@ -104,4 +128,4 @@ if (new URL(canonical[0][1]).origin !== site.origin) throw new Error('نطاق c
 if (!/<meta\s+name=["']description["']\s+content=["'][^"']{30,}["'][^>]*>/i.test(home)) {
   throw new Error('وصف Meta للصفحة الرئيسية مفقود أو قصير جداً.');
 }
-console.log('Build validation passed: ' + sitemapUrls.length + ' indexed sitemap file(s), ' + pageCount + ' unique page URL(s), flat sitemap parity, robots.txt and homepage SEO metadata verified for ' + site.origin + '.');
+console.log('Build validation passed: ' + sitemapUrls.length + ' indexed sitemap file(s), ' + pageCount + ' unique page URL(s), flat sitemap parity, robots.txt, homepage SEO and dynamic metadata for ' + reviewPages.length + ' review pages verified for ' + site.origin + '.');
