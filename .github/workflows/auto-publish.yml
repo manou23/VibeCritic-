@@ -78,6 +78,12 @@ jobs:
           else
             echo "API secrets are not fully configured; skipping generation and continuing the site build."
           fi
+      - name: Add videos to previously published reviews
+        if: github.event_name != 'push'
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: npm run backfill:videos
       - name: Commit generated reviews
         if: github.event_name != 'push'
         run: |
