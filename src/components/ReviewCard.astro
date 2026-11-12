@@ -6,13 +6,13 @@ const href = url(`reviews/${review.id}/`);
 ---
 <a href={href} class="review-card group" aria-label={`${TYPE_LABEL[data.type]}: ${data.title} — التقييم ${data.score.toFixed(1)} من 10`}>
 <div class="review-poster-wrap">
-{data.poster ? <img src={optimizeImage(data.poster)} alt={data.title} loading="lazy" decoding="async" class="review-poster"/> : <div class="review-poster grid place-items-center text-5xl text-[#e45c38]">✦</div>}
+{data.poster ? <img src={optimizeImage(data.poster)} alt={data.title} loading="lazy" decoding="async" class="review-poster" width="600" height="900"/> : <div class="review-poster grid place-items-center text-5xl text-[#e45c38]">✦</div>}
 <span class="review-type">{TYPE_LABEL[data.type]}</span>
 <span class="review-score">{data.score.toFixed(1)} <small>/10</small></span>
 </div>
 <div class="review-content">
 <h3 class="review-title">{data.title}</h3>
 <p class="review-headline">{data.headline}</p>
-<p class="review-date">{fmtDate(data.date)}</p>
+<time class="review-date" datetime={data.date.toISOString()}>{fmtDate(data.date)}</time>
 </div>
 </a>
