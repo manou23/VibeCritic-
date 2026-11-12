@@ -16,9 +16,9 @@ function clean(v,n){return String(v??'').replace(/\u0000/g,'').trim().slice(0,n)
 function normalize(d,title,kind){
  const arr=(v,max,len)=>Array.isArray(v)?v.map(x=>clean(x,len)).filter(Boolean).slice(0,max):[];
  const score=Number(d.score);
- const r={title:clean(d.title||title,160),kind,hook:clean(d.hook,900),story:clean(d.story,3500),style:clean(d.style,3500),visuals:clean(d.visuals,3000),audio:clean(d.audio,2500),pros:arr(d.pros,5,300),cons:arr(d.cons,5,300),verdict:clean(d.verdict,1800),score:Number.isFinite(score)?Math.round(Math.max(0,Math.min(10,score))*10)/10:null};
+ const r={title:clean(d.title||title,160),kind,hook:clean(d.hook,900),story:clean(d.story,3500),style:clean(d.style,3500),visuals:clean(d.visuals,3000),audio:clean(d.audio,2500),pros:arr(d.pros,5,300),cons:arr(d.cons,5,300),verdict:clean(d.verdict,1800),score:Number.isFinite(score)&&score>0&&score<=10?Math.round(score*10)/10:null};
  for(const f of ['hook','story','style','visuals','audio','verdict'])if(!r[f])throw Error('المراجعة غير مكتملة: '+f);
- if(r.pros.length<3||r.score===null)throw Error('التقييم أو قائمة الإيجابيات غير مكتملة؛ يلزم 3 إيجابيات على الأقل ودرجة صالحة.');
+ if(r.pros.length<3||r.score===null||r.score<=0||r.score>10)throw Error('التقييم أو قائمة الإيجابيات غير مكتملة؛ يلزم 3 إيجابيات على الأقل ودرجة صالحة.');
  return r;
 }
 async function fetchWithRetry(url,options){
