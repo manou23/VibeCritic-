@@ -284,11 +284,11 @@ async function main(){
  }catch(e){console.error('تعذر تحديث الترندات العالمية، سيتم الاحتفاظ بآخر قائمة:',e.message);}
  let done=[];try{done=JSON.parse(await fs.readFile(processedPath,'utf8'));}catch{}
  const types=['game','series','movie'];
- const pools={
-  game:(await games()).filter(x=>!done.includes(`${x.type}:${x.id}`)),
-  series:(await tmdb('series')).filter(x=>!done.includes(`${x.type}:${x.id}`)),
-  movie:(await tmdb('movie')).filter(x=>!done.includes(`${x.type}:${x.id}`))
- };
+ const eligible=(items)=>items.filter(x=>String(x.description||'').trim().length>=60&&!done.includes(`${x.type}:${x.id}`));
+ const rawPools={game:await games(),series:await tmdb('series'),movie:await tmdb('movie')};
+ const pools={game:eligible(rawPools.game),series:eligible(rawPools.series),movie:eligible(rawPools.movie)};
+ const skippedThinSources=Object.values(rawPools).reduce((total,items)=>total+items.filter(x=>String(x.description||'').trim().length<60).length,0);
+ if(skippedThinSources)console.warn('تم استبعاد '+skippedThinSources+' أعمال لعدم توفر وصف مصدر كافٍ لتوليد مراجعة موثوقة.');
  const files=await fs.readdir(outDir);
  const counts={game:0,series:0,movie:0};
  for(const file of files){for(const type of types){if(file.startsWith(type+'-')&&file.endsWith('.md'))counts[type]++;}}
