@@ -4,7 +4,7 @@ import path from 'node:path';
 const env=process.env;
 const provider=(env.AI_PROVIDER||(env.GEMINI_API_KEY?'gemini':env.GROQ_API_KEY?'groq':env.OPENROUTER_API_KEY?'openrouter':'openai')).toLowerCase();
 const targetTotal=100,dailyPerType=5,releaseBatchLimit=10;
-const gamesWindowDays=Math.max(1,Number.isFinite(Number(env.GAMES_WINDOW_DAYS))&&env.GAMES_WINDOW_DAYS?Number(env.GAMES_WINDOW_DAYS):14);
+const gamesWindowDays=Math.max(1,Number.isFinite(Number(env.GAMES_WINDOW_DAYS))&&env.GAMES_WINDOW_DAYS?Number(env.GAMES_WINDOW_DAYS):30);
 const upcomingWindowDays=Math.max(30,Number.isFinite(Number(env.UPCOMING_WINDOW_DAYS))&&env.UPCOMING_WINDOW_DAYS?Number(env.UPCOMING_WINDOW_DAYS):365);
 const outDir='src/content/reviews',processedPath='data/processed.json';
 function required(name){if(!env[name])throw new Error(`متغير البيئة ${name} غير مضبوط في GitHub Secrets`);return env[name];}
@@ -302,7 +302,7 @@ async function generateReview(item){
 }
 async function tmdb(type,mode='trending'){
  const key=required('TMDB_API_KEY'),endpoint=type==='movie'?'movie':'tv';
- const today=algeriaDate(),since=new Date(Date.now()-7*86400000).toISOString().slice(0,10),upcomingUntil=addDays(today,upcomingWindowDays);
+ const today=algeriaDate(),since=new Date(Date.now()-30*86400000).toISOString().slice(0,10),upcomingUntil=addDays(today,upcomingWindowDays);
  const pages=mode==='upcoming'?[1,2,3,4,5]:mode==='releases'?[1,2,3]:mode==='archive'?[1,2,3,4,5]:[1];
  const [lists,genreData]=await Promise.all([
   Promise.all(pages.map(page=>{
@@ -360,7 +360,7 @@ async function gamesFromRawg(mode='recent'){
     backdrop:item.background_image||detail.background_image||'',
     rating:Number(detail.rating??item.rating)||0,sourceVoteCount:Number(detail.ratings_count??item.ratings_count)||0,genres:(detail.genres||item.genres||[]).map(x=>x.name).filter(Boolean),
     sourceUrl:'https://rawg.io/games/'+item.slug,source:'RAWG',
-    popularity:Number(item.added)||0,sourceMetricName:'RAWG added count',sourceMetricValue:Number(item.added)||0,trendConfidence:Number(item.added)>=10?'مرتفع':Number(item.added)>0?'متوسط':'منخفض',added:Number(item.added)||0,trendRank:candidates.indexOf(item)+1,
+    popularity:Number(item.added)||0,sourceMetricName:'RAWG added count',sourceMetricValue:Number(item.added)||0,trendConfidence:Number(item.added)>=100?'مرتفع':Number(item.added)>=25?'متوسط':'منخفض',added:Number(item.added)||0,trendRank:candidates.indexOf(item)+1,
     platforms:(detail.platforms||item.platforms||[]).map(x=>x.platform?.name).filter(Boolean),
     developers:(detail.developers||[]).map(x=>x.name).filter(Boolean),
     metadata:{metacritic:item.metacritic||detail.metacritic||null,ratingCount:Number(detail.ratings_count??item.ratings_count)||0,sourceTags:(detail.tags||[]).map(tag=>tag.name).filter(Boolean).slice(0,20),added:Number(item.added)||0,platforms:(detail.platforms||item.platforms||[]).map(x=>x.platform?.name).filter(Boolean),developers:(detail.developers||[]).map(x=>x.name).filter(Boolean),stores:(detail.stores||[]).map(x=>({name:x.store?.name||x.name||'',url:x.url||null})).filter(x=>x.name)}
@@ -384,7 +384,7 @@ async function gamesFromIgdb(mode='recent'){
  if(!response.ok)throw new Error(`IGDB recent games HTTP ${response.status}: ${await response.text()}`);
  return (await response.json()).map((x,i)=>{
   const image=x.cover?.image_id?`https://images.igdb.com/igdb/image/upload/t_cover_big/${x.cover.image_id}.jpg`:'';
-  return {id:String(x.id),type:'game',name:x.name||'بدون عنوان',description:x.summary||'',date:x.first_release_date?new Date(x.first_release_date*1000).toISOString().slice(0,10):'',poster:image,backdrop:image,rating:Number(x.rating)||0,genres:(x.genres||[]).map(g=>g.name),sourceUrl:x.url||`https://www.igdb.com/games/${x.id}`,source:'IGDB',popularity:Number(x.hypes||0)+Number(x.follows||0),sourceMetricName:'IGDB hypes + follows',sourceMetricValue:Number(x.hypes||0)+Number(x.follows||0),trendConfidence:(Number(x.hypes||0)+Number(x.follows||0))>=10?'متوسط':'منخفض',trendRank:i+1,platforms:(x.platforms||[]).map(p=>p.name).filter(Boolean),developers:(x.involved_companies||[]).filter(c=>c.developer).map(c=>c.company?.name).filter(Boolean),metadata:{ratingCount:Number(x.rating_count)||0,platforms:(x.platforms||[]).map(p=>p.name).filter(Boolean),developers:(x.involved_companies||[]).filter(c=>c.developer).map(c=>c.company?.name).filter(Boolean)}};
+  return {id:String(x.id),type:'game',name:x.name||'بدون عنوان',description:x.summary||'',date:x.first_release_date?new Date(x.first_release_date*1000).toISOString().slice(0,10):'',poster:image,backdrop:image,rating:Number(x.rating)||0,genres:(x.genres||[]).map(g=>g.name),sourceUrl:x.url||`https://www.igdb.com/games/${x.id}`,source:'IGDB',popularity:Number(x.hypes||0)+Number(x.follows||0),sourceMetricName:'IGDB hypes + follows',sourceMetricValue:Number(x.hypes||0)+Number(x.follows||0),trendConfidence:(Number(x.hypes||0)+Number(x.follows||0))>=50?'مرتفع':(Number(x.hypes||0)+Number(x.follows||0))>=15?'متوسط':'منخفض',trendRank:i+1,platforms:(x.platforms||[]).map(p=>p.name).filter(Boolean),developers:(x.involved_companies||[]).filter(c=>c.developer).map(c=>c.company?.name).filter(Boolean),metadata:{ratingCount:Number(x.rating_count)||0,platforms:(x.platforms||[]).map(p=>p.name).filter(Boolean),developers:(x.involved_companies||[]).filter(c=>c.developer).map(c=>c.company?.name).filter(Boolean)}};
  }).filter(x=>x.description.trim().length>=60&&x.popularity>=15).sort((a,b)=>b.popularity-a.popularity);
 }
 let gamesCachePromise;
