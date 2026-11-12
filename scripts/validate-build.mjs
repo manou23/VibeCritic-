@@ -90,7 +90,7 @@ if (!reviewPages.length) throw new Error('لم يتم العثور على صفح
 for (const relative of reviewPages) {
   const html = await fs.readFile(path.join(reviewOutput, relative), 'utf8');
   const metaTags = html.match(/<meta\b[^>]*>/gi) || [];
-  const metaTag = (attribute, value) => metaTags.find(tag => new RegExp(\`\\\\b\${attribute}=["']\${value}["']\`, 'i').test(tag)) || '';
+  const metaTag = (attribute, value) => metaTags.find(tag => new RegExp('\\b' + attribute + '=["\']' + value + '["\']', 'i').test(tag)) || '';
   const metaContent = (attribute, value) => {
     const tag = metaTag(attribute, value);
     return tag.match(/\bcontent=["']([^"']*)["']/i)?.[1] || '';
