@@ -7,7 +7,8 @@ export async function getStaticPaths(){const reviews=await getCollection('review
 const {review}=Astro.props;const {Content}=await render(review);const d=review.data;
 const allReviews=await getCollection('reviews');
 const normalizeSimilarity=value=>String(value||'').toLocaleLowerCase('ar').normalize('NFKD').replace(/\p{M}/gu,'').replace(/[أإآٱ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/[^\p{L}\p{N}\s]/gu,' ').trim().replace(/\s+/g,' ');
-const setOf=values=>new Set((values||[]).map(normalizeSimilarity).filter(Boolean));
+const genericSimilarityTags=new Set(['indie','adventure','action','casual','singleplayer','multiplayer','arcade','simulation','puzzle','strategy','platformer','rpg','مغامرة','اكشن','مستقل','محاكاة','الغاز','استراتيجية'].map(normalizeSimilarity));
+const setOf=values=>new Set((values||[]).map(normalizeSimilarity).filter(value=>value&&!genericSimilarityTags.has(value)));
 const currentTags=setOf(d.tags),currentGenres=setOf(d.genres),currentYear=Number(String(d.releaseDate||'').slice(0,4))||null;
 const similarityFor=entry=>{
  const tags=setOf(entry.data.tags),genres=setOf(entry.data.genres);
