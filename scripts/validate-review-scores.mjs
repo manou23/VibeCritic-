@@ -27,7 +27,7 @@ for (const file of files) {
     continue;
   }
 
-  const verdictMatch = frontmatter.match(/^verdict:\s*"([^"]*)"/m);
+  const verdictMatch = frontmatter.match(/^verdict:\s*"(.*)"\s*$/m);
   if (verdictMatch) {
     const statedScores = [...verdictMatch[1].matchAll(/(\d+(?:[.,]\d+)?)\s*(?:\/\s*10|من\s*10)/g)]
       .map(item => Number(item[1].replace(',', '.')));
