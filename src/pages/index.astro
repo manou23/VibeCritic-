@@ -19,7 +19,7 @@ const latest=reviews.slice(0,12);
 <section class="wrap discovery-hero spotlight-slider" aria-label="أبرز الترندات">
  <div class="spotlight-backdrops" aria-hidden="true">
   <img class="spotlight-image is-active" src={spotlight?.backdrop||spotlight?.poster||''} alt="" fetchpriority="high" loading="eager" decoding="async"/>
-  <img class="spotlight-image" src="" alt="" loading="lazy" decoding="async"/>
+  <img class="spotlight-image" alt="" loading="lazy" decoding="async"/>
  </div>
  <div class="discovery-shade"></div>
  <div class="discovery-content spotlight-copy" aria-live="polite">
@@ -33,9 +33,9 @@ const latest=reviews.slice(0,12);
   </div>
  </div>
  <div class="spotlight-controls">
-  <button type="button" class="spotlight-prev" aria-label="الترند السابق">‹</button>
+  <button type="button" class="spotlight-prev" aria-label="الترند السابق" disabled={trendReviews.length < 2}>‹</button>
   <span class="discovery-index"><strong class="spotlight-count">01</strong><span>من <b class="spotlight-total">{String(Math.max(1,trendReviews.length)).padStart(2,'0')}</b> ترندات</span></span>
-  <button type="button" class="spotlight-next" aria-label="الترند التالي">›</button>
+  <button type="button" class="spotlight-next" aria-label="الترند التالي" disabled={trendReviews.length < 2}>›</button>
  </div>
  <div class="spotlight-progress" aria-hidden="true"><span></span></div>
  <div class="spotlight-data" hidden>
