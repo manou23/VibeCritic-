@@ -860,3 +860,24 @@ img{max-width:100%}
  .ai-review-promo-copy>p:not(.ai-review-promo-kicker){max-width:100%;font-size:12px}
 }
 @media(prefers-reduced-motion:reduce){.ai-review-promo-cta{transition:none}}
+
+
+/* Review detail improvements */
+.article-original-title{margin:-8px 0 14px;color:var(--vc-muted);font-size:14px;font-weight:700;letter-spacing:.02em}
+.score-breakdown{display:grid;gap:12px;margin-top:18px;padding:16px;border:1px solid var(--vc-border);border-radius:16px;background:var(--vc-surface)}
+.score-breakdown-row{display:grid;gap:7px}
+.score-breakdown-row>div{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px}
+.score-breakdown-row strong{font-variant-numeric:tabular-nums;color:var(--vc-accent-deep)}
+.score-breakdown-track{height:8px;overflow:hidden;border-radius:99px;background:var(--vc-surface-muted)}
+.score-breakdown-track i{display:block;width:var(--score-fill);height:100%;border-radius:inherit;background:linear-gradient(90deg,#e45c38,#f1a45c)}
+.youtube-facade-button{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:#111;cursor:pointer}
+.youtube-facade-button img{width:100%;height:100%;object-fit:cover;opacity:.86}
+.youtube-play-icon{position:absolute;left:50%;top:50%;display:grid;place-items:center;width:76px;height:54px;transform:translate(-50%,-50%);border-radius:16px;background:#e62117;color:#fff;font-size:26px;box-shadow:0 8px 28px #0007}
+.article-share-links,.game-store-links{display:flex;flex-wrap:wrap;gap:10px}
+.article-share-links a,.game-store-links a{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:9px 15px;border:1px solid var(--vc-border);border-radius:999px;color:var(--vc-accent-deep);font-weight:800}
+.footer-subscriptions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:10px}
+.category-search-help{display:block;margin-top:5px;color:var(--vc-muted);font-size:11px}
+.trend-type-group{margin-top:28px}
+.trend-type-group>.catalog-heading h3{font-size:20px}
+.trend-review-card .review-headline{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+@media(max-width:640px){.score-breakdown{padding:12px}.article-share-links a,.game-store-links a{min-height:44px}}
