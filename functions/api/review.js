@@ -69,7 +69,7 @@ export async function onRequestPost({request,env}){
   if(new TextEncoder().encode(raw).byteLength>12000)return Response.json({error:'حجم الطلب كبير جداً.'},{status:413});
   const body=JSON.parse(raw),title=clean(body.title,120),kind=body.kind==='game'?'game':body.kind==='movie'?'movie':'';
   if(title.length<2||!kind)return Response.json({error:'أدخل اسم العمل واختر فيلماً أو لعبة.'},{status:400});
-  const prompt=['اسم العمل: '+title,'النوع: '+(kind==='game'?'لعبة فيديو':'فيلم سينمائي'),'اكتب مراجعة بالاعتماد على معرفتك الموثوقة فقط. إذا كان الاسم ملتبساً فاذكر ذلك ولا تخترع تفاصيل. تجنب حرق الأحداث.','game: حلل التحكم والأنظمة والتقدم والتصميم في محور style. movie: حلل الإخراج والتمثيل والإيقاع في محور style.','اكتب بالعربية الفصحى.'].join('\n');
+  const prompt=['اسم العمل: '+title,'النوع: '+(kind==='game'?'لعبة فيديو':kind==='series'?'مسلسل تلفزيوني':'فيلم سينمائي'),'اكتب مراجعة بالاعتماد على معرفتك الموثوقة فقط. إذا كان الاسم ملتبساً فاذكر ذلك ولا تخترع تفاصيل. تجنب حرق الأحداث.','game: حلل التحكم والأنظمة والتقدم والتصميم في محور style. movie: حلل الإخراج والتمثيل والإيقاع في محور style. series: حلل بناء الموسم والحلقات وتطور الشخصيات والإيقاع في محور style.','اكتب بالعربية الفصحى.'].join('\n');
   const out=await generate(env,prompt,title,kind);
   return Response.json({ok:true,review:out.review,provider:out.provider},{headers:{'cache-control':'no-store'}});
  }catch(e){console.error('AI review API:',e);return Response.json({error:e instanceof SyntaxError?'تعذر قراءة بيانات الطلب.':(e.message||'حدث خطأ غير متوقع.')},{status:500,headers:{'cache-control':'no-store'}})}
