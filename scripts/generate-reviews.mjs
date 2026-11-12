@@ -103,7 +103,7 @@ function validateGeneratedReview(d){
  const pros=Array.isArray(d?.pros)?d.pros.filter(x=>String(x||'').trim()):[];
  const cons=Array.isArray(d?.cons)?d.cons.filter(x=>String(x||'').trim()):[];
  const score=Number(d?.score);
- if(d?.score===undefined||d?.score===null||String(d.score).trim()===''||!Number.isFinite(score)||score<0||score>10)throw new Error('درجة المراجعة غير موجودة أو خارج النطاق 0–10');
+ if(d?.score===undefined||d?.score===null||String(d.score).trim()===''||!Number.isFinite(score)||score<=0||score>10)throw new Error('درجة المراجعة غير موجودة أو خارج النطاق 0–10');
  const statedScore=String(d?.verdict||'').match(/(\d+(?:[.,]\d+)?)\s*(?:\/\s*10|من\s*10)/);
  if(statedScore&&Math.abs(Number(statedScore[1].replace(',','.'))-score)>0.05)throw new Error('الدرجة في الحكم النهائي لا تطابق حقل score');
  if(review.length<700)throw new Error('المراجعة المولّدة أقصر من الحد المطلوب للتحليل المتكامل');
@@ -186,7 +186,7 @@ async function generateReview(item){
  'ناقش في كل محور ما تسمح به البيانات فقط وأثر الاختيارات الفنية على التجربة. اختم بفقرة تلخص المحصلة النقدية.',
  'pros: ثلاث إلى أربع نقاط قوة محددة. cons: صفر إلى ثلاث تحفظات حقيقية؛ إذا لم تتوفر تحفظات موثوقة فأعد قائمة فارغة ولا تخترع عيباً لملء العدد.',
  'verdict: 3-4 جمل تجيب هل يستحق المشاهدة/اللعب، ولمن يناسب، والتحفظ الأهم، وسبب الدرجة.',
- 'score: درجة من 0 إلى 10 بخطوة عشرية واحدة، تقدير تحريري مبرر لا تقييم رسمي ولا نقل آلي لتقييم المصدر. tags: ثلاثة إلى ستة وسوم.',
+ 'score: درجة تحريرية مبررة أكبر من صفر وحتى 10، بخطوة عشرية واحدة. لا تستخدم صفراً أو تترك الدرجة فارغة. لا تنقل تقييم المصدر آلياً. tags: ثلاثة إلى ستة وسوم.',
  'مؤشرات الترند (للسياق فقط وليست دليلاً على الجودة): المصدر '+(item.source||'غير محدد')+'، الترتيب داخل المصدر '+(item.trendRank||'غير متاح')+'، المقياس '+(item.sourceMetricName||'غير متاح')+' وقيمته '+(item.sourceMetricValue??'غير متاح')+'، مستوى الثقة '+(item.trendConfidence||'غير محدد')+'. المقاييس خاصة بمصادرها ولا تقارن رقمياً بين TMDB وRAWG وIGDB. لا تخترع أسباب الترند أو أرقام مشاهدات ومبيعات.',
  'بيانات العمل:','النوع: '+(isGame?'لعبة':item.type==='series'?'مسلسل':'فيلم'),'الاسم: '+item.name,'تاريخ الإصدار: '+(item.date||'غير متاح'),'الوصف المصدر: '+(item.description||'غير متوفر'),'التصنيفات: '+((item.genres||[]).join('، ')||'غير متاحة'),'بيانات إضافية موثوقة: '+metadata,'تقييم المصدر (للاستئناس فقط): '+(item.rating||'غير متاح')
  ].join('\n');
@@ -208,7 +208,7 @@ async function generateReview(item){
  if(review.length<700)throw new Error('المراجعة المولّدة أقصر من الحد المطلوب للتحليل المتكامل');
  const pros=Array.isArray(d.pros)?d.pros.map(clean).filter(Boolean).slice(0,4):[],cons=Array.isArray(d.cons)?d.cons.map(clean).filter(Boolean).slice(0,3):[];
  if(pros.length<3)throw new Error('قائمة نقاط القوة غير مكتملة');
- return {hook:clean(d.hook),headline:clean(d.headline),summary:clean(d.summary),verdict:clean(d.verdict),score:Math.round(Math.min(10,Math.max(0,Number(d.score)||0))*10)/10,pros,cons,tags:Array.isArray(d.tags)?d.tags.slice(0,8).map(clean):[],review};
+ return {hook:clean(d.hook),headline:clean(d.headline),summary:clean(d.summary),verdict:clean(d.verdict),score:Math.round(Number(d.score)*10)/10,pros,cons,tags:Array.isArray(d.tags)?d.tags.slice(0,8).map(clean):[],review};
 }
 async function tmdb(type,mode='trending'){
  const key=required('TMDB_API_KEY'),endpoint=type==='movie'?'movie':'tv';
