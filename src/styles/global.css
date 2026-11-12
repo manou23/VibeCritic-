@@ -881,3 +881,12 @@ img{max-width:100%}
 .trend-type-group>.catalog-heading h3{font-size:20px}
 .trend-review-card .review-headline{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 @media(max-width:640px){.score-breakdown{padding:12px}.article-share-links a,.game-store-links a{min-height:44px}}
+
+.site-search-enhanced{display:grid;gap:10px}
+.site-search-enhanced>label{font-size:13px;font-weight:800}
+.site-search-enhanced>input{width:100%;min-height:48px;padding:12px 14px;border:1px solid var(--vc-border);border-radius:12px;background:var(--vc-surface);color:var(--vc-text)}
+.site-search-results{display:grid;gap:8px;max-height:min(52vh,480px);overflow:auto}
+.site-search-results>p{margin:0;padding:12px;color:var(--vc-muted);font-size:13px}
+.site-search-results>a{display:grid;gap:5px;padding:12px;border:1px solid var(--vc-border);border-radius:12px;background:var(--vc-surface)}
+.site-search-results>a strong{color:var(--vc-accent-deep);font-size:14px}
+.site-search-results>a span{color:var(--vc-muted);font-size:12px;line-height:1.6}
