@@ -381,9 +381,10 @@ async function globalTrending(){
   sourceUrl:x.sourceUrl||'',source:x.source||'RAWG',sourceRank:Number(x.popularity)||0,popularity:Number(x.popularity)||0,sourceMetricName:x.sourceMetricName||'source-native popularity',sourceMetricValue:Number(x.sourceMetricValue??x.popularity)||0,trendConfidence:x.trendConfidence||'متوسط',
   trendRank:i+1,updatedAt:new Date().toISOString()
  }));
- const picks=[];
- for(let i=0;i<3;i++){if(media[i])picks.push(media[i]);if(gameItems[i])picks.push(gameItems[i]);}
- return picks.slice(0,6).map((x,i)=>({...x,rank:i+1,trendRank:i+1}));
+ const movies=media.filter(item=>item.type==='movie').slice(0,3);
+ const series=media.filter(item=>item.type==='series').slice(0,3);
+ const picks=[...movies,...series,...gameItems.slice(0,3)];
+ return picks.map((x,i)=>({...x,rank:i+1,trendRank:i+1}));
 }
 async function writeReview(item){
  const enriched=await enrichItem(item),reviewMode=validateSourceQuality(enriched),a=await generateReview(enriched),date=algeriaDate();
