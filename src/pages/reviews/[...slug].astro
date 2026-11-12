@@ -137,7 +137,8 @@ const reviewStructuredData = {
     <aside class="article-aside" aria-label="ملخص ومعلومات العمل">
       {d.poster&&<img class="article-poster" src={optimizeImage(d.poster)} alt={d.title} loading="lazy" decoding="async" width="600" height="900"/>}
       <div class="article-score-wrap"><p class="eyebrow">تقييم VibeCritic</p><ScoreCard score={d.score} label={d.reviewMode === 'preview' ? 'تقدير استباقي' : 'تقييم VibeCritic'}/><p class="article-score-note">من 10 — رأينا، والقرار لك.</p>
-        {Number(d.sourceRating) > 0 && <p class="article-score-note">تقييم {d.sourceName || 'المصدر'}: {Number(d.sourceRating).toFixed(1)}/{d.sourceRatingScale || 10}{Number(d.sourceVoteCount) > 0 ? ` · ${d.sourceVoteCount} تقييم` : ''}</p>}</div>
+        {Number(d.sourceRating) > 0 && <p class="article-score-note">تقييم {d.sourceName || 'المصدر'}: {Number(d.sourceRating).toFixed(1)}/{d.sourceRatingScale || 10}{Number(d.sourceVoteCount) > 0 ? ` · ${d.sourceVoteCount} تقييم` : ''}</p>}
+        {Number(d.metacriticScore) > 0 && <p class="article-score-note">Metacritic: {Number(d.metacriticScore).toFixed(0)}/100</p>}</div>
       {(d.releaseDate || d.creator || d.genres?.length) && <section class="article-facts" aria-label="معلومات العمل">
         <h2>بطاقة العمل</h2>
         <dl>
