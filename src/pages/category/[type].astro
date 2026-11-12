@@ -8,6 +8,8 @@ const type=Astro.params.type as ReviewType;
 const all=await getCollection('reviews',({data})=>data.type===type);
 const reviews=all.sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
 const featured=reviews[0];
+const years=[...new Set(reviews.map(review=>review.data.releaseDate ? Number(review.data.releaseDate.slice(0,4)) : review.data.date.getFullYear()))].filter(Number.isFinite).sort((a,b)=>b-a);
+const genres=[...new Set(reviews.flatMap(review=>review.data.genres||[]))].sort((a,b)=>a.localeCompare(b,'ar'));
 const copy={game:{en:'GAMES & INTERACTIVE',title:'اكتشف عالم الألعاب',desc:'إصدارات جديدة، تجارب تستحق وقتك، ومراجعات تساعدك تختار لعبتك القادمة.'},series:{en:'SERIES & TV',title:'اكتشف عالم المسلسلات',desc:'تابع أحدث المسلسلات، الأعمال الرائجة، والمراجعات قبل أن تبدأ المشاهدة.'},movie:{en:'MOVIES & CINEMA',title:'اكتشف عالم الأفلام',desc:'أحدث الأفلام، اختيارات السهرة، ومراجعات صريحة بلا حرق.'}}[type];
 ---
 <Base title={TYPE_PLURAL[type]} description={copy.desc} image={optimizeImage(featured?.data.backdrop || featured?.data.poster, 'backdrop')} noindex={reviews.length === 0}>
@@ -17,10 +19,69 @@ const copy={game:{en:'GAMES & INTERACTIVE',title:'اكتشف عالم الألع
  <div class="category-discovery-copy"><p class="catalog-eyebrow">{copy.en}</p><h1>{copy.title}</h1><p>{copy.desc}</p><div class="category-stat"><strong>{reviews.length}</strong><span>مراجعة منشورة في {TYPE_PLURAL[type]}</span></div></div>
 </section>
 <section class="wrap catalog-section">
- <div class="catalog-heading"><div><p class="catalog-eyebrow">LATEST REVIEWS</p><h2>أحدث {TYPE_PLURAL[type]}</h2><p>آخر الإضافات إلى مكتبة VibeCritic</p></div><span class="catalog-total">{reviews.length} مراجعة</span></div>
- {reviews.length?<div class="category-review-grid">{reviews.map(review=><ReviewCard review={review}/>)}</div>:<div class="catalog-empty">قسم {TYPE_PLURAL[type]} قيد الإثراء. ستظهر هنا الأعمال الجديدة ومراجعاتها تلقائياً.</div>}
+ <div class="catalog-heading"><div><p class="catalog-eyebrow">LATEST REVIEWS</p><h2>مكتبة {TYPE_PLURAL[type]}</h2><p>ابحث وصفِّ النتائج ورتّبها حسب ما يهمك</p></div><span class="catalog-total" id="category-result-count" aria-live="polite">{reviews.length} مراجعة</span></div>
+ {reviews.length>0&&<div class="category-filters" aria-label="تصفية المراجعات">
+  <label class="category-filter-field">بحث
+   <input id="review-search" type="search" placeholder="اسم العمل أو العنوان..." autocomplete="off"/>
+  </label>
+  <label class="category-filter-field">النوع
+   <select id="review-genre"><option value="all">كل التصنيفات</option>{genres.map(genre=><option value={genre.toLowerCase()}>{genre}</option>)}</select>
+  </label>
+  <label class="category-filter-field">السنة
+   <select id="review-year"><option value="all">كل السنوات</option>{years.map(year=><option value={year}>{year}</option>)}</select>
+  </label>
+  <label class="category-filter-field">الحد الأدنى للدرجة
+   <select id="review-min-score"><option value="0">كل الدرجات</option><option value="6">6 / 10 فأعلى</option><option value="7">7 / 10 فأعلى</option><option value="8">8 / 10 فأعلى</option><option value="9">9 / 10 فأعلى</option></select>
+  </label>
+  <label class="category-filter-field">الترتيب
+   <select id="review-sort"><option value="newest">الأحدث أولاً</option><option value="highest">الأعلى تقييماً</option><option value="lowest">الأقل تقييماً</option></select>
+  </label>
+ </div>}
+ {reviews.length?<div class="category-review-grid" id="category-review-grid">{reviews.map(review=><div class="category-review-item" data-title={(review.data.title+' '+review.data.headline).toLowerCase()} data-year={review.data.releaseDate?.slice(0,4)||String(review.data.date.getFullYear())} data-score={review.data.score} data-date={review.data.date.toISOString()} data-genres={(review.data.genres||[]).join('|').toLowerCase()}><ReviewCard review={review}/></div>)}</div>:<div class="catalog-empty">قسم {TYPE_PLURAL[type]} قيد الإثراء. ستظهر هنا الأعمال الجديدة ومراجعاتها تلقائياً.</div>}
+ <div class="catalog-empty" id="category-filter-empty" hidden>لا توجد مراجعات تطابق خيارات التصفية الحالية.</div>
 </section>
 <section class="wrap category-switcher">
  <a href={url('category/game/')} class={type==='game'?'active':''}>الألعاب</a><a href={url('category/series/')} class={type==='series'?'active':''}>المسلسلات</a><a href={url('category/movie/')} class={type==='movie'?'active':''}>الأفلام</a>
 </section>
 </Base>
+
+<script>
+const grid=document.querySelector<HTMLElement>('#category-review-grid');
+if(grid){
+ const cards=[...grid.querySelectorAll<HTMLElement>('.category-review-item')];
+ const search=document.querySelector<HTMLInputElement>('#review-search');
+ const genre=document.querySelector<HTMLSelectElement>('#review-genre');
+ const year=document.querySelector<HTMLSelectElement>('#review-year');
+ const minScore=document.querySelector<HTMLSelectElement>('#review-min-score');
+ const sort=document.querySelector<HTMLSelectElement>('#review-sort');
+ const count=document.querySelector<HTMLElement>('#category-result-count');
+ const empty=document.querySelector<HTMLElement>('#category-filter-empty');
+ const update=()=>{
+  const term=(search?.value||'').trim().toLowerCase();
+  const selectedGenre=genre?.value||'all';
+  const selectedYear=year?.value||'all';
+  const minimum=Number(minScore?.value||0);
+  const order=sort?.value||'newest';
+  const matches=cards.filter(card=>{
+   const title=card.dataset.title||'';
+   const genres=(card.dataset.genres||'').split('|');
+   return (!term||title.includes(term))
+    &&(selectedGenre==='all'||genres.includes(selectedGenre))
+    &&(selectedYear==='all'||card.dataset.year===selectedYear)
+    &&Number(card.dataset.score||0)>=minimum;
+  });
+  matches.sort((a,b)=>{
+   if(order==='highest')return Number(b.dataset.score)-Number(a.dataset.score);
+   if(order==='lowest')return Number(a.dataset.score)-Number(b.dataset.score);
+   return String(b.dataset.date).localeCompare(String(a.dataset.date));
+  });
+  matches.forEach(card=>{card.hidden=false;grid.append(card);});
+  cards.filter(card=>!matches.includes(card)).forEach(card=>{card.hidden=true;});
+  if(count)count.textContent=matches.length+' من '+cards.length+' مراجعة';
+  if(empty)empty.hidden=matches.length!==0;
+ };
+ [search,genre,year,minScore,sort].forEach(control=>control?.addEventListener('input',update));
+ [genre,year,minScore,sort].forEach(control=>control?.addEventListener('change',update));
+ update();
+}
+</script>
