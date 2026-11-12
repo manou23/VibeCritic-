@@ -42,6 +42,21 @@ const latest=reviews.slice(0,12);
   {trendReviews.map(item=><i data-title={item.title} data-summary={item.summary||''} data-backdrop={item.backdrop||item.poster||''} data-poster={item.poster||''} data-type={item.type} data-source={item.source||''} data-href={item.href}></i>)}
  </div>
 </section>
+<aside class="wrap ai-review-promo" data-expires="2026-11-19T23:59:59+01:00" aria-label="جرّب المراجع الذكي">
+ <div class="ai-review-promo-copy">
+  <span class="ai-review-promo-badge">ميزة جديدة · لفترة محدودة</span>
+  <p class="ai-review-promo-kicker">MEET YOUR AI CRITIC</p>
+  <h2>رأيك القادم يبدأ من هنا!</h2>
+  <p>اكتشف مراجعة ذكية لفيلمك أو مسلسلك أو لعبتك المفضلة، مع تقييم وتحليل ونقاط القوة والضعف في ثوانٍ.</p>
+  <a class="ai-review-promo-cta" href="/ai-review/">جرّب المراجع الذكي <span aria-hidden="true">↗</span></a>
+ </div>
+ <div class="ai-review-promo-art" aria-hidden="true">
+  <div class="ai-review-promo-orbit"></div>
+  <div class="ai-review-promo-score"><strong>AI</strong><span>REVIEW</span></div>
+  <span class="ai-review-promo-spark spark-one">✦</span>
+  <span class="ai-review-promo-spark spark-two">✧</span>
+ </div>
+</aside>
 <section class="wrap catalog-section" id="trending">
  <div class="catalog-heading"><div><p class="catalog-eyebrow">WHAT'S POPULAR</p><h2>مؤشرات الرواج</h2><p>أعمال تتصدر مؤشرات الشعبية لدى مصادر البيانات، مع استبعاد الإشارات ضعيفة الثقة</p></div><a href="#new-releases" class="catalog-more">اكتشف الجديد <span>←</span></a></div>
  {trendReviews.length>0?<div class="catalog-rail trend-rail">
@@ -128,5 +143,11 @@ if(hero){
  hero.addEventListener('focusout',(event)=>{if(!(event.relatedTarget instanceof Node)||!hero.contains(event.relatedTarget))start();});
  document.addEventListener('visibilitychange',()=>document.hidden?stop():start());
  if(data.length>1)start();
+}
+
+const aiPromo=document.querySelector<HTMLElement>('.ai-review-promo');
+if(aiPromo){
+ const expires=Date.parse(aiPromo.dataset.expires||'');
+ if(!Number.isFinite(expires)||Date.now()>=expires)aiPromo.remove();
 }
 </script>
