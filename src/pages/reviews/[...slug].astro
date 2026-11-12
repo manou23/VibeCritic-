@@ -52,6 +52,7 @@ const reviewStructuredData = {
     ...(d.genres?.length ? { genre: d.genres } : {}),
     ...(d.releaseDate ? { datePublished: d.releaseDate } : {}),
     ...(d.poster ? { image: optimizeImage(d.poster) } : {}),
+    ...(Number(d.sourceRating) > 0 && Number(d.sourceVoteCount) > 0 ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: d.sourceRating, bestRating: d.sourceRatingScale || 10, worstRating: 0, ratingCount: d.sourceVoteCount } } : {}),
   },
 };
 
