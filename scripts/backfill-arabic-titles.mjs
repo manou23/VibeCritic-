@@ -9,7 +9,7 @@ if (!apiKey) {
 
 const root = path.resolve('src/content/reviews');
 const files = (await fs.readdir(root)).filter(file => file.endsWith('.md')).sort();
-const isArabic = value => /[\\u0600-\\u06FF]/.test(String(value || ''));
+const isArabic = value => /[\u0600-\u06FF]/.test(String(value || ''));
 
 function readScalar(frontmatter, key) {
   const line = frontmatter.match(new RegExp('^' + key + ':\\\\s*(.*)$', 'm'));
@@ -22,7 +22,7 @@ function writeScalar(frontmatter, key, value) {
   const line = key + ': ' + JSON.stringify(String(value || ''));
   const pattern = new RegExp('^' + key + ':.*$', 'm');
   if (pattern.test(frontmatter)) return frontmatter.replace(pattern, line);
-  if (key === 'originalTitle') return frontmatter.replace(/^(title:.*)$/m, '$1\\n' + line);
+  if (key === 'originalTitle') return frontmatter.replace(/^(title:.*)$/m, '$1\n' + line);
   return frontmatter;
 }
 
@@ -31,7 +31,7 @@ let skipped = 0;
 for (const file of files) {
   const fullPath = path.join(root, file);
   const content = await fs.readFile(fullPath, 'utf8');
-  const match = content.match(/^---\\s*\\r?\\n([\\s\\S]*?)\\r?\\n---/);
+  const match = content.match(/^---\s*\r?\n([\s\S]*?)\r?\n---/);
   if (!match) continue;
   const frontmatter = match[1];
   const type = readScalar(frontmatter, 'type');
@@ -40,7 +40,7 @@ for (const file of files) {
   const currentOriginal = readScalar(frontmatter, 'originalTitle');
   if (isArabic(currentTitle) && currentOriginal) { skipped++; continue; }
   const sourceId = readScalar(frontmatter, 'sourceId');
-  if (!/^\\d+$/.test(String(sourceId))) continue;
+  if (!/^\d+$/.test(String(sourceId))) continue;
 
   try {
     const endpoint = type === 'movie' ? 'movie' : 'tv';
@@ -59,7 +59,7 @@ for (const file of files) {
     if (isArabic(localizedTitle)) nextFrontmatter = writeScalar(nextFrontmatter, 'title', localizedTitle);
     if (originalTitle) nextFrontmatter = writeScalar(nextFrontmatter, 'originalTitle', originalTitle);
     if (nextFrontmatter === frontmatter) { skipped++; continue; }
-    const nextContent = content.replace(match[0], '---\\n' + nextFrontmatter + '\\n---');
+    const nextContent = content.replace(match[0], '---\n' + nextFrontmatter + '\\n---');
     await fs.writeFile(fullPath, nextContent, 'utf8');
     updated++;
     console.log('Updated localized title: ' + file);
