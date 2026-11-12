@@ -7,6 +7,7 @@ export function getStaticPaths(){return ['game','movie','series'].map(type=>({pa
 const type=Astro.params.type as ReviewType;
 const all=await getCollection('reviews',({data})=>data.type===type);
 const reviews=all.sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
+const normalizeArabic=value=>String(value||'').toLocaleLowerCase('ar').normalize('NFKD').replace(/\\p{M}/gu,'').replace(/[أإآٱ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/ؤ/g,'و').replace(/ئ/g,'ي').replace(/[^\\p{L}\\p{N}\\s]/gu,' ').trim().replace(/\\s+/g,' ');
 const featured=reviews[0];
 const years=[...new Set(reviews.map(review=>review.data.releaseDate ? Number(review.data.releaseDate.slice(0,4)) : review.data.date.getFullYear()))].filter(Number.isFinite).sort((a,b)=>b-a);
 const genres=[...new Set(reviews.flatMap(review=>review.data.genres||[]))].sort((a,b)=>a.localeCompare(b,'ar'));
@@ -22,7 +23,7 @@ const copy={game:{en:'GAMES & INTERACTIVE',title:'اكتشف عالم الألع
  <div class="catalog-heading"><div><p class="catalog-eyebrow">LATEST REVIEWS</p><h2>مكتبة {TYPE_PLURAL[type]}</h2><p>ابحث وصفِّ النتائج ورتّبها حسب ما يهمك</p></div><span class="catalog-total" id="category-result-count" aria-live="polite">{reviews.length} مراجعة</span></div>
  {reviews.length>0&&<div class="category-filters" aria-label="تصفية المراجعات">
   <label class="category-filter-field">بحث
-   <input id="review-search" type="search" placeholder="اسم العمل أو العنوان..." autocomplete="off"/>
+   <input id="review-search" type="search" list="review-title-suggestions" placeholder="اسم العمل أو العنوان..." autocomplete="off" aria-describedby="review-search-help"/><datalist id="review-title-suggestions">{reviews.map(review=><option value={review.data.title}/>)}{reviews.filter(review=>review.data.originalTitle).map(review=><option value={review.data.originalTitle}/>)}</datalist><span id="review-search-help" class="category-search-help">يدعم اختلاف الألف والهمزة والتاء المربوطة والتشكيل</span>
   </label>
   <label class="category-filter-field">النوع
    <select id="review-genre"><option value="all">كل التصنيفات</option>{genres.map(genre=><option value={genre.toLowerCase()}>{genre}</option>)}</select>
@@ -37,7 +38,7 @@ const copy={game:{en:'GAMES & INTERACTIVE',title:'اكتشف عالم الألع
    <select id="review-sort"><option value="newest">الأحدث أولاً</option><option value="highest">الأعلى تقييماً</option><option value="lowest">الأقل تقييماً</option></select>
   </label>
  </div>}
- {reviews.length?<div class="category-review-grid" id="category-review-grid">{reviews.map(review=><div class="category-review-item" data-title={(review.data.title+' '+review.data.headline).toLowerCase()} data-year={review.data.releaseDate?.slice(0,4)||String(review.data.date.getFullYear())} data-score={review.data.score} data-date={review.data.date.toISOString()} data-genres={(review.data.genres||[]).join('|').toLowerCase()}><ReviewCard review={review}/></div>)}</div>:<div class="catalog-empty">قسم {TYPE_PLURAL[type]} قيد الإثراء. ستظهر هنا الأعمال الجديدة ومراجعاتها تلقائياً.</div>}
+ {reviews.length?<div class="category-review-grid" id="category-review-grid">{reviews.map(review=><div class="category-review-item" data-title={normalizeArabic([review.data.title,review.data.originalTitle,review.data.headline,...(review.data.tags||[]),...(review.data.genres||[])].join(' '))} data-year={review.data.releaseDate?.slice(0,4)||String(review.data.date.getFullYear())} data-score={review.data.score} data-date={review.data.date.toISOString()} data-genres={(review.data.genres||[]).join('|').toLowerCase()}><ReviewCard review={review}/></div>)}</div>:<div class="catalog-empty">قسم {TYPE_PLURAL[type]} قيد الإثراء. ستظهر هنا الأعمال الجديدة ومراجعاتها تلقائياً.</div>}
  <div class="catalog-empty" id="category-filter-empty" hidden>لا توجد مراجعات تطابق خيارات التصفية الحالية.</div>
 </section>
 <section class="wrap category-switcher">
@@ -57,7 +58,8 @@ if(grid){
  const count=document.querySelector<HTMLElement>('#category-result-count');
  const empty=document.querySelector<HTMLElement>('#category-filter-empty');
  const update=()=>{
-  const term=(search?.value||'').trim().toLowerCase();
+  const normalize=value=>String(value||'').toLocaleLowerCase('ar').normalize('NFKD').replace(/\\p{M}/gu,'').replace(/[أإآٱ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/ؤ/g,'و').replace(/ئ/g,'ي').replace(/[^\\p{L}\\p{N}\\s]/gu,' ').trim().replace(/\\s+/g,' ');
+  const term=normalize(search?.value||'');
   const selectedGenre=genre?.value||'all';
   const selectedYear=year?.value||'all';
   const minimum=Number(minScore?.value||0);
