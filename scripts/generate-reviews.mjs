@@ -3,7 +3,7 @@ import path from 'node:path';
 
 const env=process.env;
 const provider=(env.AI_PROVIDER||(env.GEMINI_API_KEY?'gemini':env.GROQ_API_KEY?'groq':env.OPENROUTER_API_KEY?'openrouter':'openai')).toLowerCase();
-const maxPerRun=Math.max(1,Number.isFinite(Number(env.MAX_PER_RUN))?Number(env.MAX_PER_RUN):3);
+const maxPerRun=Math.min(3,Math.max(1,Number.isFinite(Number(env.MAX_PER_RUN))?Number(env.MAX_PER_RUN):3));
 const gamesWindowDays=Math.max(1,Number.isFinite(Number(env.GAMES_WINDOW_DAYS))&&env.GAMES_WINDOW_DAYS?Number(env.GAMES_WINDOW_DAYS):14);
 const outDir='src/content/reviews',processedPath='data/processed.json';
 function required(name){if(!env[name])throw new Error(`متغير البيئة ${name} غير مضبوط في GitHub Secrets`);return env[name];}
