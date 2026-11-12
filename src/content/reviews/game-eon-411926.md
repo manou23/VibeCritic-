@@ -10,6 +10,8 @@ date: 2026-11-11
 releaseDate: "2032-12-31"
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/cocmgu.jpg"
 backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/cocmgu.jpg"
+youtubeVideoId: "71kLNi9xvGg"
+youtubeVideoTitle: "EON Altar - Episode 1 - The Battle for Tarnum - Official Game Trailer"
 score: 6.5
 pros:
   - "إطار المعسكر الصيفي يمنح القصة هوية مكانية واضحة"

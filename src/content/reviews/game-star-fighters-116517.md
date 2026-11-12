@@ -10,6 +10,8 @@ date: 2026-11-11
 releaseDate: "2040-12-31"
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/co421c.jpg"
 backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/co421c.jpg"
+youtubeVideoId: "nCcfJ9uEwvs"
+youtubeVideoTitle: "Star Wars: Squadrons – Official Gameplay Trailer"
 score: 6
 pros:
   - "فكرة المواجهات الفضائية تمنح اللعبة هوية واضحة"

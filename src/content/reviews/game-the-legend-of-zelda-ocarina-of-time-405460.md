@@ -10,6 +10,8 @@ date: 2026-11-11
 releaseDate: "2026-11-05"
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/cocv5r.jpg"
 backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/cocv5r.jpg"
+youtubeVideoId: "HMsEEM-N9JE"
+youtubeVideoTitle: "The Legend of Zelda: Ocarina of Time - Official Announcement Trailer | Nintendo Direct June 2026"
 score: 9.5
 pros:
   - "تصميم ألغاز مترابط يكافئ الملاحظة والتفكير"

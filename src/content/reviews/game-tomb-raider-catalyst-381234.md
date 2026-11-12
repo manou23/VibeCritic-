@@ -10,6 +10,8 @@ date: 2026-11-12
 releaseDate: ""
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/cob0g4.jpg"
 backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/cob0g4.jpg"
+youtubeVideoId: "rwbQHV7RW6k"
+youtubeVideoTitle: "Tomb Raider: Legacy of Atlantis | Official Release Date Trailer"
 score: 7.5
 trendRank: 37
 trendSource: "IGDB"

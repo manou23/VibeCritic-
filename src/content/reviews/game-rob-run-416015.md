@@ -10,6 +10,8 @@ date: 2026-11-11
 releaseDate: "2026-11-04"
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/cod5g2.jpg"
 backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/cod5g2.jpg"
+youtubeVideoId: "ViCR4Ox964c"
+youtubeVideoTitle: "Rob Run - Official Cinematic Trailer"
 score: 6.5
 pros:
   - "دمج متعدد للأنواع (Shooter, RPG, Simulator, Tactical) يفتح مسارات لعب متنوعة"

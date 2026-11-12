@@ -10,6 +10,8 @@ date: 2026-11-11
 releaseDate: "2006-09-01"
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/cociyw.jpg"
 backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/cociyw.jpg"
+youtubeVideoId: "sme76WoJ_-U"
+youtubeVideoTitle: "Roblox | Official Trailer (2019)"
 score: 7.5
 pros:
   - "تنوع هائل في التجارب التي ينشئها المجتمع"

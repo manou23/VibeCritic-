@@ -10,6 +10,8 @@ date: 2026-11-11
 releaseDate: "2024-12-06"
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/co8ae0.jpg"
 backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/co8ae0.jpg"
+youtubeVideoId: "KhhNhpOln64"
+youtubeVideoTitle: "Path of Exile 2 - Official Early Access Gameplay Trailer"
 score: 7
 pros:
   - "أنظمة بناء الشخصية والمهارات تمنح مساحة واسعة للتخصيص"
