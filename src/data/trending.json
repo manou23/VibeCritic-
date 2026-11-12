@@ -25,24 +25,9 @@
     "sourceUrl": "https://www.igdb.com/games/star-fighters",
     "source": "IGDB",
     "sourceRank": 0,
-    "trendRank": 1,
+    "trendRank": 2,
     "updatedAt": "2026-11-12T00:22:03.877Z",
     "rank": 2
-  },
-  {
-    "id": "1489",
-    "sourceId": "1489",
-    "type": "series",
-    "title": "Jimmy Kimmel Live!",
-    "poster": "https://image.tmdb.org/t/p/w500/bGB6bEbG4qL22C1SFupkdAxYC9i.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w780/taqVKvEmMlI2hs2g364fXWzv0ia.jpg",
-    "summary": "",
-    "sourceUrl": "https://www.themoviedb.org/tv/1489",
-    "source": "TMDB",
-    "sourceRank": 102.3716,
-    "trendRank": 2,
-    "updatedAt": "2026-11-12T00:22:03.041Z",
-    "rank": 3
   },
   {
     "id": "411926",
@@ -55,9 +40,9 @@
     "sourceUrl": "https://www.igdb.com/games/eon--1",
     "source": "IGDB",
     "sourceRank": 0,
-    "trendRank": 2,
+    "trendRank": 3,
     "updatedAt": "2026-11-12T00:22:03.877Z",
-    "rank": 4
+    "rank": 3
   },
   {
     "id": "1792170",
@@ -70,9 +55,9 @@
     "sourceUrl": "https://www.themoviedb.org/movie/1792170",
     "source": "TMDB",
     "sourceRank": 53.5297,
-    "trendRank": 3,
+    "trendRank": 4,
     "updatedAt": "2026-11-12T00:22:03.041Z",
-    "rank": 5
+    "rank": 4
   },
   {
     "id": "417642",
@@ -85,8 +70,8 @@
     "sourceUrl": "https://www.igdb.com/games/starcraft--1",
     "source": "IGDB",
     "sourceRank": 13,
-    "trendRank": 3,
+    "trendRank": 5,
     "updatedAt": "2026-11-12T00:22:03.877Z",
-    "rank": 6
+    "rank": 5
   }
 ]
