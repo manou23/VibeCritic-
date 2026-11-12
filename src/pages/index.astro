@@ -10,7 +10,7 @@ const byType={game:reviews.filter(x=>x.data.type==='game'),series:reviews.filter
 const trendReviews=trending.flatMap(item=>{
  const review=reviews.find(entry=>entry.data.type===item.type&&entry.data.sourceId===item.sourceId);
  if(!review)return [];
- return [{...item,poster:optimizeImage(item.poster),backdrop:optimizeImage(item.backdrop||item.poster,'backdrop'),review,href:url(`reviews/${review.id}/`)}];
+ return [{...item,summary:review.data.summary||item.summary,poster:optimizeImage(item.poster),backdrop:optimizeImage(item.backdrop||item.poster,'backdrop'),review,href:url(`reviews/${review.id}/`)}];
 }).slice(0,5);
 const spotlight=trendReviews[0]||null;
 const latest=reviews.slice(0,12);
