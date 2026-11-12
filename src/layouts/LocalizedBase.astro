@@ -45,7 +45,7 @@ const home = locale === 'en' ? '/en/' : '/fr/';
 <section class="localized-pilot">
   <h2>{locale === 'en' ? 'Pilot reviews' : 'Critiques pilotes'}</h2>
   <div class="localized-review-grid">
-    {localizedReviews.map((review) => <a href={`/${locale}/reviews/${review.id.replace(/^(en|fr)\\//, '')}/`} class="localized-review-card">
+    {localizedReviews.map((review) => <a href={`/${locale}/reviews/${review.id.replace(/^(en|fr)\//, '')}/`} class="localized-review-card">
       {review.data.poster && <img src={review.data.poster} alt="" loading="lazy" />}
       <span>{review.data.type === 'game' ? (locale === 'en' ? 'GAME' : 'JEU') : review.data.type === 'movie' ? (locale === 'en' ? 'FILM' : 'FILM') : (locale === 'en' ? 'SERIES' : 'SÉRIE')}</span>
       <strong>{review.data.title}</strong>
