@@ -277,7 +277,7 @@ async function generateReview(item){
 async function tmdb(type,mode='trending'){
  const key=required('TMDB_API_KEY'),endpoint=type==='movie'?'movie':'tv';
  const today=algeriaDate(),since=new Date(Date.now()-7*86400000).toISOString().slice(0,10);
- const pages=mode==='releases'?[1,2,3]:[1];
+ const pages=mode==='releases'?[1,2,3]:mode==='archive'?[1,2,3,4,5]:[1];
  const [lists,genreData]=await Promise.all([
   Promise.all(pages.map(page=>{
    const params=new URLSearchParams({api_key:key,language:'ar',page:String(page)});
@@ -286,8 +286,14 @@ async function tmdb(type,mode='trending'){
     params.set(type==='movie'?'primary_release_date.lte':'first_air_date.lte',today);
     params.set('sort_by',type==='movie'?'primary_release_date.desc':'first_air_date.desc');
     params.set('include_adult','false');
+   }else if(mode==='archive'){
+    params.set(type==='movie'?'primary_release_date.lte':'first_air_date.lte',today);
+    params.set('sort_by','popularity.desc');
+    params.set('vote_count.gte','200');
+    params.set('include_adult','false');
    }
-   return getJson('https://api.themoviedb.org/3/'+(mode==='releases'?'discover/':'trending/')+endpoint+(mode==='releases'?'':'/week')+'?'+params.toString());
+   const discovery=mode==='releases'||mode==='archive';
+   return getJson('https://api.themoviedb.org/3/'+(discovery?'discover/':'trending/')+endpoint+(discovery?'':'/week')+'?'+params.toString());
   })),
   getJson(`https://api.themoviedb.org/3/genre/${endpoint}/list?api_key=${key}&language=ar`)
  ]);
@@ -303,13 +309,14 @@ async function tmdb(type,mode='trending'){
  })).filter(x=>x.description.trim().length>=60&&(mode!=='releases'||(x.date>=since&&x.date<=today)))
  .filter((x,i,all)=>all.findIndex(y=>y.id===x.id)===i);
 }
-async function gamesFromRawg(){
+async function gamesFromRawg(mode='recent'){
  const key=required('RAWG_API_KEY');
  const today=new Date().toISOString().slice(0,10);
  const since=new Date(Date.now()-gamesWindowDays*86400000).toISOString().slice(0,10);
- const query=new URLSearchParams({key,dates:since+','+today,ordering:'-added',page_size:'40',exclude_additions:'true',exclude_parents:'true'});
+ const query=new URLSearchParams({key,ordering:mode==='archive'?'-rating':'-added',page_size:'40',exclude_additions:'true',exclude_parents:'true'});
+ if(mode!=='archive')query.set('dates',since+','+today);
  const listing=await getJson('https://api.rawg.io/api/games?'+query.toString());
- const candidates=(listing.results||[]).filter(x=>x.id&&x.slug&&x.released>=since&&x.released<=today).slice(0,18);
+ const candidates=(listing.results||[]).filter(x=>x.id&&x.slug&&(mode==='archive'?(x.released&&x.released<today&&((Number(x.metacritic)||0)>=70||(Number(x.rating)||0)>=4)):(x.released>=since&&x.released<=today))).slice(0,18);
  const detailed=await Promise.all(candidates.map(async item=>{
   try{
    const detail=await getJson('https://api.rawg.io/api/games/'+encodeURIComponent(item.slug)+'?key='+encodeURIComponent(key));
@@ -347,6 +354,11 @@ async function gamesFromIgdb(){
  }).filter(x=>x.description.trim().length>=60&&x.popularity>0).sort((a,b)=>b.popularity-a.popularity);
 }
 let gamesCachePromise;
+async function gamesArchive(){
+ if(!env.RAWG_API_KEY)return [];
+ try{return (await gamesFromRawg('archive')).filter(item=>Number(item.sourceVoteCount)>=100||Number(item.metadata?.metacritic)>=70);}
+ catch(error){console.warn('تعذر جلب مكتبة الألعاب الكلاسيكية من RAWG:',error.message);return [];}
+}
 async function games(){
  if(!gamesCachePromise)gamesCachePromise=(async()=>{
  if(env.RAWG_API_KEY){
@@ -423,7 +435,8 @@ async function main(){
  console.log('وضع النشر:',buildPhase?'استكمال المكتبة إلى 100 مقالة':'رصد الإصدارات الجديدة');
  let rawPools;
  if(buildPhase){
-  rawPools={game:await games(),series:await tmdb('series'),movie:await tmdb('movie')};
+  const [recentGames,archiveGames,seriesNow,movieNow,seriesArchive,movieArchive]=await Promise.all([games(),gamesArchive(),tmdb('series'),tmdb('movie'),tmdb('series','archive'),tmdb('movie','archive')]);
+  rawPools={game:[...recentGames,...archiveGames],series:[...seriesNow,...seriesArchive],movie:[...movieNow,...movieArchive]};
  }else{
   rawPools={game:await games(),series:await tmdb('series','releases'),movie:await tmdb('movie','releases')};
  }
