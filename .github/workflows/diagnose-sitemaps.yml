@@ -1,6 +1,9 @@
 name: Temporary Sitemap HTTP Diagnostic
 
 on:
+  push:
+    branches:
+      - diagnostic/sitemap-http-check
   workflow_dispatch:
 
 permissions:
