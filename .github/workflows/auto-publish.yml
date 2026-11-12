@@ -42,6 +42,7 @@ jobs:
         run: |
           node --check scripts/generate-reviews.mjs
           node --check scripts/backfill-arabic-titles.mjs
+          node --check scripts/backfill-game-platforms.mjs
           node --check functions/api/review.js
       - name: Install dependencies
         run: npm install
@@ -92,6 +93,10 @@ jobs:
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
         run: npm run backfill:titles
+      - name: Backfill RAWG platforms and stores for existing games
+        env:
+          RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
+        run: npm run backfill:games
       - name: Commit generated reviews
         run: |
           if [[ -n "$(git status --porcelain src/content/reviews data/processed.json src/data/trending.json)" ]]; then
