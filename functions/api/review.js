@@ -56,14 +56,26 @@ async function generate(env,prompt,title,kind){
  throw Error('تعذر إنشاء المراجعة. جُرّبت المفاتيح والمزوّدات المتاحة؛ تحقق من الرصيد وحدود الاستخدام واسم النموذج.');
 }
 const hits=new Map();
-function permitted(req){
+async function permitted(req,env){
  const origin=req.headers.get('Origin'),host=req.headers.get('Host');
- if(origin&&host){try{if(new URL(origin).host!==host)return false}catch{return false}}
- const ip=req.headers.get('CF-Connecting-IP')||'unknown',now=Date.now(),old=(hits.get(ip)||[]).filter(t=>now-t<600000);
- if(old.length>=8)return false;old.push(now);hits.set(ip,old);if(hits.size>500)hits.clear();return true;
+ if(origin){try{if(!host||new URL(origin).host!==host)return false}catch{return false}}
+ const ip=req.headers.get('CF-Connecting-IP')||'unknown';
+ // Prefer Cloudflare's distributed rate limiter when the optional binding is configured.
+ if(env.AI_REVIEW_LIMITER&&typeof env.AI_REVIEW_LIMITER.limit==='function'){
+  try{const result=await env.AI_REVIEW_LIMITER.limit({key:ip});return result?.success===true}
+  catch(error){console.warn('Cloudflare rate limiter unavailable; using isolate-local fallback:',error?.message||'unknown error')}
+ }
+ const now=Date.now(),recent=(hits.get(ip)||[]).filter(t=>now-t<600000);
+ if(recent.length>=8)return false;
+ recent.push(now);hits.set(ip,recent);
+ if(hits.size>500){
+  for(const [key,times] of hits){const active=times.filter(t=>now-t<600000);if(active.length)hits.set(key,active);else hits.delete(key)}
+  while(hits.size>500)hits.delete(hits.keys().next().value);
+ }
+ return true;
 }
 export async function onRequestPost({request,env}){
- if(!permitted(request))return Response.json({error:'تم تجاوز الحد المؤقت للطلبات أو مصدر الطلب غير مسموح.'},{status:429});
+ if(!await permitted(request,env))return Response.json({error:'تم تجاوز الحد المؤقت للطلبات أو مصدر الطلب غير مسموح.'},{status:429});
  try{
   const raw=await request.text();
   if(new TextEncoder().encode(raw).byteLength>12000)return Response.json({error:'حجم الطلب كبير جداً.'},{status:413});
