@@ -24,6 +24,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Sync latest main before generation
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
