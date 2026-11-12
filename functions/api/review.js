@@ -21,6 +21,18 @@ function normalize(d,title,kind){
  if(r.pros.length<2||!r.cons.length||r.score===null)throw Error('التقييم أو قوائم الإيجابيات والسلبيات غير مكتملة');
  return r;
 }
+async function fetchWithRetry(url,options){
+ let response;
+ for(let attempt=0;attempt<3;attempt++){
+  response=await fetch(url,options);
+  if(![429,500,502,503,504].includes(response.status)||attempt===2)return response;
+  const retryAfter=Number(response.headers.get('retry-after'))*1000;
+  const wait=Math.min(10000,Math.max(1000,retryAfter||1500*(attempt+1)));
+  console.warn('AI provider transient HTTP '+response.status+'; retrying after '+wait+'ms');
+  await new Promise(resolve=>setTimeout(resolve,wait));
+ }
+ return response;
+}
 async function call(p,key,prompt,title,kind){
  const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),45000);
  const url=/\\/chat\\/completions$/i.test(p.base)?p.base:p.base+'/chat/completions';
@@ -28,8 +40,8 @@ async function call(p,key,prompt,title,kind){
  if(p.name.toLowerCase().includes('openrouter')){headers['HTTP-Referer']='https://vibecritic.pages.dev/';headers['X-Title']='VibeCritic AI Critic'}
  const body={model:p.model,temperature:.65,max_tokens:2200,response_format:{type:'json_object'},messages:[{role:'system',content:SYSTEM},{role:'user',content:prompt}]};
  try{
-  let res=await fetch(url,{method:'POST',headers,body:JSON.stringify(body),signal:ctrl.signal});
-  if(res.status===400){const retry={...body};delete retry.response_format;res=await fetch(url,{method:'POST',headers,body:JSON.stringify(retry),signal:ctrl.signal})}
+  let res=await fetchWithRetry(url,{method:'POST',headers,body:JSON.stringify(body),signal:ctrl.signal});
+  if(res.status===400){const retry={...body};delete retry.response_format;res=await fetchWithRetry(url,{method:'POST',headers,body:JSON.stringify(retry),signal:ctrl.signal})}
   if(!res.ok){const e=Error(p.name+' HTTP '+res.status+': '+(await res.text()).slice(0,500));e.status=res.status;throw e}
   const data=await res.json(),c=data.choices?.[0]?.message?.content,txt=Array.isArray(c)?c.map(x=>x.text||'').join(''):c;
   if(!txt)throw Error(p.name+': رد فارغ');
@@ -53,8 +65,9 @@ function permitted(req){
 export async function onRequestPost({request,env}){
  if(!permitted(request))return Response.json({error:'تم تجاوز الحد المؤقت للطلبات أو مصدر الطلب غير مسموح.'},{status:429});
  try{
-  const size=Number(request.headers.get('content-length')||0);if(size>12000)return Response.json({error:'حجم الطلب كبير جداً.'},{status:413});
-  const body=await request.json(),title=clean(body.title,120),kind=body.kind==='game'?'game':body.kind==='movie'?'movie':'';
+  const raw=await request.text();
+  if(new TextEncoder().encode(raw).byteLength>12000)return Response.json({error:'حجم الطلب كبير جداً.'},{status:413});
+  const body=JSON.parse(raw),title=clean(body.title,120),kind=body.kind==='game'?'game':body.kind==='movie'?'movie':'';
   if(title.length<2||!kind)return Response.json({error:'أدخل اسم العمل واختر فيلماً أو لعبة.'},{status:400});
   const prompt=['اسم العمل: '+title,'النوع: '+(kind==='game'?'لعبة فيديو':'فيلم سينمائي'),'اكتب مراجعة بالاعتماد على معرفتك الموثوقة فقط. إذا كان الاسم ملتبساً فاذكر ذلك ولا تخترع تفاصيل. تجنب حرق الأحداث.','game: حلل التحكم والأنظمة والتقدم والتصميم في محور style. movie: حلل الإخراج والتمثيل والإيقاع في محور style.','اكتب بالعربية الفصحى.'].join('\n');
   const out=await generate(env,prompt,title,kind);
