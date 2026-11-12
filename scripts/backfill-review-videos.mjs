@@ -20,7 +20,7 @@ function field(frontmatter,name){
   return raw;
 }
 function videoFields(id,title){
-  return 'youtubeVideoId: '+JSON.stringify(id)+'\\nyoutubeVideoTitle: '+JSON.stringify(title)+'\\n';
+  return 'youtubeVideoId: '+JSON.stringify(id)+'\nyoutubeVideoTitle: '+JSON.stringify(title)+'\n';
 }
 async function movieOrSeries(type,id){
   if(!tmdbKey||!id)return null;
@@ -40,14 +40,14 @@ async function gameTrailer(title){
   const ids=candidates.map(x=>x.id.videoId).join(',');
   const details=await json('https://www.googleapis.com/youtube/v3/videos?'+new URLSearchParams({part:'snippet,status',id:ids,key:youtubeKey}));
   const byId=new Map((details.items||[]).map(x=>[x.id,x]));
-  const tokens=String(title).toLowerCase().normalize('NFKD').replace(/[\\u0300-\\u036f]/g,'').split(/[^a-z0-9]+/).filter(x=>x.length>2);
+  const tokens=String(title).toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').split(/[^a-z0-9]+/).filter(x=>x.length>2);
   const ranked=candidates.map(candidate=>{
     const video=byId.get(candidate.id.videoId);
     if(!video||video.status?.privacyStatus!=='public'||video.status?.embeddable!==true)return null;
     const videoTitle=candidate.snippet.title||'',channel=candidate.snippet.channelTitle||'';
     if(/fan.?made|concept trailer|reaction|review|parody|trailer breakdown|gameplay walkthrough/i.test(videoTitle))return null;
-    if(!/\\bofficial\\b/i.test(videoTitle+' '+channel)||!/\\b(trailer|teaser)\\b/i.test(videoTitle))return null;
-    const words=videoTitle.toLowerCase().normalize('NFKD').replace(/[\\u0300-\\u036f]/g,'').split(/[^a-z0-9]+/);
+    if(!/\bofficial\b/i.test(videoTitle+' '+channel)||!/\b(trailer|teaser)\b/i.test(videoTitle))return null;
+    const words=videoTitle.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').split(/[^a-z0-9]+/);
     const overlap=tokens.filter(t=>words.includes(t)).length;
     return overlap?{id:candidate.id.videoId,title:videoTitle,score:overlap}:null;
   }).filter(Boolean).sort((a,b)=>b.score-a.score);
@@ -59,7 +59,7 @@ async function main(){
   for(const file of files){
     const full=path.join(dir,file);
     let content=await fs.readFile(full,'utf8');
-    const fm=content.match(/^---\\n([\\s\\S]*?)\\n---/);
+    const fm=content.match(/^---\n([\s\S]*?)\n---/);
     if(!fm)continue;
     const frontmatter=fm[1];
     if(field(frontmatter,'youtubeVideoId'))continue;
@@ -73,10 +73,10 @@ async function main(){
       if(!video){missing++;console.log('No suitable public/embeddable video:',file);continue;}
       const fields=videoFields(video.id,video.title);
       let updatedFrontmatter;
-      if(/^backdrop:.*$/m.test(frontmatter))updatedFrontmatter=frontmatter.replace(/^(backdrop:.*\\n)/m,'$1'+fields);
-      else if(/^poster:.*$/m.test(frontmatter))updatedFrontmatter=frontmatter.replace(/^(poster:.*\\n)/m,'$1'+fields);
-      else updatedFrontmatter=frontmatter+'\\n'+fields.trimEnd();
-      content=content.replace(fm[0],'---\\n'+updatedFrontmatter+'\\n---');
+      if(/^backdrop:.*$/m.test(frontmatter))updatedFrontmatter=frontmatter.replace(/^(backdrop:.*\n)/m,'$1'+fields);
+      else if(/^poster:.*$/m.test(frontmatter))updatedFrontmatter=frontmatter.replace(/^(poster:.*\n)/m,'$1'+fields);
+      else updatedFrontmatter=frontmatter+'\n'+fields.trimEnd();
+      content=content.replace(fm[0],'---\n'+updatedFrontmatter+'\n---');
       await fs.writeFile(full,content,'utf8');
       updated++;
       console.log('Added trailer:',title,'->',video.id);
