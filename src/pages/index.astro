@@ -13,7 +13,7 @@ const trendReviews=trending.filter(item=>['مرتفع','متوسط'].includes(it
  return [{...item,summary:review.data.summary||item.summary,poster:optimizeImage(item.poster),backdrop:optimizeImage(item.backdrop||item.poster,'backdrop'),review,href:url(`reviews/${review.id}/`)}];
 }).slice(0,5);
 const spotlight=trendReviews[0]||null;
-const topRated=[...reviews].filter(review=>review.data.score>0).sort((a,b)=>b.data.score-a.data.score).slice(0,8);
+const topRated=[...reviews].filter(review=>review.data.score>0&&review.data.reviewMode!=='preview').sort((a,b)=>b.data.score-a.data.score).slice(0,8);
 const upcoming=reviews.filter(review=>review.data.reviewMode==='preview').sort((a,b)=>String(a.data.releaseDate||'').localeCompare(String(b.data.releaseDate||''))).slice(0,8);
 ---
 <Base title="اكتشف عالم الترفيه" description="اكتشف أحدث الأفلام والمسلسلات والألعاب، تابع الترندات العالمية واقرأ مراجعات VibeCritic." image={spotlight?.backdrop || spotlight?.poster}>
