@@ -160,8 +160,9 @@ const searchDialog = document.getElementById('site-search-dialog');
 const searchOpen = document.getElementById('site-search-open');
 const searchClose = document.getElementById('site-search-close');
 searchOpen?.addEventListener('click', () => {
-  if (searchDialog instanceof HTMLDialogElement && !searchDialog.open) searchDialog.showModal();
+  if (searchDialog instanceof HTMLDialogElement && !searchDialog.open) { searchDialog.showModal(); requestAnimationFrame(() => document.getElementById('normalized-site-search')?.focus({ preventScroll: true })); }
 });
+searchDialog?.addEventListener('close', () => searchOpen?.focus());
 searchClose?.addEventListener('click', () => {
   if (searchDialog instanceof HTMLDialogElement) searchDialog.close();
 });
@@ -180,7 +181,7 @@ normalizedSearchInput?.addEventListener('input',()=>{
  if(!query){const hint=document.createElement('p');hint.textContent='ابدأ الكتابة لعرض المراجعات المطابقة.';normalizedSearchResults.append(hint);return;}
  const matches=normalizedSearchEntries.filter(item=>normalizeArabicSearch(item.search).includes(query)).slice(0,10);
  if(!matches.length){const empty=document.createElement('p');empty.textContent='لا توجد مراجعات مطابقة. جرّب كتابة جزء آخر من الاسم.';normalizedSearchResults.append(empty);return;}
- for(const item of matches){const link=document.createElement('a');link.href=item.href;const title=document.createElement('strong');title.textContent=item.title;const summary=document.createElement('span');summary.textContent=item.summary;link.append(title,summary);normalizedSearchResults.append(link);}
+ for(const item of matches){const link=document.createElement('a');link.className='site-search-result';link.href=item.href;const title=document.createElement('strong');title.textContent=item.title;const summary=document.createElement('span');summary.textContent=item.summary;link.append(title,summary);normalizedSearchResults.append(link);}
 });</script>
 </body>
 </html>
