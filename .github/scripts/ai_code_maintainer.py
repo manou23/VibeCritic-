@@ -100,7 +100,7 @@ Only paths from EDITABLE FILE sections may be changed. No new/deleted/renamed fi
     payload = {
         "model": MODEL,
         "temperature": 0.1,
-        "max_tokens": 7000,
+        "max_tokens": 5500,
         "messages": [
             {"role": "system", "content": system},
             {"role": "user", "content":
