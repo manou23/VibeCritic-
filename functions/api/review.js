@@ -40,7 +40,7 @@ async function call(p,key,prompt,title,kind){
  const url=/\/chat\/completions$/i.test(p.base)?p.base:p.base+'/chat/completions';
  const headers={'content-type':'application/json',authorization:'Bearer '+key,...p.headers};
  if(p.name.toLowerCase().includes('openrouter')){headers['HTTP-Referer']='https://vibecritic.pages.dev/';headers['X-Title']='VibeCritic AI Critic'}
- const body={model:p.model,temperature:.65,max_tokens:2200,response_format:{type:'json_object'},messages:[{role:'system',content:SYSTEM},{role:'user',content:prompt}]};
+ const body={model:p.model,temperature:.65,max_tokens:3600,response_format:{type:'json_object'},messages:[{role:'system',content:SYSTEM},{role:'user',content:prompt}]};
  try{
   let data,txt='',finishReason='unknown';
   for(let attempt=0;attempt<3;attempt++){
