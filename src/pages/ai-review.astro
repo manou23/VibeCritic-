@@ -76,7 +76,7 @@ const statusBox=document.querySelector('#ai-status');
 const resultBox=document.querySelector('#ai-result');
 let latestReview=null;
 function put(id,value){const el=document.getElementById(id);if(el)el.textContent=value||''}
-function putList(id,values){const list=document.getElementById(id);if(!list)return;list.replaceChildren();(values||[]).forEach(value=>{const li=document.createElement('li');li.textContent=value;list.append(li)})}
+function putList(id,values){const list=document.getElementById(id);if(!list)return;list.replaceChildren();const items=values||[];if(!items.length&&id==='result-cons'){const li=document.createElement('li');li.textContent='لم تتوفر تحفظات موثوقة كافية لإثبات نقاط ضعف محددة.';list.append(li);return}items.forEach(value=>{const li=document.createElement('li');li.textContent=value;list.append(li)})}
 function status(message,error=false){if(!statusBox)return;statusBox.hidden=false;statusBox.dataset.error=String(error);statusBox.textContent=message}
 function render(r,provider){
  latestReview=r;put('result-title',r.title);put('result-hook',r.hook);put('result-score',Number(r.score).toFixed(1));put('result-story',r.story);put('result-style',r.style);put('result-visuals',r.visuals);put('result-audio',r.audio);put('result-verdict',r.verdict);put('result-provider','تم الإنشاء عبر '+provider);putList('result-pros',r.pros);putList('result-cons',r.cons);
