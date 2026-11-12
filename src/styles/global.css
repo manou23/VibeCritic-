@@ -811,3 +811,14 @@ img{max-width:100%}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
+
+
+/* Review facts panel */
+.article-facts{margin-top:16px;padding:18px;border:1px solid var(--vc-border);border-radius:14px;background:var(--vc-surface)}
+.article-facts h2{margin:0 0 12px;color:var(--vc-text);font-size:14px;font-weight:900}
+.article-facts dl{display:grid;gap:0;margin:0}
+.article-facts dl>div{display:grid;grid-template-columns:minmax(82px,.7fr) minmax(0,1.3fr);gap:10px;padding:10px 0;border-top:1px solid var(--vc-border)}
+.article-facts dt{color:var(--vc-muted);font-size:11px}
+.article-facts dd{margin:0;color:var(--vc-text);font-size:12px;font-weight:800;line-height:1.7;overflow-wrap:anywhere}
+@media(max-width:850px){.article-facts{margin-top:0}}
+@media(max-width:600px){.article-facts{padding:14px;border-radius:11px}.article-facts dl>div{grid-template-columns:1fr;gap:4px}}
