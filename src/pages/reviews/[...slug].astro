@@ -47,21 +47,37 @@ const reviewKeywords = [...new Set([
 const reviewDescription = d.title + ' — ' + (d.reviewMode === 'preview' ? 'قراءة استباقية لـ' : 'مراجعة ') + typeKeyword + ' وتحليل نقدي للقصة والعناصر الفنية. ' + d.summary + (d.reviewMode === 'preview' ? ' التقدير الاستباقي: ' : ' تقييم VibeCritic: ') + d.score + '/10.';
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 const schemaType = d.type === 'game' ? 'Game' : d.type === 'series' ? 'CreativeWorkSeries' : 'Movie';
-const reviewStructuredData = {
+const reviewStructuredData = d.reviewMode === 'preview' ? {
   '@context': 'https://schema.org',
-  '@type': d.reviewMode === 'preview' ? 'Article' : 'Review',
+  '@type': 'Article',
+  headline: d.title + ' — قراءة استباقية',
+  name: d.title + ' — قراءة استباقية',
+  description: reviewDescription,
+  url: canonicalUrl,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+  datePublished: d.date.toISOString().slice(0, 10),
+  author: { '@type': 'Organization', name: SITE_NAME },
+  publisher: { '@type': 'Organization', name: SITE_NAME },
+  ...(d.backdrop || d.poster ? { image: [optimizeImage(d.backdrop || d.poster, 'backdrop')] } : {}),
+  articleSection: typeLabel,
+  inLanguage: 'ar',
+  articleBody: [d.summary, d.verdict, d.hook].filter(Boolean).join(' '),
+} : {
+  '@context': 'https://schema.org',
+  '@type': 'Review',
   name: d.title + ' — مراجعة وتقييم',
   url: canonicalUrl,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
   datePublished: d.date.toISOString().slice(0, 10),
   reviewBody: [d.summary, d.verdict, d.hook].filter(Boolean).join(' '),
-  ...(d.reviewMode === 'preview' ? {} : { reviewRating: {
+  reviewRating: {
     '@type': 'Rating',
     ratingValue: d.score,
     bestRating: 10,
     worstRating: 0,
-  } }),
+  },
   author: { '@type': 'Organization', name: SITE_NAME },
-  ...(d.reviewMode === 'preview' ? {} : { itemReviewed: {
+  itemReviewed: {
     '@type': schemaType,
     name: d.title,
     ...(d.originalTitle ? { alternateName: d.originalTitle } : {}),
@@ -69,8 +85,7 @@ const reviewStructuredData = {
     ...(d.releaseDate ? { datePublished: d.releaseDate } : {}),
     ...(d.poster ? { image: optimizeImage(d.poster) } : {}),
     ...(Number(d.sourceRating) > 0 && Number(d.sourceVoteCount) > 0 ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: d.sourceRating, bestRating: d.sourceRatingScale || 10, worstRating: 0, ratingCount: d.sourceVoteCount } } : {}),
-  }, }),
-
+  },
 };
 
 ---

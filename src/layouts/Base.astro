@@ -17,7 +17,14 @@ const {
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const rawTitle = `${title} | ${SITE_NAME}`;
 const pageTitle = rawTitle.length > 60 ? `${String(title).slice(0, 46).trimEnd()}… | ${SITE_NAME}` : rawTitle;
-const metaDescription = String(description).replace(/\s+/g, ' ').trim().slice(0, 152).trimEnd() + (String(description).trim().length > 152 ? '…' : '');
+const descriptionText = String(description).replace(/\s+/g, ' ').trim();
+const descriptionLimit = 152;
+const descriptionCut = descriptionText.slice(0, descriptionLimit);
+const lastWordBoundary = descriptionCut.lastIndexOf(' ');
+const safeDescription = descriptionText.length > descriptionLimit && lastWordBoundary >= 110
+  ? descriptionCut.slice(0, lastWordBoundary)
+  : descriptionCut;
+const metaDescription = safeDescription.trimEnd() + (descriptionText.length > descriptionLimit ? '…' : '');
 const metaKeywords = Array.isArray(keywords) ? [...new Set(keywords.map((word) => String(word).replace(/[<>\"']/g, '').replace(/\s+/g, ' ').trim()).filter(Boolean))].slice(0, 20).join(', ') : '';
 const structuredData = pageStructuredData || (pageType === 'article'
   ? {

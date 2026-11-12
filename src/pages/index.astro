@@ -16,7 +16,7 @@ const spotlight=trendReviews[0]||null;
 const topRated=[...reviews].filter(review=>review.data.score>0&&review.data.reviewMode!=='preview').sort((a,b)=>b.data.score-a.data.score).slice(0,8);
 const upcoming=reviews.filter(review=>review.data.reviewMode==='preview').sort((a,b)=>String(a.data.releaseDate||'').localeCompare(String(b.data.releaseDate||''))).slice(0,8);
 ---
-<Base title="اكتشف عالم الترفيه" description="اكتشف أحدث الأفلام والمسلسلات والألعاب، تابع الترندات العالمية واقرأ مراجعات VibeCritic." image={spotlight?.backdrop || spotlight?.poster}>
+<Base title="مراجعات الألعاب والأفلام والمسلسلات" description="VibeCritic منصة عربية لمراجعات الألعاب والأفلام والمسلسلات، تقدم تحليلات نقدية وتقييمات مستقلة ونقاط القوة والضعف وآخر الأعمال الرائجة.">
 <section class="wrap discovery-hero spotlight-slider" aria-label="أبرز الترندات">
  <div class="spotlight-backdrops" aria-hidden="true">
   <img class="spotlight-image is-active" src={spotlight?.backdrop||spotlight?.poster||''} alt="" fetchpriority="high" loading="eager" decoding="async"/>
@@ -24,9 +24,10 @@ const upcoming=reviews.filter(review=>review.data.reviewMode==='preview').sort((
  </div>
  <div class="discovery-shade"></div>
  <div class="discovery-content spotlight-copy" aria-live="polite">
+  <h1 class="sr-only">مراجعات الألعاب والأفلام والمسلسلات وتحليلات نقدية مستقلة | VibeCritic</h1>
   <p class="discovery-kicker"><span></span> VIBECRITIC / مؤشرات الرواج</p>
   <p class="spotlight-category">{spotlight?.type==='game'?'ترند الألعاب':spotlight?.type==='series'?'ترند المسلسلات':'ترند الأفلام'} · {spotlight?.source||'TRENDING'}</p>
-  <h1 class="spotlight-title">{spotlight?.title||'أبرز مؤشرات الرواج'}</h1>
+  <h2 class="spotlight-title spotlight-dynamic-title">{spotlight?.title||'أبرز مؤشرات الرواج'}</h2>
   <p class="discovery-description spotlight-description">{spotlight?.summary||'اكتشف الأعمال التي تسجل مؤشرات شعبية موثوقة لدى مصادر البيانات.'}</p>
   <div class="discovery-actions">
    {spotlight&&<a class="discovery-primary spotlight-link" href={spotlight.href} target={spotlight.external?"_blank":undefined} rel={spotlight.external?"noopener noreferrer":undefined}>{spotlight.external?"اكتشف العمل":"اقرأ المراجعة"} <span>↗</span></a>}
@@ -91,7 +92,7 @@ const hero=document.querySelector<HTMLElement>('.spotlight-slider');
 if(hero){
  const data=[...hero.querySelectorAll<HTMLElement>('.spotlight-data i')].map(el=>({...el.dataset}));
  const images=[...hero.querySelectorAll<HTMLImageElement>('.spotlight-image')];
- const title=hero.querySelector<HTMLElement>('.spotlight-title');
+ const title=hero.querySelector<HTMLElement>('.spotlight-dynamic-title');
  const summary=hero.querySelector<HTMLElement>('.spotlight-description');
  const category=hero.querySelector<HTMLElement>('.spotlight-category');
  const link=hero.querySelector<HTMLAnchorElement>('.spotlight-link');

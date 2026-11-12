@@ -103,8 +103,9 @@ for (const relative of reviewPages) {
   const publishedTime = metaContent('property', 'article:published_time');
   const jsonLdTag = html.match(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/i);
   let structuredType = '';
+  let structured = null;
   try {
-    const structured = JSON.parse(jsonLdTag?.[1] || 'null');
+    structured = JSON.parse(jsonLdTag?.[1] || 'null');
     structuredType = structured?.['@type'] || '';
   } catch {}
   const failedMeta = [];
@@ -114,6 +115,13 @@ for (const relative of reviewPages) {
   if (!['summary_large_image', 'summary'].includes(twitterCard)) failedMeta.push('twitter:card');
   if (!/^\d{4}-\d{2}-\d{2}T/.test(publishedTime)) failedMeta.push('article:published_time');
   if (!['Review', 'Article'].includes(structuredType)) failedMeta.push('JSON-LD Review/Article');
+  if (!structured?.url || !structured?.mainEntityOfPage) failedMeta.push('JSON-LD canonical identity');
+  if (structuredType === 'Review' && (!structured.reviewRating || !structured.itemReviewed?.name || !structured.reviewBody)) {
+    failedMeta.push('JSON-LD Review rating/itemReviewed/body');
+  }
+  if (structuredType === 'Article' && (!structured.headline || !structured.description || !structured.publisher?.name || !structured.articleBody)) {
+    failedMeta.push('JSON-LD Article headline/description/publisher/body');
+  }
   if (failedMeta.length) {
     throw new Error('وسوم SEO غير مكتملة في صفحة ' + relative + '؛ العناصر: ' + failedMeta.join(', '));
   }
@@ -156,5 +164,13 @@ if (canonical.length !== 1) throw new Error('يجب أن يحتوي الصفحة
 if (new URL(canonical[0][1]).origin !== site.origin) throw new Error('نطاق canonical للصفحة الرئيسية لا يطابق نطاق الإنتاج.');
 if (!/<meta\s+name=["']description["']\s+content=["'][^"']{30,}["'][^>]*>/i.test(home)) {
   throw new Error('وصف Meta للصفحة الرئيسية مفقود أو قصير جداً.');
+}
+const homepageH1 = [...home.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)];
+if (homepageH1.length !== 1 || !/مراجعات الألعاب والأفلام والمسلسلات/.test(homepageH1[0]?.[1] || '')) {
+  throw new Error('يجب أن تحتوي الصفحة الرئيسية على عنوان H1 واحد ثابت يوضح هوية VibeCritic ومجالها.');
+}
+const homepageDescription = home.match(/<meta\s+name=["']description["']\s+content=["']([^"']+)["'][^>]*>/i)?.[1] || '';
+if (!/VibeCritic/.test(homepageDescription) || !/(مراجعات|مراجعة)/.test(homepageDescription) || homepageDescription.length < 100) {
+  throw new Error('وصف الصفحة الرئيسية يجب أن يعرّف VibeCritic ومحتواها بوضوح وبطول كافٍ.');
 }
 console.log('Build validation passed: ' + sitemapUrls.length + ' indexed sitemap file(s), ' + pageCount + ' unique page URL(s), flat sitemap parity, robots.txt, homepage SEO and dynamic metadata for ' + reviewPages.length + ' review pages verified for ' + site.origin + '.');
