@@ -66,7 +66,7 @@ async function generateWithGroq(prompt){
   const retryable=r.status===429||[500,502,503,504].includes(r.status);
   if(!retryable||attempt===3)throw new Error('Groq HTTP '+r.status+': '+detail);
   const retryHeader=Number(r.headers.get('retry-after'))*1000;
-  const retryBody=Number(detail.match(/try again in\\s+([0-9.]+)s/i)?.[1])*1000;
+  const retryBody=Number(detail.match(/try again in\s+([0-9.]+)s/i)?.[1])*1000;
   const wait=Math.min(30000,Math.max(retryHeader||0,retryBody||0,1500*(attempt+1)));
   console.warn('Groq rate/server limit; retry '+(attempt+1)+' after '+wait+'ms');
   await new Promise(resolve=>setTimeout(resolve,wait));
@@ -187,24 +187,24 @@ async function tmdb(type){
 }
 async function games(){
  const clientId=required('IGDB_CLIENT_ID'),clientSecret=required('IGDB_CLIENT_SECRET');
- const tokenResponse=await fetch('https://id.twitch.tv/oauth2/token',{method:'POST',headers:{'content-type':'application/x-www-form-urlencoded'},body:new URLSearchParams({client_id:clientId,client_secret:clientSecret,grant_type:'client_credentials'})});
+ const tokenResponse=await fetch('https://id.twitch.tv/oauth2/token',{method:'POST',headers:{'content-type':'application/x-www-form-urlencoded'},body:new URLSearchParams({client_id:clientId,client_secret:clientSecret,grant_type:'client_credentials'}),signal:AbortSignal.timeout(30000)});
  if(!tokenResponse.ok)throw new Error(`Twitch OAuth HTTP ${tokenResponse.status}: ${await tokenResponse.text()}`);
  const {access_token}=await tokenResponse.json();
  if(!access_token)throw new Error('لم يرجع Twitch access token صالحاً');
  const headers={'Client-ID':clientId,Authorization:`Bearer ${access_token}`,Accept:'application/json','Content-Type':'text/plain'};
  const since=Math.floor((Date.now()-gamesWindowDays*86400000)/1000);
  const recentQuery=`fields name,summary,first_release_date,cover.image_id,genres.name,rating,follows,hypes,rating_count,url,platforms.name,game_modes.name,player_perspectives.name,involved_companies.company.name,involved_companies.developer,game_engines.name; where first_release_date >= ${since}; sort first_release_date desc; limit 30;`;
- const recentResponse=await fetch('https://api.igdb.com/v4/games',{method:'POST',headers,body:recentQuery});
+ const recentResponse=await fetch('https://api.igdb.com/v4/games',{method:'POST',headers,body:recentQuery,signal:AbortSignal.timeout(45000)});
  if(!recentResponse.ok)throw new Error(`IGDB recent games HTTP ${recentResponse.status}: ${await recentResponse.text()}`);
  let trendingGames=[];
  try{
   const popularityQuery='fields game_id,popularity_type,value; where popularity_type = 1; sort value desc; limit 60;';
-  const popularityResponse=await fetch('https://api.igdb.com/v4/popularity_primitives',{method:'POST',headers,body:popularityQuery});
+  const popularityResponse=await fetch('https://api.igdb.com/v4/popularity_primitives',{method:'POST',headers,body:popularityQuery,signal:AbortSignal.timeout(45000)});
   if(popularityResponse.ok){
    const primitives=await popularityResponse.json();
    const ids=[...new Set(primitives.map(x=>Number(x.game_id)).filter(Boolean))].slice(0,40);
    if(ids.length){
-    const detailResponse=await fetch('https://api.igdb.com/v4/games',{method:'POST',headers,body:`fields name,summary,first_release_date,cover.image_id,genres.name,rating,follows,hypes,rating_count,url; where id = (${ids.join(',')}); limit 40;`});
+    const detailResponse=await fetch('https://api.igdb.com/v4/games',{method:'POST',headers,body:`fields name,summary,first_release_date,cover.image_id,genres.name,rating,follows,hypes,rating_count,url; where id = (${ids.join(',')}); limit 40;`,signal:AbortSignal.timeout(45000)});
     if(detailResponse.ok){
      const details=await detailResponse.json(),rankById=new Map(primitives.map((x,i)=>[String(x.game_id),{rank:i+1,signal:Number(x.value)||0}]));
      trendingGames=details.map(x=>({...x,trendRank:rankById.get(String(x.id))?.rank||999,trendSignal:rankById.get(String(x.id))?.signal||0}));
@@ -241,11 +241,11 @@ async function globalTrending(){
  const headers={'Client-ID':clientId,Authorization:`Bearer ${access_token}`,Accept:'application/json','Content-Type':'text/plain'};
  let gameList=[];
  try{
-  const popularityResponse=await fetch('https://api.igdb.com/v4/popularity_primitives',{method:'POST',headers,body:'fields game_id,popularity_type,value; where popularity_type = 1; sort value desc; limit 30;'});
+  const popularityResponse=await fetch('https://api.igdb.com/v4/popularity_primitives',{method:'POST',headers,body:'fields game_id,popularity_type,value; where popularity_type = 1; sort value desc; limit 30;',signal:AbortSignal.timeout(45000)});
   if(popularityResponse.ok){
    const primitives=await popularityResponse.json(),ids=[...new Set(primitives.map(x=>Number(x.game_id)).filter(Boolean))].slice(0,20);
    if(ids.length){
-    const detailResponse=await fetch('https://api.igdb.com/v4/games',{method:'POST',headers,body:`fields name,summary,cover.image_id,follows,hypes,rating_count,url; where id = (${ids.join(',')}); limit 20;`});
+    const detailResponse=await fetch('https://api.igdb.com/v4/games',{method:'POST',headers,body:`fields name,summary,cover.image_id,follows,hypes,rating_count,url; where id = (${ids.join(',')}); limit 20;`,signal:AbortSignal.timeout(45000)});
     if(detailResponse.ok){
      const details=await detailResponse.json(),rankById=new Map(primitives.map((x,i)=>[String(x.game_id),{rank:i+1,signal:Number(x.value)||0}]));
      gameList=details.map(x=>({...x,trendRank:rankById.get(String(x.id))?.rank||999,trendSignal:rankById.get(String(x.id))?.signal||0}));
@@ -254,7 +254,7 @@ async function globalTrending(){
   }else console.warn('تعذر الوصول إلى مؤشرات ترند IGDB:',popularityResponse.status);
  }catch(e){console.warn('تعذر جلب ترند الألعاب من IGDB:',e.message);}
  if(!gameList.length){
-  const fallback=await fetch('https://api.igdb.com/v4/games',{method:'POST',headers,body:'fields name,summary,cover.image_id,follows,hypes,rating_count,url; where follows > 0 | hypes > 0; sort follows desc; limit 20;'});
+  const fallback=await fetch('https://api.igdb.com/v4/games',{method:'POST',headers,body:'fields name,summary,cover.image_id,follows,hypes,rating_count,url; where follows > 0 | hypes > 0; sort follows desc; limit 20;',signal:AbortSignal.timeout(45000)});
   if(!fallback.ok)throw new Error(`IGDB trending fallback HTTP ${fallback.status}: ${await fallback.text()}`);
   gameList=(await fallback.json()).map((x,i)=>({...x,trendRank:i+1,trendSignal:Number(x.follows)||0}));
  }
