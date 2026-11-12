@@ -100,7 +100,7 @@ Only paths from EDITABLE FILE sections may be changed. No new/deleted/renamed fi
     payload = {
         "model": MODEL,
         "temperature": 0.1,
-        "max_tokens": 3500,
+        "max_tokens": 7000,
         "messages": [
             {"role": "system", "content": system},
             {"role": "user", "content":
@@ -127,9 +127,18 @@ Only paths from EDITABLE FILE sections may be changed. No new/deleted/renamed fi
     choices = r.json().get("choices") or []
     if not choices:
         raise RuntimeError("Groq returned no completion.")
-    value = choices[0].get("message", {}).get("content")
+    choice = choices[0]
+    message = choice.get("message") or {}
+    value = message.get("content")
     if not isinstance(value, str) or not value.strip():
-        raise RuntimeError("Groq returned an empty response.")
+        finish = str(choice.get("finish_reason") or "unknown")
+        usage = r.json().get("usage") or {}
+        completion_tokens = usage.get("completion_tokens", "unknown")
+        raise RuntimeError(
+            "Groq returned no patch text (finish_reason=" + finish +
+            ", completion_tokens=" + str(completion_tokens) +
+            "). The model may have exhausted its reasoning/output token budget."
+        )
     return value.strip()
 
 
