@@ -1,4 +1,5 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
 
 const reviews = defineCollection({
@@ -27,7 +28,7 @@ const reviews = defineCollection({
     cast: z.array(z.string()).default([]),
     crew: z.array(z.string()).default([]),
     watchProviders: z.array(z.string()).default([]),
-    watchProviderUrl: z.string().url().optional(),
+    watchProviderUrl: z.url().optional(),
     pros: z.array(z.string()),
     cons: z.array(z.string()),
     tags: z.array(z.string()).default([]),
