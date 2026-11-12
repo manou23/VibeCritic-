@@ -89,17 +89,32 @@ const reviewPages = reviewHtmlPaths.filter(file => String(file).endsWith('index.
 if (!reviewPages.length) throw new Error('لم يتم العثور على صفحات مراجعات HTML لفحص SEO.');
 for (const relative of reviewPages) {
   const html = await fs.readFile(path.join(reviewOutput, relative), 'utf8');
-  const requiredMeta = [
-    /<meta[^>]+property=["']og:title["'][^>]+content=["'][^"']{8,}["']/i,
-    /<meta[^>]+property=["']og:description["'][^>]+content=["'][^"']{30,}["']/i,
-    /<meta[^>]+property=["']og:url["'][^>]+content=["']https:\/\//i,
-    /<meta[^>]+name=["']twitter:card["'][^>]+content=["']summary(?:_large_image)?["']/i,
-    /<meta[^>]+property=["']article:published_time["'][^>]+content=["']\d{4}-\d{2}-\d{2}T/i,
-    /<script[^>]+type=["']application\/ld\+json["'][^>]*>[\s\S]*?["@]type["']\s*:\s*["'](?:Review|Article)["']/i,
-  ];
-  const failedMeta = requiredMeta.map((pattern, index) => pattern.test(html) ? null : index + 1).filter(Boolean);
+  const metaTags = html.match(/<meta\\b[^>]*>/gi) || [];
+  const metaTag = (attribute, value) => metaTags.find(tag => new RegExp('\\\\b' + attribute + '=["\\\\']' + value + '["\\\\']', 'i').test(tag)) || '';
+  const metaContent = (attribute, value) => {
+    const tag = metaTag(attribute, value);
+    return tag.match(/\\bcontent=["']([^"']*)["']/i)?.[1] || '';
+  };
+  const ogTitle = metaContent('property', 'og:title');
+  const ogDescription = metaContent('property', 'og:description');
+  const ogUrl = metaContent('property', 'og:url');
+  const twitterCard = metaContent('name', 'twitter:card');
+  const publishedTime = metaContent('property', 'article:published_time');
+  const jsonLdTag = html.match(/<script\\b[^>]*type=["']application\\/ld\\+json["'][^>]*>([\\s\\S]*?)<\\/script>/i);
+  let structuredType = '';
+  try {
+    const structured = JSON.parse(jsonLdTag?.[1] || 'null');
+    structuredType = structured?.['@type'] || '';
+  } catch {}
+  const failedMeta = [];
+  if (ogTitle.length < 8) failedMeta.push('og:title');
+  if (ogDescription.length < 30) failedMeta.push('og:description');
+  if (!ogUrl.startsWith('https://')) failedMeta.push('og:url');
+  if (!['summary_large_image', 'summary'].includes(twitterCard)) failedMeta.push('twitter:card');
+  if (!/^\\d{4}-\\d{2}-\\d{2}T/.test(publishedTime)) failedMeta.push('article:published_time');
+  if (!['Review', 'Article'].includes(structuredType)) failedMeta.push('JSON-LD Review/Article');
   if (failedMeta.length) {
-    throw new Error('وسوم SEO غير مكتملة في صفحة ' + relative + '؛ فشل فحص العناصر: ' + failedMeta.join(', '));
+    throw new Error('وسوم SEO غير مكتملة في صفحة ' + relative + '؛ العناصر: ' + failedMeta.join(', '));
   }
   const pageCanonical = html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i)?.[1];
   if (!pageCanonical || new URL(pageCanonical).origin !== site.origin) {
