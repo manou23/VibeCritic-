@@ -90,18 +90,18 @@ if (!reviewPages.length) throw new Error('لم يتم العثور على صفح
 for (const relative of reviewPages) {
   const html = await fs.readFile(path.join(reviewOutput, relative), 'utf8');
   const metaTags = html.match(/<meta\b[^>]*>/gi) || [];
-  const metaTag = (attribute, value) => metaTags.find(tag => new RegExp('\\b' + attribute + '=["\']' + value + '["\']', 'i').test(tag)) || '';
+  const metaTag = (attribute, value) => metaTags.find(tag => new RegExp('\\b' + attribute + '=["\\']' + value + '["\\']', 'i').test(tag)) || '';
   const metaContent = (attribute, value) => {
     const tag = metaTag(attribute, value);
-    const match = tag.match(/\bcontent="([^"]*)"|\bcontent='([^']*)'/i);
-    return match?.[1] ?? match?.[2] ?? '';
+    const match = tag.match(/\bcontent=["\\']([^"\\']*)["\\']/i);
+    return match?.[1] ?? '';
   };
   const ogTitle = metaContent('property', 'og:title');
   const ogDescription = metaContent('property', 'og:description');
   const ogUrl = metaContent('property', 'og:url');
   const twitterCard = metaContent('name', 'twitter:card');
   const publishedTime = metaContent('property', 'article:published_time');
-  const jsonLdTag = html.match(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/i);
+  const jsonLdTag = html.match(/<script\b[^>]*type=["\\']application\/ld\+json["\\'][^>]*>([\s\S]*?)<\/script>/i);
   let structuredType = '';
   try {
     const structured = JSON.parse(jsonLdTag?.[1] || 'null');
@@ -117,20 +117,34 @@ for (const relative of reviewPages) {
   if (failedMeta.length) {
     throw new Error('وسوم SEO غير مكتملة في صفحة ' + relative + '؛ العناصر: ' + failedMeta.join(', '));
   }
-  const canonicalTag = (html.match(/<link\b[^>]*>/gi) || []).find(tag => /\brel=["']canonical["']/i.test(tag));
-  const pageCanonical = canonicalTag?.match(/\bhref=["']([^"']+)["']/i)?.[1];
+  const canonicalTag = (html.match(/<link\b[^>]*>/gi) || []).find(tag => /\brel=["\\']canonical["\\']/i.test(tag));
+  const pageCanonical = canonicalTag?.match(/\bhref=["\\']([^"\\']+)["\\']/i)?.[1];
+  if (!pageCanonical || !pageCanonical.startsWith('https://')) {
+    throw new Error('رابط canonical مفقود أو غير مطلق في صفحة ' + relative);
+  }
 }
-// Review-content integrity checks also run after the production build.
+
+// Review-content integrity checks must inspect the actual score field, not every
+// occurrence of "0.0" in source metadata (for example, a Japanese title).
 const reviewRoot = path.resolve('src/content/reviews');
 const reviewFiles = (await fs.readdir(reviewRoot)).filter(name => name.endsWith('.md'));
 const reviewFailures = [];
 for (const file of reviewFiles) {
   const source = await fs.readFile(path.join(reviewRoot, file), 'utf8');
+  const frontmatter = source.match(/^---\s*\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/)?.[1] || '';
   const body = source.replace(/^---\s*\r?\n[\s\S]*?\r?\n---(?:\r?\n|$)/, '');
-  if (/(^|[^\d.])0\.0(?![\d.])/.test(source)) reviewFailures.push(file + ': contains forbidden 0.0 score');
+  const scoreMatch = frontmatter.match(/^score:\s*["']?(-?\d+(?:\.\d+)?)["']?\s*$/m);
+  if (!scoreMatch) {
+    reviewFailures.push(file + ': missing or invalid numeric score field');
+  } else {
+    const score = Number(scoreMatch[1]);
+    if (!Number.isFinite(score) || score <= 0 || score > 10) {
+      reviewFailures.push(file + ': score must be greater than 0 and at most 10 (' + scoreMatch[1] + ')');
+    }
+  }
   for (const match of body.matchAll(/(\d+(?:[.,]\d+)?)\s*\/\s*10/g)) {
     const value = Number(match[1].replace(',', '.'));
-    if (value > 10) reviewFailures.push(file + ': score above 10 (' + match[0] + ')');
+    if (value <= 0 || value > 10) reviewFailures.push(file + ': invalid body score (' + match[0] + ')');
   }
   if (/^\s*\d+(?:[.,]\d+)?\s*$/m.test(body)) reviewFailures.push(file + ': contains a standalone number without context');
 }
