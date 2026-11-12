@@ -19,6 +19,8 @@ function normalize(d,title,kind){
  const r={title:clean(d.title||title,160),kind,hook:clean(d.hook,900),story:clean(d.story,3500),style:clean(d.style,3500),visuals:clean(d.visuals,3000),audio:clean(d.audio,2500),pros:arr(d.pros,5,300),cons:arr(d.cons,5,300),verdict:clean(d.verdict,1800),score:Number.isFinite(score)&&score>0&&score<=10?Math.round(score*10)/10:null};
  for(const f of ['hook','story','style','visuals','audio','verdict'])if(!r[f])throw Error('المراجعة غير مكتملة: '+f);
  if(r.pros.length<3||r.score===null||r.score<=0||r.score>10)throw Error('التقييم أو قائمة الإيجابيات غير مكتملة؛ يلزم 3 إيجابيات على الأقل ودرجة صالحة.');
+ const statedScore=r.verdict.match(/(\\d+(?:[.,]\\d+)?)\\s*(?:\\/\\s*10|من\\s*10)/);
+ if(statedScore&&Math.abs(Number(statedScore[1].replace(',','.'))-r.score)>0.05)throw Error('الدرجة في الحكم النهائي لا تطابق الدرجة المعتمدة.');
  return r;
 }
 async function fetchWithRetry(url,options){
