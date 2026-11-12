@@ -7,7 +7,7 @@ import trending from '../data/trending.json';
 const reviews=(await getCollection('reviews')).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
 const byType={game:reviews.filter(x=>x.data.type==='game'),series:reviews.filter(x=>x.data.type==='series'),movie:reviews.filter(x=>x.data.type==='movie')};
 // اعرض في الترندات الأعمال التي تملك مراجعة منشورة داخل VibeCritic فقط.
-const trendReviews=trending.flatMap(item=>{
+const trendReviews=trending.filter(item=>['مرتفع','متوسط'].includes(item.trendConfidence)).flatMap(item=>{
  const review=reviews.find(entry=>entry.data.type===item.type&&entry.data.sourceId===item.sourceId);
  if(!review)return [];
  return [{...item,summary:review.data.summary||item.summary,poster:optimizeImage(item.poster),backdrop:optimizeImage(item.backdrop||item.poster,'backdrop'),review,href:url(`reviews/${review.id}/`)}];
@@ -23,10 +23,10 @@ const latest=reviews.slice(0,12);
  </div>
  <div class="discovery-shade"></div>
  <div class="discovery-content spotlight-copy" aria-live="polite">
-  <p class="discovery-kicker"><span></span> VIBECRITIC / الرائج عالمياً</p>
+  <p class="discovery-kicker"><span></span> VIBECRITIC / مؤشرات الرواج</p>
   <p class="spotlight-category">{spotlight?.type==='game'?'ترند الألعاب':spotlight?.type==='series'?'ترند المسلسلات':'ترند الأفلام'} · {spotlight?.source||'TRENDING'}</p>
-  <h1 class="spotlight-title">{spotlight?.title||'أبرز المواضيع الرائجة'}</h1>
-  <p class="discovery-description spotlight-description">{spotlight?.summary||'اكتشف أبرز ما يتصدر الاهتمام حول العالم الآن.'}</p>
+  <h1 class="spotlight-title">{spotlight?.title||'أبرز مؤشرات الرواج'}</h1>
+  <p class="discovery-description spotlight-description">{spotlight?.summary||'اكتشف الأعمال التي تسجل مؤشرات شعبية موثوقة لدى مصادر البيانات.'}</p>
   <div class="discovery-actions">
    {spotlight&&<a class="discovery-primary spotlight-link" href={spotlight.href}>اقرأ المراجعة <span>↗</span></a>}
    <a class="discovery-secondary" href="#trending">كل الترندات</a>
@@ -43,7 +43,7 @@ const latest=reviews.slice(0,12);
  </div>
 </section>
 <section class="wrap catalog-section" id="trending">
- <div class="catalog-heading"><div><p class="catalog-eyebrow">WHAT'S POPULAR</p><h2>الرائج الآن</h2><p>الأعمال التي يتحدث عنها الجميع حول العالم</p></div><a href="#new-releases" class="catalog-more">اكتشف الجديد <span>←</span></a></div>
+ <div class="catalog-heading"><div><p class="catalog-eyebrow">WHAT'S POPULAR</p><h2>مؤشرات الرواج</h2><p>أعمال تتصدر مؤشرات الشعبية لدى مصادر البيانات، مع استبعاد الإشارات ضعيفة الثقة</p></div><a href="#new-releases" class="catalog-more">اكتشف الجديد <span>←</span></a></div>
  {trendReviews.length>0?<div class="catalog-rail trend-rail">
  {trendReviews.map((item,i)=><a class="catalog-poster-card trend-poster-card" href={item.href}>
   <div class="catalog-poster">{item.poster?<img src={item.poster} alt={item.title} loading="lazy" decoding="async"/>:<div class="poster-fallback">V/C</div>}<span class="catalog-rank">{String(i+1).padStart(2,'0')}</span></div>
@@ -110,7 +110,7 @@ if(hero){
   textTimer=window.setTimeout(()=>{
    if(current!==target)return;
    if(title)title.textContent=item.title||'ترند عالمي';
-   if(summary)summary.textContent=item.summary||'هذا العمل ضمن أبرز المواضيع الرائجة عالمياً حالياً.';
+   if(summary)summary.textContent=item.summary||'هذا العمل ضمن أبرز الأعمال وفق مؤشرات الشعبية المتاحة.';
    if(category)category.textContent=(labels[item.type]||'ترند عالمي')+' · '+(item.source||'TRENDING');
    if(link){link.href=item.href;link.removeAttribute('target');link.removeAttribute('rel');}
    if(count)count.textContent=String(current+1).padStart(2,'0');
