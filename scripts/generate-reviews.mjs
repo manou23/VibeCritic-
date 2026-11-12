@@ -10,6 +10,12 @@ const outDir='src/content/reviews',processedPath='data/processed.json';
 function required(name){if(!env[name])throw new Error(`متغير البيئة ${name} غير مضبوط في GitHub Secrets`);return env[name];}
 async function getJson(url){const r=await fetch(url,{signal:AbortSignal.timeout(30000)});if(!r.ok){const safeUrl=url.replace(/([?&](?:api_key|key)=)[^&]+/i,'$1[REDACTED]');throw new Error(`HTTP ${r.status}: ${safeUrl}`);}return r.json();}
 const clean=v=>String(v??'').replace(/[\r\n]+/g,' ').trim();
+const editorialPriorityNames=['grand theft auto vi','grand theft auto 6','gta vi','gta 6','the witcher 4','the witcher iv','marvels wolverine','marvel wolverine','elder scrolls vi','the elder scrolls 6','resident evil requiem','tomb raider catalyst','007 first light','intergalactic the heretic prophet','pragmata','control resonant'];
+function normalizedTitle(value){return String(value||'').toLowerCase().normalize('NFKD').replace(/[\\u0300-\\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim();}
+function editorialPriority(item){const title=normalizedTitle(item.name||item.title);return editorialPriorityNames.findIndex(name=>title.includes(normalizedTitle(name)));}
+function communityDemand(item){const source=String(item.source||'').toUpperCase(),metric=Number(item.sourceMetricValue??item.popularity)||0;if(source==='RAWG')return metric>=100?3:metric>=25?2:0;if(source==='IGDB')return metric>=50?3:metric>=15?2:0;return metric>0?1:0;}
+function isPreviewUpgrade(item,publishedModes,today){const key=String(item.type)+':'+String(item.id);return publishedModes.get(key)==='preview'&&/^\\d{4}-\\d{2}-\\d{2}$/.test(String(item.date||''))&&String(item.date).slice(0,10)<=today;}
+
 function algeriaDate(){const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Africa/Algiers',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());const values=Object.fromEntries(parts.filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));return `${values.year}-${values.month}-${values.day}`;}
 function addDays(date,days){const value=new Date(`${date}T00:00:00Z`);value.setUTCDate(value.getUTCDate()+days);return value.toISOString().slice(0,10);}
 const slugify=v=>clean(v).toLowerCase().normalize('NFKD').replace(/[^\p{L}\p{N}]+/gu,'-').replace(/^-|-$/g,'').slice(0,70)||'review';
@@ -361,7 +367,7 @@ async function gamesFromRawg(mode='recent'){
    };
   }catch(error){console.warn('تعذر جلب تفاصيل RAWG للعبة '+item.name+':',error.message);return null;}
  }));
- return detailed.filter(x=>x&&x.description.length>=60&&x.added>0).sort((a,b)=>b.added-a.added);
+ return detailed.filter(x=>x&&x.description.length>=60&&x.added>=25).sort((a,b)=>b.added-a.added);
 }
 async function gamesFromIgdb(mode='recent'){
  const clientId=required('IGDB_CLIENT_ID'),clientSecret=required('IGDB_CLIENT_SECRET');
@@ -379,7 +385,7 @@ async function gamesFromIgdb(mode='recent'){
  return (await response.json()).map((x,i)=>{
   const image=x.cover?.image_id?`https://images.igdb.com/igdb/image/upload/t_cover_big/${x.cover.image_id}.jpg`:'';
   return {id:String(x.id),type:'game',name:x.name||'بدون عنوان',description:x.summary||'',date:x.first_release_date?new Date(x.first_release_date*1000).toISOString().slice(0,10):'',poster:image,backdrop:image,rating:Number(x.rating)||0,genres:(x.genres||[]).map(g=>g.name),sourceUrl:x.url||`https://www.igdb.com/games/${x.id}`,source:'IGDB',popularity:Number(x.hypes||0)+Number(x.follows||0),sourceMetricName:'IGDB hypes + follows',sourceMetricValue:Number(x.hypes||0)+Number(x.follows||0),trendConfidence:(Number(x.hypes||0)+Number(x.follows||0))>=10?'متوسط':'منخفض',trendRank:i+1,platforms:(x.platforms||[]).map(p=>p.name).filter(Boolean),developers:(x.involved_companies||[]).filter(c=>c.developer).map(c=>c.company?.name).filter(Boolean),metadata:{ratingCount:Number(x.rating_count)||0,platforms:(x.platforms||[]).map(p=>p.name).filter(Boolean),developers:(x.involved_companies||[]).filter(c=>c.developer).map(c=>c.company?.name).filter(Boolean)}};
- }).filter(x=>x.description.trim().length>=60&&x.popularity>0).sort((a,b)=>b.popularity-a.popularity);
+ }).filter(x=>x.description.trim().length>=60&&x.popularity>=15).sort((a,b)=>b.popularity-a.popularity);
 }
 let gamesCachePromise;
 async function gamesArchive(){
@@ -429,7 +435,7 @@ async function globalTrending(){
  })).filter((x,i,all)=>x.sourceMetricValue>0&&all.findIndex(y=>y.type===x.type&&y.id===x.id)===i);
  let gameList=[];
  try{gameList=await games();}catch(error){console.warn('تعذر تحديث ترند الألعاب، سيستمر الموقع بترند TMDB فقط:',error.message);}
- const gameItems=gameList.filter(x=>Number(x.popularity)>0&&Number(x.sourceMetricValue??x.popularity)>0).slice(0,3).map((x,i)=>({
+ const gameItems=gameList.filter(x=>communityDemand(x)>=2).sort((a,b)=>editorialPriority(a)-editorialPriority(b)||communityDemand(b)-communityDemand(a)||Number(b.popularity)-Number(a.popularity)).slice(0,3).map((x,i)=>({
   id:String(x.id),sourceId:String(x.id),type:'game',title:x.name,
   poster:x.poster||'',backdrop:x.backdrop||x.poster||'',summary:x.description||'',
   sourceUrl:x.sourceUrl||'',source:x.source||'RAWG',sourceRank:Number(x.popularity)||0,popularity:Number(x.popularity)||0,sourceMetricName:x.sourceMetricName||'source-native popularity',sourceMetricValue:Number(x.sourceMetricValue??x.popularity)||0,trendConfidence:x.trendConfidence||'متوسط',
