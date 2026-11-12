@@ -3,7 +3,7 @@ name: Generate reviews and publish
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 */8 * * *'
+    - cron: '17 2 * * *'
   push:
     branches: [main]
     paths-ignore:
