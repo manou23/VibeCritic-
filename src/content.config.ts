@@ -7,6 +7,12 @@ const reviews = defineCollection({
   schema: z.object({
     title: z.string(),
     originalTitle: z.string().optional(),
+    storyScore: z.number().min(0).max(10).optional(),
+    visualsScore: z.number().min(0).max(10).optional(),
+    soundScore: z.number().min(0).max(10).optional(),
+    pacingScore: z.number().min(0).max(10).optional(),
+    platforms: z.array(z.string()).default([]),
+    gameStores: z.array(z.object({ name: z.string(), url: z.url().optional() })).default([]),
     headline: z.string(),
     hook: z.string().optional(),
     summary: z.string(),
