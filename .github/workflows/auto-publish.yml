@@ -80,6 +80,8 @@ jobs:
           else
             echo "API secrets are not fully configured; skipping generation and continuing the site build."
           fi
+      - name: Validate generated review scores and quality metadata
+        run: npm run validate:reviews
       - name: Add videos to previously published reviews
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
