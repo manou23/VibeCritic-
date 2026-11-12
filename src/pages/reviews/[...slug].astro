@@ -5,6 +5,9 @@ import { getCollection, render } from 'astro:content';
 import { TYPE_LABEL, fmtDate, url, optimizeImage, SITE_NAME } from '../../consts';
 export async function getStaticPaths(){const reviews=await getCollection('reviews');return reviews.map(review=>({params:{slug:review.id},props:{review}}));}
 const {review}=Astro.props;const {Content}=await render(review);const d=review.data;
+const allReviews=await getCollection('reviews');
+const reviewGenres=new Set(d.genres||[]);
+const similarReviews=allReviews.filter(entry=>entry.id!==review.id&&entry.data.type===d.type&&(entry.data.genres||[]).some(genre=>reviewGenres.has(genre))).sort((a,b)=>(b.data.genres||[]).filter(genre=>reviewGenres.has(genre)).length-(a.data.genres||[]).filter(genre=>reviewGenres.has(genre)).length).slice(0,3);
 
 const typeLabel = TYPE_LABEL[d.type];
 const youtubeVideoId = /^[A-Za-z0-9_-]{11}$/.test(d.youtubeVideoId || '') ? d.youtubeVideoId : null;
@@ -113,6 +116,20 @@ const reviewStructuredData = {
         <h2>هل يستحق وقتك؟</h2>
         <p>{d.verdict || 'تتحدد قيمة هذا العمل بحسب مدى اهتمامك بنوعه وعناصره الفنية، مع مراعاة نقاط القوة والتحفظات المذكورة أعلاه.'}</p>
       </section>
+      {(d.cast?.length || d.crew?.length) && <section class="article-facts" aria-label="طاقم العمل">
+        <h2>طاقم العمل</h2>
+        {d.cast?.length>0 && <p><strong>أبرز المشاركين:</strong> {d.cast.join('، ')}</p>}
+        {d.crew?.length>0 && <p><strong>الإخراج / الإبداع:</strong> {d.crew.join('، ')}</p>}
+      </section>}
+      <section class="article-facts" aria-label="أماكن المشاهدة">
+        <h2>أين أشاهده؟</h2>
+        {d.watchProviders?.length>0 ? <p>المنصات المتاحة في الجزائر بحسب بيانات TMDB: {d.watchProviders.join('، ')}</p> : <p>لم تتوفر حالياً بيانات موثوقة عن منصات المشاهدة في الجزائر.</p>}
+        {d.watchProviderUrl && <a href={d.watchProviderUrl} target="_blank" rel="noopener noreferrer">تحقق من خيارات المشاهدة على TMDB ↗</a>}
+      </section>
+      {similarReviews.length>0 && <section class="article-facts" aria-label="مراجعات مشابهة">
+        <h2>مراجعات مشابهة</h2>
+        <ul>{similarReviews.map(entry=><li><a href={url('reviews/'+entry.id+'/')}>{entry.data.title} — {entry.data.score.toFixed(1)}/10</a></li>)}</ul>
+      </section>}
       <p class="review-method-note">منهجية VibeCritic: هذا تقييم تحريري مبني على المعلومات المنشورة والبيانات المتاحة، وليس ادعاءً باختبار مباشر للعمل. الدرجة تقدير نقدي مستقل وليست تقييماً رسمياً.</p>
       <a href={url('')} class="article-return">اكتشف مراجعات أخرى <span>←</span></a>
     </div>
