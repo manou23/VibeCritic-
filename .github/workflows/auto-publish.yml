@@ -4,11 +4,22 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '17 2 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - '!src/content/reviews/**'
+      - '!src/data/trending.json'
+      - 'functions/**'
+      - 'scripts/**'
+      - 'astro.config.mjs'
+      - 'package.json'
+      - '.github/workflows/auto-publish.yml'
 permissions:
   contents: write
 concurrency:
   group: vibecritic-content-generation
-  cancel-in-progress: true
+  cancel-in-progress: false
 jobs:
   build:
     runs-on: ubuntu-latest
