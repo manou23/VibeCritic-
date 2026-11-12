@@ -10,6 +10,8 @@ date: 2026-11-11
 releaseDate: "2026-11-03"
 poster: "https://image.tmdb.org/t/p/w500/66Le9LJ0EfQ5Y1Jdj3elL5jGr2B.jpg"
 backdrop: "https://image.tmdb.org/t/p/w1280/5MBdRdiGv3AKzZDGbni88xc6JFi.jpg"
+youtubeVideoId: "VczwWXoMKL0"
+youtubeVideoTitle: "Official Trailer"
 score: 7
 pros:
   - "فرضية فقدان الذاكرة تفتح باباً طبيعياً للغموض والشك"

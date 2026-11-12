@@ -10,6 +10,8 @@ date: 2026-11-11
 releaseDate: "2022-09-01"
 poster: "https://image.tmdb.org/t/p/w500/9gSNkJmf6A1uVKMcUhDn4WPKGLR.jpg"
 backdrop: "https://image.tmdb.org/t/p/w1280/achmETPRJZc9QVXsMPgHwYEyNar.jpg"
+youtubeVideoId: "x8UAUAuKNcU"
+youtubeVideoTitle: "Official Trailer"
 score: 8
 pros:
   - "تصميم عالم واسع يمنح الممالك والبيئات هوية بصرية مميزة"

@@ -10,6 +10,8 @@ date: 2026-11-11
 releaseDate: "2026-11-11"
 poster: "https://image.tmdb.org/t/p/w500/zksg8e0GZAmg1nLhVP5tKso3QRs.jpg"
 backdrop: "https://image.tmdb.org/t/p/w1280/yfLPesZIbTrwBE9BzmiK4ypqz3L.jpg"
+youtubeVideoId: "wl7uj7n7DoY"
+youtubeVideoTitle: "Official Trailer"
 score: 5.5
 pros:
   - "العنوان يترك مجالاً لموضوعات إنسانية أو نفسية متعددة"

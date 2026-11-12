@@ -10,6 +10,8 @@ date: 2026-11-12
 releaseDate: "2025-06-03"
 poster: "https://image.tmdb.org/t/p/w500/gENmz65wMw4SUZb43fZYCoV24mG.jpg"
 backdrop: "https://image.tmdb.org/t/p/w780/2Bt2uXrIOQASBAsni2AGGqCCF14.jpg"
+youtubeVideoId: "72oB_zVF_6o"
+youtubeVideoTitle: "Official Trailer"
 score: 7.5
 trendRank: 8
 trendSource: "TMDB"
