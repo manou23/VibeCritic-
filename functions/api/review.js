@@ -114,8 +114,7 @@ async function permitted(req,env){
  if(origin){try{if(!host||new URL(origin).host!==host)return false}catch{return false}}
  const ip=req.headers.get('CF-Connecting-IP')||'unknown';
  if(env.AI_REVIEW_LIMITER?.limit){
-  const decision=await env.AI_REVIEW_LIMITER.limit({key:ip});
-  return decision.success===true;
+  try{const decision=await env.AI_REVIEW_LIMITER.limit({key:ip});return decision.success===true;}catch(error){console.error('AI review rate limiter failed:',error);return false;}
  }
  // Fallback only: isolate-local. Configure AI_REVIEW_LIMITER or a Cloudflare WAF rate-limit rule for distributed enforcement.
  const now=Date.now(),recent=(hits.get(ip)||[]).filter(t=>now-t<600000);
@@ -141,11 +140,11 @@ async function verifyTurnstile(token,request,env){
  const result=await response.json();
  return result.success===true;
 }
-async function reviewCacheKey(title,kind){
- const normalized=kind+'|'+title.toLocaleLowerCase().replace(/\s+/g,' ').trim();
+async function reviewCacheKey(title,kind,request){
+ const normalized='v2|'+kind+'|'+title.toLocaleLowerCase().replace(/\s+/g,' ').trim();
  const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(normalized));
  const hash=[...new Uint8Array(digest)].map(byte=>byte.toString(16).padStart(2,'0')).join('');
- return new Request('https://vibecritic.pages.dev/__ai-review-cache/'+hash);
+ return new Request(new URL('/__ai-review-cache/'+hash,request.url).href);
 }
 export async function onRequestPost({request,env}){
  if(!(await permitted(request,env)))return Response.json({error:'تم تجاوز الحد المؤقت للطلبات أو مصدر الطلب غير مسموح.'},{status:429});
@@ -156,7 +155,7 @@ export async function onRequestPost({request,env}){
   if(title.length<2||!kind)return Response.json({error:'أدخل اسم العمل واختر فيلماً أو لعبة أو مسلسلاً.'},{status:400});
   if(!(await verifyTurnstile(clean(body.turnstileToken,4096),request,env)))return Response.json({error:'يرجى إكمال تحقق الأمان ثم إعادة المحاولة.'},{status:403});
   const cache=typeof caches!=='undefined'?caches.default:null;
-  const cacheKey=await reviewCacheKey(title,kind);
+  const cacheKey=await reviewCacheKey(title,kind,request);
   if(cache){
    try{
     const cached=await cache.match(cacheKey);
