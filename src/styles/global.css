@@ -823,3 +823,40 @@ img{max-width:100%}
 @media(max-width:850px){.article-facts{margin-top:0}}
 @media(max-width:760px){.article-facts{grid-column:1/-1}}
 @media(max-width:600px){.article-facts{padding:14px;border-radius:11px}.article-facts dl>div{grid-template-columns:1fr;gap:4px}}
+
+
+/* Temporary homepage promotion for AI Reviewer — expires 19 Nov 2026 (Algeria time) */
+.ai-review-promo{
+ position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(190px,.65fr);
+ gap:24px;align-items:center;min-height:250px;margin-top:34px;margin-bottom:18px;
+ padding:clamp(24px,4vw,42px);overflow:hidden;border:1px solid #343d49;border-radius:20px;
+ background:radial-gradient(circle at 82% 48%,rgba(242,166,74,.18),transparent 27%),linear-gradient(115deg,#171d26,#10151c 72%);
+ color:#f4f6f8;box-shadow:0 18px 46px rgba(0,0,0,.18);
+}
+.ai-review-promo-copy{position:relative;z-index:2;max-width:650px}
+.ai-review-promo-badge{display:inline-flex;align-items:center;min-height:27px;padding:4px 10px;border:1px solid rgba(242,166,74,.38);border-radius:999px;background:rgba(242,166,74,.11);color:#ffd18a;font-size:10px;font-weight:900}
+.ai-review-promo-kicker{margin:14px 0 5px;color:#f2a64a;font-size:10px;font-weight:950;letter-spacing:2px}
+.ai-review-promo h2{margin:0;color:#fff;font-size:clamp(24px,3.3vw,36px);font-weight:950;line-height:1.35}
+.ai-review-promo-copy>p:not(.ai-review-promo-kicker){max-width:590px;margin:10px 0 19px;color:#c2cbd5;font-size:13px;line-height:2}
+.ai-review-promo-cta{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:46px;padding:0 19px;border-radius:9px;background:linear-gradient(135deg,#f2a64a,#d9822f);color:#17120b;font-size:12px;font-weight:950;box-shadow:0 8px 22px rgba(217,130,47,.2);transition:transform .2s,box-shadow .2s}
+.ai-review-promo-cta:hover{transform:translateY(-3px);box-shadow:0 13px 28px rgba(217,130,47,.3)}
+.ai-review-promo-art{position:relative;min-height:170px;display:grid;place-items:center}
+.ai-review-promo-orbit{position:absolute;width:175px;aspect-ratio:1;border:1px solid rgba(242,166,74,.24);border-radius:50%;box-shadow:0 0 0 22px rgba(242,166,74,.035),0 0 0 44px rgba(242,166,74,.025)}
+.ai-review-promo-score{position:relative;z-index:1;width:112px;height:112px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid rgba(255,209,138,.48);border-radius:23px;background:linear-gradient(145deg,#252d38,#151a21);box-shadow:0 18px 38px #0008,0 0 30px rgba(242,166,74,.13);transform:rotate(-7deg)}
+.ai-review-promo-score strong{color:#ffd18a;font-size:43px;font-weight:1000;line-height:1}
+.ai-review-promo-score span{margin-top:5px;color:#d4dce5;font-size:9px;font-weight:900;letter-spacing:2px}
+.ai-review-promo-spark{position:absolute;color:#ffd18a}
+.ai-review-promo .spark-one{top:12%;right:18%;font-size:28px}
+.ai-review-promo .spark-two{bottom:12%;left:18%;font-size:34px}
+@media(max-width:650px){
+ .ai-review-promo{grid-template-columns:minmax(0,1fr);gap:5px;margin-top:24px;padding:23px 20px;border-radius:15px}
+ .ai-review-promo-art{position:absolute;inset-inline-end:-30px;top:8px;width:145px;min-height:145px;opacity:.32;pointer-events:none}
+ .ai-review-promo-orbit{width:125px}
+ .ai-review-promo-score{width:82px;height:82px;border-radius:17px}
+ .ai-review-promo-score strong{font-size:32px}
+ .ai-review-promo-score span{font-size:7px}
+ .ai-review-promo-copy{max-width:100%}
+ .ai-review-promo h2{max-width:75%;font-size:25px}
+ .ai-review-promo-copy>p:not(.ai-review-promo-kicker){max-width:100%;font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){.ai-review-promo-cta{transition:none}}
