@@ -54,8 +54,8 @@ jobs:
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           GROQ_MODEL: ${{ vars.GROQ_MODEL }}
-          MAX_PER_RUN: '3'
-          GAMES_WINDOW_DAYS: '14'
+          MAX_PER_RUN: ${{ vars.MAX_PER_RUN || '3' }}
+          GAMES_WINDOW_DAYS: ${{ vars.GAMES_WINDOW_DAYS || '14' }}
         run: |
           echo "TMDB_API_KEY configured: $([ -n "$TMDB_API_KEY" ] && echo yes || echo no)"
           echo "IGDB_CLIENT_ID configured: $([ -n "$IGDB_CLIENT_ID" ] && echo yes || echo no)"
