@@ -44,13 +44,13 @@ const reviewKeywords = [...new Set([
   ...(d.genres || []),
   ...(d.tags || []),
 ].map(cleanKeyword).filter(Boolean))].slice(0, 20);
-const reviewDescription = d.title + ' — ' + (d.reviewMode === 'preview' ? 'قراءة استباقية لـ' : 'مراجعة ') + typeKeyword + ' وتحليل نقدي للقصة والعناصر الفنية. ' + d.summary + (d.reviewMode === 'preview' ? ' التقدير الاستباقي: ' : ' تقييم VibeCritic: ') + d.score + '/10.';
+const reviewDescription = d.title + ' — ' + (d.reviewMode === 'preview' ? 'قراءة استباقية لـ' : 'مراجعة ') + typeKeyword + ' وتحليل نقدي للقصة والعناصر الفنية. ' + d.summary + (d.reviewMode === 'preview' ? ' هذه قراءة قبل الإصدار ولا تتضمن تقييماً نهائياً.' : ' تقييم VibeCritic: ' + d.score + '/10.');
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 const schemaType = d.type === 'game' ? 'Game' : d.type === 'series' ? 'CreativeWorkSeries' : 'Movie';
 const reviewStructuredData = {
   '@context': 'https://schema.org',
   '@type': d.reviewMode === 'preview' ? 'Article' : 'Review',
-  name: d.title + ' — مراجعة وتقييم',
+  name: d.title + (d.reviewMode === 'preview' ? ' — قراءة استباقية' : ' — مراجعة وتقييم'),
   url: canonicalUrl,
   datePublished: d.date.toISOString().slice(0, 10),
   reviewBody: [d.summary, d.verdict, d.hook].filter(Boolean).join(' '),
@@ -74,7 +74,7 @@ const reviewStructuredData = {
 };
 
 ---
-<Base title={`${d.title} — مراجعة وتقييم`} description={reviewDescription} keywords={reviewKeywords} structuredData={reviewStructuredData} image={optimizeImage(d.backdrop || d.poster, 'backdrop')} pageType="article" publishedAt={d.date.toISOString()} articleSection={typeLabel}>
+<Base title={`${d.title} — ${d.reviewMode === 'preview' ? 'قراءة استباقية' : 'مراجعة وتقييم'}`} description={reviewDescription} keywords={reviewKeywords} structuredData={reviewStructuredData} image={optimizeImage(d.backdrop || d.poster, 'backdrop')} pageType="article" publishedAt={d.date.toISOString()} articleSection={typeLabel}>
 <article class="wrap article-page">
   <a href={url('')} class="article-back">← العودة إلى VibeCritic</a>
   <header class="article-header">
@@ -115,17 +115,17 @@ const reviewStructuredData = {
       <div class="article-body prose"><Content/></div>
       <div class="article-verdict-grid">
         <section class="verdict-panel pros-panel">
-          <h2><span>+</span> نقاط القوة</h2>
+          <h2><span>+</span> {d.reviewMode === 'preview' ? 'عناصر واعدة' : 'نقاط القوة'}</h2>
           <ul>{d.pros.map(x=><li>{x}</li>)}</ul>
         </section>
         <section class="verdict-panel cons-panel">
-          <h2><span>−</span> نقاط الضعف</h2>
+          <h2><span>−</span> {d.reviewMode === 'preview' ? 'مخاطر وأسئلة مفتوحة' : 'نقاط الضعف'}</h2>
           {d.cons.length>0?<ul>{d.cons.map(x=><li>{x}</li>)}</ul>:<p>لم تتوفر تحفظات موثوقة كافية لإثبات نقاط ضعف محددة.</p>}
         </section>
       </div>
       <section class="article-final-verdict">
-        <p class="eyebrow">الحكم النهائي</p>
-        <h2>هل يستحق وقتك؟</h2>
+        <p class="eyebrow">{d.reviewMode === 'preview' ? 'الخلاصة الاستباقية' : 'الحكم النهائي'}</p>
+        <h2>{d.reviewMode === 'preview' ? 'ما الذي ننتظره عند الإصدار؟' : 'هل يستحق وقتك؟'}</h2>
         <p>{d.verdict || 'تتحدد قيمة هذا العمل بحسب مدى اهتمامك بنوعه وعناصره الفنية، مع مراعاة نقاط القوة والتحفظات المذكورة أعلاه.'}</p>
       </section>
       {(d.cast?.length || d.crew?.length) && <section class="article-facts" aria-label="طاقم العمل">
@@ -142,11 +142,12 @@ const reviewStructuredData = {
         {d.watchProviders?.length>0 && <p>المنصات المتاحة في الجزائر بحسب بيانات TMDB: {d.watchProviders.join('، ')}</p>}
         {d.watchProviderUrl && <a href={d.watchProviderUrl} target="_blank" rel="noopener noreferrer">تحقق من خيارات المشاهدة على TMDB ↗</a>}
       </section>)}
+      {d.sourceUrl && <section class="article-facts" aria-label="مصدر بيانات العمل"><h2>مصدر البيانات</h2><p>بيانات العمل الأساسية مستندة إلى {d.sourceName || 'المصدر المدرج'}؛ وهي مرجع للمعلومات الوصفية وليست حكماً نقدياً مستقلاً.</p><a href={d.sourceUrl} target="_blank" rel="noopener noreferrer">عرض صفحة العمل في المصدر ↗</a></section>}
       {similarReviews.length>0 && <section class="article-facts" aria-label="مراجعات مشابهة">
         <h2>مراجعات مشابهة</h2>
-        <ul>{similarReviews.map(entry=><li><a href={url('reviews/'+entry.id+'/')}>{entry.data.title} — {entry.data.score.toFixed(1)}/10</a></li>)}</ul>
+        <ul>{similarReviews.map(entry=><li><a href={url('reviews/'+entry.id+'/')}>{entry.data.title} — {entry.data.reviewMode === 'preview' ? 'قراءة استباقية' : entry.data.score.toFixed(1) + '/10'}</a></li>)}</ul>
       </section>}
-      <p class="review-method-note">منهجية VibeCritic: هذا تقييم تحريري مبني على المعلومات المنشورة والبيانات المتاحة، وليس ادعاءً باختبار مباشر للعمل. الدرجة تقدير نقدي مستقل وليست تقييماً رسمياً.</p>
+      <p class="review-method-note">{d.reviewMode === 'preview' ? 'منهجية VibeCritic: هذه قراءة استباقية تفصل المعلومات الرسمية عن التوقعات، ولا تمنح العمل تقييماً نهائياً قبل صدوره.' : 'منهجية VibeCritic: هذا تحليل نقدي مبني على المعلومات المنشورة والبيانات المتاحة، وليس ادعاءً باختبار مباشر للعمل. التقييم تقدير تحريري مستقل وليس تقييماً رسمياً.'}</p>
       <section class="article-facts article-feedback" aria-labelledby="review-feedback-title">
         <h2 id="review-feedback-title">هل أفادتك هذه المراجعة؟</h2>
         <p>شاركنا رأيك السريع؛ اختيارك يُحفظ على هذا الجهاز فقط.</p>
@@ -167,12 +168,12 @@ const reviewStructuredData = {
     </div>
     <aside class="article-aside" aria-label="ملخص ومعلومات العمل">
       {d.poster&&<img class="article-poster" src={optimizeImage(d.poster)} alt={d.title} loading="lazy" decoding="async" width="600" height="900"/>}
-      <div class="article-score-wrap"><p class="eyebrow">تقييم VibeCritic</p><ScoreCard score={d.score} label={d.reviewMode === 'preview' ? 'تقدير استباقي' : 'تقييم VibeCritic'}/><p class="article-score-note">من 10 — رأينا، والقرار لك.</p>
-        {(d.storyScore !== undefined || d.visualsScore !== undefined || d.soundScore !== undefined || d.pacingScore !== undefined) && <div class="score-breakdown" aria-label="الدرجات الفرعية">
+      <div class="article-score-wrap"><p class="eyebrow">{d.reviewMode === 'preview' ? 'حالة التقييم' : 'تقييم VibeCritic'}</p>{d.reviewMode === 'preview' ? <p class="article-score-note">لا توجد درجة نهائية قبل الإصدار؛ هذه قراءة استباقية لما نعرفه وما ننتظره من العمل.</p> : <><ScoreCard score={d.score} label="تقييم VibeCritic"/><p class="article-score-note">من 10 — رأينا، والقرار لك.</p></>}
+        {d.reviewMode !== 'preview' && (d.storyScore !== undefined || d.visualsScore !== undefined || d.soundScore !== undefined || d.pacingScore !== undefined) && <div class="score-breakdown" aria-label="الدرجات الفرعية">
           {([{label:'القصة',value:d.storyScore},{label:'الصورة',value:d.visualsScore},{label:'الصوت',value:d.soundScore},{label:'الإيقاع',value:d.pacingScore}]).filter(item=>Number.isFinite(item.value)).map(item=><div class="score-breakdown-row"><div><span>{item.label}</span><strong>{Number(item.value).toFixed(1)}/10</strong></div><span class="score-breakdown-track"><i style={`--score-fill:${Number(item.value)*10}%`}></i></span></div>)}
         </div>}
-        {Number(d.sourceRating) > 0 && <p class="article-score-note">تقييم {d.sourceName || 'المصدر'}: {Number(d.sourceRating).toFixed(1)}/{d.sourceRatingScale || 10}{Number(d.sourceVoteCount) > 0 ? ` · ${d.sourceVoteCount} تقييم` : ''}</p>}
-        {Number(d.metacriticScore) > 0 && <p class="article-score-note">Metacritic: {Number(d.metacriticScore).toFixed(0)}/100</p>}</div>
+        {d.reviewMode !== 'preview' && Number(d.sourceRating) > 0 && <p class="article-score-note">تقييم {d.sourceName || 'المصدر'}: {Number(d.sourceRating).toFixed(1)}/{d.sourceRatingScale || 10}{Number(d.sourceVoteCount) > 0 ? ` · ${d.sourceVoteCount} تقييم` : ''}</p>}
+        {d.reviewMode !== 'preview' && Number(d.metacriticScore) > 0 && <p class="article-score-note">Metacritic: {Number(d.metacriticScore).toFixed(0)}/100</p>}</div>
       {(d.releaseDate || d.creator || d.genres?.length) && <section class="article-facts" aria-label="معلومات العمل">
         <h2>بطاقة العمل</h2>
         <dl>
