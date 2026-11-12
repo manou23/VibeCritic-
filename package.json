@@ -10,6 +10,7 @@
     "generate": "node scripts/generate-reviews.mjs",
     "validate:build": "node scripts/validate-build.mjs",
     "backfill:videos": "node scripts/backfill-review-videos.mjs",
+    "backfill:titles": "node scripts/backfill-arabic-titles.mjs",
     "validate:reviews": "node scripts/validate-review-scores.mjs"
   },
   "dependencies": {
