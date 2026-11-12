@@ -467,13 +467,16 @@ async function main(){
  let done=[];try{done=JSON.parse(await fs.readFile(processedPath,'utf8'));}catch{}
  const types=['game','series','movie'];
  const publishedFiles=(await fs.readdir(outDir)).filter(name=>name.endsWith('.md'));
- const publishedKeys=new Set(publishedFiles.map(name=>{const type=types.find(type=>name.startsWith(type+'-'));const id=name.match(/-(\d+)\.md$/)?.[1];return type&&id?`${type}:${id}`:null;}).filter(Boolean));
+ const publishedKeys=new Set();
+ const publishedModes=new Map();
  const counts={game:0,series:0,movie:0},todayCounts={game:0,series:0,movie:0};
  const today=algeriaDate();
  for(const file of publishedFiles){
   const type=types.find(value=>file.startsWith(value+'-'));if(!type)continue;
   counts[type]++;
   const content=await fs.readFile(path.join(outDir,file),'utf8');
+  const id=file.match(/-(\d+)\.md$/)?.[1];
+  if(id){const key=type+':'+id;publishedKeys.add(key);publishedModes.set(key,content.match(/^reviewMode:\s*(preview|review)\s*$/m)?.[1]||'review');}
   const date=content.match(/^date:\s*["']?(\d{4}-\d{2}-\d{2})/m)?.[1];
   if(date===today)todayCounts[type]++;
  }
@@ -489,7 +492,18 @@ async function main(){
   const [futureGames,recentGames,futureSeries,recentSeries,futureMovies,recentMovies]=await Promise.all([upcomingGames(),games(),tmdb('series','upcoming'),tmdb('series','releases'),tmdb('movie','upcoming'),tmdb('movie','releases')]);
   rawPools={game:[...futureGames,...recentGames],series:[...futureSeries,...recentSeries],movie:[...futureMovies,...recentMovies]};
  }
- const eligible=items=>{const seen=new Set();return items.filter(x=>{const key=`${x.type}:${x.id}`;if(seen.has(key)||String(x.description||'').trim().length<60||done.includes(key)||publishedKeys.has(key))return false;seen.add(key);return true;});};
+ const eligible=items=>{
+  const seen=new Set();
+  return items.filter(x=>{
+   const key=x.type+':'+x.id,upgrade=isPreviewUpgrade(x,publishedModes,today);
+   if(seen.has(key)||String(x.description||'').trim().length<60||((done.includes(key)||publishedKeys.has(key))&&!upgrade))return false;
+   if(x.type==='game'&&!upgrade&&communityDemand(x)<2&&editorialPriority(x)<0)return false;
+   seen.add(key);return true;
+  }).sort((a,b)=>{
+   const upgradeA=isPreviewUpgrade(a,publishedModes,today)?1:0,upgradeB=isPreviewUpgrade(b,publishedModes,today)?1:0;
+   return upgradeB-upgradeA||editorialPriority(a)-editorialPriority(b)||communityDemand(b)-communityDemand(a)||Number(b.popularity||0)-Number(a.popularity||0);
+  });
+ };
  const pools={game:eligible(rawPools.game),series:eligible(rawPools.series),movie:eligible(rawPools.movie)};
  const skippedThinSources=Object.values(rawPools).reduce((total,items)=>total+items.filter(x=>String(x.description||'').trim().length<60).length,0);
  if(skippedThinSources)console.warn('تم استبعاد '+skippedThinSources+' أعمال لعدم توفر وصف مصدر كافٍ لتوليد مراجعة موثوقة.');
@@ -525,14 +539,17 @@ async function main(){
   while(quotas[type]>0&&pools[type].length>0){
    const item=pools[type].shift();quotas[type]--;
    try{
-    done.push(await writeReview(item));counts[type]++;
-    fresh.push(item);
-    console.log('تم إنشاء مراجعة:',item.name,'|',type,'| الإجمالي:',Object.values(counts).reduce((sum,value)=>sum+value,0));
+    const key=type+':'+item.id,upgraded=isPreviewUpgrade(item,publishedModes,today);
+    done.push(await writeReview(item));
+    if(!upgraded)counts[type]++;
+    publishedKeys.add(key);publishedModes.set(key,'review');
+    fresh.push({...item,upgradedFromPreview:upgraded});
+    console.log(upgraded?'تم تحويل القراءة الاستباقية إلى مراجعة بعد الإصدار:':'تم إنشاء مراجعة:',item.name,'|',type,'| الإجمالي:',Object.values(counts).reduce((sum,value)=>sum+value,0));
    }catch(e){generationFailures++;console.error('تعذر إنشاء مراجعة:',item.name,e.message);}
   }
  }
  if(!fresh.length&&generationFailures>0)throw new Error('فشلت جميع محاولات توليد المراجعات في هذه الدفعة؛ راجع سجلات المزوّدات ومفاتيح API.');
- await fs.writeFile('data/new-reviews.json',JSON.stringify(fresh.map(item=>({type:item.type,id:String(item.id)})),null,2),'utf8');
+ await fs.writeFile('data/new-reviews.json',JSON.stringify(fresh.map(item=>({type:item.type,id:String(item.id),upgradedFromPreview:Boolean(item.upgradedFromPreview)})),null,2),'utf8');
  if(!fresh.length)console.log(buildPhase?'لا توجد أعمال جديدة صالحة لاستكمال المكتبة في هذه الدفعة.':'لم يتم العثور على إصدارات جديدة مؤهلة خلال آخر 7 أيام.');
  if(generationFailures>0)console.warn('تم تجاوز '+generationFailures+' أعمال بسبب أخطاء توليد، مع الاحتفاظ بالمراجعات الناجحة.');
  await fs.writeFile(processedPath,JSON.stringify([...new Set(done)],null,2)+'\n');
