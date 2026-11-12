@@ -36,6 +36,7 @@ const structuredData = pageStructuredData || (pageType === 'article'
       inLanguage: 'ar',
     });
 const safeJson = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
+const telegramChannelUrl = import.meta.env.PUBLIC_TELEGRAM_CHANNEL_URL || '';
 ---
 <!doctype html>
 <html lang="ar" dir="rtl">
@@ -53,6 +54,7 @@ const safeJson = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
 <meta name="robots" content={noindex ? 'noindex,nofollow' : 'index,follow'} />
 <link rel="icon" type="image/svg+xml" href={url('favicon.svg')} />
 <link rel="canonical" href={canonical} />
+<link rel="alternate" type="application/rss+xml" title="VibeCritic RSS" href={url('rss.xml')} />
 <meta property="og:locale" content="ar_DZ" />
 <meta property="og:type" content={pageType === 'article' ? 'article' : 'website'} />
 <meta property="og:site_name" content={SITE_NAME} />
@@ -97,6 +99,7 @@ const safeJson = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
  <div class="wrap footer-inner">
   <a href={url('')} class="footer-brand">Vibe<span>Critic</span></a>
   <p>© {new Date().getFullYear()} {SITE_NAME}. نراجع بوضوح، ونترك القرار لك.</p>
+  <nav class="footer-subscriptions" aria-label="تابع أحدث المراجعات"><a href={url('rss.xml')}>RSS — أحدث المراجعات</a>{telegramChannelUrl && <a href={telegramChannelUrl} target="_blank" rel="noopener noreferrer">قناة تيليغرام</a>}</nav>
   <details class="footer-sources">
    <summary>مصدر البيانات</summary>
    <p>بيانات الأفلام والمسلسلات مقدمة عبر <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer">TMDb</a>. هذا المنتج يستخدم TMDb API لكنه غير معتمد أو مصادق عليه من TMDb.</p>
