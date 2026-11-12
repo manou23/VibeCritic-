@@ -92,7 +92,7 @@ form?.addEventListener('submit',async event=>{
 });
 document.getElementById('ai-copy')?.addEventListener('click',async()=>{
  if(!latestReview)return;const r=latestReview;
- const text=[r.title+' — '+r.score+'/10',r.hook,'القصة والسرد\\n'+r.story,'الأسلوب والتجربة\\n'+r.style,'الصورة والتصميم\\n'+r.visuals,'الصوتيات والموسيقى\\n'+r.audio,'الإيجابيات\\n'+r.pros.map(x=>'• '+x).join('\\n'),'السلبيات\\n'+r.cons.map(x=>'• '+x).join('\\n'),'الحكم النهائي\\n'+r.verdict].join('\\n\\n');
+ const text=[r.title+' — '+r.score+'/10',r.hook,'القصة والسرد\n'+r.story,'الأسلوب والتجربة\n'+r.style,'الصورة والتصميم\n'+r.visuals,'الصوتيات والموسيقى\n'+r.audio,'الإيجابيات\n'+r.pros.map(x=>'• '+x).join('\n'),'السلبيات\n'+r.cons.map(x=>'• '+x).join('\n'),'الحكم النهائي\n'+r.verdict].join('\n\n');
  try{await navigator.clipboard.writeText(text);document.getElementById('ai-copy').textContent='تم النسخ ✓'}catch{status('تعذر النسخ تلقائياً. حدد النص وانسخه يدوياً.',true)}
 });
 </script>
