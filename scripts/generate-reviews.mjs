@@ -280,7 +280,7 @@ async function tmdb(type,mode='trending'){
  const pages=mode==='releases'?[1,2,3]:mode==='archive'?[1,2,3,4,5]:[1];
  const [lists,genreData]=await Promise.all([
   Promise.all(pages.map(page=>{
-   const params=new URLSearchParams({api_key:key,language:'ar',page:String(page)});
+   const params=new URLSearchParams({api_key:key,language:'ar-SA',page:String(page)});
    if(mode==='releases'){
     params.set(type==='movie'?'primary_release_date.gte':'first_air_date.gte',since);
     params.set(type==='movie'?'primary_release_date.lte':'first_air_date.lte',today);
@@ -295,7 +295,7 @@ async function tmdb(type,mode='trending'){
    const discovery=mode==='releases'||mode==='archive';
    return getJson('https://api.themoviedb.org/3/'+(discovery?'discover/':'trending/')+endpoint+(discovery?'':'/week')+'?'+params.toString());
   })),
-  getJson(`https://api.themoviedb.org/3/genre/${endpoint}/list?api_key=${key}&language=ar`)
+  getJson(`https://api.themoviedb.org/3/genre/${endpoint}/list?api_key=${key}&language=ar-SA`)
  ]);
  const genreNames=new Map((genreData.genres||[]).map(g=>[g.id,g.name]));
  return lists.flatMap(list=>list.results||[]).map((x,i)=>({
@@ -377,7 +377,7 @@ async function games(){
 }
 async function globalTrending(){
  const key=required('TMDB_API_KEY');
- const trending=await getJson(`https://api.themoviedb.org/3/trending/all/week?api_key=${key}&language=ar`);
+ const trending=await getJson(`https://api.themoviedb.org/3/trending/all/week?api_key=${key}&language=ar-SA`);
  const media=(trending.results||[]).filter(x=>(x.media_type==='movie'||x.media_type==='tv')&&String(x.title||x.name||'').trim().length>=2&&String(x.overview||'').trim().length>=60).map((x,i)=>({
   id:String(x.id),sourceId:String(x.id),type:x.media_type==='tv'?'series':'movie',
   title:x.title||x.name||'بدون عنوان',poster:x.poster_path?`https://image.tmdb.org/t/p/w500${x.poster_path}`:'',
