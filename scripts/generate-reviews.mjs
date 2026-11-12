@@ -102,6 +102,10 @@ function validateGeneratedReview(d){
  const review=String(d?.review||'').replace(/<[^>]*>/g,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').trim();
  const pros=Array.isArray(d?.pros)?d.pros.filter(x=>String(x||'').trim()):[];
  const cons=Array.isArray(d?.cons)?d.cons.filter(x=>String(x||'').trim()):[];
+ const score=Number(d?.score);
+ if(d?.score===undefined||d?.score===null||String(d.score).trim()===''||!Number.isFinite(score)||score<0||score>10)throw new Error('درجة المراجعة غير موجودة أو خارج النطاق 0–10');
+ const statedScore=String(d?.verdict||'').match(/(\d+(?:[.,]\d+)?)\s*(?:\/\s*10|من\s*10)/);
+ if(statedScore&&Math.abs(Number(statedScore[1].replace(',','.'))-score)>0.05)throw new Error('الدرجة في الحكم النهائي لا تطابق حقل score');
  if(review.length<700)throw new Error('المراجعة المولّدة أقصر من الحد المطلوب للتحليل المتكامل');
  if(pros.length<3)throw new Error('قائمة نقاط القوة غير مكتملة');
  if(!String(d?.headline||'').trim()||!String(d?.summary||'').trim()||!String(d?.verdict||'').trim())throw new Error('بيانات المراجعة الأساسية غير مكتملة');
@@ -227,7 +231,8 @@ async function gamesFromIgdb(){
  const {access_token}=await tokenResponse.json();if(!access_token)throw new Error('لم يرجع Twitch access token صالحاً');
  const headers={'Client-ID':clientId,Authorization:`Bearer ${access_token}`,Accept:'application/json','Content-Type':'text/plain'};
  const since=Math.floor((Date.now()-gamesWindowDays*86400000)/1000);
- const query=`fields name,summary,first_release_date,cover.image_id,genres.name,rating,follows,hypes,rating_count,url,platforms.name,involved_companies.company.name,involved_companies.developer; where first_release_date >= ${since}; sort first_release_date desc; limit 40;`;
+ const now=Math.floor(Date.now()/1000);
+ const query=`fields name,summary,first_release_date,cover.image_id,genres.name,rating,follows,hypes,rating_count,url,platforms.name,involved_companies.company.name,involved_companies.developer; where first_release_date >= ${since} & first_release_date <= ${now}; sort first_release_date desc; limit 40;`;
  const response=await fetch('https://api.igdb.com/v4/games',{method:'POST',headers,body:query,signal:AbortSignal.timeout(45000)});
  if(!response.ok)throw new Error(`IGDB recent games HTTP ${response.status}: ${await response.text()}`);
  return (await response.json()).map((x,i)=>{
@@ -301,7 +306,7 @@ async function main(){
  for(const file of files){for(const type of types){if(file.startsWith(type+'-')&&file.endsWith('.md'))counts[type]++;}}
  console.log('عدد المراجعات المنشورة حسب النوع:',JSON.stringify(counts));
  const today=algeriaDate();let publishedToday=0;
- for(const file of publishedFiles.filter(name=>name.endsWith('.md'))){const content=await fs.readFile(path.join(outDir,file),'utf8');const match=content.match(/^date:\\s*[\"']?(\\d{4}-\\d{2}-\\d{2})/m);if(match?.[1]===today)publishedToday++;}
+ for(const file of publishedFiles.filter(name=>name.endsWith('.md'))){const content=await fs.readFile(path.join(outDir,file),'utf8');const match=content.match(/^date:\s*["']?(\d{4}-\d{2}-\d{2})/m);if(match?.[1]===today)publishedToday++;}
  const remainingToday=Math.max(0,maxPerRun-publishedToday);
  console.log(`حد النشر اليومي: ${maxPerRun}، المنشور اليوم: ${publishedToday}، المتبقي: ${remainingToday}.`);
  const fresh=[];let generationFailures=0;
