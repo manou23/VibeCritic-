@@ -140,7 +140,7 @@ async function enrichItem(item){
 async function generateReview(item){
  const isGame=item.type==='game';
  const headings=isGame?['أسلوب اللعب والأنظمة','التصميم الفني والعالم','القصة وبناء الشخصيات','الأداء التقني والثبات','التقدم والتجربة على المدى الطويل']:['الحبكة والسيناريو','الأداء والشخصيات','الإخراج واللغة البصرية','الموسيقى والتصميم الصوتي',item.type==='series'?'بناء الموسم والإيقاع':'الإيقاع والتماسك الدرامي'];
- const metadata=JSON.stringify(item.metadata||{genres:item.genres||[],platforms:item.platforms||[],developers:item.developers||[],gameModes:item.gameModes||[],perspectives:item.perspectives||[],engines:item.engines||[],sourceRating:item.rating||null,releaseDate:item.date||null});
+ const metadata=JSON.stringify({...((item.metadata&&typeof item.metadata==='object')?item.metadata:{genres:item.genres||[],platforms:item.platforms||[],developers:item.developers||[],gameModes:item.gameModes||[],perspectives:item.perspectives||[],engines:item.engines||[],sourceRating:item.rating||null,releaseDate:item.date||null}),trendContext:{source:item.source||'غير محدد',rank:Number(item.trendRank)||null,popularity:Number(item.popularity)||null,window:item.type==='game'?gamesWindowDays+' يوماً':'أسبوع TMDB'}});
  const prompt=[
  'اكتب مراجعة نقدية عربية احترافية ومتوازنة ومفصلة، وليست دعاية أو ملخصاً دعائياً.',
  'لا تدّع أنك شاهدت أو لعبت العمل بنفسك. لا تخترع أسماء ممثلين أو مطورين أو منصات أو مشاهد أو أحداثاً أو تفاصيل أداء تقني غير موجودة في البيانات. إذا لم تتوفر معلومات موثوقة عن جانب ما، صرّح بأن البيانات لا تكفي للحكم عليه ثم حلّل ما يمكن استنتاجه فقط. لا تحرق الأحداث. لا تكرر الوصف المصدر حرفياً. تجنب المبالغة والعبارات العامة.',
@@ -153,6 +153,7 @@ async function generateReview(item){
  'pros: أربع نقاط قوة محددة. cons: نقطتان أو ثلاث تحفظات حقيقية؛ لا تخترع عيباً لملء القائمة.',
  'verdict: 3-4 جمل تجيب هل يستحق المشاهدة/اللعب، ولمن يناسب، والتحفظ الأهم، وسبب الدرجة.',
  'score: درجة من 0 إلى 10 بخطوة عشرية واحدة، تقدير تحريري مبرر لا تقييم رسمي ولا نقل آلي لتقييم المصدر. tags: ثلاثة إلى ستة وسوم.',
+ 'مؤشرات الترند (للسياق فقط وليست دليلاً على الجودة): المصدر '+(item.source||'غير محدد')+'، الترتيب '+(item.trendRank||'غير متاح')+'، مؤشر الشعبية '+(item.popularity||'غير متاح')+'. اشرح أثر الانتشار على الاهتمام بالعمل فقط إذا كان ذلك مفيداً، ولا تخترع سبباً للترند أو أرقام مشاهدات/مبيعات.',
  'بيانات العمل:','النوع: '+(isGame?'لعبة':item.type==='series'?'مسلسل':'فيلم'),'الاسم: '+item.name,'تاريخ الإصدار: '+(item.date||'غير متاح'),'الوصف المصدر: '+(item.description||'غير متوفر'),'التصنيفات: '+((item.genres||[]).join('، ')||'غير متاحة'),'بيانات إضافية موثوقة: '+metadata,'تقييم المصدر (للاستئناس فقط): '+(item.rating||'غير متاح')
  ].join('\n');
  let parsed=null;
@@ -254,13 +255,13 @@ async function games(){
 async function globalTrending(){
  const key=required('TMDB_API_KEY');
  const trending=await getJson(`https://api.themoviedb.org/3/trending/all/week?api_key=${key}&language=ar`);
- const media=(trending.results||[]).filter(x=>x.media_type==='movie'||x.media_type==='tv').map((x,i)=>({
+ const media=(trending.results||[]).filter(x=>(x.media_type==='movie'||x.media_type==='tv')&&String(x.title||x.name||'').trim().length>=2&&String(x.overview||'').trim().length>=60).map((x,i)=>({
   id:String(x.id),sourceId:String(x.id),type:x.media_type==='tv'?'series':'movie',
   title:x.title||x.name||'بدون عنوان',poster:x.poster_path?`https://image.tmdb.org/t/p/w500${x.poster_path}`:'',
   backdrop:x.backdrop_path?`https://image.tmdb.org/t/p/w780${x.backdrop_path}`:'',
   summary:x.overview||'',sourceUrl:`https://www.themoviedb.org/${x.media_type==='tv'?'tv':'movie'}/${x.id}`,
   source:'TMDB',sourceRank:Number(x.popularity)||0,trendRank:i+1,updatedAt:new Date().toISOString()
- }));
+ })).filter((x,i,all)=>all.findIndex(y=>y.type===x.type&&y.id===x.id)===i);
  let gameList=[];
  try{gameList=await games();}catch(error){console.warn('تعذر تحديث ترند الألعاب، سيستمر الموقع بترند TMDB فقط:',error.message);}
  const gameItems=gameList.slice(0,3).map((x,i)=>({
@@ -271,12 +272,12 @@ async function globalTrending(){
  }));
  const picks=[];
  for(let i=0;i<3;i++){if(media[i])picks.push(media[i]);if(gameItems[i])picks.push(gameItems[i]);}
- return picks.slice(0,6).map((x,i)=>({...x,rank:i+1}));
+ return picks.slice(0,6).map((x,i)=>({...x,rank:i+1,trendRank:i+1}));
 }
 async function writeReview(item){
  const enriched=await enrichItem(item),a=await generateReview(enriched),date=algeriaDate();
  const videoFields=enriched.metadata?.youtubeVideoId?['youtubeVideoId: '+y(enriched.metadata.youtubeVideoId),'youtubeVideoTitle: '+y(enriched.metadata.youtubeVideoTitle)]:[];
-  const fm=['---','title: '+y(item.name),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 2','type: '+item.type,'date: '+date,'releaseDate: '+y(item.date),'poster: '+y(item.poster),'backdrop: '+y(item.backdrop),...videoFields,'score: '+a.score,'pros:',arr(a.pros),'cons:',arr(a.cons),'tags:',arr(a.tags),'genres:',arr(enriched.genres||[]),'sourceRating: '+item.rating,'sourceId: '+y(item.id),'sourceUrl: '+y(item.sourceUrl),'aiGenerated: true','---','',a.review,'','> قراءة نقدية تحريرية مولّدة بمساعدة الذكاء الاصطناعي، مبنية على البيانات المنشورة المتاحة. لا تمثل تجربة مشاهدة أو لعب مباشرة، ولا تقييماً رسمياً من المصدر.',''].join('\n');
+  const fm=['---','title: '+y(item.name),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 2','type: '+item.type,'date: '+date,'releaseDate: '+y(item.date),'poster: '+y(item.poster),'backdrop: '+y(item.backdrop),...videoFields,'score: '+a.score,'trendRank: '+(Number(item.trendRank)||0),'trendSource: '+y(item.source||''),'trendPopularity: '+(Number(item.popularity)||0),'pros:',arr(a.pros),'cons:',arr(a.cons),'tags:',arr(a.tags),'genres:',arr(enriched.genres||[]),'sourceRating: '+item.rating,'sourceId: '+y(item.id),'sourceUrl: '+y(item.sourceUrl),'aiGenerated: true','---','',a.review,'','> قراءة نقدية تحريرية مولّدة بمساعدة الذكاء الاصطناعي، مبنية على البيانات المنشورة المتاحة. لا تمثل تجربة مشاهدة أو لعب مباشرة، ولا تقييماً رسمياً من المصدر.',''].join('\n');
  await fs.writeFile(path.join(outDir,item.type+'-'+slugify(item.name)+'-'+item.id+'.md'),fm,'utf8');return item.type+':'+item.id;
 }
 async function main(){
