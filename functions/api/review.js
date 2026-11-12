@@ -55,6 +55,42 @@ async function generate(env,prompt,title,kind){
  console.error('AI providers exhausted',errors);
  throw Error('تعذر إنشاء المراجعة. جُرّبت المفاتيح والمزوّدات المتاحة؛ تحقق من الرصيد وحدود الاستخدام واسم النموذج.');
 }
+
+async function findYoutubeTrailer(env,title,kind){
+ const apiKey=String(env.YOUTUBE_API_KEY||'').trim();
+ if(!apiKey)return {available:false,reason:'missing_api_key'};
+ const suffix=kind==='game'?'official game trailer':kind==='series'?'official TV series trailer':'official movie trailer';
+ const params=new URLSearchParams({part:'snippet',q:title+' '+suffix,type:'video',maxResults:'10',order:'relevance',videoEmbeddable:'true',videoSyndicated:'true',videoDefinition:'high',regionCode:'DZ',relevanceLanguage:'en',key:apiKey});
+ const searchResponse=await fetch('https://www.googleapis.com/youtube/v3/search?'+params.toString());
+ if(!searchResponse.ok){const message=await searchResponse.text();console.warn('YouTube search failed:',searchResponse.status,message.slice(0,300));return {available:false,reason:searchResponse.status===403?'quota_or_api_restriction':'search_failed'};}
+ const searchData=await searchResponse.json();
+ const candidates=(searchData.items||[]).filter(x=>x.id?.videoId&&x.snippet?.title);
+ if(!candidates.length)return {available:false,reason:'not_found'};
+ const ids=candidates.map(x=>x.id.videoId).join(',');
+ const detailParams=new URLSearchParams({part:'snippet,status,contentDetails',id:ids,key:apiKey});
+ const detailResponse=await fetch('https://www.googleapis.com/youtube/v3/videos?'+detailParams.toString());
+ if(!detailResponse.ok){console.warn('YouTube video verification failed:',detailResponse.status);return {available:false,reason:'verification_failed'};}
+ const detailData=await detailResponse.json();
+ const details=new Map((detailData.items||[]).map(x=>[x.id,x]));
+ const normalizeText=s=>String(s||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9\s]/g,' ').split(/\s+/).filter(Boolean);
+ const titleTokens=new Set(normalizeText(title));
+ const blocked=/\b(fan.?made|concept trailer|reaction|review|parody|trailer breakdown|gameplay walkthrough|movie clips)\b/i;
+ const ranked=candidates.map(item=>{
+  const v=details.get(item.id.videoId);if(!v||v.status?.privacyStatus!=='public'||v.status?.embeddable!==true)return null;
+  const videoTitle=item.snippet.title||v.snippet?.title||'',channel=item.snippet.channelTitle||v.snippet?.channelTitle||'';
+  if(blocked.test(videoTitle))return null;
+  const titleWords=normalizeText(videoTitle),channelWords=normalizeText(channel);
+  const overlap=[...titleTokens].filter(t=>t.length>2&&titleWords.includes(t)).length;
+  const officialSignal=/\bofficial\b/i.test(videoTitle)||/\bofficial\b/i.test(channel);
+  const trailerSignal=/\b(trailer|teaser|launch trailer|reveal trailer)\b/i.test(videoTitle);
+  const score=overlap*3+(officialSignal?8:0)+(trailerSignal?5:0)+(channelWords.some(t=>['studio','pictures','entertainment','games','playstation','xbox','nintendo','ubisoft','ea','bandai','namco','capcom','rockstar','square','enix','warner','bros','netflix','paramount','universal','disney'].includes(t))?2:0);
+  return {score,videoId:item.id.videoId,title:videoTitle,channelTitle:channel,publishedAt:item.snippet.publishedAt||null,thumbnail:item.snippet.thumbnails?.high?.url||item.snippet.thumbnails?.medium?.url||item.snippet.thumbnails?.default?.url||null,officialSignal,license:v.status?.license||'youtube',duration:v.contentDetails?.duration||null};
+ }).filter(Boolean).sort((a,b)=>b.score-a.score);
+ const best=ranked[0];
+ if(!best||best.score<5)return {available:false,reason:'no_confident_match'};
+ return {available:true,videoId:best.videoId,title:best.title,channelTitle:best.channelTitle,url:'https://www.youtube.com/watch?v='+best.videoId,embedUrl:'https://www.youtube-nocookie.com/embed/'+best.videoId,thumbnail:best.thumbnail,publishedAt:best.publishedAt,embeddable:true,public:true,officialSignal:best.officialSignal,confidence:best.officialSignal?'official_signal_detected':'trailer_candidate',license:best.license,duration:best.duration,rightsNote:'YouTube API يؤكد أن الفيديو عام وقابل للتضمين، لكنه لا يثبت ملكية القناة لحقوق العمل أو وجود ترخيص تجاري.'};
+}
+
 const hits=new Map();
 function permitted(req){
  const origin=req.headers.get('Origin'),host=req.headers.get('Host');
@@ -78,7 +114,11 @@ export async function onRequestPost({request,env}){
   const body=JSON.parse(raw),title=clean(body.title,120),kind=body.kind==='game'?'game':body.kind==='series'?'series':body.kind==='movie'?'movie':'';
   if(title.length<2||!kind)return Response.json({error:'أدخل اسم العمل واختر فيلماً أو لعبة أو مسلسلاً.'},{status:400});
   const prompt=['اسم العمل: '+title,'النوع: '+(kind==='game'?'لعبة فيديو':kind==='series'?'مسلسل تلفزيوني':'فيلم سينمائي'),'اكتب مراجعة نقدية مفصلة اعتماداً على المعرفة الموثوقة فقط. إذا كان الاسم ملتبساً فاطلب توضيحاً ضمن hook أو اذكر الالتباس بوضوح ولا تنسب معلومات لعمل غير مؤكد. لا تحرق الأحداث ولا تدّع تجربة شخصية.','حلل العمل بحسب نوعه، وخصص كل محور لفكرة مختلفة مع أمثلة مؤكدة أو استنتاجات معلّمة بوضوح. لا تكرر أوصافاً عامة مثل رائع ومذهل دون تفسير أثرها.','game: حلل التحكم والاستجابة والأنظمة والتقدم وتصميم المراحل/العالم عندما تكون معروفة. movie: حلل السيناريو والإخراج والتمثيل والإيقاع. series: حلل بنية الموسم وتطور الشخصيات والإيقاع واتساق الحلقات.','لا تزعم أن العمل ترند أو رائج الآن ولا تذكر أرقاماً حديثة أو ترتيباً حالياً دون بيانات حديثة مقدمة في الطلب. لا تخلط بين الشعبية والجودة. الدرجة يجب أن تنبع من الحجج النقدية.','اكتب بالعربية الفصحى.'].join('\n');
-  const out=await generate(env,prompt,title,kind);
-  return Response.json({ok:true,review:out.review,provider:out.provider},{headers:{'cache-control':'no-store'}});
+  const [reviewResult,trailerResult]=await Promise.allSettled([generate(env,prompt,title,kind),findYoutubeTrailer(env,title,kind)]);
+  if(reviewResult.status==='rejected')throw reviewResult.reason;
+  const out=reviewResult.value;
+  const trailer=trailerResult.status==='fulfilled'?trailerResult.value:{available:false,reason:'search_failed'};
+  if(trailerResult.status==='rejected')console.warn('YouTube trailer lookup failed:',trailerResult.reason);
+  return Response.json({ok:true,review:out.review,provider:out.provider,trailer},{headers:{'cache-control':'no-store'}});
  }catch(e){console.error('AI review API:',e);return Response.json({error:e instanceof SyntaxError?'تعذر قراءة بيانات الطلب.':(e.message||'حدث خطأ غير متوقع.')},{status:500,headers:{'cache-control':'no-store'}})}
 }
