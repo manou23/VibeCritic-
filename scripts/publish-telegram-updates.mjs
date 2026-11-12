@@ -39,6 +39,19 @@ for (const item of queue) {
   const typeLabel = item.type === 'game' ? 'لعبة' : item.type === 'series' ? 'مسلسل' : 'فيلم';
   const slug = filename.replace(/\.md$/, '');
   const url = 'https://vibecritic.pages.dev/reviews/' + encodeURIComponent(slug) + '/';
+  let published = false;
+  for (let attempt = 1; attempt <= 18; attempt++) {
+    try {
+      const live = await fetch(url, { signal: AbortSignal.timeout(10000) });
+      if (live.ok) { published = true; live.body?.cancel(); break; }
+      live.body?.cancel();
+    } catch {}
+    if (attempt < 18) await new Promise(resolve => setTimeout(resolve, 10000));
+  }
+  if (!published) {
+    console.warn('Review is not live yet; Telegram post skipped: ' + url);
+    continue;
+  }
   const message = '<b>' + escapeHtml(title) + '</b>\n' +
     typeLabel + (score ? ' · تقييم VibeCritic: ' + escapeHtml(score) + '/10' : '') + '\n\n' +
     escapeHtml(summary).slice(0, 900) + '\n\n' +
