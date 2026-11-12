@@ -821,4 +821,4 @@ img{max-width:100%}
 .article-facts dt{color:var(--vc-muted);font-size:11px}
 .article-facts dd{margin:0;color:var(--vc-text);font-size:12px;font-weight:800;line-height:1.7;overflow-wrap:anywhere}
 @media(max-width:850px){.article-facts{margin-top:0}}
-@media(max-width:600px){.article-facts{padding:14px;border-radius:11px}.article-facts dl>div{grid-template-columns:1fr;gap:4px}}
+@media(max-width:760px){.article-facts{grid-column:1/-1}}\n@media(max-width:600px){.article-facts{padding:14px;border-radius:11px}.article-facts dl>div{grid-template-columns:1fr;gap:4px}}
