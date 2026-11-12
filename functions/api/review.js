@@ -55,8 +55,8 @@ async function generate(env,prompt,title,kind){
  console.error('AI providers exhausted',errors);
  const safeErrors=errors.slice(-8).map(message=>message
   .replace(/sk-or-v1-[A-Za-z0-9_-]+/g,'[مفتاح مخفي]')
-  .replace(/Bearer\\s+[^\\s,;]+/gi,'Bearer [مخفي]')
-  .replace(/(api[_-]?key[=: ]+)[^\\s,;]+/gi,'$1[مخفي]')
+  .replace(/Bearer\s+[^\s,;]+/gi,'Bearer [مخفي]')
+  .replace(/(api[_-]?key[=: ]+)[^\s,;]+/gi,'$1[مخفي]')
   .slice(0,360));
  throw Error('تعذر إنشاء المراجعة. تفاصيل فشل المزوّد: '+(safeErrors.join(' | ')||'لم يصل رد صالح من أي مزوّد')+' . لا تشارك أي مفتاح API.');
 
