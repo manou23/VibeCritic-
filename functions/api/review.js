@@ -53,7 +53,13 @@ async function generate(env,prompt,title,kind){
  const errors=[];
  for(const p of list)for(let i=0;i<p.keys.length;i++){try{return {review:await call(p,p.keys[i],prompt,title,kind),provider:p.name}}catch(e){errors.push(p.name+' key '+(i+1)+': '+e.message);if(e.status===400&&/model|unsupported|not found/i.test(e.message))break}}
  console.error('AI providers exhausted',errors);
- throw Error('تعذر إنشاء المراجعة. جُرّبت المفاتيح والمزوّدات المتاحة؛ تحقق من الرصيد وحدود الاستخدام واسم النموذج.');
+ const safeErrors=errors.slice(-8).map(message=>message
+  .replace(/sk-or-v1-[A-Za-z0-9_-]+/g,'[مفتاح مخفي]')
+  .replace(/Bearer\\s+[^\\s,;]+/gi,'Bearer [مخفي]')
+  .replace(/(api[_-]?key[=: ]+)[^\\s,;]+/gi,'$1[مخفي]')
+  .slice(0,360));
+ throw Error('تعذر إنشاء المراجعة. تفاصيل فشل المزوّد: '+(safeErrors.join(' | ')||'لم يصل رد صالح من أي مزوّد')+' . لا تشارك أي مفتاح API.');
+
 }
 
 async function findYoutubeTrailer(env,title,kind){
