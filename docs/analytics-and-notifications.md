@@ -32,3 +32,17 @@ To automatically post newly generated reviews to the channel, create a Telegram 
 - `TELEGRAM_CHANNEL_ID`: the channel username such as `@YourChannel` or the numeric channel ID.
 
 The publishing step skips silently when either secret is missing. Keep both values in GitHub Secrets; never commit them or send them in chat.
+
+
+## Review comments and community moderation
+
+Review pages include an on-demand Utterances discussion embed. The repository is public and GitHub Issues are enabled. Before comments can load:
+
+1. Install the **Utterances** GitHub App for `manou23/VibeCritic-`: https://github.com/apps/utterances
+2. Grant it access to this repository.
+3. Keep GitHub Issues enabled and allow the `site-comments` label (Utterances can create it on first use).
+4. Test the discussion area on a published review while signed in to GitHub.
+
+Each review maps to a GitHub issue by its page path. Comments are public and require a GitHub account. Moderation, deletion, and spam handling are managed in the repository's Issues tab. The embed loads only after a visitor clicks **فتح مساحة النقاش**, not on initial page load.
+
+The Yes/No review-helpfulness control stores a visitor's choice in that visitor's own browser only. It is not an aggregate audience rating and does not send personal data to the server.
