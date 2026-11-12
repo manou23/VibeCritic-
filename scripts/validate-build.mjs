@@ -97,8 +97,9 @@ for (const relative of reviewPages) {
     /<meta[^>]+property=["']article:published_time["'][^>]+content=["']\d{4}-\d{2}-\d{2}T/i,
     /<script[^>]+type=["']application\/ld\+json["'][^>]*>[\s\S]*?["@]type["']\s*:\s*["'](?:Review|Article)["']/i,
   ];
-  if (requiredMeta.some(pattern => !pattern.test(html))) {
-    throw new Error('وسوم Open Graph أو Twitter أو بيانات Article/Review غير مكتملة في صفحة: ' + relative);
+  const failedMeta = requiredMeta.map((pattern, index) => pattern.test(html) ? null : index + 1).filter(Boolean);
+  if (failedMeta.length) {
+    throw new Error('وسوم SEO غير مكتملة في صفحة ' + relative + '؛ فشل فحص العناصر: ' + failedMeta.join(', '));
   }
   const pageCanonical = html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i)?.[1];
   if (!pageCanonical || new URL(pageCanonical).origin !== site.origin) {
