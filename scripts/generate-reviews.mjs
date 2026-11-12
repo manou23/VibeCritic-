@@ -103,7 +103,7 @@ function validateGeneratedReview(d){
  const pros=Array.isArray(d?.pros)?d.pros.filter(x=>String(x||'').trim()):[];
  const cons=Array.isArray(d?.cons)?d.cons.filter(x=>String(x||'').trim()):[];
  if(review.length<700)throw new Error('المراجعة المولّدة أقصر من الحد المطلوب للتحليل المتكامل');
- if(pros.length<3||cons.length<2)throw new Error('قوائم نقاط القوة والضعف غير مكتملة');
+ if(pros.length<3)throw new Error('قائمة نقاط القوة غير مكتملة');
  if(!String(d?.headline||'').trim()||!String(d?.summary||'').trim()||!String(d?.verdict||'').trim())throw new Error('بيانات المراجعة الأساسية غير مكتملة');
  return d;
 }
@@ -150,7 +150,7 @@ async function generateReview(item){
  'review: مراجعة Markdown بين 450 و650 كلمة تقريباً، تبدأ بعنوان ## التحليل الفني والقصصي، ثم تستخدم العناوين الفرعية التالية حرفياً وبالترتيب:',
  ...headings.map((h,i)=>(i+1)+') ### '+h),
  'ناقش في كل محور ما تسمح به البيانات فقط وأثر الاختيارات الفنية على التجربة. اختم بفقرة تلخص المحصلة النقدية.',
- 'pros: أربع نقاط قوة محددة. cons: نقطتان أو ثلاث تحفظات حقيقية؛ لا تخترع عيباً لملء القائمة.',
+ 'pros: ثلاث إلى أربع نقاط قوة محددة. cons: صفر إلى ثلاث تحفظات حقيقية؛ إذا لم تتوفر تحفظات موثوقة فأعد قائمة فارغة ولا تخترع عيباً لملء العدد.',
  'verdict: 3-4 جمل تجيب هل يستحق المشاهدة/اللعب، ولمن يناسب، والتحفظ الأهم، وسبب الدرجة.',
  'score: درجة من 0 إلى 10 بخطوة عشرية واحدة، تقدير تحريري مبرر لا تقييم رسمي ولا نقل آلي لتقييم المصدر. tags: ثلاثة إلى ستة وسوم.',
  'مؤشرات الترند (للسياق فقط وليست دليلاً على الجودة): المصدر '+(item.source||'غير محدد')+'، الترتيب داخل المصدر '+(item.trendRank||'غير متاح')+'، المقياس '+(item.sourceMetricName||'غير متاح')+' وقيمته '+(item.sourceMetricValue??'غير متاح')+'، مستوى الثقة '+(item.trendConfidence||'غير محدد')+'. المقاييس خاصة بمصادرها ولا تقارن رقمياً بين TMDB وRAWG وIGDB. لا تخترع أسباب الترند أو أرقام مشاهدات ومبيعات.',
@@ -173,7 +173,7 @@ async function generateReview(item){
  const d=parsed,review=String(d.review||'').replace(/<[^>]*>/g,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').trim();
  if(review.length<700)throw new Error('المراجعة المولّدة أقصر من الحد المطلوب للتحليل المتكامل');
  const pros=Array.isArray(d.pros)?d.pros.map(clean).filter(Boolean).slice(0,4):[],cons=Array.isArray(d.cons)?d.cons.map(clean).filter(Boolean).slice(0,3):[];
- if(pros.length<3||cons.length<2)throw new Error('قوائم نقاط القوة والضعف غير مكتملة');
+ if(pros.length<3)throw new Error('قائمة نقاط القوة غير مكتملة');
  return {hook:clean(d.hook),headline:clean(d.headline),summary:clean(d.summary),verdict:clean(d.verdict),score:Math.round(Math.min(10,Math.max(0,Number(d.score)||0))*10)/10,pros,cons,tags:Array.isArray(d.tags)?d.tags.slice(0,8).map(clean):[],review};
 }
 async function tmdb(type){
