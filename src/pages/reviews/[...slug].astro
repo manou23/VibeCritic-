@@ -45,7 +45,7 @@ const reviewStructuredData = {
     worstRating: 0,
   } }),
   author: { '@type': 'Organization', name: SITE_NAME },
-  itemReviewed: {
+  ...(d.reviewMode === 'preview' ? {} : { itemReviewed: {
     '@type': schemaType,
     name: d.title,
     ...(d.originalTitle ? { alternateName: d.originalTitle } : {}),
@@ -53,7 +53,8 @@ const reviewStructuredData = {
     ...(d.releaseDate ? { datePublished: d.releaseDate } : {}),
     ...(d.poster ? { image: optimizeImage(d.poster) } : {}),
     ...(Number(d.sourceRating) > 0 && Number(d.sourceVoteCount) > 0 ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: d.sourceRating, bestRating: d.sourceRatingScale || 10, worstRating: 0, ratingCount: d.sourceVoteCount } } : {}),
-  },
+  }, }),
+
 };
 
 ---
