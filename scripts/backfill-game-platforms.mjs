@@ -9,6 +9,8 @@ if (!apiKey) {
 
 const root = path.resolve('src/content/reviews');
 const files = (await fs.readdir(root)).filter(file => file.endsWith('.md') && file.startsWith('game-')).sort();
+const normalize = value => String(value || '').toLocaleLowerCase().normalize('NFKD')
+  .replace(/\p{M}/gu, '').replace(/[^\p{L}\p{N}]+/gu, ' ').trim().replace(/\s+/g, ' ');
 
 function readScalar(frontmatter, key) {
   const line = frontmatter.match(new RegExp('^' + key + ':\\s*(.*)$', 'm'));
@@ -27,6 +29,33 @@ function replaceBlock(frontmatter, key, replacementLines) {
   return lines.join('\n');
 }
 
+async function rawgDetail(id) {
+  const query = new URLSearchParams({ key: apiKey });
+  const response = await fetch('https://api.rawg.io/api/games/' + id + '?' + query, { signal: AbortSignal.timeout(20000) });
+  if (!response.ok) throw new Error('RAWG detail HTTP ' + response.status);
+  return response.json();
+}
+
+async function findRawgMatch(title, year) {
+  if (!title) return null;
+  const query = new URLSearchParams({ key: apiKey, search: String(title), page_size: '10' });
+  const response = await fetch('https://api.rawg.io/api/games?' + query, { signal: AbortSignal.timeout(20000) });
+  if (!response.ok) throw new Error('RAWG search HTTP ' + response.status);
+  const results = (await response.json()).results || [];
+  const target = normalize(title);
+  const matches = results.filter(item => normalize(item.name) === target);
+  if (!matches.length) return null;
+  const targetYear = Number(String(year || '').slice(0, 4)) || null;
+  matches.sort((a, b) => {
+    const ay = Number(String(a.released || '').slice(0, 4)) || null;
+    const by = Number(String(b.released || '').slice(0, 4)) || null;
+    const ad = targetYear && ay ? Math.abs(targetYear - ay) : 99;
+    const bd = targetYear && by ? Math.abs(targetYear - by) : 99;
+    return ad - bd || (Number(b.ratings_count) || 0) - (Number(a.ratings_count) || 0);
+  });
+  return matches[0];
+}
+
 let updated = 0;
 let skipped = 0;
 for (const file of files) {
@@ -35,20 +64,22 @@ for (const file of files) {
   const match = content.match(/^---\s*\r?\n([\s\S]*?)\r?\n---/);
   if (!match) continue;
   const frontmatter = match[1];
-  if (readScalar(frontmatter, 'sourceName') !== 'RAWG') { skipped++; continue; }
+  const sourceName = String(readScalar(frontmatter, 'sourceName') || '');
   const sourceId = String(readScalar(frontmatter, 'sourceId') || '');
-  if (!/^\d+$/.test(sourceId)) { skipped++; continue; }
+  const title = readScalar(frontmatter, 'title');
+  const originalTitle = readScalar(frontmatter, 'originalTitle');
+  const releaseDate = readScalar(frontmatter, 'releaseDate');
 
   try {
-    const query = new URLSearchParams({ key: apiKey });
-    const response = await fetch('https://api.rawg.io/api/games/' + sourceId + '?' + query, {
-      signal: AbortSignal.timeout(20000),
-    });
-    if (!response.ok) {
-      console.warn('RAWG detail lookup failed for ' + file + ': HTTP ' + response.status);
-      continue;
+    let detail;
+    if (sourceName === 'RAWG' && /^\d+$/.test(sourceId)) {
+      detail = await rawgDetail(sourceId);
+    } else {
+      const matchByTitle = await findRawgMatch(originalTitle || title, releaseDate);
+      if (!matchByTitle) { skipped++; console.log('No exact RAWG title match; leaving metadata unchanged: ' + file); continue; }
+      detail = await rawgDetail(matchByTitle.id);
     }
-    const detail = await response.json();
+
     const platforms = [...new Set((detail.platforms || []).map(item => item.platform?.name).filter(Boolean))];
     const stores = [...new Map((detail.stores || []).map(item => {
       const name = item.store?.name || item.name || '';
