@@ -107,11 +107,15 @@ async function findYoutubeTrailer(env,title,kind){
 }
 
 const hits=new Map();
-function permitted(req){
+async function permitted(req,env){
  const origin=req.headers.get('Origin'),host=req.headers.get('Host');
  if(origin){try{if(!host||new URL(origin).host!==host)return false}catch{return false}}
  const ip=req.headers.get('CF-Connecting-IP')||'unknown';
- // Best-effort isolate-local fallback; enforce the primary distributed limit with a Cloudflare WAF rule.
+ if(env.AI_REVIEW_LIMITER?.limit){
+  const decision=await env.AI_REVIEW_LIMITER.limit({key:ip});
+  return decision.success===true;
+ }
+ // Fallback only: isolate-local. Configure AI_REVIEW_LIMITER or a Cloudflare WAF rate-limit rule for distributed enforcement.
  const now=Date.now(),recent=(hits.get(ip)||[]).filter(t=>now-t<600000);
  if(recent.length>=8)return false;
  recent.push(now);hits.set(ip,recent);
@@ -121,19 +125,57 @@ function permitted(req){
  }
  return true;
 }
+
+async function verifyTurnstile(token,request,env){
+ if(!env.TURNSTILE_SECRET_KEY)return true;
+ if(!token)return false;
+ const body=new FormData();
+ body.set('secret',env.TURNSTILE_SECRET_KEY);
+ body.set('response',token);
+ const ip=request.headers.get('CF-Connecting-IP');
+ if(ip)body.set('remoteip',ip);
+ const response=await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify',{method:'POST',body,signal:AbortSignal.timeout(10000)});
+ if(!response.ok)return false;
+ const result=await response.json();
+ return result.success===true;
+}
+async function reviewCacheKey(title,kind){
+ const normalized=kind+'|'+title.toLocaleLowerCase().replace(/\s+/g,' ').trim();
+ const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(normalized));
+ const hash=[...new Uint8Array(digest)].map(byte=>byte.toString(16).padStart(2,'0')).join('');
+ return new Request('https://vibecritic.pages.dev/__ai-review-cache/'+hash);
+}
 export async function onRequestPost({request,env}){
- if(!permitted(request))return Response.json({error:'تم تجاوز الحد المؤقت للطلبات أو مصدر الطلب غير مسموح.'},{status:429});
+ if(!(await permitted(request,env)))return Response.json({error:'تم تجاوز الحد المؤقت للطلبات أو مصدر الطلب غير مسموح.'},{status:429});
  try{
   const raw=await request.text();
   if(new TextEncoder().encode(raw).byteLength>12000)return Response.json({error:'حجم الطلب كبير جداً.'},{status:413});
   const body=JSON.parse(raw),title=clean(body.title,120),kind=body.kind==='game'?'game':body.kind==='series'?'series':body.kind==='movie'?'movie':'';
   if(title.length<2||!kind)return Response.json({error:'أدخل اسم العمل واختر فيلماً أو لعبة أو مسلسلاً.'},{status:400});
+  if(!(await verifyTurnstile(clean(body.turnstileToken,4096),request,env)))return Response.json({error:'يرجى إكمال تحقق الأمان ثم إعادة المحاولة.'},{status:403});
+  const cache=typeof caches!=='undefined'?caches.default:null;
+  const cacheKey=await reviewCacheKey(title,kind);
+  if(cache){
+   try{
+    const cached=await cache.match(cacheKey);
+    if(cached){
+     const payload=await cached.json();
+     return Response.json({...payload,cached:true},{headers:{'cache-control':'no-store','x-vibecritic-cache':'HIT'}});
+    }
+   }catch(error){console.warn('AI review cache read failed:',error.message);}
+  }
   const prompt=['اسم العمل: '+title,'النوع: '+(kind==='game'?'لعبة فيديو':kind==='series'?'مسلسل تلفزيوني':'فيلم سينمائي'),'اكتب مراجعة نقدية مفصلة اعتماداً على المعرفة الموثوقة فقط. إذا كان الاسم ملتبساً فاطلب توضيحاً ضمن hook أو اذكر الالتباس بوضوح ولا تنسب معلومات لعمل غير مؤكد. لا تحرق الأحداث ولا تدّع تجربة شخصية.','حلل العمل بحسب نوعه، وخصص كل محور لفكرة مختلفة مع أمثلة مؤكدة أو استنتاجات معلّمة بوضوح. لا تكرر أوصافاً عامة مثل رائع ومذهل دون تفسير أثرها.','game: حلل التحكم والاستجابة والأنظمة والتقدم وتصميم المراحل/العالم عندما تكون معروفة. movie: حلل السيناريو والإخراج والتمثيل والإيقاع. series: حلل بنية الموسم وتطور الشخصيات والإيقاع واتساق الحلقات.','لا تزعم أن العمل ترند أو رائج الآن ولا تذكر أرقاماً حديثة أو ترتيباً حالياً دون بيانات حديثة مقدمة في الطلب. لا تخلط بين الشعبية والجودة. الدرجة يجب أن تنبع من الحجج النقدية.','اكتب بالعربية الفصحى.'].join('\n');
   const [reviewResult,trailerResult]=await Promise.allSettled([generate(env,prompt,title,kind),findYoutubeTrailer(env,title,kind)]);
   if(reviewResult.status==='rejected')throw reviewResult.reason;
   const out=reviewResult.value;
   const trailer=trailerResult.status==='fulfilled'?trailerResult.value:{available:false,reason:'search_failed'};
   if(trailerResult.status==='rejected')console.warn('YouTube trailer lookup failed:',trailerResult.reason);
-  return Response.json({ok:true,review:out.review,provider:out.provider,trailer},{headers:{'cache-control':'no-store'}});
+  const payload={ok:true,review:out.review,provider:out.provider,trailer};
+  if(cache){
+   try{
+    await cache.put(cacheKey,new Response(JSON.stringify(payload),{headers:{'content-type':'application/json','cache-control':'public, max-age=21600'}}));
+   }catch(error){console.warn('AI review cache write failed:',error.message);}
+  }
+  return Response.json(payload,{headers:{'cache-control':'no-store','x-vibecritic-cache':'MISS'}});
  }catch(e){console.error('AI review API:',e);return Response.json({error:e instanceof SyntaxError?'تعذر قراءة بيانات الطلب.':(e.message||'حدث خطأ غير متوقع.')},{status:500,headers:{'cache-control':'no-store'}})}
 }
