@@ -2,6 +2,11 @@ name: AI code maintainer
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/scripts/ai_code_maintainer.py'
+      - '.github/workflows/ai-code-maintainer.yml'
   schedule:
     - cron: '30 4 * * *'
 
