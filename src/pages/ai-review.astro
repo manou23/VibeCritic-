@@ -94,7 +94,10 @@ function render(r,provider,trailer){
  trailerFrame.replaceChildren();
  if(trailer?.available&&/^[a-zA-Z0-9_-]{11}$/.test(trailer.videoId)){
   const iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+trailer.videoId+'?rel=0';iframe.title='تريلر '+r.title;iframe.loading='lazy';iframe.referrerPolicy='strict-origin-when-cross-origin';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';iframe.allowFullscreen=true;trailerFrame.append(iframe);
-  put('result-trailer-title',trailer.title||'التريلر');put('result-trailer-channel',trailer.channelTitle||'قناة يوتيوب');trailerLink.href=trailer.url;trailerLink.hidden=false;
+  put('result-trailer-title',trailer.title||'التريلر');put('result-trailer-channel',trailer.channelTitle||'قناة يوتيوب');
+  let safeTrailerUrl='https://www.youtube.com/watch?v='+trailer.videoId;
+  try{const candidate=new URL(trailer.url);if(candidate.protocol==='https:'&&['youtube.com','www.youtube.com','m.youtube.com','youtu.be'].includes(candidate.hostname))safeTrailerUrl=candidate.href;}catch{}
+  trailerLink.href=safeTrailerUrl;trailerLink.hidden=false;
   put('result-trailer-note',trailer.officialSignal?'عُثر على إشارة Official في العنوان أو اسم القناة. هذا لا يُعد إثباتاً قانونياً للترخيص أو ملكية الحقوق.':'هذا فيديو مرشح بناءً على العنوان وقابلية التضمين؛ يرجى التحقق من القناة وحقوق النشر قبل اعتماده كتريلر رسمي.');
  }else{
   const empty=document.createElement('div');empty.className='ai-trailer-empty';empty.textContent=trailer?.reason==='missing_api_key'?'أضف YOUTUBE_API_KEY إلى إعدادات Cloudflare لتمكين البحث التلقائي عن التريلرات.':'لم نعثر على تريلر عام وقابل للتضمين بدرجة تطابق كافية. المراجعة متاحة دون فيديو.';trailerFrame.append(empty);put('result-trailer-title','التريلر غير متوفر');put('result-trailer-channel','');put('result-trailer-note','');trailerLink.hidden=true;
