@@ -99,14 +99,14 @@ async function generateWithOpenRouter(prompt){
  throw new Error('OpenRouter لم يرجع JSON صالحاً بعد 3 محاولات: '+lastIssue);
 }
 function validateGeneratedReview(d){
- const review=String(d?.review||'').replace(/<[^>]*>/g,'').replace(/\\[([^\\]]+)\\]\\([^)]+\\)/g,'$1').trim();
+ const review=String(d?.review||'').replace(/<[^>]*>/g,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').trim();
  const pros=Array.isArray(d?.pros)?d.pros.filter(x=>String(x||'').trim()):[];
  const cons=Array.isArray(d?.cons)?d.cons.filter(x=>String(x||'').trim()):[];
  const scores={story:Number(d?.scores?.story),visuals:Number(d?.scores?.visuals),sound:Number(d?.scores?.sound),pacing:Number(d?.scores?.pacing)};
  if(Object.values(scores).some(value=>!Number.isFinite(value)||value<0||value>10))throw new Error('الدرجات الفرعية الأربعة غير مكتملة أو خارج النطاق 0–10');
  if(Object.values(scores).some(value=>Math.abs(value*10-Math.round(value*10))>0.001))throw new Error('يجب أن تكون الدرجات الفرعية بخطوة عشرية واحدة فقط');
  if(review.length<1800)throw new Error('المراجعة المولّدة أقصر من الحد الأدنى للتحليل المتكامل (1800 حرف)');
- if((review.match(/^###\\s+/gm)||[]).length<5)throw new Error('المراجعة لا تتضمن المحاور النقدية الخمسة المطلوبة');
+ if((review.match(/^###\s+/gm)||[]).length<5)throw new Error('المراجعة لا تتضمن المحاور النقدية الخمسة المطلوبة');
  if((review.match(/لا تتوفر معلومات كافية/g)||[]).length>2||(review.match(/لا يمكن الحكم/g)||[]).length>2)throw new Error('المراجعة تعتمد بصورة مفرطة على الاعتذار عن نقص المعلومات');
  if(pros.length<3)throw new Error('قائمة نقاط القوة غير مكتملة');
  if(!String(d?.headline||'').trim()||!String(d?.summary||'').trim()||!String(d?.verdict||'').trim())throw new Error('بيانات المراجعة الأساسية غير مكتملة');
