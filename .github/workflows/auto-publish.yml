@@ -44,6 +44,8 @@ jobs:
           node --check functions/api/review.js
       - name: Install dependencies
         run: npm install
+      - name: Validate review score integrity
+        run: npm run validate:reviews
       # OpenRouter is supported as an AI generation provider.
       - name: Generate reviews
         if: github.event_name != 'push'
