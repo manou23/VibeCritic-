@@ -497,7 +497,7 @@ async function main(){
   return items.filter(x=>{
    const key=x.type+':'+x.id,upgrade=isPreviewUpgrade(x,publishedModes,today);
    if(seen.has(key)||String(x.description||'').trim().length<60||((done.includes(key)||publishedKeys.has(key))&&!upgrade))return false;
-   if(x.type==='game'&&!upgrade&&communityDemand(x)<2&&editorialPriority(x)<0)return false;
+   if(x.type==='game'&&!upgrade&&communityDemand(x)<2&&editorialPriority(x)>=999)return false;
    seen.add(key);return true;
   }).sort((a,b)=>{
    const upgradeA=isPreviewUpgrade(a,publishedModes,today)?1:0,upgradeB=isPreviewUpgrade(b,publishedModes,today)?1:0;
