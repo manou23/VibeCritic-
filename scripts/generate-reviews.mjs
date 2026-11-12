@@ -12,7 +12,7 @@ async function getJson(url){const r=await fetch(url,{signal:AbortSignal.timeout(
 const clean=v=>String(v??'').replace(/[\r\n]+/g,' ').trim();
 const editorialPriorityNames=['grand theft auto vi','grand theft auto 6','gta vi','gta 6','the witcher 4','the witcher iv','marvels wolverine','marvel wolverine','elder scrolls vi','the elder scrolls 6','resident evil requiem','tomb raider catalyst','007 first light','intergalactic the heretic prophet','pragmata','control resonant'];
 function normalizedTitle(value){return String(value||'').toLowerCase().normalize('NFKD').replace(/[\\u0300-\\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim();}
-function editorialPriority(item){const title=normalizedTitle(item.name||item.title);return editorialPriorityNames.findIndex(name=>title.includes(normalizedTitle(name)));}
+function editorialPriority(item){const title=normalizedTitle(item.name||item.title),rank=editorialPriorityNames.findIndex(name=>title.includes(normalizedTitle(name)));return rank<0?999:rank;}
 function communityDemand(item){const source=String(item.source||'').toUpperCase(),metric=Number(item.sourceMetricValue??item.popularity)||0;if(source==='RAWG')return metric>=100?3:metric>=25?2:0;if(source==='IGDB')return metric>=50?3:metric>=15?2:0;return metric>0?1:0;}
 function isPreviewUpgrade(item,publishedModes,today){const key=String(item.type)+':'+String(item.id);return publishedModes.get(key)==='preview'&&/^\\d{4}-\\d{2}-\\d{2}$/.test(String(item.date||''))&&String(item.date).slice(0,10)<=today;}
 
