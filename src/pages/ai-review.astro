@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
 ---
 <Base title="المراجع الذكي" description="أنشئ مراجعة نقدية عربية للأفلام والمسلسلات والألعاب بمساعدة الذكاء الاصطناعي." keywords={['مراجع أفلام بالذكاء الاصطناعي','مراجعة مسلسلات','مراجعة ألعاب','VibeCritic AI']}>
 <section class="ai-review-page">
@@ -16,6 +17,7 @@ import Base from '../layouts/Base.astro';
     <label class="ai-kind-option"><input type="radio" name="kind" value="game" /><span>لعبة فيديو</span></label>
     <label class="ai-kind-option"><input type="radio" name="kind" value="series" /><span>مسلسل تلفزيوني</span></label>
    </fieldset>
+   {turnstileSiteKey && <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="auto"></div>}
    <button id="ai-submit" class="ai-submit" type="submit"><span>أنشئ المراجعة</span><span aria-hidden="true">↗</span></button>
    <p class="ai-privacy-note">مفاتيح الذكاء الاصطناعي محمية على الخادم ولا تُرسل إلى متصفحك.</p>
   </form>
@@ -35,7 +37,7 @@ import Base from '../layouts/Base.astro';
    </div>
    <div class="ai-pros-cons"><section class="ai-pros"><h3>ما ينجح فيه</h3><ul id="result-pros"></ul></section><section class="ai-cons"><h3>ما يعيبه</h3><ul id="result-cons"></ul></section></div>
    <section class="ai-verdict"><span>FINAL VERDICT</span><h3>الحكم النهائي</h3><p id="result-verdict"></p></section>
-   <footer class="ai-result-footer"><span id="result-provider"></span><button id="ai-copy" type="button">نسخ المراجعة <span aria-hidden="true">⧉</span></button></footer>
+   <footer class="ai-result-footer"><span id="result-provider"></span><div class="ai-result-actions"><button id="ai-copy" type="button">نسخ المراجعة <span aria-hidden="true">⧉</span></button><button id="ai-share" type="button">مشاركة النتيجة ↗</button></div></footer>
   </article>
   <p class="ai-disclaimer">المراجعة مولّدة بالذكاء الاصطناعي وقد تخطئ في بعض التفاصيل. يُنصح بالتحقق من المعلومات قبل اعتمادها أو نشرها.</p>
  </div>
@@ -70,7 +72,7 @@ import Base from '../layouts/Base.astro';
 .ai-pros-cons h3{margin-top:0}.ai-pros-cons ul{padding-right:20px;margin:0}.ai-pros-cons li{font-size:13px;line-height:1.9;margin:7px 0;color:var(--muted,#555)}
 .ai-pros h3{color:#2f805e}.ai-cons h3{color:#c45c43}.ai-verdict{border-top:1px solid var(--line,#e6e1d7);padding-top:24px}
 .ai-result-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px;padding-top:17px;border-top:1px solid var(--line,#e6e1d7);font-size:11px;color:var(--muted,#777)}
-.ai-result-footer button{border:1px solid var(--line,#ddd);background:transparent;color:inherit;border-radius:9px;min-height:42px;padding:0 14px;cursor:pointer;font:inherit}
+.ai-result-actions{display:flex;gap:8px;flex-wrap:wrap}.ai-result-footer button{border:1px solid var(--line,#ddd);background:transparent;color:inherit;border-radius:9px;min-height:42px;padding:0 14px;cursor:pointer;font:inherit}
 .ai-disclaimer{margin:18px 2px}
 @media(max-width:650px){.ai-review-sections,.ai-pros-cons{grid-template-columns:1fr}.ai-result-header{grid-template-columns:1fr auto;gap:12px}.ai-score{width:84px;height:84px}.ai-score strong{font-size:30px}.ai-review-intro>p:last-child{font-size:15px}}
 </style>
@@ -81,11 +83,12 @@ const submitButton=document.querySelector('#ai-submit');
 const statusBox=document.querySelector('#ai-status');
 const resultBox=document.querySelector('#ai-result');
 let latestReview=null;
+let latestSharePayload=null;
 function put(id,value){const el=document.getElementById(id);if(el)el.textContent=value||''}
 function putList(id,values){const list=document.getElementById(id);if(!list)return;list.replaceChildren();const items=values||[];if(!items.length&&id==='result-cons'){const li=document.createElement('li');li.textContent='لم تتوفر تحفظات موثوقة كافية لإثبات نقاط ضعف محددة.';list.append(li);return}items.forEach(value=>{const li=document.createElement('li');li.textContent=value;list.append(li)})}
 function status(message,error=false){if(!statusBox)return;statusBox.hidden=false;statusBox.dataset.error=String(error);statusBox.textContent=message}
 function render(r,provider,trailer){
- latestReview=r;put('result-title',r.title);put('result-hook',r.hook);put('result-score',Number(r.score).toFixed(1));put('result-story',r.story);put('result-style',r.style);put('result-visuals',r.visuals);put('result-audio',r.audio);put('result-verdict',r.verdict);put('result-provider','تم الإنشاء عبر '+provider);putList('result-pros',r.pros);putList('result-cons',r.cons);
+ latestReview=r;latestSharePayload={review:r,provider,trailer};put('result-title',r.title);put('result-hook',r.hook);put('result-score',Number(r.score).toFixed(1));put('result-story',r.story);put('result-style',r.style);put('result-visuals',r.visuals);put('result-audio',r.audio);put('result-verdict',r.verdict);put('result-provider','تم الإنشاء عبر '+provider);putList('result-pros',r.pros);putList('result-cons',r.cons);
  put('result-style-title',r.kind==='game'?'أسلوب اللعب والتجربة':r.kind==='series'?'الإخراج وأداء الممثلين':'الإخراج والأداء');put('result-visual-title',r.kind==='game'?'الرسوميات والتصميم الفني':'التصوير واللغة البصرية');
  const trailerBox=document.getElementById('ai-trailer'),trailerFrame=document.getElementById('ai-trailer-frame'),trailerLink=document.getElementById('result-trailer-link');
  trailerFrame.replaceChildren();
@@ -102,14 +105,46 @@ function render(r,provider,trailer){
 form?.addEventListener('submit',async event=>{
  event.preventDefault();const title=titleInput.value.trim(),kind=String(new FormData(form).get('kind')||'movie');
  submitButton.disabled=true;submitButton.querySelector('span').textContent='جارٍ إعداد المراجعة...';resultBox.hidden=true;status('يجري إعداد التحليل النقدي وتجربة المزوّدات المتاحة. قد يستغرق ذلك لحظات.');
- try{const res=await fetch('/api/review',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({title,kind})});const data=await res.json();if(!res.ok||!data.ok)throw Error(data.error||'تعذر إنشاء المراجعة');statusBox.hidden=true;render(data.review,data.provider||'AI',data.trailer)}
+ try{const res=await fetch('/api/review',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({title,kind,turnstileToken:String(new FormData(form).get('cf-turnstile-response')||'')})});const data=await res.json();if(!res.ok||!data.ok)throw Error(data.error||'تعذر إنشاء المراجعة');statusBox.hidden=true;render(data.review,data.provider||'AI',data.trailer)}
  catch(e){status(e.message||'حدث خطأ. حاول مرة أخرى.',true)}
  finally{submitButton.disabled=false;submitButton.querySelector('span').textContent='أنشئ المراجعة'}
 });
+
+function encodeShare(value){
+ const bytes=new TextEncoder().encode(JSON.stringify(value));let binary='';
+ bytes.forEach(byte=>binary+=String.fromCharCode(byte));
+ return btoa(binary).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+}
+function decodeShare(value){
+ const normalized=value.replace(/-/g,'+').replace(/_/g,'/');
+ const padded=normalized+'='.repeat((4-normalized.length%4)%4);
+ const binary=atob(padded),bytes=Uint8Array.from(binary,char=>char.charCodeAt(0));
+ return JSON.parse(new TextDecoder().decode(bytes));
+}
+document.getElementById('ai-share')?.addEventListener('click',async()=>{
+ if(!latestSharePayload)return;
+ try{
+  const shareUrl=window.location.origin+window.location.pathname+'#review='+encodeShare(latestSharePayload);
+  await navigator.clipboard.writeText(shareUrl);
+  const button=document.getElementById('ai-share');if(button)button.textContent='تم نسخ رابط المشاركة ✓';
+ }catch{status('تعذر إنشاء رابط المشاركة. حاول نسخ الرابط يدوياً.',true)}
+});
+const sharedMatch=window.location.hash.match(/^#review=([A-Za-z0-9_-]+)$/);
+if(sharedMatch){
+ try{
+  const shared=decodeShare(sharedMatch[1]);
+  if(shared?.review&&Number(shared.review.score)>0&&Number(shared.review.score)<=10){
+   form.hidden=true;statusBox.hidden=true;render(shared.review,shared.provider||'AI',shared.trailer||null);
+   put('result-provider','نتيجة مشتركة · '+(shared.provider||'AI'));
+  }else throw Error('بيانات المشاركة غير مكتملة');
+ }catch{status('رابط المشاركة غير صالح أو تعرض للتلف.',true)}
+}
+
 document.getElementById('ai-copy')?.addEventListener('click',async()=>{
  if(!latestReview)return;const r=latestReview;
  const text=[r.title+' — '+r.score+'/10',r.hook,'القصة والسرد\n'+r.story,'الأسلوب والتجربة\n'+r.style,'الصورة والتصميم\n'+r.visuals,'الصوتيات والموسيقى\n'+r.audio,'الإيجابيات\n'+r.pros.map(x=>'• '+x).join('\n'),'السلبيات\n'+r.cons.map(x=>'• '+x).join('\n'),'الحكم النهائي\n'+r.verdict].join('\n\n');
  try{await navigator.clipboard.writeText(text);document.getElementById('ai-copy').textContent='تم النسخ ✓'}catch{status('تعذر النسخ تلقائياً. حدد النص وانسخه يدوياً.',true)}
 });
 </script>
+{turnstileSiteKey && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
 </Base>
