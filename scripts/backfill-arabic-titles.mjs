@@ -59,7 +59,7 @@ for (const file of files) {
     if (isArabic(localizedTitle)) nextFrontmatter = writeScalar(nextFrontmatter, 'title', localizedTitle);
     if (originalTitle) nextFrontmatter = writeScalar(nextFrontmatter, 'originalTitle', originalTitle);
     if (nextFrontmatter === frontmatter) { skipped++; continue; }
-    const nextContent = content.replace(match[0], '---\n' + nextFrontmatter + '\\n---');
+    const nextContent = content.replace(match[0], '---\n' + nextFrontmatter + '\n---');
     await fs.writeFile(fullPath, nextContent, 'utf8');
     updated++;
     console.log('Updated localized title: ' + file);
