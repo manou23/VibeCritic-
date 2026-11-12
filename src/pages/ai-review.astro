@@ -22,6 +22,11 @@ import Base from '../layouts/Base.astro';
   <div id="ai-status" class="ai-status" role="status" aria-live="polite" hidden></div>
   <article id="ai-result" class="ai-result" hidden aria-live="polite">
    <header class="ai-result-header"><div><p class="ai-eyebrow">VIBECRITIC / AI REVIEW</p><h2 id="result-title"></h2><p id="result-hook" class="ai-hook"></p></div><div class="ai-score"><strong id="result-score"></strong><span>/ 10</span><small>التقييم النقدي</small></div></header>
+   <section id="ai-trailer" class="ai-trailer" hidden aria-label="التريلر الرسمي أو المرشح">
+    <div class="ai-trailer-heading"><div><p class="ai-eyebrow">WATCH THE TRAILER</p><h3 id="result-trailer-title">التريلر</h3><p id="result-trailer-channel"></p></div><a id="result-trailer-link" href="#" target="_blank" rel="noopener noreferrer">مشاهدة على يوتيوب ↗</a></div>
+    <div id="ai-trailer-frame" class="ai-trailer-frame"></div>
+    <p id="result-trailer-note" class="ai-trailer-note"></p>
+   </section>
    <div class="ai-review-sections">
     <section><span>01 / STORY</span><h3>القصة والسرد</h3><p id="result-story"></p></section>
     <section><span>02 / EXPERIENCE</span><h3 id="result-style-title">الأسلوب والتجربة</h3><p id="result-style"></p></section>
@@ -57,6 +62,7 @@ import Base from '../layouts/Base.astro';
 .ai-result-header{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;padding-bottom:26px;border-bottom:1px solid var(--line,#e6e1d7)}
 .ai-result-header h2{font-size:clamp(26px,4vw,40px);margin:0 0 12px;line-height:1.2}.ai-hook{font-size:16px;line-height:1.9;color:var(--muted,#666);max-width:650px}
 .ai-score{width:112px;height:112px;border:1px solid #e46d35;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center}.ai-score strong{font-size:38px;line-height:1;color:#e46d35}.ai-score span{font-size:12px;color:var(--muted,#777)}.ai-score small{font-size:10px;margin-top:6px;color:var(--muted,#777)}
+.ai-trailer{margin:26px 0 8px;padding:18px;border:1px solid var(--line,#e6e1d7);border-radius:16px;background:var(--page-bg,#f8f6f0)}.ai-trailer-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}.ai-trailer-heading .ai-eyebrow{margin-bottom:5px}.ai-trailer-heading h3{font-size:18px;margin:0 0 4px}.ai-trailer-heading p:not(.ai-eyebrow){font-size:12px;color:var(--muted,#777);margin:0}.ai-trailer-heading a{font-size:12px;font-weight:750;color:#e46d35;text-decoration:none;white-space:nowrap}.ai-trailer-frame{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:11px;background:#111}.ai-trailer-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.ai-trailer-note{font-size:11px;line-height:1.8;color:var(--muted,#777);margin:10px 0 0}.ai-trailer-empty{padding:28px 14px;text-align:center;border:1px dashed var(--line,#ddd);border-radius:10px;font-size:13px;color:var(--muted,#777)}
 .ai-review-sections{display:grid;grid-template-columns:1fr 1fr;gap:0 30px}.ai-review-sections section{padding:25px 0;border-bottom:1px solid var(--line,#e6e1d7)}
 .ai-review-sections section>span,.ai-verdict>span{font:700 10px/1.4 ui-monospace,monospace;letter-spacing:.13em;color:#e46d35}
 .ai-review-sections h3,.ai-pros-cons h3,.ai-verdict h3{font-size:19px;margin:9px 0}.ai-review-sections p,.ai-verdict p{font-size:14px;line-height:2;color:var(--muted,#555);margin:0}
@@ -78,15 +84,25 @@ let latestReview=null;
 function put(id,value){const el=document.getElementById(id);if(el)el.textContent=value||''}
 function putList(id,values){const list=document.getElementById(id);if(!list)return;list.replaceChildren();const items=values||[];if(!items.length&&id==='result-cons'){const li=document.createElement('li');li.textContent='لم تتوفر تحفظات موثوقة كافية لإثبات نقاط ضعف محددة.';list.append(li);return}items.forEach(value=>{const li=document.createElement('li');li.textContent=value;list.append(li)})}
 function status(message,error=false){if(!statusBox)return;statusBox.hidden=false;statusBox.dataset.error=String(error);statusBox.textContent=message}
-function render(r,provider){
+function render(r,provider,trailer){
  latestReview=r;put('result-title',r.title);put('result-hook',r.hook);put('result-score',Number(r.score).toFixed(1));put('result-story',r.story);put('result-style',r.style);put('result-visuals',r.visuals);put('result-audio',r.audio);put('result-verdict',r.verdict);put('result-provider','تم الإنشاء عبر '+provider);putList('result-pros',r.pros);putList('result-cons',r.cons);
  put('result-style-title',r.kind==='game'?'أسلوب اللعب والتجربة':r.kind==='series'?'الإخراج وأداء الممثلين':'الإخراج والأداء');put('result-visual-title',r.kind==='game'?'الرسوميات والتصميم الفني':'التصوير واللغة البصرية');
+ const trailerBox=document.getElementById('ai-trailer'),trailerFrame=document.getElementById('ai-trailer-frame'),trailerLink=document.getElementById('result-trailer-link');
+ trailerFrame.replaceChildren();
+ if(trailer?.available&&/^[a-zA-Z0-9_-]{11}$/.test(trailer.videoId)){
+  const iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+trailer.videoId+'?rel=0';iframe.title='تريلر '+r.title;iframe.loading='lazy';iframe.referrerPolicy='strict-origin-when-cross-origin';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';iframe.allowFullscreen=true;trailerFrame.append(iframe);
+  put('result-trailer-title',trailer.title||'التريلر');put('result-trailer-channel',trailer.channelTitle||'قناة يوتيوب');trailerLink.href=trailer.url;trailerLink.hidden=false;
+  put('result-trailer-note',trailer.officialSignal?'عُثر على إشارة Official في العنوان أو اسم القناة. هذا لا يُعد إثباتاً قانونياً للترخيص أو ملكية الحقوق.':'هذا فيديو مرشح بناءً على العنوان وقابلية التضمين؛ يرجى التحقق من القناة وحقوق النشر قبل اعتماده كتريلر رسمي.');
+ }else{
+  const empty=document.createElement('div');empty.className='ai-trailer-empty';empty.textContent=trailer?.reason==='missing_api_key'?'أضف YOUTUBE_API_KEY إلى إعدادات Cloudflare لتمكين البحث التلقائي عن التريلرات.':'لم نعثر على تريلر عام وقابل للتضمين بدرجة تطابق كافية. المراجعة متاحة دون فيديو.';trailerFrame.append(empty);put('result-trailer-title','التريلر غير متوفر');put('result-trailer-channel','');put('result-trailer-note','');trailerLink.hidden=true;
+ }
+ trailerBox.hidden=false;
  resultBox.hidden=false;resultBox.scrollIntoView({behavior:'smooth',block:'start'});
 }
 form?.addEventListener('submit',async event=>{
  event.preventDefault();const title=titleInput.value.trim(),kind=String(new FormData(form).get('kind')||'movie');
  submitButton.disabled=true;submitButton.querySelector('span').textContent='جارٍ إعداد المراجعة...';resultBox.hidden=true;status('يجري إعداد التحليل النقدي وتجربة المزوّدات المتاحة. قد يستغرق ذلك لحظات.');
- try{const res=await fetch('/api/review',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({title,kind})});const data=await res.json();if(!res.ok||!data.ok)throw Error(data.error||'تعذر إنشاء المراجعة');statusBox.hidden=true;render(data.review,data.provider||'AI')}
+ try{const res=await fetch('/api/review',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({title,kind})});const data=await res.json();if(!res.ok||!data.ok)throw Error(data.error||'تعذر إنشاء المراجعة');statusBox.hidden=true;render(data.review,data.provider||'AI',data.trailer)}
  catch(e){status(e.message||'حدث خطأ. حاول مرة أخرى.',true)}
  finally{submitButton.disabled=false;submitButton.querySelector('span').textContent='أنشئ المراجعة'}
 });
