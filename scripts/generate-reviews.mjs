@@ -104,6 +104,7 @@ function validateGeneratedReview(d){
  const cons=Array.isArray(d?.cons)?d.cons.filter(x=>String(x||'').trim()):[];
  const score=Number(d?.score);
  if(d?.score===undefined||d?.score===null||String(d.score).trim()===''||!Number.isFinite(score)||score<=0||score>10)throw new Error('درجة المراجعة غير موجودة أو خارج النطاق 0–10');
+ if(Math.abs(score*10-Math.round(score*10))>0.001)throw new Error('يجب أن تكون الدرجة بخطوة عشرية واحدة فقط');
  const statedScore=String(d?.verdict||'').match(/(\d+(?:[.,]\d+)?)\s*(?:\/\s*10|من\s*10)/);
  if(statedScore&&Math.abs(Number(statedScore[1].replace(',','.'))-score)>0.05)throw new Error('الدرجة في الحكم النهائي لا تطابق حقل score');
  if(review.length<1800)throw new Error('المراجعة المولّدة أقصر من الحد الأدنى للتحليل المتكامل (1800 حرف)');
