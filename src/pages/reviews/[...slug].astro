@@ -124,7 +124,7 @@ const reviewStructuredData = {
       </section>}
       <section class="article-facts" aria-label="أماكن المشاهدة">
         <h2>أين أشاهده؟</h2>
-        {d.watchProviders?.length>0 ? <p>المنصات المتاحة في الجزائر بحسب بيانات TMDB: {d.watchProviders.join('، ')}</p> : <p>لم تتوفر حالياً بيانات موثوقة عن منصات المشاهدة في الجزائر.</p>}
+        {d.watchProviders?.length>0 ? <p>المنصات المتاحة في الجزائر بحسب بيانات TMDB: {d.watchProviders.join('، ')}</p> : <p>لم تُسجّل بيانات منصات المشاهدة لهذا العمل بعد.</p>}
         {d.watchProviderUrl && <a href={d.watchProviderUrl} target="_blank" rel="noopener noreferrer">تحقق من خيارات المشاهدة على TMDB ↗</a>}
       </section>
       {similarReviews.length>0 && <section class="article-facts" aria-label="مراجعات مشابهة">
