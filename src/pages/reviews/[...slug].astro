@@ -142,6 +142,7 @@ const reviewStructuredData = {
         {d.watchProviders?.length>0 && <p>المنصات المتاحة في الجزائر بحسب بيانات TMDB: {d.watchProviders.join('، ')}</p>}
         {d.watchProviderUrl && <a href={d.watchProviderUrl} target="_blank" rel="noopener noreferrer">تحقق من خيارات المشاهدة على TMDB ↗</a>}
       </section>)}
+      {d.sourceUrl && <section class="article-facts" aria-label="مصدر بيانات العمل"><h2>مصدر البيانات</h2><p>بيانات العمل الأساسية مستندة إلى {d.sourceName || 'المصدر المدرج'}؛ وهي مرجع للمعلومات الوصفية وليست حكماً نقدياً مستقلاً.</p><a href={d.sourceUrl} target="_blank" rel="noopener noreferrer">عرض صفحة العمل في المصدر ↗</a></section>}
       {similarReviews.length>0 && <section class="article-facts" aria-label="مراجعات مشابهة">
         <h2>مراجعات مشابهة</h2>
         <ul>{similarReviews.map(entry=><li><a href={url('reviews/'+entry.id+'/')}>{entry.data.title} — {entry.data.reviewMode === 'preview' ? 'قراءة استباقية' : entry.data.score.toFixed(1) + '/10'}</a></li>)}</ul>
