@@ -107,7 +107,7 @@ function validateGeneratedReview(d){
  const statedScore=String(d?.verdict||'').match(/(\d+(?:[.,]\d+)?)\s*(?:\/\s*10|من\s*10)/);
  if(statedScore&&Math.abs(Number(statedScore[1].replace(',','.'))-score)>0.05)throw new Error('الدرجة في الحكم النهائي لا تطابق حقل score');
  if(review.length<1800)throw new Error('المراجعة المولّدة أقصر من الحد الأدنى للتحليل المتكامل (1800 حرف)');
- if((review.match(/^###\\s+/gm)||[]).length<5)throw new Error('المراجعة لا تتضمن المحاور النقدية الخمسة المطلوبة');
+ if((review.match(/^###\s+/gm)||[]).length<5)throw new Error('المراجعة لا تتضمن المحاور النقدية الخمسة المطلوبة');
  if((review.match(/لا تتوفر معلومات كافية/g)||[]).length>2||(review.match(/لا يمكن الحكم/g)||[]).length>2)throw new Error('المراجعة تعتمد بصورة مفرطة على الاعتذار عن نقص المعلومات');
  if(pros.length<3)throw new Error('قائمة نقاط القوة غير مكتملة');
  if(!String(d?.headline||'').trim()||!String(d?.summary||'').trim()||!String(d?.verdict||'').trim())throw new Error('بيانات المراجعة الأساسية غير مكتملة');
