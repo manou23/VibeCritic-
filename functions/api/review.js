@@ -4,7 +4,7 @@ const DEFAULTS = [
   {name:'Google AI Studio',base:'https://generativelanguage.googleapis.com/v1beta/openai',model:'gemini-3.8-flash',modelEnv:'GEMINI_MODEL',list:'GEMINI_API_KEYS',single:'GEMINI_API_KEY'},
   {name:'OpenAI',base:'https://api.openai.com/v1',model:'gpt-4o-mini',modelEnv:'OPENAI_MODEL',list:'OPENAI_API_KEYS',single:'OPENAI_API_KEY'}
 ];
-const SYSTEM = 'أنت ناقد فني مخضرم ومتخصص في السينما والألعاب. اكتب مراجعة عربية عميقة وجريئة وصادقة، وادخل مباشرة إلى الفكرة النقدية دون مقدمات مستهلكة. كن صريحاً بلا دعاية أو مجاملة. لا تدّع أنك شاهدت أو لعبت العمل بنفسك، ولا تختلق أحداثاً أو أسماء أو تفاصيل إنتاج أو معلومات غير مؤكدة. تجنب حرق الأحداث الجوهرية. أعد JSON صالحاً فقط بهذه المفاتيح: title, hook, story, style, visuals, audio, pros, cons, verdict, score. اجعل story تحليلاً للقصة والسرد، وstyle لأسلوب اللعب في الألعاب أو الإخراج والأداء في الأفلام، وvisuals للرسوميات والتصميم الفني أو التصوير واللغة البصرية، وaudio للصوتيات والموسيقى. pros مصفوفة من 3 نقاط محددة، cons مصفوفة من نقطتين محددتين، verdict خلاصة نقدية، score رقم من 0 إلى 10 بخطوة عشرية. لا تخترع معلومات عند عدم اليقين، واذكر حدود المعرفة.';
+const SYSTEM = 'أنت ناقد فني مخضرم ومتخصص في السينما والمسلسلات والألعاب. اكتب مراجعة عربية عميقة وجريئة وصادقة، وادخل مباشرة إلى الفكرة النقدية دون مقدمات مستهلكة. كن صريحاً بلا دعاية أو مجاملة. لا تدّع أنك شاهدت أو لعبت العمل بنفسك، ولا تختلق أحداثاً أو أسماء أو تفاصيل إنتاج أو معلومات غير مؤكدة. تجنب حرق الأحداث الجوهرية. أعد JSON صالحاً فقط بهذه المفاتيح: title, hook, story, style, visuals, audio, pros, cons, verdict, score. اجعل story تحليلاً للقصة والسرد، وstyle لأسلوب اللعب في الألعاب أو الإخراج والأداء في الأفلام، وvisuals للرسوميات والتصميم الفني أو التصوير واللغة البصرية، وaudio للصوتيات والموسيقى. pros مصفوفة من 3 نقاط محددة، cons مصفوفة من نقطتين محددتين، verdict خلاصة نقدية، score رقم من 0 إلى 10 بخطوة عشرية. لا تخترع معلومات عند عدم اليقين، واذكر حدود المعرفة.';
 function keys(value){if(!value)return[];const s=String(value).trim();try{const v=JSON.parse(s);if(Array.isArray(v))return v.map(String).map(x=>x.trim()).filter(Boolean)}catch{}return s.split(/[\n,;]+/).map(x=>x.trim()).filter(Boolean)}
 function providers(env){
  let cfg=DEFAULTS;
@@ -67,8 +67,8 @@ export async function onRequestPost({request,env}){
  try{
   const raw=await request.text();
   if(new TextEncoder().encode(raw).byteLength>12000)return Response.json({error:'حجم الطلب كبير جداً.'},{status:413});
-  const body=JSON.parse(raw),title=clean(body.title,120),kind=body.kind==='game'?'game':body.kind==='movie'?'movie':'';
-  if(title.length<2||!kind)return Response.json({error:'أدخل اسم العمل واختر فيلماً أو لعبة.'},{status:400});
+  const body=JSON.parse(raw),title=clean(body.title,120),kind=body.kind==='game'?'game':body.kind==='series'?'series':body.kind==='movie'?'movie':'';
+  if(title.length<2||!kind)return Response.json({error:'أدخل اسم العمل واختر فيلماً أو لعبة أو مسلسلاً.'},{status:400});
   const prompt=['اسم العمل: '+title,'النوع: '+(kind==='game'?'لعبة فيديو':kind==='series'?'مسلسل تلفزيوني':'فيلم سينمائي'),'اكتب مراجعة بالاعتماد على معرفتك الموثوقة فقط. إذا كان الاسم ملتبساً فاذكر ذلك ولا تخترع تفاصيل. تجنب حرق الأحداث.','game: حلل التحكم والأنظمة والتقدم والتصميم في محور style. movie: حلل الإخراج والتمثيل والإيقاع في محور style. series: حلل بناء الموسم والحلقات وتطور الشخصيات والإيقاع في محور style.','اكتب بالعربية الفصحى.'].join('\n');
   const out=await generate(env,prompt,title,kind);
   return Response.json({ok:true,review:out.review,provider:out.provider},{headers:{'cache-control':'no-store'}});
