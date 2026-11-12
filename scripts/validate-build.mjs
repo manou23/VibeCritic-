@@ -103,8 +103,9 @@ for (const relative of reviewPages) {
   const publishedTime = metaContent('property', 'article:published_time');
   const jsonLdTag = html.match(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/i);
   let structuredType = '';
+  let structured = null;
   try {
-    const structured = JSON.parse(jsonLdTag?.[1] || 'null');
+    structured = JSON.parse(jsonLdTag?.[1] || 'null');
     structuredType = structured?.['@type'] || '';
   } catch {}
   const failedMeta = [];
@@ -114,6 +115,13 @@ for (const relative of reviewPages) {
   if (!['summary_large_image', 'summary'].includes(twitterCard)) failedMeta.push('twitter:card');
   if (!/^\d{4}-\d{2}-\d{2}T/.test(publishedTime)) failedMeta.push('article:published_time');
   if (!['Review', 'Article'].includes(structuredType)) failedMeta.push('JSON-LD Review/Article');
+  if (!structured?.url || !structured?.mainEntityOfPage) failedMeta.push('JSON-LD canonical identity');
+  if (structuredType === 'Review' && (!structured.reviewRating || !structured.itemReviewed?.name || !structured.reviewBody)) {
+    failedMeta.push('JSON-LD Review rating/itemReviewed/body');
+  }
+  if (structuredType === 'Article' && (!structured.headline || !structured.description || !structured.publisher?.name || !structured.articleBody)) {
+    failedMeta.push('JSON-LD Article headline/description/publisher/body');
+  }
   if (failedMeta.length) {
     throw new Error('وسوم SEO غير مكتملة في صفحة ' + relative + '؛ العناصر: ' + failedMeta.join(', '));
   }
