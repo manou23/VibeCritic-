@@ -38,7 +38,6 @@ const structuredData = pageStructuredData || (pageType === 'article'
       inLanguage: 'ar',
     });
 const safeJson = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
-const telegramChannelUrl = import.meta.env.PUBLIC_TELEGRAM_CHANNEL_URL || '';
 const searchReviews = await getCollection('reviews');
 ---
 <!doctype html>
@@ -110,7 +109,7 @@ const searchReviews = await getCollection('reviews');
  <div class="wrap footer-inner">
   <a href={url('')} class="footer-brand">Vibe<span>Critic</span></a>
   <p>© {new Date().getFullYear()} {SITE_NAME}. نراجع بوضوح، ونترك القرار لك.</p>
-  <nav class="footer-subscriptions" aria-label="تابع أحدث المراجعات"><a href={url('rss.xml')}>RSS — أحدث المراجعات</a>{telegramChannelUrl && <a href={telegramChannelUrl} target="_blank" rel="noopener noreferrer">قناة تيليغرام</a>}</nav>
+  <nav class="footer-subscriptions" aria-label="تابع أحدث المراجعات"><a href={url('rss.xml')}>RSS — أحدث المراجعات</a></nav>
   <details class="footer-sources">
    <summary>مصدر البيانات</summary>
    <p>بيانات الأفلام والمسلسلات مقدمة عبر <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer">TMDb</a>. هذا المنتج يستخدم TMDb API لكنه غير معتمد أو مصادق عليه من TMDb.</p>

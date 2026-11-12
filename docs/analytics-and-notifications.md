@@ -18,21 +18,6 @@ Official documentation:
 - https://developers.cloudflare.com/web-analytics/about/
 - https://developers.cloudflare.com/web-analytics/faq/
 
-## Telegram channel link
-
-The site footer supports an optional build-time variable:
-
-`PUBLIC_TELEGRAM_CHANNEL_URL`
-
-Set it to the public URL of the VibeCritic Telegram channel in the Cloudflare Pages build environment. The channel link remains hidden until a valid URL is supplied. Do not put API tokens or bot secrets in this variable.
-
-To automatically post newly generated reviews to the channel, create a Telegram bot with BotFather, add it as an administrator to the channel with permission to post messages, then add these GitHub repository Actions secrets:
-
-- `TELEGRAM_BOT_TOKEN`: the bot token from BotFather.
-- `TELEGRAM_CHANNEL_ID`: the channel username such as `@YourChannel` or the numeric channel ID.
-
-The publishing step skips silently when either secret is missing. Keep both values in GitHub Secrets; never commit them or send them in chat.
-
 
 ## Review comments and community moderation
 

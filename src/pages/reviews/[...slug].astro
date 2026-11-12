@@ -46,8 +46,6 @@ const reviewKeywords = [...new Set([
 ].map(cleanKeyword).filter(Boolean))].slice(0, 20);
 const reviewDescription = d.title + ' — ' + (d.reviewMode === 'preview' ? 'قراءة استباقية لـ' : 'مراجعة ') + typeKeyword + ' وتحليل نقدي للقصة والعناصر الفنية. ' + d.summary + (d.reviewMode === 'preview' ? ' التقدير الاستباقي: ' : ' تقييم VibeCritic: ') + d.score + '/10.';
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
-const shareUrl = encodeURIComponent(canonicalUrl);
-const shareTitle = encodeURIComponent(d.title);
 const schemaType = d.type === 'game' ? 'Game' : d.type === 'series' ? 'CreativeWorkSeries' : 'Movie';
 const reviewStructuredData = {
   '@context': 'https://schema.org',
@@ -166,13 +164,6 @@ const reviewStructuredData = {
         <noscript><p>فعّل JavaScript لعرض مساحة النقاش.</p></noscript>
       </section>
       <a href={url('')} class="article-return">اكتشف مراجعات أخرى <span>←</span></a>
-    <section class="article-facts article-share" aria-label="مشاركة المراجعة">
-        <h2>شارك المراجعة</h2>
-        <div class="article-share-links">
-          <a href={`https://wa.me/?text=${shareTitle}%20${shareUrl}`} target="_blank" rel="noopener noreferrer">واتساب</a>
-          <a href={`https://t.me/share/url?url=${shareUrl}&text=${shareTitle}`} target="_blank" rel="noopener noreferrer">تيليغرام</a>
-        </div>
-      </section>
     </div>
     <aside class="article-aside" aria-label="ملخص ومعلومات العمل">
       {d.poster&&<img class="article-poster" src={optimizeImage(d.poster)} alt={d.title} loading="lazy" decoding="async" width="600" height="900"/>}

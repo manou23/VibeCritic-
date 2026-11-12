@@ -43,7 +43,6 @@ jobs:
           node --check scripts/generate-reviews.mjs
           node --check scripts/backfill-arabic-titles.mjs
           node --check scripts/backfill-game-platforms.mjs
-          node --check scripts/publish-telegram-updates.mjs
           node --check functions/api/review.js
       - name: Install dependencies
         run: npm install
@@ -121,8 +120,3 @@ jobs:
         run: CF_PAGES=1 npm run build
       - name: Validate production build, SEO and sitemap
         run: npm run validate:build
-      - name: Publish new reviews to Telegram channel
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
-        run: npm run publish:telegram
