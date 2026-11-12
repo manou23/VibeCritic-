@@ -1,8 +1,8 @@
 ---
 import '../../styles/global.css';
 import { getCollection, render } from 'astro:content';
-import { LOCALE_META, type Locale } from '../../i18n/config';
-import { optimizeImage } from '../../consts';
+import { LOCALE_META, type Locale } from '../../../i18n/config';
+import { optimizeImage } from '../../../consts';
 
 export async function getStaticPaths() {
   const reviews = await getCollection('reviews', ({ data }) => data.locale === 'en' || data.locale === 'fr');
