@@ -6,8 +6,23 @@ import { TYPE_LABEL, fmtDate, url, optimizeImage, SITE_NAME } from '../../consts
 export async function getStaticPaths(){const reviews=await getCollection('reviews');return reviews.map(review=>({params:{slug:review.id},props:{review}}));}
 const {review}=Astro.props;const {Content}=await render(review);const d=review.data;
 const allReviews=await getCollection('reviews');
-const reviewGenres=new Set(d.genres||[]);
-const similarReviews=allReviews.filter(entry=>entry.id!==review.id&&entry.data.type===d.type&&(entry.data.genres||[]).some(genre=>reviewGenres.has(genre))).sort((a,b)=>(b.data.genres||[]).filter(genre=>reviewGenres.has(genre)).length-(a.data.genres||[]).filter(genre=>reviewGenres.has(genre)).length).slice(0,3);
+const normalizeSimilarity=value=>String(value||'').toLocaleLowerCase('ar').normalize('NFKD').replace(/\\p{M}/gu,'').replace(/[أإآٱ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/[^\\p{L}\\p{N}\\s]/gu,' ').trim().replace(/\\s+/g,' ');
+const setOf=values=>new Set((values||[]).map(normalizeSimilarity).filter(Boolean));
+const currentTags=setOf(d.tags),currentGenres=setOf(d.genres),currentYear=Number(String(d.releaseDate||'').slice(0,4))||null;
+const similarityFor=entry=>{
+ const tags=setOf(entry.data.tags),genres=setOf(entry.data.genres);
+ const tagHits=[...currentTags].filter(value=>tags.has(value)).length;
+ const genreHits=[...currentGenres].filter(value=>genres.has(value)).length;
+ const year=Number(String(entry.data.releaseDate||'').slice(0,4))||null;
+ const yearDistance=currentYear&&year?Math.abs(currentYear-year):99;
+ const yearMatch=yearDistance===0?1:yearDistance<=2?.5:0;
+ const score=tagHits*3+genreHits*2+yearMatch;
+ return {entry,score,tagHits,genreHits,yearMatch};
+};
+const similarReviews=allReviews.filter(entry=>entry.id!==review.id&&entry.data.type===d.type)
+ .map(similarityFor).filter(item=>item.tagHits+item.genreHits>0)
+ .sort((a,b)=>b.score-a.score||b.tagHits-a.tagHits||b.genreHits-a.genreHits)
+ .slice(0,3).map(item=>item.entry);
 
 const typeLabel = TYPE_LABEL[d.type];
 const youtubeVideoId = /^[A-Za-z0-9_-]{11}$/.test(d.youtubeVideoId || '') ? d.youtubeVideoId : null;
@@ -30,6 +45,8 @@ const reviewKeywords = [...new Set([
 ].map(cleanKeyword).filter(Boolean))].slice(0, 20);
 const reviewDescription = d.title + ' — ' + (d.reviewMode === 'preview' ? 'قراءة استباقية لـ' : 'مراجعة ') + typeKeyword + ' وتحليل نقدي للقصة والعناصر الفنية. ' + d.summary + (d.reviewMode === 'preview' ? ' التقدير الاستباقي: ' : ' تقييم VibeCritic: ') + d.score + '/10.';
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+const shareUrl = encodeURIComponent(canonicalUrl);
+const shareTitle = encodeURIComponent(d.title);
 const schemaType = d.type === 'game' ? 'Game' : d.type === 'series' ? 'CreativeWorkSeries' : 'Movie';
 const reviewStructuredData = {
   '@context': 'https://schema.org',
@@ -70,6 +87,7 @@ const reviewStructuredData = {
       {d.reviewMode === 'preview' && <span class="article-ai">قراءة استباقية — قبل الإصدار</span>}
     </div>
     <h1>{d.title}</h1>
+    {d.originalTitle && d.originalTitle !== d.title && <p class="article-original-title" lang="en" dir="auto">{d.originalTitle}</p>}
     <p class="article-deck">{d.headline}</p>
   </header>
 
@@ -82,21 +100,14 @@ const reviewStructuredData = {
         <p>{d.hook || d.headline}</p>
       </section>
       {youtubeVideoId && <section class="article-video" aria-labelledby="article-video-title">
-        <div class="article-video-heading">
-          <p class="eyebrow">من YouTube الرسمي</p>
-          <h2 id="article-video-title">شاهد المقطع</h2>
+        <div class="article-video-heading"><p class="eyebrow">من YouTube الرسمي</p><h2 id="article-video-title">شاهد المقطع</h2></div>
+        <div class="article-video-frame" data-youtube-facade data-video-id={youtubeVideoId}>
+          <button class="youtube-facade-button" type="button" aria-label="تشغيل المقطع">
+            <img src={`https://i.ytimg.com/vi/${youtubeVideoId}/hqdefault.jpg`} alt="" loading="lazy" decoding="async" width="480" height="360"/>
+            <span class="youtube-play-icon" aria-hidden="true">▶</span>
+          </button>
         </div>
-        <div class="article-video-frame">
-          <iframe
-            src={`https://www.youtube-nocookie.com/embed/${youtubeVideoId}`}
-            title={youtubeVideoTitle}
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <p class="article-video-note">يُعرض المقطع عبر مشغل YouTube المضمّن؛ حقوق الفيديو وإتاحته تبقى لصاحب القناة وYouTube.</p>
+        <p class="article-video-note">لن يتم تحميل مشغل YouTube أو الاتصال به إلا عند النقر على التشغيل.</p>
       </section>}
       <section class="article-summary">
         <p class="eyebrow">عن العمل</p>
@@ -123,21 +134,35 @@ const reviewStructuredData = {
         {d.cast?.length>0 && <p><strong>أبرز المشاركين:</strong> {d.cast.join('، ')}</p>}
         {d.crew?.length>0 && <p><strong>الإخراج / الإبداع:</strong> {d.crew.join('، ')}</p>}
       </section>}
-      <section class="article-facts" aria-label="أماكن المشاهدة">
+      {d.type === 'game' ? ((d.platforms?.length || d.gameStores?.length) > 0 && <section class="article-facts" aria-label="منصات اللعب والمتاجر">
+        <h2>أين تلعبه؟</h2>
+        {d.platforms?.length > 0 && <p><strong>المنصات:</strong> {d.platforms.join('، ')}</p>}
+        {d.gameStores?.length > 0 && <p class="game-store-links"><strong>المتاجر:</strong> {d.gameStores.map(store=><a href={store.url || '#'} target="_blank" rel="noopener noreferrer">{store.name}</a>)}</p>}
+      </section>) : ((d.watchProviders?.length || d.watchProviderUrl) > 0 && <section class="article-facts" aria-label="أماكن المشاهدة">
         <h2>أين أشاهده؟</h2>
-        {d.watchProviders?.length>0 ? <p>المنصات المتاحة في الجزائر بحسب بيانات TMDB: {d.watchProviders.join('، ')}</p> : <p>لم تُسجّل بيانات منصات المشاهدة لهذا العمل بعد.</p>}
+        {d.watchProviders?.length>0 && <p>المنصات المتاحة في الجزائر بحسب بيانات TMDB: {d.watchProviders.join('، ')}</p>}
         {d.watchProviderUrl && <a href={d.watchProviderUrl} target="_blank" rel="noopener noreferrer">تحقق من خيارات المشاهدة على TMDB ↗</a>}
-      </section>
+      </section>)}
       {similarReviews.length>0 && <section class="article-facts" aria-label="مراجعات مشابهة">
         <h2>مراجعات مشابهة</h2>
         <ul>{similarReviews.map(entry=><li><a href={url('reviews/'+entry.id+'/')}>{entry.data.title} — {entry.data.score.toFixed(1)}/10</a></li>)}</ul>
       </section>}
       <p class="review-method-note">منهجية VibeCritic: هذا تقييم تحريري مبني على المعلومات المنشورة والبيانات المتاحة، وليس ادعاءً باختبار مباشر للعمل. الدرجة تقدير نقدي مستقل وليست تقييماً رسمياً.</p>
       <a href={url('')} class="article-return">اكتشف مراجعات أخرى <span>←</span></a>
+    <section class="article-facts article-share" aria-label="مشاركة المراجعة">
+        <h2>شارك المراجعة</h2>
+        <div class="article-share-links">
+          <a href={`https://wa.me/?text=${shareTitle}%20${shareUrl}`} target="_blank" rel="noopener noreferrer">واتساب</a>
+          <a href={`https://t.me/share/url?url=${shareUrl}&text=${shareTitle}`} target="_blank" rel="noopener noreferrer">تيليغرام</a>
+        </div>
+      </section>
     </div>
     <aside class="article-aside" aria-label="ملخص ومعلومات العمل">
       {d.poster&&<img class="article-poster" src={optimizeImage(d.poster)} alt={d.title} loading="lazy" decoding="async" width="600" height="900"/>}
       <div class="article-score-wrap"><p class="eyebrow">تقييم VibeCritic</p><ScoreCard score={d.score} label={d.reviewMode === 'preview' ? 'تقدير استباقي' : 'تقييم VibeCritic'}/><p class="article-score-note">من 10 — رأينا، والقرار لك.</p>
+        {(d.storyScore !== undefined || d.visualsScore !== undefined || d.soundScore !== undefined || d.pacingScore !== undefined) && <div class="score-breakdown" aria-label="الدرجات الفرعية">
+          {([{label:'القصة',value:d.storyScore},{label:'الصورة',value:d.visualsScore},{label:'الصوت',value:d.soundScore},{label:'الإيقاع',value:d.pacingScore}]).filter(item=>Number.isFinite(item.value)).map(item=><div class="score-breakdown-row"><div><span>{item.label}</span><strong>{Number(item.value).toFixed(1)}/10</strong></div><span class="score-breakdown-track"><i style={`--score-fill:${Number(item.value)*10}%`}></i></span></div>)}
+        </div>}
         {Number(d.sourceRating) > 0 && <p class="article-score-note">تقييم {d.sourceName || 'المصدر'}: {Number(d.sourceRating).toFixed(1)}/{d.sourceRatingScale || 10}{Number(d.sourceVoteCount) > 0 ? ` · ${d.sourceVoteCount} تقييم` : ''}</p>}
         {Number(d.metacriticScore) > 0 && <p class="article-score-note">Metacritic: {Number(d.metacriticScore).toFixed(0)}/100</p>}</div>
       {(d.releaseDate || d.creator || d.genres?.length) && <section class="article-facts" aria-label="معلومات العمل">
@@ -152,3 +177,21 @@ const reviewStructuredData = {
   </div>
 </article>
 </Base>
+
+<script>
+document.querySelectorAll<HTMLElement>('[data-youtube-facade]').forEach((facade)=>{
+ const button=facade.querySelector<HTMLButtonElement>('.youtube-facade-button');
+ button?.addEventListener('click',()=>{
+  const id=facade.dataset.videoId;
+  if(!id)return;
+  const frame=document.createElement('iframe');
+  frame.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(id)+'?autoplay=1';
+  frame.title="مقطع YouTube";
+  frame.loading='eager';
+  frame.referrerPolicy='strict-origin-when-cross-origin';
+  frame.allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share';
+  frame.allowFullscreen=true;
+  facade.replaceChildren(frame);
+ },{once:true});
+});
+</script>
