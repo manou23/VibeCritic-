@@ -31,9 +31,12 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
    </section>
    <div class="ai-review-sections">
     <section><span>01 / STORY</span><h3>القصة والسرد</h3><p id="result-story"></p></section>
-    <section><span>02 / EXPERIENCE</span><h3 id="result-style-title">الأسلوب والتجربة</h3><p id="result-style"></p></section>
+    <section><span>02 / CRAFT</span><h3 id="result-style-title">الأسلوب والإخراج</h3><p id="result-style"></p></section>
     <section><span>03 / VISUALS</span><h3 id="result-visual-title">الصورة والتصميم</h3><p id="result-visuals"></p></section>
     <section><span>04 / SOUND</span><h3>الصوتيات والموسيقى</h3><p id="result-audio"></p></section>
+    <section><span>05 / PERFORMANCE</span><h3>الأداء التقني</h3><p id="result-performance"></p></section>
+    <section><span>06 / USER EXPERIENCE</span><h3>تجربة المستخدم</h3><p id="result-experience"></p></section>
+    <section class="ai-comparison-section"><span>07 / ALTERNATIVES</span><h3>المقارنة والبدائل</h3><p id="result-comparison"></p></section>
    </div>
    <div class="ai-pros-cons"><section class="ai-pros"><h3>ما ينجح فيه</h3><ul id="result-pros"></ul></section><section class="ai-cons"><h3>ما يعيبه</h3><ul id="result-cons"></ul></section></div>
    <section class="ai-verdict"><span>FINAL VERDICT</span><h3>الحكم النهائي</h3><p id="result-verdict"></p></section>
@@ -88,7 +91,7 @@ function put(id,value){const el=document.getElementById(id);if(el)el.textContent
 function putList(id,values){const list=document.getElementById(id);if(!list)return;list.replaceChildren();const items=values||[];if(!items.length&&id==='result-cons'){const li=document.createElement('li');li.textContent='لم تتوفر تحفظات موثوقة كافية لإثبات نقاط ضعف محددة.';list.append(li);return}items.forEach(value=>{const li=document.createElement('li');li.textContent=value;list.append(li)})}
 function status(message,error=false){if(!statusBox)return;statusBox.hidden=false;statusBox.dataset.error=String(error);statusBox.textContent=message}
 function render(r,provider,trailer){
- latestReview=r;latestSharePayload={review:r,provider,trailer};put('result-title',r.title);put('result-hook',r.hook);put('result-score',Number(r.score).toFixed(1));put('result-story',r.story);put('result-style',r.style);put('result-visuals',r.visuals);put('result-audio',r.audio);put('result-verdict',r.verdict);put('result-provider','تم الإنشاء عبر '+provider);putList('result-pros',r.pros);putList('result-cons',r.cons);
+ latestReview=r;latestSharePayload={review:r,provider,trailer};put('result-title',r.title);put('result-hook',r.hook);put('result-score',Number(r.score).toFixed(1));put('result-story',r.story);put('result-style',r.style);put('result-visuals',r.visuals);put('result-audio',r.audio);put('result-performance',r.performance);put('result-experience',r.experience);put('result-comparison',r.comparison);put('result-verdict',r.verdict);put('result-provider','تم الإنشاء عبر '+provider);putList('result-pros',r.pros);putList('result-cons',r.cons);
  put('result-style-title',r.kind==='game'?'أسلوب اللعب والتجربة':r.kind==='series'?'الإخراج وأداء الممثلين':'الإخراج والأداء');put('result-visual-title',r.kind==='game'?'الرسوميات والتصميم الفني':'التصوير واللغة البصرية');
  const trailerBox=document.getElementById('ai-trailer'),trailerFrame=document.getElementById('ai-trailer-frame'),trailerLink=document.getElementById('result-trailer-link');
  trailerFrame.replaceChildren();
