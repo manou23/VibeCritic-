@@ -15,6 +15,10 @@ EXTENSIONS = {".astro", ".ts", ".js", ".mjs", ".css"}
 PREFIXES = ("src/components/", "src/layouts/", "src/pages/", "src/styles/")
 EXACT = {"src/consts.ts", "src/content.config.ts"}
 READ_ONLY = ("package.json", "astro.config.mjs", "scripts/validate-build.mjs")
+MAX_CONTEXT_CHARS = 24000
+MAX_FILE_CHARS = 6500
+MAX_FILES = 6
+MAX_READ_ONLY_CHARS = 4500
 
 
 def git(*args, input_text=None):
@@ -39,30 +43,45 @@ def allowed(path):
 def context_files():
     tracked = git("ls-files", "-z").split("\0")
     paths = [p for p in tracked if p and allowed(p) and (ROOT / p).is_file()]
+
     def rank(p):
         return (0 if p.startswith("src/layouts/") else
                 1 if p.startswith("src/components/") else
                 2 if p.startswith("src/pages/") else
                 3 if p in EXACT else 4, p)
+
     selected, blocks, total = [], [], 0
     for path in sorted(paths, key=rank):
         body = (ROOT / path).read_text(encoding="utf-8")
-        if len(body) > 14000:
+        if len(body) > MAX_FILE_CHARS:
             continue
         block = "\n===== EDITABLE FILE: " + path + " =====\n" + body + "\n"
-        if len(selected) >= 12 or total + len(block) > 85000:
-            break
+        if len(selected) >= MAX_FILES or total + len(block) > MAX_CONTEXT_CHARS:
+            continue
         selected.append(path)
         blocks.append(block)
         total += len(block)
+
     if not selected:
-        raise RuntimeError("No eligible source files found.")
+        raise RuntimeError("No eligible source files found within the safe context limit.")
+
+    read_only_budget = MAX_READ_ONLY_CHARS
+    read_only_blocks = []
     for path in READ_ONLY:
         f = ROOT / path
-        if f.is_file():
-            blocks.insert(0, "\n===== READ-ONLY CONTEXT: " + path + " =====\n" +
-                          f.read_text(encoding="utf-8")[:12000] + "\n")
-    return selected, "".join(blocks)
+        if f.is_file() and read_only_budget > 0:
+            header = "\n===== READ-ONLY CONTEXT: " + path + " =====\n"
+            allowance = max(0, read_only_budget - len(header))
+            if allowance:
+                body = f.read_text(encoding="utf-8")[:allowance]
+                part = header + body + "\n"
+                read_only_blocks.append(part)
+                read_only_budget -= len(part)
+
+    context = "".join(read_only_blocks + blocks)
+    if len(context) > MAX_CONTEXT_CHARS + MAX_READ_ONLY_CHARS:
+        raise RuntimeError("Internal context size guard rejected the Groq request.")
+    return selected, context
 
 
 def groq(api_key, context):
@@ -74,24 +93,37 @@ Arabic/English content, routes, SEO and Astro architecture.
 Do not invent APIs, dependencies, environment variables or facts.
 Never change generated reviews, user data, secrets, workflows, package files,
 build/deployment configuration, or read-only context.
-Do not refactor working code for style. At most 5 existing editable files.
+Do not refactor working code for style. At most 3 existing editable files.
 If no worthwhile safe fix exists, return exactly NO_CHANGES.
 Otherwise output ONLY a unified git diff. No markdown fences or explanation.
 Only paths from EDITABLE FILE sections may be changed. No new/deleted/renamed files."""
+    payload = {
+        "model": MODEL,
+        "temperature": 0.1,
+        "max_tokens": 3500,
+        "messages": [
+            {"role": "system", "content": system},
+            {"role": "user", "content":
+             "READ-ONLY sections are informational only. "
+             "Patch only EDITABLE FILE sections.\n\n" + context}
+        ]
+    }
     r = requests.post(
         API_URL,
         headers={"Authorization": "Bearer " + api_key,
                  "Content-Type": "application/json"},
-        json={"model": MODEL, "temperature": 0.1, "max_tokens": 7000,
-              "messages": [{"role": "system", "content": system},
-                           {"role": "user", "content":
-                            "READ-ONLY sections are informational only. "
-                            "Patch only EDITABLE FILE sections.\n\n" + context}]},
+        json=payload,
         timeout=(20, 180)
     )
     if r.status_code >= 400:
-        raise RuntimeError("Groq API HTTP " + str(r.status_code) +
-                           "; verify model availability and API configuration.")
+        detail = ""
+        try:
+            detail = (r.json().get("error") or {}).get("message", "")
+        except (ValueError, AttributeError):
+            detail = ""
+        detail = re.sub(r"\s+", " ", str(detail))[:300]
+        suffix = ": " + detail if detail else ""
+        raise RuntimeError("Groq API HTTP " + str(r.status_code) + suffix)
     choices = r.json().get("choices") or []
     if not choices:
         raise RuntimeError("Groq returned no completion.")
@@ -107,7 +139,7 @@ def validate_patch(raw, editable):
     if patch.startswith(fence):
         patch = re.sub(r"^" + re.escape(fence) + r"(?:diff)?\s*", "", patch)
         patch = re.sub(r"\s*" + re.escape(fence) + r"$", "", patch)
-    if len(patch) > 45000 or not patch.startswith("diff --git "):
+    if len(patch) > 30000 or not patch.startswith("diff --git "):
         raise RuntimeError("Invalid or oversized unified diff.")
     sections = re.split(r"(?=^diff --git )", patch, flags=re.M)
     changed = []
@@ -127,8 +159,8 @@ def validate_patch(raw, editable):
             raise RuntimeError("Binary patches are forbidden.")
         if old not in changed:
             changed.append(old)
-    if not changed or len(changed) > 5:
-        raise RuntimeError("Patch is empty or changes more than 5 files.")
+    if not changed or len(changed) > 3:
+        raise RuntimeError("Patch is empty or changes more than 3 files.")
     return patch, changed
 
 
@@ -137,7 +169,8 @@ def main():
     if not key:
         raise RuntimeError("GROQ_API_KEY is missing from repository Actions secrets.")
     editable, context = context_files()
-    print("Sending " + str(len(editable)) + " eligible source files to " + MODEL)
+    print("Sending " + str(len(editable)) + " eligible source files (" +
+          str(len(context)) + " context characters) to " + MODEL)
     answer = groq(key, context)
     if answer.strip() == "NO_CHANGES":
         print("No safe, worthwhile code changes found.")
