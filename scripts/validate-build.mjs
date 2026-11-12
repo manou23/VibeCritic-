@@ -157,4 +157,12 @@ if (new URL(canonical[0][1]).origin !== site.origin) throw new Error('نطاق c
 if (!/<meta\s+name=["']description["']\s+content=["'][^"']{30,}["'][^>]*>/i.test(home)) {
   throw new Error('وصف Meta للصفحة الرئيسية مفقود أو قصير جداً.');
 }
+const homepageH1 = [...home.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)];
+if (homepageH1.length !== 1 || !/مراجعات الألعاب والأفلام والمسلسلات/.test(homepageH1[0]?.[1] || '')) {
+  throw new Error('يجب أن تحتوي الصفحة الرئيسية على عنوان H1 واحد ثابت يوضح هوية VibeCritic ومجالها.');
+}
+const homepageDescription = home.match(/<meta\s+name=["']description["']\s+content=["']([^"']+)["'][^>]*>/i)?.[1] || '';
+if (!/VibeCritic/.test(homepageDescription) || !/(مراجعات|مراجعة)/.test(homepageDescription) || homepageDescription.length < 100) {
+  throw new Error('وصف الصفحة الرئيسية يجب أن يعرّف VibeCritic ومحتواها بوضوح وبطول كافٍ.');
+}
 console.log('Build validation passed: ' + sitemapUrls.length + ' indexed sitemap file(s), ' + pageCount + ' unique page URL(s), flat sitemap parity, robots.txt, homepage SEO and dynamic metadata for ' + reviewPages.length + ' review pages verified for ' + site.origin + '.');
