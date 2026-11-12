@@ -890,3 +890,5 @@ img{max-width:100%}
 .site-search-results>a{display:grid;gap:5px;padding:12px;border:1px solid var(--vc-border);border-radius:12px;background:var(--vc-surface)}
 .site-search-results>a strong{color:var(--vc-accent-deep);font-size:14px}
 .site-search-results>a span{color:var(--vc-muted);font-size:12px;line-height:1.6}
+
+.ai-review-promo-expiry{display:block;margin-top:8px;color:var(--vc-muted);font-size:11px;font-weight:700}
