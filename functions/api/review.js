@@ -40,11 +40,20 @@ async function call(p,key,prompt,title,kind){
  if(p.name.toLowerCase().includes('openrouter')){headers['HTTP-Referer']='https://vibecritic.pages.dev/';headers['X-Title']='VibeCritic AI Critic'}
  const body={model:p.model,temperature:.65,max_tokens:2200,response_format:{type:'json_object'},messages:[{role:'system',content:SYSTEM},{role:'user',content:prompt}]};
  try{
-  let res=await fetchWithRetry(url,{method:'POST',headers,body:JSON.stringify(body),signal:ctrl.signal});
-  if(res.status===400){const retry={...body};delete retry.response_format;res=await fetchWithRetry(url,{method:'POST',headers,body:JSON.stringify(retry),signal:ctrl.signal})}
-  if(!res.ok){const e=Error(p.name+' HTTP '+res.status+': '+(await res.text()).slice(0,500));e.status=res.status;throw e}
-  const data=await res.json(),c=data.choices?.[0]?.message?.content,txt=Array.isArray(c)?c.map(x=>x.text||'').join(''):c;
-  if(!txt)throw Error(p.name+': رد فارغ');
+  let data,txt='',finishReason='unknown';
+  for(let attempt=0;attempt<3;attempt++){
+   let res=await fetchWithRetry(url,{method:'POST',headers,body:JSON.stringify(body),signal:ctrl.signal});
+   if(res.status===400){const retry={...body};delete retry.response_format;res=await fetchWithRetry(url,{method:'POST',headers,body:JSON.stringify(retry),signal:ctrl.signal})}
+   if(!res.ok){const e=Error(p.name+' HTTP '+res.status+': '+(await res.text()).slice(0,500));e.status=res.status;throw e}
+   data=await res.json();
+   const c=data.choices?.[0]?.message?.content;
+   txt=Array.isArray(c)?c.map(x=>x.text||'').join(''):String(c||'').trim();
+   finishReason=data.choices?.[0]?.finish_reason||'unknown';
+   if(txt)break;
+   console.warn(p.name+' returned empty content; retry '+(attempt+1)+'/3, finish_reason='+finishReason);
+   if(attempt<2)await new Promise(resolve=>setTimeout(resolve,1200*(attempt+1)));
+  }
+  if(!txt)throw Error(p.name+': رد فارغ بعد 3 محاولات (finish_reason: '+finishReason+')');
   return normalize(parseContent(txt),title,kind);
  }finally{clearTimeout(timer)}
 }
