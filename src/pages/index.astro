@@ -11,7 +11,6 @@ const trendReviews=trending.filter(item=>['مرتفع','متوسط'].includes(it
  const review=reviews.find(entry=>entry.data.type===item.type&&entry.data.sourceId===item.sourceId);
  return {...item,title:review?.data.title||item.title,summary:review?.data.summary||item.summary,poster:optimizeImage(item.poster),backdrop:optimizeImage(item.backdrop||item.poster,'backdrop'),review,href:review?url(`reviews/${review.id}/`):item.sourceUrl,external:!review};
 }).filter(item=>item.href).slice(0,9);
-const trendGroups={movie:trendReviews.filter(item=>item.type==='movie'),series:trendReviews.filter(item=>item.type==='series'),game:trendReviews.filter(item=>item.type==='game')};
 const spotlight=trendReviews[0]||null;
 const todayInAlgeria=new Intl.DateTimeFormat('en-CA',{timeZone:'Africa/Algiers'}).format(new Date());
 const isUpcomingReview=review=>{
@@ -63,16 +62,6 @@ const upcoming=reviews.filter(isUpcomingReview).sort((a,b)=>String(a.data.releas
   <span class="ai-review-promo-spark spark-two">✧</span>
  </div>
 </aside>
-<section class="wrap catalog-section" id="trending">
- <div class="catalog-heading"><div><p class="catalog-eyebrow">WHAT'S TRENDING</p><h2>الترندات حسب النوع</h2><p>مؤشرات الرواج من TMDb للأفلام والمسلسلات وRAWG للألعاب</p></div></div>
- {(['movie','series','game'] as const).map(type=>trendGroups[type].length>0&&<div class="trend-type-group">
-  <div class="catalog-heading"><div><h3>{type==='movie'?'ترند الأفلام':type==='series'?'ترند المسلسلات':'ترند الألعاب'}</h3></div><a href={url('category/'+type+'/')} class="catalog-more">كل القسم <span>←</span></a></div>
-  <div class="catalog-rail">{trendGroups[type].map(item=><a class="review-card trend-review-card" href={item.href} target={item.external?'_blank':undefined} rel={item.external?'noopener noreferrer':undefined}>
-   <div class="review-poster-wrap">{item.poster&&<img class="review-poster" src={item.poster} alt={item.title} loading="lazy" decoding="async" width="600" height="900"/>}<span class="review-type">{type==='movie'?'فيلم':type==='series'?'مسلسل':'لعبة'}</span></div>
-   <div class="review-content"><h3 class="review-title">{item.title}</h3><p class="review-headline">{item.summary}</p><span class="review-date">{item.review?'اقرأ المراجعة':'من '+item.source}</span></div>
-  </a>)}</div>
- </div>)}
-</section>
 <section class="wrap catalog-section" id="top-rated">
  <div class="catalog-heading"><div><p class="catalog-eyebrow">EDITOR'S HIGHEST SCORES</p><h2>الأعلى تقييماً</h2><p>الأعمال التي حصلت على أعلى درجات VibeCritic التحريرية</p></div><a href="#all-reviews" class="catalog-more">كل المراجعات <span>←</span></a></div>
  {topRated.length>0?<div class="catalog-rail">{topRated.map(review=><ReviewCard review={review}/>)}</div>:<div class="catalog-empty">ستظهر هنا الأعمال بعد اكتمال مراجعاتها وتقييمها.</div>}
