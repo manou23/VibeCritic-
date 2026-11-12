@@ -46,7 +46,7 @@ const safeJson = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
 <link rel="preconnect" href="https://image.tmdb.org" crossorigin />
 <link rel="preconnect" href="https://images.igdb.com" crossorigin />
 <link rel="preconnect" href="https://media.rawg.io" crossorigin />
-<script is:inline>try{if(localStorage.getItem("vc-theme")==="dark")document.documentElement.classList.add("dark-mode")}catch{}</script>
+<script is:inline>try{const savedTheme=localStorage.getItem("vc-theme");document.documentElement.classList.toggle("dark-mode",savedTheme!=="light")}catch{document.documentElement.classList.add("dark-mode")}</script>
 <meta name="description" content={metaDescription} />
 {metaKeywords && <meta name="keywords" content={metaKeywords} />}
 <meta name="theme-color" content="#f3f0e8" />
