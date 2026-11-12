@@ -978,3 +978,13 @@ img{max-width:100%}
  .review-feedback-actions{display:grid;grid-template-columns:1fr 1fr}
  .review-feedback-actions button{padding-inline:10px}
 }
+
+
+/* Focused collection pages */
+.curated-collection{padding-top:34px;padding-bottom:50px}
+.curated-collection-description{max-width:760px;margin:12px 0 22px;color:var(--vc-muted);line-height:1.9}
+.curated-links{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:28px;margin-bottom:28px}
+.curated-links h2{width:100%;font-size:16px;font-weight:950}
+.curated-links a{display:inline-flex;align-items:center;gap:18px;min-height:46px;padding:10px 16px;border:1px solid var(--vc-border);border-radius:8px;background:var(--vc-surface);font-weight:850}
+.curated-links a span{color:var(--vc-accent)}
+.dark-mode .curated-links a{background:#211f1a;border-color:#504a40}
