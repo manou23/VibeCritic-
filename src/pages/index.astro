@@ -16,7 +16,7 @@ const spotlight=trendReviews[0]||null;
 const todayInAlgeria=new Intl.DateTimeFormat('en-CA',{timeZone:'Africa/Algiers'}).format(new Date());
 const isUpcomingReview=review=>{
  const releaseDate=String(review.data.releaseDate||'').slice(0,10);
- return /^\\d{4}-\\d{2}-\\d{2}$/.test(releaseDate)&&releaseDate>todayInAlgeria;
+ return /^\d{4}-\d{2}-\d{2}$/.test(releaseDate)&&releaseDate>todayInAlgeria;
 };
 const topRated=[...reviews].filter(review=>review.data.score>0&&!isUpcomingReview(review)&&review.data.reviewMode!=='preview').sort((a,b)=>b.data.score-a.data.score).slice(0,8);
 const upcoming=reviews.filter(isUpcomingReview).sort((a,b)=>String(a.data.releaseDate||'').localeCompare(String(b.data.releaseDate||''))).slice(0,8);
