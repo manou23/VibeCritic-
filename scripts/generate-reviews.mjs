@@ -93,6 +93,15 @@ async function generateWithOpenRouter(prompt){
  }
  throw new Error('OpenRouter لم يرجع JSON صالحاً بعد 3 محاولات: '+lastIssue);
 }
+function validateGeneratedReview(d){
+ const review=String(d?.review||'').replace(/<[^>]*>/g,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').trim();
+ const pros=Array.isArray(d?.pros)?d.pros.filter(x=>String(x||'').trim()):[];
+ const cons=Array.isArray(d?.cons)?d.cons.filter(x=>String(x||'').trim()):[];
+ if(review.length<700)throw new Error('المراجعة المولّدة أقصر من الحد المطلوب للتحليل المتكامل');
+ if(pros.length<3||cons.length<2)throw new Error('قوائم نقاط القوة والضعف غير مكتملة');
+ if(!String(d?.headline||'').trim()||!String(d?.summary||'').trim()||!String(d?.verdict||'').trim())throw new Error('بيانات المراجعة الأساسية غير مكتملة');
+ return d;
+}
 async function generateFallback(prompt,excluded=[],primaryError=null){
  const errors=[];
  if(primaryError)errors.push(provider+': '+primaryError.message);
@@ -104,7 +113,7 @@ async function generateFallback(prompt,excluded=[],primaryError=null){
  ];
  for(const [name,key,run] of attempts){
   if(!key||excluded.includes(name))continue;
-  try{console.warn('التحويل الاحتياطي إلى '+name+'.');return await run();}
+  try{console.warn('التحويل الاحتياطي إلى '+name+'.');return validateGeneratedReview(await run());}
   catch(e){errors.push(name+': '+e.message);console.warn('فشل المزوّد الاحتياطي '+name+':',e.message);}
  }
  throw new Error('تعذر إنشاء المراجعة عبر المزوّد الأساسي والاحتياطيات: '+errors.join(' | '));
@@ -150,7 +159,7 @@ async function generateReview(item){
  };
  try{
   if(!handlers[provider])throw new Error('AI_PROVIDER يجب أن يكون openai أو gemini أو groq أو openrouter');
-  parsed=await handlers[provider]();
+  parsed=validateGeneratedReview(await handlers[provider]());
  }catch(primaryError){
   console.warn('فشل المزوّد الأساسي '+provider+':',primaryError.message);
   parsed=await generateFallback(prompt,[provider],primaryError);
@@ -284,7 +293,7 @@ async function main(){
  const counts={game:0,series:0,movie:0};
  for(const file of files){for(const type of types){if(file.startsWith(type+'-')&&file.endsWith('.md'))counts[type]++;}}
  console.log('عدد المراجعات المنشورة حسب النوع:',JSON.stringify(counts));
- const fresh=[];
+ const fresh=[];let generationFailures=0;
  while(fresh.length<maxPerRun){
   const available=types.filter(type=>pools[type].length>0);
   if(!available.length)break;
@@ -302,9 +311,11 @@ async function main(){
    done.push(await writeReview(item));counts[chosenType]++;
    fresh.push(item);
    console.log('تم إنشاء مراجعة:',item.name,'|',chosenType,'| التوازن الحالي:',JSON.stringify(counts));
-  }catch(e){console.error('تعذر إنشاء مراجعة:',item.name,e.message);}
+  }catch(e){generationFailures++;console.error('تعذر إنشاء مراجعة:',item.name,e.message);}
  }
+ if(!fresh.length&&generationFailures>0)throw new Error('فشلت جميع محاولات توليد المراجعات في هذه الدفعة؛ راجع سجلات المزوّدات ومفاتيح API.');
  if(!fresh.length)console.log('لا توجد أعمال جديدة صالحة للنشر في هذه الدفعة.');
+ if(generationFailures>0)console.warn('تم تجاوز '+generationFailures+' أعمال بسبب أخطاء توليد، مع الاحتفاظ بالمراجعات الناجحة.');
  await fs.writeFile(processedPath,JSON.stringify([...new Set(done)],null,2)+'\n');
 }
 main().catch(e=>{console.error(e);process.exitCode=1;});
