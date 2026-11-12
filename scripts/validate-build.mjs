@@ -81,6 +81,61 @@ const robots = await read('robots.txt');
 if (!robots.includes(new URL('sitemap.xml', site).href)) {
   throw new Error('robots.txt لا يشير إلى ملف sitemap.xml المباشر.');
 }
+
+// Every review must ship its own share metadata and structured review/article data.
+const reviewOutput = path.join(dist, 'reviews');
+const reviewHtmlPaths = await fs.readdir(reviewOutput, { recursive: true }).catch(() => []);
+const reviewPages = reviewHtmlPaths.filter(file => String(file).endsWith('index.html'));
+if (!reviewPages.length) throw new Error('لم يتم العثور على صفحات مراجعات HTML لفحص SEO.');
+for (const relative of reviewPages) {
+  const html = await fs.readFile(path.join(reviewOutput, relative), 'utf8');
+  const metaTags = html.match(/<meta\b[^>]*>/gi) || [];
+  const metaTag = (attribute, value) => metaTags.find(tag => new RegExp('\\b' + attribute + '=["\']' + value + '["\']', 'i').test(tag)) || '';
+  const metaContent = (attribute, value) => {
+    const tag = metaTag(attribute, value);
+    const match = tag.match(/\bcontent="([^"]*)"|\bcontent='([^']*)'/i);
+    return match?.[1] ?? match?.[2] ?? '';
+  };
+  const ogTitle = metaContent('property', 'og:title');
+  const ogDescription = metaContent('property', 'og:description');
+  const ogUrl = metaContent('property', 'og:url');
+  const twitterCard = metaContent('name', 'twitter:card');
+  const publishedTime = metaContent('property', 'article:published_time');
+  const jsonLdTag = html.match(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/i);
+  let structuredType = '';
+  try {
+    const structured = JSON.parse(jsonLdTag?.[1] || 'null');
+    structuredType = structured?.['@type'] || '';
+  } catch {}
+  const failedMeta = [];
+  if (ogTitle.length < 8) failedMeta.push('og:title');
+  if (ogDescription.length < 30) failedMeta.push('og:description');
+  if (!ogUrl.startsWith('https://')) failedMeta.push('og:url');
+  if (!['summary_large_image', 'summary'].includes(twitterCard)) failedMeta.push('twitter:card');
+  if (!/^\d{4}-\d{2}-\d{2}T/.test(publishedTime)) failedMeta.push('article:published_time');
+  if (!['Review', 'Article'].includes(structuredType)) failedMeta.push('JSON-LD Review/Article');
+  if (failedMeta.length) {
+    throw new Error('وسوم SEO غير مكتملة في صفحة ' + relative + '؛ العناصر: ' + failedMeta.join(', '));
+  }
+  const canonicalTag = (html.match(/<link\b[^>]*>/gi) || []).find(tag => /\brel=["']canonical["']/i.test(tag));
+  const pageCanonical = canonicalTag?.match(/\bhref=["']([^"']+)["']/i)?.[1];
+}
+// Review-content integrity checks also run after the production build.
+const reviewRoot = path.resolve('src/content/reviews');
+const reviewFiles = (await fs.readdir(reviewRoot)).filter(name => name.endsWith('.md'));
+const reviewFailures = [];
+for (const file of reviewFiles) {
+  const source = await fs.readFile(path.join(reviewRoot, file), 'utf8');
+  const body = source.replace(/^---\s*\r?\n[\s\S]*?\r?\n---(?:\r?\n|$)/, '');
+  if (/(^|[^\d.])0\.0(?![\d.])/.test(source)) reviewFailures.push(file + ': contains forbidden 0.0 score');
+  for (const match of body.matchAll(/(\d+(?:[.,]\d+)?)\s*\/\s*10/g)) {
+    const value = Number(match[1].replace(',', '.'));
+    if (value > 10) reviewFailures.push(file + ': score above 10 (' + match[0] + ')');
+  }
+  if (/^\s*\d+(?:[.,]\d+)?\s*$/m.test(body)) reviewFailures.push(file + ': contains a standalone number without context');
+}
+if (reviewFailures.length) throw new Error('Post-build review integrity failed:\n' + reviewFailures.map(item => ' - ' + item).join('\n'));
+
 const home = await read('index.html');
 const canonical = [...home.matchAll(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["'][^>]*>/gi)];
 if (canonical.length !== 1) throw new Error('يجب أن يحتوي الصفحة الرئيسية على رابط canonical واحد فقط.');
@@ -88,4 +143,4 @@ if (new URL(canonical[0][1]).origin !== site.origin) throw new Error('نطاق c
 if (!/<meta\s+name=["']description["']\s+content=["'][^"']{30,}["'][^>]*>/i.test(home)) {
   throw new Error('وصف Meta للصفحة الرئيسية مفقود أو قصير جداً.');
 }
-console.log('Build validation passed: ' + sitemapUrls.length + ' indexed sitemap file(s), ' + pageCount + ' unique page URL(s), flat sitemap parity, robots.txt and homepage SEO metadata verified for ' + site.origin + '.');
+console.log('Build validation passed: ' + sitemapUrls.length + ' indexed sitemap file(s), ' + pageCount + ' unique page URL(s), flat sitemap parity, robots.txt, homepage SEO and dynamic metadata for ' + reviewPages.length + ' review pages verified for ' + site.origin + '.');

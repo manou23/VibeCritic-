@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { getCollection } from 'astro:content';
 import PagefindConfig from 'astro-pagefind/components/PagefindConfig.astro';
 import { SITE_NAME, SITE_DESC, url } from '../consts';
 const {
@@ -8,6 +9,7 @@ const {
   image = '',
   pageType = 'website',
   publishedAt = '',
+  articleSection = '',
   noindex = false,
   keywords = [],
   structuredData: pageStructuredData = null,
@@ -36,6 +38,8 @@ const structuredData = pageStructuredData || (pageType === 'article'
       inLanguage: 'ar',
     });
 const safeJson = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
+const telegramChannelUrl = import.meta.env.PUBLIC_TELEGRAM_CHANNEL_URL || '';
+const searchReviews = await getCollection('reviews');
 ---
 <!doctype html>
 <html lang="ar" dir="rtl">
@@ -53,10 +57,13 @@ const safeJson = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
 <meta name="robots" content={noindex ? 'noindex,nofollow' : 'index,follow'} />
 <link rel="icon" type="image/svg+xml" href={url('favicon.svg')} />
 <link rel="canonical" href={canonical} />
+<link rel="alternate" type="application/rss+xml" title="VibeCritic RSS" href={url('rss.xml')} />
 <meta property="og:locale" content="ar_DZ" />
 <meta property="og:type" content={pageType === 'article' ? 'article' : 'website'} />
 <meta property="og:site_name" content={SITE_NAME} />
 <meta property="og:url" content={canonical} />
+{pageType === 'article' && publishedAt && <meta property="article:published_time" content={publishedAt} />}
+{pageType === 'article' && articleSection && <meta property="article:section" content={articleSection} />}
 <meta property="og:title" content={pageTitle} />
 <meta property="og:description" content={metaDescription} />
 {image && <><meta property="og:image" content={image} /><meta property="og:image:alt" content={title} /></>}
@@ -86,9 +93,15 @@ const safeJson = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
    <div><p class="catalog-eyebrow">VIBECRITIC SEARCH</p><h2 id="site-search-title">ابحث في مكتبة VibeCritic</h2></div>
    <button class="site-search-close" id="site-search-close" type="button" aria-label="إغلاق البحث">×</button>
   </div>
-  <p class="site-search-hint">بحث فوري في نصوص وعناوين جميع المراجعات المنشورة.</p>
+  <p class="site-search-hint">بحث عربي ذكي يدعم اختلاف الألف والهمزة والتاء المربوطة والتشكيل، مع اقتراحات فورية.</p>
   <PagefindConfig />
-  <pagefind-searchbox placeholder="ابحث عن لعبة أو فيلم أو مسلسل..." max-results="12" hide-shortcut></pagefind-searchbox>
+  <div class="site-search-enhanced">
+   <label for="normalized-site-search">عنوان العمل أو كلمة من المراجعة</label>
+   <input id="normalized-site-search" type="search" list="normalized-site-suggestions" placeholder="مثال: إنتَرستيلر أو Minecraft" autocomplete="off"/>
+   <datalist id="normalized-site-suggestions">{searchReviews.map(entry=><option value={entry.data.title}/>)}{searchReviews.filter(entry=>entry.data.originalTitle).map(entry=><option value={entry.data.originalTitle}/>)}</datalist>
+   <div id="normalized-site-results" class="site-search-results" aria-live="polite"><p>ابدأ الكتابة لعرض المراجعات المطابقة.</p></div>
+   <div class="site-search-index" hidden>{searchReviews.map(entry=><i data-site-search-entry data-title={entry.data.title} data-search={[entry.data.title,entry.data.originalTitle,entry.data.headline,entry.data.summary,...(entry.data.tags||[]),...(entry.data.genres||[])].filter(Boolean).join(' ')} data-href={url('reviews/'+entry.id+'/')} data-summary={entry.data.summary} data-type={entry.data.type}/>)}</div>
+  </div>
  </div>
 </dialog>
 
@@ -97,6 +110,7 @@ const safeJson = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
  <div class="wrap footer-inner">
   <a href={url('')} class="footer-brand">Vibe<span>Critic</span></a>
   <p>© {new Date().getFullYear()} {SITE_NAME}. نراجع بوضوح، ونترك القرار لك.</p>
+  <nav class="footer-subscriptions" aria-label="تابع أحدث المراجعات"><a href={url('rss.xml')}>RSS — أحدث المراجعات</a>{telegramChannelUrl && <a href={telegramChannelUrl} target="_blank" rel="noopener noreferrer">قناة تيليغرام</a>}</nav>
   <details class="footer-sources">
    <summary>مصدر البيانات</summary>
    <p>بيانات الأفلام والمسلسلات مقدمة عبر <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer">TMDb</a>. هذا المنتج يستخدم TMDb API لكنه غير معتمد أو مصادق عليه من TMDb.</p>
@@ -146,13 +160,28 @@ const searchDialog = document.getElementById('site-search-dialog');
 const searchOpen = document.getElementById('site-search-open');
 const searchClose = document.getElementById('site-search-close');
 searchOpen?.addEventListener('click', () => {
-  if (searchDialog instanceof HTMLDialogElement && !searchDialog.open) searchDialog.showModal();
+  if (searchDialog instanceof HTMLDialogElement && !searchDialog.open) { searchDialog.showModal(); requestAnimationFrame(() => document.getElementById('normalized-site-search')?.focus({ preventScroll: true })); }
 });
+searchDialog?.addEventListener('close', () => searchOpen?.focus());
 searchClose?.addEventListener('click', () => {
   if (searchDialog instanceof HTMLDialogElement) searchDialog.close();
 });
 searchDialog?.addEventListener('click', (event) => {
   if (event.target === searchDialog && searchDialog instanceof HTMLDialogElement) searchDialog.close();
+});
+
+const normalizedSearchInput=document.getElementById('normalized-site-search');
+const normalizedSearchResults=document.getElementById('normalized-site-results');
+const normalizedSearchEntries=[...document.querySelectorAll<HTMLElement>('[data-site-search-entry]')].map(entry=>({title:entry.dataset.title||'',search:entry.dataset.search||entry.dataset.title||'',href:entry.dataset.href||'',summary:entry.dataset.summary||'',type:entry.dataset.type||''}));
+const normalizeArabicSearch=(value:string)=>String(value||'').toLocaleLowerCase('ar').normalize('NFKD').replace(/\p{M}/gu,'').replace(/[أإآٱ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/ؤ/g,'و').replace(/ئ/g,'ي').replace(/[^\p{L}\p{N}\s]/gu,' ').trim().replace(/\s+/g,' ');
+normalizedSearchInput?.addEventListener('input',()=>{
+ if(!normalizedSearchResults||!(normalizedSearchInput instanceof HTMLInputElement))return;
+ const query=normalizeArabicSearch(normalizedSearchInput.value);
+ normalizedSearchResults.replaceChildren();
+ if(!query){const hint=document.createElement('p');hint.textContent='ابدأ الكتابة لعرض المراجعات المطابقة.';normalizedSearchResults.append(hint);return;}
+ const matches=normalizedSearchEntries.filter(item=>normalizeArabicSearch(item.search).includes(query)).slice(0,10);
+ if(!matches.length){const empty=document.createElement('p');empty.textContent='لا توجد مراجعات مطابقة. جرّب كتابة جزء آخر من الاسم.';normalizedSearchResults.append(empty);return;}
+ for(const item of matches){const link=document.createElement('a');link.className='site-search-result';link.href=item.href;const title=document.createElement('strong');title.textContent=item.title;const summary=document.createElement('span');summary.textContent=item.summary;link.append(title,summary);normalizedSearchResults.append(link);}
 });</script>
 </body>
 </html>

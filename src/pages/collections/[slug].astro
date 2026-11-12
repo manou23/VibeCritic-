@@ -1,0 +1,40 @@
+---
+import Base from '../../layouts/Base.astro';
+import ReviewCard from '../../components/ReviewCard.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { url } from '../../consts';
+
+const collections = {
+  'horror-films': {
+    type: 'movie',
+    title: 'أفلام الرعب',
+    eyebrow: 'HORROR FILMS',
+    description: 'مراجعات أفلام الرعب، من الرعب النفسي إلى الخوارق والبقاء، مع تقييم واضح لعناصر كل تجربة.',
+    matches: (review: CollectionEntry<'reviews'>) => [...(review.data.genres || []), ...(review.data.tags || [])].some(value => /horror|رعب/i.test(value)),
+  },
+  'android-games': {
+    type: 'game',
+    title: 'ألعاب أندرويد',
+    eyebrow: 'ANDROID GAMES',
+    description: 'اكتشف مراجعات الألعاب المتاحة على Android، مع معلومات المنصات وروابط المتاجر عند توفرها.',
+    matches: (review) => (review.data.platforms || []).some(value => /android/i.test(value)),
+  },
+};
+export function getStaticPaths() {
+  return [{ params: { slug: 'horror-films' } }, { params: { slug: 'android-games' } }];
+}
+const slug = Astro.params.slug || '';
+const collection = collections[slug as keyof typeof collections];
+const allReviews = await getCollection('reviews', ({ data }) => data.type === collection.type);
+const reviews = allReviews.filter(collection.matches).sort((a,b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<Base title={collection.title} description={collection.description} noindex={reviews.length === 0}>
+<section class="wrap catalog-section curated-collection">
+  <p class="catalog-eyebrow">{collection.eyebrow}</p>
+  <h1 class="section-title">{collection.title}</h1>
+  <p class="curated-collection-description">{collection.description}</p>
+  <p class="section-count">{reviews.length} مراجعة متاحة</p>
+  {reviews.length > 0 ? <div class="review-grid">{reviews.map(review => <ReviewCard review={review}/>)}</div> : <div class="catalog-empty">لم تُنشر مراجعات مطابقة لهذا التصنيف بعد. ستظهر هنا تلقائياً عند توفر أعمال موثقة.</div>}
+  <a class="article-return" href={url('category/' + collection.type + '/')}>العودة إلى قسم {collection.type === 'movie' ? 'الأفلام' : 'الألعاب'} ←</a>
+</section>
+</Base>
