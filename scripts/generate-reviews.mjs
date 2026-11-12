@@ -127,8 +127,38 @@ async function generateFallback(prompt,excluded=[],primaryError=null){
  }
  throw new Error('تعذر إنشاء المراجعة عبر المزوّد الأساسي والاحتياطيات: '+errors.join(' | '));
 }
+async function findOfficialGameTrailer(item){
+ const key=String(env.YOUTUBE_API_KEY||'').trim();
+ if(!key)return null;
+ try{
+  const query=new URLSearchParams({part:'snippet',q:item.name+' official game trailer',type:'video',maxResults:'10',order:'relevance',videoEmbeddable:'true',videoSyndicated:'true',regionCode:'DZ',relevanceLanguage:'en',key});
+  const search=await getJson('https://www.googleapis.com/youtube/v3/search?'+query.toString());
+  const candidates=(search.items||[]).filter(x=>x.id?.videoId&&x.snippet?.title);
+  if(!candidates.length)return null;
+  const ids=candidates.map(x=>x.id.videoId).join(',');
+  const details=await getJson('https://www.googleapis.com/youtube/v3/videos?'+new URLSearchParams({part:'snippet,status',id:ids,key}).toString());
+  const byId=new Map((details.items||[]).map(x=>[x.id,x]));
+  const tokens=String(item.name||'').toLowerCase().normalize('NFKD').replace(/[\\u0300-\\u036f]/g,'').split(/[^a-z0-9]+/).filter(x=>x.length>2);
+  const ranked=candidates.map(candidate=>{
+   const video=byId.get(candidate.id.videoId);
+   if(!video||video.status?.privacyStatus!=='public'||video.status?.embeddable!==true)return null;
+   const title=candidate.snippet.title||'',channel=candidate.snippet.channelTitle||'';
+   if(/fan.?made|concept trailer|reaction|review|parody|trailer breakdown|gameplay walkthrough/i.test(title))return null;
+   const official=/\\bofficial\\b/i.test(title)||/\\bofficial\\b/i.test(channel);
+   if(!official||!/\\b(trailer|teaser)\\b/i.test(title))return null;
+   const words=title.toLowerCase().normalize('NFKD').replace(/[\\u0300-\\u036f]/g,'').split(/[^a-z0-9]+/);
+   const overlap=tokens.filter(t=>words.includes(t)).length;
+   return {score:overlap,videoId:candidate.id.videoId,title,channelTitle:channel};
+  }).filter(x=>x&&x.score>0).sort((a,b)=>b.score-a.score);
+  const best=ranked[0];
+  return best?{youtubeVideoId:best.videoId,youtubeVideoTitle:best.title}:null;
+ }catch(error){
+  console.warn('تعذر العثور على تريلر رسمي للعبة '+item.name+'؛ ستُنشر المراجعة دون فيديو:',error.message);
+  return null;
+ }
+}
 async function enrichItem(item){
- if(item.type==='game')return item;
+ if(item.type==='game'){const trailer=await findOfficialGameTrailer(item);return trailer?{...item,metadata:{...(item.metadata||{}),...trailer}}:item;}
  try{
   const key=required('TMDB_API_KEY'),endpoint=item.type==='movie'?'movie':'tv';
   const detail=await getJson('https://api.themoviedb.org/3/'+endpoint+'/'+item.id+'?api_key='+key+'&language=ar&append_to_response=credits,videos');
