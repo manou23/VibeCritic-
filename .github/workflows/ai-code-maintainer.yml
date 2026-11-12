@@ -1,14 +1,8 @@
 name: AI code maintainer
 
+# TEMPORARILY PAUSED: re-enable triggers and the job condition when maintenance is safe.
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '.github/scripts/ai_code_maintainer.py'
-      - '.github/workflows/ai-code-maintainer.yml'
-  schedule:
-    - cron: '30 4 * * *'
 
 permissions:
   contents: write
@@ -20,6 +14,7 @@ concurrency:
 
 jobs:
   maintain:
+    if: false
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
