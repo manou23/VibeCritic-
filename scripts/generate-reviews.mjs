@@ -5,11 +5,13 @@ const env=process.env;
 const provider=(env.AI_PROVIDER||(env.GEMINI_API_KEY?'gemini':env.GROQ_API_KEY?'groq':env.OPENROUTER_API_KEY?'openrouter':'openai')).toLowerCase();
 const targetTotal=100,dailyPerType=5,releaseBatchLimit=10;
 const gamesWindowDays=Math.max(1,Number.isFinite(Number(env.GAMES_WINDOW_DAYS))&&env.GAMES_WINDOW_DAYS?Number(env.GAMES_WINDOW_DAYS):14);
+const upcomingWindowDays=Math.max(30,Number.isFinite(Number(env.UPCOMING_WINDOW_DAYS))&&env.UPCOMING_WINDOW_DAYS?Number(env.UPCOMING_WINDOW_DAYS):365);
 const outDir='src/content/reviews',processedPath='data/processed.json';
 function required(name){if(!env[name])throw new Error(`متغير البيئة ${name} غير مضبوط في GitHub Secrets`);return env[name];}
 async function getJson(url){const r=await fetch(url,{signal:AbortSignal.timeout(30000)});if(!r.ok){const safeUrl=url.replace(/([?&](?:api_key|key)=)[^&]+/i,'$1[REDACTED]');throw new Error(`HTTP ${r.status}: ${safeUrl}`);}return r.json();}
 const clean=v=>String(v??'').replace(/[\r\n]+/g,' ').trim();
 function algeriaDate(){const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Africa/Algiers',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());const values=Object.fromEntries(parts.filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));return `${values.year}-${values.month}-${values.day}`;}
+function addDays(date,days){const value=new Date(`${date}T00:00:00Z`);value.setUTCDate(value.getUTCDate()+days);return value.toISOString().slice(0,10);}
 const slugify=v=>clean(v).toLowerCase().normalize('NFKD').replace(/[^\p{L}\p{N}]+/gu,'-').replace(/^-|-$/g,'').slice(0,70)||'review';
 const y=v=>JSON.stringify(String(v??''));
 const arr=a=>a?.length?a.map(v=>`  - ${y(v)}`).join('\n'):'  []';
@@ -288,12 +290,17 @@ async function generateReview(item){
 }
 async function tmdb(type,mode='trending'){
  const key=required('TMDB_API_KEY'),endpoint=type==='movie'?'movie':'tv';
- const today=algeriaDate(),since=new Date(Date.now()-7*86400000).toISOString().slice(0,10);
- const pages=mode==='releases'?[1,2,3]:mode==='archive'?[1,2,3,4,5]:[1];
+ const today=algeriaDate(),since=new Date(Date.now()-7*86400000).toISOString().slice(0,10),upcomingUntil=addDays(today,upcomingWindowDays);
+ const pages=mode==='upcoming'?[1,2,3,4,5]:mode==='releases'?[1,2,3]:mode==='archive'?[1,2,3,4,5]:[1];
  const [lists,genreData]=await Promise.all([
   Promise.all(pages.map(page=>{
    const params=new URLSearchParams({api_key:key,language:'ar-SA',page:String(page)});
-   if(mode==='releases'){
+   if(mode==='upcoming'){
+    params.set(type==='movie'?'primary_release_date.gte':'first_air_date.gte',today);
+    params.set(type==='movie'?'primary_release_date.lte':'first_air_date.lte',upcomingUntil);
+    params.set('sort_by','popularity.desc');
+    params.set('include_adult','false');
+   }else if(mode==='releases'){
     params.set(type==='movie'?'primary_release_date.gte':'first_air_date.gte',since);
     params.set(type==='movie'?'primary_release_date.lte':'first_air_date.lte',today);
     params.set('sort_by',type==='movie'?'primary_release_date.desc':'first_air_date.desc');
@@ -304,7 +311,7 @@ async function tmdb(type,mode='trending'){
     params.set('vote_count.gte','200');
     params.set('include_adult','false');
    }
-   const discovery=mode==='releases'||mode==='archive';
+   const discovery=mode==='releases'||mode==='archive'||mode==='upcoming';
    return getJson('https://api.themoviedb.org/3/'+(discovery?'discover/':'trending/')+endpoint+(discovery?'':'/week')+'?'+params.toString());
   })),
   getJson(`https://api.themoviedb.org/3/genre/${endpoint}/list?api_key=${key}&language=ar-SA`)
@@ -318,17 +325,18 @@ async function tmdb(type,mode='trending'){
   rating:Number(x.vote_average)||0,genres:(x.genre_ids||[]).map(id=>genreNames.get(id)).filter(Boolean),
   sourceUrl:`https://www.themoviedb.org/${endpoint}/${x.id}`,source:'TMDB',
   popularity:Number(x.popularity)||0,sourceMetricName:'TMDB popularity',sourceMetricValue:Number(x.popularity)||0,trendConfidence:Number(x.popularity)>0?'مرتفع':'منخفض',trendRank:i+1
- })).filter(x=>x.description.trim().length>=60&&(mode!=='releases'||(x.date>=since&&x.date<=today)))
+ })).filter(x=>x.description.trim().length>=60&&(mode!=='releases'||(x.date>=since&&x.date<=today))&&(mode!=='upcoming'||(x.date>today&&x.date<=upcomingUntil)))
  .filter((x,i,all)=>all.findIndex(y=>y.id===x.id)===i);
 }
 async function gamesFromRawg(mode='recent'){
  const key=required('RAWG_API_KEY');
- const today=new Date().toISOString().slice(0,10);
- const since=new Date(Date.now()-gamesWindowDays*86400000).toISOString().slice(0,10);
+ const today=algeriaDate();
+ const since=addDays(today,-gamesWindowDays),until=addDays(today,upcomingWindowDays);
  const query=new URLSearchParams({key,ordering:mode==='archive'?'-rating':'-added',page_size:'40',exclude_additions:'true',exclude_parents:'true'});
- if(mode!=='archive')query.set('dates',since+','+today);
+ if(mode==='upcoming')query.set('dates',today+','+until);
+ else if(mode!=='archive')query.set('dates',since+','+today);
  const listing=await getJson('https://api.rawg.io/api/games?'+query.toString());
- const candidates=(listing.results||[]).filter(x=>x.id&&x.slug&&(mode==='archive'?(x.released&&x.released<today&&((Number(x.metacritic)||0)>=70||(Number(x.rating)||0)>=4)):(x.released>=since&&x.released<=today))).slice(0,18);
+ const candidates=(listing.results||[]).filter(x=>x.id&&x.slug&&(mode==='archive'?(x.released&&x.released<today&&((Number(x.metacritic)||0)>=70||(Number(x.rating)||0)>=4)):mode==='upcoming'?(x.released>=today&&x.released<=until):(x.released>=since&&x.released<=today))).slice(0,18);
  const detailed=await Promise.all(candidates.map(async item=>{
   try{
    const detail=await getJson('https://api.rawg.io/api/games/'+encodeURIComponent(item.slug)+'?key='+encodeURIComponent(key));
@@ -349,15 +357,17 @@ async function gamesFromRawg(mode='recent'){
  }));
  return detailed.filter(x=>x&&x.description.length>=60&&x.added>0).sort((a,b)=>b.added-a.added);
 }
-async function gamesFromIgdb(){
+async function gamesFromIgdb(mode='recent'){
  const clientId=required('IGDB_CLIENT_ID'),clientSecret=required('IGDB_CLIENT_SECRET');
  const tokenResponse=await fetch('https://id.twitch.tv/oauth2/token',{method:'POST',headers:{'content-type':'application/x-www-form-urlencoded'},body:new URLSearchParams({client_id:clientId,client_secret:clientSecret,grant_type:'client_credentials'}),signal:AbortSignal.timeout(30000)});
  if(!tokenResponse.ok)throw new Error(`Twitch OAuth HTTP ${tokenResponse.status}: ${await tokenResponse.text()}`);
  const {access_token}=await tokenResponse.json();if(!access_token)throw new Error('لم يرجع Twitch access token صالحاً');
  const headers={'Client-ID':clientId,Authorization:`Bearer ${access_token}`,Accept:'application/json','Content-Type':'text/plain'};
- const since=Math.floor((Date.now()-gamesWindowDays*86400000)/1000);
  const now=Math.floor(Date.now()/1000);
- const query=`fields name,summary,first_release_date,cover.image_id,genres.name,rating,follows,hypes,rating_count,url,platforms.name,involved_companies.company.name,involved_companies.developer; where first_release_date >= ${since} & first_release_date <= ${now}; sort first_release_date desc; limit 40;`;
+ const since=Math.floor((Date.now()-gamesWindowDays*86400000)/1000);
+ const until=Math.floor(new Date(addDays(algeriaDate(),upcomingWindowDays)+'T23:59:59Z').getTime()/1000);
+ const from=mode==='upcoming'?now:since,to=mode==='upcoming'?until:now;
+ const query=`fields name,summary,first_release_date,cover.image_id,genres.name,rating,follows,hypes,rating_count,url,platforms.name,involved_companies.company.name,involved_companies.developer; where first_release_date >= ${from} & first_release_date <= ${to}; sort first_release_date ${mode==='upcoming'?'asc':'desc'}; limit 40;`;
  const response=await fetch('https://api.igdb.com/v4/games',{method:'POST',headers,body:query,signal:AbortSignal.timeout(45000)});
  if(!response.ok)throw new Error(`IGDB recent games HTTP ${response.status}: ${await response.text()}`);
  return (await response.json()).map((x,i)=>{
@@ -386,6 +396,20 @@ async function games(){
 
  })();
  return gamesCachePromise;
+}
+async function upcomingGames(){
+ if(env.RAWG_API_KEY){
+  try{
+   const results=await gamesFromRawg('upcoming');
+   if(results.length){console.log('RAWG: تم العثور على '+results.length+' ألعاب قادمة خلال '+upcomingWindowDays+' يوماً.');return results;}
+   console.warn('RAWG لم يُرجع ألعاباً قادمة؛ سيتم تجربة IGDB إن كان مضبوطاً.');
+  }catch(error){console.warn('تعذر جلب الألعاب القادمة من RAWG:',error.message);}
+ }
+ if(env.IGDB_CLIENT_ID&&env.IGDB_CLIENT_SECRET){
+  try{return await gamesFromIgdb('upcoming');}
+  catch(error){console.warn('تعذر جلب الألعاب القادمة من IGDB:',error.message);}
+ }
+ return [];
 }
 async function globalTrending(){
  const key=required('TMDB_API_KEY');
@@ -447,10 +471,11 @@ async function main(){
  console.log('وضع النشر:',buildPhase?'استكمال المكتبة إلى 100 مقالة':'رصد الإصدارات الجديدة');
  let rawPools;
  if(buildPhase){
-  const [recentGames,archiveGames,seriesNow,movieNow,seriesArchive,movieArchive]=await Promise.all([games(),gamesArchive(),tmdb('series'),tmdb('movie'),tmdb('series','archive'),tmdb('movie','archive')]);
-  rawPools={game:[...recentGames,...archiveGames],series:[...seriesNow,...seriesArchive],movie:[...movieNow,...movieArchive]};
+  const [futureGames,recentGames,archiveGames,futureSeries,futureMovies,seriesNow,movieNow,seriesArchive,movieArchive]=await Promise.all([upcomingGames(),games(),gamesArchive(),tmdb('series','upcoming'),tmdb('movie','upcoming'),tmdb('series'),tmdb('movie'),tmdb('series','archive'),tmdb('movie','archive')]);
+  rawPools={game:[...futureGames,...recentGames,...archiveGames],series:[...futureSeries,...seriesNow,...seriesArchive],movie:[...futureMovies,...movieNow,...movieArchive]};
  }else{
-  rawPools={game:await games(),series:await tmdb('series','releases'),movie:await tmdb('movie','releases')};
+  const [futureGames,recentGames,futureSeries,recentSeries,futureMovies,recentMovies]=await Promise.all([upcomingGames(),games(),tmdb('series','upcoming'),tmdb('series','releases'),tmdb('movie','upcoming'),tmdb('movie','releases')]);
+  rawPools={game:[...futureGames,...recentGames],series:[...futureSeries,...recentSeries],movie:[...futureMovies,...recentMovies]};
  }
  const eligible=items=>{const seen=new Set();return items.filter(x=>{const key=`${x.type}:${x.id}`;if(seen.has(key)||String(x.description||'').trim().length<60||done.includes(key)||publishedKeys.has(key))return false;seen.add(key);return true;});};
  const pools={game:eligible(rawPools.game),series:eligible(rawPools.series),movie:eligible(rawPools.movie)};
