@@ -9,7 +9,7 @@ for(const file of required){
  catch{throw new Error('ملف البناء المطلوب غير موجود: dist/'+file);}
 }
 const read=file=>fs.readFile(path.join(dist,file),'utf8');
-const locs=xml=>[...xml.matchAll(/<loc>([^<]+)<\\/loc>/g)].map(match=>match[1].trim());
+const locs=xml=>[...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match=>match[1].trim());
 const indexXml=await read('sitemap-index.xml');
 const sitemapUrls=locs(indexXml);
 if(!sitemapUrls.length)throw new Error('ملف sitemap-index.xml لا يحتوي على روابط خرائط فرعية.');
@@ -18,7 +18,7 @@ let pageCount=0;
 for(const raw of sitemapUrls){
  const url=new URL(raw);
  if(url.origin!==site.origin)throw new Error('نطاق غير متوقع في فهرس Sitemap: '+url.origin);
- const relative=decodeURIComponent(url.pathname.replace(/^\\/+/,'')); 
+ const relative=decodeURIComponent(url.pathname.replace(/^\/+/,'')); 
  const file=path.join(dist,relative);
  const child=await fs.readFile(file,'utf8').catch(()=>{throw new Error('خريطة فرعية غير موجودة: '+relative)});
  const pages=locs(child);
@@ -33,8 +33,8 @@ for(const raw of sitemapUrls){
 const robots=await read('robots.txt');
 if(!robots.includes(new URL('sitemap-index.xml',site).href))throw new Error('robots.txt لا يشير إلى Sitemap الصحيح للموقع.');
 const home=await read('index.html');
-const canonical=[...home.matchAll(/<link\\s+rel=["']canonical["']\\s+href=["']([^"']+)["'][^>]*>/gi)];
+const canonical=[...home.matchAll(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["'][^>]*>/gi)];
 if(canonical.length!==1)throw new Error('يجب أن يحتوي الصفحة الرئيسية على رابط canonical واحد فقط.');
 if(new URL(canonical[0][1]).origin!==site.origin)throw new Error('نطاق canonical للصفحة الرئيسية لا يطابق نطاق الإنتاج.');
-if(!/<meta\\s+name=["']description["']\\s+content=["'][^"']{30,}["'][^>]*>/i.test(home))throw new Error('وصف Meta للصفحة الرئيسية مفقود أو قصير جداً.');
+if(!/<meta\s+name=["']description["']\s+content=["'][^"']{30,}["'][^>]*>/i.test(home))throw new Error('وصف Meta للصفحة الرئيسية مفقود أو قصير جداً.');
 console.log('Build validation passed: '+sitemapUrls.length+' sitemap file(s), '+pageCount+' unique page URL(s), robots.txt and homepage SEO metadata verified for '+site.origin+'.');
