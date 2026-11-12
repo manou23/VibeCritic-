@@ -21,7 +21,7 @@ const collections = {
   },
 };
 export function getStaticPaths() {
-  return Object.keys(collections).map(slug => ({ params: { slug } }));
+  return [{ params: { slug: 'horror-films' } }, { params: { slug: 'android-games' } }];
 }
 const slug = Astro.params.slug || '';
 const collection = collections[slug as keyof typeof collections];
