@@ -5,12 +5,13 @@
 ## المزايا
 - واجهة عربية RTL بتصميم سينمائي ومتجاوب.
 - تصنيفات مستقلة ومراجعات بتقييم من 10.
+- بحث نصي سريع عبر Pagefind يعمل بالكامل على الموقع الثابت دون خادم.
 - توليد مراجعات آلياً اعتماداً على بيانات TMDb وRAWG ومزود ذكاء اصطناعي تختاره.
 - نشر عبر GitHub Pages من خلال GitHub Actions.
 
 ## الإعداد
 1. أضف Secrets التالية من إعدادات المستودع: `TMDB_API_KEY` و`RAWG_API_KEY`، وأحد `OPENAI_API_KEY` أو `GEMINI_API_KEY`.
-2. أضف متغير المستودع `AI_PROVIDER` بقيمة `openai` أو `gemini` (اختياري؛ يختار OpenAI تلقائياً عند وجود مفتاحه).
+2. أضف متغير المستودع `AI_PROVIDER` بقيمة `openai` أو `gemini` (اختياري؛ يختار OpenAI تلقائياً عند وجود مفتاحه). ويمكن ضبط `MAX_PER_RUN` و`GAMES_WINDOW_DAYS` اختيارياً.
 3. من Settings → Pages اختر GitHub Actions كمصدر النشر.
 4. شغّل Workflow باسم **Generate reviews and publish** يدوياً أول مرة، أو اتركه يعمل وفق الجدول كل 8 ساعات.
 
