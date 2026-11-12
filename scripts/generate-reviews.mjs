@@ -261,7 +261,7 @@ async function globalTrending(){
   backdrop:x.backdrop_path?`https://image.tmdb.org/t/p/w780${x.backdrop_path}`:'',
   summary:x.overview||'',sourceUrl:`https://www.themoviedb.org/${x.media_type==='tv'?'tv':'movie'}/${x.id}`,
   source:'TMDB',sourceRank:Number(x.popularity)||0,popularity:Number(x.popularity)||0,sourceMetricName:'TMDB popularity',sourceMetricValue:Number(x.popularity)||0,trendConfidence:'مرتفع',trendRank:i+1,updatedAt:new Date().toISOString()
- })).filter((x,i,all)=>all.findIndex(y=>y.type===x.type&&y.id===x.id)===i);
+ })).filter((x,i,all)=>x.sourceMetricValue>0&&all.findIndex(y=>y.type===x.type&&y.id===x.id)===i);
  let gameList=[];
  try{gameList=await games();}catch(error){console.warn('تعذر تحديث ترند الألعاب، سيستمر الموقع بترند TMDB فقط:',error.message);}
  const gameItems=gameList.filter(x=>Number(x.popularity)>0&&Number(x.sourceMetricValue??x.popularity)>0).slice(0,3).map((x,i)=>({
