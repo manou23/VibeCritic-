@@ -87,15 +87,15 @@ const reviewFiles = (await fs.readdir(reviewRoot)).filter(name => name.endsWith(
 const reviewFailures = [];
 for (const file of reviewFiles) {
   const source = await fs.readFile(path.join(reviewRoot, file), 'utf8');
-  const body = source.replace(/^---\\s*\\r?\\n[\\s\\S]*?\\r?\\n---(?:\\r?\\n|$)/, '');
-  if (/(^|[^\\d.])0\\.0(?![\\d.])/.test(source)) reviewFailures.push(file + ': contains forbidden 0.0 score');
-  for (const match of body.matchAll(/(\\d+(?:[.,]\\d+)?)\\s*\\/\\s*10/g)) {
+  const body = source.replace(/^---\s*\r?\n[\s\S]*?\r?\n---(?:\r?\n|$)/, '');
+  if (/(^|[^\d.])0\.0(?![\d.])/.test(source)) reviewFailures.push(file + ': contains forbidden 0.0 score');
+  for (const match of body.matchAll(/(\d+(?:[.,]\d+)?)\s*\/\s*10/g)) {
     const value = Number(match[1].replace(',', '.'));
     if (value > 10) reviewFailures.push(file + ': score above 10 (' + match[0] + ')');
   }
-  if (/^\\s*\\d+(?:[.,]\\d+)?\\s*$/m.test(body)) reviewFailures.push(file + ': contains a standalone number without context');
+  if (/^\s*\d+(?:[.,]\d+)?\s*$/m.test(body)) reviewFailures.push(file + ': contains a standalone number without context');
 }
-if (reviewFailures.length) throw new Error('Post-build review integrity failed:\\n' + reviewFailures.map(item => ' - ' + item).join('\\n'));
+if (reviewFailures.length) throw new Error('Post-build review integrity failed:\n' + reviewFailures.map(item => ' - ' + item).join('\n'));
 
 const home = await read('index.html');
 const canonical = [...home.matchAll(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["'][^>]*>/gi)];
