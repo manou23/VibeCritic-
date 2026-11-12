@@ -3,7 +3,7 @@ import path from 'node:path';
 
 const env=process.env;
 const provider=(env.AI_PROVIDER||(env.GEMINI_API_KEY?'gemini':env.GROQ_API_KEY?'groq':env.OPENROUTER_API_KEY?'openrouter':'openai')).toLowerCase();
-const maxPerRun=Math.min(3,Math.max(1,Number.isFinite(Number(env.MAX_PER_RUN))?Number(env.MAX_PER_RUN):3));
+const targetTotal=100,dailyPerType=5,releaseBatchLimit=10;
 const gamesWindowDays=Math.max(1,Number.isFinite(Number(env.GAMES_WINDOW_DAYS))&&env.GAMES_WINDOW_DAYS?Number(env.GAMES_WINDOW_DAYS):14);
 const outDir='src/content/reviews',processedPath='data/processed.json';
 function required(name){if(!env[name])throw new Error(`متغير البيئة ${name} غير مضبوط في GitHub Secrets`);return env[name];}
@@ -210,14 +210,25 @@ async function generateReview(item){
  if(pros.length<3)throw new Error('قائمة نقاط القوة غير مكتملة');
  return {hook:clean(d.hook),headline:clean(d.headline),summary:clean(d.summary),verdict:clean(d.verdict),score:Math.round(Math.min(10,Math.max(0,Number(d.score)||0))*10)/10,pros,cons,tags:Array.isArray(d.tags)?d.tags.slice(0,8).map(clean):[],review};
 }
-async function tmdb(type){
+async function tmdb(type,mode='trending'){
  const key=required('TMDB_API_KEY'),endpoint=type==='movie'?'movie':'tv';
- const [trend,genreData]=await Promise.all([
-  getJson(`https://api.themoviedb.org/3/trending/${endpoint}/week?api_key=${key}&language=ar`),
+ const today=algeriaDate(),since=new Date(Date.now()-7*86400000).toISOString().slice(0,10);
+ const pages=mode==='releases'?[1,2,3]:[1];
+ const [lists,genreData]=await Promise.all([
+  Promise.all(pages.map(page=>{
+   const params=new URLSearchParams({api_key:key,language:'ar',page:String(page)});
+   if(mode==='releases'){
+    params.set(type==='movie'?'primary_release_date.gte':'first_air_date.gte',since);
+    params.set(type==='movie'?'primary_release_date.lte':'first_air_date.lte',today);
+    params.set('sort_by',type==='movie'?'primary_release_date.desc':'first_air_date.desc');
+    params.set('include_adult','false');
+   }
+   return getJson('https://api.themoviedb.org/3/'+(mode==='releases'?'discover/':'trending/')+endpoint+(mode==='releases'?'':'/week')+'?'+params.toString());
+  })),
   getJson(`https://api.themoviedb.org/3/genre/${endpoint}/list?api_key=${key}&language=ar`)
  ]);
  const genreNames=new Map((genreData.genres||[]).map(g=>[g.id,g.name]));
- return (trend.results||[]).map((x,i)=>({
+ return lists.flatMap(list=>list.results||[]).map((x,i)=>({
   id:String(x.id),type,name:x.title||x.name||'بدون عنوان',description:x.overview||'',
   date:x.release_date||x.first_air_date||'',
   poster:x.poster_path?`https://image.tmdb.org/t/p/w500${x.poster_path}`:'',
@@ -225,7 +236,8 @@ async function tmdb(type){
   rating:Number(x.vote_average)||0,genres:(x.genre_ids||[]).map(id=>genreNames.get(id)).filter(Boolean),
   sourceUrl:`https://www.themoviedb.org/${endpoint}/${x.id}`,source:'TMDB',
   popularity:Number(x.popularity)||0,sourceMetricName:'TMDB popularity',sourceMetricValue:Number(x.popularity)||0,trendConfidence:Number(x.popularity)>0?'مرتفع':'منخفض',trendRank:i+1
- })).filter(x=>x.description.trim().length>=60);
+ })).filter(x=>x.description.trim().length>=60&&(mode!=='releases'||(x.date>=since&&x.date<=today)))
+ .filter((x,i,all)=>all.findIndex(y=>y.id===x.id)===i);
 }
 async function gamesFromRawg(){
  const key=required('RAWG_API_KEY');
@@ -319,46 +331,79 @@ async function main(){
  await fs.mkdir(outDir,{recursive:true});await fs.mkdir('data',{recursive:true});await fs.mkdir('src/data',{recursive:true});
  try{
   const top=await globalTrending();
-  await fs.writeFile('src/data/trending.json',JSON.stringify(top,null,2)+'\n','utf8');
+  await fs.writeFile('src/data/trending.json',JSON.stringify(top,null,2)+'\\n','utf8');
   console.log(`تم تحديث قائمة الترندات العالمية: ${top.length} أعمال.`);
  }catch(e){console.error('تعذر تحديث الترندات العالمية، سيتم الاحتفاظ بآخر قائمة:',e.message);}
  let done=[];try{done=JSON.parse(await fs.readFile(processedPath,'utf8'));}catch{}
  const types=['game','series','movie'];
- const publishedFiles=await fs.readdir(outDir);
- const publishedKeys=new Set(publishedFiles.map(name=>{const type=types.find(type=>name.startsWith(type+'-'));const id=name.match(/-(\d+)\.md$/)?.[1];return type&&id?`${type}:${id}`:null;}).filter(Boolean));
- const eligible=(items)=>items.filter(x=>String(x.description||'').trim().length>=60&&!done.includes(`${x.type}:${x.id}`)&&!publishedKeys.has(`${x.type}:${x.id}`));
- const rawPools={game:await games(),series:await tmdb('series'),movie:await tmdb('movie')};
+ const publishedFiles=(await fs.readdir(outDir)).filter(name=>name.endsWith('.md'));
+ const publishedKeys=new Set(publishedFiles.map(name=>{const type=types.find(type=>name.startsWith(type+'-'));const id=name.match(/-(\\d+)\\.md$/)?.[1];return type&&id?`${type}:${id}`:null;}).filter(Boolean));
+ const counts={game:0,series:0,movie:0},todayCounts={game:0,series:0,movie:0};
+ const today=algeriaDate();
+ for(const file of publishedFiles){
+  const type=types.find(value=>file.startsWith(value+'-'));if(!type)continue;
+  counts[type]++;
+  const content=await fs.readFile(path.join(outDir,file),'utf8');
+  const date=content.match(/^date:\\s*["']?(\\d{4}-\\d{2}-\\d{2})/m)?.[1];
+  if(date===today)todayCounts[type]++;
+ }
+ const totalPublished=Object.values(counts).reduce((sum,value)=>sum+value,0);
+ const buildPhase=totalPublished<targetTotal;
+ console.log('إجمالي المراجعات:',totalPublished,'/',targetTotal,'| حسب القسم:',JSON.stringify(counts));
+ console.log('وضع النشر:',buildPhase?'استكمال المكتبة إلى 100 مقالة':'رصد الإصدارات الجديدة');
+ let rawPools;
+ if(buildPhase){
+  rawPools={game:await games(),series:await tmdb('series'),movie:await tmdb('movie')};
+ }else{
+  rawPools={game:await games(),series:await tmdb('series','releases'),movie:await tmdb('movie','releases')};
+ }
+ const eligible=items=>items.filter(x=>String(x.description||'').trim().length>=60&&!done.includes(`${x.type}:${x.id}`)&&!publishedKeys.has(`${x.type}:${x.id}`));
  const pools={game:eligible(rawPools.game),series:eligible(rawPools.series),movie:eligible(rawPools.movie)};
  const skippedThinSources=Object.values(rawPools).reduce((total,items)=>total+items.filter(x=>String(x.description||'').trim().length<60).length,0);
  if(skippedThinSources)console.warn('تم استبعاد '+skippedThinSources+' أعمال لعدم توفر وصف مصدر كافٍ لتوليد مراجعة موثوقة.');
- const files=await fs.readdir(outDir);
- const counts={game:0,series:0,movie:0};
- for(const file of files){for(const type of types){if(file.startsWith(type+'-')&&file.endsWith('.md'))counts[type]++;}}
- console.log('عدد المراجعات المنشورة حسب النوع:',JSON.stringify(counts));
- const today=algeriaDate();let publishedToday=0;
- for(const file of publishedFiles.filter(name=>name.endsWith('.md'))){const content=await fs.readFile(path.join(outDir,file),'utf8');const match=content.match(/^date:\s*["']?(\d{4}-\d{2}-\d{2})/m);if(match?.[1]===today)publishedToday++;}
- const remainingToday=Math.max(0,maxPerRun-publishedToday);
- console.log(`حد النشر اليومي: ${maxPerRun}، المنشور اليوم: ${publishedToday}، المتبقي: ${remainingToday}.`);
+ let quotas={game:0,series:0,movie:0};
+ if(buildPhase){
+  let remaining=Math.max(0,targetTotal-totalPublished);
+  const order=[...types].sort((a,b)=>counts[a]-counts[b]);
+  while(remaining>0){
+   let progressed=false;
+   for(const type of order){
+    if(remaining<=0)break;
+    if(quotas[type]<dailyPerType){quotas[type]++;remaining--;progressed=true;}
+   }
+   if(!progressed)break;
+  }
+  for(const type of types)quotas[type]=Math.min(quotas[type],Math.max(0,dailyPerType-todayCounts[type]));
+  console.log('الحصة اليومية المستهدفة لكل قسم:',JSON.stringify(quotas),'| المنشور اليوم:',JSON.stringify(todayCounts));
+ }else{
+  let remaining=releaseBatchLimit;
+  const order=[...types].sort((a,b)=>pools[b].length-pools[a].length);
+  while(remaining>0){
+   let progressed=false;
+   for(const type of order){
+    if(remaining<=0)break;
+    if(quotas[type]<pools[type].length){quotas[type]++;remaining--;progressed=true;}
+   }
+   if(!progressed)break;
+  }
+  console.log('دفعة الإصدارات الجديدة المسموح بها في هذا التشغيل:',JSON.stringify(quotas));
+ }
  const fresh=[];let generationFailures=0;
- while(fresh.length<remainingToday){
-  const available=types.filter(type=>pools[type].length>0);
-  if(!available.length)break;
-  const chosenType=available.sort((a,b)=>{
-   const balance=counts[a]-counts[b];
-   if(balance!==0)return balance;
-   const aTop=pools[a][0],bTop=pools[b][0];
-   return (aTop?.trendRank??999)-(bTop?.trendRank??999)||(bTop?.popularity||0)-(aTop?.popularity||0);
-  })[0];
-  const item=pools[chosenType].shift();
-  try{
-   done.push(await writeReview(item));counts[chosenType]++;
-   fresh.push(item);
-   console.log('تم إنشاء مراجعة:',item.name,'|',chosenType,'| التوازن الحالي:',JSON.stringify(counts));
-  }catch(e){generationFailures++;console.error('تعذر إنشاء مراجعة:',item.name,e.message);}
+ for(const type of types){
+  while(quotas[type]>0&&pools[type].length>0){
+   const item=pools[type].shift();quotas[type]--;
+   try{
+    done.push(await writeReview(item));counts[type]++;
+    fresh.push(item);
+    console.log('تم إنشاء مراجعة:',item.name,'|',type,'| الإجمالي:',Object.values(counts).reduce((sum,value)=>sum+value,0));
+   }catch(e){generationFailures++;console.error('تعذر إنشاء مراجعة:',item.name,e.message);}
+  }
  }
  if(!fresh.length&&generationFailures>0)throw new Error('فشلت جميع محاولات توليد المراجعات في هذه الدفعة؛ راجع سجلات المزوّدات ومفاتيح API.');
- if(!fresh.length)console.log('لا توجد أعمال جديدة صالحة للنشر في هذه الدفعة.');
+ if(!fresh.length)console.log(buildPhase?'لا توجد أعمال جديدة صالحة لاستكمال المكتبة في هذه الدفعة.':'لم يتم العثور على إصدارات جديدة مؤهلة خلال آخر 7 أيام.');
  if(generationFailures>0)console.warn('تم تجاوز '+generationFailures+' أعمال بسبب أخطاء توليد، مع الاحتفاظ بالمراجعات الناجحة.');
- await fs.writeFile(processedPath,JSON.stringify([...new Set(done)],null,2)+'\n');
+ await fs.writeFile(processedPath,JSON.stringify([...new Set(done)],null,2)+'\\n');
+ const finalTotal=Object.values(counts).reduce((sum,value)=>sum+value,0);
+ console.log(finalTotal>=targetTotal?'تم بلوغ هدف 100 مقالة؛ سيعمل التشغيل القادم بوضع رصد الإصدارات الجديدة.':`المتبقي للوصول إلى 100 مقالة: ${targetTotal-finalTotal}`);
 }
 main().catch(e=>{console.error(e);process.exitCode=1;});
