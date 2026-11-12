@@ -1,17 +1,17 @@
 [
   {
-    "id": "84773",
-    "sourceId": "84773",
-    "type": "series",
-    "title": "سيد الخواتم: خواتم السلطة",
-    "poster": "https://image.tmdb.org/t/p/w500/9gSNkJmf6A1uVKMcUhDn4WPKGLR.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w780/achmETPRJZc9QVXsMPgHwYEyNar.jpg",
-    "summary": "بدءا من وقت السلم النسبي ، نتابع مجموعة من الشخصيات وهم يواجهون عودة ظهور الشر إلى الأرض الوسطى. من أحلك أعماق الجبال الضبابية ، إلى غابات ليندون المهيبة ، إلى مملكة جزيرة نومينور الخلابة ، إلى أبعد مدى من الخريطة ، ستقوم هذه الممالك والشخصيات بنحت الموروثات التي تعيش لفترة طويلة بعد رحيلها.",
-    "sourceUrl": "https://www.themoviedb.org/tv/84773",
+    "id": "1368337",
+    "sourceId": "1368337",
+    "type": "movie",
+    "title": "الأوديسة",
+    "poster": "https://image.tmdb.org/t/p/w500/bvjEvjhrumkl7FnzR3oopkR5pvx.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/bulFtfy3oBQtCnAMSi7g6DSSds3.jpg",
+    "summary": "يتتبع الفيلم رحلة أوديسيوس، الملك الأسطوري لـ \"إيثاكا\"، في عودته الطويلة والخطرة إلى وطنه بعد انتهاء حرب طروادة. تستغرق رحلته عشر سنوات، وخلالها يواجه أوديسيوس العديد من التحديات والمخاطر والمخلوقات الأسطورية",
+    "sourceUrl": "https://www.themoviedb.org/movie/1368337",
     "source": "TMDB",
-    "sourceRank": 157.6506,
+    "sourceRank": 456.7546,
     "trendRank": 1,
-    "updatedAt": "2026-11-12T00:22:03.041Z",
+    "updatedAt": "2026-11-12T02:14:53.671Z",
     "rank": 1
   },
   {
@@ -26,8 +26,23 @@
     "source": "IGDB",
     "sourceRank": 0,
     "trendRank": 2,
-    "updatedAt": "2026-11-12T00:22:03.877Z",
+    "updatedAt": "2026-11-12T02:14:54.391Z",
     "rank": 2
+  },
+  {
+    "id": "1792170",
+    "sourceId": "1792170",
+    "type": "movie",
+    "title": "Model Citizen",
+    "poster": "https://image.tmdb.org/t/p/w500/66Le9LJ0EfQ5Y1Jdj3elL5jGr2B.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/mC5Y5jmodmTp7T7eyQ8tTBnQRg5.jpg",
+    "summary": "بعد فقدانه ذاكرته، يحاول الشرطي السابق ستيفن باي التعافي في مزرعة معزولة، لكن أجواء العداء والمراقبة الغامضة تثير شكوكه. ومع ظهور مؤشرات على أن ماضيه ليس كما يتذكره، يبدأ رحلة لكشف حقيقة هويته والجهة التي تتلاعب بحياته",
+    "sourceUrl": "https://www.themoviedb.org/movie/1792170",
+    "source": "TMDB",
+    "sourceRank": 47.6662,
+    "trendRank": 3,
+    "updatedAt": "2026-11-12T02:14:53.671Z",
+    "rank": 3
   },
   {
     "id": "411926",
@@ -40,24 +55,24 @@
     "sourceUrl": "https://www.igdb.com/games/eon--1",
     "source": "IGDB",
     "sourceRank": 0,
-    "trendRank": 3,
-    "updatedAt": "2026-11-12T00:22:03.877Z",
-    "rank": 3
+    "trendRank": 4,
+    "updatedAt": "2026-11-12T02:14:54.391Z",
+    "rank": 4
   },
   {
-    "id": "1792170",
-    "sourceId": "1792170",
+    "id": "1263337",
+    "sourceId": "1263337",
     "type": "movie",
-    "title": "Model Citizen",
-    "poster": "https://image.tmdb.org/t/p/w500/66Le9LJ0EfQ5Y1Jdj3elL5jGr2B.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w780/mC5Y5jmodmTp7T7eyQ8tTBnQRg5.jpg",
-    "summary": "بعد فقدانه ذاكرته، يحاول الشرطي السابق ستيفن باي التعافي في مزرعة معزولة، لكن أجواء العداء والمراقبة الغامضة تثير شكوكه. ومع ظهور مؤشرات على أن ماضيه ليس كما يتذكره، يبدأ رحلة لكشف حقيقة هويته والجهة التي تتلاعب بحياته",
-    "sourceUrl": "https://www.themoviedb.org/movie/1792170",
+    "title": "قلب الوحش",
+    "poster": "https://image.tmdb.org/t/p/w500/5Jx6LOSb8eszxsvtynZkbfQaIWK.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w780/6uVRPFflyJpo8Cx872olmlGTWla.jpg",
+    "summary": "بعد حادث تحطم طائرة مروع، يجد ضابط القوات الخاصة جيمس بيلمونت وكلبه المقاتل أودين نفسيهما عالقين في عمق برية ألاسكا. ويضطران معاً إلى خوض معركة شرسة من أجل البقاء في مواجهة قسوة الطبيعة.",
+    "sourceUrl": "https://www.themoviedb.org/movie/1263337",
     "source": "TMDB",
-    "sourceRank": 53.5297,
-    "trendRank": 4,
-    "updatedAt": "2026-11-12T00:22:03.041Z",
-    "rank": 4
+    "sourceRank": 554.0784,
+    "trendRank": 5,
+    "updatedAt": "2026-11-12T02:14:53.671Z",
+    "rank": 5
   },
   {
     "id": "417642",
@@ -70,8 +85,8 @@
     "sourceUrl": "https://www.igdb.com/games/starcraft--1",
     "source": "IGDB",
     "sourceRank": 13,
-    "trendRank": 5,
-    "updatedAt": "2026-11-12T00:22:03.877Z",
-    "rank": 5
+    "trendRank": 6,
+    "updatedAt": "2026-11-12T02:14:54.391Z",
+    "rank": 6
   }
 ]
