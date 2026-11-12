@@ -113,6 +113,56 @@ const reviewStructuredData = {
         <p>{d.verdict || 'تتحدد قيمة هذا العمل بحسب مدى اهتمامك بنوعه وعناصره الفنية، مع مراعاة نقاط القوة والتحفظات المذكورة أعلاه.'}</p>
       </section>
       <p class="review-method-note">منهجية VibeCritic: هذا تقييم تحريري مبني على المعلومات المنشورة والبيانات المتاحة، وليس ادعاءً باختبار مباشر للعمل. الدرجة تقدير نقدي مستقل وليست تقييماً رسمياً.</p>
+      <section class="article-comments" data-comments-section data-review-slug={review.id} aria-labelledby="comments-title">
+        <div class="comments-heading">
+          <div>
+            <p class="eyebrow">COMMUNITY / DISCUSSION</p>
+            <h2 id="comments-title">مساحة النقاش</h2>
+            <p class="comments-intro">شارك رأيك في هذا العمل باحترام ووضوح.</p>
+          </div>
+          <span class="comments-count" data-comments-count>0 تعليق منشور</span>
+        </div>
+        <div class="comments-demo" data-demo-comments>
+          <div class="comments-demo-label"><span aria-hidden="true">✦</span> أمثلة تجريبية — ليست تعليقات زوار حقيقيين</div>
+          <article class="comment-card comment-demo-card">
+            <div class="comment-avatar" aria-hidden="true">ت</div>
+            <div class="comment-content">
+              <div class="comment-meta"><strong>نموذج تجريبي 01</strong><span>مثال توضيحي</span></div>
+              <p>أي عنصر في هذا العمل تعتقد أنه يستحق نقاشاً أعمق؟ هذه مساحة لبدء الحوار حول المراجعة.</p>
+              <span class="comment-demo-tag">تعليق تجريبي</span>
+            </div>
+          </article>
+          <article class="comment-card comment-demo-card">
+            <div class="comment-avatar" aria-hidden="true">ت</div>
+            <div class="comment-content">
+              <div class="comment-meta"><strong>نموذج تجريبي 02</strong><span>مثال توضيحي</span></div>
+              <p>يمكنك مشاركة قراءة مختلفة للعمل، أو الإشارة إلى نقطة اتفقت أو اختلفت معها في التقييم.</p>
+              <span class="comment-demo-tag">تعليق تجريبي</span>
+            </div>
+          </article>
+        </div>
+        <div class="comments-list" data-comments-list aria-live="polite">
+          <p class="comments-loading">جارٍ التحقق من التعليقات المنشورة…</p>
+        </div>
+        <form class="comments-form" data-comments-form>
+          <div class="comments-form-heading">
+            <h3>أضف تعليقك</h3>
+            <p>ستتم مراجعة التعليق قبل ظهوره للزوار.</p>
+          </div>
+          <label for="comment-nickname">اسم مستعار</label>
+          <input id="comment-nickname" name="nickname" type="text" maxlength="32" minlength="2" autocomplete="nickname" placeholder="كيف نُناديك؟" required />
+          <label for="comment-body">تعليقك</label>
+          <textarea id="comment-body" name="body" rows="4" maxlength="700" minlength="8" placeholder="اكتب رأيك حول هذا العمل…" required></textarea>
+          <div class="comments-form-trap" aria-hidden="true">
+            <label for="comment-website">اترك هذا الحقل فارغاً</label>
+            <input id="comment-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+          <div class="comments-form-footer">
+            <span class="comments-form-status" data-comments-status role="status">التعليقات تخضع للمراجعة قبل النشر.</span>
+            <button type="submit" class="comments-submit" data-comments-submit disabled>إرسال التعليق</button>
+          </div>
+        </form>
+      </section>
       <a href={url('')} class="article-return">اكتشف مراجعات أخرى <span>←</span></a>
     </div>
     <aside class="article-aside" aria-label="ملخص ومعلومات العمل">
