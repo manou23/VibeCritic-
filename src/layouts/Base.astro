@@ -95,7 +95,7 @@ const searchReviews = await getCollection('reviews');
    <input id="normalized-site-search" type="search" list="normalized-site-suggestions" placeholder="مثال: إنتَرستيلر أو Minecraft" autocomplete="off"/>
    <datalist id="normalized-site-suggestions">{searchReviews.map(entry=><option value={entry.data.title}/>)}{searchReviews.filter(entry=>entry.data.originalTitle).map(entry=><option value={entry.data.originalTitle}/>)}</datalist>
    <div id="normalized-site-results" class="site-search-results" aria-live="polite"><p>ابدأ الكتابة لعرض المراجعات المطابقة.</p></div>
-   <div class="site-search-index" hidden>{searchReviews.map(entry=><i data-site-search-entry data-title={[entry.data.title,entry.data.originalTitle,entry.data.headline,entry.data.summary,...(entry.data.tags||[]),...(entry.data.genres||[])].filter(Boolean).join(' ')} data-href={url('reviews/'+entry.id+'/')} data-summary={entry.data.summary} data-type={entry.data.type}/>)}</div>
+   <div class="site-search-index" hidden>{searchReviews.map(entry=><i data-site-search-entry data-title={entry.data.title} data-search={[entry.data.title,entry.data.originalTitle,entry.data.headline,entry.data.summary,...(entry.data.tags||[]),...(entry.data.genres||[])].filter(Boolean).join(' ')} data-href={url('reviews/'+entry.id+'/')} data-summary={entry.data.summary} data-type={entry.data.type}/>)}</div>
   </div>
  </div>
 </dialog>
@@ -166,14 +166,14 @@ searchDialog?.addEventListener('click', (event) => {
 
 const normalizedSearchInput=document.getElementById('normalized-site-search');
 const normalizedSearchResults=document.getElementById('normalized-site-results');
-const normalizedSearchEntries=[...document.querySelectorAll<HTMLElement>('[data-site-search-entry]')].map(entry=>({title:entry.dataset.title||'',href:entry.dataset.href||'',summary:entry.dataset.summary||'',type:entry.dataset.type||''}));
-const normalizeArabicSearch=(value:string)=>String(value||'').toLocaleLowerCase('ar').normalize('NFKD').replace(/\\p{M}/gu,'').replace(/[أإآٱ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/ؤ/g,'و').replace(/ئ/g,'ي').replace(/[^\\p{L}\\p{N}\\s]/gu,' ').trim().replace(/\\s+/g,' ');
+const normalizedSearchEntries=[...document.querySelectorAll<HTMLElement>('[data-site-search-entry]')].map(entry=>({title:entry.dataset.title||'',search:entry.dataset.search||entry.dataset.title||'',href:entry.dataset.href||'',summary:entry.dataset.summary||'',type:entry.dataset.type||''}));
+const normalizeArabicSearch=(value:string)=>String(value||'').toLocaleLowerCase('ar').normalize('NFKD').replace(/\p{M}/gu,'').replace(/[أإآٱ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/ؤ/g,'و').replace(/ئ/g,'ي').replace(/[^\p{L}\p{N}\s]/gu,' ').trim().replace(/\s+/g,' ');
 normalizedSearchInput?.addEventListener('input',()=>{
  if(!normalizedSearchResults||!(normalizedSearchInput instanceof HTMLInputElement))return;
  const query=normalizeArabicSearch(normalizedSearchInput.value);
  normalizedSearchResults.replaceChildren();
  if(!query){const hint=document.createElement('p');hint.textContent='ابدأ الكتابة لعرض المراجعات المطابقة.';normalizedSearchResults.append(hint);return;}
- const matches=normalizedSearchEntries.filter(item=>normalizeArabicSearch(item.title).includes(query)).slice(0,10);
+ const matches=normalizedSearchEntries.filter(item=>normalizeArabicSearch(item.search).includes(query)).slice(0,10);
  if(!matches.length){const empty=document.createElement('p');empty.textContent='لا توجد مراجعات مطابقة. جرّب كتابة جزء آخر من الاسم.';normalizedSearchResults.append(empty);return;}
  for(const item of matches){const link=document.createElement('a');link.href=item.href;const title=document.createElement('strong');title.textContent=item.title;const summary=document.createElement('span');summary.textContent=item.summary;link.append(title,summary);normalizedSearchResults.append(link);}
 });</script>
