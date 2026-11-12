@@ -61,5 +61,5 @@ if (failures.length) {
   for (const failure of failures) console.error(' - ' + failure);
   process.exitCode = 1;
 } else {
-  console.log('Review score validation passed for ' + files.length + ' review files: all scores are present, greater than zero, at most 10, and consistent with stated verdict scores.');
+  console.log('Review score validation passed for ' + files.length + ' review files: all scores are present, greater than zero, at most 10, and consistent with verdict scores and fixed weighted sub-score calculations.');
 }
