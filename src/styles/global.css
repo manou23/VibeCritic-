@@ -860,3 +860,13 @@ img{max-width:100%}
  .ai-review-promo-copy>p:not(.ai-review-promo-kicker){max-width:100%;font-size:12px}
 }
 @media(prefers-reduced-motion:reduce){.ai-review-promo-cta{transition:none}}
+
+
+/* Multilingual edition selector */
+.language-picker{position:relative;z-index:70;flex:0 0 auto;font-size:12px;font-weight:850}
+.language-picker summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;min-height:40px;padding:0 11px;border:1px solid var(--vc-border);border-radius:999px;color:var(--vc-text);background:transparent}
+.language-picker summary::-webkit-details-marker{display:none}
+.language-options{position:absolute;top:calc(100% + 8px);inset-inline-end:0;min-width:132px;padding:6px;background:var(--vc-surface);border:1px solid var(--vc-border);border-radius:11px;box-shadow:0 12px 30px #0002}
+.language-options a{display:block;padding:10px 12px;border-radius:7px;font-size:13px}
+.language-options a:hover,.language-options a:focus-visible{background:var(--vc-surface-muted);outline:none}
+@media(max-width:700px){.language-picker summary{min-height:36px;padding:0 9px}}
