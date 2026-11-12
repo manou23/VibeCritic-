@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 
 const env=process.env;
-const provider=(env.AI_PROVIDER||(env.OPENAI_API_KEY?'openai':env.GEMINI_API_KEY?'gemini':env.GROQ_API_KEY?'groq':'openrouter')).toLowerCase();
+const provider=(env.AI_PROVIDER||(env.GEMINI_API_KEY?'gemini':env.GROQ_API_KEY?'groq':env.OPENROUTER_API_KEY?'openrouter':'openai')).toLowerCase();
 const maxPerRun=Math.max(1,Number.isFinite(Number(env.MAX_PER_RUN))?Number(env.MAX_PER_RUN):3);
 const gamesWindowDays=Math.max(1,Number.isFinite(Number(env.GAMES_WINDOW_DAYS))&&env.GAMES_WINDOW_DAYS?Number(env.GAMES_WINDOW_DAYS):14);
 const outDir='src/content/reviews',processedPath='data/processed.json';
@@ -106,10 +106,10 @@ async function generateFallback(prompt,excluded=[],primaryError=null){
  const errors=[];
  if(primaryError)errors.push(provider+': '+primaryError.message);
  const attempts=[
-  ['openai',env.OPENAI_API_KEY,()=>generateWithOpenAI(prompt)],
   ['gemini',env.GEMINI_API_KEY,()=>generateWithGemini(prompt)],
   ['groq',env.GROQ_API_KEY,()=>generateWithGroq(prompt)],
-  ['openrouter',env.OPENROUTER_API_KEY,()=>generateWithOpenRouter(prompt)]
+  ['openrouter',env.OPENROUTER_API_KEY,()=>generateWithOpenRouter(prompt)],
+  ['openai',env.OPENAI_API_KEY,()=>generateWithOpenAI(prompt)]
  ];
  for(const [name,key,run] of attempts){
   if(!key||excluded.includes(name))continue;
