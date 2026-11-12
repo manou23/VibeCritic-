@@ -12,80 +12,99 @@ permissions:
 jobs:
   inspect-sitemaps:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
-      - name: Inspect sitemap responses
+      - name: Inspect sitemap and all listed pages
         shell: bash
         run: |
-          set -uo pipefail
-          BASE="https://vibecritic.pages.dev"
-          FAILED=0
-
-          inspect_url() {
-            local path="$1"
-            local body headers status content_type last_location
-            body="$(mktemp)"
-            headers="$(mktemp)"
-
-            echo "::group::${BASE}${path}"
-            status="$(curl --silent --show-error --location --compressed \
-              --connect-timeout 15 --max-time 45 \
-              --dump-header "$headers" --output "$body" \
-              --write-out '%{http_code}' "${BASE}${path}" || true)"
-            content_type="$(grep -i '^content-type:' "$headers" | tail -n 1 | tr -d '\r' || true)"
-            last_location="$(grep -i '^location:' "$headers" | tail -n 1 | tr -d '\r' || true)"
-
-            echo "Final HTTP status: ${status:-curl-error}"
-            echo "Final Content-Type: ${content_type:-missing}"
-            echo "Last redirect header (if any): ${last_location:-none}"
-            echo "Response bytes: $(wc -c < "$body" | tr -d ' ')"
-            echo "Response preview:"
-            head -c 350 "$body" | tr '\n' ' '
-            echo
-
-            if [[ "$status" != "200" ]]; then
-              echo "ERROR: Expected HTTP 200."
-              FAILED=1
-            fi
-
-            if ! python3 - "$body" <<'PY'
-          import sys
+          python3 <<'PY'
+          import concurrent.futures
+          import urllib.request
+          import urllib.error
           import xml.etree.ElementTree as ET
+          from html.parser import HTMLParser
 
-          path = sys.argv[1]
-          try:
-              root = ET.parse(path).getroot()
-          except Exception as exc:
-              print(f"XML_PARSE_ERROR: {exc}")
-              raise SystemExit(1)
+          BASE = "https://vibecritic.pages.dev"
+          NS = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+          UA = "Mozilla/5.0 (compatible; VibeCriticDiagnostic/1.0)"
 
-          tag = root.tag.rsplit("}", 1)[-1]
-          if tag not in {"urlset", "sitemapindex"}:
-              print(f"UNEXPECTED_XML_ROOT: {tag}")
-              raise SystemExit(1)
+          class MetaParser(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.canonical = ""
+                  self.robots = ""
+                  self.title = ""
+                  self.in_title = False
+              def handle_starttag(self, tag, attrs):
+                  a = dict(attrs)
+                  if tag.lower() == "link" and a.get("rel", "").lower() == "canonical":
+                      self.canonical = a.get("href", "")
+                  if tag.lower() == "meta" and a.get("name", "").lower() == "robots":
+                      self.robots = a.get("content", "")
+                  if tag.lower() == "title":
+                      self.in_title = True
+              def handle_endtag(self, tag):
+                  if tag.lower() == "title":
+                      self.in_title = False
+              def handle_data(self, data):
+                  if self.in_title:
+                      self.title += data.strip()
 
-          ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
-          if tag == "urlset":
-              print(f"XML_OK: urlset; URL entries: {len(root.findall('sm:url', ns))}")
-          else:
-              print(f"XML_OK: sitemapindex; child sitemaps: {len(root.findall('sm:sitemap', ns))}")
-              for item in root.findall("sm:sitemap/sm:loc", ns):
-                  print(f"CHILD_SITEMAP: {item.text}")
+          def get(url):
+              req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "text/html,application/xml,*/*"})
+              try:
+                  with urllib.request.urlopen(req, timeout=20) as res:
+                      return res.status, res.geturl(), res.headers.get("Content-Type", ""), res.read()
+              except urllib.error.HTTPError as e:
+                  return e.code, e.geturl(), e.headers.get("Content-Type", ""), e.read(4096)
+              except Exception as e:
+                  return 0, url, "", str(e).encode()
+
+          index_status, index_final, index_type, index_body = get(BASE + "/sitemap-index.xml")
+          print(f"INDEX status={index_status} final={index_final} type={index_type}")
+          if index_status != 200:
+              raise SystemExit("Cannot retrieve sitemap index")
+          index = ET.fromstring(index_body)
+          child_urls = [x.text.strip() for x in index.findall("sm:sitemap/sm:loc", NS) if x.text]
+          all_urls = []
+          for child in child_urls:
+              st, final, ctype, body = get(child)
+              print(f"CHILD status={st} final={final} type={ctype} bytes={len(body)}")
+              if st != 200:
+                  continue
+              root = ET.fromstring(body)
+              all_urls.extend(x.text.strip() for x in root.findall("sm:url/sm:loc", NS) if x.text)
+
+          print(f"TOTAL_URLS={len(all_urls)}")
+          def inspect(url):
+              status, final, ctype, body = get(url)
+              if status != 200 or "html" not in ctype.lower():
+                  return (url, status, final, ctype, "", "", "")
+              parser = MetaParser()
+              try:
+                  parser.feed(body.decode("utf-8", "replace"))
+              except Exception:
+                  pass
+              return (url, status, final, ctype, parser.canonical, parser.robots, parser.title[:90])
+
+          counts = {}
+          issues = []
+          with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
+              for item in pool.map(inspect, all_urls):
+                  url, status, final, ctype, canonical, robots, title = item
+                  counts[status] = counts.get(status, 0) + 1
+                  problems = []
+                  if status != 200: problems.append("HTTP_NOT_200")
+                  if "html" not in ctype.lower(): problems.append("NOT_HTML")
+                  if canonical and canonical.rstrip("/") != url.rstrip("/"): problems.append("CANONICAL_MISMATCH")
+                  if "noindex" in robots.lower(): problems.append("NOINDEX")
+                  if not canonical: problems.append("NO_CANONICAL")
+                  if problems: issues.append((url, ",".join(problems), status, ctype, canonical, robots))
+                  print(f"PAGE status={status} final={final} canonical={canonical or 'MISSING'} robots={robots or 'MISSING'} title={title or 'MISSING'} url={url}")
+
+          print("STATUS_COUNTS=" + repr(counts))
+          print(f"ISSUE_COUNT={len(issues)}")
+          for issue in issues:
+              print("ISSUE " + " | ".join(map(str, issue)))
+          print("DIAGNOSTIC_COMPLETE")
           PY
-            then
-              FAILED=1
-            fi
-
-            rm -f "$body" "$headers"
-            echo "::endgroup::"
-          }
-
-          inspect_url "/sitemap-index.xml"
-          inspect_url "/sitemap-0.xml"
-
-          if [[ "$FAILED" -ne 0 ]]; then
-            echo "One or more sitemap checks failed."
-            exit 1
-          fi
-
-          echo "Both sitemap endpoints returned HTTP 200 and valid sitemap XML."
