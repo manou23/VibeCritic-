@@ -140,7 +140,7 @@ async function enrichItem(item){
 async function generateReview(item){
  const isGame=item.type==='game';
  const headings=isGame?['أسلوب اللعب والأنظمة','التصميم الفني والعالم','القصة وبناء الشخصيات','الأداء التقني والثبات','التقدم والتجربة على المدى الطويل']:['الحبكة والسيناريو','الأداء والشخصيات','الإخراج واللغة البصرية','الموسيقى والتصميم الصوتي',item.type==='series'?'بناء الموسم والإيقاع':'الإيقاع والتماسك الدرامي'];
- const metadata=JSON.stringify({...((item.metadata&&typeof item.metadata==='object')?item.metadata:{genres:item.genres||[],platforms:item.platforms||[],developers:item.developers||[],gameModes:item.gameModes||[],perspectives:item.perspectives||[],engines:item.engines||[],sourceRating:item.rating||null,releaseDate:item.date||null}),trendContext:{source:item.source||'غير محدد',rank:Number(item.trendRank)||null,popularity:Number(item.popularity)||null,window:item.type==='game'?gamesWindowDays+' يوماً':'أسبوع TMDB'}});
+ const metadata=JSON.stringify({...((item.metadata&&typeof item.metadata==='object')?item.metadata:{genres:item.genres||[],platforms:item.platforms||[],developers:item.developers||[],gameModes:item.gameModes||[],perspectives:item.perspectives||[],engines:item.engines||[],sourceRating:item.rating||null,releaseDate:item.date||null}),trendContext:{source:item.source||'غير محدد',rank:Number(item.trendRank)||null,sourceMetricName:item.sourceMetricName||null,sourceMetricValue:Number.isFinite(Number(item.sourceMetricValue))?Number(item.sourceMetricValue):null,popularity:Number.isFinite(Number(item.popularity))&&Number(item.popularity)>0?Number(item.popularity):null,confidence:item.trendConfidence||'غير محدد',window:item.type==='game'?gamesWindowDays+' يوماً':'أسبوع TMDB'}});
  const prompt=[
  'اكتب مراجعة نقدية عربية احترافية ومتوازنة ومفصلة، وليست دعاية أو ملخصاً دعائياً.',
  'لا تدّع أنك شاهدت أو لعبت العمل بنفسك. لا تخترع أسماء ممثلين أو مطورين أو منصات أو مشاهد أو أحداثاً أو تفاصيل أداء تقني غير موجودة في البيانات. إذا لم تتوفر معلومات موثوقة عن جانب ما، صرّح بأن البيانات لا تكفي للحكم عليه ثم حلّل ما يمكن استنتاجه فقط. لا تحرق الأحداث. لا تكرر الوصف المصدر حرفياً. تجنب المبالغة والعبارات العامة.',
@@ -153,7 +153,7 @@ async function generateReview(item){
  'pros: أربع نقاط قوة محددة. cons: نقطتان أو ثلاث تحفظات حقيقية؛ لا تخترع عيباً لملء القائمة.',
  'verdict: 3-4 جمل تجيب هل يستحق المشاهدة/اللعب، ولمن يناسب، والتحفظ الأهم، وسبب الدرجة.',
  'score: درجة من 0 إلى 10 بخطوة عشرية واحدة، تقدير تحريري مبرر لا تقييم رسمي ولا نقل آلي لتقييم المصدر. tags: ثلاثة إلى ستة وسوم.',
- 'مؤشرات الترند (للسياق فقط وليست دليلاً على الجودة): المصدر '+(item.source||'غير محدد')+'، الترتيب '+(item.trendRank||'غير متاح')+'، مؤشر الشعبية '+(item.popularity||'غير متاح')+'. اشرح أثر الانتشار على الاهتمام بالعمل فقط إذا كان ذلك مفيداً، ولا تخترع سبباً للترند أو أرقام مشاهدات/مبيعات.',
+ 'مؤشرات الترند (للسياق فقط وليست دليلاً على الجودة): المصدر '+(item.source||'غير محدد')+'، الترتيب داخل المصدر '+(item.trendRank||'غير متاح')+'، المقياس '+(item.sourceMetricName||'غير متاح')+' وقيمته '+(item.sourceMetricValue??'غير متاح')+'، مستوى الثقة '+(item.trendConfidence||'غير محدد')+'. المقاييس خاصة بمصادرها ولا تقارن رقمياً بين TMDB وRAWG وIGDB. لا تخترع أسباب الترند أو أرقام مشاهدات ومبيعات.',
  'بيانات العمل:','النوع: '+(isGame?'لعبة':item.type==='series'?'مسلسل':'فيلم'),'الاسم: '+item.name,'تاريخ الإصدار: '+(item.date||'غير متاح'),'الوصف المصدر: '+(item.description||'غير متوفر'),'التصنيفات: '+((item.genres||[]).join('، ')||'غير متاحة'),'بيانات إضافية موثوقة: '+metadata,'تقييم المصدر (للاستئناس فقط): '+(item.rating||'غير متاح')
  ].join('\n');
  let parsed=null;
@@ -190,7 +190,7 @@ async function tmdb(type){
   backdrop:x.backdrop_path?`https://image.tmdb.org/t/p/w780${x.backdrop_path}`:'',
   rating:Number(x.vote_average)||0,genres:(x.genre_ids||[]).map(id=>genreNames.get(id)).filter(Boolean),
   sourceUrl:`https://www.themoviedb.org/${endpoint}/${x.id}`,source:'TMDB',
-  popularity:Number(x.popularity)||0,trendRank:i+1
+  popularity:Number(x.popularity)||0,sourceMetricName:'TMDB popularity',sourceMetricValue:Number(x.popularity)||0,trendConfidence:Number(x.popularity)>0?'مرتفع':'منخفض',trendRank:i+1
  })).filter(x=>x.description.trim().length>=60);
 }
 async function gamesFromRawg(){
@@ -211,14 +211,14 @@ async function gamesFromRawg(){
     backdrop:item.background_image||detail.background_image||'',
     rating:Number(item.rating)||0,genres:(detail.genres||item.genres||[]).map(x=>x.name).filter(Boolean),
     sourceUrl:'https://rawg.io/games/'+item.slug,source:'RAWG',
-    popularity:Number(item.added)||0,added:Number(item.added)||0,trendRank:candidates.indexOf(item)+1,
+    popularity:Number(item.added)||0,sourceMetricName:'RAWG added count',sourceMetricValue:Number(item.added)||0,trendConfidence:Number(item.added)>=10?'مرتفع':Number(item.added)>0?'متوسط':'منخفض',added:Number(item.added)||0,trendRank:candidates.indexOf(item)+1,
     platforms:(detail.platforms||item.platforms||[]).map(x=>x.platform?.name).filter(Boolean),
     developers:(detail.developers||[]).map(x=>x.name).filter(Boolean),
     metadata:{metacritic:item.metacritic||detail.metacritic||null,added:Number(item.added)||0,platforms:(detail.platforms||item.platforms||[]).map(x=>x.platform?.name).filter(Boolean),developers:(detail.developers||[]).map(x=>x.name).filter(Boolean)}
    };
   }catch(error){console.warn('تعذر جلب تفاصيل RAWG للعبة '+item.name+':',error.message);return null;}
  }));
- return detailed.filter(x=>x&&x.description.length>=60).sort((a,b)=>b.added-a.added);
+ return detailed.filter(x=>x&&x.description.length>=60&&x.added>0).sort((a,b)=>b.added-a.added);
 }
 async function gamesFromIgdb(){
  const clientId=required('IGDB_CLIENT_ID'),clientSecret=required('IGDB_CLIENT_SECRET');
@@ -232,8 +232,8 @@ async function gamesFromIgdb(){
  if(!response.ok)throw new Error(`IGDB recent games HTTP ${response.status}: ${await response.text()}`);
  return (await response.json()).map((x,i)=>{
   const image=x.cover?.image_id?`https://images.igdb.com/igdb/image/upload/t_cover_big/${x.cover.image_id}.jpg`:'';
-  return {id:String(x.id),type:'game',name:x.name||'بدون عنوان',description:x.summary||'',date:x.first_release_date?new Date(x.first_release_date*1000).toISOString().slice(0,10):'',poster:image,backdrop:image,rating:Number(x.rating)||0,genres:(x.genres||[]).map(g=>g.name),sourceUrl:x.url||`https://www.igdb.com/games/${x.id}`,source:'IGDB',popularity:Number(x.hypes||0)+Number(x.follows||0),trendRank:i+1,platforms:(x.platforms||[]).map(p=>p.name).filter(Boolean),developers:(x.involved_companies||[]).filter(c=>c.developer).map(c=>c.company?.name).filter(Boolean)};
- }).filter(x=>x.description.trim().length>=60);
+  return {id:String(x.id),type:'game',name:x.name||'بدون عنوان',description:x.summary||'',date:x.first_release_date?new Date(x.first_release_date*1000).toISOString().slice(0,10):'',poster:image,backdrop:image,rating:Number(x.rating)||0,genres:(x.genres||[]).map(g=>g.name),sourceUrl:x.url||`https://www.igdb.com/games/${x.id}`,source:'IGDB',popularity:Number(x.hypes||0)+Number(x.follows||0),sourceMetricName:'IGDB hypes + follows',sourceMetricValue:Number(x.hypes||0)+Number(x.follows||0),trendConfidence:(Number(x.hypes||0)+Number(x.follows||0))>=10?'متوسط':'منخفض',trendRank:i+1,platforms:(x.platforms||[]).map(p=>p.name).filter(Boolean),developers:(x.involved_companies||[]).filter(c=>c.developer).map(c=>c.company?.name).filter(Boolean)};
+ }).filter(x=>x.description.trim().length>=60&&x.popularity>0).sort((a,b)=>b.popularity-a.popularity);
 }
 let gamesCachePromise;
 async function games(){
@@ -260,14 +260,14 @@ async function globalTrending(){
   title:x.title||x.name||'بدون عنوان',poster:x.poster_path?`https://image.tmdb.org/t/p/w500${x.poster_path}`:'',
   backdrop:x.backdrop_path?`https://image.tmdb.org/t/p/w780${x.backdrop_path}`:'',
   summary:x.overview||'',sourceUrl:`https://www.themoviedb.org/${x.media_type==='tv'?'tv':'movie'}/${x.id}`,
-  source:'TMDB',sourceRank:Number(x.popularity)||0,trendRank:i+1,updatedAt:new Date().toISOString()
+  source:'TMDB',sourceRank:Number(x.popularity)||0,popularity:Number(x.popularity)||0,sourceMetricName:'TMDB popularity',sourceMetricValue:Number(x.popularity)||0,trendConfidence:'مرتفع',trendRank:i+1,updatedAt:new Date().toISOString()
  })).filter((x,i,all)=>all.findIndex(y=>y.type===x.type&&y.id===x.id)===i);
  let gameList=[];
  try{gameList=await games();}catch(error){console.warn('تعذر تحديث ترند الألعاب، سيستمر الموقع بترند TMDB فقط:',error.message);}
- const gameItems=gameList.slice(0,3).map((x,i)=>({
+ const gameItems=gameList.filter(x=>Number(x.popularity)>0&&Number(x.sourceMetricValue??x.popularity)>0).slice(0,3).map((x,i)=>({
   id:String(x.id),sourceId:String(x.id),type:'game',title:x.name,
   poster:x.poster||'',backdrop:x.backdrop||x.poster||'',summary:x.description||'',
-  sourceUrl:x.sourceUrl||'',source:x.source||'RAWG',sourceRank:Number(x.popularity)||0,
+  sourceUrl:x.sourceUrl||'',source:x.source||'RAWG',sourceRank:Number(x.popularity)||0,popularity:Number(x.popularity)||0,sourceMetricName:x.sourceMetricName||'source-native popularity',sourceMetricValue:Number(x.sourceMetricValue??x.popularity)||0,trendConfidence:x.trendConfidence||'متوسط',
   trendRank:i+1,updatedAt:new Date().toISOString()
  }));
  const picks=[];
