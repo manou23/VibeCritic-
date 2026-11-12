@@ -56,15 +56,11 @@ async function generate(env,prompt,title,kind){
  throw Error('تعذر إنشاء المراجعة. جُرّبت المفاتيح والمزوّدات المتاحة؛ تحقق من الرصيد وحدود الاستخدام واسم النموذج.');
 }
 const hits=new Map();
-async function permitted(req,env){
+function permitted(req){
  const origin=req.headers.get('Origin'),host=req.headers.get('Host');
  if(origin){try{if(!host||new URL(origin).host!==host)return false}catch{return false}}
  const ip=req.headers.get('CF-Connecting-IP')||'unknown';
- // Prefer Cloudflare's distributed rate limiter when the optional binding is configured.
- if(env.AI_REVIEW_LIMITER&&typeof env.AI_REVIEW_LIMITER.limit==='function'){
-  try{const result=await env.AI_REVIEW_LIMITER.limit({key:ip});return result?.success===true}
-  catch(error){console.warn('Cloudflare rate limiter unavailable; using isolate-local fallback:',error?.message||'unknown error')}
- }
+ // Best-effort isolate-local fallback; enforce the primary distributed limit with a Cloudflare WAF rule.
  const now=Date.now(),recent=(hits.get(ip)||[]).filter(t=>now-t<600000);
  if(recent.length>=8)return false;
  recent.push(now);hits.set(ip,recent);
@@ -75,7 +71,7 @@ async function permitted(req,env){
  return true;
 }
 export async function onRequestPost({request,env}){
- if(!await permitted(request,env))return Response.json({error:'تم تجاوز الحد المؤقت للطلبات أو مصدر الطلب غير مسموح.'},{status:429});
+ if(!permitted(request))return Response.json({error:'تم تجاوز الحد المؤقت للطلبات أو مصدر الطلب غير مسموح.'},{status:429});
  try{
   const raw=await request.text();
   if(new TextEncoder().encode(raw).byteLength>12000)return Response.json({error:'حجم الطلب كبير جداً.'},{status:413});
