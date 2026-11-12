@@ -78,7 +78,7 @@ const upcoming=reviews.filter(isUpcomingReview).sort((a,b)=>String(a.data.releas
  {topRated.length>0?<div class="catalog-rail">{topRated.map(review=><ReviewCard review={review}/>)}</div>:<div class="catalog-empty">ستظهر هنا الأعمال بعد اكتمال مراجعاتها وتقييمها.</div>}
 </section>
 <section class="wrap catalog-section" id="coming-soon">
- <div class="catalog-heading"><div><p class="catalog-eyebrow">ADVANCE READINGS</p><h2>قريباً — قراءات استباقية</h2><p>مواد تمهيدية للأعمال التي لم تصدر بعد، وليست مراجعات نهائية</p></div></div>
+ <div class="catalog-heading"><div><p class="catalog-eyebrow">ADVANCE READINGS</p><h2>قراءات استباقية</h2><p>مواد تمهيدية للأعمال التي لم تصدر بعد، وليست مراجعات نهائية</p></div></div>
  {upcoming.length>0?<div class="catalog-rail">{upcoming.map(review=><ReviewCard review={review}/>)}</div>:<div class="catalog-empty">لا توجد قراءات استباقية منشورة حالياً. لن نضيف عملاً قادماً دون بيانات كافية.</div>}
 </section>
 {(['game','series','movie'] as const).map(type=><section class="wrap catalog-section type-section">
