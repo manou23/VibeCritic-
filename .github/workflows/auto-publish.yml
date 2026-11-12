@@ -4,12 +4,6 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '17 2 * * *'
-  push:
-    branches: [main]
-    paths-ignore:
-      - 'src/content/reviews/**'
-      - 'data/processed.json'
-      - 'src/data/trending.json'
 permissions:
   contents: write
 concurrency:
