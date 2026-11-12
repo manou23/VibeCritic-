@@ -16,11 +16,11 @@ const similarityFor=entry=>{
  const year=Number(String(entry.data.releaseDate||'').slice(0,4))||null;
  const yearDistance=currentYear&&year?Math.abs(currentYear-year):99;
  const yearMatch=yearDistance===0?1:yearDistance<=2?.5:0;
- const score=tagHits*3+genreHits*2+yearMatch;
+ const score=tagHits*5+genreHits*1.5+yearMatch;
  return {entry,score,tagHits,genreHits,yearMatch};
 };
 const similarReviews=allReviews.filter(entry=>entry.id!==review.id&&entry.data.type===d.type)
- .map(similarityFor).filter(item=>item.tagHits+item.genreHits>0)
+ .map(similarityFor).filter(item=>item.tagHits>0||item.genreHits>=2)
  .sort((a,b)=>b.score-a.score||b.tagHits-a.tagHits||b.genreHits-a.genreHits)
  .slice(0,3).map(item=>item.entry);
 
@@ -137,7 +137,7 @@ const reviewStructuredData = {
       {d.type === 'game' ? ((d.platforms?.length || d.gameStores?.length) > 0 && <section class="article-facts" aria-label="منصات اللعب والمتاجر">
         <h2>أين تلعبه؟</h2>
         {d.platforms?.length > 0 && <p><strong>المنصات:</strong> {d.platforms.join('، ')}</p>}
-        {d.gameStores?.length > 0 && <p class="game-store-links"><strong>المتاجر:</strong> {d.gameStores.map(store=><a href={store.url || '#'} target="_blank" rel="noopener noreferrer">{store.name}</a>)}</p>}
+        {d.gameStores?.some(store=>store.url) && <p class="game-store-links"><strong>المتاجر:</strong> {d.gameStores.filter(store=>store.url).map(store=><a href={store.url} target="_blank" rel="noopener noreferrer">{store.name}</a>)}</p>}
       </section>) : ((d.watchProviders?.length || d.watchProviderUrl) > 0 && <section class="article-facts" aria-label="أماكن المشاهدة">
         <h2>أين أشاهده؟</h2>
         {d.watchProviders?.length>0 && <p>المنصات المتاحة في الجزائر بحسب بيانات TMDB: {d.watchProviders.join('، ')}</p>}
