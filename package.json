@@ -12,6 +12,7 @@
     "backfill:videos": "node scripts/backfill-review-videos.mjs",
     "backfill:titles": "node scripts/backfill-arabic-titles.mjs",
     "backfill:games": "node scripts/backfill-game-platforms.mjs",
+    "publish:telegram": "node scripts/publish-telegram-updates.mjs",
     "validate:reviews": "node scripts/validate-review-scores.mjs"
   },
   "dependencies": {
