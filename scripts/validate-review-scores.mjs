@@ -8,14 +8,14 @@ const failures = [];
 for (const file of files) {
   const fullPath = path.join(root, file);
   const content = await fs.readFile(fullPath, 'utf8');
-  const match = content.match(/^---\\s*\\r?\\n([\\s\\S]*?)\\r?\\n---(?:\\r?\\n|$)/);
+  const match = content.match(/^---\s*\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/);
   if (!match) {
     failures.push(file + ': YAML frontmatter is missing or malformed');
     continue;
   }
 
   const frontmatter = match[1];
-  const scoreMatch = frontmatter.match(/^score:\\s*(.*?)\\s*$/m);
+  const scoreMatch = frontmatter.match(/^score:\s*(.*?)\s*$/m);
   if (!scoreMatch || !scoreMatch[1]) {
     failures.push(file + ': score is missing');
     continue;
@@ -27,10 +27,9 @@ for (const file of files) {
     continue;
   }
 
-  const verdictMatch = frontmatter.match(/^verdict:\\s*"((?:\\\\.|[^"])*)"/m);
+  const verdictMatch = frontmatter.match(/^verdict:\s*"([^"]*)"/m);
   if (verdictMatch) {
-    const verdict = verdictMatch[1].replace(/\\\\"/g, '"').replace(/\\\\n/g, ' ');
-    const statedScores = [...verdict.matchAll(/(\\d+(?:[.,]\\d+)?)\\s*(?:\\/\\s*10|من\\s*10)/g)]
+    const statedScores = [...verdictMatch[1].matchAll(/(\d+(?:[.,]\d+)?)\s*(?:\/\s*10|من\s*10)/g)]
       .map(item => Number(item[1].replace(',', '.')));
     if (statedScores.some(value => Math.abs(value - score) > 0.05)) {
       failures.push(file + ': verdict score (' + statedScores.join(', ') + ') does not match frontmatter score (' + score + ')');
