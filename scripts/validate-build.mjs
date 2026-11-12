@@ -11,6 +11,7 @@ for(const file of required){
 const read=file=>fs.readFile(path.join(dist,file),'utf8');
 const locs=xml=>[...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match=>match[1].trim());
 const indexXml=await read('sitemap-index.xml');
+if(!/<sitemapindex\\b/i.test(indexXml))throw new Error('جذر ملف sitemap-index.xml ليس sitemapindex صالحاً.');
 const sitemapUrls=locs(indexXml);
 if(!sitemapUrls.length)throw new Error('ملف sitemap-index.xml لا يحتوي على روابط خرائط فرعية.');
 const seen=new Set();
@@ -21,12 +22,22 @@ for(const raw of sitemapUrls){
  const relative=decodeURIComponent(url.pathname.replace(/^\/+/,'')); 
  const file=path.join(dist,relative);
  const child=await fs.readFile(file,'utf8').catch(()=>{throw new Error('خريطة فرعية غير موجودة: '+relative)});
+ if(!/<urlset\\b/i.test(child))throw new Error('جذر خريطة الصفحات غير صالح: '+relative);
  const pages=locs(child);
  if(!pages.length)throw new Error('خريطة فرعية فارغة: '+relative);
  for(const page of pages){
   const parsed=new URL(page);
   if(parsed.origin!==site.origin)throw new Error('رابط صفحة في Sitemap يستخدم نطاقاً غير متوقع: '+parsed.origin);
   if(seen.has(parsed.href))throw new Error('رابط مكرر في Sitemap: '+parsed.href);
+  let decodedPath;
+  try{decodedPath=decodeURIComponent(parsed.pathname);}
+  catch{throw new Error('رابط صفحة يحتوي ترميز URL غير صالح: '+page);}
+  const relativePage=decodedPath.replace(/^\\/+/, '');
+  const outputRelative=relativePage.endsWith('/')?path.join(relativePage,'index.html'):(path.extname(relativePage)?relativePage:path.join(relativePage,'index.html'));
+  const outputFile=path.resolve(dist,outputRelative);
+  if(outputFile!==dist&&!outputFile.startsWith(dist+path.sep))throw new Error('مسار صفحة خارج مجلد البناء: '+page);
+  try{await fs.access(outputFile);}
+  catch{throw new Error('رابط Sitemap لا يقابله ملف HTML منشور: '+page+' (المتوقع dist/'+outputRelative+')');}
   seen.add(parsed.href);pageCount++;
  }
 }
