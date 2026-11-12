@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { getCollection } from 'astro:content';
+import PagefindConfig from 'astro-pagefind/components/PagefindConfig.astro';
 import { SITE_NAME, SITE_DESC, url } from '../consts';
 const {
   title = SITE_NAME,
@@ -17,13 +18,6 @@ const rawTitle = `${title} | ${SITE_NAME}`;
 const pageTitle = rawTitle.length > 60 ? `${String(title).slice(0, 46).trimEnd()}… | ${SITE_NAME}` : rawTitle;
 const metaDescription = String(description).replace(/\s+/g, ' ').trim().slice(0, 152).trimEnd() + (String(description).trim().length > 152 ? '…' : '');
 const metaKeywords = Array.isArray(keywords) ? [...new Set(keywords.map((word) => String(word).replace(/[<>\"']/g, '').replace(/\s+/g, ' ').trim()).filter(Boolean))].slice(0, 20).join(', ') : '';
-const searchItems = (await getCollection('reviews')).map((review) => ({
-  title: review.data.title,
-  headline: review.data.headline,
-  type: review.data.type,
-  href: url(`reviews/${review.id}/`),
-  date: review.data.date.toISOString(),
-})).sort((a, b) => b.date.localeCompare(a.date));
 const structuredData = pageStructuredData || (pageType === 'article'
   ? {
       '@context': 'https://schema.org',
@@ -52,6 +46,7 @@ const safeJson = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
 <meta name="color-scheme" content="light dark" />
 <link rel="preconnect" href="https://image.tmdb.org" crossorigin />
 <link rel="preconnect" href="https://images.igdb.com" crossorigin />
+<link rel="preconnect" href="https://media.rawg.io" crossorigin />
 <script is:inline>try{if(localStorage.getItem("vc-theme")==="dark")document.documentElement.classList.add("dark-mode")}catch{}</script>
 <meta name="description" content={metaDescription} />
 {metaKeywords && <meta name="keywords" content={metaKeywords} />}
@@ -92,14 +87,13 @@ const safeJson = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
    <div><p class="catalog-eyebrow">VIBECRITIC SEARCH</p><h2 id="site-search-title">ابحث في مكتبة VibeCritic</h2></div>
    <button class="site-search-close" id="site-search-close" type="button" aria-label="إغلاق البحث">×</button>
   </div>
-  <label class="site-search-label" for="site-search-input">اسم لعبة أو فيلم أو مسلسل</label>
-  <input id="site-search-input" class="catalog-search" type="search" autocomplete="off" placeholder="اكتب ما تريد البحث عنه..." />
-  <p class="site-search-hint" id="site-search-status" aria-live="polite">ابدأ الكتابة للبحث في جميع المراجعات.</p>
-  <div class="site-search-results" id="site-search-results"></div>
+  <p class="site-search-hint">بحث فوري في نصوص وعناوين جميع المراجعات المنشورة.</p>
+  <PagefindConfig />
+  <pagefind-searchbox placeholder="ابحث عن لعبة أو فيلم أو مسلسل..." max-results="12" hide-shortcut></pagefind-searchbox>
  </div>
 </dialog>
-<script type="application/json" id="site-search-data" set:html={safeJson(searchItems)}></script>
-<main id="main-content"><slot /></main>
+
+<main id="main-content" data-pagefind-body><slot /></main>
 <footer class="site-footer">
  <div class="wrap footer-inner">
   <a href={url('')} class="footer-brand">Vibe<span>Critic</span></a>
@@ -107,7 +101,7 @@ const safeJson = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
   <details class="footer-sources">
    <summary>مصدر البيانات</summary>
    <p>بيانات الأفلام والمسلسلات مقدمة عبر <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer">TMDb</a>. هذا المنتج يستخدم TMDb API لكنه غير معتمد أو مصادق عليه من TMDb.</p>
-   <p>بيانات الألعاب مقدمة عبر <a href="https://www.igdb.com/" target="_blank" rel="noopener noreferrer">IGDB</a>.</p>
+   <p>بيانات الألعاب مقدمة عبر <a href="https://rawg.io/" target="_blank" rel="noopener noreferrer">RAWG</a>، وقد يُستخدم <a href="https://www.igdb.com/" target="_blank" rel="noopener noreferrer">IGDB</a> كمصدر احتياطي.</p>
   </details>
  </div>
 </footer>
@@ -152,59 +146,14 @@ themeButton?.addEventListener('click', () => {
 const searchDialog = document.getElementById('site-search-dialog');
 const searchOpen = document.getElementById('site-search-open');
 const searchClose = document.getElementById('site-search-close');
-const searchInput = document.getElementById('site-search-input');
-const searchResults = document.getElementById('site-search-results');
-const searchStatus = document.getElementById('site-search-status');
-const searchDataElement = document.getElementById('site-search-data');
-let searchItems = [];
-try { searchItems = JSON.parse(searchDataElement?.textContent || '[]'); } catch {}
-const normalizeSearch = (value) => String(value || '')
-  .toLocaleLowerCase('ar')
-  .normalize('NFKD')
-  .replace(/[\u064B-\u065F\u0670\u0640]/g, '')
-  .replace(/[أإآ]/g, 'ا')
-  .replace(/ى/g, 'ي')
-  .replace(/ة/g, 'ه')
-  .trim();
-
-function renderSearchResults() {
-  if (!searchResults || !searchStatus || !searchInput) return;
-  const query = normalizeSearch(searchInput.value);
-  const filtered = searchItems.filter((item) => !query || normalizeSearch(`${item.title} ${item.headline} ${item.type}`).includes(query));
-  const matches = filtered.slice(0, 12);
-  searchResults.replaceChildren();
-  if (!matches.length) {
-    searchStatus.textContent = 'لا توجد نتائج مطابقة. جرّب اسماً آخر.';
-    return;
-  }
-  searchStatus.textContent = query
-    ? `عُثر على ${filtered.length} نتيجة؛ يتم عرض أول ${matches.length}.`
-    : 'أحدث المراجعات في المكتبة:';
-  for (const item of matches) {
-    const link = document.createElement('a');
-    link.className = 'site-search-result';
-    link.href = item.href;
-    const title = document.createElement('strong');
-    title.textContent = item.title;
-    const detail = document.createElement('span');
-    const typeLabel = item.type === 'game' ? 'لعبة' : item.type === 'series' ? 'مسلسل' : 'فيلم';
-    detail.textContent = `${typeLabel} · ${item.headline || 'مراجعة VibeCritic'}`;
-    link.append(title, detail);
-    searchResults.append(link);
-  }
-}
 searchOpen?.addEventListener('click', () => {
   if (searchDialog instanceof HTMLDialogElement && !searchDialog.open) searchDialog.showModal();
-  searchInput?.focus();
-  renderSearchResults();
 });
 searchClose?.addEventListener('click', () => {
   if (searchDialog instanceof HTMLDialogElement) searchDialog.close();
 });
 searchDialog?.addEventListener('click', (event) => {
   if (event.target === searchDialog && searchDialog instanceof HTMLDialogElement) searchDialog.close();
-});
-searchInput?.addEventListener('input', renderSearchResults);
-</script>
+});</script>
 </body>
 </html>
