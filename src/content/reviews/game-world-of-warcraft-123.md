@@ -10,6 +10,8 @@ date: 2026-11-11
 releaseDate: "2004-11-23"
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/co2l7z.jpg"
 backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/co2l7z.jpg"
+youtubeVideoId: "2Rxoz13Bthc"
+youtubeVideoTitle: "Warcraft - Official Trailer (HD)"
 score: 8.5
 pros:
   - "عالم غني بالمناطق والمهام والأنشطة"
