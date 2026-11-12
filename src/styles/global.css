@@ -628,3 +628,40 @@ img{max-width:100%}
 .article-video-note{margin:9px 2px 0;color:var(--vc-muted);font-size:10px;line-height:1.8}
 .dark-mode .article-video-heading h2{color:var(--vc-text)}
 @media(max-width:600px){.article-video{margin:21px 0 27px}.article-video-frame{border-radius:10px}.article-video-note{font-size:9px}}
+
+
+/* Pagefind static full-text search — themed to VibeCritic */
+:root{
+ --pf-text:var(--vc-text);
+ --pf-text-secondary:var(--vc-muted);
+ --pf-text-muted:var(--vc-muted);
+ --pf-background:var(--vc-surface);
+ --pf-border:var(--vc-border);
+ --pf-border-focus:var(--vc-accent);
+ --pf-hover:var(--vc-surface-muted);
+ --pf-mark:var(--vc-accent-deep);
+ --pf-font:Tahoma,Arial,sans-serif;
+ --pf-input-height:48px;
+ --pf-input-font-size:16px;
+ --pf-result-title-font-size:14px;
+ --pf-result-excerpt-font-size:12px;
+ --pf-border-radius:8px;
+ --pf-searchbox-max-width:100%;
+ --pf-searchbox-dropdown-max-height:min(42vh,380px);
+ --pf-dropdown-z-index:120;
+ --pf-results-gap:8px;
+}
+.dark-mode{
+ --pf-text:#f3f0e8;
+ --pf-text-secondary:#aaa092;
+ --pf-text-muted:#aaa092;
+ --pf-background:#211f1a;
+ --pf-border:#504a40;
+ --pf-border-focus:#f2a64a;
+ --pf-hover:#302d26;
+ --pf-mark:#ffc06b;
+ --pf-skeleton:#302d26;
+ --pf-skeleton-shine:#38352e;
+}
+pagefind-searchbox{display:block;width:100%;max-width:100%;margin:0 0 18px}
+.site-search-dialog pagefind-searchbox{margin:0}
