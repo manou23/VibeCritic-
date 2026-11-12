@@ -7,7 +7,7 @@ export function getStaticPaths(){return ['game','movie','series'].map(type=>({pa
 const type=Astro.params.type as ReviewType;
 const all=await getCollection('reviews',({data})=>data.type===type);
 const reviews=all.sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
-const normalizeArabic=value=>String(value||'').toLocaleLowerCase('ar').normalize('NFKD').replace(/\\p{M}/gu,'').replace(/[أإآٱ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/ؤ/g,'و').replace(/ئ/g,'ي').replace(/[^\\p{L}\\p{N}\\s]/gu,' ').trim().replace(/\\s+/g,' ');
+const normalizeArabic=value=>String(value||'').toLocaleLowerCase('ar').normalize('NFKD').replace(/\p{M}/gu,'').replace(/[أإآٱ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/ؤ/g,'و').replace(/ئ/g,'ي').replace(/[^\p{L}\p{N}\s]/gu,' ').trim().replace(/\s+/g,' ');
 const featured=reviews[0];
 const years=[...new Set(reviews.map(review=>review.data.releaseDate ? Number(review.data.releaseDate.slice(0,4)) : review.data.date.getFullYear()))].filter(Number.isFinite).sort((a,b)=>b-a);
 const genres=[...new Set(reviews.flatMap(review=>review.data.genres||[]))].sort((a,b)=>a.localeCompare(b,'ar'));
@@ -58,7 +58,7 @@ if(grid){
  const count=document.querySelector<HTMLElement>('#category-result-count');
  const empty=document.querySelector<HTMLElement>('#category-filter-empty');
  const update=()=>{
-  const normalize=value=>String(value||'').toLocaleLowerCase('ar').normalize('NFKD').replace(/\\p{M}/gu,'').replace(/[أإآٱ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/ؤ/g,'و').replace(/ئ/g,'ي').replace(/[^\\p{L}\\p{N}\\s]/gu,' ').trim().replace(/\\s+/g,' ');
+  const normalize=value=>String(value||'').toLocaleLowerCase('ar').normalize('NFKD').replace(/\p{M}/gu,'').replace(/[أإآٱ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/ؤ/g,'و').replace(/ئ/g,'ي').replace(/[^\p{L}\p{N}\s]/gu,' ').trim().replace(/\s+/g,' ');
   const term=normalize(search?.value||'');
   const selectedGenre=genre?.value||'all';
   const selectedYear=year?.value||'all';
