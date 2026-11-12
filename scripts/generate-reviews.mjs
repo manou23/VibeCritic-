@@ -61,7 +61,7 @@ async function generateWithGemini(prompt){
 }
 async function generateWithOpenAI(prompt){
  const model=env.OPENAI_MODEL||'gpt-4o-mini',key=required('OPENAI_API_KEY');
- const r=await fetch('https://api.openai.com/v1/chat/completions',{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key},body:JSON.stringify({model,temperature:.3,response_format:{type:'json_object'},messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]}),signal:AbortSignal.timeout(90000)});
+ const r=await fetch('https://api.openai.com/v1/chat/completions',{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key},body:JSON.stringify({model,temperature:.3,max_tokens:6000,response_format:{type:'json_object'},messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]}),signal:AbortSignal.timeout(90000)});
  if(!r.ok)throw new Error('OpenAI HTTP '+r.status+': '+await r.text());
  const content=(await r.json()).choices?.[0]?.message?.content;
  if(!content)throw new Error('لم يرجع OpenAI محتوى نصياً');
