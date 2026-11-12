@@ -179,4 +179,112 @@ const reviewStructuredData = {
     </aside>
   </div>
 </article>
+
+<script>
+document.querySelectorAll('[data-comments-section]').forEach((section) => {
+  const slug = section.getAttribute('data-review-slug');
+  const list = section.querySelector('[data-comments-list]');
+  const count = section.querySelector('[data-comments-count]');
+  const form = section.querySelector('[data-comments-form]');
+  const submit = section.querySelector('[data-comments-submit]');
+  const status = section.querySelector('[data-comments-status]');
+  const endpoint = '/api/comments';
+
+  const setStatus = (message, error = false) => {
+    if (!status) return;
+    status.textContent = message;
+    status.classList.toggle('is-error', error);
+  };
+
+  const renderComments = (comments) => {
+    if (!list || !count) return;
+    list.replaceChildren();
+    count.textContent = comments.length + (comments.length === 1 ? ' تعليق منشور' : ' تعليقات منشورة');
+    if (!comments.length) {
+      const empty = document.createElement('p');
+      empty.className = 'comments-empty';
+      empty.textContent = 'لا توجد تعليقات منشورة بعد. كن أول من يشارك رأيه.';
+      list.append(empty);
+      return;
+    }
+    comments.forEach((comment) => {
+      const card = document.createElement('article');
+      card.className = 'comment-card';
+      const avatar = document.createElement('div');
+      avatar.className = 'comment-avatar';
+      avatar.setAttribute('aria-hidden', 'true');
+      avatar.textContent = String(comment.nickname || '?').trim().charAt(0) || '?';
+      const content = document.createElement('div');
+      content.className = 'comment-content';
+      const meta = document.createElement('div');
+      meta.className = 'comment-meta';
+      const name = document.createElement('strong');
+      name.textContent = comment.nickname || 'زائر';
+      const date = document.createElement('time');
+      const parsed = new Date(comment.created_at);
+      date.textContent = Number.isNaN(parsed.getTime()) ? '' : new Intl.DateTimeFormat('ar-DZ', {dateStyle:'medium'}).format(parsed);
+      meta.append(name, date);
+      const body = document.createElement('p');
+      body.textContent = comment.body || '';
+      content.append(meta, body);
+      card.append(avatar, content);
+      list.append(card);
+    });
+  };
+
+  const loadComments = async () => {
+    try {
+      const response = await fetch(endpoint + '?slug=' + encodeURIComponent(slug), {headers:{'Accept':'application/json'}});
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || 'تعذر الاتصال بخدمة التعليقات.');
+      renderComments(Array.isArray(data.comments) ? data.comments : []);
+      if (submit) submit.disabled = false;
+      setStatus('تعليقك سيظهر بعد مراجعته من إدارة الموقع.');
+    } catch (error) {
+      if (list) {
+        list.replaceChildren();
+        const note = document.createElement('p');
+        note.className = 'comments-loading';
+        note.textContent = 'التعليقات الحقيقية ستتاح بعد اكتمال إعداد الخدمة.';
+        list.append(note);
+      }
+      if (submit) submit.disabled = true;
+      setStatus('خدمة التعليقات قيد الإعداد؛ أمثلة العرض موسومة بوضوح بأنها تجريبية.');
+    }
+  };
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!form.reportValidity() || !submit) return;
+    const fields = new FormData(form);
+    submit.disabled = true;
+    submit.textContent = 'جارٍ الإرسال…';
+    setStatus('جارٍ إرسال تعليقك بأمان…');
+    try {
+      const response = await fetch(endpoint, {
+        method:'POST',
+        headers:{'content-type':'application/json','accept':'application/json'},
+        body:JSON.stringify({
+          slug,
+          nickname:fields.get('nickname'),
+          body:fields.get('body'),
+          website:fields.get('website')
+        })
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || 'تعذر إرسال التعليق.');
+      form.reset();
+      setStatus('وصل تعليقك بنجاح، وسيظهر بعد مراجعته. شكراً لمشاركتك!');
+    } catch (error) {
+      setStatus(error.message || 'حدث خطأ. حاول مرة أخرى.', true);
+    } finally {
+      submit.disabled = false;
+      submit.textContent = 'إرسال التعليق';
+    }
+  });
+
+  loadComments();
+});
+</script>
+
 </Base>
