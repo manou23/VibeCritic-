@@ -6,12 +6,12 @@ import { url, TYPE_PLURAL, optimizeImage } from '../consts';
 import trending from '../data/trending.json';
 const reviews=(await getCollection('reviews')).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
 const byType={game:reviews.filter(x=>x.data.type==='game'),series:reviews.filter(x=>x.data.type==='series'),movie:reviews.filter(x=>x.data.type==='movie')};
-// اعرض في الترندات الأعمال التي تملك مراجعة منشورة داخل VibeCritic فقط.
-const trendReviews=trending.filter(item=>['مرتفع','متوسط'].includes(item.trendConfidence)).flatMap(item=>{
+// اعرض الترندات الموثوقة حتى عندما لم تُنشر مراجعة VibeCritic للعمل بعد.
+const trendReviews=trending.filter(item=>['مرتفع','متوسط'].includes(item.trendConfidence)).map(item=>{
  const review=reviews.find(entry=>entry.data.type===item.type&&entry.data.sourceId===item.sourceId);
- if(!review)return [];
- return [{...item,summary:review.data.summary||item.summary,poster:optimizeImage(item.poster),backdrop:optimizeImage(item.backdrop||item.poster,'backdrop'),review,href:url(`reviews/${review.id}/`)}];
-}).slice(0,5);
+ return {...item,summary:review?.data.summary||item.summary,poster:optimizeImage(item.poster),backdrop:optimizeImage(item.backdrop||item.poster,'backdrop'),review,href:review?url(`reviews/${review.id}/`):item.sourceUrl,external:!review};
+}).filter(item=>item.href).slice(0,9);
+const trendGroups={movie:trendReviews.filter(item=>item.type==='movie'),series:trendReviews.filter(item=>item.type==='series'),game:trendReviews.filter(item=>item.type==='game')};
 const spotlight=trendReviews[0]||null;
 const topRated=[...reviews].filter(review=>review.data.score>0&&review.data.reviewMode!=='preview').sort((a,b)=>b.data.score-a.data.score).slice(0,8);
 const upcoming=reviews.filter(review=>review.data.reviewMode==='preview').sort((a,b)=>String(a.data.releaseDate||'').localeCompare(String(b.data.releaseDate||''))).slice(0,8);
@@ -29,7 +29,7 @@ const upcoming=reviews.filter(review=>review.data.reviewMode==='preview').sort((
   <h1 class="spotlight-title">{spotlight?.title||'أبرز مؤشرات الرواج'}</h1>
   <p class="discovery-description spotlight-description">{spotlight?.summary||'اكتشف الأعمال التي تسجل مؤشرات شعبية موثوقة لدى مصادر البيانات.'}</p>
   <div class="discovery-actions">
-   {spotlight&&<a class="discovery-primary spotlight-link" href={spotlight.href}>اقرأ المراجعة <span>↗</span></a>}
+   {spotlight&&<a class="discovery-primary spotlight-link" href={spotlight.href} target={spotlight.external?"_blank":undefined} rel={spotlight.external?"noopener noreferrer":undefined}>{spotlight.external?"اكتشف العمل":"اقرأ المراجعة"} <span>↗</span></a>}
    <a class="discovery-secondary" href="#trending">كل الترندات</a>
   </div>
  </div>
@@ -40,7 +40,7 @@ const upcoming=reviews.filter(review=>review.data.reviewMode==='preview').sort((
  </div>
  <div class="spotlight-progress" aria-hidden="true"><span></span></div>
  <div class="spotlight-data" hidden>
-  {trendReviews.map(item=><i data-title={item.title} data-summary={item.summary||''} data-backdrop={item.backdrop||item.poster||''} data-poster={item.poster||''} data-type={item.type} data-source={item.source||''} data-href={item.href}></i>)}
+  {trendReviews.map(item=><i data-title={item.title} data-summary={item.summary||''} data-backdrop={item.backdrop||item.poster||''} data-poster={item.poster||''} data-type={item.type} data-source={item.source||''} data-href={item.href} data-external={String(item.external)}></i>)}
  </div>
 </section>
 <aside class="wrap ai-review-promo" data-expires="2026-11-19T23:59:59+01:00" aria-label="جرّب المراجع الذكي">
@@ -58,6 +58,16 @@ const upcoming=reviews.filter(review=>review.data.reviewMode==='preview').sort((
   <span class="ai-review-promo-spark spark-two">✧</span>
  </div>
 </aside>
+<section class="wrap catalog-section" id="trending">
+ <div class="catalog-heading"><div><p class="catalog-eyebrow">WHAT'S TRENDING</p><h2>الترندات حسب النوع</h2><p>مؤشرات الرواج من TMDb للأفلام والمسلسلات وRAWG للألعاب</p></div></div>
+ {(['movie','series','game'] as const).map(type=>trendGroups[type].length>0&&<div class="trend-type-group">
+  <div class="catalog-heading"><div><h3>{type==='movie'?'ترند الأفلام':type==='series'?'ترند المسلسلات':'ترند الألعاب'}</h3></div><a href={url('category/'+type+'/')} class="catalog-more">كل القسم <span>←</span></a></div>
+  <div class="catalog-rail">{trendGroups[type].map(item=><a class="review-card trend-review-card" href={item.href} target={item.external?'_blank':undefined} rel={item.external?'noopener noreferrer':undefined}>
+   <div class="review-poster-wrap">{item.poster&&<img class="review-poster" src={item.poster} alt={item.title} loading="lazy" decoding="async" width="600" height="900"/>}<span class="review-type">{type==='movie'?'فيلم':type==='series'?'مسلسل':'لعبة'}</span></div>
+   <div class="review-content"><h3 class="review-title">{item.title}</h3><p class="review-headline">{item.summary}</p><span class="review-date">{item.review?'اقرأ المراجعة':'من '+item.source}</span></div>
+  </a>)}</div>
+ </div>)}
+</section>
 <section class="wrap catalog-section" id="top-rated">
  <div class="catalog-heading"><div><p class="catalog-eyebrow">EDITOR'S HIGHEST SCORES</p><h2>الأعلى تقييماً</h2><p>الأعمال التي حصلت على أعلى درجات VibeCritic التحريرية</p></div><a href="#all-reviews" class="catalog-more">كل المراجعات <span>←</span></a></div>
  {topRated.length>0?<div class="catalog-rail">{topRated.map(review=><ReviewCard review={review}/>)}</div>:<div class="catalog-empty">ستظهر هنا الأعمال بعد اكتمال مراجعاتها وتقييمها.</div>}
@@ -123,7 +133,7 @@ if(hero){
    if(title)title.textContent=item.title||'ترند عالمي';
    if(summary)summary.textContent=item.summary||'هذا العمل ضمن أبرز الأعمال وفق مؤشرات الشعبية المتاحة.';
    if(category)category.textContent=(labels[item.type]||'ترند عالمي')+' · '+(item.source||'TRENDING');
-   if(link){link.href=item.href;link.removeAttribute('target');link.removeAttribute('rel');}
+   if(link){link.href=item.href;if(item.external==='true'){link.target='_blank';link.rel='noopener noreferrer';link.textContent='اكتشف العمل ↗';}else{link.removeAttribute('target');link.removeAttribute('rel');link.textContent='اقرأ المراجعة ↗';}}
    if(count)count.textContent=String(current+1).padStart(2,'0');
    hero.querySelector('.spotlight-copy')?.classList.remove('is-changing');
   },reduced?0:220);
