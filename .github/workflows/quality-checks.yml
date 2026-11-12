@@ -33,6 +33,7 @@ jobs:
         run: |
           node --check scripts/generate-reviews.mjs
           node --check scripts/backfill-arabic-titles.mjs
+          node --check scripts/backfill-game-platforms.mjs
           node --check scripts/validate-review-scores.mjs
           node --check functions/api/review.js
       - name: Validate review scores
