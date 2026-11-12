@@ -94,5 +94,7 @@ jobs:
               git rebase origin/main
             done
           fi
-      - name: Build site
-        run: npm run build
+      - name: Build production site
+        run: CF_PAGES=1 npm run build
+      - name: Validate production build, SEO and sitemap
+        run: npm run validate:build
