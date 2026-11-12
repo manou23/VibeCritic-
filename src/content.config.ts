@@ -5,6 +5,8 @@ const reviews = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/reviews' }),
   schema: z.object({
     title: z.string(),
+    locale: z.enum(['en', 'fr']).optional(),
+    translationOf: z.string().optional(),
     originalTitle: z.string().optional(),
     headline: z.string(),
     hook: z.string().optional(),

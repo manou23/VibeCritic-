@@ -11,6 +11,7 @@ const {
   noindex = false,
   keywords = [],
   structuredData: pageStructuredData = null,
+  alternates = [],
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const rawTitle = `${title} | ${SITE_NAME}`;
@@ -53,6 +54,7 @@ const safeJson = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
 <meta name="robots" content={noindex ? 'noindex,nofollow' : 'index,follow'} />
 <link rel="icon" type="image/svg+xml" href={url('favicon.svg')} />
 <link rel="canonical" href={canonical} />
+{alternates.map((item) => <link rel="alternate" hreflang={item.lang} href={item.href} />)}
 <meta property="og:locale" content="ar_DZ" />
 <meta property="og:type" content={pageType === 'article' ? 'article' : 'website'} />
 <meta property="og:site_name" content={SITE_NAME} />
@@ -76,6 +78,7 @@ const safeJson = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
   <nav class="site-links" id="primary-navigation" aria-label="التنقل الرئيسي">
    <a href={url('')}>الرئيسية</a><a href={url('category/game/')}>الألعاب</a><a href={url('category/movie/')}>الأفلام</a><a href={url('category/series/')}>المسلسلات</a><a href={url('ai-review/')}>المراجع الذكي</a>
   </nav>
+  <details class="language-picker"><summary aria-label="تغيير اللغة">🌐 <span>AR</span></summary><div class="language-options"><a href="/" lang="ar">العربية</a><a href="/en/" lang="en">English</a><a href="/fr/" lang="fr">Français</a></div></details>
   <button class="header-search" id="site-search-open" type="button" aria-haspopup="dialog" aria-controls="site-search-dialog"><span aria-hidden="true">⌕</span><span class="header-search-label">بحث</span></button>
   <button id="theme-toggle" class="theme-toggle" type="button" aria-label="تبديل المظهر" aria-pressed="false">◐</button>
  </div>

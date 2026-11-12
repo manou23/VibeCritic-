@@ -1,0 +1,133 @@
+---
+import '../../../styles/global.css';
+import { getCollection, render } from 'astro:content';
+import { LOCALE_META, type Locale } from '../../../i18n/config';
+import { optimizeImage } from '../../../consts';
+
+export async function getStaticPaths() {
+  const reviews = await getCollection('reviews', ({ data }) => data.locale === 'en' || data.locale === 'fr');
+  return reviews.map((review) => ({
+    params: {
+      locale: review.data.locale,
+      slug: review.id.replace(/^(en|fr)\//, ''),
+    },
+    props: { review },
+  }));
+}
+
+const { review } = Astro.props;
+const locale = review.data.locale as Locale;
+const meta = LOCALE_META[locale];
+const d = review.data;
+const { Content } = await render(review);
+const copy = locale === 'en' ? {
+  home: 'Home', back: 'Back to VibeCritic', category: { game: 'Game', movie: 'Film', series: 'Series' },
+  hook: 'The critical take', about: 'About this title', pros: 'Strengths', cons: 'Limitations',
+  verdict: 'Final verdict', worth: 'Is it worth your time?', score: 'VibeCritic score',
+  release: 'Release date', publisher: 'Company / creator', genres: 'Genres',
+  method: 'VibeCritic method: this editorial assessment is based on published information and available data. It does not claim direct hands-on experience. The score is an independent critical estimate, not an official rating.',
+  other: 'Read another review', arabic: 'العربية', english: 'English', french: 'Français',
+} : {
+  home: 'Accueil', back: 'Retour à VibeCritic', category: { game: 'Jeu', movie: 'Film', series: 'Série' },
+  hook: 'Le regard critique', about: 'À propos de cette œuvre', pros: 'Points forts', cons: 'Limites',
+  verdict: 'Verdict final', worth: 'Cela vaut-il votre temps ?', score: 'Note VibeCritic',
+  release: 'Date de sortie', publisher: 'Société / créateur', genres: 'Genres',
+  method: 'Méthode VibeCritic : cette analyse éditoriale repose sur les informations publiées et les données disponibles. Elle ne prétend pas résulter d’une expérience directe. La note est une estimation critique indépendante, et non une note officielle.',
+  other: 'Lire une autre critique', arabic: 'العربية', english: 'English', french: 'Français',
+};
+const canonical = new URL(`/${locale}/reviews/${review.id.replace(/^(en|fr)\//, '')}/`, Astro.site).href;
+const arabicUrl = new URL(`/reviews/${d.translationOf}/`, Astro.site).href;
+const allReviews = await getCollection('reviews', ({ data }) => data.translationOf === d.translationOf);
+const counterpart = allReviews.find((entry) => entry.data.locale && entry.data.locale !== locale);
+const counterpartUrl = counterpart
+  ? new URL(`/${counterpart.data.locale}/reviews/${counterpart.id.replace(/^(en|fr)\//, '')}/`, Astro.site).href
+  : null;
+const typeLabel = copy.category[d.type];
+const description = `${d.title} — ${d.summary} VibeCritic: ${d.score}/10.`;
+---
+<!doctype html>
+<html lang={meta.htmlLang} dir={meta.direction}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content={description} />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href={canonical} />
+  <link rel="alternate" hreflang="ar" href={arabicUrl} />
+  <link rel="alternate" hreflang={meta.htmlLang} href={canonical} />
+  {counterpart && <link rel="alternate" hreflang={LOCALE_META[counterpart.data.locale as Locale].htmlLang} href={counterpartUrl!} />}
+  <meta property="og:locale" content={meta.ogLocale} />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="VibeCritic" />
+  <meta property="og:title" content={d.title} />
+  <meta property="og:description" content={description} />
+  {d.poster && <meta property="og:image" content={optimizeImage(d.poster)} />}
+  <title>{d.title} — VibeCritic</title>
+  <script is:inline>try{const savedTheme=localStorage.getItem("vc-theme");document.documentElement.classList.toggle("dark-mode",savedTheme!=="light")}catch{document.documentElement.classList.add("dark-mode")}</script>
+</head>
+<body>
+<header class="site-header"><div class="wrap site-nav">
+  <a href={`/${locale}/`} class="brand" aria-label="VibeCritic"><span>Vibe</span><span class="brand-accent">Critic</span><small>THE ENTERTAINMENT GUIDE</small></a>
+  <nav class="site-links" aria-label={locale === 'en' ? 'Main navigation' : 'Navigation principale'}>
+    <a href={`/${locale}/`}>{copy.home}</a>
+    <a href="/category/game/">{locale === 'en' ? 'Games · Arabic' : 'Jeux · arabe'}</a>
+    <a href="/category/movie/">{locale === 'en' ? 'Movies · Arabic' : 'Films · arabe'}</a>
+    <a href="/category/series/">{locale === 'en' ? 'Series · Arabic' : 'Séries · arabe'}</a>
+  </nav>
+  <details class="language-picker"><summary aria-label={locale === 'en' ? 'Language' : 'Langue'}>🌐 <span>{locale.toUpperCase()}</span></summary><div class="language-options">
+    <a href={arabicUrl} lang="ar">{copy.arabic}</a>
+    <a href={locale === 'en' ? canonical : counterpart?.data.locale === 'en' ? counterpartUrl! : '/en/'} lang="en">{copy.english}</a>
+    <a href={locale === 'fr' ? canonical : counterpart?.data.locale === 'fr' ? counterpartUrl! : '/fr/'} lang="fr">{copy.french}</a>
+  </div></details>
+</div></header>
+<main id="main-content" class="wrap article-page localized-article">
+  <a href={`/${locale}/`} class="article-back">← {copy.back}</a>
+  <header class="article-header">
+    <p class="eyebrow">VIBECRITIC / {locale.toUpperCase()} EDITION</p>
+    <div class="article-meta"><span class="article-category">{typeLabel}</span><time datetime={d.date.toISOString()}>{new Intl.DateTimeFormat(meta.htmlLang, { dateStyle: 'long' }).format(d.date)}</time><span class="article-ai">{locale === 'en' ? 'AI-assisted editorial analysis' : 'Analyse éditoriale assistée par IA'}</span></div>
+    <h1>{d.title}</h1><p class="article-deck">{d.headline}</p>
+  </header>
+  {d.backdrop && <figure class="article-backdrop"><img src={optimizeImage(d.backdrop, 'backdrop')} alt={d.title} loading="eager" fetchpriority="high" decoding="async" /><figcaption>VibeCritic — {locale === 'en' ? 'An honest critical perspective' : 'Un regard critique sans complaisance'}</figcaption></figure>}
+  <div class="article-layout">
+    <div class="article-main">
+      <section class="article-hook"><p class="eyebrow">{copy.hook}</p><p>{d.hook || d.headline}</p></section>
+      {d.youtubeVideoId && <section class="article-video"><div class="article-video-heading"><p class="eyebrow">YouTube</p><h2>{d.youtubeVideoTitle || (locale === 'en' ? 'Official video' : 'Vidéo officielle')}</h2></div><div class="article-video-frame"><iframe src={`https://www.youtube-nocookie.com/embed/${d.youtubeVideoId}`} title={d.youtubeVideoTitle || d.title} loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></section>}
+      <section class="article-summary"><p class="eyebrow">{copy.about}</p><p>{d.summary}</p></section>
+      <div class="article-body prose"><Content /></div>
+      <div class="article-verdict-grid">
+        <section class="verdict-panel pros-panel"><h2><span>+</span> {copy.pros}</h2><ul>{d.pros.map((item) => <li>{item}</li>)}</ul></section>
+        <section class="verdict-panel cons-panel"><h2><span>−</span> {copy.cons}</h2><ul>{d.cons.map((item) => <li>{item}</li>)}</ul></section>
+      </div>
+      <section class="article-final-verdict"><p class="eyebrow">{copy.verdict}</p><h2>{copy.worth}</h2><p>{d.verdict || d.summary}</p></section>
+      <p class="review-method-note">{copy.method}</p>
+      <div class="localized-language-links"><a href={arabicUrl}>العربية ↗</a>{counterpart && <a href={counterpartUrl!}>{counterpart.data.locale === 'en' ? 'English' : 'Français'} ↗</a>}</div>
+      <a href={`/${locale}/`} class="article-return">{copy.other} <span>←</span></a>
+    </div>
+    <aside class="article-aside" aria-label={locale === 'en' ? 'Review summary and facts' : 'Résumé et informations'}>
+      {d.poster && <img class="article-poster" src={optimizeImage(d.poster)} alt={d.title} loading="lazy" decoding="async" width="600" height="900" />}
+      <div class="article-score-wrap"><p class="eyebrow">{copy.score}</p><div class="localized-score"><strong>{d.score.toFixed(1)}</strong><span>/10</span></div><p class="article-score-note">{locale === 'en' ? 'An independent view.' : 'Un avis indépendant.'}</p></div>
+      {(d.releaseDate || d.creator || d.genres?.length) && <section class="article-facts"><h2>{locale === 'en' ? 'Title details' : 'Fiche de l’œuvre'}</h2><dl>
+        {d.releaseDate && <div><dt>{copy.release}</dt><dd>{d.releaseDate}</dd></div>}
+        {d.creator && <div><dt>{copy.publisher}</dt><dd>{d.creator}</dd></div>}
+        {d.genres?.length > 0 && <div><dt>{copy.genres}</dt><dd>{d.genres.join(', ')}</dd></div>}
+      </dl></section>}
+    </aside>
+  </div>
+</main>
+<footer class="site-footer"><div class="wrap footer-inner"><a href={`/${locale}/`} class="footer-brand">Vibe<span>Critic</span></a><p>© {new Date().getFullYear()} VibeCritic. {locale === 'en' ? 'Honest reviews. Your decision.' : 'Des critiques honnêtes. À vous de choisir.'}</p></div></footer>
+</body>
+</html>
+<style>
+.localized-article{padding-top:32px;padding-bottom:70px}
+.localized-score{display:flex;align-items:baseline;gap:5px;font-size:18px;font-weight:800}
+.localized-score strong{font-size:48px;letter-spacing:-.05em;color:var(--vc-accent)}
+.localized-language-links{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}
+.localized-language-links a{padding:9px 13px;border:1px solid var(--vc-border);border-radius:999px;font-weight:700}
+.language-picker{position:relative;z-index:70;flex:0 0 auto;font-size:12px;font-weight:850}
+.language-picker summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;min-height:40px;padding:0 11px;border:1px solid var(--vc-border);border-radius:999px;color:var(--vc-text);background:transparent}
+.language-picker summary::-webkit-details-marker{display:none}
+.language-options{position:absolute;top:calc(100% + 8px);inset-inline-end:0;min-width:132px;padding:6px;background:var(--vc-surface);border:1px solid var(--vc-border);border-radius:11px;box-shadow:0 12px 30px #0002}
+.language-options a{display:block;padding:10px 12px;border-radius:7px;font-size:13px}
+.language-options a:hover,.language-options a:focus-visible{background:var(--vc-surface-muted);outline:none}
+@media(max-width:700px){.site-nav{gap:10px;flex-wrap:wrap;padding:12px 0}.site-links{order:3;width:100%;justify-content:center;flex-wrap:wrap}.brand small{display:none}}
+</style>

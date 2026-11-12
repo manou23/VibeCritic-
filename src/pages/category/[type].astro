@@ -5,7 +5,7 @@ import { getCollection } from 'astro:content';
 import { TYPE_LABEL, TYPE_PLURAL, type ReviewType, url, optimizeImage } from '../../consts';
 export function getStaticPaths(){return ['game','movie','series'].map(type=>({params:{type}}));}
 const type=Astro.params.type as ReviewType;
-const all=await getCollection('reviews',({data})=>data.type===type);
+const all=await getCollection('reviews',({data})=>data.type===type&&!data.locale);
 const reviews=all.sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
 const featured=reviews[0];
 const copy={game:{en:'GAMES & INTERACTIVE',title:'اكتشف عالم الألعاب',desc:'إصدارات جديدة، تجارب تستحق وقتك، ومراجعات تساعدك تختار لعبتك القادمة.'},series:{en:'SERIES & TV',title:'اكتشف عالم المسلسلات',desc:'تابع أحدث المسلسلات، الأعمال الرائجة، والمراجعات قبل أن تبدأ المشاهدة.'},movie:{en:'MOVIES & CINEMA',title:'اكتشف عالم الأفلام',desc:'أحدث الأفلام، اختيارات السهرة، ومراجعات صريحة بلا حرق.'}}[type];

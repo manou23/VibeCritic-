@@ -1,0 +1,37 @@
+name: Validate multilingual preview
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'scripts/validate-build.mjs'
+      - 'astro.config.mjs'
+      - 'package.json'
+      - '.github/workflows/validate-multilingual.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: multilingual-validation-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install dependencies
+        run: npm install
+      - name: Build Cloudflare Pages output
+        run: CF_PAGES=1 npm run build
+      - name: Validate sitemap, SEO and localized pilot routes
+        run: npm run validate:build

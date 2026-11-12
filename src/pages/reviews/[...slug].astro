@@ -3,8 +3,8 @@ import Base from '../../layouts/Base.astro';
 import ScoreCard from '../../components/ScoreCard.astro';
 import { getCollection, render } from 'astro:content';
 import { TYPE_LABEL, fmtDate, url, optimizeImage, SITE_NAME } from '../../consts';
-export async function getStaticPaths(){const reviews=await getCollection('reviews');return reviews.map(review=>({params:{slug:review.id},props:{review}}));}
-const {review}=Astro.props;const {Content}=await render(review);const d=review.data;
+export async function getStaticPaths(){const reviews=await getCollection('reviews',({data})=>!data.locale);const localized=await getCollection('reviews',({data})=>Boolean(data.locale));return reviews.map(review=>{const translations=[{lang:'ar',href:`/reviews/${review.id}/`},...localized.filter(entry=>entry.data.translationOf===review.id).map(entry=>({lang:entry.data.locale==='en'?'en':'fr',href:`/${entry.data.locale}/reviews/${entry.id.replace(/^(en|fr)\//,'')}/`}))];return {params:{slug:review.id},props:{review,translations}};});}
+const {review,translations=[]}=Astro.props;const {Content}=await render(review);const d=review.data;
 
 const typeLabel = TYPE_LABEL[d.type];
 const youtubeVideoId = /^[A-Za-z0-9_-]{11}$/.test(d.youtubeVideoId || '') ? d.youtubeVideoId : null;
@@ -53,7 +53,7 @@ const reviewStructuredData = {
 };
 
 ---
-<Base title={`${d.title} — مراجعة وتقييم`} description={reviewDescription} keywords={reviewKeywords} structuredData={reviewStructuredData} image={optimizeImage(d.backdrop || d.poster, 'backdrop')} pageType="article" publishedAt={d.date.toISOString()}>
+<Base title={`${d.title} — مراجعة وتقييم`} description={reviewDescription} keywords={reviewKeywords} structuredData={reviewStructuredData} image={optimizeImage(d.backdrop || d.poster, 'backdrop')} pageType="article" publishedAt={d.date.toISOString()} alternates={translations}>
 <article class="wrap article-page">
   <a href={url('')} class="article-back">← العودة إلى VibeCritic</a>
   <header class="article-header">
