@@ -102,9 +102,9 @@ const reviewStructuredData = {
       </section>
       {youtubeVideoId && <section class="article-video" aria-labelledby="article-video-title">
         <div class="article-video-heading"><p class="eyebrow">من YouTube الرسمي</p><h2 id="article-video-title">شاهد المقطع</h2></div>
-        <div class="article-video-frame" data-youtube-facade data-video-id={youtubeVideoId}>
+        <div class="article-video-frame" data-youtube-facade data-video-id={youtubeVideoId} data-video-title={youtubeVideoTitle}>
           <button class="youtube-facade-button" type="button" aria-label="تشغيل المقطع">
-            <img src={`https://i.ytimg.com/vi/${youtubeVideoId}/hqdefault.jpg`} alt="" loading="lazy" decoding="async" width="480" height="360"/>
+            <img src={optimizeImage(d.backdrop || d.poster || '', 'backdrop')} alt="" loading="lazy" decoding="async" width="480" height="360"/>
             <span class="youtube-play-icon" aria-hidden="true">▶</span>
           </button>
         </div>
@@ -187,7 +187,7 @@ document.querySelectorAll<HTMLElement>('[data-youtube-facade]').forEach((facade)
   if(!id)return;
   const frame=document.createElement('iframe');
   frame.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(id)+'?autoplay=1';
-  frame.title="مقطع YouTube";
+  frame.title=facade.dataset.videoTitle||"مقطع YouTube";
   frame.loading='eager';
   frame.referrerPolicy='strict-origin-when-cross-origin';
   frame.allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share';
