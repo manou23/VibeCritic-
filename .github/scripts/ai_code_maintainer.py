@@ -15,10 +15,10 @@ EXTENSIONS = {".astro", ".ts", ".js", ".mjs", ".css"}
 PREFIXES = ("src/components/", "src/layouts/", "src/pages/", "src/styles/")
 EXACT = {"src/consts.ts", "src/content.config.ts"}
 READ_ONLY = ("package.json", "astro.config.mjs", "scripts/validate-build.mjs")
-MAX_CONTEXT_CHARS = 24000
-MAX_FILE_CHARS = 6500
-MAX_FILES = 6
-MAX_READ_ONLY_CHARS = 4500
+MAX_CONTEXT_CHARS = 12000
+MAX_FILE_CHARS = 4500
+MAX_FILES = 4
+MAX_READ_ONLY_CHARS = 2500
 
 
 def git(*args, input_text=None):
@@ -100,7 +100,9 @@ Only paths from EDITABLE FILE sections may be changed. No new/deleted/renamed fi
     payload = {
         "model": MODEL,
         "temperature": 0.1,
-        "max_tokens": 5500,
+        "max_completion_tokens": 3500,
+        "reasoning_effort": "low",
+        "include_reasoning": False,
         "messages": [
             {"role": "system", "content": system},
             {"role": "user", "content":
