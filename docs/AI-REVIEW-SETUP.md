@@ -28,6 +28,10 @@ A key array may be JSON:
 
 or comma/newline-separated. Do not commit keys to the repository.
 
+## Automated review generation
+
+The scheduled GitHub Actions workflow reads provider keys from GitHub repository secrets and the optional provider/model choices from repository variables. Configure `AI_PROVIDER` as one of `openrouter`, `groq`, `gemini`, or `openai`; the generator now tries the selected provider first, then the other configured providers if it fails. Model overrides are available through `OPENROUTER_MODEL`, `GROQ_MODEL`, `GEMINI_MODEL`, and `OPENAI_MODEL` repository variables. These GitHub settings are separate from Cloudflare Pages secrets: configure the keys in both places if you want both scheduled publishing and the interactive `/api/review` feature to work.
+
 ## Custom OpenAI-compatible providers
 
 Set \`AI_PROVIDERS\` to a JSON array. Use \`keysEnv\` or \`singleKeyEnv\` to point to Cloudflare secret names; use \`modelEnv\` to override a model without editing code.
@@ -49,7 +53,7 @@ The endpoint appends \`/chat/completions\` to \`baseUrl\` unless it already ends
 
 ## Rotation behavior
 
-For every provider, the function tries each configured key in order. On quota/rate-limit, invalid-key, server, timeout, or response errors, it moves to the next key; after exhausting a provider it moves to the next provider. The endpoint returns only the generated review and provider name, never the API key. It has request-size and best-effort per-IP limits; configure Cloudflare Rate Limiting/WAF rules for stronger production abuse protection and monitor provider spending.
+For every provider, the function tries each configured key in order. On quota/rate-limit, invalid-key, server, timeout, or response errors, it moves to the next key; after exhausting a provider it moves to the next provider. The scheduled generator also falls back across OpenRouter, OpenAI, Gemini, and Groq when the selected provider fails. The endpoint returns only the generated review and provider name, never the API key. It has request-size and best-effort per-IP limits; configure Cloudflare Rate Limiting/WAF rules for stronger production abuse protection and monitor provider spending.
 
 ## Review format
 
