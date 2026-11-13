@@ -45,7 +45,7 @@ try {
   assert.match(context, /Science Fiction/);
   assert.match(context, /Related Film/);
   assert.match(context, /Second Film/);
-  assert.match(context, /ليست دليلاً على تأثير أو اقتباس/);
+  assert.match(context, /ليس دليلاً على تأثير أو اقتباس/);
   assert.ok(context.includes('\n'), 'Knowledge context should use real line breaks.');
 
   const graph = JSON.parse(await fs.readFile('data/knowledge-graph.json', 'utf8'));
