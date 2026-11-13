@@ -116,6 +116,13 @@ jobs:
                 signal: AbortSignal.timeout(150000)
               });
               const body = await response.text();
+              if (response.status === 402) {
+                console.warn('SambaNova is not currently usable: the account requires a payment method or active balance (HTTP 402).');
+                console.warn('Skipping this optional provider check so other AI providers and site publishing are not blocked.');
+                console.warn('Billing page: https://cloud.sambanova.ai/plans/billing');
+                lastError = undefined;
+                break;
+              }
               if (!response.ok) throw new Error(`SambaNova HTTP ${response.status}: ${body.slice(0, 500)}`);
               const data = JSON.parse(body);
               const completion = data.choices?.[0]?.message?.content;
