@@ -89,19 +89,15 @@ The page sends the Turnstile action `ai_review`. The API validates the token wit
 
 The rate limiter is a separate Worker because Cloudflare Pages cannot create and deploy a Durable Object class inside the Pages project. The Worker source and SQLite migration are in `workers/ai-review-limiter/`.
 
-Deploy it once from the repository root:
+Deploy the limiter Worker from the repository root (or configure the Worker build's root directory as `workers/ai-review-limiter` and its deploy command as `npx wrangler deploy`):
 
 ```sh
 npx wrangler deploy --config workers/ai-review-limiter/wrangler.jsonc
 ```
 
-Then bind its namespace to the Pages project:
+The Pages-side binding is declared in the repository-root `wrangler.jsonc`. It binds `AI_REVIEW_LIMITER` to class `AiReviewLimiter` exported by Worker `vibecritic-ai-review-limiter` using the required `script_name`. Keep this configuration in source control; do not create a second Durable Object namespace manually in the Pages dashboard.
 
-1. Open **Workers & Pages → your VibeCritic Pages project → Settings → Bindings**.
-2. Select **Add → Durable Object**.
-3. Set the variable name to exactly `AI_REVIEW_LIMITER`.
-4. Select the `AiReviewLimiter` namespace from Worker `vibecritic-ai-review-limiter`.
-5. Save and redeploy the Pages project.
+After the limiter Worker has been successfully deployed with its migration, trigger a new Cloudflare Pages deployment so the Pages Function receives the binding. The Pages build output is `dist`. If a Durable Object binding was previously added manually in the dashboard, remove that duplicate dashboard binding and let the checked-in Wrangler configuration be the source of truth.
 
 The Durable Object uses a SQLite-backed token bucket per hashed client IP: capacity 8, refilling continuously over 10 minutes. Raw IP addresses are not used as Durable Object names or stored in its database. If the binding is missing or fails, the API returns 503. Do not replace this with an isolate-local Map; that is not distributed protection.
 
