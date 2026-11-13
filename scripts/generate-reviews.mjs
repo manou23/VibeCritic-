@@ -125,7 +125,7 @@ function resourceDailyPublishingPlan(){
  return {limit:Math.max(0,Math.min(baseDailyTotalLimit,total)),mode:'measured-capacity',knownProviders:estimates,estimatedArticles:total};
 }
 async function saveProviderCapacity(plan=resourceDailyPublishingPlan()){
- const report={updatedAt:new Date().toISOString(),date:algeriaDate(),publishingPlan:plan,note:'القياسات الفعلية تأتي من usage الذي تعيده واجهة المزوّد. تقدير عدد المقالات لا يتوفر قبل تسجيل عينة استهلاك وحدود يومية معلنة/مضبوطة.',providers:{}};
+ const report={updatedAt:new Date().toISOString(),date:algeriaDate(),publishingPlan:plan,providerStrategy:providerStrategySnapshot(),note:'القياسات الفعلية تأتي من usage الذي تعيده واجهة المزوّد. تقدير عدد المقالات لا يتوفر قبل تسجيل عينة استهلاك وحدود يومية معلنة/مضبوطة.',providers:{}};
  for(const name of providerOrder)report.providers[name]=providerCapacity(name);
  await fs.mkdir('data',{recursive:true});
  await fs.writeFile('data/provider-capacity.json',JSON.stringify(report,null,2)+'\n','utf8');
@@ -156,16 +156,47 @@ async function loadProviderUsage(){
  for(const day of Object.keys(providerUsage.days))if(!keep.has(day))delete providerUsage.days[day];
 }
 function providerDay(){const day=algeriaDate();if(!providerUsage.days[day])providerUsage.days[day]={};return providerUsage.days[day];}
+function providerHistory(name){
+ const rows=Object.values(providerUsage.days||{}).map(day=>day?.[name]).filter(Boolean);
+ return rows.reduce((total,row)=>{total.attempts+=Number(row.requests)||0;total.successes+=Number(row.successes)||0;total.failures+=Number(row.failures)||0;total.tokens+=Number(row.totalTokens)||0;total.apiRequests+=Number(row.apiRequests)||0;return total;},{attempts:0,successes:0,failures:0,tokens:0,apiRequests:0});
+}
+function providerHeadroom(name){
+ const entry=providerDay()[name]||{},limit=providerLimits(name),ratios=[];
+ if(limit.requests!==null)ratios.push(Math.max(0,(limit.requests-(Number(entry.apiRequests)||0))/limit.requests));
+ if(limit.tokens!==null)ratios.push(Math.max(0,(limit.tokens-(Number(entry.totalTokens)||0))/limit.tokens));
+ const quota=entry.freeModelDailyRequests||{};
+ if(Number.isFinite(Number(quota.limit))&&Number(quota.limit)>0&&Number.isFinite(Number(quota.remaining)))ratios.push(Math.max(0,Number(quota.remaining)/Number(quota.limit)));
+ const headers=entry.lastUsage?.headers||{},remaining=Number(headers['x-ratelimit-remaining-requests']),cap=Number(headers['x-ratelimit-limit-requests']);
+ if(Number.isFinite(remaining)&&Number.isFinite(cap)&&cap>0)ratios.push(Math.max(0,remaining/cap));
+ return ratios.length?Math.min(...ratios):null;
+}
+function providerDecisionScores(names){
+ const histories=Object.fromEntries(names.map(name=>[name,providerHistory(name)]));
+ const costs=names.map(name=>{const h=histories[name],requests=h.apiRequests/Math.max(1,h.successes),tokens=h.tokens/Math.max(1,h.successes);return requests>0?requests+tokens/4000:null;}).filter(Number.isFinite).sort((a,b)=>a-b);
+ const medianCost=costs.length?costs[Math.floor(costs.length/2)]:null;
+ return Object.fromEntries(names.map(name=>{
+  const h=histories[name],samples=h.attempts,confidence=Math.min(1,samples/5),successRate=(h.successes+1)/(h.attempts+2);
+  const reliability=0.5+(successRate-0.5)*confidence,cost=h.apiRequests/Math.max(1,h.successes)+(h.tokens/Math.max(1,h.successes))/4000;
+  const efficiency=medianCost!==null&&cost>0?0.5+(Math.max(0,Math.min(2,medianCost/cost))-1)*0.25:0.5;
+  const headroom=providerHeadroom(name),score=reliability*0.55+(headroom===null?0.5:headroom)*0.25+efficiency*0.20;
+  return [name,{score:Number(score.toFixed(4)),reliability:Number(reliability.toFixed(3)),headroom:headroom===null?null:Number(headroom.toFixed(3)),efficiency:Number(efficiency.toFixed(3)),samples,successRate:Number(successRate.toFixed(3)),averageTokensPerSuccess:Math.round(h.tokens/Math.max(1,h.successes)),averageApiRequestsPerSuccess:Number((h.apiRequests/Math.max(1,h.successes)).toFixed(2))}];
+ }));
+}
+function providerStrategySnapshot(){
+ const names=providerOrder.filter(name=>Boolean({gemini:env.GEMINI_API_KEY,groq:env.GROQ_API_KEY,openrouter:env.OPENROUTER_API_KEY,'cloudflare-workers-ai':env.CF_WORKERS_AI_API_TOKEN&&env.CF_AI_GATEWAY_ACCOUNT_ID&&env.CF_AI_GATEWAY_ID}[name]));
+ const scores=providerDecisionScores(names);
+ return {mode:'adaptive-learning',weights:{reliability:0.55,quotaHeadroom:0.25,resourceEfficiency:0.20},ranking:names.sort((a,b)=>scores[b].score-scores[a].score).map(name=>({name,...scores[name]})),note:'الترتيب يتعلم من نتائج التشغيلات السابقة خلال الأيام المحفوظة؛ عند قلة العينات تُخفّض الثقة ويعود التقييم نحو التوازن.'};
+}
 function providerCandidates(){
  const configured={gemini:Boolean(env.GEMINI_API_KEY),groq:Boolean(env.GROQ_API_KEY),openrouter:Boolean(env.OPENROUTER_API_KEY),'cloudflare-workers-ai':Boolean(env.CF_WORKERS_AI_API_TOKEN&&env.CF_AI_GATEWAY_ACCOUNT_ID&&env.CF_AI_GATEWAY_ID),openai:Boolean(env.OPENAI_API_KEY)&&String(env.ALLOW_PAID_OPENAI||'').toLowerCase()==='true'};
  const preferred=provider==='openai'&&!configured.openai?null:provider;
  return [...new Set([preferred,...providerOrder,'openai'].filter(Boolean))].filter(name=>configured[name]).filter(name=>Number(providerDay()[name]?.blockedUntil||0)<=Date.now()).filter(name=>{const capacity=providerCapacity(name);return capacity.estimatedArticles===null||capacity.estimatedArticles>0;}).sort((a,b)=>{
-  const ca=providerCapacity(a).estimatedArticles,cb=providerCapacity(b).estimatedArticles;
-  if(ca!==null&&cb!==null&&ca!==cb)return cb-ca;
-  if(ca!==null&&cb===null)return -1;if(ca===null&&cb!==null)return 1;
+  const scores=providerDecisionScores([a,b]);
+  if(scores[a].score!==scores[b].score)return scores[b].score-scores[a].score;
   const ua=Number(providerDay()[a]?.requests)||0,ub=Number(providerDay()[b]?.requests)||0;
-  if(ua!==ub)return ua-ub;if(a===preferred)return -1;if(b===preferred)return 1;
-  const ia=providerOrder.indexOf(a),ib=providerOrder.indexOf(b);return (ia<0?999:ia)-(ib<0?999:ib);
+  if(ua!==ub)return ua-ub;
+  if(a===preferred)return -1;if(b===preferred)return 1;
+  return providerOrder.indexOf(a)-providerOrder.indexOf(b);
  });
 }
 async function recordProviderOutcome(name,success,error=null,measurement=null,item=null){
@@ -173,7 +204,7 @@ async function recordProviderOutcome(name,success,error=null,measurement=null,it
  entry.requests=(Number(entry.requests)||0)+1;entry.lastAttemptAt=new Date().toISOString();
  const usage=measurement?.usage||{requests:0,inputTokens:0,outputTokens:0,totalTokens:0,headers:{}};
  entry.apiRequests=(Number(entry.apiRequests)||0)+usage.requests;entry.totalTokens=(Number(entry.totalTokens)||0)+usage.totalTokens;entry.inputTokens=(Number(entry.inputTokens)||0)+usage.inputTokens;entry.outputTokens=(Number(entry.outputTokens)||0)+usage.outputTokens;
- entry.lastUsage={...usage,at:new Date().toISOString()};
+ entry.lastUsage={...usage,durationMs:measurement?.startedAt?Date.now()-measurement.startedAt:null,at:new Date().toISOString()};
  if(item){
   const articleKey=String(item.type||'unknown')+':'+String(item.id||item.name||'unknown');
   day.articles=day.articles||{};day.articles[articleKey]=day.articles[articleKey]||{};
@@ -503,7 +534,7 @@ async function generateReview(item){
  const providerErrors=[];
  if(!candidates.length)throw new Error('لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.');
  for(const name of candidates){
-  const measurement={name,usage:{requests:0,inputTokens:0,outputTokens:0,totalTokens:0,reportedUsage:false,headers:{}}};
+  const measurement={name,startedAt:Date.now(),usage:{requests:0,inputTokens:0,outputTokens:0,totalTokens:0,reportedUsage:false,headers:{}}};
   activeProviderMeasurement=measurement;
   try{parsed=validateGeneratedReview(await handlers[name]());activeProviderMeasurement=null;await recordProviderOutcome(name,true,null,measurement,item);console.log('نجح توليد المراجعة واجتازت بوابة الجودة عبر:',name,'| طلبات API:',measurement.usage.requests,'| الرموز المسجلة:',measurement.usage.totalTokens||'غير متاحة');break;}
   catch(error){activeProviderMeasurement=null;providerErrors.push(name+': '+error.message);await recordProviderOutcome(name,false,error,measurement,item);await recordLearningFailure(item,error);console.warn('تعذر المزوّد '+name+'؛ الانتقال إلى التالي:',error.message);}
