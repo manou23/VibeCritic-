@@ -189,7 +189,7 @@ export async function onRequestPost({request,env}){
   const ip=request.headers.get('CF-Connecting-IP');
   if(!ip)return Response.json({error:'تعذر التحقق من مصدر الاتصال.'},{status:403,headers:{'cache-control':'no-store'}});
   if(!env.TURNSTILE_SECRET_KEY)return Response.json({error:'لم يكتمل إعداد تحقق الأمان لمحرك المراجعات بعد.'},{status:503,headers:{'cache-control':'no-store'}});
-  if(!/^application\\/json(?:\\s*;|$)/i.test(request.headers.get('content-type')||''))return Response.json({error:'نوع بيانات الطلب غير مدعوم.'},{status:415,headers:{'cache-control':'no-store'}});
+  if(!/^application\/json(?:\s*;|$)/i.test(request.headers.get('content-type')||''))return Response.json({error:'نوع بيانات الطلب غير مدعوم.'},{status:415,headers:{'cache-control':'no-store'}});
   const raw=await readBodyLimited(request,12000);
   let body;
   try{body=JSON.parse(raw)}catch{return Response.json({error:'تعذر قراءة بيانات الطلب.'},{status:400,headers:{'cache-control':'no-store'}})}
