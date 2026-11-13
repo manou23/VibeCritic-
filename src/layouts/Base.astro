@@ -131,7 +131,12 @@ menuButton?.addEventListener('click', () => {
   menuButton.setAttribute('aria-label', open ? 'إغلاق القائمة' : 'فتح القائمة');
 });
 primaryNavigation?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
-document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeMenu(); });
+document.addEventListener('keydown', (event) => {
+  if (event.key !== 'Escape') return;
+  const wasOpen = primaryNavigation?.classList.contains('is-open');
+  closeMenu();
+  if (wasOpen) menuButton?.focus();
+});
 document.addEventListener('click', (event) => {
   if (event.target instanceof Node && !primaryNavigation?.contains(event.target) && !menuButton?.contains(event.target)) closeMenu();
 });
