@@ -80,7 +80,7 @@ async function saveProviderCapacity(){
  const report={updatedAt:new Date().toISOString(),date:algeriaDate(),note:'القياسات الفعلية تأتي من usage الذي تعيده واجهة المزوّد. تقدير عدد المقالات لا يتوفر قبل تسجيل عينة استهلاك وحدود يومية معلنة/مضبوطة.',providers:{}};
  for(const name of providerOrder)report.providers[name]=providerCapacity(name);
  await fs.mkdir('data',{recursive:true});
- await fs.writeFile('data/provider-capacity.json',JSON.stringify(report,null,2)+'\\n','utf8');
+ await fs.writeFile('data/provider-capacity.json',JSON.stringify(report,null,2)+'\n','utf8');
 }
 async function trackedProviderFetch(name,url,options){
  const response=await fetch(url,options),measurement=activeProviderMeasurement;
@@ -140,7 +140,7 @@ async function recordProviderOutcome(name,success,error=null,measurement=null,it
   else if(/timeout|aborted|network|fetch failed/i.test(message)){entry.blockedUntil=Date.now()+15*60*1000;entry.blockedReason='temporary-network';}
  }
  await fs.mkdir('data',{recursive:true});
- await fs.writeFile('data/provider-usage.json',JSON.stringify(providerUsage,null,2)+'\\n','utf8');
+ await fs.writeFile('data/provider-usage.json',JSON.stringify(providerUsage,null,2)+'\n','utf8');
  await saveProviderCapacity();
 }
 const editorialPriorityNames=['grand theft auto vi','grand theft auto 6','gta vi','gta 6','the witcher 4','the witcher iv','marvels wolverine','marvel s wolverine','marvel wolverine','elder scrolls vi','the elder scrolls 6','fable','resident evil requiem','tomb raider catalyst','007 first light','intergalactic the heretic prophet','pragmata','control resonant','the legend of zelda ocarina of time','ocarina of time','metaphor refantazio','godzilla minus zero','the hunger games sunrise on the reaping','sunrise on the reaping','percy jackson and the olympians','percy jackson'];
