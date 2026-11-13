@@ -73,13 +73,43 @@ The interactive endpoint tries configured keys for each provider in its configur
 
 ## Abuse protection, caching, and share links
 
-The API supports the following optional Cloudflare protections:
+The interactive API requires both Turnstile verification and a distributed rate limiter. It deliberately fails closed: if either dependency is not configured or is unavailable, review generation returns HTTP 503 instead of silently accepting unverified requests.
 
-- PUBLIC_TURNSTILE_SITE_KEY: build-time public Turnstile site key used by the /ai-review/ form.
-- TURNSTILE_SECRET_KEY: private Pages runtime secret used to verify Turnstile tokens. Configure both keys together; never expose the secret as a PUBLIC_* variable.
-- AI_REVIEW_LIMITER: optional Cloudflare Rate Limiting binding. When present, the API uses it for per-IP distributed limits; otherwise it falls back to a best-effort isolate-local limit. For a production site, also configure a Cloudflare WAF rate-limiting rule for POST /api/review and tune it to the site's expected traffic.
+### 1. Turnstile
 
-For the WAF rule, match `(http.request.method eq "POST" and http.request.uri.path eq "/api/review")`, use the client IP as the counting characteristic, and begin with a conservative threshold such as 8 requests per 10 minutes per IP. Adjust after observing real traffic. If you add the Rate Limiting binding, name it exactly `AI_REVIEW_LIMITER`; the code fails closed if that binding reports an error.
+Create a Turnstile widget in Cloudflare and configure:
+
+- `PUBLIC_TURNSTILE_SITE_KEY`: public site key in **Pages → Settings → Environment variables → Production**. This is a build-time variable; trigger a new Pages deployment after adding or changing it.
+- `TURNSTILE_SECRET_KEY`: private secret in **Pages → Settings → Variables and Secrets → Production**. Keep it server-side only.
+- Add `vibecritic.pages.dev` to the widget's allowed hostnames. Add any Preview hostname patterns only if you intend to test Preview deployments.
+
+The page sends the Turnstile action `ai_review`. The API validates the token with Cloudflare Siteverify and requires all three conditions: `success === true`, action equals `ai_review`, and the verified hostname matches the incoming request hostname. Tokens are single-use and expire after five minutes. Never put the secret in source control or send it in chat.
+
+### 2. Distributed rate limiter (Durable Object)
+
+The rate limiter is a separate Worker because Cloudflare Pages cannot create and deploy a Durable Object class inside the Pages project. The Worker source and SQLite migration are in `workers/ai-review-limiter/`.
+
+Deploy it once from the repository root:
+
+```sh
+npx wrangler deploy --config workers/ai-review-limiter/wrangler.jsonc
+```
+
+Then bind its namespace to the Pages project:
+
+1. Open **Workers & Pages → your VibeCritic Pages project → Settings → Bindings**.
+2. Select **Add → Durable Object**.
+3. Set the variable name to exactly `AI_REVIEW_LIMITER`.
+4. Select the `AiReviewLimiter` namespace from Worker `vibecritic-ai-review-limiter`.
+5. Save and redeploy the Pages project.
+
+The Durable Object uses a SQLite-backed token bucket per hashed client IP: capacity 8, refilling continuously over 10 minutes. Raw IP addresses are not used as Durable Object names or stored in its database. If the binding is missing or fails, the API returns 503. Do not replace this with an isolate-local Map; that is not distributed protection.
+
+SQLite-backed Durable Objects are available on Cloudflare Workers Free, subject to Cloudflare's daily request, compute, and storage limits. If those quotas are exceeded, protection may temporarily reject requests; monitor usage in Cloudflare. See Cloudflare's current [Durable Objects pricing](https://developers.cloudflare.com/durable-objects/platform/pricing/) and [Pages bindings guide](https://developers.cloudflare.com/pages/functions/bindings/).
+
+### 3. Request validation and cache
+
+The endpoint accepts same-origin JSON POST requests only, limits the body to 12 KB, validates the title (2–120 characters) and media type against an allowlist, and rejects missing, oversized, expired, reused, or incorrectly scoped Turnstile tokens. Rate limiting runs before provider calls and cache reads, so cache hits are also protected.
 
 Successful AI review responses are cached at the Cloudflare edge for up to six hours, reducing repeated provider calls for the same normalized title and media type. Share links encode the generated result in the URL fragment; the result is not stored as a public server-side record. Anyone with the link can read the encoded review, so do not include private information in a review request.
 
