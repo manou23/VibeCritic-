@@ -36,7 +36,7 @@ async function fetchWithRetry(url,options){
  return response;
 }
 async function call(p,key,prompt,title,kind){
- const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),45000);
+ const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),90000);
  const url=/\/chat\/completions$/i.test(p.base)?p.base:p.base+'/chat/completions';
  const headers={'content-type':'application/json',authorization:'Bearer '+key,...p.headers};
  if(p.name.toLowerCase().includes('openrouter')){headers['HTTP-Referer']='https://vibecritic.pages.dev/';headers['X-Title']='VibeCritic AI Critic'}
