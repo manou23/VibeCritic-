@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { buildEditorialTrainingContext, recordEditorialCandidate } from './editorial-intelligence.mjs';
+import { buildKnowledgeContext, recordKnowledge } from './knowledge-graph.mjs';
 
 const env=process.env;
 const provider=(env.AI_PROVIDER||(env.GEMINI_API_KEY?'gemini':env.GROQ_API_KEY?'groq':env.OPENROUTER_API_KEY?'openrouter':env.CF_WORKERS_AI_API_TOKEN?'cloudflare-workers-ai':'openai')).toLowerCase();
