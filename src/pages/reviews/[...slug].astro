@@ -76,6 +76,7 @@ const reviewStructuredData = {
 ---
 <Base title={`${d.title} — ${d.reviewMode === 'preview' ? 'قراءة استباقية' : 'مراجعة وتقييم'}`} description={reviewDescription} keywords={reviewKeywords} structuredData={reviewStructuredData} image={optimizeImage(d.backdrop || d.poster, 'backdrop')} pageType="article" publishedAt={d.date.toISOString()} articleSection={typeLabel}>
 <article class="wrap article-page">
+  <nav class="article-breadcrumbs" aria-label="مسار الصفحة"><a href={url('')}>الرئيسية</a><span aria-hidden="true">/</span><a href={url(`category/${d.type}/`)}>{TYPE_LABEL[d.type]}</a><span aria-hidden="true">/</span><span aria-current="page">{d.title}</span></nav>
   <a href={url('')} class="article-back">← العودة إلى VibeCritic</a>
   <header class="article-header">
     <p class="eyebrow">VIBECRITIC / قراءة نقدية تحريرية</p>
