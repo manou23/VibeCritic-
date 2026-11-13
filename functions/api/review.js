@@ -108,37 +108,74 @@ async function findYoutubeTrailer(env,title,kind){
  return {available:true,videoId:best.videoId,title:best.title,channelTitle:best.channelTitle,url:'https://www.youtube.com/watch?v='+best.videoId,embedUrl:'https://www.youtube-nocookie.com/embed/'+best.videoId,thumbnail:best.thumbnail,publishedAt:best.publishedAt,embeddable:true,public:true,officialSignal:best.officialSignal,confidence:best.officialSignal?'official_signal_detected':'trailer_candidate',license:best.license,duration:best.duration,rightsNote:'YouTube API يؤكد أن الفيديو عام وقابل للتضمين، لكنه لا يثبت ملكية القناة لحقوق العمل أو وجود ترخيص تجاري.'};
 }
 
-const hits=new Map();
-async function permitted(req,env){
- const origin=req.headers.get('Origin'),host=req.headers.get('Host');
- if(origin){try{if(!host||new URL(origin).host!==host)return false}catch{return false}}
- const ip=req.headers.get('CF-Connecting-IP')||'unknown';
- if(env.AI_REVIEW_LIMITER?.limit){
-  try{const decision=await env.AI_REVIEW_LIMITER.limit({key:ip});return decision.success===true;}catch(error){console.error('AI review rate limiter failed:',error);return false;}
- }
- // Fallback only: isolate-local. Configure AI_REVIEW_LIMITER or a Cloudflare WAF rate-limit rule for distributed enforcement.
- const now=Date.now(),recent=(hits.get(ip)||[]).filter(t=>now-t<600000);
- if(recent.length>=8)return false;
- recent.push(now);hits.set(ip,recent);
- if(hits.size>500){
-  for(const [key,times] of hits){const active=times.filter(t=>now-t<600000);if(active.length)hits.set(key,active);else hits.delete(key)}
-  while(hits.size>500)hits.delete(hits.keys().next().value);
- }
- return true;
+function sameOriginRequest(request){
+ const origin=request.headers.get('Origin');
+ if(!origin)return false;
+ try{
+  if(new URL(origin).origin!==new URL(request.url).origin)return false;
+ }catch{return false;}
+ const fetchSite=request.headers.get('Sec-Fetch-Site');
+ return !fetchSite||fetchSite==='same-origin';
 }
-
+async function rateLimitKey(ip){
+ const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(ip));
+ return [...new Uint8Array(digest)].map(byte=>byte.toString(16).padStart(2,'0')).join('');
+}
+async function consumeRateLimit(ip,env){
+ if(!env.AI_REVIEW_LIMITER)return {allowed:false,unavailable:true};
+ try{
+  const key=await rateLimitKey(ip);
+  const id=env.AI_REVIEW_LIMITER.idFromName(key);
+  const stub=env.AI_REVIEW_LIMITER.get(id);
+  const response=await stub.fetch('https://ai-review-limiter/check',{method:'POST'});
+  if(!response.ok)return {allowed:false,unavailable:true};
+  const result=await response.json();
+  return {allowed:result.allowed===true,unavailable:false};
+ }catch(error){
+  console.error('AI review distributed rate limiter failed:',error);
+  return {allowed:false,unavailable:true};
+ }
+}
 async function verifyTurnstile(token,request,env){
- if(!env.TURNSTILE_SECRET_KEY)return true;
- if(!token)return false;
- const body=new FormData();
- body.set('secret',env.TURNSTILE_SECRET_KEY);
- body.set('response',token);
- const ip=request.headers.get('CF-Connecting-IP');
- if(ip)body.set('remoteip',ip);
- const response=await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify',{method:'POST',body,signal:AbortSignal.timeout(10000)});
- if(!response.ok)return false;
- const result=await response.json();
- return result.success===true;
+ if(!env.TURNSTILE_SECRET_KEY)return {ok:false,misconfigured:true};
+ if(!token||token.length>2048)return {ok:false,misconfigured:false};
+ try{
+  const body=new FormData();
+  body.set('secret',env.TURNSTILE_SECRET_KEY);
+  body.set('response',token);
+  const ip=request.headers.get('CF-Connecting-IP');
+  if(ip)body.set('remoteip',ip);
+  const response=await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify',{method:'POST',body,signal:AbortSignal.timeout(10000)});
+  if(!response.ok)return {ok:false,misconfigured:false};
+  const result=await response.json();
+  const hostname=new URL(request.url).hostname;
+  return {ok:result.success===true&&result.action==='ai_review'&&result.hostname===hostname,misconfigured:false};
+ }catch(error){
+  console.error('Turnstile verification failed:',error);
+  return {ok:false,misconfigured:false};
+ }
+}
+async function readBodyLimited(request,limit){
+ const declared=Number(request.headers.get('content-length')||0);
+ if(declared>limit)throw Object.assign(new Error('حجم الطلب كبير جداً.'),{status:413});
+ const reader=request.body?.getReader();
+ if(!reader)return '';
+ const chunks=[];
+ let total=0;
+ while(true){
+  const {done,value}=await reader.read();
+  if(done)break;
+  total+=value.byteLength;
+  if(total>limit){
+   await reader.cancel();
+   throw Object.assign(new Error('حجم الطلب كبير جداً.'),{status:413});
+  }
+  chunks.push(value);
+ }
+ const merged=new Uint8Array(total);
+ let offset=0;
+ for(const chunk of chunks){merged.set(chunk,offset);offset+=chunk.byteLength;}
+ return new TextDecoder('utf-8',{fatal:true}).decode(merged);
 }
 async function reviewCacheKey(title,kind,request){
  const normalized='v3|'+kind+'|'+title.toLocaleLowerCase().replace(/\s+/g,' ').trim();
@@ -147,13 +184,27 @@ async function reviewCacheKey(title,kind,request){
  return new Request(new URL('/__ai-review-cache/'+hash,request.url).href);
 }
 export async function onRequestPost({request,env}){
- if(!(await permitted(request,env)))return Response.json({error:'تم تجاوز الحد المؤقت للطلبات أو مصدر الطلب غير مسموح.'},{status:429});
  try{
-  const raw=await request.text();
-  if(new TextEncoder().encode(raw).byteLength>12000)return Response.json({error:'حجم الطلب كبير جداً.'},{status:413});
-  const body=JSON.parse(raw),title=clean(body.title,120),kind=body.kind==='game'?'game':body.kind==='series'?'series':body.kind==='movie'?'movie':'';
-  if(title.length<2||!kind)return Response.json({error:'أدخل اسم العمل واختر فيلماً أو لعبة أو مسلسلاً.'},{status:400});
-  if(!(await verifyTurnstile(clean(body.turnstileToken,4096),request,env)))return Response.json({error:'يرجى إكمال تحقق الأمان ثم إعادة المحاولة.'},{status:403});
+  if(!sameOriginRequest(request))return Response.json({error:'مصدر الطلب غير مسموح.'},{status:403,headers:{'cache-control':'no-store'}});
+  const ip=request.headers.get('CF-Connecting-IP');
+  if(!ip)return Response.json({error:'تعذر التحقق من مصدر الاتصال.'},{status:403,headers:{'cache-control':'no-store'}});
+  if(!env.TURNSTILE_SECRET_KEY)return Response.json({error:'لم يكتمل إعداد تحقق الأمان لمحرك المراجعات بعد.'},{status:503,headers:{'cache-control':'no-store'}});
+  if(!/^application\\/json(?:\\s*;|$)/i.test(request.headers.get('content-type')||''))return Response.json({error:'نوع بيانات الطلب غير مدعوم.'},{status:415,headers:{'cache-control':'no-store'}});
+  const raw=await readBodyLimited(request,12000);
+  let body;
+  try{body=JSON.parse(raw)}catch{return Response.json({error:'تعذر قراءة بيانات الطلب.'},{status:400,headers:{'cache-control':'no-store'}})}
+  if(!body||typeof body!=='object'||Array.isArray(body))return Response.json({error:'بيانات الطلب غير صالحة.'},{status:400,headers:{'cache-control':'no-store'}});
+  if(typeof body.title!=='string'||body.title.trim().length<2||body.title.trim().length>120)return Response.json({error:'اسم العمل يجب أن يتراوح بين حرفين و120 حرفاً.'},{status:400,headers:{'cache-control':'no-store'}});
+  const title=clean(body.title,120);
+  const kind=['game','series','movie'].includes(body.kind)?body.kind:'';
+  if(!kind)return Response.json({error:'اختر فيلماً أو لعبة أو مسلسلاً.'},{status:400,headers:{'cache-control':'no-store'}});
+  if(typeof body.turnstileToken!=='string'||body.turnstileToken.length>2048)return Response.json({error:'يرجى إكمال تحقق الأمان ثم إعادة المحاولة.'},{status:403,headers:{'cache-control':'no-store'}});
+  const verification=await verifyTurnstile(body.turnstileToken,request,env);
+  if(verification.misconfigured)return Response.json({error:'إعداد تحقق الأمان غير مكتمل على الخادم.'},{status:503,headers:{'cache-control':'no-store'}});
+  if(!verification.ok)return Response.json({error:'تعذر تأكيد تحقق الأمان. أعد التحقق ثم حاول مجدداً.'},{status:403,headers:{'cache-control':'no-store'}});
+  const limit=await consumeRateLimit(ip,env);
+  if(limit.unavailable)return Response.json({error:'خدمة الحماية غير مهيأة أو غير متاحة حالياً. يرجى المحاولة لاحقاً.'},{status:503,headers:{'cache-control':'no-store'}});
+  if(!limit.allowed)return Response.json({error:'وصلت إلى الحد المسموح من طلبات المراجعة. حاول بعد قليل.'},{status:429,headers:{'cache-control':'no-store'}});
   const cache=typeof caches!=='undefined'?caches.default:null;
   const cacheKey=await reviewCacheKey(title,kind,request);
   if(cache){
@@ -165,7 +216,7 @@ export async function onRequestPost({request,env}){
     }
    }catch(error){console.warn('AI review cache read failed:',error.message);}
   }
-  const prompt=['اسم العمل: '+title,'النوع: '+(kind==='game'?'لعبة فيديو':kind==='series'?'مسلسل تلفزيوني':'فيلم سينمائي'),'أنشئ مراجعة نقدية عميقة ومحددة، لا وصفاً عاماً ولا نصاً تسويقياً. إذا كان الاسم ملتبساً فصرّح بذلك داخل hook ولا تنسب معلومات لعمل غير مؤكد.','اكتب لكل محور تحليلاً مستقلاً: القصة، الأسلوب/الإخراج، الصورة، الصوت، الأداء التقني، تجربة المستخدم، والمقارنة بالبدائل. اشرح في كل محور ما الذي يحدث ولماذا يهم المستخدم وما أثره العملي. تجنب تكرار الفكرة بين المحاور.','حلل تجربة المستخدم من منظور رحلة الاستخدام/المشاهدة/اللعب: سهولة الفهم والدخول، التحكم والاستجابة أو الإيقاع، منحنى التعلم، التوازن بين التحدي والمكافأة، نقاط الاحتكاك، ولمن تناسب التجربة. لا تدّع أنك اختبرت العمل بنفسك ولا تستخدم صيغة المتكلم.','الأداء التقني: لا تذكر FPS أو دقة أو أعطالاً أو أوقات تحميل أو توافقاً إلا إذا كانت معلومة موثوقة متاحة. إن غابت البيانات، اذكر بوضوح أن الأداء غير قابل للحسم من المعلومات الحالية.','المقارنة: قارن ببديلين معروفين أو بمعايير النوع فقط عندما تكون المقارنة دقيقة وذات صلة. اذكر معيار المقارنة والفارق الحقيقي، ولا تخترع ميزات أو أسعاراً أو منصات. إذا لم تتوفر قاعدة موثوقة فاكتب أن المقارنة محدودة.','نقاط القوة والضعف: نقاط محددة قابلة للفهم، مع شرح أثر كل منها؛ لا تضع عيوباً شكلية لإكمال القائمة.','التقييم الرقمي من 0 إلى 10 يجب أن يتسق مع الحجج، لا مع الشهرة أو الترند. لا تخترع وقائع أو تجارب مباشرة أو انطباعات جماهيرية. افصل الحقيقة عن الاستنتاج، وصرّح بنقص المعلومات بدلاً من التخمين.','أعد JSON فقط بالمفاتيح: title, hook, story, style, visuals, audio, performance, experience, comparison, pros, cons, verdict, score. اكتب بالعربية الفصحى.'].join(String.fromCharCode(10))
+  const prompt=['اسم العمل: '+title,'النوع: '+(kind==='game'?'لعبة فيديو':kind==='series'?'مسلسل تلفزيوني':'فيلم سينمائي'),'أنشئ مراجعة نقدية عميقة ومحددة، لا وصفاً عاماً ولا نصاً تسويقياً. إذا كان الاسم ملتبساً فصرّح بذلك داخل hook ولا تنسب معلومات لعمل غير مؤكد.','اكتب لكل محور تحليلاً مستقلاً: القصة، الأسلوب/الإخراج، الصورة، الصوت، الأداء التقني، تجربة المستخدم، والمقارنة بالبدائل. اشرح في كل محور ما الذي يحدث ولماذا يهم المستخدم وما أثره العملي. تجنب تكرار الفكرة بين المحاور.','حلل تجربة المستخدم من منظور رحلة الاستخدام/المشاهدة/اللعب: سهولة الفهم والدخول، التحكم والاستجابة أو الإيقاع، منحنى التعلم، التوازن بين التحدي والمكافأة، نقاط الاحتكاك، ولمن تناسب التجربة. لا تدّع أنك اختبرت العمل بنفسك ولا تستخدم صيغة المتكلم.','الأداء التقني: لا تذكر FPS أو دقة أو أعطالاً أو أوقات تحميل أو توافقاً إلا إذا كانت معلومة موثوقة متاحة. إن غابت البيانات، اذكر بوضوح أن الأداء غير قابل للحسم من المعلومات الحالية.','المقارنة: قارن ببديلين معروفين أو بمعايير النوع فقط عندما تكون المقارنة دقيقة وذات صلة. اذكر معيار المقارنة والفارق الحقيقي، ولا تخترع ميزات أو أسعاراً أو منصات. إذا لم تتوفر قاعدة موثوقة فاكتب أن المقارنة محدودة.','نقاط القوة والضعف: نقاط محددة قابلة للفهم، مع شرح أثر كل منها؛ لا تضع عيوباً شكلية لإكمال القائمة.','التقييم الرقمي من 0 إلى 10 يجب أن يتسق مع الحجج، لا مع الشهرة أو الترند. لا تخترع وقائع أو تجارب مباشرة أو انطباعات جماهيرية. افصل الحقيقة عن الاستنتاج، وصرّح بنقص المعلومات بدلاً من التخمين.','أعد JSON فقط بالمفاتيح: title, hook, story, style, visuals, audio, performance, experience, comparison, pros, cons, verdict, score. اكتب بالعربية الفصحى.'].join(String.fromCharCode(10));
   const [reviewResult,trailerResult]=await Promise.allSettled([generate(env,prompt,title,kind),findYoutubeTrailer(env,title,kind)]);
   if(reviewResult.status==='rejected')throw reviewResult.reason;
   const out=reviewResult.value;
@@ -178,5 +229,9 @@ export async function onRequestPost({request,env}){
    }catch(error){console.warn('AI review cache write failed:',error.message);}
   }
   return Response.json(payload,{headers:{'cache-control':'no-store','x-vibecritic-cache':'MISS'}});
- }catch(e){console.error('AI review API:',e);return Response.json({error:e instanceof SyntaxError?'تعذر قراءة بيانات الطلب.':(e.message||'حدث خطأ غير متوقع.')},{status:500,headers:{'cache-control':'no-store'}})}
+ }catch(error){
+  console.error('AI review API:',error);
+  const status=Number.isInteger(error.status)?error.status:500;
+  return Response.json({error:status===413?'حجم الطلب كبير جداً.':status===400?'تعذر قراءة بيانات الطلب.':(error.message||'حدث خطأ غير متوقع.')},{status,headers:{'cache-control':'no-store'}});
+ }
 }
