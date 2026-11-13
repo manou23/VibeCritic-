@@ -8,7 +8,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
   <div class="ai-review-intro">
    <p class="ai-eyebrow">VIBECRITIC INTELLIGENCE / 01</p>
    <h1>رأيك يبدأ من <span>تحليل أعمق.</span></h1>
-   <p>أدخل اسم فيلم أو مسلسل أو لعبة، ودع الناقد الذكي يفكك التجربة: من الفكرة والسرد إلى الصورة والصوت، بلا مجاملات مجانية.</p>
+   <p>أدخل اسم فيلم أو مسلسل أو لعبة، وأكمل تحقق الأمان ليحلل الناقد الذكي التجربة من الفكرة والسرد إلى الصورة والصوت.</p>
   </div>
   <form id="ai-review-form" class="ai-review-form">
    <div class="ai-field"><label for="ai-title">اسم العمل</label><input id="ai-title" name="title" type="text" maxlength="120" minlength="2" required autocomplete="off" placeholder="مثلاً: Dune: Part Two أو Elden Ring" /></div>
@@ -17,7 +17,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
     <label class="ai-kind-option"><input type="radio" name="kind" value="game" /><span>لعبة فيديو</span></label>
     <label class="ai-kind-option"><input type="radio" name="kind" value="series" /><span>مسلسل تلفزيوني</span></label>
    </fieldset>
-   {turnstileSiteKey && <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="auto"></div>}
+   {turnstileSiteKey && <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="auto" data-action="ai_review"></div>}
    <button id="ai-submit" class="ai-submit" type="submit"><span>أنشئ المراجعة</span><span aria-hidden="true">↗</span></button>
    <p class="ai-privacy-note">مفاتيح الذكاء الاصطناعي محمية على الخادم ولا تُرسل إلى متصفحك.</p>
   </form>
