@@ -50,6 +50,34 @@ jobs:
       - name: Validate review score integrity
         run: npm run validate:reviews
       # OpenRouter is supported as an AI generation provider.
+      - name: Test Cloudflare Workers AI connectivity
+        if: github.event_name == 'push' && contains(github.event.head_commit.message, '[test-workers-ai]')
+        env:
+          CF_WORKERS_AI_API_TOKEN: ${{ secrets.CF_WORKERS_AI_API_TOKEN }}
+          CF_WORKERS_AI_MODEL: ${{ vars.CF_WORKERS_AI_MODEL }}
+          CF_AI_GATEWAY_ACCOUNT_ID: ${{ vars.CF_AI_GATEWAY_ACCOUNT_ID }}
+          CF_AI_GATEWAY_ID: ${{ vars.CF_AI_GATEWAY_ID }}
+        run: |
+          node --input-type=module <<'NODE'
+          const token = process.env.CF_WORKERS_AI_API_TOKEN;
+          const account = process.env.CF_AI_GATEWAY_ACCOUNT_ID;
+          const gateway = process.env.CF_AI_GATEWAY_ID;
+          if (!token || !account || !gateway) throw new Error('Workers AI token or Gateway configuration is missing.');
+          const model = process.env.CF_WORKERS_AI_MODEL || '@cf/openai/gpt-oss-20b';
+          const response = await fetch(`https://api.cloudflare.com/client/v4/accounts/${encodeURIComponent(account)}/ai/v1/chat/completions`, {
+            method: 'POST',
+            headers: { authorization: `Bearer ${token}`, 'content-type': 'application/json', 'cf-aig-gateway-id': gateway },
+            body: JSON.stringify({ model, max_tokens: 48, messages: [{ role: 'user', content: 'Reply with exactly: VibeCritic Workers AI connection OK' }] }),
+            signal: AbortSignal.timeout(90000)
+          });
+          const body = await response.text();
+          if (!response.ok) throw new Error(`Workers AI HTTP ${response.status}: ${body.slice(0, 700)}`);
+          const data = JSON.parse(body);
+          const content = data.choices?.[0]?.message?.content;
+          if (typeof content !== 'string' || !content.trim()) throw new Error('Workers AI returned no chat completion content.');
+          console.log('Workers AI connectivity test passed. Model:', model);
+          console.log('Response received; token value was not logged.');
+          NODE
       - name: Generate reviews
         # Run for scheduled/manual events, and for an intentional generation-trigger commit only.
         if: github.event_name != 'push' || contains(github.event.head_commit.message, '[generate-reviews]')
