@@ -16,6 +16,7 @@
 2. أضف مفاتيح الخدمات في GitHub → Settings → Secrets and variables → Actions. يلزم `TMDB_API_KEY`، ومصدر ألعاب واحد على الأقل: `RAWG_API_KEY` (الموصى به) أو `IGDB_CLIENT_ID` مع `IGDB_CLIENT_SECRET`.
 3. أضف مفتاحاً واحداً على الأقل من مزودي الذكاء الاصطناعي: `GEMINI_API_KEY` أو `GROQ_API_KEY` أو `OPENROUTER_API_KEY` أو `OPENAI_API_KEY`.
 4. اختر `AI_PROVIDER` اختيارياً بقيمة `gemini` أو `groq` أو `openrouter` أو `openai`. عند تركه فارغاً، تكون الأولوية لـ Gemini ثم Groq ثم OpenRouter ثم OpenAI، مع الانتقال إلى المزوّدات المتاحة عند فشل المزوّد المختار.
+6. اختيارياً: أضف Repository Variables باسم `CF_AI_GATEWAY_ACCOUNT_ID` و`CF_AI_GATEWAY_ID` لتوجيه طلبات OpenRouter عبر Cloudflare AI Gateway. يلزم تفعيل Cache Responses من لوحة Cloudflare للاستفادة من التخزين المؤقت؛ كما يمكن استخدام سجلات البوابة وحدود الطلبات. اترك المتغيرين فارغين لاستخدام OpenRouter مباشرة. هذا لا يلغي تكلفة مزود النموذج ولا ينشئ رصيداً مجانياً.
 5. شغّل Workflow باسم **Generate reviews and publish** يدوياً عند الحاجة؛ التشغيل المجدول مرة واحدة يومياً. الحد الأقصى ثلاث مراجعات في اليوم حتى مع تكرار التشغيل اليدوي.
 
 يمكن تخصيص `MAX_PER_RUN` (لن يتجاوز 3 يومياً) و`GAMES_WINDOW_DAYS` و`OPENAI_MODEL` و`GEMINI_MODEL` و`GROQ_MODEL` و`OPENROUTER_MODEL` من Repository Variables. مفاتيح المراجع التفاعلي `/api/review` تُضاف بشكل منفصل في إعدادات Cloudflare Pages → Variables and Secrets.
