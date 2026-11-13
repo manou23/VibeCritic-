@@ -104,7 +104,7 @@ async function refreshOpenRouterQuota(){
   entry.freeModelDailyRequests={used:Number(quota.used)||0,limit:Number(quota.limit),remaining:Number(quota.remaining),observedAt:new Date().toISOString(),source:'OpenRouter GET /api/v1/key'};
   console.log('OpenRouter free-model daily requests remaining:',entry.freeModelDailyRequests.remaining,'/',entry.freeModelDailyRequests.limit);
   await fs.mkdir('data',{recursive:true});
-  await fs.writeFile('data/provider-usage.json',JSON.stringify(providerUsage,null,2)+'\\n','utf8');
+  await fs.writeFile('data/provider-usage.json',JSON.stringify(providerUsage,null,2)+'\n','utf8');
  }catch(error){console.warn('تعذر قراءة حصة OpenRouter اليومية؛ سيستمر النظام بالقياس المحلي:',error.message);}
 }
 function resourceDailyPublishingPlan(){
