@@ -547,6 +547,7 @@ async function generateReview(item){
  const styleSeed=String(item.id||item.name||'').split('').reduce((sum,char)=>sum+char.charCodeAt(0),0);
  const editorialLens=editorialLenses[styleSeed%editorialLenses.length];
  const trainingContext=await buildEditorialTrainingContext(item);
+ const knowledgeContext=await buildKnowledgeContext(item);
  const prompt=[
  isPreview?'اكتب قراءة استباقية صحفية احترافية لعمل لم يصدر بعد، وليست مراجعة نهائية.':'اكتب مراجعة نقدية صحفية شاملة بعد الإصدار، وليست دعاية أو ملخصاً دعائياً.',
  'اكتب بصوت ناقد متخصص: أطروحة واضحة، سياق يشرح أهمية العمل داخل نوعه وسلسلته، تحليل فني مفصل، أمثلة موثقة، وحكم مسبب لا يساير الضجة الجماهيرية.',
@@ -767,7 +768,9 @@ async function globalTrending(){
  return picks.map((x,i)=>({...x,rank:i+1,trendRank:i+1}));
 }
 async function writeReview(item){
- const enriched=await enrichItem(item),reviewMode=validateSourceQuality(enriched),a=await generateReview(enriched),date=algeriaDate();
+ const enriched=await enrichItem(item),reviewMode=validateSourceQuality(enriched);
+ await recordKnowledge(enriched);
+ const a=await generateReview(enriched),date=algeriaDate();
  await assertDistinctHeadline(a.headline,a.hook,a.summary,a.review);
  const videoFields=enriched.metadata?.youtubeVideoId?['youtubeVideoId: '+y(enriched.metadata.youtubeVideoId),'youtubeVideoTitle: '+y(enriched.metadata.youtubeVideoTitle)]:[];
  const watchFields=enriched.metadata?.watchProviderUrl?['watchProviderUrl: '+y(enriched.metadata.watchProviderUrl)]:[];
