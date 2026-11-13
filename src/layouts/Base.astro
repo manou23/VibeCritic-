@@ -15,7 +15,8 @@ const {
   structuredData: pageStructuredData = null,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
-const rawTitle = `${title} | ${SITE_NAME}`;
+const isHomePage = Astro.url.pathname === '/';
+const rawTitle = isHomePage ? `${SITE_NAME} | ${title}` : `${title} | ${SITE_NAME}`;
 const pageTitle = rawTitle.length > 60 ? `${String(title).slice(0, 46).trimEnd()}… | ${SITE_NAME}` : rawTitle;
 const metaDescription = String(description).replace(/\s+/g, ' ').trim().slice(0, 152).trimEnd() + (String(description).trim().length > 152 ? '…' : '');
 const metaKeywords = Array.isArray(keywords) ? [...new Set(keywords.map((word) => String(word).replace(/[<>\"']/g, '').replace(/\s+/g, ' ').trim()).filter(Boolean))].slice(0, 20).join(', ') : '';
@@ -34,6 +35,8 @@ const structuredData = pageStructuredData || (pageType === 'article'
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: SITE_NAME,
+      alternateName: ['Vibe Critic'],
+      description: SITE_DESC,
       url: Astro.site?.href || canonical,
       inLanguage: 'ar',
     });
@@ -51,10 +54,13 @@ const searchReviews = await getCollection('reviews');
 <link rel="preconnect" href="https://media.rawg.io" crossorigin />
 <script is:inline>try{const savedTheme=localStorage.getItem("vc-theme");document.documentElement.classList.toggle("dark-mode",savedTheme!=="light")}catch{document.documentElement.classList.add("dark-mode")}</script>
 <meta name="description" content={metaDescription} />
+<meta name="application-name" content="VibeCritic" />
 {metaKeywords && <meta name="keywords" content={metaKeywords} />}
 <meta name="theme-color" content="#f3f0e8" />
 <meta name="robots" content={noindex ? 'noindex,nofollow' : 'index,follow'} />
+<link rel="icon" type="image/png" sizes="96x96" href={url('favicon-96.png')} />
 <link rel="icon" type="image/svg+xml" href={url('favicon.svg')} />
+<link rel="apple-touch-icon" sizes="180x180" href={url('apple-touch-icon.png')} />
 <link rel="canonical" href={canonical} />
 <link rel="alternate" type="application/rss+xml" title="VibeCritic RSS" href={url('rss.xml')} />
 <meta property="og:locale" content="ar_DZ" />
