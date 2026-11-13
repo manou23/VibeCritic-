@@ -1,0 +1,141 @@
+{
+  "updatedAt": "2026-11-13T20:54:46.370Z",
+  "date": "2026-11-13",
+  "publishingPlan": {
+    "limit": 2,
+    "mode": "quota-unknown",
+    "knownProviders": [
+      {
+        "name": "gemini",
+        "estimatedArticles": null,
+        "dailyBlocked": false
+      },
+      {
+        "name": "groq",
+        "estimatedArticles": null,
+        "dailyBlocked": false
+      },
+      {
+        "name": "cloudflare-workers-ai",
+        "estimatedArticles": null,
+        "dailyBlocked": false
+      },
+      {
+        "name": "openrouter",
+        "estimatedArticles": 32,
+        "dailyBlocked": false
+      }
+    ],
+    "estimatedArticles": null
+  },
+  "providerStrategy": {
+    "mode": "adaptive-learning",
+    "weights": {
+      "reliability": 0.55,
+      "quotaHeadroom": 0.25,
+      "resourceEfficiency": 0.2
+    },
+    "ranking": [
+      {
+        "name": "openrouter",
+        "score": 0.3883,
+        "reliability": 0.233,
+        "headroom": 0.64,
+        "efficiency": 0.5,
+        "samples": 4,
+        "successRate": 0.167,
+        "averageTokensPerSuccess": 0,
+        "averageApiRequestsPerSuccess": 4
+      },
+      {
+        "name": "gemini",
+        "score": 0.3533,
+        "reliability": 0.233,
+        "headroom": null,
+        "efficiency": 0.5,
+        "samples": 4,
+        "successRate": 0.167,
+        "averageTokensPerSuccess": 0,
+        "averageApiRequestsPerSuccess": 4
+      },
+      {
+        "name": "groq",
+        "score": 0.3533,
+        "reliability": 0.233,
+        "headroom": null,
+        "efficiency": 0.5,
+        "samples": 4,
+        "successRate": 0.167,
+        "averageTokensPerSuccess": 0,
+        "averageApiRequestsPerSuccess": 4
+      },
+      {
+        "name": "cloudflare-workers-ai",
+        "score": 0.3245,
+        "reliability": 0.233,
+        "headroom": null,
+        "efficiency": 0.356,
+        "samples": 4,
+        "successRate": 0.167,
+        "averageTokensPerSuccess": 21792,
+        "averageApiRequestsPerSuccess": 4
+      }
+    ],
+    "note": "الترتيب يتعلم من نتائج التشغيلات السابقة خلال الأيام المحفوظة؛ عند قلة العينات تُخفّض الثقة ويعود التقييم نحو التوازن."
+  },
+  "note": "القياسات الفعلية تأتي من usage الذي تعيده واجهة المزوّد. تقدير عدد المقالات لا يتوفر قبل تسجيل عينة استهلاك وحدود يومية معلنة/مضبوطة.",
+  "providers": {
+    "gemini": {
+      "limits": {
+        "tokens": null,
+        "requests": null
+      },
+      "usedTokens": 0,
+      "usedRequests": 4,
+      "estimatedArticles": null,
+      "averageTokensPerArticle": null,
+      "averageRequestsPerArticle": 1,
+      "reportedDailyRequestsRemaining": null,
+      "reportedDailyRequestsLimit": null
+    },
+    "groq": {
+      "limits": {
+        "tokens": null,
+        "requests": null
+      },
+      "usedTokens": 0,
+      "usedRequests": 4,
+      "estimatedArticles": null,
+      "averageTokensPerArticle": null,
+      "averageRequestsPerArticle": 1,
+      "reportedDailyRequestsRemaining": null,
+      "reportedDailyRequestsLimit": null
+    },
+    "cloudflare-workers-ai": {
+      "limits": {
+        "tokens": null,
+        "requests": null
+      },
+      "usedTokens": 21792,
+      "usedRequests": 4,
+      "estimatedArticles": null,
+      "averageTokensPerArticle": 5448,
+      "averageRequestsPerArticle": 1,
+      "reportedDailyRequestsRemaining": null,
+      "reportedDailyRequestsLimit": null
+    },
+    "openrouter": {
+      "limits": {
+        "tokens": null,
+        "requests": null
+      },
+      "usedTokens": 0,
+      "usedRequests": 4,
+      "estimatedArticles": 32,
+      "averageTokensPerArticle": null,
+      "averageRequestsPerArticle": 1,
+      "reportedDailyRequestsRemaining": 32,
+      "reportedDailyRequestsLimit": 50
+    }
+  }
+}

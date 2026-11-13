@@ -1,14 +1,19 @@
 {
-  "version": 1,
+  "version": 2,
   "stats": {
     "successes": 0,
-    "failures": 12
+    "failures": 33
   },
   "lessons": [
     {
       "key": "depth",
       "advice": "وزّع التحليل على المحاور المطلوبة بكثافة فكرة حقيقية، ولا تطل النص بالحشو أو تكرار الأطروحة.",
-      "count": 6
+      "count": 15
+    },
+    {
+      "key": "editorial",
+      "advice": "قدّم حجة نقدية واضحة وصوت VibeCritic المميز، وافصل الحقائق عن الاستنتاجات ولا تكرر المعلومات.",
+      "count": 12
     },
     {
       "key": "resource",
@@ -27,5 +32,7 @@
     }
   ],
   "recentSuccesses": [],
-  "updatedAt": "2026-11-13T15:57:01.436Z"
+  "recentQuality": [],
+  "qualityByType": {},
+  "updatedAt": "2026-11-13T20:54:46.371Z"
 }

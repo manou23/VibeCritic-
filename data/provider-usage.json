@@ -1,0 +1,232 @@
+{
+  "version": 1,
+  "days": {
+    "2026-11-13": {
+      "openrouter": {
+        "requests": 4,
+        "successes": 0,
+        "failures": 4,
+        "apiRequests": 4,
+        "totalTokens": 0,
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "freeModelDailyRequests": {
+          "used": 18,
+          "limit": 50,
+          "remaining": 32,
+          "observedAt": "2026-11-13T20:53:28.906Z",
+          "source": "OpenRouter GET /api/v1/key"
+        },
+        "lastAttemptAt": "2026-11-13T20:54:28.821Z",
+        "lastUsage": {
+          "requests": 1,
+          "inputTokens": 0,
+          "outputTokens": 0,
+          "totalTokens": 0,
+          "reportedUsage": false,
+          "headers": {},
+          "durationMs": 58,
+          "at": "2026-11-13T20:54:28.821Z"
+        }
+      },
+      "articles": {
+        "movie:687163": {
+          "openrouter": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          },
+          "gemini": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          },
+          "groq": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          },
+          "cloudflare-workers-ai": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 3452,
+            "outputTokens": 2147,
+            "totalTokens": 5599,
+            "successes": 0
+          }
+        },
+        "movie:354912": {
+          "openrouter": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          },
+          "gemini": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          },
+          "groq": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          },
+          "cloudflare-workers-ai": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 3429,
+            "outputTokens": 1830,
+            "totalTokens": 5259,
+            "successes": 0
+          }
+        },
+        "movie:1283515": {
+          "openrouter": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          },
+          "gemini": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          },
+          "groq": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          },
+          "cloudflare-workers-ai": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 3400,
+            "outputTokens": 2074,
+            "totalTokens": 5474,
+            "successes": 0
+          }
+        },
+        "movie:155": {
+          "openrouter": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          },
+          "gemini": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          },
+          "groq": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          },
+          "cloudflare-workers-ai": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 3351,
+            "outputTokens": 2109,
+            "totalTokens": 5460,
+            "successes": 0
+          }
+        }
+      },
+      "gemini": {
+        "requests": 4,
+        "successes": 0,
+        "failures": 4,
+        "apiRequests": 4,
+        "totalTokens": 0,
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "lastAttemptAt": "2026-11-13T20:54:28.846Z",
+        "lastUsage": {
+          "requests": 1,
+          "inputTokens": 0,
+          "outputTokens": 0,
+          "totalTokens": 0,
+          "reportedUsage": false,
+          "headers": {},
+          "durationMs": 22,
+          "at": "2026-11-13T20:54:28.846Z"
+        }
+      },
+      "groq": {
+        "requests": 4,
+        "successes": 0,
+        "failures": 4,
+        "apiRequests": 4,
+        "totalTokens": 0,
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "lastAttemptAt": "2026-11-13T20:54:28.874Z",
+        "lastUsage": {
+          "requests": 1,
+          "inputTokens": 0,
+          "outputTokens": 0,
+          "totalTokens": 0,
+          "reportedUsage": false,
+          "headers": {},
+          "durationMs": 25,
+          "at": "2026-11-13T20:54:28.874Z"
+        }
+      },
+      "cloudflare-workers-ai": {
+        "requests": 4,
+        "successes": 0,
+        "failures": 4,
+        "apiRequests": 4,
+        "totalTokens": 21792,
+        "inputTokens": 13632,
+        "outputTokens": 8160,
+        "lastAttemptAt": "2026-11-13T20:54:46.369Z",
+        "lastUsage": {
+          "requests": 1,
+          "inputTokens": 3351,
+          "outputTokens": 2109,
+          "totalTokens": 5460,
+          "reportedUsage": true,
+          "headers": {},
+          "durationMs": 17493,
+          "at": "2026-11-13T20:54:46.369Z"
+        }
+      }
+    }
+  }
+}
