@@ -39,7 +39,7 @@ function editorialQualityMetrics(item,review){
  for(let i=0;i<meaningful.length-2;i++)trigrams.push(meaningful.slice(i,i+3).join(' '));
  const trigramCounts=new Map();for(const phrase of trigrams)trigramCounts.set(phrase,(trigramCounts.get(phrase)||0)+1);
  const repeatedTrigrams=[...trigramCounts.values()].reduce((sum,count)=>sum+Math.max(0,count-1),0);
- const genericPhrases=['بين الطموح والواقع','رحلة لا تُنسى','تجربة لا مثيل لها','أكثر من مجرد','على مستوى آخر','يقدم تجربة فريدة'];
+ const genericPhrases=['بين الطموح والواقع','رحلة لا تنسى','تجربة لا مثيل لها','أكثر من مجرد','على مستوى آخر','يقدم تجربة فريدة'];
  const normalized=text.replace(/[ًٌٍَُِّْـ]/g,'').toLowerCase(),genericPhraseHits=genericPhrases.filter(phrase=>normalized.includes(phrase)).length;
  const scores=Object.values(review?.scores||{}).map(Number).filter(Number.isFinite),words=text.split(/\s+/u).filter(Boolean).length;
  return {type:item?.type||'unknown',words,sections:(text.match(/^###\s+/gm)||[]).length,paragraphs:text.split(/\n\s*\n/u).filter(part=>part.trim()).length,lexicalDiversity:meaningful.length?Number((unique.size/meaningful.length).toFixed(3)):0,repeatedTrigramRate:trigrams.length?Number((repeatedTrigrams/trigrams.length).toFixed(3)):0,genericPhraseHits,scoreMean:scores.length?Number((scores.reduce((a,b)=>a+b,0)/scores.length).toFixed(2)):null,scoreSpread:scores.length?Number((Math.max(...scores)-Math.min(...scores)).toFixed(2)):null,prosCount:Array.isArray(review?.pros)?review.pros.length:0,consCount:Array.isArray(review?.cons)?review.cons.length:0};
