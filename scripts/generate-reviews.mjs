@@ -50,6 +50,32 @@ function cloudflareGatewayEndpoint(providerPath,suffix){
 }
 async function getJson(url){const r=await fetch(url,{signal:AbortSignal.timeout(30000)});if(!r.ok){const safeUrl=url.replace(/([?&](?:api_key|key)=)[^&]+/i,'$1[REDACTED]');throw new Error(`HTTP ${r.status}: ${safeUrl}`);}return r.json();}
 const clean=v=>String(v??'').replace(/[\r\n]+/g,' ').trim();
+
+const providerOrder=['gemini','groq','cloudflare-workers-ai','openrouter'];
+let providerUsage={version:1,days:{}};
+async function loadProviderUsage(){
+ try{const saved=JSON.parse(await fs.readFile('data/provider-usage.json','utf8'));if(saved&&saved.version===1&&saved.days&&typeof saved.days==='object')providerUsage=saved;}catch{}
+ const keep=new Set([algeriaDate(),addDays(algeriaDate(),-1),addDays(algeriaDate(),-2),addDays(algeriaDate(),-3),addDays(algeriaDate(),-4),addDays(algeriaDate(),-5),addDays(algeriaDate(),-6)]);
+ for(const day of Object.keys(providerUsage.days))if(!keep.has(day))delete providerUsage.days[day];
+}
+function providerDay(){const day=algeriaDate();if(!providerUsage.days[day])providerUsage.days[day]={};return providerUsage.days[day];}
+function providerCandidates(){
+ const configured={gemini:Boolean(env.GEMINI_API_KEY),groq:Boolean(env.GROQ_API_KEY),openrouter:Boolean(env.OPENROUTER_API_KEY),'cloudflare-workers-ai':Boolean(env.CF_WORKERS_AI_API_TOKEN&&env.CF_AI_GATEWAY_ACCOUNT_ID&&env.CF_AI_GATEWAY_ID),openai:Boolean(env.OPENAI_API_KEY)&&String(env.ALLOW_PAID_OPENAI||'').toLowerCase()==='true'};
+ const preferred=provider==='openai'&&!configured.openai?null:provider;
+ return [...new Set([preferred,...providerOrder,'openai'].filter(Boolean))].filter(name=>configured[name]).filter(name=>Number(providerDay()[name]?.blockedUntil||0)<=Date.now()).sort((a,b)=>{const ua=Number(providerDay()[a]?.requests)||0,ub=Number(providerDay()[b]?.requests)||0;if(ua!==ub)return ua-ub;if(a===preferred)return -1;if(b===preferred)return 1;const ia=providerOrder.indexOf(a),ib=providerOrder.indexOf(b);return (ia<0?999:ia)-(ib<0?999:ib);});
+}
+async function recordProviderOutcome(name,success,error=null){
+ const day=providerDay(),entry=day[name]||(day[name]={requests:0,successes:0,failures:0});
+ entry.requests=(Number(entry.requests)||0)+1;entry.lastAttemptAt=new Date().toISOString();
+ if(success){entry.successes=(Number(entry.successes)||0)+1;entry.blockedUntil=0;entry.blockedReason='';}
+ else{
+  entry.failures=(Number(entry.failures)||0)+1;const message=String(error?.message||error||'');const status=Number(message.match(/HTTP\s+(\d{3})/i)?.[1])||0;
+  if(status===429||/rate.?limit|quota|resource exhausted/i.test(message)){entry.blockedUntil=new Date(algeriaDate()+'T23:59:59+01:00').getTime();entry.blockedReason='daily-limit';}
+  else if(status===401||status===403||status===402){entry.blockedUntil=Date.now()+6*60*60*1000;entry.blockedReason='auth-or-billing';}
+  else if(/timeout|aborted|network|fetch failed/i.test(message)){entry.blockedUntil=Date.now()+15*60*1000;entry.blockedReason='temporary-network';}
+ }
+ await fs.mkdir('data',{recursive:true});await fs.writeFile('data/provider-usage.json',JSON.stringify(providerUsage,null,2)+'\n','utf8');
+}
 const editorialPriorityNames=['grand theft auto vi','grand theft auto 6','gta vi','gta 6','the witcher 4','the witcher iv','marvels wolverine','marvel s wolverine','marvel wolverine','elder scrolls vi','the elder scrolls 6','fable','resident evil requiem','tomb raider catalyst','007 first light','intergalactic the heretic prophet','pragmata','control resonant','the legend of zelda ocarina of time','ocarina of time','metaphor refantazio','godzilla minus zero','the hunger games sunrise on the reaping','sunrise on the reaping','percy jackson and the olympians','percy jackson'];
 function normalizedTitle(value){return String(value||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim();}
 function editorialPriority(item){const title=normalizedTitle([item.name||item.title,item.originalTitle].filter(Boolean).join(' ')),rank=editorialPriorityNames.findIndex(name=>title.includes(normalizedTitle(name)));return rank<0?999:rank;}
@@ -91,7 +117,7 @@ async function generateWithGemini(prompt){
  for(let attempt=0;attempt<3;attempt++){
   const r=await fetch(endpoint,{method:'POST',headers:{'content-type':'application/json',...(gatewayEndpoint?{'x-goog-api-key':key,...gatewayAuthHeaders()}:{})},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{maxOutputTokens:6000,thinkingConfig:{thinkingLevel:'LOW'},responseMimeType:'application/json'}}),signal:AbortSignal.timeout(90000)});
   if(!r.ok){
-   const detail=await r.text(),retryable=[429,500,502,503,504].includes(r.status);
+   const detail=await r.text(),retryable=[500,502,503,504].includes(r.status);
    if(retryable&&attempt<2){const wait=Math.min(10000,1500*(attempt+1));console.warn('Gemini transient HTTP '+r.status+'; retrying after '+wait+'ms');await new Promise(resolve=>setTimeout(resolve,wait));continue;}
    throw new Error('Gemini HTTP '+r.status+': '+detail);
   }
@@ -134,7 +160,7 @@ async function generateWithGroq(prompt){
   r=await fetch(url,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key,...gatewayAuthHeaders()},body,signal:AbortSignal.timeout(90000)});
   if(r.ok)break;
   detail=await r.text();
-  const retryable=r.status===429||[500,502,503,504].includes(r.status);
+  const retryable=[500,502,503,504].includes(r.status);
   if(!retryable||attempt===3)throw new Error('Groq HTTP '+r.status+': '+detail);
   const retryHeader=Number(r.headers.get('retry-after'))*1000;
   const retryBody=Number(detail.match(/try again in\s+([0-9.]+)s/i)?.[1])*1000;
@@ -358,14 +384,14 @@ async function generateReview(item){
   groq:()=>generateWithGroq(prompt),
   'cloudflare-workers-ai':()=>generateWithCloudflareWorkersAI(prompt),
  };
- try{
-  if(!handlers[provider])throw new Error('AI_PROVIDER يجب أن يكون openai أو gemini أو groq أو openrouter أو cloudflare-workers-ai');
-  parsed=validateGeneratedReview(await handlers[provider]());
- }catch(primaryError){
-  await recordLearningFailure(item,primaryError);
-  console.warn('فشل المزوّد الأساسي '+provider+':',primaryError.message);
-  parsed=await generateFallback(prompt,[provider],primaryError);
+ const candidates=providerCandidates();
+ const providerErrors=[];
+ if(!candidates.length)throw new Error('لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.');
+ for(const name of candidates){
+  try{parsed=validateGeneratedReview(await handlers[name]());await recordProviderOutcome(name,true);console.log('نجح توليد المراجعة واجتازت بوابة الجودة عبر:',name);break;}
+  catch(error){providerErrors.push(name+': '+error.message);await recordProviderOutcome(name,false,error);await recordLearningFailure(item,error);console.warn('تعذر المزوّد '+name+'؛ الانتقال إلى التالي:',error.message);}
  }
+ if(!parsed)throw new Error('فشل التوليد عبر جميع المزوّدات المجانية المتاحة: '+providerErrors.join(' | '));
  const d=parsed,review=String(d.review||'').replace(/<[^>]*>/g,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').trim();
  if(review.length<700)throw new Error('المراجعة المولّدة أقصر من الحد المطلوب للتحليل المتكامل');
  const pros=Array.isArray(d.pros)?d.pros.map(clean).filter(Boolean).slice(0,4):[],cons=Array.isArray(d.cons)?d.cons.map(clean).filter(Boolean).slice(0,3):[];
@@ -537,7 +563,7 @@ async function writeReview(item){
 }
 async function main(){
  await fs.mkdir(outDir,{recursive:true});await fs.mkdir('data',{recursive:true});await fs.mkdir('src/data',{recursive:true});
- await loadLearningMemory();
+ await loadLearningMemory();await loadProviderUsage();
  try{
   const top=await globalTrending();
   await fs.writeFile('src/data/trending.json',JSON.stringify(top,null,2)+'\n','utf8');
