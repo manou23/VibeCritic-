@@ -190,8 +190,12 @@ function providerStrategySnapshot(){
 function providerCandidates(){
  const configured={gemini:Boolean(env.GEMINI_API_KEY),groq:Boolean(env.GROQ_API_KEY),openrouter:Boolean(env.OPENROUTER_API_KEY),'cloudflare-workers-ai':Boolean(env.CF_WORKERS_AI_API_TOKEN&&env.CF_AI_GATEWAY_ACCOUNT_ID&&env.CF_AI_GATEWAY_ID),openai:Boolean(env.OPENAI_API_KEY)&&String(env.ALLOW_PAID_OPENAI||'').toLowerCase()==='true'};
  const preferred=provider==='openai'&&!configured.openai?null:provider;
- return [...new Set([preferred,...providerOrder,'openai'].filter(Boolean))].filter(name=>configured[name]).filter(name=>Number(providerDay()[name]?.blockedUntil||0)<=Date.now()).filter(name=>{const capacity=providerCapacity(name);return capacity.estimatedArticles===null||capacity.estimatedArticles>0;}).sort((a,b)=>{
-  const scores=providerDecisionScores([a,b]);
+ const candidates=[...new Set([preferred,...providerOrder,'openai'].filter(Boolean))]
+  .filter(name=>configured[name])
+  .filter(name=>Number(providerDay()[name]?.blockedUntil||0)<=Date.now())
+  .filter(name=>{const capacity=providerCapacity(name);return capacity.estimatedArticles===null||capacity.estimatedArticles>0;});
+ const scores=providerDecisionScores(candidates);
+ return candidates.sort((a,b)=>{
   if(scores[a].score!==scores[b].score)return scores[b].score-scores[a].score;
   const ua=Number(providerDay()[a]?.requests)||0,ub=Number(providerDay()[b]?.requests)||0;
   if(ua!==ub)return ua-ub;
