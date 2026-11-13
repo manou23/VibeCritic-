@@ -540,11 +540,13 @@ async function main(){
  }
  const fresh=[];let generationFailures=0;
  for(const type of types){
-  while(quotas[type]>0&&pools[type].length>0){
-   const item=pools[type].shift();quotas[type]--;
+  let candidateAttempts=0;
+  while(quotas[type]>0&&pools[type].length>0&&candidateAttempts<5){
+   const item=pools[type].shift();candidateAttempts++;
    try{
     const key=type+':'+item.id,upgraded=isPreviewUpgrade(item,publishedModes,today);
     done.push(await writeReview(item));
+    quotas[type]--;
     if(!upgraded)counts[type]++;
     publishedKeys.add(key);publishedModes.set(key,'review');
     fresh.push({...item,upgradedFromPreview:upgraded});
