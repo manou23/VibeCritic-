@@ -85,7 +85,7 @@ jobs:
           echo "OPENROUTER_API_KEY configured: $([ -n "$OPENROUTER_API_KEY" ] && echo yes || echo no)"
           echo "CF_WORKERS_AI_API_TOKEN configured: $([ -n "$CF_WORKERS_AI_API_TOKEN" ] && echo yes || echo no)"
           echo "YOUTUBE_API_KEY configured: $([ -n "$YOUTUBE_API_KEY" ] && echo yes || echo no)"
-          if [ -n "$TMDB_API_KEY" ] && { [ -n "$RAWG_API_KEY" ] || { [ -n "$IGDB_CLIENT_ID" ] && [ -n "$IGDB_CLIENT_SECRET" ]; }; } && { [ -n "$OPENAI_API_KEY" ] || [ -n "$GEMINI_API_KEY" ] || [ -n "$GROQ_API_KEY" ] || [ -n "$OPENROUTER_API_KEY" ]; }; then
+          if [ -n "$TMDB_API_KEY" ] && { [ -n "$RAWG_API_KEY" ] || { [ -n "$IGDB_CLIENT_ID" ] && [ -n "$IGDB_CLIENT_SECRET" ]; }; } && { [ -n "$OPENAI_API_KEY" ] || [ -n "$GEMINI_API_KEY" ] || [ -n "$GROQ_API_KEY" ] || [ -n "$OPENROUTER_API_KEY" ] || [ -n "$CF_WORKERS_AI_API_TOKEN" ]; }; then
             npm run generate
           else
             echo "API secrets are not fully configured; skipping generation and continuing the site build."
