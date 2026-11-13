@@ -88,15 +88,18 @@ jobs:
       - name: Validate generated review scores and quality metadata
         run: npm run validate:reviews
       - name: Add videos to previously published reviews
+        if: github.event_name == 'workflow_dispatch'
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: npm run backfill:videos
       - name: Localize existing movie and series titles from TMDb
+        if: github.event_name == 'workflow_dispatch'
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
         run: npm run backfill:titles
       - name: Backfill RAWG platforms and stores for existing games
+        if: github.event_name == 'workflow_dispatch'
         env:
           RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
         run: npm run backfill:games
