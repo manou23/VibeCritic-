@@ -527,7 +527,9 @@ async function main(){
   console.log('الحصة اليومية المستهدفة لكل قسم:',JSON.stringify(quotas),'| المنشور اليوم:',JSON.stringify(todayCounts));
  }else{
   let remaining=Math.min(dailyRemaining,perRunLimit);
-  const order=[...types].sort((a,b)=>pools[b].length-pools[a].length);
+  // Keep game, film and series publishing balanced after the initial library is complete.
+  // Prefer the section with fewer published reviews; candidate count breaks ties only.
+  const order=[...types].sort((a,b)=>counts[a]-counts[b]||pools[b].length-pools[a].length);
   while(remaining>0){
    let progressed=false;
    for(const type of order){
