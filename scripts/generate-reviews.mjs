@@ -69,12 +69,12 @@ async function recordProviderOutcome(name,success,error=null){
  entry.requests=(Number(entry.requests)||0)+1;entry.lastAttemptAt=new Date().toISOString();
  if(success){entry.successes=(Number(entry.successes)||0)+1;entry.blockedUntil=0;entry.blockedReason='';}
  else{
-  entry.failures=(Number(entry.failures)||0)+1;const message=String(error?.message||error||'');const status=Number(message.match(/HTTP\\s+(\\d{3})/i)?.[1])||0;
+  entry.failures=(Number(entry.failures)||0)+1;const message=String(error?.message||error||'');const status=Number(message.match(/HTTP\s+(\d{3})/i)?.[1])||0;
   if(status===429||/rate.?limit|quota|resource exhausted/i.test(message)){entry.blockedUntil=new Date(algeriaDate()+'T23:59:59+01:00').getTime();entry.blockedReason='daily-limit';}
   else if(status===401||status===403||status===402){entry.blockedUntil=Date.now()+6*60*60*1000;entry.blockedReason='auth-or-billing';}
   else if(/timeout|aborted|network|fetch failed/i.test(message)){entry.blockedUntil=Date.now()+15*60*1000;entry.blockedReason='temporary-network';}
  }
- await fs.mkdir('data',{recursive:true});await fs.writeFile('data/provider-usage.json',JSON.stringify(providerUsage,null,2)+'\\n','utf8');
+ await fs.mkdir('data',{recursive:true});await fs.writeFile('data/provider-usage.json',JSON.stringify(providerUsage,null,2)+'\n','utf8');
 }
 const editorialPriorityNames=['grand theft auto vi','grand theft auto 6','gta vi','gta 6','the witcher 4','the witcher iv','marvels wolverine','marvel s wolverine','marvel wolverine','elder scrolls vi','the elder scrolls 6','fable','resident evil requiem','tomb raider catalyst','007 first light','intergalactic the heretic prophet','pragmata','control resonant','the legend of zelda ocarina of time','ocarina of time','metaphor refantazio','godzilla minus zero','the hunger games sunrise on the reaping','sunrise on the reaping','percy jackson and the olympians','percy jackson'];
 function normalizedTitle(value){return String(value||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim();}
@@ -563,7 +563,7 @@ async function writeReview(item){
 }
 async function main(){
  await fs.mkdir(outDir,{recursive:true});await fs.mkdir('data',{recursive:true});await fs.mkdir('src/data',{recursive:true});
- await loadLearningMemory();
+ await loadLearningMemory();await loadProviderUsage();
  try{
   const top=await globalTrending();
   await fs.writeFile('src/data/trending.json',JSON.stringify(top,null,2)+'\n','utf8');
