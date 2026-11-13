@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "vibecritic",
+  "compatibility_date": "2026-11-13",
+  "pages_build_output_dir": "./dist",
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "AI_REVIEW_LIMITER",
+        "class_name": "AiReviewLimiter",
+        "script_name": "vibecritic-ai-review-limiter"
+      }
+    ]
+  }
+}
