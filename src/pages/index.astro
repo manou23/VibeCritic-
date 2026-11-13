@@ -41,6 +41,7 @@ const upcoming=reviews.filter(isUpcomingReview).sort((a,b)=>String(a.data.releas
   <button type="button" class="spotlight-prev" aria-label="الترند السابق" disabled={trendReviews.length < 2}>‹</button>
   <span class="discovery-index"><strong class="spotlight-count">01</strong><span>من <b class="spotlight-total">{String(Math.max(1,trendReviews.length)).padStart(2,'0')}</b> ترندات</span></span>
   <button type="button" class="spotlight-next" aria-label="الترند التالي" disabled={trendReviews.length < 2}>›</button>
+  <button type="button" class="spotlight-pause" aria-label="إيقاف التبديل التلقائي" aria-pressed="false" disabled={trendReviews.length < 2}>Ⅱ</button>
  </div>
  <div class="spotlight-progress" aria-hidden="true"><span></span></div>
  <div class="spotlight-data" hidden>
@@ -93,7 +94,8 @@ if(hero){
  const progress=hero.querySelector<HTMLElement>('.spotlight-progress span');
  const prev=hero.querySelector<HTMLButtonElement>('.spotlight-prev');
  const next=hero.querySelector<HTMLButtonElement>('.spotlight-next');
- let current=0,activeImage=0,timer:number|undefined,textTimer:number|undefined;
+ const pause=hero.querySelector<HTMLButtonElement>('.spotlight-pause');
+ let current=0,activeImage=0,timer:number|undefined,textTimer:number|undefined,paused=false,temporarilyStopped=false;
  const duration=7000;
  const labels:Record<string,string>={game:'ترند الألعاب',series:'ترند المسلسلات',movie:'ترند الأفلام'};
  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -134,14 +136,17 @@ if(hero){
   if(progress)progress.style.width=((current+1)/data.length*100)+'%';
  }
  function stop(){if(timer){window.clearInterval(timer);timer=undefined;}}
- function start(){stop();if(data.length<2||reduced)return;timer=window.setInterval(()=>show(current+1),duration);}
+ function start(){stop();if(data.length<2||reduced||paused||temporarilyStopped)return;timer=window.setInterval(()=>show(current+1),duration);}
+ function syncPauseButton(){if(!pause)return;pause.textContent=paused?'▶':'Ⅱ';pause.setAttribute('aria-label',paused?'استئناف التبديل التلقائي':'إيقاف التبديل التلقائي');pause.setAttribute('aria-pressed',String(paused));}
  prev?.addEventListener('click',()=>{show(current-1);start();});
  next?.addEventListener('click',()=>{show(current+1);start();});
- hero.addEventListener('mouseenter',stop);
- hero.addEventListener('mouseleave',start);
- hero.addEventListener('focusin',stop);
- hero.addEventListener('focusout',(event)=>{if(!(event.relatedTarget instanceof Node)||!hero.contains(event.relatedTarget))start();});
+ pause?.addEventListener('click',()=>{paused=!paused;syncPauseButton();paused?stop():start();});
+ hero.addEventListener('mouseenter',()=>{temporarilyStopped=true;stop();});
+ hero.addEventListener('mouseleave',()=>{temporarilyStopped=false;start();});
+ hero.addEventListener('focusin',()=>{temporarilyStopped=true;stop();});
+ hero.addEventListener('focusout',(event)=>{if(!(event.relatedTarget instanceof Node)||!hero.contains(event.relatedTarget)){temporarilyStopped=false;start();}});
  document.addEventListener('visibilitychange',()=>document.hidden?stop():start());
+ syncPauseButton();
  if(data.length>1)start();
 }
 
