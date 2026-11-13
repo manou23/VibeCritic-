@@ -17,7 +17,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
     <label class="ai-kind-option"><input type="radio" name="kind" value="game" /><span>لعبة فيديو</span></label>
     <label class="ai-kind-option"><input type="radio" name="kind" value="series" /><span>مسلسل تلفزيوني</span></label>
    </fieldset>
-   {turnstileSiteKey && <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="auto" data-action="ai_review"></div>}
+   {turnstileSiteKey ? <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="auto" data-action="ai_review"></div> : <p class="ai-security-warning" role="alert">تحقق الأمان غير مهيأ حالياً. يرجى المحاولة لاحقاً.</p>}
    <button id="ai-submit" class="ai-submit" type="submit"><span>أنشئ المراجعة</span><span aria-hidden="true">↗</span></button>
    <p class="ai-privacy-note">مفاتيح الذكاء الاصطناعي محمية على الخادم ولا تُرسل إلى متصفحك.</p>
   </form>
@@ -61,6 +61,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
 .ai-kind-option input:checked+span{background:#171717;color:white;border-color:#171717}
 .ai-submit{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:56px;border:0;border-radius:12px;background:#e46d35;color:#fff;padding:0 20px;font:inherit;font-weight:800;cursor:pointer;transition:transform .2s,background .2s}
 .ai-submit:hover{background:#cf5725;transform:translateY(-1px)}.ai-submit:disabled{opacity:.6;cursor:wait;transform:none}
+.ai-security-warning{margin:14px 0;padding:13px 15px;border:1px solid #d65b4b;border-radius:10px;background:#d65b4b0d;color:#a73529;font-size:13px;line-height:1.8;text-align:center}
 .ai-privacy-note,.ai-disclaimer{font-size:12px;color:var(--muted,#777);line-height:1.8}.ai-privacy-note{margin:13px 0 0;text-align:center}
 .ai-status{margin:22px 0;padding:16px 18px;border-radius:12px;background:var(--surface,#fff);border:1px solid var(--line,#ddd);line-height:1.8}.ai-status[data-error="true"]{border-color:#d65b4b;color:#a73529}
 .ai-result{margin-top:28px;background:var(--surface,#fff);border:1px solid var(--line,#e6e1d7);border-radius:22px;padding:clamp(20px,4vw,38px);box-shadow:0 16px 50px #1c17100b}
