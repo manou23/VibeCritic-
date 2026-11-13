@@ -62,7 +62,7 @@ function providerDay(){const day=algeriaDate();if(!providerUsage.days[day])provi
 function providerCandidates(){
  const configured={gemini:Boolean(env.GEMINI_API_KEY),groq:Boolean(env.GROQ_API_KEY),openrouter:Boolean(env.OPENROUTER_API_KEY),'cloudflare-workers-ai':Boolean(env.CF_WORKERS_AI_API_TOKEN&&env.CF_AI_GATEWAY_ACCOUNT_ID&&env.CF_AI_GATEWAY_ID),openai:Boolean(env.OPENAI_API_KEY)&&String(env.ALLOW_PAID_OPENAI||'').toLowerCase()==='true'};
  const preferred=provider==='openai'&&!configured.openai?null:provider;
- return [...new Set([preferred,...providerOrder,'openai'].filter(Boolean))].filter(name=>configured[name]).filter(name=>Number(providerDay()[name]?.blockedUntil||0)<=Date.now()).sort((a,b)=>{if(a===preferred)return -1;if(b===preferred)return 1;const ua=Number(providerDay()[a]?.requests)||0,ub=Number(providerDay()[b]?.requests)||0;return ua-ub||providerOrder.indexOf(a)-providerOrder.indexOf(b);});
+ return [...new Set([preferred,...providerOrder,'openai'].filter(Boolean))].filter(name=>configured[name]).filter(name=>Number(providerDay()[name]?.blockedUntil||0)<=Date.now()).sort((a,b)=>{const ua=Number(providerDay()[a]?.requests)||0,ub=Number(providerDay()[b]?.requests)||0;if(ua!==ub)return ua-ub;if(a===preferred)return -1;if(b===preferred)return 1;const ia=providerOrder.indexOf(a),ib=providerOrder.indexOf(b);return (ia<0?999:ia)-(ib<0?999:ib);});
 }
 async function recordProviderOutcome(name,success,error=null){
  const day=providerDay(),entry=day[name]||(day[name]={requests:0,successes:0,failures:0});
