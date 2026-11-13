@@ -94,6 +94,7 @@ jobs:
           console.log('Workers AI connectivity test passed. Model:', model);
           console.log('Response received; token value was not logged.');
           NODE
+      # Opt-in smoke test only; never generates or publishes a review.
       - name: Test SambaNova connectivity
         if: github.event_name == 'push' && contains(github.event.head_commit.message, '[test-sambanova]')
         env:
