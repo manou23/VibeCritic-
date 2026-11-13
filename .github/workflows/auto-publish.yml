@@ -73,8 +73,24 @@ jobs:
           const body = await response.text();
           if (!response.ok) throw new Error(`Workers AI HTTP ${response.status}: ${body.slice(0, 700)}`);
           const data = JSON.parse(body);
-          const content = data.choices?.[0]?.message?.content;
-          if (typeof content !== 'string' || !content.trim()) throw new Error('Workers AI returned no chat completion content.');
+          // Accept either the direct OpenAI-compatible payload or a Cloudflare API result envelope.
+          const payload = data.result && typeof data.result === 'object' ? data.result : data;
+          const message = payload.choices?.[0]?.message;
+          let content = message?.content;
+          if (Array.isArray(content)) content = content.map(part => part?.text || '').join('');
+          if (typeof content !== 'string' || !content.trim()) {
+            const diagnostic = {
+              topLevelKeys: Object.keys(data),
+              payloadKeys: Object.keys(payload),
+              success: data.success,
+              errors: Array.isArray(data.errors) ? data.errors.map(error => ({ code: error.code, message: error.message })) : undefined,
+              choicesCount: Array.isArray(payload.choices) ? payload.choices.length : 0,
+              firstChoiceKeys: payload.choices?.[0] ? Object.keys(payload.choices[0]) : [],
+              finishReason: payload.choices?.[0]?.finish_reason
+            };
+            console.error('Workers AI response shape (no credentials included):', JSON.stringify(diagnostic));
+            throw new Error('Workers AI returned HTTP success but no usable chat completion content.');
+          }
           console.log('Workers AI connectivity test passed. Model:', model);
           console.log('Response received; token value was not logged.');
           NODE
