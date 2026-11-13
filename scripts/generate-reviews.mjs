@@ -348,7 +348,7 @@ async function gamesFromRawg(mode='recent'){
  if(mode==='upcoming')query.set('dates',today+','+until);
  else if(mode!=='archive')query.set('dates',since+','+today);
  const listing=await getJson('https://api.rawg.io/api/games?'+query.toString());
- const candidates=(listing.results||[]).filter(x=>x.id&&x.slug&&(mode==='archive'?(x.released&&x.released<today&&((Number(x.metacritic)||0)>=70||(Number(x.rating)||0)>=4)):mode==='upcoming'?(x.released>=today&&x.released<=until):(x.released>=since&&x.released<=today))).slice(0,18);
+ const candidates=(listing.results||[]).filter(x=>x.id&&x.slug&&(mode==='archive'?(x.released&&x.released<today&&((Number(x.metacritic)||0)>=70||(Number(x.rating)||0)>=4)):mode==='upcoming'?(x.released>=today&&x.released<=until):(x.released>=since&&x.released<=today))).slice(0,8);
  const detailed=await Promise.all(candidates.map(async item=>{
   try{
    const detail=await getJson('https://api.rawg.io/api/games/'+encodeURIComponent(item.slug)+'?key='+encodeURIComponent(key));
