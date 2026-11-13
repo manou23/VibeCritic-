@@ -75,7 +75,37 @@ function providerCapacity(name){
  const estimates=[];
  if(limit.tokens!==null&&avgTokens>0)estimates.push(Math.floor(Math.max(0,limit.tokens-usedTokens)/avgTokens));
  if(limit.requests!==null&&avgRequests>0)estimates.push(Math.floor(Math.max(0,limit.requests-usedRequests)/avgRequests));
- return {limits:limit,usedTokens,usedRequests,estimatedArticles:estimates.length?Math.min(...estimates):null,averageTokensPerArticle:avgTokens?Math.round(avgTokens):null,averageRequestsPerArticle:avgRequests?Number(avgRequests.toFixed(2)):null};
+ let reportedDailyRequestsRemaining=null,reportedDailyRequestsLimit=null;
+ if(name==='openrouter'){
+  const quota=entry.freeModelDailyRequests||{};
+  if(Number.isFinite(Number(quota.remaining)))reportedDailyRequestsRemaining=Number(quota.remaining);
+  if(Number.isFinite(Number(quota.limit)))reportedDailyRequestsLimit=Number(quota.limit);
+ }else if(name==='groq'){
+  const headers=entry.lastUsage?.headers||{};
+  const remaining=Number(headers['x-ratelimit-remaining-requests']);
+  const cap=Number(headers['x-ratelimit-limit-requests']);
+  if(Number.isFinite(remaining)&&headers['x-ratelimit-remaining-requests']!==undefined)reportedDailyRequestsRemaining=remaining;
+  if(Number.isFinite(cap)&&headers['x-ratelimit-limit-requests']!==undefined)reportedDailyRequestsLimit=cap;
+ }
+ if(reportedDailyRequestsRemaining!==null){
+  const conservativeRequestsPerArticle=avgRequests>0?avgRequests:(name==='openrouter'?6:4);
+  estimates.push(Math.floor(Math.max(0,reportedDailyRequestsRemaining)/conservativeRequestsPerArticle));
+ }
+ return {limits:limit,usedTokens,usedRequests,estimatedArticles:estimates.length?Math.min(...estimates):null,averageTokensPerArticle:avgTokens?Math.round(avgTokens):null,averageRequestsPerArticle:avgRequests?Number(avgRequests.toFixed(2)):null,reportedDailyRequestsRemaining,reportedDailyRequestsLimit};
+}
+async function refreshOpenRouterQuota(){
+ if(!env.OPENROUTER_API_KEY)return;
+ try{
+  const response=await fetch('https://openrouter.ai/api/v1/key',{headers:{authorization:'Bearer '+env.OPENROUTER_API_KEY},signal:AbortSignal.timeout(15000)});
+  if(!response.ok)throw new Error('HTTP '+response.status);
+  const payload=await response.json(),quota=payload?.data?.free_model_daily_requests;
+  if(!quota||!Number.isFinite(Number(quota.remaining))||!Number.isFinite(Number(quota.limit)))return;
+  const entry=providerDay().openrouter||(providerDay().openrouter={requests:0,successes:0,failures:0,apiRequests:0,totalTokens:0,inputTokens:0,outputTokens:0});
+  entry.freeModelDailyRequests={used:Number(quota.used)||0,limit:Number(quota.limit),remaining:Number(quota.remaining),observedAt:new Date().toISOString(),source:'OpenRouter GET /api/v1/key'};
+  console.log('OpenRouter free-model daily requests remaining:',entry.freeModelDailyRequests.remaining,'/',entry.freeModelDailyRequests.limit);
+  await fs.mkdir('data',{recursive:true});
+  await fs.writeFile('data/provider-usage.json',JSON.stringify(providerUsage,null,2)+'\\n','utf8');
+ }catch(error){console.warn('تعذر قراءة حصة OpenRouter اليومية؛ سيستمر النظام بالقياس المحلي:',error.message);}
 }
 function resourceDailyPublishingPlan(){
  const configured={
@@ -104,7 +134,7 @@ async function trackedProviderFetch(name,url,options){
  const response=await fetch(url,options),measurement=activeProviderMeasurement;
  if(measurement&&measurement.name===name){
   measurement.usage.requests++;
-  for(const header of ['x-ratelimit-remaining-requests','x-ratelimit-remaining-tokens','ratelimit-remaining','retry-after']){
+  for(const header of ['x-ratelimit-limit-requests','x-ratelimit-remaining-requests','x-ratelimit-reset-requests','x-ratelimit-limit-tokens','x-ratelimit-remaining-tokens','x-ratelimit-reset-tokens','x-ratelimit-limit','x-ratelimit-remaining','x-ratelimit-reset','ratelimit-remaining','retry-after']){
    const value=response.headers.get(header);if(value!==null)measurement.usage.headers[header]=value;
   }
   try{
@@ -650,7 +680,7 @@ async function writeReview(item){
 }
 async function main(){
  await fs.mkdir(outDir,{recursive:true});await fs.mkdir('data',{recursive:true});await fs.mkdir('src/data',{recursive:true});
- await loadLearningMemory();await loadProviderUsage();const publishingPlan=resourceDailyPublishingPlan();dailyTotalLimit=publishingPlan.limit;console.log('سقف النشر اليومي وفق الموارد المجانية:',dailyTotalLimit,'| نمط الحساب:',publishingPlan.mode);await saveProviderCapacity(publishingPlan);
+ await loadLearningMemory();await loadProviderUsage();await refreshOpenRouterQuota();const publishingPlan=resourceDailyPublishingPlan();dailyTotalLimit=publishingPlan.limit;console.log('سقف النشر اليومي وفق الموارد المجانية:',dailyTotalLimit,'| نمط الحساب:',publishingPlan.mode);await saveProviderCapacity(publishingPlan);
  try{
   const top=await globalTrending();
   await fs.writeFile('src/data/trending.json',JSON.stringify(top,null,2)+'\n','utf8');
