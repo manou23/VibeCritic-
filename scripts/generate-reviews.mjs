@@ -9,11 +9,11 @@ const gamesWindowDays=Math.max(1,Number.isFinite(Number(env.GAMES_WINDOW_DAYS))&
 const upcomingWindowDays=Math.max(30,Number.isFinite(Number(env.UPCOMING_WINDOW_DAYS))&&env.UPCOMING_WINDOW_DAYS?Number(env.UPCOMING_WINDOW_DAYS):365);
 const outDir='src/content/reviews',processedPath='data/processed.json';
 const learningPath='data/learning-memory.json';
-let learningMemory={version:1,stats:{successes:0,failures:0},lessons:[],recentSuccesses:[]};
+let learningMemory={version:2,stats:{successes:0,failures:0},lessons:[],recentSuccesses:[],recentQuality:[],qualityByType:{}};
 async function loadLearningMemory(){
- try{const saved=JSON.parse(await fs.readFile(learningPath,'utf8'));if(saved&&saved.version===1){learningMemory={...learningMemory,...saved,stats:{successes:0,failures:0,...saved.stats},lessons:Array.isArray(saved.lessons)?saved.lessons.slice(-12):[],recentSuccesses:Array.isArray(saved.recentSuccesses)?saved.recentSuccesses.slice(-10):[]};}}catch{}
+ try{const saved=JSON.parse(await fs.readFile(learningPath,'utf8'));if(saved&&(saved.version===1||saved.version===2)){learningMemory={...learningMemory,...saved,version:2,stats:{successes:0,failures:0,...saved.stats},lessons:Array.isArray(saved.lessons)?saved.lessons.slice(-12):[],recentSuccesses:Array.isArray(saved.recentSuccesses)?saved.recentSuccesses.slice(-10):[],recentQuality:Array.isArray(saved.recentQuality)?saved.recentQuality.slice(-30):[],qualityByType:saved.qualityByType&&typeof saved.qualityByType==='object'?saved.qualityByType:{}};}}catch{}
 }
-async function saveLearningMemory(){learningMemory.updatedAt=new Date().toISOString();await fs.writeFile(learningPath,JSON.stringify(learningMemory,null,2)+'\n','utf8');}
+async function saveLearningMemory(){learningMemory.version=2;learningMemory.updatedAt=new Date().toISOString();await fs.writeFile(learningPath,JSON.stringify(learningMemory,null,2)+'\n','utf8');}
 function classifyLearning(error){
  const message=String(error?.message||error||'');
  if(/عنوان نقدي متشابه|صياغة قالبية|عبارات إنشائية|تعميمات/.test(message))return ['specificity','ارفض العناوين والعبارات القالبية؛ اربط كل حكم بتفصيل موثق وفريد من العمل.'];
@@ -32,14 +32,37 @@ async function recordLearningFailure(item,error){
  await saveLearningMemory();
  console.warn('تم حفظ درس تحسيني دائم:',key,'| العمل:',item?.name||'غير محدد');
 }
+function editorialQualityMetrics(item,review){
+ const text=String(review?.review||''),tokens=(text.toLowerCase().match(/[\p{L}\p{N}]{2,}/gu)||[]);
+ const stop=new Set(['هذا','هذه','ذلك','تلك','الذي','التي','على','في','من','إلى','عن','مع','بين','كما','لكن','كان','كانت','يكون','تكون','هو','هي','ما','لا','لم','لن','قد','كل','بعد','قبل','حتى','عند','ضمن','عبر','أو','وهو','وهي','the','and','for','with','that','this','from','into','its']);
+ const meaningful=tokens.filter(token=>!stop.has(token)),unique=new Set(meaningful),trigrams=[];
+ for(let i=0;i<meaningful.length-2;i++)trigrams.push(meaningful.slice(i,i+3).join(' '));
+ const trigramCounts=new Map();for(const phrase of trigrams)trigramCounts.set(phrase,(trigramCounts.get(phrase)||0)+1);
+ const repeatedTrigrams=[...trigramCounts.values()].reduce((sum,count)=>sum+Math.max(0,count-1),0);
+ const genericPhrases=['بين الطموح والواقع','رحلة لا تنسى','تجربة لا مثيل لها','أكثر من مجرد','على مستوى آخر','يقدم تجربة فريدة'];
+ const normalized=text.replace(/[ًٌٍَُِّْـ]/g,'').toLowerCase(),genericPhraseHits=genericPhrases.filter(phrase=>normalized.includes(phrase)).length;
+ const scores=Object.values(review?.scores||{}).map(Number).filter(Number.isFinite),words=text.split(/\s+/u).filter(Boolean).length;
+ return {type:item?.type||'unknown',words,sections:(text.match(/^###\s+/gm)||[]).length,paragraphs:text.split(/\n\s*\n/u).filter(part=>part.trim()).length,lexicalDiversity:meaningful.length?Number((unique.size/meaningful.length).toFixed(3)):0,repeatedTrigramRate:trigrams.length?Number((repeatedTrigrams/trigrams.length).toFixed(3)):0,genericPhraseHits,scoreMean:scores.length?Number((scores.reduce((a,b)=>a+b,0)/scores.length).toFixed(2)):null,scoreSpread:scores.length?Number((Math.max(...scores)-Math.min(...scores)).toFixed(2)):null,prosCount:Array.isArray(review?.pros)?review.pros.length:0,consCount:Array.isArray(review?.cons)?review.cons.length:0};
+}
 async function recordLearningSuccess(item,review){
- const text=String(review?.review||''),sample={type:item?.type||'unknown',words:text.split(/\s+/u).filter(Boolean).length,sections:(text.match(/^###\s+/gm)||[]).length,score:Number(review?.score)||0};
- learningMemory.stats.successes++;learningMemory.recentSuccesses=[...learningMemory.recentSuccesses,sample].slice(-10);await saveLearningMemory();
+ const sample=editorialQualityMetrics(item,review),type=sample.type,previous=learningMemory.qualityByType[type]||{count:0,avgWords:0,avgSections:0,avgLexicalDiversity:0,avgRepeatedTrigramRate:0,avgGenericPhraseHits:0,avgScoreMean:0};
+ const count=Number(previous.count)||0,nextCount=count+1,average=(old,value)=>Number((((Number(old)||0)*count+value)/nextCount).toFixed(3));
+ learningMemory.qualityByType[type]={count:nextCount,avgWords:average(previous.avgWords,sample.words),avgSections:average(previous.avgSections,sample.sections),avgLexicalDiversity:average(previous.avgLexicalDiversity,sample.lexicalDiversity),avgRepeatedTrigramRate:average(previous.avgRepeatedTrigramRate,sample.repeatedTrigramRate),avgGenericPhraseHits:average(previous.avgGenericPhraseHits,sample.genericPhraseHits),avgScoreMean:sample.scoreMean===null?previous.avgScoreMean:average(previous.avgScoreMean,sample.scoreMean),updatedAt:new Date().toISOString()};
+ learningMemory.stats.successes++;learningMemory.recentSuccesses=[...learningMemory.recentSuccesses,{type,words:sample.words,sections:sample.sections,score:Number(review?.score)||0}].slice(-10);
+ learningMemory.recentQuality=[...learningMemory.recentQuality,{...sample,at:new Date().toISOString()}].slice(-30);await saveLearningMemory();
 }
 function learningAdvice(){
  const lessons=learningMemory.lessons.slice(0,6).map(x=>'- '+x.advice+' (تكرر رصدها '+x.count+' مرة)').join('\n');
  const samples=learningMemory.recentSuccesses,avgWords=samples.length?Math.round(samples.reduce((sum,x)=>sum+x.words,0)/samples.length):0;
- return 'ذاكرة التحسين المستمر المحفوظة بين التشغيلات: إجمالي النجاحات '+learningMemory.stats.successes+'، الإخفاقات المرصودة '+learningMemory.stats.failures+'. '+(lessons?'الدروس التي يجب تطبيقها الآن:\n'+lessons:'لا توجد إخفاقات مصنفة بعد؛ ابدأ بتطبيق معايير VibeCritic الأساسية.')+(avgWords?'\nمتوسط طول آخر '+samples.length+' مراجعات اجتازت البوابة: '+avgWords+' كلمة؛ استخدمه للموازنة لا للحشو.':'');
+ const quality=Object.values(learningMemory.qualityByType||{}),total=quality.reduce((sum,x)=>sum+(Number(x.count)||0),0),weighted=key=>total?quality.reduce((sum,x)=>sum+(Number(x[key])||0)*(Number(x.count)||0),0)/total:0;
+ const signals=[];
+ if(total&&weighted('avgRepeatedTrigramRate')>0.025)signals.push('رصدت الذاكرة تكراراً ملحوظاً لعبارات ثلاثية؛ نوّع بناء الجمل وقدم معلومة أو حجة جديدة في كل فقرة.');
+ if(total&&weighted('avgGenericPhraseHits')>0)signals.push('ظهرت عبارات نقدية عامة في بعض المراجعات؛ استبدلها بتفاصيل تخص العمل نفسه.');
+ if(total&&weighted('avgLexicalDiversity')<0.30)signals.push('نوّع المفردات عبر زيادة التفاصيل الدقيقة لا عبر حشو المرادفات.');
+ if(total&&weighted('avgSections')<5)signals.push('حافظ على المحاور الخمسة المطلوبة، ولا تدمج أكثر من فكرة نقدية في محور واحد.');
+ if(total&&weighted('avgWords')<750)signals.push('متوسط الطول المرصود أقل من الهدف؛ استكمل التحليل بالأدلة لا بالتكرار.');
+ const diagnostics=total?'\nمؤشرات تحريرية داخلية من '+total+' مراجعة اجتازت بوابة الجودة (ليست قياساً لرضا القراء): متوسط التنوع المعجمي '+weighted('avgLexicalDiversity').toFixed(2)+'، تكرار العبارات '+(weighted('avgRepeatedTrigramRate')*100).toFixed(1)+'%، العبارات العامة '+weighted('avgGenericPhraseHits').toFixed(2)+' لكل مراجعة. '+(signals.length?'إشارات التحسين المستخلصة:\n'+signals.join('\n'):'لا تظهر حالياً إشارة تكرار قوية؛ استمر في تطبيق معايير الجودة دون تغييرها.'):'\nلا توجد بعد عينة كافية لمؤشرات الجودة التحريرية؛ لا تستنتج تحسناً أو تراجعاً قبل تراكم المراجعات.');
+ return 'ذاكرة التحسين المستمر المحفوظة بين التشغيلات: إجمالي النجاحات '+learningMemory.stats.successes+'، الإخفاقات المرصودة '+learningMemory.stats.failures+'. '+(lessons?'الدروس التي يجب تطبيقها الآن:\n'+lessons:'لا توجد إخفاقات مصنفة بعد؛ ابدأ بتطبيق معايير VibeCritic الأساسية.')+(avgWords?'\nمتوسط طول آخر '+samples.length+' مراجعات اجتازت البوابة: '+avgWords+' كلمة؛ استخدمه للموازنة لا للحشو.':'')+diagnostics;
 }
 function required(name){if(!env[name])throw new Error(`متغير البيئة ${name} غير مضبوط في GitHub Secrets`);return env[name];}
 function gatewayAuthHeaders(){const token=String(env.CF_AI_GATEWAY_AUTH_TOKEN||'').trim();return token?{'cf-aig-authorization':'Bearer '+token}:{};}
