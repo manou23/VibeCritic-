@@ -498,11 +498,21 @@ async function main(){
   return items.filter(x=>{
    const key=x.type+':'+x.id,upgrade=isPreviewUpgrade(x,publishedModes,today);
    if(seen.has(key)||String(x.description||'').trim().length<60||((done.includes(key)||publishedKeys.has(key))&&!upgrade))return false;
+   const releaseDate=String(x.date||'').slice(0,10);
+   const recentCutoff=addDays(today,-730);
+   // Do not fill the catalogue with unrelated classics: keep archive candidates to the last two years.
+   // Explicitly prioritized major franchises remain eligible even when their release date is older.
+   if(!upgrade&&editorialPriority(x)>=999&&/^\\d{4}-\\d{2}-\\d{2}$/.test(releaseDate)&&releaseDate<recentCutoff)return false;
    if(x.type==='game'&&!upgrade&&communityDemand(x)<2&&editorialPriority(x)>=999)return false;
    seen.add(key);return true;
   }).sort((a,b)=>{
    const upgradeA=isPreviewUpgrade(a,publishedModes,today)?1:0,upgradeB=isPreviewUpgrade(b,publishedModes,today)?1:0;
-   return upgradeB-upgradeA||editorialPriority(a)-editorialPriority(b)||communityDemand(b)-communityDemand(a)||Number(b.popularity||0)-Number(a.popularity||0);
+   const priorityDiff=editorialPriority(a)-editorialPriority(b);
+   if(priorityDiff!==0)return upgradeB-upgradeA||priorityDiff;
+   const dateA=String(a.date||''),dateB=String(b.date||'');
+   const recentA=/^\\d{4}-\\d{2}-\\d{2}$/.test(dateA)?dateA:'0000-00-00';
+   const recentB=/^\\d{4}-\\d{2}-\\d{2}$/.test(dateB)?dateB:'0000-00-00';
+   return upgradeB-upgradeA||recentB.localeCompare(recentA)||communityDemand(b)-communityDemand(a)||Number(b.popularity||0)-Number(a.popularity||0);
   });
  };
  const pools={game:eligible(rawPools.game),series:eligible(rawPools.series),movie:eligible(rawPools.movie)};
