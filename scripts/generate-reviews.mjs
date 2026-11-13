@@ -52,6 +52,55 @@ async function getJson(url){const r=await fetch(url,{signal:AbortSignal.timeout(
 const clean=v=>String(v??'').replace(/[\r\n]+/g,' ').trim();
 
 const providerOrder=['gemini','groq','cloudflare-workers-ai','openrouter'];
+let activeProviderMeasurement=null;
+const providerLimitEnv={
+ gemini:{tokens:'GEMINI_FREE_DAILY_TOKENS',requests:'GEMINI_FREE_DAILY_REQUESTS'},
+ groq:{tokens:'GROQ_FREE_DAILY_TOKENS',requests:'GROQ_FREE_DAILY_REQUESTS'},
+ openrouter:{tokens:'OPENROUTER_FREE_DAILY_TOKENS',requests:'OPENROUTER_FREE_DAILY_REQUESTS'},
+ 'cloudflare-workers-ai':{tokens:'CF_WORKERS_AI_FREE_DAILY_TOKENS',requests:'CF_WORKERS_AI_FREE_DAILY_REQUESTS'}
+};
+function providerLimits(name){
+ const keys=providerLimitEnv[name]||{};
+ const read=key=>{const value=Number(env[key]);return Number.isFinite(value)&&value>0?value:null;};
+ return {tokens:read(keys.tokens),requests:read(keys.requests)};
+}
+function providerCapacity(name){
+ const limit=providerLimits(name),entry=providerDay()[name]||{};
+ const usedTokens=Number(entry.totalTokens)||0,usedRequests=Number(entry.apiRequests)||0;
+ const history=Object.values(providerUsage.days||{}).flatMap(day=>Object.values(day.articles||{}).map(article=>article?.[name]).filter(Boolean));
+ const samples=history.length;
+ const avgTokens=samples?history.reduce((sum,x)=>sum+(Number(x.totalTokens)||0),0)/samples:0;
+ const avgRequests=samples?history.reduce((sum,x)=>sum+(Number(x.requests)||0),0)/samples:0;
+ const estimates=[];
+ if(limit.tokens!==null&&avgTokens>0)estimates.push(Math.floor(Math.max(0,limit.tokens-usedTokens)/avgTokens));
+ if(limit.requests!==null&&avgRequests>0)estimates.push(Math.floor(Math.max(0,limit.requests-usedRequests)/avgRequests));
+ return {limits:limit,usedTokens,usedRequests,estimatedArticles:estimates.length?Math.min(...estimates):null,averageTokensPerArticle:avgTokens?Math.round(avgTokens):null,averageRequestsPerArticle:avgRequests?Number(avgRequests.toFixed(2)):null};
+}
+async function saveProviderCapacity(){
+ const report={updatedAt:new Date().toISOString(),date:algeriaDate(),note:'القياسات الفعلية تأتي من usage الذي تعيده واجهة المزوّد. تقدير عدد المقالات لا يتوفر قبل تسجيل عينة استهلاك وحدود يومية معلنة/مضبوطة.',providers:{}};
+ for(const name of providerOrder)report.providers[name]=providerCapacity(name);
+ await fs.mkdir('data',{recursive:true});
+ await fs.writeFile('data/provider-capacity.json',JSON.stringify(report,null,2)+'\n','utf8');
+}
+async function trackedProviderFetch(name,url,options){
+ const response=await fetch(url,options),measurement=activeProviderMeasurement;
+ if(measurement&&measurement.name===name){
+  measurement.usage.requests++;
+  for(const header of ['x-ratelimit-remaining-requests','x-ratelimit-remaining-tokens','ratelimit-remaining','retry-after']){
+   const value=response.headers.get(header);if(value!==null)measurement.usage.headers[header]=value;
+  }
+  try{
+   const payload=await response.clone().json(),usage=payload?.usage||payload?.usageMetadata||payload?.result?.usage||{};
+   const input=Number(usage.prompt_tokens??usage.input_tokens??usage.promptTokenCount??usage.inputTokenCount)||0;
+   const output=Number(usage.completion_tokens??usage.output_tokens??usage.candidatesTokenCount??usage.outputTokenCount)||0;
+   const total=Number(usage.total_tokens??usage.totalTokenCount)||input+output;
+   measurement.usage.inputTokens+=input;measurement.usage.outputTokens+=output;measurement.usage.totalTokens+=total;
+   if(total>0)measurement.usage.reportedUsage=true;
+  }catch{}
+ }
+ return response;
+}
+
 let providerUsage={version:1,days:{}};
 async function loadProviderUsage(){
  try{const saved=JSON.parse(await fs.readFile('data/provider-usage.json','utf8'));if(saved&&saved.version===1&&saved.days&&typeof saved.days==='object')providerUsage=saved;}catch{}
@@ -62,19 +111,37 @@ function providerDay(){const day=algeriaDate();if(!providerUsage.days[day])provi
 function providerCandidates(){
  const configured={gemini:Boolean(env.GEMINI_API_KEY),groq:Boolean(env.GROQ_API_KEY),openrouter:Boolean(env.OPENROUTER_API_KEY),'cloudflare-workers-ai':Boolean(env.CF_WORKERS_AI_API_TOKEN&&env.CF_AI_GATEWAY_ACCOUNT_ID&&env.CF_AI_GATEWAY_ID),openai:Boolean(env.OPENAI_API_KEY)&&String(env.ALLOW_PAID_OPENAI||'').toLowerCase()==='true'};
  const preferred=provider==='openai'&&!configured.openai?null:provider;
- return [...new Set([preferred,...providerOrder,'openai'].filter(Boolean))].filter(name=>configured[name]).filter(name=>Number(providerDay()[name]?.blockedUntil||0)<=Date.now()).sort((a,b)=>{const ua=Number(providerDay()[a]?.requests)||0,ub=Number(providerDay()[b]?.requests)||0;if(ua!==ub)return ua-ub;if(a===preferred)return -1;if(b===preferred)return 1;const ia=providerOrder.indexOf(a),ib=providerOrder.indexOf(b);return (ia<0?999:ia)-(ib<0?999:ib);});
+ return [...new Set([preferred,...providerOrder,'openai'].filter(Boolean))].filter(name=>configured[name]).filter(name=>Number(providerDay()[name]?.blockedUntil||0)<=Date.now()).filter(name=>{const capacity=providerCapacity(name);return capacity.estimatedArticles===null||capacity.estimatedArticles>0;}).sort((a,b)=>{
+  const ca=providerCapacity(a).estimatedArticles,cb=providerCapacity(b).estimatedArticles;
+  if(ca!==null&&cb!==null&&ca!==cb)return cb-ca;
+  if(ca!==null&&cb===null)return -1;if(ca===null&&cb!==null)return 1;
+  const ua=Number(providerDay()[a]?.requests)||0,ub=Number(providerDay()[b]?.requests)||0;
+  if(ua!==ub)return ua-ub;if(a===preferred)return -1;if(b===preferred)return 1;
+  const ia=providerOrder.indexOf(a),ib=providerOrder.indexOf(b);return (ia<0?999:ia)-(ib<0?999:ib);
+ });
 }
-async function recordProviderOutcome(name,success,error=null){
- const day=providerDay(),entry=day[name]||(day[name]={requests:0,successes:0,failures:0});
+async function recordProviderOutcome(name,success,error=null,measurement=null,item=null){
+ const day=providerDay(),entry=day[name]||(day[name]={requests:0,successes:0,failures:0,apiRequests:0,totalTokens:0,inputTokens:0,outputTokens:0});
  entry.requests=(Number(entry.requests)||0)+1;entry.lastAttemptAt=new Date().toISOString();
+ const usage=measurement?.usage||{requests:0,inputTokens:0,outputTokens:0,totalTokens:0,headers:{}};
+ entry.apiRequests=(Number(entry.apiRequests)||0)+usage.requests;entry.totalTokens=(Number(entry.totalTokens)||0)+usage.totalTokens;entry.inputTokens=(Number(entry.inputTokens)||0)+usage.inputTokens;entry.outputTokens=(Number(entry.outputTokens)||0)+usage.outputTokens;
+ entry.lastUsage={...usage,at:new Date().toISOString()};
+ if(item){
+  const articleKey=String(item.type||'unknown')+':'+String(item.id||item.name||'unknown');
+  day.articles=day.articles||{};day.articles[articleKey]=day.articles[articleKey]||{};
+  const article=day.articles[articleKey][name]||(day.articles[articleKey][name]={attempts:0,requests:0,inputTokens:0,outputTokens:0,totalTokens:0,successes:0});
+  article.attempts++;article.requests+=usage.requests;article.inputTokens+=usage.inputTokens;article.outputTokens+=usage.outputTokens;article.totalTokens+=usage.totalTokens;if(success)article.successes++;
+ }
  if(success){entry.successes=(Number(entry.successes)||0)+1;entry.blockedUntil=0;entry.blockedReason='';}
  else{
-  entry.failures=(Number(entry.failures)||0)+1;const message=String(error?.message||error||'');const status=Number(message.match(/HTTP\s+(\d{3})/i)?.[1])||0;
+  entry.failures=(Number(entry.failures)||0)+1;const message=String(error?.message||error||'');const status=Number(message.match(/HTTP\\s+(\d{3})/i)?.[1])||0;
   if(status===429||/rate.?limit|quota|resource exhausted/i.test(message)){entry.blockedUntil=new Date(algeriaDate()+'T23:59:59+01:00').getTime();entry.blockedReason='daily-limit';}
   else if(status===401||status===403||status===402){entry.blockedUntil=Date.now()+6*60*60*1000;entry.blockedReason='auth-or-billing';}
   else if(/timeout|aborted|network|fetch failed/i.test(message)){entry.blockedUntil=Date.now()+15*60*1000;entry.blockedReason='temporary-network';}
  }
- await fs.mkdir('data',{recursive:true});await fs.writeFile('data/provider-usage.json',JSON.stringify(providerUsage,null,2)+'\n','utf8');
+ await fs.mkdir('data',{recursive:true});
+ await fs.writeFile('data/provider-usage.json',JSON.stringify(providerUsage,null,2)+'\n','utf8');
+ await saveProviderCapacity();
 }
 const editorialPriorityNames=['grand theft auto vi','grand theft auto 6','gta vi','gta 6','the witcher 4','the witcher iv','marvels wolverine','marvel s wolverine','marvel wolverine','elder scrolls vi','the elder scrolls 6','fable','resident evil requiem','tomb raider catalyst','007 first light','intergalactic the heretic prophet','pragmata','control resonant','the legend of zelda ocarina of time','ocarina of time','metaphor refantazio','godzilla minus zero','the hunger games sunrise on the reaping','sunrise on the reaping','percy jackson and the olympians','percy jackson'];
 function normalizedTitle(value){return String(value||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim();}
@@ -115,7 +182,7 @@ async function generateWithGemini(prompt){
  if(gatewayEndpoint)console.log('Gemini routed through Cloudflare AI Gateway.');
  let lastError='رد Gemini فارغ أو غير صالح';
  for(let attempt=0;attempt<3;attempt++){
-  const r=await fetch(endpoint,{method:'POST',headers:{'content-type':'application/json',...(gatewayEndpoint?{'x-goog-api-key':key,...gatewayAuthHeaders()}:{})},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{maxOutputTokens:6000,thinkingConfig:{thinkingLevel:'LOW'},responseMimeType:'application/json'}}),signal:AbortSignal.timeout(90000)});
+  const r=await trackedProviderFetch('gemini',endpoint,{method:'POST',headers:{'content-type':'application/json',...(gatewayEndpoint?{'x-goog-api-key':key,...gatewayAuthHeaders()}:{})},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{maxOutputTokens:6000,thinkingConfig:{thinkingLevel:'LOW'},responseMimeType:'application/json'}}),signal:AbortSignal.timeout(90000)});
   if(!r.ok){
    const detail=await r.text(),retryable=[500,502,503,504].includes(r.status);
    if(retryable&&attempt<2){const wait=Math.min(10000,1500*(attempt+1));console.warn('Gemini transient HTTP '+r.status+'; retrying after '+wait+'ms');await new Promise(resolve=>setTimeout(resolve,wait));continue;}
@@ -132,7 +199,7 @@ async function generateWithCloudflareWorkersAI(prompt){
  const model=env.CF_WORKERS_AI_MODEL||'@cf/openai/gpt-oss-20b';
  const endpoint='https://api.cloudflare.com/client/v4/accounts/'+encodeURIComponent(account)+'/ai/v1/chat/completions';
  console.log('Cloudflare Workers AI fallback routed through AI Gateway.');
- const r=await fetch(endpoint,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key,'cf-aig-gateway-id':gateway},body:JSON.stringify({model,temperature:.3,max_tokens:6000,messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]}),signal:AbortSignal.timeout(120000)});
+ const r=await trackedProviderFetch('cloudflare-workers-ai',endpoint,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key,'cf-aig-gateway-id':gateway},body:JSON.stringify({model,temperature:.3,max_tokens:6000,messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]}),signal:AbortSignal.timeout(120000)});
  if(!r.ok)throw new Error('Cloudflare Workers AI HTTP '+r.status+': '+(await r.text()).slice(0,700));
  const message=(await r.json()).choices?.[0]?.message;
  let content=message?.content;
@@ -144,7 +211,7 @@ async function generateWithOpenAI(prompt){
  const model=env.OPENAI_MODEL||'gpt-4o-mini',key=required('OPENAI_API_KEY');
  const endpoint=cloudflareGatewayEndpoint('openai','chat/completions')||'https://api.openai.com/v1/chat/completions';
  if(endpoint.includes('gateway.ai.cloudflare.com'))console.log('OpenAI routed through Cloudflare AI Gateway.');
- const r=await fetch(endpoint,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key,...gatewayAuthHeaders()},body:JSON.stringify({model,temperature:.3,max_tokens:6000,response_format:{type:'json_object'},messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]}),signal:AbortSignal.timeout(90000)});
+ const r=await trackedProviderFetch('openai',endpoint,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key,...gatewayAuthHeaders()},body:JSON.stringify({model,temperature:.3,max_tokens:6000,response_format:{type:'json_object'},messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]}),signal:AbortSignal.timeout(90000)});
  if(!r.ok)throw new Error('OpenAI HTTP '+r.status+': '+await r.text());
  const content=(await r.json()).choices?.[0]?.message?.content;
  if(!content)throw new Error('لم يرجع OpenAI محتوى نصياً');
@@ -157,7 +224,7 @@ async function generateWithGroq(prompt){
  const body=JSON.stringify({model,temperature:.3,max_tokens:6000,response_format:{type:'json_object'},messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]});
  let r,detail='';
  for(let attempt=0;attempt<4;attempt++){
-  r=await fetch(url,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key,...gatewayAuthHeaders()},body,signal:AbortSignal.timeout(90000)});
+  r=await trackedProviderFetch('groq',url,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key,...gatewayAuthHeaders()},body,signal:AbortSignal.timeout(90000)});
   if(r.ok)break;
   detail=await r.text();
   const retryable=[500,502,503,504].includes(r.status);
@@ -181,8 +248,8 @@ async function generateWithOpenRouter(prompt){
  const headers={'content-type':'application/json',authorization:'Bearer '+required('OPENROUTER_API_KEY'),...gatewayAuthHeaders(),'HTTP-Referer':'https://vibecritic.pages.dev/','X-Title':'VibeCritic'};
  let messages=[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بكل محاور المراجعة المطلوبة.'},{role:'user',content:prompt}],lastIssue='رد فارغ';
  for(let attempt=0;attempt<3;attempt++){
-  let r=await fetch(endpoint,{method:'POST',headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,max_tokens:6000,response_format:{type:'json_object'},messages}),signal:AbortSignal.timeout(90000)});
-  if(!r.ok&&r.status===400)r=await fetch(endpoint,{method:'POST',headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,max_tokens:6000,messages}),signal:AbortSignal.timeout(90000)});
+  let r=await trackedProviderFetch('openrouter',endpoint,{method:'POST',headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,max_tokens:6000,response_format:{type:'json_object'},messages}),signal:AbortSignal.timeout(90000)});
+  if(!r.ok&&r.status===400)r=await trackedProviderFetch('openrouter',endpoint,{method:'POST',headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,max_tokens:6000,messages}),signal:AbortSignal.timeout(90000)});
   if(!r.ok)throw new Error('OpenRouter HTTP '+r.status+': '+(await r.text()).slice(0,700));
   const response=await r.json(),message=response.choices?.[0]?.message;
   let content=message?.content;if(Array.isArray(content))content=content.map(part=>part.text||'').join('');
@@ -388,8 +455,10 @@ async function generateReview(item){
  const providerErrors=[];
  if(!candidates.length)throw new Error('لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.');
  for(const name of candidates){
-  try{parsed=validateGeneratedReview(await handlers[name]());await recordProviderOutcome(name,true);console.log('نجح توليد المراجعة واجتازت بوابة الجودة عبر:',name);break;}
-  catch(error){providerErrors.push(name+': '+error.message);await recordProviderOutcome(name,false,error);await recordLearningFailure(item,error);console.warn('تعذر المزوّد '+name+'؛ الانتقال إلى التالي:',error.message);}
+  const measurement={name,usage:{requests:0,inputTokens:0,outputTokens:0,totalTokens:0,reportedUsage:false,headers:{}}};
+  activeProviderMeasurement=measurement;
+  try{parsed=validateGeneratedReview(await handlers[name]());activeProviderMeasurement=null;await recordProviderOutcome(name,true,null,measurement,item);console.log('نجح توليد المراجعة واجتازت بوابة الجودة عبر:',name,'| طلبات API:',measurement.usage.requests,'| الرموز المسجلة:',measurement.usage.totalTokens||'غير متاحة');break;}
+  catch(error){activeProviderMeasurement=null;providerErrors.push(name+': '+error.message);await recordProviderOutcome(name,false,error,measurement,item);await recordLearningFailure(item,error);console.warn('تعذر المزوّد '+name+'؛ الانتقال إلى التالي:',error.message);}
  }
  if(!parsed)throw new Error('فشل التوليد عبر جميع المزوّدات المجانية المتاحة: '+providerErrors.join(' | '));
  const d=parsed,review=String(d.review||'').replace(/<[^>]*>/g,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').trim();
@@ -563,7 +632,7 @@ async function writeReview(item){
 }
 async function main(){
  await fs.mkdir(outDir,{recursive:true});await fs.mkdir('data',{recursive:true});await fs.mkdir('src/data',{recursive:true});
- await loadLearningMemory();await loadProviderUsage();
+ await loadLearningMemory();await loadProviderUsage();await saveProviderCapacity();
  try{
   const top=await globalTrending();
   await fs.writeFile('src/data/trending.json',JSON.stringify(top,null,2)+'\n','utf8');

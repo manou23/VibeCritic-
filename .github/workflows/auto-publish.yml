@@ -57,6 +57,7 @@ jobs:
           CF_WORKERS_AI_MODEL: ${{ vars.CF_WORKERS_AI_MODEL }}
           CF_AI_GATEWAY_ACCOUNT_ID: ${{ vars.CF_AI_GATEWAY_ACCOUNT_ID }}
           CF_AI_GATEWAY_ID: ${{ vars.CF_AI_GATEWAY_ID }}
+
         run: |
           node --input-type=module <<'NODE'
           const token = process.env.CF_WORKERS_AI_API_TOKEN;
@@ -113,6 +114,14 @@ jobs:
           CF_AI_GATEWAY_ACCOUNT_ID: ${{ vars.CF_AI_GATEWAY_ACCOUNT_ID }}
           CF_AI_GATEWAY_ID: ${{ vars.CF_AI_GATEWAY_ID }}
           AI_PROVIDER: ${{ vars.AI_PROVIDER }}
+          GEMINI_FREE_DAILY_TOKENS: ${{ vars.GEMINI_FREE_DAILY_TOKENS }}
+          GEMINI_FREE_DAILY_REQUESTS: ${{ vars.GEMINI_FREE_DAILY_REQUESTS }}
+          GROQ_FREE_DAILY_TOKENS: ${{ vars.GROQ_FREE_DAILY_TOKENS }}
+          GROQ_FREE_DAILY_REQUESTS: ${{ vars.GROQ_FREE_DAILY_REQUESTS }}
+          OPENROUTER_FREE_DAILY_TOKENS: ${{ vars.OPENROUTER_FREE_DAILY_TOKENS }}
+          OPENROUTER_FREE_DAILY_REQUESTS: ${{ vars.OPENROUTER_FREE_DAILY_REQUESTS }}
+          CF_WORKERS_AI_FREE_DAILY_TOKENS: ${{ vars.CF_WORKERS_AI_FREE_DAILY_TOKENS }}
+          CF_WORKERS_AI_FREE_DAILY_REQUESTS: ${{ vars.CF_WORKERS_AI_FREE_DAILY_REQUESTS }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           GROQ_MODEL: ${{ vars.GROQ_MODEL }}
@@ -155,10 +164,10 @@ jobs:
       - name: Commit generated reviews and learning memory
         if: always()
         run: |
-          if [[ -n "$(git status --porcelain src/content/reviews data/processed.json src/data/trending.json data/learning-memory.json data/provider-usage.json)" ]]; then
+          if [[ -n "$(git status --porcelain src/content/reviews data/processed.json src/data/trending.json data/learning-memory.json data/provider-usage.json data/provider-capacity.json)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add src/content/reviews data/processed.json src/data/trending.json data/learning-memory.json data/provider-usage.json
+            git add src/content/reviews data/processed.json src/data/trending.json data/learning-memory.json data/provider-usage.json data/provider-capacity.json
             git commit -m "chore: update generated reviews"
             for attempt in 1 2 3; do
               if git push origin HEAD:main; then
