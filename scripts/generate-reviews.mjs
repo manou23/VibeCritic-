@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 
 const env=process.env;
-const provider=(env.AI_PROVIDER||(env.GEMINI_API_KEY?'gemini':env.GROQ_API_KEY?'groq':env.OPENROUTER_API_KEY?'openrouter':'openai')).toLowerCase();
+const provider=(env.AI_PROVIDER||(env.GEMINI_API_KEY?'gemini':env.GROQ_API_KEY?'groq':env.OPENROUTER_API_KEY?'openrouter':env.CF_WORKERS_AI_API_TOKEN?'cloudflare-workers-ai':env.SAMBANOVA_API_KEY?'sambanova':'openai')).toLowerCase();
 const targetTotal=100,dailyPerType=2,dailyTotalLimit=2,perRunLimit=1;
 const gamesWindowDays=Math.max(1,Number.isFinite(Number(env.GAMES_WINDOW_DAYS))&&env.GAMES_WINDOW_DAYS?Number(env.GAMES_WINDOW_DAYS):30);
 const upcomingWindowDays=Math.max(30,Number.isFinite(Number(env.UPCOMING_WINDOW_DAYS))&&env.UPCOMING_WINDOW_DAYS?Number(env.UPCOMING_WINDOW_DAYS):365);
@@ -114,6 +114,15 @@ async function generateWithCloudflareWorkersAI(prompt){
  if(typeof content!=='string'||!content.trim())throw new Error('لم يرجع Cloudflare Workers AI محتوى نصياً');
  return parseJson(content);
 }
+async function generateWithSambaNova(prompt){
+ const key=required('SAMBANOVA_API_KEY'),model=env.SAMBANOVA_MODEL||'gpt-oss-120b';
+ const endpoint='https://api.sambanova.ai/v1/chat/completions';
+ const r=await fetch(endpoint,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key},body:JSON.stringify({model,temperature:.3,max_tokens:6000,response_format:{type:'json_object'},messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]}),signal:AbortSignal.timeout(120000)});
+ if(!r.ok)throw new Error('SambaNova HTTP '+r.status+': '+(await r.text()).slice(0,700));
+ const content=(await r.json()).choices?.[0]?.message?.content;
+ if(!content)throw new Error('لم يرجع SambaNova محتوى نصياً');
+ return parseJson(content);
+}
 async function generateWithOpenAI(prompt){
  const model=env.OPENAI_MODEL||'gpt-4o-mini',key=required('OPENAI_API_KEY');
  const endpoint=cloudflareGatewayEndpoint('openai','chat/completions')||'https://api.openai.com/v1/chat/completions';
@@ -198,7 +207,8 @@ async function generateFallback(prompt,excluded=[],primaryError=null){
   ['groq',env.GROQ_API_KEY,()=>generateWithGroq(prompt)],
   ['openrouter',env.OPENROUTER_API_KEY,()=>generateWithOpenRouter(prompt)],
   ['openai',env.OPENAI_API_KEY,()=>generateWithOpenAI(prompt)],
-  ['cloudflare-workers-ai',env.CF_WORKERS_AI_API_TOKEN,()=>generateWithCloudflareWorkersAI(prompt)]
+  ['cloudflare-workers-ai',env.CF_WORKERS_AI_API_TOKEN,()=>generateWithCloudflareWorkersAI(prompt)],
+  ['sambanova',env.SAMBANOVA_API_KEY,()=>generateWithSambaNova(prompt)]
  ];
  for(const [name,key,run] of attempts){
   if(!key||excluded.includes(name))continue;
@@ -355,10 +365,12 @@ async function generateReview(item){
   openrouter:()=>generateWithOpenRouter(prompt),
   openai:()=>generateWithOpenAI(prompt),
   gemini:()=>generateWithGemini(prompt),
-  groq:()=>generateWithGroq(prompt)
+  groq:()=>generateWithGroq(prompt),
+  'cloudflare-workers-ai':()=>generateWithCloudflareWorkersAI(prompt),
+  sambanova:()=>generateWithSambaNova(prompt)
  };
  try{
-  if(!handlers[provider])throw new Error('AI_PROVIDER يجب أن يكون openai أو gemini أو groq أو openrouter');
+  if(!handlers[provider])throw new Error('AI_PROVIDER يجب أن يكون openai أو gemini أو groq أو openrouter أو cloudflare-workers-ai أو sambanova');
   parsed=validateGeneratedReview(await handlers[provider]());
  }catch(primaryError){
   await recordLearningFailure(item,primaryError);
