@@ -3,7 +3,7 @@ import path from 'node:path';
 
 const env=process.env;
 const provider=(env.AI_PROVIDER||(env.GEMINI_API_KEY?'gemini':env.GROQ_API_KEY?'groq':env.OPENROUTER_API_KEY?'openrouter':'openai')).toLowerCase();
-const targetTotal=100,dailyPerType=3,dailyTotalLimit=3;
+const targetTotal=100,dailyPerType=2,dailyTotalLimit=2,perRunLimit=1;
 const gamesWindowDays=Math.max(1,Number.isFinite(Number(env.GAMES_WINDOW_DAYS))&&env.GAMES_WINDOW_DAYS?Number(env.GAMES_WINDOW_DAYS):30);
 const upcomingWindowDays=Math.max(30,Number.isFinite(Number(env.UPCOMING_WINDOW_DAYS))&&env.UPCOMING_WINDOW_DAYS?Number(env.UPCOMING_WINDOW_DAYS):365);
 const outDir='src/content/reviews',processedPath='data/processed.json';
@@ -513,7 +513,7 @@ async function main(){
  const dailyRemaining=Math.max(0,dailyTotalLimit-publishedToday);
  console.log('سقف النشر اليومي الإجمالي:',dailyTotalLimit,'| المنشور حتى الآن:',publishedToday,'| المتبقي:',dailyRemaining);
  if(buildPhase){
-  let remaining=Math.min(dailyRemaining,Math.max(0,targetTotal-totalPublished));
+  let remaining=Math.min(dailyRemaining,perRunLimit,Math.max(0,targetTotal-totalPublished));
   const order=[...types].sort((a,b)=>counts[a]-counts[b]);
   while(remaining>0){
    let progressed=false;
@@ -526,7 +526,7 @@ async function main(){
   for(const type of types)quotas[type]=Math.min(quotas[type],Math.max(0,dailyPerType-todayCounts[type]));
   console.log('الحصة اليومية المستهدفة لكل قسم:',JSON.stringify(quotas),'| المنشور اليوم:',JSON.stringify(todayCounts));
  }else{
-  let remaining=dailyRemaining;
+  let remaining=Math.min(dailyRemaining,perRunLimit);
   const order=[...types].sort((a,b)=>pools[b].length-pools[a].length);
   while(remaining>0){
    let progressed=false;
