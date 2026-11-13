@@ -134,7 +134,7 @@ async function recordProviderOutcome(name,success,error=null,measurement=null,it
  }
  if(success){entry.successes=(Number(entry.successes)||0)+1;entry.blockedUntil=0;entry.blockedReason='';}
  else{
-  entry.failures=(Number(entry.failures)||0)+1;const message=String(error?.message||error||'');const status=Number(message.match(/HTTP\\s+(\\d{3})/i)?.[1])||0;
+  entry.failures=(Number(entry.failures)||0)+1;const message=String(error?.message||error||'');const status=Number(message.match(/HTTP\\s+(\d{3})/i)?.[1])||0;
   if(status===429||/rate.?limit|quota|resource exhausted/i.test(message)){entry.blockedUntil=new Date(algeriaDate()+'T23:59:59+01:00').getTime();entry.blockedReason='daily-limit';}
   else if(status===401||status===403||status===402){entry.blockedUntil=Date.now()+6*60*60*1000;entry.blockedReason='auth-or-billing';}
   else if(/timeout|aborted|network|fetch failed/i.test(message)){entry.blockedUntil=Date.now()+15*60*1000;entry.blockedReason='temporary-network';}
