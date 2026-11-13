@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { buildEditorialTrainingContext, recordEditorialCandidate } from './editorial-intelligence.mjs';
 
 const env=process.env;
 const provider=(env.AI_PROVIDER||(env.GEMINI_API_KEY?'gemini':env.GROQ_API_KEY?'groq':env.OPENROUTER_API_KEY?'openrouter':env.CF_WORKERS_AI_API_TOKEN?'cloudflare-workers-ai':'openai')).toLowerCase();
@@ -544,6 +545,7 @@ async function generateReview(item){
  const editorialLenses=['ابدأ من قرار فني محدد وأثره على المتلقي، لا من حكم عام.','ابدأ من الشخصية أو الفكرة المركزية، ثم اربطها ببنية العمل.','ابدأ من آلية اللعب أو بناء العالم إذا كان العمل لعبة، ومن الإيقاع الدرامي إن كان فيلماً أو مسلسلاً.','ابدأ من مفارقة ملموسة بين عنصرين في العمل، بشرط أن تكون مثبتة في البيانات.','ابدأ من أقوى تفصيل موثق يميز هذا العمل عن أعمال النوع نفسه.','ابدأ من سؤال نقدي محدد تجيب عنه المراجعة دون حرق.'];
  const styleSeed=String(item.id||item.name||'').split('').reduce((sum,char)=>sum+char.charCodeAt(0),0);
  const editorialLens=editorialLenses[styleSeed%editorialLenses.length];
+ const trainingContext=await buildEditorialTrainingContext(item);
  const prompt=[
  isPreview?'اكتب قراءة استباقية صحفية احترافية لعمل لم يصدر بعد، وليست مراجعة نهائية.':'اكتب مراجعة نقدية صحفية شاملة بعد الإصدار، وليست دعاية أو ملخصاً دعائياً.',
  'اكتب بصوت ناقد متخصص: أطروحة واضحة، سياق يشرح أهمية العمل داخل نوعه وسلسلته، تحليل فني مفصل، أمثلة موثقة، وحكم مسبب لا يساير الضجة الجماهيرية.',
@@ -556,6 +558,7 @@ async function generateReview(item){
   'المعيار التحريري المرجعي لـVibeCritic: ابنِ المراجعة حول أطروحة نقدية واحدة واضحة ومحددة، وارجع إليها عبر المحاور دون تكرارها حرفياً. افتتح بسؤال أو مفارقة أو قرار فني ملموس يهم القارئ، لا بمقدمة موسوعية. اجعل كل محور يضيف دليلاً أو نتيجة جديدة، واربط تفاصيل العمل بأثرها على التجربة وعلى جمهور النوع. اشرح لماذا ينجح الخيار الفني أو يفشل، لا تكتفِ بوصفه. اجعل الانتقالات طبيعية، والخاتمة حكماً حاسماً ومشروطاً بما ثبت، لا إعادة تلخيص.',
   'خصوصية كل مراجعة إلزامية: استخدم تفاصيل موثقة تخص هذا العمل نفسه، وابتعد عن الفقرات التي يمكن نقلها إلى أي فيلم أو مسلسل أو لعبة دون تغيير. لا تملأ المساحة بإعادة صياغة الوصف أو تكرار الفكرة نفسها. إذا كانت البيانات لا تسند تحليلاً لجانب معين، قل ذلك بإيجاز ولا تعوّض النقص بتخمينات أو درجات متفائلة. لا تجعل عدد الكلمات أهم من كثافة الفكرة.',
  learningAdvice(),
+ trainingContext,
  'زاوية التحرير المطلوبة لهذه المراجعة: '+editorialLens+' غيّر إيقاع الجمل وبنية الفقرات وطريقة الانتقال بين المحاور؛ لا تبدأ كل مراجعة بتعريف نمطي ولا تختم بجملة محفوظة.',
  'حظر أسلوبي صريح: لا تستخدم عبارات مثل «بين الطموح والواقع» أو «مزجٌ غير متوقع» أو «رحلة لا تُنسى» أو «أكثر من مجرد» أو «تجربة لا مثيل لها» أو أي صياغة تسويقية مستهلكة. لا تستبدلها بمرادف قالبّي؛ اذكر تفصيلاً محدداً من هذا العمل بدلاً منها.',
  'أعد JSON صالحاً فقط بالمفاتيح: hook, headline, summary, scores, pros, cons, tags, verdict, review. scores كائن يحتوي story وvisuals وsound وpacing، وكل قيمة من 0 إلى 10 بخطوة عشرية واحدة، وتُبررها المراجعة.',
@@ -773,6 +776,7 @@ async function writeReview(item){
   const fm=['---','title: '+y(enriched.name||item.name),'originalTitle: '+y(enriched.originalTitle||''),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 2','reviewMode: '+reviewMode,'sourceName: '+y(item.source||''),'sourceVoteCount: '+(Number(enriched.sourceVoteCount)||0),'sourceRatingScale: '+(item.source==='RAWG'?5:item.source==='IGDB'?100:10),'metacriticScore: '+(Number(enriched.metadata?.metacritic)||0),'cast:',arr(enriched.metadata?.cast||[]),'crew:',arr([...(enriched.metadata?.directors||[]),...(enriched.metadata?.creators||[])]),'watchProviders:',arr(enriched.metadata?.watchProviders||[]),...watchFields,'platforms:',platformFields,'gameStores:',gameStoreFields.length?gameStoreFields.join('\n'):'  []',...scoreFields,'type: '+item.type,'date: '+date,'releaseDate: '+y(enriched.date),'poster: '+y(item.poster),'backdrop: '+y(item.backdrop),...videoFields,'score: '+a.score,'trendRank: '+(Number(item.trendRank)||0),'trendSource: '+y(item.source||''),'trendPopularity: '+(Number(item.popularity)||0),'pros:',arr(a.pros),'cons:',arr(a.cons),'tags:',arr(a.tags),'genres:',arr(enriched.genres||[]),'sourceRating: '+(Number(enriched.rating)||0),'sourceId: '+y(item.id),'sourceUrl: '+y(item.sourceUrl),'aiGenerated: true','---','',a.review,'','> قراءة نقدية تحريرية مولّدة بمساعدة الذكاء الاصطناعي، مبنية على البيانات المنشورة المتاحة. لا تمثل تجربة مشاهدة أو لعب مباشرة، ولا تقييماً رسمياً من المصدر.',''].join('\n');
  await fs.writeFile(path.join(outDir,item.type+'-'+item.id+'.md'),fm,'utf8');
  await recordLearningSuccess(item,a);
+ await recordEditorialCandidate(item,a);
  return item.type+':'+item.id;
 }
 async function main(){
