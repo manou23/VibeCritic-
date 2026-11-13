@@ -3,7 +3,8 @@ import path from 'node:path';
 
 const env=process.env;
 const provider=(env.AI_PROVIDER||(env.GEMINI_API_KEY?'gemini':env.GROQ_API_KEY?'groq':env.OPENROUTER_API_KEY?'openrouter':env.CF_WORKERS_AI_API_TOKEN?'cloudflare-workers-ai':'openai')).toLowerCase();
-const targetTotal=100,dailyPerType=2,dailyTotalLimit=2,perRunLimit=1;
+const targetTotal=100,dailyPerType=2,baseDailyTotalLimit=2,perRunLimit=1;
+let dailyTotalLimit=baseDailyTotalLimit;
 const gamesWindowDays=Math.max(1,Number.isFinite(Number(env.GAMES_WINDOW_DAYS))&&env.GAMES_WINDOW_DAYS?Number(env.GAMES_WINDOW_DAYS):30);
 const upcomingWindowDays=Math.max(30,Number.isFinite(Number(env.UPCOMING_WINDOW_DAYS))&&env.UPCOMING_WINDOW_DAYS?Number(env.UPCOMING_WINDOW_DAYS):365);
 const outDir='src/content/reviews',processedPath='data/processed.json';
@@ -76,8 +77,25 @@ function providerCapacity(name){
  if(limit.requests!==null&&avgRequests>0)estimates.push(Math.floor(Math.max(0,limit.requests-usedRequests)/avgRequests));
  return {limits:limit,usedTokens,usedRequests,estimatedArticles:estimates.length?Math.min(...estimates):null,averageTokensPerArticle:avgTokens?Math.round(avgTokens):null,averageRequestsPerArticle:avgRequests?Number(avgRequests.toFixed(2)):null};
 }
-async function saveProviderCapacity(){
- const report={updatedAt:new Date().toISOString(),date:algeriaDate(),note:'القياسات الفعلية تأتي من usage الذي تعيده واجهة المزوّد. تقدير عدد المقالات لا يتوفر قبل تسجيل عينة استهلاك وحدود يومية معلنة/مضبوطة.',providers:{}};
+function resourceDailyPublishingPlan(){
+ const configured={
+  gemini:Boolean(env.GEMINI_API_KEY),
+  groq:Boolean(env.GROQ_API_KEY),
+  openrouter:Boolean(env.OPENROUTER_API_KEY),
+  'cloudflare-workers-ai':Boolean(env.CF_WORKERS_AI_API_TOKEN&&env.CF_AI_GATEWAY_ACCOUNT_ID&&env.CF_AI_GATEWAY_ID)
+ };
+ const names=providerOrder.filter(name=>configured[name]);
+ if(!names.length)return {limit:0,mode:'no-free-provider',knownProviders:[],estimatedArticles:0};
+ const estimates=names.map(name=>{
+  const entry=providerDay()[name]||{},dailyBlocked=entry.blockedReason==='daily-limit'&&Number(entry.blockedUntil||0)>Date.now();
+  return {name,estimatedArticles:dailyBlocked?0:providerCapacity(name).estimatedArticles,dailyBlocked};
+ });
+ if(estimates.some(x=>x.estimatedArticles===null))return {limit:baseDailyTotalLimit,mode:'quota-unknown',knownProviders:estimates,estimatedArticles:null};
+ const total=estimates.reduce((sum,x)=>sum+x.estimatedArticles,0);
+ return {limit:Math.max(0,Math.min(baseDailyTotalLimit,total)),mode:'measured-capacity',knownProviders:estimates,estimatedArticles:total};
+}
+async function saveProviderCapacity(plan=resourceDailyPublishingPlan()){
+ const report={updatedAt:new Date().toISOString(),date:algeriaDate(),publishingPlan:plan,note:'القياسات الفعلية تأتي من usage الذي تعيده واجهة المزوّد. تقدير عدد المقالات لا يتوفر قبل تسجيل عينة استهلاك وحدود يومية معلنة/مضبوطة.',providers:{}};
  for(const name of providerOrder)report.providers[name]=providerCapacity(name);
  await fs.mkdir('data',{recursive:true});
  await fs.writeFile('data/provider-capacity.json',JSON.stringify(report,null,2)+'\n','utf8');
@@ -632,7 +650,7 @@ async function writeReview(item){
 }
 async function main(){
  await fs.mkdir(outDir,{recursive:true});await fs.mkdir('data',{recursive:true});await fs.mkdir('src/data',{recursive:true});
- await loadLearningMemory();await loadProviderUsage();await saveProviderCapacity();
+ await loadLearningMemory();await loadProviderUsage();const publishingPlan=resourceDailyPublishingPlan();dailyTotalLimit=publishingPlan.limit;console.log('سقف النشر اليومي وفق الموارد المجانية:',dailyTotalLimit,'| نمط الحساب:',publishingPlan.mode);await saveProviderCapacity(publishingPlan);
  try{
   const top=await globalTrending();
   await fs.writeFile('src/data/trending.json',JSON.stringify(top,null,2)+'\n','utf8');
