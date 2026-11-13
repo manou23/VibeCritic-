@@ -12,7 +12,8 @@
     "backfill:videos": "node scripts/backfill-review-videos.mjs",
     "backfill:titles": "node scripts/backfill-arabic-titles.mjs",
     "backfill:games": "node scripts/backfill-game-platforms.mjs",
-    "validate:reviews": "node scripts/validate-review-scores.mjs"
+    "validate:reviews": "node scripts/validate-review-scores.mjs",
+    "editorial:training": "node scripts/editorial-training.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",
