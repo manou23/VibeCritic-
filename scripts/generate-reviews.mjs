@@ -41,6 +41,12 @@ function learningAdvice(){
  return 'ذاكرة التحسين المستمر المحفوظة بين التشغيلات: إجمالي النجاحات '+learningMemory.stats.successes+'، الإخفاقات المرصودة '+learningMemory.stats.failures+'. '+(lessons?'الدروس التي يجب تطبيقها الآن:\n'+lessons:'لا توجد إخفاقات مصنفة بعد؛ ابدأ بتطبيق معايير VibeCritic الأساسية.')+(avgWords?'\nمتوسط طول آخر '+samples.length+' مراجعات اجتازت البوابة: '+avgWords+' كلمة؛ استخدمه للموازنة لا للحشو.':'');
 }
 function required(name){if(!env[name])throw new Error(`متغير البيئة ${name} غير مضبوط في GitHub Secrets`);return env[name];}
+function cloudflareGatewayEndpoint(providerPath,suffix){
+ const account=String(env.CF_AI_GATEWAY_ACCOUNT_ID||'').trim(),gateway=String(env.CF_AI_GATEWAY_ID||'').trim();
+ if(Boolean(account)!==Boolean(gateway))throw new Error('يلزم ضبط CF_AI_GATEWAY_ACCOUNT_ID وCF_AI_GATEWAY_ID معاً أو تركهما فارغين.');
+ if(!account)return null;
+ return 'https://gateway.ai.cloudflare.com/v1/'+encodeURIComponent(account)+'/'+encodeURIComponent(gateway)+'/'+providerPath+'/'+suffix;
+}
 async function getJson(url){const r=await fetch(url,{signal:AbortSignal.timeout(30000)});if(!r.ok){const safeUrl=url.replace(/([?&](?:api_key|key)=)[^&]+/i,'$1[REDACTED]');throw new Error(`HTTP ${r.status}: ${safeUrl}`);}return r.json();}
 const clean=v=>String(v??'').replace(/[\r\n]+/g,' ').trim();
 const editorialPriorityNames=['grand theft auto vi','grand theft auto 6','gta vi','gta 6','the witcher 4','the witcher iv','marvels wolverine','marvel s wolverine','marvel wolverine','elder scrolls vi','the elder scrolls 6','fable','resident evil requiem','tomb raider catalyst','007 first light','intergalactic the heretic prophet','pragmata','control resonant','the legend of zelda ocarina of time','ocarina of time','metaphor refantazio','godzilla minus zero','the hunger games sunrise on the reaping','sunrise on the reaping','percy jackson and the olympians','percy jackson'];
@@ -77,10 +83,12 @@ function parseJson(t){
 }
 async function generateWithGemini(prompt){
  const model=env.GEMINI_MODEL||'gemini-3.8-flash',key=required('GEMINI_API_KEY');
- const endpoint='https://generativelanguage.googleapis.com/v1beta/models/'+model+':generateContent?key='+key;
+ const gatewayEndpoint=cloudflareGatewayEndpoint('google-ai-studio','v1/models/'+encodeURIComponent(model)+':generateContent');
+ const endpoint=gatewayEndpoint||('https://generativelanguage.googleapis.com/v1beta/models/'+model+':generateContent?key='+key);
+ if(gatewayEndpoint)console.log('Gemini routed through Cloudflare AI Gateway.');
  let lastError='رد Gemini فارغ أو غير صالح';
  for(let attempt=0;attempt<3;attempt++){
-  const r=await fetch(endpoint,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{maxOutputTokens:6000,thinkingConfig:{thinkingLevel:'LOW'},responseMimeType:'application/json'}}),signal:AbortSignal.timeout(90000)});
+  const r=await fetch(endpoint,{method:'POST',headers:{'content-type':'application/json',...(gatewayEndpoint?{'x-goog-api-key':key}:{})},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{maxOutputTokens:6000,thinkingConfig:{thinkingLevel:'LOW'},responseMimeType:'application/json'}}),signal:AbortSignal.timeout(90000)});
   if(!r.ok){
    const detail=await r.text(),retryable=[429,500,502,503,504].includes(r.status);
    if(retryable&&attempt<2){const wait=Math.min(10000,1500*(attempt+1));console.warn('Gemini transient HTTP '+r.status+'; retrying after '+wait+'ms');await new Promise(resolve=>setTimeout(resolve,wait));continue;}
@@ -94,7 +102,9 @@ async function generateWithGemini(prompt){
 }
 async function generateWithOpenAI(prompt){
  const model=env.OPENAI_MODEL||'gpt-4o-mini',key=required('OPENAI_API_KEY');
- const r=await fetch('https://api.openai.com/v1/chat/completions',{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key},body:JSON.stringify({model,temperature:.3,max_tokens:6000,response_format:{type:'json_object'},messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]}),signal:AbortSignal.timeout(90000)});
+ const endpoint=cloudflareGatewayEndpoint('openai','chat/completions')||'https://api.openai.com/v1/chat/completions';
+ if(endpoint.includes('gateway.ai.cloudflare.com'))console.log('OpenAI routed through Cloudflare AI Gateway.');
+ const r=await fetch(endpoint,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key},body:JSON.stringify({model,temperature:.3,max_tokens:6000,response_format:{type:'json_object'},messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]}),signal:AbortSignal.timeout(90000)});
  if(!r.ok)throw new Error('OpenAI HTTP '+r.status+': '+await r.text());
  const content=(await r.json()).choices?.[0]?.message?.content;
  if(!content)throw new Error('لم يرجع OpenAI محتوى نصياً');
@@ -102,7 +112,8 @@ async function generateWithOpenAI(prompt){
 }
 async function generateWithGroq(prompt){
  const model=env.GROQ_MODEL||'openai/gpt-oss-120b',key=required('GROQ_API_KEY');
- const url='https://api.groq.com/openai/v1/chat/completions';
+ const url=cloudflareGatewayEndpoint('groq','chat/completions')||'https://api.groq.com/openai/v1/chat/completions';
+ if(url.includes('gateway.ai.cloudflare.com'))console.log('Groq routed through Cloudflare AI Gateway.');
  const body=JSON.stringify({model,temperature:.3,max_tokens:6000,response_format:{type:'json_object'},messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]});
  let r,detail='';
  for(let attempt=0;attempt<4;attempt++){
