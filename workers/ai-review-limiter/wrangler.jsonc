@@ -18,3 +18,5 @@
     }
   ]
 }
+
+// Harmless comment to trigger a fresh Cloudflare Worker build.
