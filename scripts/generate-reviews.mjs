@@ -33,7 +33,7 @@ async function recordLearningFailure(item,error){
  console.warn('تم حفظ درس تحسيني دائم:',key,'| العمل:',item?.name||'غير محدد');
 }
 function editorialQualityMetrics(item,review){
- const text=String(review?.review||''),tokens=(text.toLowerCase().match(/[\\p{L}\\p{N}]{2,}/gu)||[]);
+ const text=String(review?.review||''),tokens=(text.toLowerCase().match(/[\p{L}\p{N}]{2,}/gu)||[]);
  const stop=new Set(['هذا','هذه','ذلك','تلك','الذي','التي','على','في','من','إلى','عن','مع','بين','كما','لكن','كان','كانت','يكون','تكون','هو','هي','ما','لا','لم','لن','قد','كل','بعد','قبل','حتى','عند','ضمن','عبر','أو','وهو','وهي','the','and','for','with','that','this','from','into','its']);
  const meaningful=tokens.filter(token=>!stop.has(token)),unique=new Set(meaningful),trigrams=[];
  for(let i=0;i<meaningful.length-2;i++)trigrams.push(meaningful.slice(i,i+3).join(' '));
@@ -41,8 +41,8 @@ function editorialQualityMetrics(item,review){
  const repeatedTrigrams=[...trigramCounts.values()].reduce((sum,count)=>sum+Math.max(0,count-1),0);
  const genericPhrases=['بين الطموح والواقع','رحلة لا تُنسى','تجربة لا مثيل لها','أكثر من مجرد','على مستوى آخر','يقدم تجربة فريدة'];
  const normalized=text.replace(/[ًٌٍَُِّْـ]/g,'').toLowerCase(),genericPhraseHits=genericPhrases.filter(phrase=>normalized.includes(phrase)).length;
- const scores=Object.values(review?.scores||{}).map(Number).filter(Number.isFinite),words=text.split(/\\s+/u).filter(Boolean).length;
- return {type:item?.type||'unknown',words,sections:(text.match(/^###\\s+/gm)||[]).length,paragraphs:text.split(/\\n\\s*\\n/u).filter(part=>part.trim()).length,lexicalDiversity:meaningful.length?Number((unique.size/meaningful.length).toFixed(3)):0,repeatedTrigramRate:trigrams.length?Number((repeatedTrigrams/trigrams.length).toFixed(3)):0,genericPhraseHits,scoreMean:scores.length?Number((scores.reduce((a,b)=>a+b,0)/scores.length).toFixed(2)):null,scoreSpread:scores.length?Number((Math.max(...scores)-Math.min(...scores)).toFixed(2)):null,prosCount:Array.isArray(review?.pros)?review.pros.length:0,consCount:Array.isArray(review?.cons)?review.cons.length:0};
+ const scores=Object.values(review?.scores||{}).map(Number).filter(Number.isFinite),words=text.split(/\s+/u).filter(Boolean).length;
+ return {type:item?.type||'unknown',words,sections:(text.match(/^###\s+/gm)||[]).length,paragraphs:text.split(/\n\s*\n/u).filter(part=>part.trim()).length,lexicalDiversity:meaningful.length?Number((unique.size/meaningful.length).toFixed(3)):0,repeatedTrigramRate:trigrams.length?Number((repeatedTrigrams/trigrams.length).toFixed(3)):0,genericPhraseHits,scoreMean:scores.length?Number((scores.reduce((a,b)=>a+b,0)/scores.length).toFixed(2)):null,scoreSpread:scores.length?Number((Math.max(...scores)-Math.min(...scores)).toFixed(2)):null,prosCount:Array.isArray(review?.pros)?review.pros.length:0,consCount:Array.isArray(review?.cons)?review.cons.length:0};
 }
 async function recordLearningSuccess(item,review){
  const sample=editorialQualityMetrics(item,review),type=sample.type,previous=learningMemory.qualityByType[type]||{count:0,avgWords:0,avgSections:0,avgLexicalDiversity:0,avgRepeatedTrigramRate:0,avgGenericPhraseHits:0,avgScoreMean:0};
@@ -52,7 +52,7 @@ async function recordLearningSuccess(item,review){
  learningMemory.recentQuality=[...learningMemory.recentQuality,{...sample,at:new Date().toISOString()}].slice(-30);await saveLearningMemory();
 }
 function learningAdvice(){
- const lessons=learningMemory.lessons.slice(0,6).map(x=>'- '+x.advice+' (تكرر رصدها '+x.count+' مرة)').join('\\n');
+ const lessons=learningMemory.lessons.slice(0,6).map(x=>'- '+x.advice+' (تكرر رصدها '+x.count+' مرة)').join('\n');
  const samples=learningMemory.recentSuccesses,avgWords=samples.length?Math.round(samples.reduce((sum,x)=>sum+x.words,0)/samples.length):0;
  const quality=Object.values(learningMemory.qualityByType||{}),total=quality.reduce((sum,x)=>sum+(Number(x.count)||0),0),weighted=key=>total?quality.reduce((sum,x)=>sum+(Number(x[key])||0)*(Number(x.count)||0),0)/total:0;
  const signals=[];
@@ -61,8 +61,8 @@ function learningAdvice(){
  if(total&&weighted('avgLexicalDiversity')<0.30)signals.push('نوّع المفردات عبر زيادة التفاصيل الدقيقة لا عبر حشو المرادفات.');
  if(total&&weighted('avgSections')<5)signals.push('حافظ على المحاور الخمسة المطلوبة، ولا تدمج أكثر من فكرة نقدية في محور واحد.');
  if(total&&weighted('avgWords')<750)signals.push('متوسط الطول المرصود أقل من الهدف؛ استكمل التحليل بالأدلة لا بالتكرار.');
- const diagnostics=total?'\\nمؤشرات تحريرية داخلية من '+total+' مراجعة اجتازت بوابة الجودة (ليست قياساً لرضا القراء): متوسط التنوع المعجمي '+weighted('avgLexicalDiversity').toFixed(2)+'، تكرار العبارات '+(weighted('avgRepeatedTrigramRate')*100).toFixed(1)+'%، العبارات العامة '+weighted('avgGenericPhraseHits').toFixed(2)+' لكل مراجعة. '+(signals.length?'إشارات التحسين المستخلصة:\\n'+signals.join('\\n'):'لا تظهر حالياً إشارة تكرار قوية؛ استمر في تطبيق معايير الجودة دون تغييرها.'):'\\nلا توجد بعد عينة كافية لمؤشرات الجودة التحريرية؛ لا تستنتج تحسناً أو تراجعاً قبل تراكم المراجعات.');
- return 'ذاكرة التحسين المستمر المحفوظة بين التشغيلات: إجمالي النجاحات '+learningMemory.stats.successes+'، الإخفاقات المرصودة '+learningMemory.stats.failures+'. '+(lessons?'الدروس التي يجب تطبيقها الآن:\\n'+lessons:'لا توجد إخفاقات مصنفة بعد؛ ابدأ بتطبيق معايير VibeCritic الأساسية.')+(avgWords?'\\nمتوسط طول آخر '+samples.length+' مراجعات اجتازت البوابة: '+avgWords+' كلمة؛ استخدمه للموازنة لا للحشو.':'')+diagnostics;
+ const diagnostics=total?'\nمؤشرات تحريرية داخلية من '+total+' مراجعة اجتازت بوابة الجودة (ليست قياساً لرضا القراء): متوسط التنوع المعجمي '+weighted('avgLexicalDiversity').toFixed(2)+'، تكرار العبارات '+(weighted('avgRepeatedTrigramRate')*100).toFixed(1)+'%، العبارات العامة '+weighted('avgGenericPhraseHits').toFixed(2)+' لكل مراجعة. '+(signals.length?'إشارات التحسين المستخلصة:\n'+signals.join('\n'):'لا تظهر حالياً إشارة تكرار قوية؛ استمر في تطبيق معايير الجودة دون تغييرها.'):'\nلا توجد بعد عينة كافية لمؤشرات الجودة التحريرية؛ لا تستنتج تحسناً أو تراجعاً قبل تراكم المراجعات.');
+ return 'ذاكرة التحسين المستمر المحفوظة بين التشغيلات: إجمالي النجاحات '+learningMemory.stats.successes+'، الإخفاقات المرصودة '+learningMemory.stats.failures+'. '+(lessons?'الدروس التي يجب تطبيقها الآن:\n'+lessons:'لا توجد إخفاقات مصنفة بعد؛ ابدأ بتطبيق معايير VibeCritic الأساسية.')+(avgWords?'\nمتوسط طول آخر '+samples.length+' مراجعات اجتازت البوابة: '+avgWords+' كلمة؛ استخدمه للموازنة لا للحشو.':'')+diagnostics;
 }
 function required(name){if(!env[name])throw new Error(`متغير البيئة ${name} غير مضبوط في GitHub Secrets`);return env[name];}
 function gatewayAuthHeaders(){const token=String(env.CF_AI_GATEWAY_AUTH_TOKEN||'').trim();return token?{'cf-aig-authorization':'Bearer '+token}:{};}
