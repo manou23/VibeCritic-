@@ -4,11 +4,8 @@ name: Generate reviews and publish
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 2 * * *'
-    # Backup attempts: 05:17 and 08:17 in Algeria (UTC+1).
-    # The generator enforces the same three-review daily cap and skips processed IDs.
-    - cron: '17 4 * * *'
-    - cron: '17 7 * * *'
+    # One article per run, every 12 hours: 03:17 and 15:17 Algeria time (UTC+1).
+    - cron: '17 2,14 * * *'
   push:
     branches: [main]
     paths:
