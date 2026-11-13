@@ -5,7 +5,7 @@ const graphPath = 'data/knowledge-graph.json';
 const MAX_ENTITIES = 2500;
 const MAX_RELATIONS = 6000;
 const MAX_EVIDENCE_PER_RELATION = 4;
-const clean = value => String(value ?? '').replace(/[\\r\\n]+/g, ' ').trim();
+const clean = value => String(value ?? '').replace(/[\r\n]+/g, ' ').trim();
 
 function emptyGraph() {
   return { version: 1, entities: [], relations: [], stats: { works: 0, people: 0, companies: 0, concepts: 0, relations: 0 }, updatedAt: null };
@@ -22,7 +22,7 @@ async function loadGraph() {
 }
 
 function slug(value) {
-  return clean(value).normalize('NFKC').toLocaleLowerCase().replace(/[^\\p{L}\\p{N}]+/gu, '-').replace(/^-|-$/g, '').slice(0, 100);
+  return clean(value).normalize('NFKC').toLocaleLowerCase().replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-|-$/g, '').slice(0, 100);
 }
 
 function entityId(kind, value) {
@@ -126,7 +126,7 @@ export async function recordKnowledge(item) {
   graph.updatedAt = new Date().toISOString();
   await fs.mkdir(path.dirname(graphPath), { recursive: true });
   const temporary = graphPath + '.tmp';
-  await fs.writeFile(temporary, JSON.stringify(graph, null, 2) + '\\n', 'utf8');
+  await fs.writeFile(temporary, JSON.stringify(graph, null, 2) + '\n', 'utf8');
   await fs.rename(temporary, graphPath);
   return { entities: graph.entities.length, relations: graph.relations.length };
 }
@@ -165,5 +165,5 @@ export async function buildKnowledgeContext(item) {
     ...directLines,
     ...relatedLines,
     'افصل دائماً بين علاقة المصدر المعلنة، والعنصر المشترك في البيانات، والاستنتاج النقدي الذي يحتاج دليلاً مستقلاً.'
-  ].join('\\n');
+  ].join('\n');
 }
