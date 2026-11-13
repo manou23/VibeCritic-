@@ -46,10 +46,12 @@ try {
   assert.match(context, /Related Film/);
   assert.match(context, /Second Film/);
   assert.match(context, /ليست دليلاً على تأثير أو اقتباس/);
+  assert.ok(context.includes('\n'), 'Knowledge context should use real line breaks.');
 
   const graph = JSON.parse(await fs.readFile('data/knowledge-graph.json', 'utf8'));
   assert.equal(graph.version, 1);
   assert.ok(graph.stats.works >= 3);
+  assert.ok(graph.entities.some(entity => entity.id === 'work:movie-101-first-film'), 'Unicode-safe slug should produce a stable work id.');
   assert.ok(graph.relations.every(edge => Array.isArray(edge.evidence) && edge.evidence.length > 0));
   assert.ok(graph.relations.some(edge => edge.type === 'source_lists_as_similar' && edge.evidence[0].source === 'TMDB'));
 
