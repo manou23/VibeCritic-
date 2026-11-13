@@ -117,7 +117,7 @@ async function generateWithGemini(prompt){
  for(let attempt=0;attempt<3;attempt++){
   const r=await fetch(endpoint,{method:'POST',headers:{'content-type':'application/json',...(gatewayEndpoint?{'x-goog-api-key':key,...gatewayAuthHeaders()}:{})},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{maxOutputTokens:6000,thinkingConfig:{thinkingLevel:'LOW'},responseMimeType:'application/json'}}),signal:AbortSignal.timeout(90000)});
   if(!r.ok){
-   const detail=await r.text(),retryable=[429,500,502,503,504].includes(r.status);
+   const detail=await r.text(),retryable=[500,502,503,504].includes(r.status);
    if(retryable&&attempt<2){const wait=Math.min(10000,1500*(attempt+1));console.warn('Gemini transient HTTP '+r.status+'; retrying after '+wait+'ms');await new Promise(resolve=>setTimeout(resolve,wait));continue;}
    throw new Error('Gemini HTTP '+r.status+': '+detail);
   }
@@ -160,7 +160,7 @@ async function generateWithGroq(prompt){
   r=await fetch(url,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key,...gatewayAuthHeaders()},body,signal:AbortSignal.timeout(90000)});
   if(r.ok)break;
   detail=await r.text();
-  const retryable=r.status===429||[500,502,503,504].includes(r.status);
+  const retryable=[500,502,503,504].includes(r.status);
   if(!retryable||attempt===3)throw new Error('Groq HTTP '+r.status+': '+detail);
   const retryHeader=Number(r.headers.get('retry-after'))*1000;
   const retryBody=Number(detail.match(/try again in\s+([0-9.]+)s/i)?.[1])*1000;
