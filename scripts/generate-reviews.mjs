@@ -123,7 +123,10 @@ async function generateWithGroq(prompt){
  return parseJson(content);
 }
 async function generateWithOpenRouter(prompt){
- const endpoint='https://openrouter.ai/api/v1/chat/completions';
+ const gatewayAccount=String(env.CF_AI_GATEWAY_ACCOUNT_ID||'').trim(),gatewayId=String(env.CF_AI_GATEWAY_ID||'').trim();
+ if(Boolean(gatewayAccount)!==Boolean(gatewayId))throw new Error('يلزم ضبط CF_AI_GATEWAY_ACCOUNT_ID وCF_AI_GATEWAY_ID معاً أو تركهما فارغين.');
+ const endpoint=gatewayAccount?'https://gateway.ai.cloudflare.com/v1/'+encodeURIComponent(gatewayAccount)+'/'+encodeURIComponent(gatewayId)+'/openrouter/v1/chat/completions':'https://openrouter.ai/api/v1/chat/completions';
+ if(gatewayAccount)console.log('OpenRouter routed through Cloudflare AI Gateway (cache/logging/rate controls depend on gateway settings).');
  const headers={'content-type':'application/json',authorization:'Bearer '+required('OPENROUTER_API_KEY'),'HTTP-Referer':'https://vibecritic.pages.dev/','X-Title':'VibeCritic'};
  let messages=[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بكل محاور المراجعة المطلوبة.'},{role:'user',content:prompt}],lastIssue='رد فارغ';
  for(let attempt=0;attempt<3;attempt++){
