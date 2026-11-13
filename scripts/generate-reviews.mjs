@@ -101,6 +101,19 @@ async function generateWithGemini(prompt){
  }
  throw new Error('تعذر توليد JSON صالح من Gemini: '+lastError);
 }
+async function generateWithCloudflareWorkersAI(prompt){
+ const account=required('CF_AI_GATEWAY_ACCOUNT_ID'),gateway=required('CF_AI_GATEWAY_ID'),key=required('CF_WORKERS_AI_API_TOKEN');
+ const model=env.CF_WORKERS_AI_MODEL||'@cf/openai/gpt-oss-20b';
+ const endpoint='https://api.cloudflare.com/client/v4/accounts/'+encodeURIComponent(account)+'/ai/v1/chat/completions';
+ console.log('Cloudflare Workers AI fallback routed through AI Gateway.');
+ const r=await fetch(endpoint,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key,'cf-aig-gateway-id':gateway},body:JSON.stringify({model,temperature:.3,max_tokens:6000,messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]}),signal:AbortSignal.timeout(120000)});
+ if(!r.ok)throw new Error('Cloudflare Workers AI HTTP '+r.status+': '+(await r.text()).slice(0,700));
+ const message=(await r.json()).choices?.[0]?.message;
+ let content=message?.content;
+ if(Array.isArray(content))content=content.map(part=>part.text||'').join('');
+ if(typeof content!=='string'||!content.trim())throw new Error('لم يرجع Cloudflare Workers AI محتوى نصياً');
+ return parseJson(content);
+}
 async function generateWithOpenAI(prompt){
  const model=env.OPENAI_MODEL||'gpt-4o-mini',key=required('OPENAI_API_KEY');
  const endpoint=cloudflareGatewayEndpoint('openai','chat/completions')||'https://api.openai.com/v1/chat/completions';
@@ -184,7 +197,8 @@ async function generateFallback(prompt,excluded=[],primaryError=null){
   ['gemini',env.GEMINI_API_KEY,()=>generateWithGemini(prompt)],
   ['groq',env.GROQ_API_KEY,()=>generateWithGroq(prompt)],
   ['openrouter',env.OPENROUTER_API_KEY,()=>generateWithOpenRouter(prompt)],
-  ['openai',env.OPENAI_API_KEY,()=>generateWithOpenAI(prompt)]
+  ['openai',env.OPENAI_API_KEY,()=>generateWithOpenAI(prompt)],
+  ['cloudflare-workers-ai',env.CF_WORKERS_AI_API_TOKEN,()=>generateWithCloudflareWorkersAI(prompt)]
  ];
  for(const [name,key,run] of attempts){
   if(!key||excluded.includes(name))continue;
