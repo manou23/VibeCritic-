@@ -188,9 +188,6 @@ export async function onRequestPost({request,env}){
   if(!sameOriginRequest(request))return Response.json({error:'مصدر الطلب غير مسموح.'},{status:403,headers:{'cache-control':'no-store'}});
   const ip=request.headers.get('CF-Connecting-IP');
   if(!ip)return Response.json({error:'تعذر التحقق من مصدر الاتصال.'},{status:403,headers:{'cache-control':'no-store'}});
-  const limit=await consumeRateLimit(ip,env);
-  if(limit.unavailable)return Response.json({error:'خدمة الحماية غير مهيأة أو غير متاحة حالياً. يرجى المحاولة لاحقاً.'},{status:503,headers:{'cache-control':'no-store'}});
-  if(!limit.allowed)return Response.json({error:'وصلت إلى الحد المسموح من طلبات المراجعة. حاول بعد قليل.'},{status:429,headers:{'cache-control':'no-store'}});
   if(!env.TURNSTILE_SECRET_KEY)return Response.json({error:'لم يكتمل إعداد تحقق الأمان لمحرك المراجعات بعد.'},{status:503,headers:{'cache-control':'no-store'}});
   if(!/^application\\/json(?:\\s*;|$)/i.test(request.headers.get('content-type')||''))return Response.json({error:'نوع بيانات الطلب غير مدعوم.'},{status:415,headers:{'cache-control':'no-store'}});
   const raw=await readBodyLimited(request,12000);
@@ -205,6 +202,9 @@ export async function onRequestPost({request,env}){
   const verification=await verifyTurnstile(body.turnstileToken,request,env);
   if(verification.misconfigured)return Response.json({error:'إعداد تحقق الأمان غير مكتمل على الخادم.'},{status:503,headers:{'cache-control':'no-store'}});
   if(!verification.ok)return Response.json({error:'تعذر تأكيد تحقق الأمان. أعد التحقق ثم حاول مجدداً.'},{status:403,headers:{'cache-control':'no-store'}});
+  const limit=await consumeRateLimit(ip,env);
+  if(limit.unavailable)return Response.json({error:'خدمة الحماية غير مهيأة أو غير متاحة حالياً. يرجى المحاولة لاحقاً.'},{status:503,headers:{'cache-control':'no-store'}});
+  if(!limit.allowed)return Response.json({error:'وصلت إلى الحد المسموح من طلبات المراجعة. حاول بعد قليل.'},{status:429,headers:{'cache-control':'no-store'}});
   const cache=typeof caches!=='undefined'?caches.default:null;
   const cacheKey=await reviewCacheKey(title,kind,request);
   if(cache){
