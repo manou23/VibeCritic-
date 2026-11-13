@@ -283,12 +283,18 @@ function parseJson(t){
 }
 async function generateWithGemini(prompt){
  const model=env.GEMINI_MODEL||'gemini-3.8-flash',key=required('GEMINI_API_KEY');
- const gatewayEndpoint=cloudflareGatewayEndpoint('google-ai-studio','v1/models/'+encodeURIComponent(model)+':generateContent');
- const endpoint=gatewayEndpoint||('https://generativelanguage.googleapis.com/v1beta/models/'+model+':generateContent?key='+key);
+ const gatewayEndpoint=cloudflareGatewayEndpoint('google-ai-studio','v1beta/models/'+encodeURIComponent(model)+':generateContent');
+ const directEndpoint='https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(model)+':generateContent?key='+encodeURIComponent(key);
+ const endpoint=gatewayEndpoint||directEndpoint;
  if(gatewayEndpoint)console.log('Gemini routed through Cloudflare AI Gateway.');
+ const requestBody=JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{maxOutputTokens:6000,thinkingConfig:{thinkingLevel:'LOW'},responseMimeType:'application/json'}});
  let lastError='رد Gemini فارغ أو غير صالح';
  for(let attempt=0;attempt<3;attempt++){
-  const r=await trackedProviderFetch('gemini',endpoint,{method:'POST',headers:{'content-type':'application/json',...(gatewayEndpoint?{'x-goog-api-key':key,...gatewayAuthHeaders()}:{})},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{maxOutputTokens:6000,thinkingConfig:{thinkingLevel:'LOW'},responseMimeType:'application/json'}}),signal:AbortSignal.timeout(90000)});
+  let r=await trackedProviderFetch('gemini',endpoint,{method:'POST',headers:{'content-type':'application/json',...(gatewayEndpoint?{'x-goog-api-key':key,...gatewayAuthHeaders()}:{})},body:requestBody,signal:AbortSignal.timeout(90000)});
+  if(!r.ok&&r.status===401&&gatewayEndpoint){
+   console.warn('Cloudflare AI Gateway رفض Gemini (401)؛ إعادة المحاولة مباشرة مع Gemini.');
+   r=await trackedProviderFetch('gemini',directEndpoint,{method:'POST',headers:{'content-type':'application/json'},body:requestBody,signal:AbortSignal.timeout(90000)});
+  }
   if(!r.ok){
    const detail=await r.text(),retryable=[500,502,503,504].includes(r.status);
    if(retryable&&attempt<2){const wait=Math.min(10000,1500*(attempt+1));console.warn('Gemini transient HTTP '+r.status+'; retrying after '+wait+'ms');await new Promise(resolve=>setTimeout(resolve,wait));continue;}
@@ -325,12 +331,18 @@ async function generateWithOpenAI(prompt){
 }
 async function generateWithGroq(prompt){
  const model=env.GROQ_MODEL||'openai/gpt-oss-120b',key=required('GROQ_API_KEY');
- const url=cloudflareGatewayEndpoint('groq','chat/completions')||'https://api.groq.com/openai/v1/chat/completions';
- if(url.includes('gateway.ai.cloudflare.com'))console.log('Groq routed through Cloudflare AI Gateway.');
+ const gatewayUrl=cloudflareGatewayEndpoint('groq','chat/completions');
+ const directUrl='https://api.groq.com/openai/v1/chat/completions';
+ const url=gatewayUrl||directUrl;
+ if(gatewayUrl)console.log('Groq routed through Cloudflare AI Gateway.');
  const body=JSON.stringify({model,temperature:.3,max_tokens:6000,response_format:{type:'json_object'},messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]});
  let r,detail='';
  for(let attempt=0;attempt<4;attempt++){
-  r=await trackedProviderFetch('groq',url,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key,...gatewayAuthHeaders()},body,signal:AbortSignal.timeout(90000)});
+  r=await trackedProviderFetch('groq',url,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key,...(gatewayUrl?gatewayAuthHeaders():{})},body,signal:AbortSignal.timeout(90000)});
+  if(!r.ok&&r.status===401&&gatewayUrl){
+   console.warn('Cloudflare AI Gateway رفض Groq (401)؛ إعادة المحاولة مباشرة مع Groq.');
+   r=await trackedProviderFetch('groq',directUrl,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key},body,signal:AbortSignal.timeout(90000)});
+  }
   if(r.ok)break;
   detail=await r.text();
   const retryable=[500,502,503,504].includes(r.status);
@@ -349,13 +361,22 @@ async function generateWithGroq(prompt){
 async function generateWithOpenRouter(prompt){
  const gatewayAccount=String(env.CF_AI_GATEWAY_ACCOUNT_ID||'').trim(),gatewayId=String(env.CF_AI_GATEWAY_ID||'').trim();
  if(Boolean(gatewayAccount)!==Boolean(gatewayId))throw new Error('يلزم ضبط CF_AI_GATEWAY_ACCOUNT_ID وCF_AI_GATEWAY_ID معاً أو تركهما فارغين.');
- const endpoint=gatewayAccount?'https://gateway.ai.cloudflare.com/v1/'+encodeURIComponent(gatewayAccount)+'/'+encodeURIComponent(gatewayId)+'/openrouter/v1/chat/completions':'https://openrouter.ai/api/v1/chat/completions';
- if(gatewayAccount)console.log('OpenRouter routed through Cloudflare AI Gateway (cache/logging/rate controls depend on gateway settings).');
- const headers={'content-type':'application/json',authorization:'Bearer '+required('OPENROUTER_API_KEY'),...gatewayAuthHeaders(),'HTTP-Referer':'https://vibecritic.pages.dev/','X-Title':'VibeCritic'};
+ const gatewayEndpoint=gatewayAccount?'https://gateway.ai.cloudflare.com/v1/'+encodeURIComponent(gatewayAccount)+'/'+encodeURIComponent(gatewayId)+'/openrouter/v1/chat/completions':null;
+ const directEndpoint='https://openrouter.ai/api/v1/chat/completions';
+ const endpoint=gatewayEndpoint||directEndpoint;
+ if(gatewayEndpoint)console.log('OpenRouter routed through Cloudflare AI Gateway (cache/logging/rate controls depend on gateway settings).');
+ const apiKey=required('OPENROUTER_API_KEY');
+ const headers={'content-type':'application/json',authorization:'Bearer '+apiKey,...(gatewayEndpoint?gatewayAuthHeaders():{}),'HTTP-Referer':'https://vibecritic.pages.dev/','X-Title':'VibeCritic'};
+ const directHeaders={'content-type':'application/json',authorization:'Bearer '+apiKey,'HTTP-Referer':'https://vibecritic.pages.dev/','X-Title':'VibeCritic'};
  let messages=[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بكل محاور المراجعة المطلوبة.'},{role:'user',content:prompt}],lastIssue='رد فارغ';
  for(let attempt=0;attempt<3;attempt++){
-  let r=await trackedProviderFetch('openrouter',endpoint,{method:'POST',headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,max_tokens:6000,response_format:{type:'json_object'},messages}),signal:AbortSignal.timeout(90000)});
-  if(!r.ok&&r.status===400)r=await trackedProviderFetch('openrouter',endpoint,{method:'POST',headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,max_tokens:6000,messages}),signal:AbortSignal.timeout(90000)});
+  const requestBody=JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,max_tokens:6000,response_format:{type:'json_object'},messages});
+  let r=await trackedProviderFetch('openrouter',endpoint,{method:'POST',headers,body:requestBody,signal:AbortSignal.timeout(90000)});
+  if(!r.ok&&r.status===401&&gatewayEndpoint){
+   console.warn('Cloudflare AI Gateway رفض OpenRouter (401)؛ إعادة المحاولة مباشرة مع OpenRouter.');
+   r=await trackedProviderFetch('openrouter',directEndpoint,{method:'POST',headers:directHeaders,body:requestBody,signal:AbortSignal.timeout(90000)});
+  }
+  if(!r.ok&&r.status===400)r=await trackedProviderFetch('openrouter',r.url===directEndpoint?directEndpoint:endpoint,{method:'POST',headers:r.url===directEndpoint?directHeaders:headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,max_tokens:6000,messages}),signal:AbortSignal.timeout(90000)});
   if(!r.ok)throw new Error('OpenRouter HTTP '+r.status+': '+(await r.text()).slice(0,700));
   const response=await r.json(),message=response.choices?.[0]?.message;
   let content=message?.content;if(Array.isArray(content))content=content.map(part=>part.text||'').join('');
@@ -563,8 +584,26 @@ async function generateReview(item){
  for(const name of candidates){
   const measurement={name,startedAt:Date.now(),usage:{requests:0,inputTokens:0,outputTokens:0,totalTokens:0,reportedUsage:false,headers:{}}};
   activeProviderMeasurement=measurement;
-  try{parsed=validateGeneratedReview(await handlers[name]());activeProviderMeasurement=null;await recordProviderOutcome(name,true,null,measurement,item);console.log('نجح توليد المراجعة واجتازت بوابة الجودة عبر:',name,'| طلبات API:',measurement.usage.requests,'| الرموز المسجلة:',measurement.usage.totalTokens||'غير متاحة');break;}
-  catch(error){activeProviderMeasurement=null;providerErrors.push(name+': '+error.message);await recordProviderOutcome(name,false,error,measurement,item);await recordLearningFailure(item,error);console.warn('تعذر المزوّد '+name+'؛ الانتقال إلى التالي:',error.message);}
+  try{
+   const generated=await handlers[name]();
+   activeProviderMeasurement=null;
+   // A valid provider response is a transport success even when the editorial gate rejects its content.
+   await recordProviderOutcome(name,true,null,measurement,item);
+   try{
+    parsed=validateGeneratedReview(generated);
+    console.log('نجح توليد المراجعة واجتازت بوابة الجودة عبر:',name,'| طلبات API:',measurement.usage.requests,'| الرموز المسجلة:',measurement.usage.totalTokens||'غير متاحة');
+    break;
+   }catch(error){
+    providerErrors.push(name+' (editorial quality): '+error.message);
+    await recordLearningFailure(item,error);
+    console.warn('استجاب المزوّد '+name+' لكن المراجعة لم تجتز بوابة الجودة؛ الانتقال إلى التالي:',error.message);
+   }
+  }catch(error){
+   activeProviderMeasurement=null;
+   providerErrors.push(name+': '+error.message);
+   await recordProviderOutcome(name,false,error,measurement,item);
+   console.warn('تعذر الاتصال بالمزوّد '+name+'؛ الانتقال إلى التالي:',error.message);
+  }
  }
  if(!parsed)throw new Error('فشل التوليد عبر جميع المزوّدات المجانية المتاحة: '+providerErrors.join(' | '));
  const d=parsed,review=String(d.review||'').replace(/<[^>]*>/g,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').trim();
@@ -842,7 +881,7 @@ async function main(){
     publishedKeys.add(key);publishedModes.set(key,'review');
     fresh.push({...item,upgradedFromPreview:upgraded});
     console.log(upgraded?'تم تحويل القراءة الاستباقية إلى مراجعة بعد الإصدار:':'تم إنشاء مراجعة:',item.name,'|',type,'| الإجمالي:',Object.values(counts).reduce((sum,value)=>sum+value,0));
-   }catch(e){generationFailures++;await recordLearningFailure(item,e);console.error('تعذر إنشاء مراجعة:',item.name,e.message);}
+   }catch(e){generationFailures++;console.error('تعذر إنشاء مراجعة:',item.name,e.message);}
   }
  }
  if(!fresh.length&&generationFailures>0)throw new Error('فشلت جميع محاولات توليد المراجعات في هذه الدفعة؛ راجع سجلات المزوّدات ومفاتيح API.');
