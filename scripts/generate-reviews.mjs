@@ -113,12 +113,19 @@ function validateGeneratedReview(d){
  const scores={story:Number(d?.scores?.story),visuals:Number(d?.scores?.visuals),sound:Number(d?.scores?.sound),pacing:Number(d?.scores?.pacing)};
  if(Object.values(scores).some(value=>!Number.isFinite(value)||value<0||value>10))throw new Error('الدرجات الفرعية الأربعة غير مكتملة أو خارج النطاق 0–10');
  if(Object.values(scores).some(value=>Math.abs(value*10-Math.round(value*10))>0.001))throw new Error('يجب أن تكون الدرجات الفرعية بخطوة عشرية واحدة فقط');
- if(review.length<2800)throw new Error('المراجعة المولّدة أقصر من الحد الأدنى للتحليل المتكامل (2800 حرف)');
- const words=review.split(/\s+/u).filter(Boolean).length;
- if(words<650)throw new Error('المراجعة أقصر من الحد الأدنى للتحليل الصحفي (650 كلمة)');
- if((review.match(/^###\s+/gm)||[]).length<5)throw new Error('المراجعة لا تتضمن المحاور النقدية الخمسة المطلوبة');
- if((review.match(/لا تتوفر معلومات كافية/g)||[]).length>2||(review.match(/لا يمكن الحكم/g)||[]).length>2)throw new Error('المراجعة تعتمد بصورة مفرطة على الاعتذار عن نقص المعلومات');
+ if(review.length<3200)throw new Error('المراجعة المولّدة أقصر من الحد الأدنى للتحليل المتكامل (3200 حرف)');
+ const words=review.split(/\\s+/u).filter(Boolean).length;
+ if(words<750)throw new Error('المراجعة أقصر من المعيار التحريري المطلوب (750 كلمة)');
+ const sections=review.split(/^###\\s+/m).slice(1);
+ if(sections.length<5)throw new Error('المراجعة لا تتضمن المحاور النقدية الخمسة المطلوبة');
+ const thinSections=sections.filter(section=>section.split(/\\s+/u).filter(Boolean).length<55);
+ if(thinSections.length)throw new Error('يوجد محور نقدي أقصر من الحد الأدنى للتحليل (55 كلمة لكل محور)');
+ const uncertainty=(review.match(/لا تتوفر معلومات|لا توجد معلومات|لا تتوفر بيانات|لا توجد بيانات|لا يمكن الحكم|يصعب الحكم|غير متاح(?:ة)?/g)||[]).length;
+ if(uncertainty>5)throw new Error('المراجعة تعتمد بصورة مفرطة على نقص البيانات بدلاً من تحليل المعلومات المتاحة');
+ const genericPhrases=['من المتوقع أن يستمر','قد يرفع من مستوى','يضمن موارد إنتاجية','يُعدّ نقطة قوة واضحة نظراً','يبقى السؤال مفتوحاً','تجربة فريدة من نوعها'];
+ if(genericPhrases.some(phrase=>review.includes(phrase)))throw new Error('المراجعة تتضمن تعميمات أو عبارات إنشائية لا تقدم تحليلاً خاصاً بالعمل');
  if(pros.length<3)throw new Error('قائمة نقاط القوة غير مكتملة');
+ if(cons.length<2)throw new Error('قائمة التحفظات النقدية غير مكتملة');
  if(!String(d?.headline||'').trim()||!String(d?.summary||'').trim()||!String(d?.verdict||'').trim())throw new Error('بيانات المراجعة الأساسية غير مكتملة');
  return {...d,scores};
 }
