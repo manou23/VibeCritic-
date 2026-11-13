@@ -113,7 +113,10 @@ form?.addEventListener('submit',async event=>{
  submitButton.disabled=true;submitButton.querySelector('span').textContent='جارٍ إعداد المراجعة...';resultBox.hidden=true;status('يجري إعداد التحليل النقدي وتجربة المزوّدات المتاحة. قد يستغرق ذلك لحظات.');
  try{const res=await fetch('/api/review',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({title,kind,turnstileToken:String(new FormData(form).get('cf-turnstile-response')||'')})});const data=await res.json();if(!res.ok||!data.ok)throw Error(data.error||'تعذر إنشاء المراجعة');statusBox.hidden=true;render(data.review,data.provider||'AI',data.trailer)}
  catch(e){status(e.message||'حدث خطأ. حاول مرة أخرى.',true)}
- finally{submitButton.disabled=false;submitButton.querySelector('span').textContent='أنشئ المراجعة'}
+ finally{
+  submitButton.disabled=false;submitButton.querySelector('span').textContent='أنشئ المراجعة';
+  if(window.turnstile)window.turnstile.reset();
+ }
 });
 
 function encodeShare(value){
