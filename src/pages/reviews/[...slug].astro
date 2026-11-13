@@ -153,17 +153,10 @@ const reviewStructuredData = {
         <h2 id="review-feedback-title">هل أفادتك هذه المراجعة؟</h2>
         <p>شاركنا رأيك السريع؛ اختيارك يُحفظ على هذا الجهاز فقط.</p>
         <div class="review-feedback-actions">
-          <button type="button" data-review-vote="yes" aria-pressed="false">نعم، أفادتني</button>
-          <button type="button" data-review-vote="no" aria-pressed="false">لا، لم تفدني</button>
+          <button type="button" data-review-vote="yes" aria-pressed="false" aria-label="أعجبتني هذه المراجعة"><span aria-hidden="true">👍</span> أعجبتني</button>
+          <button type="button" data-review-vote="no" aria-pressed="false" aria-label="لم تعجبني هذه المراجعة"><span aria-hidden="true">👎</span> لم تعجبني</button>
         </div>
         <p class="review-feedback-status" data-review-feedback-status role="status" aria-live="polite">لن نعرض أرقاماً مضللة؛ هذا التصويت محلي ولا يمثل مجموع آراء الزوار.</p>
-      </section>
-      <section class="article-facts article-comments" aria-labelledby="review-comments-title">
-        <h2 id="review-comments-title">ناقش هذه المراجعة</h2>
-        <p>مساحة النقاش متاحة عبر GitHub؛ يلزم تسجيل الدخول للمشاركة، والتعليقات عامة.</p>
-        <button type="button" class="comments-load-button" data-load-comments>فتح مساحة النقاش</button>
-        <div class="utterances-container" data-utterances-container></div>
-        <noscript><p>فعّل JavaScript لعرض مساحة النقاش.</p></noscript>
       </section>
       <a href={url('')} class="article-return">اكتشف مراجعات أخرى <span>←</span></a>
     </div>
@@ -210,23 +203,6 @@ voteButtons.forEach(button=>button.addEventListener('click',()=>{
  try{localStorage.setItem(currentVoteKey,value);}catch{}
  paintVote(value);
 }));
-const commentsButton=document.querySelector<HTMLButtonElement>('[data-load-comments]');
-const commentsContainer=document.querySelector<HTMLElement>('[data-utterances-container]');
-commentsButton?.addEventListener('click',()=>{
- if(!commentsContainer||commentsContainer.dataset.loaded==='true')return;
- commentsContainer.dataset.loaded='true';
- const embed=document.createElement('script');
- embed.src='https://utteranc.es/client.js';
- embed.async=true;
- embed.crossOrigin='anonymous';
- embed.setAttribute('repo','manou23/VibeCritic-');
- embed.setAttribute('issue-term','pathname');
- embed.setAttribute('label','site-comments');
- embed.setAttribute('theme',document.documentElement.classList.contains('dark-mode')?'github-dark':'github-light');
- commentsContainer.append(embed);
- commentsButton.textContent='تم فتح مساحة النقاش';
- commentsButton.disabled=true;
-});
 document.querySelectorAll<HTMLElement>('[data-youtube-facade]').forEach((facade)=>{
  const button=facade.querySelector<HTMLButtonElement>('.youtube-facade-button');
  button?.addEventListener('click',()=>{
