@@ -51,7 +51,8 @@ jobs:
         run: npm run validate:reviews
       # OpenRouter is supported as an AI generation provider.
       - name: Generate reviews
-        if: github.event_name != 'push'
+        # Run for scheduled/manual events, and for an intentional generation-trigger commit only.
+        if: github.event_name != 'push' || contains(github.event.head_commit.message, '[generate-reviews]')
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
           IGDB_CLIENT_ID: ${{ secrets.IGDB_CLIENT_ID }}
