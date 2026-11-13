@@ -7,6 +7,39 @@ const targetTotal=100,dailyPerType=2,dailyTotalLimit=2,perRunLimit=1;
 const gamesWindowDays=Math.max(1,Number.isFinite(Number(env.GAMES_WINDOW_DAYS))&&env.GAMES_WINDOW_DAYS?Number(env.GAMES_WINDOW_DAYS):30);
 const upcomingWindowDays=Math.max(30,Number.isFinite(Number(env.UPCOMING_WINDOW_DAYS))&&env.UPCOMING_WINDOW_DAYS?Number(env.UPCOMING_WINDOW_DAYS):365);
 const outDir='src/content/reviews',processedPath='data/processed.json';
+const learningPath='data/learning-memory.json';
+let learningMemory={version:1,stats:{successes:0,failures:0},lessons:[],recentSuccesses:[]};
+async function loadLearningMemory(){
+ try{const saved=JSON.parse(await fs.readFile(learningPath,'utf8'));if(saved&&saved.version===1){learningMemory={...learningMemory,...saved,stats:{successes:0,failures:0,...saved.stats},lessons:Array.isArray(saved.lessons)?saved.lessons.slice(-12):[],recentSuccesses:Array.isArray(saved.recentSuccesses)?saved.recentSuccesses.slice(-10):[]};}}catch{}
+}
+async function saveLearningMemory(){learningMemory.updatedAt=new Date().toISOString();await fs.writeFile(learningPath,JSON.stringify(learningMemory,null,2)+'\n','utf8');}
+function classifyLearning(error){
+ const message=String(error?.message||error||'');
+ if(/عنوان نقدي متشابه|صياغة قالبية|عبارات إنشائية|تعميمات/.test(message))return ['specificity','ارفض العناوين والعبارات القالبية؛ اربط كل حكم بتفصيل موثق وفريد من العمل.'];
+ if(/أقصر|المحاور النقدية|محور نقدي|كلمة|حرف/.test(message))return ['depth','وزّع التحليل على المحاور المطلوبة بكثافة فكرة حقيقية، ولا تطل النص بالحشو أو تكرار الأطروحة.'];
+ if(/بيانات|مصدر|تقييم الجمهور|تصنيفات|طاقم|منصات|مطور/.test(message))return ['evidence','إذا كانت بيانات المصدر ناقصة فلا تخترع التفاصيل أو تملأ الفراغ؛ استخدم ما ثبت فقط أو تجاوز العمل غير المؤهل.'];
+ if(/الدرجات|درجة|النطاق 0–10|عشرية/.test(message))return ['scoring','عاير كل درجة فرعية بصورة مستقلة، واجعلها متسقة مع الأدلة والتحليل ولا تمنح درجات مجاملة.'];
+ if(/JSON|محتوى نصياً|رد فارغ|JSON صالح/.test(message))return ['format','أخرج JSON صالحاً بالمفاتيح المطلوبة فقط، مع نص مراجعة كامل دون شروح خارج البنية.'];
+ if(/HTTP 429|rate|timeout|aborted|HTTP 5/.test(message))return ['resource','تعامل مع حدود المزوّد بهدوء: لا تكرر الطلبات بلا داعٍ، واستخدم التحويل الاحتياطي المحدود عند الحاجة.'];
+ return ['editorial','قدّم حجة نقدية واضحة وصوت VibeCritic المميز، وافصل الحقائق عن الاستنتاجات ولا تكرر المعلومات.'];
+}
+async function recordLearningFailure(item,error){
+ const [key,advice]=classifyLearning(error);learningMemory.stats.failures++;
+ const existing=learningMemory.lessons.find(x=>x.key===key);
+ if(existing)existing.count=(Number(existing.count)||0)+1;else learningMemory.lessons.push({key,advice,count:1});
+ learningMemory.lessons=learningMemory.lessons.sort((a,b)=>b.count-a.count).slice(0,12);
+ await saveLearningMemory();
+ console.warn('تم حفظ درس تحسيني دائم:',key,'| العمل:',item?.name||'غير محدد');
+}
+async function recordLearningSuccess(item,review){
+ const text=String(review?.review||''),sample={type:item?.type||'unknown',words:text.split(/\s+/u).filter(Boolean).length,sections:(text.match(/^###\s+/gm)||[]).length,score:Number(review?.score)||0};
+ learningMemory.stats.successes++;learningMemory.recentSuccesses=[...learningMemory.recentSuccesses,sample].slice(-10);await saveLearningMemory();
+}
+function learningAdvice(){
+ const lessons=learningMemory.lessons.slice(0,6).map(x=>'- '+x.advice+' (تكرر رصدها '+x.count+' مرة)').join('\n');
+ const samples=learningMemory.recentSuccesses,avgWords=samples.length?Math.round(samples.reduce((sum,x)=>sum+x.words,0)/samples.length):0;
+ return 'ذاكرة التحسين المستمر المحفوظة بين التشغيلات: إجمالي النجاحات '+learningMemory.stats.successes+'، الإخفاقات المرصودة '+learningMemory.stats.failures+'. '+(lessons?'الدروس التي يجب تطبيقها الآن:\n'+lessons:'لا توجد إخفاقات مصنفة بعد؛ ابدأ بتطبيق معايير VibeCritic الأساسية.')+(avgWords?'\nمتوسط طول آخر '+samples.length+' مراجعات اجتازت البوابة: '+avgWords+' كلمة؛ استخدمه للموازنة لا للحشو.':'');
+}
 function required(name){if(!env[name])throw new Error(`متغير البيئة ${name} غير مضبوط في GitHub Secrets`);return env[name];}
 async function getJson(url){const r=await fetch(url,{signal:AbortSignal.timeout(30000)});if(!r.ok){const safeUrl=url.replace(/([?&](?:api_key|key)=)[^&]+/i,'$1[REDACTED]');throw new Error(`HTTP ${r.status}: ${safeUrl}`);}return r.json();}
 const clean=v=>String(v??'').replace(/[\r\n]+/g,' ').trim();
@@ -273,6 +306,7 @@ async function generateReview(item){
  'صوت VibeCritic التحريري: شبابي وذكي وصريح، قريب من القارئ من دون ابتذال أو عامية ثقيلة؛ يطرح رأياً واضحاً ويبرره، يوازن بين الحماس والشك، ولا يتحول إلى إعلان أو ملخص موسوعي. حافظ على هذا الصوت في العنوان والافتتاحية والمحاور والحكم، مع اختلاف الزاوية والإيقاع من مقال إلى آخر.',
   'المعيار التحريري المرجعي لـVibeCritic: ابنِ المراجعة حول أطروحة نقدية واحدة واضحة ومحددة، وارجع إليها عبر المحاور دون تكرارها حرفياً. افتتح بسؤال أو مفارقة أو قرار فني ملموس يهم القارئ، لا بمقدمة موسوعية. اجعل كل محور يضيف دليلاً أو نتيجة جديدة، واربط تفاصيل العمل بأثرها على التجربة وعلى جمهور النوع. اشرح لماذا ينجح الخيار الفني أو يفشل، لا تكتفِ بوصفه. اجعل الانتقالات طبيعية، والخاتمة حكماً حاسماً ومشروطاً بما ثبت، لا إعادة تلخيص.',
   'خصوصية كل مراجعة إلزامية: استخدم تفاصيل موثقة تخص هذا العمل نفسه، وابتعد عن الفقرات التي يمكن نقلها إلى أي فيلم أو مسلسل أو لعبة دون تغيير. لا تملأ المساحة بإعادة صياغة الوصف أو تكرار الفكرة نفسها. إذا كانت البيانات لا تسند تحليلاً لجانب معين، قل ذلك بإيجاز ولا تعوّض النقص بتخمينات أو درجات متفائلة. لا تجعل عدد الكلمات أهم من كثافة الفكرة.',
+ learningAdvice(),
  'زاوية التحرير المطلوبة لهذه المراجعة: '+editorialLens+' غيّر إيقاع الجمل وبنية الفقرات وطريقة الانتقال بين المحاور؛ لا تبدأ كل مراجعة بتعريف نمطي ولا تختم بجملة محفوظة.',
  'حظر أسلوبي صريح: لا تستخدم عبارات مثل «بين الطموح والواقع» أو «مزجٌ غير متوقع» أو «رحلة لا تُنسى» أو «أكثر من مجرد» أو «تجربة لا مثيل لها» أو أي صياغة تسويقية مستهلكة. لا تستبدلها بمرادف قالبّي؛ اذكر تفصيلاً محدداً من هذا العمل بدلاً منها.',
  'أعد JSON صالحاً فقط بالمفاتيح: hook, headline, summary, scores, pros, cons, tags, verdict, review. scores كائن يحتوي story وvisuals وsound وpacing، وكل قيمة من 0 إلى 10 بخطوة عشرية واحدة، وتُبررها المراجعة.',
@@ -298,6 +332,7 @@ async function generateReview(item){
   if(!handlers[provider])throw new Error('AI_PROVIDER يجب أن يكون openai أو gemini أو groq أو openrouter');
   parsed=validateGeneratedReview(await handlers[provider]());
  }catch(primaryError){
+  await recordLearningFailure(item,primaryError);
   console.warn('فشل المزوّد الأساسي '+provider+':',primaryError.message);
   parsed=await generateFallback(prompt,[provider],primaryError);
  }
@@ -466,10 +501,13 @@ async function writeReview(item){
  const platformFields=arr(enriched.metadata?.platforms||enriched.platforms||[]);
  const scoreFields=['storyScore: '+a.scores.story,'visualsScore: '+a.scores.visuals,'soundScore: '+a.scores.sound,'pacingScore: '+a.scores.pacing];
   const fm=['---','title: '+y(enriched.name||item.name),'originalTitle: '+y(enriched.originalTitle||''),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 2','reviewMode: '+reviewMode,'sourceName: '+y(item.source||''),'sourceVoteCount: '+(Number(enriched.sourceVoteCount)||0),'sourceRatingScale: '+(item.source==='RAWG'?5:item.source==='IGDB'?100:10),'metacriticScore: '+(Number(enriched.metadata?.metacritic)||0),'cast:',arr(enriched.metadata?.cast||[]),'crew:',arr([...(enriched.metadata?.directors||[]),...(enriched.metadata?.creators||[])]),'watchProviders:',arr(enriched.metadata?.watchProviders||[]),...watchFields,'platforms:',platformFields,'gameStores:',gameStoreFields.length?gameStoreFields.join('\n'):'  []',...scoreFields,'type: '+item.type,'date: '+date,'releaseDate: '+y(enriched.date),'poster: '+y(item.poster),'backdrop: '+y(item.backdrop),...videoFields,'score: '+a.score,'trendRank: '+(Number(item.trendRank)||0),'trendSource: '+y(item.source||''),'trendPopularity: '+(Number(item.popularity)||0),'pros:',arr(a.pros),'cons:',arr(a.cons),'tags:',arr(a.tags),'genres:',arr(enriched.genres||[]),'sourceRating: '+(Number(enriched.rating)||0),'sourceId: '+y(item.id),'sourceUrl: '+y(item.sourceUrl),'aiGenerated: true','---','',a.review,'','> قراءة نقدية تحريرية مولّدة بمساعدة الذكاء الاصطناعي، مبنية على البيانات المنشورة المتاحة. لا تمثل تجربة مشاهدة أو لعب مباشرة، ولا تقييماً رسمياً من المصدر.',''].join('\n');
- await fs.writeFile(path.join(outDir,item.type+'-'+item.id+'.md'),fm,'utf8');return item.type+':'+item.id;
+ await fs.writeFile(path.join(outDir,item.type+'-'+item.id+'.md'),fm,'utf8');
+ await recordLearningSuccess(item,a);
+ return item.type+':'+item.id;
 }
 async function main(){
  await fs.mkdir(outDir,{recursive:true});await fs.mkdir('data',{recursive:true});await fs.mkdir('src/data',{recursive:true});
+ await loadLearningMemory();
  try{
   const top=await globalTrending();
   await fs.writeFile('src/data/trending.json',JSON.stringify(top,null,2)+'\n','utf8');
@@ -573,7 +611,7 @@ async function main(){
     publishedKeys.add(key);publishedModes.set(key,'review');
     fresh.push({...item,upgradedFromPreview:upgraded});
     console.log(upgraded?'تم تحويل القراءة الاستباقية إلى مراجعة بعد الإصدار:':'تم إنشاء مراجعة:',item.name,'|',type,'| الإجمالي:',Object.values(counts).reduce((sum,value)=>sum+value,0));
-   }catch(e){generationFailures++;console.error('تعذر إنشاء مراجعة:',item.name,e.message);}
+   }catch(e){generationFailures++;await recordLearningFailure(item,e);console.error('تعذر إنشاء مراجعة:',item.name,e.message);}
   }
  }
  if(!fresh.length&&generationFailures>0)throw new Error('فشلت جميع محاولات توليد المراجعات في هذه الدفعة؛ راجع سجلات المزوّدات ومفاتيح API.');
