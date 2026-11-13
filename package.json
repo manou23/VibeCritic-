@@ -13,7 +13,8 @@
     "backfill:titles": "node scripts/backfill-arabic-titles.mjs",
     "backfill:games": "node scripts/backfill-game-platforms.mjs",
     "validate:reviews": "node scripts/validate-review-scores.mjs",
-    "editorial:training": "node scripts/editorial-training.mjs"
+    "editorial:training": "node scripts/editorial-training.mjs",
+    "test:knowledge-graph": "node scripts/test-knowledge-graph.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",

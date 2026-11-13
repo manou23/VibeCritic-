@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { buildEditorialTrainingContext, recordEditorialCandidate } from './editorial-intelligence.mjs';
+import { buildKnowledgeContext, recordKnowledge } from './knowledge-graph.mjs';
 
 const env=process.env;
 const provider=(env.AI_PROVIDER||(env.GEMINI_API_KEY?'gemini':env.GROQ_API_KEY?'groq':env.OPENROUTER_API_KEY?'openrouter':env.CF_WORKERS_AI_API_TOKEN?'cloudflare-workers-ai':'openai')).toLowerCase();
@@ -546,6 +547,7 @@ async function generateReview(item){
  const styleSeed=String(item.id||item.name||'').split('').reduce((sum,char)=>sum+char.charCodeAt(0),0);
  const editorialLens=editorialLenses[styleSeed%editorialLenses.length];
  const trainingContext=await buildEditorialTrainingContext(item);
+ const knowledgeContext=await buildKnowledgeContext(item);
  const prompt=[
  isPreview?'اكتب قراءة استباقية صحفية احترافية لعمل لم يصدر بعد، وليست مراجعة نهائية.':'اكتب مراجعة نقدية صحفية شاملة بعد الإصدار، وليست دعاية أو ملخصاً دعائياً.',
  'اكتب بصوت ناقد متخصص: أطروحة واضحة، سياق يشرح أهمية العمل داخل نوعه وسلسلته، تحليل فني مفصل، أمثلة موثقة، وحكم مسبب لا يساير الضجة الجماهيرية.',
@@ -559,6 +561,7 @@ async function generateReview(item){
   'خصوصية كل مراجعة إلزامية: استخدم تفاصيل موثقة تخص هذا العمل نفسه، وابتعد عن الفقرات التي يمكن نقلها إلى أي فيلم أو مسلسل أو لعبة دون تغيير. لا تملأ المساحة بإعادة صياغة الوصف أو تكرار الفكرة نفسها. إذا كانت البيانات لا تسند تحليلاً لجانب معين، قل ذلك بإيجاز ولا تعوّض النقص بتخمينات أو درجات متفائلة. لا تجعل عدد الكلمات أهم من كثافة الفكرة.',
  learningAdvice(),
  trainingContext,
+  knowledgeContext,
  'زاوية التحرير المطلوبة لهذه المراجعة: '+editorialLens+' غيّر إيقاع الجمل وبنية الفقرات وطريقة الانتقال بين المحاور؛ لا تبدأ كل مراجعة بتعريف نمطي ولا تختم بجملة محفوظة.',
  'حظر أسلوبي صريح: لا تستخدم عبارات مثل «بين الطموح والواقع» أو «مزجٌ غير متوقع» أو «رحلة لا تُنسى» أو «أكثر من مجرد» أو «تجربة لا مثيل لها» أو أي صياغة تسويقية مستهلكة. لا تستبدلها بمرادف قالبّي؛ اذكر تفصيلاً محدداً من هذا العمل بدلاً منها.',
  'أعد JSON صالحاً فقط بالمفاتيح: hook, headline, summary, scores, pros, cons, tags, verdict, review. scores كائن يحتوي story وvisuals وsound وpacing، وكل قيمة من 0 إلى 10 بخطوة عشرية واحدة، وتُبررها المراجعة.',
@@ -766,7 +769,9 @@ async function globalTrending(){
  return picks.map((x,i)=>({...x,rank:i+1,trendRank:i+1}));
 }
 async function writeReview(item){
- const enriched=await enrichItem(item),reviewMode=validateSourceQuality(enriched),a=await generateReview(enriched),date=algeriaDate();
+ const enriched=await enrichItem(item),reviewMode=validateSourceQuality(enriched);
+ await recordKnowledge(enriched);
+ const a=await generateReview(enriched),date=algeriaDate();
  await assertDistinctHeadline(a.headline,a.hook,a.summary,a.review);
  const videoFields=enriched.metadata?.youtubeVideoId?['youtubeVideoId: '+y(enriched.metadata.youtubeVideoId),'youtubeVideoTitle: '+y(enriched.metadata.youtubeVideoTitle)]:[];
  const watchFields=enriched.metadata?.watchProviderUrl?['watchProviderUrl: '+y(enriched.metadata.watchProviderUrl)]:[];

@@ -42,6 +42,9 @@ jobs:
       - name: Check JavaScript syntax
         run: |
           node --check scripts/generate-reviews.mjs
+          node --check scripts/knowledge-graph.mjs
+          node --check scripts/test-knowledge-graph.mjs
+          npm run test:knowledge-graph
           node --check scripts/backfill-arabic-titles.mjs
           node --check scripts/backfill-game-platforms.mjs
           node --check functions/api/review.js
@@ -164,10 +167,10 @@ jobs:
       - name: Commit generated reviews and learning memory
         if: always()
         run: |
-          if [[ -n "$(git status --porcelain src/content/reviews data/processed.json src/data/trending.json data/learning-memory.json data/editorial-intelligence.json data/provider-usage.json data/provider-capacity.json)" ]]; then
+          if [[ -n "$(git status --porcelain src/content/reviews data/processed.json src/data/trending.json data/learning-memory.json data/editorial-intelligence.json data/knowledge-graph.json data/provider-usage.json data/provider-capacity.json)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add src/content/reviews data/processed.json src/data/trending.json data/learning-memory.json data/editorial-intelligence.json data/provider-usage.json data/provider-capacity.json
+            git add src/content/reviews data/processed.json src/data/trending.json data/learning-memory.json data/editorial-intelligence.json data/knowledge-graph.json data/provider-usage.json data/provider-capacity.json
             git commit -m "chore: update generated reviews"
             for attempt in 1 2 3; do
               if git push origin HEAD:main; then
