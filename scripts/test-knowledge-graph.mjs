@@ -103,6 +103,36 @@ try {
     sourcePath: 'src/content/reviews/game-sample.md'
   });
   await recordEditorialReview({
+    key: 'game:hades-ii-review',
+    sourceId: 'hades-ii-2025',
+    type: 'game',
+    title: 'Hades II',
+    sourceName: 'Supergiant Games',
+    sourceUrl: 'https://www.supergiantgames.com/games/hades-ii/',
+    releaseDate: '2025-09-25',
+    genres: ['Action', 'Roguelike'],
+    platforms: ['PC', 'Nintendo Switch', 'Nintendo Switch 2', 'PlayStation 5', 'Xbox Series X|S'],
+    creator: 'Supergiant Games',
+    score: 8.7,
+    aiGenerated: false,
+    sourcePath: 'src/content/reviews/game-hades-ii-2025.md'
+  });
+  await recordEditorialReview({
+    key: 'game:unverified-metadata-review',
+    sourceId: 'unverified-game-1',
+    type: 'game',
+    title: 'Unverified Game',
+    sourceName: 'Unknown Publisher',
+    sourceUrl: 'https://publisher.example/games/unverified',
+    releaseDate: '2026-01-01',
+    genres: ['Action'],
+    platforms: ['PC'],
+    creator: 'Unknown Studio',
+    score: 6.5,
+    aiGenerated: false,
+    sourcePath: 'src/content/reviews/game-unverified.md'
+  });
+  await recordEditorialReview({
     key: 'series:sample-series-review',
     sourceId: 'tv-303',
     type: 'series',
@@ -155,11 +185,21 @@ try {
 
   const graph = JSON.parse(await fs.readFile('data/knowledge-graph.json', 'utf8'));
   assert.equal(graph.version, 2);
-  assert.equal(graph.editorialReviews.length, 4);
-  assert.equal(graph.stats.editorialReviews, 4);
+  assert.equal(graph.editorialReviews.length, 6);
+  assert.equal(graph.stats.editorialReviews, 6);
   assert.ok(graph.entities.some(entity => entity.kind === 'work' && entity.externalId === '305152' && entity.workType === 'game' && entity.externalSource === 'IGDB'));
   assert.ok(graph.entities.some(entity => entity.kind === 'work' && entity.externalId === 'tv-303' && entity.workType === 'series'));
   assert.equal(graph.stats.works, graph.entities.filter(entity => entity.kind === 'work').length);
+  const hadesWork = graph.entities.find(entity => entity.kind === 'work' && entity.externalId === 'hades-ii-2025' && entity.workType === 'game');
+  assert.ok(hadesWork, 'A game review with a registered official source should index its work identity.');
+  assert.ok(graph.observations.some(entry => entry.workId === hadesWork.id && entry.field === 'release_date' && entry.source === 'SUPERGIANT_GAMES'), 'Official game release dates should be stored with verified provenance.');
+  assert.ok(graph.observations.some(entry => entry.workId === hadesWork.id && entry.field === 'platforms' && entry.value.includes('Nintendo Switch 2')), 'Official game platforms should be stored as factual catalog metadata.');
+  assert.ok(graph.observations.some(entry => entry.workId === hadesWork.id && entry.field === 'genres' && entry.sourceClass === 'official-developer-source'), 'Official game genres should retain source classification.');
+  assert.ok(graph.relations.some(edge => edge.from === hadesWork.id && edge.type === 'developed_by' && edge.evidence[0].source === 'SUPERGIANT_GAMES'), 'Official developer credits should create sourced relations.');
+  assert.match(await buildKnowledgeContext({ id: 'hades-ii-2025', type: 'game', name: 'Hades II' }), /Nintendo Switch 2/);
+  const unverifiedWork = graph.entities.find(entity => entity.kind === 'work' && entity.externalId === 'unverified-game-1' && entity.workType === 'game');
+  assert.ok(unverifiedWork, 'Unverified editorial identity may still be retained.');
+  assert.ok(!graph.observations.some(entry => entry.workId === unverifiedWork.id), 'Unregistered sources and unrelated URLs must never be promoted into factual observations.');
   const gameWork = graph.entities.find(entity => entity.kind === 'work' && entity.externalId === '305152' && entity.workType === 'game');
   assert.ok(!graph.observations.some(entry => entry.workId === gameWork.id), 'Editorial indexing must not manufacture factual observations.');
   assert.ok(graph.editorialRelations.some(edge => edge.sharedTags.includes('Drama')), 'Reviews sharing a tag should be connected as editorial metadata only.');
