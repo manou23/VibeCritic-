@@ -4,7 +4,7 @@ import path from 'node:path';
 const HISTORY_PATH = 'data/judgment-history.json';
 const MAX_WORK_VERSIONS = 8;
 const MAX_WORKS = 500;
-const clean = value => String(value ?? '').replace(/[\\r\\n]+/g, ' ').trim();
+const clean = value => String(value ?? '').replace(/[\r\n]+/g, ' ').trim();
 const list = value => Array.isArray(value) ? value.map(clean).filter(Boolean) : [];
 
 function workKey(item) {
