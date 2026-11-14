@@ -631,8 +631,9 @@ async function generateReview(item){
  const score=Math.round((scores.story*.30+scores.visuals*.25+scores.sound*.20+scores.pacing*.25)*10)/10;
  const selfEvaluation=evaluateEditorialReview(item,{headline:clean(d.headline),hook:clean(d.hook),review},reasoning,previousHeadlines);
  const reasoningRecord={version:reasoning.version,selectedAngleId:reasoning.selected.id,selectedAngle:reasoning.selected.label,selectedAngleScore:reasoning.selected.score,candidateScores:reasoning.candidates.map(entry=>({id:entry.id,score:entry.score}))};
+ const criticalQuestionsRecord={version:criticalQuestionReport.version,mode:criticalQuestionReport.mode,questionCount:criticalQuestionReport.questionCount,multiDomain:criticalQuestionReport.multiDomain,singleSource:criticalQuestionReport.singleSource,unanswered:criticalQuestionReport.unanswered,questions:criticalQuestionReport.questions.map(({id,area,status,evidenceCount,distinctDomains})=>({id,area,status,evidenceCount,distinctDomainCount:(distinctDomains||[]).length}))};
  console.log('التقييم الذاتي التحريري:',selfEvaluation.score+'/100','| الحالة:',selfEvaluation.status,'| مرتكزات مطابقة:',selfEvaluation.metrics.anchorHits+'/'+selfEvaluation.metrics.anchorCount,'| التحقق من الحقيقة:',selfEvaluation.sourceTruthVerified?'نعم':'غير مثبت آلياً');
- return {hook:clean(d.hook),headline:clean(d.headline),summary:clean(d.summary),verdict:clean(d.verdict),score,scores,pros,cons,tags:Array.isArray(d.tags)?d.tags.slice(0,8).map(clean):[],review,reasoning:reasoningRecord,selfEvaluation};
+ return {hook:clean(d.hook),headline:clean(d.headline),summary:clean(d.summary),verdict:clean(d.verdict),score,scores,pros,cons,tags:Array.isArray(d.tags)?d.tags.slice(0,8).map(clean):[],review,reasoning:reasoningRecord,selfEvaluation,criticalQuestions:criticalQuestionsRecord};
 }
 async function tmdb(type,mode='trending'){
  const key=required('TMDB_API_KEY'),endpoint=type==='movie'?'movie':'tv';
