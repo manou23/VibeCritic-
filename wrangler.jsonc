@@ -11,5 +11,12 @@
         "script_name": "vibecritic-ai-review-limiter"
       }
     ]
-  }
+  },
+  "d1_databases": [
+    {
+      "binding": "ENTERTAINMENT_DB",
+      "database_name": "entertainment-db",
+      "database_id": "ec7b1c8f-c1e1-4f18-823c-de51ba468399"
+    }
+  ]
 }

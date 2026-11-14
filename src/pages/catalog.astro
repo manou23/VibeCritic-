@@ -1,0 +1,117 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="كتالوج الأفلام والمسلسلات" description="اكتشف وابحث في كتالوج VibeCritic للأفلام والمسلسلات، مع بيانات TMDB وتفاصيل الطاقم والتصنيفات.">
+<section class="wrap catalog-page">
+  <header class="catalog-hero">
+    <p class="catalog-eyebrow">THE ENTERTAINMENT DATABASE</p>
+    <h1>اكتشف عملك القادم</h1>
+    <p>مكتبة متجددة للأفلام والمسلسلات، ببحث عربي ومرشحات دقيقة وبيانات موثقة.</p>
+  </header>
+  <form id="catalog-filters" class="catalog-filters">
+    <label class="catalog-search-label" for="catalog-query">ابحث عن فيلم أو مسلسل</label>
+    <input id="catalog-query" name="q" type="search" placeholder="اسم العمل بالعربية أو بلغته الأصلية..." autocomplete="off"/>
+    <div class="catalog-filter-row">
+      <label>النوع<select name="type"><option value="">الكل</option><option value="movie">أفلام</option><option value="tv">مسلسلات</option></select></label>
+      <label>التصنيف<select name="genre" id="catalog-genre"><option value="">كل التصنيفات</option></select></label>
+      <label>سنة الإصدار<input name="year" type="number" min="1888" max="2100" inputmode="numeric" placeholder="مثلاً 2024"/></label>
+      <label>الترتيب<select name="sort"><option value="popular">الأكثر رواجاً</option><option value="rating">الأعلى تقييماً</option><option value="newest">الأحدث</option><option value="title">الاسم</option></select></label>
+    </div>
+    <div class="catalog-filter-actions"><button type="submit" class="catalog-submit">ابحث في الكتالوج</button><button type="reset" class="catalog-reset">إعادة ضبط</button><span id="catalog-count" aria-live="polite"></span></div>
+  </form>
+  <div id="catalog-status" class="catalog-status" role="status" aria-live="polite">جارٍ تحميل الكتالوج...</div>
+  <div id="catalog-results" class="catalog-results"></div>
+  <nav class="catalog-pagination" aria-label="صفحات الكتالوج"><button id="catalog-prev" type="button" disabled>السابق</button><span id="catalog-page-label">1</span><button id="catalog-next" type="button" disabled>التالي</button></nav>
+  <aside class="tmdb-attribution"><strong>TMDB</strong><span>يستخدم هذا المنتج واجهة TMDB API، لكنه غير معتمد أو مصادق عليه من TMDB.</span><a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer">The Movie Database</a></aside>
+</section>
+<dialog id="catalog-detail" class="catalog-detail"><button type="button" id="catalog-detail-close" class="catalog-detail-close" aria-label="إغلاق">×</button><div id="catalog-detail-content"></div></dialog>
+</Base>
+
+<style>
+.catalog-page{padding:54px 0 70px}.catalog-hero{padding:30px 0 34px;border-bottom:1px solid var(--vc-border)}.catalog-hero h1{font-size:clamp(32px,5vw,54px);font-weight:950;margin:10px 0}.catalog-hero>p:last-child{color:var(--vc-muted);line-height:1.9;margin:0;max-width:650px}
+.catalog-filters{margin:28px 0 22px;padding:22px;background:var(--vc-surface-muted);border:1px solid var(--vc-border)}.catalog-search-label,.catalog-filter-row label{display:flex;flex-direction:column;gap:8px;font-size:12px;font-weight:850}.catalog-filters input,.catalog-filters select{min-height:45px;padding:0 12px;border:1px solid var(--vc-border);border-radius:5px;background:var(--vc-surface);color:var(--vc-text);font:inherit;min-width:0}.catalog-filters input:focus,.catalog-filters select:focus{outline:2px solid var(--vc-accent);outline-offset:1px}
+.catalog-filter-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px}.catalog-filter-actions{display:flex;align-items:center;gap:12px;margin-top:17px;flex-wrap:wrap}.catalog-submit,.catalog-reset,.catalog-pagination button{min-height:42px;padding:0 18px;border:1px solid var(--vc-border);font:inherit;font-size:12px;font-weight:900;cursor:pointer}.catalog-submit{background:var(--vc-accent);color:white;border-color:var(--vc-accent)}.catalog-reset,.catalog-pagination button{background:var(--vc-surface);color:var(--vc-text)}.catalog-filter-actions span{margin-inline-start:auto;color:var(--vc-muted);font-size:12px}
+.catalog-status{padding:18px 0;color:var(--vc-muted);font-size:13px}.catalog-results{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px 13px}.catalog-item{min-width:0;border:1px solid var(--vc-card-border);background:var(--vc-surface);text-align:right;cursor:pointer;padding:0;color:inherit;font:inherit;transition:transform .2s,box-shadow .2s}.catalog-item:hover{transform:translateY(-4px);box-shadow:0 12px 28px #0002}.catalog-poster{display:block;width:100%;aspect-ratio:2/3;object-fit:cover;background:var(--vc-surface-muted)}.catalog-poster-fallback{display:grid;place-items:center;aspect-ratio:2/3;padding:12px;background:var(--vc-surface-muted);font-size:13px;font-weight:900;text-align:center}.catalog-item-copy{display:block;padding:10px}.catalog-item-title{display:block;font-size:13px;font-weight:900;line-height:1.7}.catalog-item-meta{display:block;margin-top:6px;color:var(--vc-muted);font-size:10px;line-height:1.7}
+.catalog-pagination{display:flex;align-items:center;justify-content:center;gap:18px;margin:30px 0}.catalog-pagination button:disabled{opacity:.4;cursor:not-allowed}.tmdb-attribution{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;border-top:1px solid var(--vc-border);padding:22px 0;color:var(--vc-muted);font-size:11px;text-align:center}.tmdb-attribution strong{font-size:19px;letter-spacing:-1px;color:#01b4e4}.tmdb-attribution a{color:var(--vc-accent-deep);text-decoration:underline}
+.catalog-detail{width:min(720px,calc(100% - 24px));max-height:85vh;overflow:auto;border:1px solid var(--vc-border);background:var(--vc-surface);color:var(--vc-text);padding:24px}.catalog-detail::backdrop{background:#000b}.catalog-detail-close{display:block;margin-inline-start:auto;border:0;background:transparent;color:inherit;font-size:28px;cursor:pointer}.catalog-detail-body{display:grid;grid-template-columns:150px 1fr;gap:20px;direction:rtl}.catalog-detail-body img{width:100%;border-radius:5px}.catalog-detail-body h2{margin:0 0 10px;font-size:24px}.catalog-detail-body p{font-size:13px;line-height:1.9;color:var(--vc-muted)}.catalog-credit-list{font-size:12px;line-height:2}
+@media(max-width:900px){.catalog-results{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:600px){.catalog-page{padding-top:30px}.catalog-filters{padding:14px}.catalog-filter-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.catalog-results{grid-template-columns:repeat(3,minmax(0,1fr));gap:13px 8px}.catalog-item-title{font-size:11px}.catalog-item-copy{padding:8px}.catalog-detail-body{grid-template-columns:105px 1fr;gap:13px}}
+</style>
+
+<script>
+const form = document.querySelector<HTMLFormElement>('#catalog-filters');
+const results = document.querySelector<HTMLElement>('#catalog-results');
+const status = document.querySelector<HTMLElement>('#catalog-status');
+const count = document.querySelector<HTMLElement>('#catalog-count');
+const genreSelect = document.querySelector<HTMLSelectElement>('#catalog-genre');
+const pageLabel = document.querySelector<HTMLElement>('#catalog-page-label');
+const prev = document.querySelector<HTMLButtonElement>('#catalog-prev');
+const next = document.querySelector<HTMLButtonElement>('#catalog-next');
+const dialog = document.querySelector<HTMLDialogElement>('#catalog-detail');
+const detailContent = document.querySelector<HTMLElement>('#catalog-detail-content');
+let currentPage = 1, totalPages = 1, requestController: AbortController | undefined;
+
+function posterUrl(path: string | null) { return path && path.startsWith('/') && !path.includes('..') ? 'https://image.tmdb.org/t/p/w500' + path : ''; }
+function addText(parent: HTMLElement, tag: string, className: string, value: string) {
+  const node = document.createElement(tag); node.className = className; node.textContent = value; parent.append(node); return node;
+}
+function renderItems(items: any[]) {
+  results!.replaceChildren();
+  for (const item of items) {
+    const button = document.createElement('button'); button.type = 'button'; button.className = 'catalog-item';
+    const src = posterUrl(item.poster_path);
+    if (src) {
+      const img = document.createElement('img'); img.className = 'catalog-poster'; img.src = src; img.alt = 'ملصق ' + (item.title_ar || item.title); img.loading = 'lazy'; img.decoding = 'async';
+      img.onerror = () => { const fallback = document.createElement('span'); fallback.className = 'catalog-poster-fallback'; fallback.textContent = item.title_ar || item.title; img.replaceWith(fallback); };
+      button.append(img);
+    } else addText(button, 'span', 'catalog-poster-fallback', item.title_ar || item.title);
+    const copy = document.createElement('span'); copy.className = 'catalog-item-copy';
+    addText(copy, 'span', 'catalog-item-title', item.title_ar || item.title);
+    const meta = [item.type === 'movie' ? 'فيلم' : 'مسلسل', item.year || 'سنة غير محددة', item.rating ? '★ ' + Number(item.rating).toFixed(1) : ''].filter(Boolean).join(' · ');
+    addText(copy, 'span', 'catalog-item-meta', meta); button.append(copy);
+    button.addEventListener('click', () => showDetails(item.id)); results!.append(button);
+  }
+}
+async function loadCatalog(page = 1) {
+  if (requestController) requestController.abort();
+  requestController = new AbortController(); currentPage = page;
+  status!.textContent = 'جارٍ البحث في قاعدة البيانات...'; results!.replaceChildren();
+  const params = new URLSearchParams(); new FormData(form!).forEach((value, key) => params.set(key, String(value)));
+  params.set('page', String(page)); params.set('limit', '18');
+  try {
+    const response = await fetch('/api/catalog?' + params.toString(), { signal: requestController.signal, headers: { accept: 'application/json' } });
+    const data = await response.json(); if (!response.ok) throw new Error(data.error || 'تعذر تحميل الكتالوج.');
+    renderItems(data.items || []); totalPages = Math.max(1, data.pages || 1);
+    count!.textContent = Number(data.total || 0).toLocaleString('ar-DZ') + ' عمل';
+    pageLabel!.textContent = currentPage + ' / ' + totalPages; prev!.disabled = currentPage <= 1; next!.disabled = currentPage >= totalPages;
+    status!.textContent = data.total ? 'اختر أي عمل لعرض تفاصيله وطاقمه.' : 'لا توجد نتائج مطابقة. جرّب تغيير كلمات البحث أو المرشحات.';
+  } catch (error: any) {
+    if (error.name === 'AbortError') return;
+    status!.textContent = error.message || 'حدث خطأ أثناء البحث.'; prev!.disabled = true; next!.disabled = true;
+  }
+}
+async function showDetails(id: number) {
+  detailContent!.textContent = 'جارٍ تحميل التفاصيل...'; dialog!.showModal();
+  try {
+    const response = await fetch('/api/catalog?id=' + encodeURIComponent(String(id)));
+    const data = await response.json(); if (!response.ok) throw new Error(data.error || 'تعذر تحميل التفاصيل.');
+    const item = data.title, body = document.createElement('div'); body.className = 'catalog-detail-body';
+    const src = posterUrl(item.poster_path); if (src) { const img = document.createElement('img'); img.src = src; img.alt = item.title_ar || item.title; body.append(img); }
+    const copy = document.createElement('div'); addText(copy, 'h2', '', item.title_ar || item.title);
+    addText(copy, 'div', 'catalog-item-meta', [item.type === 'movie' ? 'فيلم' : 'مسلسل', item.year || '', item.genres || ''].filter(Boolean).join(' · '));
+    addText(copy, 'p', '', item.overview_ar || 'لا يتوفر ملخص عربي لهذا العمل حالياً.');
+    if (item.rating) addText(copy, 'p', '', 'تقييم TMDB: ' + Number(item.rating).toFixed(1) + '/10 (' + Number(item.votes || 0).toLocaleString('ar-DZ') + ' صوت)');
+    if (data.credits?.length) addText(copy, 'div', 'catalog-credit-list', 'طاقم العمل: ' + data.credits.slice(0, 12).map((person: any) => person.kind === 'cast' ? person.name + (person.character ? ' بدور ' + person.character : '') : person.name + ' (' + (person.job || 'طاقم') + ')').join('، '));
+    body.append(copy); detailContent!.replaceChildren(body);
+  } catch (error: any) { detailContent!.textContent = error.message || 'تعذر تحميل التفاصيل.'; }
+}
+form?.addEventListener('submit', event => { event.preventDefault(); loadCatalog(1); });
+form?.addEventListener('reset', () => window.setTimeout(() => loadCatalog(1), 0));
+prev?.addEventListener('click', () => loadCatalog(currentPage - 1));
+next?.addEventListener('click', () => loadCatalog(currentPage + 1));
+document.querySelector('#catalog-detail-close')?.addEventListener('click', () => dialog?.close());
+dialog?.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+fetch('/api/catalog?mode=genres').then(response => response.json()).then(data => {
+  for (const genre of data.genres || []) { const option = document.createElement('option'); option.value = String(genre.id); option.textContent = genre.name_ar || genre.name_en || 'تصنيف'; genreSelect?.append(option); }
+}).catch(() => {});
+loadCatalog();
+</script>
