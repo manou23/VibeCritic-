@@ -12,5 +12,5 @@ assert.equal(selectExactRawgMatch([{ id: 1, name: 'Other Game' }], 'Game X', '20
 const complete = ['rawgSourceId: 123','rawgSourceUrl: "https://rawg.io/games/hades-ii"','rawgReleaseDate: "2025-09-25"','rawgGenres:','rawgPlatforms: []','rawgDevelopers: []'].join('\n');
 assert.equal(hasCompleteRawgMetadata(complete), true);
 assert.equal(hasCompleteRawgMetadata(complete.replace('https://rawg.io/games/hades-ii', 'https://attacker.example/games/hades-ii')), false);
-assert.equal(hasCompleteRawgMetadata(complete.replace('rawgDevelopers: []\n', '')), false);
+assert.equal(hasCompleteRawgMetadata(complete.replace('rawgDevelopers: []', '')), false);
 console.log('RAWG backfill utility tests passed: exact identity, ambiguity rejection, year matching, provenance URL and idempotent metadata detection.');
