@@ -14,6 +14,7 @@ backdrop: "https://image.tmdb.org/t/p/w780/jgAZYiuRV37pCxmhx8NTdhE36RL.jpg"
 youtubeVideoId: "ga0iTWXCGa0"
 youtubeVideoTitle: "Official Trailer [Dubbed]"
 reviewMode: limited
+score: 7.5
 pros:
   - "فكرة أصلية مستوحاة من أسلوب أرسين لوبين بصياغة فرنسية معاصرة"
   - "أداء عمر سي يمنح أسان ديوب حضوراً يجمع الذكاء وخفة الظل والبعد الإنساني"
