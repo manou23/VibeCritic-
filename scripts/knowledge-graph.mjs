@@ -5,17 +5,20 @@ const graphPath = 'data/knowledge-graph.json';
 const MAX_ENTITIES = 2500;
 const MAX_RELATIONS = 6000;
 const MAX_EVIDENCE_PER_RELATION = 4;
+const MAX_OBSERVATIONS = 12000;
+const MAX_CONFLICTS = 2000;
+const SOURCE_TRUST = Object.freeze({ TMDB: 0.9, IGDB: 0.9, RAWG: 0.82 });
 const clean = value => String(value ?? '').replace(/[\r\n]+/g, ' ').trim();
 
 function emptyGraph() {
-  return { version: 1, entities: [], relations: [], stats: { works: 0, people: 0, companies: 0, concepts: 0, relations: 0 }, updatedAt: null };
+  return { version: 2, entities: [], relations: [], observations: [], conflicts: [], stats: { works: 0, people: 0, companies: 0, concepts: 0, relations: 0, observations: 0, conflicts: 0 }, updatedAt: null };
 }
 
 async function loadGraph() {
   try {
     const saved = JSON.parse(await fs.readFile(graphPath, 'utf8'));
-    if (saved?.version === 1 && Array.isArray(saved.entities) && Array.isArray(saved.relations)) {
-      return { ...emptyGraph(), ...saved, entities: saved.entities.slice(-MAX_ENTITIES), relations: saved.relations.slice(-MAX_RELATIONS) };
+    if ((saved?.version === 1 || saved?.version === 2) && Array.isArray(saved.entities) && Array.isArray(saved.relations)) {
+      return { ...emptyGraph(), ...saved, version: 2, entities: saved.entities.slice(-MAX_ENTITIES), relations: saved.relations.slice(-MAX_RELATIONS), observations: Array.isArray(saved.observations) ? saved.observations.slice(-MAX_OBSERVATIONS) : [], conflicts: Array.isArray(saved.conflicts) ? saved.conflicts.slice(-MAX_CONFLICTS) : [] };
     }
   } catch {}
   return emptyGraph();
@@ -60,6 +63,80 @@ function addRelation(graph, from, relation, to, provenance) {
   }
 }
 
+function normalizedValue(value) {
+  if (Array.isArray(value)) return [...new Set(value.map(clean).filter(Boolean))].sort().join(' | ');
+  return clean(value);
+}
+
+function observationTrust(source) {
+  return SOURCE_TRUST[String(source || '').toUpperCase()] || 0.5;
+}
+
+function recordObservation(graph, workId, field, value, provenance) {
+  const normalized = normalizedValue(value);
+  if (!normalized || normalized.length > 1200 || !provenance.source || provenance.source === 'unknown') return;
+  const now = provenance.observedAt || new Date().toISOString();
+  let observation = graph.observations.find(entry =>
+    entry.workId === workId && entry.field === field &&
+    entry.source === provenance.source && entry.normalizedValue === normalized
+  );
+  if (observation) {
+    observation.lastObservedAt = now;
+    observation.observations = (Number(observation.observations) || 1) + 1;
+    if (provenance.url) observation.url = provenance.url;
+  } else {
+    observation = {
+      id: workId + '|' + field + '|' + provenance.source + '|' + normalized.slice(0, 100),
+      workId, field, value: Array.isArray(value) ? value.map(clean).filter(Boolean).slice(0, 30) : clean(value),
+      normalizedValue: normalized, source: provenance.source, url: provenance.url || null,
+      trust: observationTrust(provenance.source), firstObservedAt: now, lastObservedAt: now, observations: 1
+    };
+    graph.observations.push(observation);
+  }
+
+  const peers = graph.observations.filter(entry =>
+    entry.workId === workId && entry.field === field && entry.source !== provenance.source
+  );
+  for (const peer of peers) {
+    if (peer.normalizedValue === normalized) continue;
+    const pair = [peer.id, observation.id].sort();
+    const existing = graph.conflicts.find(entry => entry.observationIds?.[0] === pair[0] && entry.observationIds?.[1] === pair[1]);
+    if (!existing) graph.conflicts.push({
+      id: pair.join('::'), workId, field, observationIds: pair,
+      status: 'unresolved', detectedAt: now,
+      note: 'مصدران يقدمان قيمتين مختلفتين؛ لا تُحسم المفاضلة دون فحص حداثة المصدر وسياقه.'
+    });
+  }
+  const fieldHistory = graph.observations.filter(entry => entry.workId === workId && entry.field === field);
+  if (fieldHistory.length > 12) {
+    const keep = new Set(fieldHistory.slice(-12).map(entry => entry.id));
+    graph.observations = graph.observations.filter(entry => entry.workId !== workId || entry.field !== field || keep.has(entry.id));
+  }
+  graph.observations = graph.observations.slice(-MAX_OBSERVATIONS);
+  graph.conflicts = graph.conflicts.slice(-MAX_CONFLICTS);
+}
+
+function recordItemObservations(graph, work, item, provenanceBase) {
+  const metadata = item.metadata && typeof item.metadata === 'object' ? item.metadata : {};
+  const fields = [
+    ['release_date', item.date],
+    ['genres', item.genres || metadata.genres],
+    ['platforms', metadata.platforms || item.platforms],
+    ['developers', metadata.developers || item.developers],
+    ['directors', metadata.directors],
+    ['creators', metadata.creators],
+    ['production_companies', metadata.productionCompanies],
+    ['cast', metadata.cast],
+    ['runtime', metadata.runtime],
+    ['seasons', metadata.seasons],
+    ['episodes', metadata.episodes]
+  ];
+  for (const [field, value] of fields) {
+    if (value == null || value === '' || (Array.isArray(value) && !value.length)) continue;
+    recordObservation(graph, work.id, field, value, provenanceBase);
+  }
+}
+
 function names(value) {
   if (!Array.isArray(value)) return [];
   return value.map(entry => typeof entry === 'string' ? entry : entry?.name).filter(value => typeof value === 'string' && value.trim());
@@ -69,18 +146,19 @@ export async function recordKnowledge(item) {
   if (!item?.id || !item?.type || !item?.name) return null;
   const graph = await loadGraph();
   const metadata = item.metadata && typeof item.metadata === 'object' ? item.metadata : {};
-  const source = clean(item.source || 'unknown');
+  const source = clean(item.source || '');
   const provenanceBase = { source, url: clean(item.sourceUrl || '') || null, observedAt: new Date().toISOString() };
   const work = upsertEntity(graph, 'work', item.type + ':' + item.id + ':' + item.name, source);
   if (!work) return null;
   work.externalId = String(item.id);
   work.workType = item.type;
   work.releaseDate = clean(item.date || '') || null;
+  recordItemObservations(graph, work, item, provenanceBase);
 
   const addMany = (kind, relation, values, field) => {
     for (const name of names(values).slice(0, 30)) {
       const entity = upsertEntity(graph, kind, name, source);
-      addRelation(graph, work.id, relation, entity?.id, { ...provenanceBase, field });
+      if (source) addRelation(graph, work.id, relation, entity?.id, { ...provenanceBase, field });
     }
   };
 
@@ -94,7 +172,7 @@ export async function recordKnowledge(item) {
   for (const castEntry of names(metadata.cast).slice(0, 20)) {
     const actor = castEntry.split(' بدور ')[0].trim();
     const person = upsertEntity(graph, 'person', actor, source);
-    addRelation(graph, work.id, 'features', person?.id, { ...provenanceBase, field: 'cast' });
+    if (source) addRelation(graph, work.id, 'features', person?.id, { ...provenanceBase, field: 'cast' });
   }
 
   if (Array.isArray(metadata.similar)) {
@@ -121,7 +199,9 @@ export async function recordKnowledge(item) {
     people: graph.entities.filter(entry => entry.kind === 'person').length,
     companies: graph.entities.filter(entry => entry.kind === 'company').length,
     concepts: graph.entities.filter(entry => entry.kind === 'concept').length,
-    relations: graph.relations.length
+    relations: graph.relations.length,
+    observations: graph.observations.length,
+    conflicts: graph.conflicts.filter(entry => entry.status === 'unresolved').length
   };
   graph.updatedAt = new Date().toISOString();
   await fs.mkdir(path.dirname(graphPath), { recursive: true });
@@ -159,11 +239,17 @@ export async function buildKnowledgeContext(item) {
     '- صلة مع «' + entry.name + '» عبر عنصر موثق مشترك: ' + [...entry.links].slice(0, 3).join('، ') + '. هذه صلة بيانات وليست حكماً بتشابه الجودة أو التأثير.'
   );
 
-  if (!directLines.length && !relatedLines.length) return '';
+  const observations = graph.observations.filter(entry => entry.workId === workId);
+  const observationLines = observations.slice(-12).map(entry => '- ' + entry.field + ': ' + (Array.isArray(entry.value) ? entry.value.join('، ') : entry.value) + ' (المصدر: ' + entry.source + '؛ الثقة المصدرية الإرشادية: ' + Math.round(entry.trust * 100) + '%؛ رُصد آخر مرة: ' + entry.lastObservedAt + ').');
+  const unresolved = graph.conflicts.filter(entry => entry.workId === workId && entry.status === 'unresolved');
+  const conflictLines = unresolved.slice(0, 6).map(entry => '- تعارض غير محسوم في ' + entry.field + ': توجد قيم من مصادر مختلفة. لا تعتمد أياً منها كحقيقة نهائية قبل التحقق.');
+  if (!directLines.length && !relatedLines.length && !observationLines.length && !conflictLines.length) return '';
   return [
     'سياق الذاكرة المعرفية الموثق (استعمله للسياق فقط، ولا تستنتج تأثيراً أو اقتباساً دون دليل):',
+    ...observationLines,
+    ...conflictLines,
     ...directLines,
     ...relatedLines,
-    'افصل دائماً بين علاقة المصدر المعلنة، والعنصر المشترك في البيانات، والاستنتاج النقدي الذي يحتاج دليلاً مستقلاً.'
+    'افصل دائماً بين علاقة المصدر المعلنة، والعنصر المشترك في البيانات، والاستنتاج النقدي الذي يحتاج دليلاً مستقلاً. درجات الثقة المصدرية مؤشرات إرشادية داخلية وليست احتمالاً إحصائياً لصحة كل معلومة.'
   ].join('\n');
 }

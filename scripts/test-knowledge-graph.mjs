@@ -9,6 +9,14 @@ const temporaryDirectory = await fs.mkdtemp(path.join(os.tmpdir(), 'vibecritic-k
 
 try {
   process.chdir(temporaryDirectory);
+  await fs.mkdir('data', { recursive: true });
+  await fs.writeFile('data/knowledge-graph.json', JSON.stringify({
+    version: 1,
+    entities: [{ id: 'concept:legacy', kind: 'concept', name: 'Legacy concept', sources: ['TMDB'] }],
+    relations: [{ id: 'legacy-edge', from: 'work:legacy', type: 'has_genre', to: 'concept:legacy', evidence: [{ source: 'TMDB', field: 'genres', observedAt: '2026-01-01T00:00:00.000Z' }] }],
+    stats: { works: 0, people: 0, companies: 0, concepts: 1, relations: 1 },
+    updatedAt: '2026-01-01T00:00:00.000Z'
+  }, null, 2));
   const moduleUrl = pathToFileURL(path.join(originalDirectory, 'scripts/knowledge-graph.mjs')).href;
   const { recordKnowledge, buildKnowledgeContext } = await import(moduleUrl);
 
@@ -41,6 +49,15 @@ try {
   };
   await recordKnowledge(secondWork);
 
+  const conflictingObservation = {
+    ...firstWork,
+    source: 'IGDB',
+    sourceUrl: 'https://www.igdb.com/games/101',
+    genres: ['Science Fiction', 'Adventure'],
+    metadata: { directors: ['Different Director'], platforms: ['PC'] }
+  };
+  await recordKnowledge(conflictingObservation);
+
   const context = await buildKnowledgeContext(firstWork);
   assert.match(context, /Science Fiction/);
   assert.match(context, /Related Film/);
@@ -49,11 +66,21 @@ try {
   assert.ok(context.includes('\n'), 'Knowledge context should use real line breaks.');
 
   const graph = JSON.parse(await fs.readFile('data/knowledge-graph.json', 'utf8'));
-  assert.equal(graph.version, 1);
+  assert.equal(graph.version, 2);
+  assert.ok(graph.entities.some(entity => entity.id === 'concept:legacy'), 'Version 1 entities should survive migration.');
+  assert.ok(graph.relations.some(edge => edge.id === 'legacy-edge'), 'Version 1 relations should survive migration.');
   assert.ok(graph.stats.works >= 3);
   assert.ok(graph.entities.some(entity => entity.id === 'work:movie-101-first-film'), 'Unicode-safe slug should produce a stable work id.');
   assert.ok(graph.relations.every(edge => Array.isArray(edge.evidence) && edge.evidence.length > 0));
   assert.ok(graph.relations.some(edge => edge.type === 'source_lists_as_similar' && edge.evidence[0].source === 'TMDB'));
+  assert.ok(graph.observations.some(entry => entry.workId === 'work:movie-101-first-film' && entry.field === 'genres' && entry.source === 'TMDB'), 'Source observations should be retained with provenance.');
+  assert.ok(graph.observations.some(entry => entry.workId === 'work:movie-101-first-film' && entry.field === 'genres' && entry.source === 'IGDB'), 'A second source should be retained separately.');
+  assert.ok(graph.conflicts.some(entry => entry.workId === 'work:movie-101-first-film' && entry.field === 'genres' && entry.status === 'unresolved'), 'Different values from distinct sources should create an unresolved conflict.');
+  assert.match(context, /تعارض غير محسوم/, 'Knowledge context should warn about unresolved source conflicts.');
+  assert.match(context, /الثقة المصدرية الإرشادية/, 'Knowledge context should expose source trust as a heuristic, not verified truth.');
+  assert.ok(graph.observations.every(entry => entry.source && entry.source !== 'unknown'), 'Observations must never claim unknown provenance.');
+  assert.equal(graph.stats.observations, graph.observations.length);
+  assert.equal(graph.stats.conflicts, graph.conflicts.filter(entry => entry.status === 'unresolved').length);
 
   console.log('Knowledge graph tests passed.');
 } finally {
