@@ -58,6 +58,7 @@ function makeCandidate(item, review) {
     subScores: review.scores || {},
     reasoning: review.reasoning && typeof review.reasoning === 'object' ? review.reasoning : null,
     selfEvaluation: review.selfEvaluation && typeof review.selfEvaluation === 'object' ? review.selfEvaluation : null,
+    criticalQuestions: review.criticalQuestions && typeof review.criticalQuestions === 'object' ? review.criticalQuestions : null,
     strengths: Array.isArray(review.pros) ? review.pros.slice(0, 4).map(clean) : [],
     limitations: Array.isArray(review.cons) ? review.cons.slice(0, 4).map(clean) : [],
     sectionHeadings: [...body.matchAll(/^###\s+(.+)$/gmu)].map(match => clean(match[1])).slice(0, 8),
