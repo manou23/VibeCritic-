@@ -1,6 +1,8 @@
 ---
 title: "كلير أوبسكور: الرحلة 33"
 originalTitle: "Clair Obscur: Expedition 33"
+poster: "https://m.media-amazon.com/images/M/MV5BZGViZWQ4MGMtZTQwZS00NDEwLWE2MmQtNWZiM2VlMzRlNmJkXkEyXkFqcGc%40._V1_.jpg"
+backdrop: "https://www.gamereactor.se/media/20/clairobscure_4272083b.jpg"
 headline: "Clair Obscur: Expedition 33 — كيف يحوّل القتال القائم على الأدوار إلى حوار مع اللاعب"
 hook: "تستمد اللعبة تميزها من جمعها بين التخطيط الهادئ ورد الفعل اللحظي؛ فهي لا تطلب من اللاعب اختيار الأمر الصحيح فقط، بل أن يقرأ توقيت العالم ويتحمل نتيجة قراره."
 summary: "لعبة تقمص أدوار يابانية الطابع من تطوير Sandfall Interactive، تدور في عالم مستوحى من حقبة Belle Époque، وتجمع القتال القائم على الأدوار بآليات توقيت تفاعلية واستكشاف جماعي."
