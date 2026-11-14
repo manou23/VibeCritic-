@@ -124,6 +124,7 @@ function recordObservation(graph, workId, field, value, provenance) {
 
 function recordItemObservations(graph, work, item, provenanceBase) {
   const metadata = item.metadata && typeof item.metadata === 'object' ? item.metadata : {};
+  const catalogBase = metadata.catalogContext?.base || {};
   const fields = [
     ['release_date', item.date],
     ['genres', item.genres || metadata.genres],
@@ -136,6 +137,19 @@ function recordItemObservations(graph, work, item, provenanceBase) {
     ['runtime', metadata.runtime],
     ['seasons', metadata.seasons],
     ['episodes', metadata.episodes],
+    ['catalog_original_title', catalogBase.originalTitle],
+    ['catalog_overview', catalogBase.overview],
+    ['catalog_release_date', catalogBase.releaseDate],
+    ['catalog_year', catalogBase.year],
+    ['catalog_runtime', catalogBase.runtime],
+    ['catalog_status', catalogBase.status],
+    ['catalog_original_language', catalogBase.originalLanguage],
+    ['catalog_rating', catalogBase.rating],
+    ['catalog_vote_count', catalogBase.votes],
+    ['catalog_genres', catalogBase.genres],
+    ['catalog_cast', catalogBase.cast],
+    ['catalog_directors', catalogBase.directors],
+    ['catalog_creators', catalogBase.creators],
     ['catalog_related_works', (metadata.catalogContext?.relatedWorks || []).slice(0, 6).map(entry =>
       clean(entry?.title) + (entry?.year ? ' (' + entry.year + ')' : '') +
       ' [genres:' + (Number(entry?.sharedGenreCount) || 0) + ', people:' + (Number(entry?.sharedPersonCount) || 0) + ']'
@@ -143,9 +157,12 @@ function recordItemObservations(graph, work, item, provenanceBase) {
   ];
   for (const [field, value] of fields) {
     if (value == null || value === '' || (Array.isArray(value) && !value.length)) continue;
-    const fieldProvenance = item.fieldSources?.[field] && typeof item.fieldSources[field] === 'object'
-      ? { ...provenanceBase, ...item.fieldSources[field] }
-      : provenanceBase;
+    const isCatalogFact = field.startsWith('catalog_') && Boolean(metadata.catalogContext?.sourceUrl);
+    const fieldProvenance = isCatalogFact
+      ? { source: 'VIBECRITIC_D1', url: metadata.catalogContext.sourceUrl, observedAt: metadata.catalogContext.observedAt }
+      : item.fieldSources?.[field] && typeof item.fieldSources[field] === 'object'
+        ? { ...provenanceBase, ...item.fieldSources[field] }
+        : provenanceBase;
     recordObservation(graph, work.id, field, value, { ...fieldProvenance, field });
   }
 }
