@@ -48,7 +48,7 @@ export function assessCriticalQuestions(item, options = {}) {
   const questions = set.map(definition => {
     const evidence = preview ? [] : validatedEvidence(item, definition.evidenceKey);
     const domains = [...new Set(evidence.map(entry => entry.domain))];
-    const status = domains.length >= 2 ? 'corroborated' : evidence.length ? 'single-source' : 'unanswered';
+    const status = domains.length >= 2 ? 'multi-domain' : evidence.length ? 'single-source' : 'unanswered';
     return {
       id: definition.id,
       area: definition.area,
@@ -62,18 +62,18 @@ export function assessCriticalQuestions(item, options = {}) {
       evidence: evidence.map(({ source, domain, claim, url, observedAt }) => ({ source, domain, claim, url, observedAt }))
     };
   });
-  const corroborated = questions.filter(question => question.status === 'corroborated').length;
+  const multi-domain = questions.filter(question => question.status === 'multi-domain').length;
   const singleSource = questions.filter(question => question.status === 'single-source').length;
   return {
     version: 1,
     workType: type,
     mode: preview ? 'preview' : 'review',
     questionCount: questions.length,
-    corroborated,
+    multi-domain,
     singleSource,
-    unanswered: questions.length - corroborated - singleSource,
+    unanswered: questions.length - multi-domain - singleSource,
     questions,
-    principle: 'السؤال النقدي ليس حقيقة. مصدر واحد لا يكفي للت corroboration؛ وغياب الدليل لا يثبت وجود عيب.'
+    principle: 'السؤال النقدي ليس حقيقة. مصدر واحد لا يكفي للتعاضد؛ وغياب الدليل لا يثبت وجود عيب.'
   };
 }
 
@@ -92,7 +92,7 @@ export function formatCriticalQuestionContext(report) {
   });
   return [
     'محرك الأسئلة النقدية V1:',
-    'هذه أسئلة اختبار وليست استنتاجات أو أحكاماً جاهزة. عدد الأسئلة: ' + report.questionCount + '؛ مدعوم بمصدرين مستقلين: ' + report.corroborated + '؛ مصدر واحد: ' + report.singleSource + '؛ بلا دليل مباشر: ' + report.unanswered + '.',
+    'هذه أسئلة اختبار وليست استنتاجات أو أحكاماً جاهزة. عدد الأسئلة: ' + report.questionCount + '؛ مدعوم بنطاقين مختلفين: ' + report.multi-domain + '؛ مصدر واحد: ' + report.singleSource + '؛ بلا دليل مباشر: ' + report.unanswered + '.',
     ...lines,
     'لا تجب عن سؤال بلا دليل. المصدر الواحد يتيح الإشارة إلى معلومة منسوبة إليه فقط ولا يثبتها استقلالياً. لا تحوّل السؤال غير المحسوم إلى نقطة سلبية، ولا تخترع إجابة لسد فراغ المقال.',
     'إذا كانت المراجعة استباقية، ناقش ما أعلن رسمياً وما بقي مجهولاً فقط، ولا تصف تجربة لم تحدث.'
