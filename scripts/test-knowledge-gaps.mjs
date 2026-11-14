@@ -3,7 +3,7 @@ import { assessKnowledgeGaps, formatKnowledgeGapContext } from './knowledge-gaps
 
 const upcomingGame = assessKnowledgeGaps({
   id: 'gta6', type: 'game', name: 'Grand Theft Auto VI',
-  date: '2027-11-19', description: 'A sufficiently detailed official synopsis describing the setting, protagonists, and premise of this upcoming game.',
+  date: '2027-11-19', description: 'A sufficiently detailed official synopsis describing the setting, protagonists, central conflict, major locations, and the announced premise of this upcoming game without making claims about gameplay quality or performance.',
   source: 'RAWG', sourceUrl: 'https://rawg.io/games/gta6',
   genres: ['Action', 'Adventure'], platforms: ['PlayStation 5', 'Xbox Series X'],
   developers: ['Rockstar Games'], rating: 0, sourceVoteCount: 0
