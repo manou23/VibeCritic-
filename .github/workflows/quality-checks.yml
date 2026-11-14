@@ -33,10 +33,12 @@ jobs:
         run: |
           node --check scripts/generate-reviews.mjs
           node --check scripts/knowledge-graph.mjs
+          node --check scripts/source-evidence.mjs
           node --check scripts/editorial-reasoning.mjs
           node --check scripts/test-editorial-reasoning.mjs
           node --check scripts/test-knowledge-graph.mjs
           npm run test:knowledge-graph
+          npm run test:source-evidence
           npm run test:editorial-reasoning
           node --check scripts/backfill-arabic-titles.mjs
           node --check scripts/backfill-game-platforms.mjs
