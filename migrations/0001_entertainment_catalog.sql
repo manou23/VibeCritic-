@@ -1,6 +1,4 @@
 -- VibeCritic entertainment catalog schema (Cloudflare D1 / SQLite)
-PRAGMA foreign_keys = ON;
-
 CREATE TABLE IF NOT EXISTS titles (
   id INTEGER PRIMARY KEY,
   tmdb_id INTEGER NOT NULL,
