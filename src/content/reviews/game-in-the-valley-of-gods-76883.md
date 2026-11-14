@@ -13,6 +13,7 @@ backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/co2eyk.jpg"
 youtubeVideoId: "p3a-USWnh30"
 youtubeVideoTitle: "In the Valley of Gods - Official Reveal Trailer (2018)"
 reviewMode: preview
+score: 6.5
 trendRank: 12
 trendSource: "IGDB"
 trendPopularity: 62
