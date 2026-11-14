@@ -41,9 +41,9 @@ cast:
   - "Tadanobu Asano"
   - "Takehiro Hira"
 creator: "Rachel Kondo و Justin Marks"
-sourceName: "FX / The Walt Disney Company"
-sourceId: "shogun-2024"
-sourceUrl: "https://thewaltdisneycompany.com/news/behind-the-scenes-of-shogun-fxs-most-ambitious-production-in-history/"
+sourceName: "TMDB"
+sourceId: "126308"
+sourceUrl: "https://www.themoviedb.org/tv/126308"
 aiGenerated: false
 ---
 
