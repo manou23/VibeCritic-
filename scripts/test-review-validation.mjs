@@ -19,12 +19,12 @@ function candidate(review) {
   };
 }
 
-const valid = candidate(reviewWithSections([160, 160, 160, 160, 160]));
+const valid = candidate(reviewWithSections([130, 130, 130, 130, 130]));
 assert.ok(validateGeneratedReview(valid).review.length >= 3200);
 
 assert.throws(
-  () => validateGeneratedReview(candidate(reviewWithSections([146, 146, 146, 146, 146]))),
-  /750 كلمة/
+  () => validateGeneratedReview(candidate(reviewWithSections([120, 120, 120, 120, 120]))),
+  /650 كلمة/
 );
 assert.throws(
   () => validateGeneratedReview(candidate(reviewWithSections([51, 180, 180, 180, 180]))),
@@ -34,4 +34,4 @@ assert.throws(
   () => validateGeneratedReview(candidate(reviewWithSections([200, 200, 200, 200]))),
   /المحاور النقدية الخمسة/
 );
-console.log('Review validation tests passed: word count, section count, and per-section minimum are enforced.');
+console.log('Review validation tests passed: 650-word minimum, section count, and per-section minimum are enforced.');
