@@ -282,6 +282,7 @@ export async function recordEditorialReview(review) {
   const graph = await loadGraph();
   graph.editorialReviews = Array.isArray(graph.editorialReviews) ? graph.editorialReviews : [];
   graph.editorialRelations = Array.isArray(graph.editorialRelations) ? graph.editorialRelations : [];
+  const hasFinalRating = !['preview', 'limited'].includes(review.reviewMode || 'review');
   const record = {
     key: clean(review.key).slice(0, 180),
     sourceId: clean(review.sourceId).slice(0, 120) || null,
@@ -291,8 +292,8 @@ export async function recordEditorialReview(review) {
     headline: clean(review.headline).slice(0, 300) || null,
     summary: clean(review.summary).slice(0, 700) || null,
     verdict: clean(review.verdict).slice(0, 1400) || null,
-    score: Number.isFinite(Number(review.score)) ? Number(review.score) : null,
-    scores: Object.fromEntries(['storyScore','visualsScore','soundScore','pacingScore'].filter(key => Number.isFinite(Number(review.scores?.[key]))).map(key => [key, Number(review.scores[key])])),
+    score: hasFinalRating && Number.isFinite(Number(review.score)) ? Number(review.score) : null,
+    scores: hasFinalRating ? Object.fromEntries(['storyScore','visualsScore','soundScore','pacingScore'].filter(key => Number.isFinite(Number(review.scores?.[key]))).map(key => [key, Number(review.scores[key])])) : {},
     tags: [...new Set((Array.isArray(review.tags) ? review.tags : []).map(clean).filter(Boolean))].slice(0, 16),
     pros: (Array.isArray(review.pros) ? review.pros : []).map(clean).filter(Boolean).slice(0, 5),
     cons: (Array.isArray(review.cons) ? review.cons : []).map(clean).filter(Boolean).slice(0, 5),
