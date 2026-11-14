@@ -112,6 +112,48 @@ const invalidSourceCache = await onRequestGet({
 });
 assert.equal(invalidSourceCache.status, 400);
 
+const libraryResponse = await onRequestGet({
+  request: new Request('https://vibecritic.pages.dev/api/catalog?mode=editorial-library&type=movie'),
+  env: { ENTERTAINMENT_DB: {
+    prepare(sql) {
+      if (sql.includes("work_type='all'")) {
+        return { async all() { return { results: [{ slug: 'evidence-before-opinion', title: 'من المعلومة إلى الحجة', work_type: 'all', prompt_excerpt: 'اربط الحقيقة بالتفسير والأثر.' }] }; } };
+      }
+      return { bind(...values) {
+        assert.deepEqual(values, ['movie']);
+        return { async all() { return { results: [{ slug: 'screenplay-causality', title: 'السيناريو', work_type: 'movie', prompt_excerpt: 'اختبر السببية.' }] }; } };
+      } };
+    }
+  } }
+});
+assert.equal(libraryResponse.status, 200);
+const libraryPayload = await libraryResponse.json();
+assert.equal(libraryPayload.available, true);
+assert.equal(libraryPayload.articles.length, 2);
+assert.equal(libraryPayload.articles[0].work_type, 'all');
+assert.equal(libraryPayload.articles[1].work_type, 'movie');
+
+const libraryArticleResponse = await onRequestGet({
+  request: new Request('https://vibecritic.pages.dev/api/catalog?mode=editorial-library&type=movie&slug=screenplay-causality'),
+  env: { ENTERTAINMENT_DB: {
+    prepare(sql) {
+      assert.ok(sql.includes('SELECT slug,title,work_type,topic,summary,body'));
+      return { bind(...values) {
+        assert.deepEqual(values, ['screenplay-causality']);
+        return { async first() { return { slug: 'screenplay-causality', title: 'السيناريو', work_type: 'movie', body: 'مقال مرجعي كامل' }; } };
+      } };
+    }
+  } }
+});
+assert.equal(libraryArticleResponse.status, 200);
+assert.equal((await libraryArticleResponse.json()).article.body, 'مقال مرجعي كامل');
+
+const invalidLibrary = await onRequestGet({
+  request: new Request('https://vibecritic.pages.dev/api/catalog?mode=editorial-library&type=unknown'),
+  env: { ENTERTAINMENT_DB: db }
+});
+assert.equal(invalidLibrary.status, 400);
+
 const invalidContext = await onRequestGet({
   request: new Request('https://vibecritic.pages.dev/api/catalog?mode=editorial-context&tmdb_id=x&type=movie'),
   env: { ENTERTAINMENT_DB: db }

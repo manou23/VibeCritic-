@@ -48,6 +48,8 @@ jobs:
         run: |
           npx --yes wrangler@4 d1 execute entertainment-db --remote --file=migrations/0001_entertainment_catalog.sql
           npx --yes wrangler@4 d1 execute entertainment-db --remote --file=migrations/0002_editorial_cache.sql
+          npx --yes wrangler@4 d1 execute entertainment-db --remote --file=migrations/0003_source_cache.sql
+          npx --yes wrangler@4 d1 execute entertainment-db --remote --file=migrations/0004_editorial_reference_library.sql
 
       - name: Purge expired TMDB cache entries
         env:

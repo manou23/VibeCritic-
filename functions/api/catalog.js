@@ -16,6 +16,35 @@ export async function onRequestGet({ request, env }) {
   if (!db) return json({ error: 'كتالوج الترفيه غير مهيأ على الخادم.' }, 503);
   try {
     const params = new URL(request.url).searchParams;
+    if (params.get('mode') === 'editorial-library') {
+      const type = params.get('type');
+      const slug = params.get('slug');
+      if (!['movie', 'tv', 'game'].includes(type || '')) {
+        return json({ error: 'نوع العمل غير صالح.' }, 400);
+      }
+      if (slug) {
+        const article = await db.prepare(
+          'SELECT slug,title,work_type,topic,summary,body,authoring,version,updated_at FROM editorial_reference_articles WHERE slug=? AND active=1 LIMIT 1'
+        ).bind(slug).first();
+        if (!article || (article.work_type !== 'all' && article.work_type !== type)) {
+          return json({ available: false, reason: 'not-found' }, 404);
+        }
+        return json({ available: true, article });
+      }
+      const general = await db.prepare(
+        "SELECT slug,title,work_type,topic,summary,prompt_excerpt,authoring,version,updated_at FROM editorial_reference_articles WHERE active=1 AND work_type='all' ORDER BY priority DESC,slug LIMIT 1"
+      ).all();
+      const specific = await db.prepare(
+        'SELECT slug,title,work_type,topic,summary,prompt_excerpt,authoring,version,updated_at FROM editorial_reference_articles WHERE active=1 AND work_type=? ORDER BY priority DESC,slug LIMIT 2'
+      ).bind(type).all();
+      const articles = [...(general.results || []), ...(specific.results || [])];
+      return json({
+        available: articles.length > 0,
+        source: 'VibeCritic manually authored editorial reference library',
+        workType: type,
+        articles
+      });
+    }
     if (params.get('mode') === 'genres') return json({ genres: await getGenres(db) });
     if (params.get('mode') === 'editorial-cache') {
       const tmdbId = params.get('tmdb_id');
