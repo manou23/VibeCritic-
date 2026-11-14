@@ -13,6 +13,7 @@ poster: "https://image.tmdb.org/t/p/w500/21WZuy8RddUbBv6oPaILMFN4pu9.jpg"
 backdrop: "https://image.tmdb.org/t/p/w780/ncm7djsVTHQQMX2HEbEVxMUFchG.jpg"
 youtubeVideoId: "-mnTITqqiT0"
 youtubeVideoTitle: "Official Trailer 2"
+reviewMode: limited
 score: 6.5
 pros:
   - "فكرة الكيان الذي يقلد الأم تستثمر الخوف من المألوف"
