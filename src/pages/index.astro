@@ -7,10 +7,14 @@ import trending from '../data/trending.json';
 const reviews=(await getCollection('reviews')).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
 const byType={game:reviews.filter(x=>x.data.type==='game'),series:reviews.filter(x=>x.data.type==='series'),movie:reviews.filter(x=>x.data.type==='movie')};
 // اعرض الترندات الموثوقة حتى عندما لم تُنشر مراجعة VibeCritic للعمل بعد.
-const trendReviews=trending.filter(item=>['مرتفع','متوسط'].includes(item.trendConfidence)).map(item=>{
- const review=reviews.find(entry=>entry.data.type===item.type&&entry.data.sourceId===item.sourceId);
- return {...item,title:review?.data.title||item.title,summary:review?.data.summary||item.summary,poster:optimizeImage(item.poster),backdrop:optimizeImage(item.backdrop||item.poster,'backdrop'),review,href:review?url(`reviews/${review.id}/`):item.sourceUrl,external:!review};
-}).filter(item=>item.href).slice(0,9);
+const gta6Preview=reviews.find(review=>review.data.sourceId==='gta-vi-2026');
+const trendReviews=[
+ ...(gta6Preview?[{id:'gta-vi-2026',sourceId:'gta-vi-2026',type:'game',title:gta6Preview.data.title,summary:gta6Preview.data.summary,poster:optimizeImage(gta6Preview.data.poster),backdrop:optimizeImage(gta6Preview.data.backdrop||gta6Preview.data.poster,'backdrop'),source:'قراءة استباقية',review:gta6Preview,href:url(`reviews/${gta6Preview.id}/`),external:false,preview:true}]:[]),
+ ...trending.filter(item=>item.sourceId!=='gta-vi-2026'&&['مرتفع','متوسط'].includes(item.trendConfidence)).map(item=>{
+  const review=reviews.find(entry=>entry.data.type===item.type&&entry.data.sourceId===item.sourceId);
+  return {...item,title:review?.data.title||item.title,summary:review?.data.summary||item.summary,poster:optimizeImage(item.poster),backdrop:optimizeImage(item.backdrop||item.poster,'backdrop'),review,href:review?url(`reviews/${review.id}/`):item.sourceUrl,external:!review,preview:false};
+ }).filter(item=>item.href)
+].slice(0,9);
 const spotlight=trendReviews[0]||null;
 const todayInAlgeria=new Intl.DateTimeFormat('en-CA',{timeZone:'Africa/Algiers'}).format(new Date());
 const isUpcomingReview=review=>{
@@ -21,19 +25,6 @@ const topRated=[...reviews].filter(review=>review.data.score>0&&!isUpcomingRevie
 const upcoming=reviews.filter(isUpcomingReview).sort((a,b)=>String(a.data.releaseDate||'').localeCompare(String(b.data.releaseDate||''))).slice(0,8);
 ---
 <Base title="اكتشف عالم الترفيه" description="اكتشف أحدث الأفلام والمسلسلات والألعاب، تابع الترندات العالمية واقرأ مراجعات VibeCritic." image={spotlight?.backdrop || spotlight?.poster}>
-<section class="wrap gta6-feature" aria-label="إعلان القراءة الاستباقية للعبة GTA VI">
- <a class="gta6-feature-link" href={url('reviews/game-grand-theft-auto-vi-gta6-2026/')}>
-  <img class="gta6-feature-image" src="https://www.rockstargames.com/VI/_next/static/media/poster_full.0az_iud2g3y4j.jpg" alt="العمل الفني الرسمي للعبة Grand Theft Auto VI" fetchpriority="high" loading="eager" decoding="async"/>
-  <span class="gta6-feature-shade"></span>
-  <span class="gta6-feature-copy">
-   <span class="gta6-feature-label">إعلان استباقي خاص · VIBECRITIC</span>
-   <strong>GRAND THEFT AUTO VI</strong>
-   <span class="gta6-feature-desc">قبل الإطلاق: قراءة نقدية شاملة لما نعرفه، وما ننتظره، وما يجب أن تثبته روكستار.</span>
-   <span class="gta6-feature-cta">اقرأ التحليل الاستباقي <b aria-hidden="true">←</b></span>
-  </span>
-  <span class="gta6-feature-date">19 نوفمبر 2026 · PS5 / Xbox Series X|S</span>
- </a>
-</section>
 <section class="wrap discovery-hero spotlight-slider" aria-label="أبرز الترندات">
  <div class="spotlight-backdrops" aria-hidden="true">
   <img class="spotlight-image is-active" src={spotlight?.backdrop||spotlight?.poster||''} alt="" fetchpriority="high" loading="eager" decoding="async"/>
@@ -58,7 +49,7 @@ const upcoming=reviews.filter(isUpcomingReview).sort((a,b)=>String(a.data.releas
  </div>
  <div class="spotlight-progress" aria-hidden="true"><span></span></div>
  <div class="spotlight-data" hidden>
-  {trendReviews.map(item=><i data-title={item.title} data-summary={item.summary||''} data-backdrop={item.backdrop||item.poster||''} data-poster={item.poster||''} data-type={item.type} data-source={item.source||''} data-href={item.href} data-external={String(item.external)}></i>)}
+  {trendReviews.map(item=><i data-title={item.title} data-summary={item.summary||''} data-backdrop={item.backdrop||item.poster||''} data-poster={item.poster||''} data-type={item.type} data-source={item.source||''} data-href={item.href} data-external={String(item.external)} data-preview={String(item.preview||false)}></i>)}
  </div>
 </section>
 <aside class="wrap ai-review-promo" data-expires="2026-11-19T23:59:59+01:00" aria-label="جرّب المراجع الذكي">
@@ -142,7 +133,7 @@ if(hero){
    if(title)title.textContent=item.title||'ترند عالمي';
    if(summary)summary.textContent=item.summary||'هذا العمل ضمن أبرز الأعمال وفق مؤشرات الشعبية المتاحة.';
    if(category)category.textContent=(labels[item.type]||'ترند عالمي')+' · '+(item.source||'TRENDING');
-   if(link){link.href=item.href;if(item.external==='true'){link.target='_blank';link.rel='noopener noreferrer';link.textContent='اكتشف العمل ↗';}else{link.removeAttribute('target');link.removeAttribute('rel');link.textContent='اقرأ المراجعة ↗';}}
+   if(link){link.href=item.href;if(item.external==='true'){link.target='_blank';link.rel='noopener noreferrer';link.textContent='اكتشف العمل ↗';}else{link.removeAttribute('target');link.removeAttribute('rel');link.textContent=item.preview==='true'?'اقرأ التحليل الاستباقي ↗':'اقرأ المراجعة ↗';}}
    if(count)count.textContent=String(current+1).padStart(2,'0');
    hero.querySelector('.spotlight-copy')?.classList.remove('is-changing');
   },reduced?0:220);
@@ -170,17 +161,3 @@ if(aiPromo){
 }
 </script>
 
-<style>
-.gta6-feature{margin:1.1rem auto 1.4rem}
-.gta6-feature-link{position:relative;isolation:isolate;display:flex;align-items:center;min-height:clamp(230px,31vw,390px);overflow:hidden;border:1px solid rgba(255,255,255,.18);border-radius:22px;background:#17131b;color:#fff;text-decoration:none;box-shadow:0 16px 42px rgba(0,0,0,.18)}
-.gta6-feature-image{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 36%;opacity:.78}
-.gta6-feature-shade{position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(9,9,13,.96) 0%,rgba(9,9,13,.78) 43%,rgba(9,9,13,.16) 100%),linear-gradient(0deg,rgba(9,9,13,.5),transparent 45%)}
-.gta6-feature-copy{display:flex;flex-direction:column;align-items:flex-start;gap:.65rem;max-width:680px;padding:clamp(1.25rem,4vw,3.2rem)}
-.gta6-feature-label{font-size:.76rem;font-weight:800;letter-spacing:.08em;color:#f3bd73}
-.gta6-feature-copy strong{font-size:clamp(1.8rem,5vw,3.7rem);line-height:1;font-weight:950;letter-spacing:.025em}
-.gta6-feature-desc{max-width:570px;color:rgba(255,255,255,.88);font-size:clamp(.9rem,1.5vw,1.08rem);line-height:1.8}
-.gta6-feature-cta{display:inline-flex;align-items:center;gap:.6rem;margin-top:.3rem;padding:.72rem 1.1rem;border-radius:999px;background:#f1b96e;color:#17131b;font-weight:850}
-.gta6-feature-date{position:absolute;right:1rem;bottom:1rem;padding:.45rem .75rem;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(8,8,12,.55);font-size:.76rem;color:#fff;backdrop-filter:blur(8px)}
-.gta6-feature-link:hover .gta6-feature-cta{transform:translateX(-3px)}
-@media(max-width:640px){.gta6-feature-link{min-height:300px;align-items:flex-end}.gta6-feature-image{object-position:58% center}.gta6-feature-shade{background:linear-gradient(0deg,rgba(9,9,13,.97),rgba(9,9,13,.56) 58%,rgba(9,9,13,.12))}.gta6-feature-copy{padding:1.15rem 1rem 3.8rem}.gta6-feature-date{right:.8rem;bottom:.7rem;font-size:.68rem}}
-</style>
