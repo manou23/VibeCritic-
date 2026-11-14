@@ -51,6 +51,9 @@ function upsertEntity(graph, kind, name, source) {
 
 function addRelation(graph, from, relation, to, provenance) {
   if (!from || !to || from === to) return;
+  const verifiedProvenance = resolveSourceEvidence(provenance);
+  if (!verifiedProvenance) return;
+  provenance = verifiedProvenance;
   let edge = graph.relations.find(entry => entry.from === from && entry.type === relation && entry.to === to);
   if (!edge) {
     edge = { id: from + '|' + relation + '|' + to, from, type: relation, to, evidence: [] };
