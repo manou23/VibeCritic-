@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { buildEditorialTrainingContext, recordEditorialCandidate, listEditorialPatterns } from './editorial-intelligence.mjs';
 import { buildKnowledgeContext, recordKnowledge } from './knowledge-graph.mjs';
@@ -92,12 +93,7 @@ function sourceCacheIdentity(rawUrl) {
  for (const key of ['key', 'api_key', 'access_token', 'token', 'client_secret']) url.searchParams.delete(key);
  url.searchParams.sort();
  const identity = url.origin + url.pathname + (url.search ? url.search : '');
- let hash = 2166136261;
- for (let index = 0; index < identity.length; index++) {
-  hash ^= identity.charCodeAt(index);
-  hash = Math.imul(hash, 16777619);
- }
- const cacheKey = (hash >>> 0).toString(16).padStart(8, '0');
+ const cacheKey = createHash('sha256').update(identity).digest('hex');
  const host = url.hostname.toLowerCase();
  const source = host.includes('themoviedb.org') ? 'TMDB' : host.includes('rawg.io') ? 'RAWG' : host.includes('googleapis.com') ? 'YOUTUBE' : host;
  const ttlDays = source === 'YOUTUBE' ? 7 : source === 'RAWG' ? 3 : 2;
