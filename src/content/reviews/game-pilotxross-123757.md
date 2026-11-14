@@ -10,6 +10,7 @@ date: 2026-11-12
 releaseDate: "2030-12-20"
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/co3vbi.jpg"
 backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/co3vbi.jpg"
+reviewMode: preview
 score: 7.2
 pros:
   - "مفهوم طيران VR مبتكر مع جهاز Xross"

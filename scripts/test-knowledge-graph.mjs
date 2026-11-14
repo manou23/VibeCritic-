@@ -146,6 +146,8 @@ try {
     type: 'series',
     title: 'Sample Series',
     score: 7.6,
+    reviewMode: 'limited',
+    scores: { storyScore: 7.5, visualsScore: 7.8 },
     sourcePath: 'src/content/reviews/series-sample.md'
   });
   assert.equal(resolveSourceEvidence({ source: 'TMDB', field: 'genres', url: 'https://attacker.example/movie/101' }), null, 'A source cannot claim evidence from an unrelated domain.');
@@ -194,6 +196,10 @@ try {
   const graph = JSON.parse(await fs.readFile('data/knowledge-graph.json', 'utf8'));
   assert.equal(graph.version, 2);
   assert.equal(graph.editorialReviews.length, 6);
+  const limitedReview = graph.editorialReviews.find(entry => entry.key === 'series:sample-series-review');
+  assert.equal(limitedReview.reviewMode, 'limited');
+  assert.equal(limitedReview.score, null, 'Evidence-limited reviews must never retain a numeric final score.');
+  assert.deepEqual(limitedReview.scores, {}, 'Evidence-limited reviews must not retain sub-scores.');
   assert.equal(graph.stats.editorialReviews, 6);
   assert.ok(graph.entities.some(entity => entity.kind === 'work' && entity.externalId === '305152' && entity.workType === 'game' && entity.externalSource === 'IGDB'));
   assert.ok(graph.entities.some(entity => entity.kind === 'work' && entity.externalId === 'tv-303' && entity.workType === 'series'));

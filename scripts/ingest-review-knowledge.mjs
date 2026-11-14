@@ -43,12 +43,13 @@ export function parseReviewMarkdown(markdown, filename = '') {
   const body = match[2].replace(/^\s+/, '').replace(/^>.*$/gm, '').replace(/^#{1,6}\s+/gm, '').replace(/\s+/g, ' ').trim();
   const title = clean(frontmatter.title || frontmatter.originalTitle || path.basename(filename, '.md'));
   const sourceId = clean(frontmatter.sourceId || '');
-  const scores = {
+  const hasFinalRating = !['preview', 'limited'].includes(frontmatter.reviewMode || 'review');
+  const scores = hasFinalRating ? {
     storyScore: frontmatter.storyScore,
     visualsScore: frontmatter.visualsScore,
     soundScore: frontmatter.soundScore,
     pacingScore: frontmatter.pacingScore
-  };
+  } : {};
   return {
     key: type + ':' + (sourceId || path.basename(filename, '.md')),
     sourceId,
@@ -58,7 +59,8 @@ export function parseReviewMarkdown(markdown, filename = '') {
     headline: frontmatter.headline,
     summary: frontmatter.summary,
     verdict: frontmatter.verdict,
-    score: frontmatter.score,
+    score: hasFinalRating ? frontmatter.score : undefined,
+    reviewMode: frontmatter.reviewMode || 'review',
     scores,
     tags: frontmatter.tags,
     pros: frontmatter.pros,

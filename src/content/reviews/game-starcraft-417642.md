@@ -12,6 +12,7 @@ poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/cod6xu.jpg"
 backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/cod6xu.jpg"
 youtubeVideoId: "piNc8nsCmvY"
 youtubeVideoTitle: "STARCRAFT Official Trailer (2030) Blizzcon 4K"
+reviewMode: preview
 score: 5
 pros:
   - "اسم السلسلة يحمل إرثاً معروفاً لدى محبي ألعاب الاستراتيجية"

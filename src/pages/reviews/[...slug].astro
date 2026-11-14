@@ -26,6 +26,9 @@ const similarReviews=allReviews.filter(entry=>entry.id!==review.id&&entry.data.t
  .slice(0,3).map(item=>item.entry);
 
 const typeLabel = TYPE_LABEL[d.type];
+const isPreview = d.reviewMode === 'preview';
+const isLimited = d.reviewMode === 'limited';
+const hasFinalRating = !isPreview && !isLimited;
 const youtubeVideoId = /^[A-Za-z0-9_-]{11}$/.test(d.youtubeVideoId || '') ? d.youtubeVideoId : null;
 const youtubeVideoTitle = d.youtubeVideoTitle || `المقطع الرسمي لـ ${d.title}`;
 const typeKeyword = d.type === 'game' ? 'لعبة' : d.type === 'series' ? 'مسلسل' : 'فيلم';
@@ -44,24 +47,24 @@ const reviewKeywords = [...new Set([
   ...(d.genres || []),
   ...(d.tags || []),
 ].map(cleanKeyword).filter(Boolean))].slice(0, 20);
-const reviewDescription = d.title + ' — ' + (d.reviewMode === 'preview' ? 'قراءة استباقية لـ' : 'مراجعة ') + typeKeyword + ' وتحليل نقدي للقصة والعناصر الفنية. ' + d.summary + (d.reviewMode === 'preview' ? ' هذه قراءة قبل الإصدار ولا تتضمن تقييماً نهائياً.' : ' تقييم VibeCritic: ' + d.score + '/10.');
+const reviewDescription = d.title + ' — ' + (isPreview ? 'قراءة استباقية لـ' : isLimited ? 'قراءة محدودة الأدلة لـ' : 'مراجعة ') + typeKeyword + ' وتحليل نقدي للقصة والعناصر الفنية. ' + d.summary + (isPreview ? ' هذه قراءة قبل الإصدار ولا تتضمن تقييماً نهائياً.' : isLimited ? ' لا تمنح هذه الصفحة تقييماً نهائياً لأن الأدلة المنشورة غير كافية.' : ' تقييم VibeCritic: ' + d.score + '/10.');
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 const schemaType = d.type === 'game' ? 'Game' : d.type === 'series' ? 'CreativeWorkSeries' : 'Movie';
 const reviewStructuredData = {
   '@context': 'https://schema.org',
-  '@type': d.reviewMode === 'preview' ? 'Article' : 'Review',
-  name: d.title + (d.reviewMode === 'preview' ? ' — قراءة استباقية' : ' — مراجعة وتقييم'),
+  '@type': hasFinalRating ? 'Review' : 'Article',
+  name: d.title + (isPreview ? ' — قراءة استباقية' : isLimited ? ' — قراءة محدودة الأدلة' : ' — مراجعة وتقييم'),
   url: canonicalUrl,
   datePublished: d.date.toISOString().slice(0, 10),
-  reviewBody: [d.summary, d.verdict, d.hook].filter(Boolean).join(' '),
-  ...(d.reviewMode === 'preview' ? {} : { reviewRating: {
+  reviewBody: [d.summary, isLimited ? 'لا تتوفر أدلة كافية لمنح تقييم نهائي.' : d.verdict, d.hook].filter(Boolean).join(' '),
+  ...(hasFinalRating ? { reviewRating: {
     '@type': 'Rating',
     ratingValue: d.score,
     bestRating: 10,
     worstRating: 0,
-  } }),
+  } } : {}),
   author: { '@type': 'Organization', name: SITE_NAME },
-  ...(d.reviewMode === 'preview' ? {} : { itemReviewed: {
+  ...(hasFinalRating ? { itemReviewed: {
     '@type': schemaType,
     name: d.title,
     ...(d.originalTitle ? { alternateName: d.originalTitle } : {}),
@@ -69,12 +72,12 @@ const reviewStructuredData = {
     ...(d.releaseDate ? { datePublished: d.releaseDate } : {}),
     ...(d.poster ? { image: optimizeImage(d.poster) } : {}),
     ...(Number(d.sourceRating) > 0 && Number(d.sourceVoteCount) > 0 ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: d.sourceRating, bestRating: d.sourceRatingScale || 10, worstRating: 0, ratingCount: d.sourceVoteCount } } : {}),
-  }, }),
+  } } : {}),
 
 };
 
 ---
-<Base title={`${d.title} — ${d.reviewMode === 'preview' ? 'قراءة استباقية' : 'مراجعة وتقييم'}`} description={reviewDescription} keywords={reviewKeywords} structuredData={reviewStructuredData} image={optimizeImage(d.backdrop || d.poster, 'backdrop')} pageType="article" publishedAt={d.date.toISOString()} articleSection={typeLabel}>
+<Base title={`${d.title} — ${isPreview ? 'قراءة استباقية' : isLimited ? 'قراءة محدودة الأدلة' : 'مراجعة وتقييم'}`} description={reviewDescription} keywords={reviewKeywords} structuredData={reviewStructuredData} image={optimizeImage(d.backdrop || d.poster, 'backdrop')} pageType="article" publishedAt={d.date.toISOString()} articleSection={typeLabel}>
 <article class="wrap article-page">
   <nav class="article-breadcrumbs" aria-label="مسار الصفحة"><a href={url('')}>الرئيسية</a><span aria-hidden="true">/</span><a href={url(`category/${d.type}/`)}>{TYPE_LABEL[d.type]}</a><span aria-hidden="true">/</span><span aria-current="page">{d.title}</span></nav>
   <a href={url('')} class="article-back">← العودة إلى VibeCritic</a>
@@ -84,7 +87,8 @@ const reviewStructuredData = {
       <span class="article-category">{typeLabel}</span>
       <time datetime={d.date.toISOString()}>{fmtDate(d.date)}</time>
       {d.aiGenerated&&<span class="article-ai">تحليل مدعوم بالذكاء الاصطناعي</span>}
-      {d.reviewMode === 'preview' && <span class="article-ai">قراءة استباقية — قبل الإصدار</span>}
+      {isPreview && <span class="article-ai">قراءة استباقية — قبل الإصدار</span>}
+      {isLimited && <span class="article-ai">لا يوجد تقييم نهائي — الأدلة غير كافية</span>}
     </div>
     <h1>{d.title}</h1>
     {d.originalTitle && d.originalTitle !== d.title && <p class="article-original-title" lang="en" dir="auto">{d.originalTitle}</p>}
@@ -116,18 +120,18 @@ const reviewStructuredData = {
       <div class="article-body prose"><Content/></div>
       <div class="article-verdict-grid">
         <section class="verdict-panel pros-panel">
-          <h2><span>+</span> {d.reviewMode === 'preview' ? 'عناصر واعدة' : 'نقاط القوة'}</h2>
+          <h2><span>+</span> {isPreview ? 'عناصر واعدة' : isLimited ? 'معلومات يمكن تأكيدها' : 'نقاط القوة'}</h2>
           <ul>{d.pros.map(x=><li>{x}</li>)}</ul>
         </section>
         <section class="verdict-panel cons-panel">
-          <h2><span>−</span> {d.reviewMode === 'preview' ? 'مخاطر وأسئلة مفتوحة' : 'نقاط الضعف'}</h2>
+          <h2><span>−</span> {isPreview || isLimited ? 'معلومات وأسئلة غير محسومة' : 'نقاط الضعف'}</h2>
           {d.cons.length>0?<ul>{d.cons.map(x=><li>{x}</li>)}</ul>:<p>لم تتوفر تحفظات موثوقة كافية لإثبات نقاط ضعف محددة.</p>}
         </section>
       </div>
       <section class="article-final-verdict">
-        <p class="eyebrow">{d.reviewMode === 'preview' ? 'الخلاصة الاستباقية' : 'الحكم النهائي'}</p>
-        <h2>{d.reviewMode === 'preview' ? 'ما الذي ننتظره عند الإصدار؟' : 'هل يستحق وقتك؟'}</h2>
-        <p>{d.verdict || 'تتحدد قيمة هذا العمل بحسب مدى اهتمامك بنوعه وعناصره الفنية، مع مراعاة نقاط القوة والتحفظات المذكورة أعلاه.'}</p>
+        <p class="eyebrow">{isPreview ? 'الخلاصة الاستباقية' : isLimited ? 'حدود المادة الحالية' : 'الحكم النهائي'}</p>
+        <h2>{isPreview ? 'ما الذي ننتظره عند الإصدار؟' : isLimited ? 'لماذا لا نمنحه درجة الآن؟' : 'هل يستحق وقتك؟'}</h2>
+        <p>{isLimited ? 'المعلومات المتاحة هنا لا تكفي للحكم على جودة التنفيذ الفعلي أو منح العمل درجة عادلة. لذلك أوقفنا التقييم الرقمي مؤقتاً بدلاً من تحويل الوصف المختصر أو التوقعات إلى حكم نقدي. ستعود الدرجة عندما تتوفر مراجعة موثقة وتحليل للعناصر الفنية.' : d.verdict || 'تتحدد قيمة هذا العمل بحسب مدى اهتمامك بنوعه وعناصره الفنية، مع مراعاة نقاط القوة والتحفظات المذكورة أعلاه.'}</p>
       </section>
       {(d.cast?.length || d.crew?.length) && <section class="article-facts" aria-label="طاقم العمل">
         <h2>طاقم العمل</h2>
@@ -146,9 +150,9 @@ const reviewStructuredData = {
       {d.sourceUrl && <section class="article-facts" aria-label="مصدر بيانات العمل"><h2>مصدر البيانات</h2><p>بيانات العمل الأساسية مستندة إلى {d.sourceName || 'المصدر المدرج'}؛ وهي مرجع للمعلومات الوصفية وليست حكماً نقدياً مستقلاً.</p><a href={d.sourceUrl} target="_blank" rel="noopener noreferrer">عرض صفحة العمل في المصدر ↗</a></section>}
       {similarReviews.length>0 && <section class="article-facts" aria-label="مراجعات مشابهة">
         <h2>مراجعات مشابهة</h2>
-        <ul>{similarReviews.map(entry=><li><a href={url('reviews/'+entry.id+'/')}>{entry.data.title} — {entry.data.reviewMode === 'preview' ? 'قراءة استباقية' : entry.data.score.toFixed(1) + '/10'}</a></li>)}</ul>
+        <ul>{similarReviews.map(entry=><li><a href={url('reviews/'+entry.id+'/')}>{entry.data.title} — {entry.data.reviewMode === 'preview' ? 'قراءة استباقية' : entry.data.reviewMode === 'limited' ? 'قيد التقييم' : entry.data.score.toFixed(1) + '/10'}</a></li>)}</ul>
       </section>}
-      <p class="review-method-note">{d.reviewMode === 'preview' ? 'منهجية VibeCritic: هذه قراءة استباقية تفصل المعلومات الرسمية عن التوقعات، ولا تمنح العمل تقييماً نهائياً قبل صدوره.' : 'منهجية VibeCritic: هذا تحليل نقدي مبني على المعلومات المنشورة والبيانات المتاحة، وليس ادعاءً باختبار مباشر للعمل. التقييم تقدير تحريري مستقل وليس تقييماً رسمياً.'}</p>
+      <p class="review-method-note">{isPreview ? 'منهجية VibeCritic: هذه قراءة استباقية تفصل المعلومات الرسمية عن التوقعات، ولا تمنح العمل تقييماً نهائياً قبل صدوره.' : isLimited ? 'منهجية VibeCritic: لا نعرض درجة عندما تكون الأدلة المتاحة غير كافية. هذه الصفحة مادة تعريفية محدودة وليست حكماً نقدياً نهائياً.' : 'منهجية VibeCritic: هذا تحليل نقدي مبني على المعلومات المنشورة والبيانات المتاحة، وليس ادعاءً باختبار مباشر للعمل. التقييم تقدير تحريري مستقل وليس تقييماً رسمياً.'}</p>
       <section class="article-facts article-feedback" aria-labelledby="review-feedback-title">
         <h2 id="review-feedback-title">هل أفادتك هذه المراجعة؟</h2>
         <p>شاركنا رأيك السريع؛ اختيارك يُحفظ على هذا الجهاز فقط.</p>
@@ -162,12 +166,12 @@ const reviewStructuredData = {
     </div>
     <aside class="article-aside" aria-label="ملخص ومعلومات العمل">
       {d.poster&&<img class="article-poster" src={optimizeImage(d.poster)} alt={d.title} loading="lazy" decoding="async" width="600" height="900"/>}
-      <div class="article-score-wrap"><p class="eyebrow">{d.reviewMode === 'preview' ? 'حالة التقييم' : 'تقييم VibeCritic'}</p>{d.reviewMode === 'preview' ? <p class="article-score-note">لا توجد درجة نهائية قبل الإصدار؛ هذه قراءة استباقية لما نعرفه وما ننتظره من العمل.</p> : <><ScoreCard score={d.score} label="تقييم VibeCritic"/><p class="article-score-note">من 10 — رأينا، والقرار لك.</p></>}
-        {d.reviewMode !== 'preview' && (d.storyScore !== undefined || d.visualsScore !== undefined || d.soundScore !== undefined || d.pacingScore !== undefined) && <div class="score-breakdown" aria-label="الدرجات الفرعية">
+      <div class="article-score-wrap"><p class="eyebrow">{hasFinalRating ? 'تقييم VibeCritic' : 'حالة التقييم'}</p>{isPreview ? <p class="article-score-note">لا توجد درجة نهائية قبل الإصدار؛ هذه قراءة استباقية لما نعرفه وما ننتظره من العمل.</p> : isLimited ? <p class="article-score-note">لا نعرض درجة حالياً؛ المعلومات المتاحة لا تسمح بحكم نقدي موثوق. ستُراجع الصفحة عند توفر أدلة كافية.</p> : <><ScoreCard score={d.score} label="تقييم VibeCritic"/><p class="article-score-note">من 10 — رأينا، والقرار لك.</p></>}
+        {hasFinalRating && (d.storyScore !== undefined || d.visualsScore !== undefined || d.soundScore !== undefined || d.pacingScore !== undefined) && <div class="score-breakdown" aria-label="الدرجات الفرعية">
           {([{label:'القصة',value:d.storyScore},{label:'الصورة',value:d.visualsScore},{label:'الصوت',value:d.soundScore},{label:'الإيقاع',value:d.pacingScore}]).filter(item=>Number.isFinite(item.value)).map(item=><div class="score-breakdown-row"><div><span>{item.label}</span><strong>{Number(item.value).toFixed(1)}/10</strong></div><span class="score-breakdown-track"><i style={`--score-fill:${Number(item.value)*10}%`}></i></span></div>)}
         </div>}
-        {d.reviewMode !== 'preview' && Number(d.sourceRating) > 0 && <p class="article-score-note">تقييم {d.sourceName || 'المصدر'}: {Number(d.sourceRating).toFixed(1)}/{d.sourceRatingScale || 10}{Number(d.sourceVoteCount) > 0 ? ` · ${d.sourceVoteCount} تقييم` : ''}</p>}
-        {d.reviewMode !== 'preview' && Number(d.metacriticScore) > 0 && <p class="article-score-note">Metacritic: {Number(d.metacriticScore).toFixed(0)}/100</p>}</div>
+        {hasFinalRating && Number(d.sourceRating) > 0 && <p class="article-score-note">تقييم {d.sourceName || 'المصدر'}: {Number(d.sourceRating).toFixed(1)}/{d.sourceRatingScale || 10}{Number(d.sourceVoteCount) > 0 ? ` · ${d.sourceVoteCount} تقييم` : ''}</p>}
+        {hasFinalRating && Number(d.metacriticScore) > 0 && <p class="article-score-note">Metacritic: {Number(d.metacriticScore).toFixed(0)}/100</p>}</div>
       {(d.releaseDate || d.creator || d.genres?.length) && <section class="article-facts" aria-label="معلومات العمل">
         <h2>بطاقة العمل</h2>
         <dl>
