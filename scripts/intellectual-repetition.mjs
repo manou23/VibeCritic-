@@ -27,9 +27,10 @@ function currentPattern(item, reasoning, criticalQuestions, review = {}) {
   const questionIds = unique(list(criticalQuestions?.questions).map(question => question?.id));
   const genres = unique(list(item?.genres).map(value => typeof value === 'string' ? value : value?.name));
   const argumentText = [
-    selected.question, selected.instruction, item?.description, item?.summary,
+    selected.question, selected.instruction,
     review?.hook, review?.summary, review?.verdict,
-    ...list(review?.pros), ...list(review?.cons)
+    ...list(review?.pros), ...list(review?.cons),
+    item?.description, item?.summary
   ].join(' ');
   const evidenceFields = unique(list(selected.evidence).map(entry => entry?.field));
   return {
