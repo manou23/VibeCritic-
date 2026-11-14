@@ -12,6 +12,7 @@
     "backfill:videos": "node scripts/backfill-review-videos.mjs",
     "backfill:titles": "node scripts/backfill-arabic-titles.mjs",
     "backfill:games": "node scripts/backfill-game-platforms.mjs",
+    "test:rawg-backfill": "node scripts/test-rawg-backfill.mjs",
     "validate:reviews": "node scripts/validate-review-scores.mjs",
     "editorial:training": "node scripts/editorial-training.mjs",
     "test:knowledge-graph": "node scripts/test-knowledge-graph.mjs",
