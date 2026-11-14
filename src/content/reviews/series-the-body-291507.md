@@ -14,6 +14,7 @@ backdrop: "https://image.tmdb.org/t/p/w1280/yfLPesZIbTrwBE9BzmiK4ypqz3L.jpg"
 youtubeVideoId: "wl7uj7n7DoY"
 youtubeVideoTitle: "Official Trailer"
 reviewMode: limited
+score: 5.5
 pros:
   - "فرضية محددة تجمع فريق رقص مدرسي وطقس هالوين ينقلب إلى رؤى مرعبة"
   - "ثماني حلقات تمنح الموسم إطاراً محدوداً يمكن متابعته كوحدة واحدة"
