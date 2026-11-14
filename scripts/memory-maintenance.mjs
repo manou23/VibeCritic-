@@ -47,7 +47,7 @@ export function compactKnowledgeGraph(input = {}) {
     const key = [relation.from, relation.type, relation.to].join('|');
     const previous = relations.get(key);
     const evidence = uniqueBy([...(previous?.evidence || []), ...list(relation.evidence)], entry =>
-      [entry.source, entry.field, entry.url || '', entry.observedAt || ''].join('|')
+      [entry.source, entry.field, entry.url || ''].join('|')
     ).slice(-4);
     relations.set(key, { ...(previous || {}), ...relation, id: relation.id || previous?.id || key, evidence });
   }
@@ -83,7 +83,7 @@ export function compactKnowledgeGraph(input = {}) {
     );
     return {
       ...entry,
-      status: duplicates.some(value => value.status === 'unresolved') ? 'unresolved' : entry.status,
+      status: (duplicates.sort((a, b) => time(b.detectedAt) - time(a.detectedAt)).at(0)?.status) || entry.status,
       detectedAt: earliest(duplicates.map(value => value.detectedAt)) || entry.detectedAt
     };
   }).slice(-2000);
@@ -122,7 +122,18 @@ export function compactKnowledgeGraph(input = {}) {
 export function compactEditorialMemory(input = {}) {
   const memory = { ...input };
   const candidates = uniqueBy(memory.candidates, entry => entry.id).sort((a, b) => time(b.capturedAt) - time(a.capturedAt));
-  const approved = uniqueBy(memory.approvedExamples, entry => entry.id).sort((a, b) =>
+  const approvedMap = new Map();
+  for (const entry of list(memory.approvedExamples)) {
+    if (!entry?.id) continue;
+    const previous = approvedMap.get(entry.id);
+    const rating = Number(entry.humanRating) || 0;
+    const previousRating = Number(previous?.humanRating) || 0;
+    if (!previous || rating > previousRating ||
+        (rating === previousRating && time(entry.reviewedAt || entry.capturedAt) > time(previous.reviewedAt || previous.capturedAt))) {
+      approvedMap.set(entry.id, entry);
+    }
+  }
+  const approved = [...approvedMap.values()].sort((a, b) =>
     (Number(b.humanRating) || 0) - (Number(a.humanRating) || 0) || time(b.reviewedAt || b.capturedAt) - time(a.reviewedAt || a.capturedAt)
   );
   const approvedIds = new Set(approved.map(entry => entry.id));
