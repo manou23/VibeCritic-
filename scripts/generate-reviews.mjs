@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { buildEditorialTrainingContext, recordEditorialCandidate } from './editorial-intelligence.mjs';
 import { buildKnowledgeContext, recordKnowledge } from './knowledge-graph.mjs';
+import { buildEditorialReasoning, evaluateEditorialReview, formatEditorialReasoningContext } from './editorial-reasoning.mjs';
 
 const env=process.env;
 const provider=(env.AI_PROVIDER||(env.GEMINI_API_KEY?'gemini':env.GROQ_API_KEY?'groq':env.OPENROUTER_API_KEY?'openrouter':env.CF_WORKERS_AI_API_TOKEN?'cloudflare-workers-ai':'openai')).toLowerCase();
@@ -543,11 +544,12 @@ async function generateReview(item){
  const headings=isPreview?(isGame?['ما الذي نعرفه رسمياً؟','العالم والفكرة والهوية الفنية','ما الذي ننتظره من أسلوب اللعب؟','المخاطر والأسئلة التي لم تُحسم','ما الذي سيحدد نجاح اللعبة؟']:['ما الذي نعرفه عن العمل؟','الفكرة والعالم والهوية الفنية','الممثلون وصنّاع العمل','الأسئلة الدرامية التي لم تُحسم','ما الذي سيحدد نجاح الإصدار؟']):(isGame?['أسلوب اللعب والأنظمة','التصميم الفني والعالم','القصة وبناء الشخصيات','الأداء التقني والثبات','التقدم والتجربة على المدى الطويل']:['الحبكة والسيناريو','الأداء والشخصيات','الإخراج واللغة البصرية','الموسيقى والتصميم الصوتي',item.type==='series'?'بناء الموسم والإيقاع':'الإيقاع والتماسك الدرامي']);
  const metadata=JSON.stringify({...((item.metadata&&typeof item.metadata==='object')?item.metadata:{genres:item.genres||[],platforms:item.platforms||[],developers:item.developers||[],gameModes:item.gameModes||[],perspectives:item.perspectives||[],engines:item.engines||[],sourceRating:item.rating||null,releaseDate:item.date||null}),trendContext:{source:item.source||'غير محدد',rank:Number(item.trendRank)||null,sourceMetricName:item.sourceMetricName||null,sourceMetricValue:Number.isFinite(Number(item.sourceMetricValue))?Number(item.sourceMetricValue):null,popularity:Number.isFinite(Number(item.popularity))&&Number(item.popularity)>0?Number(item.popularity):null,confidence:item.trendConfidence||'غير محدد',window:item.type==='game'?gamesWindowDays+' يوماً':'أسبوع TMDB'}});
  const previousHeadlines=await existingHeadlines();
- const editorialLenses=['ابدأ من قرار فني محدد وأثره على المتلقي، لا من حكم عام.','ابدأ من الشخصية أو الفكرة المركزية، ثم اربطها ببنية العمل.','ابدأ من آلية اللعب أو بناء العالم إذا كان العمل لعبة، ومن الإيقاع الدرامي إن كان فيلماً أو مسلسلاً.','ابدأ من مفارقة ملموسة بين عنصرين في العمل، بشرط أن تكون مثبتة في البيانات.','ابدأ من أقوى تفصيل موثق يميز هذا العمل عن أعمال النوع نفسه.','ابدأ من سؤال نقدي محدد تجيب عنه المراجعة دون حرق.'];
- const styleSeed=String(item.id||item.name||'').split('').reduce((sum,char)=>sum+char.charCodeAt(0),0);
- const editorialLens=editorialLenses[styleSeed%editorialLenses.length];
+ const reasoning=buildEditorialReasoning(item,{previousHeadlines});
+ if(!reasoning.eligible||!reasoning.selected)throw new Error('لا توجد زاوية نقدية مدعومة بمجموعتين مستقلتين من البيانات؛ تم إيقاف التوليد دون استهلاك طلب AI.');
+ const editorialLens=reasoning.selected.instruction;
  const trainingContext=await buildEditorialTrainingContext(item);
  const knowledgeContext=await buildKnowledgeContext(item);
+ const reasoningContext=formatEditorialReasoningContext(reasoning);
  const prompt=[
  isPreview?'اكتب قراءة استباقية صحفية احترافية لعمل لم يصدر بعد، وليست مراجعة نهائية.':'اكتب مراجعة نقدية صحفية شاملة بعد الإصدار، وليست دعاية أو ملخصاً دعائياً.',
  'اكتب بصوت ناقد متخصص: أطروحة واضحة، سياق يشرح أهمية العمل داخل نوعه وسلسلته، تحليل فني مفصل، أمثلة موثقة، وحكم مسبب لا يساير الضجة الجماهيرية.',
@@ -562,6 +564,7 @@ async function generateReview(item){
  learningAdvice(),
  trainingContext,
   knowledgeContext,
+  reasoningContext,
  'زاوية التحرير المطلوبة لهذه المراجعة: '+editorialLens+' غيّر إيقاع الجمل وبنية الفقرات وطريقة الانتقال بين المحاور؛ لا تبدأ كل مراجعة بتعريف نمطي ولا تختم بجملة محفوظة.',
  'حظر أسلوبي صريح: لا تستخدم عبارات مثل «بين الطموح والواقع» أو «مزجٌ غير متوقع» أو «رحلة لا تُنسى» أو «أكثر من مجرد» أو «تجربة لا مثيل لها» أو أي صياغة تسويقية مستهلكة. لا تستبدلها بمرادف قالبّي؛ اذكر تفصيلاً محدداً من هذا العمل بدلاً منها.',
  'أعد JSON صالحاً فقط بالمفاتيح: hook, headline, summary, scores, pros, cons, tags, verdict, review. scores كائن يحتوي story وvisuals وsound وpacing، وكل قيمة من 0 إلى 10 بخطوة عشرية واحدة، وتُبررها المراجعة.',
@@ -619,7 +622,10 @@ async function generateReview(item){
  const scores={story:Number(d.scores?.story),visuals:Number(d.scores?.visuals),sound:Number(d.scores?.sound),pacing:Number(d.scores?.pacing)};
  if(Object.values(scores).some(value=>!Number.isFinite(value)||value<0||value>10))throw new Error('الدرجات الفرعية الأربعة غير مكتملة أو خارج النطاق 0–10');
  const score=Math.round((scores.story*.30+scores.visuals*.25+scores.sound*.20+scores.pacing*.25)*10)/10;
- return {hook:clean(d.hook),headline:clean(d.headline),summary:clean(d.summary),verdict:clean(d.verdict),score,scores,pros,cons,tags:Array.isArray(d.tags)?d.tags.slice(0,8).map(clean):[],review};
+ const selfEvaluation=evaluateEditorialReview(item,{headline:clean(d.headline),hook:clean(d.hook),review},reasoning,previousHeadlines);
+ const reasoningRecord={version:reasoning.version,selectedAngleId:reasoning.selected.id,selectedAngle:reasoning.selected.label,selectedAngleScore:reasoning.selected.score,candidateScores:reasoning.candidates.map(entry=>({id:entry.id,score:entry.score}))};
+ console.log('التقييم الذاتي التحريري:',selfEvaluation.score+'/100','| الحالة:',selfEvaluation.status,'| مرتكزات مطابقة:',selfEvaluation.metrics.anchorHits+'/'+selfEvaluation.metrics.anchorCount,'| التحقق من الحقيقة:',selfEvaluation.sourceTruthVerified?'نعم':'غير مثبت آلياً');
+ return {hook:clean(d.hook),headline:clean(d.headline),summary:clean(d.summary),verdict:clean(d.verdict),score,scores,pros,cons,tags:Array.isArray(d.tags)?d.tags.slice(0,8).map(clean):[],review,reasoning:reasoningRecord,selfEvaluation};
 }
 async function tmdb(type,mode='trending'){
  const key=required('TMDB_API_KEY'),endpoint=type==='movie'?'movie':'tv';
