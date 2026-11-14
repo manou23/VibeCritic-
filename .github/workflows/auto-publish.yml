@@ -194,7 +194,7 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: npm run backfill:videos
       - name: Localize existing movie and series titles from TMDb
-        if: github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'workflow_dispatch' && !inputs.game_catalog_backfill_only
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
         run: npm run backfill:titles
