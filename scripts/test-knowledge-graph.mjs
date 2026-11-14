@@ -64,6 +64,7 @@ try {
 
   await recordKnowledge(firstWork);
   await recordKnowledge(firstWork);
+  await recordKnowledge({ ...firstWork, name: 'First Film Alternate Title' });
   await recordEditorialReview({
     key: 'movie:first-film-review',
     sourceId: '101',
@@ -139,6 +140,8 @@ try {
   assert.ok(graph.relations.some(edge => edge.id === 'legacy-edge'), 'Version 1 relations should survive migration.');
   assert.ok(graph.stats.works >= 3);
   assert.ok(graph.entities.some(entity => entity.id === 'work:movie-101-first-film'), 'Unicode-safe slug should produce a stable work id.');
+  assert.equal(graph.entities.filter(entity => entity.kind === 'work' && entity.externalId === '101' && entity.workType === 'movie').length, 1, 'A work must keep one identity when its display title changes.');
+  assert.ok(graph.entities.find(entity => entity.externalId === '101')?.aliases.includes('First Film Alternate Title'), 'Alternate display titles should be retained as aliases.');
   assert.ok(graph.relations.every(edge => Array.isArray(edge.evidence) && edge.evidence.length > 0));
   assert.ok(graph.relations.some(edge => edge.type === 'source_lists_as_similar' && edge.evidence[0].source === 'TMDB'));
   assert.ok(graph.observations.some(entry => entry.workId === 'work:movie-101-first-film' && entry.field === 'catalog_related_works' && entry.source === 'VIBECRITIC_D1'), 'Catalog comparisons should be recorded as a separate sourced observation.');
