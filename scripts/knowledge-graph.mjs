@@ -240,7 +240,9 @@ export async function recordKnowledge(item, options = {}) {
     relations: graph.relations.length,
     observations: graph.observations.length,
     conflicts: graph.conflicts.filter(entry => entry.status === 'unresolved').length,
-    knowledgeGaps: graph.knowledgeGaps.length
+    knowledgeGaps: graph.knowledgeGaps.length,
+    editorialReviews: (graph.editorialReviews || []).length,
+    editorialRelations: (graph.editorialRelations || []).length
   };
   graph.updatedAt = new Date().toISOString();
   await fs.mkdir(path.dirname(graphPath), { recursive: true });
