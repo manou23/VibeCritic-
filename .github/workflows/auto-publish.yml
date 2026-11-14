@@ -152,6 +152,19 @@ jobs:
           else
             echo "API secrets are not fully configured; skipping generation and continuing the site build."
           fi
+      - name: Persist collected source responses in D1
+        if: always() && (github.event_name != 'push' || contains(github.event.head_commit.message, '[generate-reviews]'))
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          set -euo pipefail
+          trap 'rm -f data/source-cache-upserts.sql' EXIT
+          npx --yes wrangler@4 d1 execute entertainment-db --remote --file=migrations/0003_source_cache.sql
+          if [ -f data/source-cache-upserts.sql ]; then
+            npx --yes wrangler@4 d1 execute entertainment-db --remote --file=data/source-cache-upserts.sql
+          fi
+
       - name: Validate generated review scores and quality metadata
         run: npm run validate:reviews
       - name: Add videos to previously published reviews
