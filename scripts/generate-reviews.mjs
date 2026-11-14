@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { buildEditorialTrainingContext, recordEditorialCandidate, listEditorialPatterns } from './editorial-intelligence.mjs';
 import { buildKnowledgeContext, recordKnowledge } from './knowledge-graph.mjs';
 import { buildEditorialReasoning, evaluateEditorialReview, formatEditorialReasoningContext } from './editorial-reasoning.mjs';
@@ -397,7 +398,7 @@ async function generateWithOpenRouter(prompt){
  }
  throw new Error('OpenRouter لم يرجع JSON صالحاً بعد 3 محاولات: '+lastIssue);
 }
-export function validateGeneratedReview(d){
+export export function validateGeneratedReview(d){
  const review=String(d?.review||'').replace(/<[^>]*>/g,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').trim();
  const pros=Array.isArray(d?.pros)?d.pros.filter(x=>String(x||'').trim()):[];
  const cons=Array.isArray(d?.cons)?d.cons.filter(x=>String(x||'').trim()):[];
@@ -936,4 +937,6 @@ async function main(){
  const finalTotal=Object.values(counts).reduce((sum,value)=>sum+value,0);
  console.log(finalTotal>=targetTotal?'تم بلوغ هدف 100 مقالة؛ سيعمل التشغيل القادم بوضع رصد الإصدارات الجديدة.':`المتبقي للوصول إلى 100 مقالة: ${targetTotal-finalTotal}`);
 }
-main().catch(e=>{console.error(e);process.exitCode=1;});
+if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
+ main().catch(e=>{console.error(e);process.exitCode=1;});
+}
