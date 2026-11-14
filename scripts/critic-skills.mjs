@@ -76,7 +76,7 @@ export function formatSpecialistSkillContext(profile) {
       '- ' + skill.name + ' (سياق متاح فقط: ' + skill.evidence.join('، ') + '):',
       ...skill.questions.map(question => '  سؤال: ' + question),
       '  حد الاستدلال: ' + skill.limits
-    ].join('\\n');
+    ].join('\n');
   });
   return [
     'مكتبة المهارات النقدية المتخصصة V1 — إطار عمل وليس مصدراً للحقائق:',
@@ -84,5 +84,5 @@ export function formatSpecialistSkillContext(profile) {
     ...lines,
     profile.principle,
     'لا تدّع مشاهدة أو لعباً مباشراً. لا تحول سؤال المهارة إلى ادعاء. إذا لم تتوفر مادة مستقلة موثوقة، صرّح بحدود الحكم وتجاوز التقييم التفصيلي.'
-  ].join('\\n');
+  ].join('\n');
 }
