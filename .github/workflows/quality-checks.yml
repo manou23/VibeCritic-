@@ -51,6 +51,9 @@ jobs:
           node --check scripts/intellectual-repetition.mjs
           node --check scripts/test-intellectual-repetition.mjs
           npm run test:intellectual-repetition
+          node --check scripts/memory-maintenance.mjs
+          node --check scripts/test-memory-maintenance.mjs
+          npm run test:memory-maintenance
           npm run test:editorial-reasoning
           node --check scripts/backfill-arabic-titles.mjs
           node --check scripts/backfill-game-platforms.mjs
