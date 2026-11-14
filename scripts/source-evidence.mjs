@@ -22,6 +22,12 @@ const REGISTRY = Object.freeze({
     sourceClass: 'game-database',
     scope: 'بيانات تعريف الألعاب والمنصات والمطورين ومؤشرات النشاط التي يعرضها RAWG.',
     limits: 'مؤشرات الإضافة والشعبية ليست مبيعات ولا دليلاً على الجودة.'
+  },
+  SUPERGIANT_GAMES: {
+    domains: ['supergiantgames.com'],
+    sourceClass: 'official-developer-source',
+    scope: 'المعلومات التعريفية التي ينشرها المطور رسمياً عن ألعابه، مثل الوصف والمنصات وتواريخ الإطلاق المعلنة.',
+    limits: 'المصدر الرسمي مناسب للتحقق من بيانات الإصدار والهوية والمنصات، لكنه لا يثبت وحده جودة التجربة أو الأداء أو التوازن.'
   }
 });
 
@@ -34,7 +40,8 @@ function domainMatches(hostname, domain) {
 }
 
 export function resolveSourceEvidence(input = {}) {
-  const source = clean(input.source).toUpperCase();
+  const rawSource = clean(input.source).toUpperCase();
+  const source = rawSource === 'SUPERGIANT GAMES' ? 'SUPERGIANT_GAMES' : rawSource;
   const field = clean(input.field);
   const definition = REGISTRY[source];
   if (!definition || !field) return null;
