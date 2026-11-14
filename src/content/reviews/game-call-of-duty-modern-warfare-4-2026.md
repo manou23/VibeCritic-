@@ -14,11 +14,6 @@ poster: "https://i.ytimg.com/vi/jLbst85USN8/maxresdefault.jpg"
 backdrop: "https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blog/body/mw4/reveal/MW4-REVEAL-001.webp"
 youtubeVideoId: "jLbst85USN8"
 youtubeVideoTitle: "Call of Duty: Modern Warfare 4 - Official Reveal Trailer"
-score: 7.9
-storyScore: 8.0
-visualsScore: 8.4
-soundScore: 8.3
-pacingScore: 7.0
 platforms:
   - "PlayStation 5"
   - "Xbox Series X|S"
