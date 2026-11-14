@@ -53,6 +53,10 @@ jobs:
           node --check functions/api/review.js
       - name: Install dependencies
         run: npm install
+      - name: Test editorial reasoning and calibration
+        run: |
+          npm run test:critical-questions
+          npm run test:editorial-calibration
       - name: Test review validation gates
         run: npm run test:review-validation
       - name: Validate review score integrity
