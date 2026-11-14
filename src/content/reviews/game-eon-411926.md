@@ -11,6 +11,7 @@ releaseDate: "2032-12-31"
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/cocmgu.jpg"
 backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/cocmgu.jpg"
 reviewMode: preview
+score: 6.5
 pros:
   - "إطار المعسكر الصيفي يمنح القصة هوية مكانية واضحة"
   - "صيغة الرواية البصرية مناسبة للسرد القائم على الحوار والاختيارات"
