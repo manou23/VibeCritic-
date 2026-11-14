@@ -64,6 +64,8 @@ export function parseReviewMarkdown(markdown, filename = '') {
     pros: frontmatter.pros,
     cons: frontmatter.cons,
     creator: frontmatter.creator,
+    genres: frontmatter.genres,
+    platforms: frontmatter.platforms,
     aiGenerated: frontmatter.aiGenerated,
     releaseDate: frontmatter.releaseDate || frontmatter.date,
     sourceName: frontmatter.sourceName,
