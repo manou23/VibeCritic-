@@ -775,8 +775,9 @@ async function globalTrending(){
  return picks.map((x,i)=>({...x,rank:i+1,trendRank:i+1}));
 }
 async function writeReview(item){
- const enriched=await enrichItem(item),reviewMode=validateSourceQuality(enriched);
- await recordKnowledge(enriched);
+ const enriched=await enrichItem(item);
+ await recordKnowledge(enriched,{today:algeriaDate()});
+ const reviewMode=validateSourceQuality(enriched);
  const a=await generateReview(enriched),date=algeriaDate();
  await assertDistinctHeadline(a.headline,a.hook,a.summary,a.review);
  const videoFields=enriched.metadata?.youtubeVideoId?['youtubeVideoId: '+y(enriched.metadata.youtubeVideoId),'youtubeVideoTitle: '+y(enriched.metadata.youtubeVideoTitle)]:[];
