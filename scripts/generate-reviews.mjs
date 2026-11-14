@@ -10,6 +10,7 @@ import { buildIntellectualRepetitionReport, formatIntellectualRepetitionContext,
 import { compactLearningMemory } from './memory-maintenance.mjs';
 import { buildPersonalityEvolutionGuidance, assessPersonalityEvolution } from './personality-evolution.mjs';
 import { buildHistoricalProfile, buildHistoricalComparisonReport, formatHistoricalComparisonContext, buildHistoricalComparisonRecord } from './historical-comparisons.mjs';
+import { loadJudgmentHistory, buildJudgmentRevisionContext, recordJudgmentVersion } from './judgment-history.mjs';
 
 const env=process.env;
 const provider=(env.AI_PROVIDER||(env.GEMINI_API_KEY?'gemini':env.GROQ_API_KEY?'groq':env.OPENROUTER_API_KEY?'openrouter':env.CF_WORKERS_AI_API_TOKEN?'cloudflare-workers-ai':'openai')).toLowerCase();
@@ -608,6 +609,8 @@ async function generateReview(item){
  const historicalProfile=buildHistoricalProfile(item,reasoning,criticalQuestionReport);
  const historicalComparisonReport=buildHistoricalComparisonReport(historicalProfile,previousPatterns.map(entry=>entry.historicalProfile).filter(Boolean));
  const historicalComparisonContext=formatHistoricalComparisonContext(historicalComparisonReport);
+ const judgmentHistory=await loadJudgmentHistory();
+ const judgmentRevisionContext=buildJudgmentRevisionContext(enriched,judgmentHistory);
  const prompt=[
  isPreview?'اكتب قراءة استباقية صحفية احترافية لعمل لم يصدر بعد، وليست مراجعة نهائية.':'اكتب مراجعة نقدية صحفية شاملة بعد الإصدار، وليست دعاية أو ملخصاً دعائياً.',
  'اكتب بصوت ناقد متخصص: أطروحة واضحة، سياق يشرح أهمية العمل داخل نوعه وسلسلته، تحليل فني مفصل، أمثلة موثقة، وحكم مسبب لا يساير الضجة الجماهيرية.',
@@ -628,6 +631,7 @@ async function generateReview(item){
   intellectualRepetitionContext,
   personalityEvolutionContext,
   historicalComparisonContext,
+  judgmentRevisionContext,
  'زاوية التحرير المطلوبة لهذه المراجعة: '+editorialLens+' غيّر إيقاع الجمل وبنية الفقرات وطريقة الانتقال بين المحاور؛ لا تبدأ كل مراجعة بتعريف نمطي ولا تختم بجملة محفوظة.',
  'حظر أسلوبي صريح: لا تستخدم عبارات مثل «بين الطموح والواقع» أو «مزجٌ غير متوقع» أو «رحلة لا تُنسى» أو «أكثر من مجرد» أو «تجربة لا مثيل لها» أو أي صياغة تسويقية مستهلكة. لا تستبدلها بمرادف قالبّي؛ اذكر تفصيلاً محدداً من هذا العمل بدلاً منها.',
  'أعد JSON صالحاً فقط بالمفاتيح: hook, headline, summary, scores, pros, cons, tags, verdict, review. scores كائن يحتوي story وvisuals وsound وpacing، وكل قيمة من 0 إلى 10 بخطوة عشرية واحدة، وتُبررها المراجعة.',
@@ -855,6 +859,8 @@ async function writeReview(item){
  const scoreFields=['storyScore: '+a.scores.story,'visualsScore: '+a.scores.visuals,'soundScore: '+a.scores.sound,'pacingScore: '+a.scores.pacing];
   const fm=['---','title: '+y(enriched.name||item.name),'originalTitle: '+y(enriched.originalTitle||''),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 2','reviewMode: '+reviewMode,'catalogContextSource: '+y(enriched.metadata?.catalogContext?.source||''),'catalogContextObservedAt: '+y(enriched.metadata?.catalogContext?.observedAt||''),'catalogRelatedWorks: '+arr((enriched.metadata?.catalogContext?.relatedWorks||[]).map(work=>work.title+' ('+(work.year||'سنة غير محددة')+') — تصنيفات مشتركة '+work.sharedGenreCount+'، أشخاص مشتركون '+work.sharedPersonCount)),'sourceName: '+y(item.source||''),'sourceVoteCount: '+(Number(enriched.sourceVoteCount)||0),'sourceRatingScale: '+(item.source==='RAWG'?5:item.source==='IGDB'?100:10),'metacriticScore: '+(Number(enriched.metadata?.metacritic)||0),'cast:',arr(enriched.metadata?.cast||[]),'crew:',arr([...(enriched.metadata?.directors||[]),...(enriched.metadata?.creators||[])]),'watchProviders:',arr(enriched.metadata?.watchProviders||[]),...watchFields,'platforms:',platformFields,'gameStores:',gameStoreFields.length?gameStoreFields.join('\n'):'  []',...scoreFields,'type: '+item.type,'date: '+date,'releaseDate: '+y(enriched.date),'poster: '+y(item.poster),'backdrop: '+y(item.backdrop),...videoFields,'score: '+a.score,'trendRank: '+(Number(item.trendRank)||0),'trendSource: '+y(item.source||''),'trendPopularity: '+(Number(item.popularity)||0),'pros:',arr(a.pros),'cons:',arr(a.cons),'tags:',arr(a.tags),'genres:',arr(enriched.genres||[]),'sourceRating: '+(Number(enriched.rating)||0),'sourceId: '+y(item.id),'sourceUrl: '+y(item.sourceUrl),'aiGenerated: true','---','',a.review,'','> قراءة نقدية تحريرية مولّدة بمساعدة الذكاء الاصطناعي، مبنية على البيانات المنشورة المتاحة. لا تمثل تجربة مشاهدة أو لعب مباشرة، ولا تقييماً رسمياً من المصدر.',''].join('\n');
  await fs.writeFile(path.join(outDir,item.type+'-'+item.id+'.md'),fm,'utf8');
+ const judgmentRecord=await recordJudgmentVersion(enriched,a);
+ if(judgmentRecord.assessment?.status==='needs-review')console.warn('تنبيه: تغير جوهري في حكم محفوظ سابق؛ يلزم مراجعة سبب التغير والأدلة:',item.type+':'+item.id);
  await recordLearningSuccess(item,a);
  await recordEditorialCandidate(item,a);
  return item.type+':'+item.id;
