@@ -45,6 +45,9 @@ jobs:
           node --check scripts/specialist-skills.mjs
           node --check scripts/test-specialist-skills.mjs
           npm run test:specialist-skills
+          node --check scripts/critical-questions.mjs
+          node --check scripts/test-critical-questions.mjs
+          npm run test:critical-questions
           npm run test:editorial-reasoning
           node --check scripts/backfill-arabic-titles.mjs
           node --check scripts/backfill-game-platforms.mjs
