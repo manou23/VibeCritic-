@@ -300,6 +300,7 @@ export async function recordEditorialReview(review) {
     genres: [...new Set((Array.isArray(review.genres) ? review.genres : []).map(clean).filter(Boolean))].slice(0, 12),
     platforms: [...new Set((Array.isArray(review.platforms) ? review.platforms : []).map(clean).filter(Boolean))].slice(0, 12),
     aiGenerated: typeof review.aiGenerated === 'boolean' ? review.aiGenerated : null,
+    reviewMode: ['review', 'preview', 'limited'].includes(review.reviewMode) ? review.reviewMode : 'review',
     releaseDate: clean(review.releaseDate).slice(0, 40) || null,
     sourceName: clean(review.sourceName).slice(0, 80) || null,
     sourceUrl: clean(review.sourceUrl).slice(0, 500) || null,
