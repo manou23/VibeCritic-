@@ -17,6 +17,40 @@ export async function onRequestGet({ request, env }) {
   try {
     const params = new URL(request.url).searchParams;
     if (params.get('mode') === 'genres') return json({ genres: await getGenres(db) });
+    if (params.get('mode') === 'editorial-context') {
+      const tmdbId = params.get('tmdb_id');
+      const type = params.get('type');
+      if (!/^\\d{1,10}$/.test(tmdbId || '') || !['movie', 'tv'].includes(type || '')) {
+        return json({ error: 'معرّف العمل أو نوعه غير صالح.' }, 400);
+      }
+      const base = await db.prepare(
+        "SELECT id,tmdb_id,type,COALESCE(NULLIF(title_ar,''),title) AS title,year,updated_at FROM titles WHERE tmdb_id=? AND type=? LIMIT 1"
+      ).bind(Number(tmdbId), type).first();
+      if (!base) return json({ available: false, reason: 'not-in-catalog', relatedWorks: [] });
+      const related = await db.prepare(
+        "SELECT t.tmdb_id,t.type,COALESCE(NULLIF(t.title_ar,''),t.title) AS title,t.year,t.release_date,t.updated_at," +
+        "(SELECT COUNT(DISTINCT tg.genre_id) FROM title_genres tg JOIN title_genres bg ON bg.genre_id=tg.genre_id WHERE tg.title_id=t.id AND bg.title_id=?) AS sharedGenreCount," +
+        "(SELECT COUNT(DISTINCT c.person_id) FROM credits c JOIN credits bc ON bc.person_id=c.person_id WHERE c.title_id=t.id AND bc.title_id=?) AS sharedPersonCount," +
+        "(SELECT GROUP_CONCAT(DISTINCT COALESCE(g.name_ar,g.name_en)) FROM title_genres tg JOIN title_genres bg ON bg.genre_id=tg.genre_id JOIN genres g ON g.id=tg.genre_id WHERE tg.title_id=t.id AND bg.title_id=?) AS sharedGenres," +
+        "(SELECT GROUP_CONCAT(DISTINCT p.name) FROM credits c JOIN credits bc ON bc.person_id=c.person_id JOIN people p ON p.id=c.person_id WHERE c.title_id=t.id AND bc.title_id=?) AS sharedPeople " +
+        "FROM titles t WHERE t.id<>? AND (" +
+        "EXISTS (SELECT 1 FROM title_genres tg JOIN title_genres bg ON bg.genre_id=tg.genre_id WHERE tg.title_id=t.id AND bg.title_id=?) OR " +
+        "EXISTS (SELECT 1 FROM credits c JOIN credits bc ON bc.person_id=c.person_id WHERE c.title_id=t.id AND bc.title_id=?)) " +
+        "ORDER BY sharedPersonCount DESC,sharedGenreCount DESC,t.popularity DESC LIMIT 6"
+      ).bind(base.id, base.id, base.id, base.id, base.id, base.id, base.id).all();
+      return json({
+        available: true,
+        source: 'VibeCritic D1 entertainment catalog',
+        base: { tmdbId: base.tmdb_id, type: base.type, title: base.title, year: base.year, updatedAt: base.updated_at },
+        relatedWorks: (related.results || []).map(work => ({
+          tmdbId: work.tmdb_id, type: work.type, title: work.title, year: work.year,
+          releaseDate: work.release_date, catalogUpdatedAt: work.updated_at,
+          sharedGenreCount: Number(work.sharedGenreCount) || 0,
+          sharedPersonCount: Number(work.sharedPersonCount) || 0,
+          sharedGenres: work.sharedGenres || '', sharedPeople: work.sharedPeople || ''
+        }))
+      });
+    }
     const id = params.get('id');
     if (id !== null) {
       if (!/^\d{1,10}$/.test(id)) return json({ error: 'معرّف العمل غير صالح.' }, 400);
