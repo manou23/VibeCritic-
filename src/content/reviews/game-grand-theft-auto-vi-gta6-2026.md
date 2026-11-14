@@ -10,6 +10,7 @@ type: game
 date: 2026-11-14
 releaseDate: "2026-11-19"
 reviewMode: preview
+score: 8.9
 poster: "https://www.rockstargames.com/VI/_next/static/media/poster_full.0az_iud2g3y4j.jpg"
 backdrop: "https://www.rockstargames.com/VI/_next/static/media/mobile.0mi46.hy2kwfa.jpg"
 youtubeVideoId: "rz1B4B2yBZY"
