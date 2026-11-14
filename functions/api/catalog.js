@@ -96,9 +96,24 @@ export async function onRequestGet({ request, env }) {
         return json({ error: 'معرّف العمل أو نوعه غير صالح.' }, 400);
       }
       const base = await db.prepare(
-        "SELECT id,tmdb_id,type,COALESCE(NULLIF(title_ar,''),title) AS title,year,updated_at FROM titles WHERE tmdb_id=? AND type=? LIMIT 1"
+        "SELECT id,tmdb_id,type,title,title_ar,overview_ar,release_date,year,runtime,status,rating,votes,popularity,original_language,updated_at FROM titles WHERE tmdb_id=? AND type=? LIMIT 1"
       ).bind(Number(tmdbId), type).first();
       if (!base) return json({ available: false, reason: 'not-in-catalog', relatedWorks: [] });
+      const [genreRows, creditRows] = await Promise.all([
+        db.prepare(
+          "SELECT COALESCE(g.name_ar,g.name_en) AS name FROM title_genres tg JOIN genres g ON g.id=tg.genre_id WHERE tg.title_id=? ORDER BY COALESCE(g.name_ar,g.name_en)"
+        ).bind(base.id).all(),
+        db.prepare(
+          "SELECT p.name,c.kind,c.job,c.character FROM credits c JOIN people p ON p.id=c.person_id WHERE c.title_id=? ORDER BY CASE WHEN c.kind='cast' THEN 0 ELSE 1 END,c.sort_order LIMIT 30"
+        ).bind(base.id).all()
+      ]);
+      const catalogGenres = (genreRows.results || []).map(row => row.name).filter(Boolean);
+      const catalogCredits = (creditRows.results || []).filter(row => row.name);
+      const catalogCast = catalogCredits.filter(row => row.kind === 'cast').slice(0, 10).map(row =>
+        row.character ? row.name + ' بدور ' + row.character : row.name
+      );
+      const catalogDirectors = catalogCredits.filter(row => row.kind === 'crew' && /director/i.test(row.job || '')).map(row => row.name).slice(0, 3);
+      const catalogCreators = catalogCredits.filter(row => row.kind === 'crew' && /creator|showrunner/i.test(row.job || '')).map(row => row.name).slice(0, 3);
       const related = await db.prepare(
         "SELECT t.tmdb_id,t.type,COALESCE(NULLIF(t.title_ar,''),t.title) AS title,t.year,t.release_date,t.updated_at," +
         "(SELECT COUNT(DISTINCT tg.genre_id) FROM title_genres tg JOIN title_genres bg ON bg.genre_id=tg.genre_id WHERE tg.title_id=t.id AND bg.title_id=?) AS sharedGenreCount," +
@@ -113,7 +128,16 @@ export async function onRequestGet({ request, env }) {
       return json({
         available: true,
         source: 'VibeCritic D1 entertainment catalog',
-        base: { tmdbId: base.tmdb_id, type: base.type, title: base.title, year: base.year, updatedAt: base.updated_at },
+        base: {
+          tmdbId: base.tmdb_id, type: base.type,
+          title: base.title_ar || base.title, originalTitle: base.title,
+          overview: base.overview_ar || '', releaseDate: base.release_date || null,
+          year: base.year, runtime: base.runtime || null, status: base.status || null,
+          rating: Number(base.rating) || null, votes: Number(base.votes) || 0,
+          popularity: Number(base.popularity) || null, originalLanguage: base.original_language || null,
+          genres: catalogGenres, cast: catalogCast, directors: catalogDirectors, creators: catalogCreators,
+          updatedAt: base.updated_at
+        },
         relatedWorks: (related.results || []).map(work => ({
           tmdbId: work.tmdb_id, type: work.type, title: work.title, year: work.year,
           releaseDate: work.release_date, catalogUpdatedAt: work.updated_at,
