@@ -11,6 +11,7 @@ releaseDate: "2040-12-31"
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/co421c.jpg"
 backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/co421c.jpg"
 reviewMode: preview
+score: 6
 pros:
   - "فكرة المواجهات الفضائية تمنح اللعبة هوية واضحة"
   - "إمكانية اللعب منفرداً أو مع الأصدقاء توسع خيارات التجربة"
