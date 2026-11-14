@@ -28,7 +28,7 @@ export function hasCompleteRawgMetadata(frontmatter) {
     return match ? match[1].trim().replace(/^['"]|['"]$/g, '') : '';
   };
   const hasKey = key => new RegExp('^' + key + ':', 'm').test(text);
-  return /^\\d+$/.test(scalar('rawgSourceId')) &&
-    /^https:\\/\\/rawg\\.io\\/games\\/[^\\s]+$/i.test(scalar('rawgSourceUrl')) &&
+  return /^\d+$/.test(scalar('rawgSourceId')) &&
+    /^https:\/\/rawg\.io\/games\/[^\s]+$/i.test(scalar('rawgSourceUrl')) &&
     ['rawgReleaseDate', 'rawgGenres', 'rawgPlatforms', 'rawgDevelopers'].every(hasKey);
 }
