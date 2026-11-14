@@ -11,6 +11,7 @@ releaseDate: "2030-12-20"
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/co3vbi.jpg"
 backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/co3vbi.jpg"
 reviewMode: preview
+score: 7.2
 pros:
   - "الفكرة المعلنة تضع الطيران الافتراضي في مركز التجربة"
   - "قد تستفيد اللعبة من أدوات الواقع الافتراضي إذا نُفذت بصورة مريحة ومتقنة"
