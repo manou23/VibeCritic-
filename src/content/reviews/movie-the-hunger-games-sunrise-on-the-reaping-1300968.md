@@ -12,6 +12,7 @@ releaseDate: "2026-11-20"
 poster: "https://image.tmdb.org/t/p/w500/j1MNyNNgNQL6f27cb3m3uKaPKd6.jpg"
 backdrop: "https://image.tmdb.org/t/p/w780/aqFZcr2dxSZ2UwWSo1WC6C0rwDf.jpg"
 reviewMode: preview
+score: 7.3
 pros:
   - "العودة إلى الربع الثاني من الحصاد توسع تاريخ بانيم في مرحلة محورية"
   - "وجود هايميتش في مركز الحكاية يربط الفيلم مباشرة بأحداث السلسلة الأصلية"
