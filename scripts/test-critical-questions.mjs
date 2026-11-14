@@ -4,7 +4,7 @@ import { assessCriticalQuestions, formatCriticalQuestionContext } from './critic
 const game = { type: 'game', id: 'gta6', name: 'Example' };
 const initial = assessCriticalQuestions(game);
 assert.equal(initial.questionCount, 5);
-assert.equal(initial.corroborated, 0);
+assert.equal(initial.multi-domain, 0);
 assert.equal(initial.unanswered, 5);
 assert.match(formatCriticalQuestionContext(initial), /لا تجب عن سؤال بلا دليل/);
 
@@ -23,7 +23,7 @@ const technical = single.questions.find(question => question.id === 'technical-p
 assert.equal(technical.status, 'single-source');
 assert.equal(technical.evidenceCount, 1);
 
-const corroborated = assessCriticalQuestions({
+const multi-domain = assessCriticalQuestions({
   ...game,
   criticalEvidence: {
     performance_tests: [
@@ -34,8 +34,8 @@ const corroborated = assessCriticalQuestions({
     ]
   }
 });
-const confirmed = corroborated.questions.find(question => question.id === 'technical-performance');
-assert.equal(confirmed.status, 'corroborated');
+const confirmed = multi-domain.questions.find(question => question.id === 'technical-performance');
+assert.equal(confirmed.status, 'multi-domain');
 assert.equal(confirmed.evidenceCount, 2);
 assert.equal(confirmed.independentDomains.length, 2);
 
