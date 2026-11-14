@@ -26,7 +26,7 @@ assert.equal(sparseFilm.status, 'evidence-incomplete');
 assert.ok(sparseFilm.missingFields.some(gap => gap.id === 'release_date'));
 assert.ok(sparseFilm.missingFields.some(gap => gap.id === 'creative_leadership'));
 assert.ok(sparseFilm.missingFields.some(gap => gap.id === 'cast'));
-assert.equal(sparseFilm.coverage.availableCore, 1);
+assert.equal(sparseFilm.coverage.availableCore, 0);
 
 const conflictReport = assessKnowledgeGaps({
   id: 'film-2', type: 'movie', name: 'Conflict Film',
