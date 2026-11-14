@@ -89,6 +89,52 @@ export async function onRequestGet({ request, env }) {
       catch { return json({ available: false, reason: 'invalid-cache' }); }
       return json({ available: true, source: cached.source, cachedAt: cached.cached_at, payload });
     }
+    if (params.get('mode') === 'knowledge-export') {
+      const page = Math.max(1, Math.min(100000, Number.parseInt(params.get('page') || '1', 10) || 1));
+      const limit = Math.max(1, Math.min(100, Number.parseInt(params.get('limit') || '100', 10) || 100));
+      const since = params.get('since');
+      if (since && (since.length > 40 || !Number.isFinite(Date.parse(since)))) {
+        return json({ error: 'تاريخ المزامنة غير صالح.' }, 400);
+      }
+      const where = since ? 'WHERE datetime(t.updated_at) > datetime(?)' : '';
+      const values = since ? [since] : [];
+      const count = await db.prepare('SELECT COUNT(*) AS total FROM titles t ' + where).bind(...values).first();
+      const sql = `SELECT
+        t.tmdb_id AS tmdbId,t.type,t.title,t.title_ar AS titleAr,t.overview_ar AS overview,
+        t.release_date AS releaseDate,t.year,t.runtime,t.status,t.rating,t.votes,t.popularity,
+        t.original_language AS originalLanguage,t.updated_at AS updatedAt,
+        (SELECT GROUP_CONCAT(name, ' | ') FROM (
+          SELECT COALESCE(g.name_ar,g.name_en) AS name
+          FROM title_genres tg JOIN genres g ON g.id=tg.genre_id
+          WHERE tg.title_id=t.id ORDER BY name
+        )) AS genres,
+        (SELECT GROUP_CONCAT(name, ' | ') FROM (
+          SELECT p.name AS name FROM credits c JOIN people p ON p.id=c.person_id
+          WHERE c.title_id=t.id AND c.kind='cast' ORDER BY c.sort_order LIMIT 10
+        )) AS cast,
+        (SELECT GROUP_CONCAT(name, ' | ') FROM (
+          SELECT p.name AS name FROM credits c JOIN people p ON p.id=c.person_id
+          WHERE c.title_id=t.id AND c.kind='crew' AND lower(c.job)='director'
+          ORDER BY c.sort_order LIMIT 3
+        )) AS directors,
+        (SELECT GROUP_CONCAT(name, ' | ') FROM (
+          SELECT p.name AS name FROM credits c JOIN people p ON p.id=c.person_id
+          WHERE c.title_id=t.id AND c.kind='crew'
+          AND (lower(c.job) LIKE '%creator%' OR lower(c.job) LIKE '%showrunner%')
+          ORDER BY c.sort_order LIMIT 3
+        )) AS creators
+        FROM titles t ${where}
+        ORDER BY datetime(t.updated_at) ASC,t.tmdb_id ASC
+        LIMIT ? OFFSET ?`;
+      const rows = await db.prepare(sql).bind(...values, limit, (page - 1) * limit).all();
+      const total = Number(count?.total) || 0;
+      return json({
+        available: true,
+        source: 'VibeCritic D1 entertainment catalog',
+        page, limit, total, pages: Math.ceil(total / limit),
+        items: rows.results || []
+      });
+    }
     if (params.get('mode') === 'editorial-context') {
       const tmdbId = params.get('tmdb_id');
       const type = params.get('type');
