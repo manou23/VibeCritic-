@@ -303,6 +303,14 @@ export async function recordEditorialReview(review) {
     releaseDate: clean(review.releaseDate).slice(0, 40) || null,
     sourceName: clean(review.sourceName).slice(0, 80) || null,
     sourceUrl: clean(review.sourceUrl).slice(0, 500) || null,
+    catalogSources: (Array.isArray(review.catalogSources) ? review.catalogSources : []).slice(0, 6).map(source => ({
+      source: clean(source?.source).slice(0, 80),
+      url: clean(source?.url).slice(0, 500),
+      releaseDate: clean(source?.releaseDate).slice(0, 40) || null,
+      genres: [...new Set((Array.isArray(source?.genres) ? source.genres : []).map(clean).filter(Boolean))].slice(0, 12),
+      platforms: [...new Set((Array.isArray(source?.platforms) ? source.platforms : []).map(clean).filter(Boolean))].slice(0, 20),
+      developers: [...new Set((Array.isArray(source?.developers) ? source.developers : []).map(clean).filter(Boolean))].slice(0, 12)
+    })).filter(source => source.source && source.url),
     sourcePath: clean(review.sourcePath).slice(0, 300),
     excerpt: clean(review.excerpt).slice(0, 1800),
     knowledgeClass: 'editorial-opinion-not-verified-fact'
@@ -346,40 +354,51 @@ export async function recordEditorialReview(review) {
     }
   }
 
-  // Promote only narrowly scoped game catalog metadata when a registered source URL
-  // proves the source identity. Editorial opinions themselves remain non-factual.
+  // Promote narrowly scoped catalog facts from every independently registered source.
+  // The review's primary source and secondary catalog sources remain separate.
   if (record.type === 'game' && indexedWorkId) {
-    const base = {
-      source: record.sourceName,
-      url: record.sourceUrl,
-      observedAt: new Date().toISOString()
-    };
-    const facts = [
-      ['release_date', record.releaseDate],
-      ['genres', record.genres],
-      ['platforms', record.platforms],
-      ['developers', record.creator ? [record.creator] : []]
+    const sources = [
+      {
+        source: record.sourceName,
+        url: record.sourceUrl,
+        releaseDate: record.releaseDate,
+        genres: record.genres,
+        platforms: record.platforms,
+        developers: record.creator ? [record.creator] : []
+      },
+      ...record.catalogSources
     ];
-    for (const [field, value] of facts) {
-      if (value == null || value === '' || (Array.isArray(value) && !value.length)) continue;
-      const provenance = resolveSourceEvidence({ ...base, field });
-      if (!provenance) continue;
-      recordObservation(graph, indexedWorkId, field, value, provenance);
-      const relation = {
-        genres: ['concept', 'has_genre'],
-        platforms: ['concept', 'available_on'],
-        developers: ['company', 'developed_by']
-      }[field];
-      if (relation) {
-        for (const label of names(Array.isArray(value) ? value : [value]).slice(0, 20)) {
-          const entity = upsertEntity(graph, relation[0], label, provenance.source);
-          addRelation(graph, indexedWorkId, relation[1], entity?.id, provenance);
+    for (const catalog of sources) {
+      const base = { source: catalog.source, url: catalog.url, observedAt: new Date().toISOString() };
+      const facts = [
+        ['release_date', catalog.releaseDate],
+        ['genres', catalog.genres],
+        ['platforms', catalog.platforms],
+        ['developers', catalog.developers]
+      ];
+      let sourceAccepted = false;
+      for (const [field, value] of facts) {
+        if (value == null || value === '' || (Array.isArray(value) && !value.length)) continue;
+        const provenance = resolveSourceEvidence({ ...base, field });
+        if (!provenance) continue;
+        sourceAccepted = true;
+        recordObservation(graph, indexedWorkId, field, value, provenance);
+        const relation = {
+          genres: ['concept', 'has_genre'],
+          platforms: ['concept', 'available_on'],
+          developers: ['company', 'developed_by']
+        }[field];
+        if (relation) {
+          for (const label of names(Array.isArray(value) ? value : [value]).slice(0, 20)) {
+            const entity = upsertEntity(graph, relation[0], label, provenance.source);
+            addRelation(graph, indexedWorkId, relation[1], entity?.id, provenance);
+          }
         }
       }
+      const verifiedSource = sourceAccepted && resolveSourceEvidence({ ...base, field: 'game_catalog_metadata' });
+      const work = graph.entities.find(entry => entry.id === indexedWorkId);
+      if (verifiedSource && work && !work.sources.includes(verifiedSource.source)) work.sources.push(verifiedSource.source);
     }
-    const verifiedSource = resolveSourceEvidence({ ...base, field: 'game_catalog_metadata' });
-    const work = graph.entities.find(entry => entry.id === indexedWorkId);
-    if (verifiedSource && work && !work.sources.includes(verifiedSource.source)) work.sources.push(verifiedSource.source);
   }
 
   const index = graph.editorialReviews.findIndex(entry => entry.key === record.key);
