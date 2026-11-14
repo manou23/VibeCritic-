@@ -1,11 +1,11 @@
-const clean = value => String(value ?? '').replace(/[\\r\\n]+/g, ' ').trim();
+const clean = value => String(value ?? '').replace(/[\r\n]+/g, ' ').trim();
 const list = value => Array.isArray(value) ? value : [];
 const names = value => list(value).map(entry => typeof entry === 'string' ? clean(entry) : clean(entry?.name)).filter(Boolean);
 const unique = values => [...new Set(values.map(clean).filter(Boolean))];
 
 function dateOnly(value) {
   const date = clean(value).slice(0, 10);
-  return /^\\d{4}-\\d{2}-\\d{2}$/.test(date) && Number.isFinite(Date.parse(date)) ? date : '';
+  return /^\d{4}-\d{2}-\d{2}$/.test(date) && Number.isFinite(Date.parse(date)) ? date : '';
 }
 
 function fieldGap(id, label, question, severity = 'medium') {
@@ -121,5 +121,5 @@ export function formatKnowledgeGapContext(report) {
     'جوانب لا تثبتها بيانات الكتالوج وحدها:', ...blindSpots,
     report.principle,
     'لا تملأ هذه الفجوات بالاستنتاج الحر. لا تذكرها كلها كتحذير آلي في المقال؛ استخدم فقط ما يؤثر مباشرة في الزاوية المختارة، وميّز بين المعلومة الناقصة والعيب المثبت.'
-  ].join('\\n');
+  ].join('\n');
 }
