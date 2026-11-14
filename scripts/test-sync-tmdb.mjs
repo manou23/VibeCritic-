@@ -33,6 +33,8 @@ assert.ok(movie.some(sql => sql.includes("DELETE FROM title_genres")));
 assert.ok(movie.some(sql => sql.includes("DELETE FROM credits")));
 assert.ok(movie.some(sql => sql.includes("Brad O''Brien")));
 assert.ok(movie.some(sql => sql.includes("'cast','Tyler',NULL,0")));
+assert.ok(movie.some(sql => sql.includes('INSERT INTO editorial_cache')));
+assert.ok(movie.some(sql => sql.includes('expires_at')));
 assert.ok(!movie.some(sql => sql.includes('Other Crew')));
 
 const tv = buildTitleStatements({
@@ -50,10 +52,11 @@ assert.ok(tv.some(sql => sql.includes("'Creator One'")));
 assert.ok(tv.some(sql => sql.includes("'Creator'")));
 
 const retention = buildRetentionStatements();
-assert.equal(retention.length, 3);
+assert.equal(retention.length, 4);
 assert.ok(retention[0].includes("julianday('now', '-179 days')"));
 assert.ok(retention[1].includes('FROM credits'));
 assert.ok(retention[2].includes('FROM title_genres'));
+assert.ok(retention[3].includes('DELETE FROM editorial_cache'));
 
 assert.throws(() => buildTitleStatements({ id: 1 }, 'game'), /Invalid TMDB title/);
 assert.throws(() => buildTitleStatements({ id: 1 }, 'movie'), /missing its name/);

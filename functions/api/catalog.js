@@ -17,6 +17,21 @@ export async function onRequestGet({ request, env }) {
   try {
     const params = new URL(request.url).searchParams;
     if (params.get('mode') === 'genres') return json({ genres: await getGenres(db) });
+    if (params.get('mode') === 'editorial-cache') {
+      const tmdbId = params.get('tmdb_id');
+      const type = params.get('type');
+      if (!/^\d{1,10}$/.test(tmdbId || '') || !['movie', 'tv'].includes(type || '')) {
+        return json({ error: 'معرّف العمل أو نوعه غير صالح.' }, 400);
+      }
+      const cached = await db.prepare(
+        "SELECT payload, cached_at FROM editorial_cache WHERE tmdb_id=? AND type=? AND expires_at > datetime('now') LIMIT 1"
+      ).bind(Number(tmdbId), type).first();
+      if (!cached) return json({ available: false, reason: 'cache-miss' });
+      let payload;
+      try { payload = JSON.parse(cached.payload); }
+      catch { return json({ available: false, reason: 'invalid-cache' }); }
+      return json({ available: true, cachedAt: cached.cached_at, payload });
+    }
     if (params.get('mode') === 'editorial-context') {
       const tmdbId = params.get('tmdb_id');
       const type = params.get('type');
