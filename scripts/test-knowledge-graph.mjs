@@ -103,7 +103,7 @@ try {
   const context = await buildKnowledgeContext(firstWork);
   assert.match(context, /Science Fiction/);
   assert.match(context, /ذاكرة المراجعات التحريرية السابقة/);
-  assert.match(context, /تقييم VibeCritic السابق: 8.4/10/);
+  assert.ok(context.includes('تقييم VibeCritic السابق: 8.4/10'));
   assert.match(context, /مراجعة يدوية/);
   assert.match(context, /لا تعامل الرأي السابق كحقيقة مستقلة/);
   assert.match(context, /Related Film/);
