@@ -63,6 +63,33 @@ assert.equal(context.available, true);
 assert.equal(context.relatedWorks[0].title, 'عمل مرتبط');
 assert.equal(context.relatedWorks[0].sharedPersonCount, 1);
 assert.ok(calls.some(call => call.sql.includes('sharedGenreCount') && call.values.length === 7));
+const cachedResponse = await onRequestGet({
+  request: new Request('https://vibecritic.pages.dev/api/catalog?mode=editorial-cache&tmdb_id=123&type=movie'),
+  env: { ENTERTAINMENT_DB: {
+    prepare(sql) {
+      assert.ok(sql.includes('FROM editorial_cache'));
+      return { bind(...values) {
+        assert.deepEqual(values, [123, 'movie']);
+        return { async first() { return { payload: JSON.stringify({ title: 'عمل محفوظ', genres: ['دراما'] }), cached_at: '2026-11-14T00:00:00Z' }; } };
+      } };
+    }
+  } }
+});
+assert.equal(cachedResponse.status, 200);
+const cachedPayload = await cachedResponse.json();
+assert.equal(cachedPayload.available, true);
+assert.equal(cachedPayload.payload.title, 'عمل محفوظ');
+const cacheMissResponse = await onRequestGet({
+  request: new Request('https://vibecritic.pages.dev/api/catalog?mode=editorial-cache&tmdb_id=999&type=movie'),
+  env: { ENTERTAINMENT_DB: { prepare() { return { bind() { return { async first() { return null; } }; } }; } } }
+});
+assert.equal((await cacheMissResponse.json()).available, false);
+const invalidCache = await onRequestGet({
+  request: new Request('https://vibecritic.pages.dev/api/catalog?mode=editorial-cache&tmdb_id=x&type=movie'),
+  env: { ENTERTAINMENT_DB: db }
+});
+assert.equal(invalidCache.status, 400);
+
 const invalidContext = await onRequestGet({
   request: new Request('https://vibecritic.pages.dev/api/catalog?mode=editorial-context&tmdb_id=x&type=movie'),
   env: { ENTERTAINMENT_DB: db }
