@@ -11,7 +11,6 @@ releaseDate: "2030-12-31"
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/coc3ae.jpg"
 backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/coc3ae.jpg"
 reviewMode: preview
-score: 6.5
 pros:
   - "فكرة سردية مميزة تجمع بين النهاية البشرية والماجيا"
   - "محاولة دمج عناصر RPG مع محاكاة في إطار مستقل"
