@@ -46,4 +46,6 @@ assert.ok(evaluation.score >= 0 && evaluation.score <= 100);
 assert.equal(evaluation.sourceTruthVerified, false);
 assert.ok(evaluation.metrics.sectionCount >= 5);
 assert.ok(evaluation.metrics.wordCount >= 750);
+assert.equal(evaluation.metrics.structureScore, 100);
+assert.equal(evaluation.status, 'structural-pass');
 console.log('Editorial reasoning tests passed.');
