@@ -398,7 +398,7 @@ async function generateWithOpenRouter(prompt){
  }
  throw new Error('OpenRouter لم يرجع JSON صالحاً بعد 3 محاولات: '+lastIssue);
 }
-export export function validateGeneratedReview(d){
+export function validateGeneratedReview(d){
  const review=String(d?.review||'').replace(/<[^>]*>/g,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').trim();
  const pros=Array.isArray(d?.pros)?d.pros.filter(x=>String(x||'').trim()):[];
  const cons=Array.isArray(d?.cons)?d.cons.filter(x=>String(x||'').trim()):[];
