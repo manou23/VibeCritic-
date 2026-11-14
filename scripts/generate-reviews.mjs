@@ -149,8 +149,8 @@ async function fetchEditorialCatalogContext(item) {
   url.searchParams.set('tmdb_id', String(item.id));
   url.searchParams.set('type', item.type === 'movie' ? 'movie' : 'tv');
   const payload = await getJson(url.toString());
-  if (!payload?.available || !Array.isArray(payload.relatedWorks) || !payload.relatedWorks.length) return null;
-  const relatedWorks = payload.relatedWorks.slice(0, 6).filter(work =>
+  if (!payload?.available || (!payload.base && !Array.isArray(payload.relatedWorks))) return null;
+  const relatedWorks = (payload.relatedWorks || []).slice(0, 6).filter(work =>
    work && String(work.title || '').trim() &&
    (Number(work.sharedGenreCount) > 0 || Number(work.sharedPersonCount) > 0)
   ).map(work => ({
@@ -164,14 +164,21 @@ async function fetchEditorialCatalogContext(item) {
    sharedPeople: String(work.sharedPeople || '').slice(0, 240),
    catalogUpdatedAt: work.catalogUpdatedAt || null
   }));
-  if (!relatedWorks.length) return null;
+  const base = payload.base ? {
+   ...payload.base,
+   genres: Array.isArray(payload.base.genres) ? payload.base.genres.slice(0, 12) : [],
+   cast: Array.isArray(payload.base.cast) ? payload.base.cast.slice(0, 10) : [],
+   directors: Array.isArray(payload.base.directors) ? payload.base.directors.slice(0, 3) : [],
+   creators: Array.isArray(payload.base.creators) ? payload.base.creators.slice(0, 3) : []
+  } : null;
+  if (!base && !relatedWorks.length) return null;
   return {
    source: payload.source || 'VibeCritic D1 entertainment catalog',
    sourceUrl: url.origin + url.pathname,
    observedAt: new Date().toISOString(),
-   base: payload.base || null,
+   base,
    relatedWorks,
-   limitation: 'روابط مبنية على تصنيفات وأسماء طاقم مشتركة في الكتالوج؛ لا تثبت تشابهاً فنياً أو جودة أو تأثيراً.'
+   limitation: 'بيانات الكتالوج تصف حقولاً فهرسية موثقة داخلياً؛ الروابط بين الأعمال مبنية على تصنيفات أو أسماء طاقم مشتركة ولا تثبت تشابهاً فنياً أو جودة أو تأثيراً.'
   };
  } catch (error) {
   console.warn('تعذر جلب السياق المقارن من كتالوج D1؛ سيستمر التحليل بالمصادر المعتادة:', error.message);
@@ -602,8 +609,10 @@ async function fetchCachedEditorialMetadata(item) {
 }
 async function enrichItem(item){
  if(item.type==='game'){const trailer=await findOfficialGameTrailer(item);return {...item,metadata:{...(item.metadata||{}),...(trailer||{})}};}
+ let catalogContext=null;
  try{
   const endpoint=item.type==='movie'?'movie':'tv';
+  catalogContext=await fetchEditorialCatalogContext(item);
   const cached=await fetchCachedEditorialMetadata(item);
   let detail;
   if(cached){
@@ -622,15 +631,34 @@ async function enrichItem(item){
    const key=required('TMDB_API_KEY');
    try{const reviewData=await getJson('https://api.themoviedb.org/3/'+endpoint+'/'+item.id+'/reviews?api_key='+key+'&language=en-US&page=1');communityReviews=(reviewData.results||[]).slice(0,3).map(review=>String(review.content||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim().slice(0,450)).filter(Boolean);}catch(error){console.warn('تعذر جلب مراجعات الجمهور من TMDB للعمل '+item.name+':',error.message);}
   }
-  const cast=(detail.credits?.cast||[]).slice(0,7).map(x=>x.character?x.name+' بدور '+x.character:x.name).filter(Boolean);
-  const directors=(detail.credits?.crew||[]).filter(x=>x.job==='Director').slice(0,2).map(x=>x.name);
-  const creators=(detail.created_by||[]).map(x=>x.name).filter(Boolean);
-  const catalogContext=await fetchEditorialCatalogContext(item);
+  const detailCast=(detail.credits?.cast||[]).slice(0,7).map(x=>x.character?x.name+' بدور '+x.character:x.name).filter(Boolean);
+  const detailDirectors=(detail.credits?.crew||[]).filter(x=>x.job==='Director').slice(0,2).map(x=>x.name);
+  const detailCreators=(detail.created_by||[]).map(x=>x.name).filter(Boolean);
+  const cast=detailCast.length?detailCast:(catalogContext?.base?.cast||[]);
+  const directors=detailDirectors.length?detailDirectors:(catalogContext?.base?.directors||[]);
+  const creators=detailCreators.length?detailCreators:(catalogContext?.base?.creators||[]);
+  const detailGenres=(detail.genres||[]).map(x=>x.name).filter(Boolean);
+  const genres=detailGenres.length?detailGenres:(catalogContext?.base?.genres||[]);
+  const catalogSource={source:'VIBECRITIC_D1',url:catalogContext?.sourceUrl,observedAt:catalogContext?.observedAt};
+  const fieldSources={...(item.fieldSources||{})};
+  if(!detailGenres.length&&genres.length)fieldSources.genres=catalogSource;
+  if(!detailCast.length&&cast.length)fieldSources.cast=catalogSource;
+  if(!detailDirectors.length&&directors.length)fieldSources.directors=catalogSource;
+  if(!detailCreators.length&&creators.length)fieldSources.creators=catalogSource;
+  if(!detail.runtime&&catalogContext?.base?.runtime)fieldSources.runtime=catalogSource;
+  if(!detail.release_date&&!detail.first_air_date&&catalogContext?.base?.releaseDate)fieldSources.release_date=catalogSource;
   const officialVideo=(detail.videos?.results||[])
    .filter(video=>video.site==='YouTube'&&video.official===true&&['Trailer','Teaser'].includes(video.type)&&/^[A-Za-z0-9_-]{11}$/.test(video.key||''))
    .sort((a,b)=>(a.type==='Trailer'?0:1)-(b.type==='Trailer'?0:1)||String(b.published_at||'').localeCompare(String(a.published_at||'')))[0];
-  return {...item,fieldSources:{...(item.fieldSources||{}),...(catalogContext?{catalog_related_works:{source:'VIBECRITIC_D1',url:catalogContext.sourceUrl,observedAt:catalogContext.observedAt}}:{})},name:detail.title||detail.name||item.name,originalTitle:detail.original_title||detail.original_name||item.originalTitle||item.name||'',date:detail.release_date||detail.first_air_date||item.date,rating:Number(detail.vote_average??item.rating)||0,sourceVoteCount:Number(detail.vote_count)||0,genres:(detail.genres||[]).map(x=>x.name).filter(Boolean),metadata:{voteAverage:Number(detail.vote_average)||0,voteCount:Number(detail.vote_count)||0,youtubeVideoId:officialVideo?.key||null,youtubeVideoTitle:officialVideo?.name||null,genres:(detail.genres||[]).map(x=>x.name).filter(Boolean),directors,creators,cast,runtime:detail.runtime||null,episodeRuntime:Array.isArray(detail.episode_run_time)?detail.episode_run_time.slice(0,3):[],seasons:detail.number_of_seasons||null,episodes:detail.number_of_episodes||null,productionCompanies:(detail.production_companies||[]).slice(0,5).map(x=>x.name),watchProviders:[...(watchRegion?.flatrate||[]),...(watchRegion?.rent||[]),...(watchRegion?.buy||[])].map(x=>x.provider_name).filter((name,index,all)=>all.indexOf(name)===index),watchProviderUrl:watchRegion?.link||null,communityReviews,similar:(detail.similar?.results||[]).slice(0,5).map(x=>({id:String(x.id),title:x.title||x.name||''})),catalogContext}};
- }catch(error){console.warn('تعذر إثراء بيانات العمل من TMDB، سيُستخدم الوصف المتاح:',error.message);return item;}
+  return {...item,fieldSources:{...fieldSources,...(catalogContext?{catalog_related_works:catalogSource}:{})},name:detail.title||detail.name||catalogContext?.base?.title||item.name,description:item.description||catalogContext?.base?.overview||'',originalTitle:detail.original_title||detail.original_name||catalogContext?.base?.originalTitle||item.originalTitle||item.name||'',date:detail.release_date||detail.first_air_date||catalogContext?.base?.releaseDate||item.date,rating:Number(detail.vote_average??catalogContext?.base?.rating??item.rating)||0,sourceVoteCount:Number(detail.vote_count??catalogContext?.base?.votes)||0,genres,metadata:{voteAverage:Number(detail.vote_average??catalogContext?.base?.rating)||0,voteCount:Number(detail.vote_count??catalogContext?.base?.votes)||0,youtubeVideoId:officialVideo?.key||null,youtubeVideoTitle:officialVideo?.name||null,genres,directors,creators,cast,runtime:detail.runtime||catalogContext?.base?.runtime||null,episodeRuntime:Array.isArray(detail.episode_run_time)?detail.episode_run_time.slice(0,3):[],seasons:detail.number_of_seasons||null,episodes:detail.number_of_episodes||null,productionCompanies:(detail.production_companies||[]).slice(0,5).map(x=>x.name),watchProviders:[...(watchRegion?.flatrate||[]),...(watchRegion?.rent||[]),...(watchRegion?.buy||[])].map(x=>x.provider_name).filter((name,index,all)=>all.indexOf(name)===index),watchProviderUrl:watchRegion?.link||null,communityReviews,similar:(detail.similar?.results||[]).slice(0,5).map(x=>({id:String(x.id),title:x.title||x.name||''})),catalogContext}};
+ }catch(error){
+  console.warn('تعذر إثراء بيانات العمل من TMDB، سيُستخدم كتالوج VibeCritic D1 عند توافره:',error.message);
+  catalogContext=catalogContext||await fetchEditorialCatalogContext(item);
+  if(!catalogContext?.base)return item;
+  const base=catalogContext.base,catalogSource={source:'VIBECRITIC_D1',url:catalogContext.sourceUrl,observedAt:catalogContext.observedAt};
+  const fieldSources={...(item.fieldSources||{}),genres:catalogSource,cast:catalogSource,directors:catalogSource,release_date:catalogSource,runtime:catalogSource};
+  return {...item,name:base.title||item.name,description:item.description||base.overview||'',originalTitle:base.originalTitle||item.originalTitle||item.name,date:base.releaseDate||item.date,rating:Number(base.rating??item.rating)||0,sourceVoteCount:Number(base.votes)||0,genres:base.genres||[],fieldSources,metadata:{...(item.metadata||{}),voteAverage:Number(base.rating)||0,voteCount:Number(base.votes)||0,genres:base.genres||[],cast:base.cast||[],directors:base.directors||[],creators:base.creators||[],runtime:base.runtime||null,catalogContext}};
+ }
 }
 async function existingHeadlines(){
  const files=(await fs.readdir(outDir)).filter(file=>file.endsWith('.md')).slice(-60);

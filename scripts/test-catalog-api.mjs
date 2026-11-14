@@ -11,6 +11,14 @@ function makeDb() {
           async first() { return { total: 1 }; },
           async all() {
             if (sql.includes('FROM genres')) return { results: [{ id: 1, name_ar: 'دراما' }] };
+            if (sql.startsWith('SELECT COALESCE(g.name_ar,g.name_en) AS name FROM title_genres')) return { results: [{ name: 'دراما' }, { name: 'خيال علمي' }] };
+            if (sql.startsWith('SELECT p.name,c.kind,c.job,c.character FROM credits')) return { results: [
+              { name: 'ممثل أول', kind: 'cast', character: 'البطل' },
+              { name: 'ممثل ثان', kind: 'cast', character: 'الصديق' },
+              { name: 'ممثل ثالث', kind: 'cast', character: null },
+              { name: 'مخرج معروف', kind: 'crew', job: 'Director' },
+              { name: 'كاتب معروف', kind: 'crew', job: 'Writer' }
+            ] };
             return { results: [{ id: 7, title_ar: 'اختبار عربي', type: 'movie' }] };
           }
         };
@@ -50,8 +58,18 @@ const contextResponse = await onRequestGet({
       return { bind(...values) {
         calls.push({ sql, values });
         return {
-          async first() { return { id: 9, tmdb_id: 123, type: 'movie', title: 'فيلم أساسي', year: 2024, updated_at: '2026-11-14' }; },
-          async all() { return { results: [{ tmdb_id: 456, type: 'movie', title: 'عمل مرتبط', year: 2020, sharedGenreCount: 2, sharedPersonCount: 1, sharedGenres: 'دراما، خيال', sharedPeople: 'مخرج مشترك' }] }; }
+          async first() { return { id: 9, tmdb_id: 123, type: 'movie', title: 'Original Film', title_ar: 'فيلم أساسي', overview_ar: 'وصف كتالوجي موثق للعمل.', release_date: '2024-06-01', year: 2024, runtime: 120, status: 'Released', rating: 7.5, votes: 1200, popularity: 44, original_language: 'en', updated_at: '2026-11-14' }; },
+          async all() {
+            if (sql.startsWith('SELECT COALESCE(g.name_ar,g.name_en) AS name FROM title_genres')) return { results: [{ name: 'دراما' }, { name: 'خيال علمي' }] };
+            if (sql.startsWith('SELECT p.name,c.kind,c.job,c.character FROM credits')) return { results: [
+              { name: 'ممثل أول', kind: 'cast', character: 'البطل' },
+              { name: 'ممثل ثان', kind: 'cast', character: 'الصديق' },
+              { name: 'ممثل ثالث', kind: 'cast', character: null },
+              { name: 'مخرج معروف', kind: 'crew', job: 'Director' },
+              { name: 'كاتب معروف', kind: 'crew', job: 'Writer' }
+            ] };
+            return { results: [{ tmdb_id: 456, type: 'movie', title: 'عمل مرتبط', year: 2020, sharedGenreCount: 2, sharedPersonCount: 1, sharedGenres: 'دراما، خيال', sharedPeople: 'مخرج مشترك' }] };
+          }
         };
       } };
     }
@@ -60,9 +78,55 @@ const contextResponse = await onRequestGet({
 assert.equal(contextResponse.status, 200);
 const context = await contextResponse.json();
 assert.equal(context.available, true);
+assert.equal(context.base.title, 'فيلم أساسي');
+assert.equal(context.base.originalTitle, 'Original Film');
+assert.deepEqual(context.base.genres, ['دراما', 'خيال علمي']);
+assert.deepEqual(context.base.cast, ['ممثل أول بدور البطل', 'ممثل ثان بدور الصديق', 'ممثل ثالث']);
+assert.deepEqual(context.base.directors, ['مخرج معروف']);
+assert.equal(context.base.runtime, 120);
 assert.equal(context.relatedWorks[0].title, 'عمل مرتبط');
 assert.equal(context.relatedWorks[0].sharedPersonCount, 1);
 assert.ok(calls.some(call => call.sql.includes('sharedGenreCount') && call.values.length === 7));
+const knowledgeExportResponse = await onRequestGet({
+  request: new Request('https://vibecritic.pages.dev/api/catalog?mode=knowledge-export&page=2&limit=50&since=2026-11-01T00:00:00Z'),
+  env: { ENTERTAINMENT_DB: {
+    prepare(sql) {
+      return { bind(...values) {
+        calls.push({ sql, values });
+        return {
+          async first() { return { total: 125 }; },
+          async all() {
+            assert.ok(sql.includes('AS tmdbId'));
+            assert.ok(sql.includes('AS directors'));
+            assert.ok(sql.includes('AS creators'));
+            return { results: [{
+              tmdbId: 789, type: 'tv', title: 'Original Series', titleAr: 'مسلسل أصلي',
+              overview: 'وصف كتالوجي', releaseDate: '2025-01-01', year: 2025,
+              runtime: 48, status: 'Returning Series', rating: 8.1, votes: 500,
+              popularity: 20, originalLanguage: 'en', updatedAt: '2026-11-10 00:00:00',
+              genres: 'دراما | خيال', cast: 'ممثل أ | ممثل ب',
+              directors: 'مخرج أ', creators: 'مبدع أ'
+            }] };
+          }
+        };
+      } };
+    }
+  } }
+});
+assert.equal(knowledgeExportResponse.status, 200);
+const knowledgeExport = await knowledgeExportResponse.json();
+assert.equal(knowledgeExport.total, 125);
+assert.equal(knowledgeExport.pages, 3);
+assert.equal(knowledgeExport.items[0].tmdbId, 789);
+assert.equal(knowledgeExport.items[0].genres, 'دراما | خيال');
+assert.equal(knowledgeExport.items[0].directors, 'مخرج أ');
+assert.ok(calls.some(call => call.sql.includes('datetime(t.updated_at) > datetime(?)') && call.values.includes('2026-11-01T00:00:00Z')));
+const invalidKnowledgeCursor = await onRequestGet({
+  request: new Request('https://vibecritic.pages.dev/api/catalog?mode=knowledge-export&since=not-a-date'),
+  env: { ENTERTAINMENT_DB: db }
+});
+assert.equal(invalidKnowledgeCursor.status, 400);
+
 const cachedResponse = await onRequestGet({
   request: new Request('https://vibecritic.pages.dev/api/catalog?mode=editorial-cache&tmdb_id=123&type=movie'),
   env: { ENTERTAINMENT_DB: {

@@ -86,8 +86,10 @@ function recordObservation(graph, workId, field, value, provenance) {
     entry.source === provenance.source && entry.normalizedValue === normalized
   );
   if (observation) {
+    if (observation.lastObservedAt !== now) {
+      observation.observations = (Number(observation.observations) || 1) + 1;
+    }
     observation.lastObservedAt = now;
-    observation.observations = (Number(observation.observations) || 1) + 1;
     if (provenance.url) observation.url = provenance.url;
   } else {
     observation = {
@@ -124,6 +126,7 @@ function recordObservation(graph, workId, field, value, provenance) {
 
 function recordItemObservations(graph, work, item, provenanceBase) {
   const metadata = item.metadata && typeof item.metadata === 'object' ? item.metadata : {};
+  const catalogBase = metadata.catalogContext?.base || {};
   const fields = [
     ['release_date', item.date],
     ['genres', item.genres || metadata.genres],
@@ -136,6 +139,19 @@ function recordItemObservations(graph, work, item, provenanceBase) {
     ['runtime', metadata.runtime],
     ['seasons', metadata.seasons],
     ['episodes', metadata.episodes],
+    ['catalog_original_title', catalogBase.originalTitle],
+    ['catalog_overview', catalogBase.overview],
+    ['catalog_release_date', catalogBase.releaseDate],
+    ['catalog_year', catalogBase.year],
+    ['catalog_runtime', catalogBase.runtime],
+    ['catalog_status', catalogBase.status],
+    ['catalog_original_language', catalogBase.originalLanguage],
+    ['catalog_rating', catalogBase.rating],
+    ['catalog_vote_count', catalogBase.votes],
+    ['catalog_genres', catalogBase.genres],
+    ['catalog_cast', catalogBase.cast],
+    ['catalog_directors', catalogBase.directors],
+    ['catalog_creators', catalogBase.creators],
     ['catalog_related_works', (metadata.catalogContext?.relatedWorks || []).slice(0, 6).map(entry =>
       clean(entry?.title) + (entry?.year ? ' (' + entry.year + ')' : '') +
       ' [genres:' + (Number(entry?.sharedGenreCount) || 0) + ', people:' + (Number(entry?.sharedPersonCount) || 0) + ']'
@@ -143,9 +159,12 @@ function recordItemObservations(graph, work, item, provenanceBase) {
   ];
   for (const [field, value] of fields) {
     if (value == null || value === '' || (Array.isArray(value) && !value.length)) continue;
-    const fieldProvenance = item.fieldSources?.[field] && typeof item.fieldSources[field] === 'object'
-      ? { ...provenanceBase, ...item.fieldSources[field] }
-      : provenanceBase;
+    const isCatalogFact = field.startsWith('catalog_') && Boolean(metadata.catalogContext?.sourceUrl);
+    const fieldProvenance = isCatalogFact
+      ? { source: 'VIBECRITIC_D1', url: metadata.catalogContext.sourceUrl, observedAt: metadata.catalogContext.observedAt }
+      : item.fieldSources?.[field] && typeof item.fieldSources[field] === 'object'
+        ? { ...provenanceBase, ...item.fieldSources[field] }
+        : provenanceBase;
     recordObservation(graph, work.id, field, value, { ...fieldProvenance, field });
   }
 }
@@ -161,8 +180,14 @@ export async function recordKnowledge(item, options = {}) {
   const metadata = item.metadata && typeof item.metadata === 'object' ? item.metadata : {};
   const source = clean(item.source || '');
   const provenanceBase = { source, url: clean(item.sourceUrl || '') || null, observedAt: new Date().toISOString() };
-  const work = upsertEntity(graph, 'work', item.type + ':' + item.id + ':' + item.name, source);
+  const existingWork = graph.entities.find(entry =>
+    entry.kind === 'work' && entry.externalId === String(item.id) && entry.workType === item.type
+  );
+  const work = existingWork || upsertEntity(graph, 'work', item.type + ':' + item.id + ':' + item.name, source);
   if (!work) return null;
+  work.aliases = [...new Set([...(Array.isArray(work.aliases) ? work.aliases : []), clean(item.name)])]
+    .filter(name => name && name !== work.name).slice(-8);
+  if (source && !work.sources.includes(source)) work.sources.push(source);
   work.externalId = String(item.id);
   work.workType = item.type;
   work.releaseDate = clean(item.date || '') || null;
@@ -320,7 +345,9 @@ export async function recordEditorialReview(review) {
 export async function buildKnowledgeContext(item) {
   if (!item?.id || !item?.type || !item?.name) return '';
   const graph = await loadGraph();
-  const workId = entityId('work', item.type + ':' + item.id + ':' + item.name);
+  const workId = graph.entities.find(entry =>
+    entry.kind === 'work' && entry.externalId === String(item.id) && entry.workType === item.type
+  )?.id || entityId('work', item.type + ':' + item.id + ':' + item.name);
   const byId = new Map(graph.entities.map(entity => [entity.id, entity]));
   const direct = graph.relations.filter(edge => edge.from === workId);
   const directLines = direct.slice(0, 12).map(edge => {

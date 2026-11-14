@@ -38,6 +38,21 @@ try {
         source: 'VibeCritic D1 entertainment catalog',
         sourceUrl: 'https://vibecritic.pages.dev/api/catalog',
         observedAt: '2026-11-14T13:00:00.000Z',
+        base: {
+          originalTitle: 'First Film Original',
+          overview: 'وصف كتالوجي موثق.',
+          releaseDate: '2026-01-01',
+          year: 2026,
+          runtime: 110,
+          status: 'Released',
+          originalLanguage: 'en',
+          rating: 7.4,
+          votes: 900,
+          genres: ['Science Fiction'],
+          cast: ['B. Actor بدور Hero'],
+          directors: ['A. Director'],
+          creators: []
+        },
         relatedWorks: [{
           tmdbId: '103', type: 'movie', title: 'Catalog Related Film', year: 2021,
           sharedGenreCount: 2, sharedPersonCount: 1,
@@ -49,6 +64,7 @@ try {
 
   await recordKnowledge(firstWork);
   await recordKnowledge(firstWork);
+  await recordKnowledge({ ...firstWork, name: 'First Film Alternate Title' });
   await recordEditorialReview({
     key: 'movie:first-film-review',
     sourceId: '101',
@@ -124,9 +140,14 @@ try {
   assert.ok(graph.relations.some(edge => edge.id === 'legacy-edge'), 'Version 1 relations should survive migration.');
   assert.ok(graph.stats.works >= 3);
   assert.ok(graph.entities.some(entity => entity.id === 'work:movie-101-first-film'), 'Unicode-safe slug should produce a stable work id.');
+  assert.equal(graph.entities.filter(entity => entity.kind === 'work' && entity.externalId === '101' && entity.workType === 'movie').length, 1, 'A work must keep one identity when its display title changes.');
+  assert.ok(graph.entities.find(entity => entity.externalId === '101')?.aliases.includes('First Film Alternate Title'), 'Alternate display titles should be retained as aliases.');
   assert.ok(graph.relations.every(edge => Array.isArray(edge.evidence) && edge.evidence.length > 0));
   assert.ok(graph.relations.some(edge => edge.type === 'source_lists_as_similar' && edge.evidence[0].source === 'TMDB'));
   assert.ok(graph.observations.some(entry => entry.workId === 'work:movie-101-first-film' && entry.field === 'catalog_related_works' && entry.source === 'VIBECRITIC_D1'), 'Catalog comparisons should be recorded as a separate sourced observation.');
+  assert.ok(graph.observations.some(entry => entry.workId === 'work:movie-101-first-film' && entry.field === 'catalog_overview' && entry.source === 'VIBECRITIC_D1'), 'D1 synopsis must retain catalog provenance.');
+  assert.ok(graph.observations.some(entry => entry.workId === 'work:movie-101-first-film' && entry.field === 'catalog_directors' && entry.source === 'VIBECRITIC_D1'), 'D1 director credits must retain catalog provenance.');
+  assert.ok(graph.observations.some(entry => entry.workId === 'work:movie-101-first-film' && entry.field === 'catalog_rating' && entry.source === 'VIBECRITIC_D1'), 'Catalog audience ratings must be stored as source metadata, not VibeCritic scores.');
   assert.ok(graph.relations.some(edge => edge.type === 'catalog_related_by_shared_metadata' && edge.evidence[0].source === 'VIBECRITIC_D1'), 'Catalog comparison edges must retain their own provenance.');
   assert.ok(graph.observations.some(entry => entry.source === 'VIBECRITIC_D1' && /لا تثبت التشابه الفني/.test(entry.sourceLimitations)), 'Catalog evidence must retain its explicit limitations.');
   assert.ok(graph.observations.some(entry => entry.workId === 'work:movie-101-first-film' && entry.field === 'genres' && entry.source === 'TMDB'), 'Source observations should be retained with provenance.');

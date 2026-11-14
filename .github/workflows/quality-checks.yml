@@ -76,6 +76,8 @@ jobs:
           node --check functions/api/review.js
           node --check functions/api/catalog.js
           npm run test:catalog-api
+          node --check scripts/ingest-d1-catalog-knowledge.mjs
+          npm run test:knowledge-catalog
       - name: Validate review scores
         run: npm run validate:reviews
       - name: Build production site
