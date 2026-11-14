@@ -91,12 +91,12 @@ const invalidCache = await onRequestGet({
 assert.equal(invalidCache.status, 400);
 
 const sourceCacheResponse = await onRequestGet({
-  request: new Request('https://vibecritic.pages.dev/api/catalog?mode=source-cache&cache_key=ab12cd34'),
+  request: new Request('https://vibecritic.pages.dev/api/catalog?mode=source-cache&cache_key=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'),
   env: { ENTERTAINMENT_DB: {
     prepare(sql) {
       assert.ok(sql.includes('FROM source_cache'));
       return { bind(...values) {
-        assert.deepEqual(values, ['ab12cd34']);
+        assert.deepEqual(values, ['aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa']);
         return { async first() { return { payload: JSON.stringify({ results: [{ id: 77 }] }), source: 'TMDB', cached_at: '2026-11-14T00:00:00Z' }; } };
       } };
     }
