@@ -114,7 +114,8 @@ async function readSourceCache(identity) {
 }
 function queueSourceCache(identity, payload) {
  const serialized = JSON.stringify(payload);
- if (serialized.length > 180000) return;
+ // Keep each D1 INSERT below SQLite's statement-size ceiling; oversized source payloads stay usable in-memory but are not persisted.
+ if (serialized.length > 40000) return;
  const now = new Date();
  const cachedAt = now.toISOString();
  const expiresAt = new Date(now.getTime() + identity.ttlDays * 86400000).toISOString();
@@ -744,7 +745,7 @@ async function generateReview(item){
  const historicalComparisonReport=buildHistoricalComparisonReport(historicalProfile,previousPatterns.map(entry=>entry.historicalProfile).filter(Boolean));
  const historicalComparisonContext=formatHistoricalComparisonContext(historicalComparisonReport);
  const judgmentHistory=await loadJudgmentHistory();
- const judgmentRevisionContext=buildJudgmentRevisionContext(enriched,judgmentHistory);
+ const judgmentRevisionContext=buildJudgmentRevisionContext(item,judgmentHistory);
  const prompt=[
  isPreview?'اكتب قراءة استباقية صحفية احترافية لعمل لم يصدر بعد، وليست مراجعة نهائية.':'اكتب مراجعة نقدية صحفية شاملة بعد الإصدار، وليست دعاية أو ملخصاً دعائياً.',
  'اكتب بصوت ناقد متخصص: أطروحة واضحة، سياق يشرح أهمية العمل داخل نوعه وسلسلته، تحليل فني مفصل، أمثلة موثقة، وحكم مسبب لا يساير الضجة الجماهيرية.',
