@@ -11,6 +11,8 @@ date: 2026-11-14
 releaseDate: "2016-11-11"
 poster: "https://image.tmdb.org/t/p/w500/x2FJsf1ElAgr63Y3PNPtJrcmpoe.jpg"
 backdrop: "https://image.tmdb.org/t/p/w780/yIZ1xendyqKvY3FGeeX3OG7Keh6.jpg"
+youtubeVideoId: "7W1m5ER3I1Y"
+youtubeVideoTitle: "Final Trailer"
 score: 9.1
 storyScore: 9.4
 visualsScore: 9.2

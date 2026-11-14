@@ -11,6 +11,8 @@ date: 2026-11-14
 releaseDate: "2008-07-18"
 poster: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg"
 backdrop: "https://image.tmdb.org/t/p/w780/hqkIcbrOHL86UncnHIsHVcVmzue.jpg"
+youtubeVideoId: "_PZpmTj1Q8Q"
+youtubeVideoTitle: "Original Theatrical Trailer"
 score: 9.1
 storyScore: 9.2
 visualsScore: 9.2
