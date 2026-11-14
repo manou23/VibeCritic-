@@ -13,6 +13,7 @@ backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/co2l7z.jpg"
 youtubeVideoId: "2Rxoz13Bthc"
 youtubeVideoTitle: "Warcraft - Official Trailer (HD)"
 reviewMode: limited
+score: 8.5
 pros:
   - "عالم غني بالمناطق والمهام والأنشطة"
   - "اللعب الجماعي يمنح الاستكشاف والقتال بعداً تعاونياً"
