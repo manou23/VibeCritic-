@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { buildTitleStatements, chunkStatements, sqlValue } from './sync-tmdb.mjs';
+import { buildTitleStatements, buildRetentionStatements, chunkStatements, sqlValue } from './sync-tmdb.mjs';
 
 assert.equal(sqlValue(null), 'NULL');
 assert.equal(sqlValue(4.5), '4.5');
@@ -48,6 +48,12 @@ const tv = buildTitleStatements({
 assert.ok(tv.some(sql => sql.includes("'Example Series','مسلسل تجريبي'")));
 assert.ok(tv.some(sql => sql.includes("'Creator One'")));
 assert.ok(tv.some(sql => sql.includes("'Creator'")));
+
+const retention = buildRetentionStatements();
+assert.equal(retention.length, 3);
+assert.ok(retention[0].includes("julianday('now', '-179 days')"));
+assert.ok(retention[1].includes('FROM credits'));
+assert.ok(retention[2].includes('FROM title_genres'));
 
 assert.throws(() => buildTitleStatements({ id: 1 }, 'game'), /Invalid TMDB title/);
 assert.throws(() => buildTitleStatements({ id: 1 }, 'movie'), /missing its name/);
