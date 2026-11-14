@@ -13,6 +13,7 @@ backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/cocv5r.jpg"
 youtubeVideoId: "wuFfiTEr2yc"
 youtubeVideoTitle: "The Legend of Zelda: Ocarina of Time - The Legend of Zelda 40th Anniversary Direct"
 reviewMode: limited
+score: 9.5
 pros:
   - "تصميم ألغاز مترابط يكافئ الملاحظة والتفكير"
   - "تنوع البيئات والأدوات يمنح الاستكشاف معنى واضحاً"
