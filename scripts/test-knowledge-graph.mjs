@@ -28,6 +28,7 @@ try {
     date: '2026-01-01',
     source: 'TMDB',
     sourceUrl: 'https://www.themoviedb.org/movie/101',
+    fieldSources: { catalog_related_works: { source: 'VIBECRITIC_D1', url: 'https://vibecritic.pages.dev/api/catalog', observedAt: '2026-11-14T13:00:00.000Z' } },
     genres: ['Science Fiction'],
     metadata: {
       directors: ['A. Director'],
