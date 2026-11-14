@@ -361,12 +361,12 @@ export async function buildKnowledgeContext(item) {
     editorialMatch.pros.length ? '- نقاط قوة رُصدت تحريرياً: ' + editorialMatch.pros.join('؛ ') : '',
     editorialMatch.cons.length ? '- تحفظات رُصدت تحريرياً: ' + editorialMatch.cons.join('؛ ') : '',
     '- نوع المصدر: ' + (editorialMatch.aiGenerated === false ? 'مراجعة يدوية' : editorialMatch.aiGenerated === true ? 'مراجعة مولدة بمساعدة AI' : 'غير محدد') + '؛ لا تعامل الرأي السابق كحقيقة مستقلة، ولا تكرر الحكم دون إعادة فحص الأدلة.'
-  ].filter(Boolean).join('\\n') : '';
+  ].filter(Boolean).join('\n') : '';
   const relatedEditorial = editorialMatch ? (graph.editorialRelations || []).filter(edge => edge.from === editorialMatch.key || edge.to === editorialMatch.key).slice(0, 5).map(edge => {
     const key = edge.from === editorialMatch.key ? edge.to : edge.from;
     const related = (graph.editorialReviews || []).find(entry => entry.key === key);
     return related ? '- مراجعة ذات بيانات تحريرية مشتركة: ' + related.title + (edge.sharedTags?.length ? ' (وسوم مشتركة: ' + edge.sharedTags.join('، ') + ')' : '') + '. الاشتراك الفهرسي لا يثبت تشابهاً فنياً أو تأثيراً.' : '';
-  }).filter(Boolean).join('\\n') : '';
+  }).filter(Boolean).join('\n') : '';
   if (!directLines.length && !relatedLines.length && !observationLines.length && !conflictLines.length && !gapContext && !patternContext && !editorialContext && !relatedEditorial) return '';
   return [
     'سياق الذاكرة المعرفية الموثق (استعمله للسياق فقط، ولا تستنتج تأثيراً أو اقتباساً دون دليل):',
