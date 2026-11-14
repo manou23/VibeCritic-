@@ -536,7 +536,7 @@ export function validateGeneratedReview(d){
  if(words<650)throw new Error('المراجعة أقصر من المعيار التحريري المطلوب (650 كلمة)');
  if(words>950)throw new Error('المراجعة تجاوزت الحد التحريري الأعلى (950 كلمة)؛ احذف التكرار والحشو');
  const sections=review.split(/^###\s+/m).slice(1);
- if(sections.length<5||sections.length>6)throw new Error('يجب أن تتضمن المراجعة خمسة محاور تحليلية وخاتمة واحدة كحد أقصى دون محاور إضافية بعد الحكم النهائي');
+ if(sections.length<5||sections.length>6)throw new Error('المراجعة لا تتضمن المحاور النقدية الخمسة والخاتمة المطلوبة أو تتضمن محاور زائدة');
  const sectionWordCounts=sections.map(section=>section.split(/\s+/u).filter(Boolean).length);
  const thinSections=sectionWordCounts.filter(count=>count<55);
  if(thinSections.length)throw new Error('يوجد محور نقدي أقصر من الحد الأدنى للتحليل (55 كلمة لكل محور)');
