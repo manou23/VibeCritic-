@@ -3,6 +3,12 @@ name: Generate reviews and publish
 # Review content is versioned independently; existing reviews follow reviewVersion: 2.
 on:
   workflow_dispatch:
+    inputs:
+      game_catalog_backfill_only:
+        description: 'Only enrich existing game reviews from RAWG; do not generate or publish an AI review.'
+        required: false
+        type: boolean
+        default: false
   schedule:
     # One article per run, every 12 hours: 03:17 and 15:17 Algeria time (UTC+1).
     - cron: '17 2,14 * * *'
@@ -120,7 +126,7 @@ jobs:
           NODE
       - name: Generate reviews
         # Run for scheduled/manual events, and for an intentional generation-trigger commit only.
-        if: github.event_name != 'push' || contains(github.event.head_commit.message, '[generate-reviews]')
+        if: (github.event_name != 'push' || contains(github.event.head_commit.message, '[generate-reviews]')) && !(github.event_name == 'workflow_dispatch' && inputs.game_catalog_backfill_only)
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
           IGDB_CLIENT_ID: ${{ secrets.IGDB_CLIENT_ID }}
@@ -167,7 +173,7 @@ jobs:
             echo "API secrets are not fully configured; skipping generation and continuing the site build."
           fi
       - name: Persist collected source responses in D1
-        if: always() && (github.event_name != 'push' || contains(github.event.head_commit.message, '[generate-reviews]'))
+        if: always() && (github.event_name != 'push' || contains(github.event.head_commit.message, '[generate-reviews]')) && !(github.event_name == 'workflow_dispatch' && inputs.game_catalog_backfill_only)
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
@@ -182,13 +188,13 @@ jobs:
       - name: Validate generated review scores and quality metadata
         run: npm run validate:reviews
       - name: Add videos to previously published reviews
-        if: github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'workflow_dispatch' && !inputs.game_catalog_backfill_only
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: npm run backfill:videos
       - name: Localize existing movie and series titles from TMDb
-        if: github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'workflow_dispatch' && !inputs.game_catalog_backfill_only
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
         run: npm run backfill:titles
