@@ -75,6 +75,8 @@ jobs:
           npm run test:reasoning-quality
           node --check scripts/backfill-arabic-titles.mjs
           node --check scripts/backfill-game-platforms.mjs
+          node --check scripts/rawg-catalog-utils.mjs
+          npm run test:rawg-backfill
           node --check scripts/validate-review-scores.mjs
           node --check functions/api/review.js
           node --check functions/api/catalog.js
