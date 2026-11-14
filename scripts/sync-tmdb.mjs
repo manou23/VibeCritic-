@@ -105,6 +105,24 @@ export function buildTitleStatements(data, type, now = new Date().toISOString())
     );
   }
 
+  const cachePayload = {
+    id: data.id, type, title: localizedTitle, originalTitle, overview: clean(data.overview),
+    releaseDate: date, runtime, voteAverage: numeric(data.vote_average), voteCount: numeric(data.vote_count),
+    genres: (Array.isArray(data.genres) ? data.genres : []).map(x => clean(x.name)).filter(Boolean),
+    directors: (Array.isArray(data.credits?.crew) ? data.credits.crew : []).filter(x => x.job === 'Director').slice(0, 2).map(x => clean(x.name)).filter(Boolean),
+    creators: (Array.isArray(data.created_by) ? data.created_by : []).map(x => clean(x.name)).filter(Boolean),
+    cast: (Array.isArray(data.credits?.cast) ? data.credits.cast : []).slice(0, 7).map(x => clean(x.character) ? clean(x.name) + ' بدور ' + clean(x.character) : clean(x.name)).filter(Boolean),
+    productionCompanies: (Array.isArray(data.production_companies) ? data.production_companies : []).slice(0, 5).map(x => clean(x.name)).filter(Boolean),
+    episodeRuntime: Array.isArray(data.episode_run_time) ? data.episode_run_time.slice(0, 3) : [],
+    seasons: numeric(data.number_of_seasons), episodes: numeric(data.number_of_episodes),
+    videos: (Array.isArray(data.videos?.results) ? data.videos.results : []).filter(x => x.site === 'YouTube' && x.official === true && ['Trailer', 'Teaser'].includes(x.type)).slice(0, 12).map(x => ({ key: x.key, name: x.name, type: x.type, publishedAt: x.published_at })),
+    similar: (Array.isArray(data.similar?.results) ? data.similar.results : []).slice(0, 5).map(x => ({ id: String(x.id), title: x.title || x.name || '' }))
+  };
+  statements.push(
+    "INSERT INTO editorial_cache (tmdb_id,type,payload,cached_at,expires_at) VALUES (" +
+    [data.id, sqlValue(type), sqlValue(JSON.stringify(cachePayload)), sqlValue(now), "datetime(" + sqlValue(now) + ", '+10 days')"].join(',') +
+    ") ON CONFLICT(tmdb_id,type) DO UPDATE SET payload=excluded.payload,cached_at=excluded.cached_at,expires_at=excluded.expires_at;"
+  );
   return statements;
 }
 
@@ -168,7 +186,7 @@ async function main() {
     }
 
     for (const id of ids) {
-      const detail = await get(`/${type}/${id}`, { append_to_response: 'credits' });
+      const detail = await get(`/${type}/${id}`, { append_to_response: 'credits,videos,similar' });
       statements.push(...buildTitleStatements(detail, type, now));
       processed++;
       if (processed % 10 === 0) console.log(`Prepared ${processed} titles...`);
