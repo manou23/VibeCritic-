@@ -70,6 +70,14 @@ export function parseReviewMarkdown(markdown, filename = '') {
     releaseDate: frontmatter.releaseDate || frontmatter.date,
     sourceName: frontmatter.sourceName,
     sourceUrl: frontmatter.sourceUrl,
+    catalogSources: frontmatter.rawgSourceUrl ? [{
+      source: 'RAWG',
+      url: frontmatter.rawgSourceUrl,
+      releaseDate: frontmatter.rawgReleaseDate,
+      genres: frontmatter.rawgGenres,
+      platforms: frontmatter.rawgPlatforms,
+      developers: frontmatter.rawgDevelopers
+    }] : [],
     sourcePath: filename,
     excerpt: body.slice(0, 1800)
   };
