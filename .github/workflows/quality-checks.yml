@@ -31,6 +31,9 @@ jobs:
         run: npm audit --audit-level=low
       - name: Check JavaScript syntax
         run: |
+          node --check scripts/sync-tmdb.mjs
+          node --check scripts/test-sync-tmdb.mjs
+          npm run test:tmdb-sync
           node --check scripts/generate-reviews.mjs
           node --check scripts/knowledge-graph.mjs
           node --check scripts/source-evidence.mjs
