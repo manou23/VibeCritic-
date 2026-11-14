@@ -77816,7 +77816,7 @@
       "platforms": [],
       "aiGenerated": true,
       "reviewMode": "preview",
-      "releaseDate": "2026-11-18",
+      "releaseDate": "2026-11-20",
       "sourceName": null,
       "sourceUrl": "https://www.themoviedb.org/movie/1300968",
       "catalogSources": [],
@@ -77939,7 +77939,7 @@
       "platforms": [],
       "aiGenerated": true,
       "reviewMode": "limited",
-      "releaseDate": "2026-07-15",
+      "releaseDate": "2026-07-17",
       "sourceName": null,
       "sourceUrl": "https://www.themoviedb.org/movie/1368337",
       "catalogSources": [],
@@ -78305,13 +78305,8 @@
       "headline": "القانون والنظام: وحدة الضحايا الخاصة — حين يصبح طول العمر الفني هو الأطروحة والعبء في الوقت نفسه",
       "summary": "مسلسل إجرائي من إنشاء دك ولف، يتابع فريقاً من المحققين في نيويورك مكلّفاً بجرائم العنف الجنسي، وقد بلغ 28 موسماً و602 حلقة منذ 1999. يعتمد على الحلقة المغلقة التي تُنجز قضيتها داخل زمنها، مع استمرارية أوليفيا بينسون كعمود سردي عبر التشكيلات المتعاقبة.",
       "verdict": "بعد الإصدار: يستحق الوقت لمن يبحث عن دراما إجرائية تُنجز قضيتها في الحلقة الواحدة وتتيح الدخول من أي نقطة، وليس لمن ينتظر بناءً روائياً متراكماً أو بصمة مؤلف واضحة. التحفظ الأهم هو أن التكرار شرط بقاء العمل وحدّه الفني في الوقت نفسه، وأن البيانات المتوفرة لا تسمح بالحكم على الإخراج والتصوير بمعزل عن انطباعات الجمهور. الحكم مبني على معمارية العمل الموثقة: رقم إنتاجي ضخم، عمود تمثيلي ثابت، وبنية نوعية مغلقة تنجح في الاتساع وتتعثر في العمق.",
-      "score": 7.1,
-      "scores": {
-        "storyScore": 7.5,
-        "visualsScore": 6.5,
-        "soundScore": 6.5,
-        "pacingScore": 7.5
-      },
+      "score": null,
+      "scores": {},
       "tags": [
         "جريمة",
         "دراما قانونية",
@@ -78338,7 +78333,7 @@
       ],
       "platforms": [],
       "aiGenerated": true,
-      "reviewMode": "review",
+      "reviewMode": "limited",
       "releaseDate": "1999-09-20",
       "sourceName": "TMDB",
       "sourceUrl": "https://www.themoviedb.org/tv/2734",
@@ -81602,5 +81597,5 @@
     "editorialReviews": 58,
     "editorialRelations": 233
   },
-  "updatedAt": "2026-11-14T22:48:52.133Z"
+  "updatedAt": "2026-11-14T23:20:50.306Z"
 }
