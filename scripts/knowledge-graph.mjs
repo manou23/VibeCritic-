@@ -3,6 +3,7 @@ import path from 'node:path';
 import { resolveSourceEvidence } from './source-evidence.mjs';
 import { assessKnowledgeGaps, formatKnowledgeGapContext } from './knowledge-gaps.mjs';
 import { compactKnowledgeGraph } from './memory-maintenance.mjs';
+import { deriveCriticalPatterns, formatCriticalPatternsContext } from './critical-patterns.mjs';
 
 const graphPath = 'data/knowledge-graph.json';
 const MAX_ENTITIES = 2500;
@@ -283,7 +284,9 @@ export async function buildKnowledgeContext(item) {
   const conflictLines = unresolved.slice(0, 6).map(entry => '- تعارض غير محسوم في ' + entry.field + ': توجد قيم من مصادر مختلفة. لا تعتمد أياً منها كحقيقة نهائية قبل التحقق.');
   const gapReport = graph.knowledgeGaps.find(entry => entry.workKey === item.type + ':' + clean(item.id)) || null;
   const gapContext = formatKnowledgeGapContext(gapReport);
-  if (!directLines.length && !relatedLines.length && !observationLines.length && !conflictLines.length && !gapContext) return '';
+  const criticalPatterns = deriveCriticalPatterns(graph, workId);
+  const patternContext = formatCriticalPatternsContext(criticalPatterns);
+  if (!directLines.length && !relatedLines.length && !observationLines.length && !conflictLines.length && !gapContext && !patternContext) return '';
   return [
     'سياق الذاكرة المعرفية الموثق (استعمله للسياق فقط، ولا تستنتج تأثيراً أو اقتباساً دون دليل):',
     ...observationLines,
@@ -291,6 +294,7 @@ export async function buildKnowledgeContext(item) {
     ...directLines,
     ...relatedLines,
     ...(gapContext ? [gapContext] : []),
+    ...(patternContext ? [patternContext] : []),
     'افصل دائماً بين علاقة المصدر المعلنة، والعنصر المشترك في البيانات، والاستنتاج النقدي الذي يحتاج دليلاً مستقلاً. درجات الثقة المصدرية مؤشرات إرشادية داخلية وليست احتمالاً إحصائياً لصحة كل معلومة.'
   ].join('\n');
 }
