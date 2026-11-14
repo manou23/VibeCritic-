@@ -119,6 +119,7 @@ const libraryResponse = await onRequestGet({
       if (sql.includes("work_type='all'")) {
         return { async all() { return { results: [{ slug: 'evidence-before-opinion', title: 'من المعلومة إلى الحجة', work_type: 'all', prompt_excerpt: 'اربط الحقيقة بالتفسير والأثر.' }] }; } };
       }
+      assert.ok(sql.includes('LIMIT 6'));
       return { bind(...values) {
         assert.deepEqual(values, ['movie']);
         return { async all() { return { results: [{ slug: 'screenplay-causality', title: 'السيناريو', work_type: 'movie', prompt_excerpt: 'اختبر السببية.' }] }; } };
