@@ -7,7 +7,7 @@ verdict: "تبدو Eon مناسبة لمن يفضّل الروايات البص�
 reviewVersion: 2
 type: game
 date: 2026-11-11
-releaseDate: "2032-12-31"
+releaseDate: ""
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/cocmgu.jpg"
 backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/cocmgu.jpg"
 reviewMode: preview
@@ -19,7 +19,7 @@ pros:
 cons:
   - "لا تتوفر تفاصيل كافية عن عدد المسارات أو أثر القرارات"
   - "قد تكون التفاعلية محدودة لمن ينتظر أنظمة لعب متنوعة"
-  - "موعد الإصدار المسجل مستقبلي، لذلك لا يمكن تقييم المنتج النهائي"
+  - "لا يوجد موعد إصدار موثوق يمكن الاعتماد عليه في البيانات المتاحة"
 tags:
   - "مغامرة"
   - "رواية بصرية"
