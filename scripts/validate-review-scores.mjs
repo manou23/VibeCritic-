@@ -16,15 +16,15 @@ for (const file of files) {
 
   const frontmatter = match[1];
   const body = match[2];
-  const modeMatch = frontmatter.match(/^reviewMode:\\s*(review|preview|limited)\\s*$/m);
+  const modeMatch = frontmatter.match(/^reviewMode:\s*(review|preview|limited)\s*$/m);
   const reviewMode = modeMatch?.[1] || 'review';
   if (frontmatter.match(/^reviewMode:/m) && !modeMatch) {
     failures.push(file + ': reviewMode must be review, preview or limited');
     continue;
   }
   if (reviewMode !== 'review') {
-    const publicText = frontmatter.replace(/^score:\\s*.*$/m, '') + '\\n' + body;
-    const prematureRating = /(?:تقييم(?:\\s+VibeCritic)?\\s*[0-9]+(?:[.,][0-9]+)?\\s*(?:\\/\\s*10|من\\s*10)|التقدير(?:\\s+الاستباقي)?(?:\\s+الحالي)?\\s*[0-9]+(?:[.,][0-9]+)?\\s*\\/\\s*10|درجة(?:\\s+نهائية)?\\s*[0-9]+(?:[.,][0-9]+)?\\s*\\/\\s*10)/i;
+    const publicText = frontmatter.replace(/^score:\s*.*$/m, '') + '\n' + body;
+    const prematureRating = /(?:تقييم(?:\s+VibeCritic)?\s*[0-9]+(?:[.,][0-9]+)?\s*(?:\/\s*10|من\s*10)|التقدير(?:\s+الاستباقي)?(?:\s+الحالي)?\s*[0-9]+(?:[.,][0-9]+)?\s*\/\s*10|درجة(?:\s+نهائية)?\s*[0-9]+(?:[.,][0-9]+)?\s*\/\s*10)/i;
     if (prematureRating.test(publicText)) failures.push(file + ': preview/limited page must not publish a numeric final rating');
   }
   const scoreMatch = frontmatter.match(/^score:\s*(.*?)\s*$/m);
