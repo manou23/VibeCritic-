@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-13T20:54:46.370Z",
-  "date": "2026-11-13",
+  "updatedAt": "2026-11-14T19:08:15.057Z",
+  "date": "2026-11-14",
   "publishingPlan": {
     "limit": 2,
     "mode": "quota-unknown",
@@ -22,7 +22,7 @@
       },
       {
         "name": "openrouter",
-        "estimatedArticles": 32,
+        "estimatedArticles": 43,
         "dailyBlocked": false
       }
     ],
@@ -38,9 +38,9 @@
     "ranking": [
       {
         "name": "openrouter",
-        "score": 0.3883,
+        "score": 0.4433,
         "reliability": 0.233,
-        "headroom": 0.64,
+        "headroom": 0.86,
         "efficiency": 0.5,
         "samples": 4,
         "successRate": 0.167,
@@ -91,7 +91,7 @@
         "requests": null
       },
       "usedTokens": 0,
-      "usedRequests": 4,
+      "usedRequests": 0,
       "estimatedArticles": null,
       "averageTokensPerArticle": null,
       "averageRequestsPerArticle": 1,
@@ -104,7 +104,7 @@
         "requests": null
       },
       "usedTokens": 0,
-      "usedRequests": 4,
+      "usedRequests": 0,
       "estimatedArticles": null,
       "averageTokensPerArticle": null,
       "averageRequestsPerArticle": 1,
@@ -116,8 +116,8 @@
         "tokens": null,
         "requests": null
       },
-      "usedTokens": 21792,
-      "usedRequests": 4,
+      "usedTokens": 0,
+      "usedRequests": 0,
       "estimatedArticles": null,
       "averageTokensPerArticle": 5448,
       "averageRequestsPerArticle": 1,
@@ -130,11 +130,11 @@
         "requests": null
       },
       "usedTokens": 0,
-      "usedRequests": 4,
-      "estimatedArticles": 32,
+      "usedRequests": 0,
+      "estimatedArticles": 43,
       "averageTokensPerArticle": null,
       "averageRequestsPerArticle": 1,
-      "reportedDailyRequestsRemaining": 32,
+      "reportedDailyRequestsRemaining": 43,
       "reportedDailyRequestsLimit": 50
     }
   }
