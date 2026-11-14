@@ -540,7 +540,7 @@ export function validateGeneratedReview(d){
  const sectionWordCounts=sections.map(section=>section.split(/\s+/u).filter(Boolean).length);
  const thinSections=sectionWordCounts.filter(count=>count<55);
  if(thinSections.length)throw new Error('يوجد محور نقدي أقصر من الحد الأدنى للتحليل (55 كلمة لكل محور)');
- if(sectionWordCounts[4]>190)throw new Error('الخاتمة أطول من الحد المطلوب؛ اختصرها واحذف أي فقرات ملحقة بعد الحكم النهائي');
+ if(sectionWordCounts[5]>190)throw new Error('الخاتمة أطول من الحد المطلوب؛ اختصرها واحذف أي فقرات ملحقة بعد الحكم النهائي');
  const uncertainty=(review.match(/لا تتوفر معلومات|لا توجد معلومات|لا تتوفر بيانات|لا توجد بيانات|لا يمكن الحكم|يصعب الحكم|غير متاح(?:ة)?/g)||[]).length;
  if(uncertainty>5)throw new Error('المراجعة تعتمد بصورة مفرطة على نقص البيانات بدلاً من تحليل المعلومات المتاحة');
  const genericPhrases=['من المتوقع أن يستمر','قد يرفع من مستوى','يضمن موارد إنتاجية','يُعدّ نقطة قوة واضحة نظراً','يبقى السؤال مفتوحاً','تجربة فريدة من نوعها'];
