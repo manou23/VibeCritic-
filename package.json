@@ -19,7 +19,8 @@
     "test:source-evidence": "node scripts/test-knowledge-graph.mjs",
     "test:knowledge-gaps": "node scripts/test-knowledge-gaps.mjs",
     "test:specialist-skills": "node scripts/test-specialist-skills.mjs",
-    "test:critical-questions": "node scripts/test-critical-questions.mjs"
+    "test:critical-questions": "node scripts/test-critical-questions.mjs",
+    "test:intellectual-repetition": "node scripts/test-intellectual-repetition.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",

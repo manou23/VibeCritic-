@@ -48,6 +48,9 @@ jobs:
           node --check scripts/critical-questions.mjs
           node --check scripts/test-critical-questions.mjs
           npm run test:critical-questions
+          node --check scripts/intellectual-repetition.mjs
+          node --check scripts/test-intellectual-repetition.mjs
+          npm run test:intellectual-repetition
           npm run test:editorial-reasoning
           node --check scripts/backfill-arabic-titles.mjs
           node --check scripts/backfill-game-platforms.mjs
