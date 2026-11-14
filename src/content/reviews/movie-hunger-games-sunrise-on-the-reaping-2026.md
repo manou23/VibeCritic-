@@ -14,11 +14,6 @@ poster: "https://static1.1.sqspcdn.com/static/f/1295769/28714730/1778511755603/S
 backdrop: "https://img.youtube.com/vi/lYXtL5TreOE/maxresdefault.jpg"
 youtubeVideoId: "lYXtL5TreOE"
 youtubeVideoTitle: "The Hunger Games: Sunrise on the Reaping — Official Trailer 2 | Lionsgate"
-score: 8.4
-storyScore: 8.7
-visualsScore: 8.8
-soundScore: 8.3
-pacingScore: 7.9
 pros:
   - "العودة إلى الربع الثاني من الحصاد توسع خلفية بانيم في مرحلة مفصلية"
   - "شخصية هايميتش تمنح الحكاية رابطاً إنسانياً مع أحداث السلسلة الأصلية"
