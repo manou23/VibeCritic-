@@ -13,7 +13,6 @@ backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/co421c.jpg"
 youtubeVideoId: "nCcfJ9uEwvs"
 youtubeVideoTitle: "Star Wars: Squadrons – Official Gameplay Trailer"
 reviewMode: preview
-score: 6
 pros:
   - "فكرة المواجهات الفضائية تمنح اللعبة هوية واضحة"
   - "إمكانية اللعب منفرداً أو مع الأصدقاء توسع خيارات التجربة"
