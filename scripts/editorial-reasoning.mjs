@@ -142,7 +142,7 @@ export function formatEditorialReasoningContext(reasoning) {
 }
 
 export function evaluateEditorialReview(item, review, reasoning, previousHeadlines = []) {
-  const body = clean(review?.review), headline = clean(review?.headline);
+  const body = String(review?.review ?? '').trim(), headline = clean(review?.headline);
   const combined = (headline + ' ' + clean(review?.hook) + ' ' + body).toLocaleLowerCase('ar');
   const wordCount = body.split(/\s+/u).filter(Boolean).length;
   const sectionCount = (body.match(/^###\s+/gmu) || []).length;
