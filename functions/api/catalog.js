@@ -34,7 +34,7 @@ export async function onRequestGet({ request, env }) {
     }
     if (params.get('mode') === 'source-cache') {
       const cacheKey = params.get('cache_key');
-      if (!/^[a-f0-9]{8}$/.test(cacheKey || '')) {
+      if (!/^[a-f0-9]{64}$/.test(cacheKey || '')) {
         return json({ error: 'مفتاح الذاكرة غير صالح.' }, 400);
       }
       const cached = await db.prepare(
