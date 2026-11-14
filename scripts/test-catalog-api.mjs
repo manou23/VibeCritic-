@@ -90,6 +90,28 @@ const invalidCache = await onRequestGet({
 });
 assert.equal(invalidCache.status, 400);
 
+const sourceCacheResponse = await onRequestGet({
+  request: new Request('https://vibecritic.pages.dev/api/catalog?mode=source-cache&cache_key=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'),
+  env: { ENTERTAINMENT_DB: {
+    prepare(sql) {
+      assert.ok(sql.includes('FROM source_cache'));
+      return { bind(...values) {
+        assert.deepEqual(values, ['aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa']);
+        return { async first() { return { payload: JSON.stringify({ results: [{ id: 77 }] }), source: 'TMDB', cached_at: '2026-11-14T00:00:00Z' }; } };
+      } };
+    }
+  } }
+});
+assert.equal(sourceCacheResponse.status, 200);
+const sourceCachePayload = await sourceCacheResponse.json();
+assert.equal(sourceCachePayload.available, true);
+assert.equal(sourceCachePayload.payload.results[0].id, 77);
+const invalidSourceCache = await onRequestGet({
+  request: new Request('https://vibecritic.pages.dev/api/catalog?mode=source-cache&cache_key=bad-key'),
+  env: { ENTERTAINMENT_DB: db }
+});
+assert.equal(invalidSourceCache.status, 400);
+
 const invalidContext = await onRequestGet({
   request: new Request('https://vibecritic.pages.dev/api/catalog?mode=editorial-context&tmdb_id=x&type=movie'),
   env: { ENTERTAINMENT_DB: db }

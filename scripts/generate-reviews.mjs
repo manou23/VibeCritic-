@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { buildEditorialTrainingContext, recordEditorialCandidate, listEditorialPatterns } from './editorial-intelligence.mjs';
 import { buildKnowledgeContext, recordKnowledge } from './knowledge-graph.mjs';
@@ -84,7 +85,61 @@ function cloudflareGatewayEndpoint(providerPath,suffix){
  if(!account)return null;
  return 'https://gateway.ai.cloudflare.com/v1/'+encodeURIComponent(account)+'/'+encodeURIComponent(gateway)+'/'+providerPath+'/'+suffix;
 }
-async function getJson(url){const r=await fetch(url,{signal:AbortSignal.timeout(30000)});if(!r.ok){const safeUrl=url.replace(/([?&](?:api_key|key)=)[^&]+/i,'$1[REDACTED]');throw new Error(`HTTP ${r.status}: ${safeUrl}`);}return r.json();}
+const pendingSourceCache = new Map();
+const sourceCacheEndpoint = String(env.VIBECRITIC_CATALOG_API_URL || 'https://vibecritic.pages.dev/api/catalog').trim();
+function sourceCacheIdentity(rawUrl) {
+ const url = new URL(rawUrl);
+ if (url.hostname === 'vibecritic.pages.dev') return null;
+ for (const key of ['key', 'api_key', 'access_token', 'token', 'client_secret']) url.searchParams.delete(key);
+ url.searchParams.sort();
+ const identity = url.origin + url.pathname + (url.search ? url.search : '');
+ const cacheKey = createHash('sha256').update(identity).digest('hex');
+ const host = url.hostname.toLowerCase();
+ const source = host.includes('themoviedb.org') ? 'TMDB' : host.includes('rawg.io') ? 'RAWG' : host.includes('googleapis.com') ? 'YOUTUBE' : host;
+ const ttlDays = source === 'YOUTUBE' ? 7 : source === 'RAWG' ? 3 : 2;
+ return { cacheKey, source, endpoint: url.pathname.slice(0, 180), ttlDays };
+}
+const sqlText = value => "'" + String(value ?? '').replaceAll("'", "''") + "'";
+async function readSourceCache(identity) {
+ try {
+  const url = new URL(sourceCacheEndpoint);
+  url.searchParams.set('mode', 'source-cache');
+  url.searchParams.set('cache_key', identity.cacheKey);
+  const response = await fetch(url.toString(), { signal: AbortSignal.timeout(8000) });
+  if (!response.ok) return null;
+  const result = await response.json();
+  return result?.available ? result.payload : null;
+ } catch { return null; }
+}
+function queueSourceCache(identity, payload) {
+ const serialized = JSON.stringify(payload);
+ if (serialized.length > 180000) return;
+ const now = new Date();
+ const cachedAt = now.toISOString();
+ const expiresAt = new Date(now.getTime() + identity.ttlDays * 86400000).toISOString();
+ const sql = "INSERT INTO source_cache (cache_key,source,endpoint,payload,cached_at,expires_at) VALUES (" +
+  [sqlText(identity.cacheKey), sqlText(identity.source), sqlText(identity.endpoint), sqlText(serialized), sqlText(cachedAt), sqlText(expiresAt)].join(',') +
+  ") ON CONFLICT(cache_key) DO UPDATE SET source=excluded.source,endpoint=excluded.endpoint,payload=excluded.payload,cached_at=excluded.cached_at,expires_at=excluded.expires_at;";
+ pendingSourceCache.set(identity.cacheKey, sql);
+}
+async function flushSourceCache() {
+ await fs.mkdir('data', { recursive: true });
+ const statements = ["DELETE FROM source_cache WHERE expires_at < datetime('now');", ...pendingSourceCache.values()];
+ await fs.writeFile('data/source-cache-upserts.sql', statements.join('\n') + '\n', 'utf8');
+ console.log('تم تجهيز ' + pendingSourceCache.size + ' سجلاً جديداً/محدّثاً في ذاكرة المصادر D1.');
+}
+async function getJson(url){
+ const identity = sourceCacheIdentity(url);
+ if (identity) {
+  const cached = await readSourceCache(identity);
+  if (cached !== null) return cached;
+ }
+ const response = await fetch(url,{signal:AbortSignal.timeout(30000)});
+ if(!response.ok){const safeUrl=url.replace(/([?&](?:api_key|key)=)[^&]+/i,'$1[REDACTED]');throw new Error(`HTTP ${response.status}: ${safeUrl}`);}
+ const payload = await response.json();
+ if (identity) queueSourceCache(identity, payload);
+ return payload;
+}
 async function fetchEditorialCatalogContext(item) {
  if (!['movie', 'series'].includes(item?.type)) return null;
  const endpoint = String(env.VIBECRITIC_CATALOG_API_URL || 'https://vibecritic.pages.dev/api/catalog').trim();
@@ -1012,5 +1067,5 @@ async function main(){
  console.log(finalTotal>=targetTotal?'تم بلوغ هدف 100 مقالة؛ سيعمل التشغيل القادم بوضع رصد الإصدارات الجديدة.':`المتبقي للوصول إلى 100 مقالة: ${targetTotal-finalTotal}`);
 }
 if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
- main().catch(e=>{console.error(e);process.exitCode=1;});
+ main().catch(e=>{console.error(e);process.exitCode=1;}).finally(()=>flushSourceCache().catch(error=>{console.error('تعذر حفظ ذاكرة المصادر في D1:',error.message);process.exitCode=1;}));
 }

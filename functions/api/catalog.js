@@ -32,6 +32,34 @@ export async function onRequestGet({ request, env }) {
       catch { return json({ available: false, reason: 'invalid-cache' }); }
       return json({ available: true, cachedAt: cached.cached_at, payload });
     }
+    if (params.get('mode') === 'source-cache') {
+      const cacheKey = params.get('cache_key');
+      if (!/^[a-f0-9]{64}$/.test(cacheKey || '')) {
+        return json({ error: 'مفتاح الذاكرة غير صالح.' }, 400);
+      }
+      const cached = await db.prepare(
+        "SELECT payload, source, cached_at FROM source_cache WHERE cache_key=? AND expires_at > datetime('now') LIMIT 1"
+      ).bind(cacheKey).first();
+      if (!cached) return json({ available: false, reason: 'cache-miss' });
+      let payload;
+      try { payload = JSON.parse(cached.payload); }
+      catch { return json({ available: false, reason: 'invalid-cache' }); }
+      return json({ available: true, source: cached.source, cachedAt: cached.cached_at, payload });
+    }
+    if (params.get('mode') === 'source-cache') {
+      const cacheKey = params.get('cache_key');
+      if (!/^[a-f0-9]{8}$/.test(cacheKey || '')) {
+        return json({ error: 'مفتاح الذاكرة غير صالح.' }, 400);
+      }
+      const cached = await db.prepare(
+        "SELECT payload, source, cached_at FROM source_cache WHERE cache_key=? AND expires_at > datetime('now') LIMIT 1"
+      ).bind(cacheKey).first();
+      if (!cached) return json({ available: false, reason: 'cache-miss' });
+      let payload;
+      try { payload = JSON.parse(cached.payload); }
+      catch { return json({ available: false, reason: 'invalid-cache' }); }
+      return json({ available: true, source: cached.source, cachedAt: cached.cached_at, payload });
+    }
     if (params.get('mode') === 'editorial-context') {
       const tmdbId = params.get('tmdb_id');
       const type = params.get('type');
