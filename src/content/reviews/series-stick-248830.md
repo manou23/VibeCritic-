@@ -13,6 +13,7 @@ poster: "https://image.tmdb.org/t/p/w500/gENmz65wMw4SUZb43fZYCoV24mG.jpg"
 backdrop: "https://image.tmdb.org/t/p/w780/2Bt2uXrIOQASBAsni2AGGqCCF14.jpg"
 youtubeVideoId: "72oB_zVF_6o"
 youtubeVideoTitle: "Official Trailer"
+reviewMode: limited
 score: 7.5
 trendRank: 8
 trendSource: "TMDB"
