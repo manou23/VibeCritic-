@@ -11,6 +11,14 @@ function makeDb() {
           async first() { return { total: 1 }; },
           async all() {
             if (sql.includes('FROM genres')) return { results: [{ id: 1, name_ar: 'دراما' }] };
+            if (sql.includes('FROM title_genres tg JOIN genres')) return { results: [{ name: 'دراما' }, { name: 'خيال علمي' }] };
+            if (sql.includes('FROM credits c JOIN people')) return { results: [
+              { name: 'ممثل أول', kind: 'cast', character: 'البطل' },
+              { name: 'ممثل ثان', kind: 'cast', character: 'الصديق' },
+              { name: 'ممثل ثالث', kind: 'cast', character: null },
+              { name: 'مخرج معروف', kind: 'crew', job: 'Director' },
+              { name: 'كاتب معروف', kind: 'crew', job: 'Writer' }
+            ] };
             return { results: [{ id: 7, title_ar: 'اختبار عربي', type: 'movie' }] };
           }
         };
@@ -50,7 +58,7 @@ const contextResponse = await onRequestGet({
       return { bind(...values) {
         calls.push({ sql, values });
         return {
-          async first() { return { id: 9, tmdb_id: 123, type: 'movie', title: 'فيلم أساسي', year: 2024, updated_at: '2026-11-14' }; },
+          async first() { return { id: 9, tmdb_id: 123, type: 'movie', title: 'Original Film', title_ar: 'فيلم أساسي', overview_ar: 'وصف كتالوجي موثق للعمل.', release_date: '2024-06-01', year: 2024, runtime: 120, status: 'Released', rating: 7.5, votes: 1200, popularity: 44, original_language: 'en', updated_at: '2026-11-14' }; },
           async all() { return { results: [{ tmdb_id: 456, type: 'movie', title: 'عمل مرتبط', year: 2020, sharedGenreCount: 2, sharedPersonCount: 1, sharedGenres: 'دراما، خيال', sharedPeople: 'مخرج مشترك' }] }; }
         };
       } };
@@ -60,6 +68,12 @@ const contextResponse = await onRequestGet({
 assert.equal(contextResponse.status, 200);
 const context = await contextResponse.json();
 assert.equal(context.available, true);
+assert.equal(context.base.title, 'فيلم أساسي');
+assert.equal(context.base.originalTitle, 'Original Film');
+assert.deepEqual(context.base.genres, ['دراما', 'خيال علمي']);
+assert.deepEqual(context.base.cast, ['ممثل أول بدور البطل', 'ممثل ثان بدور الصديق', 'ممثل ثالث']);
+assert.deepEqual(context.base.directors, ['مخرج معروف']);
+assert.equal(context.base.runtime, 120);
 assert.equal(context.relatedWorks[0].title, 'عمل مرتبط');
 assert.equal(context.relatedWorks[0].sharedPersonCount, 1);
 assert.ok(calls.some(call => call.sql.includes('sharedGenreCount') && call.values.length === 7));
