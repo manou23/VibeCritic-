@@ -26,6 +26,24 @@ assert.equal(first.selected.id, second.selected.id);
 assert.equal(first.selected.score, second.selected.score);
 assert.equal(first.eligible, true);
 
+const catalogFilm = {
+  ...film,
+  metadata: {
+    ...film.metadata,
+    catalogContext: {
+      source: 'VibeCritic D1 entertainment catalog',
+      relatedWorks: [{
+        title: 'Another Mystery Film', year: 2020,
+        sharedGenreCount: 2, sharedPersonCount: 1,
+        sharedGenres: 'Drama, Mystery', sharedPeople: 'Nadia Director'
+      }]
+    }
+  }
+};
+const catalogReasoning = buildEditorialReasoning(catalogFilm);
+assert.ok(catalogReasoning.candidates.some(entry => entry.id === 'catalog-comparative-context'));
+assert.match(formatEditorialReasoningContext(catalogReasoning), /لا يثبت التشابه الفني/);
+
 const sparse = buildEditorialReasoning({ id: 'x', type: 'movie', name: 'Unknown', description: 'A short description only.' });
 assert.equal(sparse.eligible, false);
 assert.equal(sparse.selected, null);
