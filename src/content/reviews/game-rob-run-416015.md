@@ -13,7 +13,6 @@ backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/cod5g2.jpg"
 youtubeVideoId: "ViCR4Ox964c"
 youtubeVideoTitle: "Rob Run - Official Cinematic Trailer"
 reviewMode: limited
-score: 6.5
 pros:
   - "دمج متعدد للأنواع (Shooter, RPG, Simulator, Tactical) يفتح مسارات لعب متنوعة"
   - "إمكانية اللعب الجماعي الواسع تعزز التجربة الاجتماعية"
@@ -39,6 +38,8 @@ sourceId: "416015"
 sourceUrl: "https://www.igdb.com/games/rob-run"
 aiGenerated: true
 ---
+> **ملاحظة منهجية:** هذه مادة تمهيدية مبنية على المعلومات المنشورة في المصادر المرتبطة، وليست مراجعة نهائية ناتجة عن اختبار مستقل. لا تمنح VibeCritic درجة رقمية قبل توافر أدلة مباشرة كافية على جودة التنفيذ.
+
 
 ## التحليل الفني والقصصي
 

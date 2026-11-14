@@ -13,7 +13,6 @@ backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/co8fu7.jpg"
 youtubeVideoId: "MmB9b5njVbA"
 youtubeVideoTitle: "Official Minecraft Trailer"
 reviewMode: limited
-score: 8.7
 pros:
   - "حرية إبداعية شبه لا حدود لها"
   - "نظام ريدستون يتيح بناء دوائر منطقية معقدة"
@@ -37,6 +36,8 @@ sourceId: "135400"
 sourceUrl: "https://www.igdb.com/games/minecraft--1"
 aiGenerated: true
 ---
+> **ملاحظة منهجية:** هذه مادة تمهيدية مبنية على المعلومات المنشورة في المصادر المرتبطة، وليست مراجعة نهائية ناتجة عن اختبار مستقل. لا تمنح VibeCritic درجة رقمية قبل توافر أدلة مباشرة كافية على جودة التنفيذ.
+
 
 ## التحليل الفني والقصصي
 ### أسلوب اللعب والأنظمة

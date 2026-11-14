@@ -14,7 +14,6 @@ backdrop: "https://image.tmdb.org/t/p/w780/2Bt2uXrIOQASBAsni2AGGqCCF14.jpg"
 youtubeVideoId: "72oB_zVF_6o"
 youtubeVideoTitle: "Official Trailer"
 reviewMode: limited
-score: 7.5
 trendRank: 8
 trendSource: "TMDB"
 trendPopularity: 43.9706
@@ -41,6 +40,8 @@ sourceId: "248830"
 sourceUrl: "https://www.themoviedb.org/tv/248830"
 aiGenerated: true
 ---
+> **ملاحظة منهجية:** هذه مادة تمهيدية مبنية على المعلومات المنشورة في المصادر المرتبطة، وليست مراجعة نهائية ناتجة عن مشاهدة مستقلة. لا تمنح VibeCritic درجة رقمية قبل توافر أدلة مباشرة كافية على جودة التنفيذ.
+
 
 ## التحليل الفني والقصصي
 

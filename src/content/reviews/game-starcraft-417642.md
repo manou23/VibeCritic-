@@ -7,13 +7,10 @@ verdict: "تقييم هذا الإدراج مؤقت ومنخفض الثقة. ل�
 reviewVersion: 2
 type: game
 date: 2026-11-11
-releaseDate: "2030-12-31"
+releaseDate: ""
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/cod6xu.jpg"
 backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/cod6xu.jpg"
-youtubeVideoId: "piNc8nsCmvY"
-youtubeVideoTitle: "STARCRAFT Official Trailer (2030) Blizzcon 4K"
 reviewMode: preview
-score: 5
 pros:
   - "اسم السلسلة يحمل إرثاً معروفاً لدى محبي ألعاب الاستراتيجية"
   - "أي توسع مدروس للعالم قد يفتح مجالاً لأفكار جديدة"
@@ -27,7 +24,7 @@ tags:
   - "خيال علمي"
   - "Blizzard"
 genres:
-  - "Shooter"
+  - "Strategy"
 sourceRating: 0
 sourceId: "417642"
 sourceUrl: "https://www.igdb.com/games/starcraft--1"

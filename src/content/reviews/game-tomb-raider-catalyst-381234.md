@@ -10,10 +10,7 @@ date: 2026-11-12
 releaseDate: ""
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/cob0g4.jpg"
 backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/cob0g4.jpg"
-youtubeVideoId: "rwbQHV7RW6k"
-youtubeVideoTitle: "Tomb Raider: Legacy of Atlantis | Official Release Date Trailer"
 reviewMode: preview
-score: 7.5
 trendRank: 37
 trendSource: "IGDB"
 trendPopularity: 121
@@ -38,6 +35,8 @@ sourceId: "381234"
 sourceUrl: "https://www.igdb.com/games/tomb-raider-catalyst"
 aiGenerated: true
 ---
+> **ملاحظة منهجية:** هذه مادة تمهيدية مبنية على المعلومات المنشورة في المصادر المرتبطة، وليست مراجعة نهائية ناتجة عن اختبار مستقل. لا تمنح VibeCritic درجة رقمية قبل توافر أدلة مباشرة كافية على جودة التنفيذ.
+
 
 > **تنبيه الإصدار:** اللعبة لم تصدر بعد، ولم تؤكد Amazon Games موعداً نهائياً. في 24 يوليو 2026 نقلت [Gematsu](https://www.gematsu.com/2026/07/tomb-raider-catalyst-amazon-games-boss-suggests-2028-delay-but-publisher-says-no-updates) إشارة إلى 2028، لكن ممثل الناشر قال إنه لا يملك تحديثاً عن الموعد. هذه قراءة استباقية وليست مراجعة لنسخة نهائية.
 

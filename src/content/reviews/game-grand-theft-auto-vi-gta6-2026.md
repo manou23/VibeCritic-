@@ -14,11 +14,6 @@ poster: "https://www.rockstargames.com/VI/_next/static/media/poster_full.0az_iud
 backdrop: "https://www.rockstargames.com/VI/_next/static/media/mobile.0mi46.hy2kwfa.jpg"
 youtubeVideoId: "rz1B4B2yBZY"
 youtubeVideoTitle: "Grand Theft Auto VI — Launch Trailer | Rockstar Games"
-score: 8.9
-storyScore: 8.8
-visualsScore: 9.3
-soundScore: 9.0
-pacingScore: 8.4
 platforms:
   - "PlayStation 5"
   - "Xbox Series X|S"
@@ -48,6 +43,8 @@ sourceId: "gta-vi-2026"
 sourceUrl: "https://www.rockstargames.com/VI"
 aiGenerated: false
 ---
+> **ملاحظة منهجية:** هذه مادة تمهيدية مبنية على المعلومات المنشورة في المصادر المرتبطة، وليست مراجعة نهائية ناتجة عن اختبار مستقل. لا تمنح VibeCritic درجة رقمية قبل توافر أدلة مباشرة كافية على جودة التنفيذ.
+
 
 > **تنبيه تحريري مهم:** هذه قراءة استباقية منشورة في 14 نوفمبر 2026، قبل موعد الإصدار المعلن في 19 نوفمبر 2026. تستند إلى عروض Rockstar وصفحاتها الرسمية والمعلومات المنشورة حتى تاريخ الكتابة. لا نزعم أننا لعبنا النسخة النهائية، ولا نقدم حكماً على الأداء الفعلي أو جودة المهمات التي لم تُكشف.
 

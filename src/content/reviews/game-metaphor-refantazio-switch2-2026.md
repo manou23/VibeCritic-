@@ -4,21 +4,16 @@ originalTitle: "Metaphor: ReFantazio"
 headline: "Metaphor: ReFantazio على Switch 2: فانتازيا سياسية تختبر معنى البطولة"
 hook: "ليست الرحلة إلى العرش مجرد مغامرة لإنقاذ مملكة؛ إنها مواجهة مع الخوف والتحيز والطريقة التي تصنع بها المجتمعات أبطالها."
 summary: "قراءة نقدية للعبة Metaphor: ReFantazio مع صدور نسخة Nintendo Switch 2 في 12 نوفمبر 2026، تتناول عالمها السياسي، نظام Archetypes، المزج بين القتال والاستكشاف، الإيقاع، والحدود التي ينبغي اختبارها في أداء النسخة الجديدة."
-verdict: "تملك Metaphor: ReFantazio هوية فكرية وفنية متماسكة، وتحوّل سباق العرش إلى مساحة لمناقشة الخوف والتمييز والسلطة. نظام Archetypes يمنح القتال مرونة واسعة، بينما يضيف التقويم ضغطاً زمنياً إلى الرحلة. التقدير 9.2/10 يعكس قوة اللعبة الأساسية وتصميمها، وليس حكماً تقنياً مستقلاً على أداء إصدار Switch 2."
+verdict: "تملك Metaphor: ReFantazio هوية فكرية وفنية متماسكة، وتحوّل سباق العرش إلى مساحة لمناقشة الخوف والتحيز والسلطة. نظام Archetypes يمنح القتال مرونة واسعة، بينما يضيف التقويم ضغطاً زمنياً إلى الرحلة. هذه قراءة للعبة الأساسية ومحتواها التصميمي، وليست اختباراً تقنياً مستقلاً لنسخة Nintendo Switch 2؛ لذلك لا تمنح النسخة الجديدة درجة نهائية قبل التحقق من أدائها وجودة نقلها."
 reviewVersion: 1
 type: game
 date: 2026-11-14
 releaseDate: "2026-11-12"
-reviewMode: review
+reviewMode: limited
 poster: "https://asia.sega.com/metaphor/en/switch2/ogp.jpg"
 backdrop: "https://asia.sega.com/metaphor/en/switch2/ogp.jpg"
 youtubeVideoId: "8Z6TH6p2Tyk"
 youtubeVideoTitle: "Metaphor: ReFantazio — Nintendo Switch 2 Pre-order Trailer"
-score: 9.2
-storyScore: 9.3
-visualsScore: 9.4
-soundScore: 9.2
-pacingScore: 8.7
 platforms:
   - "Nintendo Switch 2"
   - "PlayStation 5"

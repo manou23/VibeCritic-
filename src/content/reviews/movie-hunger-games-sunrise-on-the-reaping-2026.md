@@ -14,11 +14,6 @@ poster: "https://static1.1.sqspcdn.com/static/f/1295769/28714730/1778511755603/S
 backdrop: "https://img.youtube.com/vi/lYXtL5TreOE/maxresdefault.jpg"
 youtubeVideoId: "lYXtL5TreOE"
 youtubeVideoTitle: "The Hunger Games: Sunrise on the Reaping — Official Trailer 2 | Lionsgate"
-score: 8.4
-storyScore: 8.7
-visualsScore: 8.8
-soundScore: 8.3
-pacingScore: 7.9
 pros:
   - "العودة إلى الربع الثاني من الحصاد توسع خلفية بانيم في مرحلة مفصلية"
   - "شخصية هايميتش تمنح الحكاية رابطاً إنسانياً مع أحداث السلسلة الأصلية"
@@ -44,6 +39,8 @@ sourceId: "hunger-games-sunrise-on-the-reaping-2026"
 sourceUrl: "https://www.lionsgate.com/movies"
 aiGenerated: false
 ---
+> **ملاحظة منهجية:** هذه مادة تمهيدية مبنية على المعلومات المنشورة في المصادر المرتبطة، وليست مراجعة نهائية ناتجة عن مشاهدة مستقلة. لا تمنح VibeCritic درجة رقمية قبل توافر أدلة مباشرة كافية على جودة التنفيذ.
+
 
 > **تنبيه تحريري:** هذه قراءة استباقية بتاريخ 14 نوفمبر 2026، قبل العرض السينمائي المعلن في 20 نوفمبر. تعتمد على إعلان Lionsgate ووصف القصة والرواية الأصلية والمواد الدعائية الرسمية. لا نزعم مشاهدة الفيلم، ولا نصدر حكماً نهائياً على التمثيل أو الإخراج أو المونتاج أو الموسيقى.
 
