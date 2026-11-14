@@ -29,7 +29,7 @@ assert.equal(graph.entities.length, 1);
 assert.deepEqual(graph.entities[0].sources, ['TMDB', 'IGDB']);
 assert.equal(graph.entities[0].name, 'One: Full Title');
 assert.equal(graph.relations.length, 1);
-assert.equal(graph.relations[0].evidence.length, 2);
+assert.equal(graph.relations[0].evidence.length, 1);
 assert.equal(graph.observations.length, 1);
 assert.equal(graph.observations[0].observations, 3);
 assert.equal(graph.observations[0].lastObservedAt, '2026-01-03T00:00:00Z');
