@@ -35,6 +35,8 @@ jobs:
           node --check scripts/test-sync-tmdb.mjs
           npm run test:tmdb-sync
           node --check scripts/generate-reviews.mjs
+          node --check scripts/test-review-validation.mjs
+          npm run test:review-validation
           node --check scripts/knowledge-graph.mjs
           node --check scripts/source-evidence.mjs
           node --check scripts/editorial-reasoning.mjs
