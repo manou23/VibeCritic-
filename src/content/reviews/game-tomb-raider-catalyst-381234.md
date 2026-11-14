@@ -11,6 +11,7 @@ releaseDate: ""
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/cob0g4.jpg"
 backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/cob0g4.jpg"
 reviewMode: preview
+score: 7.5
 trendRank: 37
 trendSource: "IGDB"
 trendPopularity: 121
