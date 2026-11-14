@@ -371,7 +371,7 @@ async function generateWithGroq(prompt){
 async function generateWithOpenRouter(prompt){
  const gatewayAccount=String(env.CF_AI_GATEWAY_ACCOUNT_ID||'').trim(),gatewayId=String(env.CF_AI_GATEWAY_ID||'').trim();
  if(Boolean(gatewayAccount)!==Boolean(gatewayId))throw new Error('يلزم ضبط CF_AI_GATEWAY_ACCOUNT_ID وCF_AI_GATEWAY_ID معاً أو تركهما فارغين.');
- const gatewayEndpoint=gatewayAccount?'https://gateway.ai.cloudflare.com/v1/'+encodeURIComponent(gatewayAccount)+'/'+encodeURIComponent(gatewayId)+'/openrouter/v1/chat/completions':null;
+ const gatewayEndpoint=gatewayAccount?'https://gateway.ai.cloudflare.com/v1/'+encodeURIComponent(gatewayAccount)+'/'+encodeURIComponent(gatewayId)+'/openrouter/chat/completions':null;
  const directEndpoint='https://openrouter.ai/api/v1/chat/completions';
  const endpoint=gatewayEndpoint||directEndpoint;
  if(gatewayEndpoint)console.log('OpenRouter routed through Cloudflare AI Gateway (cache/logging/rate controls depend on gateway settings).');
