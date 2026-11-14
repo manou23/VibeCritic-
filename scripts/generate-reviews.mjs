@@ -178,6 +178,28 @@ async function fetchEditorialCatalogContext(item) {
   return null;
  }
 }
+async function fetchEditorialReferenceContext(item) {
+ const type = item?.type === 'game' ? 'game' : item?.type === 'series' ? 'tv' : item?.type === 'movie' ? 'movie' : null;
+ if (!type) return '';
+ const endpoint = String(env.VIBECRITIC_CATALOG_API_URL || 'https://vibecritic.pages.dev/api/catalog').trim();
+ try {
+  const url = new URL(endpoint);
+  url.searchParams.set('mode', 'editorial-library');
+  url.searchParams.set('type', type);
+  const result = await getJson(url.toString());
+  if (!result?.available || !Array.isArray(result.articles)) return '';
+  const articles = result.articles.slice(0, 3).filter(article => article && article.title && article.prompt_excerpt);
+  if (!articles.length) return '';
+  return [
+   'مراجع VibeCritic التحريرية المؤلفة يدوياً (إطار منهجي داخلي، وليست أدلة على تفاصيل العمل):',
+   ...articles.map(article => 'مرجع: ' + String(article.title).slice(0, 140) + ' — ' + String(article.prompt_excerpt).slice(0, 420)),
+   'استخدم هذه المراجع كمنهج للأسئلة والتحليل فقط؛ لا تنسبها إلى العمل ولا تعتبرها مصدراً لوقائع عنه.'
+  ].join('\\n');
+ } catch (error) {
+  console.warn('تعذر تحميل المراجع التحريرية المخزنة في D1؛ سيستمر التوليد دونها:', error.message);
+  return '';
+ }
+}
 const clean=v=>String(v??'').replace(/[\r\n]+/g,' ').trim();
 
 const providerOrder=['gemini','groq','cloudflare-workers-ai','openrouter'];
@@ -683,6 +705,7 @@ async function generateReview(item){
  const knowledgeContext=await buildKnowledgeContext(item);
  const reasoningContext=formatEditorialReasoningContext(reasoning);
  const specialistSkillContext=buildSpecialistSkillContext(item,{limit:3}).context;
+ const editorialReferenceContext=await fetchEditorialReferenceContext(item);
  const criticalQuestionReport=assessCriticalQuestions(item,{preview:isPreview});
  const criticalQuestionContext=formatCriticalQuestionContext(criticalQuestionReport);
  const previousPatterns=await listEditorialPatterns();
@@ -711,6 +734,7 @@ async function generateReview(item){
   knowledgeContext,
   reasoningContext,
   specialistSkillContext,
+  editorialReferenceContext,
   criticalQuestionContext,
   intellectualRepetitionContext,
   personalityEvolutionContext,
