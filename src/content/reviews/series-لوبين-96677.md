@@ -13,6 +13,7 @@ poster: "https://image.tmdb.org/t/p/w500/aBQ6TNCsDRoplvQp8Er3kf13SFr.jpg"
 backdrop: "https://image.tmdb.org/t/p/w780/jgAZYiuRV37pCxmhx8NTdhE36RL.jpg"
 youtubeVideoId: "ga0iTWXCGa0"
 youtubeVideoTitle: "Official Trailer [Dubbed]"
+reviewMode: limited
 score: 7.5
 pros:
   - "فكرة أصلية مستوحاة من أسلوب أرسين لوبين مع لمسة عربية"
