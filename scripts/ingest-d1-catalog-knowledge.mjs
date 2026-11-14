@@ -29,9 +29,9 @@ export function mapCatalogRecord(row, endpoint, observedAt = new Date().toISOStr
     overview: clean(row.overview), releaseDate: clean(row.releaseDate) || null,
     year: Number(row.year) || null, runtime: Number(row.runtime) || null,
     status: clean(row.status) || null,
-    rating: Number.isFinite(Number(row.rating)) ? Number(row.rating) : null,
+    rating: row.rating == null || row.rating === '' ? null : Number.isFinite(Number(row.rating)) ? Number(row.rating) : null,
     votes: Number(row.votes) || 0,
-    popularity: Number.isFinite(Number(row.popularity)) ? Number(row.popularity) : null,
+    popularity: row.popularity == null || row.popularity === '' ? null : Number.isFinite(Number(row.popularity)) ? Number(row.popularity) : null,
     originalLanguage: clean(row.originalLanguage) || null,
     genres, cast, directors, creators, updatedAt: clean(row.updatedAt) || null
   };
