@@ -15,7 +15,8 @@ import { loadJudgmentHistory, buildJudgmentRevisionContext, recordJudgmentVersio
 
 const env=process.env;
 const provider=(env.AI_PROVIDER||(env.GEMINI_API_KEY?'gemini':env.GROQ_API_KEY?'groq':env.OPENROUTER_API_KEY?'openrouter':env.CF_WORKERS_AI_API_TOKEN?'cloudflare-workers-ai':'openai')).toLowerCase();
-const targetTotal=100,dailyPerType=2,baseDailyTotalLimit=2,perRunLimit=1;
+// Allow two evidence-based preview upgrades per run, still bounded by the adaptive free-resource daily cap.
+const targetTotal=100,dailyPerType=2,baseDailyTotalLimit=2,perRunLimit=2;
 let dailyTotalLimit=baseDailyTotalLimit;
 const gamesWindowDays=Math.max(1,Number.isFinite(Number(env.GAMES_WINDOW_DAYS))&&env.GAMES_WINDOW_DAYS?Number(env.GAMES_WINDOW_DAYS):30);
 const upcomingWindowDays=Math.max(30,Number.isFinite(Number(env.UPCOMING_WINDOW_DAYS))&&env.UPCOMING_WINDOW_DAYS?Number(env.UPCOMING_WINDOW_DAYS):365);
