@@ -33,6 +33,8 @@ assert.ok(movie.some(sql => sql.includes("DELETE FROM title_genres")));
 assert.ok(movie.some(sql => sql.includes("DELETE FROM credits")));
 assert.ok(movie.some(sql => sql.includes("Brad O''Brien")));
 assert.ok(movie.some(sql => sql.includes("'cast','Tyler',NULL,0")));
+assert.ok(movie.some(sql => sql.includes('INSERT INTO editorial_cache')));
+assert.ok(movie.some(sql => sql.includes('expires_at')));
 assert.ok(!movie.some(sql => sql.includes('Other Crew')));
 
 const tv = buildTitleStatements({
