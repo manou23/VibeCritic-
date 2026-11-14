@@ -133,14 +133,22 @@ for (const file of reviewFiles) {
   const source = await fs.readFile(path.join(reviewRoot, file), 'utf8');
   const frontmatter = source.match(/^---\s*\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/)?.[1] || '';
   const body = source.replace(/^---\s*\r?\n[\s\S]*?\r?\n---(?:\r?\n|$)/, '');
+  const modeMatch = frontmatter.match(/^reviewMode:\s*(review|preview|limited)\s*$/m);
+  const reviewMode = modeMatch?.[1] || 'review';
   const scoreMatch = frontmatter.match(/^score:\s*["']?(-?\d+(?:\.\d+)?)["']?\s*$/m);
-  if (!scoreMatch) {
-    reviewFailures.push(file + ': missing or invalid numeric score field');
-  } else {
-    const score = Number(scoreMatch[1]);
-    if (!Number.isFinite(score) || score <= 0 || score > 10) {
-      reviewFailures.push(file + ': score must be greater than 0 and at most 10 (' + scoreMatch[1] + ')');
+  const scoreFields = ['score', 'storyScore', 'visualsScore', 'soundScore', 'pacingScore'];
+  if (reviewMode === 'review') {
+    if (!scoreMatch) {
+      reviewFailures.push(file + ': full review is missing a numeric score field');
+    } else {
+      const score = Number(scoreMatch[1]);
+      if (!Number.isFinite(score) || score <= 0 || score > 10) {
+        reviewFailures.push(file + ': score must be greater than 0 and at most 10 (' + scoreMatch[1] + ')');
+      }
     }
+  } else {
+    const retainedScores = scoreFields.filter(field => new RegExp('^' + field + ':\\s*', 'm').test(frontmatter));
+    if (retainedScores.length) reviewFailures.push(file + ': preview/limited review must not store score metadata (' + retainedScores.join(', ') + ')');
   }
   for (const match of body.matchAll(/(\d+(?:[.,]\d+)?)\s*\/\s*10/g)) {
     const value = Number(match[1].replace(',', '.'));
