@@ -12959,10 +12959,11 @@
       "kind": "concept",
       "name": "Adventure",
       "sources": [
-        "IGDB"
+        "IGDB",
+        "STEAM"
       ],
       "firstSeenAt": "2026-11-14T20:16:16.093Z",
-      "updatedAt": "2026-11-14T20:19:59.420Z"
+      "updatedAt": "2026-11-14T20:22:12.441Z"
     },
     {
       "id": "concept:pc",
@@ -12970,10 +12971,11 @@
       "name": "PC",
       "sources": [
         "IGDB",
-        "SUPERGIANT_GAMES"
+        "SUPERGIANT_GAMES",
+        "STEAM"
       ],
       "firstSeenAt": "2026-11-14T20:16:16.093Z",
-      "updatedAt": "2026-11-14T20:19:59.978Z"
+      "updatedAt": "2026-11-14T20:22:12.441Z"
     },
     {
       "id": "concept:playstation-5",
@@ -12981,10 +12983,11 @@
       "name": "PlayStation 5",
       "sources": [
         "IGDB",
-        "SUPERGIANT_GAMES"
+        "SUPERGIANT_GAMES",
+        "STEAM"
       ],
       "firstSeenAt": "2026-11-14T20:16:16.093Z",
-      "updatedAt": "2026-11-14T20:19:59.978Z"
+      "updatedAt": "2026-11-14T20:22:12.441Z"
     },
     {
       "id": "concept:xbox-series-x-s",
@@ -12992,10 +12995,11 @@
       "name": "Xbox Series X|S",
       "sources": [
         "IGDB",
-        "SUPERGIANT_GAMES"
+        "SUPERGIANT_GAMES",
+        "STEAM"
       ],
       "firstSeenAt": "2026-11-14T20:16:16.093Z",
-      "updatedAt": "2026-11-14T20:19:59.978Z"
+      "updatedAt": "2026-11-14T20:22:12.441Z"
     },
     {
       "id": "company:sandfall-interactive",
@@ -13012,10 +13016,11 @@
       "kind": "concept",
       "name": "Action",
       "sources": [
-        "SUPERGIANT_GAMES"
+        "SUPERGIANT_GAMES",
+        "STEAM"
       ],
       "firstSeenAt": "2026-11-14T20:16:16.641Z",
-      "updatedAt": "2026-11-14T20:19:59.977Z"
+      "updatedAt": "2026-11-14T20:22:12.441Z"
     },
     {
       "id": "concept:roguelike",
@@ -13056,6 +13061,44 @@
       ],
       "firstSeenAt": "2026-11-14T20:16:16.643Z",
       "updatedAt": "2026-11-14T20:19:59.978Z"
+    },
+    {
+      "id": "work:game-1771300-kingdom-come-deliverance-ii-عالم-حي-يرفض-اختصار-العصور-الوسطى",
+      "kind": "work",
+      "name": "game:1771300:Kingdom Come: Deliverance II: عالم حيّ يرفض اختصار العصور الوسطى",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX",
+        "STEAM"
+      ],
+      "firstSeenAt": "2026-11-14T20:22:12.440Z",
+      "updatedAt": "2026-11-14T20:22:12.440Z",
+      "aliases": [
+        "Kingdom Come: Deliverance II: عالم حيّ يرفض اختصار العصور الوسطى"
+      ],
+      "externalId": "1771300",
+      "workType": "game",
+      "externalSource": "STEAM",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "concept:rpg",
+      "kind": "concept",
+      "name": "RPG",
+      "sources": [
+        "STEAM"
+      ],
+      "firstSeenAt": "2026-11-14T20:22:12.441Z",
+      "updatedAt": "2026-11-14T20:22:12.441Z"
+    },
+    {
+      "id": "company:warhorse-studios",
+      "kind": "company",
+      "name": "Warhorse Studios",
+      "sources": [
+        "STEAM"
+      ],
+      "firstSeenAt": "2026-11-14T20:22:12.441Z",
+      "updatedAt": "2026-11-14T20:22:12.441Z"
     }
   ],
   "relations": [
@@ -36958,6 +37001,125 @@
           "sourceClass": "official-developer-source",
           "sourceScope": "المعلومات التعريفية التي ينشرها المطور رسمياً عن ألعابه، مثل الوصف والمنصات وتواريخ الإطلاق المعلنة.",
           "sourceLimitations": "المصدر الرسمي مناسب للتحقق من بيانات الإصدار والهوية والمنصات، لكنه لا يثبت وحده جودة التجربة أو الأداء أو التوازن."
+        }
+      ]
+    },
+    {
+      "id": "work:game-1771300-kingdom-come-deliverance-ii-عالم-حي-يرفض-اختصار-العصور-الوسطى|has_genre|concept:action",
+      "from": "work:game-1771300-kingdom-come-deliverance-ii-عالم-حي-يرفض-اختصار-العصور-الوسطى",
+      "type": "has_genre",
+      "to": "concept:action",
+      "evidence": [
+        {
+          "source": "STEAM",
+          "field": "genres",
+          "url": "https://store.steampowered.com/app/1771300/Kingdom_Come__Deliverance_II/",
+          "observedAt": "2026-11-14T20:22:12.440Z",
+          "sourceClass": "platform-publisher-catalog",
+          "sourceScope": "بيانات صفحة اللعبة الرسمية على Steam مثل الاسم والمطور والناشر والتصنيفات وتاريخ الإصدار والمنصات المدعومة.",
+          "sourceLimitations": "صفحة المتجر ليست دليلاً مستقلاً على الجودة الفنية أو الأداء الفعلي على كل جهاز؛ تقييمات المستخدمين تظل آراء جماهيرية منفصلة."
+        }
+      ]
+    },
+    {
+      "id": "work:game-1771300-kingdom-come-deliverance-ii-عالم-حي-يرفض-اختصار-العصور-الوسطى|has_genre|concept:adventure",
+      "from": "work:game-1771300-kingdom-come-deliverance-ii-عالم-حي-يرفض-اختصار-العصور-الوسطى",
+      "type": "has_genre",
+      "to": "concept:adventure",
+      "evidence": [
+        {
+          "source": "STEAM",
+          "field": "genres",
+          "url": "https://store.steampowered.com/app/1771300/Kingdom_Come__Deliverance_II/",
+          "observedAt": "2026-11-14T20:22:12.440Z",
+          "sourceClass": "platform-publisher-catalog",
+          "sourceScope": "بيانات صفحة اللعبة الرسمية على Steam مثل الاسم والمطور والناشر والتصنيفات وتاريخ الإصدار والمنصات المدعومة.",
+          "sourceLimitations": "صفحة المتجر ليست دليلاً مستقلاً على الجودة الفنية أو الأداء الفعلي على كل جهاز؛ تقييمات المستخدمين تظل آراء جماهيرية منفصلة."
+        }
+      ]
+    },
+    {
+      "id": "work:game-1771300-kingdom-come-deliverance-ii-عالم-حي-يرفض-اختصار-العصور-الوسطى|has_genre|concept:rpg",
+      "from": "work:game-1771300-kingdom-come-deliverance-ii-عالم-حي-يرفض-اختصار-العصور-الوسطى",
+      "type": "has_genre",
+      "to": "concept:rpg",
+      "evidence": [
+        {
+          "source": "STEAM",
+          "field": "genres",
+          "url": "https://store.steampowered.com/app/1771300/Kingdom_Come__Deliverance_II/",
+          "observedAt": "2026-11-14T20:22:12.440Z",
+          "sourceClass": "platform-publisher-catalog",
+          "sourceScope": "بيانات صفحة اللعبة الرسمية على Steam مثل الاسم والمطور والناشر والتصنيفات وتاريخ الإصدار والمنصات المدعومة.",
+          "sourceLimitations": "صفحة المتجر ليست دليلاً مستقلاً على الجودة الفنية أو الأداء الفعلي على كل جهاز؛ تقييمات المستخدمين تظل آراء جماهيرية منفصلة."
+        }
+      ]
+    },
+    {
+      "id": "work:game-1771300-kingdom-come-deliverance-ii-عالم-حي-يرفض-اختصار-العصور-الوسطى|available_on|concept:pc",
+      "from": "work:game-1771300-kingdom-come-deliverance-ii-عالم-حي-يرفض-اختصار-العصور-الوسطى",
+      "type": "available_on",
+      "to": "concept:pc",
+      "evidence": [
+        {
+          "source": "STEAM",
+          "field": "platforms",
+          "url": "https://store.steampowered.com/app/1771300/Kingdom_Come__Deliverance_II/",
+          "observedAt": "2026-11-14T20:22:12.440Z",
+          "sourceClass": "platform-publisher-catalog",
+          "sourceScope": "بيانات صفحة اللعبة الرسمية على Steam مثل الاسم والمطور والناشر والتصنيفات وتاريخ الإصدار والمنصات المدعومة.",
+          "sourceLimitations": "صفحة المتجر ليست دليلاً مستقلاً على الجودة الفنية أو الأداء الفعلي على كل جهاز؛ تقييمات المستخدمين تظل آراء جماهيرية منفصلة."
+        }
+      ]
+    },
+    {
+      "id": "work:game-1771300-kingdom-come-deliverance-ii-عالم-حي-يرفض-اختصار-العصور-الوسطى|available_on|concept:playstation-5",
+      "from": "work:game-1771300-kingdom-come-deliverance-ii-عالم-حي-يرفض-اختصار-العصور-الوسطى",
+      "type": "available_on",
+      "to": "concept:playstation-5",
+      "evidence": [
+        {
+          "source": "STEAM",
+          "field": "platforms",
+          "url": "https://store.steampowered.com/app/1771300/Kingdom_Come__Deliverance_II/",
+          "observedAt": "2026-11-14T20:22:12.440Z",
+          "sourceClass": "platform-publisher-catalog",
+          "sourceScope": "بيانات صفحة اللعبة الرسمية على Steam مثل الاسم والمطور والناشر والتصنيفات وتاريخ الإصدار والمنصات المدعومة.",
+          "sourceLimitations": "صفحة المتجر ليست دليلاً مستقلاً على الجودة الفنية أو الأداء الفعلي على كل جهاز؛ تقييمات المستخدمين تظل آراء جماهيرية منفصلة."
+        }
+      ]
+    },
+    {
+      "id": "work:game-1771300-kingdom-come-deliverance-ii-عالم-حي-يرفض-اختصار-العصور-الوسطى|available_on|concept:xbox-series-x-s",
+      "from": "work:game-1771300-kingdom-come-deliverance-ii-عالم-حي-يرفض-اختصار-العصور-الوسطى",
+      "type": "available_on",
+      "to": "concept:xbox-series-x-s",
+      "evidence": [
+        {
+          "source": "STEAM",
+          "field": "platforms",
+          "url": "https://store.steampowered.com/app/1771300/Kingdom_Come__Deliverance_II/",
+          "observedAt": "2026-11-14T20:22:12.440Z",
+          "sourceClass": "platform-publisher-catalog",
+          "sourceScope": "بيانات صفحة اللعبة الرسمية على Steam مثل الاسم والمطور والناشر والتصنيفات وتاريخ الإصدار والمنصات المدعومة.",
+          "sourceLimitations": "صفحة المتجر ليست دليلاً مستقلاً على الجودة الفنية أو الأداء الفعلي على كل جهاز؛ تقييمات المستخدمين تظل آراء جماهيرية منفصلة."
+        }
+      ]
+    },
+    {
+      "id": "work:game-1771300-kingdom-come-deliverance-ii-عالم-حي-يرفض-اختصار-العصور-الوسطى|developed_by|company:warhorse-studios",
+      "from": "work:game-1771300-kingdom-come-deliverance-ii-عالم-حي-يرفض-اختصار-العصور-الوسطى",
+      "type": "developed_by",
+      "to": "company:warhorse-studios",
+      "evidence": [
+        {
+          "source": "STEAM",
+          "field": "developers",
+          "url": "https://store.steampowered.com/app/1771300/Kingdom_Come__Deliverance_II/",
+          "observedAt": "2026-11-14T20:22:12.440Z",
+          "sourceClass": "platform-publisher-catalog",
+          "sourceScope": "بيانات صفحة اللعبة الرسمية على Steam مثل الاسم والمطور والناشر والتصنيفات وتاريخ الإصدار والمنصات المدعومة.",
+          "sourceLimitations": "صفحة المتجر ليست دليلاً مستقلاً على الجودة الفنية أو الأداء الفعلي على كل جهاز؛ تقييمات المستخدمين تظل آراء جماهيرية منفصلة."
         }
       ]
     }
@@ -68832,6 +68994,76 @@
       "firstObservedAt": "2026-11-14T20:16:16.640Z",
       "lastObservedAt": "2026-11-14T20:19:59.976Z",
       "observations": 2
+    },
+    {
+      "id": "work:game-1771300-kingdom-come-deliverance-ii-عالم-حي-يرفض-اختصار-العصور-الوسطى|release_date|STEAM|2025-02-04",
+      "workId": "work:game-1771300-kingdom-come-deliverance-ii-عالم-حي-يرفض-اختصار-العصور-الوسطى",
+      "field": "release_date",
+      "value": "2025-02-04",
+      "normalizedValue": "2025-02-04",
+      "source": "STEAM",
+      "url": "https://store.steampowered.com/app/1771300/Kingdom_Come__Deliverance_II/",
+      "sourceClass": "platform-publisher-catalog",
+      "sourceScope": "بيانات صفحة اللعبة الرسمية على Steam مثل الاسم والمطور والناشر والتصنيفات وتاريخ الإصدار والمنصات المدعومة.",
+      "sourceLimitations": "صفحة المتجر ليست دليلاً مستقلاً على الجودة الفنية أو الأداء الفعلي على كل جهاز؛ تقييمات المستخدمين تظل آراء جماهيرية منفصلة.",
+      "firstObservedAt": "2026-11-14T20:22:12.440Z",
+      "lastObservedAt": "2026-11-14T20:22:12.440Z",
+      "observations": 1
+    },
+    {
+      "id": "work:game-1771300-kingdom-come-deliverance-ii-عالم-حي-يرفض-اختصار-العصور-الوسطى|genres|STEAM|Action | Adventure | RPG",
+      "workId": "work:game-1771300-kingdom-come-deliverance-ii-عالم-حي-يرفض-اختصار-العصور-الوسطى",
+      "field": "genres",
+      "value": [
+        "Action",
+        "Adventure",
+        "RPG"
+      ],
+      "normalizedValue": "Action | Adventure | RPG",
+      "source": "STEAM",
+      "url": "https://store.steampowered.com/app/1771300/Kingdom_Come__Deliverance_II/",
+      "sourceClass": "platform-publisher-catalog",
+      "sourceScope": "بيانات صفحة اللعبة الرسمية على Steam مثل الاسم والمطور والناشر والتصنيفات وتاريخ الإصدار والمنصات المدعومة.",
+      "sourceLimitations": "صفحة المتجر ليست دليلاً مستقلاً على الجودة الفنية أو الأداء الفعلي على كل جهاز؛ تقييمات المستخدمين تظل آراء جماهيرية منفصلة.",
+      "firstObservedAt": "2026-11-14T20:22:12.440Z",
+      "lastObservedAt": "2026-11-14T20:22:12.440Z",
+      "observations": 1
+    },
+    {
+      "id": "work:game-1771300-kingdom-come-deliverance-ii-عالم-حي-يرفض-اختصار-العصور-الوسطى|platforms|STEAM|PC | PlayStation 5 | Xbox Series X|S",
+      "workId": "work:game-1771300-kingdom-come-deliverance-ii-عالم-حي-يرفض-اختصار-العصور-الوسطى",
+      "field": "platforms",
+      "value": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X|S"
+      ],
+      "normalizedValue": "PC | PlayStation 5 | Xbox Series X|S",
+      "source": "STEAM",
+      "url": "https://store.steampowered.com/app/1771300/Kingdom_Come__Deliverance_II/",
+      "sourceClass": "platform-publisher-catalog",
+      "sourceScope": "بيانات صفحة اللعبة الرسمية على Steam مثل الاسم والمطور والناشر والتصنيفات وتاريخ الإصدار والمنصات المدعومة.",
+      "sourceLimitations": "صفحة المتجر ليست دليلاً مستقلاً على الجودة الفنية أو الأداء الفعلي على كل جهاز؛ تقييمات المستخدمين تظل آراء جماهيرية منفصلة.",
+      "firstObservedAt": "2026-11-14T20:22:12.440Z",
+      "lastObservedAt": "2026-11-14T20:22:12.440Z",
+      "observations": 1
+    },
+    {
+      "id": "work:game-1771300-kingdom-come-deliverance-ii-عالم-حي-يرفض-اختصار-العصور-الوسطى|developers|STEAM|Warhorse Studios",
+      "workId": "work:game-1771300-kingdom-come-deliverance-ii-عالم-حي-يرفض-اختصار-العصور-الوسطى",
+      "field": "developers",
+      "value": [
+        "Warhorse Studios"
+      ],
+      "normalizedValue": "Warhorse Studios",
+      "source": "STEAM",
+      "url": "https://store.steampowered.com/app/1771300/Kingdom_Come__Deliverance_II/",
+      "sourceClass": "platform-publisher-catalog",
+      "sourceScope": "بيانات صفحة اللعبة الرسمية على Steam مثل الاسم والمطور والناشر والتصنيفات وتاريخ الإصدار والمنصات المدعومة.",
+      "sourceLimitations": "صفحة المتجر ليست دليلاً مستقلاً على الجودة الفنية أو الأداء الفعلي على كل جهاز؛ تقييمات المستخدمين تظل آراء جماهيرية منفصلة.",
+      "firstObservedAt": "2026-11-14T20:22:12.440Z",
+      "lastObservedAt": "2026-11-14T20:22:12.440Z",
+      "observations": 1
     }
   ],
   "conflicts": [],
@@ -78591,6 +78823,61 @@
       "sourcePath": "game-hades-ii-2025.md",
       "excerpt": "الفكرة والسرد: أسطورة تتقدم مع كل محاولة تضع Hades II اللاعب في موقع Melinoë، أميرة العالم السفلي التي تخوض مواجهة مع Chronos، تيتان الزمن. الاختيار لا يبدو مجرد تبديل بطل ببطلة؛ إنه يفتح مدخلاً مختلفاً إلى الأسطورة، أقرب إلى السحر والطقوس والتعلم المنهجي، مع الاحتفاظ ببنية السرد التي تجعل الفشل جزءاً من التقدم. كل عودة إلى مفترق الطرق لا تعيد اللاعب إلى نقطة الصفر تماماً، بل تضيف محادثة أو معرفة أو احتمالاً جديداً. هذه الفكرة هي أساس قوة السلسلة: التكرار لا يُخفى، بل يتحول إلى لغة سردية. مع ذلك، لا يكفي أن يكون العالم غنياً بالشخصيات كي تكون كل لحظة سردية متساوية التأثير. كثرة اللقاءات والحوارات قد تجعل بعض التقدم موزعاً على دفعات صغيرة، وهو أمر يناسب طبيعة اللعبة لكنه قد يخفف الإحساس بالتصاعد لدى من يفضل حبكة أكثر تركيزاً. ما يميز العمل هو أن الشخصيات لا تبدو مجرد مكافآت بعد المعركة؛ وجودها يربط الرحلات القصيرة بمشروع أكبر، ويمنح الإعادة معنى يتجاوز تحسين البناء القتالي. القتال والسحر: خيارات أكثر، وقرارات أسرع توسّع اللعبة أساس القتال عبر أسلحة Melinoë والسحر والـ Boons والقدرات التي تغير طريقة التعامل مع المساحة والخصوم. الفارق المهم ليس عدد الأدوات وحده، بل أن بعضها يدفع اللاعب إلى التفكير في منطقة المواجهة وتوقيت الهجوم وإدارة الموارد، بدلاً من الاكتفاء بتكرار سلسلة ضربات ناجحة. عندما تتوافق قدرة مع سلاح وبركة إلهية، تظهر متعة بناء أسلوب خاص؛ وعندما لا تنجح التوليفة، يصبح تعديلها جزءاً من التعلم. هذا الاتساع يحمل تكلفة. الخيارات المتعددة ترفع سقف التجريب، لكنها قد تجعل المقارنة بين الترقيات مرهقة، خصوصاً قبل أن يفهم اللاعب قيمة كل نظام. التحدي التصميمي هنا هو أن يشعر اللاعب بأنه يختار بين بدائل مفهومة، لا أنه يجمع عناصر كثيرة أملاً في أن تتكامل مصادفة. Hades II تقدم مساحة أوسع للتخصص، لكنها لا تجعل كل هذه المساحة واضحة بالسرعة نفسها. التقدم والموارد: العمق الذي قد يتحول إلى احتكاك تمنح أنظمة التقدم والصناعة والوصفات اللاعب أهدافاً تتجاوز إنهاء الجولة الحالية. هناك",
       "knowledgeClass": "editorial-opinion-not-verified-fact"
+    },
+    {
+      "key": "game:1771300",
+      "sourceId": "1771300",
+      "type": "game",
+      "title": "Kingdom Come: Deliverance II: عالم حيّ يرفض اختصار العصور الوسطى",
+      "originalTitle": "Kingdom Come: Deliverance II",
+      "headline": "Kingdom Come: Deliverance II: محاكاة تاريخية غنية، لكن واقعية الأنظمة ليست مكسباً دائماً",
+      "summary": "تحليل تحريري للعبة تقمص الأدوار التاريخية من Warhorse Studios؛ يوازن بين كثافة العالم والمهام والتمثيل والقتال، وبين بطء بعض الأنظمة والاحتكاك الذي تفرضه الواقعية.",
+      "verdict": "تقدم Kingdom Come: Deliverance II عالماً تاريخياً مقنعاً وشخصيات ذات حضور ومهاماً تسمح للاعب بصناعة أسلوبه، وتنجح في جعل التفاصيل اليومية جزءاً من الهوية لا مجرد زينة. لكن هذا الطموح يرافقه احتكاك واضح: أنظمة كثيرة تحتاج وقتاً للتعلم، وبعض الإيقاع يتباطأ بسبب التنقل والإدارة والعقوبات القاسية. إنها لعبة تقمص أدوار مميزة لمن يريد الانغماس والتجربة المتأنية، وليست الخيار الأسهل لمن يبحث عن مغامرة سريعة ومباشرة.",
+      "score": 8.6,
+      "scores": {
+        "storyScore": 8.8,
+        "visualsScore": 9,
+        "soundScore": 8.5,
+        "pacingScore": 8.1
+      },
+      "tags": [
+        "Historical RPG",
+        "Open World",
+        "Warhorse Studios",
+        "Medieval Bohemia",
+        "Player Choice"
+      ],
+      "pros": [
+        "عالم غني بالتفاصيل اليومية يجعل القرى والمدن تبدو أماكن مأهولة لا خرائط مهام",
+        "المهام تسمح غالباً بحلول متعددة وتكافئ الملاحظة والتخطيط",
+        "التمثيل والحوار يضيفان وزناً إنسانياً للصراعات والعلاقات",
+        "القتال والتجهيز والتعلم ينسجمون مع هوية تقمص أدوار تاريخية متطلبة"
+      ],
+      "cons": [
+        "كثرة الأنظمة والقيود قد تبطئ البداية وتزيد العبء الذهني",
+        "الواقعية في الحركة والإدارة لا تتحول دائماً إلى متعة أو عمق",
+        "التنقل والمهام الجانبية قد يمددان الإيقاع أكثر مما تحتاجه بعض الفصول",
+        "الاحتكاكات التقنية البسيطة التي رصدتها مراجعات الإطلاق تقلل أحياناً من سلاسة التجربة"
+      ],
+      "creator": "Warhorse Studios",
+      "genres": [
+        "Action",
+        "Adventure",
+        "RPG"
+      ],
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X|S"
+      ],
+      "aiGenerated": false,
+      "releaseDate": "2025-02-04",
+      "sourceName": "STEAM",
+      "sourceUrl": "https://store.steampowered.com/app/1771300/Kingdom_Come__Deliverance_II/",
+      "catalogSources": [],
+      "sourcePath": "game-kingdom-come-deliverance-ii-2025.md",
+      "excerpt": "عالم لا يكتفي بأن يبدو تاريخياً تنجح Kingdom Come: Deliverance II في جعل المكان جزءاً من التجربة، لا مجرد خلفية لرحلة هنري. بوهميا في القرن الخامس عشر تُقدَّم عبر بلدات وأسواق وطرق ريفية وغابات ومجتمعات لها إيقاعها الخاص. قيمة هذا البناء ليست في كثرة التفاصيل وحدها، بل في الطريقة التي تجعل التفاصيل اليومية قابلة للملاحظة: من يملك النفوذ، وكيف يتعامل الناس مع الغريب، وما الذي يتغير عندما يدخل اللاعب مكاناً بملابس أو سمعة أو سلوك غير مناسب. هنا تصبح البيئة مصدراً للمعلومات والفرص والمخاطر، ويشعر اللاعب أنه يتعلم قواعد مجتمع قبل أن يسيطر على خريطته. هذا النوع من الانغماس يخلق تميزاً واضحاً عن ألعاب العالم المفتوح التي تملأ المساحات بعلامات متكررة. لكنه يفرض أيضاً مسؤولية على التصميم: إذا طلبت اللعبة من اللاعب أن يلاحظ ويتذكر ويتصرف وفق السياق، فعليها أن تجعل إشاراتها مقروءة بما يكفي. حين تنجح، تكون الرحلة غنية ومقنعة؛ وحين تتراكم التفاصيل بلا وضوح، قد يشعر اللاعب أن العالم يعاقبه على أمور لم يكن لديه سبب كافٍ لفهمها. الحكاية والشخصيات: اختيارات لها وزن اجتماعي تواصل اللعبة رحلة هنري في سياق سياسي واجتماعي مضطرب، وتضعه بين الثأر والولاء والمصلحة والعلاقات الشخصية. قوة السرد ليست في تحويل كل قرار إلى منعطف ضخم، بل في إظهار أثر القرارات الصغيرة على الثقة والسمعة وطريقة استقبال الشخصيات له. هذا مناسب جداً لعالم تاريخي لا ينبغي أن يتحول فيه البطل إلى مركز الكون؛ فهنري يتحرك داخل شبكة من المصالح والأعراف، ولا يملك دائماً القدرة على فرض إرادته. تستفيد الحوارات من هذا التصور عندما تترك للشخصية مساحة للتفاوض أو التهديد أو الإقناع أو الانسحاب. كما أن العلاقة بين هنري والشخصيات المحيطة تمنح المهام طابعاً إنسانياً، فلا تبدو كل مهمة مجرد ذريعة للقتال أو جمع الغنائم. ومع ذلك، فإن كثافة الأسماء والمواقف والتفاصيل السياسية قد تجعل متابعة الخيوط أقل سهولة لمن لا يملك صبراً على السرد المتدرج. النتيجة قصة غنية، لكنها تطلب انتباهاً مستمراً ولا تقدم نفسها كحكاية خفيفة يمكن استهلاكها على عجل. ت",
+      "knowledgeClass": "editorial-opinion-not-verified-fact"
     }
   ],
   "editorialRelations": [
@@ -78730,6 +79017,16 @@
       "to": "game:metaphor-refantazio-switch2-2026",
       "sharedTags": [
         "SEGA"
+      ],
+      "sameCreator": false,
+      "relationClass": "shared-editorial-metadata-not-influence-or-quality"
+    },
+    {
+      "id": "game:gta-vi-2026|game:1771300",
+      "from": "game:gta-vi-2026",
+      "to": "game:1771300",
+      "sharedTags": [
+        "Open World"
       ],
       "sameCreator": false,
       "relationClass": "shared-editorial-metadata-not-influence-or-quality"
@@ -80965,16 +81262,16 @@
     }
   ],
   "stats": {
-    "works": 159,
+    "works": 160,
     "people": 1010,
     "companies": 2,
     "concepts": 34,
-    "relations": 1406,
-    "observations": 1892,
+    "relations": 1413,
+    "observations": 1896,
     "conflicts": 0,
     "knowledgeGaps": 119,
-    "editorialReviews": 56,
-    "editorialRelations": 232
+    "editorialReviews": 57,
+    "editorialRelations": 233
   },
-  "updatedAt": "2026-11-14T20:20:03.556Z"
+  "updatedAt": "2026-11-14T20:22:12.449Z"
 }
