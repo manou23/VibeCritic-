@@ -68,6 +68,8 @@ jobs:
           node --check scripts/backfill-game-platforms.mjs
           node --check scripts/validate-review-scores.mjs
           node --check functions/api/review.js
+          node --check functions/api/catalog.js
+          npm run test:catalog-api
       - name: Validate review scores
         run: npm run validate:reviews
       - name: Build production site
