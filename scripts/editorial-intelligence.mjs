@@ -62,6 +62,7 @@ function makeCandidate(item, review) {
     criticalQuestions: review.criticalQuestions && typeof review.criticalQuestions === 'object' ? review.criticalQuestions : null,
     intellectualPattern: review.intellectualPattern && typeof review.intellectualPattern === 'object' ? review.intellectualPattern : null,
     intellectualRepetition: review.intellectualRepetition && typeof review.intellectualRepetition === 'object' ? review.intellectualRepetition : null,
+    personalityProfile: review.personalityProfile && typeof review.personalityProfile === 'object' ? review.personalityProfile : null,
     strengths: Array.isArray(review.pros) ? review.pros.slice(0, 4).map(clean) : [],
     limitations: Array.isArray(review.cons) ? review.cons.slice(0, 4).map(clean) : [],
     sectionHeadings: [...body.matchAll(/^###\s+(.+)$/gmu)].map(match => clean(match[1])).slice(0, 8),
@@ -150,8 +151,8 @@ export async function listEditorialPatterns() {
   return [...memory.candidates, ...memory.approvedExamples]
     .sort((a, b) => String(b.capturedAt || b.reviewedAt || '').localeCompare(String(a.capturedAt || a.reviewedAt || '')))
     .slice(0, 160)
-    .map(({ id, type, title, headline, thesis, summary, verdict, reasoning, criticalQuestions, strengths, limitations, intellectualPattern }) => ({
-      id, type, title, headline, thesis, summary, verdict, reasoning, criticalQuestions, strengths, limitations, intellectualPattern
+    .map(({ id, type, title, headline, thesis, summary, verdict, reasoning, criticalQuestions, strengths, limitations, intellectualPattern, personalityProfile }) => ({
+      id, type, title, headline, thesis, summary, verdict, reasoning, criticalQuestions, strengths, limitations, intellectualPattern, personalityProfile
     }));
 }
 
