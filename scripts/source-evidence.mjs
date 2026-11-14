@@ -1,4 +1,10 @@
 const REGISTRY = Object.freeze({
+  VIBECRITIC_D1: {
+    domains: ['vibecritic.pages.dev'],
+    sourceClass: 'derived-catalog-context',
+    scope: 'روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.',
+    limits: 'لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.'
+  },
   TMDB: {
     domains: ['themoviedb.org'],
     sourceClass: 'catalog-database',

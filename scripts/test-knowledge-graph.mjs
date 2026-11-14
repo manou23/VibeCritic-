@@ -28,11 +28,22 @@ try {
     date: '2026-01-01',
     source: 'TMDB',
     sourceUrl: 'https://www.themoviedb.org/movie/101',
+    fieldSources: { catalog_related_works: { source: 'VIBECRITIC_D1', url: 'https://vibecritic.pages.dev/api/catalog', observedAt: '2026-11-14T13:00:00.000Z' } },
     genres: ['Science Fiction'],
     metadata: {
       directors: ['A. Director'],
       cast: ['B. Actor بدور Hero'],
-      similar: [{ id: '102', title: 'Related Film' }]
+      similar: [{ id: '102', title: 'Related Film' }],
+      catalogContext: {
+        source: 'VibeCritic D1 entertainment catalog',
+        sourceUrl: 'https://vibecritic.pages.dev/api/catalog',
+        observedAt: '2026-11-14T13:00:00.000Z',
+        relatedWorks: [{
+          tmdbId: '103', type: 'movie', title: 'Catalog Related Film', year: 2021,
+          sharedGenreCount: 2, sharedPersonCount: 1,
+          sharedGenres: 'Science Fiction, Drama', sharedPeople: 'A. Director'
+        }]
+      }
     }
   };
 
@@ -81,6 +92,9 @@ try {
   assert.ok(graph.entities.some(entity => entity.id === 'work:movie-101-first-film'), 'Unicode-safe slug should produce a stable work id.');
   assert.ok(graph.relations.every(edge => Array.isArray(edge.evidence) && edge.evidence.length > 0));
   assert.ok(graph.relations.some(edge => edge.type === 'source_lists_as_similar' && edge.evidence[0].source === 'TMDB'));
+  assert.ok(graph.observations.some(entry => entry.workId === 'work:movie-101-first-film' && entry.field === 'catalog_related_works' && entry.source === 'VIBECRITIC_D1'), 'Catalog comparisons should be recorded as a separate sourced observation.');
+  assert.ok(graph.relations.some(edge => edge.type === 'catalog_related_by_shared_metadata' && edge.evidence[0].source === 'VIBECRITIC_D1'), 'Catalog comparison edges must retain their own provenance.');
+  assert.ok(graph.observations.some(entry => entry.source === 'VIBECRITIC_D1' && /لا تثبت التشابه الفني/.test(entry.sourceLimitations)), 'Catalog evidence must retain its explicit limitations.');
   assert.ok(graph.observations.some(entry => entry.workId === 'work:movie-101-first-film' && entry.field === 'genres' && entry.source === 'TMDB'), 'Source observations should be retained with provenance.');
   assert.ok(graph.observations.some(entry => entry.workId === 'work:movie-101-first-film' && entry.field === 'genres' && entry.source === 'IGDB'), 'A second source should be retained separately.');
   assert.ok(graph.conflicts.some(entry => entry.workId === 'work:movie-101-first-film' && entry.field === 'genres' && entry.status === 'unresolved'), 'Different values from distinct sources should create an unresolved conflict.');

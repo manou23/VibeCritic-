@@ -134,7 +134,11 @@ function recordItemObservations(graph, work, item, provenanceBase) {
     ['cast', metadata.cast],
     ['runtime', metadata.runtime],
     ['seasons', metadata.seasons],
-    ['episodes', metadata.episodes]
+    ['episodes', metadata.episodes],
+    ['catalog_related_works', (metadata.catalogContext?.relatedWorks || []).slice(0, 6).map(entry =>
+      clean(entry?.title) + (entry?.year ? ' (' + entry.year + ')' : '') +
+      ' [genres:' + (Number(entry?.sharedGenreCount) || 0) + ', people:' + (Number(entry?.sharedPersonCount) || 0) + ']'
+    ).filter(value => value.length > 2)]
   ];
   for (const [field, value] of fields) {
     if (value == null || value === '' || (Array.isArray(value) && !value.length)) continue;
@@ -186,6 +190,26 @@ export async function recordKnowledge(item, options = {}) {
     const actor = castEntry.split(' بدور ')[0].trim();
     const person = upsertEntity(graph, 'person', actor, source);
     if (source) addRelation(graph, work.id, 'features', person?.id, { ...provenanceBase, field: 'cast' });
+  }
+
+  if (Array.isArray(metadata.catalogContext?.relatedWorks)) {
+    const catalogSource = {
+      source: 'VIBECRITIC_D1',
+      url: clean(metadata.catalogContext.sourceUrl || ''),
+      observedAt: clean(metadata.catalogContext.observedAt || '') || new Date().toISOString()
+    };
+    for (const related of metadata.catalogContext.relatedWorks.slice(0, 6)) {
+      if (!related?.title) continue;
+      const relatedWork = upsertEntity(graph, 'work', related.title, 'VIBECRITIC_D1');
+      if (relatedWork) {
+        relatedWork.externalId = clean(related.tmdbId || '') || relatedWork.externalId || null;
+        relatedWork.workType = related.type || null;
+        addRelation(graph, work.id, 'catalog_related_by_shared_metadata', relatedWork.id, {
+          ...catalogSource,
+          field: 'catalog.relatedWorks'
+        });
+      }
+    }
   }
 
   if (Array.isArray(metadata.similar)) {
