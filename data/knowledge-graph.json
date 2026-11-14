@@ -12303,7 +12303,8 @@
       "kind": "work",
       "name": "game:305152:كلير أوبسكور: الرحلة 33",
       "sources": [
-        "VIBECRITIC_EDITORIAL_INDEX"
+        "VIBECRITIC_EDITORIAL_INDEX",
+        "IGDB"
       ],
       "firstSeenAt": "2026-11-14T19:55:58.634Z",
       "updatedAt": "2026-11-14T19:55:58.634Z",
@@ -12919,7 +12920,8 @@
       "kind": "work",
       "name": "game:hades-ii-2025:هاديس 2: حين تصبح المحاولة التالية جزءاً من الحكاية",
       "sources": [
-        "VIBECRITIC_EDITORIAL_INDEX"
+        "VIBECRITIC_EDITORIAL_INDEX",
+        "SUPERGIANT_GAMES"
       ],
       "firstSeenAt": "2026-11-14T20:13:23.279Z",
       "updatedAt": "2026-11-14T20:13:23.279Z",
@@ -12930,6 +12932,130 @@
       "workType": "game",
       "externalSource": "Supergiant Games",
       "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "concept:role-playing-rpg",
+      "kind": "concept",
+      "name": "Role-playing (RPG)",
+      "sources": [
+        "IGDB",
+        "SUPERGIANT_GAMES"
+      ],
+      "firstSeenAt": "2026-11-14T20:16:16.092Z",
+      "updatedAt": "2026-11-14T20:16:16.642Z"
+    },
+    {
+      "id": "concept:turn-based",
+      "kind": "concept",
+      "name": "Turn-based",
+      "sources": [
+        "IGDB"
+      ],
+      "firstSeenAt": "2026-11-14T20:16:16.093Z",
+      "updatedAt": "2026-11-14T20:16:16.093Z"
+    },
+    {
+      "id": "concept:adventure",
+      "kind": "concept",
+      "name": "Adventure",
+      "sources": [
+        "IGDB"
+      ],
+      "firstSeenAt": "2026-11-14T20:16:16.093Z",
+      "updatedAt": "2026-11-14T20:16:16.093Z"
+    },
+    {
+      "id": "concept:pc",
+      "kind": "concept",
+      "name": "PC",
+      "sources": [
+        "IGDB",
+        "SUPERGIANT_GAMES"
+      ],
+      "firstSeenAt": "2026-11-14T20:16:16.093Z",
+      "updatedAt": "2026-11-14T20:16:16.642Z"
+    },
+    {
+      "id": "concept:playstation-5",
+      "kind": "concept",
+      "name": "PlayStation 5",
+      "sources": [
+        "IGDB",
+        "SUPERGIANT_GAMES"
+      ],
+      "firstSeenAt": "2026-11-14T20:16:16.093Z",
+      "updatedAt": "2026-11-14T20:16:16.642Z"
+    },
+    {
+      "id": "concept:xbox-series-x-s",
+      "kind": "concept",
+      "name": "Xbox Series X|S",
+      "sources": [
+        "IGDB",
+        "SUPERGIANT_GAMES"
+      ],
+      "firstSeenAt": "2026-11-14T20:16:16.093Z",
+      "updatedAt": "2026-11-14T20:16:16.642Z"
+    },
+    {
+      "id": "company:sandfall-interactive",
+      "kind": "company",
+      "name": "Sandfall Interactive",
+      "sources": [
+        "IGDB"
+      ],
+      "firstSeenAt": "2026-11-14T20:16:16.093Z",
+      "updatedAt": "2026-11-14T20:16:16.093Z"
+    },
+    {
+      "id": "concept:action",
+      "kind": "concept",
+      "name": "Action",
+      "sources": [
+        "SUPERGIANT_GAMES"
+      ],
+      "firstSeenAt": "2026-11-14T20:16:16.641Z",
+      "updatedAt": "2026-11-14T20:16:16.641Z"
+    },
+    {
+      "id": "concept:roguelike",
+      "kind": "concept",
+      "name": "Roguelike",
+      "sources": [
+        "SUPERGIANT_GAMES"
+      ],
+      "firstSeenAt": "2026-11-14T20:16:16.642Z",
+      "updatedAt": "2026-11-14T20:16:16.642Z"
+    },
+    {
+      "id": "concept:nintendo-switch",
+      "kind": "concept",
+      "name": "Nintendo Switch",
+      "sources": [
+        "SUPERGIANT_GAMES"
+      ],
+      "firstSeenAt": "2026-11-14T20:16:16.642Z",
+      "updatedAt": "2026-11-14T20:16:16.642Z"
+    },
+    {
+      "id": "concept:nintendo-switch-2",
+      "kind": "concept",
+      "name": "Nintendo Switch 2",
+      "sources": [
+        "SUPERGIANT_GAMES"
+      ],
+      "firstSeenAt": "2026-11-14T20:16:16.642Z",
+      "updatedAt": "2026-11-14T20:16:16.642Z"
+    },
+    {
+      "id": "company:supergiant-games",
+      "kind": "company",
+      "name": "Supergiant Games",
+      "sources": [
+        "SUPERGIANT_GAMES"
+      ],
+      "firstSeenAt": "2026-11-14T20:16:16.643Z",
+      "updatedAt": "2026-11-14T20:16:16.643Z"
     }
   ],
   "relations": [
@@ -36560,6 +36686,278 @@
           "sourceClass": "derived-catalog-context",
           "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
           "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة."
+        }
+      ]
+    },
+    {
+      "id": "work:game-305152-كلير-أوبسكور-الرحلة-33|has_genre|concept:role-playing-rpg",
+      "from": "work:game-305152-كلير-أوبسكور-الرحلة-33",
+      "type": "has_genre",
+      "to": "concept:role-playing-rpg",
+      "evidence": [
+        {
+          "source": "IGDB",
+          "field": "genres",
+          "url": "https://www.igdb.com/games/305152/presskit",
+          "observedAt": "2026-11-14T20:16:16.090Z",
+          "sourceClass": "game-database",
+          "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+          "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات."
+        }
+      ]
+    },
+    {
+      "id": "work:game-305152-كلير-أوبسكور-الرحلة-33|has_genre|concept:turn-based",
+      "from": "work:game-305152-كلير-أوبسكور-الرحلة-33",
+      "type": "has_genre",
+      "to": "concept:turn-based",
+      "evidence": [
+        {
+          "source": "IGDB",
+          "field": "genres",
+          "url": "https://www.igdb.com/games/305152/presskit",
+          "observedAt": "2026-11-14T20:16:16.090Z",
+          "sourceClass": "game-database",
+          "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+          "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات."
+        }
+      ]
+    },
+    {
+      "id": "work:game-305152-كلير-أوبسكور-الرحلة-33|has_genre|concept:adventure",
+      "from": "work:game-305152-كلير-أوبسكور-الرحلة-33",
+      "type": "has_genre",
+      "to": "concept:adventure",
+      "evidence": [
+        {
+          "source": "IGDB",
+          "field": "genres",
+          "url": "https://www.igdb.com/games/305152/presskit",
+          "observedAt": "2026-11-14T20:16:16.090Z",
+          "sourceClass": "game-database",
+          "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+          "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات."
+        }
+      ]
+    },
+    {
+      "id": "work:game-305152-كلير-أوبسكور-الرحلة-33|available_on|concept:pc",
+      "from": "work:game-305152-كلير-أوبسكور-الرحلة-33",
+      "type": "available_on",
+      "to": "concept:pc",
+      "evidence": [
+        {
+          "source": "IGDB",
+          "field": "platforms",
+          "url": "https://www.igdb.com/games/305152/presskit",
+          "observedAt": "2026-11-14T20:16:16.090Z",
+          "sourceClass": "game-database",
+          "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+          "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات."
+        }
+      ]
+    },
+    {
+      "id": "work:game-305152-كلير-أوبسكور-الرحلة-33|available_on|concept:playstation-5",
+      "from": "work:game-305152-كلير-أوبسكور-الرحلة-33",
+      "type": "available_on",
+      "to": "concept:playstation-5",
+      "evidence": [
+        {
+          "source": "IGDB",
+          "field": "platforms",
+          "url": "https://www.igdb.com/games/305152/presskit",
+          "observedAt": "2026-11-14T20:16:16.090Z",
+          "sourceClass": "game-database",
+          "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+          "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات."
+        }
+      ]
+    },
+    {
+      "id": "work:game-305152-كلير-أوبسكور-الرحلة-33|available_on|concept:xbox-series-x-s",
+      "from": "work:game-305152-كلير-أوبسكور-الرحلة-33",
+      "type": "available_on",
+      "to": "concept:xbox-series-x-s",
+      "evidence": [
+        {
+          "source": "IGDB",
+          "field": "platforms",
+          "url": "https://www.igdb.com/games/305152/presskit",
+          "observedAt": "2026-11-14T20:16:16.090Z",
+          "sourceClass": "game-database",
+          "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+          "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات."
+        }
+      ]
+    },
+    {
+      "id": "work:game-305152-كلير-أوبسكور-الرحلة-33|developed_by|company:sandfall-interactive",
+      "from": "work:game-305152-كلير-أوبسكور-الرحلة-33",
+      "type": "developed_by",
+      "to": "company:sandfall-interactive",
+      "evidence": [
+        {
+          "source": "IGDB",
+          "field": "developers",
+          "url": "https://www.igdb.com/games/305152/presskit",
+          "observedAt": "2026-11-14T20:16:16.090Z",
+          "sourceClass": "game-database",
+          "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+          "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات."
+        }
+      ]
+    },
+    {
+      "id": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية|has_genre|concept:action",
+      "from": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية",
+      "type": "has_genre",
+      "to": "concept:action",
+      "evidence": [
+        {
+          "source": "SUPERGIANT_GAMES",
+          "field": "genres",
+          "url": "https://www.supergiantgames.com/games/hades-ii/",
+          "observedAt": "2026-11-14T20:16:16.640Z",
+          "sourceClass": "official-developer-source",
+          "sourceScope": "المعلومات التعريفية التي ينشرها المطور رسمياً عن ألعابه، مثل الوصف والمنصات وتواريخ الإطلاق المعلنة.",
+          "sourceLimitations": "المصدر الرسمي مناسب للتحقق من بيانات الإصدار والهوية والمنصات، لكنه لا يثبت وحده جودة التجربة أو الأداء أو التوازن."
+        }
+      ]
+    },
+    {
+      "id": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية|has_genre|concept:roguelike",
+      "from": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية",
+      "type": "has_genre",
+      "to": "concept:roguelike",
+      "evidence": [
+        {
+          "source": "SUPERGIANT_GAMES",
+          "field": "genres",
+          "url": "https://www.supergiantgames.com/games/hades-ii/",
+          "observedAt": "2026-11-14T20:16:16.640Z",
+          "sourceClass": "official-developer-source",
+          "sourceScope": "المعلومات التعريفية التي ينشرها المطور رسمياً عن ألعابه، مثل الوصف والمنصات وتواريخ الإطلاق المعلنة.",
+          "sourceLimitations": "المصدر الرسمي مناسب للتحقق من بيانات الإصدار والهوية والمنصات، لكنه لا يثبت وحده جودة التجربة أو الأداء أو التوازن."
+        }
+      ]
+    },
+    {
+      "id": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية|has_genre|concept:role-playing-rpg",
+      "from": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية",
+      "type": "has_genre",
+      "to": "concept:role-playing-rpg",
+      "evidence": [
+        {
+          "source": "SUPERGIANT_GAMES",
+          "field": "genres",
+          "url": "https://www.supergiantgames.com/games/hades-ii/",
+          "observedAt": "2026-11-14T20:16:16.640Z",
+          "sourceClass": "official-developer-source",
+          "sourceScope": "المعلومات التعريفية التي ينشرها المطور رسمياً عن ألعابه، مثل الوصف والمنصات وتواريخ الإطلاق المعلنة.",
+          "sourceLimitations": "المصدر الرسمي مناسب للتحقق من بيانات الإصدار والهوية والمنصات، لكنه لا يثبت وحده جودة التجربة أو الأداء أو التوازن."
+        }
+      ]
+    },
+    {
+      "id": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية|available_on|concept:pc",
+      "from": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية",
+      "type": "available_on",
+      "to": "concept:pc",
+      "evidence": [
+        {
+          "source": "SUPERGIANT_GAMES",
+          "field": "platforms",
+          "url": "https://www.supergiantgames.com/games/hades-ii/",
+          "observedAt": "2026-11-14T20:16:16.640Z",
+          "sourceClass": "official-developer-source",
+          "sourceScope": "المعلومات التعريفية التي ينشرها المطور رسمياً عن ألعابه، مثل الوصف والمنصات وتواريخ الإطلاق المعلنة.",
+          "sourceLimitations": "المصدر الرسمي مناسب للتحقق من بيانات الإصدار والهوية والمنصات، لكنه لا يثبت وحده جودة التجربة أو الأداء أو التوازن."
+        }
+      ]
+    },
+    {
+      "id": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية|available_on|concept:nintendo-switch",
+      "from": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية",
+      "type": "available_on",
+      "to": "concept:nintendo-switch",
+      "evidence": [
+        {
+          "source": "SUPERGIANT_GAMES",
+          "field": "platforms",
+          "url": "https://www.supergiantgames.com/games/hades-ii/",
+          "observedAt": "2026-11-14T20:16:16.640Z",
+          "sourceClass": "official-developer-source",
+          "sourceScope": "المعلومات التعريفية التي ينشرها المطور رسمياً عن ألعابه، مثل الوصف والمنصات وتواريخ الإطلاق المعلنة.",
+          "sourceLimitations": "المصدر الرسمي مناسب للتحقق من بيانات الإصدار والهوية والمنصات، لكنه لا يثبت وحده جودة التجربة أو الأداء أو التوازن."
+        }
+      ]
+    },
+    {
+      "id": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية|available_on|concept:nintendo-switch-2",
+      "from": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية",
+      "type": "available_on",
+      "to": "concept:nintendo-switch-2",
+      "evidence": [
+        {
+          "source": "SUPERGIANT_GAMES",
+          "field": "platforms",
+          "url": "https://www.supergiantgames.com/games/hades-ii/",
+          "observedAt": "2026-11-14T20:16:16.640Z",
+          "sourceClass": "official-developer-source",
+          "sourceScope": "المعلومات التعريفية التي ينشرها المطور رسمياً عن ألعابه، مثل الوصف والمنصات وتواريخ الإطلاق المعلنة.",
+          "sourceLimitations": "المصدر الرسمي مناسب للتحقق من بيانات الإصدار والهوية والمنصات، لكنه لا يثبت وحده جودة التجربة أو الأداء أو التوازن."
+        }
+      ]
+    },
+    {
+      "id": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية|available_on|concept:playstation-5",
+      "from": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية",
+      "type": "available_on",
+      "to": "concept:playstation-5",
+      "evidence": [
+        {
+          "source": "SUPERGIANT_GAMES",
+          "field": "platforms",
+          "url": "https://www.supergiantgames.com/games/hades-ii/",
+          "observedAt": "2026-11-14T20:16:16.640Z",
+          "sourceClass": "official-developer-source",
+          "sourceScope": "المعلومات التعريفية التي ينشرها المطور رسمياً عن ألعابه، مثل الوصف والمنصات وتواريخ الإطلاق المعلنة.",
+          "sourceLimitations": "المصدر الرسمي مناسب للتحقق من بيانات الإصدار والهوية والمنصات، لكنه لا يثبت وحده جودة التجربة أو الأداء أو التوازن."
+        }
+      ]
+    },
+    {
+      "id": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية|available_on|concept:xbox-series-x-s",
+      "from": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية",
+      "type": "available_on",
+      "to": "concept:xbox-series-x-s",
+      "evidence": [
+        {
+          "source": "SUPERGIANT_GAMES",
+          "field": "platforms",
+          "url": "https://www.supergiantgames.com/games/hades-ii/",
+          "observedAt": "2026-11-14T20:16:16.640Z",
+          "sourceClass": "official-developer-source",
+          "sourceScope": "المعلومات التعريفية التي ينشرها المطور رسمياً عن ألعابه، مثل الوصف والمنصات وتواريخ الإطلاق المعلنة.",
+          "sourceLimitations": "المصدر الرسمي مناسب للتحقق من بيانات الإصدار والهوية والمنصات، لكنه لا يثبت وحده جودة التجربة أو الأداء أو التوازن."
+        }
+      ]
+    },
+    {
+      "id": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية|developed_by|company:supergiant-games",
+      "from": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية",
+      "type": "developed_by",
+      "to": "company:supergiant-games",
+      "evidence": [
+        {
+          "source": "SUPERGIANT_GAMES",
+          "field": "developers",
+          "url": "https://www.supergiantgames.com/games/hades-ii/",
+          "observedAt": "2026-11-14T20:16:16.640Z",
+          "sourceClass": "official-developer-source",
+          "sourceScope": "المعلومات التعريفية التي ينشرها المطور رسمياً عن ألعابه، مثل الوصف والمنصات وتواريخ الإطلاق المعلنة.",
+          "sourceLimitations": "المصدر الرسمي مناسب للتحقق من بيانات الإصدار والهوية والمنصات، لكنه لا يثبت وحده جودة التجربة أو الأداء أو التوازن."
         }
       ]
     }
@@ -68292,6 +68690,148 @@
       "firstObservedAt": "2026-11-14T19:08:14.047Z",
       "lastObservedAt": "2026-11-14T19:08:14.047Z",
       "observations": 1
+    },
+    {
+      "id": "work:game-305152-كلير-أوبسكور-الرحلة-33|release_date|IGDB|2025-04-24",
+      "workId": "work:game-305152-كلير-أوبسكور-الرحلة-33",
+      "field": "release_date",
+      "value": "2025-04-24",
+      "normalizedValue": "2025-04-24",
+      "source": "IGDB",
+      "url": "https://www.igdb.com/games/305152/presskit",
+      "sourceClass": "game-database",
+      "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+      "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
+      "firstObservedAt": "2026-11-14T20:16:16.090Z",
+      "lastObservedAt": "2026-11-14T20:16:16.090Z",
+      "observations": 1
+    },
+    {
+      "id": "work:game-305152-كلير-أوبسكور-الرحلة-33|genres|IGDB|Adventure | Role-playing (RPG) | Turn-based",
+      "workId": "work:game-305152-كلير-أوبسكور-الرحلة-33",
+      "field": "genres",
+      "value": [
+        "Role-playing (RPG)",
+        "Turn-based",
+        "Adventure"
+      ],
+      "normalizedValue": "Adventure | Role-playing (RPG) | Turn-based",
+      "source": "IGDB",
+      "url": "https://www.igdb.com/games/305152/presskit",
+      "sourceClass": "game-database",
+      "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+      "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
+      "firstObservedAt": "2026-11-14T20:16:16.090Z",
+      "lastObservedAt": "2026-11-14T20:16:16.090Z",
+      "observations": 1
+    },
+    {
+      "id": "work:game-305152-كلير-أوبسكور-الرحلة-33|platforms|IGDB|PC | PlayStation 5 | Xbox Series X|S",
+      "workId": "work:game-305152-كلير-أوبسكور-الرحلة-33",
+      "field": "platforms",
+      "value": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X|S"
+      ],
+      "normalizedValue": "PC | PlayStation 5 | Xbox Series X|S",
+      "source": "IGDB",
+      "url": "https://www.igdb.com/games/305152/presskit",
+      "sourceClass": "game-database",
+      "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+      "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
+      "firstObservedAt": "2026-11-14T20:16:16.090Z",
+      "lastObservedAt": "2026-11-14T20:16:16.090Z",
+      "observations": 1
+    },
+    {
+      "id": "work:game-305152-كلير-أوبسكور-الرحلة-33|developers|IGDB|Sandfall Interactive",
+      "workId": "work:game-305152-كلير-أوبسكور-الرحلة-33",
+      "field": "developers",
+      "value": [
+        "Sandfall Interactive"
+      ],
+      "normalizedValue": "Sandfall Interactive",
+      "source": "IGDB",
+      "url": "https://www.igdb.com/games/305152/presskit",
+      "sourceClass": "game-database",
+      "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+      "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
+      "firstObservedAt": "2026-11-14T20:16:16.090Z",
+      "lastObservedAt": "2026-11-14T20:16:16.090Z",
+      "observations": 1
+    },
+    {
+      "id": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية|release_date|SUPERGIANT_GAMES|2025-09-25",
+      "workId": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية",
+      "field": "release_date",
+      "value": "2025-09-25",
+      "normalizedValue": "2025-09-25",
+      "source": "SUPERGIANT_GAMES",
+      "url": "https://www.supergiantgames.com/games/hades-ii/",
+      "sourceClass": "official-developer-source",
+      "sourceScope": "المعلومات التعريفية التي ينشرها المطور رسمياً عن ألعابه، مثل الوصف والمنصات وتواريخ الإطلاق المعلنة.",
+      "sourceLimitations": "المصدر الرسمي مناسب للتحقق من بيانات الإصدار والهوية والمنصات، لكنه لا يثبت وحده جودة التجربة أو الأداء أو التوازن.",
+      "firstObservedAt": "2026-11-14T20:16:16.640Z",
+      "lastObservedAt": "2026-11-14T20:16:16.640Z",
+      "observations": 1
+    },
+    {
+      "id": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية|genres|SUPERGIANT_GAMES|Action | Roguelike | Role-playing (RPG)",
+      "workId": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية",
+      "field": "genres",
+      "value": [
+        "Action",
+        "Roguelike",
+        "Role-playing (RPG)"
+      ],
+      "normalizedValue": "Action | Roguelike | Role-playing (RPG)",
+      "source": "SUPERGIANT_GAMES",
+      "url": "https://www.supergiantgames.com/games/hades-ii/",
+      "sourceClass": "official-developer-source",
+      "sourceScope": "المعلومات التعريفية التي ينشرها المطور رسمياً عن ألعابه، مثل الوصف والمنصات وتواريخ الإطلاق المعلنة.",
+      "sourceLimitations": "المصدر الرسمي مناسب للتحقق من بيانات الإصدار والهوية والمنصات، لكنه لا يثبت وحده جودة التجربة أو الأداء أو التوازن.",
+      "firstObservedAt": "2026-11-14T20:16:16.640Z",
+      "lastObservedAt": "2026-11-14T20:16:16.640Z",
+      "observations": 1
+    },
+    {
+      "id": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية|platforms|SUPERGIANT_GAMES|Nintendo Switch | Nintendo Switch 2 | PC | PlayStation 5 | Xbox Series X|S",
+      "workId": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية",
+      "field": "platforms",
+      "value": [
+        "PC",
+        "Nintendo Switch",
+        "Nintendo Switch 2",
+        "PlayStation 5",
+        "Xbox Series X|S"
+      ],
+      "normalizedValue": "Nintendo Switch | Nintendo Switch 2 | PC | PlayStation 5 | Xbox Series X|S",
+      "source": "SUPERGIANT_GAMES",
+      "url": "https://www.supergiantgames.com/games/hades-ii/",
+      "sourceClass": "official-developer-source",
+      "sourceScope": "المعلومات التعريفية التي ينشرها المطور رسمياً عن ألعابه، مثل الوصف والمنصات وتواريخ الإطلاق المعلنة.",
+      "sourceLimitations": "المصدر الرسمي مناسب للتحقق من بيانات الإصدار والهوية والمنصات، لكنه لا يثبت وحده جودة التجربة أو الأداء أو التوازن.",
+      "firstObservedAt": "2026-11-14T20:16:16.640Z",
+      "lastObservedAt": "2026-11-14T20:16:16.640Z",
+      "observations": 1
+    },
+    {
+      "id": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية|developers|SUPERGIANT_GAMES|Supergiant Games",
+      "workId": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية",
+      "field": "developers",
+      "value": [
+        "Supergiant Games"
+      ],
+      "normalizedValue": "Supergiant Games",
+      "source": "SUPERGIANT_GAMES",
+      "url": "https://www.supergiantgames.com/games/hades-ii/",
+      "sourceClass": "official-developer-source",
+      "sourceScope": "المعلومات التعريفية التي ينشرها المطور رسمياً عن ألعابه، مثل الوصف والمنصات وتواريخ الإطلاق المعلنة.",
+      "sourceLimitations": "المصدر الرسمي مناسب للتحقق من بيانات الإصدار والهوية والمنصات، لكنه لا يثبت وحده جودة التجربة أو الأداء أو التوازن.",
+      "firstObservedAt": "2026-11-14T20:16:16.640Z",
+      "lastObservedAt": "2026-11-14T20:16:16.640Z",
+      "observations": 1
     }
   ],
   "conflicts": [],
@@ -75617,6 +76157,17 @@
         "الاعتماد على الاتصال الدائم وتجربة Call of Duty HQ يزيدان الاحتكاك قبل اللعب"
       ],
       "creator": "Infinity Ward",
+      "genres": [
+        "تصويب منظور الشخص الأول",
+        "حركة",
+        "حرب"
+      ],
+      "platforms": [
+        "PlayStation 5",
+        "Xbox Series X|S",
+        "PC",
+        "Nintendo Switch 2"
+      ],
       "aiGenerated": false,
       "releaseDate": "2026-10-23",
       "sourceName": "VibeCritic Editorial Desk",
@@ -75659,6 +76210,16 @@
         "الإيقاع بين الاستكشاف والقتال لا يحافظ دائماً على الدرجة نفسها من التركيز"
       ],
       "creator": "Sandfall Interactive",
+      "genres": [
+        "Role-playing (RPG)",
+        "Turn-based",
+        "Adventure"
+      ],
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X|S"
+      ],
       "aiGenerated": false,
       "releaseDate": "2025-04-24",
       "sourceName": "IGDB",
@@ -75697,6 +76258,12 @@
         "نقص واضح في تفاصيل القصة والشخصيات مما قد يحد من الانغماس"
       ],
       "creator": null,
+      "genres": [
+        "Role-playing (RPG)",
+        "Simulator",
+        "Indie"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2030-12-31",
       "sourceName": null,
@@ -75732,6 +76299,12 @@
         "موعد الإصدار المسجل مستقبلي، لذلك لا يمكن تقييم المنتج النهائي"
       ],
       "creator": null,
+      "genres": [
+        "Adventure",
+        "Indie",
+        "Visual Novel"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2032-12-31",
       "sourceName": null,
@@ -75775,6 +76348,19 @@
         "إصلاحات يوم الإطلاق تؤكد أن بعض المشكلات التقنية تحتاج متابعة بعد الإصدار"
       ],
       "creator": "Sports Interactive",
+      "genres": [
+        "محاكاة",
+        "إدارة رياضية",
+        "استراتيجية"
+      ],
+      "platforms": [
+        "PC",
+        "Mac",
+        "PlayStation 5",
+        "Xbox Series X|S",
+        "iOS",
+        "Android"
+      ],
       "aiGenerated": false,
       "releaseDate": "2026-11-10",
       "sourceName": "SEGA / Sports Interactive",
@@ -75810,6 +76396,11 @@
         "التجربة تعتمد على الاتصال المستمر والتفاعل مع لاعبين آخرين"
       ],
       "creator": null,
+      "genres": [
+        "Shooter",
+        "Strategy"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2017-12-04",
       "sourceName": null,
@@ -75854,6 +76445,15 @@
         "لم تعلن Rockstar حتى الآن عن نسخة PC أو تفاصيل إطلاق GTA Online"
       ],
       "creator": "Rockstar Games",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Open World"
+      ],
+      "platforms": [
+        "PlayStation 5",
+        "Xbox Series X|S"
+      ],
       "aiGenerated": false,
       "releaseDate": "2026-11-19",
       "sourceName": "Rockstar Games",
@@ -75888,6 +76488,11 @@
       ],
       "cons": [],
       "creator": null,
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-11-12",
       "sourceName": null,
@@ -75931,6 +76536,17 @@
         "لا نعمم أي حكم على أداء نسخة Switch 2 قبل اختبارات تقنية مستقلة على الجهاز"
       ],
       "creator": "ATLUS",
+      "genres": [
+        "تقمص أدوار",
+        "فانتازيا",
+        "مغامرة"
+      ],
+      "platforms": [
+        "Nintendo Switch 2",
+        "PlayStation 5",
+        "Xbox Series X|S",
+        "PC"
+      ],
       "aiGenerated": false,
       "releaseDate": "2026-11-12",
       "sourceName": "Nintendo / ATLUS",
@@ -75968,6 +76584,12 @@
         "الأداء قد يتدهور في عوالم ضخمة أو مع تعديلات كثيفة"
       ],
       "creator": null,
+      "genres": [
+        "Simulator",
+        "Adventure",
+        "Arcade"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2016-12-19",
       "sourceName": null,
@@ -76003,6 +76625,12 @@
         "الأداء والاستقرار قد يختلفان حسب المنصة والتحديث"
       ],
       "creator": null,
+      "genres": [
+        "Role-playing (RPG)",
+        "Hack and slash/Beat 'em up",
+        "Adventure"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2024-12-06",
       "sourceName": null,
@@ -76042,6 +76670,12 @@
         "معلومات تقنية محدودة حول الأداء والثبات في الأجهزة المختلفة"
       ],
       "creator": null,
+      "genres": [
+        "Racing",
+        "Sport",
+        "Indie"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2030-12-20",
       "sourceName": null,
@@ -76080,6 +76714,13 @@
         "عدم وضوح خطة الدعم والتحديثات قد يؤثر على الاستدامة"
       ],
       "creator": null,
+      "genres": [
+        "Shooter",
+        "Role-playing (RPG)",
+        "Simulator",
+        "Tactical"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-11-04",
       "sourceName": null,
@@ -76115,6 +76756,12 @@
         "قد تختلف المتطلبات والأداء من تجربة إلى أخرى"
       ],
       "creator": null,
+      "genres": [
+        "Platform",
+        "Simulator",
+        "Adventure"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2006-09-01",
       "sourceName": null,
@@ -76153,6 +76800,11 @@
         "المحتوى محدود ولا يقدم تجديدًا بعد الانتهاء من القصة"
       ],
       "creator": null,
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-11-12",
       "sourceName": null,
@@ -76188,6 +76840,12 @@
         "تاريخ الإصدار المسجل بعيد جداً ولا يثبت حالة المنتج"
       ],
       "creator": null,
+      "genres": [
+        "Role-playing (RPG)",
+        "Strategy",
+        "Indie"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2040-12-31",
       "sourceName": null,
@@ -76223,6 +76881,10 @@
         "لا يمكن تقييم الأداء أو الرسوم قبل توفر منتج قابل للاختبار"
       ],
       "creator": null,
+      "genres": [
+        "Shooter"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2030-12-31",
       "sourceName": null,
@@ -76258,6 +76920,11 @@
         "تحتاج بعض الألغاز إلى صبر وتجريب قد لا يناسب كل اللاعبين"
       ],
       "creator": null,
+      "genres": [
+        "Puzzle",
+        "Adventure"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-11-05",
       "sourceName": null,
@@ -76291,6 +76958,12 @@
       ],
       "cons": [],
       "creator": null,
+      "genres": [
+        "Platform",
+        "Puzzle",
+        "Adventure"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-11-12",
       "sourceName": null,
@@ -76326,6 +76999,11 @@
         "تجربة اللعب تعتمد على الاتصال والمجتمع وتغيرات التحديثات"
       ],
       "creator": null,
+      "genres": [
+        "Role-playing (RPG)",
+        "Adventure"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2004-11-23",
       "sourceName": null,
@@ -76368,6 +77046,12 @@
         "الرهان العاطفي في الخاتمة قد لا يقنع من لا يتقبل منطق الفيلم الزمني"
       ],
       "creator": null,
+      "genres": [
+        "خيال علمي",
+        "دراما",
+        "غموض"
+      ],
+      "platforms": [],
       "aiGenerated": false,
       "releaseDate": "2016-11-11",
       "sourceName": "TMDB",
@@ -76410,6 +77094,12 @@
         "الإيقاع في بعض المقاطع يميل إلى التلخيص السريع قبل الذروة"
       ],
       "creator": null,
+      "genres": [
+        "خيال علمي",
+        "مغامرة",
+        "دراما"
+      ],
+      "platforms": [],
       "aiGenerated": false,
       "releaseDate": "2024-03-01",
       "sourceName": "TMDB",
@@ -76453,6 +77143,12 @@
         "قد يحد ارتباط الأحداث بمصير معروف مسبقاً من مساحة المفاجأة لدى الجمهور"
       ],
       "creator": "Francis Lawrence",
+      "genres": [
+        "خيال علمي",
+        "مغامرة",
+        "دراما"
+      ],
+      "platforms": [],
       "aiGenerated": false,
       "releaseDate": "2026-11-20",
       "sourceName": "Lionsgate",
@@ -76488,6 +77184,8 @@
         "قد تبدو بعض عناصر المؤامرة مألوفة إذا لم تضف الشخصيات عمقاً"
       ],
       "creator": null,
+      "genres": [],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-11-03",
       "sourceName": null,
@@ -76523,6 +77221,8 @@
         "قد يضعف الأثر إذا لم تحصل الشخصيات على دوافع واضحة"
       ],
       "creator": null,
+      "genres": [],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-10-07",
       "sourceName": null,
@@ -76565,6 +77265,12 @@
         "الحوار التفسيري يشرح أحياناً ما نجحت الصورة في إيصاله"
       ],
       "creator": null,
+      "genres": [
+        "دراما",
+        "جريمة",
+        "إثارة"
+      ],
+      "platforms": [],
       "aiGenerated": false,
       "releaseDate": "2008-07-18",
       "sourceName": "TMDB",
@@ -76604,6 +77310,12 @@
         "الاعتماد على تركيبة السلسلة قد يحد من فرص تقديم مفاهيم جديدة."
       ],
       "creator": null,
+      "genres": [
+        "خيال علمي",
+        "حركة",
+        "مغامرة"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-11-18",
       "sourceName": null,
@@ -76639,6 +77351,8 @@
         "الفكرة العامة قد تبدو مألوفة إن لم تمنح الشخصيات خصوصية"
       ],
       "creator": null,
+      "genres": [],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-11-11",
       "sourceName": null,
@@ -76676,6 +77390,12 @@
         "مدة الفيلم الطويلة (165 دقيقة) قد تؤدي إلى إطالة غير ضرورية إذا لم تُستغل بشكل فعال."
       ],
       "creator": null,
+      "genres": [
+        "خيال علمي",
+        "حركة",
+        "مغامرة"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-12-16",
       "sourceName": null,
@@ -76711,6 +77431,8 @@
         "لا تتوفر تفاصيل كافية لتأكيد جودة التنفيذ الفني"
       ],
       "creator": null,
+      "genres": [],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-07-15",
       "sourceName": null,
@@ -76749,6 +77471,12 @@
         "احتمال صعوبة موازنة الكوميديا مع الجريمة في سياق تاريخي حساس"
       ],
       "creator": null,
+      "genres": [
+        "كوميديا",
+        "جريمة",
+        "إثارة"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-10-30",
       "sourceName": null,
@@ -76784,6 +77512,8 @@
         "لا تتوفر معلومات موثقة لتقييم الأداء والإخراج والموسيقى"
       ],
       "creator": null,
+      "genres": [],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-09-16",
       "sourceName": null,
@@ -76822,6 +77552,11 @@
         "الاعتماد المفرط على نمط المطاردة قد يؤدي إلى تكرارٍ درامي إذا لم تُدعَم بنصٍّ عميق."
       ],
       "creator": null,
+      "genres": [
+        "حركة",
+        "إثارة"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-10-29",
       "sourceName": null,
@@ -76861,6 +77596,12 @@
         "قليل من البيانات المتاحة حول أسلوب الإخراج لتقييمه بدقة"
       ],
       "creator": null,
+      "genres": [
+        "خيال علمي",
+        "حركة",
+        "مغامرة"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-07-29",
       "sourceName": null,
@@ -76896,6 +77637,8 @@
         "لا يمكن تقييم المؤثرات أو الموسيقى دون مشاهدة النسخة المعنية"
       ],
       "creator": null,
+      "genres": [],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-11-03",
       "sourceName": null,
@@ -76933,6 +77676,8 @@
         "لا تتوفر بيانات كافية للتحقق من مستوى الأداء والإيقاع"
       ],
       "creator": null,
+      "genres": [],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-09-19",
       "sourceName": null,
@@ -76970,6 +77715,12 @@
         "عدم توفر تفاصيل حول جودة المؤثرات البصرية أو أسلوب التصوير يجعل التقييم التقني غير مكتمل."
       ],
       "creator": null,
+      "genres": [
+        "حركة",
+        "إثارة",
+        "خيال علمي"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-08-26",
       "sourceName": null,
@@ -77009,6 +77760,12 @@
         "نقص بيانات حول الموسيقى والتصميم الصوتي قد يؤثر على التجربة السمعية"
       ],
       "creator": null,
+      "genres": [
+        "إثارة",
+        "دراما",
+        "جريمة"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-09-23",
       "sourceName": null,
@@ -77052,6 +77809,12 @@
         "الموضوعات نفسها، وهي جرائم جنسية، تحمل خطراً دائماً بتحويل الألم إلى مادة استهلاكية إذا لم يضبط الإطار الأخلاقي لكل حلقة."
       ],
       "creator": null,
+      "genres": [
+        "جريمة",
+        "دراما",
+        "غموض"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "1999-09-20",
       "sourceName": "TMDB",
@@ -77094,6 +77857,12 @@
         "تكرار التوتر بين الإخفاء والانكشاف قد يصبح مألوفاً في أجزاء من الرحلة"
       ],
       "creator": null,
+      "genres": [
+        "جريمة",
+        "دراما",
+        "تشويق"
+      ],
+      "platforms": [],
       "aiGenerated": false,
       "releaseDate": "2008-01-20",
       "sourceName": "TMDB",
@@ -77129,6 +77898,8 @@
         "تفاوت طبيعة الفقرات قد يجعل مستوى الحلقات غير ثابت"
       ],
       "creator": null,
+      "genres": [],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2003-01-26",
       "sourceName": null,
@@ -77171,6 +77942,12 @@
         "بعض الشخصيات الجانبية لا تحصل على المساحة نفسها لتطوير دوافعها"
       ],
       "creator": "Rachel Kondo و Justin Marks",
+      "genres": [
+        "دراما تاريخية",
+        "حرب",
+        "سياسة"
+      ],
+      "platforms": [],
       "aiGenerated": false,
       "releaseDate": "2024-02-27",
       "sourceName": "TMDB",
@@ -77209,6 +77986,11 @@
         "عدد الحلقات المتوسطة قد يؤدي إلى إيقاع غير ثابت في بعض الفصول"
       ],
       "creator": null,
+      "genres": [
+        "كوميديا",
+        "دراما"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2025-06-03",
       "sourceName": null,
@@ -77244,6 +78026,8 @@
         "لا يمكن تقييم الإيقاع أو الموسيقى أو البناء الموسمي حالياً"
       ],
       "creator": null,
+      "genres": [],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-11-11",
       "sourceName": null,
@@ -77279,6 +78063,8 @@
         "تحتاج الشخصيات الثانوية إلى مساحة كافية حتى لا تصبح أدوات للحبكة فقط"
       ],
       "creator": null,
+      "genres": [],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2025-03-30",
       "sourceName": null,
@@ -77315,6 +78101,10 @@
         "عدم توفر تفاصيل عن مدة الحلقات قد يثير تساؤلات حول إيقاع السرد"
       ],
       "creator": null,
+      "genres": [
+        "دراما"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-11-04",
       "sourceName": null,
@@ -77350,6 +78140,8 @@
         "الشخصيات الثانوية قد تتراجع إذا انحصر التركيز في الصراع المركزي"
       ],
       "creator": null,
+      "genres": [],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-11-03",
       "sourceName": null,
@@ -77388,6 +78180,12 @@
         "نقص تفاصيل عن الموسيقى والتصميم الصوتي يترك فجوة في التحليل"
       ],
       "creator": null,
+      "genres": [
+        "حركة ومغامرة",
+        "غموض",
+        "جريمة"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2024-12-05",
       "sourceName": null,
@@ -77426,6 +78224,10 @@
         "بعض الحوارات تبدو عامة في بعض الأحيان، مما يقلل من عمق الشخصيات"
       ],
       "creator": null,
+      "genres": [
+        "دراما"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2024-10-18",
       "sourceName": null,
@@ -77464,6 +78266,13 @@
         "احتمال صعوبة موازنة أربعة تصنيفات في آن واحد"
       ],
       "creator": null,
+      "genres": [
+        "كوميديا",
+        "دراما",
+        "جريمة",
+        "حركة ومغامرة"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-10-19",
       "sourceName": null,
@@ -77503,6 +78312,12 @@
         "مخاطر تكرار صيغ السلسلة الأصلية قد تؤدي إلى شعور بالرتابة"
       ],
       "creator": null,
+      "genres": [
+        "جريمة",
+        "دراما",
+        "غموض"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2025-07-13",
       "sourceName": null,
@@ -77538,6 +78353,8 @@
         "لا تتوفر تفاصيل كافية للحكم على المؤثرات أو إيقاع الموسم"
       ],
       "creator": null,
+      "genres": [],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-10-13",
       "sourceName": null,
@@ -77573,6 +78390,8 @@
         "الشخصيات الثانوية تحتاج إلى دوافع مستقلة عن الثنائي الرئيسي"
       ],
       "creator": null,
+      "genres": [],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2026-11-06",
       "sourceName": null,
@@ -77608,6 +78427,8 @@
         "الاعتماد على اتساع العالم قد يطغى أحياناً على إيقاع الحكاية"
       ],
       "creator": null,
+      "genres": [],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2022-09-01",
       "sourceName": null,
@@ -77646,6 +78467,12 @@
         "نقص تفاصيل حول الموسيقى والتصميم الصوتي قد يؤثر على تجربة المشاهد"
       ],
       "creator": null,
+      "genres": [
+        "جريمة",
+        "دراما",
+        "غموض"
+      ],
+      "platforms": [],
       "aiGenerated": true,
       "releaseDate": "2021-01-08",
       "sourceName": null,
@@ -77689,6 +78516,18 @@
         "اتساع الأنظمة يجعل قراءة الأولويات أقل بساطة من الجزء الأول"
       ],
       "creator": "Supergiant Games",
+      "genres": [
+        "Action",
+        "Roguelike",
+        "Role-playing (RPG)"
+      ],
+      "platforms": [
+        "PC",
+        "Nintendo Switch",
+        "Nintendo Switch 2",
+        "PlayStation 5",
+        "Xbox Series X|S"
+      ],
       "aiGenerated": false,
       "releaseDate": "2025-09-25",
       "sourceName": "Supergiant Games",
@@ -80072,14 +80911,14 @@
   "stats": {
     "works": 159,
     "people": 1010,
-    "companies": 0,
-    "concepts": 24,
-    "relations": 1390,
-    "observations": 1884,
+    "companies": 2,
+    "concepts": 34,
+    "relations": 1406,
+    "observations": 1892,
     "conflicts": 0,
     "knowledgeGaps": 119,
     "editorialReviews": 56,
     "editorialRelations": 232
   },
-  "updatedAt": "2026-11-14T20:13:23.283Z"
+  "updatedAt": "2026-11-14T20:16:20.167Z"
 }
