@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'migrations/0004_editorial_reference_library.sql'
+      - 'migrations/0005_editorial_craft_references.sql'
   workflow_dispatch:
 
 permissions:
@@ -33,3 +34,4 @@ jobs:
           test -n "$CLOUDFLARE_API_TOKEN" || { echo "Missing CLOUDFLARE_API_TOKEN"; exit 1; }
           test -n "$CLOUDFLARE_ACCOUNT_ID" || { echo "Missing CLOUDFLARE_ACCOUNT_ID"; exit 1; }
           npx --yes wrangler@4 d1 execute entertainment-db --remote --file=migrations/0004_editorial_reference_library.sql
+          npx --yes wrangler@4 d1 execute entertainment-db --remote --file=migrations/0005_editorial_craft_references.sql

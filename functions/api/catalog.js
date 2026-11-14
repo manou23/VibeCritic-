@@ -35,7 +35,7 @@ export async function onRequestGet({ request, env }) {
         "SELECT slug,title,work_type,topic,summary,prompt_excerpt,authoring,version,updated_at FROM editorial_reference_articles WHERE active=1 AND work_type='all' ORDER BY priority DESC,slug LIMIT 1"
       ).all();
       const specific = await db.prepare(
-        'SELECT slug,title,work_type,topic,summary,prompt_excerpt,authoring,version,updated_at FROM editorial_reference_articles WHERE active=1 AND work_type=? ORDER BY priority DESC,slug LIMIT 2'
+        'SELECT slug,title,work_type,topic,summary,prompt_excerpt,authoring,version,updated_at FROM editorial_reference_articles WHERE active=1 AND work_type=? ORDER BY priority DESC,slug LIMIT 6'
       ).bind(type).all();
       const articles = [...(general.results || []), ...(specific.results || [])];
       return json({
