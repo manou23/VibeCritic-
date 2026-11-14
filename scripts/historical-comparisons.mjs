@@ -9,7 +9,7 @@ const normalize = value => clean(value).toLocaleLowerCase('ar')
   .trim();
 const names = value => list(value).map(entry => typeof entry === 'string' ? clean(entry) : clean(entry?.name)).filter(Boolean);
 const oneName = value => typeof value === 'string' ? clean(value) : clean(value?.name);
-const unique = values => [...new Set(values.map(clean).filter(Boolean))];
+const unique = values => [...new Set(list(values).map(clean).filter(Boolean))];
 const normalizedSet = values => new Set(unique(values).map(normalize).filter(Boolean));
 const overlap = (left, right) => {
   const a = normalizedSet(left), b = normalizedSet(right);
