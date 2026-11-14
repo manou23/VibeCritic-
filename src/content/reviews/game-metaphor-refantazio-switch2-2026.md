@@ -14,11 +14,6 @@ poster: "https://asia.sega.com/metaphor/en/switch2/ogp.jpg"
 backdrop: "https://asia.sega.com/metaphor/en/switch2/ogp.jpg"
 youtubeVideoId: "8Z6TH6p2Tyk"
 youtubeVideoTitle: "Metaphor: ReFantazio — Nintendo Switch 2 Pre-order Trailer"
-score: 9.2
-storyScore: 9.3
-visualsScore: 9.4
-soundScore: 9.2
-pacingScore: 8.7
 platforms:
   - "Nintendo Switch 2"
   - "PlayStation 5"
