@@ -22,10 +22,14 @@ for (const file of files) {
     failures.push(file + ': reviewMode must be review, preview or limited');
     continue;
   }
+  const allScoreFields = ['score', 'storyScore', 'visualsScore', 'soundScore', 'pacingScore'];
   if (reviewMode !== 'review') {
-    const publicText = frontmatter.replace(/^score:\s*.*$/m, '') + '\n' + body;
+    const publicText = frontmatter + '\n' + body;
     const prematureRating = /(?:^|[^0-9])[0-9]+(?:[.,][0-9]+)?\s*(?:\/\s*10|من\s*10)(?![0-9])/i;
     if (prematureRating.test(publicText)) failures.push(file + ': preview/limited page must not publish a numeric final rating');
+    const retainedScores = allScoreFields.filter(field => new RegExp('^' + field + ':\\s*', 'm').test(frontmatter));
+    if (retainedScores.length) failures.push(file + ': preview/limited page must not store numeric score metadata (' + retainedScores.join(', ') + ')');
+    continue;
   }
   const scoreMatch = frontmatter.match(/^score:\s*(.*?)\s*$/m);
   if (!scoreMatch || !scoreMatch[1]) {

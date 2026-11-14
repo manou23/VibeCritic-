@@ -13,7 +13,6 @@ backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/coa1ec.jpg"
 youtubeVideoId: "_exrD5Fc2Cg"
 youtubeVideoTitle: "ShadowLess Light  Official Trailer  Cyberpunk Detective Visual Novel"
 reviewMode: preview
-score: 6.5
 trendRank: 6
 trendSource: "IGDB"
 trendPopularity: 0

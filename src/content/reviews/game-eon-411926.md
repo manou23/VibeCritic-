@@ -13,7 +13,6 @@ backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/cocmgu.jpg"
 youtubeVideoId: "71kLNi9xvGg"
 youtubeVideoTitle: "EON Altar - Episode 1 - The Battle for Tarnum - Official Game Trailer"
 reviewMode: preview
-score: 6.5
 pros:
   - "إطار المعسكر الصيفي يمنح القصة هوية مكانية واضحة"
   - "صيغة الرواية البصرية مناسبة للسرد القائم على الحوار والاختيارات"

@@ -8,13 +8,12 @@ verdict: "تبدو عناصر المشروع واعدة لمحبي السلسل�
 reviewVersion: 2
 type: movie
 date: 2026-11-11
-releaseDate: "2026-11-18"
+releaseDate: "2026-11-20"
 poster: "https://image.tmdb.org/t/p/w500/j1MNyNNgNQL6f27cb3m3uKaPKd6.jpg"
 backdrop: "https://image.tmdb.org/t/p/w780/aqFZcr2dxSZ2UwWSo1WC6C0rwDf.jpg"
 youtubeVideoId: "Dr060OLTodE"
 youtubeVideoTitle: "Official Fan Edit Trailer"
 reviewMode: preview
-score: 7.3
 pros:
   - "إخراج فرانسيس لورانس يضيف لمسة بصرية متميزة مستندة إلى خبرته في الأجزاء السابقة."
   - "طاقم تمثيلي متنوع يضم جوزيف زادا ورالف فاينس، ما يضمن أداءً متقنًا للشخصيات الرئيسية."

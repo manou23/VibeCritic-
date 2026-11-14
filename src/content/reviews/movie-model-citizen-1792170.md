@@ -14,7 +14,6 @@ backdrop: "https://image.tmdb.org/t/p/w1280/5MBdRdiGv3AKzZDGbni88xc6JFi.jpg"
 youtubeVideoId: "VczwWXoMKL0"
 youtubeVideoTitle: "Official Trailer"
 reviewMode: limited
-score: 7
 pros:
   - "فرضية فقدان الذاكرة تفتح باباً طبيعياً للغموض والشك"
   - "المزرعة المعزولة تخدم الإحساس بالحصار وانعدام الثقة"
