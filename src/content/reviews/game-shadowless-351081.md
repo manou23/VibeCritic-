@@ -10,8 +10,6 @@ date: 2026-11-12
 releaseDate: ""
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/coa1ec.jpg"
 backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/coa1ec.jpg"
-youtubeVideoId: "_exrD5Fc2Cg"
-youtubeVideoTitle: "ShadowLess Light  Official Trailer  Cyberpunk Detective Visual Novel"
 reviewMode: preview
 score: 6.5
 trendRank: 6
@@ -40,6 +38,8 @@ sourceId: "351081"
 sourceUrl: "https://www.igdb.com/games/shadowless--1"
 aiGenerated: true
 ---
+> **ملاحظة منهجية:** هذه مادة تمهيدية مبنية على المعلومات المنشورة في المصادر المرتبطة، وليست مراجعة نهائية ناتجة عن اختبار مستقل. لا تمنح VibeCritic درجة رقمية قبل توافر أدلة مباشرة كافية على جودة التنفيذ.
+
 
 > **تنبيه الإصدار:** لم تصدر اللعبة بعد؛ تعرض [صفحة Steam](https://store.steampowered.com/app/3774430/) نافذة إطلاق مخططة في الربع الرابع من 2030. هذه قراءة استباقية مبنية على وصف المطور، وليست تقييماً لنسخة قابلة للعب.
 

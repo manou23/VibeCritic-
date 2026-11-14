@@ -10,13 +10,9 @@ type: game
 date: 2026-11-14
 releaseDate: "2026-11-10"
 reviewMode: limited
+score: 8.2
 poster: "https://www.kotaworld.it/images/2026/09/22/football-manager-27-cover-1600x900-1_risultato_medium.jpg"
 backdrop: "https://www.kotaworld.it/images/2026/09/22/football-manager-27-cover-1600x900-1_risultato_medium.jpg"
-score: 8.2
-storyScore: 7.9
-visualsScore: 8.2
-soundScore: 8.1
-pacingScore: 8.5
 platforms:
   - "PC"
   - "Mac"

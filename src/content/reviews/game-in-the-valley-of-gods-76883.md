@@ -38,6 +38,8 @@ sourceId: "76883"
 sourceUrl: "https://www.igdb.com/games/in-the-valley-of-gods"
 aiGenerated: true
 ---
+> **ملاحظة منهجية:** هذه مادة تمهيدية مبنية على المعلومات المنشورة في المصادر المرتبطة، وليست مراجعة نهائية ناتجة عن اختبار مستقل. لا تمنح VibeCritic درجة رقمية قبل توافر أدلة مباشرة كافية على جودة التنفيذ.
+
 
 > **تنبيه الحالة:** أفاد [مؤسس Campo Santo في 2019](https://www.pcgamer.com/in-the-valley-of-gods-is-officially-on-hold-as-campo-santo-works-on-valve-projects/) بأن التطوير متوقف. وتعرض [صفحة Steam](https://store.steampowered.com/app/687440/In_The_Valley_Of_Gods/) ديسمبر 2029 كتاريخ مخطط، لكنها تذكر أيضاً أن موعد الإصدار غير محدد. هذه قراءة استباقية لمشروع غير صادر، وليست مراجعة لنسخة قابلة للعب.
 
