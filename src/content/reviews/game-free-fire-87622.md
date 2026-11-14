@@ -13,6 +13,7 @@ backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/co52c7.jpg"
 youtubeVideoId: "oq2Rz2I11l0"
 youtubeVideoTitle: "Free Fire Official Trailer | Free Fire Official"
 reviewMode: limited
+score: 8.5
 pros:
   - "مباريات قصيرة نسبياً تناسب اللعب على الهاتف"
   - "تنوع الأسلحة والأدوات يتيح أكثر من أسلوب للمواجهة"
