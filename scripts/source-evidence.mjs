@@ -23,6 +23,12 @@ const REGISTRY = Object.freeze({
     scope: 'بيانات تعريف الألعاب والمنصات والمطورين ومؤشرات النشاط التي يعرضها RAWG.',
     limits: 'مؤشرات الإضافة والشعبية ليست مبيعات ولا دليلاً على الجودة.'
   },
+  STEAM: {
+    domains: ['store.steampowered.com'],
+    sourceClass: 'platform-publisher-catalog',
+    scope: 'بيانات صفحة اللعبة الرسمية على Steam مثل الاسم والمطور والناشر والتصنيفات وتاريخ الإصدار والمنصات المدعومة.',
+    limits: 'صفحة المتجر ليست دليلاً مستقلاً على الجودة الفنية أو الأداء الفعلي على كل جهاز؛ تقييمات المستخدمين تظل آراء جماهيرية منفصلة.'
+  },
   SUPERGIANT_GAMES: {
     domains: ['supergiantgames.com'],
     sourceClass: 'official-developer-source',
