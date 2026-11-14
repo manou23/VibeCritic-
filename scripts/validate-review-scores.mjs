@@ -1,3 +1,5 @@
+import { scoreBandFor } from './scoring-rubric.mjs';
+
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
@@ -61,6 +63,8 @@ for (const file of files) {
       if (score >= 9.5 && (Object.values(values).filter(value => value >= 9.5).length < 3 || Math.min(...Object.values(values)) < 9)) failures.push(file + ': near-perfect overall scores (9.5+) require at least three dimensions at 9.5 and no dimension below 9');
     }
   }
+
+  if (!scoreBandFor(score)) failures.push(file + ': score has no VibeCritic calibration band');
 
   const verdictMatch = frontmatter.match(/^verdict:\s*"(.*)"\s*$/m);
   if (verdictMatch) {
