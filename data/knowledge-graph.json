@@ -6,7 +6,8 @@
       "kind": "work",
       "name": "movie:155:فارس الظلام",
       "sources": [
-        "VIBECRITIC_D1"
+        "VIBECRITIC_D1",
+        "VIBECRITIC_EDITORIAL_INDEX"
       ],
       "firstSeenAt": "2026-11-14T19:08:08.913Z",
       "updatedAt": "2026-11-14T19:08:08.913Z",
@@ -15,7 +16,9 @@
       ],
       "externalId": "155",
       "workType": "movie",
-      "releaseDate": "2008-07-16"
+      "releaseDate": "2008-07-16",
+      "externalSource": "TMDB",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
     },
     {
       "id": "concept:إثارة",
@@ -2372,7 +2375,8 @@
       "kind": "work",
       "name": "series:2734:القانون والنظام: وحدة الضحايا الخاصة",
       "sources": [
-        "VIBECRITIC_D1"
+        "VIBECRITIC_D1",
+        "VIBECRITIC_EDITORIAL_INDEX"
       ],
       "firstSeenAt": "2026-11-14T19:08:09.377Z",
       "updatedAt": "2026-11-14T19:08:09.377Z",
@@ -2381,7 +2385,9 @@
       ],
       "externalId": "2734",
       "workType": "series",
-      "releaseDate": "1999-09-20"
+      "releaseDate": "1999-09-20",
+      "externalSource": "TMDB",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
     },
     {
       "id": "person:mariska-hargitay",
@@ -5274,7 +5280,8 @@
       "kind": "work",
       "name": "series:84773:سيد الخواتم: خواتم السلطة",
       "sources": [
-        "VIBECRITIC_D1"
+        "VIBECRITIC_D1",
+        "VIBECRITIC_EDITORIAL_INDEX"
       ],
       "firstSeenAt": "2026-11-14T19:08:10.187Z",
       "updatedAt": "2026-11-14T19:08:10.187Z",
@@ -5283,7 +5290,8 @@
       ],
       "externalId": "84773",
       "workType": "series",
-      "releaseDate": "2022-09-01"
+      "releaseDate": "2022-09-01",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
     },
     {
       "id": "person:باتريك-مكاي",
@@ -5870,7 +5878,8 @@
       "kind": "work",
       "name": "series:213375:رحلة ڤيجن",
       "sources": [
-        "VIBECRITIC_D1"
+        "VIBECRITIC_D1",
+        "VIBECRITIC_EDITORIAL_INDEX"
       ],
       "firstSeenAt": "2026-11-14T19:08:10.390Z",
       "updatedAt": "2026-11-14T19:08:10.390Z",
@@ -5879,7 +5888,8 @@
       ],
       "externalId": "213375",
       "workType": "series",
-      "releaseDate": "2026-10-13"
+      "releaseDate": "2026-10-13",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
     },
     {
       "id": "person:terry-matalas",
@@ -5996,7 +6006,8 @@
       "kind": "work",
       "name": "series:247718:أرض العصابات",
       "sources": [
-        "VIBECRITIC_D1"
+        "VIBECRITIC_D1",
+        "VIBECRITIC_EDITORIAL_INDEX"
       ],
       "firstSeenAt": "2026-11-14T19:08:10.422Z",
       "updatedAt": "2026-11-14T19:08:10.422Z",
@@ -6005,7 +6016,8 @@
       ],
       "externalId": "247718",
       "workType": "series",
-      "releaseDate": "2025-03-30"
+      "releaseDate": "2025-03-30",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
     },
     {
       "id": "person:ronan-bennett",
@@ -6788,16 +6800,20 @@
       "kind": "work",
       "name": "movie:693134:كثيب: القسم الثاني",
       "sources": [
-        "VIBECRITIC_D1"
+        "VIBECRITIC_D1",
+        "VIBECRITIC_EDITORIAL_INDEX"
       ],
       "firstSeenAt": "2026-11-14T19:08:10.666Z",
       "updatedAt": "2026-11-14T19:08:10.666Z",
       "aliases": [
-        "كثيب: القسم الثاني"
+        "كثيب: القسم الثاني",
+        "الكثيب: الجزء الثاني"
       ],
       "externalId": "693134",
       "workType": "movie",
-      "releaseDate": "2024-02-27"
+      "releaseDate": "2024-02-27",
+      "externalSource": "TMDB",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
     },
     {
       "id": "person:دينيس-فيلنوف",
@@ -7156,7 +7172,8 @@
       "kind": "work",
       "name": "movie:891621:الحصان البري التاسع",
       "sources": [
-        "VIBECRITIC_D1"
+        "VIBECRITIC_D1",
+        "VIBECRITIC_EDITORIAL_INDEX"
       ],
       "firstSeenAt": "2026-11-14T19:08:10.798Z",
       "updatedAt": "2026-11-14T19:08:10.798Z",
@@ -7165,7 +7182,8 @@
       ],
       "externalId": "891621",
       "workType": "movie",
-      "releaseDate": "2026-10-30"
+      "releaseDate": "2026-10-30",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
     },
     {
       "id": "person:مارتن-ماكدونا",
@@ -7398,7 +7416,8 @@
       "kind": "work",
       "name": "movie:969681:سبايدر-مان: يوم جديد",
       "sources": [
-        "VIBECRITIC_D1"
+        "VIBECRITIC_D1",
+        "VIBECRITIC_EDITORIAL_INDEX"
       ],
       "firstSeenAt": "2026-11-14T19:08:10.876Z",
       "updatedAt": "2026-11-14T19:08:10.876Z",
@@ -7407,7 +7426,8 @@
       ],
       "externalId": "969681",
       "workType": "movie",
-      "releaseDate": "2026-07-29"
+      "releaseDate": "2026-07-29",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
     },
     {
       "id": "person:ديستين-دانيال-كريتون",
@@ -8830,7 +8850,8 @@
       "kind": "work",
       "name": "movie:1263337:قلب الوحش",
       "sources": [
-        "VIBECRITIC_D1"
+        "VIBECRITIC_D1",
+        "VIBECRITIC_EDITORIAL_INDEX"
       ],
       "firstSeenAt": "2026-11-14T19:08:11.476Z",
       "updatedAt": "2026-11-14T19:08:11.476Z",
@@ -8839,7 +8860,8 @@
       ],
       "externalId": "1263337",
       "workType": "movie",
-      "releaseDate": "2026-09-19"
+      "releaseDate": "2026-09-19",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
     },
     {
       "id": "person:ديفيد-آير",
@@ -9506,7 +9528,8 @@
       "kind": "work",
       "name": "movie:1294189:النمس",
       "sources": [
-        "VIBECRITIC_D1"
+        "VIBECRITIC_D1",
+        "VIBECRITIC_EDITORIAL_INDEX"
       ],
       "firstSeenAt": "2026-11-14T19:08:11.781Z",
       "updatedAt": "2026-11-14T19:08:11.781Z",
@@ -9515,7 +9538,8 @@
       ],
       "externalId": "1294189",
       "workType": "movie",
-      "releaseDate": "2026-10-29"
+      "releaseDate": "2026-10-29",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
     },
     {
       "id": "person:mark-vanselow",
@@ -9980,7 +10004,8 @@
       "kind": "work",
       "name": "movie:1368337:الأوديسة",
       "sources": [
-        "VIBECRITIC_D1"
+        "VIBECRITIC_D1",
+        "VIBECRITIC_EDITORIAL_INDEX"
       ],
       "firstSeenAt": "2026-11-14T19:08:12.032Z",
       "updatedAt": "2026-11-14T19:08:12.032Z",
@@ -9989,7 +10014,8 @@
       ],
       "externalId": "1368337",
       "workType": "movie",
-      "releaseDate": "2026-07-15"
+      "releaseDate": "2026-07-15",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
     },
     {
       "id": "person:مات-ديمون",
@@ -10076,7 +10102,8 @@
       "kind": "work",
       "name": "movie:1375441:وقت الذروة",
       "sources": [
-        "VIBECRITIC_D1"
+        "VIBECRITIC_D1",
+        "VIBECRITIC_EDITORIAL_INDEX"
       ],
       "firstSeenAt": "2026-11-14T19:08:12.509Z",
       "updatedAt": "2026-11-14T19:08:12.509Z",
@@ -10085,7 +10112,8 @@
       ],
       "externalId": "1375441",
       "workType": "movie",
-      "releaseDate": "2026-09-23"
+      "releaseDate": "2026-09-23",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
     },
     {
       "id": "person:lance-oppenheim",
@@ -10308,7 +10336,8 @@
       "kind": "work",
       "name": "movie:1381071:غودزيلا ناقص صفر",
       "sources": [
-        "VIBECRITIC_D1"
+        "VIBECRITIC_D1",
+        "VIBECRITIC_EDITORIAL_INDEX"
       ],
       "firstSeenAt": "2026-11-14T19:08:12.664Z",
       "updatedAt": "2026-11-14T19:08:12.664Z",
@@ -10317,7 +10346,8 @@
       ],
       "externalId": "1381071",
       "workType": "movie",
-      "releaseDate": "2026-11-03"
+      "releaseDate": "2026-11-03",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
     },
     {
       "id": "person:田中泯",
@@ -10354,7 +10384,8 @@
       "kind": "work",
       "name": "movie:1384216:نجوم الكلاب",
       "sources": [
-        "VIBECRITIC_D1"
+        "VIBECRITIC_D1",
+        "VIBECRITIC_EDITORIAL_INDEX"
       ],
       "firstSeenAt": "2026-11-14T19:08:12.780Z",
       "updatedAt": "2026-11-14T19:08:12.780Z",
@@ -10363,7 +10394,8 @@
       ],
       "externalId": "1384216",
       "workType": "movie",
-      "releaseDate": "2026-08-26"
+      "releaseDate": "2026-08-26",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
     },
     {
       "id": "person:ريدلي-سكوت",
@@ -10450,7 +10482,8 @@
       "kind": "work",
       "name": "movie:1400837:Other Mommy",
       "sources": [
-        "VIBECRITIC_D1"
+        "VIBECRITIC_D1",
+        "VIBECRITIC_EDITORIAL_INDEX"
       ],
       "firstSeenAt": "2026-11-14T19:08:12.842Z",
       "updatedAt": "2026-11-14T19:08:12.842Z",
@@ -10459,7 +10492,8 @@
       ],
       "externalId": "1400837",
       "workType": "movie",
-      "releaseDate": "2026-10-07"
+      "releaseDate": "2026-10-07",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
     },
     {
       "id": "person:rob-savage",
@@ -10838,7 +10872,8 @@
       "kind": "work",
       "name": "movie:1423191:ريزدنت إيفل",
       "sources": [
-        "VIBECRITIC_D1"
+        "VIBECRITIC_D1",
+        "VIBECRITIC_EDITORIAL_INDEX"
       ],
       "firstSeenAt": "2026-11-14T19:08:13.116Z",
       "updatedAt": "2026-11-14T19:08:13.116Z",
@@ -10847,7 +10882,8 @@
       ],
       "externalId": "1423191",
       "workType": "movie",
-      "releaseDate": "2026-09-16"
+      "releaseDate": "2026-09-16",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
     },
     {
       "id": "person:زاك-كريجر",
@@ -12244,6 +12280,639 @@
       ],
       "firstSeenAt": "2026-11-14T19:08:14.050Z",
       "updatedAt": "2026-11-14T19:08:14.050Z"
+    },
+    {
+      "id": "work:game-call-of-duty-modern-warfare-4-2026-كول-أوف-ديوتي-مودرن-وورفير-4",
+      "kind": "work",
+      "name": "game:call-of-duty-modern-warfare-4-2026:كول أوف ديوتي: مودرن وورفير 4",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:55:58.527Z",
+      "updatedAt": "2026-11-14T19:55:58.528Z",
+      "aliases": [
+        "كول أوف ديوتي: مودرن وورفير 4"
+      ],
+      "externalId": "call-of-duty-modern-warfare-4-2026",
+      "workType": "game",
+      "externalSource": "VibeCritic Editorial Desk",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:game-305152-كلير-أوبسكور-الرحلة-33",
+      "kind": "work",
+      "name": "game:305152:كلير أوبسكور: الرحلة 33",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:55:58.634Z",
+      "updatedAt": "2026-11-14T19:55:58.634Z",
+      "aliases": [
+        "كلير أوبسكور: الرحلة 33"
+      ],
+      "externalId": "305152",
+      "workType": "game",
+      "externalSource": "IGDB",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:game-290566-claria-s-great-maze",
+      "kind": "work",
+      "name": "game:290566:Claria's Great Maze",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:55:58.742Z",
+      "updatedAt": "2026-11-14T19:55:58.742Z",
+      "aliases": [
+        "Claria's Great Maze"
+      ],
+      "externalId": "290566",
+      "workType": "game",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:game-411926-eon",
+      "kind": "work",
+      "name": "game:411926:Eon",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:55:58.840Z",
+      "updatedAt": "2026-11-14T19:55:58.840Z",
+      "aliases": [
+        "Eon"
+      ],
+      "externalId": "411926",
+      "workType": "game",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:game-fm27-2026-فوتبول-مانجر-27",
+      "kind": "work",
+      "name": "game:fm27-2026:فوتبول مانجر 27",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:55:58.930Z",
+      "updatedAt": "2026-11-14T19:55:58.930Z",
+      "aliases": [
+        "فوتبول مانجر 27"
+      ],
+      "externalId": "fm27-2026",
+      "workType": "game",
+      "externalSource": "SEGA / Sports Interactive",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:game-87622-free-fire",
+      "kind": "work",
+      "name": "game:87622:Free Fire",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:55:59.023Z",
+      "updatedAt": "2026-11-14T19:55:59.023Z",
+      "aliases": [
+        "Free Fire"
+      ],
+      "externalId": "87622",
+      "workType": "game",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:game-gta-vi-2026-جراند-ثفت-أوتو-vi",
+      "kind": "work",
+      "name": "game:gta-vi-2026:جراند ثفت أوتو VI",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:55:59.108Z",
+      "updatedAt": "2026-11-14T19:55:59.108Z",
+      "aliases": [
+        "جراند ثفت أوتو VI"
+      ],
+      "externalId": "gta-vi-2026",
+      "workType": "game",
+      "externalSource": "Rockstar Games",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:game-76883-in-the-valley-of-gods",
+      "kind": "work",
+      "name": "game:76883:In the Valley of Gods",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:55:59.199Z",
+      "updatedAt": "2026-11-14T19:55:59.199Z",
+      "aliases": [
+        "In the Valley of Gods"
+      ],
+      "externalId": "76883",
+      "workType": "game",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:game-metaphor-refantazio-switch2-2026-ميثافور-ريفانتازيو",
+      "kind": "work",
+      "name": "game:metaphor-refantazio-switch2-2026:ميثافور: ريفانتازيو",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:55:59.269Z",
+      "updatedAt": "2026-11-14T19:55:59.269Z",
+      "aliases": [
+        "ميثافور: ريفانتازيو"
+      ],
+      "externalId": "metaphor-refantazio-switch2-2026",
+      "workType": "game",
+      "externalSource": "Nintendo / ATLUS",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:game-135400-minecraft",
+      "kind": "work",
+      "name": "game:135400:Minecraft",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:55:59.336Z",
+      "updatedAt": "2026-11-14T19:55:59.336Z",
+      "aliases": [
+        "Minecraft"
+      ],
+      "externalId": "135400",
+      "workType": "game",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:game-125642-path-of-exile-2",
+      "kind": "work",
+      "name": "game:125642:Path of Exile 2",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:55:59.422Z",
+      "updatedAt": "2026-11-14T19:55:59.422Z",
+      "aliases": [
+        "Path of Exile 2"
+      ],
+      "externalId": "125642",
+      "workType": "game",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:game-123757-pilotxross",
+      "kind": "work",
+      "name": "game:123757:PilotXross",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:55:59.492Z",
+      "updatedAt": "2026-11-14T19:55:59.492Z",
+      "aliases": [
+        "PilotXross"
+      ],
+      "externalId": "123757",
+      "workType": "game",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:game-416015-rob-run",
+      "kind": "work",
+      "name": "game:416015:Rob Run",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:55:59.564Z",
+      "updatedAt": "2026-11-14T19:55:59.564Z",
+      "aliases": [
+        "Rob Run"
+      ],
+      "externalId": "416015",
+      "workType": "game",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:game-17269-roblox",
+      "kind": "work",
+      "name": "game:17269:Roblox",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:55:59.631Z",
+      "updatedAt": "2026-11-14T19:55:59.631Z",
+      "aliases": [
+        "Roblox"
+      ],
+      "externalId": "17269",
+      "workType": "game",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:game-351081-shadowless",
+      "kind": "work",
+      "name": "game:351081:Shadowless",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:55:59.699Z",
+      "updatedAt": "2026-11-14T19:55:59.699Z",
+      "aliases": [
+        "Shadowless"
+      ],
+      "externalId": "351081",
+      "workType": "game",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:game-116517-star-fighters",
+      "kind": "work",
+      "name": "game:116517:Star Fighters",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:55:59.766Z",
+      "updatedAt": "2026-11-14T19:55:59.767Z",
+      "aliases": [
+        "Star Fighters"
+      ],
+      "externalId": "116517",
+      "workType": "game",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:game-417642-starcraft",
+      "kind": "work",
+      "name": "game:417642:Starcraft",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:55:59.834Z",
+      "updatedAt": "2026-11-14T19:55:59.834Z",
+      "aliases": [
+        "Starcraft"
+      ],
+      "externalId": "417642",
+      "workType": "game",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:game-405460-the-legend-of-zelda-ocarina-of-time",
+      "kind": "work",
+      "name": "game:405460:The Legend of Zelda: Ocarina of Time",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:55:59.901Z",
+      "updatedAt": "2026-11-14T19:55:59.901Z",
+      "aliases": [
+        "The Legend of Zelda: Ocarina of Time"
+      ],
+      "externalId": "405460",
+      "workType": "game",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:game-381234-tomb-raider-catalyst",
+      "kind": "work",
+      "name": "game:381234:Tomb Raider: Catalyst",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:55:59.969Z",
+      "updatedAt": "2026-11-14T19:55:59.969Z",
+      "aliases": [
+        "Tomb Raider: Catalyst"
+      ],
+      "externalId": "381234",
+      "workType": "game",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:game-123-world-of-warcraft",
+      "kind": "work",
+      "name": "game:123:World of Warcraft",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:56:00.036Z",
+      "updatedAt": "2026-11-14T19:56:00.036Z",
+      "aliases": [
+        "World of Warcraft"
+      ],
+      "externalId": "123",
+      "workType": "game",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:movie-329865-الوصول",
+      "kind": "work",
+      "name": "movie:329865:الوصول",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:56:00.102Z",
+      "updatedAt": "2026-11-14T19:56:00.102Z",
+      "aliases": [
+        "الوصول"
+      ],
+      "externalId": "329865",
+      "workType": "movie",
+      "externalSource": "TMDB",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:movie-hunger-games-sunrise-on-the-reaping-2026-ألعاب-الجوع-شروق-يوم-الحصاد",
+      "kind": "work",
+      "name": "movie:hunger-games-sunrise-on-the-reaping-2026:ألعاب الجوع: شروق يوم الحصاد",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:56:00.274Z",
+      "updatedAt": "2026-11-14T19:56:00.274Z",
+      "aliases": [
+        "ألعاب الجوع: شروق يوم الحصاد"
+      ],
+      "externalId": "hunger-games-sunrise-on-the-reaping-2026",
+      "workType": "movie",
+      "externalSource": "Lionsgate",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:movie-1792170-model-citizen",
+      "kind": "work",
+      "name": "movie:1792170:Model Citizen",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:56:00.343Z",
+      "updatedAt": "2026-11-14T19:56:00.343Z",
+      "aliases": [
+        "Model Citizen"
+      ],
+      "externalId": "1792170",
+      "workType": "movie",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:movie-1300968-the-hunger-games-sunrise-on-the-reaping",
+      "kind": "work",
+      "name": "movie:1300968:The Hunger Games: Sunrise on the Reaping",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:56:00.545Z",
+      "updatedAt": "2026-11-14T19:56:00.545Z",
+      "aliases": [
+        "The Hunger Games: Sunrise on the Reaping"
+      ],
+      "externalId": "1300968",
+      "workType": "movie",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:movie-1567605-إبنزر",
+      "kind": "work",
+      "name": "movie:1567605:إبنزر",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:56:00.625Z",
+      "updatedAt": "2026-11-14T19:56:00.625Z",
+      "aliases": [
+        "إبنزر"
+      ],
+      "externalId": "1567605",
+      "workType": "movie",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:movie-1003596-أفنجرز-ظهور-دكتور-دووم",
+      "kind": "work",
+      "name": "movie:1003596:أفنجرز: ظهور دكتور دووم",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:56:00.722Z",
+      "updatedAt": "2026-11-14T19:56:00.722Z",
+      "aliases": [
+        "أفنجرز: ظهور دكتور دووم"
+      ],
+      "externalId": "1003596",
+      "workType": "movie",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:series-1396-اختلال-ضال",
+      "kind": "work",
+      "name": "series:1396:اختلال ضال",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:56:01.531Z",
+      "updatedAt": "2026-11-14T19:56:01.531Z",
+      "aliases": [
+        "اختلال ضال"
+      ],
+      "externalId": "1396",
+      "workType": "series",
+      "externalSource": "TMDB",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:series-1489-jimmy-kimmel-live",
+      "kind": "work",
+      "name": "series:1489:Jimmy Kimmel Live!",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:56:01.620Z",
+      "updatedAt": "2026-11-14T19:56:01.620Z",
+      "aliases": [
+        "Jimmy Kimmel Live!"
+      ],
+      "externalId": "1489",
+      "workType": "series",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:series-126308-شوغون",
+      "kind": "work",
+      "name": "series:126308:شوغون",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:56:01.702Z",
+      "updatedAt": "2026-11-14T19:56:01.702Z",
+      "aliases": [
+        "شوغون"
+      ],
+      "externalId": "126308",
+      "workType": "series",
+      "externalSource": "TMDB",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:series-248830-stick",
+      "kind": "work",
+      "name": "series:248830:Stick",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:56:01.770Z",
+      "updatedAt": "2026-11-14T19:56:01.770Z",
+      "aliases": [
+        "Stick"
+      ],
+      "externalId": "248830",
+      "workType": "series",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:series-291507-الجسد",
+      "kind": "work",
+      "name": "series:291507:الجسد",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:56:01.842Z",
+      "updatedAt": "2026-11-14T19:56:01.842Z",
+      "aliases": [
+        "الجسد"
+      ],
+      "externalId": "291507",
+      "workType": "series",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:series-258989-الأعظم",
+      "kind": "work",
+      "name": "series:258989:الأعظم",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:56:01.976Z",
+      "updatedAt": "2026-11-14T19:56:01.976Z",
+      "aliases": [
+        "الأعظم"
+      ],
+      "externalId": "258989",
+      "workType": "series",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:series-279246-الإمبراطورة-المتزوجة-مجددا",
+      "kind": "work",
+      "name": "series:279246:الإمبراطورة المتزوجة مجددا",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:56:02.060Z",
+      "updatedAt": "2026-11-14T19:56:02.060Z",
+      "aliases": [
+        "الإمبراطورة المتزوجة مجددا"
+      ],
+      "externalId": "279246",
+      "workType": "series",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:series-225385-الحمام-الأسود",
+      "kind": "work",
+      "name": "series:225385:الحمام الأسود",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:56:02.141Z",
+      "updatedAt": "2026-11-14T19:56:02.141Z",
+      "aliases": [
+        "الحمام الأسود"
+      ],
+      "externalId": "225385",
+      "workType": "series",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:series-208921-المنافسون",
+      "kind": "work",
+      "name": "series:208921:المنافسون",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:56:02.240Z",
+      "updatedAt": "2026-11-14T19:56:02.240Z",
+      "aliases": [
+        "المنافسون"
+      ],
+      "externalId": "208921",
+      "workType": "series",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:series-303745-حب-متنكر",
+      "kind": "work",
+      "name": "series:303745:حب متنكر",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:56:02.360Z",
+      "updatedAt": "2026-11-14T19:56:02.360Z",
+      "aliases": [
+        "حب متنكر"
+      ],
+      "externalId": "303745",
+      "workType": "series",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:series-259909-دكستر-القيامة",
+      "kind": "work",
+      "name": "series:259909:دكستر: القيامة",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:56:02.428Z",
+      "updatedAt": "2026-11-14T19:56:02.428Z",
+      "aliases": [
+        "دكستر: القيامة"
+      ],
+      "externalId": "259909",
+      "workType": "series",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:series-303044-سائقو-الحرم-الجامعي",
+      "kind": "work",
+      "name": "series:303044:سائقو الحرم الجامعي",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:56:02.603Z",
+      "updatedAt": "2026-11-14T19:56:02.603Z",
+      "aliases": [
+        "سائقو الحرم الجامعي"
+      ],
+      "externalId": "303044",
+      "workType": "series",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:series-96677-لوبين",
+      "kind": "work",
+      "name": "series:96677:لوبين",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-14T19:56:02.747Z",
+      "updatedAt": "2026-11-14T19:56:02.747Z",
+      "aliases": [
+        "لوبين"
+      ],
+      "externalId": "96677",
+      "workType": "series",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
     }
   ],
   "relations": [
@@ -57607,6 +58276,203 @@
       "observations": 1
     },
     {
+      "id": "work:movie-1813355-قصة-ديري|catalog_original_title|VIBECRITIC_D1|A Story of Derry",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "catalog_original_title",
+      "value": "A Story of Derry",
+      "normalizedValue": "A Story of Derry",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-14T12:34:19.567Z",
+      "observations": 1
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|catalog_overview|VIBECRITIC_D1|قبل مئات السنين من بيني وايز، يغامر ثلاثة شبان بالدخول إلى الغابة الغربية... حيث يواجهون روحًا قديمة",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "catalog_overview",
+      "value": "قبل مئات السنين من بيني وايز، يغامر ثلاثة شبان بالدخول إلى الغابة الغربية... حيث يواجهون روحًا قديمة مرعبة.",
+      "normalizedValue": "قبل مئات السنين من بيني وايز، يغامر ثلاثة شبان بالدخول إلى الغابة الغربية... حيث يواجهون روحًا قديمة مرعبة.",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-14T12:34:19.567Z",
+      "observations": 1
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|catalog_release_date|VIBECRITIC_D1|2026-10-31",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "catalog_release_date",
+      "value": "2026-10-31",
+      "normalizedValue": "2026-10-31",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-14T12:34:19.567Z",
+      "observations": 1
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|catalog_year|VIBECRITIC_D1|2026",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "catalog_year",
+      "value": "2026",
+      "normalizedValue": "2026",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-14T12:34:19.567Z",
+      "observations": 1
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|catalog_runtime|VIBECRITIC_D1|30",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "catalog_runtime",
+      "value": "30",
+      "normalizedValue": "30",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-14T12:34:19.567Z",
+      "observations": 1
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|catalog_status|VIBECRITIC_D1|Released",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "catalog_status",
+      "value": "Released",
+      "normalizedValue": "Released",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-14T12:34:19.567Z",
+      "observations": 1
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|catalog_original_language|VIBECRITIC_D1|en",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "catalog_original_language",
+      "value": "en",
+      "normalizedValue": "en",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-14T12:34:19.567Z",
+      "observations": 1
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|catalog_rating|VIBECRITIC_D1|6.729",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "catalog_rating",
+      "value": "6.729",
+      "normalizedValue": "6.729",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-14T12:34:19.567Z",
+      "observations": 1
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|catalog_vote_count|VIBECRITIC_D1|118",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "catalog_vote_count",
+      "value": "118",
+      "normalizedValue": "118",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-14T12:34:19.567Z",
+      "observations": 1
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|catalog_genres|VIBECRITIC_D1|دراما | رعب | غموض",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "catalog_genres",
+      "value": [
+        "دراما",
+        "رعب",
+        "غموض"
+      ],
+      "normalizedValue": "دراما | رعب | غموض",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-14T12:34:19.567Z",
+      "observations": 1
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|catalog_cast|VIBECRITIC_D1|Brandon Oakes | Brenda Odjick | Eric Trask | Isabel DeRoy-Olson | Jennifer Podemski | Kiawentiio | M",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "catalog_cast",
+      "value": [
+        "Kiawentiio",
+        "Isabel DeRoy-Olson",
+        "Michael Podemski",
+        "زان مكلارنون",
+        "MorningStar Angeline",
+        "Brandon Oakes",
+        "Jennifer Podemski",
+        "Eric Trask",
+        "Thosh Collins",
+        "Brenda Odjick"
+      ],
+      "normalizedValue": "Brandon Oakes | Brenda Odjick | Eric Trask | Isabel DeRoy-Olson | Jennifer Podemski | Kiawentiio | Michael Podemski | MorningStar Angeline | Thosh Collins | زان مكلارنون",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-14T12:34:19.567Z",
+      "observations": 1
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|catalog_directors|VIBECRITIC_D1|Tazbah Chavez",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "catalog_directors",
+      "value": [
+        "Tazbah Chavez"
+      ],
+      "normalizedValue": "Tazbah Chavez",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-14T12:34:19.567Z",
+      "observations": 1
+    },
+    {
       "id": "work:movie-155-فارس-الظلام|release_date|VIBECRITIC_D1|2008-07-16",
       "workId": "work:movie-155-فارس-الظلام",
       "field": "release_date",
@@ -67408,203 +68274,6 @@
       "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
       "firstObservedAt": "2026-11-14T19:08:14.047Z",
       "lastObservedAt": "2026-11-14T19:08:14.047Z",
-      "observations": 1
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|catalog_original_title|VIBECRITIC_D1|A Story of Derry",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "catalog_original_title",
-      "value": "A Story of Derry",
-      "normalizedValue": "A Story of Derry",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-14T12:34:19.567Z",
-      "observations": 1
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|catalog_overview|VIBECRITIC_D1|قبل مئات السنين من بيني وايز، يغامر ثلاثة شبان بالدخول إلى الغابة الغربية... حيث يواجهون روحًا قديمة",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "catalog_overview",
-      "value": "قبل مئات السنين من بيني وايز، يغامر ثلاثة شبان بالدخول إلى الغابة الغربية... حيث يواجهون روحًا قديمة مرعبة.",
-      "normalizedValue": "قبل مئات السنين من بيني وايز، يغامر ثلاثة شبان بالدخول إلى الغابة الغربية... حيث يواجهون روحًا قديمة مرعبة.",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-14T12:34:19.567Z",
-      "observations": 1
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|catalog_release_date|VIBECRITIC_D1|2026-10-31",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "catalog_release_date",
-      "value": "2026-10-31",
-      "normalizedValue": "2026-10-31",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-14T12:34:19.567Z",
-      "observations": 1
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|catalog_year|VIBECRITIC_D1|2026",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "catalog_year",
-      "value": "2026",
-      "normalizedValue": "2026",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-14T12:34:19.567Z",
-      "observations": 1
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|catalog_runtime|VIBECRITIC_D1|30",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "catalog_runtime",
-      "value": "30",
-      "normalizedValue": "30",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-14T12:34:19.567Z",
-      "observations": 1
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|catalog_status|VIBECRITIC_D1|Released",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "catalog_status",
-      "value": "Released",
-      "normalizedValue": "Released",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-14T12:34:19.567Z",
-      "observations": 1
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|catalog_original_language|VIBECRITIC_D1|en",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "catalog_original_language",
-      "value": "en",
-      "normalizedValue": "en",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-14T12:34:19.567Z",
-      "observations": 1
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|catalog_rating|VIBECRITIC_D1|6.729",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "catalog_rating",
-      "value": "6.729",
-      "normalizedValue": "6.729",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-14T12:34:19.567Z",
-      "observations": 1
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|catalog_vote_count|VIBECRITIC_D1|118",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "catalog_vote_count",
-      "value": "118",
-      "normalizedValue": "118",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-14T12:34:19.567Z",
-      "observations": 1
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|catalog_genres|VIBECRITIC_D1|دراما | رعب | غموض",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "catalog_genres",
-      "value": [
-        "دراما",
-        "رعب",
-        "غموض"
-      ],
-      "normalizedValue": "دراما | رعب | غموض",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-14T12:34:19.567Z",
-      "observations": 1
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|catalog_cast|VIBECRITIC_D1|Brandon Oakes | Brenda Odjick | Eric Trask | Isabel DeRoy-Olson | Jennifer Podemski | Kiawentiio | M",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "catalog_cast",
-      "value": [
-        "Kiawentiio",
-        "Isabel DeRoy-Olson",
-        "Michael Podemski",
-        "زان مكلارنون",
-        "MorningStar Angeline",
-        "Brandon Oakes",
-        "Jennifer Podemski",
-        "Eric Trask",
-        "Thosh Collins",
-        "Brenda Odjick"
-      ],
-      "normalizedValue": "Brandon Oakes | Brenda Odjick | Eric Trask | Isabel DeRoy-Olson | Jennifer Podemski | Kiawentiio | Michael Podemski | MorningStar Angeline | Thosh Collins | زان مكلارنون",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-14T12:34:19.567Z",
-      "observations": 1
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|catalog_directors|VIBECRITIC_D1|Tazbah Chavez",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "catalog_directors",
-      "value": [
-        "Tazbah Chavez"
-      ],
-      "normalizedValue": "Tazbah Chavez",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-14T12:34:19.567Z",
       "observations": 1
     }
   ],
@@ -79331,7 +80000,7 @@
     }
   ],
   "stats": {
-    "works": 119,
+    "works": 158,
     "people": 1010,
     "companies": 0,
     "concepts": 24,
@@ -79342,5 +80011,5 @@
     "editorialReviews": 55,
     "editorialRelations": 231
   },
-  "updatedAt": "2026-11-14T19:08:14.050Z"
+  "updatedAt": "2026-11-14T19:56:02.756Z"
 }
