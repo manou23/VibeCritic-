@@ -86,8 +86,10 @@ function recordObservation(graph, workId, field, value, provenance) {
     entry.source === provenance.source && entry.normalizedValue === normalized
   );
   if (observation) {
+    if (observation.lastObservedAt !== now) {
+      observation.observations = (Number(observation.observations) || 1) + 1;
+    }
     observation.lastObservedAt = now;
-    observation.observations = (Number(observation.observations) || 1) + 1;
     if (provenance.url) observation.url = provenance.url;
   } else {
     observation = {
@@ -178,8 +180,14 @@ export async function recordKnowledge(item, options = {}) {
   const metadata = item.metadata && typeof item.metadata === 'object' ? item.metadata : {};
   const source = clean(item.source || '');
   const provenanceBase = { source, url: clean(item.sourceUrl || '') || null, observedAt: new Date().toISOString() };
-  const work = upsertEntity(graph, 'work', item.type + ':' + item.id + ':' + item.name, source);
+  const existingWork = graph.entities.find(entry =>
+    entry.kind === 'work' && entry.externalId === String(item.id) && entry.workType === item.type
+  );
+  const work = existingWork || upsertEntity(graph, 'work', item.type + ':' + item.id + ':' + item.name, source);
   if (!work) return null;
+  work.aliases = [...new Set([...(Array.isArray(work.aliases) ? work.aliases : []), clean(item.name)])]
+    .filter(name => name && name !== work.name).slice(-8);
+  if (source && !work.sources.includes(source)) work.sources.push(source);
   work.externalId = String(item.id);
   work.workType = item.type;
   work.releaseDate = clean(item.date || '') || null;
@@ -337,7 +345,9 @@ export async function recordEditorialReview(review) {
 export async function buildKnowledgeContext(item) {
   if (!item?.id || !item?.type || !item?.name) return '';
   const graph = await loadGraph();
-  const workId = entityId('work', item.type + ':' + item.id + ':' + item.name);
+  const workId = graph.entities.find(entry =>
+    entry.kind === 'work' && entry.externalId === String(item.id) && entry.workType === item.type
+  )?.id || entityId('work', item.type + ':' + item.id + ':' + item.name);
   const byId = new Map(graph.entities.map(entity => [entity.id, entity]));
   const direct = graph.relations.filter(edge => edge.from === workId);
   const directLines = direct.slice(0, 12).map(edge => {
