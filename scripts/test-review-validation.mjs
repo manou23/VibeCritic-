@@ -23,11 +23,11 @@ const valid = candidate(reviewWithSections([160, 160, 160, 160, 160]));
 assert.ok(validateGeneratedReview(valid).review.length >= 3200);
 
 assert.throws(
-  () => validateGeneratedReview(candidate(reviewWithSections([147, 147, 147, 147, 147]))),
+  () => validateGeneratedReview(candidate(reviewWithSections([146, 146, 146, 146, 146]))),
   /750 كلمة/
 );
 assert.throws(
-  () => validateGeneratedReview(candidate(reviewWithSections([54, 180, 180, 180, 180]))),
+  () => validateGeneratedReview(candidate(reviewWithSections([51, 180, 180, 180, 180]))),
   /55 كلمة لكل محور/
 );
 assert.throws(
