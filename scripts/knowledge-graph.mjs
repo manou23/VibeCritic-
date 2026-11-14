@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { resolveSourceEvidence } from './source-evidence.mjs';
 
 const graphPath = 'data/knowledge-graph.json';
 const MAX_ENTITIES = 2500;
@@ -7,7 +8,6 @@ const MAX_RELATIONS = 6000;
 const MAX_EVIDENCE_PER_RELATION = 4;
 const MAX_OBSERVATIONS = 12000;
 const MAX_CONFLICTS = 2000;
-const SOURCE_TRUST = Object.freeze({ TMDB: 0.9, IGDB: 0.9, RAWG: 0.82 });
 const clean = value => String(value ?? '').replace(/[\r\n]+/g, ' ').trim();
 
 function emptyGraph() {
@@ -68,14 +68,12 @@ function normalizedValue(value) {
   return clean(value);
 }
 
-function observationTrust(source) {
-  return SOURCE_TRUST[String(source || '').toUpperCase()] || 0.5;
-}
-
 function recordObservation(graph, workId, field, value, provenance) {
   const normalized = normalizedValue(value);
-  if (!normalized || normalized.length > 1200 || !provenance.source || provenance.source === 'unknown') return;
-  const now = provenance.observedAt || new Date().toISOString();
+  const verifiedProvenance = resolveSourceEvidence({ ...provenance, field: provenance.field || field });
+  if (!normalized || normalized.length > 1200 || !verifiedProvenance) return;
+  provenance = verifiedProvenance;
+  const now = provenance.observedAt;
   let observation = graph.observations.find(entry =>
     entry.workId === workId && entry.field === field &&
     entry.source === provenance.source && entry.normalizedValue === normalized
@@ -89,7 +87,8 @@ function recordObservation(graph, workId, field, value, provenance) {
       id: workId + '|' + field + '|' + provenance.source + '|' + normalized.slice(0, 100),
       workId, field, value: Array.isArray(value) ? value.map(clean).filter(Boolean).slice(0, 30) : clean(value),
       normalizedValue: normalized, source: provenance.source, url: provenance.url || null,
-      trust: observationTrust(provenance.source), firstObservedAt: now, lastObservedAt: now, observations: 1
+      sourceClass: provenance.sourceClass, sourceScope: provenance.sourceScope, sourceLimitations: provenance.sourceLimitations,
+      firstObservedAt: now, lastObservedAt: now, observations: 1
     };
     graph.observations.push(observation);
   }
@@ -133,7 +132,10 @@ function recordItemObservations(graph, work, item, provenanceBase) {
   ];
   for (const [field, value] of fields) {
     if (value == null || value === '' || (Array.isArray(value) && !value.length)) continue;
-    recordObservation(graph, work.id, field, value, provenanceBase);
+    const fieldProvenance = item.fieldSources?.[field] && typeof item.fieldSources[field] === 'object'
+      ? { ...provenanceBase, ...item.fieldSources[field] }
+      : provenanceBase;
+    recordObservation(graph, work.id, field, value, { ...fieldProvenance, field });
   }
 }
 
@@ -240,7 +242,7 @@ export async function buildKnowledgeContext(item) {
   );
 
   const observations = graph.observations.filter(entry => entry.workId === workId);
-  const observationLines = observations.slice(-12).map(entry => '- ' + entry.field + ': ' + (Array.isArray(entry.value) ? entry.value.join('، ') : entry.value) + ' (المصدر: ' + entry.source + '؛ الثقة المصدرية الإرشادية: ' + Math.round(entry.trust * 100) + '%؛ رُصد آخر مرة: ' + entry.lastObservedAt + ').');
+  const observationLines = observations.slice(-12).map(entry => '- ' + entry.field + ': ' + (Array.isArray(entry.value) ? entry.value.join('، ') : entry.value) + ' (المصدر: ' + entry.source + '؛ نوع المصدر: ' + entry.sourceClass + '؛ نطاقه: ' + entry.sourceScope + '؛ حدوده: ' + entry.sourceLimitations + '؛ رُصد آخر مرة: ' + entry.lastObservedAt + ').');
   const unresolved = graph.conflicts.filter(entry => entry.workId === workId && entry.status === 'unresolved');
   const conflictLines = unresolved.slice(0, 6).map(entry => '- تعارض غير محسوم في ' + entry.field + ': توجد قيم من مصادر مختلفة. لا تعتمد أياً منها كحقيقة نهائية قبل التحقق.');
   if (!directLines.length && !relatedLines.length && !observationLines.length && !conflictLines.length) return '';
