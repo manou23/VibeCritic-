@@ -16,7 +16,8 @@
     "editorial:training": "node scripts/editorial-training.mjs",
     "test:knowledge-graph": "node scripts/test-knowledge-graph.mjs",
     "test:editorial-reasoning": "node scripts/test-editorial-reasoning.mjs",
-    "test:source-evidence": "node scripts/test-knowledge-graph.mjs"
+    "test:source-evidence": "node scripts/test-knowledge-graph.mjs",
+    "test:knowledge-gaps": "node scripts/test-knowledge-gaps.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",
