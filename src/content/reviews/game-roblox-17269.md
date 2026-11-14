@@ -13,6 +13,7 @@ backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/cociyw.jpg"
 youtubeVideoId: "sme76WoJ_-U"
 youtubeVideoTitle: "Roblox | Official Trailer (2019)"
 reviewMode: limited
+score: 7.5
 pros:
   - "تنوع هائل في التجارب التي ينشئها المجتمع"
   - "أدوات الإبداع تتيح للمستخدمين بناء عوالمهم الخاصة"
