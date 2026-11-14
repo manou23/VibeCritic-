@@ -60,8 +60,8 @@ const contextResponse = await onRequestGet({
         return {
           async first() { return { id: 9, tmdb_id: 123, type: 'movie', title: 'Original Film', title_ar: 'فيلم أساسي', overview_ar: 'وصف كتالوجي موثق للعمل.', release_date: '2024-06-01', year: 2024, runtime: 120, status: 'Released', rating: 7.5, votes: 1200, popularity: 44, original_language: 'en', updated_at: '2026-11-14' }; },
           async all() {
-            if (sql.includes('FROM title_genres tg JOIN genres')) return { results: [{ name: 'دراما' }, { name: 'خيال علمي' }] };
-            if (sql.includes('FROM credits c JOIN people')) return { results: [
+            if (sql.startsWith('SELECT COALESCE(g.name_ar,g.name_en) AS name FROM title_genres')) return { results: [{ name: 'دراما' }, { name: 'خيال علمي' }] };
+            if (sql.startsWith('SELECT p.name,c.kind,c.character FROM credits')) return { results: [
               { name: 'ممثل أول', kind: 'cast', character: 'البطل' },
               { name: 'ممثل ثان', kind: 'cast', character: 'الصديق' },
               { name: 'ممثل ثالث', kind: 'cast', character: null },
