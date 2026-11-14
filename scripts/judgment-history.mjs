@@ -145,7 +145,10 @@ export function buildJudgmentRevisionContext(item, history) {
   const evidenceChanged = previous.evidenceFingerprint !== currentEvidence;
   return [
     'ذاكرة الأحكام السابقة لهذا العمل:',
-    'آخر حكم محفوظ بتاريخ ' + previous.capturedAt + '، الدرجة ' + (previous.overallScore ?? 'غير مسجلة') + '/10، والخلاصة: ' + (previous.verdict || previous.summary || 'غير محفوظة') + '.',
+    'آخر حكم محفوظ بتاريخ ' + previous.capturedAt + '، الدرجة ' + (previous.overallScore ?? 'غير مسجلة') + '/10، والدرجات الفرعية: ' + Object.entries(previous.scores || {}).map(([key, value]) => key + '=' + value).join('، ') + '.',
+    'خلاصة الحكم السابق: ' + (previous.verdict || previous.summary || 'غير محفوظة') + '.',
+    'نقاط القوة السابقة: ' + (list(previous.pros).join('؛ ') || 'غير مسجلة') + '.',
+    'التحفظات السابقة: ' + (list(previous.cons).join('؛ ') || 'غير مسجلة') + '.',
     'بصمة الأدلة الحالية ' + (evidenceChanged ? 'تختلف' : 'لا تختلف') + ' عن النسخة السابقة.',
     'أعد فحص الحكم السابق على ضوء الأدلة المتاحة الآن. لا تتمسك به لمجرد الاتساق، ولا تغيّره لمجرد التنويع. إذا تغيّر الاستنتاج فاذكر الدليل المحدد الذي يبرر التغيير، وإذا لم تظهر أدلة جديدة فلا تصطنع تحولاً في الرأي.',
     'هذه الذاكرة تنبه إلى المراجعة ولا تفرض نتيجة أو درجة مسبقة.'
