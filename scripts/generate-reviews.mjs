@@ -6,6 +6,7 @@ import { buildEditorialReasoning, evaluateEditorialReview, formatEditorialReason
 import { buildSpecialistSkillContext } from './specialist-skills.mjs';
 import { assessCriticalQuestions, formatCriticalQuestionContext } from './critical-questions.mjs';
 import { buildIntellectualRepetitionReport, formatIntellectualRepetitionContext, buildIntellectualPatternRecord } from './intellectual-repetition.mjs';
+import { compactLearningMemory } from './memory-maintenance.mjs';
 
 const env=process.env;
 const provider=(env.AI_PROVIDER||(env.GEMINI_API_KEY?'gemini':env.GROQ_API_KEY?'groq':env.OPENROUTER_API_KEY?'openrouter':env.CF_WORKERS_AI_API_TOKEN?'cloudflare-workers-ai':'openai')).toLowerCase();
@@ -17,7 +18,8 @@ const outDir='src/content/reviews',processedPath='data/processed.json';
 const learningPath='data/learning-memory.json';
 let learningMemory={version:2,stats:{successes:0,failures:0},lessons:[],recentSuccesses:[],recentQuality:[],qualityByType:{}};
 async function loadLearningMemory(){
- try{const saved=JSON.parse(await fs.readFile(learningPath,'utf8'));if(saved&&(saved.version===1||saved.version===2)){learningMemory={...learningMemory,...saved,version:2,stats:{successes:0,failures:0,...saved.stats},lessons:Array.isArray(saved.lessons)?saved.lessons.slice(-12):[],recentSuccesses:Array.isArray(saved.recentSuccesses)?saved.recentSuccesses.slice(-10):[],recentQuality:Array.isArray(saved.recentQuality)?saved.recentQuality.slice(-30):[],qualityByType:saved.qualityByType&&typeof saved.qualityByType==='object'?saved.qualityByType:{}};}}catch{}
+ try{const saved=JSON.parse(await fs.readFile(learningPath,'utf8'));if(saved&&(saved.version===1||saved.version===2)){learningMemory=compactLearningMemory({...learningMemory,...saved,version:2});}}catch{}
+ learningMemory=compactLearningMemory(learningMemory);
 }
 async function saveLearningMemory(){learningMemory.version=2;learningMemory.updatedAt=new Date().toISOString();await fs.writeFile(learningPath,JSON.stringify(learningMemory,null,2)+'\n','utf8');}
 function classifyLearning(error){
