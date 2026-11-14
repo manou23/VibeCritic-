@@ -11,8 +11,8 @@ function makeDb() {
           async first() { return { total: 1 }; },
           async all() {
             if (sql.includes('FROM genres')) return { results: [{ id: 1, name_ar: 'دراما' }] };
-            if (sql.includes('FROM title_genres tg JOIN genres')) return { results: [{ name: 'دراما' }, { name: 'خيال علمي' }] };
-            if (sql.includes('FROM credits c JOIN people')) return { results: [
+            if (sql.startsWith('SELECT COALESCE(g.name_ar,g.name_en) AS name FROM title_genres')) return { results: [{ name: 'دراما' }, { name: 'خيال علمي' }] };
+            if (sql.startsWith('SELECT p.name,c.kind,c.job,c.character FROM credits')) return { results: [
               { name: 'ممثل أول', kind: 'cast', character: 'البطل' },
               { name: 'ممثل ثان', kind: 'cast', character: 'الصديق' },
               { name: 'ممثل ثالث', kind: 'cast', character: null },
