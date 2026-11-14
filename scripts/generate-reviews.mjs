@@ -709,21 +709,13 @@ function validateSourceQuality(item){
   const platforms=metadata.platforms||item.platforms||[];
   const developers=metadata.developers||item.developers||[];
   if(platforms.length===0||developers.length===0)throw new Error('بيانات اللعبة لا تتضمن منصات ومطوراً موثقاً');
-  if(!isPreview){
-   const count=Number(item.sourceVoteCount??metadata.ratingCount)||0;
-   const rating=Number(item.rating)||0;
-   const metacritic=Number(metadata.metacritic)||0;
-   if(!(count>=5&&rating>0)&&metacritic<60)throw new Error('بيانات تقييم اللعبة غير كافية (يلزم 5 تقييمات مصدرية أو Metacritic موثوق ≥60)');
-  }
  }else{
   const cast=metadata.cast||[];
   const leadership=item.type==='movie'?(metadata.directors||[]):(metadata.creators||[]);
   if(cast.length<3||leadership.length===0)throw new Error('بيانات الطاقم الإبداعي غير كافية للتحليل');
-  if(!isPreview){
-   const count=Number(item.sourceVoteCount)||0;
-   if(!(Number(item.rating)>0&&count>=5))throw new Error('بيانات تقييم الجمهور غير كافية (يلزم 5 أصوات مصدرية على الأقل)');
-  }
  }
+ // تقييم VibeCritic تحريري مستقل؛ تقييم الجمهور وعدد أصواته سياق مساعد لا شرط لنشر الدرجة.
+ // لا تُمنح درجة نهائية قبل تاريخ الإصدار، أما الأعمال الصادرة فتُقيّم وفق الأدلة والتحليل.
  return isPreview?'preview':'review';
 }
 async function generateReview(item){
