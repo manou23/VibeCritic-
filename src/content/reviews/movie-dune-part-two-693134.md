@@ -45,9 +45,9 @@ crew:
   - "Greig Fraser"
   - "Joe Walker"
   - "Hans Zimmer"
-sourceName: "Legendary Pictures"
-sourceId: "dune-part-two-2024"
-sourceUrl: "https://www.legendary.com/film/dune-part-two/"
+sourceName: "TMDB"
+sourceId: "693134"
+sourceUrl: "https://www.themoviedb.org/movie/693134"
 aiGenerated: false
 ---
 
