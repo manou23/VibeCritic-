@@ -8,14 +8,14 @@ const failures = [];
 for (const file of files) {
   const fullPath = path.join(root, file);
   const content = await fs.readFile(fullPath, 'utf8');
-  const match = content.match(/^---\s*\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/);
+  const match = content.match(/^---[ \t]*\r?\n([\s\S]*?)\r?\n---[ \t]*(?:\r?\n([\s\S]*))?$/);
   if (!match) {
     failures.push(file + ': YAML frontmatter is missing or malformed');
     continue;
   }
 
   const frontmatter = match[1];
-  const body = match[2];
+  const body = match[2] || '';
   const modeMatch = frontmatter.match(/^reviewMode:\s*(review|preview|limited)\s*$/m);
   const reviewMode = modeMatch?.[1] || 'review';
   if (frontmatter.match(/^reviewMode:/m) && !modeMatch) {
