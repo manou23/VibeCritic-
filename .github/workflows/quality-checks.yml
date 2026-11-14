@@ -44,6 +44,7 @@ jobs:
           node --check scripts/editorial-reasoning.mjs
           node --check scripts/test-editorial-reasoning.mjs
           node --check scripts/test-knowledge-graph.mjs
+          node --check scripts/test-knowledge-retrieval.mjs
           npm run test:knowledge-graph
           node --check scripts/ingest-review-knowledge.mjs
           npm run knowledge:ingest-reviews
@@ -78,6 +79,7 @@ jobs:
           npm run test:catalog-api
           node --check scripts/ingest-d1-catalog-knowledge.mjs
           npm run test:knowledge-catalog
+          npm run test:knowledge-retrieval
       - name: Validate review scores
         run: npm run validate:reviews
       - name: Build production site
