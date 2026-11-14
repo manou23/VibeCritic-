@@ -13,7 +13,6 @@ backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/co8fu7.jpg"
 youtubeVideoId: "MmB9b5njVbA"
 youtubeVideoTitle: "Official Minecraft Trailer"
 reviewMode: limited
-score: 8.7
 pros:
   - "حرية إبداعية شبه لا حدود لها"
   - "نظام ريدستون يتيح بناء دوائر منطقية معقدة"
