@@ -10,7 +10,6 @@ reviewMode: limited
 type: game
 date: 2026-11-14
 releaseDate: "2026-11-12"
-reviewMode: review
 poster: "https://asia.sega.com/metaphor/en/switch2/ogp.jpg"
 backdrop: "https://asia.sega.com/metaphor/en/switch2/ogp.jpg"
 youtubeVideoId: "8Z6TH6p2Tyk"
