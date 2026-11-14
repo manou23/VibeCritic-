@@ -58,18 +58,18 @@ export function assessCriticalQuestions(item, options = {}) {
       requiredEvidence: definition.required,
       status,
       evidenceCount: evidence.length,
-      independentDomains: domains,
+      distinctDomains: domains,
       evidence: evidence.map(({ source, domain, claim, url, observedAt }) => ({ source, domain, claim, url, observedAt }))
     };
   });
-  const multi-domain = questions.filter(question => question.status === 'multi-domain').length;
+  const multiDomain = questions.filter(question => question.status === 'multi-domain').length;
   const singleSource = questions.filter(question => question.status === 'single-source').length;
   return {
     version: 1,
     workType: type,
     mode: preview ? 'preview' : 'review',
     questionCount: questions.length,
-    multi-domain,
+    multiDomain,
     singleSource,
     unanswered: questions.length - multi-domain - singleSource,
     questions,
@@ -92,7 +92,7 @@ export function formatCriticalQuestionContext(report) {
   });
   return [
     'محرك الأسئلة النقدية V1:',
-    'هذه أسئلة اختبار وليست استنتاجات أو أحكاماً جاهزة. عدد الأسئلة: ' + report.questionCount + '؛ مدعوم بنطاقين مختلفين: ' + report.multi-domain + '؛ مصدر واحد: ' + report.singleSource + '؛ بلا دليل مباشر: ' + report.unanswered + '.',
+    'هذه أسئلة اختبار وليست استنتاجات أو أحكاماً جاهزة. عدد الأسئلة: ' + report.questionCount + '؛ مدعوم بنطاقين مختلفين: ' + report.multiDomain + '؛ مصدر واحد: ' + report.singleSource + '؛ بلا دليل مباشر: ' + report.unanswered + '.',
     ...lines,
     'لا تجب عن سؤال بلا دليل. المصدر الواحد يتيح الإشارة إلى معلومة منسوبة إليه فقط ولا يثبتها استقلالياً. لا تحوّل السؤال غير المحسوم إلى نقطة سلبية، ولا تخترع إجابة لسد فراغ المقال.',
     'إذا كانت المراجعة استباقية، ناقش ما أعلن رسمياً وما بقي مجهولاً فقط، ولا تصف تجربة لم تحدث.'
