@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { resolveSourceEvidence } from './source-evidence.mjs';
 import { assessKnowledgeGaps, formatKnowledgeGapContext } from './knowledge-gaps.mjs';
+import { compactKnowledgeGraph } from './memory-maintenance.mjs';
 
 const graphPath = 'data/knowledge-graph.json';
 const MAX_ENTITIES = 2500;
@@ -20,7 +21,7 @@ async function loadGraph() {
   try {
     const saved = JSON.parse(await fs.readFile(graphPath, 'utf8'));
     if ((saved?.version === 1 || saved?.version === 2) && Array.isArray(saved.entities) && Array.isArray(saved.relations)) {
-      return { ...emptyGraph(), ...saved, version: 2, entities: saved.entities.slice(-MAX_ENTITIES), relations: saved.relations.slice(-MAX_RELATIONS), observations: Array.isArray(saved.observations) ? saved.observations.slice(-MAX_OBSERVATIONS) : [], conflicts: Array.isArray(saved.conflicts) ? saved.conflicts.slice(-MAX_CONFLICTS) : [], knowledgeGaps: Array.isArray(saved.knowledgeGaps) ? saved.knowledgeGaps.slice(-MAX_KNOWLEDGE_GAPS) : [] };
+      return compactKnowledgeGraph({ ...emptyGraph(), ...saved, version: 2 });
     }
   } catch {}
   return emptyGraph();

@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { compactEditorialMemory } from './memory-maintenance.mjs';
 
 const memoryPath = 'data/editorial-intelligence.json';
 const MAX_CANDIDATES = 120;
@@ -28,7 +29,7 @@ function emptyMemory() {
 async function loadMemory() {
   try {
     const parsed = JSON.parse(await fs.readFile(memoryPath, 'utf8'));
-    if (parsed?.version === 1) return { ...emptyMemory(), ...parsed };
+    if (parsed?.version === 1) return compactEditorialMemory({ ...emptyMemory(), ...parsed });
   } catch {}
   return emptyMemory();
 }
