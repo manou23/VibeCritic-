@@ -39,6 +39,9 @@ jobs:
           node --check scripts/test-knowledge-graph.mjs
           npm run test:knowledge-graph
           npm run test:source-evidence
+          node --check scripts/knowledge-gaps.mjs
+          node --check scripts/test-knowledge-gaps.mjs
+          npm run test:knowledge-gaps
           npm run test:editorial-reasoning
           node --check scripts/backfill-arabic-titles.mjs
           node --check scripts/backfill-game-platforms.mjs

@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { resolveSourceEvidence } from './source-evidence.mjs';
+import { assessKnowledgeGaps, formatKnowledgeGapContext } from './knowledge-gaps.mjs';
 
 const graphPath = 'data/knowledge-graph.json';
 const MAX_ENTITIES = 2500;
@@ -8,17 +9,18 @@ const MAX_RELATIONS = 6000;
 const MAX_EVIDENCE_PER_RELATION = 4;
 const MAX_OBSERVATIONS = 12000;
 const MAX_CONFLICTS = 2000;
+const MAX_KNOWLEDGE_GAPS = 1200;
 const clean = value => String(value ?? '').replace(/[\r\n]+/g, ' ').trim();
 
 function emptyGraph() {
-  return { version: 2, entities: [], relations: [], observations: [], conflicts: [], stats: { works: 0, people: 0, companies: 0, concepts: 0, relations: 0, observations: 0, conflicts: 0 }, updatedAt: null };
+  return { version: 2, entities: [], relations: [], observations: [], conflicts: [], knowledgeGaps: [], stats: { works: 0, people: 0, companies: 0, concepts: 0, relations: 0, observations: 0, conflicts: 0, knowledgeGaps: 0 }, updatedAt: null };
 }
 
 async function loadGraph() {
   try {
     const saved = JSON.parse(await fs.readFile(graphPath, 'utf8'));
     if ((saved?.version === 1 || saved?.version === 2) && Array.isArray(saved.entities) && Array.isArray(saved.relations)) {
-      return { ...emptyGraph(), ...saved, version: 2, entities: saved.entities.slice(-MAX_ENTITIES), relations: saved.relations.slice(-MAX_RELATIONS), observations: Array.isArray(saved.observations) ? saved.observations.slice(-MAX_OBSERVATIONS) : [], conflicts: Array.isArray(saved.conflicts) ? saved.conflicts.slice(-MAX_CONFLICTS) : [] };
+      return { ...emptyGraph(), ...saved, version: 2, entities: saved.entities.slice(-MAX_ENTITIES), relations: saved.relations.slice(-MAX_RELATIONS), observations: Array.isArray(saved.observations) ? saved.observations.slice(-MAX_OBSERVATIONS) : [], conflicts: Array.isArray(saved.conflicts) ? saved.conflicts.slice(-MAX_CONFLICTS) : [], knowledgeGaps: Array.isArray(saved.knowledgeGaps) ? saved.knowledgeGaps.slice(-MAX_KNOWLEDGE_GAPS) : [] };
     }
   } catch {}
   return emptyGraph();
@@ -147,7 +149,7 @@ function names(value) {
   return value.map(entry => typeof entry === 'string' ? entry : entry?.name).filter(value => typeof value === 'string' && value.trim());
 }
 
-export async function recordKnowledge(item) {
+export async function recordKnowledge(item, options = {}) {
   if (!item?.id || !item?.type || !item?.name) return null;
   const graph = await loadGraph();
   const metadata = item.metadata && typeof item.metadata === 'object' ? item.metadata : {};
@@ -159,6 +161,11 @@ export async function recordKnowledge(item) {
   work.workType = item.type;
   work.releaseDate = clean(item.date || '') || null;
   recordItemObservations(graph, work, item, provenanceBase);
+  const unresolvedForWork = graph.conflicts.filter(entry => entry.workId === work.id && entry.status === 'unresolved');
+  const gapReport = assessKnowledgeGaps(item, { today: options.today, assessedAt: options.assessedAt, unresolvedConflicts: unresolvedForWork });
+  const previousGap = graph.knowledgeGaps.find(entry => entry.workKey === gapReport.workKey);
+  const storedGap = { ...gapReport, firstSeenAt: previousGap?.firstSeenAt || gapReport.assessedAt, assessments: (Number(previousGap?.assessments) || 0) + 1 };
+  graph.knowledgeGaps = [...graph.knowledgeGaps.filter(entry => entry.workKey !== gapReport.workKey), storedGap].slice(-MAX_KNOWLEDGE_GAPS);
 
   const addMany = (kind, relation, values, field) => {
     for (const name of names(values).slice(0, 30)) {
@@ -206,7 +213,8 @@ export async function recordKnowledge(item) {
     concepts: graph.entities.filter(entry => entry.kind === 'concept').length,
     relations: graph.relations.length,
     observations: graph.observations.length,
-    conflicts: graph.conflicts.filter(entry => entry.status === 'unresolved').length
+    conflicts: graph.conflicts.filter(entry => entry.status === 'unresolved').length,
+    knowledgeGaps: graph.knowledgeGaps.length
   };
   graph.updatedAt = new Date().toISOString();
   await fs.mkdir(path.dirname(graphPath), { recursive: true });
@@ -248,13 +256,16 @@ export async function buildKnowledgeContext(item) {
   const observationLines = observations.slice(-12).map(entry => '- ' + entry.field + ': ' + (Array.isArray(entry.value) ? entry.value.join('، ') : entry.value) + ' (المصدر: ' + entry.source + '؛ نوع المصدر: ' + entry.sourceClass + '؛ نطاقه: ' + entry.sourceScope + '؛ حدوده: ' + entry.sourceLimitations + '؛ رُصد آخر مرة: ' + entry.lastObservedAt + ').');
   const unresolved = graph.conflicts.filter(entry => entry.workId === workId && entry.status === 'unresolved');
   const conflictLines = unresolved.slice(0, 6).map(entry => '- تعارض غير محسوم في ' + entry.field + ': توجد قيم من مصادر مختلفة. لا تعتمد أياً منها كحقيقة نهائية قبل التحقق.');
-  if (!directLines.length && !relatedLines.length && !observationLines.length && !conflictLines.length) return '';
+  const gapReport = graph.knowledgeGaps.find(entry => entry.workKey === item.type + ':' + clean(item.id)) || null;
+  const gapContext = formatKnowledgeGapContext(gapReport);
+  if (!directLines.length && !relatedLines.length && !observationLines.length && !conflictLines.length && !gapContext) return '';
   return [
     'سياق الذاكرة المعرفية الموثق (استعمله للسياق فقط، ولا تستنتج تأثيراً أو اقتباساً دون دليل):',
     ...observationLines,
     ...conflictLines,
     ...directLines,
     ...relatedLines,
+    ...(gapContext ? [gapContext] : []),
     'افصل دائماً بين علاقة المصدر المعلنة، والعنصر المشترك في البيانات، والاستنتاج النقدي الذي يحتاج دليلاً مستقلاً. درجات الثقة المصدرية مؤشرات إرشادية داخلية وليست احتمالاً إحصائياً لصحة كل معلومة.'
   ].join('\n');
 }
