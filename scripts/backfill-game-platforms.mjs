@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { hasCompleteRawgMetadata, selectExactRawgMatch } from './rawg-catalog-utils.mjs';
 
 const apiKey = String(process.env.RAWG_API_KEY || '').trim();
 if (!apiKey) {
@@ -9,9 +10,6 @@ if (!apiKey) {
 
 const root = path.resolve('src/content/reviews');
 const files = (await fs.readdir(root)).filter(file => file.endsWith('.md') && file.startsWith('game-')).sort();
-const normalize = value => String(value || '').toLocaleLowerCase().normalize('NFKD')
-  .replace(/\p{M}/gu, '').replace(/[^\p{L}\p{N}]+/gu, ' ').trim().replace(/\s+/g, ' ');
-
 function readScalar(frontmatter, key) {
   const line = frontmatter.match(new RegExp('^' + key + ':\\s*(.*)$', 'm'));
   if (!line) return '';
@@ -42,18 +40,7 @@ async function findRawgMatch(title, year) {
   const response = await fetch('https://api.rawg.io/api/games?' + query, { signal: AbortSignal.timeout(20000) });
   if (!response.ok) throw new Error('RAWG search HTTP ' + response.status);
   const results = (await response.json()).results || [];
-  const target = normalize(title);
-  const matches = results.filter(item => normalize(item.name) === target);
-  if (!matches.length) return null;
-  const targetYear = Number(String(year || '').slice(0, 4)) || null;
-  matches.sort((a, b) => {
-    const ay = Number(String(a.released || '').slice(0, 4)) || null;
-    const by = Number(String(b.released || '').slice(0, 4)) || null;
-    const ad = targetYear && ay ? Math.abs(targetYear - ay) : 99;
-    const bd = targetYear && by ? Math.abs(targetYear - by) : 99;
-    return ad - bd || (Number(b.ratings_count) || 0) - (Number(a.ratings_count) || 0);
-  });
-  return matches[0];
+  return selectExactRawgMatch(results, title, year);
 }
 
 let updated = 0;
@@ -71,12 +58,20 @@ for (const file of files) {
   const releaseDate = readScalar(frontmatter, 'releaseDate');
 
   try {
+    if (hasCompleteRawgMetadata(frontmatter)) {
+      skipped++;
+      console.log('RAWG metadata already indexed; avoiding repeat API calls: ' + file);
+      continue;
+    }
     let detail;
-    if (sourceName === 'RAWG' && /^\d+$/.test(sourceId)) {
-      detail = await rawgDetail(sourceId);
+    const savedRawgId = String(readScalar(frontmatter, 'rawgSourceId') || '');
+    const knownRawgId = /^\d+$/.test(savedRawgId) ? savedRawgId
+      : sourceName === 'RAWG' && /^\d+$/.test(sourceId) ? sourceId : '';
+    if (knownRawgId) {
+      detail = await rawgDetail(knownRawgId);
     } else {
       const matchByTitle = await findRawgMatch(originalTitle || title, releaseDate);
-      if (!matchByTitle) { skipped++; console.log('No exact RAWG title match; leaving metadata unchanged: ' + file); continue; }
+      if (!matchByTitle) { skipped++; console.log('No unique exact RAWG title/year match; leaving metadata unchanged: ' + file); continue; }
       detail = await rawgDetail(matchByTitle.id);
     }
 
