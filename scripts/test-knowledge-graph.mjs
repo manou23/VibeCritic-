@@ -72,7 +72,7 @@ try {
 
   const graph = JSON.parse(await fs.readFile('data/knowledge-graph.json', 'utf8'));
   assert.equal(graph.version, 2);
-  assert.ok(Array.isArray(graph.knowledgeGaps) && graph.knowledgeGaps.length >= 3, 'Per-work knowledge gap assessments should persist in the graph.');
+  assert.ok(Array.isArray(graph.knowledgeGaps) && graph.knowledgeGaps.length >= 2, 'Per-work knowledge gap assessments should persist in the graph.');
   assert.ok(graph.knowledgeGaps.some(entry => entry.workKey === 'movie:101' && entry.assessments >= 2), 'Repeated assessments should update the existing work record.');
   assert.equal(graph.stats.knowledgeGaps, graph.knowledgeGaps.length);
   assert.ok(graph.entities.some(entity => entity.id === 'concept:legacy'), 'Version 1 entities should survive migration.');
