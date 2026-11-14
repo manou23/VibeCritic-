@@ -48,6 +48,7 @@ jobs:
           node --check scripts/editorial-reasoning.mjs
           node --check scripts/test-editorial-reasoning.mjs
           node --check scripts/test-knowledge-graph.mjs
+          node --check scripts/test-knowledge-retrieval.mjs
           npm run test:knowledge-graph
           npm run test:editorial-reasoning
           node --check scripts/backfill-arabic-titles.mjs
@@ -59,6 +60,8 @@ jobs:
         run: npm run knowledge:ingest-reviews
       - name: Sync D1 catalog into local knowledge graph
         run: npm run knowledge:sync-d1
+      - name: Verify retrieval from persisted knowledge without AI
+        run: npm run test:knowledge-retrieval
       - name: Test editorial reasoning and calibration
         run: |
           npm run test:critical-questions
