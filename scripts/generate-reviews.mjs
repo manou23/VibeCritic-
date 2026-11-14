@@ -507,15 +507,44 @@ async function findOfficialGameTrailer(item){
   return null;
  }
 }
+async function fetchCachedEditorialMetadata(item) {
+ if (!['movie', 'series'].includes(item?.type)) return null;
+ const endpoint = String(env.VIBECRITIC_CATALOG_API_URL || 'https://vibecritic.pages.dev/api/catalog').trim();
+ try {
+  const url = new URL(endpoint);
+  url.searchParams.set('mode', 'editorial-cache');
+  url.searchParams.set('tmdb_id', String(item.id));
+  url.searchParams.set('type', item.type === 'movie' ? 'movie' : 'tv');
+  const result = await getJson(url.toString());
+  if (!result?.available || !result.payload || !result.cachedAt) return null;
+  return { ...result.payload, cacheObservedAt: result.cachedAt };
+ } catch (error) {
+  console.warn('تعذر قراءة الذاكرة التحريرية من D1؛ سيُستخدم المسار الاحتياطي:', error.message);
+  return null;
+ }
+}
 async function enrichItem(item){
  if(item.type==='game'){const trailer=await findOfficialGameTrailer(item);return {...item,metadata:{...(item.metadata||{}),...(trailer||{})}};}
  try{
-  const key=required('TMDB_API_KEY'),endpoint=item.type==='movie'?'movie':'tv';
-  const detail=await getJson('https://api.themoviedb.org/3/'+endpoint+'/'+item.id+'?api_key='+key+'&language=ar-SA&append_to_response=credits,videos,similar');
+  const endpoint=item.type==='movie'?'movie':'tv';
+  const cached=await fetchCachedEditorialMetadata(item);
+  let detail;
+  if(cached){
+   detail={id:Number(item.id),title:cached.title,name:cached.title,original_title:cached.originalTitle,original_name:cached.originalTitle,overview:cached.overview,release_date:cached.releaseDate,first_air_date:cached.releaseDate,runtime:cached.runtime,vote_average:cached.voteAverage,vote_count:cached.voteCount,genres:(cached.genres||[]).map(name=>({name})),created_by:(cached.creators||[]).map(name=>({name})),production_companies:(cached.productionCompanies||[]).map(name=>({name})),episode_run_time:cached.episodeRuntime||[],number_of_seasons:cached.seasons,number_of_episodes:cached.episodes,credits:{cast:(cached.cast||[]).map(name=>({name})),crew:(cached.directors||[]).map(name=>({name,job:'Director'}))},videos:{results:(cached.videos||[]).map(video=>({site:'YouTube',official:true,type:video.type,key:video.key,name:video.name,published_at:video.publishedAt}))},similar:{results:cached.similar||[]}};
+  }else{
+   const key=required('TMDB_API_KEY');
+   detail=await getJson('https://api.themoviedb.org/3/'+endpoint+'/'+item.id+'?api_key='+key+'&language=ar-SA&append_to_response=credits,videos,similar');
+  }
   let watchRegion=null;
-  try{const watchData=await getJson('https://api.themoviedb.org/3/'+endpoint+'/'+item.id+'/watch/providers?api_key='+key);watchRegion=watchData.results?.DZ||null;}catch(error){console.warn('تعذر جلب مزودي المشاهدة في الجزائر للعمل '+item.name+':',error.message);}
+  if(!cached){
+   const key=required('TMDB_API_KEY');
+   try{const watchData=await getJson('https://api.themoviedb.org/3/'+endpoint+'/'+item.id+'/watch/providers?api_key='+key);watchRegion=watchData.results?.DZ||null;}catch(error){console.warn('تعذر جلب مزودي المشاهدة في الجزائر للعمل '+item.name+':',error.message);}
+  }
   let communityReviews=[];
-  try{const reviewData=await getJson('https://api.themoviedb.org/3/'+endpoint+'/'+item.id+'/reviews?api_key='+key+'&language=en-US&page=1');communityReviews=(reviewData.results||[]).slice(0,3).map(review=>String(review.content||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim().slice(0,450)).filter(Boolean);}catch(error){console.warn('تعذر جلب مراجعات الجمهور من TMDB للعمل '+item.name+':',error.message);}
+  if(!cached){
+   const key=required('TMDB_API_KEY');
+   try{const reviewData=await getJson('https://api.themoviedb.org/3/'+endpoint+'/'+item.id+'/reviews?api_key='+key+'&language=en-US&page=1');communityReviews=(reviewData.results||[]).slice(0,3).map(review=>String(review.content||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim().slice(0,450)).filter(Boolean);}catch(error){console.warn('تعذر جلب مراجعات الجمهور من TMDB للعمل '+item.name+':',error.message);}
+  }
   const cast=(detail.credits?.cast||[]).slice(0,7).map(x=>x.character?x.name+' بدور '+x.character:x.name).filter(Boolean);
   const directors=(detail.credits?.crew||[]).filter(x=>x.job==='Director').slice(0,2).map(x=>x.name);
   const creators=(detail.created_by||[]).map(x=>x.name).filter(Boolean);
