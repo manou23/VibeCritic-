@@ -27,7 +27,8 @@
     "test:critical-patterns": "node scripts/test-critical-patterns.mjs",
     "test:tmdb-sync": "node scripts/test-sync-tmdb.mjs",
     "test:catalog-api": "node scripts/test-catalog-api.mjs",
-    "test:review-validation": "node scripts/test-review-validation.mjs"
+    "test:review-validation": "node scripts/test-review-validation.mjs",
+    "test:judgment-history": "node scripts/test-judgment-history.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",
