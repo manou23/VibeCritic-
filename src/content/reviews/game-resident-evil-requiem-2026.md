@@ -14,10 +14,10 @@ backdrop: "https://assetsio.gnwcdn.com/resident-evil-requiem-grace-key-art.webp?
 youtubeVideoId: "9lrThxCoznw"
 youtubeVideoTitle: "Resident Evil Requiem - Launch Trailer"
 score: 8.6
-storyScore: 8.1
+storyScore: 8.2
 visualsScore: 9.2
 soundScore: 8.7
-pacingScore: 8.2
+pacingScore: 8.4
 platforms:
   - "PlayStation 5"
   - "Xbox Series X|S"
