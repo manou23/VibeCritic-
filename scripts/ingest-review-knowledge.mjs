@@ -3,28 +3,28 @@ import path from 'node:path';
 import { recordEditorialReview } from './knowledge-graph.mjs';
 
 const directory = 'src/content/reviews';
-const clean = value => String(value ?? '').replace(/[\\r\\n]+/g, ' ').trim();
+const clean = value => String(value ?? '').replace(/[\r\n]+/g, ' ').trim();
 
 function parseScalar(raw) {
   const value = raw.trim();
   if (!value) return '';
   if (value === 'true') return true;
   if (value === 'false') return false;
-  if (/^-?\\d+(?:\\.\\d+)?$/.test(value)) return Number(value);
+  if (/^-?\d+(?:\.\d+)?$/.test(value)) return Number(value);
   if (value.startsWith('"')) {
     try { return JSON.parse(value); } catch {}
   }
   if (value.startsWith("'") && value.endsWith("'")) return value.slice(1, -1).replaceAll("''", "'");
-  return value.replace(/\\s+#.*$/, '').trim();
+  return value.replace(/\s+#.*$/, '').trim();
 }
 
 export function parseReviewMarkdown(markdown, filename = '') {
-  const match = String(markdown).match(/^---\\s*\\r?\\n([\\s\\S]*?)\\r?\\n---\\s*(?:\\r?\\n|$)([\\s\\S]*)$/);
+  const match = String(markdown).match(/^---\s*\r?\n([\s\S]*?)\r?\n---\s*(?:\r?\n|$)([\s\S]*)$/);
   if (!match) return null;
   const frontmatter = {};
-  const lines = match[1].split(/\\r?\\n/);
+  const lines = match[1].split(/\r?\n/);
   for (let i = 0; i < lines.length; i++) {
-    const field = lines[i].match(/^([A-Za-z][A-Za-z0-9_-]*):\\s*(.*)$/);
+    const field = lines[i].match(/^([A-Za-z][A-Za-z0-9_-]*):\s*(.*)$/);
     if (!field) continue;
     const key = field[1];
     const raw = field[2];
@@ -33,14 +33,14 @@ export function parseReviewMarkdown(markdown, filename = '') {
       continue;
     }
     const values = [];
-    while (i + 1 < lines.length && /^\\s+-\\s+/.test(lines[i + 1])) {
-      values.push(parseScalar(lines[++i].replace(/^\\s+-\\s+/, '')));
+    while (i + 1 < lines.length && /^\s+-\s+/.test(lines[i + 1])) {
+      values.push(parseScalar(lines[++i].replace(/^\s+-\s+/, '')));
     }
     if (values.length) frontmatter[key] = values;
   }
   const type = frontmatter.type === 'tv' ? 'series' : frontmatter.type;
   if (!['game', 'movie', 'series'].includes(type)) return null;
-  const body = match[2].replace(/^\\s+/, '').replace(/^>.*$/gm, '').replace(/^#{1,6}\\s+/gm, '').replace(/\\s+/g, ' ').trim();
+  const body = match[2].replace(/^\s+/, '').replace(/^>.*$/gm, '').replace(/^#{1,6}\s+/gm, '').replace(/\s+/g, ' ').trim();
   const title = clean(frontmatter.title || frontmatter.originalTitle || path.basename(filename, '.md'));
   const sourceId = clean(frontmatter.sourceId || '');
   const scores = {
