@@ -20,7 +20,8 @@
     "test:knowledge-gaps": "node scripts/test-knowledge-gaps.mjs",
     "test:specialist-skills": "node scripts/test-specialist-skills.mjs",
     "test:critical-questions": "node scripts/test-critical-questions.mjs",
-    "test:intellectual-repetition": "node scripts/test-intellectual-repetition.mjs"
+    "test:intellectual-repetition": "node scripts/test-intellectual-repetition.mjs",
+    "test:memory-maintenance": "node scripts/test-memory-maintenance.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",
