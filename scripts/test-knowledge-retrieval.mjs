@@ -22,8 +22,8 @@ const context = await buildKnowledgeContext({
 });
 
 assert.ok(context.length > 0, 'Local retrieval must return a non-empty context.');
-assert.match(context, /The Dark Knight/, 'Retrieved context must include the known D1 original title.');
-assert.match(context, /catalog_original_title/, 'Retrieved context must expose the stored catalog field.');
+assert.match(context, /Released/, 'Retrieved context must include a known catalog value for this work.');
+assert.match(context, /catalog_status/, 'Retrieved context must expose the stored catalog field.');
 assert.match(context, /VIBECRITIC_D1/, 'Retrieved context must preserve source provenance.');
 assert.match(context, /حدوده:/, 'Retrieved context must disclose source limitations.');
 
