@@ -64,6 +64,17 @@ try {
     sourcePath: 'src/content/reviews/movie-first-film.md',
     excerpt: 'تحليل تحريري تجريبي'
   });
+  await recordEditorialReview({
+    key: 'movie:second-film-review',
+    sourceId: '201',
+    type: 'movie',
+    title: 'Second Film',
+    score: 7.8,
+    tags: ['Drama', 'Mystery'],
+    creator: 'Shared Studio',
+    aiGenerated: true,
+    sourcePath: 'src/content/reviews/movie-second-film.md'
+  });
   assert.equal(resolveSourceEvidence({ source: 'TMDB', field: 'genres', url: 'https://attacker.example/movie/101' }), null, 'A source cannot claim evidence from an unrelated domain.');
   assert.equal(resolveSourceEvidence({ source: 'UNKNOWN', field: 'genres', url: 'https://example.com/movie/101' }), null, 'Unknown sources must not be promoted to evidence.');
   assert.equal(resolveSourceEvidence({ source: 'TMDB', field: 'genres', url: 'http://www.themoviedb.org/movie/101' }), null, 'Evidence links must use HTTPS.');
@@ -102,8 +113,10 @@ try {
 
   const graph = JSON.parse(await fs.readFile('data/knowledge-graph.json', 'utf8'));
   assert.equal(graph.version, 2);
-  assert.equal(graph.editorialReviews.length, 1);
-  assert.ok(graph.editorialRelations.length === 0 || graph.editorialRelations.every(edge => edge.relationClass === 'shared-editorial-metadata-not-influence-or-quality'));
+  assert.equal(graph.editorialReviews.length, 2);
+  assert.equal(graph.stats.editorialReviews, 2);
+  assert.ok(graph.editorialRelations.some(edge => edge.sharedTags.includes('Drama')), 'Reviews sharing a tag should be connected as editorial metadata only.');
+  assert.ok(graph.editorialRelations.every(edge => edge.relationClass === 'shared-editorial-metadata-not-influence-or-quality'));
   assert.ok(Array.isArray(graph.knowledgeGaps) && graph.knowledgeGaps.length >= 2, 'Per-work knowledge gap assessments should persist in the graph.');
   assert.ok(graph.knowledgeGaps.some(entry => entry.workKey === 'movie:101' && entry.assessments >= 2), 'Repeated assessments should update the existing work record.');
   assert.equal(graph.stats.knowledgeGaps, graph.knowledgeGaps.length);
