@@ -10,6 +10,7 @@ type: movie
 date: 2026-11-14
 releaseDate: "2026-11-20"
 reviewMode: preview
+score: 8.4
 poster: "https://static1.1.sqspcdn.com/static/f/1295769/28714730/1778511755603/Sunrise%2Bon%2Bthe%2BReaping%2BTeaser%2BPoster.jpg?token=qdqt%2FPtF5XIjrkKgZ7w0%2BfVJjnA%3D"
 backdrop: "https://img.youtube.com/vi/lYXtL5TreOE/maxresdefault.jpg"
 youtubeVideoId: "lYXtL5TreOE"
