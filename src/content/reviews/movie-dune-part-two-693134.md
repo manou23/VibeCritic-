@@ -1,6 +1,8 @@
 ---
 title: "الكثيب: الجزء الثاني"
 originalTitle: "Dune: Part Two"
+poster: "https://m.media-amazon.com/images/M/MV5BNTc0YmQxMjEtODI5MC00NjFiLTlkMWUtOGQ5NjFmYWUyZGJhXkEyXkFqcGc%40._V1_FMjpg_UY4096_.jpg"
+backdrop: "https://www.dneg.com/_next/image?q=75&url=https%3A%2F%2Fimages.ctfassets.net%2F3sjsytt3tkv5%2F4PcEkcOa2WunJryqrujt1I%2F34a7ce84bd8d78857d2d335b311447ba%2FHALFWAY_before_1.png&w=3840"
 headline: "الكثيب: الجزء الثاني — حين تتحول الأسطورة إلى آلة سياسية"
 hook: "لا يكتفي الفيلم بتوسيع عالم أراكيس؛ بل يختبر الثمن الذي يدفعه الناس عندما تتحول حاجتهم إلى الأمل إلى مادة تصنع منها السلطة."
 summary: "يواصل دينيس فيلنوف اقتباس رواية فرانك هربرت، متابعاً رحلة بول أتريدس بين الفريمن وصراع القوى على أراكيس، مع تركيز على النبوءة والقيادة والعنف السياسي."
