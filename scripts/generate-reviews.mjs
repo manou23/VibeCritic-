@@ -84,6 +84,44 @@ function cloudflareGatewayEndpoint(providerPath,suffix){
  return 'https://gateway.ai.cloudflare.com/v1/'+encodeURIComponent(account)+'/'+encodeURIComponent(gateway)+'/'+providerPath+'/'+suffix;
 }
 async function getJson(url){const r=await fetch(url,{signal:AbortSignal.timeout(30000)});if(!r.ok){const safeUrl=url.replace(/([?&](?:api_key|key)=)[^&]+/i,'$1[REDACTED]');throw new Error(`HTTP ${r.status}: ${safeUrl}`);}return r.json();}
+async function fetchEditorialCatalogContext(item) {
+ if (!['movie', 'series'].includes(item?.type)) return null;
+ const endpoint = String(env.VIBECRITIC_CATALOG_API_URL || 'https://vibecritic.pages.dev/api/catalog').trim();
+ try {
+  const url = new URL(endpoint);
+  url.searchParams.set('mode', 'editorial-context');
+  url.searchParams.set('tmdb_id', String(item.id));
+  url.searchParams.set('type', item.type === 'movie' ? 'movie' : 'tv');
+  const payload = await getJson(url.toString());
+  if (!payload?.available || !Array.isArray(payload.relatedWorks) || !payload.relatedWorks.length) return null;
+  const relatedWorks = payload.relatedWorks.slice(0, 6).filter(work =>
+   work && String(work.title || '').trim() &&
+   (Number(work.sharedGenreCount) > 0 || Number(work.sharedPersonCount) > 0)
+  ).map(work => ({
+   tmdbId: String(work.tmdbId || ''),
+   type: work.type === 'tv' ? 'series' : 'movie',
+   title: String(work.title).slice(0, 160),
+   year: Number(work.year) || null,
+   sharedGenreCount: Number(work.sharedGenreCount) || 0,
+   sharedPersonCount: Number(work.sharedPersonCount) || 0,
+   sharedGenres: String(work.sharedGenres || '').slice(0, 240),
+   sharedPeople: String(work.sharedPeople || '').slice(0, 240),
+   catalogUpdatedAt: work.catalogUpdatedAt || null
+  }));
+  if (!relatedWorks.length) return null;
+  return {
+   source: payload.source || 'VibeCritic D1 entertainment catalog',
+   sourceUrl: url.origin + url.pathname,
+   observedAt: new Date().toISOString(),
+   base: payload.base || null,
+   relatedWorks,
+   limitation: 'روابط مبنية على تصنيفات وأسماء طاقم مشتركة في الكتالوج؛ لا تثبت تشابهاً فنياً أو جودة أو تأثيراً.'
+  };
+ } catch (error) {
+  console.warn('تعذر جلب السياق المقارن من كتالوج D1؛ سيستمر التحليل بالمصادر المعتادة:', error.message);
+  return null;
+ }
+}
 const clean=v=>String(v??'').replace(/[\r\n]+/g,' ').trim();
 
 const providerOrder=['gemini','groq','cloudflare-workers-ai','openrouter'];
@@ -480,10 +518,11 @@ async function enrichItem(item){
   const cast=(detail.credits?.cast||[]).slice(0,7).map(x=>x.character?x.name+' بدور '+x.character:x.name).filter(Boolean);
   const directors=(detail.credits?.crew||[]).filter(x=>x.job==='Director').slice(0,2).map(x=>x.name);
   const creators=(detail.created_by||[]).map(x=>x.name).filter(Boolean);
+  const catalogContext=await fetchEditorialCatalogContext(item);
   const officialVideo=(detail.videos?.results||[])
    .filter(video=>video.site==='YouTube'&&video.official===true&&['Trailer','Teaser'].includes(video.type)&&/^[A-Za-z0-9_-]{11}$/.test(video.key||''))
    .sort((a,b)=>(a.type==='Trailer'?0:1)-(b.type==='Trailer'?0:1)||String(b.published_at||'').localeCompare(String(a.published_at||'')))[0];
-  return {...item,name:detail.title||detail.name||item.name,originalTitle:detail.original_title||detail.original_name||item.originalTitle||item.name||'',date:detail.release_date||detail.first_air_date||item.date,rating:Number(detail.vote_average??item.rating)||0,sourceVoteCount:Number(detail.vote_count)||0,genres:(detail.genres||[]).map(x=>x.name).filter(Boolean),metadata:{voteAverage:Number(detail.vote_average)||0,voteCount:Number(detail.vote_count)||0,youtubeVideoId:officialVideo?.key||null,youtubeVideoTitle:officialVideo?.name||null,genres:(detail.genres||[]).map(x=>x.name).filter(Boolean),directors,creators,cast,runtime:detail.runtime||null,episodeRuntime:Array.isArray(detail.episode_run_time)?detail.episode_run_time.slice(0,3):[],seasons:detail.number_of_seasons||null,episodes:detail.number_of_episodes||null,productionCompanies:(detail.production_companies||[]).slice(0,5).map(x=>x.name),watchProviders:[...(watchRegion?.flatrate||[]),...(watchRegion?.rent||[]),...(watchRegion?.buy||[])].map(x=>x.provider_name).filter((name,index,all)=>all.indexOf(name)===index),watchProviderUrl:watchRegion?.link||null,communityReviews,similar:(detail.similar?.results||[]).slice(0,5).map(x=>({id:String(x.id),title:x.title||x.name||''}))}};
+  return {...item,name:detail.title||detail.name||item.name,originalTitle:detail.original_title||detail.original_name||item.originalTitle||item.name||'',date:detail.release_date||detail.first_air_date||item.date,rating:Number(detail.vote_average??item.rating)||0,sourceVoteCount:Number(detail.vote_count)||0,genres:(detail.genres||[]).map(x=>x.name).filter(Boolean),metadata:{voteAverage:Number(detail.vote_average)||0,voteCount:Number(detail.vote_count)||0,youtubeVideoId:officialVideo?.key||null,youtubeVideoTitle:officialVideo?.name||null,genres:(detail.genres||[]).map(x=>x.name).filter(Boolean),directors,creators,cast,runtime:detail.runtime||null,episodeRuntime:Array.isArray(detail.episode_run_time)?detail.episode_run_time.slice(0,3):[],seasons:detail.number_of_seasons||null,episodes:detail.number_of_episodes||null,productionCompanies:(detail.production_companies||[]).slice(0,5).map(x=>x.name),watchProviders:[...(watchRegion?.flatrate||[]),...(watchRegion?.rent||[]),...(watchRegion?.buy||[])].map(x=>x.provider_name).filter((name,index,all)=>all.indexOf(name)===index),watchProviderUrl:watchRegion?.link||null,communityReviews,similar:(detail.similar?.results||[]).slice(0,5).map(x=>({id:String(x.id),title:x.title||x.name||''})),catalogContext}};
  }catch(error){console.warn('تعذر إثراء بيانات العمل من TMDB، سيُستخدم الوصف المتاح:',error.message);return item;}
 }
 async function existingHeadlines(){
@@ -601,7 +640,7 @@ async function generateReview(item){
  'verdict: قبل الإصدار يحدد أسباب الترقب والأسئلة الحاسمة دون توصية نهائية. بعد الإصدار يجيب هل يستحق الوقت ولمن يناسب وما التحفظ الأهم وسبب الحكم.',
  isPreview?'درجات القراءة الاستباقية تقديرات داخلية مؤقتة فقط، وليست حكماً على جودة عمل لم يصدر؛ لا تذكر رقماً نهائياً في النص.':'لا تضع الدرجة النهائية يدوياً ولا تذكر رقماً نهائياً في verdict؛ الدرجة النهائية سيحسبها النظام آلياً من الدرجات الفرعية بالمعادلة الثابتة: القصة 30% + الصورة 25% + الصوت 20% + الإيقاع 25%. لا تضغط الدرجات كلها حول 7؛ عاير كل محور باستقلالية وفق جودة العمل: 0-3 ضعيف جداً، 4-5 دون المتوسط، 6 متوسط، 7 جيد، 8 ممتاز، 9 استثنائي، 10 نادر ومثالي تقريباً. لا ترفع الدرجات مجاملة. tags: ثلاثة إلى ستة وسوم.',
  'مؤشرات الترند (للسياق فقط وليست دليلاً على الجودة): المصدر '+(item.source||'غير محدد')+'، الترتيب داخل المصدر '+(item.trendRank||'غير متاح')+'، المقياس '+(item.sourceMetricName||'غير متاح')+' وقيمته '+(item.sourceMetricValue??'غير متاح')+'، مستوى الثقة '+(item.trendConfidence||'غير محدد')+'. المقاييس خاصة بمصادرها ولا تقارن رقمياً بين TMDB وRAWG وIGDB. لا تخترع أسباب الترند أو أرقام مشاهدات ومبيعات.',
- 'حالة الإصدار: '+(String(item.date||'')>algeriaDate()?'لم يصدر بعد؛ هذه قراءة استباقية ولا يجوز الادعاء بتجربة أو تقييم فعلي.':'صدر وفق تاريخ المصدر؛ لا تدّع تجربة شخصية.'),'بيانات العمل:','النوع: '+(isGame?'لعبة':item.type==='series'?'مسلسل':'فيلم'),'الاسم: '+item.name,'تاريخ الإصدار: '+(item.date||'غير متاح'),'الوصف المصدر: '+(item.description||'غير متوفر'),'التصنيفات: '+((item.genres||[]).join('، ')||'غير متاحة'),'بيانات إضافية موثوقة: '+metadata,'تقييم المصدر (للاستئناس فقط): '+(item.rating||'غير متاح')
+ 'حالة الإصدار: '+(String(item.date||'')>algeriaDate()?'لم يصدر بعد؛ هذه قراءة استباقية ولا يجوز الادعاء بتجربة أو تقييم فعلي.':'صدر وفق تاريخ المصدر؛ لا تدّع تجربة شخصية.'),'بيانات العمل:','النوع: '+(isGame?'لعبة':item.type==='series'?'مسلسل':'فيلم'),'الاسم: '+item.name,'تاريخ الإصدار: '+(item.date||'غير متاح'),'الوصف المصدر: '+(item.description||'غير متوفر'),'التصنيفات: '+((item.genres||[]).join('، ')||'غير متاحة'),'سياق المقارنة من كتالوج VibeCritic (بيانات فهرسية عن تصنيفات أو أشخاص مشتركين، وليست دليلاً على الجودة أو التأثير): '+JSON.stringify(item.metadata?.catalogContext||null),'بيانات إضافية موثوقة: '+metadata,'تقييم المصدر (للاستئناس فقط): '+(item.rating||'غير متاح')
  ].join('\n');
  let parsed=null;
  const handlers={
@@ -814,7 +853,7 @@ async function writeReview(item){
  const gameStoreFields=(enriched.metadata?.stores||[]).map(store=>'  - name: '+y(store.name)+(store.url?'\n    url: '+y(store.url):''));
  const platformFields=arr(enriched.metadata?.platforms||enriched.platforms||[]);
  const scoreFields=['storyScore: '+a.scores.story,'visualsScore: '+a.scores.visuals,'soundScore: '+a.scores.sound,'pacingScore: '+a.scores.pacing];
-  const fm=['---','title: '+y(enriched.name||item.name),'originalTitle: '+y(enriched.originalTitle||''),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 2','reviewMode: '+reviewMode,'sourceName: '+y(item.source||''),'sourceVoteCount: '+(Number(enriched.sourceVoteCount)||0),'sourceRatingScale: '+(item.source==='RAWG'?5:item.source==='IGDB'?100:10),'metacriticScore: '+(Number(enriched.metadata?.metacritic)||0),'cast:',arr(enriched.metadata?.cast||[]),'crew:',arr([...(enriched.metadata?.directors||[]),...(enriched.metadata?.creators||[])]),'watchProviders:',arr(enriched.metadata?.watchProviders||[]),...watchFields,'platforms:',platformFields,'gameStores:',gameStoreFields.length?gameStoreFields.join('\n'):'  []',...scoreFields,'type: '+item.type,'date: '+date,'releaseDate: '+y(enriched.date),'poster: '+y(item.poster),'backdrop: '+y(item.backdrop),...videoFields,'score: '+a.score,'trendRank: '+(Number(item.trendRank)||0),'trendSource: '+y(item.source||''),'trendPopularity: '+(Number(item.popularity)||0),'pros:',arr(a.pros),'cons:',arr(a.cons),'tags:',arr(a.tags),'genres:',arr(enriched.genres||[]),'sourceRating: '+(Number(enriched.rating)||0),'sourceId: '+y(item.id),'sourceUrl: '+y(item.sourceUrl),'aiGenerated: true','---','',a.review,'','> قراءة نقدية تحريرية مولّدة بمساعدة الذكاء الاصطناعي، مبنية على البيانات المنشورة المتاحة. لا تمثل تجربة مشاهدة أو لعب مباشرة، ولا تقييماً رسمياً من المصدر.',''].join('\n');
+  const fm=['---','title: '+y(enriched.name||item.name),'originalTitle: '+y(enriched.originalTitle||''),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 2','reviewMode: '+reviewMode,'catalogContextSource: '+y(enriched.metadata?.catalogContext?.source||''),'catalogContextObservedAt: '+y(enriched.metadata?.catalogContext?.observedAt||''),'catalogRelatedWorks: '+arr((enriched.metadata?.catalogContext?.relatedWorks||[]).map(work=>work.title+' ('+(work.year||'سنة غير محددة')+') — تصنيفات مشتركة '+work.sharedGenreCount+'، أشخاص مشتركون '+work.sharedPersonCount)),'sourceName: '+y(item.source||''),'sourceVoteCount: '+(Number(enriched.sourceVoteCount)||0),'sourceRatingScale: '+(item.source==='RAWG'?5:item.source==='IGDB'?100:10),'metacriticScore: '+(Number(enriched.metadata?.metacritic)||0),'cast:',arr(enriched.metadata?.cast||[]),'crew:',arr([...(enriched.metadata?.directors||[]),...(enriched.metadata?.creators||[])]),'watchProviders:',arr(enriched.metadata?.watchProviders||[]),...watchFields,'platforms:',platformFields,'gameStores:',gameStoreFields.length?gameStoreFields.join('\n'):'  []',...scoreFields,'type: '+item.type,'date: '+date,'releaseDate: '+y(enriched.date),'poster: '+y(item.poster),'backdrop: '+y(item.backdrop),...videoFields,'score: '+a.score,'trendRank: '+(Number(item.trendRank)||0),'trendSource: '+y(item.source||''),'trendPopularity: '+(Number(item.popularity)||0),'pros:',arr(a.pros),'cons:',arr(a.cons),'tags:',arr(a.tags),'genres:',arr(enriched.genres||[]),'sourceRating: '+(Number(enriched.rating)||0),'sourceId: '+y(item.id),'sourceUrl: '+y(item.sourceUrl),'aiGenerated: true','---','',a.review,'','> قراءة نقدية تحريرية مولّدة بمساعدة الذكاء الاصطناعي، مبنية على البيانات المنشورة المتاحة. لا تمثل تجربة مشاهدة أو لعب مباشرة، ولا تقييماً رسمياً من المصدر.',''].join('\n');
  await fs.writeFile(path.join(outDir,item.type+'-'+item.id+'.md'),fm,'utf8');
  await recordLearningSuccess(item,a);
  await recordEditorialCandidate(item,a);

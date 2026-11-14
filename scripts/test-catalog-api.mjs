@@ -42,4 +42,31 @@ const missing = await onRequestGet({
   env: {}
 });
 assert.equal(missing.status, 503);
+
+const contextResponse = await onRequestGet({
+  request: new Request('https://vibecritic.pages.dev/api/catalog?mode=editorial-context&tmdb_id=123&type=movie'),
+  env: { ENTERTAINMENT_DB: {
+    prepare(sql) {
+      return { bind(...values) {
+        calls.push({ sql, values });
+        return {
+          async first() { return { id: 9, tmdb_id: 123, type: 'movie', title: 'فيلم أساسي', year: 2024, updated_at: '2026-11-14' }; },
+          async all() { return { results: [{ tmdb_id: 456, type: 'movie', title: 'عمل مرتبط', year: 2020, sharedGenreCount: 2, sharedPersonCount: 1, sharedGenres: 'دراما، خيال', sharedPeople: 'مخرج مشترك' }] }; }
+        };
+      } };
+    }
+  } }
+});
+assert.equal(contextResponse.status, 200);
+const context = await contextResponse.json();
+assert.equal(context.available, true);
+assert.equal(context.relatedWorks[0].title, 'عمل مرتبط');
+assert.equal(context.relatedWorks[0].sharedPersonCount, 1);
+assert.ok(calls.some(call => call.sql.includes('sharedGenreCount') && call.values.length === 7));
+const invalidContext = await onRequestGet({
+  request: new Request('https://vibecritic.pages.dev/api/catalog?mode=editorial-context&tmdb_id=x&type=movie'),
+  env: { ENTERTAINMENT_DB: db }
+});
+assert.equal(invalidContext.status, 400);
+
 console.log('Catalog API tests passed.');

@@ -34,13 +34,16 @@ function buildEvidence(item) {
   const developers = unique([...names(metadata.developers), ...names(item?.developers)]);
   const modes = unique([...names(metadata.gameModes), ...names(item?.gameModes), ...names(metadata.perspectives), ...names(item?.perspectives)]);
   const description = clean(item?.description || item?.summary || '');
+  const catalogRelated = list(metadata.catalogContext?.relatedWorks).filter(entry =>
+    clean(entry?.title) && (Number(entry.sharedGenreCount) > 0 || Number(entry.sharedPersonCount) > 0)
+  ).slice(0, 6);
   const format = [];
   if (Number(metadata.runtime) > 0) format.push('مدة الفيلم: ' + Number(metadata.runtime) + ' دقيقة');
   if (Number(metadata.seasons) > 0) format.push('عدد المواسم: ' + Number(metadata.seasons));
   if (Number(metadata.episodes) > 0) format.push('عدد الحلقات: ' + Number(metadata.episodes));
   const episodeRuntime = list(metadata.episodeRuntime).map(Number).filter(value => value > 0);
   if (episodeRuntime.length) format.push('مدة الحلقة المسجلة: ' + episodeRuntime.join('، ') + ' دقيقة');
-  return { cast, leaders, genres, platforms, developers, modes, description, format };
+  return { cast, leaders, genres, platforms, developers, modes, description, format, catalogRelated };
 }
 
 function makeCandidate(id, label, question, instruction, groups, relevance, previousHeadlines) {
@@ -103,6 +106,27 @@ export function buildEditorialReasoning(item, options = {}) {
     84, previousHeadlines
   ));
 
+  if (data.catalogRelated.length) {
+    const relatedTitles = data.catalogRelated.map(entry =>
+      clean(entry.title) + (entry.year ? ' (' + entry.year + ')' : '') +
+      '؛ تصنيفات مشتركة: ' + (Number(entry.sharedGenreCount) || 0) +
+      '؛ أشخاص مشتركون: ' + (Number(entry.sharedPersonCount) || 0)
+    );
+    const sharedNames = unique(data.catalogRelated.flatMap(entry =>
+      String(entry.sharedPeople || '').split(/[،,]/u).concat(String(entry.sharedGenres || '').split(/[،,]/u))
+    ));
+    candidates.push(makeCandidate(
+      'catalog-comparative-context', 'السياق المقارن داخل كتالوج VibeCritic',
+      'ما الذي يضيفه تقاطع العمل مع عناوين أخرى في الكتالوج إلى فهم سياقه النوعي أو الإبداعي؟',
+      'استخدم العناوين المشتركة كسياق محدود فقط: قد تشير إلى تقاطع في التصنيف أو الطاقم، لكنها لا تثبت تشابهاً فنياً أو تأثيراً أو اقتباساً أو تفوقاً. لا تقارن الجودة ما لم تتوفر أدلة مستقلة على التنفيذ الفعلي.',
+      [
+        { field: 'catalog_related_titles', label: 'عناوين تشترك ببيانات فهرسية', values: relatedTitles },
+        { field: 'catalog_shared_entities', label: 'أسماء أو تصنيفات مشتركة', values: sharedNames }
+      ],
+      76, previousHeadlines
+    ));
+  }
+
   if (data.format.length && (data.leaders.length || data.cast.length >= 3)) candidates.push(makeCandidate(
     'format-and-structure', 'البنية والشكل',
     'ما الذي تسمح به بيانات مدة العمل أو عدد مواسمه وحلقاته لمناقشة بنائه؟',
@@ -115,6 +139,7 @@ export function buildEditorialReasoning(item, options = {}) {
   const selected = candidates[0] || null;
   return {
     version: 1, eligible: Boolean(selected?.eligible), selected, candidates: candidates.slice(0, 6),
+    catalogContextLimitations: data.catalogRelated.length ? ['سياق الكتالوج يعتمد على بيانات فهرسية مشتركة فقط؛ لا يثبت التشابه الفني أو الجودة أو التأثير.'] : [],
     evidenceCount: selected?.anchors.length || 0,
     summary: selected
       ? 'تم اختيار زاوية "' + selected.label + '" بدرجة ' + selected.score + '/100 اعتماداً على ' + selected.evidenceGroups + ' مجموعات بيانات موثقة.'
@@ -134,6 +159,7 @@ export function formatEditorialReasoningContext(reasoning) {
     'السؤال النقدي المركزي: ' + selected.question,
     'تعليمات التنفيذ: ' + selected.instruction,
     'مرتكزات هذه الزاوية من البيانات:', ...evidenceLines,
+    ...(reasoning.catalogContextLimitations || []),
     'مقارنة الزوايا البديلة:', ...(alternatives.length ? alternatives : ['- لا توجد زاوية بديلة مدعومة بالقدر نفسه.']),
     'شخصية VibeCritic، إصدار ' + EDITORIAL_MANIFESTO.version + ': ' + EDITORIAL_MANIFESTO.identity,
     ...EDITORIAL_MANIFESTO.principles.map(principle => '- ' + principle),
