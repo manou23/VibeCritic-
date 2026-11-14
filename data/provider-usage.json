@@ -245,6 +245,24 @@
           "source": "OpenRouter GET /api/v1/key"
         }
       }
+    },
+    "2026-11-15": {
+      "openrouter": {
+        "requests": 0,
+        "successes": 0,
+        "failures": 0,
+        "apiRequests": 0,
+        "totalTokens": 0,
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "freeModelDailyRequests": {
+          "used": 7,
+          "limit": 50,
+          "remaining": 43,
+          "observedAt": "2026-11-14T23:45:47.494Z",
+          "source": "OpenRouter GET /api/v1/key"
+        }
+      }
     }
   }
 }
