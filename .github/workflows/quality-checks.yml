@@ -45,6 +45,8 @@ jobs:
           node --check scripts/test-editorial-reasoning.mjs
           node --check scripts/test-knowledge-graph.mjs
           npm run test:knowledge-graph
+          node --check scripts/ingest-review-knowledge.mjs
+          npm run knowledge:ingest-reviews
           npm run test:source-evidence
           node --check scripts/knowledge-gaps.mjs
           node --check scripts/test-knowledge-gaps.mjs
