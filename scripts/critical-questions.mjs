@@ -71,7 +71,7 @@ export function assessCriticalQuestions(item, options = {}) {
     questionCount: questions.length,
     multiDomain,
     singleSource,
-    unanswered: questions.length - multi-domain - singleSource,
+    unanswered: questions.length - multiDomain - singleSource,
     questions,
     principle: 'السؤال النقدي ليس حقيقة. مصدر واحد لا يكفي للتعاضد؛ وغياب الدليل لا يثبت وجود عيب.'
   };
