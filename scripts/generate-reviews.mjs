@@ -3,6 +3,7 @@ import path from 'node:path';
 import { buildEditorialTrainingContext, recordEditorialCandidate } from './editorial-intelligence.mjs';
 import { buildKnowledgeContext, recordKnowledge } from './knowledge-graph.mjs';
 import { buildEditorialReasoning, evaluateEditorialReview, formatEditorialReasoningContext } from './editorial-reasoning.mjs';
+import { assessSpecialistSkills, formatSpecialistSkillContext } from './critic-skills.mjs';
 
 const env=process.env;
 const provider=(env.AI_PROVIDER||(env.GEMINI_API_KEY?'gemini':env.GROQ_API_KEY?'groq':env.OPENROUTER_API_KEY?'openrouter':env.CF_WORKERS_AI_API_TOKEN?'cloudflare-workers-ai':'openai')).toLowerCase();
@@ -545,6 +546,8 @@ async function generateReview(item){
  const metadata=JSON.stringify({...((item.metadata&&typeof item.metadata==='object')?item.metadata:{genres:item.genres||[],platforms:item.platforms||[],developers:item.developers||[],gameModes:item.gameModes||[],perspectives:item.perspectives||[],engines:item.engines||[],sourceRating:item.rating||null,releaseDate:item.date||null}),trendContext:{source:item.source||'غير محدد',rank:Number(item.trendRank)||null,sourceMetricName:item.sourceMetricName||null,sourceMetricValue:Number.isFinite(Number(item.sourceMetricValue))?Number(item.sourceMetricValue):null,popularity:Number.isFinite(Number(item.popularity))&&Number(item.popularity)>0?Number(item.popularity):null,confidence:item.trendConfidence||'غير محدد',window:item.type==='game'?gamesWindowDays+' يوماً':'أسبوع TMDB'}});
  const previousHeadlines=await existingHeadlines();
  const reasoning=buildEditorialReasoning(item,{previousHeadlines});
+ const specialistSkills=assessSpecialistSkills(item);
+ const specialistSkillContext=formatSpecialistSkillContext(specialistSkills);
  if(!reasoning.eligible||!reasoning.selected)throw new Error('لا توجد زاوية نقدية مدعومة بمجموعتين مستقلتين من البيانات؛ تم إيقاف التوليد دون استهلاك طلب AI.');
  const editorialLens=reasoning.selected.instruction;
  const trainingContext=await buildEditorialTrainingContext(item);
@@ -564,6 +567,7 @@ async function generateReview(item){
  learningAdvice(),
  trainingContext,
   knowledgeContext,
+  specialistSkillContext,
   reasoningContext,
  'زاوية التحرير المطلوبة لهذه المراجعة: '+editorialLens+' غيّر إيقاع الجمل وبنية الفقرات وطريقة الانتقال بين المحاور؛ لا تبدأ كل مراجعة بتعريف نمطي ولا تختم بجملة محفوظة.',
  'حظر أسلوبي صريح: لا تستخدم عبارات مثل «بين الطموح والواقع» أو «مزجٌ غير متوقع» أو «رحلة لا تُنسى» أو «أكثر من مجرد» أو «تجربة لا مثيل لها» أو أي صياغة تسويقية مستهلكة. لا تستبدلها بمرادف قالبّي؛ اذكر تفصيلاً محدداً من هذا العمل بدلاً منها.',
@@ -623,7 +627,7 @@ async function generateReview(item){
  if(Object.values(scores).some(value=>!Number.isFinite(value)||value<0||value>10))throw new Error('الدرجات الفرعية الأربعة غير مكتملة أو خارج النطاق 0–10');
  const score=Math.round((scores.story*.30+scores.visuals*.25+scores.sound*.20+scores.pacing*.25)*10)/10;
  const selfEvaluation=evaluateEditorialReview(item,{headline:clean(d.headline),hook:clean(d.hook),review},reasoning,previousHeadlines);
- const reasoningRecord={version:reasoning.version,selectedAngleId:reasoning.selected.id,selectedAngle:reasoning.selected.label,selectedAngleScore:reasoning.selected.score,candidateScores:reasoning.candidates.map(entry=>({id:entry.id,score:entry.score}))};
+ const reasoningRecord={version:reasoning.version,selectedAngleId:reasoning.selected.id,selectedAngle:reasoning.selected.label,selectedAngleScore:reasoning.selected.score,candidateScores:reasoning.candidates.map(entry=>({id:entry.id,score:entry.score})),specialistSkills:{version:specialistSkills.version,workType:specialistSkills.workType,contextualCount:specialistSkills.contextualCount,notAssessableCount:specialistSkills.notAssessableCount,skills:specialistSkills.skills.map(skill=>({id:skill.id,status:skill.status,evidence:skill.evidence}))}};
  console.log('التقييم الذاتي التحريري:',selfEvaluation.score+'/100','| الحالة:',selfEvaluation.status,'| مرتكزات مطابقة:',selfEvaluation.metrics.anchorHits+'/'+selfEvaluation.metrics.anchorCount,'| التحقق من الحقيقة:',selfEvaluation.sourceTruthVerified?'نعم':'غير مثبت آلياً');
  return {hook:clean(d.hook),headline:clean(d.headline),summary:clean(d.summary),verdict:clean(d.verdict),score,scores,pros,cons,tags:Array.isArray(d.tags)?d.tags.slice(0,8).map(clean):[],review,reasoning:reasoningRecord,selfEvaluation};
 }
