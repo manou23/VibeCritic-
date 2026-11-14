@@ -122,7 +122,14 @@ const libraryResponse = await onRequestGet({
       assert.ok(sql.includes('LIMIT 6'));
       return { bind(...values) {
         assert.deepEqual(values, ['movie']);
-        return { async all() { return { results: [{ slug: 'screenplay-causality', title: 'السيناريو', work_type: 'movie', prompt_excerpt: 'اختبر السببية.' }] }; } };
+        return { async all() { return { results: [
+          { slug: 'screenplay-causality', title: 'السيناريو', work_type: 'movie', prompt_excerpt: 'اختبر السببية.' },
+          { slug: 'sound-design-and-mix', title: 'الصوت والموسيقى', work_type: 'movie', prompt_excerpt: 'حلّل الصوت.' },
+          { slug: 'editing-rhythm-and-continuity', title: 'المونتاج', work_type: 'movie', prompt_excerpt: 'حلّل القطع.' },
+          { slug: 'production-design-and-space', title: 'التصميم الفني', work_type: 'movie', prompt_excerpt: 'حلّل المكان.' },
+          { slug: 'documentary-evidence-and-ethics', title: 'النقد الوثائقي', work_type: 'movie', prompt_excerpt: 'اختبر الدليل.' },
+          { slug: 'visual-direction', title: 'الإخراج', work_type: 'movie', prompt_excerpt: 'حلّل الصورة.' }
+        ] }; } };
       } };
     }
   } }
@@ -130,7 +137,11 @@ const libraryResponse = await onRequestGet({
 assert.equal(libraryResponse.status, 200);
 const libraryPayload = await libraryResponse.json();
 assert.equal(libraryPayload.available, true);
-assert.equal(libraryPayload.articles.length, 2);
+assert.equal(libraryPayload.articles.length, 7);
+assert.deepEqual(libraryPayload.articles.slice(1).map(article => article.slug), [
+  'screenplay-causality', 'sound-design-and-mix', 'editing-rhythm-and-continuity',
+  'production-design-and-space', 'documentary-evidence-and-ethics', 'visual-direction'
+]);
 assert.equal(libraryPayload.articles[0].work_type, 'all');
 assert.equal(libraryPayload.articles[1].work_type, 'movie');
 
