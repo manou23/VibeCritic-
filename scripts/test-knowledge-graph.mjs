@@ -91,6 +91,25 @@ try {
     aiGenerated: true,
     sourcePath: 'src/content/reviews/movie-second-film.md'
   });
+  await recordEditorialReview({
+    key: 'game:sample-game-review',
+    sourceId: '305152',
+    type: 'game',
+    title: 'Sample Game',
+    sourceName: 'IGDB',
+    score: 8.1,
+    verdict: 'حكم تحريري للعبة، وليس حقيقة مصدرية.',
+    aiGenerated: false,
+    sourcePath: 'src/content/reviews/game-sample.md'
+  });
+  await recordEditorialReview({
+    key: 'series:sample-series-review',
+    sourceId: 'tv-303',
+    type: 'series',
+    title: 'Sample Series',
+    score: 7.6,
+    sourcePath: 'src/content/reviews/series-sample.md'
+  });
   assert.equal(resolveSourceEvidence({ source: 'TMDB', field: 'genres', url: 'https://attacker.example/movie/101' }), null, 'A source cannot claim evidence from an unrelated domain.');
   assert.equal(resolveSourceEvidence({ source: 'UNKNOWN', field: 'genres', url: 'https://example.com/movie/101' }), null, 'Unknown sources must not be promoted to evidence.');
   assert.equal(resolveSourceEvidence({ source: 'TMDB', field: 'genres', url: 'http://www.themoviedb.org/movie/101' }), null, 'Evidence links must use HTTPS.');
@@ -116,6 +135,13 @@ try {
   };
   await recordKnowledge(conflictingObservation);
 
+  const gameContext = await buildKnowledgeContext({ id: '305152', type: 'game', name: 'Sample Game' });
+  assert.match(gameContext, /ذاكرة المراجعات التحريرية السابقة/);
+  assert.match(gameContext, /تقييم VibeCritic السابق: 8.1\/10/);
+  assert.match(gameContext, /مراجعة يدوية/);
+  const seriesContext = await buildKnowledgeContext({ id: 'tv-303', type: 'series', name: 'Sample Series' });
+  assert.match(seriesContext, /ذاكرة المراجعات التحريرية السابقة/);
+
   const context = await buildKnowledgeContext(firstWork);
   assert.match(context, /Science Fiction/);
   assert.match(context, /ذاكرة المراجعات التحريرية السابقة/);
@@ -129,8 +155,13 @@ try {
 
   const graph = JSON.parse(await fs.readFile('data/knowledge-graph.json', 'utf8'));
   assert.equal(graph.version, 2);
-  assert.equal(graph.editorialReviews.length, 2);
-  assert.equal(graph.stats.editorialReviews, 2);
+  assert.equal(graph.editorialReviews.length, 4);
+  assert.equal(graph.stats.editorialReviews, 4);
+  assert.ok(graph.entities.some(entity => entity.kind === 'work' && entity.externalId === '305152' && entity.workType === 'game' && entity.externalSource === 'IGDB'));
+  assert.ok(graph.entities.some(entity => entity.kind === 'work' && entity.externalId === 'tv-303' && entity.workType === 'series'));
+  assert.equal(graph.stats.works, graph.entities.filter(entity => entity.kind === 'work').length);
+  const gameWork = graph.entities.find(entity => entity.kind === 'work' && entity.externalId === '305152' && entity.workType === 'game');
+  assert.ok(!graph.observations.some(entry => entry.workId === gameWork.id), 'Editorial indexing must not manufacture factual observations.');
   assert.ok(graph.editorialRelations.some(edge => edge.sharedTags.includes('Drama')), 'Reviews sharing a tag should be connected as editorial metadata only.');
   assert.ok(graph.editorialRelations.every(edge => edge.relationClass === 'shared-editorial-metadata-not-influence-or-quality'));
   assert.ok(Array.isArray(graph.knowledgeGaps) && graph.knowledgeGaps.length >= 2, 'Per-work knowledge gap assessments should persist in the graph.');

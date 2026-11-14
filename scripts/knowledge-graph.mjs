@@ -305,11 +305,51 @@ export async function recordEditorialReview(review) {
     excerpt: clean(review.excerpt).slice(0, 1800),
     knowledgeClass: 'editorial-opinion-not-verified-fact'
   };
+  // Index the work identity for every medium, without promoting editorial opinions
+  // into factual observations. This lets game/movie/series reviews share one retrieval path.
+  let identityChanged = false;
+  if (record.sourceId) {
+    const existingWork = graph.entities.find(entry =>
+      entry.kind === 'work' &&
+      entry.externalId === record.sourceId &&
+      entry.workType === record.type &&
+      (!record.sourceName || !entry.externalSource || entry.externalSource === record.sourceName)
+    );
+    const work = existingWork || upsertEntity(
+      graph, 'work',
+      record.type + ':' + record.sourceId + ':' + record.title,
+      'VIBECRITIC_EDITORIAL_INDEX'
+    );
+    if (work) {
+      const before = JSON.stringify({
+        name: work.name, aliases: work.aliases, externalId: work.externalId,
+        workType: work.workType, externalSource: work.externalSource,
+        identitySource: work.identitySource, sources: work.sources
+      });
+      work.aliases = [...new Set([...(Array.isArray(work.aliases) ? work.aliases : []), record.title])]
+        .filter(name => name && name !== work.name).slice(-8);
+      work.externalId = record.sourceId;
+      work.workType = record.type;
+      if (record.sourceName) work.externalSource = record.sourceName;
+      work.identitySource = 'VIBECRITIC_EDITORIAL_INDEX';
+      if (!Array.isArray(work.sources)) work.sources = [];
+      if (!work.sources.includes('VIBECRITIC_EDITORIAL_INDEX')) work.sources.push('VIBECRITIC_EDITORIAL_INDEX');
+      identityChanged = before !== JSON.stringify({
+        name: work.name, aliases: work.aliases, externalId: work.externalId,
+        workType: work.workType, externalSource: work.externalSource,
+        identitySource: work.identitySource, sources: work.sources
+      });
+    }
+  }
+
   const index = graph.editorialReviews.findIndex(entry => entry.key === record.key);
   const previous = index >= 0 ? graph.editorialReviews[index] : null;
-  if (previous && JSON.stringify(previous) === JSON.stringify(record)) return false;
-  if (index >= 0) graph.editorialReviews[index] = record;
-  else graph.editorialReviews.push(record);
+  const reviewChanged = !previous || JSON.stringify(previous) !== JSON.stringify(record);
+  if (!reviewChanged && !identityChanged) return false;
+  if (reviewChanged) {
+    if (index >= 0) graph.editorialReviews[index] = record;
+    else graph.editorialReviews.push(record);
+  }
   graph.editorialReviews = graph.editorialReviews.slice(-1200);
 
   const relations = [];
@@ -332,8 +372,12 @@ export async function recordEditorialReview(review) {
     if (relations.length >= 3000) break;
   }
   graph.editorialRelations = relations;
-  graph.stats.editorialReviews = graph.editorialReviews.length;
-  graph.stats.editorialRelations = graph.editorialRelations.length;
+  graph.stats = {
+    ...(graph.stats || {}),
+    works: graph.entities.filter(entry => entry.kind === 'work').length,
+    editorialReviews: graph.editorialReviews.length,
+    editorialRelations: graph.editorialRelations.length
+  };
   graph.updatedAt = new Date().toISOString();
   await fs.mkdir(path.dirname(graphPath), { recursive: true });
   const temporary = graphPath + '.tmp';
