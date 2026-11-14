@@ -35,7 +35,8 @@
     "knowledge:sync-d1": "node scripts/ingest-d1-catalog-knowledge.mjs",
     "test:knowledge-catalog": "node scripts/test-d1-catalog-knowledge.mjs",
     "test:knowledge-retrieval": "node scripts/test-knowledge-retrieval.mjs",
-    "test:reasoning-quality": "node scripts/test-reasoning-quality.mjs"
+    "test:reasoning-quality": "node scripts/test-reasoning-quality.mjs",
+    "test:scoring-rubric": "node scripts/test-scoring-rubric.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",
