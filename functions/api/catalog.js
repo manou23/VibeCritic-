@@ -20,7 +20,7 @@ export async function onRequestGet({ request, env }) {
     if (params.get('mode') === 'editorial-context') {
       const tmdbId = params.get('tmdb_id');
       const type = params.get('type');
-      if (!/^\\d{1,10}$/.test(tmdbId || '') || !['movie', 'tv'].includes(type || '')) {
+      if (!/^\d{1,10}$/.test(tmdbId || '') || !['movie', 'tv'].includes(type || '')) {
         return json({ error: 'معرّف العمل أو نوعه غير صالح.' }, 400);
       }
       const base = await db.prepare(
