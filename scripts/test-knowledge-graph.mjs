@@ -9,6 +9,14 @@ const temporaryDirectory = await fs.mkdtemp(path.join(os.tmpdir(), 'vibecritic-k
 
 try {
   process.chdir(temporaryDirectory);
+  await fs.mkdir('data', { recursive: true });
+  await fs.writeFile('data/knowledge-graph.json', JSON.stringify({
+    version: 1,
+    entities: [{ id: 'concept:legacy', kind: 'concept', name: 'Legacy concept', sources: ['TMDB'] }],
+    relations: [{ id: 'legacy-edge', from: 'work:legacy', type: 'has_genre', to: 'concept:legacy', evidence: [{ source: 'TMDB', field: 'genres', observedAt: '2026-01-01T00:00:00.000Z' }] }],
+    stats: { works: 0, people: 0, companies: 0, concepts: 1, relations: 1 },
+    updatedAt: '2026-01-01T00:00:00.000Z'
+  }, null, 2));
   const moduleUrl = pathToFileURL(path.join(originalDirectory, 'scripts/knowledge-graph.mjs')).href;
   const { recordKnowledge, buildKnowledgeContext } = await import(moduleUrl);
 
@@ -59,6 +67,8 @@ try {
 
   const graph = JSON.parse(await fs.readFile('data/knowledge-graph.json', 'utf8'));
   assert.equal(graph.version, 2);
+  assert.ok(graph.entities.some(entity => entity.id === 'concept:legacy'), 'Version 1 entities should survive migration.');
+  assert.ok(graph.relations.some(edge => edge.id === 'legacy-edge'), 'Version 1 relations should survive migration.');
   assert.ok(graph.stats.works >= 3);
   assert.ok(graph.entities.some(entity => entity.id === 'work:movie-101-first-film'), 'Unicode-safe slug should produce a stable work id.');
   assert.ok(graph.relations.every(edge => Array.isArray(edge.evidence) && edge.evidence.length > 0));
