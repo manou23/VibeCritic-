@@ -43,6 +43,7 @@ jobs:
         run: |
           node --check scripts/generate-reviews.mjs
           node --check scripts/knowledge-graph.mjs
+          node --check scripts/ingest-d1-catalog-knowledge.mjs
           node --check scripts/ingest-review-knowledge.mjs
           node --check scripts/editorial-reasoning.mjs
           node --check scripts/test-editorial-reasoning.mjs
@@ -56,6 +57,8 @@ jobs:
         run: npm install
       - name: Index existing editorial reviews into local knowledge graph
         run: npm run knowledge:ingest-reviews
+      - name: Sync D1 catalog into local knowledge graph
+        run: npm run knowledge:sync-d1
       - name: Test editorial reasoning and calibration
         run: |
           npm run test:critical-questions
