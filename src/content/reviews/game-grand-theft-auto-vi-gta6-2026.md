@@ -14,11 +14,6 @@ poster: "https://www.rockstargames.com/VI/_next/static/media/poster_full.0az_iud
 backdrop: "https://www.rockstargames.com/VI/_next/static/media/mobile.0mi46.hy2kwfa.jpg"
 youtubeVideoId: "rz1B4B2yBZY"
 youtubeVideoTitle: "Grand Theft Auto VI — Launch Trailer | Rockstar Games"
-score: 8.9
-storyScore: 8.8
-visualsScore: 9.3
-soundScore: 9.0
-pacingScore: 8.4
 platforms:
   - "PlayStation 5"
   - "Xbox Series X|S"
