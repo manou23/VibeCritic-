@@ -87,6 +87,46 @@ assert.equal(context.base.runtime, 120);
 assert.equal(context.relatedWorks[0].title, 'عمل مرتبط');
 assert.equal(context.relatedWorks[0].sharedPersonCount, 1);
 assert.ok(calls.some(call => call.sql.includes('sharedGenreCount') && call.values.length === 7));
+const knowledgeExportResponse = await onRequestGet({
+  request: new Request('https://vibecritic.pages.dev/api/catalog?mode=knowledge-export&page=2&limit=50&since=2026-11-01T00:00:00Z'),
+  env: { ENTERTAINMENT_DB: {
+    prepare(sql) {
+      return { bind(...values) {
+        calls.push({ sql, values });
+        return {
+          async first() { return { total: 125 }; },
+          async all() {
+            assert.ok(sql.includes('AS tmdbId'));
+            assert.ok(sql.includes('AS directors'));
+            assert.ok(sql.includes('AS creators'));
+            return { results: [{
+              tmdbId: 789, type: 'tv', title: 'Original Series', titleAr: 'مسلسل أصلي',
+              overview: 'وصف كتالوجي', releaseDate: '2025-01-01', year: 2025,
+              runtime: 48, status: 'Returning Series', rating: 8.1, votes: 500,
+              popularity: 20, originalLanguage: 'en', updatedAt: '2026-11-10 00:00:00',
+              genres: 'دراما | خيال', cast: 'ممثل أ | ممثل ب',
+              directors: 'مخرج أ', creators: 'مبدع أ'
+            }] };
+          }
+        };
+      } };
+    }
+  } }
+});
+assert.equal(knowledgeExportResponse.status, 200);
+const knowledgeExport = await knowledgeExportResponse.json();
+assert.equal(knowledgeExport.total, 125);
+assert.equal(knowledgeExport.pages, 3);
+assert.equal(knowledgeExport.items[0].tmdbId, 789);
+assert.equal(knowledgeExport.items[0].genres, 'دراما | خيال');
+assert.equal(knowledgeExport.items[0].directors, 'مخرج أ');
+assert.ok(calls.some(call => call.sql.includes('datetime(t.updated_at) > datetime(?)') && call.values.includes('2026-11-01T00:00:00Z')));
+const invalidKnowledgeCursor = await onRequestGet({
+  request: new Request('https://vibecritic.pages.dev/api/catalog?mode=knowledge-export&since=not-a-date'),
+  env: { ENTERTAINMENT_DB: db }
+});
+assert.equal(invalidKnowledgeCursor.status, 400);
+
 const cachedResponse = await onRequestGet({
   request: new Request('https://vibecritic.pages.dev/api/catalog?mode=editorial-cache&tmdb_id=123&type=movie'),
   env: { ENTERTAINMENT_DB: {
