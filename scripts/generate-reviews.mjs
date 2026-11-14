@@ -397,7 +397,7 @@ async function generateWithOpenRouter(prompt){
  }
  throw new Error('OpenRouter لم يرجع JSON صالحاً بعد 3 محاولات: '+lastIssue);
 }
-function validateGeneratedReview(d){
+export function validateGeneratedReview(d){
  const review=String(d?.review||'').replace(/<[^>]*>/g,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').trim();
  const pros=Array.isArray(d?.pros)?d.pros.filter(x=>String(x||'').trim()):[];
  const cons=Array.isArray(d?.cons)?d.cons.filter(x=>String(x||'').trim()):[];
@@ -405,11 +405,11 @@ function validateGeneratedReview(d){
  if(Object.values(scores).some(value=>!Number.isFinite(value)||value<0||value>10))throw new Error('الدرجات الفرعية الأربعة غير مكتملة أو خارج النطاق 0–10');
  if(Object.values(scores).some(value=>Math.abs(value*10-Math.round(value*10))>0.001))throw new Error('يجب أن تكون الدرجات الفرعية بخطوة عشرية واحدة فقط');
  if(review.length<3200)throw new Error('المراجعة المولّدة أقصر من الحد الأدنى للتحليل المتكامل (3200 حرف)');
- const words=review.split(/\\s+/u).filter(Boolean).length;
+ const words=review.split(/\s+/u).filter(Boolean).length;
  if(words<750)throw new Error('المراجعة أقصر من المعيار التحريري المطلوب (750 كلمة)');
- const sections=review.split(/^###\\s+/m).slice(1);
+ const sections=review.split(/^###\s+/m).slice(1);
  if(sections.length<5)throw new Error('المراجعة لا تتضمن المحاور النقدية الخمسة المطلوبة');
- const thinSections=sections.filter(section=>section.split(/\\s+/u).filter(Boolean).length<55);
+ const thinSections=sections.filter(section=>section.split(/\s+/u).filter(Boolean).length<55);
  if(thinSections.length)throw new Error('يوجد محور نقدي أقصر من الحد الأدنى للتحليل (55 كلمة لكل محور)');
  const uncertainty=(review.match(/لا تتوفر معلومات|لا توجد معلومات|لا تتوفر بيانات|لا توجد بيانات|لا يمكن الحكم|يصعب الحكم|غير متاح(?:ة)?/g)||[]).length;
  if(uncertainty>5)throw new Error('المراجعة تعتمد بصورة مفرطة على نقص البيانات بدلاً من تحليل المعلومات المتاحة');
