@@ -81,6 +81,14 @@ for (const file of files) {
     }
 
     const platforms = [...new Set((detail.platforms || []).map(item => item.platform?.name).filter(Boolean))];
+    const genres = [...new Set((detail.genres || []).map(item => item.name).filter(Boolean))];
+    const developers = [...new Set((detail.developers || []).map(item => item.name).filter(Boolean))];
+    const rawgSourceUrl = detail.slug ? 'https://rawg.io/games/' + encodeURIComponent(detail.slug) : '';
+    if (!rawgSourceUrl || !Number.isFinite(Number(detail.id))) {
+      skipped++;
+      console.log('RAWG response missing a stable ID or canonical slug; leaving metadata unchanged: ' + file);
+      continue;
+    }
     const stores = [...new Map((detail.stores || []).map(item => {
       const name = item.store?.name || item.name || '';
       return [name, { name, url: item.url || '' }];
@@ -92,14 +100,28 @@ for (const file of files) {
       ...(store.url ? ['    url: ' + JSON.stringify(store.url)] : []),
     ])] : ['gameStores: []'];
 
-    let nextFrontmatter = replaceBlock(frontmatter, 'platforms', platformLines);
+    const rawgFields = [
+      ['rawgSourceId', [String(detail.id)]],
+      ['rawgSourceUrl', [JSON.stringify(rawgSourceUrl)]],
+      ['rawgReleaseDate', [JSON.stringify(detail.released || '')]],
+      ['rawgGenres', genres.length ? genres.map(value => '  - ' + JSON.stringify(value)) : ['[]']],
+      ['rawgPlatforms', platforms.length ? platforms.map(value => '  - ' + JSON.stringify(value)) : ['[]']],
+      ['rawgDevelopers', developers.length ? developers.map(value => '  - ' + JSON.stringify(value)) : ['[]']]
+    ];
+    let nextFrontmatter = frontmatter;
+    for (const [key, values] of rawgFields) {
+      const lines = values.length === 1 && values[0] === '[]' ? [key + ': []']
+        : values.length === 1 && !values[0].startsWith('  - ') ? [key + ': ' + values[0]]
+        : [key + ':', ...values];
+      nextFrontmatter = replaceBlock(nextFrontmatter, key, lines);
+    }
     nextFrontmatter = replaceBlock(nextFrontmatter, 'gameStores', storeLines);
     if (nextFrontmatter === frontmatter) { skipped++; continue; }
     await fs.writeFile(fullPath, content.replace(match[0], '---\n' + nextFrontmatter + '\n---'), 'utf8');
     updated++;
-    console.log('Updated RAWG platforms and stores: ' + file);
+    console.log('Updated separate RAWG catalog source metadata and game stores: ' + file);
   } catch (error) {
     console.warn('Game platform backfill skipped for ' + file + ': ' + error.message);
   }
 }
-console.log('Game platform backfill complete: ' + updated + ' updated, ' + skipped + ' skipped.');
+console.log('RAWG catalog backfill complete: ' + updated + ' updated, ' + skipped + ' skipped.');
