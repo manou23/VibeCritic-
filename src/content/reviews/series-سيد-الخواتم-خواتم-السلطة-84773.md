@@ -14,6 +14,7 @@ backdrop: "https://image.tmdb.org/t/p/w1280/achmETPRJZc9QVXsMPgHwYEyNar.jpg"
 youtubeVideoId: "x8UAUAuKNcU"
 youtubeVideoTitle: "Official Trailer"
 reviewMode: limited
+score: 8
 pros:
   - "تصميم عالم واسع يمنح الممالك والبيئات هوية بصرية مميزة"
   - "تعدد الشخصيات والمسارات يوسع نطاق الحكاية الأسطورية"
