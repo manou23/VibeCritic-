@@ -13,6 +13,7 @@ poster: "https://image.tmdb.org/t/p/w500/bGB6bEbG4qL22C1SFupkdAxYC9i.jpg"
 backdrop: "https://image.tmdb.org/t/p/w1280/taqVKvEmMlI2hs2g364fXWzv0ia.jpg"
 youtubeVideoId: "2kqZi3RoA5I"
 youtubeVideoTitle: "Political Promo"
+reviewMode: limited
 score: 7.5
 pros:
   - "تنوع الفقرات بين السخرية والمقابلات يمنح الحلقة إيقاعاً متجدداً"
