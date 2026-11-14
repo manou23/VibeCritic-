@@ -15,6 +15,16 @@ export function sqlValue(value) {
   return "'" + String(value).replaceAll("'", "''") + "'";
 }
 
+export function buildRetentionStatements() {
+  // Keep locally cached TMDB metadata below the six-month maximum cache window.
+  // Related credits, genres, seasons, and episodes are removed through foreign-key cascades.
+  return [
+    `DELETE FROM titles WHERE julianday(updated_at) < julianday('now', '-179 days');`,
+    `DELETE FROM people WHERE NOT EXISTS (SELECT 1 FROM credits WHERE credits.person_id = people.id);`,
+    `DELETE FROM genres WHERE NOT EXISTS (SELECT 1 FROM title_genres WHERE title_genres.genre_id = genres.id);`
+  ];
+}
+
 export function chunkStatements(statements, size = STATEMENTS_PER_BATCH) {
   if (!Number.isInteger(size) || size < 1) throw new Error('Batch size must be a positive integer.');
   const batches = [];
@@ -167,6 +177,8 @@ async function main() {
   }
 
   if (!statements.length) throw new Error('TMDB returned no title records; refusing to write an empty sync.');
+
+  statements.push(...buildRetentionStatements());
 
   await rm(OUTPUT_DIR, { recursive: true, force: true });
   await mkdir(OUTPUT_DIR, { recursive: true });
