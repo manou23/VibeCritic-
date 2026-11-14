@@ -23,7 +23,8 @@
     "test:intellectual-repetition": "node scripts/test-intellectual-repetition.mjs",
     "test:memory-maintenance": "node scripts/test-memory-maintenance.mjs",
     "test:personality-evolution": "node scripts/test-personality-evolution.mjs",
-    "test:historical-comparisons": "node scripts/test-historical-comparisons.mjs"
+    "test:historical-comparisons": "node scripts/test-historical-comparisons.mjs",
+    "test:tmdb-sync": "node scripts/test-sync-tmdb.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",

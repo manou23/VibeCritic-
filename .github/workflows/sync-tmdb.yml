@@ -1,0 +1,66 @@
+name: Sync TMDB catalog to D1
+
+on:
+  workflow_dispatch:
+    inputs:
+      pages:
+        description: 'Discovery pages per type (1-20; 3 is the default)'
+        required: false
+        default: '3'
+        type: string
+  schedule:
+    - cron: '0 3 * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tmdb-d1-catalog-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.23.4
+
+      - name: Verify required secrets
+        env:
+          TMDB_READ_ACCESS_TOKEN: ${{ secrets.TMDB_READ_ACCESS_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          test -n "$TMDB_READ_ACCESS_TOKEN" || { echo "Missing TMDB_READ_ACCESS_TOKEN"; exit 1; }
+          test -n "$CLOUDFLARE_API_TOKEN" || { echo "Missing CLOUDFLARE_API_TOKEN"; exit 1; }
+          test -n "$CLOUDFLARE_ACCOUNT_ID" || { echo "Missing CLOUDFLARE_ACCOUNT_ID"; exit 1; }
+
+      - name: Apply D1 schema
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx --yes wrangler@4 d1 execute entertainment-db --remote --file=migrations/0001_entertainment_catalog.sql
+
+      - name: Fetch TMDB records and prepare SQL batches
+        env:
+          TMDB_READ_ACCESS_TOKEN: ${{ secrets.TMDB_READ_ACCESS_TOKEN }}
+          PAGES: ${{ inputs.pages || vars.TMDB_SYNC_PAGES || '3' }}
+        run: node scripts/sync-tmdb.mjs
+
+      - name: Apply SQL batches to D1
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for file in $(find sync-batches -maxdepth 1 -type f -name 'batch-*.sql' | sort); do
+            echo "Applying $file"
+            npx --yes wrangler@4 d1 execute entertainment-db --remote --file="$file"
+          done
