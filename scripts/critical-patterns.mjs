@@ -10,7 +10,7 @@ const LABELS = {
   produced_by: 'تكرار شركة إنتاج',
   features: 'تكرار عضو طاقم'
 };
-const clean = value => String(value ?? '').replace(/[\\r\\n]+/g, ' ').trim();
+const clean = value => String(value ?? '').replace(/[\r\n]+/g, ' ').trim();
 
 /**
  * Detects recurring catalog-level metadata only. It deliberately does not
@@ -77,5 +77,5 @@ export function formatCriticalPatternsContext(patterns) {
     ),
     'قيود إلزامية: ' + patterns[0].limitations.join(' '),
     'لا تصف هذه الأنماط بأنها أسلوب أو تأثير أو جودة. استخدمها فقط لتوليد سؤال بحثي، ثم اطلب أدلة مستقلة من محتوى الأعمال ومصادرها.'
-  ].join('\\n');
+  ].join('\n');
 }
