@@ -45,6 +45,7 @@ jobs:
           node --check scripts/test-editorial-reasoning.mjs
           node --check scripts/test-knowledge-graph.mjs
           node --check scripts/test-knowledge-retrieval.mjs
+          node --check scripts/test-reasoning-quality.mjs
           npm run test:knowledge-graph
           node --check scripts/ingest-review-knowledge.mjs
           npm run knowledge:ingest-reviews
@@ -71,6 +72,7 @@ jobs:
           node --check scripts/test-historical-comparisons.mjs
           npm run test:historical-comparisons
           npm run test:editorial-reasoning
+          npm run test:reasoning-quality
           node --check scripts/backfill-arabic-titles.mjs
           node --check scripts/backfill-game-platforms.mjs
           node --check scripts/validate-review-scores.mjs

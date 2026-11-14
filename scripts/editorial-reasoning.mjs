@@ -58,7 +58,8 @@ function makeCandidate(id, label, question, instruction, groups, relevance, prev
   return {
     id, label, question, instruction, evidence, anchors, evidenceGroups: groupCount,
     scores: { supportability, specificity, novelty, relevance },
-    score, confidence: score >= 78 ? 'high' : score >= 62 ? 'medium' : 'limited',
+    score, selectionStrength: score >= 78 ? 'strong' : score >= 62 ? 'moderate' : 'limited',
+    evidenceBasis: 'distinct-fields-not-independent-sources',
     eligible: groupCount >= 2 && anchorCount >= 2 && score >= 48
   };
 }
@@ -142,8 +143,8 @@ export function buildEditorialReasoning(item, options = {}) {
     catalogContextLimitations: data.catalogRelated.length ? ['سياق الكتالوج يعتمد على بيانات فهرسية مشتركة فقط؛ لا يثبت التشابه الفني أو الجودة أو التأثير.'] : [],
     evidenceCount: selected?.anchors.length || 0,
     summary: selected
-      ? 'تم اختيار زاوية "' + selected.label + '" بدرجة ' + selected.score + '/100 اعتماداً على ' + selected.evidenceGroups + ' مجموعات بيانات موثقة.'
-      : 'لا توجد مجموعتان مستقلتان على الأقل من الأدلة تسمحان باختيار زاوية نقدية آمنة؛ يجب تأجيل التوليد بدلاً من اختلاق مادة تحليلية.'
+      ? 'تم اختيار زاوية "' + selected.label + '" بدرجة ملاءمة ' + selected.score + '/100 اعتماداً على ' + selected.evidenceGroups + ' مجموعات حقول مختلفة؛ هذا لا يعني تعدد مصادر مستقلة أو تحققاً من صحة الوقائع.'
+      : 'لا تتوفر مجموعتان مختلفتان من حقول الأدلة تسمحان باختيار زاوية نقدية آمنة؛ يجب تأجيل التوليد بدلاً من اختلاق مادة تحليلية.'
   };
 }
 
@@ -155,7 +156,8 @@ export function formatEditorialReasoningContext(reasoning) {
     .map(entry => '- زاوية بديلة: ' + entry.label + ' — ' + entry.score + '/100');
   return [
     'محرك التفكير التحريري الحتمي V1 (اختيار زاوية، وليس إثباتاً للحقيقة):',
-    'الزاوية المختارة: ' + selected.label + ' — ' + selected.score + '/100 (' + selected.confidence + ').',
+    'الزاوية المختارة: ' + selected.label + ' — درجة الملاءمة ' + selected.score + '/100 (' + selected.selectionStrength + ').',
+    'نطاق هذه الدرجة: ترتيب ملاءمة الزاوية فقط؛ لا يمثل ثقة في صحة الوقائع أو استقلال المصادر.',
     'السؤال النقدي المركزي: ' + selected.question,
     'تعليمات التنفيذ: ' + selected.instruction,
     'مرتكزات هذه الزاوية من البيانات:', ...evidenceLines,

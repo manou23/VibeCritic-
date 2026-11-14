@@ -49,6 +49,7 @@ jobs:
           node --check scripts/test-editorial-reasoning.mjs
           node --check scripts/test-knowledge-graph.mjs
           node --check scripts/test-knowledge-retrieval.mjs
+          node --check scripts/test-reasoning-quality.mjs
           npm run test:knowledge-graph
           npm run test:editorial-reasoning
           node --check scripts/backfill-arabic-titles.mjs
@@ -66,6 +67,7 @@ jobs:
         run: |
           npm run test:critical-questions
           npm run test:editorial-calibration
+          npm run test:reasoning-quality
       - name: Test review validation gates
         run: npm run test:review-validation
       - name: Validate review score integrity
