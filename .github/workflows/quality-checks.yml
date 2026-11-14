@@ -34,6 +34,8 @@ jobs:
           node --check scripts/sync-tmdb.mjs
           node --check scripts/test-sync-tmdb.mjs
           npm run test:tmdb-sync
+          node --check workers/ai-review-limiter/src/index.js
+          npx --yes wrangler@4 deploy --dry-run --config workers/ai-review-limiter/wrangler.jsonc
           node --check scripts/generate-reviews.mjs
           node --check scripts/knowledge-graph.mjs
           node --check scripts/source-evidence.mjs
