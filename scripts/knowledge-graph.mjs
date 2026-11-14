@@ -15,7 +15,7 @@ const MAX_KNOWLEDGE_GAPS = 1200;
 const clean = value => String(value ?? '').replace(/[\r\n]+/g, ' ').trim();
 
 function emptyGraph() {
-  return { version: 2, entities: [], relations: [], observations: [], conflicts: [], knowledgeGaps: [], stats: { works: 0, people: 0, companies: 0, concepts: 0, relations: 0, observations: 0, conflicts: 0, knowledgeGaps: 0 }, updatedAt: null };
+  return { version: 2, entities: [], relations: [], observations: [], conflicts: [], knowledgeGaps: [], editorialReviews: [], editorialRelations: [], stats: { works: 0, people: 0, companies: 0, concepts: 0, relations: 0, observations: 0, conflicts: 0, knowledgeGaps: 0, editorialReviews: 0, editorialRelations: 0 }, updatedAt: null };
 }
 
 async function loadGraph() {
@@ -240,7 +240,9 @@ export async function recordKnowledge(item, options = {}) {
     relations: graph.relations.length,
     observations: graph.observations.length,
     conflicts: graph.conflicts.filter(entry => entry.status === 'unresolved').length,
-    knowledgeGaps: graph.knowledgeGaps.length
+    knowledgeGaps: graph.knowledgeGaps.length,
+    editorialReviews: (graph.editorialReviews || []).length,
+    editorialRelations: (graph.editorialRelations || []).length
   };
   graph.updatedAt = new Date().toISOString();
   await fs.mkdir(path.dirname(graphPath), { recursive: true });
@@ -248,6 +250,71 @@ export async function recordKnowledge(item, options = {}) {
   await fs.writeFile(temporary, JSON.stringify(graph, null, 2) + '\n', 'utf8');
   await fs.rename(temporary, graphPath);
   return { entities: graph.entities.length, relations: graph.relations.length };
+}
+
+export async function recordEditorialReview(review) {
+  if (!review?.key || !['game', 'movie', 'series'].includes(review.type) || !review.title) return false;
+  const graph = await loadGraph();
+  graph.editorialReviews = Array.isArray(graph.editorialReviews) ? graph.editorialReviews : [];
+  graph.editorialRelations = Array.isArray(graph.editorialRelations) ? graph.editorialRelations : [];
+  const record = {
+    key: clean(review.key).slice(0, 180),
+    sourceId: clean(review.sourceId).slice(0, 120) || null,
+    type: review.type,
+    title: clean(review.title).slice(0, 240),
+    originalTitle: clean(review.originalTitle).slice(0, 240) || null,
+    headline: clean(review.headline).slice(0, 300) || null,
+    summary: clean(review.summary).slice(0, 700) || null,
+    verdict: clean(review.verdict).slice(0, 1400) || null,
+    score: Number.isFinite(Number(review.score)) ? Number(review.score) : null,
+    scores: Object.fromEntries(['storyScore','visualsScore','soundScore','pacingScore'].filter(key => Number.isFinite(Number(review.scores?.[key]))).map(key => [key, Number(review.scores[key])])),
+    tags: [...new Set((Array.isArray(review.tags) ? review.tags : []).map(clean).filter(Boolean))].slice(0, 16),
+    pros: (Array.isArray(review.pros) ? review.pros : []).map(clean).filter(Boolean).slice(0, 5),
+    cons: (Array.isArray(review.cons) ? review.cons : []).map(clean).filter(Boolean).slice(0, 5),
+    creator: clean(review.creator).slice(0, 180) || null,
+    aiGenerated: typeof review.aiGenerated === 'boolean' ? review.aiGenerated : null,
+    releaseDate: clean(review.releaseDate).slice(0, 40) || null,
+    sourceName: clean(review.sourceName).slice(0, 80) || null,
+    sourceUrl: clean(review.sourceUrl).slice(0, 500) || null,
+    sourcePath: clean(review.sourcePath).slice(0, 300),
+    excerpt: clean(review.excerpt).slice(0, 1800),
+    knowledgeClass: 'editorial-opinion-not-verified-fact'
+  };
+  const index = graph.editorialReviews.findIndex(entry => entry.key === record.key);
+  const previous = index >= 0 ? graph.editorialReviews[index] : null;
+  if (previous && JSON.stringify(previous) === JSON.stringify(record)) return false;
+  if (index >= 0) graph.editorialReviews[index] = record;
+  else graph.editorialReviews.push(record);
+  graph.editorialReviews = graph.editorialReviews.slice(-1200);
+
+  const relations = [];
+  for (let i = 0; i < graph.editorialReviews.length; i++) {
+    const left = graph.editorialReviews[i];
+    for (let j = i + 1; j < graph.editorialReviews.length; j++) {
+      const right = graph.editorialReviews[j];
+      const sharedTags = left.tags.filter(tag => right.tags.some(other => other.toLocaleLowerCase() === tag.toLocaleLowerCase())).slice(0, 4);
+      const sameCreator = left.creator && right.creator && left.creator.toLocaleLowerCase() === right.creator.toLocaleLowerCase();
+      if (sharedTags.length || sameCreator) relations.push({
+        id: left.key + '|' + right.key,
+        from: left.key,
+        to: right.key,
+        sharedTags,
+        sameCreator: Boolean(sameCreator),
+        relationClass: 'shared-editorial-metadata-not-influence-or-quality'
+      });
+      if (relations.length >= 3000) break;
+    }
+    if (relations.length >= 3000) break;
+  }
+  graph.editorialRelations = relations;
+  graph.stats.editorialReviews = graph.editorialReviews.length;
+  graph.stats.editorialRelations = graph.editorialRelations.length;
+  graph.updatedAt = new Date().toISOString();
+  await fs.mkdir(path.dirname(graphPath), { recursive: true });
+  const temporary = graphPath + '.tmp';
+  await fs.writeFile(temporary, JSON.stringify(graph, null, 2) + '\n', 'utf8');
+  await fs.rename(temporary, graphPath);
+  return true;
 }
 
 export async function buildKnowledgeContext(item) {
@@ -286,7 +353,23 @@ export async function buildKnowledgeContext(item) {
   const gapContext = formatKnowledgeGapContext(gapReport);
   const criticalPatterns = deriveCriticalPatterns(graph, workId);
   const patternContext = formatCriticalPatternsContext(criticalPatterns);
-  if (!directLines.length && !relatedLines.length && !observationLines.length && !conflictLines.length && !gapContext && !patternContext) return '';
+  const editorialMatch = (graph.editorialReviews || []).find(entry =>
+    entry.type === item.type && entry.sourceId && entry.sourceId === String(item.id)
+  );
+  const editorialContext = editorialMatch ? [
+    'ذاكرة المراجعات التحريرية السابقة (آراء تحريرية وليست حقائق مصدرية):',
+    '- مراجعة سابقة: ' + editorialMatch.title + (editorialMatch.score !== null ? '؛ تقييم VibeCritic السابق: ' + editorialMatch.score + '/10' : ''),
+    editorialMatch.verdict ? '- خلاصة الحكم السابق: ' + editorialMatch.verdict : '',
+    editorialMatch.pros.length ? '- نقاط قوة رُصدت تحريرياً: ' + editorialMatch.pros.join('؛ ') : '',
+    editorialMatch.cons.length ? '- تحفظات رُصدت تحريرياً: ' + editorialMatch.cons.join('؛ ') : '',
+    '- نوع المصدر: ' + (editorialMatch.aiGenerated === false ? 'مراجعة يدوية' : editorialMatch.aiGenerated === true ? 'مراجعة مولدة بمساعدة AI' : 'غير محدد') + '؛ لا تعامل الرأي السابق كحقيقة مستقلة، ولا تكرر الحكم دون إعادة فحص الأدلة.'
+  ].filter(Boolean).join('\n') : '';
+  const relatedEditorial = editorialMatch ? (graph.editorialRelations || []).filter(edge => edge.from === editorialMatch.key || edge.to === editorialMatch.key).slice(0, 5).map(edge => {
+    const key = edge.from === editorialMatch.key ? edge.to : edge.from;
+    const related = (graph.editorialReviews || []).find(entry => entry.key === key);
+    return related ? '- مراجعة ذات بيانات تحريرية مشتركة: ' + related.title + (edge.sharedTags?.length ? ' (وسوم مشتركة: ' + edge.sharedTags.join('، ') + ')' : '') + '. الاشتراك الفهرسي لا يثبت تشابهاً فنياً أو تأثيراً.' : '';
+  }).filter(Boolean).join('\n') : '';
+  if (!directLines.length && !relatedLines.length && !observationLines.length && !conflictLines.length && !gapContext && !patternContext && !editorialContext && !relatedEditorial) return '';
   return [
     'سياق الذاكرة المعرفية الموثق (استعمله للسياق فقط، ولا تستنتج تأثيراً أو اقتباساً دون دليل):',
     ...observationLines,
@@ -295,6 +378,8 @@ export async function buildKnowledgeContext(item) {
     ...relatedLines,
     ...(gapContext ? [gapContext] : []),
     ...(patternContext ? [patternContext] : []),
+    ...(editorialContext ? [editorialContext] : []),
+    ...(relatedEditorial ? [relatedEditorial] : []),
     'افصل دائماً بين علاقة المصدر المعلنة، والعنصر المشترك في البيانات، والاستنتاج النقدي الذي يحتاج دليلاً مستقلاً. درجات الثقة المصدرية مؤشرات إرشادية داخلية وليست احتمالاً إحصائياً لصحة كل معلومة.'
   ].join('\n');
 }

@@ -43,6 +43,7 @@ jobs:
         run: |
           node --check scripts/generate-reviews.mjs
           node --check scripts/knowledge-graph.mjs
+          node --check scripts/ingest-review-knowledge.mjs
           node --check scripts/editorial-reasoning.mjs
           node --check scripts/test-editorial-reasoning.mjs
           node --check scripts/test-knowledge-graph.mjs
@@ -53,6 +54,8 @@ jobs:
           node --check functions/api/review.js
       - name: Install dependencies
         run: npm install
+      - name: Index existing editorial reviews into local knowledge graph
+        run: npm run knowledge:ingest-reviews
       - name: Test editorial reasoning and calibration
         run: |
           npm run test:critical-questions

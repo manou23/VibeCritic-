@@ -18,7 +18,7 @@ try {
     updatedAt: '2026-01-01T00:00:00.000Z'
   }, null, 2));
   const moduleUrl = pathToFileURL(path.join(originalDirectory, 'scripts/knowledge-graph.mjs')).href;
-  const { recordKnowledge, buildKnowledgeContext } = await import(moduleUrl);
+  const { recordKnowledge, recordEditorialReview, buildKnowledgeContext } = await import(moduleUrl);
   const { resolveSourceEvidence } = await import(pathToFileURL(path.join(originalDirectory, 'scripts/source-evidence.mjs')).href);
 
   const firstWork = {
@@ -49,6 +49,32 @@ try {
 
   await recordKnowledge(firstWork);
   await recordKnowledge(firstWork);
+  await recordEditorialReview({
+    key: 'movie:first-film-review',
+    sourceId: '101',
+    type: 'movie',
+    title: 'First Film',
+    score: 8.4,
+    scores: { storyScore: 8.2, visualsScore: 8.6 },
+    verdict: 'حكم تحريري تجريبي يوضح نقاط القوة والحدود.',
+    pros: ['بناء متماسك'],
+    cons: ['إيقاع غير ثابت'],
+    tags: ['Drama', 'Science Fiction'],
+    aiGenerated: false,
+    sourcePath: 'src/content/reviews/movie-first-film.md',
+    excerpt: 'تحليل تحريري تجريبي'
+  });
+  await recordEditorialReview({
+    key: 'movie:second-film-review',
+    sourceId: '201',
+    type: 'movie',
+    title: 'Second Film',
+    score: 7.8,
+    tags: ['Drama', 'Mystery'],
+    creator: 'Shared Studio',
+    aiGenerated: true,
+    sourcePath: 'src/content/reviews/movie-second-film.md'
+  });
   assert.equal(resolveSourceEvidence({ source: 'TMDB', field: 'genres', url: 'https://attacker.example/movie/101' }), null, 'A source cannot claim evidence from an unrelated domain.');
   assert.equal(resolveSourceEvidence({ source: 'UNKNOWN', field: 'genres', url: 'https://example.com/movie/101' }), null, 'Unknown sources must not be promoted to evidence.');
   assert.equal(resolveSourceEvidence({ source: 'TMDB', field: 'genres', url: 'http://www.themoviedb.org/movie/101' }), null, 'Evidence links must use HTTPS.');
@@ -76,6 +102,10 @@ try {
 
   const context = await buildKnowledgeContext(firstWork);
   assert.match(context, /Science Fiction/);
+  assert.match(context, /ذاكرة المراجعات التحريرية السابقة/);
+  assert.ok(context.includes('تقييم VibeCritic السابق: 8.4/10'));
+  assert.match(context, /مراجعة يدوية/);
+  assert.match(context, /لا تعامل الرأي السابق كحقيقة مستقلة/);
   assert.match(context, /Related Film/);
   assert.match(context, /Second Film/);
   assert.match(context, /ليس دليلاً على تأثير أو اقتباس/);
@@ -83,6 +113,10 @@ try {
 
   const graph = JSON.parse(await fs.readFile('data/knowledge-graph.json', 'utf8'));
   assert.equal(graph.version, 2);
+  assert.equal(graph.editorialReviews.length, 2);
+  assert.equal(graph.stats.editorialReviews, 2);
+  assert.ok(graph.editorialRelations.some(edge => edge.sharedTags.includes('Drama')), 'Reviews sharing a tag should be connected as editorial metadata only.');
+  assert.ok(graph.editorialRelations.every(edge => edge.relationClass === 'shared-editorial-metadata-not-influence-or-quality'));
   assert.ok(Array.isArray(graph.knowledgeGaps) && graph.knowledgeGaps.length >= 2, 'Per-work knowledge gap assessments should persist in the graph.');
   assert.ok(graph.knowledgeGaps.some(entry => entry.workKey === 'movie:101' && entry.assessments >= 2), 'Repeated assessments should update the existing work record.');
   assert.equal(graph.stats.knowledgeGaps, graph.knowledgeGaps.length);
