@@ -8,6 +8,7 @@ import { assessCriticalQuestions, formatCriticalQuestionContext } from './critic
 import { buildIntellectualRepetitionReport, formatIntellectualRepetitionContext, buildIntellectualPatternRecord } from './intellectual-repetition.mjs';
 import { compactLearningMemory } from './memory-maintenance.mjs';
 import { buildPersonalityEvolutionGuidance, assessPersonalityEvolution } from './personality-evolution.mjs';
+import { buildHistoricalProfile, buildHistoricalComparisonReport, formatHistoricalComparisonContext, buildHistoricalComparisonRecord } from './historical-comparisons.mjs';
 
 const env=process.env;
 const provider=(env.AI_PROVIDER||(env.GEMINI_API_KEY?'gemini':env.GROQ_API_KEY?'groq':env.OPENROUTER_API_KEY?'openrouter':env.CF_WORKERS_AI_API_TOKEN?'cloudflare-workers-ai':'openai')).toLowerCase();
@@ -564,6 +565,9 @@ async function generateReview(item){
  const intellectualRepetitionContext=formatIntellectualRepetitionContext(intellectualRepetitionReport);
  const previousPersonalityProfiles=previousPatterns.map(entry=>entry.personalityProfile).filter(Boolean).slice(-12);
  const personalityEvolutionContext=buildPersonalityEvolutionGuidance(previousPersonalityProfiles);
+ const historicalProfile=buildHistoricalProfile(item,reasoning,criticalQuestionReport);
+ const historicalComparisonReport=buildHistoricalComparisonReport(historicalProfile,previousPatterns.map(entry=>entry.historicalProfile).filter(Boolean));
+ const historicalComparisonContext=formatHistoricalComparisonContext(historicalComparisonReport);
  const prompt=[
  isPreview?'اكتب قراءة استباقية صحفية احترافية لعمل لم يصدر بعد، وليست مراجعة نهائية.':'اكتب مراجعة نقدية صحفية شاملة بعد الإصدار، وليست دعاية أو ملخصاً دعائياً.',
  'اكتب بصوت ناقد متخصص: أطروحة واضحة، سياق يشرح أهمية العمل داخل نوعه وسلسلته، تحليل فني مفصل، أمثلة موثقة، وحكم مسبب لا يساير الضجة الجماهيرية.',
@@ -583,6 +587,7 @@ async function generateReview(item){
   criticalQuestionContext,
   intellectualRepetitionContext,
   personalityEvolutionContext,
+  historicalComparisonContext,
  'زاوية التحرير المطلوبة لهذه المراجعة: '+editorialLens+' غيّر إيقاع الجمل وبنية الفقرات وطريقة الانتقال بين المحاور؛ لا تبدأ كل مراجعة بتعريف نمطي ولا تختم بجملة محفوظة.',
  'حظر أسلوبي صريح: لا تستخدم عبارات مثل «بين الطموح والواقع» أو «مزجٌ غير متوقع» أو «رحلة لا تُنسى» أو «أكثر من مجرد» أو «تجربة لا مثيل لها» أو أي صياغة تسويقية مستهلكة. لا تستبدلها بمرادف قالبّي؛ اذكر تفصيلاً محدداً من هذا العمل بدلاً منها.',
  'أعد JSON صالحاً فقط بالمفاتيح: hook, headline, summary, scores, pros, cons, tags, verdict, review. scores كائن يحتوي story وvisuals وsound وpacing، وكل قيمة من 0 إلى 10 بخطوة عشرية واحدة، وتُبررها المراجعة.',
@@ -642,12 +647,13 @@ async function generateReview(item){
  const score=Math.round((scores.story*.30+scores.visuals*.25+scores.sound*.20+scores.pacing*.25)*10)/10;
  const selfEvaluation=evaluateEditorialReview(item,{headline:clean(d.headline),hook:clean(d.hook),review},reasoning,previousHeadlines);
  const personalityEvolutionReport=assessPersonalityEvolution(item,{headline:d.headline,hook:d.hook,summary:d.summary,verdict:d.verdict,review,pros,cons},reasoning,criticalQuestionReport,intellectualRepetitionReport,previousPersonalityProfiles);
+ const historicalComparisonRecord=buildHistoricalComparisonRecord(historicalComparisonReport);
  const reasoningRecord={version:reasoning.version,selectedAngleId:reasoning.selected.id,selectedAngle:reasoning.selected.label,selectedAngleScore:reasoning.selected.score,candidateScores:reasoning.candidates.map(entry=>({id:entry.id,score:entry.score}))};
  const criticalQuestionsRecord={version:criticalQuestionReport.version,mode:criticalQuestionReport.mode,questionCount:criticalQuestionReport.questionCount,multiDomain:criticalQuestionReport.multiDomain,singleSource:criticalQuestionReport.singleSource,unanswered:criticalQuestionReport.unanswered,questions:criticalQuestionReport.questions.map(({id,area,status,evidenceCount,distinctDomains})=>({id,area,status,evidenceCount,distinctDomainCount:(distinctDomains||[]).length}))};
  const intellectualPattern=buildIntellectualPatternRecord(item,reasoning,criticalQuestionReport,d);
  const intellectualRepetitionRecord={version:intellectualRepetitionReport.version,status:intellectualRepetitionReport.status,topScore:intellectualRepetitionReport.topScore,comparedCount:intellectualRepetitionReport.comparedCount,matches:intellectualRepetitionReport.matches.slice(0,3)};
  console.log('التقييم الذاتي التحريري:',selfEvaluation.score+'/100','| الحالة:',selfEvaluation.status,'| مرتكزات مطابقة:',selfEvaluation.metrics.anchorHits+'/'+selfEvaluation.metrics.anchorCount,'| التحقق من الحقيقة:',selfEvaluation.sourceTruthVerified?'نعم':'غير مثبت آلياً');
- return {hook:clean(d.hook),headline:clean(d.headline),summary:clean(d.summary),verdict:clean(d.verdict),score,scores,pros,cons,tags:Array.isArray(d.tags)?d.tags.slice(0,8).map(clean):[],review,reasoning:reasoningRecord,selfEvaluation,criticalQuestions:criticalQuestionsRecord,intellectualPattern,intellectualRepetition:intellectualRepetitionRecord,personalityProfile:personalityEvolutionReport};
+ return {hook:clean(d.hook),headline:clean(d.headline),summary:clean(d.summary),verdict:clean(d.verdict),score,scores,pros,cons,tags:Array.isArray(d.tags)?d.tags.slice(0,8).map(clean):[],review,reasoning:reasoningRecord,selfEvaluation,criticalQuestions:criticalQuestionsRecord,intellectualPattern,intellectualRepetition:intellectualRepetitionRecord,personalityProfile:personalityEvolutionReport,historicalProfile,historicalComparison:historicalComparisonRecord};
 }
 async function tmdb(type,mode='trending'){
  const key=required('TMDB_API_KEY'),endpoint=type==='movie'?'movie':'tv';
