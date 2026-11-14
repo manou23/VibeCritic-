@@ -113,6 +113,14 @@ try {
     genres: ['Action', 'Roguelike'],
     platforms: ['PC', 'Nintendo Switch', 'Nintendo Switch 2', 'PlayStation 5', 'Xbox Series X|S'],
     creator: 'Supergiant Games',
+    catalogSources: [{
+      source: 'RAWG',
+      url: 'https://rawg.io/games/hades-ii',
+      releaseDate: '2025-09-25',
+      genres: ['Action', 'Indie'],
+      platforms: ['PC', 'Nintendo Switch 2'],
+      developers: ['Supergiant Games']
+    }],
     score: 8.7,
     aiGenerated: false,
     sourcePath: 'src/content/reviews/game-hades-ii-2025.md'
@@ -195,6 +203,10 @@ try {
   assert.ok(graph.observations.some(entry => entry.workId === hadesWork.id && entry.field === 'release_date' && entry.source === 'SUPERGIANT_GAMES'), 'Official game release dates should be stored with verified provenance.');
   assert.ok(graph.observations.some(entry => entry.workId === hadesWork.id && entry.field === 'platforms' && entry.value.includes('Nintendo Switch 2')), 'Official game platforms should be stored as factual catalog metadata.');
   assert.ok(graph.observations.some(entry => entry.workId === hadesWork.id && entry.field === 'genres' && entry.sourceClass === 'official-developer-source'), 'Official game genres should retain source classification.');
+  assert.ok(graph.observations.some(entry => entry.workId === hadesWork.id && entry.field === 'genres' && entry.source === 'RAWG' && entry.sourceClass === 'game-database'), 'Secondary RAWG genre evidence must be stored separately from official developer metadata.');
+  assert.ok(graph.observations.some(entry => entry.workId === hadesWork.id && entry.field === 'platforms' && entry.source === 'RAWG'), 'Secondary RAWG platform evidence must be retained.');
+  assert.ok(graph.conflicts.some(entry => entry.workId === hadesWork.id && entry.field === 'genres' && entry.status === 'unresolved'), 'Different official and catalog genre lists should create an explicit unresolved conflict.');
+  assert.ok(graph.relations.some(edge => edge.from === hadesWork.id && edge.type === 'available_on' && edge.evidence.some(item => item.source === 'RAWG')), 'RAWG platform relations must retain their source evidence.');
   assert.ok(graph.relations.some(edge => edge.from === hadesWork.id && edge.type === 'developed_by' && edge.evidence[0].source === 'SUPERGIANT_GAMES'), 'Official developer credits should create sourced relations.');
   assert.match(await buildKnowledgeContext({ id: 'hades-ii-2025', type: 'game', name: 'Hades II' }), /Nintendo Switch 2/);
   const unverifiedWork = graph.entities.find(entity => entity.kind === 'work' && entity.externalId === 'unverified-game-1' && entity.workType === 'game');
