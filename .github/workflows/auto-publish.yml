@@ -203,6 +203,9 @@ jobs:
         env:
           RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
         run: npm run backfill:games
+      - name: Re-index editorial knowledge after catalog enrichment
+        if: github.event_name == 'workflow_dispatch'
+        run: npm run knowledge:ingest-reviews
       - name: Commit generated reviews and learning memory
         if: always()
         run: |
