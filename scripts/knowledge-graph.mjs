@@ -7,7 +7,6 @@ const MAX_RELATIONS = 6000;
 const MAX_EVIDENCE_PER_RELATION = 4;
 const MAX_OBSERVATIONS = 12000;
 const MAX_CONFLICTS = 2000;
-const MAX_OBSERVATIONS_PER_FIELD = 12;
 const SOURCE_TRUST = Object.freeze({ TMDB: 0.9, IGDB: 0.9, RAWG: 0.82 });
 const clean = value => String(value ?? '').replace(/[\r\n]+/g, ' ').trim();
 
@@ -107,6 +106,11 @@ function recordObservation(graph, workId, field, value, provenance) {
       status: 'unresolved', detectedAt: now,
       note: 'مصدران يقدمان قيمتين مختلفتين؛ لا تُحسم المفاضلة دون فحص حداثة المصدر وسياقه.'
     });
+  }
+  const fieldHistory = graph.observations.filter(entry => entry.workId === workId && entry.field === field);
+  if (fieldHistory.length > 12) {
+    const keep = new Set(fieldHistory.slice(-12).map(entry => entry.id));
+    graph.observations = graph.observations.filter(entry => entry.workId !== workId || entry.field !== field || keep.has(entry.id));
   }
   graph.observations = graph.observations.slice(-MAX_OBSERVATIONS);
   graph.conflicts = graph.conflicts.slice(-MAX_CONFLICTS);
