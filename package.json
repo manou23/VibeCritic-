@@ -31,7 +31,8 @@
     "test:review-validation": "node scripts/test-review-validation.mjs",
     "test:judgment-history": "node scripts/test-judgment-history.mjs",
     "knowledge:ingest-reviews": "node scripts/ingest-review-knowledge.mjs",
-    "knowledge:sync-d1": "node scripts/ingest-d1-catalog-knowledge.mjs"
+    "knowledge:sync-d1": "node scripts/ingest-d1-catalog-knowledge.mjs",
+    "test:knowledge-catalog": "node scripts/test-d1-catalog-knowledge.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",
