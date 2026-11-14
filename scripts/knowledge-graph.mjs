@@ -297,6 +297,8 @@ export async function recordEditorialReview(review) {
     pros: (Array.isArray(review.pros) ? review.pros : []).map(clean).filter(Boolean).slice(0, 5),
     cons: (Array.isArray(review.cons) ? review.cons : []).map(clean).filter(Boolean).slice(0, 5),
     creator: clean(review.creator).slice(0, 180) || null,
+    genres: [...new Set((Array.isArray(review.genres) ? review.genres : []).map(clean).filter(Boolean))].slice(0, 12),
+    platforms: [...new Set((Array.isArray(review.platforms) ? review.platforms : []).map(clean).filter(Boolean))].slice(0, 12),
     aiGenerated: typeof review.aiGenerated === 'boolean' ? review.aiGenerated : null,
     releaseDate: clean(review.releaseDate).slice(0, 40) || null,
     sourceName: clean(review.sourceName).slice(0, 80) || null,
@@ -308,6 +310,7 @@ export async function recordEditorialReview(review) {
   // Index the work identity for every medium, without promoting editorial opinions
   // into factual observations. This lets game/movie/series reviews share one retrieval path.
   let identityChanged = false;
+  let indexedWorkId = null;
   if (record.sourceId) {
     const existingWork = graph.entities.find(entry =>
       entry.kind === 'work' &&
@@ -321,6 +324,7 @@ export async function recordEditorialReview(review) {
       'VIBECRITIC_EDITORIAL_INDEX'
     );
     if (work) {
+      indexedWorkId = work.id;
       const before = JSON.stringify({
         name: work.name, aliases: work.aliases, externalId: work.externalId,
         workType: work.workType, externalSource: work.externalSource,
@@ -340,6 +344,42 @@ export async function recordEditorialReview(review) {
         identitySource: work.identitySource, sources: work.sources
       });
     }
+  }
+
+  // Promote only narrowly scoped game catalog metadata when a registered source URL
+  // proves the source identity. Editorial opinions themselves remain non-factual.
+  if (record.type === 'game' && indexedWorkId) {
+    const base = {
+      source: record.sourceName,
+      url: record.sourceUrl,
+      observedAt: new Date().toISOString()
+    };
+    const facts = [
+      ['release_date', record.releaseDate],
+      ['genres', record.genres],
+      ['platforms', record.platforms],
+      ['developers', record.creator ? [record.creator] : []]
+    ];
+    for (const [field, value] of facts) {
+      if (value == null || value === '' || (Array.isArray(value) && !value.length)) continue;
+      const provenance = resolveSourceEvidence({ ...base, field });
+      if (!provenance) continue;
+      recordObservation(graph, indexedWorkId, field, value, provenance);
+      const relation = {
+        genres: ['concept', 'has_genre'],
+        platforms: ['concept', 'available_on'],
+        developers: ['company', 'developed_by']
+      }[field];
+      if (relation) {
+        for (const label of names(Array.isArray(value) ? value : [value]).slice(0, 20)) {
+          const entity = upsertEntity(graph, relation[0], label, provenance.source);
+          addRelation(graph, indexedWorkId, relation[1], entity?.id, provenance);
+        }
+      }
+    }
+    const verifiedSource = resolveSourceEvidence({ ...base, field: 'game_catalog_metadata' });
+    const work = graph.entities.find(entry => entry.id === indexedWorkId);
+    if (verifiedSource && work && !work.sources.includes(verifiedSource.source)) work.sources.push(verifiedSource.source);
   }
 
   const index = graph.editorialReviews.findIndex(entry => entry.key === record.key);
@@ -375,6 +415,9 @@ export async function recordEditorialReview(review) {
   graph.stats = {
     ...(graph.stats || {}),
     works: graph.entities.filter(entry => entry.kind === 'work').length,
+    relations: graph.relations.length,
+    observations: graph.observations.length,
+    conflicts: graph.conflicts.filter(entry => entry.status === 'unresolved').length,
     editorialReviews: graph.editorialReviews.length,
     editorialRelations: graph.editorialRelations.length
   };
