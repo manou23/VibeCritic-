@@ -72,6 +72,9 @@ try {
 
   const graph = JSON.parse(await fs.readFile('data/knowledge-graph.json', 'utf8'));
   assert.equal(graph.version, 2);
+  assert.ok(Array.isArray(graph.knowledgeGaps) && graph.knowledgeGaps.length >= 3, 'Per-work knowledge gap assessments should persist in the graph.');
+  assert.ok(graph.knowledgeGaps.some(entry => entry.workKey === 'movie:101' && entry.assessments >= 2), 'Repeated assessments should update the existing work record.');
+  assert.equal(graph.stats.knowledgeGaps, graph.knowledgeGaps.length);
   assert.ok(graph.entities.some(entity => entity.id === 'concept:legacy'), 'Version 1 entities should survive migration.');
   assert.ok(graph.relations.some(edge => edge.id === 'legacy-edge'), 'Version 1 relations should survive migration.');
   assert.ok(graph.stats.works >= 3);
@@ -84,6 +87,8 @@ try {
   assert.match(context, /تعارض غير محسوم/, 'Knowledge context should warn about unresolved source conflicts.');
   assert.match(context, /نطاقه:/, 'Knowledge context should describe the source scope.');
   assert.match(context, /حدوده:/, 'Knowledge context should disclose source limitations.');
+  assert.match(context, /خريطة الثغرات المعرفية/, 'The critic should receive an explicit knowledge-gap map.');
+  assert.match(context, /لا تحوّل الثغرات إلى أحكام سلبية/, 'The critic must not turn missing evidence into negative claims.');
   assert.ok(graph.observations.every(entry => entry.source && entry.source !== 'unknown' && entry.sourceScope && entry.sourceLimitations), 'Observations must retain verified source scope and limitations.');
   assert.equal(graph.stats.observations, graph.observations.length);
   assert.equal(graph.stats.conflicts, graph.conflicts.filter(entry => entry.status === 'unresolved').length);
