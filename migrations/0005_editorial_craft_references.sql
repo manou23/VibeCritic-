@@ -24,7 +24,7 @@ VALUES
 ابدأ بالاستمرارية: هل يستطيع المشاهد فهم مواقع الشخصيات واتجاه الحركة والعلاقة بين الأفعال؟ كسر الاستمرارية ليس خطأ تلقائياً؛ قد يكون مقصوداً لإظهار اضطراب أو ذاكرة أو ذاتية، لكن ينبغي أن يخدم غرضاً يمكن تفسيره. ثم افحص الإيقاع: السرعة ليست قيمة بذاتها، واللقطة الطويلة ليست بطئاً بالضرورة. المهم أن يتغير شيء ذو معنى داخل الزمن الذي تمنحه اللقطة أو سلسلة اللقطات.
 
 اسأل أيضاً كيف يوزع العمل المعلومات. هل يكشف الحدث في اللحظة المناسبة؟ هل يصنع التشويق من ترتيب المعرفة أم من إخفاء اعتباطي؟ هل تتكرر اللقطات أو المشاهد دون إضافة؟ اربط كل حكم بمثال محدد من المادة المتاحة، ولا تخترع انتقالات أو مشاهد. إذا كانت المصادر لا تتيح وصفاً موثوقاً للمونتاج، امتنع عن تقييم التنفيذ التقني واكتف بما يمكن إثباته عن بنية السرد.')
-ON CONFLICT(slug) DO UPDATE SET title=excluded.title,work_type=excluded.work_type,topic=excluded.topic,priority=excluded.priority,summary=excluded.summary,prompt_excerpt=excluded.prompt_excerpt,body=excluded.body,version=version+1,active=1,updated_at=datetime('now');
+ON CONFLICT(slug) DO UPDATE SET title=excluded.title,work_type=excluded.work_type,topic=excluded.topic,priority=excluded.priority,summary=excluded.summary,prompt_excerpt=excluded.prompt_excerpt,body=excluded.body,version=excluded.version,active=1,updated_at=datetime('now');
 
 INSERT INTO editorial_reference_articles
 (slug,title,work_type,topic,priority,summary,prompt_excerpt,body)
@@ -37,7 +37,7 @@ VALUES
 انظر إلى العلاقة بين البيئة والشخصية. هل تتغير المساحة مع تغير موقعها الاجتماعي أو النفسي؟ هل تحمل الأشياء آثار استعمال وزمن، أم تبدو كأنها وضعت للزينة؟ هل تتماسك الملابس مع ظروف الشخصية وعالمها، وهل يطرأ عليها تحول له دلالة سردية؟ لا يلزم أن يكون كل تفصيل رمزاً؛ أحياناً تكون وظيفة التصميم الأساسية هي الاتساق والإقناع وتسهيل فهم المكان.
 
 قيّم التناسق بين عناصر العالم، لا كل عنصر بمعزل. قد يكون التصميم بسيطاً لكنه دقيق، وقد يكون غنياً بالتفاصيل لكنه مشتت أو غير منسجم مع النبرة. لا تستنتج جودة التنفيذ من الميزانية أو أسماء المصممين أو الصور الترويجية وحدها. استخدم أمثلة مرئية موثوقة، وافصل الملاحظة المباشرة عن التأويل، ولا تحوّل احتمالاً رمزياً إلى حقيقة مؤكدة.')
-ON CONFLICT(slug) DO UPDATE SET title=excluded.title,work_type=excluded.work_type,topic=excluded.topic,priority=priority,summary=excluded.summary,prompt_excerpt=excluded.prompt_excerpt,body=excluded.body,version=version+1,active=1,updated_at=datetime('now');
+ON CONFLICT(slug) DO UPDATE SET title=excluded.title,work_type=excluded.work_type,topic=excluded.topic,priority=excluded.priority,summary=excluded.summary,prompt_excerpt=excluded.prompt_excerpt,body=excluded.body,version=excluded.version,active=1,updated_at=datetime('now');
 
 INSERT INTO editorial_reference_articles
 (slug,title,work_type,topic,priority,summary,prompt_excerpt,body)
@@ -52,4 +52,4 @@ VALUES
 تتصل الأخلاقيات بطريقة تصوير الأشخاص، وحماية الفئات المعرضة للخطر، والموافقة، والخصوصية، واحتمال تحويل المعاناة إلى مشهد استعراضي. اسأل كيف تؤثر زاوية الكاميرا والمونتاج والموسيقى في تعاطف الجمهور أو حكمه، وهل يميز العمل بين المعلومة والتأويل. لا تساوِ بين وجهة نظر المخرج والتضليل، ولا بين التوازن الآلي والإنصاف؛ قد يكون عرض جميع المواقف بالتساوي مضللاً إذا كانت الأدلة غير متكافئة.
 
 الحكم الوثائقي الأقوى يشرح كيف ينتج الفيلم معرفته، وما الذي يثبته فعلاً، وما الذي يتركه غير محسوم. لا تنسب نوايا أخلاقية إلى صناع العمل دون دليل، ولا تتحقق من الوقائع التاريخية اعتماداً على الفيلم وحده. عندما لا تتوفر مصادر مستقلة، صرّح بأن تقييم صدقية الادعاء محدود، وركز على طريقة تقديمه لا على إعلان صحته.')
-ON CONFLICT(slug) DO UPDATE SET title=excluded.title,work_type=excluded.work_type,topic=excluded.topic,priority=priority,summary=excluded.summary,prompt_excerpt=excluded.prompt_excerpt,body=excluded.body,version=version+1,active=1,updated_at=datetime('now');
+ON CONFLICT(slug) DO UPDATE SET title=excluded.title,work_type=excluded.work_type,topic=excluded.topic,priority=excluded.priority,summary=excluded.summary,prompt_excerpt=excluded.prompt_excerpt,body=excluded.body,version=excluded.version,active=1,updated_at=datetime('now');
