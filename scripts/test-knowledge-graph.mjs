@@ -19,6 +19,7 @@ try {
   }, null, 2));
   const moduleUrl = pathToFileURL(path.join(originalDirectory, 'scripts/knowledge-graph.mjs')).href;
   const { recordKnowledge, buildKnowledgeContext } = await import(moduleUrl);
+  const { resolveSourceEvidence } = await import(pathToFileURL(path.join(originalDirectory, 'scripts/source-evidence.mjs')).href);
 
   const firstWork = {
     id: '101',
@@ -37,6 +38,10 @@ try {
 
   await recordKnowledge(firstWork);
   await recordKnowledge(firstWork);
+  assert.equal(resolveSourceEvidence({ source: 'TMDB', field: 'genres', url: 'https://attacker.example/movie/101' }), null, 'A source cannot claim evidence from an unrelated domain.');
+  assert.equal(resolveSourceEvidence({ source: 'UNKNOWN', field: 'genres', url: 'https://example.com/movie/101' }), null, 'Unknown sources must not be promoted to evidence.');
+  assert.equal(resolveSourceEvidence({ source: 'TMDB', field: 'genres', url: 'http://www.themoviedb.org/movie/101' }), null, 'Evidence links must use HTTPS.');
+  assert.ok(resolveSourceEvidence({ source: 'TMDB', field: 'genres', url: 'https://www.themoviedb.org/movie/101' }), 'A recognized source and matching HTTPS domain should be accepted.');
 
   const secondWork = {
     id: '201',
@@ -77,8 +82,9 @@ try {
   assert.ok(graph.observations.some(entry => entry.workId === 'work:movie-101-first-film' && entry.field === 'genres' && entry.source === 'IGDB'), 'A second source should be retained separately.');
   assert.ok(graph.conflicts.some(entry => entry.workId === 'work:movie-101-first-film' && entry.field === 'genres' && entry.status === 'unresolved'), 'Different values from distinct sources should create an unresolved conflict.');
   assert.match(context, /تعارض غير محسوم/, 'Knowledge context should warn about unresolved source conflicts.');
-  assert.match(context, /الثقة المصدرية الإرشادية/, 'Knowledge context should expose source trust as a heuristic, not verified truth.');
-  assert.ok(graph.observations.every(entry => entry.source && entry.source !== 'unknown'), 'Observations must never claim unknown provenance.');
+  assert.match(context, /نطاقه:/, 'Knowledge context should describe the source scope.');
+  assert.match(context, /حدوده:/, 'Knowledge context should disclose source limitations.');
+  assert.ok(graph.observations.every(entry => entry.source && entry.source !== 'unknown' && entry.sourceScope && entry.sourceLimitations), 'Observations must retain verified source scope and limitations.');
   assert.equal(graph.stats.observations, graph.observations.length);
   assert.equal(graph.stats.conflicts, graph.conflicts.filter(entry => entry.status === 'unresolved').length);
 
