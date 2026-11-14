@@ -54,6 +54,9 @@ jobs:
           node --check scripts/memory-maintenance.mjs
           node --check scripts/test-memory-maintenance.mjs
           npm run test:memory-maintenance
+          node --check scripts/personality-evolution.mjs
+          node --check scripts/test-personality-evolution.mjs
+          npm run test:personality-evolution
           npm run test:editorial-reasoning
           node --check scripts/backfill-arabic-titles.mjs
           node --check scripts/backfill-game-platforms.mjs

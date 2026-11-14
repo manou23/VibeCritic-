@@ -21,7 +21,8 @@
     "test:specialist-skills": "node scripts/test-specialist-skills.mjs",
     "test:critical-questions": "node scripts/test-critical-questions.mjs",
     "test:intellectual-repetition": "node scripts/test-intellectual-repetition.mjs",
-    "test:memory-maintenance": "node scripts/test-memory-maintenance.mjs"
+    "test:memory-maintenance": "node scripts/test-memory-maintenance.mjs",
+    "test:personality-evolution": "node scripts/test-personality-evolution.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",
