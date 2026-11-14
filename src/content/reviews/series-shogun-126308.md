@@ -1,6 +1,8 @@
 ---
 title: "شوغون"
 originalTitle: "Shōgun"
+poster: "https://ogre.natalie.mu/media/news/eiga/2023/1102/SHOGUN_keyvisual.jpg?imdensity=1&impolicy=hq&imwidth=1460"
+backdrop: "https://www.framerated.co.uk/frwpcontent/uploads/2024/04/shogun13.jpg"
 headline: "Shōgun — السياسة ليست خلفية للحرب، بل شكلها الأكثر هدوءاً"
 hook: "في عالم تتغير فيه موازين القوة بإشارة أو ترجمة أو صمت، يصبح فهم نوايا الآخرين مهارة بقاء لا تقل خطورة عن حمل السيف."
 summary: "مسلسل تاريخي من FX مقتبس من رواية جيمس كلافيل، تدور أحداثه في اليابان عام 1600 حول صراع اللورد توراناغا ووصول الملاح الإنجليزي جون بلاكثورن، وتتشابك فيه السياسة والثقافة والتحالفات."
