@@ -41,6 +41,15 @@ try {
   };
   await recordKnowledge(secondWork);
 
+  const conflictingObservation = {
+    ...firstWork,
+    source: 'IGDB',
+    sourceUrl: 'https://www.igdb.com/games/101',
+    genres: ['Science Fiction', 'Adventure'],
+    metadata: { directors: ['Different Director'], platforms: ['PC'] }
+  };
+  await recordKnowledge(conflictingObservation);
+
   const context = await buildKnowledgeContext(firstWork);
   assert.match(context, /Science Fiction/);
   assert.match(context, /Related Film/);
@@ -49,11 +58,19 @@ try {
   assert.ok(context.includes('\n'), 'Knowledge context should use real line breaks.');
 
   const graph = JSON.parse(await fs.readFile('data/knowledge-graph.json', 'utf8'));
-  assert.equal(graph.version, 1);
+  assert.equal(graph.version, 2);
   assert.ok(graph.stats.works >= 3);
   assert.ok(graph.entities.some(entity => entity.id === 'work:movie-101-first-film'), 'Unicode-safe slug should produce a stable work id.');
   assert.ok(graph.relations.every(edge => Array.isArray(edge.evidence) && edge.evidence.length > 0));
   assert.ok(graph.relations.some(edge => edge.type === 'source_lists_as_similar' && edge.evidence[0].source === 'TMDB'));
+  assert.ok(graph.observations.some(entry => entry.workId === 'work:movie-101-first-film' && entry.field === 'genres' && entry.source === 'TMDB'), 'Source observations should be retained with provenance.');
+  assert.ok(graph.observations.some(entry => entry.workId === 'work:movie-101-first-film' && entry.field === 'genres' && entry.source === 'IGDB'), 'A second source should be retained separately.');
+  assert.ok(graph.conflicts.some(entry => entry.workId === 'work:movie-101-first-film' && entry.field === 'genres' && entry.status === 'unresolved'), 'Different values from distinct sources should create an unresolved conflict.');
+  assert.match(context, /تعارض غير محسوم/, 'Knowledge context should warn about unresolved source conflicts.');
+  assert.match(context, /الثقة المصدرية الإرشادية/, 'Knowledge context should expose source trust as a heuristic, not verified truth.');
+  assert.ok(graph.observations.every(entry => entry.source && entry.source !== 'unknown'), 'Observations must never claim unknown provenance.');
+  assert.equal(graph.stats.observations, graph.observations.length);
+  assert.equal(graph.stats.conflicts, graph.conflicts.filter(entry => entry.status === 'unresolved').length);
 
   console.log('Knowledge graph tests passed.');
 } finally {
