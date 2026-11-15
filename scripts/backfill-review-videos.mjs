@@ -4,6 +4,7 @@ import path from 'node:path';
 const dir='src/content/reviews';
 const tmdbKey=String(process.env.TMDB_API_KEY||'').trim();
 const youtubeKey=String(process.env.YOUTUBE_API_KEY||'').trim();
+const rawgKey=String(process.env.RAWG_API_KEY||'').trim();
 const pause=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 
 async function json(url){
@@ -19,21 +20,35 @@ function field(frontmatter,name){
   if(raw.startsWith("'")&&raw.endsWith("'"))return raw.slice(1,-1);
   return raw;
 }
-function videoFields(id,title){
-  return 'youtubeVideoId: '+JSON.stringify(id)+'\nyoutubeVideoTitle: '+JSON.stringify(title)+'\n';
+function setField(frontmatter,name,value){
+  const line=name+': '+JSON.stringify(value);
+  const pattern=new RegExp('^'+name+':.*$','m');
+  return pattern.test(frontmatter)?frontmatter.replace(pattern,line):frontmatter+'\n'+line;
 }
-async function movieOrSeries(type,id){
+function validVideo(id){return /^[A-Za-z0-9_-]{11}$/.test(String(id||''));}
+async function tmdbMedia(type,id){
   if(!tmdbKey||!id)return null;
   const mediaType=type==='series'?'tv':'movie';
-  const data=await json('https://api.themoviedb.org/3/'+mediaType+'/'+encodeURIComponent(id)+'?'+new URLSearchParams({api_key:tmdbKey,append_to_response:'videos'}));
+  const data=await json('https://api.themoviedb.org/3/'+mediaType+'/'+encodeURIComponent(id)+'?'+new URLSearchParams({api_key:tmdbKey,append_to_response:'videos',include_video_language:'en,null'}));
   const video=(data.videos?.results||[])
-    .filter(v=>v.site==='YouTube'&&v.official===true&&['Trailer','Teaser'].includes(v.type)&&/^[A-Za-z0-9_-]{11}$/.test(v.key||''))
+    .filter(v=>v.site==='YouTube'&&v.official===true&&['Trailer','Teaser'].includes(v.type)&&validVideo(v.key))
     .sort((a,b)=>(a.type==='Trailer'?0:1)-(b.type==='Trailer'?0:1)||String(b.published_at||'').localeCompare(String(a.published_at||'')))[0];
-  return video?{id:video.key,title:video.name}:null;
+  return {
+    poster:data.poster_path?'https://image.tmdb.org/t/p/w500'+data.poster_path:'',
+    backdrop:data.backdrop_path?'https://image.tmdb.org/t/p/w1280'+data.backdrop_path:'',
+    video:video?{id:video.key,title:video.name}:null
+  };
 }
-async function gameTrailer(title){
+async function rawgArtwork(id){
+  if(!rawgKey||!id)return null;
+  const data=await json('https://api.rawg.io/api/games/'+encodeURIComponent(id)+'?key='+encodeURIComponent(rawgKey));
+  const image=data.background_image||data.background_image_additional||'';
+  return {poster:image,backdrop:data.background_image_additional||image};
+}
+async function youtubeTrailer(title,type){
   if(!youtubeKey||!title)return null;
-  const query=new URLSearchParams({part:'snippet',q:title+' official game trailer',type:'video',maxResults:'10',order:'relevance',videoEmbeddable:'true',videoSyndicated:'true',regionCode:'US',relevanceLanguage:'en',key:youtubeKey});
+  const kind=type==='game'?'game trailer':type==='series'?'TV series official trailer':'official movie trailer';
+  const query=new URLSearchParams({part:'snippet',q:title+' '+kind,type:'video',maxResults:'10',order:'relevance',videoEmbeddable:'true',videoSyndicated:'true',regionCode:'US',relevanceLanguage:'en',key:youtubeKey});
   const search=await json('https://www.googleapis.com/youtube/v3/search?'+query);
   const candidates=(search.items||[]).filter(x=>x.id?.videoId&&x.snippet?.title);
   if(!candidates.length)return null;
@@ -46,7 +61,7 @@ async function gameTrailer(title){
     if(!video||video.status?.privacyStatus!=='public'||video.status?.embeddable!==true)return null;
     const videoTitle=candidate.snippet.title||'',channel=candidate.snippet.channelTitle||'';
     if(/fan.?made|concept trailer|reaction|review|parody|trailer breakdown|gameplay walkthrough/i.test(videoTitle))return null;
-    if(!/\bofficial\b/i.test(videoTitle+' '+channel)||!/\b(trailer|teaser)\b/i.test(videoTitle))return null;
+    if(!/\bofficial\b/i.test(videoTitle+' '+channel)||!(/\b(trailer|teaser)\b/i.test(videoTitle)))return null;
     const words=videoTitle.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').split(/[^a-z0-9]+/);
     const overlap=tokens.filter(t=>words.includes(t)).length;
     return overlap?{id:candidate.id.videoId,title:videoTitle,score:overlap}:null;
@@ -55,34 +70,62 @@ async function gameTrailer(title){
 }
 async function main(){
   const files=(await fs.readdir(dir)).filter(name=>name.endsWith('.md')).sort();
-  let scanned=0,updated=0,missing=0,errors=0;
+  let scanned=0,updated=0,imagesAdded=0,videosAdded=0,withoutVideo=0,withoutImage=0,errors=0;
   for(const file of files){
     const full=path.join(dir,file);
     let content=await fs.readFile(full,'utf8');
     const fm=content.match(/^---\n([\s\S]*?)\n---/);
     if(!fm)continue;
-    const frontmatter=fm[1];
-    if(field(frontmatter,'youtubeVideoId'))continue;
+    let frontmatter=fm[1];
     const type=field(frontmatter,'type');
     if(!['movie','series','game'].includes(type))continue;
+    const title=field(frontmatter,'title');
+    const sourceId=field(frontmatter,'sourceId');
+    const hasPoster=Boolean(field(frontmatter,'poster'));
+    const hasBackdrop=Boolean(field(frontmatter,'backdrop'));
+    const hasVideo=validVideo(field(frontmatter,'youtubeVideoId'));
+    if(hasPoster&&hasBackdrop&&hasVideo)continue;
     scanned++;
-    const title=field(frontmatter,'title'),sourceId=field(frontmatter,'sourceId');
-    if((type==='game'&&!youtubeKey)||((type==='movie'||type==='series')&&!tmdbKey)){missing++;continue;}
+    let image=null,video=null;
     try{
-      const video=type==='game'?await gameTrailer(title):await movieOrSeries(type,sourceId);
-      if(!video){missing++;console.log('No suitable public/embeddable video:',file);continue;}
-      const fields=videoFields(video.id,video.title);
-      let updatedFrontmatter;
-      if(/^backdrop:.*$/m.test(frontmatter))updatedFrontmatter=frontmatter.replace(/^(backdrop:.*\n)/m,'$1'+fields);
-      else if(/^poster:.*$/m.test(frontmatter))updatedFrontmatter=frontmatter.replace(/^(poster:.*\n)/m,'$1'+fields);
-      else updatedFrontmatter=frontmatter+'\n'+fields.trimEnd();
-      content=content.replace(fm[0],'---\n'+updatedFrontmatter+'\n---');
-      await fs.writeFile(full,content,'utf8');
-      updated++;
-      console.log('Added trailer:',title,'->',video.id);
-    }catch(error){errors++;console.warn('Video lookup failed for '+file+': '+error.message);}
+      if((type==='movie'||type==='series')&&tmdbKey&&(!hasPoster||!hasBackdrop||!hasVideo)){
+        const data=await tmdbMedia(type,sourceId);
+        if(data){
+          image={poster:data.poster,backdrop:data.backdrop};
+          video=data.video;
+        }
+      }else if(type==='game'&&rawgKey&&(!hasPoster||!hasBackdrop)){
+        image=await rawgArtwork(sourceId);
+      }
+      if(!hasVideo&&!video&&youtubeKey)video=await youtubeTrailer(title,type);
+      let changed=false;
+      if(!hasPoster){
+        const poster=image?.poster||image?.backdrop||(video?.id?'https://img.youtube.com/vi/'+video.id+'/hqdefault.jpg':'');
+        if(poster){frontmatter=setField(frontmatter,'poster',poster);imagesAdded++;changed=true;}
+      }
+      if(!hasBackdrop){
+        const backdrop=image?.backdrop||image?.poster||(video?.id?'https://img.youtube.com/vi/'+video.id+'/maxresdefault.jpg':'');
+        if(backdrop){frontmatter=setField(frontmatter,'backdrop',backdrop);if(!image?.poster&&!image?.backdrop)imagesAdded++;changed=true;}
+      }
+      if(!hasVideo&&video?.id&&validVideo(video.id)){
+        frontmatter=setField(frontmatter,'youtubeVideoId',video.id);
+        frontmatter=setField(frontmatter,'youtubeVideoTitle',video.title||('Official trailer — '+title));
+        videosAdded++;changed=true;
+      }
+      if(!field(frontmatter,'poster')&&!field(frontmatter,'backdrop'))withoutImage++;
+      if(!validVideo(field(frontmatter,'youtubeVideoId')))withoutVideo++;
+      if(changed){
+        content=content.replace(fm[0],'---\n'+frontmatter+'\n---');
+        await fs.writeFile(full,content,'utf8');
+        updated++;
+        console.log('Media enriched:',title,'image:',Boolean(field(frontmatter,'poster')||field(frontmatter,'backdrop')),'video:',validVideo(field(frontmatter,'youtubeVideoId')));
+      }
+    }catch(error){
+      errors++;
+      console.warn('Media lookup failed for '+file+': '+error.message);
+    }
     await pause(180);
   }
-  console.log(JSON.stringify({scanned,updated,withoutVideo:missing,errors,total:files.length}));
+  console.log(JSON.stringify({scanned,updated,imagesAdded,videosAdded,withoutImage,withoutVideo,errors,total:files.length}));
 }
 main().catch(error=>{console.error(error);process.exitCode=1;});
