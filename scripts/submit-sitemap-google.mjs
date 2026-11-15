@@ -27,8 +27,8 @@ async function requestWithRetry(url, options = {}, attempts = 12) {
 
 const response = await requestWithRetry(sitemapUrl);
 const xml = await response.text();
-if (!/<urlset\\b/i.test(xml)) throw new Error('Published sitemap.xml is not a valid URL-set sitemap.');
-const locations = [...xml.matchAll(/<loc>([^<]+)<\\/loc>/g)].map(match => match[1].trim());
+if (!/<urlset\b/i.test(xml)) throw new Error('Published sitemap.xml is not a valid URL-set sitemap.');
+const locations = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1].trim());
 if (!locations.length) throw new Error('Published sitemap.xml contains no URLs.');
 const seen = new Set();
 for (const raw of locations) {
