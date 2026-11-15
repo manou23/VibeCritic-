@@ -168,13 +168,28 @@ jobs:
           echo "OPENROUTER_API_KEY configured: $([ -n "$OPENROUTER_API_KEY" ] && echo yes || echo no)"
           echo "CF_WORKERS_AI_API_TOKEN configured: $([ -n "$CF_WORKERS_AI_API_TOKEN" ] && echo yes || echo no)"
           echo "YOUTUBE_API_KEY configured: $([ -n "$YOUTUBE_API_KEY" ] && echo yes || echo no)"
-          if [ -n "$TMDB_API_KEY" ] && { [ -n "$RAWG_API_KEY" ] || { [ -n "$IGDB_CLIENT_ID" ] && [ -n "$IGDB_CLIENT_SECRET" ]; }; } && { [ -n "$OPENAI_API_KEY" ] || [ -n "$GEMINI_API_KEY" ] || [ -n "$GROQ_API_KEY" ] || [ -n "$OPENROUTER_API_KEY" ] || [ -n "$CF_WORKERS_AI_API_TOKEN" ]; }; then
-            npm run generate
-          else
-            echo "API secrets are not fully configured; skipping generation and continuing the site build."
+          if [ -z "$TMDB_API_KEY" ]; then
+            echo "::error::Required TMDB_API_KEY is missing; review generation has been stopped."
+            exit 1
           fi
+          if [ -z "$RAWG_API_KEY" ] && { [ -z "$IGDB_CLIENT_ID" ] || [ -z "$IGDB_CLIENT_SECRET" ]; }; then
+            echo "::error::A game metadata source is required: configure RAWG_API_KEY or both IGDB_CLIENT_ID and IGDB_CLIENT_SECRET."
+            exit 1
+          fi
+          if [ -z "$OPENAI_API_KEY" ] && [ -z "$GEMINI_API_KEY" ] && [ -z "$GROQ_API_KEY" ] && [ -z "$OPENROUTER_API_KEY" ] && [ -z "$CF_WORKERS_AI_API_TOKEN" ]; then
+            echo "::error::No AI provider credential is configured; review generation has been stopped."
+            exit 1
+          fi
+          {
+            echo "### VibeCritic generation preflight"
+            echo "- TMDB metadata: configured"
+            echo "- Game metadata: configured"
+            echo "- At least one AI provider: configured"
+            echo "- YouTube media enrichment: $([ -n "$YOUTUBE_API_KEY" ] && echo configured || echo optional/unavailable)"
+          } >> "$GITHUB_STEP_SUMMARY"
+          npm run generate
       - name: Persist collected source responses in D1
-        if: always() && (github.event_name != 'push' || contains(github.event.head_commit.message, '[generate-reviews]')) && !(github.event_name == 'workflow_dispatch' && inputs.game_catalog_backfill_only)
+        if: success() && (github.event_name != 'push' || contains(github.event.head_commit.message, '[generate-reviews]')) && !(github.event_name == 'workflow_dispatch' && inputs.game_catalog_backfill_only)
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
@@ -209,7 +224,7 @@ jobs:
         if: github.event_name == 'workflow_dispatch'
         run: npm run knowledge:ingest-reviews
       - name: Commit generated reviews and learning memory
-        if: always()
+        if: success()
         run: |
           # Stage the complete generated working tree. The previous path list could
           # become stale when an optional memory file was absent or removed.
