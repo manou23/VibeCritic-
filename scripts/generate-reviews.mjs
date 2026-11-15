@@ -17,11 +17,11 @@ import { SCORE_SCALE_PROMPT } from './scoring-rubric.mjs';
 const env=process.env;
 const provider=(env.AI_PROVIDER||(env.GEMINI_API_KEY?'gemini':env.GROQ_API_KEY?'groq':env.OPENROUTER_API_KEY?'openrouter':env.CF_WORKERS_AI_API_TOKEN?'cloudflare-workers-ai':'openai')).toLowerCase();
 // Allow two evidence-based preview upgrades per run, still bounded by the adaptive free-resource daily cap.
-const targetTotal=100,dailyPerType=2,baseDailyTotalLimit=2,perRunLimit=2;
+const targetTotal=100,dailyPerType=2,baseDailyTotalLimit=3,perRunLimit=3;
 let dailyTotalLimit=baseDailyTotalLimit;
 const gamesWindowDays=Math.max(1,Number.isFinite(Number(env.GAMES_WINDOW_DAYS))&&env.GAMES_WINDOW_DAYS?Number(env.GAMES_WINDOW_DAYS):30);
 const upcomingWindowDays=Math.max(30,Number.isFinite(Number(env.UPCOMING_WINDOW_DAYS))&&env.UPCOMING_WINDOW_DAYS?Number(env.UPCOMING_WINDOW_DAYS):365);
-const outDir='src/content/reviews',processedPath='data/processed.json';
+const outDir='src/content/reviews',processedPath='data/processed.json',publishedPath='data/published.json';
 const learningPath='data/learning-memory.json';
 let learningMemory={version:2,stats:{successes:0,failures:0},lessons:[],recentSuccesses:[],recentQuality:[],qualityByType:{}};
 async function loadLearningMemory(){
@@ -29,6 +29,24 @@ async function loadLearningMemory(){
  learningMemory=compactLearningMemory(learningMemory);
 }
 async function saveLearningMemory(){learningMemory.version=2;learningMemory.updatedAt=new Date().toISOString();await fs.writeFile(learningPath,JSON.stringify(learningMemory,null,2)+'\n','utf8');}
+async function loadPublishedIndex(){
+ const keys=new Set();
+ try{
+  const saved=JSON.parse(await fs.readFile(publishedPath,'utf8'));
+  const values=Array.isArray(saved)?saved:Array.isArray(saved?.published)?saved.published:[];
+  for(const value of values)if(typeof value==='string'&&/^(game|movie|series):.+$/.test(value))keys.add(value);
+ }catch{}
+ // Reconcile the durable index against existing Markdown files for backward compatibility.
+ for(const file of await fs.readdir(outDir)){
+  if(!file.endsWith('.md'))continue;
+  const type=['game','movie','series'].find(value=>file.startsWith(value+'-'));
+  if(type)keys.add(type+':'+file.slice(type.length+1,-3));
+ }
+ return keys;
+}
+async function savePublishedIndex(keys){
+ await fs.writeFile(publishedPath,JSON.stringify({version:1,updatedAt:new Date().toISOString(),published:[...keys].sort()},null,2)+'\\n','utf8');
+}
 function classifyLearning(error){
  const message=String(error?.message||error||'');
  if(/عنوان نقدي متشابه|صياغة قالبية|عبارات إنشائية|تعميمات/.test(message))return ['specificity','ارفض العناوين والعبارات القالبية؛ اربط كل حكم بتفصيل موثق وفريد من العمل.'];
@@ -1013,10 +1031,10 @@ async function main(){
   await fs.writeFile('src/data/trending.json',JSON.stringify(top,null,2)+'\n','utf8');
   console.log(`تم تحديث قائمة الترندات العالمية: ${top.length} أعمال.`);
  }catch(e){console.error('تعذر تحديث الترندات العالمية، سيتم الاحتفاظ بآخر قائمة:',e.message);}
- let done=[];try{done=JSON.parse(await fs.readFile(processedPath,'utf8'));}catch{}
+ let done=[];try{done=JSON.parse(await fs.readFile(processedPath,'utf8'));}catch{}\n const publishedIndex=await loadPublishedIndex();\n console.log('سجل الأعمال المنشورة (published.json + ملفات المراجعات):',publishedIndex.size);
  const types=['game','series','movie'];
  const publishedFiles=(await fs.readdir(outDir)).filter(name=>name.endsWith('.md'));
- const publishedKeys=new Set();
+ const publishedKeys=publishedIndex;
  const publishedModes=new Map();
  const counts={game:0,series:0,movie:0},todayCounts={game:0,series:0,movie:0};
  const today=algeriaDate();
@@ -1108,7 +1126,7 @@ async function main(){
     done.push(await writeReview(item));
     quotas[type]--;
     if(!upgraded)counts[type]++;
-    publishedKeys.add(key);publishedModes.set(key,'review');
+    publishedKeys.add(key);publishedModes.set(key,'review');\n    await savePublishedIndex(publishedKeys);
     fresh.push({...item,upgradedFromPreview:upgraded});
     console.log(upgraded?'تم تحويل القراءة الاستباقية إلى مراجعة بعد الإصدار:':'تم إنشاء مراجعة:',item.name,'|',type,'| الإجمالي:',Object.values(counts).reduce((sum,value)=>sum+value,0));
    }catch(e){generationFailures++;console.error('تعذر إنشاء مراجعة:',item.name,e.message);}
@@ -1118,7 +1136,7 @@ async function main(){
  await fs.writeFile('data/new-reviews.json',JSON.stringify(fresh.map(item=>({type:item.type,id:String(item.id),upgradedFromPreview:Boolean(item.upgradedFromPreview)})),null,2),'utf8');
  if(!fresh.length)console.log(buildPhase?'لا توجد أعمال جديدة صالحة لاستكمال المكتبة في هذه الدفعة.':'لم يتم العثور على إصدارات جديدة مؤهلة خلال آخر 7 أيام.');
  if(generationFailures>0)console.warn('تم تجاوز '+generationFailures+' أعمال بسبب أخطاء توليد، مع الاحتفاظ بالمراجعات الناجحة.');
- await fs.writeFile(processedPath,JSON.stringify([...new Set(done)],null,2)+'\n');
+ await fs.writeFile(processedPath,JSON.stringify([...new Set(done)],null,2)+'\n');\n await savePublishedIndex(publishedKeys);
  const finalTotal=Object.values(counts).reduce((sum,value)=>sum+value,0);
  console.log(finalTotal>=targetTotal?'تم بلوغ هدف 100 مقالة؛ سيعمل التشغيل القادم بوضع رصد الإصدارات الجديدة.':`المتبقي للوصول إلى 100 مقالة: ${targetTotal-finalTotal}`);
 }
