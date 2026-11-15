@@ -59,8 +59,8 @@ sourceRating: 7.962
 sourceId: "2734"
 sourceUrl: "https://www.themoviedb.org/tv/2734"
 aiGenerated: true
-youtubeVideoId: "O53wYUc_fA4"
-youtubeVideoTitle: "Law and Order SVU Season 22 Trailer (HD)"
+youtubeVideoId: "4tE07lqD2Mg"
+youtubeVideoTitle: "The Victims Were Just Babies | Law & Order: SVU — Official Channel Clip"
 ---
 
 ## المراجعة النقدية الشاملة
