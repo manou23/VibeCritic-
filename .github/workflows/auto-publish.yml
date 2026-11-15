@@ -192,6 +192,10 @@ jobs:
             echo "- YouTube media enrichment: $([ -n "$YOUTUBE_API_KEY" ] && echo configured || echo optional/unavailable)"
           } >> "$GITHUB_STEP_SUMMARY"
           npm run generate
+      - name: Report verified AI and manual publication counts
+        if: always() && (github.event_name != 'push' || contains(github.event.head_commit.message, '[generate-reviews]')) && !(github.event_name == 'workflow_dispatch' && inputs.game_catalog_backfill_only)
+        run: node scripts/report-publication-metrics.mjs
+
       - name: Persist collected source responses and evidence dossiers in D1
         if: always() && (github.event_name != 'push' || contains(github.event.head_commit.message, '[generate-reviews]')) && !(github.event_name == 'workflow_dispatch' && inputs.game_catalog_backfill_only)
         env:
