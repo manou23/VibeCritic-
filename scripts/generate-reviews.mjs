@@ -13,6 +13,7 @@ import { buildPersonalityEvolutionGuidance, assessPersonalityEvolution } from '.
 import { buildHistoricalProfile, buildHistoricalComparisonReport, formatHistoricalComparisonContext, buildHistoricalComparisonRecord } from './historical-comparisons.mjs';
 import { loadJudgmentHistory, buildJudgmentRevisionContext, recordJudgmentVersion } from './judgment-history.mjs';
 import { SCORE_SCALE_PROMPT } from './scoring-rubric.mjs';
+import { retryHintTimestamp } from './provider-cooldown.mjs';
 
 const env=process.env;
 const provider=(env.AI_PROVIDER||(env.GEMINI_API_KEY?'gemini':env.GROQ_API_KEY?'groq':env.OPENROUTER_API_KEY?'openrouter':env.CF_WORKERS_AI_API_TOKEN?'cloudflare-workers-ai':'openai')).toLowerCase();
@@ -414,17 +415,18 @@ async function recordProviderOutcome(name,success,error=null,measurement=null,it
    if(Number.isFinite(numeric)&&numeric>=0)return numeric>1e12?numeric:numeric>1e9?numeric*1000:Date.now()+numeric*1000;
    const parsed=Date.parse(raw);return Number.isFinite(parsed)?parsed:null;
   };
-  const retryAfter=parseReset(headers['retry-after']);
+  const retryAfter=parseReset(headers['retry-after'])||retryHintTimestamp(message);
   const resetAt=parseReset(headers['x-ratelimit-reset-requests']??headers['x-ratelimit-reset-tokens']??headers['x-ratelimit-reset']);
-  const explicitDaily=/daily|per[_ -]?day|free_model_daily_requests|daily quota|quota for today|tokens per day|\bTPD\b|تجاوز.*اليوم|الحصة اليومية/i.test(message);
+  const providerReset=retryAfter||resetAt;
+  const explicitDaily=/daily|per[_ -]?day|free_model_daily_requests|daily quota|quota for today|tokens per day|\\bTPD\\b|تجاوز.*اليوم|الحصة اليومية/i.test(message);
   const quotaExhausted=/resource[_ -]?exhausted|insufficient quota|quota exceeded/i.test(message);
   if(status===429||/rate.?limit/i.test(message)){
-   const until=retryAfter||resetAt||Date.now()+60*1000;
+   const until=providerReset||Date.now()+60*1000;
    const isDaily=explicitDaily||quotaExhausted;
-   const dailyTokenWindow=/tokens per day|\bTPD\b/i.test(message);
-   // Respect the provider's explicit reset time for rolling daily-token windows; do not retry as if this were TPM.
-   entry.blockedUntil=dailyTokenWindow?until:isDaily?Math.max(until,new Date(algeriaDate()+'T23:59:59+01:00').getTime()):Math.min(Math.max(until,Date.now()+15000),Date.now()+15*60*1000);
-   entry.blockedReason=isDaily?'daily-limit':'rate-limit';
+   const dailyTokenWindow=/tokens per day|\\bTPD\\b/i.test(message);
+   // Honor explicit provider reset hints (including durations embedded in JSON error bodies).
+   // Fall back to local end-of-day only when a daily quota error gives no reset time.
+   entry.blockedUntil=dailyTokenWindow?until:isDaily?(providerReset||new Date(algeriaDate()+'T23:59:59+01:00').getTime()):Math.min(Math.max(until,Date.now()+15000),Date.now()+15*60*1000);
   }else if(status===401||status===403||status===402){entry.blockedUntil=Date.now()+6*60*60*1000;entry.blockedReason='auth-or-billing';}
   else if(status>=500&&status<=599){const failures=Number(entry.consecutiveTransientFailures||0)+1;entry.consecutiveTransientFailures=failures;entry.blockedUntil=Date.now()+Math.min(15*60*1000,60*1000*Math.pow(2,Math.min(4,failures-1)));entry.blockedReason='temporary-server';}
   else if(/timeout|aborted|network|fetch failed/i.test(message)){entry.blockedUntil=Date.now()+15*60*1000;entry.blockedReason='temporary-network';}
