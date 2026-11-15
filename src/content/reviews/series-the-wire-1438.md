@@ -10,7 +10,7 @@ type: series
 date: 2026-11-15
 releaseDate: "2002-06-02"
 poster: "https://image.tmdb.org/t/p/w500/dg7NuKDjmS6OzuNy33qt8kSkPA1.jpg"
-youtubeVideoTitle: "The Wire – Series Trailer"
+youtubeVideoTitle: "Official Trailer"
 score: 8.8
 storyScore: 9.6
 visualsScore: 8.4
@@ -33,6 +33,8 @@ sourceName: "VibeCritic Editorial"
 sourceId: "manual-series-the-wire-1438"
 sourceUrl: "https://www.themoviedb.org/tv/1438"
 aiGenerated: false
+backdrop: "https://image.tmdb.org/t/p/w1280/aQTtua5pG490fMfeKgtYg5B853e.jpg"
+youtubeVideoId: "uDcQbk78CSw"
 ---
 ## المدينة هي الشخصية الرئيسية
 لا يختزل The Wire بالت في مطاردة شرطي لعصابة. كل موسم يوسع زاوية النظر إلى مؤسسة مختلفة، من تجارة المخدرات والشرطة إلى الميناء والسياسة والمدارس والإعلام. هذا الاتساع ليس مجرد زيادة في عدد الشخصيات؛ إنه يغير تفسير المشكلة. ما يبدو فشلاً فردياً في مستوى ما قد يظهر نتيجة لحوافز وموازنات وقواعد في مستوى آخر. لذلك لا يقدم المسلسل حلاً بطولياً بسيطاً، بل يراقب كيف تتكرر النتائج عندما تبقى بنية المؤسسة كما هي.
