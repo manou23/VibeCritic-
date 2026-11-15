@@ -60,6 +60,9 @@ jobs:
           node --check scripts/backfill-review-videos.mjs
           node --check scripts/backfill-arabic-titles.mjs
           node --check scripts/backfill-game-platforms.mjs
+          node --check scripts/rawg-catalog-utils.mjs
+          node --check scripts/test-rawg-backfill.mjs
+          npm run test:rawg-backfill
           node --check functions/api/review.js
       - name: Install dependencies
         run: npm install
