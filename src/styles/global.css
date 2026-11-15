@@ -576,6 +576,8 @@ img{max-width:100%}
  .dark-mode .catalog-rail .review-card{flex-basis:205px;width:205px}
 }
 @media(max-width:680px){
+  .brand-copy small,.footer-brand-copy small{display:none}
+
  .dark-mode .site-header{background:rgba(13,15,18,.9)}
  .dark-mode .site-nav{gap:9px}
  .dark-mode .brand{font-size:22px}
