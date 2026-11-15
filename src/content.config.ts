@@ -25,6 +25,8 @@ const reviews = defineCollection({
     backdrop: z.string().optional(),
     youtubeVideoId: z.string().regex(/^[A-Za-z0-9_-]{11}$/).optional(),
     youtubeVideoTitle: z.string().optional(),
+    externalVideoUrl: z.string().url().optional(),
+    externalVideoTitle: z.string().optional(),
     score: z.number().gt(0).max(10).optional(),
     reviewMode: z.enum(['review', 'preview', 'limited']).default('review'),
     sourceName: z.string().optional(),
