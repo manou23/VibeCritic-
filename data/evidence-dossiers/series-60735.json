@@ -1,0 +1,193 @@
+{
+  "version": 1,
+  "workKey": "series:60735",
+  "title": "فلاش",
+  "type": "series",
+  "collectedAt": "2026-11-15T19:45:52.705Z",
+  "evidenceCount": 12,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/tv/60735"
+    },
+    {
+      "name": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "فلاش"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/60735",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2014-10-07"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/60735",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "بعد أن شاهد والدته تقتل على يد شيء خارق للطبيعة وإدانة والده بالجريمة  التي لم يرتكبها، يذهب باري ألين للعيش مع المحقق جو ويست وعائلته. يكبر ألين ويصبح محقق جرائم ذكي لكن غريب الاطوار في دائرة شرطة سنترال سيتي. في  يوم من الأيام تضرب عاصفة غامضة باري ألين وتعطيه سرعة خارقه. يستغل باري  قدرته الجديدة في محاربة الجريمة وآخرين يمتلكون قدرات خارقة بمساعدة  أصدقائه في مختبرات ستار وفي نفس الوقت يحاول معرفة من قتل والدته عندما  كان صغيراً."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/60735",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "دراما",
+        "خيال علمي وفانتازيا"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/60735",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        7.738
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/60735",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        11869
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/60735",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "Grant Gustin بدور Barry Allen / The Flash",
+        "Candice Patton بدور Iris West-Allen",
+        "دانييل بانابيكر بدور Khione",
+        "دانييل نيكول بدور Cecile Horton",
+        "Kayla Compton بدور Allegra Garcia",
+        "Brandon McKnight بدور Chester P. Runk",
+        "Jon Cor بدور Mark Blaine / Chillblaine"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/60735",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "creators",
+      "label": "المبدعون",
+      "value": [
+        "Geoff Johns",
+        "Greg Berlanti",
+        "Andrew Kreisberg"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/60735",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "seasons",
+      "label": "عدد المواسم",
+      "value": [
+        9
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/60735",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "episodes",
+      "label": "عدد الحلقات",
+      "value": [
+        184
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/60735",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "Warner Bros. Television",
+        "Berlanti Productions",
+        "DC Entertainment",
+        "DC"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/60735",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "relatedWorks",
+      "label": "أعمال مرتبطة",
+      "value": [
+        {
+          "title": "دكتور هو",
+          "year": 2005,
+          "sharedGenres": "دراما,خيال علمي وفانتازيا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "قصة رعب امريكية",
+          "year": 2011,
+          "sharedGenres": "دراما,خيال علمي وفانتازيا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "يوميات مصاص الدماء",
+          "year": 2009,
+          "sharedGenres": "دراما,خيال علمي وفانتازيا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "The 100",
+          "year": 2014,
+          "sharedGenres": "دراما,خيال علمي وفانتازيا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "رحلة ڤيجن",
+          "year": 2026,
+          "sharedGenres": "دراما,خيال علمي وفانتازيا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "شخص محل إهتمام",
+          "year": 2011,
+          "sharedGenres": "دراما,خيال علمي وفانتازيا",
+          "sharedPeople": ""
+        }
+      ],
+      "source": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

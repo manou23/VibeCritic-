@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-15T19:45:01.716Z",
+  "updatedAt": "2026-11-15T19:45:56.800Z",
   "jobs": {
     "game:972995": {
       "key": "game:972995",
@@ -572,7 +572,7 @@
       },
       "nextAttemptAt": 0,
       "lastError": null,
-      "updatedAt": "2026-11-15T19:44:45.640Z",
+      "updatedAt": "2026-11-15T19:45:50.233Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "game:1019942",
@@ -2251,7 +2251,7 @@
       },
       "nextAttemptAt": 0,
       "lastError": null,
-      "updatedAt": "2026-11-15T19:44:52.756Z",
+      "updatedAt": "2026-11-15T19:45:50.535Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "series:57243",
@@ -4611,7 +4611,7 @@
       },
       "nextAttemptAt": 0,
       "lastError": null,
-      "updatedAt": "2026-11-15T19:44:52.907Z",
+      "updatedAt": "2026-11-15T19:45:50.678Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "series:1421",
@@ -5772,7 +5772,7 @@
       },
       "nextAttemptAt": 0,
       "lastError": null,
-      "updatedAt": "2026-11-15T19:44:56.476Z",
+      "updatedAt": "2026-11-15T19:45:53.180Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "movie:1058424",
@@ -8610,7 +8610,7 @@
       },
       "nextAttemptAt": 0,
       "lastError": null,
-      "updatedAt": "2026-11-15T19:44:52.617Z",
+      "updatedAt": "2026-11-15T19:45:50.398Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "game:1017176",
@@ -9737,7 +9737,7 @@
       },
       "nextAttemptAt": 0,
       "lastError": null,
-      "updatedAt": "2026-11-15T19:44:55.128Z",
+      "updatedAt": "2026-11-15T19:45:50.818Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "series:1100",
@@ -12783,6 +12783,3453 @@
                 "title": "ريزدنت إيفل",
                 "year": 2026,
                 "sharedGenres": "خيال علمي",
+                "sharedPeople": ""
+              }
+            ],
+            "source": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "series:1400": {
+      "key": "series:1400",
+      "type": "series",
+      "id": "1400",
+      "createdAt": "2026-11-15T19:45:50.984Z",
+      "attemptCount": 1,
+      "status": "waiting",
+      "item": {
+        "id": "1400",
+        "type": "series",
+        "name": "سينفيلد",
+        "originalTitle": "Seinfeld",
+        "description": "مسلسل يدور في إطار درامي كوميدي عن حياة النجم (جيري سينفلد) اليومية برفقة مجموعة من أصدقائه بمدينة (نيويورك)، والمواقف التي يتعرض لها وما يتعرض له من مفارقات كوميدية.",
+        "date": "1989-07-05",
+        "poster": "https://image.tmdb.org/t/p/w500/1xmkUIKCk8axWechuaOikGBhCT7.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w780/tMRdEsMg9MyXAkcufK9YJEeIaNW.jpg",
+        "rating": 8.243,
+        "genres": [
+          "كوميديا"
+        ],
+        "sourceUrl": "https://www.themoviedb.org/tv/1400",
+        "source": "TMDB",
+        "popularity": 1173.9672,
+        "sourceMetricName": "TMDB popularity",
+        "sourceMetricValue": 1173.9672,
+        "trendConfidence": "مرتفع",
+        "trendRank": 10,
+        "fieldSources": {
+          "catalog_related_works": {
+            "source": "VIBECRITIC_D1",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:45:51.513Z"
+          }
+        },
+        "sourceVoteCount": 2518,
+        "metadata": {
+          "voteAverage": 8.243,
+          "voteCount": 2518,
+          "youtubeVideoId": null,
+          "youtubeVideoTitle": null,
+          "genres": [
+            "كوميديا"
+          ],
+          "directors": [],
+          "creators": [
+            "جيري ساينفيلد",
+            "لاري ديفيد"
+          ],
+          "cast": [
+            "جيري ساينفيلد بدور Jerry Seinfeld",
+            "جيسون ألكسندر بدور George Costanza",
+            "Michael Richards بدور Cosmo Kramer",
+            "جوليا لوي دريفوس بدور Elaine Benes"
+          ],
+          "runtime": null,
+          "episodeRuntime": [],
+          "seasons": 9,
+          "episodes": 180,
+          "productionCompanies": [
+            "Castle Rock Entertainment",
+            "West/Shapiro Productions",
+            "Fred Barron Productions",
+            "Giggling Goose Productions"
+          ],
+          "watchProviders": [],
+          "watchProviderUrl": null,
+          "communityReviews": [],
+          "similar": [
+            {
+              "id": "210892",
+              "title": "ジャパニーズスタイル"
+            },
+            {
+              "id": "94252",
+              "title": "Human Resources"
+            },
+            {
+              "id": "220",
+              "title": "Big Day"
+            },
+            {
+              "id": "221",
+              "title": "The Many Loves of Dobie Gillis"
+            },
+            {
+              "id": "227",
+              "title": "The Mike O'Malley Show"
+            }
+          ],
+          "catalogContext": {
+            "source": "VibeCritic D1 entertainment catalog",
+            "sourceUrl": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:45:51.513Z",
+            "base": {
+              "tmdbId": 1400,
+              "type": "tv",
+              "title": "سينفيلد",
+              "originalTitle": "Seinfeld",
+              "overview": "مسلسل يدور في إطار درامي كوميدي عن حياة النجم (جيري سينفلد) اليومية برفقة مجموعة من أصدقائه بمدينة (نيويورك)، والمواقف التي يتعرض لها وما يتعرض له من مفارقات كوميدية.",
+              "releaseDate": "1989-07-05",
+              "year": 1989,
+              "runtime": null,
+              "status": "Ended",
+              "rating": 8.243,
+              "votes": 2518,
+              "popularity": 1420.771,
+              "originalLanguage": "en",
+              "genres": [
+                "كوميديا"
+              ],
+              "cast": [
+                "جيري ساينفيلد بدور Jerry Seinfeld",
+                "جيسون ألكسندر بدور George Costanza",
+                "Michael Richards بدور Cosmo Kramer",
+                "جوليا لوي دريفوس بدور Elaine Benes"
+              ],
+              "directors": [],
+              "creators": [
+                "جيري ساينفيلد",
+                "لاري ديفيد"
+              ],
+              "updatedAt": "2026-11-15T10:18:39.242Z"
+            },
+            "relatedWorks": [
+              {
+                "tmdbId": "2316",
+                "type": "series",
+                "title": "المكتب",
+                "year": 2005,
+                "sharedGenreCount": 1,
+                "sharedPersonCount": 0,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "456",
+                "type": "series",
+                "title": "آل سيمبسون",
+                "year": 1989,
+                "sharedGenreCount": 1,
+                "sharedPersonCount": 0,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1100",
+                "type": "series",
+                "title": "كيف قابلت امك",
+                "year": 2005,
+                "sharedGenreCount": 1,
+                "sharedPersonCount": 0,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1421",
+                "type": "series",
+                "title": "عائلة عصرية",
+                "year": 2009,
+                "sharedGenreCount": 1,
+                "sharedPersonCount": 0,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1877",
+                "type": "series",
+                "title": "فارس وفادي",
+                "year": 2007,
+                "sharedGenreCount": 1,
+                "sharedPersonCount": 0,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "61923",
+                "type": "series",
+                "title": "ستار ضد قوى الشر",
+                "year": 2015,
+                "sharedGenreCount": 1,
+                "sharedPersonCount": 0,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              }
+            ],
+            "limitation": "بيانات الكتالوج تصف حقولاً فهرسية موثقة داخلياً؛ الروابط بين الأعمال مبنية على تصنيفات أو أسماء طاقم مشتركة ولا تثبت تشابهاً فنياً أو جودة أو تأثيراً."
+          },
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "series:1400",
+            "title": "سينفيلد",
+            "type": "series",
+            "collectedAt": "2026-11-15T19:45:51.639Z",
+            "evidenceCount": 12,
+            "sourceCount": 2,
+            "sources": [
+              {
+                "name": "TMDB",
+                "url": "https://www.themoviedb.org/tv/1400"
+              },
+              {
+                "name": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "سينفيلد"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/1400",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "1989-07-05"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/1400",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "مسلسل يدور في إطار درامي كوميدي عن حياة النجم (جيري سينفلد) اليومية برفقة مجموعة من أصدقائه بمدينة (نيويورك)، والمواقف التي يتعرض لها وما يتعرض له من مفارقات كوميدية."
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/1400",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "كوميديا"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/1400",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "rating",
+                "label": "تقييم المصدر",
+                "value": [
+                  8.243
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/1400",
+                "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+              },
+              {
+                "key": "voteCount",
+                "label": "عدد الأصوات",
+                "value": [
+                  2518
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/1400",
+                "confidence": "مقياس حجم العينة وليس الجودة"
+              },
+              {
+                "key": "cast",
+                "label": "طاقم التمثيل",
+                "value": [
+                  "جيري ساينفيلد بدور Jerry Seinfeld",
+                  "جيسون ألكسندر بدور George Costanza",
+                  "Michael Richards بدور Cosmo Kramer",
+                  "جوليا لوي دريفوس بدور Elaine Benes"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/1400",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "creators",
+                "label": "المبدعون",
+                "value": [
+                  "جيري ساينفيلد",
+                  "لاري ديفيد"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/1400",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "seasons",
+                "label": "عدد المواسم",
+                "value": [
+                  9
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/1400",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "episodes",
+                "label": "عدد الحلقات",
+                "value": [
+                  180
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/1400",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "productionCompanies",
+                "label": "شركات الإنتاج",
+                "value": [
+                  "Castle Rock Entertainment",
+                  "West/Shapiro Productions",
+                  "Fred Barron Productions",
+                  "Giggling Goose Productions"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/1400",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "relatedWorks",
+                "label": "أعمال مرتبطة",
+                "value": [
+                  {
+                    "title": "المكتب",
+                    "year": 2005,
+                    "sharedGenres": "كوميديا",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "آل سيمبسون",
+                    "year": 1989,
+                    "sharedGenres": "كوميديا",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "كيف قابلت امك",
+                    "year": 2005,
+                    "sharedGenres": "كوميديا",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "عائلة عصرية",
+                    "year": 2009,
+                    "sharedGenres": "كوميديا",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "فارس وفادي",
+                    "year": 2007,
+                    "sharedGenres": "كوميديا",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "ستار ضد قوى الشر",
+                    "year": 2015,
+                    "sharedGenres": "كوميديا",
+                    "sharedPeople": ""
+                  }
+                ],
+                "source": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog",
+                "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        }
+      },
+      "nextAttemptAt": 1794772121340,
+      "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
+      "updatedAt": "2026-11-15T19:45:52.134Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "series:1400",
+        "title": "سينفيلد",
+        "type": "series",
+        "collectedAt": "2026-11-15T19:45:51.639Z",
+        "evidenceCount": 12,
+        "sourceCount": 2,
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/1400"
+          },
+          {
+            "name": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "سينفيلد"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/1400",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "1989-07-05"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/1400",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "مسلسل يدور في إطار درامي كوميدي عن حياة النجم (جيري سينفلد) اليومية برفقة مجموعة من أصدقائه بمدينة (نيويورك)، والمواقف التي يتعرض لها وما يتعرض له من مفارقات كوميدية."
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/1400",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "كوميديا"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/1400",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "rating",
+            "label": "تقييم المصدر",
+            "value": [
+              8.243
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/1400",
+            "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+          },
+          {
+            "key": "voteCount",
+            "label": "عدد الأصوات",
+            "value": [
+              2518
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/1400",
+            "confidence": "مقياس حجم العينة وليس الجودة"
+          },
+          {
+            "key": "cast",
+            "label": "طاقم التمثيل",
+            "value": [
+              "جيري ساينفيلد بدور Jerry Seinfeld",
+              "جيسون ألكسندر بدور George Costanza",
+              "Michael Richards بدور Cosmo Kramer",
+              "جوليا لوي دريفوس بدور Elaine Benes"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/1400",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "creators",
+            "label": "المبدعون",
+            "value": [
+              "جيري ساينفيلد",
+              "لاري ديفيد"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/1400",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "seasons",
+            "label": "عدد المواسم",
+            "value": [
+              9
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/1400",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "episodes",
+            "label": "عدد الحلقات",
+            "value": [
+              180
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/1400",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "productionCompanies",
+            "label": "شركات الإنتاج",
+            "value": [
+              "Castle Rock Entertainment",
+              "West/Shapiro Productions",
+              "Fred Barron Productions",
+              "Giggling Goose Productions"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/1400",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "relatedWorks",
+            "label": "أعمال مرتبطة",
+            "value": [
+              {
+                "title": "المكتب",
+                "year": 2005,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": ""
+              },
+              {
+                "title": "آل سيمبسون",
+                "year": 1989,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": ""
+              },
+              {
+                "title": "كيف قابلت امك",
+                "year": 2005,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": ""
+              },
+              {
+                "title": "عائلة عصرية",
+                "year": 2009,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": ""
+              },
+              {
+                "title": "فارس وفادي",
+                "year": 2007,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": ""
+              },
+              {
+                "title": "ستار ضد قوى الشر",
+                "year": 2015,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": ""
+              }
+            ],
+            "source": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "series:60735": {
+      "key": "series:60735",
+      "type": "series",
+      "id": "60735",
+      "createdAt": "2026-11-15T19:45:52.138Z",
+      "attemptCount": 1,
+      "status": "waiting",
+      "item": {
+        "id": "60735",
+        "type": "series",
+        "name": "فلاش",
+        "originalTitle": "The Flash",
+        "description": "بعد أن شاهد والدته تقتل على يد شيء خارق للطبيعة وإدانة والده بالجريمة  التي لم يرتكبها، يذهب باري ألين للعيش مع المحقق جو ويست وعائلته. يكبر ألين ويصبح محقق جرائم ذكي لكن غريب الاطوار في دائرة شرطة سنترال سيتي. في  يوم من الأيام تضرب عاصفة غامضة باري ألين وتعطيه سرعة خارقه. يستغل باري  قدرته الجديدة في محاربة الجريمة وآخرين يمتلكون قدرات خارقة بمساعدة  أصدقائه في مختبرات ستار وفي نفس الوقت يحاول معرفة من قتل والدته عندما  كان صغيراً.",
+        "date": "2014-10-07",
+        "poster": "https://image.tmdb.org/t/p/w500/on67BDRo1P6LrsYpnmviCfXN6kR.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w780/gFkHcIh7iE5G0oVOgpmY8ONQjhl.jpg",
+        "rating": 7.738,
+        "genres": [
+          "دراما",
+          "خيال علمي وفانتازيا"
+        ],
+        "sourceUrl": "https://www.themoviedb.org/tv/60735",
+        "source": "TMDB",
+        "popularity": 1121.346,
+        "sourceMetricName": "TMDB popularity",
+        "sourceMetricValue": 1121.346,
+        "trendConfidence": "مرتفع",
+        "trendRank": 11,
+        "fieldSources": {
+          "catalog_related_works": {
+            "source": "VIBECRITIC_D1",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:45:52.540Z"
+          }
+        },
+        "sourceVoteCount": 11869,
+        "metadata": {
+          "voteAverage": 7.738,
+          "voteCount": 11869,
+          "youtubeVideoId": null,
+          "youtubeVideoTitle": null,
+          "genres": [
+            "دراما",
+            "خيال علمي وفانتازيا"
+          ],
+          "directors": [],
+          "creators": [
+            "Geoff Johns",
+            "Greg Berlanti",
+            "Andrew Kreisberg"
+          ],
+          "cast": [
+            "Grant Gustin بدور Barry Allen / The Flash",
+            "Candice Patton بدور Iris West-Allen",
+            "دانييل بانابيكر بدور Khione",
+            "دانييل نيكول بدور Cecile Horton",
+            "Kayla Compton بدور Allegra Garcia",
+            "Brandon McKnight بدور Chester P. Runk",
+            "Jon Cor بدور Mark Blaine / Chillblaine"
+          ],
+          "runtime": null,
+          "episodeRuntime": [],
+          "seasons": 9,
+          "episodes": 184,
+          "productionCompanies": [
+            "Warner Bros. Television",
+            "Berlanti Productions",
+            "DC Entertainment",
+            "DC"
+          ],
+          "watchProviders": [],
+          "watchProviderUrl": null,
+          "communityReviews": [],
+          "similar": [
+            {
+              "id": "127532",
+              "title": "سولو ليفلينغ"
+            },
+            {
+              "id": "60289",
+              "title": "Superheroes: A Never-Ending Battle"
+            },
+            {
+              "id": "236",
+              "title": "The Flash"
+            },
+            {
+              "id": "237",
+              "title": "Mortal Kombat: Conquest"
+            },
+            {
+              "id": "94366",
+              "title": "流星戦隊ムスメット"
+            }
+          ],
+          "catalogContext": {
+            "source": "VibeCritic D1 entertainment catalog",
+            "sourceUrl": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:45:52.540Z",
+            "base": {
+              "tmdbId": 60735,
+              "type": "tv",
+              "title": "فلاش",
+              "originalTitle": "The Flash",
+              "overview": "بعد أن شاهد والدته تقتل على يد شيء خارق للطبيعة وإدانة والده بالجريمة  التي لم يرتكبها، يذهب باري ألين للعيش مع المحقق جو ويست وعائلته. يكبر ألين ويصبح محقق جرائم ذكي لكن غريب الاطوار في دائرة شرطة سنترال سيتي. في  يوم من الأيام تضرب عاصفة غامضة باري ألين وتعطيه سرعة خارقه. يستغل باري  قدرته الجديدة في محاربة الجريمة وآخرين يمتلكون قدرات خارقة بمساعدة  أصدقائه في مختبرات ستار وفي نفس الوقت يحاول معرفة من قتل والدته عندما  كان صغيراً.",
+              "releaseDate": "2014-10-07",
+              "year": 2014,
+              "runtime": null,
+              "status": "Ended",
+              "rating": 7.738,
+              "votes": 11869,
+              "popularity": 1467.8839,
+              "originalLanguage": "en",
+              "genres": [
+                "خيال علمي وفانتازيا",
+                "دراما"
+              ],
+              "cast": [
+                "Grant Gustin بدور Barry Allen / The Flash",
+                "Candice Patton بدور Iris West-Allen",
+                "دانييل بانابيكر بدور Khione",
+                "دانييل نيكول بدور Cecile Horton",
+                "Kayla Compton بدور Allegra Garcia",
+                "Brandon McKnight بدور Chester P. Runk",
+                "Jon Cor بدور Mark Blaine / Chillblaine"
+              ],
+              "directors": [],
+              "creators": [
+                "Geoff Johns",
+                "Greg Berlanti",
+                "Andrew Kreisberg"
+              ],
+              "updatedAt": "2026-11-15T10:18:39.242Z"
+            },
+            "relatedWorks": [
+              {
+                "tmdbId": "57243",
+                "type": "series",
+                "title": "دكتور هو",
+                "year": 2005,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1413",
+                "type": "series",
+                "title": "قصة رعب امريكية",
+                "year": 2011,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "18165",
+                "type": "series",
+                "title": "يوميات مصاص الدماء",
+                "year": 2009,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "48866",
+                "type": "series",
+                "title": "The 100",
+                "year": 2014,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "213375",
+                "type": "series",
+                "title": "رحلة ڤيجن",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1411",
+                "type": "series",
+                "title": "شخص محل إهتمام",
+                "year": 2011,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              }
+            ],
+            "limitation": "بيانات الكتالوج تصف حقولاً فهرسية موثقة داخلياً؛ الروابط بين الأعمال مبنية على تصنيفات أو أسماء طاقم مشتركة ولا تثبت تشابهاً فنياً أو جودة أو تأثيراً."
+          },
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "series:60735",
+            "title": "فلاش",
+            "type": "series",
+            "collectedAt": "2026-11-15T19:45:52.705Z",
+            "evidenceCount": 12,
+            "sourceCount": 2,
+            "sources": [
+              {
+                "name": "TMDB",
+                "url": "https://www.themoviedb.org/tv/60735"
+              },
+              {
+                "name": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "فلاش"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/60735",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "2014-10-07"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/60735",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "بعد أن شاهد والدته تقتل على يد شيء خارق للطبيعة وإدانة والده بالجريمة  التي لم يرتكبها، يذهب باري ألين للعيش مع المحقق جو ويست وعائلته. يكبر ألين ويصبح محقق جرائم ذكي لكن غريب الاطوار في دائرة شرطة سنترال سيتي. في  يوم من الأيام تضرب عاصفة غامضة باري ألين وتعطيه سرعة خارقه. يستغل باري  قدرته الجديدة في محاربة الجريمة وآخرين يمتلكون قدرات خارقة بمساعدة  أصدقائه في مختبرات ستار وفي نفس الوقت يحاول معرفة من قتل والدته عندما  كان صغيراً."
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/60735",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "دراما",
+                  "خيال علمي وفانتازيا"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/60735",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "rating",
+                "label": "تقييم المصدر",
+                "value": [
+                  7.738
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/60735",
+                "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+              },
+              {
+                "key": "voteCount",
+                "label": "عدد الأصوات",
+                "value": [
+                  11869
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/60735",
+                "confidence": "مقياس حجم العينة وليس الجودة"
+              },
+              {
+                "key": "cast",
+                "label": "طاقم التمثيل",
+                "value": [
+                  "Grant Gustin بدور Barry Allen / The Flash",
+                  "Candice Patton بدور Iris West-Allen",
+                  "دانييل بانابيكر بدور Khione",
+                  "دانييل نيكول بدور Cecile Horton",
+                  "Kayla Compton بدور Allegra Garcia",
+                  "Brandon McKnight بدور Chester P. Runk",
+                  "Jon Cor بدور Mark Blaine / Chillblaine"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/60735",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "creators",
+                "label": "المبدعون",
+                "value": [
+                  "Geoff Johns",
+                  "Greg Berlanti",
+                  "Andrew Kreisberg"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/60735",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "seasons",
+                "label": "عدد المواسم",
+                "value": [
+                  9
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/60735",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "episodes",
+                "label": "عدد الحلقات",
+                "value": [
+                  184
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/60735",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "productionCompanies",
+                "label": "شركات الإنتاج",
+                "value": [
+                  "Warner Bros. Television",
+                  "Berlanti Productions",
+                  "DC Entertainment",
+                  "DC"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/60735",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "relatedWorks",
+                "label": "أعمال مرتبطة",
+                "value": [
+                  {
+                    "title": "دكتور هو",
+                    "year": 2005,
+                    "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "قصة رعب امريكية",
+                    "year": 2011,
+                    "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "يوميات مصاص الدماء",
+                    "year": 2009,
+                    "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "The 100",
+                    "year": 2014,
+                    "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "رحلة ڤيجن",
+                    "year": 2026,
+                    "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "شخص محل إهتمام",
+                    "year": 2011,
+                    "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                    "sharedPeople": ""
+                  }
+                ],
+                "source": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog",
+                "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        }
+      },
+      "nextAttemptAt": 1794772121340,
+      "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
+      "updatedAt": "2026-11-15T19:45:53.171Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "series:60735",
+        "title": "فلاش",
+        "type": "series",
+        "collectedAt": "2026-11-15T19:45:52.705Z",
+        "evidenceCount": 12,
+        "sourceCount": 2,
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/60735"
+          },
+          {
+            "name": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "فلاش"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/60735",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "2014-10-07"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/60735",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "بعد أن شاهد والدته تقتل على يد شيء خارق للطبيعة وإدانة والده بالجريمة  التي لم يرتكبها، يذهب باري ألين للعيش مع المحقق جو ويست وعائلته. يكبر ألين ويصبح محقق جرائم ذكي لكن غريب الاطوار في دائرة شرطة سنترال سيتي. في  يوم من الأيام تضرب عاصفة غامضة باري ألين وتعطيه سرعة خارقه. يستغل باري  قدرته الجديدة في محاربة الجريمة وآخرين يمتلكون قدرات خارقة بمساعدة  أصدقائه في مختبرات ستار وفي نفس الوقت يحاول معرفة من قتل والدته عندما  كان صغيراً."
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/60735",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "دراما",
+              "خيال علمي وفانتازيا"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/60735",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "rating",
+            "label": "تقييم المصدر",
+            "value": [
+              7.738
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/60735",
+            "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+          },
+          {
+            "key": "voteCount",
+            "label": "عدد الأصوات",
+            "value": [
+              11869
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/60735",
+            "confidence": "مقياس حجم العينة وليس الجودة"
+          },
+          {
+            "key": "cast",
+            "label": "طاقم التمثيل",
+            "value": [
+              "Grant Gustin بدور Barry Allen / The Flash",
+              "Candice Patton بدور Iris West-Allen",
+              "دانييل بانابيكر بدور Khione",
+              "دانييل نيكول بدور Cecile Horton",
+              "Kayla Compton بدور Allegra Garcia",
+              "Brandon McKnight بدور Chester P. Runk",
+              "Jon Cor بدور Mark Blaine / Chillblaine"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/60735",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "creators",
+            "label": "المبدعون",
+            "value": [
+              "Geoff Johns",
+              "Greg Berlanti",
+              "Andrew Kreisberg"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/60735",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "seasons",
+            "label": "عدد المواسم",
+            "value": [
+              9
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/60735",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "episodes",
+            "label": "عدد الحلقات",
+            "value": [
+              184
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/60735",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "productionCompanies",
+            "label": "شركات الإنتاج",
+            "value": [
+              "Warner Bros. Television",
+              "Berlanti Productions",
+              "DC Entertainment",
+              "DC"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/60735",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "relatedWorks",
+            "label": "أعمال مرتبطة",
+            "value": [
+              {
+                "title": "دكتور هو",
+                "year": 2005,
+                "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                "sharedPeople": ""
+              },
+              {
+                "title": "قصة رعب امريكية",
+                "year": 2011,
+                "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                "sharedPeople": ""
+              },
+              {
+                "title": "يوميات مصاص الدماء",
+                "year": 2009,
+                "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                "sharedPeople": ""
+              },
+              {
+                "title": "The 100",
+                "year": 2014,
+                "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                "sharedPeople": ""
+              },
+              {
+                "title": "رحلة ڤيجن",
+                "year": 2026,
+                "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                "sharedPeople": ""
+              },
+              {
+                "title": "شخص محل إهتمام",
+                "year": 2011,
+                "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                "sharedPeople": ""
+              }
+            ],
+            "source": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "movie:940721": {
+      "key": "movie:940721",
+      "type": "movie",
+      "id": "940721",
+      "createdAt": "2026-11-15T19:45:53.275Z",
+      "attemptCount": 0,
+      "status": "ready",
+      "item": {
+        "id": "940721",
+        "type": "movie",
+        "name": "غودزيلا ناقص واحد",
+        "originalTitle": "ゴジラ-1.0",
+        "description": "في \"اليابان\" بعد الحرب، ينضم طيار حربي سابق يعاني من الصدمة إلى جهود المدنيين في مواجهة وحش عملاق مطور نوويًّا يهاجم شواطئهم.",
+        "date": "2023-11-03",
+        "poster": "https://image.tmdb.org/t/p/w500/hqkOUzMuCdxCDAYRUuoHDPa0qqu.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w780/oHBhHoNe59VH6bUMazDtJmWOFSS.jpg",
+        "rating": 7.621,
+        "genres": [
+          "خيال علمي",
+          "رعب",
+          "حركة"
+        ],
+        "sourceUrl": "https://www.themoviedb.org/movie/940721",
+        "source": "TMDB",
+        "popularity": 79.0448,
+        "sourceMetricName": "TMDB popularity",
+        "sourceMetricValue": 79.0448,
+        "trendConfidence": "مرتفع",
+        "trendRank": 16,
+        "fieldSources": {
+          "catalog_related_works": {
+            "source": "VIBECRITIC_D1",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:45:53.672Z"
+          }
+        },
+        "sourceVoteCount": 3658,
+        "metadata": {
+          "voteAverage": 7.621,
+          "voteCount": 3658,
+          "youtubeVideoId": null,
+          "youtubeVideoTitle": null,
+          "genres": [
+            "خيال علمي",
+            "رعب",
+            "حركة"
+          ],
+          "directors": [
+            "تاكاشي يامازاكي"
+          ],
+          "creators": [],
+          "cast": [
+            "ريونوسوكي كاميكي بدور Koichi Shikishima",
+            "مينامي هامابي بدور Noriko Oishi",
+            "يوكي يامادا بدور Shiro Mizushima",
+            "مونيتاكا أوكي بدور Sosaku Tachibana",
+            "吉岡秀隆 بدور Kenji Noda",
+            "ساكورا أندو بدور Sumiko Ota",
+            "佐々木蔵之介 بدور Yoji Akitsu"
+          ],
+          "runtime": 125,
+          "episodeRuntime": [],
+          "seasons": null,
+          "episodes": null,
+          "productionCompanies": [
+            "TOHO",
+            "TOHO Studios",
+            "Robot Communications"
+          ],
+          "watchProviders": [],
+          "watchProviderUrl": null,
+          "communityReviews": [],
+          "similar": [
+            {
+              "id": "13570",
+              "title": "Tourist Trap"
+            },
+            {
+              "id": "13688",
+              "title": "長江七號"
+            },
+            {
+              "id": "13511",
+              "title": "Rawhead Rex"
+            },
+            {
+              "id": "13666",
+              "title": "The Wolf Man"
+            },
+            {
+              "id": "13220",
+              "title": "Splinter"
+            }
+          ],
+          "catalogContext": {
+            "source": "VibeCritic D1 entertainment catalog",
+            "sourceUrl": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:45:53.672Z",
+            "base": {
+              "tmdbId": 940721,
+              "type": "movie",
+              "title": "غودزيلا ناقص واحد",
+              "originalTitle": "ゴジラ-1.0",
+              "overview": "في \"اليابان\" بعد الحرب، ينضم طيار حربي سابق يعاني من الصدمة إلى جهود المدنيين في مواجهة وحش عملاق مطور نوويًّا يهاجم شواطئهم.",
+              "releaseDate": "2023-11-03",
+              "year": 2023,
+              "runtime": 125,
+              "status": "Released",
+              "rating": 7.621,
+              "votes": 3658,
+              "popularity": 75.9272,
+              "originalLanguage": "ja",
+              "genres": [
+                "حركة",
+                "خيال علمي",
+                "رعب"
+              ],
+              "cast": [
+                "ريونوسوكي كاميكي بدور Koichi Shikishima",
+                "مينامي هامابي بدور Noriko Oishi",
+                "يوكي يامادا بدور Shiro Mizushima",
+                "مونيتاكا أوكي بدور Sosaku Tachibana",
+                "吉岡秀隆 بدور Kenji Noda",
+                "ساكورا أندو بدور Sumiko Ota",
+                "佐々木蔵之介 بدور Yoji Akitsu",
+                "永谷咲笑 بدور Akiko",
+                "田中美央 بدور Captain Tatsuo Hotta",
+                "遠藤雄弥 بدور Tadayuki Saito"
+              ],
+              "directors": [
+                "تاكاشي يامازاكي"
+              ],
+              "creators": [],
+              "updatedAt": "2026-11-15T10:18:39.242Z"
+            },
+            "relatedWorks": [
+              {
+                "tmdbId": "1381071",
+                "type": "movie",
+                "title": "غودزيلا ناقص صفر",
+                "year": 2026,
+                "sharedGenreCount": 3,
+                "sharedPersonCount": 12,
+                "sharedGenres": "رعب,حركة,خيال علمي",
+                "sharedPeople": "ريونوسوكي كاميكي,مينامي هامابي,吉岡秀隆,يوكي يامادا,佐々木蔵之介,ساكورا أندو,田中美央,永谷咲笑,مونيتاكا أوكي,飯田基祐,水橋研二,تاكاشي يامازاكي",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1423191",
+                "type": "movie",
+                "title": "ريزدنت إيفل",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "رعب,خيال علمي",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "969681",
+                "type": "movie",
+                "title": "سبايدر-مان: يوم جديد",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "حركة,خيال علمي",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1058424",
+                "type": "movie",
+                "title": "أمل",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "حركة,خيال علمي",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1507696",
+                "type": "movie",
+                "title": "نهاية العالم Z: العالم الجديد",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "رعب,حركة",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1657630",
+                "type": "movie",
+                "title": "El despertar",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "رعب,حركة",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              }
+            ],
+            "limitation": "بيانات الكتالوج تصف حقولاً فهرسية موثقة داخلياً؛ الروابط بين الأعمال مبنية على تصنيفات أو أسماء طاقم مشتركة ولا تثبت تشابهاً فنياً أو جودة أو تأثيراً."
+          },
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "movie:940721",
+            "title": "غودزيلا ناقص واحد",
+            "type": "movie",
+            "collectedAt": "2026-11-15T19:45:53.797Z",
+            "evidenceCount": 11,
+            "sourceCount": 2,
+            "sources": [
+              {
+                "name": "TMDB",
+                "url": "https://www.themoviedb.org/movie/940721"
+              },
+              {
+                "name": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "غودزيلا ناقص واحد"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/940721",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "2023-11-03"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/940721",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "في \"اليابان\" بعد الحرب، ينضم طيار حربي سابق يعاني من الصدمة إلى جهود المدنيين في مواجهة وحش عملاق مطور نوويًّا يهاجم شواطئهم."
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/940721",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "خيال علمي",
+                  "رعب",
+                  "حركة"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/940721",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "rating",
+                "label": "تقييم المصدر",
+                "value": [
+                  7.621
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/940721",
+                "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+              },
+              {
+                "key": "voteCount",
+                "label": "عدد الأصوات",
+                "value": [
+                  3658
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/940721",
+                "confidence": "مقياس حجم العينة وليس الجودة"
+              },
+              {
+                "key": "cast",
+                "label": "طاقم التمثيل",
+                "value": [
+                  "ريونوسوكي كاميكي بدور Koichi Shikishima",
+                  "مينامي هامابي بدور Noriko Oishi",
+                  "يوكي يامادا بدور Shiro Mizushima",
+                  "مونيتاكا أوكي بدور Sosaku Tachibana",
+                  "吉岡秀隆 بدور Kenji Noda",
+                  "ساكورا أندو بدور Sumiko Ota",
+                  "佐々木蔵之介 بدور Yoji Akitsu"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/940721",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "directors",
+                "label": "المخرجون",
+                "value": [
+                  "تاكاشي يامازاكي"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/940721",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "runtime",
+                "label": "مدة العرض",
+                "value": [
+                  125
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/940721",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "productionCompanies",
+                "label": "شركات الإنتاج",
+                "value": [
+                  "TOHO",
+                  "TOHO Studios",
+                  "Robot Communications"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/940721",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "relatedWorks",
+                "label": "أعمال مرتبطة",
+                "value": [
+                  {
+                    "title": "غودزيلا ناقص صفر",
+                    "year": 2026,
+                    "sharedGenres": "رعب,حركة,خيال علمي",
+                    "sharedPeople": "ريونوسوكي كاميكي,مينامي هامابي,吉岡秀隆,يوكي يامادا,佐々木蔵之介,ساكورا أندو,田中美央,永谷咲笑,مونيتاكا أوكي,飯田基祐,水橋研二,تاكاشي يامازاكي"
+                  },
+                  {
+                    "title": "ريزدنت إيفل",
+                    "year": 2026,
+                    "sharedGenres": "رعب,خيال علمي",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "سبايدر-مان: يوم جديد",
+                    "year": 2026,
+                    "sharedGenres": "حركة,خيال علمي",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "أمل",
+                    "year": 2026,
+                    "sharedGenres": "حركة,خيال علمي",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "نهاية العالم Z: العالم الجديد",
+                    "year": 2026,
+                    "sharedGenres": "رعب,حركة",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "El despertar",
+                    "year": 2026,
+                    "sharedGenres": "رعب,حركة",
+                    "sharedPeople": ""
+                  }
+                ],
+                "source": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog",
+                "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        }
+      },
+      "nextAttemptAt": 0,
+      "lastError": null,
+      "updatedAt": "2026-11-15T19:45:53.798Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "movie:940721",
+        "title": "غودزيلا ناقص واحد",
+        "type": "movie",
+        "collectedAt": "2026-11-15T19:45:53.797Z",
+        "evidenceCount": 11,
+        "sourceCount": 2,
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/940721"
+          },
+          {
+            "name": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "غودزيلا ناقص واحد"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/940721",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "2023-11-03"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/940721",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "في \"اليابان\" بعد الحرب، ينضم طيار حربي سابق يعاني من الصدمة إلى جهود المدنيين في مواجهة وحش عملاق مطور نوويًّا يهاجم شواطئهم."
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/940721",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "خيال علمي",
+              "رعب",
+              "حركة"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/940721",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "rating",
+            "label": "تقييم المصدر",
+            "value": [
+              7.621
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/940721",
+            "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+          },
+          {
+            "key": "voteCount",
+            "label": "عدد الأصوات",
+            "value": [
+              3658
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/940721",
+            "confidence": "مقياس حجم العينة وليس الجودة"
+          },
+          {
+            "key": "cast",
+            "label": "طاقم التمثيل",
+            "value": [
+              "ريونوسوكي كاميكي بدور Koichi Shikishima",
+              "مينامي هامابي بدور Noriko Oishi",
+              "يوكي يامادا بدور Shiro Mizushima",
+              "مونيتاكا أوكي بدور Sosaku Tachibana",
+              "吉岡秀隆 بدور Kenji Noda",
+              "ساكورا أندو بدور Sumiko Ota",
+              "佐々木蔵之介 بدور Yoji Akitsu"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/940721",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "directors",
+            "label": "المخرجون",
+            "value": [
+              "تاكاشي يامازاكي"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/940721",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "runtime",
+            "label": "مدة العرض",
+            "value": [
+              125
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/940721",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "productionCompanies",
+            "label": "شركات الإنتاج",
+            "value": [
+              "TOHO",
+              "TOHO Studios",
+              "Robot Communications"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/940721",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "relatedWorks",
+            "label": "أعمال مرتبطة",
+            "value": [
+              {
+                "title": "غودزيلا ناقص صفر",
+                "year": 2026,
+                "sharedGenres": "رعب,حركة,خيال علمي",
+                "sharedPeople": "ريونوسوكي كاميكي,مينامي هامابي,吉岡秀隆,يوكي يامادا,佐々木蔵之介,ساكورا أندو,田中美央,永谷咲笑,مونيتاكا أوكي,飯田基祐,水橋研二,تاكاشي يامازاكي"
+              },
+              {
+                "title": "ريزدنت إيفل",
+                "year": 2026,
+                "sharedGenres": "رعب,خيال علمي",
+                "sharedPeople": ""
+              },
+              {
+                "title": "سبايدر-مان: يوم جديد",
+                "year": 2026,
+                "sharedGenres": "حركة,خيال علمي",
+                "sharedPeople": ""
+              },
+              {
+                "title": "أمل",
+                "year": 2026,
+                "sharedGenres": "حركة,خيال علمي",
+                "sharedPeople": ""
+              },
+              {
+                "title": "نهاية العالم Z: العالم الجديد",
+                "year": 2026,
+                "sharedGenres": "رعب,حركة",
+                "sharedPeople": ""
+              },
+              {
+                "title": "El despertar",
+                "year": 2026,
+                "sharedGenres": "رعب,حركة",
+                "sharedPeople": ""
+              }
+            ],
+            "source": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "movie:1153576": {
+      "key": "movie:1153576",
+      "type": "movie",
+      "id": "1153576",
+      "createdAt": "2026-11-15T19:45:53.906Z",
+      "attemptCount": 1,
+      "status": "waiting",
+      "item": {
+        "id": "1153576",
+        "type": "movie",
+        "name": "مقاتل الشوارع",
+        "originalTitle": "Street Fighter",
+        "description": "في عام ١٩٩٣، يعود مقاتلا الشوارع ريو وكين ماسترز، اللذان انفصلا، إلى ساحة المعركة بعد أن تجندهما تشون لي الغامضة للمشاركة في بطولة المحاربين العالميين القادمة: صراعٌ وحشيٌّ بين اللكمات والقدر والغضب. لكن وراء هذه المعركة الضارية تكمن مؤامرةٌ مميتةٌ تجبرهما على مواجهة بعضهما البعض وشياطين ماضيهما. وإن لم يفعلا، فستكون النهاية!",
+        "date": "2026-10-13",
+        "poster": "https://image.tmdb.org/t/p/w500/vPaA4szXVKmVpHagQZXlCLGScgX.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w780/3BBjkQmdGacKYZtpmK2vIfuDmON.jpg",
+        "rating": 6.3,
+        "genres": [
+          "حركة",
+          "فانتازيا"
+        ],
+        "sourceUrl": "https://www.themoviedb.org/movie/1153576",
+        "source": "TMDB",
+        "popularity": 76.0561,
+        "sourceMetricName": "TMDB popularity",
+        "sourceMetricValue": 76.0561,
+        "trendConfidence": "مرتفع",
+        "trendRank": 17,
+        "fieldSources": {
+          "catalog_related_works": {
+            "source": "VIBECRITIC_D1",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:45:54.297Z"
+          }
+        },
+        "sourceVoteCount": 240,
+        "metadata": {
+          "voteAverage": 6.3,
+          "voteCount": 240,
+          "youtubeVideoId": null,
+          "youtubeVideoTitle": null,
+          "genres": [
+            "حركة",
+            "فانتازيا"
+          ],
+          "directors": [
+            "كيتاو ساكوراي"
+          ],
+          "creators": [],
+          "cast": [
+            "Andrew Koji بدور Ryu",
+            "Noah Centineo بدور Ken Masters",
+            "كالينا ليانغ بدور Chun-Li",
+            "ديفيد داستمالشيان بدور M. Bison",
+            "Andrew Schulz بدور Dan Hibiki",
+            "رومان رينز بدور Akuma",
+            "كودي رودز بدور Guile"
+          ],
+          "runtime": 120,
+          "episodeRuntime": [],
+          "seasons": null,
+          "episodes": null,
+          "productionCompanies": [
+            "Capcom",
+            "Legendary Pictures"
+          ],
+          "watchProviders": [],
+          "watchProviderUrl": null,
+          "communityReviews": [],
+          "similar": [
+            {
+              "id": "654430",
+              "title": "新關東大俠"
+            },
+            {
+              "id": "13498",
+              "title": "Man of the House"
+            },
+            {
+              "id": "13512",
+              "title": "청풍명월"
+            },
+            {
+              "id": "13514",
+              "title": "豪俠"
+            },
+            {
+              "id": "280563",
+              "title": "มือปราบ 2 แผ่นดิน"
+            }
+          ],
+          "catalogContext": {
+            "source": "VibeCritic D1 entertainment catalog",
+            "sourceUrl": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:45:54.297Z",
+            "base": {
+              "tmdbId": 1153576,
+              "type": "movie",
+              "title": "مقاتل الشوارع",
+              "originalTitle": "Street Fighter",
+              "overview": "في عام ١٩٩٣، يعود مقاتلا الشوارع ريو وكين ماسترز، اللذان انفصلا، إلى ساحة المعركة بعد أن تجندهما تشون لي الغامضة للمشاركة في بطولة المحاربين العالميين القادمة: صراعٌ وحشيٌّ بين اللكمات والقدر والغضب. لكن وراء هذه المعركة الضارية تكمن مؤامرةٌ مميتةٌ تجبرهما على مواجهة بعضهما البعض وشياطين ماضيهما. وإن لم يفعلا، فستكون النهاية!",
+              "releaseDate": "2026-10-13",
+              "year": 2026,
+              "runtime": 120,
+              "status": "Released",
+              "rating": 6.3,
+              "votes": 240,
+              "popularity": 77.9786,
+              "originalLanguage": "en",
+              "genres": [
+                "حركة",
+                "فانتازيا"
+              ],
+              "cast": [
+                "Andrew Koji بدور Ryu",
+                "Noah Centineo بدور Ken Masters",
+                "كالينا ليانغ بدور Chun-Li",
+                "ديفيد داستمالشيان بدور M. Bison",
+                "Andrew Schulz بدور Dan Hibiki",
+                "رومان رينز بدور Akuma",
+                "كودي رودز بدور Guile",
+                "جايسون موموا بدور Blanka",
+                "إريك أندريه بدور Don Sauvage",
+                "٥٠ سنت بدور Balrog"
+              ],
+              "directors": [
+                "كيتاو ساكوراي"
+              ],
+              "creators": [],
+              "updatedAt": "2026-11-15T10:18:39.242Z"
+            },
+            "relatedWorks": [
+              {
+                "tmdbId": "1368337",
+                "type": "movie",
+                "title": "الأوديسة",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "فانتازيا,حركة",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1657630",
+                "type": "movie",
+                "title": "El despertar",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "فانتازيا,حركة",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "980431",
+                "type": "movie",
+                "title": "أفاتار آنج: الإيربندر الأخير",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "فانتازيا,حركة",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "494656",
+                "type": "movie",
+                "title": "La leyenda del Charro Negro",
+                "year": 2018,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "فانتازيا,حركة",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "969681",
+                "type": "movie",
+                "title": "سبايدر-مان: يوم جديد",
+                "year": 2026,
+                "sharedGenreCount": 1,
+                "sharedPersonCount": 0,
+                "sharedGenres": "حركة",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1058424",
+                "type": "movie",
+                "title": "أمل",
+                "year": 2026,
+                "sharedGenreCount": 1,
+                "sharedPersonCount": 0,
+                "sharedGenres": "حركة",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              }
+            ],
+            "limitation": "بيانات الكتالوج تصف حقولاً فهرسية موثقة داخلياً؛ الروابط بين الأعمال مبنية على تصنيفات أو أسماء طاقم مشتركة ولا تثبت تشابهاً فنياً أو جودة أو تأثيراً."
+          },
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "movie:1153576",
+            "title": "مقاتل الشوارع",
+            "type": "movie",
+            "collectedAt": "2026-11-15T19:45:54.446Z",
+            "evidenceCount": 11,
+            "sourceCount": 2,
+            "sources": [
+              {
+                "name": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1153576"
+              },
+              {
+                "name": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "مقاتل الشوارع"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1153576",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "2026-10-13"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1153576",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "في عام ١٩٩٣، يعود مقاتلا الشوارع ريو وكين ماسترز، اللذان انفصلا، إلى ساحة المعركة بعد أن تجندهما تشون لي الغامضة للمشاركة في بطولة المحاربين العالميين القادمة: صراعٌ وحشيٌّ بين اللكمات والقدر والغضب. لكن وراء هذه المعركة الضارية تكمن مؤامرةٌ مميتةٌ تجبرهما على مواجهة بعضهما البعض وشياطين ماضيهما. وإن لم يفعلا، فستكون النهاية!"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1153576",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "حركة",
+                  "فانتازيا"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1153576",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "rating",
+                "label": "تقييم المصدر",
+                "value": [
+                  6.3
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1153576",
+                "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+              },
+              {
+                "key": "voteCount",
+                "label": "عدد الأصوات",
+                "value": [
+                  240
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1153576",
+                "confidence": "مقياس حجم العينة وليس الجودة"
+              },
+              {
+                "key": "cast",
+                "label": "طاقم التمثيل",
+                "value": [
+                  "Andrew Koji بدور Ryu",
+                  "Noah Centineo بدور Ken Masters",
+                  "كالينا ليانغ بدور Chun-Li",
+                  "ديفيد داستمالشيان بدور M. Bison",
+                  "Andrew Schulz بدور Dan Hibiki",
+                  "رومان رينز بدور Akuma",
+                  "كودي رودز بدور Guile"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1153576",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "directors",
+                "label": "المخرجون",
+                "value": [
+                  "كيتاو ساكوراي"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1153576",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "runtime",
+                "label": "مدة العرض",
+                "value": [
+                  120
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1153576",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "productionCompanies",
+                "label": "شركات الإنتاج",
+                "value": [
+                  "Capcom",
+                  "Legendary Pictures"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1153576",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "relatedWorks",
+                "label": "أعمال مرتبطة",
+                "value": [
+                  {
+                    "title": "الأوديسة",
+                    "year": 2026,
+                    "sharedGenres": "فانتازيا,حركة",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "El despertar",
+                    "year": 2026,
+                    "sharedGenres": "فانتازيا,حركة",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "أفاتار آنج: الإيربندر الأخير",
+                    "year": 2026,
+                    "sharedGenres": "فانتازيا,حركة",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "La leyenda del Charro Negro",
+                    "year": 2018,
+                    "sharedGenres": "فانتازيا,حركة",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "سبايدر-مان: يوم جديد",
+                    "year": 2026,
+                    "sharedGenres": "حركة",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "أمل",
+                    "year": 2026,
+                    "sharedGenres": "حركة",
+                    "sharedPeople": ""
+                  }
+                ],
+                "source": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog",
+                "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        }
+      },
+      "nextAttemptAt": 1794772121340,
+      "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
+      "updatedAt": "2026-11-15T19:45:54.892Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "movie:1153576",
+        "title": "مقاتل الشوارع",
+        "type": "movie",
+        "collectedAt": "2026-11-15T19:45:54.446Z",
+        "evidenceCount": 11,
+        "sourceCount": 2,
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1153576"
+          },
+          {
+            "name": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "مقاتل الشوارع"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1153576",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "2026-10-13"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1153576",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "في عام ١٩٩٣، يعود مقاتلا الشوارع ريو وكين ماسترز، اللذان انفصلا، إلى ساحة المعركة بعد أن تجندهما تشون لي الغامضة للمشاركة في بطولة المحاربين العالميين القادمة: صراعٌ وحشيٌّ بين اللكمات والقدر والغضب. لكن وراء هذه المعركة الضارية تكمن مؤامرةٌ مميتةٌ تجبرهما على مواجهة بعضهما البعض وشياطين ماضيهما. وإن لم يفعلا، فستكون النهاية!"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1153576",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "حركة",
+              "فانتازيا"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1153576",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "rating",
+            "label": "تقييم المصدر",
+            "value": [
+              6.3
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1153576",
+            "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+          },
+          {
+            "key": "voteCount",
+            "label": "عدد الأصوات",
+            "value": [
+              240
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1153576",
+            "confidence": "مقياس حجم العينة وليس الجودة"
+          },
+          {
+            "key": "cast",
+            "label": "طاقم التمثيل",
+            "value": [
+              "Andrew Koji بدور Ryu",
+              "Noah Centineo بدور Ken Masters",
+              "كالينا ليانغ بدور Chun-Li",
+              "ديفيد داستمالشيان بدور M. Bison",
+              "Andrew Schulz بدور Dan Hibiki",
+              "رومان رينز بدور Akuma",
+              "كودي رودز بدور Guile"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1153576",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "directors",
+            "label": "المخرجون",
+            "value": [
+              "كيتاو ساكوراي"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1153576",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "runtime",
+            "label": "مدة العرض",
+            "value": [
+              120
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1153576",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "productionCompanies",
+            "label": "شركات الإنتاج",
+            "value": [
+              "Capcom",
+              "Legendary Pictures"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1153576",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "relatedWorks",
+            "label": "أعمال مرتبطة",
+            "value": [
+              {
+                "title": "الأوديسة",
+                "year": 2026,
+                "sharedGenres": "فانتازيا,حركة",
+                "sharedPeople": ""
+              },
+              {
+                "title": "El despertar",
+                "year": 2026,
+                "sharedGenres": "فانتازيا,حركة",
+                "sharedPeople": ""
+              },
+              {
+                "title": "أفاتار آنج: الإيربندر الأخير",
+                "year": 2026,
+                "sharedGenres": "فانتازيا,حركة",
+                "sharedPeople": ""
+              },
+              {
+                "title": "La leyenda del Charro Negro",
+                "year": 2018,
+                "sharedGenres": "فانتازيا,حركة",
+                "sharedPeople": ""
+              },
+              {
+                "title": "سبايدر-مان: يوم جديد",
+                "year": 2026,
+                "sharedGenres": "حركة",
+                "sharedPeople": ""
+              },
+              {
+                "title": "أمل",
+                "year": 2026,
+                "sharedGenres": "حركة",
+                "sharedPeople": ""
+              }
+            ],
+            "source": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "movie:791523": {
+      "key": "movie:791523",
+      "type": "movie",
+      "id": "791523",
+      "createdAt": "2026-11-15T19:45:54.896Z",
+      "attemptCount": 1,
+      "status": "waiting",
+      "item": {
+        "id": "791523",
+        "type": "movie",
+        "name": "وايلدوود",
+        "originalTitle": "Wildwood",
+        "description": "حين تختطف أسراب الغربان شقيقها الرضيع، تندفع مراهقة عنيدة مع زميلها إلى غابة سحرية خفية على أطراف بورتلاند، ليجدا نفسيهما وسط حرب أهلية تتأجج بين جيش من الذئاب البرية وعصابة من الخارجين عن القانون.",
+        "date": "2026-10-19",
+        "poster": "https://image.tmdb.org/t/p/w500/oUzqytDaDFxZriDIZky06kAko6h.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w780/sl5NJ1vtyhP9Vr88bB4blULsJYp.jpg",
+        "rating": 8.5,
+        "genres": [
+          "رسوم متحركة",
+          "فانتازيا",
+          "مغامرة"
+        ],
+        "sourceUrl": "https://www.themoviedb.org/movie/791523",
+        "source": "TMDB",
+        "popularity": 75.4331,
+        "sourceMetricName": "TMDB popularity",
+        "sourceMetricValue": 75.4331,
+        "trendConfidence": "مرتفع",
+        "trendRank": 12,
+        "fieldSources": {
+          "catalog_related_works": {
+            "source": "VIBECRITIC_D1",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:45:55.266Z"
+          }
+        },
+        "sourceVoteCount": 278,
+        "metadata": {
+          "voteAverage": 8.5,
+          "voteCount": 278,
+          "youtubeVideoId": null,
+          "youtubeVideoTitle": null,
+          "genres": [
+            "رسوم متحركة",
+            "فانتازيا",
+            "مغامرة"
+          ],
+          "directors": [
+            "ترافيس ونايت"
+          ],
+          "creators": [],
+          "cast": [
+            "بيتون إليزابيث لي بدور Prue McKeel (voice)",
+            "جيكوب تريمبلاي بدور Curtis Mehlberg (voice)",
+            "كاري موليجان بدور Alexandra (voice)",
+            "ماهرشالا علي بدور Brenden (voice)",
+            "ريتشارد جرانت بدور Owl Rex (voice)",
+            "أنجيلا باسيت بدور The General (voice)",
+            "أوكوافينا بدور Septima (voice)"
+          ],
+          "runtime": 132,
+          "episodeRuntime": [],
+          "seasons": null,
+          "episodes": null,
+          "productionCompanies": [
+            "LAIKA"
+          ],
+          "watchProviders": [],
+          "watchProviderUrl": null,
+          "communityReviews": [],
+          "similar": [
+            {
+              "id": "12",
+              "title": "البحث عن نيمو"
+            },
+            {
+              "id": "454040",
+              "title": "Alice in Not So Wonderland"
+            },
+            {
+              "id": "1038039",
+              "title": "男神游戏"
+            },
+            {
+              "id": "134",
+              "title": "O Brother, Where Art Thou?"
+            },
+            {
+              "id": "453967",
+              "title": "Cassini's Grand Finale"
+            }
+          ],
+          "catalogContext": {
+            "source": "VibeCritic D1 entertainment catalog",
+            "sourceUrl": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:45:55.266Z",
+            "base": {
+              "tmdbId": 791523,
+              "type": "movie",
+              "title": "وايلدوود",
+              "originalTitle": "Wildwood",
+              "overview": "حين تختطف أسراب الغربان شقيقها الرضيع، تندفع مراهقة عنيدة مع زميلها إلى غابة سحرية خفية على أطراف بورتلاند، ليجدا نفسيهما وسط حرب أهلية تتأجج بين جيش من الذئاب البرية وعصابة من الخارجين عن القانون.",
+              "releaseDate": "2026-10-19",
+              "year": 2026,
+              "runtime": 132,
+              "status": "Released",
+              "rating": 8.5,
+              "votes": 278,
+              "popularity": 85.5531,
+              "originalLanguage": "en",
+              "genres": [
+                "رسوم متحركة",
+                "فانتازيا",
+                "مغامرة"
+              ],
+              "cast": [
+                "بيتون إليزابيث لي بدور Prue McKeel (voice)",
+                "جيكوب تريمبلاي بدور Curtis Mehlberg (voice)",
+                "كاري موليجان بدور Alexandra (voice)",
+                "ماهرشالا علي بدور Brenden (voice)",
+                "ريتشارد جرانت بدور Owl Rex (voice)",
+                "أنجيلا باسيت بدور The General (voice)",
+                "أوكوافينا بدور Septima (voice)",
+                "أماندلا ستينبرغ بدور Niamh (voice)",
+                "توم وايتس بدور Maxim (voice)",
+                "Charlie Day بدور Dmitri (voice)"
+              ],
+              "directors": [
+                "ترافيس ونايت"
+              ],
+              "creators": [],
+              "updatedAt": "2026-11-15T10:18:39.242Z"
+            },
+            "relatedWorks": [
+              {
+                "tmdbId": "1108427",
+                "type": "movie",
+                "title": "فلم موانا",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 1,
+                "sharedGenres": "مغامرة,فانتازيا",
+                "sharedPeople": "جيماين كليمان",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1413",
+                "type": "series",
+                "title": "قصة رعب امريكية",
+                "year": 2011,
+                "sharedGenreCount": 0,
+                "sharedPersonCount": 1,
+                "sharedGenres": "",
+                "sharedPeople": "أنجيلا باسيت",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "891621",
+                "type": "movie",
+                "title": "الحصان البري التاسع",
+                "year": 2026,
+                "sharedGenreCount": 0,
+                "sharedPersonCount": 1,
+                "sharedGenres": "",
+                "sharedPeople": "توم وايتس",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1465063",
+                "type": "movie",
+                "title": "Forgotten Island",
+                "year": 2026,
+                "sharedGenreCount": 3,
+                "sharedPersonCount": 0,
+                "sharedGenres": "مغامرة,فانتازيا,رسوم متحركة",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1315772",
+                "type": "movie",
+                "title": "المينيون والوحوش",
+                "year": 2026,
+                "sharedGenreCount": 3,
+                "sharedPersonCount": 0,
+                "sharedGenres": "مغامرة,فانتازيا,رسوم متحركة",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "980431",
+                "type": "movie",
+                "title": "أفاتار آنج: الإيربندر الأخير",
+                "year": 2026,
+                "sharedGenreCount": 3,
+                "sharedPersonCount": 0,
+                "sharedGenres": "مغامرة,فانتازيا,رسوم متحركة",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              }
+            ],
+            "limitation": "بيانات الكتالوج تصف حقولاً فهرسية موثقة داخلياً؛ الروابط بين الأعمال مبنية على تصنيفات أو أسماء طاقم مشتركة ولا تثبت تشابهاً فنياً أو جودة أو تأثيراً."
+          },
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "movie:791523",
+            "title": "وايلدوود",
+            "type": "movie",
+            "collectedAt": "2026-11-15T19:45:55.400Z",
+            "evidenceCount": 11,
+            "sourceCount": 2,
+            "sources": [
+              {
+                "name": "TMDB",
+                "url": "https://www.themoviedb.org/movie/791523"
+              },
+              {
+                "name": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "وايلدوود"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/791523",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "2026-10-19"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/791523",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "حين تختطف أسراب الغربان شقيقها الرضيع، تندفع مراهقة عنيدة مع زميلها إلى غابة سحرية خفية على أطراف بورتلاند، ليجدا نفسيهما وسط حرب أهلية تتأجج بين جيش من الذئاب البرية وعصابة من الخارجين عن القانون."
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/791523",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "رسوم متحركة",
+                  "فانتازيا",
+                  "مغامرة"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/791523",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "rating",
+                "label": "تقييم المصدر",
+                "value": [
+                  8.5
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/791523",
+                "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+              },
+              {
+                "key": "voteCount",
+                "label": "عدد الأصوات",
+                "value": [
+                  278
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/791523",
+                "confidence": "مقياس حجم العينة وليس الجودة"
+              },
+              {
+                "key": "cast",
+                "label": "طاقم التمثيل",
+                "value": [
+                  "بيتون إليزابيث لي بدور Prue McKeel (voice)",
+                  "جيكوب تريمبلاي بدور Curtis Mehlberg (voice)",
+                  "كاري موليجان بدور Alexandra (voice)",
+                  "ماهرشالا علي بدور Brenden (voice)",
+                  "ريتشارد جرانت بدور Owl Rex (voice)",
+                  "أنجيلا باسيت بدور The General (voice)",
+                  "أوكوافينا بدور Septima (voice)"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/791523",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "directors",
+                "label": "المخرجون",
+                "value": [
+                  "ترافيس ونايت"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/791523",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "runtime",
+                "label": "مدة العرض",
+                "value": [
+                  132
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/791523",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "productionCompanies",
+                "label": "شركات الإنتاج",
+                "value": [
+                  "LAIKA"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/791523",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "relatedWorks",
+                "label": "أعمال مرتبطة",
+                "value": [
+                  {
+                    "title": "فلم موانا",
+                    "year": 2026,
+                    "sharedGenres": "مغامرة,فانتازيا",
+                    "sharedPeople": "جيماين كليمان"
+                  },
+                  {
+                    "title": "قصة رعب امريكية",
+                    "year": 2011,
+                    "sharedGenres": "",
+                    "sharedPeople": "أنجيلا باسيت"
+                  },
+                  {
+                    "title": "الحصان البري التاسع",
+                    "year": 2026,
+                    "sharedGenres": "",
+                    "sharedPeople": "توم وايتس"
+                  },
+                  {
+                    "title": "Forgotten Island",
+                    "year": 2026,
+                    "sharedGenres": "مغامرة,فانتازيا,رسوم متحركة",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "المينيون والوحوش",
+                    "year": 2026,
+                    "sharedGenres": "مغامرة,فانتازيا,رسوم متحركة",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "أفاتار آنج: الإيربندر الأخير",
+                    "year": 2026,
+                    "sharedGenres": "مغامرة,فانتازيا,رسوم متحركة",
+                    "sharedPeople": ""
+                  }
+                ],
+                "source": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog",
+                "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        }
+      },
+      "nextAttemptAt": 1794772121340,
+      "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
+      "updatedAt": "2026-11-15T19:45:55.870Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "movie:791523",
+        "title": "وايلدوود",
+        "type": "movie",
+        "collectedAt": "2026-11-15T19:45:55.400Z",
+        "evidenceCount": 11,
+        "sourceCount": 2,
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/791523"
+          },
+          {
+            "name": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "وايلدوود"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/791523",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "2026-10-19"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/791523",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "حين تختطف أسراب الغربان شقيقها الرضيع، تندفع مراهقة عنيدة مع زميلها إلى غابة سحرية خفية على أطراف بورتلاند، ليجدا نفسيهما وسط حرب أهلية تتأجج بين جيش من الذئاب البرية وعصابة من الخارجين عن القانون."
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/791523",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "رسوم متحركة",
+              "فانتازيا",
+              "مغامرة"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/791523",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "rating",
+            "label": "تقييم المصدر",
+            "value": [
+              8.5
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/791523",
+            "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+          },
+          {
+            "key": "voteCount",
+            "label": "عدد الأصوات",
+            "value": [
+              278
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/791523",
+            "confidence": "مقياس حجم العينة وليس الجودة"
+          },
+          {
+            "key": "cast",
+            "label": "طاقم التمثيل",
+            "value": [
+              "بيتون إليزابيث لي بدور Prue McKeel (voice)",
+              "جيكوب تريمبلاي بدور Curtis Mehlberg (voice)",
+              "كاري موليجان بدور Alexandra (voice)",
+              "ماهرشالا علي بدور Brenden (voice)",
+              "ريتشارد جرانت بدور Owl Rex (voice)",
+              "أنجيلا باسيت بدور The General (voice)",
+              "أوكوافينا بدور Septima (voice)"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/791523",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "directors",
+            "label": "المخرجون",
+            "value": [
+              "ترافيس ونايت"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/791523",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "runtime",
+            "label": "مدة العرض",
+            "value": [
+              132
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/791523",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "productionCompanies",
+            "label": "شركات الإنتاج",
+            "value": [
+              "LAIKA"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/791523",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "relatedWorks",
+            "label": "أعمال مرتبطة",
+            "value": [
+              {
+                "title": "فلم موانا",
+                "year": 2026,
+                "sharedGenres": "مغامرة,فانتازيا",
+                "sharedPeople": "جيماين كليمان"
+              },
+              {
+                "title": "قصة رعب امريكية",
+                "year": 2011,
+                "sharedGenres": "",
+                "sharedPeople": "أنجيلا باسيت"
+              },
+              {
+                "title": "الحصان البري التاسع",
+                "year": 2026,
+                "sharedGenres": "",
+                "sharedPeople": "توم وايتس"
+              },
+              {
+                "title": "Forgotten Island",
+                "year": 2026,
+                "sharedGenres": "مغامرة,فانتازيا,رسوم متحركة",
+                "sharedPeople": ""
+              },
+              {
+                "title": "المينيون والوحوش",
+                "year": 2026,
+                "sharedGenres": "مغامرة,فانتازيا,رسوم متحركة",
+                "sharedPeople": ""
+              },
+              {
+                "title": "أفاتار آنج: الإيربندر الأخير",
+                "year": 2026,
+                "sharedGenres": "مغامرة,فانتازيا,رسوم متحركة",
+                "sharedPeople": ""
+              }
+            ],
+            "source": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "movie:1339713": {
+      "key": "movie:1339713",
+      "type": "movie",
+      "id": "1339713",
+      "createdAt": "2026-11-15T19:45:55.874Z",
+      "attemptCount": 1,
+      "status": "waiting",
+      "item": {
+        "id": "1339713",
+        "type": "movie",
+        "name": "هوس",
+        "originalTitle": "Obsession",
+        "description": "بعد أن كسر غصنًا من ’صفصافة الأمنية الواحدة‘ الغامضة ليفوز بقلب الفتاة التي يعشقها، يجد رومانسي يائس نفسه يحصل على ما طلب تمامًا، لكنه سرعان ما يكتشف أن بعض الرغبات تأتي بثمن باهظ ومظلم",
+        "date": "2026-05-13",
+        "poster": "https://image.tmdb.org/t/p/w500/qukypUmPwd21UnNTRvUdZHd4pNJ.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w780/5lTZyuBTNOfawsfPT8Q0cIg6qAF.jpg",
+        "rating": 8.2,
+        "genres": [
+          "رعب",
+          "إثارة"
+        ],
+        "sourceUrl": "https://www.themoviedb.org/movie/1339713",
+        "source": "TMDB",
+        "popularity": 72.8123,
+        "sourceMetricName": "TMDB popularity",
+        "sourceMetricValue": 72.8123,
+        "trendConfidence": "مرتفع",
+        "trendRank": 19,
+        "fieldSources": {
+          "catalog_related_works": {
+            "source": "VIBECRITIC_D1",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:45:56.228Z"
+          }
+        },
+        "sourceVoteCount": 6622,
+        "metadata": {
+          "voteAverage": 8.2,
+          "voteCount": 6622,
+          "youtubeVideoId": null,
+          "youtubeVideoTitle": null,
+          "genres": [
+            "رعب",
+            "إثارة"
+          ],
+          "directors": [
+            "Curry Barker"
+          ],
+          "creators": [],
+          "cast": [
+            "مايكل جونستون بدور Bear",
+            "إندي نافاريت بدور Nikki",
+            "Cooper Tomlinson بدور Ian",
+            "Megan Lawless بدور Sarah",
+            "Andy Richter بدور Carter",
+            "Haley Fitzgerald بدور Viola",
+            "Darin Toonder بدور Harry"
+          ],
+          "runtime": 109,
+          "episodeRuntime": [],
+          "seasons": null,
+          "episodes": null,
+          "productionCompanies": [
+            "Tea Shop Productions",
+            "Under the Shell",
+            "Capstone Pictures",
+            "Blumhouse Productions"
+          ],
+          "watchProviders": [],
+          "watchProviderUrl": null,
+          "communityReviews": [],
+          "similar": [
+            {
+              "id": "1432291",
+              "title": "Welcome to Squallitch"
+            },
+            {
+              "id": "1813",
+              "title": "محامي الشيطان"
+            },
+            {
+              "id": "643586",
+              "title": "Willy's Wonderland"
+            },
+            {
+              "id": "839828",
+              "title": "Jagat Arwah"
+            },
+            {
+              "id": "1923",
+              "title": "Twin Peaks: Fire Walk with Me"
+            }
+          ],
+          "catalogContext": {
+            "source": "VibeCritic D1 entertainment catalog",
+            "sourceUrl": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:45:56.228Z",
+            "base": {
+              "tmdbId": 1339713,
+              "type": "movie",
+              "title": "هوس",
+              "originalTitle": "Obsession",
+              "overview": "بعد أن كسر غصنًا من ’صفصافة الأمنية الواحدة‘ الغامضة ليفوز بقلب الفتاة التي يعشقها، يجد رومانسي يائس نفسه يحصل على ما طلب تمامًا، لكنه سرعان ما يكتشف أن بعض الرغبات تأتي بثمن باهظ ومظلم",
+              "releaseDate": "2026-05-13",
+              "year": 2026,
+              "runtime": 109,
+              "status": "Released",
+              "rating": 8.2,
+              "votes": 6622,
+              "popularity": 74.3717,
+              "originalLanguage": "en",
+              "genres": [
+                "إثارة",
+                "رعب"
+              ],
+              "cast": [
+                "مايكل جونستون بدور Bear",
+                "إندي نافاريت بدور Nikki",
+                "Cooper Tomlinson بدور Ian",
+                "Megan Lawless بدور Sarah",
+                "Andy Richter بدور Carter",
+                "Haley Fitzgerald بدور Viola",
+                "Darin Toonder بدور Harry",
+                "Anthony Pavone بدور Reggie",
+                "Justice بدور Joe",
+                "Anthony Casabianca بدور Chris"
+              ],
+              "directors": [
+                "Curry Barker"
+              ],
+              "creators": [],
+              "updatedAt": "2026-11-15T10:18:39.242Z"
+            },
+            "relatedWorks": [
+              {
+                "tmdbId": "1507696",
+                "type": "movie",
+                "title": "نهاية العالم Z: العالم الجديد",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "رعب,إثارة",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1657630",
+                "type": "movie",
+                "title": "El despertar",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "رعب,إثارة",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1291595",
+                "type": "movie",
+                "title": "Insidious: Out of the Further",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "رعب,إثارة",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1400940",
+                "type": "movie",
+                "title": "كلايفيس",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "رعب,إثارة",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "9674",
+                "type": "movie",
+                "title": "リング０　バースデイ",
+                "year": 2000,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "رعب,إثارة",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1284046",
+                "type": "movie",
+                "title": "Onslaught",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "رعب,إثارة",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              }
+            ],
+            "limitation": "بيانات الكتالوج تصف حقولاً فهرسية موثقة داخلياً؛ الروابط بين الأعمال مبنية على تصنيفات أو أسماء طاقم مشتركة ولا تثبت تشابهاً فنياً أو جودة أو تأثيراً."
+          },
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "movie:1339713",
+            "title": "هوس",
+            "type": "movie",
+            "collectedAt": "2026-11-15T19:45:56.368Z",
+            "evidenceCount": 11,
+            "sourceCount": 2,
+            "sources": [
+              {
+                "name": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1339713"
+              },
+              {
+                "name": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "هوس"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1339713",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "2026-05-13"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1339713",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "بعد أن كسر غصنًا من ’صفصافة الأمنية الواحدة‘ الغامضة ليفوز بقلب الفتاة التي يعشقها، يجد رومانسي يائس نفسه يحصل على ما طلب تمامًا، لكنه سرعان ما يكتشف أن بعض الرغبات تأتي بثمن باهظ ومظلم"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1339713",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "رعب",
+                  "إثارة"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1339713",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "rating",
+                "label": "تقييم المصدر",
+                "value": [
+                  8.2
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1339713",
+                "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+              },
+              {
+                "key": "voteCount",
+                "label": "عدد الأصوات",
+                "value": [
+                  6622
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1339713",
+                "confidence": "مقياس حجم العينة وليس الجودة"
+              },
+              {
+                "key": "cast",
+                "label": "طاقم التمثيل",
+                "value": [
+                  "مايكل جونستون بدور Bear",
+                  "إندي نافاريت بدور Nikki",
+                  "Cooper Tomlinson بدور Ian",
+                  "Megan Lawless بدور Sarah",
+                  "Andy Richter بدور Carter",
+                  "Haley Fitzgerald بدور Viola",
+                  "Darin Toonder بدور Harry"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1339713",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "directors",
+                "label": "المخرجون",
+                "value": [
+                  "Curry Barker"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1339713",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "runtime",
+                "label": "مدة العرض",
+                "value": [
+                  109
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1339713",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "productionCompanies",
+                "label": "شركات الإنتاج",
+                "value": [
+                  "Tea Shop Productions",
+                  "Under the Shell",
+                  "Capstone Pictures",
+                  "Blumhouse Productions"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1339713",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "relatedWorks",
+                "label": "أعمال مرتبطة",
+                "value": [
+                  {
+                    "title": "نهاية العالم Z: العالم الجديد",
+                    "year": 2026,
+                    "sharedGenres": "رعب,إثارة",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "El despertar",
+                    "year": 2026,
+                    "sharedGenres": "رعب,إثارة",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "Insidious: Out of the Further",
+                    "year": 2026,
+                    "sharedGenres": "رعب,إثارة",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "كلايفيس",
+                    "year": 2026,
+                    "sharedGenres": "رعب,إثارة",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "リング０　バースデイ",
+                    "year": 2000,
+                    "sharedGenres": "رعب,إثارة",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "Onslaught",
+                    "year": 2026,
+                    "sharedGenres": "رعب,إثارة",
+                    "sharedPeople": ""
+                  }
+                ],
+                "source": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog",
+                "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        }
+      },
+      "nextAttemptAt": 1794772121340,
+      "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
+      "updatedAt": "2026-11-15T19:45:56.800Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "movie:1339713",
+        "title": "هوس",
+        "type": "movie",
+        "collectedAt": "2026-11-15T19:45:56.368Z",
+        "evidenceCount": 11,
+        "sourceCount": 2,
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1339713"
+          },
+          {
+            "name": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "هوس"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1339713",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "2026-05-13"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1339713",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "بعد أن كسر غصنًا من ’صفصافة الأمنية الواحدة‘ الغامضة ليفوز بقلب الفتاة التي يعشقها، يجد رومانسي يائس نفسه يحصل على ما طلب تمامًا، لكنه سرعان ما يكتشف أن بعض الرغبات تأتي بثمن باهظ ومظلم"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1339713",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "رعب",
+              "إثارة"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1339713",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "rating",
+            "label": "تقييم المصدر",
+            "value": [
+              8.2
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1339713",
+            "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+          },
+          {
+            "key": "voteCount",
+            "label": "عدد الأصوات",
+            "value": [
+              6622
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1339713",
+            "confidence": "مقياس حجم العينة وليس الجودة"
+          },
+          {
+            "key": "cast",
+            "label": "طاقم التمثيل",
+            "value": [
+              "مايكل جونستون بدور Bear",
+              "إندي نافاريت بدور Nikki",
+              "Cooper Tomlinson بدور Ian",
+              "Megan Lawless بدور Sarah",
+              "Andy Richter بدور Carter",
+              "Haley Fitzgerald بدور Viola",
+              "Darin Toonder بدور Harry"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1339713",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "directors",
+            "label": "المخرجون",
+            "value": [
+              "Curry Barker"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1339713",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "runtime",
+            "label": "مدة العرض",
+            "value": [
+              109
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1339713",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "productionCompanies",
+            "label": "شركات الإنتاج",
+            "value": [
+              "Tea Shop Productions",
+              "Under the Shell",
+              "Capstone Pictures",
+              "Blumhouse Productions"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1339713",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "relatedWorks",
+            "label": "أعمال مرتبطة",
+            "value": [
+              {
+                "title": "نهاية العالم Z: العالم الجديد",
+                "year": 2026,
+                "sharedGenres": "رعب,إثارة",
+                "sharedPeople": ""
+              },
+              {
+                "title": "El despertar",
+                "year": 2026,
+                "sharedGenres": "رعب,إثارة",
+                "sharedPeople": ""
+              },
+              {
+                "title": "Insidious: Out of the Further",
+                "year": 2026,
+                "sharedGenres": "رعب,إثارة",
+                "sharedPeople": ""
+              },
+              {
+                "title": "كلايفيس",
+                "year": 2026,
+                "sharedGenres": "رعب,إثارة",
+                "sharedPeople": ""
+              },
+              {
+                "title": "リング０　バースデイ",
+                "year": 2000,
+                "sharedGenres": "رعب,إثارة",
+                "sharedPeople": ""
+              },
+              {
+                "title": "Onslaught",
+                "year": 2026,
+                "sharedGenres": "رعب,إثارة",
                 "sharedPeople": ""
               }
             ],

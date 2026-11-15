@@ -1,0 +1,179 @@
+{
+  "version": 1,
+  "workKey": "movie:791523",
+  "title": "وايلدوود",
+  "type": "movie",
+  "collectedAt": "2026-11-15T19:45:55.400Z",
+  "evidenceCount": 11,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/movie/791523"
+    },
+    {
+      "name": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "وايلدوود"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/791523",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2026-10-19"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/791523",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "حين تختطف أسراب الغربان شقيقها الرضيع، تندفع مراهقة عنيدة مع زميلها إلى غابة سحرية خفية على أطراف بورتلاند، ليجدا نفسيهما وسط حرب أهلية تتأجج بين جيش من الذئاب البرية وعصابة من الخارجين عن القانون."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/791523",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "رسوم متحركة",
+        "فانتازيا",
+        "مغامرة"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/791523",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        8.5
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/791523",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        278
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/791523",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "بيتون إليزابيث لي بدور Prue McKeel (voice)",
+        "جيكوب تريمبلاي بدور Curtis Mehlberg (voice)",
+        "كاري موليجان بدور Alexandra (voice)",
+        "ماهرشالا علي بدور Brenden (voice)",
+        "ريتشارد جرانت بدور Owl Rex (voice)",
+        "أنجيلا باسيت بدور The General (voice)",
+        "أوكوافينا بدور Septima (voice)"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/791523",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "directors",
+      "label": "المخرجون",
+      "value": [
+        "ترافيس ونايت"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/791523",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "runtime",
+      "label": "مدة العرض",
+      "value": [
+        132
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/791523",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "LAIKA"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/791523",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "relatedWorks",
+      "label": "أعمال مرتبطة",
+      "value": [
+        {
+          "title": "فلم موانا",
+          "year": 2026,
+          "sharedGenres": "مغامرة,فانتازيا",
+          "sharedPeople": "جيماين كليمان"
+        },
+        {
+          "title": "قصة رعب امريكية",
+          "year": 2011,
+          "sharedGenres": "",
+          "sharedPeople": "أنجيلا باسيت"
+        },
+        {
+          "title": "الحصان البري التاسع",
+          "year": 2026,
+          "sharedGenres": "",
+          "sharedPeople": "توم وايتس"
+        },
+        {
+          "title": "Forgotten Island",
+          "year": 2026,
+          "sharedGenres": "مغامرة,فانتازيا,رسوم متحركة",
+          "sharedPeople": ""
+        },
+        {
+          "title": "المينيون والوحوش",
+          "year": 2026,
+          "sharedGenres": "مغامرة,فانتازيا,رسوم متحركة",
+          "sharedPeople": ""
+        },
+        {
+          "title": "أفاتار آنج: الإيربندر الأخير",
+          "year": 2026,
+          "sharedGenres": "مغامرة,فانتازيا,رسوم متحركة",
+          "sharedPeople": ""
+        }
+      ],
+      "source": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

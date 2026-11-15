@@ -1,0 +1,179 @@
+{
+  "version": 1,
+  "workKey": "movie:1153576",
+  "title": "مقاتل الشوارع",
+  "type": "movie",
+  "collectedAt": "2026-11-15T19:45:54.446Z",
+  "evidenceCount": 11,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1153576"
+    },
+    {
+      "name": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "مقاتل الشوارع"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1153576",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2026-10-13"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1153576",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "في عام ١٩٩٣، يعود مقاتلا الشوارع ريو وكين ماسترز، اللذان انفصلا، إلى ساحة المعركة بعد أن تجندهما تشون لي الغامضة للمشاركة في بطولة المحاربين العالميين القادمة: صراعٌ وحشيٌّ بين اللكمات والقدر والغضب. لكن وراء هذه المعركة الضارية تكمن مؤامرةٌ مميتةٌ تجبرهما على مواجهة بعضهما البعض وشياطين ماضيهما. وإن لم يفعلا، فستكون النهاية!"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1153576",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "حركة",
+        "فانتازيا"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1153576",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        6.3
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1153576",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        240
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1153576",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "Andrew Koji بدور Ryu",
+        "Noah Centineo بدور Ken Masters",
+        "كالينا ليانغ بدور Chun-Li",
+        "ديفيد داستمالشيان بدور M. Bison",
+        "Andrew Schulz بدور Dan Hibiki",
+        "رومان رينز بدور Akuma",
+        "كودي رودز بدور Guile"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1153576",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "directors",
+      "label": "المخرجون",
+      "value": [
+        "كيتاو ساكوراي"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1153576",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "runtime",
+      "label": "مدة العرض",
+      "value": [
+        120
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1153576",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "Capcom",
+        "Legendary Pictures"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1153576",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "relatedWorks",
+      "label": "أعمال مرتبطة",
+      "value": [
+        {
+          "title": "الأوديسة",
+          "year": 2026,
+          "sharedGenres": "فانتازيا,حركة",
+          "sharedPeople": ""
+        },
+        {
+          "title": "El despertar",
+          "year": 2026,
+          "sharedGenres": "فانتازيا,حركة",
+          "sharedPeople": ""
+        },
+        {
+          "title": "أفاتار آنج: الإيربندر الأخير",
+          "year": 2026,
+          "sharedGenres": "فانتازيا,حركة",
+          "sharedPeople": ""
+        },
+        {
+          "title": "La leyenda del Charro Negro",
+          "year": 2018,
+          "sharedGenres": "فانتازيا,حركة",
+          "sharedPeople": ""
+        },
+        {
+          "title": "سبايدر-مان: يوم جديد",
+          "year": 2026,
+          "sharedGenres": "حركة",
+          "sharedPeople": ""
+        },
+        {
+          "title": "أمل",
+          "year": 2026,
+          "sharedGenres": "حركة",
+          "sharedPeople": ""
+        }
+      ],
+      "source": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

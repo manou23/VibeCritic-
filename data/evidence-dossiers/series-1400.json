@@ -1,0 +1,188 @@
+{
+  "version": 1,
+  "workKey": "series:1400",
+  "title": "سينفيلد",
+  "type": "series",
+  "collectedAt": "2026-11-15T19:45:51.639Z",
+  "evidenceCount": 12,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1400"
+    },
+    {
+      "name": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "سينفيلد"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1400",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "1989-07-05"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1400",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "مسلسل يدور في إطار درامي كوميدي عن حياة النجم (جيري سينفلد) اليومية برفقة مجموعة من أصدقائه بمدينة (نيويورك)، والمواقف التي يتعرض لها وما يتعرض له من مفارقات كوميدية."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1400",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "كوميديا"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1400",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        8.243
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1400",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        2518
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1400",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "جيري ساينفيلد بدور Jerry Seinfeld",
+        "جيسون ألكسندر بدور George Costanza",
+        "Michael Richards بدور Cosmo Kramer",
+        "جوليا لوي دريفوس بدور Elaine Benes"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1400",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "creators",
+      "label": "المبدعون",
+      "value": [
+        "جيري ساينفيلد",
+        "لاري ديفيد"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1400",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "seasons",
+      "label": "عدد المواسم",
+      "value": [
+        9
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1400",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "episodes",
+      "label": "عدد الحلقات",
+      "value": [
+        180
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1400",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "Castle Rock Entertainment",
+        "West/Shapiro Productions",
+        "Fred Barron Productions",
+        "Giggling Goose Productions"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1400",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "relatedWorks",
+      "label": "أعمال مرتبطة",
+      "value": [
+        {
+          "title": "المكتب",
+          "year": 2005,
+          "sharedGenres": "كوميديا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "آل سيمبسون",
+          "year": 1989,
+          "sharedGenres": "كوميديا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "كيف قابلت امك",
+          "year": 2005,
+          "sharedGenres": "كوميديا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "عائلة عصرية",
+          "year": 2009,
+          "sharedGenres": "كوميديا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "فارس وفادي",
+          "year": 2007,
+          "sharedGenres": "كوميديا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "ستار ضد قوى الشر",
+          "year": 2015,
+          "sharedGenres": "كوميديا",
+          "sharedPeople": ""
+        }
+      ],
+      "source": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

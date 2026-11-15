@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "workKey": "movie:940721",
+  "title": "غودزيلا ناقص واحد",
+  "type": "movie",
+  "collectedAt": "2026-11-15T19:45:53.797Z",
+  "evidenceCount": 11,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/movie/940721"
+    },
+    {
+      "name": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "غودزيلا ناقص واحد"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/940721",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2023-11-03"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/940721",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "في \"اليابان\" بعد الحرب، ينضم طيار حربي سابق يعاني من الصدمة إلى جهود المدنيين في مواجهة وحش عملاق مطور نوويًّا يهاجم شواطئهم."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/940721",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "خيال علمي",
+        "رعب",
+        "حركة"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/940721",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        7.621
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/940721",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        3658
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/940721",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "ريونوسوكي كاميكي بدور Koichi Shikishima",
+        "مينامي هامابي بدور Noriko Oishi",
+        "يوكي يامادا بدور Shiro Mizushima",
+        "مونيتاكا أوكي بدور Sosaku Tachibana",
+        "吉岡秀隆 بدور Kenji Noda",
+        "ساكورا أندو بدور Sumiko Ota",
+        "佐々木蔵之介 بدور Yoji Akitsu"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/940721",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "directors",
+      "label": "المخرجون",
+      "value": [
+        "تاكاشي يامازاكي"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/940721",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "runtime",
+      "label": "مدة العرض",
+      "value": [
+        125
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/940721",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "TOHO",
+        "TOHO Studios",
+        "Robot Communications"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/940721",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "relatedWorks",
+      "label": "أعمال مرتبطة",
+      "value": [
+        {
+          "title": "غودزيلا ناقص صفر",
+          "year": 2026,
+          "sharedGenres": "رعب,حركة,خيال علمي",
+          "sharedPeople": "ريونوسوكي كاميكي,مينامي هامابي,吉岡秀隆,يوكي يامادا,佐々木蔵之介,ساكورا أندو,田中美央,永谷咲笑,مونيتاكا أوكي,飯田基祐,水橋研二,تاكاشي يامازاكي"
+        },
+        {
+          "title": "ريزدنت إيفل",
+          "year": 2026,
+          "sharedGenres": "رعب,خيال علمي",
+          "sharedPeople": ""
+        },
+        {
+          "title": "سبايدر-مان: يوم جديد",
+          "year": 2026,
+          "sharedGenres": "حركة,خيال علمي",
+          "sharedPeople": ""
+        },
+        {
+          "title": "أمل",
+          "year": 2026,
+          "sharedGenres": "حركة,خيال علمي",
+          "sharedPeople": ""
+        },
+        {
+          "title": "نهاية العالم Z: العالم الجديد",
+          "year": 2026,
+          "sharedGenres": "رعب,حركة",
+          "sharedPeople": ""
+        },
+        {
+          "title": "El despertar",
+          "year": 2026,
+          "sharedGenres": "رعب,حركة",
+          "sharedPeople": ""
+        }
+      ],
+      "source": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}
