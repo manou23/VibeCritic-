@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-15T09:17:14.120Z",
+  "updatedAt": "2026-11-15T16:09:42.302Z",
   "date": "2026-11-15",
   "publishingPlan": {
-    "limit": 2,
+    "limit": 3,
     "mode": "quota-unknown",
     "knownProviders": [
       {
