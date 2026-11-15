@@ -334,6 +334,15 @@ async function loadProviderUsage(){
  try{const saved=JSON.parse(await fs.readFile('data/provider-usage.json','utf8'));if(saved&&saved.version===1&&saved.days&&typeof saved.days==='object')providerUsage=saved;}catch{}
  const keep=new Set([algeriaDate(),addDays(algeriaDate(),-1),addDays(algeriaDate(),-2),addDays(algeriaDate(),-3),addDays(algeriaDate(),-4),addDays(algeriaDate(),-5),addDays(algeriaDate(),-6)]);
  for(const day of Object.keys(providerUsage.days))if(!keep.has(day))delete providerUsage.days[day];
+ // Recover false daily-limit cooldowns when Groq explicitly reports remaining RPM/TPM capacity.
+ for(const records of Object.values(providerUsage.days)){
+  const groq=records?.groq,headers=groq?.lastUsage?.headers||{};
+  const remainingRequests=Number(headers['x-ratelimit-remaining-requests']),remainingTokens=Number(headers['x-ratelimit-remaining-tokens']);
+  if(groq?.blockedReason==='daily-limit'&&Number.isFinite(remainingRequests)&&remainingRequests>0&&Number.isFinite(remainingTokens)&&remainingTokens>0&&headers['retry-after']){
+   groq.blockedUntil=0;groq.blockedReason='';groq.lastCooldown={reason:'recovered-false-daily-limit',until:null,observedAt:new Date().toISOString(),status:429};
+   console.warn('تم تصحيح حظر Groq يومي غير صحيح؛ استجابة المزود السابقة أظهرت بقاء حصة الطلبات والرموز.');
+  }
+ }
 }
 function providerDay(){const day=algeriaDate();if(!providerUsage.days[day])providerUsage.days[day]={};return providerUsage.days[day];}
 function providerHistory(name){
