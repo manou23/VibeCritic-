@@ -17,7 +17,7 @@ import { SCORE_SCALE_PROMPT } from './scoring-rubric.mjs';
 const env=process.env;
 const provider=(env.AI_PROVIDER||(env.GEMINI_API_KEY?'gemini':env.GROQ_API_KEY?'groq':env.OPENROUTER_API_KEY?'openrouter':env.CF_WORKERS_AI_API_TOKEN?'cloudflare-workers-ai':'openai')).toLowerCase();
 // Allow two evidence-based preview upgrades per run, still bounded by the adaptive free-resource daily cap.
-const targetTotal=100,dailyPerType=2,baseDailyTotalLimit=3,perRunLimit=3;
+const initialLibraryMilestone=100,dailyPerType=2,baseDailyTotalLimit=3,perRunLimit=3;
 let dailyTotalLimit=baseDailyTotalLimit;
 const gamesWindowDays=Math.max(1,Number.isFinite(Number(env.GAMES_WINDOW_DAYS))&&env.GAMES_WINDOW_DAYS?Number(env.GAMES_WINDOW_DAYS):30);
 const upcomingWindowDays=Math.max(30,Number.isFinite(Number(env.UPCOMING_WINDOW_DAYS))&&env.UPCOMING_WINDOW_DAYS?Number(env.UPCOMING_WINDOW_DAYS):365);
@@ -1075,9 +1075,9 @@ async function main(){
   }
  }
  const totalPublished=Object.values(counts).reduce((sum,value)=>sum+value,0);
- const buildPhase=totalPublished<targetTotal;
- console.log('إجمالي المراجعات:',totalPublished,'/',targetTotal,'| حسب القسم:',JSON.stringify(counts));
- console.log('وضع النشر:',buildPhase?'استكمال المكتبة إلى 100 مقالة':'رصد الإصدارات الجديدة');
+ const buildPhase=totalPublished<initialLibraryMilestone;
+ console.log('إجمالي المراجعات:',totalPublished,'/',initialLibraryMilestone,'| حسب القسم:',JSON.stringify(counts));
+ console.log('وضع النشر:',buildPhase?'استكمال المكتبة الأولية حتى 100 مقالة':'النشر المستمر: رصد الإصدارات الجديدة دون سقف إجمالي للمقالات');
  let rawPools;
  if(buildPhase){
   const [futureGames,recentGames,archiveGames,futureSeries,futureMovies,seriesNow,movieNow,seriesArchive,movieArchive]=await Promise.all([upcomingGames(),games(),gamesArchive(),tmdb('series','upcoming'),tmdb('movie','upcoming'),tmdb('series'),tmdb('movie'),tmdb('series','archive'),tmdb('movie','archive')]);
@@ -1116,7 +1116,7 @@ async function main(){
  const dailyRemaining=Math.max(0,dailyTotalLimit-publishedToday);
  console.log('سقف النشر اليومي الإجمالي:',dailyTotalLimit,'| المنشور حتى الآن:',publishedToday,'| المتبقي:',dailyRemaining);
  if(buildPhase){
-  let remaining=Math.min(dailyRemaining,perRunLimit,Math.max(0,targetTotal-totalPublished));
+  let remaining=Math.min(dailyRemaining,perRunLimit,Math.max(0,initialLibraryMilestone-totalPublished));
   const order=[...types].sort((a,b)=>counts[a]-counts[b]);
   while(remaining>0){
    let progressed=false;
@@ -1167,7 +1167,7 @@ async function main(){
  await fs.writeFile(processedPath,JSON.stringify([...new Set(done)],null,2)+'\n');
  await savePublishedIndex(publishedKeys);
  const finalTotal=Object.values(counts).reduce((sum,value)=>sum+value,0);
- console.log(finalTotal>=targetTotal?'تم بلوغ هدف 100 مقالة؛ سيعمل التشغيل القادم بوضع رصد الإصدارات الجديدة.':`المتبقي للوصول إلى 100 مقالة: ${targetTotal-finalTotal}`);
+ console.log(finalTotal>=initialLibraryMilestone?'تم بلوغ المحطة الأولى (100 مقالة)؛ يستمر الناشر في التشغيلات القادمة برصد الإصدارات الجديدة ونشر المؤهل منها دون سقف إجمالي.':`المتبقي للمحطة الأولى (100 مقالة): ${initialLibraryMilestone-finalTotal}`);
 }
 if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
  main().catch(e=>{console.error(e);process.exitCode=1;}).finally(()=>flushSourceCache().catch(error=>{console.error('تعذر حفظ ذاكرة المصادر في D1:',error.message);process.exitCode=1;}));
