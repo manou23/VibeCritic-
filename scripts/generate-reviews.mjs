@@ -223,7 +223,7 @@ async function fetchEditorialReferenceContext(item) {
    'مراجع VibeCritic التحريرية المؤلفة يدوياً (إطار منهجي داخلي، وليست أدلة على تفاصيل العمل):',
    ...articles.map(article => 'مرجع: ' + String(article.title).slice(0, 140) + ' — ' + String(article.prompt_excerpt).slice(0, 420)),
    'استخدم هذه المراجع كمنهج للأسئلة والتحليل فقط؛ لا تنسبها إلى العمل ولا تعتبرها مصدراً لوقائع عنه.'
-  ].join('\\n');
+  ].join('\n');
  } catch (error) {
   console.warn('تعذر تحميل المراجع التحريرية المخزنة في D1؛ سيستمر التوليد دونها:', error.message);
   return '';
@@ -533,7 +533,7 @@ async function generateWithGroq(prompt){
   const retryable=temporaryTpm429||[500,502,503,504].includes(r.status);
   if(!retryable||attempt===3)throw new Error('Groq HTTP '+r.status+': '+detail);
   const retryHeader=Number(r.headers.get('retry-after'))*1000;
-  const retryBody=Number(detail.match(/try again in\\s+([0-9.]+)s/i)?.[1])*1000;
+  const retryBody=Number(detail.match(/try again in\s+([0-9.]+)s/i)?.[1])*1000;
   const wait=Math.min(90000,Math.max(retryHeader||0,retryBody||0,1500*(attempt+1)));
   console.warn('Groq rate/server limit; retry '+(attempt+1)+' after '+wait+'ms');
   await new Promise(resolve=>setTimeout(resolve,wait));
@@ -902,7 +902,7 @@ async function generateReview(item){
       const repairTask=scoreFailure
        ?'أصلح كائن scores تحديداً: أعد المفاتيح الأربعة story وvisuals وsound وpacing جميعها كأرقام JSON فعلية بين 0 و10 وبمنزلة عشرية واحدة كحد أقصى. لا تترك أي قيمة مفقودة أو نصية أو null. اجعل الدرجات متسقة مع الأدلة والمراجعة، ولا ترفعها لإرضاء القارئ. احتفظ بالنص النقدي كما هو ما لم يتعارض مع الدرجات.'
        :'اجعل النص التحليلي review بين 700 و850 كلمة فعلية، وبحد أدنى 3200 حرف، مع خمسة محاور نقدية كاملة لا يقل كل محور عن 65 كلمة، وخاتمة موجزة. لا تغيّر الحقائق أو تخترع تفاصيل جديدة ولا تضف حشواً أو تكراراً. وسّع التحليل فقط بالاستدلال من البيانات والسياق الموثوق الموجود في الطلب الأصلي.';
-      attemptPrompt=prompt+'\\n\\nمهمة إصلاح إلزامية للمراجعة التي أخرجتها للتو: '+repairTask+' احتفظ بالعنوان والافتتاحية والدرجات أو أصلحها وفق المطلوب ونقاط القوة والضعف ما دامت متسقة مع النص، وأعد JSON كاملاً صالحاً بالمفاتيح نفسها. سبب الرفض: '+error.message+'\\n\\nالمسودة السابقة بصيغة JSON: '+JSON.stringify(generated).slice(0,9000);
+      attemptPrompt=prompt+'\n\nمهمة إصلاح إلزامية للمراجعة التي أخرجتها للتو: '+repairTask+' احتفظ بالعنوان والافتتاحية والدرجات أو أصلحها وفق المطلوب ونقاط القوة والضعف ما دامت متسقة مع النص، وأعد JSON كاملاً صالحاً بالمفاتيح نفسها. سبب الرفض: '+error.message+'\n\nالمسودة السابقة بصيغة JSON: '+JSON.stringify(generated).slice(0,9000);
       if(name==='groq')attemptPrompt=compactGroqPrompt(attemptPrompt,11000);
       console.warn('المزوّد '+name+' أعاد مراجعة لم تجتز الجودة ('+(scoreFailure?'درجات ناقصة':'تحليل قصير')+')؛ طلب إصلاح واحد محدد قبل الانتقال.');
       continue;
@@ -1246,7 +1246,7 @@ async function main(){
   // Daily quotas count only AI-generated reviews, never manually authored articles.
   // The frontmatter "date" is the work's release date, not its publication date.
   if(/^aiGenerated:\s*true\s*$/m.test(content)){
-   let publicationDate=content.match(/^publishedAt:\s*["']?([^"'\\r\\n]+)["']?\s*$/m)?.[1]?.trim();
+   let publicationDate=content.match(/^publishedAt:\s*["']?([^"'\\r\n]+)["']?\s*$/m)?.[1]?.trim();
    // Legacy AI reviews without an explicit publication timestamp are not counted.
    // Git commit dates are not reliable publication dates (bulk edits can reset them).
    // New AI publications always write publishedAt in the review frontmatter.
