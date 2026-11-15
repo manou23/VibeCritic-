@@ -45,6 +45,7 @@ sourceName: "IGDB"
 sourceId: "119133"
 sourceUrl: "https://www.igdb.com/games/elden-ring"
 aiGenerated: false
+backdrop: "https://us-east-1-bandai.graphassets.com/AXzioIclSWilEjFtsMJPwz/Alg1l5HYROmvuBQY6BM0"
 ---
 ## عالم لا يرسم لك الطريق
 تبدأ الرحلة بإطار أسطوري مقتصد في الشرح، ثم تترك للاعب مهمة تركيب أجزاء العالم من الحوارات القصيرة والوصف والمشاهد. هذا الأسلوب يمنح المكان ثقلاً وغموضاً، لكنه لا يقدم حبكة مباشرة يسهل تتبعها. من يبحث عن سرد واضح ومتواصل قد يشعر بأن القصة بعيدة، بينما يجد اللاعب الفضولي متعة في الربط بين الشخصيات والأماكن والآثار.
