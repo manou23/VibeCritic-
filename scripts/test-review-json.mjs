@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { parseJsonResponse } from './review-json.mjs';
+import { parseJsonResponse, REVIEW_OUTPUT_CONTRACT } from './review-json.mjs';
 
 assert.deepEqual(
   parseJsonResponse('```json\n{"headline":"عنوان","sections":[{"heading":"الأول","body":"نص {داخل اقتباس}"}]}\n```'),
@@ -19,4 +19,6 @@ assert.throws(
   /يبدأ بالقوس الافتتاحي/
 );
 
-console.log('Review JSON parser tests passed.');
+assert.match(REVIEW_OUTPUT_CONTRACT, /hook, headline, summary, scores, pros, cons, tags, verdict, review/);
+assert.match(REVIEW_OUTPUT_CONTRACT, /لا تستخدم مخطط title أو lead أو sections أو conclusion/);
+console.log('Review JSON parser and output-contract tests passed.');
