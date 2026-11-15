@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import '../styles/purple-premium.css';
 import { getCollection } from 'astro:content';
 import PagefindConfig from 'astro-pagefind/components/PagefindConfig.astro';
 import { SITE_NAME, SITE_DESC, url } from '../consts';
@@ -56,7 +57,7 @@ const searchReviews = await getCollection('reviews');
 <meta name="description" content={metaDescription} />
 <meta name="application-name" content="VibeCritic" />
 {metaKeywords && <meta name="keywords" content={metaKeywords} />}
-<meta name="theme-color" content="#f3f0e8" />
+<meta name="theme-color" content="#090910" />
 <meta name="robots" content={noindex ? 'noindex,nofollow' : 'index,follow'} />
 <link rel="icon" type="image/png" sizes="96x96" href={url('favicon-96.png')} />
 <link rel="icon" type="image/svg+xml" href={url('favicon.svg')} />
