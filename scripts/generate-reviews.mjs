@@ -648,8 +648,8 @@ async function enrichItem(item){
    ]);
    const screenshots=extras[0].status==='fulfilled'?(extras[0].value.results||[]).map(x=>x.image).filter(Boolean).slice(0,8):[];
    const achievements=extras[1].status==='fulfilled'?(extras[1].value.results||[]).map(x=>({name:x.name,description:x.description,percent:x.percent, image:x.image})).filter(x=>x.name).slice(0,12):[];
-   if(screenshots.length){metadata.screenshots=screenshots;fieldSources.screenshots={source:'RAWG',url:'https://rawg.io/games/'+encodeURIComponent(item.id)+'/screenshots',observedAt:new Date().toISOString()};}
-   if(achievements.length){metadata.achievements=achievements;fieldSources.achievements={source:'RAWG',url:'https://rawg.io/games/'+encodeURIComponent(item.id)+'/achievements',observedAt:new Date().toISOString()};}
+   if(screenshots.length){metadata.screenshots=screenshots;fieldSources.screenshots={source:'RAWG',url:'https://api.rawg.io/api/games/'+encodeURIComponent(item.id)+'/screenshots',observedAt:new Date().toISOString()};}
+   if(achievements.length){metadata.achievements=achievements;fieldSources.achievements={source:'RAWG',url:'https://api.rawg.io/api/games/'+encodeURIComponent(item.id)+'/achievements',observedAt:new Date().toISOString()};}
    if(extras[0].status==='rejected')console.warn('تعذر جلب لقطات RAWG للعبة '+item.name+':',extras[0].reason?.message||'غير معروف');
    if(extras[1].status==='rejected')console.warn('تعذر جلب إنجازات RAWG للعبة '+item.name+':',extras[1].reason?.message||'غير معروف');
   }
@@ -950,7 +950,7 @@ async function gamesFromRawg(mode='recent'){
     popularity:Number(item.added)||0,sourceMetricName:'RAWG added count',sourceMetricValue:Number(item.added)||0,trendConfidence:Number(item.added)>=100?'مرتفع':Number(item.added)>=25?'متوسط':'منخفض',added:Number(item.added)||0,trendRank:candidates.indexOf(item)+1,
     platforms:(detail.platforms||item.platforms||[]).map(x=>x.platform?.name).filter(Boolean),
     developers:(detail.developers||[]).map(x=>x.name).filter(Boolean),
-    metadata:{metacritic:item.metacritic||detail.metacritic||null,ratingCount:Number(detail.ratings_count??item.ratings_count)||0,sourceTags:(detail.tags||[]).map(tag=>tag.name).filter(Boolean).slice(0,20),added:Number(item.added)||0,platforms:(detail.platforms||item.platforms||[]).map(x=>x.platform?.name).filter(Boolean),developers:(detail.developers||[]).map(x=>x.name).filter(Boolean),stores:(detail.stores||[]).map(x=>({name:x.store?.name||x.name||'',url:x.url||null})).filter(x=>x.name)}
+    metadata:{metacritic:item.metacritic||detail.metacritic||null,ratingCount:Number(detail.ratings_count??item.ratings_count)||0,sourceTags:(detail.tags||[]).map(tag=>tag.name).filter(Boolean).slice(0,20),added:Number(item.added)||0,platforms:(detail.platforms||item.platforms||[]).map(x=>x.platform?.name).filter(Boolean),developers:(detail.developers||[]).map(x=>x.name).filter(Boolean),publishers:(detail.publishers||[]).map(x=>x.name).filter(Boolean),stores:(detail.stores||[]).map(x=>({name:x.store?.name||x.name||'',url:x.url||null})).filter(x=>x.name)}
    };
   }catch(error){console.warn('تعذر جلب تفاصيل RAWG للعبة '+item.name+':',error.message);return null;}
  }));
