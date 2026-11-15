@@ -34,6 +34,7 @@ sourceName: "VibeCritic Editorial"
 sourceId: "manual-movie-the-shawshank-redemption-278"
 sourceUrl: "https://www.themoviedb.org/movie/278"
 aiGenerated: false
+backdrop: "https://image.tmdb.org/t/p/w1280/pNjh59JSxChQktamG3LMp9ZoQzp.jpg"
 ---
 ## السجن بوصفه نظاماً
 لا يعامل الفيلم السجن كخلفية محايدة للأحداث، بل كمؤسسة تصنع عاداتها ولغتها وموازين القوة. آندي يصل إلى مكان يحاول تعريفه من خلال رقم وملف، بينما يحاول ريد أن يشرح له كيف يتعلم السجناء التعايش مع عالم مغلق. التغير لا يحدث بخطوة بطولية واحدة؛ إنه يتشكل عبر العمل والقراءة والصداقة والقدرة على الاحتفاظ بمساحة داخلية لا تملكها المؤسسة بالكامل. هذا التراكم هو ما يمنح الحكاية صدقها العاطفي.

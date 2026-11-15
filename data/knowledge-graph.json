@@ -15345,6 +15345,108 @@
       ],
       "firstSeenAt": "2026-11-15T10:35:24.969Z",
       "updatedAt": "2026-11-15T10:35:24.969Z"
+    },
+    {
+      "id": "work:movie-manual-movie-interstellar-157336-بين-النجوم",
+      "kind": "work",
+      "name": "movie:manual-movie-interstellar-157336:بين النجوم",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-15T12:53:18.466Z",
+      "updatedAt": "2026-11-15T12:53:18.466Z",
+      "aliases": [
+        "بين النجوم"
+      ],
+      "externalId": "manual-movie-interstellar-157336",
+      "workType": "movie",
+      "externalSource": "VibeCritic Editorial",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:movie-manual-movie-mad-max-fury-road-76341-ماد-ماكس-طريق-الغضب",
+      "kind": "work",
+      "name": "movie:manual-movie-mad-max-fury-road-76341:ماد ماكس: طريق الغضب",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-15T12:53:18.541Z",
+      "updatedAt": "2026-11-15T12:53:18.541Z",
+      "aliases": [
+        "ماد ماكس: طريق الغضب"
+      ],
+      "externalId": "manual-movie-mad-max-fury-road-76341",
+      "workType": "movie",
+      "externalSource": "VibeCritic Editorial",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:movie-manual-movie-the-prestige-1124-العظمة",
+      "kind": "work",
+      "name": "movie:manual-movie-the-prestige-1124:العظمة",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-15T12:53:18.925Z",
+      "updatedAt": "2026-11-15T12:53:18.925Z",
+      "aliases": [
+        "العظمة"
+      ],
+      "externalId": "manual-movie-the-prestige-1124",
+      "workType": "movie",
+      "externalSource": "VibeCritic Editorial",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:movie-manual-movie-the-shawshank-redemption-278-الخلاص-من-شاوشانك",
+      "kind": "work",
+      "name": "movie:manual-movie-the-shawshank-redemption-278:الخلاص من شاوشانك",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-15T12:53:19.041Z",
+      "updatedAt": "2026-11-15T12:53:19.041Z",
+      "aliases": [
+        "الخلاص من شاوشانك"
+      ],
+      "externalId": "manual-movie-the-shawshank-redemption-278",
+      "workType": "movie",
+      "externalSource": "VibeCritic Editorial",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:movie-manual-movie-whiplash-244786-ويبلاش",
+      "kind": "work",
+      "name": "movie:manual-movie-whiplash-244786:ويبلاش",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-15T12:53:19.140Z",
+      "updatedAt": "2026-11-15T12:53:19.140Z",
+      "aliases": [
+        "ويبلاش"
+      ],
+      "externalId": "manual-movie-whiplash-244786",
+      "workType": "movie",
+      "externalSource": "VibeCritic Editorial",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:series-manual-series-dark-70523-دارك",
+      "kind": "work",
+      "name": "series:manual-series-dark-70523:دارك",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-15T12:53:19.892Z",
+      "updatedAt": "2026-11-15T12:53:19.892Z",
+      "aliases": [
+        "دارك"
+      ],
+      "externalId": "manual-series-dark-70523",
+      "workType": "series",
+      "externalSource": "VibeCritic Editorial",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
     }
   ],
   "relations": [
@@ -49204,111 +49306,6 @@
       "observations": 1
     },
     {
-      "id": "work:movie-1813355-قصة-ديري|catalog_original_title|VIBECRITIC_D1|A Story of Derry",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "catalog_original_title",
-      "value": "A Story of Derry",
-      "normalizedValue": "A Story of Derry",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T10:18:39.242Z",
-      "observations": 2
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|catalog_overview|VIBECRITIC_D1|قبل مئات السنين من بيني وايز، يغامر ثلاثة شبان بالدخول إلى الغابة الغربية... حيث يواجهون روحًا قديمة",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "catalog_overview",
-      "value": "قبل مئات السنين من بيني وايز، يغامر ثلاثة شبان بالدخول إلى الغابة الغربية... حيث يواجهون روحًا قديمة مرعبة.",
-      "normalizedValue": "قبل مئات السنين من بيني وايز، يغامر ثلاثة شبان بالدخول إلى الغابة الغربية... حيث يواجهون روحًا قديمة مرعبة.",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T10:18:39.242Z",
-      "observations": 2
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|catalog_release_date|VIBECRITIC_D1|2026-10-31",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "catalog_release_date",
-      "value": "2026-10-31",
-      "normalizedValue": "2026-10-31",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T10:18:39.242Z",
-      "observations": 2
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|catalog_year|VIBECRITIC_D1|2026",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "catalog_year",
-      "value": "2026",
-      "normalizedValue": "2026",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T10:18:39.242Z",
-      "observations": 2
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|catalog_runtime|VIBECRITIC_D1|30",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "catalog_runtime",
-      "value": "30",
-      "normalizedValue": "30",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T10:18:39.242Z",
-      "observations": 2
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|catalog_status|VIBECRITIC_D1|Released",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "catalog_status",
-      "value": "Released",
-      "normalizedValue": "Released",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T10:18:39.242Z",
-      "observations": 2
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|catalog_original_language|VIBECRITIC_D1|en",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "catalog_original_language",
-      "value": "en",
-      "normalizedValue": "en",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T10:18:39.242Z",
-      "observations": 2
-    },
-    {
       "id": "work:movie-1813355-قصة-ديري|catalog_rating|VIBECRITIC_D1|6.729",
       "workId": "work:movie-1813355-قصة-ديري",
       "field": "catalog_rating",
@@ -49321,6 +49318,21 @@
       "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
       "firstObservedAt": "2026-11-14T12:34:19.567Z",
       "lastObservedAt": "2026-11-14T12:34:19.567Z",
+      "observations": 1
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|catalog_rating|VIBECRITIC_D1|6.762",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "catalog_rating",
+      "value": "6.762",
+      "normalizedValue": "6.762",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-15T10:18:39.242Z",
+      "lastObservedAt": "2026-11-15T10:18:39.242Z",
       "observations": 1
     },
     {
@@ -49339,66 +49351,19 @@
       "observations": 1
     },
     {
-      "id": "work:movie-1813355-قصة-ديري|catalog_genres|VIBECRITIC_D1|دراما | رعب | غموض",
+      "id": "work:movie-1813355-قصة-ديري|catalog_vote_count|VIBECRITIC_D1|122",
       "workId": "work:movie-1813355-قصة-ديري",
-      "field": "catalog_genres",
-      "value": [
-        "دراما",
-        "رعب",
-        "غموض"
-      ],
-      "normalizedValue": "دراما | رعب | غموض",
+      "field": "catalog_vote_count",
+      "value": "122",
+      "normalizedValue": "122",
       "source": "VIBECRITIC_D1",
       "url": "https://vibecritic.pages.dev/api/catalog",
       "sourceClass": "derived-catalog-context",
       "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
       "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "firstObservedAt": "2026-11-15T10:18:39.242Z",
       "lastObservedAt": "2026-11-15T10:18:39.242Z",
-      "observations": 2
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|catalog_cast|VIBECRITIC_D1|Brandon Oakes | Brenda Odjick | Eric Trask | Isabel DeRoy-Olson | Jennifer Podemski | Kiawentiio | M",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "catalog_cast",
-      "value": [
-        "Kiawentiio",
-        "Isabel DeRoy-Olson",
-        "Michael Podemski",
-        "زان مكلارنون",
-        "MorningStar Angeline",
-        "Brandon Oakes",
-        "Jennifer Podemski",
-        "Eric Trask",
-        "Thosh Collins",
-        "Brenda Odjick"
-      ],
-      "normalizedValue": "Brandon Oakes | Brenda Odjick | Eric Trask | Isabel DeRoy-Olson | Jennifer Podemski | Kiawentiio | Michael Podemski | MorningStar Angeline | Thosh Collins | زان مكلارنون",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T10:18:39.242Z",
-      "observations": 2
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|catalog_directors|VIBECRITIC_D1|Tazbah Chavez",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "catalog_directors",
-      "value": [
-        "Tazbah Chavez"
-      ],
-      "normalizedValue": "Tazbah Chavez",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T10:18:39.242Z",
-      "observations": 2
+      "observations": 1
     },
     {
       "id": "work:movie-238-العر-اب|release_date|VIBECRITIC_D1|1972-03-14",
@@ -49762,98 +49727,6 @@
       "firstObservedAt": "2026-11-15T10:35:27.531Z",
       "lastObservedAt": "2026-11-15T10:35:27.531Z",
       "observations": 1
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|release_date|VIBECRITIC_D1|2026-10-31",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "release_date",
-      "value": "2026-10-31",
-      "normalizedValue": "2026-10-31",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T19:08:14.047Z",
-      "lastObservedAt": "2026-11-15T10:35:28.906Z",
-      "observations": 2
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|genres|VIBECRITIC_D1|دراما | رعب | غموض",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "genres",
-      "value": [
-        "دراما",
-        "رعب",
-        "غموض"
-      ],
-      "normalizedValue": "دراما | رعب | غموض",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T19:08:14.047Z",
-      "lastObservedAt": "2026-11-15T10:35:28.906Z",
-      "observations": 2
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|directors|VIBECRITIC_D1|Tazbah Chavez",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "directors",
-      "value": [
-        "Tazbah Chavez"
-      ],
-      "normalizedValue": "Tazbah Chavez",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T19:08:14.047Z",
-      "lastObservedAt": "2026-11-15T10:35:28.906Z",
-      "observations": 2
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|cast|VIBECRITIC_D1|Brandon Oakes | Brenda Odjick | Eric Trask | Isabel DeRoy-Olson | Jennifer Podemski | Kiawentiio | M",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "cast",
-      "value": [
-        "Kiawentiio",
-        "Isabel DeRoy-Olson",
-        "Michael Podemski",
-        "زان مكلارنون",
-        "MorningStar Angeline",
-        "Brandon Oakes",
-        "Jennifer Podemski",
-        "Eric Trask",
-        "Thosh Collins",
-        "Brenda Odjick"
-      ],
-      "normalizedValue": "Brandon Oakes | Brenda Odjick | Eric Trask | Isabel DeRoy-Olson | Jennifer Podemski | Kiawentiio | Michael Podemski | MorningStar Angeline | Thosh Collins | زان مكلارنون",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T19:08:14.047Z",
-      "lastObservedAt": "2026-11-15T10:35:28.906Z",
-      "observations": 2
-    },
-    {
-      "id": "work:movie-1813355-قصة-ديري|runtime|VIBECRITIC_D1|30",
-      "workId": "work:movie-1813355-قصة-ديري",
-      "field": "runtime",
-      "value": "30",
-      "normalizedValue": "30",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T19:08:14.047Z",
-      "lastObservedAt": "2026-11-15T10:35:28.906Z",
-      "observations": 2
     },
     {
       "id": "work:game-hades-ii-2025-هاديس-2-حين-تصبح-المحاولة-التالية-جزءا-من-الحكاية|release_date|SUPERGIANT_GAMES|2025-09-25",
@@ -53062,6 +52935,173 @@
       "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
       "firstObservedAt": "2026-11-15T01:19:43.879Z",
       "lastObservedAt": "2026-11-15T01:23:25.446Z",
+      "observations": 2
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|catalog_original_title|VIBECRITIC_D1|A Story of Derry",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "catalog_original_title",
+      "value": "A Story of Derry",
+      "normalizedValue": "A Story of Derry",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T10:18:39.242Z",
+      "observations": 2
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|catalog_overview|VIBECRITIC_D1|قبل مئات السنين من بيني وايز، يغامر ثلاثة شبان بالدخول إلى الغابة الغربية... حيث يواجهون روحًا قديمة",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "catalog_overview",
+      "value": "قبل مئات السنين من بيني وايز، يغامر ثلاثة شبان بالدخول إلى الغابة الغربية... حيث يواجهون روحًا قديمة مرعبة.",
+      "normalizedValue": "قبل مئات السنين من بيني وايز، يغامر ثلاثة شبان بالدخول إلى الغابة الغربية... حيث يواجهون روحًا قديمة مرعبة.",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T10:18:39.242Z",
+      "observations": 2
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|catalog_release_date|VIBECRITIC_D1|2026-10-31",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "catalog_release_date",
+      "value": "2026-10-31",
+      "normalizedValue": "2026-10-31",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T10:18:39.242Z",
+      "observations": 2
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|catalog_year|VIBECRITIC_D1|2026",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "catalog_year",
+      "value": "2026",
+      "normalizedValue": "2026",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T10:18:39.242Z",
+      "observations": 2
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|catalog_runtime|VIBECRITIC_D1|30",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "catalog_runtime",
+      "value": "30",
+      "normalizedValue": "30",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T10:18:39.242Z",
+      "observations": 2
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|catalog_status|VIBECRITIC_D1|Released",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "catalog_status",
+      "value": "Released",
+      "normalizedValue": "Released",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T10:18:39.242Z",
+      "observations": 2
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|catalog_original_language|VIBECRITIC_D1|en",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "catalog_original_language",
+      "value": "en",
+      "normalizedValue": "en",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T10:18:39.242Z",
+      "observations": 2
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|catalog_genres|VIBECRITIC_D1|دراما | رعب | غموض",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "catalog_genres",
+      "value": [
+        "دراما",
+        "رعب",
+        "غموض"
+      ],
+      "normalizedValue": "دراما | رعب | غموض",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T10:18:39.242Z",
+      "observations": 2
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|catalog_cast|VIBECRITIC_D1|Brandon Oakes | Brenda Odjick | Eric Trask | Isabel DeRoy-Olson | Jennifer Podemski | Kiawentiio | M",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "catalog_cast",
+      "value": [
+        "Kiawentiio",
+        "Isabel DeRoy-Olson",
+        "Michael Podemski",
+        "زان مكلارنون",
+        "MorningStar Angeline",
+        "Brandon Oakes",
+        "Jennifer Podemski",
+        "Eric Trask",
+        "Thosh Collins",
+        "Brenda Odjick"
+      ],
+      "normalizedValue": "Brandon Oakes | Brenda Odjick | Eric Trask | Isabel DeRoy-Olson | Jennifer Podemski | Kiawentiio | Michael Podemski | MorningStar Angeline | Thosh Collins | زان مكلارنون",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T10:18:39.242Z",
+      "observations": 2
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|catalog_directors|VIBECRITIC_D1|Tazbah Chavez",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "catalog_directors",
+      "value": [
+        "Tazbah Chavez"
+      ],
+      "normalizedValue": "Tazbah Chavez",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T10:18:39.242Z",
       "observations": 2
     },
     {
@@ -81447,34 +81487,96 @@
       "observations": 2
     },
     {
-      "id": "work:movie-1813355-قصة-ديري|catalog_rating|VIBECRITIC_D1|6.762",
+      "id": "work:movie-1813355-قصة-ديري|release_date|VIBECRITIC_D1|2026-10-31",
       "workId": "work:movie-1813355-قصة-ديري",
-      "field": "catalog_rating",
-      "value": "6.762",
-      "normalizedValue": "6.762",
+      "field": "release_date",
+      "value": "2026-10-31",
+      "normalizedValue": "2026-10-31",
       "source": "VIBECRITIC_D1",
       "url": "https://vibecritic.pages.dev/api/catalog",
       "sourceClass": "derived-catalog-context",
       "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
       "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-15T10:18:39.242Z",
-      "lastObservedAt": "2026-11-15T10:18:39.242Z",
-      "observations": 1
+      "firstObservedAt": "2026-11-14T19:08:14.047Z",
+      "lastObservedAt": "2026-11-15T10:35:28.906Z",
+      "observations": 2
     },
     {
-      "id": "work:movie-1813355-قصة-ديري|catalog_vote_count|VIBECRITIC_D1|122",
+      "id": "work:movie-1813355-قصة-ديري|genres|VIBECRITIC_D1|دراما | رعب | غموض",
       "workId": "work:movie-1813355-قصة-ديري",
-      "field": "catalog_vote_count",
-      "value": "122",
-      "normalizedValue": "122",
+      "field": "genres",
+      "value": [
+        "دراما",
+        "رعب",
+        "غموض"
+      ],
+      "normalizedValue": "دراما | رعب | غموض",
       "source": "VIBECRITIC_D1",
       "url": "https://vibecritic.pages.dev/api/catalog",
       "sourceClass": "derived-catalog-context",
       "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
       "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-15T10:18:39.242Z",
-      "lastObservedAt": "2026-11-15T10:18:39.242Z",
-      "observations": 1
+      "firstObservedAt": "2026-11-14T19:08:14.047Z",
+      "lastObservedAt": "2026-11-15T10:35:28.906Z",
+      "observations": 2
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|directors|VIBECRITIC_D1|Tazbah Chavez",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "directors",
+      "value": [
+        "Tazbah Chavez"
+      ],
+      "normalizedValue": "Tazbah Chavez",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T19:08:14.047Z",
+      "lastObservedAt": "2026-11-15T10:35:28.906Z",
+      "observations": 2
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|cast|VIBECRITIC_D1|Brandon Oakes | Brenda Odjick | Eric Trask | Isabel DeRoy-Olson | Jennifer Podemski | Kiawentiio | M",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "cast",
+      "value": [
+        "Kiawentiio",
+        "Isabel DeRoy-Olson",
+        "Michael Podemski",
+        "زان مكلارنون",
+        "MorningStar Angeline",
+        "Brandon Oakes",
+        "Jennifer Podemski",
+        "Eric Trask",
+        "Thosh Collins",
+        "Brenda Odjick"
+      ],
+      "normalizedValue": "Brandon Oakes | Brenda Odjick | Eric Trask | Isabel DeRoy-Olson | Jennifer Podemski | Kiawentiio | Michael Podemski | MorningStar Angeline | Thosh Collins | زان مكلارنون",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T19:08:14.047Z",
+      "lastObservedAt": "2026-11-15T10:35:28.906Z",
+      "observations": 2
+    },
+    {
+      "id": "work:movie-1813355-قصة-ديري|runtime|VIBECRITIC_D1|30",
+      "workId": "work:movie-1813355-قصة-ديري",
+      "field": "runtime",
+      "value": "30",
+      "normalizedValue": "30",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T19:08:14.047Z",
+      "lastObservedAt": "2026-11-15T10:35:28.906Z",
+      "observations": 2
     }
   ],
   "conflicts": [
@@ -92324,6 +92426,252 @@
       "sourcePath": "series-chernobyl-vibecritic-2026.md",
       "excerpt": "الكارثة وما وراءها يبدأ المسلسل من لحظة الانفجار، لكنه لا يحصر اهتمامه في إعادة تمثيل الحدث. سرعان ما يصبح السؤال كيف تتصرف المؤسسات عندما تكون الحقيقة غير مريحة، وكيف تتحول محاولة حماية الصورة الرسمية إلى عامل يزيد الخطر. بذلك يربط العمل بين التفاصيل التقنية والقرارات الإدارية، ويجعل الكارثة نتيجة شبكة من الأخطاء والضغوط لا مجرد حادث منفصل. الشخصيات والتمثيل يمنح جاريد هاريس شخصية فاليري ليغاسوف حضوراً قائماً على الصراع بين المعرفة والواجب والخوف. ويجسد ستيلان سكارسغارد مسؤولاً سياسياً يتغير موقفه مع اتساع الأدلة، فيما تقدم إميلي واتسون شخصية عالمة تجمع المعرفة العلمية بالإصرار على مواجهة الإنكار. المسلسل يختصر بعض الشخصيات ويعيد تركيبها درامياً، لذلك لا ينبغي التعامل مع كل تفصيل حواري باعتباره توثيقاً حرفياً، لكن الأداء الجماعي ينجح في جعل تضارب المصالح مفهوماً. الصورة وتصميم العالم الألوان الباردة والمواقع الصناعية والملابس والأدوات تخلق بيئة ثقيلة ومقنعة. لا يعتمد العمل على عرض الكارثة باستمرار؛ بل يجعل آثارها اليومية مرئية في المستشفيات والمنازل وممرات السلطة. هذا الاقتصاد البصري يمنح التفاصيل الصغيرة وزناً، ويحول المكان إلى تذكير مستمر بأن الخطر لا ينتهي عند حدود موقع الانفجار. الصوت والإيقاع يستخدم المسلسل الصمت والضجيج الصناعي والموسيقى المحدودة لصناعة قلق متواصل. وتتحرك الحلقات بإيقاع محسوب بين التحقيق والتفسير والنتائج الإنسانية، مع تصعيد واضح في كل مرحلة. قد يبدو الجو القاتم مرهقاً، وبعض الحوارات تشرح ما يمكن للصورة أن توحي به، لكن قصر العمل يمنع التكرار من السيطرة على التجربة. الحكم النهائي تشيرنوبل مسلسل قصير قوي في السببية والتوتر والأداء والتصميم. قوته ليست في إعادة بناء الانفجار فقط، بل في إظهار كيف تتضاعف الكارثة عندما تصبح الحقيقة عبئاً سياسياً. مع الاعتراف بالاختزال الدرامي وبعض الشرح المباشر، يستحق 8.6/10 وفق الأوزان التحريرية الثابتة: القصة 30%، الصورة 25%، الصوت 20%، الإيقاع 25%.",
       "knowledgeClass": "editorial-opinion-not-verified-fact"
+    },
+    {
+      "key": "movie:manual-movie-interstellar-157336",
+      "sourceId": "manual-movie-interstellar-157336",
+      "type": "movie",
+      "title": "بين النجوم",
+      "originalTitle": "Interstellar",
+      "headline": "Interstellar: العاطفة هي البوصلة وسط اتساع الكون",
+      "summary": "يمزج الفيلم بين الخيال العلمي والدراما العائلية، ويحوّل مفاهيم الزمن والجاذبية إلى ضغط عاطفي على شخصيات تحاول إنقاذ مستقبل البشر.",
+      "verdict": "عمل طموح بصرياً وموسيقياً، وتنجح علاقته بين الزمن والفقد في منح أفكاره العلمية وزناً إنسانياً. بعض الشروح الحوارية مباشرة، كما أن الحل النهائي يطلب من المشاهد قبول قفزة تخييلية كبيرة. تقييم VibeCritic: 8.9 من 10.",
+      "score": 8.9,
+      "scores": {
+        "storyScore": 8.8,
+        "visualsScore": 9.4,
+        "soundScore": 9.2,
+        "pacingScore": 8.2
+      },
+      "tags": [],
+      "pros": [
+        "يربط فكرة تمدد الزمن بتجربة الفقد والانتظار",
+        "تصميم بصري واسع يمنح الفضاء إحساساً بالحجم والخطر",
+        "موسيقى هانز زيمر جزء من البناء العاطفي لا مجرد خلفية",
+        "صور ومفاهيم تبقى قابلة للنقاش بعد انتهاء الفيلم"
+      ],
+      "cons": [
+        "بعض الحوارات تشرح الأفكار العلمية بصورة مباشرة",
+        "الإيقاع يتفاوت بين مقاطع الاستكشاف والدراما العائلية",
+        "الحل الأخير يعتمد على افتراض تخييلي قد لا يقنع الجميع"
+      ],
+      "creator": null,
+      "genres": [],
+      "platforms": [],
+      "aiGenerated": false,
+      "reviewMode": "review",
+      "releaseDate": "2014-11-05",
+      "sourceName": "VibeCritic Editorial",
+      "sourceUrl": "https://www.themoviedb.org/movie/157336",
+      "catalogSources": [],
+      "sourcePath": "movie-interstellar-157336.md",
+      "excerpt": "الفكرة: العلم في خدمة سؤال إنساني يضع Interstellar البشرية أمام أزمة بقاء، لكنه لا يجعل الخطر الكوني غاية مستقلة. نقطة الارتكاز هي علاقة كوبر بابنته مورف، وما يعنيه اتخاذ قرار قد يحمي المستقبل لكنه يسرق سنوات من الحاضر. بذلك يصبح الزمن أكثر من مفهوم فيزيائي؛ إنه تكلفة شخصية لا يستطيع الأبطال التفاوض معها. الفيلم ينجح عندما يربط المعلومة العلمية بنتيجة عاطفية ملموسة، ويضعف قليلاً حين يتوقف الحوار ليشرح الفكرة بدلاً من ترك الصورة والفعل يحملانها. البناء الدرامي والشخصيات رحلة البحث عن موطن بديل تمنح السرد اتجاهاً واضحاً، بينما تضع الاختيارات الأخلاقية الشخصيات أمام احتمالات لا تخلو من الأنانية والخوف. كوبر ليس بطلاً منزهاً؛ قراره بالمغادرة يحمل تضحية وأذى في الوقت نفسه. مورف بدورها لا تبقى مجرد دافع عاطفي في الخلفية، بل تتحول إلى صاحبة مسار معرفي وعملي يوازي الرحلة. بعض الشخصيات المساندة تحصل على مساحة أقل مما تستحق، كما أن الانتقالات بين محطات الرحلة تجعل الإيقاع غير متساوٍ، لكن الرابطة العائلية تمنح الفيلم خيطاً يحافظ على وحدته. الصورة والصوت تتنقل الصورة بين اتساع الفضاء وضيق الحجرات والمركبات، فتجعل العزلة محسوسة بدلاً من الاكتفاء بعرض مناظر جميلة. تصميم الكواكب يختلف في الضوء والحركة والخطر، وتبدو المؤثرات أقوى حين تخدم قوانين المكان لا حين تستعرض التقنية. أما موسيقى هانز زيمر فتستخدم التكرار والتصاعد لتجسيد ضغط الوقت والبعد، وتصبح في مشاهد معينة عنصراً سردياً موازياً للصورة. كثافتها قد تطغى أحياناً على الصمت الذي كان يمكن أن يمنح بعض اللحظات قوة أكبر. الإيقاع والأثر يمنح الفيلم بعض المشاهد وقتاً كافياً لتأمل حجم القرار، لكنه ينتقل أحياناً بسرعة بين المعلومات والمواجهات. تتطلب بعض أفكاره استعداداً لقبول الخيال العلمي بوصفه مساحة افتراضية، لا محاضرة علمية دقيقة. لذلك لا ينبغي تقييمه على أساس أن كل تفسير فيه تقرير علمي؛ قوته الأساسية في تحويل المفهوم إلى تجربة درامية. الدرجة النهائية 8.9/10 تعكس تميز الصورة والصوت والطموح العاطفي، مع خصم واضح بسبب الشرح المباشر وتفاوت",
+      "knowledgeClass": "editorial-opinion-not-verified-fact"
+    },
+    {
+      "key": "movie:manual-movie-mad-max-fury-road-76341",
+      "sourceId": "manual-movie-mad-max-fury-road-76341",
+      "type": "movie",
+      "title": "ماد ماكس: طريق الغضب",
+      "originalTitle": "Mad Max: Fury Road",
+      "headline": "Fury Road: مطاردة تكشف القصة بالحركة لا بالشرح",
+      "summary": "فيلم حركة ما بعد كارثي يبني معظم دراماه داخل مطاردة ممتدة، ويستخدم الصورة والصوت والحركة لتوضيح صراع التحرر والسيطرة.",
+      "verdict": "إنجاز بصري وحركي شديد الانضباط، مع وضوح مكاني نادر في مشاهد الحركة وشخصيات تُعرّفها الأفعال. عمق العالم الخلفي محدود وبعض الشخصيات لا تحصل على وقت كافٍ، لكن الاقتصاد السردي هنا يخدم التجربة. تقييم VibeCritic: 8.8 من 10.",
+      "score": 8.8,
+      "scores": {
+        "storyScore": 7.8,
+        "visualsScore": 9.6,
+        "soundScore": 9.3,
+        "pacingScore": 8.9
+      },
+      "tags": [],
+      "pros": [
+        "وضوح بصري ممتاز رغم كثافة الحركة وسرعتها",
+        "تصميم المركبات والملابس يشرح بنية العالم من خلال التفاصيل",
+        "الصوت والموسيقى يرفعان التوتر دون إرباك المشهد",
+        "فوريـوسا تمتلك هدفاً وقرارات تؤثر في مسار المطاردة"
+      ],
+      "cons": [
+        "الخلفية السياسية والتاريخية للعالم لا تتوسع كثيراً",
+        "بعض الشخصيات المساندة تبقى أقرب إلى رموز أو وظائف",
+        "الاعتماد الكبير على الحركة قد يقلل الارتباط لدى محبي الحوار"
+      ],
+      "creator": null,
+      "genres": [],
+      "platforms": [],
+      "aiGenerated": false,
+      "reviewMode": "review",
+      "releaseDate": "2015-05-15",
+      "sourceName": "VibeCritic Editorial",
+      "sourceUrl": "https://www.themoviedb.org/movie/76341",
+      "catalogSources": [],
+      "sourcePath": "movie-mad-max-fury-road-76341.md",
+      "excerpt": "الحكاية التي تتحرك يبدأ الفيلم من عالم يختصر فيه الماء والوقود والسلطة معنى الحياة. لا يشرح كل تاريخ هذا العالم، بل يترك تصميم المركبات والملابس والطقوس يوضح كيف نشأت طبقاته. المطاردة المركزية تمنح السرد هدفاً مادياً واضحاً، لكنها تحمل أيضاً سؤالاً عن من يملك حق تقرير مصير الآخرين. فوريـوسا ليست مجرد رفيقة للبطل؛ قرارها هو الذي يغير اتجاه الرحلة، ويمنح الحركة معنى يتجاوز النجاة الفردية. تصميم الحركة والوضوح المكاني أهم إنجاز تقني هو أن المشاهد يستطيع غالباً فهم مكان كل مركبة واتجاه الخطر رغم سرعة القطع. الحركة ليست فوضى من الانفجارات؛ إنها سلسلة من الأهداف والعوائق والقرارات. استخدام المؤثرات العملية والدمج الرقمي يخلق ملمساً مادياً، فيما يمنح التصوير الصحراوي مساحة لقراءة المسافة والسرعة. ومع ذلك، قد تبدو بعض المطاردات متقاربة في بنيتها، كما أن الشخصيات المساندة لا تحصل جميعها على وقت كافٍ لتجاوز وظيفتها داخل الحدث. الصوت والأداء الموسيقى والإيقاع الصوتي عنصران أساسيان في بناء الضغط، خصوصاً حين تتحول الآلات إلى جزء من لغة الحرب والاستعراض. لا يستخدم الصوت لتغطية ضعف في الصورة؛ بل يضيف طبقة من التهديد والاندفاع. أداء شارليز ثيرون يمنح فوريـوسا حضوراً عملياً ومقنعاً، بينما يعتمد توم هاردي على التعبير الجسدي والاقتصاد في الكلام. هذا الاختيار ينسجم مع عالم لا يملك فيه الأبطال رفاهية الشرح الطويل. الحكم النهائي Fury Road مثال قوي على أن الحركة يمكن أن تحمل سرداً واضحاً إذا احترم الفيلم المكان والهدف والنتيجة. لكنه لا يقدم عالماً عميق الشرح، ولا يمنح جميع شخصياته مسارات متساوية. تقييم 8.8/10 يرفع الصورة والصوت والإخراج إلى مستوى ممتاز، ويخصم من عمق الخلفية وتنوع الشخصيات. لا يحتاج الفيلم إلى أن يكون مثالياً كي يكون إنجازاً بارزاً في سينما الحركة.",
+      "knowledgeClass": "editorial-opinion-not-verified-fact"
+    },
+    {
+      "key": "movie:manual-movie-the-prestige-1124",
+      "sourceId": "manual-movie-the-prestige-1124",
+      "type": "movie",
+      "title": "العظمة",
+      "originalTitle": "The Prestige",
+      "headline": "The Prestige: الحيلة السينمائية التي تجعل المشاهد شريكاً في الخداع",
+      "summary": "يتحول تنافس ساحرين في لندن الفيكتورية إلى دراسة عن الهوس والتضحية والثمن الأخلاقي لصناعة الوهم.",
+      "verdict": "بناء سردي ذكي يعيد ترتيب المعلومات ويستفيد من التكرار والمنظور المحدود، مع أداءات قوية وأجواء متماسكة. بعض الالتواءات تعتمد على إخفاء معلومات أكثر من زرعها، لكن الفيلم يظل متماسكاً عند إعادة التفكير فيه. تقييم VibeCritic: 8.7 من 10.",
+      "score": 8.7,
+      "scores": {
+        "storyScore": 8.9,
+        "visualsScore": 8.8,
+        "soundScore": 8.4,
+        "pacingScore": 8.6
+      },
+      "tags": [],
+      "pros": [
+        "هيكل سردي يعيد تفسير المشاهد السابقة دون إلغاء قيمتها",
+        "التنافس بين الشخصيتين مرتبط بالهوية والغيرة لا بالاستعراض فقط",
+        "تصميم الإنتاج والإضاءة يخلقان أجواء تاريخية مقنعة",
+        "موضوع التضحية حاضر في بنية الحكاية لا في الحوار وحده"
+      ],
+      "cons": [
+        "بعض المفاجآت تعتمد على حجب معلومة محورية عن المشاهد",
+        "الشخصيات النسائية أقل استقلالاً من الصراع المركزي",
+        "تحتاج الحبكة إلى انتباه مستمر وقد تبدو باردة عاطفياً"
+      ],
+      "creator": null,
+      "genres": [],
+      "platforms": [],
+      "aiGenerated": false,
+      "reviewMode": "review",
+      "releaseDate": "2006-10-20",
+      "sourceName": "VibeCritic Editorial",
+      "sourceUrl": "https://www.themoviedb.org/movie/1124",
+      "catalogSources": [],
+      "sourcePath": "movie-the-prestige-1124.md",
+      "excerpt": "الحيلة بوصفها طريقة للحكي يقسم الفيلم السحر إلى وعد وغموض وصدمة، ويستخدم هذه المراحل لتنظيم طريقة تلقي القصة نفسها. التنافس بين أنجير وبوردن يبدأ مهنياً، لكنه يتحول إلى سؤال عن مقدار ما يمكن أن يتنازل عنه الإنسان كي يمتلك سرّاً لا يملكه الآخر. لا يكتفي السرد بإخفاء الحلول؛ إنه يجعل المشاهد يراقب التفاصيل ويعيد ترتيبها، كما لو كان يحاول كشف خدعة على المسرح. هذه المشاركة الذهنية تمنح الفيلم قيمة عند المشاهدة الثانية، وإن كان بعض الإخفاء يعتمد على معلومات لا يستطيع الجمهور استنتاجها وحده. الشخصيات والثمن يؤدي هيو جاكمان وكريستيان بيل شخصيتين متقابلتين في طريقة بناء الهوية: أحدهما يصنع صورة عامة ويعيش داخلها، والآخر يجعل السر جزءاً من حياته اليومية. مايكل كين يمثل صوت الخبرة الذي يفهم قواعد اللعبة، لكنه لا يوقف اندفاعها. ينجح الفيلم في ربط الغيرة بالهوس، وفي إظهار أن المنافسة لا تترك مجالاً واسعاً للحياة العادية. مع ذلك، تبقى الشخصيات النسائية أقرب إلى نقاط تأثير في صراع الرجلين منها إلى مسارات مكتملة مستقلة. الصورة والإيقاع تمنح الإضاءة والمسارح والمختبرات والملابس الفيلم ملمساً تاريخياً بارداً، وتخدم الصورة موضوع الازدواجية عبر المرايا والظلال والمساحات المغلقة. المونتاج ينتقل بين الأزمنة والروايات بطريقة تخلق أسئلة أكثر مما تقدم إجابات فورية. هذا الأسلوب يمنح العمل كثافة، لكنه يطلب تركيزاً دائماً، وقد يشعر بعض المشاهدين بأن البناء يتعمد التعقيد على حساب الارتباط العاطفي بالشخصيات. الموسيقى والمؤثرات تؤدي دوراً داعماً، لكنها أقل تميزاً من الهيكل السردي نفسه. الحكم النهائي The Prestige عمل ذكي في تصميم الخدعة وفي جعل المشاهد جزءاً من عملية تفسيرها. قوته لا تكمن فقط في الالتواء الأخير، بل في الطريقة التي يزرع بها موضوع التضحية داخل سلوك الشخصيات. ومع ذلك، لا تخلو الحبكة من لحظات حجب معلومات، ولا تمنح جميع الشخصيات العمق نفسه. تقييم 8.7/10 يضعه في خانة الأعمال الممتازة دون تحويل براعة المفاجأة إلى إعفاء من النقد.",
+      "knowledgeClass": "editorial-opinion-not-verified-fact"
+    },
+    {
+      "key": "movie:manual-movie-the-shawshank-redemption-278",
+      "sourceId": "manual-movie-the-shawshank-redemption-278",
+      "type": "movie",
+      "title": "الخلاص من شاوشانك",
+      "originalTitle": "The Shawshank Redemption",
+      "headline": "The Shawshank Redemption: الأمل كفعل يومي لا كشعار",
+      "summary": "دراما سجن تتابع صداقة آندي وريد عبر سنوات طويلة، وتوازن بين القسوة المؤسسية والكرامة والصبر.",
+      "verdict": "قوة الفيلم في تطور العلاقة بين آندي وريد وفي تحويل التفاصيل الصغيرة إلى تراكم عاطفي مقنع. بعض مسارات السجن مصاغة بوضوح أخلاقي مباشر، لكن الأداء والإيقاع والخاتمة تمنح العمل أثراً مستحقاً. تقييم VibeCritic: 8.9 من 10.",
+      "score": 8.9,
+      "scores": {
+        "storyScore": 9.4,
+        "visualsScore": 8.5,
+        "soundScore": 8.6,
+        "pacingScore": 8.8
+      },
+      "tags": [],
+      "pros": [
+        "الصداقة تتطور عبر مواقف وتفاصيل يومية لا عبر التصريحات",
+        "المكان يتحول إلى ضغط مؤسسي مستمر على الشخصيات",
+        "السرد طويل النفس ويمنح الزمن وزناً درامياً",
+        "الأداءان الرئيسيان يوازنان بين الأمل والشك دون مبالغة"
+      ],
+      "cons": [
+        "بعض الشخصيات والسلطات مرسومة بتقسيم أخلاقي واضح",
+        "بعض المصادفات تخدم توقيت الانكشاف والحل",
+        "الإيقاع الهادئ قد يبدو تقليدياً لمن يفضل سرداً أكثر تجريباً"
+      ],
+      "creator": null,
+      "genres": [],
+      "platforms": [],
+      "aiGenerated": false,
+      "reviewMode": "review",
+      "releaseDate": "1994-09-23",
+      "sourceName": "VibeCritic Editorial",
+      "sourceUrl": "https://www.themoviedb.org/movie/278",
+      "catalogSources": [],
+      "sourcePath": "movie-the-shawshank-redemption-278.md",
+      "excerpt": "السجن بوصفه نظاماً لا يعامل الفيلم السجن كخلفية محايدة للأحداث، بل كمؤسسة تصنع عاداتها ولغتها وموازين القوة. آندي يصل إلى مكان يحاول تعريفه من خلال رقم وملف، بينما يحاول ريد أن يشرح له كيف يتعلم السجناء التعايش مع عالم مغلق. التغير لا يحدث بخطوة بطولية واحدة؛ إنه يتشكل عبر العمل والقراءة والصداقة والقدرة على الاحتفاظ بمساحة داخلية لا تملكها المؤسسة بالكامل. هذا التراكم هو ما يمنح الحكاية صدقها العاطفي. الصداقة وتطور الشخصيات العلاقة بين آندي وريد هي مركز الفيلم الحقيقي. ريد يبدأ بوصفه شخصاً يعرف قواعد المكان ويشك في الوعود، ثم يصبح شاهداً على أثر وجود شخص لا يتعامل مع اليأس كحقيقة نهائية. أداء مورغان فريمان يمنح السرد نبرة هادئة لا تخلو من الفكاهة والحزن، فيما يقدم تيم روبنز شخصية تكشف قوتها عبر الصبر أكثر من المواجهة المباشرة. الشخصيات الثانوية تمنح السجن ملمساً إنسانياً، لكن بعضها يؤدي وظيفة أخلاقية واضحة أكثر من امتلاكه تعقيداً مستقلاً. الصورة والصوت والزمن تستخدم الصورة الممرات والساحات والزنازين لتحديد حدود الحركة، وتمنح المشاهد المفتوحة قيمة خاصة لأنها تأتي بعد فترات طويلة من الانغلاق. لا يحاول الفيلم إبهار المشاهد بحركة كاميرا استعراضية؛ قوته في ثبات الأسلوب ووضوح المساحة. الموسيقى والمؤثرات تخدمان المزاج دون أن تفرضا تفسيراً عاطفياً في كل لحظة. الإيقاع طويل النفس، ويمنح السنوات التي تمر أثراً ملموساً، لكنه يعتمد على سرد كلاسيكي مباشر قد يبدو مألوفاً لمن يبحث عن شكل أكثر تجريباً. الحكم النهائي يستحق الفيلم مكانته بسبب قدرته على تحويل الأمل إلى ممارسة يومية، لا لأنه يرفع شعاراً مريحاً. بعض الشخصيات مرسومة بخطوط أخلاقية واضحة، وبعض المصادفات تسهل حركة الحبكة، لكن العلاقة المركزية والبناء الزمني والأداء تجعل الأثر النهائي مقنعاً. درجة 8.9/10 تعكس قوة الكتابة والتمثيل والإيقاع، مع عدم منح العلامة الكاملة لغياب التعقيد المتساوي عن كل المسارات.",
+      "knowledgeClass": "editorial-opinion-not-verified-fact"
+    },
+    {
+      "key": "movie:manual-movie-whiplash-244786",
+      "sourceId": "manual-movie-whiplash-244786",
+      "type": "movie",
+      "title": "ويبلاش",
+      "originalTitle": "Whiplash",
+      "headline": "Whiplash: متى يتحول السعي إلى الإتقان إلى أذى؟",
+      "summary": "دراما مكثفة عن طالب طبول ومدرس لا يعترف إلا بالكمال، تختبر العلاقة بين الانضباط والإساءة والطموح.",
+      "verdict": "فيلم محكم الإيقاع والأداء، يحول التدريب الموسيقي إلى صراع نفسي متصاعد. قوته في المونتاج والصوت والتمثيل، بينما يختزل بعض السياق خارج المعهد ويترك أسئلة أخلاقية مقصودة دون حسم. تقييم VibeCritic: 9.1 من 10.",
+      "score": 9.1,
+      "scores": {
+        "storyScore": 9.1,
+        "visualsScore": 8.7,
+        "soundScore": 9.3,
+        "pacingScore": 9.4
+      },
+      "tags": [],
+      "pros": [
+        "تحويل التدريب إلى توتر درامي محسوس دون الحاجة إلى أحداث ضخمة",
+        "أداءان مركزيان متقابلان ومشحونان بالتفاصيل",
+        "المونتاج والصوت يحددان إيقاع المشهد مثل آلة موسيقية",
+        "الخاتمة تترك سؤال النجاح والثمن مفتوحاً للنقاش"
+      ],
+      "cons": [
+        "السياق الاجتماعي والعائلي خارج المعهد محدود",
+        "بعض التصعيد يتجاوز الواقعية لصالح الشحنة الدرامية",
+        "العمل لا يمنح مساحة متوازنة لوجهات نظر الشخصيات الثانوية"
+      ],
+      "creator": null,
+      "genres": [],
+      "platforms": [],
+      "aiGenerated": false,
+      "reviewMode": "review",
+      "releaseDate": "2014-10-10",
+      "sourceName": "VibeCritic Editorial",
+      "sourceUrl": "https://www.themoviedb.org/movie/244786",
+      "catalogSources": [],
+      "sourcePath": "movie-whiplash-244786.md",
+      "excerpt": "صراع يتجاوز الموسيقى يتابع الفيلم أندرو، طالب الطبول الذي يريد أن يصبح موسيقياً استثنائياً، وفليتشر، المدرس الذي يبرر الإذلال باعتباره وسيلة لاستخراج الموهبة. لا يختار العمل طريقاً سهلاً لإدانة شخصية واحدة؛ فهو يضع المشاهد أمام جاذبية الاعتراف والتميز، ثم يكشف كيف يمكن أن تتحول الحاجة إلى التقدير إلى علاقة سيطرة. السؤال الحقيقي ليس إن كان أندرو موهوباً، بل ما الذي يقبله كي يثبت ذلك، وهل النجاح الذي يحققه في النهاية يبرر الطريقة التي وصل بها إليه. الأداء والكتابة يعتمد البناء على مواجهة متكررة تتغير فيها موازين القوة. أداء J. K. Simmons يوازن بين الحضور الكاريزمي والقسوة، فلا يبدو فليتشر مجرد شرير مسطح، لكنه لا يحصل أيضاً على إعفاء أخلاقي. أما Miles Teller فيجسد انتقال أندرو من الثقة إلى الهوس ثم إلى حالة يصعب فيها الفصل بين الإرادة والخوف. الشخصيات المحيطة أقل تفصيلاً، والعالم خارج المعهد يظهر غالباً بقدر ما يخدم الضغط المركزي، وهو اختيار يجعل الفيلم مركزاً لكنه يحد من اتساع صورته الاجتماعية. الصوت والمونتاج الطبول ليست زينة في الخلفية؛ إنها مادة الصراع نفسه. القطع السريع بين اليدين والوجوه والآلات يجعل التدريب يبدو كاختبار جسدي ونفسي، فيما تسمح لحظات الصمت بسماع التوتر قبل أن ينفجر. لا يحتاج الفيلم إلى مطاردات أو مؤثرات كبيرة كي يصنع التشويق؛ يكفي خطأ إيقاعي صغير أو نظرة من المدرس لتغيير معنى المشهد. هذا التكامل بين الصوت والمونتاج من أدق عناصره، رغم أن التصعيد المتواصل يرفع حرارة العمل إلى مستوى قد يبدو مبالغاً فيه لبعض المشاهدين. الحكم النهائي Whiplash فيلم شديد الفاعلية لأنه لا يساوي بين الانضباط والإساءة، ولا يقدم إجابة مريحة عن حدود الطموح. خاتمته قوية لأنها تضع الأداء الفني والاختلال الأخلاقي في اللحظة نفسها، وتترك المشاهد يقرر ما الذي انتصر فعلاً. درجة 9.1/10 تعكس إحكام الإيقاع والتمثيل والصوت، مع خصم بسبب ضيق السياق وبعض المبالغة الدرامية. لم نمنحه درجة أعلى لمجرد قوة النهاية؛ فالتقييم يشمل العمل كله لا ذروة واحدة.",
+      "knowledgeClass": "editorial-opinion-not-verified-fact"
+    },
+    {
+      "key": "series:manual-series-dark-70523",
+      "sourceId": "manual-series-dark-70523",
+      "type": "series",
+      "title": "دارك",
+      "originalTitle": "Dark",
+      "headline": "Dark: شبكة الزمن حين تصبح الأسرار إرثاً عائلياً",
+      "summary": "مسلسل ألماني يبني لغزه حول اختفاء طفل في بلدة صغيرة، ثم يوسع الدائرة إلى تاريخ عائلات مترابطة عبر أزمنة وأجيال.",
+      "verdict": "تصميم سردي طموح وصورة وصوت يخلقان هوية متماسكة، لكن كثافة الأسماء والروابط تجعل المتابعة مرهقة أحياناً، وبعض الحلول تعتمد على شرح متأخر. تقييم VibeCritic: 8.6 من 10.",
+      "score": 8.6,
+      "scores": {
+        "storyScore": 8.6,
+        "visualsScore": 9,
+        "soundScore": 8.8,
+        "pacingScore": 8
+      },
+      "tags": [],
+      "pros": [
+        "بنية زمنية مترابطة تكافئ الانتباه والعودة إلى التفاصيل",
+        "هوية بصرية وصوتية باردة تناسب البلدة وأسرارها",
+        "تكرار المواقع والعائلات يكتسب معاني مختلفة عبر الأزمنة",
+        "المسلسل يلتزم بلغته الغامضة حتى نهايته"
+      ],
+      "cons": [
+        "تشابه الأسماء والوجوه يربك المتابعة دون تركيز عالٍ",
+        "بعض الحلقات تعتمد على الشرح أكثر من التطور الدرامي",
+        "الإيقاع يتباطأ عندما تتراكم المعلومات دون تقدم واضح"
+      ],
+      "creator": null,
+      "genres": [],
+      "platforms": [],
+      "aiGenerated": false,
+      "reviewMode": "review",
+      "releaseDate": "2017-12-01",
+      "sourceName": "VibeCritic Editorial",
+      "sourceUrl": "https://www.themoviedb.org/tv/70523",
+      "catalogSources": [],
+      "sourcePath": "series-dark-70523.md",
+      "excerpt": "البلدة كشبكة أسرار يبدأ Dark باختفاء طفل، لكنه لا يستخدم الحدث بوصفه لغزاً بوليسياً محدوداً. البلدة نفسها تصبح أرشيفاً لعلاقات قديمة، وتكشف البيوت والغابة ومحطة الطاقة أن الحاضر لا ينفصل عن اختيارات سابقة. كل عائلة تحمل رواية ناقصة، وكل جيل يرث نتائج قرارات لم يكن حاضراً عند اتخاذها. هذا يمنح الفكرة ثقلاً درامياً يتجاوز المفاجأة الزمنية. بناء الزمن والشخصيات أقوى ما في الكتابة هو تحويل العلاقات العائلية إلى خريطة تتغير دلالتها كلما ظهرت معلومة جديدة. لا تكون المفاجأة مجرد كشف هوية أو تاريخ؛ إنها إعادة تفسير علاقة شاهدناها بالفعل. لكن هذا الأسلوب يفرض عبئاً على المشاهد: كثرة الأسماء والنسخ العمرية والروابط تجعل المتابعة صعبة، خصوصاً عندما تمر الحلقات بفترات طويلة من التمهيد. بعض الشخصيات تحصل على عمق واضح، فيما يتحول بعضها الآخر إلى عقدة في مخطط أكبر. الصورة والصوت تستخدم الصورة ألواناً باردة ومساحات ضيقة وضباباً وغابات تجعل البلدة تبدو كأنها محاصرة بتاريخها. التكرار البصري للمواقع يخلق إحساساً بأن المكان ثابت بينما الأشخاص يتغيرون، وهو اختيار يخدم فكرة الزمن الدائري. الموسيقى والتصميم الصوتي يحافظان على توتر منخفض ومستمر، ولا يعتمدان دائماً على الصدمات المفاجئة. أحياناً تصبح النبرة متشابهة بين الحلقات، لكن الهوية العامة متماسكة. الإيقاع والخاتمة يتطلب المسلسل صبراً، لأن بعض الإجابات تؤجل عمداً بينما تتراكم المعلومات. حين تتقدم الحبكة يصبح من السهل ملاحظة أن الغموض ليس دائماً عميقاً لمجرد أنه معقد؛ بعض المقاطع تشرح العلاقات بدلاً من تحويلها إلى صراع حاضر. مع ذلك، يحاول العمل إغلاق دوائره وفق قواعده الخاصة، ولا يتخلى عن لغته في الطريق. درجة 8.6/10 تعكس طموح البناء والهوية الفنية، مع خصم بسبب إرهاق المتابعة وتفاوت الإيقاع.",
+      "knowledgeClass": "editorial-opinion-not-verified-fact"
     }
   ],
   "editorialRelations": [
@@ -93440,7 +93788,7 @@
     }
   ],
   "stats": {
-    "works": 256,
+    "works": 262,
     "people": 1066,
     "companies": 35,
     "concepts": 40,
@@ -93448,8 +93796,8 @@
     "observations": 2228,
     "conflicts": 9,
     "knowledgeGaps": 125,
-    "editorialReviews": 63,
+    "editorialReviews": 69,
     "editorialRelations": 109
   },
-  "updatedAt": "2026-11-15T10:35:28.908Z"
+  "updatedAt": "2026-11-15T12:53:19.900Z"
 }

@@ -10,7 +10,7 @@ type: movie
 date: 2026-11-15
 releaseDate: "2006-10-20"
 poster: "https://image.tmdb.org/t/p/w500/5MXyQfz8xUP3dIFPTubhTsbFY6N.jpg"
-youtubeVideoTitle: "The Prestige – Trailer"
+youtubeVideoTitle: "The Prestige - Trailer"
 score: 8.7
 storyScore: 8.9
 visualsScore: 8.8
@@ -33,6 +33,8 @@ sourceName: "VibeCritic Editorial"
 sourceId: "manual-movie-the-prestige-1124"
 sourceUrl: "https://www.themoviedb.org/movie/1124"
 aiGenerated: false
+backdrop: "https://image.tmdb.org/t/p/w1280/yaExZh6qE2cfyK3o4kAMEq0mkgy.jpg"
+youtubeVideoId: "ijXruSzfGEc"
 ---
 ## الحيلة بوصفها طريقة للحكي
 يقسم الفيلم السحر إلى وعد وغموض وصدمة، ويستخدم هذه المراحل لتنظيم طريقة تلقي القصة نفسها. التنافس بين أنجير وبوردن يبدأ مهنياً، لكنه يتحول إلى سؤال عن مقدار ما يمكن أن يتنازل عنه الإنسان كي يمتلك سرّاً لا يملكه الآخر. لا يكتفي السرد بإخفاء الحلول؛ إنه يجعل المشاهد يراقب التفاصيل ويعيد ترتيبها، كما لو كان يحاول كشف خدعة على المسرح. هذه المشاركة الذهنية تمنح الفيلم قيمة عند المشاهدة الثانية، وإن كان بعض الإخفاء يعتمد على معلومات لا يستطيع الجمهور استنتاجها وحده.

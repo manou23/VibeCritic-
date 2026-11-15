@@ -10,7 +10,7 @@ type: series
 date: 2026-11-15
 releaseDate: "2017-12-01"
 poster: "https://image.tmdb.org/t/p/w500/5LoHuHWA4H8jElFlZDvsmU2n63b.jpg"
-youtubeVideoTitle: "Dark – Official Trailer"
+youtubeVideoTitle: "Teaser [Subtitled]"
 score: 8.6
 storyScore: 8.6
 visualsScore: 9.0
@@ -33,6 +33,8 @@ sourceName: "VibeCritic Editorial"
 sourceId: "manual-series-dark-70523"
 sourceUrl: "https://www.themoviedb.org/tv/70523"
 aiGenerated: false
+backdrop: "https://image.tmdb.org/t/p/w1280/3jDXL4Xvj3AzDOF6UH1xeyHW8MH.jpg"
+youtubeVideoId: "ESEUoa-mz2c"
 ---
 ## البلدة كشبكة أسرار
 يبدأ Dark باختفاء طفل، لكنه لا يستخدم الحدث بوصفه لغزاً بوليسياً محدوداً. البلدة نفسها تصبح أرشيفاً لعلاقات قديمة، وتكشف البيوت والغابة ومحطة الطاقة أن الحاضر لا ينفصل عن اختيارات سابقة. كل عائلة تحمل رواية ناقصة، وكل جيل يرث نتائج قرارات لم يكن حاضراً عند اتخاذها. هذا يمنح الفكرة ثقلاً درامياً يتجاوز المفاجأة الزمنية.

@@ -10,7 +10,7 @@ type: movie
 date: 2026-11-15
 releaseDate: "2014-10-10"
 poster: "https://image.tmdb.org/t/p/w500/7fn624j5lj3xTme2SgiLCe?placeholder=1"
-youtubeVideoTitle: "Whiplash – Official Trailer"
+youtubeVideoTitle: "10th Anniversary Rerelease Official Trailer"
 score: 9.1
 storyScore: 9.1
 visualsScore: 8.7
@@ -33,6 +33,8 @@ sourceName: "VibeCritic Editorial"
 sourceId: "manual-movie-whiplash-244786"
 sourceUrl: "https://www.themoviedb.org/movie/244786"
 aiGenerated: false
+backdrop: "https://image.tmdb.org/t/p/w1280/fRGxZuo7jJUWQsVg9PREb98Aclp.jpg"
+youtubeVideoId: "Q7kZy3T6vRM"
 ---
 ## صراع يتجاوز الموسيقى
 يتابع الفيلم أندرو، طالب الطبول الذي يريد أن يصبح موسيقياً استثنائياً، وفليتشر، المدرس الذي يبرر الإذلال باعتباره وسيلة لاستخراج الموهبة. لا يختار العمل طريقاً سهلاً لإدانة شخصية واحدة؛ فهو يضع المشاهد أمام جاذبية الاعتراف والتميز، ثم يكشف كيف يمكن أن تتحول الحاجة إلى التقدير إلى علاقة سيطرة. السؤال الحقيقي ليس إن كان أندرو موهوباً، بل ما الذي يقبله كي يثبت ذلك، وهل النجاح الذي يحققه في النهاية يبرر الطريقة التي وصل بها إليه.
