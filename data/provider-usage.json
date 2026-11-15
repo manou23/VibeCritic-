@@ -259,7 +259,7 @@
           "used": 2,
           "limit": 50,
           "remaining": 48,
-          "observedAt": "2026-11-15T16:09:42.299Z",
+          "observedAt": "2026-11-15T16:57:16.483Z",
           "source": "OpenRouter GET /api/v1/key"
         },
         "lastAttemptAt": "2026-11-15T00:04:25.510Z",
