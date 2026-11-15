@@ -41,7 +41,7 @@ genres:
 creator: "J.D. Payne and Patrick McKay"
 sourceName: "VibeCritic Editorial Desk"
 sourceId: "84773"
-sourceUrl: "https://www.amazon.com/gp/video/detail/B0B8TFY4Z4"
+sourceUrl: "https://www.primevideo.com/"
 aiGenerated: false
 ---
 
