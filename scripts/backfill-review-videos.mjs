@@ -94,8 +94,11 @@ async function main(){
           image={poster:data.poster,backdrop:data.backdrop};
           video=data.video;
         }
-      }else if(type==='game'&&rawgKey&&(!hasPoster||!hasBackdrop)){
-        image=await rawgArtwork(sourceId);
+      }else if(type==='game'&&(!hasPoster||!hasBackdrop)){
+        const sourceName=field(frontmatter,'sourceName').toUpperCase();
+        const sourceUrl=field(frontmatter,'sourceUrl').toLowerCase();
+        if(rawgKey&&(sourceName==='RAWG'||sourceUrl.includes('rawg.io'))) image=await rawgArtwork(sourceId);
+        else image={poster:field(frontmatter,'poster'),backdrop:field(frontmatter,'backdrop')||field(frontmatter,'poster')};
       }
       if(!hasVideo&&!video&&youtubeKey)video=await youtubeTrailer(title,type);
       let changed=false;
@@ -104,7 +107,7 @@ async function main(){
         if(poster){frontmatter=setField(frontmatter,'poster',poster);imagesAdded++;changed=true;}
       }
       if(!hasBackdrop){
-        const backdrop=image?.backdrop||image?.poster||(video?.id?'https://img.youtube.com/vi/'+video.id+'/maxresdefault.jpg':'');
+        const backdrop=image?.backdrop||image?.poster||(video?.id?'https://img.youtube.com/vi/'+video.id+'/hqdefault.jpg':'');
         if(backdrop){frontmatter=setField(frontmatter,'backdrop',backdrop);if(!image?.poster&&!image?.backdrop)imagesAdded++;changed=true;}
       }
       if(!hasVideo&&video?.id&&validVideo(video.id)){
