@@ -296,8 +296,9 @@ function resourceDailyPublishingPlan(){
  const names=providerOrder.filter(name=>configured[name]);
  if(!names.length)return {limit:0,mode:'no-free-provider',knownProviders:[],estimatedArticles:0};
  const estimates=names.map(name=>{
-  const entry=providerDay()[name]||{},dailyBlocked=entry.blockedReason==='daily-limit'&&Number(entry.blockedUntil||0)>Date.now();
-  return {name,estimatedArticles:dailyBlocked?0:providerCapacity(name).estimatedArticles,dailyBlocked};
+  const entry=providerDay()[name]||{},blocked=Number(entry.blockedUntil||0)>Date.now();
+  const dailyBlocked=blocked&&entry.blockedReason==='daily-limit';
+  return {name,estimatedArticles:dailyBlocked?0:providerCapacity(name).estimatedArticles,dailyBlocked,temporarilyBlocked:blocked&&!dailyBlocked,blockedUntil:blocked?new Date(Number(entry.blockedUntil)).toISOString():null,blockedReason:blocked?entry.blockedReason||'cooldown':null};
  });
  if(estimates.some(x=>x.estimatedArticles===null))return {limit:baseDailyTotalLimit,mode:'quota-unknown',knownProviders:estimates,estimatedArticles:null};
  const total=estimates.reduce((sum,x)=>sum+x.estimatedArticles,0);
@@ -394,12 +395,29 @@ async function recordProviderOutcome(name,success,error=null,measurement=null,it
   const article=day.articles[articleKey][name]||(day.articles[articleKey][name]={attempts:0,requests:0,inputTokens:0,outputTokens:0,totalTokens:0,successes:0});
   article.attempts++;article.requests+=usage.requests;article.inputTokens+=usage.inputTokens;article.outputTokens+=usage.outputTokens;article.totalTokens+=usage.totalTokens;if(success)article.successes++;
  }
- if(success){entry.successes=(Number(entry.successes)||0)+1;entry.blockedUntil=0;entry.blockedReason='';}
+ if(success){entry.successes=(Number(entry.successes)||0)+1;entry.blockedUntil=0;entry.blockedReason='';entry.lastCooldown=null;entry.consecutiveTransientFailures=0;}
  else{
-  entry.failures=(Number(entry.failures)||0)+1;const message=String(error?.message||error||'');const status=Number(message.match(/HTTP\\s+(\d{3})/i)?.[1])||0;
-  if(status===429||/rate.?limit|quota|resource exhausted/i.test(message)){entry.blockedUntil=new Date(algeriaDate()+'T23:59:59+01:00').getTime();entry.blockedReason='daily-limit';}
-  else if(status===401||status===403||status===402){entry.blockedUntil=Date.now()+6*60*60*1000;entry.blockedReason='auth-or-billing';}
+  entry.failures=(Number(entry.failures)||0)+1;
+  const message=String(error?.message||error||''),status=Number(message.match(/HTTP\\s+(\\d{3})/i)?.[1])||0,headers=usage.headers||{};
+  const parseReset=value=>{
+   if(value===undefined||value===null||value==='')return null;
+   const raw=String(value).trim(),numeric=Number(raw);
+   if(Number.isFinite(numeric)&&numeric>=0)return numeric>1e12?numeric:numeric>1e9?numeric*1000:Date.now()+numeric*1000;
+   const parsed=Date.parse(raw);return Number.isFinite(parsed)?parsed:null;
+  };
+  const retryAfter=parseReset(headers['retry-after']);
+  const resetAt=parseReset(headers['x-ratelimit-reset-requests']??headers['x-ratelimit-reset-tokens']??headers['x-ratelimit-reset']);
+  const explicitDaily=/daily|per[_ -]?day|free_model_daily_requests|daily quota|quota for today|تجاوز.*اليوم|الحصة اليومية/i.test(message);
+  const quotaExhausted=/resource exhausted|insufficient quota|quota exceeded/i.test(message);
+  if(status===429||/rate.?limit/i.test(message)){
+   const until=retryAfter||resetAt||Date.now()+60*1000;
+   const isDaily=explicitDaily||quotaExhausted;
+   entry.blockedUntil=isDaily?Math.max(until,new Date(algeriaDate()+'T23:59:59+01:00').getTime()):Math.min(Math.max(until,Date.now()+15000),Date.now()+15*60*1000);
+   entry.blockedReason=isDaily?'daily-limit':'rate-limit';
+  }else if(status===401||status===403||status===402){entry.blockedUntil=Date.now()+6*60*60*1000;entry.blockedReason='auth-or-billing';}
+  else if(status>=500&&status<=599){const failures=Number(entry.consecutiveTransientFailures||0)+1;entry.consecutiveTransientFailures=failures;entry.blockedUntil=Date.now()+Math.min(15*60*1000,60*1000*Math.pow(2,Math.min(4,failures-1)));entry.blockedReason='temporary-server';}
   else if(/timeout|aborted|network|fetch failed/i.test(message)){entry.blockedUntil=Date.now()+15*60*1000;entry.blockedReason='temporary-network';}
+  entry.lastCooldown={reason:entry.blockedReason||'none',until:entry.blockedUntil?new Date(entry.blockedUntil).toISOString():null,observedAt:new Date().toISOString(),status:status||null};
  }
  await fs.mkdir('data',{recursive:true});
  await fs.writeFile('data/provider-usage.json',JSON.stringify(providerUsage,null,2)+'\n','utf8');
