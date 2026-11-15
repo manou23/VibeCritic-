@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { buildEditorialTrainingContext, recordEditorialCandidate, listEditorialPatterns } from './editorial-intelligence.mjs';
 import { buildKnowledgeContext, recordKnowledge } from './knowledge-graph.mjs';
@@ -1016,7 +1017,7 @@ async function writeReview(item){
  const platformFields=arr(enriched.metadata?.platforms||enriched.platforms||[]);
  const scoreFields=reviewMode==='review'?['storyScore: '+a.scores.story,'visualsScore: '+a.scores.visuals,'soundScore: '+a.scores.sound,'pacingScore: '+a.scores.pacing]:[];
  const ratingFields=reviewMode==='review'?['score: '+a.score]:[];
-  const fm=['---','title: '+y(enriched.name||item.name),'originalTitle: '+y(enriched.originalTitle||''),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 2','reviewMode: '+reviewMode,'catalogContextSource: '+y(enriched.metadata?.catalogContext?.source||''),'catalogContextObservedAt: '+y(enriched.metadata?.catalogContext?.observedAt||''),'catalogRelatedWorks: '+arr((enriched.metadata?.catalogContext?.relatedWorks||[]).map(work=>work.title+' ('+(work.year||'سنة غير محددة')+') — تصنيفات مشتركة '+work.sharedGenreCount+'، أشخاص مشتركون '+work.sharedPersonCount)),'sourceName: '+y(item.source||''),'sourceVoteCount: '+(Number(enriched.sourceVoteCount)||0),'sourceRatingScale: '+(item.source==='RAWG'?5:item.source==='IGDB'?100:10),'metacriticScore: '+(Number(enriched.metadata?.metacritic)||0),'cast:',arr(enriched.metadata?.cast||[]),'crew:',arr([...(enriched.metadata?.directors||[]),...(enriched.metadata?.creators||[])]),'watchProviders:',arr(enriched.metadata?.watchProviders||[]),...watchFields,'platforms:',platformFields,'gameStores:',gameStoreFields.length?gameStoreFields.join('\n'):'  []',...scoreFields,'type: '+item.type,'date: '+date,'releaseDate: '+y(enriched.date),'poster: '+y(item.poster),'backdrop: '+y(item.backdrop),...videoFields,...externalVideoFields,...ratingFields,'trendRank: '+(Number(item.trendRank)||0),'trendSource: '+y(item.source||''),'trendPopularity: '+(Number(item.popularity)||0),'pros:',arr(a.pros),'cons:',arr(a.cons),'tags:',arr(a.tags),'genres:',arr(enriched.genres||[]),'sourceRating: '+(Number(enriched.rating)||0),'sourceId: '+y(item.id),'sourceUrl: '+y(item.sourceUrl),'aiGenerated: true','---','',a.review,'','> قراءة نقدية تحريرية مولّدة بمساعدة الذكاء الاصطناعي، مبنية على البيانات المنشورة المتاحة. لا تمثل تجربة مشاهدة أو لعب مباشرة، ولا تقييماً رسمياً من المصدر.',''].join('\n');
+  const fm=['---','title: '+y(enriched.name||item.name),'originalTitle: '+y(enriched.originalTitle||''),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 2','reviewMode: '+reviewMode,'publishedAt: '+y(new Date().toISOString()),'catalogContextSource: '+y(enriched.metadata?.catalogContext?.source||''),'catalogContextObservedAt: '+y(enriched.metadata?.catalogContext?.observedAt||''),'catalogRelatedWorks: '+arr((enriched.metadata?.catalogContext?.relatedWorks||[]).map(work=>work.title+' ('+(work.year||'سنة غير محددة')+') — تصنيفات مشتركة '+work.sharedGenreCount+'، أشخاص مشتركون '+work.sharedPersonCount)),'sourceName: '+y(item.source||''),'sourceVoteCount: '+(Number(enriched.sourceVoteCount)||0),'sourceRatingScale: '+(item.source==='RAWG'?5:item.source==='IGDB'?100:10),'metacriticScore: '+(Number(enriched.metadata?.metacritic)||0),'cast:',arr(enriched.metadata?.cast||[]),'crew:',arr([...(enriched.metadata?.directors||[]),...(enriched.metadata?.creators||[])]),'watchProviders:',arr(enriched.metadata?.watchProviders||[]),...watchFields,'platforms:',platformFields,'gameStores:',gameStoreFields.length?gameStoreFields.join('\n'):'  []',...scoreFields,'type: '+item.type,'date: '+date,'releaseDate: '+y(enriched.date),'poster: '+y(item.poster),'backdrop: '+y(item.backdrop),...videoFields,...externalVideoFields,...ratingFields,'trendRank: '+(Number(item.trendRank)||0),'trendSource: '+y(item.source||''),'trendPopularity: '+(Number(item.popularity)||0),'pros:',arr(a.pros),'cons:',arr(a.cons),'tags:',arr(a.tags),'genres:',arr(enriched.genres||[]),'sourceRating: '+(Number(enriched.rating)||0),'sourceId: '+y(item.id),'sourceUrl: '+y(item.sourceUrl),'aiGenerated: true','---','',a.review,'','> قراءة نقدية تحريرية مولّدة بمساعدة الذكاء الاصطناعي، مبنية على البيانات المنشورة المتاحة. لا تمثل تجربة مشاهدة أو لعب مباشرة، ولا تقييماً رسمياً من المصدر.',''].join('\n');
  await fs.writeFile(path.join(outDir,item.type+'-'+item.id+'.md'),fm,'utf8');
  const judgmentRecord=await recordJudgmentVersion(enriched,a);
  if(judgmentRecord.assessment?.status==='needs-review')console.warn('تنبيه: تغير جوهري في حكم محفوظ سابق؛ يلزم مراجعة سبب التغير والأدلة:',item.type+':'+item.id);
@@ -1047,8 +1048,22 @@ async function main(){
   const content=await fs.readFile(path.join(outDir,file),'utf8');
   const id=file.match(/-(\d+)\.md$/)?.[1];
   if(id){const key=type+':'+id,declaredMode=content.match(/^reviewMode:\s*(preview|review)\s*$/m)?.[1],legacyPreview=!declaredMode&&/قراءة استباقية/i.test(content.slice(0,5000));publishedKeys.add(key);publishedModes.set(key,declaredMode||(legacyPreview?'preview':'review'));}
-  const date=content.match(/^date:\s*["']?(\d{4}-\d{2}-\d{2})/m)?.[1];
-  if(date===today)todayCounts[type]++;
+  // Daily quotas count only AI-generated reviews, never manually authored articles.
+  // The frontmatter "date" is the work's release date, not its publication date.
+  if(/^aiGenerated:\s*true\s*$/m.test(content)){
+   let publicationDate=content.match(/^publishedAt:\s*["']?([^"'\\r\\n]+)["']?\s*$/m)?.[1]?.trim();
+   if(!publicationDate){
+    // Backfill the real publication day for older AI reviews from their Git history.
+    try{
+     const committedAt=execFileSync('git',['log','-1','--format=%cI','--',path.join(outDir,file)],{encoding:'utf8',stdio:['ignore','pipe','ignore']}).trim();
+     if(committedAt)publicationDate=committedAt;
+    }catch{}
+   }
+   if(publicationDate){
+    const parsed=new Date(publicationDate);
+    if(Number.isFinite(parsed.getTime())&&parsed.toLocaleDateString('en-CA',{timeZone:'Africa/Algiers'})===today)todayCounts[type]++;
+   }
+  }
  }
  const totalPublished=Object.values(counts).reduce((sum,value)=>sum+value,0);
  const buildPhase=totalPublished<targetTotal;
