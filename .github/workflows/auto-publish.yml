@@ -223,6 +223,11 @@ jobs:
       - name: Re-index editorial knowledge after catalog enrichment
         if: github.event_name == 'workflow_dispatch'
         run: npm run knowledge:ingest-reviews
+      - name: Build production site
+        run: CF_PAGES=1 npm run build
+      - name: Validate production build, SEO and sitemap
+        run: npm run validate:build
+
       - name: Commit generated reviews and learning memory
         if: success()
         run: |
@@ -247,7 +252,3 @@ jobs:
               done
             fi
           fi
-      - name: Build production site
-        run: CF_PAGES=1 npm run build
-      - name: Validate production build, SEO and sitemap
-        run: npm run validate:build
