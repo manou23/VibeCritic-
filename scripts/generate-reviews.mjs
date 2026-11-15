@@ -1129,7 +1129,8 @@ async function main(){
     done.push(await writeReview(item));
     quotas[type]--;
     if(!upgraded)counts[type]++;
-    publishedKeys.add(key);publishedModes.set(key,'review');\n    await savePublishedIndex(publishedKeys);
+    publishedKeys.add(key);publishedModes.set(key,'review');
+    await savePublishedIndex(publishedKeys);
     fresh.push({...item,upgradedFromPreview:upgraded});
     console.log(upgraded?'تم تحويل القراءة الاستباقية إلى مراجعة بعد الإصدار:':'تم إنشاء مراجعة:',item.name,'|',type,'| الإجمالي:',Object.values(counts).reduce((sum,value)=>sum+value,0));
    }catch(e){generationFailures++;console.error('تعذر إنشاء مراجعة:',item.name,e.message);}
