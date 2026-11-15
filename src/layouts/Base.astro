@@ -157,7 +157,7 @@ const updateThemeButton = () => {
   const dark = document.documentElement.classList.contains('dark-mode');
   themeButton?.setAttribute('aria-pressed', String(dark));
   themeButton?.setAttribute('aria-label', dark ? 'التبديل إلى الوضع الفاتح' : 'التبديل إلى الوضع المظلم');
-  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#0d0f12' : '#f3f0e8');
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#090910' : '#f7f4fc');
   if (themeButton) themeButton.textContent = dark ? '☀' : '☾';
 };
 updateThemeButton();
