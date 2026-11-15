@@ -25,6 +25,12 @@ const topRated=[...reviews].filter(review=>review.data.score>0&&!isUpcomingRevie
 const upcoming=reviews.filter(isUpcomingReview).sort((a,b)=>String(a.data.releaseDate||'').localeCompare(String(b.data.releaseDate||''))).slice(0,8);
 ---
 <Base title="اكتشف عالم الترفيه" description="اكتشف أحدث الأفلام والمسلسلات والألعاب، تابع الترندات العالمية واقرأ مراجعات VibeCritic." image={spotlight?.backdrop || spotlight?.poster}>
+<div class="culture-marquee" aria-label="عالم VibeCritic">
+ <div class="culture-marquee-track">
+  <div class="culture-marquee-group"><span>GAMES</span><i>✳</i><span>CINEMA</span><i>✳</i><span>SERIES</span><i>✳</i><span>THE CULTURE SIGNAL</span><i>✳</i><span>NO SPOILERS. JUST VIBES.</span><i>✳</i></div>
+  <div class="culture-marquee-group" aria-hidden="true"><span>GAMES</span><i>✳</i><span>CINEMA</span><i>✳</i><span>SERIES</span><i>✳</i><span>THE CULTURE SIGNAL</span><i>✳</i><span>NO SPOILERS. JUST VIBES.</span><i>✳</i></div>
+ </div>
+</div>
 <section class="wrap discovery-hero spotlight-slider" aria-label="أبرز الترندات">
  <div class="spotlight-backdrops" aria-hidden="true">
   <img class="spotlight-image is-active" src={spotlight?.backdrop||spotlight?.poster||''} alt="" fetchpriority="high" loading="eager" decoding="async"/>
@@ -51,6 +57,11 @@ const upcoming=reviews.filter(isUpcomingReview).sort((a,b)=>String(a.data.releas
  <div class="spotlight-data" hidden>
   {trendReviews.map(item=><i data-title={item.title} data-summary={item.summary||''} data-backdrop={item.backdrop||item.poster||''} data-poster={item.poster||''} data-type={item.type} data-source={item.source||''} data-href={item.href} data-external={String(item.external)} data-preview={String(item.preview||false)}></i>)}
  </div>
+</section>
+<section class="wrap vibe-manifesto" aria-label="هوية VibeCritic">
+ <div class="vibe-manifesto-index"><span>VC / 001</span><span class="vibe-live-dot"></span><span>THE CULTURE, UNFILTERED</span></div>
+ <p><span>مش مجرد تقييم.</span> <strong>هذا هو الإحساس.</strong></p>
+ <div class="vibe-manifesto-note">نلتقط ما يستحق وقتك — من أول مشهد إلى آخر مرحلة.</div>
 </section>
 <aside class="wrap ai-review-promo" data-expires="2026-11-19T23:59:59+01:00" aria-label="جرّب المراجع الذكي">
  <div class="ai-review-promo-copy">
