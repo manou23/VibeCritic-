@@ -1031,3 +1031,23 @@ img{max-width:100%}
 @media(prefers-reduced-motion:reduce){
  .brand-mark rect,.brand-glyph-v,.brand-glyph-c,.brand-spark{animation:none!important;opacity:1!important;transform:none!important}
 }
+
+
+/* Wordmark letters travel from the real VibeCritic name into the VC mark */
+.brand-name,.footer-wordmark{direction:ltr;unicode-bidi:isolate}
+.brand-letter-v,.brand-letter-c{display:inline-block;position:relative;will-change:transform,opacity}
+.brand-letter-v{animation:vc-word-v 7s cubic-bezier(.2,.75,.25,1) infinite}
+.brand-letter-c{animation:vc-word-c 7s cubic-bezier(.2,.75,.25,1) infinite}
+@keyframes vc-word-v{
+  0%,8%{opacity:1;transform:translate(0,0) scale(1)}
+  18%{opacity:1;transform:translate(128px,0) scale(.72)}
+  25%,100%{opacity:0;transform:translate(128px,0) scale(.35)}
+}
+@keyframes vc-word-c{
+  0%,13%{opacity:1;transform:translate(0,0) scale(1)}
+  23%{opacity:1;transform:translate(70px,0) scale(.72)}
+  30%,100%{opacity:0;transform:translate(70px,0) scale(.35)}
+}
+@media(prefers-reduced-motion:reduce){
+  .brand-letter-v,.brand-letter-c{animation:none!important;opacity:1!important;transform:none!important}
+}
