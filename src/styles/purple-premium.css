@@ -127,3 +127,23 @@ body{background-image:radial-gradient(ellipse at 50% -22%,rgba(168,85,247,.17),t
 @media(prefers-reduced-motion:reduce){
  .discovery-primary,.discovery-secondary,.review-card,.catalog-poster-card,.trend-card{transition:none!important}
 }
+
+/* Optional light appearance remains available through the existing theme toggle. */
+html:not(.dark-mode),html:not(.dark-mode) body{background:#f7f4fc;color:#21172f}
+html:not(.dark-mode){
+ --vc-bg:#f7f4fc;--vc-text:#21172f;--vc-accent:#7c3aed;--vc-accent-deep:#6d28d9;
+ --vc-border:#e3d9ef;--vc-muted:#756a83;--vc-surface:#fff;--vc-surface-muted:#f0eaf8;
+ --vc-card-border:#e4d9f0;--vc-nav:#40334f;--vc-on-dark:#fff;
+ color-scheme:light;
+}
+html:not(.dark-mode) .site-header{background:rgba(250,248,253,.9);border-color:#e3d9ef}
+html:not(.dark-mode) .site-links{color:#40334f}
+html:not(.dark-mode) .brand,html:not(.dark-mode) .catalog-heading h2,html:not(.dark-mode) .review-title{color:#21172f}
+html:not(.dark-mode) .catalog-heading p:not(.catalog-eyebrow),html:not(.dark-mode) .review-headline{color:#756a83}
+html:not(.dark-mode) .review-card,html:not(.dark-mode) .catalog-poster-card,html:not(.dark-mode) .trend-card{background:#fff;border-color:#e4d9f0}
+html:not(.dark-mode) .site-footer{border-color:#e3d9ef}
+html:not(.dark-mode) .site-search-dialog{background:#fff;color:#21172f}
+html:not(.dark-mode) .site-search-result{background:#fff;border-color:#e4d9f0}
+html:not(.dark-mode) .site-search-result strong{color:#21172f}
+html:not(.dark-mode) .site-search-result span{color:#756a83}
+html:not(.dark-mode) .theme-toggle{color:#6d28d9;border-color:#d8c6e9}
