@@ -9,7 +9,6 @@ reviewVersion: 1
 type: movie
 date: 2026-11-15
 releaseDate: "2014-10-10"
-poster: "https://image.tmdb.org/t/p/w500/7fn624j5lj3xTme2SgiLCe?placeholder=1"
 youtubeVideoTitle: "10th Anniversary Rerelease Official Trailer"
 score: 9.1
 storyScore: 9.1
