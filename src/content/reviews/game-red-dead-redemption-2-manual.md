@@ -17,7 +17,7 @@ score: 9.3
 storyScore: 9.5
 visualsScore: 9.7
 soundScore: 9.5
-pacingScore: 8.7
+pacingScore: 8.5
 reviewMode: review
 platforms: ["PlayStation 4", "Xbox One", "PC"]
 gameStores:

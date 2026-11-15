@@ -17,7 +17,7 @@ score: 8.7
 storyScore: 9.1
 visualsScore: 9.2
 soundScore: 9.0
-pacingScore: 8.1
+pacingScore: 7.5
 reviewMode: review
 pros:
   - "قواعد الحلم تمنح الحبكة توتراً قائماً على الفهم والتوقع"
