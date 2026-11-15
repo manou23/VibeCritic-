@@ -1,32 +1,44 @@
 {
-  "updatedAt": "2026-11-15T17:02:06.692Z",
+  "updatedAt": "2026-11-15T21:01:11.267Z",
   "date": "2026-11-15",
   "publishingPlan": {
     "limit": 3,
-    "mode": "quota-unknown",
+    "mode": "measured-capacity",
     "knownProviders": [
       {
         "name": "gemini",
-        "estimatedArticles": null,
-        "dailyBlocked": false
+        "estimatedArticles": 0,
+        "dailyBlocked": true,
+        "temporarilyBlocked": false,
+        "blockedUntil": "2026-11-15T22:59:59.000Z",
+        "blockedReason": "daily-limit"
       },
       {
         "name": "groq",
-        "estimatedArticles": 0,
-        "dailyBlocked": true
+        "estimatedArticles": 149,
+        "dailyBlocked": false,
+        "temporarilyBlocked": false,
+        "blockedUntil": null,
+        "blockedReason": null
       },
       {
         "name": "cloudflare-workers-ai",
-        "estimatedArticles": null,
-        "dailyBlocked": false
+        "estimatedArticles": 0,
+        "dailyBlocked": true,
+        "temporarilyBlocked": false,
+        "blockedUntil": "2026-11-15T22:59:59.000Z",
+        "blockedReason": "daily-limit"
       },
       {
         "name": "openrouter",
-        "estimatedArticles": 22,
-        "dailyBlocked": false
+        "estimatedArticles": 0,
+        "dailyBlocked": false,
+        "temporarilyBlocked": false,
+        "blockedUntil": null,
+        "blockedReason": null
       }
     ],
-    "estimatedArticles": null
+    "estimatedArticles": 149
   },
   "providerStrategy": {
     "mode": "adaptive-learning",
@@ -37,48 +49,48 @@
     },
     "ranking": [
       {
-        "name": "cloudflare-workers-ai",
-        "score": 0.5374,
-        "reliability": 0.538,
-        "headroom": null,
-        "efficiency": 0.581,
-        "samples": 11,
-        "successRate": 0.538,
-        "averageTokensPerSuccess": 19846,
-        "averageApiRequestsPerSuccess": 1.83
+        "name": "groq",
+        "score": 0.6917,
+        "reliability": 0.625,
+        "headroom": 0.977,
+        "efficiency": 0.519,
+        "samples": 22,
+        "successRate": 0.625,
+        "averageTokensPerSuccess": 9235,
+        "averageApiRequestsPerSuccess": 8.86
       },
       {
-        "name": "groq",
-        "score": 0.4536,
-        "reliability": 0.143,
-        "headroom": 1,
-        "efficiency": 0.625,
-        "samples": 5,
-        "successRate": 0.143,
+        "name": "cloudflare-workers-ai",
+        "score": 0.5362,
+        "reliability": 0.5,
+        "headroom": null,
+        "efficiency": 0.681,
+        "samples": 12,
+        "successRate": 0.5,
+        "averageTokensPerSuccess": 19846,
+        "averageApiRequestsPerSuccess": 2
+      },
+      {
+        "name": "gemini",
+        "score": 0.2861,
+        "reliability": 0.111,
+        "headroom": null,
+        "efficiency": 0.5,
+        "samples": 7,
+        "successRate": 0.111,
         "averageTokensPerSuccess": 0,
-        "averageApiRequestsPerSuccess": 6
+        "averageApiRequestsPerSuccess": 12
       },
       {
         "name": "openrouter",
-        "score": 0.3846,
+        "score": 0.148,
         "reliability": 0.154,
-        "headroom": 0.96,
-        "efficiency": 0.3,
+        "headroom": 0,
+        "efficiency": 0.317,
         "samples": 11,
         "successRate": 0.154,
         "averageTokensPerSuccess": 83894,
         "averageApiRequestsPerSuccess": 24
-      },
-      {
-        "name": "gemini",
-        "score": 0.3036,
-        "reliability": 0.143,
-        "headroom": null,
-        "efficiency": 0.5,
-        "samples": 5,
-        "successRate": 0.143,
-        "averageTokensPerSuccess": 0,
-        "averageApiRequestsPerSuccess": 9
       }
     ],
     "note": "الترتيب يتعلم من نتائج التشغيلات السابقة خلال الأيام المحفوظة؛ عند قلة العينات تُخفّض الثقة ويعود التقييم نحو التوازن."
@@ -91,10 +103,10 @@
         "requests": null
       },
       "usedTokens": 0,
-      "usedRequests": 5,
+      "usedRequests": 8,
       "estimatedArticles": null,
       "averageTokensPerArticle": null,
-      "averageRequestsPerArticle": 1.8,
+      "averageRequestsPerArticle": 2,
       "reportedDailyRequestsRemaining": null,
       "reportedDailyRequestsLimit": null
     },
@@ -103,12 +115,12 @@
         "tokens": null,
         "requests": null
       },
-      "usedTokens": 0,
-      "usedRequests": 2,
-      "estimatedArticles": 833,
-      "averageTokensPerArticle": null,
-      "averageRequestsPerArticle": 1.2,
-      "reportedDailyRequestsRemaining": 1000,
+      "usedTokens": 129284,
+      "usedRequests": 120,
+      "estimatedArticles": 149,
+      "averageTokensPerArticle": 6804,
+      "averageRequestsPerArticle": 6.53,
+      "reportedDailyRequestsRemaining": 977,
       "reportedDailyRequestsLimit": 1000
     },
     "cloudflare-workers-ai": {
@@ -117,9 +129,9 @@
         "requests": null
       },
       "usedTokens": 97281,
-      "usedRequests": 7,
+      "usedRequests": 8,
       "estimatedArticles": null,
-      "averageTokensPerArticle": 10825,
+      "averageTokensPerArticle": 9923,
       "averageRequestsPerArticle": 1,
       "reportedDailyRequestsRemaining": null,
       "reportedDailyRequestsLimit": null
@@ -131,10 +143,10 @@
       },
       "usedTokens": 83894,
       "usedRequests": 20,
-      "estimatedArticles": 22,
+      "estimatedArticles": 0,
       "averageTokensPerArticle": 7627,
       "averageRequestsPerArticle": 2.18,
-      "reportedDailyRequestsRemaining": 48,
+      "reportedDailyRequestsRemaining": 0,
       "reportedDailyRequestsLimit": 50
     }
   }
