@@ -25,51 +25,52 @@ const topRated=[...reviews].filter(review=>review.data.score>0&&!isUpcomingRevie
 const upcoming=reviews.filter(isUpcomingReview).sort((a,b)=>String(a.data.releaseDate||'').localeCompare(String(b.data.releaseDate||''))).slice(0,8);
 ---
 <Base title="اكتشف عالم الترفيه" description="اكتشف أحدث الأفلام والمسلسلات والألعاب، تابع الترندات العالمية واقرأ مراجعات VibeCritic." image={spotlight?.backdrop || spotlight?.poster}>
-<div class="culture-marquee" aria-label="عالم VibeCritic">
- <div class="culture-marquee-track">
-  <div class="culture-marquee-group"><span>GAMES</span><i>✳</i><span>CINEMA</span><i>✳</i><span>SERIES</span><i>✳</i><span>THE CULTURE SIGNAL</span><i>✳</i><span>NO SPOILERS. JUST VIBES.</span><i>✳</i></div>
-  <div class="culture-marquee-group" aria-hidden="true"><span>GAMES</span><i>✳</i><span>CINEMA</span><i>✳</i><span>SERIES</span><i>✳</i><span>THE CULTURE SIGNAL</span><i>✳</i><span>NO SPOILERS. JUST VIBES.</span><i>✳</i></div>
+<section class="vc-front wrap" aria-label="واجهة VibeCritic">
+ <div class="vc-front-heading">
+  <div><span class="vc-section-tag"><i></i> THE ENTERTAINMENT FEED</span><p>ما يستحق المشاهدة واللعب. <b>وما لا يستحق.</b></p></div>
+  <span class="vc-front-edition">VC / DAILY CULTURE DROP</span>
  </div>
-</div>
-<section class="wrap discovery-hero spotlight-slider" aria-label="أبرز الترندات">
- <div class="spotlight-backdrops" aria-hidden="true">
-  <img class="spotlight-image is-active" src={spotlight?.backdrop||spotlight?.poster||''} alt="" fetchpriority="high" loading="eager" decoding="async"/>
-  <img class="spotlight-image" alt="" loading="lazy" decoding="async"/>
+ <div class="vc-feature-grid">
+  <section class="discovery-hero spotlight-slider vc-lead-story" aria-label="قصة الواجهة">
+   <div class="spotlight-backdrops" aria-hidden="true">
+    <img class="spotlight-image is-active" src={spotlight?.backdrop||spotlight?.poster||''} alt="" fetchpriority="high" loading="eager" decoding="async"/>
+    <img class="spotlight-image" alt="" loading="lazy" decoding="async"/>
+   </div>
+   <div class="discovery-shade"></div>
+   <div class="vc-lead-topline"><span>01 / THE MAIN EVENT</span><span class="vc-on-air"><i></i> NOW IN FOCUS</span></div>
+   <div class="discovery-content spotlight-copy" aria-live="polite">
+    <p class="discovery-kicker"><span></span> VIBECRITIC SELECTS</p>
+    <p class="spotlight-category">{spotlight?.type==='game'?'ترند الألعاب':spotlight?.type==='series'?'ترند المسلسلات':'ترند الأفلام'} · {spotlight?.source||'TRENDING'}</p>
+    <h1 class="spotlight-title">{spotlight?.title||'أبرز ما يحدث في عالم الترفيه'}</h1>
+    <p class="discovery-description spotlight-description">{spotlight?.summary||'اختيارات ومراجعات تستحق انتباهك.'}</p>
+    <div class="discovery-actions">
+     {spotlight&&<a class="discovery-primary spotlight-link" href={spotlight.href} target={spotlight.external?"_blank":undefined} rel={spotlight.external?"noopener noreferrer":undefined}>{spotlight.external?"اكتشف العمل":"اقرأ المراجعة"} <span>↗</span></a>}
+     <a class="discovery-secondary" href="#trending">استكشف القائمة</a>
+    </div>
+   </div>
+   <div class="spotlight-controls">
+    <button type="button" class="spotlight-prev" aria-label="الترند السابق" disabled={trendReviews.length < 2}>‹</button>
+    <span class="discovery-index"><strong class="spotlight-count">01</strong><span> / <b class="spotlight-total">{String(Math.max(1,trendReviews.length)).padStart(2,'0')}</b></span></span>
+    <button type="button" class="spotlight-next" aria-label="الترند التالي" disabled={trendReviews.length < 2}>›</button>
+    <button type="button" class="spotlight-pause" aria-label="إيقاف التبديل التلقائي" aria-pressed="false" disabled={trendReviews.length < 2}>Ⅱ</button>
+   </div>
+   <div class="spotlight-progress" aria-hidden="true"><span></span></div>
+   <div class="spotlight-data" hidden>{trendReviews.map(item=><i data-title={item.title} data-summary={item.summary||''} data-backdrop={item.backdrop||item.poster||''} data-poster={item.poster||''} data-type={item.type} data-source={item.source||''} data-href={item.href} data-external={String(item.external)} data-preview={String(item.preview||false)}></i>)}</div>
+  </section>
+  <aside class="vc-side-stories" aria-label="اختيارات أخرى">
+   <div class="vc-side-heading"><span>02—04 / ALSO ON THE RADAR</span><a href="#all-reviews">كل المكتبة ↗</a></div>
+   {trendReviews.slice(1,4).map((item,index)=><a class="vc-side-story" href={item.href} target={item.external?"_blank":undefined} rel={item.external?"noopener noreferrer":undefined}>
+    <span class="vc-side-number">0{index+2}</span>
+    <span class="vc-side-poster">{item.poster?<img src={item.poster} alt="" loading="lazy" decoding="async"/>:<span>✳</span>}</span>
+    <span class="vc-side-copy"><small>{item.type==='game'?'GAMES':item.type==='series'?'SERIES':'CINEMA'} · {item.source||'TRENDING'}</small><strong>{item.title}</strong><em>{item.review?'اقرأ المراجعة':'اكتشف العمل'} ↗</em></span>
+   </a>)}
+   {trendReviews.length<2&&<p class="vc-side-empty">تظهر هنا اختياراتنا الرائجة التالية عندما تتوفر بيانات موثوقة.</p>}
+   <div class="vc-side-foot"><span>NO HYPE WITHOUT A REASON.</span><b>✳</b></div>
+  </aside>
  </div>
- <div class="discovery-shade"></div>
- <div class="discovery-content spotlight-copy" aria-live="polite">
-  <p class="discovery-kicker"><span></span> VIBECRITIC / مؤشرات الرواج</p>
-  <p class="spotlight-category">{spotlight?.type==='game'?'ترند الألعاب':spotlight?.type==='series'?'ترند المسلسلات':'ترند الأفلام'} · {spotlight?.source||'TRENDING'}</p>
-  <h1 class="spotlight-title">{spotlight?.title||'أبرز مؤشرات الرواج'}</h1>
-  <p class="discovery-description spotlight-description">{spotlight?.summary||'اكتشف الأعمال التي تسجل مؤشرات شعبية موثوقة لدى مصادر البيانات.'}</p>
-  <div class="discovery-actions">
-   {spotlight&&<a class="discovery-primary spotlight-link" href={spotlight.href} target={spotlight.external?"_blank":undefined} rel={spotlight.external?"noopener noreferrer":undefined}>{spotlight.external?"اكتشف العمل":"اقرأ المراجعة"} <span>↗</span></a>}
-   <a class="discovery-secondary" href="#trending">كل الترندات</a>
-  </div>
- </div>
- <div class="spotlight-controls">
-  <button type="button" class="spotlight-prev" aria-label="الترند السابق" disabled={trendReviews.length < 2}>‹</button>
-  <span class="discovery-index"><strong class="spotlight-count">01</strong><span>من <b class="spotlight-total">{String(Math.max(1,trendReviews.length)).padStart(2,'0')}</b> ترندات</span></span>
-  <button type="button" class="spotlight-next" aria-label="الترند التالي" disabled={trendReviews.length < 2}>›</button>
-  <button type="button" class="spotlight-pause" aria-label="إيقاف التبديل التلقائي" aria-pressed="false" disabled={trendReviews.length < 2}>Ⅱ</button>
- </div>
- <div class="spotlight-progress" aria-hidden="true"><span></span></div>
- <div class="spotlight-data" hidden>
-  {trendReviews.map(item=><i data-title={item.title} data-summary={item.summary||''} data-backdrop={item.backdrop||item.poster||''} data-poster={item.poster||''} data-type={item.type} data-source={item.source||''} data-href={item.href} data-external={String(item.external)} data-preview={String(item.preview||false)}></i>)}
- </div>
-</section>
-<section class="wrap vibe-manifesto" aria-label="هوية VibeCritic">
- <div class="vibe-manifesto-index"><span>VC / OUR POINT OF VIEW</span><span class="vibe-live-dot"></span><span>HONEST TAKES. GOOD VIBES.</span></div>
- <p><span>نحب الترفيه.</span> <strong>لكن ما نجامل.</strong></p>
- <div class="vibe-manifesto-note">نقول لك ما الذي أمتعنا، وما الذي خيّبنا، وهل يستحق عمل ما وقتك فعلًا.</div>
-</section>
-<section class="wrap vibe-principles" aria-label="مبادئ مراجعات VibeCritic">
- <div class="vibe-principles-heading"><span>02 / THE VIBE RULES</span><p>رأينا واضح. وحكمنا له سبب.</p></div>
- <div class="vibe-principles-grid">
-  <article class="vibe-principle"><span class="vibe-principle-no">01</span><div><h2>بلا مجاملة</h2><p>الاسم الكبير والترند لا يمنحان أي عمل نقاطًا مجانية.</p></div><b aria-hidden="true">↗</b></article>
-  <article class="vibe-principle"><span class="vibe-principle-no">02</span><div><h2>نقد بنّاء</h2><p>نوضح نقاط القوة والضعف، ونشرح لماذا نجحت التجربة أو تعثرت.</p></div><b aria-hidden="true">✳</b></article>
-  <article class="vibe-principle"><span class="vibe-principle-no">03</span><div><h2>قرارك أولاً</h2><p>لا حرق غير ضروري ولا أحكام فارغة؛ نعطيك ما يساعدك تختار.</p></div><b aria-hidden="true">◎</b></article>
- </div>
+ <nav class="vc-quick-cats" aria-label="استكشف الأقسام">
+  <span>JUMP INTO</span><a href={url('category/game/')}>الألعاب <b>↗</b></a><a href={url('category/movie/')}>الأفلام <b>↗</b></a><a href={url('category/series/')}>المسلسلات <b>↗</b></a><a href={url('catalog/')}>كل المكتبة <b>↗</b></a>
+ </nav>
 </section>
 <aside class="wrap ai-review-promo" data-expires="2026-11-19T23:59:59+01:00" aria-label="جرّب المراجع الذكي">
  <div class="ai-review-promo-copy">
@@ -86,7 +87,7 @@ const upcoming=reviews.filter(isUpcomingReview).sort((a,b)=>String(a.data.releas
   <span class="ai-review-promo-spark spark-two">✧</span>
  </div>
 </aside>
-<section class="wrap catalog-section" id="top-rated">
+<section class="wrap catalog-section vc-editor-picks" id="top-rated">
  <div class="catalog-heading"><div><p class="catalog-eyebrow">EDITOR'S HIGHEST SCORES</p><h2>الأعلى تقييماً</h2><p>الأعمال التي حصلت على أعلى درجات VibeCritic التحريرية</p></div><a href="#all-reviews" class="catalog-more">كل المراجعات <span>←</span></a></div>
  {topRated.length>0?<div class="catalog-rail">{topRated.map(review=><ReviewCard review={review}/>)}</div>:<div class="catalog-empty">ستظهر هنا الأعمال بعد اكتمال مراجعاتها وتقييمها.</div>}
 </section>
