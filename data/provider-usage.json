@@ -775,38 +775,38 @@
     },
     "2026-11-16": {
       "groq": {
-        "requests": 1,
+        "requests": 2,
         "successes": 0,
-        "failures": 1,
-        "apiRequests": 8,
+        "failures": 2,
+        "apiRequests": 10,
         "totalTokens": 0,
         "inputTokens": 0,
         "outputTokens": 0,
-        "lastAttemptAt": "2026-11-15T23:04:07.392Z",
+        "lastAttemptAt": "2026-11-15T23:12:05.219Z",
         "lastUsage": {
-          "requests": 8,
+          "requests": 2,
           "inputTokens": 0,
           "outputTokens": 0,
           "totalTokens": 0,
           "reportedUsage": false,
           "headers": {
             "x-ratelimit-limit-requests": "1000",
-            "x-ratelimit-remaining-requests": "976",
-            "x-ratelimit-reset-requests": "34m33.6s",
+            "x-ratelimit-remaining-requests": "981",
+            "x-ratelimit-reset-requests": "27m21.6s",
             "x-ratelimit-limit-tokens": "8000",
             "x-ratelimit-remaining-tokens": "8000",
             "x-ratelimit-reset-tokens": "1ms",
-            "retry-after": "1971"
+            "retry-after": "906"
           },
-          "durationMs": 270786,
-          "at": "2026-11-15T23:04:07.392Z"
+          "durationMs": 359,
+          "at": "2026-11-15T23:12:05.219Z"
         },
-        "blockedUntil": 1794869999000,
+        "blockedUntil": 1794785231219,
         "blockedReason": "daily-limit",
         "lastCooldown": {
           "reason": "daily-limit",
-          "until": "2026-11-16T22:59:59.000Z",
-          "observedAt": "2026-11-15T23:04:07.392Z",
+          "until": "2026-11-15T23:27:11.219Z",
+          "observedAt": "2026-11-15T23:12:05.219Z",
           "status": 429
         }
       },
@@ -839,6 +839,16 @@
             "successes": 0
           },
           "openrouter": {
+            "attempts": 1,
+            "requests": 2,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          }
+        },
+        "game:972995": {
+          "groq": {
             "attempts": 1,
             "requests": 2,
             "inputTokens": 0,
@@ -928,6 +938,13 @@
           "until": null,
           "observedAt": "2026-11-15T23:07:15.063Z",
           "status": null
+        },
+        "freeModelDailyRequests": {
+          "used": 54,
+          "limit": 50,
+          "remaining": 0,
+          "observedAt": "2026-11-15T23:11:53.492Z",
+          "source": "OpenRouter GET /api/v1/key"
         }
       }
     }
