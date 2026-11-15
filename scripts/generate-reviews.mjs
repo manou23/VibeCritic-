@@ -1132,7 +1132,7 @@ async function updateContentJob(item,patch={}){
  await saveContentQueue();return contentQueue.jobs[key];
 }
 function resumableContentJobs(now=Date.now()){
- return Object.values(contentQueue.jobs).filter(job=>['ready','generating','waiting','quality-check'].includes(job.status)&&Number(job.nextAttemptAt||0)<=now&&job.item).sort((a,b)=>Number(b.priority||0)-Number(a.priority||0)||String(a.createdAt||'').localeCompare(String(b.createdAt||'')));
+ return Object.values(contentQueue.jobs).filter(job=>['discovered','researching','ready','generating','waiting','quality-check'].includes(job.status)&&Number(job.nextAttemptAt||0)<=now&&job.item).sort((a,b)=>Number(b.priority||0)-Number(a.priority||0)||String(a.createdAt||'').localeCompare(String(b.createdAt||'')));
 }
 async function persistFailedQueueCheckpoint(){
  const pending=Object.values(contentQueue.jobs).filter(job=>['ready','generating','waiting','quality-check'].includes(job.status)).length;
@@ -1140,6 +1140,7 @@ async function persistFailedQueueCheckpoint(){
 }
 
 async function writeReview(item){
+ await updateContentJob(item,{status:'researching',item,nextAttemptAt:0,lastError:null});
  const enriched=item?.metadata?.evidenceDossier?item:await enrichItem(item);
  const evidenceDossier=enriched.metadata?.evidenceDossier||buildEvidenceDossier(enriched);
  enriched.metadata={...(enriched.metadata||{}),evidenceDossier};
@@ -1249,7 +1250,7 @@ async function main(){
  };
  const pools={game:eligible(rawPools.game),series:eligible(rawPools.series),movie:eligible(rawPools.movie)};
  const pendingJobs=resumableContentJobs();
- const deferredKeys=new Set(Object.values(contentQueue.jobs).filter(job=>['waiting','ready','generating','quality-check'].includes(job.status)&&Number(job.nextAttemptAt||0)>Date.now()).map(job=>job.key));
+ const deferredKeys=new Set(Object.values(contentQueue.jobs).filter(job=>['discovered','researching','waiting','ready','generating','quality-check'].includes(job.status)&&Number(job.nextAttemptAt||0)>Date.now()).map(job=>job.key));
  for(const type of types){
   const resumed=pendingJobs.filter(job=>job.type===type).map(job=>job.item).filter(item=>item&&!publishedKeys.has(contentJobKey(item)));
   const seen=new Set();
