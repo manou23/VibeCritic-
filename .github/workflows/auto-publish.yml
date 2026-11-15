@@ -1,5 +1,5 @@
 name: Generate reviews and publish
-# Re-run the existing-review video backfill after YouTube secret setup.
+# Re-run poster, backdrop and official-trailer enrichment after media source setup.
 # Review content is versioned independently; existing reviews follow reviewVersion: 2.
 on:
   workflow_dispatch:
