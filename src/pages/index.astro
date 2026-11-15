@@ -21,7 +21,7 @@ const trendReviews=trending.filter(item=>['مرتفع','متوسط'].includes(it
  return [{...item,review,title:review.data.title,summary:review.data.summary,poster:optimizeImage(review.data.poster||item.poster),backdrop:optimizeImage(review.data.backdrop||item.backdrop||item.poster,'backdrop'),href:url(`reviews/${review.id}/`)}];
 }).slice(0,10);
 const spotlight=trendReviews[0]||(topRated[0]?{...topRated[0].data,id:topRated[0].id,review:topRated[0],type:topRated[0].data.type,title:topRated[0].data.title,summary:topRated[0].data.summary,poster:optimizeImage(topRated[0].data.poster),backdrop:optimizeImage(topRated[0].data.backdrop||topRated[0].data.poster,'backdrop'),href:url('reviews/'+topRated[0].id+'/')}:null);
-const featured=topRated.filter(item=>item.id!==(spotlight?.review?.id||spotlight?.id)).slice(0,3);
+const featured=topRated.filter(item=>item.id!==(spotlight?.review?.id||spotlight?.id)).slice(0,3);\nconst orbitItems=trendReviews.length?trendReviews.slice(0,7):topRated.slice(0,7).map(review=>({title:review.data.title,summary:review.data.summary,poster:optimizeImage(review.data.poster),backdrop:optimizeImage(review.data.backdrop||review.data.poster,'backdrop'),href:url(`reviews/${review.id}/`),type:review.data.type}));
 ---
 <Base title="اكتشف عالم الترفيه" description="اكتشف أحدث الأفلام والمسلسلات والألعاب، تابع الترندات العالمية واقرأ مراجعات VibeCritic." image={spotlight?.backdrop || spotlight?.poster}>
 <div class="vc-home">
@@ -34,9 +34,9 @@ const featured=topRated.filter(item=>item.id!==(spotlight?.review?.id||spotlight
   <div class="vc-feature-main vc-orbit-stage" data-orbit-stage style={`--feature-image:url('${spotlight.backdrop||spotlight.poster}')`}>
    <img class="vc-orbit-backdrop" data-orbit-backdrop src={spotlight.backdrop||spotlight.poster} alt="" fetchpriority="high"/>
    <span class="vc-feature-shade"></span>
-   <div class="vc-orbit-heading"><span class="vc-chip">● يتصدر المشهد · اختيارات VibeCritic</span><span class="vc-orbit-counter" data-orbit-counter>01 / {String(trendReviews.length||1).padStart(2,'0')}</span></div>
+   <div class="vc-orbit-heading"><span class="vc-chip">● يتصدر المشهد · اختيارات VibeCritic</span><span class="vc-orbit-counter" data-orbit-counter>01 / {String(orbitItems.length||1).padStart(2,'0')}</span></div>
    <div class="vc-orbit-ring" aria-label="الأعمال المتحركة في دائرة الاهتمام">
-    {trendReviews.slice(0,7).map((item,i)=><a class="vc-orbit-poster" data-orbit-card data-index={i} data-summary={item.summary} href={item.href} style={`--orbit-index:${i};--orbit-count:${Math.min(trendReviews.length,7)}`} aria-label={item.title}>
+    {orbitItems.map((item,i)=><a class="vc-orbit-poster" data-orbit-card data-index={i} data-summary={item.summary} href={item.href} style={`--orbit-index:${i};--orbit-count:${orbitItems.length}`} aria-label={item.title}>
      <img src={item.poster||item.backdrop} alt="" loading="lazy"/><span>{item.title}</span>
     </a>)}
    </div>
