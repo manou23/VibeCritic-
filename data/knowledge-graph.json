@@ -13064,7 +13064,7 @@
         "STEAM"
       ],
       "firstSeenAt": "2026-11-14T20:16:16.093Z",
-      "updatedAt": "2026-11-14T23:40:03.778Z"
+      "updatedAt": "2026-11-15T00:15:19.735Z"
     },
     {
       "id": "concept:playstation-5",
@@ -13076,7 +13076,7 @@
         "STEAM"
       ],
       "firstSeenAt": "2026-11-14T20:16:16.093Z",
-      "updatedAt": "2026-11-14T23:40:03.778Z"
+      "updatedAt": "2026-11-15T00:15:19.735Z"
     },
     {
       "id": "concept:xbox-series-x-s",
@@ -13088,7 +13088,7 @@
         "STEAM"
       ],
       "firstSeenAt": "2026-11-14T20:16:16.093Z",
-      "updatedAt": "2026-11-14T23:40:03.778Z"
+      "updatedAt": "2026-11-15T00:15:19.735Z"
     },
     {
       "id": "company:sandfall-interactive",
@@ -13110,7 +13110,7 @@
         "IGDB"
       ],
       "firstSeenAt": "2026-11-14T20:16:16.641Z",
-      "updatedAt": "2026-11-14T21:25:31.116Z"
+      "updatedAt": "2026-11-15T00:15:19.735Z"
     },
     {
       "id": "concept:roguelike",
@@ -13141,7 +13141,7 @@
         "IGDB"
       ],
       "firstSeenAt": "2026-11-14T20:16:16.642Z",
-      "updatedAt": "2026-11-14T21:25:31.117Z"
+      "updatedAt": "2026-11-15T00:15:19.735Z"
     },
     {
       "id": "company:supergiant-games",
@@ -13217,7 +13217,7 @@
         "IGDB"
       ],
       "firstSeenAt": "2026-11-14T20:27:19.035Z",
-      "updatedAt": "2026-11-14T21:25:31.116Z"
+      "updatedAt": "2026-11-15T00:15:19.735Z"
     },
     {
       "id": "company:capcom-development-division-1",
@@ -13227,7 +13227,7 @@
         "IGDB"
       ],
       "firstSeenAt": "2026-11-14T20:27:19.036Z",
-      "updatedAt": "2026-11-14T21:25:31.117Z"
+      "updatedAt": "2026-11-15T00:15:19.735Z"
     },
     {
       "id": "company:bbc-cymru-wales",
@@ -73370,8 +73370,8 @@
       "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
       "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
       "firstObservedAt": "2026-11-14T20:27:19.034Z",
-      "lastObservedAt": "2026-11-14T21:25:31.115Z",
-      "observations": 2
+      "lastObservedAt": "2026-11-15T00:15:19.734Z",
+      "observations": 3
     },
     {
       "id": "work:game-347668-resident-evil-requiem-رعب-يعرف-متى-يهمس-ومتى-يطلق-النار|genres|IGDB|Action | Survival Horror",
@@ -73388,8 +73388,8 @@
       "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
       "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
       "firstObservedAt": "2026-11-14T20:27:19.034Z",
-      "lastObservedAt": "2026-11-14T21:25:31.115Z",
-      "observations": 2
+      "lastObservedAt": "2026-11-15T00:15:19.734Z",
+      "observations": 3
     },
     {
       "id": "work:game-347668-resident-evil-requiem-رعب-يعرف-متى-يهمس-ومتى-يطلق-النار|platforms|IGDB|Nintendo Switch 2 | PC | PlayStation 5 | Xbox Series X|S",
@@ -73408,8 +73408,8 @@
       "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
       "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
       "firstObservedAt": "2026-11-14T20:27:19.034Z",
-      "lastObservedAt": "2026-11-14T21:25:31.115Z",
-      "observations": 2
+      "lastObservedAt": "2026-11-15T00:15:19.734Z",
+      "observations": 3
     },
     {
       "id": "work:game-347668-resident-evil-requiem-رعب-يعرف-متى-يهمس-ومتى-يطلق-النار|developers|IGDB|Capcom Development Division 1",
@@ -73425,8 +73425,8 @@
       "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
       "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
       "firstObservedAt": "2026-11-14T20:27:19.034Z",
-      "lastObservedAt": "2026-11-14T21:25:31.115Z",
-      "observations": 2
+      "lastObservedAt": "2026-11-15T00:15:19.734Z",
+      "observations": 3
     },
     {
       "id": "work:game-305152-كلير-أوبسكور-الرحلة-33|release_date|IGDB|2025-04-24",
@@ -73497,218 +73497,6 @@
       "firstObservedAt": "2026-11-14T20:16:16.090Z",
       "lastObservedAt": "2026-11-14T23:40:03.776Z",
       "observations": 4
-    },
-    {
-      "id": "work:movie-354912-كوكو|catalog_original_title|VIBECRITIC_D1|Coco",
-      "workId": "work:movie-354912-كوكو",
-      "field": "catalog_original_title",
-      "value": "Coco",
-      "normalizedValue": "Coco",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T00:02:39.937Z",
-      "observations": 3
-    },
-    {
-      "id": "work:movie-354912-كوكو|catalog_overview|VIBECRITIC_D1|الاحتفال بالعمر  على الرغم من الحظر المحير الذي فرضته عائلته منذ أجيال على الموسيقى ، يحلم ميغيل بأن",
-      "workId": "work:movie-354912-كوكو",
-      "field": "catalog_overview",
-      "value": "الاحتفال بالعمر  على الرغم من الحظر المحير الذي فرضته عائلته منذ أجيال على الموسيقى ، يحلم ميغيل بأن يصبح موسيقيا بارعا مثل معبوده إرنستو دي لا كروز. في محاولة يائسة لإثبات موهبته ، يجد ميغيل نفسه في أرض الموتى المذهلة والملونة بعد سلسلة غامضة من الأحداث. على طول الطريق ، يلتقي المحتال الساحر هيكتور ، وينطلقان معا في رحلة غير عادية لفتح القصة الحقيقية وراء تاريخ عائلة ميغيل.",
-      "normalizedValue": "الاحتفال بالعمر  على الرغم من الحظر المحير الذي فرضته عائلته منذ أجيال على الموسيقى ، يحلم ميغيل بأن يصبح موسيقيا بارعا مثل معبوده إرنستو دي لا كروز. في محاولة يائسة لإثبات موهبته ، يجد ميغيل نفسه في أرض الموتى المذهلة والملونة بعد سلسلة غامضة من الأحداث. على طول الطريق ، يلتقي المحتال الساحر هيكتور ، وينطلقان معا في رحلة غير عادية لفتح القصة الحقيقية وراء تاريخ عائلة ميغيل.",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T00:02:39.937Z",
-      "observations": 3
-    },
-    {
-      "id": "work:movie-354912-كوكو|catalog_release_date|VIBECRITIC_D1|2017-10-27",
-      "workId": "work:movie-354912-كوكو",
-      "field": "catalog_release_date",
-      "value": "2017-10-27",
-      "normalizedValue": "2017-10-27",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T00:02:39.937Z",
-      "observations": 3
-    },
-    {
-      "id": "work:movie-354912-كوكو|catalog_year|VIBECRITIC_D1|2017",
-      "workId": "work:movie-354912-كوكو",
-      "field": "catalog_year",
-      "value": "2017",
-      "normalizedValue": "2017",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T00:02:39.937Z",
-      "observations": 3
-    },
-    {
-      "id": "work:movie-354912-كوكو|catalog_runtime|VIBECRITIC_D1|105",
-      "workId": "work:movie-354912-كوكو",
-      "field": "catalog_runtime",
-      "value": "105",
-      "normalizedValue": "105",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T00:02:39.937Z",
-      "observations": 3
-    },
-    {
-      "id": "work:movie-354912-كوكو|catalog_status|VIBECRITIC_D1|Released",
-      "workId": "work:movie-354912-كوكو",
-      "field": "catalog_status",
-      "value": "Released",
-      "normalizedValue": "Released",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T00:02:39.937Z",
-      "observations": 3
-    },
-    {
-      "id": "work:movie-354912-كوكو|catalog_original_language|VIBECRITIC_D1|en",
-      "workId": "work:movie-354912-كوكو",
-      "field": "catalog_original_language",
-      "value": "en",
-      "normalizedValue": "en",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T00:02:39.937Z",
-      "observations": 3
-    },
-    {
-      "id": "work:movie-354912-كوكو|catalog_rating|VIBECRITIC_D1|8.207",
-      "workId": "work:movie-354912-كوكو",
-      "field": "catalog_rating",
-      "value": "8.207",
-      "normalizedValue": "8.207",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T00:02:39.937Z",
-      "observations": 3
-    },
-    {
-      "id": "work:movie-354912-كوكو|catalog_vote_count|VIBECRITIC_D1|21865",
-      "workId": "work:movie-354912-كوكو",
-      "field": "catalog_vote_count",
-      "value": "21865",
-      "normalizedValue": "21865",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T00:02:39.937Z",
-      "observations": 3
-    },
-    {
-      "id": "work:movie-354912-كوكو|catalog_genres|VIBECRITIC_D1|رسوم متحركة | عائلي | مغامرة | موسيقى",
-      "workId": "work:movie-354912-كوكو",
-      "field": "catalog_genres",
-      "value": [
-        "رسوم متحركة",
-        "عائلي",
-        "مغامرة",
-        "موسيقى"
-      ],
-      "normalizedValue": "رسوم متحركة | عائلي | مغامرة | موسيقى",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T00:02:39.937Z",
-      "observations": 3
-    },
-    {
-      "id": "work:movie-354912-كوكو|catalog_directors|VIBECRITIC_D1|Lee Unkrich | أدريان مولينا",
-      "workId": "work:movie-354912-كوكو",
-      "field": "catalog_directors",
-      "value": [
-        "Lee Unkrich",
-        "أدريان مولينا"
-      ],
-      "normalizedValue": "Lee Unkrich | أدريان مولينا",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T00:02:39.937Z",
-      "observations": 3
-    },
-    {
-      "id": "work:movie-354912-كوكو|catalog_related_works|VIBECRITIC_D1|Forgotten Island (2026) [genres:3, people:0] | المينيون والوحوش (2026) [genres:3, people:0] | حكاية ",
-      "workId": "work:movie-354912-كوكو",
-      "field": "catalog_related_works",
-      "value": [
-        "Forgotten Island (2026) [genres:3, people:0]",
-        "حكاية لعبة ٥ (2026) [genres:3, people:0]",
-        "كايوتي ضد أكمي (2026) [genres:3, people:0]",
-        "المينيون والوحوش (2026) [genres:3, people:0]",
-        "فارس وفادي (2007) [genres:2, people:0]",
-        "ستار ضد قوى الشر (2015) [genres:2, people:0]"
-      ],
-      "normalizedValue": "Forgotten Island (2026) [genres:3, people:0] | المينيون والوحوش (2026) [genres:3, people:0] | حكاية لعبة ٥ (2026) [genres:3, people:0] | ستار ضد قوى الشر (2015) [genres:2, people:0] | فارس وفادي (2007) [genres:2, people:0] | كايوتي ضد أكمي (2026) [genres:3, people:0]",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T23:46:04.390Z",
-      "lastObservedAt": "2026-11-15T00:02:39.937Z",
-      "observations": 2
-    },
-    {
-      "id": "work:movie-354912-كوكو|production_companies|TMDB|Pixar",
-      "workId": "work:movie-354912-كوكو",
-      "field": "production_companies",
-      "value": [
-        "Pixar"
-      ],
-      "normalizedValue": "Pixar",
-      "source": "TMDB",
-      "url": "https://www.themoviedb.org/movie/354912",
-      "sourceClass": "catalog-database",
-      "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
-      "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج.",
-      "firstObservedAt": "2026-11-14T23:46:05.256Z",
-      "lastObservedAt": "2026-11-15T00:02:41.211Z",
-      "observations": 2
     },
     {
       "id": "work:series-57243-دكتور-هو|catalog_original_title|VIBECRITIC_D1|Doctor Who",
@@ -75598,6 +75386,218 @@
       "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج.",
       "firstObservedAt": "2026-11-14T23:46:03.526Z",
       "lastObservedAt": "2026-11-15T00:00:07.398Z",
+      "observations": 2
+    },
+    {
+      "id": "work:movie-354912-كوكو|catalog_original_title|VIBECRITIC_D1|Coco",
+      "workId": "work:movie-354912-كوكو",
+      "field": "catalog_original_title",
+      "value": "Coco",
+      "normalizedValue": "Coco",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T00:02:39.937Z",
+      "observations": 3
+    },
+    {
+      "id": "work:movie-354912-كوكو|catalog_overview|VIBECRITIC_D1|الاحتفال بالعمر  على الرغم من الحظر المحير الذي فرضته عائلته منذ أجيال على الموسيقى ، يحلم ميغيل بأن",
+      "workId": "work:movie-354912-كوكو",
+      "field": "catalog_overview",
+      "value": "الاحتفال بالعمر  على الرغم من الحظر المحير الذي فرضته عائلته منذ أجيال على الموسيقى ، يحلم ميغيل بأن يصبح موسيقيا بارعا مثل معبوده إرنستو دي لا كروز. في محاولة يائسة لإثبات موهبته ، يجد ميغيل نفسه في أرض الموتى المذهلة والملونة بعد سلسلة غامضة من الأحداث. على طول الطريق ، يلتقي المحتال الساحر هيكتور ، وينطلقان معا في رحلة غير عادية لفتح القصة الحقيقية وراء تاريخ عائلة ميغيل.",
+      "normalizedValue": "الاحتفال بالعمر  على الرغم من الحظر المحير الذي فرضته عائلته منذ أجيال على الموسيقى ، يحلم ميغيل بأن يصبح موسيقيا بارعا مثل معبوده إرنستو دي لا كروز. في محاولة يائسة لإثبات موهبته ، يجد ميغيل نفسه في أرض الموتى المذهلة والملونة بعد سلسلة غامضة من الأحداث. على طول الطريق ، يلتقي المحتال الساحر هيكتور ، وينطلقان معا في رحلة غير عادية لفتح القصة الحقيقية وراء تاريخ عائلة ميغيل.",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T00:02:39.937Z",
+      "observations": 3
+    },
+    {
+      "id": "work:movie-354912-كوكو|catalog_release_date|VIBECRITIC_D1|2017-10-27",
+      "workId": "work:movie-354912-كوكو",
+      "field": "catalog_release_date",
+      "value": "2017-10-27",
+      "normalizedValue": "2017-10-27",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T00:02:39.937Z",
+      "observations": 3
+    },
+    {
+      "id": "work:movie-354912-كوكو|catalog_year|VIBECRITIC_D1|2017",
+      "workId": "work:movie-354912-كوكو",
+      "field": "catalog_year",
+      "value": "2017",
+      "normalizedValue": "2017",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T00:02:39.937Z",
+      "observations": 3
+    },
+    {
+      "id": "work:movie-354912-كوكو|catalog_runtime|VIBECRITIC_D1|105",
+      "workId": "work:movie-354912-كوكو",
+      "field": "catalog_runtime",
+      "value": "105",
+      "normalizedValue": "105",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T00:02:39.937Z",
+      "observations": 3
+    },
+    {
+      "id": "work:movie-354912-كوكو|catalog_status|VIBECRITIC_D1|Released",
+      "workId": "work:movie-354912-كوكو",
+      "field": "catalog_status",
+      "value": "Released",
+      "normalizedValue": "Released",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T00:02:39.937Z",
+      "observations": 3
+    },
+    {
+      "id": "work:movie-354912-كوكو|catalog_original_language|VIBECRITIC_D1|en",
+      "workId": "work:movie-354912-كوكو",
+      "field": "catalog_original_language",
+      "value": "en",
+      "normalizedValue": "en",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T00:02:39.937Z",
+      "observations": 3
+    },
+    {
+      "id": "work:movie-354912-كوكو|catalog_rating|VIBECRITIC_D1|8.207",
+      "workId": "work:movie-354912-كوكو",
+      "field": "catalog_rating",
+      "value": "8.207",
+      "normalizedValue": "8.207",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T00:02:39.937Z",
+      "observations": 3
+    },
+    {
+      "id": "work:movie-354912-كوكو|catalog_vote_count|VIBECRITIC_D1|21865",
+      "workId": "work:movie-354912-كوكو",
+      "field": "catalog_vote_count",
+      "value": "21865",
+      "normalizedValue": "21865",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T00:02:39.937Z",
+      "observations": 3
+    },
+    {
+      "id": "work:movie-354912-كوكو|catalog_genres|VIBECRITIC_D1|رسوم متحركة | عائلي | مغامرة | موسيقى",
+      "workId": "work:movie-354912-كوكو",
+      "field": "catalog_genres",
+      "value": [
+        "رسوم متحركة",
+        "عائلي",
+        "مغامرة",
+        "موسيقى"
+      ],
+      "normalizedValue": "رسوم متحركة | عائلي | مغامرة | موسيقى",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T00:02:39.937Z",
+      "observations": 3
+    },
+    {
+      "id": "work:movie-354912-كوكو|catalog_directors|VIBECRITIC_D1|Lee Unkrich | أدريان مولينا",
+      "workId": "work:movie-354912-كوكو",
+      "field": "catalog_directors",
+      "value": [
+        "Lee Unkrich",
+        "أدريان مولينا"
+      ],
+      "normalizedValue": "Lee Unkrich | أدريان مولينا",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T00:02:39.937Z",
+      "observations": 3
+    },
+    {
+      "id": "work:movie-354912-كوكو|catalog_related_works|VIBECRITIC_D1|Forgotten Island (2026) [genres:3, people:0] | المينيون والوحوش (2026) [genres:3, people:0] | حكاية ",
+      "workId": "work:movie-354912-كوكو",
+      "field": "catalog_related_works",
+      "value": [
+        "Forgotten Island (2026) [genres:3, people:0]",
+        "حكاية لعبة ٥ (2026) [genres:3, people:0]",
+        "كايوتي ضد أكمي (2026) [genres:3, people:0]",
+        "المينيون والوحوش (2026) [genres:3, people:0]",
+        "فارس وفادي (2007) [genres:2, people:0]",
+        "ستار ضد قوى الشر (2015) [genres:2, people:0]"
+      ],
+      "normalizedValue": "Forgotten Island (2026) [genres:3, people:0] | المينيون والوحوش (2026) [genres:3, people:0] | حكاية لعبة ٥ (2026) [genres:3, people:0] | ستار ضد قوى الشر (2015) [genres:2, people:0] | فارس وفادي (2007) [genres:2, people:0] | كايوتي ضد أكمي (2026) [genres:3, people:0]",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T23:46:04.390Z",
+      "lastObservedAt": "2026-11-15T00:02:39.937Z",
+      "observations": 2
+    },
+    {
+      "id": "work:movie-354912-كوكو|production_companies|TMDB|Pixar",
+      "workId": "work:movie-354912-كوكو",
+      "field": "production_companies",
+      "value": [
+        "Pixar"
+      ],
+      "normalizedValue": "Pixar",
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/354912",
+      "sourceClass": "catalog-database",
+      "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+      "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج.",
+      "firstObservedAt": "2026-11-14T23:46:05.256Z",
+      "lastObservedAt": "2026-11-15T00:02:41.211Z",
       "observations": 2
     }
   ],
@@ -83401,14 +83401,9 @@
       "originalTitle": "Metaphor: ReFantazio",
       "headline": "Metaphor: ReFantazio على Switch 2: فانتازيا سياسية تختبر معنى البطولة",
       "summary": "قراءة نقدية للعبة Metaphor: ReFantazio مع صدور نسخة Nintendo Switch 2 في 12 نوفمبر 2026، تتناول عالمها السياسي، نظام Archetypes، المزج بين القتال والاستكشاف، الإيقاع، والحدود التي ينبغي اختبارها في أداء النسخة الجديدة.",
-      "verdict": "تملك Metaphor: ReFantazio هوية فكرية وفنية متماسكة، وتحوّل سباق العرش إلى مساحة لمناقشة الخوف والتمييز والسلطة. نظام Archetypes يمنح القتال مرونة واسعة، بينما يضيف التقويم ضغطاً زمنياً إلى الرحلة. التقدير 9.2/10 يعكس قوة اللعبة الأساسية وتصميمها، وليس حكماً تقنياً مستقلاً على أداء إصدار Switch 2.",
-      "score": 9.2,
-      "scores": {
-        "storyScore": 9.3,
-        "visualsScore": 9.4,
-        "soundScore": 9.2,
-        "pacingScore": 8.7
-      },
+      "verdict": "تملك Metaphor: ReFantazio هوية فكرية وفنية متماسكة، وتحوّل سباق العرش إلى مساحة لمناقشة الخوف والتمييز والسلطة. نظام Archetypes يمنح القتال مرونة واسعة، بينما يضيف التقويم ضغطاً زمنياً إلى الرحلة. هذه قراءة للعبة الأساسية، وليست حكماً نهائياً على جودة إصدار Switch 2 أو أدائه التقني.",
+      "score": null,
+      "scores": {},
       "tags": [
         "Metaphor ReFantazio",
         "ATLUS",
@@ -83440,7 +83435,7 @@
         "PC"
       ],
       "aiGenerated": false,
-      "reviewMode": "review",
+      "reviewMode": "limited",
       "releaseDate": "2026-11-12",
       "sourceName": "Nintendo / ATLUS",
       "sourceUrl": "https://www.nintendo.com/us/store/products/metaphor-refantazio-switch-2/",
@@ -83457,7 +83452,7 @@
       "originalTitle": null,
       "headline": "ماينكرافت: إبداع لا نهائي في قالب بسيط",
       "summary": "ماينكرافت هي لعبة بناء واستكشاف تعتمد على عوالم مولدة إجرائياً من كتل مكعبة. تسمح للاعبين بالتعدين، الصنع، والقتال، مع إمكانية إنشاء هياكل معقدة أو خوض مغامرات في أبعادٍ مثل النذر والإند.",
-      "verdict": "ماينكرافت تستحق التجربة لكل من يفضّل الإبداع الحر والاستكشاف غير الخطي، خاصةً اللاعبين الذين يستمتعون بتصميم الأنظمة وتخصيص المحتوى. التحفظ الأساسي يكمن في غياب سرد قصصي واضح قد يبعد عن بعض الجمهور. الدرجة تعكس التوازن بين الإمكانات الواسعة والقيود التقنية البسيطة.",
+      "verdict": "ماينكرافت تستحق التجربة لكل من يفضّل الإبداع الحر والاستكشاف غير الخطي، خاصةً اللاعبين الذين يستمتعون بتصميم الأنظمة وتخصيص المحتوى. التحفظ الأساسي يكمن في غياب سرد قصصي واضح قد يبعد عن بعض الجمهور. لا تمنح VibeCritic درجة نهائية هنا؛ فهذه قراءة محدودة لا تختبر اختلاف الأداء بين الأجهزة أو جودة التجارب التي ينشئها المجتمع.",
       "score": null,
       "scores": {},
       "tags": [
@@ -85578,13 +85573,13 @@
       "originalTitle": "Resident Evil Requiem",
       "headline": "Resident Evil Requiem: مصالحة ناجحة بين الرعب والبقاء والأكشن… لكن التوازن لا يصمد حتى النهاية",
       "summary": "مراجعة تحريرية للجزء التاسع الرئيسي من Resident Evil، تدرس التناوب بين Grace Ashcroft وLeon Kennedy، إدارة الموارد، تصميم Rhodes Hill وRaccoon City، الإيقاع، السرد، والصورة والصوت، مع فصل التحليل عن تقييمات الجمهور.",
-      "verdict": "Resident Evil Requiem عمل قوي لأنه يفهم أن الرعب والأكشن ليسا خصمين بالضرورة. مقاطع Grace تمنح الخوف وزناً عبر الضعف والموارد المحدودة والاستكشاف، فيما تمنح مقاطع Leon اللاعب متنفساً قتالياً ممتعاً. لكن هذا التناوب يفقد توازنه في النصف الثاني، حيث يتراجع حضور Grace القابل للعب وتتكرر المواجهات القتالية، كما أن القصة لا تستثمر كل ما تثيره من أسئلة بالعمق نفسه. تقييم VibeCritic التحريري 8.6/10: تجربة ممتازة ذات قمم قوية، لكنها ليست متماسكة بالكامل.",
-      "score": 8.6,
+      "verdict": "Resident Evil Requiem عمل قوي لأنه يفهم أن الرعب والأكشن ليسا خصمين بالضرورة. مقاطع Grace تمنح الخوف وزناً عبر الضعف والموارد المحدودة والاستكشاف، فيما تمنح مقاطع Leon اللاعب متنفساً قتالياً ممتعاً. لكن هذا التناوب يفقد توازنه في النصف الثاني، حيث يتراجع حضور Grace القابل للعب وتتكرر المواجهات القتالية، كما أن القصة لا تستثمر كل ما تثيره من أسئلة بالعمق نفسه. تقييم VibeCritic التحريري 8.5/10: تجربة ممتازة ذات قمم قوية، لكنها ليست متماسكة بالكامل.",
+      "score": 8.5,
       "scores": {
-        "storyScore": 8.2,
+        "storyScore": 8.1,
         "visualsScore": 9.2,
         "soundScore": 8.7,
-        "pacingScore": 8.4
+        "pacingScore": 8.2
       },
       "tags": [
         "Resident Evil",
@@ -88022,5 +88017,5 @@
     "editorialReviews": 58,
     "editorialRelations": 233
   },
-  "updatedAt": "2026-11-15T00:02:41.216Z"
+  "updatedAt": "2026-11-15T00:15:19.742Z"
 }
