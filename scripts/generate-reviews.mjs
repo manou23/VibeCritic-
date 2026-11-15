@@ -1296,7 +1296,7 @@ async function main(){
  const isRecentEditorialWork=item=>{
   const releaseDate=String(item?.date||'').slice(0,10);
   // VibeCritic only publishes works released in 2025 or later, including verified upcoming releases.
-  return /^\\d{4}-\\d{2}-\\d{2}$/.test(releaseDate)&&releaseDate>='2025-01-01';
+  return /^\d{4}-\d{2}-\d{2}$/.test(releaseDate)&&releaseDate>='2025-01-01';
  };
  const eligible=items=>{
   const seen=new Set();
@@ -1311,8 +1311,8 @@ async function main(){
    const priorityDiff=editorialPriority(a)-editorialPriority(b);
    if(priorityDiff!==0)return upgradeB-upgradeA||priorityDiff;
    const dateA=String(a.date||''),dateB=String(b.date||'');
-   const recentA=/^\\d{4}-\\d{2}-\\d{2}$/.test(dateA)?dateA:'0000-00-00';
-   const recentB=/^\\d{4}-\\d{2}-\\d{2}$/.test(dateB)?dateB:'0000-00-00';
+   const recentA=/^\d{4}-\d{2}-\d{2}$/.test(dateA)?dateA:'0000-00-00';
+   const recentB=/^\d{4}-\d{2}-\d{2}$/.test(dateB)?dateB:'0000-00-00';
    return upgradeB-upgradeA||recentB.localeCompare(recentA)||communityDemand(b)-communityDemand(a)||Number(b.popularity||0)-Number(a.popularity||0);
   });
  };
