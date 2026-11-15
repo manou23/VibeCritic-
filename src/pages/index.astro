@@ -21,7 +21,8 @@ const trendReviews=trending.filter(item=>['مرتفع','متوسط'].includes(it
  return [{...item,review,title:review.data.title,summary:review.data.summary,poster:optimizeImage(review.data.poster||item.poster),backdrop:optimizeImage(review.data.backdrop||item.backdrop||item.poster,'backdrop'),href:url(`reviews/${review.id}/`)}];
 }).slice(0,10);
 const spotlight=trendReviews[0]||(topRated[0]?{...topRated[0].data,id:topRated[0].id,review:topRated[0],type:topRated[0].data.type,title:topRated[0].data.title,summary:topRated[0].data.summary,poster:optimizeImage(topRated[0].data.poster),backdrop:optimizeImage(topRated[0].data.backdrop||topRated[0].data.poster,'backdrop'),href:url('reviews/'+topRated[0].id+'/')}:null);
-const featured=topRated.filter(item=>item.id!==(spotlight?.review?.id||spotlight?.id)).slice(0,3);\nconst orbitItems=trendReviews.length?trendReviews.slice(0,7):topRated.slice(0,7).map(review=>({title:review.data.title,summary:review.data.summary,poster:optimizeImage(review.data.poster),backdrop:optimizeImage(review.data.backdrop||review.data.poster,'backdrop'),href:url(`reviews/${review.id}/`),type:review.data.type}));
+const featured=topRated.filter(item=>item.id!==(spotlight?.review?.id||spotlight?.id)).slice(0,3);
+const orbitItems=trendReviews.length?trendReviews.slice(0,7):topRated.slice(0,7).map(review=>({title:review.data.title,summary:review.data.summary,poster:optimizeImage(review.data.poster),backdrop:optimizeImage(review.data.backdrop||review.data.poster,'backdrop'),href:url(`reviews/${review.id}/`),type:review.data.type}));
 ---
 <Base title="اكتشف عالم الترفيه" description="اكتشف أحدث الأفلام والمسلسلات والألعاب، تابع الترندات العالمية واقرأ مراجعات VibeCritic." image={spotlight?.backdrop || spotlight?.poster}>
 <div class="vc-home">
