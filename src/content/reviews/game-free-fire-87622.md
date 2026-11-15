@@ -43,6 +43,20 @@ sourceName: "VibeCritic Editorial Desk"
 sourceId: "87622"
 sourceUrl: "https://ff.garena.com/"
 aiGenerated: false
+rawgSourceId: 74935
+rawgSourceUrl: "https://rawg.io/games/garena-free-fire"
+rawgReleaseDate: "2017-12-08"
+rawgGenres:
+  - "Action"
+  - "Adventure"
+rawgPlatforms:
+  - "iOS"
+  - "Android"
+rawgDevelopers:
+  - "GARENA INTERNATIONAL I"
+gameStores:
+  - name: "App Store"
+  - name: "Google Play"
 ---
 
 ## نطاق المراجعة والمنهج

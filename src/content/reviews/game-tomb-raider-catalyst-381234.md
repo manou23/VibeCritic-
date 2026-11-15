@@ -36,6 +36,19 @@ sourceRating: 0
 sourceId: "381234"
 sourceUrl: "https://www.igdb.com/games/tomb-raider-catalyst"
 aiGenerated: true
+rawgSourceId: 1015411
+rawgSourceUrl: "https://rawg.io/games/tomb-raider-catalyst"
+rawgReleaseDate: "2027-12-31"
+rawgGenres:
+  - "Action"
+  - "Adventure"
+rawgPlatforms:
+  - "PlayStation 5"
+  - "Xbox Series S/X"
+  - "PC"
+rawgDevelopers:
+  - "Crystal Dynamics"
+gameStores: []
 ---
 
 > **تنبيه الإصدار:** اللعبة لم تصدر بعد، ولم تؤكد Amazon Games موعداً نهائياً. في 24 يوليو 2026 نقلت [Gematsu](https://www.gematsu.com/2026/07/tomb-raider-catalyst-amazon-games-boss-suggests-2028-delay-but-publisher-says-no-updates) إشارة إلى 2028، لكن ممثل الناشر قال إنه لا يملك تحديثاً عن الموعد. هذه قراءة استباقية وليست مراجعة لنسخة نهائية.

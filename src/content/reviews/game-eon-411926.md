@@ -33,6 +33,24 @@ sourceRating: 0
 sourceId: "411926"
 sourceUrl: "https://www.igdb.com/games/eon--1"
 aiGenerated: true
+rawgSourceId: 333398
+rawgSourceUrl: "https://rawg.io/games/eon"
+rawgReleaseDate: "2020-02-25"
+rawgGenres:
+  - "Action"
+  - "RPG"
+  - "Strategy"
+  - "Casual"
+  - "Indie"
+rawgPlatforms:
+  - "Linux"
+  - "macOS"
+  - "PC"
+rawgDevelopers:
+  - "neogames"
+  - "pengaru.com"
+gameStores:
+  - name: "Steam"
 ---
 
 ## المقدمة

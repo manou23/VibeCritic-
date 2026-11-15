@@ -33,6 +33,45 @@ sourceRating: 70.29105859949459
 sourceId: "17269"
 sourceUrl: "https://www.igdb.com/games/roblox"
 aiGenerated: true
+rawgSourceId: 779
+rawgSourceUrl: "https://rawg.io/games/roblox"
+rawgReleaseDate: "2006-09-01"
+rawgGenres:
+  - "Action"
+  - "Shooter"
+  - "Adventure"
+  - "RPG"
+  - "Strategy"
+  - "Simulation"
+  - "Sports"
+  - "Racing"
+  - "Arcade"
+  - "Board Games"
+  - "Casual"
+  - "Card"
+  - "Educational"
+  - "Family"
+  - "Fighting"
+  - "Massively Multiplayer"
+  - "Indie"
+  - "Puzzle"
+  - "Platformer"
+rawgPlatforms:
+  - "PlayStation 5"
+  - "Xbox One"
+  - "Xbox Series S/X"
+  - "Android"
+  - "macOS"
+  - "PC"
+  - "iOS"
+  - "PlayStation 4"
+rawgDevelopers:
+  - "ROBLOX"
+gameStores:
+  - name: "PlayStation Store"
+  - name: "Xbox Store"
+  - name: "Google Play"
+  - name: "App Store"
 ---
 
 ## المقدمة

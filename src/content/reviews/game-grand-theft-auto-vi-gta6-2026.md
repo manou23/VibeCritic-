@@ -42,6 +42,18 @@ sourceName: "Rockstar Games"
 sourceId: "gta-vi-2026"
 sourceUrl: "https://www.rockstargames.com/VI"
 aiGenerated: false
+rawgSourceId: 972995
+rawgSourceUrl: "https://rawg.io/games/grand-theft-aito-vi"
+rawgReleaseDate: "2026-11-19"
+rawgGenres:
+  - "Action"
+rawgPlatforms:
+  - "Xbox Series S/X"
+  - "PlayStation 5"
+rawgDevelopers:
+  - "Rockstar Games"
+gameStores:
+  - name: "PlayStation Store"
 ---
 
 > **تنبيه تحريري مهم:** هذه قراءة استباقية منشورة في 14 نوفمبر 2026، قبل موعد الإصدار المعلن في 19 نوفمبر 2026. تستند إلى عروض Rockstar وصفحاتها الرسمية والمعلومات المنشورة حتى تاريخ الكتابة. لا نزعم أننا لعبنا النسخة النهائية، ولا نقدم حكماً على الأداء الفعلي أو جودة المهمات التي لم تُكشف.

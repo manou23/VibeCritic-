@@ -48,6 +48,23 @@ sourceName: "Supergiant Games"
 sourceId: "hades-ii-2025"
 sourceUrl: "https://www.supergiantgames.com/games/hades-ii/"
 aiGenerated: false
+rawgSourceId: 891238
+rawgSourceUrl: "https://rawg.io/games/hades-ii"
+rawgReleaseDate: "2025-09-25"
+rawgGenres:
+  - "Action"
+  - "Adventure"
+  - "RPG"
+  - "Indie"
+rawgPlatforms:
+  - "Xbox Series S/X"
+  - "PC"
+  - "Nintendo Switch"
+rawgDevelopers:
+  - "Supergiant Games"
+gameStores:
+  - name: "Steam"
+  - name: "Epic Games"
 ---
 
 > **منهجية المراجعة:** قراءة تحريرية يدوية أُعدت بالاستناد إلى وصف المطور الرسمي، ومراجعات نقدية منشورة، ومعلومات الإصدار والمنصات. لا تدّعي هذه المادة اختباراً شخصياً جديداً أو قياساً تقنياً للأداء على جهاز محدد. التقييم مستقل عن متوسطات الجمهور والجوائز، ويزن جودة التصميم كما تسمح الأدلة المنشورة.

@@ -43,6 +43,25 @@ sourceName: "Nintendo / ATLUS"
 sourceId: "metaphor-refantazio-switch2-2026"
 sourceUrl: "https://www.nintendo.com/us/store/products/metaphor-refantazio-switch-2/"
 aiGenerated: false
+rawgSourceId: 963212
+rawgSourceUrl: "https://rawg.io/games/metaphor-refantazio"
+rawgReleaseDate: "2024-10-11"
+rawgGenres:
+  - "Action"
+  - "Adventure"
+  - "RPG"
+rawgPlatforms:
+  - "PC"
+  - "PlayStation 4"
+  - "PlayStation 5"
+  - "Xbox Series S/X"
+rawgDevelopers:
+  - "Atlus"
+  - "Studio Zero"
+gameStores:
+  - name: "Xbox Store"
+  - name: "PlayStation Store"
+  - name: "Steam"
 ---
 
 > **ملاحظة منهجية:** صدرت نسخة Nintendo Switch 2 في 12 نوفمبر 2026. هذه قراءة تحريرية للعبة وتصميمها الأساسي، مدعومة ببيانات ATLUS وSEGA وNintendo الرسمية. لا ندّعي اختباراً تقنياً مستقلاً لنسخة Switch 2؛ لذلك لا نصدر حكماً على معدل الإطارات أو الدقة أو ثبات الأداء المحمول قبل قياسات موثوقة.

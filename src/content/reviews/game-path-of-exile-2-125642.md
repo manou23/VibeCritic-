@@ -44,6 +44,20 @@ sourceName: "VibeCritic Editorial Desk"
 sourceId: "125642"
 sourceUrl: "https://www.pathofexile.com/poe2"
 aiGenerated: false
+rawgSourceId: 391403
+rawgSourceUrl: "https://rawg.io/games/path-of-exile-2"
+rawgReleaseDate: "2026-12-11"
+rawgGenres:
+  - "Action"
+  - "Adventure"
+  - "RPG"
+  - "Massively Multiplayer"
+rawgPlatforms:
+  - "PC"
+rawgDevelopers:
+  - "Grinding Gear Games"
+gameStores:
+  - name: "Steam"
 ---
 
 ## نطاق المراجعة والمنهج

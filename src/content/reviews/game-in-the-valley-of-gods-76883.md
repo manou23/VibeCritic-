@@ -36,6 +36,21 @@ sourceRating: 0
 sourceId: "76883"
 sourceUrl: "https://www.igdb.com/games/in-the-valley-of-gods"
 aiGenerated: true
+rawgSourceId: 50764
+rawgSourceUrl: "https://rawg.io/games/in-the-valley-of-gods-2"
+rawgReleaseDate: "2029-12-31"
+rawgGenres:
+  - "Action"
+  - "Adventure"
+  - "Indie"
+rawgPlatforms:
+  - "Linux"
+  - "macOS"
+  - "PC"
+rawgDevelopers:
+  - "Campo Santo"
+gameStores:
+  - name: "Steam"
 ---
 
 > **تنبيه الحالة:** أفاد [مؤسس Campo Santo في 2019](https://www.pcgamer.com/in-the-valley-of-gods-is-officially-on-hold-as-campo-santo-works-on-valve-projects/) بأن التطوير متوقف. وتعرض [صفحة Steam](https://store.steampowered.com/app/687440/In_The_Valley_Of_Gods/) ديسمبر 2029 كتاريخ مخطط، لكنها تذكر أيضاً أن موعد الإصدار غير محدد. هذه قراءة استباقية لمشروع غير صادر، وليست مراجعة لنسخة قابلة للعب.

@@ -45,6 +45,23 @@ sourceName: "IGDB"
 sourceId: "305152"
 sourceUrl: "https://www.igdb.com/games/305152/presskit"
 aiGenerated: false
+rawgSourceId: 983210
+rawgSourceUrl: "https://rawg.io/games/clair-obscur-expedition-33"
+rawgReleaseDate: "2025-04-24"
+rawgGenres:
+  - "RPG"
+rawgPlatforms:
+  - "PC"
+  - "PlayStation 5"
+  - "Xbox Series S/X"
+rawgDevelopers:
+  - "Sundial Interactive"
+  - "Sandfall Interactive"
+gameStores:
+  - name: "Epic Games"
+  - name: "Steam"
+  - name: "PlayStation Store"
+  - name: "Xbox Store"
 ---
 
 ## الفكرة: عالم يقيس الحياة بما تبقى منها

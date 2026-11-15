@@ -50,6 +50,14 @@ sourceName: "VibeCritic Editorial Desk"
 sourceId: "call-of-duty-modern-warfare-4-2026"
 sourceUrl: "https://www.callofduty.com/blog/2026/05/call-of-duty-modern-warfare-4-announcement"
 aiGenerated: false
+rawgSourceId: 1017981
+rawgSourceUrl: "https://rawg.io/games/call-of-duty-modern-warfare-4"
+rawgReleaseDate: "2026-10-23"
+rawgGenres:
+  - "Shooter"
+rawgPlatforms: []
+rawgDevelopers: []
+gameStores: []
 ---
 
 > **المنهجية:** هذه مراجعة تحريرية بحثية وليست ادعاءً باختبار مباشر من فريق VibeCritic. بُني الحكم على مقارنة مراجعات منشورة من فرق اختبرت نسخ PC وPS5 وXbox، مع الرجوع إلى إعلان Activision الرسمي. لا نخلط بين نتائج اختبار منصة واحدة وبين أداء جميع المنصات، ولا ننسخ متوسط تقييمات المواقع؛ الدرجة أدناه حكم تحريري مستقل يستند إلى تقاطع الأدلة والاختلافات بينها حتى 14 نوفمبر 2026.

@@ -31,6 +31,18 @@ sourceRating: 0
 sourceId: "417642"
 sourceUrl: "https://www.igdb.com/games/starcraft--1"
 aiGenerated: true
+rawgSourceId: 32716
+rawgSourceUrl: "https://rawg.io/games/starcraft"
+rawgReleaseDate: "1998-03-31"
+rawgGenres:
+  - "Action"
+rawgPlatforms:
+  - "Nintendo 64"
+  - "PC"
+  - "macOS"
+rawgDevelopers:
+  - "Mass Media"
+gameStores: []
 ---
 
 ## المقدمة

@@ -33,6 +33,23 @@ sourceRating: 0
 sourceId: "116517"
 sourceUrl: "https://www.igdb.com/games/star-fighters"
 aiGenerated: true
+rawgSourceId: 302899
+rawgSourceUrl: "https://rawg.io/games/star-fighters"
+rawgReleaseDate: ""
+rawgGenres:
+  - "Action"
+  - "RPG"
+  - "Strategy"
+  - "Casual"
+  - "Indie"
+rawgPlatforms:
+  - "PC"
+  - "macOS"
+  - "Linux"
+rawgDevelopers:
+  - "Orakga"
+gameStores:
+  - name: "Steam"
 ---
 
 ## المقدمة

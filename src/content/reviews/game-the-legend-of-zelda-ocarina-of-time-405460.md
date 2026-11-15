@@ -32,6 +32,15 @@ sourceRating: 99.8604087219288
 sourceId: "405460"
 sourceUrl: "https://www.igdb.com/games/the-legend-of-zelda-ocarina-of-time--1"
 aiGenerated: true
+rawgSourceId: 1019942
+rawgSourceUrl: "https://rawg.io/games/the-legend-of-zelda-ocarina-of-time-2"
+rawgReleaseDate: "2026-11-05"
+rawgGenres:
+  - "Action"
+rawgPlatforms:
+  - "Nintendo Switch"
+rawgDevelopers: []
+gameStores: []
 ---
 
 ## المقدمة

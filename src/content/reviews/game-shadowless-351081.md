@@ -38,6 +38,17 @@ sourceRating: 0
 sourceId: "351081"
 sourceUrl: "https://www.igdb.com/games/shadowless--1"
 aiGenerated: true
+rawgSourceId: 730730
+rawgSourceUrl: "https://rawg.io/games/shadowless"
+rawgReleaseDate: "2022-01-30"
+rawgGenres:
+  - "Adventure"
+rawgPlatforms:
+  - "PC"
+rawgDevelopers:
+  - "Kleberson21"
+gameStores:
+  - name: "itch.io"
 ---
 
 > **تنبيه الإصدار:** لم تصدر اللعبة بعد؛ تعرض [صفحة Steam](https://store.steampowered.com/app/3774430/) نافذة إطلاق مخططة في الربع الرابع من 2030. هذه قراءة استباقية مبنية على وصف المطور، وليست تقييماً لنسخة قابلة للعب.

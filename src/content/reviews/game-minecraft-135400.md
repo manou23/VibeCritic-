@@ -54,6 +54,38 @@ sourceName: "VibeCritic Editorial Desk"
 sourceId: "135400"
 sourceUrl: "https://www.minecraft.net/"
 aiGenerated: false
+rawgSourceId: 22509
+rawgSourceUrl: "https://rawg.io/games/minecraft"
+rawgReleaseDate: "2009-05-10"
+rawgGenres:
+  - "Action"
+  - "Simulation"
+  - "Arcade"
+  - "Massively Multiplayer"
+  - "Indie"
+rawgPlatforms:
+  - "Android"
+  - "PS Vita"
+  - "PlayStation 4"
+  - "PlayStation 3"
+  - "Xbox 360"
+  - "Nintendo 3DS"
+  - "Nintendo Switch"
+  - "macOS"
+  - "PC"
+  - "iOS"
+  - "Wii U"
+  - "Xbox One"
+  - "Linux"
+rawgDevelopers:
+  - "4J Studios"
+  - "Mojang"
+gameStores:
+  - name: "Nintendo Store"
+  - name: "App Store"
+  - name: "PlayStation Store"
+  - name: "Google Play"
+  - name: "Xbox Store"
 ---
 
 ## نطاق التقييم
