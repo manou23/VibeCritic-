@@ -38,9 +38,12 @@ button,input{font:inherit}
 ::selection{background:#ef6b45;color:var(--vc-on-dark)}
 .site-header{position:sticky;top:0;z-index:50;background:rgba(243,240,232,.94);border-bottom:1px solid var(--vc-border);backdrop-filter:blur(14px)}
 .site-nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{display:flex;align-items:baseline;gap:1px;font-size:27px;font-weight:950;letter-spacing:-1.6px}
+.brand{flex:0 0 auto;display:flex;align-items:center;gap:10px;font-size:27px;font-weight:950;letter-spacing:-1.6px}
+.brand-mark{display:block;width:42px;height:42px;flex:0 0 42px}
+.brand-copy{display:flex;flex-direction:column;gap:1px}
+.brand-name{display:block;line-height:1;font-size:27px}
 .brand .brand-accent{color:var(--vc-accent)}
-.brand small{font-size:9px;letter-spacing:2px;color:#81796e;margin-inline-start:9px;font-weight:800}
+.brand small{font-size:8px;line-height:1.5;letter-spacing:1.6px;color:#81796e;font-weight:900}
 .site-links{display:flex;align-items:center;gap:clamp(12px,2.4vw,30px);font-size:13px;font-weight:800;color:var(--vc-nav)}
 .site-links a{transition:color .2s}
 .site-links a:hover{color:var(--vc-accent)}
@@ -112,7 +115,7 @@ button,input{font:inherit}
 .dark-mode .review-type{background:#211f1a;color:var(--vc-text)}
 .dark-mode .search-field{background:#211f1a;color:var(--vc-text);border-color:#504a40}
 @media(max-width:850px){.home-hero{grid-template-columns:1fr;gap:10px;padding:54px 0}.hero-visual{min-height:310px}.review-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:600px){.container,.wrap{width:min(100% - 28px,1200px)}.site-nav{min-height:66px;gap:10px}.brand{font-size:22px}.brand small{display:none}.site-links{gap:10px;font-size:11px}.theme-toggle{width:34px;height:34px}.home-hero{padding:42px 0 34px}.hero-title{font-size:43px;letter-spacing:-1.8px}.hero-description{font-size:14px}.hero-visual{min-height:275px}.hero-stamp{width:82px;height:82px;font-size:9px}.featured-score{bottom:8%;font-size:17px}.category-grid{gap:8px}.category-tile{min-height:118px;padding:13px}.category-tile strong{font-size:16px}.category-tile small{font-size:9px}.review-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px 10px}.review-content{padding:11px}.review-title{font-size:13px}.review-headline{font-size:11px}.section-heading{margin-top:32px}.site-footer{margin-top:65px}}
+@media(max-width:600px){.container,.wrap{width:min(100% - 28px,1200px)}.site-nav{min-height:66px;gap:10px}.brand{font-size:22px;gap:7px}.brand-mark{width:35px;height:35px;flex-basis:35px}.brand-name{font-size:22px}.brand small{display:none}.site-links{gap:10px;font-size:11px}.theme-toggle{width:34px;height:34px}.home-hero{padding:42px 0 34px}.hero-title{font-size:43px;letter-spacing:-1.8px}.hero-description{font-size:14px}.hero-visual{min-height:275px}.hero-stamp{width:82px;height:82px;font-size:9px}.featured-score{bottom:8%;font-size:17px}.category-grid{gap:8px}.category-tile{min-height:118px;padding:13px}.category-tile strong{font-size:16px}.category-tile small{font-size:9px}.review-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px 10px}.review-content{padding:11px}.review-title{font-size:13px}.review-headline{font-size:11px}.section-heading{margin-top:32px}.site-footer{margin-top:65px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 
 .article-breadcrumbs{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:0 0 18px;color:var(--vc-muted);font-size:11px;line-height:1.8}.article-breadcrumbs a{color:var(--vc-accent-deep);text-underline-offset:3px}.article-breadcrumbs a:hover{text-decoration:underline}.article-breadcrumbs [aria-current=page]{max-width:min(55vw,420px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--vc-text)}
@@ -214,8 +217,12 @@ button,input{font:inherit}
 /* TMDB-inspired VibeCritic discovery experience — original ivory/orange palette */
 .site-header{position:sticky;top:0;z-index:80;background:rgba(243,240,232,.97);border-bottom:1px solid var(--vc-border);backdrop-filter:blur(16px)}
 .site-nav{min-height:76px;display:flex;align-items:center;gap:26px}
-.brand{flex:0 0 auto;display:flex;align-items:baseline;gap:1px;font-size:27px;font-weight:950;letter-spacing:-1.6px}
-.brand .brand-accent{color:var(--vc-accent)}.brand small{font-size:8px;letter-spacing:1.6px;color:#81796e;margin-inline-start:8px;font-weight:900}
+.brand{flex:0 0 auto;display:flex;align-items:center;gap:10px;font-size:27px;font-weight:950;letter-spacing:-1.6px}
+.brand-mark{display:block;width:42px;height:42px;flex:0 0 42px}
+.brand-copy{display:flex;flex-direction:column;gap:2px}
+.brand-name{display:block;line-height:1;font-size:27px}
+.brand .brand-accent{color:var(--vc-accent)}
+.brand small{font-size:8px;line-height:1.5;letter-spacing:1.6px;color:#81796e;font-weight:900}
 .site-links{display:flex;align-items:center;gap:clamp(12px,2vw,28px);margin-inline:auto;font-size:13px;font-weight:900;color:var(--vc-nav)}
 .site-links a{padding:28px 0;position:relative;white-space:nowrap}.site-links a:after{content:"";position:absolute;bottom:19px;right:0;width:0;height:2px;background:var(--vc-accent);transition:width .2s}.site-links a:hover:after{width:100%}
 .header-search{display:flex;align-items:center;gap:7px;color:#5c554c;font-size:12px;font-weight:900;white-space:nowrap}.header-search>span:first-child{font-size:24px;color:var(--vc-accent)}
@@ -269,8 +276,9 @@ button,input{font:inherit}
 .footer-sources[open]{flex-basis:100%}
 .footer-sources p{flex-basis:100%}
 
-.footer-brand{font-size:20px;font-weight:950;letter-spacing:-1px;color:var(--vc-text)}
-.footer-brand span{color:var(--vc-accent)}
+.footer-brand{display:inline-flex;align-items:center;gap:8px;font-size:20px;font-weight:950;letter-spacing:-1px;color:var(--vc-text);text-decoration:none!important}
+.footer-brand .brand-mark{width:30px;height:30px;flex-basis:30px}
+.footer-wordmark>span{color:var(--vc-accent)}
 .dark-mode .site-header{background:rgba(23,22,19,.97);border-color:#38352e}
 .dark-mode .site-links,.dark-mode .header-search{color:#d2cabc}
 .dark-mode .theme-toggle{color:var(--vc-text);border-color:#504a40}
