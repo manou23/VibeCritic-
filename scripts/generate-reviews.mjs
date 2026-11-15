@@ -416,12 +416,14 @@ async function recordProviderOutcome(name,success,error=null,measurement=null,it
   };
   const retryAfter=parseReset(headers['retry-after']);
   const resetAt=parseReset(headers['x-ratelimit-reset-requests']??headers['x-ratelimit-reset-tokens']??headers['x-ratelimit-reset']);
-  const explicitDaily=/daily|per[_ -]?day|free_model_daily_requests|daily quota|quota for today|تجاوز.*اليوم|الحصة اليومية/i.test(message);
+  const explicitDaily=/daily|per[_ -]?day|free_model_daily_requests|daily quota|quota for today|tokens per day|\\bTPD\\b|تجاوز.*اليوم|الحصة اليومية/i.test(message);
   const quotaExhausted=/resource[_ -]?exhausted|insufficient quota|quota exceeded/i.test(message);
   if(status===429||/rate.?limit/i.test(message)){
    const until=retryAfter||resetAt||Date.now()+60*1000;
    const isDaily=explicitDaily||quotaExhausted;
-   entry.blockedUntil=isDaily?Math.max(until,new Date(algeriaDate()+'T23:59:59+01:00').getTime()):Math.min(Math.max(until,Date.now()+15000),Date.now()+15*60*1000);
+   const dailyTokenWindow=/tokens per day|\\bTPD\\b/i.test(message);
+   // Respect the provider's explicit reset time for rolling daily-token windows; do not retry as if this were TPM.
+   entry.blockedUntil=dailyTokenWindow?until:isDaily?Math.max(until,new Date(algeriaDate()+'T23:59:59+01:00').getTime()):Math.min(Math.max(until,Date.now()+15000),Date.now()+15*60*1000);
    entry.blockedReason=isDaily?'daily-limit':'rate-limit';
   }else if(status===401||status===403||status===402){entry.blockedUntil=Date.now()+6*60*60*1000;entry.blockedReason='auth-or-billing';}
   else if(status>=500&&status<=599){const failures=Number(entry.consecutiveTransientFailures||0)+1;entry.consecutiveTransientFailures=failures;entry.blockedUntil=Date.now()+Math.min(15*60*1000,60*1000*Math.pow(2,Math.min(4,failures-1)));entry.blockedReason='temporary-server';}
@@ -529,7 +531,7 @@ async function generateWithGroq(prompt){
   if(r.ok)break;
   detail=await r.text();
   // Retry transient TPM 429 responses using Groq's reset hint; daily quota 429s are not retried.
-  const temporaryTpm429=r.status===429&&/tokens per minute|type.?[:=].?["']?tokens|code.?[:=].?["']?rate_limit_exceeded/i.test(detail)&&/try again in/i.test(detail);
+  const temporaryTpm429=r.status===429&&/tokens per minute|\\bTPM\\b/i.test(detail)&&!/tokens per day|\\bTPD\\b/i.test(detail)&&/try again in/i.test(detail);
   const retryable=temporaryTpm429||[500,502,503,504].includes(r.status);
   if(!retryable||attempt===3)throw new Error('Groq HTTP '+r.status+': '+detail);
   const retryHeader=Number(r.headers.get('retry-after'))*1000;
@@ -562,7 +564,7 @@ async function generateWithOpenRouter(prompt){
    r=await trackedProviderFetch('openrouter',directEndpoint,{method:'POST',headers:directHeaders,body:requestBody,signal:AbortSignal.timeout(90000)});
   }
   if(!r.ok&&r.status===400)r=await trackedProviderFetch('openrouter',r.url===directEndpoint?directEndpoint:endpoint,{method:'POST',headers:r.url===directEndpoint?directHeaders:headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,max_tokens:6000,messages}),signal:AbortSignal.timeout(90000)});
-  if(!r.ok)throw new Error('OpenRouter HTTP '+r.status+': '+(await r.text()).slice(0,700));
+  if(!r.ok){let detail='تعذر قراءة استجابة OpenRouter';try{detail=await r.clone().text();}catch{}throw new Error('OpenRouter HTTP '+r.status+': '+detail.slice(0,700));}
   const response=await r.json(),message=response.choices?.[0]?.message;
   let content=message?.content;if(Array.isArray(content))content=content.map(part=>part.text||'').join('');
   if(message?.refusal)lastIssue='رفض النموذج إنشاء المراجعة';
