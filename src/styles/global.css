@@ -1398,3 +1398,97 @@ body{overflow-x:hidden}
 @media(prefers-reduced-motion:reduce){
  .culture-marquee-track,.vibe-live-dot{animation:none!important}
 }
+
+
+/* VIBECRITIC BRAND SYSTEM — youth culture, honest criticism, unmistakable signature */
+:root{
+ --vc-acid:#d9ff43;
+ --vc-coral:#ff624d;
+ --vc-lilac:#b4a1ff;
+ --vc-ink:#11191d;
+ --vc-brand-display:Impact,"Arial Black",Tahoma,sans-serif;
+}
+.dark-mode{
+ --vc-bg:#10171b;
+ --vc-text:#f4f5ed;
+ --vc-surface:#182227;
+ --vc-surface-muted:#202c31;
+ --vc-border:#304047;
+ --vc-muted:#aab8b7;
+ --vc-accent:var(--vc-acid);
+ --vc-accent-deep:#d9ff43;
+}
+:root:not(.dark-mode){
+ --vc-bg:#f5f3e9;
+ --vc-text:#141c1e;
+ --vc-surface:#fffef8;
+ --vc-surface-muted:#eaece1;
+ --vc-border:#d6ddcf;
+ --vc-muted:#65716d;
+ --vc-accent:var(--vc-coral);
+ --vc-accent-deep:#d64b39;
+}
+::selection{background:var(--vc-acid);color:#11191d}
+.site-header{border-bottom:2px solid var(--vc-text)}
+.brand{align-items:center;gap:9px}
+.brand-mark{display:grid;place-items:center;width:42px;height:42px;flex:0 0 42px;border-radius:13px 13px 13px 4px;background:var(--vc-acid);color:#11191d;box-shadow:4px 4px 0 var(--vc-coral);transform:rotate(-5deg)}
+.brand-mark svg{width:31px;height:31px;display:block}
+.brand-word{font-family:var(--vc-brand-display),Tahoma,sans-serif;font-size:29px;line-height:1;letter-spacing:-1.7px}
+.brand .brand-accent{color:var(--vc-coral)}
+.brand small{align-self:flex-end;margin:0 0 2px 7px;color:var(--vc-muted);font-size:8px;letter-spacing:1.4px}
+.dark-mode .brand .brand-accent{color:var(--vc-coral)}
+.site-links a{font-weight:900}
+.site-links a:hover{color:var(--vc-coral)}
+.header-search,.theme-toggle{border-radius:10px;border:1px solid var(--vc-border);background:var(--vc-surface);color:var(--vc-text)}
+.culture-marquee{background:var(--vc-acid);color:#11191d;border-block:2px solid #11191d}
+.culture-marquee-group{font-family:var(--vc-brand-display),Tahoma,sans-serif;font-size:12px;letter-spacing:2px}
+.culture-marquee-group i{color:var(--vc-coral)}
+.discovery-hero{border-radius:18px 4px 18px 4px;border:2px solid var(--vc-text);box-shadow:9px 9px 0 var(--vc-coral)}
+.discovery-content h1{font-family:var(--vc-brand-display),Tahoma,sans-serif;font-weight:900;letter-spacing:-1.5px}
+.discovery-primary{border-radius:7px;box-shadow:4px 4px 0 var(--vc-coral)}
+.discovery-primary:hover{box-shadow:6px 6px 0 var(--vc-coral)}
+.vibe-manifesto{padding:30px 0 25px;border-bottom:2px solid var(--vc-text)}
+.vibe-manifesto-index{letter-spacing:1.7px}
+.vibe-manifesto>p{font-size:clamp(30px,5vw,58px);letter-spacing:-2px}
+.vibe-manifesto>p strong{color:var(--vc-coral)}
+.vibe-principles{display:grid;grid-template-columns:.72fr 1.8fr;gap:28px;padding:30px 0 40px;border-bottom:1px solid var(--vc-border)}
+.vibe-principles-heading>span{color:var(--vc-coral);font-size:9px;font-weight:1000;letter-spacing:2px}
+.vibe-principles-heading>p{max-width:190px;margin:12px 0 0;font-size:21px;font-weight:1000;line-height:1.5}
+.vibe-principles-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.vibe-principle{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;min-height:130px;padding:15px;border:1px solid var(--vc-border);background:var(--vc-surface);transition:transform .22s,border-color .22s,box-shadow .22s}
+.vibe-principle:hover{transform:translateY(-4px);border-color:var(--vc-coral);box-shadow:4px 4px 0 var(--vc-acid)}
+.vibe-principle-no{font-family:var(--vc-brand-display),Tahoma,sans-serif;color:var(--vc-coral);font-size:20px;line-height:1}
+.vibe-principle h2{margin:0 0 8px;font-size:15px;font-weight:1000}
+.vibe-principle p{margin:0;color:var(--vc-muted);font-size:11px;line-height:1.9}
+.vibe-principle>b{grid-column:2;justify-self:end;color:var(--vc-coral);font-size:18px}
+.catalog-heading h2{font-weight:1000}
+.catalog-heading:after{background:var(--vc-acid)}
+.catalog-eyebrow{color:var(--vc-coral)}
+.review-card{border:1px solid #ffffff20;box-shadow:0 12px 30px #0003}
+.review-card:hover,.review-card:focus-visible{box-shadow:7px 10px 0 var(--vc-coral)}
+.review-card-overline{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;color:var(--vc-acid);font-family:var(--vc-brand-display),Tahoma,sans-serif;font-size:8px;letter-spacing:1.7px}
+.review-card-overline span:last-child{color:var(--vc-coral);font-size:13px}
+.review-date{color:#b8c4c1}
+.site-footer{border-top:3px solid var(--vc-acid)}
+.footer-brand{font-family:var(--vc-brand-display),Tahoma,sans-serif}
+@media(max-width:760px){
+ .brand{gap:7px}
+ .brand-mark{width:35px;height:35px;flex-basis:35px;border-radius:11px 11px 11px 4px}
+ .brand-mark svg{width:27px;height:27px}
+ .brand-word{font-size:23px}
+ .brand small{display:none}
+ .vibe-principles{grid-template-columns:1fr;gap:16px;padding:24px 0 30px}
+ .vibe-principles-heading>p{max-width:none;margin-top:7px;font-size:19px}
+ .vibe-principles-grid{grid-template-columns:1fr;gap:8px}
+ .vibe-principle{min-height:0;grid-template-columns:34px 1fr auto;align-items:center;padding:13px}
+ .vibe-principle>b{grid-column:auto;align-self:center}
+}
+@media(max-width:430px){
+ .brand-word{font-size:21px}
+ .brand-mark{width:32px;height:32px;flex-basis:32px}
+ .vibe-manifesto>p{font-size:31px;letter-spacing:-1px}
+ .discovery-hero{box-shadow:5px 6px 0 var(--vc-coral)}
+}
+@media(prefers-reduced-motion:reduce){
+ .vibe-principle,.brand-mark{transition:none!important}
+}
