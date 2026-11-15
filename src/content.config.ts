@@ -47,6 +47,7 @@ const reviews = defineCollection({
     sourceId: z.string(),
     sourceUrl: z.string().optional(),
     aiGenerated: z.boolean().default(true),
+    editorialWorkflow: z.enum(['automated', 'manual-assisted']).default('automated'),
   }),
 });
 export const collections = { reviews };
