@@ -81,6 +81,10 @@
       "type": "string",
       "format": "date-time"
     },
+    "publishedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
     "releaseDate": {
       "type": "string"
     },
