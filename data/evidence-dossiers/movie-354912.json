@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "workKey": "movie:354912",
+  "title": "كوكو",
+  "type": "movie",
+  "collectedAt": "2026-11-15T19:33:54.402Z",
+  "evidenceCount": 11,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/movie/354912"
+    },
+    {
+      "name": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "كوكو"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/354912",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2017-10-27"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/354912",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "الاحتفال بالعمر\r على الرغم من الحظر المحير الذي فرضته عائلته منذ أجيال على الموسيقى ، يحلم ميغيل بأن يصبح موسيقيا بارعا مثل معبوده إرنستو دي لا كروز. في محاولة يائسة لإثبات موهبته ، يجد ميغيل نفسه في أرض الموتى المذهلة والملونة بعد سلسلة غامضة من الأحداث. على طول الطريق ، يلتقي المحتال الساحر هيكتور ، وينطلقان معا في رحلة غير عادية لفتح القصة الحقيقية وراء تاريخ عائلة ميغيل."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/354912",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "عائلي",
+        "رسوم متحركة",
+        "موسيقى",
+        "مغامرة"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/354912",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        8.207
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/354912",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        21874
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/354912",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "Anthony Gonzalez بدور Miguel Rivera (voice)",
+        "Gael García Bernal بدور Héctor (voice)",
+        "Benjamin Bratt بدور Ernesto de la Cruz (voice)",
+        "آلانا أوباش بدور Mamá Imelda (voice)",
+        "Renée Victor بدور Abuelita (voice)",
+        "Jaime Camil بدور Papá (voice)",
+        "Alfonso Arau بدور Papá Julio (voice)"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/354912",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "directors",
+      "label": "المخرجون",
+      "value": [
+        "Lee Unkrich",
+        "أدريان مولينا"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/354912",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "runtime",
+      "label": "مدة العرض",
+      "value": [
+        105
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/354912",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "Pixar"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/354912",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "relatedWorks",
+      "label": "أعمال مرتبطة",
+      "value": [
+        {
+          "title": "Forgotten Island",
+          "year": 2026,
+          "sharedGenres": "مغامرة,رسوم متحركة,عائلي",
+          "sharedPeople": ""
+        },
+        {
+          "title": "حكاية لعبة ٥",
+          "year": 2026,
+          "sharedGenres": "مغامرة,رسوم متحركة,عائلي",
+          "sharedPeople": ""
+        },
+        {
+          "title": "كايوتي ضد أكمي",
+          "year": 2026,
+          "sharedGenres": "مغامرة,رسوم متحركة,عائلي",
+          "sharedPeople": ""
+        },
+        {
+          "title": "المينيون والوحوش",
+          "year": 2026,
+          "sharedGenres": "مغامرة,رسوم متحركة,عائلي",
+          "sharedPeople": ""
+        },
+        {
+          "title": "فارس وفادي",
+          "year": 2007,
+          "sharedGenres": "رسوم متحركة,عائلي",
+          "sharedPeople": ""
+        },
+        {
+          "title": "ستار ضد قوى الشر",
+          "year": 2015,
+          "sharedGenres": "رسوم متحركة,عائلي",
+          "sharedPeople": ""
+        }
+      ],
+      "source": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

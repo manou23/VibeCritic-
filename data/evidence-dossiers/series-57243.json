@@ -1,0 +1,178 @@
+{
+  "version": 1,
+  "workKey": "series:57243",
+  "title": "دكتور هو",
+  "type": "series",
+  "collectedAt": "2026-11-15T19:33:45.799Z",
+  "evidenceCount": 11,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/tv/57243"
+    },
+    {
+      "name": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "دكتور هو"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/57243",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2005-03-26"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/57243",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "الدكتور هو من جنس أسياد الوقت (تايم لوردز): فضائي عمره 900 عام ولديه قلبان، قدم من حضارة أتقنت السفر عبر الزمن. الدكتور وظيفته إنقاذ الكواكب - أكثر كهواية في الواقع - والدكتور جيد، جيد جدا في ذلك."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/57243",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "حركة ومغامرة",
+        "دراما",
+        "خيال علمي وفانتازيا"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/57243",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        7.633
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/57243",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        3513
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/57243",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "جودي ويتاكر بدور The Doctor",
+        "Mandip Gill بدور Yasmin 'Yaz' Khan",
+        "John Bishop بدور Dan Lewis"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/57243",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "seasons",
+      "label": "عدد المواسم",
+      "value": [
+        13
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/57243",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "episodes",
+      "label": "عدد الحلقات",
+      "value": [
+        153
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/57243",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "BBC Cymru Wales",
+        "BBC Studios",
+        "CBC",
+        "BBC Studios Drama Productions"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/57243",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "relatedWorks",
+      "label": "أعمال مرتبطة",
+      "value": [
+        {
+          "title": "Broadchurch",
+          "year": 2013,
+          "sharedGenres": "دراما",
+          "sharedPeople": "جودي ويتاكر"
+        },
+        {
+          "title": "The 100",
+          "year": 2014,
+          "sharedGenres": "دراما,حركة ومغامرة,خيال علمي وفانتازيا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "شخص محل إهتمام",
+          "year": 2011,
+          "sharedGenres": "دراما,حركة ومغامرة,خيال علمي وفانتازيا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "الدراج المقنع",
+          "year": 1971,
+          "sharedGenres": "دراما,حركة ومغامرة,خيال علمي وفانتازيا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "صراع العروش",
+          "year": 2011,
+          "sharedGenres": "دراما,حركة ومغامرة,خيال علمي وفانتازيا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "Wakfu",
+          "year": 2008,
+          "sharedGenres": "دراما,حركة ومغامرة,خيال علمي وفانتازيا",
+          "sharedPeople": ""
+        }
+      ],
+      "source": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

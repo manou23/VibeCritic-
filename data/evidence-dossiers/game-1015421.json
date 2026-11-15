@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "workKey": "game:1015421",
+  "title": "Tomb Raider: Legacy of Atlantis",
+  "type": "game",
+  "collectedAt": "2026-11-15T19:33:44.771Z",
+  "evidenceCount": 9,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "RAWG",
+      "url": "https://rawg.io/games/tomb-raider-legacy-of-atlantis"
+    },
+    {
+      "name": "RAWG",
+      "url": "https://api.rawg.io/api/games/1015421/screenshots"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "Tomb Raider: Legacy of Atlantis"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/tomb-raider-legacy-of-atlantis",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2027-02-12"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/tomb-raider-legacy-of-atlantis",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "Tomb Raider: Legacy of Atlantis is an action game developed by Crystal Dynamics. Most rawgers rated the game as \"Recommended\". You can play Tomb Raider: Legacy of Atlantis on PlayStation 5, Xbox Series S/X and PC."
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/tomb-raider-legacy-of-atlantis",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "Action"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/tomb-raider-legacy-of-atlantis",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        4.33
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/tomb-raider-legacy-of-atlantis",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        4
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/tomb-raider-legacy-of-atlantis",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "platforms",
+      "label": "المنصات",
+      "value": [
+        "PlayStation 5",
+        "Xbox Series S/X",
+        "PC"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/tomb-raider-legacy-of-atlantis",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "developers",
+      "label": "المطورون",
+      "value": [
+        "Crystal Dynamics"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/tomb-raider-legacy-of-atlantis",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "screenshots",
+      "label": "لقطات شاشة من اللعبة",
+      "value": [
+        "https://media.rawg.io/media/screenshots/800/80071c998f39d56db9e18d27fd558b97.jpg"
+      ],
+      "source": "RAWG",
+      "url": "https://api.rawg.io/api/games/1015421/screenshots",
+      "confidence": "صور مرجعية من قاعدة بيانات؛ لا تثبت وحدها الأداء الفعلي"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

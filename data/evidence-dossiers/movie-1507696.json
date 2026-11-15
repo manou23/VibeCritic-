@@ -1,0 +1,179 @@
+{
+  "version": 1,
+  "workKey": "movie:1507696",
+  "title": "نهاية العالم Z: العالم الجديد",
+  "type": "movie",
+  "collectedAt": "2026-11-15T19:33:52.104Z",
+  "evidenceCount": 11,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1507696"
+    },
+    {
+      "name": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "نهاية العالم Z: العالم الجديد"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1507696",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2026-10-09"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1507696",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "تتحول مهمة إمداد إلى إسبانيا المنكوبة بالفيروس إلى مهمة معقدة بانضمام روبرتو، القادم من جزر الكناري الآمنة، بنوايا سرية. يواجه الفريق حشودًا مصابة ومشاكل ثقة، بينما يوازن بين البقاء على قيد الحياة والإنسانية."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1507696",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "حركة",
+        "إثارة",
+        "رعب"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1507696",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        6.174
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1507696",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        211
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1507696",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "Carlos Alcaide بدور Roberto",
+        "Julia Martínez بدور Marina",
+        "José María Yázpik بدور Pritchenko",
+        "Mónica López بدور Castro",
+        "Tamara Casellas بدور Comillas",
+        "Berta Vázquez بدور Lucía",
+        "Santiago Vaca Narvaja بدور Core"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1507696",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "directors",
+      "label": "المخرجون",
+      "value": [
+        "Carles Torrens"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1507696",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "runtime",
+      "label": "مدة العرض",
+      "value": [
+        96
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1507696",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "Nostromo Pictures"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1507696",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "relatedWorks",
+      "label": "أعمال مرتبطة",
+      "value": [
+        {
+          "title": "El despertar",
+          "year": 2026,
+          "sharedGenres": "رعب,حركة,إثارة",
+          "sharedPeople": ""
+        },
+        {
+          "title": "Onslaught",
+          "year": 2026,
+          "sharedGenres": "رعب,حركة,إثارة",
+          "sharedPeople": ""
+        },
+        {
+          "title": "غودزيلا ناقص صفر",
+          "year": 2026,
+          "sharedGenres": "رعب,حركة",
+          "sharedPeople": ""
+        },
+        {
+          "title": "النمس",
+          "year": 2026,
+          "sharedGenres": "حركة,إثارة",
+          "sharedPeople": ""
+        },
+        {
+          "title": "فارس الظلام",
+          "year": 2008,
+          "sharedGenres": "حركة,إثارة",
+          "sharedPeople": ""
+        },
+        {
+          "title": "Insidious: Out of the Further",
+          "year": 2026,
+          "sharedGenres": "رعب,إثارة",
+          "sharedPeople": ""
+        }
+      ],
+      "source": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

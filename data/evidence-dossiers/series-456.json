@@ -1,0 +1,190 @@
+{
+  "version": 1,
+  "workKey": "series:456",
+  "title": "آل سيمبسون",
+  "type": "series",
+  "collectedAt": "2026-11-15T19:33:47.579Z",
+  "evidenceCount": 12,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/tv/456"
+    },
+    {
+      "name": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "آل سيمبسون"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/456",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "1989-12-17"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/456",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "في سبرينغفيلد، البلدة الأمريكية النموذجية، تمضي حياة عائلة سيمبسون بين المقالب والمواقف اليومية: هومر ومارج وبارت وليزا وماغي، ومعهم جمهور لا ينتهي من أهل البلدة. أيقونة في ثقافة البوب استضافت مئات المشاهير، وصنعت اسمها بسخرية جريئة من السياسة والإعلام والحياة الأمريكية عموماً."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/456",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "رسوم متحركة",
+        "كوميديا"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/456",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        8.028
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/456",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        11171
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/456",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "دان كاستلانيتا بدور Homer Simpson / Abe Simpson / Barney Gumble / Krusty the Clown / Groundskeeper Willie / Mayor Quimby (voice)",
+        "جولي كافنر بدور Marge Simpson / Patty Bouvier / Selma Bouvier / Jacqueline Bouvier (voice)",
+        "نانسي كارترايت بدور Bart Simpson / Maggie Simpson / Nelson Muntz / Ralph Wiggum (voice)",
+        "ياردلي سميث بدور Lisa Simpson / Maggie Simpson (voice)",
+        "هانك آزاريا بدور Moe Szyslak / Chief Wiggum / Apu / Comic Book Guy / Carl Carlson / Superintendent Chalmers (voice)",
+        "هاري شيرر بدور Ned Flanders / Mr. Burns / Smithers / Principal Skinner / Lenny Leonard (voice)"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/456",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "creators",
+      "label": "المبدعون",
+      "value": [
+        "مات غرينينغ"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/456",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "seasons",
+      "label": "عدد المواسم",
+      "value": [
+        38
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/456",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "episodes",
+      "label": "عدد الحلقات",
+      "value": [
+        816
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/456",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "Gracie Films",
+        "20th Century Fox Television",
+        "20th Television Animation",
+        "20th Television"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/456",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "relatedWorks",
+      "label": "أعمال مرتبطة",
+      "value": [
+        {
+          "title": "فارس وفادي",
+          "year": 2007,
+          "sharedGenres": "رسوم متحركة,كوميديا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "ستار ضد قوى الشر",
+          "year": 2015,
+          "sharedGenres": "رسوم متحركة,كوميديا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "ون بيس",
+          "year": 1999,
+          "sharedGenres": "رسوم متحركة,كوميديا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "دورايمون",
+          "year": 2005,
+          "sharedGenres": "رسوم متحركة,كوميديا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "رجل العائلة",
+          "year": 1999,
+          "sharedGenres": "رسوم متحركة,كوميديا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "American Dad!",
+          "year": 2005,
+          "sharedGenres": "رسوم متحركة,كوميديا",
+          "sharedPeople": ""
+        }
+      ],
+      "source": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "version": 1,
+  "workKey": "series:2316",
+  "title": "المكتب",
+  "type": "series",
+  "collectedAt": "2026-11-15T19:33:46.479Z",
+  "evidenceCount": 12,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/tv/2316"
+    },
+    {
+      "name": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "المكتب"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/2316",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2005-03-24"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/2316",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "يتناول المسلسل في إطار كوميدي يوميات العمل المستمر في إحدى الشركات المتخصصة في الورق، والعلاقات التي تجمع بين موظفي الشركة أجمعين، وعلاقتهم بالمدير غريب الأطوار مايكل سكوت."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/2316",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "كوميديا"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/2316",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        8.585
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/2316",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        5713
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/2316",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "راين ويلسون بدور Dwight Schrute",
+        "جون كراسينسكي بدور Jim Halpert",
+        "جينا فيشر بدور Pam Beesly",
+        "إد هيلمز بدور Andy Bernard"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/2316",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "creators",
+      "label": "المبدعون",
+      "value": [
+        "غريغ دانيلز"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/2316",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "seasons",
+      "label": "عدد المواسم",
+      "value": [
+        9
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/2316",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "episodes",
+      "label": "عدد الحلقات",
+      "value": [
+        186
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/2316",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "Universal Television",
+        "Deedle-Dee Productions",
+        "Reveille Productions",
+        "Shine America",
+        "Universal Media Studios"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/2316",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "relatedWorks",
+      "label": "أعمال مرتبطة",
+      "value": [
+        {
+          "title": "آل سيمبسون",
+          "year": 1989,
+          "sharedGenres": "كوميديا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "كيف قابلت امك",
+          "year": 2005,
+          "sharedGenres": "كوميديا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "عائلة عصرية",
+          "year": 2009,
+          "sharedGenres": "كوميديا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "سينفيلد",
+          "year": 1989,
+          "sharedGenres": "كوميديا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "فارس وفادي",
+          "year": 2007,
+          "sharedGenres": "كوميديا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "ستار ضد قوى الشر",
+          "year": 2015,
+          "sharedGenres": "كوميديا",
+          "sharedPeople": ""
+        }
+      ],
+      "source": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

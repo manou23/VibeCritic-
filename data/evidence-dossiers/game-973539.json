@@ -1,0 +1,184 @@
+{
+  "version": 1,
+  "workKey": "game:973539",
+  "title": "No Rest for the Wicked",
+  "type": "game",
+  "collectedAt": "2026-11-15T19:33:43.677Z",
+  "evidenceCount": 12,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "RAWG",
+      "url": "https://rawg.io/games/no-rest-for-the-wicked-2024"
+    },
+    {
+      "name": "RAWG",
+      "url": "https://api.rawg.io/api/games/973539/screenshots"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "No Rest for the Wicked"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/no-rest-for-the-wicked-2024",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2027-03-31"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/no-rest-for-the-wicked-2024",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "From Moon Studios, the award-winning developers of Ori and the Blind Forest and Ori and the Will of the Wisps comes No Rest for the Wicked, a visceral, precision Action RPG set to reinvent the genre. The year is 841 – King Harol is dead. As word of his death echoes throughout the kingdom, the crown passes to his arrogant, yet untested son Magnus. Even worse, the Pestilence, an unholy plague not seen for a thousand years, has returned. It sweeps across the land, corrupting everything and everyone it touches. Madrigal Seline, a ruthlessly ambitious figure in the church, sees the Pestilence as a chance to prove herself in the eyes of her god. These forces converge on the backwater Isola Sacra, where rebel groups and the provincial government fight for control amid the isle’s crumbling ruins. You are a Cerim – a member of a group of mystical holy warriors imbued with remarkable powers and sworn to defeat the Pestilence at any cost. But the task will prove increasingly challenging as you become entangled in the people’s plight and the vast political struggle of this downtrodden land. Chaos will pull you in every direction as you seek to cleanse the land of wickedness and shape the kingdom’s fate."
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/no-rest-for-the-wicked-2024",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "Action",
+        "Adventure",
+        "RPG"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/no-rest-for-the-wicked-2024",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        3.95
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/no-rest-for-the-wicked-2024",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        36
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/no-rest-for-the-wicked-2024",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "platforms",
+      "label": "المنصات",
+      "value": [
+        "PC",
+        "Xbox Series S/X",
+        "PlayStation 5"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/no-rest-for-the-wicked-2024",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "developers",
+      "label": "المطورون",
+      "value": [
+        "Moon Studios"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/no-rest-for-the-wicked-2024",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "publishers",
+      "label": "الناشرون",
+      "value": [
+        "Private Division"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/no-rest-for-the-wicked-2024",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "tags",
+      "label": "وسوم RAWG",
+      "value": [
+        "Singleplayer",
+        "Steam Cloud",
+        "Atmospheric",
+        "RPG",
+        "Partial Controller Support",
+        "Exploration",
+        "Action RPG",
+        "Controller",
+        "Early Access",
+        "Hack and Slash",
+        "Character Customization",
+        "3D",
+        "Colorful",
+        "Dark Fantasy",
+        "Cinematic",
+        "combat",
+        "Isometric",
+        "Stylized",
+        "Drama",
+        "Family Sharing"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/no-rest-for-the-wicked-2024",
+      "confidence": "تصنيفات وصفية من قاعدة البيانات"
+    },
+    {
+      "key": "stores",
+      "label": "روابط المتاجر",
+      "value": [
+        {
+          "name": "PlayStation Store",
+          "url": null
+        },
+        {
+          "name": "Xbox Store",
+          "url": null
+        },
+        {
+          "name": "Steam",
+          "url": null
+        }
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/no-rest-for-the-wicked-2024",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "screenshots",
+      "label": "لقطات شاشة من اللعبة",
+      "value": [
+        "https://media.rawg.io/media/screenshots/c21/c21a854e58eed45d7558c6b922b83b9f.jpg",
+        "https://media.rawg.io/media/screenshots/dd0/dd03305884ce85fa36ddf8ca7c61c0d9.jpg",
+        "https://media.rawg.io/media/screenshots/c06/c064f7a551e29637372f1f7627a8b67a.jpg",
+        "https://media.rawg.io/media/screenshots/28f/28f46f113ff942455173ce20e48c96fa.jpg",
+        "https://media.rawg.io/media/screenshots/6b3/6b3439b897b335ec9d7f09dd60f46e5c.jpg"
+      ],
+      "source": "RAWG",
+      "url": "https://api.rawg.io/api/games/973539/screenshots",
+      "confidence": "صور مرجعية من قاعدة بيانات؛ لا تثبت وحدها الأداء الفعلي"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "version": 1,
+  "workKey": "movie:687163",
+  "title": "مشروع هيل ماري",
+  "type": "movie",
+  "collectedAt": "2026-11-15T19:33:50.301Z",
+  "evidenceCount": 11,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/movie/687163"
+    },
+    {
+      "name": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "مشروع هيل ماري"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/687163",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2026-03-15"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/687163",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "يستيقظ \"رايلاند غريس\"، مدرس العلوم، على متن مركبة فضائية تبعد سنوات ضوئية عن موطنه، فاقدًا للذاكرة تمامًا، لا يتذكر من هو ولا كيف وصل إلى هناك. ومع عودة ذاكرته تدريجيًا، يبدأ في اكتشاف مهمته: حل لغز المادة الغامضة التي تتسبب في انطفاء الشمس. عليه أن يستعين بمعرفته العلمية وأفكاره غير التقليدية لإنقاذ كل شيء على الأرض من الفناء... لكن صداقة غير متوقعة تعني أنه قد لا يضطر إلى القيام بذلك بمفرده."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/687163",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "خيال علمي",
+        "مغامرة"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/687163",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        8.625
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/687163",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        8885
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/687163",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "رايان غوسلينغ بدور Ryland Grace",
+        "ساندرا هولر بدور Eva Stratt",
+        "جيمس أورتي بدور Rocky (voice)",
+        "Lionel Boyce بدور Carl",
+        "Milana Vayntrub بدور Olesya Ilyukhina",
+        "كين ليونغ بدور Yao",
+        "Priya Kansara بدور Mary (voice)"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/687163",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "directors",
+      "label": "المخرجون",
+      "value": [
+        "فيل لورد",
+        "كريس ميلر"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/687163",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "runtime",
+      "label": "مدة العرض",
+      "value": [
+        156
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/687163",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "Lord Miller",
+        "Amazon MGM Studios",
+        "Pascal Pictures",
+        "Open Invite Entertainment",
+        "Waypoint Entertainment"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/687163",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "relatedWorks",
+      "label": "أعمال مرتبطة",
+      "value": [
+        {
+          "title": "ريزدنت إيفل",
+          "year": 2026,
+          "sharedGenres": "مغامرة,خيال علمي",
+          "sharedPeople": ""
+        },
+        {
+          "title": "سبايدر-مان: يوم جديد",
+          "year": 2026,
+          "sharedGenres": "مغامرة,خيال علمي",
+          "sharedPeople": ""
+        },
+        {
+          "title": "المنتقمون: نهاية اللعبة",
+          "year": 2019,
+          "sharedGenres": "مغامرة,خيال علمي",
+          "sharedPeople": ""
+        },
+        {
+          "title": "بين النجوم",
+          "year": 2014,
+          "sharedGenres": "مغامرة,خيال علمي",
+          "sharedPeople": ""
+        },
+        {
+          "title": "المنتقمون: الحرب الأبدية",
+          "year": 2018,
+          "sharedGenres": "مغامرة,خيال علمي",
+          "sharedPeople": ""
+        },
+        {
+          "title": "كثيب: القسم الثاني",
+          "year": 2024,
+          "sharedGenres": "مغامرة,خيال علمي",
+          "sharedPeople": ""
+        }
+      ],
+      "source": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "version": 1,
+  "workKey": "series:1408",
+  "title": "هاوس",
+  "type": "series",
+  "collectedAt": "2026-11-15T19:33:48.637Z",
+  "evidenceCount": 14,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1408"
+    },
+    {
+      "name": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "هاوس"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1408",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2004-11-16"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1408",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "يقود الطبيب العبقري غريغوري هاوس فريقًا متخصصًا في الطب التشخيصي داخل مستشفى تعليمي، حيث يتولى الحالات الطبية الغامضة التي يعجز الأطباء الآخرون عن تشخيصها، مستعينًا بذكائه الحاد وأساليبه غير التقليدية. وبينما ينجح في إنقاذ حياة مرضاه، يواجه هاوس إدمانه للمسكنات ومشكلاته الشخصية وعلاقاته المعقدة مع زملائه، في صراع مستمر بين عبقريته الطبية وشخصيته المدمرة"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1408",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "دراما"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1408",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        8.559
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1408",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        8037
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1408",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "هيو لوري بدور Gregory House",
+        "Robert Sean Leonard بدور James Wilson",
+        "Omar Epps بدور Eric Foreman",
+        "Jesse Spencer بدور Robert Chase",
+        "Odette Annable بدور Jessica Adams",
+        "بيتر جاكوبسون بدور Chris Taub",
+        "Lo Mutuc بدور Chi Park"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1408",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "creators",
+      "label": "المبدعون",
+      "value": [
+        "ديفيد شور"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1408",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "runtime",
+      "label": "مدة العرض",
+      "value": [
+        44
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1408",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "episodeRuntime",
+      "label": "مدة الحلقة",
+      "value": [
+        44
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1408",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "seasons",
+      "label": "عدد المواسم",
+      "value": [
+        8
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1408",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "episodes",
+      "label": "عدد الحلقات",
+      "value": [
+        176
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1408",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "Universal Television",
+        "Bad Hat Harry Productions",
+        "Heel & Toe Films",
+        "Shore Z Productions"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1408",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "relatedWorks",
+      "label": "أعمال مرتبطة",
+      "value": [
+        {
+          "title": "القانون والنظام: وحدة الضحايا الخاصة",
+          "year": 1999,
+          "sharedGenres": "دراما",
+          "sharedPeople": ""
+        },
+        {
+          "title": "دكتور هو",
+          "year": 2005,
+          "sharedGenres": "دراما",
+          "sharedPeople": ""
+        },
+        {
+          "title": "قصة رعب امريكية",
+          "year": 2011,
+          "sharedGenres": "دراما",
+          "sharedPeople": ""
+        },
+        {
+          "title": "الوسيط الروحي",
+          "year": 2008,
+          "sharedGenres": "دراما",
+          "sharedPeople": ""
+        },
+        {
+          "title": "فلاش",
+          "year": 2014,
+          "sharedGenres": "دراما",
+          "sharedPeople": ""
+        },
+        {
+          "title": "يوميات مصاص الدماء",
+          "year": 2009,
+          "sharedGenres": "دراما",
+          "sharedPeople": ""
+        }
+      ],
+      "source": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

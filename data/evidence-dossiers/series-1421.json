@@ -1,0 +1,191 @@
+{
+  "version": 1,
+  "workKey": "series:1421",
+  "title": "عائلة عصرية",
+  "type": "series",
+  "collectedAt": "2026-11-15T19:33:49.645Z",
+  "evidenceCount": 12,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1421"
+    },
+    {
+      "name": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "عائلة عصرية"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1421",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2009-09-23"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1421",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "يتتبع هذا العمل الحائز على جائزة الإيمي، حياة \"جاي بريتشيت\" وأسرته الانتقائية في تعاملهم مع تحديات الحياة المعاصرة في لوس أنجلوس."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1421",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "كوميديا"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1421",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        7.912
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1421",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        3625
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1421",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "إد أونيل بدور Jay Pritchett",
+        "Sofía Vergara بدور Gloria Delgado-Pritchett",
+        "جولي بوين بدور Claire Dunphy",
+        "Ty Burrell بدور Phil Dunphy",
+        "Jesse Tyler Ferguson بدور Mitchell Pritchett",
+        "Eric Stonestreet بدور Cameron Tucker",
+        "سارة هايلاند بدور Haley Dunphy"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1421",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "creators",
+      "label": "المبدعون",
+      "value": [
+        "Steven Levitan",
+        "Christopher Lloyd"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1421",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "seasons",
+      "label": "عدد المواسم",
+      "value": [
+        11
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1421",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "episodes",
+      "label": "عدد الحلقات",
+      "value": [
+        250
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1421",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "Levitan Lloyd Productions",
+        "20th Century Fox Television",
+        "Steven Levitan Prods",
+        "Picador Productions"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1421",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "relatedWorks",
+      "label": "أعمال مرتبطة",
+      "value": [
+        {
+          "title": "المكتب",
+          "year": 2005,
+          "sharedGenres": "كوميديا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "آل سيمبسون",
+          "year": 1989,
+          "sharedGenres": "كوميديا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "كيف قابلت امك",
+          "year": 2005,
+          "sharedGenres": "كوميديا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "سينفيلد",
+          "year": 1989,
+          "sharedGenres": "كوميديا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "فارس وفادي",
+          "year": 2007,
+          "sharedGenres": "كوميديا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "ستار ضد قوى الشر",
+          "year": 2015,
+          "sharedGenres": "كوميديا",
+          "sharedPeople": ""
+        }
+      ],
+      "source": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

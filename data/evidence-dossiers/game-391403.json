@@ -1,0 +1,173 @@
+{
+  "version": 1,
+  "workKey": "game:391403",
+  "title": "Path of Exile 2",
+  "type": "game",
+  "collectedAt": "2026-11-15T19:33:42.608Z",
+  "evidenceCount": 12,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "RAWG",
+      "url": "https://rawg.io/games/path-of-exile-2"
+    },
+    {
+      "name": "RAWG",
+      "url": "https://api.rawg.io/api/games/391403/screenshots"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "Path of Exile 2"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/path-of-exile-2",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2026-12-11"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/path-of-exile-2",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "Path of Exile 2 is a new seven-act storyline that is available alongside the original Path of Exile 1 campaign. ... Path of Exile 2 retains all expansion content that has been created over the last six years and introduces a new skill system, ascendancy classes, engine improvements and more."
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/path-of-exile-2",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "Action",
+        "Adventure",
+        "RPG",
+        "Massively Multiplayer"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/path-of-exile-2",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        3.55
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/path-of-exile-2",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        67
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/path-of-exile-2",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "platforms",
+      "label": "المنصات",
+      "value": [
+        "PC"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/path-of-exile-2",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "developers",
+      "label": "المطورون",
+      "value": [
+        "Grinding Gear Games"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/path-of-exile-2",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "publishers",
+      "label": "الناشرون",
+      "value": [
+        "Grinding Gear Games"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/path-of-exile-2",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "tags",
+      "label": "وسوم RAWG",
+      "value": [
+        "Singleplayer",
+        "Multiplayer",
+        "Full controller support",
+        "RPG",
+        "Co-op",
+        "Horror",
+        "Online Co-Op",
+        "Free to Play",
+        "Action RPG",
+        "Early Access",
+        "Dark",
+        "Hack and Slash",
+        "Character Customization",
+        "Dark Fantasy",
+        "Crafting",
+        "Isometric",
+        "mmo",
+        "Dungeon Crawler",
+        "MMORPG",
+        "Loot"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/path-of-exile-2",
+      "confidence": "تصنيفات وصفية من قاعدة البيانات"
+    },
+    {
+      "key": "stores",
+      "label": "روابط المتاجر",
+      "value": [
+        {
+          "name": "Steam",
+          "url": null
+        }
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/path-of-exile-2",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "screenshots",
+      "label": "لقطات شاشة من اللعبة",
+      "value": [
+        "https://media.rawg.io/media/screenshots/2b4/2b433e4c466a4bfa4cc0723a2f9b5cb5.jpg",
+        "https://media.rawg.io/media/screenshots/1ed/1ed5529ef451b1a545545a0b4bc58290.jpg",
+        "https://media.rawg.io/media/screenshots/744/744a6f1eec2fdcfdd3ecd9a7f1de290d.jpg"
+      ],
+      "source": "RAWG",
+      "url": "https://api.rawg.io/api/games/391403/screenshots",
+      "confidence": "صور مرجعية من قاعدة بيانات؛ لا تثبت وحدها الأداء الفعلي"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

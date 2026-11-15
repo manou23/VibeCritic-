@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "workKey": "movie:1616687",
+  "title": "لا تستسلم أبدًا",
+  "type": "movie",
+  "collectedAt": "2026-11-15T19:33:53.381Z",
+  "evidenceCount": 11,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1616687"
+    },
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1616687-serangan-balik/watch?locale=DZ"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "لا تستسلم أبدًا"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1616687",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2026-11-11"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1616687",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "حين تقتحم عصابة خطرة منزله النائي، يضطر جندي متقاعد مثقل بالذنب إلى الاتحاد مع حفيديه، اللذين يعرفهما بالكاد لانقطاع الصلة بينهم، في سبيل البقاء على قيد الحياة."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1616687",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "حركة",
+        "جريمة",
+        "إثارة"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1616687",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        7.184
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1616687",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        20
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1616687",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "Lukman Sardi بدور Eyang Hari",
+        "Callista Arum بدور Putri",
+        "Sulthan Hamonangan بدور Dimas",
+        "Derby Romero بدور Bastian",
+        "Donny Alamsyah بدور Ulo",
+        "Dennis Adishwara بدور Agus",
+        "Ismi Melinda بدور Jegeg"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1616687",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "directors",
+      "label": "المخرجون",
+      "value": [
+        "Sidharta Tata"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1616687",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "runtime",
+      "label": "مدة العرض",
+      "value": [
+        140
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1616687",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "Mowin Pictures"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1616687",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "watchProviders",
+      "label": "منصات المشاهدة المتاحة في الجزائر",
+      "value": [
+        "Netflix"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1616687-serangan-balik/watch?locale=DZ",
+      "confidence": "بيانات إتاحة قابلة للتغير"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

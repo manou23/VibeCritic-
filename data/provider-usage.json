@@ -256,10 +256,10 @@
         "inputTokens": 56938,
         "outputTokens": 26956,
         "freeModelDailyRequests": {
-          "used": 2,
+          "used": 53,
           "limit": 50,
-          "remaining": 48,
-          "observedAt": "2026-11-15T17:02:06.690Z",
+          "remaining": 0,
+          "observedAt": "2026-11-15T19:32:06.650Z",
           "source": "OpenRouter GET /api/v1/key"
         },
         "lastAttemptAt": "2026-11-15T00:04:25.510Z",
@@ -418,29 +418,53 @@
             "totalTokens": 0,
             "successes": 0
           }
+        },
+        "game:972995": {
+          "cloudflare-workers-ai": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          },
+          "gemini": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          }
         }
       },
       "gemini": {
-        "requests": 1,
+        "requests": 2,
         "successes": 0,
-        "failures": 1,
-        "apiRequests": 5,
+        "failures": 2,
+        "apiRequests": 6,
         "totalTokens": 0,
         "inputTokens": 0,
         "outputTokens": 0,
-        "lastAttemptAt": "2026-11-14T23:51:49.431Z",
+        "lastAttemptAt": "2026-11-15T19:33:41.339Z",
         "lastUsage": {
-          "requests": 5,
+          "requests": 1,
           "inputTokens": 0,
           "outputTokens": 0,
           "totalTokens": 0,
           "reportedUsage": false,
           "headers": {},
-          "durationMs": 100215,
-          "at": "2026-11-14T23:51:49.431Z"
+          "durationMs": 90074,
+          "at": "2026-11-15T19:33:41.339Z"
         },
-        "blockedUntil": 1794701209431,
-        "blockedReason": "temporary-network"
+        "blockedUntil": 1794772121340,
+        "blockedReason": "temporary-network",
+        "lastCooldown": {
+          "reason": "temporary-network",
+          "until": "2026-11-15T19:48:41.340Z",
+          "observedAt": "2026-11-15T19:33:41.340Z",
+          "status": null
+        }
       },
       "groq": {
         "requests": 1,
@@ -473,26 +497,32 @@
         "blockedReason": "daily-limit"
       },
       "cloudflare-workers-ai": {
-        "requests": 7,
+        "requests": 8,
         "successes": 6,
-        "failures": 1,
-        "apiRequests": 7,
+        "failures": 2,
+        "apiRequests": 8,
         "totalTokens": 97281,
         "inputTokens": 74342,
         "outputTokens": 22939,
-        "lastAttemptAt": "2026-11-15T00:02:55.458Z",
+        "lastAttemptAt": "2026-11-15T19:32:11.260Z",
         "lastUsage": {
           "requests": 1,
-          "inputTokens": 11677,
-          "outputTokens": 1408,
-          "totalTokens": 13085,
-          "reportedUsage": true,
+          "inputTokens": 0,
+          "outputTokens": 0,
+          "totalTokens": 0,
+          "reportedUsage": false,
           "headers": {},
-          "durationMs": 13867,
-          "at": "2026-11-15T00:02:55.458Z"
+          "durationMs": 217,
+          "at": "2026-11-15T19:32:11.260Z"
         },
-        "blockedUntil": 0,
-        "blockedReason": ""
+        "blockedUntil": 1794783599000,
+        "blockedReason": "daily-limit",
+        "lastCooldown": {
+          "reason": "daily-limit",
+          "until": "2026-11-15T22:59:59.000Z",
+          "observedAt": "2026-11-15T19:32:11.261Z",
+          "status": 429
+        }
       }
     }
   }
