@@ -1,0 +1,189 @@
+{
+  "version": 1,
+  "workKey": "series:5920",
+  "title": "الوسيط الروحي",
+  "type": "series",
+  "collectedAt": "2026-11-15T19:44:55.920Z",
+  "evidenceCount": 12,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/tv/5920"
+    },
+    {
+      "name": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "الوسيط الروحي"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/5920",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2008-09-23"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/5920",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "يعمل باتريك جين مستشارًا لدى مكتب التحقيقات في كاليفورنيا، بعد أن كان يدّعي امتلاك قدرات روحانية، قبل أن تقلب مأساة على يد قاتل متسلسل يُعرف باسم ريد جون حياته رأسًا على عقب. يسخّر جين قدرته الفذة على الملاحظة وقراءة الناس لمساعدة فريق العميلة تيريزا ليزبون في حل الجرائم المعقدة بأساليب غير مألوفة، بينما يبقى هدفه الأكبر الوصول إلى القاتل الذي دمّر عائلته."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/5920",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "جريمة",
+        "دراما",
+        "غموض"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/5920",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        8.4
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/5920",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        5005
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/5920",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "سايمون بيكر بدور Patrick Jane",
+        "روبن توني بدور Teresa Lisbon",
+        "تيم كانج بدور Kimball Cho",
+        "روكموند دنبار بدور Dennis Abbott",
+        "جو أدلر بدور Jason Wylie",
+        "جوزي لورين بدور Michelle Vega"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/5920",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "creators",
+      "label": "المبدعون",
+      "value": [
+        "برونو هيلر"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/5920",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "seasons",
+      "label": "عدد المواسم",
+      "value": [
+        7
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/5920",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "episodes",
+      "label": "عدد الحلقات",
+      "value": [
+        151
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/5920",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "Warner Bros. Television",
+        "Primrose Hill Productions"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/5920",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "relatedWorks",
+      "label": "أعمال مرتبطة",
+      "value": [
+        {
+          "title": "القانون والنظام: وحدة الضحايا الخاصة",
+          "year": 1999,
+          "sharedGenres": "دراما,جريمة,غموض",
+          "sharedPeople": ""
+        },
+        {
+          "title": "عقول إجرامية",
+          "year": 2005,
+          "sharedGenres": "دراما,جريمة,غموض",
+          "sharedPeople": ""
+        },
+        {
+          "title": "Columbo",
+          "year": 1971,
+          "sharedGenres": "دراما,جريمة,غموض",
+          "sharedPeople": ""
+        },
+        {
+          "title": "شخص محل إهتمام",
+          "year": 2011,
+          "sharedGenres": "دراما,جريمة,غموض",
+          "sharedPeople": ""
+        },
+        {
+          "title": "مونك",
+          "year": 2002,
+          "sharedGenres": "دراما,جريمة,غموض",
+          "sharedPeople": ""
+        },
+        {
+          "title": "Broadchurch",
+          "year": 2013,
+          "sharedGenres": "دراما,جريمة,غموض",
+          "sharedPeople": ""
+        }
+      ],
+      "source": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

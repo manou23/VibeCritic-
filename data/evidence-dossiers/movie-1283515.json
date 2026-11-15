@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "workKey": "movie:1283515",
+  "title": "فيريتي",
+  "type": "movie",
+  "collectedAt": "2026-11-15T19:44:57.243Z",
+  "evidenceCount": 11,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1283515"
+    },
+    {
+      "name": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "فيريتي"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1283515",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2026-09-30"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1283515",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "مقتبس من رواية كولين هوفر الأكثر مبيعًا، يتبع هذا الفيلم النفسي الكاتبة الشهيرة فيريتي كروفورد ولوين آشلي، وهي كاتبة تكافح وتنتقل إلى ضيعة كروفورد النائية للكتابة الشبح من أجل فيريتي."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1283515",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "غموض",
+        "إثارة"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1283515",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        6.999
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1283515",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        697
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1283515",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "Dakota Johnson بدور Lowen Ashleigh",
+        "آن هاثاواي بدور Verity Crawford",
+        "جوش هارتنت بدور Jeremy Crawford",
+        "Brady Wagner بدور Crew Crawford",
+        "Ismael Cruz Cordova بدور Corey",
+        "Ірина Дворовенко بدور Anna",
+        "Sienna Kulovitz بدور Harper Crawford"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1283515",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "directors",
+      "label": "المخرجون",
+      "value": [
+        "مايكل شوالتر"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1283515",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "runtime",
+      "label": "مدة العرض",
+      "value": [
+        117
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1283515",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "Eat the Cat",
+        "Semi-Formal Productions",
+        "Somewhere Pictures",
+        "Shiny Penny Productions",
+        "Heartbones Entertainment"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1283515",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "relatedWorks",
+      "label": "أعمال مرتبطة",
+      "value": [
+        {
+          "title": "نهاية شارع أوك",
+          "year": 2026,
+          "sharedGenres": "إثارة,غموض",
+          "sharedPeople": "آن هاثاواي"
+        },
+        {
+          "title": "سيد الخواتم: خواتم السلطة",
+          "year": 2022,
+          "sharedGenres": "",
+          "sharedPeople": "Ismael Cruz Cordova"
+        },
+        {
+          "title": "الأوديسة",
+          "year": 2026,
+          "sharedGenres": "",
+          "sharedPeople": "آن هاثاواي"
+        },
+        {
+          "title": "بين النجوم",
+          "year": 2014,
+          "sharedGenres": "",
+          "sharedPeople": "آن هاثاواي"
+        },
+        {
+          "title": "Premonition",
+          "year": 2007,
+          "sharedGenres": "إثارة,غموض",
+          "sharedPeople": ""
+        },
+        {
+          "title": "القانون والنظام: وحدة الضحايا الخاصة",
+          "year": 1999,
+          "sharedGenres": "غموض",
+          "sharedPeople": ""
+        }
+      ],
+      "source": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

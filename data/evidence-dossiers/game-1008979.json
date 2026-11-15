@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "workKey": "game:1008979",
+  "title": "Lords of the Fallen 2",
+  "type": "game",
+  "collectedAt": "2026-11-15T19:44:48.980Z",
+  "evidenceCount": 8,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "RAWG",
+      "url": "https://rawg.io/games/lords-of-the-fallen-2-2"
+    },
+    {
+      "name": "RAWG",
+      "url": "https://api.rawg.io/api/games/1008979/screenshots"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "Lords of the Fallen 2"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/lords-of-the-fallen-2-2",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2027-03-31"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/lords-of-the-fallen-2-2",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "Lords of the Fallen 2 is a dark fantasy action-RPG where brutal, soulslike combat meets a world splitting at its core. Battle against the darkness in an epic adventure across a shattered kingdom. Journey across a vast, war-torn kingdom crumbling from within, as the realms of living and dead begin to bleed into one. From moonlit citadels to time-ravaged temples, tread carefully, for each step forward may well be your last. Engage in intense, soulslike battles where every strike counts thanks to a fast, fluid and aggressive combat system. Whether steel or sorcery, melee or ranged, experiment with countless builds to overcome each unique enemy encounter before delivering an arena-drenching execution. Confront colossal abominations forged in a world without hope and void of mercy. Each distinct showdown will prove a brutal test of skill, grit, and unyielding will. Though aid is at hand, should you seek it… As bearer of the Umbral lamp, you have the ability to pass between the realms of the living and the dead, each with its own pathways, treasures, and of course, nightmarish creatures. But even greater, darker powers await you on this journey…"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/lords-of-the-fallen-2-2",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "Action",
+        "RPG"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/lords-of-the-fallen-2-2",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "platforms",
+      "label": "المنصات",
+      "value": [
+        "PlayStation 5",
+        "Xbox Series S/X",
+        "PC"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/lords-of-the-fallen-2-2",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "developers",
+      "label": "المطورون",
+      "value": [
+        "CI Games"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/lords-of-the-fallen-2-2",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "publishers",
+      "label": "الناشرون",
+      "value": [
+        "CI Games"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/lords-of-the-fallen-2-2",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "screenshots",
+      "label": "لقطات شاشة من اللعبة",
+      "value": [
+        "https://media.rawg.io/media/screenshots/ffd/ffdf105489b4c772b162dee21dd1c790.jpg",
+        "https://media.rawg.io/media/screenshots/986/9866f8c541ca73fbf6ccbefdc6687992.jpg",
+        "https://media.rawg.io/media/screenshots/ae6/ae624bcbe0e9a4c8037f7a5efdffb067.jpg",
+        "https://media.rawg.io/media/screenshots/887/887f377d7e4fc503bb345aac6e62eb2a.jpg"
+      ],
+      "source": "RAWG",
+      "url": "https://api.rawg.io/api/games/1008979/screenshots",
+      "confidence": "صور مرجعية من قاعدة بيانات؛ لا تثبت وحدها الأداء الفعلي"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

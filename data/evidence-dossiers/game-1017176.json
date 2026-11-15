@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "workKey": "game:1017176",
+  "title": "Metro 2039",
+  "type": "game",
+  "collectedAt": "2026-11-15T19:44:52.616Z",
+  "evidenceCount": 7,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "RAWG",
+      "url": "https://rawg.io/games/metro-2039"
+    },
+    {
+      "name": "RAWG",
+      "url": "https://api.rawg.io/api/games/1017176/screenshots"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "Metro 2039"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/metro-2039",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2027-02-04"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/metro-2039",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "Metro 2039 is a shooter game. It is set to come out in 2027. You can play Metro 2039 on PlayStation 5, PC and Xbox Series S/X. The game is sold via Steam. Andriy Shevchenko directed the game."
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/metro-2039",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "Shooter"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/metro-2039",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "platforms",
+      "label": "المنصات",
+      "value": [
+        "PlayStation 5",
+        "PC",
+        "Xbox Series S/X"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/metro-2039",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "stores",
+      "label": "روابط المتاجر",
+      "value": [
+        {
+          "name": "Steam",
+          "url": null
+        }
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/metro-2039",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "screenshots",
+      "label": "لقطات شاشة من اللعبة",
+      "value": [
+        "https://media.rawg.io/media/screenshots/ab1/ab1ae298a818be904320eb347aa5b93f.jpg"
+      ],
+      "source": "RAWG",
+      "url": "https://api.rawg.io/api/games/1017176/screenshots",
+      "confidence": "صور مرجعية من قاعدة بيانات؛ لا تثبت وحدها الأداء الفعلي"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-15T19:33:54.942Z",
+  "updatedAt": "2026-11-15T19:45:01.716Z",
   "jobs": {
     "game:972995": {
       "key": "game:972995",
@@ -572,7 +572,7 @@
       },
       "nextAttemptAt": 0,
       "lastError": null,
-      "updatedAt": "2026-11-15T19:33:41.894Z",
+      "updatedAt": "2026-11-15T19:44:45.640Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "game:1019942",
@@ -2251,7 +2251,7 @@
       },
       "nextAttemptAt": 0,
       "lastError": null,
-      "updatedAt": "2026-11-15T19:33:45.799Z",
+      "updatedAt": "2026-11-15T19:44:52.756Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "series:57243",
@@ -4611,7 +4611,7 @@
       },
       "nextAttemptAt": 0,
       "lastError": null,
-      "updatedAt": "2026-11-15T19:33:49.646Z",
+      "updatedAt": "2026-11-15T19:44:52.907Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "series:1421",
@@ -5772,7 +5772,7 @@
       },
       "nextAttemptAt": 0,
       "lastError": null,
-      "updatedAt": "2026-11-15T19:33:51.473Z",
+      "updatedAt": "2026-11-15T19:44:56.476Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "movie:1058424",
@@ -7466,6 +7466,5323 @@
                 "title": "ستار ضد قوى الشر",
                 "year": 2015,
                 "sharedGenres": "رسوم متحركة,عائلي",
+                "sharedPeople": ""
+              }
+            ],
+            "source": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "game:469645": {
+      "key": "game:469645",
+      "type": "game",
+      "id": "469645",
+      "createdAt": "2026-11-15T19:44:45.838Z",
+      "attemptCount": 1,
+      "status": "waiting",
+      "item": {
+        "id": "469645",
+        "type": "game",
+        "name": "Titan Quest 2",
+        "description": "Nemesis, Goddess of Retribution, is out of control. She is corrupting the Threads of Fate and punishing all those who oppose her. Take up your weapon, fight alongside gods, and change fate itself in Titan Quest 2, an action RPG inspired by Greek mythology.",
+        "date": "2027-01-19",
+        "poster": "https://media.rawg.io/media/games/233/233b58ed99520a1e0b19109f7263f011.jpg",
+        "backdrop": "https://media.rawg.io/media/games/233/233b58ed99520a1e0b19109f7263f011.jpg",
+        "rating": 2.38,
+        "sourceVoteCount": 8,
+        "genres": [
+          "Action",
+          "RPG"
+        ],
+        "sourceUrl": "https://rawg.io/games/titan-quest-2",
+        "source": "RAWG",
+        "popularity": 111,
+        "sourceMetricName": "RAWG added count",
+        "sourceMetricValue": 111,
+        "trendConfidence": "مرتفع",
+        "added": 111,
+        "trendRank": 5,
+        "platforms": [
+          "PlayStation 5",
+          "Xbox Series S/X",
+          "PC"
+        ],
+        "developers": [
+          "Grimlore Games"
+        ],
+        "metadata": {
+          "metacritic": null,
+          "ratingCount": 8,
+          "sourceTags": [],
+          "added": 111,
+          "platforms": [
+            "PlayStation 5",
+            "Xbox Series S/X",
+            "PC"
+          ],
+          "developers": [
+            "Grimlore Games"
+          ],
+          "publishers": [
+            "THQ Nordic"
+          ],
+          "stores": [
+            {
+              "name": "Steam",
+              "url": null
+            }
+          ],
+          "screenshots": [
+            "https://media.rawg.io/media/screenshots/0e6/0e62ae82b8bb9524154c9ef967b20262.jpg",
+            "https://media.rawg.io/media/screenshots/d07/d07f6c9fcc50635dfa184f74acc3722e.jpg",
+            "https://media.rawg.io/media/screenshots/4f2/4f2f8d17f18f6ab9227bf055d222b7fc.jpg"
+          ],
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "game:469645",
+            "title": "Titan Quest 2",
+            "type": "game",
+            "collectedAt": "2026-11-15T19:44:47.129Z",
+            "evidenceCount": 11,
+            "sourceCount": 2,
+            "sources": [
+              {
+                "name": "RAWG",
+                "url": "https://rawg.io/games/titan-quest-2"
+              },
+              {
+                "name": "RAWG",
+                "url": "https://api.rawg.io/api/games/469645/screenshots"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "Titan Quest 2"
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/titan-quest-2",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "2027-01-19"
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/titan-quest-2",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "Nemesis, Goddess of Retribution, is out of control. She is corrupting the Threads of Fate and punishing all those who oppose her. Take up your weapon, fight alongside gods, and change fate itself in Titan Quest 2, an action RPG inspired by Greek mythology."
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/titan-quest-2",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "Action",
+                  "RPG"
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/titan-quest-2",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "rating",
+                "label": "تقييم المصدر",
+                "value": [
+                  2.38
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/titan-quest-2",
+                "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+              },
+              {
+                "key": "voteCount",
+                "label": "عدد الأصوات",
+                "value": [
+                  8
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/titan-quest-2",
+                "confidence": "مقياس حجم العينة وليس الجودة"
+              },
+              {
+                "key": "platforms",
+                "label": "المنصات",
+                "value": [
+                  "PlayStation 5",
+                  "Xbox Series S/X",
+                  "PC"
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/titan-quest-2",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "developers",
+                "label": "المطورون",
+                "value": [
+                  "Grimlore Games"
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/titan-quest-2",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "publishers",
+                "label": "الناشرون",
+                "value": [
+                  "THQ Nordic"
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/titan-quest-2",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "stores",
+                "label": "روابط المتاجر",
+                "value": [
+                  {
+                    "name": "Steam",
+                    "url": null
+                  }
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/titan-quest-2",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "screenshots",
+                "label": "لقطات شاشة من اللعبة",
+                "value": [
+                  "https://media.rawg.io/media/screenshots/0e6/0e62ae82b8bb9524154c9ef967b20262.jpg",
+                  "https://media.rawg.io/media/screenshots/d07/d07f6c9fcc50635dfa184f74acc3722e.jpg",
+                  "https://media.rawg.io/media/screenshots/4f2/4f2f8d17f18f6ab9227bf055d222b7fc.jpg"
+                ],
+                "source": "RAWG",
+                "url": "https://api.rawg.io/api/games/469645/screenshots",
+                "confidence": "صور مرجعية من قاعدة بيانات؛ لا تثبت وحدها الأداء الفعلي"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        },
+        "fieldSources": {
+          "screenshots": {
+            "source": "RAWG",
+            "url": "https://api.rawg.io/api/games/469645/screenshots",
+            "observedAt": "2026-11-15T19:44:47.129Z"
+          }
+        }
+      },
+      "nextAttemptAt": 1794772121340,
+      "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
+      "updatedAt": "2026-11-15T19:44:47.773Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "game:469645",
+        "title": "Titan Quest 2",
+        "type": "game",
+        "collectedAt": "2026-11-15T19:44:47.129Z",
+        "evidenceCount": 11,
+        "sourceCount": 2,
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/titan-quest-2"
+          },
+          {
+            "name": "RAWG",
+            "url": "https://api.rawg.io/api/games/469645/screenshots"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "Titan Quest 2"
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/titan-quest-2",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "2027-01-19"
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/titan-quest-2",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "Nemesis, Goddess of Retribution, is out of control. She is corrupting the Threads of Fate and punishing all those who oppose her. Take up your weapon, fight alongside gods, and change fate itself in Titan Quest 2, an action RPG inspired by Greek mythology."
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/titan-quest-2",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "Action",
+              "RPG"
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/titan-quest-2",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "rating",
+            "label": "تقييم المصدر",
+            "value": [
+              2.38
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/titan-quest-2",
+            "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+          },
+          {
+            "key": "voteCount",
+            "label": "عدد الأصوات",
+            "value": [
+              8
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/titan-quest-2",
+            "confidence": "مقياس حجم العينة وليس الجودة"
+          },
+          {
+            "key": "platforms",
+            "label": "المنصات",
+            "value": [
+              "PlayStation 5",
+              "Xbox Series S/X",
+              "PC"
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/titan-quest-2",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "developers",
+            "label": "المطورون",
+            "value": [
+              "Grimlore Games"
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/titan-quest-2",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "publishers",
+            "label": "الناشرون",
+            "value": [
+              "THQ Nordic"
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/titan-quest-2",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "stores",
+            "label": "روابط المتاجر",
+            "value": [
+              {
+                "name": "Steam",
+                "url": null
+              }
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/titan-quest-2",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "screenshots",
+            "label": "لقطات شاشة من اللعبة",
+            "value": [
+              "https://media.rawg.io/media/screenshots/0e6/0e62ae82b8bb9524154c9ef967b20262.jpg",
+              "https://media.rawg.io/media/screenshots/d07/d07f6c9fcc50635dfa184f74acc3722e.jpg",
+              "https://media.rawg.io/media/screenshots/4f2/4f2f8d17f18f6ab9227bf055d222b7fc.jpg"
+            ],
+            "source": "RAWG",
+            "url": "https://api.rawg.io/api/games/469645/screenshots",
+            "confidence": "صور مرجعية من قاعدة بيانات؛ لا تثبت وحدها الأداء الفعلي"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "game:1008979": {
+      "key": "game:1008979",
+      "type": "game",
+      "id": "1008979",
+      "createdAt": "2026-11-15T19:44:47.776Z",
+      "attemptCount": 1,
+      "status": "waiting",
+      "item": {
+        "id": "1008979",
+        "type": "game",
+        "name": "Lords of the Fallen 2",
+        "description": "Lords of the Fallen 2 is a dark fantasy action-RPG where brutal, soulslike combat meets a world splitting at its core. Battle against the darkness in an epic adventure across a shattered kingdom. Journey across a vast, war-torn kingdom crumbling from within, as the realms of living and dead begin to bleed into one. From moonlit citadels to time-ravaged temples, tread carefully, for each step forward may well be your last. Engage in intense, soulslike battles where every strike counts thanks to a fast, fluid and aggressive combat system. Whether steel or sorcery, melee or ranged, experiment with countless builds to overcome each unique enemy encounter before delivering an arena-drenching execution. Confront colossal abominations forged in a world without hope and void of mercy. Each distinct showdown will prove a brutal test of skill, grit, and unyielding will. Though aid is at hand, should you seek it… As bearer of the Umbral lamp, you have the ability to pass between the realms of the living and the dead, each with its own pathways, treasures, and of course, nightmarish creatures. But even greater, darker powers await you on this journey…",
+        "date": "2027-03-31",
+        "poster": "https://media.rawg.io/media/screenshots/887/887f377d7e4fc503bb345aac6e62eb2a.jpg",
+        "backdrop": "https://media.rawg.io/media/screenshots/887/887f377d7e4fc503bb345aac6e62eb2a.jpg",
+        "rating": 0,
+        "sourceVoteCount": 0,
+        "genres": [
+          "Action",
+          "RPG"
+        ],
+        "sourceUrl": "https://rawg.io/games/lords-of-the-fallen-2-2",
+        "source": "RAWG",
+        "popularity": 47,
+        "sourceMetricName": "RAWG added count",
+        "sourceMetricValue": 47,
+        "trendConfidence": "متوسط",
+        "added": 47,
+        "trendRank": 6,
+        "platforms": [
+          "PlayStation 5",
+          "Xbox Series S/X",
+          "PC"
+        ],
+        "developers": [
+          "CI Games"
+        ],
+        "metadata": {
+          "metacritic": null,
+          "ratingCount": 0,
+          "sourceTags": [],
+          "added": 47,
+          "platforms": [
+            "PlayStation 5",
+            "Xbox Series S/X",
+            "PC"
+          ],
+          "developers": [
+            "CI Games"
+          ],
+          "publishers": [
+            "CI Games"
+          ],
+          "stores": [],
+          "screenshots": [
+            "https://media.rawg.io/media/screenshots/ffd/ffdf105489b4c772b162dee21dd1c790.jpg",
+            "https://media.rawg.io/media/screenshots/986/9866f8c541ca73fbf6ccbefdc6687992.jpg",
+            "https://media.rawg.io/media/screenshots/ae6/ae624bcbe0e9a4c8037f7a5efdffb067.jpg",
+            "https://media.rawg.io/media/screenshots/887/887f377d7e4fc503bb345aac6e62eb2a.jpg"
+          ],
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "game:1008979",
+            "title": "Lords of the Fallen 2",
+            "type": "game",
+            "collectedAt": "2026-11-15T19:44:48.980Z",
+            "evidenceCount": 8,
+            "sourceCount": 2,
+            "sources": [
+              {
+                "name": "RAWG",
+                "url": "https://rawg.io/games/lords-of-the-fallen-2-2"
+              },
+              {
+                "name": "RAWG",
+                "url": "https://api.rawg.io/api/games/1008979/screenshots"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "Lords of the Fallen 2"
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/lords-of-the-fallen-2-2",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "2027-03-31"
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/lords-of-the-fallen-2-2",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "Lords of the Fallen 2 is a dark fantasy action-RPG where brutal, soulslike combat meets a world splitting at its core. Battle against the darkness in an epic adventure across a shattered kingdom. Journey across a vast, war-torn kingdom crumbling from within, as the realms of living and dead begin to bleed into one. From moonlit citadels to time-ravaged temples, tread carefully, for each step forward may well be your last. Engage in intense, soulslike battles where every strike counts thanks to a fast, fluid and aggressive combat system. Whether steel or sorcery, melee or ranged, experiment with countless builds to overcome each unique enemy encounter before delivering an arena-drenching execution. Confront colossal abominations forged in a world without hope and void of mercy. Each distinct showdown will prove a brutal test of skill, grit, and unyielding will. Though aid is at hand, should you seek it… As bearer of the Umbral lamp, you have the ability to pass between the realms of the living and the dead, each with its own pathways, treasures, and of course, nightmarish creatures. But even greater, darker powers await you on this journey…"
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/lords-of-the-fallen-2-2",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "Action",
+                  "RPG"
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/lords-of-the-fallen-2-2",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "platforms",
+                "label": "المنصات",
+                "value": [
+                  "PlayStation 5",
+                  "Xbox Series S/X",
+                  "PC"
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/lords-of-the-fallen-2-2",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "developers",
+                "label": "المطورون",
+                "value": [
+                  "CI Games"
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/lords-of-the-fallen-2-2",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "publishers",
+                "label": "الناشرون",
+                "value": [
+                  "CI Games"
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/lords-of-the-fallen-2-2",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "screenshots",
+                "label": "لقطات شاشة من اللعبة",
+                "value": [
+                  "https://media.rawg.io/media/screenshots/ffd/ffdf105489b4c772b162dee21dd1c790.jpg",
+                  "https://media.rawg.io/media/screenshots/986/9866f8c541ca73fbf6ccbefdc6687992.jpg",
+                  "https://media.rawg.io/media/screenshots/ae6/ae624bcbe0e9a4c8037f7a5efdffb067.jpg",
+                  "https://media.rawg.io/media/screenshots/887/887f377d7e4fc503bb345aac6e62eb2a.jpg"
+                ],
+                "source": "RAWG",
+                "url": "https://api.rawg.io/api/games/1008979/screenshots",
+                "confidence": "صور مرجعية من قاعدة بيانات؛ لا تثبت وحدها الأداء الفعلي"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        },
+        "fieldSources": {
+          "screenshots": {
+            "source": "RAWG",
+            "url": "https://api.rawg.io/api/games/1008979/screenshots",
+            "observedAt": "2026-11-15T19:44:48.980Z"
+          }
+        }
+      },
+      "nextAttemptAt": 1794772121340,
+      "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
+      "updatedAt": "2026-11-15T19:44:49.615Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "game:1008979",
+        "title": "Lords of the Fallen 2",
+        "type": "game",
+        "collectedAt": "2026-11-15T19:44:48.980Z",
+        "evidenceCount": 8,
+        "sourceCount": 2,
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/lords-of-the-fallen-2-2"
+          },
+          {
+            "name": "RAWG",
+            "url": "https://api.rawg.io/api/games/1008979/screenshots"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "Lords of the Fallen 2"
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/lords-of-the-fallen-2-2",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "2027-03-31"
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/lords-of-the-fallen-2-2",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "Lords of the Fallen 2 is a dark fantasy action-RPG where brutal, soulslike combat meets a world splitting at its core. Battle against the darkness in an epic adventure across a shattered kingdom. Journey across a vast, war-torn kingdom crumbling from within, as the realms of living and dead begin to bleed into one. From moonlit citadels to time-ravaged temples, tread carefully, for each step forward may well be your last. Engage in intense, soulslike battles where every strike counts thanks to a fast, fluid and aggressive combat system. Whether steel or sorcery, melee or ranged, experiment with countless builds to overcome each unique enemy encounter before delivering an arena-drenching execution. Confront colossal abominations forged in a world without hope and void of mercy. Each distinct showdown will prove a brutal test of skill, grit, and unyielding will. Though aid is at hand, should you seek it… As bearer of the Umbral lamp, you have the ability to pass between the realms of the living and the dead, each with its own pathways, treasures, and of course, nightmarish creatures. But even greater, darker powers await you on this journey…"
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/lords-of-the-fallen-2-2",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "Action",
+              "RPG"
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/lords-of-the-fallen-2-2",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "platforms",
+            "label": "المنصات",
+            "value": [
+              "PlayStation 5",
+              "Xbox Series S/X",
+              "PC"
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/lords-of-the-fallen-2-2",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "developers",
+            "label": "المطورون",
+            "value": [
+              "CI Games"
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/lords-of-the-fallen-2-2",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "publishers",
+            "label": "الناشرون",
+            "value": [
+              "CI Games"
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/lords-of-the-fallen-2-2",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "screenshots",
+            "label": "لقطات شاشة من اللعبة",
+            "value": [
+              "https://media.rawg.io/media/screenshots/ffd/ffdf105489b4c772b162dee21dd1c790.jpg",
+              "https://media.rawg.io/media/screenshots/986/9866f8c541ca73fbf6ccbefdc6687992.jpg",
+              "https://media.rawg.io/media/screenshots/ae6/ae624bcbe0e9a4c8037f7a5efdffb067.jpg",
+              "https://media.rawg.io/media/screenshots/887/887f377d7e4fc503bb345aac6e62eb2a.jpg"
+            ],
+            "source": "RAWG",
+            "url": "https://api.rawg.io/api/games/1008979/screenshots",
+            "confidence": "صور مرجعية من قاعدة بيانات؛ لا تثبت وحدها الأداء الفعلي"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "game:1018045": {
+      "key": "game:1018045",
+      "type": "game",
+      "id": "1018045",
+      "createdAt": "2026-11-15T19:44:49.618Z",
+      "attemptCount": 1,
+      "status": "waiting",
+      "item": {
+        "id": "1018045",
+        "type": "game",
+        "name": "God of War Laufey",
+        "description": "God of War Laufey is an action-adventure game developed by Santa Monica Studio. It is set to come out in 2027. It is set to be published by Sony Interactive Entertainment. The game is rated as \"Skip\" on RAWG. You can play God of War Laufey on PlayStation 5.",
+        "date": "2027-05-20",
+        "poster": "https://media.rawg.io/media/games/d9e/d9e30f2182a8535a0ef02949dfb1ffed.jpg",
+        "backdrop": "https://media.rawg.io/media/games/d9e/d9e30f2182a8535a0ef02949dfb1ffed.jpg",
+        "rating": 0,
+        "sourceVoteCount": 3,
+        "genres": [
+          "Action",
+          "Adventure"
+        ],
+        "sourceUrl": "https://rawg.io/games/god-of-war-laufey",
+        "source": "RAWG",
+        "popularity": 46,
+        "sourceMetricName": "RAWG added count",
+        "sourceMetricValue": 46,
+        "trendConfidence": "متوسط",
+        "added": 46,
+        "trendRank": 7,
+        "platforms": [
+          "PlayStation 5"
+        ],
+        "developers": [
+          "Santa Monica Studio"
+        ],
+        "metadata": {
+          "metacritic": null,
+          "ratingCount": 3,
+          "sourceTags": [],
+          "added": 46,
+          "platforms": [
+            "PlayStation 5"
+          ],
+          "developers": [
+            "Santa Monica Studio"
+          ],
+          "publishers": [
+            "Sony Interactive Entertainment"
+          ],
+          "stores": [],
+          "screenshots": [
+            "https://media.rawg.io/media/screenshots/6dc/6dc941f6e619f59ec849d7f681e72c46.jpg"
+          ],
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "game:1018045",
+            "title": "God of War Laufey",
+            "type": "game",
+            "collectedAt": "2026-11-15T19:44:50.804Z",
+            "evidenceCount": 9,
+            "sourceCount": 2,
+            "sources": [
+              {
+                "name": "RAWG",
+                "url": "https://rawg.io/games/god-of-war-laufey"
+              },
+              {
+                "name": "RAWG",
+                "url": "https://api.rawg.io/api/games/1018045/screenshots"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "God of War Laufey"
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/god-of-war-laufey",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "2027-05-20"
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/god-of-war-laufey",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "God of War Laufey is an action-adventure game developed by Santa Monica Studio. It is set to come out in 2027. It is set to be published by Sony Interactive Entertainment. The game is rated as \"Skip\" on RAWG. You can play God of War Laufey on PlayStation 5."
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/god-of-war-laufey",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "Action",
+                  "Adventure"
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/god-of-war-laufey",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "voteCount",
+                "label": "عدد الأصوات",
+                "value": [
+                  3
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/god-of-war-laufey",
+                "confidence": "مقياس حجم العينة وليس الجودة"
+              },
+              {
+                "key": "platforms",
+                "label": "المنصات",
+                "value": [
+                  "PlayStation 5"
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/god-of-war-laufey",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "developers",
+                "label": "المطورون",
+                "value": [
+                  "Santa Monica Studio"
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/god-of-war-laufey",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "publishers",
+                "label": "الناشرون",
+                "value": [
+                  "Sony Interactive Entertainment"
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/god-of-war-laufey",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "screenshots",
+                "label": "لقطات شاشة من اللعبة",
+                "value": [
+                  "https://media.rawg.io/media/screenshots/6dc/6dc941f6e619f59ec849d7f681e72c46.jpg"
+                ],
+                "source": "RAWG",
+                "url": "https://api.rawg.io/api/games/1018045/screenshots",
+                "confidence": "صور مرجعية من قاعدة بيانات؛ لا تثبت وحدها الأداء الفعلي"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        },
+        "fieldSources": {
+          "screenshots": {
+            "source": "RAWG",
+            "url": "https://api.rawg.io/api/games/1018045/screenshots",
+            "observedAt": "2026-11-15T19:44:50.804Z"
+          }
+        }
+      },
+      "nextAttemptAt": 1794772121340,
+      "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
+      "updatedAt": "2026-11-15T19:44:51.459Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "game:1018045",
+        "title": "God of War Laufey",
+        "type": "game",
+        "collectedAt": "2026-11-15T19:44:50.804Z",
+        "evidenceCount": 9,
+        "sourceCount": 2,
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/god-of-war-laufey"
+          },
+          {
+            "name": "RAWG",
+            "url": "https://api.rawg.io/api/games/1018045/screenshots"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "God of War Laufey"
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/god-of-war-laufey",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "2027-05-20"
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/god-of-war-laufey",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "God of War Laufey is an action-adventure game developed by Santa Monica Studio. It is set to come out in 2027. It is set to be published by Sony Interactive Entertainment. The game is rated as \"Skip\" on RAWG. You can play God of War Laufey on PlayStation 5."
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/god-of-war-laufey",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "Action",
+              "Adventure"
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/god-of-war-laufey",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "voteCount",
+            "label": "عدد الأصوات",
+            "value": [
+              3
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/god-of-war-laufey",
+            "confidence": "مقياس حجم العينة وليس الجودة"
+          },
+          {
+            "key": "platforms",
+            "label": "المنصات",
+            "value": [
+              "PlayStation 5"
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/god-of-war-laufey",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "developers",
+            "label": "المطورون",
+            "value": [
+              "Santa Monica Studio"
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/god-of-war-laufey",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "publishers",
+            "label": "الناشرون",
+            "value": [
+              "Sony Interactive Entertainment"
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/god-of-war-laufey",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "screenshots",
+            "label": "لقطات شاشة من اللعبة",
+            "value": [
+              "https://media.rawg.io/media/screenshots/6dc/6dc941f6e619f59ec849d7f681e72c46.jpg"
+            ],
+            "source": "RAWG",
+            "url": "https://api.rawg.io/api/games/1018045/screenshots",
+            "confidence": "صور مرجعية من قاعدة بيانات؛ لا تثبت وحدها الأداء الفعلي"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "game:1017176": {
+      "key": "game:1017176",
+      "type": "game",
+      "id": "1017176",
+      "createdAt": "2026-11-15T19:44:51.462Z",
+      "attemptCount": 0,
+      "status": "ready",
+      "item": {
+        "id": "1017176",
+        "type": "game",
+        "name": "Metro 2039",
+        "description": "Metro 2039 is a shooter game. It is set to come out in 2027. You can play Metro 2039 on PlayStation 5, PC and Xbox Series S/X. The game is sold via Steam. Andriy Shevchenko directed the game.",
+        "date": "2027-02-04",
+        "poster": "https://media.rawg.io/media/games/4a5/4a5865eca8376e08a8e31ce278b5248f.jpg",
+        "backdrop": "https://media.rawg.io/media/games/4a5/4a5865eca8376e08a8e31ce278b5248f.jpg",
+        "rating": 0,
+        "sourceVoteCount": 0,
+        "genres": [
+          "Shooter"
+        ],
+        "sourceUrl": "https://rawg.io/games/metro-2039",
+        "source": "RAWG",
+        "popularity": 39,
+        "sourceMetricName": "RAWG added count",
+        "sourceMetricValue": 39,
+        "trendConfidence": "متوسط",
+        "added": 39,
+        "trendRank": 8,
+        "platforms": [
+          "PlayStation 5",
+          "PC",
+          "Xbox Series S/X"
+        ],
+        "developers": [],
+        "metadata": {
+          "metacritic": null,
+          "ratingCount": 0,
+          "sourceTags": [],
+          "added": 39,
+          "platforms": [
+            "PlayStation 5",
+            "PC",
+            "Xbox Series S/X"
+          ],
+          "developers": [],
+          "publishers": [],
+          "stores": [
+            {
+              "name": "Steam",
+              "url": null
+            }
+          ],
+          "screenshots": [
+            "https://media.rawg.io/media/screenshots/ab1/ab1ae298a818be904320eb347aa5b93f.jpg"
+          ],
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "game:1017176",
+            "title": "Metro 2039",
+            "type": "game",
+            "collectedAt": "2026-11-15T19:44:52.616Z",
+            "evidenceCount": 7,
+            "sourceCount": 2,
+            "sources": [
+              {
+                "name": "RAWG",
+                "url": "https://rawg.io/games/metro-2039"
+              },
+              {
+                "name": "RAWG",
+                "url": "https://api.rawg.io/api/games/1017176/screenshots"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "Metro 2039"
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/metro-2039",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "2027-02-04"
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/metro-2039",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "Metro 2039 is a shooter game. It is set to come out in 2027. You can play Metro 2039 on PlayStation 5, PC and Xbox Series S/X. The game is sold via Steam. Andriy Shevchenko directed the game."
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/metro-2039",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "Shooter"
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/metro-2039",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "platforms",
+                "label": "المنصات",
+                "value": [
+                  "PlayStation 5",
+                  "PC",
+                  "Xbox Series S/X"
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/metro-2039",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "stores",
+                "label": "روابط المتاجر",
+                "value": [
+                  {
+                    "name": "Steam",
+                    "url": null
+                  }
+                ],
+                "source": "RAWG",
+                "url": "https://rawg.io/games/metro-2039",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "screenshots",
+                "label": "لقطات شاشة من اللعبة",
+                "value": [
+                  "https://media.rawg.io/media/screenshots/ab1/ab1ae298a818be904320eb347aa5b93f.jpg"
+                ],
+                "source": "RAWG",
+                "url": "https://api.rawg.io/api/games/1017176/screenshots",
+                "confidence": "صور مرجعية من قاعدة بيانات؛ لا تثبت وحدها الأداء الفعلي"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        },
+        "fieldSources": {
+          "screenshots": {
+            "source": "RAWG",
+            "url": "https://api.rawg.io/api/games/1017176/screenshots",
+            "observedAt": "2026-11-15T19:44:52.616Z"
+          }
+        }
+      },
+      "nextAttemptAt": 0,
+      "lastError": null,
+      "updatedAt": "2026-11-15T19:44:52.617Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "game:1017176",
+        "title": "Metro 2039",
+        "type": "game",
+        "collectedAt": "2026-11-15T19:44:52.616Z",
+        "evidenceCount": 7,
+        "sourceCount": 2,
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/metro-2039"
+          },
+          {
+            "name": "RAWG",
+            "url": "https://api.rawg.io/api/games/1017176/screenshots"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "Metro 2039"
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/metro-2039",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "2027-02-04"
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/metro-2039",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "Metro 2039 is a shooter game. It is set to come out in 2027. You can play Metro 2039 on PlayStation 5, PC and Xbox Series S/X. The game is sold via Steam. Andriy Shevchenko directed the game."
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/metro-2039",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "Shooter"
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/metro-2039",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "platforms",
+            "label": "المنصات",
+            "value": [
+              "PlayStation 5",
+              "PC",
+              "Xbox Series S/X"
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/metro-2039",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "stores",
+            "label": "روابط المتاجر",
+            "value": [
+              {
+                "name": "Steam",
+                "url": null
+              }
+            ],
+            "source": "RAWG",
+            "url": "https://rawg.io/games/metro-2039",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "screenshots",
+            "label": "لقطات شاشة من اللعبة",
+            "value": [
+              "https://media.rawg.io/media/screenshots/ab1/ab1ae298a818be904320eb347aa5b93f.jpg"
+            ],
+            "source": "RAWG",
+            "url": "https://api.rawg.io/api/games/1017176/screenshots",
+            "confidence": "صور مرجعية من قاعدة بيانات؛ لا تثبت وحدها الأداء الفعلي"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "series:18165": {
+      "key": "series:18165",
+      "type": "series",
+      "id": "18165",
+      "createdAt": "2026-11-15T19:44:53.032Z",
+      "attemptCount": 1,
+      "status": "waiting",
+      "item": {
+        "id": "18165",
+        "type": "series",
+        "name": "يوميات مصاص الدماء",
+        "originalTitle": "The Vampire Diaries",
+        "description": "بعد وفاة والديها، تحاول إيلينا جيلبرت بناء حياة جديدة في ميستيك فولز، فتلتقي بالأخوين ستيفان ودامون سالفاتور، اللذين يخفيان حقيقة كونهما مصاصي دماء وتربطهما بها علاقة معقدة. وتزداد حياتها اضطرابًا حين تكتشف أن ملامحها تشبه كاثرين، المرأة التي أحبها الأخوان في الماضي. ومع أصدقائها، تجد إيلينا نفسها وسط صراعات تشمل مصاصي الدماء والسحرة والمستذئبين وأسرار العائلات المؤسسة للبلدة؛ صراعات تختبر روابطهم وقدرتهم على حماية موطنهم.",
+        "date": "2009-09-10",
+        "poster": "https://image.tmdb.org/t/p/w500/wlTI9DLQ5jTy0ayCzRtWfFPzkY.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w780/cJYLon9ejKJV7ua03ab8Tj9u067.jpg",
+        "rating": 8.298,
+        "genres": [
+          "دراما",
+          "خيال علمي وفانتازيا"
+        ],
+        "sourceUrl": "https://www.themoviedb.org/tv/18165",
+        "source": "TMDB",
+        "popularity": 1326.519,
+        "sourceMetricName": "TMDB popularity",
+        "sourceMetricValue": 1326.519,
+        "trendConfidence": "مرتفع",
+        "trendRank": 7,
+        "fieldSources": {
+          "catalog_related_works": {
+            "source": "VIBECRITIC_D1",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:44:53.539Z"
+          }
+        },
+        "sourceVoteCount": 9855,
+        "metadata": {
+          "voteAverage": 8.298,
+          "voteCount": 9855,
+          "youtubeVideoId": null,
+          "youtubeVideoTitle": null,
+          "genres": [
+            "دراما",
+            "خيال علمي وفانتازيا"
+          ],
+          "directors": [],
+          "creators": [
+            "Julie Plec",
+            "كيفين ويليامسون"
+          ],
+          "cast": [
+            "Paul Wesley بدور Stefan Salvatore",
+            "إيان سومرهالدر بدور Damon Salvatore",
+            "كاترينا غراهام بدور Bonnie Bennett",
+            "كانديس كينغ بدور Caroline Forbes",
+            "زاك ريورج بدور Matt Donovan",
+            "مايكل مالاركي بدور Enzo St. John",
+            "ماثيو ديفيس بدور Alaric Saltzman"
+          ],
+          "runtime": 43,
+          "episodeRuntime": [
+            43
+          ],
+          "seasons": 8,
+          "episodes": 171,
+          "productionCompanies": [
+            "Warner Bros. Television",
+            "Alloy Entertainment",
+            "Outerbanks Entertainment",
+            "Bonanza Productions",
+            "CBS Studios"
+          ],
+          "watchProviders": [],
+          "watchProviderUrl": null,
+          "communityReviews": [],
+          "similar": [
+            {
+              "id": "210921",
+              "title": "グレースの履歴"
+            },
+            {
+              "id": "127651",
+              "title": "مطعم الساحرة"
+            },
+            {
+              "id": "311705",
+              "title": "Aunty Lee's Deadly Delights"
+            },
+            {
+              "id": "210875",
+              "title": "ATRI -My Dear Moments-"
+            },
+            {
+              "id": "311141",
+              "title": "จอมขมังเวทย์ Begins"
+            }
+          ],
+          "catalogContext": {
+            "source": "VibeCritic D1 entertainment catalog",
+            "sourceUrl": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:44:53.539Z",
+            "base": {
+              "tmdbId": 18165,
+              "type": "tv",
+              "title": "يوميات مصاص الدماء",
+              "originalTitle": "The Vampire Diaries",
+              "overview": "بعد وفاة والديها، تحاول إيلينا جيلبرت بناء حياة جديدة في ميستيك فولز، فتلتقي بالأخوين ستيفان ودامون سالفاتور، اللذين يخفيان حقيقة كونهما مصاصي دماء وتربطهما بها علاقة معقدة. وتزداد حياتها اضطرابًا حين تكتشف أن ملامحها تشبه كاثرين، المرأة التي أحبها الأخوان في الماضي. ومع أصدقائها، تجد إيلينا نفسها وسط صراعات تشمل مصاصي الدماء والسحرة والمستذئبين وأسرار العائلات المؤسسة للبلدة؛ صراعات تختبر روابطهم وقدرتهم على حماية موطنهم.",
+              "releaseDate": "2009-09-10",
+              "year": 2009,
+              "runtime": 43,
+              "status": "Ended",
+              "rating": 8.298,
+              "votes": 9855,
+              "popularity": 1429.2902,
+              "originalLanguage": "en",
+              "genres": [
+                "خيال علمي وفانتازيا",
+                "دراما"
+              ],
+              "cast": [
+                "Paul Wesley بدور Stefan Salvatore",
+                "إيان سومرهالدر بدور Damon Salvatore",
+                "كاترينا غراهام بدور Bonnie Bennett",
+                "كانديس كينغ بدور Caroline Forbes",
+                "زاك ريورج بدور Matt Donovan",
+                "مايكل مالاركي بدور Enzo St. John",
+                "ماثيو ديفيس بدور Alaric Saltzman"
+              ],
+              "directors": [],
+              "creators": [
+                "Julie Plec",
+                "كيفين ويليامسون"
+              ],
+              "updatedAt": "2026-11-15T10:18:39.242Z"
+            },
+            "relatedWorks": [
+              {
+                "tmdbId": "57243",
+                "type": "series",
+                "title": "دكتور هو",
+                "year": 2005,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1413",
+                "type": "series",
+                "title": "قصة رعب امريكية",
+                "year": 2011,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "60735",
+                "type": "series",
+                "title": "فلاش",
+                "year": 2014,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "48866",
+                "type": "series",
+                "title": "The 100",
+                "year": 2014,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "213375",
+                "type": "series",
+                "title": "رحلة ڤيجن",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1411",
+                "type": "series",
+                "title": "شخص محل إهتمام",
+                "year": 2011,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              }
+            ],
+            "limitation": "بيانات الكتالوج تصف حقولاً فهرسية موثقة داخلياً؛ الروابط بين الأعمال مبنية على تصنيفات أو أسماء طاقم مشتركة ولا تثبت تشابهاً فنياً أو جودة أو تأثيراً."
+          },
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "series:18165",
+            "title": "يوميات مصاص الدماء",
+            "type": "series",
+            "collectedAt": "2026-11-15T19:44:53.730Z",
+            "evidenceCount": 14,
+            "sourceCount": 2,
+            "sources": [
+              {
+                "name": "TMDB",
+                "url": "https://www.themoviedb.org/tv/18165"
+              },
+              {
+                "name": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "يوميات مصاص الدماء"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/18165",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "2009-09-10"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/18165",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "بعد وفاة والديها، تحاول إيلينا جيلبرت بناء حياة جديدة في ميستيك فولز، فتلتقي بالأخوين ستيفان ودامون سالفاتور، اللذين يخفيان حقيقة كونهما مصاصي دماء وتربطهما بها علاقة معقدة. وتزداد حياتها اضطرابًا حين تكتشف أن ملامحها تشبه كاثرين، المرأة التي أحبها الأخوان في الماضي. ومع أصدقائها، تجد إيلينا نفسها وسط صراعات تشمل مصاصي الدماء والسحرة والمستذئبين وأسرار العائلات المؤسسة للبلدة؛ صراعات تختبر روابطهم وقدرتهم على حماية موطنهم."
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/18165",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "دراما",
+                  "خيال علمي وفانتازيا"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/18165",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "rating",
+                "label": "تقييم المصدر",
+                "value": [
+                  8.298
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/18165",
+                "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+              },
+              {
+                "key": "voteCount",
+                "label": "عدد الأصوات",
+                "value": [
+                  9855
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/18165",
+                "confidence": "مقياس حجم العينة وليس الجودة"
+              },
+              {
+                "key": "cast",
+                "label": "طاقم التمثيل",
+                "value": [
+                  "Paul Wesley بدور Stefan Salvatore",
+                  "إيان سومرهالدر بدور Damon Salvatore",
+                  "كاترينا غراهام بدور Bonnie Bennett",
+                  "كانديس كينغ بدور Caroline Forbes",
+                  "زاك ريورج بدور Matt Donovan",
+                  "مايكل مالاركي بدور Enzo St. John",
+                  "ماثيو ديفيس بدور Alaric Saltzman"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/18165",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "creators",
+                "label": "المبدعون",
+                "value": [
+                  "Julie Plec",
+                  "كيفين ويليامسون"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/18165",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "runtime",
+                "label": "مدة العرض",
+                "value": [
+                  43
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/18165",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "episodeRuntime",
+                "label": "مدة الحلقة",
+                "value": [
+                  43
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/18165",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "seasons",
+                "label": "عدد المواسم",
+                "value": [
+                  8
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/18165",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "episodes",
+                "label": "عدد الحلقات",
+                "value": [
+                  171
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/18165",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "productionCompanies",
+                "label": "شركات الإنتاج",
+                "value": [
+                  "Warner Bros. Television",
+                  "Alloy Entertainment",
+                  "Outerbanks Entertainment",
+                  "Bonanza Productions",
+                  "CBS Studios"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/18165",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "relatedWorks",
+                "label": "أعمال مرتبطة",
+                "value": [
+                  {
+                    "title": "دكتور هو",
+                    "year": 2005,
+                    "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "قصة رعب امريكية",
+                    "year": 2011,
+                    "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "فلاش",
+                    "year": 2014,
+                    "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "The 100",
+                    "year": 2014,
+                    "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "رحلة ڤيجن",
+                    "year": 2026,
+                    "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "شخص محل إهتمام",
+                    "year": 2011,
+                    "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                    "sharedPeople": ""
+                  }
+                ],
+                "source": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog",
+                "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        }
+      },
+      "nextAttemptAt": 1794772121340,
+      "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
+      "updatedAt": "2026-11-15T19:44:54.440Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "series:18165",
+        "title": "يوميات مصاص الدماء",
+        "type": "series",
+        "collectedAt": "2026-11-15T19:44:53.730Z",
+        "evidenceCount": 14,
+        "sourceCount": 2,
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/18165"
+          },
+          {
+            "name": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "يوميات مصاص الدماء"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/18165",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "2009-09-10"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/18165",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "بعد وفاة والديها، تحاول إيلينا جيلبرت بناء حياة جديدة في ميستيك فولز، فتلتقي بالأخوين ستيفان ودامون سالفاتور، اللذين يخفيان حقيقة كونهما مصاصي دماء وتربطهما بها علاقة معقدة. وتزداد حياتها اضطرابًا حين تكتشف أن ملامحها تشبه كاثرين، المرأة التي أحبها الأخوان في الماضي. ومع أصدقائها، تجد إيلينا نفسها وسط صراعات تشمل مصاصي الدماء والسحرة والمستذئبين وأسرار العائلات المؤسسة للبلدة؛ صراعات تختبر روابطهم وقدرتهم على حماية موطنهم."
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/18165",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "دراما",
+              "خيال علمي وفانتازيا"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/18165",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "rating",
+            "label": "تقييم المصدر",
+            "value": [
+              8.298
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/18165",
+            "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+          },
+          {
+            "key": "voteCount",
+            "label": "عدد الأصوات",
+            "value": [
+              9855
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/18165",
+            "confidence": "مقياس حجم العينة وليس الجودة"
+          },
+          {
+            "key": "cast",
+            "label": "طاقم التمثيل",
+            "value": [
+              "Paul Wesley بدور Stefan Salvatore",
+              "إيان سومرهالدر بدور Damon Salvatore",
+              "كاترينا غراهام بدور Bonnie Bennett",
+              "كانديس كينغ بدور Caroline Forbes",
+              "زاك ريورج بدور Matt Donovan",
+              "مايكل مالاركي بدور Enzo St. John",
+              "ماثيو ديفيس بدور Alaric Saltzman"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/18165",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "creators",
+            "label": "المبدعون",
+            "value": [
+              "Julie Plec",
+              "كيفين ويليامسون"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/18165",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "runtime",
+            "label": "مدة العرض",
+            "value": [
+              43
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/18165",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "episodeRuntime",
+            "label": "مدة الحلقة",
+            "value": [
+              43
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/18165",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "seasons",
+            "label": "عدد المواسم",
+            "value": [
+              8
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/18165",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "episodes",
+            "label": "عدد الحلقات",
+            "value": [
+              171
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/18165",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "productionCompanies",
+            "label": "شركات الإنتاج",
+            "value": [
+              "Warner Bros. Television",
+              "Alloy Entertainment",
+              "Outerbanks Entertainment",
+              "Bonanza Productions",
+              "CBS Studios"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/18165",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "relatedWorks",
+            "label": "أعمال مرتبطة",
+            "value": [
+              {
+                "title": "دكتور هو",
+                "year": 2005,
+                "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                "sharedPeople": ""
+              },
+              {
+                "title": "قصة رعب امريكية",
+                "year": 2011,
+                "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                "sharedPeople": ""
+              },
+              {
+                "title": "فلاش",
+                "year": 2014,
+                "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                "sharedPeople": ""
+              },
+              {
+                "title": "The 100",
+                "year": 2014,
+                "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                "sharedPeople": ""
+              },
+              {
+                "title": "رحلة ڤيجن",
+                "year": 2026,
+                "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                "sharedPeople": ""
+              },
+              {
+                "title": "شخص محل إهتمام",
+                "year": 2011,
+                "sharedGenres": "دراما,خيال علمي وفانتازيا",
+                "sharedPeople": ""
+              }
+            ],
+            "source": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "series:1100": {
+      "key": "series:1100",
+      "type": "series",
+      "id": "1100",
+      "createdAt": "2026-11-15T19:44:54.443Z",
+      "attemptCount": 0,
+      "status": "ready",
+      "item": {
+        "id": "1100",
+        "type": "series",
+        "name": "كيف قابلت امك",
+        "originalTitle": "How I Met Your Mother",
+        "description": "يعيل \"تيد\" على استرجاع ذكريات الماضي ليروي بحثه الملحمي عن نصفه الآخر، وكشخص بالغ يروي \"تيد\" لأطفاله كيف التقى بأمهما.",
+        "date": "2005-09-19",
+        "poster": "https://image.tmdb.org/t/p/w500/b34jPzmB0wZy7EjUZoleXOl2RRI.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w780/3f8aW6vcYRP6mTZdgXm83BiuB9t.jpg",
+        "rating": 8.111,
+        "genres": [
+          "كوميديا"
+        ],
+        "sourceUrl": "https://www.themoviedb.org/tv/1100",
+        "source": "TMDB",
+        "popularity": 1257.6632,
+        "sourceMetricName": "TMDB popularity",
+        "sourceMetricValue": 1257.6632,
+        "trendConfidence": "مرتفع",
+        "trendRank": 8,
+        "fieldSources": {
+          "catalog_related_works": {
+            "source": "VIBECRITIC_D1",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:44:54.908Z"
+          }
+        },
+        "sourceVoteCount": 6079,
+        "metadata": {
+          "voteAverage": 8.111,
+          "voteCount": 6079,
+          "youtubeVideoId": null,
+          "youtubeVideoTitle": null,
+          "genres": [
+            "كوميديا"
+          ],
+          "directors": [],
+          "creators": [
+            "Craig Thomas",
+            "كارتر بايز"
+          ],
+          "cast": [
+            "Josh Radnor بدور Ted Mosby",
+            "Neil Patrick Harris بدور Barney Stinson",
+            "جيسون سيغل بدور Marshall Eriksen",
+            "Alyson Hannigan بدور Lily Aldrin",
+            "كوبي سمولدرز بدور Robin Scherbatsky",
+            "كريستين ميلوتي بدور Tracy McConnell"
+          ],
+          "runtime": null,
+          "episodeRuntime": [],
+          "seasons": 9,
+          "episodes": 208,
+          "productionCompanies": [
+            "20th Century Fox Television",
+            "Bays-Thomas Productions"
+          ],
+          "watchProviders": [],
+          "watchProviderUrl": null,
+          "communityReviews": [],
+          "similar": [
+            {
+              "id": "3523",
+              "title": "The Bill Cosby Show"
+            },
+            {
+              "id": "3663",
+              "title": "Camp Runamuck"
+            },
+            {
+              "id": "3682",
+              "title": "The Pitts"
+            },
+            {
+              "id": "3594",
+              "title": "City Guys"
+            },
+            {
+              "id": "33204",
+              "title": "Retired at 35"
+            }
+          ],
+          "catalogContext": {
+            "source": "VibeCritic D1 entertainment catalog",
+            "sourceUrl": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:44:54.908Z",
+            "base": {
+              "tmdbId": 1100,
+              "type": "tv",
+              "title": "كيف قابلت امك",
+              "originalTitle": "How I Met Your Mother",
+              "overview": "يعيل \"تيد\" على استرجاع ذكريات الماضي ليروي بحثه الملحمي عن نصفه الآخر، وكشخص بالغ يروي \"تيد\" لأطفاله كيف التقى بأمهما.",
+              "releaseDate": "2005-09-19",
+              "year": 2005,
+              "runtime": null,
+              "status": "Ended",
+              "rating": 8.111,
+              "votes": 6079,
+              "popularity": 1652.6625,
+              "originalLanguage": "en",
+              "genres": [
+                "كوميديا"
+              ],
+              "cast": [
+                "Josh Radnor بدور Ted Mosby",
+                "Neil Patrick Harris بدور Barney Stinson",
+                "جيسون سيغل بدور Marshall Eriksen",
+                "Alyson Hannigan بدور Lily Aldrin",
+                "كوبي سمولدرز بدور Robin Scherbatsky",
+                "كريستين ميلوتي بدور Tracy McConnell"
+              ],
+              "directors": [],
+              "creators": [
+                "Craig Thomas",
+                "كارتر بايز"
+              ],
+              "updatedAt": "2026-11-15T10:18:39.242Z"
+            },
+            "relatedWorks": [
+              {
+                "tmdbId": "1514026",
+                "type": "movie",
+                "title": "بادي",
+                "year": 2026,
+                "sharedGenreCount": 1,
+                "sharedPersonCount": 1,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": "كريستين ميلوتي",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "2316",
+                "type": "series",
+                "title": "المكتب",
+                "year": 2005,
+                "sharedGenreCount": 1,
+                "sharedPersonCount": 0,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "456",
+                "type": "series",
+                "title": "آل سيمبسون",
+                "year": 1989,
+                "sharedGenreCount": 1,
+                "sharedPersonCount": 0,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1421",
+                "type": "series",
+                "title": "عائلة عصرية",
+                "year": 2009,
+                "sharedGenreCount": 1,
+                "sharedPersonCount": 0,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1400",
+                "type": "series",
+                "title": "سينفيلد",
+                "year": 1989,
+                "sharedGenreCount": 1,
+                "sharedPersonCount": 0,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1877",
+                "type": "series",
+                "title": "فارس وفادي",
+                "year": 2007,
+                "sharedGenreCount": 1,
+                "sharedPersonCount": 0,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              }
+            ],
+            "limitation": "بيانات الكتالوج تصف حقولاً فهرسية موثقة داخلياً؛ الروابط بين الأعمال مبنية على تصنيفات أو أسماء طاقم مشتركة ولا تثبت تشابهاً فنياً أو جودة أو تأثيراً."
+          },
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "series:1100",
+            "title": "كيف قابلت امك",
+            "type": "series",
+            "collectedAt": "2026-11-15T19:44:55.127Z",
+            "evidenceCount": 12,
+            "sourceCount": 2,
+            "sources": [
+              {
+                "name": "TMDB",
+                "url": "https://www.themoviedb.org/tv/1100"
+              },
+              {
+                "name": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "كيف قابلت امك"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/1100",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "2005-09-19"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/1100",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "يعيل \"تيد\" على استرجاع ذكريات الماضي ليروي بحثه الملحمي عن نصفه الآخر، وكشخص بالغ يروي \"تيد\" لأطفاله كيف التقى بأمهما."
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/1100",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "كوميديا"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/1100",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "rating",
+                "label": "تقييم المصدر",
+                "value": [
+                  8.111
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/1100",
+                "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+              },
+              {
+                "key": "voteCount",
+                "label": "عدد الأصوات",
+                "value": [
+                  6079
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/1100",
+                "confidence": "مقياس حجم العينة وليس الجودة"
+              },
+              {
+                "key": "cast",
+                "label": "طاقم التمثيل",
+                "value": [
+                  "Josh Radnor بدور Ted Mosby",
+                  "Neil Patrick Harris بدور Barney Stinson",
+                  "جيسون سيغل بدور Marshall Eriksen",
+                  "Alyson Hannigan بدور Lily Aldrin",
+                  "كوبي سمولدرز بدور Robin Scherbatsky",
+                  "كريستين ميلوتي بدور Tracy McConnell"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/1100",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "creators",
+                "label": "المبدعون",
+                "value": [
+                  "Craig Thomas",
+                  "كارتر بايز"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/1100",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "seasons",
+                "label": "عدد المواسم",
+                "value": [
+                  9
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/1100",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "episodes",
+                "label": "عدد الحلقات",
+                "value": [
+                  208
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/1100",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "productionCompanies",
+                "label": "شركات الإنتاج",
+                "value": [
+                  "20th Century Fox Television",
+                  "Bays-Thomas Productions"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/1100",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "relatedWorks",
+                "label": "أعمال مرتبطة",
+                "value": [
+                  {
+                    "title": "بادي",
+                    "year": 2026,
+                    "sharedGenres": "كوميديا",
+                    "sharedPeople": "كريستين ميلوتي"
+                  },
+                  {
+                    "title": "المكتب",
+                    "year": 2005,
+                    "sharedGenres": "كوميديا",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "آل سيمبسون",
+                    "year": 1989,
+                    "sharedGenres": "كوميديا",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "عائلة عصرية",
+                    "year": 2009,
+                    "sharedGenres": "كوميديا",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "سينفيلد",
+                    "year": 1989,
+                    "sharedGenres": "كوميديا",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "فارس وفادي",
+                    "year": 2007,
+                    "sharedGenres": "كوميديا",
+                    "sharedPeople": ""
+                  }
+                ],
+                "source": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog",
+                "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        }
+      },
+      "nextAttemptAt": 0,
+      "lastError": null,
+      "updatedAt": "2026-11-15T19:44:55.128Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "series:1100",
+        "title": "كيف قابلت امك",
+        "type": "series",
+        "collectedAt": "2026-11-15T19:44:55.127Z",
+        "evidenceCount": 12,
+        "sourceCount": 2,
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/1100"
+          },
+          {
+            "name": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "كيف قابلت امك"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/1100",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "2005-09-19"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/1100",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "يعيل \"تيد\" على استرجاع ذكريات الماضي ليروي بحثه الملحمي عن نصفه الآخر، وكشخص بالغ يروي \"تيد\" لأطفاله كيف التقى بأمهما."
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/1100",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "كوميديا"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/1100",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "rating",
+            "label": "تقييم المصدر",
+            "value": [
+              8.111
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/1100",
+            "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+          },
+          {
+            "key": "voteCount",
+            "label": "عدد الأصوات",
+            "value": [
+              6079
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/1100",
+            "confidence": "مقياس حجم العينة وليس الجودة"
+          },
+          {
+            "key": "cast",
+            "label": "طاقم التمثيل",
+            "value": [
+              "Josh Radnor بدور Ted Mosby",
+              "Neil Patrick Harris بدور Barney Stinson",
+              "جيسون سيغل بدور Marshall Eriksen",
+              "Alyson Hannigan بدور Lily Aldrin",
+              "كوبي سمولدرز بدور Robin Scherbatsky",
+              "كريستين ميلوتي بدور Tracy McConnell"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/1100",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "creators",
+            "label": "المبدعون",
+            "value": [
+              "Craig Thomas",
+              "كارتر بايز"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/1100",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "seasons",
+            "label": "عدد المواسم",
+            "value": [
+              9
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/1100",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "episodes",
+            "label": "عدد الحلقات",
+            "value": [
+              208
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/1100",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "productionCompanies",
+            "label": "شركات الإنتاج",
+            "value": [
+              "20th Century Fox Television",
+              "Bays-Thomas Productions"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/1100",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "relatedWorks",
+            "label": "أعمال مرتبطة",
+            "value": [
+              {
+                "title": "بادي",
+                "year": 2026,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": "كريستين ميلوتي"
+              },
+              {
+                "title": "المكتب",
+                "year": 2005,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": ""
+              },
+              {
+                "title": "آل سيمبسون",
+                "year": 1989,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": ""
+              },
+              {
+                "title": "عائلة عصرية",
+                "year": 2009,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": ""
+              },
+              {
+                "title": "سينفيلد",
+                "year": 1989,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": ""
+              },
+              {
+                "title": "فارس وفادي",
+                "year": 2007,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": ""
+              }
+            ],
+            "source": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "series:5920": {
+      "key": "series:5920",
+      "type": "series",
+      "id": "5920",
+      "createdAt": "2026-11-15T19:44:55.256Z",
+      "attemptCount": 1,
+      "status": "waiting",
+      "item": {
+        "id": "5920",
+        "type": "series",
+        "name": "الوسيط الروحي",
+        "originalTitle": "The Mentalist",
+        "description": "يعمل باتريك جين مستشارًا لدى مكتب التحقيقات في كاليفورنيا، بعد أن كان يدّعي امتلاك قدرات روحانية، قبل أن تقلب مأساة على يد قاتل متسلسل يُعرف باسم ريد جون حياته رأسًا على عقب. يسخّر جين قدرته الفذة على الملاحظة وقراءة الناس لمساعدة فريق العميلة تيريزا ليزبون في حل الجرائم المعقدة بأساليب غير مألوفة، بينما يبقى هدفه الأكبر الوصول إلى القاتل الذي دمّر عائلته.",
+        "date": "2008-09-23",
+        "poster": "https://image.tmdb.org/t/p/w500/mMC4qAitti5tHnQ0w8mc3HRC7qk.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w780/rJFqKcmMSttdNP58l0dVzY2NcTA.jpg",
+        "rating": 8.4,
+        "genres": [
+          "جريمة",
+          "دراما",
+          "غموض"
+        ],
+        "sourceUrl": "https://www.themoviedb.org/tv/5920",
+        "source": "TMDB",
+        "popularity": 1194.8125,
+        "sourceMetricName": "TMDB popularity",
+        "sourceMetricValue": 1194.8125,
+        "trendConfidence": "مرتفع",
+        "trendRank": 9,
+        "fieldSources": {
+          "catalog_related_works": {
+            "source": "VIBECRITIC_D1",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:44:55.745Z"
+          }
+        },
+        "sourceVoteCount": 5005,
+        "metadata": {
+          "voteAverage": 8.4,
+          "voteCount": 5005,
+          "youtubeVideoId": null,
+          "youtubeVideoTitle": null,
+          "genres": [
+            "جريمة",
+            "دراما",
+            "غموض"
+          ],
+          "directors": [],
+          "creators": [
+            "برونو هيلر"
+          ],
+          "cast": [
+            "سايمون بيكر بدور Patrick Jane",
+            "روبن توني بدور Teresa Lisbon",
+            "تيم كانج بدور Kimball Cho",
+            "روكموند دنبار بدور Dennis Abbott",
+            "جو أدلر بدور Jason Wylie",
+            "جوزي لورين بدور Michelle Vega"
+          ],
+          "runtime": null,
+          "episodeRuntime": [],
+          "seasons": 7,
+          "episodes": 151,
+          "productionCompanies": [
+            "Warner Bros. Television",
+            "Primrose Hill Productions"
+          ],
+          "watchProviders": [],
+          "watchProviderUrl": null,
+          "communityReviews": [],
+          "similar": [
+            {
+              "id": "194",
+              "title": "NYPD Blue"
+            },
+            {
+              "id": "93",
+              "title": "Falcon Crest"
+            },
+            {
+              "id": "60726",
+              "title": "للابد"
+            },
+            {
+              "id": "484",
+              "title": "Murder, She Wrote"
+            },
+            {
+              "id": "211178",
+              "title": "The Gray House"
+            }
+          ],
+          "catalogContext": {
+            "source": "VibeCritic D1 entertainment catalog",
+            "sourceUrl": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:44:55.745Z",
+            "base": {
+              "tmdbId": 5920,
+              "type": "tv",
+              "title": "الوسيط الروحي",
+              "originalTitle": "The Mentalist",
+              "overview": "يعمل باتريك جين مستشارًا لدى مكتب التحقيقات في كاليفورنيا، بعد أن كان يدّعي امتلاك قدرات روحانية، قبل أن تقلب مأساة على يد قاتل متسلسل يُعرف باسم ريد جون حياته رأسًا على عقب. يسخّر جين قدرته الفذة على الملاحظة وقراءة الناس لمساعدة فريق العميلة تيريزا ليزبون في حل الجرائم المعقدة بأساليب غير مألوفة، بينما يبقى هدفه الأكبر الوصول إلى القاتل الذي دمّر عائلته.",
+              "releaseDate": "2008-09-23",
+              "year": 2008,
+              "runtime": null,
+              "status": "Ended",
+              "rating": 8.4,
+              "votes": 5005,
+              "popularity": 1535.37,
+              "originalLanguage": "en",
+              "genres": [
+                "جريمة",
+                "دراما",
+                "غموض"
+              ],
+              "cast": [
+                "سايمون بيكر بدور Patrick Jane",
+                "روبن توني بدور Teresa Lisbon",
+                "تيم كانج بدور Kimball Cho",
+                "روكموند دنبار بدور Dennis Abbott",
+                "جو أدلر بدور Jason Wylie",
+                "جوزي لورين بدور Michelle Vega"
+              ],
+              "directors": [],
+              "creators": [
+                "برونو هيلر"
+              ],
+              "updatedAt": "2026-11-15T10:18:39.242Z"
+            },
+            "relatedWorks": [
+              {
+                "tmdbId": "2734",
+                "type": "series",
+                "title": "القانون والنظام: وحدة الضحايا الخاصة",
+                "year": 1999,
+                "sharedGenreCount": 3,
+                "sharedPersonCount": 0,
+                "sharedGenres": "دراما,جريمة,غموض",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "4057",
+                "type": "series",
+                "title": "عقول إجرامية",
+                "year": 2005,
+                "sharedGenreCount": 3,
+                "sharedPersonCount": 0,
+                "sharedGenres": "دراما,جريمة,غموض",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "873",
+                "type": "series",
+                "title": "Columbo",
+                "year": 1971,
+                "sharedGenreCount": 3,
+                "sharedPersonCount": 0,
+                "sharedGenres": "دراما,جريمة,غموض",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1411",
+                "type": "series",
+                "title": "شخص محل إهتمام",
+                "year": 2011,
+                "sharedGenreCount": 3,
+                "sharedPersonCount": 0,
+                "sharedGenres": "دراما,جريمة,غموض",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1695",
+                "type": "series",
+                "title": "مونك",
+                "year": 2002,
+                "sharedGenreCount": 3,
+                "sharedPersonCount": 0,
+                "sharedGenres": "دراما,جريمة,غموض",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1427",
+                "type": "series",
+                "title": "Broadchurch",
+                "year": 2013,
+                "sharedGenreCount": 3,
+                "sharedPersonCount": 0,
+                "sharedGenres": "دراما,جريمة,غموض",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              }
+            ],
+            "limitation": "بيانات الكتالوج تصف حقولاً فهرسية موثقة داخلياً؛ الروابط بين الأعمال مبنية على تصنيفات أو أسماء طاقم مشتركة ولا تثبت تشابهاً فنياً أو جودة أو تأثيراً."
+          },
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "series:5920",
+            "title": "الوسيط الروحي",
+            "type": "series",
+            "collectedAt": "2026-11-15T19:44:55.920Z",
+            "evidenceCount": 12,
+            "sourceCount": 2,
+            "sources": [
+              {
+                "name": "TMDB",
+                "url": "https://www.themoviedb.org/tv/5920"
+              },
+              {
+                "name": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "الوسيط الروحي"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/5920",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "2008-09-23"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/5920",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "يعمل باتريك جين مستشارًا لدى مكتب التحقيقات في كاليفورنيا، بعد أن كان يدّعي امتلاك قدرات روحانية، قبل أن تقلب مأساة على يد قاتل متسلسل يُعرف باسم ريد جون حياته رأسًا على عقب. يسخّر جين قدرته الفذة على الملاحظة وقراءة الناس لمساعدة فريق العميلة تيريزا ليزبون في حل الجرائم المعقدة بأساليب غير مألوفة، بينما يبقى هدفه الأكبر الوصول إلى القاتل الذي دمّر عائلته."
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/5920",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "جريمة",
+                  "دراما",
+                  "غموض"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/5920",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "rating",
+                "label": "تقييم المصدر",
+                "value": [
+                  8.4
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/5920",
+                "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+              },
+              {
+                "key": "voteCount",
+                "label": "عدد الأصوات",
+                "value": [
+                  5005
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/5920",
+                "confidence": "مقياس حجم العينة وليس الجودة"
+              },
+              {
+                "key": "cast",
+                "label": "طاقم التمثيل",
+                "value": [
+                  "سايمون بيكر بدور Patrick Jane",
+                  "روبن توني بدور Teresa Lisbon",
+                  "تيم كانج بدور Kimball Cho",
+                  "روكموند دنبار بدور Dennis Abbott",
+                  "جو أدلر بدور Jason Wylie",
+                  "جوزي لورين بدور Michelle Vega"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/5920",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "creators",
+                "label": "المبدعون",
+                "value": [
+                  "برونو هيلر"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/5920",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "seasons",
+                "label": "عدد المواسم",
+                "value": [
+                  7
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/5920",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "episodes",
+                "label": "عدد الحلقات",
+                "value": [
+                  151
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/5920",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "productionCompanies",
+                "label": "شركات الإنتاج",
+                "value": [
+                  "Warner Bros. Television",
+                  "Primrose Hill Productions"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/5920",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "relatedWorks",
+                "label": "أعمال مرتبطة",
+                "value": [
+                  {
+                    "title": "القانون والنظام: وحدة الضحايا الخاصة",
+                    "year": 1999,
+                    "sharedGenres": "دراما,جريمة,غموض",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "عقول إجرامية",
+                    "year": 2005,
+                    "sharedGenres": "دراما,جريمة,غموض",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "Columbo",
+                    "year": 1971,
+                    "sharedGenres": "دراما,جريمة,غموض",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "شخص محل إهتمام",
+                    "year": 2011,
+                    "sharedGenres": "دراما,جريمة,غموض",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "مونك",
+                    "year": 2002,
+                    "sharedGenres": "دراما,جريمة,غموض",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "Broadchurch",
+                    "year": 2013,
+                    "sharedGenres": "دراما,جريمة,غموض",
+                    "sharedPeople": ""
+                  }
+                ],
+                "source": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog",
+                "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        }
+      },
+      "nextAttemptAt": 1794772121340,
+      "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
+      "updatedAt": "2026-11-15T19:44:56.469Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "series:5920",
+        "title": "الوسيط الروحي",
+        "type": "series",
+        "collectedAt": "2026-11-15T19:44:55.920Z",
+        "evidenceCount": 12,
+        "sourceCount": 2,
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/5920"
+          },
+          {
+            "name": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "الوسيط الروحي"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/5920",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "2008-09-23"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/5920",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "يعمل باتريك جين مستشارًا لدى مكتب التحقيقات في كاليفورنيا، بعد أن كان يدّعي امتلاك قدرات روحانية، قبل أن تقلب مأساة على يد قاتل متسلسل يُعرف باسم ريد جون حياته رأسًا على عقب. يسخّر جين قدرته الفذة على الملاحظة وقراءة الناس لمساعدة فريق العميلة تيريزا ليزبون في حل الجرائم المعقدة بأساليب غير مألوفة، بينما يبقى هدفه الأكبر الوصول إلى القاتل الذي دمّر عائلته."
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/5920",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "جريمة",
+              "دراما",
+              "غموض"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/5920",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "rating",
+            "label": "تقييم المصدر",
+            "value": [
+              8.4
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/5920",
+            "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+          },
+          {
+            "key": "voteCount",
+            "label": "عدد الأصوات",
+            "value": [
+              5005
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/5920",
+            "confidence": "مقياس حجم العينة وليس الجودة"
+          },
+          {
+            "key": "cast",
+            "label": "طاقم التمثيل",
+            "value": [
+              "سايمون بيكر بدور Patrick Jane",
+              "روبن توني بدور Teresa Lisbon",
+              "تيم كانج بدور Kimball Cho",
+              "روكموند دنبار بدور Dennis Abbott",
+              "جو أدلر بدور Jason Wylie",
+              "جوزي لورين بدور Michelle Vega"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/5920",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "creators",
+            "label": "المبدعون",
+            "value": [
+              "برونو هيلر"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/5920",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "seasons",
+            "label": "عدد المواسم",
+            "value": [
+              7
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/5920",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "episodes",
+            "label": "عدد الحلقات",
+            "value": [
+              151
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/5920",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "productionCompanies",
+            "label": "شركات الإنتاج",
+            "value": [
+              "Warner Bros. Television",
+              "Primrose Hill Productions"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/5920",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "relatedWorks",
+            "label": "أعمال مرتبطة",
+            "value": [
+              {
+                "title": "القانون والنظام: وحدة الضحايا الخاصة",
+                "year": 1999,
+                "sharedGenres": "دراما,جريمة,غموض",
+                "sharedPeople": ""
+              },
+              {
+                "title": "عقول إجرامية",
+                "year": 2005,
+                "sharedGenres": "دراما,جريمة,غموض",
+                "sharedPeople": ""
+              },
+              {
+                "title": "Columbo",
+                "year": 1971,
+                "sharedGenres": "دراما,جريمة,غموض",
+                "sharedPeople": ""
+              },
+              {
+                "title": "شخص محل إهتمام",
+                "year": 2011,
+                "sharedGenres": "دراما,جريمة,غموض",
+                "sharedPeople": ""
+              },
+              {
+                "title": "مونك",
+                "year": 2002,
+                "sharedGenres": "دراما,جريمة,غموض",
+                "sharedPeople": ""
+              },
+              {
+                "title": "Broadchurch",
+                "year": 2013,
+                "sharedGenres": "دراما,جريمة,غموض",
+                "sharedPeople": ""
+              }
+            ],
+            "source": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "movie:1283515": {
+      "key": "movie:1283515",
+      "type": "movie",
+      "id": "1283515",
+      "createdAt": "2026-11-15T19:44:56.612Z",
+      "attemptCount": 1,
+      "status": "waiting",
+      "item": {
+        "id": "1283515",
+        "type": "movie",
+        "name": "فيريتي",
+        "originalTitle": "Verity",
+        "description": "مقتبس من رواية كولين هوفر الأكثر مبيعًا، يتبع هذا الفيلم النفسي الكاتبة الشهيرة فيريتي كروفورد ولوين آشلي، وهي كاتبة تكافح وتنتقل إلى ضيعة كروفورد النائية للكتابة الشبح من أجل فيريتي.",
+        "date": "2026-09-30",
+        "poster": "https://image.tmdb.org/t/p/w500/w6glIGURAqisiKYpVLVnLcFX76n.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w780/cKetrF2dAnQ0AMV5i4BMOs41I5P.jpg",
+        "rating": 6.999,
+        "genres": [
+          "غموض",
+          "إثارة"
+        ],
+        "sourceUrl": "https://www.themoviedb.org/movie/1283515",
+        "source": "TMDB",
+        "popularity": 130.0063,
+        "sourceMetricName": "TMDB popularity",
+        "sourceMetricValue": 130.0063,
+        "trendConfidence": "مرتفع",
+        "trendRank": 14,
+        "fieldSources": {
+          "catalog_related_works": {
+            "source": "VIBECRITIC_D1",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:44:57.077Z"
+          }
+        },
+        "sourceVoteCount": 697,
+        "metadata": {
+          "voteAverage": 6.999,
+          "voteCount": 697,
+          "youtubeVideoId": null,
+          "youtubeVideoTitle": null,
+          "genres": [
+            "غموض",
+            "إثارة"
+          ],
+          "directors": [
+            "مايكل شوالتر"
+          ],
+          "creators": [],
+          "cast": [
+            "Dakota Johnson بدور Lowen Ashleigh",
+            "آن هاثاواي بدور Verity Crawford",
+            "جوش هارتنت بدور Jeremy Crawford",
+            "Brady Wagner بدور Crew Crawford",
+            "Ismael Cruz Cordova بدور Corey",
+            "Ірина Дворовенко بدور Anna",
+            "Sienna Kulovitz بدور Harper Crawford"
+          ],
+          "runtime": 117,
+          "episodeRuntime": [],
+          "seasons": null,
+          "episodes": null,
+          "productionCompanies": [
+            "Eat the Cat",
+            "Semi-Formal Productions",
+            "Somewhere Pictures",
+            "Shiny Penny Productions",
+            "Heartbones Entertainment"
+          ],
+          "watchProviders": [],
+          "watchProviderUrl": null,
+          "communityReviews": [],
+          "similar": [
+            {
+              "id": "13528",
+              "title": "Gaslight"
+            },
+            {
+              "id": "13549",
+              "title": "Burnt Offerings"
+            },
+            {
+              "id": "1443961",
+              "title": "రావు బహదూర్"
+            },
+            {
+              "id": "1051023",
+              "title": "मर्डर मुबारक"
+            },
+            {
+              "id": "280468",
+              "title": "Maléfices"
+            }
+          ],
+          "catalogContext": {
+            "source": "VibeCritic D1 entertainment catalog",
+            "sourceUrl": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:44:57.077Z",
+            "base": {
+              "tmdbId": 1283515,
+              "type": "movie",
+              "title": "فيريتي",
+              "originalTitle": "Verity",
+              "overview": "مقتبس من رواية كولين هوفر الأكثر مبيعًا، يتبع هذا الفيلم النفسي الكاتبة الشهيرة فيريتي كروفورد ولوين آشلي، وهي كاتبة تكافح وتنتقل إلى ضيعة كروفورد النائية للكتابة الشبح من أجل فيريتي.",
+              "releaseDate": "2026-09-30",
+              "year": 2026,
+              "runtime": 117,
+              "status": "Released",
+              "rating": 6.999,
+              "votes": 697,
+              "popularity": 124.0516,
+              "originalLanguage": "en",
+              "genres": [
+                "إثارة",
+                "غموض"
+              ],
+              "cast": [
+                "Dakota Johnson بدور Lowen Ashleigh",
+                "آن هاثاواي بدور Verity Crawford",
+                "جوش هارتنت بدور Jeremy Crawford",
+                "Brady Wagner بدور Crew Crawford",
+                "Ismael Cruz Cordova بدور Corey",
+                "Ірина Дворовенко بدور Anna",
+                "Sienna Kulovitz بدور Harper Crawford",
+                "K.K. Moggie بدور Amanda Thomas",
+                "Tom Galantich بدور Barron Stephens",
+                "Lou Martini Jr. بدور Limo Driver"
+              ],
+              "directors": [
+                "مايكل شوالتر"
+              ],
+              "creators": [],
+              "updatedAt": "2026-11-15T10:18:39.242Z"
+            },
+            "relatedWorks": [
+              {
+                "tmdbId": "1101383",
+                "type": "movie",
+                "title": "نهاية شارع أوك",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 1,
+                "sharedGenres": "إثارة,غموض",
+                "sharedPeople": "آن هاثاواي",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "84773",
+                "type": "series",
+                "title": "سيد الخواتم: خواتم السلطة",
+                "year": 2022,
+                "sharedGenreCount": 0,
+                "sharedPersonCount": 1,
+                "sharedGenres": "",
+                "sharedPeople": "Ismael Cruz Cordova",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1368337",
+                "type": "movie",
+                "title": "الأوديسة",
+                "year": 2026,
+                "sharedGenreCount": 0,
+                "sharedPersonCount": 1,
+                "sharedGenres": "",
+                "sharedPeople": "آن هاثاواي",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "157336",
+                "type": "movie",
+                "title": "بين النجوم",
+                "year": 2014,
+                "sharedGenreCount": 0,
+                "sharedPersonCount": 1,
+                "sharedGenres": "",
+                "sharedPeople": "آن هاثاواي",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "9963",
+                "type": "movie",
+                "title": "Premonition",
+                "year": 2007,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "إثارة,غموض",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "2734",
+                "type": "series",
+                "title": "القانون والنظام: وحدة الضحايا الخاصة",
+                "year": 1999,
+                "sharedGenreCount": 1,
+                "sharedPersonCount": 0,
+                "sharedGenres": "غموض",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              }
+            ],
+            "limitation": "بيانات الكتالوج تصف حقولاً فهرسية موثقة داخلياً؛ الروابط بين الأعمال مبنية على تصنيفات أو أسماء طاقم مشتركة ولا تثبت تشابهاً فنياً أو جودة أو تأثيراً."
+          },
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "movie:1283515",
+            "title": "فيريتي",
+            "type": "movie",
+            "collectedAt": "2026-11-15T19:44:57.243Z",
+            "evidenceCount": 11,
+            "sourceCount": 2,
+            "sources": [
+              {
+                "name": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1283515"
+              },
+              {
+                "name": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "فيريتي"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1283515",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "2026-09-30"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1283515",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "مقتبس من رواية كولين هوفر الأكثر مبيعًا، يتبع هذا الفيلم النفسي الكاتبة الشهيرة فيريتي كروفورد ولوين آشلي، وهي كاتبة تكافح وتنتقل إلى ضيعة كروفورد النائية للكتابة الشبح من أجل فيريتي."
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1283515",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "غموض",
+                  "إثارة"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1283515",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "rating",
+                "label": "تقييم المصدر",
+                "value": [
+                  6.999
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1283515",
+                "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+              },
+              {
+                "key": "voteCount",
+                "label": "عدد الأصوات",
+                "value": [
+                  697
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1283515",
+                "confidence": "مقياس حجم العينة وليس الجودة"
+              },
+              {
+                "key": "cast",
+                "label": "طاقم التمثيل",
+                "value": [
+                  "Dakota Johnson بدور Lowen Ashleigh",
+                  "آن هاثاواي بدور Verity Crawford",
+                  "جوش هارتنت بدور Jeremy Crawford",
+                  "Brady Wagner بدور Crew Crawford",
+                  "Ismael Cruz Cordova بدور Corey",
+                  "Ірина Дворовенко بدور Anna",
+                  "Sienna Kulovitz بدور Harper Crawford"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1283515",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "directors",
+                "label": "المخرجون",
+                "value": [
+                  "مايكل شوالتر"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1283515",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "runtime",
+                "label": "مدة العرض",
+                "value": [
+                  117
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1283515",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "productionCompanies",
+                "label": "شركات الإنتاج",
+                "value": [
+                  "Eat the Cat",
+                  "Semi-Formal Productions",
+                  "Somewhere Pictures",
+                  "Shiny Penny Productions",
+                  "Heartbones Entertainment"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1283515",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "relatedWorks",
+                "label": "أعمال مرتبطة",
+                "value": [
+                  {
+                    "title": "نهاية شارع أوك",
+                    "year": 2026,
+                    "sharedGenres": "إثارة,غموض",
+                    "sharedPeople": "آن هاثاواي"
+                  },
+                  {
+                    "title": "سيد الخواتم: خواتم السلطة",
+                    "year": 2022,
+                    "sharedGenres": "",
+                    "sharedPeople": "Ismael Cruz Cordova"
+                  },
+                  {
+                    "title": "الأوديسة",
+                    "year": 2026,
+                    "sharedGenres": "",
+                    "sharedPeople": "آن هاثاواي"
+                  },
+                  {
+                    "title": "بين النجوم",
+                    "year": 2014,
+                    "sharedGenres": "",
+                    "sharedPeople": "آن هاثاواي"
+                  },
+                  {
+                    "title": "Premonition",
+                    "year": 2007,
+                    "sharedGenres": "إثارة,غموض",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "القانون والنظام: وحدة الضحايا الخاصة",
+                    "year": 1999,
+                    "sharedGenres": "غموض",
+                    "sharedPeople": ""
+                  }
+                ],
+                "source": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog",
+                "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        }
+      },
+      "nextAttemptAt": 1794772121340,
+      "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
+      "updatedAt": "2026-11-15T19:44:57.819Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "movie:1283515",
+        "title": "فيريتي",
+        "type": "movie",
+        "collectedAt": "2026-11-15T19:44:57.243Z",
+        "evidenceCount": 11,
+        "sourceCount": 2,
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1283515"
+          },
+          {
+            "name": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "فيريتي"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1283515",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "2026-09-30"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1283515",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "مقتبس من رواية كولين هوفر الأكثر مبيعًا، يتبع هذا الفيلم النفسي الكاتبة الشهيرة فيريتي كروفورد ولوين آشلي، وهي كاتبة تكافح وتنتقل إلى ضيعة كروفورد النائية للكتابة الشبح من أجل فيريتي."
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1283515",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "غموض",
+              "إثارة"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1283515",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "rating",
+            "label": "تقييم المصدر",
+            "value": [
+              6.999
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1283515",
+            "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+          },
+          {
+            "key": "voteCount",
+            "label": "عدد الأصوات",
+            "value": [
+              697
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1283515",
+            "confidence": "مقياس حجم العينة وليس الجودة"
+          },
+          {
+            "key": "cast",
+            "label": "طاقم التمثيل",
+            "value": [
+              "Dakota Johnson بدور Lowen Ashleigh",
+              "آن هاثاواي بدور Verity Crawford",
+              "جوش هارتنت بدور Jeremy Crawford",
+              "Brady Wagner بدور Crew Crawford",
+              "Ismael Cruz Cordova بدور Corey",
+              "Ірина Дворовенко بدور Anna",
+              "Sienna Kulovitz بدور Harper Crawford"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1283515",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "directors",
+            "label": "المخرجون",
+            "value": [
+              "مايكل شوالتر"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1283515",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "runtime",
+            "label": "مدة العرض",
+            "value": [
+              117
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1283515",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "productionCompanies",
+            "label": "شركات الإنتاج",
+            "value": [
+              "Eat the Cat",
+              "Semi-Formal Productions",
+              "Somewhere Pictures",
+              "Shiny Penny Productions",
+              "Heartbones Entertainment"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1283515",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "relatedWorks",
+            "label": "أعمال مرتبطة",
+            "value": [
+              {
+                "title": "نهاية شارع أوك",
+                "year": 2026,
+                "sharedGenres": "إثارة,غموض",
+                "sharedPeople": "آن هاثاواي"
+              },
+              {
+                "title": "سيد الخواتم: خواتم السلطة",
+                "year": 2022,
+                "sharedGenres": "",
+                "sharedPeople": "Ismael Cruz Cordova"
+              },
+              {
+                "title": "الأوديسة",
+                "year": 2026,
+                "sharedGenres": "",
+                "sharedPeople": "آن هاثاواي"
+              },
+              {
+                "title": "بين النجوم",
+                "year": 2014,
+                "sharedGenres": "",
+                "sharedPeople": "آن هاثاواي"
+              },
+              {
+                "title": "Premonition",
+                "year": 2007,
+                "sharedGenres": "إثارة,غموض",
+                "sharedPeople": ""
+              },
+              {
+                "title": "القانون والنظام: وحدة الضحايا الخاصة",
+                "year": 1999,
+                "sharedGenres": "غموض",
+                "sharedPeople": ""
+              }
+            ],
+            "source": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "movie:1101412": {
+      "key": "movie:1101412",
+      "type": "movie",
+      "id": "1101412",
+      "createdAt": "2026-11-15T19:44:57.823Z",
+      "attemptCount": 1,
+      "status": "waiting",
+      "item": {
+        "id": "1101412",
+        "type": "movie",
+        "name": "سقوط 2 : النقطة المميته",
+        "originalTitle": "Fall 2: Deadpoint",
+        "description": "بعد وفاة شقيقتها، تحاول جاكس تجاوز حزنها بمساعدة صديقة شقيقتها لوس، فتقرر الاثنتان تسلق جبل كوان في تايلاند. لكنهما تتعرضان لانهيار صخري يحاصرهما على لوح ضيق على ارتفاع شاهق، وتتحول الرحلة إلى صراع من أجل البقاء",
+        "date": "2026-09-01",
+        "poster": "https://image.tmdb.org/t/p/w500/4APvtaxyR9mwbNiUTqKfqDreQ12.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w780/nGau0KBOaRILSK5MqFcuTfv7GMl.jpg",
+        "rating": 7.235,
+        "genres": [
+          "إثارة"
+        ],
+        "sourceUrl": "https://www.themoviedb.org/movie/1101412",
+        "source": "TMDB",
+        "popularity": 114.3316,
+        "sourceMetricName": "TMDB popularity",
+        "sourceMetricValue": 114.3316,
+        "trendConfidence": "مرتفع",
+        "trendRank": 11,
+        "fieldSources": {
+          "catalog_related_works": {
+            "source": "VIBECRITIC_D1",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:44:58.280Z"
+          }
+        },
+        "sourceVoteCount": 792,
+        "metadata": {
+          "voteAverage": 7.235,
+          "voteCount": 792,
+          "youtubeVideoId": null,
+          "youtubeVideoTitle": null,
+          "genres": [
+            "إثارة"
+          ],
+          "directors": [
+            "Peter Spierig",
+            "Michael Spierig"
+          ],
+          "creators": [],
+          "cast": [
+            "Harriet Slater بدور Jax Hunter",
+            "Arsema Thomas بدور Luce",
+            "Tom Brittney بدور Jon Platt",
+            "สหจักร บุญธนกิจ بدور Thai Barman",
+            "Korakod Yensuk بدور Large Woman",
+            "Jordan Coleman بدور Real Luce",
+            "Maryna Bennett بدور Female Teenager"
+          ],
+          "runtime": 98,
+          "episodeRuntime": [],
+          "seasons": null,
+          "episodes": null,
+          "productionCompanies": [
+            "Tea Shop Productions",
+            "Capstone Pictures",
+            "Flawless Production",
+            "Cousin Jones"
+          ],
+          "watchProviders": [],
+          "watchProviderUrl": null,
+          "communityReviews": [],
+          "similar": [
+            {
+              "id": "13804",
+              "title": "السرعة و الغضب"
+            },
+            {
+              "id": "1444505",
+              "title": "No Way Beyond The Shadow"
+            },
+            {
+              "id": "850880",
+              "title": "Sayen: La ruta seca"
+            },
+            {
+              "id": "280092",
+              "title": "Insidious: Chapter 3"
+            },
+            {
+              "id": "13387",
+              "title": "الناقل 3"
+            }
+          ],
+          "catalogContext": {
+            "source": "VibeCritic D1 entertainment catalog",
+            "sourceUrl": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:44:58.280Z",
+            "base": {
+              "tmdbId": 1101412,
+              "type": "movie",
+              "title": "سقوط 2 : النقطة المميته",
+              "originalTitle": "Fall 2: Deadpoint",
+              "overview": "بعد وفاة شقيقتها، تحاول جاكس تجاوز حزنها بمساعدة صديقة شقيقتها لوس، فتقرر الاثنتان تسلق جبل كوان في تايلاند. لكنهما تتعرضان لانهيار صخري يحاصرهما على لوح ضيق على ارتفاع شاهق، وتتحول الرحلة إلى صراع من أجل البقاء",
+              "releaseDate": "2026-09-01",
+              "year": 2026,
+              "runtime": 98,
+              "status": "Released",
+              "rating": 7.235,
+              "votes": 792,
+              "popularity": 122.9744,
+              "originalLanguage": "en",
+              "genres": [
+                "إثارة"
+              ],
+              "cast": [
+                "Harriet Slater بدور Jax Hunter",
+                "Arsema Thomas بدور Luce",
+                "Tom Brittney بدور Jon Platt",
+                "สหจักร บุญธนกิจ بدور Thai Barman",
+                "Korakod Yensuk بدور Large Woman",
+                "Jordan Coleman بدور Real Luce",
+                "Maryna Bennett بدور Female Teenager",
+                "Noen Perez بدور Male Teenager",
+                "Nattapon Sukphiam بدور Thai Climber 1",
+                "Charlie Ruedpokanon بدور Thai Climber 2"
+              ],
+              "directors": [
+                "Peter Spierig",
+                "Michael Spierig"
+              ],
+              "creators": [],
+              "updatedAt": "2026-11-15T10:18:39.242Z"
+            },
+            "relatedWorks": [
+              {
+                "tmdbId": "1263337",
+                "type": "movie",
+                "title": "قلب الوحش",
+                "year": 2026,
+                "sharedGenreCount": 1,
+                "sharedPersonCount": 0,
+                "sharedGenres": "إثارة",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1507696",
+                "type": "movie",
+                "title": "نهاية العالم Z: العالم الجديد",
+                "year": 2026,
+                "sharedGenreCount": 1,
+                "sharedPersonCount": 0,
+                "sharedGenres": "إثارة",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1294189",
+                "type": "movie",
+                "title": "النمس",
+                "year": 2026,
+                "sharedGenreCount": 1,
+                "sharedPersonCount": 0,
+                "sharedGenres": "إثارة",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1283515",
+                "type": "movie",
+                "title": "فيريتي",
+                "year": 2026,
+                "sharedGenreCount": 1,
+                "sharedPersonCount": 0,
+                "sharedGenres": "إثارة",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1596275",
+                "type": "movie",
+                "title": "السباق - الحب الزائف",
+                "year": 2026,
+                "sharedGenreCount": 1,
+                "sharedPersonCount": 0,
+                "sharedGenres": "إثارة",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1657630",
+                "type": "movie",
+                "title": "El despertar",
+                "year": 2026,
+                "sharedGenreCount": 1,
+                "sharedPersonCount": 0,
+                "sharedGenres": "إثارة",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              }
+            ],
+            "limitation": "بيانات الكتالوج تصف حقولاً فهرسية موثقة داخلياً؛ الروابط بين الأعمال مبنية على تصنيفات أو أسماء طاقم مشتركة ولا تثبت تشابهاً فنياً أو جودة أو تأثيراً."
+          },
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "movie:1101412",
+            "title": "سقوط 2 : النقطة المميته",
+            "type": "movie",
+            "collectedAt": "2026-11-15T19:44:58.463Z",
+            "evidenceCount": 11,
+            "sourceCount": 2,
+            "sources": [
+              {
+                "name": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1101412"
+              },
+              {
+                "name": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "سقوط 2 : النقطة المميته"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1101412",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "2026-09-01"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1101412",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "بعد وفاة شقيقتها، تحاول جاكس تجاوز حزنها بمساعدة صديقة شقيقتها لوس، فتقرر الاثنتان تسلق جبل كوان في تايلاند. لكنهما تتعرضان لانهيار صخري يحاصرهما على لوح ضيق على ارتفاع شاهق، وتتحول الرحلة إلى صراع من أجل البقاء"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1101412",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "إثارة"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1101412",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "rating",
+                "label": "تقييم المصدر",
+                "value": [
+                  7.235
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1101412",
+                "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+              },
+              {
+                "key": "voteCount",
+                "label": "عدد الأصوات",
+                "value": [
+                  792
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1101412",
+                "confidence": "مقياس حجم العينة وليس الجودة"
+              },
+              {
+                "key": "cast",
+                "label": "طاقم التمثيل",
+                "value": [
+                  "Harriet Slater بدور Jax Hunter",
+                  "Arsema Thomas بدور Luce",
+                  "Tom Brittney بدور Jon Platt",
+                  "สหจักร บุญธนกิจ بدور Thai Barman",
+                  "Korakod Yensuk بدور Large Woman",
+                  "Jordan Coleman بدور Real Luce",
+                  "Maryna Bennett بدور Female Teenager"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1101412",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "directors",
+                "label": "المخرجون",
+                "value": [
+                  "Peter Spierig",
+                  "Michael Spierig"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1101412",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "runtime",
+                "label": "مدة العرض",
+                "value": [
+                  98
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1101412",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "productionCompanies",
+                "label": "شركات الإنتاج",
+                "value": [
+                  "Tea Shop Productions",
+                  "Capstone Pictures",
+                  "Flawless Production",
+                  "Cousin Jones"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1101412",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "relatedWorks",
+                "label": "أعمال مرتبطة",
+                "value": [
+                  {
+                    "title": "قلب الوحش",
+                    "year": 2026,
+                    "sharedGenres": "إثارة",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "نهاية العالم Z: العالم الجديد",
+                    "year": 2026,
+                    "sharedGenres": "إثارة",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "النمس",
+                    "year": 2026,
+                    "sharedGenres": "إثارة",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "فيريتي",
+                    "year": 2026,
+                    "sharedGenres": "إثارة",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "السباق - الحب الزائف",
+                    "year": 2026,
+                    "sharedGenres": "إثارة",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "El despertar",
+                    "year": 2026,
+                    "sharedGenres": "إثارة",
+                    "sharedPeople": ""
+                  }
+                ],
+                "source": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog",
+                "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        }
+      },
+      "nextAttemptAt": 1794772121340,
+      "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
+      "updatedAt": "2026-11-15T19:44:59.048Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "movie:1101412",
+        "title": "سقوط 2 : النقطة المميته",
+        "type": "movie",
+        "collectedAt": "2026-11-15T19:44:58.463Z",
+        "evidenceCount": 11,
+        "sourceCount": 2,
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1101412"
+          },
+          {
+            "name": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "سقوط 2 : النقطة المميته"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1101412",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "2026-09-01"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1101412",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "بعد وفاة شقيقتها، تحاول جاكس تجاوز حزنها بمساعدة صديقة شقيقتها لوس، فتقرر الاثنتان تسلق جبل كوان في تايلاند. لكنهما تتعرضان لانهيار صخري يحاصرهما على لوح ضيق على ارتفاع شاهق، وتتحول الرحلة إلى صراع من أجل البقاء"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1101412",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "إثارة"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1101412",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "rating",
+            "label": "تقييم المصدر",
+            "value": [
+              7.235
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1101412",
+            "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+          },
+          {
+            "key": "voteCount",
+            "label": "عدد الأصوات",
+            "value": [
+              792
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1101412",
+            "confidence": "مقياس حجم العينة وليس الجودة"
+          },
+          {
+            "key": "cast",
+            "label": "طاقم التمثيل",
+            "value": [
+              "Harriet Slater بدور Jax Hunter",
+              "Arsema Thomas بدور Luce",
+              "Tom Brittney بدور Jon Platt",
+              "สหจักร บุญธนกิจ بدور Thai Barman",
+              "Korakod Yensuk بدور Large Woman",
+              "Jordan Coleman بدور Real Luce",
+              "Maryna Bennett بدور Female Teenager"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1101412",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "directors",
+            "label": "المخرجون",
+            "value": [
+              "Peter Spierig",
+              "Michael Spierig"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1101412",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "runtime",
+            "label": "مدة العرض",
+            "value": [
+              98
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1101412",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "productionCompanies",
+            "label": "شركات الإنتاج",
+            "value": [
+              "Tea Shop Productions",
+              "Capstone Pictures",
+              "Flawless Production",
+              "Cousin Jones"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1101412",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "relatedWorks",
+            "label": "أعمال مرتبطة",
+            "value": [
+              {
+                "title": "قلب الوحش",
+                "year": 2026,
+                "sharedGenres": "إثارة",
+                "sharedPeople": ""
+              },
+              {
+                "title": "نهاية العالم Z: العالم الجديد",
+                "year": 2026,
+                "sharedGenres": "إثارة",
+                "sharedPeople": ""
+              },
+              {
+                "title": "النمس",
+                "year": 2026,
+                "sharedGenres": "إثارة",
+                "sharedPeople": ""
+              },
+              {
+                "title": "فيريتي",
+                "year": 2026,
+                "sharedGenres": "إثارة",
+                "sharedPeople": ""
+              },
+              {
+                "title": "السباق - الحب الزائف",
+                "year": 2026,
+                "sharedGenres": "إثارة",
+                "sharedPeople": ""
+              },
+              {
+                "title": "El despertar",
+                "year": 2026,
+                "sharedGenres": "إثارة",
+                "sharedPeople": ""
+              }
+            ],
+            "source": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "movie:1514026": {
+      "key": "movie:1514026",
+      "type": "movie",
+      "id": "1514026",
+      "createdAt": "2026-11-15T19:44:59.051Z",
+      "attemptCount": 1,
+      "status": "waiting",
+      "item": {
+        "id": "1514026",
+        "type": "movie",
+        "name": "بادي",
+        "originalTitle": "Buddy",
+        "description": "في عالم برنامج أطفال زاهي الألوان، يقضي مجموعة من الأطفال أيامهم في الغناء والرقص ومساعدة وحيد قرن برتقالي على نشر السعادة، لكن حين يرفض أحدهم المشاركة يغضب وحيد القرن، وتبدأ الشقوق في الظهور في هذا العالم المثالي ظاهريًا.",
+        "date": "2026-08-27",
+        "poster": "https://image.tmdb.org/t/p/w500/kHaojp5Pz4WIh1twxwihjfiKZVb.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w780/sMmG82PtjK8A9rVc34gwKQtCm3A.jpg",
+        "rating": 6.81,
+        "genres": [
+          "رعب",
+          "كوميديا",
+          "فانتازيا"
+        ],
+        "sourceUrl": "https://www.themoviedb.org/movie/1514026",
+        "source": "TMDB",
+        "popularity": 105.8423,
+        "sourceMetricName": "TMDB popularity",
+        "sourceMetricValue": 105.8423,
+        "trendConfidence": "مرتفع",
+        "trendRank": 13,
+        "fieldSources": {
+          "catalog_related_works": {
+            "source": "VIBECRITIC_D1",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:44:59.524Z"
+          }
+        },
+        "sourceVoteCount": 279,
+        "metadata": {
+          "voteAverage": 6.81,
+          "voteCount": 279,
+          "youtubeVideoId": null,
+          "youtubeVideoTitle": null,
+          "genres": [
+            "رعب",
+            "كوميديا",
+            "فانتازيا"
+          ],
+          "directors": [
+            "Casper Kelly"
+          ],
+          "creators": [],
+          "cast": [
+            "كيغان-مايكل كي بدور Buddy / Dark Buddy (voice)",
+            "Delaney Quinn بدور Freddy",
+            "Tristan Borders بدور Oliver",
+            "Madison Skyy Polan بدور Hannah",
+            "Caleb Williams بدور Wade",
+            "كريستين ميلوتي بدور Grace",
+            "توفر غريس بدور Ben"
+          ],
+          "runtime": 96,
+          "episodeRuntime": [],
+          "seasons": null,
+          "episodes": null,
+          "productionCompanies": [
+            "BoulderLight Pictures",
+            "Low Spark Films",
+            "SIPUR",
+            "Substance"
+          ],
+          "watchProviders": [],
+          "watchProviderUrl": null,
+          "communityReviews": [],
+          "similar": [
+            {
+              "id": "468469",
+              "title": "Kaalakaandi"
+            },
+            {
+              "id": "13566",
+              "title": "The Slaughterhouse Massacre"
+            },
+            {
+              "id": "13567",
+              "title": "Sleepaway Camp"
+            },
+            {
+              "id": "13570",
+              "title": "Tourist Trap"
+            },
+            {
+              "id": "13531",
+              "title": "Empire Records"
+            }
+          ],
+          "catalogContext": {
+            "source": "VibeCritic D1 entertainment catalog",
+            "sourceUrl": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:44:59.524Z",
+            "base": {
+              "tmdbId": 1514026,
+              "type": "movie",
+              "title": "بادي",
+              "originalTitle": "Buddy",
+              "overview": "في عالم برنامج أطفال زاهي الألوان، يقضي مجموعة من الأطفال أيامهم في الغناء والرقص ومساعدة وحيد قرن برتقالي على نشر السعادة، لكن حين يرفض أحدهم المشاركة يغضب وحيد القرن، وتبدأ الشقوق في الظهور في هذا العالم المثالي ظاهريًا.",
+              "releaseDate": "2026-08-27",
+              "year": 2026,
+              "runtime": 96,
+              "status": "Released",
+              "rating": 6.81,
+              "votes": 279,
+              "popularity": 105.6984,
+              "originalLanguage": "en",
+              "genres": [
+                "رعب",
+                "فانتازيا",
+                "كوميديا"
+              ],
+              "cast": [
+                "كيغان-مايكل كي بدور Buddy / Dark Buddy (voice)",
+                "Delaney Quinn بدور Freddy",
+                "Tristan Borders بدور Oliver",
+                "Madison Skyy Polan بدور Hannah",
+                "Caleb Williams بدور Wade",
+                "كريستين ميلوتي بدور Grace",
+                "توفر غريس بدور Ben",
+                "باتن أوزوالت بدور Strappy (voice)",
+                "مايكل شانون بدور Willie (voice)",
+                "Clint Howard بدور George"
+              ],
+              "directors": [
+                "Casper Kelly"
+              ],
+              "creators": [],
+              "updatedAt": "2026-11-15T10:18:39.242Z"
+            },
+            "relatedWorks": [
+              {
+                "tmdbId": "1100",
+                "type": "series",
+                "title": "كيف قابلت امك",
+                "year": 2005,
+                "sharedGenreCount": 1,
+                "sharedPersonCount": 1,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": "كريستين ميلوتي",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "157336",
+                "type": "movie",
+                "title": "بين النجوم",
+                "year": 2014,
+                "sharedGenreCount": 0,
+                "sharedPersonCount": 1,
+                "sharedGenres": "",
+                "sharedPeople": "توفر غريس",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1657630",
+                "type": "movie",
+                "title": "El despertar",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "فانتازيا,رعب",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1465063",
+                "type": "movie",
+                "title": "Forgotten Island",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "فانتازيا,كوميديا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1232569",
+                "type": "movie",
+                "title": "بينوكيو: بلا خيط",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "فانتازيا,رعب",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1108427",
+                "type": "movie",
+                "title": "فلم موانا",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "فانتازيا,كوميديا",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              }
+            ],
+            "limitation": "بيانات الكتالوج تصف حقولاً فهرسية موثقة داخلياً؛ الروابط بين الأعمال مبنية على تصنيفات أو أسماء طاقم مشتركة ولا تثبت تشابهاً فنياً أو جودة أو تأثيراً."
+          },
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "movie:1514026",
+            "title": "بادي",
+            "type": "movie",
+            "collectedAt": "2026-11-15T19:44:59.709Z",
+            "evidenceCount": 11,
+            "sourceCount": 2,
+            "sources": [
+              {
+                "name": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1514026"
+              },
+              {
+                "name": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "بادي"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1514026",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "2026-08-27"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1514026",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "في عالم برنامج أطفال زاهي الألوان، يقضي مجموعة من الأطفال أيامهم في الغناء والرقص ومساعدة وحيد قرن برتقالي على نشر السعادة، لكن حين يرفض أحدهم المشاركة يغضب وحيد القرن، وتبدأ الشقوق في الظهور في هذا العالم المثالي ظاهريًا."
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1514026",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "رعب",
+                  "كوميديا",
+                  "فانتازيا"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1514026",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "rating",
+                "label": "تقييم المصدر",
+                "value": [
+                  6.81
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1514026",
+                "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+              },
+              {
+                "key": "voteCount",
+                "label": "عدد الأصوات",
+                "value": [
+                  279
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1514026",
+                "confidence": "مقياس حجم العينة وليس الجودة"
+              },
+              {
+                "key": "cast",
+                "label": "طاقم التمثيل",
+                "value": [
+                  "كيغان-مايكل كي بدور Buddy / Dark Buddy (voice)",
+                  "Delaney Quinn بدور Freddy",
+                  "Tristan Borders بدور Oliver",
+                  "Madison Skyy Polan بدور Hannah",
+                  "Caleb Williams بدور Wade",
+                  "كريستين ميلوتي بدور Grace",
+                  "توفر غريس بدور Ben"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1514026",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "directors",
+                "label": "المخرجون",
+                "value": [
+                  "Casper Kelly"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1514026",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "runtime",
+                "label": "مدة العرض",
+                "value": [
+                  96
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1514026",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "productionCompanies",
+                "label": "شركات الإنتاج",
+                "value": [
+                  "BoulderLight Pictures",
+                  "Low Spark Films",
+                  "SIPUR",
+                  "Substance"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/1514026",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "relatedWorks",
+                "label": "أعمال مرتبطة",
+                "value": [
+                  {
+                    "title": "كيف قابلت امك",
+                    "year": 2005,
+                    "sharedGenres": "كوميديا",
+                    "sharedPeople": "كريستين ميلوتي"
+                  },
+                  {
+                    "title": "بين النجوم",
+                    "year": 2014,
+                    "sharedGenres": "",
+                    "sharedPeople": "توفر غريس"
+                  },
+                  {
+                    "title": "El despertar",
+                    "year": 2026,
+                    "sharedGenres": "فانتازيا,رعب",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "Forgotten Island",
+                    "year": 2026,
+                    "sharedGenres": "فانتازيا,كوميديا",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "بينوكيو: بلا خيط",
+                    "year": 2026,
+                    "sharedGenres": "فانتازيا,رعب",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "فلم موانا",
+                    "year": 2026,
+                    "sharedGenres": "فانتازيا,كوميديا",
+                    "sharedPeople": ""
+                  }
+                ],
+                "source": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog",
+                "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        }
+      },
+      "nextAttemptAt": 1794772121340,
+      "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
+      "updatedAt": "2026-11-15T19:45:00.272Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "movie:1514026",
+        "title": "بادي",
+        "type": "movie",
+        "collectedAt": "2026-11-15T19:44:59.709Z",
+        "evidenceCount": 11,
+        "sourceCount": 2,
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1514026"
+          },
+          {
+            "name": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "بادي"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1514026",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "2026-08-27"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1514026",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "في عالم برنامج أطفال زاهي الألوان، يقضي مجموعة من الأطفال أيامهم في الغناء والرقص ومساعدة وحيد قرن برتقالي على نشر السعادة، لكن حين يرفض أحدهم المشاركة يغضب وحيد القرن، وتبدأ الشقوق في الظهور في هذا العالم المثالي ظاهريًا."
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1514026",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "رعب",
+              "كوميديا",
+              "فانتازيا"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1514026",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "rating",
+            "label": "تقييم المصدر",
+            "value": [
+              6.81
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1514026",
+            "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+          },
+          {
+            "key": "voteCount",
+            "label": "عدد الأصوات",
+            "value": [
+              279
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1514026",
+            "confidence": "مقياس حجم العينة وليس الجودة"
+          },
+          {
+            "key": "cast",
+            "label": "طاقم التمثيل",
+            "value": [
+              "كيغان-مايكل كي بدور Buddy / Dark Buddy (voice)",
+              "Delaney Quinn بدور Freddy",
+              "Tristan Borders بدور Oliver",
+              "Madison Skyy Polan بدور Hannah",
+              "Caleb Williams بدور Wade",
+              "كريستين ميلوتي بدور Grace",
+              "توفر غريس بدور Ben"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1514026",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "directors",
+            "label": "المخرجون",
+            "value": [
+              "Casper Kelly"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1514026",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "runtime",
+            "label": "مدة العرض",
+            "value": [
+              96
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1514026",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "productionCompanies",
+            "label": "شركات الإنتاج",
+            "value": [
+              "BoulderLight Pictures",
+              "Low Spark Films",
+              "SIPUR",
+              "Substance"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1514026",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "relatedWorks",
+            "label": "أعمال مرتبطة",
+            "value": [
+              {
+                "title": "كيف قابلت امك",
+                "year": 2005,
+                "sharedGenres": "كوميديا",
+                "sharedPeople": "كريستين ميلوتي"
+              },
+              {
+                "title": "بين النجوم",
+                "year": 2014,
+                "sharedGenres": "",
+                "sharedPeople": "توفر غريس"
+              },
+              {
+                "title": "El despertar",
+                "year": 2026,
+                "sharedGenres": "فانتازيا,رعب",
+                "sharedPeople": ""
+              },
+              {
+                "title": "Forgotten Island",
+                "year": 2026,
+                "sharedGenres": "فانتازيا,كوميديا",
+                "sharedPeople": ""
+              },
+              {
+                "title": "بينوكيو: بلا خيط",
+                "year": 2026,
+                "sharedGenres": "فانتازيا,رعب",
+                "sharedPeople": ""
+              },
+              {
+                "title": "فلم موانا",
+                "year": 2026,
+                "sharedGenres": "فانتازيا,كوميديا",
+                "sharedPeople": ""
+              }
+            ],
+            "source": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "movie:755898": {
+      "key": "movie:755898",
+      "type": "movie",
+      "id": "755898",
+      "createdAt": "2026-11-15T19:45:00.276Z",
+      "attemptCount": 1,
+      "status": "waiting",
+      "item": {
+        "id": "755898",
+        "type": "movie",
+        "name": "حرب العوالم",
+        "originalTitle": "War of the Worlds",
+        "description": "تدور أحداث فيلم \"حرب العوالم \" 2025 في عالم يتعرض لغزو فضائي، لكن الهجوم لا يكون بالطريقة التقليدية. تعتمد الكائنات الفضائية على سرقة المعلومات الشخصية للبشر واستغلالها عبر البيانات. يكتشف شخصية تدعى \"رادفورد\" مؤامرة كبيرة تهدد الأمن القومي، ويدرك أن المعركة هذه المرة ليست بالأسلحة فقط، بل من خلال الفضاء الرقمي.",
+        "date": "2025-07-29",
+        "poster": "https://image.tmdb.org/t/p/w500/2lpAL0ayJRna7dM2yqtCA4ppSPn.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w780/iZLqwEwUViJdSkGVjePGhxYzbDb.jpg",
+        "rating": 4.034,
+        "genres": [
+          "خيال علمي",
+          "إثارة"
+        ],
+        "sourceUrl": "https://www.themoviedb.org/movie/755898",
+        "source": "TMDB",
+        "popularity": 79.4434,
+        "sourceMetricName": "TMDB popularity",
+        "sourceMetricValue": 79.4434,
+        "trendConfidence": "مرتفع",
+        "trendRank": 15,
+        "fieldSources": {
+          "catalog_related_works": {
+            "source": "VIBECRITIC_D1",
+            "url": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:45:00.772Z"
+          }
+        },
+        "sourceVoteCount": 1204,
+        "metadata": {
+          "voteAverage": 4.034,
+          "voteCount": 1204,
+          "youtubeVideoId": null,
+          "youtubeVideoTitle": null,
+          "genres": [
+            "خيال علمي",
+            "إثارة"
+          ],
+          "directors": [
+            "Rich Lee"
+          ],
+          "creators": [],
+          "cast": [
+            "آيس كيوب بدور William Radford",
+            "إيفا لانغوريا بدور NASA Scientist Sandra Salas",
+            "كلارك غريغ بدور NSA Director Donald Briggs",
+            "إيمان بنسون بدور Faith Radford",
+            "Henry Hunter Hall بدور David Radford",
+            "ديفون بوستيك بدور Mark Goodman",
+            "Andrea Savage بدور FBI Field Agent Sheila Jeffries"
+          ],
+          "runtime": 90,
+          "episodeRuntime": [],
+          "seasons": null,
+          "episodes": null,
+          "productionCompanies": [
+            "Universal Pictures",
+            "Bazelevs",
+            "Patrick Aiello Productions"
+          ],
+          "watchProviders": [],
+          "watchProviderUrl": null,
+          "communityReviews": [],
+          "similar": [
+            {
+              "id": "40077",
+              "title": "變臉迷情"
+            },
+            {
+              "id": "40078",
+              "title": "Breeders"
+            },
+            {
+              "id": "493714",
+              "title": "야경: 죽음의 택시"
+            },
+            {
+              "id": "678356",
+              "title": "Game Over"
+            },
+            {
+              "id": "678482",
+              "title": "Los visitados"
+            }
+          ],
+          "catalogContext": {
+            "source": "VibeCritic D1 entertainment catalog",
+            "sourceUrl": "https://vibecritic.pages.dev/api/catalog",
+            "observedAt": "2026-11-15T19:45:00.772Z",
+            "base": {
+              "tmdbId": 755898,
+              "type": "movie",
+              "title": "حرب العوالم",
+              "originalTitle": "War of the Worlds",
+              "overview": "تدور أحداث فيلم \"حرب العوالم \" 2025 في عالم يتعرض لغزو فضائي، لكن الهجوم لا يكون بالطريقة التقليدية. تعتمد الكائنات الفضائية على سرقة المعلومات الشخصية للبشر واستغلالها عبر البيانات. يكتشف شخصية تدعى \"رادفورد\" مؤامرة كبيرة تهدد الأمن القومي، ويدرك أن المعركة هذه المرة ليست بالأسلحة فقط، بل من خلال الفضاء الرقمي.",
+              "releaseDate": "2025-07-29",
+              "year": 2025,
+              "runtime": 90,
+              "status": "Released",
+              "rating": 4.034,
+              "votes": 1204,
+              "popularity": 87.1964,
+              "originalLanguage": "en",
+              "genres": [
+                "إثارة",
+                "خيال علمي"
+              ],
+              "cast": [
+                "آيس كيوب بدور William Radford",
+                "إيفا لانغوريا بدور NASA Scientist Sandra Salas",
+                "كلارك غريغ بدور NSA Director Donald Briggs",
+                "إيمان بنسون بدور Faith Radford",
+                "Henry Hunter Hall بدور David Radford",
+                "ديفون بوستيك بدور Mark Goodman",
+                "Andrea Savage بدور FBI Field Agent Sheila Jeffries",
+                "Nicole Pulliam بدور News Reporter",
+                "Michael O'Neill بدور Secretary of Defense Walter Crystal",
+                "Jim Meskimen بدور POTUS"
+              ],
+              "directors": [
+                "Rich Lee"
+              ],
+              "creators": [],
+              "updatedAt": "2026-11-15T10:18:39.242Z"
+            },
+            "relatedWorks": [
+              {
+                "tmdbId": "1400940",
+                "type": "movie",
+                "title": "كلايفيس",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "إثارة,خيال علمي",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1384216",
+                "type": "movie",
+                "title": "نجوم الكلاب",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "إثارة,خيال علمي",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1101383",
+                "type": "movie",
+                "title": "نهاية شارع أوك",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "إثارة,خيال علمي",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1275779",
+                "type": "movie",
+                "title": "يوم الإفصاح",
+                "year": 2026,
+                "sharedGenreCount": 2,
+                "sharedPersonCount": 0,
+                "sharedGenres": "إثارة,خيال علمي",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1263337",
+                "type": "movie",
+                "title": "قلب الوحش",
+                "year": 2026,
+                "sharedGenreCount": 1,
+                "sharedPersonCount": 0,
+                "sharedGenres": "إثارة",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              },
+              {
+                "tmdbId": "1423191",
+                "type": "movie",
+                "title": "ريزدنت إيفل",
+                "year": 2026,
+                "sharedGenreCount": 1,
+                "sharedPersonCount": 0,
+                "sharedGenres": "خيال علمي",
+                "sharedPeople": "",
+                "catalogUpdatedAt": "2026-11-15T10:18:39.242Z"
+              }
+            ],
+            "limitation": "بيانات الكتالوج تصف حقولاً فهرسية موثقة داخلياً؛ الروابط بين الأعمال مبنية على تصنيفات أو أسماء طاقم مشتركة ولا تثبت تشابهاً فنياً أو جودة أو تأثيراً."
+          },
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "movie:755898",
+            "title": "حرب العوالم",
+            "type": "movie",
+            "collectedAt": "2026-11-15T19:45:00.957Z",
+            "evidenceCount": 11,
+            "sourceCount": 2,
+            "sources": [
+              {
+                "name": "TMDB",
+                "url": "https://www.themoviedb.org/movie/755898"
+              },
+              {
+                "name": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "حرب العوالم"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/755898",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "2025-07-29"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/755898",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "تدور أحداث فيلم \"حرب العوالم \" 2025 في عالم يتعرض لغزو فضائي، لكن الهجوم لا يكون بالطريقة التقليدية. تعتمد الكائنات الفضائية على سرقة المعلومات الشخصية للبشر واستغلالها عبر البيانات. يكتشف شخصية تدعى \"رادفورد\" مؤامرة كبيرة تهدد الأمن القومي، ويدرك أن المعركة هذه المرة ليست بالأسلحة فقط، بل من خلال الفضاء الرقمي."
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/755898",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "خيال علمي",
+                  "إثارة"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/755898",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "rating",
+                "label": "تقييم المصدر",
+                "value": [
+                  4.034
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/755898",
+                "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+              },
+              {
+                "key": "voteCount",
+                "label": "عدد الأصوات",
+                "value": [
+                  1204
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/755898",
+                "confidence": "مقياس حجم العينة وليس الجودة"
+              },
+              {
+                "key": "cast",
+                "label": "طاقم التمثيل",
+                "value": [
+                  "آيس كيوب بدور William Radford",
+                  "إيفا لانغوريا بدور NASA Scientist Sandra Salas",
+                  "كلارك غريغ بدور NSA Director Donald Briggs",
+                  "إيمان بنسون بدور Faith Radford",
+                  "Henry Hunter Hall بدور David Radford",
+                  "ديفون بوستيك بدور Mark Goodman",
+                  "Andrea Savage بدور FBI Field Agent Sheila Jeffries"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/755898",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "directors",
+                "label": "المخرجون",
+                "value": [
+                  "Rich Lee"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/755898",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "runtime",
+                "label": "مدة العرض",
+                "value": [
+                  90
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/755898",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "productionCompanies",
+                "label": "شركات الإنتاج",
+                "value": [
+                  "Universal Pictures",
+                  "Bazelevs",
+                  "Patrick Aiello Productions"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/movie/755898",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "relatedWorks",
+                "label": "أعمال مرتبطة",
+                "value": [
+                  {
+                    "title": "كلايفيس",
+                    "year": 2026,
+                    "sharedGenres": "إثارة,خيال علمي",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "نجوم الكلاب",
+                    "year": 2026,
+                    "sharedGenres": "إثارة,خيال علمي",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "نهاية شارع أوك",
+                    "year": 2026,
+                    "sharedGenres": "إثارة,خيال علمي",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "يوم الإفصاح",
+                    "year": 2026,
+                    "sharedGenres": "إثارة,خيال علمي",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "قلب الوحش",
+                    "year": 2026,
+                    "sharedGenres": "إثارة",
+                    "sharedPeople": ""
+                  },
+                  {
+                    "title": "ريزدنت إيفل",
+                    "year": 2026,
+                    "sharedGenres": "خيال علمي",
+                    "sharedPeople": ""
+                  }
+                ],
+                "source": "VibeCritic D1 entertainment catalog",
+                "url": "https://vibecritic.pages.dev/api/catalog",
+                "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        }
+      },
+      "nextAttemptAt": 1794772121340,
+      "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
+      "updatedAt": "2026-11-15T19:45:01.716Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "movie:755898",
+        "title": "حرب العوالم",
+        "type": "movie",
+        "collectedAt": "2026-11-15T19:45:00.957Z",
+        "evidenceCount": 11,
+        "sourceCount": 2,
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/755898"
+          },
+          {
+            "name": "VibeCritic D1 entertainment catalog",
+            "url": "https://vibecritic.pages.dev/api/catalog"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "حرب العوالم"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/755898",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "2025-07-29"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/755898",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "تدور أحداث فيلم \"حرب العوالم \" 2025 في عالم يتعرض لغزو فضائي، لكن الهجوم لا يكون بالطريقة التقليدية. تعتمد الكائنات الفضائية على سرقة المعلومات الشخصية للبشر واستغلالها عبر البيانات. يكتشف شخصية تدعى \"رادفورد\" مؤامرة كبيرة تهدد الأمن القومي، ويدرك أن المعركة هذه المرة ليست بالأسلحة فقط، بل من خلال الفضاء الرقمي."
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/755898",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "خيال علمي",
+              "إثارة"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/755898",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "rating",
+            "label": "تقييم المصدر",
+            "value": [
+              4.034
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/755898",
+            "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+          },
+          {
+            "key": "voteCount",
+            "label": "عدد الأصوات",
+            "value": [
+              1204
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/755898",
+            "confidence": "مقياس حجم العينة وليس الجودة"
+          },
+          {
+            "key": "cast",
+            "label": "طاقم التمثيل",
+            "value": [
+              "آيس كيوب بدور William Radford",
+              "إيفا لانغوريا بدور NASA Scientist Sandra Salas",
+              "كلارك غريغ بدور NSA Director Donald Briggs",
+              "إيمان بنسون بدور Faith Radford",
+              "Henry Hunter Hall بدور David Radford",
+              "ديفون بوستيك بدور Mark Goodman",
+              "Andrea Savage بدور FBI Field Agent Sheila Jeffries"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/755898",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "directors",
+            "label": "المخرجون",
+            "value": [
+              "Rich Lee"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/755898",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "runtime",
+            "label": "مدة العرض",
+            "value": [
+              90
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/755898",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "productionCompanies",
+            "label": "شركات الإنتاج",
+            "value": [
+              "Universal Pictures",
+              "Bazelevs",
+              "Patrick Aiello Productions"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/movie/755898",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "relatedWorks",
+            "label": "أعمال مرتبطة",
+            "value": [
+              {
+                "title": "كلايفيس",
+                "year": 2026,
+                "sharedGenres": "إثارة,خيال علمي",
+                "sharedPeople": ""
+              },
+              {
+                "title": "نجوم الكلاب",
+                "year": 2026,
+                "sharedGenres": "إثارة,خيال علمي",
+                "sharedPeople": ""
+              },
+              {
+                "title": "نهاية شارع أوك",
+                "year": 2026,
+                "sharedGenres": "إثارة,خيال علمي",
+                "sharedPeople": ""
+              },
+              {
+                "title": "يوم الإفصاح",
+                "year": 2026,
+                "sharedGenres": "إثارة,خيال علمي",
+                "sharedPeople": ""
+              },
+              {
+                "title": "قلب الوحش",
+                "year": 2026,
+                "sharedGenres": "إثارة",
+                "sharedPeople": ""
+              },
+              {
+                "title": "ريزدنت إيفل",
+                "year": 2026,
+                "sharedGenres": "خيال علمي",
                 "sharedPeople": ""
               }
             ],

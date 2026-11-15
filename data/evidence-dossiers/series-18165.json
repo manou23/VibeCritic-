@@ -1,0 +1,213 @@
+{
+  "version": 1,
+  "workKey": "series:18165",
+  "title": "يوميات مصاص الدماء",
+  "type": "series",
+  "collectedAt": "2026-11-15T19:44:53.730Z",
+  "evidenceCount": 14,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/tv/18165"
+    },
+    {
+      "name": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "يوميات مصاص الدماء"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/18165",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2009-09-10"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/18165",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "بعد وفاة والديها، تحاول إيلينا جيلبرت بناء حياة جديدة في ميستيك فولز، فتلتقي بالأخوين ستيفان ودامون سالفاتور، اللذين يخفيان حقيقة كونهما مصاصي دماء وتربطهما بها علاقة معقدة. وتزداد حياتها اضطرابًا حين تكتشف أن ملامحها تشبه كاثرين، المرأة التي أحبها الأخوان في الماضي. ومع أصدقائها، تجد إيلينا نفسها وسط صراعات تشمل مصاصي الدماء والسحرة والمستذئبين وأسرار العائلات المؤسسة للبلدة؛ صراعات تختبر روابطهم وقدرتهم على حماية موطنهم."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/18165",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "دراما",
+        "خيال علمي وفانتازيا"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/18165",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        8.298
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/18165",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        9855
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/18165",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "Paul Wesley بدور Stefan Salvatore",
+        "إيان سومرهالدر بدور Damon Salvatore",
+        "كاترينا غراهام بدور Bonnie Bennett",
+        "كانديس كينغ بدور Caroline Forbes",
+        "زاك ريورج بدور Matt Donovan",
+        "مايكل مالاركي بدور Enzo St. John",
+        "ماثيو ديفيس بدور Alaric Saltzman"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/18165",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "creators",
+      "label": "المبدعون",
+      "value": [
+        "Julie Plec",
+        "كيفين ويليامسون"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/18165",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "runtime",
+      "label": "مدة العرض",
+      "value": [
+        43
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/18165",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "episodeRuntime",
+      "label": "مدة الحلقة",
+      "value": [
+        43
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/18165",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "seasons",
+      "label": "عدد المواسم",
+      "value": [
+        8
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/18165",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "episodes",
+      "label": "عدد الحلقات",
+      "value": [
+        171
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/18165",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "Warner Bros. Television",
+        "Alloy Entertainment",
+        "Outerbanks Entertainment",
+        "Bonanza Productions",
+        "CBS Studios"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/18165",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "relatedWorks",
+      "label": "أعمال مرتبطة",
+      "value": [
+        {
+          "title": "دكتور هو",
+          "year": 2005,
+          "sharedGenres": "دراما,خيال علمي وفانتازيا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "قصة رعب امريكية",
+          "year": 2011,
+          "sharedGenres": "دراما,خيال علمي وفانتازيا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "فلاش",
+          "year": 2014,
+          "sharedGenres": "دراما,خيال علمي وفانتازيا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "The 100",
+          "year": 2014,
+          "sharedGenres": "دراما,خيال علمي وفانتازيا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "رحلة ڤيجن",
+          "year": 2026,
+          "sharedGenres": "دراما,خيال علمي وفانتازيا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "شخص محل إهتمام",
+          "year": 2011,
+          "sharedGenres": "دراما,خيال علمي وفانتازيا",
+          "sharedPeople": ""
+        }
+      ],
+      "source": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

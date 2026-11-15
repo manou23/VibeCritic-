@@ -1,0 +1,180 @@
+{
+  "version": 1,
+  "workKey": "movie:755898",
+  "title": "حرب العوالم",
+  "type": "movie",
+  "collectedAt": "2026-11-15T19:45:00.957Z",
+  "evidenceCount": 11,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/movie/755898"
+    },
+    {
+      "name": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "حرب العوالم"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/755898",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2025-07-29"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/755898",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "تدور أحداث فيلم \"حرب العوالم \" 2025 في عالم يتعرض لغزو فضائي، لكن الهجوم لا يكون بالطريقة التقليدية. تعتمد الكائنات الفضائية على سرقة المعلومات الشخصية للبشر واستغلالها عبر البيانات. يكتشف شخصية تدعى \"رادفورد\" مؤامرة كبيرة تهدد الأمن القومي، ويدرك أن المعركة هذه المرة ليست بالأسلحة فقط، بل من خلال الفضاء الرقمي."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/755898",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "خيال علمي",
+        "إثارة"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/755898",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        4.034
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/755898",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        1204
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/755898",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "آيس كيوب بدور William Radford",
+        "إيفا لانغوريا بدور NASA Scientist Sandra Salas",
+        "كلارك غريغ بدور NSA Director Donald Briggs",
+        "إيمان بنسون بدور Faith Radford",
+        "Henry Hunter Hall بدور David Radford",
+        "ديفون بوستيك بدور Mark Goodman",
+        "Andrea Savage بدور FBI Field Agent Sheila Jeffries"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/755898",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "directors",
+      "label": "المخرجون",
+      "value": [
+        "Rich Lee"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/755898",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "runtime",
+      "label": "مدة العرض",
+      "value": [
+        90
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/755898",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "Universal Pictures",
+        "Bazelevs",
+        "Patrick Aiello Productions"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/755898",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "relatedWorks",
+      "label": "أعمال مرتبطة",
+      "value": [
+        {
+          "title": "كلايفيس",
+          "year": 2026,
+          "sharedGenres": "إثارة,خيال علمي",
+          "sharedPeople": ""
+        },
+        {
+          "title": "نجوم الكلاب",
+          "year": 2026,
+          "sharedGenres": "إثارة,خيال علمي",
+          "sharedPeople": ""
+        },
+        {
+          "title": "نهاية شارع أوك",
+          "year": 2026,
+          "sharedGenres": "إثارة,خيال علمي",
+          "sharedPeople": ""
+        },
+        {
+          "title": "يوم الإفصاح",
+          "year": 2026,
+          "sharedGenres": "إثارة,خيال علمي",
+          "sharedPeople": ""
+        },
+        {
+          "title": "قلب الوحش",
+          "year": 2026,
+          "sharedGenres": "إثارة",
+          "sharedPeople": ""
+        },
+        {
+          "title": "ريزدنت إيفل",
+          "year": 2026,
+          "sharedGenres": "خيال علمي",
+          "sharedPeople": ""
+        }
+      ],
+      "source": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

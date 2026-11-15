@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "workKey": "movie:1514026",
+  "title": "بادي",
+  "type": "movie",
+  "collectedAt": "2026-11-15T19:44:59.709Z",
+  "evidenceCount": 11,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1514026"
+    },
+    {
+      "name": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "بادي"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1514026",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2026-08-27"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1514026",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "في عالم برنامج أطفال زاهي الألوان، يقضي مجموعة من الأطفال أيامهم في الغناء والرقص ومساعدة وحيد قرن برتقالي على نشر السعادة، لكن حين يرفض أحدهم المشاركة يغضب وحيد القرن، وتبدأ الشقوق في الظهور في هذا العالم المثالي ظاهريًا."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1514026",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "رعب",
+        "كوميديا",
+        "فانتازيا"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1514026",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        6.81
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1514026",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        279
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1514026",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "كيغان-مايكل كي بدور Buddy / Dark Buddy (voice)",
+        "Delaney Quinn بدور Freddy",
+        "Tristan Borders بدور Oliver",
+        "Madison Skyy Polan بدور Hannah",
+        "Caleb Williams بدور Wade",
+        "كريستين ميلوتي بدور Grace",
+        "توفر غريس بدور Ben"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1514026",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "directors",
+      "label": "المخرجون",
+      "value": [
+        "Casper Kelly"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1514026",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "runtime",
+      "label": "مدة العرض",
+      "value": [
+        96
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1514026",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "BoulderLight Pictures",
+        "Low Spark Films",
+        "SIPUR",
+        "Substance"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1514026",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "relatedWorks",
+      "label": "أعمال مرتبطة",
+      "value": [
+        {
+          "title": "كيف قابلت امك",
+          "year": 2005,
+          "sharedGenres": "كوميديا",
+          "sharedPeople": "كريستين ميلوتي"
+        },
+        {
+          "title": "بين النجوم",
+          "year": 2014,
+          "sharedGenres": "",
+          "sharedPeople": "توفر غريس"
+        },
+        {
+          "title": "El despertar",
+          "year": 2026,
+          "sharedGenres": "فانتازيا,رعب",
+          "sharedPeople": ""
+        },
+        {
+          "title": "Forgotten Island",
+          "year": 2026,
+          "sharedGenres": "فانتازيا,كوميديا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "بينوكيو: بلا خيط",
+          "year": 2026,
+          "sharedGenres": "فانتازيا,رعب",
+          "sharedPeople": ""
+        },
+        {
+          "title": "فلم موانا",
+          "year": 2026,
+          "sharedGenres": "فانتازيا,كوميديا",
+          "sharedPeople": ""
+        }
+      ],
+      "source": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

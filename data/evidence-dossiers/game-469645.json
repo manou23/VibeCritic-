@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "workKey": "game:469645",
+  "title": "Titan Quest 2",
+  "type": "game",
+  "collectedAt": "2026-11-15T19:44:47.129Z",
+  "evidenceCount": 11,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "RAWG",
+      "url": "https://rawg.io/games/titan-quest-2"
+    },
+    {
+      "name": "RAWG",
+      "url": "https://api.rawg.io/api/games/469645/screenshots"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "Titan Quest 2"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/titan-quest-2",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2027-01-19"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/titan-quest-2",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "Nemesis, Goddess of Retribution, is out of control. She is corrupting the Threads of Fate and punishing all those who oppose her. Take up your weapon, fight alongside gods, and change fate itself in Titan Quest 2, an action RPG inspired by Greek mythology."
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/titan-quest-2",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "Action",
+        "RPG"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/titan-quest-2",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        2.38
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/titan-quest-2",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        8
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/titan-quest-2",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "platforms",
+      "label": "المنصات",
+      "value": [
+        "PlayStation 5",
+        "Xbox Series S/X",
+        "PC"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/titan-quest-2",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "developers",
+      "label": "المطورون",
+      "value": [
+        "Grimlore Games"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/titan-quest-2",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "publishers",
+      "label": "الناشرون",
+      "value": [
+        "THQ Nordic"
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/titan-quest-2",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "stores",
+      "label": "روابط المتاجر",
+      "value": [
+        {
+          "name": "Steam",
+          "url": null
+        }
+      ],
+      "source": "RAWG",
+      "url": "https://rawg.io/games/titan-quest-2",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "screenshots",
+      "label": "لقطات شاشة من اللعبة",
+      "value": [
+        "https://media.rawg.io/media/screenshots/0e6/0e62ae82b8bb9524154c9ef967b20262.jpg",
+        "https://media.rawg.io/media/screenshots/d07/d07f6c9fcc50635dfa184f74acc3722e.jpg",
+        "https://media.rawg.io/media/screenshots/4f2/4f2f8d17f18f6ab9227bf055d222b7fc.jpg"
+      ],
+      "source": "RAWG",
+      "url": "https://api.rawg.io/api/games/469645/screenshots",
+      "confidence": "صور مرجعية من قاعدة بيانات؛ لا تثبت وحدها الأداء الفعلي"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}
