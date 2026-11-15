@@ -9,6 +9,8 @@ reviewVersion: 1
 type: game
 date: 2026-11-15
 releaseDate: "2025-06-26"
+poster: "https://m.media-amazon.com/images/M/MV5BYmVkNDM3MzUtN2YyYS00MDg0LWIxN2EtMjQ2ZGQ1ZDhlZWY4XkEyXkFqcGc%40._V1_.jpg"
+backdrop: "https://m.media-amazon.com/images/M/MV5BYmVkNDM3MzUtN2YyYS00MDg0LWIxN2EtMjQ2ZGQ1ZDhlZWY4XkEyXkFqcGc%40._V1_.jpg"
 score: 8.7
 storyScore: 8.6
 visualsScore: 9.5

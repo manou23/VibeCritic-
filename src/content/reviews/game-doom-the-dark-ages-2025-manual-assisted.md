@@ -9,6 +9,8 @@ reviewVersion: 1
 type: game
 date: 2026-11-15
 releaseDate: "2025-05-15"
+poster: "https://image.api.playstation.com/vulcan/ap/rnd/202501/1405/1893e77387eec1591406d71c98f8d4074b7c32664c3bf5af.jpg"
+backdrop: "https://image.api.playstation.com/vulcan/ap/rnd/202501/1405/1893e77387eec1591406d71c98f8d4074b7c32664c3bf5af.jpg"
 score: 8.4
 storyScore: 7.5
 visualsScore: 9.1

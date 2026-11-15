@@ -9,6 +9,8 @@ reviewVersion: 1
 type: movie
 date: 2026-11-15
 releaseDate: "2025-09-26"
+poster: "https://www.impawards.com/2025/posters/one_battle_after_another_ver11_xlg.jpg"
+backdrop: "https://www.impawards.com/2025/posters/one_battle_after_another_ver11_xlg.jpg"
 score: 8.6
 storyScore: 8.6
 visualsScore: 9.0

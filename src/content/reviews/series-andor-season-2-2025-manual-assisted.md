@@ -9,6 +9,8 @@ reviewVersion: 1
 type: series
 date: 2026-11-15
 releaseDate: "2025-04-22"
+poster: "https://cdn.moviepilot.de/files/1a74e72be77694543c5070b9a6241615ffea4156d82a3cc7cf202be4a68c/copyright/GlSs8vjW8AARR9s.jpeg"
+backdrop: "https://cdn.moviepilot.de/files/1a74e72be77694543c5070b9a6241615ffea4156d82a3cc7cf202be4a68c/copyright/GlSs8vjW8AARR9s.jpeg"
 score: 8.9
 storyScore: 9.2
 visualsScore: 9.1

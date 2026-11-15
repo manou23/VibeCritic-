@@ -9,6 +9,8 @@ reviewVersion: 1
 type: game
 date: 2026-11-15
 releaseDate: "2025-02-28"
+poster: "https://myhotposters.com/cdn/shop/files/mL7640_1024x1024.jpg?v=1748530798"
+backdrop: "https://myhotposters.com/cdn/shop/files/mL7640_1024x1024.jpg?v=1748530798"
 score: 8.3
 storyScore: 7.8
 visualsScore: 9.0

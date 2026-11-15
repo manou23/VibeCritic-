@@ -9,6 +9,8 @@ reviewVersion: 1
 type: series
 date: 2026-11-15
 releaseDate: "2025-02-16"
+poster: "https://cloudfront-us-east-1.images.arcpublishing.com/infobae/PLS3LKDG6JDA7NHZBNTA7U7SKU.jpg"
+backdrop: "https://cloudfront-us-east-1.images.arcpublishing.com/infobae/PLS3LKDG6JDA7NHZBNTA7U7SKU.jpg"
 score: 8.5
 storyScore: 8.3
 visualsScore: 9.2

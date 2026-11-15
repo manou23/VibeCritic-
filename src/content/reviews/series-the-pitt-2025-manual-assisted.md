@@ -8,6 +8,8 @@ reviewVersion: 1
 type: series
 date: 2026-11-15
 releaseDate: "2025-01-09"
+poster: "https://m.media-amazon.com/images/M/MV5BYjUwYzIzM2YtYTkzMi00NTg1LTgxZDItMDVmN2NhMzUzZGMxXkEyXkFqcGc%40._V1_FMjpg_UX1000_.jpg"
+backdrop: "https://m.media-amazon.com/images/M/MV5BYjUwYzIzM2YtYTkzMi00NTg1LTgxZDItMDVmN2NhMzUzZGMxXkEyXkFqcGc%40._V1_FMjpg_UX1000_.jpg"
 score: 8.4
 storyScore: 8.4
 visualsScore: 8.3
