@@ -43,6 +43,8 @@ sourceName: "SEGA / Sports Interactive"
 sourceId: "fm27-2026"
 sourceUrl: "https://www.footballmanager.com/fm27"
 aiGenerated: false
+youtubeVideoId: "LdhGqvvBO1M"
+youtubeVideoTitle: "Football Manager 27 | Official Launch Trailer"
 ---
 
 > **ملاحظة منهجية:** هذه مراجعة تحريرية تحليلية مبنية على وصف الميزات الرسمي وملاحظات الإطلاق المنشورة حتى 14 نوفمبر 2026. لا نزعم إجراء تجربة لعب شخصية أو اختباراً ممتداً لكل الأنماط؛ لذلك نفصل بين تصميم الأنظمة المعلن وبين الحكم الذي يحتاج إلى ساعات لعب ومقارنة على أجهزة مختلفة.
