@@ -259,7 +259,7 @@
           "used": 53,
           "limit": 50,
           "remaining": 0,
-          "observedAt": "2026-11-15T19:51:51.599Z",
+          "observedAt": "2026-11-15T19:55:20.172Z",
           "source": "OpenRouter GET /api/v1/key"
         },
         "lastAttemptAt": "2026-11-15T00:04:25.510Z",
@@ -295,12 +295,12 @@
             "successes": 0
           },
           "groq": {
-            "attempts": 1,
-            "requests": 2,
-            "inputTokens": 0,
-            "outputTokens": 0,
-            "totalTokens": 0,
-            "successes": 0
+            "attempts": 2,
+            "requests": 10,
+            "inputTokens": 7607,
+            "outputTokens": 3265,
+            "totalTokens": 10872,
+            "successes": 1
           },
           "cloudflare-workers-ai": {
             "attempts": 1,
@@ -327,6 +327,14 @@
             "outputTokens": 2401,
             "totalTokens": 13578,
             "successes": 1
+          },
+          "groq": {
+            "attempts": 1,
+            "requests": 8,
+            "inputTokens": 7655,
+            "outputTokens": 3020,
+            "totalTokens": 10675,
+            "successes": 1
           }
         },
         "series:1408": {
@@ -345,6 +353,14 @@
             "outputTokens": 0,
             "totalTokens": 0,
             "successes": 0
+          },
+          "groq": {
+            "attempts": 1,
+            "requests": 8,
+            "inputTokens": 7617,
+            "outputTokens": 3036,
+            "totalTokens": 10653,
+            "successes": 1
           }
         },
         "movie:687163": {
@@ -362,6 +378,14 @@
             "inputTokens": 23311,
             "outputTokens": 8956,
             "totalTokens": 32267,
+            "successes": 1
+          },
+          "groq": {
+            "attempts": 1,
+            "requests": 16,
+            "inputTokens": 7728,
+            "outputTokens": 2759,
+            "totalTokens": 10487,
             "successes": 1
           }
         },
@@ -381,6 +405,14 @@
             "outputTokens": 18000,
             "totalTokens": 51627,
             "successes": 0
+          },
+          "groq": {
+            "attempts": 1,
+            "requests": 10,
+            "inputTokens": 7643,
+            "outputTokens": 2058,
+            "totalTokens": 9701,
+            "successes": 1
           }
         },
         "movie:1616687": {
@@ -399,6 +431,14 @@
             "outputTokens": 0,
             "totalTokens": 0,
             "successes": 0
+          },
+          "groq": {
+            "attempts": 1,
+            "requests": 10,
+            "inputTokens": 7627,
+            "outputTokens": 2327,
+            "totalTokens": 9954,
+            "successes": 1
           }
         },
         "movie:354912": {
@@ -417,6 +457,14 @@
             "outputTokens": 0,
             "totalTokens": 0,
             "successes": 0
+          },
+          "groq": {
+            "attempts": 1,
+            "requests": 10,
+            "inputTokens": 7740,
+            "outputTokens": 2225,
+            "totalTokens": 9965,
+            "successes": 1
           }
         },
         "game:972995": {
@@ -477,12 +525,42 @@
         },
         "game:1015421": {
           "groq": {
+            "attempts": 2,
+            "requests": 10,
+            "inputTokens": 7454,
+            "outputTokens": 2769,
+            "totalTokens": 10223,
+            "successes": 1
+          }
+        },
+        "game:469645": {
+          "groq": {
             "attempts": 1,
-            "requests": 4,
-            "inputTokens": 0,
-            "outputTokens": 0,
-            "totalTokens": 0,
-            "successes": 0
+            "requests": 8,
+            "inputTokens": 7598,
+            "outputTokens": 3249,
+            "totalTokens": 10847,
+            "successes": 1
+          }
+        },
+        "game:1008979": {
+          "groq": {
+            "attempts": 1,
+            "requests": 8,
+            "inputTokens": 7482,
+            "outputTokens": 2574,
+            "totalTokens": 10056,
+            "successes": 1
+          }
+        },
+        "game:1018045": {
+          "groq": {
+            "attempts": 1,
+            "requests": 8,
+            "inputTokens": 7464,
+            "outputTokens": 2539,
+            "totalTokens": 10003,
+            "successes": 1
           }
         }
       },
@@ -515,40 +593,35 @@
         }
       },
       "groq": {
-        "requests": 7,
-        "successes": 3,
+        "requests": 18,
+        "successes": 14,
         "failures": 4,
-        "apiRequests": 20,
-        "totalTokens": 15848,
-        "inputTokens": 11353,
-        "outputTokens": 4495,
-        "lastAttemptAt": "2026-11-15T19:52:06.094Z",
+        "apiRequests": 120,
+        "totalTokens": 129284,
+        "inputTokens": 94968,
+        "outputTokens": 34316,
+        "lastAttemptAt": "2026-11-15T20:08:28.772Z",
         "lastUsage": {
-          "requests": 4,
-          "inputTokens": 0,
-          "outputTokens": 0,
-          "totalTokens": 0,
-          "reportedUsage": false,
+          "requests": 10,
+          "inputTokens": 7740,
+          "outputTokens": 2225,
+          "totalTokens": 9965,
+          "reportedUsage": true,
           "headers": {
             "x-ratelimit-limit-requests": "1000",
-            "x-ratelimit-remaining-requests": "997",
-            "x-ratelimit-reset-requests": "4m19.2s",
+            "x-ratelimit-remaining-requests": "977",
+            "x-ratelimit-reset-requests": "33m7.2s",
             "x-ratelimit-limit-tokens": "8000",
-            "x-ratelimit-remaining-tokens": "108",
-            "x-ratelimit-reset-tokens": "59.19s",
-            "retry-after": "30"
+            "x-ratelimit-remaining-tokens": "1703",
+            "x-ratelimit-reset-tokens": "47.227s",
+            "retry-after": "7"
           },
-          "durationMs": 150,
-          "at": "2026-11-15T19:52:06.094Z"
+          "durationMs": 68140,
+          "at": "2026-11-15T20:08:28.772Z"
         },
-        "blockedUntil": 1794772356094,
-        "blockedReason": "rate-limit",
-        "lastCooldown": {
-          "reason": "rate-limit",
-          "until": "2026-11-15T19:52:36.094Z",
-          "observedAt": "2026-11-15T19:52:06.095Z",
-          "status": 429
-        },
+        "blockedUntil": 0,
+        "blockedReason": "",
+        "lastCooldown": null,
         "consecutiveTransientFailures": 0
       },
       "cloudflare-workers-ai": {
