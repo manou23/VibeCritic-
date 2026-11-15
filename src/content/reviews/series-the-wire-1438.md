@@ -9,7 +9,7 @@ reviewVersion: 1
 type: series
 date: 2026-11-15
 releaseDate: "2002-06-02"
-poster: "https://image.tmdb.org/t/p/w500/4lbclFySvugI51fwsyxBTOm4DqK.jpg"
+poster: "https://image.tmdb.org/t/p/w500/dg7NuKDjmS6OzuNy33qt8kSkPA1.jpg"
 youtubeVideoTitle: "The Wire – Series Trailer"
 score: 8.8
 storyScore: 9.6
