@@ -16,6 +16,7 @@ on:
     branches: [main]
     paths:
       - 'src/**'
+      - 'public/**'
       - '!src/data/trending.json'
       - 'functions/**'
       - 'scripts/**'
