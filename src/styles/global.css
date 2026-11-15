@@ -1060,3 +1060,15 @@ img{max-width:100%}
 .footer-brand .vc-signature{width:64px;height:28px}
 @media(max-width:600px){.vc-signature{width:70px;height:31px}.brand-copy small{font-size:5px;letter-spacing:.55px}}
 @media(prefers-reduced-motion:reduce){.vc-wordmark,.vc-mark-v,.vc-mark-c,.vc-mark-star,.vc-mark-shards{animation:none!important}.vc-wordmark{opacity:0}.vc-mark-v,.vc-mark-c{transform:none!important;opacity:1}.vc-mark-star{opacity:1;transform:none!important}.vc-mark-shards{opacity:.35}}
+
+
+/* Signature flourish: orbiting spark, kinetic fragments and a magnetic lock pulse. */
+.vc-signature{overflow:visible;isolation:isolate}
+.vc-orbit-system{transform-box:view-box;transform-origin:56px 29px;opacity:0;animation:vc-orbit-life 5.6s ease-in-out infinite}
+.vc-orbit{stroke:var(--vc-accent);stroke-width:.85;stroke-dasharray:2 5;opacity:.72}
+.vc-orbit-point{fill:var(--vc-accent);filter:drop-shadow(0 0 2px var(--vc-accent))}
+.vc-impact-ring{stroke:var(--vc-accent);stroke-width:1.1;opacity:0;transform-box:view-box;transform-origin:56px 29px;animation:vc-impact 5.6s ease-out infinite}
+.vc-mark-star{filter:drop-shadow(0 0 2px var(--vc-accent))}
+@keyframes vc-orbit-life{0%,24%,76%,100%{opacity:0;transform:rotate(-22deg) scale(.72)}34%{opacity:.9}48%,66%{opacity:.68;transform:rotate(155deg) scale(1)}}
+@keyframes vc-impact{0%,39%,100%{opacity:0;transform:scale(.3)}45%{opacity:.85;transform:scale(.75)}61%{opacity:0;transform:scale(2.7)}}
+@media(prefers-reduced-motion:reduce){.vc-orbit-system,.vc-impact-ring{animation:none!important;opacity:0!important}}
