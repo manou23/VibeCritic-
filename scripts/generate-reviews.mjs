@@ -1051,13 +1051,20 @@ function buildEvidenceDossier(item) {
  add('voteCount','عدد الأصوات',Number(item.sourceVoteCount)>0?item.sourceVoteCount:null,primary,primaryUrl,'مقياس حجم العينة وليس الجودة');
  if(item.type==='game'){
   add('platforms','المنصات',metadata.platforms||item.platforms,primary,primaryUrl);
-  add('developers','المطورون',metadata.developers||item.developers,primary,primaryUrl);\n  add('publishers','الناشرون',metadata.publishers,primary,primaryUrl);
+  add('developers','المطورون',metadata.developers||item.developers,primary,primaryUrl);
+  add('publishers','الناشرون',metadata.publishers,primary,primaryUrl);
   add('metacritic','درجة Metacritic',metadata.metacritic,primary,primaryUrl,'درجة من مصدر تجميعي مستقل؛ لا تثبت وحدها جودة التجربة');
   add('tags','وسوم RAWG',metadata.sourceTags,primary,primaryUrl,'تصنيفات وصفية من قاعدة البيانات');
-  add('gameModes','أنماط اللعب',metadata.gameModes,primary,primaryUrl);\n  add('storyline','الخلفية القصصية',metadata.storyline,primary,primaryUrl);\n  add('franchise','السلسلة',metadata.franchise,primary,primaryUrl);\n  add('collection','المجموعة',metadata.collection,primary,primaryUrl);\n  add('officialVideos','مقاطع اللعبة المسجلة في IGDB',metadata.officialVideos,primary,primaryUrl);
+  add('gameModes','أنماط اللعب',metadata.gameModes,primary,primaryUrl);
+  add('storyline','الخلفية القصصية',metadata.storyline,primary,primaryUrl);
+  add('franchise','السلسلة',metadata.franchise,primary,primaryUrl);
+  add('collection','المجموعة',metadata.collection,primary,primaryUrl);
+  add('officialVideos','مقاطع اللعبة المسجلة في IGDB',metadata.officialVideos,primary,primaryUrl);
   add('perspectives','منظور اللعب',metadata.perspectives,primary,primaryUrl);
   add('engines','محركات اللعب',metadata.engines,primary,primaryUrl);
-  add('stores','روابط المتاجر',(metadata.stores||[]).map(store=>({name:store.name,url:store.url})),primary,primaryUrl);\n  add('screenshots','لقطات شاشة من اللعبة',metadata.screenshots,item.fieldSources?.screenshots?.source||'RAWG',item.fieldSources?.screenshots?.url,'صور مرجعية من قاعدة بيانات؛ لا تثبت وحدها الأداء الفعلي');\n  add('achievements','إنجازات اللعبة',(metadata.achievements||[]).map(x=>({name:x.name,description:x.description,percent:x.percent})),item.fieldSources?.achievements?.source||'RAWG',item.fieldSources?.achievements?.url,'بيانات إنجازات فهرسية؛ لا تثبت صعوبة اللعبة أو جودتها');
+  add('stores','روابط المتاجر',(metadata.stores||[]).map(store=>({name:store.name,url:store.url})),primary,primaryUrl);
+  add('screenshots','لقطات شاشة من اللعبة',metadata.screenshots,item.fieldSources?.screenshots?.source||'RAWG',item.fieldSources?.screenshots?.url,'صور مرجعية من قاعدة بيانات؛ لا تثبت وحدها الأداء الفعلي');
+  add('achievements','إنجازات اللعبة',(metadata.achievements||[]).map(x=>({name:x.name,description:x.description,percent:x.percent})),item.fieldSources?.achievements?.source||'RAWG',item.fieldSources?.achievements?.url,'بيانات إنجازات فهرسية؛ لا تثبت صعوبة اللعبة أو جودتها');
  }else{
   add('cast','طاقم التمثيل',metadata.cast,primary,primaryUrl);
   add('directors','المخرجون',metadata.directors,primary,primaryUrl);
