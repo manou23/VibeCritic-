@@ -34,6 +34,8 @@ externalVideoUrl: "https://www.dc.com/movies/superman-2025"
 externalVideoTitle: "Superman — Official Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
+youtubeVideoId: "MikgqM0LXr4"
+youtubeVideoTitle: "Official American Sign Language Trailer"
 ---
 > **منهجية المراجعة:** قراءة تحريرية بحثية تستند إلى المواد الرسمية المتاحة ومعلومات الإنتاج والإصدار وقراءات نقدية منشورة. لا تدعي هذه المادة اختباراً شخصياً جديداً أو مشاهدة/لعباً مباشراً، ولا تنقل تقييم الجمهور بوصفه حكماً تحريرياً.
 

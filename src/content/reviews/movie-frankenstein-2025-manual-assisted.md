@@ -34,6 +34,8 @@ externalVideoUrl: "https://www.netflix.com/tudum/videos/frankenstein-trailer?ina
 externalVideoTitle: "Guillermo del Toro’s Frankenstein — Official Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
+youtubeVideoId: "9WZllcEgWrM"
+youtubeVideoTitle: "Final Trailer"
 ---
 > **منهجية المراجعة:** قراءة تحريرية بحثية تستند إلى المواد الرسمية المتاحة ومعلومات الإنتاج والإصدار وقراءات نقدية منشورة. لا تدعي هذه المادة اختباراً شخصياً جديداً أو مشاهدة/لعباً مباشراً، ولا تنقل تقييم الجمهور بوصفه حكماً تحريرياً.
 

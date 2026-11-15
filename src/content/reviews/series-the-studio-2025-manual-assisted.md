@@ -34,6 +34,8 @@ externalVideoUrl: "https://www.apple.com/tv-pr/news/2025/03/apple-tv-unveils-tra
 externalVideoTitle: "The Studio — Official Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
+youtubeVideoId: "EIQuE7JGXU8"
+youtubeVideoTitle: "Official Trailer"
 ---
 > **منهجية المراجعة:** قراءة تحريرية بحثية تستند إلى المواد الرسمية المتاحة ومعلومات الإنتاج والإصدار وقراءات نقدية منشورة. لا تدعي هذه المادة اختباراً شخصياً جديداً أو مشاهدة/لعباً مباشراً، ولا تنقل تقييم الجمهور بوصفه حكماً تحريرياً.
 

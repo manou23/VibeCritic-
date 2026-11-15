@@ -33,6 +33,8 @@ externalVideoUrl: "https://press.wbd.com/na/media-release/hbo-max/max-original-d
 externalVideoTitle: "The Pitt — Official Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
+youtubeVideoId: "ufR_08V38sQ"
+youtubeVideoTitle: "Official Trailer"
 ---
 > **منهجية المراجعة:** قراءة تحريرية بحثية تستند إلى المواد الرسمية المتاحة ومعلومات الإنتاج والإصدار وقراءات نقدية منشورة. لا تدعي هذه المادة اختباراً شخصياً جديداً أو مشاهدة/لعباً مباشراً، ولا تنقل تقييم الجمهور بوصفه حكماً تحريرياً.
 

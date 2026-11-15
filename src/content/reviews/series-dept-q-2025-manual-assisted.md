@@ -34,6 +34,8 @@ externalVideoUrl: "https://www.netflix.com/title/81487660"
 externalVideoTitle: "Dept. Q — Official Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
+youtubeVideoId: "72hK6FUmm8o"
+youtubeVideoTitle: "Official Trailer"
 ---
 > **منهجية المراجعة:** قراءة تحريرية بحثية تستند إلى المواد الرسمية المتاحة ومعلومات الإنتاج والإصدار وقراءات نقدية منشورة. لا تدعي هذه المادة اختباراً شخصياً جديداً أو مشاهدة/لعباً مباشراً، ولا تنقل تقييم الجمهور بوصفه حكماً تحريرياً.
 

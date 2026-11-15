@@ -34,6 +34,8 @@ externalVideoUrl: "https://www.warnerbros.com/movies/weapons"
 externalVideoTitle: "Weapons — Official Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
+youtubeVideoId: "QKHySfXqN0I"
+youtubeVideoTitle: "Official Trailer 2"
 ---
 > **منهجية المراجعة:** قراءة تحريرية بحثية تستند إلى المواد الرسمية المتاحة ومعلومات الإنتاج والإصدار وقراءات نقدية منشورة. لا تدعي هذه المادة اختباراً شخصياً جديداً أو مشاهدة/لعباً مباشراً، ولا تنقل تقييم الجمهور بوصفه حكماً تحريرياً.
 

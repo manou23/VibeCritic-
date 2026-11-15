@@ -34,6 +34,8 @@ externalVideoUrl: "https://www.apple.com/tv-pr/news/2025/03/apple-original-films
 externalVideoTitle: "F1 The Movie — Official Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
+youtubeVideoId: "ge_ABjtYx88"
+youtubeVideoTitle: "Official IMAX® 1.90 Trailer 2"
 ---
 > **منهجية المراجعة:** قراءة تحريرية بحثية تستند إلى المواد الرسمية المتاحة ومعلومات الإنتاج والإصدار وقراءات نقدية منشورة. لا تدعي هذه المادة اختباراً شخصياً جديداً أو مشاهدة/لعباً مباشراً، ولا تنقل تقييم الجمهور بوصفه حكماً تحريرياً.
 

@@ -34,6 +34,8 @@ externalVideoUrl: "https://www.onebattleafteranothermovie.com/"
 externalVideoTitle: "One Battle After Another — Official Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
+youtubeVideoId: "u6GVb4p7oD4"
+youtubeVideoTitle: "Official American Sign Language Trailer"
 ---
 > **منهجية المراجعة:** قراءة تحريرية بحثية تستند إلى المواد الرسمية المتاحة ومعلومات الإنتاج والإصدار وقراءات نقدية منشورة. لا تدعي هذه المادة اختباراً شخصياً جديداً أو مشاهدة/لعباً مباشراً، ولا تنقل تقييم الجمهور بوصفه حكماً تحريرياً.
 
