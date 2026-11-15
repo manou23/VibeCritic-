@@ -1,0 +1,36 @@
+name: Verify and submit sitemap to Google
+
+on:
+  workflow_run:
+    workflows: ["Generate reviews and publish"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '35 4 * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: vibecritic-google-sitemap
+  cancel-in-progress: false
+
+jobs:
+  sitemap:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify published sitemap and submit to Google Search Console
+        env:
+          GOOGLE_SEARCH_CONSOLE_SERVICE_ACCOUNT: ${{ secrets.GOOGLE_SEARCH_CONSOLE_SERVICE_ACCOUNT }}
+          GOOGLE_SEARCH_CONSOLE_SITE_URL: ${{ vars.GOOGLE_SEARCH_CONSOLE_SITE_URL }}
+          PUBLIC_SITE_URL: ${{ vars.PUBLIC_SITE_URL }}
+        run: node scripts/submit-sitemap-google.mjs
