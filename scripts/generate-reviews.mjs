@@ -816,26 +816,40 @@ async function generateReview(item){
  for(const name of candidates){
   const measurement={name,startedAt:Date.now(),usage:{requests:0,inputTokens:0,outputTokens:0,totalTokens:0,reportedUsage:false,headers:{}}};
   activeProviderMeasurement=measurement;
-  try{
-   const generated=await handlers[name]();
-   activeProviderMeasurement=null;
-   // A valid provider response is a transport success even when the editorial gate rejects its content.
-   await recordProviderOutcome(name,true,null,measurement,item);
+  let transportSucceeded=false,transportError=null,attemptPrompt=prompt;
+  // A short but otherwise valid response gets one targeted repair from the same provider
+  // before the system spends another provider's quota. Editorial gates remain unchanged.
+  for(let qualityAttempt=0;qualityAttempt<2;qualityAttempt++){
    try{
-    parsed=validateGeneratedReview(generated);
-    console.log('نجح توليد المراجعة واجتازت بوابة الجودة عبر:',name,'| طلبات API:',measurement.usage.requests,'| الرموز المسجلة:',measurement.usage.totalTokens||'غير متاحة');
-    break;
+    const generated=await handlers[name](attemptPrompt);
+    transportSucceeded=true;
+    try{
+     parsed=validateGeneratedReview(generated);
+     console.log('نجح توليد المراجعة واجتازت بوابة الجودة عبر:',name,'| محاولات الإصلاح:',qualityAttempt,'| طلبات API:',measurement.usage.requests,'| الرموز المسجلة:',measurement.usage.totalTokens||'غير متاحة');
+     break;
+    }catch(error){
+     providerErrors.push(name+' (editorial quality): '+error.message);
+     await recordLearningFailure(item,error);
+     const depthFailure=/أقصر من الحد الأدنى|أقصر من المعيار التحريري|محور نقدي أقصر|لا تتضمن المحاور النقدية/.test(error.message);
+     if(qualityAttempt===0&&depthFailure){
+      attemptPrompt=prompt+'\\n\\nمهمة إصلاح إلزامية للمراجعة التي أخرجتها للتو: اجعل النص التحليلي review بين 700 و850 كلمة فعلية، وبحد أدنى 3200 حرف، مع خمسة محاور نقدية كاملة لا يقل كل محور عن 65 كلمة، وخاتمة موجزة. لا تغيّر الحقائق أو تخترع تفاصيل جديدة ولا تضف حشواً أو تكراراً. وسّع التحليل فقط بالاستدلال من البيانات والسياق الموثوق الموجود في الطلب الأصلي. احتفظ بالعنوان والافتتاحية والدرجات ونقاط القوة والضعف ما دامت متسقة مع النص، وأعد JSON كاملاً صالحاً بالمفاتيح نفسها. سبب الرفض الذي يجب إصلاحه: '+error.message+'\\n\\nالمسودة السابقة بصيغة JSON: '+JSON.stringify(generated).slice(0,26000);
+      console.warn('المزوّد '+name+' أعاد مراجعة أقصر من المطلوب؛ طلب إصلاحاً تحريرياً واحداً قبل الانتقال إلى مزوّد آخر.');
+      continue;
+     }
+     console.warn('استجاب المزوّد '+name+' لكن المراجعة لم تجتز بوابة الجودة؛ الانتقال إلى التالي:',error.message);
+     break;
+    }
    }catch(error){
-    providerErrors.push(name+' (editorial quality): '+error.message);
-    await recordLearningFailure(item,error);
-    console.warn('استجاب المزوّد '+name+' لكن المراجعة لم تجتز بوابة الجودة؛ الانتقال إلى التالي:',error.message);
+    transportError=error;
+    providerErrors.push(name+': '+error.message);
+    console.warn('تعذر الاتصال بالمزوّد '+name+'؛ الانتقال إلى التالي:',error.message);
+    break;
    }
-  }catch(error){
-   activeProviderMeasurement=null;
-   providerErrors.push(name+': '+error.message);
-   await recordProviderOutcome(name,false,error,measurement,item);
-   console.warn('تعذر الاتصال بالمزوّد '+name+'؛ الانتقال إلى التالي:',error.message);
   }
+  activeProviderMeasurement=null;
+  // Count the provider once per article, including all repair requests made in this attempt.
+  await recordProviderOutcome(name,transportSucceeded,transportError,measurement,item);
+  if(parsed)break;
  }
  if(!parsed)throw new Error('فشل التوليد عبر جميع المزوّدات المجانية المتاحة: '+providerErrors.join(' | '));
  const d=parsed,review=String(d.review||'').replace(/<[^>]*>/g,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').trim();
