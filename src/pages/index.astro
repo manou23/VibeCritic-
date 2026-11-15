@@ -1,4 +1,5 @@
 ---
+import '../styles/home-hybrid-v2.css';
 import Base from '../layouts/Base.astro';
 import ReviewCard from '../components/ReviewCard.astro';
 import { getCollection } from 'astro:content';
@@ -18,11 +19,10 @@ const trendReviews=trending.filter(item=>['مرتفع','متوسط'].includes(it
  const review=reviews.find(entry=>entry.data.type===item.type&&entry.data.sourceId===item.sourceId);
  return review?{...item,review,title:review.data.title,summary:review.data.summary,poster:optimizeImage(review.data.poster||item.poster),backdrop:optimizeImage(review.data.backdrop||item.backdrop||item.poster,'backdrop'),href:url(`reviews/${review.id}/`)}:null;
 }).filter(Boolean).slice(0,10);
-const spotlight=trendReviews[0]||topRated[0]||null;
-const featured=topRated.filter(item=>item.id!==spotlight?.review?.id).slice(0,3);
+const spotlight=trendReviews[0]||(topRated[0]?{...topRated[0].data,id:topRated[0].id,review:topRated[0],type:topRated[0].data.type,title:topRated[0].data.title,summary:topRated[0].data.summary,poster:optimizeImage(topRated[0].data.poster),backdrop:optimizeImage(topRated[0].data.backdrop||topRated[0].data.poster,'backdrop'),href:url('reviews/'+topRated[0].id+'/')}:null);
+const featured=topRated.filter(item=>item.id!==(spotlight?.review?.id||spotlight?.id)).slice(0,3);
 ---
 <Base title="اكتشف عالم الترفيه" description="اكتشف أحدث الأفلام والمسلسلات والألعاب، تابع الترندات العالمية واقرأ مراجعات VibeCritic." image={spotlight?.backdrop || spotlight?.poster}>
-<link rel="stylesheet" href={url('')} />
 <div class="vc-home">
  <section class="wrap vc-intro">
   <div><span class="vc-overline">VIBECRITIC · ENTERTAINMENT, WITHOUT THE NOISE</span><h1>اكتشف ما يستحق<br/><em>وقتك فعلاً.</em></h1><p>مراجعات مستقلة للألعاب والأفلام والمسلسلات. رأي واضح، أدلة، ودرجات لا تجامل.</p></div>
