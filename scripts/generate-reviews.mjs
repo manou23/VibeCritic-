@@ -398,7 +398,7 @@ async function recordProviderOutcome(name,success,error=null,measurement=null,it
  if(success){entry.successes=(Number(entry.successes)||0)+1;entry.blockedUntil=0;entry.blockedReason='';entry.lastCooldown=null;entry.consecutiveTransientFailures=0;}
  else{
   entry.failures=(Number(entry.failures)||0)+1;
-  const message=String(error?.message||error||''),status=Number(message.match(/HTTP\\s+(\\d{3})/i)?.[1])||0,headers=usage.headers||{};
+  const message=String(error?.message||error||''),status=Number(message.match(/HTTP\s+(\d{3})/i)?.[1])||0,headers=usage.headers||{};
   const parseReset=value=>{
    if(value===undefined||value===null||value==='')return null;
    const raw=String(value).trim(),numeric=Number(raw);
