@@ -990,7 +990,7 @@ async function writeReview(item){
  const a=await generateReview(enriched),date=algeriaDate();
  await assertDistinctHeadline(a.headline,a.hook,a.summary,a.review);
  const videoFields=enriched.metadata?.youtubeVideoId?['youtubeVideoId: '+y(enriched.metadata.youtubeVideoId),'youtubeVideoTitle: '+y(enriched.metadata.youtubeVideoTitle)]:[];
- const steamVideoUrl=!enriched.metadata?.youtubeVideoId?(enriched.metadata?.stores||[]).find(store=>/^https?:\\/\\/store\\.steampowered\\.com\\/app\\//i.test(store.url||''))?.url:null;
+ const steamVideoUrl=!enriched.metadata?.youtubeVideoId?(enriched.metadata?.stores||[]).find(store=>/^https?:\/\/store\.steampowered\.com\/app\//i.test(store.url||''))?.url:null;
  const externalVideoFields=steamVideoUrl?['externalVideoUrl: '+y(steamVideoUrl),'externalVideoTitle: '+y('شاهد المقطع الرسمي على Steam')]:[];
  const watchFields=enriched.metadata?.watchProviderUrl?['watchProviderUrl: '+y(enriched.metadata.watchProviderUrl)]:[];
  const gameStoreFields=(enriched.metadata?.stores||[]).map(store=>'  - name: '+y(store.name)+(store.url?'\n    url: '+y(store.url):''));
