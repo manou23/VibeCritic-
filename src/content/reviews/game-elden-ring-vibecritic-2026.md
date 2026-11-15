@@ -9,6 +9,9 @@ reviewVersion: 1
 type: game
 date: 2026-11-15
 releaseDate: "2022-02-25"
+poster: "https://us-east-1-bandai.graphassets.com/AXzioIclSWilEjFtsMJPwz/Alg1l5HYROmvuBQY6BM0"
+youtubeVideoId: "qqiC88f9ogU"
+youtubeVideoTitle: "ELDEN RING – Rise, Tarnished | Official Launch Trailer"
 score: 8.3
 storyScore: 8.0
 visualsScore: 8.9
