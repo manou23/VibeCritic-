@@ -9,7 +9,7 @@ reviewVersion: 1
 type: series
 date: 2026-11-15
 releaseDate: "2015-02-08"
-poster: "https://image.tmdb.org/t/p/w500/fC2HDm5t0kHl7mTm7jxMR31b7by.jpg"
+poster: "https://image.tmdb.org/t/p/w500/zjg4jpK1Wp2kiRvtt5ND0kznako.jpg"
 youtubeVideoId: "Qz3u06eXf0E"
 youtubeVideoTitle: "Official Season 6 Trailer | Better Call Saul"
 score: 8.9
