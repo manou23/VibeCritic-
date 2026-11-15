@@ -256,10 +256,10 @@
         "inputTokens": 56938,
         "outputTokens": 26956,
         "freeModelDailyRequests": {
-          "used": 7,
+          "used": 2,
           "limit": 50,
-          "remaining": 43,
-          "observedAt": "2026-11-14T23:48:34.406Z",
+          "remaining": 48,
+          "observedAt": "2026-11-15T09:17:14.118Z",
           "source": "OpenRouter GET /api/v1/key"
         },
         "lastAttemptAt": "2026-11-15T00:04:25.510Z",

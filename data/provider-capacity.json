@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-15T00:04:25.512Z",
+  "updatedAt": "2026-11-15T09:17:14.120Z",
   "date": "2026-11-15",
   "publishingPlan": {
     "limit": 2,
@@ -22,7 +22,7 @@
       },
       {
         "name": "openrouter",
-        "estimatedArticles": 19,
+        "estimatedArticles": 22,
         "dailyBlocked": false
       }
     ],
@@ -60,9 +60,9 @@
       },
       {
         "name": "openrouter",
-        "score": 0.3596,
+        "score": 0.3846,
         "reliability": 0.154,
-        "headroom": 0.86,
+        "headroom": 0.96,
         "efficiency": 0.3,
         "samples": 11,
         "successRate": 0.154,
@@ -131,10 +131,10 @@
       },
       "usedTokens": 83894,
       "usedRequests": 20,
-      "estimatedArticles": 19,
+      "estimatedArticles": 22,
       "averageTokensPerArticle": 7627,
       "averageRequestsPerArticle": 2.18,
-      "reportedDailyRequestsRemaining": 43,
+      "reportedDailyRequestsRemaining": 48,
       "reportedDailyRequestsLimit": 50
     }
   }
