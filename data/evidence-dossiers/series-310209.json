@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "workKey": "series:310209",
+  "title": "من التاسعة حتى السادسة",
+  "type": "series",
+  "collectedAt": "2026-11-15T22:49:06.967Z",
+  "evidenceCount": 10,
+  "sourceCount": 1,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/tv/310209"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "من التاسعة حتى السادسة"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/310209",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2026-11-25"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/310209",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "تواجه \"كانغ إي جي\"، المديرة الأولى في \"كرونيك موتورز\"، خطر خفض رتبتها على خلفية اتهامات ظالمة بشأن حريق سيارة. فهل تجد الحب والسعادة وسط صراعات العمل؟"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/310209",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "دراما",
+        "كوميديا"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/310209",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "박민영 بدور Kang Yi-ji",
+        "육성재 بدور Han Seon-wu",
+        "고수 بدور Park Hyeon-tae",
+        "주현영 بدور Shin Ji-won",
+        "최지수",
+        "Seo Yi-an",
+        "전배수"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/310209",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "directors",
+      "label": "المخرجون",
+      "value": [
+        "이형민"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/310209",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "creators",
+      "label": "المبدعون",
+      "value": [
+        "최지오"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/310209",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "seasons",
+      "label": "عدد المواسم",
+      "value": [
+        1
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/310209",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "episodes",
+      "label": "عدد الحلقات",
+      "value": [
+        12
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/310209",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "Studio S",
+        "Samhwa Networks"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/310209",
+      "confidence": "موثق من سجل المصدر"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

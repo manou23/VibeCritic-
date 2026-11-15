@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "workKey": "series:215528",
+  "title": "Neuromancer",
+  "type": "series",
+  "collectedAt": "2026-11-15T22:47:36.259Z",
+  "evidenceCount": 9,
+  "sourceCount": 1,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/tv/215528"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "Neuromancer"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/215528",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2027-01-21"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/215528",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "يُجند مخترق عبقري تلطخت سمعته وقاتلة مأجورة معززة إلكترونياً لتنفيذ عملية سطو خطيرة تستهدف شركة عريقة وقوية بثروة طائلة... وأسرار قد يقتلون لحمايتها."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/215528",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "خيال علمي وفانتازيا",
+        "غموض"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/215528",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "Callum Turner بدور Henry Case",
+        "Briana Middleton بدور Molly",
+        "مارك سترونج بدور Armitage",
+        "بيتر سارسجارد بدور John Ashpool",
+        "كليمونس بويزي بدور Marie-France Tessier",
+        "Joseph Lee بدور Hideo",
+        "دان ديهان بدور Peter Riviera"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/215528",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "creators",
+      "label": "المبدعون",
+      "value": [
+        "غراهام رولاند",
+        "J.D. Dillard"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/215528",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "seasons",
+      "label": "عدد المواسم",
+      "value": [
+        1
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/215528",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "episodes",
+      "label": "عدد الحلقات",
+      "value": [
+        10
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/215528",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "Anonymous Content",
+        "DreamCrew",
+        "Paramount Television Studios"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/215528",
+      "confidence": "موثق من سجل المصدر"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

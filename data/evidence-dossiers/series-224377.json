@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "workKey": "series:224377",
+  "title": "هاري بوتر",
+  "type": "series",
+  "collectedAt": "2026-11-15T22:47:43.733Z",
+  "evidenceCount": 8,
+  "sourceCount": 1,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/tv/224377"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "هاري بوتر"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/224377",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2026-12-25"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/224377",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "مع بلوغه الحادية عشرة، يتلقى هاري دعوة للانضمام إلى مدرسة هوغوورتس للسحر، ليكتشف عالماً خفياً يغير حياته، ويواجه أخطاراً وماضياً غامضاً ينتظره."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/224377",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "خيال علمي وفانتازيا",
+        "حركة ومغامرة"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/224377",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "دومينيك ماكلوغلين بدور Harry Potter",
+        "أرابيلا ستانتون بدور Hermione Granger",
+        "ألاستير ستاوت بدور Ron Weasley",
+        "جون ليثغو بدور Albus Dumbledore",
+        "جانيت مكتير بدور Minerva McGonagall",
+        "Paapa Essiedu بدور Severus Snape",
+        "Nick Frost بدور Rubeus Hagrid"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/224377",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "seasons",
+      "label": "عدد المواسم",
+      "value": [
+        1
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/224377",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "episodes",
+      "label": "عدد الحلقات",
+      "value": [
+        1
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/224377",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "Brontë Film & TV",
+        "Warner Bros. Television",
+        "Heyday Films",
+        "HBO"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/224377",
+      "confidence": "موثق من سجل المصدر"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

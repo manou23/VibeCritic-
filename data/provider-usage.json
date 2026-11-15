@@ -259,7 +259,7 @@
           "used": 53,
           "limit": 50,
           "remaining": 0,
-          "observedAt": "2026-11-15T22:46:18.544Z",
+          "observedAt": "2026-11-15T22:47:32.793Z",
           "source": "OpenRouter GET /api/v1/key"
         },
         "lastAttemptAt": "2026-11-15T00:04:25.510Z",
@@ -562,6 +562,86 @@
             "totalTokens": 10003,
             "successes": 1
           }
+        },
+        "series:215528": {
+          "groq": {
+            "attempts": 1,
+            "requests": 4,
+            "inputTokens": 4174,
+            "outputTokens": 2507,
+            "totalTokens": 6681,
+            "successes": 1
+          }
+        },
+        "series:256726": {
+          "groq": {
+            "attempts": 1,
+            "requests": 8,
+            "inputTokens": 4265,
+            "outputTokens": 1761,
+            "totalTokens": 6026,
+            "successes": 1
+          }
+        },
+        "series:307825": {
+          "groq": {
+            "attempts": 1,
+            "requests": 10,
+            "inputTokens": 4225,
+            "outputTokens": 1957,
+            "totalTokens": 6182,
+            "successes": 1
+          }
+        },
+        "series:310209": {
+          "groq": {
+            "attempts": 1,
+            "requests": 8,
+            "inputTokens": 4267,
+            "outputTokens": 2343,
+            "totalTokens": 6610,
+            "successes": 1
+          }
+        },
+        "movie:1283515": {
+          "groq": {
+            "attempts": 1,
+            "requests": 10,
+            "inputTokens": 5209,
+            "outputTokens": 1987,
+            "totalTokens": 7196,
+            "successes": 1
+          }
+        },
+        "movie:1101412": {
+          "groq": {
+            "attempts": 1,
+            "requests": 10,
+            "inputTokens": 4779,
+            "outputTokens": 1842,
+            "totalTokens": 6621,
+            "successes": 1
+          }
+        },
+        "movie:1514026": {
+          "groq": {
+            "attempts": 1,
+            "requests": 12,
+            "inputTokens": 4949,
+            "outputTokens": 1548,
+            "totalTokens": 6497,
+            "successes": 1
+          }
+        },
+        "movie:755898": {
+          "groq": {
+            "attempts": 1,
+            "requests": 8,
+            "inputTokens": 4117,
+            "outputTokens": 1562,
+            "totalTokens": 5679,
+            "successes": 1
+          }
         }
       },
       "gemini": {
@@ -593,31 +673,31 @@
         }
       },
       "groq": {
-        "requests": 18,
-        "successes": 14,
+        "requests": 26,
+        "successes": 22,
         "failures": 4,
-        "apiRequests": 120,
-        "totalTokens": 129284,
-        "inputTokens": 94968,
-        "outputTokens": 34316,
-        "lastAttemptAt": "2026-11-15T20:08:28.772Z",
+        "apiRequests": 190,
+        "totalTokens": 180776,
+        "inputTokens": 130953,
+        "outputTokens": 49823,
+        "lastAttemptAt": "2026-11-15T22:52:56.375Z",
         "lastUsage": {
-          "requests": 10,
-          "inputTokens": 7740,
-          "outputTokens": 2225,
-          "totalTokens": 9965,
+          "requests": 8,
+          "inputTokens": 4117,
+          "outputTokens": 1562,
+          "totalTokens": 5679,
           "reportedUsage": true,
           "headers": {
             "x-ratelimit-limit-requests": "1000",
-            "x-ratelimit-remaining-requests": "977",
-            "x-ratelimit-reset-requests": "33m7.2s",
+            "x-ratelimit-remaining-requests": "984",
+            "x-ratelimit-reset-requests": "23m2.4s",
             "x-ratelimit-limit-tokens": "8000",
-            "x-ratelimit-remaining-tokens": "1703",
-            "x-ratelimit-reset-tokens": "47.227s",
-            "retry-after": "7"
+            "x-ratelimit-remaining-tokens": "439",
+            "x-ratelimit-reset-tokens": "56.707s",
+            "retry-after": "10"
           },
-          "durationMs": 68140,
-          "at": "2026-11-15T20:08:28.772Z"
+          "durationMs": 42252,
+          "at": "2026-11-15T22:52:56.375Z"
         },
         "blockedUntil": 0,
         "blockedReason": "",

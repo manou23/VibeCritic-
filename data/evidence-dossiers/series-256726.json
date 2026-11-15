@@ -1,0 +1,132 @@
+{
+  "version": 1,
+  "workKey": "series:256726",
+  "title": "ثمن الأضواء",
+  "type": "series",
+  "collectedAt": "2026-11-15T22:47:44.781Z",
+  "evidenceCount": 10,
+  "sourceCount": 1,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/tv/256726"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "ثمن الأضواء"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/256726",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2026-12-11"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/256726",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "على مدار سنوات من القمع والخوف، صمد عالم الاستعراض في \"كوريا\" حتى لا تنطفئ أنواره وأبقى شعلة الحلم متقدة سعيًا وراء اعتلاء مسرح تتحول فيه العزيمة إلى مجد."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/256726",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "دراما",
+        "حرب وسياسة"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/256726",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "송혜교 بدور Min-ja",
+        "غونغ يو بدور Dong-gu",
+        "김설현 بدور Min-hee",
+        "차승원 بدور Gil-yeo",
+        "이하늬 بدور Yang-ja",
+        "나문희",
+        "김정우"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/256726",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "directors",
+      "label": "المخرجون",
+      "value": [
+        "이윤정"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/256726",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "creators",
+      "label": "المبدعون",
+      "value": [
+        "노희경",
+        "이윤정"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/256726",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "seasons",
+      "label": "عدد المواسم",
+      "value": [
+        1
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/256726",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "episodes",
+      "label": "عدد الحلقات",
+      "value": [
+        22
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/256726",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "Studio Dragon",
+        "GTist",
+        "IMAGINUS"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/256726",
+      "confidence": "موثق من سجل المصدر"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

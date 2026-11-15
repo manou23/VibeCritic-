@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-15T22:46:20.151Z",
+  "updatedAt": "2026-11-15T22:52:56.378Z",
   "jobs": {
     "game:972995": {
       "key": "game:972995",
@@ -572,7 +572,7 @@
       },
       "nextAttemptAt": 0,
       "lastError": null,
-      "updatedAt": "2026-11-15T19:55:24.539Z",
+      "updatedAt": "2026-11-15T22:47:34.979Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "game:1019942",
@@ -2911,7 +2911,7 @@
       },
       "nextAttemptAt": 0,
       "lastError": null,
-      "updatedAt": "2026-11-15T20:04:52.238Z",
+      "updatedAt": "2026-11-15T22:49:46.481Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "movie:1058424",
@@ -5186,7 +5186,7 @@
       },
       "nextAttemptAt": 0,
       "lastError": null,
-      "updatedAt": "2026-11-15T19:47:49.680Z",
+      "updatedAt": "2026-11-15T22:47:35.183Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "game:1017176",
@@ -5333,7 +5333,7 @@
       "type": "movie",
       "id": "1283515",
       "createdAt": "2026-11-15T19:44:56.612Z",
-      "attemptCount": 1,
+      "attemptCount": 2,
       "status": "waiting",
       "item": {
         "id": "1283515",
@@ -5716,9 +5716,9 @@
           }
         }
       },
-      "nextAttemptAt": 1794772121340,
-      "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
-      "updatedAt": "2026-11-15T19:44:57.819Z",
+      "nextAttemptAt": 1794783599000,
+      "lastError": "فشل التوليد عبر جميع المزوّدات المجانية المتاحة: groq (editorial quality): الدرجات الفرعية الأربعة غير مكتملة أو خارج النطاق 0–10 | groq (score repair): المراجعة أقصر من المعيار التحريري المطلوب (650 كلمة)",
+      "updatedAt": "2026-11-15T22:50:45.512Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "movie:1283515",
@@ -5907,7 +5907,7 @@
       "type": "movie",
       "id": "1101412",
       "createdAt": "2026-11-15T19:44:57.823Z",
-      "attemptCount": 1,
+      "attemptCount": 2,
       "status": "waiting",
       "item": {
         "id": "1101412",
@@ -6287,9 +6287,9 @@
           }
         }
       },
-      "nextAttemptAt": 1794772121340,
-      "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
-      "updatedAt": "2026-11-15T19:44:59.048Z",
+      "nextAttemptAt": 1794783599000,
+      "lastError": "فشل التوليد عبر جميع المزوّدات المجانية المتاحة: groq (editorial quality): الدرجات الفرعية الأربعة غير مكتملة أو خارج النطاق 0–10 | groq (score repair): المراجعة المولّدة أقصر من الحد الأدنى للتحليل المتكامل (3200 حرف)",
+      "updatedAt": "2026-11-15T22:51:36.158Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "movie:1101412",
@@ -6477,7 +6477,7 @@
       "type": "movie",
       "id": "1514026",
       "createdAt": "2026-11-15T19:44:59.051Z",
-      "attemptCount": 1,
+      "attemptCount": 2,
       "status": "waiting",
       "item": {
         "id": "1514026",
@@ -6862,9 +6862,9 @@
           }
         }
       },
-      "nextAttemptAt": 1794772121340,
-      "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
-      "updatedAt": "2026-11-15T19:45:00.272Z",
+      "nextAttemptAt": 1794783599000,
+      "lastError": "فشل التوليد عبر جميع المزوّدات المجانية المتاحة: groq (editorial quality): الدرجات الفرعية الأربعة غير مكتملة أو خارج النطاق 0–10 | groq (score repair): المراجعة المولّدة أقصر من الحد الأدنى للتحليل المتكامل (3200 حرف)",
+      "updatedAt": "2026-11-15T22:52:13.430Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "movie:1514026",
@@ -7053,7 +7053,7 @@
       "type": "movie",
       "id": "755898",
       "createdAt": "2026-11-15T19:45:00.276Z",
-      "attemptCount": 1,
+      "attemptCount": 2,
       "status": "waiting",
       "item": {
         "id": "755898",
@@ -7432,9 +7432,9 @@
           }
         }
       },
-      "nextAttemptAt": 1794772121340,
-      "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
-      "updatedAt": "2026-11-15T19:45:01.716Z",
+      "nextAttemptAt": 1794783599000,
+      "lastError": "فشل التوليد عبر جميع المزوّدات المجانية المتاحة: groq (editorial quality): الدرجات الفرعية الأربعة غير مكتملة أو خارج النطاق 0–10 | groq (score repair): المراجعة المولّدة أقصر من الحد الأدنى للتحليل المتكامل (3200 حرف)",
+      "updatedAt": "2026-11-15T22:52:56.378Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "movie:755898",
@@ -11100,6 +11100,1707 @@
             "source": "VibeCritic D1 entertainment catalog",
             "url": "https://vibecritic.pages.dev/api/catalog",
             "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "series:215528": {
+      "key": "series:215528",
+      "type": "series",
+      "id": "215528",
+      "createdAt": "2026-11-15T22:47:35.380Z",
+      "attemptCount": 1,
+      "status": "waiting",
+      "item": {
+        "id": "215528",
+        "type": "series",
+        "name": "Neuromancer",
+        "originalTitle": "Neuromancer",
+        "description": "يُجند مخترق عبقري تلطخت سمعته وقاتلة مأجورة معززة إلكترونياً لتنفيذ عملية سطو خطيرة تستهدف شركة عريقة وقوية بثروة طائلة... وأسرار قد يقتلون لحمايتها.",
+        "date": "2027-01-21",
+        "poster": "https://image.tmdb.org/t/p/w500/iqgZcf5g0KfyAXqyANNun9k2Asg.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w780/spJlfBUUFHaaJCpTSYEpf8wx79p.jpg",
+        "rating": 0,
+        "genres": [
+          "خيال علمي وفانتازيا",
+          "غموض"
+        ],
+        "sourceUrl": "https://www.themoviedb.org/tv/215528",
+        "source": "TMDB",
+        "popularity": 7.9441,
+        "sourceMetricName": "TMDB popularity",
+        "sourceMetricValue": 7.9441,
+        "trendConfidence": "مرتفع",
+        "trendRank": 3,
+        "fieldSources": {},
+        "sourceVoteCount": 0,
+        "metadata": {
+          "voteAverage": 0,
+          "voteCount": 0,
+          "youtubeVideoId": null,
+          "youtubeVideoTitle": null,
+          "genres": [
+            "خيال علمي وفانتازيا",
+            "غموض"
+          ],
+          "directors": [],
+          "creators": [
+            "غراهام رولاند",
+            "J.D. Dillard"
+          ],
+          "cast": [
+            "Callum Turner بدور Henry Case",
+            "Briana Middleton بدور Molly",
+            "مارك سترونج بدور Armitage",
+            "بيتر سارسجارد بدور John Ashpool",
+            "كليمونس بويزي بدور Marie-France Tessier",
+            "Joseph Lee بدور Hideo",
+            "دان ديهان بدور Peter Riviera"
+          ],
+          "runtime": null,
+          "episodeRuntime": [],
+          "seasons": 1,
+          "episodes": 10,
+          "productionCompanies": [
+            "Anonymous Content",
+            "DreamCrew",
+            "Paramount Television Studios"
+          ],
+          "watchProviders": [],
+          "watchProviderUrl": null,
+          "communityReviews": [],
+          "similar": [
+            {
+              "id": "65344",
+              "title": "Tjockare än vatten"
+            },
+            {
+              "id": "99312",
+              "title": "El día menos pensado"
+            },
+            {
+              "id": "65561",
+              "title": "翳りゆく夏"
+            },
+            {
+              "id": "216572",
+              "title": "インフォーマ"
+            },
+            {
+              "id": "99494",
+              "title": "زهرة الشر"
+            }
+          ],
+          "catalogContext": null,
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "series:215528",
+            "title": "Neuromancer",
+            "type": "series",
+            "collectedAt": "2026-11-15T22:47:36.259Z",
+            "evidenceCount": 9,
+            "sourceCount": 1,
+            "sources": [
+              {
+                "name": "TMDB",
+                "url": "https://www.themoviedb.org/tv/215528"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "Neuromancer"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/215528",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "2027-01-21"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/215528",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "يُجند مخترق عبقري تلطخت سمعته وقاتلة مأجورة معززة إلكترونياً لتنفيذ عملية سطو خطيرة تستهدف شركة عريقة وقوية بثروة طائلة... وأسرار قد يقتلون لحمايتها."
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/215528",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "خيال علمي وفانتازيا",
+                  "غموض"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/215528",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "cast",
+                "label": "طاقم التمثيل",
+                "value": [
+                  "Callum Turner بدور Henry Case",
+                  "Briana Middleton بدور Molly",
+                  "مارك سترونج بدور Armitage",
+                  "بيتر سارسجارد بدور John Ashpool",
+                  "كليمونس بويزي بدور Marie-France Tessier",
+                  "Joseph Lee بدور Hideo",
+                  "دان ديهان بدور Peter Riviera"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/215528",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "creators",
+                "label": "المبدعون",
+                "value": [
+                  "غراهام رولاند",
+                  "J.D. Dillard"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/215528",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "seasons",
+                "label": "عدد المواسم",
+                "value": [
+                  1
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/215528",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "episodes",
+                "label": "عدد الحلقات",
+                "value": [
+                  10
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/215528",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "productionCompanies",
+                "label": "شركات الإنتاج",
+                "value": [
+                  "Anonymous Content",
+                  "DreamCrew",
+                  "Paramount Television Studios"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/215528",
+                "confidence": "موثق من سجل المصدر"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        }
+      },
+      "nextAttemptAt": 1794783599000,
+      "lastError": "فشل التوليد عبر جميع المزوّدات المجانية المتاحة: groq (editorial quality): الدرجات الفرعية الأربعة غير مكتملة أو خارج النطاق 0–10 | groq (score repair): المراجعة المولّدة أقصر من الحد الأدنى للتحليل المتكامل (3200 حرف)",
+      "updatedAt": "2026-11-15T22:47:42.861Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "series:215528",
+        "title": "Neuromancer",
+        "type": "series",
+        "collectedAt": "2026-11-15T22:47:36.259Z",
+        "evidenceCount": 9,
+        "sourceCount": 1,
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/215528"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "Neuromancer"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/215528",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "2027-01-21"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/215528",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "يُجند مخترق عبقري تلطخت سمعته وقاتلة مأجورة معززة إلكترونياً لتنفيذ عملية سطو خطيرة تستهدف شركة عريقة وقوية بثروة طائلة... وأسرار قد يقتلون لحمايتها."
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/215528",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "خيال علمي وفانتازيا",
+              "غموض"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/215528",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "cast",
+            "label": "طاقم التمثيل",
+            "value": [
+              "Callum Turner بدور Henry Case",
+              "Briana Middleton بدور Molly",
+              "مارك سترونج بدور Armitage",
+              "بيتر سارسجارد بدور John Ashpool",
+              "كليمونس بويزي بدور Marie-France Tessier",
+              "Joseph Lee بدور Hideo",
+              "دان ديهان بدور Peter Riviera"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/215528",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "creators",
+            "label": "المبدعون",
+            "value": [
+              "غراهام رولاند",
+              "J.D. Dillard"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/215528",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "seasons",
+            "label": "عدد المواسم",
+            "value": [
+              1
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/215528",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "episodes",
+            "label": "عدد الحلقات",
+            "value": [
+              10
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/215528",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "productionCompanies",
+            "label": "شركات الإنتاج",
+            "value": [
+              "Anonymous Content",
+              "DreamCrew",
+              "Paramount Television Studios"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/215528",
+            "confidence": "موثق من سجل المصدر"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "series:224377": {
+      "key": "series:224377",
+      "type": "series",
+      "id": "224377",
+      "createdAt": "2026-11-15T22:47:42.864Z",
+      "attemptCount": 0,
+      "status": "ready",
+      "item": {
+        "id": "224377",
+        "type": "series",
+        "name": "هاري بوتر",
+        "originalTitle": "Harry Potter",
+        "description": "مع بلوغه الحادية عشرة، يتلقى هاري دعوة للانضمام إلى مدرسة هوغوورتس للسحر، ليكتشف عالماً خفياً يغير حياته، ويواجه أخطاراً وماضياً غامضاً ينتظره.",
+        "date": "2026-12-25",
+        "poster": "https://image.tmdb.org/t/p/w500/6spxkjxCcog8HR3cLsDVROsjz3h.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w780/4737GKC5SaD0L7hbjxBG1DF7c4R.jpg",
+        "rating": 0,
+        "genres": [
+          "خيال علمي وفانتازيا",
+          "حركة ومغامرة"
+        ],
+        "sourceUrl": "https://www.themoviedb.org/tv/224377",
+        "source": "TMDB",
+        "popularity": 12.8492,
+        "sourceMetricName": "TMDB popularity",
+        "sourceMetricValue": 12.8492,
+        "trendConfidence": "مرتفع",
+        "trendRank": 1,
+        "fieldSources": {},
+        "sourceVoteCount": 0,
+        "metadata": {
+          "voteAverage": 0,
+          "voteCount": 0,
+          "youtubeVideoId": null,
+          "youtubeVideoTitle": null,
+          "genres": [
+            "خيال علمي وفانتازيا",
+            "حركة ومغامرة"
+          ],
+          "directors": [],
+          "creators": [],
+          "cast": [
+            "دومينيك ماكلوغلين بدور Harry Potter",
+            "أرابيلا ستانتون بدور Hermione Granger",
+            "ألاستير ستاوت بدور Ron Weasley",
+            "جون ليثغو بدور Albus Dumbledore",
+            "جانيت مكتير بدور Minerva McGonagall",
+            "Paapa Essiedu بدور Severus Snape",
+            "Nick Frost بدور Rubeus Hagrid"
+          ],
+          "runtime": null,
+          "episodeRuntime": [],
+          "seasons": 1,
+          "episodes": 1,
+          "productionCompanies": [
+            "Brontë Film & TV",
+            "Warner Bros. Television",
+            "Heyday Films",
+            "HBO"
+          ],
+          "watchProviders": [],
+          "watchProviderUrl": null,
+          "communityReviews": [],
+          "similar": [
+            {
+              "id": "285309",
+              "title": "云渺"
+            },
+            {
+              "id": "4475",
+              "title": "Hogfather"
+            },
+            {
+              "id": "99088",
+              "title": "魔法使いになれなかった女の子の話"
+            },
+            {
+              "id": "65564",
+              "title": "بانيكيولا"
+            },
+            {
+              "id": "4624",
+              "title": "Roswell"
+            }
+          ],
+          "catalogContext": null,
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "series:224377",
+            "title": "هاري بوتر",
+            "type": "series",
+            "collectedAt": "2026-11-15T22:47:43.733Z",
+            "evidenceCount": 8,
+            "sourceCount": 1,
+            "sources": [
+              {
+                "name": "TMDB",
+                "url": "https://www.themoviedb.org/tv/224377"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "هاري بوتر"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/224377",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "2026-12-25"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/224377",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "مع بلوغه الحادية عشرة، يتلقى هاري دعوة للانضمام إلى مدرسة هوغوورتس للسحر، ليكتشف عالماً خفياً يغير حياته، ويواجه أخطاراً وماضياً غامضاً ينتظره."
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/224377",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "خيال علمي وفانتازيا",
+                  "حركة ومغامرة"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/224377",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "cast",
+                "label": "طاقم التمثيل",
+                "value": [
+                  "دومينيك ماكلوغلين بدور Harry Potter",
+                  "أرابيلا ستانتون بدور Hermione Granger",
+                  "ألاستير ستاوت بدور Ron Weasley",
+                  "جون ليثغو بدور Albus Dumbledore",
+                  "جانيت مكتير بدور Minerva McGonagall",
+                  "Paapa Essiedu بدور Severus Snape",
+                  "Nick Frost بدور Rubeus Hagrid"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/224377",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "seasons",
+                "label": "عدد المواسم",
+                "value": [
+                  1
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/224377",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "episodes",
+                "label": "عدد الحلقات",
+                "value": [
+                  1
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/224377",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "productionCompanies",
+                "label": "شركات الإنتاج",
+                "value": [
+                  "Brontë Film & TV",
+                  "Warner Bros. Television",
+                  "Heyday Films",
+                  "HBO"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/224377",
+                "confidence": "موثق من سجل المصدر"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        }
+      },
+      "nextAttemptAt": 0,
+      "lastError": null,
+      "updatedAt": "2026-11-15T22:47:43.733Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "series:224377",
+        "title": "هاري بوتر",
+        "type": "series",
+        "collectedAt": "2026-11-15T22:47:43.733Z",
+        "evidenceCount": 8,
+        "sourceCount": 1,
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/224377"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "هاري بوتر"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/224377",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "2026-12-25"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/224377",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "مع بلوغه الحادية عشرة، يتلقى هاري دعوة للانضمام إلى مدرسة هوغوورتس للسحر، ليكتشف عالماً خفياً يغير حياته، ويواجه أخطاراً وماضياً غامضاً ينتظره."
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/224377",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "خيال علمي وفانتازيا",
+              "حركة ومغامرة"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/224377",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "cast",
+            "label": "طاقم التمثيل",
+            "value": [
+              "دومينيك ماكلوغلين بدور Harry Potter",
+              "أرابيلا ستانتون بدور Hermione Granger",
+              "ألاستير ستاوت بدور Ron Weasley",
+              "جون ليثغو بدور Albus Dumbledore",
+              "جانيت مكتير بدور Minerva McGonagall",
+              "Paapa Essiedu بدور Severus Snape",
+              "Nick Frost بدور Rubeus Hagrid"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/224377",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "seasons",
+            "label": "عدد المواسم",
+            "value": [
+              1
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/224377",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "episodes",
+            "label": "عدد الحلقات",
+            "value": [
+              1
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/224377",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "productionCompanies",
+            "label": "شركات الإنتاج",
+            "value": [
+              "Brontë Film & TV",
+              "Warner Bros. Television",
+              "Heyday Films",
+              "HBO"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/224377",
+            "confidence": "موثق من سجل المصدر"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "series:256726": {
+      "key": "series:256726",
+      "type": "series",
+      "id": "256726",
+      "createdAt": "2026-11-15T22:47:43.925Z",
+      "attemptCount": 1,
+      "status": "waiting",
+      "item": {
+        "id": "256726",
+        "type": "series",
+        "name": "ثمن الأضواء",
+        "originalTitle": "천천히 강렬하게",
+        "description": "على مدار سنوات من القمع والخوف، صمد عالم الاستعراض في \"كوريا\" حتى لا تنطفئ أنواره وأبقى شعلة الحلم متقدة سعيًا وراء اعتلاء مسرح تتحول فيه العزيمة إلى مجد.",
+        "date": "2026-12-11",
+        "poster": "https://image.tmdb.org/t/p/w500/5SzLNVXBqpukDEwYkkocXZy8dd.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w780/AgUhVKxKbNfwkE5PXAzl71MNyIH.jpg",
+        "rating": 0,
+        "genres": [
+          "دراما",
+          "حرب وسياسة"
+        ],
+        "sourceUrl": "https://www.themoviedb.org/tv/256726",
+        "source": "TMDB",
+        "popularity": 6.887,
+        "sourceMetricName": "TMDB popularity",
+        "sourceMetricValue": 6.887,
+        "trendConfidence": "مرتفع",
+        "trendRank": 4,
+        "fieldSources": {},
+        "sourceVoteCount": 0,
+        "metadata": {
+          "voteAverage": 0,
+          "voteCount": 0,
+          "youtubeVideoId": null,
+          "youtubeVideoTitle": null,
+          "genres": [
+            "دراما",
+            "حرب وسياسة"
+          ],
+          "directors": [
+            "이윤정"
+          ],
+          "creators": [
+            "노희경",
+            "이윤정"
+          ],
+          "cast": [
+            "송혜교 بدور Min-ja",
+            "غونغ يو بدور Dong-gu",
+            "김설현 بدور Min-hee",
+            "차승원 بدور Gil-yeo",
+            "이하늬 بدور Yang-ja",
+            "나문희",
+            "김정우"
+          ],
+          "runtime": null,
+          "episodeRuntime": [],
+          "seasons": 1,
+          "episodes": 22,
+          "productionCompanies": [
+            "Studio Dragon",
+            "GTist",
+            "IMAGINUS"
+          ],
+          "watchProviders": [],
+          "watchProviderUrl": null,
+          "communityReviews": [],
+          "similar": [
+            {
+              "id": "244106",
+              "title": "The Zulu Wars"
+            },
+            {
+              "id": "244131",
+              "title": "The True Story of Alexander the Great"
+            },
+            {
+              "id": "211494",
+              "title": "Quisling"
+            },
+            {
+              "id": "94629",
+              "title": "Do krwi ostatniej"
+            },
+            {
+              "id": "61222",
+              "title": "BoJack Horseman"
+            }
+          ],
+          "catalogContext": null,
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "series:256726",
+            "title": "ثمن الأضواء",
+            "type": "series",
+            "collectedAt": "2026-11-15T22:47:44.781Z",
+            "evidenceCount": 10,
+            "sourceCount": 1,
+            "sources": [
+              {
+                "name": "TMDB",
+                "url": "https://www.themoviedb.org/tv/256726"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "ثمن الأضواء"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/256726",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "2026-12-11"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/256726",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "على مدار سنوات من القمع والخوف، صمد عالم الاستعراض في \"كوريا\" حتى لا تنطفئ أنواره وأبقى شعلة الحلم متقدة سعيًا وراء اعتلاء مسرح تتحول فيه العزيمة إلى مجد."
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/256726",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "دراما",
+                  "حرب وسياسة"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/256726",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "cast",
+                "label": "طاقم التمثيل",
+                "value": [
+                  "송혜교 بدور Min-ja",
+                  "غونغ يو بدور Dong-gu",
+                  "김설현 بدور Min-hee",
+                  "차승원 بدور Gil-yeo",
+                  "이하늬 بدور Yang-ja",
+                  "나문희",
+                  "김정우"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/256726",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "directors",
+                "label": "المخرجون",
+                "value": [
+                  "이윤정"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/256726",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "creators",
+                "label": "المبدعون",
+                "value": [
+                  "노희경",
+                  "이윤정"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/256726",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "seasons",
+                "label": "عدد المواسم",
+                "value": [
+                  1
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/256726",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "episodes",
+                "label": "عدد الحلقات",
+                "value": [
+                  22
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/256726",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "productionCompanies",
+                "label": "شركات الإنتاج",
+                "value": [
+                  "Studio Dragon",
+                  "GTist",
+                  "IMAGINUS"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/256726",
+                "confidence": "موثق من سجل المصدر"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        }
+      },
+      "nextAttemptAt": 1794783599000,
+      "lastError": "فشل التوليد عبر جميع المزوّدات المجانية المتاحة: groq (editorial quality): الدرجات الفرعية الأربعة غير مكتملة أو خارج النطاق 0–10 | groq (score repair): المراجعة المولّدة أقصر من الحد الأدنى للتحليل المتكامل (3200 حرف)",
+      "updatedAt": "2026-11-15T22:48:23.086Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "series:256726",
+        "title": "ثمن الأضواء",
+        "type": "series",
+        "collectedAt": "2026-11-15T22:47:44.781Z",
+        "evidenceCount": 10,
+        "sourceCount": 1,
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/256726"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "ثمن الأضواء"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/256726",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "2026-12-11"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/256726",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "على مدار سنوات من القمع والخوف، صمد عالم الاستعراض في \"كوريا\" حتى لا تنطفئ أنواره وأبقى شعلة الحلم متقدة سعيًا وراء اعتلاء مسرح تتحول فيه العزيمة إلى مجد."
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/256726",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "دراما",
+              "حرب وسياسة"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/256726",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "cast",
+            "label": "طاقم التمثيل",
+            "value": [
+              "송혜교 بدور Min-ja",
+              "غونغ يو بدور Dong-gu",
+              "김설현 بدور Min-hee",
+              "차승원 بدور Gil-yeo",
+              "이하늬 بدور Yang-ja",
+              "나문희",
+              "김정우"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/256726",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "directors",
+            "label": "المخرجون",
+            "value": [
+              "이윤정"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/256726",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "creators",
+            "label": "المبدعون",
+            "value": [
+              "노희경",
+              "이윤정"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/256726",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "seasons",
+            "label": "عدد المواسم",
+            "value": [
+              1
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/256726",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "episodes",
+            "label": "عدد الحلقات",
+            "value": [
+              22
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/256726",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "productionCompanies",
+            "label": "شركات الإنتاج",
+            "value": [
+              "Studio Dragon",
+              "GTist",
+              "IMAGINUS"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/256726",
+            "confidence": "موثق من سجل المصدر"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "series:307825": {
+      "key": "series:307825",
+      "type": "series",
+      "id": "307825",
+      "createdAt": "2026-11-15T22:48:23.090Z",
+      "attemptCount": 1,
+      "status": "waiting",
+      "item": {
+        "id": "307825",
+        "type": "series",
+        "name": "عنبر الموت",
+        "originalTitle": "عنبر الموت",
+        "description": "عمل درامي يستند إلى قضية حقيقية شهيرة حدثت في الإسكندرية في أواخر التسعينيات، حيث تم اتهام ممرضة تُدعى عايدة نور الدين بقتل أحد المرضى عمدًا ومحاولة قتل أكثر من 30 مريضًا عن طريق حقنهم بمادة خطيرة في المستشفى التي تعمل بها، بالإضافة إلى اتهامها بسرقة الأدوية.",
+        "date": "2026-11-26",
+        "poster": "https://image.tmdb.org/t/p/w500/vgfSGOsQLaHc14XsoEagBmYpClM.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w780/bbg3r0pXNHDFvd0VPHp1YpW5jOo.jpg",
+        "rating": 0,
+        "genres": [
+          "دراما",
+          "غموض"
+        ],
+        "sourceUrl": "https://www.themoviedb.org/tv/307825",
+        "source": "TMDB",
+        "popularity": 1.2059,
+        "sourceMetricName": "TMDB popularity",
+        "sourceMetricValue": 1.2059,
+        "trendConfidence": "مرتفع",
+        "trendRank": 99,
+        "fieldSources": {},
+        "sourceVoteCount": 0,
+        "metadata": {
+          "voteAverage": 0,
+          "voteCount": 0,
+          "youtubeVideoId": null,
+          "youtubeVideoTitle": null,
+          "genres": [
+            "دراما",
+            "غموض"
+          ],
+          "directors": [
+            "كريم الشناوي"
+          ],
+          "creators": [
+            "مريم نعوم",
+            "كريم الشناوي"
+          ],
+          "cast": [
+            "منة شلبي",
+            "حمزة العيلي",
+            "رشدي الشامي",
+            "علي قاسم",
+            "بسمة",
+            "أحمد خالد صالح",
+            "حليم الجندي"
+          ],
+          "runtime": null,
+          "episodeRuntime": [],
+          "seasons": 1,
+          "episodes": 12,
+          "productionCompanies": [
+            "MBC Shahid"
+          ],
+          "watchProviders": [],
+          "watchProviderUrl": null,
+          "communityReviews": [],
+          "similar": [],
+          "catalogContext": null,
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "series:307825",
+            "title": "عنبر الموت",
+            "type": "series",
+            "collectedAt": "2026-11-15T22:48:24.246Z",
+            "evidenceCount": 10,
+            "sourceCount": 1,
+            "sources": [
+              {
+                "name": "TMDB",
+                "url": "https://www.themoviedb.org/tv/307825"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "عنبر الموت"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/307825",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "2026-11-26"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/307825",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "عمل درامي يستند إلى قضية حقيقية شهيرة حدثت في الإسكندرية في أواخر التسعينيات، حيث تم اتهام ممرضة تُدعى عايدة نور الدين بقتل أحد المرضى عمدًا ومحاولة قتل أكثر من 30 مريضًا عن طريق حقنهم بمادة خطيرة في المستشفى التي تعمل بها، بالإضافة إلى اتهامها بسرقة الأدوية."
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/307825",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "دراما",
+                  "غموض"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/307825",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "cast",
+                "label": "طاقم التمثيل",
+                "value": [
+                  "منة شلبي",
+                  "حمزة العيلي",
+                  "رشدي الشامي",
+                  "علي قاسم",
+                  "بسمة",
+                  "أحمد خالد صالح",
+                  "حليم الجندي"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/307825",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "directors",
+                "label": "المخرجون",
+                "value": [
+                  "كريم الشناوي"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/307825",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "creators",
+                "label": "المبدعون",
+                "value": [
+                  "مريم نعوم",
+                  "كريم الشناوي"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/307825",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "seasons",
+                "label": "عدد المواسم",
+                "value": [
+                  1
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/307825",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "episodes",
+                "label": "عدد الحلقات",
+                "value": [
+                  12
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/307825",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "productionCompanies",
+                "label": "شركات الإنتاج",
+                "value": [
+                  "MBC Shahid"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/307825",
+                "confidence": "موثق من سجل المصدر"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        }
+      },
+      "nextAttemptAt": 1794783599000,
+      "lastError": "فشل التوليد عبر جميع المزوّدات المجانية المتاحة: groq (editorial quality): الدرجات الفرعية الأربعة غير مكتملة أو خارج النطاق 0–10 | groq (score repair): المراجعة المولّدة أقصر من الحد الأدنى للتحليل المتكامل (3200 حرف)",
+      "updatedAt": "2026-11-15T22:49:05.951Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "series:307825",
+        "title": "عنبر الموت",
+        "type": "series",
+        "collectedAt": "2026-11-15T22:48:24.246Z",
+        "evidenceCount": 10,
+        "sourceCount": 1,
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/307825"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "عنبر الموت"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/307825",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "2026-11-26"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/307825",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "عمل درامي يستند إلى قضية حقيقية شهيرة حدثت في الإسكندرية في أواخر التسعينيات، حيث تم اتهام ممرضة تُدعى عايدة نور الدين بقتل أحد المرضى عمدًا ومحاولة قتل أكثر من 30 مريضًا عن طريق حقنهم بمادة خطيرة في المستشفى التي تعمل بها، بالإضافة إلى اتهامها بسرقة الأدوية."
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/307825",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "دراما",
+              "غموض"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/307825",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "cast",
+            "label": "طاقم التمثيل",
+            "value": [
+              "منة شلبي",
+              "حمزة العيلي",
+              "رشدي الشامي",
+              "علي قاسم",
+              "بسمة",
+              "أحمد خالد صالح",
+              "حليم الجندي"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/307825",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "directors",
+            "label": "المخرجون",
+            "value": [
+              "كريم الشناوي"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/307825",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "creators",
+            "label": "المبدعون",
+            "value": [
+              "مريم نعوم",
+              "كريم الشناوي"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/307825",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "seasons",
+            "label": "عدد المواسم",
+            "value": [
+              1
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/307825",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "episodes",
+            "label": "عدد الحلقات",
+            "value": [
+              12
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/307825",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "productionCompanies",
+            "label": "شركات الإنتاج",
+            "value": [
+              "MBC Shahid"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/307825",
+            "confidence": "موثق من سجل المصدر"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "series:310209": {
+      "key": "series:310209",
+      "type": "series",
+      "id": "310209",
+      "createdAt": "2026-11-15T22:49:05.955Z",
+      "attemptCount": 1,
+      "status": "waiting",
+      "item": {
+        "id": "310209",
+        "type": "series",
+        "name": "من التاسعة حتى السادسة",
+        "originalTitle": "나인 투 식스",
+        "description": "تواجه \"كانغ إي جي\"، المديرة الأولى في \"كرونيك موتورز\"، خطر خفض رتبتها على خلفية اتهامات ظالمة بشأن حريق سيارة. فهل تجد الحب والسعادة وسط صراعات العمل؟",
+        "date": "2026-11-25",
+        "poster": "https://image.tmdb.org/t/p/w500/uI1kQ1w6qmqF8cljpnd7AtcBE9J.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w780/vRuayyRqPoxFCq2xwAc2hsJqonm.jpg",
+        "rating": 0,
+        "genres": [
+          "دراما",
+          "كوميديا"
+        ],
+        "sourceUrl": "https://www.themoviedb.org/tv/310209",
+        "source": "TMDB",
+        "popularity": 4.6084,
+        "sourceMetricName": "TMDB popularity",
+        "sourceMetricValue": 4.6084,
+        "trendConfidence": "مرتفع",
+        "trendRank": 12,
+        "fieldSources": {},
+        "sourceVoteCount": 0,
+        "metadata": {
+          "voteAverage": 0,
+          "voteCount": 0,
+          "youtubeVideoId": null,
+          "youtubeVideoTitle": null,
+          "genres": [
+            "دراما",
+            "كوميديا"
+          ],
+          "directors": [
+            "이형민"
+          ],
+          "creators": [
+            "최지오"
+          ],
+          "cast": [
+            "박민영 بدور Kang Yi-ji",
+            "육성재 بدور Han Seon-wu",
+            "고수 بدور Park Hyeon-tae",
+            "주현영 بدور Shin Ji-won",
+            "최지수",
+            "Seo Yi-an",
+            "전배수"
+          ],
+          "runtime": null,
+          "episodeRuntime": [],
+          "seasons": 1,
+          "episodes": 12,
+          "productionCompanies": [
+            "Studio S",
+            "Samhwa Networks"
+          ],
+          "watchProviders": [],
+          "watchProviderUrl": null,
+          "communityReviews": [],
+          "similar": [
+            {
+              "id": "65332",
+              "title": "甘城ブリリアントパーク"
+            },
+            {
+              "id": "65356",
+              "title": "電波女と青春男"
+            },
+            {
+              "id": "99112",
+              "title": "반의 반"
+            },
+            {
+              "id": "133372",
+              "title": "मीत"
+            },
+            {
+              "id": "285275",
+              "title": "以爱之名"
+            }
+          ],
+          "catalogContext": null,
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "series:310209",
+            "title": "من التاسعة حتى السادسة",
+            "type": "series",
+            "collectedAt": "2026-11-15T22:49:06.967Z",
+            "evidenceCount": 10,
+            "sourceCount": 1,
+            "sources": [
+              {
+                "name": "TMDB",
+                "url": "https://www.themoviedb.org/tv/310209"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "من التاسعة حتى السادسة"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/310209",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "2026-11-25"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/310209",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "تواجه \"كانغ إي جي\"، المديرة الأولى في \"كرونيك موتورز\"، خطر خفض رتبتها على خلفية اتهامات ظالمة بشأن حريق سيارة. فهل تجد الحب والسعادة وسط صراعات العمل؟"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/310209",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "دراما",
+                  "كوميديا"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/310209",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "cast",
+                "label": "طاقم التمثيل",
+                "value": [
+                  "박민영 بدور Kang Yi-ji",
+                  "육성재 بدور Han Seon-wu",
+                  "고수 بدور Park Hyeon-tae",
+                  "주현영 بدور Shin Ji-won",
+                  "최지수",
+                  "Seo Yi-an",
+                  "전배수"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/310209",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "directors",
+                "label": "المخرجون",
+                "value": [
+                  "이형민"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/310209",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "creators",
+                "label": "المبدعون",
+                "value": [
+                  "최지오"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/310209",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "seasons",
+                "label": "عدد المواسم",
+                "value": [
+                  1
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/310209",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "episodes",
+                "label": "عدد الحلقات",
+                "value": [
+                  12
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/310209",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "productionCompanies",
+                "label": "شركات الإنتاج",
+                "value": [
+                  "Studio S",
+                  "Samhwa Networks"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/310209",
+                "confidence": "موثق من سجل المصدر"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        }
+      },
+      "nextAttemptAt": 1794783599000,
+      "lastError": "فشل التوليد عبر جميع المزوّدات المجانية المتاحة: groq (editorial quality): الدرجات الفرعية الأربعة غير مكتملة أو خارج النطاق 0–10 | groq (score repair): المراجعة المولّدة أقصر من الحد الأدنى للتحليل المتكامل (3200 حرف)",
+      "updatedAt": "2026-11-15T22:49:46.472Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "series:310209",
+        "title": "من التاسعة حتى السادسة",
+        "type": "series",
+        "collectedAt": "2026-11-15T22:49:06.967Z",
+        "evidenceCount": 10,
+        "sourceCount": 1,
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/310209"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "من التاسعة حتى السادسة"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/310209",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "2026-11-25"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/310209",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "تواجه \"كانغ إي جي\"، المديرة الأولى في \"كرونيك موتورز\"، خطر خفض رتبتها على خلفية اتهامات ظالمة بشأن حريق سيارة. فهل تجد الحب والسعادة وسط صراعات العمل؟"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/310209",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "دراما",
+              "كوميديا"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/310209",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "cast",
+            "label": "طاقم التمثيل",
+            "value": [
+              "박민영 بدور Kang Yi-ji",
+              "육성재 بدور Han Seon-wu",
+              "고수 بدور Park Hyeon-tae",
+              "주현영 بدور Shin Ji-won",
+              "최지수",
+              "Seo Yi-an",
+              "전배수"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/310209",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "directors",
+            "label": "المخرجون",
+            "value": [
+              "이형민"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/310209",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "creators",
+            "label": "المبدعون",
+            "value": [
+              "최지오"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/310209",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "seasons",
+            "label": "عدد المواسم",
+            "value": [
+              1
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/310209",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "episodes",
+            "label": "عدد الحلقات",
+            "value": [
+              12
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/310209",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "productionCompanies",
+            "label": "شركات الإنتاج",
+            "value": [
+              "Studio S",
+              "Samhwa Networks"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/310209",
+            "confidence": "موثق من سجل المصدر"
           }
         ],
         "limitations": [
