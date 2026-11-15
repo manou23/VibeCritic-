@@ -1189,6 +1189,13 @@ async function main(){
  let done=[];try{done=JSON.parse(await fs.readFile(processedPath,'utf8'));}catch{}
  const publishedIndex=await loadPublishedIndex();
  console.log('سجل الأعمال المنشورة (published.json + ملفات المراجعات):',publishedIndex.size);
+ for(const job of Object.values(contentQueue.jobs)){
+  const key=job.key||String(job.type)+':'+String(job.id);
+  if(publishedIndex.has(key)&&job.status!=='published'){
+   job.status='published';job.item=null;job.evidenceDossier=null;job.nextAttemptAt=0;job.publishedAt=job.publishedAt||new Date().toISOString();job.updatedAt=new Date().toISOString();
+  }
+ }
+ await saveContentQueue();
  const types=['game','series','movie'];
  const publishedFiles=(await fs.readdir(outDir)).filter(name=>name.endsWith('.md'));
  const publishedKeys=publishedIndex;
