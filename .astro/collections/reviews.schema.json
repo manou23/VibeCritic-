@@ -204,6 +204,14 @@
       "default": true,
       "type": "boolean"
     },
+    "editorialWorkflow": {
+      "default": "automated",
+      "type": "string",
+      "enum": [
+        "automated",
+        "manual-assisted"
+      ]
+    },
     "$schema": {
       "type": "string"
     }
