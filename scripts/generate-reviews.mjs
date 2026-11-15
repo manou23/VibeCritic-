@@ -13,7 +13,7 @@ import { buildPersonalityEvolutionGuidance, assessPersonalityEvolution } from '.
 import { buildHistoricalProfile, buildHistoricalComparisonReport, formatHistoricalComparisonContext, buildHistoricalComparisonRecord } from './historical-comparisons.mjs';
 import { loadJudgmentHistory, buildJudgmentRevisionContext, recordJudgmentVersion } from './judgment-history.mjs';
 import { SCORE_SCALE_PROMPT } from './scoring-rubric.mjs';
-import { retryHintTimestamp } from './provider-cooldown.mjs';
+import { retryHintTimestamp, isDailyQuotaMessage } from './provider-cooldown.mjs';
 import { parseJsonResponse, REVIEW_OUTPUT_CONTRACT } from './review-json.mjs';
 
 const env=process.env;
@@ -419,12 +419,12 @@ async function recordProviderOutcome(name,success,error=null,measurement=null,it
   const retryAfter=parseReset(headers['retry-after'])||retryHintTimestamp(message);
   const resetAt=parseReset(headers['x-ratelimit-reset-requests']??headers['x-ratelimit-reset-tokens']??headers['x-ratelimit-reset']);
   const providerReset=retryAfter||resetAt;
-  const explicitDaily=/daily|per[_ -]?day|free_model_daily_requests|daily quota|quota for today|tokens per day|\\bTPD\\b|تجاوز.*اليوم|الحصة اليومية/i.test(message);
+  const explicitDaily=isDailyQuotaMessage(message);
   const quotaExhausted=/resource[_ -]?exhausted|insufficient quota|quota exceeded/i.test(message);
   if(status===429||/rate.?limit/i.test(message)){
    const until=providerReset||Date.now()+60*1000;
    const isDaily=explicitDaily||quotaExhausted;
-   const dailyTokenWindow=/tokens per day|\\bTPD\\b/i.test(message);
+  const dailyTokenWindow=/tokens per day|\bTPD\b/i.test(message);
    // Honor explicit provider reset hints (including durations embedded in JSON error bodies).
    // Fall back to local end-of-day only when a daily quota error gives no reset time.
    entry.blockedUntil=dailyTokenWindow?until:isDaily?(providerReset||new Date(algeriaDate()+'T23:59:59+01:00').getTime()):Math.min(Math.max(until,Date.now()+15000),Date.now()+15*60*1000);
