@@ -10,7 +10,6 @@ reviewMode: limited
 sourceName: "TMDB"
 sourceVoteCount: 4416
 sourceRatingScale: 10
-metacriticScore: 0
 cast:
   - "Mariska Hargitay بدور Olivia Benson"
   - "آيس-تي بدور Odafin 'Fin' Tutuola"
