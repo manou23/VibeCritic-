@@ -897,14 +897,39 @@ async function generateReview(item){
      providerErrors.push(name+' (editorial quality): '+error.message);
      await recordLearningFailure(item,error);
      const depthFailure=/أقصر من الحد الأدنى|أقصر من المعيار التحريري|محور نقدي أقصر|لا تتضمن المحاور النقدية/.test(error.message);
-     const scoreFailure=/الدرجات الفرعية الأربعة غير مكتملة|الدرجات الفرعية بخطوة عشرية/.test(error.message);
-     if(qualityAttempt===0&&(depthFailure||scoreFailure)){
-      const repairTask=scoreFailure
-       ?'أصلح كائن scores تحديداً: أعد المفاتيح الأربعة story وvisuals وsound وpacing جميعها كأرقام JSON فعلية بين 0 و10 وبمنزلة عشرية واحدة كحد أقصى. لا تترك أي قيمة مفقودة أو نصية أو null. اجعل الدرجات متسقة مع الأدلة والمراجعة، ولا ترفعها لإرضاء القارئ. احتفظ بالنص النقدي كما هو ما لم يتعارض مع الدرجات.'
-       :'اجعل النص التحليلي review بين 700 و850 كلمة فعلية، وبحد أدنى 3200 حرف، مع خمسة محاور نقدية كاملة لا يقل كل محور عن 65 كلمة، وخاتمة موجزة. لا تغيّر الحقائق أو تخترع تفاصيل جديدة ولا تضف حشواً أو تكراراً. وسّع التحليل فقط بالاستدلال من البيانات والسياق الموثوق الموجود في الطلب الأصلي.';
-      attemptPrompt=prompt+'\n\nمهمة إصلاح إلزامية للمراجعة التي أخرجتها للتو: '+repairTask+' احتفظ بالعنوان والافتتاحية والدرجات أو أصلحها وفق المطلوب ونقاط القوة والضعف ما دامت متسقة مع النص، وأعد JSON كاملاً صالحاً بالمفاتيح نفسها. سبب الرفض: '+error.message+'\n\nالمسودة السابقة بصيغة JSON: '+JSON.stringify(generated).slice(0,9000);
+     const scoreFailure=/الدرجات|التقييم الإجمالي|التقييم 9\\.5/.test(error.message);
+     if(qualityAttempt===0&&scoreFailure){
+      // Repair only the score object; preserve the article text and save tokens.
+      const scorePrompt=[
+       'أنت مقيّم نقدي مستقل. أعد JSON صالحاً فقط يحتوي كائناً واحداً باسم scores.',
+       'المفاتيح الإلزامية: story وvisuals وsound وpacing. كل قيمة رقم JSON حقيقي بين 0 و10 وبمنزلة عشرية واحدة كحد أقصى.',
+       'لا تمنح درجات مجاملة: 5 متوسط، 6 مقبول محدود، 7 جيد مع عيوب، 8 جودة عالية، و9 فأعلى استثنائي ونادر.',
+       'استند حصراً إلى النص والحقائق التالية. لا تعد كتابة المراجعة ولا تضف أي مفتاح آخر.',
+       'العمل: '+String(item.name||'غير معروف')+' | النوع: '+String(item.type||'غير معروف')+' | تاريخ الإصدار: '+String(item.date||'غير معروف'),
+       'المراجعة النقدية: '+String(generated.review||'').slice(0,10000),
+       'نقاط القوة: '+JSON.stringify(generated.pros||[]),
+       'التحفظات: '+JSON.stringify(generated.cons||[]),
+       'سبب رفض الدرجات السابقة: '+error.message,
+       'الشكل المطلوب: {"scores":{"story":5.5,"visuals":5.5,"sound":5.5,"pacing":5.5}}'
+      ].join('\\n');
+      try{
+       const repaired=await handlers[name](name==='groq'?compactGroqPrompt(scorePrompt,7500):scorePrompt);
+       generated={...generated,scores:repaired?.scores||repaired};
+       parsed=validateGeneratedReview(generated);
+       console.log('تم إصلاح الدرجات وحدها واجتازت المراجعة بوابة الجودة عبر:',name);
+       break;
+      }catch(repairError){
+       providerErrors.push(name+' (score repair): '+repairError.message);
+       await recordLearningFailure(item,repairError);
+       console.warn('تعذر إصلاح الدرجات دون إعادة كتابة المقال؛ الانتقال إلى المزوّد التالي:',repairError.message);
+       break;
+      }
+     }
+     if(qualityAttempt===0&&depthFailure){
+      const repairTask='اجعل النص التحليلي review بين 700 و850 كلمة فعلية، وبحد أدنى 3200 حرف، مع خمسة محاور نقدية كاملة لا يقل كل محور عن 65 كلمة، وخاتمة موجزة. لا تغيّر الحقائق أو تخترع تفاصيل جديدة ولا تضف حشواً أو تكراراً. وسّع التحليل فقط بالاستدلال من البيانات والسياق الموثوق الموجود في الطلب الأصلي.';
+      attemptPrompt=prompt+'\\n\\nمهمة إصلاح إلزامية للمراجعة التي أخرجتها للتو: '+repairTask+' احتفظ بالعنوان والافتتاحية والدرجات ونقاط القوة والضعف ما دامت متسقة مع النص، وأعد JSON كاملاً صالحاً بالمفاتيح نفسها. سبب الرفض: '+error.message+'\\n\\nالمسودة السابقة بصيغة JSON: '+JSON.stringify(generated).slice(0,9000);
       if(name==='groq')attemptPrompt=compactGroqPrompt(attemptPrompt,11000);
-      console.warn('المزوّد '+name+' أعاد مراجعة لم تجتز الجودة ('+(scoreFailure?'درجات ناقصة':'تحليل قصير')+')؛ طلب إصلاح واحد محدد قبل الانتقال.');
+      console.warn('المزوّد '+name+' أعاد تحليلاً قصيراً؛ طلب إصلاح واحد محدد قبل الانتقال.');
       continue;
      }
      console.warn('استجاب المزوّد '+name+' لكن المراجعة لم تجتز بوابة الجودة؛ الانتقال إلى التالي:',error.message);
