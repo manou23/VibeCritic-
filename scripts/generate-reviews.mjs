@@ -40,7 +40,7 @@ async function loadPublishedIndex(){
  for(const file of await fs.readdir(outDir)){
   if(!file.endsWith('.md'))continue;
   const type=['game','movie','series'].find(value=>file.startsWith(value+'-'));
-  const id=file.match(/-(\\d+)\\.md$/)?.[1];
+  const id=file.match(/-(\d+)\.md$/)?.[1];
   if(type&&id)keys.add(type+':'+id);
  }
  return keys;
