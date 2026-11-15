@@ -1,6 +1,10 @@
 ---
 title: "Stardew Valley"
 originalTitle: "Stardew Valley"
+youtubeVideoTitle: "Stardew Valley Trailer — ConcernedApe"
+youtubeVideoId: "ot7uXNQskhs"
+backdrop: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/header.jpg?t=1754692865"
+poster: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/header.jpg?t=1754692865"
 headline: "Stardew Valley: حياة صغيرة تمنح اللاعب مساحة كبيرة ليختار إيقاعه"
 hook: "لا تطلب منك اللعبة إنقاذ العالم؛ إنها تسألك إن كنت تستطيع بناء مكان تريد العودة إليه كل صباح."
 summary: "تجمع Stardew Valley بين إدارة المزرعة والاستكشاف والعلاقات الاجتماعية في تجربة مفتوحة الإيقاع، وتحوّل الأعمال اليومية البسيطة إلى دورة تقدم طويلة ذات شخصية واضحة."

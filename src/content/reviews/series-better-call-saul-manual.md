@@ -1,6 +1,10 @@
 ---
 title: "Better Call Saul"
 originalTitle: "Better Call Saul"
+youtubeVideoTitle: "Better Call Saul — Official Season 6 Trailer"
+youtubeVideoId: "Qz3u06eXf0E"
+backdrop: "https://image.tmdb.org/t/p/w1280/rfxryDIv8huejujg4JueDJx8zCz.jpg"
+poster: "https://image.tmdb.org/t/p/w500/zjg4jpK1Wp2kiRvtt5ND0kznako.jpg"
 headline: "Better Call Saul — كيف تتحول التنازلات الصغيرة إلى هوية كاملة"
 hook: "لا يصبح جيمي ماكغيل شخصاً آخر في لحظة واحدة؛ إنه يقترب من ذلك عبر قرارات صغيرة يسهل تبرير كل واحدة منها."
 summary: "يتتبع المسلسل تحولات المحامي جيمي ماكغيل وعلاقاته المهنية والعائلية، في دراما قانونية وجنائية تدرس الطموح والهوية والولاء وثمن الاختيارات."

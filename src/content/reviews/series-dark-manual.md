@@ -1,6 +1,10 @@
 ---
 title: "Dark"
 originalTitle: "Dark"
+youtubeVideoTitle: "Dark — Teaser [Subtitled]"
+youtubeVideoId: "ESEUoa-mz2c"
+backdrop: "https://image.tmdb.org/t/p/w1280/3jDXL4Xvj3AzDOF6UH1xeyHW8MH.jpg"
+poster: "https://image.tmdb.org/t/p/w500/5LoHuHWA4H8jElFlZDvsmU2n63b.jpg"
 headline: "Dark — بلدة صغيرة، وأجيال عالقة في سؤال واحد"
 hook: "في ويندن، لا يكفي أن تعرف متى وقع الحدث؛ عليك أن تفهم من كان يعرفه، ومن حاول تغييره، ومن صنعه دون أن يدري."
 summary: "يبني Dark لغزاً ألمانياً عن اختفاء طفل وعائلات متشابكة عبر أزمنة متعددة، ويستخدم السفر عبر الزمن لفحص الإرث العائلي والذنب والاختيار."

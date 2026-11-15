@@ -1,6 +1,10 @@
 ---
 title: "بليد رانر 2049"
 originalTitle: "Blade Runner 2049"
+youtubeVideoTitle: "Blade Runner 2049 — Official Trailer"
+youtubeVideoId: "f2jW75Q8EaI"
+backdrop: undefined
+poster: "https://image.tmdb.org/t/p/w500/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg"
 headline: "Blade Runner 2049: عالم يسأل إن كانت الذكريات تكفي لصناعة إنسان"
 hook: "في مدينة لا تكف عن إنتاج الصور والنسخ، يصبح السؤال الأصعب ليس من صنعك، بل ما الذي يجعل حياتك ذا معنى."
 summary: "يواصل Denis Villeneuve عالم Blade Runner عبر رحلة بصرية وتأملية تتبع المحقق K وهو يواجه اكتشافاً يربك الحدود بين الذاكرة والهوية والإنسانية."

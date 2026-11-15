@@ -1,6 +1,10 @@
 ---
 title: "Dune: الجزء الثاني"
 originalTitle: "Dune: Part Two"
+youtubeVideoTitle: "Dune: Part Two — Official Trailer 3"
+youtubeVideoId: "U2Qp5pL3ovA"
+backdrop: "https://www.dneg.com/_next/image?q=75&url=https%3A%2F%2Fimages.ctfassets.net%2F3sjsytt3tkv5%2F4PcEkcOa2WunJryqrujt1I%2F34a7ce84bd8d78857d2d335b311447ba%2FHALFWAY_before_1.png&w=3840"
+poster: "https://m.media-amazon.com/images/M/MV5BNTc0YmQxMjEtODI5MC00NjFiLTlkMWUtOGQ5NjFmYWUyZGJhXkEyXkFqcGc%40._V1_FMjpg_UY4096_.jpg"
 headline: "Dune: Part Two — حين يتحول النبوءة إلى سلاح سياسي"
 hook: "كلما اقترب بول من القوة التي يحتاجها للانتقام، ازداد احتمال أن يصبح هو نفسه الكارثة التي يحاول منعها."
 summary: "يوسع Denis Villeneuve صراع أراكس عبر رحلة بول أتريدس بين الحب والانتقام والسلطة، ويحوّل الملحمة إلى اختبار أخلاقي حول صناعة القادة واستغلال الإيمان."

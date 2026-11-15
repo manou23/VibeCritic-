@@ -1,6 +1,10 @@
 ---
 title: "Portal 2"
 originalTitle: "Portal 2"
+youtubeVideoTitle: "Portal 2 — Teaser Trailer by Valve"
+youtubeVideoId: "tax4e4hBBZc"
+backdrop: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/620/header.jpg?t=1745363004"
+poster: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/620/header.jpg?t=1745363004"
 headline: "Portal 2 — ذكاء اللاعب هو المفتاح الحقيقي لكل غرفة اختبار"
 hook: "كل لغز يبدو مستحيلاً حتى تتوقف عن النظر إلى الجدران كحدود، وتبدأ في رؤيتها كطرق محتملة."
 summary: "توسع Valve فكرة البوابات إلى مغامرة ألغاز تجمع الفيزياء والكوميديا والشخصيات، مع حملة فردية متقنة ووضع تعاوني يفرض التفكير المشترك."

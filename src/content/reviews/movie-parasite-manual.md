@@ -1,6 +1,10 @@
 ---
 title: "Parasite"
 originalTitle: "기생충"
+youtubeVideoTitle: "Parasite — Official Trailer"
+youtubeVideoId: "bM9QabAojCg"
+backdrop: "https://image.tmdb.org/t/p/w1280/TU9NIjwzjoKPwQHoHshkFcQUCG.jpg"
+poster: "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg"
 headline: "Parasite — بيت واحد يكشف طبقات مجتمع كامل"
 hook: "حين تتقاطع عائلتان في مساحة واحدة، لا يعود السؤال من يخدع من فقط، بل من صمم القواعد التي تجعل الخداع ضرورة."
 summary: "يصنع Bong Joon-ho حكاية تشويق سوداء عن عائلتين من عالمين اقتصاديين مختلفين، ويحوّل البيت والدرج والمسافة بين الطوابق إلى لغة بصرية عن الطبقة والامتياز."

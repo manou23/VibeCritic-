@@ -1,6 +1,10 @@
 ---
 title: "عرض ترومان"
 originalTitle: "The Truman Show"
+youtubeVideoTitle: "The Truman Show — Official Movie Trailer"
+youtubeVideoId: "c3gI9ms8Fdc"
+backdrop: "https://image.tmdb.org/t/p/w1280/aCHn2TXYJfzPXQKA6r9mKPbMlUB.jpg"
+poster: "https://image.tmdb.org/t/p/w500/vuza0WqY239yBXOadKlGwJsZJFE.jpg"
 headline: "The Truman Show: حين تصبح الحياة الخاصة فرجة للجميع"
 hook: "قد يبدو العالم مثالياً حين يبتسم لك الجميع، لكن ماذا لو كانت ابتساماتهم جزءاً من عقد عمل؟"
 summary: "يستخدم Peter Weir حكاية رجل يعيش داخل برنامج تلفزيوني دون علمه لطرح أسئلة عن الخصوصية والاختيار وصناعة الواقع، بمزيج من الكوميديا والقلق الإنساني."

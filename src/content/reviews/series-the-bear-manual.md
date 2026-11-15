@@ -1,6 +1,10 @@
 ---
 title: "The Bear"
 originalTitle: "The Bear"
+youtubeVideoTitle: "The Bear — Official Trailer (Season 3)"
+youtubeVideoId: "NGsawkAOpv4"
+backdrop: "https://assets.fxnetworks.com/fx/4426a3ca-ad87-463d-9bd1-f6a3210e0dd8.jpg?imwidth=1920"
+poster: "https://assets.fxnetworks.com/fx/4b3d3fb0-ed6e-4fd6-9bea-71268df0c177.jpg?imwidth=400"
 headline: "The Bear: مطبخ صغير يكشف ضغط العائلة والعمل والطموح"
 hook: "في هذا المطعم، لا تأتي الفوضى من الطلبات وحدها؛ إنها تأتي من أشخاص يحمل كل واحد منهم ماضيه إلى نوبة العمل."
 summary: "يتابع The Bear محاولة Carmy وفريقه تحويل مطعم ساندويتشات متعثر إلى مشروع أكثر طموحاً، ويحوّل ضغط المطبخ إلى دراما عن الحداد والعائلة والاحتراف والتعاون."

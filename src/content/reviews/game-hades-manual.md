@@ -1,6 +1,10 @@
 ---
 title: "Hades"
 originalTitle: "Hades"
+youtubeVideoTitle: "Hades — v1.0 Launch Trailer"
+youtubeVideoId: "Bz8l935Bv0Y"
+backdrop: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145360/header.jpg?t=1758127023"
+poster: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145360/header.jpg?t=1758127023"
 headline: "Hades — كل محاولة هروب تكشف حكاية جديدة عن العائلة والقدر"
 hook: "الفشل هنا ليس نهاية الجولة فقط؛ إنه عودة إلى بيت تتغير فيه العلاقات كلما حاولت من جديد."
 summary: "تجمع Supergiant Games قتالاً سريعاً بنظام roguelike وسرداً يتقدم عبر المحاولات، في رحلة Zagreus للهروب من العالم السفلي ومواجهة علاقته بعائلته."

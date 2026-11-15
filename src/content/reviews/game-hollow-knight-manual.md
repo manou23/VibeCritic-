@@ -1,6 +1,10 @@
 ---
 title: "Hollow Knight"
 originalTitle: "Hollow Knight"
+youtubeVideoTitle: "Hollow Knight — Release Trailer"
+youtubeVideoId: "UAO2urG23S4"
+backdrop: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/367520/3c3489495136b26b34f8a9543c7f5645b99d388c/header.jpg?t=1776125684"
+poster: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/367520/3c3489495136b26b34f8a9543c7f5645b99d388c/header.jpg?t=1776125684"
 headline: "Hollow Knight — مملكة تحت الأرض تكافئ الفضول وتعاقب التسرع"
 hook: "كل ممر مغلق يبدو وعداً: ستعود إليه لاحقاً بقدرة جديدة، أو بعد أن تفهم العالم بصورة مختلفة."
 summary: "تقدم Team Cherry مغامرة Metroidvania مرسومة يدوياً في مملكة Hallownest المنهارة، حيث يتشابك الاستكشاف الدقيق والقتال الصعب والموسيقى الحزينة."

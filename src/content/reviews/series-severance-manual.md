@@ -1,6 +1,10 @@
 ---
 title: "Severance"
 originalTitle: "Severance"
+youtubeVideoTitle: "Severance — Official Trailer | Apple TV"
+youtubeVideoId: "xEQP4VVuyrY"
+backdrop: "https://image.tmdb.org/t/p/original/ixgFmf1X59PUZam2qbAfskx2gQr.jpg"
+poster: "https://image.tmdb.org/t/p/w500/pPHpeI2X1qEd1CS1SeyrdhZ4qnT.jpg"
 headline: "Severance: ماذا يبقى من الإنسان حين تنفصل ذاكرته عن حياته؟"
 hook: "الفكرة المرعبة ليست أن تنسى العمل عندما تغادره، بل أن توجد نسخة منك لا تعرف شيئاً عن العالم خارج المكتب."
 summary: "يحوّل Severance فكرة الفصل بين ذكريات العمل والحياة الخاصة إلى لغز نفسي ومؤسسي، ويستثمر تصميم المكتب والأداء والإيقاع لبناء توتر يتجاوز أسرار الشركة."

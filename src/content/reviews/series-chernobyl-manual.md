@@ -1,6 +1,10 @@
 ---
 title: "Chernobyl"
 originalTitle: "Chernobyl"
+youtubeVideoTitle: "Chernobyl — Official Trailer | HBO"
+youtubeVideoId: "s9APLXM9Ei8"
+backdrop: "https://image.tmdb.org/t/p/w1280/900tHlUYUkp7Ol04XFSoAaEIXcT.jpg"
+poster: "https://image.tmdb.org/t/p/w500/hlLXt2tOPT6RRqatGQeH2n5ur9.jpg"
 headline: "Chernobyl — كارثة تكبر كلما حاولت السلطة إنكارها"
 hook: "الخطر لا يبدأ عند الانفجار فقط؛ قد يتضاعف حين تصبح الحقيقة نفسها شيئاً يجب إخفاؤه."
 summary: "تقدم HBO دراما من خمسة أجزاء عن كارثة تشيرنوبل عام 1986، تتابع العاملين والمسؤولين والمستجيبين وتكشف كيف يتداخل الخطأ التقني مع الإنكار المؤسسي."

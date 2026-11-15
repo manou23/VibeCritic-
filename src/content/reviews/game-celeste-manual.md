@@ -1,6 +1,10 @@
 ---
 title: "Celeste"
 originalTitle: "Celeste"
+youtubeVideoTitle: "Celeste Launch Trailer — Maddy Thorson"
+youtubeVideoId: "FqBj2IGg6Uw"
+backdrop: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/504230/header.jpg?t=1714089525"
+poster: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/504230/header.jpg?t=1714089525"
 headline: "Celeste: كل قفزة فاشلة تقرّب Madeline من قمة الجبل ومن نفسها"
 hook: "اللعبة لا تطلب منك ألا تسقط؛ إنها تطلب منك أن تفهم لماذا تعود للمحاولة."
 summary: "تجمع Celeste بين منصات دقيقة تتطلب توقيتاً وتحكماً محكمين، وقصة شخصية عن القلق وتقبل الذات، لتجعل صعود الجبل تحدياً ميكانيكياً وعاطفياً في الوقت نفسه."

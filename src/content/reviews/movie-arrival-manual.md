@@ -1,6 +1,10 @@
 ---
 title: "Arrival"
 originalTitle: "Arrival"
+youtubeVideoTitle: "Arrival — Final Trailer"
+youtubeVideoId: "7W1m5ER3I1Y"
+backdrop: "https://image.tmdb.org/t/p/w780/yIZ1xendyqKvY3FGeeX3OG7Keh6.jpg"
+poster: "https://image.tmdb.org/t/p/w500/x2FJsf1ElAgr63Y3PNPtJrcmpoe.jpg"
 headline: "Arrival — حين تصبح اللغة آخر فرصة لتجنب الحرب"
 hook: "أصعب ما في التواصل ليس العثور على الكلمات، بل التخلي عن افتراض أننا نفهم العالم بالطريقة نفسها."
 summary: "يحوّل Denis Villeneuve وصول مركبات فضائية إلى تأمل في اللغة والزمن والخوف، عبر عالمة لغويات تحاول بناء جسر قبل أن يتحول القلق العالمي إلى صراع."
