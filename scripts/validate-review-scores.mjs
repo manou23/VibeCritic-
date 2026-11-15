@@ -10,7 +10,7 @@ const failures = [];
 for (const file of files) {
   const fullPath = path.join(root, file);
   const content = await fs.readFile(fullPath, 'utf8');
-  const match = content.match(/^---[ \\t]*\\r?\\n([\\s\\S]*?)\\r?\\n---[ \\t]*(?:\\r?\\n([\\s\\S]*))?$/);
+  const match = content.match(/^---[ \t]*\r?\n([\s\S]*?)\r?\n---[ \t]*(?:\r?\n([\s\S]*))?$/);
   if (!match) {
     failures.push(file + ': YAML frontmatter is missing or malformed');
     continue;
@@ -18,7 +18,7 @@ for (const file of files) {
 
   const frontmatter = match[1];
   const body = match[2] || '';
-  const modeMatch = frontmatter.match(/^reviewMode:\\s*(review|preview|limited)\\s*$/m);
+  const modeMatch = frontmatter.match(/^reviewMode:\s*(review|preview|limited)\s*$/m);
   const reviewMode = modeMatch?.[1] || 'review';
   if (frontmatter.match(/^reviewMode:/m) && !modeMatch) {
     failures.push(file + ': reviewMode must be review, preview or limited');
@@ -26,14 +26,14 @@ for (const file of files) {
   }
   const allScoreFields = ['score', 'storyScore', 'visualsScore', 'soundScore', 'pacingScore'];
   if (reviewMode !== 'review') {
-    const publicText = frontmatter + '\\n' + body;
-    const prematureRating = /(?:^|[^0-9])[0-9]+(?:[.,][0-9]+)?\\s*(?:\\/\\s*10|من\\s*10)(?![0-9])/i;
+    const publicText = frontmatter + '\n' + body;
+    const prematureRating = /(?:^|[^0-9])[0-9]+(?:[.,][0-9]+)?\s*(?:\/\s*10|من\s*10)(?![0-9])/i;
     if (prematureRating.test(publicText)) failures.push(file + ': preview/limited page must not publish a numeric final rating');
-    const retainedScores = allScoreFields.filter(field => new RegExp('^' + field + ':\\\\s*', 'm').test(frontmatter));
+    const retainedScores = allScoreFields.filter(field => new RegExp('^' + field + ':\\s*', 'm').test(frontmatter));
     if (retainedScores.length) failures.push(file + ': preview/limited page must not store numeric score metadata (' + retainedScores.join(', ') + ')');
     continue;
   }
-  const scoreMatch = frontmatter.match(/^score:\\s*(.*?)\\s*$/m);
+  const scoreMatch = frontmatter.match(/^score:\s*(.*?)\s*$/m);
   if (!scoreMatch || !scoreMatch[1]) {
     failures.push(file + ': score is missing');
     continue;
@@ -46,19 +46,18 @@ for (const file of files) {
   }
 
   const scoreFields = ['storyScore', 'visualsScore', 'soundScore', 'pacingScore'];
-  const presentFields = scoreFields.filter(field => new RegExp('^' + field + ':\\\\s*', 'm').test(frontmatter));
+  const presentFields = scoreFields.filter(field => new RegExp('^' + field + ':\\s*', 'm').test(frontmatter));
   if (presentFields.length !== scoreFields.length) {
     failures.push(file + ': every scored review must contain story, visuals, sound and pacing breakdowns');
   } else {
     const values = Object.fromEntries(scoreFields.map(field => {
-      const value = Number(frontmatter.match(new RegExp('^' + field + ':\\\\s*([0-9]+(?:\\\\.[0-9]+)?)', 'm'))?.[1]);
+      const value = Number(frontmatter.match(new RegExp('^' + field + ':\\s*([0-9]+(?:\\.[0-9]+)?)', 'm'))?.[1]);
       return [field, value];
     }));
     if (Object.values(values).some(value => !Number.isFinite(value) || value < 0 || value > 10)) {
       failures.push(file + ': score breakdown values must be between 0 and 10');
     } else {
-      // A tiny epsilon prevents binary floating-point representation from
-      // turning exact half-tenths (for example 8.855) into a downward round.
+      // Avoid binary floating-point rounding down exact half-tenths such as 8.855.
       const weighted = values.storyScore * 0.30 + values.visualsScore * 0.25 + values.soundScore * 0.20 + values.pacingScore * 0.25;
       const calculated = Math.round((weighted + 1e-9) * 10) / 10;
       if (Math.abs(calculated - score) > 0.05) failures.push(file + ': final score does not match the fixed weighted breakdown (' + calculated + ' vs ' + score + ')');
@@ -69,9 +68,9 @@ for (const file of files) {
 
   if (!scoreBandFor(score)) failures.push(file + ': score has no VibeCritic calibration band');
 
-  const verdictMatch = frontmatter.match(/^verdict:\\s*"(.+)"\\s*$/m);
+  const verdictMatch = frontmatter.match(/^verdict:\s*"(.*)"\s*$/m);
   if (verdictMatch) {
-    const statedScores = [...verdictMatch[1].matchAll(/(\\d+(?:[.,]\\d+)?)\\s*(?:\\/\\s*10|من\\s*10)/g)]
+    const statedScores = [...verdictMatch[1].matchAll(/(\d+(?:[.,]\d+)?)\s*(?:\/\s*10|من\s*10)/g)]
       .map(item => Number(item[1].replace(',', '.')));
     if (statedScores.some(value => Math.abs(value - score) > 0.05)) {
       failures.push(file + ': verdict score (' + statedScores.join(', ') + ') does not match frontmatter score (' + score + ')');
