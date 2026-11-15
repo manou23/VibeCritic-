@@ -50,7 +50,10 @@ jobs:
           node --check scripts/generate-reviews.mjs
           node --check scripts/provider-cooldown.mjs
           node --check scripts/test-provider-cooldown.mjs
+          node --check scripts/review-json.mjs
+          node --check scripts/test-review-json.mjs
           npm run test:provider-cooldown
+          npm run test:review-json
           node --check scripts/knowledge-graph.mjs
           node --check scripts/ingest-d1-catalog-knowledge.mjs
           node --check scripts/ingest-review-knowledge.mjs
