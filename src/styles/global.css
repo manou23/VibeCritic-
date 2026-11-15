@@ -1099,6 +1099,8 @@ img{max-width:100%}
 .footer-brand{display:inline-flex;align-items:center;justify-content:center}
 .footer-brand .vc-signature{width:64px;height:28px}
 @media(max-width:600px){.vc-signature{width:70px;height:31px}.brand-copy small{font-size:5px;letter-spacing:.55px}}
+/* Keep the animated brand mark compact on narrow screens. */
+@media(max-width:600px){.brand .vc-signature{width:56px;height:25px}.footer-brand .vc-signature{width:48px;height:22px}}
 @media(prefers-reduced-motion:reduce){
  .vc-wordmark,.vc-mark-v,.vc-mark-c,.vc-mark-star,.vc-mark-shards,.vc-orbit-system,.vc-impact-ring{animation:none!important}
  .vc-wordmark{opacity:0}
