@@ -4,9 +4,9 @@ export function parseJsonResponse(input) {
     .replace(/\s*```\s*$/, '')
     .trim();
 
-  const start = raw.indexOf('{');
-  if (start < 0) {
-    throw new Error('لم يرجع النموذج كائناً JSON يبدأ بالقوس الافتتاحي');
+  const start = 0;
+  if (!raw.startsWith('{')) {
+    throw new Error('لم يرجع النموذج كائناً JSON يبدأ بالقوس الافتتاحي دون نص أو مصفوفة قبله');
   }
 
   let depth = 0;
