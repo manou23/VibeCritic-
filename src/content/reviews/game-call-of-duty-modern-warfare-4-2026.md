@@ -98,9 +98,9 @@ aiGenerated: false
 
 ## مصادر المراجعة والتحقق
 
-- [PC Gamer — مراجعة نسخة PC (27 أكتوبر 2026)](https://www.pcgamer.com/games/call-of-duty/call-of-duty-modern-warfare-4-review/) — تفصيل إطلاق النار والأنماط الثلاثة، مع تقييم 85 نقطة من أصل 100.
-- [Game Informer — مراجعة نسخة PC (22 أكتوبر 2026)](https://gameinformer.com/review/call-of-duty-modern-warfare-4/silver-bullet) — تقييم 8.5/10، وتحليل الحملة وDMZ والأداء الرسومي على PC.
-- [Push Square — مراجعة PS5 Pro (28 أكتوبر 2026)](https://www.pushsquare.com/reviews/ps5/call-of-duty-modern-warfare-4) — تقييم 7/10، وتفصيل نقاط قوة الحملة وضعف التجديد في اللعب الجماعي وملاحظات DMZ، مع اختبار نسخة PS5 Pro.
+- [PC Gamer — مراجعة نسخة PC (27 أكتوبر 2026)](https://www.pcgamer.com/games/call-of-duty/call-of-duty-modern-warfare-4-review/) — تفصيل إطلاق النار والأنماط الثلاثة، مع تقييم 85 من 100 نقطة.
+- [Game Informer — مراجعة نسخة PC (22 أكتوبر 2026)](https://gameinformer.com/review/call-of-duty-modern-warfare-4/silver-bullet) — تقييم 8.5 من 10، وتحليل الحملة وDMZ والأداء الرسومي على PC.
+- [Push Square — مراجعة PS5 Pro (28 أكتوبر 2026)](https://www.pushsquare.com/reviews/ps5/call-of-duty-modern-warfare-4) — تقييم 7 من 10، وتفصيل نقاط قوة الحملة وضعف التجديد في اللعب الجماعي وملاحظات DMZ، مع اختبار نسخة PS5 Pro.
 - [Shacknews — مراجعة PC (30 أكتوبر 2026)](https://www.shacknews.com/article/151216/call-of-duty-mw4-review-score) — تحليل الأنماط الثلاثة، مع إبراز DMZ وانتقاد محدودية تطور اللعب الجماعي.
 - [Tom's Guide — مراجعة Xbox Series X/S (3 نوفمبر 2026)](https://www.tomsguide.com/gaming/call-of-duty-modern-warfare-4-review) — مقارنة مزايا الأنماط وعيوب القصة وDMZ واختيار الخرائط.
 - [TechRadar — مراجعة PC (23 أكتوبر 2026)](https://www.techradar.com/gaming/call-of-duty-modern-warfare-4-review) — قراءة إيجابية للحملة واللعب الجماعي وDMZ.
