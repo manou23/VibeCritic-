@@ -217,7 +217,7 @@ async function fetchEditorialReferenceContext(item) {
   url.searchParams.set('type', type);
   const result = await getJson(url.toString());
   if (!result?.available || !Array.isArray(result.articles)) return '';
-  const articles = result.articles.slice(0, 7).filter(article => article && article.title && article.prompt_excerpt);
+  const articles = result.articles.slice(0, 12).filter(article => article && article.title && article.prompt_excerpt);
   if (!articles.length) return '';
   return [
    'مراجع VibeCritic التحريرية المؤلفة يدوياً (إطار منهجي داخلي، وليست أدلة على تفاصيل العمل):',
