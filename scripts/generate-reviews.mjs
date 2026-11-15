@@ -636,7 +636,25 @@ async function fetchCachedEditorialMetadata(item) {
  }
 }
 async function enrichItem(item){
- if(item.type==='game'){const trailer=await findOfficialGameTrailer(item);return {...item,metadata:{...(item.metadata||{}),...(trailer||{})}};}
+ if(item.type==='game'){
+  const trailer=await findOfficialGameTrailer(item);
+  const metadata={...(item.metadata||{}),...(trailer||{})};
+  const fieldSources={...(item.fieldSources||{})};
+  if(item.source==='RAWG'&&env.RAWG_API_KEY){
+   const key=encodeURIComponent(env.RAWG_API_KEY),base='https://api.rawg.io/api/games/'+encodeURIComponent(item.id);
+   const extras=await Promise.allSettled([
+    getJson(base+'/screenshots?key='+key+'&page_size=8'),
+    getJson(base+'/achievements?key='+key+'&page_size=12')
+   ]);
+   const screenshots=extras[0].status==='fulfilled'?(extras[0].value.results||[]).map(x=>x.image).filter(Boolean).slice(0,8):[];
+   const achievements=extras[1].status==='fulfilled'?(extras[1].value.results||[]).map(x=>({name:x.name,description:x.description,percent:x.percent, image:x.image})).filter(x=>x.name).slice(0,12):[];
+   if(screenshots.length){metadata.screenshots=screenshots;fieldSources.screenshots={source:'RAWG',url:'https://rawg.io/games/'+encodeURIComponent(item.id)+'/screenshots',observedAt:new Date().toISOString()};}
+   if(achievements.length){metadata.achievements=achievements;fieldSources.achievements={source:'RAWG',url:'https://rawg.io/games/'+encodeURIComponent(item.id)+'/achievements',observedAt:new Date().toISOString()};}
+   if(extras[0].status==='rejected')console.warn('تعذر جلب لقطات RAWG للعبة '+item.name+':',extras[0].reason?.message||'غير معروف');
+   if(extras[1].status==='rejected')console.warn('تعذر جلب إنجازات RAWG للعبة '+item.name+':',extras[1].reason?.message||'غير معروف');
+  }
+  return {...item,fieldSources,metadata};
+ }
  let catalogContext=null;
  try{
   const endpoint=item.type==='movie'?'movie':'tv';
@@ -948,12 +966,12 @@ async function gamesFromIgdb(mode='recent'){
  const since=Math.floor((Date.now()-gamesWindowDays*86400000)/1000);
  const until=Math.floor(new Date(addDays(algeriaDate(),upcomingWindowDays)+'T23:59:59Z').getTime()/1000);
  const from=mode==='upcoming'?now:since,to=mode==='upcoming'?until:now;
- const query=`fields name,summary,first_release_date,cover.image_id,genres.name,rating,follows,hypes,rating_count,url,platforms.name,involved_companies.company.name,involved_companies.developer; where first_release_date >= ${from} & first_release_date <= ${to}; sort first_release_date ${mode==='upcoming'?'asc':'desc'}; limit 40;`;
+ const query=`fields name,summary,storyline,first_release_date,cover.image_id,genres.name,rating,follows,hypes,rating_count,url,platforms.name,involved_companies.company.name,involved_companies.developer,involved_companies.publisher,game_modes.name,player_perspectives.name,game_engines.name,franchise.name,collection.name,screenshots.image_id,videos.name,videos.video_id; where first_release_date >= ${from} & first_release_date <= ${to}; sort first_release_date ${mode==='upcoming'?'asc':'desc'}; limit 40;`;
  const response=await fetch('https://api.igdb.com/v4/games',{method:'POST',headers,body:query,signal:AbortSignal.timeout(45000)});
  if(!response.ok)throw new Error(`IGDB recent games HTTP ${response.status}: ${await response.text()}`);
  return (await response.json()).map((x,i)=>{
   const image=x.cover?.image_id?`https://images.igdb.com/igdb/image/upload/t_cover_big/${x.cover.image_id}.jpg`:'';
-  return {id:String(x.id),type:'game',name:x.name||'بدون عنوان',description:x.summary||'',date:x.first_release_date?new Date(x.first_release_date*1000).toISOString().slice(0,10):'',poster:image,backdrop:image,rating:Number(x.rating)||0,genres:(x.genres||[]).map(g=>g.name),sourceUrl:x.url||`https://www.igdb.com/games/${x.id}`,source:'IGDB',popularity:Number(x.hypes||0)+Number(x.follows||0),sourceMetricName:'IGDB hypes + follows',sourceMetricValue:Number(x.hypes||0)+Number(x.follows||0),trendConfidence:(Number(x.hypes||0)+Number(x.follows||0))>=50?'مرتفع':(Number(x.hypes||0)+Number(x.follows||0))>=15?'متوسط':'منخفض',trendRank:i+1,platforms:(x.platforms||[]).map(p=>p.name).filter(Boolean),developers:(x.involved_companies||[]).filter(c=>c.developer).map(c=>c.company?.name).filter(Boolean),metadata:{ratingCount:Number(x.rating_count)||0,platforms:(x.platforms||[]).map(p=>p.name).filter(Boolean),developers:(x.involved_companies||[]).filter(c=>c.developer).map(c=>c.company?.name).filter(Boolean)}};
+  return {id:String(x.id),type:'game',name:x.name||'بدون عنوان',description:x.summary||'',date:x.first_release_date?new Date(x.first_release_date*1000).toISOString().slice(0,10):'',poster:image,backdrop:image,rating:Number(x.rating)||0,genres:(x.genres||[]).map(g=>g.name),sourceUrl:x.url||`https://www.igdb.com/games/${x.id}`,source:'IGDB',popularity:Number(x.hypes||0)+Number(x.follows||0),sourceMetricName:'IGDB hypes + follows',sourceMetricValue:Number(x.hypes||0)+Number(x.follows||0),trendConfidence:(Number(x.hypes||0)+Number(x.follows||0))>=50?'مرتفع':(Number(x.hypes||0)+Number(x.follows||0))>=15?'متوسط':'منخفض',trendRank:i+1,platforms:(x.platforms||[]).map(p=>p.name).filter(Boolean),developers:(x.involved_companies||[]).filter(c=>c.developer).map(c=>c.company?.name).filter(Boolean),metadata:{storyline:x.storyline||'',ratingCount:Number(x.rating_count)||0,platforms:(x.platforms||[]).map(p=>p.name).filter(Boolean),developers:(x.involved_companies||[]).filter(c=>c.developer).map(c=>c.company?.name).filter(Boolean),publishers:(x.involved_companies||[]).filter(c=>c.publisher).map(c=>c.company?.name).filter(Boolean),gameModes:(x.game_modes||[]).map(v=>v.name).filter(Boolean),perspectives:(x.player_perspectives||[]).map(v=>v.name).filter(Boolean),engines:(x.game_engines||[]).map(v=>v.name).filter(Boolean),franchise:x.franchise?.name||null,collection:x.collection?.name||null,screenshots:(x.screenshots||[]).map(v=>v.image_id?`https://images.igdb.com/igdb/image/upload/t_screenshot_big/${v.image_id}.jpg`:null).filter(Boolean).slice(0,8),officialVideos:(x.videos||[]).map(v=>({name:v.name,id:v.video_id})).filter(v=>v.id).slice(0,5)}};
  }).filter(x=>x.description.trim().length>=60&&x.popularity>=15).sort((a,b)=>b.popularity-a.popularity);
 }
 let gamesCachePromise;
@@ -1033,14 +1051,14 @@ function buildEvidenceDossier(item) {
  add('voteCount','عدد الأصوات',Number(item.sourceVoteCount)>0?item.sourceVoteCount:null,primary,primaryUrl,'مقياس حجم العينة وليس الجودة');
  if(item.type==='game'){
   add('platforms','المنصات',metadata.platforms||item.platforms,primary,primaryUrl);
-  add('developers','المطورون',metadata.developers||item.developers,primary,primaryUrl);
+  add('developers','المطورون',metadata.developers||item.developers,primary,primaryUrl);\n  add('publishers','الناشرون',metadata.publishers,primary,primaryUrl);
   add('publishers','الناشرون',metadata.publishers,primary,primaryUrl);
   add('metacritic','درجة Metacritic',metadata.metacritic,primary,primaryUrl,'درجة من مصدر تجميعي مستقل؛ لا تثبت وحدها جودة التجربة');
   add('tags','وسوم RAWG',metadata.sourceTags,primary,primaryUrl,'تصنيفات وصفية من قاعدة البيانات');
   add('gameModes','أنماط اللعب',metadata.gameModes,primary,primaryUrl);
   add('perspectives','منظور اللعب',metadata.perspectives,primary,primaryUrl);
   add('engines','محركات اللعب',metadata.engines,primary,primaryUrl);
-  add('stores','روابط المتاجر',(metadata.stores||[]).map(store=>({name:store.name,url:store.url})),primary,primaryUrl);
+  add('stores','روابط المتاجر',(metadata.stores||[]).map(store=>({name:store.name,url:store.url})),primary,primaryUrl);\n  add('screenshots','لقطات شاشة من اللعبة',metadata.screenshots,metadata.fieldSources?.screenshots?.source||'RAWG',metadata.fieldSources?.screenshots?.url,'صور مرجعية من قاعدة بيانات؛ لا تثبت وحدها الأداء الفعلي');\n  add('achievements','إنجازات اللعبة',(metadata.achievements||[]).map(x=>({name:x.name,description:x.description,percent:x.percent})),metadata.fieldSources?.achievements?.source||'RAWG',metadata.fieldSources?.achievements?.url,'بيانات إنجازات فهرسية؛ لا تثبت صعوبة اللعبة أو جودتها');
  }else{
   add('cast','طاقم التمثيل',metadata.cast,primary,primaryUrl);
   add('directors','المخرجون',metadata.directors,primary,primaryUrl);
