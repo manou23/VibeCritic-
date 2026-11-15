@@ -1123,7 +1123,7 @@ async function loadContentQueue(){
 async function saveContentQueue(){
  contentQueue.version=1;contentQueue.updatedAt=new Date().toISOString();
  await fs.mkdir('data',{recursive:true});
- await fs.writeFile(contentQueuePath,JSON.stringify(contentQueue,null,2)+'\\n','utf8');
+ await fs.writeFile(contentQueuePath,JSON.stringify(contentQueue,null,2)+'\n','utf8');
 }
 function contentJobKey(item){return String(item?.type||'unknown')+':'+String(item?.id||'unknown');}
 async function updateContentJob(item,patch={}){
