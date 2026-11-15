@@ -1,37 +1,17 @@
 ---
-import { scoreTone, typeLabel, releaseTimestamp } from '../lib/ui';
-import { url, optimizeImage, fmtDate } from '../consts';
-
-const { r } = Astro.props;
-const d = r.data;
-const score = Number.isFinite(d.score) ? d.score : undefined;
-const dateValue = d.releaseDate || d.date;
-const dateTimestamp = releaseTimestamp(d.releaseDate, d.date);
-const dateLabel = d.releaseDate || (d.date ? fmtDate(d.date) : 'تاريخ غير محدد');
-const meta = (d.platforms ?? []).slice(0, 3).join(' · ') || typeLabel[d.type];
-const poster = optimizeImage(d.poster || d.backdrop || '');
-const genres = (d.genres ?? []).slice(0, 2).join('، ') || 'غير مصنف';
-const href = url(`reviews/${r.id}/`);
+import {scoreTone,typeLabel,releaseTimestamp} from '../lib/ui';
+import {url,optimizeImage,fmtDate} from '../consts';
+const {r}=Astro.props;const d=r.data;const score=Number.isFinite(d.score)?d.score:undefined;
+const stamp=releaseTimestamp(d.releaseDate,d.date);const dateLabel=d.releaseDate|| (d.date?fmtDate(d.date):'تاريخ غير محدد');
+const poster=optimizeImage(d.poster||d.backdrop||'');const meta=(d.platforms??[]).slice(0,3).join(' · ')||typeLabel[d.type];
 ---
-<article class="rawg-game-card" data-title={String(d.title || '').toLocaleLowerCase('ar')} data-type={d.type} data-score={score ?? -1} data-date={dateTimestamp}>
-  <a href={href} class="rawg-game-card-link group">
-    <div class="rawg-game-art">
-      {poster
-        ? <img src={poster} alt={d.title} loading="lazy" decoding="async" />
-        : <div class="rawg-game-no-art" aria-label="لا تتوفر صورة">✳</div>}
-      <span class="rawg-game-kind">{typeLabel[d.type]}</span>
-      {score !== undefined && d.reviewMode !== 'preview' && d.reviewMode !== 'limited'
-        ? <span class:list={['rawg-game-score', scoreTone(score)]}>{score.toFixed(1)}<small>/10</small></span>
-        : <span class="rawg-game-score rawg-game-score-muted">{d.reviewMode === 'preview' ? 'قريباً' : 'قيد التقييم'}</span>}
-      <span class="rawg-game-hover" aria-hidden="true">
-        <span>{d.headline || d.summary}</span>
-        <b>افتح المراجعة ↗</b>
-      </span>
-    </div>
-    <div class="rawg-game-copy">
-      <div class="rawg-game-meta"><span>{meta}</span><time datetime={new Date(dateTimestamp || Date.now()).toISOString()}>{dateLabel}</time></div>
-      <h2>{d.title}</h2>
-      <p>{genres}</p>
-    </div>
-  </a>
-</article>
+<article class="rawg-game-card" data-title={String(d.title||'').toLocaleLowerCase('ar')} data-type={d.type} data-score={score??-1} data-date={stamp}>
+<a href={url(`reviews/${r.id}/`)} class="rawg-game-card-link group">
+ <div class="rawg-game-art">
+  {poster?<img src={poster} alt={d.title} loading="lazy" decoding="async"/>:<div class="rawg-game-no-art">✳</div>}
+  <span class="rawg-game-kind">{typeLabel[d.type]}</span>
+  {score!==undefined&&d.reviewMode==='review'?<span class:list={['rawg-game-score',scoreTone(score)]}>{score.toFixed(1)}<small>/10</small></span>:<span class="rawg-game-score rawg-game-score-muted">{d.reviewMode==='preview'?'قريباً':'قيد التقييم'}</span>}
+  <span class="rawg-game-hover"><span>{d.headline||d.summary}</span><b>افتح المراجعة ↗</b></span>
+ </div>
+ <div class="rawg-game-copy"><div class="rawg-game-meta"><span>{meta}</span><time datetime={new Date(stamp||Date.now()).toISOString()}>{dateLabel}</time></div><h2>{d.title}</h2><p>{(d.genres??[]).slice(0,2).join('، ')||'غير مصنف'}</p></div>
+</a></article>

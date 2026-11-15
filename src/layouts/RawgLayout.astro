@@ -1,67 +1,27 @@
 ---
-import Base from './Base.astro';
-import { url } from '../consts';
-
-const {
-  title = 'VibeCritic',
-  description = 'مراجعات الألعاب والأفلام والمسلسلات',
-  ...baseProps
-} = Astro.props;
-const side = [
-  { heading: 'القائمة', items: [
-    { href: url(''), label: 'الرئيسية', icon: '⌂' },
-    { href: url('') + '?sort=date', label: 'أحدث الإصدارات', icon: '↗' },
-    { href: url('') + '?sort=score', label: 'الأعلى تقييماً', icon: '★' },
-  ]},
-  { heading: 'التصنيفات', items: [
-    { href: url('') + '?type=game', label: 'ألعاب', icon: '▣' },
-    { href: url('') + '?type=movie', label: 'أفلام', icon: '▤' },
-    { href: url('') + '?type=series', label: 'مسلسلات', icon: '▥' },
-  ]},
-];
+import Base from './Base.astro';import {url} from '../consts';
+const {title='VibeCritic',description='مراجعات الألعاب والأفلام والمسلسلات',...baseProps}=Astro.props;
+const groups=[{heading:'القائمة',items:[['','الرئيسية','⌂'],['?sort=date','أحدث الإصدارات','↗'],['?sort=score','الأعلى تقييماً','★']]},{heading:'التصنيفات',items:[['?type=game','ألعاب','▣'],['?type=movie','أفلام','▤'],['?type=series','مسلسلات','▥']]}];
 ---
 <Base title={title} description={description} {...baseProps}>
-  <div class="rawg-shell">
-    <aside class="rawg-sidebar" aria-label="التنقل في المكتبة">
-      <div class="rawg-sidebar-brand"><span>VC</span><div><b>VIBECRITIC</b><small>ENTERTAINMENT DATABASE</small></div></div>
-      {side.map((group) => (
-        <nav class="rawg-side-group" aria-label={group.heading}>
-          <h2>{group.heading}</h2>
-          {group.items.map((item) => (
-            <a href={item.href}><span aria-hidden="true">{item.icon}</span>{item.label}</a>
-          ))}
-        </nav>
-      ))}
-      <div class="rawg-sidebar-note"><span>✳</span><p>نحب الترفيه، لكن ما نجامل.</p><small>HONEST TAKES. ZERO HYPE.</small></div>
-    </aside>
-    <div class="rawg-main-column">
-      <div class="rawg-search-row">
-        <form action={url('')} method="get" role="search" class="rawg-search-form">
-          <span aria-hidden="true">⌕</span>
-          <input id="q" name="q" type="search" placeholder="ابحث عن لعبة أو فيلم أو مسلسل..." aria-label="ابحث في مكتبة VibeCritic" />
-          <kbd>ENTER</kbd>
-        </form>
-      </div>
-      <div class="rawg-content"><slot /></div>
-    </div>
-  </div>
-  <style>
-    .rawg-shell{direction:rtl;display:grid;grid-template-columns:230px minmax(0,1fr);gap:0;max-width:1600px;margin:0 auto;min-height:calc(100vh - 78px);background:#151515;color:#f7f7f4}
-    .rawg-sidebar{position:sticky;top:78px;align-self:start;height:calc(100vh - 78px);overflow:auto;padding:26px 20px 30px;border-left:1px solid #ffffff12;background:#171717}
-    .rawg-sidebar-brand{display:flex;align-items:center;gap:11px;padding:0 4px 30px;border-bottom:1px solid #ffffff12}
-    .rawg-sidebar-brand>span{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:#6dc849;color:#10130d;font-weight:1000;font-size:16px;letter-spacing:-1px}
-    .rawg-sidebar-brand b{display:block;font-size:13px;letter-spacing:1.2px}.rawg-sidebar-brand small{display:block;margin-top:3px;color:#777;font-size:8px;letter-spacing:1px}
-    .rawg-side-group{margin-top:27px}.rawg-side-group h2{margin:0 0 10px;padding-inline:8px;color:#777;font-size:11px;font-weight:800}
-    .rawg-side-group a{display:flex;align-items:center;gap:12px;min-height:43px;padding:6px 9px;border-radius:9px;color:#b9b9b4;font-size:13px;transition:background .2s,color .2s}
-    .rawg-side-group a:hover{background:#ffffff0d;color:#fff}.rawg-side-group a span{display:grid;place-items:center;width:29px;height:29px;border-radius:8px;background:#ffffff0d;color:#8cdb6b;font-size:17px}
-    .rawg-sidebar-note{margin-top:48px;padding:15px;border:1px solid #ffffff14;border-radius:12px;background:linear-gradient(145deg,#22251f,#1b1b19)}
-    .rawg-sidebar-note>span{color:#8cdb6b;font-size:22px}.rawg-sidebar-note p{margin:8px 0 5px;font-size:13px;font-weight:800}.rawg-sidebar-note small{color:#777;font-size:8px;letter-spacing:1px}
-    .rawg-main-column{min-width:0;background:#151515}.rawg-search-row{position:sticky;top:78px;z-index:20;padding:19px clamp(16px,3vw,42px);background:#151515ed;border-bottom:1px solid #ffffff10;backdrop-filter:blur(16px)}
-    .rawg-search-form{display:flex;align-items:center;gap:12px;max-width:1050px;min-height:54px;margin:auto;padding:0 18px;border:1px solid #ffffff15;border-radius:12px;background:#222;color:#aaa;transition:border-color .2s,background .2s}
-    .rawg-search-form:focus-within{border-color:#6dc849;background:#262824}.rawg-search-form>span{font-size:25px;color:#8cdb6b}
-    .rawg-search-form input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:#fff;font:inherit;font-size:14px}.rawg-search-form input::placeholder{color:#777}
-    .rawg-search-form kbd{flex:none;color:#777;font-size:9px;letter-spacing:1px}.rawg-content{padding:25px clamp(16px,3vw,42px) 70px}
-    @media(max-width:900px){.rawg-shell{grid-template-columns:190px minmax(0,1fr)}.rawg-sidebar{padding-inline:13px}}
-    @media(max-width:700px){.rawg-shell{display:block}.rawg-sidebar{position:static;height:auto;padding:12px 14px;border-left:0;border-bottom:1px solid #ffffff12}.rawg-sidebar-brand{display:none}.rawg-side-group{display:flex;align-items:center;gap:6px;margin:0 0 7px;overflow-x:auto;white-space:nowrap}.rawg-side-group h2{display:none}.rawg-side-group a{flex:none;min-height:36px;padding:4px 9px;background:#ffffff08;font-size:11px}.rawg-side-group a span{width:24px;height:24px;font-size:13px}.rawg-sidebar-note{display:none}.rawg-search-row{top:66px;padding:10px 14px}.rawg-search-form{min-height:47px}.rawg-search-form kbd{display:none}.rawg-content{padding:22px 14px 55px}}
-  </style>
-</Base>
+<div class="rawg-shell">
+ <aside class="rawg-sidebar" aria-label="التنقل في المكتبة">
+  <div class="rawg-sidebar-brand"><span>VC</span><div><b>VIBECRITIC</b><small>ENTERTAINMENT DATABASE</small></div></div>
+  {groups.map(g=><nav class="rawg-side-group" aria-label={g.heading}><h2>{g.heading}</h2>{g.items.map(([query,label,icon])=><a href={query?url('')+query:url('')}><span aria-hidden="true">{icon}</span>{label}</a>)}</nav>)}
+  <div class="rawg-sidebar-note"><span>✳</span><p>نحب الترفيه، لكن ما نجامل.</p><small>HONEST TAKES. ZERO HYPE.</small></div>
+ </aside>
+ <div class="rawg-main-column">
+  <div class="rawg-search-row"><form action={url('')} method="get" role="search" class="rawg-search-form"><span aria-hidden="true">⌕</span><input id="q" name="q" type="search" placeholder="ابحث عن لعبة أو فيلم أو مسلسل..." aria-label="ابحث في مكتبة VibeCritic"/><kbd>ENTER</kbd></form></div>
+  <div class="rawg-content"><slot/></div>
+ </div>
+</div>
+<style>
+.rawg-shell{direction:rtl;display:grid;grid-template-columns:230px minmax(0,1fr);max-width:1600px;margin:auto;min-height:calc(100vh - 78px);background:#151515;color:#f7f7f4}
+.rawg-sidebar{position:sticky;top:78px;align-self:start;height:calc(100vh - 78px);overflow:auto;padding:26px 20px;border-left:1px solid #ffffff12;background:#171717}
+.rawg-sidebar-brand{display:flex;align-items:center;gap:11px;padding:0 4px 30px;border-bottom:1px solid #ffffff12}.rawg-sidebar-brand>span{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:#6dc849;color:#10130d;font-weight:1000}.rawg-sidebar-brand b{display:block;font-size:13px;letter-spacing:1px}.rawg-sidebar-brand small{display:block;margin-top:3px;color:#777;font-size:8px;letter-spacing:1px}
+.rawg-side-group{margin-top:27px}.rawg-side-group h2{margin:0 0 10px;padding-inline:8px;color:#777;font-size:11px}.rawg-side-group a{display:flex;align-items:center;gap:12px;min-height:43px;padding:6px 9px;border-radius:9px;color:#b9b9b4;font-size:13px;transition:background .2s,color .2s}.rawg-side-group a:hover{background:#ffffff0d;color:#fff}.rawg-side-group a span{display:grid;place-items:center;width:29px;height:29px;border-radius:8px;background:#ffffff0d;color:#8cdb6b;font-size:17px}
+.rawg-sidebar-note{margin-top:48px;padding:15px;border:1px solid #ffffff14;border-radius:12px;background:linear-gradient(145deg,#22251f,#1b1b19)}.rawg-sidebar-note>span{color:#8cdb6b;font-size:22px}.rawg-sidebar-note p{margin:8px 0 5px;font-size:13px;font-weight:800}.rawg-sidebar-note small{color:#777;font-size:8px;letter-spacing:1px}
+.rawg-main-column{min-width:0;background:#151515}.rawg-search-row{position:sticky;top:78px;z-index:20;padding:19px clamp(16px,3vw,42px);background:#151515ed;border-bottom:1px solid #ffffff10;backdrop-filter:blur(16px)}.rawg-search-form{display:flex;align-items:center;gap:12px;max-width:1050px;min-height:54px;margin:auto;padding:0 18px;border:1px solid #ffffff15;border-radius:12px;background:#222;color:#aaa}.rawg-search-form:focus-within{border-color:#6dc849}.rawg-search-form>span{font-size:25px;color:#8cdb6b}.rawg-search-form input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:#fff;font:inherit;font-size:14px}.rawg-search-form input::placeholder{color:#777}.rawg-search-form kbd{color:#777;font-size:9px}.rawg-content{padding:25px clamp(16px,3vw,42px) 70px}
+@media(max-width:900px){.rawg-shell{grid-template-columns:190px minmax(0,1fr)}.rawg-sidebar{padding-inline:13px}}
+@media(max-width:700px){.rawg-shell{display:block}.rawg-sidebar{position:static;height:auto;padding:12px 14px;border-left:0;border-bottom:1px solid #ffffff12}.rawg-sidebar-brand,.rawg-sidebar-note{display:none}.rawg-side-group{display:flex;align-items:center;gap:6px;margin:0 0 7px;overflow-x:auto;white-space:nowrap}.rawg-side-group h2{display:none}.rawg-side-group a{flex:none;min-height:36px;padding:4px 9px;background:#ffffff08;font-size:11px}.rawg-side-group a span{width:24px;height:24px;font-size:13px}.rawg-search-row{top:66px;padding:10px 14px}.rawg-search-form{min-height:47px}.rawg-search-form kbd{display:none}.rawg-content{padding:22px 14px 55px}}
+</style>
