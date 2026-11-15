@@ -37,7 +37,7 @@ const orbitItems=trendReviews.length?trendReviews.slice(0,7):topRated.slice(0,7)
    <span class="vc-feature-shade"></span>
    <div class="vc-orbit-heading"><span class="vc-chip">● يتصدر المشهد · اختيارات VibeCritic</span><span class="vc-orbit-counter" data-orbit-counter>01 / {String(orbitItems.length||1).padStart(2,'0')}</span></div>
    <div class="vc-orbit-ring" aria-label="الأعمال المتحركة في دائرة الاهتمام">
-    {orbitItems.map((item,i)=><a class="vc-orbit-poster" data-orbit-card data-index={i} data-summary={item.summary} href={item.href} style={`--orbit-index:${i};--orbit-count:${orbitItems.length}`} aria-label={item.title}>
+    {orbitItems.map((item,i)=><a class="vc-orbit-poster" data-orbit-card data-index={i} data-summary={item.summary} href={item.href} style={`--orbit-index:${i};--orbit-count:${orbitItems.length};--orbit-angle:${i*360/orbitItems.length}deg`} aria-label={item.title}>
      <img src={item.poster||item.backdrop} alt="" loading="lazy"/><span>{item.title}</span>
     </a>)}
    </div>
@@ -103,15 +103,17 @@ const orbitItems=trendReviews.length?trendReviews.slice(0,7):topRated.slice(0,7)
   const link=stage.querySelector('[data-orbit-link]');
   const counter=stage.querySelector('[data-orbit-counter]');
   const toggle=stage.querySelector('[data-orbit-toggle]');
-  let active=0,paused=window.matchMedia('(prefers-reduced-motion: reduce)').matches,timer;
+  let active=0,paused=window.matchMedia('(prefers-reduced-motion: reduce)').matches,hoverPaused=false,timer;
+  const syncMotion=()=>{stage.classList.toggle('is-paused',paused||hoverPaused);clearInterval(timer);if(!paused&&!hoverPaused&&cards.length>1)timer=setInterval(()=>show(active+1),5500)};
   const show=(index)=>{if(!cards.length)return;active=(index+cards.length)%cards.length;const card=cards[active];cards.forEach((item,i)=>{item.classList.toggle('is-active',i===active);item.setAttribute('aria-current',i===active?'true':'false')});const img=card.querySelector('img');backdrop.src=img?.src||'';backdrop.alt='';title.textContent=card.textContent.trim();summary.textContent=card.dataset.summary||'';link.href=card.href;counter.textContent=String(active+1).padStart(2,'0')+' / '+String(cards.length).padStart(2,'0')};
-  const start=()=>{clearInterval(timer);if(!paused&&cards.length>1)timer=setInterval(()=>show(active+1),5500)};
-  cards.forEach((card,i)=>{card.dataset.summary=card.getAttribute('data-summary')||'';card.addEventListener('click',e=>{if(i!==active){e.preventDefault();show(i);start()}})});
-  stage.querySelector('[data-orbit-prev]')?.addEventListener('click',()=>{show(active-1);start()});
-  stage.querySelector('[data-orbit-next]')?.addEventListener('click',()=>{show(active+1);start()});
-  toggle?.addEventListener('click',()=>{paused=!paused;toggle.textContent=paused?'▶':'Ⅱ';toggle.setAttribute('aria-label',paused?'تشغيل الحركة':'إيقاف الحركة');toggle.setAttribute('aria-pressed',String(paused));start()});
-  stage.addEventListener('mouseenter',()=>clearInterval(timer));stage.addEventListener('mouseleave',start);
-  show(0);start();
+  cards.forEach((card,i)=>{card.dataset.summary=card.getAttribute('data-summary')||'';card.addEventListener('click',e=>{if(i!==active){e.preventDefault();show(i);syncMotion()}})});
+  stage.querySelector('[data-orbit-prev]')?.addEventListener('click',()=>{show(active-1);syncMotion()});
+  stage.querySelector('[data-orbit-next]')?.addEventListener('click',()=>{show(active+1);syncMotion()});
+  toggle?.addEventListener('click',()=>{paused=!paused;toggle.textContent=paused?'▶':'Ⅱ';toggle.setAttribute('aria-label',paused?'تشغيل الحركة':'إيقاف الحركة');toggle.setAttribute('aria-pressed',String(paused));syncMotion()});
+  stage.addEventListener('mouseenter',()=>{hoverPaused=true;syncMotion()});stage.addEventListener('mouseleave',()=>{hoverPaused=false;syncMotion()});
+  stage.addEventListener('focusin',()=>{hoverPaused=true;syncMotion()});stage.addEventListener('focusout',e=>{if(!stage.contains(e.relatedTarget)){hoverPaused=false;syncMotion()}});
+  stage.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){show(active+1);syncMotion()}else if(e.key==='ArrowRight'){show(active-1);syncMotion()}});
+  show(0);syncMotion();
  }
 </script>
 </Base>

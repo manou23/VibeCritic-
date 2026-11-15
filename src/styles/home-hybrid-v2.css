@@ -91,7 +91,7 @@ body:has(.vc-home){background:#090910;color:#f7f5ff}body:has(.vc-home) .site-hea
 .vc-orbit-ring{position:absolute;width:360px;height:360px;left:50%;top:47%;transform:translate(-50%,-50%);border:1px solid #c4b5fd25;border-radius:50%;box-shadow:0 0 0 28px #c4b5fd08,0 0 0 58px #c4b5fd05}
 .vc-orbit-ring:before,.vc-orbit-ring:after{content:"";position:absolute;inset:34px;border:1px dashed #c4b5fd24;border-radius:50%}
 .vc-orbit-ring:after{inset:76px;border-style:solid;border-color:#c4b5fd18}
-.vc-orbit-poster{position:absolute;left:50%;top:50%;width:94px;height:132px;margin:-66px 0 0 -47px;border:2px solid #ffffff40;border-radius:9px;overflow:hidden;background:#191526;box-shadow:0 10px 30px #0009;transform:rotate(calc(var(--orbit-index)* (360deg / var(--orbit-count)))) translateY(calc(-1 * var(--orbit-radius))) rotate(calc(var(--orbit-index)* (-360deg / var(--orbit-count))));transition:filter .35s,border-color .35s,box-shadow .35s;z-index:2}
+.vc-orbit-poster{position:absolute;left:50%;top:50%;width:94px;height:132px;margin:-66px 0 0 -47px;border:2px solid #ffffff40;border-radius:9px;overflow:hidden;background:#191526;box-shadow:0 10px 30px #0009;--orbit-spin:0deg;transform:rotate(calc(var(--orbit-angle) + var(--orbit-spin))) translateY(calc(-1 * var(--orbit-radius))) rotate(calc(-1 * var(--orbit-angle) - var(--orbit-spin)));animation:vc-orbit-travel 42s linear infinite;transition:filter .35s,border-color .35s,box-shadow .35s;z-index:2}
 .vc-orbit-poster img{width:100%;height:100%;object-fit:cover;display:block;opacity:.78;transition:opacity .3s}
 .vc-orbit-poster span{position:absolute;bottom:0;right:0;left:0;padding:18px 5px 6px;background:linear-gradient(transparent,#08070ef2);font-size:9px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .vc-orbit-poster.is-active{border-color:#d8b4fe;box-shadow:0 0 0 4px #a78bfa55,0 12px 35px #000b;z-index:3}
@@ -107,3 +107,16 @@ body:has(.vc-home){background:#090910;color:#f7f5ff}body:has(.vc-home) .site-hea
 .vc-orbit-hint{position:absolute;bottom:30px;right:22px;color:#c5bdd8;font-size:9px}
 @media(max-width:620px){.vc-orbit-stage{min-height:450px}.vc-orbit-ring{width:280px;height:280px;top:43%;--orbit-radius:138px}.vc-orbit-poster{width:68px;height:96px;margin:-48px 0 0 -34px}.vc-orbit-copy{top:43%;width:48%}.vc-orbit-copy h2{font-size:18px}.vc-orbit-copy .vc-feature-summary{font-size:9px;-webkit-line-clamp:2}.vc-orbit-copy .vc-feature-cta{font-size:9px;padding:8px 9px}.vc-orbit-heading{top:14px;right:13px;left:13px}.vc-orbit-heading .vc-chip{font-size:8px;padding:6px 8px}.vc-orbit-hint{display:none}.vc-orbit-controls{bottom:12px}.vc-orbit-controls button{width:38px;height:38px}}
 @media(prefers-reduced-motion:reduce){.vc-orbit-poster,.vc-orbit-backdrop{transition:none!important}}
+
+
+/* Motion polish: the posters travel around the orbit while staying upright. */
+@property --orbit-spin{syntax:"<angle>";inherits:false;initial-value:0deg}
+@keyframes vc-orbit-travel{to{--orbit-spin:360deg}}
+.vc-orbit-stage.is-paused .vc-orbit-poster{animation-play-state:paused}
+.vc-orbit-stage:focus-within .vc-orbit-poster{animation-play-state:paused}
+.vc-orbit-poster:focus-visible{outline:3px solid #f0abfc;outline-offset:4px;z-index:6}
+.vc-orbit-controls button:focus-visible,.vc-feature-cta:focus-visible{outline:3px solid #f0abfc;outline-offset:3px}
+.vc-orbit-stage .vc-orbit-backdrop{transition:opacity .35s,filter .5s}
+.vc-orbit-stage.is-paused .vc-orbit-backdrop{filter:blur(0);opacity:.54}
+@media(max-width:620px){.vc-orbit-poster{animation-duration:52s}}
+@media(prefers-reduced-motion:reduce){.vc-orbit-poster{animation:none!important}}
