@@ -849,11 +849,20 @@ async function generateReview(item){
  ].join('\n');
  let parsed=null;
  const handlers={
-  openrouter:()=>generateWithOpenRouter(prompt),
-  openai:()=>generateWithOpenAI(prompt),
-  gemini:()=>generateWithGemini(prompt),
-  groq:()=>generateWithGroq(prompt),
-  'cloudflare-workers-ai':()=>generateWithCloudflareWorkersAI(prompt),
+  openrouter:requestPrompt=>generateWithOpenRouter(requestPrompt),
+  openai:requestPrompt=>generateWithOpenAI(requestPrompt),
+  gemini:requestPrompt=>generateWithGemini(requestPrompt),
+  groq:requestPrompt=>generateWithGroq(requestPrompt),
+  'cloudflare-workers-ai':requestPrompt=>generateWithCloudflareWorkersAI(requestPrompt),
+ };
+ // Groq's free tier has a strict 8k TPM ceiling. Keep the critical editorial brief
+ // and source dossier while trimming optional context before retrying oversized requests.
+ const compactGroqPrompt=value=>{
+  const text=String(value||'');
+  const maxChars=12000;
+  if(text.length<=maxChars)return text;
+  const head=text.slice(0,7200),tail=text.slice(-4800);
+  return head+'\n\n[تم اختصار السياقات التحريرية الثانوية لتوافق حد Groq؛ الحقائق الأساسية وملف الأدلة في نهاية الطلب محفوظان.]\n\n'+tail;
  };
  const candidates=providerCandidates();
  const providerErrors=[];
@@ -866,7 +875,17 @@ async function generateReview(item){
   // before the system spends another provider's quota. Editorial gates remain unchanged.
   for(let qualityAttempt=0;qualityAttempt<2;qualityAttempt++){
    try{
-    const generated=await handlers[name](attemptPrompt);
+    let generated;
+    try{
+     generated=await handlers[name](attemptPrompt);
+    }catch(error){
+     const oversized=name==='groq'&&/HTTP 413|Request too large|tokens per minute \(TPM\)/i.test(error.message);
+     if(oversized&&attemptPrompt.length>12000){
+      attemptPrompt=compactGroqPrompt(attemptPrompt);
+      console.warn('طلب Groq تجاوز حد TPM؛ تقليص السياقات الاختيارية وإعادة المحاولة مرة واحدة بحجم '+attemptPrompt.length+' حرفاً.');
+      generated=await handlers[name](attemptPrompt);
+     }else throw error;
+    }
     transportSucceeded=true;
     try{
      parsed=validateGeneratedReview(generated);
@@ -877,7 +896,8 @@ async function generateReview(item){
      await recordLearningFailure(item,error);
      const depthFailure=/أقصر من الحد الأدنى|أقصر من المعيار التحريري|محور نقدي أقصر|لا تتضمن المحاور النقدية/.test(error.message);
      if(qualityAttempt===0&&depthFailure){
-      attemptPrompt=prompt+'\n\nمهمة إصلاح إلزامية للمراجعة التي أخرجتها للتو: اجعل النص التحليلي review بين 700 و850 كلمة فعلية، وبحد أدنى 3200 حرف، مع خمسة محاور نقدية كاملة لا يقل كل محور عن 65 كلمة، وخاتمة موجزة. لا تغيّر الحقائق أو تخترع تفاصيل جديدة ولا تضف حشواً أو تكراراً. وسّع التحليل فقط بالاستدلال من البيانات والسياق الموثوق الموجود في الطلب الأصلي. احتفظ بالعنوان والافتتاحية والدرجات ونقاط القوة والضعف ما دامت متسقة مع النص، وأعد JSON كاملاً صالحاً بالمفاتيح نفسها. سبب الرفض الذي يجب إصلاحه: '+error.message+'\n\nالمسودة السابقة بصيغة JSON: '+JSON.stringify(generated).slice(0,26000);
+      attemptPrompt=prompt+'\n\nمهمة إصلاح إلزامية للمراجعة التي أخرجتها للتو: اجعل النص التحليلي review بين 700 و850 كلمة فعلية، وبحد أدنى 3200 حرف، مع خمسة محاور نقدية كاملة لا يقل كل محور عن 65 كلمة، وخاتمة موجزة. لا تغيّر الحقائق أو تخترع تفاصيل جديدة ولا تضف حشواً أو تكراراً. وسّع التحليل فقط بالاستدلال من البيانات والسياق الموثوق الموجود في الطلب الأصلي. احتفظ بالعنوان والافتتاحية والدرجات ونقاط القوة والضعف ما دامت متسقة مع النص، وأعد JSON كاملاً صالحاً بالمفاتيح نفسها. سبب الرفض الذي يجب إصلاحه: '+error.message+'\n\nالمسودة السابقة بصيغة JSON: '+JSON.stringify(generated).slice(0,9000);
+      if(name==='groq')attemptPrompt=compactGroqPrompt(attemptPrompt);
       console.warn('المزوّد '+name+' أعاد مراجعة أقصر من المطلوب؛ طلب إصلاحاً تحريرياً واحداً قبل الانتقال إلى مزوّد آخر.');
       continue;
      }
