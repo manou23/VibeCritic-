@@ -80,7 +80,8 @@ async function main(){
     const type=field(frontmatter,'type');
     if(!['movie','series','game'].includes(type))continue;
     const title=field(frontmatter,'title');
-    const sourceId=field(frontmatter,'sourceId');
+    const rawSourceId=field(frontmatter,'sourceId');
+    const sourceId=(rawSourceId.match(/(\\d+)$/)||[])[1]||rawSourceId;
     const hasPoster=Boolean(field(frontmatter,'poster'));
     const hasBackdrop=Boolean(field(frontmatter,'backdrop'));
     const hasVideo=validVideo(field(frontmatter,'youtubeVideoId'));
@@ -110,6 +111,7 @@ async function main(){
         const backdrop=image?.backdrop||image?.poster||(video?.id?'https://img.youtube.com/vi/'+video.id+'/hqdefault.jpg':'');
         if(backdrop){frontmatter=setField(frontmatter,'backdrop',backdrop);if(!image?.poster&&!image?.backdrop)imagesAdded++;changed=true;}
       }
+      if(!hasVideo&&!video) console.log('No official trailer found:',title,'type:',type,'sourceId:',rawSourceId);
       if(!hasVideo&&video?.id&&validVideo(video.id)){
         frontmatter=setField(frontmatter,'youtubeVideoId',video.id);
         frontmatter=setField(frontmatter,'youtubeVideoTitle',video.title||('Official trailer — '+title));
