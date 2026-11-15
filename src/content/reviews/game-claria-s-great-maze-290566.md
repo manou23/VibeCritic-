@@ -34,6 +34,8 @@ sourceRating: 0
 sourceId: "290566"
 sourceUrl: "https://www.igdb.com/games/clarias-great-maze"
 aiGenerated: true
+externalVideoUrl: "https://store.steampowered.com/app/2826260/Clarias_Great_Maze/"
+externalVideoTitle: "Claria's Great Maze — المقطع الرسمي على Steam"
 ---
 
 ## التحليل الفني والقصصي
