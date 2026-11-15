@@ -20,6 +20,7 @@ const reviews = defineCollection({
     reviewVersion: z.number().optional(),
     type: z.enum(['game', 'movie', 'series']),
     date: z.coerce.date(),
+    publishedAt: z.coerce.date().optional(),
     releaseDate: z.string().optional(),
     poster: z.string().optional(),
     backdrop: z.string().optional(),

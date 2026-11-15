@@ -6,7 +6,7 @@ import { TYPE_LABEL, TYPE_PLURAL, type ReviewType, url, optimizeImage } from '..
 export function getStaticPaths(){return ['game','movie','series'].map(type=>({params:{type}}));}
 const type=Astro.params.type as ReviewType;
 const all=await getCollection('reviews',({data})=>data.type===type);
-const reviews=all.sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
+const reviews=all.sort((a,b)=>(b.data.publishedAt??b.data.date).valueOf()-(a.data.publishedAt??a.data.date).valueOf());
 const normalizeArabic=value=>String(value||'').toLocaleLowerCase('ar').normalize('NFKD').replace(/\p{M}/gu,'').replace(/[أإآٱ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/ؤ/g,'و').replace(/ئ/g,'ي').replace(/[^\p{L}\p{N}\s]/gu,' ').trim().replace(/\s+/g,' ');
 const featured=reviews[0];
 const years=[...new Set(reviews.map(review=>review.data.releaseDate ? Number(review.data.releaseDate.slice(0,4)) : review.data.date.getFullYear()))].filter(Number.isFinite).sort((a,b)=>b-a);
@@ -42,7 +42,7 @@ const copy={game:{en:'GAMES & INTERACTIVE',title:'اكتشف عالم الألع
    <select id="review-sort"><option value="newest">الأحدث أولاً</option><option value="highest">الأعلى تقييماً</option><option value="lowest">الأقل تقييماً</option></select>
   </label>
  </div>}
- {reviews.length?<div class="category-review-grid" id="category-review-grid">{reviews.map(review=><div class="category-review-item" data-title={normalizeArabic([review.data.title,review.data.originalTitle,review.data.headline,...(review.data.tags||[]),...(review.data.genres||[])].join(' '))} data-year={review.data.releaseDate?.slice(0,4)||String(review.data.date.getFullYear())} data-score={review.data.score} data-rated={review.data.reviewMode==='review'} data-date={review.data.date.toISOString()} data-genres={(review.data.genres||[]).join('|').toLowerCase()} data-platforms={(review.data.platforms||[]).join('|').toLowerCase()}><ReviewCard review={review}/></div>)}</div>:<div class="catalog-empty">قسم {TYPE_PLURAL[type]} قيد الإثراء. ستظهر هنا الأعمال الجديدة ومراجعاتها تلقائياً.</div>}
+ {reviews.length?<div class="category-review-grid" id="category-review-grid">{reviews.map(review=><div class="category-review-item" data-title={normalizeArabic([review.data.title,review.data.originalTitle,review.data.headline,...(review.data.tags||[]),...(review.data.genres||[])].join(' '))} data-year={review.data.releaseDate?.slice(0,4)||String(review.data.date.getFullYear())} data-score={review.data.score} data-rated={review.data.reviewMode==='review'} data-date={(review.data.publishedAt??review.data.date).toISOString()} data-genres={(review.data.genres||[]).join('|').toLowerCase()} data-platforms={(review.data.platforms||[]).join('|').toLowerCase()}><ReviewCard review={review}/></div>)}</div>:<div class="catalog-empty">قسم {TYPE_PLURAL[type]} قيد الإثراء. ستظهر هنا الأعمال الجديدة ومراجعاتها تلقائياً.</div>}
  <div class="catalog-empty" id="category-filter-empty" hidden>لا توجد مراجعات تطابق خيارات التصفية الحالية.</div>
 </section>
 {type === 'movie' && <section class="wrap curated-links" aria-label="تصنيفات الأفلام الدقيقة"><h2>استكشف حسب النوع</h2><a href={url('collections/horror-films/')}>أفلام الرعب <span>←</span></a></section>}

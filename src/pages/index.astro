@@ -4,7 +4,7 @@ import ReviewCard from '../components/ReviewCard.astro';
 import { getCollection } from 'astro:content';
 import { url, TYPE_PLURAL, optimizeImage } from '../consts';
 import trending from '../data/trending.json';
-const reviews=(await getCollection('reviews')).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
+const reviews=(await getCollection('reviews')).sort((a,b)=>(b.data.publishedAt??b.data.date).valueOf()-(a.data.publishedAt??a.data.date).valueOf());
 const byType={game:reviews.filter(x=>x.data.type==='game'),series:reviews.filter(x=>x.data.type==='series'),movie:reviews.filter(x=>x.data.type==='movie')};
 // اعرض الترندات الموثوقة حتى عندما لم تُنشر مراجعة VibeCritic للعمل بعد.
 const gta6Preview=reviews.find(review=>review.data.sourceId==='gta-vi-2026');
