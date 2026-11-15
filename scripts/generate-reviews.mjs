@@ -875,7 +875,8 @@ async function generateReview(item){
   let transportSucceeded=false,transportError=null,attemptPrompt=name==='groq'?compactGroqPrompt(prompt,11000):prompt;
   // A short but otherwise valid response gets one targeted repair from the same provider
   // before the system spends another provider's quota. Editorial gates remain unchanged.
-  for(let qualityAttempt=0;qualityAttempt<2;qualityAttempt++){
+  let scoreRepairUsed=false,depthRepairUsed=false;
+  for(let qualityAttempt=0;qualityAttempt<3;qualityAttempt++){
    try{
     let generated;
     try{
@@ -898,8 +899,9 @@ async function generateReview(item){
      await recordLearningFailure(item,error);
      const depthFailure=/أقصر من الحد الأدنى|أقصر من المعيار التحريري|محور نقدي أقصر|لا تتضمن المحاور النقدية/.test(error.message);
      const scoreFailure=/الدرجات|التقييم الإجمالي|التقييم 9\\.5/.test(error.message);
-     if(qualityAttempt===0&&scoreFailure){
-      // Repair only the score object; preserve the article text and save tokens.
+     if(scoreFailure&&!scoreRepairUsed){
+      // Repair scores independently, then continue repairing any separate article-depth defect.
+      scoreRepairUsed=true;
       const scorePrompt=[
        'أنت مقيّم نقدي مستقل. أعد JSON صالحاً فقط يحتوي كائناً واحداً باسم scores.',
        'المفاتيح الإلزامية: story وvisuals وsound وpacing. كل قيمة رقم JSON حقيقي بين 0 و10 وبمنزلة عشرية واحدة كحد أقصى.',
@@ -915,20 +917,35 @@ async function generateReview(item){
       try{
        const repaired=await handlers[name](name==='groq'?compactGroqPrompt(scorePrompt,7500):scorePrompt);
        generated={...generated,scores:repaired?.scores||repaired};
-       parsed=validateGeneratedReview(generated);
-       console.log('تم إصلاح الدرجات وحدها واجتازت المراجعة بوابة الجودة عبر:',name);
-       break;
+       try{
+        parsed=validateGeneratedReview(generated);
+        console.log('تم إصلاح الدرجات وحدها واجتازت المراجعة بوابة الجودة عبر:',name);
+        break;
+       }catch(postScoreError){
+        const postScoreDepthFailure=/أقصر من الحد الأدنى|أقصر من المعيار التحريري|محور نقدي أقصر|لا تتضمن المحاور النقدية/.test(postScoreError.message);
+        if(postScoreDepthFailure&&!depthRepairUsed&&qualityAttempt<2){
+         providerErrors.push(name+' (score repair): تم إصلاح الدرجات لكن بقي عيب في عمق المقال: '+postScoreError.message);
+         const repairTask='أعد تحرير review فقط ليصبح بين 700 و850 كلمة فعلية وبحد أدنى 3200 حرف، مع خمسة محاور نقدية كاملة لا يقل كل محور عن 65 كلمة وخاتمة موجزة. لا تغيّر الحقائق ولا تخترع تفاصيل أو حشواً. وسّع التحليل بالاستدلال من البيانات والسياق الموثوق في الطلب الأصلي. حافظ على الدرجات المصححة التالية كما هي ما دامت متسقة مع النص: '+JSON.stringify(generated.scores)+'.';
+         attemptPrompt=prompt+'\\n\\nمهمة إصلاح إلزامية: '+repairTask+' أعد JSON كاملاً بالمفاتيح نفسها. المسودة السابقة: '+JSON.stringify(generated).slice(0,9000);
+         if(name==='groq')attemptPrompt=compactGroqPrompt(attemptPrompt,11000);
+         depthRepairUsed=true;
+         console.warn('تم إصلاح الدرجات، وبقي نقص في عمق النص؛ الانتقال إلى إصلاح المقال دون فقد الدرجات.');
+         continue;
+        }
+        throw postScoreError;
+       }
       }catch(repairError){
        providerErrors.push(name+' (score repair): '+repairError.message);
        await recordLearningFailure(item,repairError);
-       console.warn('تعذر إصلاح الدرجات دون إعادة كتابة المقال؛ الانتقال إلى المزوّد التالي:',repairError.message);
+       console.warn('تعذر إصلاح الدرجات أو استكمال بوابة الجودة؛ الانتقال إلى المزوّد التالي:',repairError.message);
        break;
       }
      }
-     if(qualityAttempt===0&&depthFailure){
-      const repairTask='اجعل النص التحليلي review بين 700 و850 كلمة فعلية، وبحد أدنى 3200 حرف، مع خمسة محاور نقدية كاملة لا يقل كل محور عن 65 كلمة، وخاتمة موجزة. لا تغيّر الحقائق أو تخترع تفاصيل جديدة ولا تضف حشواً أو تكراراً. وسّع التحليل فقط بالاستدلال من البيانات والسياق الموثوق الموجود في الطلب الأصلي.';
-      attemptPrompt=prompt+'\\n\\nمهمة إصلاح إلزامية للمراجعة التي أخرجتها للتو: '+repairTask+' احتفظ بالعنوان والافتتاحية والدرجات ونقاط القوة والضعف ما دامت متسقة مع النص، وأعد JSON كاملاً صالحاً بالمفاتيح نفسها. سبب الرفض: '+error.message+'\\n\\nالمسودة السابقة بصيغة JSON: '+JSON.stringify(generated).slice(0,9000);
+     if(depthFailure&&!depthRepairUsed&&qualityAttempt<2){
+      const repairTask='اجعل النص التحليلي review بين 700 و850 كلمة فعلية، وبحد أدنى 3200 حرف، مع خمسة محاور نقدية كاملة لا يقل كل محور عن 65 كلمة، وخاتمة موجزة. لا تغيّر الحقائق أو تخترع تفاصيل جديدة ولا تضف حشواً أو تكراراً. وسّع التحليل فقط بالاستدلال من البيانات والسياق الموثوق الموجود في الطلب الأصلي. حافظ على الدرجات ونقاط القوة والضعف ما دامت متسقة مع النص.';
+      attemptPrompt=prompt+'\\n\\nمهمة إصلاح إلزامية للمراجعة التي أخرجتها للتو: '+repairTask+' أعد JSON كاملاً صالحاً بالمفاتيح نفسها. سبب الرفض: '+error.message+'\\n\\nالمسودة السابقة بصيغة JSON: '+JSON.stringify(generated).slice(0,9000);
       if(name==='groq')attemptPrompt=compactGroqPrompt(attemptPrompt,11000);
+      depthRepairUsed=true;
       console.warn('المزوّد '+name+' أعاد تحليلاً قصيراً؛ طلب إصلاح واحد محدد قبل الانتقال.');
       continue;
      }
