@@ -408,7 +408,7 @@ async function recordProviderOutcome(name,success,error=null,measurement=null,it
   const retryAfter=parseReset(headers['retry-after']);
   const resetAt=parseReset(headers['x-ratelimit-reset-requests']??headers['x-ratelimit-reset-tokens']??headers['x-ratelimit-reset']);
   const explicitDaily=/daily|per[_ -]?day|free_model_daily_requests|daily quota|quota for today|تجاوز.*اليوم|الحصة اليومية/i.test(message);
-  const quotaExhausted=/resource exhausted|insufficient quota|quota exceeded/i.test(message);
+  const quotaExhausted=/resource[_ -]?exhausted|insufficient quota|quota exceeded/i.test(message);
   if(status===429||/rate.?limit/i.test(message)){
    const until=retryAfter||resetAt||Date.now()+60*1000;
    const isDaily=explicitDaily||quotaExhausted;
