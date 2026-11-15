@@ -1016,8 +1016,64 @@ async function globalTrending(){
  const picks=[...movies,...series,...gameItems.slice(0,3)];
  return picks.map((x,i)=>({...x,rank:i+1,trendRank:i+1}));
 }
+
+function buildEvidenceDossier(item) {
+ const metadata=item?.metadata||{},facts=[];
+ const add=(key,label,value,source,url,confidence='موثق من سجل المصدر')=>{
+  const values=Array.isArray(value)?value.filter(Boolean):value===null||value===undefined||value===''?[]:[value];
+  if(!values.length)return;
+  facts.push({key,label,value:values,source:source||item.source||'غير محدد',url:url||item.sourceUrl||null,confidence});
+ };
+ const primary=item.source||'غير محدد',primaryUrl=item.sourceUrl||null;
+ add('identity','الاسم',item.name,primary,primaryUrl);
+ add('releaseDate','تاريخ الإصدار',item.date,primary,primaryUrl);
+ add('description','الوصف المصدر',String(item.description||'').slice(0,1800),primary,primaryUrl);
+ add('genres','التصنيفات',item.genres,primary,primaryUrl);
+ add('rating','تقييم المصدر',Number(item.rating)>0?item.rating:null,primary,primaryUrl,'مؤشر جماهيري؛ ليس حكماً نقدياً');
+ add('voteCount','عدد الأصوات',Number(item.sourceVoteCount)>0?item.sourceVoteCount:null,primary,primaryUrl,'مقياس حجم العينة وليس الجودة');
+ if(item.type==='game'){
+  add('platforms','المنصات',metadata.platforms||item.platforms,primary,primaryUrl);
+  add('developers','المطورون',metadata.developers||item.developers,primary,primaryUrl);
+  add('publishers','الناشرون',metadata.publishers,primary,primaryUrl);
+  add('metacritic','درجة Metacritic',metadata.metacritic,primary,primaryUrl,'درجة من مصدر تجميعي مستقل؛ لا تثبت وحدها جودة التجربة');
+  add('tags','وسوم RAWG',metadata.sourceTags,primary,primaryUrl,'تصنيفات وصفية من قاعدة البيانات');
+  add('gameModes','أنماط اللعب',metadata.gameModes,primary,primaryUrl);
+  add('perspectives','منظور اللعب',metadata.perspectives,primary,primaryUrl);
+  add('engines','محركات اللعب',metadata.engines,primary,primaryUrl);
+  add('stores','روابط المتاجر',(metadata.stores||[]).map(store=>({name:store.name,url:store.url})),primary,primaryUrl);
+ }else{
+  add('cast','طاقم التمثيل',metadata.cast,primary,primaryUrl);
+  add('directors','المخرجون',metadata.directors,primary,primaryUrl);
+  add('creators','المبدعون',metadata.creators,primary,primaryUrl);
+  add('runtime','مدة العرض',metadata.runtime,primary,primaryUrl);
+  add('episodeRuntime','مدة الحلقة',metadata.episodeRuntime,primary,primaryUrl);
+  add('seasons','عدد المواسم',metadata.seasons,primary,primaryUrl);
+  add('episodes','عدد الحلقات',metadata.episodes,primary,primaryUrl);
+  add('productionCompanies','شركات الإنتاج',metadata.productionCompanies,primary,primaryUrl);
+  add('watchProviders','منصات المشاهدة المتاحة في الجزائر',metadata.watchProviders,primary,metadata.watchProviderUrl||primaryUrl,'بيانات إتاحة قابلة للتغير');
+  add('relatedWorks','أعمال مرتبطة',(metadata.catalogContext?.relatedWorks||[]).map(work=>({title:work.title,year:work.year,sharedGenres:work.sharedGenres,sharedPeople:work.sharedPeople})),metadata.catalogContext?.source||'VIBECRITIC_D1',metadata.catalogContext?.sourceUrl,'صلة فهرسية لا تثبت التشابه الفني');
+ }
+ const sources=[...new Map(facts.map(f=>[f.source+'|'+(f.url||''),{name:f.source,url:f.url}])).values()];
+ return {
+  version:1,workKey:(item.type||'unknown')+':'+String(item.id||''),title:item.name||'غير معروف',
+  type:item.type||'unknown',collectedAt:new Date().toISOString(),
+  evidenceCount:facts.length,sourceCount:sources.length,sources,facts,
+  limitations:['البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.','التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.','لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق.']
+ };
+}
+async function persistEvidenceDossier(item,dossier) {
+ const directory='data/evidence-dossiers';
+ await fs.mkdir(directory,{recursive:true});
+ const safeId=String(item.id||'unknown').replace(/[^a-zA-Z0-9_-]/g,'_');
+ await fs.writeFile(path.join(directory,(item.type||'unknown')+'-'+safeId+'.json'),JSON.stringify(dossier,null,2)+'\\n','utf8');
+}
+
 async function writeReview(item){
  const enriched=await enrichItem(item);
+ const evidenceDossier=buildEvidenceDossier(enriched);
+ enriched.metadata={...(enriched.metadata||{}),evidenceDossier};
+ await persistEvidenceDossier(enriched,evidenceDossier);
+ console.log('ملف الأدلة:',evidenceDossier.evidenceCount,'حقائق منظمة من',evidenceDossier.sourceCount,'مصدر/مسار بيانات للعمل:',enriched.name);
  await recordKnowledge(enriched,{today:algeriaDate()});
  const reviewMode=validateSourceQuality(enriched);
  const a=await generateReview(enriched),date=algeriaDate();
@@ -1030,7 +1086,7 @@ async function writeReview(item){
  const platformFields=arr(enriched.metadata?.platforms||enriched.platforms||[]);
  const scoreFields=reviewMode==='review'?['storyScore: '+a.scores.story,'visualsScore: '+a.scores.visuals,'soundScore: '+a.scores.sound,'pacingScore: '+a.scores.pacing]:[];
  const ratingFields=reviewMode==='review'?['score: '+a.score]:[];
-  const fm=['---','title: '+y(enriched.name||item.name),'originalTitle: '+y(enriched.originalTitle||''),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 2','reviewMode: '+reviewMode,'publishedAt: '+y(new Date().toISOString()),'catalogContextSource: '+y(enriched.metadata?.catalogContext?.source||''),'catalogContextObservedAt: '+y(enriched.metadata?.catalogContext?.observedAt||''),'catalogRelatedWorks: '+arr((enriched.metadata?.catalogContext?.relatedWorks||[]).map(work=>work.title+' ('+(work.year||'سنة غير محددة')+') — تصنيفات مشتركة '+work.sharedGenreCount+'، أشخاص مشتركون '+work.sharedPersonCount)),'sourceName: '+y(item.source||''),'sourceVoteCount: '+(Number(enriched.sourceVoteCount)||0),'sourceRatingScale: '+(item.source==='RAWG'?5:item.source==='IGDB'?100:10),'metacriticScore: '+(Number(enriched.metadata?.metacritic)||0),'cast:',arr(enriched.metadata?.cast||[]),'crew:',arr([...(enriched.metadata?.directors||[]),...(enriched.metadata?.creators||[])]),'watchProviders:',arr(enriched.metadata?.watchProviders||[]),...watchFields,'platforms:',platformFields,'gameStores:',gameStoreFields.length?gameStoreFields.join('\n'):'  []',...scoreFields,'type: '+item.type,'date: '+date,'releaseDate: '+y(enriched.date),'poster: '+y(item.poster),'backdrop: '+y(item.backdrop),...videoFields,...externalVideoFields,...ratingFields,'trendRank: '+(Number(item.trendRank)||0),'trendSource: '+y(item.source||''),'trendPopularity: '+(Number(item.popularity)||0),'pros:',arr(a.pros),'cons:',arr(a.cons),'tags:',arr(a.tags),'genres:',arr(enriched.genres||[]),'sourceRating: '+(Number(enriched.rating)||0),'sourceId: '+y(item.id),'sourceUrl: '+y(item.sourceUrl),'aiGenerated: true','---','',a.review,'','> قراءة نقدية تحريرية مولّدة بمساعدة الذكاء الاصطناعي، مبنية على البيانات المنشورة المتاحة. لا تمثل تجربة مشاهدة أو لعب مباشرة، ولا تقييماً رسمياً من المصدر.',''].join('\n');
+  const fm=['---','title: '+y(enriched.name||item.name),'originalTitle: '+y(enriched.originalTitle||''),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 2','reviewMode: '+reviewMode,'publishedAt: '+y(new Date().toISOString()),'catalogContextSource: '+y(enriched.metadata?.catalogContext?.source||''),'catalogContextObservedAt: '+y(enriched.metadata?.catalogContext?.observedAt||''),'catalogRelatedWorks: '+arr((enriched.metadata?.catalogContext?.relatedWorks||[]).map(work=>work.title+' ('+(work.year||'سنة غير محددة')+') — تصنيفات مشتركة '+work.sharedGenreCount+'، أشخاص مشتركون '+work.sharedPersonCount)),'sourceName: '+y(item.source||''),'evidenceCount: '+(Number(evidenceDossier.evidenceCount)||0),'evidenceSourceCount: '+(Number(evidenceDossier.sourceCount)||0),'evidenceSources:',arr(evidenceDossier.sources.map(source=>source.name+(source.url?' — '+source.url:''))),'sourceVoteCount: '+(Number(enriched.sourceVoteCount)||0),'sourceRatingScale: '+(item.source==='RAWG'?5:item.source==='IGDB'?100:10),'metacriticScore: '+(Number(enriched.metadata?.metacritic)||0),'cast:',arr(enriched.metadata?.cast||[]),'crew:',arr([...(enriched.metadata?.directors||[]),...(enriched.metadata?.creators||[])]),'watchProviders:',arr(enriched.metadata?.watchProviders||[]),...watchFields,'platforms:',platformFields,'gameStores:',gameStoreFields.length?gameStoreFields.join('\n'):'  []',...scoreFields,'type: '+item.type,'date: '+date,'releaseDate: '+y(enriched.date),'poster: '+y(item.poster),'backdrop: '+y(item.backdrop),...videoFields,...externalVideoFields,...ratingFields,'trendRank: '+(Number(item.trendRank)||0),'trendSource: '+y(item.source||''),'trendPopularity: '+(Number(item.popularity)||0),'pros:',arr(a.pros),'cons:',arr(a.cons),'tags:',arr(a.tags),'genres:',arr(enriched.genres||[]),'sourceRating: '+(Number(enriched.rating)||0),'sourceId: '+y(item.id),'sourceUrl: '+y(item.sourceUrl),'aiGenerated: true','---','',a.review,'','> قراءة نقدية تحريرية مولّدة بمساعدة الذكاء الاصطناعي، مبنية على البيانات المنشورة المتاحة. لا تمثل تجربة مشاهدة أو لعب مباشرة، ولا تقييماً رسمياً من المصدر.',''].join('\n');
  await fs.writeFile(path.join(outDir,item.type+'-'+item.id+'.md'),fm,'utf8');
  const judgmentRecord=await recordJudgmentVersion(enriched,a);
  if(judgmentRecord.assessment?.status==='needs-review')console.warn('تنبيه: تغير جوهري في حكم محفوظ سابق؛ يلزم مراجعة سبب التغير والأدلة:',item.type+':'+item.id);
