@@ -1053,6 +1053,7 @@ async function main(){
    let publicationDate=content.match(/^publishedAt:\s*["']?([^"'\\r\\n]+)["']?\s*$/m)?.[1]?.trim();
    // Legacy AI reviews without an explicit publication timestamp are not counted.
    // Git commit dates are not reliable publication dates (bulk edits can reset them).
+   // New AI publications always write publishedAt in the review frontmatter.
    if(publicationDate){
     const parsed=new Date(publicationDate);
     if(Number.isFinite(parsed.getTime())&&parsed.toLocaleDateString('en-CA',{timeZone:'Africa/Algiers'})===today)todayCounts[type]++;
