@@ -35,6 +35,8 @@ sourceRating: 0
 sourceId: "123757"
 sourceUrl: "https://www.igdb.com/games/pilotxross"
 aiGenerated: true
+externalVideoUrl: "https://store.steampowered.com/app/1139230/PilotXross/"
+externalVideoTitle: "PilotXross — المقطع الرسمي على Steam"
 ---
 
 ## التحليل الفني والقصصي
