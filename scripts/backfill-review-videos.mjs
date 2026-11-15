@@ -108,7 +108,7 @@ async function main(){
     if(!['movie','series','game'].includes(type))continue;
     const title=field(frontmatter,'title');
     const rawSourceId=field(frontmatter,'sourceId');
-    const sourceId=(rawSourceId.match(/(\\d+)$/)||[])[1]||rawSourceId;
+    const sourceId=(rawSourceId.match(/(\d+)$/)||[])[1]||rawSourceId;
     const hasPoster=Boolean(field(frontmatter,'poster'));
     const hasBackdrop=Boolean(field(frontmatter,'backdrop'));
     const hasVideo=validVideo(field(frontmatter,'youtubeVideoId'));
