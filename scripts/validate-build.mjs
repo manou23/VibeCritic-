@@ -150,10 +150,11 @@ for (const file of reviewFiles) {
   } else {
     const retainedScores = scoreFields.filter(field => new RegExp('^' + field + ':\\s*', 'm').test(frontmatter));
     if (retainedScores.length) reviewFailures.push(file + ': preview/limited review must not store score metadata (' + retainedScores.join(', ') + ')');
-    const prematureRating = /(?:^|[^0-9])[0-9]+(?:[.,][0-9]+)?\s*(?:\/\s*10|من\s*10)(?![0-9])/i;
+    const prematureRating = /(?<![0-9])\d{1,2}(?:[.,]\d+)?\s*(?:\/\s*10|من\s*10)(?![0-9])/i;
     if (prematureRating.test(frontmatter + '\n' + body)) reviewFailures.push(file + ': preview/limited review must not publish a numeric final rating');
   }
-  for (const match of body.matchAll(/(\d+(?:[.,]\d+)?)\s*\/\s*10/g)) {
+  // Scores are at most 10; limiting the integer part to two digits avoids matching dates such as 2026/10.
+  for (const match of body.matchAll(/(?<!\d)(\d{1,2}(?:[.,]\d+)?)\s*\/\s*10/g)) {
     const value = Number(match[1].replace(',', '.'));
     if (value <= 0 || value > 10) reviewFailures.push(file + ': invalid body score (' + match[0] + ')');
   }
