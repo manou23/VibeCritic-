@@ -531,6 +531,7 @@ async function generateWithGroq(prompt){
   if(r.ok)break;
   detail=await r.text();
   // Retry transient TPM 429 responses using Groq's reset hint; daily quota 429s are not retried.
+  // Distinguish temporary TPM throttles from daily TPD exhaustion before retrying.
   const temporaryTpm429=r.status===429&&/tokens per minute|\bTPM\b/i.test(detail)&&!/tokens per day|\bTPD\b/i.test(detail)&&/try again in/i.test(detail);
   const retryable=temporaryTpm429||[500,502,503,504].includes(r.status);
   if(!retryable||attempt===3)throw new Error('Groq HTTP '+r.status+': '+detail);
