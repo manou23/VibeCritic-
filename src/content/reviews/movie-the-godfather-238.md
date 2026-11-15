@@ -44,6 +44,10 @@ crew:
 sourceName: "VibeCritic Editorial"
 sourceId: "manual-movie-the-godfather-238"
 aiGenerated: false
+poster: "https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg"
+backdrop: "https://image.tmdb.org/t/p/w1280/tSPT36ZKlP2WVHJLM4cQPLSzv3b.jpg"
+youtubeVideoId: "Ew9ngL1GZvs"
+youtubeVideoTitle: "50th Anniversary Trailer"
 ---
 
 ## العائلة بوصفها مؤسسة

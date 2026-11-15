@@ -45,6 +45,8 @@ sourceName: "TMDB"
 sourceId: "1396"
 sourceUrl: "https://www.themoviedb.org/tv/1396"
 aiGenerated: false
+youtubeVideoId: "VFkjBy2b50Q"
+youtubeVideoTitle: "Breaking Bad - Full Series Trailer"
 ---
 
 ## الفكرة والكتابة: من التبرير إلى الاعتراف

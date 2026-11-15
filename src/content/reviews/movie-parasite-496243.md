@@ -45,6 +45,10 @@ crew:
 sourceName: "VibeCritic Editorial"
 sourceId: "manual-movie-parasite-496243"
 aiGenerated: false
+poster: "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg"
+backdrop: "https://image.tmdb.org/t/p/w1280/TU9NIjwzjoKPwQHoHshkFcQUCG.jpg"
+youtubeVideoId: "bM9QabAojCg"
+youtubeVideoTitle: "B&W Version Official Australian Trailer [Subtitled]"
 ---
 
 ## الفكرة: الطبقة تظهر في تفاصيل الحياة
