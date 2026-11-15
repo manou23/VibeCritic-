@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "workKey": "series:254630",
+  "title": "12 12 12",
+  "type": "series",
+  "collectedAt": "2026-11-15T22:54:40.066Z",
+  "evidenceCount": 11,
+  "sourceCount": 1,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/tv/254630"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "12 12 12"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/254630",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2026-11-12"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/254630",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "عملية السرقة يُخطط لها في 12 شهراً، وتُنفذ في 12 ساعة، وما لم يُقبض على اللص خلال 12 يوماً، فلن يُقبض عليه إطلاقاً. عبر ثلاثة إطارات زمنية مثيرة، عميل \"إف بي آي\" ومجرم محترم يتواجهان في لعبة مطاردة قاتلة في شتى أنحاء \"أوروبا\"."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/254630",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "حركة ومغامرة",
+        "جريمة",
+        "دراما"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/254630",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        5.3
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/254630",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        22
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/254630",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "أنتوني ماكي بدور Jack Strickland",
+        "جيمي دورنان بدور Paul Galvin",
+        "Jack Kesy بدور Bobby Galvin",
+        "Agathe Rousselle بدور Severine",
+        "سالي هارمسن بدور Lena",
+        "Julius Feldmeier بدور Alberich",
+        "جين باليبار بدور Bazin"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/254630",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "creators",
+      "label": "المبدعون",
+      "value": [
+        "Dudi Appleton",
+        "Jim Keeble"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/254630",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "seasons",
+      "label": "عدد المواسم",
+      "value": [
+        1
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/254630",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "episodes",
+      "label": "عدد الحلقات",
+      "value": [
+        8
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/254630",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "Make It with Gravy",
+        "Inspire Entertainment",
+        "Anonymous Content",
+        "Paramount Television Studios",
+        "Skogland Films"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/254630",
+      "confidence": "موثق من سجل المصدر"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

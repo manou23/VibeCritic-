@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-15T22:52:56.378Z",
+  "updatedAt": "2026-11-15T23:07:15.068Z",
   "jobs": {
     "game:972995": {
       "key": "game:972995",
@@ -572,7 +572,7 @@
       },
       "nextAttemptAt": 0,
       "lastError": null,
-      "updatedAt": "2026-11-15T22:47:34.979Z",
+      "updatedAt": "2026-11-15T22:54:38.196Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "game:1019942",
@@ -2911,7 +2911,7 @@
       },
       "nextAttemptAt": 0,
       "lastError": null,
-      "updatedAt": "2026-11-15T22:49:46.481Z",
+      "updatedAt": "2026-11-15T22:56:37.254Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "movie:1058424",
@@ -5186,7 +5186,7 @@
       },
       "nextAttemptAt": 0,
       "lastError": null,
-      "updatedAt": "2026-11-15T22:47:35.183Z",
+      "updatedAt": "2026-11-15T22:54:38.425Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "game:1017176",
@@ -7660,7 +7660,7 @@
       "type": "movie",
       "id": "1153576",
       "createdAt": "2026-11-15T19:45:53.906Z",
-      "attemptCount": 1,
+      "attemptCount": 2,
       "status": "waiting",
       "item": {
         "id": "1153576",
@@ -8037,9 +8037,9 @@
           }
         }
       },
-      "nextAttemptAt": 1794772121340,
-      "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
-      "updatedAt": "2026-11-15T19:45:54.892Z",
+      "nextAttemptAt": 1794783599000,
+      "lastError": "فشل التوليد عبر جميع المزوّدات المجانية المتاحة: groq (editorial quality): الدرجات الفرعية الأربعة غير مكتملة أو خارج النطاق 0–10 | groq (score repair): تم إصلاح الدرجات لكن بقي عيب في عمق المقال: المراجعة المولّدة أقصر من الحد الأدنى للتحليل المتكامل (3200 حرف) | groq: Groq HTTP 400: {\"error\":{\"message\":\"Failed to generate JSON. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"code\":\"json_validate_failed\",\"failed_generation\":\"{\\\"title\\\":\\\"مراجعة فيلم مقاتل الشوارع (2026)\\\",\\\"thesis\\\":\\\"يحاول الفيلم دمج عناصر الحركة والفانتازيا المستوحاة من لعبة الشوارع الشهيرة، لكنه يفتقر إلى تماسك سردي يجعل التجربة متوازنة.\\\",\\\"analysis\\\":{\\\"context\\\":\\\"الفيلم يصنف ضمن فئتي الحركة والفانتازيا، ويُعرض في أكتوبر 2026 بإخراج كيتاو ساكوراي. يندرج ضمن سلسلة أعمال مستوحاة من لعبة القتال الشهيرة التي تمتد لعقود، ما يخلق توقعات عالية من الجمهور المتابع للعلامة التجارية. مع مدة 120 دقيقة، يُفترض أن تكون هناك مساحة كافية لتطوير الصراعات الشخصية والقتالية، لكن البيانات المتوفرة لا تكشف عن أي إشارة إلى استثمار هذا الإطار الزمني في بناء عالم موثوق أو في توظيف عناصر الفانتازيا بشكل مبتكر. وبالتالي يبقى السؤال ما إذا كان الإطار الزمني يُستغل لتقديم قصة متماسك",
+      "updatedAt": "2026-11-15T22:58:03.838Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "movie:1153576",
@@ -8225,7 +8225,7 @@
       "type": "movie",
       "id": "791523",
       "createdAt": "2026-11-15T19:45:54.896Z",
-      "attemptCount": 1,
+      "attemptCount": 2,
       "status": "waiting",
       "item": {
         "id": "791523",
@@ -8604,9 +8604,9 @@
           }
         }
       },
-      "nextAttemptAt": 1794772121340,
-      "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
-      "updatedAt": "2026-11-15T19:45:55.870Z",
+      "nextAttemptAt": 1794783599000,
+      "lastError": "فشل التوليد عبر جميع المزوّدات المجانية المتاحة: groq (editorial quality): الدرجات الفرعية الأربعة غير مكتملة أو خارج النطاق 0–10 | groq (score repair): تم إصلاح الدرجات لكن بقي عيب في عمق المقال: المراجعة المولّدة أقصر من الحد الأدنى للتحليل المتكامل (3200 حرف) | groq (editorial quality): المراجعة المولّدة أقصر من الحد الأدنى للتحليل المتكامل (3200 حرف)",
+      "updatedAt": "2026-11-15T22:59:35.719Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "movie:791523",
@@ -8792,7 +8792,7 @@
       "type": "movie",
       "id": "1339713",
       "createdAt": "2026-11-15T19:45:55.874Z",
-      "attemptCount": 1,
+      "attemptCount": 2,
       "status": "waiting",
       "item": {
         "id": "1339713",
@@ -9173,9 +9173,9 @@
           }
         }
       },
-      "nextAttemptAt": 1794772121340,
-      "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
-      "updatedAt": "2026-11-15T19:45:56.800Z",
+      "nextAttemptAt": 1794869999000,
+      "lastError": "فشل التوليد عبر جميع المزوّدات المجانية المتاحة: groq: Groq HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m76evad9esbb0jxtwwzsa4tt` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199168, Requested 5394. Please try again in 32m50.784s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "updatedAt": "2026-11-15T23:04:07.396Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "movie:1339713",
@@ -9389,7 +9389,7 @@
       "type": "movie",
       "id": "1400940",
       "createdAt": "2026-11-15T19:47:53.588Z",
-      "attemptCount": 1,
+      "attemptCount": 2,
       "status": "waiting",
       "item": {
         "id": "1400940",
@@ -9776,9 +9776,9 @@
           }
         }
       },
-      "nextAttemptAt": 1794772106000,
-      "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
-      "updatedAt": "2026-11-15T19:47:54.961Z",
+      "nextAttemptAt": 1794784844797,
+      "lastError": "فشل التوليد عبر جميع المزوّدات المجانية المتاحة: cloudflare-workers-ai: Cloudflare Workers AI HTTP 429: {\"errors\":[{\"message\":\"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (3c21accd-7a77-4730-9672-3a0e6af929b3)\",\"code\":4006}],\"success\":false,\"result\":{},\"messages\":[]} | gemini: The operation was aborted due to timeout | openrouter: Body is unusable: Body has already been read",
+      "updatedAt": "2026-11-15T23:07:15.068Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "movie:1400940",
@@ -11649,7 +11649,7 @@
       },
       "nextAttemptAt": 0,
       "lastError": null,
-      "updatedAt": "2026-11-15T22:47:43.733Z",
+      "updatedAt": "2026-11-15T22:54:38.634Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "series:224377",
@@ -12801,6 +12801,1198 @@
             "source": "TMDB",
             "url": "https://www.themoviedb.org/tv/310209",
             "confidence": "موثق من سجل المصدر"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "series:254630": {
+      "key": "series:254630",
+      "type": "series",
+      "id": "254630",
+      "createdAt": "2026-11-15T22:54:38.826Z",
+      "attemptCount": 1,
+      "status": "waiting",
+      "item": {
+        "id": "254630",
+        "type": "series",
+        "name": "12 12 12",
+        "originalTitle": "12 12 12",
+        "description": "عملية السرقة يُخطط لها في 12 شهراً، وتُنفذ في 12 ساعة، وما لم يُقبض على اللص خلال 12 يوماً، فلن يُقبض عليه إطلاقاً. عبر ثلاثة إطارات زمنية مثيرة، عميل \"إف بي آي\" ومجرم محترم يتواجهان في لعبة مطاردة قاتلة في شتى أنحاء \"أوروبا\".",
+        "date": "2026-11-12",
+        "poster": "https://image.tmdb.org/t/p/w500/8q6BvFQuKM1Rud4E9NQDaMGy9EL.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w780/tjy25xpiFeo2gahl7N0hoxbRtG7.jpg",
+        "rating": 5.3,
+        "genres": [
+          "حركة ومغامرة",
+          "جريمة",
+          "دراما"
+        ],
+        "sourceUrl": "https://www.themoviedb.org/tv/254630",
+        "source": "TMDB",
+        "popularity": 104.9911,
+        "sourceMetricName": "TMDB popularity",
+        "sourceMetricValue": 104.9911,
+        "trendConfidence": "مرتفع",
+        "trendRank": 3,
+        "fieldSources": {},
+        "sourceVoteCount": 22,
+        "metadata": {
+          "voteAverage": 5.3,
+          "voteCount": 22,
+          "youtubeVideoId": null,
+          "youtubeVideoTitle": null,
+          "genres": [
+            "حركة ومغامرة",
+            "جريمة",
+            "دراما"
+          ],
+          "directors": [],
+          "creators": [
+            "Dudi Appleton",
+            "Jim Keeble"
+          ],
+          "cast": [
+            "أنتوني ماكي بدور Jack Strickland",
+            "جيمي دورنان بدور Paul Galvin",
+            "Jack Kesy بدور Bobby Galvin",
+            "Agathe Rousselle بدور Severine",
+            "سالي هارمسن بدور Lena",
+            "Julius Feldmeier بدور Alberich",
+            "جين باليبار بدور Bazin"
+          ],
+          "runtime": null,
+          "episodeRuntime": [],
+          "seasons": 1,
+          "episodes": 8,
+          "productionCompanies": [
+            "Make It with Gravy",
+            "Inspire Entertainment",
+            "Anonymous Content",
+            "Paramount Television Studios",
+            "Skogland Films"
+          ],
+          "watchProviders": [],
+          "watchProviderUrl": null,
+          "communityReviews": [],
+          "similar": [
+            {
+              "id": "65344",
+              "title": "Tjockare än vatten"
+            },
+            {
+              "id": "99130",
+              "title": "Peleles"
+            },
+            {
+              "id": "99308",
+              "title": "Mea culpa"
+            },
+            {
+              "id": "99312",
+              "title": "El día menos pensado"
+            },
+            {
+              "id": "65561",
+              "title": "翳りゆく夏"
+            }
+          ],
+          "catalogContext": null,
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "series:254630",
+            "title": "12 12 12",
+            "type": "series",
+            "collectedAt": "2026-11-15T22:54:40.066Z",
+            "evidenceCount": 11,
+            "sourceCount": 1,
+            "sources": [
+              {
+                "name": "TMDB",
+                "url": "https://www.themoviedb.org/tv/254630"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "12 12 12"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/254630",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "2026-11-12"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/254630",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "عملية السرقة يُخطط لها في 12 شهراً، وتُنفذ في 12 ساعة، وما لم يُقبض على اللص خلال 12 يوماً، فلن يُقبض عليه إطلاقاً. عبر ثلاثة إطارات زمنية مثيرة، عميل \"إف بي آي\" ومجرم محترم يتواجهان في لعبة مطاردة قاتلة في شتى أنحاء \"أوروبا\"."
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/254630",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "حركة ومغامرة",
+                  "جريمة",
+                  "دراما"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/254630",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "rating",
+                "label": "تقييم المصدر",
+                "value": [
+                  5.3
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/254630",
+                "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+              },
+              {
+                "key": "voteCount",
+                "label": "عدد الأصوات",
+                "value": [
+                  22
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/254630",
+                "confidence": "مقياس حجم العينة وليس الجودة"
+              },
+              {
+                "key": "cast",
+                "label": "طاقم التمثيل",
+                "value": [
+                  "أنتوني ماكي بدور Jack Strickland",
+                  "جيمي دورنان بدور Paul Galvin",
+                  "Jack Kesy بدور Bobby Galvin",
+                  "Agathe Rousselle بدور Severine",
+                  "سالي هارمسن بدور Lena",
+                  "Julius Feldmeier بدور Alberich",
+                  "جين باليبار بدور Bazin"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/254630",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "creators",
+                "label": "المبدعون",
+                "value": [
+                  "Dudi Appleton",
+                  "Jim Keeble"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/254630",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "seasons",
+                "label": "عدد المواسم",
+                "value": [
+                  1
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/254630",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "episodes",
+                "label": "عدد الحلقات",
+                "value": [
+                  8
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/254630",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "productionCompanies",
+                "label": "شركات الإنتاج",
+                "value": [
+                  "Make It with Gravy",
+                  "Inspire Entertainment",
+                  "Anonymous Content",
+                  "Paramount Television Studios",
+                  "Skogland Films"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/254630",
+                "confidence": "موثق من سجل المصدر"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        }
+      },
+      "nextAttemptAt": 1794783599000,
+      "lastError": "فشل التوليد عبر جميع المزوّدات المجانية المتاحة: groq (editorial quality): الدرجات الفرعية الأربعة غير مكتملة أو خارج النطاق 0–10 | groq (score repair): تم إصلاح الدرجات لكن بقي عيب في عمق المقال: المراجعة المولّدة أقصر من الحد الأدنى للتحليل المتكامل (3200 حرف) | groq (editorial quality): الدرجات الفرعية الأربعة غير مكتملة أو خارج النطاق 0–10",
+      "updatedAt": "2026-11-15T22:55:04.616Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "series:254630",
+        "title": "12 12 12",
+        "type": "series",
+        "collectedAt": "2026-11-15T22:54:40.066Z",
+        "evidenceCount": 11,
+        "sourceCount": 1,
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/254630"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "12 12 12"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/254630",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "2026-11-12"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/254630",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "عملية السرقة يُخطط لها في 12 شهراً، وتُنفذ في 12 ساعة، وما لم يُقبض على اللص خلال 12 يوماً، فلن يُقبض عليه إطلاقاً. عبر ثلاثة إطارات زمنية مثيرة، عميل \"إف بي آي\" ومجرم محترم يتواجهان في لعبة مطاردة قاتلة في شتى أنحاء \"أوروبا\"."
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/254630",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "حركة ومغامرة",
+              "جريمة",
+              "دراما"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/254630",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "rating",
+            "label": "تقييم المصدر",
+            "value": [
+              5.3
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/254630",
+            "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+          },
+          {
+            "key": "voteCount",
+            "label": "عدد الأصوات",
+            "value": [
+              22
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/254630",
+            "confidence": "مقياس حجم العينة وليس الجودة"
+          },
+          {
+            "key": "cast",
+            "label": "طاقم التمثيل",
+            "value": [
+              "أنتوني ماكي بدور Jack Strickland",
+              "جيمي دورنان بدور Paul Galvin",
+              "Jack Kesy بدور Bobby Galvin",
+              "Agathe Rousselle بدور Severine",
+              "سالي هارمسن بدور Lena",
+              "Julius Feldmeier بدور Alberich",
+              "جين باليبار بدور Bazin"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/254630",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "creators",
+            "label": "المبدعون",
+            "value": [
+              "Dudi Appleton",
+              "Jim Keeble"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/254630",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "seasons",
+            "label": "عدد المواسم",
+            "value": [
+              1
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/254630",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "episodes",
+            "label": "عدد الحلقات",
+            "value": [
+              8
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/254630",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "productionCompanies",
+            "label": "شركات الإنتاج",
+            "value": [
+              "Make It with Gravy",
+              "Inspire Entertainment",
+              "Anonymous Content",
+              "Paramount Television Studios",
+              "Skogland Films"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/254630",
+            "confidence": "موثق من سجل المصدر"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "series:279155": {
+      "key": "series:279155",
+      "type": "series",
+      "id": "279155",
+      "createdAt": "2026-11-15T22:55:04.621Z",
+      "attemptCount": 0,
+      "status": "ready",
+      "item": {
+        "id": "279155",
+        "type": "series",
+        "name": "العاصفة الصامتة",
+        "originalTitle": "谷雨",
+        "description": "في عام 1994، التقى كل من مدقق الضرائب \"أويانغ شو\"، والمحقق الجنائي \"يان بينغ آن\"، و\"تشو هاييانغ\" —الذي كان يبحث عن زوجته المفقودة— وذلك على خلفية قضية فواتير مزورة في مدينة \"تشونجيانغ\". ومع تقلبات الزمن، خاض الثلاثة تجارب حياتية متباينة للغاية، مما أدى إلى تباعد مسارات أقدارهم. وبعد مرور سنوات، تجمعهم \"عملية غيو يو\" (مطر الحبوب) مجددًا، لكنهم يجدون أنفسهم اليوم في معسكرين متضادين. يجد \"أويانغ شو\" نفسه في مواجهة شبكة للاحتيال الضريبي يتزعمها \"تشو هاييانغ\" وتدعمها جهات نافذة توفر لها الحماية، ليقع في صراع مؤلم بين عواطفه الشخصية وسيادة القانون. ومن خلال تتبع خيوط فاتورة واحدة، يكشف \"أويانغ شو\" عن جشع المتورطين، ويقضي في النهاية على الشر، منتصرًا للعدالة.",
+        "date": "2026-11-05",
+        "poster": "https://image.tmdb.org/t/p/w500/tIPP497RKNKxbBATEziGHjciS35.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w780/m5tiVhzIFIqDyIPwOsHDsMDGMsK.jpg",
+        "rating": 9,
+        "genres": [
+          "دراما"
+        ],
+        "sourceUrl": "https://www.themoviedb.org/tv/279155",
+        "source": "TMDB",
+        "popularity": 21.1683,
+        "sourceMetricName": "TMDB popularity",
+        "sourceMetricValue": 21.1683,
+        "trendConfidence": "مرتفع",
+        "trendRank": 10,
+        "fieldSources": {},
+        "sourceVoteCount": 1,
+        "metadata": {
+          "voteAverage": 9,
+          "voteCount": 1,
+          "youtubeVideoId": null,
+          "youtubeVideoTitle": null,
+          "genres": [
+            "دراما"
+          ],
+          "directors": [
+            "李路"
+          ],
+          "creators": [],
+          "cast": [
+            "井柏然 بدور Ouyang Xu",
+            "张颂文 بدور Zhou Haiyang",
+            "孙艺洲 بدور Yan Ping'an",
+            "隋俊波 بدور Tang Muyun",
+            "李小冉 بدور Li Ahong",
+            "张雪迎 بدور Lin Ruyi",
+            "余文樂 بدور Cheng Tian Bao"
+          ],
+          "runtime": null,
+          "episodeRuntime": [
+            46
+          ],
+          "seasons": 1,
+          "episodes": 30,
+          "productionCompanies": [
+            "弘道影业有限公司",
+            "Youku"
+          ],
+          "watchProviders": [],
+          "watchProviderUrl": null,
+          "communityReviews": [],
+          "similar": [
+            {
+              "id": "128331",
+              "title": "Maria e o Cangaço"
+            },
+            {
+              "id": "128406",
+              "title": "黒鳥の湖"
+            },
+            {
+              "id": "211742",
+              "title": "Dal y Mellt"
+            },
+            {
+              "id": "211746",
+              "title": "معادلة الحب"
+            },
+            {
+              "id": "211748",
+              "title": "마당이 있는 집"
+            }
+          ],
+          "catalogContext": null,
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "series:279155",
+            "title": "العاصفة الصامتة",
+            "type": "series",
+            "collectedAt": "2026-11-15T22:55:05.971Z",
+            "evidenceCount": 12,
+            "sourceCount": 1,
+            "sources": [
+              {
+                "name": "TMDB",
+                "url": "https://www.themoviedb.org/tv/279155"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "العاصفة الصامتة"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/279155",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "2026-11-05"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/279155",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "في عام 1994، التقى كل من مدقق الضرائب \"أويانغ شو\"، والمحقق الجنائي \"يان بينغ آن\"، و\"تشو هاييانغ\" —الذي كان يبحث عن زوجته المفقودة— وذلك على خلفية قضية فواتير مزورة في مدينة \"تشونجيانغ\". ومع تقلبات الزمن، خاض الثلاثة تجارب حياتية متباينة للغاية، مما أدى إلى تباعد مسارات أقدارهم. وبعد مرور سنوات، تجمعهم \"عملية غيو يو\" (مطر الحبوب) مجددًا، لكنهم يجدون أنفسهم اليوم في معسكرين متضادين. يجد \"أويانغ شو\" نفسه في مواجهة شبكة للاحتيال الضريبي يتزعمها \"تشو هاييانغ\" وتدعمها جهات نافذة توفر لها الحماية، ليقع في صراع مؤلم بين عواطفه الشخصية وسيادة القانون. ومن خلال تتبع خيوط فاتورة واحدة، يكشف \"أويانغ شو\" عن جشع المتورطين، ويقضي في النهاية على الشر، منتصرًا للعدالة."
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/279155",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "دراما"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/279155",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "rating",
+                "label": "تقييم المصدر",
+                "value": [
+                  9
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/279155",
+                "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+              },
+              {
+                "key": "voteCount",
+                "label": "عدد الأصوات",
+                "value": [
+                  1
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/279155",
+                "confidence": "مقياس حجم العينة وليس الجودة"
+              },
+              {
+                "key": "cast",
+                "label": "طاقم التمثيل",
+                "value": [
+                  "井柏然 بدور Ouyang Xu",
+                  "张颂文 بدور Zhou Haiyang",
+                  "孙艺洲 بدور Yan Ping'an",
+                  "隋俊波 بدور Tang Muyun",
+                  "李小冉 بدور Li Ahong",
+                  "张雪迎 بدور Lin Ruyi",
+                  "余文樂 بدور Cheng Tian Bao"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/279155",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "directors",
+                "label": "المخرجون",
+                "value": [
+                  "李路"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/279155",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "episodeRuntime",
+                "label": "مدة الحلقة",
+                "value": [
+                  46
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/279155",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "seasons",
+                "label": "عدد المواسم",
+                "value": [
+                  1
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/279155",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "episodes",
+                "label": "عدد الحلقات",
+                "value": [
+                  30
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/279155",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "productionCompanies",
+                "label": "شركات الإنتاج",
+                "value": [
+                  "弘道影业有限公司",
+                  "Youku"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/279155",
+                "confidence": "موثق من سجل المصدر"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        }
+      },
+      "nextAttemptAt": 0,
+      "lastError": null,
+      "updatedAt": "2026-11-15T22:55:05.971Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "series:279155",
+        "title": "العاصفة الصامتة",
+        "type": "series",
+        "collectedAt": "2026-11-15T22:55:05.971Z",
+        "evidenceCount": 12,
+        "sourceCount": 1,
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/279155"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "العاصفة الصامتة"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/279155",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "2026-11-05"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/279155",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "في عام 1994، التقى كل من مدقق الضرائب \"أويانغ شو\"، والمحقق الجنائي \"يان بينغ آن\"، و\"تشو هاييانغ\" —الذي كان يبحث عن زوجته المفقودة— وذلك على خلفية قضية فواتير مزورة في مدينة \"تشونجيانغ\". ومع تقلبات الزمن، خاض الثلاثة تجارب حياتية متباينة للغاية، مما أدى إلى تباعد مسارات أقدارهم. وبعد مرور سنوات، تجمعهم \"عملية غيو يو\" (مطر الحبوب) مجددًا، لكنهم يجدون أنفسهم اليوم في معسكرين متضادين. يجد \"أويانغ شو\" نفسه في مواجهة شبكة للاحتيال الضريبي يتزعمها \"تشو هاييانغ\" وتدعمها جهات نافذة توفر لها الحماية، ليقع في صراع مؤلم بين عواطفه الشخصية وسيادة القانون. ومن خلال تتبع خيوط فاتورة واحدة، يكشف \"أويانغ شو\" عن جشع المتورطين، ويقضي في النهاية على الشر، منتصرًا للعدالة."
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/279155",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "دراما"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/279155",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "rating",
+            "label": "تقييم المصدر",
+            "value": [
+              9
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/279155",
+            "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+          },
+          {
+            "key": "voteCount",
+            "label": "عدد الأصوات",
+            "value": [
+              1
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/279155",
+            "confidence": "مقياس حجم العينة وليس الجودة"
+          },
+          {
+            "key": "cast",
+            "label": "طاقم التمثيل",
+            "value": [
+              "井柏然 بدور Ouyang Xu",
+              "张颂文 بدور Zhou Haiyang",
+              "孙艺洲 بدور Yan Ping'an",
+              "隋俊波 بدور Tang Muyun",
+              "李小冉 بدور Li Ahong",
+              "张雪迎 بدور Lin Ruyi",
+              "余文樂 بدور Cheng Tian Bao"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/279155",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "directors",
+            "label": "المخرجون",
+            "value": [
+              "李路"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/279155",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "episodeRuntime",
+            "label": "مدة الحلقة",
+            "value": [
+              46
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/279155",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "seasons",
+            "label": "عدد المواسم",
+            "value": [
+              1
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/279155",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "episodes",
+            "label": "عدد الحلقات",
+            "value": [
+              30
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/279155",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "productionCompanies",
+            "label": "شركات الإنتاج",
+            "value": [
+              "弘道影业有限公司",
+              "Youku"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/279155",
+            "confidence": "موثق من سجل المصدر"
+          }
+        ],
+        "limitations": [
+          "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+          "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+          "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+        ]
+      }
+    },
+    "series:289517": {
+      "key": "series:289517",
+      "type": "series",
+      "id": "289517",
+      "createdAt": "2026-11-15T22:55:06.194Z",
+      "attemptCount": 1,
+      "status": "waiting",
+      "item": {
+        "id": "289517",
+        "type": "series",
+        "name": "وظيفة الكوابيس",
+        "originalTitle": "꿀알바",
+        "description": "يتولّى شاب غارق في الديون العمل في وظائف مغرية بدوام جزئي، توفرها وكالة توظيف غامضة... ليتفاجأ بأن سعيه لجني المزيد من المال قد تحوّل إلى كابوس.",
+        "date": "2026-10-30",
+        "poster": "https://image.tmdb.org/t/p/w500/yyA9CI8BLNg6LtVRvmVxki4xiGb.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w780/gWedDgBsZkuOho2qe3q2sTQmbpO.jpg",
+        "rating": 7.529,
+        "genres": [
+          "غموض",
+          "دراما"
+        ],
+        "sourceUrl": "https://www.themoviedb.org/tv/289517",
+        "source": "TMDB",
+        "popularity": 90.2711,
+        "sourceMetricName": "TMDB popularity",
+        "sourceMetricValue": 90.2711,
+        "trendConfidence": "مرتفع",
+        "trendRank": 14,
+        "fieldSources": {},
+        "sourceVoteCount": 103,
+        "metadata": {
+          "voteAverage": 7.529,
+          "voteCount": 103,
+          "youtubeVideoId": null,
+          "youtubeVideoTitle": null,
+          "genres": [
+            "غموض",
+            "دراما"
+          ],
+          "directors": [
+            "김다민"
+          ],
+          "creators": [
+            "한준희"
+          ],
+          "cast": [
+            "لي جاي ووك بدور Byeon Hyeok-jun",
+            "고민시 بدور Eum Yeon-joo",
+            "김민하 بدور Byeon Ji-yoon",
+            "이희준 بدور Head of Spider Staffing Agency"
+          ],
+          "runtime": null,
+          "episodeRuntime": [],
+          "seasons": 1,
+          "episodes": 8,
+          "productionCompanies": [
+            "SHOTCAKE"
+          ],
+          "watchProviders": [
+            "Netflix"
+          ],
+          "watchProviderUrl": "https://www.themoviedb.org/tv/289517-kkulalba/watch?locale=DZ",
+          "communityReviews": [
+            "Dead-End Job (Korean Series) – Review ⭐ Rating: 8/10 Dead-End Job is a Korean horror, mystery and suspense series that keeps you curious about what will happen next. The story follows Hyeok-jun, a young man struggling with debt who accepts mysterious jobs offering extremely high salaries. But every job comes with terrifying situations, strange creatures and dangerous secrets. The best part of this series is its unique concept, creepy atmosphere a"
+          ],
+          "similar": [
+            {
+              "id": "128342",
+              "title": "我和我们在一起"
+            },
+            {
+              "id": "60983",
+              "title": "Haunting: Australia"
+            },
+            {
+              "id": "60875",
+              "title": "Résistance"
+            },
+            {
+              "id": "128547",
+              "title": "옐로우"
+            },
+            {
+              "id": "744",
+              "title": "Jekyll"
+            }
+          ],
+          "catalogContext": null,
+          "evidenceDossier": {
+            "version": 1,
+            "workKey": "series:289517",
+            "title": "وظيفة الكوابيس",
+            "type": "series",
+            "collectedAt": "2026-11-15T22:55:07.350Z",
+            "evidenceCount": 13,
+            "sourceCount": 2,
+            "sources": [
+              {
+                "name": "TMDB",
+                "url": "https://www.themoviedb.org/tv/289517"
+              },
+              {
+                "name": "TMDB",
+                "url": "https://www.themoviedb.org/tv/289517-kkulalba/watch?locale=DZ"
+              }
+            ],
+            "facts": [
+              {
+                "key": "identity",
+                "label": "الاسم",
+                "value": [
+                  "وظيفة الكوابيس"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/289517",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "releaseDate",
+                "label": "تاريخ الإصدار",
+                "value": [
+                  "2026-10-30"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/289517",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "description",
+                "label": "الوصف المصدر",
+                "value": [
+                  "يتولّى شاب غارق في الديون العمل في وظائف مغرية بدوام جزئي، توفرها وكالة توظيف غامضة... ليتفاجأ بأن سعيه لجني المزيد من المال قد تحوّل إلى كابوس."
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/289517",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "genres",
+                "label": "التصنيفات",
+                "value": [
+                  "غموض",
+                  "دراما"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/289517",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "rating",
+                "label": "تقييم المصدر",
+                "value": [
+                  7.529
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/289517",
+                "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+              },
+              {
+                "key": "voteCount",
+                "label": "عدد الأصوات",
+                "value": [
+                  103
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/289517",
+                "confidence": "مقياس حجم العينة وليس الجودة"
+              },
+              {
+                "key": "cast",
+                "label": "طاقم التمثيل",
+                "value": [
+                  "لي جاي ووك بدور Byeon Hyeok-jun",
+                  "고민시 بدور Eum Yeon-joo",
+                  "김민하 بدور Byeon Ji-yoon",
+                  "이희준 بدور Head of Spider Staffing Agency"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/289517",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "directors",
+                "label": "المخرجون",
+                "value": [
+                  "김다민"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/289517",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "creators",
+                "label": "المبدعون",
+                "value": [
+                  "한준희"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/289517",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "seasons",
+                "label": "عدد المواسم",
+                "value": [
+                  1
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/289517",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "episodes",
+                "label": "عدد الحلقات",
+                "value": [
+                  8
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/289517",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "productionCompanies",
+                "label": "شركات الإنتاج",
+                "value": [
+                  "SHOTCAKE"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/289517",
+                "confidence": "موثق من سجل المصدر"
+              },
+              {
+                "key": "watchProviders",
+                "label": "منصات المشاهدة المتاحة في الجزائر",
+                "value": [
+                  "Netflix"
+                ],
+                "source": "TMDB",
+                "url": "https://www.themoviedb.org/tv/289517-kkulalba/watch?locale=DZ",
+                "confidence": "بيانات إتاحة قابلة للتغير"
+              }
+            ],
+            "limitations": [
+              "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+              "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+              "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+            ]
+          }
+        }
+      },
+      "nextAttemptAt": 1794783599000,
+      "lastError": "فشل التوليد عبر جميع المزوّدات المجانية المتاحة: groq (editorial quality): الدرجات الفرعية الأربعة غير مكتملة أو خارج النطاق 0–10 | groq (score repair): تم إصلاح الدرجات لكن بقي عيب في عمق المقال: المراجعة المولّدة أقصر من الحد الأدنى للتحليل المتكامل (3200 حرف) | groq (editorial quality): المراجعة أقصر من المعيار التحريري المطلوب (650 كلمة)",
+      "updatedAt": "2026-11-15T22:56:37.245Z",
+      "evidenceDossier": {
+        "version": 1,
+        "workKey": "series:289517",
+        "title": "وظيفة الكوابيس",
+        "type": "series",
+        "collectedAt": "2026-11-15T22:55:07.350Z",
+        "evidenceCount": 13,
+        "sourceCount": 2,
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/289517"
+          },
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/289517-kkulalba/watch?locale=DZ"
+          }
+        ],
+        "facts": [
+          {
+            "key": "identity",
+            "label": "الاسم",
+            "value": [
+              "وظيفة الكوابيس"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/289517",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "releaseDate",
+            "label": "تاريخ الإصدار",
+            "value": [
+              "2026-10-30"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/289517",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "description",
+            "label": "الوصف المصدر",
+            "value": [
+              "يتولّى شاب غارق في الديون العمل في وظائف مغرية بدوام جزئي، توفرها وكالة توظيف غامضة... ليتفاجأ بأن سعيه لجني المزيد من المال قد تحوّل إلى كابوس."
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/289517",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "genres",
+            "label": "التصنيفات",
+            "value": [
+              "غموض",
+              "دراما"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/289517",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "rating",
+            "label": "تقييم المصدر",
+            "value": [
+              7.529
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/289517",
+            "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+          },
+          {
+            "key": "voteCount",
+            "label": "عدد الأصوات",
+            "value": [
+              103
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/289517",
+            "confidence": "مقياس حجم العينة وليس الجودة"
+          },
+          {
+            "key": "cast",
+            "label": "طاقم التمثيل",
+            "value": [
+              "لي جاي ووك بدور Byeon Hyeok-jun",
+              "고민시 بدور Eum Yeon-joo",
+              "김민하 بدور Byeon Ji-yoon",
+              "이희준 بدور Head of Spider Staffing Agency"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/289517",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "directors",
+            "label": "المخرجون",
+            "value": [
+              "김다민"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/289517",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "creators",
+            "label": "المبدعون",
+            "value": [
+              "한준희"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/289517",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "seasons",
+            "label": "عدد المواسم",
+            "value": [
+              1
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/289517",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "episodes",
+            "label": "عدد الحلقات",
+            "value": [
+              8
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/289517",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "productionCompanies",
+            "label": "شركات الإنتاج",
+            "value": [
+              "SHOTCAKE"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/289517",
+            "confidence": "موثق من سجل المصدر"
+          },
+          {
+            "key": "watchProviders",
+            "label": "منصات المشاهدة المتاحة في الجزائر",
+            "value": [
+              "Netflix"
+            ],
+            "source": "TMDB",
+            "url": "https://www.themoviedb.org/tv/289517-kkulalba/watch?locale=DZ",
+            "confidence": "بيانات إتاحة قابلة للتغير"
           }
         ],
         "limitations": [

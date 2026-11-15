@@ -1,0 +1,149 @@
+{
+  "version": 1,
+  "workKey": "series:279155",
+  "title": "العاصفة الصامتة",
+  "type": "series",
+  "collectedAt": "2026-11-15T22:55:05.971Z",
+  "evidenceCount": 12,
+  "sourceCount": 1,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/tv/279155"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "العاصفة الصامتة"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/279155",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2026-11-05"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/279155",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "في عام 1994، التقى كل من مدقق الضرائب \"أويانغ شو\"، والمحقق الجنائي \"يان بينغ آن\"، و\"تشو هاييانغ\" —الذي كان يبحث عن زوجته المفقودة— وذلك على خلفية قضية فواتير مزورة في مدينة \"تشونجيانغ\". ومع تقلبات الزمن، خاض الثلاثة تجارب حياتية متباينة للغاية، مما أدى إلى تباعد مسارات أقدارهم. وبعد مرور سنوات، تجمعهم \"عملية غيو يو\" (مطر الحبوب) مجددًا، لكنهم يجدون أنفسهم اليوم في معسكرين متضادين. يجد \"أويانغ شو\" نفسه في مواجهة شبكة للاحتيال الضريبي يتزعمها \"تشو هاييانغ\" وتدعمها جهات نافذة توفر لها الحماية، ليقع في صراع مؤلم بين عواطفه الشخصية وسيادة القانون. ومن خلال تتبع خيوط فاتورة واحدة، يكشف \"أويانغ شو\" عن جشع المتورطين، ويقضي في النهاية على الشر، منتصرًا للعدالة."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/279155",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "دراما"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/279155",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        9
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/279155",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        1
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/279155",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "井柏然 بدور Ouyang Xu",
+        "张颂文 بدور Zhou Haiyang",
+        "孙艺洲 بدور Yan Ping'an",
+        "隋俊波 بدور Tang Muyun",
+        "李小冉 بدور Li Ahong",
+        "张雪迎 بدور Lin Ruyi",
+        "余文樂 بدور Cheng Tian Bao"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/279155",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "directors",
+      "label": "المخرجون",
+      "value": [
+        "李路"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/279155",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "episodeRuntime",
+      "label": "مدة الحلقة",
+      "value": [
+        46
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/279155",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "seasons",
+      "label": "عدد المواسم",
+      "value": [
+        1
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/279155",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "episodes",
+      "label": "عدد الحلقات",
+      "value": [
+        30
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/279155",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "弘道影业有限公司",
+        "Youku"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/279155",
+      "confidence": "موثق من سجل المصدر"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

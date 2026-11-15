@@ -1,0 +1,160 @@
+{
+  "version": 1,
+  "workKey": "series:289517",
+  "title": "وظيفة الكوابيس",
+  "type": "series",
+  "collectedAt": "2026-11-15T22:55:07.350Z",
+  "evidenceCount": 13,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/tv/289517"
+    },
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/tv/289517-kkulalba/watch?locale=DZ"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "وظيفة الكوابيس"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/289517",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2026-10-30"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/289517",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "يتولّى شاب غارق في الديون العمل في وظائف مغرية بدوام جزئي، توفرها وكالة توظيف غامضة... ليتفاجأ بأن سعيه لجني المزيد من المال قد تحوّل إلى كابوس."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/289517",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "غموض",
+        "دراما"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/289517",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        7.529
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/289517",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        103
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/289517",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "لي جاي ووك بدور Byeon Hyeok-jun",
+        "고민시 بدور Eum Yeon-joo",
+        "김민하 بدور Byeon Ji-yoon",
+        "이희준 بدور Head of Spider Staffing Agency"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/289517",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "directors",
+      "label": "المخرجون",
+      "value": [
+        "김다민"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/289517",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "creators",
+      "label": "المبدعون",
+      "value": [
+        "한준희"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/289517",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "seasons",
+      "label": "عدد المواسم",
+      "value": [
+        1
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/289517",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "episodes",
+      "label": "عدد الحلقات",
+      "value": [
+        8
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/289517",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "SHOTCAKE"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/289517",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "watchProviders",
+      "label": "منصات المشاهدة المتاحة في الجزائر",
+      "value": [
+        "Netflix"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/289517-kkulalba/watch?locale=DZ",
+      "confidence": "بيانات إتاحة قابلة للتغير"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}
