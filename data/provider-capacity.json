@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T23:45:47.497Z",
+  "updatedAt": "2026-11-15T00:04:25.512Z",
   "date": "2026-11-15",
   "publishingPlan": {
     "limit": 2,
@@ -12,8 +12,8 @@
       },
       {
         "name": "groq",
-        "estimatedArticles": null,
-        "dailyBlocked": false
+        "estimatedArticles": 0,
+        "dailyBlocked": true
       },
       {
         "name": "cloudflare-workers-ai",
@@ -22,7 +22,7 @@
       },
       {
         "name": "openrouter",
-        "estimatedArticles": 43,
+        "estimatedArticles": 19,
         "dailyBlocked": false
       }
     ],
@@ -37,48 +37,48 @@
     },
     "ranking": [
       {
-        "name": "openrouter",
-        "score": 0.4433,
-        "reliability": 0.233,
-        "headroom": 0.86,
-        "efficiency": 0.5,
-        "samples": 4,
-        "successRate": 0.167,
-        "averageTokensPerSuccess": 0,
-        "averageApiRequestsPerSuccess": 4
-      },
-      {
-        "name": "gemini",
-        "score": 0.3533,
-        "reliability": 0.233,
+        "name": "cloudflare-workers-ai",
+        "score": 0.5374,
+        "reliability": 0.538,
         "headroom": null,
-        "efficiency": 0.5,
-        "samples": 4,
-        "successRate": 0.167,
-        "averageTokensPerSuccess": 0,
-        "averageApiRequestsPerSuccess": 4
+        "efficiency": 0.581,
+        "samples": 11,
+        "successRate": 0.538,
+        "averageTokensPerSuccess": 19846,
+        "averageApiRequestsPerSuccess": 1.83
       },
       {
         "name": "groq",
-        "score": 0.3533,
-        "reliability": 0.233,
-        "headroom": null,
-        "efficiency": 0.5,
-        "samples": 4,
-        "successRate": 0.167,
+        "score": 0.4536,
+        "reliability": 0.143,
+        "headroom": 1,
+        "efficiency": 0.625,
+        "samples": 5,
+        "successRate": 0.143,
         "averageTokensPerSuccess": 0,
-        "averageApiRequestsPerSuccess": 4
+        "averageApiRequestsPerSuccess": 6
       },
       {
-        "name": "cloudflare-workers-ai",
-        "score": 0.3245,
-        "reliability": 0.233,
+        "name": "openrouter",
+        "score": 0.3596,
+        "reliability": 0.154,
+        "headroom": 0.86,
+        "efficiency": 0.3,
+        "samples": 11,
+        "successRate": 0.154,
+        "averageTokensPerSuccess": 83894,
+        "averageApiRequestsPerSuccess": 24
+      },
+      {
+        "name": "gemini",
+        "score": 0.3036,
+        "reliability": 0.143,
         "headroom": null,
-        "efficiency": 0.356,
-        "samples": 4,
-        "successRate": 0.167,
-        "averageTokensPerSuccess": 21792,
-        "averageApiRequestsPerSuccess": 4
+        "efficiency": 0.5,
+        "samples": 5,
+        "successRate": 0.143,
+        "averageTokensPerSuccess": 0,
+        "averageApiRequestsPerSuccess": 9
       }
     ],
     "note": "الترتيب يتعلم من نتائج التشغيلات السابقة خلال الأيام المحفوظة؛ عند قلة العينات تُخفّض الثقة ويعود التقييم نحو التوازن."
@@ -91,10 +91,10 @@
         "requests": null
       },
       "usedTokens": 0,
-      "usedRequests": 0,
+      "usedRequests": 5,
       "estimatedArticles": null,
       "averageTokensPerArticle": null,
-      "averageRequestsPerArticle": 1,
+      "averageRequestsPerArticle": 1.8,
       "reportedDailyRequestsRemaining": null,
       "reportedDailyRequestsLimit": null
     },
@@ -104,22 +104,22 @@
         "requests": null
       },
       "usedTokens": 0,
-      "usedRequests": 0,
-      "estimatedArticles": null,
+      "usedRequests": 2,
+      "estimatedArticles": 833,
       "averageTokensPerArticle": null,
-      "averageRequestsPerArticle": 1,
-      "reportedDailyRequestsRemaining": null,
-      "reportedDailyRequestsLimit": null
+      "averageRequestsPerArticle": 1.2,
+      "reportedDailyRequestsRemaining": 1000,
+      "reportedDailyRequestsLimit": 1000
     },
     "cloudflare-workers-ai": {
       "limits": {
         "tokens": null,
         "requests": null
       },
-      "usedTokens": 0,
-      "usedRequests": 0,
+      "usedTokens": 97281,
+      "usedRequests": 7,
       "estimatedArticles": null,
-      "averageTokensPerArticle": 5448,
+      "averageTokensPerArticle": 10825,
       "averageRequestsPerArticle": 1,
       "reportedDailyRequestsRemaining": null,
       "reportedDailyRequestsLimit": null
@@ -129,11 +129,11 @@
         "tokens": null,
         "requests": null
       },
-      "usedTokens": 0,
-      "usedRequests": 0,
-      "estimatedArticles": 43,
-      "averageTokensPerArticle": null,
-      "averageRequestsPerArticle": 1,
+      "usedTokens": 83894,
+      "usedRequests": 20,
+      "estimatedArticles": 19,
+      "averageTokensPerArticle": 7627,
+      "averageRequestsPerArticle": 2.18,
       "reportedDailyRequestsRemaining": 43,
       "reportedDailyRequestsLimit": 50
     }

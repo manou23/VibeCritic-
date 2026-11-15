@@ -248,20 +248,251 @@
     },
     "2026-11-15": {
       "openrouter": {
-        "requests": 0,
-        "successes": 0,
-        "failures": 0,
-        "apiRequests": 0,
-        "totalTokens": 0,
-        "inputTokens": 0,
-        "outputTokens": 0,
+        "requests": 7,
+        "successes": 1,
+        "failures": 6,
+        "apiRequests": 20,
+        "totalTokens": 83894,
+        "inputTokens": 56938,
+        "outputTokens": 26956,
         "freeModelDailyRequests": {
           "used": 7,
           "limit": 50,
           "remaining": 43,
-          "observedAt": "2026-11-14T23:45:47.494Z",
+          "observedAt": "2026-11-14T23:48:34.406Z",
           "source": "OpenRouter GET /api/v1/key"
+        },
+        "lastAttemptAt": "2026-11-15T00:04:25.510Z",
+        "lastUsage": {
+          "requests": 2,
+          "inputTokens": 0,
+          "outputTokens": 0,
+          "totalTokens": 0,
+          "reportedUsage": false,
+          "headers": {},
+          "durationMs": 90048,
+          "at": "2026-11-15T00:04:25.510Z"
+        },
+        "blockedUntil": 0,
+        "blockedReason": ""
+      },
+      "articles": {
+        "series:2316": {
+          "openrouter": {
+            "attempts": 1,
+            "requests": 2,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          },
+          "gemini": {
+            "attempts": 1,
+            "requests": 5,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          },
+          "groq": {
+            "attempts": 1,
+            "requests": 2,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          },
+          "cloudflare-workers-ai": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 10174,
+            "outputTokens": 4678,
+            "totalTokens": 14852,
+            "successes": 1
+          }
+        },
+        "series:456": {
+          "openrouter": {
+            "attempts": 1,
+            "requests": 2,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          },
+          "cloudflare-workers-ai": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 11177,
+            "outputTokens": 2401,
+            "totalTokens": 13578,
+            "successes": 1
+          }
+        },
+        "series:1408": {
+          "cloudflare-workers-ai": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 10333,
+            "outputTokens": 1898,
+            "totalTokens": 12231,
+            "successes": 1
+          },
+          "openrouter": {
+            "attempts": 1,
+            "requests": 2,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          }
+        },
+        "movie:687163": {
+          "cloudflare-workers-ai": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 11600,
+            "outputTokens": 3332,
+            "totalTokens": 14932,
+            "successes": 1
+          },
+          "openrouter": {
+            "attempts": 1,
+            "requests": 4,
+            "inputTokens": 23311,
+            "outputTokens": 8956,
+            "totalTokens": 32267,
+            "successes": 1
+          }
+        },
+        "movie:1507696": {
+          "cloudflare-workers-ai": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 11110,
+            "outputTokens": 3222,
+            "totalTokens": 14332,
+            "successes": 1
+          },
+          "openrouter": {
+            "attempts": 1,
+            "requests": 6,
+            "inputTokens": 33627,
+            "outputTokens": 18000,
+            "totalTokens": 51627,
+            "successes": 0
+          }
+        },
+        "movie:1616687": {
+          "cloudflare-workers-ai": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 8271,
+            "outputTokens": 6000,
+            "totalTokens": 14271,
+            "successes": 0
+          },
+          "openrouter": {
+            "attempts": 1,
+            "requests": 2,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          }
+        },
+        "movie:354912": {
+          "cloudflare-workers-ai": {
+            "attempts": 1,
+            "requests": 1,
+            "inputTokens": 11677,
+            "outputTokens": 1408,
+            "totalTokens": 13085,
+            "successes": 1
+          },
+          "openrouter": {
+            "attempts": 1,
+            "requests": 2,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          }
         }
+      },
+      "gemini": {
+        "requests": 1,
+        "successes": 0,
+        "failures": 1,
+        "apiRequests": 5,
+        "totalTokens": 0,
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "lastAttemptAt": "2026-11-14T23:51:49.431Z",
+        "lastUsage": {
+          "requests": 5,
+          "inputTokens": 0,
+          "outputTokens": 0,
+          "totalTokens": 0,
+          "reportedUsage": false,
+          "headers": {},
+          "durationMs": 100215,
+          "at": "2026-11-14T23:51:49.431Z"
+        },
+        "blockedUntil": 1794701209431,
+        "blockedReason": "temporary-network"
+      },
+      "groq": {
+        "requests": 1,
+        "successes": 0,
+        "failures": 1,
+        "apiRequests": 2,
+        "totalTokens": 0,
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "lastAttemptAt": "2026-11-14T23:51:49.859Z",
+        "lastUsage": {
+          "requests": 2,
+          "inputTokens": 0,
+          "outputTokens": 0,
+          "totalTokens": 0,
+          "reportedUsage": false,
+          "headers": {
+            "x-ratelimit-limit-requests": "1000",
+            "x-ratelimit-remaining-requests": "1000",
+            "x-ratelimit-reset-requests": "1ms",
+            "x-ratelimit-limit-tokens": "8000",
+            "x-ratelimit-remaining-tokens": "8000",
+            "x-ratelimit-reset-tokens": "1ms",
+            "retry-after": "20"
+          },
+          "durationMs": 424,
+          "at": "2026-11-14T23:51:49.859Z"
+        },
+        "blockedUntil": 1794783599000,
+        "blockedReason": "daily-limit"
+      },
+      "cloudflare-workers-ai": {
+        "requests": 7,
+        "successes": 6,
+        "failures": 1,
+        "apiRequests": 7,
+        "totalTokens": 97281,
+        "inputTokens": 74342,
+        "outputTokens": 22939,
+        "lastAttemptAt": "2026-11-15T00:02:55.458Z",
+        "lastUsage": {
+          "requests": 1,
+          "inputTokens": 11677,
+          "outputTokens": 1408,
+          "totalTokens": 13085,
+          "reportedUsage": true,
+          "headers": {},
+          "durationMs": 13867,
+          "at": "2026-11-15T00:02:55.458Z"
+        },
+        "blockedUntil": 0,
+        "blockedReason": ""
       }
     }
   }

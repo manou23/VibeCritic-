@@ -2,13 +2,13 @@
   "version": 2,
   "stats": {
     "successes": 0,
-    "failures": 33
+    "failures": 40
   },
   "lessons": [
     {
       "key": "depth",
       "advice": "وزّع التحليل على المحاور المطلوبة بكثافة فكرة حقيقية، ولا تطل النص بالحشو أو تكرار الأطروحة.",
-      "count": 15
+      "count": 22
     },
     {
       "key": "editorial",
@@ -34,5 +34,5 @@
   "recentSuccesses": [],
   "recentQuality": [],
   "qualityByType": {},
-  "updatedAt": "2026-11-13T20:54:46.371Z"
+  "updatedAt": "2026-11-15T00:02:55.462Z"
 }
