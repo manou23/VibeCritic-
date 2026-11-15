@@ -11,7 +11,6 @@ const href = url(`reviews/${review.id}/`);
 {data.reviewMode === 'preview' ? <span class="review-score">استباقية</span> : data.reviewMode === 'limited' ? <span class="review-score">قيد التقييم</span> : <span class="review-score">{data.score.toFixed(1)} <small>/10</small></span>}
 </div>
 <div class="review-content">
-<div class="review-card-overline"><span>VIBECRITIC / TAKE</span><span aria-hidden="true">✳</span></div>
 <h3 class="review-title">{data.title}</h3>
 <p class="review-headline">{data.headline}</p>
 <time class="review-date" datetime={data.date.toISOString()}>{fmtDate(data.date)}</time>
