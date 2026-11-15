@@ -775,14 +775,14 @@
     },
     "2026-11-16": {
       "groq": {
-        "requests": 2,
+        "requests": 3,
         "successes": 0,
-        "failures": 2,
-        "apiRequests": 10,
+        "failures": 3,
+        "apiRequests": 12,
         "totalTokens": 0,
         "inputTokens": 0,
         "outputTokens": 0,
-        "lastAttemptAt": "2026-11-15T23:12:05.219Z",
+        "lastAttemptAt": "2026-11-15T23:24:33.798Z",
         "lastUsage": {
           "requests": 2,
           "inputTokens": 0,
@@ -791,22 +791,22 @@
           "reportedUsage": false,
           "headers": {
             "x-ratelimit-limit-requests": "1000",
-            "x-ratelimit-remaining-requests": "981",
-            "x-ratelimit-reset-requests": "27m21.6s",
+            "x-ratelimit-remaining-requests": "990",
+            "x-ratelimit-reset-requests": "14m24s",
             "x-ratelimit-limit-tokens": "8000",
             "x-ratelimit-remaining-tokens": "8000",
             "x-ratelimit-reset-tokens": "1ms",
-            "retry-after": "906"
+            "retry-after": "172"
           },
-          "durationMs": 359,
-          "at": "2026-11-15T23:12:05.219Z"
+          "durationMs": 209,
+          "at": "2026-11-15T23:24:33.798Z"
         },
-        "blockedUntil": 1794785231219,
+        "blockedUntil": 1794785245798,
         "blockedReason": "daily-limit",
         "lastCooldown": {
           "reason": "daily-limit",
-          "until": "2026-11-15T23:27:11.219Z",
-          "observedAt": "2026-11-15T23:12:05.219Z",
+          "until": "2026-11-15T23:27:25.798Z",
+          "observedAt": "2026-11-15T23:24:33.798Z",
           "status": 429
         }
       },
@@ -849,8 +849,16 @@
         },
         "game:972995": {
           "groq": {
+            "attempts": 2,
+            "requests": 4,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          },
+          "gemini": {
             "attempts": 1,
-            "requests": 2,
+            "requests": 4,
             "inputTokens": 0,
             "outputTokens": 0,
             "totalTokens": 0,
@@ -887,31 +895,31 @@
         }
       },
       "gemini": {
-        "requests": 1,
+        "requests": 2,
         "successes": 0,
-        "failures": 1,
-        "apiRequests": 3,
+        "failures": 2,
+        "apiRequests": 7,
         "totalTokens": 0,
         "inputTokens": 0,
         "outputTokens": 0,
-        "lastAttemptAt": "2026-11-15T23:05:44.797Z",
+        "lastAttemptAt": "2026-11-15T23:24:37.435Z",
         "lastUsage": {
-          "requests": 3,
+          "requests": 4,
           "inputTokens": 0,
           "outputTokens": 0,
           "totalTokens": 0,
           "reportedUsage": false,
           "headers": {},
-          "durationMs": 96419,
-          "at": "2026-11-15T23:05:44.797Z"
+          "durationMs": 3635,
+          "at": "2026-11-15T23:24:37.435Z"
         },
-        "blockedUntil": 1794784844797,
-        "blockedReason": "temporary-network",
+        "blockedUntil": 1794869999000,
+        "blockedReason": "daily-limit",
         "lastCooldown": {
-          "reason": "temporary-network",
-          "until": "2026-11-15T23:20:44.797Z",
-          "observedAt": "2026-11-15T23:05:44.797Z",
-          "status": null
+          "reason": "daily-limit",
+          "until": "2026-11-16T22:59:59.000Z",
+          "observedAt": "2026-11-15T23:24:37.435Z",
+          "status": 429
         }
       },
       "openrouter": {
@@ -943,7 +951,7 @@
           "used": 54,
           "limit": 50,
           "remaining": 0,
-          "observedAt": "2026-11-15T23:11:53.492Z",
+          "observedAt": "2026-11-15T23:24:23.501Z",
           "source": "OpenRouter GET /api/v1/key"
         }
       }
