@@ -7,6 +7,7 @@ on:
       - 'migrations/0004_editorial_reference_library.sql'
       - 'migrations/0005_editorial_craft_references.sql'
       - 'migrations/0006_editorial_reference_batch.sql'
+      - '.github/workflows/apply-editorial-library.yml'
   workflow_dispatch:
 
 permissions:
