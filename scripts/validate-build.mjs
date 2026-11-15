@@ -153,7 +153,7 @@ for (const file of reviewFiles) {
     const prematureRating = /(?:^|[^0-9])[0-9]+(?:[.,][0-9]+)?\s*(?:\/\s*10|من\s*10)(?![0-9])/i;
     if (prematureRating.test(frontmatter + '\n' + body)) reviewFailures.push(file + ': preview/limited review must not publish a numeric final rating');
   }
-  for (const match of body.matchAll(/(\d+(?:[.,]\d+)?)\s*\/\s*10/g)) {
+  for (const match of body.matchAll(/(\d{1,2}(?:[.,]\d+)?)\s*\/\s*10/g)) {
     const value = Number(match[1].replace(',', '.'));
     if (value <= 0 || value > 10) reviewFailures.push(file + ': invalid body score (' + match[0] + ')');
   }
