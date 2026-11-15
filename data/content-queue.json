@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-15T19:47:57.794Z",
+  "updatedAt": "2026-11-15T19:51:14.669Z",
   "jobs": {
     "game:972995": {
       "key": "game:972995",
       "type": "game",
       "id": "972995",
       "createdAt": "2026-11-15T19:32:09.694Z",
-      "attemptCount": 1,
+      "attemptCount": 2,
       "status": "waiting",
       "item": {
         "id": "972995",
@@ -266,9 +266,9 @@
           }
         }
       },
-      "nextAttemptAt": 1794772121340,
-      "lastError": "فشل التوليد عبر جميع المزوّدات المجانية المتاحة: cloudflare-workers-ai: Cloudflare Workers AI HTTP 429: {\"errors\":[{\"message\":\"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (3c54b269-34c9-415a-a502-d674b4314742)\",\"code\":4006}],\"success\":false,\"result\":{},\"messages\":[]} | gemini: The operation was aborted due to timeout",
-      "updatedAt": "2026-11-15T19:33:41.344Z",
+      "nextAttemptAt": 1794783599000,
+      "lastError": "فشل التوليد عبر جميع المزوّدات المجانية المتاحة: groq (editorial quality): الدرجات الفرعية الأربعة غير مكتملة أو خارج النطاق 0–10 | gemini: Gemini HTTP 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash, description: Generate content requests per day limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\nPlease retry in 12h8m51.924564703s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://aistudio.google.com/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"description\": \"Generate co",
+      "updatedAt": "2026-11-15T19:51:08.089Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "game:972995",
@@ -572,7 +572,7 @@
       },
       "nextAttemptAt": 0,
       "lastError": null,
-      "updatedAt": "2026-11-15T19:47:49.535Z",
+      "updatedAt": "2026-11-15T19:51:08.100Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "game:1019942",
@@ -661,7 +661,7 @@
       "type": "game",
       "id": "391403",
       "createdAt": "2026-11-15T19:33:42.105Z",
-      "attemptCount": 1,
+      "attemptCount": 2,
       "status": "waiting",
       "item": {
         "id": "391403",
@@ -921,9 +921,9 @@
           }
         }
       },
-      "nextAttemptAt": 1794772121340,
-      "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
-      "updatedAt": "2026-11-15T19:33:43.262Z",
+      "nextAttemptAt": 1794772284434,
+      "lastError": "فشل التوليد عبر جميع المزوّدات المجانية المتاحة: groq: Groq HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m76evad9esbb0jxtwwzsa4tt` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 4854, Requested 4361. Please try again in 9.1125s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "updatedAt": "2026-11-15T19:51:09.437Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "game:391403",
@@ -1103,7 +1103,7 @@
       "type": "game",
       "id": "973539",
       "createdAt": "2026-11-15T19:33:43.263Z",
-      "attemptCount": 1,
+      "attemptCount": 2,
       "status": "waiting",
       "item": {
         "id": "973539",
@@ -1387,9 +1387,9 @@
           }
         }
       },
-      "nextAttemptAt": 1794772121340,
+      "nextAttemptAt": 1794772284434,
       "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
-      "updatedAt": "2026-11-15T19:33:44.296Z",
+      "updatedAt": "2026-11-15T19:51:10.049Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "game:973539",
@@ -1580,7 +1580,7 @@
       "type": "game",
       "id": "1015421",
       "createdAt": "2026-11-15T19:33:44.297Z",
-      "attemptCount": 1,
+      "attemptCount": 2,
       "status": "waiting",
       "item": {
         "id": "1015421",
@@ -1756,9 +1756,9 @@
           }
         }
       },
-      "nextAttemptAt": 1794772121340,
+      "nextAttemptAt": 1794772284434,
       "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
-      "updatedAt": "2026-11-15T19:33:45.285Z",
+      "updatedAt": "2026-11-15T19:51:10.585Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "game:1015421",
@@ -2251,7 +2251,7 @@
       },
       "nextAttemptAt": 0,
       "lastError": null,
-      "updatedAt": "2026-11-15T19:47:49.811Z",
+      "updatedAt": "2026-11-15T19:51:10.596Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "series:57243",
@@ -2436,7 +2436,7 @@
       "type": "series",
       "id": "2316",
       "createdAt": "2026-11-15T19:33:45.941Z",
-      "attemptCount": 1,
+      "attemptCount": 2,
       "status": "waiting",
       "item": {
         "id": "2316",
@@ -2813,9 +2813,9 @@
           }
         }
       },
-      "nextAttemptAt": 1794772121340,
+      "nextAttemptAt": 1794772284434,
       "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
-      "updatedAt": "2026-11-15T19:33:46.974Z",
+      "updatedAt": "2026-11-15T19:51:11.272Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "series:2316",
@@ -3010,7 +3010,7 @@
       "type": "series",
       "id": "456",
       "createdAt": "2026-11-15T19:33:46.976Z",
-      "attemptCount": 1,
+      "attemptCount": 2,
       "status": "waiting",
       "item": {
         "id": "456",
@@ -3395,9 +3395,9 @@
           }
         }
       },
-      "nextAttemptAt": 1794772121340,
+      "nextAttemptAt": 1794772284434,
       "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
-      "updatedAt": "2026-11-15T19:33:48.127Z",
+      "updatedAt": "2026-11-15T19:51:11.808Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "series:456",
@@ -3594,7 +3594,7 @@
       "type": "series",
       "id": "1408",
       "createdAt": "2026-11-15T19:33:48.129Z",
-      "attemptCount": 1,
+      "attemptCount": 2,
       "status": "waiting",
       "item": {
         "id": "1408",
@@ -4000,9 +4000,9 @@
           }
         }
       },
-      "nextAttemptAt": 1794772121340,
+      "nextAttemptAt": 1794772284434,
       "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
-      "updatedAt": "2026-11-15T19:33:49.132Z",
+      "updatedAt": "2026-11-15T19:51:12.348Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "series:1408",
@@ -4611,7 +4611,7 @@
       },
       "nextAttemptAt": 0,
       "lastError": null,
-      "updatedAt": "2026-11-15T19:47:49.936Z",
+      "updatedAt": "2026-11-15T19:51:12.360Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "series:1421",
@@ -4809,7 +4809,7 @@
       "type": "movie",
       "id": "687163",
       "createdAt": "2026-11-15T19:33:49.788Z",
-      "attemptCount": 1,
+      "attemptCount": 2,
       "status": "waiting",
       "item": {
         "id": "687163",
@@ -5195,9 +5195,9 @@
           }
         }
       },
-      "nextAttemptAt": 1794772121340,
+      "nextAttemptAt": 1794772284434,
       "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
-      "updatedAt": "2026-11-15T19:33:50.985Z",
+      "updatedAt": "2026-11-15T19:51:12.972Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "movie:687163",
@@ -5772,7 +5772,7 @@
       },
       "nextAttemptAt": 0,
       "lastError": null,
-      "updatedAt": "2026-11-15T19:47:53.365Z",
+      "updatedAt": "2026-11-15T19:51:12.983Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "movie:1058424",
@@ -5960,7 +5960,7 @@
       "type": "movie",
       "id": "1507696",
       "createdAt": "2026-11-15T19:33:51.614Z",
-      "attemptCount": 1,
+      "attemptCount": 2,
       "status": "waiting",
       "item": {
         "id": "1507696",
@@ -6339,9 +6339,9 @@
           }
         }
       },
-      "nextAttemptAt": 1794772121340,
+      "nextAttemptAt": 1794772284434,
       "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
-      "updatedAt": "2026-11-15T19:33:52.621Z",
+      "updatedAt": "2026-11-15T19:51:13.650Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "movie:1507696",
@@ -6527,7 +6527,7 @@
       "type": "movie",
       "id": "1616687",
       "createdAt": "2026-11-15T19:33:52.625Z",
-      "attemptCount": 1,
+      "attemptCount": 2,
       "status": "waiting",
       "item": {
         "id": "1616687",
@@ -6757,9 +6757,9 @@
           }
         }
       },
-      "nextAttemptAt": 1794772121340,
+      "nextAttemptAt": 1794772284434,
       "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
-      "updatedAt": "2026-11-15T19:33:53.905Z",
+      "updatedAt": "2026-11-15T19:51:14.158Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "movie:1616687",
@@ -6910,7 +6910,7 @@
       "type": "movie",
       "id": "354912",
       "createdAt": "2026-11-15T19:33:53.907Z",
-      "attemptCount": 1,
+      "attemptCount": 2,
       "status": "waiting",
       "item": {
         "id": "354912",
@@ -7296,9 +7296,9 @@
           }
         }
       },
-      "nextAttemptAt": 1794772121340,
+      "nextAttemptAt": 1794772284434,
       "lastError": "لا يوجد مزوّد مجاني متاح الآن: تحقق من مفاتيح Gemini وGroq وOpenRouter وCloudflare أو انتظر تجدد الحصص. لم يتم استخدام OpenAI المدفوع؛ لتفعيله صراحةً يلزم ضبط ALLOW_PAID_OPENAI=true.",
-      "updatedAt": "2026-11-15T19:33:54.942Z",
+      "updatedAt": "2026-11-15T19:51:14.669Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "movie:354912",

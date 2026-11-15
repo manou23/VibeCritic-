@@ -259,7 +259,7 @@
           "used": 53,
           "limit": 50,
           "remaining": 0,
-          "observedAt": "2026-11-15T19:47:46.768Z",
+          "observedAt": "2026-11-15T19:50:59.239Z",
           "source": "OpenRouter GET /api/v1/key"
         },
         "lastAttemptAt": "2026-11-15T00:04:25.510Z",
@@ -429,12 +429,20 @@
             "successes": 0
           },
           "gemini": {
-            "attempts": 1,
-            "requests": 1,
+            "attempts": 2,
+            "requests": 3,
             "inputTokens": 0,
             "outputTokens": 0,
             "totalTokens": 0,
             "successes": 0
+          },
+          "groq": {
+            "attempts": 1,
+            "requests": 4,
+            "inputTokens": 4008,
+            "outputTokens": 1511,
+            "totalTokens": 5519,
+            "successes": 1
           }
         },
         "series:4057": {
@@ -446,71 +454,82 @@
             "totalTokens": 0,
             "successes": 0
           }
+        },
+        "game:391403": {
+          "groq": {
+            "attempts": 1,
+            "requests": 4,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          }
         }
       },
       "gemini": {
-        "requests": 2,
+        "requests": 3,
         "successes": 0,
-        "failures": 2,
-        "apiRequests": 6,
+        "failures": 3,
+        "apiRequests": 8,
         "totalTokens": 0,
         "inputTokens": 0,
         "outputTokens": 0,
-        "lastAttemptAt": "2026-11-15T19:33:41.339Z",
-        "lastUsage": {
-          "requests": 1,
-          "inputTokens": 0,
-          "outputTokens": 0,
-          "totalTokens": 0,
-          "reportedUsage": false,
-          "headers": {},
-          "durationMs": 90074,
-          "at": "2026-11-15T19:33:41.339Z"
-        },
-        "blockedUntil": 1794772121340,
-        "blockedReason": "temporary-network",
-        "lastCooldown": {
-          "reason": "temporary-network",
-          "until": "2026-11-15T19:48:41.340Z",
-          "observedAt": "2026-11-15T19:33:41.340Z",
-          "status": null
-        }
-      },
-      "groq": {
-        "requests": 2,
-        "successes": 0,
-        "failures": 2,
-        "apiRequests": 4,
-        "totalTokens": 0,
-        "inputTokens": 0,
-        "outputTokens": 0,
-        "lastAttemptAt": "2026-11-15T19:47:52.000Z",
+        "lastAttemptAt": "2026-11-15T19:51:08.085Z",
         "lastUsage": {
           "requests": 2,
           "inputTokens": 0,
           "outputTokens": 0,
           "totalTokens": 0,
           "reportedUsage": false,
+          "headers": {},
+          "durationMs": 138,
+          "at": "2026-11-15T19:51:08.085Z"
+        },
+        "blockedUntil": 1794783599000,
+        "blockedReason": "daily-limit",
+        "lastCooldown": {
+          "reason": "daily-limit",
+          "until": "2026-11-15T22:59:59.000Z",
+          "observedAt": "2026-11-15T19:51:08.086Z",
+          "status": 429
+        }
+      },
+      "groq": {
+        "requests": 4,
+        "successes": 1,
+        "failures": 3,
+        "apiRequests": 12,
+        "totalTokens": 5519,
+        "inputTokens": 4008,
+        "outputTokens": 1511,
+        "lastAttemptAt": "2026-11-15T19:51:09.434Z",
+        "lastUsage": {
+          "requests": 4,
+          "inputTokens": 0,
+          "outputTokens": 0,
+          "totalTokens": 0,
+          "reportedUsage": false,
           "headers": {
             "x-ratelimit-limit-requests": "1000",
-            "x-ratelimit-remaining-requests": "1000",
-            "x-ratelimit-reset-requests": "1ms",
+            "x-ratelimit-remaining-requests": "999",
+            "x-ratelimit-reset-requests": "1m26.4s",
             "x-ratelimit-limit-tokens": "8000",
-            "x-ratelimit-remaining-tokens": "8000",
-            "x-ratelimit-reset-tokens": "1ms",
-            "retry-after": "34"
+            "x-ratelimit-remaining-tokens": "3146",
+            "x-ratelimit-reset-tokens": "36.405s",
+            "retry-after": "10"
           },
-          "durationMs": 388,
-          "at": "2026-11-15T19:47:52.000Z"
+          "durationMs": 480,
+          "at": "2026-11-15T19:51:09.434Z"
         },
-        "blockedUntil": 1794772106000,
+        "blockedUntil": 1794772284434,
         "blockedReason": "rate-limit",
         "lastCooldown": {
           "reason": "rate-limit",
-          "until": "2026-11-15T19:48:26.000Z",
-          "observedAt": "2026-11-15T19:47:52.000Z",
-          "status": 413
-        }
+          "until": "2026-11-15T19:51:24.434Z",
+          "observedAt": "2026-11-15T19:51:09.434Z",
+          "status": 429
+        },
+        "consecutiveTransientFailures": 0
       },
       "cloudflare-workers-ai": {
         "requests": 8,
