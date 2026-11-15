@@ -1,0 +1,193 @@
+{
+  "version": 1,
+  "workKey": "series:4057",
+  "title": "عقول إجرامية",
+  "type": "series",
+  "collectedAt": "2026-11-15T19:47:50.992Z",
+  "evidenceCount": 12,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/tv/4057"
+    },
+    {
+      "name": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "عقول إجرامية"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/4057",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2005-09-22"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/4057",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "فريق نخبة من محللي السلوك في مكتب التحقيقات الفيدرالي يحلل أكثر العقول الإجرامية التواءً في البلاد، ويستبق خطوات المجرمين قبل أن يضربوا من جديد."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/4057",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "جريمة",
+        "دراما",
+        "غموض"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/4057",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        8.296
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/4057",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        4226
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/4057",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "Joe Mantegna بدور David Rossi",
+        "Paget Brewster بدور Emily Prentiss",
+        "Adam Rodriguez بدور Luke Alvez",
+        "Kirsten Vangsness بدور Penelope Garcia",
+        "أ. جيه. كوك بدور Jennifer Jareau",
+        "عايشة تايلور بدور Dr. Tara Lewis",
+        "Zach Gilford بدور Elias Voit"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/4057",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "creators",
+      "label": "المبدعون",
+      "value": [
+        "Jeff Davis"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/4057",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "seasons",
+      "label": "عدد المواسم",
+      "value": [
+        19
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/4057",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "episodes",
+      "label": "عدد الحلقات",
+      "value": [
+        364
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/4057",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "Touchstone Television",
+        "The Mark Gordon Company",
+        "Paramount Television",
+        "CBS Studios",
+        "Erica Messer Productions"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/4057",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "relatedWorks",
+      "label": "أعمال مرتبطة",
+      "value": [
+        {
+          "title": "القانون والنظام: وحدة الضحايا الخاصة",
+          "year": 1999,
+          "sharedGenres": "دراما,جريمة,غموض",
+          "sharedPeople": ""
+        },
+        {
+          "title": "الوسيط الروحي",
+          "year": 2008,
+          "sharedGenres": "دراما,جريمة,غموض",
+          "sharedPeople": ""
+        },
+        {
+          "title": "Columbo",
+          "year": 1971,
+          "sharedGenres": "دراما,جريمة,غموض",
+          "sharedPeople": ""
+        },
+        {
+          "title": "شخص محل إهتمام",
+          "year": 2011,
+          "sharedGenres": "دراما,جريمة,غموض",
+          "sharedPeople": ""
+        },
+        {
+          "title": "مونك",
+          "year": 2002,
+          "sharedGenres": "دراما,جريمة,غموض",
+          "sharedPeople": ""
+        },
+        {
+          "title": "Broadchurch",
+          "year": 2013,
+          "sharedGenres": "دراما,جريمة,غموض",
+          "sharedPeople": ""
+        }
+      ],
+      "source": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

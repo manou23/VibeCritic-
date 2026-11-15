@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "workKey": "movie:1465063",
+  "title": "Forgotten Island",
+  "type": "movie",
+  "collectedAt": "2026-11-15T19:47:55.865Z",
+  "evidenceCount": 11,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1465063"
+    },
+    {
+      "name": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "Forgotten Island"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1465063",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2026-09-10"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1465063",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "في ليلتهما الأخيرة معًا بعد التخرج من الثانوية، تعثر صديقتان مقرّبتان ببوابة غامضة تنقلهما إلى جزيرة خيالية. وحين تكتشفان أن ثمن العودة إلى الديار هو ذكريات صداقتهما كلها، تسابقان الزمن لإيجاد طريق للخروج من الجزيرة قبل أن تنسى كل منهما الأخرى إلى الأبد."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1465063",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "رسوم متحركة",
+        "مغامرة",
+        "فانتازيا",
+        "كوميديا",
+        "عائلي"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1465063",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        8.01
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1465063",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        254
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1465063",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "H.E.R. بدور Jo (voice)",
+        "لايزا سوبيرانو بدور Raissa (voice)",
+        "ديف فرانكو بدور Raww (voice)",
+        "Jenny Slate بدور Batiba (voice)",
+        "ماني جاسينتو بدور Bungi Tiyanak (voice)",
+        "Lea Salonga بدور Manang (voice)",
+        "دولي دي ليون بدور Lola (voice)"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1465063",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "directors",
+      "label": "المخرجون",
+      "value": [
+        "Januel Mercado",
+        "Joel Crawford"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1465063",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "runtime",
+      "label": "مدة العرض",
+      "value": [
+        109
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1465063",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "DreamWorks Animation"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1465063",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "relatedWorks",
+      "label": "أعمال مرتبطة",
+      "value": [
+        {
+          "title": "المينيون والوحوش",
+          "year": 2026,
+          "sharedGenres": "مغامرة,فانتازيا,رسوم متحركة,كوميديا,عائلي",
+          "sharedPeople": "إريك بوذا"
+        },
+        {
+          "title": "كايوتي ضد أكمي",
+          "year": 2026,
+          "sharedGenres": "مغامرة,رسوم متحركة,كوميديا,عائلي",
+          "sharedPeople": "إريك بوذا"
+        },
+        {
+          "title": "حكاية لعبة ٥",
+          "year": 2026,
+          "sharedGenres": "مغامرة,رسوم متحركة,كوميديا,عائلي",
+          "sharedPeople": ""
+        },
+        {
+          "title": "فلم موانا",
+          "year": 2026,
+          "sharedGenres": "مغامرة,فانتازيا,كوميديا,عائلي",
+          "sharedPeople": ""
+        },
+        {
+          "title": "فارس وفادي",
+          "year": 2007,
+          "sharedGenres": "رسوم متحركة,كوميديا,عائلي",
+          "sharedPeople": ""
+        },
+        {
+          "title": "ستار ضد قوى الشر",
+          "year": 2015,
+          "sharedGenres": "رسوم متحركة,كوميديا,عائلي",
+          "sharedPeople": ""
+        }
+      ],
+      "source": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

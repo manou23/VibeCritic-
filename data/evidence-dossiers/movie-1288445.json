@@ -1,0 +1,179 @@
+{
+  "version": 1,
+  "workKey": "movie:1288445",
+  "title": "تمرد",
+  "type": "movie",
+  "collectedAt": "2026-11-15T19:47:57.215Z",
+  "evidenceCount": 11,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1288445"
+    },
+    {
+      "name": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "تمرد"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1288445",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2026-08-19"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1288445",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "تبدأ القصة عندما يتم توريط كول، عميل سابق في القوات الخاصة وضابط شرطة سابق في مدينة نيويورك، في جريمة قتل رجل أعمال ملياردير، ويُتهم كول بقتل صديقه ورئيسه، تيبو، الذي وظف كول كخبير أمني خاص له ، فيضطر للهرب لإثبات براءته والكشف عن مؤامرة دولية."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1288445",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "حركة",
+        "إثارة"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1288445",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        7.6
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1288445",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        1078
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1288445",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "جيسون ستاثام بدور Cole Reed",
+        "أنابيل واليس بدور Angie Ellis",
+        "Roland Møller بدور Captain Marko Madsen",
+        "Ramon Tikaram بدور Tibu Campallo",
+        "Arnas Fedaravičius بدور Mateo Pineda",
+        "Jason Wong بدور Taran",
+        "Adrian Lester بدور Captain Adam Spencer"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1288445",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "directors",
+      "label": "المخرجون",
+      "value": [
+        "Jean-François Richet"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1288445",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "runtime",
+      "label": "مدة العرض",
+      "value": [
+        96
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1288445",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "Punch Palace Productions",
+        "MadRiver Pictures"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1288445",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "relatedWorks",
+      "label": "أعمال مرتبطة",
+      "value": [
+        {
+          "title": "المملكة الأخيرة",
+          "year": 2015,
+          "sharedGenres": "",
+          "sharedPeople": "Arnas Fedaravičius"
+        },
+        {
+          "title": "نهاية العالم Z: العالم الجديد",
+          "year": 2026,
+          "sharedGenres": "حركة,إثارة",
+          "sharedPeople": ""
+        },
+        {
+          "title": "النمس",
+          "year": 2026,
+          "sharedGenres": "حركة,إثارة",
+          "sharedPeople": ""
+        },
+        {
+          "title": "El despertar",
+          "year": 2026,
+          "sharedGenres": "حركة,إثارة",
+          "sharedPeople": ""
+        },
+        {
+          "title": "فارس الظلام",
+          "year": 2008,
+          "sharedGenres": "حركة,إثارة",
+          "sharedPeople": ""
+        },
+        {
+          "title": "نجوم الكلاب",
+          "year": 2026,
+          "sharedGenres": "حركة,إثارة",
+          "sharedPeople": ""
+        }
+      ],
+      "source": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

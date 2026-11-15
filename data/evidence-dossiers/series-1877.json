@@ -1,0 +1,191 @@
+{
+  "version": 1,
+  "workKey": "series:1877",
+  "title": "فارس وفادي",
+  "type": "series",
+  "collectedAt": "2026-11-15T19:47:52.768Z",
+  "evidenceCount": 12,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1877"
+    },
+    {
+      "name": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "فارس وفادي"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1877",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2007-08-17"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1877",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "كل يوم، يشرع الأخوان غير الشقيقين الطيبين في عطلة صيفية في تنفيذ مشروع جديد ومبتكر، ما يثير استياء شقيقتهما المتسلطة سندس التي تحاول بكل جهد إفشالهما. وفي ذات الوقت، يخطط حيوانهم بيري خلد الماء مكافحة مخططات الدكتور شر أبو الأشرار."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1877",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "رسوم متحركة",
+        "كوميديا",
+        "عائلي",
+        "خيال علمي وفانتازيا"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1877",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        7.895
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1877",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        1090
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1877",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "فنسنت مارتيلا بدور Phineas Flynn (voice)",
+        "آشلي تيسديل بدور Candace Flynn (voice)",
+        "اليسون ستونر بدور Isabella Garcia-Shapiro (voice)",
+        "David Errigo Jr. بدور Ferb Fletcher (voice)",
+        "Maulik Pancholy بدور Baljeet Tjinder (voice)",
+        "Bobby Gaylor بدور Buford Van Stomm (voice)",
+        "Dan Povenmire بدور Dr. Heinz Doofenshmirtz (voice)"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1877",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "creators",
+      "label": "المبدعون",
+      "value": [
+        "Dan Povenmire",
+        "Jeff 'Swampy' Marsh"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1877",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "seasons",
+      "label": "عدد المواسم",
+      "value": [
+        6
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1877",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "episodes",
+      "label": "عدد الحلقات",
+      "value": [
+        263
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1877",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "Disney Television Animation"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/1877",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "relatedWorks",
+      "label": "أعمال مرتبطة",
+      "value": [
+        {
+          "title": "American Dad!",
+          "year": 2005,
+          "sharedGenres": "رسوم متحركة,كوميديا",
+          "sharedPeople": "دي برادلي بيكر"
+        },
+        {
+          "title": "أفاتار آنج: الإيربندر الأخير",
+          "year": 2026,
+          "sharedGenres": "رسوم متحركة",
+          "sharedPeople": "دي برادلي بيكر"
+        },
+        {
+          "title": "ستار ضد قوى الشر",
+          "year": 2015,
+          "sharedGenres": "رسوم متحركة,كوميديا,عائلي,خيال علمي وفانتازيا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "دورايمون",
+          "year": 2005,
+          "sharedGenres": "رسوم متحركة,كوميديا,عائلي,خيال علمي وفانتازيا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "Wakfu",
+          "year": 2008,
+          "sharedGenres": "رسوم متحركة,كوميديا,خيال علمي وفانتازيا",
+          "sharedPeople": ""
+        },
+        {
+          "title": "Forgotten Island",
+          "year": 2026,
+          "sharedGenres": "رسوم متحركة,كوميديا,عائلي",
+          "sharedPeople": ""
+        }
+      ],
+      "source": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

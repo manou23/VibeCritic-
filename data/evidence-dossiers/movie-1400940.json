@@ -1,0 +1,183 @@
+{
+  "version": 1,
+  "workKey": "movie:1400940",
+  "title": "كلايفيس",
+  "type": "movie",
+  "collectedAt": "2026-11-15T19:47:54.369Z",
+  "evidenceCount": 11,
+  "sourceCount": 2,
+  "sources": [
+    {
+      "name": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1400940"
+    },
+    {
+      "name": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog"
+    }
+  ],
+  "facts": [
+    {
+      "key": "identity",
+      "label": "الاسم",
+      "value": [
+        "كلايفيس"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1400940",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "releaseDate",
+      "label": "تاريخ الإصدار",
+      "value": [
+        "2026-10-19"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1400940",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "description",
+      "label": "الوصف المصدر",
+      "value": [
+        "يصعد \"مات هايغن\" بسرعة مذهلة من طفل شوارع في مدينة غوثام إلى نجم سينمائي لامع في هوليوود، لكن مسيرته تنتهي بشكل مأساوي عندما تتسبب أفعال أحد زعماء الجريمة المحليين في تشويه وجهه بشكل مروّع. وبعد أن يتخلى عنه فريقه ويجد نفسه بلا أي شيء، يلجأ مات إلى علاج متطور بتقنيات حديثة يعيده بأعجوبة إلى هيئته السابقة... لكنه يُحدث أيضًا تأثيرًا غير متوقع على قدرته على التمييز بين الواقع والخيال، ليدخل في دوامة مدمرة من الانتقام الأعمى الذي يلتهم كل شيء في طريقه."
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1400940",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "genres",
+      "label": "التصنيفات",
+      "value": [
+        "رعب",
+        "إثارة",
+        "خيال علمي"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1400940",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "rating",
+      "label": "تقييم المصدر",
+      "value": [
+        7.4
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1400940",
+      "confidence": "مؤشر جماهيري؛ ليس حكماً نقدياً"
+    },
+    {
+      "key": "voteCount",
+      "label": "عدد الأصوات",
+      "value": [
+        443
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1400940",
+      "confidence": "مقياس حجم العينة وليس الجودة"
+    },
+    {
+      "key": "cast",
+      "label": "طاقم التمثيل",
+      "value": [
+        "توم ريس هاريس بدور Matt Hagen / Clayface",
+        "ناعومي آكي بدور Caitlyn Corr",
+        "إيدي مارسان بدور Frank Fitzpatrick",
+        "Max Minghella بدور John Borrelli",
+        "David Dencik بدور Markos Szabo",
+        "Francesca Corney بدور Rosie",
+        "Ruby Sear بدور Theresa"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1400940",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "directors",
+      "label": "المخرجون",
+      "value": [
+        "جيمس واتكنز"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1400940",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "runtime",
+      "label": "مدة العرض",
+      "value": [
+        109
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1400940",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "productionCompanies",
+      "label": "شركات الإنتاج",
+      "value": [
+        "DC Studios",
+        "Domain Entertainment",
+        "6th & Idaho Motion Picture Company",
+        "Troll Court Entertainment",
+        "The Safran Company"
+      ],
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1400940",
+      "confidence": "موثق من سجل المصدر"
+    },
+    {
+      "key": "relatedWorks",
+      "label": "أعمال مرتبطة",
+      "value": [
+        {
+          "title": "Other Mommy",
+          "year": 2026,
+          "sharedGenres": "رعب",
+          "sharedPeople": "Adam Silver"
+        },
+        {
+          "title": "ريزدنت إيفل",
+          "year": 2026,
+          "sharedGenres": "رعب,خيال علمي",
+          "sharedPeople": ""
+        },
+        {
+          "title": "نهاية العالم Z: العالم الجديد",
+          "year": 2026,
+          "sharedGenres": "رعب,إثارة",
+          "sharedPeople": ""
+        },
+        {
+          "title": "غودزيلا ناقص صفر",
+          "year": 2026,
+          "sharedGenres": "رعب,خيال علمي",
+          "sharedPeople": ""
+        },
+        {
+          "title": "El despertar",
+          "year": 2026,
+          "sharedGenres": "رعب,إثارة",
+          "sharedPeople": ""
+        },
+        {
+          "title": "حرب العوالم",
+          "year": 2025,
+          "sharedGenres": "إثارة,خيال علمي",
+          "sharedPeople": ""
+        }
+      ],
+      "source": "VibeCritic D1 entertainment catalog",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "confidence": "صلة فهرسية لا تثبت التشابه الفني"
+    }
+  ],
+  "limitations": [
+    "البيانات الفهرسية لا تثبت جودة العمل أو تجربة استخدامه.",
+    "التقييمات الجماهيرية ومؤشرات الشعبية سياق مساعد وليست حكماً نقدياً.",
+    "لا يجوز استنتاج أداء تقني أو تفاصيل لعب/مشاهد لم ترد في مصدر موثوق."
+  ]
+}

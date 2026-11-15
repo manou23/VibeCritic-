@@ -259,7 +259,7 @@
           "used": 53,
           "limit": 50,
           "remaining": 0,
-          "observedAt": "2026-11-15T19:45:47.512Z",
+          "observedAt": "2026-11-15T19:47:46.768Z",
           "source": "OpenRouter GET /api/v1/key"
         },
         "lastAttemptAt": "2026-11-15T00:04:25.510Z",
@@ -436,6 +436,16 @@
             "totalTokens": 0,
             "successes": 0
           }
+        },
+        "series:4057": {
+          "groq": {
+            "attempts": 1,
+            "requests": 2,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          }
         }
       },
       "gemini": {
@@ -467,14 +477,14 @@
         }
       },
       "groq": {
-        "requests": 1,
+        "requests": 2,
         "successes": 0,
-        "failures": 1,
-        "apiRequests": 2,
+        "failures": 2,
+        "apiRequests": 4,
         "totalTokens": 0,
         "inputTokens": 0,
         "outputTokens": 0,
-        "lastAttemptAt": "2026-11-14T23:51:49.859Z",
+        "lastAttemptAt": "2026-11-15T19:47:52.000Z",
         "lastUsage": {
           "requests": 2,
           "inputTokens": 0,
@@ -488,18 +498,18 @@
             "x-ratelimit-limit-tokens": "8000",
             "x-ratelimit-remaining-tokens": "8000",
             "x-ratelimit-reset-tokens": "1ms",
-            "retry-after": "20"
+            "retry-after": "34"
           },
-          "durationMs": 424,
-          "at": "2026-11-14T23:51:49.859Z"
+          "durationMs": 388,
+          "at": "2026-11-15T19:47:52.000Z"
         },
-        "blockedUntil": 0,
-        "blockedReason": "",
+        "blockedUntil": 1794772106000,
+        "blockedReason": "rate-limit",
         "lastCooldown": {
-          "reason": "recovered-false-daily-limit",
-          "until": null,
-          "observedAt": "2026-11-15T19:47:25.154Z",
-          "status": 429
+          "reason": "rate-limit",
+          "until": "2026-11-15T19:48:26.000Z",
+          "observedAt": "2026-11-15T19:47:52.000Z",
+          "status": 413
         }
       },
       "cloudflare-workers-ai": {
