@@ -74,10 +74,11 @@ async function main(){
  };
  const pools={game:eligible(rawPools.game),series:eligible(rawPools.series),movie:eligible(rawPools.movie)};
  const pendingJobs=resumableContentJobs();
+ const deferredKeys=new Set(Object.values(contentQueue.jobs).filter(job=>['waiting','ready','generating','quality-check'].includes(job.status)&&Number(job.nextAttemptAt||0)>Date.now()).map(job=>job.key));
  for(const type of types){
   const resumed=pendingJobs.filter(job=>job.type===type).map(job=>job.item).filter(item=>item&&!publishedKeys.has(contentJobKey(item)));
   const seen=new Set();
-  pools[type]=[...resumed,...pools[type]].filter(item=>{const key=contentJobKey(item);if(seen.has(key))return false;seen.add(key);return true;});
+  pools[type]=[...resumed,...pools[type].filter(item=>!deferredKeys.has(contentJobKey(item)))].filter(item=>{const key=contentJobKey(item);if(seen.has(key))return false;seen.add(key);return true;});
  }
  console.log('مهام الطابور الدائم الجاهزة للاستئناف:',pendingJobs.length);
  const skippedThinSources=Object.values(rawPools).reduce((total,items)=>total+items.filter(x=>String(x.description||'').trim().length<60).length,0);
