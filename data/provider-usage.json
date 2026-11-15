@@ -493,8 +493,14 @@
           "durationMs": 424,
           "at": "2026-11-14T23:51:49.859Z"
         },
-        "blockedUntil": 1794783599000,
-        "blockedReason": "daily-limit"
+        "blockedUntil": 0,
+        "blockedReason": "",
+        "lastCooldown": {
+          "reason": "recovered-false-daily-limit",
+          "until": null,
+          "observedAt": "2026-11-15T19:47:25.154Z",
+          "status": 429
+        }
       },
       "cloudflare-workers-ai": {
         "requests": 8,
