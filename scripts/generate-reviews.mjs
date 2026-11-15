@@ -913,7 +913,7 @@ async function generateReview(item){
        'التحفظات: '+JSON.stringify(generated.cons||[]),
        'سبب رفض الدرجات السابقة: '+error.message,
        'الشكل المطلوب: {"scores":{"story":5.5,"visuals":5.5,"sound":5.5,"pacing":5.5}}'
-      ].join('\\n');
+      ].join('\n');
       try{
        const repaired=await handlers[name](name==='groq'?compactGroqPrompt(scorePrompt,7500):scorePrompt);
        generated={...generated,scores:repaired?.scores||repaired};
@@ -926,7 +926,7 @@ async function generateReview(item){
         if(postScoreDepthFailure&&!depthRepairUsed&&qualityAttempt<2){
          providerErrors.push(name+' (score repair): تم إصلاح الدرجات لكن بقي عيب في عمق المقال: '+postScoreError.message);
          const repairTask='أعد تحرير review فقط ليصبح بين 700 و850 كلمة فعلية وبحد أدنى 3200 حرف، مع خمسة محاور نقدية كاملة لا يقل كل محور عن 65 كلمة وخاتمة موجزة. لا تغيّر الحقائق ولا تخترع تفاصيل أو حشواً. وسّع التحليل بالاستدلال من البيانات والسياق الموثوق في الطلب الأصلي. حافظ على الدرجات المصححة التالية كما هي ما دامت متسقة مع النص: '+JSON.stringify(generated.scores)+'.';
-         attemptPrompt=prompt+'\\n\\nمهمة إصلاح إلزامية: '+repairTask+' أعد JSON كاملاً بالمفاتيح نفسها. المسودة السابقة: '+JSON.stringify(generated).slice(0,9000);
+         attemptPrompt=prompt+'\n\nمهمة إصلاح إلزامية: '+repairTask+' أعد JSON كاملاً بالمفاتيح نفسها. المسودة السابقة: '+JSON.stringify(generated).slice(0,9000);
          if(name==='groq')attemptPrompt=compactGroqPrompt(attemptPrompt,11000);
          depthRepairUsed=true;
          console.warn('تم إصلاح الدرجات، وبقي نقص في عمق النص؛ الانتقال إلى إصلاح المقال دون فقد الدرجات.');
@@ -943,7 +943,7 @@ async function generateReview(item){
      }
      if(depthFailure&&!depthRepairUsed&&qualityAttempt<2){
       const repairTask='اجعل النص التحليلي review بين 700 و850 كلمة فعلية، وبحد أدنى 3200 حرف، مع خمسة محاور نقدية كاملة لا يقل كل محور عن 65 كلمة، وخاتمة موجزة. لا تغيّر الحقائق أو تخترع تفاصيل جديدة ولا تضف حشواً أو تكراراً. وسّع التحليل فقط بالاستدلال من البيانات والسياق الموثوق الموجود في الطلب الأصلي. حافظ على الدرجات ونقاط القوة والضعف ما دامت متسقة مع النص.';
-      attemptPrompt=prompt+'\\n\\nمهمة إصلاح إلزامية للمراجعة التي أخرجتها للتو: '+repairTask+' أعد JSON كاملاً صالحاً بالمفاتيح نفسها. سبب الرفض: '+error.message+'\\n\\nالمسودة السابقة بصيغة JSON: '+JSON.stringify(generated).slice(0,9000);
+      attemptPrompt=prompt+'\n\nمهمة إصلاح إلزامية للمراجعة التي أخرجتها للتو: '+repairTask+' أعد JSON كاملاً صالحاً بالمفاتيح نفسها. سبب الرفض: '+error.message+'\n\nالمسودة السابقة بصيغة JSON: '+JSON.stringify(generated).slice(0,9000);
       if(name==='groq')attemptPrompt=compactGroqPrompt(attemptPrompt,11000);
       depthRepairUsed=true;
       console.warn('المزوّد '+name+' أعاد تحليلاً قصيراً؛ طلب إصلاح واحد محدد قبل الانتقال.');
