@@ -11,3 +11,7 @@ export function retryHintTimestamp(message, now = Date.now()) {
 
   return seconds > 0 ? now + Math.ceil(seconds * 1000) : null;
 }
+
+export function isDailyQuotaMessage(message) {
+  return /daily|per[_ -]?day|free_model_daily_requests|daily quota|quota for today|tokens per day|\bTPD\b|resource[_ -]?exhausted|insufficient quota|quota exceeded|تجاوز.*اليوم|الحصة اليومية/i.test(String(message || ''));
+}
