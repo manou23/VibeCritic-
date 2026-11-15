@@ -1005,47 +1005,20 @@ img{max-width:100%}
 .dark-mode .curated-links a{background:#211f1a;border-color:#504a40}
 
 
-/* VibeCritic animated VC signature */
-.brand-name,.footer-wordmark{position:relative;display:block;width:88px;height:38px;direction:ltr;unicode-bidi:isolate;overflow:visible}
+/* VibeCritic star-cut VC signature */
 .brand-copy,.footer-brand-copy{display:flex;flex-direction:column;align-items:center;gap:0}
-.brand-copy small,.footer-brand-copy small{display:block;margin-top:1px;font-size:7px;line-height:1.4;letter-spacing:1.15px;white-space:nowrap;color:var(--vc-muted);font-weight:900}
-.brand-letter-v,.brand-letter-c{position:absolute;top:-3px;display:block;font-size:36px;line-height:1;font-weight:1000;letter-spacing:-5px;will-change:transform,opacity}
-.brand-letter-v{left:0;color:var(--vc-text);animation:vc-v-merge 5.8s cubic-bezier(.2,.8,.2,1) infinite}
-.brand-letter-c{right:0;color:var(--vc-accent);animation:vc-c-merge 5.8s cubic-bezier(.2,.8,.2,1) infinite}
-.brand-fragments{position:absolute;top:9px;font-size:10px;line-height:1;font-weight:950;letter-spacing:1px;white-space:nowrap;pointer-events:none}
-.brand-fragments-v{left:12px;color:var(--vc-muted);animation:vc-shatter-v 5.8s ease-in-out infinite}
-.brand-fragments-c{right:12px;color:var(--vc-accent);animation:vc-shatter-c 5.8s ease-in-out infinite}
-.brand-letter-v,.brand-letter-c,.brand-fragments{transform-origin:center}
-@keyframes vc-v-merge{
-  0%,12%{opacity:1;transform:translate(0,0) rotate(0) scale(1)}
-  30%{opacity:1;transform:translate(23px,0) rotate(-9deg) scale(1.08)}
-  40%,78%{opacity:1;transform:translate(23px,0) rotate(-5deg) scale(1.08)}
-  88%,100%{opacity:1;transform:translate(0,0) rotate(0) scale(1)}
-}
-@keyframes vc-c-merge{
-  0%,17%{opacity:1;transform:translate(0,0) rotate(0) scale(1)}
-  35%{opacity:1;transform:translate(-23px,0) rotate(9deg) scale(1.08)}
-  40%,78%{opacity:1;transform:translate(-23px,0) rotate(5deg) scale(1.08)}
-  88%,100%{opacity:1;transform:translate(0,0) rotate(0) scale(1)}
-}
-@keyframes vc-shatter-v{
-  0%,10%{opacity:1;transform:translate(0,0) rotate(0) scale(1);filter:blur(0)}
-  25%{opacity:.9;transform:translate(-14px,-15px) rotate(-24deg) scale(.75);filter:blur(.2px)}
-  38%,100%{opacity:0;transform:translate(-27px,-25px) rotate(-42deg) scale(.25);filter:blur(2px)}
-}
-@keyframes vc-shatter-c{
-  0%,15%{opacity:1;transform:translate(0,0) rotate(0) scale(1);filter:blur(0)}
-  30%{opacity:.9;transform:translate(15px,15px) rotate(25deg) scale(.75);filter:blur(.2px)}
-  42%,100%{opacity:0;transform:translate(28px,27px) rotate(45deg) scale(.25);filter:blur(2px)}
-}
-.footer-wordmark{width:88px;height:38px}
+.vc-signature{display:block;width:88px;height:46px;overflow:visible}
+.brand-copy small,.footer-brand-copy small{display:block;margin-top:-1px;font-size:7px;line-height:1.5;letter-spacing:1.05px;white-space:nowrap;color:var(--vc-muted);font-weight:900}
+.vc-mark-v,.vc-mark-c{transform-box:fill-box;transform-origin:center;will-change:transform}
+.vc-mark-v{animation:vc-v-cut 6.2s cubic-bezier(.2,.75,.25,1) infinite}
+.vc-mark-c{animation:vc-c-cut 6.2s cubic-bezier(.2,.75,.25,1) infinite}
+.vc-mark-star{transform-origin:87px 13px;animation:vc-star-flare 6.2s ease-in-out infinite}
+.vc-mark-shards{animation:vc-shards-burst 6.2s ease-in-out infinite;transform-origin:center}
+@keyframes vc-v-cut{0%,12%{transform:translate(-5px,2px) rotate(-8deg)}32%,76%{transform:translate(0,0) rotate(0)}90%,100%{transform:translate(-5px,2px) rotate(-8deg)}}
+@keyframes vc-c-cut{0%,17%{transform:translate(6px,-2px) rotate(8deg)}36%,76%{transform:translate(0,0) rotate(0)}90%,100%{transform:translate(6px,-2px) rotate(8deg)}}
+@keyframes vc-star-flare{0%,20%,78%,100%{opacity:.75;transform:scale(.78) rotate(0)}38%,58%{opacity:1;transform:scale(1.12) rotate(45deg)}}
+@keyframes vc-shards-burst{0%,16%{opacity:0;transform:scale(.6) rotate(-15deg)}35%,58%{opacity:1;transform:scale(1) rotate(0)}78%,100%{opacity:0;transform:scale(.55) rotate(35deg)}}
 .footer-brand{display:inline-flex;align-items:center;justify-content:center}
-@media(max-width:380px){
- .brand-name,.footer-wordmark{width:76px}
- .brand-letter-v,.brand-letter-c{font-size:33px}
- .brand-copy small,.footer-brand-copy small{font-size:6px;letter-spacing:.85px}
-}
-@media(prefers-reduced-motion:reduce){
- .brand-letter-v,.brand-letter-c{animation:none!important;opacity:1!important;transform:none!important}
- .brand-fragments{display:none!important}
-}
+.footer-brand .vc-signature{width:76px;height:40px}
+@media(max-width:600px){.brand-copy small{font-size:6px;letter-spacing:.7px}}
+@media(prefers-reduced-motion:reduce){.vc-mark-v,.vc-mark-c,.vc-mark-star,.vc-mark-shards{animation:none!important;transform:none!important}.vc-mark-shards{opacity:.65}}
