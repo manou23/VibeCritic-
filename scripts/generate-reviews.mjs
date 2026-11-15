@@ -416,12 +416,12 @@ async function recordProviderOutcome(name,success,error=null,measurement=null,it
   };
   const retryAfter=parseReset(headers['retry-after']);
   const resetAt=parseReset(headers['x-ratelimit-reset-requests']??headers['x-ratelimit-reset-tokens']??headers['x-ratelimit-reset']);
-  const explicitDaily=/daily|per[_ -]?day|free_model_daily_requests|daily quota|quota for today|tokens per day|\\bTPD\\b|تجاوز.*اليوم|الحصة اليومية/i.test(message);
+  const explicitDaily=/daily|per[_ -]?day|free_model_daily_requests|daily quota|quota for today|tokens per day|\bTPD\b|تجاوز.*اليوم|الحصة اليومية/i.test(message);
   const quotaExhausted=/resource[_ -]?exhausted|insufficient quota|quota exceeded/i.test(message);
   if(status===429||/rate.?limit/i.test(message)){
    const until=retryAfter||resetAt||Date.now()+60*1000;
    const isDaily=explicitDaily||quotaExhausted;
-   const dailyTokenWindow=/tokens per day|\\bTPD\\b/i.test(message);
+   const dailyTokenWindow=/tokens per day|\bTPD\b/i.test(message);
    // Respect the provider's explicit reset time for rolling daily-token windows; do not retry as if this were TPM.
    entry.blockedUntil=dailyTokenWindow?until:isDaily?Math.max(until,new Date(algeriaDate()+'T23:59:59+01:00').getTime()):Math.min(Math.max(until,Date.now()+15000),Date.now()+15*60*1000);
    entry.blockedReason=isDaily?'daily-limit':'rate-limit';
@@ -531,7 +531,7 @@ async function generateWithGroq(prompt){
   if(r.ok)break;
   detail=await r.text();
   // Retry transient TPM 429 responses using Groq's reset hint; daily quota 429s are not retried.
-  const temporaryTpm429=r.status===429&&/tokens per minute|\\bTPM\\b/i.test(detail)&&!/tokens per day|\\bTPD\\b/i.test(detail)&&/try again in/i.test(detail);
+  const temporaryTpm429=r.status===429&&/tokens per minute|\bTPM\b/i.test(detail)&&!/tokens per day|\bTPD\b/i.test(detail)&&/try again in/i.test(detail);
   const retryable=temporaryTpm429||[500,502,503,504].includes(r.status);
   if(!retryable||attempt===3)throw new Error('Groq HTTP '+r.status+': '+detail);
   const retryHeader=Number(r.headers.get('retry-after'))*1000;
@@ -637,8 +637,8 @@ async function findOfficialGameTrailer(item){
    if(!video||video.status?.privacyStatus!=='public'||video.status?.embeddable!==true)return null;
    const title=candidate.snippet.title||'',channel=candidate.snippet.channelTitle||'';
    if(/fan.?made|concept trailer|reaction|review|parody|trailer breakdown|gameplay walkthrough/i.test(title))return null;
-   const official=/\\bofficial\\b/i.test(title)||/\\bofficial\\b/i.test(channel);
-   if(!official||!/\\b(trailer|teaser)\\b/i.test(title))return null;
+   const official=/\bofficial\b/i.test(title)||/\bofficial\b/i.test(channel);
+   if(!official||!/\b(trailer|teaser)\b/i.test(title))return null;
    const words=title.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').split(/[^a-z0-9]+/);
    const overlap=tokens.filter(t=>words.includes(t)).length;
    return {score:overlap,videoId:candidate.id.videoId,title,channelTitle:channel};
