@@ -1140,7 +1140,8 @@ async function main(){
  await fs.writeFile('data/new-reviews.json',JSON.stringify(fresh.map(item=>({type:item.type,id:String(item.id),upgradedFromPreview:Boolean(item.upgradedFromPreview)})),null,2),'utf8');
  if(!fresh.length)console.log(buildPhase?'لا توجد أعمال جديدة صالحة لاستكمال المكتبة في هذه الدفعة.':'لم يتم العثور على إصدارات جديدة مؤهلة خلال آخر 7 أيام.');
  if(generationFailures>0)console.warn('تم تجاوز '+generationFailures+' أعمال بسبب أخطاء توليد، مع الاحتفاظ بالمراجعات الناجحة.');
- await fs.writeFile(processedPath,JSON.stringify([...new Set(done)],null,2)+'\n');\n await savePublishedIndex(publishedKeys);
+ await fs.writeFile(processedPath,JSON.stringify([...new Set(done)],null,2)+'\n');
+ await savePublishedIndex(publishedKeys);
  const finalTotal=Object.values(counts).reduce((sum,value)=>sum+value,0);
  console.log(finalTotal>=targetTotal?'تم بلوغ هدف 100 مقالة؛ سيعمل التشغيل القادم بوضع رصد الإصدارات الجديدة.':`المتبقي للوصول إلى 100 مقالة: ${targetTotal-finalTotal}`);
 }
