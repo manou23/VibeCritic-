@@ -528,11 +528,13 @@ async function generateWithGroq(prompt){
   }
   if(r.ok)break;
   detail=await r.text();
-  const retryable=[500,502,503,504].includes(r.status);
+  // Retry transient TPM 429 responses using Groq's reset hint; daily quota 429s are not retried.
+  const temporaryTpm429=r.status===429&&/tokens per minute|type.?[:=].?["']?tokens|code.?[:=].?["']?rate_limit_exceeded/i.test(detail)&&/try again in/i.test(detail);
+  const retryable=temporaryTpm429||[500,502,503,504].includes(r.status);
   if(!retryable||attempt===3)throw new Error('Groq HTTP '+r.status+': '+detail);
   const retryHeader=Number(r.headers.get('retry-after'))*1000;
-  const retryBody=Number(detail.match(/try again in\s+([0-9.]+)s/i)?.[1])*1000;
-  const wait=Math.min(30000,Math.max(retryHeader||0,retryBody||0,1500*(attempt+1)));
+  const retryBody=Number(detail.match(/try again in\\s+([0-9.]+)s/i)?.[1])*1000;
+  const wait=Math.min(90000,Math.max(retryHeader||0,retryBody||0,1500*(attempt+1)));
   console.warn('Groq rate/server limit; retry '+(attempt+1)+' after '+wait+'ms');
   await new Promise(resolve=>setTimeout(resolve,wait));
  }
@@ -895,10 +897,14 @@ async function generateReview(item){
      providerErrors.push(name+' (editorial quality): '+error.message);
      await recordLearningFailure(item,error);
      const depthFailure=/أقصر من الحد الأدنى|أقصر من المعيار التحريري|محور نقدي أقصر|لا تتضمن المحاور النقدية/.test(error.message);
-     if(qualityAttempt===0&&depthFailure){
-      attemptPrompt=prompt+'\n\nمهمة إصلاح إلزامية للمراجعة التي أخرجتها للتو: اجعل النص التحليلي review بين 700 و850 كلمة فعلية، وبحد أدنى 3200 حرف، مع خمسة محاور نقدية كاملة لا يقل كل محور عن 65 كلمة، وخاتمة موجزة. لا تغيّر الحقائق أو تخترع تفاصيل جديدة ولا تضف حشواً أو تكراراً. وسّع التحليل فقط بالاستدلال من البيانات والسياق الموثوق الموجود في الطلب الأصلي. احتفظ بالعنوان والافتتاحية والدرجات ونقاط القوة والضعف ما دامت متسقة مع النص، وأعد JSON كاملاً صالحاً بالمفاتيح نفسها. سبب الرفض الذي يجب إصلاحه: '+error.message+'\n\nالمسودة السابقة بصيغة JSON: '+JSON.stringify(generated).slice(0,9000);
+     const scoreFailure=/الدرجات الفرعية الأربعة غير مكتملة|الدرجات الفرعية بخطوة عشرية/.test(error.message);
+     if(qualityAttempt===0&&(depthFailure||scoreFailure)){
+      const repairTask=scoreFailure
+       ?'أصلح كائن scores تحديداً: أعد المفاتيح الأربعة story وvisuals وsound وpacing جميعها كأرقام JSON فعلية بين 0 و10 وبمنزلة عشرية واحدة كحد أقصى. لا تترك أي قيمة مفقودة أو نصية أو null. اجعل الدرجات متسقة مع الأدلة والمراجعة، ولا ترفعها لإرضاء القارئ. احتفظ بالنص النقدي كما هو ما لم يتعارض مع الدرجات.'
+       :'اجعل النص التحليلي review بين 700 و850 كلمة فعلية، وبحد أدنى 3200 حرف، مع خمسة محاور نقدية كاملة لا يقل كل محور عن 65 كلمة، وخاتمة موجزة. لا تغيّر الحقائق أو تخترع تفاصيل جديدة ولا تضف حشواً أو تكراراً. وسّع التحليل فقط بالاستدلال من البيانات والسياق الموثوق الموجود في الطلب الأصلي.';
+      attemptPrompt=prompt+'\\n\\nمهمة إصلاح إلزامية للمراجعة التي أخرجتها للتو: '+repairTask+' احتفظ بالعنوان والافتتاحية والدرجات أو أصلحها وفق المطلوب ونقاط القوة والضعف ما دامت متسقة مع النص، وأعد JSON كاملاً صالحاً بالمفاتيح نفسها. سبب الرفض: '+error.message+'\\n\\nالمسودة السابقة بصيغة JSON: '+JSON.stringify(generated).slice(0,9000);
       if(name==='groq')attemptPrompt=compactGroqPrompt(attemptPrompt,11000);
-      console.warn('المزوّد '+name+' أعاد مراجعة أقصر من المطلوب؛ طلب إصلاحاً تحريرياً واحداً قبل الانتقال إلى مزوّد آخر.');
+      console.warn('المزوّد '+name+' أعاد مراجعة لم تجتز الجودة ('+(scoreFailure?'درجات ناقصة':'تحليل قصير')+')؛ طلب إصلاح واحد محدد قبل الانتقال.');
       continue;
      }
      console.warn('استجاب المزوّد '+name+' لكن المراجعة لم تجتز بوابة الجودة؛ الانتقال إلى التالي:',error.message);
