@@ -1090,6 +1090,10 @@ async function persistEvidenceDossier(item,dossier) {
  await fs.mkdir(directory,{recursive:true});
  const safeId=String(item.id||'unknown').replace(/[^a-zA-Z0-9_-]/g,'_');
  await fs.writeFile(path.join(directory,(item.type||'unknown')+'-'+safeId+'.json'),JSON.stringify(dossier,null,2)+'\n','utf8');
+ const workKey=(item.type||'unknown')+':'+String(item.id||'unknown');
+ const identity={cacheKey:createHash('sha256').update('vibecritic-evidence:'+workKey).digest('hex'),source:'VIBECRITIC_EVIDENCE',endpoint:workKey.slice(0,180),ttlDays:3650};
+ queueSourceCache(identity,dossier);
+ console.log('تمت إضافة ملف الأدلة إلى طابور الحفظ الدائم D1:',workKey);
 }
 
 async function writeReview(item){
