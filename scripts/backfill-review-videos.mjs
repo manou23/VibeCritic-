@@ -112,7 +112,7 @@ async function main(){
     const hasPoster=Boolean(field(frontmatter,'poster'));
     const hasBackdrop=Boolean(field(frontmatter,'backdrop'));
     const hasVideo=validVideo(field(frontmatter,'youtubeVideoId'));
-    const hasExternalVideo=/^https:\/\/store\.steampowered\.com\/app\//.test(field(frontmatter,'externalVideoUrl'));
+    const hasExternalVideo=/^https:\/\/(?:store\.steampowered\.com\/app\/|www\.sonypictures\.com\/tv\/)/.test(field(frontmatter,'externalVideoUrl'));
     if(hasPoster&&hasBackdrop&&(hasVideo||hasExternalVideo))continue;
     scanned++;
     let image=null,video=null;
@@ -146,7 +146,7 @@ async function main(){
         videosAdded++;changed=true;
       }
       if(!field(frontmatter,'poster')&&!field(frontmatter,'backdrop'))withoutImage++;
-      if(!validVideo(field(frontmatter,'youtubeVideoId'))&&!/^https:\/\/store\.steampowered\.com\/app\//.test(field(frontmatter,'externalVideoUrl')))withoutVideo++;
+      if(!validVideo(field(frontmatter,'youtubeVideoId'))&&!/^https:\/\/(?:store\.steampowered\.com\/app\/|www\.sonypictures\.com\/tv\/)/.test(field(frontmatter,'externalVideoUrl')))withoutVideo++;
       if(changed){
         content=content.replace(fm[0],'---\n'+frontmatter+'\n---');
         await fs.writeFile(full,content,'utf8');
