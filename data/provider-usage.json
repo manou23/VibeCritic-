@@ -775,14 +775,14 @@
     },
     "2026-11-16": {
       "groq": {
-        "requests": 5,
-        "successes": 0,
-        "failures": 5,
-        "apiRequests": 16,
-        "totalTokens": 0,
-        "inputTokens": 0,
-        "outputTokens": 0,
-        "lastAttemptAt": "2026-11-15T23:46:13.099Z",
+        "requests": 7,
+        "successes": 1,
+        "failures": 6,
+        "apiRequests": 22,
+        "totalTokens": 5204,
+        "inputTokens": 3679,
+        "outputTokens": 1525,
+        "lastAttemptAt": "2026-11-15T23:56:25.817Z",
         "lastUsage": {
           "requests": 2,
           "inputTokens": 0,
@@ -794,21 +794,22 @@
             "x-ratelimit-remaining-requests": "999",
             "x-ratelimit-reset-requests": "1m26.4s",
             "x-ratelimit-limit-tokens": "8000",
-            "x-ratelimit-remaining-tokens": "4593",
-            "x-ratelimit-reset-tokens": "25.552s",
-            "retry-after": "523"
+            "x-ratelimit-remaining-tokens": "3392",
+            "x-ratelimit-reset-tokens": "34.559s",
+            "retry-after": "2265"
           },
-          "durationMs": 272,
-          "at": "2026-11-15T23:46:13.099Z"
+          "durationMs": 80,
+          "at": "2026-11-15T23:56:25.817Z"
         },
-        "blockedUntil": 1794786896099,
+        "blockedUntil": 1794789250818,
         "blockedReason": "",
         "lastCooldown": {
           "reason": "none",
-          "until": "2026-11-15T23:54:56.099Z",
-          "observedAt": "2026-11-15T23:46:13.099Z",
+          "until": "2026-11-16T00:34:10.818Z",
+          "observedAt": "2026-11-15T23:56:25.818Z",
           "status": 429
-        }
+        },
+        "consecutiveTransientFailures": 0
       },
       "articles": {
         "movie:1339713": {
@@ -866,6 +867,16 @@
           }
         },
         "game:391403": {
+          "groq": {
+            "attempts": 2,
+            "requests": 6,
+            "inputTokens": 3679,
+            "outputTokens": 1525,
+            "totalTokens": 5204,
+            "successes": 1
+          }
+        },
+        "game:973539": {
           "groq": {
             "attempts": 1,
             "requests": 2,
@@ -961,7 +972,7 @@
           "used": 54,
           "limit": 50,
           "remaining": 0,
-          "observedAt": "2026-11-15T23:45:38.979Z",
+          "observedAt": "2026-11-15T23:56:17.213Z",
           "source": "OpenRouter GET /api/v1/key"
         }
       }
