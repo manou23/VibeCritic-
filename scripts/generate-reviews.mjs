@@ -14,6 +14,7 @@ import { buildHistoricalProfile, buildHistoricalComparisonReport, formatHistoric
 import { loadJudgmentHistory, buildJudgmentRevisionContext, recordJudgmentVersion } from './judgment-history.mjs';
 import { SCORE_SCALE_PROMPT } from './scoring-rubric.mjs';
 import { retryHintTimestamp } from './provider-cooldown.mjs';
+import { parseJsonResponse } from './review-json.mjs';
 
 const env=process.env;
 const provider=(env.AI_PROVIDER||(env.GEMINI_API_KEY?'gemini':env.GROQ_API_KEY?'groq':env.OPENROUTER_API_KEY?'openrouter':env.CF_WORKERS_AI_API_TOKEN?'cloudflare-workers-ai':'openai')).toLowerCase();
@@ -447,27 +448,7 @@ function addDays(date,days){const value=new Date(`${date}T00:00:00Z`);value.setU
 const slugify=v=>clean(v).toLowerCase().normalize('NFKD').replace(/[^\p{L}\p{N}]+/gu,'-').replace(/^-|-$/g,'').slice(0,70)||'review';
 const y=v=>JSON.stringify(String(v??''));
 const arr=a=>a?.length?a.map(v=>`  - ${y(v)}`).join('\n'):'  []';
-function parseJson(t){
- const raw=String(t||'').replace(/^\s*[\x60]{3}(?:json)?\s*/i,'').replace(/\s*[\x60]{3}\s*$/,'').trim();
- let start=-1,depth=0,inString=false,escaped=false;
- for(let i=0;i<raw.length;i++){
-  const ch=raw[i];
-  if(start<0){if(ch==='{'){start=i;depth=1;}continue;}
-  if(inString){
-   if(escaped)escaped=false;
-   else if(ch==='\\')escaped=true;
-   else if(ch==='"')inString=false;
-   continue;
-  }
-  if(ch==='"'){inString=true;continue;}
-  if(ch==='{')depth++;
-  else if(ch==='}'&&--depth===0){
-   try{return JSON.parse(raw.slice(start,i+1));}
-   catch{start=-1;depth=0;}
-  }
- }
- throw new Error('لم يرجع النموذج JSON صالحاً بعد تنظيف الرد');
-}
+const parseJson = parseJsonResponse;
 async function generateWithGemini(prompt){
  const model=env.GEMINI_MODEL||'gemini-3.8-flash',key=required('GEMINI_API_KEY');
  const gatewayEndpoint=cloudflareGatewayEndpoint('google-ai-studio','v1beta/models/'+encodeURIComponent(model)+':generateContent');
