@@ -1,7 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
-import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { buildEditorialTrainingContext, recordEditorialCandidate, listEditorialPatterns } from './editorial-intelligence.mjs';
 import { buildKnowledgeContext, recordKnowledge } from './knowledge-graph.mjs';
@@ -1052,13 +1051,8 @@ async function main(){
   // The frontmatter "date" is the work's release date, not its publication date.
   if(/^aiGenerated:\s*true\s*$/m.test(content)){
    let publicationDate=content.match(/^publishedAt:\s*["']?([^"'\\r\\n]+)["']?\s*$/m)?.[1]?.trim();
-   if(!publicationDate){
-    // Backfill the real publication day for older AI reviews from their Git history.
-    try{
-     const committedAt=execFileSync('git',['log','-1','--format=%cI','--',path.join(outDir,file)],{encoding:'utf8',stdio:['ignore','pipe','ignore']}).trim();
-     if(committedAt)publicationDate=committedAt;
-    }catch{}
-   }
+   // Legacy AI reviews without an explicit publication timestamp are not counted.
+   // Git commit dates are not reliable publication dates (bulk edits can reset them).
    if(publicationDate){
     const parsed=new Date(publicationDate);
     if(Number.isFinite(parsed.getTime())&&parsed.toLocaleDateString('en-CA',{timeZone:'Africa/Algiers'})===today)todayCounts[type]++;
