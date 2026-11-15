@@ -55,4 +55,4 @@ export const REVIEW_OUTPUT_CONTRACT = [
   'scores كائن يحتوي حصراً story وvisuals وsound وpacing، وكل قيمة رقم من 0 إلى 10 بمنزلة عشرية واحدة كحد أقصى.',
   'لا تستخدم مخطط title أو lead أو sections أو conclusion. لا تضع المحاور في مصفوفة sections؛ اكتب المحاور الخمسة داخل review كنص Markdown بعناوينها المطلوبة.',
   'شكل البنية: {"hook":"...","headline":"...","summary":"...","scores":{"story":5.0,"visuals":5.0,"sound":5.0,"pacing":5.0},"pros":["..."],"cons":["..."],"tags":["..."],"verdict":"...","review":"..."}'
-].join('\\n');
+].join('\n');
