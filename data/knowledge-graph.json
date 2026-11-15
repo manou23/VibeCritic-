@@ -13081,7 +13081,7 @@
         "STEAM"
       ],
       "firstSeenAt": "2026-11-14T20:16:16.093Z",
-      "updatedAt": "2026-11-15T00:33:44.922Z"
+      "updatedAt": "2026-11-15T01:19:43.880Z"
     },
     {
       "id": "concept:playstation-5",
@@ -13093,7 +13093,7 @@
         "STEAM"
       ],
       "firstSeenAt": "2026-11-14T20:16:16.093Z",
-      "updatedAt": "2026-11-15T00:33:44.922Z"
+      "updatedAt": "2026-11-15T01:19:43.880Z"
     },
     {
       "id": "concept:xbox-series-x-s",
@@ -13105,7 +13105,7 @@
         "STEAM"
       ],
       "firstSeenAt": "2026-11-14T20:16:16.093Z",
-      "updatedAt": "2026-11-15T00:33:44.922Z"
+      "updatedAt": "2026-11-15T01:19:43.880Z"
     },
     {
       "id": "company:sandfall-interactive",
@@ -14682,6 +14682,108 @@
       "externalId": "manual-movie-the-godfather-238",
       "workType": "movie",
       "externalSource": "VibeCritic Editorial",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:game-119133-إلدن-رينغ",
+      "kind": "work",
+      "name": "game:119133:إلدن رينغ",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX",
+        "IGDB"
+      ],
+      "firstSeenAt": "2026-11-15T01:19:43.878Z",
+      "updatedAt": "2026-11-15T01:19:43.879Z",
+      "aliases": [
+        "إلدن رينغ"
+      ],
+      "externalId": "119133",
+      "workType": "game",
+      "externalSource": "IGDB",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "concept:action-rpg",
+      "kind": "concept",
+      "name": "Action RPG",
+      "sources": [
+        "IGDB"
+      ],
+      "firstSeenAt": "2026-11-15T01:19:43.879Z",
+      "updatedAt": "2026-11-15T01:19:43.879Z"
+    },
+    {
+      "id": "concept:open-world",
+      "kind": "concept",
+      "name": "Open World",
+      "sources": [
+        "IGDB"
+      ],
+      "firstSeenAt": "2026-11-15T01:19:43.879Z",
+      "updatedAt": "2026-11-15T01:19:43.879Z"
+    },
+    {
+      "id": "concept:playstation-4",
+      "kind": "concept",
+      "name": "PlayStation 4",
+      "sources": [
+        "IGDB"
+      ],
+      "firstSeenAt": "2026-11-15T01:19:43.880Z",
+      "updatedAt": "2026-11-15T01:19:43.880Z"
+    },
+    {
+      "id": "concept:xbox-one",
+      "kind": "concept",
+      "name": "Xbox One",
+      "sources": [
+        "IGDB"
+      ],
+      "firstSeenAt": "2026-11-15T01:19:43.880Z",
+      "updatedAt": "2026-11-15T01:19:43.880Z"
+    },
+    {
+      "id": "company:fromsoftware",
+      "kind": "company",
+      "name": "FromSoftware",
+      "sources": [
+        "IGDB"
+      ],
+      "firstSeenAt": "2026-11-15T01:19:43.880Z",
+      "updatedAt": "2026-11-15T01:19:43.880Z"
+    },
+    {
+      "id": "work:movie-872585-أوبنهايمر",
+      "kind": "work",
+      "name": "movie:872585:أوبنهايمر",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-15T01:19:45.240Z",
+      "updatedAt": "2026-11-15T01:19:45.240Z",
+      "aliases": [
+        "أوبنهايمر"
+      ],
+      "externalId": "872585",
+      "workType": "movie",
+      "externalSource": "TMDB",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:series-87108-تشيرنوبل",
+      "kind": "work",
+      "name": "series:87108:تشيرنوبل",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-15T01:19:46.200Z",
+      "updatedAt": "2026-11-15T01:19:46.200Z",
+      "aliases": [
+        "تشيرنوبل"
+      ],
+      "externalId": "87108",
+      "workType": "series",
+      "externalSource": "TMDB",
       "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
     }
   ],
@@ -42096,6 +42198,142 @@
           "sourceClass": "catalog-database",
           "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
           "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج."
+        }
+      ]
+    },
+    {
+      "id": "work:game-119133-إلدن-رينغ|has_genre|concept:action-rpg",
+      "from": "work:game-119133-إلدن-رينغ",
+      "type": "has_genre",
+      "to": "concept:action-rpg",
+      "evidence": [
+        {
+          "source": "IGDB",
+          "field": "genres",
+          "url": "https://www.igdb.com/games/elden-ring",
+          "observedAt": "2026-11-15T01:19:43.879Z",
+          "sourceClass": "game-database",
+          "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+          "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات."
+        }
+      ]
+    },
+    {
+      "id": "work:game-119133-إلدن-رينغ|has_genre|concept:open-world",
+      "from": "work:game-119133-إلدن-رينغ",
+      "type": "has_genre",
+      "to": "concept:open-world",
+      "evidence": [
+        {
+          "source": "IGDB",
+          "field": "genres",
+          "url": "https://www.igdb.com/games/elden-ring",
+          "observedAt": "2026-11-15T01:19:43.879Z",
+          "sourceClass": "game-database",
+          "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+          "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات."
+        }
+      ]
+    },
+    {
+      "id": "work:game-119133-إلدن-رينغ|available_on|concept:pc",
+      "from": "work:game-119133-إلدن-رينغ",
+      "type": "available_on",
+      "to": "concept:pc",
+      "evidence": [
+        {
+          "source": "IGDB",
+          "field": "platforms",
+          "url": "https://www.igdb.com/games/elden-ring",
+          "observedAt": "2026-11-15T01:19:43.879Z",
+          "sourceClass": "game-database",
+          "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+          "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات."
+        }
+      ]
+    },
+    {
+      "id": "work:game-119133-إلدن-رينغ|available_on|concept:playstation-4",
+      "from": "work:game-119133-إلدن-رينغ",
+      "type": "available_on",
+      "to": "concept:playstation-4",
+      "evidence": [
+        {
+          "source": "IGDB",
+          "field": "platforms",
+          "url": "https://www.igdb.com/games/elden-ring",
+          "observedAt": "2026-11-15T01:19:43.879Z",
+          "sourceClass": "game-database",
+          "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+          "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات."
+        }
+      ]
+    },
+    {
+      "id": "work:game-119133-إلدن-رينغ|available_on|concept:playstation-5",
+      "from": "work:game-119133-إلدن-رينغ",
+      "type": "available_on",
+      "to": "concept:playstation-5",
+      "evidence": [
+        {
+          "source": "IGDB",
+          "field": "platforms",
+          "url": "https://www.igdb.com/games/elden-ring",
+          "observedAt": "2026-11-15T01:19:43.879Z",
+          "sourceClass": "game-database",
+          "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+          "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات."
+        }
+      ]
+    },
+    {
+      "id": "work:game-119133-إلدن-رينغ|available_on|concept:xbox-one",
+      "from": "work:game-119133-إلدن-رينغ",
+      "type": "available_on",
+      "to": "concept:xbox-one",
+      "evidence": [
+        {
+          "source": "IGDB",
+          "field": "platforms",
+          "url": "https://www.igdb.com/games/elden-ring",
+          "observedAt": "2026-11-15T01:19:43.879Z",
+          "sourceClass": "game-database",
+          "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+          "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات."
+        }
+      ]
+    },
+    {
+      "id": "work:game-119133-إلدن-رينغ|available_on|concept:xbox-series-x-s",
+      "from": "work:game-119133-إلدن-رينغ",
+      "type": "available_on",
+      "to": "concept:xbox-series-x-s",
+      "evidence": [
+        {
+          "source": "IGDB",
+          "field": "platforms",
+          "url": "https://www.igdb.com/games/elden-ring",
+          "observedAt": "2026-11-15T01:19:43.879Z",
+          "sourceClass": "game-database",
+          "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+          "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات."
+        }
+      ]
+    },
+    {
+      "id": "work:game-119133-إلدن-رينغ|developed_by|company:fromsoftware",
+      "from": "work:game-119133-إلدن-رينغ",
+      "type": "developed_by",
+      "to": "company:fromsoftware",
+      "evidence": [
+        {
+          "source": "IGDB",
+          "field": "developers",
+          "url": "https://www.igdb.com/games/elden-ring",
+          "observedAt": "2026-11-15T01:19:43.879Z",
+          "sourceClass": "game-database",
+          "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+          "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات."
         }
       ]
     }
@@ -75650,6 +75888,77 @@
       "firstObservedAt": "2026-11-14T20:16:16.090Z",
       "lastObservedAt": "2026-11-15T00:33:44.920Z",
       "observations": 6
+    },
+    {
+      "id": "work:game-119133-إلدن-رينغ|release_date|IGDB|2022-02-25",
+      "workId": "work:game-119133-إلدن-رينغ",
+      "field": "release_date",
+      "value": "2022-02-25",
+      "normalizedValue": "2022-02-25",
+      "source": "IGDB",
+      "url": "https://www.igdb.com/games/elden-ring",
+      "sourceClass": "game-database",
+      "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+      "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
+      "firstObservedAt": "2026-11-15T01:19:43.879Z",
+      "lastObservedAt": "2026-11-15T01:19:43.879Z",
+      "observations": 1
+    },
+    {
+      "id": "work:game-119133-إلدن-رينغ|genres|IGDB|Action RPG | Open World",
+      "workId": "work:game-119133-إلدن-رينغ",
+      "field": "genres",
+      "value": [
+        "Action RPG",
+        "Open World"
+      ],
+      "normalizedValue": "Action RPG | Open World",
+      "source": "IGDB",
+      "url": "https://www.igdb.com/games/elden-ring",
+      "sourceClass": "game-database",
+      "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+      "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
+      "firstObservedAt": "2026-11-15T01:19:43.879Z",
+      "lastObservedAt": "2026-11-15T01:19:43.879Z",
+      "observations": 1
+    },
+    {
+      "id": "work:game-119133-إلدن-رينغ|platforms|IGDB|PC | PlayStation 4 | PlayStation 5 | Xbox One | Xbox Series X|S",
+      "workId": "work:game-119133-إلدن-رينغ",
+      "field": "platforms",
+      "value": [
+        "PC",
+        "PlayStation 4",
+        "PlayStation 5",
+        "Xbox One",
+        "Xbox Series X|S"
+      ],
+      "normalizedValue": "PC | PlayStation 4 | PlayStation 5 | Xbox One | Xbox Series X|S",
+      "source": "IGDB",
+      "url": "https://www.igdb.com/games/elden-ring",
+      "sourceClass": "game-database",
+      "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+      "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
+      "firstObservedAt": "2026-11-15T01:19:43.879Z",
+      "lastObservedAt": "2026-11-15T01:19:43.879Z",
+      "observations": 1
+    },
+    {
+      "id": "work:game-119133-إلدن-رينغ|developers|IGDB|FromSoftware",
+      "workId": "work:game-119133-إلدن-رينغ",
+      "field": "developers",
+      "value": [
+        "FromSoftware"
+      ],
+      "normalizedValue": "FromSoftware",
+      "source": "IGDB",
+      "url": "https://www.igdb.com/games/elden-ring",
+      "sourceClass": "game-database",
+      "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+      "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
+      "firstObservedAt": "2026-11-15T01:19:43.879Z",
+      "lastObservedAt": "2026-11-15T01:19:43.879Z",
+      "observations": 1
     }
   ],
   "conflicts": [
@@ -85954,6 +86263,157 @@
       "sourcePath": "movie-the-godfather-238.md",
       "excerpt": "العائلة بوصفها مؤسسة يبدأ الفيلم من مناسبة عائلية تبدو احتفالية، لكنها تكشف منذ لحظاتها الأولى أن بيت كورليوني لا يفصل الحياة الخاصة عن شبكة المصالح. الطلبات التي تصل إلى دون فيتو لا تُعامل كمسائل قانونية أو إدارية؛ إنها ديون ولاء، وكل خدمة تنشئ علاقة طويلة الأمد. هذه المقدمة تمنح العالم قواعده من دون محاضرة تفسيرية: السلطة هنا لا تقوم على المنصب وحده، بل على الذاكرة والسمعة والقدرة على رد الجميل أو فرض ثمنه. مايكل: التحول لا يحدث في لقطة واحدة قوة مسار مايكل أنه لا يبدأ نسخة مصغرة من والده. يعود من الحرب وهو يصر على مسافة بينه وبين أعمال العائلة، وتبدو علاقته بكاي محاولة للعيش خارج ذلك النظام. لكن الاعتداء على فيتو يضعه أمام خيار يراه ضرورياً، ثم تتراكم الاستثناءات حتى تصبح القاعدة الجديدة. لا يطلب الفيلم منا اعتبار كل خطوة حتمية؛ بل يوضح كيف يصنع الإنسان تبريره الخاص، وكيف يتحول القرار الاستثنائي إلى هوية يصعب التراجع عنها. أداء آل باتشينو ينجح في جعل التغير مرئياً في الاقتصاد المتزايد للتعبير، لا في الانفعال الصاخب. الإخراج والصورة تعمل إضاءة غوردون ويليس والظلال الكثيفة على جعل السلطة ملموسة داخل الغرف. الوجوه كثيراً ما تظهر في مناطق نصف معتمة، وكأن الشخصيات لا تكشف إلا الجزء الذي يخدم تفاوضها. في المقابل، تمنح حفلات العائلة والمشاهد الخارجية العالم اتساعاً اجتماعياً، فلا يبدو الصراع محصوراً في اجتماعات الرجال. أسلوب كوبولا لا يجمّل العنف بقدر ما يضعه داخل طقوس يومية؛ وهذا التناقض هو مصدر جانب كبير من أثر الفيلم. الصوت والإيقاع موسيقى نينو روتا تمنح الفيلم نبرة تجمع الحنين والتهديد، وتصبح لازمة عاطفية لعالم يخلط الحب بالخوف. لا يعتمد العمل على الموسيقى في كل لحظة؛ فالصمت والأصوات المحيطة يتركان مساحة للتوتر كي يتشكل. أما الإيقاع فيحتاج إلى صبر، خصوصاً في المقاطع التي تبني العلاقات قبل أن تدفع الحبكة إلى الأمام. بعض الاختصارات كانت ستجعل السرد أسرع، لكنها ربما كانت ستضعف الإحساس بأن السلطة شبكة اجتماعية وليست سلسلة مواجهات. الحكم النهائي يستحق «العرّاب» درجته المرتفع",
       "knowledgeClass": "editorial-opinion-not-verified-fact"
+    },
+    {
+      "key": "game:119133",
+      "sourceId": "119133",
+      "type": "game",
+      "title": "إلدن رينغ",
+      "originalTitle": "Elden Ring",
+      "headline": "Elden Ring: حرية الاستكشاف حين تصبح جزءاً من معنى التحدي",
+      "summary": "تجمع Elden Ring بين تصميم عالم مترابط وغامض، وقتال يتطلب التعلم والصبر، وحرية واسعة في بناء الشخصية واختيار مسار الرحلة.",
+      "verdict": "تقدم Elden Ring تجربة استكشاف وقتال استثنائية، ويمنحها تصميم العالم والحرية في بناء الشخصية قيمة تتجاوز كثرة المحتوى. غير أن السرد المتعمد في غموضه، وتفاوت صعوبة المواجهات، وبعض التكرار في الأعداء والزعماء الجانبيين تمنعها من الكمال. تقييم 9.1 من 10 يعكس تميز التصميم والقتال مع خصم واضح للإيقاع والتكرار.",
+      "score": 9.1,
+      "scores": {
+        "storyScore": 9.2,
+        "visualsScore": 9.4,
+        "soundScore": 9,
+        "pacingScore": 8.8
+      },
+      "tags": [
+        "FromSoftware",
+        "Open World",
+        "Soulslike",
+        "Action RPG"
+      ],
+      "pros": [
+        "عالم مترابط يكافئ الفضول ويجعل الاكتشاف جزءاً من التقدم",
+        "تنوع كبير في الأسلحة والبناءات وأساليب مواجهة الخصوم",
+        "قتال عميق يعتمد على قراءة الأنماط والتعلم من الخطأ",
+        "هوية فنية وموسيقية متماسكة تمنح المناطق والزعماء حضوراً مميزاً"
+      ],
+      "cons": [
+        "الغموض السردي قد يترك بعض اللاعبين دون دافع قصصي واضح",
+        "تفاوت الصعوبة قد ينتج قفزات حادة بين المواجهات",
+        "تكرار بعض الأعداء والزعماء الجانبيين يقلل أثر الاكتشاف"
+      ],
+      "creator": "FromSoftware",
+      "genres": [
+        "Action RPG",
+        "Open World"
+      ],
+      "platforms": [
+        "PC",
+        "PlayStation 4",
+        "PlayStation 5",
+        "Xbox One",
+        "Xbox Series X|S"
+      ],
+      "aiGenerated": false,
+      "reviewMode": "review",
+      "releaseDate": "2022-02-25",
+      "sourceName": "IGDB",
+      "sourceUrl": "https://www.igdb.com/games/elden-ring",
+      "catalogSources": [],
+      "sourcePath": "game-elden-ring-vibecritic-2026.md",
+      "excerpt": "عالم لا يرسم لك الطريق تبدأ الرحلة بإطار أسطوري مقتصد في الشرح، ثم تترك للاعب مهمة تركيب أجزاء العالم من الحوارات القصيرة والوصف والمشاهد. هذا الأسلوب يمنح المكان ثقلاً وغموضاً، لكنه لا يقدم حبكة مباشرة يسهل تتبعها. من يبحث عن سرد واضح ومتواصل قد يشعر بأن القصة بعيدة، بينما يجد اللاعب الفضولي متعة في الربط بين الشخصيات والأماكن والآثار. الاستكشاف بوصفه مكافأة أقوى إنجاز في تصميم العالم هو أن الطريق الجانبي قد يقود إلى كهف أو قلعة أو شخصية أو أداة تغيّر أسلوب اللعب. لا تعتمد اللعبة دائماً على علامات توجه اللاعب؛ كثيراً ما يكون المشهد البعيد أو البناء الغريب دعوة كافية للاستكشاف. هذا يمنح الرحلة إحساساً بالاكتشاف الحقيقي، وإن كانت بعض المناطق الجانبية تعيد استخدام خصوم أو أفكار سبق اختبارها. القتال وبناء الشخصية تتيح الأسلحة والتعاويذ والمهارات والبناءات طرقاً متعددة للتعامل مع الخطر. لا يعني ذلك أن كل خيار متوازن تماماً، لكن مساحة التجريب واسعة وتسمح بتغيير الخطة عندما يصبح أحد الزعماء عائقاً. القتال يكافئ مراقبة الحركة وتوقيت المراوغة وإدارة الموارد، وقد تكون بعض المواجهات قاسية إلى درجة تحول التعلم إلى تكرار طويل. الصورة والصوت تمنح البيئات المتباينة اللعبة شخصية واضحة؛ من المساحات الذهبية المفتوحة إلى القلاع والمناطق المشوهة، تتغير الألوان والعمارة بما يخدم الإحساس بتاريخ عالم متصدع. الموسيقى والمؤثرات ترفع حضور المواجهات المهمة، فيما يترك التصميم الصوتي مساحات للصمت والترقب أثناء الاستكشاف. الحكم النهائي Elden Ring عمل بالغ التميز في تصميم العالم والقتال والحرية، لكنه ليس تجربة مثالية لكل لاعب. غموض القصة وتفاوت الصعوبة وتكرار بعض المحتوى عيوب فعلية لا ينبغي إخفاؤها. الدرجة النهائية 9.1/10 محسوبة وفق الأوزان التحريرية الثابتة: القصة 30%، الصورة 25%، الصوت 20%، الإيقاع 25%.",
+      "knowledgeClass": "editorial-opinion-not-verified-fact"
+    },
+    {
+      "key": "movie:872585",
+      "sourceId": "872585",
+      "type": "movie",
+      "title": "أوبنهايمر",
+      "originalTitle": "Oppenheimer",
+      "headline": "أوبنهايمر: عبء المعرفة حين يتحول الإنجاز إلى محاكمة أخلاقية",
+      "summary": "يبني كريستوفر نولان دراما تاريخية متوترة حول العالم الذي قاد مشروع مانهاتن، مستخدماً المونتاج المتوازي والأداء المكثف والصوت لتصوير الصراع العلمي والسياسي والأخلاقي.",
+      "verdict": "أوبنهايمر فيلم قوي في الأداء والبناء السمعي والبصري، ويحوّل جلسات الاستماع والسياسة إلى امتداد للصراع الداخلي. كثافة الحوار والقفزات الزمنية قد تربك المشاهد، كما أن بعض الشخصيات الجانبية لا تحصل على مساحة كافية. تقييم 9.2 من 10 يقر بإنجاز فني كبير دون تجاهل ازدحام السرد.",
+      "score": 9.2,
+      "scores": {
+        "storyScore": 9.3,
+        "visualsScore": 9.5,
+        "soundScore": 9.2,
+        "pacingScore": 8.7
+      },
+      "tags": [
+        "Christopher Nolan",
+        "Historical Drama",
+        "J. Robert Oppenheimer"
+      ],
+      "pros": [
+        "أداء مركزي غني بالتوتر والتناقض دون اختزال الشخصية في صورة واحدة",
+        "المونتاج المتوازي يربط العلم بالسياسة وبالنتائج الشخصية",
+        "الصوت والموسيقى يخلقان ضغطاً درامياً محسوساً",
+        "التصوير العملي والتكوينات البصرية يمنحان المشاهد ثقلاً"
+      ],
+      "cons": [
+        "كثافة الأسماء والحوار تتطلب تركيزاً عالياً",
+        "التنقل بين الخطوط الزمنية قد يربك في المشاهدة الأولى",
+        "بعض الشخصيات النسائية والجانبية أقل تطوراً من المحور الرئيسي"
+      ],
+      "creator": null,
+      "genres": [
+        "دراما",
+        "تاريخي"
+      ],
+      "platforms": [],
+      "aiGenerated": false,
+      "reviewMode": "review",
+      "releaseDate": "2023-07-21",
+      "sourceName": "TMDB",
+      "sourceUrl": "https://www.themoviedb.org/movie/872585",
+      "catalogSources": [],
+      "sourcePath": "movie-oppenheimer-vibecritic-2026.md",
+      "excerpt": "عالم من الأفكار والقرارات يختار الفيلم ألا يجعل الفيزياء وحدها مركز الحكاية. فالمشروع العلمي يظهر داخل منظومة من المنافسة والخوف من السبق الألماني والقرارات الحكومية، ثم يتسع السؤال بعد نجاح الاختبار: من يملك حق تحديد ما يحدث بالمعرفة التي صُنعت؟ هذه النقلة تمنح العمل محوره الأخلاقي، وتمنع الإنجاز العلمي من أن يكون نهاية مريحة للقصة. أداء يحمل التناقض يقدم كيليان مورفي شخصية أوبنهايمر عبر نظرات وصمت وتوتر متراكم، ويجعل التناقض بين الثقة الفكرية والقلق الشخصي ملموساً. ويضيف روبرت داوني جونيور طبقة سياسية دقيقة في مسار لويس ستراوس، بينما تمنح إيميلي بلنت العلاقة الشخصية جانباً أكثر خشونة مما توحي به صورة العالم العبقري المنعزل. مع ذلك، تبقى بعض الشخصيات المحيطة أقرب إلى نقاط في شبكة الأحداث منها إلى مسارات مكتملة. المونتاج والصورة يتنقل السرد بين مراحل مختلفة من حياة الشخصية وبين جلسات التحقيق، ويستخدم اختلاف المعالجة البصرية لتمييز زوايا الحكاية. هذا البناء يخلق توتراً متصاعداً ويجعل الماضي يعيد تفسير الحاضر، لكنه يرفع العبء على المشاهد في تتبع الأسماء والتواريخ. التصوير واسع النطاق لا يعتمد على المؤثرات وحدها؛ بل على التكوين والضوء والوجوه والمساحات التي تضع الفرد أمام مؤسسة أكبر منه. الصوت والإيقاع الصوت عنصر درامي أساسي، من الهدوء السابق للانفجار إلى تصميم المشاهد التي تجعل الترقب محسوساً. الموسيقى لا تكتفي بتزيين المشهد، بل تدفع الإحساس بالضغط إلى الأمام. لكن كثافة الحوار والمعلومات تجعل أجزاء من الفيلم أقرب إلى جلسات سياسية متتابعة، وقد يشعر بعض المشاهدين بأن الإيقاع لا يمنح الشخصيات دائماً وقتاً كافياً للتنفس. الحكم النهائي أوبنهايمر فيلم كبير الطموح والتنفيذ، وقوته في جمع السيرة بالسياسة والمسؤولية الأخلاقية. لا يخلو من ازدحام سردي أو اختلال في توزيع المساحة بين الشخصيات، لكنه ينجح في جعل أثر القرار العلمي موضوعاً درامياً مستمراً. الدرجة 9.2/10 وفق الأوزان التحريرية: القصة 30%، الصورة 25%، الصوت 20%، الإيقاع 25%.",
+      "knowledgeClass": "editorial-opinion-not-verified-fact"
+    },
+    {
+      "key": "series:87108",
+      "sourceId": "87108",
+      "type": "series",
+      "title": "تشيرنوبل",
+      "originalTitle": "Chernobyl",
+      "headline": "تشيرنوبل: كيف يصبح إنكار الحقيقة كارثة ثانية؟",
+      "summary": "مسلسل قصير يعيد بناء كارثة تشيرنوبل النووية وما تلاها، مركزاً على أثر السرية والبيروقراطية والقرارات المتأخرة في تضخيم الكارثة.",
+      "verdict": "تشيرنوبل عمل شديد الإحكام في بناء التوتر وإظهار أثر المؤسسات على الأفراد، مع تمثيل وتصميم إنتاجي وصوتي بالغ القوة. بعض الشخصيات مركبة درامياً وبعض الحوارات تشرح المعلومات مباشرة، لكن ذلك لا يبدد أثر العمل. تقييم 9.2 من 10 يعكس تفوقه في السرد والإيقاع مع تحفظ محدود على الاختزال الدرامي.",
+      "score": 9.2,
+      "scores": {
+        "storyScore": 9.5,
+        "visualsScore": 9,
+        "soundScore": 8.9,
+        "pacingScore": 9.2
+      },
+      "tags": [
+        "HBO",
+        "Historical Drama",
+        "Nuclear Disaster"
+      ],
+      "pros": [
+        "تصعيد متدرج يجعل المعلومات والقرارات مصدراً للتوتر",
+        "أداء جماعي مقنع يبرز اختلاف المصالح والخوف والمسؤولية",
+        "تصميم إنتاجي قاتم يعيد بناء البيئة دون استعراض",
+        "الإيقاع القصير يحافظ على ضغط درامي متماسك"
+      ],
+      "cons": [
+        "بعض الشخصيات مركبة أو مختصرة لأغراض درامية",
+        "بعض الحوارات تشرح الوقائع مباشرة بدل تركها للاستنتاج",
+        "الجو القاتم المتواصل قد يجعل المشاهدة مرهقة"
+      ],
+      "creator": "Craig Mazin",
+      "genres": [
+        "دراما",
+        "تاريخي"
+      ],
+      "platforms": [],
+      "aiGenerated": false,
+      "reviewMode": "review",
+      "releaseDate": "2019-05-06",
+      "sourceName": "TMDB",
+      "sourceUrl": "https://www.themoviedb.org/tv/87108",
+      "catalogSources": [],
+      "sourcePath": "series-chernobyl-vibecritic-2026.md",
+      "excerpt": "الكارثة وما وراءها يبدأ المسلسل من لحظة الانفجار، لكنه لا يحصر اهتمامه في إعادة تمثيل الحدث. سرعان ما يصبح السؤال كيف تتصرف المؤسسات عندما تكون الحقيقة غير مريحة، وكيف تتحول محاولة حماية الصورة الرسمية إلى عامل يزيد الخطر. بذلك يربط العمل بين التفاصيل التقنية والقرارات الإدارية، ويجعل الكارثة نتيجة شبكة من الأخطاء والضغوط لا مجرد حادث منفصل. الشخصيات والتمثيل يمنح جاريد هاريس شخصية فاليري ليغاسوف حضوراً قائماً على الصراع بين المعرفة والواجب والخوف. ويجسد ستيلان سكارسغارد مسؤولاً سياسياً يتغير موقفه مع اتساع الأدلة، فيما تقدم إميلي واتسون شخصية عالمة تجمع المعرفة العلمية بالإصرار على مواجهة الإنكار. المسلسل يختصر بعض الشخصيات ويعيد تركيبها درامياً، لذلك لا ينبغي التعامل مع كل تفصيل حواري باعتباره توثيقاً حرفياً، لكن الأداء الجماعي ينجح في جعل تضارب المصالح مفهوماً. الصورة وتصميم العالم الألوان الباردة والمواقع الصناعية والملابس والأدوات تخلق بيئة ثقيلة ومقنعة. لا يعتمد العمل على عرض الكارثة باستمرار؛ بل يجعل آثارها اليومية مرئية في المستشفيات والمنازل وممرات السلطة. هذا الاقتصاد البصري يمنح التفاصيل الصغيرة وزناً، ويحول المكان إلى تذكير مستمر بأن الخطر لا ينتهي عند حدود موقع الانفجار. الصوت والإيقاع يستخدم المسلسل الصمت والضجيج الصناعي والموسيقى المحدودة لصناعة قلق متواصل. وتتحرك الحلقات بإيقاع محسوب بين التحقيق والتفسير والنتائج الإنسانية، مع تصعيد واضح في كل مرحلة. قد يبدو الجو القاتم مرهقاً، وبعض الحوارات تشرح ما يمكن للصورة أن توحي به، لكن قصر العمل يمنع التكرار من السيطرة على التجربة. الحكم النهائي تشيرنوبل مسلسل قصير قوي في السببية والتوتر والأداء والتصميم. قوته ليست في إعادة بناء الانفجار فقط، بل في إظهار كيف تتضاعف الكارثة عندما تصبح الحقيقة عبئاً سياسياً. مع الاعتراف بالاختزال الدرامي وبعض الشرح المباشر، يستحق 9.2/10 وفق الأوزان التحريرية الثابتة: القصة 30%، الصورة 25%، الصوت 20%، الإيقاع 25%.",
+      "knowledgeClass": "editorial-opinion-not-verified-fact"
     }
   ],
   "editorialRelations": [
@@ -86088,6 +86548,16 @@
       "relationClass": "shared-editorial-metadata-not-influence-or-quality"
     },
     {
+      "id": "game:gta-vi-2026|game:119133",
+      "from": "game:gta-vi-2026",
+      "to": "game:119133",
+      "sharedTags": [
+        "Open World"
+      ],
+      "sameCreator": false,
+      "relationClass": "shared-editorial-metadata-not-influence-or-quality"
+    },
+    {
       "id": "game:76883|game:123757",
       "from": "game:76883",
       "to": "game:123757",
@@ -86121,6 +86591,16 @@
       "id": "game:125642|game:hades-ii-2025",
       "from": "game:125642",
       "to": "game:hades-ii-2025",
+      "sharedTags": [
+        "Action RPG"
+      ],
+      "sameCreator": false,
+      "relationClass": "shared-editorial-metadata-not-influence-or-quality"
+    },
+    {
+      "id": "game:125642|game:119133",
+      "from": "game:125642",
+      "to": "game:119133",
       "sharedTags": [
         "Action RPG"
       ],
@@ -86413,6 +86893,16 @@
       "relationClass": "shared-editorial-metadata-not-influence-or-quality"
     },
     {
+      "id": "movie:155|movie:872585",
+      "from": "movie:155",
+      "to": "movie:872585",
+      "sharedTags": [
+        "Christopher Nolan"
+      ],
+      "sameCreator": false,
+      "relationClass": "shared-editorial-metadata-not-influence-or-quality"
+    },
+    {
       "id": "movie:1300968|movie:1003596",
       "from": "movie:1300968",
       "to": "movie:1003596",
@@ -86487,6 +86977,16 @@
       "relationClass": "shared-editorial-metadata-not-influence-or-quality"
     },
     {
+      "id": "movie:1368337|movie:872585",
+      "from": "movie:1368337",
+      "to": "movie:872585",
+      "sharedTags": [
+        "Christopher Nolan"
+      ],
+      "sameCreator": false,
+      "relationClass": "shared-editorial-metadata-not-influence-or-quality"
+    },
+    {
       "id": "movie:1423191|game:347668",
       "from": "movie:1423191",
       "to": "game:347668",
@@ -86554,6 +87054,26 @@
       "to": "movie:manual-movie-the-godfather-238",
       "sharedTags": [
         "Crime Drama"
+      ],
+      "sameCreator": false,
+      "relationClass": "shared-editorial-metadata-not-influence-or-quality"
+    },
+    {
+      "id": "series:126308|movie:872585",
+      "from": "series:126308",
+      "to": "movie:872585",
+      "sharedTags": [
+        "Historical Drama"
+      ],
+      "sameCreator": false,
+      "relationClass": "shared-editorial-metadata-not-influence-or-quality"
+    },
+    {
+      "id": "series:126308|series:87108",
+      "from": "series:126308",
+      "to": "series:87108",
+      "sharedTags": [
+        "Historical Drama"
       ],
       "sameCreator": false,
       "relationClass": "shared-editorial-metadata-not-influence-or-quality"
@@ -86977,19 +87497,49 @@
       ],
       "sameCreator": false,
       "relationClass": "shared-editorial-metadata-not-influence-or-quality"
+    },
+    {
+      "id": "game:hades-ii-2025|game:119133",
+      "from": "game:hades-ii-2025",
+      "to": "game:119133",
+      "sharedTags": [
+        "Action RPG"
+      ],
+      "sameCreator": false,
+      "relationClass": "shared-editorial-metadata-not-influence-or-quality"
+    },
+    {
+      "id": "game:1771300|game:119133",
+      "from": "game:1771300",
+      "to": "game:119133",
+      "sharedTags": [
+        "Open World"
+      ],
+      "sameCreator": false,
+      "relationClass": "shared-editorial-metadata-not-influence-or-quality"
+    },
+    {
+      "id": "movie:872585|series:87108",
+      "from": "movie:872585",
+      "to": "series:87108",
+      "sharedTags": [
+        "Historical Drama"
+      ],
+      "sameCreator": false,
+      "relationClass": "shared-editorial-metadata-not-influence-or-quality"
     }
   ],
   "stats": {
-    "works": 248,
+    "works": 251,
     "people": 1018,
-    "companies": 34,
-    "concepts": 36,
-    "relations": 1567,
-    "observations": 1982,
+    "companies": 35,
+    "concepts": 40,
+    "relations": 1575,
+    "observations": 1986,
     "conflicts": 9,
     "knowledgeGaps": 120,
-    "editorialReviews": 60,
-    "editorialRelations": 100
+    "editorialReviews": 63,
+    "editorialRelations": 109
   },
-  "updatedAt": "2026-11-15T01:18:45.806Z"
+  "updatedAt": "2026-11-15T01:19:46.207Z"
 }
