@@ -75,7 +75,7 @@ Midnight توسعة قوية تعيد الحيوية إلى عالم مألوف 
 
 ## المصادر
 
-- [PC Gamer — World of Warcraft: Midnight Review](https://www.pcgamer.com/games/world-of-warcraft/world-of-warcraft-midnight-review/) — مراجعة عملية تمنح التوسعة 84/100 وتناقش الصورة والقصة والأنظمة والمشكلات.
+- [PC Gamer — World of Warcraft: Midnight Review](https://www.pcgamer.com/games/world-of-warcraft/world-of-warcraft-midnight-review/) — مراجعة عملية تمنح التوسعة 84 من 100 وتناقش الصورة والقصة والأنظمة والمشكلات.
 - [GameSpot — World of Warcraft: Midnight Review](https://www.gamespot.com/reviews/world-of-warcraft-midnight-review-back-at-it-again-in-quelthalas/1900-6418475/) — مراجعة للتوسعة تركز على الحملة والسكن ومحتوى نهاية اللعبة.
 - [Metacritic — Midnight Critic Reviews](https://www.metacritic.com/game/world-of-warcraft-midnight/critic-reviews/) — تجميع تقييمات نقدية متعددة للتوسعة.
 - [Game Informer — Interview with Midnight Lead Composer](https://gameinformer.com/interview/2026/02/26/interview-world-of-warcraft-lead-composer-on-making-of-midnights-human-made) — تفاصيل إنتاج الموسيقى والآلات والهوية الصوتية.
