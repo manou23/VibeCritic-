@@ -1038,3 +1038,25 @@ img{max-width:100%}
 .footer-brand .vc-signature{width:44px;height:25px}
 @media(max-width:600px){.brand-copy small{font-size:5px;letter-spacing:.55px}.vc-signature{width:48px;height:27px}}
 @media(prefers-reduced-motion:reduce){.vc-mark-v,.vc-mark-c,.vc-mark-star,.vc-mark-shards{animation:none!important;transform:none!important}.vc-mark-shards{opacity:.35}}
+
+
+/* Wordmark-to-monogram signature: the name releases V and C, which lock into the star. */
+.brand-copy,.footer-brand-copy{display:flex;flex-direction:column;align-items:center;gap:0}
+.vc-signature{display:block;width:78px;height:34px;overflow:visible}
+.brand-copy small,.footer-brand-copy small{display:block;margin-top:-3px;font-size:5.5px;line-height:1.4;letter-spacing:.8px;white-space:nowrap;color:var(--vc-muted);font-weight:900}
+.vc-wordmark{font-family:Arial,Tahoma,sans-serif;font-size:17px;font-weight:900;letter-spacing:-.7px;opacity:0;transform-origin:center;animation:vc-name-release 5.6s cubic-bezier(.2,.75,.25,1) infinite}
+.vc-symbol{transform-box:fill-box;transform-origin:center;opacity:1}
+.vc-mark-v,.vc-mark-c{transform-box:fill-box;transform-origin:center;will-change:transform}
+.vc-mark-v{animation:vc-v-release 5.6s cubic-bezier(.18,.8,.22,1) infinite}
+.vc-mark-c{animation:vc-c-release 5.6s cubic-bezier(.18,.8,.22,1) infinite}
+.vc-mark-star{transform-box:fill-box;transform-origin:center;animation:vc-star-lock 5.6s ease-in-out infinite}
+.vc-mark-shards{transform-origin:center;animation:vc-shards-release 5.6s ease-out infinite}
+@keyframes vc-name-release{0%,7%{opacity:1;transform:scale(1)}24%,100%{opacity:0;transform:scale(.72)}}
+@keyframes vc-v-release{0%,12%{transform:translate(17px,-2px) scale(.28);opacity:0}22%{opacity:1}39%,70%{transform:translate(0,0) scale(1);opacity:1}88%,100%{transform:translate(17px,-2px) scale(.28);opacity:0}}
+@keyframes vc-c-release{0%,12%{transform:translate(-17px,2px) scale(.28);opacity:0}25%{opacity:1}42%,70%{transform:translate(0,0) scale(1);opacity:1}88%,100%{transform:translate(-17px,2px) scale(.28);opacity:0}}
+@keyframes vc-star-lock{0%,28%{opacity:0;transform:translate(-8px,7px) scale(.15) rotate(-100deg)}42%{opacity:1;transform:translate(0,0) scale(1.35) rotate(35deg)}54%,72%{opacity:1;transform:scale(1) rotate(0)}90%,100%{opacity:0;transform:translate(-8px,7px) scale(.15) rotate(-100deg)}}
+@keyframes vc-shards-release{0%,20%,68%,100%{opacity:0;transform:scale(.2) rotate(0)}36%{opacity:1;transform:translate(-7px,-6px) scale(1.1) rotate(65deg)}55%{opacity:.7;transform:translate(8px,6px) scale(.75) rotate(130deg)}68%{opacity:0;transform:translate(14px,-9px) scale(.15) rotate(180deg)}}
+.footer-brand{display:inline-flex;align-items:center;justify-content:center}
+.footer-brand .vc-signature{width:64px;height:28px}
+@media(max-width:600px){.vc-signature{width:70px;height:31px}.brand-copy small{font-size:5px;letter-spacing:.55px}}
+@media(prefers-reduced-motion:reduce){.vc-wordmark,.vc-mark-v,.vc-mark-c,.vc-mark-star,.vc-mark-shards{animation:none!important}.vc-wordmark{opacity:0}.vc-mark-v,.vc-mark-c{transform:none!important;opacity:1}.vc-mark-star{opacity:1;transform:none!important}.vc-mark-shards{opacity:.35}}
