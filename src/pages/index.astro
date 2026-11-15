@@ -1,13 +1,21 @@
 ---
-import '../styles/home-hybrid-v2.css';
 import Base from '../layouts/Base.astro';
 import ReviewCard from '../components/ReviewCard.astro';
 import { getCollection } from 'astro:content';
 import { url, TYPE_PLURAL, optimizeImage } from '../consts';
 import trending from '../data/trending.json';
-
 const reviews=(await getCollection('reviews')).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
 const byType={game:reviews.filter(x=>x.data.type==='game'),series:reviews.filter(x=>x.data.type==='series'),movie:reviews.filter(x=>x.data.type==='movie')};
+// اعرض الترندات الموثوقة حتى عندما لم تُنشر مراجعة VibeCritic للعمل بعد.
+const gta6Preview=reviews.find(review=>review.data.sourceId==='gta-vi-2026');
+const trendReviews=[
+ ...(gta6Preview?[{id:'gta-vi-2026',sourceId:'gta-vi-2026',type:'game',title:gta6Preview.data.title,summary:gta6Preview.data.summary,poster:optimizeImage(gta6Preview.data.poster),backdrop:optimizeImage(gta6Preview.data.backdrop||gta6Preview.data.poster,'backdrop'),source:'قراءة استباقية',review:gta6Preview,href:url(`reviews/${gta6Preview.id}/`),external:false,preview:true}]:[]),
+ ...trending.filter(item=>item.sourceId!=='gta-vi-2026'&&['مرتفع','متوسط'].includes(item.trendConfidence)).map(item=>{
+  const review=reviews.find(entry=>entry.data.type===item.type&&entry.data.sourceId===item.sourceId);
+  return {...item,title:review?.data.title||item.title,summary:review?.data.summary||item.summary,poster:optimizeImage(item.poster),backdrop:optimizeImage(item.backdrop||item.poster,'backdrop'),review,href:review?url(`reviews/${review.id}/`):item.sourceUrl,external:!review,preview:false};
+ }).filter(item=>item.href)
+].slice(0,9);
+const spotlight=trendReviews[0]||null;
 const todayInAlgeria=new Intl.DateTimeFormat('en-CA',{timeZone:'Africa/Algiers'}).format(new Date());
 const isUpcomingReview=review=>{
  const releaseDate=String(review.data.releaseDate||'').slice(0,10);
@@ -15,105 +23,141 @@ const isUpcomingReview=review=>{
 };
 const topRated=[...reviews].filter(review=>review.data.score>0&&!isUpcomingReview(review)&&review.data.reviewMode==='review').sort((a,b)=>b.data.score-a.data.score).slice(0,8);
 const upcoming=reviews.filter(isUpcomingReview).sort((a,b)=>String(a.data.releaseDate||'').localeCompare(String(b.data.releaseDate||''))).slice(0,8);
-const trendReviews=trending.filter(item=>['مرتفع','متوسط'].includes(item.trendConfidence)).flatMap(item=>{
- const review=reviews.find(entry=>entry.data.type===item.type&&entry.data.sourceId===item.sourceId);
- if(!review)return [];
- return [{...item,review,title:review.data.title,summary:review.data.summary,poster:optimizeImage(review.data.poster||item.poster),backdrop:optimizeImage(review.data.backdrop||item.backdrop||item.poster,'backdrop'),href:url(`reviews/${review.id}/`)}];
-}).slice(0,10);
-const spotlight=trendReviews[0]||(topRated[0]?{...topRated[0].data,id:topRated[0].id,review:topRated[0],type:topRated[0].data.type,title:topRated[0].data.title,summary:topRated[0].data.summary,poster:optimizeImage(topRated[0].data.poster),backdrop:optimizeImage(topRated[0].data.backdrop||topRated[0].data.poster,'backdrop'),href:url('reviews/'+topRated[0].id+'/')}:null);
-const featured=topRated.filter(item=>item.id!==(spotlight?.review?.id||spotlight?.id)).slice(0,3);
-const orbitItems=trendReviews.length?trendReviews.slice(0,7):topRated.slice(0,7).map(review=>({title:review.data.title,summary:review.data.summary,poster:optimizeImage(review.data.poster),backdrop:optimizeImage(review.data.backdrop||review.data.poster,'backdrop'),href:url(`reviews/${review.id}/`),type:review.data.type}));
 ---
 <Base title="اكتشف عالم الترفيه" description="اكتشف أحدث الأفلام والمسلسلات والألعاب، تابع الترندات العالمية واقرأ مراجعات VibeCritic." image={spotlight?.backdrop || spotlight?.poster}>
-<div class="vc-home">
- <section class="wrap vc-intro">
-  <div><span class="vc-overline">VIBECRITIC · ENTERTAINMENT, WITHOUT THE NOISE</span><h1>اكتشف ما يستحق<br/><em>وقتك فعلاً.</em></h1><p>مراجعات مستقلة للألعاب والأفلام والمسلسلات. رأي واضح، أدلة، ودرجات لا تجامل.</p></div>
-  <div class="vc-intro-meta"><strong>{reviews.length.toLocaleString('ar-DZ')}</strong><span>مراجعة منشورة</span><a href="#library">استكشف المكتبة <b>←</b></a></div>
- </section>
-
- {spotlight&&<section class="wrap vc-feature-layout" aria-label="اختيار المحررين والترندات">
-  <div class="vc-feature-main vc-orbit-stage" data-orbit-stage style={`--feature-image:url('${spotlight.backdrop||spotlight.poster}')`}>
-   <img class="vc-orbit-backdrop" data-orbit-backdrop src={spotlight.backdrop||spotlight.poster} alt="" fetchpriority="high"/>
-   <span class="vc-feature-shade"></span>
-   <div class="vc-orbit-heading"><span class="vc-chip">● يتصدر المشهد · اختيارات VibeCritic</span><span class="vc-orbit-counter" data-orbit-counter>01 / {String(orbitItems.length||1).padStart(2,'0')}</span></div>
-   <div class="vc-orbit-ring" aria-label="الأعمال المتحركة في دائرة الاهتمام">
-    {orbitItems.map((item,i)=><a class="vc-orbit-poster" data-orbit-card data-index={i} data-summary={item.summary} href={item.href} style={`--orbit-index:${i};--orbit-count:${orbitItems.length};--orbit-angle:${i*360/orbitItems.length}deg`} aria-label={item.title}>
-     <img src={item.poster||item.backdrop} alt="" loading="lazy"/><span>{item.title}</span>
-    </a>)}
-   </div>
-   <div class="vc-orbit-copy" data-orbit-copy>
-    <p>في دائرة الاهتمام الآن</p><h2 data-orbit-title>{spotlight.title}</h2><p class="vc-feature-summary" data-orbit-summary>{spotlight.summary}</p>
-    <a class="vc-feature-cta" data-orbit-link href={spotlight.href}>اقرأ مراجعة VibeCritic <b>←</b></a>
-   </div>
-   <div class="vc-orbit-controls" aria-label="التحكم في دائرة الاهتمام">
-    <button type="button" data-orbit-prev aria-label="العمل السابق">‹</button><button type="button" data-orbit-toggle aria-label="إيقاف الحركة" aria-pressed="false">Ⅱ</button><button type="button" data-orbit-next aria-label="العمل التالي">›</button>
-   </div>
-   <span class="vc-orbit-hint">تتبدل الأعمال تلقائياً · اختر ملصقاً للانتقال إليه</span>
-  </div>  <aside class="vc-feature-side">
-   <div class="vc-side-heading"><span>اختيارات تستحق وقتك</span><a href="#top-rated">الأعلى تقييماً ↗</a></div>
-   {featured.map((review,i)=><a class="vc-side-item" href={url(`reviews/${review.id}/`)}><span class="vc-side-number">0{i+1}</span>{review.data.poster&&<img src={optimizeImage(review.data.poster)} alt="" loading="lazy"/>}<span class="vc-side-text"><small>{review.data.type==='game'?'لعبة':review.data.type==='series'?'مسلسل':'فيلم'}</small><strong>{review.data.title}</strong><span>{review.data.reviewMode==='review'?review.data.score.toFixed(1)+'/10':'قراءة استباقية'}</span></span></a>)}
-   <a class="vc-side-all" href="#library">تصفّح كل المراجعات <b>←</b></a>
-  </aside>
- </section>}
-
- <nav class="wrap vc-category-nav" aria-label="تصفح الأقسام">
-  <a href={url('category/game/')}><span>🎮</span><strong>الألعاب</strong><small>{byType.game.length} مراجعة</small></a>
-  <a href={url('category/movie/')}><span>🎬</span><strong>الأفلام</strong><small>{byType.movie.length} مراجعة</small></a>
-  <a href={url('category/series/')}><span>📺</span><strong>المسلسلات</strong><small>{byType.series.length} مراجعة</small></a>
- </nav>
-
- <section class="wrap vc-section" id="trending">
-  <div class="vc-section-head"><div><span class="vc-overline">WHAT PEOPLE ARE WATCHING & PLAYING</span><h2>في دائرة الاهتمام</h2><p>الأعمال الرائجة التي نملك لها مراجعة منشورة على VibeCritic</p></div><span class="vc-section-mark">TRENDING / 01</span></div>
-  {trendReviews.length>0?<div class="vc-trend-grid">{trendReviews.slice(0,4).map((item,i)=><a class:list={["vc-trend-tile",{"vc-trend-wide":i===0}]} href={item.href}><img src={item.backdrop||item.poster} alt="" loading="lazy"/><span class="vc-trend-overlay"></span><span class="vc-trend-rank">TREND 0{i+1}</span><span class="vc-trend-title"><small>{item.type==='game'?'لعبة':item.type==='series'?'مسلسل':'فيلم'}</small><strong>{item.title}</strong><em>اقرأ المراجعة ←</em></span></a>)}</div>:<div class="vc-empty">ستظهر الترندات هنا عند توفر مراجعات داخلية موثقة لها.</div>}
- </section>
-
- <section class="wrap vc-section" id="top-rated">
-  <div class="vc-section-head"><div><span class="vc-overline">EDITORIAL PICKS · SCORED WITH EVIDENCE</span><h2>الأعلى تقييماً</h2><p>درجات VibeCritic التحريرية للأعمال التي خضعت لمراجعة فعلية</p></div><a class="vc-text-link" href="#library">كل المكتبة ←</a></div>
-  {topRated.length>0?<div class="vc-card-grid">{topRated.slice(0,4).map(review=><ReviewCard review={review}/>)}</div>:<div class="vc-empty">ستظهر هنا الأعمال بعد اكتمال مراجعاتها وتقييمها.</div>}
- </section>
-
- <section class="wrap vc-section vc-promo">
-  <div><span class="vc-overline">MEET YOUR AI CRITIC</span><h2>رأيك القادم يبدأ من هنا.</h2><p>اكتشف مراجعة ذكية لفيلمك أو مسلسلك أو لعبتك المفضلة، مع تحليل ونقاط القوة والضعف.</p><a href={url('ai-review/')}>جرّب المراجع الذكي <b>←</b></a></div><div class="vc-promo-orbit"><strong>AI</strong><span>REVIEW</span></div>
- </section>
-
- {(['game','movie','series'] as const).map((type,i)=><section class="wrap vc-section vc-type-section">
-  <div class="vc-section-head"><div><span class="vc-overline">{type==='game'?'PLAY YOUR NEXT':type==='movie'?'YOUR NEXT MOVIE':'NEXT BINGE'}</span><h2>{type==='game'?'أحدث الألعاب':type==='movie'?'أحدث الأفلام':'أحدث المسلسلات'}</h2><p>آخر ما نُشر في قسم {TYPE_PLURAL[type]}</p></div><a class="vc-text-link" href={url(`category/${type}/`)}>عرض القسم ←</a></div>
-  {byType[type].length>0?<div class="vc-card-grid">{byType[type].slice(0,4).map(review=><ReviewCard review={review}/>)}</div>:<div class="vc-empty">نعمل على إثراء هذا القسم بمحتوى جديد.</div>}
- </section>)}
-
- <section class="wrap vc-section" id="coming-soon">
-  <div class="vc-section-head"><div><span class="vc-overline">BEFORE THE RELEASE</span><h2>قراءات استباقية</h2><p>مواد تمهيدية وليست مراجعات نهائية أو درجات مكتملة</p></div></div>
-  {upcoming.length>0?<div class="vc-card-grid">{upcoming.slice(0,4).map(review=><ReviewCard review={review}/>)}</div>:<div class="vc-empty">لا توجد قراءات استباقية منشورة حالياً.</div>}
- </section>
-
- <section class="wrap vc-section vc-library" id="library">
-  <div class="vc-section-head"><div><span class="vc-overline">THE WHOLE LIBRARY</span><h2>ابحث في مكتبتنا</h2><p>اعثر على مراجعتك القادمة بسرعة</p></div><span class="vc-library-count">{reviews.length} مراجعة</span></div>
-  <pagefind-searchbox placeholder="ابحث عن لعبة أو فيلم أو مسلسل..." max-results="15" hide-shortcut></pagefind-searchbox>
-  <div class="vc-library-links"><a href={url('catalog/')}>فتح الكتالوج الكامل ↗</a><a href="#top-rated">العودة إلى الأعلى ↑</a></div>
- </section>
-</div>
+<section class="wrap discovery-hero spotlight-slider" aria-label="أبرز الترندات">
+ <div class="spotlight-backdrops" aria-hidden="true">
+  <img class="spotlight-image is-active" src={spotlight?.backdrop||spotlight?.poster||''} alt="" fetchpriority="high" loading="eager" decoding="async"/>
+  <img class="spotlight-image" alt="" loading="lazy" decoding="async"/>
+ </div>
+ <div class="discovery-shade"></div>
+ <div class="discovery-content spotlight-copy" aria-live="polite">
+  <p class="discovery-kicker"><span></span> VIBECRITIC / مؤشرات الرواج</p>
+  <p class="spotlight-category">{spotlight?.type==='game'?'ترند الألعاب':spotlight?.type==='series'?'ترند المسلسلات':'ترند الأفلام'} · {spotlight?.source||'TRENDING'}</p>
+  <h1 class="spotlight-title">{spotlight?.title||'أبرز مؤشرات الرواج'}</h1>
+  <p class="discovery-description spotlight-description">{spotlight?.summary||'اكتشف الأعمال التي تسجل مؤشرات شعبية موثوقة لدى مصادر البيانات.'}</p>
+  <div class="discovery-actions">
+   {spotlight&&<a class="discovery-primary spotlight-link" href={spotlight.href} target={spotlight.external?"_blank":undefined} rel={spotlight.external?"noopener noreferrer":undefined}>{spotlight.external?"اكتشف العمل":"اقرأ المراجعة"} <span>↗</span></a>}
+   <a class="discovery-secondary" href="#trending">كل الترندات</a>
+  </div>
+ </div>
+ <div class="spotlight-controls">
+  <button type="button" class="spotlight-prev" aria-label="الترند السابق" disabled={trendReviews.length < 2}>‹</button>
+  <span class="discovery-index"><strong class="spotlight-count">01</strong><span>من <b class="spotlight-total">{String(Math.max(1,trendReviews.length)).padStart(2,'0')}</b> ترندات</span></span>
+  <button type="button" class="spotlight-next" aria-label="الترند التالي" disabled={trendReviews.length < 2}>›</button>
+  <button type="button" class="spotlight-pause" aria-label="إيقاف التبديل التلقائي" aria-pressed="false" disabled={trendReviews.length < 2}>Ⅱ</button>
+ </div>
+ <div class="spotlight-progress" aria-hidden="true"><span></span></div>
+ <div class="spotlight-data" hidden>
+  {trendReviews.map(item=><i data-title={item.title} data-summary={item.summary||''} data-backdrop={item.backdrop||item.poster||''} data-poster={item.poster||''} data-type={item.type} data-source={item.source||''} data-href={item.href} data-external={String(item.external)} data-preview={String(item.preview||false)}></i>)}
+ </div>
+</section>
+<aside class="wrap ai-review-promo" data-expires="2026-11-19T23:59:59+01:00" aria-label="جرّب المراجع الذكي">
+ <div class="ai-review-promo-copy">
+  <span class="ai-review-promo-badge">ميزة جديدة · لفترة محدودة</span><small class="ai-review-promo-expiry">تنتهي في 19 نوفمبر 2026</small>
+  <p class="ai-review-promo-kicker">MEET YOUR AI CRITIC</p>
+  <h2>رأيك القادم يبدأ من هنا!</h2>
+  <p>اكتشف مراجعة ذكية لفيلمك أو مسلسلك أو لعبتك المفضلة، مع تقييم وتحليل ونقاط القوة والضعف في ثوانٍ.</p>
+  <a class="ai-review-promo-cta" href="/ai-review/">جرّب المراجع الذكي <span aria-hidden="true">↗</span></a>
+ </div>
+ <div class="ai-review-promo-art" aria-hidden="true">
+  <div class="ai-review-promo-orbit"></div>
+  <div class="ai-review-promo-score"><strong>AI</strong><span>REVIEW</span></div>
+  <span class="ai-review-promo-spark spark-one">✦</span>
+  <span class="ai-review-promo-spark spark-two">✧</span>
+ </div>
+</aside>
+<section class="wrap catalog-section" id="top-rated">
+ <div class="catalog-heading"><div><p class="catalog-eyebrow">EDITOR'S HIGHEST SCORES</p><h2>الأعلى تقييماً</h2><p>الأعمال التي حصلت على أعلى درجات VibeCritic التحريرية</p></div><a href="#all-reviews" class="catalog-more">كل المراجعات <span>←</span></a></div>
+ {topRated.length>0?<div class="catalog-rail">{topRated.map(review=><ReviewCard review={review}/>)}</div>:<div class="catalog-empty">ستظهر هنا الأعمال بعد اكتمال مراجعاتها وتقييمها.</div>}
+</section>
+<section class="wrap catalog-section" id="coming-soon">
+ <div class="catalog-heading"><div><p class="catalog-eyebrow">ADVANCE READINGS</p><h2>قراءات استباقية</h2><p>مواد تمهيدية للأعمال التي لم تصدر بعد، وليست مراجعات نهائية</p></div></div>
+ {upcoming.length>0?<div class="catalog-rail">{upcoming.map(review=><ReviewCard review={review}/>)}</div>:<div class="catalog-empty">لا توجد قراءات استباقية منشورة حالياً. لن نضيف عملاً قادماً دون بيانات كافية.</div>}
+</section>
+{(['game','series','movie'] as const).map(type=><section class="wrap catalog-section type-section">
+ <div class="catalog-heading"><div><p class="catalog-eyebrow">{type==='game'?'PLAY YOUR NEXT':type==='series'?'BINGE YOUR NEXT':'YOUR NEXT MOVIE'}</p><h2>{type==='game'?'أحدث الألعاب':type==='series'?'أحدث المسلسلات':'أحدث الأفلام'}</h2><p>اكتشف جديد قسم {TYPE_PLURAL[type]} ومراجعاته</p></div><a href={url(`category/${type}/`)} class="catalog-more">عرض الكل <span>←</span></a></div>
+ {byType[type].length>0?<div class="catalog-rail">{byType[type].slice(0,8).map(review=><ReviewCard review={review}/>)}</div>:<div class="catalog-empty">نعمل على إثراء قسم {TYPE_PLURAL[type]} بمحتوى جديد ومتوازن.</div>}
+</section>)}
+<section class="wrap catalog-section" id="all-reviews">
+ <div class="catalog-heading"><div><p class="catalog-eyebrow">THE WHOLE LIBRARY</p><h2>استكشف المكتبة</h2><p>بحث نصي سريع في جميع مراجعات الألعاب والأفلام والمسلسلات</p></div><span class="catalog-total">{reviews.length} مراجعة</span></div>
+ <pagefind-searchbox placeholder="ابحث عن لعبة أو فيلم أو مسلسل..." max-results="15" hide-shortcut></pagefind-searchbox>
+</section>
+</Base>
 
 <script>
- const stage=document.querySelector('[data-orbit-stage]');
- if(stage){
-  const cards=[...stage.querySelectorAll('[data-orbit-card]')];
-  const backdrop=stage.querySelector('[data-orbit-backdrop]');
-  const title=stage.querySelector('[data-orbit-title]');
-  const summary=stage.querySelector('[data-orbit-summary]');
-  const link=stage.querySelector('[data-orbit-link]');
-  const counter=stage.querySelector('[data-orbit-counter]');
-  const toggle=stage.querySelector('[data-orbit-toggle]');
-  let active=0,paused=window.matchMedia('(prefers-reduced-motion: reduce)').matches,hoverPaused=false,timer;
-  const syncMotion=()=>{stage.classList.toggle('is-paused',paused||hoverPaused);clearInterval(timer);if(!paused&&!hoverPaused&&cards.length>1)timer=setInterval(()=>show(active+1),5500)};
-  const show=(index)=>{if(!cards.length)return;active=(index+cards.length)%cards.length;const card=cards[active];cards.forEach((item,i)=>{item.classList.toggle('is-active',i===active);item.setAttribute('aria-current',i===active?'true':'false')});const img=card.querySelector('img');backdrop.src=img?.src||'';backdrop.alt='';title.textContent=card.textContent.trim();summary.textContent=card.dataset.summary||'';link.href=card.href;counter.textContent=String(active+1).padStart(2,'0')+' / '+String(cards.length).padStart(2,'0')};
-  cards.forEach((card,i)=>{card.dataset.summary=card.getAttribute('data-summary')||'';card.addEventListener('click',e=>{if(i!==active){e.preventDefault();show(i);syncMotion()}})});
-  stage.querySelector('[data-orbit-prev]')?.addEventListener('click',()=>{show(active-1);syncMotion()});
-  stage.querySelector('[data-orbit-next]')?.addEventListener('click',()=>{show(active+1);syncMotion()});
-  toggle?.addEventListener('click',()=>{paused=!paused;toggle.textContent=paused?'▶':'Ⅱ';toggle.setAttribute('aria-label',paused?'تشغيل الحركة':'إيقاف الحركة');toggle.setAttribute('aria-pressed',String(paused));syncMotion()});
-  stage.addEventListener('mouseenter',()=>{hoverPaused=true;syncMotion()});stage.addEventListener('mouseleave',()=>{hoverPaused=false;syncMotion()});
-  stage.addEventListener('focusin',()=>{hoverPaused=true;syncMotion()});stage.addEventListener('focusout',e=>{if(!stage.contains(e.relatedTarget)){hoverPaused=false;syncMotion()}});
-  stage.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){show(active+1);syncMotion()}else if(e.key==='ArrowRight'){show(active-1);syncMotion()}});
-  show(0);syncMotion();
+const hero=document.querySelector<HTMLElement>('.spotlight-slider');
+if(hero){
+ const data=[...hero.querySelectorAll<HTMLElement>('.spotlight-data i')].map(el=>({...el.dataset}));
+ const images=[...hero.querySelectorAll<HTMLImageElement>('.spotlight-image')];
+ const title=hero.querySelector<HTMLElement>('.spotlight-title');
+ const summary=hero.querySelector<HTMLElement>('.spotlight-description');
+ const category=hero.querySelector<HTMLElement>('.spotlight-category');
+ const link=hero.querySelector<HTMLAnchorElement>('.spotlight-link');
+ const count=hero.querySelector<HTMLElement>('.spotlight-count');
+ const progress=hero.querySelector<HTMLElement>('.spotlight-progress span');
+ const prev=hero.querySelector<HTMLButtonElement>('.spotlight-prev');
+ const next=hero.querySelector<HTMLButtonElement>('.spotlight-next');
+ const pause=hero.querySelector<HTMLButtonElement>('.spotlight-pause');
+ let current=0,activeImage=0,timer:number|undefined,textTimer:number|undefined,paused=false,temporarilyStopped=false;
+ const duration=7000;
+ const labels:Record<string,string>={game:'ترند الألعاب',series:'ترند المسلسلات',movie:'ترند الأفلام'};
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ function show(index:number){
+  if(!data.length)return;
+  current=(index+data.length)%data.length;
+  const target=current;
+  const item=data[target];
+  const nextImage=1-activeImage;
+  const src=item.backdrop||item.poster||'';
+  if(src){
+   images[nextImage].onload=null;
+   images[nextImage].removeAttribute('src');
+   let activated=false;
+   const activateImage=()=>{
+    if(activated||current!==target||!images[nextImage].naturalWidth)return;
+    activated=true;
+    images[nextImage].onload=null;
+    images[nextImage].classList.add('is-active');
+    images[activeImage].classList.remove('is-active');
+    activeImage=nextImage;
+   };
+   images[nextImage].onload=activateImage;
+   images[nextImage].src=src;
+   if(images[nextImage].complete)activateImage();
+  }
+  hero.querySelector('.spotlight-copy')?.classList.add('is-changing');
+  if(textTimer)window.clearTimeout(textTimer);
+  textTimer=window.setTimeout(()=>{
+   if(current!==target)return;
+   if(title)title.textContent=item.title||'ترند عالمي';
+   if(summary)summary.textContent=item.summary||'هذا العمل ضمن أبرز الأعمال وفق مؤشرات الشعبية المتاحة.';
+   if(category)category.textContent=(labels[item.type]||'ترند عالمي')+' · '+(item.source||'TRENDING');
+   if(link){link.href=item.href;if(item.external==='true'){link.target='_blank';link.rel='noopener noreferrer';link.textContent='اكتشف العمل ↗';}else{link.removeAttribute('target');link.removeAttribute('rel');link.textContent=item.preview==='true'?'اقرأ التحليل الاستباقي ↗':'اقرأ المراجعة ↗';}}
+   if(count)count.textContent=String(current+1).padStart(2,'0');
+   hero.querySelector('.spotlight-copy')?.classList.remove('is-changing');
+  },reduced?0:220);
+  if(progress)progress.style.width=((current+1)/data.length*100)+'%';
  }
+ function stop(){if(timer){window.clearInterval(timer);timer=undefined;}}
+ function start(){stop();if(data.length<2||reduced||paused||temporarilyStopped)return;timer=window.setInterval(()=>show(current+1),duration);}
+ function syncPauseButton(){if(!pause)return;pause.textContent=paused?'▶':'Ⅱ';pause.setAttribute('aria-label',paused?'استئناف التبديل التلقائي':'إيقاف التبديل التلقائي');pause.setAttribute('aria-pressed',String(paused));}
+ prev?.addEventListener('click',()=>{show(current-1);start();});
+ next?.addEventListener('click',()=>{show(current+1);start();});
+ pause?.addEventListener('click',()=>{paused=!paused;syncPauseButton();paused?stop():start();});
+ hero.addEventListener('mouseenter',()=>{temporarilyStopped=true;stop();});
+ hero.addEventListener('mouseleave',()=>{temporarilyStopped=false;start();});
+ hero.addEventListener('focusin',()=>{temporarilyStopped=true;stop();});
+ hero.addEventListener('focusout',(event)=>{if(!(event.relatedTarget instanceof Node)||!hero.contains(event.relatedTarget)){temporarilyStopped=false;start();}});
+ document.addEventListener('visibilitychange',()=>document.hidden?stop():start());
+ syncPauseButton();
+ if(data.length>1)start();
+}
+
+const aiPromo=document.querySelector<HTMLElement>('.ai-review-promo');
+if(aiPromo){
+ const expires=Date.parse(aiPromo.dataset.expires||'');
+ if(!Number.isFinite(expires)||Date.now()>=expires)aiPromo.remove();
+}
 </script>
-</Base>
+
