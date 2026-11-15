@@ -43,7 +43,7 @@ button,input{font:inherit}
 .brand-copy{display:flex;flex-direction:column;gap:1px}
 .brand-name{display:block;line-height:1;font-size:27px}
 .brand .brand-accent{color:var(--vc-accent)}
-.brand small{font-size:8px;line-height:1.5;letter-spacing:1.6px;color:#81796e;font-weight:900}
+.brand small{font-size:8px;line-height:1.5;letter-spacing:1.6px;color:var(--vc-muted);font-weight:900}
 .site-links{display:flex;align-items:center;gap:clamp(12px,2.4vw,30px);font-size:13px;font-weight:800;color:var(--vc-nav)}
 .site-links a{transition:color .2s}
 .site-links a:hover{color:var(--vc-accent)}
