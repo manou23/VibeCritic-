@@ -13,6 +13,9 @@
  --vc-card-border:#e2ddd3;
  --vc-nav:#57534d;
  --vc-on-dark:#f3f0e8;
+ --vc-logo-bg:#191919;
+ --vc-logo-v:#f3f0e8;
+ --vc-logo-c:var(--vc-accent);
  color-scheme:light;
  font-family:Tahoma,Arial,sans-serif;
  background:var(--vc-bg);
@@ -689,6 +692,9 @@ pagefind-searchbox{display:block;width:100%;max-width:100%;margin:0 0 18px}
 }
 .dark-mode{
   --vc-bg:#101318;
+  --vc-logo-bg:#101318;
+  --vc-logo-v:#f2f4f7;
+  --vc-logo-c:var(--vc-accent);
   --vc-text:#f2f4f7;
   --vc-border:#29313c;
   --vc-muted:#aab3bf;
