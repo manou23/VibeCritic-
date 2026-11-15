@@ -1,5 +1,5 @@
 ---
-import RawgLayout from '../../layouts/RawgLayout.astro';
+import Base from '../../layouts/Base.astro';
 import ScoreCard from '../../components/ScoreCard.astro';
 import { getCollection, render } from 'astro:content';
 import { TYPE_LABEL, fmtDate, url, optimizeImage, SITE_NAME } from '../../consts';
@@ -79,7 +79,7 @@ const reviewStructuredData = {
 };
 
 ---
-<RawgLayout title={`${d.title} — ${isPreview ? 'قراءة استباقية' : isLimited ? 'قراءة محدودة الأدلة' : 'مراجعة وتقييم'}`} description={reviewDescription} keywords={reviewKeywords} structuredData={reviewStructuredData} image={optimizeImage(d.backdrop || d.poster, 'backdrop')} pageType="article" publishedAt={d.date.toISOString()} articleSection={typeLabel}>
+<Base title={`${d.title} — ${isPreview ? 'قراءة استباقية' : isLimited ? 'قراءة محدودة الأدلة' : 'مراجعة وتقييم'}`} description={reviewDescription} keywords={reviewKeywords} structuredData={reviewStructuredData} image={optimizeImage(d.backdrop || d.poster, 'backdrop')} pageType="article" publishedAt={d.date.toISOString()} articleSection={typeLabel}>
 <article class="wrap article-page">
   <nav class="article-breadcrumbs" aria-label="مسار الصفحة"><a href={url('')}>الرئيسية</a><span aria-hidden="true">/</span><a href={url(`category/${d.type}/`)}>{TYPE_LABEL[d.type]}</a><span aria-hidden="true">/</span><span aria-current="page">{d.title}</span></nav>
   <a href={url('')} class="article-back">← العودة إلى VibeCritic</a>
@@ -185,7 +185,7 @@ const reviewStructuredData = {
     </aside>
   </div>
 </article>
-</RawgLayout>
+</Base>
 
 <script>
 const voteButtons=[...document.querySelectorAll<HTMLButtonElement>('[data-review-vote]')];
