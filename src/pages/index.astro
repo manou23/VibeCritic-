@@ -15,10 +15,11 @@ const isUpcomingReview=review=>{
 };
 const topRated=[...reviews].filter(review=>review.data.score>0&&!isUpcomingReview(review)&&review.data.reviewMode==='review').sort((a,b)=>b.data.score-a.data.score).slice(0,8);
 const upcoming=reviews.filter(isUpcomingReview).sort((a,b)=>String(a.data.releaseDate||'').localeCompare(String(b.data.releaseDate||''))).slice(0,8);
-const trendReviews=trending.filter(item=>['مرتفع','متوسط'].includes(item.trendConfidence)).map(item=>{
+const trendReviews=trending.filter(item=>['مرتفع','متوسط'].includes(item.trendConfidence)).flatMap(item=>{
  const review=reviews.find(entry=>entry.data.type===item.type&&entry.data.sourceId===item.sourceId);
- return review?{...item,review,title:review.data.title,summary:review.data.summary,poster:optimizeImage(review.data.poster||item.poster),backdrop:optimizeImage(review.data.backdrop||item.backdrop||item.poster,'backdrop'),href:url(`reviews/${review.id}/`)}:null;
-}).filter(Boolean).slice(0,10);
+ if(!review)return [];
+ return [{...item,review,title:review.data.title,summary:review.data.summary,poster:optimizeImage(review.data.poster||item.poster),backdrop:optimizeImage(review.data.backdrop||item.backdrop||item.poster,'backdrop'),href:url(`reviews/${review.id}/`)}];
+}).slice(0,10);
 const spotlight=trendReviews[0]||(topRated[0]?{...topRated[0].data,id:topRated[0].id,review:topRated[0],type:topRated[0].data.type,title:topRated[0].data.title,summary:topRated[0].data.summary,poster:optimizeImage(topRated[0].data.poster),backdrop:optimizeImage(topRated[0].data.backdrop||topRated[0].data.poster,'backdrop'),href:url('reviews/'+topRated[0].id+'/')}:null);
 const featured=topRated.filter(item=>item.id!==(spotlight?.review?.id||spotlight?.id)).slice(0,3);
 ---
