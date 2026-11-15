@@ -40,12 +40,13 @@ async function loadPublishedIndex(){
  for(const file of await fs.readdir(outDir)){
   if(!file.endsWith('.md'))continue;
   const type=['game','movie','series'].find(value=>file.startsWith(value+'-'));
-  if(type)keys.add(type+':'+file.slice(type.length+1,-3));
+  const id=file.match(/-(\\d+)\\.md$/)?.[1];
+  if(type&&id)keys.add(type+':'+id);
  }
  return keys;
 }
 async function savePublishedIndex(keys){
- await fs.writeFile(publishedPath,JSON.stringify({version:1,updatedAt:new Date().toISOString(),published:[...keys].sort()},null,2)+'\\n','utf8');
+ await fs.writeFile(publishedPath,JSON.stringify({version:1,updatedAt:new Date().toISOString(),published:[...keys].sort()},null,2)+'\n','utf8');
 }
 function classifyLearning(error){
  const message=String(error?.message||error||'');
@@ -1031,7 +1032,9 @@ async function main(){
   await fs.writeFile('src/data/trending.json',JSON.stringify(top,null,2)+'\n','utf8');
   console.log(`تم تحديث قائمة الترندات العالمية: ${top.length} أعمال.`);
  }catch(e){console.error('تعذر تحديث الترندات العالمية، سيتم الاحتفاظ بآخر قائمة:',e.message);}
- let done=[];try{done=JSON.parse(await fs.readFile(processedPath,'utf8'));}catch{}\n const publishedIndex=await loadPublishedIndex();\n console.log('سجل الأعمال المنشورة (published.json + ملفات المراجعات):',publishedIndex.size);
+ let done=[];try{done=JSON.parse(await fs.readFile(processedPath,'utf8'));}catch{}
+ const publishedIndex=await loadPublishedIndex();
+ console.log('سجل الأعمال المنشورة (published.json + ملفات المراجعات):',publishedIndex.size);
  const types=['game','series','movie'];
  const publishedFiles=(await fs.readdir(outDir)).filter(name=>name.endsWith('.md'));
  const publishedKeys=publishedIndex;
