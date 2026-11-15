@@ -1005,20 +1005,36 @@ img{max-width:100%}
 .dark-mode .curated-links a{background:#211f1a;border-color:#504a40}
 
 
-/* VibeCritic star-cut VC signature */
+/* Compact animated V+C star signature */
 .brand-copy,.footer-brand-copy{display:flex;flex-direction:column;align-items:center;gap:0}
-.vc-signature{display:block;width:88px;height:46px;overflow:visible}
-.brand-copy small,.footer-brand-copy small{display:block;margin-top:-1px;font-size:7px;line-height:1.5;letter-spacing:1.05px;white-space:nowrap;color:var(--vc-muted);font-weight:900}
+.vc-signature{display:block;width:54px;height:30px;overflow:visible}
+.brand-copy small,.footer-brand-copy small{display:block;margin-top:-2px;font-size:5.5px;line-height:1.4;letter-spacing:.8px;white-space:nowrap;color:var(--vc-muted);font-weight:900}
 .vc-mark-v,.vc-mark-c{transform-box:fill-box;transform-origin:center;will-change:transform}
-.vc-mark-v{animation:vc-v-cut 6.2s cubic-bezier(.2,.75,.25,1) infinite}
-.vc-mark-c{animation:vc-c-cut 6.2s cubic-bezier(.2,.75,.25,1) infinite}
-.vc-mark-star{transform-origin:87px 13px;animation:vc-star-flare 6.2s ease-in-out infinite}
-.vc-mark-shards{animation:vc-shards-burst 6.2s ease-in-out infinite;transform-origin:center}
-@keyframes vc-v-cut{0%,12%{transform:translate(-5px,2px) rotate(-8deg)}32%,76%{transform:translate(0,0) rotate(0)}90%,100%{transform:translate(-5px,2px) rotate(-8deg)}}
-@keyframes vc-c-cut{0%,17%{transform:translate(6px,-2px) rotate(8deg)}36%,76%{transform:translate(0,0) rotate(0)}90%,100%{transform:translate(6px,-2px) rotate(8deg)}}
-@keyframes vc-star-flare{0%,20%,78%,100%{opacity:.75;transform:scale(.78) rotate(0)}38%,58%{opacity:1;transform:scale(1.12) rotate(45deg)}}
-@keyframes vc-shards-burst{0%,16%{opacity:0;transform:scale(.6) rotate(-15deg)}35%,58%{opacity:1;transform:scale(1) rotate(0)}78%,100%{opacity:0;transform:scale(.55) rotate(35deg)}}
+.vc-mark-v{animation:vc-v-assemble 4.8s cubic-bezier(.2,.8,.2,1) infinite}
+.vc-mark-c{animation:vc-c-assemble 4.8s cubic-bezier(.2,.8,.2,1) infinite}
+.vc-mark-star{transform-origin:91px 13px;animation:vc-star-spark 4.8s ease-in-out infinite}
+.vc-mark-shards{transform-origin:center;animation:vc-shards-fly 4.8s ease-out infinite}
+@keyframes vc-v-assemble{
+  0%,8%{transform:translate(-13px,5px) rotate(-17deg) scale(.92)}
+  32%,68%{transform:translate(5px,0) rotate(0) scale(1)}
+  86%,100%{transform:translate(-13px,5px) rotate(-17deg) scale(.92)}
+}
+@keyframes vc-c-assemble{
+  0%,12%{transform:translate(15px,-5px) rotate(15deg) scale(.92)}
+  36%,68%{transform:translate(-7px,0) rotate(0) scale(1)}
+  86%,100%{transform:translate(15px,-5px) rotate(15deg) scale(.92)}
+}
+@keyframes vc-star-spark{
+  0%,18%,76%,100%{opacity:.35;transform:scale(.65) rotate(-35deg)}
+  38%,58%{opacity:1;transform:scale(1.25) rotate(45deg)}
+}
+@keyframes vc-shards-fly{
+  0%,14%,72%,100%{opacity:0;transform:translate(0,0) scale(.35) rotate(0)}
+  32%{opacity:1;transform:translate(-5px,-5px) scale(1.1) rotate(55deg)}
+  52%{opacity:.8;transform:translate(6px,5px) scale(.8) rotate(115deg)}
+  68%{opacity:0;transform:translate(12px,-8px) scale(.2) rotate(170deg)}
+}
 .footer-brand{display:inline-flex;align-items:center;justify-content:center}
-.footer-brand .vc-signature{width:76px;height:40px}
-@media(max-width:600px){.brand-copy small{font-size:6px;letter-spacing:.7px}}
-@media(prefers-reduced-motion:reduce){.vc-mark-v,.vc-mark-c,.vc-mark-star,.vc-mark-shards{animation:none!important;transform:none!important}.vc-mark-shards{opacity:.65}}
+.footer-brand .vc-signature{width:44px;height:25px}
+@media(max-width:600px){.brand-copy small{font-size:5px;letter-spacing:.55px}.vc-signature{width:48px;height:27px}}
+@media(prefers-reduced-motion:reduce){.vc-mark-v,.vc-mark-c,.vc-mark-star,.vc-mark-shards{animation:none!important;transform:none!important}.vc-mark-shards{opacity:.35}}
