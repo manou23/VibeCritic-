@@ -48,6 +48,9 @@ jobs:
       - name: Check JavaScript syntax
         run: |
           node --check scripts/generate-reviews.mjs
+          node --check scripts/provider-cooldown.mjs
+          node --check scripts/test-provider-cooldown.mjs
+          npm run test:provider-cooldown
           node --check scripts/knowledge-graph.mjs
           node --check scripts/ingest-d1-catalog-knowledge.mjs
           node --check scripts/ingest-review-knowledge.mjs
