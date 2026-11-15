@@ -112,7 +112,8 @@ async function main(){
     const hasPoster=Boolean(field(frontmatter,'poster'));
     const hasBackdrop=Boolean(field(frontmatter,'backdrop'));
     const hasVideo=validVideo(field(frontmatter,'youtubeVideoId'));
-    if(hasPoster&&hasBackdrop&&hasVideo)continue;
+    const hasExternalVideo=/^https:\/\/store\.steampowered\.com\/app\//.test(field(frontmatter,'externalVideoUrl'));
+    if(hasPoster&&hasBackdrop&&(hasVideo||hasExternalVideo))continue;
     scanned++;
     let image=null,video=null;
     try{
@@ -128,7 +129,7 @@ async function main(){
         if(rawgKey&&(sourceName==='RAWG'||sourceUrl.includes('rawg.io'))) image=await rawgArtwork(sourceId);
         else image={poster:field(frontmatter,'poster'),backdrop:field(frontmatter,'backdrop')||field(frontmatter,'poster')};
       }
-      if(!hasVideo&&!video&&youtubeKey)video=await youtubeTrailer(field(frontmatter,'originalTitle')||title,type);
+      if(!hasVideo&&!hasExternalVideo&&!video&&youtubeKey)video=await youtubeTrailer(field(frontmatter,'originalTitle')||title,type);
       let changed=false;
       if(!hasPoster){
         const poster=image?.poster||image?.backdrop||(video?.id?'https://img.youtube.com/vi/'+video.id+'/hqdefault.jpg':'');
@@ -138,14 +139,14 @@ async function main(){
         const backdrop=image?.backdrop||image?.poster||(video?.id?'https://img.youtube.com/vi/'+video.id+'/hqdefault.jpg':'');
         if(backdrop){frontmatter=setField(frontmatter,'backdrop',backdrop);if(!image?.poster&&!image?.backdrop)imagesAdded++;changed=true;}
       }
-      if(!hasVideo&&!video) console.log('No suitable official trailer found:',title,'originalTitle:',field(frontmatter,'originalTitle'),'type:',type,'sourceId:',rawSourceId);
+      if(!hasVideo&&!hasExternalVideo&&!video) console.log('No suitable official trailer found:',title,'originalTitle:',field(frontmatter,'originalTitle'),'type:',type,'sourceId:',rawSourceId);
       if(!hasVideo&&video?.id&&validVideo(video.id)){
         frontmatter=setField(frontmatter,'youtubeVideoId',video.id);
         frontmatter=setField(frontmatter,'youtubeVideoTitle',video.title||('Official trailer — '+title));
         videosAdded++;changed=true;
       }
       if(!field(frontmatter,'poster')&&!field(frontmatter,'backdrop'))withoutImage++;
-      if(!validVideo(field(frontmatter,'youtubeVideoId')))withoutVideo++;
+      if(!validVideo(field(frontmatter,'youtubeVideoId'))&&!/^https:\/\/store\.steampowered\.com\/app\//.test(field(frontmatter,'externalVideoUrl')))withoutVideo++;
       if(changed){
         content=content.replace(fm[0],'---\n'+frontmatter+'\n---');
         await fs.writeFile(full,content,'utf8');
