@@ -37,7 +37,7 @@ const orbitItems=trendReviews.length?trendReviews.slice(0,7):topRated.slice(0,7)
    <span class="vc-feature-shade"></span>
    <div class="vc-orbit-heading"><span class="vc-chip">● يتصدر المشهد · اختيارات VibeCritic</span><span class="vc-orbit-counter" data-orbit-counter>01 / {String(orbitItems.length||1).padStart(2,'0')}</span></div>
    <div class="vc-orbit-ring" aria-label="الأعمال المتحركة في دائرة الاهتمام">
-    {orbitItems.map((item,i)=><a class="vc-orbit-poster" data-orbit-card data-index={i} data-summary={item.summary} href={item.href} style={`--orbit-index:${i};--orbit-count:${orbitItems.length}`} aria-label={item.title}>
+    {orbitItems.map((item,i)=><a class="vc-orbit-poster" data-orbit-card data-index={i} data-summary={item.summary} href={item.href} style={`--orbit-index:${i};--orbit-count:${orbitItems.length};--orbit-angle:${i*360/orbitItems.length}deg`} aria-label={item.title}>
      <img src={item.poster||item.backdrop} alt="" loading="lazy"/><span>{item.title}</span>
     </a>)}
    </div>
