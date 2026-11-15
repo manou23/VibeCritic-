@@ -13031,7 +13031,7 @@
         "SUPERGIANT_GAMES"
       ],
       "firstSeenAt": "2026-11-14T20:16:16.092Z",
-      "updatedAt": "2026-11-14T23:40:03.778Z"
+      "updatedAt": "2026-11-15T00:26:58.886Z"
     },
     {
       "id": "concept:turn-based",
@@ -13041,7 +13041,7 @@
         "IGDB"
       ],
       "firstSeenAt": "2026-11-14T20:16:16.093Z",
-      "updatedAt": "2026-11-14T23:40:03.778Z"
+      "updatedAt": "2026-11-15T00:26:58.887Z"
     },
     {
       "id": "concept:adventure",
@@ -13052,7 +13052,7 @@
         "STEAM"
       ],
       "firstSeenAt": "2026-11-14T20:16:16.093Z",
-      "updatedAt": "2026-11-14T23:40:03.778Z"
+      "updatedAt": "2026-11-15T00:26:58.887Z"
     },
     {
       "id": "concept:pc",
@@ -13064,7 +13064,7 @@
         "STEAM"
       ],
       "firstSeenAt": "2026-11-14T20:16:16.093Z",
-      "updatedAt": "2026-11-15T00:15:19.735Z"
+      "updatedAt": "2026-11-15T00:26:58.887Z"
     },
     {
       "id": "concept:playstation-5",
@@ -13076,7 +13076,7 @@
         "STEAM"
       ],
       "firstSeenAt": "2026-11-14T20:16:16.093Z",
-      "updatedAt": "2026-11-15T00:15:19.735Z"
+      "updatedAt": "2026-11-15T00:26:58.887Z"
     },
     {
       "id": "concept:xbox-series-x-s",
@@ -13088,7 +13088,7 @@
         "STEAM"
       ],
       "firstSeenAt": "2026-11-14T20:16:16.093Z",
-      "updatedAt": "2026-11-15T00:15:19.735Z"
+      "updatedAt": "2026-11-15T00:26:58.887Z"
     },
     {
       "id": "company:sandfall-interactive",
@@ -13098,7 +13098,7 @@
         "IGDB"
       ],
       "firstSeenAt": "2026-11-14T20:16:16.093Z",
-      "updatedAt": "2026-11-14T23:40:03.779Z"
+      "updatedAt": "2026-11-15T00:26:58.888Z"
     },
     {
       "id": "concept:action",
@@ -73359,76 +73359,6 @@
       "observations": 2
     },
     {
-      "id": "work:game-347668-resident-evil-requiem-رعب-يعرف-متى-يهمس-ومتى-يطلق-النار|release_date|IGDB|2026-02-27",
-      "workId": "work:game-347668-resident-evil-requiem-رعب-يعرف-متى-يهمس-ومتى-يطلق-النار",
-      "field": "release_date",
-      "value": "2026-02-27",
-      "normalizedValue": "2026-02-27",
-      "source": "IGDB",
-      "url": "https://www.igdb.com/games/347668",
-      "sourceClass": "game-database",
-      "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
-      "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
-      "firstObservedAt": "2026-11-14T20:27:19.034Z",
-      "lastObservedAt": "2026-11-15T00:15:19.734Z",
-      "observations": 3
-    },
-    {
-      "id": "work:game-347668-resident-evil-requiem-رعب-يعرف-متى-يهمس-ومتى-يطلق-النار|genres|IGDB|Action | Survival Horror",
-      "workId": "work:game-347668-resident-evil-requiem-رعب-يعرف-متى-يهمس-ومتى-يطلق-النار",
-      "field": "genres",
-      "value": [
-        "Survival Horror",
-        "Action"
-      ],
-      "normalizedValue": "Action | Survival Horror",
-      "source": "IGDB",
-      "url": "https://www.igdb.com/games/347668",
-      "sourceClass": "game-database",
-      "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
-      "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
-      "firstObservedAt": "2026-11-14T20:27:19.034Z",
-      "lastObservedAt": "2026-11-15T00:15:19.734Z",
-      "observations": 3
-    },
-    {
-      "id": "work:game-347668-resident-evil-requiem-رعب-يعرف-متى-يهمس-ومتى-يطلق-النار|platforms|IGDB|Nintendo Switch 2 | PC | PlayStation 5 | Xbox Series X|S",
-      "workId": "work:game-347668-resident-evil-requiem-رعب-يعرف-متى-يهمس-ومتى-يطلق-النار",
-      "field": "platforms",
-      "value": [
-        "PlayStation 5",
-        "Xbox Series X|S",
-        "PC",
-        "Nintendo Switch 2"
-      ],
-      "normalizedValue": "Nintendo Switch 2 | PC | PlayStation 5 | Xbox Series X|S",
-      "source": "IGDB",
-      "url": "https://www.igdb.com/games/347668",
-      "sourceClass": "game-database",
-      "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
-      "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
-      "firstObservedAt": "2026-11-14T20:27:19.034Z",
-      "lastObservedAt": "2026-11-15T00:15:19.734Z",
-      "observations": 3
-    },
-    {
-      "id": "work:game-347668-resident-evil-requiem-رعب-يعرف-متى-يهمس-ومتى-يطلق-النار|developers|IGDB|Capcom Development Division 1",
-      "workId": "work:game-347668-resident-evil-requiem-رعب-يعرف-متى-يهمس-ومتى-يطلق-النار",
-      "field": "developers",
-      "value": [
-        "Capcom Development Division 1"
-      ],
-      "normalizedValue": "Capcom Development Division 1",
-      "source": "IGDB",
-      "url": "https://www.igdb.com/games/347668",
-      "sourceClass": "game-database",
-      "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
-      "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
-      "firstObservedAt": "2026-11-14T20:27:19.034Z",
-      "lastObservedAt": "2026-11-15T00:15:19.734Z",
-      "observations": 3
-    },
-    {
       "id": "work:game-305152-كلير-أوبسكور-الرحلة-33|release_date|IGDB|2025-04-24",
       "workId": "work:game-305152-كلير-أوبسكور-الرحلة-33",
       "field": "release_date",
@@ -73440,8 +73370,8 @@
       "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
       "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
       "firstObservedAt": "2026-11-14T20:16:16.090Z",
-      "lastObservedAt": "2026-11-14T23:40:03.776Z",
-      "observations": 4
+      "lastObservedAt": "2026-11-15T00:26:58.885Z",
+      "observations": 5
     },
     {
       "id": "work:game-305152-كلير-أوبسكور-الرحلة-33|genres|IGDB|Adventure | Role-playing (RPG) | Turn-based",
@@ -73459,8 +73389,8 @@
       "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
       "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
       "firstObservedAt": "2026-11-14T20:16:16.090Z",
-      "lastObservedAt": "2026-11-14T23:40:03.776Z",
-      "observations": 4
+      "lastObservedAt": "2026-11-15T00:26:58.885Z",
+      "observations": 5
     },
     {
       "id": "work:game-305152-كلير-أوبسكور-الرحلة-33|platforms|IGDB|PC | PlayStation 5 | Xbox Series X|S",
@@ -73478,8 +73408,8 @@
       "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
       "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
       "firstObservedAt": "2026-11-14T20:16:16.090Z",
-      "lastObservedAt": "2026-11-14T23:40:03.776Z",
-      "observations": 4
+      "lastObservedAt": "2026-11-15T00:26:58.885Z",
+      "observations": 5
     },
     {
       "id": "work:game-305152-كلير-أوبسكور-الرحلة-33|developers|IGDB|Sandfall Interactive",
@@ -73495,8 +73425,8 @@
       "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
       "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
       "firstObservedAt": "2026-11-14T20:16:16.090Z",
-      "lastObservedAt": "2026-11-14T23:40:03.776Z",
-      "observations": 4
+      "lastObservedAt": "2026-11-15T00:26:58.885Z",
+      "observations": 5
     },
     {
       "id": "work:series-57243-دكتور-هو|catalog_original_title|VIBECRITIC_D1|Doctor Who",
@@ -75599,6 +75529,76 @@
       "firstObservedAt": "2026-11-14T23:46:05.256Z",
       "lastObservedAt": "2026-11-15T00:02:41.211Z",
       "observations": 2
+    },
+    {
+      "id": "work:game-347668-resident-evil-requiem-رعب-يعرف-متى-يهمس-ومتى-يطلق-النار|release_date|IGDB|2026-02-27",
+      "workId": "work:game-347668-resident-evil-requiem-رعب-يعرف-متى-يهمس-ومتى-يطلق-النار",
+      "field": "release_date",
+      "value": "2026-02-27",
+      "normalizedValue": "2026-02-27",
+      "source": "IGDB",
+      "url": "https://www.igdb.com/games/347668",
+      "sourceClass": "game-database",
+      "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+      "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
+      "firstObservedAt": "2026-11-14T20:27:19.034Z",
+      "lastObservedAt": "2026-11-15T00:15:19.734Z",
+      "observations": 3
+    },
+    {
+      "id": "work:game-347668-resident-evil-requiem-رعب-يعرف-متى-يهمس-ومتى-يطلق-النار|genres|IGDB|Action | Survival Horror",
+      "workId": "work:game-347668-resident-evil-requiem-رعب-يعرف-متى-يهمس-ومتى-يطلق-النار",
+      "field": "genres",
+      "value": [
+        "Survival Horror",
+        "Action"
+      ],
+      "normalizedValue": "Action | Survival Horror",
+      "source": "IGDB",
+      "url": "https://www.igdb.com/games/347668",
+      "sourceClass": "game-database",
+      "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+      "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
+      "firstObservedAt": "2026-11-14T20:27:19.034Z",
+      "lastObservedAt": "2026-11-15T00:15:19.734Z",
+      "observations": 3
+    },
+    {
+      "id": "work:game-347668-resident-evil-requiem-رعب-يعرف-متى-يهمس-ومتى-يطلق-النار|platforms|IGDB|Nintendo Switch 2 | PC | PlayStation 5 | Xbox Series X|S",
+      "workId": "work:game-347668-resident-evil-requiem-رعب-يعرف-متى-يهمس-ومتى-يطلق-النار",
+      "field": "platforms",
+      "value": [
+        "PlayStation 5",
+        "Xbox Series X|S",
+        "PC",
+        "Nintendo Switch 2"
+      ],
+      "normalizedValue": "Nintendo Switch 2 | PC | PlayStation 5 | Xbox Series X|S",
+      "source": "IGDB",
+      "url": "https://www.igdb.com/games/347668",
+      "sourceClass": "game-database",
+      "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+      "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
+      "firstObservedAt": "2026-11-14T20:27:19.034Z",
+      "lastObservedAt": "2026-11-15T00:15:19.734Z",
+      "observations": 3
+    },
+    {
+      "id": "work:game-347668-resident-evil-requiem-رعب-يعرف-متى-يهمس-ومتى-يطلق-النار|developers|IGDB|Capcom Development Division 1",
+      "workId": "work:game-347668-resident-evil-requiem-رعب-يعرف-متى-يهمس-ومتى-يطلق-النار",
+      "field": "developers",
+      "value": [
+        "Capcom Development Division 1"
+      ],
+      "normalizedValue": "Capcom Development Division 1",
+      "source": "IGDB",
+      "url": "https://www.igdb.com/games/347668",
+      "sourceClass": "game-database",
+      "sourceScope": "بيانات تعريف الألعاب والمنصات والشركات والتصنيفات المدرجة في IGDB.",
+      "sourceLimitations": "لا يثبت وحده جودة تجربة اللعب أو الأداء الفعلي أو المبيعات.",
+      "firstObservedAt": "2026-11-14T20:27:19.034Z",
+      "lastObservedAt": "2026-11-15T00:15:19.734Z",
+      "observations": 3
     }
   ],
   "conflicts": [
@@ -83014,12 +83014,12 @@
       "originalTitle": "Call of Duty: Modern Warfare 4",
       "headline": "Modern Warfare 4: عودة قوية لا تعني أن كل جبهات الحرب انتصرت",
       "summary": "مراجعة نقدية لـ Call of Duty: Modern Warfare 4 بعد الإطلاق، توازن بين حملة قصصية قوية وعودة DMZ وطريقة إطلاق النار المصقولة، وبين تفاوت خرائط اللعب الجماعي ومشكلات الاتصال والإيقاع وبعض القرارات التي تحتاج إلى ضبط.",
-      "verdict": "Modern Warfare 4 من أفضل عودات السلسلة في السنوات الأخيرة، لكنها ليست انتصاراً كاملاً. الحملة تمنح اللعبة عمودها الفقري، وDMZ يضيف هوية مختلفة قابلة للنمو، بينما يظل اللعب الجماعي أقل ثباتاً مما ينبغي بسبب تفاوت الخرائط وتجربة الاتصال والظهور. تقييم VibeCritic هو 7.9/10: لعبة قوية تستحق الاهتمام، لا تحفة تستحق العلامة الكاملة.",
+      "verdict": "تقدم Modern Warfare 4 حملة سينمائية قوية وطور DMZ أعمق من المعتاد، لكن اللعب الجماعي لا يوازيهما ابتكاراً وثباتاً. مراجعة VibeCritic التحريرية المبنية على مقارنة اختبارات مستقلة متعددة تمنحها 7.9/10: عودة جيدة، لا إنجاز استثنائي ولا حزمة متوازنة بالكامل.",
       "score": 7.9,
       "scores": {
         "storyScore": 8,
-        "visualsScore": 8.4,
-        "soundScore": 8.3,
+        "visualsScore": 8.3,
+        "soundScore": 8.2,
         "pacingScore": 7
       },
       "tags": [
@@ -83061,7 +83061,7 @@
       "sourceUrl": "https://www.callofduty.com/blog/2026/05/call-of-duty-modern-warfare-4-announcement",
       "catalogSources": [],
       "sourcePath": "game-call-of-duty-modern-warfare-4-2026.md",
-      "excerpt": "حملة تعرف ما تريد قوله، لكنها ليست بلا عثرات تضع Modern Warfare 4 الحرب في شبه الجزيرة الكورية، وتربط مصير مجموعة من الجنود الكوريين الجنوبيين بمسار كابتن برايس الذي يعمل خارج المؤسسة العسكرية. هذا التوازي يمنح الحملة فرصة لتوسيع زاوية السرد بدلاً من الاعتماد الكامل على الشخصيات المألوفة. تنقل المهمات اللاعب بين جبهات مختلفة، من القتال في كوريا إلى عمليات في نيويورك وباريس ومومباي، وهو تنوع يساعد على منع الحملة من التحول إلى سلسلة اشتباكات متشابهة. أبرز نقاط القوة في هذا البناء هي قدرته على الجمع بين مشاهد الحركة الكبيرة واللحظات الأقرب إلى الجنود على الأرض. كما أن إغلاق بعض خطوط السلسلة يمنح الأحداث وزناً عاطفياً لا يتوفر دائماً في إصدار سنوي سريع. لكن الطموح السردي لا يعني أن كل الخيوط متساوية القوة؛ فبعض المراجعات أشارت إلى أن القصة تصبح متشابكة أو أن بعض المواجهات الختامية لا تبلغ مستوى التمهيد لها. لذلك تستحق الحملة 8.0 لا 9.5: قوية وممتعة، لكنها ليست كتابة استثنائية بلا تحفظات. إطلاق النار: نقطة القوة الأكثر إقناعاً تستثمر Infinity Ward في جعل السلاح أكثر ارتباطاً بإدخال اللاعب، مع إزالة انتشار الطلقات العشوائي أثناء إطلاق النار من الخصر، وإعادة ضبط الارتداد وحركة السلاح، وتحسين انتقالات الحركة والتصويب. هذه التغييرات ليست مجرد أرقام في قائمة الميزات؛ إنها تعالج إحساساً أساسياً في لعبة تصويب تنافسية: أن تكون نتيجة المواجهة مفهومة، وأن يشعر اللاعب بأن التحكم والدقة والتموضع هي التي صنعت الفارق. الانطباعات النقدية المنشورة تتفق بدرجة ملحوظة على أن الإحساس بالأسلحة من أبرز مكاسب الإصدار، وأن الاشتباكات تبدو حادة ومباشرة. لكن يجب عدم الخلط بين جودة تصميم إطلاق النار وثبات التجربة الشبكية؛ فبعض المراجعات رصدت مشكلات في تسجيل الإصابات أو الاتصال، وهي أمور قد تجعل السلاح يبدو ممتازاً في لحظة وغير منصف في أخرى. لهذا تحصل المنظومة على تقدير مرتفع، لكن ليس كاملاً: الأساس قوي، والاتصال يظل جزءاً من جودة اللعب لا تفصيلاً منفصلاً عنها. اللعب الجماعي: الجبهة التي لم تنتصر بالكا",
+      "excerpt": "حملة تعرف ما تريد قوله، لكنها ليست بلا عثرات تضع Modern Warfare 4 الحرب في شبه الجزيرة الكورية، وتربط مصير مجموعة من الجنود الكوريين الجنوبيين بمسار كابتن برايس الذي يعمل خارج المؤسسة العسكرية. هذا التوازي يمنح الحملة فرصة لتوسيع زاوية السرد بدلاً من الاعتماد الكامل على الشخصيات المألوفة. تنقل المهمات اللاعب بين جبهات مختلفة، من القتال في كوريا إلى عمليات في نيويورك وباريس ومومباي، وهو تنوع يساعد على منع الحملة من التحول إلى سلسلة اشتباكات متشابهة. أبرز نقاط القوة في هذا البناء هي قدرته على الجمع بين مشاهد الحركة الكبيرة واللحظات الأقرب إلى الجنود على الأرض. كما أن إغلاق بعض خطوط السلسلة يمنح الأحداث وزناً عاطفياً لا يتوفر دائماً في إصدار سنوي سريع. لكن الطموح السردي لا يعني أن كل الخيوط متساوية القوة؛ فبعض المراجعات أشارت إلى أن القصة تصبح متشابكة أو أن بعض المواجهات الختامية لا تبلغ مستوى التمهيد لها. تتقاطع مراجعات Push Square وShacknews وGame Informer على قوة المشاهد وتنوع المنظور، لكنها ترصد تفاوتاً في إغلاق بعض أقواس الشخصيات أو تماسك الخط السردي. المحصلة: حملة ناجحة في الإخراج والتنوع، وأقل إحكاماً في الكتابة من أن توصف بالاستثنائية. إطلاق النار: نقطة القوة الأكثر إقناعاً تستثمر Infinity Ward في جعل السلاح أكثر ارتباطاً بإدخال اللاعب، مع إزالة انتشار الطلقات العشوائي أثناء إطلاق النار من الخصر، وإعادة ضبط الارتداد وحركة السلاح، وتحسين انتقالات الحركة والتصويب. هذه التغييرات ليست مجرد أرقام في قائمة الميزات؛ إنها تعالج إحساساً أساسياً في لعبة تصويب تنافسية: أن تكون نتيجة المواجهة مفهومة، وأن يشعر اللاعب بأن التحكم والدقة والتموضع هي التي صنعت الفارق. الانطباعات النقدية المنشورة تتفق بدرجة ملحوظة على أن الإحساس بالأسلحة من أبرز مكاسب الإصدار، وأن الاشتباكات تبدو حادة ومباشرة. لكن يجب عدم الخلط بين جودة تصميم إطلاق النار وثبات التجربة الشبكية؛ فبعض المراجعات رصدت مشكلات في تسجيل الإصابات أو الاتصال، وهي أمور قد تجعل السلاح يبدو ممتازاً في لحظة وغير منصف في أخرى. تشي",
       "knowledgeClass": "editorial-opinion-not-verified-fact"
     },
     {
@@ -83072,13 +83072,13 @@
       "originalTitle": "Clair Obscur: Expedition 33",
       "headline": "Clair Obscur: Expedition 33 — كيف يحوّل القتال القائم على الأدوار إلى حوار مع اللاعب",
       "summary": "لعبة تقمص أدوار يابانية الطابع من تطوير Sandfall Interactive، تدور في عالم مستوحى من حقبة Belle Époque، وتجمع القتال القائم على الأدوار بآليات توقيت تفاعلية واستكشاف جماعي.",
-      "verdict": "تنجح Clair Obscur: Expedition 33 في منح القتال القائم على الأدوار إحساساً جسدياً وحاضراً، وتربط عالمها الفني بفكرة سردية واضحة. تكمن قوتها في التماسك بين الإيقاع والهوية والموسيقى، بينما تحدّ منها بعض تفاوتات التوازن وكثافة الأنظمة في مراحل متقدمة. إنها لعبة بارزة في جيلها، لا لأنها تعيد اختراع كل عنصر، بل لأنها تجعل عناصر مألوفة تتحدث اللغة نفسها.",
-      "score": 9,
+      "verdict": "تقدم Clair Obscur: Expedition 33 هوية فنية وموسيقية استثنائية وقتالاً يدمج التخطيط بردود الفعل بذكاء، وتنجح في بناء حكاية مؤثرة وشخصيات تعلق بالذاكرة. لكنها ليست تجربة متكاملة: ضغط الصد والمراوغة قد يتحول إلى عبء، والاستكشاف والواجهة وإدارة الأهداف أقل جودة من القتال والعرض. إنها لعبة ممتازة وقريبة من الاستثنائية، لكن عيوبها تمنعها من بلوغ التسعة.",
+      "score": 8.9,
       "scores": {
-        "storyScore": 9.2,
-        "visualsScore": 9.3,
-        "soundScore": 8.9,
-        "pacingScore": 8.6
+        "storyScore": 8.9,
+        "visualsScore": 9.2,
+        "soundScore": 9.1,
+        "pacingScore": 8.2
       },
       "tags": [
         "Clair Obscur",
@@ -88017,5 +88017,5 @@
     "editorialReviews": 58,
     "editorialRelations": 233
   },
-  "updatedAt": "2026-11-15T00:15:19.742Z"
+  "updatedAt": "2026-11-15T00:26:58.895Z"
 }
