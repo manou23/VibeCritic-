@@ -57,6 +57,7 @@ jobs:
           node --check scripts/test-reasoning-quality.mjs
           npm run test:knowledge-graph
           npm run test:editorial-reasoning
+          node --check scripts/backfill-review-videos.mjs
           node --check scripts/backfill-arabic-titles.mjs
           node --check scripts/backfill-game-platforms.mjs
           node --check functions/api/review.js
@@ -188,7 +189,7 @@ jobs:
       - name: Validate generated review scores and quality metadata
         run: npm run validate:reviews
       - name: Backfill review posters, backdrops and official trailers
-        if: (github.event_name == 'schedule') || (github.event_name == 'workflow_dispatch' && !inputs.game_catalog_backfill_only) || (github.event_name == 'push' && (contains(github.event.head_commit.message, '[generate-reviews]') || contains(github.event.head_commit.message, '[media-backfill]')))
+        if: (github.event_name == 'schedule') || (github.event_name == 'workflow_dispatch' && !inputs.game_catalog_backfill_only) || (github.event_name == 'push')
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
