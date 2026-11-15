@@ -10,6 +10,8 @@ type: movie
 date: 2026-11-15
 releaseDate: "2023-07-21"
 poster: "https://image.tmdb.org/t/p/w500/ptpr0kGAckfQkJeJyaMqu3dla2x.jpg"
+youtubeVideoId: "uYPbbksJxIg"
+youtubeVideoTitle: "Oppenheimer | New Trailer"
 score: 8.5
 storyScore: 8.5
 visualsScore: 9.0
