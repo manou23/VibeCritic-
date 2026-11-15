@@ -1268,16 +1268,17 @@ async function main(){
   const [futureGames,recentGames,futureSeries,recentSeries,futureMovies,recentMovies]=await Promise.all([upcomingGames(),games(),tmdb('series','upcoming'),tmdb('series','releases'),tmdb('movie','upcoming'),tmdb('movie','releases')]);
   rawPools={game:[...futureGames,...recentGames],series:[...futureSeries,...recentSeries],movie:[...futureMovies,...recentMovies]};
  }
+ const isRecentEditorialWork=item=>{
+  const releaseDate=String(item?.date||'').slice(0,10);
+  // VibeCritic only publishes works released in 2025 or later, including verified upcoming releases.
+  return /^\\d{4}-\\d{2}-\\d{2}$/.test(releaseDate)&&releaseDate>='2025-01-01';
+ };
  const eligible=items=>{
   const seen=new Set();
   return items.filter(x=>{
    const key=x.type+':'+x.id,upgrade=isPreviewUpgrade(x,publishedModes,today);
    if(seen.has(key)||String(x.description||'').trim().length<60||((done.includes(key)||publishedKeys.has(key))&&!upgrade))return false;
-   const releaseDate=String(x.date||'').slice(0,10);
-   const recentCutoff=addDays(today,-730);
-   // Do not fill the catalogue with unrelated classics: keep archive candidates to the last two years.
-   // Explicitly prioritized major franchises remain eligible even when their release date is older.
-   if(!upgrade&&editorialPriority(x)>=999&&/^\\d{4}-\\d{2}-\\d{2}$/.test(releaseDate)&&releaseDate<recentCutoff)return false;
+   if(!isRecentEditorialWork(x))return false;
    if(x.type==='game'&&!upgrade&&communityDemand(x)<2&&editorialPriority(x)>=999)return false;
    seen.add(key);return true;
   }).sort((a,b)=>{
@@ -1294,7 +1295,7 @@ async function main(){
  const pendingJobs=resumableContentJobs();
  const deferredKeys=new Set(Object.values(contentQueue.jobs).filter(job=>['discovered','researching','waiting','ready','generating','quality-check'].includes(job.status)&&Number(job.nextAttemptAt||0)>Date.now()).map(job=>job.key));
  for(const type of types){
-  const resumed=pendingJobs.filter(job=>job.type===type).map(job=>job.item).filter(item=>item&&!publishedKeys.has(contentJobKey(item)));
+  const resumed=pendingJobs.filter(job=>job.type===type).map(job=>job.item).filter(item=>item&&!publishedKeys.has(contentJobKey(item))&&isRecentEditorialWork(item));
   const seen=new Set();
   pools[type]=[...resumed,...pools[type].filter(item=>!deferredKeys.has(contentJobKey(item)))].filter(item=>{const key=contentJobKey(item);if(seen.has(key))return false;seen.add(key);return true;});
  }
