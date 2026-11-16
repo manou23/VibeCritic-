@@ -425,6 +425,8 @@ async function recordProviderOutcome(name,success,error=null,measurement=null,it
    const until=providerReset||Date.now()+60*1000;
    const isDaily=explicitDaily||quotaExhausted;
   const dailyTokenWindow=/tokens per day|\bTPD\b/i.test(message);
+  // TPD exhaustion is a daily block too: keep capacity planning aligned with the provider reset.
+  entry.blockedReason=isDaily?'daily-limit':'rate-limit';
    // Honor explicit provider reset hints (including durations embedded in JSON error bodies).
    // Fall back to local end-of-day only when a daily quota error gives no reset time.
    entry.blockedUntil=dailyTokenWindow?until:isDaily?(providerReset||new Date(algeriaDate()+'T23:59:59+01:00').getTime()):Math.min(Math.max(until,Date.now()+15000),Date.now()+15*60*1000);
