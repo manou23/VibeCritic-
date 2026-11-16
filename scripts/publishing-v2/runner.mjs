@@ -48,7 +48,16 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
  if(job.status==='queued'){job=transition(job,'research-started',{},now);state.jobs[job.key]=job;await save();}
  if(job.status==='researching'){
   try{const evidence=await adapters.collectEvidence(job.item);const evidenceCheck=validateEvidence(evidence);if(!evidenceCheck.valid)throw Error(evidenceCheck.errors.join(' '));job=transition(job,'research-saved',{evidence},now);state.jobs[job.key]=job;await save();}
-  catch(error){job=transition(job,'provider-deferred',{lastError:'Evidence: '+String(error?.message||error),nextAttemptAt:now+3600000,resumeTo:'researching',countAttempt:false},now);state.jobs[job.key]=job;await save();return {action:'research-deferred',key:job.key,providerCalls:0};}
+  catch(error){
+   const message=String(error?.message||error);
+   // Permanent evidence gaps should not pin the single-job queue for hours.
+   if(/No sufficiently matching independent encyclopedia page|Independent source has insufficient detail|Primary source metadata is too thin|No HTTPS poster available/.test(message)){
+    job=transition(job,'abandoned',{lastError:'Evidence rejected: '+message},now);
+    state.jobs[job.key]=job;await save();return {action:'research-rejected',key:job.key,reason:message,providerCalls:0};
+   }
+   job=transition(job,'provider-deferred',{lastError:'Evidence: '+message,nextAttemptAt:now+3600000,resumeTo:'researching',countAttempt:false},now);
+   state.jobs[job.key]=job;await save();return {action:'research-deferred',key:job.key,providerCalls:0};
+  }
  }
  if(job.status==='writing'){
   const day=new Date(now).toISOString().slice(0,10);state.providerUsage[day]||={};state.providerCooldowns||={};const eligibility={...state.providerUsage[day]};for(const p0 of providers){eligibility[p0.id]={...(eligibility[p0.id]||{}),cooldownUntil:state.providerCooldowns[p0.id]?.until||null};}const p=chooseFreeProvider(providers,eligibility,now);
