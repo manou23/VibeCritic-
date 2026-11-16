@@ -22,6 +22,6 @@ const result=await runCycle({
 });
 console.log('V2 cycle:',JSON.stringify({action:result.action,key:result.key,stage:result.stage,provider:result.provider,providerCalls:result.providerCalls,errors:result.errors||[]}));
 console.log('Queue:',JSON.stringify(Object.values(state.jobs).map(j=>({key:j.key,status:j.status,stage:j.stage,attempts:j.attempts,nextAttemptAt:j.nextAttemptAt,fileWritten:!!j.fileWritten,lastError:j.lastError?String(j.lastError).slice(0,240):null}))));
-if(result.articlePath){const articleId=String(result.articlePath).split('/').pop().replace(/\\.md$/,'');console.log('Article deployment URL:','https://vibecritic.pages.dev/reviews/'+encodeURIComponent(articleId)+'/');}
+if(result.articlePath){const articleId=String(result.articlePath).split('/').pop().replace(/\.md$/,'');console.log('Article deployment URL:','https://vibecritic.pages.dev/reviews/'+encodeURIComponent(articleId)+'/');}
 if(result.action==='deployment-pending')console.log('Deployment not visible yet; the next scheduled cycle will verify again.');
 if(result.action==='published')console.log('Verified live article:',result.articlePath);
