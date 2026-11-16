@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T19:48:07.959Z",
+  "updatedAt": "2026-11-16T19:49:14.159Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -161,7 +161,7 @@
         ],
         "popularity": 14089
       },
-      "status": "ready",
+      "status": "abandoned",
       "stage": 3,
       "parts": [
         {
@@ -225,9 +225,9 @@
       },
       "attempts": 0,
       "createdAt": "2026-11-16T17:08:19.010Z",
-      "updatedAt": "2026-11-16T19:48:05.481Z",
+      "updatedAt": "2026-11-16T19:49:14.155Z",
       "nextAttemptAt": null,
-      "lastError": null,
+      "lastError": "Skipped: an existing review already covers this title.",
       "lastProvider": "groq",
       "article": {
         "title": "Cyberpunk 2077",
