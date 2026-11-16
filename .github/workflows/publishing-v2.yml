@@ -40,11 +40,14 @@ jobs:
           OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL }}
         run: node scripts/publishing-v2/run-cycle.mjs
       - name: Build and validate generated content
+        env:
+          CF_PAGES: '1'
         run: |
           npm run validate:reviews
           npm run build
           npm run validate:build
       - name: Commit durable queue and any newly written article
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
