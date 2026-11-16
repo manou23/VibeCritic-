@@ -560,6 +560,12 @@ async function generateWithOpenRouter(prompt){
  }
  throw new Error('OpenRouter لم يرجع JSON صالحاً بعد 3 محاولات: '+lastIssue);
 }
+export function validateCompletedArticle(value){
+ const review=String(value??'').trim();
+ const words=review.split(/\s+/u).filter(Boolean).length;
+ if(review.length<3200||words<650)throw new Error('المقال النهائي يجب أن يحتوي 650 كلمة و3200 حرف على الأقل');
+ return review;
+}
 export function validateGeneratedReview(d){
  const review=String(d?.review||'').replace(/<[^>]*>/g,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').trim();
  const pros=Array.isArray(d?.pros)?d.pros.filter(x=>String(x||'').trim()):[];
@@ -1158,8 +1164,7 @@ async function writeReview(item){
   return null;
  }
  const assembledReview=draft.sections.map(section=>'### '+section.heading+'\n\n'+section.content).join('\n\n');
- const assembledWords=assembledReview.split(/\s+/u).filter(Boolean).length;
- if(assembledReview.length<3200||assembledWords<650)throw new Error('المقال النهائي لم يبلغ المعيار الكامل: يلزم 650 كلمة و3200 حرف على الأقل؛ ستبقى المسودّة محفوظة دون نشر.');
+ validateCompletedArticle(assembledReview);
  const a={...part,review:assembledReview};
  await updateContentJob(enriched,{status:'quality-check',item:enriched,draft,evidenceDossier,nextAttemptAt:0,lastError:null});
  const date=algeriaDate();
