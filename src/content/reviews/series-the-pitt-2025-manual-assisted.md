@@ -25,7 +25,7 @@ cons:
   - "الضغط المتواصل لا يترك دائماً مساحة للتنفس"
 tags: ["The Pitt", "series", "VibeCritic", "2025"]
 genres: ["دراما"]
-sourceName: "Warner Bros. Television / HBO Pressroom"
+sourceName: "HBO / The Guardian / Rotten Tomatoes / Metacritic"
 sourceId: "manual-assisted-series-the-pitt-2025-manual-assisted"
 sourceUrl: "https://press.wbd.com/na/media-release/hbo-max/max-original-drama-series-pitt-debuts-january-9"
 aiGenerated: true
@@ -63,7 +63,10 @@ The Pitt دراما طبية قوية في بناء الضغط والعمل ال
 
 تقييم 8.4/10 يعكس نجاح البنية الزمنية والأداء الجماعي وتفاصيل بيئة الطوارئ، مع خصم بسبب تكرار بعض الأزمات وتفاوت عمق المسارات الشخصية. إنه عمل طبي متماسك يعرف كيف يجعل الوقت عنصراً درامياً، لكنه يحتاج إلى تنويع أكبر كي لا تصبح كثافة الحالات نمطاً متوقعاً.
 
-## مصادر التحقق
+## مصادر التحقق والمراجعات النقدية
 
-- [Warner Bros. Television / HBO Pressroom](https://press.wbd.com/na/media-release/hbo-max/max-original-drama-series-pitt-debuts-january-9)
-- [المادة الرسمية / المقطع المرتبط](https://press.wbd.com/na/media-release/hbo-max/max-original-drama-series-pitt-debuts-january-9)
+- [HBO Pressroom — The Pitt](https://press.wbd.com/na/media-release/hbo-max/max-original-drama-series-pitt-debuts-january-9): تاريخ العرض والملخص الرسمي والطاقم.
+- [The Guardian — The Pitt Review](https://www.theguardian.com/tv-and-radio/2025/jan/09/the-pitt-review-noah-wyle): مراجعة نقدية لبنية الوقت الحقيقي والواقعية والتمثيل.
+- [The Guardian — What the Doctor Ordered](https://www.theguardian.com/tv-and-radio/2025/apr/10/the-pitt-tv-show-of-the-moment): تحليل طريقة تصوير ضغط قسم الطوارئ وحدود البناء الزمني.
+- [Rotten Tomatoes — The Pitt Season 1](https://www.rottentomatoes.com/tv/the_pitt/s01): تجميع استقبال النقاد وبيانات الموسم.
+- [Metacritic — The Pitt Season 1](https://www.metacritic.com/tv/the-pitt/season-1/): مراجعات نقدية مستقلة ومتوسط التقييم.
