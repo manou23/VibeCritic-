@@ -26,7 +26,7 @@ cons:
   - "بعض المسارات الجانبية تبطئ التصعيد المركزي"
 tags: ["Andor Season 2", "series", "VibeCritic", "2025"]
 genres: ["دراما"]
-sourceName: "StarWars.com / Lucasfilm"
+sourceName: "Lucasfilm / RogerEbert.com / The Guardian / Variety / Rotten Tomatoes"
 sourceId: "manual-assisted-series-andor-season-2-2025-manual-assisted"
 sourceUrl: "https://www.starwars.com/series/andor"
 aiGenerated: true
@@ -62,7 +62,10 @@ Andor يقدم خاتمة سياسية وإنسانية متماسكة لعال�
 
 تقييم 8.9/10 يعكس تماسك البناء السياسي وتطور الشخصيات وجودة الأداء والإنتاج، مع خصم بسبب كثافة المعلومات والقفزات الزمنية وتفاوت سرعة بعض المسارات. إنها خاتمة قوية لمنحنى كاسيان والتمرد، لكنها تتطلب متابعة منتبهة ولا تقدم نفسها كدراما خفيفة أو سريعة.
 
-## مصادر التحقق
+## مصادر التحقق والمراجعات النقدية
 
-- [StarWars.com / Lucasfilm](https://www.starwars.com/series/andor)
-- [المادة الرسمية / المقطع المرتبط](https://www.starwars.com/series/andor)
+- [StarWars.com / Lucasfilm — Andor](https://www.starwars.com/series/andor): تفاصيل العمل الرسمية والطاقم.
+- [RogerEbert.com — The Second Season of Andor Stands Tall](https://www.rogerebert.com/streaming/andor-season-two-tv-review-2025): تحليل بنية الفصول والأداءات والسياسة والإنتاج.
+- [The Guardian — Andor Season 2 Review](https://www.theguardian.com/tv-and-radio/2025/apr/23/andor-season-two-review-disney-plus): قراءة نقدية للسياسة والإيقاع والشخصيات.
+- [Variety — Andor Season 2 Review](https://au.variety.com/2025/tv/reviews/andor-season-2-review-disney-star-wars-21800/): تحليل تقسيم الموسم زمنياً وارتباطه بأحداث Rogue One.
+- [Rotten Tomatoes — Andor Season 2](https://www.rottentomatoes.com/tv/andor/s02): تجميع مراجعات النقاد ومعلومات الموسم.
