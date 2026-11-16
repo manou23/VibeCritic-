@@ -50,17 +50,22 @@ const failureState=createState();let failedProviderCalls=0;
 const failureAdapters={
  discover:async()=>[{type:'movie',id:'cooldown-test'}],
  collectEvidence:async()=>({sources:[{name:'Official',url:'https://example.com/a'},{name:'Independent',url:'https://example.org/b'}]}),
- generatePart:async()=>{failedProviderCalls++;throw new Error('429 rate limit');},
+ generatePart:async({provider})=>{failedProviderCalls++;if(provider.id==='rate-limited')throw new Error('429 rate limit');return {text:'backup stage',tokens:100};},
  assembleArticle:async()=>article,publishFile:async()=>({path:'unused'}),verifyDeployment:async()=>false
 };
-const failureProviders=[{id:'rate-limited',enabled:true,free:true,dailyRequestLimit:5,dailyTokenLimit:5000}];
+const failureProviders=[{id:'rate-limited',enabled:true,free:true,priority:1,dailyRequestLimit:5,dailyTokenLimit:5000},{id:'backup-free',enabled:true,free:true,priority:2,dailyRequestLimit:5,dailyTokenLimit:5000}];
 const failed=await runCycle({state:failureState,adapters:failureAdapters,providers:failureProviders,now,persist:async()=>{}});
 assert.equal(failed.action,'generation-deferred');
 assert.equal(failedProviderCalls,1);
 assert.equal(failureState.providerCooldowns['rate-limited'].failures,1);
 assert.ok(failureState.providerCooldowns['rate-limited'].until-now>=2*60*60*1000,'provider cooldown must span the next hourly schedule so fallback providers can be selected');
+assert.ok(failureState.jobs['movie:cooldown-test'].nextAttemptAt-now<10*60*1000,'the draft must become eligible before the failed provider cooldown expires');
 const retry=await runCycle({state:failureState,adapters:failureAdapters,providers:failureProviders,now:now+1000,persist:async()=>{}});
 assert.equal(retry.action,'waiting');
-assert.equal(failedProviderCalls,1,'a cooled-down provider must not be called again during the retry window');
+assert.equal(failedProviderCalls,1,'a cooled-down provider must not be called again during the short retry window');
+const fallback=await runCycle({state:failureState,adapters:failureAdapters,providers:failureProviders,now:now+6*60*1000,persist:async()=>{}});
+assert.equal(fallback.action,'stage-saved','the next eligible cycle must select an available free fallback provider');
+assert.equal(fallback.provider,'backup-free');
+assert.equal(failedProviderCalls,2,'fallback provider should receive the next single AI call');
 
 console.log('VibeCritic Publishing Engine v2 crash-recovery runner tests passed.');
