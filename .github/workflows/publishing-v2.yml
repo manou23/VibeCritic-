@@ -5,7 +5,7 @@ on:
     branches: [publisher-v2-rebuild]
     paths: ['.github/workflows/publishing-v2.yml', 'docs/PUBLISHING-ENGINE-V2.md', 'scripts/publishing-v2/core.mjs', 'scripts/publishing-v2/store.mjs', 'scripts/publishing-v2/runner.mjs', 'scripts/publishing-v2/run-cycle.mjs', 'scripts/publishing-v2/adapters.mjs', 'scripts/test-publishing-v2-adapters.mjs']
   schedule:
-    - cron: '17 * * * *'
+    - cron: '0 */5 * * *'
 permissions:
   contents: write
 concurrency:
