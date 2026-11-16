@@ -10,6 +10,7 @@ const {buildFreeProviders,createPublishingAdapters}=await import('./publishing-v
 const providers=buildFreeProviders();
 assert.deepEqual(providers.map(x=>x.id),['gemini','cloudflare','groq','openrouter']);
 assert.equal(providers[1].model,'@cf/meta/llama-3.3-70b-instruct-fp8-fast');
+assert.equal(providers[2].model,'openai/gpt-oss-120b','default Groq model must not use the retired Llama 3.3 ID');
 assert.ok(providers.every(x=>x.free===true&&x.enabled===true));
 assert.equal(providers[0].model,'gemini-3.8-flash','retired Gemini default must be upgraded to the currently recommended model');
 assert.ok(!providers.some(x=>x.id==='openai'),'paid OpenAI must never enter the V2 free provider pool');
