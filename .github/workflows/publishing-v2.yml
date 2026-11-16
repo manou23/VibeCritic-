@@ -9,7 +9,8 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: vibecritic-publisher-v2
+  # Isolate main from the stale queued runs in the previous shared group.
+  group: vibecritic-publisher-v2-main-recovery
   cancel-in-progress: false
 jobs:
   publish-cycle:
