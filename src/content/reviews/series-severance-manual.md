@@ -32,7 +32,7 @@ tags: ["Severance", "Apple TV+", "Dan Erickson", "Psychological Thriller"]
 genres: ["دراما", "خيال علمي", "غموض", "تشويق"]
 cast: ["Adam Scott", "Britt Lower", "Patricia Arquette", "John Turturro", "Zach Cherry", "Tramell Tillman"]
 crew: ["Dan Erickson", "Ben Stiller"]
-sourceName: "Apple TV Press"
+sourceName: "Apple TV / RogerEbert.com / The Guardian / The New Yorker / Metacritic"
 sourceId: "manual-series-severance"
 sourceUrl: "https://www.apple.com/tv-pr/originals/severance/"
 aiGenerated: false
@@ -55,9 +55,12 @@ aiGenerated: false
 ## الحكم النهائي
 Severance مسلسل صاحب هوية واضحة، يجمع بين فرضية ذكية وإخراج منضبط وأداء جماعي جيد. أفضل ما فيه أنه يجعل شكل المكان والإيقاع جزءاً من المعنى، لا مجرد خلفية للأحداث. أضعف نقاطه هي الإبطاء المتعمد أحياناً والاعتماد الكبير على تأجيل المعلومات. درجة 8.9/10 تعكس تميز الفكرة والتنفيذ، مع ترك مساحة للنقد حول توازن الغموض مع التقدم الدرامي.
 
-## مصادر التحقق
-- [Apple TV Press — Severance](https://www.apple.com/tv-pr/originals/severance/): الوصف الرسمي والطاقم وموعد الموسم الثاني.
+## مصادر التحقق والمراجعات النقدية
+- [Apple TV Press — Severance](https://www.apple.com/tv-pr/originals/severance/): الوصف الرسمي والطاقم والمواسم.
 - [Apple TV Press — إعلان الموسم الأول](https://www.apple.com/tv-pr/news/2021/12/apple-tv-unveils-teaser-trailer-for-new-workplace-thriller-severance-from-director-and-executive-producer-ben-stiller-and-sets-global-premiere-date-for-february-18-2022/): تاريخ الإطلاق والطاقم وصانع العمل.
-- [TVmaze — Severance](https://www.tvmaze.com/shows/44933/severance): بيانات المسلسل وتصنيفاته.
+- [RogerEbert.com — Severance Season 1](https://www.rogerebert.com/streaming/severance-tv-review-2022): تحليل الفكرة والشخصيات والإخراج.
+- [The Guardian — Severance Season 2](https://www.theguardian.com/tv-and-radio/2025/jan/17/severance-season-two-review-impossibly-mesmerising-tv): قراءة نقدية لتطور الغموض والأداء والإيقاع.
+- [The New Yorker — Severance Season 2](https://www.newyorker.com/magazine/2025/01/20/severance-tv-review-apple-tv-plus): نقد التوسع السردي والبطء وتطور الشخصيات.
+- [Metacritic — Severance](https://www.metacritic.com/tv/severance/critic-reviews/): تجميع المراجعات النقدية للموسمين.
 
 > مراجعة تحريرية يدوية مستقلة؛ لا تتضمن حرقاً للنهاية ولا تدّعي تجربة مشاهدة جديدة.
