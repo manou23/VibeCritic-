@@ -3,13 +3,12 @@ title: "ذا بيت"
 originalTitle: "The Pitt"
 headline: "دراما طوارئ دقيقة تلتقط ضغط العمل ساعة بساعة، لكنها تكرر أحياناً إيقاع الأزمات"
 summary: "دراما طبية من 15 حلقة، تتبع نوبة عمل طويلة في قسم طوارئ بمدينة بيتسبرغ، مع التركيز على الطاقم والمرضى والضغط المؤسسي."
-verdict: "ذا بيت يقدم دراما طبية من 15 حلقة، تتبع نوبة عمل طويلة في قسم طوارئ بمدينة بيتسبرغ، مع التركيز على الطاقم والمرضى والضغط المؤسسي. وتظهر قوته في عناصره الأساسية، مع حدود واضحة في الإيقاع أو توزيع المسارات كما تفصل المراجعة. تقييم VibeCritic التحريري: 8.4/10."
+verdict: "يحوّل The Pitt نوبة الطوارئ إلى بنية درامية دقيقة تجعل الوقت والموارد والعمل الجماعي مصادر توتر مستمر. قوته في الأداء الجماعي والحالات التي تطرح أسئلة مهنية وأخلاقية، لكن بعض الأزمات تتشابه ولا تحصل كل الشخصيات على عمق متساوٍ. تقييم VibeCritic التحريري: 8.4/10."
 reviewVersion: 1
 type: series
 date: 2026-11-15
 releaseDate: "2025-01-09"
 poster: "https://m.media-amazon.com/images/M/MV5BYjUwYzIzM2YtYTkzMi00NTg1LTgxZDItMDVmN2NhMzUzZGMxXkEyXkFqcGc%40._V1_FMjpg_UX1000_.jpg"
-backdrop: "https://m.media-amazon.com/images/M/MV5BYjUwYzIzM2YtYTkzMi00NTg1LTgxZDItMDVmN2NhMzUzZGMxXkEyXkFqcGc%40._V1_FMjpg_UX1000_.jpg"
 score: 8.4
 storyScore: 8.4
 visualsScore: 8.3
@@ -29,8 +28,6 @@ genres: ["دراما"]
 sourceName: "Warner Bros. Television / HBO Pressroom"
 sourceId: "manual-assisted-series-the-pitt-2025-manual-assisted"
 sourceUrl: "https://press.wbd.com/na/media-release/hbo-max/max-original-drama-series-pitt-debuts-january-9"
-externalVideoUrl: "https://press.wbd.com/na/media-release/hbo-max/max-original-drama-series-pitt-debuts-january-9"
-externalVideoTitle: "The Pitt — Official Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
 youtubeVideoId: "ufR_08V38sQ"
@@ -64,7 +61,7 @@ The Pitt دراما طبية قوية في بناء الضغط والعمل ال
 
 ## الحكم النهائي
 
-تقييم 8.4/10 يعكس موازنة بين نقاط القوة المحددة ومواطن الضعف التي ظهرت في السرد أو الأنظمة أو الإيقاع. لا تعني الدرجة أن العمل كامل، ولا تُمنح المكافأة لمجرد الشعبية أو حجم الإنتاج.
+تقييم 8.4/10 يعكس نجاح البنية الزمنية والأداء الجماعي وتفاصيل بيئة الطوارئ، مع خصم بسبب تكرار بعض الأزمات وتفاوت عمق المسارات الشخصية. إنه عمل طبي متماسك يعرف كيف يجعل الوقت عنصراً درامياً، لكنه يحتاج إلى تنويع أكبر كي لا تصبح كثافة الحالات نمطاً متوقعاً.
 
 ## مصادر التحقق
 
