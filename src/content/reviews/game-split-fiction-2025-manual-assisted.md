@@ -4,7 +4,7 @@ originalTitle: "Split Fiction"
 headline: "مغامرة تعاونية تتجدد باستمرار، لكن اعتمادها الكامل على شريك يجعل متعتها مشروطة"
 hook: "تراهن Split Fiction على أن أفضل أفكار اللعب لا تكتمل إلا بوجود لاعب آخر؛ وهي تكسب الرهان غالباً بفضل تنوع المراحل، لكنها لا تستطيع إخفاء اعتمادها الصارم على التعاون."
 summary: "مغامرة أكشن ومنصات تعاونية من Hazelight، تجمع كاتبتين داخل عوالم الخيال العلمي والفانتازيا وتبدل أدوات اللعب باستمرار."
-verdict: "سبليت فيكشن يقدم مغامرة أكشن ومنصات تعاونية من Hazelight، تجمع كاتبتين داخل عوالم الخيال العلمي والفانتازيا وتبدل أدوات اللعب باستمرار. وتظهر قوته في عناصره الأساسية، مع حدود واضحة في الإيقاع أو توزيع المسارات كما تفصل المراجعة. تقييم VibeCritic التحريري: 8.8/10."
+verdict: "تنجح Split Fiction في جعل التعاون أساس تصميم كل مرحلة، وتمنح اللاعبين تنوعاً بصرياً وميكانيكياً متجدداً. قصتها بسيطة لكنها تخدم العلاقة بين البطلتين، فيما يظل غياب اللعب الفردي وتفاوت خبرة الشريكين قيدين حقيقيين. تقييم VibeCritic التحريري: 8.8/10."
 reviewVersion: 1
 type: game
 date: 2026-11-15
@@ -16,7 +16,6 @@ soundScore: 8.6
 pacingScore: 9.1
 reviewMode: review
 poster: "https://img.succesone.fr/2025/01/Split-Fiction-SuccesOneFR-Microsoft.jpg"
-backdrop: "https://img.succesone.fr/2025/01/Split-Fiction-SuccesOneFR-Microsoft.jpg"
 platforms: ["PlayStation 5", "Xbox Series X|S", "PC", "Nintendo Switch 2"]
 gameStores:
   - name: "Epic Games"
@@ -31,12 +30,10 @@ cons:
   - "تفاوت مستوى الصعوبة بين بعض المقاطع قد يقطع التدفق"
   - "بعض الأفكار الجانبية تمر بسرعة قبل أن تستثمر إمكاناتها"
 tags: ["Split Fiction", "game", "VibeCritic", "2025"]
-genres: ["أكشن ومغامرة"]
+genres: ["أكشن", "مغامرة", "منصات", "تعاوني"]
 sourceName: "EA / Hazelight / Steam"
 sourceId: "manual-assisted-game-split-fiction-2025-manual-assisted"
 sourceUrl: "https://www.ea.com/games/split-fiction/split-fiction"
-externalVideoUrl: "https://www.ea.com/games/split-fiction/split-fiction/news/split-fiction-is-available-now"
-externalVideoTitle: "Split Fiction — Official Launch / Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
 rawgSourceId: 994603
@@ -80,7 +77,7 @@ rawgDevelopers:
 
 ## الحكم النهائي
 
-تقييم 8.8/10 يعكس موازنة بين نقاط القوة المحددة ومواطن الضعف التي ظهرت في السرد أو الأنظمة أو الإيقاع. لا تعني الدرجة أن العمل كامل، ولا تُمنح المكافأة لمجرد الشعبية أو حجم الإنتاج.
+تقييم 8.8/10 يعكس نجاح اللعبة في جعل التواصل والتنسيق جزءاً من حل الألغاز، مع تنوع مراحلها وإخراجها، ويخصم بسبب بساطة بعض خطوط السرد وغياب المسار الفردي وتفاوت الإيقاع بين الأفكار السريعة. إنها توصية قوية لمن يملك شريكاً مستعداً للتجربة والتواصل، وليست خياراً مناسباً لمن يريد اللعب منفرداً.
 
 ## مصادر التحقق
 
