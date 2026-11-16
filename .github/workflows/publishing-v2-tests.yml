@@ -15,4 +15,6 @@ jobs:
           node-version: 22
       - run: node --check scripts/publishing-v2/core.mjs
       - run: node --check scripts/test-publishing-v2.mjs
+      - run: node --check scripts/publishing-v2/store.mjs
+      - run: node --check scripts/publishing-v2/runner.mjs
       - run: npm run test:publishing-v2
