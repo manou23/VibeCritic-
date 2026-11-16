@@ -35,6 +35,7 @@ genres:
   - "Horror"
   - "Mystery"
   - "Thriller"
+sourceName: "Universal Pictures / The Guardian / RogerEbert.com / TheWrap / Rotten Tomatoes"
 sourceId: "1400837"
 sourceUrl: "https://www.themoviedb.org/movie/1400837"
 aiGenerated: false
