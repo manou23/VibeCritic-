@@ -99,7 +99,7 @@ async function modelCall(provider,text){
   url='https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(provider.model)+':generateContent?key='+encodeURIComponent(key);
   body={contents:[{parts:[{text:text}]}],generationConfig:{temperature:.3,maxOutputTokens:2500,responseMimeType:'application/json'}};
  }else if(provider.id==='cloudflare'){
-  url='https://api.cloudflare.com/client/v4/accounts/'+encodeURIComponent(env.CLOUDFLARE_ACCOUNT_ID)+'/ai/run/'+encodeURIComponent(provider.model);
+  url='https://api.cloudflare.com/client/v4/accounts/'+encodeURIComponent(env.CLOUDFLARE_ACCOUNT_ID)+'/ai/run/'+provider.model.split('/').map(x=>encodeURIComponent(x).replace(/%40/gi,'@')).join('/');
   headers.authorization='Bearer '+key;
   body={messages:[{role:'system',content:'ناقد عربي دقيق. أعد JSON صالحاً فقط، ولا تختلق معلومات.'},{role:'user',content:text}],temperature:.3,max_tokens:2500,response_format:{type:'json_object'}};
  }else{
