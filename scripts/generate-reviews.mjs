@@ -95,7 +95,7 @@ function learningAdvice(){
  if(total&&weighted('avgRepeatedTrigramRate')>0.025)signals.push('رصدت الذاكرة تكراراً ملحوظاً لعبارات ثلاثية؛ نوّع بناء الجمل وقدم معلومة أو حجة جديدة في كل فقرة.');
  if(total&&weighted('avgGenericPhraseHits')>0)signals.push('ظهرت عبارات نقدية عامة في بعض المراجعات؛ استبدلها بتفاصيل تخص العمل نفسه.');
  if(total&&weighted('avgLexicalDiversity')<0.30)signals.push('نوّع المفردات عبر زيادة التفاصيل الدقيقة لا عبر حشو المرادفات.');
- if(total&&weighted('avgSections')<5)signals.push('حافظ على المحاور الخمسة المطلوبة، ولا تدمج أكثر من فكرة نقدية في محور واحد.');
+
  if(total&&weighted('avgWords')<70)signals.push('بعض الآراء أقصر من الحد المطلوب؛ أضف حجة محددة دون تحويلها إلى مقال موسوعي.');
  const diagnostics=total?'\nمؤشرات تحريرية داخلية من '+total+' مراجعة اجتازت بوابة الجودة (ليست قياساً لرضا القراء): متوسط التنوع المعجمي '+weighted('avgLexicalDiversity').toFixed(2)+'، تكرار العبارات '+(weighted('avgRepeatedTrigramRate')*100).toFixed(1)+'%، العبارات العامة '+weighted('avgGenericPhraseHits').toFixed(2)+' لكل مراجعة. '+(signals.length?'إشارات التحسين المستخلصة:\n'+signals.join('\n'):'لا تظهر حالياً إشارة تكرار قوية؛ استمر في تطبيق معايير الجودة دون تغييرها.'):'\nلا توجد بعد عينة كافية لمؤشرات الجودة التحريرية؛ لا تستنتج تحسناً أو تراجعاً قبل تراكم المراجعات.';
  return 'ذاكرة التحسين المستمر المحفوظة بين التشغيلات: إجمالي النجاحات '+learningMemory.stats.successes+'، الإخفاقات المرصودة '+learningMemory.stats.failures+'. '+(lessons?'الدروس التي يجب تطبيقها الآن:\n'+lessons:'لا توجد إخفاقات مصنفة بعد؛ ابدأ بتطبيق معايير VibeCritic الأساسية.')+(avgWords?'\nمتوسط طول آخر '+samples.length+' مراجعات اجتازت البوابة: '+avgWords+' كلمة؛ استخدمه للموازنة لا للحشو.':'')+diagnostics;
