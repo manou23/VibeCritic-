@@ -3,14 +3,13 @@ title: "معركة تلو الأخرى"
 originalTitle: "One Battle After Another"
 headline: "مطاردة سياسية مشحونة بشخصيات فوضوية، لكن كثافة النبرة قد تربك تماسك الرحلة"
 hook: "يحوّل بول توماس أندرسون ماضي الثورة إلى مطاردة حاضرة، ويوازن بين العبث والخطر؛ قوة الفيلم في طاقته وأداءاته، لا في بساطة مساره."
-summary: "يتابع الفيلم ثائراً سابقاً يعيش متخفياً مع ابنته، قبل أن يعيده ظهور خصم قديم إلى مواجهة تبعات ماضيه."
-verdict: "معركة تلو الأخرى يقدم يتابع الفيلم ثائراً سابقاً يعيش متخفياً مع ابنته، قبل أن يعيده ظهور خصم قديم إلى مواجهة تبعات ماضيه. وتظهر قوته في عناصره الأساسية، مع حدود واضحة في الإيقاع أو توزيع المسارات كما تفصل المراجعة. تقييم VibeCritic التحريري: 8.6/10."
+summary: "يتابع الفيلم بوب فيرغسون، ثائراً سابقاً يعيش متخفياً مع ابنته ويواجه ماضيه من جديد عندما يعود خصم قديم ويختفي أثر ابنته. يمزج بول توماس أندرسون المطاردة السياسية بالكوميديا السوداء والتوتر العائلي."
+verdict: "يقدم One Battle After Another مطاردة سياسية متوترة تمزج العبث بالخطر، ويستفيد من إخراج بول توماس أندرسون وطاقم تمثيل قوي. لكن كثافة الشخصيات والتنقل بين النبرات قد يشتتان مركز الحكاية، ولا تتطور كل الخيوط بالعمق نفسه. تقييم VibeCritic التحريري: 8.6/10."
 reviewVersion: 1
 type: movie
 date: 2026-11-15
 releaseDate: "2025-09-26"
 poster: "https://www.impawards.com/2025/posters/one_battle_after_another_ver11_xlg.jpg"
-backdrop: "https://www.impawards.com/2025/posters/one_battle_after_another_ver11_xlg.jpg"
 score: 8.6
 storyScore: 8.6
 visualsScore: 9.0
@@ -26,11 +25,10 @@ cons:
   - "النبرة تنتقل بسرعة بين العبث والعنف"
   - "بعض الخيوط السياسية تبقى مفتوحة أو مختزلة"
 tags: ["One Battle After Another", "movie", "VibeCritic", "2025"]
-genres: ["دراما وسينما"]
+genres: ["دراما", "كوميديا سوداء", "إثارة", "جريمة"]
 sourceName: "Warner Bros. Pictures — Official Movie Site"
 sourceId: "manual-assisted-movie-one-battle-after-another-2025-manual-assisted"
 sourceUrl: "https://www.onebattleafteranothermovie.com/"
-externalVideoUrl: "https://www.onebattleafteranothermovie.com/"
 externalVideoTitle: "One Battle After Another — Official Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
@@ -65,7 +63,7 @@ One Battle After Another عمل جريء ومليء بالحياة، وتكمن 
 
 ## الحكم النهائي
 
-تقييم 8.6/10 يعكس موازنة بين نقاط القوة المحددة ومواطن الضعف التي ظهرت في السرد أو الأنظمة أو الإيقاع. لا تعني الدرجة أن العمل كامل، ولا تُمنح المكافأة لمجرد الشعبية أو حجم الإنتاج.
+تقييم 8.6/10 يعكس قوة الإخراج والأداء والطاقة السينمائية، مع خصم بسبب تشعب بعض المسارات وعدم ثبات النبرة طوال الرحلة. الفيلم لا يقدم إجابات سياسية جاهزة، وتكمن قيمته في تحويل الأفكار الكبيرة إلى علاقات وقرارات شخصية، حتى عندما لا يمنح كل خط درامي المساحة نفسها.
 
 ## مصادر التحقق
 
