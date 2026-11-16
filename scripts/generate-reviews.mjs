@@ -1088,6 +1088,36 @@ async function persistFailedQueueCheckpoint(){
  console.log('نقطة حفظ طابور المحتوى:',pending,'مهام قيد الانتظار/الاستئناف.');
 }
 
+function buildSourceArticleBody(item, opinion, pros, cons){
+ const metadata=item.metadata||{};
+ const plain=value=>String(value??'').replace(/<[^>]*>/g,' ').replace(/&nbsp;/gi,' ').replace(/&amp;/gi,'&').replace(/[\r\n]+/g,' ').replace(/\s+/g,' ').trim().replace(/([\\`*_{}\[\]<>])/g,'\\$1');
+ const list=value=>(Array.isArray(value)?value:[]).map(plain).filter(Boolean);
+ const lines=['## بيانات العمل من '+plain(item.source||'المصدر')];
+ const release=plain(item.date||'غير متاح');
+ lines.push('- **تاريخ الإصدار:** '+release);
+ if(list(item.genres).length)lines.push('- **التصنيفات:** '+list(item.genres).join('، '));
+ if(item.type==='game'){
+  const developers=list(metadata.developers||item.developers),publishers=list(metadata.publishers),platforms=list(metadata.platforms||item.platforms);
+  if(developers.length)lines.push('- **المطور:** '+developers.join('، '));
+  if(publishers.length)lines.push('- **الناشر:** '+publishers.join('، '));
+  if(platforms.length)lines.push('- **المنصات:** '+platforms.join('، '));
+  const modes=list(metadata.gameModes);if(modes.length)lines.push('- **أنماط اللعب المسجلة:** '+modes.join('، '));
+ }else{
+  const directors=list(metadata.directors),creators=list(metadata.creators),cast=list(metadata.cast);
+  if(directors.length)lines.push('- **الإخراج:** '+directors.join('، '));
+  if(creators.length)lines.push('- **الإنشاء:** '+creators.join('، '));
+  if(cast.length)lines.push('- **طاقم التمثيل:** '+cast.slice(0,8).join('، '));
+  if(Number(metadata.runtime)>0)lines.push('- **المدة:** '+Number(metadata.runtime)+' دقيقة');
+ }
+ const scale=item.source==='RAWG'?5:item.source==='IGDB'?100:10;
+ if(Number(item.rating)>0)lines.push('- **تقييم المصدر الجماهيري:** '+Number(item.rating).toFixed(1)+' / '+scale+' (ليس تقييم VibeCritic)');
+ if(item.description)lines.push('', '## نبذة المصدر', plain(item.description));
+ lines.push('', '## رأي VibeCritic', plain(opinion));
+ if(list(pros).length)lines.push('', '### نقاط القوة', ...list(pros).map(value=>'- '+value));
+ if(list(cons).length)lines.push('', '### تحفظات نقدية', ...list(cons).map(value=>'- '+value));
+ return lines.join('\n');
+}
+
 async function writeReview(item){
  await updateContentJob(item,{status:'researching',item,nextAttemptAt:0,lastError:null});
  const enriched=item?.metadata?.evidenceDossier?item:await enrichItem(item);
@@ -1118,7 +1148,7 @@ async function writeReview(item){
  const platformFields=arr(enriched.metadata?.platforms||enriched.platforms||[]);
  const scoreFields=reviewMode==='review'?['storyScore: '+a.scores.story,'visualsScore: '+a.scores.visuals,'soundScore: '+a.scores.sound,'pacingScore: '+a.scores.pacing]:[];
  const ratingFields=reviewMode==='review'?['score: '+a.score]:[];
-  const fm=['---','title: '+y(enriched.name||item.name),'originalTitle: '+y(enriched.originalTitle||''),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 2','reviewMode: '+reviewMode,'publishedAt: '+y(new Date().toISOString()),'catalogContextSource: '+y(enriched.metadata?.catalogContext?.source||''),'catalogContextObservedAt: '+y(enriched.metadata?.catalogContext?.observedAt||''),'catalogRelatedWorks: '+arr((enriched.metadata?.catalogContext?.relatedWorks||[]).map(work=>work.title+' ('+(work.year||'سنة غير محددة')+') — تصنيفات مشتركة '+work.sharedGenreCount+'، أشخاص مشتركون '+work.sharedPersonCount)),'sourceName: '+y(item.source||''),'evidenceCount: '+(Number(evidenceDossier.evidenceCount)||0),'evidenceSourceCount: '+(Number(evidenceDossier.sourceCount)||0),'evidenceSources:',arr(evidenceDossier.sources.map(source=>source.name+(source.url?' — '+source.url:''))),'sourceVoteCount: '+(Number(enriched.sourceVoteCount)||0),'sourceRatingScale: '+(item.source==='RAWG'?5:item.source==='IGDB'?100:10),'metacriticScore: '+(Number(enriched.metadata?.metacritic)||0),'cast:',arr(enriched.metadata?.cast||[]),'crew:',arr([...(enriched.metadata?.directors||[]),...(enriched.metadata?.creators||[])]),'watchProviders:',arr(enriched.metadata?.watchProviders||[]),...watchFields,'platforms:',platformFields,'gameStores:',gameStoreFields.length?gameStoreFields.join('\n'):'  []',...scoreFields,'type: '+item.type,'date: '+date,'releaseDate: '+y(enriched.date),'poster: '+y(item.poster),'backdrop: '+y(item.backdrop),...videoFields,...externalVideoFields,...ratingFields,'trendRank: '+(Number(item.trendRank)||0),'trendSource: '+y(item.source||''),'trendPopularity: '+(Number(item.popularity)||0),'pros:',arr(a.pros),'cons:',arr(a.cons),'tags:',arr(a.tags),'genres:',arr(enriched.genres||[]),'sourceRating: '+(Number(enriched.rating)||0),'sourceId: '+y(item.id),'sourceUrl: '+y(item.sourceUrl),'aiGenerated: true','---','',a.review,'','> قراءة نقدية تحريرية مولّدة بمساعدة الذكاء الاصطناعي، مبنية على البيانات المنشورة المتاحة. لا تمثل تجربة مشاهدة أو لعب مباشرة، ولا تقييماً رسمياً من المصدر.',''].join('\n');
+  const fm=['---','title: '+y(enriched.name||item.name),'originalTitle: '+y(enriched.originalTitle||''),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 2','reviewMode: '+reviewMode,'publishedAt: '+y(new Date().toISOString()),'catalogContextSource: '+y(enriched.metadata?.catalogContext?.source||''),'catalogContextObservedAt: '+y(enriched.metadata?.catalogContext?.observedAt||''),'catalogRelatedWorks: '+arr((enriched.metadata?.catalogContext?.relatedWorks||[]).map(work=>work.title+' ('+(work.year||'سنة غير محددة')+') — تصنيفات مشتركة '+work.sharedGenreCount+'، أشخاص مشتركون '+work.sharedPersonCount)),'sourceName: '+y(item.source||''),'evidenceCount: '+(Number(evidenceDossier.evidenceCount)||0),'evidenceSourceCount: '+(Number(evidenceDossier.sourceCount)||0),'evidenceSources:',arr(evidenceDossier.sources.map(source=>source.name+(source.url?' — '+source.url:''))),'sourceVoteCount: '+(Number(enriched.sourceVoteCount)||0),'sourceRatingScale: '+(item.source==='RAWG'?5:item.source==='IGDB'?100:10),'metacriticScore: '+(Number(enriched.metadata?.metacritic)||0),'cast:',arr(enriched.metadata?.cast||[]),'crew:',arr([...(enriched.metadata?.directors||[]),...(enriched.metadata?.creators||[])]),'watchProviders:',arr(enriched.metadata?.watchProviders||[]),...watchFields,'platforms:',platformFields,'gameStores:',gameStoreFields.length?gameStoreFields.join('\n'):'  []',...scoreFields,'type: '+item.type,'date: '+date,'releaseDate: '+y(enriched.date),'poster: '+y(item.poster),'backdrop: '+y(item.backdrop),...videoFields,...externalVideoFields,...ratingFields,'trendRank: '+(Number(item.trendRank)||0),'trendSource: '+y(item.source||''),'trendPopularity: '+(Number(item.popularity)||0),'pros:',arr(a.pros),'cons:',arr(a.cons),'tags:',arr(a.tags),'genres:',arr(enriched.genres||[]),'sourceRating: '+(Number(enriched.rating)||0),'sourceId: '+y(item.id),'sourceUrl: '+y(item.sourceUrl),'aiGenerated: true','---','',buildSourceArticleBody(enriched,a.review,a.pros,a.cons),'','> البيانات التعريفية والصور والوسائط مأخوذة من المصدر المذكور. الرأي النقدي موجز ومولّد بمساعدة الذكاء الاصطناعي، ولا يمثل تجربة مشاهدة أو لعب مباشرة.',''].join('\n');
  await fs.writeFile(path.join(outDir,item.type+'-'+item.id+'.md'),fm,'utf8');
  const judgmentRecord=await recordJudgmentVersion(enriched,a);
  if(judgmentRecord.assessment?.status==='needs-review')console.warn('تنبيه: تغير جوهري في حكم محفوظ سابق؛ يلزم مراجعة سبب التغير والأدلة:',item.type+':'+item.id);
