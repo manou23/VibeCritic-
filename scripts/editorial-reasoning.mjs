@@ -173,7 +173,7 @@ export function evaluateEditorialReview(item, review, reasoning, previousHeadlin
   const body = String(review?.review ?? '').trim(), headline = clean(review?.headline);
   const combined = (headline + ' ' + clean(review?.hook) + ' ' + body).toLocaleLowerCase('ar');
   const wordCount = body.split(/\s+/u).filter(Boolean).length;
-  const sectionCount = (body.match(/^###\s+/gmu) || []).length;
+  const paragraphCount = body.split(/\n\s*\n/u).filter(part => part.trim()).length;
   const charCount = body.length;
   const anchors = reasoning?.selected?.anchors || [];
   const anchorHits = anchors.filter(anchor => {
@@ -181,10 +181,11 @@ export function evaluateEditorialReview(item, review, reasoning, previousHeadlin
     return value.length >= 3 && combined.includes(value);
   }).length;
   const maxHeadlineSimilarity = Math.max(0, ...list(previousHeadlines).map(value => similarity(headline, value)));
+  // VibeCritic now publishes source-led fact sheets with a concise AI opinion, not 750-word AI essays.
   const structureScore = Math.round((
-    Math.min(1, wordCount / 750) * 0.45 +
-    Math.min(1, charCount / 3200) * 0.25 +
-    Math.min(1, sectionCount / 5) * 0.30
+    Math.min(1, wordCount / 90) * 0.65 +
+    Math.min(1, charCount / 450) * 0.25 +
+    Math.min(1, paragraphCount / 1) * 0.10
   ) * 100);
   const evidenceAlignmentScore = Math.min(100, Math.round(35 + anchorHits * 10 + (reasoning?.selected?.evidenceGroups || 0) * 8));
   const noveltyScore = Math.round((1 - maxHeadlineSimilarity) * 100);
@@ -193,13 +194,13 @@ export function evaluateEditorialReview(item, review, reasoning, previousHeadlin
   const flags = [];
   if (anchorHits === 0) flags.push('لم يعثر الفحص النصي على مرتكزات حرفية من بيانات المصدر؛ قد تكون الأسماء مترجمة، لذا يلزم تدقيق بشري.');
   if (maxHeadlineSimilarity >= 0.45) flags.push('العنوان قريب من صياغة سابقة ويحتاج مراجعة للتأكد من اختلاف الزاوية.');
-  if (wordCount < 750 || charCount < 3200 || sectionCount < 5) flags.push('البنية لا تحقق أحد الحدود التحريرية الأساسية.');
+  if (wordCount < 70 || charCount < 300 || paragraphCount < 1) flags.push('الرأي المختصر لا يحقق الحد الأدنى للطول أو البنية.');
   return {
-    version: 1, score,
-    status: structureScore >= 100 && noveltyScore >= 28 && reasoningScore >= 48 ? 'structural-pass' : 'review-required',
-    metrics: { wordCount, charCount, sectionCount, anchorHits, anchorCount: anchors.length, maxHeadlineSimilarity: Number(maxHeadlineSimilarity.toFixed(3)), structureScore, evidenceAlignmentScore, noveltyScore, reasoningScore },
+    version: 2, score,
+    status: structureScore >= 90 && noveltyScore >= 28 && reasoningScore >= 48 ? 'structural-pass' : 'review-required',
+    metrics: { wordCount, charCount, paragraphCount, sectionCount: 0, anchorHits, anchorCount: anchors.length, maxHeadlineSimilarity: Number(maxHeadlineSimilarity.toFixed(3)), structureScore, evidenceAlignmentScore, noveltyScore, reasoningScore },
     flags,
-    scope: 'فحص آلي للبنية والارتباط النصي بالبيانات والتميّز؛ لا يثبت صحة الوقائع ولا يغني عن التحقق من المصادر أو التقييم البشري.',
+    scope: 'فحص آلي لطول الرأي المختصر والارتباط النصي بالبيانات والتميّز؛ لا يثبت صحة الوقائع ولا يغني عن التحقق من المصادر أو التقييم البشري.',
     sourceTruthVerified: false
   };
 }
