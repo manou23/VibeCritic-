@@ -61,7 +61,15 @@ jobs:
             echo "No durable state or article changes to commit."
           else
             git commit -m "chore(publisher-v2): checkpoint editorial cycle"
-            git fetch origin ${{ github.ref_name }}
-            git rebase origin/${{ github.ref_name }}
-            git push origin HEAD:${{ github.ref_name }}
+            for attempt in 1 2 3 4 5; do
+              git fetch origin ${{ github.ref_name }}
+              git rebase origin/${{ github.ref_name }}
+              if git push origin HEAD:${{ github.ref_name }}; then
+                exit 0
+              fi
+              echo "Push raced with another main-branch update (attempt $attempt/5); retrying safely."
+              sleep 2
+            done
+            echo "Could not checkpoint after five safe rebase/push attempts."
+            exit 1
           fi
