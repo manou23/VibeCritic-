@@ -11,7 +11,6 @@ date: 2026-11-14
 releaseDate: "2026-11-12"
 reviewMode: limited
 poster: "https://asia.sega.com/metaphor/en/switch2/ogp.jpg"
-backdrop: "https://asia.sega.com/metaphor/en/switch2/ogp.jpg"
 youtubeVideoId: "8Z6TH6p2Tyk"
 youtubeVideoTitle: "Metaphor: ReFantazio — Nintendo Switch 2 Pre-order Trailer"
 platforms:
@@ -39,7 +38,7 @@ genres:
   - "فانتازيا"
   - "مغامرة"
 creator: "ATLUS"
-sourceName: "Nintendo / ATLUS"
+sourceName: "ATLUS / SEGA / Nintendo"
 sourceId: "metaphor-refantazio-switch2-2026"
 sourceUrl: "https://www.nintendo.com/us/store/products/metaphor-refantazio-switch-2/"
 aiGenerated: false
@@ -101,3 +100,12 @@ gameStores:
 تنجح Metaphor: ReFantazio في ربط العالم والقتال والموضوعات الاجتماعية ضمن هوية متماسكة. نظام Archetypes يمنحها عمقاً تكتيكياً، والتقويم يجعل إدارة الوقت جزءاً من الرحلة، بينما يرفع الصراع على العرش الأسئلة المتعلقة بالشرعية والخوف والاختلاف. ما يحد من التجربة هو احتمال ازدحام الأنظمة وضغط الوقت على من يريد استكشاف كل شيء. لا نعتمد درجة نهائية لهذه النسخة قبل تقييم جودة نقلها وأدائها على Switch 2؛ فالملاحظات المنشورة عن الأداء وموازنة أوضاع العرض تجعل الحكم التقني جزءاً أساسياً من مراجعتها.
 
 **الخلاصة:** واحدة من ألعاب تقمص الأدوار التي تستحق الاهتمام لمن يبحث عن عالم فانتازي لديه ما يقوله، لا مجرد عالم مليء بالمهام. إصدار Switch 2 يوسع جمهور اللعبة، لكن الحكم على جودة نقله التقنية يحتاج إلى أدلة منفصلة.
+
+
+## مصادر التحقق
+
+- [SEGA — إعلان نسخة Nintendo Switch 2](https://sega.co.jp/en/release/260610_1.html): تأكيد المنصة وموعد الإصدار في 12 نوفمبر 2026، ومعلومات النسخة.
+- [Nintendo — صفحة Metaphor: ReFantazio على Switch 2](https://www.nintendo.com/us/store/products/metaphor-refantazio-switch-2/): تاريخ الإصدار والمنصة والناشر والمطور والخصائص المعلنة.
+- [ATLUS / SEGA — الموقع الرسمي للعبة](https://www.sega.com/metaphor/metaphor-refantazio): معلومات اللعبة الأساسية.
+
+> منهجية: لا تمثل هذه المادة مراجعة تقنية لنسخة Switch 2؛ لا تمنحها درجة رقمية قبل اختبار الأداء وجودة النقل على الجهاز.
