@@ -30,6 +30,23 @@ assert.equal(validateEvidence({sources:[{name:"A",url:"https://example.com/a"},{
 assert.equal(validateEvidence({sources:[{name:"A",url:"http://example.com/a"},{name:"B",url:"https://example.org/b"}]}).valid,false,"HTTP evidence is rejected");
 assert.equal(validateArticle({...article,body:"نص قصير"}).valid,false);
 assert.equal(validateArticle({...article,sources:[article.sources[0]]}).valid,false);
+assert.equal(validateArticle({...article,sources:[{name:"API",url:"https://api.example.com/a"},{name:"WWW",url:"https://www.example.com/b"}]}).valid,false,"subdomains of one publisher are not independent evidence");
+assert.equal(validateArticle({...article,sources:[{name:"TMDB",url:"https://www.themoviedb.org/a"},{name:"Wikipedia",url:"https://en.wikipedia.org/b"}]}).valid,true);
+const sameSite=validateEvidence({sources:[{name:"one",url:"https://api.example.co.uk/a"},{name:"two",url:"https://www.example.co.uk/b"}]});
+assert.equal(sameSite.valid,false,"two subdomains of one registrable domain count as one source");
+const independent=validateEvidence({sources:[{name:"TMDB",url:"https://www.themoviedb.org/a"},{name:"Wikipedia",url:"https://en.wikipedia.org/b"}]});
+assert.equal(independent.valid,true);
 assert.throws(()=>transition(job,"published"),/Illegal transition/);
+// A waiting draft owns the queue: no later candidate may be discovered or enqueued.
+const waitingState=createState();
+const {job:waitingJob}=enqueue(waitingState,{type:"movie",id:"cooldown"},now);
+let delayed=transition(waitingJob,"research-started",{},now+1);
+delayed=transition(delayed,"research-saved",{evidence:{sources:[]}},now+2);
+delayed=transition(delayed,"part-saved",{part:{text:"saved first stage"}},now+3);
+delayed=transition(delayed,"provider-deferred",{lastError:"429",nextAttemptAt:now+7200000},now+4);
+waitingState.jobs[waitingJob.key]=delayed;
+assert.equal(cycleDecision(waitingState,now+5).action,"wait");
+assert.equal(selectActiveJob(waitingState.jobs).key,waitingJob.key);
+assert.throws(()=>enqueue(waitingState,{type:"game",id:"newer"},now+6),/Only one active/);
 validateState(state);
 console.log("VibeCritic Publishing Engine v2 core tests passed.");
