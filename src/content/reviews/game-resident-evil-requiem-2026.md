@@ -45,7 +45,7 @@ genres:
   - "Survival Horror"
   - "Action"
 creator: "Capcom Development Division 1"
-sourceName: "IGDB"
+sourceName: "Capcom / IGDB / PC Gamer / Push Square / GamesRadar+"
 sourceId: "347668"
 sourceUrl: "https://www.igdb.com/games/347668"
 aiGenerated: false
