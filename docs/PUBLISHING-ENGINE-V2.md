@@ -25,7 +25,7 @@ Persist evidence separately from generated prose. Require at least two independe
 1. **Discovery adapter:** fetch candidate metadata only; no AI calls.
 2. **Editorial selector:** deduplicate against Markdown files and published index; rotate games, films and series fairly; choose one candidate.
 3. **Evidence adapter:** persist source dossier with source URLs, observed timestamps, factual scope and confidence.
-4. **Single-provider gateway:** choose exactly one configured free provider for a run after checking daily request/token budgets and circuit-breaker cooldown. No fan-out chain.
+4. **Free-provider router:** choose exactly one configured free provider per run using a fixed priority order (Gemini → opt-in Cloudflare Workers AI → Groq → OpenRouter), then check daily request/token budgets and provider-specific circuit-breaker cooldowns. A failed provider is cooled down and a later scheduled run can select the next eligible provider.
 5. **Three-stage writer:** one stage per hourly run; checkpoint immediately. Parse and validate structured output. Malformed or undersized output is a failed stage, never publishable.
 6. **Editorial gate:** deterministic length, field, evidence, score, pros/cons and media checks. Retain rejected drafts for diagnosis; never write them to the public collection.
 7. **Publisher:** write one complete Markdown file with `aiGenerated: true`, `editorialWorkflow: automated`, `publishedAt`, stable `sourceId`, sources, poster/backdrop and optional verified official video.
@@ -43,10 +43,11 @@ Transient provider/network failures move the same job to `waiting` with a bounde
 ## Resource policy
 
 - At most one generation request per hourly run.
-- Never call a provider that is disabled, cooling down or at its free daily request/token cap.
+- Never call a provider that is disabled, cooling down or at its configured daily request/token cap.
+- Cloudflare Workers AI is opt-in only: it is considered only when `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`, and the repository variable `CLOUDFLARE_FREE_TIER_ONLY=true` are all present. Use a Workers AI token with the required Workers AI permission and a free-plan account; Cloudflare documents a 10,000-Neuron daily free allocation, after which free-plan requests stop. Do not enable it on an account that could incur charges. Model override: `CLOUDFLARE_MODEL`.
 - No parallel or sequential provider cascade in a single run.
 - Do not immediately retry malformed output with another model. Persist the failure and use a bounded retry policy.
-- Track provider usage per UTC day and per article; never log secrets.
+- Track provider usage and cooldowns in the committed V2 state per UTC day; never log secrets.
 - If no free provider is available, wait. Never switch to paid services.
 
 ## Rollout gates
@@ -63,4 +64,4 @@ V2 is developed on a separate branch; production workflow remains untouched unti
 
 ## Observed failure — 16 November 2026
 
-Workflow run 603 passed syntax and editorial test steps, then failed in `Generate reviews`. Score validation, media enrichment, production build and deployment verification were skipped. Queue checkpoint succeeded, but no article was published. V2 makes generation, validation, publication and deployment separate explicit gates.
+Workflow run 603 passed syntax and editorial test steps, then failed in `Generate reviews`. Score validation, media enrichment, production build and deployment verification were skipped. Queue checkpoint succeeded, but no article was published. V2 makes generation, validation, publication and deployment separate explicit gates. The Cloudflare fallback is implemented but remains disabled unless its free-tier-only opt-in variable and credentials are deliberately configured.
