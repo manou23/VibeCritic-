@@ -1,7 +1,7 @@
 ---
 title: "بليد رانر 2049"
 originalTitle: "Blade Runner 2049"
-youtubeVideoTitle: "Blade Runner 2049 — Official Trailer"
+youtubeVideoTitle: "Blade Runner 2049 — Official Italian Trailer"
 youtubeVideoId: "f2jW75Q8EaI"
 poster: "https://image.tmdb.org/t/p/w500/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg"
 headline: "Blade Runner 2049: عالم يسأل إن كانت الذكريات تكفي لصناعة إنسان"
@@ -31,7 +31,7 @@ tags: ["Blade Runner 2049", "Denis Villeneuve", "Science Fiction", "Identity"]
 genres: ["خيال علمي", "دراما", "غموض"]
 cast: ["Ryan Gosling", "Harrison Ford", "Ana de Armas", "Sylvia Hoeks", "Robin Wright"]
 crew: ["Denis Villeneuve", "Roger Deakins", "Joe Walker"]
-sourceName: "British Council Film Database / AFI"
+sourceName: "Warner Bros. / British Council / AFI / RogerEbert.com / The Guardian / GameSpot"
 sourceId: "manual-movie-blade-runner-2049"
 sourceUrl: "https://filmsandfestivals.britishcouncil.org/projects/blade-runner-2049"
 aiGenerated: false
@@ -51,8 +51,11 @@ aiGenerated: false
 ## الحكم النهائي
 Blade Runner 2049 تكملة لها رؤيتها الخاصة؛ تستخدم الإرث لتوسيع أسئلة الذاكرة والهوية والحرية. تميزه الأكبر في تكامل الصورة والصوت والأداء مع موضوعه، بينما يظل البطء وبعض محدودية الشخصيات الجانبية نقطتي ضعف واضحتين. درجة 8.8/10 نابعة من قوة التجربة الفنية والفكرية، مع عدم تجاهل أن إيقاعها المتأني قد لا يناسب جميع الأذواق.
 
-## مصادر التحقق
+## مصادر التحقق والمراجعات النقدية
 - [British Council — Blade Runner 2049](https://filmsandfestivals.britishcouncil.org/projects/blade-runner-2049): بيانات الإنتاج والملخص والطاقم.
 - [American Film Institute — Blade Runner 2049](https://watch.afi.com/movie/untitled-blade-runner-sequel): الملخص والطاقم والمواصفات الفنية.
+- [RogerEbert.com — Blade Runner 2049 Review](https://www.rogerebert.com/reviews/blade-runner-2049-2017): قراءة نقدية للهوية والذاكرة والصورة والأداء، مع ملاحظة حول بطء الإيقاع وبعض الشخصيات.
+- [The Guardian — Blade Runner 2049 Review](https://www.theguardian.com/film/2017/oct/08/blade-runner-2049-review-a-future-classic): تحليل النبرة التأملية والتصوير والموسيقى والموضوعات الفلسفية.
+- [GameSpot — Blade Runner 2049 Review](https://www.gamespot.com/articles/blade-runner-2049-review/1100-6453671/): قراءة نقدية للتمثيل والعالم والصوت وبنية السرد.
 
 > مراجعة تحريرية يدوية مستقلة؛ لا تدّعي إجراء مشاهدة جديدة أو اختبار تفضيلات الجمهور.
