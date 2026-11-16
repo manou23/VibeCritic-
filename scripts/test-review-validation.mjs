@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { validateGeneratedReview, validateCompletedArticle, calculateContentRetryAt } from './generate-reviews.mjs';
+import { validateGeneratedReview, validateCompletedArticle, calculateContentRetryAt, shouldRetryShortSection } from './generate-reviews.mjs';
 
 function words(count) {
   return Array.from({ length: count }, (_, index) => 'تفصيل' + (index + 1)).join(' ');
@@ -21,6 +21,10 @@ assert.equal(validateGeneratedReview(interimSection, { stage: 0 }).pros.length, 
 assert.equal(validateGeneratedReview(interimSection, { stage: 1 }).cons.length, 0);
 assert.throws(() => validateGeneratedReview(interimSection, { stage: 2 }), /3 عناصر على الأقل/);
 assert.throws(() => validateGeneratedReview({ ...interimSection, pros: undefined }, { stage: 0 }), /مصفوفتين/);
+
+assert.equal(shouldRetryShortSection(new Error('جزء المقال أقصر من الحد الأدنى'), false), true);
+assert.equal(shouldRetryShortSection(new Error('جزء المقال أقصر من الحد الأدنى'), true), false);
+assert.equal(shouldRetryShortSection(new Error('JSON مشوه'), false), false);
 
 const retryNow = 1_000_000;
 assert.equal(
