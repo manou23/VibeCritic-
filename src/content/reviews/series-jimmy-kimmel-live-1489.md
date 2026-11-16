@@ -11,8 +11,6 @@ date: 2026-11-11
 releaseDate: "2003-01-26"
 poster: "https://image.tmdb.org/t/p/w500/bGB6bEbG4qL22C1SFupkdAxYC9i.jpg"
 backdrop: "https://image.tmdb.org/t/p/w1280/taqVKvEmMlI2hs2g364fXWzv0ia.jpg"
-youtubeVideoId: "2kqZi3RoA5I"
-youtubeVideoTitle: "Political Promo"
 reviewMode: limited
 pros:
   - "تنوع الفقرات بين السخرية والمقابلات يمنح الحلقة إيقاعاً متجدداً"
@@ -28,6 +26,7 @@ tags:
   - "ترفيه"
 genres:
   []
+sourceName: "TMDB"
 sourceRating: 5.3
 sourceId: "1489"
 sourceUrl: "https://www.themoviedb.org/tv/1489"
