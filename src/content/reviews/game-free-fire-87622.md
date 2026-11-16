@@ -11,7 +11,6 @@ type: game
 date: 2026-11-15
 releaseDate: "2017-12-04"
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/co52c7.jpg"
-backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/co52c7.jpg"
 youtubeVideoId: "oq2Rz2I11l0"
 youtubeVideoTitle: "Free Fire Official Trailer"
 score: 7.0
@@ -39,9 +38,9 @@ genres:
   - "Battle Royale"
   - "Shooter"
 creator: "Garena"
-sourceName: "VibeCritic Editorial Desk"
+sourceName: "Garena / MMO Culture / Common Sense Media / Clubic"
 sourceId: "87622"
-sourceUrl: "https://ff.garena.com/"
+sourceUrl: "https://ff.garena.com/en"
 aiGenerated: false
 rawgSourceId: 74935
 rawgSourceUrl: "https://rawg.io/games/garena-free-fire"
@@ -87,13 +86,13 @@ gameStores:
 
 ## الحكم النهائي
 
-Free Fire تؤدي وظيفتها الأساسية جيداً: باتل رويال محمولة سريعة ومباشرة وقابلة للوصول. لكنها لا تقدم عمقاً متناسباً مع كثافة اقتصادها التجاري، كما أن التكرار والواجهة المزدحمة ومشكلات التفاعل المفتوح تحد من التجربة. الدرجة النهائية **7.0/10**، وهي تخفيض مقصود عن 8.5 القديمة؛ لأن المصدر القديم كان رقماً آلياً عاماً لا يثبت جودة كل محور، ولا يكفي وحده لتبرير درجة مرتفعة.
+Free Fire تؤدي وظيفتها الأساسية جيداً: باتل رويال محمولة سريعة ومباشرة وقابلة للوصول. لكنها لا تقدم عمقاً متناسباً مع كثافة اقتصادها التجاري، كما أن التكرار والواجهة المزدحمة ومشكلات التفاعل المفتوح تحد من التجربة. الدرجة النهائية **7.0/10**: تمنح اللعبة تقديراً لحلقة الباتل رويال السريعة وسهولة الوصول، مع خصم واضح بسبب ثقل الواجهة التجارية وتكرار التقدم وضعف بعض جوانب العرض والاستدامة.
 
 ## المصادر
 
 - [MMO Culture — Free Fire Game Review (2026)](https://mmoculture.com/reviews/free-fire-review/) — مراجعة حديثة تناقش دورة اللعب القصيرة، العروض الشرائية، السحب العشوائي، التكرار، المطابقة والدردشة.
 - [Common Sense Media — Garena Free Fire: Parents' Guide & App Review](https://www.commonsensemedia.org/app-reviews/garena-free-fire) — تقييم ملاءمة التطبيق ومخاطر الدردشة، مع ملاحظات حول شعور بعض اللاعبين بضغط الشراء.
 - [Clubic — Garena Free Fire](https://www.clubic.com/telecharger-fiche434398-garena-free-fire.html) — عرض محدث في سبتمبر 2026 لهيكل اللعبة وأوضاعها ونسخة MAX وتقييم المستخدمين.
-- [Garena Free Fire — Official Website](https://ff.garena.com/) — مرجع رسمي لتحديد طبيعة اللعبة وتحديثاتها، وليس مصدراً مستقلاً للحكم النقدي.
+- [Garena Free Fire — Official Website](https://ff.garena.com/en) — مرجع رسمي لتحديد طبيعة اللعبة وتحديثاتها، وليس مصدراً مستقلاً للحكم النقدي.
 
 > منهجية: تقييم تحريري بحثي للنسخة الحالية، لا يدّعي اختباراً مباشراً لكل جهاز أو كل تحديث. الدرجة لا تُستنتج من متوسط المستخدمين وحده، بل من وزن عناصر اللعب والعرض والصوت والاستدامة مع توضيح حدود الأدلة.
