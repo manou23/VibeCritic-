@@ -46,7 +46,7 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
  // If a provider failed but another free provider is ready, do not make the draft wait five minutes.
  // Keep the failed provider excluded by its durable cooldown and immediately try the next eligible provider.
  if(job?.status==='waiting'&&job.resumeTo==='writing'){
-  const failedId=String(job.lastError||'').match(/^(gemini|cloudflare|groq|openrouter): /)?.[1];
+  const failedId=providers.find(p=>String(job.lastError||'').startsWith(p.id+': '))?.id;
   if(failedId){
    const day=new Date(now).toISOString().slice(0,10);state.providerUsage[day]||={};state.providerCooldowns||={};
    const eligibility={...state.providerUsage[day]};
