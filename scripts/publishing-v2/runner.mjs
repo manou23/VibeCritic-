@@ -1,13 +1,34 @@
 import { enqueue, selectActiveJob, cycleDecision, transition, chooseFreeProvider, recordUsage, validateArticle, validateEvidence } from './core.mjs';
 function candidate(items,state,counts={}) { const used=new Set(Object.keys(state.jobs)); const c={game:counts.game||0,movie:counts.movie||0,series:counts.series||0}; for(const j of Object.values(state.jobs)) if(j.status==='published') c[j.item.type]=(c[j.item.type]||0)+1; return (items||[]).filter(x=>x&&['game','movie','series'].includes(x.type)&&String(x.id||'').trim()&&!used.has(x.type+':'+x.id)).sort((a,b)=>c[a.type]-c[b.type]||Number(b.editorialPriority||0)-Number(a.editorialPriority||0)||String(b.date||'').localeCompare(String(a.date||'')))[0]||null; }
-// One model call per invocation: every successful section is checkpointed before the next hourly cycle.
+// One bounded task per invocation; a durable five-hour cycle reserves its first three hours for work.
 export async function runCycle({state,adapters,providers,now=Date.now(),persist=async()=>{},publishedCounts={},articleLimits={},researchSkips=0}) {
  if(!state||state.version!==2||!adapters) throw Error('Publisher v2 state and adapters are required.');
  const save=async()=>{state.updatedAt=new Date(now).toISOString();await persist(state);}; let job=selectActiveJob(state.jobs);
+ // A cycle is five hours: allow work for the first three hours, then rest for two.
+ // The workflow ticks every 15 minutes; no long Sleep keeps a GitHub runner occupied.
+ const FIVE_HOURS=5*60*60*1000, THREE_HOURS=3*60*60*1000;
+ const previousCycle=state.cycle||{};
+ if(!Number(previousCycle.nextStartAt)){
+  state.cycle={startedAt:now,deadlineAt:now+THREE_HOURS,nextStartAt:now+FIVE_HOURS};
+  await save();
+ }else if(now>=Number(previousCycle.nextStartAt)){
+  state.cycle={startedAt:now,deadlineAt:now+THREE_HOURS,nextStartAt:now+FIVE_HOURS};
+  await save();
+ }else if(now>=Number(previousCycle.deadlineAt||0)){
+  return {action:'cycle-rest',retryAt:Number(previousCycle.nextStartAt),providerCalls:0};
+ }
  // Avoid creating a duplicate review when an existing manual or assisted article covers this title.
  if(job&&adapters.isAlreadyPublished&&await adapters.isAlreadyPublished(job.item)){
   state.jobs[job.key]=transition(job,'abandoned',{lastError:'Skipped: an existing review already covers this title.'},now);
   await save();job=null;
+ }
+ // A recovered draft owns this cycle only after duplicate detection; do not enqueue
+ // another article after it publishes.
+ if(job&&(['writing','quality-check','ready'].includes(job.status)||(job.status==='waiting'&&job.resumeTo==='writing'))){
+  state.cycle.articleKey ||= job.key;
+ }
+ if(!job&&state.cycle.articleKey){
+  return {action:'cycle-complete',key:state.cycle.articleKey,retryAt:Number(state.cycle.nextStartAt),providerCalls:0};
  }
  // Permanent evidence failures were previously deferred as generic research errors.
  // Retire those legacy checkpoints immediately so one unsupported title cannot block discovery.
@@ -53,7 +74,7 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
  if(decision.action==='resume'){job=transition(job,'resumed',{resumeTo:job.resumeTo||'writing'},now);state.jobs[job.key]=job;await save();}
  if(job.status==='queued'){job=transition(job,'research-started',{},now);state.jobs[job.key]=job;await save();}
  if(job.status==='researching'){
-  try{const evidence=await adapters.collectEvidence(job.item);const evidenceCheck=validateEvidence(evidence);if(!evidenceCheck.valid)throw Error(evidenceCheck.errors.join(' '));job=transition(job,'research-saved',{evidence},now);state.jobs[job.key]=job;await save();}
+  try{const evidence=await adapters.collectEvidence(job.item);const evidenceCheck=validateEvidence(evidence);if(!evidenceCheck.valid)throw Error(evidenceCheck.errors.join(' '));job=transition(job,'research-saved',{evidence},now);state.jobs[job.key]=job;state.cycle.articleKey=job.key;await save();}
   catch(error){
    const message=String(error?.message||error);
    // Permanent evidence gaps should not pin the single-job queue for hours.

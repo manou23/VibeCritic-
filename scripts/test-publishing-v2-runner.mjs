@@ -45,6 +45,10 @@ assert.equal(deployChecks,2);
 assert.equal(fileWrites,1,'deployment retries must not rewrite an already committed article');
 assert.equal(state.jobs['series:1'].status,'published');
 assert.ok(saves>=7);
+const afterPublish=await runCycle({state,adapters,providers,now:now+7,persist:async()=>{saves++;}});
+assert.equal(afterPublish.action,'cycle-complete','only one article may be processed in a five-hour cycle');
+assert.equal(afterPublish.key,'series:1');
+assert.equal(aiCalls,3);
 // A failed provider is cooled down durably instead of being retried on every hourly cycle.
 const failureState=createState();let failedProviderCalls=0;
 const failureAdapters={
@@ -70,4 +74,27 @@ assert.equal(fallback.action,'stage-saved','the next eligible cycle must select 
 assert.equal(fallback.provider,'backup-free');
 assert.equal(failedProviderCalls,2,'fallback provider should receive the next single AI call');
 
-console.log('VibeCritic Publishing Engine v2 crash-recovery runner tests passed.');
+// Duplicate titles must be retired before they reserve the cycle's single article slot.
+const duplicateState=createState();
+duplicateState.jobs['movie:dupe']={key:'movie:dupe',item:{type:'movie',id:'dupe'},status:'writing',stage:1,parts:[],createdAt:new Date(now).toISOString(),updatedAt:new Date(now).toISOString()};
+const duplicateAdapters={...adapters,discover:async()=>[],isAlreadyPublished:async()=>true};
+const duplicateResult=await runCycle({state:duplicateState,adapters:duplicateAdapters,providers,now,persist:async()=>{}});
+assert.equal(duplicateResult.action,'no-candidates');
+assert.equal(duplicateState.cycle.articleKey,undefined,'a duplicate must not consume the cycle article slot');
+
+// The durable cycle allows work for three hours and rests until the five-hour boundary.
+const cycleState=createState();
+let cycleNow=now;
+const cycleAdapters={...adapters,discover:async()=>[]};
+const firstCycle=await runCycle({state:cycleState,adapters:cycleAdapters,providers,now:cycleNow,persist:async()=>{}});
+assert.equal(firstCycle.action,'no-candidates');
+assert.equal(cycleState.cycle.deadlineAt,now+3*60*60*1000);
+assert.equal(cycleState.cycle.nextStartAt,now+5*60*60*1000);
+const duringRest=await runCycle({state:cycleState,adapters:cycleAdapters,providers,now:now+4*60*60*1000,persist:async()=>{}});
+assert.equal(duringRest.action,'cycle-rest','the final two hours must remain idle');
+const nextCycle=await runCycle({state:cycleState,adapters:cycleAdapters,providers,now:now+5*60*60*1000,persist:async()=>{}});
+assert.equal(nextCycle.action,'no-candidates');
+assert.equal(cycleState.cycle.startedAt,now+5*60*60*1000);
+assert.equal(cycleState.cycle.nextStartAt,now+10*60*60*1000);
+
+console.log('VibeCritic Publishing Engine v2 crash-recovery and five-hour cycle tests passed.');
