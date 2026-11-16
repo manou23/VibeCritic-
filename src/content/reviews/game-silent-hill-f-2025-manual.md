@@ -3,7 +3,7 @@ title: "سايلنت هيل إف"
 originalTitle: "SILENT HILL f"
 youtubeVideoTitle: "SILENT HILL f — Official Launch Trailer"
 youtubeVideoId: "0OqTeE3y1x0"
-poster: "https://sdmedia.playser.cadenaser.com/playser/image/202510/09/1760024994794_1760025059_square_img.png"
+poster: "https://www.konami.com/games_cms/promo/eu/uploads/05a964c32b94978132fbd9ef55b0ec87-1024x576.png"
 backdrop: "https://www.konami.com/games_cms/promo/eu/uploads/05a964c32b94978132fbd9ef55b0ec87-1024x576.png"
 headline: "رعب نفسي جريء بصور وكتابة لافتة، تقابله مواجهات مرهقة وإيقاع غير مستقر"
 hook: "تستبدل SILENT HILL f البلدة الأمريكية المألوفة بقرية يابانية في الستينيات، وتكسب من هذا التحول هوية بصرية وموضوعية قوية، لكنها لا تجعل كل أنظمتها بنفس الجودة."
@@ -21,8 +21,12 @@ pacingScore: 7.6
 reviewMode: review
 platforms: ["PlayStation 5", "Xbox Series X|S", "PC"]
 gameStores:
-  - name: "GOG"
+  - name: "PlayStation Store"
+  - name: "Xbox Store"
   - name: "Steam"
+  - name: "Epic Games"
+  - name: "Microsoft Store"
+  - name: "GOG"
 pros:
   - "كتابة نفسية جريئة تتناول ضغوط المجتمع والعائلة والهوية"
   - "تصميم القرية والوحوش يمزج الجمال بالتشوه بطريقة مميزة"
