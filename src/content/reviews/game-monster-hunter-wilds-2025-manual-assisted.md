@@ -4,13 +4,12 @@ originalTitle: "Monster Hunter Wilds"
 headline: "عالم حي وصيد أكثر انسياباً، لكن الطموح التقني لا يعفي التجربة من تفاوت الأداء"
 hook: "تجعل Wilds الانتقال بين المخيمات والبراري أكثر سلاسة وتمنح الصيد سياقاً بيئياً أوضح، لكنها تضع أمام اللاعب عالماً كثيفاً لا يعمل بالدرجة نفسها على كل منصة."
 summary: "تطور جديد في سلسلة صيد الوحوش من Capcom، مع بيئات متغيرة وصيد تعاوني و14 نوعاً من الأسلحة ونظام Focus Mode."
-verdict: "مونستر هنتر وايلدز يقدم تطور جديد في سلسلة صيد الوحوش من Capcom، مع بيئات متغيرة وصيد تعاوني و14 نوعاً من الأسلحة ونظام Focus Mode. وتظهر قوته في عناصره الأساسية، مع حدود واضحة في الإيقاع أو توزيع المسارات كما تفصل المراجعة. تقييم VibeCritic التحريري: 8.3/10."
+verdict: "تجدد Monster Hunter Wilds حلقة الصيد عبر بيئات متغيرة ونظام Focus Mode والتنقل بـSeikret، وتحافظ على عمق اختيار السلاح وقراءة الوحوش. لكن منحنى التعلم وكثافة الأنظمة ومشكلات الأداء على بعض أجهزة الحاسوب تقلل من سلاسة التجربة. تقييم VibeCritic التحريري: 8.3/10."
 reviewVersion: 1
 type: game
 date: 2026-11-15
 releaseDate: "2025-02-28"
 poster: "https://myhotposters.com/cdn/shop/files/mL7640_1024x1024.jpg?v=1748530798"
-backdrop: "https://myhotposters.com/cdn/shop/files/mL7640_1024x1024.jpg?v=1748530798"
 score: 8.3
 storyScore: 7.8
 visualsScore: 9.0
@@ -29,12 +28,10 @@ cons:
   - "بعض الأنظمة والواجهات قد تبدو مزدحمة للمبتدئ"
   - "الإيقاع بين المهمات والإدارة قد يبطئ اندفاع الصيد"
 tags: ["Monster Hunter Wilds", "game", "VibeCritic", "2025"]
-genres: ["أكشن ومغامرة"]
+genres: ["أكشن", "مغامرة", "تقمص أدوار"]
 sourceName: "Capcom"
 sourceId: "manual-assisted-game-monster-hunter-wilds-2025-manual-assisted"
 sourceUrl: "https://www.capcom.co.jp/ir/english/news/html/e240925.html"
-externalVideoUrl: "https://www.monsterhunter.com/wilds/en-us/"
-externalVideoTitle: "Monster Hunter Wilds — Official Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
 rawgSourceId: 973391
@@ -79,7 +76,7 @@ Monster Hunter Wilds توسع السلسلة بذكاء في العالم وال
 
 ## الحكم النهائي
 
-تقييم 8.3/10 يعكس موازنة بين نقاط القوة المحددة ومواطن الضعف التي ظهرت في السرد أو الأنظمة أو الإيقاع. لا تعني الدرجة أن العمل كامل، ولا تُمنح المكافأة لمجرد الشعبية أو حجم الإنتاج.
+تقييم 8.3/10 يعكس قوة تصميم الصيد والبيئات والوحوش وتنوع الأسلحة، مع خصم بسبب كثافة الأنظمة ومنحنى التعلم والأداء غير المتساوي على الحاسوب. تقدم Wilds تطوراً مهماً للسلسلة، لكنها تحتاج إلى جهاز مناسب وصبر مع أنظمتها كي تظهر أفضل ما لديها.
 
 ## مصادر التحقق
 
