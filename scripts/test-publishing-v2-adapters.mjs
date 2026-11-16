@@ -7,7 +7,7 @@ const providers=buildFreeProviders();
 assert.deepEqual(providers.map(x=>x.id),['gemini','groq','openrouter']);
 assert.ok(providers.every(x=>x.free===true&&x.enabled===true));
 assert.ok(!providers.some(x=>x.id==='openai'),'paid OpenAI must never enter the V2 free provider pool');
-const review=Array.from({length:225},()=> 'تحليل نقدي موثق يشرح تفاصيل العمل وحدود الأدلة المتاحة').join(' ');
+const review=Array.from({length:24},()=> 'تحليل نقدي موثق يشرح تفاصيل العمل وحدود الأدلة المتاحة').join(' ');
 const payload={review,scores:{story:7.2,visuals:8.1,sound:7.4,pacing:6.8},pros:[],cons:[],verdict:''};
 const originalFetch=globalThis.fetch;let calls=0;
 globalThis.fetch=async(url,options)=>{
