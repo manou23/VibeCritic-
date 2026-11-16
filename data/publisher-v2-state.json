@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T16:05:47.772Z",
+  "updatedAt": "2026-11-16T16:06:37.443Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -65,11 +65,11 @@
           "votes": 26
         }
       },
-      "attempts": 1,
+      "attempts": 0,
       "createdAt": "2026-11-16T15:02:39.964Z",
-      "updatedAt": "2026-11-16T16:05:16.120Z",
-      "nextAttemptAt": 1794845416120,
-      "lastError": "openrouter: openrouter empty response",
+      "updatedAt": "2026-11-16T16:06:37.443Z",
+      "nextAttemptAt": 1794845196443,
+      "lastError": "OpenRouter returned an empty completion; retrying through Cloudflare's capped free allocation.",
       "resumeTo": "writing"
     }
   },

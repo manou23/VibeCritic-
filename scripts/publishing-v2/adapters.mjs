@@ -26,7 +26,7 @@ async function seen(){
 export function buildFreeProviders(){
  const out=[];
  if(env.GEMINI_API_KEY){const rawModel=String(env.GEMINI_MODEL||'');const configured=rawModel.startsWith('models/')?rawModel.slice(7):rawModel;const model=!configured||configured==='gemini-2.5-flash'?'gemini-3.8-flash':configured;out.push({id:'gemini',enabled:true,free:true,model,priority:1,dailyRequestLimit:12,dailyTokenLimit:18000});}
- if(env.CLOUDFLARE_API_TOKEN&&env.CLOUDFLARE_ACCOUNT_ID&&env.CLOUDFLARE_FREE_TIER_ONLY==='true')out.push({id:'cloudflare',enabled:true,free:true,model:env.CLOUDFLARE_MODEL||'@cf/meta/llama-3.3-70b-instruct-fp8-fast',priority:2,dailyRequestLimit:20,dailyTokenLimit:18000});
+ if(env.CLOUDFLARE_API_TOKEN&&env.CLOUDFLARE_ACCOUNT_ID)out.push({id:'cloudflare',enabled:true,free:true,model:env.CLOUDFLARE_MODEL||'@cf/meta/llama-3.3-70b-instruct-fp8-fast',priority:2,dailyRequestLimit:3,dailyTokenLimit:9000});
  if(env.OPENROUTER_API_KEY)out.push({id:'openrouter',enabled:true,free:true,model:env.OPENROUTER_MODEL||'openrouter/free',priority:3,dailyRequestLimit:10,dailyTokenLimit:12000});
  return out;
 }
@@ -110,7 +110,7 @@ async function modelCall(provider,text){
  if(!r.ok)throw new Error(provider.id+' HTTP '+r.status+': '+(await r.text()).slice(0,600));
  const d=await r.json();let raw=provider.id==='gemini'?d.candidates?.[0]?.content?.parts?.map(x=>x.text||'').join(''):provider.id==='cloudflare'?(d.result?.response||d.result?.output_text||''):d.choices?.[0]?.message?.content;
  if(Array.isArray(raw))raw=raw.map(x=>x.text||'').join('');
- if(typeof raw!=='string'||!raw.trim())throw new Error(provider.id+' empty response');
+ if(typeof raw!=='string'||!raw.trim()){const c=d.choices?.[0],m=c?.message||{};throw new Error(provider.id+' empty response: '+JSON.stringify({model:d.model,finish_reason:c?.finish_reason,message_keys:Object.keys(m),error:d.error||null}).slice(0,500));}
  const parsed=parseJsonResponse(raw),words=(clean(parsed.review).match(/[\p{L}\p{N}]+/gu)||[]).length;
  if(words<220||words>280)throw new Error('Section word count rejected: '+words);
  for(const k of ['story','visuals','sound','pacing'])if(!Number.isFinite(Number(parsed.scores?.[k]))||Number(parsed.scores[k])<0||Number(parsed.scores[k])>10)throw new Error('Invalid score '+k);
