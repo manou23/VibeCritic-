@@ -42,6 +42,12 @@ jobs:
         run: |
           git fetch origin main
           git reset --hard origin/main
+
+      - name: Remove previously tracked build artifacts from Git index
+        run: |
+          # .gitignore does not untrack files already committed. Remove them
+          # from the index once while preserving the runner's working copies.
+          git rm -r --cached --ignore-unmatch node_modules dist .astro .wrangler
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
