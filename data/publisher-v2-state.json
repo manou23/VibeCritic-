@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T16:26:13.615Z",
+  "updatedAt": "2026-11-16T16:55:24.612Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -17,7 +17,7 @@
         "sourceUrl": "https://www.themoviedb.org/tv/254630",
         "popularity": 26
       },
-      "status": "writing",
+      "status": "abandoned",
       "stage": 2,
       "parts": [
         {
@@ -78,10 +78,36 @@
       },
       "attempts": 0,
       "createdAt": "2026-11-16T15:02:39.964Z",
-      "updatedAt": "2026-11-16T16:26:09.160Z",
+      "updatedAt": "2026-11-16T16:55:10.673Z",
       "nextAttemptAt": null,
-      "lastError": null,
+      "lastError": "Skipped: an existing review already covers this title.",
       "lastProvider": "openrouter"
+    },
+    "movie:1616687": {
+      "key": "movie:1616687",
+      "item": {
+        "type": "movie",
+        "id": "1616687",
+        "name": "Never Surrender",
+        "originalTitle": "Serangan Balik",
+        "overview": "When a deadly gang descends on his remote home, a guilt-ridden veteran and the estranged grandchildren he barely knows must unite to survive.",
+        "date": "2026-11-11",
+        "poster": "https://image.tmdb.org/t/p/w780/hKROmLddpzpjkxKKVFYFRAOXX1b.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/umxN2kMcUm6VoxSOdcEcQoXuC4q.jpg",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1616687",
+        "popularity": 35
+      },
+      "status": "waiting",
+      "stage": 0,
+      "parts": [],
+      "evidence": null,
+      "attempts": 0,
+      "createdAt": "2026-11-16T16:55:10.673Z",
+      "updatedAt": "2026-11-16T16:55:10.673Z",
+      "nextAttemptAt": 1794851710673,
+      "lastError": "Evidence: Independent source has insufficient detail.",
+      "resumeTo": "researching"
     }
   },
   "providerUsage": {
