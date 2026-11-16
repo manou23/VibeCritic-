@@ -78,6 +78,15 @@ const duplicateResult=await runCycle({state:duplicateState,adapters:duplicateAda
 assert.equal(duplicateResult.action,'no-candidates');
 assert.equal(duplicateState.cycle.articleKey,undefined,'a duplicate must not consume the cycle article slot');
 
+// A ready article must not be mistaken for a duplicate of its own newly written file.
+const readyState=createState();
+readyState.jobs['game:ready']={key:'game:ready',item:{type:'game',id:'ready'},status:'ready',stage:3,parts:[],article,articlePath:'src/content/reviews/game-ready.md',fileWritten:true,createdAt:new Date(now).toISOString(),updatedAt:new Date(now).toISOString()};
+readyState.cycle={startedAt:now,deadlineAt:now+3*60*60*1000,nextStartAt:now+5*60*60*1000,articleKey:'game:ready'};
+const readyAdapters={...adapters,isAlreadyPublished:async()=>true,verifyDeployment:async()=>true};
+const readyResult=await runCycle({state:readyState,adapters:readyAdapters,providers,now,persist:async()=>{}});
+assert.equal(readyResult.action,'published','ready article should proceed to deployment verification despite duplicate lookup matching its own file');
+assert.equal(readyState.jobs['game:ready'].status,'published');
+
 // The durable cycle allows work for three hours and rests until the five-hour boundary.
 const cycleState=createState();
 let cycleNow=now;
