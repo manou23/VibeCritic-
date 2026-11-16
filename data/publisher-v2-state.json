@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T16:55:24.612Z",
+  "updatedAt": "2026-11-16T17:07:13.051Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -98,16 +98,41 @@
         "sourceUrl": "https://www.themoviedb.org/movie/1616687",
         "popularity": 35
       },
-      "status": "waiting",
+      "status": "abandoned",
       "stage": 0,
       "parts": [],
       "evidence": null,
       "attempts": 0,
       "createdAt": "2026-11-16T16:55:10.673Z",
-      "updatedAt": "2026-11-16T16:55:10.673Z",
+      "updatedAt": "2026-11-16T17:07:11.253Z",
       "nextAttemptAt": 1794851710673,
-      "lastError": "Evidence: Independent source has insufficient detail.",
+      "lastError": "Evidence rejected: Independent source has insufficient detail.",
       "resumeTo": "researching"
+    },
+    "movie:1185344": {
+      "key": "movie:1185344",
+      "item": {
+        "type": "movie",
+        "id": "1185344",
+        "name": "The Beast",
+        "originalTitle": "The Beast",
+        "overview": "When a militia of unidentified hostiles coordinates a coup against the United States, the president must fight back by utilizing the highly classified offensive capabilities of his armored limousine, nicknamed The Beast.",
+        "date": "2026-10-08",
+        "poster": "https://image.tmdb.org/t/p/w780/ocg5JfJP19fodcv5uQUApkmZMdI.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/v5Wb9NoE0s1mGmC5wVeQR1OK22V.jpg",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1185344",
+        "popularity": 32
+      },
+      "status": "abandoned",
+      "stage": 0,
+      "parts": [],
+      "evidence": null,
+      "attempts": 0,
+      "createdAt": "2026-11-16T17:07:11.253Z",
+      "updatedAt": "2026-11-16T17:07:11.253Z",
+      "nextAttemptAt": null,
+      "lastError": "Evidence rejected: Independent source has insufficient detail."
     }
   },
   "providerUsage": {
