@@ -4,7 +4,7 @@ originalTitle: "Mafia: The Old Country"
 headline: "قصة مافيا مركزة وأجواء صقلية آسرة، لكن اللعب الخطي لا يوازي قوة العالم"
 hook: "تختار The Old Country العودة إلى جذور الجريمة المنظمة بحكاية خطية ومكان غني بالتفاصيل؛ إنها تكسب في الجو والشخصيات أكثر مما تكسب في حرية اللعب."
 summary: "دراما جريمة تعود إلى صقلية مطلع القرن العشرين، وتتابع إنزو فافارا في صعوده داخل عائلة توريسي الإجرامية."
-verdict: "مافيا: البلد القديم يقدم دراما جريمة تعود إلى صقلية مطلع القرن العشرين، وتتابع إنزو فافارا في صعوده داخل عائلة توريسي الإجرامية. وتظهر قوته في عناصره الأساسية، مع حدود واضحة في الإيقاع أو توزيع المسارات كما تفصل المراجعة. تقييم VibeCritic التحريري: 8.4/10."
+verdict: "تنجح Mafia: The Old Country في بناء دراما جريمة خطية ذات أجواء صقلية قوية وشخصيات تخضع لمنطق الولاء والعائلة، لكنها تقدم حرية وأنظمة لعب أضيق من ألعاب العالم المفتوح. بعض المهمات والمواجهات مألوفة، إلا أن تركيز الحكاية يمنحها تماسكاً واضحاً. تقييم VibeCritic التحريري: 8.4/10."
 reviewVersion: 1
 type: game
 date: 2026-11-15
@@ -16,7 +16,6 @@ soundScore: 8.4
 pacingScore: 8.0
 reviewMode: review
 poster: "https://album.mediaset.es/eimg/2025/11/11/mafia-the-old-country-key-art-jpg-16-9-aspect-ratio-default-0_da39.jpg?h=900&w=1200"
-backdrop: "https://album.mediaset.es/eimg/2025/11/11/mafia-the-old-country-key-art-jpg-16-9-aspect-ratio-default-0_da39.jpg?h=900&w=1200"
 platforms: ["PlayStation 5", "Xbox Series X|S", "PC"]
 gameStores:
   - name: "Steam"
@@ -29,12 +28,10 @@ cons:
   - "بعض المواجهات والمهام تعتمد على أنماط مألوفة"
   - "الأنظمة الجانبية لا تتطور دائماً بما يكفي"
 tags: ["Mafia: The Old Country", "game", "VibeCritic", "2025"]
-genres: ["أكشن ومغامرة"]
+genres: ["أكشن", "مغامرة", "جريمة", "تاريخي"]
 sourceName: "2K / Hangar 13"
 sourceId: "manual-assisted-game-mafia-the-old-country-2025-manual-assisted"
 sourceUrl: "https://newsroom.2k.com/news/mafia-the-old-country-now-available-worldwide"
-externalVideoUrl: "https://newsroom.2k.com/news/mafia-the-old-country-now-available-worldwide"
-externalVideoTitle: "Mafia: The Old Country — Official Launch Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
 rawgSourceId: 987515
@@ -78,7 +75,7 @@ rawgDevelopers:
 
 ## الحكم النهائي
 
-تقييم 8.4/10 يعكس موازنة بين نقاط القوة المحددة ومواطن الضعف التي ظهرت في السرد أو الأنظمة أو الإيقاع. لا تعني الدرجة أن العمل كامل، ولا تُمنح المكافأة لمجرد الشعبية أو حجم الإنتاج.
+تقييم 8.4/10 يمنح وزناً لأجواء صقلية وبناء العالم وتركيز الحكاية والأداء، مع خصم بسبب ضيق حرية اللعب وتكرار بعض أنماط المهمات. إنها مغامرة جريمة قوية لمن يفضل حملة محددة ومتماسكة، وليست بديلاً عن عالم مفتوح واسع.
 
 ## مصادر التحقق
 
