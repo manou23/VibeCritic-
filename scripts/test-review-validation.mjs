@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { validateGeneratedReview } from './generate-reviews.mjs';
+import { validateGeneratedReview, validateCompletedArticle } from './generate-reviews.mjs';
 
 function words(count) {
   return Array.from({ length: count }, (_, index) => 'تفصيل' + (index + 1)).join(' ');
@@ -13,13 +13,19 @@ function candidate(review) {
   };
 }
 
-const valid = candidate(words(180));
-assert.equal(validateGeneratedReview(valid).review, words(180));
+const validSection = candidate(words(230));
+assert.equal(validateGeneratedReview(validSection).review, words(230));
 
-assert.throws(() => validateGeneratedReview(candidate(words(100))), /150 كلمة و650 حرف/);
-assert.throws(() => validateGeneratedReview(candidate(words(260))), /250 كلمة/);
-assert.throws(() => validateGeneratedReview({ ...candidate(words(180)), pros: ['نقطة واحدة'] }), /3 عناصر على الأقل/);
-assert.throws(() => validateGeneratedReview({ ...candidate(words(180)), cons: ['تحفظ واحد'] }), /عنصران على الأقل/);
-assert.throws(() => validateGeneratedReview({ ...candidate(words(180)), scores: { story: 7.55, visuals: 7, sound: 6.5, pacing: 7 } }), /بخطوة عشرية واحدة/);
-assert.throws(() => validateGeneratedReview({ ...candidate(words(180)), review: '### محور\\n' + words(180) }), /بلا محاور/);
-console.log('Review validation tests passed: long staged sections, score calibration, pros and cons are enforced.');
+assert.throws(() => validateGeneratedReview(candidate(words(219))), /220 كلمة و900 حرف/);
+assert.throws(() => validateGeneratedReview(candidate(words(281))), /280 كلمة/);
+assert.throws(() => validateGeneratedReview({ ...candidate(words(230)), pros: ['نقطة واحدة'] }), /3 عناصر على الأقل/);
+assert.throws(() => validateGeneratedReview({ ...candidate(words(230)), cons: ['تحفظ واحد'] }), /عنصران على الأقل/);
+assert.throws(() => validateGeneratedReview({ ...candidate(words(230)), scores: { story: 7.55, visuals: 7, sound: 6.5, pacing: 7 } }), /بخطوة عشرية واحدة/);
+assert.throws(() => validateGeneratedReview({ ...candidate(words(230)), review: '### محور\\n' + words(230) }), /بلا محاور/);
+
+const completeArticle = '### المحور الأول\\n\\n' + words(650);
+assert.equal(validateCompletedArticle(completeArticle), completeArticle);
+assert.throws(() => validateCompletedArticle(words(649)), /650 كلمة و3200 حرف/);
+assert.throws(() => validateCompletedArticle('قصير جداً'), /650 كلمة و3200 حرف/);
+
+console.log('Review validation tests passed: 220–280 word sections and a 650-word/3200-character final article are enforced.');
