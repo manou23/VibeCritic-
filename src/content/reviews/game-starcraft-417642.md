@@ -25,6 +25,7 @@ tags:
 genres:
   - "Shooter"
 sourceName: "Blizzard Entertainment — BlizzCon 2026 Announcement"
+sourceId: "starcraft-new-project-2026"
 sourceUrl: "https://news.blizzard.com/en-us/article/24301453/everything-announced-at-blizzcon-2026-opening-ceremony"
 aiGenerated: true
 gameStores: []
