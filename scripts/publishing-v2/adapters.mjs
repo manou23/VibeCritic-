@@ -145,7 +145,7 @@ export function createPublishingAdapters(){return {
   catch(firstError){
    if(provider.id!=='groq'||!/^Section word count rejected:/.test(String(firstError?.message||'')))throw firstError;
    const firstTokens=Number(firstError.tokens)||0;
-   const retryPrompt=basePrompt+'\\n\\nمراجعة إلزامية للطول: الإجابة السابقة أقصر من الحد المطلوب. أعد كتابة القسم كاملاً بتفصيل أكبر، واجعل review بين 250 و270 كلمة عربية فعلية. أضف تحليلاً محدداً مرتبطاً بالأدلة ولا تكرر الجمل ولا تضف حقائق غير موثقة.';
+   const retryPrompt=basePrompt+'\n\nمراجعة إلزامية للطول: الإجابة السابقة أقصر من الحد المطلوب. أعد كتابة القسم كاملاً بتفصيل أكبر، واجعل review بين 250 و270 كلمة عربية فعلية. أضف تحليلاً محدداً مرتبطاً بالأدلة ولا تكرر الجمل ولا تضف حقائق غير موثقة.';
    try{const retry=await modelCall(provider,retryPrompt);return {text:JSON.stringify(retry.parsed),tokens:firstTokens+retry.tokens,requests:2};}
    catch(retryError){retryError.tokens=(Number(retryError.tokens)||0)+firstTokens;retryError.requests=2;throw retryError;}
   }
