@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
-import { validateGeneratedReview, validateCompletedArticle, calculateContentRetryAt, shouldRetryShortSection, shouldUseCloudflareGateway } from './generate-reviews.mjs';
+import * as reviewTools from './generate-reviews.mjs';
+const { validateGeneratedReview, validateCompletedArticle, calculateContentRetryAt, shouldRetryShortSection, shouldUseCloudflareGateway } = reviewTools;
 
 function words(count) {
   return Array.from({ length: count }, (_, index) => 'تفصيل' + (index + 1)).join(' ');
@@ -20,7 +21,22 @@ const interimSection = { ...candidate(words(230)), pros: [], cons: [] };
 assert.equal(validateGeneratedReview(interimSection, { stage: 0 }).pros.length, 0);
 assert.equal(validateGeneratedReview(interimSection, { stage: 1 }).cons.length, 0);
 assert.throws(() => validateGeneratedReview(interimSection, { stage: 2 }), /3 عناصر على الأقل/);
-assert.throws(() => validateGeneratedReview({ ...interimSection, pros: undefined }, { stage: 0 }), /مصفوفتين/);
+if (typeof reviewTools.normalizeInterimReviewLists === 'function' && typeof reviewTools.selectActiveDraftJob === 'function') {
+  const normalizedInterim = reviewTools.normalizeInterimReviewLists({ ...interimSection, pros: undefined, cons: null }, 0);
+  assert.deepEqual(normalizedInterim.pros, []);
+  assert.deepEqual(normalizedInterim.cons, []);
+  assert.equal(validateGeneratedReview(normalizedInterim, { stage: 0 }).pros.length, 0);
+  assert.throws(() => validateGeneratedReview(reviewTools.normalizeInterimReviewLists({ ...interimSection, pros: 'ليست مصفوفة' }, 0), { stage: 0 }), /مصفوفة/);
+
+  const olderDraft = { key: 'series:old', status: 'waiting', createdAt: '2026-11-15T10:00:00Z', nextAttemptAt: 2_000_000, item: { id: 'old' }, draft: { stage: 2, sections: [{}, {}] } };
+  const newerDraft = { key: 'movie:new', status: 'staged-writing', createdAt: '2026-11-16T10:00:00Z', nextAttemptAt: 0, item: { id: 'new' }, draft: { stage: 1, sections: [{}] } };
+  assert.equal(reviewTools.selectActiveDraftJob([newerDraft, olderDraft]).key, 'series:old');
+  assert.equal(reviewTools.selectActiveDraftJob([{ ...olderDraft, status: 'published' }]), null);
+  const finalizationDraft = { ...newerDraft, status: 'quality-check', draft: { stage: 3, finalPart: { review: 'final' }, sections: [{}, {}, {}] } };
+  assert.equal(reviewTools.selectActiveDraftJob([finalizationDraft]).key, 'movie:new');
+} else {
+  assert.throws(() => validateGeneratedReview({ ...interimSection, pros: undefined }, { stage: 0 }), /مصفوفتين/);
+}
 
 assert.equal(shouldRetryShortSection(new Error('جزء المقال أقصر من الحد الأدنى'), false), true);
 assert.equal(shouldRetryShortSection(new Error('جزء المقال أقصر من الحد الأدنى'), true), false);
