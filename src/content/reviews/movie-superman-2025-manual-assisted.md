@@ -4,12 +4,12 @@ originalTitle: "Superman"
 headline: "عودة إلى الأمل بروح كومكس واضحة، لكن ازدحام العالم والشخصيات يضغط على التركيز"
 hook: "يختار جيمس غان أن يقدم سوبرمان بوصفه بطلاً طيباً في عالم ساخر ومزدحم؛ الفكرة منعشة، لكن كثرة الأبطال والخيوط تجعل البناء أقل صفاءً."
 summary: "إعادة تقديم سينمائية لشخصية سوبرمان من كتابة وإخراج جيمس غان، مع ديفيد كورنسويت ورايتشل بروسناهان ونيكولاس هولت."
-verdict: "يعيد جيمس غان تقديم سوبرمان بنبرة متفائلة تركز على الرحمة والاختيار الأخلاقي، وتمنح العلاقة بين كلارك ولويس قلباً إنسانياً. لكن ازدحام الشخصيات والخيوط الجانبية يضغط على تركيز الحكاية، كما لا تتوازن الانتقالات بين الفكاهة والجدية دائماً. تقييم VibeCritic التحريري: 8.2/10."
+verdict: "يعيد جيمس غان تقديم سوبرمان بنبرة متفائلة تركز على الرحمة والاختيار الأخلاقي، وتمنح العلاقة بين كلارك ولويس قلباً إنسانياً. لكن ازدحام الشخصيات والخيوط الجانبية يضغط على تركيز الحكاية، كما لا تتوازن الانتقالات بين الفكاهة والجدية دائماً. تقييم VibeCritic التحريري: 8.3/10."
 reviewVersion: 1
 type: movie
 date: 2026-11-15
 releaseDate: "2025-07-11"
-score: 8.2
+score: 8.3
 storyScore: 7.8
 visualsScore: 8.9
 soundScore: 8.4
@@ -26,14 +26,14 @@ cons:
   - "بعض الصراعات تحل بسرعة أكبر من بناء أسبابها"
 tags: ["Superman", "movie", "VibeCritic", "2025"]
 genres: ["أكشن", "مغامرة", "خيال علمي"]
-sourceName: "DC Studios / Warner Bros."
+sourceName: "DC Studios / Warner Bros. / RogerEbert.com / The Guardian / Screen Daily / Variety"
 sourceId: "manual-assisted-movie-superman-2025-manual-assisted"
 sourceUrl: "https://www.dc.com/movies/superman-2025"
 externalVideoTitle: "Superman — Official Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
-youtubeVideoId: "MikgqM0LXr4"
-youtubeVideoTitle: "Official American Sign Language Trailer"
+youtubeVideoId: "pnX5wReJ2qc"
+youtubeVideoTitle: "Superman — Official Trailer"
 ---
 > **منهجية المراجعة:** قراءة تحريرية بحثية تستند إلى المواد الرسمية المتاحة ومعلومات الإنتاج والإصدار وقراءات نقدية منشورة. لا تدعي هذه المادة اختباراً شخصياً جديداً أو مشاهدة/لعباً مباشراً، ولا تنقل تقييم الجمهور بوصفه حكماً تحريرياً.
 
@@ -63,9 +63,13 @@ youtubeVideoTitle: "Official American Sign Language Trailer"
 
 ## الحكم النهائي
 
-تقييم 8.2/10 يكافئ وضوح هوية الفيلم ونبرته الإنسانية وأداء بطله، لكنه يخصم من ازدحام الشخصيات وتفاوت الإيقاع. ينجح العمل في تقديم سوبرمان متفائل من دون تجاهل الشكوك المحيطة به، لكنه لا يمنح كل خيط درامي المساحة التي يحتاجها.
+تقييم 8.3/10 يكافئ وضوح هوية الفيلم ونبرته الإنسانية وأداء بطله، لكنه يخصم من ازدحام الشخصيات وتفاوت الإيقاع. ينجح العمل في تقديم سوبرمان متفائل من دون تجاهل الشكوك المحيطة به، لكنه لا يمنح كل خيط درامي المساحة التي يحتاجها.
 
-## مصادر التحقق
+## مصادر التحقق والمراجعات النقدية
 
-- [DC Studios / Warner Bros.](https://www.dc.com/movies/superman-2025)
-- [المادة الرسمية / المقطع المرتبط](https://www.dc.com/movies/superman-2025)
+- [DC Studios — Superman (2025)](https://www.dc.com/movies/superman-2025): الملخص الرسمي والطاقم وتاريخ العرض.
+- [Warner Bros. Pictures International — Official Trailer](https://www.youtube.com/watch?v=pnX5wReJ2qc): المقطع الرسمي.
+- [RogerEbert.com — Superman Review](https://www.rogerebert.com/reviews/superman-movie-review-2025): ملاحظات عن أداء الشخصيات وازدحام العالم والنبرة.
+- [The Guardian — Superman Review](https://www.theguardian.com/film/2025/jul/08/superman-review-david-corenswet-james-gunn): قراءة نقدية للخلفية والشخصيات وتفاوت التركيز.
+- [Screen Daily — Superman Review](https://www.screendaily.com/reviews/superman-review-james-gunn-puts-his-own-stamp-on-the-iconic-man-of-steel/5206505.article): تحليل المزج بين الإخلاص للشخصية والازدحام السردي.
+- [Variety — Superman Review](https://au.variety.com/2025/film/news/superman-review-james-gunn-david-corenswet-24729/): قراءة نقدية للنبرة والأداءات وبناء عالم DC الجديد.
