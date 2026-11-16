@@ -32,7 +32,7 @@ tags: ["Inception", "Christopher Nolan", "Science Fiction", "Dreams", "Thriller"
 genres: ["خيال علمي", "إثارة", "أكشن"]
 cast: ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Elliot Page", "Tom Hardy", "Ken Watanabe", "Marion Cotillard"]
 crew: ["Christopher Nolan", "Wally Pfister", "Lee Smith", "Hans Zimmer"]
-sourceName: "American Film Institute / Legendary"
+sourceName: "Warner Bros. / Legendary Pictures / RogerEbert.com / The Guardian / The New Yorker / Metacritic"
 sourceId: "manual-movie-inception"
 sourceUrl: "https://watch.afi.com/movie/inception"
 aiGenerated: false
@@ -61,9 +61,13 @@ aiGenerated: false
 
 Inception فيلم خيال علمي مشغول بعناية، يجمع بين حبكة ذات قواعد واضحة وصورة ومونتاج يخدمان الفكرة. نقاط ضعفه تظهر في الشرح الزائد نسبياً وفي شخصيات مساندة لا تملك المساحة الكافية. درجة 8.7/10 تعكس قوة البناء والتنفيذ، من دون اعتبار التعقيد وحده دليلاً على العمق.
 
-## مصادر التحقق
+## مصادر التحقق والمراجعات النقدية
 - [American Film Institute — Inception](https://watch.afi.com/movie/inception): الملخص والمخرج والطاقم والمواصفات.
 - [Legendary — Inception](https://www.legendary.com/film/inception/): وصف الفيلم وتاريخ الإصدار والجهة المنتجة.
+- [RogerEbert.com — Inception](https://www.rogerebert.com/reviews/inception-2010): تحليل الفكرة والبناء البصري والصوتي والإيقاع.
+- [The Guardian — Inception Review](https://www.theguardian.com/film/2010/jul/15/inception-review): قراءة نقدية للتعقيد السردي والشرح والشخصيات.
+- [The New Yorker — Inception](https://www.newyorker.com/culture/richard-brody/the-inception-of-inception): نقد بنية الفيلم وفكرته وعلاقته بالتفسير.
+- [Metacritic — Inception](https://www.metacritic.com/movie/inception/critic-reviews/): تجميع مراجعات النقاد، منفصل عن درجة VibeCritic.
 - [Warner Bros. — Inception TV Spot](https://www.youtube.com/watch?v=7aED7XBmbyQ): مقطع فيديو رسمي من Warner Bros.
 
 > مراجعة تحريرية بحثية مستقلة؛ لا تدعي إجراء مشاهدة جديدة أو اختبار تفاعل الجمهور.
