@@ -31,7 +31,7 @@ tags: ["Christopher Nolan", "Science Fiction", "Space", "Time"]
 genres: ["خيال علمي", "دراما", "مغامرة"]
 cast: ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain", "Michael Caine"]
 crew: ["Christopher Nolan", "Hans Zimmer", "Hoyte van Hoytema"]
-sourceName: "VibeCritic Editorial"
+sourceName: "Warner Bros. / Legendary Pictures / RogerEbert.com / The Guardian / The New Yorker / TIME"
 sourceId: "manual-movie-interstellar-157336"
 sourceUrl: "https://www.themoviedb.org/movie/157336"
 aiGenerated: false
@@ -47,5 +47,13 @@ aiGenerated: false
 
 ## الإيقاع والأثر
 يمنح الفيلم بعض المشاهد وقتاً كافياً لتأمل حجم القرار، لكنه ينتقل أحياناً بسرعة بين المعلومات والمواجهات. تتطلب بعض أفكاره استعداداً لقبول الخيال العلمي بوصفه مساحة افتراضية، لا محاضرة علمية دقيقة. لذلك لا ينبغي تقييمه على أساس أن كل تفسير فيه تقرير علمي؛ قوته الأساسية في تحويل المفهوم إلى تجربة درامية. الدرجة النهائية 8.9/10 تعكس تميز الصورة والصوت والطموح العاطفي، مع خصم واضح بسبب الشرح المباشر وتفاوت الإيقاع والقفزة التخيلية في الخاتمة.
+
+## مصادر التحقق والمراجعات النقدية
+- [RogerEbert.com — Interstellar](https://www.rogerebert.com/reviews/interstellar-2014): تحليل العلاقة بين الزمن والفقد، مع ملاحظات على الشرح الزائد والصوت والشخصيات.
+- [The Guardian — Interstellar Review](https://www.theguardian.com/film/2014/nov/05/interstellar-review-christopher-nolan-matthew-mcconaughey): قراءة نقدية للطموح البصري والدراما والإيقاع.
+- [The New Yorker — Interstellar](https://www.newyorker.com/magazine/2014/11/10/love-physics): نقد للشرح العلمي والحوار والموسيقى.
+- [TIME — What Interstellar Got Right and Wrong About Science](https://time.com/3572988/interstellar-science-fact-check/): مراجعة علمية لمفاهيم الثقوب الدودية وتمدد الزمن ودور Kip Thorne.
+- [The Guardian — Science of Interstellar](https://www.theguardian.com/film/filmblog/2014/nov/05/interstellar-astrophysics-does-space-science-work-out): تحليل علمي لمدى دقة التصورات الفيزيائية.
+- [Los Angeles Times — Interstellar Reviews Roundup](https://www.latimes.com/entertainment/movies/moviesnow/la-et-mn-interstellar-movie-reviews-critics-20141105-story.html): يجمع ملاحظات النقاد حول الطموح والشرح والإيقاع.
 
 > مراجعة تحريرية يدوية مستقلة، وليست ادعاءً بتجربة مشاهدة جديدة أو بقياس آراء الجمهور.
