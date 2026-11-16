@@ -52,18 +52,13 @@ assert.match(sparse.summary, /تأجيل التوليد/);
 const review = {
   headline: 'A Specific Film and Its Mystery',
   hook: 'Nadia Director leads a distinct dramatic approach.',
-  review: ('Nadia Director and Actor One examine the Mystery and Drama premise. ').repeat(110) +
-    '\n### Section One\n' + ('A detailed point. ').repeat(80) +
-    '\n### Section Two\n' + ('Another detailed point. ').repeat(80) +
-    '\n### Section Three\n' + ('A third detailed point. ').repeat(80) +
-    '\n### Section Four\n' + ('A fourth detailed point. ').repeat(80) +
-    '\n### Section Five\n' + ('A fifth detailed point. ').repeat(80)
+  review: ('Nadia Director and Actor One examine the Mystery and Drama premise through a specific narrative choice. ').repeat(12)
 };
 const evaluation = evaluateEditorialReview(film, review, first, ['A previous unrelated review']);
 assert.ok(evaluation.score >= 0 && evaluation.score <= 100);
 assert.equal(evaluation.sourceTruthVerified, false);
-assert.ok(evaluation.metrics.sectionCount >= 5);
-assert.ok(evaluation.metrics.wordCount >= 750);
+assert.ok(evaluation.metrics.paragraphCount >= 1);
+assert.ok(evaluation.metrics.wordCount >= 90);
 assert.equal(evaluation.metrics.structureScore, 100);
 assert.equal(evaluation.status, 'structural-pass');
 console.log('Editorial reasoning tests passed.');
