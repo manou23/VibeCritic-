@@ -26,7 +26,7 @@ cons:
   - "الإيقاع السريع قد يترك لحظات إنسانية دون مساحة"
 tags: ["The Studio", "series", "VibeCritic", "2025"]
 genres: ["كوميديا", "هجاء", "دراما"]
-sourceName: "Apple TV Press"
+sourceName: "Apple TV / The Guardian / RogerEbert.com / Variety / Rotten Tomatoes"
 sourceId: "manual-assisted-series-the-studio-2025-manual-assisted"
 sourceUrl: "https://www.apple.com/tv-pr/originals/the-studio/"
 aiGenerated: true
@@ -64,7 +64,10 @@ youtubeVideoTitle: "Official Trailer"
 
 تقييم 8.5/10 يكافئ ذكاء السخرية والأداء الجماعي وسرعة الإيقاع، مع خصم بسبب ازدحام ضيوف الشرف والإشارات وتفاوت عمق الشخصيات. ينجح المسلسل عندما يجعل صناعة السينما نفسها مصدر الكوميديا، ويضعف عندما تتحول الحلقة إلى استعراض أسماء أكثر من كونها تطوراً للشخصيات.
 
-## مصادر التحقق
+## مصادر التحقق والمراجعات النقدية
 
-- [Apple TV Press](https://www.apple.com/tv-pr/originals/the-studio/)
-- [المادة الرسمية / المقطع المرتبط](https://www.apple.com/tv-pr/news/2025/03/apple-tv-unveils-trailer-for-the-highly-anticipated-comedy-the-studio-starring-seth-rogen-catherine-ohara-kathryn-hahn-ike-barinholtz-and-chase-sui-wonders/)
+- [Apple TV Press — The Studio](https://www.apple.com/tv-pr/originals/the-studio/): معلومات الإنتاج والطاقم والمواد الرسمية.
+- [The Guardian — The Studio Review](https://www.theguardian.com/tv-and-radio/2025/mar/26/the-studio-review-seth-rogens-hollywood-satire-is-fast-furious-and-beautifully-fun): تحليل السخرية وضيوف الشرف والإيقاع.
+- [RogerEbert.com — The Studio Review](https://www.rogerebert.com/streaming/the-studio-seth-rogen-apple-tv-plus-review-2025): قراءة نقدية للأداء والحلقات واللغة السينمائية.
+- [Variety — The Studio Review](https://au.variety.com/2025/tv/reviews/the-studio-review-seth-rogen-hollywood-satire-21170/): تحليل سخرية الصناعة وبنية الحلقات والموسيقى.
+- [Rotten Tomatoes — The Studio](https://www.rottentomatoes.com/tv/the_studio): تجميع آراء النقاد وبيانات الموسم.
