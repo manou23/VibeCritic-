@@ -46,7 +46,7 @@ genres:
   - "حركة"
   - "حرب"
 creator: "Infinity Ward"
-sourceName: "VibeCritic Editorial Desk"
+sourceName: "Activision / PC Gamer / Game Informer / Push Square / Shacknews / Tom’s Guide"
 sourceId: "call-of-duty-modern-warfare-4-2026"
 sourceUrl: "https://www.callofduty.com/blog/2026/05/call-of-duty-modern-warfare-4-announcement"
 aiGenerated: false
