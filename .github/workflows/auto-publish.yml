@@ -21,6 +21,7 @@ on:
       - '!src/data/trending.json'
       - 'functions/**'
       - 'scripts/**'
+      - 'docs/PUBLISHING-OPERATIONS.md'
       - 'astro.config.mjs'
       - 'package.json'
       - '.github/workflows/auto-publish.yml'
