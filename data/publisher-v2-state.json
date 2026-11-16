@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T15:56:19.458Z",
+  "updatedAt": "2026-11-16T15:57:51.059Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -67,8 +67,8 @@
       },
       "attempts": 4,
       "createdAt": "2026-11-16T15:02:39.964Z",
-      "updatedAt": "2026-11-16T15:56:19.056Z",
-      "nextAttemptAt": 1794845539056,
+      "updatedAt": "2026-11-16T15:57:51.058Z",
+      "nextAttemptAt": 1794844971058,
       "lastError": "groq: groq HTTP 404: {\"error\":{\"message\":\"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n",
       "resumeTo": "writing"
     }
