@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T19:44:41.195Z",
+  "updatedAt": "2026-11-16T19:45:05.676Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -161,7 +161,7 @@
         ],
         "popularity": 14089
       },
-      "status": "writing",
+      "status": "waiting",
       "stage": 2,
       "parts": [
         {
@@ -218,12 +218,13 @@
           "votes": 3067
         }
       },
-      "attempts": 0,
+      "attempts": 1,
       "createdAt": "2026-11-16T17:08:19.010Z",
-      "updatedAt": "2026-11-16T19:44:39.555Z",
-      "nextAttemptAt": null,
-      "lastError": null,
-      "lastProvider": "groq"
+      "updatedAt": "2026-11-16T19:45:03.662Z",
+      "nextAttemptAt": 1794858603662,
+      "lastError": "groq: Section word count rejected: 142",
+      "lastProvider": "groq",
+      "resumeTo": "writing"
     }
   },
   "providerUsage": {
@@ -235,10 +236,10 @@
         "failures": 4
       },
       "groq": {
-        "requests": 3,
+        "requests": 4,
         "tokens": 2718,
         "successes": 1,
-        "failures": 2
+        "failures": 3
       },
       "openrouter": {
         "requests": 7,
@@ -264,6 +265,11 @@
       "failures": 1,
       "until": 1794864631439,
       "lastError": "openrouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day: https://openrouter.ai/settings/credits?utm_source=api&utm_campaign=free_daily_limit\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1794873600000\"},\"limit_source\":\"openrouter_free_tier_daily\",\"remedy_hint\":\"Wait for the daily reset (see X-RateLimit-Reset), or purchase credits to raise your free-"
+    },
+    "groq": {
+      "failures": 1,
+      "until": 1794865503662,
+      "lastError": "Section word count rejected: 142"
     }
   },
   "cycle": {
