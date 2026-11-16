@@ -26,7 +26,8 @@ for (const file of files) {
   }
   const allScoreFields = ['score', 'storyScore', 'visualsScore', 'soundScore', 'pacingScore'];
   if (reviewMode !== 'review') {
-    const publicText = frontmatter + '\n' + body;
+    // URLs can contain date-like path segments such as /2026/10; they are not published ratings.
+    const publicText = (frontmatter + '\n' + body).replace(/https?:\/\/\S+/gi, '');
     const prematureRating = /(?:^|[^0-9])[0-9]+(?:[.,][0-9]+)?\s*(?:\/\s*10|من\s*10)(?![0-9])/i;
     if (prematureRating.test(publicText)) failures.push(file + ': preview/limited page must not publish a numeric final rating');
     const retainedScores = allScoreFields.filter(field => new RegExp('^' + field + ':\\s*', 'm').test(frontmatter));
