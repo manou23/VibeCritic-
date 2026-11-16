@@ -20,8 +20,9 @@ assert.ok(providers.every(x=>x.free===true&&x.enabled===true));
 assert.equal(providers[0].model,'gemini-3.8-flash','retired Gemini default must be upgraded to the currently recommended model');
 assert.ok(!providers.some(x=>x.id==='openai'),'paid OpenAI must never enter the V2 free provider pool');
 const review=Array.from({length:25},()=> 'تحليل نقدي موثق يشرح تفاصيل العمل وحدود الأدلة المتاحة').join(' ');
+const shortPayload={review:Array.from({length:8},()=> 'مراجعة قصيرة لا تبلغ الحد المطلوب للكلمات').join(' '),scores:{story:7.2,visuals:8.1,sound:7.4,pacing:6.8},pros:[],cons:[],verdict:''};
 const payload={review,scores:{story:7.2,visuals:8.1,sound:7.4,pacing:6.8},pros:[],cons:[],verdict:''};
-const originalFetch=globalThis.fetch;let calls=0,mode='gemini';
+const originalFetch=globalThis.fetch;let calls=0,mode='gemini',groqShortOnce=false;
 globalThis.fetch=async(url,options)=>{
  calls++;
  const body=JSON.parse(options.body);
@@ -30,7 +31,7 @@ globalThis.fetch=async(url,options)=>{
   assert.equal(body.generationConfig.responseMimeType,'application/json');
   return new Response(JSON.stringify({candidates:[{content:{parts:[{text:JSON.stringify(payload)}]}}]}),{status:200,headers:{'content-type':'application/json'}});
  }
- if(mode==='groq'){
+ if(mode==='groq'||mode==='groq-retry'){
   assert.match(String(url),/api\.groq\.com\/openai\/v1\/chat\/completions/);
   assert.equal(body.model,'openai/gpt-oss-120b');
   assert.equal(Object.hasOwn(body,'reasoning'),false,'Groq API does not accept OpenRouter reasoning options');
@@ -39,6 +40,7 @@ globalThis.fetch=async(url,options)=>{
   assert.equal(body.reasoning_effort,'low','bound GPT-OSS reasoning tokens so JSON has room to complete');
   assert.equal(body.include_reasoning,false,'do not include internal reasoning in the JSON response');
   assert.equal(options.headers.authorization,'Bearer test-key');
+  if(mode==='groq-retry'&&groqShortOnce){groqShortOnce=false;return new Response(JSON.stringify({choices:[{message:{content:JSON.stringify(shortPayload)},finish_reason:'stop'}],usage:{total_tokens:123}}),{status:200,headers:{'content-type':'application/json'}});}
   return new Response(JSON.stringify({choices:[{message:{content:JSON.stringify(payload)},finish_reason:'stop'}],usage:{total_tokens:321}}),{status:200,headers:{'content-type':'application/json'}});
  }
  if(mode==='cloudflare'){
@@ -63,16 +65,21 @@ try{
  assert.ok(JSON.parse(groqGenerated.text).review);
  assert.equal(groqGenerated.tokens,321);
  assert.equal(calls,2,'Groq uses one compatible API request per stage');
+ mode='groq-retry';groqShortOnce=true;const beforeGroqRetry=calls;
+ const groqRetried=await adapters.generatePart({job:{item:{type:'movie',id:'77'},evidence:{title:'فيلم تجريبي',type:'movie',releaseDate:'2026',overview:'وصف موثق',genres:[],platforms:[],cast:[],crew:[],metadata:{},sources:[{name:'TMDB',url:'https://www.themoviedb.org/movie/77',extract:'معلومات'},{name:'Wikipedia',url:'https://en.wikipedia.org/wiki/Test',extract:'معلومات مستقلة'}]},parts:[]},provider:providers[2],stage:1});
+ assert.equal(calls-beforeGroqRetry,2,'a short Groq section is retried exactly once');
+ assert.equal(groqRetried.requests,2,'both Groq requests are reported for quota accounting');
+ assert.equal(groqRetried.tokens,444,'token usage includes the rejected and successful Groq attempts');
  mode='cloudflare';
  const cloudflareGenerated=await adapters.generatePart({job:{item:{type:'movie',id:'77'},evidence:{title:'فيلم تجريبي',type:'movie',releaseDate:'2026',overview:'وصف موثق',genres:[],platforms:[],cast:[],crew:[],metadata:{},sources:[{name:'TMDB',url:'https://www.themoviedb.org/movie/77',extract:'معلومات'},{name:'Wikipedia',url:'https://en.wikipedia.org/wiki/Test',extract:'معلومات مستقلة'}]},parts:[]},provider:providers[1],stage:1});
  assert.ok(JSON.parse(cloudflareGenerated.text).review);
  assert.equal(cloudflareGenerated.tokens,123);
- assert.equal(calls,3,'one request per adapter invocation');
+ assert.equal(calls,5,'one request per Cloudflare adapter invocation after Groq retry');
  mode='openrouter';
  const openrouterGenerated=await adapters.generatePart({job:{item:{type:'movie',id:'77'},evidence:{title:'فيلم تجريبي',type:'movie',releaseDate:'2026',overview:'وصف موثق',genres:[],platforms:[],cast:[],crew:[],metadata:{},sources:[{name:'TMDB',url:'https://www.themoviedb.org/movie/77',extract:'معلومات'},{name:'Wikipedia',url:'https://en.wikipedia.org/wiki/Test',extract:'معلومات مستقلة'}]},parts:[]},provider:providers[3],stage:1});
  assert.ok(JSON.parse(openrouterGenerated.text).review);
  assert.equal(openrouterGenerated.tokens,456);
- assert.equal(calls,4,'one request per adapter invocation');
+ assert.equal(calls,6,'one request per OpenRouter adapter invocation after Groq retry');
  const stage3={review,scores:{story:8,visuals:7,sound:6,pacing:9},pros:['قوة سردية موثقة','تصميم متماسك','أداء مناسب'],cons:['معلومات فنية ناقصة','إيقاع غير متوازن'],verdict:'حكم نقدي واضح يستند إلى المصادر ولا يدعي تجربة مباشرة.'};
  const job={item:{id:'77'},evidence:{title:'فيلم تجريبي',originalTitle:'',type:'movie',sourceId:'movie:77',sourceName:'TMDB',sourceUrl:'https://www.themoviedb.org/movie/77',overview:'وصف موثق',releaseDate:'2026',poster:'https://image.tmdb.org/t/p/w780/poster.jpg',backdrop:'https://image.tmdb.org/t/p/w1280/backdrop.jpg',genres:['دراما'],platforms:[],cast:[],crew:[],sources:[{name:'TMDB',url:'https://www.themoviedb.org/movie/77'},{name:'Wikipedia',url:'https://en.wikipedia.org/wiki/Test'}]},parts:[{text:JSON.stringify(payload)},{text:JSON.stringify(payload)},{text:JSON.stringify(stage3)}]};
  const article=await adapters.assembleArticle(job);
