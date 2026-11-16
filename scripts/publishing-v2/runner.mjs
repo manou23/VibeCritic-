@@ -4,6 +4,7 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
  if(!state||state.version!==2||!adapters) throw Error('Publisher v2 state and adapters are required.');
  const save=async()=>{state.updatedAt=new Date(now).toISOString();await persist(state);}; let job=selectActiveJob(state.jobs);
  // Migrate legacy waiting checkpoints: a provider cooldown must not freeze the whole draft queue.
+ // On the next scheduled cycle, the failed provider remains excluded while eligible free fallbacks can run.
  if(job?.status==='waiting'&&job.resumeTo==='writing'&&(Number(job.nextAttemptAt)||Date.parse(job.nextAttemptAt||'')||0)>now+5*60*1000){
   const cooldowns=state.providerCooldowns||{};
   const hasCoolingProvider=Object.values(cooldowns).some(x=>(Number(x?.until)||Date.parse(x?.until||'')||0)>now);
