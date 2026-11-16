@@ -40,7 +40,7 @@
         "TMDB"
       ],
       "firstSeenAt": "2026-11-14T19:08:08.914Z",
-      "updatedAt": "2026-11-16T01:06:49.765Z"
+      "updatedAt": "2026-11-16T09:52:50.827Z"
     },
     {
       "id": "concept:حركة",
@@ -188,7 +188,7 @@
         "TMDB"
       ],
       "firstSeenAt": "2026-11-14T19:08:08.923Z",
-      "updatedAt": "2026-11-16T09:37:25.075Z"
+      "updatedAt": "2026-11-16T09:52:50.827Z"
     },
     {
       "id": "person:فرانسيس-فورد-كوبولا",
@@ -898,7 +898,7 @@
         "TMDB"
       ],
       "firstSeenAt": "2026-11-14T19:08:09.025Z",
-      "updatedAt": "2026-11-16T01:02:44.012Z"
+      "updatedAt": "2026-11-16T09:52:50.826Z"
     },
     {
       "id": "concept:خيال-علمي-وفانتازيا",
@@ -16703,7 +16703,7 @@
         "TMDB"
       ],
       "firstSeenAt": "2026-11-16T01:01:56.707Z",
-      "updatedAt": "2026-11-16T01:01:56.707Z"
+      "updatedAt": "2026-11-16T09:52:50.827Z"
     },
     {
       "id": "company:dreamcrew",
@@ -16723,7 +16723,7 @@
         "TMDB"
       ],
       "firstSeenAt": "2026-11-16T01:01:56.707Z",
-      "updatedAt": "2026-11-16T01:01:56.707Z"
+      "updatedAt": "2026-11-16T09:52:50.827Z"
     },
     {
       "id": "person:callum-turner",
@@ -16803,7 +16803,7 @@
         "TMDB"
       ],
       "firstSeenAt": "2026-11-16T01:01:56.707Z",
-      "updatedAt": "2026-11-16T01:01:56.707Z",
+      "updatedAt": "2026-11-16T09:52:50.828Z",
       "externalId": "65344",
       "workType": "series"
     },
@@ -16815,7 +16815,7 @@
         "TMDB"
       ],
       "firstSeenAt": "2026-11-16T01:01:56.707Z",
-      "updatedAt": "2026-11-16T01:01:56.707Z",
+      "updatedAt": "2026-11-16T09:52:50.828Z",
       "externalId": "99312",
       "workType": "series"
     },
@@ -16827,7 +16827,7 @@
         "TMDB"
       ],
       "firstSeenAt": "2026-11-16T01:01:56.708Z",
-      "updatedAt": "2026-11-16T01:01:56.708Z",
+      "updatedAt": "2026-11-16T09:52:50.828Z",
       "externalId": "65561",
       "workType": "series"
     },
@@ -18000,6 +18000,166 @@
       ],
       "firstSeenAt": "2026-11-16T09:38:07.427Z",
       "updatedAt": "2026-11-16T09:38:07.427Z"
+    },
+    {
+      "id": "work:series-254630-12-12-12",
+      "kind": "work",
+      "name": "series:254630:12 12 12",
+      "sources": [
+        "TMDB"
+      ],
+      "firstSeenAt": "2026-11-16T09:52:50.821Z",
+      "updatedAt": "2026-11-16T09:52:50.821Z",
+      "aliases": [
+        "12 12 12"
+      ],
+      "externalId": "254630",
+      "workType": "series",
+      "releaseDate": "2026-11-12"
+    },
+    {
+      "id": "person:dudi-appleton",
+      "kind": "person",
+      "name": "Dudi Appleton",
+      "sources": [
+        "TMDB"
+      ],
+      "firstSeenAt": "2026-11-16T09:52:50.827Z",
+      "updatedAt": "2026-11-16T09:52:50.827Z"
+    },
+    {
+      "id": "person:jim-keeble",
+      "kind": "person",
+      "name": "Jim Keeble",
+      "sources": [
+        "TMDB"
+      ],
+      "firstSeenAt": "2026-11-16T09:52:50.827Z",
+      "updatedAt": "2026-11-16T09:52:50.827Z"
+    },
+    {
+      "id": "company:make-it-with-gravy",
+      "kind": "company",
+      "name": "Make It with Gravy",
+      "sources": [
+        "TMDB"
+      ],
+      "firstSeenAt": "2026-11-16T09:52:50.827Z",
+      "updatedAt": "2026-11-16T09:52:50.827Z"
+    },
+    {
+      "id": "company:inspire-entertainment",
+      "kind": "company",
+      "name": "Inspire Entertainment",
+      "sources": [
+        "TMDB"
+      ],
+      "firstSeenAt": "2026-11-16T09:52:50.827Z",
+      "updatedAt": "2026-11-16T09:52:50.827Z"
+    },
+    {
+      "id": "company:skogland-films",
+      "kind": "company",
+      "name": "Skogland Films",
+      "sources": [
+        "TMDB"
+      ],
+      "firstSeenAt": "2026-11-16T09:52:50.827Z",
+      "updatedAt": "2026-11-16T09:52:50.827Z"
+    },
+    {
+      "id": "person:أنتوني-ماكي",
+      "kind": "person",
+      "name": "أنتوني ماكي",
+      "sources": [
+        "TMDB"
+      ],
+      "firstSeenAt": "2026-11-16T09:52:50.827Z",
+      "updatedAt": "2026-11-16T09:52:50.827Z"
+    },
+    {
+      "id": "person:جيمي-دورنان",
+      "kind": "person",
+      "name": "جيمي دورنان",
+      "sources": [
+        "TMDB"
+      ],
+      "firstSeenAt": "2026-11-16T09:52:50.827Z",
+      "updatedAt": "2026-11-16T09:52:50.827Z"
+    },
+    {
+      "id": "person:jack-kesy",
+      "kind": "person",
+      "name": "Jack Kesy",
+      "sources": [
+        "TMDB"
+      ],
+      "firstSeenAt": "2026-11-16T09:52:50.828Z",
+      "updatedAt": "2026-11-16T09:52:50.828Z"
+    },
+    {
+      "id": "person:agathe-rousselle",
+      "kind": "person",
+      "name": "Agathe Rousselle",
+      "sources": [
+        "TMDB"
+      ],
+      "firstSeenAt": "2026-11-16T09:52:50.828Z",
+      "updatedAt": "2026-11-16T09:52:50.828Z"
+    },
+    {
+      "id": "person:سالي-هارمسن",
+      "kind": "person",
+      "name": "سالي هارمسن",
+      "sources": [
+        "TMDB"
+      ],
+      "firstSeenAt": "2026-11-16T09:52:50.828Z",
+      "updatedAt": "2026-11-16T09:52:50.828Z"
+    },
+    {
+      "id": "person:julius-feldmeier",
+      "kind": "person",
+      "name": "Julius Feldmeier",
+      "sources": [
+        "TMDB"
+      ],
+      "firstSeenAt": "2026-11-16T09:52:50.828Z",
+      "updatedAt": "2026-11-16T09:52:50.828Z"
+    },
+    {
+      "id": "person:جين-باليبار",
+      "kind": "person",
+      "name": "جين باليبار",
+      "sources": [
+        "TMDB"
+      ],
+      "firstSeenAt": "2026-11-16T09:52:50.828Z",
+      "updatedAt": "2026-11-16T09:52:50.828Z"
+    },
+    {
+      "id": "work:series-99130-peleles",
+      "kind": "work",
+      "name": "series:99130:Peleles",
+      "sources": [
+        "TMDB"
+      ],
+      "firstSeenAt": "2026-11-16T09:52:50.828Z",
+      "updatedAt": "2026-11-16T09:52:50.828Z",
+      "externalId": "99130",
+      "workType": "series"
+    },
+    {
+      "id": "work:series-99308-mea-culpa",
+      "kind": "work",
+      "name": "series:99308:Mea culpa",
+      "sources": [
+        "TMDB"
+      ],
+      "firstSeenAt": "2026-11-16T09:52:50.828Z",
+      "updatedAt": "2026-11-16T09:52:50.828Z",
+      "externalId": "99308",
+      "workType": "series"
     }
   ],
   "relations": [
@@ -53111,6 +53271,380 @@
           "sourceClass": "game-database",
           "sourceScope": "بيانات تعريف الألعاب والمنصات والمطورين ومؤشرات النشاط التي يعرضها RAWG.",
           "sourceLimitations": "مؤشرات الإضافة والشعبية ليست مبيعات ولا دليلاً على الجودة."
+        }
+      ]
+    },
+    {
+      "id": "work:series-254630-12-12-12|has_genre|concept:حركة-ومغامرة",
+      "from": "work:series-254630-12-12-12",
+      "type": "has_genre",
+      "to": "concept:حركة-ومغامرة",
+      "evidence": [
+        {
+          "source": "TMDB",
+          "field": "genres",
+          "url": "https://www.themoviedb.org/tv/254630",
+          "observedAt": "2026-11-16T09:52:50.820Z",
+          "sourceClass": "catalog-database",
+          "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+          "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج."
+        }
+      ]
+    },
+    {
+      "id": "work:series-254630-12-12-12|has_genre|concept:جريمة",
+      "from": "work:series-254630-12-12-12",
+      "type": "has_genre",
+      "to": "concept:جريمة",
+      "evidence": [
+        {
+          "source": "TMDB",
+          "field": "genres",
+          "url": "https://www.themoviedb.org/tv/254630",
+          "observedAt": "2026-11-16T09:52:50.820Z",
+          "sourceClass": "catalog-database",
+          "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+          "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج."
+        }
+      ]
+    },
+    {
+      "id": "work:series-254630-12-12-12|has_genre|concept:دراما",
+      "from": "work:series-254630-12-12-12",
+      "type": "has_genre",
+      "to": "concept:دراما",
+      "evidence": [
+        {
+          "source": "TMDB",
+          "field": "genres",
+          "url": "https://www.themoviedb.org/tv/254630",
+          "observedAt": "2026-11-16T09:52:50.820Z",
+          "sourceClass": "catalog-database",
+          "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+          "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج."
+        }
+      ]
+    },
+    {
+      "id": "work:series-254630-12-12-12|created_by|person:dudi-appleton",
+      "from": "work:series-254630-12-12-12",
+      "type": "created_by",
+      "to": "person:dudi-appleton",
+      "evidence": [
+        {
+          "source": "TMDB",
+          "field": "creators",
+          "url": "https://www.themoviedb.org/tv/254630",
+          "observedAt": "2026-11-16T09:52:50.820Z",
+          "sourceClass": "catalog-database",
+          "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+          "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج."
+        }
+      ]
+    },
+    {
+      "id": "work:series-254630-12-12-12|created_by|person:jim-keeble",
+      "from": "work:series-254630-12-12-12",
+      "type": "created_by",
+      "to": "person:jim-keeble",
+      "evidence": [
+        {
+          "source": "TMDB",
+          "field": "creators",
+          "url": "https://www.themoviedb.org/tv/254630",
+          "observedAt": "2026-11-16T09:52:50.820Z",
+          "sourceClass": "catalog-database",
+          "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+          "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج."
+        }
+      ]
+    },
+    {
+      "id": "work:series-254630-12-12-12|produced_by|company:make-it-with-gravy",
+      "from": "work:series-254630-12-12-12",
+      "type": "produced_by",
+      "to": "company:make-it-with-gravy",
+      "evidence": [
+        {
+          "source": "TMDB",
+          "field": "productionCompanies",
+          "url": "https://www.themoviedb.org/tv/254630",
+          "observedAt": "2026-11-16T09:52:50.820Z",
+          "sourceClass": "catalog-database",
+          "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+          "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج."
+        }
+      ]
+    },
+    {
+      "id": "work:series-254630-12-12-12|produced_by|company:inspire-entertainment",
+      "from": "work:series-254630-12-12-12",
+      "type": "produced_by",
+      "to": "company:inspire-entertainment",
+      "evidence": [
+        {
+          "source": "TMDB",
+          "field": "productionCompanies",
+          "url": "https://www.themoviedb.org/tv/254630",
+          "observedAt": "2026-11-16T09:52:50.820Z",
+          "sourceClass": "catalog-database",
+          "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+          "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج."
+        }
+      ]
+    },
+    {
+      "id": "work:series-254630-12-12-12|produced_by|company:anonymous-content",
+      "from": "work:series-254630-12-12-12",
+      "type": "produced_by",
+      "to": "company:anonymous-content",
+      "evidence": [
+        {
+          "source": "TMDB",
+          "field": "productionCompanies",
+          "url": "https://www.themoviedb.org/tv/254630",
+          "observedAt": "2026-11-16T09:52:50.820Z",
+          "sourceClass": "catalog-database",
+          "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+          "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج."
+        }
+      ]
+    },
+    {
+      "id": "work:series-254630-12-12-12|produced_by|company:paramount-television-studios",
+      "from": "work:series-254630-12-12-12",
+      "type": "produced_by",
+      "to": "company:paramount-television-studios",
+      "evidence": [
+        {
+          "source": "TMDB",
+          "field": "productionCompanies",
+          "url": "https://www.themoviedb.org/tv/254630",
+          "observedAt": "2026-11-16T09:52:50.820Z",
+          "sourceClass": "catalog-database",
+          "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+          "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج."
+        }
+      ]
+    },
+    {
+      "id": "work:series-254630-12-12-12|produced_by|company:skogland-films",
+      "from": "work:series-254630-12-12-12",
+      "type": "produced_by",
+      "to": "company:skogland-films",
+      "evidence": [
+        {
+          "source": "TMDB",
+          "field": "productionCompanies",
+          "url": "https://www.themoviedb.org/tv/254630",
+          "observedAt": "2026-11-16T09:52:50.820Z",
+          "sourceClass": "catalog-database",
+          "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+          "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج."
+        }
+      ]
+    },
+    {
+      "id": "work:series-254630-12-12-12|features|person:أنتوني-ماكي",
+      "from": "work:series-254630-12-12-12",
+      "type": "features",
+      "to": "person:أنتوني-ماكي",
+      "evidence": [
+        {
+          "source": "TMDB",
+          "field": "cast",
+          "url": "https://www.themoviedb.org/tv/254630",
+          "observedAt": "2026-11-16T09:52:50.820Z",
+          "sourceClass": "catalog-database",
+          "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+          "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج."
+        }
+      ]
+    },
+    {
+      "id": "work:series-254630-12-12-12|features|person:جيمي-دورنان",
+      "from": "work:series-254630-12-12-12",
+      "type": "features",
+      "to": "person:جيمي-دورنان",
+      "evidence": [
+        {
+          "source": "TMDB",
+          "field": "cast",
+          "url": "https://www.themoviedb.org/tv/254630",
+          "observedAt": "2026-11-16T09:52:50.820Z",
+          "sourceClass": "catalog-database",
+          "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+          "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج."
+        }
+      ]
+    },
+    {
+      "id": "work:series-254630-12-12-12|features|person:jack-kesy",
+      "from": "work:series-254630-12-12-12",
+      "type": "features",
+      "to": "person:jack-kesy",
+      "evidence": [
+        {
+          "source": "TMDB",
+          "field": "cast",
+          "url": "https://www.themoviedb.org/tv/254630",
+          "observedAt": "2026-11-16T09:52:50.820Z",
+          "sourceClass": "catalog-database",
+          "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+          "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج."
+        }
+      ]
+    },
+    {
+      "id": "work:series-254630-12-12-12|features|person:agathe-rousselle",
+      "from": "work:series-254630-12-12-12",
+      "type": "features",
+      "to": "person:agathe-rousselle",
+      "evidence": [
+        {
+          "source": "TMDB",
+          "field": "cast",
+          "url": "https://www.themoviedb.org/tv/254630",
+          "observedAt": "2026-11-16T09:52:50.820Z",
+          "sourceClass": "catalog-database",
+          "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+          "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج."
+        }
+      ]
+    },
+    {
+      "id": "work:series-254630-12-12-12|features|person:سالي-هارمسن",
+      "from": "work:series-254630-12-12-12",
+      "type": "features",
+      "to": "person:سالي-هارمسن",
+      "evidence": [
+        {
+          "source": "TMDB",
+          "field": "cast",
+          "url": "https://www.themoviedb.org/tv/254630",
+          "observedAt": "2026-11-16T09:52:50.820Z",
+          "sourceClass": "catalog-database",
+          "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+          "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج."
+        }
+      ]
+    },
+    {
+      "id": "work:series-254630-12-12-12|features|person:julius-feldmeier",
+      "from": "work:series-254630-12-12-12",
+      "type": "features",
+      "to": "person:julius-feldmeier",
+      "evidence": [
+        {
+          "source": "TMDB",
+          "field": "cast",
+          "url": "https://www.themoviedb.org/tv/254630",
+          "observedAt": "2026-11-16T09:52:50.820Z",
+          "sourceClass": "catalog-database",
+          "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+          "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج."
+        }
+      ]
+    },
+    {
+      "id": "work:series-254630-12-12-12|features|person:جين-باليبار",
+      "from": "work:series-254630-12-12-12",
+      "type": "features",
+      "to": "person:جين-باليبار",
+      "evidence": [
+        {
+          "source": "TMDB",
+          "field": "cast",
+          "url": "https://www.themoviedb.org/tv/254630",
+          "observedAt": "2026-11-16T09:52:50.820Z",
+          "sourceClass": "catalog-database",
+          "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+          "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج."
+        }
+      ]
+    },
+    {
+      "id": "work:series-254630-12-12-12|source_lists_as_similar|work:series-65344-tjockare-än-vatten",
+      "from": "work:series-254630-12-12-12",
+      "type": "source_lists_as_similar",
+      "to": "work:series-65344-tjockare-än-vatten",
+      "evidence": [
+        {
+          "source": "TMDB",
+          "field": "similar.results",
+          "url": "https://www.themoviedb.org/tv/254630",
+          "observedAt": "2026-11-16T09:52:50.828Z",
+          "sourceClass": "catalog-database",
+          "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+          "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج."
+        }
+      ]
+    },
+    {
+      "id": "work:series-254630-12-12-12|source_lists_as_similar|work:series-99130-peleles",
+      "from": "work:series-254630-12-12-12",
+      "type": "source_lists_as_similar",
+      "to": "work:series-99130-peleles",
+      "evidence": [
+        {
+          "source": "TMDB",
+          "field": "similar.results",
+          "url": "https://www.themoviedb.org/tv/254630",
+          "observedAt": "2026-11-16T09:52:50.828Z",
+          "sourceClass": "catalog-database",
+          "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+          "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج."
+        }
+      ]
+    },
+    {
+      "id": "work:series-254630-12-12-12|source_lists_as_similar|work:series-99308-mea-culpa",
+      "from": "work:series-254630-12-12-12",
+      "type": "source_lists_as_similar",
+      "to": "work:series-99308-mea-culpa",
+      "evidence": [
+        {
+          "source": "TMDB",
+          "field": "similar.results",
+          "url": "https://www.themoviedb.org/tv/254630",
+          "observedAt": "2026-11-16T09:52:50.828Z",
+          "sourceClass": "catalog-database",
+          "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+          "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج."
+        }
+      ]
+    },
+    {
+      "id": "work:series-254630-12-12-12|source_lists_as_similar|work:series-99312-el-día-menos-pensado",
+      "from": "work:series-254630-12-12-12",
+      "type": "source_lists_as_similar",
+      "to": "work:series-99312-el-día-menos-pensado",
+      "evidence": [
+        {
+          "source": "TMDB",
+          "field": "similar.results",
+          "url": "https://www.themoviedb.org/tv/254630",
+          "observedAt": "2026-11-16T09:52:50.828Z",
+          "sourceClass": "catalog-database",
+          "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+          "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج."
+        }
+      ]
+    },
+    {
+      "id": "work:series-254630-12-12-12|source_lists_as_similar|work:series-65561-翳りゆく夏",
+      "from": "work:series-254630-12-12-12",
+      "type": "source_lists_as_similar",
+      "to": "work:series-65561-翳りゆく夏",
+      "evidence": [
+        {
+          "source": "TMDB",
+          "field": "similar.results",
+          "url": "https://www.themoviedb.org/tv/254630",
+          "observedAt": "2026-11-16T09:52:50.828Z",
+          "sourceClass": "catalog-database",
+          "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+          "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج."
         }
       ]
     }
@@ -93903,6 +94437,132 @@
       "firstObservedAt": "2026-11-16T09:38:07.426Z",
       "lastObservedAt": "2026-11-16T09:38:07.426Z",
       "observations": 1
+    },
+    {
+      "id": "work:series-254630-12-12-12|release_date|TMDB|2026-11-12",
+      "workId": "work:series-254630-12-12-12",
+      "field": "release_date",
+      "value": "2026-11-12",
+      "normalizedValue": "2026-11-12",
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/254630",
+      "sourceClass": "catalog-database",
+      "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+      "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج.",
+      "firstObservedAt": "2026-11-16T09:52:50.820Z",
+      "lastObservedAt": "2026-11-16T09:52:50.820Z",
+      "observations": 1
+    },
+    {
+      "id": "work:series-254630-12-12-12|genres|TMDB|جريمة | حركة ومغامرة | دراما",
+      "workId": "work:series-254630-12-12-12",
+      "field": "genres",
+      "value": [
+        "حركة ومغامرة",
+        "جريمة",
+        "دراما"
+      ],
+      "normalizedValue": "جريمة | حركة ومغامرة | دراما",
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/254630",
+      "sourceClass": "catalog-database",
+      "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+      "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج.",
+      "firstObservedAt": "2026-11-16T09:52:50.820Z",
+      "lastObservedAt": "2026-11-16T09:52:50.820Z",
+      "observations": 1
+    },
+    {
+      "id": "work:series-254630-12-12-12|creators|TMDB|Dudi Appleton | Jim Keeble",
+      "workId": "work:series-254630-12-12-12",
+      "field": "creators",
+      "value": [
+        "Dudi Appleton",
+        "Jim Keeble"
+      ],
+      "normalizedValue": "Dudi Appleton | Jim Keeble",
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/254630",
+      "sourceClass": "catalog-database",
+      "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+      "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج.",
+      "firstObservedAt": "2026-11-16T09:52:50.820Z",
+      "lastObservedAt": "2026-11-16T09:52:50.820Z",
+      "observations": 1
+    },
+    {
+      "id": "work:series-254630-12-12-12|production_companies|TMDB|Anonymous Content | Inspire Entertainment | Make It with Gravy | Paramount Television Studios | Skog",
+      "workId": "work:series-254630-12-12-12",
+      "field": "production_companies",
+      "value": [
+        "Make It with Gravy",
+        "Inspire Entertainment",
+        "Anonymous Content",
+        "Paramount Television Studios",
+        "Skogland Films"
+      ],
+      "normalizedValue": "Anonymous Content | Inspire Entertainment | Make It with Gravy | Paramount Television Studios | Skogland Films",
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/254630",
+      "sourceClass": "catalog-database",
+      "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+      "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج.",
+      "firstObservedAt": "2026-11-16T09:52:50.820Z",
+      "lastObservedAt": "2026-11-16T09:52:50.820Z",
+      "observations": 1
+    },
+    {
+      "id": "work:series-254630-12-12-12|cast|TMDB|Agathe Rousselle بدور Severine | Jack Kesy بدور Bobby Galvin | Julius Feldmeier بدور Alberich | أنتو",
+      "workId": "work:series-254630-12-12-12",
+      "field": "cast",
+      "value": [
+        "أنتوني ماكي بدور Jack Strickland",
+        "جيمي دورنان بدور Paul Galvin",
+        "Jack Kesy بدور Bobby Galvin",
+        "Agathe Rousselle بدور Severine",
+        "سالي هارمسن بدور Lena",
+        "Julius Feldmeier بدور Alberich",
+        "جين باليبار بدور Bazin"
+      ],
+      "normalizedValue": "Agathe Rousselle بدور Severine | Jack Kesy بدور Bobby Galvin | Julius Feldmeier بدور Alberich | أنتوني ماكي بدور Jack Strickland | جيمي دورنان بدور Paul Galvin | جين باليبار بدور Bazin | سالي هارمسن بدور Lena",
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/254630",
+      "sourceClass": "catalog-database",
+      "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+      "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج.",
+      "firstObservedAt": "2026-11-16T09:52:50.820Z",
+      "lastObservedAt": "2026-11-16T09:52:50.820Z",
+      "observations": 1
+    },
+    {
+      "id": "work:series-254630-12-12-12|seasons|TMDB|1",
+      "workId": "work:series-254630-12-12-12",
+      "field": "seasons",
+      "value": "1",
+      "normalizedValue": "1",
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/254630",
+      "sourceClass": "catalog-database",
+      "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+      "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج.",
+      "firstObservedAt": "2026-11-16T09:52:50.820Z",
+      "lastObservedAt": "2026-11-16T09:52:50.820Z",
+      "observations": 1
+    },
+    {
+      "id": "work:series-254630-12-12-12|episodes|TMDB|8",
+      "workId": "work:series-254630-12-12-12",
+      "field": "episodes",
+      "value": "8",
+      "normalizedValue": "8",
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/tv/254630",
+      "sourceClass": "catalog-database",
+      "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+      "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج.",
+      "firstObservedAt": "2026-11-16T09:52:50.820Z",
+      "lastObservedAt": "2026-11-16T09:52:50.820Z",
+      "observations": 1
     }
   ],
   "conflicts": [
@@ -102211,6 +102871,55 @@
       "principle": "غياب الدليل ليس دليلاً على وجود عيب؛ لا تحوّل الثغرات إلى أحكام سلبية أو حقائق مختلقة.",
       "firstSeenAt": "2026-11-16T01:04:30.784Z",
       "assessments": 3
+    },
+    {
+      "version": 1,
+      "workKey": "series:254630",
+      "workName": "12 12 12",
+      "workType": "series",
+      "source": "TMDB",
+      "sourceUrl": "https://www.themoviedb.org/tv/254630",
+      "releaseMode": "released-or-unknown",
+      "assessedAt": "2026-11-16T09:52:50.826Z",
+      "coverage": {
+        "availableCore": 5,
+        "totalCore": 5,
+        "ratio": 1
+      },
+      "missingFields": [],
+      "unresolvedConflicts": [],
+      "blindSpots": [
+        {
+          "id": "script_execution",
+          "label": "تنفيذ السيناريو وبناء المشاهد",
+          "why": "الملخص والتصنيفات لا يثبتان تماسك السيناريو أو جودة المشاهد."
+        },
+        {
+          "id": "acting_performance",
+          "label": "الأداء التمثيلي الفعلي",
+          "why": "أسماء الممثلين لا تثبت جودة الأداء أو الكيمياء بينهم."
+        },
+        {
+          "id": "direction_visual_language",
+          "label": "الإخراج واللغة البصرية",
+          "why": "اسم المخرج وبيانات الكتالوج لا تثبت القرارات البصرية أو تنفيذها."
+        },
+        {
+          "id": "sound_design",
+          "label": "الموسيقى والتصميم الصوتي",
+          "why": "بيانات الكتالوج لا تقدم دليلاً على جودة الصوت أو الموسيقى."
+        },
+        {
+          "id": "pacing_structure",
+          "label": "الإيقاع والبناء",
+          "why": "المدة وعدد الحلقات لا يثبتان تماسك الإيقاع أو بنية السرد."
+        }
+      ],
+      "risk": "bounded",
+      "status": "metadata-covered",
+      "principle": "غياب الدليل ليس دليلاً على وجود عيب؛ لا تحوّل الثغرات إلى أحكام سلبية أو حقائق مختلقة.",
+      "firstSeenAt": "2026-11-16T09:52:50.826Z",
+      "assessments": 1
     }
   ],
   "editorialReviews": [
@@ -109187,16 +109896,16 @@
     }
   ],
   "stats": {
-    "works": 350,
-    "people": 1108,
-    "companies": 86,
+    "works": 353,
+    "people": 1117,
+    "companies": 90,
     "concepts": 64,
-    "relations": 2005,
-    "observations": 2418,
+    "relations": 2027,
+    "observations": 2425,
     "conflicts": 19,
-    "knowledgeGaps": 133,
+    "knowledgeGaps": 134,
     "editorialReviews": 115,
     "editorialRelations": 111
   },
-  "updatedAt": "2026-11-16T09:38:07.437Z"
+  "updatedAt": "2026-11-16T09:52:50.828Z"
 }
