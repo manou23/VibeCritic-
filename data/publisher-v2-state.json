@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T15:47:23.566Z",
+  "updatedAt": "2026-11-16T15:56:19.458Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -65,11 +65,11 @@
           "votes": 26
         }
       },
-      "attempts": 3,
+      "attempts": 4,
       "createdAt": "2026-11-16T15:02:39.964Z",
-      "updatedAt": "2026-11-16T15:47:23.566Z",
-      "nextAttemptAt": 1794844343566,
-      "lastError": "gemini: gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
+      "updatedAt": "2026-11-16T15:56:19.056Z",
+      "nextAttemptAt": 1794845539056,
+      "lastError": "groq: groq HTTP 404: {\"error\":{\"message\":\"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n",
       "resumeTo": "writing"
     }
   },
@@ -80,6 +80,12 @@
         "tokens": 0,
         "successes": 0,
         "failures": 3
+      },
+      "groq": {
+        "requests": 1,
+        "tokens": 0,
+        "successes": 0,
+        "failures": 1
       }
     }
   },
@@ -88,6 +94,11 @@
       "failures": 2,
       "until": 1794857748493,
       "lastError": "gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
+    },
+    "groq": {
+      "failures": 1,
+      "until": 1794851779056,
+      "lastError": "groq HTTP 404: {\"error\":{\"message\":\"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n"
     }
   }
 }
