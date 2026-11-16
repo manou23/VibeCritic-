@@ -1299,7 +1299,7 @@ async function main(){
   }
   console.log('دفعة الإصدارات الجديدة المسموح بها في هذا التشغيل:',JSON.stringify(quotas));
  }
- const pendingDraft=pendingJobs.find(job=>job.status==='staged-writing'&&job.item);
+ const pendingDraft=pendingJobs.find(job=>job.item&&job.draft&&Number(job.draft.stage)<2);
  if(pendingDraft&&Number(pendingDraft.draft?.stage)<2){
   quotas[pendingDraft.type]=Math.max(1,quotas[pendingDraft.type]||0);
   console.log('استمرار مقال محفوظ حتى لو بلغ سقف النشر اليومي؛ النشر النهائي وحده يخضع للسقف.');
