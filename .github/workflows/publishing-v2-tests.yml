@@ -1,4 +1,4 @@
-name: Publishing Engine v2 core tests
+name: Publishing Engine v2 reliability tests
 on:
   push:
     branches: [publisher-v2-rebuild]
@@ -8,6 +8,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
