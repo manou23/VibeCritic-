@@ -41,11 +41,10 @@ genres:
   - "Action RPG"
   - "Open World"
 creator: "FromSoftware"
-sourceName: "FromSoftware / Bandai Namco / IGDB"
+sourceName: "FromSoftware / Bandai Namco / PC Gamer / GameSpot / The Guardian / GamesRadar+"
 sourceId: "119133"
 sourceUrl: "https://en.bandainamcoent.eu/elden-ring/elden-ring"
 aiGenerated: false
-backdrop: "https://us-east-1-bandai.graphassets.com/AXzioIclSWilEjFtsMJPwz/Alg1l5HYROmvuBQY6BM0"
 rawgSourceId: 326243
 rawgSourceUrl: "https://rawg.io/games/elden-ring"
 rawgReleaseDate: "2022-02-25"
@@ -79,3 +78,15 @@ gameStores:
 
 ## الحكم النهائي
 Elden Ring عمل بالغ التميز في تصميم العالم والقتال والحرية، لكنه ليس تجربة مثالية لكل لاعب. غموض القصة وتفاوت الصعوبة وتكرار بعض المحتوى عيوب فعلية لا ينبغي إخفاؤها. الدرجة النهائية 8.3/10 محسوبة وفق الأوزان التحريرية الثابتة: القصة 30%، الصورة 25%، الصوت 20%، الإيقاع 25%.
+
+
+## مصادر التحقق والمراجعات النقدية
+- [Bandai Namco — Elden Ring](https://en.bandainamcoent.eu/elden-ring/elden-ring): معلومات المطور والناشر والمنصات والعالم الرسمي.
+- [PC Gamer — Elden Ring Review](https://www.pcgamer.com/elden-ring-review/): تحليل العالم والقتال والتكرار وبعض مشكلات التقدم والأداء.
+- [GameSpot — Elden Ring Review](https://www.gamespot.com/reviews/elden-ring-review-death-of-the-wild/1900-6417832/): قراءة نقدية للاستكشاف وحرية اللاعب وصعوبة المواجهات.
+- [The Guardian — Elden Ring Review](https://www.theguardian.com/games/2022/feb/23/elden-ring-review-an-unrivalled-masterpiece-of-design-and-inventiveness): تحليل تصميم العالم وتنوع البيئات والاكتشاف.
+- [GamesRadar+ — Elden Ring Review](https://www.gamesradar.com/elden-ring-review/): ملاحظات على صعوبة التقدم وبعض التكرار وحدود تصميم العالم المفتوح.
+- [Tom's Guide — Elden Ring Review](https://www.tomsguide.com/reviews/elden-ring): قراءة في بناء الشخصية وتفاوت الصعوبة ومألوفية بعض الأنظمة.
+- [Metacritic — Elden Ring Critic Reviews](https://www.metacritic.com/game/elden-ring/critic-reviews/): تجميع مراجعات النقاد، منفصل عن درجة VibeCritic.
+
+> مراجعة تحريرية بحثية مستقلة، تستند إلى مصادر الناشر ومراجعات منشورة ولا تدعي اختباراً تقنياً مباشراً على كل منصة.
