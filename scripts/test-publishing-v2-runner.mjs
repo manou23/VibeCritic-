@@ -58,10 +58,13 @@ const failed=await runCycle({state:failureState,adapters:failureAdapters,provide
 assert.equal(failed.action,'generation-deferred');
 assert.equal(failedProviderCalls,1);
 assert.equal(failureState.providerCooldowns['rate-limited'].failures,1);
+// Simulate an old persisted checkpoint whose retryAt was incorrectly tied to the provider cooldown.
+failureState.jobs['movie:cooldown-test'].nextAttemptAt=now+3*60*60*1000;
 assert.ok(failureState.providerCooldowns['rate-limited'].until-now>=2*60*60*1000,'provider cooldown must span the next hourly schedule so fallback providers can be selected');
 assert.ok(failureState.jobs['movie:cooldown-test'].nextAttemptAt-now<10*60*1000,'the draft must become eligible before the failed provider cooldown expires');
 const retry=await runCycle({state:failureState,adapters:failureAdapters,providers:failureProviders,now:now+1000,persist:async()=>{}});
 assert.equal(retry.action,'waiting');
+assert.ok(failureState.jobs['movie:cooldown-test'].nextAttemptAt<=now+6*60*1000,'legacy waiting checkpoint must be migrated to a short retry window');
 assert.equal(failedProviderCalls,1,'a cooled-down provider must not be called again during the short retry window');
 const fallback=await runCycle({state:failureState,adapters:failureAdapters,providers:failureProviders,now:now+6*60*1000,persist:async()=>{}});
 assert.equal(fallback.action,'stage-saved','the next eligible cycle must select an available free fallback provider');
