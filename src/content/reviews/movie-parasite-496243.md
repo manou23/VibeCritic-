@@ -42,7 +42,7 @@ crew:
   - "Bong Joon-ho"
   - "Han Jin-won"
   - "Hong Kyung-pyo"
-sourceName: "VibeCritic Editorial"
+sourceName: "CJ ENM / RogerEbert.com / The Guardian / Los Angeles Times / Metacritic / Rotten Tomatoes"
 sourceId: "manual-movie-parasite-496243"
 aiGenerated: false
 poster: "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg"
@@ -65,3 +65,13 @@ youtubeVideoTitle: "B&W Version Official Australian Trailer [Subtitled]"
 
 ## الحكم النهائي
 «طفيلي» من أكثر الأفلام إحكاماً في تحويل فكرة اجتماعية إلى بنية سينمائية. قوته ليست في تقديم إجابة سهلة عن المسؤولية، بل في إظهار كيف تتشابك الحاجة والطموح والامتياز داخل مساحة واحدة. لا يخلو من مصادفات أو شخصيات أقل عمقاً، لكن هذه الملاحظات لا تهدم وحدته. درجة 9.2 تعكس قوة الكتابة والإخراج وتكامل المكان والإيقاع، مع ترك مساحة واضحة للنقد بدلاً من منحه علامة كاملة.
+
+## مصادر التحقق والمراجعات النقدية
+- [RogerEbert.com — Parasite](https://www.rogerebert.com/reviews/parasite-movie-review-2019): تحليل البنية البصرية والتحولات النوعية والطبقات الاجتماعية.
+- [The Guardian — Parasite Review](https://www.theguardian.com/film/2020/feb/09/parasite-review-bong-joon-ho-tragicomic-masterpiece): قراءة نقدية لتصميم المنزل والموسيقى والتحولات بين الكوميديا والرعب.
+- [The Guardian — Parasite: Searing Satire](https://www.theguardian.com/film/2020/feb/07/parasite-review-bong-joon-ho-south-korean-satire): تحليل الطبقة والامتياز والعمل المنزلي وبناء الحبكة.
+- [Los Angeles Times — Parasite Review](https://www.latimes.com/entertainment-arts/movies/story/2019-10-09/parasite-review-bong-joon-ho): تقييم البناء المكاني والتمثيل والهجاء الاجتماعي.
+- [Metacritic — Parasite Critic Reviews](https://www.metacritic.com/movie/parasite/critic-reviews/): تجميع المراجعات النقدية، منفصل عن درجة VibeCritic.
+- [Rotten Tomatoes — Parasite](https://www.rottentomatoes.com/m/parasite_2019): بيانات استقبال النقاد والجمهور وملخص الفيلم.
+
+> مراجعة تحريرية يدوية مستقلة، تستند إلى تحليل الفيلم ومراجعات منشورة، ولا تنسخ متوسطات مواقع التجميع.
