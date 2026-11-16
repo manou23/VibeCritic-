@@ -26,7 +26,7 @@ cons:
   - "الموضوعات الروحية تطرح أحياناً بإشارات أكثر من التفكيك"
 tags: ["The White Lotus Season 3", "series", "VibeCritic", "2025"]
 genres: ["دراما", "كوميديا سوداء", "هجاء اجتماعي"]
-sourceName: "HBO Pressroom"
+sourceName: "HBO / The Guardian / RogerEbert.com / Variety / Rotten Tomatoes"
 sourceId: "manual-assisted-series-the-white-lotus-season-3-2025-manual-assisted"
 sourceUrl: "https://press.wbd.com/na/media-release/hbo-0/white-lotus/season-three-hbo-original-series-white-lotus-mike-white-debuts-february-16"
 aiGenerated: true
@@ -62,7 +62,10 @@ editorialWorkflow: "manual-assisted"
 
 تقييم 8.5/10 يمنح وزناً للهوية البصرية والمكان التايلاندي والسخرية الاجتماعية، مع خصم بسبب تشتت بعض المسارات وتأخر التصعيد وعدم تساوي عمق الشخصيات. يظل موسماً قوياً في نبرته وأفكاره، لكنه أقل إحكاماً في توزيع الوقت من أفضل أجزاء السلسلة.
 
-## مصادر التحقق
+## مصادر التحقق والمراجعات النقدية
 
-- [HBO Pressroom](https://press.wbd.com/na/media-release/hbo-0/white-lotus/season-three-hbo-original-series-white-lotus-mike-white-debuts-february-16)
-- [المادة الرسمية / المقطع المرتبط](https://press.wbd.com/us/media-release/hbo-0/white-lotus/hbo-releases-official-trailer-and-key-art-season-three-white-lotus)
+- [HBO Pressroom — The White Lotus Season 3](https://press.wbd.com/na/media-release/hbo-0/white-lotus/season-three-hbo-original-series-white-lotus-mike-white-debuts-february-16): موعد العرض والملخص والطاقم.
+- [The Guardian — Season 3 Review](https://www.theguardian.com/tv-and-radio/2025/feb/11/the-white-lotus-review-third-season-thai-resort): تحليل السخرية والبيئة والإيقاع.
+- [RogerEbert.com — The White Lotus Season 3](https://www.rogerebert.com/streaming/the-white-lotus-season-3-hbo-tv-review-2025): قراءة نقدية للصورة والشخصيات وبناء الموسم.
+- [Variety — Season 3 Review](https://au.variety.com/2025/tv/reviews/the-white-lotus-season-3-review-hbo-20191/): يناقش طموح الموسم وبطء البداية واتساع الشخصيات.
+- [Rotten Tomatoes — First Reviews](https://editorial.rottentomatoes.com/article/the-white-lotus-season-3-first-reviews/): تجميع انطباعات النقاد حول الموسم الثالث.
