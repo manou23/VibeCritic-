@@ -9,7 +9,6 @@ type: game
 date: 2026-11-11
 releaseDate: "2026-11-04"
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/cod5g2.jpg"
-backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/cod5g2.jpg"
 reviewMode: limited
 pros:
   - "مجموعة أنظمة مترابطة تشمل العصابات والغارات والسيطرة على المناطق وبناء المخابئ"
