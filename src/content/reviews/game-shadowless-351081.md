@@ -8,7 +8,6 @@ reviewVersion: 3
 type: game
 date: 2026-11-12
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/coa1ec.jpg"
-backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/coa1ec.jpg"
 reviewMode: preview
 pros:
   - "فكرة رعب نفسي واضحة تعتمد على منزل متغير وماضٍ غامض"
