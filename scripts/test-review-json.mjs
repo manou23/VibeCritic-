@@ -19,6 +19,6 @@ assert.throws(
   /يبدأ بالقوس الافتتاحي/
 );
 
-assert.match(REVIEW_OUTPUT_CONTRACT, /hook, headline, summary, scores, pros, cons, tags, verdict, review/);
-assert.match(REVIEW_OUTPUT_CONTRACT, /لا تستخدم مخطط title أو lead أو sections أو conclusion/);
+assert.match(REVIEW_OUTPUT_CONTRACT, /scores, pros, cons, review/);
+assert.match(REVIEW_OUTPUT_CONTRACT, /90 إلى 140 كلمة/);
 console.log('Review JSON parser and output-contract tests passed.');
