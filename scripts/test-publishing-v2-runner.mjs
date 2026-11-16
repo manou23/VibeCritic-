@@ -45,4 +45,22 @@ assert.equal(deployChecks,2);
 assert.equal(fileWrites,1,'deployment retries must not rewrite an already committed article');
 assert.equal(state.jobs['series:1'].status,'published');
 assert.ok(saves>=7);
+// A failed provider is cooled down durably instead of being retried on every hourly cycle.
+const failureState=createState();let failedProviderCalls=0;
+const failureAdapters={
+ discover:async()=>[{type:'movie',id:'cooldown-test'}],
+ collectEvidence:async()=>({sources:[{name:'Official',url:'https://example.com/a'},{name:'Independent',url:'https://example.org/b'}]}),
+ generatePart:async()=>{failedProviderCalls++;throw new Error('429 rate limit');},
+ assembleArticle:async()=>article,publishFile:async()=>({path:'unused'}),verifyDeployment:async()=>false
+};
+const failureProviders=[{id:'rate-limited',enabled:true,free:true,dailyRequestLimit:5,dailyTokenLimit:5000}];
+const failed=await runCycle({state:failureState,adapters:failureAdapters,providers:failureProviders,now,persist:async()=>{}});
+assert.equal(failed.action,'generation-deferred');
+assert.equal(failedProviderCalls,1);
+assert.equal(failureState.providerCooldowns['rate-limited'].failures,1);
+assert.ok(failureState.providerCooldowns['rate-limited'].until>now);
+const retry=await runCycle({state:failureState,adapters:failureAdapters,providers:failureProviders,now:now+1000,persist:async()=>{}});
+assert.equal(retry.action,'waiting');
+assert.equal(failedProviderCalls,1,'a cooled-down provider must not be called again during the retry window');
+
 console.log('VibeCritic Publishing Engine v2 crash-recovery runner tests passed.');
