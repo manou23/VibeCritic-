@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T19:46:37.977Z",
+  "updatedAt": "2026-11-16T19:46:52.623Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -220,9 +220,9 @@
       },
       "attempts": 1,
       "createdAt": "2026-11-16T17:08:19.010Z",
-      "updatedAt": "2026-11-16T19:45:03.662Z",
-      "nextAttemptAt": null,
-      "lastError": "groq: Section word count rejected: 142",
+      "updatedAt": "2026-11-16T19:46:50.119Z",
+      "nextAttemptAt": 1794862010119,
+      "lastError": "Missing field: verdict | At least three strengths are required | At least two critical limitations are required",
       "lastProvider": "groq",
       "resumeTo": "writing"
     }
@@ -236,9 +236,9 @@
         "failures": 4
       },
       "groq": {
-        "requests": 4,
-        "tokens": 2718,
-        "successes": 1,
+        "requests": 5,
+        "tokens": 5999,
+        "successes": 2,
         "failures": 3
       },
       "openrouter": {
