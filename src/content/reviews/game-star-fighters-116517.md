@@ -7,8 +7,6 @@ verdict: "لا نوصي بشراء Star Fighters أو منحها درجة نقد
 reviewVersion: 2
 type: game
 date: 2026-11-11
-poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/co421c.jpg"
-backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/co421c.jpg"
 reviewMode: preview
 pros:
   - "وجود سجل فهرسة يمكن أن يساعد على تتبع هوية العنوان ومعلوماته الأساسية"
@@ -26,12 +24,12 @@ genres:
   - "Role-playing (RPG)"
   - "Strategy"
   - "Indie"
+sourceName: "IGDB / RAWG"
 sourceId: "116517"
 sourceUrl: "https://www.igdb.com/games/star-fighters"
 aiGenerated: true
 rawgSourceId: 302899
 rawgSourceUrl: "https://rawg.io/games/star-fighters"
-rawgReleaseDate: ""
 rawgGenres:
   - "Action"
   - "RPG"
@@ -44,8 +42,6 @@ rawgPlatforms:
   - "Linux"
 rawgDevelopers:
   - "Orakga"
-gameStores:
-  - name: "Steam"
 ---
 
 ## المقدمة
