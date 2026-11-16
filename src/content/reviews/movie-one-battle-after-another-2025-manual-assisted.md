@@ -4,13 +4,13 @@ originalTitle: "One Battle After Another"
 headline: "مطاردة سياسية مشحونة بشخصيات فوضوية، لكن كثافة النبرة قد تربك تماسك الرحلة"
 hook: "يحوّل بول توماس أندرسون ماضي الثورة إلى مطاردة حاضرة، ويوازن بين العبث والخطر؛ قوة الفيلم في طاقته وأداءاته، لا في بساطة مساره."
 summary: "يتابع الفيلم بوب فيرغسون، ثائراً سابقاً يعيش متخفياً مع ابنته ويواجه ماضيه من جديد عندما يعود خصم قديم ويختفي أثر ابنته. يمزج بول توماس أندرسون المطاردة السياسية بالكوميديا السوداء والتوتر العائلي."
-verdict: "يقدم One Battle After Another مطاردة سياسية متوترة تمزج العبث بالخطر، ويستفيد من إخراج بول توماس أندرسون وطاقم تمثيل قوي. لكن كثافة الشخصيات والتنقل بين النبرات قد يشتتان مركز الحكاية، ولا تتطور كل الخيوط بالعمق نفسه. تقييم VibeCritic التحريري: 8.6/10."
+verdict: "يقدم One Battle After Another مطاردة سياسية متوترة تمزج العبث بالخطر، ويستفيد من إخراج بول توماس أندرسون وطاقم تمثيل قوي. لكن كثافة الشخصيات والتنقل بين النبرات قد يشتتان مركز الحكاية، ولا تتطور كل الخيوط بالعمق نفسه. تقييم VibeCritic التحريري: 8.7/10."
 reviewVersion: 1
 type: movie
 date: 2026-11-15
 releaseDate: "2025-09-26"
 poster: "https://www.impawards.com/2025/posters/one_battle_after_another_ver11_xlg.jpg"
-score: 8.6
+score: 8.7
 storyScore: 8.6
 visualsScore: 9.0
 soundScore: 8.8
@@ -26,14 +26,14 @@ cons:
   - "بعض الخيوط السياسية تبقى مفتوحة أو مختزلة"
 tags: ["One Battle After Another", "movie", "VibeCritic", "2025"]
 genres: ["دراما", "كوميديا سوداء", "إثارة", "جريمة"]
-sourceName: "Warner Bros. Pictures — Official Movie Site"
+sourceName: "Warner Bros. / RogerEbert.com / The Guardian / Variety / BFI"
 sourceId: "manual-assisted-movie-one-battle-after-another-2025-manual-assisted"
 sourceUrl: "https://www.onebattleafteranothermovie.com/"
 externalVideoTitle: "One Battle After Another — Official Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
-youtubeVideoId: "u6GVb4p7oD4"
-youtubeVideoTitle: "Official American Sign Language Trailer"
+youtubeVideoId: "Ap-j8e9J5U0"
+youtubeVideoTitle: "One Battle After Another — Official Trailer"
 ---
 > **منهجية المراجعة:** قراءة تحريرية بحثية تستند إلى المواد الرسمية المتاحة ومعلومات الإنتاج والإصدار وقراءات نقدية منشورة. لا تدعي هذه المادة اختباراً شخصياً جديداً أو مشاهدة/لعباً مباشراً، ولا تنقل تقييم الجمهور بوصفه حكماً تحريرياً.
 
@@ -63,9 +63,14 @@ One Battle After Another عمل جريء ومليء بالحياة، وتكمن 
 
 ## الحكم النهائي
 
-تقييم 8.6/10 يعكس قوة الإخراج والأداء والطاقة السينمائية، مع خصم بسبب تشعب بعض المسارات وعدم ثبات النبرة طوال الرحلة. الفيلم لا يقدم إجابات سياسية جاهزة، وتكمن قيمته في تحويل الأفكار الكبيرة إلى علاقات وقرارات شخصية، حتى عندما لا يمنح كل خط درامي المساحة نفسها.
+تقييم 8.7/10 يعكس قوة الإخراج والأداء والطاقة السينمائية، مع خصم بسبب تشعب بعض المسارات وعدم ثبات النبرة طوال الرحلة. الفيلم لا يقدم إجابات سياسية جاهزة، وتكمن قيمته في تحويل الأفكار الكبيرة إلى علاقات وقرارات شخصية، حتى عندما لا يمنح كل خط درامي المساحة نفسها.
 
-## مصادر التحقق
+## مصادر التحقق والمراجعات النقدية
 
-- [Warner Bros. Pictures — Official Movie Site](https://www.onebattleafteranothermovie.com/)
-- [المادة الرسمية / المقطع المرتبط](https://www.onebattleafteranothermovie.com/)
+- [Warner Bros. Pictures — Official Movie Site](https://www.onebattleafteranothermovie.net/): الملخص الرسمي والطاقم وتاريخ العرض.
+- [RogerEbert.com — One Battle After Another](https://www.rogerebert.com/reviews/one-battle-after-another-movie-review-2025): قراءة نقدية للإخراج والشخصيات والطاقة السردية.
+- [The Guardian — One Battle After Another Review](https://www.theguardian.com/film/2025/sep/17/one-battle-after-another-review-paul-thomas-andersons-thrillingly-helter-skelter-counter-culture-caper): تحليل المزج بين العبث والسياسة والمطاردة.
+- [Variety — One Battle After Another Review](https://au.variety.com/2025/film/reviews/one-battle-after-another-review-leonardo-dicaprio-sean-penn-27796/): قراءة نقدية للموضوعات والأداءات والبناء.
+- [BFI Sight and Sound — One Battle After Another](https://www.bfi.org.uk/sight-and-sound/reviews/one-battle-after-another-theres-so-much-relish-paul-thomas-andersons-political-cat-mice-caper): تحليل الأسلوب والإيقاع والنبرة السياسية.
+- [Rotten Tomatoes — One Battle After Another](https://www.rottentomatoes.com/m/one_battle_after_another): ملخص استقبال النقاد وبيانات الإصدار.
+- [المقطع الرسمي](https://www.youtube.com/watch?v=Ap-j8e9J5U0): المقطع الدعائي الرسمي من Warner Bros. Pictures International.
