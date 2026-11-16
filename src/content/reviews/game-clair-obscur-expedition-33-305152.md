@@ -41,7 +41,7 @@ genres:
   - "Turn-based"
   - "Adventure"
 creator: "Sandfall Interactive"
-sourceName: "IGDB"
+sourceName: "Sandfall Interactive / GameSpot / Push Square / TechRadar / PC Gamer / Digital Foundry"
 sourceId: "305152"
 sourceUrl: "https://www.igdb.com/games/305152/presskit"
 aiGenerated: false
