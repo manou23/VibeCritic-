@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-16T12:21:32.411Z",
+  "updatedAt": "2026-11-16T16:16:05.384Z",
   "jobs": {
     "game:972995": {
       "key": "game:972995",
@@ -11358,9 +11358,9 @@
           }
         }
       },
-      "nextAttemptAt": 1794843444904,
+      "nextAttemptAt": 1794867358730,
       "lastError": "الأدلة الحالية غير كافية؛ إعادة التحقق لاحقاً: بيانات الطاقم الإبداعي غير كافية للتحليل",
-      "updatedAt": "2026-11-16T09:37:24.904Z",
+      "updatedAt": "2026-11-16T16:15:58.730Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "series:224377",
@@ -12172,7 +12172,7 @@
       "type": "series",
       "id": "310209",
       "createdAt": "2026-11-15T22:49:05.955Z",
-      "attemptCount": 13,
+      "attemptCount": 14,
       "status": "waiting",
       "item": {
         "id": "310209",
@@ -12387,9 +12387,9 @@
           }
         }
       },
-      "nextAttemptAt": 1794835292411,
-      "lastError": "فشل توليد جزء المقال النقدي عبر المزوّدات المجانية المتاحة: groq: لم يرجع Groq محتوى نصياً | openrouter: جزء المقال أقصر من الحد الأدنى (220 كلمة و900 حرف)",
-      "updatedAt": "2026-11-16T12:21:32.411Z",
+      "nextAttemptAt": 1794849365383,
+      "lastError": "فشل توليد جزء المقال النقدي عبر المزوّدات المجانية المتاحة: groq: قوائم pros وcons يجب أن تكون مصفوفتين",
+      "updatedAt": "2026-11-16T16:16:05.384Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "series:310209",

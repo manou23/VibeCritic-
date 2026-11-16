@@ -775,37 +775,37 @@
     },
     "2026-11-16": {
       "groq": {
-        "requests": 22,
+        "requests": 23,
         "successes": 6,
-        "failures": 16,
-        "apiRequests": 51,
-        "totalTokens": 39665,
-        "inputTokens": 25187,
-        "outputTokens": 14478,
-        "lastAttemptAt": "2026-11-16T12:21:16.668Z",
+        "failures": 17,
+        "apiRequests": 53,
+        "totalTokens": 46273,
+        "inputTokens": 29183,
+        "outputTokens": 17090,
+        "lastAttemptAt": "2026-11-16T16:16:05.381Z",
         "lastUsage": {
-          "requests": 3,
-          "inputTokens": 4008,
-          "outputTokens": 2712,
-          "totalTokens": 6720,
+          "requests": 2,
+          "inputTokens": 3996,
+          "outputTokens": 2612,
+          "totalTokens": 6608,
           "reportedUsage": true,
           "headers": {
             "x-ratelimit-limit-requests": "1000",
-            "x-ratelimit-remaining-requests": "997",
-            "x-ratelimit-reset-requests": "4m19.2s",
+            "x-ratelimit-remaining-requests": "998",
+            "x-ratelimit-reset-requests": "2m52.8s",
             "x-ratelimit-limit-tokens": "8000",
-            "x-ratelimit-remaining-tokens": "1247",
-            "x-ratelimit-reset-tokens": "50.647s"
+            "x-ratelimit-remaining-tokens": "3179",
+            "x-ratelimit-reset-tokens": "36.157s"
           },
-          "durationMs": 10434,
-          "at": "2026-11-16T12:21:16.668Z"
+          "durationMs": 6440,
+          "at": "2026-11-16T16:16:05.381Z"
         },
         "blockedUntil": 0,
         "blockedReason": "",
         "lastCooldown": {
           "reason": "none",
           "until": null,
-          "observedAt": "2026-11-16T12:21:16.669Z",
+          "observedAt": "2026-11-16T16:16:05.381Z",
           "status": null
         },
         "consecutiveTransientFailures": 0
@@ -959,11 +959,11 @@
         },
         "series:310209": {
           "groq": {
-            "attempts": 8,
-            "requests": 16,
-            "inputTokens": 16068,
-            "outputTokens": 8911,
-            "totalTokens": 24979,
+            "attempts": 9,
+            "requests": 18,
+            "inputTokens": 20064,
+            "outputTokens": 11523,
+            "totalTokens": 31587,
             "successes": 2
           },
           "openrouter": {
@@ -1116,10 +1116,10 @@
           "status": null
         },
         "freeModelDailyRequests": {
-          "used": 43,
+          "used": 48,
           "limit": 50,
-          "remaining": 7,
-          "observedAt": "2026-11-16T12:21:03.078Z",
+          "remaining": 2,
+          "observedAt": "2026-11-16T16:15:55.538Z",
           "source": "OpenRouter GET /api/v1/key"
         },
         "blockedUntil": 0,
