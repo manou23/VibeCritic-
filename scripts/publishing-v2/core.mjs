@@ -4,6 +4,13 @@ export const ACTIVE=new Set(["queued","researching","writing","waiting","quality
 export const TERMINAL=new Set(["published","rejected","abandoned"]);
 const time=v=>typeof v==="number"?v:(Date.parse(v||"")||0);
 const iso=n=>new Date(n).toISOString();
+function registrableDomain(hostname){
+ const labels=String(hostname||"").toLowerCase().replace(/^www\\./,"").split(".").filter(Boolean);
+ if(labels.length<=2)return labels.join(".");
+ const twoLevelSuffixes=new Set(["co.uk","org.uk","ac.uk","com.au","net.au","org.au","co.nz","com.br","com.cn","com.sg","co.jp","co.za"]);
+ const suffix=labels.slice(-2).join(".");
+ return twoLevelSuffixes.has(suffix)?labels.slice(-3).join("."):labels.slice(-2).join(".");
+}
 
 export function createState(){return {version:2,updatedAt:new Date(0).toISOString(),jobs:{},providerUsage:{}};}
 export function validateState(s){
@@ -82,7 +89,7 @@ export function validateArticle(a,{minWords=650,minCharacters=3200}={}){
  if(!Array.isArray(a?.pros)||a.pros.length<3)errors.push("At least three strengths are required");
  if(!Array.isArray(a?.cons)||a.cons.length<2)errors.push("At least two critical limitations are required");
  const sources=(a?.sources||[]).filter(s=>{try{return new URL(s.url).protocol==="https:"&&String(s.name||"").trim()}catch{return false}});
- if(new Set(sources.map(s=>new URL(s.url).hostname)).size<2)errors.push("At least two independent HTTPS source domains are required");
+ if(new Set(sources.map(s=>registrableDomain(new URL(s.url).hostname))).size<2)errors.push("At least two independent HTTPS source domains are required");
  if(!String(a?.poster||a?.backdrop||"").startsWith("https://"))errors.push("A verified poster or backdrop is required");
  if(a?.youtubeVideoId&&!/^[A-Za-z0-9_-]{11}$/.test(a.youtubeVideoId))errors.push("Invalid YouTube video id");
  return {valid:errors.length===0,errors,words,characters:body.length};
@@ -90,6 +97,6 @@ export function validateArticle(a,{minWords=650,minCharacters=3200}={}){
 
 export function validateEvidence(evidence){
  const sources=(evidence?.sources||[]).filter(s=>{try{return new URL(s.url).protocol==="https:"&&String(s.name||"").trim()}catch{return false}});
- const domains=new Set(sources.map(s=>new URL(s.url).hostname.toLowerCase()));
+ const domains=new Set(sources.map(s=>registrableDomain(new URL(s.url).hostname)));
  return {valid:domains.size>=2,domains:[...domains],sources:sources.length,errors:domains.size>=2?[]:["Evidence requires at least two independent HTTPS source domains."]};
 }
