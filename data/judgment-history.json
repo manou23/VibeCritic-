@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "works": [
+    {
+      "workKey": "game:1015421",
+      "workType": "game",
+      "workId": "1015421",
+      "title": "Tomb Raider: Legacy of Atlantis",
+      "versions": [
+        {
+          "version": 1,
+          "workKey": "game:1015421",
+          "workType": "game",
+          "workId": "1015421",
+          "title": "Tomb Raider: Legacy of Atlantis",
+          "capturedAt": "2026-11-16T01:01:56.562Z",
+          "overallScore": 5,
+          "scores": {
+            "story": 5,
+            "visuals": 5,
+            "sound": 5,
+            "pacing": 5
+          },
+          "verdict": "تُصدر لعبة Tomb Raider: Legacy of Atlantis في فبراير 2027 من تطوير Crystal Dynamics، وتتوفر على PlayStation 5 وXbox Series S/X وPC",
+          "summary": "Tomb Raider: Legacy of Atlantis is an action game developed by Crystal Dynamics. Most rawgers rated the game as \"Recommended\". You can play Tomb Raider: Legacy of Atlantis on PlayStation 5, Xbox Series S/X and PC.",
+          "pros": [
+            "تطوير من Crystal Dynamics",
+            "متاحة على منصات حديثة (PS5, Xbox Series S/X, PC)",
+            "تقييم إيجابي من RAWG (4.33/5)"
+          ],
+          "cons": [
+            "غياب معلومات عن تفاصيل القصة",
+            "عدم توفر بيانات حول جودة الرسوم والصوت"
+          ],
+          "evidenceFingerprint": "fnv1a-90e042f7",
+          "evidenceSource": "RAWG",
+          "evidenceUrl": "https://rawg.io/games/tomb-raider-legacy-of-atlantis",
+          "revisionAssessment": {
+            "status": "no-baseline",
+            "evidenceChanged": false,
+            "scoreDelta": null,
+            "opposingClaims": []
+          }
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-11-16T01:01:56.562Z"
+}

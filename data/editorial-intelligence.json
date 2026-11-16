@@ -1,0 +1,298 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-16T01:01:56.566Z",
+  "stats": {
+    "candidates": 1,
+    "approved": 0,
+    "rejected": 0
+  },
+  "candidates": [
+    {
+      "id": "game:1015421",
+      "fingerprint": "2027|atlantis|crystal|dynamics|game|legacy|playstation|raider|rawg|series|tomb|أداء|أمام|إلى|إيجابيا|الإشارة|البالغ|البيانات|التجارية|التقنية|الجمهور|الجوانب|الحركة|الرسوم|الشهيرة|الصوت|العلامة|الفني|القدرة|القصة|اللاعبين|المتاحة|المحتوى|المستويات|المنصات|باللعبة|بدقة|بناء|بينما|تصميم|تصنيف|تطوير|تفاصيل|تقييم|تكشف|توجد|توقعا|جودة|حول|ذلك|سلسلة|شامل|صدر|ضمن|ظهر|عائقا|على|غموض|فبراير|قوة|كإيجابيات|لعبة|للعنوان|مراجعة|معروف|معظم|معلومات|نقدية|هذه|وpc|وxbox|والميكانيكي|وتتوفر|وتعدد|وتقييم|ولا|يبقى|يحد|يعكس|يمكن|يوصون",
+      "status": "pending",
+      "type": "game",
+      "title": "Tomb Raider: Legacy of Atlantis",
+      "headline": "Tomb Raider: Legacy of Atlantis — مراجعة نقدية",
+      "thesis": "قراءة نقدية موجزة لـTomb Raider: Legacy of Atlantis تستند إلى بيانات RAWG المتاحة، لا إلى تجربة مشاهدة أو لعب مباشرة.",
+      "summary": "Tomb Raider: Legacy of Atlantis is an action game developed by Crystal Dynamics. Most rawgers rated the game as \"Recommended\". You can play Tomb Raider: Legacy of Atlantis on PlayStation 5, Xbox Series S/X and PC.",
+      "verdict": "تُصدر لعبة Tomb Raider: Legacy of Atlantis في فبراير 2027 من تطوير Crystal Dynamics، وتتوفر على PlayStation 5 وXbox Series S/X وPC",
+      "score": 5,
+      "subScores": {
+        "story": 5,
+        "visuals": 5,
+        "sound": 5,
+        "pacing": 5
+      },
+      "reasoning": {
+        "version": 1,
+        "selectedAngleId": "interactive-product-context",
+        "selectedAngle": "هوية اللعبة وسياقها التفاعلي",
+        "selectedAngleScore": 89,
+        "candidateScores": [
+          {
+            "id": "interactive-product-context",
+            "score": 89
+          },
+          {
+            "id": "premise-and-genre",
+            "score": 78
+          }
+        ]
+      },
+      "selfEvaluation": {
+        "version": 2,
+        "score": 89,
+        "status": "structural-pass",
+        "metrics": {
+          "wordCount": 101,
+          "charCount": 595,
+          "paragraphCount": 1,
+          "sectionCount": 0,
+          "anchorHits": 1,
+          "anchorCount": 5,
+          "maxHeadlineSimilarity": 0,
+          "structureScore": 100,
+          "evidenceAlignmentScore": 69,
+          "noveltyScore": 100,
+          "reasoningScore": 89
+        },
+        "flags": [],
+        "scope": "فحص آلي لطول الرأي المختصر والارتباط النصي بالبيانات والتميّز؛ لا يثبت صحة الوقائع ولا يغني عن التحقق من المصادر أو التقييم البشري.",
+        "sourceTruthVerified": false
+      },
+      "criticalQuestions": {
+        "version": 1,
+        "mode": "preview",
+        "questionCount": 5,
+        "multiDomain": 0,
+        "singleSource": 0,
+        "unanswered": 5,
+        "questions": [
+          {
+            "id": "core-loop",
+            "area": "أنظمة اللعب",
+            "status": "unanswered",
+            "evidenceCount": 0,
+            "distinctDomainCount": 0
+          },
+          {
+            "id": "technical-performance",
+            "area": "الأداء التقني",
+            "status": "unanswered",
+            "evidenceCount": 0,
+            "distinctDomainCount": 0
+          },
+          {
+            "id": "world-design",
+            "area": "تصميم العالم والمراحل",
+            "status": "unanswered",
+            "evidenceCount": 0,
+            "distinctDomainCount": 0
+          },
+          {
+            "id": "narrative-execution",
+            "area": "السرد والشخصيات",
+            "status": "unanswered",
+            "evidenceCount": 0,
+            "distinctDomainCount": 0
+          },
+          {
+            "id": "progression-balance",
+            "area": "التقدم والتوازن",
+            "status": "unanswered",
+            "evidenceCount": 0,
+            "distinctDomainCount": 0
+          }
+        ]
+      },
+      "intellectualPattern": {
+        "version": 1,
+        "workId": "game:1015421",
+        "workType": "game",
+        "angleId": "interactive-product-context",
+        "questionIds": [
+          "core-loop",
+          "technical-performance",
+          "world-design",
+          "narrative-execution",
+          "progression-balance"
+        ],
+        "genres": [
+          "Action"
+        ],
+        "evidenceFields": [
+          "developers",
+          "platforms",
+          "genres"
+        ],
+        "argumentTokens": [
+          "كيف",
+          "تحدد",
+          "بيانات",
+          "المطور",
+          "والمنصات",
+          "حدود",
+          "يمكن",
+          "تحليله",
+          "هوية",
+          "اللعبة",
+          "وتجربتها",
+          "اربط",
+          "والتصنيفات",
+          "بما",
+          "معلوم",
+          "فقط",
+          "تستنتج",
+          "معدل",
+          "الاطارات",
+          "جودة",
+          "الاداء",
+          "اليات",
+          "اللعب",
+          "المحتوي",
+          "اسم",
+          "المنصة",
+          "اذكر",
+          "بوضوح",
+          "تكشفه",
+          "البيانات",
+          "تطوير",
+          "crystal",
+          "dynamics",
+          "متاحة",
+          "علي",
+          "منصات",
+          "حديثة",
+          "ps5",
+          "xbox",
+          "series",
+          "تقييم",
+          "ايجابي",
+          "rawg",
+          "غياب",
+          "معلومات",
+          "تفاصيل",
+          "القصة",
+          "عدم",
+          "توفر",
+          "حول",
+          "الرسوم",
+          "والصوت",
+          "tomb",
+          "raider",
+          "legacy",
+          "atlantis",
+          "action",
+          "game",
+          "developed",
+          "most",
+          "rawgers",
+          "rated",
+          "recommended",
+          "can",
+          "play",
+          "playstation"
+        ]
+      },
+      "intellectualRepetition": {
+        "version": 1,
+        "status": "distinct-thinking",
+        "topScore": 0,
+        "comparedCount": 0,
+        "matches": []
+      },
+      "personalityProfile": {
+        "coreVersion": 1,
+        "workId": "game:1015421",
+        "workType": "game",
+        "angleId": "interactive-product-context",
+        "assessedAt": "2026-11-16T01:01:56.543Z",
+        "status": "core-aligned",
+        "driftScore": 15,
+        "trend": "baseline",
+        "violations": [
+          "ignoredKnowledgeLimits"
+        ],
+        "principles": {
+          "independence": true,
+          "evidenceHumility": false,
+          "balancedJudgment": true,
+          "specificity": true,
+          "originality": true
+        },
+        "metrics": {
+          "wordCount": 101,
+          "sectionCount": 0,
+          "prosCount": 3,
+          "consCount": 2,
+          "anchorHits": 4,
+          "anchorCount": 4,
+          "promotionalPhraseHits": 0,
+          "popularityQualityClaims": 0,
+          "falseFirstHandClaims": 0,
+          "unansweredQuestions": 5,
+          "limitationDisclosure": false
+        },
+        "evolution": {
+          "comparedProfiles": 0,
+          "averagePreviousDrift": null,
+          "distinctAnglesInWindow": 1,
+          "trend": "baseline"
+        },
+        "scope": "تقييم آلي لمؤشرات الالتزام بالهوية التحريرية، لا يفهم السخرية والسياق اللغوي دائماً ولا يثبت جودة النقد أو صحة الوقائع."
+      },
+      "historicalProfile": {
+        "version": 1,
+        "workId": "game:1015421",
+        "workType": "game",
+        "title": "Tomb Raider: Legacy of Atlantis",
+        "releaseDate": "2027-02-12",
+        "franchise": "",
+        "genres": [
+          "Action"
+        ],
+        "developers": [
+          "Crystal Dynamics"
+        ],
+        "creators": [],
+        "directors": [],
+        "companies": [],
+        "selectedAngleId": "interactive-product-context",
+        "criticalQuestionIds": [
+          "core-loop",
+          "technical-performance",
+          "world-design",
+          "narrative-execution",
+          "progression-balance"
+        ]
+      },
+      "historicalComparison": {
+        "version": 1,
+        "status": "no-linked-history",
+        "comparedCount": 0,
+        "matchCount": 0,
+        "earlierWorks": 0,
+        "laterWorks": 0,
+        "matches": []
+      },
+      "strengths": [
+        "تطوير من Crystal Dynamics",
+        "متاحة على منصات حديثة (PS5, Xbox Series S/X, PC)",
+        "تقييم إيجابي من RAWG (4.33/5)"
+      ],
+      "limitations": [
+        "غياب معلومات عن تفاصيل القصة",
+        "عدم توفر بيانات حول جودة الرسوم والصوت"
+      ],
+      "sectionHeadings": [],
+      "excerpt": "تُصدر لعبة Tomb Raider: Legacy of Atlantis في فبراير 2027 من تطوير Crystal Dynamics، وتتوفر على PlayStation 5 وXbox Series S/X وPC. يُظهر تصنيف RAWG البالغ 4.33 من 5 أن معظم اللاعبين يوصون باللعبة، ما يعكس توقعاً إيجابياً للعنوان ضمن سلسلة الحركة الشهيرة. مع ذلك، لا تكشف البيانات المتاحة عن تفاصيل القصة أو جودة الرسوم أو الصوت، ولا توجد معلومات حول أداء التقنية أو تصميم المستويات، ما يحد من القدرة على تقييم هذه الجوانب بدقة. بناءً على ما هو معروف، يمكن الإشارة إلى قوة العلامة التجارية وتعدد المنصات وتقييم الجمهور كإيجابيات، بينما يبقى غموض المحتوى الفني والميكانيكي عائقاً أمام تقييم شامل.",
+      "wordCount": 101,
+      "capturedAt": "2026-11-16T01:01:56.566Z",
+      "humanRating": null,
+      "reviewerNotes": ""
+    }
+  ],
+  "approvedExamples": [],
+  "principles": []
+}

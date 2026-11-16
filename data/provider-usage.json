@@ -775,14 +775,14 @@
     },
     "2026-11-16": {
       "groq": {
-        "requests": 7,
-        "successes": 1,
-        "failures": 6,
-        "apiRequests": 22,
-        "totalTokens": 5204,
-        "inputTokens": 3679,
-        "outputTokens": 1525,
-        "lastAttemptAt": "2026-11-15T23:56:25.817Z",
+        "requests": 13,
+        "successes": 3,
+        "failures": 10,
+        "apiRequests": 34,
+        "totalTokens": 9924,
+        "inputTokens": 6121,
+        "outputTokens": 3803,
+        "lastAttemptAt": "2026-11-16T01:04:31.023Z",
         "lastUsage": {
           "requests": 2,
           "inputTokens": 0,
@@ -791,22 +791,22 @@
           "reportedUsage": false,
           "headers": {
             "x-ratelimit-limit-requests": "1000",
-            "x-ratelimit-remaining-requests": "999",
-            "x-ratelimit-reset-requests": "1m26.4s",
+            "x-ratelimit-remaining-requests": "997",
+            "x-ratelimit-reset-requests": "4m19.2s",
             "x-ratelimit-limit-tokens": "8000",
-            "x-ratelimit-remaining-tokens": "3392",
-            "x-ratelimit-reset-tokens": "34.559s",
-            "retry-after": "2265"
+            "x-ratelimit-remaining-tokens": "8000",
+            "x-ratelimit-reset-tokens": "1ms",
+            "retry-after": "300"
           },
-          "durationMs": 80,
-          "at": "2026-11-15T23:56:25.817Z"
+          "durationMs": 174,
+          "at": "2026-11-16T01:04:31.023Z"
         },
-        "blockedUntil": 1794789250818,
-        "blockedReason": "",
+        "blockedUntil": 1794791371023,
+        "blockedReason": "daily-limit",
         "lastCooldown": {
-          "reason": "none",
-          "until": "2026-11-16T00:34:10.818Z",
-          "observedAt": "2026-11-15T23:56:25.818Z",
+          "reason": "daily-limit",
+          "until": "2026-11-16T01:09:31.023Z",
+          "observedAt": "2026-11-16T01:04:31.024Z",
           "status": 429
         },
         "consecutiveTransientFailures": 0
@@ -878,11 +878,141 @@
         },
         "game:973539": {
           "groq": {
+            "attempts": 2,
+            "requests": 4,
+            "inputTokens": 1338,
+            "outputTokens": 1200,
+            "totalTokens": 2538,
+            "successes": 1
+          },
+          "openrouter": {
+            "attempts": 1,
+            "requests": 6,
+            "inputTokens": 3912,
+            "outputTokens": 3600,
+            "totalTokens": 7512,
+            "successes": 0
+          }
+        },
+        "game:1015421": {
+          "groq": {
+            "attempts": 1,
+            "requests": 2,
+            "inputTokens": 1104,
+            "outputTokens": 1078,
+            "totalTokens": 2182,
+            "successes": 1
+          }
+        },
+        "series:215528": {
+          "groq": {
             "attempts": 1,
             "requests": 2,
             "inputTokens": 0,
             "outputTokens": 0,
             "totalTokens": 0,
+            "successes": 0
+          },
+          "openrouter": {
+            "attempts": 1,
+            "requests": 6,
+            "inputTokens": 3690,
+            "outputTokens": 3600,
+            "totalTokens": 7290,
+            "successes": 0
+          }
+        },
+        "series:256726": {
+          "groq": {
+            "attempts": 1,
+            "requests": 2,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          },
+          "openrouter": {
+            "attempts": 1,
+            "requests": 6,
+            "inputTokens": 3841,
+            "outputTokens": 3600,
+            "totalTokens": 7441,
+            "successes": 0
+          }
+        },
+        "series:307825": {
+          "groq": {
+            "attempts": 1,
+            "requests": 2,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          },
+          "openrouter": {
+            "attempts": 1,
+            "requests": 6,
+            "inputTokens": 3577,
+            "outputTokens": 3600,
+            "totalTokens": 7177,
+            "successes": 0
+          }
+        },
+        "series:310209": {
+          "groq": {
+            "attempts": 1,
+            "requests": 2,
+            "inputTokens": 0,
+            "outputTokens": 0,
+            "totalTokens": 0,
+            "successes": 0
+          },
+          "openrouter": {
+            "attempts": 1,
+            "requests": 6,
+            "inputTokens": 3882,
+            "outputTokens": 3600,
+            "totalTokens": 7482,
+            "successes": 0
+          }
+        },
+        "movie:687163": {
+          "openrouter": {
+            "attempts": 1,
+            "requests": 6,
+            "inputTokens": 4268,
+            "outputTokens": 3600,
+            "totalTokens": 7868,
+            "successes": 0
+          }
+        },
+        "movie:1507696": {
+          "openrouter": {
+            "attempts": 1,
+            "requests": 6,
+            "inputTokens": 3572,
+            "outputTokens": 3600,
+            "totalTokens": 7172,
+            "successes": 0
+          }
+        },
+        "movie:1616687": {
+          "openrouter": {
+            "attempts": 1,
+            "requests": 6,
+            "inputTokens": 3679,
+            "outputTokens": 3600,
+            "totalTokens": 7279,
+            "successes": 0
+          }
+        },
+        "movie:1283515": {
+          "openrouter": {
+            "attempts": 1,
+            "requests": 6,
+            "inputTokens": 3508,
+            "outputTokens": 3600,
+            "totalTokens": 7108,
             "successes": 0
           }
         }
@@ -944,35 +1074,35 @@
         }
       },
       "openrouter": {
-        "requests": 1,
+        "requests": 10,
         "successes": 0,
-        "failures": 1,
-        "apiRequests": 2,
-        "totalTokens": 0,
-        "inputTokens": 0,
-        "outputTokens": 0,
-        "lastAttemptAt": "2026-11-15T23:07:15.063Z",
+        "failures": 10,
+        "apiRequests": 56,
+        "totalTokens": 66329,
+        "inputTokens": 33929,
+        "outputTokens": 32400,
+        "lastAttemptAt": "2026-11-16T01:08:45.155Z",
         "lastUsage": {
-          "requests": 2,
-          "inputTokens": 0,
-          "outputTokens": 0,
-          "totalTokens": 0,
-          "reportedUsage": false,
+          "requests": 6,
+          "inputTokens": 3508,
+          "outputTokens": 3600,
+          "totalTokens": 7108,
+          "reportedUsage": true,
           "headers": {},
-          "durationMs": 90261,
-          "at": "2026-11-15T23:07:15.063Z"
+          "durationMs": 72908,
+          "at": "2026-11-16T01:08:45.155Z"
         },
         "lastCooldown": {
           "reason": "none",
           "until": null,
-          "observedAt": "2026-11-15T23:07:15.063Z",
+          "observedAt": "2026-11-16T01:08:45.156Z",
           "status": null
         },
         "freeModelDailyRequests": {
-          "used": 54,
+          "used": 0,
           "limit": 50,
-          "remaining": 0,
-          "observedAt": "2026-11-15T23:56:17.213Z",
+          "remaining": 50,
+          "observedAt": "2026-11-16T01:00:21.527Z",
           "source": "OpenRouter GET /api/v1/key"
         }
       }

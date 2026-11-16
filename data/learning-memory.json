@@ -1,14 +1,14 @@
 {
   "version": 2,
   "stats": {
-    "successes": 0,
-    "failures": 40
+    "successes": 1,
+    "failures": 54
   },
   "lessons": [
     {
       "key": "depth",
       "advice": "وزّع التحليل على المحاور المطلوبة بكثافة فكرة حقيقية، ولا تطل النص بالحشو أو تكرار الأطروحة.",
-      "count": 22
+      "count": 23
     },
     {
       "key": "editorial",
@@ -16,9 +16,14 @@
       "count": 12
     },
     {
+      "key": "format",
+      "advice": "أخرج JSON صالحاً بالمفاتيح المطلوبة فقط، مع نص مراجعة كامل دون شروح خارج البنية.",
+      "count": 11
+    },
+    {
       "key": "resource",
       "advice": "تعامل مع حدود المزوّد بهدوء: لا تكرر الطلبات بلا داعٍ، واستخدم التحويل الاحتياطي المحدود عند الحاجة.",
-      "count": 4
+      "count": 6
     },
     {
       "key": "evidence",
@@ -31,8 +36,41 @@
       "count": 1
     }
   ],
-  "recentSuccesses": [],
-  "recentQuality": [],
-  "qualityByType": {},
-  "updatedAt": "2026-11-15T00:02:55.462Z"
+  "recentSuccesses": [
+    {
+      "type": "game",
+      "words": 101,
+      "sections": 0,
+      "score": 5
+    }
+  ],
+  "recentQuality": [
+    {
+      "type": "game",
+      "words": 101,
+      "sections": 0,
+      "paragraphs": 1,
+      "lexicalDiversity": 0.987,
+      "repeatedTrigramRate": 0,
+      "genericPhraseHits": 0,
+      "scoreMean": 5,
+      "scoreSpread": 0,
+      "prosCount": 3,
+      "consCount": 2,
+      "at": "2026-11-16T01:01:56.565Z"
+    }
+  ],
+  "qualityByType": {
+    "game": {
+      "count": 1,
+      "avgWords": 101,
+      "avgSections": 0,
+      "avgLexicalDiversity": 0.987,
+      "avgRepeatedTrigramRate": 0,
+      "avgGenericPhraseHits": 0,
+      "avgScoreMean": 5,
+      "updatedAt": "2026-11-16T01:01:56.565Z"
+    }
+  },
+  "updatedAt": "2026-11-16T01:08:45.154Z"
 }
