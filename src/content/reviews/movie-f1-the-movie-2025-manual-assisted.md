@@ -16,7 +16,6 @@ soundScore: 9.4
 pacingScore: 8.7
 reviewMode: review
 poster: "https://images.flickdirect.com/movies/f1/f1-poster.jpg"
-backdrop: "https://images.flickdirect.com/movies/f1/f1-poster.jpg"
 pros:
   - "تصوير السباقات يمنح السرعة والاهتزاز إحساساً غامراً"
   - "الصوت والمونتاج يخلقان ضغطاً حسياً مقنعاً"
@@ -30,7 +29,7 @@ tags: ["F1 The Movie", "Formula 1", "Joseph Kosinski", "Sports Drama", "2025"]
 genres: ["دراما", "رياضة", "أكشن"]
 cast: ["Brad Pitt", "Damson Idris", "Javier Bardem", "Kerry Condon", "Tobias Menzies", "Kim Bodnia"]
 crew: ["Joseph Kosinski", "Ehren Kruger", "Claudio Miranda", "Stephen Mirrione", "Hans Zimmer"]
-sourceName: "Apple Original Films / Formula 1"
+sourceName: "Apple Original Films / Formula 1 / RogerEbert.com / The Guardian / BFI / Variety"
 sourceId: "manual-assisted-movie-f1-the-movie-2025-manual-assisted"
 sourceUrl: "https://www.apple.com/tv-pr/originals/f1/"
 externalVideoUrl: "https://www.apple.com/tv-pr/news/2025/03/apple-original-films-unveils-the-f1-movie-trailer/"
@@ -61,9 +60,13 @@ youtubeVideoTitle: "Official IMAX® 1.90 Trailer 2"
 ## الحكم النهائي
 F1 فيلم رياضي ناجح في تحويل الحلبة إلى مساحة سينمائية غامرة، ويستفيد من الصوت والصورة والمونتاج والتصوير خلال سباقات فعلية بصورة واضحة. لكنه لا يحقق المستوى نفسه في جدة السرد؛ فقوس العودة مألوف وبعض الشخصيات لا تتجاوز وظيفتها. تقييم 8.7/10 يمنح الحرفة التقنية وزناً كبيراً، لكنه لا يسمح لها بإخفاء محدودية النص.
 
-## مصادر التحقق
+## مصادر التحقق والمراجعات النقدية
 - [Apple Original Films — F1 The Movie](https://www.apple.com/tv-pr/originals/f1/): الملخص الرسمي والطاقم ومعلومات الإنتاج.
-- [Apple — الإعلان عن المقطع الرسمي وتاريخ العرض](https://www.apple.com/tv-pr/news/2025/03/apple-original-films-unveils-the-f1-movie-trailer/): العرض السينمائي في يونيو 2025.
+- [Apple — الإعلان عن المقطع الرسمي وتاريخ العرض](https://www.apple.com/tv-pr/news/2025/03/apple-original-films-unveils-the-f1-movie-trailer/): المقطع الرسمي وموعد العرض.
 - [Apple TV — معلومات الفيلم](https://tv.apple.com/us/info/f1-the-movie): المدة والطاقم وملخص القصة.
+- [RogerEbert.com — F1 Review](https://www.rogerebert.com/reviews/f1-the-movie-brad-pitt-film-review-2025): قراءة نقدية للتصوير والسباقات والقصة والشخصيات.
+- [The Guardian — F1 The Movie Review](https://www.theguardian.com/film/2025/jun/17/f1-the-movie-review-brad-pitt): تحليل مشاهد السباق والطابع الدرامي المألوف.
+- [BFI Sight and Sound — F1 Review](https://www.bfi.org.uk/sight-and-sound/reviews/f1-movie-brad-pitts-racing-drama-aims-maximum-adrenal-thrills-minimal-storytelling): ملاحظات على الاستعراض البصري ومحدودية السرد.
+- [Variety — F1 Review](https://au.variety.com/2025/film/reviews/f1-review-brad-pitt-javier-bardem-damson-idris-23868/): تقييم وضوح مشاهد السباق وفاعلية التصوير.
 
 > مراجعة تحريرية بحثية تستند إلى المواد الرسمية وتحليل الفيلم، ولا تدعي مشاهدة جديدة أو قياساً لتقييم الجمهور.
