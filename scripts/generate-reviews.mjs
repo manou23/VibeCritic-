@@ -493,7 +493,7 @@ async function generateWithOpenAI(prompt){
  const model=env.OPENAI_MODEL||'gpt-4o-mini',key=required('OPENAI_API_KEY');
  const endpoint=cloudflareGatewayEndpoint('openai','chat/completions')||'https://api.openai.com/v1/chat/completions';
  if(endpoint.includes('gateway.ai.cloudflare.com'))console.log('OpenAI routed through Cloudflare AI Gateway.');
- const r=await trackedProviderFetch('openai',endpoint,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key,...gatewayAuthHeaders()},body:JSON.stringify({model,temperature:.3,max_tokens:6000,response_format:{type:'json_object'},messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]}),signal:AbortSignal.timeout(90000)});
+ const r=await trackedProviderFetch('openai',endpoint,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key,...gatewayAuthHeaders()},body:JSON.stringify({model,temperature:.3,max_tokens:1200,response_format:{type:'json_object'},messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]}),signal:AbortSignal.timeout(90000)});
  if(!r.ok)throw new Error('OpenAI HTTP '+r.status+': '+await r.text());
  const content=(await r.json()).choices?.[0]?.message?.content;
  if(!content)throw new Error('لم يرجع OpenAI محتوى نصياً');
@@ -505,7 +505,7 @@ async function generateWithGroq(prompt){
  const directUrl='https://api.groq.com/openai/v1/chat/completions';
  const url=gatewayUrl||directUrl;
  if(gatewayUrl)console.log('Groq routed through Cloudflare AI Gateway.');
- const body=JSON.stringify({model,temperature:.3,max_tokens:6000,response_format:{type:'json_object'},messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]});
+ const body=JSON.stringify({model,temperature:.3,max_tokens:1200,response_format:{type:'json_object'},messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]});
  let r,detail='';
  for(let attempt=0;attempt<4;attempt++){
   r=await trackedProviderFetch('groq',url,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key,...(gatewayUrl?gatewayAuthHeaders():{})},body,signal:AbortSignal.timeout(90000)});
@@ -543,13 +543,13 @@ async function generateWithOpenRouter(prompt){
  const directHeaders={'content-type':'application/json',authorization:'Bearer '+apiKey,'HTTP-Referer':'https://vibecritic.pages.dev/','X-Title':'VibeCritic'};
  let messages=[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بكل محاور المراجعة المطلوبة.'},{role:'user',content:prompt}],lastIssue='رد فارغ';
  for(let attempt=0;attempt<3;attempt++){
-  const requestBody=JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,max_tokens:6000,response_format:{type:'json_object'},messages});
+  const requestBody=JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,max_tokens:1200,response_format:{type:'json_object'},messages});
   let r=await trackedProviderFetch('openrouter',endpoint,{method:'POST',headers,body:requestBody,signal:AbortSignal.timeout(90000)});
   if(!r.ok&&r.status===401&&gatewayEndpoint){
    console.warn('Cloudflare AI Gateway رفض OpenRouter (401)؛ إعادة المحاولة مباشرة مع OpenRouter.');
    r=await trackedProviderFetch('openrouter',directEndpoint,{method:'POST',headers:directHeaders,body:requestBody,signal:AbortSignal.timeout(90000)});
   }
-  if(!r.ok&&r.status===400)r=await trackedProviderFetch('openrouter',r.url===directEndpoint?directEndpoint:endpoint,{method:'POST',headers:r.url===directEndpoint?directHeaders:headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,max_tokens:6000,messages}),signal:AbortSignal.timeout(90000)});
+  if(!r.ok&&r.status===400)r=await trackedProviderFetch('openrouter',r.url===directEndpoint?directEndpoint:endpoint,{method:'POST',headers:r.url===directEndpoint?directHeaders:headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,max_tokens:1200,messages}),signal:AbortSignal.timeout(90000)});
   if(!r.ok){let detail='تعذر قراءة استجابة OpenRouter';try{detail=await r.clone().text();}catch{}throw new Error('OpenRouter HTTP '+r.status+': '+detail.slice(0,700));}
   const response=await r.json(),message=response.choices?.[0]?.message;
   let content=message?.content;if(Array.isArray(content))content=content.map(part=>part.text||'').join('');
