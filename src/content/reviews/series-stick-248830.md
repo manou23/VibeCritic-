@@ -9,7 +9,7 @@ reviewVersion: 3
 reviewMode: review
 type: series
 date: 2026-11-15
-releaseDate: "2025-06-03"
+releaseDate: "2025-06-04"
 poster: "https://image.tmdb.org/t/p/w500/gENmz65wMw4SUZb43fZYCoV24mG.jpg"
 backdrop: "https://image.tmdb.org/t/p/w780/2Bt2uXrIOQASBAsni2AGGqCCF14.jpg"
 youtubeVideoId: "72oB_zVF_6o"
@@ -40,15 +40,15 @@ genres:
   - "Drama"
   - "Sport"
 creator: "Jason Keller"
-sourceName: "VibeCritic Editorial Desk"
+sourceName: "Apple TV / Los Angeles Times / The Guardian / RogerEbert.com / Metacritic"
 sourceId: "248830"
-sourceUrl: "https://tv.apple.com/"
+sourceUrl: "https://www.apple.com/tv-pr/originals/stick/"
 aiGenerated: false
 ---
 
 ## نطاق المراجعة
 
-تتناول هذه المراجعة **الموسم الأول فقط**، المؤلف من عشر حلقات والذي بدأ عرضه في يونيو 2025. لا تخلط الدرجة مع الموسم الثاني أو مع تقييم المسلسل بعد اكتمال مواسم لاحقة. وتُحسب الدرجة النهائية وفق الأوزان التحريرية الثابتة: القصة 30%، الصورة 25%، الصوت 20%، والإيقاع 25%. التقييم بحثي تحريري مبني على مراجعات نقدية منشورة، وليس ادعاءً بمشاهدة مباشرة من فريق VibeCritic.
+تتناول هذه المراجعة **الموسم الأول فقط**، المؤلف من عشر حلقات والذي بدأ عرضه في 4 يونيو 2025. بدأ الموسم الثاني في 4 نوفمبر 2026، لكنه خارج نطاق هذه الدرجة ولا تدخل حلقاته في التقييم. لا تخلط الدرجة مع الموسم الثاني أو مع تقييم المسلسل بعد اكتمال مواسم لاحقة. وتُحسب الدرجة النهائية وفق الأوزان التحريرية الثابتة: القصة 30%، الصورة 25%، الصوت 20%، والإيقاع 25%. التقييم بحثي تحريري مبني على مراجعات نقدية منشورة، وليس ادعاءً بمشاهدة مباشرة من فريق VibeCritic.
 
 ## القصة والكتابة — 7.2/10
 
@@ -70,8 +70,10 @@ aiGenerated: false
 
 Stick عمل جيد لمن يريد دراما رياضية خفيفة ذات طابع إنساني وأداء مريح من أوين ويلسون. لكنه لا يقدم كتابة مبتكرة أو إيقاعاً محكماً بما يكفي ليصبح منافساً حقيقياً لأفضل الكوميديا الدرامية الرياضية. درجة **7.0/10** تمنحه حقه دون تضخيم: ممتع ومخلص لنبرته، لكنه محدود في طموحه وتنفيذه.
 
-## المصادر النقدية
+## المصادر الرسمية والنقدية
 
+- [Apple TV Press — Stick](https://www.apple.com/tv-pr/originals/stick/): تاريخ الإصدار وعدد الحلقات وتفاصيل المواسم.
+- [Apple TV Press — إعلان العرض في 4 يونيو 2025](https://www.apple.com/tv-pr/news/2025/02/apples-new-golf-comedy-stick-starring-and-executive-produced-by-owen-wilson-to-premiere-june-4-2025/): موعد العرض والطاقم وعدد الحلقات.
 - [Rotten Tomatoes — Stick: Season 1](https://www.rottentomatoes.com/tv/stick/s01) — تجميع 62 مراجعة نقدية، مع خلاصة ترى أن العمل لطيف لكنه متوقع.
 - [Metacritic — Stick: Season 1](https://www.metacritic.com/tv/stick/season-1/) — 27 مراجعة نقدية، مع تباين واضح بين الإشادة بأداء Wilson وانتقاد التوقع والتمدد.
 - [Los Angeles Times — Stick review](https://www.latimes.com/entertainment-arts/tv/story/2025-06-03/stick-review-owen-wilson) — تحليل للشخصيات والأداء والقلب الإنساني للقصة.
