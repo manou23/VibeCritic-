@@ -33,13 +33,15 @@ cons:
 tags: ["All That's Left of You", "Cherien Dabis", "Palestinian Cinema", "Arabic Film", "Family Drama"]
 genres: ["دراما", "تاريخي", "عائلي"]
 creator: "Cherien Dabis"
-sourceName: "Watermelon Pictures / FilmFest Hamburg / trigon-film / Rotten Tomatoes"
+sourceName: "Watermelon Pictures / Twenty Twenty Vision / Sundance / Screen Daily / RogerEbert.com / Los Angeles Times"
 sourceId: "manual-assisted-movie-all-thats-left-of-you-2025"
 sourceUrl: "https://www.watermelonpictures.com/films/all-thats-left-of-you"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
 ---
 ## حكاية عائلة لا تنتهي عند جيل واحد
+
+**تاريخ العرض:** شهد الفيلم عرضه العالمي الأول في مهرجان صندانس يوم 25 يناير 2025. أما طرحه التجاري فبدأ في أسواق مختلفة خلال 2025، ووصل إلى دور العرض الأمريكية بعرض محدود في 9 يناير 2026؛ لذلك لا ينبغي فهم تاريخ العرض الأول بوصفه موعد طرح عالمي موحد.
 
 يبني All That's Left of You حكايته على انتقال الذاكرة بين أفراد عائلة فلسطينية، لا على متابعة شخصية واحدة في خط زمني مستقيم. تبدأ إحدى نقاط الحكاية في أواخر الثمانينيات، حين يجد مراهق نفسه وسط احتجاج في الضفة الغربية، ثم تعود الأم إلى الوراء لتروي الظروف التي صنعت تلك اللحظة، وصولاً إلى اقتلاع العائلة من موطنها عام 1948. هذا البناء يجعل الحدث الفردي نتيجة لتاريخ طويل، لكنه لا يلغي الحياة اليومية التي عاشها أفراد العائلة بين المحطات الكبرى.
 
@@ -73,11 +75,14 @@ editorialWorkflow: "manual-assisted"
 
 All That's Left of You فيلم واسع الطموح، لكنه يجد قوته في التفاصيل العائلية التي تجعل التاريخ تجربة معاشة لا مجرد خلفية. أداءاته واللغة العربية والبناء الممتد تمنحه ثقلاً إنسانياً واضحاً، كما أن نظرته إلى الذاكرة والاقتلاع لا تختزل الشخصيات في موقف واحد. في المقابل، يضغط اتساع الحكاية على الإيقاع، وبعض الانتقالات والخطوط الجانبية لا تحصل على العمق نفسه. درجة 8.6 من 10 تعكس عملاً مؤثراً ومهماً فنياً، مع ملاحظات حقيقية على كثافة السرد وتوزيع زمنه.
 
-## مصادر التحقق
-- [Watermelon Pictures — All That's Left of You](https://www.watermelonpictures.com/films/all-thats-left-of-you): الملخص الرسمي والطاقم ومعلومات الفيلم.
-- [FilmFest Hamburg — Film Info](https://www.filmfesthamburg.de/en/film-info/all-thats-left-of-you/): سنة الإنتاج والمدة والطاقم والفريق الفني.
-- [trigon-film — Press Dossier](https://trigon-film.s3.amazonaws.com/production/media/films/all-thats-left-of-you/250905/Dossier_Presse.pdf): بيانات الإنتاج والممثلين والموسيقى والتصوير.
-- [Rotten Tomatoes — All That's Left of You](https://www.rottentomatoes.com/m/all_thats_left_of_you): ملخص استقبال النقاد والمعلومات الأساسية.
+## مصادر التحقق والمراجعات النقدية
+- [Watermelon Pictures — All That's Left of You](https://www.watermelonpictures.com/films/all-thats-left-of-you): الملخص الرسمي والطاقم ومعلومات التوزيع.
+- [Twenty Twenty Vision — All That's Left of You](https://twentytwentyvision.eu/en/movies/all-thats-left-of-you): العرض العالمي الأول في صندانس 25 يناير 2025 وتاريخ العرض السينمائي الألماني.
+- [Sundance Institute — Release Rundown](https://www.sundance.org/blogs/release-rundown-what-to-watch-in-january-from-all-thats-left-of-you-to-obex/): طرح الفيلم الأمريكي المحدود في 9 يناير 2026.
+- [Screen Daily — Sundance Review](https://www.screendaily.com/reviews/all-thats-left-of-you-sundance-review/5200902.article): ملاحظات نقدية عن البناء عبر الأجيال والتوازن بين الشخصي والسياسي.
+- [RogerEbert.com — All That's Left of You](https://www.rogerebert.com/reviews/all-thats-left-of-you-movie-review-2026): قراءة نقدية للأداء والبناء العاطفي.
+- [Los Angeles Times — All That's Left of You Review](https://www.latimes.com/entertainment-arts/movies/story/2026-01-09/all-thats-left-of-you-review-palestinian-domestic-drama-cherien-dabis): نقد امتداد السرد ومقاطع الأجيال والأداءات.
+- [Rotten Tomatoes — All That's Left of You](https://www.rottentomatoes.com/m/all_thats_left_of_you): تجميع استقبال النقاد وبيانات التوزيع والمدة.
 - [المقطع الرسمي](https://www.youtube.com/watch?v=obY98vk76Hs): الفيديو الترويجي المرتبط بالفيلم.
 
 > مراجعة تحريرية بحثية تستند إلى مواد الفيلم الرسمية وملفات المهرجانات وقراءات نقدية منشورة، ولا تدعي مشاهدة شخصية جديدة.
