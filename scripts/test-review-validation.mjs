@@ -13,11 +13,11 @@ function candidate(review) {
   };
 }
 
-const valid = candidate(words(105));
+const valid = candidate(words(180));
 assert.equal(validateGeneratedReview(valid).review, words(105));
 
-assert.throws(() => validateGeneratedReview(candidate(words(40))), /70 كلمة و300 حرف/);
-assert.throws(() => validateGeneratedReview(candidate(words(190))), /180 كلمة/);
+assert.throws(() => validateGeneratedReview(candidate(words(180))), /150 كلمة و650 حرف/);
+assert.throws(() => validateGeneratedReview(candidate(words(260))), /250 كلمة/);
 assert.throws(() => validateGeneratedReview({ ...candidate(words(100)), pros: ['نقطة واحدة'] }), /3 عناصر على الأقل/);
 assert.throws(() => validateGeneratedReview({ ...candidate(words(100)), cons: ['تحفظ واحد'] }), /عنصران على الأقل/);
 assert.throws(() => validateGeneratedReview({ ...candidate(words(100)), scores: { story: 7.55, visuals: 7, sound: 6.5, pacing: 7 } }), /بخطوة عشرية واحدة/);
