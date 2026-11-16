@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { validateGeneratedReview, validateCompletedArticle, calculateContentRetryAt, shouldRetryShortSection } from './generate-reviews.mjs';
+import { validateGeneratedReview, validateCompletedArticle, calculateContentRetryAt, shouldRetryShortSection, shouldUseCloudflareGateway } from './generate-reviews.mjs';
 
 function words(count) {
   return Array.from({ length: count }, (_, index) => 'تفصيل' + (index + 1)).join(' ');
@@ -25,6 +25,8 @@ assert.throws(() => validateGeneratedReview({ ...interimSection, pros: undefined
 assert.equal(shouldRetryShortSection(new Error('جزء المقال أقصر من الحد الأدنى'), false), true);
 assert.equal(shouldRetryShortSection(new Error('جزء المقال أقصر من الحد الأدنى'), true), false);
 assert.equal(shouldRetryShortSection(new Error('JSON مشوه'), false), false);
+assert.equal(shouldUseCloudflareGateway({ accountId: 'account', gatewayId: 'gateway', authToken: '' }), false);
+assert.equal(shouldUseCloudflareGateway({ accountId: 'account', gatewayId: 'gateway', authToken: 'masked-token' }), true);
 
 const retryNow = 1_000_000;
 assert.equal(

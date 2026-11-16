@@ -102,10 +102,16 @@ function learningAdvice(){
 }
 function required(name){if(!env[name])throw new Error(`متغير البيئة ${name} غير مضبوط في GitHub Secrets`);return env[name];}
 function gatewayAuthHeaders(){const token=String(env.CF_AI_GATEWAY_AUTH_TOKEN||'').trim();return token?{'cf-aig-authorization':'Bearer '+token}:{};}
+export function shouldUseCloudflareGateway({accountId,gatewayId,authToken}={}){
+ return Boolean(String(accountId||'').trim()&&String(gatewayId||'').trim()&&String(authToken||'').trim());
+}
 function cloudflareGatewayEndpoint(providerPath,suffix){
- const account=String(env.CF_AI_GATEWAY_ACCOUNT_ID||'').trim(),gateway=String(env.CF_AI_GATEWAY_ID||'').trim();
+ const account=String(env.CF_AI_GATEWAY_ACCOUNT_ID||'').trim(),gateway=String(env.CF_AI_GATEWAY_ID||'').trim(),token=String(env.CF_AI_GATEWAY_AUTH_TOKEN||'').trim();
  if(Boolean(account)!==Boolean(gateway))throw new Error('يلزم ضبط CF_AI_GATEWAY_ACCOUNT_ID وCF_AI_GATEWAY_ID معاً أو تركهما فارغين.');
- if(!account)return null;
+ if(!shouldUseCloudflareGateway({accountId:account,gatewayId:gateway,authToken:token})){
+  if(account&&gateway&&!token)console.warn('CF_AI_GATEWAY_AUTH_TOKEN غير مضبوط؛ سيتم تجاوز AI Gateway واستخدام مزوّدي AI المجانيين مباشرة.');
+  return null;
+ }
  return 'https://gateway.ai.cloudflare.com/v1/'+encodeURIComponent(account)+'/'+encodeURIComponent(gateway)+'/'+providerPath+'/'+suffix;
 }
 const pendingSourceCache = new Map();
@@ -532,9 +538,7 @@ async function generateWithGroq(prompt){
  return parseJson(content);
 }
 async function generateWithOpenRouter(prompt){
- const gatewayAccount=String(env.CF_AI_GATEWAY_ACCOUNT_ID||'').trim(),gatewayId=String(env.CF_AI_GATEWAY_ID||'').trim();
- if(Boolean(gatewayAccount)!==Boolean(gatewayId))throw new Error('يلزم ضبط CF_AI_GATEWAY_ACCOUNT_ID وCF_AI_GATEWAY_ID معاً أو تركهما فارغين.');
- const gatewayEndpoint=gatewayAccount?'https://gateway.ai.cloudflare.com/v1/'+encodeURIComponent(gatewayAccount)+'/'+encodeURIComponent(gatewayId)+'/openrouter/chat/completions':null;
+ const gatewayEndpoint=cloudflareGatewayEndpoint('openrouter','chat/completions');
  const directEndpoint='https://openrouter.ai/api/v1/chat/completions';
  const endpoint=gatewayEndpoint||directEndpoint;
  if(gatewayEndpoint)console.log('OpenRouter routed through Cloudflare AI Gateway (cache/logging/rate controls depend on gateway settings).');
