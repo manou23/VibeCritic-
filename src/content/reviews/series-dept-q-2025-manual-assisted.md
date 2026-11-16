@@ -4,12 +4,12 @@ originalTitle: "Dept. Q"
 headline: "تحقيق بارد وشخصيات مكسورة تشد الحلقات، لكن بعض مسارات الفريق مألوفة"
 hook: "يعيد Dept. Q بناء لغز اختفاء قديم عبر محقق فظ وفريق غير متجانس؛ قوته في الكيمياء والتحقيق المتدرج، لا في ابتكار كل قواعد الجريمة."
 summary: "دراما جريمة بريطانية تدور حول محقق إدنبرة كارل مورك الذي يقود وحدة للقضايا الباردة مع فريق من المهمشين."
-verdict: "يقدم Dept. Q لغزاً جنائياً متدرجاً تقوده شخصية كارل مورك وفريق غير متجانس، ويستفيد من أداء ماثيو غود وأجواء إدنبرة الباردة. لكنه يعتمد أحياناً على قوالب مألوفة ويطيل بعض مراحل الكشف، كما لا تتساوى المسارات الشخصية في العمق. تقييم VibeCritic التحريري: 8.2/10."
+verdict: "يقدم Dept. Q لغزاً جنائياً متدرجاً تقوده شخصية كارل مورك وفريق غير متجانس، ويستفيد من أداء ماثيو غود وأجواء إدنبرة الباردة. لكنه يعتمد أحياناً على قوالب مألوفة ويطيل بعض مراحل الكشف، كما لا تتساوى المسارات الشخصية في العمق. تقييم VibeCritic التحريري: 8.3/10."
 reviewVersion: 1
 type: series
 date: 2026-11-15
 releaseDate: "2025-05-29"
-score: 8.2
+score: 8.3
 storyScore: 8.2
 visualsScore: 8.5
 soundScore: 8.2
@@ -26,7 +26,7 @@ cons:
   - "التحقيق يطيل بعض الالتفافات قبل الوصول إلى الحسم"
 tags: ["Dept. Q", "series", "VibeCritic", "2025"]
 genres: ["دراما"]
-sourceName: "Netflix Media Center"
+sourceName: "Netflix / The Guardian / RogerEbert.com / Time / Rotten Tomatoes"
 sourceId: "manual-assisted-series-dept-q-2025-manual-assisted"
 sourceUrl: "https://media.netflix.com/en/only-on-netflix/81487660"
 aiGenerated: true
@@ -62,9 +62,13 @@ Dept. Q مسلسل جريمة متين يقوده أداء مركزي قوي و�
 
 ## الحكم النهائي
 
-تقييم 8.2/10 يكافئ تماسك التحقيق وأداء ماثيو غود وبناء الفريق والأجواء، مع خصم بسبب مألوفية بعض الأنماط وإطالة بعض الالتفافات وتفاوت عمق الشخصيات. إنه مسلسل جريمة متين، لا تجديد جذري للنوع.
+تقييم 8.3/10 يكافئ تماسك التحقيق وأداء ماثيو غود وبناء الفريق والأجواء، مع خصم بسبب مألوفية بعض الأنماط وإطالة بعض الالتفافات وتفاوت عمق الشخصيات. إنه مسلسل جريمة متين، لا تجديد جذري للنوع.
 
-## مصادر التحقق
+## مصادر التحقق والمراجعات النقدية
 
-- [Netflix Media Center](https://media.netflix.com/en/only-on-netflix/81487660)
-- [المادة الرسمية / المقطع المرتبط](https://www.netflix.com/title/81487660)
+- [Netflix Media Center — Dept. Q](https://media.netflix.com/en/only-on-netflix/81487660): الوصف الرسمي والطاقم.
+- [The Guardian — Dept. Q Review](https://www.theguardian.com/tv-and-radio/2025/may/29/netflix-dept-q-review-this-excellent-detective-drama-is-a-grimy-gothic-treat): تحليل الأداء والإيقاع والبناء القائم على القضايا الباردة.
+- [RogerEbert.com — Dept. Q Review](https://www.rogerebert.com/streaming/dept-q-netflix-tv-review-2025): ملاحظات على طول المسلسل وتوزيع الحبكة والأداءات.
+- [Time — Dept. Q Review](https://time.com/7286990/dept-q-review-netflix/): تقييم الشخصيات ومساراتها.
+- [Rotten Tomatoes — Dept. Q](https://www.rottentomatoes.com/tv/dept_q): تجميع مراجعات النقاد وبيانات المسلسل.
+- [Radio Times — Dept. Q Review](https://www.radiotimes.com/tv/drama/dept-q-review/): نقد الإطالة وتفاوت الإيقاع.
