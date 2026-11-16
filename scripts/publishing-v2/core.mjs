@@ -48,7 +48,7 @@ export function transition(job,event,patch={},now=Date.now()){
   next.attempts=Number(job.attempts||0)+1;next.lastError=String(patch.lastError||"Temporary failure").slice(0,1200);
   next.nextAttemptAt=Math.max(now+60000,time(patch.nextAttemptAt));
  }
- if(event==="resumed"){next.nextAttemptAt=null;next.lastError=null;}
+ if(event==="resumed"){next.status=patch.resumeTo||"writing";next.nextAttemptAt=null;next.lastError=null;delete next.resumeTo;}
  if(event==="published"){next.publishedAt=iso(now);next.nextAttemptAt=null;next.lastError=null;}
  return next;
 }
