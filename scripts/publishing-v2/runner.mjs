@@ -1,4 +1,4 @@
-import { enqueue, selectActiveJob, cycleDecision, transition, chooseFreeProvider, recordUsage, validateArticle } from './core.mjs';
+import { enqueue, selectActiveJob, cycleDecision, transition, chooseFreeProvider, recordUsage, validateArticle, validateEvidence } from './core.mjs';
 function candidate(items,state,counts={}) { const used=new Set(Object.keys(state.jobs)); const c={game:counts.game||0,movie:counts.movie||0,series:counts.series||0}; for(const j of Object.values(state.jobs)) if(j.status==='published') c[j.item.type]=(c[j.item.type]||0)+1; return (items||[]).filter(x=>x&&['game','movie','series'].includes(x.type)&&String(x.id||'').trim()&&!used.has(x.type+':'+x.id)).sort((a,b)=>c[a.type]-c[b.type]||Number(b.editorialPriority||0)-Number(a.editorialPriority||0)||String(b.date||'').localeCompare(String(a.date||'')))[0]||null; }
 export async function runCycle({state,adapters,providers,now=Date.now(),persist=async()=>{},publishedCounts={},articleLimits={}}) {
  if(!state||state.version!==2||!adapters) throw Error('Publisher v2 state and adapters are required.');
@@ -34,12 +34,12 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
  if(decision.action==='resume'){job=transition(job,'resumed',{resumeTo:job.resumeTo||'writing'},now);state.jobs[job.key]=job;await save();}
  if(job.status==='queued'){job=transition(job,'research-started',{},now);state.jobs[job.key]=job;await save();}
  if(job.status==='researching'){
-  try{const evidence=await adapters.collectEvidence(job.item);if(!evidence||!Array.isArray(evidence.sources)||evidence.sources.length<2)throw Error('Evidence needs at least two source records.');job=transition(job,'research-saved',{evidence},now);state.jobs[job.key]=job;await save();}
-  catch(error){job=transition(job,'provider-deferred',{lastError:'Evidence: '+String(error?.message||error),nextAttemptAt:now+3600000,resumeTo:'researching'},now);state.jobs[job.key]=job;await save();return {action:'research-deferred',key:job.key,providerCalls:0};}
+  try{const evidence=await adapters.collectEvidence(job.item);const evidenceCheck=validateEvidence(evidence);if(!evidenceCheck.valid)throw Error(evidenceCheck.errors.join(' '));job=transition(job,'research-saved',{evidence},now);state.jobs[job.key]=job;await save();}
+  catch(error){job=transition(job,'provider-deferred',{lastError:'Evidence: '+String(error?.message||error),nextAttemptAt:now+3600000,resumeTo:'researching',countAttempt:false},now);state.jobs[job.key]=job;await save();return {action:'research-deferred',key:job.key,providerCalls:0};}
  }
  if(job.status==='writing'){
   const day=new Date(now).toISOString().slice(0,10);state.providerUsage[day]||={};const p=chooseFreeProvider(providers,state.providerUsage[day],now);
-  if(!p){job=transition(job,'provider-deferred',{lastError:'No free provider within configured daily budget.',nextAttemptAt:now+3600000,resumeTo:'writing'},now);state.jobs[job.key]=job;await save();return {action:'provider-unavailable',key:job.key,providerCalls:0};}
+  if(!p){job=transition(job,'provider-deferred',{lastError:'No free provider within configured daily budget.',nextAttemptAt:now+3600000,resumeTo:'writing',countAttempt:false},now);state.jobs[job.key]=job;await save();return {action:'provider-unavailable',key:job.key,providerCalls:0};}
   let part;try{part=await adapters.generatePart({job,provider:p,stage:job.stage+1});if(!part||typeof part.text!=='string'||!part.text.trim())throw Error('Empty article stage.');recordUsage(state.providerUsage[day],p.id,{requests:1,tokens:Number(part.tokens||0),success:true});}
   catch(error){recordUsage(state.providerUsage[day],p.id,{requests:1,tokens:Number(error?.tokens||0),success:false});job=transition(job,'provider-deferred',{lastError:p.id+': '+String(error?.message||error),nextAttemptAt:Number(error?.retryAt)>now?Number(error.retryAt):now+3600000,resumeTo:'writing'},now);state.jobs[job.key]=job;await save();return {action:'generation-deferred',key:job.key,provider:p.id,providerCalls:1};}
   job=transition(job,'part-saved',{part:{text:part.text},lastProvider:p.id},now);state.jobs[job.key]=job;await save();if(job.stage<3)return {action:'stage-saved',key:job.key,stage:job.stage,provider:p.id,providerCalls:1};
