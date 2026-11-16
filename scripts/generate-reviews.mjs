@@ -487,7 +487,7 @@ async function generateWithCloudflareWorkersAI(prompt){
  const model=env.CF_WORKERS_AI_MODEL||'@cf/openai/gpt-oss-20b';
  const endpoint='https://api.cloudflare.com/client/v4/accounts/'+encodeURIComponent(account)+'/ai/v1/chat/completions';
  console.log('Cloudflare Workers AI fallback routed through AI Gateway.');
- const r=await trackedProviderFetch('cloudflare-workers-ai',endpoint,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key,'cf-aig-gateway-id':gateway},body:JSON.stringify({model,temperature:.3,max_tokens:1200,messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]}),signal:AbortSignal.timeout(120000)});
+ const r=await trackedProviderFetch('cloudflare-workers-ai',endpoint,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key,'cf-aig-gateway-id':gateway},body:JSON.stringify({model,temperature:.3,max_tokens:1800,messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]}),signal:AbortSignal.timeout(120000)});
  if(!r.ok)throw new Error('Cloudflare Workers AI HTTP '+r.status+': '+(await r.text()).slice(0,700));
  const message=(await r.json()).choices?.[0]?.message;
  let content=message?.content;
@@ -511,7 +511,7 @@ async function generateWithGroq(prompt){
  const directUrl='https://api.groq.com/openai/v1/chat/completions';
  const url=gatewayUrl||directUrl;
  if(gatewayUrl)console.log('Groq routed through Cloudflare AI Gateway.');
- const body=JSON.stringify({model,temperature:.3,max_tokens:1200,response_format:{type:'json_object'},messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]});
+ const body=JSON.stringify({model,temperature:.3,max_tokens:1800,response_format:{type:'json_object'},messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد JSON صالحاً فقط والتزم بالنزاهة النقدية ولا تختلق معلومات.'},{role:'user',content:prompt}]});
  let r,detail='';
  for(let attempt=0;attempt<4;attempt++){
   r=await trackedProviderFetch('groq',url,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key,...(gatewayUrl?gatewayAuthHeaders():{})},body,signal:AbortSignal.timeout(90000)});
@@ -521,6 +521,14 @@ async function generateWithGroq(prompt){
   }
   if(r.ok)break;
   detail=await r.text();
+  if(r.status===400&&/json_validate_failed/i.test(detail)){
+   console.warn('Groq تعذر عليه إكمال JSON المقيد؛ تجربة احتياطية واحدة دون response_format.');
+   const relaxedBody=JSON.stringify({model,temperature:.3,max_tokens:1800,messages:[{role:'system',content:'أنت ناقد ومحرر عربي متخصص. أعد كائن JSON صالحاً فقط دون Markdown أو نص خارجه.'},{role:'user',content:prompt+'\n\nتذكير: أعد scores ككائن، وpros وcons كمصفوفتين، ويمكن أن تكونا [] في المرحلتين 1 و2، وreview نصاً عربياً كاملاً.'}]});
+   r=await trackedProviderFetch('groq',url,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key,...(gatewayUrl?gatewayAuthHeaders():{})},body:relaxedBody,signal:AbortSignal.timeout(90000)});
+   if(!r.ok&&r.status===401&&gatewayUrl)r=await trackedProviderFetch('groq',directUrl,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key},body:relaxedBody,signal:AbortSignal.timeout(90000)});
+   if(r.ok)break;
+   detail=await r.text();
+  }
   // Retry transient TPM 429 responses using Groq's reset hint; daily quota 429s are not retried.
   // Distinguish temporary TPM throttles from daily TPD exhaustion before retrying.
   const temporaryTpm429=r.status===429&&/tokens per minute|\bTPM\b/i.test(detail)&&!/tokens per day|\bTPD\b/i.test(detail)&&/try again in/i.test(detail);
@@ -553,7 +561,7 @@ async function generateWithOpenRouter(prompt){
    console.warn('Cloudflare AI Gateway رفض OpenRouter (401)؛ إعادة المحاولة مباشرة مع OpenRouter.');
    r=await trackedProviderFetch('openrouter',directEndpoint,{method:'POST',headers:directHeaders,body:requestBody,signal:AbortSignal.timeout(90000)});
   }
-  if(!r.ok&&r.status===400)r=await trackedProviderFetch('openrouter',r.url===directEndpoint?directEndpoint:endpoint,{method:'POST',headers:r.url===directEndpoint?directHeaders:headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,max_tokens:1200,messages}),signal:AbortSignal.timeout(90000)});
+  if(!r.ok&&r.status===400)r=await trackedProviderFetch('openrouter',r.url===directEndpoint?directEndpoint:endpoint,{method:'POST',headers:r.url===directEndpoint?directHeaders:headers,body:JSON.stringify({model:env.OPENROUTER_MODEL||'openrouter/free',temperature:.25,max_tokens:1800,messages}),signal:AbortSignal.timeout(90000)});
   if(!r.ok){let detail='تعذر قراءة استجابة OpenRouter';try{detail=await r.clone().text();}catch{}throw new Error('OpenRouter HTTP '+r.status+': '+detail.slice(0,700));}
   const response=await r.json(),message=response.choices?.[0]?.message;
   let content=message?.content;if(Array.isArray(content))content=content.map(part=>part.text||'').join('');
@@ -847,7 +855,7 @@ async function generateReview(item, stage=0, previousParts=[]){
   try{
    let generated=await handlers[name](prompt);
    try{
-    parsed=validateGeneratedReview(generated,{stage});
+    parsed=validateGeneratedReview(normalizeInterimReviewLists(generated,stage),{stage});
    }catch(validationError){
     if(shouldRetryShortSection(validationError,lengthRetryUsed)){
      lengthRetryUsed=true;
@@ -1122,6 +1130,21 @@ async function updateContentJob(item,patch={}){
 function resumableContentJobs(now=Date.now()){
  return Object.values(contentQueue.jobs).filter(job=>['discovered','researching','ready','generating','waiting','quality-check','staged-writing'].includes(job.status)&&Number(job.nextAttemptAt||0)<=now&&job.item).sort((a,b)=>Number(b.priority||0)-Number(a.priority||0)||String(a.createdAt||'').localeCompare(String(b.createdAt||'')));
 }
+export function selectActiveDraftJob(jobs){
+ const values=Array.isArray(jobs)?jobs:Object.values(jobs||{});
+ return values.filter(job=>{
+  const stage=Number(job?.draft?.stage),status=String(job?.status||'');
+  const resumableStage=Number.isInteger(stage)&&(stage<3||(stage===3&&status==='quality-check'));
+  return Boolean(job?.item&&job?.draft&&resumableStage&&!['published','excluded','rejected','abandoned'].includes(status));
+ }).sort((a,b)=>{
+  const dateA=Date.parse(a.createdAt||a.updatedAt||0)||0,dateB=Date.parse(b.createdAt||b.updatedAt||0)||0;
+  return dateA-dateB||String(a.key||'').localeCompare(String(b.key||''));
+ })[0]||null;
+}
+export function normalizeInterimReviewLists(d,stage=0){
+ if(stage>=2||!d||typeof d!=='object'||Array.isArray(d))return d;
+ return {...d,pros:d.pros==null?[]:d.pros,cons:d.cons==null?[]:d.cons};
+}
 async function persistFailedQueueCheckpoint(){
  const pending=Object.values(contentQueue.jobs).filter(job=>['ready','generating','waiting','quality-check','staged-writing'].includes(job.status)).length;
  console.log('نقطة حفظ طابور المحتوى:',pending,'مهام قيد الانتظار/الاستئناف.');
@@ -1173,20 +1196,27 @@ async function writeReview(item){
   ?currentJob.draft
   :{version:1,stage:0,sections:[],startedAt:new Date().toISOString()};
  let part;
- try{part=await generateReview(enriched,draft.stage,draft.sections);}
- catch(error){
-  const now=Date.now();
-  const availableProviderCount=providerCandidates().filter(name=>name!=='openai').length;
-  const configuredFreeProviders={gemini:Boolean(env.GEMINI_API_KEY),groq:Boolean(env.GROQ_API_KEY),openrouter:Boolean(env.OPENROUTER_API_KEY),'cloudflare-workers-ai':Boolean(env.CF_WORKERS_AI_API_TOKEN&&env.CF_AI_GATEWAY_ACCOUNT_ID&&env.CF_AI_GATEWAY_ID)};
-  const blocked=Object.entries(configuredFreeProviders).filter(([,configured])=>configured).map(([name])=>Number(providerDay()[name]?.blockedUntil)||0).filter(value=>value>now);
-  const nextAttemptAt=calculateContentRetryAt({availableProviderCount,blockedUntil:blocked,now});
-  console.log('المزوّدات المجانية المتاحة بعد الفشل:',availableProviderCount,'| موعد استئناف المهمة:',new Date(nextAttemptAt).toISOString());
-  await updateContentJob(enriched,{status:'waiting',item:enriched,draft,nextAttemptAt,lastError:String(error?.message||error).slice(0,1200)});
-  throw error;
+ if(Number(draft.stage)>=3&&draft.finalPart){
+  // Reuse the saved final provider response if an earlier run stopped during final checks.
+  part=draft.finalPart;
+ }else{
+  // Recover older stage-3 checkpoints without finalPart by regenerating only the last segment.
+  if(Number(draft.stage)>=3){draft.stage=2;draft.sections=draft.sections.slice(0,2);}
+  try{part=await generateReview(enriched,draft.stage,draft.sections);}
+  catch(error){
+   const now=Date.now();
+   const availableProviderCount=providerCandidates().filter(name=>name!=='openai').length;
+   const configuredFreeProviders={gemini:Boolean(env.GEMINI_API_KEY),groq:Boolean(env.GROQ_API_KEY),openrouter:Boolean(env.OPENROUTER_API_KEY),'cloudflare-workers-ai':Boolean(env.CF_WORKERS_AI_API_TOKEN&&env.CF_AI_GATEWAY_ACCOUNT_ID&&env.CF_AI_GATEWAY_ID)};
+   const blocked=Object.entries(configuredFreeProviders).filter(([,configured])=>configured).map(([name])=>Number(providerDay()[name]?.blockedUntil)||0).filter(value=>value>now);
+   const nextAttemptAt=calculateContentRetryAt({availableProviderCount,blockedUntil:blocked,now});
+   console.log('المزوّدات المجانية المتاحة بعد الفشل:',availableProviderCount,'| موعد استئناف المهمة:',new Date(nextAttemptAt).toISOString());
+   await updateContentJob(enriched,{status:'waiting',item:enriched,draft,nextAttemptAt,lastError:String(error?.message||error).slice(0,1200)});
+   throw error;
+  }
+  const stageHeadings=['الفكرة والرهان الأساسي','تفكيك عناصر التجربة','الموازنة والحكم النقدي'];
+  draft.sections.push({heading:stageHeadings[draft.stage],content:part.review});
+  draft.stage++;
  }
- const stageHeadings=['الفكرة والرهان الأساسي','تفكيك عناصر التجربة','الموازنة والحكم النقدي'];
- draft.sections.push({heading:stageHeadings[draft.stage],content:part.review});
- draft.stage++;
  if(draft.stage<3){
   await updateContentJob(enriched,{status:'staged-writing',item:enriched,draft,evidenceDossier,nextAttemptAt:0,lastError:null});
   console.log('تم حفظ المرحلة '+draft.stage+'/3 من مقال '+enriched.name+'؛ سيستأنف الجزء التالي في التشغيل الساعي القادم.');
@@ -1194,7 +1224,9 @@ async function writeReview(item){
  }
  const assembledReview=draft.sections.map(section=>'### '+section.heading+'\n\n'+section.content).join('\n\n');
  validateCompletedArticle(assembledReview);
+ draft.finalPart=part;
  const a={...part,review:assembledReview};
+ // Persist the final provider response before editorial checks and file writes.
  await updateContentJob(enriched,{status:'quality-check',item:enriched,draft,evidenceDossier,nextAttemptAt:0,lastError:null});
  const date=algeriaDate();
  await assertDistinctHeadline(a.headline,a.hook,a.summary,a.review);
@@ -1218,6 +1250,14 @@ async function writeReview(item){
 async function main(){
  await fs.mkdir(outDir,{recursive:true});await fs.mkdir('data',{recursive:true});await fs.mkdir('src/data',{recursive:true});
  await loadLearningMemory();await loadContentQueue();await loadProviderUsage();await refreshOpenRouterQuota();const publishingPlan=resourceDailyPublishingPlan();dailyTotalLimit=publishingPlan.limit;console.log('سقف النشر اليومي وفق الموارد المجانية:',dailyTotalLimit,'| نمط الحساب:',publishingPlan.mode);await saveProviderCapacity(publishingPlan);
+ const activeDraft=selectActiveDraftJob(contentQueue.jobs);
+ if(activeDraft&&Number(activeDraft.nextAttemptAt||0)>Date.now()){
+  console.log('توجد مقالة واحدة قيد الاستكمال؛ لن يبدأ النظام مقالة جديدة قبل موعد إعادة المحاولة:',activeDraft.key,'| المرحلة:',Number(activeDraft.draft.stage)+'/3','| الاستئناف:',new Date(Number(activeDraft.nextAttemptAt)).toISOString());
+  await saveContentQueue();
+  await fs.writeFile('data/new-reviews.json','[]\n','utf8');
+  await persistFailedQueueCheckpoint();
+  return;
+ }
  try{
   const top=await globalTrending();
   await fs.writeFile('src/data/trending.json',JSON.stringify(top,null,2)+'\n','utf8');
@@ -1336,7 +1376,7 @@ async function main(){
   }
   console.log('دفعة الإصدارات الجديدة المسموح بها في هذا التشغيل:',JSON.stringify(quotas));
  }
- const pendingDraft=pendingJobs.find(job=>job.item&&job.draft&&Number(job.draft.stage)<3);
+ const pendingDraft=activeDraft?pendingJobs.find(job=>job.key===activeDraft.key):null;
  if(pendingDraft&&dailyRemaining>0&&todayCounts[pendingDraft.type]<dailyPerType){
   const pendingTypeIndex=types.indexOf(pendingDraft.type);
   if(pendingTypeIndex>0)types.unshift(types.splice(pendingTypeIndex,1)[0]);
