@@ -41,9 +41,9 @@ genres:
   - "Action RPG"
   - "Open World"
 creator: "FromSoftware"
-sourceName: "IGDB"
+sourceName: "FromSoftware / Bandai Namco / IGDB"
 sourceId: "119133"
-sourceUrl: "https://www.igdb.com/games/elden-ring"
+sourceUrl: "https://en.bandainamcoent.eu/elden-ring/elden-ring"
 aiGenerated: false
 backdrop: "https://us-east-1-bandai.graphassets.com/AXzioIclSWilEjFtsMJPwz/Alg1l5HYROmvuBQY6BM0"
 rawgSourceId: 326243
