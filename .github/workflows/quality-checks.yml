@@ -84,6 +84,7 @@ jobs:
           node --check scripts/ingest-d1-catalog-knowledge.mjs
           npm run test:knowledge-catalog
           npm run test:knowledge-retrieval
+          npm run test:content-queue-resume
       - name: Validate review scores
         run: npm run validate:reviews
       - name: Build production site
