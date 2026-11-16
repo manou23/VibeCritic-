@@ -1,7 +1,7 @@
 import { enqueue, selectActiveJob, cycleDecision, transition, chooseFreeProvider, recordUsage, validateArticle, validateEvidence } from './core.mjs';
 function candidate(items,state,counts={}) { const used=new Set(Object.keys(state.jobs)); const c={game:counts.game||0,movie:counts.movie||0,series:counts.series||0}; for(const j of Object.values(state.jobs)) if(j.status==='published') c[j.item.type]=(c[j.item.type]||0)+1; return (items||[]).filter(x=>x&&['game','movie','series'].includes(x.type)&&String(x.id||'').trim()&&!used.has(x.type+':'+x.id)).sort((a,b)=>c[a.type]-c[b.type]||Number(b.editorialPriority||0)-Number(a.editorialPriority||0)||String(b.date||'').localeCompare(String(a.date||'')))[0]||null; }
 // One model call per invocation: every successful section is checkpointed before the next hourly cycle.
-export async function runCycle({state,adapters,providers,now=Date.now(),persist=async()=>{},publishedCounts={},articleLimits={}}) {
+export async function runCycle({state,adapters,providers,now=Date.now(),persist=async()=>{},publishedCounts={},articleLimits={},researchSkips=0}) {
  if(!state||state.version!==2||!adapters) throw Error('Publisher v2 state and adapters are required.');
  const save=async()=>{state.updatedAt=new Date(now).toISOString();await persist(state);}; let job=selectActiveJob(state.jobs);
  // Avoid creating a duplicate review when an existing manual or assisted article covers this title.
@@ -59,7 +59,11 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
    // Permanent evidence gaps should not pin the single-job queue for hours.
    if(/No sufficiently matching independent encyclopedia page|Independent source has insufficient detail|Primary source metadata is too thin|No HTTPS poster available/.test(message)){
     job=transition(job,'abandoned',{lastError:'Evidence rejected: '+message},now);
-    state.jobs[job.key]=job;await save();return {action:'research-rejected',key:job.key,reason:message,providerCalls:0};
+    state.jobs[job.key]=job;await save();
+    // Evidence-only failures cost no model tokens. Skip a small bounded batch in one
+    // scheduled cycle instead of waiting an hour for every unsupported trending title.
+    if(researchSkips<5)return runCycle({state,adapters,providers,now,persist,publishedCounts,articleLimits,researchSkips:researchSkips+1});
+    return {action:'research-rejected',key:job.key,reason:message,skipped:researchSkips+1,providerCalls:0};
    }
    job=transition(job,'provider-deferred',{lastError:'Evidence: '+message,nextAttemptAt:now+3600000,resumeTo:'researching',countAttempt:false},now);
    state.jobs[job.key]=job;await save();return {action:'research-deferred',key:job.key,providerCalls:0};
