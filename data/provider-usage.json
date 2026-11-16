@@ -801,12 +801,12 @@
           "durationMs": 174,
           "at": "2026-11-16T01:04:31.023Z"
         },
-        "blockedUntil": 1794791371023,
-        "blockedReason": "daily-limit",
+        "blockedUntil": 0,
+        "blockedReason": "",
         "lastCooldown": {
-          "reason": "daily-limit",
-          "until": "2026-11-16T01:09:31.023Z",
-          "observedAt": "2026-11-16T01:04:31.024Z",
+          "reason": "recovered-false-daily-limit",
+          "until": null,
+          "observedAt": "2026-11-16T01:27:10.056Z",
           "status": 429
         },
         "consecutiveTransientFailures": 0
@@ -1099,10 +1099,10 @@
           "status": null
         },
         "freeModelDailyRequests": {
-          "used": 0,
+          "used": 27,
           "limit": 50,
-          "remaining": 50,
-          "observedAt": "2026-11-16T01:00:21.527Z",
+          "remaining": 23,
+          "observedAt": "2026-11-16T01:27:10.187Z",
           "source": "OpenRouter GET /api/v1/key"
         }
       }
