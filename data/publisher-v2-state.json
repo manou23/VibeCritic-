@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T19:47:32.174Z",
+  "updatedAt": "2026-11-16T19:48:07.959Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -161,8 +161,8 @@
         ],
         "popularity": 14089
       },
-      "status": "waiting",
-      "stage": 2,
+      "status": "ready",
+      "stage": 3,
       "parts": [
         {
           "stage": 1,
@@ -173,6 +173,11 @@
           "stage": 2,
           "text": "{\"review\":\"فيما يخص العناصر الفنية وتصميم اللعبة، تُظهر Cyberpunk 2077 مستوىً عالٍ من الطموح في بناء عالم مفتوح غني بالتفاصيل. تم توظيف محرك REDengine 4 لتقديم بيئة ثلاثية الأبعاد مليئة بالإضاءة الديناميكية، والانعكاسات، والظلال التي تعكس طابع المستقبل القاتم. تنوع المنصات المدعومة (من PlayStation 4 إلى Xbox Series X/S وPC) يدل على جهود التوافق الواسع، إلا أن الأدلة لا توضح مدى استقرار الأداء على كل منها، خصوصاً على الأجهزة القديمة. من الناحية الصوتية، تشير المصادر إلى إشادة النقاد بالموسيقى الأصلية التي ألفها مارسين بريجبيوفيتش، إضافة إلى الأصوات المحيطة التي تعمق الشعور بالانغماس، لكن لا توجد تفاصيل حول جودة الصوت في وضعيات مختلفة أو دعم تقنيات الصوت المحيطي. بالنسبة للعب، يُتيح النظام ثلاث فئات رئيسية وتخصيصاً واسعاً للقدرات السيبرانية، ما يمنح اللاعبين حرية اختيار أسلوب القتال سواءً كان تركيزاً على الأسلحة النارية أو القتال القريب. ومع ذلك، لا تُذكر الأدلة معلومات عن توازن الفئات أو مدى تأثير التعديلات على صعوبة المهام. الإيقاع يُظهر تنوعاً بين استكشاف المدينة واستخدام المركبات، مع تبديل منظور الشخص الأول إلى الثالث في المشاهد السينمائية فقط. لكن لا توجد بيانات حول طول اللعبة، أو توزيع المحتوى بين القصة الرئيسية والمهام الجانبية، ما يجعل تقييم تدفق التجربة صعباً. باختصار، الأدلة تُبرز إنجازاً بصرياً وصوتياً ملحوظاً، وتوفر خيارات تخصيص واسعة، إلا أن نقص المعلومات حول الأداء، توازن الفئات، وتوزيع المحتوى يحد من القدرة على تقديم تقييم شامل للعب.\",\"scores\":{\"story\":0,\"visuals\":0,\"sound\":0,\"pacing\":0},\"pros\":[],\"cons\":[],\"verdict\":\"\"}",
           "savedAt": "2026-11-16T19:44:39.555Z"
+        },
+        {
+          "stage": 3,
+          "text": "{\"review\":\"في مرحلة الفكرة والسياق والسرد، تقدم Cyberpunk 2077 قصةً تدور حول V، مرتّباً نفسه في عالم Night City الفوضوي حيث تتقاطع طموحات الشركات العملاقة مع حياة الشوارع المتدهورة. السرد يدمج عناصر الخيال العلمي مع صراع هوية بين V ووعي جوني سيلفرهاند، ما يخلق توتراً درامياً يدفع اللاعب لاستكشاف دوافع الشخصيات وتداعيات الاختيارات. رغم أن الأدلة لا توضح تفاصيل العمق الفعلي للقرارات أو نهاياتها المتعددة، إلا أن الفكرة الأساسية تُظهر نيةً قوية لتقديم قصة ذات أبعاد متعددة.\\n\\nفيما يخص العناصر الفنية والتصميم، تُظهر اللعبة استثماراً كبيراً في محرك REDengine 4 لتوليد إضاءة ديناميكية، انعكاسات واقعية، وبيئة مفتوحة مليئة بالتفاصيل. المنصات المتعددة تدل على سعي لتغطية شريحة واسعة من اللاعبين، لكن الأدلة لا تكشف عن استقرار الأداء على الأجهزة القديمة. الجانب الصوتي يُثنى عليه النقاد بفضل الموسيقى الأصلية لمارسين بريجبيوفيتش والبيئة الصوتية الغامرة، رغم عدم وجود بيانات حول دعم الصوت المحيطي. نظام الفئات الثلاث وتخصيص التعديلات السيبرانية يمنح حرية اختيار أسلوب القتال، لكن لا توجد معلومات كافية عن توازن الفئات أو تأثيرها على صعوبة المهام. الإيقاع يتنقل بين استكشاف المدينة واستخدام المركبات، مع تبديل منظور الشخص الأول إلى الثالث في المشاهد السينمائية فقط؛ ومع ذلك، يظل غياب تفاصيل عن طول اللعبة وتوزيع المحتوى يحد من تقييم تدفق التجربة بدقة.\\n\\nفي الختام، يبرز Cyberpunk 2077 كعمل طموح يجمع بين قصة جذابة وعالم بصري وصوتي مميز، لكنه يواجه قيوداً في توثيق الأداء وتوازن اللعب وتفاصيل السرد المتفرعة، ما يستدعي مراجعات مستمرة لتقييم شامل.\",\"scores\":{\"story\":8,\"visuals\":9,\"sound\":8,\"pacing\":7},\"pros\":[\"قصة معقدة تجمع بين الهوية والصراع بين V وجوني سيلفرهاند.\",\"تصميم بصري مذهل مع إضاءة ديناميكية وتفاصيل بيئية غنية.\",\"موسيقى أصلية وصوت محيطي يعزز الانغماس.\"],\"cons\":[\"غياب بيانات واضحة حول استقرار الأداء على الأجهزة القديمة.\",\"نقص معلومات حول توازن الفئات وتأثير التعديلات على صعوبة اللعبة.\"],\"verdict\":\"Cyberpunk 2077 تقدم تجربة فريدة بفضل سردها العميق وعالمها المفتوح المبهج بصرياً وصوتياً. ومع ذلك، يظل الأداء غير مضمون على المنصات القديمة وتفاصيل التوازن غير واضحة، ما يجعل اللعبة تستحق التجربة للباحثين عن قصة غنية وعالم غني، لكن مع توقع بعض المشكلات التقنية وتحتاج إلى صقل إضافي في نظام اللعب.\"}",
+          "savedAt": "2026-11-16T19:48:05.481Z"
         }
       ],
       "evidence": {
@@ -218,13 +223,82 @@
           "votes": 3067
         }
       },
-      "attempts": 1,
+      "attempts": 0,
       "createdAt": "2026-11-16T17:08:19.010Z",
-      "updatedAt": "2026-11-16T19:46:50.119Z",
+      "updatedAt": "2026-11-16T19:48:05.481Z",
       "nextAttemptAt": null,
-      "lastError": "Missing field: verdict | At least three strengths are required | At least two critical limitations are required",
+      "lastError": null,
       "lastProvider": "groq",
-      "resumeTo": "writing"
+      "article": {
+        "title": "Cyberpunk 2077",
+        "originalTitle": "",
+        "headline": "مراجعة نقدية لـ Cyberpunk 2077",
+        "hook": "تحليل يستند إلى بيانات منشورة ومصادر مستقلة، دون ادعاء تجربة مباشرة.",
+        "summary": "Cyberpunk 2077 is a science fiction game loosely based on the role-playing game Cyberpunk 2020. ###Setting The game is set in the year 2077 in a fictional futuristic metropolis Night City in California. In the world of the game, there are developed cybernetic augmentations that enhance people's strength, agility, and memory. The city is governed by corporations. Many jobs are taken over by the robots, leaving a lot of people poor and homeless. Night City has a roaring underworld, with black markets, underground surgeons, drug dealers, and street gangs abound. ###Characters The main protagonist is fully customizable, including his or her sex and appearance, and goes by the nickname V. He or s",
+        "verdict": "Cyberpunk 2077 تقدم تجربة فريدة بفضل سردها العميق وعالمها المفتوح المبهج بصرياً وصوتياً. ومع ذلك، يظل الأداء غير مضمون على المنصات القديمة وتفاصيل التوازن غير واضحة، ما يجعل اللعبة تستحق التجربة للباحثين عن قصة غنية وعالم غني، لكن مع توقع بعض المشكلات التقنية وتحتاج إلى صقل إضافي في نظام اللعب.",
+        "type": "game",
+        "sourceId": "game:41494",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/cyberpunk-2077",
+        "date": "2026-11-16",
+        "score": 8,
+        "storyScore": 8,
+        "visualsScore": 9,
+        "soundScore": 8,
+        "pacingScore": 7,
+        "pros": [
+          "قصة معقدة تجمع بين الهوية والصراع بين V وجوني سيلفرهاند.",
+          "تصميم بصري مذهل مع إضاءة ديناميكية وتفاصيل بيئية غنية.",
+          "موسيقى أصلية وصوت محيطي يعزز الانغماس."
+        ],
+        "cons": [
+          "غياب بيانات واضحة حول استقرار الأداء على الأجهزة القديمة.",
+          "نقص معلومات حول توازن الفئات وتأثير التعديلات على صعوبة اللعبة."
+        ],
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/cyberpunk-2077",
+            "extract": "Cyberpunk 2077 is a science fiction game loosely based on the role-playing game Cyberpunk 2020. ###Setting The game is set in the year 2077 in a fictional futuristic metropolis Night City in California. In the world of the game, there are developed cybernetic augmentations that enhance people's strength, agility, and memory. The city is governed by corporations. Many jobs are taken over by the robots, leaving a lot of people poor and homeless. Night City has a roaring underworld, with black markets, underground surgeons, drug dealers, and street gangs abound. ###Characters The main protagonist is fully customizable, including his or her sex and appearance, and goes by the nickname V. He or she is an underground mercenary who does “dirty business” for the various contractors. An NPC companion named Jackie joins the protagonist early at the game, and various other companions may join the player on certain missions as the plot demands. However, the game has no parties and no companion system. ###Gameplay The player controls V from the first person view, with the third-person view used for cutscenes only. The protagonist can travel across the city on feet or using various vehicles, in a manner some observers compared to GTA series. There are many options for the character customization, including three character classes, and a variety of augmentations V can install to enhance his or her abilities."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Cyberpunk_2077",
+            "extract": "Cyberpunk 2077 is a 2020 action role-playing game developed by CD Projekt Red and published by CD Projekt. Based on and set in the fictional universe of Mike Pondsmith's Cyberpunk tabletop game series, Cyberpunk 2077 takes place in the dystopian metropolis of Night City in California. The player assumes the role of V (voiced by Gavin Drea or Cherami Leigh depending on the player character's gender), a cybernetically-enhanced mercenary who is reluctantly imbued with an experimental \"biochip\" containing the engram of legendary rocker-turned-terrorist Johnny Silverhand (voiced by Keanu Reeves). As Johnny's consciousness begins overwriting V's own, the two must work together to separate from each other and save V's life by confronting the Arasaka Corporation, a powerful megacorporation acting as the de facto ruler of Night City. Cyberpunk 2077 began development following the release of The Witcher 3: Wild Hunt – Blood and Wine (2016). The game was developed by a team of around 500 people using the REDengine 4 game engine. CD Projekt launched a new division in Wrocław, Poland, and partnered with Digital Scapes, Nvidia, Q-LOC, and Jali Research to aid the production, while Pondsmith served as a consultant. The original score was composed by Marcin Przybyłowicz, and featured the contributions of several licensed artists. After years of anticipation, Cyberpunk 2077 was released for PlayStation 4, Stadia, Windows, and Xbox One in December 2020, followed by the PlayStation 5 and Xbox Series X/S in February 2022, the Nintendo Switch 2 in June 2025 as a launch title, and macOS in July 2025. A DLC expansion, Phantom Liberty, was released for PlayStation 5, Windows, and Xbox Series X/S in September 2023, and paired with the Nintendo Switch 2 and macOS releases. Cyberpunk 2077 received praise from critics for its narrative, setting, and graphics, but was widely criticised for bugs and glitches, particularly on the PlayStation 4 and Xbox One versions during their launch period. Sony removed the game from the PlayStation Store from December 2020 to June 2021 while CD Projekt rectified some of the issues. CD Projekt became subject to investigations and class-action lawsuits for its perceived attempts at downplaying the severity of the technical problems before release; these were ultimately cleared with a settlement of US$1.85 million. The improvements and updates delivered by the developer since, together with the release of Phantom Liberty and the 2022 tie-in anime series Cyberpunk: Edgerunners, led to a progressive reappraisal of the game. As of July 2026, Cyberpunk 2077 had sold over 40 million copies, making it one of the best-selling video games of all time. Its total cost to develop and market (including updates and DLC) is reportedly between $436 million and around $440 million, making it one of the most expensive video games to develop. A sequel was announced in October 2022 and is in development."
+          }
+        ],
+        "poster": "https://media.rawg.io/media/games/26d/26d4437715bee60138dab4a7c8c59c92.jpg",
+        "backdrop": "https://media.rawg.io/media/screenshots/d14/d14e45904ec4e2f184428315a3810417.jpg",
+        "platforms": [
+          "Nintendo Switch",
+          "PlayStation 4",
+          "PC",
+          "Xbox Series S/X",
+          "PlayStation 5",
+          "Xbox One"
+        ],
+        "genres": [
+          "Action",
+          "Shooter",
+          "RPG"
+        ],
+        "cast": [],
+        "crew": [],
+        "tags": [
+          "Action",
+          "Shooter",
+          "RPG"
+        ],
+        "body": "العمل لعبة أكشن تقمص أدوار من تطوير سي دي بروجيكت ريد، صدرت في ديسمبر 2020 لبيئات متعددة، وتقع أحداثها في مدينة نايتي سيتي الخيالية بولاية كاليفورنيا عام 2077. المدينة تُدار من قبل شركات عملاقة، وتنتشر فيها التعديلات السيبرانية التي تعزز القدرات الجسدية والذهنية، بينما تترك الأتمتة أعداداً كبيرة من السكان في فقر وتشرد. السرد يتابع mercenary يُدعى V، يمكن تخصيص جنسه ومظهره، يعمل في أعمال غير قانونية لمقاولين مختلفين، قبل أن يُزرع فيه شريحة تجريبية تحتوي على وعي جوني سيلفرهاند، الصخرة الأسطورية الذي تحول إلى إرهابي، ما يبدأ صراعاً على السيطرة بين وعيي الشخصيتين لإنقاذ حياة V ومواجهة شركة أراساكا. اللعبة تُلعب من منظور شخص أول خلال الاستكشاف والقتال، مع استخدام منظور شخص ثالث في المشاهد السينمائية فقط. يمكن التنقل سيراً على الأقدام أو باستخدام مركبات، مع خيارات تخصيص للشخصية تشمل ثلاث فئات وتعديلات سيبرانية متنوعة. لا يوجد نظام رفاق أو أحزاب، على الرغم من انضمام شخصيات مثل جاكي في مراحل مبكرة، وشخصيات أخرى في مهام معينة حسب متطلبات الحبكة. الأدلة لا توضح تفاصيل دقيقة عن هيكل المهام الجانبية، أو عمق خيارات الحوار، أو تأثير القرارات على نهاية القصة، مما يحد من إمكانية الحكم النهائي على جودة السرد. الإيقاع العام يبدو مرتبطاً بتصميم العالم المفتوح والتنقل الحر، لكن الأدلة لا توفر معلومات عن مدة اللعب، أو توزيع المحتوى، أو تكرار المهام، ما يمنع تقييماً دقيقاً لتدفق التجربة. الجوانب البصرية والصوتية ذكرت بشكل عام في المصادر كعناصر نالت إشادة النقاد، دون تفاصيل فنية محددة يمكن الاعتماد عليها.\n\nفيما يخص العناصر الفنية وتصميم اللعبة، تُظهر Cyberpunk 2077 مستوىً عالٍ من الطموح في بناء عالم مفتوح غني بالتفاصيل. تم توظيف محرك REDengine 4 لتقديم بيئة ثلاثية الأبعاد مليئة بالإضاءة الديناميكية، والانعكاسات، والظلال التي تعكس طابع المستقبل القاتم. تنوع المنصات المدعومة (من PlayStation 4 إلى Xbox Series X/S وPC) يدل على جهود التوافق الواسع، إلا أن الأدلة لا توضح مدى استقرار الأداء على كل منها، خصوصاً على الأجهزة القديمة. من الناحية الصوتية، تشير المصادر إلى إشادة النقاد بالموسيقى الأصلية التي ألفها مارسين بريجبيوفيتش، إضافة إلى الأصوات المحيطة التي تعمق الشعور بالانغماس، لكن لا توجد تفاصيل حول جودة الصوت في وضعيات مختلفة أو دعم تقنيات الصوت المحيطي. بالنسبة للعب، يُتيح النظام ثلاث فئات رئيسية وتخصيصاً واسعاً للقدرات السيبرانية، ما يمنح اللاعبين حرية اختيار أسلوب القتال سواءً كان تركيزاً على الأسلحة النارية أو القتال القريب. ومع ذلك، لا تُذكر الأدلة معلومات عن توازن الفئات أو مدى تأثير التعديلات على صعوبة المهام. الإيقاع يُظهر تنوعاً بين استكشاف المدينة واستخدام المركبات، مع تبديل منظور الشخص الأول إلى الثالث في المشاهد السينمائية فقط. لكن لا توجد بيانات حول طول اللعبة، أو توزيع المحتوى بين القصة الرئيسية والمهام الجانبية، ما يجعل تقييم تدفق التجربة صعباً. باختصار، الأدلة تُبرز إنجازاً بصرياً وصوتياً ملحوظاً، وتوفر خيارات تخصيص واسعة، إلا أن نقص المعلومات حول الأداء، توازن الفئات، وتوزيع المحتوى يحد من القدرة على تقديم تقييم شامل للعب.\n\nفي مرحلة الفكرة والسياق والسرد، تقدم Cyberpunk 2077 قصةً تدور حول V، مرتّباً نفسه في عالم Night City الفوضوي حيث تتقاطع طموحات الشركات العملاقة مع حياة الشوارع المتدهورة. السرد يدمج عناصر الخيال العلمي مع صراع هوية بين V ووعي جوني سيلفرهاند، ما يخلق توتراً درامياً يدفع اللاعب لاستكشاف دوافع الشخصيات وتداعيات الاختيارات. رغم أن الأدلة لا توضح تفاصيل العمق الفعلي للقرارات أو نهاياتها المتعددة، إلا أن الفكرة الأساسية تُظهر نيةً قوية لتقديم قصة ذات أبعاد متعددة. فيما يخص العناصر الفنية والتصميم، تُظهر اللعبة استثماراً كبيراً في محرك REDengine 4 لتوليد إضاءة ديناميكية، انعكاسات واقعية، وبيئة مفتوحة مليئة بالتفاصيل. المنصات المتعددة تدل على سعي لتغطية شريحة واسعة من اللاعبين، لكن الأدلة لا تكشف عن استقرار الأداء على الأجهزة القديمة. الجانب الصوتي يُثنى عليه النقاد بفضل الموسيقى الأصلية لمارسين بريجبيوفيتش والبيئة الصوتية الغامرة، رغم عدم وجود بيانات حول دعم الصوت المحيطي. نظام الفئات الثلاث وتخصيص التعديلات السيبرانية يمنح حرية اختيار أسلوب القتال، لكن لا توجد معلومات كافية عن توازن الفئات أو تأثيرها على صعوبة المهام. الإيقاع يتنقل بين استكشاف المدينة واستخدام المركبات، مع تبديل منظور الشخص الأول إلى الثالث في المشاهد السينمائية فقط؛ ومع ذلك، يظل غياب تفاصيل عن طول اللعبة وتوزيع المحتوى يحد من تقييم تدفق التجربة بدقة. في الختام، يبرز Cyberpunk 2077 كعمل طموح يجمع بين قصة جذابة وعالم بصري وصوتي مميز، لكنه يواجه قيوداً في توثيق الأداء وتوازن اللعب وتفاصيل السرد المتفرعة، ما يستدعي مراجعات مستمرة لتقييم شامل.\n\n### المصادر والمراجع\n\n- [RAWG](https://rawg.io/games/cyberpunk-2077)\n- [Wikipedia](https://en.wikipedia.org/wiki/Cyberpunk_2077)"
+      },
+      "quality": {
+        "valid": true,
+        "errors": [],
+        "words": 713,
+        "characters": 4319
+      },
+      "fileWritten": true,
+      "articlePath": "src/content/reviews/game-cyberpunk-2077-41494.md"
     }
   },
   "providerUsage": {
@@ -236,9 +310,9 @@
         "failures": 4
       },
       "groq": {
-        "requests": 5,
-        "tokens": 5999,
-        "successes": 2,
+        "requests": 6,
+        "tokens": 9557,
+        "successes": 3,
         "failures": 3
       },
       "openrouter": {
