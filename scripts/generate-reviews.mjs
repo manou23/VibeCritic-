@@ -560,16 +560,23 @@ async function generateWithOpenRouter(prompt){
  }
  throw new Error('OpenRouter لم يرجع JSON صالحاً بعد 3 محاولات: '+lastIssue);
 }
+export function calculateContentRetryAt({availableProviderCount=0,blockedUntil=[],now=Date.now(),retryDelayMs=60*60*1000}={}) {
+ if(Number(availableProviderCount)>0)return now+retryDelayMs;
+ const future=[...blockedUntil].map(Number).filter(value=>Number.isFinite(value)&&value>now);
+ return future.length?Math.min(...future):now+retryDelayMs;
+}
+
 export function validateCompletedArticle(value){
  const review=String(value??'').trim();
  const words=review.split(/\s+/u).filter(Boolean).length;
  if(review.length<3200||words<650)throw new Error('المقال النهائي يجب أن يحتوي 650 كلمة و3200 حرف على الأقل');
  return review;
 }
-export function validateGeneratedReview(d){
+export function validateGeneratedReview(d,{stage=2}={}){
  const review=String(d?.review||'').replace(/<[^>]*>/g,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').trim();
- const pros=Array.isArray(d?.pros)?d.pros.filter(x=>String(x||'').trim()):[];
- const cons=Array.isArray(d?.cons)?d.cons.filter(x=>String(x||'').trim()):[];
+ if(!Array.isArray(d?.pros)||!Array.isArray(d?.cons))throw new Error('قوائم pros وcons يجب أن تكون مصفوفتين');
+ const pros=d.pros.filter(x=>String(x||'').trim());
+ const cons=d.cons.filter(x=>String(x||'').trim());
  const scores={story:Number(d?.scores?.story),visuals:Number(d?.scores?.visuals),sound:Number(d?.scores?.sound),pacing:Number(d?.scores?.pacing)};
  if(Object.values(scores).some(value=>!Number.isFinite(value)||value<0||value>10))throw new Error('الدرجات الفرعية الأربعة غير مكتملة أو خارج النطاق 0–10');
  if(Object.values(scores).some(value=>Math.abs(value*10-Math.round(value*10))>0.001))throw new Error('يجب أن تكون الدرجات الفرعية بخطوة عشرية واحدة فقط');
@@ -580,8 +587,8 @@ export function validateGeneratedReview(d){
  if(review.length<900||words<220)throw new Error('جزء المقال أقصر من الحد الأدنى (220 كلمة و900 حرف)');
  if(words>280)throw new Error('جزء المقال تجاوز الحد المطلوب (280 كلمة)؛ احذف التكرار والحشو');
  if((review.match(/^###\s+/gm)||[]).length>0)throw new Error('الرأي النقدي يجب أن يكون فقرة موجزة بلا محاور أو عناوين فرعية');
- if(pros.length<3)throw new Error('قائمة نقاط القوة غير مكتملة (3 عناصر على الأقل)');
- if(cons.length<2)throw new Error('قائمة التحفظات النقدية غير مكتملة (عنصران على الأقل)');
+ if(stage>=2&&pros.length<3)throw new Error('قائمة نقاط القوة غير مكتملة (3 عناصر على الأقل)');
+ if(stage>=2&&cons.length<2)throw new Error('قائمة التحفظات النقدية غير مكتملة (عنصران على الأقل)');
  const genericPhrases=['من المتوقع أن يستمر','قد يرفع من مستوى','يضمن موارد إنتاجية','يُعدّ نقطة قوة واضحة نظراً','يبقى السؤال مفتوحاً','تجربة فريدة من نوعها'];
  if(genericPhrases.some(phrase=>review.includes(phrase)))throw new Error('الرأي النقدي يتضمن تعميمات أو عبارات إنشائية');
  return {...d,scores,pros,cons,review};
@@ -806,7 +813,7 @@ async function generateReview(item, stage=0, previousParts=[]){
   'المرحلة '+(stage+1)+'/3: '+stageSpec.heading+'. المطلوب في هذه المرحلة: '+stageSpec.focus,
   'اكتب review من 220 إلى 260 كلمة عربية، في فقرتين إلى أربع فقرات مترابطة، دون عنوان داخل النص. هذه واحدة من ثلاث وحدات ستكوّن مراجعة نهائية من 660 إلى 780 كلمة؛ لا تختصر ولا تكرر ما سبق، بل ابنِ على الأجزاء السابقة وأضف تحليلاً جديداً.',
   'لا تدّع مشاهدة أو لعب العمل. لا تخترع مشاهد أو أداءً تقنياً أو تفاصيل غير موجودة في الحقائق. افصل الحقائق عن الاستنتاج، وصرّح بنقص الأدلة عند الحاجة.',
-  'لا تصنع نقاط قوة أو عيوباً غير مثبتة. في المرحلتين الأولى والثانية اترك pros وcons مؤقتة؛ في المرحلة الثالثة فقط قدّم القوائم النهائية المدعومة بالأدلة.',
+  'لا تصنع نقاط قوة أو عيوباً غير مثبتة. في المرحلتين الأولى والثانية أعد pros وcons كمصفوفتين فارغتين؛ في المرحلة الثالثة فقط قدّم القوائم النهائية المدعومة بالأدلة.',
   'الأجزاء المحفوظة من المقال حتى الآن: '+JSON.stringify((previousParts||[]).map(part=>({heading:part.heading,content:String(part.content||'').slice(0,900)}))),
   'scores: story وvisuals وsound وpacing من 0 إلى 10 بخطوة عشرية واحدة. لا تساير الشعبية أو تقييم الجمهور؛ 5 متوسط، 7 جيد مع عيوب، 8 قوي، و9+ استثنائي نادر. لا تمنح درجات عالية عند نقص الأدلة.',
   'أعد JSON فقط بهذه المفاتيح حصراً: scores, pros, cons, review.',
@@ -831,8 +838,8 @@ async function generateReview(item, stage=0, previousParts=[]){
   let transportSucceeded=false,transportError=null;
   try{
    const generated=await handlers[name](prompt);
+   parsed=validateGeneratedReview(generated,{stage});
    transportSucceeded=true;
-   parsed=validateGeneratedReview(generated);
    console.log('نجح توليد الرأي النقدي المختصر عبر:',name,'| طلبات API:',measurement.usage.requests,'| الرموز:',measurement.usage.totalTokens||'غير متاحة');
   }catch(error){
    transportError=error;
@@ -849,8 +856,8 @@ async function generateReview(item, stage=0, previousParts=[]){
  const d=parsed,review=String(d.review||'').replace(/<[^>]*>/g,'').replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').trim();
  if(review.length<900)throw new Error('جزء المقال أقصر من الحد الأدنى (900 حرف)');
  const pros=Array.isArray(d.pros)?d.pros.map(clean).filter(Boolean).slice(0,4):[],cons=Array.isArray(d.cons)?d.cons.map(clean).filter(Boolean).slice(0,3):[];
- if(pros.length<3)throw new Error('قائمة نقاط القوة غير مكتملة');
- if(cons.length<2)throw new Error('قائمة التحفظات النقدية غير مكتملة');
+ if(stage===2&&pros.length<3)throw new Error('قائمة نقاط القوة غير مكتملة');
+ if(stage===2&&cons.length<2)throw new Error('قائمة التحفظات النقدية غير مكتملة');
  const scores={story:Number(d.scores?.story),visuals:Number(d.scores?.visuals),sound:Number(d.scores?.sound),pacing:Number(d.scores?.pacing)};
  if(Object.values(scores).some(value=>!Number.isFinite(value)||value<0||value>10))throw new Error('الدرجات الفرعية الأربعة غير مكتملة أو خارج النطاق 0–10');
  const score=Math.round((scores.story*.30+scores.visuals*.25+scores.sound*.20+scores.pacing*.25)*10)/10;
@@ -1150,8 +1157,12 @@ async function writeReview(item){
  let part;
  try{part=await generateReview(enriched,draft.stage,draft.sections);}
  catch(error){
-  const blocked=Object.values(providerDay()).map(entry=>Number(entry?.blockedUntil)||0).filter(value=>value>Date.now());
-  const nextAttemptAt=blocked.length?Math.min(...blocked):Date.now()+60*60*1000;
+  const now=Date.now();
+  const availableProviderCount=providerCandidates().filter(name=>name!=='openai').length;
+  const configuredFreeProviders={gemini:Boolean(env.GEMINI_API_KEY),groq:Boolean(env.GROQ_API_KEY),openrouter:Boolean(env.OPENROUTER_API_KEY),'cloudflare-workers-ai':Boolean(env.CF_WORKERS_AI_API_TOKEN&&env.CF_AI_GATEWAY_ACCOUNT_ID&&env.CF_AI_GATEWAY_ID)};
+  const blocked=Object.entries(configuredFreeProviders).filter(([,configured])=>configured).map(([name])=>Number(providerDay()[name]?.blockedUntil)||0).filter(value=>value>now);
+  const nextAttemptAt=calculateContentRetryAt({availableProviderCount,blockedUntil:blocked,now});
+  console.log('المزوّدات المجانية المتاحة بعد الفشل:',availableProviderCount,'| موعد استئناف المهمة:',new Date(nextAttemptAt).toISOString());
   await updateContentJob(enriched,{status:'waiting',item:enriched,draft,nextAttemptAt,lastError:String(error?.message||error).slice(0,1200)});
   throw error;
  }
@@ -1309,8 +1320,10 @@ async function main(){
  }
  const pendingDraft=pendingJobs.find(job=>job.item&&job.draft&&Number(job.draft.stage)<3);
  if(pendingDraft&&dailyRemaining>0&&todayCounts[pendingDraft.type]<dailyPerType){
+  const pendingTypeIndex=types.indexOf(pendingDraft.type);
+  if(pendingTypeIndex>0)types.unshift(types.splice(pendingTypeIndex,1)[0]);
   quotas[pendingDraft.type]=Math.max(1,quotas[pendingDraft.type]||0);
-  console.log('أولوية استكمال المقال المحفوظ '+Number(pendingDraft.draft.stage)+'/3 مع احترام سقف النشر اليومي.');
+  console.log('أولوية استكمال المقال المحفوظ '+Number(pendingDraft.draft.stage)+'/3 مع احترام سقف النشر اليومي؛ القسم أولاً:',pendingDraft.type);
  }
  const fresh=[];let generationFailures=0,stageAdvanced=false;
  for(const type of types){

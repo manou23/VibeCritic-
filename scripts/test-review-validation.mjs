@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { validateGeneratedReview, validateCompletedArticle } from './generate-reviews.mjs';
+import { validateGeneratedReview, validateCompletedArticle, calculateContentRetryAt } from './generate-reviews.mjs';
 
 function words(count) {
   return Array.from({ length: count }, (_, index) => 'تفصيل' + (index + 1)).join(' ');
@@ -15,6 +15,26 @@ function candidate(review) {
 
 const validSection = candidate(words(230));
 assert.equal(validateGeneratedReview(validSection).review, words(230));
+
+const interimSection = { ...candidate(words(230)), pros: [], cons: [] };
+assert.equal(validateGeneratedReview(interimSection, { stage: 0 }).pros.length, 0);
+assert.equal(validateGeneratedReview(interimSection, { stage: 1 }).cons.length, 0);
+assert.throws(() => validateGeneratedReview(interimSection, { stage: 2 }), /3 عناصر على الأقل/);
+assert.throws(() => validateGeneratedReview({ ...interimSection, pros: undefined }, { stage: 0 }), /مصفوفتين/);
+
+const retryNow = 1_000_000;
+assert.equal(
+  calculateContentRetryAt({ availableProviderCount: 2, blockedUntil: [retryNow + 10_000], now: retryNow }),
+  retryNow + 60 * 60 * 1000
+);
+assert.equal(
+  calculateContentRetryAt({ availableProviderCount: 0, blockedUntil: [retryNow + 30_000, retryNow + 60_000], now: retryNow }),
+  retryNow + 30_000
+);
+assert.equal(
+  calculateContentRetryAt({ availableProviderCount: 0, blockedUntil: [], now: retryNow }),
+  retryNow + 60 * 60 * 1000
+);
 
 assert.throws(() => validateGeneratedReview(candidate(words(219))), /220 كلمة و900 حرف/);
 assert.throws(() => validateGeneratedReview(candidate(words(281))), /280 كلمة/);
