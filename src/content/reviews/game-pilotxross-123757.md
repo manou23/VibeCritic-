@@ -9,7 +9,6 @@ type: game
 date: 2026-11-12
 releaseDate: "2030-12-19"
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/co3vbi.jpg"
-backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/co3vbi.jpg"
 reviewMode: preview
 pros:
   - "الفكرة محددة بوضوح: تجربة طيران واقع افتراضي باستخدام نموذج VRM"
@@ -32,7 +31,6 @@ genres:
   - "Racing"
   - "Sports"
 sourceName: "Steam"
-sourceId: "123757"
 sourceUrl: "https://store.steampowered.com/app/1139230/PilotXross/"
 aiGenerated: true
 gameStores:
