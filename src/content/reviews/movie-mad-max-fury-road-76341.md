@@ -30,7 +30,7 @@ tags: ["George Miller", "Action", "Post-Apocalyptic", "Practical Effects"]
 genres: ["أكشن", "مغامرة", "خيال علمي"]
 cast: ["Tom Hardy", "Charlize Theron", "Nicholas Hoult", "Hugh Keays-Byrne"]
 crew: ["George Miller", "John Seale", "Margaret Sixel", "Junkie XL"]
-sourceName: "VibeCritic Editorial"
+sourceName: "Warner Bros. / RogerEbert.com / The Guardian / BFI / Screen Daily / Vanity Fair"
 sourceId: "manual-movie-mad-max-fury-road-76341"
 sourceUrl: "https://www.themoviedb.org/movie/76341"
 aiGenerated: false
@@ -47,5 +47,13 @@ backdrop: "https://image.tmdb.org/t/p/w1280/gqrnQA6Xppdl8vIb2eJc58VC1tW.jpg"
 
 ## الحكم النهائي
 Fury Road مثال قوي على أن الحركة يمكن أن تحمل سرداً واضحاً إذا احترم الفيلم المكان والهدف والنتيجة. لكنه لا يقدم عالماً عميق الشرح، ولا يمنح جميع شخصياته مسارات متساوية. تقييم 8.8/10 يرفع الصورة والصوت والإخراج إلى مستوى ممتاز، ويخصم من عمق الخلفية وتنوع الشخصيات. لا يحتاج الفيلم إلى أن يكون مثالياً كي يكون إنجازاً بارزاً في سينما الحركة.
+
+## مصادر التحقق والمراجعات النقدية
+- [RogerEbert.com — Mad Max: Fury Road](https://www.rogerebert.com/reviews/mad-max-fury-road-2015): تحليل وضوح الحركة والمونتاج والصوت وأداء Furiosa.
+- [The Guardian — Mad Max: Fury Road Review](https://www.theguardian.com/film/2015/may/17/mad-max-fury-road-review-mark-kermode): ملاحظات عن القوة الجسدية للمطاردات وإرهاق كثافة الحركة.
+- [BFI Sight and Sound — Mad Max: Fury Road](https://www.bfi.org.uk/sight-and-sound/reviews/review-mad-max-fury-road): قراءة في التصميم البصري والبيئة والاقتصاد السردي.
+- [Screen Daily — Mad Max: Fury Road](https://www.screendaily.com/reviews/mad-max-fury-road-review/5087602.article): تحليل المؤثرات العملية والبعد العاطفي المحدود للشخصيات.
+- [Vanity Fair — Mad Max: Fury Road Review](https://www.vanityfair.com/hollywood/2015/05/mad-max-fury-road-review): نقد التصميم والحركة والاقتصاد في السرد.
+- [WIRED — Mad Max: Fury Road](https://www.wired.com/story/max-max-fury-road-film-review/): ملاحظات على المؤثرات العملية والتمثيل البصري والهوية النسوية.
 
 > مراجعة تحريرية يدوية مستقلة، وليست ادعاءً بتجربة مشاهدة جديدة أو بقياس آراء الجمهور.
