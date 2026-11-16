@@ -9,6 +9,12 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
   state.jobs[job.key]=transition(job,'abandoned',{lastError:'Skipped: an existing review already covers this title.'},now);
   await save();job=null;
  }
+ // Permanent evidence failures were previously deferred as generic research errors.
+ // Retire those legacy checkpoints immediately so one unsupported title cannot block discovery.
+ if(job?.status==='waiting'&&job.resumeTo==='researching'&&/^Evidence: /.test(String(job.lastError||''))&&/Independent source has insufficient detail|No sufficiently matching independent encyclopedia page|Primary source metadata is too thin|No HTTPS poster available/.test(String(job.lastError||''))){
+  state.jobs[job.key]=transition(job,'abandoned',{lastError:'Evidence rejected: '+String(job.lastError).replace(/^Evidence: /,'')},now);
+  await save();job=null;
+ }
  // Migrate legacy waiting checkpoints: a provider cooldown must not freeze the whole draft queue.
  // On the next scheduled cycle, the failed provider remains excluded while eligible free fallbacks can run.
  if(job?.status==='waiting'&&job.resumeTo==='writing'&&(Number(job.nextAttemptAt)||Date.parse(job.nextAttemptAt||'')||0)>now+5*60*1000){
