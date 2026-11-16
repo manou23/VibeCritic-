@@ -1,0 +1,86 @@
+// Deterministic core for VibeCritic Publishing Engine v2. No network calls.
+export const ENGINE_VERSION=2;
+export const ACTIVE=new Set(["queued","researching","writing","waiting","quality-check","ready"]);
+export const TERMINAL=new Set(["published","rejected","abandoned"]);
+const time=v=>typeof v==="number"?v:(Date.parse(v||"")||0);
+const iso=n=>new Date(n).toISOString();
+
+export function createState(){return {version:2,updatedAt:new Date(0).toISOString(),jobs:{},providerUsage:{}};}
+export function validateState(s){
+ if(!s||s.version!==2||!s.jobs||typeof s.jobs!=="object"||Array.isArray(s.jobs))throw Error("Invalid publisher state/version");
+ for(const [key,j] of Object.entries(s.jobs)){
+  if(!j||j.key!==key||(!ACTIVE.has(j.status)&&!TERMINAL.has(j.status))||!Number.isInteger(j.stage)||j.stage<0||j.stage>3)throw Error("Invalid job: "+key);
+ }
+ return s;
+}
+// Oldest active draft owns the queue, including while cooling down. Never hop to newer work.
+export function selectActiveJob(jobs={}){return Object.values(jobs).filter(j=>j&&ACTIVE.has(j.status)).sort((a,b)=>time(a.createdAt)-time(b.createdAt)||a.key.localeCompare(b.key))[0]||null;}
+export function cycleDecision(state,now=Date.now()){
+ validateState(state);const job=selectActiveJob(state.jobs);if(!job)return {action:"discover",job:null};
+ const retry=time(job.nextAttemptAt);if(job.status==="waiting"&&retry>now)return {action:"wait",job,retryAt:retry};
+ if(job.status==="waiting")return {action:"resume",job};if(job.status==="ready")return {action:"publish",job};
+ if(job.status==="quality-check")return {action:"validate",job};return {action:"advance",job};
+}
+export function enqueue(state,item,now=Date.now()){
+ validateState(state);if(!item||!["game","movie","series"].includes(item.type)||!String(item.id||"").trim())throw Error("Invalid source item");
+ const key=item.type+":"+item.id;if(state.jobs[key])return {job:state.jobs[key],created:false};
+ if(selectActiveJob(state.jobs))throw Error("Only one active draft is allowed");
+ const job={key,item,status:"queued",stage:0,parts:[],evidence:null,attempts:0,createdAt:iso(now),updatedAt:iso(now),nextAttemptAt:null,lastError:null};
+ state.jobs[key]=job;state.updatedAt=iso(now);return {job,created:true};
+}
+const RULES={
+ "research-started":[["queued"],"researching"],"research-saved":[["researching"],"writing"],
+ "part-saved":[["writing"],"writing"],"provider-deferred":[["writing","researching"],"waiting"],
+ "resumed":[["waiting"],"writing"],"quality-started":[["writing"],"quality-check"],
+ "quality-passed":[["quality-check"],"ready"],"quality-failed":[["quality-check"],"waiting"],
+ "published":[["ready"],"published"],"rejected":[["queued","researching","writing","waiting","quality-check"],"rejected"],
+ "abandoned":[["queued","researching","writing","waiting","quality-check","ready"],"abandoned"]
+};
+export function transition(job,event,patch={},now=Date.now()){
+ const rule=RULES[event];if(!rule||!rule[0].includes(job.status))throw Error("Illegal transition: "+job.status+" / "+event);
+ const next={...job,...patch,status:rule[1],updatedAt:iso(now)};
+ if(event==="part-saved"){
+  if(!patch.part||typeof patch.part.text!=="string"||!patch.part.text.trim()||job.stage>=3)throw Error("Invalid or excess article stage");
+  next.parts=[...(job.parts||[]),{stage:job.stage+1,text:patch.part.text.trim(),savedAt:iso(now)}];next.stage=job.stage+1;delete next.part;
+  if(next.stage===3)next.status="quality-check";
+ }
+ if(event==="provider-deferred"||event==="quality-failed"){
+  next.attempts=Number(job.attempts||0)+1;next.lastError=String(patch.lastError||"Temporary failure").slice(0,1200);
+  next.nextAttemptAt=Math.max(now+60000,time(patch.nextAttemptAt));
+ }
+ if(event==="resumed"){next.nextAttemptAt=null;next.lastError=null;}
+ if(event==="published"){next.publishedAt=iso(now);next.nextAttemptAt=null;next.lastError=null;}
+ return next;
+}
+export function chooseFreeProvider(providers,usage={},now=Date.now()){
+ return (providers||[]).filter(p=>{
+  if(!p||p.enabled!==true||p.free!==true||time(p.cooldownUntil)>now)return false;
+  const u=usage[p.id]||{};return !(Number.isFinite(p.dailyRequestLimit)&&Number(u.requests||0)>=p.dailyRequestLimit)&&!(Number.isFinite(p.dailyTokenLimit)&&Number(u.tokens||0)>=p.dailyTokenLimit);
+ }).sort((a,b)=>Number(a.priority||100)-Number(b.priority||100)||String(a.id).localeCompare(String(b.id)))[0]||null;
+}
+export function recordUsage(usage,id,{requests=1,tokens=0,success=false}={}){
+ const u=usage[id]||{requests:0,tokens:0,successes:0,failures:0};
+ usage[id]={requests:u.requests+requests,tokens:u.tokens+tokens,successes:u.successes+(success?1:0),failures:u.failures+(success?0:1)};return usage;
+}
+export function countWords(s){return (String(s||"").match(/[\p{L}\p{N}]+(?:[’'-][\p{L}\p{N}]+)*/gu)||[]).length;}
+export function validateArticle(a,{minWords=650,minCharacters=3200}={}){
+ const errors=[],body=String(a?.body||"").trim(),words=countWords(body);
+ if(words<minWords)errors.push("Article below minimum word count: "+words+"/"+minWords);
+ if(body.length<minCharacters)errors.push("Article below minimum character count: "+body.length+"/"+minCharacters);
+ for(const f of ["title","headline","summary","verdict","sourceId"])if(!String(a?.[f]||"").trim())errors.push("Missing field: "+f);
+ if(!["game","movie","series"].includes(a?.type))errors.push("Invalid content type");
+ const dims=["storyScore","visualsScore","soundScore","pacingScore"];
+ for(const f of dims)if(!Number.isFinite(Number(a?.[f]))||Number(a[f])<0||Number(a[f])>10)errors.push("Invalid score: "+f);
+ if(!Number.isFinite(Number(a?.score))||Number(a.score)<=0||Number(a.score)>10)errors.push("Invalid final score");
+ if(dims.every(f=>Number.isFinite(Number(a?.[f])))){
+  const expected=Math.round((a.storyScore*.30+a.visualsScore*.25+a.soundScore*.20+a.pacingScore*.25)*10)/10;
+  if(Math.abs(expected-Number(a.score))>.05)errors.push("Final score does not match VibeCritic weighted rubric");
+ }
+ if(!Array.isArray(a?.pros)||a.pros.length<3)errors.push("At least three strengths are required");
+ if(!Array.isArray(a?.cons)||a.cons.length<2)errors.push("At least two critical limitations are required");
+ const sources=(a?.sources||[]).filter(s=>{try{return new URL(s.url).protocol==="https:"&&String(s.name||"").trim()}catch{return false}});
+ if(new Set(sources.map(s=>new URL(s.url).hostname)).size<2)errors.push("At least two independent HTTPS source domains are required");
+ if(!String(a?.poster||a?.backdrop||"").startsWith("https://"))errors.push("A verified poster or backdrop is required");
+ if(a?.youtubeVideoId&&!/^[A-Za-z0-9_-]{11}$/.test(a.youtubeVideoId))errors.push("Invalid YouTube video id");
+ return {valid:errors.length===0,errors,words,characters:body.length};
+}
