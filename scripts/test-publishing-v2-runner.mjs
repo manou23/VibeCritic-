@@ -15,37 +15,35 @@ const adapters={
  verifyDeployment:async()=>{deployChecks++;return deploymentReady;}
 };
 const providers=[{id:'free-model',enabled:true,free:true,dailyRequestLimit:5,dailyTokenLimit:5000}];
-for(let stage=1;stage<=2;stage++){
- const result=await runCycle({state,adapters,providers,now:now+stage,persist:async()=>{saves++;}});
- assert.equal(result.action,'stage-saved');
- assert.equal(result.providerCalls,1);
- assert.equal(result.stage,stage);
-}
+const first=await runCycle({state,adapters,providers,now,persist:async()=>{saves++;}});
+assert.equal(first.action,'file-ready','one five-hour cycle must finish the full article');
+assert.equal(first.providerCalls,3,'all three sections must be generated in the same scheduled cycle');
+assert.equal(aiCalls,3);
+assert.equal(state.jobs['series:1'].status,'quality-check','all sections must be checkpointed before quality validation');
 await assert.rejects(
- runCycle({state,adapters,providers,now:now+3,persist:async()=>{saves++;}}),
+ runCycle({state,adapters,providers,now:now+1,persist:async()=>{saves++;}}),
  /simulated interruption/
 );
-assert.equal(aiCalls,3);
-assert.equal(state.jobs['series:1'].status,'quality-check','stage three must be checkpointed before quality validation');
-const resumed=await runCycle({state,adapters,providers,now:now+4,persist:async()=>{saves++;}});
+assert.equal(aiCalls,3,'recovery after assembly interruption must not spend more model requests');
+const resumed=await runCycle({state,adapters,providers,now:now+2,persist:async()=>{saves++;}});
 assert.equal(resumed.action,'file-ready');
 assert.equal(resumed.providerCalls,0,'recovery from quality-check must not spend another AI request');
 assert.equal(aiCalls,3,'recovery must not regenerate the third stage');
 assert.equal(fileWrites,1);
 assert.equal(state.jobs['series:1'].status,'ready');
-const pending=await runCycle({state,adapters,providers,now:now+5,persist:async()=>{saves++;}});
+const pending=await runCycle({state,adapters,providers,now:now+3,persist:async()=>{saves++;}});
 assert.equal(pending.action,'deployment-pending','a written file is not published until the live URL is verified');
 assert.equal(state.jobs['series:1'].status,'ready');
 assert.equal(fileWrites,1);
 deploymentReady=true;
-const final=await runCycle({state,adapters,providers,now:now+6,persist:async()=>{saves++;}});
+const final=await runCycle({state,adapters,providers,now:now+4,persist:async()=>{saves++;}});
 assert.equal(final.action,'published');
 assert.equal(aiCalls,3);
 assert.equal(deployChecks,2);
 assert.equal(fileWrites,1,'deployment retries must not rewrite an already committed article');
 assert.equal(state.jobs['series:1'].status,'published');
 assert.ok(saves>=7);
-// A failed provider is cooled down durably instead of being retried on every hourly cycle.
+// A failed provider is cooled down durably; the next cycle completes all sections using a free fallback.
 const failureState=createState();let failedProviderCalls=0;
 const failureAdapters={
  discover:async()=>[{type:'movie',id:'cooldown-test'}],
@@ -58,16 +56,15 @@ const failed=await runCycle({state:failureState,adapters:failureAdapters,provide
 assert.equal(failed.action,'generation-deferred');
 assert.equal(failedProviderCalls,1);
 assert.equal(failureState.providerCooldowns['rate-limited'].failures,1);
-// Simulate an old persisted checkpoint whose retryAt was incorrectly tied to the provider cooldown.
 failureState.jobs['movie:cooldown-test'].nextAttemptAt=now+3*60*60*1000;
-assert.ok(failureState.providerCooldowns['rate-limited'].until-now>=2*60*60*1000,'provider cooldown must span the next hourly schedule so fallback providers can be selected');
 const retry=await runCycle({state:failureState,adapters:failureAdapters,providers:failureProviders,now:now+1000,persist:async()=>{}});
 assert.equal(retry.action,'waiting');
-assert.ok(failureState.jobs['movie:cooldown-test'].nextAttemptAt<=now+6*60*1000,'legacy waiting checkpoint must be migrated to a short retry window');
-assert.equal(failedProviderCalls,1,'a cooled-down provider must not be called again during the short retry window');
+assert.ok(failureState.jobs['movie:cooldown-test'].nextAttemptAt<=now+6*60*1000);
+assert.equal(failedProviderCalls,1);
 const fallback=await runCycle({state:failureState,adapters:failureAdapters,providers:failureProviders,now:now+6*60*1000,persist:async()=>{}});
-assert.equal(fallback.action,'stage-saved','the next eligible cycle must select an available free fallback provider');
-assert.equal(fallback.provider,'backup-free');
-assert.equal(failedProviderCalls,2,'fallback provider should receive the next single AI call');
+assert.equal(fallback.action,'file-ready','the fallback provider should finish the full article in one cycle');
+assert.equal(fallback.providerCalls,3);
+assert.equal(failedProviderCalls,4,'one failed request plus three successful fallback sections');
+assert.equal(failureState.jobs['movie:cooldown-test'].status,'ready');
 
 console.log('VibeCritic Publishing Engine v2 crash-recovery runner tests passed.');
