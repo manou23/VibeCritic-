@@ -43,7 +43,7 @@ cast:
   - "Tadanobu Asano"
   - "Takehiro Hira"
 creator: "Rachel Kondo و Justin Marks"
-sourceName: "FX / Disney / TMDB"
+sourceName: "FX / Disney / The Guardian / RogerEbert.com / Metacritic"
 sourceId: "126308"
 sourceUrl: "https://www.fxnetworks.com/shows/shogun"
 aiGenerated: false
@@ -70,6 +70,10 @@ aiGenerated: false
 ## الحكم النهائي: دراما تكافئ من يصغي
 تنجح Shōgun لأنها لا تشرح الصراع من خلال طرف واحد، ولا تمنح المشاهد يقيناً أخلاقياً سريعاً. الجميع يتحرك داخل نظام من المصالح والواجبات والذاكرة والخوف، وتصبح اللغة والثقافة أدوات قوة بقدر ما تكونان جسراً للتفاهم. الأداء والإخراج والإنتاج يساندون هذا البناء، فيما يفرض تعدد الشخصيات والإيقاع المتأني حاجزاً بسيطاً أمام المشاهدة العابرة. تقييم 9.1 يعكس تماسكاً درامياً وفنياً عالياً، مع خصم محدود بسبب كثافة المدخل السردي وبعض التفاوت في مساحة الشخصيات. تستحق السلسلة وقت المشاهد الذي يفضل دراما سياسية تاريخية لا تختزل الحرب في مشاهد القتال. هذه مراجعة تحريرية يدوية مبنية على مواد FX وDisney المنشورة وتحليل العمل، ولا تدّعي مشاهدة حديثة أو تقييماً رسمياً.
 
-## مصادر التحقق
+## مصادر التحقق والمراجعات النقدية
 - [FX — Shōgun](https://www.fxnetworks.com/shows/shogun): وصف المسلسل والطاقم والمواد الرسمية.
-- [TMDB — Shōgun](https://www.themoviedb.org/tv/126308): بيانات الإصدار والطاقم.
+- [The Guardian — Shōgun Review](https://www.theguardian.com/tv-and-radio/2024/feb/27/shogun-review-a-mesmerising-epic-that-goes-big-on-the-gore): تحليل السياسة والإخراج والإيقاع واللغة.
+- [RogerEbert.com — Shōgun Review](https://www.rogerebert.com/reviews/shogun-tv-review-2024): قراءة نقدية للبناء والشخصيات والعالم التاريخي.
+- [Metacritic — Shōgun Season 1](https://www.metacritic.com/tv/shogun-2024/season-1/): تجميع مراجعات النقاد ودرجاتها.
+- [Rotten Tomatoes — Shōgun](https://www.rottentomatoes.com/tv/shogun_2024): بيانات استقبال النقاد والملخص والطاقم.
+- [The Guardian — Shōgun: TV Mastery](https://www.theguardian.com/culture/2024/mar/15/the-guide-130-shoguns-tv-mastery): سياق إضافي حول السياسة التاريخية والاقتباس.
