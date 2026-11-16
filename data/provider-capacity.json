@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-16T09:52:53.139Z",
+  "updatedAt": "2026-11-16T16:33:45.944Z",
   "date": "2026-11-16",
   "publishingPlan": {
     "limit": 3,
@@ -15,7 +15,7 @@
       },
       {
         "name": "groq",
-        "estimatedArticles": 141,
+        "estimatedArticles": 136,
         "dailyBlocked": false,
         "temporarilyBlocked": false,
         "blockedUntil": null,
@@ -31,14 +31,14 @@
       },
       {
         "name": "openrouter",
-        "estimatedArticles": 2,
+        "estimatedArticles": 0,
         "dailyBlocked": false,
         "temporarilyBlocked": false,
         "blockedUntil": null,
         "blockedReason": null
       }
     ],
-    "estimatedArticles": 143
+    "estimatedArticles": 136
   },
   "providerStrategy": {
     "mode": "adaptive-learning",
@@ -50,14 +50,14 @@
     "ranking": [
       {
         "name": "groq",
-        "score": 0.7161,
-        "reliability": 0.6,
-        "headroom": 0.999,
-        "efficiency": 0.682,
-        "samples": 53,
-        "successRate": 0.6,
-        "averageTokensPerSuccess": 7769,
-        "averageApiRequestsPerSuccess": 9.06
+        "score": 0.6901,
+        "reliability": 0.559,
+        "headroom": 0.998,
+        "efficiency": 0.665,
+        "samples": 57,
+        "successRate": 0.559,
+        "averageTokensPerSuccess": 8441,
+        "averageApiRequestsPerSuccess": 9.34
       },
       {
         "name": "cloudflare-workers-ai",
@@ -83,14 +83,14 @@
       },
       {
         "name": "openrouter",
-        "score": 0.1894,
-        "reliability": 0.111,
-        "headroom": 0.26,
-        "efficiency": 0.316,
-        "samples": 25,
-        "successRate": 0.111,
-        "averageTokensPerSuccess": 87808,
-        "averageApiRequestsPerSuccess": 49.5
+        "score": 0.1221,
+        "reliability": 0.1,
+        "headroom": 0.02,
+        "efficiency": 0.31,
+        "samples": 28,
+        "successRate": 0.1,
+        "averageTokensPerSuccess": 100261,
+        "averageApiRequestsPerSuccess": 53.5
       }
     ],
     "note": "الترتيب يتعلم من نتائج التشغيلات السابقة خلال الأيام المحفوظة؛ عند قلة العينات تُخفّض الثقة ويعود التقييم نحو التوازن."
@@ -115,12 +115,12 @@
         "tokens": null,
         "requests": null
       },
-      "usedTokens": 24767,
-      "usedRequests": 44,
-      "estimatedArticles": 141,
-      "averageTokensPerArticle": 6064,
-      "averageRequestsPerArticle": 7.07,
-      "reportedDailyRequestsRemaining": 999,
+      "usedTokens": 46273,
+      "usedRequests": 53,
+      "estimatedArticles": 136,
+      "averageTokensPerArticle": 6588,
+      "averageRequestsPerArticle": 7.29,
+      "reportedDailyRequestsRemaining": 998,
       "reportedDailyRequestsLimit": 1000
     },
     "cloudflare-workers-ai": {
@@ -141,12 +141,12 @@
         "tokens": null,
         "requests": null
       },
-      "usedTokens": 91721,
-      "usedRequests": 75,
-      "estimatedArticles": 2,
-      "averageTokensPerArticle": 8363,
-      "averageRequestsPerArticle": 4.71,
-      "reportedDailyRequestsRemaining": 13,
+      "usedTokens": 116628,
+      "usedRequests": 83,
+      "estimatedArticles": 0,
+      "averageTokensPerArticle": 9115,
+      "averageRequestsPerArticle": 4.86,
+      "reportedDailyRequestsRemaining": 1,
       "reportedDailyRequestsLimit": 50
     }
   }

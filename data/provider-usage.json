@@ -1116,10 +1116,10 @@
           "status": null
         },
         "freeModelDailyRequests": {
-          "used": 48,
+          "used": 49,
           "limit": 50,
-          "remaining": 2,
-          "observedAt": "2026-11-16T16:15:55.538Z",
+          "remaining": 1,
+          "observedAt": "2026-11-16T16:33:45.940Z",
           "source": "OpenRouter GET /api/v1/key"
         },
         "blockedUntil": 0,
