@@ -1,0 +1,18 @@
+name: Publishing Engine v2 core tests
+on:
+  push:
+    branches: [publisher-v2-rebuild]
+    paths: ['scripts/publishing-v2/**', 'scripts/test-publishing-v2.mjs', '.github/workflows/publishing-v2-tests.yml']
+  pull_request:
+    paths: ['scripts/publishing-v2/**', 'scripts/test-publishing-v2.mjs', '.github/workflows/publishing-v2-tests.yml']
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --check scripts/publishing-v2/core.mjs
+      - run: node --check scripts/test-publishing-v2.mjs
+      - run: npm run test:publishing-v2
