@@ -106,7 +106,7 @@ async function modelCall(provider,text){
   url=provider.id==='groq'?'https://api.groq.com/openai/v1/chat/completions':'https://openrouter.ai/api/v1/chat/completions';headers.authorization='Bearer '+key;
   if(provider.id==='openrouter'){headers['HTTP-Referer']='https://vibecritic.pages.dev/';headers['X-Title']='VibeCritic';}
   const fallbacks=['nvidia/nemotron-3.5-super-vl:free','google/gemma-4-26b-a4b-it:free'].filter(x=>x!==provider.model);
-  body={...(provider.id==='openrouter'?{models:[provider.model,...fallbacks],reasoning:{enabled:false}}:{}),model:provider.model,temperature:.3,max_tokens:2500,response_format:{type:'json_object'},messages:[{role:'system',content:'ناقد عربي دقيق. JSON فقط، لا تختلق.'},{role:'user',content:text}]};
+  body=provider.id==='groq'?{model:provider.model,temperature:.3,max_completion_tokens:4096,reasoning_effort:'low',include_reasoning:false,response_format:{type:'json_object'},messages:[{role:'system',content:'ناقد عربي دقيق. JSON فقط، لا تختلق.'},{role:'user',content:text}]}:{...(provider.id==='openrouter'?{models:[provider.model,...fallbacks],reasoning:{enabled:false}}:{}),model:provider.model,temperature:.3,max_tokens:2500,response_format:{type:'json_object'},messages:[{role:'system',content:'ناقد عربي دقيق. JSON فقط، لا تختلق.'},{role:'user',content:text}]};
  }
  const r=await fetch(url,{method:'POST',headers,body:JSON.stringify(body),signal:AbortSignal.timeout(90000)});
  if(!r.ok)throw new Error(provider.id+' HTTP '+r.status+': '+(await r.text()).slice(0,600));
