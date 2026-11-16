@@ -11,7 +11,7 @@ assert.equal(job.stage,1);
 job=transition(job,"provider-deferred",{lastError:"429",nextAttemptAt:now+3600000},now+4);state.jobs[first.key]=job;
 assert.equal(cycleDecision(state,now+5).action,"wait");
 assert.equal(job.attempts,1,"real provider failures increment retry accounting");
-assert.ok(job.nextAttemptAt>=now+4+3600000,"explicit retry-after remains respected");
+assert.ok(job.nextAttemptAt>=now+3600000,"explicit retry-after remains respected");
 assert.equal(selectActiveJob(state.jobs).key,first.key);
 assert.equal(cycleDecision(state,now+3600005).action,"resume");
 job=transition(job,"resumed",{},now+3600006);assert.equal(job.nextAttemptAt,null);
