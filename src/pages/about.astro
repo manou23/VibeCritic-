@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { url } from '../consts';
 ---
 <Base title="من نحن" description="تعرّف إلى VibeCritic ومنهجه في مراجعة الألعاب والأفلام والمسلسلات.">
 <section class="info-page">
@@ -10,7 +11,7 @@ import Base from '../layouts/Base.astro';
   <article><span>03 / التقييم</span><h2>درجة تحريرية من 10</h2><p>الدرجة المنشورة تقدير تحريري خاص بـ VibeCritic وليست متوسطاً من مواقع أخرى أو تصويتاً جماهيرياً. تُقرأ مع التحليل ونقاط القوة والتحفظات، لا بمعزل عنها.</p></article>
   <article><span>04 / الاستقلالية</span><h2>الشفافية مع القارئ</h2><p>قد نستعين بأدوات الذكاء الاصطناعي في إعداد بعض المواد. لذلك لا نعرض المخرجات الآلية على أنها تجربة بشرية مباشرة، وننبه إلى ضرورة التحقق من التفاصيل التي قد تخطئ فيها الأدوات.</p></article>
  </div>
- <section class="info-callout"><h2>هل لديك تصحيح أو اقتراح؟</h2><p>نرحب بالملاحظات المتعلقة بدقة المعلومات أو حقوق المحتوى أو تجربة الموقع.</p><a href="/contact/">تواصل مع VibeCritic ↗</a></section>
+ <section class="info-callout"><h2>هل لديك تصحيح أو اقتراح؟</h2><p>نرحب بالملاحظات المتعلقة بدقة المعلومات أو حقوق المحتوى أو تجربة الموقع.</p><a href={url('contact/')}>تواصل مع VibeCritic ↗</a></section>
 </section>
 <style>
 .info-page{width:min(1000px,calc(100% - 40px));margin:0 auto;padding:clamp(48px,8vw,100px) 0;color:var(--vc-text)}
