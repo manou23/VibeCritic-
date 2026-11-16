@@ -74,6 +74,14 @@ assert.equal(fallback.action,'stage-saved','the next eligible cycle must select 
 assert.equal(fallback.provider,'backup-free');
 assert.equal(failedProviderCalls,2,'fallback provider should receive the next single AI call');
 
+// Duplicate titles must be retired before they reserve the cycle's single article slot.
+const duplicateState=createState();
+duplicateState.jobs['movie:dupe']={key:'movie:dupe',item:{type:'movie',id:'dupe'},status:'writing',stage:1,parts:[],createdAt:new Date(now).toISOString(),updatedAt:new Date(now).toISOString()};
+const duplicateAdapters={...adapters,discover:async()=>[],isAlreadyPublished:async()=>true};
+const duplicateResult=await runCycle({state:duplicateState,adapters:duplicateAdapters,providers,now,persist:async()=>{}});
+assert.equal(duplicateResult.action,'no-candidates');
+assert.equal(duplicateState.cycle.articleKey,undefined,'a duplicate must not consume the cycle article slot');
+
 // The durable cycle allows work for three hours and rests until the five-hour boundary.
 const cycleState=createState();
 let cycleNow=now;
