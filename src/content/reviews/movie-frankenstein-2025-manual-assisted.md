@@ -4,12 +4,12 @@ originalTitle: "Frankenstein"
 headline: "فرانكنشتاين: حكاية قوطية عن الخلق والنبذ ومسؤولية الصانع"
 hook: "يعيد غييرمو ديل تورو الحكاية إلى سؤالها الأخلاقي: من الوحش، الصانع أم المخلوق؟ قوة الفيلم في التعاطف البصري والإنساني، وضعفه في تمدد بعض المسارات."
 summary: "اقتباس سينمائي من رواية ماري شيلي، يتتبع العالم فيكتور فرانكنشتاين بعد نجاحه في منح الحياة لمخلوق، ثم مواجهته نتائج التخلي عنه وما ينشأ بينهما من ألم ورفض ومسؤولية."
-verdict: "يمنح ديل تورو رواية شيلي معالجة قوطية غنية بالتفاصيل، ويضع علاقة الخالق بالمخلوق في مركز سؤال أخلاقي وإنساني. التصميم الإنتاجي والأداءات من أبرز عناصر القوة، لكن امتداد بعض الفصول وتفاوت عمق الشخصيات الثانوية يضعفان الإيقاع. تقييم VibeCritic التحريري: 8.6/10."
+verdict: "يمنح ديل تورو رواية شيلي معالجة قوطية غنية بالتفاصيل، ويضع علاقة الخالق بالمخلوق في مركز سؤال أخلاقي وإنساني. التصميم الإنتاجي والأداءات من أبرز عناصر القوة، لكن امتداد بعض الفصول وتفاوت عمق الشخصيات الثانوية يضعفان الإيقاع. تقييم VibeCritic التحريري: 8.7/10."
 reviewVersion: 2
 type: movie
 date: 2026-11-15
-releaseDate: "2025-11-07"
-score: 8.6
+releaseDate: "2025-10-17"
+score: 8.7
 storyScore: 8.4
 visualsScore: 9.5
 soundScore: 8.9
@@ -29,7 +29,7 @@ tags: ["Frankenstein", "Guillermo del Toro", "Mary Shelley", "Gothic Drama", "20
 genres: ["دراما", "رعب", "خيال علمي"]
 cast: ["Oscar Isaac", "Jacob Elordi", "Mia Goth", "Christoph Waltz", "Felix Kammerer", "Charles Dance"]
 crew: ["Guillermo del Toro", "Mary Shelley", "Dan Laustsen", "Alexandre Desplat"]
-sourceName: "Netflix Tudum / Netflix"
+sourceName: "Netflix / RogerEbert.com / The Guardian / Rotten Tomatoes"
 sourceId: "manual-assisted-movie-frankenstein-2025-manual-assisted"
 sourceUrl: "https://www.netflix.com/tudum/articles/frankenstein-trailer-guillermo-del-toro"
 externalVideoUrl: "https://www.netflix.com/tudum/videos/frankenstein-trailer?inapp=trueOs"
@@ -60,10 +60,14 @@ youtubeVideoTitle: "Final Trailer"
 يميل الفيلم إلى بناء عالمه بتأنٍ، وهذا مناسب لحكاية عن الخلق والعزلة، لكنه يجعل بعض الفصول أطول مما تحتاج. حين يتقدم الصراع بين الخالق والمخلوق، يتولد توتر حقيقي؛ وحين تتكرر الشروح أو تتوسع الخلفيات، يتباطأ المسار. لا يكفي جمال الصورة لتبرير كل دقيقة إضافية.
 
 ## الحكم النهائي
-فرانكنشتاين اقتباس بصري طموح وإنساني في جوهره، ويجد أفضل لحظاته حين يمنح المخلوق صوتاً واحتياجاً عاطفياً بدلاً من اختزاله في مصدر للخوف. يرفع التصميم الإنتاجي والأداءات قيمة التجربة، لكن التمدد السردي وتفاوت عمق الشخصيات يحدان من إحكامها. درجة 8.6/10 تعكس تميز العالم البصري والقراءة الأخلاقية، مع خصم واضح بسبب الإيقاع والتشعب.
+فرانكنشتاين اقتباس بصري طموح وإنساني في جوهره، ويجد أفضل لحظاته حين يمنح المخلوق صوتاً واحتياجاً عاطفياً بدلاً من اختزاله في مصدر للخوف. يرفع التصميم الإنتاجي والأداءات قيمة التجربة، لكن التمدد السردي وتفاوت عمق الشخصيات يحدان من إحكامها. درجة 8.7/10 تعكس تميز العالم البصري والقراءة الأخلاقية، مع خصم واضح بسبب الإيقاع والتشعب.
 
-## مصادر التحقق
+## مصادر التحقق والمراجعات النقدية
 - [Netflix Tudum — Frankenstein](https://www.netflix.com/tudum/articles/frankenstein-trailer-guillermo-del-toro): الإعلان الرسمي ومعلومات الفيلم.
+- [Rotten Tomatoes — Frankenstein (2025)](https://www.rottentomatoes.com/m/frankenstein_2025): تاريخ العرض السينمائي 17 أكتوبر 2025 وموعد البث 7 نوفمبر 2025 وملخص استقبال النقاد.
+- [RogerEbert.com — Frankenstein](https://www.rogerebert.com/reviews/frankenstein-film-review-2025): قراءة نقدية للتصميم والإخراج والأداء والموسيقى.
+- [The Guardian — Frankenstein Review](https://www.theguardian.com/film/2025/aug/30/frankenstein-review-guillermo-del-toro-oscar-isaac-jacob-elordi): تحليل الأسلوب القوطي والإيقاع والشخصيات.
+- [Rotten Tomatoes — First Reviews](https://editorial.rottentomatoes.com/article/guillermo-del-toro-frankenstein-first-reviews/): تجميع انطباعات نقدية مبكرة حول الصورة والأداء والإيقاع.
 - [Netflix — المقطع الرسمي](https://www.netflix.com/tudum/videos/frankenstein-trailer?inapp=trueOs): الفيديو الترويجي المرتبط.
 
 > مراجعة تحريرية بحثية تستند إلى المواد الرسمية وتحليل الفيلم، ولا تدعي مشاهدة جديدة أو قياساً لتقييم الجمهور.
