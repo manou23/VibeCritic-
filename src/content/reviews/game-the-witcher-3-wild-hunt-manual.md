@@ -1,10 +1,9 @@
 ---
 title: "ذا ويتشر 3: وايلد هانت"
 originalTitle: "The Witcher 3: Wild Hunt"
-youtubeVideoTitle: "The Witcher 3: Wild Hunt — Title Reveal"
-youtubeVideoId: "9WiLRIsCfFM"
+youtubeVideoTitle: "The Witcher 3: Wild Hunt — Official Launch Trailer"
+youtubeVideoId: "XHrskHf958"
 poster: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/292030/header.jpg"
-backdrop: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/292030/header.jpg"
 headline: "رحلة جيرالت تتفوق في كتابة المهام، لكنها لا تخلو من ترهل العالم المفتوح"
 hook: "قوة The Witcher 3 ليست في اتساع خريطتها وحده، بل في القصص الصغيرة التي تجعل قرىها وشخصياتها تبدو وكأنها تملك حياة خارج مهمة اللاعب."
 summary: "تضع اللعبة جيرالت في قارة تمزقها الحرب، بينما يبحث عن سيري وسط صراعات سياسية ووحوش وعلاقات شخصية متشابكة. تقدم مغامرة تقمص أدوار واسعة تعتمد على الاختيارات والمهام والاستكشاف."
@@ -38,20 +37,18 @@ cons:
 tags: ["The Witcher 3", "CD Projekt Red", "Open World", "RPG", "Dark Fantasy"]
 genres: ["تقمص أدوار", "أكشن", "عالم مفتوح"]
 creator: "CD Projekt Red"
-sourceName: "CD Projekt Red / Bandai Namco"
+sourceName: "CD Projekt Red / Bandai Namco / PC Gamer / The Guardian / GamesRadar+ / GameSpot"
 sourceId: "manual-game-the-witcher-3-wild-hunt"
 sourceUrl: "https://en.bandainamcoent.eu/the-witcher/the-witcher-3-wild-hunt"
 aiGenerated: false
 rawgSourceId: 3328
 rawgSourceUrl: "https://rawg.io/games/the-witcher-3-wild-hunt"
-rawgReleaseDate: "2015-05-18"
 rawgGenres:
   - "Action"
   - "RPG"
 rawgPlatforms:
   - "PlayStation 5"
   - "Xbox Series S/X"
-  - "macOS"
   - "PlayStation 4"
   - "Nintendo Switch"
   - "PC"
@@ -83,8 +80,14 @@ rawgDevelopers:
 
 The Witcher 3 لعبة تقمص أدوار قوية أساسها الكتابة والمهام والاختيارات، وليس مجرد مساحة ضخمة للتجول. يحد من تميزها قتال أقل إقناعاً من سردها، وبعض التكرار في الأنشطة والتحكم. درجة 9.1/10 تعكس جودة العالم والقصص، مع عدم تجاهل الجوانب التي لم تصمد بالقوة نفسها.
 
-## مصادر التحقق
+## مصادر التحقق والمراجعات النقدية
 - [Bandai Namco — The Witcher 3: Wild Hunt](https://en.bandainamcoent.eu/the-witcher/the-witcher-3-wild-hunt): وصف العالم والمهام والمنصات والنسخة المحسنة.
-- [CD Projekt Red — الإعلان الرسمي](https://www.thewitcher.com/us/en/news/427/the-witcher-3-wild-hunt-announced): تصور المطور للعالم المفتوح والاختيارات والسرد.
+- [CD Projekt Red — الموقع الرسمي](https://www.thewitcher.com/us/en/witcher3): معلومات اللعبة والتحديثات والإصدارات.
+- [PC Gamer — The Witcher 3 Review](https://www.pcgamer.com/the-witcher-3-review/): تحليل العالم والمهام الجانبية والكتابة والإيقاع.
+- [The Guardian — The Witcher 3 Review](https://www.theguardian.com/technology/2015/may/13/witcher-3-wild-hunt-review-xbox-ps4-pc): مراجعة معاصرة للكتابة والقتال والمشكلات التقنية.
+- [GamesRadar+ — The Witcher 3 Review](https://www.gamesradar.com/witcher-3-wild-hunt-review/): ملاحظات عن العالم المفتوح وقوة المهمات وضعف بعض عناصر القتال.
+- [GameSpot — The Witcher 3 Next-Gen Update Review](https://www.gamespot.com/reviews/the-witcher-3-wild-hunt-next-gen-update-review-winds-howlin/1900-6416135/): قراءة للنسخة المحسنة وجودة العالم والمهام والأنظمة.
+- [Metacritic — The Witcher 3](https://www.metacritic.com/game/the-witcher-3-wild-hunt/critic-reviews/): تجميع المراجعات النقدية، منفصل عن درجة VibeCritic.
+- [GameSpot — Official Launch Trailer](https://www.youtube.com/watch?v=XHrskHf958): المقطع الدعائي الرسمي عند الإطلاق.
 
 > مراجعة تحريرية بحثية مستقلة. لا تدعي اختبار كل إصدار أو كل محتوى التوسعات.
