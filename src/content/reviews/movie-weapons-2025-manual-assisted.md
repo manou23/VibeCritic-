@@ -4,7 +4,7 @@ originalTitle: "Weapons"
 headline: "رعب جماعي يبني لغزه من وجهات نظر متقاطعة، لكنه لا يحافظ دائماً على توازن فصوله"
 hook: "تبدأ Weapons من اختفاء جماعي غير مفهوم، ثم تجعل اختلاف الروايات مصدر الرعب؛ أسلوبها يخلق فضولاً حقيقياً، لكنه يضعف حين تتفاوت قوة الشخصيات."
 summary: "فيلم رعب وغموض من زاك كريغر، تتغير فيه حياة بلدة بعد اختفاء معظم أطفال فصل دراسي في الليلة نفسها."
-verdict: "ويبنز يقدم فيلم رعب وغموض من زاك كريغر، تتغير فيه حياة بلدة بعد اختفاء معظم أطفال فصل دراسي في الليلة نفسها. وتظهر قوته في عناصره الأساسية، مع حدود واضحة في الإيقاع أو توزيع المسارات كما تفصل المراجعة. تقييم VibeCritic التحريري: 8.5/10."
+verdict: "يحوّل Weapons حادثة اختفاء جماعي إلى لغز يتكشف عبر وجهات نظر متقاطعة، ويصنع توتراً فعالاً بالصوت والأماكن اليومية. لكن قوة الفصول ليست متساوية، والنهاية أكثر مباشرة من الغموض الذي يبنيه الفيلم في بدايته. تقييم VibeCritic التحريري: 8.5/10."
 reviewVersion: 1
 type: movie
 date: 2026-11-15
@@ -16,7 +16,6 @@ soundScore: 8.7
 pacingScore: 8.4
 reviewMode: review
 poster: "https://cdn.moviefone.com/admin-uploads/highlights/images/weapons-official-poster_1745953260.webp"
-backdrop: "https://cdn.moviefone.com/admin-uploads/highlights/images/weapons-official-poster_1745953260.webp"
 pros:
   - "تقسيم الحكاية إلى وجهات نظر يوسع اللغز تدريجياً"
   - "تصميم الصوت يخلق توتراً من دون اعتماد دائم على الصدمات"
@@ -26,12 +25,10 @@ cons:
   - "بعض التحولات تقترب من الشرح بعد بناء الغموض"
   - "النهاية قد تبدو أكثر مباشرة من التمهيد"
 tags: ["Weapons", "movie", "VibeCritic", "2025"]
-genres: ["دراما وسينما"]
+genres: ["رعب", "غموض", "إثارة"]
 sourceName: "Warner Bros. / New Line Cinema"
 sourceId: "manual-assisted-movie-weapons-2025-manual-assisted"
 sourceUrl: "https://www.warnerbros.com/movies/weapons"
-externalVideoUrl: "https://www.warnerbros.com/movies/weapons"
-externalVideoTitle: "Weapons — Official Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
 youtubeVideoId: "QKHySfXqN0I"
@@ -65,7 +62,7 @@ Weapons فيلم رعب ذكي في بنائه وتوزيع معلوماته، �
 
 ## الحكم النهائي
 
-تقييم 8.5/10 يعكس موازنة بين نقاط القوة المحددة ومواطن الضعف التي ظهرت في السرد أو الأنظمة أو الإيقاع. لا تعني الدرجة أن العمل كامل، ولا تُمنح المكافأة لمجرد الشعبية أو حجم الإنتاج.
+تقييم 8.5/10 يعكس نجاح الفيلم في بناء لغز متدرج وصناعة جو متوتر، مع خصم بسبب تفاوت الفصول ومباشرة الخاتمة. قوته في طريقة توزيع المعلومات أكثر من اعتماده على صدمات منفصلة، لكنه لا يمنح جميع الشخصيات عمقاً متساوياً.
 
 ## مصادر التحقق
 
