@@ -41,7 +41,7 @@ genres:
   - "Horror"
   - "Thriller"
 creator: "Quinn Shephard"
-sourceName: "VibeCritic Editorial Desk"
+sourceName: "Netflix / Variety / TheWrap / RogerEbert.com / The Guardian / NME"
 sourceId: "291507"
 sourceUrl: "https://www.themoviedb.org/tv/291507"
 aiGenerated: false
@@ -80,6 +80,7 @@ The Body ليس مجرد عنوان غامض أو إدراج ناقص البيا
 - [The Guardian — The Body review](https://www.theguardian.com/tv-and-radio/2026/nov/13/the-body-coming-of-age-review-netflix) — يثني على النبرة والحنين الموسيقي، وينتقد ترهل الحلقات الثماني.
 - [TheWrap — The Body review](https://www.thewrap.com/creative-content/reviews/the-body-review-netflix-quinn-shephard/) — قراءة للحبكة والعلاقات والطابع النفسي ومدى جاذبية المتابعة.
 - [NME — The Body review](https://www.nme.com/reviews/tv-reviews/the-body-review-netflix-quinn-shephard-kristina-bogic-geena-meszaros-3975594) — يناقش الكتابة والأداءات والموسيقى والإيقاع البصري.
-- [Variety — The Body season review](https://www.rottentomatoes.com/tv/the_body_2026/s01) — مراجعة ضمن تجميع Rotten Tomatoes تركز على الصداقة النسائية وتطور العلاقات.
+- [Variety — The Body Review (syndicated copy)](https://www.marketing-now.co.uk/article/345062/netflixs-genrebending-ya-drama-the-body-is-a-queer-y2k-extravaganza-tv-review) — مراجعة تركز على الصداقة النسائية والهوية والحنين إلى عام 2004.
+- [Netflix Media Center — The Body](https://media.netflix.com/en/only-on-netflix/81983578) — تأكيد تاريخ العرض وعدد الحلقات والطاقم وفريق الإنتاج.
 
 > منهجية: مراجعة تحريرية بحثية مبنية على مصادر نقدية منشورة، وليست ادعاءً بمشاهدة مباشرة من فريق VibeCritic.
