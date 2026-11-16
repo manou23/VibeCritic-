@@ -31,7 +31,7 @@ globalThis.fetch=async(url,options)=>{
   return new Response(JSON.stringify({candidates:[{content:{parts:[{text:JSON.stringify(payload)}]}}]}),{status:200,headers:{'content-type':'application/json'}});
  }
  if(mode==='groq'){
-  assert.match(String(url),/api\\.groq\\.com\\/openai\\/v1\\/chat\\/completions/);
+  assert.match(String(url),/api\.groq\.com\/openai\/v1\/chat\/completions/);
   assert.equal(body.model,'openai/gpt-oss-120b');
   assert.equal(options.headers.authorization,'Bearer test-key');
   return new Response(JSON.stringify({choices:[{message:{content:JSON.stringify(payload)},finish_reason:'stop'}],usage:{total_tokens:321}}),{status:200,headers:{'content-type':'application/json'}});
