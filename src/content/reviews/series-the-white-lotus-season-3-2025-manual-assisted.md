@@ -4,13 +4,12 @@ originalTitle: "The White Lotus Season 3"
 headline: "هجاء طبقي يتأمل الروحانية والامتياز، لكن كثرة الخيوط تؤخر اشتعال المواجهة"
 hook: "ينقل Mike White نزلاءه إلى تايلاند ويستبدل واجهة الرفاه بأسئلة عن الموت والرغبة والمال؛ الموسم يملك شخصيات لافتة، لكنه لا يوزع الإيقاع بالتساوي."
 summary: "الموسم الثالث من السلسلة الساخرة، تدور أحداثه في منتجع تايلاندي وتتابع ضيوفاً وموظفين خلال أسبوع من التوترات المتصاعدة."
-verdict: "اللوتس الأبيض — الموسم الثالث يقدم الموسم الثالث من السلسلة الساخرة، تدور أحداثه في منتجع تايلاندي وتتابع ضيوفاً وموظفين خلال أسبوع من التوترات المتصاعدة. وتظهر قوته في عناصره الأساسية، مع حدود واضحة في الإيقاع أو توزيع المسارات كما تفصل المراجعة. تقييم VibeCritic التحريري: 8.5/10."
+verdict: "يواصل الموسم الثالث هجاء الامتياز والمال والبحث عن المعنى، ويستفيد من البيئة التايلاندية والصورة والموسيقى ذات النبرة المقلقة. لكن كثرة المسارات تؤخر التصعيد، ولا تحصل كل الشخصيات والموضوعات على عمق متساوٍ. تقييم VibeCritic التحريري: 8.5/10."
 reviewVersion: 1
 type: series
 date: 2026-11-15
 releaseDate: "2025-02-16"
 poster: "https://cloudfront-us-east-1.images.arcpublishing.com/infobae/PLS3LKDG6JDA7NHZBNTA7U7SKU.jpg"
-backdrop: "https://cloudfront-us-east-1.images.arcpublishing.com/infobae/PLS3LKDG6JDA7NHZBNTA7U7SKU.jpg"
 score: 8.5
 storyScore: 8.3
 visualsScore: 9.2
@@ -26,12 +25,10 @@ cons:
   - "بعض الحكايات تتأخر في الوصول إلى نقطة تحول واضحة"
   - "الموضوعات الروحية تطرح أحياناً بإشارات أكثر من التفكيك"
 tags: ["The White Lotus Season 3", "series", "VibeCritic", "2025"]
-genres: ["دراما"]
+genres: ["دراما", "كوميديا سوداء", "هجاء اجتماعي"]
 sourceName: "HBO Pressroom"
 sourceId: "manual-assisted-series-the-white-lotus-season-3-2025-manual-assisted"
 sourceUrl: "https://press.wbd.com/na/media-release/hbo-0/white-lotus/season-three-hbo-original-series-white-lotus-mike-white-debuts-february-16"
-externalVideoUrl: "https://press.wbd.com/us/media-release/hbo-0/white-lotus/hbo-releases-official-trailer-and-key-art-season-three-white-lotus"
-externalVideoTitle: "The White Lotus Season 3 — Official Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
 ---
@@ -63,7 +60,7 @@ editorialWorkflow: "manual-assisted"
 
 ## الحكم النهائي
 
-تقييم 8.5/10 يعكس موازنة بين نقاط القوة المحددة ومواطن الضعف التي ظهرت في السرد أو الأنظمة أو الإيقاع. لا تعني الدرجة أن العمل كامل، ولا تُمنح المكافأة لمجرد الشعبية أو حجم الإنتاج.
+تقييم 8.5/10 يمنح وزناً للهوية البصرية والمكان التايلاندي والسخرية الاجتماعية، مع خصم بسبب تشتت بعض المسارات وتأخر التصعيد وعدم تساوي عمق الشخصيات. يظل موسماً قوياً في نبرته وأفكاره، لكنه أقل إحكاماً في توزيع الوقت من أفضل أجزاء السلسلة.
 
 ## مصادر التحقق
 
