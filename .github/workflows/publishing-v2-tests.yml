@@ -1,7 +1,7 @@
 name: Publishing Engine v2 reliability tests
 on:
   push:
-    branches: [publisher-v2-rebuild]
+    branches: [publisher-v2-rebuild, publisher-v2-five-hour-completion]
     paths: ['scripts/publishing-v2/**', 'scripts/test-publishing-v2.mjs', 'scripts/test-publishing-v2-runner.mjs', 'scripts/test-publishing-v2-adapters.mjs', '.github/workflows/publishing-v2-tests.yml']
   pull_request:
     paths: ['scripts/publishing-v2/**', 'scripts/test-publishing-v2.mjs', 'scripts/test-publishing-v2-runner.mjs', '.github/workflows/publishing-v2-tests.yml']
