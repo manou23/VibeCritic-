@@ -26,7 +26,7 @@ cons:
   - "النهاية قد تبدو أكثر مباشرة من التمهيد"
 tags: ["Weapons", "movie", "VibeCritic", "2025"]
 genres: ["رعب", "غموض", "إثارة"]
-sourceName: "Warner Bros. / New Line Cinema"
+sourceName: "Warner Bros. / New Line Cinema / RogerEbert.com / The Guardian / Variety / BFI / Los Angeles Times"
 sourceId: "manual-assisted-movie-weapons-2025-manual-assisted"
 sourceUrl: "https://www.warnerbros.com/movies/weapons"
 aiGenerated: true
@@ -64,7 +64,11 @@ Weapons فيلم رعب ذكي في بنائه وتوزيع معلوماته، �
 
 تقييم 8.5/10 يعكس نجاح الفيلم في بناء لغز متدرج وصناعة جو متوتر، مع خصم بسبب تفاوت الفصول ومباشرة الخاتمة. قوته في طريقة توزيع المعلومات أكثر من اعتماده على صدمات منفصلة، لكنه لا يمنح جميع الشخصيات عمقاً متساوياً.
 
-## مصادر التحقق
-
-- [Warner Bros. / New Line Cinema](https://www.warnerbros.com/movies/weapons)
-- [المادة الرسمية / المقطع المرتبط](https://www.warnerbros.com/movies/weapons)
+## مصادر التحقق والمراجعات النقدية
+- [Warner Bros. / New Line Cinema — Weapons](https://www.warnerbros.com/movies/weapons): بيانات الفيلم والمواد الرسمية.
+- [RogerEbert.com — Weapons Review](https://www.rogerebert.com/reviews/weapons-movie-review-2025): تحليل بنية الفصول المتقاطعة والصوت والأداء والنهاية.
+- [The Guardian — Weapons Review](https://www.theguardian.com/film/2025/aug/06/weapons-review-zach-creggers): ملاحظات على الغموض وبناء الشخصيات ومباشرة الخاتمة.
+- [Variety — Weapons Review](https://au.variety.com/2025/film/reviews/weapons-review-26144/): تحليل قوة اللغز وتراجع الغموض عند تفسيره.
+- [BFI Sight and Sound — Weapons](https://www.bfi.org.uk/sight-and-sound/reviews/weapons-gruesome-puzzle-box-horror-jolts-jump-scares): قراءة نقدية لتصميم الرعب والبناء المتاهاتي.
+- [Los Angeles Times — Weapons Review](https://www.latimes.com/entertainment-arts/movies/story/2025-08-07/weapons-review-josh-brolin-julia-garner-amy-madigan-zach-cregger): تحليل وجهات النظر المتعددة والشخصيات والخاتمة.
+- [Rotten Tomatoes — Weapons](https://www.rottentomatoes.com/m/weapons): تجميع استقبال النقاد والجمهور وبيانات الإصدار.
