@@ -45,7 +45,7 @@ export function transition(job,event,patch={},now=Date.now()){
   if(next.stage===3)next.status="quality-check";
  }
  if(event==="provider-deferred"||event==="quality-failed"){
-  const countsAsFailure=patch.countAttempt===true||(event==="quality-failed"&&patch.countAttempt!==false);
+  const countsAsFailure=patch.countAttempt!==false;
   next.attempts=Number(job.attempts||0)+(countsAsFailure?1:0);delete next.countAttempt;
   next.lastError=String(patch.lastError||"Temporary failure").slice(0,1200);
   const exponential=Math.min(24*60*60*1000,60000*Math.pow(2,Math.min(next.attempts,10)));
