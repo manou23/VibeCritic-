@@ -4,6 +4,11 @@ function candidate(items,state,counts={}) { const used=new Set(Object.keys(state
 export async function runCycle({state,adapters,providers,now=Date.now(),persist=async()=>{},publishedCounts={},articleLimits={}}) {
  if(!state||state.version!==2||!adapters) throw Error('Publisher v2 state and adapters are required.');
  const save=async()=>{state.updatedAt=new Date(now).toISOString();await persist(state);}; let job=selectActiveJob(state.jobs);
+ // Avoid creating a duplicate review when an existing manual or assisted article covers this title.
+ if(job&&adapters.isAlreadyPublished&&await adapters.isAlreadyPublished(job.item)){
+  state.jobs[job.key]=transition(job,'abandoned',{lastError:'Skipped: an existing review already covers this title.'},now);
+  await save();job=null;
+ }
  // Migrate legacy waiting checkpoints: a provider cooldown must not freeze the whole draft queue.
  // On the next scheduled cycle, the failed provider remains excluded while eligible free fallbacks can run.
  if(job?.status==='waiting'&&job.resumeTo==='writing'&&(Number(job.nextAttemptAt)||Date.parse(job.nextAttemptAt||'')||0)>now+5*60*1000){
