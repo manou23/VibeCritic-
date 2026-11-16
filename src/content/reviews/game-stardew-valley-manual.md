@@ -3,7 +3,6 @@ title: "Stardew Valley"
 originalTitle: "Stardew Valley"
 youtubeVideoTitle: "Stardew Valley Trailer — ConcernedApe"
 youtubeVideoId: "ot7uXNQskhs"
-backdrop: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/header.jpg?t=1754692865"
 poster: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/header.jpg?t=1754692865"
 headline: "Stardew Valley: حياة صغيرة تمنح اللاعب مساحة كبيرة ليختار إيقاعه"
 hook: "لا تطلب منك اللعبة إنقاذ العالم؛ إنها تسألك إن كنت تستطيع بناء مكان تريد العودة إليه كل صباح."
@@ -19,7 +18,7 @@ visualsScore: 8.8
 soundScore: 9.2
 pacingScore: 9.0
 reviewMode: review
-platforms: ["PC", "Mac", "Linux", "Xbox One", "PlayStation 4", "Nintendo Switch", "PlayStation Vita", "iOS", "Android"]
+platforms: ["PC", "Mac", "Linux", "Xbox One", "PlayStation 4", "Nintendo Switch", "Nintendo Switch 2", "PlayStation Vita", "iOS", "Android"]
 pros:
   - "حلقة اللعب اليومية واضحة لكنها تسمح بتحديد الأولويات بحرية"
   - "العلاقات مع سكان البلدة تمنح المكان ذاكرة وشخصية"
@@ -32,13 +31,12 @@ cons:
 tags: ["Stardew Valley", "ConcernedApe", "Farming Sim", "Indie RPG"]
 genres: ["محاكاة", "تقمص أدوار", "إدارة"]
 creator: "ConcernedApe"
-sourceName: "Official Stardew Valley Press Kit"
+sourceName: "ConcernedApe / PC Gamer / GameSpot / Ars Technica / Game Informer"
 sourceId: "manual-game-stardew-valley"
 sourceUrl: "https://www.stardewvalley.net/press/"
 aiGenerated: false
 rawgSourceId: 654
 rawgSourceUrl: "https://rawg.io/games/stardew-valley"
-rawgReleaseDate: "2016-02-25"
 rawgGenres:
   - "RPG"
   - "Simulation"
@@ -54,7 +52,6 @@ rawgPlatforms:
   - "PS Vita"
   - "Android"
 rawgDevelopers:
-  - "Chucklefish"
   - "ConcernedApe"
 gameStores:
   - name: "PlayStation Store"
@@ -83,8 +80,14 @@ gameStores:
 ## الحكم النهائي
 Stardew Valley مثال قوي على أن التجربة الكبيرة لا تحتاج إلى عالم ضخم أو قصة سينمائية. قوتها في تصميم دورة يومية تجعل القرارات الصغيرة ذات معنى، وفي بلدة تمنح المزرعة سياقاً اجتماعياً وموسيقياً. لا تخلو من التكرار وضعف شرح بعض الأنظمة، لكنها تمنح اللاعب حرية نادرة في تحديد ما تعنيه له كلمة التقدم. درجة 8.6/10 تعكس تماسك التصميم وطول عمره، مع خصم بسبب الروتين وحاجز التعلم في بعض الأنظمة.
 
-## مصادر التحقق
-- [Stardew Valley — Official Press Kit](https://www.stardewvalley.net/press/): المطور وتاريخ الإصدار والمنصات ووصف اللعبة.
-- [RAWG — Stardew Valley](https://rawg.io/games/stardew-valley): بيانات إضافية عن الأنواع والمنصات وملخص آليات اللعب.
+## مصادر التحقق والمراجعات النقدية
+- [Stardew Valley — Official Press Kit](https://www.stardewvalley.net/press/): المطور والمواد الرسمية.
+- [PC Gamer — Stardew Valley Review](https://www.pcgamer.com/stardew-valley-review/): قراءة نقدية لإيقاع المزرعة والعلاقات ووضوح الأنظمة.
+- [GameSpot — Stardew Valley Review](https://www.gamespot.com/reviews/stardew-valley-review/1900-6416598/): تحليل الأنشطة والعلاقات والتقدم وحدود الدافع في المراحل المتأخرة.
+- [Ars Technica — Stardew Valley Review](https://arstechnica.com/gaming/2016/03/stardew-valley-review-a-pastoral-contemporary-escape/): قراءة نقدية لأجواء اللعبة وتنوع العلاقات والأنشطة.
+- [Game Informer — Stardew Valley Review](https://gameinformer.com/games/stardew_valley/b/pc/archive/2016/03/24/stardew-valley-review.aspx): تحليل عمق الأنظمة والتقدم وحاجز التعلم.
+- [Metacritic — Stardew Valley Critic Reviews](https://www.metacritic.com/game/stardew-valley/critic-reviews/): تجميع مراجعات النقاد، منفصل عن درجة VibeCritic.
+
+> مراجعة تحريرية بحثية مستقلة؛ لا تدّعي اختبار جميع المنصات أو الإصدارات أو التحديثات.
 
 > مراجعة تحريرية بحثية مستقلة؛ لا تدّعي اختبار جميع المنصات أو الإصدارات أو التحديثات.
