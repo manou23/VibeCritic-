@@ -46,8 +46,6 @@ sourceId: "1396"
 sourceUrl: "https://www.themoviedb.org/tv/1396"
 aiGenerated: false
 
-externalVideoUrl: "https://www.sonypictures.com/tv/breakingbad"
-externalVideoTitle: "شاهد المقاطع الرسمية لـ Breaking Bad من Sony Pictures"
 ---
 
 ## الفكرة والكتابة: من التبرير إلى الاعتراف
