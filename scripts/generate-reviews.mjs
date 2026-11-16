@@ -1157,7 +1157,7 @@ async function writeReview(item){
   console.log('تم حفظ المرحلة '+draft.stage+'/3 من مقال '+enriched.name+'؛ سيستأنف الجزء التالي في التشغيل الساعي القادم.');
   return null;
  }
- const a={...part,review:draft.sections.map(section=>'### '+section.heading+'\\n\\n'+section.content).join('\\n\\n')};
+ const a={...part,review:draft.sections.map(section=>'### '+section.heading+'\n\n'+section.content).join('\n\n')};
  await updateContentJob(enriched,{status:'quality-check',item:enriched,draft,evidenceDossier,nextAttemptAt:0,lastError:null});
  const date=algeriaDate();
  await assertDistinctHeadline(a.headline,a.hook,a.summary,a.review);
