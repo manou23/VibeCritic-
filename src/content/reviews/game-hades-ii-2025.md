@@ -10,7 +10,6 @@ type: game
 date: 2026-11-14
 releaseDate: "2025-09-25"
 poster: "https://images.ctfassets.net/5owu3y35gz1g/2J66RQRNqhF3jK5dbPOt9h/6fe752a31a2b87715c56cd0612cbcaed/3840x2160_v1.0_KeyArt.png?h=2160&q=80&w=3840"
-backdrop: "https://images.ctfassets.net/5owu3y35gz1g/2J66RQRNqhF3jK5dbPOt9h/6fe752a31a2b87715c56cd0612cbcaed/3840x2160_v1.0_KeyArt.png?h=2160&q=80&w=3840"
 youtubeVideoId: "U8lJRcUeEMs"
 youtubeVideoTitle: "Hades II - v1.0 Launch Trailer"
 score: 8.7
@@ -44,7 +43,7 @@ genres:
   - "Roguelike"
   - "Role-playing (RPG)"
 creator: "Supergiant Games"
-sourceName: "Supergiant Games"
+sourceName: "Supergiant Games / GameSpot / PC Gamer / GamesRadar"
 sourceId: "hades-ii-2025"
 sourceUrl: "https://www.supergiantgames.com/games/hades-ii/"
 aiGenerated: false
@@ -113,6 +112,8 @@ gameStores:
 
 ### مراجع القراءة والتحقق
 
+- [Supergiant Games — Hades II FAQ](https://www.supergiantgames.com/blog/hades2-faq/): تاريخ إصدار 1.0 والمنصات الحالية وتواريخ نسخ PlayStation وXbox.
+- [Supergiant Games — Hades II Now on Xbox & PlayStation](https://www.supergiantgames.com/blog/hades-ii-now-on-xbox-and-playstation/): إطلاق نسخ PS5 وXbox في 14 أبريل 2026 والتحسينات المضافة.
 - [الإعلان الرسمي عن اكتمال الإصدار 1.0 ومحتواه](https://www.supergiantgames.com/blog/hades2-now-available/)
 - [صفحة Hades II الرسمية والمنصات المتاحة](https://www.supergiantgames.com/games/hades-ii/)
 - [مراجعة GameSpot](https://www.gamespot.com/reviews/hades-2-review-witching-hours/1900-6418231/)
