@@ -862,7 +862,7 @@ async function generateReview(item, stage=0, previousParts=[]){
      console.warn('قسم المراجعة أقصر من الحد؛ إعادة تصحيح واحدة عبر '+name+'.');
      const correctionPrompt=prompt+'\n\nتصحيح إلزامي واحد بسبب قصر المحاولة السابقة: أعد كتابة JSON نفسه، واجعل حقل review وحده 230 إلى 260 كلمة عربية فعلية و900 حرف على الأقل، في فقرتين إلى أربع فقرات مترابطة، دون عناوين أو حشو أو تكرار. لا تغيّر الحقائق ولا تخترع تفاصيل. التزم بالمفاتيح نفسها فقط. في المرحلتين الأولى والثانية أعد pros وcons كمصفوفتين فارغتين، وفي المرحلة الثالثة فقط أعد 3 نقاط قوة و2 تحفظات نقدية.';
      generated=await handlers[name](correctionPrompt);
-     parsed=validateGeneratedReview(generated,{stage});
+     parsed=validateGeneratedReview(normalizeInterimReviewLists(generated,stage),{stage});
     }else throw validationError;
    }
    transportSucceeded=true;
