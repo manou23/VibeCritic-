@@ -4,11 +4,10 @@ originalTitle: "Forza Horizon 6"
 youtubeVideoTitle: "Forza Horizon 6 - Official Launch Trailer"
 youtubeVideoId: "oYhaW-Vr4wg"
 poster: "https://img.youtube.com/vi/oYhaW-Vr4wg/maxresdefault.jpg"
-backdrop: "https://img.youtube.com/vi/oYhaW-Vr4wg/maxresdefault.jpg"
 headline: "اليابان تمنح فورزا هورايزن 6 أجمل ساحاتها حتى الآن، لكن الصيغة المألوفة لا تتحول إلى ثورة كاملة"
 hook: "أهم انتصار في Forza Horizon 6 ليس عدد السيارات وحده، بل أن اليابان تبدو مكاناً يستحق التجوال حتى عندما لا تكون متجهاً إلى سباق. المشكلة أن هذا العالم الجديد ما زال يعمل داخل قالب هورايزن المعروف."
-summary: "تنقل Playground Games مهرجان Horizon إلى اليابان في الجزء السادس، مع أكثر من 550 سيارة، وخريطة واسعة تجمع المدينة والطرق الجبلية والريف، وتدرج يبدأ باللاعب كسائح يسعى إلى دخول المهرجان وصناعة اسمه. صدرت اللعبة في 19 مايو 2026 على Xbox Series X|S والحاسب، مع إصدار PlayStation 5 لاحقاً خلال العام."
-verdict: "تقدم Forza Horizon 6 عالماً مفتوحاً رائعاً وقيادة ممتعة وتنوعاً جيداً في الأنشطة، وتستفيد من اليابان لتجديد الحماس البصري والثقافي للسلسلة. لكنها لا تعيد اختراع بنية الحملة، كما أن طوكيو تبدو أقل حيوية مما يوحي به اسمها. تقييم VibeCritic: 8.6 من 10."
+summary: "تنقل Playground Games مهرجان Horizon إلى اليابان في الجزء السادس، مع أكثر من 550 سيارة، وخريطة واسعة تجمع المدينة والطرق الجبلية والريف، وتدرج يبدأ باللاعب كسائح يسعى إلى دخول المهرجان وصناعة اسمه. صدرت اللعبة في 19 مايو 2026 على Xbox Series X|S والحاسب، مع تحديد 26 يناير 2027 موعداً لإصدار PlayStation 5."
+verdict: "تقدم Forza Horizon 6 عالماً مفتوحاً رائعاً وقيادة ممتعة وتنوعاً جيداً في الأنشطة، وتستفيد من اليابان لتجديد الحماس البصري والثقافي للسلسلة. لكنها لا تعيد اختراع بنية الحملة، كما أن طوكيو تبدو أقل حيوية مما يوحي به اسمها. نسخة PS5 لم تصدر بعد عند تاريخ هذه المراجعة؛ موعدها الرسمي 26 يناير 2027. تقييم VibeCritic: 8.6 من 10."
 reviewVersion: 1
 type: game
 date: 2026-11-16
@@ -93,7 +92,8 @@ rawgDevelopers:
 Forza Horizon 6 من أقوى أجزاء السلسلة من ناحية المكان والقيادة، واليابان تمنحها هوية بصرية وثقافية طال انتظارها. تنوع الطرق والسيارات والأنشطة يجعل العودة إلى العالم ممتعة، كما أن بعض التغييرات في التقدم والتخصيص تمنح التجربة نفساً جديداً. لكن الحملة لا تتغير جذرياً، وطوكيو لا تبدو دائماً بالحيوية التي تستحقها. إنها لعبة سباقات عالم مفتوح ممتازة، لا ثورة في النوع. تقييم VibeCritic: 8.6 من 10.
 
 ## مصادر التحقق
-- [Forza Support — FAQ](https://support.forza.net/hc/en-us/articles/48409181275539-Forza-Horizon-6-FAQ): تاريخ الإطلاق والمنصات وعدد السيارات.
+- [Forza Support — FAQ](https://support.forza.net/hc/en-us/articles/48409181275539-Forza-Horizon-6-FAQ): تاريخ الإطلاق على Xbox وPC وعدد السيارات.
+- [Forza Support — PS5 FAQ](https://support.forza.net/hc/en-us/articles/56161269430675-Forza-Horizon-6-on-PlayStation-5-FAQ): موعد إصدار PS5 الرسمي في 26 يناير 2027، وميزات النسخة.
 - [Forza.net — الإعلان الرسمي](https://forza.net/news/forza-horizon-6-coming-may-2026): تصميم اليابان والحملة والسيارات والخصائص.
 - [The Guardian — مراجعة Forza Horizon 6](https://www.theguardian.com/games/2026/may/19/forza-horizon-6-review-classic-open-world-racing-sim-roars-beautifully-into-japan): القيادة والخريطة وطوكيو والأنشطة.
 - [TechRadar — مراجعة Forza Horizon 6](https://www.techradar.com/gaming/forza-horizon-6-review): نقاط القوة والعيوب التقنية والحملة.
