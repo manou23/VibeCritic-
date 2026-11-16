@@ -18,7 +18,7 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
   return {action:'cycle-rest',retryAt:Number(previousCycle.nextStartAt),providerCalls:0};
  }
  // Avoid creating a duplicate review when an existing manual or assisted article covers this title.
- if(job&&adapters.isAlreadyPublished&&await adapters.isAlreadyPublished(job.item)){
+ if(job&&!job.fileWritten&&job.status!=='ready'&&adapters.isAlreadyPublished&&await adapters.isAlreadyPublished(job.item)){
   state.jobs[job.key]=transition(job,'abandoned',{lastError:'Skipped: an existing review already covers this title.'},now);
   await save();job=null;
  }
