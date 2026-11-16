@@ -45,6 +45,10 @@ assert.equal(deployChecks,2);
 assert.equal(fileWrites,1,'deployment retries must not rewrite an already committed article');
 assert.equal(state.jobs['series:1'].status,'published');
 assert.ok(saves>=7);
+const afterPublish=await runCycle({state,adapters,providers,now:now+7,persist:async()=>{saves++;}});
+assert.equal(afterPublish.action,'cycle-complete','only one article may be processed in a five-hour cycle');
+assert.equal(afterPublish.key,'series:1');
+assert.equal(aiCalls,3);
 // A failed provider is cooled down durably instead of being retried on every hourly cycle.
 const failureState=createState();let failedProviderCalls=0;
 const failureAdapters={
