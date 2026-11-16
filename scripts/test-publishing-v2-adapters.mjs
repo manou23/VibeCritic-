@@ -14,7 +14,7 @@ assert.equal(providers[1].dailyRequestLimit,3,'Cloudflare must remain below the 
 assert.equal(providers[1].dailyTokenLimit,9000);
 assert.ok(!providers.some(x=>x.id==='groq'),'Groq must stay excluded until a genuinely free model and plan are verified');
 assert.equal(providers[1].model,'@cf/meta/llama-3.3-70b-instruct-fp8-fast');
-assert.equal(providers[2].model,'google/gemma-4-26b-a4b-it:free');
+assert.equal(providers[2].model,'nvidia/nemotron-3.5-super-vl:free');
 assert.ok(providers.every(x=>x.free===true&&x.enabled===true));
 assert.equal(providers[0].model,'gemini-3.8-flash','retired Gemini default must be upgraded to the currently recommended model');
 assert.ok(!providers.some(x=>x.id==='openai'),'paid OpenAI must never enter the V2 free provider pool');
@@ -36,7 +36,7 @@ globalThis.fetch=async(url,options)=>{
   return new Response(JSON.stringify({success:true,result:{response:JSON.stringify(payload)},usage:{total_tokens:123}}),{status:200,headers:{'content-type':'application/json'}});
  }
  assert.match(String(url),/openrouter\.ai\/api\/v1\/chat\/completions/);
- assert.equal(body.model,'google/gemma-4-26b-a4b-it:free');
+ assert.deepEqual(body.models,['nvidia/nemotron-3.5-super-vl:free','google/gemma-4-26b-a4b-it:free']);
  assert.equal(body.response_format.type,'json_object');
  return new Response(JSON.stringify({choices:[{message:{content:JSON.stringify(payload)},finish_reason:'stop'}],usage:{total_tokens:456}}),{status:200,headers:{'content-type':'application/json'}});
 };
