@@ -34,6 +34,10 @@ globalThis.fetch=async(url,options)=>{
   assert.match(String(url),/api\.groq\.com\/openai\/v1\/chat\/completions/);
   assert.equal(body.model,'openai/gpt-oss-120b');
   assert.equal(Object.hasOwn(body,'reasoning'),false,'Groq API does not accept OpenRouter reasoning options');
+  assert.equal(body.max_completion_tokens,4096,'Groq GPT-OSS needs an explicit completion-token budget');
+  assert.equal(body.max_tokens,undefined,'use Groq max_completion_tokens instead of deprecated max_tokens');
+  assert.equal(body.reasoning_effort,'low','bound GPT-OSS reasoning tokens so JSON has room to complete');
+  assert.equal(body.include_reasoning,false,'do not include internal reasoning in the JSON response');
   assert.equal(options.headers.authorization,'Bearer test-key');
   return new Response(JSON.stringify({choices:[{message:{content:JSON.stringify(payload)},finish_reason:'stop'}],usage:{total_tokens:321}}),{status:200,headers:{'content-type':'application/json'}});
  }
