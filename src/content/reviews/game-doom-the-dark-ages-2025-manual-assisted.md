@@ -4,13 +4,12 @@ originalTitle: "DOOM: The Dark Ages"
 headline: "قتال أثقل ودرع يغير الإيقاع، لكن الابتعاد عن سرعة Eternal ليس مكسباً للجميع"
 hook: "تستبدل The Dark Ages جزءاً من خفة الحركة بفكرة الثبات والصد والهجوم المضاد؛ تغيير جريء يمنح السلسلة نكهة جديدة، لكنه قد يخيّب من أحب اندفاع Eternal."
 summary: "مقدمة زمنية لأحداث DOOM الحديثة، تضع Slayer في حرب شيطانية بطابع فانتازي مظلم مع درع المنشار وأسلحة ثقيلة ومواجهات واسعة."
-verdict: "دووم: العصور المظلمة يقدم مقدمة زمنية لأحداث DOOM الحديثة، تضع Slayer في حرب شيطانية بطابع فانتازي مظلم مع درع المنشار وأسلحة ثقيلة ومواجهات واسعة. وتظهر قوته في عناصره الأساسية، مع حدود واضحة في الإيقاع أو توزيع المسارات كما تفصل المراجعة. تقييم VibeCritic التحريري: 8.4/10."
+verdict: "تمنح The Dark Ages سلسلة DOOM قتالاً أثقل يتمحور حول درع المنشار والصد والهجوم المضاد، مع عالم فانتازي واسع وصوتيات قوية. لكن التغيير يقلل سرعة الحركة التي أحبها بعض لاعبي Eternal، كما أن السرد بسيط وبعض المواجهات تتكرر. تقييم VibeCritic التحريري: 8.4/10."
 reviewVersion: 1
 type: game
 date: 2026-11-15
 releaseDate: "2025-05-15"
 poster: "https://image.api.playstation.com/vulcan/ap/rnd/202501/1405/1893e77387eec1591406d71c98f8d4074b7c32664c3bf5af.jpg"
-backdrop: "https://image.api.playstation.com/vulcan/ap/rnd/202501/1405/1893e77387eec1591406d71c98f8d4074b7c32664c3bf5af.jpg"
 score: 8.4
 storyScore: 7.5
 visualsScore: 9.1
@@ -30,12 +29,10 @@ cons:
   - "بعض المواجهات الواسعة قد تتحول إلى إدارة حشود متشابهة"
   - "السرد السينمائي لا يمنح كل الشخصيات عمقاً متساوياً"
 tags: ["DOOM: The Dark Ages", "game", "VibeCritic", "2025"]
-genres: ["أكشن ومغامرة"]
+genres: ["تصويب منظور أول", "أكشن", "خيال فانتازي"]
 sourceName: "Bethesda / id Software"
 sourceId: "manual-assisted-game-doom-the-dark-ages-2025-manual-assisted"
 sourceUrl: "https://doom.bethesda.net/en-US/the-dark-ages"
-externalVideoUrl: "https://doom.bethesda.net/en-US/the-dark-ages"
-externalVideoTitle: "DOOM: The Dark Ages — Official Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
 rawgSourceId: 983381
@@ -78,7 +75,7 @@ rawgDevelopers:
 
 ## الحكم النهائي
 
-تقييم 8.4/10 يعكس موازنة بين نقاط القوة المحددة ومواطن الضعف التي ظهرت في السرد أو الأنظمة أو الإيقاع. لا تعني الدرجة أن العمل كامل، ولا تُمنح المكافأة لمجرد الشعبية أو حجم الإنتاج.
+تقييم 8.4/10 يعكس نجاح اللعبة في تجديد القتال عبر الدرع والصد، وقوة الصورة والصوت، مع خصم بسبب بساطة السرد وتفاوت تنوع المواجهات. هي تجربة قوية لمن يتقبل إيقاعاً أثقل، لكنها ليست بديلاً مطابقاً لسرعة DOOM Eternal.
 
 ## مصادر التحقق
 
