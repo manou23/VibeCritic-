@@ -17,17 +17,18 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
  }else if(now>=Number(previousCycle.deadlineAt||0)){
   return {action:'cycle-rest',retryAt:Number(previousCycle.nextStartAt),providerCalls:0};
  }
- // A recovered draft already owns this cycle; do not enqueue another article after it publishes.
+ // Avoid creating a duplicate review when an existing manual or assisted article covers this title.
+ if(job&&adapters.isAlreadyPublished&&await adapters.isAlreadyPublished(job.item)){
+  state.jobs[job.key]=transition(job,'abandoned',{lastError:'Skipped: an existing review already covers this title.'},now);
+  await save();job=null;
+ }
+ // A recovered draft owns this cycle only after duplicate detection; do not enqueue
+ // another article after it publishes.
  if(job&&(['writing','quality-check','ready'].includes(job.status)||(job.status==='waiting'&&job.resumeTo==='writing'))){
   state.cycle.articleKey ||= job.key;
  }
  if(!job&&state.cycle.articleKey){
   return {action:'cycle-complete',key:state.cycle.articleKey,retryAt:Number(state.cycle.nextStartAt),providerCalls:0};
- }
- // Avoid creating a duplicate review when an existing manual or assisted article covers this title.
- if(job&&adapters.isAlreadyPublished&&await adapters.isAlreadyPublished(job.item)){
-  state.jobs[job.key]=transition(job,'abandoned',{lastError:'Skipped: an existing review already covers this title.'},now);
-  await save();job=null;
  }
  // Permanent evidence failures were previously deferred as generic research errors.
  // Retire those legacy checkpoints immediately so one unsupported title cannot block discovery.
