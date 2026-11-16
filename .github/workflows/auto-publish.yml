@@ -10,8 +10,8 @@ on:
         type: boolean
         default: false
   schedule:
-    # One article per run, every 12 hours: 03:17 and 15:17 Algeria time (UTC+1).
-    - cron: '17 2,14 * * *'
+    # Advance one saved article section each hour; three successful stages are required before publication.
+    - cron: '17 * * * *'
   push:
     branches: [main]
     paths:
