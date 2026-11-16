@@ -1,0 +1,93 @@
+{
+  "version": 2,
+  "updatedAt": "2026-11-16T15:02:41.729Z",
+  "jobs": {
+    "series:254630": {
+      "key": "series:254630",
+      "item": {
+        "type": "series",
+        "id": "254630",
+        "name": "12 12 12",
+        "originalTitle": "12 12 12",
+        "overview": "A heist takes 12 months to plan, 12 hours to execute—and a thief not caught within 12 days won't be caught at all. Across three pulse-pounding timelines, an FBI agent and a career criminal face off in a deadly game of cat and mouse through Europe.",
+        "date": "2026-11-12",
+        "poster": "https://image.tmdb.org/t/p/w780/8q6BvFQuKM1Rud4E9NQDaMGy9EL.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/tjy25xpiFeo2gahl7N0hoxbRtG7.jpg",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/254630",
+        "popularity": 26
+      },
+      "status": "waiting",
+      "stage": 0,
+      "parts": [],
+      "evidence": {
+        "title": "12 12 12",
+        "originalTitle": "12 12 12",
+        "type": "series",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/254630",
+        "sourceId": "series:254630",
+        "releaseDate": "2026-11-12",
+        "overview": "A heist takes 12 months to plan, 12 hours to execute—and a thief not caught within 12 days won't be caught at all. Across three pulse-pounding timelines, an FBI agent and a career criminal face off in a deadly game of cat and mouse through Europe.",
+        "poster": "https://image.tmdb.org/t/p/w780/8q6BvFQuKM1Rud4E9NQDaMGy9EL.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/tjy25xpiFeo2gahl7N0hoxbRtG7.jpg",
+        "genres": [
+          "Action & Adventure",
+          "Crime",
+          "Drama"
+        ],
+        "platforms": [],
+        "cast": [
+          "Anthony Mackie",
+          "Jamie Dornan",
+          "Jack Kesy",
+          "Agathe Rousselle",
+          "Sallie Harmsen",
+          "Julius Feldmeier",
+          "Jeanne Balibar",
+          "Kali Reis"
+        ],
+        "crew": [],
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/254630",
+            "extract": "A heist takes 12 months to plan, 12 hours to execute—and a thief not caught within 12 days won't be caught at all. Across three pulse-pounding timelines, an FBI agent and a career criminal face off in a deadly game of cat and mouse through Europe."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/12_12_12",
+            "extract": "12 12 12 is an American heist television series created by Jim Keeble and Dudi Appleton. It stars Anthony Mackie and Jamie Dornan. The series premiered on November 13, 2026 and received mixed reviews from critics."
+          }
+        ],
+        "metadata": {
+          "rating": 5.885,
+          "votes": 26
+        }
+      },
+      "attempts": 1,
+      "createdAt": "2026-11-16T15:02:39.964Z",
+      "updatedAt": "2026-11-16T15:02:39.964Z",
+      "nextAttemptAt": 1794842259964,
+      "lastError": "gemini: gemini HTTP 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n",
+      "resumeTo": "writing"
+    }
+  },
+  "providerUsage": {
+    "2026-11-16": {
+      "gemini": {
+        "requests": 1,
+        "tokens": 0,
+        "successes": 0,
+        "failures": 1
+      }
+    }
+  },
+  "providerCooldowns": {
+    "gemini": {
+      "failures": 1,
+      "until": 1794842259964,
+      "lastError": "gemini HTTP 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+    }
+  }
+}
