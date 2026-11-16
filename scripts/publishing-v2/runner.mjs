@@ -3,6 +3,12 @@ function candidate(items,state,counts={}) { const used=new Set(Object.keys(state
 export async function runCycle({state,adapters,providers,now=Date.now(),persist=async()=>{},publishedCounts={},articleLimits={}}) {
  if(!state||state.version!==2||!adapters) throw Error('Publisher v2 state and adapters are required.');
  const save=async()=>{state.updatedAt=new Date(now).toISOString();await persist(state);}; let job=selectActiveJob(state.jobs);
+ // Migrate legacy waiting checkpoints: a provider cooldown must not freeze the whole draft queue.
+ if(job?.status==='waiting'&&job.resumeTo==='writing'&&time(job.nextAttemptAt)>now+5*60*1000){
+  const cooldowns=state.providerCooldowns||{};
+  const hasCoolingProvider=Object.values(cooldowns).some(x=>time(x?.until)>now);
+  if(hasCoolingProvider){job={...job,nextAttemptAt:now+5*60*1000,updatedAt:new Date(now).toISOString()};state.jobs[job.key]=job;await save();}
+ }
  if(!job){const item=candidate(await adapters.discover(),state,publishedCounts);if(!item)return {action:'no-candidates',providerCalls:0};job=enqueue(state,item,now).job;await save();}
  let decision=cycleDecision(state,now);
  if(decision.action==='wait')return {action:'waiting',key:job.key,retryAt:decision.retryAt,providerCalls:0};
