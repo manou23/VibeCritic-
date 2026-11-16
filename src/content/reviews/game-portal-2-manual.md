@@ -3,7 +3,6 @@ title: "Portal 2"
 originalTitle: "Portal 2"
 youtubeVideoTitle: "Portal 2 — Teaser Trailer by Valve"
 youtubeVideoId: "tax4e4hBBZc"
-backdrop: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/620/header.jpg?t=1745363004"
 poster: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/620/header.jpg?t=1745363004"
 headline: "Portal 2 — ذكاء اللاعب هو المفتاح الحقيقي لكل غرفة اختبار"
 hook: "كل لغز يبدو مستحيلاً حتى تتوقف عن النظر إلى الجدران كحدود، وتبدأ في رؤيتها كطرق محتملة."
@@ -19,11 +18,12 @@ visualsScore: 9.0
 soundScore: 9.2
 pacingScore: 9.4
 reviewMode: review
-platforms: ["PC", "PlayStation 3", "Xbox 360"]
+platforms: ["PC", "Mac", "Linux", "PlayStation 3", "Xbox 360", "Nintendo Switch"]
 gameStores:
   - name: "Xbox Store"
   - name: "Steam"
   - name: "PlayStation Store"
+  - name: "Nintendo Store"
   - name: "Xbox 360 Store"
 pros:
   - "ألغاز مبنية على قواعد واضحة تسمح بحلول مبتكرة"
@@ -75,6 +75,7 @@ Portal 2 مثال قوي على أن تصميم الألغاز يمكن أن ي�
 ## مصادر التحقق
 - [Steam — Portal 2](https://store.steampowered.com/app/620/Portal_2/): المطور والناشر وتاريخ الإصدار والخصائص الرسمية والحملة التعاونية.
 - [Valve — Portal 2](https://www.valvesoftware.com/): معلومات المطور وأعماله.
+- [Nintendo — Portal: Companion Collection](https://www.nintendo.com/us/store/products/portal-companion-collection-switch/): توفر نسخة Nintendo Switch ضمن المجموعة.
 - [EA Partners / Valve — بيان التوزيع](https://s204.q4cdn.com/701424631/files/doc_news/2010/12/1/538558.pdf): تفاصيل نمط اللعب التعاوني وموعد الإصدار المعلن آنذاك.
 
 > مراجعة تحريرية مستقلة؛ بيانات الإصدار والخصائص مستندة إلى صفحة المتجر الرسمية، والتقييم حكم تحريري لـ VibeCritic.
