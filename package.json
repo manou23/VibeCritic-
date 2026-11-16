@@ -38,7 +38,8 @@
     "test:reasoning-quality": "node scripts/test-reasoning-quality.mjs",
     "test:scoring-rubric": "node scripts/test-scoring-rubric.mjs",
     "test:provider-cooldown": "node scripts/test-provider-cooldown.mjs",
-    "test:review-json": "node scripts/test-review-json.mjs"
+    "test:review-json": "node scripts/test-review-json.mjs",
+    "test:content-queue-resume": "node scripts/test-content-queue-resume.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",
