@@ -4,7 +4,7 @@ originalTitle: "Dept. Q"
 headline: "تحقيق بارد وشخصيات مكسورة تشد الحلقات، لكن بعض مسارات الفريق مألوفة"
 hook: "يعيد Dept. Q بناء لغز اختفاء قديم عبر محقق فظ وفريق غير متجانس؛ قوته في الكيمياء والتحقيق المتدرج، لا في ابتكار كل قواعد الجريمة."
 summary: "دراما جريمة بريطانية تدور حول محقق إدنبرة كارل مورك الذي يقود وحدة للقضايا الباردة مع فريق من المهمشين."
-verdict: "القسم كيو يقدم دراما جريمة بريطانية تدور حول محقق إدنبرة كارل مورك الذي يقود وحدة للقضايا الباردة مع فريق من المهمشين. وتظهر قوته في عناصره الأساسية، مع حدود واضحة في الإيقاع أو توزيع المسارات كما تفصل المراجعة. تقييم VibeCritic التحريري: 8.2/10."
+verdict: "يقدم Dept. Q لغزاً جنائياً متدرجاً تقوده شخصية كارل مورك وفريق غير متجانس، ويستفيد من أداء ماثيو غود وأجواء إدنبرة الباردة. لكنه يعتمد أحياناً على قوالب مألوفة ويطيل بعض مراحل الكشف، كما لا تتساوى المسارات الشخصية في العمق. تقييم VibeCritic التحريري: 8.2/10."
 reviewVersion: 1
 type: series
 date: 2026-11-15
@@ -16,7 +16,6 @@ soundScore: 8.2
 pacingScore: 8.1
 reviewMode: review
 poster: "https://resizing.flixster.com/FAMo-G-l4mYgARjPYqo32w2E-vg%3D/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNmM1OTA3NzYtNmNlMy00ZWJjLTgyNDUtOWMyZjU3OGIwZTY2LmpwZw%3D%3D"
-backdrop: "https://resizing.flixster.com/FAMo-G-l4mYgARjPYqo32w2E-vg%3D/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNmM1OTA3NzYtNmNlMy00ZWJjLTgyNDUtOWMyZjU3OGIwZTY2LmpwZw%3D%3D"
 pros:
   - "لغز مركزي يتكشف تدريجياً مع توازن جيد بين الأدلة والشخصيات"
   - "ماثيو غود يقود العمل بحضور متوتر ومقنع"
@@ -30,8 +29,6 @@ genres: ["دراما"]
 sourceName: "Netflix Media Center"
 sourceId: "manual-assisted-series-dept-q-2025-manual-assisted"
 sourceUrl: "https://media.netflix.com/en/only-on-netflix/81487660"
-externalVideoUrl: "https://www.netflix.com/title/81487660"
-externalVideoTitle: "Dept. Q — Official Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
 youtubeVideoId: "72hK6FUmm8o"
@@ -65,7 +62,7 @@ Dept. Q مسلسل جريمة متين يقوده أداء مركزي قوي و�
 
 ## الحكم النهائي
 
-تقييم 8.2/10 يعكس موازنة بين نقاط القوة المحددة ومواطن الضعف التي ظهرت في السرد أو الأنظمة أو الإيقاع. لا تعني الدرجة أن العمل كامل، ولا تُمنح المكافأة لمجرد الشعبية أو حجم الإنتاج.
+تقييم 8.2/10 يكافئ تماسك التحقيق وأداء ماثيو غود وبناء الفريق والأجواء، مع خصم بسبب مألوفية بعض الأنماط وإطالة بعض الالتفافات وتفاوت عمق الشخصيات. إنه مسلسل جريمة متين، لا تجديد جذري للنوع.
 
 ## مصادر التحقق
 
