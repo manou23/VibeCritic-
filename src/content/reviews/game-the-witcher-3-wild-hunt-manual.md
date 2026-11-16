@@ -2,7 +2,7 @@
 title: "ذا ويتشر 3: وايلد هانت"
 originalTitle: "The Witcher 3: Wild Hunt"
 youtubeVideoTitle: "The Witcher 3: Wild Hunt — Official Launch Trailer"
-youtubeVideoId: "XHrskHf958"
+youtubeVideoId: "XHrskkHf958"
 poster: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/292030/header.jpg"
 headline: "رحلة جيرالت تتفوق في كتابة المهام، لكنها لا تخلو من ترهل العالم المفتوح"
 hook: "قوة The Witcher 3 ليست في اتساع خريطتها وحده، بل في القصص الصغيرة التي تجعل قرىها وشخصياتها تبدو وكأنها تملك حياة خارج مهمة اللاعب."
