@@ -1,4 +1,5 @@
 name: Generate reviews and publish
+# Staged editorial pipeline: one substantial section per hourly run; publish only after all three pass.
 # Re-run poster, backdrop and official-trailer enrichment after media source setup.
 # Review content is versioned independently; existing reviews follow reviewVersion: 2.
 on:
