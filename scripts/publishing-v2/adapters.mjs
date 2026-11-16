@@ -62,25 +62,32 @@ async function wiki(title){
 }
 async function collectEvidence(item){
  let data={},sourceUrl=item.sourceUrl,poster=item.poster,backdrop=item.backdrop,genres=item.genres||[],platforms=item.platforms||[],cast=[],crew=[],releaseDate=item.date||'';
+ let youtubeVideoId='',youtubeVideoTitle='',externalVideoUrl='',externalVideoTitle='';
  if(item.type==='game'){
   if(!env.RAWG_API_KEY)throw new Error('RAWG_API_KEY missing');
   data=await get('https://api.rawg.io/api/games/'+item.id+'?key='+encodeURIComponent(env.RAWG_API_KEY));
   sourceUrl='https://rawg.io/games/'+(data.slug||item.id);poster=data.background_image||poster;backdrop=data.background_image_additional||poster;
   genres=arr(data.genres).map(x=>x.name).filter(Boolean);platforms=arr(data.platforms).map(x=>x.platform?.name).filter(Boolean);releaseDate=data.released||releaseDate;
+  const clips=await get('https://api.rawg.io/api/games/'+item.id+'/movies?key='+encodeURIComponent(env.RAWG_API_KEY)).catch(()=>({results:[]}));
+  const clip=arr(clips.results).find(x=>{const candidate=x?.data?.max||x?.data?.['480'];try{const u=new URL(candidate);return u.protocol==='https:'&&u.hostname==='media.rawg.io';}catch{return false;}});
+  if(clip){externalVideoUrl=clip.data.max||clip.data['480'];externalVideoTitle=clean(clip.name||('مقطع من '+item.name));}
  }else{
   const kind=item.type==='series'?'tv':'movie';
-  data=await get(tmdb(kind+'/'+item.id,{language:'en-US',append_to_response:'credits'}));
+  data=await get(tmdb(kind+'/'+item.id,{language:'en-US',append_to_response:'credits,videos'}));
   sourceUrl='https://www.themoviedb.org/'+kind+'/'+item.id;
   poster=data.poster_path?'https://image.tmdb.org/t/p/w780'+data.poster_path:poster;
   backdrop=data.backdrop_path?'https://image.tmdb.org/t/p/w1280'+data.backdrop_path:backdrop;
   genres=arr(data.genres).map(x=>x.name).filter(Boolean);releaseDate=data.release_date||data.first_air_date||releaseDate;
   cast=arr(data.credits?.cast).slice(0,8).map(x=>x.name).filter(Boolean);
   crew=arr(data.credits?.crew).filter(x=>['Director','Creator'].includes(x.job)).slice(0,5).map(x=>x.name).filter(Boolean);
+  const trailers=arr(data.videos?.results).filter(v=>v.site==='YouTube'&&v.type==='Trailer'&&/^[A-Za-z0-9_-]{11}$/.test(v.key||''));
+  const trailer=trailers.find(v=>v.official===true)||trailers[0];
+  if(trailer){youtubeVideoId=trailer.key;youtubeVideoTitle=clean(trailer.name||('المقطع الرسمي لـ '+item.name));}
  }
  if(!poster?.startsWith('https://'))throw new Error('No HTTPS poster available');
  const independent=await wiki(item.name),primary={name:item.sourceName,url:sourceUrl,extract:clean(item.overview||data.overview||data.description_raw||'').slice(0,4000)};
  if(primary.extract.length<80)throw new Error('Primary source metadata is too thin');
- return {title:item.name,originalTitle:item.originalTitle||data.original_title||data.original_name||'',type:item.type,sourceName:item.sourceName,sourceUrl,sourceId:item.type+':'+item.id,releaseDate,overview:primary.extract,poster,backdrop:backdrop||poster,genres,platforms,cast,crew,sources:[primary,independent],metadata:{rating:data.vote_average||data.rating||null,votes:data.vote_count||data.ratings_count||0}};
+ return {title:item.name,originalTitle:item.originalTitle||data.original_title||data.original_name||'',type:item.type,sourceName:item.sourceName,sourceUrl,sourceId:item.type+':'+item.id,releaseDate,overview:primary.extract,poster,backdrop:backdrop||poster,genres,platforms,cast,crew,youtubeVideoId,youtubeVideoTitle,externalVideoUrl,externalVideoTitle,sources:[primary,independent],metadata:{rating:data.vote_average||data.rating||null,votes:data.vote_count||data.ratings_count||0}};
 }
 function prompt(job,stage){
  const e=job.evidence,prior=job.parts.map(p=>p.text).join('\n\n');
@@ -88,8 +95,8 @@ function prompt(job,stage){
  'العمل: '+e.title+' | النوع: '+e.type+' | تاريخ الإصدار: '+(e.releaseDate||'غير مثبت'),
  'الأدلة: '+JSON.stringify({overview:e.overview,genres:e.genres,platforms:e.platforms,cast:e.cast,crew:e.crew,metadata:e.metadata,sources:e.sources.map(s=>({name:s.name,url:s.url,extract:s.extract}))}),
  'ما كتب سابقاً، لا تكرره: '+(prior||'لا شيء'),
- 'اكتب القسم '+stage+' من 3، واستهدف 265 كلمة عربية فعلية (الحد الأدنى 250 والحد الأعلى 280) لتجنب النقص. لا تختصر الإجابة. المرحلة 1: الفكرة والسياق والسرد. المرحلة 2: العناصر الفنية/التصميم والإيقاع وحدود الأدلة. المرحلة 3: تركيب نقدي نهائي وحكم واضح لا يكرر السابق.',
- 'أعد JSON فقط: review,scores,pros,cons,verdict. scores تحوي story,visuals,sound,pacing من 0 إلى 10. في المرحلة 3 فقط اكتب 3 نقاط قوة و2 تحفظات محددة وverdict من 50 إلى 90 كلمة. قبل ذلك اجعل القوائم والحكم فارغة.',
+ 'اكتب القسم '+stage+' من 3، واستهدف 265 كلمة عربية فعلية (الحد الأدنى 250 والحد الأعلى 280). ابدأ review بعنوان Markdown واضح: '+(e.type==='game'?['## القصة والعالم والشخصيات','## أسلوب اللعب والتصميم والإيقاع','## التقييم النقدي وحدود التجربة'][stage-1]:['## القصة والشخصيات والبناء','## الإخراج والصورة والصوت والإيقاع','## التقييم النقدي وحدود العمل'][stage-1])+'. المرحلة 1 تشرح الفكرة والشخصيات دون حرق؛ المرحلة 2 تحلل الأنظمة أو الإخراج والعناصر الفنية والإيقاع؛ المرحلة 3 تضيف موازنة نقدية جديدة ولا تعيد صياغة القسمين السابقين.',
+ 'أعد JSON فقط: review,scores,pros,cons,verdict. scores تحوي story,visuals,sound,pacing من 0 إلى 10. في المرحلة 3 فقط اكتب 3 نقاط قوة و2 تحفظات محددة وverdict من 50 إلى 90 كلمة. قبل ذلك اجعل القوائم والحكم فارغة. لا تكتب نصاً خارج review.',
  'لا تحول غياب البيانات إلى ادعاءات. لا تستخدم التوقعات كحقائق. اجعل كل حكم مرتبطاً بما ورد في الأدلة.'].join('\n\n');
 }
 async function modelCall(provider,text){
@@ -124,7 +131,7 @@ async function publishFile(a,job){
  const filename=a.type+'-'+slug(a.title)+'-'+String(job.item.id).replace(/[^\w-]/g,'')+'.md',target=path.join(ROOT,filename);
  await fs.mkdir(ROOT,{recursive:true});
  try{await fs.access(target);throw new Error('Refusing to overwrite '+target);}catch(e){if(e.code!=='ENOENT')throw e;}
- const fm=['---','title: '+y(a.title),'originalTitle: '+y(a.originalTitle),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 5','reviewMode: review','date: '+a.date,'publishedAt: '+y(new Date().toISOString()),'type: '+a.type,'score: '+a.score,'storyScore: '+a.storyScore,'visualsScore: '+a.visualsScore,'soundScore: '+a.soundScore,'pacingScore: '+a.pacingScore,'sourceName: '+y(a.sourceName),'sourceId: '+y(a.sourceId),'sourceUrl: '+y(a.sourceUrl),'aiGenerated: true','editorialWorkflow: automated','poster: '+y(a.poster),'backdrop: '+y(a.backdrop),'platforms:'+yamlList(a.platforms),'genres:'+yamlList(a.genres),'cast:'+yamlList(a.cast),'crew:'+yamlList(a.crew),'pros:'+yamlList(a.pros),'cons:'+yamlList(a.cons),'tags:'+yamlList(a.tags)].join('\n');
+ const fm=['---','title: '+y(a.title),'originalTitle: '+y(a.originalTitle),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 5','reviewMode: review','date: '+a.date,'publishedAt: '+y(new Date().toISOString()),'type: '+a.type,'score: '+a.score,'storyScore: '+a.storyScore,'visualsScore: '+a.visualsScore,'soundScore: '+a.soundScore,'pacingScore: '+a.pacingScore,'sourceName: '+y(a.sourceName),'sourceId: '+y(a.sourceId),'sourceUrl: '+y(a.sourceUrl),...(a.youtubeVideoId?['youtubeVideoId: '+y(a.youtubeVideoId),'youtubeVideoTitle: '+y(a.youtubeVideoTitle)]:[]),...(a.externalVideoUrl?['externalVideoUrl: '+y(a.externalVideoUrl),'externalVideoTitle: '+y(a.externalVideoTitle)]:[]),'aiGenerated: true','editorialWorkflow: automated','poster: '+y(a.poster),'backdrop: '+y(a.backdrop),'platforms:'+yamlList(a.platforms),'genres:'+yamlList(a.genres),'cast:'+yamlList(a.cast),'crew:'+yamlList(a.crew),'pros:'+yamlList(a.pros),'cons:'+yamlList(a.cons),'tags:'+yamlList(a.tags)].join('\n');
  await fs.writeFile(target,fm+'\n---\n\n'+a.body+'\n\n> مراجعة تحريرية مبنية على المصادر المذكورة، ولا تدّعي تجربة مباشرة.\n',{flag:'wx',encoding:'utf8'});
  return {path:target.replace(/\\/g,'/')};
 }
@@ -156,7 +163,11 @@ export function createPublishingAdapters(){return {
   const p=job.parts.map(x=>parseJsonResponse(x.text)),last=p[p.length-1],e=job.evidence;
   const dims={storyScore:Number(last.scores.story),visualsScore:Number(last.scores.visuals),soundScore:Number(last.scores.sound),pacingScore:Number(last.scores.pacing)};
   const score=Math.round((dims.storyScore*.3+dims.visualsScore*.25+dims.soundScore*.2+dims.pacingScore*.25)*10)/10;
-  return {title:e.title,originalTitle:e.originalTitle,headline:'مراجعة نقدية لـ '+e.title,hook:'تحليل يستند إلى بيانات منشورة ومصادر مستقلة، دون ادعاء تجربة مباشرة.',summary:e.overview.slice(0,700),verdict:clean(last.verdict),type:e.type,sourceId:e.sourceId,sourceName:e.sourceName,sourceUrl:e.sourceUrl,date:new Date().toISOString().slice(0,10),score,...dims,pros:arr(last.pros).map(clean),cons:arr(last.cons).map(clean),sources:e.sources,poster:e.poster,backdrop:e.backdrop,platforms:e.platforms,genres:e.genres,cast:e.cast,crew:e.crew,tags:e.genres,body:p.map(x=>clean(x.review)).join('\n\n')+'\n\n### المصادر والمراجع\n\n'+e.sources.map(x=>'- ['+x.name+']('+x.url+')').join('\n')};
+  const headings=e.type==='game'?['القصة والعالم والشخصيات','أسلوب اللعب والتصميم والإيقاع','التقييم النقدي وحدود التجربة']:['القصة والشخصيات والبناء','الإخراج والصورة والصوت والإيقاع','التقييم النقدي وحدود العمل'];
+  const sections=p.map((x,i)=>'## '+headings[i]+'\n\n'+clean(x.review).replace(/^##\s+[^\n]+\n?/,'').trim());
+  const firstSection=clean(p[0]?.review||'').replace(/^##\s+[^\n]+\n?/,'').trim();
+  const summary=(firstSection.split(/(?<=[.!؟])\s+/).slice(0,2).join(' ').slice(0,420)||clean(e.overview).slice(0,420));
+  return {title:e.title,originalTitle:e.originalTitle,headline:'مراجعة نقدية: '+e.title+' بين نقاط القوة وحدود التجربة',hook:summary,summary,verdict:clean(last.verdict),type:e.type,sourceId:e.sourceId,sourceName:e.sourceName,sourceUrl:e.sourceUrl,date:new Date().toISOString().slice(0,10),score,...dims,pros:arr(last.pros).map(clean),cons:arr(last.cons).map(clean),sources:e.sources,poster:e.poster,backdrop:e.backdrop,platforms:e.platforms,genres:e.genres,cast:e.cast,crew:e.crew,tags:e.genres,youtubeVideoId:e.youtubeVideoId,youtubeVideoTitle:e.youtubeVideoTitle,externalVideoUrl:e.externalVideoUrl,externalVideoTitle:e.externalVideoTitle,body:sections.join('\n\n')+'\n\n### المصادر والمراجع\n\n'+e.sources.map(x=>'- ['+x.name+']('+x.url+')').join('\n')};
  },
  publishFile,verifyDeployment
 };}

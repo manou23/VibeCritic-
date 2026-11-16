@@ -33,6 +33,8 @@ const hasFinalRating = !isPreview && !isLimited;
 const scoreBand = hasFinalRating ? scoreBandFor(d.score) : null;
 const youtubeVideoId = /^[A-Za-z0-9_-]{11}$/.test(d.youtubeVideoId || '') ? d.youtubeVideoId : null;
 const youtubeVideoTitle = d.youtubeVideoTitle || `المقطع الرسمي لـ ${d.title}`;
+const externalVideoUrl = /^https:\/\/media\.rawg\.io\//.test(d.externalVideoUrl || '') ? d.externalVideoUrl : null;
+const externalVideoTitle = d.externalVideoTitle || `مقطع فيديو لـ ${d.title}`;
 const typeKeyword = d.type === 'game' ? 'لعبة' : d.type === 'series' ? 'مسلسل' : 'فيلم';
 const cleanKeyword = (value) => String(value || '').replace(/[<>"']/g, '').replace(/\s+/g, ' ').trim();
 const reviewKeywords = [...new Set([
@@ -105,15 +107,20 @@ const reviewStructuredData = {
         <p class="eyebrow">المدخل النقدي</p>
         <p>{d.hook || d.headline}</p>
       </section>
-      {youtubeVideoId && <section class="article-video" aria-labelledby="article-video-title">
-        <div class="article-video-heading"><p class="eyebrow">من YouTube الرسمي</p><h2 id="article-video-title">شاهد المقطع</h2></div>
-        <div class="article-video-frame" data-youtube-facade data-video-id={youtubeVideoId} data-video-title={youtubeVideoTitle}>
-          <button class="youtube-facade-button" type="button" aria-label="تشغيل المقطع">
-            <img src={optimizeImage(d.backdrop || d.poster || '', 'backdrop')} alt="" loading="lazy" decoding="async" width="480" height="360"/>
-            <span class="youtube-play-icon" aria-hidden="true">▶</span>
-          </button>
+      {(youtubeVideoId || externalVideoUrl) && <section class="article-video" aria-labelledby="article-video-title">
+        <div class="article-video-heading"><p class="eyebrow">{youtubeVideoId ? 'من YouTube الرسمي' : 'مقطع من بيانات RAWG'}</p><h2 id="article-video-title">شاهد المقطع</h2></div>
+        <div class="article-video-frame">
+          {youtubeVideoId ? <div data-youtube-facade data-video-id={youtubeVideoId} data-video-title={youtubeVideoTitle}>
+            <button class="youtube-facade-button" type="button" aria-label="تشغيل المقطع">
+              <img src={optimizeImage(d.backdrop || d.poster || '', 'backdrop')} alt="" loading="lazy" decoding="async" width="480" height="360"/>
+              <span class="youtube-play-icon" aria-hidden="true">▶</span>
+            </button>
+          </div> : <video controls preload="none" playsinline poster={optimizeImage(d.backdrop || d.poster || '', 'backdrop')} aria-label={externalVideoTitle}>
+            <source src={externalVideoUrl} type="video/mp4"/>
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>}
         </div>
-        <p class="article-video-note">لن يتم تحميل مشغل YouTube أو الاتصال به إلا عند النقر على التشغيل.</p>
+        <p class="article-video-note">{youtubeVideoId ? 'لن يتم تحميل مشغل YouTube أو الاتصال به إلا عند النقر على التشغيل.' : 'يبدأ تحميل الفيديو عند تشغيله فقط.'}</p>
       </section>}
       <section class="article-summary">
         <p class="eyebrow">عن العمل</p>
