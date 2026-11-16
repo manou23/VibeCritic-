@@ -37,6 +37,7 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_FREE_TIER_ONLY: ${{ vars.CLOUDFLARE_FREE_TIER_ONLY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_FREE_TIER_ONLY: ${{ vars.GROQ_FREE_TIER_ONLY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           CLOUDFLARE_MODEL: ${{ vars.CLOUDFLARE_MODEL }}
