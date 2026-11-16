@@ -296,3 +296,4 @@ jobs:
               done
             fi
           fi
+# Manual recovery trigger: commits marked [generate-reviews] advance one saved editorial stage.
