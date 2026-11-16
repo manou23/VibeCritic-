@@ -49,7 +49,7 @@ crew:
   - "Greig Fraser"
   - "Joe Walker"
   - "Hans Zimmer"
-sourceName: "TMDB"
+sourceName: "Warner Bros. / Legendary Pictures / RogerEbert.com / The Guardian / Screen Daily / Metacritic"
 sourceId: "693134"
 sourceUrl: "https://www.themoviedb.org/movie/693134"
 aiGenerated: false
@@ -74,3 +74,12 @@ aiGenerated: false
 تظهر أهمية هذا التوتر أيضاً في طريقة تصوير الفريمن. فالفيلم يمنحهم حضوراً جماعياً وثقافياً لا يختزلهم في قوة عسكرية يحتاجها البطل، لكنه يضعهم في الوقت نفسه أمام خطر أن تتحول معتقداتهم إلى أداة في مشروع أكبر منهم. هنا تبرز مفارقة الاقتباس: المشاهد الملحمية تمنح الثورة جاذبية بصرية، بينما يطلب المسار الدرامي من المتلقي أن يشكك في الصورة البطولية التي تصنعها. هذا التناقض هو ما يرفع الفيلم فوق مستوى الاستعراض، لكنه يحتاج إلى مساحة أوسع لبعض الأصوات الفردية كي لا تصبح الجماعة مجرد كتلة رمزية في مسار بول.
 
 ومن الناحية البنيوية، يتعامل الفيلم مع التوسع بوصفه تصعيداً في المسؤولية لا زيادة في عدد المواقع فقط. كل انتصار يغير حجم التوقعات حول الشخصية المركزية، وكل خطوة نحو القيادة تجعل التراجع أصعب. هذا البناء يمنح النهاية وزناً سياسياً، لكنه يجعل بعض المحطات الانتقالية سريعة؛ فالمشاهد ينتقل أحياناً من قرار إلى نتيجة قبل أن يرى كامل الثمن الشخصي الذي دفعته الشخصيات. لو أتيح وقت أطول لبعض هذه اللحظات لكان التوازن بين الأسطورة والإنسان أكثر إحكاماً. ومع ذلك، يبقى هذا الاختصار مفهوماً ضمن فيلم يختار تقديم فصل روائي واسع في صيغة سينمائية محددة.
+
+## مصادر التحقق والمراجعات النقدية
+- [RogerEbert.com — Dune: Part Two](https://www.rogerebert.com/reviews/dune-part-two-movie-review-2024): قراءة نقدية للسياسة والسلطة والصورة والصوت والأداء.
+- [The Guardian — Dune: Part Two Review](https://www.theguardian.com/film/2024/mar/03/dune-part-two-review-denis-villeneuve-timothee-chalamet-zendaya-rebecca-ferguson-austin-butler-sci-fi-sequel-is-jaw-on-the-floor-spectacular): تحليل الملحمة بصرياً وسياسياً مع ملاحظات على توزيع الشخصيات.
+- [Screen Daily — Dune: Part Two](https://www.screendaily.com/reviews/dune-part-two-review/5190617.article): تقييم التصوير وتصميم الإنتاج والموسيقى وتوازن لحظات الشخصيات مع مشاهد الحركة.
+- [Metacritic — Dune: Part Two](https://www.metacritic.com/movie/dune-part-two/critic-reviews/): تجميع المراجعات النقدية، منفصل عن درجة VibeCritic.
+- [Rotten Tomatoes — Dune: Part Two](https://www.rottentomatoes.com/m/dune_part_two): استقبال النقاد والجمهور وبيانات الإصدار.
+
+> مراجعة تحريرية يدوية مستقلة، مبنية على تحليل الفيلم ومراجعات منشورة؛ لا تدّعي مشاهدة جديدة أو قياساً لتقييم الجمهور.
