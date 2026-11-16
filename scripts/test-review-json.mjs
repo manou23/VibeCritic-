@@ -20,5 +20,5 @@ assert.throws(
 );
 
 assert.match(REVIEW_OUTPUT_CONTRACT, /scores, pros, cons, review/);
-assert.match(REVIEW_OUTPUT_CONTRACT, /90 إلى 140 كلمة/);
+assert.match(REVIEW_OUTPUT_CONTRACT, /150 إلى 250 كلمة/);
 console.log('Review JSON parser and output-contract tests passed.');
