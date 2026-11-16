@@ -4,7 +4,7 @@ originalTitle: "The Studio"
 headline: "هجاء ذكي لصناعة السينما من الداخل، لكنه يراهن أحياناً على كثافة الإشارات أكثر من تطور الشخصيات"
 hook: "يضحك The Studio على صناعة تريد الفن والربح والهيبة في الوقت نفسه؛ قوته في سرعة الملاحظة والأداء الجماعي، وحده أنه قد يغرق في ضيوفه وإشاراته."
 summary: "كوميديا من سيث روغن وإيفان غولدبرغ عن مدير استوديو جديد يحاول إنقاذ شركة أفلام وسط صراعات الفنانين والتنفيذيين والسوق."
-verdict: "ذا ستوديو يقدم كوميديا من سيث روغن وإيفان غولدبرغ عن مدير استوديو جديد يحاول إنقاذ شركة أفلام وسط صراعات الفنانين والتنفيذيين والسوق. وتظهر قوته في عناصره الأساسية، مع حدود واضحة في الإيقاع أو توزيع المسارات كما تفصل المراجعة. تقييم VibeCritic التحريري: 8.5/10."
+verdict: "يسخر The Studio من التناقض بين الفن والربح والهيبة داخل هوليوود، ويستفيد من طاقم جماعي سريع وضيوف شرف كثيرين. لكن كثافة الإشارات وضيوف الشرف قد تزاحم تطور الشخصيات الأساسية، وبعض النكات تحتاج معرفة مسبقة بالصناعة. تقييم VibeCritic التحريري: 8.5/10."
 reviewVersion: 1
 type: series
 date: 2026-11-15
@@ -16,7 +16,6 @@ soundScore: 8.4
 pacingScore: 8.7
 reviewMode: review
 poster: "https://image.tmdb.org/t/p/original/3mIO4QIAjouVdCbxFUvygoywYWF.jpg"
-backdrop: "https://image.tmdb.org/t/p/original/3mIO4QIAjouVdCbxFUvygoywYWF.jpg"
 pros:
   - "السخرية تنبع من تناقضات صناعة الأفلام لا من نكات منفصلة"
   - "طاقم جماعي يخلق إيقاعاً كوميدياً سريعاً"
@@ -26,12 +25,10 @@ cons:
   - "بعض النكات تفترض معرفة واسعة بأسماء الصناعة"
   - "الإيقاع السريع قد يترك لحظات إنسانية دون مساحة"
 tags: ["The Studio", "series", "VibeCritic", "2025"]
-genres: ["دراما"]
+genres: ["كوميديا", "هجاء", "دراما"]
 sourceName: "Apple TV Press"
 sourceId: "manual-assisted-series-the-studio-2025-manual-assisted"
 sourceUrl: "https://www.apple.com/tv-pr/originals/the-studio/"
-externalVideoUrl: "https://www.apple.com/tv-pr/news/2025/03/apple-tv-unveils-trailer-for-the-highly-anticipated-comedy-the-studio-starring-seth-rogen-catherine-ohara-kathryn-hahn-ike-barinholtz-and-chase-sui-wonders/"
-externalVideoTitle: "The Studio — Official Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
 youtubeVideoId: "EIQuE7JGXU8"
@@ -65,7 +62,7 @@ youtubeVideoTitle: "Official Trailer"
 
 ## الحكم النهائي
 
-تقييم 8.5/10 يعكس موازنة بين نقاط القوة المحددة ومواطن الضعف التي ظهرت في السرد أو الأنظمة أو الإيقاع. لا تعني الدرجة أن العمل كامل، ولا تُمنح المكافأة لمجرد الشعبية أو حجم الإنتاج.
+تقييم 8.5/10 يكافئ ذكاء السخرية والأداء الجماعي وسرعة الإيقاع، مع خصم بسبب ازدحام ضيوف الشرف والإشارات وتفاوت عمق الشخصيات. ينجح المسلسل عندما يجعل صناعة السينما نفسها مصدر الكوميديا، ويضعف عندما تتحول الحلقة إلى استعراض أسماء أكثر من كونها تطوراً للشخصيات.
 
 ## مصادر التحقق
 
