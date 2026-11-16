@@ -29,7 +29,7 @@ tags: ["Christopher Nolan", "Mystery", "Illusion", "Rivalry"]
 genres: ["دراما", "غموض", "خيال علمي"]
 cast: ["Hugh Jackman", "Christian Bale", "Michael Caine", "Scarlett Johansson"]
 crew: ["Christopher Nolan", "Jonathan Nolan", "Wally Pfister", "David Julyan"]
-sourceName: "VibeCritic Editorial"
+sourceName: "Warner Bros. / BFI / RogerEbert.com / The Guardian / Time Out / Metacritic"
 sourceId: "manual-movie-the-prestige-1124"
 sourceUrl: "https://www.themoviedb.org/movie/1124"
 aiGenerated: false
@@ -49,3 +49,14 @@ youtubeVideoId: "ijXruSzfGEc"
 The Prestige عمل ذكي في تصميم الخدعة وفي جعل المشاهد جزءاً من عملية تفسيرها. قوته لا تكمن فقط في الالتواء الأخير، بل في الطريقة التي يزرع بها موضوع التضحية داخل سلوك الشخصيات. ومع ذلك، لا تخلو الحبكة من لحظات حجب معلومات، ولا تمنح جميع الشخصيات العمق نفسه. تقييم 8.7/10 يضعه في خانة الأعمال الممتازة دون تحويل براعة المفاجأة إلى إعفاء من النقد.
 
 > مراجعة تحريرية يدوية مستقلة، وليست ادعاءً بتجربة مشاهدة جديدة أو بقياس آراء الجمهور.
+
+
+## مصادر التحقق والمراجعات النقدية
+- [BFI — The Prestige](https://www.bfi.org.uk/film/5ed8d2f9-837b-5aa4-b8a9-dd4cb7368c50/the-prestige): قراءة في التكرار والهوية والخداع، مع ملاحظة حول طول الفيلم.
+- [RogerEbert.com — The Prestige](https://www.rogerebert.com/reviews/the-prestige-2007): تحليل بنية الخدعة والالتواءات ومدى تماسك الكشف الأخير.
+- [The Guardian — The Prestige Review](https://www.theguardian.com/film/2006/nov/12/drama.sciencefictionandfantasy): مراجعة معاصرة للعرض تتناول التنافس والهوية والإيقاع والأداء.
+- [Time Out — The Prestige](https://www.timeout.com/movies/the-prestige-1): تحليل التنافس وبنية الغموض ومحدودية بعض المسارات العاطفية.
+- [Metacritic — The Prestige Critic Reviews](https://www.metacritic.com/movie/the-prestige/critic-reviews/): تجميع مراجعات النقاد، منفصل عن درجة VibeCritic.
+- [Rotten Tomatoes — The Prestige](https://www.rottentomatoes.com/m/prestige): ملخص استقبال النقاد وبيانات الفيلم.
+
+> مراجعة تحريرية يدوية مستقلة، تستند إلى تحليل الفيلم ومراجعات منشورة، ولا تنسخ متوسطات مواقع التجميع.
