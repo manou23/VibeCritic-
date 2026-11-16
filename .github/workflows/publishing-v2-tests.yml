@@ -2,7 +2,7 @@ name: Publishing Engine v2 core tests
 on:
   push:
     branches: [publisher-v2-rebuild]
-    paths: ['scripts/publishing-v2/**', 'scripts/test-publishing-v2.mjs', 'scripts/test-publishing-v2-runner.mjs', '.github/workflows/publishing-v2-tests.yml']
+    paths: ['scripts/publishing-v2/**', 'scripts/test-publishing-v2.mjs', 'scripts/test-publishing-v2-runner.mjs', 'scripts/test-publishing-v2-adapters.mjs', '.github/workflows/publishing-v2-tests.yml']
   pull_request:
     paths: ['scripts/publishing-v2/**', 'scripts/test-publishing-v2.mjs', 'scripts/test-publishing-v2-runner.mjs', '.github/workflows/publishing-v2-tests.yml']
 jobs:
@@ -18,4 +18,7 @@ jobs:
       - run: node --check scripts/test-publishing-v2-runner.mjs
       - run: node --check scripts/publishing-v2/store.mjs
       - run: node --check scripts/publishing-v2/runner.mjs
+      - run: node --check scripts/publishing-v2/adapters.mjs
+      - run: node --check scripts/publishing-v2/run-cycle.mjs
+      - run: node --check scripts/test-publishing-v2-adapters.mjs
       - run: npm run test:publishing-v2
