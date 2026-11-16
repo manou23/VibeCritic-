@@ -45,8 +45,11 @@ export function transition(job,event,patch={},now=Date.now()){
   if(next.stage===3)next.status="quality-check";
  }
  if(event==="provider-deferred"||event==="quality-failed"){
-  next.attempts=Number(job.attempts||0)+(patch.countAttempt===false?0:1);delete next.countAttempt;next.lastError=String(patch.lastError||"Temporary failure").slice(0,1200);
-  next.nextAttemptAt=Math.max(now+60000,time(patch.nextAttemptAt));
+  const countsAsFailure=patch.countAttempt===true||(event==="quality-failed"&&patch.countAttempt!==false);
+  next.attempts=Number(job.attempts||0)+(countsAsFailure?1:0);delete next.countAttempt;
+  next.lastError=String(patch.lastError||"Temporary failure").slice(0,1200);
+  const exponential=Math.min(24*60*60*1000,60000*Math.pow(2,Math.min(next.attempts,10)));
+  next.nextAttemptAt=Math.max(now+(countsAsFailure?exponential:3600000),time(patch.nextAttemptAt));
  }
  if(event==="resumed"){next.status=patch.resumeTo||"writing";next.nextAttemptAt=null;next.lastError=null;delete next.resumeTo;}
  if(event==="published"){next.publishedAt=iso(now);next.nextAttemptAt=null;next.lastError=null;}
@@ -83,4 +86,10 @@ export function validateArticle(a,{minWords=650,minCharacters=3200}={}){
  if(!String(a?.poster||a?.backdrop||"").startsWith("https://"))errors.push("A verified poster or backdrop is required");
  if(a?.youtubeVideoId&&!/^[A-Za-z0-9_-]{11}$/.test(a.youtubeVideoId))errors.push("Invalid YouTube video id");
  return {valid:errors.length===0,errors,words,characters:body.length};
+}
+
+export function validateEvidence(evidence){
+ const sources=(evidence?.sources||[]).filter(s=>{try{return new URL(s.url).protocol==="https:"&&String(s.name||"").trim()}catch{return false}});
+ const domains=new Set(sources.map(s=>new URL(s.url).hostname.toLowerCase()));
+ return {valid:domains.size>=2,domains:[...domains],sources:sources.length,errors:domains.size>=2?[]:["Evidence requires at least two independent HTTPS source domains."]};
 }
