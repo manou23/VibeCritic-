@@ -11,7 +11,6 @@ type: game
 date: 2026-11-15
 releaseDate: "2011-11-18"
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/co8fu7.jpg"
-backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/co8fu7.jpg"
 youtubeVideoId: "MmB9b5njVbA"
 youtubeVideoTitle: "Minecraft Official Trailer"
 score: 8.4
@@ -50,7 +49,7 @@ genres:
   - "Survival"
   - "Adventure"
 creator: "Mojang Studios"
-sourceName: "VibeCritic Editorial Desk"
+sourceName: "Mojang / GameSpot / PC Gamer / Library of Congress"
 sourceId: "135400"
 sourceUrl: "https://www.minecraft.net/"
 aiGenerated: false
