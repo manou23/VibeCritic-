@@ -1130,12 +1130,13 @@ async function updateContentJob(item,patch={}){
 function resumableContentJobs(now=Date.now()){
  return Object.values(contentQueue.jobs).filter(job=>['discovered','researching','ready','generating','waiting','quality-check','staged-writing'].includes(job.status)&&Number(job.nextAttemptAt||0)<=now&&job.item).sort((a,b)=>Number(b.priority||0)-Number(a.priority||0)||String(a.createdAt||'').localeCompare(String(b.createdAt||'')));
 }
-export function selectActiveDraftJob(jobs){
+export function selectActiveDraftJob(jobs,now=Date.now()){
  const values=Array.isArray(jobs)?jobs:Object.values(jobs||{});
  return values.filter(job=>{
   const stage=Number(job?.draft?.stage),status=String(job?.status||'');
   const resumableStage=Number.isInteger(stage)&&(stage<3||(stage===3&&status==='quality-check'));
-  return Boolean(job?.item&&job?.draft&&resumableStage&&!['published','excluded','rejected','abandoned'].includes(status));
+  const retryDue=Number(job?.nextAttemptAt||0)<=now;
+  return Boolean(job?.item&&job?.draft&&resumableStage&&retryDue&&!['published','excluded','rejected','abandoned'].includes(status));
  }).sort((a,b)=>{
   const dateA=Date.parse(a.createdAt||a.updatedAt||0)||0,dateB=Date.parse(b.createdAt||b.updatedAt||0)||0;
   return dateA-dateB||String(a.key||'').localeCompare(String(b.key||''));
@@ -1251,13 +1252,8 @@ async function main(){
  await fs.mkdir(outDir,{recursive:true});await fs.mkdir('data',{recursive:true});await fs.mkdir('src/data',{recursive:true});
  await loadLearningMemory();await loadContentQueue();await loadProviderUsage();await refreshOpenRouterQuota();const publishingPlan=resourceDailyPublishingPlan();dailyTotalLimit=publishingPlan.limit;console.log('سقف النشر اليومي وفق الموارد المجانية:',dailyTotalLimit,'| نمط الحساب:',publishingPlan.mode);await saveProviderCapacity(publishingPlan);
  const activeDraft=selectActiveDraftJob(contentQueue.jobs);
- if(activeDraft&&Number(activeDraft.nextAttemptAt||0)>Date.now()){
-  console.log('توجد مقالة واحدة قيد الاستكمال؛ لن يبدأ النظام مقالة جديدة قبل موعد إعادة المحاولة:',activeDraft.key,'| المرحلة:',Number(activeDraft.draft.stage)+'/3','| الاستئناف:',new Date(Number(activeDraft.nextAttemptAt)).toISOString());
-  await saveContentQueue();
-  await fs.writeFile('data/new-reviews.json','[]\n','utf8');
-  await persistFailedQueueCheckpoint();
-  return;
- }
+ const deferredDraftCount=Object.values(contentQueue.jobs).filter(job=>job?.draft&&Number(job.nextAttemptAt||0)>Date.now()&&!['published','excluded','rejected','abandoned'].includes(String(job.status||''))).length;
+ if(deferredDraftCount)console.log('توجد '+deferredDraftCount+' مسودات مؤجلة بسبب تبريد المزوّدات؛ سيواصل النظام اختيار أعمال أخرى مؤهلة بدلاً من إيقاف دورة النشر.');
  try{
   const top=await globalTrending();
   await fs.writeFile('src/data/trending.json',JSON.stringify(top,null,2)+'\n','utf8');
