@@ -21,8 +21,10 @@ pacingScore: 9.4
 reviewMode: review
 platforms: ["PC", "PlayStation 3", "Xbox 360"]
 gameStores:
+  - name: "Xbox Store"
   - name: "Steam"
-    url: "https://store.steampowered.com/app/620/Portal_2/"
+  - name: "PlayStation Store"
+  - name: "Xbox 360 Store"
 pros:
   - "ألغاز مبنية على قواعد واضحة تسمح بحلول مبتكرة"
   - "كتابة كوميدية وشخصيات لا تنفصل عن تصميم المراحل"
@@ -39,6 +41,21 @@ sourceName: "Steam Store / Valve"
 sourceId: "manual-game-portal-2"
 sourceUrl: "https://store.steampowered.com/app/620/Portal_2/"
 aiGenerated: false
+rawgSourceId: 4200
+rawgSourceUrl: "https://rawg.io/games/portal-2"
+rawgReleaseDate: "2011-04-18"
+rawgGenres:
+  - "Shooter"
+  - "Puzzle"
+rawgPlatforms:
+  - "PlayStation 3"
+  - "PC"
+  - "Xbox 360"
+  - "Linux"
+  - "macOS"
+  - "Xbox One"
+rawgDevelopers:
+  - "Valve Software"
 ---
 ## غرفة الاختبار كفكرة لعب
 تأخذ Portal 2 الفكرة الأساسية للجزء الأول، وهي إنشاء بوابتين مترابطتين، وتوسعها إلى مجموعة كبيرة من المواقف التي تختبر فهم اللاعب للمكان والحركة والفيزياء. لا تعتمد المتعة على سرعة رد الفعل بقدر اعتمادها على الملاحظة والتجريب. ترى سطحاً مناسباً، تضع بوابة، تراقب اتجاه السقوط أو انتقال الجسم، ثم تعيد ترتيب الفكرة عندما لا تعمل. كل أداة جديدة تفتح احتمالات إضافية، لكن اللعبة تحاول تقديمها تدريجياً حتى يشعر اللاعب أنه تعلم قاعدة ثم أصبح قادراً على استخدامها بحرية.

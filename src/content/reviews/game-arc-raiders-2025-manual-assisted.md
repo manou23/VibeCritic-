@@ -22,7 +22,7 @@ reviewMode: review
 platforms: ["PlayStation 5", "Xbox Series X|S", "PC"]
 gameStores:
   - name: "Steam"
-    url: "https://store.steampowered.com/app/1808500/ARC_Raiders/"
+  - name: "Epic Games"
 pros:
   - "توتر الاستخراج يجعل قرار الانسحاب أو المخاطرة جزءاً من المتعة"
   - "الآلات المعادية تمنح الاشتباكات تهديداً مختلفاً عن مواجهة اللاعبين"
@@ -40,6 +40,17 @@ sourceId: "manual-assisted-game-arc-raiders-2025"
 sourceUrl: "https://arcraiders.com/"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
+rawgSourceId: 704787
+rawgSourceUrl: "https://rawg.io/games/arc-raiders"
+rawgReleaseDate: "2025-10-30"
+rawgGenres:
+  - "Action"
+rawgPlatforms:
+  - "PC"
+  - "PlayStation 5"
+  - "Xbox Series S/X"
+rawgDevelopers:
+  - "Embark Studios"
 ---
 ## عالم لا يمنحك وقتاً آمناً
 

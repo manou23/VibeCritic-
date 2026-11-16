@@ -36,6 +36,30 @@ sourceName: "Steam Store / Game Credits"
 sourceId: "manual-game-celeste"
 sourceUrl: "https://store.steampowered.com/app/504230/"
 aiGenerated: false
+rawgSourceId: 22121
+rawgSourceUrl: "https://rawg.io/games/celeste"
+rawgReleaseDate: "2018-01-25"
+rawgGenres:
+  - "Indie"
+  - "Platformer"
+rawgPlatforms:
+  - "Xbox One"
+  - "PC"
+  - "macOS"
+  - "Nintendo Switch"
+  - "PlayStation 4"
+  - "Linux"
+rawgDevelopers:
+  - "Matt Makes Games"
+  - "Extremely OK Games"
+  - "Noel"
+gameStores:
+  - name: "Epic Games"
+  - name: "Steam"
+  - name: "Nintendo Store"
+  - name: "PlayStation Store"
+  - name: "Xbox Store"
+  - name: "itch.io"
 ---
 ## الصعود بوصفه نظام لعب وحكاية
 تتبع Celeste رحلة Madeline وهي تحاول تسلق جبل يحمل الاسم نفسه. لا تحتاج اللعبة إلى عالم مفتوح أو قائمة مهام ضخمة كي تمنح الرحلة معنى؛ فكل شاشة تقدم تحدياً صغيراً، وكل نجاح يفتح الطريق إلى العقبة التالية. لكن الجبل ليس مجرد سلسلة منصات. تتداخل الرحلة مع مواجهة البطلة لقلقها وشكوكها، وتصبح العقبات الخارجية انعكاساً لصراع داخلي لا يمكن تجاوزه بالقوة وحدها.

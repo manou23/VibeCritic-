@@ -21,8 +21,11 @@ pacingScore: 8.5
 reviewMode: review
 platforms: ["PC", "PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series X|S", "Nintendo Switch"]
 gameStores:
+  - name: "GOG"
+  - name: "PlayStation Store"
   - name: "Steam"
-    url: "https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/"
+  - name: "Xbox Store"
+  - name: "Nintendo Store"
 pros:
   - "مهام جانبية ذات قصص وشخصيات ونتائج لا تبدو منفصلة عن العالم"
   - "اختيارات أخلاقية لا تقدم دائماً إجابة سهلة أو نتيجة فورية"
@@ -39,6 +42,22 @@ sourceName: "CD Projekt Red / Bandai Namco"
 sourceId: "manual-game-the-witcher-3-wild-hunt"
 sourceUrl: "https://en.bandainamcoent.eu/the-witcher/the-witcher-3-wild-hunt"
 aiGenerated: false
+rawgSourceId: 3328
+rawgSourceUrl: "https://rawg.io/games/the-witcher-3-wild-hunt"
+rawgReleaseDate: "2015-05-18"
+rawgGenres:
+  - "Action"
+  - "RPG"
+rawgPlatforms:
+  - "PlayStation 5"
+  - "Xbox Series S/X"
+  - "macOS"
+  - "PlayStation 4"
+  - "Nintendo Switch"
+  - "PC"
+  - "Xbox One"
+rawgDevelopers:
+  - "CD PROJEKT RED"
 ---
 ## عالم لا يختصر نفسه في المهمة الرئيسية
 

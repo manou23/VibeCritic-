@@ -20,7 +20,7 @@ reviewMode: review
 platforms: ["PlayStation 5", "PC"]
 gameStores:
   - name: "Steam"
-    url: "https://store.steampowered.com/search/?term=Death%20Stranding%202"
+  - name: "PlayStation Store"
 pros:
   - "تطور أدوات النقل يجعل التخطيط أكثر تنوعاً"
   - "العالم الأسترالي يقدم مشاهد طبيعية متباينة ومذهلة"
@@ -38,6 +38,17 @@ externalVideoUrl: "https://www.kojimaproductions.jp/en/deathstranding2_otb_now_a
 externalVideoTitle: "Death Stranding 2 — Official Launch Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
+rawgSourceId: 891532
+rawgSourceUrl: "https://rawg.io/games/death-stranding-2"
+rawgReleaseDate: "2025-06-26"
+rawgGenres:
+  - "Action"
+  - "Adventure"
+rawgPlatforms:
+  - "PC"
+  - "PlayStation 5"
+rawgDevelopers:
+  - "Kojima Productions"
 ---
 > **منهجية المراجعة:** قراءة تحريرية بحثية تستند إلى المواد الرسمية المتاحة ومعلومات الإنتاج والإصدار وقراءات نقدية منشورة. لا تدعي هذه المادة اختباراً شخصياً جديداً أو مشاهدة/لعباً مباشراً، ولا تنقل تقييم الجمهور بوصفه حكماً تحريرياً.
 

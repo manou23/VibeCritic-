@@ -19,8 +19,8 @@ pacingScore: 8.4
 reviewMode: review
 platforms: ["PlayStation 5", "Xbox Series X|S", "PC"]
 gameStores:
+  - name: "PlayStation Store"
   - name: "Steam"
-    url: "https://store.steampowered.com/search/?term=DOOM%3A%20The%20Dark%20Ages"
 pros:
   - "درع المنشار يضيف طبقة دفاع وهجوم مفهومة ومؤثرة"
   - "تنوع الأسلحة والمواجهات يمنح القتال ثقلاً واضحاً"
@@ -38,6 +38,17 @@ externalVideoUrl: "https://doom.bethesda.net/en-US/the-dark-ages"
 externalVideoTitle: "DOOM: The Dark Ages — Official Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
+rawgSourceId: 983381
+rawgSourceUrl: "https://rawg.io/games/doom-the-dark-ages"
+rawgReleaseDate: "2025-05-15"
+rawgGenres:
+  - "Action"
+rawgPlatforms:
+  - "PC"
+  - "PlayStation 5"
+  - "Xbox Series S/X"
+rawgDevelopers:
+  - "id Software"
 ---
 > **منهجية المراجعة:** قراءة تحريرية بحثية تستند إلى المواد الرسمية المتاحة ومعلومات الإنتاج والإصدار وقراءات نقدية منشورة. لا تدعي هذه المادة اختباراً شخصياً جديداً أو مشاهدة/لعباً مباشراً، ولا تنقل تقييم الجمهور بوصفه حكماً تحريرياً.
 

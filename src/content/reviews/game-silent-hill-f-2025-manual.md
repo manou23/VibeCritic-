@@ -21,8 +21,8 @@ pacingScore: 7.6
 reviewMode: review
 platforms: ["PlayStation 5", "Xbox Series X|S", "PC"]
 gameStores:
+  - name: "GOG"
   - name: "Steam"
-    url: "https://store.steampowered.com/app/2947440/SILENT_HILL_f/"
 pros:
   - "كتابة نفسية جريئة تتناول ضغوط المجتمع والعائلة والهوية"
   - "تصميم القرية والوحوش يمزج الجمال بالتشوه بطريقة مميزة"
@@ -39,6 +39,18 @@ sourceName: "KONAMI / GameSpot / Game Informer / TechRadar"
 sourceId: "manual-game-silent-hill-f-2025"
 sourceUrl: "https://www.konami.com/games/eu/en/topics/18839/"
 aiGenerated: false
+rawgSourceId: 868087
+rawgSourceUrl: "https://rawg.io/games/silent-hill-f"
+rawgReleaseDate: "2025-09-24"
+rawgGenres:
+  - "Action"
+  - "Adventure"
+rawgPlatforms:
+  - "PC"
+  - "PlayStation 5"
+  - "Xbox Series S/X"
+rawgDevelopers:
+  - "NeoBards Entertainment"
 ---
 ## رعب خارج البلدة المعتادة
 

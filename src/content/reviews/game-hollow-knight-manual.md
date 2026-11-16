@@ -22,7 +22,10 @@ reviewMode: review
 platforms: ["PC", "Nintendo Switch", "PlayStation 4", "Xbox One"]
 gameStores:
   - name: "Steam"
-    url: "https://store.steampowered.com/app/367520/Hollow_Knight/"
+  - name: "GOG"
+  - name: "Nintendo Store"
+  - name: "Xbox Store"
+  - name: "PlayStation Store"
 pros:
   - "تصميم عالم متصل يشجع على الفضول وتذكر الطرق والمعالم"
   - "رسوم ثنائية الأبعاد مرسومة يدوياً ذات هوية واضحة"
@@ -39,6 +42,22 @@ sourceName: "Steam Store / Team Cherry"
 sourceId: "manual-game-hollow-knight"
 sourceUrl: "https://store.steampowered.com/app/367520/Hollow_Knight/"
 aiGenerated: false
+rawgSourceId: 9767
+rawgSourceUrl: "https://rawg.io/games/hollow-knight"
+rawgReleaseDate: "2017-02-23"
+rawgGenres:
+  - "Action"
+  - "Indie"
+  - "Platformer"
+rawgPlatforms:
+  - "PlayStation 4"
+  - "Linux"
+  - "macOS"
+  - "PC"
+  - "Nintendo Switch"
+  - "Xbox One"
+rawgDevelopers:
+  - "Team Cherry"
 ---
 ## Hallownest: عالم يروي نفسه
 تضع Hollow Knight اللاعب في مملكة حشرات سقطت، وتتركه يكتشف ما تبقى منها عبر أنفاق ومدن مهجورة ومناطق طبيعية غريبة. لا تقدم اللعبة خريطة كاملة ولا قائمة طويلة تشرح كل هدف؛ المعرفة تأتي من التجول وملاحظة العلامات والعودة إلى أماكن سابقة بعد الحصول على قدرات جديدة. هذا الاختيار يجعل العالم أكثر من سلسلة مراحل متتابعة. الممر الذي يبدو مغلقاً في البداية قد يصبح طريقاً مختصراً لاحقاً، والشخصية التي تمر بها سريعاً قد تحمل معلومة أو مهمة لا تظهر أهميتها فوراً. الإحساس بالمكان هو أحد أعظم إنجازات اللعبة.

@@ -20,7 +20,6 @@ backdrop: "https://album.mediaset.es/eimg/2025/11/11/mafia-the-old-country-key-a
 platforms: ["PlayStation 5", "Xbox Series X|S", "PC"]
 gameStores:
   - name: "Steam"
-    url: "https://store.steampowered.com/search/?term=Mafia%20The%20Old%20Country"
 pros:
   - "إعادة بناء صقلية تمنح العالم شخصية واضحة"
   - "الحكاية الخطية تساعد على ضبط الإيقاع الدرامي"
@@ -38,6 +37,18 @@ externalVideoUrl: "https://newsroom.2k.com/news/mafia-the-old-country-now-availa
 externalVideoTitle: "Mafia: The Old Country — Official Launch Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
+rawgSourceId: 987515
+rawgSourceUrl: "https://rawg.io/games/mafia-the-old-country"
+rawgReleaseDate: "2025-08-08"
+rawgGenres:
+  - "Action"
+  - "Adventure"
+rawgPlatforms:
+  - "PC"
+  - "PlayStation 5"
+  - "Xbox Series S/X"
+rawgDevelopers:
+  - "Hangar 13"
 ---
 > **منهجية المراجعة:** قراءة تحريرية بحثية تستند إلى المواد الرسمية المتاحة ومعلومات الإنتاج والإصدار وقراءات نقدية منشورة. لا تدعي هذه المادة اختباراً شخصياً جديداً أو مشاهدة/لعباً مباشراً، ولا تنقل تقييم الجمهور بوصفه حكماً تحريرياً.
 

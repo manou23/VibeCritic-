@@ -21,8 +21,10 @@ pacingScore: 8.5
 reviewMode: review
 platforms: ["PlayStation 4", "Xbox One", "PC"]
 gameStores:
-  - name: "Rockstar Games"
-    url: "https://store.rockstargames.com/en/game/buy-red-dead-redemption-2"
+  - name: "PlayStation Store"
+  - name: "Epic Games"
+  - name: "Steam"
+  - name: "Xbox Store"
 pros:
   - "تطور آرثر والعلاقات داخل العصابة يمنحان القصة ثقلاً إنسانياً"
   - "العالم يتغير بصرياً وبيئياً ويكافئ الانتباه للتفاصيل"
@@ -39,6 +41,17 @@ sourceName: "Rockstar Games / PlayStation"
 sourceId: "manual-game-red-dead-redemption-2"
 sourceUrl: "https://www.rockstargames.com/newswire/article/4k412883895ka4/Red-Dead-Redemption-2-Now-Available"
 aiGenerated: false
+rawgSourceId: 28
+rawgSourceUrl: "https://rawg.io/games/red-dead-redemption-2"
+rawgReleaseDate: "2018-10-26"
+rawgGenres:
+  - "Action"
+rawgPlatforms:
+  - "PC"
+  - "PlayStation 4"
+  - "Xbox One"
+rawgDevelopers:
+  - "Rockstar Games"
 ---
 ## نهاية عصر وبداية تفكك
 

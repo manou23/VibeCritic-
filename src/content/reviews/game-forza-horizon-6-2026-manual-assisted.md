@@ -21,9 +21,7 @@ soundScore: 9.0
 pacingScore: 8.5
 reviewMode: review
 platforms: ["Xbox Series X|S", "PC", "PlayStation 5"]
-gameStores:
-  - name: "Steam"
-    url: "https://store.steampowered.com/app/2483190/Forza_Horizon_6/"
+gameStores: []
 pros:
   - "اليابان تمنح الخريطة تنوعاً بصرياً وثقافياً واضحاً بين المدن والريف والجبال"
   - "نموذج القيادة مرن وممتع ويستوعب أنماطاً مختلفة من السباقات"
@@ -43,6 +41,16 @@ sourceId: "manual-assisted-game-forza-horizon-6-2026"
 sourceUrl: "https://forza.net/news/forza-horizon-6-coming-may-2026"
 aiGenerated: false
 editorialWorkflow: "manual-assisted"
+rawgSourceId: 1010949
+rawgSourceUrl: "https://rawg.io/games/forza-horizon-6"
+rawgReleaseDate: "2026-05-19"
+rawgGenres:
+  - "Racing"
+rawgPlatforms:
+  - "Xbox Series S/X"
+  - "PC"
+rawgDevelopers:
+  - "Playground Games"
 ---
 ## اليابان ليست مجرد خلفية جديدة
 

@@ -36,6 +36,34 @@ sourceName: "Official Stardew Valley Press Kit"
 sourceId: "manual-game-stardew-valley"
 sourceUrl: "https://www.stardewvalley.net/press/"
 aiGenerated: false
+rawgSourceId: 654
+rawgSourceUrl: "https://rawg.io/games/stardew-valley"
+rawgReleaseDate: "2016-02-25"
+rawgGenres:
+  - "RPG"
+  - "Simulation"
+  - "Indie"
+rawgPlatforms:
+  - "Nintendo Switch"
+  - "Xbox One"
+  - "PC"
+  - "iOS"
+  - "macOS"
+  - "Linux"
+  - "PlayStation 4"
+  - "PS Vita"
+  - "Android"
+rawgDevelopers:
+  - "Chucklefish"
+  - "ConcernedApe"
+gameStores:
+  - name: "PlayStation Store"
+  - name: "App Store"
+  - name: "Xbox Store"
+  - name: "Steam"
+  - name: "GOG"
+  - name: "Nintendo Store"
+  - name: "Google Play"
 ---
 ## بداية بسيطة ومساحة للاختيار
 تبدأ Stardew Valley بإرث صغير: قطعة أرض مهملة وأدوات أساسية وفرصة لبدء حياة مختلفة. لا تضع اللعبة أمام اللاعب هدفاً واحداً يجب إنجازه بسرعة، بل تفتح مجموعة أنشطة يمكن ترتيبها بحسب الرغبة. تنظيف الأرض وزراعة المحاصيل والعناية بالحيوانات ليست مهاماً منفصلة فحسب؛ إنها تشكل دورة يومية تمنح كل قرار أثراً ملموساً على اليوم التالي. هذا الوضوح هو سر سهولة العودة إلى اللعبة، لكنه لا يعني أن التقدم سريع أو أن كل الأنظمة مكشوفة منذ البداية.

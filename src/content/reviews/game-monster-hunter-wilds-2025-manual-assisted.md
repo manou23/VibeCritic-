@@ -20,7 +20,6 @@ reviewMode: review
 platforms: ["PlayStation 5", "Xbox Series X|S", "PC"]
 gameStores:
   - name: "Steam"
-    url: "https://store.steampowered.com/app/2246340/Monster_Hunter_Wilds/"
 pros:
   - "البيئات المتغيرة تجعل الصيد مرتبطاً بالنظام البيئي"
   - "Focus Mode يمنح دقة وتحكماً إضافيين في الاشتباكات"
@@ -38,6 +37,19 @@ externalVideoUrl: "https://www.monsterhunter.com/wilds/en-us/"
 externalVideoTitle: "Monster Hunter Wilds — Official Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
+rawgSourceId: 973391
+rawgSourceUrl: "https://rawg.io/games/monster-hunter-wilds"
+rawgReleaseDate: "2025-02-27"
+rawgGenres:
+  - "Action"
+  - "Adventure"
+  - "RPG"
+rawgPlatforms:
+  - "PC"
+  - "PlayStation 5"
+  - "Xbox Series S/X"
+rawgDevelopers:
+  - "Capcom"
 ---
 > **منهجية المراجعة:** قراءة تحريرية بحثية تستند إلى المواد الرسمية المتاحة ومعلومات الإنتاج والإصدار وقراءات نقدية منشورة. لا تدعي هذه المادة اختباراً شخصياً جديداً أو مشاهدة/لعباً مباشراً، ولا تنقل تقييم الجمهور بوصفه حكماً تحريرياً.
 

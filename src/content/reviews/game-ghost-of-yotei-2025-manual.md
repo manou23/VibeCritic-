@@ -20,9 +20,7 @@ soundScore: 9.0
 pacingScore: 8.2
 reviewMode: review
 platforms: ["PlayStation 5"]
-gameStores:
-  - name: "PlayStation Store"
-    url: "https://store.playstation.com/en-us/concept/10009505"
+gameStores: []
 pros:
   - "أتسو شخصية محورية ذات دوافع مفهومة وتطور يتجاوز الانتقام وحده"
   - "تنوع الأسلحة يجعل المواجهات أكثر مرونة"
@@ -39,6 +37,16 @@ sourceName: "PlayStation / VGC / Tom's Guide / GamesRadar"
 sourceId: "manual-game-ghost-of-yotei-2025"
 sourceUrl: "https://www.playstation.com/en-us/games/ghost-of-yotei/"
 aiGenerated: false
+rawgSourceId: 989329
+rawgSourceUrl: "https://rawg.io/games/ghost-of-yotei"
+rawgReleaseDate: "2025-10-02"
+rawgGenres:
+  - "Action"
+  - "RPG"
+rawgPlatforms:
+  - "PlayStation 5"
+rawgDevelopers:
+  - "Sucker Punch Productions"
 ---
 ## رحلة مستقلة في شمال اليابان
 

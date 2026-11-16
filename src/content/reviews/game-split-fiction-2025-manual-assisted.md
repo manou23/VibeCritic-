@@ -19,8 +19,9 @@ poster: "https://img.succesone.fr/2025/01/Split-Fiction-SuccesOneFR-Microsoft.jp
 backdrop: "https://img.succesone.fr/2025/01/Split-Fiction-SuccesOneFR-Microsoft.jpg"
 platforms: ["PlayStation 5", "Xbox Series X|S", "PC", "Nintendo Switch 2"]
 gameStores:
+  - name: "Epic Games"
   - name: "Steam"
-    url: "https://store.steampowered.com/app/2001120/Split_Fiction/"
+  - name: "PlayStation Store"
 pros:
   - "تنوع ميكانيكيات اللعب يمنع المراحل من الوقوع في تكرار طويل"
   - "تصميم التعاون يجعل التواصل بين اللاعبين جزءاً من الحل لا إضافة اختيارية"
@@ -38,6 +39,18 @@ externalVideoUrl: "https://www.ea.com/games/split-fiction/split-fiction/news/spl
 externalVideoTitle: "Split Fiction — Official Launch / Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
+rawgSourceId: 994603
+rawgSourceUrl: "https://rawg.io/games/split-fiction"
+rawgReleaseDate: "2025-03-06"
+rawgGenres:
+  - "Action"
+  - "Adventure"
+rawgPlatforms:
+  - "PlayStation 5"
+  - "Xbox Series S/X"
+  - "PC"
+rawgDevelopers:
+  - "Hazelight"
 ---
 > **منهجية المراجعة:** قراءة تحريرية بحثية تستند إلى المواد الرسمية المتاحة ومعلومات الإنتاج والإصدار وقراءات نقدية منشورة. لا تدعي هذه المادة اختباراً شخصياً جديداً أو مشاهدة/لعباً مباشراً، ولا تنقل تقييم الجمهور بوصفه حكماً تحريرياً.
 

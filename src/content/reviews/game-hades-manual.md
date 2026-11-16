@@ -22,7 +22,10 @@ reviewMode: review
 platforms: ["PC", "Nintendo Switch", "PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series X|S"]
 gameStores:
   - name: "Steam"
-    url: "https://store.steampowered.com/app/1145360/Hades/"
+  - name: "Nintendo Store"
+  - name: "Epic Games"
+  - name: "PlayStation Store"
+  - name: "Xbox Store"
 pros:
   - "قتال سريع يتيح بناء أساليب مختلفة عبر الأسلحة والبركات"
   - "السرد يتقدم حتى بعد خسارة الجولة ولا يجعل التكرار فارغاً"
@@ -39,6 +42,23 @@ sourceName: "Supergiant Games / Steam"
 sourceId: "manual-game-hades"
 sourceUrl: "https://www.supergiantgames.com/games/hades/"
 aiGenerated: false
+rawgSourceId: 274755
+rawgSourceUrl: "https://rawg.io/games/hades-2018"
+rawgReleaseDate: "2020-09-17"
+rawgGenres:
+  - "Action"
+  - "Adventure"
+  - "RPG"
+  - "Indie"
+rawgPlatforms:
+  - "PlayStation 5"
+  - "Xbox Series S/X"
+  - "PlayStation 4"
+  - "Nintendo Switch"
+  - "PC"
+  - "Xbox One"
+rawgDevelopers:
+  - "Supergiant Games"
 ---
 ## الهروب الذي يبدأ من جديد
 تضع Hades اللاعب في دور Zagreus، ابن Hades، الذي يحاول مغادرة العالم السفلي والوصول إلى العالم الخارجي. كل محاولة تبدأ من جديد عبر غرف وأعداء وترقيات تتغير، لكن العودة إلى نقطة البداية لا تعني محو ما حدث. الشخصيات في البيت تتذكر المحاولات، وتظهر حوارات جديدة، وتتطور العلاقات مع تقدم اللاعب. هذا الربط بين نظام اللعب والسرد هو الفكرة الأهم: الموت جزء من الإيقاع، وليس عقوبة تقطع القصة عن اللعب.
