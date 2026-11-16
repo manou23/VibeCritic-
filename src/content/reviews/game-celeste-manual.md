@@ -3,7 +3,6 @@ title: "Celeste"
 originalTitle: "Celeste"
 youtubeVideoTitle: "Celeste Launch Trailer — Maddy Thorson"
 youtubeVideoId: "FqBj2IGg6Uw"
-backdrop: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/504230/header.jpg?t=1714089525"
 poster: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/504230/header.jpg?t=1714089525"
 headline: "Celeste: كل قفزة فاشلة تقرّب Madeline من قمة الجبل ومن نفسها"
 hook: "اللعبة لا تطلب منك ألا تسقط؛ إنها تطلب منك أن تفهم لماذا تعود للمحاولة."
@@ -32,7 +31,7 @@ cons:
 tags: ["Celeste", "Maddy Thorson", "Lena Raine", "Precision Platformer"]
 genres: ["منصات", "مغامرة", "مستقلة"]
 creator: "Maddy Makes Games / Extremely OK Games"
-sourceName: "Steam Store / Game Credits"
+sourceName: "Extremely OK Games / Steam / Lena Raine"
 sourceId: "manual-game-celeste"
 sourceUrl: "https://store.steampowered.com/app/504230/"
 aiGenerated: false
