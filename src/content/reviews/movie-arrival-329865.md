@@ -48,7 +48,7 @@ crew:
   - "Bradford Young"
   - "Joe Walker"
   - "Jóhann Jóhannsson"
-sourceName: "TMDB"
+sourceName: "Paramount Pictures / RogerEbert.com / The Guardian / Los Angeles Times / Screen Daily / Metacritic"
 sourceId: "329865"
 sourceUrl: "https://www.themoviedb.org/movie/329865"
 aiGenerated: false
@@ -78,5 +78,13 @@ aiGenerated: false
 تبلغ قوة «الوصول» ذروتها عندما يتضح أن الفيلم لم يكن يسأل فقط عن كيفية التواصل مع كائنات أخرى، بل عن أثر المعرفة في طريقة عيش الإنسان للزمن والاختيار. لا يقدم العلم هنا إجابة باردة منفصلة عن العاطفة؛ بل يجعل الفهم الجديد أكثر تعقيداً للمسؤولية الشخصية. وهذه مخاطرة سردية محسوبة: قد لا يتفق كل مشاهد مع الاختيار الفلسفي الذي يصل إليه الفيلم، لكن من الصعب إنكار أن عناصره البصرية والصوتية والتمثيلية مهيأة لخدمة هذا الاختيار منذ البداية.
 
 تظل بعض الشروح مكثفة، ويحتاج الإيقاع إلى استعداد لتلقي فيلم يفضّل السؤال على المطاردة. لكن «الوصول» ينجح في جعل الخيال العلمي مساحة للتفكير في اللغة والخوف والتعاطف، لا مجرد خلفية لمواجهة بين البشر والفضائيين. تقييم 8.9 من 10 يعكس تماسك الفكرة وتنفيذها الفني، مع خصم محدود بسبب بطء بعض المقاطع واعتماد الخاتمة على تقبل تصور الفيلم للزمن. هذه مراجعة تحريرية يدوية مبنية على تحليل العمل ومعلوماته المنشورة، ولا تدّعي أنها تقرير عن مشاهدة جديدة أو قياس لتقييم الجمهور.
+
+## مصادر التحقق والمراجعات النقدية
+- [RogerEbert.com — Arrival](https://www.rogerebert.com/reviews/arrival-2016): تحليل اللغة والزمن والأداء والصورة والصوت، مع ملاحظة بطء منتصف الفيلم.
+- [The Guardian — Arrival Review](https://www.theguardian.com/film/2016/nov/13/arrival-review-poetic-vision-contact-aliens): قراءة نقدية للبنية الزمنية والموضوعات الإنسانية والموسيقى.
+- [Los Angeles Times — Arrival Review](https://www.latimes.com/entertainment/movies/la-et-mn-arrival-review-20161107-story.html): تقييم الفكرة العلمية والإخراج والأداء والخاتمة.
+- [Screen Daily — Arrival: Venice Review](https://www.screendaily.com/reviews/arrival-venice-review/5108972.article): تحليل التصوير والموسيقى وطبيعة الخيال العلمي في الفيلم.
+- [The New Yorker — The Consuming Fervor of Arrival](https://www.newyorker.com/magazine/2016/11/14/the-consuming-fervor-of-arrival): قراءة نقدية لنقاط قوة الفيلم وبعض مشكلات شرح اللغة والحبكة.
+- [Metacritic — Arrival](https://www.metacritic.com/movie/arrival/): تجميع مراجعات النقاد؛ لا تُستخدم درجته بديلاً عن تقييم VibeCritic.
 
 > مراجعة تحريرية يدوية مستقلة، أُعدّت وفق منهج VibeCritic النقدي. التقييم مستقل عن تقييمات الجمهور ولا يعيد إنتاجها.
