@@ -41,7 +41,7 @@ cast:
   - "Dean Norris"
 crew:
   - "Vince Gilligan"
-sourceName: "TMDB"
+sourceName: "AMC / The Guardian / Rotten Tomatoes / TheWrap / Television & New Media"
 sourceId: "1396"
 sourceUrl: "https://www.themoviedb.org/tv/1396"
 aiGenerated: false
@@ -72,5 +72,14 @@ aiGenerated: false
 يمتلك المسلسل ميزة نادرة في الأعمال الطويلة: التغيير لا يحدث فقط في نهاية الموسم، بل يتراكم داخل الحلقات وبينها. تتبدل التحالفات، وتتغير قيمة المعلومات، ويصبح ما كان حلاً في مرحلة عبئاً في المرحلة التالية. هذا يمنح المشاهدة إحساساً بأن الزمن يعمل على الشخصيات، لا أنه مجرد إطار لعدد كبير من المغامرات. كما أن اختلاف إيقاع المواسم يسمح بتغيير طبيعة الصراع من دون التخلي عن السؤال المركزي حول المسؤولية والهوية.
 
 ليست كل الحلقات متساوية، وبعض المواقف تقترب من حدود المبالغة أو تتطلب تعليق الشك مؤقتاً. كما أن تكرار نمط الخطر ثم محاولة إخفائه قد يصبح متوقعاً في أجزاء من العمل. لكن هذه العيوب لا تلغي ما يحققه البناء الطويل: كلما اتسعت سلطة والتر، ضاقت المساحة التي يستطيع أن يعيش فيها مع روايته الأولى عن نفسه. النهاية لا تحتاج إلى تقديم درس أخلاقي مباشر؛ يكفي أن تضع الشخصية أمام حصيلة اختياراتها. يستحق المسلسل 9.2 من 10 بفضل قوة الكتابة وتطور الشخصيات وتكامل الإخراج والصوت، لا بسبب شعبيته أو مكانته في قوائم الجمهور.
+
+## مصادر نقدية وسياقية
+
+- [AMC — Breaking Bad](https://www.amc.com/shows/breaking-bad): صفحة الشبكة المنتجة ومعلومات المسلسل.
+- [The Guardian — Breaking Bad Box Set Review](https://www.theguardian.com/tv-and-radio/2013/dec/05/breaking-bad-box-set-review): قراءة لتطور والتر وايت والعلاقة مع جيسي عبر المواسم.
+- [The Guardian — Series Finale Review](https://www.theguardian.com/tv-and-radio/2013/sep/30/breaking-bad-series-finale-tv-review): تحليل ختام المسلسل ومسؤوليّة والتر عن اختياراته.
+- [Rotten Tomatoes — 5 Ways Breaking Bad Changed Television](https://editorial.rottentomatoes.com/article/5-ways-breaking-bad-changed-television-forever/): قراءة في تحول الشخصيات والسرد البصري وبناء المسلسل.
+- [The Guardian — Breaking Bad: 10 Years On](https://www.theguardian.com/tv-and-radio/2018/jan/20/breaking-bad-10-years-on-tv-is-still-in-walter-whites-shadow): أثر المسلسل وإرثه الدرامي.
+- [Television & New Media — Romancing the Ice](https://journals.sagepub.com/doi/10.1177/1749602018796698): دراسة أكاديمية حول التلقي الأخلاقي والجمالي لشخصية والتر وايت.
 
 > مراجعة تحريرية يدوية مستقلة، أُعدّت وفق منهج VibeCritic النقدي. التقييم لا يمثل تجربة مشاهدة جديدة أو قياساً لتفضيلات الجمهور.
