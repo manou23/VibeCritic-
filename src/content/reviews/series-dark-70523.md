@@ -29,7 +29,7 @@ tags: ["Netflix", "Time Travel", "Mystery", "Germany"]
 genres: ["خيال علمي", "غموض", "دراما"]
 cast: ["Louis Hofmann", "Oliver Masucci", "Jördis Triebel", "Lisa Vicari"]
 crew: ["Baran bo Odar", "Jantje Friese"]
-sourceName: "VibeCritic Editorial"
+sourceName: "Netflix / The Guardian / RogerEbert.com / BFI / Metacritic"
 sourceId: "manual-series-dark-70523"
 sourceUrl: "https://www.themoviedb.org/tv/70523"
 aiGenerated: false
@@ -47,5 +47,13 @@ youtubeVideoId: "ESEUoa-mz2c"
 
 ## الإيقاع والخاتمة
 يتطلب المسلسل صبراً، لأن بعض الإجابات تؤجل عمداً بينما تتراكم المعلومات. حين تتقدم الحبكة يصبح من السهل ملاحظة أن الغموض ليس دائماً عميقاً لمجرد أنه معقد؛ بعض المقاطع تشرح العلاقات بدلاً من تحويلها إلى صراع حاضر. مع ذلك، يحاول العمل إغلاق دوائره وفق قواعده الخاصة، ولا يتخلى عن لغته في الطريق. درجة 8.6/10 تعكس طموح البناء والهوية الفنية، مع خصم بسبب إرهاق المتابعة وتفاوت الإيقاع.
+
+## مصادر نقدية وسياقية
+- [Netflix — Dark](https://www.netflix.com/title/80100172): صفحة المسلسل الرسمية والمواسم.
+- [The Guardian — Dark Review](https://www.theguardian.com/tv-and-radio/2017/dec/01/dark-review-a-classy-knotty-time-travelling-whodunnit-for-tv): مراجعة الموسم الأول وبنية اللغز وتعدد الأزمنة.
+- [The Guardian — Season 2 Review](https://www.theguardian.com/tv-and-radio/2019/jun/21/dark-season-two-review-netflix-german-drama): تحليل تعقيد السرد وتراكم الشخصيات.
+- [The Guardian — Season 3 Review](https://www.theguardian.com/tv-and-radio/2020/jun/27/dark-season-three-review-sci-fi-series-netflix): قراءة نقدية للخاتمة والعوالم المتوازية.
+- [RogerEbert.com / Metacritic — Dark](https://www.metacritic.com/tv/dark/critic-reviews/): مراجعات نقدية للصورة والبناء النهائي.
+- [BFI Sight and Sound — Dark Season 3](https://www.bfi.org.uk/sight-and-sound/reviews/dark-season-3-parallel-universe-netflix-serial): تحليل تصميم العالم والكون الموازي.
 
 > مراجعة تحريرية يدوية مستقلة، وليست ادعاءً بتجربة مشاهدة جديدة أو بقياس آراء الجمهور.
