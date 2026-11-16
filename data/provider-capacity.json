@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-16T01:08:45.157Z",
+  "updatedAt": "2026-11-16T02:54:15.928Z",
   "date": "2026-11-16",
   "publishingPlan": {
     "limit": 3,
@@ -15,11 +15,11 @@
       },
       {
         "name": "groq",
-        "estimatedArticles": 0,
-        "dailyBlocked": true,
+        "estimatedArticles": 139,
+        "dailyBlocked": false,
         "temporarilyBlocked": false,
-        "blockedUntil": "2026-11-16T01:09:31.023Z",
-        "blockedReason": "daily-limit"
+        "blockedUntil": null,
+        "blockedReason": null
       },
       {
         "name": "cloudflare-workers-ai",
@@ -31,14 +31,14 @@
       },
       {
         "name": "openrouter",
-        "estimatedArticles": 13,
+        "estimatedArticles": 3,
         "dailyBlocked": false,
         "temporarilyBlocked": false,
         "blockedUntil": null,
         "blockedReason": null
       }
     ],
-    "estimatedArticles": 13
+    "estimatedArticles": 142
   },
   "providerStrategy": {
     "mode": "adaptive-learning",
@@ -50,14 +50,14 @@
     "ranking": [
       {
         "name": "groq",
-        "score": 0.7174,
-        "reliability": 0.612,
-        "headroom": 0.997,
-        "efficiency": 0.657,
-        "samples": 47,
-        "successRate": 0.612,
-        "averageTokensPerSuccess": 8061,
-        "averageApiRequestsPerSuccess": 9.66
+        "score": 0.7101,
+        "reliability": 0.596,
+        "headroom": 0.999,
+        "efficiency": 0.663,
+        "samples": 50,
+        "successRate": 0.596,
+        "averageTokensPerSuccess": 7924,
+        "averageApiRequestsPerSuccess": 9.53
       },
       {
         "name": "cloudflare-workers-ai",
@@ -71,17 +71,6 @@
         "averageApiRequestsPerSuccess": 2.17
       },
       {
-        "name": "openrouter",
-        "score": 0.3559,
-        "reliability": 0.087,
-        "headroom": 1,
-        "efficiency": 0.29,
-        "samples": 21,
-        "successRate": 0.087,
-        "averageTokensPerSuccess": 150223,
-        "averageApiRequestsPerSuccess": 80
-      },
-      {
         "name": "gemini",
         "score": 0.275,
         "reliability": 0.091,
@@ -91,6 +80,17 @@
         "successRate": 0.091,
         "averageTokensPerSuccess": 0,
         "averageApiRequestsPerSuccess": 19
+      },
+      {
+        "name": "openrouter",
+        "score": 0.2119,
+        "reliability": 0.115,
+        "headroom": 0.34,
+        "efficiency": 0.317,
+        "samples": 24,
+        "successRate": 0.115,
+        "averageTokensPerSuccess": 86387,
+        "averageApiRequestsPerSuccess": 49
       }
     ],
     "note": "الترتيب يتعلم من نتائج التشغيلات السابقة خلال الأيام المحفوظة؛ عند قلة العينات تُخفّض الثقة ويعود التقييم نحو التوازن."
@@ -115,12 +115,12 @@
         "tokens": null,
         "requests": null
       },
-      "usedTokens": 9924,
-      "usedRequests": 34,
-      "estimatedArticles": 142,
-      "averageTokensPerArticle": 5844,
-      "averageRequestsPerArticle": 7,
-      "reportedDailyRequestsRemaining": 997,
+      "usedTokens": 13892,
+      "usedRequests": 40,
+      "estimatedArticles": 139,
+      "averageTokensPerArticle": 5943,
+      "averageRequestsPerArticle": 7.15,
+      "reportedDailyRequestsRemaining": 999,
       "reportedDailyRequestsLimit": 1000
     },
     "cloudflare-workers-ai": {
@@ -141,12 +141,12 @@
         "tokens": null,
         "requests": null
       },
-      "usedTokens": 66329,
-      "usedRequests": 56,
-      "estimatedArticles": 13,
-      "averageTokensPerArticle": 7153,
-      "averageRequestsPerArticle": 3.81,
-      "reportedDailyRequestsRemaining": 50,
+      "usedTokens": 88880,
+      "usedRequests": 74,
+      "estimatedArticles": 3,
+      "averageTokensPerArticle": 8227,
+      "averageRequestsPerArticle": 4.67,
+      "reportedDailyRequestsRemaining": 17,
       "reportedDailyRequestsLimit": 50
     }
   }

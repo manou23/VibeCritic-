@@ -2,7 +2,7 @@
   "version": 2,
   "stats": {
     "successes": 1,
-    "failures": 54
+    "failures": 55
   },
   "lessons": [
     {
@@ -18,7 +18,7 @@
     {
       "key": "format",
       "advice": "أخرج JSON صالحاً بالمفاتيح المطلوبة فقط، مع نص مراجعة كامل دون شروح خارج البنية.",
-      "count": 11
+      "count": 12
     },
     {
       "key": "resource",
@@ -72,5 +72,5 @@
       "updatedAt": "2026-11-16T01:01:56.565Z"
     }
   },
-  "updatedAt": "2026-11-16T01:08:45.154Z"
+  "updatedAt": "2026-11-16T02:53:36.494Z"
 }

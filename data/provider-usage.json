@@ -775,38 +775,38 @@
     },
     "2026-11-16": {
       "groq": {
-        "requests": 15,
+        "requests": 16,
         "successes": 4,
-        "failures": 11,
-        "apiRequests": 38,
+        "failures": 12,
+        "apiRequests": 40,
         "totalTokens": 13892,
         "inputTokens": 8623,
         "outputTokens": 5269,
-        "lastAttemptAt": "2026-11-16T02:50:18.220Z",
+        "lastAttemptAt": "2026-11-16T02:53:36.495Z",
         "lastUsage": {
           "requests": 2,
-          "inputTokens": 1274,
-          "outputTokens": 694,
-          "totalTokens": 1968,
-          "reportedUsage": true,
+          "inputTokens": 0,
+          "outputTokens": 0,
+          "totalTokens": 0,
+          "reportedUsage": false,
           "headers": {
             "x-ratelimit-limit-requests": "1000",
             "x-ratelimit-remaining-requests": "999",
             "x-ratelimit-reset-requests": "1m26.4s",
             "x-ratelimit-limit-tokens": "8000",
-            "x-ratelimit-remaining-tokens": "6348",
-            "x-ratelimit-reset-tokens": "12.389s"
+            "x-ratelimit-remaining-tokens": "5526",
+            "x-ratelimit-reset-tokens": "18.555s"
           },
-          "durationMs": 1974,
-          "at": "2026-11-16T02:50:18.220Z"
+          "durationMs": 3174,
+          "at": "2026-11-16T02:53:36.495Z"
         },
         "blockedUntil": 0,
         "blockedReason": "",
         "lastCooldown": {
           "reason": "none",
           "until": null,
-          "observedAt": "2026-11-16T02:50:18.221Z",
-          "status": null
+          "observedAt": "2026-11-16T02:53:36.496Z",
+          "status": 400
         },
         "consecutiveTransientFailures": 0
       },
@@ -959,20 +959,20 @@
         },
         "series:310209": {
           "groq": {
-            "attempts": 3,
-            "requests": 6,
+            "attempts": 4,
+            "requests": 8,
             "inputTokens": 2502,
             "outputTokens": 1466,
             "totalTokens": 3968,
             "successes": 1
           },
           "openrouter": {
-            "attempts": 3,
-            "requests": 18,
-            "inputTokens": 12077,
-            "outputTokens": 10800,
-            "totalTokens": 22877,
-            "successes": 0
+            "attempts": 4,
+            "requests": 24,
+            "inputTokens": 15872,
+            "outputTokens": 14161,
+            "totalTokens": 30033,
+            "successes": 1
           }
         },
         "movie:687163": {
@@ -1073,37 +1073,35 @@
         }
       },
       "openrouter": {
-        "requests": 12,
-        "successes": 0,
+        "requests": 13,
+        "successes": 1,
         "failures": 12,
-        "apiRequests": 68,
-        "totalTokens": 81724,
-        "inputTokens": 42124,
-        "outputTokens": 39600,
-        "lastAttemptAt": "2026-11-16T02:50:59.613Z",
+        "apiRequests": 74,
+        "totalTokens": 88880,
+        "inputTokens": 45919,
+        "outputTokens": 42961,
+        "lastAttemptAt": "2026-11-16T02:54:15.926Z",
         "lastUsage": {
           "requests": 6,
-          "inputTokens": 4101,
-          "outputTokens": 3600,
-          "totalTokens": 7701,
+          "inputTokens": 3795,
+          "outputTokens": 3361,
+          "totalTokens": 7156,
           "reportedUsage": true,
           "headers": {},
-          "durationMs": 41383,
-          "at": "2026-11-16T02:50:59.613Z"
+          "durationMs": 39428,
+          "at": "2026-11-16T02:54:15.926Z"
         },
-        "lastCooldown": {
-          "reason": "none",
-          "until": null,
-          "observedAt": "2026-11-16T02:50:59.613Z",
-          "status": null
-        },
+        "lastCooldown": null,
         "freeModelDailyRequests": {
-          "used": 30,
+          "used": 33,
           "limit": 50,
-          "remaining": 20,
-          "observedAt": "2026-11-16T02:49:58.443Z",
+          "remaining": 17,
+          "observedAt": "2026-11-16T02:53:29.780Z",
           "source": "OpenRouter GET /api/v1/key"
-        }
+        },
+        "blockedUntil": 0,
+        "blockedReason": "",
+        "consecutiveTransientFailures": 0
       }
     }
   }
