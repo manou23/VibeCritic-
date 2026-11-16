@@ -31,6 +31,7 @@ genres:
   - "Racing"
   - "Sports"
 sourceName: "Steam"
+sourceId: "1139230"
 sourceUrl: "https://store.steampowered.com/app/1139230/PilotXross/"
 aiGenerated: true
 gameStores:
