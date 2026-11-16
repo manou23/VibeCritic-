@@ -27,7 +27,7 @@ genres:
   - "Adventure"
   - "RPG"
 creator: "Warhorse Studios"
-sourceName: "STEAM"
+sourceName: "Warhorse Studios / Deep Silver / PC Gamer / IGN / GamesRadar"
 sourceId: "1771300"
 sourceUrl: "https://store.steampowered.com/app/1771300/Kingdom_Come__Deliverance_II/"
 aiGenerated: false
@@ -117,3 +117,14 @@ Kingdom Come: Deliverance II من ألعاب تقمص الأدوار التي ت
 - الإيقاع والتقدم: **8.1/10**
 
 **التقييم النهائي: 8.6/10 — ممتازة بطموح واضح واحتكاك لا يمكن تجاهله.**
+
+
+## مصادر التحقق والمراجعات النقدية
+
+- [Steam — Kingdom Come: Deliverance II](https://store.steampowered.com/app/1771300/Kingdom_Come__Deliverance_II/): تاريخ الإصدار والمطور والمنصات ووصف المنتج.
+- [PC Gamer — Kingdom Come: Deliverance II Review](https://www.pcgamer.com/games/rpg/kingdom-come-deliverance-2-review/): تحليل العالم والأنظمة والمهام والقتال والإيقاع.
+- [IGN — Kingdom Come: Deliverance 2 Review](https://www.ign.com/articles/kingdom-come-deliverance-2-review): قراءة نقدية للقصة والقتال والمهام الجانبية.
+- [GamesRadar+ — Kingdom Come: Deliverance 2 Review](https://www.gamesradar.com/games/rpg/kingdom-come-deliverance-2-review-even-if-some-friction-can-lead-to-frustration-its-realization-of-medieval-life-remains-utterly-absorbing/): ملاحظات حول الواقعية وبطء التقدم والاحتكاك في القتال.
+- [TechRadar — Kingdom Come: Deliverance 2 Review](https://www.techradar.com/gaming/kingdom-come-deliverance-2-review): تقييم العالم المفتوح والحرية والقتال.
+
+> منهجية: مراجعة تحريرية بحثية تستند إلى مصادر اللعبة ومراجعات مستقلة منشورة؛ الدرجة 8.6/10 هي تقدير VibeCritic وليست متوسط النقاد أو المستخدمين.
