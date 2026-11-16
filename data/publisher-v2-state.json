@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T16:10:51.784Z",
+  "updatedAt": "2026-11-16T16:11:16.955Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -65,11 +65,11 @@
           "votes": 26
         }
       },
-      "attempts": 1,
+      "attempts": 0,
       "createdAt": "2026-11-16T15:02:39.964Z",
-      "updatedAt": "2026-11-16T16:10:33.191Z",
-      "nextAttemptAt": 1794845733191,
-      "lastError": "openrouter: openrouter empty response: {\"model\":\"nvidia/nemotron-3.5-super-vl:free\",\"finish_reason\":\"length\",\"message_keys\":[\"role\",\"content\",\"refusal\",\"reasoning\",\"reasoning_details\"],\"error\":null}",
+      "updatedAt": "2026-11-16T16:11:16.954Z",
+      "nextAttemptAt": 1794845475954,
+      "lastError": "Nemotron consumed the output cap on reasoning; disable reasoning and retry with free-only OpenRouter fallback.",
       "resumeTo": "writing"
     }
   },
@@ -106,11 +106,6 @@
       "failures": 2,
       "until": 1794857748493,
       "lastError": "gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
-    },
-    "openrouter": {
-      "failures": 1,
-      "until": 1794852633191,
-      "lastError": "openrouter empty response: {\"model\":\"nvidia/nemotron-3.5-super-vl:free\",\"finish_reason\":\"length\",\"message_keys\":[\"role\",\"content\",\"refusal\",\"reasoning\",\"reasoning_details\"],\"error\":null}"
     }
   }
 }

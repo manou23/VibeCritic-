@@ -37,6 +37,7 @@ globalThis.fetch=async(url,options)=>{
  }
  assert.match(String(url),/openrouter\.ai\/api\/v1\/chat\/completions/);
  assert.deepEqual(body.models,['nvidia/nemotron-3.5-super-vl:free','google/gemma-4-26b-a4b-it:free']);
+ assert.equal(body.reasoning.enabled,false,'reasoning must not consume the whole article-section output budget');
  assert.equal(body.response_format.type,'json_object');
  return new Response(JSON.stringify({choices:[{message:{content:JSON.stringify(payload)},finish_reason:'stop'}],usage:{total_tokens:456}}),{status:200,headers:{'content-type':'application/json'}});
 };
