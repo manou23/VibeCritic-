@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T19:46:52.623Z",
+  "updatedAt": "2026-11-16T19:47:32.174Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -221,7 +221,7 @@
       "attempts": 1,
       "createdAt": "2026-11-16T17:08:19.010Z",
       "updatedAt": "2026-11-16T19:46:50.119Z",
-      "nextAttemptAt": 1794862010119,
+      "nextAttemptAt": null,
       "lastError": "Missing field: verdict | At least three strengths are required | At least two critical limitations are required",
       "lastProvider": "groq",
       "resumeTo": "writing"
