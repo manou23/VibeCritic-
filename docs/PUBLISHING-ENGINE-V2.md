@@ -38,7 +38,7 @@ There is one active draft globally. Always select the oldest active job, includi
 State flow:
 `queued → researching → writing (stage 1/3) → writing (stage 2/3) → quality-check (stage 3/3) → ready → published`
 
-Transient provider/network failures move the same job to `waiting` with a bounded retry time. Invalid evidence and editorial failures are recorded distinctly and must not create infinite retries.
+Transient provider/network failures move the same job to `waiting` with a bounded retry time. Provider cooldown starts at two hours and grows exponentially (capped at 24 hours), so the next hourly run can select another configured free provider instead of repeatedly retrying the same timed-out provider. Invalid evidence and editorial failures are recorded distinctly and must not create infinite retries.
 
 ## Resource policy
 

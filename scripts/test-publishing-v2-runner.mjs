@@ -58,7 +58,7 @@ const failed=await runCycle({state:failureState,adapters:failureAdapters,provide
 assert.equal(failed.action,'generation-deferred');
 assert.equal(failedProviderCalls,1);
 assert.equal(failureState.providerCooldowns['rate-limited'].failures,1);
-assert.ok(failureState.providerCooldowns['rate-limited'].until>now);
+assert.ok(failureState.providerCooldowns['rate-limited'].until-now>=2*60*60*1000,'provider cooldown must span the next hourly schedule so fallback providers can be selected');
 const retry=await runCycle({state:failureState,adapters:failureAdapters,providers:failureProviders,now:now+1000,persist:async()=>{}});
 assert.equal(retry.action,'waiting');
 assert.equal(failedProviderCalls,1,'a cooled-down provider must not be called again during the retry window');
