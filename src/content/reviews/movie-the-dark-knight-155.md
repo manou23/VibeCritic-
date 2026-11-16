@@ -43,7 +43,7 @@ cast:
   - "Gary Oldman"
 crew:
   - "Christopher Nolan"
-sourceName: "TMDB"
+sourceName: "Warner Bros. / RogerEbert.com / The Guardian / Variety / Metacritic"
 sourceId: "155"
 sourceUrl: "https://www.themoviedb.org/movie/155"
 aiGenerated: false
@@ -75,3 +75,14 @@ aiGenerated: false
 تظل بعض العيوب مرتبطة بالازدحام السردي وبميل الحوار أحياناً إلى شرح الفكرة مباشرة، كما أن بعض المصادفات تسهّل وصول الشخصيات إلى نقاط المواجهة المطلوبة. لكن هذه الملاحظات لا تقوض مركز الفيلم: صراع أخلاقي واضح، شخصيات تتغير تحت الضغط، وإخراج يعرف كيف يجعل المكان والصوت والإيقاع أجزاء من الحجة. لذلك يستحق العمل درجة 9.1 من 10 وفق توازن عناصره، لا بسبب مكانته الشعبية أو أثره التجاري. الدرجة هنا حكم على جودة البناء والتنفيذ، وليست إعادة إنتاج لتقييم الجمهور.
 
 > مراجعة تحريرية يدوية مستقلة، أُعدّت وفق منهج VibeCritic النقدي. التقييم لا يمثل تجربة مشاهدة جديدة أو قياساً لتفضيلات الجمهور.
+
+
+## مصادر التحقق والمراجعات النقدية
+- [RogerEbert.com — The Dark Knight](https://www.rogerebert.com/reviews/the-dark-knight-2008): تحليل المعضلات الأخلاقية وأداء الجوكر وبناء الشخصيات.
+- [The Guardian — The Dark Knight Review](https://www.theguardian.com/film/2008/jul/25/actionandadventure1): قراءة نقدية للإخراج والحركة والأفكار والإيقاع.
+- [The Guardian — The Dark Knight: A Second Review](https://www.theguardian.com/film/2008/jul/27/2): سياق حول أسلوب نولان والسرد الأخلاقي.
+- [Variety — The Dark Knight](https://www.metacritic.com/movie/the-dark-knight/critic-reviews/): تجميع يتضمن مراجعة Variety الأصلية وملاحظاتها عن اتساع الحكاية وتعقيدها الأخلاقي.
+- [Metacritic — The Dark Knight Critic Reviews](https://www.metacritic.com/movie/the-dark-knight/critic-reviews/): تجميع المراجعات النقدية، منفصل عن درجة VibeCritic.
+- [Rotten Tomatoes — The Dark Knight](https://www.rottentomatoes.com/m/the_dark_knight): استقبال النقاد والجمهور وبيانات الإصدار.
+
+> مراجعة تحريرية يدوية مستقلة، تستند إلى تحليل الفيلم ومراجعات منشورة، ولا تنسخ متوسطات مواقع التجميع.
