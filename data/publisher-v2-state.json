@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T15:02:41.729Z",
+  "updatedAt": "2026-11-16T15:06:45.260Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -65,23 +65,29 @@
           "votes": 26
         }
       },
-      "attempts": 1,
+      "attempts": 2,
       "createdAt": "2026-11-16T15:02:39.964Z",
-      "updatedAt": "2026-11-16T15:02:39.964Z",
-      "nextAttemptAt": null,
-      "lastError": "Gemini model updated; retrying with gemini-3.8-flash.",
+      "updatedAt": "2026-11-16T15:05:15.174Z",
+      "nextAttemptAt": 1794842415174,
+      "lastError": "gemini: The operation was aborted due to timeout",
       "resumeTo": "writing"
     }
   },
   "providerUsage": {
     "2026-11-16": {
       "gemini": {
-        "requests": 1,
+        "requests": 2,
         "tokens": 0,
         "successes": 0,
-        "failures": 1
+        "failures": 2
       }
     }
   },
-  "providerCooldowns": {}
+  "providerCooldowns": {
+    "gemini": {
+      "failures": 1,
+      "until": 1794842415174,
+      "lastError": "The operation was aborted due to timeout"
+    }
+  }
 }
