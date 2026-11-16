@@ -52,6 +52,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Install dependencies
+        run: npm ci
+
       - name: Check JavaScript syntax
         run: |
           node --check scripts/generate-reviews.mjs
@@ -80,8 +83,6 @@ jobs:
           node --check scripts/test-rawg-backfill.mjs
           npm run test:rawg-backfill
           node --check functions/api/review.js
-      - name: Install dependencies
-        run: npm ci
       - name: Index existing editorial reviews into local knowledge graph
         run: npm run knowledge:ingest-reviews
       - name: Sync D1 catalog into local knowledge graph
