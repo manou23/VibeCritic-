@@ -38,6 +38,9 @@ globalThis.fetch=async(url,options)=>{
   assert.equal(body.max_completion_tokens,4096,'Groq GPT-OSS needs an explicit completion-token budget');
   assert.equal(body.max_tokens,undefined,'use Groq max_completion_tokens instead of deprecated max_tokens');
   assert.equal(body.reasoning_effort,'low','bound GPT-OSS reasoning tokens so JSON has room to complete');
+  assert.equal(body.response_format.type,'json_schema','Groq must use strict structured JSON output');
+  assert.equal(body.response_format.json_schema.strict,true);
+  assert.deepEqual(body.response_format.json_schema.schema.required,['review','scores','pros','cons','verdict']);
   assert.equal(body.include_reasoning,false,'do not include internal reasoning in the JSON response');
   assert.equal(options.headers.authorization,'Bearer test-key');
   if(mode==='groq-retry'&&groqShortOnce){groqShortOnce=false;return new Response(JSON.stringify({choices:[{message:{content:JSON.stringify(shortPayload)},finish_reason:'stop'}],usage:{total_tokens:123}}),{status:200,headers:{'content-type':'application/json'}});}
