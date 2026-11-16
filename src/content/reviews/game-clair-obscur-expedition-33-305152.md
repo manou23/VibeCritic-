@@ -55,7 +55,6 @@ rawgPlatforms:
   - "PlayStation 5"
   - "Xbox Series S/X"
 rawgDevelopers:
-  - "Sundial Interactive"
   - "Sandfall Interactive"
 gameStores:
   - name: "Epic Games"
