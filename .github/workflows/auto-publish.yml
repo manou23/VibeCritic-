@@ -10,9 +10,8 @@ on:
         required: false
         type: boolean
         default: false
-  schedule:
-    # Advance one saved article section each hour; three successful stages are required before publication.
-    - cron: '17 * * * *'
+  # Hourly scheduling is owned by publishing-v2.yml. Keep this legacy workflow manual-only
+  # to prevent V1 and V2 from competing for the same review queue and content files.
   push:
     branches: [main]
     paths:
