@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T15:06:45.260Z",
+  "updatedAt": "2026-11-16T15:35:49.718Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -65,29 +65,29 @@
           "votes": 26
         }
       },
-      "attempts": 2,
+      "attempts": 3,
       "createdAt": "2026-11-16T15:02:39.964Z",
-      "updatedAt": "2026-11-16T15:05:15.174Z",
-      "nextAttemptAt": 1794842415174,
-      "lastError": "gemini: The operation was aborted due to timeout",
+      "updatedAt": "2026-11-16T15:35:48.493Z",
+      "nextAttemptAt": 1794857748493,
+      "lastError": "gemini: gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
       "resumeTo": "writing"
     }
   },
   "providerUsage": {
     "2026-11-16": {
       "gemini": {
-        "requests": 2,
+        "requests": 3,
         "tokens": 0,
         "successes": 0,
-        "failures": 2
+        "failures": 3
       }
     }
   },
   "providerCooldowns": {
     "gemini": {
-      "failures": 1,
-      "until": 1794842415174,
-      "lastError": "The operation was aborted due to timeout"
+      "failures": 2,
+      "until": 1794857748493,
+      "lastError": "gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
     }
   }
 }
