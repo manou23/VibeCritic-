@@ -106,7 +106,7 @@ async function modelCall(provider,text){
   url=provider.id==='groq'?'https://api.groq.com/openai/v1/chat/completions':'https://openrouter.ai/api/v1/chat/completions';headers.authorization='Bearer '+key;
   if(provider.id==='openrouter'){headers['HTTP-Referer']='https://vibecritic.pages.dev/';headers['X-Title']='VibeCritic';}
   const fallbacks=['nvidia/nemotron-3.5-super-vl:free','google/gemma-4-26b-a4b-it:free'].filter(x=>x!==provider.model);
-  body=provider.id==='groq'?{model:provider.model,temperature:.3,max_completion_tokens:4096,reasoning_effort:'low',include_reasoning:false,response_format:{type:'json_object'},messages:[{role:'system',content:'ناقد عربي دقيق. JSON فقط، لا تختلق.'},{role:'user',content:text}]}:{...(provider.id==='openrouter'?{models:[provider.model,...fallbacks],reasoning:{enabled:false}}:{}),model:provider.model,temperature:.3,max_tokens:2500,response_format:{type:'json_object'},messages:[{role:'system',content:'ناقد عربي دقيق. JSON فقط، لا تختلق.'},{role:'user',content:text}]};
+  body=provider.id==='groq'?{model:provider.model,temperature:.3,max_completion_tokens:4096,reasoning_effort:'low',include_reasoning:false,response_format:{type:'json_schema',json_schema:{name:'vibecritic_review_section',strict:true,schema:{type:'object',additionalProperties:false,properties:{review:{type:'string'},scores:{type:'object',additionalProperties:false,properties:{story:{type:'number'},visuals:{type:'number'},sound:{type:'number'},pacing:{type:'number'}},required:['story','visuals','sound','pacing']},pros:{type:'array',items:{type:'string'}},cons:{type:'array',items:{type:'string'}},verdict:{type:'string'}},required:['review','scores','pros','cons','verdict']}}},messages:[{role:'system',content:'ناقد عربي دقيق. JSON فقط، لا تختلق.'},{role:'user',content:text}]}:{...(provider.id==='openrouter'?{models:[provider.model,...fallbacks],reasoning:{enabled:false}}:{}),model:provider.model,temperature:.3,max_tokens:2500,response_format:{type:'json_object'},messages:[{role:'system',content:'ناقد عربي دقيق. JSON فقط، لا تختلق.'},{role:'user',content:text}]};
  }
  const r=await fetch(url,{method:'POST',headers,body:JSON.stringify(body),signal:AbortSignal.timeout(90000)});
  if(!r.ok)throw new Error(provider.id+' HTTP '+r.status+': '+(await r.text()).slice(0,600));
@@ -141,11 +141,13 @@ export function createPublishingAdapters(){return {
  discover,collectEvidence,isAlreadyPublished,
  generatePart:async({job,provider,stage})=>{
   const basePrompt=prompt(job,stage);
-  try{const r=await modelCall(provider,basePrompt);return {text:JSON.stringify(r.parsed),tokens:r.tokens,requests:1};}
+  const isStage3Complete=r=>stage!==3||(String(r.parsed.verdict||'').trim().length>=30&&Array.isArray(r.parsed.pros)&&r.parsed.pros.filter(x=>String(x||'').trim()).length>=3&&Array.isArray(r.parsed.cons)&&r.parsed.cons.filter(x=>String(x||'').trim()).length>=2);
+  try{const r=await modelCall(provider,basePrompt);if(!isStage3Complete(r))throw new Error('Stage 3 required fields missing: verdict/pros/cons');return {text:JSON.stringify(r.parsed),tokens:r.tokens,requests:1};}
   catch(firstError){
-   if(provider.id!=='groq'||!/^Section word count rejected:/.test(String(firstError?.message||'')))throw firstError;
+   if(provider.id!=='groq'||!(/^(Section word count rejected:|Stage 3 required fields missing:)/.test(String(firstError?.message||''))))throw firstError;
    const firstTokens=Number(firstError.tokens)||0;
-   const retryPrompt=basePrompt+'\n\nمراجعة إلزامية للطول: الإجابة السابقة أقصر من الحد المطلوب. أعد كتابة القسم كاملاً بتفصيل أكبر، واجعل review بين 250 و270 كلمة عربية فعلية. أضف تحليلاً محدداً مرتبطاً بالأدلة ولا تكرر الجمل ولا تضف حقائق غير موثقة.';
+   const retryInstruction=stage===3?'إصلاح إلزامي للمرحلة الثالثة: أعد JSON كاملاً مع review من 250 إلى 270 كلمة، وverdict عربي واضح لا يقل عن 30 كلمة، وpros مصفوفة تحتوي ثلاث نقاط قوة فعلية على الأقل، وcons مصفوفة تحتوي تحفظين فعليين على الأقل. لا تترك أي حقل فارغاً.':'مراجعة إلزامية للطول: الإجابة السابقة أقصر من الحد المطلوب. أعد كتابة القسم كاملاً بتفصيل أكبر، واجعل review بين 250 و270 كلمة عربية فعلية. أضف تحليلاً محدداً مرتبطاً بالأدلة ولا تكرر الجمل ولا تضف حقائق غير موثقة.';
+   const retryPrompt=basePrompt+'\\n\\n'+retryInstruction;
    try{const retry=await modelCall(provider,retryPrompt);return {text:JSON.stringify(retry.parsed),tokens:firstTokens+retry.tokens,requests:2};}
    catch(retryError){retryError.tokens=(Number(retryError.tokens)||0)+firstTokens;retryError.requests=2;throw retryError;}
   }
