@@ -25,7 +25,7 @@ async function seen(){
 }
 export function buildFreeProviders(){
  const out=[];
- if(env.GEMINI_API_KEY)out.push({id:'gemini',enabled:true,free:true,model:env.GEMINI_MODEL||'gemini-2.5-flash',priority:1,dailyRequestLimit:12,dailyTokenLimit:18000});
+ if(env.GEMINI_API_KEY){const configured=String(env.GEMINI_MODEL||'').replace(/^models\\//,'');const model=!configured||configured==='gemini-2.5-flash'?'gemini-3.8-flash':configured;out.push({id:'gemini',enabled:true,free:true,model,priority:1,dailyRequestLimit:12,dailyTokenLimit:18000});}
  if(env.GROQ_API_KEY)out.push({id:'groq',enabled:true,free:true,model:env.GROQ_MODEL||'llama-3.3-70b-versatile',priority:2,dailyRequestLimit:30,dailyTokenLimit:24000});
  if(env.OPENROUTER_API_KEY)out.push({id:'openrouter',enabled:true,free:true,model:env.OPENROUTER_MODEL||'openrouter/free',priority:3,dailyRequestLimit:10,dailyTokenLimit:12000});
  return out;

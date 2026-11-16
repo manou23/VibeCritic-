@@ -1,11 +1,13 @@
 import assert from 'node:assert/strict';
 process.env.GEMINI_API_KEY='test-key';
+process.env.GEMINI_MODEL='gemini-2.5-flash';
 process.env.GROQ_API_KEY='test-key';
 process.env.OPENROUTER_API_KEY='test-key';
 const {buildFreeProviders,createPublishingAdapters}=await import('./publishing-v2/adapters.mjs?adapter-test');
 const providers=buildFreeProviders();
 assert.deepEqual(providers.map(x=>x.id),['gemini','groq','openrouter']);
 assert.ok(providers.every(x=>x.free===true&&x.enabled===true));
+assert.equal(providers[0].model,'gemini-3.8-flash','retired Gemini default must be upgraded to the currently recommended model');
 assert.ok(!providers.some(x=>x.id==='openai'),'paid OpenAI must never enter the V2 free provider pool');
 const review=Array.from({length:25},()=> 'تحليل نقدي موثق يشرح تفاصيل العمل وحدود الأدلة المتاحة').join(' ');
 const payload={review,scores:{story:7.2,visuals:8.1,sound:7.4,pacing:6.8},pros:[],cons:[],verdict:''};

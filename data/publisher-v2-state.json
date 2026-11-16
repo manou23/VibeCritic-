@@ -68,8 +68,8 @@
       "attempts": 1,
       "createdAt": "2026-11-16T15:02:39.964Z",
       "updatedAt": "2026-11-16T15:02:39.964Z",
-      "nextAttemptAt": 1794842259964,
-      "lastError": "gemini: gemini HTTP 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n",
+      "nextAttemptAt": null,
+      "lastError": "Gemini model updated; retrying with gemini-3.8-flash.",
       "resumeTo": "writing"
     }
   },
@@ -83,11 +83,5 @@
       }
     }
   },
-  "providerCooldowns": {
-    "gemini": {
-      "failures": 1,
-      "until": 1794842259964,
-      "lastError": "gemini HTTP 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
-    }
-  }
+  "providerCooldowns": {}
 }
