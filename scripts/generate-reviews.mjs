@@ -846,7 +846,7 @@ async function generateReview(item, stage=0, previousParts=[]){
   'cloudflare-workers-ai':requestPrompt=>generateWithCloudflareWorkersAI(requestPrompt)
  };
  const candidates=providerCandidates(),providerErrors=[];
- let parsed=null,lengthRetryUsed=false;
+ let parsed=null,lengthRetryUsed=false,listShapeRetryUsed=false;
  if(!candidates.length)throw new Error('لا يوجد مزوّد مجاني متاح الآن؛ لن تُستهلك محاولات متكررة ولن يُستخدم OpenAI المدفوع.');
  for(const name of candidates){
   const measurement={name,startedAt:Date.now(),usage:{requests:0,inputTokens:0,outputTokens:0,totalTokens:0,reportedUsage:false,headers:{}}};
@@ -861,6 +861,12 @@ async function generateReview(item, stage=0, previousParts=[]){
      lengthRetryUsed=true;
      console.warn('قسم المراجعة أقصر من الحد؛ إعادة تصحيح واحدة عبر '+name+'.');
      const correctionPrompt=prompt+'\n\nتصحيح إلزامي واحد بسبب قصر المحاولة السابقة: أعد كتابة JSON نفسه، واجعل حقل review وحده 230 إلى 260 كلمة عربية فعلية و900 حرف على الأقل، في فقرتين إلى أربع فقرات مترابطة، دون عناوين أو حشو أو تكرار. لا تغيّر الحقائق ولا تخترع تفاصيل. التزم بالمفاتيح نفسها فقط. في المرحلتين الأولى والثانية أعد pros وcons كمصفوفتين فارغتين، وفي المرحلة الثالثة فقط أعد 3 نقاط قوة و2 تحفظات نقدية.';
+     generated=await handlers[name](correctionPrompt);
+     parsed=validateGeneratedReview(normalizeInterimReviewLists(generated,stage),{stage});
+    }else if(!listShapeRetryUsed&&/قوائم pros وcons يجب أن تكون مصفوفتين/.test(String(validationError?.message||''))){
+     listShapeRetryUsed=true;
+     console.warn('تنسيق قوائم القوة والتحفظات غير صالح؛ طلب تصحيح بنيوي واحد عبر '+name+'.');
+     const correctionPrompt=prompt+'\\n\\nتصحيح بنيوي إلزامي واحد: أعد كائن JSON كاملاً بالمفاتيح scores وpros وcons وreview فقط. يجب أن تكون pros وcons مصفوفتين JSON حقيقيتين وليستا نصاً أو كائناً. في المرحلة الثالثة أعد 3 عناصر نصية موثقة على الأقل في pros وعنصرين في cons؛ لا تضع القوائم داخل review ولا تغيّر الحقائق. التزم ببقية شروط الطول والدرجات كما هي.';
      generated=await handlers[name](correctionPrompt);
      parsed=validateGeneratedReview(normalizeInterimReviewLists(generated,stage),{stage});
     }else throw validationError;
