@@ -11,6 +11,7 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
   if(!await adapters.verifyDeployment({article:job.article,job,articlePath:job.articlePath}))return {action:'deployment-pending',key:job.key,providerCalls:0};
   state.jobs[job.key]=transition(job,'published',{deployedAt:new Date(now).toISOString()},now);await save();return {action:'published',key:job.key,articlePath:job.articlePath,providerCalls:0};
  }
+ // Resume a durable stage-three checkpoint through validation only; never spend another model request.
  if(decision.action==='validate'){
   const article=job.article||await adapters.assembleArticle(job);
   let quality=validateArticle(article,articleLimits);
