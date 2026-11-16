@@ -114,9 +114,9 @@ async function modelCall(provider,text){
  if(Array.isArray(raw))raw=raw.map(x=>x.text||'').join('');
  if(typeof raw!=='string'||!raw.trim()){const c=d.choices?.[0],m=c?.message||{};throw new Error(provider.id+' empty response: '+JSON.stringify({model:d.model,finish_reason:c?.finish_reason,message_keys:Object.keys(m),error:d.error||null}).slice(0,500));}
  const parsed=parseJsonResponse(raw),words=(clean(parsed.review).match(/[\p{L}\p{N}]+/gu)||[]).length;
- if(words<220||words>280)throw new Error('Section word count rejected: '+words);
+ const tokens=Number(d.usage?.total_tokens)||Math.ceil((text.length+raw.length)/4);if(words<220||words>280){const error=new Error('Section word count rejected: '+words);error.tokens=tokens;throw error;}
  for(const k of ['story','visuals','sound','pacing'])if(!Number.isFinite(Number(parsed.scores?.[k]))||Number(parsed.scores[k])<0||Number(parsed.scores[k])>10)throw new Error('Invalid score '+k);
- return {parsed,tokens:Number(d.usage?.total_tokens)||Math.ceil((text.length+raw.length)/4)};
+ return {parsed,tokens};
 }
 const y=v=>JSON.stringify(String(v??''));
 const yamlList=a=>a?.length?'\n'+a.map(v=>'  - '+y(v)).join('\n'):' []';
@@ -139,7 +139,17 @@ async function isAlreadyPublished(item){
 }
 export function createPublishingAdapters(){return {
  discover,collectEvidence,isAlreadyPublished,
- generatePart:async({job,provider,stage})=>{const r=await modelCall(provider,prompt(job,stage));return {text:JSON.stringify(r.parsed),tokens:r.tokens};},
+ generatePart:async({job,provider,stage})=>{
+  const basePrompt=prompt(job,stage);
+  try{const r=await modelCall(provider,basePrompt);return {text:JSON.stringify(r.parsed),tokens:r.tokens,requests:1};}
+  catch(firstError){
+   if(provider.id!=='groq'||!/^Section word count rejected:/.test(String(firstError?.message||'')))throw firstError;
+   const firstTokens=Number(firstError.tokens)||0;
+   const retryPrompt=basePrompt+'\\n\\nمراجعة إلزامية للطول: الإجابة السابقة أقصر من الحد المطلوب. أعد كتابة القسم كاملاً بتفصيل أكبر، واجعل review بين 250 و270 كلمة عربية فعلية. أضف تحليلاً محدداً مرتبطاً بالأدلة ولا تكرر الجمل ولا تضف حقائق غير موثقة.';
+   try{const retry=await modelCall(provider,retryPrompt);return {text:JSON.stringify(retry.parsed),tokens:firstTokens+retry.tokens,requests:2};}
+   catch(retryError){retryError.tokens=(Number(retryError.tokens)||0)+firstTokens;retryError.requests=2;throw retryError;}
+  }
+ },
  assembleArticle:async job=>{
   const p=job.parts.map(x=>parseJsonResponse(x.text)),last=p[p.length-1],e=job.evidence;
   const dims={storyScore:Number(last.scores.story),visualsScore:Number(last.scores.visuals),soundScore:Number(last.scores.sound),pacingScore:Number(last.scores.pacing)};
