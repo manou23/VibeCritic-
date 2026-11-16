@@ -30,7 +30,7 @@ tags: ["Frank Darabont", "Stephen King", "Friendship", "Prison Drama"]
 genres: ["دراما", "جريمة"]
 cast: ["Tim Robbins", "Morgan Freeman", "Bob Gunton", "William Sadler"]
 crew: ["Frank Darabont", "Roger Deakins", "Thomas Newman"]
-sourceName: "VibeCritic Editorial"
+sourceName: "Columbia Pictures / RogerEbert.com / The Guardian / Los Angeles Times / Metacritic"
 sourceId: "manual-movie-the-shawshank-redemption-278"
 sourceUrl: "https://www.themoviedb.org/movie/278"
 aiGenerated: false
@@ -49,3 +49,14 @@ backdrop: "https://image.tmdb.org/t/p/w1280/pNjh59JSxChQktamG3LMp9ZoQzp.jpg"
 يستحق الفيلم مكانته بسبب قدرته على تحويل الأمل إلى ممارسة يومية، لا لأنه يرفع شعاراً مريحاً. بعض الشخصيات مرسومة بخطوط أخلاقية واضحة، وبعض المصادفات تسهل حركة الحبكة، لكن العلاقة المركزية والبناء الزمني والأداء تجعل الأثر النهائي مقنعاً. درجة 8.9/10 تعكس قوة الكتابة والتمثيل والإيقاع، مع عدم منح العلامة الكاملة لغياب التعقيد المتساوي عن كل المسارات.
 
 > مراجعة تحريرية يدوية مستقلة، وليست ادعاءً بتجربة مشاهدة جديدة أو بقياس آراء الجمهور.
+
+
+## مصادر التحقق والمراجعات النقدية
+- [RogerEbert.com — The Shawshank Redemption](https://www.rogerebert.com/reviews/the-shawshank-redemption-1994): تحليل الصداقة والصبر والوقت والحياة داخل المؤسسة.
+- [RogerEbert.com — Great Movie: The Shawshank Redemption](https://www.rogerebert.com/reviews/great-movie-the-shawshank-redemption-1994): قراءة أعمق في منظور ريد وبنية الأمل والتحول.
+- [The Guardian — Shawshank at 30](https://www.theguardian.com/film/2024/sep/23/shawshank-redemption-30th-anniversary): مراجعة إرث الفيلم وحدود مثاليته ورسالة الأمل.
+- [Los Angeles Times — Shawshank Review](https://www.latimes.com/archives/la-xpm-1994-09-23-ca-41876-story.html): مراجعة معاصرة تنتقد الميل إلى المثالية مع الإشادة بالأداء.
+- [Metacritic — The Shawshank Redemption Critic Reviews](https://www.metacritic.com/movie/the-shawshank-redemption/critic-reviews/): تجميع المراجعات النقدية، منفصل عن درجة VibeCritic.
+- [Rotten Tomatoes — The Shawshank Redemption](https://www.rottentomatoes.com/m/shawshank_redemption): بيانات استقبال النقاد والجمهور وموعد الإصدار.
+
+> مراجعة تحريرية يدوية مستقلة، تستند إلى تحليل الفيلم ومراجعات منشورة، ولا تنسخ متوسطات مواقع التجميع.
