@@ -26,7 +26,7 @@ if (typeof reviewTools.normalizeInterimReviewLists === 'function' && typeof revi
   assert.deepEqual(normalizedInterim.pros, []);
   assert.deepEqual(normalizedInterim.cons, []);
   assert.equal(validateGeneratedReview(normalizedInterim, { stage: 0 }).pros.length, 0);
-  assert.throws(() => validateGeneratedReview(reviewTools.normalizeInterimReviewLists({ ...interimSection, pros: 'ليست مصفوفة' }, 0), { stage: 0 }), /مصفوفة/);
+  assert.throws(() => validateGeneratedReview(reviewTools.normalizeInterimReviewLists({ ...interimSection, pros: 'ليست مصفوفة' }, 0), { stage: 0 }), /مصفوف/);
 
   const olderDraft = { key: 'series:old', status: 'waiting', createdAt: '2026-11-15T10:00:00Z', nextAttemptAt: 2_000_000, item: { id: 'old' }, draft: { stage: 2, sections: [{}, {}] } };
   const newerDraft = { key: 'movie:new', status: 'staged-writing', createdAt: '2026-11-16T10:00:00Z', nextAttemptAt: 0, item: { id: 'new' }, draft: { stage: 1, sections: [{}] } };
