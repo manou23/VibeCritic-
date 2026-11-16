@@ -61,5 +61,7 @@ jobs:
             echo "No durable state or article changes to commit."
           else
             git commit -m "chore(publisher-v2): checkpoint editorial cycle"
+            git fetch origin ${{ github.ref_name }}
+            git rebase origin/${{ github.ref_name }}
             git push origin HEAD:${{ github.ref_name }}
           fi
