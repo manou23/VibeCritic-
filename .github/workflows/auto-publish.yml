@@ -42,10 +42,19 @@ jobs:
         run: |
           git fetch origin main
           git reset --hard origin/main
+
+      - name: Remove previously tracked build artifacts from Git index
+        run: |
+          # .gitignore does not untrack files already committed. Remove them
+          # from the index once while preserving the runner's working copies.
+          git rm -r --cached --ignore-unmatch node_modules dist .astro .wrangler
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Install dependencies
+        run: npm ci
+
       - name: Check JavaScript syntax
         run: |
           node --check scripts/generate-reviews.mjs
@@ -74,8 +83,6 @@ jobs:
           node --check scripts/test-rawg-backfill.mjs
           npm run test:rawg-backfill
           node --check functions/api/review.js
-      - name: Install dependencies
-        run: npm install
       - name: Index existing editorial reviews into local knowledge graph
         run: npm run knowledge:ingest-reviews
       - name: Sync D1 catalog into local knowledge graph
@@ -275,25 +282,25 @@ jobs:
       - name: Commit generated reviews and learning memory
         if: success()
         run: |
-          # Stage the complete generated working tree. The previous path list could
-          # become stale when an optional memory file was absent or removed.
-          if [[ -n "$(git status --porcelain)" ]]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add -A
-            if ! git diff --cached --quiet; then
-              git commit -m "chore: update generated reviews and learning memory"
-              for attempt in 1 2 3; do
-                if git push origin HEAD:main; then
-                  break
-                fi
-                if [ "$attempt" -eq 3 ]; then
-                  echo "Unable to push generated content after 3 attempts."
-                  exit 1
-                fi
-                git fetch origin main
-                git rebase origin/main
-              done
-            fi
+          # Stage only durable source/content data. Build output, dependencies,
+          # local caches and secrets must never enter the generated-content commit.
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- src/content src/data data ':!data/knowledge-graph.json' ':!data/source-cache-upserts.sql'
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update generated reviews and learning memory"
+            for attempt in 1 2 3; do
+              if git push origin HEAD:main; then
+                break
+              fi
+              if [ "$attempt" -eq 3 ]; then
+                echo "Unable to push generated content after 3 attempts."
+                exit 1
+              fi
+              git fetch origin main
+              git rebase origin/main
+            done
+          else
+            echo "No durable generated content changes to commit."
           fi
 # Manual recovery trigger: commits marked [generate-reviews] advance one saved editorial stage.
