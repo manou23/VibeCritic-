@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-16T09:52:53.142Z",
+  "updatedAt": "2026-11-16T10:31:17.968Z",
   "jobs": {
     "game:972995": {
       "key": "game:972995",
@@ -12541,8 +12541,8 @@
       "type": "series",
       "id": "254630",
       "createdAt": "2026-11-15T22:54:38.826Z",
-      "attemptCount": 2,
-      "status": "staged-writing",
+      "attemptCount": 3,
+      "status": "waiting",
       "item": {
         "id": "254630",
         "type": "series",
@@ -12775,9 +12775,9 @@
           }
         }
       },
-      "nextAttemptAt": 0,
-      "lastError": null,
-      "updatedAt": "2026-11-16T09:52:53.142Z",
+      "nextAttemptAt": 1794828677966,
+      "lastError": "فشل توليد جزء المقال النقدي عبر المزوّدات المجانية المتاحة: groq: Groq HTTP 400: {\"error\":{\"message\":\"Failed to validate JSON. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"code\":\"json_validate_failed\",\"failed_generation\":\"\"}}\n | openrouter: جزء المقال أقصر من الحد الأدنى (220 كلمة و900 حرف)",
+      "updatedAt": "2026-11-16T10:31:17.968Z",
       "evidenceDossier": {
         "version": 1,
         "workKey": "series:254630",
