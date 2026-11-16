@@ -41,7 +41,7 @@ crew:
   - "Francis Ford Coppola"
   - "Mario Puzo"
   - "Gordon Willis"
-sourceName: "VibeCritic Editorial"
+sourceName: "Paramount Pictures / RogerEbert.com / The Guardian / The New Yorker / Yale Film Archive"
 sourceId: "manual-movie-the-godfather-238"
 aiGenerated: false
 poster: "https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg"
@@ -64,3 +64,13 @@ youtubeVideoTitle: "50th Anniversary Trailer"
 
 ## الحكم النهائي
 يستحق «العرّاب» درجته المرتفعة لأن عناصره الأساسية تتعاون: الكتابة تمنح التحول سببية، والأداء يمنحه وجهاً إنسانياً، والصورة والصوت يصنعان عالماً يمكن تمييزه. لا يعني ذلك أنه بلا حدود؛ فبعض الشخصيات أقل تطوراً، كما أن الإيقاع ليس مناسباً لكل مشاهد. الدرجة 9.0 تعكس عملاً ممتازاً جداً في البناء والتمثيل والإخراج، من دون ادعاء الكمال.
+
+## مصادر التحقق والمراجعات النقدية
+- [RogerEbert.com — The Godfather](https://www.rogerebert.com/reviews/the-godfather-1972): تحليل انتقال السلطة بين الأجيال وبناء عالم العائلة والأداءات.
+- [RogerEbert.com — The Godfather: Great Movie](https://www.rogerebert.com/reviews/great-movie-the-godfather-1972): قراءة لاحقة للولاء والسلطة والظلال البصرية وطريقة الفيلم في جعل المشاهد يرى العالم من داخل المافيا.
+- [The Guardian — The Godfather Review](https://www.theguardian.com/film/2009/sep/25/the-godfather-review): تحليل موقع فيتو ومايكل في بنية السلطة العائلية.
+- [The New Yorker — Pauline Kael on The Godfather](https://www.newyorker.com/magazine/1972/03/18/the-godfather-movie-review-pauline-kael): مراجعة نقدية معاصرة للعرض الأول عن الكتابة والإخراج والبناء.
+- [Yale Film Archive — The Godfather Film Notes](https://web.library.yale.edu/film/notes/fn00107): سياق تاريخي ونقدي حول استقبال الفيلم وأثره.
+- [Metacritic — The Godfather Critic Reviews](https://www.metacritic.com/movie/the-godfather/critic-reviews/): تجميع مراجعات النقاد، منفصل عن درجة VibeCritic.
+
+> مراجعة تحريرية يدوية مستقلة، تستند إلى تحليل الفيلم ومراجعات منشورة، ولا تنسخ متوسطات مواقع التجميع.
