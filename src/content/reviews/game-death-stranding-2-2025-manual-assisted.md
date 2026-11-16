@@ -4,13 +4,12 @@ originalTitle: "Death Stranding 2: On the Beach"
 headline: "رحلة أكثر ثراءً في الحركة والعالم، لكنها لا تتخلى عن بطء التأمل ولا عن غرابة كوجيما"
 hook: "توسع Death Stranding 2 أدوات الرحلة وتمنحها مشاهد أكثر تنوعاً، لكنها تظل لعبة عن المسافة والانتظار والاتصال، لا مغامرة أكشن تقليدية."
 summary: "يعود سام بورتر بريدجز في رحلة جديدة عبر أستراليا لإنقاذ البشرية، مع أدوات نقل ومخاطر ورفاق جدد وسؤال متجدد حول معنى الاتصال."
-verdict: "ديث ستراندينغ 2: على الشاطئ يقدم يعود سام بورتر بريدجز في رحلة جديدة عبر أستراليا لإنقاذ البشرية، مع أدوات نقل ومخاطر ورفاق جدد وسؤال متجدد حول معنى الاتصال. وتظهر قوته في عناصره الأساسية، مع حدود واضحة في الإيقاع أو توزيع المسارات كما تفصل المراجعة. تقييم VibeCritic التحريري: 8.7/10."
+verdict: "توسع Death Stranding 2 أدوات النقل وتنوع البيئات وتمنح الرحلة وزناً عاطفياً وبصرياً أكبر، مع احتفاظها بإيقاع كوجيما التأملي. لكن بطء المقاطع السينمائية وتراكم الأنظمة والمهام الجانبية قد يشتتان المسار، ولن تناسب وتيرتها كل اللاعبين. تقييم VibeCritic التحريري: 8.7/10."
 reviewVersion: 1
 type: game
 date: 2026-11-15
 releaseDate: "2025-06-26"
 poster: "https://m.media-amazon.com/images/M/MV5BYmVkNDM3MzUtN2YyYS00MDg0LWIxN2EtMjQ2ZGQ1ZDhlZWY4XkEyXkFqcGc%40._V1_.jpg"
-backdrop: "https://m.media-amazon.com/images/M/MV5BYmVkNDM3MzUtN2YyYS00MDg0LWIxN2EtMjQ2ZGQ1ZDhlZWY4XkEyXkFqcGc%40._V1_.jpg"
 score: 8.7
 storyScore: 8.6
 visualsScore: 9.5
@@ -30,12 +29,10 @@ cons:
   - "كثرة الأنظمة والمهام الجانبية قد تشتت خط الرحلة"
   - "بعض الحوارات والرموز تشرح الفكرة أكثر مما تحتاج"
 tags: ["Death Stranding 2: On the Beach", "game", "VibeCritic", "2025"]
-genres: ["أكشن ومغامرة"]
+genres: ["أكشن", "مغامرة", "محاكاة نقل"]
 sourceName: "Kojima Productions"
 sourceId: "manual-assisted-game-death-stranding-2-2025-manual-assisted"
 sourceUrl: "https://www.kojimaproductions.jp/en/death-stranding-2"
-externalVideoUrl: "https://www.kojimaproductions.jp/en/deathstranding2_otb_now_available"
-externalVideoTitle: "Death Stranding 2 — Official Launch Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
 rawgSourceId: 891532
@@ -78,7 +75,7 @@ rawgDevelopers:
 
 ## الحكم النهائي
 
-تقييم 8.7/10 يعكس موازنة بين نقاط القوة المحددة ومواطن الضعف التي ظهرت في السرد أو الأنظمة أو الإيقاع. لا تعني الدرجة أن العمل كامل، ولا تُمنح المكافأة لمجرد الشعبية أو حجم الإنتاج.
+تقييم 8.7/10 يعكس طموح اللعبة في جعل الحركة والنقل جزءاً من السرد، وقوة عالمها وصورتها وموسيقاها، مع خصم بسبب الإيقاع البطيء وتفاوت فائدة الأنظمة الجانبية. إنها تكملة غنية ومميزة، لكنها تطلب صبراً وميلاً إلى التأمل أكثر مما تطلبه مغامرات الأكشن المعتادة.
 
 ## مصادر التحقق
 
