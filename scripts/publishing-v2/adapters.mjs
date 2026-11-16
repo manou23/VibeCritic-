@@ -107,7 +107,7 @@ async function modelCall(provider,text){
  if(Array.isArray(raw))raw=raw.map(x=>x.text||'').join('');
  if(typeof raw!=='string'||!raw.trim())throw new Error(provider.id+' empty response');
  const parsed=parseJsonResponse(raw),words=(clean(parsed.review).match(/[\p{L}\p{N}]+/gu)||[]).length;
- if(words<200||words>310)throw new Error('Section word count rejected: '+words);
+ if(words<220||words>280)throw new Error('Section word count rejected: '+words);
  for(const k of ['story','visuals','sound','pacing'])if(!Number.isFinite(Number(parsed.scores?.[k]))||Number(parsed.scores[k])<0||Number(parsed.scores[k])>10)throw new Error('Invalid score '+k);
  return {parsed,tokens:Number(d.usage?.total_tokens)||Math.ceil((text.length+raw.length)/4)};
 }
