@@ -5,6 +5,7 @@ process.env.CLOUDFLARE_API_TOKEN='test-token';
 process.env.CLOUDFLARE_ACCOUNT_ID='test-account';
 process.env.CLOUDFLARE_FREE_TIER_ONLY='true';
 process.env.GROQ_API_KEY='test-key';
+process.env.GROQ_FREE_TIER_ONLY='true';
 process.env.OPENROUTER_API_KEY='test-key';
 const {buildFreeProviders,createPublishingAdapters}=await import('./publishing-v2/adapters.mjs?adapter-test');
 const providers=buildFreeProviders();
