@@ -9,7 +9,6 @@ type: game
 date: 2026-11-11
 releaseDate: "2026-11-05"
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/cocv5r.jpg"
-backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/cocv5r.jpg"
 youtubeVideoId: "r8eMoxo4ipE"
 youtubeVideoTitle: "The Legend of Zelda: Ocarina of Time - Nintendo Direct 6.9.2026"
 reviewMode: limited
