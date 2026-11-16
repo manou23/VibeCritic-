@@ -4,13 +4,12 @@ originalTitle: "Andor Season 2"
 headline: "سياسة الثورة تتحول إلى دراما شخصية دقيقة، لكن كثافة التفاصيل تتطلب انتباهاً مستمراً"
 hook: "يقترب Andor من لحظة Rogue One عبر سنوات من التنازلات والتحالفات؛ قوته في السياسة بوصفها حياة يومية، وحده أن كثافته لا تمنح المشاهد مساحة كبيرة للشرود."
 summary: "الموسم الختامي من Andor يتتبع تحول كاسيان إلى عنصر محوري في التمرد عبر أربع مراحل زمنية متتابعة."
-verdict: "أندور — الموسم الثاني يقدم الموسم الختامي من Andor يتتبع تحول كاسيان إلى عنصر محوري في التمرد عبر أربع مراحل زمنية متتابعة. وتظهر قوته في عناصره الأساسية، مع حدود واضحة في الإيقاع أو توزيع المسارات كما تفصل المراجعة. تقييم VibeCritic التحريري: 8.9/10."
+verdict: "يحوّل الموسم الثاني Andor إلى دراما سياسية وشخصية مكتملة، ويربط صعود التمرد بتضحيات يومية وشبكة مصالح متضاربة. قوته في الكتابة والأداء والإنتاج، لكن كثافة الأسماء والقفزات الزمنية وبعض المسارات الأبطأ ترفع حاجز المتابعة. تقييم VibeCritic التحريري: 8.9/10."
 reviewVersion: 1
 type: series
 date: 2026-11-15
 releaseDate: "2025-04-22"
 poster: "https://cdn.moviepilot.de/files/1a74e72be77694543c5070b9a6241615ffea4156d82a3cc7cf202be4a68c/copyright/GlSs8vjW8AARR9s.jpeg"
-backdrop: "https://cdn.moviepilot.de/files/1a74e72be77694543c5070b9a6241615ffea4156d82a3cc7cf202be4a68c/copyright/GlSs8vjW8AARR9s.jpeg"
 score: 8.9
 storyScore: 9.2
 visualsScore: 9.1
@@ -30,8 +29,6 @@ genres: ["دراما"]
 sourceName: "StarWars.com / Lucasfilm"
 sourceId: "manual-assisted-series-andor-season-2-2025-manual-assisted"
 sourceUrl: "https://www.starwars.com/series/andor"
-externalVideoUrl: "https://www.starwars.com/series/andor"
-externalVideoTitle: "Andor Season 2 — Official Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
 ---
@@ -63,7 +60,7 @@ Andor يقدم خاتمة سياسية وإنسانية متماسكة لعال�
 
 ## الحكم النهائي
 
-تقييم 8.9/10 يعكس موازنة بين نقاط القوة المحددة ومواطن الضعف التي ظهرت في السرد أو الأنظمة أو الإيقاع. لا تعني الدرجة أن العمل كامل، ولا تُمنح المكافأة لمجرد الشعبية أو حجم الإنتاج.
+تقييم 8.9/10 يعكس تماسك البناء السياسي وتطور الشخصيات وجودة الأداء والإنتاج، مع خصم بسبب كثافة المعلومات والقفزات الزمنية وتفاوت سرعة بعض المسارات. إنها خاتمة قوية لمنحنى كاسيان والتمرد، لكنها تتطلب متابعة منتبهة ولا تقدم نفسها كدراما خفيفة أو سريعة.
 
 ## مصادر التحقق
 
