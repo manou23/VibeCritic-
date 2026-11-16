@@ -1,0 +1,34 @@
+import assert from 'node:assert/strict';
+process.env.GEMINI_API_KEY='test-key';
+process.env.GROQ_API_KEY='test-key';
+process.env.OPENROUTER_API_KEY='test-key';
+const {buildFreeProviders,createPublishingAdapters}=await import('./publishing-v2/adapters.mjs?adapter-test');
+const providers=buildFreeProviders();
+assert.deepEqual(providers.map(x=>x.id),['gemini','groq','openrouter']);
+assert.ok(providers.every(x=>x.free===true&&x.enabled===true));
+assert.ok(!providers.some(x=>x.id==='openai'),'paid OpenAI must never enter the V2 free provider pool');
+const review=Array.from({length:225},()=> 'تحليل نقدي موثق يشرح تفاصيل العمل وحدود الأدلة المتاحة').join(' ');
+const payload={review,scores:{story:7.2,visuals:8.1,sound:7.4,pacing:6.8},pros:[],cons:[],verdict:''};
+const originalFetch=globalThis.fetch;let calls=0;
+globalThis.fetch=async(url,options)=>{
+ calls++;
+ assert.match(String(url),/generativelanguage\.googleapis\.com/);
+ const body=JSON.parse(options.body);
+ assert.equal(body.generationConfig.responseMimeType,'application/json');
+ return new Response(JSON.stringify({candidates:[{content:{parts:[{text:JSON.stringify(payload)}]}}]}),{status:200,headers:{'content-type':'application/json'}});
+};
+try{
+ const adapters=createPublishingAdapters();
+ const generated=await adapters.generatePart({job:{item:{type:'movie',id:'77'},evidence:{title:'فيلم تجريبي',type:'movie',releaseDate:'2026',overview:'وصف موثق',genres:[],platforms:[],cast:[],crew:[],metadata:{},sources:[{name:'TMDB',url:'https://www.themoviedb.org/movie/77',extract:'معلومات'},{name:'Wikipedia',url:'https://en.wikipedia.org/wiki/Test',extract:'معلومات مستقلة'}]},parts:[]},provider:providers[0],stage:1});
+ assert.equal(calls,1,'exactly one provider request per stage');
+ assert.ok(JSON.parse(generated.text).review);
+ const stage3={review,scores:{story:8,visuals:7,sound:6,pacing:9},pros:['قوة سردية موثقة','تصميم متماسك','أداء مناسب'],cons:['معلومات فنية ناقصة','إيقاع غير متوازن'],verdict:'حكم نقدي واضح يستند إلى المصادر ولا يدعي تجربة مباشرة.'};
+ const job={item:{id:'77'},evidence:{title:'فيلم تجريبي',originalTitle:'',type:'movie',sourceId:'movie:77',sourceName:'TMDB',sourceUrl:'https://www.themoviedb.org/movie/77',overview:'وصف موثق',releaseDate:'2026',poster:'https://image.tmdb.org/t/p/w780/poster.jpg',backdrop:'https://image.tmdb.org/t/p/w1280/backdrop.jpg',genres:['دراما'],platforms:[],cast:[],crew:[],sources:[{name:'TMDB',url:'https://www.themoviedb.org/movie/77'},{name:'Wikipedia',url:'https://en.wikipedia.org/wiki/Test'}]},parts:[{text:JSON.stringify(payload)},{text:JSON.stringify(payload)},{text:JSON.stringify(stage3)}]};
+ const article=await adapters.assembleArticle(job);
+ assert.equal(article.score,7.4);
+ assert.equal(article.sourceId,'movie:77');
+ assert.equal(article.pros.length,3);
+ assert.equal(article.cons.length,2);
+ assert.equal(article.body.split(/\s+/u).length,review.split(/\s+/u).length*3);
+}finally{globalThis.fetch=originalFetch;}
+console.log('VibeCritic V2 adapter contract tests passed.');
