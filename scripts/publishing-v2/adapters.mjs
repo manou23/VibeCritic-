@@ -2,7 +2,8 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { parseJsonResponse } from '../review-json.mjs';
 
-// V2 adapters: free-tier-only model calls and source-grounded editorial metadata.\nconst env=process.env, ROOT='src/content/reviews';
+// V2 adapters: free-tier-only model calls and source-grounded editorial metadata.
+const env=process.env, ROOT='src/content/reviews';
 const clean=v=>String(v??'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
 const slug=v=>clean(v).toLowerCase().normalize('NFKD').replace(/[^\p{L}\p{N}]+/gu,'-').replace(/^-|-$/g,'').slice(0,60)||'review';
 const arr=v=>Array.isArray(v)?v:[];
