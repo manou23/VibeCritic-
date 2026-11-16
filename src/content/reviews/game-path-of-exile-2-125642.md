@@ -11,7 +11,6 @@ type: game
 date: 2026-11-15
 releaseDate: "2024-12-06"
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/co8ae0.jpg"
-backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/co8ae0.jpg"
 youtubeVideoId: "KhhNhpOln64"
 youtubeVideoTitle: "Path of Exile 2 - Official Early Access Gameplay Trailer"
 score: 8.1
@@ -40,9 +39,9 @@ genres:
   - "Hack and Slash"
   - "Role-playing"
 creator: "Grinding Gear Games"
-sourceName: "VibeCritic Editorial Desk"
+sourceName: "Grinding Gear Games / Steam / PC Gamer / GamesRadar+"
 sourceId: "125642"
-sourceUrl: "https://www.pathofexile.com/poe2"
+sourceUrl: "https://store.steampowered.com/app/2694490/Path_of_Exile_2/"
 aiGenerated: false
 rawgSourceId: 391403
 rawgSourceUrl: "https://rawg.io/games/path-of-exile-2"
@@ -52,6 +51,10 @@ rawgGenres:
   - "Adventure"
   - "RPG"
   - "Massively Multiplayer"
+platforms:
+  - "PC"
+  - "PlayStation 5"
+  - "Xbox Series X|S"
 rawgPlatforms:
   - "PC"
 rawgDevelopers:
@@ -62,7 +65,7 @@ gameStores:
 
 ## نطاق المراجعة والمنهج
 
-هذه مراجعة **لنسخة الوصول المبكر حتى 15 نوفمبر 2026**، وليست مراجعة للإصدار الكامل. وفق إعلان المطور الذي نقلته تغطيات اللعبة، موعد الإصدار الكامل 1.0 هو 11 ديسمبر 2026، أي أنه ما زال مستقبلياً عند تاريخ هذه المراجعة. لذلك لا نحكم على حملة نهائية مكتملة أو توازن مستقر لم يصلا بعد. نستند إلى مراجعات الوصول المبكر المنشورة، وتغطية تحديثات 2026، وبيانات Steam للاعبين بوصفها مؤشراً مجتمعياً لا بديلاً عن النقد.
+هذه مراجعة **لنسخة الوصول المبكر حتى 15 نوفمبر 2026**، وليست مراجعة للإصدار الكامل. أكد إعلان Grinding Gear Games المنشور في 6 نوفمبر 2026 أن اللعبة ستغادر الوصول المبكر وتصدر بنسخة 1.0 في 11 ديسمبر 2026، أي أن الموعد ما زال مستقبلياً عند تاريخ هذه المراجعة. لذلك لا نحكم على حملة نهائية مكتملة أو توازن مستقر لم يصلا بعد. نستند إلى مراجعات الوصول المبكر المنشورة، وتغطية تحديثات 2026، وبيانات Steam للاعبين بوصفها مؤشراً مجتمعياً لا بديلاً عن النقد.
 
 ## أسلوب اللعب وبناء الشخصية — 8.8/10
 
@@ -95,6 +98,7 @@ Path of Exile 2 من أقوى مشاريع الأكشن RPG الحديثة من 
 - [Metacritic — Path of Exile 2 Critic Reviews](https://www.metacritic.com/game/path-of-exile-2/critic-reviews/?platform=pc) — تجميع مراجعات الوصول المبكر، بما فيها ملاحظات Eurogamer وGamesRadar+ وGamingBolt.
 - [Steam — Path of Exile 2](https://store.steampowered.com/app/2694490/Path_of_Exile_2/) — بيانات مراجعات اللاعبين وحجمها واتجاهها؛ تستخدم كمؤشر مجتمعي لا كحكم نقدي.
 - [Steam Review History — Path of Exile 2](https://charts.game/games/2694490-path-of-exile-2/reviews) — تطور نسبة المراجعات الإيجابية عبر التحديثات، ويظهر التذبذب في استقبال اللعبة.
-- [Grinding Gear Games — Path of Exile 2](https://www.pathofexile.com/poe2) — مرجع رسمي لحالة الوصول المبكر وخطط الإصدار.
+- [Steam — Path of Exile 2](https://store.steampowered.com/app/2694490/Path_of_Exile_2/) — صفحة المتجر الرسمية التي توضح حالة الوصول المبكر وموعد مغادرته في 11 ديسمبر 2026 والمنصات.
+- [Grinding Gear Games — Path of Exile 2](https://www.pathofexile.com/poe2) — الموقع الرسمي للعبة والتحديثات.
 
 > منهجية: درجة مؤقتة محددة بنسخة الوصول المبكر وتاريخها. لا تدعي اختبار كل منصة أو كل تحديث، ولا تتنبأ بجودة إصدار 1.0 قبل صدوره.
