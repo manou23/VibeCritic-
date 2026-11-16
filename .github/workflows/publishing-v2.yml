@@ -1,6 +1,9 @@
 name: VibeCritic Publishing V2
 on:
   workflow_dispatch:
+  push:
+    branches: [publisher-v2-rebuild]
+    paths: ['.github/workflows/publishing-v2.yml', 'docs/PUBLISHING-ENGINE-V2.md']
   schedule:
     - cron: '17 * * * *'
 permissions:
@@ -10,7 +13,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish-cycle:
-    if: github.ref == 'refs/heads/publisher-v2-rebuild' || github.ref == 'refs/heads/main'
+    if: (github.ref == 'refs/heads/publisher-v2-rebuild' || github.ref == 'refs/heads/main') && (github.event_name != 'push' || contains(github.event.head_commit.message, '[v2-cycle]'))
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
