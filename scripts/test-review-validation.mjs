@@ -1,17 +1,11 @@
 import assert from 'node:assert/strict';
 import { validateGeneratedReview } from './generate-reviews.mjs';
 
-function reviewWithSections(lengths) {
-  return lengths.map((length, index) => {
-    const words = Array.from({ length }, (_, word) => 'تحليل' + (index + 1) + 'تفصيل' + (word + 1));
-    return '### المحور ' + (index + 1) + '\n' + words.join(' ');
-  }).join('\n\n');
+function words(count) {
+  return Array.from({ length: count }, (_, index) => 'تفصيل' + (index + 1)).join(' ');
 }
 function candidate(review) {
   return {
-    headline: 'عنوان نقدي محدد',
-    summary: 'ملخص يصف العمل وموضوعه.',
-    verdict: 'حكم نقدي متوازن يستند إلى التحليل.',
     scores: { story: 7.5, visuals: 7, sound: 6.5, pacing: 7 },
     pros: ['قوة محددة أولى', 'قوة محددة ثانية', 'قوة محددة ثالثة'],
     cons: ['تحفظ نقدي أول', 'تحفظ نقدي ثان'],
@@ -19,19 +13,13 @@ function candidate(review) {
   };
 }
 
-const valid = candidate(reviewWithSections([130, 130, 130, 130, 130]));
-assert.ok(validateGeneratedReview(valid).review.length >= 3200);
+const valid = candidate(words(105));
+assert.equal(validateGeneratedReview(valid).review, words(105));
 
-assert.throws(
-  () => validateGeneratedReview(candidate(reviewWithSections([120, 120, 120, 120, 120]))),
-  /650 كلمة/
-);
-assert.throws(
-  () => validateGeneratedReview(candidate(reviewWithSections([51, 180, 180, 180, 180]))),
-  /55 كلمة لكل محور/
-);
-assert.throws(
-  () => validateGeneratedReview(candidate(reviewWithSections([200, 200, 200, 200]))),
-  /المحاور النقدية الخمسة/
-);
-console.log('Review validation tests passed: 650-word minimum, section count, and per-section minimum are enforced.');
+assert.throws(() => validateGeneratedReview(candidate(words(40))), /70 كلمة و300 حرف/);
+assert.throws(() => validateGeneratedReview(candidate(words(190))), /180 كلمة/);
+assert.throws(() => validateGeneratedReview({ ...candidate(words(100)), pros: ['نقطة واحدة'] }), /3 عناصر على الأقل/);
+assert.throws(() => validateGeneratedReview({ ...candidate(words(100)), cons: ['تحفظ واحد'] }), /عنصران على الأقل/);
+assert.throws(() => validateGeneratedReview({ ...candidate(words(100)), scores: { story: 7.55, visuals: 7, sound: 6.5, pacing: 7 } }), /بخطوة عشرية واحدة/);
+assert.throws(() => validateGeneratedReview({ ...candidate(words(100)), review: '### محور\n' + words(100) }), /بلا محاور/);
+console.log('Review validation tests passed: concise opinion length, score calibration, pros and cons are enforced.');
