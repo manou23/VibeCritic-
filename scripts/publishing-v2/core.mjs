@@ -12,7 +12,7 @@ function registrableDomain(hostname){
  return twoLevelSuffixes.has(suffix)?labels.slice(-3).join("."):labels.slice(-2).join(".");
 }
 
-export function createState(){return {version:2,updatedAt:new Date(0).toISOString(),jobs:{},providerUsage:{}};}
+export function createState(){return {version:2,updatedAt:new Date(0).toISOString(),jobs:{},providerUsage:{},providerCooldowns:{}};}
 export function validateState(s){
  if(!s||s.version!==2||!s.jobs||typeof s.jobs!=="object"||Array.isArray(s.jobs))throw Error("Invalid publisher state/version");
  for(const [key,j] of Object.entries(s.jobs)){
@@ -65,7 +65,7 @@ export function transition(job,event,patch={},now=Date.now()){
 export function chooseFreeProvider(providers,usage={},now=Date.now()){
  return (providers||[]).filter(p=>{
   if(!p||p.enabled!==true||p.free!==true||time(p.cooldownUntil)>now)return false;
-  const u=usage[p.id]||{};return !(Number.isFinite(p.dailyRequestLimit)&&Number(u.requests||0)>=p.dailyRequestLimit)&&!(Number.isFinite(p.dailyTokenLimit)&&Number(u.tokens||0)>=p.dailyTokenLimit);
+  const u=usage[p.id]||{};if(time(u.cooldownUntil)>now)return false;return !(Number.isFinite(p.dailyRequestLimit)&&Number(u.requests||0)>=p.dailyRequestLimit)&&!(Number.isFinite(p.dailyTokenLimit)&&Number(u.tokens||0)>=p.dailyTokenLimit);
  }).sort((a,b)=>Number(a.priority||100)-Number(b.priority||100)||String(a.id).localeCompare(String(b.id)))[0]||null;
 }
 export function recordUsage(usage,id,{requests=1,tokens=0,success=false}={}){
