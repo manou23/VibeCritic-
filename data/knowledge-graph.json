@@ -13110,7 +13110,7 @@
         "RAWG"
       ],
       "firstSeenAt": "2026-11-14T20:16:16.093Z",
-      "updatedAt": "2026-11-16T01:01:53.825Z"
+      "updatedAt": "2026-11-16T01:24:43.508Z"
     },
     {
       "id": "concept:playstation-5",
@@ -13123,7 +13123,7 @@
         "RAWG"
       ],
       "firstSeenAt": "2026-11-14T20:16:16.093Z",
-      "updatedAt": "2026-11-16T01:01:53.824Z"
+      "updatedAt": "2026-11-16T01:24:43.508Z"
     },
     {
       "id": "concept:xbox-series-x-s",
@@ -13159,7 +13159,7 @@
         "RAWG"
       ],
       "firstSeenAt": "2026-11-14T20:16:16.641Z",
-      "updatedAt": "2026-11-16T01:01:53.824Z"
+      "updatedAt": "2026-11-16T01:24:43.507Z"
     },
     {
       "id": "concept:roguelike",
@@ -15541,7 +15541,7 @@
         "RAWG"
       ],
       "firstSeenAt": "2026-11-15T13:05:24.996Z",
-      "updatedAt": "2026-11-16T01:01:53.824Z"
+      "updatedAt": "2026-11-16T01:24:43.508Z"
     },
     {
       "id": "company:sundial-interactive",
@@ -16630,7 +16630,8 @@
       "kind": "work",
       "name": "game:1015421:Tomb Raider: Legacy of Atlantis",
       "sources": [
-        "RAWG"
+        "RAWG",
+        "VIBECRITIC_EDITORIAL_INDEX"
       ],
       "firstSeenAt": "2026-11-16T01:01:53.822Z",
       "updatedAt": "2026-11-16T01:01:53.822Z",
@@ -16639,7 +16640,9 @@
       ],
       "externalId": "1015421",
       "workType": "game",
-      "releaseDate": "2027-02-12"
+      "releaseDate": "2027-02-12",
+      "externalSource": "RAWG",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
     },
     {
       "id": "work:series-215528-neuromancer",
@@ -17740,6 +17743,57 @@
       "updatedAt": "2026-11-16T01:07:32.185Z",
       "externalId": "280468",
       "workType": "movie"
+    },
+    {
+      "id": "work:game-manual-assisted-game-forza-horizon-6-2026-فورزا-هورايزن-6",
+      "kind": "work",
+      "name": "game:manual-assisted-game-forza-horizon-6-2026:فورزا هورايزن 6",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-16T01:24:44.388Z",
+      "updatedAt": "2026-11-16T01:24:44.388Z",
+      "aliases": [
+        "فورزا هورايزن 6"
+      ],
+      "externalId": "manual-assisted-game-forza-horizon-6-2026",
+      "workType": "game",
+      "externalSource": "Forza Support / Forza.net / The Guardian / TechRadar",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:movie-manual-assisted-movie-paper-tiger-2026-بابر-تايغر",
+      "kind": "work",
+      "name": "movie:manual-assisted-movie-paper-tiger-2026:بابر تايغر",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-16T01:24:47.195Z",
+      "updatedAt": "2026-11-16T01:24:47.195Z",
+      "aliases": [
+        "بابر تايغر"
+      ],
+      "externalId": "manual-assisted-movie-paper-tiger-2026",
+      "workType": "movie",
+      "externalSource": "NEON / Rotten Tomatoes / RogerEbert.com / TheWrap",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
+    },
+    {
+      "id": "work:series-manual-assisted-series-12-12-12-2026-12-12-12",
+      "kind": "work",
+      "name": "series:manual-assisted-series-12-12-12-2026:12 12 12",
+      "sources": [
+        "VIBECRITIC_EDITORIAL_INDEX"
+      ],
+      "firstSeenAt": "2026-11-16T01:24:48.608Z",
+      "updatedAt": "2026-11-16T01:24:48.608Z",
+      "aliases": [
+        "12 12 12"
+      ],
+      "externalId": "manual-assisted-series-12-12-12-2026",
+      "workType": "series",
+      "externalSource": "Apple TV Press / Paramount Television Studios",
+      "identitySource": "VIBECRITIC_EDITORIAL_INDEX"
     }
   ],
   "relations": [
@@ -62995,129 +63049,6 @@
       "observations": 2
     },
     {
-      "id": "work:movie-1283515-فيريتي|catalog_original_title|VIBECRITIC_D1|Verity",
-      "workId": "work:movie-1283515-فيريتي",
-      "field": "catalog_original_title",
-      "value": "Verity",
-      "normalizedValue": "Verity",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T19:44:57.077Z",
-      "observations": 3
-    },
-    {
-      "id": "work:movie-1283515-فيريتي|catalog_overview|VIBECRITIC_D1|مقتبس من رواية كولين هوفر الأكثر مبيعًا، يتبع هذا الفيلم النفسي الكاتبة الشهيرة فيريتي كروفورد ولوين",
-      "workId": "work:movie-1283515-فيريتي",
-      "field": "catalog_overview",
-      "value": "مقتبس من رواية كولين هوفر الأكثر مبيعًا، يتبع هذا الفيلم النفسي الكاتبة الشهيرة فيريتي كروفورد ولوين آشلي، وهي كاتبة تكافح وتنتقل إلى ضيعة كروفورد النائية للكتابة الشبح من أجل فيريتي.",
-      "normalizedValue": "مقتبس من رواية كولين هوفر الأكثر مبيعًا، يتبع هذا الفيلم النفسي الكاتبة الشهيرة فيريتي كروفورد ولوين آشلي، وهي كاتبة تكافح وتنتقل إلى ضيعة كروفورد النائية للكتابة الشبح من أجل فيريتي.",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T19:44:57.077Z",
-      "observations": 3
-    },
-    {
-      "id": "work:movie-1283515-فيريتي|catalog_release_date|VIBECRITIC_D1|2026-09-30",
-      "workId": "work:movie-1283515-فيريتي",
-      "field": "catalog_release_date",
-      "value": "2026-09-30",
-      "normalizedValue": "2026-09-30",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T19:44:57.077Z",
-      "observations": 3
-    },
-    {
-      "id": "work:movie-1283515-فيريتي|catalog_year|VIBECRITIC_D1|2026",
-      "workId": "work:movie-1283515-فيريتي",
-      "field": "catalog_year",
-      "value": "2026",
-      "normalizedValue": "2026",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T19:44:57.077Z",
-      "observations": 3
-    },
-    {
-      "id": "work:movie-1283515-فيريتي|catalog_runtime|VIBECRITIC_D1|117",
-      "workId": "work:movie-1283515-فيريتي",
-      "field": "catalog_runtime",
-      "value": "117",
-      "normalizedValue": "117",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T19:44:57.077Z",
-      "observations": 3
-    },
-    {
-      "id": "work:movie-1283515-فيريتي|catalog_status|VIBECRITIC_D1|Released",
-      "workId": "work:movie-1283515-فيريتي",
-      "field": "catalog_status",
-      "value": "Released",
-      "normalizedValue": "Released",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T19:44:57.077Z",
-      "observations": 3
-    },
-    {
-      "id": "work:movie-1283515-فيريتي|catalog_original_language|VIBECRITIC_D1|en",
-      "workId": "work:movie-1283515-فيريتي",
-      "field": "catalog_original_language",
-      "value": "en",
-      "normalizedValue": "en",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T19:44:57.077Z",
-      "observations": 3
-    },
-    {
-      "id": "work:movie-1283515-فيريتي|catalog_genres|VIBECRITIC_D1|إثارة | غموض",
-      "workId": "work:movie-1283515-فيريتي",
-      "field": "catalog_genres",
-      "value": [
-        "إثارة",
-        "غموض"
-      ],
-      "normalizedValue": "إثارة | غموض",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
-      "lastObservedAt": "2026-11-15T19:44:57.077Z",
-      "observations": 3
-    },
-    {
       "id": "work:movie-1283515-فيريتي|catalog_cast|VIBECRITIC_D1|Brady Wagner | Dakota Johnson | Ismael Cruz Cordova | K.K. Moggie | Lou Martini Jr. | Sienna Kulovit",
       "workId": "work:movie-1283515-فيريتي",
       "field": "catalog_cast",
@@ -63144,21 +63075,30 @@
       "observations": 2
     },
     {
-      "id": "work:movie-1283515-فيريتي|catalog_directors|VIBECRITIC_D1|مايكل شوالتر",
+      "id": "work:movie-1283515-فيريتي|catalog_cast|VIBECRITIC_D1|Brady Wagner بدور Crew Crawford | Dakota Johnson بدور Lowen Ashleigh | Ismael Cruz Cordova بدور Core",
       "workId": "work:movie-1283515-فيريتي",
-      "field": "catalog_directors",
+      "field": "catalog_cast",
       "value": [
-        "مايكل شوالتر"
+        "Dakota Johnson بدور Lowen Ashleigh",
+        "آن هاثاواي بدور Verity Crawford",
+        "جوش هارتنت بدور Jeremy Crawford",
+        "Brady Wagner بدور Crew Crawford",
+        "Ismael Cruz Cordova بدور Corey",
+        "Ірина Дворовенко بدور Anna",
+        "Sienna Kulovitz بدور Harper Crawford",
+        "K.K. Moggie بدور Amanda Thomas",
+        "Tom Galantich بدور Barron Stephens",
+        "Lou Martini Jr. بدور Limo Driver"
       ],
-      "normalizedValue": "مايكل شوالتر",
+      "normalizedValue": "Brady Wagner بدور Crew Crawford | Dakota Johnson بدور Lowen Ashleigh | Ismael Cruz Cordova بدور Corey | K.K. Moggie بدور Amanda Thomas | Lou Martini Jr. بدور Limo Driver | Sienna Kulovitz بدور Harper Crawford | Tom Galantich بدور Barron Stephens | Ірина Дворовенко بدور Anna | آن هاثاواي بدور Verity Crawford | جوش هارتنت بدور Jeremy Crawford",
       "source": "VIBECRITIC_D1",
       "url": "https://vibecritic.pages.dev/api/catalog",
       "sourceClass": "derived-catalog-context",
       "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
       "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "firstObservedAt": "2026-11-15T19:44:57.077Z",
       "lastObservedAt": "2026-11-15T19:44:57.077Z",
-      "observations": 3
+      "observations": 1
     },
     {
       "id": "work:movie-1275779-يوم-الإفصاح|catalog_original_title|VIBECRITIC_D1|Disclosure Day",
@@ -84802,6 +84742,21 @@
       "observations": 2
     },
     {
+      "id": "work:movie-1283515-فيريتي|release_date|TMDB|2026-09-30",
+      "workId": "work:movie-1283515-فيريتي",
+      "field": "release_date",
+      "value": "2026-09-30",
+      "normalizedValue": "2026-09-30",
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1283515",
+      "sourceClass": "catalog-database",
+      "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+      "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج.",
+      "firstObservedAt": "2026-11-16T01:07:32.181Z",
+      "lastObservedAt": "2026-11-16T01:07:32.181Z",
+      "observations": 1
+    },
+    {
       "id": "work:movie-1283515-فيريتي|genres|VIBECRITIC_D1|إثارة | غموض",
       "workId": "work:movie-1283515-فيريتي",
       "field": "genres",
@@ -84820,6 +84775,24 @@
       "observations": 2
     },
     {
+      "id": "work:movie-1283515-فيريتي|genres|TMDB|إثارة | غموض",
+      "workId": "work:movie-1283515-فيريتي",
+      "field": "genres",
+      "value": [
+        "غموض",
+        "إثارة"
+      ],
+      "normalizedValue": "إثارة | غموض",
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1283515",
+      "sourceClass": "catalog-database",
+      "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+      "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج.",
+      "firstObservedAt": "2026-11-16T01:07:32.181Z",
+      "lastObservedAt": "2026-11-16T01:07:32.181Z",
+      "observations": 1
+    },
+    {
       "id": "work:movie-1283515-فيريتي|directors|VIBECRITIC_D1|مايكل شوالتر",
       "workId": "work:movie-1283515-فيريتي",
       "field": "directors",
@@ -84835,6 +84808,23 @@
       "firstObservedAt": "2026-11-14T19:08:11.576Z",
       "lastObservedAt": "2026-11-15T10:35:25.889Z",
       "observations": 2
+    },
+    {
+      "id": "work:movie-1283515-فيريتي|directors|TMDB|مايكل شوالتر",
+      "workId": "work:movie-1283515-فيريتي",
+      "field": "directors",
+      "value": [
+        "مايكل شوالتر"
+      ],
+      "normalizedValue": "مايكل شوالتر",
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1283515",
+      "sourceClass": "catalog-database",
+      "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+      "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج.",
+      "firstObservedAt": "2026-11-16T01:07:32.181Z",
+      "lastObservedAt": "2026-11-16T01:07:32.181Z",
+      "observations": 1
     },
     {
       "id": "work:movie-1283515-فيريتي|cast|VIBECRITIC_D1|Brady Wagner | Dakota Johnson | Ismael Cruz Cordova | K.K. Moggie | Lou Martini Jr. | Sienna Kulovit",
@@ -84863,6 +84853,29 @@
       "observations": 2
     },
     {
+      "id": "work:movie-1283515-فيريتي|cast|TMDB|Brady Wagner بدور Crew Crawford | Dakota Johnson بدور Lowen Ashleigh | Ismael Cruz Cordova بدور Core",
+      "workId": "work:movie-1283515-فيريتي",
+      "field": "cast",
+      "value": [
+        "Dakota Johnson بدور Lowen Ashleigh",
+        "آن هاثاواي بدور Verity Crawford",
+        "جوش هارتنت بدور Jeremy Crawford",
+        "Brady Wagner بدور Crew Crawford",
+        "Ismael Cruz Cordova بدور Corey",
+        "Ірина Дворовенко بدور Anna",
+        "Sienna Kulovitz بدور Harper Crawford"
+      ],
+      "normalizedValue": "Brady Wagner بدور Crew Crawford | Dakota Johnson بدور Lowen Ashleigh | Ismael Cruz Cordova بدور Corey | Sienna Kulovitz بدور Harper Crawford | Ірина Дворовенко بدور Anna | آن هاثاواي بدور Verity Crawford | جوش هارتنت بدور Jeremy Crawford",
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1283515",
+      "sourceClass": "catalog-database",
+      "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+      "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج.",
+      "firstObservedAt": "2026-11-16T01:07:32.181Z",
+      "lastObservedAt": "2026-11-16T01:07:32.181Z",
+      "observations": 1
+    },
+    {
       "id": "work:movie-1283515-فيريتي|runtime|VIBECRITIC_D1|117",
       "workId": "work:movie-1283515-فيريتي",
       "field": "runtime",
@@ -84876,6 +84889,21 @@
       "firstObservedAt": "2026-11-14T19:08:11.576Z",
       "lastObservedAt": "2026-11-15T10:35:25.889Z",
       "observations": 2
+    },
+    {
+      "id": "work:movie-1283515-فيريتي|runtime|TMDB|117",
+      "workId": "work:movie-1283515-فيريتي",
+      "field": "runtime",
+      "value": "117",
+      "normalizedValue": "117",
+      "source": "TMDB",
+      "url": "https://www.themoviedb.org/movie/1283515",
+      "sourceClass": "catalog-database",
+      "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
+      "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج.",
+      "firstObservedAt": "2026-11-16T01:07:32.181Z",
+      "lastObservedAt": "2026-11-16T01:07:32.181Z",
+      "observations": 1
     },
     {
       "id": "work:movie-1284046-onslaught|release_date|VIBECRITIC_D1|2026-09-02",
@@ -89361,6 +89389,168 @@
       "observations": 5
     },
     {
+      "id": "work:movie-1283515-فيريتي|catalog_original_title|VIBECRITIC_D1|Verity",
+      "workId": "work:movie-1283515-فيريتي",
+      "field": "catalog_original_title",
+      "value": "Verity",
+      "normalizedValue": "Verity",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T19:44:57.077Z",
+      "observations": 3
+    },
+    {
+      "id": "work:movie-1283515-فيريتي|catalog_overview|VIBECRITIC_D1|مقتبس من رواية كولين هوفر الأكثر مبيعًا، يتبع هذا الفيلم النفسي الكاتبة الشهيرة فيريتي كروفورد ولوين",
+      "workId": "work:movie-1283515-فيريتي",
+      "field": "catalog_overview",
+      "value": "مقتبس من رواية كولين هوفر الأكثر مبيعًا، يتبع هذا الفيلم النفسي الكاتبة الشهيرة فيريتي كروفورد ولوين آشلي، وهي كاتبة تكافح وتنتقل إلى ضيعة كروفورد النائية للكتابة الشبح من أجل فيريتي.",
+      "normalizedValue": "مقتبس من رواية كولين هوفر الأكثر مبيعًا، يتبع هذا الفيلم النفسي الكاتبة الشهيرة فيريتي كروفورد ولوين آشلي، وهي كاتبة تكافح وتنتقل إلى ضيعة كروفورد النائية للكتابة الشبح من أجل فيريتي.",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T19:44:57.077Z",
+      "observations": 3
+    },
+    {
+      "id": "work:movie-1283515-فيريتي|catalog_release_date|VIBECRITIC_D1|2026-09-30",
+      "workId": "work:movie-1283515-فيريتي",
+      "field": "catalog_release_date",
+      "value": "2026-09-30",
+      "normalizedValue": "2026-09-30",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T19:44:57.077Z",
+      "observations": 3
+    },
+    {
+      "id": "work:movie-1283515-فيريتي|catalog_year|VIBECRITIC_D1|2026",
+      "workId": "work:movie-1283515-فيريتي",
+      "field": "catalog_year",
+      "value": "2026",
+      "normalizedValue": "2026",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T19:44:57.077Z",
+      "observations": 3
+    },
+    {
+      "id": "work:movie-1283515-فيريتي|catalog_runtime|VIBECRITIC_D1|117",
+      "workId": "work:movie-1283515-فيريتي",
+      "field": "catalog_runtime",
+      "value": "117",
+      "normalizedValue": "117",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T19:44:57.077Z",
+      "observations": 3
+    },
+    {
+      "id": "work:movie-1283515-فيريتي|catalog_status|VIBECRITIC_D1|Released",
+      "workId": "work:movie-1283515-فيريتي",
+      "field": "catalog_status",
+      "value": "Released",
+      "normalizedValue": "Released",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T19:44:57.077Z",
+      "observations": 3
+    },
+    {
+      "id": "work:movie-1283515-فيريتي|catalog_original_language|VIBECRITIC_D1|en",
+      "workId": "work:movie-1283515-فيريتي",
+      "field": "catalog_original_language",
+      "value": "en",
+      "normalizedValue": "en",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T19:44:57.077Z",
+      "observations": 3
+    },
+    {
+      "id": "work:movie-1283515-فيريتي|catalog_genres|VIBECRITIC_D1|إثارة | غموض",
+      "workId": "work:movie-1283515-فيريتي",
+      "field": "catalog_genres",
+      "value": [
+        "إثارة",
+        "غموض"
+      ],
+      "normalizedValue": "إثارة | غموض",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T19:44:57.077Z",
+      "observations": 3
+    },
+    {
+      "id": "work:movie-1283515-فيريتي|catalog_directors|VIBECRITIC_D1|مايكل شوالتر",
+      "workId": "work:movie-1283515-فيريتي",
+      "field": "catalog_directors",
+      "value": [
+        "مايكل شوالتر"
+      ],
+      "normalizedValue": "مايكل شوالتر",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-14T12:34:19.567Z",
+      "lastObservedAt": "2026-11-15T19:44:57.077Z",
+      "observations": 3
+    },
+    {
+      "id": "work:movie-1283515-فيريتي|catalog_related_works|VIBECRITIC_D1|Premonition (2007) [genres:2, people:0] | الأوديسة (2026) [genres:0, people:1] | القانون والنظام: وح",
+      "workId": "work:movie-1283515-فيريتي",
+      "field": "catalog_related_works",
+      "value": [
+        "نهاية شارع أوك (2026) [genres:2, people:1]",
+        "سيد الخواتم: خواتم السلطة (2022) [genres:0, people:1]",
+        "الأوديسة (2026) [genres:0, people:1]",
+        "بين النجوم (2014) [genres:0, people:1]",
+        "Premonition (2007) [genres:2, people:0]",
+        "القانون والنظام: وحدة الضحايا الخاصة (1999) [genres:1, people:0]"
+      ],
+      "normalizedValue": "Premonition (2007) [genres:2, people:0] | الأوديسة (2026) [genres:0, people:1] | القانون والنظام: وحدة الضحايا الخاصة (1999) [genres:1, people:0] | بين النجوم (2014) [genres:0, people:1] | سيد الخواتم: خواتم السلطة (2022) [genres:0, people:1] | نهاية شارع أوك (2026) [genres:2, people:1]",
+      "source": "VIBECRITIC_D1",
+      "url": "https://vibecritic.pages.dev/api/catalog",
+      "sourceClass": "derived-catalog-context",
+      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
+      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
+      "firstObservedAt": "2026-11-15T19:44:57.077Z",
+      "lastObservedAt": "2026-11-15T19:44:57.077Z",
+      "observations": 1
+    },
+    {
       "id": "work:game-1019942-the-legend-of-zelda-ocarina-of-time|release_date|RAWG|2026-11-05",
       "workId": "work:game-1019942-the-legend-of-zelda-ocarina-of-time",
       "field": "release_date",
@@ -89477,57 +89667,6 @@
       "sourceLimitations": "مؤشرات الإضافة والشعبية ليست مبيعات ولا دليلاً على الجودة.",
       "firstObservedAt": "2026-11-16T01:00:27.478Z",
       "lastObservedAt": "2026-11-16T01:00:27.478Z",
-      "observations": 1
-    },
-    {
-      "id": "work:game-1015421-tomb-raider-legacy-of-atlantis|release_date|RAWG|2027-02-12",
-      "workId": "work:game-1015421-tomb-raider-legacy-of-atlantis",
-      "field": "release_date",
-      "value": "2027-02-12",
-      "normalizedValue": "2027-02-12",
-      "source": "RAWG",
-      "url": "https://rawg.io/games/tomb-raider-legacy-of-atlantis",
-      "sourceClass": "game-database",
-      "sourceScope": "بيانات تعريف الألعاب والمنصات والمطورين ومؤشرات النشاط التي يعرضها RAWG.",
-      "sourceLimitations": "مؤشرات الإضافة والشعبية ليست مبيعات ولا دليلاً على الجودة.",
-      "firstObservedAt": "2026-11-16T01:01:53.822Z",
-      "lastObservedAt": "2026-11-16T01:01:53.822Z",
-      "observations": 1
-    },
-    {
-      "id": "work:game-1015421-tomb-raider-legacy-of-atlantis|genres|RAWG|Action",
-      "workId": "work:game-1015421-tomb-raider-legacy-of-atlantis",
-      "field": "genres",
-      "value": [
-        "Action"
-      ],
-      "normalizedValue": "Action",
-      "source": "RAWG",
-      "url": "https://rawg.io/games/tomb-raider-legacy-of-atlantis",
-      "sourceClass": "game-database",
-      "sourceScope": "بيانات تعريف الألعاب والمنصات والمطورين ومؤشرات النشاط التي يعرضها RAWG.",
-      "sourceLimitations": "مؤشرات الإضافة والشعبية ليست مبيعات ولا دليلاً على الجودة.",
-      "firstObservedAt": "2026-11-16T01:01:53.822Z",
-      "lastObservedAt": "2026-11-16T01:01:53.822Z",
-      "observations": 1
-    },
-    {
-      "id": "work:game-1015421-tomb-raider-legacy-of-atlantis|platforms|RAWG|PC | PlayStation 5 | Xbox Series S/X",
-      "workId": "work:game-1015421-tomb-raider-legacy-of-atlantis",
-      "field": "platforms",
-      "value": [
-        "PlayStation 5",
-        "Xbox Series S/X",
-        "PC"
-      ],
-      "normalizedValue": "PC | PlayStation 5 | Xbox Series S/X",
-      "source": "RAWG",
-      "url": "https://rawg.io/games/tomb-raider-legacy-of-atlantis",
-      "sourceClass": "game-database",
-      "sourceScope": "بيانات تعريف الألعاب والمنصات والمطورين ومؤشرات النشاط التي يعرضها RAWG.",
-      "sourceLimitations": "مؤشرات الإضافة والشعبية ليست مبيعات ولا دليلاً على الجودة.",
-      "firstObservedAt": "2026-11-16T01:01:53.822Z",
-      "lastObservedAt": "2026-11-16T01:01:53.822Z",
       "observations": 1
     },
     {
@@ -90356,56 +90495,6 @@
       "observations": 3
     },
     {
-      "id": "work:movie-1283515-فيريتي|release_date|TMDB|2026-09-30",
-      "workId": "work:movie-1283515-فيريتي",
-      "field": "release_date",
-      "value": "2026-09-30",
-      "normalizedValue": "2026-09-30",
-      "source": "TMDB",
-      "url": "https://www.themoviedb.org/movie/1283515",
-      "sourceClass": "catalog-database",
-      "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
-      "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج.",
-      "firstObservedAt": "2026-11-16T01:07:32.181Z",
-      "lastObservedAt": "2026-11-16T01:07:32.181Z",
-      "observations": 1
-    },
-    {
-      "id": "work:movie-1283515-فيريتي|genres|TMDB|إثارة | غموض",
-      "workId": "work:movie-1283515-فيريتي",
-      "field": "genres",
-      "value": [
-        "غموض",
-        "إثارة"
-      ],
-      "normalizedValue": "إثارة | غموض",
-      "source": "TMDB",
-      "url": "https://www.themoviedb.org/movie/1283515",
-      "sourceClass": "catalog-database",
-      "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
-      "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج.",
-      "firstObservedAt": "2026-11-16T01:07:32.181Z",
-      "lastObservedAt": "2026-11-16T01:07:32.181Z",
-      "observations": 1
-    },
-    {
-      "id": "work:movie-1283515-فيريتي|directors|TMDB|مايكل شوالتر",
-      "workId": "work:movie-1283515-فيريتي",
-      "field": "directors",
-      "value": [
-        "مايكل شوالتر"
-      ],
-      "normalizedValue": "مايكل شوالتر",
-      "source": "TMDB",
-      "url": "https://www.themoviedb.org/movie/1283515",
-      "sourceClass": "catalog-database",
-      "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
-      "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج.",
-      "firstObservedAt": "2026-11-16T01:07:32.181Z",
-      "lastObservedAt": "2026-11-16T01:07:32.181Z",
-      "observations": 1
-    },
-    {
       "id": "work:movie-1283515-فيريتي|production_companies|TMDB|Eat the Cat | Heartbones Entertainment | Semi-Formal Productions | Shiny Penny Productions | Somewhe",
       "workId": "work:movie-1283515-فيريتي",
       "field": "production_companies",
@@ -90427,90 +90516,55 @@
       "observations": 1
     },
     {
-      "id": "work:movie-1283515-فيريتي|cast|TMDB|Brady Wagner بدور Crew Crawford | Dakota Johnson بدور Lowen Ashleigh | Ismael Cruz Cordova بدور Core",
-      "workId": "work:movie-1283515-فيريتي",
-      "field": "cast",
-      "value": [
-        "Dakota Johnson بدور Lowen Ashleigh",
-        "آن هاثاواي بدور Verity Crawford",
-        "جوش هارتنت بدور Jeremy Crawford",
-        "Brady Wagner بدور Crew Crawford",
-        "Ismael Cruz Cordova بدور Corey",
-        "Ірина Дворовенко بدور Anna",
-        "Sienna Kulovitz بدور Harper Crawford"
-      ],
-      "normalizedValue": "Brady Wagner بدور Crew Crawford | Dakota Johnson بدور Lowen Ashleigh | Ismael Cruz Cordova بدور Corey | Sienna Kulovitz بدور Harper Crawford | Ірина Дворовенко بدور Anna | آن هاثاواي بدور Verity Crawford | جوش هارتنت بدور Jeremy Crawford",
-      "source": "TMDB",
-      "url": "https://www.themoviedb.org/movie/1283515",
-      "sourceClass": "catalog-database",
-      "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
-      "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج.",
-      "firstObservedAt": "2026-11-16T01:07:32.181Z",
-      "lastObservedAt": "2026-11-16T01:07:32.181Z",
-      "observations": 1
+      "id": "work:game-1015421-tomb-raider-legacy-of-atlantis|release_date|RAWG|2027-02-12",
+      "workId": "work:game-1015421-tomb-raider-legacy-of-atlantis",
+      "field": "release_date",
+      "value": "2027-02-12",
+      "normalizedValue": "2027-02-12",
+      "source": "RAWG",
+      "url": "https://rawg.io/games/tomb-raider-legacy-of-atlantis",
+      "sourceClass": "game-database",
+      "sourceScope": "بيانات تعريف الألعاب والمنصات والمطورين ومؤشرات النشاط التي يعرضها RAWG.",
+      "sourceLimitations": "مؤشرات الإضافة والشعبية ليست مبيعات ولا دليلاً على الجودة.",
+      "firstObservedAt": "2026-11-16T01:01:53.822Z",
+      "lastObservedAt": "2026-11-16T01:24:43.505Z",
+      "observations": 2
     },
     {
-      "id": "work:movie-1283515-فيريتي|runtime|TMDB|117",
-      "workId": "work:movie-1283515-فيريتي",
-      "field": "runtime",
-      "value": "117",
-      "normalizedValue": "117",
-      "source": "TMDB",
-      "url": "https://www.themoviedb.org/movie/1283515",
-      "sourceClass": "catalog-database",
-      "sourceScope": "بيانات تعريف الأفلام والمسلسلات والطاقم والتصنيفات وتواريخ الإصدار المدرجة في TMDB.",
-      "sourceLimitations": "لا يثبت وحده جودة العمل أو أثره الفني أو صحة كل معلومة خارج نطاق بيانات الكتالوج.",
-      "firstObservedAt": "2026-11-16T01:07:32.181Z",
-      "lastObservedAt": "2026-11-16T01:07:32.181Z",
-      "observations": 1
+      "id": "work:game-1015421-tomb-raider-legacy-of-atlantis|genres|RAWG|Action",
+      "workId": "work:game-1015421-tomb-raider-legacy-of-atlantis",
+      "field": "genres",
+      "value": [
+        "Action"
+      ],
+      "normalizedValue": "Action",
+      "source": "RAWG",
+      "url": "https://rawg.io/games/tomb-raider-legacy-of-atlantis",
+      "sourceClass": "game-database",
+      "sourceScope": "بيانات تعريف الألعاب والمنصات والمطورين ومؤشرات النشاط التي يعرضها RAWG.",
+      "sourceLimitations": "مؤشرات الإضافة والشعبية ليست مبيعات ولا دليلاً على الجودة.",
+      "firstObservedAt": "2026-11-16T01:01:53.822Z",
+      "lastObservedAt": "2026-11-16T01:24:43.505Z",
+      "observations": 2
     },
     {
-      "id": "work:movie-1283515-فيريتي|catalog_cast|VIBECRITIC_D1|Brady Wagner بدور Crew Crawford | Dakota Johnson بدور Lowen Ashleigh | Ismael Cruz Cordova بدور Core",
-      "workId": "work:movie-1283515-فيريتي",
-      "field": "catalog_cast",
+      "id": "work:game-1015421-tomb-raider-legacy-of-atlantis|platforms|RAWG|PC | PlayStation 5 | Xbox Series S/X",
+      "workId": "work:game-1015421-tomb-raider-legacy-of-atlantis",
+      "field": "platforms",
       "value": [
-        "Dakota Johnson بدور Lowen Ashleigh",
-        "آن هاثاواي بدور Verity Crawford",
-        "جوش هارتنت بدور Jeremy Crawford",
-        "Brady Wagner بدور Crew Crawford",
-        "Ismael Cruz Cordova بدور Corey",
-        "Ірина Дворовенко بدور Anna",
-        "Sienna Kulovitz بدور Harper Crawford",
-        "K.K. Moggie بدور Amanda Thomas",
-        "Tom Galantich بدور Barron Stephens",
-        "Lou Martini Jr. بدور Limo Driver"
+        "PlayStation 5",
+        "Xbox Series S/X",
+        "PC"
       ],
-      "normalizedValue": "Brady Wagner بدور Crew Crawford | Dakota Johnson بدور Lowen Ashleigh | Ismael Cruz Cordova بدور Corey | K.K. Moggie بدور Amanda Thomas | Lou Martini Jr. بدور Limo Driver | Sienna Kulovitz بدور Harper Crawford | Tom Galantich بدور Barron Stephens | Ірина Дворовенко بدور Anna | آن هاثاواي بدور Verity Crawford | جوش هارتنت بدور Jeremy Crawford",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-15T19:44:57.077Z",
-      "lastObservedAt": "2026-11-15T19:44:57.077Z",
-      "observations": 1
-    },
-    {
-      "id": "work:movie-1283515-فيريتي|catalog_related_works|VIBECRITIC_D1|Premonition (2007) [genres:2, people:0] | الأوديسة (2026) [genres:0, people:1] | القانون والنظام: وح",
-      "workId": "work:movie-1283515-فيريتي",
-      "field": "catalog_related_works",
-      "value": [
-        "نهاية شارع أوك (2026) [genres:2, people:1]",
-        "سيد الخواتم: خواتم السلطة (2022) [genres:0, people:1]",
-        "الأوديسة (2026) [genres:0, people:1]",
-        "بين النجوم (2014) [genres:0, people:1]",
-        "Premonition (2007) [genres:2, people:0]",
-        "القانون والنظام: وحدة الضحايا الخاصة (1999) [genres:1, people:0]"
-      ],
-      "normalizedValue": "Premonition (2007) [genres:2, people:0] | الأوديسة (2026) [genres:0, people:1] | القانون والنظام: وحدة الضحايا الخاصة (1999) [genres:1, people:0] | بين النجوم (2014) [genres:0, people:1] | سيد الخواتم: خواتم السلطة (2022) [genres:0, people:1] | نهاية شارع أوك (2026) [genres:2, people:1]",
-      "source": "VIBECRITIC_D1",
-      "url": "https://vibecritic.pages.dev/api/catalog",
-      "sourceClass": "derived-catalog-context",
-      "sourceScope": "روابط مقارنة مستنتجة من تقاطع التصنيفات وأسماء الطاقم داخل كتالوج VibeCritic المبني على بيانات TMDB.",
-      "sourceLimitations": "لا تثبت التشابه الفني أو الاقتباس أو التأثير أو الجودة؛ هي علاقات فهرسية أولية تحتاج إلى أدلة مستقلة.",
-      "firstObservedAt": "2026-11-15T19:44:57.077Z",
-      "lastObservedAt": "2026-11-15T19:44:57.077Z",
-      "observations": 1
+      "normalizedValue": "PC | PlayStation 5 | Xbox Series S/X",
+      "source": "RAWG",
+      "url": "https://rawg.io/games/tomb-raider-legacy-of-atlantis",
+      "sourceClass": "game-database",
+      "sourceScope": "بيانات تعريف الألعاب والمنصات والمطورين ومؤشرات النشاط التي يعرضها RAWG.",
+      "sourceLimitations": "مؤشرات الإضافة والشعبية ليست مبيعات ولا دليلاً على الجودة.",
+      "firstObservedAt": "2026-11-16T01:01:53.822Z",
+      "lastObservedAt": "2026-11-16T01:24:43.505Z",
+      "observations": 2
     }
   ],
   "conflicts": [
@@ -104173,6 +104227,169 @@
       "sourcePath": "series-the-white-lotus-season-3-2025-manual-assisted.md",
       "excerpt": "منتجع جديد وطبقة جديدة ينقل الموسم الثالث السخرية الاجتماعية إلى منتجع فاخر في تايلاند، حيث يلتقي ضيوف وموظفون يحملون تصورات مختلفة عن الرفاه والراحة والمعنى. المكان ليس مجرد خلفية جميلة؛ إنه مساحة تتقاطع فيها السياحة والامتياز والبحث عن تجربة روحية يمكن شراؤها. هذه المفارقة تمنح الموسم موضوعاً واضحاً من البداية. يستفيد العمل من اختلاف الشخصيات ومواقعها الاجتماعية، لكنه يضع عدداً كبيراً من المسارات على الطاولة. بعض العلاقات تنمو بسرعة، وبعضها يحتاج وقتاً طويلاً كي يكشف دوافعه. هذا التوزيع يمنح العالم اتساعاً، لكنه يجعل مركز الموسم أقل وضوحاً في حلقاته الأولى. السخرية والشخصيات يعتمد المسلسل على التناقض بين ما تقوله الشخصيات عن نفسها وما تكشفه أفعالها. الضيوف يأتون بحثاً عن الهدوء أو التجدد أو المكانة، لكن رغباتهم القديمة ترافقهم إلى المنتجع. السخرية لا تأتي من جعلهم أشراراً ببساطة، بل من كشف كيف يبررون امتيازاتهم ويحولون حاجاتهم إلى قواعد للآخرين. طاقم الموسم المتنوع يمنح كل مجموعة نبرة مختلفة، وبعض الأداءات تلتقط هشاشة الشخصيات خلف ثقتها الظاهرة. مع ذلك، ليس كل مسار يحصل على الخاتمة نفسها أو العمق نفسه. عندما تتداخل الحكايات، تظهر أحياناً وظيفة الشخصية في خدمة الموضوع أكثر من تطورها الفردي. المكان والصورة والصوت البيئة التايلاندية تمنح الموسم ألواناً ومواقع وإيقاعاً مختلفاً عن هاواي وصقلية. التصوير يلتقط جمال المنتجع، لكنه لا يسمح للجمال بأن يخفي التفاوت بين الضيوف والعاملين. المساحات المفتوحة والممرات والغرف تصبح جزءاً من توزيع السلطة ومن مراقبة الآخرين. الموسيقى والصوت يخلقان إحساساً بالقلق تحت سطح الهدوء. النبرة الموسيقية الغريبة تذكر بأن الراحة الظاهرة ليست ضماناً للأمان. هذا التناقض من أكثر عناصر الموسم نجاحاً، وإن كان التكرار في بعض الانتقالات يقلل أثر المفاجأة. الإيقاع والموضوع يطرح الموسم أسئلة عن الروحانية والمال والموت والرغبة، لكنه لا يفكك كل موضوع بالدرجة نفسها. أحياناً تكون الإشارة أكثر إثارة من المعالجة، وأحياناً يصبح الحوار مباشراً أكثر مما يحتاج. الإيقا",
       "knowledgeClass": "editorial-opinion-not-verified-fact"
+    },
+    {
+      "key": "game:1015421",
+      "sourceId": "1015421",
+      "type": "game",
+      "title": "Tomb Raider: Legacy of Atlantis",
+      "originalTitle": null,
+      "headline": "Tomb Raider: Legacy of Atlantis — مراجعة نقدية",
+      "summary": "Tomb Raider: Legacy of Atlantis is an action game developed by Crystal Dynamics. Most rawgers rated the game as \"Recommended\". You can play Tomb Raider: Legacy of Atlantis on PlayStation 5, Xbox Series S/X and PC.",
+      "verdict": "تُصدر لعبة Tomb Raider: Legacy of Atlantis في فبراير 2027 من تطوير Crystal Dynamics، وتتوفر على PlayStation 5 وXbox Series S/X وPC",
+      "score": null,
+      "scores": {},
+      "tags": [
+        "Action"
+      ],
+      "pros": [
+        "تطوير من Crystal Dynamics",
+        "متاحة على منصات حديثة (PS5, Xbox Series S/X, PC)",
+        "تقييم إيجابي من RAWG (4.33/5)"
+      ],
+      "cons": [
+        "غياب معلومات عن تفاصيل القصة",
+        "عدم توفر بيانات حول جودة الرسوم والصوت"
+      ],
+      "creator": null,
+      "genres": [
+        "Action"
+      ],
+      "platforms": [
+        "PlayStation 5",
+        "Xbox Series S/X",
+        "PC"
+      ],
+      "aiGenerated": true,
+      "reviewMode": "preview",
+      "releaseDate": "2027-02-12",
+      "sourceName": "RAWG",
+      "sourceUrl": "https://rawg.io/games/tomb-raider-legacy-of-atlantis",
+      "catalogSources": [],
+      "sourcePath": "game-1015421.md",
+      "excerpt": "بيانات العمل من RAWG - **تاريخ الإصدار:** 2027-02-12 - **التصنيفات:** Action - **المطور:** Crystal Dynamics - **المنصات:** PlayStation 5، Xbox Series S/X، PC - **تقييم المصدر الجماهيري:** 4.3 / 5 (ليس تقييم VibeCritic) نبذة المصدر Tomb Raider: Legacy of Atlantis is an action game developed by Crystal Dynamics. Most rawgers rated the game as \"Recommended\". You can play Tomb Raider: Legacy of Atlantis on PlayStation 5, Xbox Series S/X and PC. رأي VibeCritic تُصدر لعبة Tomb Raider: Legacy of Atlantis في فبراير 2027 من تطوير Crystal Dynamics، وتتوفر على PlayStation 5 وXbox Series S/X وPC. يُظهر تصنيف RAWG البالغ 4.33 من 5 أن معظم اللاعبين يوصون باللعبة، ما يعكس توقعاً إيجابياً للعنوان ضمن سلسلة الحركة الشهيرة. مع ذلك، لا تكشف البيانات المتاحة عن تفاصيل القصة أو جودة الرسوم أو الصوت، ولا توجد معلومات حول أداء التقنية أو تصميم المستويات، ما يحد من القدرة على تقييم هذه الجوانب بدقة. بناءً على ما هو معروف، يمكن الإشارة إلى قوة العلامة التجارية وتعدد المنصات وتقييم الجمهور كإيجابيات، بينما يبقى غموض المحتوى الفني والميكانيكي عائقاً أمام تقييم شامل. نقاط القوة - تطوير من Crystal Dynamics - متاحة على منصات حديثة (PS5, Xbox Series S/X, PC) - تقييم إيجابي من RAWG (4.33/5) تحفظات نقدية - غياب معلومات عن تفاصيل القصة - عدم توفر بيانات حول جودة الرسوم والصوت",
+      "knowledgeClass": "editorial-opinion-not-verified-fact"
+    },
+    {
+      "key": "game:manual-assisted-game-forza-horizon-6-2026",
+      "sourceId": "manual-assisted-game-forza-horizon-6-2026",
+      "type": "game",
+      "title": "فورزا هورايزن 6",
+      "originalTitle": "Forza Horizon 6",
+      "headline": "اليابان تمنح فورزا هورايزن 6 أجمل ساحاتها حتى الآن، لكن الصيغة المألوفة لا تتحول إلى ثورة كاملة",
+      "summary": "تنقل Playground Games مهرجان Horizon إلى اليابان في الجزء السادس، مع أكثر من 550 سيارة، وخريطة واسعة تجمع المدينة والطرق الجبلية والريف، وتدرج يبدأ باللاعب كسائح يسعى إلى دخول المهرجان وصناعة اسمه. صدرت اللعبة في 19 مايو 2026 على Xbox Series X|S والحاسب، مع إصدار PlayStation 5 لاحقاً خلال العام.",
+      "verdict": "تقدم Forza Horizon 6 عالماً مفتوحاً رائعاً وقيادة ممتعة وتنوعاً جيداً في الأنشطة، وتستفيد من اليابان لتجديد الحماس البصري والثقافي للسلسلة. لكنها لا تعيد اختراع بنية الحملة، كما أن طوكيو تبدو أقل حيوية مما يوحي به اسمها. تقييم VibeCritic: 8.6 من 10.",
+      "score": 8.6,
+      "scores": {
+        "storyScore": 7.8,
+        "visualsScore": 9.5,
+        "soundScore": 9,
+        "pacingScore": 8.5
+      },
+      "tags": [],
+      "pros": [
+        "اليابان تمنح الخريطة تنوعاً بصرياً وثقافياً واضحاً بين المدن والريف والجبال",
+        "نموذج القيادة مرن وممتع ويستوعب أنماطاً مختلفة من السباقات",
+        "التدرج من سائح إلى أسطورة يعيد بعض معنى التقدم للحملة",
+        "تنوع السيارات والأنشطة وأدوات التخصيص يطيل عمر التجربة",
+        "الصوت والموسيقى وتفاصيل الطرق يعززون الإحساس بالمكان"
+      ],
+      "cons": [
+        "بنية الحملة الأساسية مألوفة ولا تقدم تحولاً جذرياً",
+        "طوكيو تفتقر أحياناً إلى كثافة الحياة التي يتوقعها اللاعب من مدينة بهذا الحجم",
+        "الشخصيات الجانبية والحوار لا يبلغان دائماً مستوى العالم المصمم حولهما",
+        "بعض العيوب البصرية الصغيرة قد تقطع الانغماس"
+      ],
+      "creator": "Playground Games",
+      "genres": [],
+      "platforms": [],
+      "aiGenerated": false,
+      "reviewMode": "review",
+      "releaseDate": "2026-05-19",
+      "sourceName": "Forza Support / Forza.net / The Guardian / TechRadar",
+      "sourceUrl": "https://forza.net/news/forza-horizon-6-coming-may-2026",
+      "catalogSources": [],
+      "sourcePath": "game-forza-horizon-6-2026-manual-assisted.md",
+      "excerpt": "اليابان ليست مجرد خلفية جديدة اختيار اليابان يمنح Forza Horizon 6 فرصة تتجاوز تغيير لون الخريطة. فالبلد يقدم تبايناً بصرياً يصعب استنفاده بسرعة: شوارع حضرية مزدحمة بالتفاصيل، طرق جبلية ضيقة، مناطق ريفية، غابات، وسواحل تسمح للعبة بالتنقل بين مشاهد مختلفة من دون أن تفقد هويتها. وتبدو الخريطة مصممة لتشجع اللاعب على القيادة لمجرد الاستكشاف، لا للوصول إلى نقطة سباق تالية فقط. هذه نقطة مهمة في لعبة عالم مفتوح، لأن جودة المساحة بين الأنشطة لا تقل أهمية عن الأنشطة نفسها. تؤكد Playground Games أن الخريطة هي الأكبر في تاريخ السلسلة، وأنها اعتمدت على جمع مراجع ميدانية من اليابان، بما في ذلك تصوير الطرق والمباني والبيئات الطبيعية. النتيجة التي يصفها النقاد ليست مجرد تفاصيل جميلة، بل إحساس بأن اختلاف المناطق ينعكس على متعة القيادة. ومع ذلك، لا ينبغي الخلط بين اتساع الخريطة وعمقها تلقائياً؛ فالعالم الواسع يحتاج إلى أسباب متجددة للعودة إلى أجزائه، وإلا تحولت المسافة إلى مساحة إضافية لا أكثر. القيادة: أساس ما زال متيناً تظل القيادة هي العنصر الذي يحدد نجاح Forza Horizon، والجزء السادس يحافظ على توازنه بين سهولة الدخول وإمكانية تحسين الأداء. يمكن للاعب أن ينجرف بالسيارة في منعطف واسع ويستمتع بالحركة، لكنه يستطيع أيضاً أن يضبط المكابح والخطوط بدقة عندما تصبح السباقات الجبلية أكثر تطلباً. اختلاف الأسطح والطرق يمنح السيارات شخصيات محسوسة، فلا تبدو كل المركبات مجرد أرقام سرعة وتسارع. الأفضل أن اللعبة لا تحصر المتعة في السباقات الرسمية. التجوال، والقفزات، وتحديات السرعة، والطرق الجبلية، والأنشطة الجماعية تمنح اللاعب أسباباً لتغيير أسلوبه باستمرار. لكن هذا التنوع لا يلغي أن الإحساس الأساسي مألوف جداً لمن لعب الأجزاء السابقة. التحسينات واضحة، إلا أنها تطوير لصيغة ناجحة أكثر من كونها إعادة تصميم لها. من ينتظر قفزة ميكانيكية جذرية قد يجد الجزء السادس محافظاً، أما من يريد قيادة مصقولة في عالم جديد فسيجد ما يبحث عنه. الحملة والتقدم من القرارات الجيدة أن تبدأ الرحلة بوصفك زائراً لليابان لا نجماً جا",
+      "knowledgeClass": "editorial-opinion-not-verified-fact"
+    },
+    {
+      "key": "movie:manual-assisted-movie-paper-tiger-2026",
+      "sourceId": "manual-assisted-movie-paper-tiger-2026",
+      "type": "movie",
+      "title": "بابر تايغر",
+      "originalTitle": "Paper Tiger",
+      "headline": "جيمس غراي يحوّل الحلم الأمريكي إلى فخ عائلي خانق، وأداء آدم درايفر يرفع التوتر أكثر من حبكة الجريمة",
+      "summary": "فيلم جريمة ودراما من إخراج جيمس غراي، يتابع شقيقين يحاولان تحسين مستقبل عائلتهما قبل أن يورطهما مخطط مرتبط بالمافيا الروسية. يشارك في البطولة آدم درايفر ومايلز تيلر وسكارليت جوهانسون، وبدأ عرضه السينمائي المحدود في 13 نوفمبر 2026.",
+      "verdict": "يمتلك Paper Tiger توتراً متصاعداً وأداءات قوية، خصوصاً من آدم درايفر ومايلز تيلر، ويستخدم أجواء الثمانينيات لتفكيك وهم الأمان والنجاح. لكن بعض الشخصيات، وعلى رأسها شخصية سكارليت جوهانسون، لا تحصل على الكتابة المتوازنة نفسها. تقييم VibeCritic: 8.2 من 10.",
+      "score": 8.2,
+      "scores": {
+        "storyScore": 8.4,
+        "visualsScore": 8.3,
+        "soundScore": 8,
+        "pacingScore": 8.1
+      },
+      "tags": [],
+      "pros": [
+        "توتر الجريمة يتصاعد من قرارات عائلية مفهومة لا من مطاردات متواصلة",
+        "آدم درايفر يقدم شخصية جذابة ومقلقة في الوقت نفسه",
+        "مايلز تيلر يوازن حضور درايفر بأداء غاضب ومقنع",
+        "التصوير القريب يخلق إحساساً بالاختناق والتهديد",
+        "الفيلم يربط الجريمة بوهم الحلم الأمريكي والأمان الطبقي"
+      ],
+      "cons": [
+        "شخصية سكارليت جوهانسون أقل كتابة من الشخصيات المحورية الأخرى",
+        "النبرة القاتمة قد تجعل بعض التحولات تبدو ثقيلة",
+        "الإصدار السينمائي المحدود يعني أن توفر الفيلم يختلف حسب المنطقة"
+      ],
+      "creator": "James Gray",
+      "genres": [],
+      "platforms": [],
+      "aiGenerated": false,
+      "reviewMode": "review",
+      "releaseDate": "2026-11-13",
+      "sourceName": "NEON / Rotten Tomatoes / RogerEbert.com / TheWrap",
+      "sourceUrl": "https://www.rottentomatoes.com/m/paper_tiger",
+      "catalogSources": [],
+      "sourcePath": "movie-paper-tiger-2026-manual-assisted.md",
+      "excerpt": "عائلة تبحث عن الأمان يضع Paper Tiger عائلة بيرل في قلب حكاية جريمة لا تبدأ من رغبة واضحة في عالم العصابات. إروين وأخوه غاري يتحركان داخل تصور أمريكي مألوف: العمل والاجتهاد ومحاولة توفير مستقبل أفضل للعائلة. لكن الطريق الذي يبدو فرصة مالية أو مخرجاً من ضيق الحياة يتحول إلى علاقة خطرة مع المافيا الروسية، فتبدأ الحدود بين الطموح والتهور في الانهيار. هذه البداية تمنح الفيلم مدخلاً إنسانياً؛ فالشخصيات لا ترى نفسها مجرمة، بل ترى أنها تحاول حماية ما تملكه أو الوصول إلى ما تعتقد أنها تستحقه. اختيار هذا المدخل يجعل الخطر أكثر قرباً من المشاهد. لا تأتي الكارثة من عالم بعيد أو من شرير يظهر فجأة، بل من قرارات صغيرة تتراكم حتى يصبح الرجوع مكلفاً. هنا يطرح جيمس غراي سؤالاً عن معنى الأمان: هل هو المكان الذي تسكنه العائلة، أم شبكة العلاقات التي تحيط بها، أم مجرد شعور زائف بأن العنف يحدث للآخرين؟ قوة الفيلم تكمن في جعل هذا السؤال جزءاً من الدراما لا شعاراً يقال بصوت مرتفع. جيمس غراي والحلم الأمريكي يعود غراي إلى أجواء الجريمة والعائلة التي عرفها في أعمال سابقة، لكنه يربطها هذه المرة بمنتصف الثمانينيات وبفكرة الحلم الأمريكي بوصفه وعداً قد يتحول إلى فخ. البيئة التاريخية ليست مجرد ملابس وسيارات وموسيقى؛ إنها مرحلة تلتقي فيها الرغبة في الصعود الاجتماعي مع أوهام الاستقرار والنجاح السريع. الشخصيات تريد أن تصدق أن المستقبل قابل للشراء أو التفاوض، بينما يفرض عالم الجريمة منطقه الخاص الذي لا يحترم نواياها الطيبة. لا يحاول الفيلم أن يجعل كل شخصية رمزاً اجتماعياً واضحاً. الأفضل في كتابته أنه يترك التناقضات حاضرة: أشخاص يريدون فعل الصواب لكنهم يختارون طرقاً تزيد الخطر، وأشخاص يستخدمون الكاريزما والكرم كوسيلة للسيطرة. أحياناً يقترب النص من المألوف في دراما العصابات، لكن النبرة الشخصية التي يضيفها غراي تمنع العمل من أن يصبح نسخة مباشرة من أفلام الجريمة الكلاسيكية. آدم درايفر ومايلز تيلر يقدم آدم درايفر شخصية غاري بوصفه رجلاً يعرف كيف يستخدم حضوره الاجتماعي كسلاح. قد يبدو مرحاً أو سخياً أو صاحب ذوق، ل",
+      "knowledgeClass": "editorial-opinion-not-verified-fact"
+    },
+    {
+      "key": "series:manual-assisted-series-12-12-12-2026",
+      "sourceId": "manual-assisted-series-12-12-12-2026",
+      "type": "series",
+      "title": "12 12 12",
+      "originalTitle": "12 12 12",
+      "headline": "سرقة بثلاث ساعات زمنية وفكرة جذابة، لكن الحكم على المسلسل ما زال مبكراً بعد عرض حلقتين فقط",
+      "summary": "مسلسل سرقة وإثارة من Apple TV يتابع عميلاً سابقاً في FBI ومجرماً محترفاً في مواجهة متشابكة عبر أوروبا، تتمحور حول اقتحام خزنة مصرفية عميقة تحت شوارع زيورخ. يتكون من ثماني حلقات، وبدأ عرضه عالمياً في 13 نوفمبر 2026 بحلقتين أوليين ثم حلقة أسبوعياً حتى 25 ديسمبر.",
+      "verdict": "يمتلك 12 12 12 فرضية مشوقة وثنائياً تمثيلياً جذاباً في أنتوني ماكي وجيمي دورنان، كما يمنح تقسيم الزمن عملية السرقة بنية قابلة للتشويق. لكن المتاح عند إعداد هذه المراجعة هو الحلقتان الأوليان فقط، لذلك يبقى التقييم أولياً ولا يمكن الجزم بقدرة المسلسل على الوفاء بكل وعوده.",
+      "score": null,
+      "scores": {},
+      "tags": [],
+      "pros": [
+        "فكرة الخطوط الزمنية الثلاثة تمنح عملية السرقة بنية واضحة ومميزة",
+        "ثنائية أنتوني ماكي وجيمي دورنان توفر صداماً تمثيلياً واعداً",
+        "اختيار خزنة مصرفية تحت زيورخ يمنح المهمة مركزاً مكانياً واضحاً",
+        "الإصدار الأسبوعي يتيح مساحة لبناء التوتر والنظريات بين الحلقات"
+      ],
+      "cons": [
+        "حلقتان لا تكفيان للحكم على اكتمال البناء أو جودة النهاية",
+        "التنقل بين ثلاثة أزمنة قد يتحول إلى تكرار للمعلومة إذا لم تتمايز وظائفها",
+        "الإثارة المعتمدة على لعبة القط والفأر تحتاج إلى شخصيات أكثر عمقاً من مجرد خصمين"
+      ],
+      "creator": "Dudi Appleton / Jim Keeble",
+      "genres": [],
+      "platforms": [],
+      "aiGenerated": false,
+      "reviewMode": "limited",
+      "releaseDate": "2026-11-13",
+      "sourceName": "Apple TV Press / Paramount Television Studios",
+      "sourceUrl": "https://www.apple.com/tv-pr/originals/12-12-12/",
+      "catalogSources": [],
+      "sourcePath": "series-12-12-12-2026-manual-assisted.md",
+      "excerpt": "ثلاث ساعات زمنية لعملية واحدة يستمد 12 12 12 فكرته الأساسية من تقسيم زمني مباشر: اثنا عشر شهراً من التخطيط، واثنتا عشرة ساعة لتنفيذ السرقة، واثنا عشر يوماً لما بعدها. هذه البنية تمنح المسلسل طريقة واضحة لتوزيع التوتر، لأنها لا تكتفي بعرض لحظة الاقتحام، بل تسمح بمراقبة ما سبقها وما ترتب عليها. بدلاً من سؤال واحد عن نجاح العملية، يصبح لدينا ثلاثة أسئلة: كيف بُنيت الخطة؟ ماذا حدث عندما دخلت حيز التنفيذ؟ وهل يستطيع المشاركون النجاة من آثارها؟ الفكرة جذابة على الورق، لكنها تحمل خطراً سردياً معروفاً. إذا كانت الخطوط الزمنية الثلاثة تعيد المعلومات نفسها من زوايا مختلفة من دون أن تضيف معنى جديداً، فقد يشعر المشاهد أن المسلسل يطيل الحكاية بدلاً من تعميقها. نجاح البناء لا يقاس بعدد القفزات الزمنية، بل بقدرة كل خط على تغيير فهمنا للشخصيات أو للعملية. بعد الحلقتين الأوليين، تبدو الفرضية واعدة، لكن الحكم النهائي يحتاج إلى اكتمال الحلقات. عميل سابق ومجرم محترف تضع القصة أنتوني ماكي في دور عميل سابق في FBI، وجيمي دورنان في دور مجرم أمريكي محترف، وتبني بينهما لعبة مطاردة لا تقوم فقط على اختلاف القانون والجريمة، بل على معرفة كل طرف بأن الآخر قادر على توقع خطواته. هذا النوع من المواجهة يمنح المسلسل محركاً درامياً واضحاً، خصوصاً عندما لا تكون الحدود بين المطارد والمطارد به ثابتة تماماً. تستفيد الفكرة من التباين في الحضور بين الممثلين. ماكي يستطيع تقديم شخصية تجمع بين الخبرة والضغط الداخلي، بينما يملك دورنان قدرة على إبقاء الشخصية هادئة ظاهرياً حتى عندما تكون نواياها غير مضمونة. لكن الكيمياء بينهما تحتاج إلى وقت كي تتحول من مواجهة مهنية إلى صراع شخصي. إذا بقي كل طرف مجرد وظيفة داخل لعبة السرقة، فلن تكفي الفرضية وحدها للحفاظ على اهتمام المشاهد طوال ثماني حلقات. زيورخ والخزنة بوصفهما مركز الحكاية اختيار خزنة مصرفية عميقة تحت شوارع زيورخ يمنح عملية السرقة مركزاً ملموساً. المكان ليس مجرد نقطة على الخريطة؛ إنه مساحة مغلقة تتطلب معرفة دقيقة بالبنية الأمنية وبالطرق التي يمكن أن تقود إلى الداخل وا",
+      "knowledgeClass": "editorial-opinion-not-verified-fact"
     }
   ],
   "editorialRelations": [
@@ -105305,7 +105522,7 @@
     }
   ],
   "stats": {
-    "works": 347,
+    "works": 350,
     "people": 1108,
     "companies": 70,
     "concepts": 62,
@@ -105313,8 +105530,8 @@
     "observations": 2354,
     "conflicts": 19,
     "knowledgeGaps": 133,
-    "editorialReviews": 111,
+    "editorialReviews": 115,
     "editorialRelations": 111
   },
-  "updatedAt": "2026-11-16T01:07:32.185Z"
+  "updatedAt": "2026-11-16T01:24:48.613Z"
 }
