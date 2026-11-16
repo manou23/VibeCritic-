@@ -29,6 +29,7 @@ try{
  assert.equal(article.sourceId,'movie:77');
  assert.equal(article.pros.length,3);
  assert.equal(article.cons.length,2);
- assert.equal(article.body.split(/\s+/u).length,review.split(/\s+/u).length*3);
+ assert.ok(article.body.startsWith(review+'\n\n'+review));
+ assert.ok(article.body.includes('https://en.wikipedia.org/wiki/Test'),'independent source links must be visible');
 }finally{globalThis.fetch=originalFetch;}
 console.log('VibeCritic V2 adapter contract tests passed.');
