@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../consts';
+---
+<Base title="من نحن" description="تعرّف إلى VibeCritic ومنهجه في مراجعة الألعاب والأفلام والمسلسلات.">
+<section class="info-page">
+ <header class="info-hero"><p class="info-kicker">ABOUT VIBECRITIC</p><h1>نراجع بوضوح، ونترك القرار لك.</h1><p>VibeCritic منصة عربية مستقلة لاكتشاف الألعاب والأفلام والمسلسلات وقراءة مراجعات نقدية تساعدك على اتخاذ قرار واعٍ بشأن ما يستحق وقتك.</p></header>
+ <div class="info-grid">
+  <article><span>01 / رسالتنا</span><h2>رأي نقدي لا إعلان ترويجي</h2><p>نهدف إلى تقديم قراءة متوازنة تشرح ما ينجح في العمل وما قد لا يناسب بعض الجمهور، مع توضيح أسباب الأحكام بدلاً من الاكتفاء بعبارات عامة.</p></article>
+  <article><span>02 / منهجنا</span><h2>الأدلة قبل الانطباعات</h2><p>نميز بين المعلومات الموثقة والتحليل والاستنتاج. لا نزعم إجراء اختبار لعب أو مشاهدة شخصية ما لم يكن ذلك مثبتاً، ونوضح حدود المعرفة عندما لا تتوافر بيانات كافية.</p></article>
+  <article><span>03 / التقييم</span><h2>درجة تحريرية من 10</h2><p>الدرجة المنشورة تقدير تحريري خاص بـ VibeCritic وليست متوسطاً من مواقع أخرى أو تصويتاً جماهيرياً. تُقرأ مع التحليل ونقاط القوة والتحفظات، لا بمعزل عنها.</p></article>
+  <article><span>04 / الاستقلالية</span><h2>الشفافية مع القارئ</h2><p>قد نستعين بأدوات الذكاء الاصطناعي في إعداد بعض المواد. لذلك لا نعرض المخرجات الآلية على أنها تجربة بشرية مباشرة، وننبه إلى ضرورة التحقق من التفاصيل التي قد تخطئ فيها الأدوات.</p></article>
+ </div>
+ <section class="editorial-method">
+  <h2>كيف نُعد المراجعات؟</h2>
+  <p class="method-intro">نحاول أن تكون كل مادة مفيدة بذاتها، لا مجرد بطاقة معلومات أو إعادة صياغة لوصف الناشر.</p>
+  <div class="method-grid">
+   <article><h3>1. نحدد نوع القراءة</h3><p>نميز بين المراجعة النقدية للعمل الصادر، والقراءة الاستباقية قبل الإصدار، والقراءة محدودة الأدلة. لا نعرض القراءة الاستباقية أو المحدودة كتقييم نهائي.</p></article>
+   <article><h3>2. نفصل الحقيقة عن الرأي</h3><p>نستخدم بيانات العمل ومصادره الرسمية وقواعد البيانات المتخصصة للتحقق من العناوين وتواريخ الإصدار والمنصات والجهات المطورة أو المنتجة. بيانات المصدر لا تُعامل على أنها رأي نقدي.</p></article>
+   <article><h3>3. نشرح أسباب التقييم</h3><p>نناقش القصة أو السرد، والصورة أو التصميم، والصوت، والإيقاع بحسب طبيعة العمل. نعرض نقاط القوة والتحفظات مع الدرجة حتى يستطيع القارئ فهم ما وراء الرقم.</p></article>
+   <article><h3>4. نوضح دور الذكاء الاصطناعي</h3><p>قد تُستخدم أدوات الذكاء الاصطناعي في إعداد بعض المواد أو تنظيم المعلومات. عندما تكون المادة مدعومة بها نضع تنبيهاً واضحاً، ولا نزعم تجربة لعب أو مشاهدة شخصية لم تحدث.</p></article>
+  </div>
+  <p class="method-note">هذه المنهجية لا تعني أن كل معلومة معصومة من الخطأ. إذا لاحظت خطأً، أرسل رابط المادة والتصحيح المقترح ومصدراً موثوقاً عبر صفحة التواصل.</p>
+ </section>
+ <section class="info-callout"><h2>هل لديك تصحيح أو اقتراح؟</h2><p>نرحب بالملاحظات المتعلقة بدقة المعلومات أو حقوق المحتوى أو تجربة الموقع.</p><a href={url('contact/')}>تواصل مع VibeCritic ↗</a></section>
+</section>
+<style>
+.info-page{width:min(1000px,calc(100% - 40px));margin:0 auto;padding:clamp(48px,8vw,100px) 0;color:var(--vc-text)}
+.info-hero{max-width:780px;margin-bottom:42px}.info-kicker{font:800 11px/1.5 ui-monospace,monospace;letter-spacing:.16em;color:var(--vc-accent);margin:0 0 18px}
+.info-hero h1{font-size:clamp(38px,7vw,68px);line-height:1.15;letter-spacing:-.04em;margin:0 0 18px}.info-hero>p:last-child{font-size:17px;line-height:2;color:var(--vc-muted);max-width:700px}
+.info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.info-grid article,.info-callout{border:1px solid var(--vc-border);border-radius:18px;padding:clamp(20px,4vw,30px);background:var(--vc-surface)}
+.info-grid article>span{font:750 10px/1.5 ui-monospace,monospace;letter-spacing:.12em;color:var(--vc-accent)}.info-grid h2,.info-callout h2{font-size:21px;margin:12px 0}.info-grid p,.info-callout p{font-size:14px;line-height:2;color:var(--vc-muted);margin:0}
+.info-callout{margin-top:18px}.info-callout a{display:inline-flex;margin-top:16px;color:var(--vc-accent-deep);font-weight:800;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:650px){.info-grid{grid-template-columns:1fr}.info-hero>p:last-child{font-size:15px}}
+.editorial-method{margin-top:22px;border:1px solid var(--vc-border);border-radius:18px;padding:clamp(20px,4vw,30px);background:var(--vc-surface)}
+.editorial-method>h2{font-size:24px;margin:0 0 8px}.method-intro,.method-note{font-size:13px;line-height:2;color:var(--vc-muted)}.method-intro{margin:0 0 18px}.method-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.method-grid article{border:1px solid var(--vc-border);border-radius:13px;padding:16px}.method-grid h3{font-size:15px;margin:0 0 7px}.method-grid p{font-size:12px;line-height:2;color:var(--vc-muted);margin:0}.method-note{margin:18px 0 0}
+@media(max-width:650px){.method-grid{grid-template-columns:1fr}}
+</style>
+</Base>
