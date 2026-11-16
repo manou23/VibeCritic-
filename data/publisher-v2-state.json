@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T19:49:56.839Z",
+  "updatedAt": "2026-11-16T19:50:49.200Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -161,7 +161,7 @@
         ],
         "popularity": 14089
       },
-      "status": "ready",
+      "status": "published",
       "stage": 3,
       "parts": [
         {
@@ -225,7 +225,7 @@
       },
       "attempts": 0,
       "createdAt": "2026-11-16T17:08:19.010Z",
-      "updatedAt": "2026-11-16T19:49:14.155Z",
+      "updatedAt": "2026-11-16T19:50:48.930Z",
       "nextAttemptAt": null,
       "lastError": null,
       "lastProvider": "groq",
@@ -298,7 +298,9 @@
         "characters": 4319
       },
       "fileWritten": true,
-      "articlePath": "src/content/reviews/game-cyberpunk-2077-41494.md"
+      "articlePath": "src/content/reviews/game-cyberpunk-2077-41494.md",
+      "deployedAt": "2026-11-16T19:50:48.930Z",
+      "publishedAt": "2026-11-16T19:50:48.930Z"
     }
   },
   "providerUsage": {
