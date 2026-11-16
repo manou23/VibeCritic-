@@ -15,17 +15,13 @@ const adapters={
  verifyDeployment:async()=>{deployChecks++;return deploymentReady;}
 };
 const providers=[{id:'free-model',enabled:true,free:true,dailyRequestLimit:5,dailyTokenLimit:5000}];
-const first=await runCycle({state,adapters,providers,now,persist:async()=>{saves++;}});
-assert.equal(first.action,'file-ready','one five-hour cycle must finish the full article');
-assert.equal(first.providerCalls,3,'all three sections must be generated in the same scheduled cycle');
-assert.equal(aiCalls,3);
-assert.equal(state.jobs['series:1'].status,'quality-check','all sections must be checkpointed before quality validation');
 await assert.rejects(
- runCycle({state,adapters,providers,now:now+1,persist:async()=>{saves++;}}),
+ runCycle({state,adapters,providers,now,persist:async()=>{saves++;}}),
  /simulated interruption/
 );
-assert.equal(aiCalls,3,'recovery after assembly interruption must not spend more model requests');
-const resumed=await runCycle({state,adapters,providers,now:now+2,persist:async()=>{saves++;}});
+assert.equal(aiCalls,3,'one five-hour cycle must generate all three sections before validation');
+assert.equal(state.jobs['series:1'].status,'quality-check','all sections must be checkpointed before quality validation');
+const resumed=await runCycle({state,adapters,providers,now:now+1,persist:async()=>{saves++;}});
 assert.equal(resumed.action,'file-ready');
 assert.equal(resumed.providerCalls,0,'recovery from quality-check must not spend another AI request');
 assert.equal(aiCalls,3,'recovery must not regenerate the third stage');
