@@ -1,8 +1,8 @@
 ---
 title: "The Bear"
 originalTitle: "The Bear"
-youtubeVideoTitle: "The Bear — Official Trailer (Season 3)"
-youtubeVideoId: "NGsawkAOpv4"
+youtubeVideoTitle: "The Bear — Season 5 Official Trailer"
+youtubeVideoId: "ojjCvICC86c"
 backdrop: "https://assets.fxnetworks.com/fx/4426a3ca-ad87-463d-9bd1-f6a3210e0dd8.jpg?imwidth=1920"
 poster: "https://assets.fxnetworks.com/fx/4b3d3fb0-ed6e-4fd6-9bea-71268df0c177.jpg?imwidth=400"
 headline: "The Bear: مطبخ صغير يكشف ضغط العائلة والعمل والطموح"
@@ -32,11 +32,15 @@ tags: ["The Bear", "FX", "Christopher Storer", "Kitchen Drama"]
 genres: ["دراما", "كوميديا سوداء"]
 cast: ["Jeremy Allen White", "Ayo Edebiri", "Ebon Moss-Bachrach", "Abby Elliott", "Lionel Boyce", "Liza Colón-Zayas"]
 crew: ["Christopher Storer", "Joanna Calo", "Hiro Murai", "Courtney Storer"]
-sourceName: "FX / Hulu Press"
+sourceName: "FX / Hulu / The Guardian / RogerEbert.com / Metacritic / Rotten Tomatoes"
 sourceId: "manual-series-the-bear"
 sourceUrl: "https://www.fxnetworks.com/shows/the-bear"
 aiGenerated: false
 ---
+## نطاق المراجعة
+
+تتناول هذه المراجعة المسلسل حتى موسمه الخامس والأخير. بدأ الموسم الأخير في 25 يونيو 2026، واكتمل عرضه خلال أغسطس 2026؛ لذلك فإن الحكم هنا يشمل المسار الكامل من المطعم العائلي الصغير إلى نهاية رحلة Carmy والفريق، وليس المواسم الثلاثة الأولى فقط.
+
 ## مطبخ لا يمنح أحداً وقتاً للتفكير
 يضع The Bear المشاهد داخل مطبخ يعمل تحت ضغط دائم، حيث تتداخل الطلبات والوقت والمعدات والعلاقات الشخصية. يحاول Carmy نقل خبرته في المطاعم الراقية إلى مشروع عائلي صغير، لكن التغيير لا يحدث بمجرد وضع قواعد جديدة. المكان يحمل تاريخاً من الخلافات والخسارات والعادات، وكل محاولة لتنظيمه تكشف مقاومة أو خوفاً أو جرحاً قديماً. لهذا لا تكون المطاعم خلفية لطيفة، بل نظاماً يختبر قدرة الشخصيات على العمل معاً عندما لا تملك رفاهية التوقف.
 
@@ -55,9 +59,13 @@ Jeremy Allen White يقدم Carmy كشخص يعرف تفاصيل المهنة ل
 ## الحكم النهائي
 The Bear مسلسل قوي في الأداء والحوار والتفاصيل المهنية، ويستطيع تحويل مهمة يومية إلى دراما عن الحداد والهوية والانتماء. عيبه الأوضح أن الصخب قد يطغى على بعض الحلقات وأن الإيقاع لا يحافظ دائماً على التوازن نفسه. درجة 8.8/10 تعكس قوة التمثيل والبناء والعالم، مع خصم بسبب الإرهاق السمعي وتفاوت الإيقاع.
 
-## مصادر التحقق
-- [FX — The Bear](https://www.fxnetworks.com/shows/the-bear): وصف العمل والطاقم وصانع المسلسل.
-- [Hulu Press — The Bear](https://press.hulu.com/shows/the-bear/): ملخص المسلسل والطاقم الرئيسي والمنتجون.
-- [The Walt Disney Company — الموسم الخامس والأخير](https://thewaltdisneycompany.com/news/bear-final-season-date/): معلومات رسمية عن الموسم الأخير في 2026.
+## مصادر التحقق والمراجعات النقدية
+- [FX — The Bear](https://www.fxnetworks.com/shows/the-bear): وصف العمل والطاقم ومعلومات المواسم.
+- [The Walt Disney Company — الموسم الخامس والأخير](https://thewaltdisneycompany.com/news/bear-final-season-date/): موعد الموسم الأخير وعدد حلقاته وخط القصة.
+- [The Guardian — مراجعة الموسم الخامس](https://www.theguardian.com/tv-and-radio/2026/jun/25/the-bear-finale-review-disney): تحليل النهاية ومزج الكوميديا بالتوتر وإغلاق مسارات الشخصيات.
+- [The Guardian — مراجعة الموسم الثاني](https://www.theguardian.com/tv-and-radio/2023/jul/19/the-bear-season-two-review-somehow-even-more-delicious-than-before): قراءة نقدية لتوسع العالم والعلاقات.
+- [The Guardian — مراجعة الموسم الثالث](https://www.theguardian.com/tv-and-radio/article/2024/jun/27/the-bear-season-three-review-unbelievably-frustrating): ملاحظات على تراجع التركيز وتفاوت الإيقاع.
+- [Metacritic — The Bear](https://www.metacritic.com/tv/the-bear/critic-reviews/): تجميع مراجعات النقاد عبر المواسم الخمسة.
+- [Rotten Tomatoes — The Bear](https://www.rottentomatoes.com/tv/the_bear): بيانات استقبال النقاد والجمهور والمواسم.
 
 > مراجعة تحريرية يدوية مستقلة، دون حرق لأحداث المواسم أو ادعاء مشاهدة جديدة.
