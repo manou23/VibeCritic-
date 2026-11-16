@@ -1308,7 +1308,7 @@ async function main(){
   console.log('دفعة الإصدارات الجديدة المسموح بها في هذا التشغيل:',JSON.stringify(quotas));
  }
  const pendingDraft=pendingJobs.find(job=>job.item&&job.draft&&Number(job.draft.stage)<3);
- if(pendingDraft&&dailyRemaining>0){
+ if(pendingDraft&&dailyRemaining>0&&todayCounts[pendingDraft.type]<dailyPerType){
   quotas[pendingDraft.type]=Math.max(1,quotas[pendingDraft.type]||0);
   console.log('أولوية استكمال المقال المحفوظ '+Number(pendingDraft.draft.stage)+'/3 مع احترام سقف النشر اليومي.');
  }
