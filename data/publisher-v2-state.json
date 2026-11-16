@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T19:40:22.235Z",
+  "updatedAt": "2026-11-16T19:41:05.265Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -215,8 +215,8 @@
       },
       "attempts": 3,
       "createdAt": "2026-11-16T17:08:19.010Z",
-      "updatedAt": "2026-11-16T19:40:21.918Z",
-      "nextAttemptAt": 1794858501918,
+      "updatedAt": "2026-11-16T19:41:05.244Z",
+      "nextAttemptAt": 1794858365244,
       "lastError": "groq: groq HTTP 400: {\"error\":{\"message\":\"property 'reasoning' is unsupported\",\"type\":\"invalid_request_error\"}}\n",
       "lastProvider": "openrouter",
       "resumeTo": "writing"
