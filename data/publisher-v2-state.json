@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T17:07:13.051Z",
+  "updatedAt": "2026-11-16T17:08:25.402Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -133,6 +133,92 @@
       "updatedAt": "2026-11-16T17:07:11.253Z",
       "nextAttemptAt": null,
       "lastError": "Evidence rejected: Independent source has insufficient detail."
+    },
+    "game:41494": {
+      "key": "game:41494",
+      "item": {
+        "type": "game",
+        "id": "41494",
+        "name": "Cyberpunk 2077",
+        "overview": "",
+        "date": "2020-12-10",
+        "poster": "https://media.rawg.io/media/games/26d/26d4437715bee60138dab4a7c8c59c92.jpg",
+        "backdrop": "https://media.rawg.io/media/games/26d/26d4437715bee60138dab4a7c8c59c92.jpg",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/cyberpunk-2077",
+        "genres": [
+          "Action",
+          "Shooter",
+          "RPG"
+        ],
+        "platforms": [
+          "Nintendo Switch",
+          "PlayStation 4",
+          "PC",
+          "Xbox Series S/X",
+          "PlayStation 5",
+          "Xbox One"
+        ],
+        "popularity": 14089
+      },
+      "status": "writing",
+      "stage": 1,
+      "parts": [
+        {
+          "stage": 1,
+          "text": "{\"review\":\"العمل لعبة أكشن تقمص أدوار من تطوير سي دي بروجيكت ريد، صدرت في ديسمبر 2020 لبيئات متعددة، وتقع أحداثها في مدينة نايتي سيتي الخيالية بولاية كاليفورنيا عام 2077. المدينة تُدار من قبل شركات عملاقة، وتنتشر فيها التعديلات السيبرانية التي تعزز القدرات الجسدية والذهنية، بينما تترك الأتمتة أعداداً كبيرة من السكان في فقر وتشرد. السرد يتابع mercenary يُدعى V، يمكن تخصيص جنسه ومظهره، يعمل في أعمال غير قانونية لمقاولين مختلفين، قبل أن يُزرع فيه شريحة تجريبية تحتوي على وعي جوني سيلفرهاند، الصخرة الأسطورية الذي تحول إلى إرهابي، ما يبدأ صراعاً على السيطرة بين وعيي الشخصيتين لإنقاذ حياة V ومواجهة شركة أراساكا.\\n\\nاللعبة تُلعب من منظور شخص أول خلال الاستكشاف والقتال، مع استخدام منظور شخص ثالث في المشاهد السينمائية فقط. يمكن التنقل سيراً على الأقدام أو باستخدام مركبات، مع خيارات تخصيص للشخصية تشمل ثلاث فئات وتعديلات سيبرانية متنوعة. لا يوجد نظام رفاق أو أحزاب، على الرغم من انضمام شخصيات مثل جاكي في مراحل مبكرة، وشخصيات أخرى في مهام معينة حسب متطلبات الحبكة. الأدلة لا توضح تفاصيل دقيقة عن هيكل المهام الجانبية، أو عمق خيارات الحوار، أو تأثير القرارات على نهاية القصة، مما يحد من إمكانية الحكم النهائي على جودة السرد.\\n\\nالإيقاع العام يبدو مرتبطاً بتصميم العالم المفتوح والتنقل الحر، لكن الأدلة لا توفر معلومات عن مدة اللعب، أو توزيع المحتوى، أو تكرار المهام، ما يمنع تقييماً دقيقاً لتدفق التجربة. الجوانب البصرية والصوتية ذكرت بشكل عام في المصادر كعناصر نالت إشادة النقاد، دون تفاصيل فنية محددة يمكن الاعتماد عليها.\",\"scores\":{\"story\":0,\"visuals\":0,\"sound\":0,\"pacing\":0},\"pros\":[],\"cons\":[],\"verdict\":\"\"}",
+          "savedAt": "2026-11-16T17:08:19.010Z"
+        }
+      ],
+      "evidence": {
+        "title": "Cyberpunk 2077",
+        "originalTitle": "",
+        "type": "game",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/cyberpunk-2077",
+        "sourceId": "game:41494",
+        "releaseDate": "2020-12-10",
+        "overview": "Cyberpunk 2077 is a science fiction game loosely based on the role-playing game Cyberpunk 2020. ###Setting The game is set in the year 2077 in a fictional futuristic metropolis Night City in California. In the world of the game, there are developed cybernetic augmentations that enhance people's strength, agility, and memory. The city is governed by corporations. Many jobs are taken over by the robots, leaving a lot of people poor and homeless. Night City has a roaring underworld, with black markets, underground surgeons, drug dealers, and street gangs abound. ###Characters The main protagonist is fully customizable, including his or her sex and appearance, and goes by the nickname V. He or she is an underground mercenary who does “dirty business” for the various contractors. An NPC companion named Jackie joins the protagonist early at the game, and various other companions may join the player on certain missions as the plot demands. However, the game has no parties and no companion system. ###Gameplay The player controls V from the first person view, with the third-person view used for cutscenes only. The protagonist can travel across the city on feet or using various vehicles, in a manner some observers compared to GTA series. There are many options for the character customization, including three character classes, and a variety of augmentations V can install to enhance his or her abilities.",
+        "poster": "https://media.rawg.io/media/games/26d/26d4437715bee60138dab4a7c8c59c92.jpg",
+        "backdrop": "https://media.rawg.io/media/screenshots/d14/d14e45904ec4e2f184428315a3810417.jpg",
+        "genres": [
+          "Action",
+          "Shooter",
+          "RPG"
+        ],
+        "platforms": [
+          "Nintendo Switch",
+          "PlayStation 4",
+          "PC",
+          "Xbox Series S/X",
+          "PlayStation 5",
+          "Xbox One"
+        ],
+        "cast": [],
+        "crew": [],
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/cyberpunk-2077",
+            "extract": "Cyberpunk 2077 is a science fiction game loosely based on the role-playing game Cyberpunk 2020. ###Setting The game is set in the year 2077 in a fictional futuristic metropolis Night City in California. In the world of the game, there are developed cybernetic augmentations that enhance people's strength, agility, and memory. The city is governed by corporations. Many jobs are taken over by the robots, leaving a lot of people poor and homeless. Night City has a roaring underworld, with black markets, underground surgeons, drug dealers, and street gangs abound. ###Characters The main protagonist is fully customizable, including his or her sex and appearance, and goes by the nickname V. He or she is an underground mercenary who does “dirty business” for the various contractors. An NPC companion named Jackie joins the protagonist early at the game, and various other companions may join the player on certain missions as the plot demands. However, the game has no parties and no companion system. ###Gameplay The player controls V from the first person view, with the third-person view used for cutscenes only. The protagonist can travel across the city on feet or using various vehicles, in a manner some observers compared to GTA series. There are many options for the character customization, including three character classes, and a variety of augmentations V can install to enhance his or her abilities."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Cyberpunk_2077",
+            "extract": "Cyberpunk 2077 is a 2020 action role-playing game developed by CD Projekt Red and published by CD Projekt. Based on and set in the fictional universe of Mike Pondsmith's Cyberpunk tabletop game series, Cyberpunk 2077 takes place in the dystopian metropolis of Night City in California. The player assumes the role of V (voiced by Gavin Drea or Cherami Leigh depending on the player character's gender), a cybernetically-enhanced mercenary who is reluctantly imbued with an experimental \"biochip\" containing the engram of legendary rocker-turned-terrorist Johnny Silverhand (voiced by Keanu Reeves). As Johnny's consciousness begins overwriting V's own, the two must work together to separate from each other and save V's life by confronting the Arasaka Corporation, a powerful megacorporation acting as the de facto ruler of Night City. Cyberpunk 2077 began development following the release of The Witcher 3: Wild Hunt – Blood and Wine (2016). The game was developed by a team of around 500 people using the REDengine 4 game engine. CD Projekt launched a new division in Wrocław, Poland, and partnered with Digital Scapes, Nvidia, Q-LOC, and Jali Research to aid the production, while Pondsmith served as a consultant. The original score was composed by Marcin Przybyłowicz, and featured the contributions of several licensed artists. After years of anticipation, Cyberpunk 2077 was released for PlayStation 4, Stadia, Windows, and Xbox One in December 2020, followed by the PlayStation 5 and Xbox Series X/S in February 2022, the Nintendo Switch 2 in June 2025 as a launch title, and macOS in July 2025. A DLC expansion, Phantom Liberty, was released for PlayStation 5, Windows, and Xbox Series X/S in September 2023, and paired with the Nintendo Switch 2 and macOS releases. Cyberpunk 2077 received praise from critics for its narrative, setting, and graphics, but was widely criticised for bugs and glitches, particularly on the PlayStation 4 and Xbox One versions during their launch period. Sony removed the game from the PlayStation Store from December 2020 to June 2021 while CD Projekt rectified some of the issues. CD Projekt became subject to investigations and class-action lawsuits for its perceived attempts at downplaying the severity of the technical problems before release; these were ultimately cleared with a settlement of US$1.85 million. The improvements and updates delivered by the developer since, together with the release of Phantom Liberty and the 2022 tie-in anime series Cyberpunk: Edgerunners, led to a progressive reappraisal of the game. As of July 2026, Cyberpunk 2077 had sold over 40 million copies, making it one of the best-selling video games of all time. Its total cost to develop and market (including updates and DLC) is reportedly between $436 million and around $440 million, making it one of the most expensive video games to develop. A sequel was announced in October 2022 and is in development."
+          }
+        ],
+        "metadata": {
+          "rating": 4.23,
+          "votes": 3067
+        }
+      },
+      "attempts": 0,
+      "createdAt": "2026-11-16T17:08:19.010Z",
+      "updatedAt": "2026-11-16T17:08:19.010Z",
+      "nextAttemptAt": null,
+      "lastError": null,
+      "lastProvider": "openrouter"
     }
   },
   "providerUsage": {
@@ -150,9 +236,9 @@
         "failures": 1
       },
       "openrouter": {
-        "requests": 5,
-        "tokens": 2877,
-        "successes": 2,
+        "requests": 6,
+        "tokens": 5056,
+        "successes": 3,
         "failures": 3
       },
       "cloudflare": {
