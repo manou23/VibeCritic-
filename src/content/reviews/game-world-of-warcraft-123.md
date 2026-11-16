@@ -1,6 +1,6 @@
 ---
 title: "World of Warcraft"
-originalTitle: "World of Warcraft — Retail Edition (Midnight)"
+originalTitle: "World of Warcraft: Midnight"
 headline: "World of Warcraft: Midnight — عودة بصرية قوية، لكن طموح التوسعة يتجاوز صقلها أحياناً"
 hook: "بعد أكثر من عقدين، لا تزال Azeroth قادرة على جذب اللاعب؛ وتثبت Midnight ذلك بتجديد مناطق مألوفة وأنظمة واعدة، مع بعض التعثرات التي تمنعها من أن تكون قفزة كاملة."
 summary: "مراجعة للحالة الحالية من World of Warcraft مع توسعة Midnight، تركز على إعادة تصميم Silvermoon وEversong، وتطور أنظمة اللعب والسكن والمحتوى الجماعي، إلى جانب السرد المتفاوت والمشكلات التقنية والإيقاع."
@@ -9,11 +9,10 @@ reviewVersion: 3
 reviewMode: review
 type: game
 date: 2026-11-15
-releaseDate: "2004-11-23"
+releaseDate: "2026-03-02"
 poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/co2l7z.jpg"
-backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/co2l7z.jpg"
-youtubeVideoId: "2Rxoz13Bthc"
-youtubeVideoTitle: "World of Warcraft Official Trailer"
+youtubeVideoId: "22Nf00VN0WM"
+youtubeVideoTitle: "Midnight Gameplay Reveal | World of Warcraft"
 score: 8.4
 storyScore: 8.0
 visualsScore: 9.0
@@ -43,15 +42,15 @@ genres:
   - "MMORPG"
   - "Role-playing"
 creator: "Blizzard Entertainment"
-sourceName: "VibeCritic Editorial Desk"
+sourceName: "Blizzard Entertainment / PC Gamer / GameSpot / Game Informer"
 sourceId: "123"
-sourceUrl: "https://worldofwarcraft.blizzard.com/"
+sourceUrl: "https://worldofwarcraft.blizzard.com/en-us/news/24243639/world-of-warcraft-midnighttm-goes-live-march-2"
 aiGenerated: false
 ---
 
 ## نطاق المراجعة
 
-هذه مراجعة للحالة الحالية من World of Warcraft مع توسعة **Midnight** الصادرة في مارس 2026. لا تدّعي أنها مراجعة مستقلة لكل توسعات اللعبة منذ 2004، ولا تعمم أداء نسخة PC على كل إعداد أو جهاز. التقييم مبني على مراجعات نقدية للتوسعة ومصادر رسمية ومقابلات فنية حول عناصرها.
+هذه مراجعة للحالة الحالية من World of Warcraft مع توسعة **Midnight** التي أُطلقت عالمياً في 2 مارس 2026. تاريخ 2004 يعود إلى إطلاق اللعبة الأساسية، وليس إلى التوسعة التي تتناولها هذه المراجعة. لا تدّعي أنها مراجعة مستقلة لكل توسعات اللعبة منذ 2004، ولا تعمم أداء نسخة PC على كل إعداد أو جهاز. التقييم مبني على مراجعات نقدية للتوسعة ومصادر رسمية ومقابلات فنية حول عناصرها.
 
 ## القصة والعالم — 8.0/10
 
@@ -75,6 +74,7 @@ Midnight توسعة قوية تعيد الحيوية إلى عالم مألوف 
 
 ## المصادر
 
+- [Blizzard — Midnight Goes Live March 2](https://worldofwarcraft.blizzard.com/en-us/news/24243639/world-of-warcraft-midnighttm-goes-live-march-2) — الموعد الرسمي للإصدار، ومناطق التوسعة وأنظمتها.
 - [PC Gamer — World of Warcraft: Midnight Review](https://www.pcgamer.com/games/world-of-warcraft/world-of-warcraft-midnight-review/) — مراجعة عملية تمنح التوسعة 84 من 100 وتناقش الصورة والقصة والأنظمة والمشكلات.
 - [GameSpot — World of Warcraft: Midnight Review](https://www.gamespot.com/reviews/world-of-warcraft-midnight-review-back-at-it-again-in-quelthalas/1900-6418475/) — مراجعة للتوسعة تركز على الحملة والسكن ومحتوى نهاية اللعبة.
 - [Metacritic — Midnight Critic Reviews](https://www.metacritic.com/game/world-of-warcraft-midnight/critic-reviews/) — تجميع تقييمات نقدية متعددة للتوسعة.
