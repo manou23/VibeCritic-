@@ -30,7 +30,7 @@ tags: ["AMC", "Vince Gilligan", "Legal Drama", "Crime"]
 genres: ["دراما", "جريمة"]
 cast: ["Bob Odenkirk", "Rhea Seehorn", "Jonathan Banks", "Michael McKean"]
 crew: ["Vince Gilligan", "Peter Gould"]
-sourceName: "VibeCritic Editorial"
+sourceName: "AMC / The Guardian / RogerEbert.com / Metacritic / Rotten Tomatoes"
 sourceId: "manual-series-better-call-saul-60059"
 sourceUrl: "https://www.themoviedb.org/tv/60059"
 aiGenerated: false
@@ -47,5 +47,13 @@ backdrop: "https://image.tmdb.org/t/p/w1280/rfxryDIv8huejujg4JueDJx8zCz.jpg"
 
 ## الإيقاع والحكم النهائي
 لا يندفع Better Call Saul نحو الجريمة في كل حلقة؛ إنه يراقب كيف تتغير الحدود التي يضعها الإنسان لنفسه. هذا البطء هو مصدر قوته ومصدر تعثره في آن واحد. بعض الحلقات كان يمكن اختصارها دون خسارة كبيرة، كما أن معرفة المشاهد المسبقة بعالم Breaking Bad قد تجعل بعض النتائج متوقعة. ومع ذلك، ينجح العمل في بناء شخصية مستقلة ومؤلمة. تقييم 8.9/10 يعكس قوة الكتابة والعلاقات، مع خصم بسبب التمهيد المطول وتفاوت حضور بعض المسارات.
+
+## مصادر نقدية وسياقية
+- [AMC — Better Call Saul](https://www.amc.com/shows/better-call-saul): معلومات المسلسل والمواسم والطاقم.
+- [The Guardian — Better Call Saul Final Season](https://www.theguardian.com/tv-and-radio/2022/apr/24/better-call-saul-final-season-6-review-russian-doll-the-thief-the-wife-and-the-canoe-chivalry-sarah-solemani-steve-coogan): قراءة نقدية للبناء المتدرج والعلاقة بين جيمي وكيم.
+- [The Guardian — More Profound Than Breaking Bad](https://www.theguardian.com/tv-and-radio/2022/aug/16/more-profound-than-breaking-bad-goodbye-better-call-saul-the-show-like-nothing-else-on-tv): تحليل ختام المسلسل والصورة وتطور الشخصية.
+- [RogerEbert.com — Better Call Saul](https://www.rogerebert.com/demanders/better-call-saul-returns-as-confident-as-season-one): قراءة للشخصيات والكتابة والعلاقة بين جيمي وكيم.
+- [Metacritic — Better Call Saul](https://www.metacritic.com/tv/better-call-saul/): تجميع المراجعات النقدية عبر المواسم.
+- [Rotten Tomatoes — Better Call Saul](https://www.rottentomatoes.com/tv/better_call_saul): بيانات استقبال النقاد وتقييمات المواسم.
 
 > مراجعة تحريرية يدوية مستقلة، وليست ادعاءً بتجربة مشاهدة جديدة أو بقياس آراء الجمهور.
