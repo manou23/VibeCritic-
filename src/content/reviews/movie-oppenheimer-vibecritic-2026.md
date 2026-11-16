@@ -42,7 +42,7 @@ crew:
   - "Christopher Nolan"
   - "Hoyte van Hoytema"
   - "Ludwig Göransson"
-sourceName: "TMDB"
+sourceName: "Universal Pictures / RogerEbert.com / The Guardian / Screen Daily / Metacritic"
 sourceId: "872585"
 sourceUrl: "https://www.themoviedb.org/movie/872585"
 aiGenerated: false
@@ -62,3 +62,14 @@ backdrop: "https://image.tmdb.org/t/p/w1280/neeNHeXjMF5fXoCJRsOmkNGC7q.jpg"
 
 ## الحكم النهائي
 أوبنهايمر فيلم كبير الطموح والتنفيذ، وقوته في جمع السيرة بالسياسة والمسؤولية الأخلاقية. لا يخلو من ازدحام سردي أو اختلال في توزيع المساحة بين الشخصيات، لكنه ينجح في جعل أثر القرار العلمي موضوعاً درامياً مستمراً. الدرجة 8.5/10 وفق الأوزان التحريرية: القصة 30%، الصورة 25%، الصوت 20%، الإيقاع 25%.
+
+
+## مصادر التحقق والمراجعات النقدية
+- [RogerEbert.com — Oppenheimer](https://www.rogerebert.com/reviews/oppenheimer-film-review-2023): تحليل المونتاج والوجوه والعلاقات بين القرارات الفردية ونتائجها.
+- [The Guardian — Oppenheimer Review](https://www.theguardian.com/film/2023/jul/19/oppenheimer-review-nolans-atom-bomb-epic-is-flawed-but-extraordinary): قراءة نقدية للسرد التاريخي وحدود منظور الفيلم تجاه ضحايا القنبلة.
+- [The Guardian — Oppenheimer: A Towering Achievement](https://www.theguardian.com/film/2023/jul/22/oppenheimer-review-christopher-nolan-volatile-biopic-is-a-towering-achievement-cillian-murphy): تحليل الأداء والتصوير والصوت وتعدد الخطوط الزمنية.
+- [Screen Daily — Oppenheimer Review](https://www.screendaily.com/reviews/oppenheimer-review/5184115.article): تقييم البناء الدرامي والحرفة والأداء المركزي.
+- [Metacritic — Oppenheimer Critic Reviews](https://www.metacritic.com/movie/oppenheimer/critic-reviews/): تجميع المراجعات النقدية، منفصل عن درجة VibeCritic.
+- [Rotten Tomatoes — Oppenheimer](https://www.rottentomatoes.com/m/oppenheimer_2023): بيانات استقبال النقاد والجمهور وموعد الإصدار.
+
+> مراجعة تحريرية يدوية مستقلة، تستند إلى تحليل الفيلم ومراجعات منشورة، ولا تنسخ متوسطات مواقع التجميع.
