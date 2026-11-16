@@ -19,6 +19,8 @@ job=transition(job,"part-saved",{part:{text:"section 2"}},now+3600007);assert.eq
 job=transition(job,"provider-deferred",{lastError:"administrative wait",nextAttemptAt:now+7200000,countAttempt:false},now+3600008);assert.equal(job.attempts,0,"non-provider deferrals do not increment attempts");
 const providers=[{id:"paid",enabled:true,free:false,priority:1},{id:"cool",enabled:true,free:true,priority:2,cooldownUntil:now+5000},{id:"free",enabled:true,free:true,priority:3,dailyRequestLimit:2,dailyTokenLimit:500}];
 assert.equal(chooseFreeProvider(providers,{},now).id,"free");
+assert.equal(chooseFreeProvider(providers,{"free":{cooldownUntil:now+60000}},now),null,"persisted usage cooldown excludes a failing free provider");
+assert.deepEqual(Object.keys(createState()).sort(),["jobs","providerCooldowns","providerUsage","updatedAt","version"].sort(),"provider cooldowns survive state checkpoints");
 assert.equal(chooseFreeProvider(providers,{"free":{requests:2}},now),null);
 const usage={};recordUsage(usage,"free",{requests:1,tokens:250,success:true});assert.deepEqual(usage.free,{requests:1,tokens:250,successes:1,failures:0});
 assert.equal(countWords("هذه مراجعة نقدية من VibeCritic"),5);
