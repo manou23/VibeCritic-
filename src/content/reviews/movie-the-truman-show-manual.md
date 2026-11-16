@@ -32,7 +32,7 @@ tags: ["The Truman Show", "Peter Weir", "Privacy", "Media Satire"]
 genres: ["دراما", "كوميديا", "خيال اجتماعي"]
 cast: ["Jim Carrey", "Ed Harris", "Laura Linney", "Noah Emmerich", "Natascha McElhone"]
 crew: ["Peter Weir", "Andrew Niccol", "Peter Biziou", "Burkhard Dallwitz"]
-sourceName: "Paramount Pictures / AFI"
+sourceName: "Paramount Pictures / AFI / RogerEbert.com / The Guardian / Los Angeles Times / The Washington Post"
 sourceId: "manual-movie-the-truman-show"
 sourceUrl: "https://www.paramount.com/movies/the-truman-show"
 aiGenerated: false
@@ -55,9 +55,13 @@ aiGenerated: false
 ## الحكم النهائي
 The Truman Show فيلم متماسك في فكرته وتنفيذه، وتزداد قيمته كلما تغيرت وسائل الإعلام والمراقبة من حولنا. قوته في جمعه بين الحكاية السهلة الوصول والسؤال الأخلاقي الصعب، مع أداء رئيسي يوازن بين الضحك والهشاشة. بعض التفاصيل مبسطة، لكن ذلك لا يضعف جوهر العمل. درجة 9.0/10 تعكس قوة الكتابة والإيقاع والأثر الفكري، مع عدم منحه علامة كاملة لأن بعض الشخصيات والآليات تبقى أقل تفصيلاً.
 
-## مصادر التحقق
+## مصادر التحقق والمراجعات النقدية
 - [Paramount Pictures — The Truman Show](https://www.paramount.com/movies/the-truman-show): الملخص الرسمي وبيانات الإنتاج والطاقم.
 - [American Film Institute — The Truman Show](https://watch.afi.com/movie/the-truman-show): الملخص والمخرج والكاتب والممثلون والمواصفات.
-- [Festival de Cannes — The Truman Show](https://www.festival-cannes.com/en/f/the-truman-show/): بيانات العرض والطاقم الفني.
+- [RogerEbert.com — The Truman Show](https://www.rogerebert.com/reviews/the-truman-show-1998): تحليل الفكرة والخصوصية وثقافة تحويل الحياة إلى محتوى.
+- [The Guardian — The Truman Show Review](https://www.theguardian.com/film/1998/oct/09/1): مراجعة معاصرة للسخرية الإعلامية وأداء Jim Carrey.
+- [The Guardian — The Truman Show Revisited](https://www.theguardian.com/culture/2025/nov/05/truman-show-film-revisited-feels-freshly-disturbing-prescient): قراءة حديثة لأثر الفيلم على نقاش المراقبة والواقع التلفزيوني.
+- [Los Angeles Times — His Show of Shows](https://www.latimes.com/archives/la-xpm-1998-jun-05-ca-56698-story.html): نقد الأداء والخصوصية والسخرية من التلفزيون.
+- [The Washington Post — The Truman Show](https://www.washingtonpost.com/archive/lifestyle/1998/06/05/truman-a-surreally-big-show/31082db0-7b7e-4378-a036-b9f96f3ad41c/): تحليل المراقبة والتلصص والحرية الفردية.
 
 > مراجعة تحريرية يدوية مستقلة؛ لا تدّعي إجراء مشاهدة جديدة أو قياس آراء الجمهور.
