@@ -31,10 +31,6 @@ platforms:
   - "Xbox One"
   - "Xbox Series X|S"
   - "Nintendo Switch 2"
-genres:
-  - "Action"
-  - "Shooter"
-  - "RPG"
 pros:
   - "Night City تمتلك هوية بصرية ومعمارية قوية تجعل التجول فيها ممتعاً حتى خارج المهام."
   - "المهمات الجانبية وقصص الشخصيات تمنح العالم وزناً عاطفياً يتجاوز الحبكة الرئيسية."
