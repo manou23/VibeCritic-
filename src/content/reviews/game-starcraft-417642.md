@@ -1,14 +1,12 @@
 ---
-title: "STARCRAFT"
-headline: "STARCRAFT: عودة إلى قطاع كوبروولو عبر تصويب بعالم مفتوح"
+title: "مشروع StarCraft الجديد"
+headline: "مشروع StarCraft الجديد: تصويب بعالم مفتوح في قطاع كوبروولو، والإطلاق مخطط لعام 2030"
 hook: "أكدت Blizzard لعبة STARCRAFT جديدة بوصفها تصويباً أصلياً بعالم مفتوح، في تحول واضح عن الاستراتيجية الآنية التي اشتهرت بها السلسلة. لكن تفاصيل اللعب ما تزال محدودة."
 summary: "أعلنت Blizzard في BlizzCon 2026 عن لعبة STARCRAFT جديدة، تصفها رسمياً بأنها لعبة تصويب أصلية بعالم مفتوح، وتخطط لإطلاقها في ربيع 2030. لم تُعرض بعد تفاصيل كافية عن الأنظمة أو القصة أو الأداء تسمح بمراجعة فعلية."
 verdict: "لم يعد المشروع مجرد إدراج غير مؤكد في قاعدة بيانات؛ فقد أعلنت Blizzard عنه رسمياً وحددت نافذة إطلاق في ربيع 2030. لكن الإعلان لا يكشف بعد ما يكفي لتقييم أسلوب اللعب أو جودة التنفيذ، لذلك تبقى هذه معاينة استباقية بلا درجة رقمية."
 reviewVersion: 3
 type: game
 date: 2026-11-11
-poster: "https://images.igdb.com/igdb/image/upload/t_cover_big/cod6xu.jpg"
-backdrop: "https://images.igdb.com/igdb/image/upload/t_cover_big/cod6xu.jpg"
 reviewMode: preview
 pros:
   - "تأكيد رسمي من Blizzard يعيد السلسلة إلى مشروع جديد"
@@ -26,21 +24,9 @@ tags:
   - "عالم مفتوح"
 genres:
   - "Shooter"
-sourceName: "Blizzard Entertainment"
-sourceId: "417642"
+sourceName: "Blizzard Entertainment — BlizzCon 2026 Announcement"
 sourceUrl: "https://news.blizzard.com/en-us/article/24301453/everything-announced-at-blizzcon-2026-opening-ceremony"
 aiGenerated: true
-rawgSourceId: 32716
-rawgSourceUrl: "https://rawg.io/games/starcraft"
-rawgReleaseDate: "1998-03-31"
-rawgGenres:
-  - "Action"
-rawgPlatforms:
-  - "Nintendo 64"
-  - "PC"
-  - "macOS"
-rawgDevelopers:
-  - "Mass Media"
 gameStores: []
 ---
 
