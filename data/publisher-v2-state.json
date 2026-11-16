@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T16:07:26.278Z",
+  "updatedAt": "2026-11-16T16:08:04.834Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -65,11 +65,11 @@
           "votes": 26
         }
       },
-      "attempts": 1,
+      "attempts": 0,
       "createdAt": "2026-11-16T15:02:39.964Z",
-      "updatedAt": "2026-11-16T16:07:26.154Z",
-      "nextAttemptAt": 1794845546154,
-      "lastError": "cloudflare: cloudflare HTTP 401: {\"result\":null,\"success\":false,\"errors\":[{\"code\":10000,\"message\":\"Authentication error\"}],\"messages\":[]}",
+      "updatedAt": "2026-11-16T16:08:04.834Z",
+      "nextAttemptAt": 1794845283834,
+      "lastError": "Cloudflare credentials rejected (401); switched to the explicitly free Gemma 4 OpenRouter endpoint.",
       "resumeTo": "writing"
     }
   },
@@ -106,16 +106,6 @@
       "failures": 2,
       "until": 1794857748493,
       "lastError": "gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
-    },
-    "openrouter": {
-      "failures": 1,
-      "until": 1794852316120,
-      "lastError": "openrouter empty response"
-    },
-    "cloudflare": {
-      "failures": 1,
-      "until": 1794852446154,
-      "lastError": "cloudflare HTTP 401: {\"result\":null,\"success\":false,\"errors\":[{\"code\":10000,\"message\":\"Authentication error\"}],\"messages\":[]}"
     }
   }
 }
