@@ -41,11 +41,11 @@ export function transition(job,event,patch={},now=Date.now()){
  const next={...job,...patch,status:rule[1],updatedAt:iso(now)};
  if(event==="part-saved"){
   if(!patch.part||typeof patch.part.text!=="string"||!patch.part.text.trim()||job.stage>=3)throw Error("Invalid or excess article stage");
-  next.parts=[...(job.parts||[]),{stage:job.stage+1,text:patch.part.text.trim(),savedAt:iso(now)}];next.stage=job.stage+1;delete next.part;
+  next.parts=[...(job.parts||[]),{stage:job.stage+1,text:patch.part.text.trim(),savedAt:iso(now)}];next.stage=job.stage+1;next.attempts=0;delete next.part;
   if(next.stage===3)next.status="quality-check";
  }
  if(event==="provider-deferred"||event==="quality-failed"){
-  next.attempts=Number(job.attempts||0)+1;next.lastError=String(patch.lastError||"Temporary failure").slice(0,1200);
+  next.attempts=Number(job.attempts||0)+(patch.countAttempt===false?0:1);delete next.countAttempt;next.lastError=String(patch.lastError||"Temporary failure").slice(0,1200);
   next.nextAttemptAt=Math.max(now+60000,time(patch.nextAttemptAt));
  }
  if(event==="resumed"){next.status=patch.resumeTo||"writing";next.nextAttemptAt=null;next.lastError=null;delete next.resumeTo;}
