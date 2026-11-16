@@ -28,7 +28,7 @@ tags: ["Damien Chazelle", "Jazz", "Music", "Ambition"]
 genres: ["دراما", "موسيقى"]
 cast: ["Miles Teller", "J. K. Simmons", "Paul Reiser", "Melissa Benoist"]
 crew: ["Damien Chazelle", "Tom Cross", "Sharone Meir"]
-sourceName: "VibeCritic Editorial"
+sourceName: "Sony Pictures Classics / RogerEbert.com / The Guardian / Los Angeles Times / Screen Daily"
 sourceId: "manual-movie-whiplash-244786"
 sourceUrl: "https://www.themoviedb.org/movie/244786"
 aiGenerated: false
@@ -47,5 +47,13 @@ poster: "https://image.tmdb.org/t/p/w500/7fn624j5lj3xTme2SgiLCeuedmO.jpg"
 
 ## الحكم النهائي
 Whiplash فيلم شديد الفاعلية لأنه لا يساوي بين الانضباط والإساءة، ولا يقدم إجابة مريحة عن حدود الطموح. خاتمته قوية لأنها تضع الأداء الفني والاختلال الأخلاقي في اللحظة نفسها، وتترك المشاهد يقرر ما الذي انتصر فعلاً. درجة 9.1/10 تعكس إحكام الإيقاع والتمثيل والصوت، مع خصم بسبب ضيق السياق وبعض المبالغة الدرامية. لم نمنحه درجة أعلى لمجرد قوة النهاية؛ فالتقييم يشمل العمل كله لا ذروة واحدة.
+
+## مصادر التحقق والمراجعات النقدية
+- [RogerEbert.com — Whiplash](https://www.rogerebert.com/reviews/whiplash-2014): تحليل العلاقة بين الطموح والإساءة والإيقاع الموسيقي والأداءين الرئيسيين.
+- [The Guardian — Whiplash Review](https://www.theguardian.com/film/2015/jan/15/whiplash-review): قراءة نقدية لحدود أسلوب فليتشر والسؤال الأخلاقي حول التعليم.
+- [The Guardian — Whiplash: Drumming Up Tension](https://www.theguardian.com/film/2015/jan/18/whiplash-review-drummer-miles-teller-mark-kermode): تحليل التوتر والأداء والموسيقى.
+- [Los Angeles Times — Whiplash Review](https://www.latimes.com/entertainment/movies/la-et-mn-whiplash-review-20141010-column.html): ملاحظات عن الأداء والإخراج والعنف النفسي في التدريب.
+- [Screen Daily — Whiplash](https://www.screendaily.com/whiplash/5071632.article): قراءة نقدية مبكرة للصراع بين الطالب والمدرس والطموح الفني.
+- [Rotten Tomatoes — Whiplash](https://www.rottentomatoes.com/m/whiplash_2014): بيانات استقبال النقاد والجمهور وموعد الإصدار.
 
 > مراجعة تحريرية يدوية مستقلة، وليست ادعاءً بتجربة مشاهدة جديدة أو بقياس آراء الجمهور.
