@@ -29,7 +29,7 @@ tags: ["HBO", "David Simon", "Crime", "Institutional Drama"]
 genres: ["جريمة", "دراما"]
 cast: ["Dominic West", "Lance Reddick", "Sonja Sohn", "Idris Elba", "Michael K. Williams"]
 crew: ["David Simon", "Ed Burns"]
-sourceName: "VibeCritic Editorial"
+sourceName: "HBO / The Guardian / Journalism Studies / Cinephile"
 sourceId: "manual-series-the-wire-1438"
 sourceUrl: "https://www.themoviedb.org/tv/1438"
 aiGenerated: false
@@ -47,5 +47,12 @@ youtubeVideoId: "uDcQbk78CSw"
 
 ## الحكم النهائي
 The Wire عمل طموح لأنه يجعل النظام الاجتماعي موضوعاً درامياً دون أن يحول الشخصيات إلى محاضرات. لا يقدم كل موسم المستوى نفسه من التركيز، ولا يسهّل على المشاهد الدخول إلى عالمه، لكن عمق الكتابة واتساع الرؤية يجعلان أثره متراكماً. درجة 8.8/10 تعكس تميز البناء والشخصيات، مع خصم بسبب تفاوت الإيقاع وكلفة الاتساع على التركيز.
+
+## مصادر نقدية وسياقية
+- [HBO — The Wire](https://www.hbo.com/the-wire): الصفحة الرسمية للمسلسل والطاقم والمواسم.
+- [The Guardian — The Wire, 10 Years On](https://www.theguardian.com/tv-and-radio/2018/mar/06/the-wire-10-years-on-we-tore-the-cover-off-a-city-and-showed-the-american-dream-was-dead): خلفية عن رؤية David Simon والمؤسسات والمدينة.
+- [The Guardian — All the Pieces Matter](https://www.theguardian.com/books/2018/jun/30/all-the-pieces-matter-inside-the-wire-review): تفاصيل الكتابة والواقعية والهدف السياسي للمسلسل.
+- [Journalism Studies — The Wire: Dramatising the Crisis in Journalism](https://www.tandfonline.com/doi/full/10.1080/1461670X.2010.493741): دراسة أكاديمية عن تصوير الصحافة والمؤسسات.
+- [Cinephile — Institutions and The Wire](https://cinephile.ca/archives/volume-4-post-genre/dramatizing-individuation-institutions-assemblages-and-the-wire/): تحليل أكاديمي لبنية المؤسسات والسرد متعدد المواقع.
 
 > مراجعة تحريرية يدوية مستقلة، وليست ادعاءً بتجربة مشاهدة جديدة أو بقياس آراء الجمهور.
