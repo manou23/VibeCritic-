@@ -27,8 +27,8 @@ export function buildFreeProviders(){
  const out=[];
  if(env.GEMINI_API_KEY){const rawModel=String(env.GEMINI_MODEL||'');const configured=rawModel.startsWith('models/')?rawModel.slice(7):rawModel;const model=!configured||configured==='gemini-2.5-flash'?'gemini-3.8-flash':configured;out.push({id:'gemini',enabled:true,free:true,model,priority:1,dailyRequestLimit:12,dailyTokenLimit:18000});}
  if(env.CLOUDFLARE_API_TOKEN&&env.CLOUDFLARE_ACCOUNT_ID&&env.CLOUDFLARE_FREE_TIER_ONLY==='true')out.push({id:'cloudflare',enabled:true,free:true,model:env.CLOUDFLARE_MODEL||'@cf/meta/llama-3.3-70b-instruct-fp8-fast',priority:2,dailyRequestLimit:3,dailyTokenLimit:9000});
- if(env.GROQ_API_KEY)out.push({id:'groq',enabled:true,free:true,model:env.GROQ_MODEL||'openai/gpt-oss-120b',priority:3,dailyRequestLimit:8,dailyTokenLimit:20000});
- if(env.OPENROUTER_API_KEY)out.push({id:'openrouter',enabled:true,free:true,model:(String(env.OPENROUTER_MODEL||'').endsWith(':free')?String(env.OPENROUTER_MODEL):'nvidia/nemotron-3.5-super-vl:free'),priority:4,dailyRequestLimit:10,dailyTokenLimit:12000});
+ if(env.GROQ_API_KEY)out.push({id:'groq',enabled:true,free:true,model:env.GROQ_MODEL||'openai/gpt-oss-120b',priority:3,dailyRequestLimit:50,dailyTokenLimit:100000});
+ if(env.OPENROUTER_API_KEY)out.push({id:'openrouter',enabled:true,free:true,model:(String(env.OPENROUTER_MODEL||'').endsWith(':free')?String(env.OPENROUTER_MODEL):'nvidia/nemotron-3.5-super-vl:free'),priority:4,dailyRequestLimit:40,dailyTokenLimit:40000});
  return out;
 }
 async function discover(){
