@@ -1,15 +1,12 @@
 name: VibeCritic Publishing V2
 on:
+  # Manual recovery only. The schedule workflow is the single automatic publisher.
   workflow_dispatch:
-  # Content edits must pass score/schema/build checks and deploy through this pipeline.
-  push:
-    branches: [main, publisher-v2-rebuild]
-    paths: ['.github/workflows/publishing-v2.yml', 'src/content/reviews/**', 'docs/PUBLISHING-ENGINE-V2.md', 'scripts/publishing-v2/core.mjs', 'scripts/publishing-v2/store.mjs', 'scripts/publishing-v2/runner.mjs', 'scripts/publishing-v2/run-cycle.mjs', 'scripts/publishing-v2/adapters.mjs', 'scripts/test-publishing-v2.mjs', 'scripts/test-publishing-v2-runner.mjs', 'scripts/test-publishing-v2-adapters.mjs']
 permissions:
   contents: write
 concurrency:
   # Isolate main from the stale queued runs in the previous shared group.
-  group: vibecritic-publisher-v2-main-recovery
+  group: vibecritic-publisher-v2-schedule-main
   cancel-in-progress: false
 jobs:
   publish-cycle:
