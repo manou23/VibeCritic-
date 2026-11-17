@@ -77,7 +77,7 @@ try{
  assert.ok(recoveredEvidence.sources[1].extract.length>=180,'REST fallback must provide enough independent source detail to pass the evidence gate');
  assert.equal(recoveredEvidence.sources[1].url,'https://en.wikipedia.org/wiki/Test_Film');
  assert.equal(recoveredEvidence.youtubeVideoId,'Abcdef12345');
- mode='gemini';
+ mode='gemini';calls=0;
  assert.equal(await adapters.isAlreadyPublished({type:'game',id:'28',name:'Red Dead Redemption 2'}),true,'manual Arabic-title reviews must match their originalTitle and RAWG source ID');
  assert.equal(await adapters.isAlreadyPublished({type:'game',id:'999999',name:'Unpublished test game'}),false,'unpublished titles must remain eligible');
  const generated=await adapters.generatePart({job:{item:{type:'movie',id:'77'},evidence:{title:'فيلم تجريبي',type:'movie',releaseDate:'2026',overview:'وصف موثق',genres:[],platforms:[],cast:[],crew:[],metadata:{},sources:[{name:'TMDB',url:'https://www.themoviedb.org/movie/77',extract:'معلومات'},{name:'Wikipedia',url:'https://en.wikipedia.org/wiki/Test',extract:'معلومات مستقلة'}]},parts:[]},provider:providers[0],stage:1});
