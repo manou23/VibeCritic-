@@ -42,6 +42,14 @@ const breadcrumbItems = [{ name: 'الرئيسية', item: new URL('/', siteUrl)
 if (!isHomePage) {
   if (currentPath.startsWith('/magazine/') && currentPath !== '/magazine/') {
     breadcrumbItems.push({ name: 'المجلة', item: new URL('/magazine/', siteUrl).href });
+  } else if (currentPath.startsWith('/reviews/')) {
+    const reviewCategory = ({ 'لعبة': ['game', 'الألعاب'], 'فيلم': ['movie', 'الأفلام'], 'مسلسل': ['series', 'المسلسلات'] })[articleSection];
+    if (reviewCategory) {
+      breadcrumbItems.push({
+        name: reviewCategory[1],
+        item: new URL(`/category/${reviewCategory[0]}/`, siteUrl).href,
+      });
+    }
   }
   breadcrumbItems.push({ name: title, item: canonical });
 }
