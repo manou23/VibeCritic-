@@ -4,9 +4,19 @@ import { url } from '../consts';
 ---
 <Base title="الصفحة غير موجودة" description="تعذر العثور على الصفحة التي تبحث عنها في VibeCritic." noindex={true}>
   <section class="not-found" aria-labelledby="not-found-title">
-    <p class="not-found-code">ERROR / 404</p>
+    <div class="not-found-brandline">
+      <a class="not-found-brand" href={url('')} aria-label="العودة إلى VibeCritic">
+        <svg viewBox="0 0 112 58" role="img" aria-label="VibeCritic"><text x="56" y="34" text-anchor="middle" textLength="99" lengthAdjust="spacingAndGlyphs"><tspan fill="currentColor">Vibe</tspan><tspan fill="var(--vc-accent)">Critic</tspan></text><ellipse cx="56" cy="29" rx="49" ry="22" fill="none" stroke="var(--vc-accent)" stroke-opacity=".55"/><circle cx="105" cy="29" r="2.1" fill="var(--vc-accent)"/></svg>
+        <span>REAL TAKES. HONEST REVIEWS.</span>
+      </a>
+      <div class="not-found-face" role="img" aria-label="وجه حزين لأن الصفحة غير موجودة">
+        <svg viewBox="0 0 180 180" aria-hidden="true"><circle cx="90" cy="90" r="75" fill="var(--vc-surface-muted)" stroke="var(--vc-accent)" stroke-width="5"/><path d="M53 70q12-12 24 0M103 70q12-12 24 0" fill="none" stroke="var(--vc-text)" stroke-width="7" stroke-linecap="round"/><ellipse cx="65" cy="91" rx="5" ry="8" fill="var(--vc-text)"/><ellipse cx="115" cy="91" rx="5" ry="8" fill="var(--vc-text)"/><path d="M58 132q32-37 64 0" fill="none" stroke="var(--vc-accent)" stroke-width="7" stroke-linecap="round"/><path d="M133 100q9 13 0 24q-9-11 0-24" fill="#69bce7" stroke="#69bce7" stroke-width="2"/></svg>
+      </div>
+    </div>
+    <div class="not-found-code">ERROR</div>
+    <div class="not-found-number" aria-label="خطأ 404">404</div>
     <h1 id="not-found-title">يبدو أننا خرجنا عن المسار.</h1>
-    <p class="not-found-copy">الصفحة التي تبحث عنها غير متاحة؛ ربما تغير رابطها أو لم تعد موجودة. يمكنك العودة إلى الصفحة الرئيسية أو استكشاف مكتبة VibeCritic.</p>
+    <p class="not-found-copy">الصفحة التي تبحث عنها غير متاحة؛ ربما تغير رابطها أو لم تعد موجودة. حتى VibeCritic حزين لأنه لم يجدها!</p>
     <div class="not-found-actions">
       <a class="primary-action" href={url('')}>العودة إلى الرئيسية</a>
       <a class="secondary-action" href={url('catalog/')}>استكشاف الكتالوج</a>
@@ -15,15 +25,5 @@ import { url } from '../consts';
   </section>
 </Base>
 <style>
-.not-found{width:min(760px,calc(100% - 40px));min-height:62vh;margin:0 auto;padding:clamp(76px,12vw,150px) 0;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;color:var(--vc-text)}
-.not-found-code{margin:0 0 18px;color:var(--vc-accent);font:850 12px/1.5 ui-monospace,monospace;letter-spacing:.18em}
-.not-found h1{max-width:680px;margin:0;font-size:clamp(38px,8vw,72px);line-height:1.16;letter-spacing:-.045em}
-.not-found-copy{max-width:610px;margin:20px 0 0;color:var(--vc-muted);font-size:15px;line-height:2.1}
-.not-found-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.not-found-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:12px;font-size:13px;font-weight:800;text-decoration:none}
-.primary-action{background:var(--vc-accent);color:#fff}
-.secondary-action{border:1px solid var(--vc-border);background:var(--vc-surface);color:var(--vc-text)}
-.not-found-hint{margin:30px 0 0;color:var(--vc-muted);font-size:12px;line-height:2}
-.not-found-hint a{color:var(--vc-accent-deep);font-weight:800;text-decoration:underline;text-underline-offset:4px}
-@media(max-width:520px){.not-found{min-height:58vh}.not-found-actions{width:100%;flex-direction:column}.not-found-actions a{width:100%}}
+.not-found{width:min(850px,calc(100% - 40px));min-height:68vh;margin:0 auto;padding:clamp(45px,8vw,100px) 0;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;color:var(--vc-text)}.not-found-brandline{width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:26px;padding:20px 24px;border:1px solid var(--vc-border);border-radius:22px;background:var(--vc-surface-muted)}.not-found-brand{display:flex;flex-direction:column;gap:4px;color:var(--vc-text);text-decoration:none}.not-found-brand svg{width:min(260px,45vw);height:auto;overflow:visible}.not-found-brand svg text{font:900 27px/1 sans-serif}.not-found-brand span{font-size:9px;font-weight:850;letter-spacing:.16em;color:var(--vc-muted)}.not-found-face{width:clamp(105px,20vw,170px);flex:0 0 auto;filter:drop-shadow(0 12px 20px #0002)}.not-found-face svg{display:block;width:100%;height:auto}.not-found-code{margin:0 0 2px;color:var(--vc-accent);font:900 13px/1.5 ui-monospace,monospace;letter-spacing:.2em}.not-found-number{font-size:clamp(100px,24vw,210px);font-weight:1000;line-height:.9;letter-spacing:-.09em;color:var(--vc-accent);text-shadow:0 12px 35px #0002}.not-found h1{max-width:680px;margin:20px 0 0;font-size:clamp(30px,6vw,54px);line-height:1.2;letter-spacing:-.045em}.not-found-copy{max-width:610px;margin:15px 0 0;color:var(--vc-muted);font-size:15px;line-height:2.1}.not-found-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.not-found-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:12px;font-size:13px;font-weight:800;text-decoration:none}.primary-action{background:var(--vc-accent);color:#fff}.secondary-action{border:1px solid var(--vc-border);background:var(--vc-surface);color:var(--vc-text)}.not-found-hint{margin:30px 0 0;color:var(--vc-muted);font-size:12px;line-height:2}.not-found-hint a{color:var(--vc-accent-deep);font-weight:800;text-decoration:underline;text-underline-offset:4px}@media(max-width:520px){.not-found{min-height:60vh;padding:35px 0}.not-found-brandline{padding:15px;gap:10px;border-radius:16px}.not-found-brand span{font-size:7px;letter-spacing:.1em}.not-found-face{width:105px}.not-found-actions{width:100%;flex-direction:column}.not-found-actions a{width:100%}}@media(prefers-reduced-motion:reduce){.not-found *{scroll-behavior:auto}}
 </style>
