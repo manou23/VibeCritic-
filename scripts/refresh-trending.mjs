@@ -70,7 +70,7 @@ async function main() {
   const data = buildTrendingData({ tmdbItems: Array.isArray(tmdb.results) ? tmdb.results : [], gameItems: Array.isArray(rawg.results) ? rawg.results : [] });
   const output = resolve('src/data/trending.json');
   const { writeFile } = await import('node:fs/promises');
-  await writeFile(output, JSON.stringify(data, null, 2) + '\\n', 'utf8');
+  await writeFile(output, JSON.stringify(data, null, 2) + '\n', 'utf8');
   console.log('Updated weekly trend snapshot:', data.length, 'items');
   for (const type of ['movie', 'series', 'game']) console.log(type + ':', data.filter(x => x.type === type).length);
 }
