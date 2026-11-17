@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T08:34:35.768Z",
+  "updatedAt": "2026-11-17T09:58:55.594Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -643,8 +643,8 @@
         ],
         "popularity": 17082
       },
-      "status": "writing",
-      "stage": 2,
+      "status": "ready",
+      "stage": 3,
       "parts": [
         {
           "stage": 1,
@@ -655,6 +655,11 @@
           "stage": 2,
           "text": "{\"review\":\"## أسلوب اللعب والتصميم والإيقاع\\n\\nتستمر *Red Dead Redemption 2* في تقديم تجربة لعب غنية تتجاوز مجرد القتال والسفر عبر البراري. يتحكم اللاعب في آرثر مورغان، وهو رجل معقد يجمع بين الولاء لعصابة فان دير لينده ورغبة داخلية في البحث عن معنى شخصي في زمن يتلاشى فيه الغرب المتوحش. الشخصيات الثانوية، من جيسي إلى سيسيل، تُظهر تنوعًا ثقافيًا واجتماعيًا يعكس صراعات تلك الفترة، دون كشف تفاصيل النهاية.\\n\\nمن الناحية الفنية، يعتمد النظام على عالم مفتوح متقن الصنع يدمج بين تفاصيل بيئية دقيقة وآليات تفاعلية متعددة. الصيد، ركوب الخيل، والمهام الجانبية تُنفذ بنظام شرف يُقَيِّم تصرفات اللاعب ويؤثر على مسار القصة. الرسوميات تقدم مناظر طبيعية خلابة، من جبال مكسوة بالثلوج إلى سهول شاسعة، مع إضاءة ديناميكية تُحاكي أوقات اليوم والطقس. الموسيقى التصويرية، التي أبدعها وودي جاكسون، تُعزِّز الأجواء وتُضيف عمقًا عاطفيًا لكل مشهد.\\n\\nإيقاع اللعبة يُعَدُّ أحد أبرز عناصر التصميم. بينما يتيح التعمق في الأنشطة الجانبية فرصًا لاستكشاف العالم وتطوير الشخصية، قد يشعر بعض اللاعبين بالبطء نتيجة للمهام التي تتطلب وقتًا طويلاً لإكمالها. كذلك، نظام التحكم الواقعي، رغم أنه يضيف طابعًا واقعيًا، قد يحد من حرية الحركة ويُسبب إزعاجًا في بعض المواقف القتالية السريعة.\",\"scores\":{\"story\":9.5,\"visuals\":9.8,\"sound\":9.3,\"pacing\":7.5},\"pros\":[\"عالم مفتوح غني بالتفاصيل يتيح استكشافًا عميقًا\",\"نظام شرف يربط بين الخيارات السردية واللعب\",\"موسيقى تصويرية تعزز الجو وتدعم الانغماس\"],\"cons\":[\"إيقاع اللعبة قد يصبح بطيئًا بسبب كثرة الأنشطة الجانبية\",\"نظام التحكم الواقعي قد يحد من حرية اللاعب في المواقف السريعة\"],\"verdict\":\"تُظهر *Red Dead Redemption 2* توازنًا مميزًا بين السرد العميق والبيئة الفنية المتقنة، مع نظام شرف يضيف وزنًا لخيارات اللاعب. رغم أن الإيقاع البطيء لبعض المهام ونظام التحكم الواقعي قد يحدان من تجربة بعض اللاعبين، فإن جودة الرسوميات والموسيقى تجعلها تجربة لا تُفوَّت لعشاق الألعاب ذات العالم المفتوح والسرد القوي.\"}",
           "savedAt": "2026-11-17T08:34:33.359Z"
+        },
+        {
+          "stage": 3,
+          "text": "{\"review\":\"## التقييم النقدي وحدود التجربة\\n\\n**المرحلة 1 – الفكرة والشخصيات**\\\\\\nتدور اللعبة حول صراع بين التقاليد المتجذرة في الغرب المتوحش ورغبة الفرد في إيجاد مسارٍ شخصي. آرثر مورغان، عضوٌ في عصابة فان دير لينده، يُقدَّم كقائدٍ مترددٍ بين الولاء للجماعة ومبادئه الأخلاقية. الشخصيات الثانوية مثل جيسي، سيسيل، وجون مارستون تُضيف طبقاتٍ اجتماعيةً وثقافيةً تُظهر تنوعًا في الدوافع دون كشف تفاصيل النهاية.\\n\\n**المرحلة 2 – الأنظمة والإخراج الفني والإيقاع**\\\\\\nيعتمد العنوان على عالم مفتوحٍ غنيٍ بالتفاصيل البيئية، حيث يمكن للاعب الصيد، ركوب الخيل، وإجراء مواجهاتٍ ناريةٍ مع نظام شرفٍ ينعكس على مسار القصة. الرسوميات تُظهر مناظر طبيعية متقنةً من جبال مكسوة بالثلوج إلى سهولٍ شاسعة، مع إضاءة ديناميكية تحاكي تغيرات الوقت والطقس. الموسيقى التصويرية التي أبدعها وودي جاكسون تدعم الأجواء وتضيف عمقًا عاطفيًا. ومع ذلك، قد يشعر بعض اللاعبين بأن الإيقاع يصبح بطيئًا بسبب كثرة الأنشطة الجانبية التي تتطلب وقتًا طويلاً لإكمالها، بينما يحد نظام التحكم الواقعي من حرية الحركة في المواقف القتالية السريعة.\\n\\n**المرحلة 3 – موازنة نقدية جديدة**\\\\\\n*نقاط القوة*\\\\\\n- سرد قصصي عميق يجمع بين الدراما الشخصية والملامح التاريخية.\\\\\\n- تفاصيل بصرية استثنائية تجعل العالم يبدو حياً ومتنوعاً.\\\\\\n- موسيقى تصويرية غنية تدعم الأجواء وتُعزز الانغماس.\\\\\\n*التحفظات*\\\\\\n- إيقاع اللعبة قد يصبح بطيئًا بسبب كثرة الأنشطة الجانبية.\\\\\\n- نظام التحكم الواقعي قد يحد من حرية اللاعب في المواقف السريعة.\\n\\n**الحكم النهائي**\\\\\\n*Red Dead Redemption 2* تُعدّ تجربة فريدة تجمع بين قصة غنية وعالم مفتوح مبهر، مع بعض العوائق في الإيقاع والتحكم التي قد لا تناسب جميع اللاعبين، لكنها تظل واحدة من أبرز إنجازات الجيل الثامن وتستحق التجربة.\",\"scores\":{\"story\":9.5,\"visuals\":9.8,\"sound\":9.3,\"pacing\":7.5},\"pros\":[\"سرد قصصي عميق يجمع بين الدراما الشخصية والملامح التاريخية\",\"تفاصيل بصرية استثنائية تجعل العالم يبدو حياً ومتنوعاً\",\"موسيقى تصويرية غنية تدعم الأجواء وتُعزز الانغماس\"],\"cons\":[\"إيقاع اللعبة قد يصبح بطيئًا بسبب كثرة الأنشطة الجانبية\",\"نظام التحكم الواقعي قد يحد من حرية اللاعب في المواقف السريعة\"],\"verdict\":\"Red Dead Redemption 2 تقدم مزيجًا مميزًا من السرد العميق والعالم المفتوح المتقن، مع رسومات وموسيقى من أعلى المستويات. رغم أن الإيقاع البطيء لبعض المهام ونظام التحكم الواقعي قد يحدان من تجربة بعض اللاعبين، فإن الجودة العامة تجعلها تجربة لا تُفوَّت لعشاق الألعاب ذات القصة القوية والبيئة الغامرة.\"}",
+          "savedAt": "2026-11-17T09:58:53.002Z"
         }
       ],
       "evidence": {
@@ -701,10 +706,77 @@
       },
       "attempts": 0,
       "createdAt": "2026-11-17T08:22:20.499Z",
-      "updatedAt": "2026-11-17T08:34:33.359Z",
+      "updatedAt": "2026-11-17T09:58:53.002Z",
       "nextAttemptAt": null,
       "lastError": null,
-      "lastProvider": "groq"
+      "lastProvider": "groq",
+      "article": {
+        "title": "Red Dead Redemption 2",
+        "originalTitle": "",
+        "headline": "مراجعة نقدية: Red Dead Redemption 2 بين نقاط القوة وحدود التجربة",
+        "hook": "تدور أحداث *Red Dead Redemption 2* في عام 1899، عندما يوشك الغرب المتوحش على الانقضاء وتنتشر يد القانون لتقضي على آخر عصابات الخارجين عن القانون. يقدّم لنا آرثر مورغان، عضوًا في عصابة فان دير لينده، رحلةً دراميةً عبر قلب أمريكا الوعرة، حيث يواجه صراعات داخلية بين ولائه للعصابة ومبادئه الشخصية.",
+        "summary": "تدور أحداث *Red Dead Redemption 2* في عام 1899، عندما يوشك الغرب المتوحش على الانقضاء وتنتشر يد القانون لتقضي على آخر عصابات الخارجين عن القانون. يقدّم لنا آرثر مورغان، عضوًا في عصابة فان دير لينده، رحلةً دراميةً عبر قلب أمريكا الوعرة، حيث يواجه صراعات داخلية بين ولائه للعصابة ومبادئه الشخصية.",
+        "verdict": "Red Dead Redemption 2 تقدم مزيجًا مميزًا من السرد العميق والعالم المفتوح المتقن، مع رسومات وموسيقى من أعلى المستويات. رغم أن الإيقاع البطيء لبعض المهام ونظام التحكم الواقعي قد يحدان من تجربة بعض اللاعبين، فإن الجودة العامة تجعلها تجربة لا تُفوَّت لعشاق الألعاب ذات القصة القوية والبيئة الغامرة.",
+        "type": "game",
+        "sourceId": "game:28",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/red-dead-redemption-2",
+        "date": "2026-11-17",
+        "score": 9,
+        "storyScore": 9.5,
+        "visualsScore": 9.8,
+        "soundScore": 9.3,
+        "pacingScore": 7.5,
+        "pros": [
+          "سرد قصصي عميق يجمع بين الدراما الشخصية والملامح التاريخية",
+          "تفاصيل بصرية استثنائية تجعل العالم يبدو حياً ومتنوعاً",
+          "موسيقى تصويرية غنية تدعم الأجواء وتُعزز الانغماس"
+        ],
+        "cons": [
+          "إيقاع اللعبة قد يصبح بطيئًا بسبب كثرة الأنشطة الجانبية",
+          "نظام التحكم الواقعي قد يحد من حرية اللاعب في المواقف السريعة"
+        ],
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/red-dead-redemption-2",
+            "extract": "America, 1899. The end of the wild west era has begun as lawmen hunt down the last remaining outlaw gangs. Those who will not surrender or succumb are killed. After a robbery goes badly wrong in the western town of Blackwater, Arthur Morgan and the Van der Linde gang are forced to flee. With federal agents and the best bounty hunters in the nation massing on their heels, the gang must rob, steal and fight their way across the rugged heartland of America in order to survive. As deepening internal divisions threaten to tear the gang apart, Arthur must make a choice between his own ideals and loyalty to the gang who raised him. From the creators of Grand Theft Auto V and Red Dead Redemption, Red Dead Redemption 2 is an epic tale of life in America at the dawn of the modern age."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Red_Dead_Redemption_2",
+            "extract": "Red Dead Redemption 2 is a 2018 action-adventure game developed and published by Rockstar Games. The game is the third entry in the Red Dead series and a prequel to the 2010 game Red Dead Redemption. The story is set in a fictionalized representation of the United States in 1899 and follows the exploits of Arthur Morgan, an outlaw and member of the Van der Linde gang, who must face the challenges of a declining Wild West, while attempting to survive against government forces, rival gangs, and other adversaries. The game is presented through first- and third-person perspectives, and the player may freely roam its interactive open world. Gameplay elements include shootouts, robberies, hunting, horseback riding, interacting with non-player characters, and maintaining the character's honor rating through moral choices and deeds. A bounty system governs the response of law enforcement and bounty hunters to crimes committed by the player. The game's development lasted over eight years, beginning soon after Red Dead Redemption's release, and it became one of the most expensive video games ever made. Rockstar co-opted all of its studios into one large team to facilitate development. They drew influence from real locations as opposed to film or art, focused on creating an accurate reflection of the time with the game's characters and world. The game was Rockstar's first built specifically for eighth-generation consoles, having tested their technical capabilities while porting Grand Theft Auto V. The game's soundtrack features an original score composed by Woody Jackson and several vocal tracks produced by Daniel Lanois. Development included a crunch schedule of 100-hour weeks, leading to reports of mandatory and unpaid overtime. Red Dead Online, the game's online multiplayer mode, lets up to 32 players engage in a variety of cooperative and competitive game modes. Red Dead Redemption 2 was released for the PlayStation 4 and Xbox One in October 2018, and for Windows and Stadia in November 2019. It broke several records and had the second-biggest launch in the history of entertainment, generating US$725 million in sales from its opening weekend and exceeding the lifetime sales of Red Dead Redemption within eight days. The game received critical acclaim, with praise directed at its story, characters, open world, graphics, music, and level of detail, but some criticism at its control scheme and emphasis on realism over player freedom. It won more than 175 Game of the Year awards and received multiple other accolades from awards shows and gaming publications. It is considered one of eighth-generation console gaming's most significant releases and among the greatest video games ever made. It is the third-best-selling video game with over 89 million copies shipped."
+          }
+        ],
+        "poster": "https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg",
+        "backdrop": "https://media.rawg.io/media/screenshots/f3d/f3d6c0eaf1db2bdbb44ad84f15e43f4f.jpg",
+        "platforms": [
+          "PC",
+          "PlayStation 4",
+          "Xbox One"
+        ],
+        "genres": [
+          "Action"
+        ],
+        "cast": [],
+        "crew": [],
+        "tags": [
+          "Action"
+        ],
+        "youtubeVideoId": "",
+        "youtubeVideoTitle": "",
+        "externalVideoUrl": "",
+        "externalVideoTitle": "",
+        "body": "## القصة والعالم والشخصيات\n\nتدور أحداث *Red Dead Redemption 2* في عام 1899، عندما يوشك الغرب المتوحش على الانقضاء وتنتشر يد القانون لتقضي على آخر عصابات الخارجين عن القانون. يقدّم لنا آرثر مورغان، عضوًا في عصابة فان دير لينده، رحلةً دراميةً عبر قلب أمريكا الوعرة، حيث يواجه صراعات داخلية بين ولائه للعصابة ومبادئه الشخصية. تُظهر القصة عمقًا إنسانيًا من خلال حواراتٍ معقدة وعلاقاتٍ تتطور مع تقدم اللعبة، دون الكشف عن تفاصيل النهاية. ### الأنظمة والإخراج الفني تُبنى اللعبة على نظام عالم مفتوح غنيٍ بالتفاصيل، يتيح للاعبين الصيد، ركوب الخيل، والاشتباكات النارية، مع نظام شرفٍ ينعكس على مسار القصة. الرسوميات تُظهر مناظر طبيعية خلابة، من جبال مكسوة بالثلوج إلى سهولٍ شاسعة، مع إضاءة ديناميكية تعزز الواقعية. الموسيقى التصويرية، التي أُنتجت بواسطة وودي جاكسون، تتناغم مع المشاهد وتضيف طبقة عاطفية قوية. ومع ذلك، قد يشعر البعض بأن الإيقاع البطيء للمهام الجانبية يثقل تجربة اللعب، خاصةً لللاعبين الذين يفضلون الحركة السريعة. ### موازنة نقدية **نقاط القوة** - سرد قصصي عميق يدمج بين الدراما الشخصية والملامح التاريخية. - تفاصيل بصرية استثنائية تجعل العالم يبدو حياً ومتنوعاً. - موسيقى تصويرية غنية تدعم الأجواء وتُعزز الانغماس. **التحفظات** - إيقاع اللعبة قد يصبح بطيئًا بسبب كثرة الأنشطة الجانبية. - نظام التحكم يفرض واقعية قد تقيد حرية اللاعب وتسبب إزعاجًا. **الحكم النهائي** *Red Dead Redemption 2* هو تحفة فنية تجمع بين قصة مؤثرة وعالم مفتوح متقن الصنع، رغم أن إيقاعه البطيء وبعض القيود على التحكم قد يحدان من تجربة بعض اللاعبين. يظلّ اللعبة مثالًا على ما يمكن أن يحققه الإبداع في عصر الجيل الثامن، وتستحق التقدير كواحدة من أعظم الألعاب في تاريخ الصناعة.\n\n## أسلوب اللعب والتصميم والإيقاع\n\nتستمر *Red Dead Redemption 2* في تقديم تجربة لعب غنية تتجاوز مجرد القتال والسفر عبر البراري. يتحكم اللاعب في آرثر مورغان، وهو رجل معقد يجمع بين الولاء لعصابة فان دير لينده ورغبة داخلية في البحث عن معنى شخصي في زمن يتلاشى فيه الغرب المتوحش. الشخصيات الثانوية، من جيسي إلى سيسيل، تُظهر تنوعًا ثقافيًا واجتماعيًا يعكس صراعات تلك الفترة، دون كشف تفاصيل النهاية. من الناحية الفنية، يعتمد النظام على عالم مفتوح متقن الصنع يدمج بين تفاصيل بيئية دقيقة وآليات تفاعلية متعددة. الصيد، ركوب الخيل، والمهام الجانبية تُنفذ بنظام شرف يُقَيِّم تصرفات اللاعب ويؤثر على مسار القصة. الرسوميات تقدم مناظر طبيعية خلابة، من جبال مكسوة بالثلوج إلى سهول شاسعة، مع إضاءة ديناميكية تُحاكي أوقات اليوم والطقس. الموسيقى التصويرية، التي أبدعها وودي جاكسون، تُعزِّز الأجواء وتُضيف عمقًا عاطفيًا لكل مشهد. إيقاع اللعبة يُعَدُّ أحد أبرز عناصر التصميم. بينما يتيح التعمق في الأنشطة الجانبية فرصًا لاستكشاف العالم وتطوير الشخصية، قد يشعر بعض اللاعبين بالبطء نتيجة للمهام التي تتطلب وقتًا طويلاً لإكمالها. كذلك، نظام التحكم الواقعي، رغم أنه يضيف طابعًا واقعيًا، قد يحد من حرية الحركة ويُسبب إزعاجًا في بعض المواقف القتالية السريعة.\n\n## التقييم النقدي وحدود التجربة\n\n**المرحلة 1 – الفكرة والشخصيات**\\ تدور اللعبة حول صراع بين التقاليد المتجذرة في الغرب المتوحش ورغبة الفرد في إيجاد مسارٍ شخصي. آرثر مورغان، عضوٌ في عصابة فان دير لينده، يُقدَّم كقائدٍ مترددٍ بين الولاء للجماعة ومبادئه الأخلاقية. الشخصيات الثانوية مثل جيسي، سيسيل، وجون مارستون تُضيف طبقاتٍ اجتماعيةً وثقافيةً تُظهر تنوعًا في الدوافع دون كشف تفاصيل النهاية. **المرحلة 2 – الأنظمة والإخراج الفني والإيقاع**\\ يعتمد العنوان على عالم مفتوحٍ غنيٍ بالتفاصيل البيئية، حيث يمكن للاعب الصيد، ركوب الخيل، وإجراء مواجهاتٍ ناريةٍ مع نظام شرفٍ ينعكس على مسار القصة. الرسوميات تُظهر مناظر طبيعية متقنةً من جبال مكسوة بالثلوج إلى سهولٍ شاسعة، مع إضاءة ديناميكية تحاكي تغيرات الوقت والطقس. الموسيقى التصويرية التي أبدعها وودي جاكسون تدعم الأجواء وتضيف عمقًا عاطفيًا. ومع ذلك، قد يشعر بعض اللاعبين بأن الإيقاع يصبح بطيئًا بسبب كثرة الأنشطة الجانبية التي تتطلب وقتًا طويلاً لإكمالها، بينما يحد نظام التحكم الواقعي من حرية الحركة في المواقف القتالية السريعة. **المرحلة 3 – موازنة نقدية جديدة**\\ *نقاط القوة*\\ - سرد قصصي عميق يجمع بين الدراما الشخصية والملامح التاريخية.\\ - تفاصيل بصرية استثنائية تجعل العالم يبدو حياً ومتنوعاً.\\ - موسيقى تصويرية غنية تدعم الأجواء وتُعزز الانغماس.\\ *التحفظات*\\ - إيقاع اللعبة قد يصبح بطيئًا بسبب كثرة الأنشطة الجانبية.\\ - نظام التحكم الواقعي قد يحد من حرية اللاعب في المواقف السريعة. **الحكم النهائي**\\ *Red Dead Redemption 2* تُعدّ تجربة فريدة تجمع بين قصة غنية وعالم مفتوح مبهر، مع بعض العوائق في الإيقاع والتحكم التي قد لا تناسب جميع اللاعبين، لكنها تظل واحدة من أبرز إنجازات الجيل الثامن وتستحق التجربة.\n\n### المصادر والمراجع\n\n- [RAWG](https://rawg.io/games/red-dead-redemption-2)\n- [Wikipedia](https://en.wikipedia.org/wiki/Red_Dead_Redemption_2)"
+      },
+      "quality": {
+        "valid": true,
+        "errors": [],
+        "words": 734,
+        "characters": 4382
+      },
+      "fileWritten": true,
+      "articlePath": "src/content/reviews/game-red-dead-redemption-2-28.md"
     }
   },
   "providerUsage": {
@@ -736,9 +808,9 @@
     },
     "2026-11-17": {
       "groq": {
-        "requests": 13,
-        "tokens": 35303,
-        "successes": 7,
+        "requests": 14,
+        "tokens": 39079,
+        "successes": 8,
         "failures": 2
       },
       "openrouter": {
