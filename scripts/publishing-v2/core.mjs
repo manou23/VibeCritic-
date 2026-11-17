@@ -73,6 +73,53 @@ export function recordUsage(usage,id,{requests=1,tokens=0,success=false}={}){
  usage[id]={requests:u.requests+requests,tokens:u.tokens+tokens,successes:u.successes+(success?1:0),failures:u.failures+(success?0:1)};return usage;
 }
 export function countWords(s){return (String(s||"").match(/[\p{L}\p{N}]+(?:[’'-][\p{L}\p{N}]+)*/gu)||[]).length;}
+const SECTION_STOP_WORDS=new Set([
+ "هذا","هذه","ذلك","تلك","الذي","التي","على","في","من","إلى","عن","مع","بين","كما","لكن","كان","كانت","يكون","تكون","هو","هي","ما","لا","لم","لن","قد","كل","بعد","قبل","حتى","عند","ضمن","عبر","أو","وهو","وهي","لذلك","أيضا","أحياناً","بعض","يمكن","حيث","أكثر","أقل","يتم","هناك","أول","ثاني","ثالث","تجربة","العمل",
+ "the","and","for","with","that","this","from","into","its","are","was","were","has","have","had","not","but","can","may","all","more","less","one","two","three","when","where","which","who","what","why","how"
+]);
+function sectionTokens(value,ignored){
+ return (String(value||"").normalize("NFKC").toLowerCase().replace(/[\u064b-\u065f\u0670\u0640]/g,"").match(/[\p{L}\p{N}]{2,}/gu)||[]).filter(token=>!SECTION_STOP_WORDS.has(token)&&!ignored.has(token));
+}
+function fiveWordShingles(tokens){
+ const out=new Set();
+ for(let i=0;i<=tokens.length-5;i++)out.add(tokens.slice(i,i+5).join(" "));
+ return out;
+}
+function inspectEditorialSections(body,title){
+ const source=String(body||"");
+ const matches=[...source.matchAll(/^##\s+(.+)$/gm)];
+ const sections=matches.map((match,index)=>({
+  title:match[1].trim(),
+  text:source.slice(match.index+match[0].length,matches[index+1]?.index??source.length).trim()
+ })).filter(section=>! /^(المصادر|المراجع|sources|references)\b/i.test(section.title));
+ const errors=[];
+ let retryFromStage=null;
+ if(sections.length<3){
+  errors.push("Article must contain at least three distinct analysis sections (found "+sections.length+").");
+  retryFromStage=Math.min(3,sections.length+1);
+ }
+ const ignored=new Set(sectionTokens(title,new Set()));
+ const tokenSets=sections.map((section,index)=>{
+  const words=countWords(section.text);
+  if(words<150){
+   errors.push("Analysis section "+(index+1)+" is too short: "+words+"/150 words.");
+   retryFromStage=Math.min(retryFromStage??3,Math.min(3,index+1));
+  }
+  return fiveWordShingles(sectionTokens(section.text,ignored));
+ });
+ for(let i=0;i<tokenSets.length;i++)for(let j=i+1;j<tokenSets.length;j++){
+  const left=tokenSets[i],right=tokenSets[j];
+  if(!left.size||!right.size)continue;
+  let shared=0;
+  for(const phrase of left)if(right.has(phrase))shared++;
+  const overlap=shared/new Set([...left,...right]).size;
+  if(overlap>0.12){
+   errors.push("Analysis sections "+(i+1)+" and "+(j+1)+" are repetitive ("+Math.round(overlap*100)+"% five-word overlap).");
+   retryFromStage=Math.min(retryFromStage??3,Math.min(3,j+1));
+  }
+ }
+ return {errors,retryFromStage};
+}
 export function validateArticle(a,{minWords=600,minCharacters=3200}={}){
  const errors=[],body=String(a?.body||"").trim(),words=countWords(body);
  if(words<minWords)errors.push("Article below minimum word count: "+words+"/"+minWords);
@@ -92,7 +139,9 @@ export function validateArticle(a,{minWords=600,minCharacters=3200}={}){
  if(new Set(sources.map(s=>registrableDomain(new URL(s.url).hostname))).size<2)errors.push("At least two independent HTTPS source domains are required");
  if(!String(a?.poster||a?.backdrop||"").startsWith("https://"))errors.push("A verified poster or backdrop is required");
  if(a?.youtubeVideoId&&!/^[A-Za-z0-9_-]{11}$/.test(a.youtubeVideoId))errors.push("Invalid YouTube video id");
- return {valid:errors.length===0,errors,words,characters:body.length};
+ const sectionCheck=inspectEditorialSections(body,a?.title);
+ errors.push(...sectionCheck.errors);
+ return {valid:errors.length===0,errors,words,characters:body.length,...(sectionCheck.retryFromStage?{retryFromStage:sectionCheck.retryFromStage}:{})};
 }
 
 export function validateEvidence(evidence){

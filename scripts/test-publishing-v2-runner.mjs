@@ -5,7 +5,9 @@ import {runCycle} from './publishing-v2/runner.mjs';
 const now=Date.parse('2026-11-16T12:00:00Z'),state=createState();
 let aiCalls=0,fileWrites=0,deployChecks=0,saves=0,crashOnce=true,deploymentReady=false;
 const text=Array.from({length:240},()=> 'تحليل نقدي يشرح بناء الشخصيات والصورة والإيقاع وحدود التجربة').join(' ');
-const article={title:'عنوان',headline:'عنوان نقدي',summary:'ملخص',verdict:'حكم نقدي',type:'series',sourceId:'series:1',body:Array.from({length:700},()=>text).join(' '),storyScore:8,visualsScore:8,soundScore:8,pacingScore:8,score:8,pros:['قوة أولى','قوة ثانية','قوة ثالثة'],cons:['تحفظ أول','تحفظ ثان'],sources:[{name:'Official',url:'https://example.com/a'},{name:'Independent',url:'https://example.org/b'}],poster:'https://example.com/poster.jpg'};
+const sectionWords=prefix=>Array.from({length:220},(_,i)=>prefix+i).join(' ');
+const articleBody="## القصة\\n"+sectionWords("story")+"\\n\\n## الأنظمة\\n"+sectionWords("systems")+"\\n\\n## التقييم\\n"+sectionWords("verdict");
+const article={title:'عنوان',headline:'عنوان نقدي',summary:'ملخص',verdict:'حكم نقدي',type:'series',sourceId:'series:1',body:articleBody,storyScore:8,visualsScore:8,soundScore:8,pacingScore:8,score:8,pros:['قوة أولى','قوة ثانية','قوة ثالثة'],cons:['تحفظ أول','تحفظ ثان'],sources:[{name:'Official',url:'https://example.com/a'},{name:'Independent',url:'https://example.org/b'}],poster:'https://example.com/poster.jpg'};
 const adapters={
  discover:async()=>[{type:'series',id:'1',date:'2026-11-16'}],
  collectEvidence:async()=>({sources:[{name:'Official',url:'https://example.com/a'},{name:'Independent',url:'https://example.org/b'}]}),
@@ -101,5 +103,31 @@ const nextCycle=await runCycle({state:cycleState,adapters:cycleAdapters,provider
 assert.equal(nextCycle.action,'no-candidates');
 assert.equal(cycleState.cycle.startedAt,now+5*60*60*1000);
 assert.equal(cycleState.cycle.nextStartAt,now+10*60*60*1000);
+
+// A repetitive third section is rejected and only that section is regenerated after the bounded retry delay.
+const qualityState=createState();
+let qualityCalls=0,qualityAssembles=0,qualityWrites=0;
+const repeatedArticle={...article,body:"## القصة\\n"+sectionWords("alpha")+"\\n\\n## الأنظمة\\n"+sectionWords("beta")+"\\n\\n## التقييم\\n"+sectionWords("beta")};
+const qualityAdapters={
+ discover:async()=>[{type:'movie',id:'repeat',date:'2026-11-16'}],
+ collectEvidence:async()=>({sources:[{name:'Official',url:'https://example.com/a'},{name:'Independent',url:'https://example.org/b'}]}),
+ generatePart:async({stage})=>{qualityCalls++;return {text:'stage '+stage+' '+text,tokens:100};},
+ assembleArticle:async()=>{qualityAssembles++;return qualityAssembles===1?repeatedArticle:article;},
+ publishFile:async()=>{qualityWrites++;return {path:'src/content/reviews/movie-repeat.md'};},
+ verifyDeployment:async()=>true
+};
+const qualityNow=now+100000;
+await runCycle({state:qualityState,adapters:qualityAdapters,providers,now:qualityNow,persist:async()=>{}});
+await runCycle({state:qualityState,adapters:qualityAdapters,providers,now:qualityNow+1,persist:async()=>{}});
+const rejectedQuality=await runCycle({state:qualityState,adapters:qualityAdapters,providers,now:qualityNow+2,persist:async()=>{}});
+assert.equal(rejectedQuality.action,'quality-rejected');
+assert.equal(qualityState.jobs['movie:repeat'].stage,2,'the later overlapping section is the retry boundary');
+assert.equal(qualityState.jobs['movie:repeat'].parts.length,2,'keep the two earlier sections and regenerate only the third');
+assert.equal(qualityWrites,0,'repetitive content must never be written');
+const repairedQuality=await runCycle({state:qualityState,adapters:qualityAdapters,providers,now:qualityNow+3600003,persist:async()=>{}});
+assert.equal(repairedQuality.action,'file-ready');
+assert.equal(qualityCalls,4,'only the rejected third section is regenerated');
+assert.equal(qualityAssembles,2);
+assert.equal(qualityWrites,1);
 
 console.log('VibeCritic Publishing Engine v2 crash-recovery and five-hour cycle tests passed.');

@@ -105,7 +105,7 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
    if(editorial!==true&&editorial?.valid!==true)quality={...quality,valid:false,errors:[...quality.errors,...(editorial?.errors||['Editorial gate rejected draft.'])]};
   }
   if(!quality.valid){
-   job=transition(job,'quality-failed',{lastError:quality.errors.join(' | '),nextAttemptAt:now+3600000,resumeTo:'writing',stage:2,parts:job.parts.slice(0,2)},now);
+   const retryFromStage=Math.min(3,Math.max(1,Number(quality.retryFromStage)||3));job=transition(job,'quality-failed',{lastError:quality.errors.join(' | '),nextAttemptAt:now+3600000,resumeTo:'writing',stage:retryFromStage-1,parts:job.parts.slice(0,retryFromStage-1)},now);
    state.jobs[job.key]=job;await save();
    return {action:'quality-rejected',key:job.key,errors:quality.errors,providerCalls:0};
   }
@@ -143,7 +143,7 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
   job=transition(job,'part-saved',{part:{text:part.text},lastProvider:p.id},now);state.jobs[job.key]=job;await save();if(job.stage<3)return {action:'stage-saved',key:job.key,stage:job.stage,provider:p.id,providerCalls:requestCount};
   const article=await adapters.assembleArticle(job);let quality=validateArticle(article,articleLimits);
   if(quality.valid&&adapters.editorialGate){const editorial=await adapters.editorialGate(article,job);if(editorial!==true&&editorial?.valid!==true)quality={...quality,valid:false,errors:[...quality.errors,...(editorial?.errors||['Editorial gate rejected draft.'])]};}
-  if(!quality.valid){job=transition(job,'quality-failed',{lastError:quality.errors.join(' | '),nextAttemptAt:now+3600000,resumeTo:'writing',stage:2,parts:job.parts.slice(0,2)},now);state.jobs[job.key]=job;await save();return {action:'quality-rejected',key:job.key,errors:quality.errors,providerCalls:1};}
+  if(!quality.valid){const retryFromStage=Math.min(3,Math.max(1,Number(quality.retryFromStage)||3));job=transition(job,'quality-failed',{lastError:quality.errors.join(' | '),nextAttemptAt:now+3600000,resumeTo:'writing',stage:retryFromStage-1,parts:job.parts.slice(0,retryFromStage-1)},now);state.jobs[job.key]=job;await save();return {action:'quality-rejected',key:job.key,errors:quality.errors,providerCalls:1};}
   job=transition(job,'quality-passed',{article,quality,fileWritten:false},now);state.jobs[job.key]=job;await save();const written=await adapters.publishFile(article,job);job={...job,fileWritten:true,articlePath:written?.path||null,updatedAt:new Date(now).toISOString()};state.jobs[job.key]=job;await save();return {action:'file-ready',key:job.key,articlePath:job.articlePath,quality,providerCalls:requestCount};
  }
  return {action:'checkpointed',key:job.key,status:job.status,stage:job.stage,providerCalls:0};
