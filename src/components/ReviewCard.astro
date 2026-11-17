@@ -13,6 +13,6 @@ const href = url(`reviews/${review.id}/`);
 <div class="review-content">
 <h3 class="review-title">{data.title}</h3>
 <p class="review-headline">{data.headline}</p>
-<time class="review-date" datetime={data.date.toISOString()}>{fmtDate(data.date)}</time>
+<time class="review-date" datetime={(data.publishedAt ?? data.date).toISOString()}>{fmtDate(data.publishedAt ?? data.date)}</time>
 </div>
 </a>
