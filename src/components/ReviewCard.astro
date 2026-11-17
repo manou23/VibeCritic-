@@ -2,6 +2,7 @@
 import { TYPE_LABEL, url, fmtDate, optimizeImage } from '../consts';
 const { review } = Astro.props;
 const data = review.data;
+const displayDate = data.releaseDate ? new Date(`${data.releaseDate}T00:00:00Z`) : data.date;
 const href = url(`reviews/${review.id}/`);
 ---
 <a href={href} class="review-card group" aria-label={`${TYPE_LABEL[data.type]}: ${data.title}${data.reviewMode === 'preview' ? ' — قراءة استباقية قبل الإصدار' : data.reviewMode === 'limited' ? ' — قراءة محدودة الأدلة بلا تقييم نهائي' : ' — التقييم ' + data.score.toFixed(1) + ' من 10'}`}>
@@ -13,6 +14,6 @@ const href = url(`reviews/${review.id}/`);
 <div class="review-content">
 <h3 class="review-title">{data.title}</h3>
 <p class="review-headline">{data.headline}</p>
-<time class="review-date" datetime={(data.publishedAt ?? data.date).toISOString()}>{fmtDate(data.publishedAt ?? data.date)}</time>
+<time class="review-date" datetime={displayDate.toISOString()}>{fmtDate(displayDate)}</time>
 </div>
 </a>
