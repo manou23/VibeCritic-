@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 process.env.GEMINI_API_KEY='test-key';
+process.env.TMDB_API_KEY='test-tmdb-key';
 process.env.GEMINI_MODEL='gemini-2.5-flash';
 process.env.CLOUDFLARE_API_TOKEN='test-token';
 process.env.CLOUDFLARE_ACCOUNT_ID='test-account';
@@ -28,6 +29,13 @@ const payload={review,scores:{story:7.2,visuals:8.1,sound:7.4,pacing:6.8},pros:[
 const originalFetch=globalThis.fetch;let calls=0,mode='gemini',groqShortOnce=false;
 globalThis.fetch=async(url,options)=>{
  calls++;
+ const parsedUrl=new URL(String(url));
+ if(mode==='evidence-fallback'){
+  if(parsedUrl.hostname==='api.themoviedb.org')return new Response(JSON.stringify({title:'Test Film',original_title:'Test Film',overview:'A sufficiently detailed verified overview for this test film, describing its premise, characters, setting, and central conflict in a factual way.',release_date:'2020-01-01',poster_path:'/poster.jpg',backdrop_path:'/backdrop.jpg',genres:[{name:'Drama'}],credits:{cast:[{name:'Actor One'}],crew:[{name:'Director One',job:'Director'}]},videos:{results:[{site:'YouTube',type:'Trailer',official:true,key:'Abcdef12345',name:'Official Trailer'}]}}),{status:200,headers:{'content-type':'application/json'}});
+  if(parsedUrl.hostname==='en.wikipedia.org'&&parsedUrl.pathname==='/w/api.php')return new Response('rate limited',{status:429});
+  if(parsedUrl.hostname==='en.wikipedia.org'&&parsedUrl.pathname.startsWith('/api/rest_v1/page/summary/'))return new Response(JSON.stringify({title:'Test Film',extract:Array.from({length:30},()=> 'An independent encyclopedia summary describes the film and its production in factual detail.').join(' '),content_urls:{desktop:{page:'https://en.wikipedia.org/wiki/Test_Film'}}}),{status:200,headers:{'content-type':'application/json'}});
+  throw new Error('Unexpected evidence fallback URL: '+String(url));
+ }
  const body=JSON.parse(options.body);
  if(mode==='gemini'){
   assert.match(String(url),/generativelanguage\.googleapis\.com/);
@@ -63,6 +71,13 @@ globalThis.fetch=async(url,options)=>{
 };
 try{
  const adapters=createPublishingAdapters();
+ mode='evidence-fallback';
+ const recoveredEvidence=await adapters.collectEvidence({type:'movie',id:'77',name:'Test Film',date:'2020-01-01',overview:'A sufficiently detailed verified overview for this test film, describing its premise, characters, setting, and central conflict in a factual way.',sourceName:'TMDB',sourceUrl:'https://www.themoviedb.org/movie/77',poster:'https://image.tmdb.org/t/p/w780/poster.jpg',backdrop:'https://image.tmdb.org/t/p/w1280/backdrop.jpg'});
+ assert.equal(recoveredEvidence.sources[1].name,'Wikipedia');
+ assert.ok(recoveredEvidence.sources[1].extract.length>=180,'REST fallback must provide enough independent source detail to pass the evidence gate');
+ assert.equal(recoveredEvidence.sources[1].url,'https://en.wikipedia.org/wiki/Test_Film');
+ assert.equal(recoveredEvidence.youtubeVideoId,'Abcdef12345');
+ mode='gemini';
  assert.equal(await adapters.isAlreadyPublished({type:'game',id:'28',name:'Red Dead Redemption 2'}),true,'manual Arabic-title reviews must match their originalTitle and RAWG source ID');
  assert.equal(await adapters.isAlreadyPublished({type:'game',id:'999999',name:'Unpublished test game'}),false,'unpublished titles must remain eligible');
  const generated=await adapters.generatePart({job:{item:{type:'movie',id:'77'},evidence:{title:'فيلم تجريبي',type:'movie',releaseDate:'2026',overview:'وصف موثق',genres:[],platforms:[],cast:[],crew:[],metadata:{},sources:[{name:'TMDB',url:'https://www.themoviedb.org/movie/77',extract:'معلومات'},{name:'Wikipedia',url:'https://en.wikipedia.org/wiki/Test',extract:'معلومات مستقلة'}]},parts:[]},provider:providers[0],stage:1});
