@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T09:59:25.693Z",
+  "updatedAt": "2026-11-17T09:59:47.871Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -712,6 +712,84 @@
       "lastProvider": "groq",
       "fileWritten": false,
       "articlePath": null
+    },
+    "game:58175": {
+      "key": "game:58175",
+      "item": {
+        "type": "game",
+        "id": "58175",
+        "name": "God of War (2018)",
+        "overview": "",
+        "date": "2018-04-20",
+        "poster": "https://media.rawg.io/media/games/4be/4be6a6ad0364751a96229c56bf69be59.jpg",
+        "backdrop": "https://media.rawg.io/media/games/4be/4be6a6ad0364751a96229c56bf69be59.jpg",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/god-of-war-2",
+        "genres": [
+          "Action"
+        ],
+        "platforms": [
+          "PC",
+          "PlayStation 4"
+        ],
+        "popularity": 14709
+      },
+      "status": "writing",
+      "stage": 1,
+      "parts": [
+        {
+          "stage": 1,
+          "text": "{\"review\":\"## القصة والعالم والشخصيات\\nفي God of War (2018) نتابع رحلة كراتوس المتحول من محارب غاضب إلى أبٍ حريص على توجيه ابنه أتريوس في عالم نرويجي قاسٍ. القصة تستند إلى أساطير الشمال، حيث يسعى الثنائي إلى إسكاب رماد أم أتريوس من أعلى قمة في العوالم التسعة. يبرز التوتر بين ماضي كراتوس المظلم ورغبة هو في حماية ابنه، ما يخلق ديناميكية عاطفية غنية دون الحاجة إلى كشف تفاصيل النهاية.\\n\\n## الأنظمة والإخراج والعناصر الفنية\\nالتغيير الجذري في أسلوب اللعب يتمثل في سلاح الفأس السحري (Leviathan Axe) وكاميرا الكتف الحرّة التي تحافظ على انسيابية المشهد في لقطة واحدة. نظام القتال يجمع بين الضربات القوية والمهارات القتالية المتنوعة، مع مساهمة أتريوس التي تضيف طبقة تكتيكية. الإخراج البصري يدمج بين المناظر الطبيعية الخلابة للغابات والجبال النوردية وتفاصيل المخلوقات الأسطورية، مع إضاءة دقيقة تعزز الجو الموحش. الموسيقى التصويرية تدعم الأجواء بتوزيع أوركسترا غني، بينما يظل الإيقاع متوازنًا بين لحظات الاستكشاف الهادئة ومعاركٍ شديدة الوتيرة.\\n\\n## الموازنة النقدية\\nمن بين نقاط القوة البارزة: 1) سرد قصصي عميق يربط بين الأساطير والنمو الشخصي للبطلة كراتوس. 2) تصميم بصري مدهش يجسد عالم النوردية بألوانه وتفاصيله. 3) نظام قتال متقن يجمع بين السهولة والعمق. أما التحفظات فتكمن في: 1) بعض المهام الجانبية قد تشعر بالتمدد مقارنةً بالخط الرئيسي. 2) صعوبة بعض الألغاز قد تكون عائقًا لللاعبين غير المتمرسين. \",\"scores\":{\"story\":9.5,\"visuals\":9,\"sound\":9.2,\"pacing\":8.5},\"pros\":[\"سرد قصصي عميق يجمع بين الأساطير والنمو الشخصي\",\"تصميم بصري مدهش يعكس عالم النوردية\",\"نظام قتال متقن يجمع بين السهولة والعمق\"],\"cons\":[\"مهام جانبية قد تشعر بالتمدد\",\"صعوبة بعض الألغاز قد تعيق اللاعبين غير المتمرسين\"],\"verdict\":\"God of War (2018) ينجح في تجديد السلسلة بدمج قصة مؤثرة، عالم بصري ساحر، ونظام قتال متقن، رغم وجود بعض المهام الجانبية المملة وألغاز صعبة قد تعيق بعض اللاعبين. التجربة تستحق التجربة لكل محبي الألعاب ذات السرد القوي والعمق الفني.\"}",
+          "savedAt": "2026-11-17T09:59:43.256Z"
+        }
+      ],
+      "evidence": {
+        "title": "God of War (2018)",
+        "originalTitle": "",
+        "type": "game",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/god-of-war-2",
+        "sourceId": "game:58175",
+        "releaseDate": "2018-04-20",
+        "overview": "It is a new beginning for Kratos. Living as a man outside the shadow of the gods, he ventures into the brutal Norse wilds with his son Atreus, fighting to fulfill a deeply personal quest. His vengeance against the Gods of Olympus years behind him, Kratos now lives as a man in the realm of Norse Gods and monsters. It is in this harsh, unforgiving world that he must fight to survive… And teach his son to do the same. This startling reimagining of God of War deconstructs the core elements that defined the series—satisfying combat; breathtaking scale; and a powerful narrative—and fuses them anew. Kratos is a father again. As mentor and protector to Atreus, a son determined to earn his respect, he is forced to deal with and control the rage that has long defined him while out in a very dangerous world with his son. From the marble and columns of ornate Olympus to the gritty forests, mountains, and caves of Pre-Viking Norse lore, this is a distinctly new realm with its own pantheon of creatures, monsters, and gods. With an added emphasis on discovery and exploration, the world will draw players in to explore every inch of God of War’s breathtakingly threatening landscape—by far the largest in the franchise. With an over the shoulder free camera that brings the player closer to the action than ever before, fights in God of War mirror the pantheon of Norse creatures Kratos will face: grand, gritty, and grueling. A new main weapon and new abilities retain the defining spirit of God of War while presenting a vision of violent conflict that forges new ground in the genre",
+        "poster": "https://media.rawg.io/media/games/4be/4be6a6ad0364751a96229c56bf69be59.jpg",
+        "backdrop": "https://media.rawg.io/media/screenshots/e2e/e2e16b63691fab32fa20d99f3e6895a0.jpeg",
+        "genres": [
+          "Action"
+        ],
+        "platforms": [
+          "PC",
+          "PlayStation 4"
+        ],
+        "cast": [],
+        "crew": [],
+        "youtubeVideoId": "",
+        "youtubeVideoTitle": "",
+        "externalVideoUrl": "",
+        "externalVideoTitle": "",
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/god-of-war-2",
+            "extract": "It is a new beginning for Kratos. Living as a man outside the shadow of the gods, he ventures into the brutal Norse wilds with his son Atreus, fighting to fulfill a deeply personal quest. His vengeance against the Gods of Olympus years behind him, Kratos now lives as a man in the realm of Norse Gods and monsters. It is in this harsh, unforgiving world that he must fight to survive… And teach his son to do the same. This startling reimagining of God of War deconstructs the core elements that defined the series—satisfying combat; breathtaking scale; and a powerful narrative—and fuses them anew. Kratos is a father again. As mentor and protector to Atreus, a son determined to earn his respect, he is forced to deal with and control the rage that has long defined him while out in a very dangerous world with his son. From the marble and columns of ornate Olympus to the gritty forests, mountains, and caves of Pre-Viking Norse lore, this is a distinctly new realm with its own pantheon of creatures, monsters, and gods. With an added emphasis on discovery and exploration, the world will draw players in to explore every inch of God of War’s breathtakingly threatening landscape—by far the largest in the franchise. With an over the shoulder free camera that brings the player closer to the action than ever before, fights in God of War mirror the pantheon of Norse creatures Kratos will face: grand, gritty, and grueling. A new main weapon and new abilities retain the defining spirit of God of War while presenting a vision of violent conflict that forges new ground in the genre"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/God_of_War_(2018_video_game)",
+            "extract": "God of War is a 2018 action-adventure game developed by Santa Monica Studio and published by Sony Interactive Entertainment. It was released worldwide for the PlayStation 4 in April 2018, with a Windows port released in January 2022. It is the eighth game in the God of War series, tenth chronologically, and the sequel to 2010's God of War III. While previous games were based on Greek mythology, God of War transitioned to Norse mythology, and takes places in mythical ancient Scandinavia in the realm of Midgard. Players control Kratos, who embarks on a journey with his son, Atreus, to scatter the ashes of Atreus's mother from the highest peak of the nine realms. Kratos keeps his past a secret from Atreus, who is unaware he is a demigod. Along their journey, they come into conflict with monsters and gods of the Norse world. Described by creative director Cory Barlog as a reimagining of the franchise, a major gameplay change is that Kratos now uses a magical battle axe, the Leviathan Axe, instead of his signature double-chained blades. The game also uses an over-the-shoulder free camera, with the game in one shot, as opposed to the fixed cinematic camera of the previous entries. It also includes role-playing game elements, and Kratos's son Atreus provides assistance in combat. The majority of the original game's development team worked on God of War and designed it to be accessible and grounded. A short text-based game, A Call from the Wilds, was released in February 2018 through Facebook Messenger and follows Atreus on his first adventure. A smartphone app, Mímir's Vision, was released three days before the release, providing additional information about the Norse setting. God of War received acclaim for its story, world design, art direction, music, graphics, combat system, and characters, in particular the dynamic between Kratos and Atreus. Many reviewers felt it had successfully revitalized the series without losing its core identity. It was named Game of the Year by numerous media outlets and award shows, and has been cited as among the greatest video games. It sold more than five million copies within a month of release and had sold 23 million by November 2022, making it one of the best-selling PlayStation 4 games and the best-selling game in the series. A novelization was released in August 2018, followed by a prequel comic series published from November 2018 to June 2021, while a live-action television series is in development for Amazon Prime Video. A sequel, God of War Ragnarök, was released for the PlayStation 4 and PlayStation 5 in 2022, and for Windows in 2024."
+          }
+        ],
+        "metadata": {
+          "rating": 4.54,
+          "votes": 5230
+        }
+      },
+      "attempts": 0,
+      "createdAt": "2026-11-17T09:59:43.256Z",
+      "updatedAt": "2026-11-17T09:59:43.256Z",
+      "nextAttemptAt": null,
+      "lastError": null,
+      "lastProvider": "groq"
     }
   },
   "providerUsage": {
@@ -743,9 +821,9 @@
     },
     "2026-11-17": {
       "groq": {
-        "requests": 14,
-        "tokens": 39079,
-        "successes": 8,
+        "requests": 15,
+        "tokens": 41754,
+        "successes": 9,
         "failures": 2
       },
       "openrouter": {
@@ -773,6 +851,6 @@
     "startedAt": 1794903740499,
     "deadlineAt": 1794914540499,
     "nextStartAt": 1794921740499,
-    "articleKey": null
+    "articleKey": "game:58175"
   }
 }
