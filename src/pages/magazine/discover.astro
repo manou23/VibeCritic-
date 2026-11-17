@@ -1,0 +1,55 @@
+---
+import Base from '../../layouts/Base.astro';
+import ReviewCard from '../../components/ReviewCard.astro';
+import { getCollection } from 'astro:content';
+import { TYPE_LABEL } from '../../consts';
+const reviews=(await getCollection('reviews'))
+ .filter(item=>item.data.reviewMode==='review')
+ .sort((a,b)=>(b.data.publishedAt??b.data.date).valueOf()-(a.data.publishedAt??a.data.date).valueOf());
+const genres=[...new Set(reviews.flatMap(item=>item.data.genres??[]).map(value=>value.trim()).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'ar'));
+---
+<Base title="اكتشف عملك القادم" description="اكتشف مراجعات الألعاب والأفلام والمسلسلات في VibeCritic باستخدام فلاتر النوع والتصنيف والتقييم.">
+<section class="wrap magazine-page-hero"><p class="catalog-eyebrow">FIND YOUR NEXT FAVORITE</p><h1>اكتشف عملك القادم</h1><p>لا تعرف ماذا تشاهد أو تلعب بعد؟ صفِّ مكتبة مراجعاتنا حسب نوع العمل وتصنيفه وتقييمه، واعثر على اقتراح يناسب مزاجك.</p></section>
+<section class="wrap discover-section">
+ <div class="discover-controls">
+  <label>نوع العمل<select id="discover-type"><option value="all">الكل</option><option value="game">ألعاب</option><option value="movie">أفلام</option><option value="series">مسلسلات</option></select></label>
+  <label>التصنيف<select id="discover-genre"><option value="all">كل التصنيفات</option>{genres.map(genre=><option value={genre}>{genre}</option>)}</select></label>
+  <label>الحد الأدنى للتقييم<select id="discover-score"><option value="0">كل التقييمات</option><option value="6">6 من 10 فأعلى</option><option value="7">7 من 10 فأعلى</option><option value="8">8 من 10 فأعلى</option><option value="9">9 من 10 فأعلى</option></select></label>
+ </div>
+ <div class="discover-summary"><p id="discover-count" aria-live="polite">نعرض {reviews.length} مراجعة</p><button id="discover-reset" type="button">إعادة ضبط الفلاتر</button></div>
+ {reviews.length?<div class="discover-grid" id="discover-results">{reviews.map(review=><article class="discover-item" data-type={review.data.type} data-genres={(review.data.genres??[]).join('|')} data-score={review.data.score??0}><ReviewCard review={review}/></article>)}</div>:<div class="catalog-empty">لا توجد مراجعات مكتملة متاحة للاكتشاف حالياً. ستظهر هنا تلقائياً مع نشر مراجعات جديدة.</div>}
+ <p id="discover-empty" class="catalog-empty" hidden>لا توجد نتائج تطابق اختياراتك. جرّب تغيير الفلاتر.</p>
+</section>
+<script>
+ const typeFilter=document.querySelector('#discover-type');
+ const genreFilter=document.querySelector('#discover-genre');
+ const scoreFilter=document.querySelector('#discover-score');
+ const cards=[...document.querySelectorAll('.discover-item')];
+ const count=document.querySelector('#discover-count');
+ const empty=document.querySelector('#discover-empty');
+ const reset=document.querySelector('#discover-reset');
+ const applyFilters=()=>{
+  const type=typeFilter?.value??'all',genre=genreFilter?.value??'all',score=Number(scoreFilter?.value??0);
+  let visible=0;
+  for(const card of cards){
+   const matchesType=type==='all'||card.dataset.type===type;
+   const matchesGenre=genre==='all'||(card.dataset.genres||'').split('|').includes(genre);
+   const matchesScore=score===0||Number(card.dataset.score)>=score;
+   const show=matchesType&&matchesGenre&&matchesScore;
+   card.hidden=!show;if(show)visible++;
+  }
+  if(count)count.textContent='نعرض '+visible+' من أصل '+cards.length+' مراجعة';
+  if(empty)empty.hidden=visible!==0;
+ };
+ typeFilter?.addEventListener('change',applyFilters);
+ genreFilter?.addEventListener('change',applyFilters);
+ scoreFilter?.addEventListener('change',applyFilters);
+ reset?.addEventListener('click',()=>{if(typeFilter)typeFilter.value='all';if(genreFilter)genreFilter.value='all';if(scoreFilter)scoreFilter.value='0';applyFilters();});
+ applyFilters();
+</script>
+<style>
+.magazine-page-hero{padding:2.5rem 0 1rem}.magazine-page-hero h1{font-size:clamp(2rem,5vw,3.5rem);margin:.35rem 0}.magazine-page-hero>p:last-child{max-width:760px;color:var(--vc-muted);line-height:1.9}
+.discover-section{padding:1.5rem 0 4rem}.discover-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;padding:1.2rem;border:1px solid var(--vc-border);border-radius:16px;background:var(--vc-surface)}.discover-controls label{display:grid;gap:.55rem;font-weight:850;color:var(--vc-text)}.discover-controls select{width:100%;min-width:0;padding:.85rem;border:1px solid var(--vc-border);border-radius:10px;background:var(--vc-bg);color:var(--vc-text);font:inherit}.discover-summary{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:1.2rem 0;color:var(--vc-muted)}.discover-summary p{margin:0}.discover-summary button{border:1px solid var(--vc-accent);border-radius:999px;background:transparent;color:var(--vc-text);padding:.65rem 1rem;font:inherit;font-weight:800;cursor:pointer}.discover-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:1.2rem}.discover-item[hidden]{display:none!important}
+@media(max-width:700px){.discover-controls{grid-template-columns:1fr}.discover-summary{align-items:flex-start;flex-direction:column}}
+</style>
+</Base>
