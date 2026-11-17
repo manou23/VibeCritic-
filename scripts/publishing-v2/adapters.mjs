@@ -164,8 +164,8 @@ export function createPublishingAdapters(){return {
   const dims={storyScore:Number(last.scores.story),visualsScore:Number(last.scores.visuals),soundScore:Number(last.scores.sound),pacingScore:Number(last.scores.pacing)};
   const score=Math.round((dims.storyScore*.3+dims.visualsScore*.25+dims.soundScore*.2+dims.pacingScore*.25)*10)/10;
   const headings=e.type==='game'?['القصة والعالم والشخصيات','أسلوب اللعب والتصميم والإيقاع','التقييم النقدي وحدود التجربة']:['القصة والشخصيات والبناء','الإخراج والصورة والصوت والإيقاع','التقييم النقدي وحدود العمل'];
-  const sections=p.map((x,i)=>'## '+headings[i]+'\n\n'+clean(x.review).replace(/^##\s+[^\n]+\n?/,'').trim());
-  const firstSection=clean(p[0]?.review||'').replace(/^##\s+[^\n]+\n?/,'').trim();
+  const sections=p.map((x,i)=>'## '+headings[i]+'\n\n'+clean(String(x.review||'').replace(/^##\s+[^\n]+\n?/,'').trim()));
+  const firstSection=clean(String(p[0]?.review||'').replace(/^##\s+[^\n]+\n?/,'').trim());
   const summary=(firstSection.split(/(?<=[.!؟])\s+/).slice(0,2).join(' ').slice(0,420)||clean(e.overview).slice(0,420));
   return {title:e.title,originalTitle:e.originalTitle,headline:'مراجعة نقدية: '+e.title+' بين نقاط القوة وحدود التجربة',hook:summary,summary,verdict:clean(last.verdict),type:e.type,sourceId:e.sourceId,sourceName:e.sourceName,sourceUrl:e.sourceUrl,date:new Date().toISOString().slice(0,10),score,...dims,pros:arr(last.pros).map(clean),cons:arr(last.cons).map(clean),sources:e.sources,poster:e.poster,backdrop:e.backdrop,platforms:e.platforms,genres:e.genres,cast:e.cast,crew:e.crew,tags:e.genres,youtubeVideoId:e.youtubeVideoId,youtubeVideoTitle:e.youtubeVideoTitle,externalVideoUrl:e.externalVideoUrl,externalVideoTitle:e.externalVideoTitle,body:sections.join('\n\n')+'\n\n### المصادر والمراجع\n\n'+e.sources.map(x=>'- ['+x.name+']('+x.url+')').join('\n')};
  },
