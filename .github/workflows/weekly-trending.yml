@@ -1,0 +1,61 @@
+name: Weekly Trending Snapshot
+on:
+  workflow_dispatch:
+  schedule:
+    # Every Monday at 02:00 UTC (03:00 Algeria time).
+    - cron: '0 2 * * 1'
+permissions:
+  contents: write
+concurrency:
+  # Serialize with the existing publisher so both jobs never write main concurrently.
+  group: vibecritic-publisher-v2-main-recovery
+  cancel-in-progress: false
+jobs:
+  refresh-trending:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify source credentials
+        env:
+          TMDB_READ_ACCESS_TOKEN: ${{ secrets.TMDB_READ_ACCESS_TOKEN }}
+          RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
+        run: |
+          test -n "$TMDB_READ_ACCESS_TOKEN" || { echo "Missing TMDB_READ_ACCESS_TOKEN"; exit 1; }
+          test -n "$RAWG_API_KEY" || { echo "Missing RAWG_API_KEY"; exit 1; }
+      - name: Test weekly trend transformation
+        run: node scripts/test-refresh-trending.mjs
+      - name: Fetch fresh weekly trends
+        env:
+          TMDB_READ_ACCESS_TOKEN: ${{ secrets.TMDB_READ_ACCESS_TOKEN }}
+          RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
+        run: node scripts/refresh-trending.mjs
+      - name: Validate JSON and trend balance
+        run: |
+          node --input-type=module -e "import fs from 'node:fs'; const data=JSON.parse(fs.readFileSync('src/data/trending.json','utf8')); if(data.length<3) throw new Error('Insufficient trend items'); for(const type of ['movie','series','game']) if(!data.some(x=>x.type===type)) throw new Error('Missing category: '+type); if(data.some(x=>!x.poster?.startsWith('https://')||!x.sourceUrl?.startsWith('https://'))) throw new Error('Invalid trend URL'); console.log('Validated',data.length,'weekly trend items');"
+      - name: Commit updated weekly snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/trending.json
+          if git diff --cached --quiet; then
+            echo "The weekly snapshot is unchanged; no commit required."
+            exit 0
+          fi
+          git commit -m "chore(trending): refresh weekly popularity snapshot"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+            echo "Concurrent main update; retrying safely ($attempt/5)."
+            sleep 3
+          done
+          echo "Unable to update main after safe retries."
+          exit 1
