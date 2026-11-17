@@ -30,7 +30,7 @@ const second=works[1]?.id??first;
  </table></div>
  </>:<div class="catalog-empty">نحتاج إلى مراجعتين مكتملتين على الأقل حتى تتمكن من المقارنة. ستظهر الخيارات تلقائياً عند توفرهما.</div>}
 </section>
-{works.length>=2&&<script>
+<script>
  const firstSelect=document.querySelector('#compare-first');
  const secondSelect=document.querySelector('#compare-second');
  const message=document.querySelector('#compare-message');
@@ -55,7 +55,7 @@ const second=works[1]?.id??first;
   message.textContent=sa===sb?'العملان متساويان في التقييم التحريري الحالي.':sa>sb?'الأول يتقدم في التقييم التحريري الحالي.':'الثاني يتقدم في التقييم التحريري الحالي.';
  };
  firstSelect?.addEventListener('change',update);secondSelect?.addEventListener('change',update);update();
-</script>}
+</script>
 <style>
 .magazine-page-hero{padding:2.5rem 0 1rem}.magazine-page-hero h1{font-size:clamp(2rem,5vw,3.5rem);margin:.35rem 0}.magazine-page-hero>p:last-child{max-width:760px;color:var(--vc-muted);line-height:1.9}
 .compare-section{padding:1.5rem 0 4rem}.compare-selectors{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:end;gap:1rem}.compare-selectors label{display:grid;gap:.6rem;font-weight:850;color:var(--vc-text)}.compare-selectors select{width:100%;min-width:0;padding:.9rem 1rem;border:1px solid var(--vc-border);border-radius:12px;background:var(--vc-surface);color:var(--vc-text);font:inherit}.versus{padding:.7rem;color:var(--vc-accent);font-weight:950}.compare-message{padding:.8rem 1rem;margin:1.2rem 0;border-inline-start:3px solid var(--vc-accent);background:var(--vc-surface);border-radius:8px;color:var(--vc-muted);line-height:1.7}.compare-table-wrap{overflow-x:auto;border:1px solid var(--vc-border);border-radius:14px}.compare-table{width:100%;min-width:650px;border-collapse:collapse;text-align:start}.compare-table th,.compare-table td{padding:1rem;border-bottom:1px solid var(--vc-border);vertical-align:top;line-height:1.8}.compare-table thead th{background:var(--vc-surface);font-weight:900}.compare-table tbody th{width:17%;white-space:nowrap;color:var(--vc-accent)}.compare-table tbody td{width:41.5%;color:var(--vc-text)}.compare-table tr:last-child>*{border-bottom:0}#first-score,#second-score{font-size:1.2rem;font-weight:950;color:var(--vc-accent)}
