@@ -6,7 +6,7 @@ const now=Date.parse('2026-11-16T12:00:00Z'),state=createState();
 let aiCalls=0,fileWrites=0,deployChecks=0,saves=0,crashOnce=true,deploymentReady=false;
 const text=Array.from({length:240},()=> 'تحليل نقدي يشرح بناء الشخصيات والصورة والإيقاع وحدود التجربة').join(' ');
 const sectionWords=prefix=>Array.from({length:220},(_,i)=>prefix+i).join(' ');
-const articleBody="## القصة\\n"+sectionWords("story")+"\\n\\n## الأنظمة\\n"+sectionWords("systems")+"\\n\\n## التقييم\\n"+sectionWords("verdict");
+const articleBody=["## القصة",sectionWords("story"),"## الأنظمة",sectionWords("systems"),"## التقييم",sectionWords("verdict")].join("\n\n");
 const article={title:'عنوان',headline:'عنوان نقدي',summary:'ملخص',verdict:'حكم نقدي',type:'series',sourceId:'series:1',body:articleBody,storyScore:8,visualsScore:8,soundScore:8,pacingScore:8,score:8,pros:['قوة أولى','قوة ثانية','قوة ثالثة'],cons:['تحفظ أول','تحفظ ثان'],sources:[{name:'Official',url:'https://example.com/a'},{name:'Independent',url:'https://example.org/b'}],poster:'https://example.com/poster.jpg'};
 const adapters={
  discover:async()=>[{type:'series',id:'1',date:'2026-11-16'}],
@@ -107,7 +107,7 @@ assert.equal(cycleState.cycle.nextStartAt,now+10*60*60*1000);
 // A repetitive third section is rejected and only that section is regenerated after the bounded retry delay.
 const qualityState=createState();
 let qualityCalls=0,qualityAssembles=0,qualityWrites=0;
-const repeatedArticle={...article,body:"## القصة\\n"+sectionWords("alpha")+"\\n\\n## الأنظمة\\n"+sectionWords("beta")+"\\n\\n## التقييم\\n"+sectionWords("beta")};
+const repeatedArticle={...article,body:["## القصة",sectionWords("alpha"),"## الأنظمة",sectionWords("beta"),"## التقييم",sectionWords("beta")].join("\n\n")};
 const qualityAdapters={
  discover:async()=>[{type:'movie',id:'repeat',date:'2026-11-16'}],
  collectEvidence:async()=>({sources:[{name:'Official',url:'https://example.com/a'},{name:'Independent',url:'https://example.org/b'}]}),
