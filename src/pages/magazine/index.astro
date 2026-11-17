@@ -13,15 +13,6 @@ const latest=reviews.slice(0,6);
  <p class="catalog-eyebrow">VIBECRITIC / MAGAZINE</p>
  <h1>المجلة</h1>
  <p>أفكار واختيارات تساعدك على اكتشاف عملك القادم؛ من ترشيحات المشاهدة واللعب إلى القوائم والقراءات التحريرية.</p>
- <div class="magazine-links">
-  <a href={url('magazine/recommendations/')}>ترشيحاتنا <span>↗</span></a>
-  <a href={url('magazine/lists/')}>قوائم مختارة <span>↗</span></a>
-  <a href={url('magazine/top-rated/')}>الأعلى تقييماً <span>↗</span></a>
-  <a href={url('magazine/latest/')}>أحدث المراجعات <span>↗</span></a>
-  <a href={url('magazine/scoring/')}>منهجية التقييم <span>↗</span></a>
-  <a href={url('magazine/compare/')}>قارن بين عملين <span>↗</span></a>
-  <a href={url('magazine/discover/')}>اكتشف عملك القادم <span>↗</span></a>
- </div>
 </section>
 <section class="wrap catalog-section">
  <div class="catalog-heading"><div><p class="catalog-eyebrow">FRESH FROM VIBECRITIC</p><h2>أحدث المراجعات</h2><p>اكتشف أحدث ما أضيف إلى مكتبة الموقع.</p></div><a class="catalog-more" href={url('catalog/')}>كل المكتبة ←</a></div>
@@ -31,8 +22,5 @@ const latest=reviews.slice(0,6);
 .magazine-hero{position:relative;overflow:hidden;margin-top:2rem;padding:clamp(2rem,6vw,5rem);border:1px solid var(--vc-border);border-radius:26px;background:radial-gradient(circle at 12% 18%,color-mix(in srgb,var(--vc-accent) 20%,transparent),transparent 34%),var(--vc-surface)}
 .magazine-hero h1{font-size:clamp(2.4rem,7vw,5rem);margin:.2rem 0 1rem;color:var(--vc-text)}
 .magazine-hero>p:not(.catalog-eyebrow){max-width:720px;color:var(--vc-muted);font-size:1.1rem;line-height:1.9}
-.magazine-links{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
-.magazine-links a{padding:.85rem 1.2rem;border:1px solid var(--vc-accent);border-radius:999px;color:var(--vc-text);text-decoration:none;font-weight:800}
-.magazine-links a:first-child{background:var(--vc-accent);color:#17120b}
 </style>
 </Base>
