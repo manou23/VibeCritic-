@@ -1,6 +1,6 @@
 ---
-import Base from '../../../layouts/Base.astro';
-import ReviewCard from '../../../components/ReviewCard.astro';
+import Base from '../../layouts/Base.astro';
+import ReviewCard from '../../components/ReviewCard.astro';
 import { getCollection } from 'astro:content';
 const all=await getCollection('reviews');
 const score=(r)=>{const d=r.data;const parts=[d.storyScore,d.visualsScore,d.soundScore,d.pacingScore];if(parts.some(v=>typeof v!=='number'||!Number.isFinite(v)||v<0||v>10))return null;return Math.round((d.storyScore*.30+d.visualsScore*.25+d.soundScore*.20+d.pacingScore*.25)*10)/10;};
