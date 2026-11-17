@@ -17,10 +17,29 @@ function tmdb(pathname,params={}){
  for(const [k,v] of Object.entries(params))if(v!=null)u.searchParams.set(k,String(v));return u.toString();
 }
 const norm=v=>clean(v).toLowerCase().normalize('NFKD').replace(/[^\p{L}\p{N}]/gu,'');
+function frontMatterFields(source){
+ const block=String(source||'').match(/^---\\s*\\r?\\n([\\s\\S]*?)\\r?\\n---/);
+ if(!block)return {};
+ const fields={};
+ for(const line of block[1].split(/\\r?\\n/)){
+  const match=line.match(/^([A-Za-z][A-Za-z0-9_-]*):\\s*(.*)$/);
+  if(match)fields[match[1]]=clean(match[2].replace(/^["']|["']$/g,''));
+ }
+ return fields;
+}
 async function seen(){
  const ids=new Set();
  for(const f of ['data/processed.json','data/published.json'])try{const d=JSON.parse(await fs.readFile(f,'utf8'));for(const x of Array.isArray(d)?d:(d.published||[]))if(typeof x==='string')ids.add(x);}catch{}
- try{for(const f of await fs.readdir(ROOT))if(f.endsWith('.md')){const s=await fs.readFile(path.join(ROOT,f),'utf8'),m=s.match(/^sourceId:\s*["']?([^\r\n"']+)/m),t=s.match(/^title:\s*["']?([^\r\n"']+)/m);if(m)ids.add(m[1].trim());if(t)ids.add('title:'+norm(t[1].replace(/["']$/,'')));}}catch{}
+ try{
+  for(const f of await fs.readdir(ROOT))if(f.endsWith('.md')){
+   const fields=frontMatterFields(await fs.readFile(path.join(ROOT,f),'utf8'));
+   const type=fields.type;
+   if(fields.sourceId)ids.add(fields.sourceId);
+   if(type==='game'&&fields.rawgSourceId)ids.add('game:'+fields.rawgSourceId);
+   if(type&&fields.tmdbId)ids.add(type+':'+fields.tmdbId);
+   for(const title of [fields.title,fields.originalTitle])if(title)ids.add('title:'+norm(title));
+  }
+ }catch{}
  return ids;
 }
 export function buildFreeProviders(){
@@ -140,8 +159,20 @@ async function verifyDeployment({article,articlePath}){
  try{const r=await fetch('https://vibecritic.pages.dev/reviews/'+encodeURIComponent(id)+'/',{signal:AbortSignal.timeout(15000)});if(!r.ok)return false;const html=await r.text();const videoVisible=article.youtubeVideoId?html.includes(article.youtubeVideoId):article.externalVideoUrl?html.includes(article.externalVideoUrl):true;return html.includes(article.title)&&html.includes('تحليل مدعوم بالذكاء الاصطناعي')&&videoVisible;}catch{return false;}
 }
 async function isAlreadyPublished(item){
- const wanted=norm(item?.name);if(!wanted)return false;
- try{for(const f of await fs.readdir(ROOT)){if(!f.endsWith('.md'))continue;const s=await fs.readFile(path.join(ROOT,f),'utf8'),m=s.match(/^title:\s*["']?([^\r\n"']+)/m);if(m&&norm(m[1])===wanted)return true;}}catch{}
+ const wantedTitles=new Set([item?.name,item?.originalTitle].map(norm).filter(Boolean));
+ const wantedId=String(item?.id||'').trim(),wantedType=String(item?.type||'').trim();
+ if(!wantedTitles.size&&!wantedId)return false;
+ try{
+  for(const f of await fs.readdir(ROOT)){
+   if(!f.endsWith('.md'))continue;
+   const fields=frontMatterFields(await fs.readFile(path.join(ROOT,f),'utf8'));
+   if(wantedType&&wantedId&&fields.sourceId===wantedType+':'+wantedId)return true;
+   if(wantedType==='game'&&wantedId&&fields.type==='game'&&fields.rawgSourceId===wantedId)return true;
+   if(wantedType&&wantedId&&fields.type===wantedType&&fields.tmdbId===wantedId)return true;
+   if(wantedType&&fields.type&&fields.type!==wantedType)continue;
+   if([fields.title,fields.originalTitle].some(title=>wantedTitles.has(norm(title))))return true;
+  }
+ }catch{}
  return false;
 }
 export function createPublishingAdapters(){return {
