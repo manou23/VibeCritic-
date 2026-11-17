@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T00:54:32.626Z",
+  "updatedAt": "2026-11-17T00:54:57.381Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -342,7 +342,7 @@
         "sourceUrl": "https://www.themoviedb.org/movie/1170608",
         "popularity": 0
       },
-      "status": "writing",
+      "status": "waiting",
       "stage": 2,
       "parts": [
         {
@@ -408,10 +408,11 @@
       },
       "attempts": 0,
       "createdAt": "2026-11-17T00:47:56.078Z",
-      "updatedAt": "2026-11-17T00:54:29.671Z",
-      "nextAttemptAt": null,
-      "lastError": null,
-      "lastProvider": "openrouter"
+      "updatedAt": "2026-11-17T00:54:57.351Z",
+      "nextAttemptAt": 1794880497351,
+      "lastError": "No free provider within configured daily budget.",
+      "lastProvider": "openrouter",
+      "resumeTo": "writing"
     }
   },
   "providerUsage": {
