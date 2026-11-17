@@ -22,26 +22,61 @@ const rawTitle = isHomePage ? `${SITE_NAME} | ${title}` : `${title} | ${SITE_NAM
 const pageTitle = rawTitle.length > 60 ? `${String(title).slice(0, 46).trimEnd()}… | ${SITE_NAME}` : rawTitle;
 const metaDescription = String(description).replace(/\s+/g, ' ').trim().slice(0, 152).trimEnd() + (String(description).trim().length > 152 ? '…' : '');
 const metaKeywords = Array.isArray(keywords) ? [...new Set(keywords.map((word) => String(word).replace(/[<>\"']/g, '').replace(/\s+/g, ' ').trim()).filter(Boolean))].slice(0, 20).join(', ') : '';
-const structuredData = pageStructuredData || (pageType === 'article'
-  ? {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: title,
-      description,
-      mainEntityOfPage: canonical,
-      ...(image ? { image: [image] } : {}),
-      ...(publishedAt ? { datePublished: publishedAt } : {}),
-      publisher: { '@type': 'Organization', name: SITE_NAME },
-    }
+const siteUrl = Astro.site?.href || new URL('/', canonical).href;
+const organizationId = new URL('/#organization', siteUrl).href;
+const websiteId = new URL('/#website', siteUrl).href;
+const { ['@context']: _pageSchemaContext, ...providedPageSchema } = pageStructuredData || {};
+const pageNode = pageStructuredData
+  ? { ...providedPageSchema, '@id': pageStructuredData['@id'] || `${canonical}#review` }
   : {
-      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': `${canonical}#webpage`,
+      name: title,
+      description: metaDescription,
+      url: canonical,
+      isPartOf: { '@id': websiteId },
+      inLanguage: 'ar',
+      ...(image ? { primaryImageOfPage: image } : {}),
+    };
+const breadcrumbItems = [{ name: 'الرئيسية', item: new URL('/', siteUrl).href }];
+if (!isHomePage) {
+  if (currentPath.startsWith('/magazine/') && currentPath !== '/magazine/') {
+    breadcrumbItems.push({ name: 'المجلة', item: new URL('/magazine/', siteUrl).href });
+  }
+  breadcrumbItems.push({ name: title, item: canonical });
+}
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': organizationId,
+      name: SITE_NAME,
+      url: siteUrl,
+    },
+    {
       '@type': 'WebSite',
+      '@id': websiteId,
       name: SITE_NAME,
       alternateName: ['Vibe Critic'],
       description: SITE_DESC,
-      url: Astro.site?.href || canonical,
+      url: siteUrl,
       inLanguage: 'ar',
-    });
+      publisher: { '@id': organizationId },
+    },
+    pageNode,
+    ...(breadcrumbItems.length > 1 ? [{
+      '@type': 'BreadcrumbList',
+      '@id': `${canonical}#breadcrumb`,
+      itemListElement: breadcrumbItems.map((crumb, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: crumb.name,
+        item: crumb.item,
+      })),
+    }] : []),
+  ],
+};
 const safeJson = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
 const searchReviews = await getCollection('reviews');
 ---

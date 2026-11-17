@@ -105,7 +105,17 @@ for (const relative of reviewPages) {
   let structuredType = '';
   try {
     const structured = JSON.parse(jsonLdTag?.[1] || 'null');
-    structuredType = structured?.['@type'] || '';
+    const schemaNodes = Array.isArray(structured?.['@graph'])
+      ? structured['@graph']
+      : [structured];
+    const reviewNode = schemaNodes.find((node) => {
+      const types = Array.isArray(node?.['@type']) ? node['@type'] : [node?.['@type']];
+      return types.some((type) => ['Review', 'Article'].includes(type));
+    });
+    const reviewTypes = Array.isArray(reviewNode?.['@type'])
+      ? reviewNode['@type']
+      : [reviewNode?.['@type']];
+    structuredType = reviewTypes.find((type) => ['Review', 'Article'].includes(type)) || '';
   } catch {}
   const failedMeta = [];
   if (ogTitle.length < 8) failedMeta.push('og:title');
