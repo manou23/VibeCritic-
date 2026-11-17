@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T01:01:04.350Z",
+  "updatedAt": "2026-11-17T01:04:21.518Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -508,9 +508,9 @@
       },
       "attempts": 1,
       "createdAt": "2026-11-17T01:00:32.140Z",
-      "updatedAt": "2026-11-17T01:01:00.242Z",
-      "nextAttemptAt": 1794877560242,
-      "lastError": "groq: Section word count rejected: 159",
+      "updatedAt": "2026-11-17T01:04:21.436Z",
+      "nextAttemptAt": 1794881061436,
+      "lastError": "No free provider within configured daily budget.",
       "lastProvider": "groq",
       "resumeTo": "writing"
     }
