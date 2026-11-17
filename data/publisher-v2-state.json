@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T00:50:42.079Z",
+  "updatedAt": "2026-11-17T00:51:55.845Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -401,11 +401,11 @@
           "votes": 0
         }
       },
-      "attempts": 2,
+      "attempts": 3,
       "createdAt": "2026-11-17T00:47:56.078Z",
-      "updatedAt": "2026-11-17T00:50:34.898Z",
-      "nextAttemptAt": 1794876934898,
-      "lastError": "openrouter: Section word count rejected: 189",
+      "updatedAt": "2026-11-17T00:51:40.632Z",
+      "nextAttemptAt": 1794877180632,
+      "lastError": "openrouter: رد النموذج JSON غير مكتمل أو ينقصه قوس إغلاق",
       "lastProvider": "openrouter",
       "resumeTo": "writing"
     }
@@ -445,10 +445,10 @@
         "failures": 1
       },
       "openrouter": {
-        "requests": 4,
+        "requests": 5,
         "tokens": 7627,
         "successes": 1,
-        "failures": 2
+        "failures": 3
       }
     }
   },
@@ -462,6 +462,11 @@
       "failures": 1,
       "until": 1794883676078,
       "lastError": "Section word count rejected: 213"
+    },
+    "openrouter": {
+      "failures": 1,
+      "until": 1794883900632,
+      "lastError": "رد النموذج JSON غير مكتمل أو ينقصه قوس إغلاق"
     }
   },
   "cycle": {
