@@ -892,7 +892,7 @@ async function generateReview(item, stage=0, previousParts=[]){
  if(stage===2&&cons.length<2)throw new Error('قائمة التحفظات النقدية غير مكتملة');
  const scores={story:Number(d.scores?.story),visuals:Number(d.scores?.visuals),sound:Number(d.scores?.sound),pacing:Number(d.scores?.pacing)};
  if(Object.values(scores).some(value=>!Number.isFinite(value)||value<0||value>10))throw new Error('الدرجات الفرعية الأربعة غير مكتملة أو خارج النطاق 0–10');
- const score=Math.round((scores.story*.30+scores.visuals*.25+scores.sound*.20+scores.pacing*.25)*10)/10;
+ const score=calculateWeightedReviewScore(scores);
  const headline=clean(item.name).slice(0,78)+' — مراجعة نقدية';
  const hook='قراءة نقدية موجزة لـ'+clean(item.name)+' تستند إلى بيانات '+clean(item.source||'المصدر')+' المتاحة، لا إلى تجربة مشاهدة أو لعب مباشرة.';
  const summary=clean(item.description);
