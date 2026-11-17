@@ -29,7 +29,7 @@ externalVideoUrl: "https://vimeo.com/1085608819?dnt=1"
 externalVideoTitle: "The Secret Agent — official Cannes clip"
 cast: ["Wagner Moura", "Maria Fernanda Cândido", "Gabriel Leone", "Carlos Francisco", "Alice Carvalho", "Udo Kier"]
 crew: ["Kleber Mendonça Filho", "Evgenia Alexandrova", "Eduardo Serrano", "Matheus Farias", "Moabe Filho", "Pedrinho Moreira"]
-sourceName: "Festival de Cannes / RogerEbert.com / CinemaScópio / Vimeo — Cannes official clip"
+sourceName: "Festival de Cannes / RogerEbert.com / CinemaScópio"
 sourceId: "manual-assisted-movie-o-agente-secreto-2025"
 sourceUrl: "https://www.festival-cannes.com/en/f/o-agente-secreto/"
 aiGenerated: true
@@ -64,5 +64,5 @@ editorialWorkflow: "manual-assisted"
 - [Festival de Cannes — O Agente Secreto](https://www.festival-cannes.com/en/f/o-agente-secreto/): سنة الإنتاج، البلدان، المخرج، الطاقم، والطاقم الفني.
 - [Festival de Cannes — العرض في المهرجان](https://www.festival-cannes.com/mediatheque/o-agente-secreto-de-kleber-mendonca-filho-montee-des-marches/): توثيق ظهور الفيلم في كان بتاريخ 18 مايو 2025.
 - [RogerEbert.com — The Secret Agent Review](https://www.rogerebert.com/reviews/the-secret-agent-film-review-2025): قراءة نقدية للبناء المتشعب والدلالة السياسية.
-- [Cannes official clip on Vimeo](https://vimeo.com/1085608819?dnt=1): مقطع رسمي مرتبط بصفحة الفيلم في مهرجان كان.
+- [Festival de Cannes — Montée des marches](https://www.festival-cannes.com/mediatheque/o-agente-secreto-de-kleber-mendonca-filho-montee-des-marches/): توثيق ظهور فريق الفيلم في كان بتاريخ 18 مايو 2025.
 - [ملصق الفيلم — Festival de Cannes](https://img.festival-cannes.com/eyJidWNrZXQiOiJtZWRpYSIsImtleSI6InVwbG9hZHNcLzIwMjVcLzA1XC8xOTEwNTUuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMzYwLCJmaXQiOiJjb3ZlciJ9fX0%3D): صورة منشورة ضمن صفحة الفيلم الرسمية.

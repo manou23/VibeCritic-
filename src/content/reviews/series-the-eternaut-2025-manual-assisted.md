@@ -25,8 +25,8 @@ cons:
   - "إيقاع متمهل في بعض الحلقات"
   - "نهاية الموسم تترك أسئلة واسعة مفتوحة"
 poster: "https://images.ctfassets.net/4cd45et68cgf/1mVbB15TI7b9cNNZ1V1eZN/43dc9b18e7ab1371b968ea1d50ab6ca3/en_us_ee_main_the_mask_vertical_27x40_rgb_pre_1.jpg?w=2000"
-youtubeVideoId: "Y5fbyh_xPXo"
-youtubeVideoTitle: "The Eternaut — Official Netflix Teaser"
+youtubeVideoId: "TqT4fDQQqCc"
+youtubeVideoTitle: "The Eternaut | Official Trailer | Netflix"
 platforms: ["Netflix"]
 cast: ["Ricardo Darín", "Carla Peterson", "César Troncoso", "Andrea Pietra", "Ariel Staltari", "Marcelo Subiotto", "Orianna Cárdenas"]
 crew: ["Bruno Stagnaro", "Ariel Staltari", "Gastón Girod", "Federico Jusid", "K&S Films"]

@@ -24,12 +24,12 @@ cons:
   - "ازدحام الشخصيات والمرجعيات"
   - "كوميديا جسدية متكررة تقطع التوتر"
   - "الإيقاع الطويل يرهق بعض المقاطع"
-poster: "https://static2.showtimes.com/poster/160x236/ne-zha-2-209749.jpg"
-youtubeVideoId: "iPZYPWdrta4"
-youtubeVideoTitle: "Ne Zha II — Official IMAX Trailer"
+poster: "https://a24films.com/_next/image?q=75&url=https%3A%2F%2Fapi-asset-production.s3.amazonaws.com%2Fmedia%2Fimages%2FNE_ZHA_II_Poster.jpg&w=3840"
+youtubeVideoId: "ETlOSBR92Fs"
+youtubeVideoTitle: "Ne Zha 2 | Official Trailer HD | A24"
 cast: ["Michelle Yeoh (English-language voice cast)", "Crystal Lee (English-language voice cast)", "Vincent Rodriguez III (English-language voice cast)", "Aleks Le (English-language voice cast)"]
 crew: ["Jiao Zi", "Beijing Enlight Pictures", "Coco Cartoon", "CMC Pictures"]
-sourceName: "Beijing Enlight Pictures / CMC Pictures / A24 / Reuters / The Guardian / Le Monde / Showtimes"
+sourceName: "Beijing Enlight Pictures / CMC Pictures / A24 / Reuters / The Guardian / Le Monde"
 sourceId: "manual-assisted-movie-ne-zha-2-2025"
 sourceUrl: "https://a24films.com/films/ne-zha-2"
 aiGenerated: true
@@ -64,5 +64,6 @@ editorialWorkflow: "manual-assisted"
 - [The Guardian — Ne Zha 2 review](https://www.theguardian.com/film/2025/mar/20/ne-zha-2-review-demons-dragons-and-dazzling-visuals-jiaozi): قراءة نقدية للمخيلة البصرية وكثافة الحكاية.
 - [Le Monde — Ne Zha 2](https://www.lemonde.fr/en/culture/article/2025/04/28/ne-zha-2-captures-spectacular-transformations-of-a-young-demon-in-search-of-identity_6740711_30.html): تحليل الهوية والأسطورة والتحولات البصرية.
 - [Reuters — English-language release](https://www.reuters.com/business/media-telecom/english-version-animated-chinese-hit-ne-zha-2-heading-theaters-2025-07-09/): تفاصيل النسخة الإنجليزية وتوزيعها.
-- [Official IMAX trailer](https://www.youtube.com/watch?v=iPZYPWdrta4): إعلان النسخة الإنجليزية من الفيلم.
-- [ملصق الفيلم — Showtimes، © CMC Pictures](https://www.showtimes.com/movies/ne-zha-2-184610/movie-poster/): صفحة الملصق الذي يحمل حقوق CMC Pictures.
+- [Official English-language trailer](https://www.youtube.com/watch?v=ETlOSBR92Fs): إعلان النسخة الإنجليزية من الفيلم.
+- [الملصق الرسمي — A24](https://a24films.com/films/ne-zha-2): صورة الملصق المنشورة ضمن صفحة الموزع للنسخة الإنجليزية.
+- [A24 — المقطع الدعائي الرسمي](https://www.youtube.com/watch?v=ETlOSBR92Fs): الإعلان الرسمي للنسخة الإنجليزية الصادر في يوليو 2025.

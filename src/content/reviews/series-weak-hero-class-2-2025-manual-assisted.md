@@ -25,8 +25,9 @@ cons:
   - "تسارع نحو المواجهة النهائية"
   - "الأثر العاطفي أقل من الموسم الأول"
 poster: "https://falardewebtoon.com.br/wp-content/uploads/2025/04/weak-hero-class-2-netflix-04_fdw.jpg"
-youtubeVideoId: "NuI2u_9it4o"
-youtubeVideoTitle: "Weak Hero Class 2 — Official Netflix Teaser"
+backdrop: "https://dnm.nflximg.net/api/v6/s0XAg4q_jvYbSSbLvySyUsliNSg/AAAAQa-vmExcdtEgjs7GX5-yubdjbfZF07dVvbCaxLMHsXga7CI5RrgW3tNoHpZLHSqwN-9cuKhV6EXBXMwSNxuYU0Hcqt7uW791xncSfRKo__orydd9lEbb-7O5XQjcc_LMNDuW2wsMK4EekFhJl1JxuHE7SyQ.jpg?r=68a"
+youtubeVideoId: "gGJOEwsrSmE"
+youtubeVideoTitle: "Weak Hero Class 2 | Official Teaser | Netflix"
 platforms: ["Netflix"]
 cast: ["Park Ji-hoon", "Ryeo Un", "Choi Min-yeong", "Lee Min-jae", "Bae Na-ra", "Lee Jun-young"]
 crew: ["You Su-min", "Han Jun-hee", "Netflix"]
@@ -65,5 +66,6 @@ editorialWorkflow: "manual-assisted"
 - [Netflix Newsroom — Weak Hero Class 2](https://about.netflix.com/en/news/weak-hero-class-2-premieres-april-25): تاريخ الإصدار والممثلون ووصف انتقال سي-أون إلى المدرسة الجديدة.
 - [India Today — Weak Hero Class 2 review](https://www.indiatoday.in/entertainment/ott/story/weak-hero-class-2-sequel-park-ji-hoon-popular-drama-more-punch-less-emotion-2715917-2025-04-29): قراءة نقدية في الأداء والقتال ونقص تطوير بعض الشخصيات.
 - [Rotten Tomatoes — Weak Hero Class 2](https://www.rottentomatoes.com/tv/weak_hero_class_1/s02): بيانات الموسم ومراجعات نقدية مختارة.
-- [Netflix official teaser](https://www.youtube.com/watch?v=NuI2u_9it4o): الإعلان التشويقي المنشور ضمن مادة Netflix الرسمية.
-- [مصدر الملصق — Falar de Webtoon](https://falardewebtoon.com.br/novo-trailer-de-weak-hero-class-2-detalha-trama/): صفحة المصدر للصورة الترويجية المرتبطة بالموسم.
+- [Netflix official teaser](https://www.youtube.com/watch?v=gGJOEwsrSmE): الإعلان التشويقي المنشور ضمن مادة Netflix الرسمية.
+- [Netflix Tudum — Weak Hero Class 2](https://www.netflix.com/tudum/articles/weak-hero-class-2-release-date-news): صور رسمية ومعلومات عن الشخصيات والموسم.
+- [Netflix — المقطع التشويقي الرسمي](https://www.youtube.com/watch?v=gGJOEwsrSmE): إعلان الموسم المنشور على قناة Netflix Malaysia الرسمية.

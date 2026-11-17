@@ -24,13 +24,13 @@ cons:
   - "مبالغة في تصوير الطبيب كبطل خارق"
   - "شخصيات مساندة لا تحصل على عمق كافٍ"
   - "التنقل بين الواقعية والاستعراض غير متوازن دائماً"
-poster: "https://www.dramawave.de/media/2025/01/The-Trauma-Code-Heroes-on-Call-.jpeg"
-youtubeVideoId: "uOU7kzfmfb8"
-youtubeVideoTitle: "The Trauma Code — Official Netflix Teaser"
+poster: "https://images.ctfassets.net/4cd45et68cgf/4zFaeJQgO7hO5resBYFRuF/4c3a737d3c93a335acc3b6cfa4a27698/en_us_tc-s1_main_solo_vertical_27x40_rgb_pre_1.jpg"
+youtubeVideoId: "Y0fxFVOew6k"
+youtubeVideoTitle: "The Trauma Code: Heroes on Call | Official Trailer | Netflix"
 platforms: ["Netflix"]
 cast: ["Ju Ji-hoon", "Choo Young-woo", "Ha Young", "Yoon Kyung-ho", "Jeong Jae-kwang"]
 crew: ["Lee Do-yun", "Choi Tae-gang", "Studio N", "Mays Entertainment"]
-sourceName: "Netflix Media Center / Netflix Newsroom / Decider / TIME / DramaWave"
+sourceName: "Netflix Media Center / Netflix Newsroom / Decider / TIME"
 sourceId: "manual-assisted-series-the-trauma-code-2025"
 sourceUrl: "https://media.netflix.com/en/only-on-netflix/81677629"
 aiGenerated: true
@@ -66,5 +66,5 @@ editorialWorkflow: "manual-assisted"
 - [Netflix Newsroom — January 24 premiere](https://about.netflix.com/en/news/the-trauma-code-heroes-on-call-premieres-january-24): موعد الإصدار ووصف الفكرة والممثلون.
 - [Decider — The Trauma Code review](https://decider.com/2025/01/28/the-trauma-code-heroes-on-call-netflix-review/): قراءة نقدية في المبالغة البطولية والنبرة الطبية.
 - [TIME — The Trauma Code](https://time.com/7209560/trauma-code-heroes-on-call-netflix-ending-explained/): سياق الصراع بين الطاقم والبيروقراطية.
-- [DramaWave — مادة الملصق والإعلان](https://www.dramawave.de/news/7176/netflix-trailer-zu-the-trauma-code-veroeffentlicht/): مصدر الصورة الترويجية المستخدمة.
-- [Netflix official teaser](https://www.youtube.com/watch?v=uOU7kzfmfb8): الإعلان التشويقي المنشور ضمن مادة Netflix الرسمية.
+- [الملصق الرسمي — Netflix](https://about.netflix.com/en/news/the-trauma-code-heroes-on-call-premieres-january-24): صورة الملصق وبيانات الإصدار والطاقم.
+- [Netflix official teaser](https://www.youtube.com/watch?v=Y0fxFVOew6k): الإعلان التشويقي المنشور ضمن مادة Netflix الرسمية.
