@@ -49,6 +49,9 @@ const sameSite=validateEvidence({sources:[{name:"one",url:"https://api.example.c
 assert.equal(sameSite.valid,false,"two subdomains of one registrable domain count as one source");
 const independent=validateEvidence({sources:[{name:"TMDB",url:"https://www.themoviedb.org/a"},{name:"Wikipedia",url:"https://en.wikipedia.org/b"}],youtubeVideoId:article.youtubeVideoId});
 assert.equal(independent.valid,true);
+const throttled=transition(first,"provider-deferred",{lastError:"Source HTTP 429",nextAttemptAt:now+15*60*1000,retryDelayMs:15*60*1000,countAttempt:false},now+10);
+assert.equal(throttled.nextAttemptAt,now+10+15*60*1000,"source rate limits may use a shorter explicit retry window without counting as an AI-provider failure");
+assert.equal(Object.hasOwn(throttled,"retryDelayMs"),false,"retry configuration must not leak into durable job state");
 assert.throws(()=>transition(job,"published"),/Illegal transition/);
 // A waiting draft owns the queue: no later candidate may be discovered or enqueued.
 const waitingState=createState();
