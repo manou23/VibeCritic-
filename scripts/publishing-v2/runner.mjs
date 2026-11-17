@@ -4,6 +4,11 @@ function candidate(items,state,counts={}) { const used=new Set(Object.keys(state
 export async function runCycle({state,adapters,providers,now=Date.now(),persist=async()=>{},publishedCounts={},articleLimits={},researchSkips=0}) {
  if(!state||state.version!==2||!adapters) throw Error('Publisher v2 state and adapters are required.');
  const save=async()=>{state.updatedAt=new Date(now).toISOString();await persist(state);}; let job=selectActiveJob(state.jobs);
+ // A code-level article assembly/validation fix should not leave a valid saved draft
+ // sleeping for an hour; resume it immediately after the corrected build is deployed.
+ if(job?.status==='waiting'&&job.resumeTo==='writing'&&/Article below minimum word count|Article below minimum character count/.test(String(job.lastError||''))){
+  job={...job,nextAttemptAt:now,updatedAt:new Date(now).toISOString()};state.jobs[job.key]=job;await save();
+ }
  // Clear legacy cooldowns caused by malformed/undersized model text; these are editorial
  // retries, not provider outages. Keep genuine HTTP/network cooldowns intact.
  for(const [providerId,cooldown] of Object.entries(state.providerCooldowns||{})){
