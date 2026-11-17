@@ -1231,3 +1231,25 @@ img{max-width:100%}
  .site-links a:after{transition:none}
  .theme-toggle,.header-search,.menu-toggle,.primary-action,.review-card,.trend-card{transition:none}
 }
+
+/* Current-page navigation state: visible, consistent and screen-reader friendly */
+.site-links a[aria-current="page"]{
+ color:var(--vc-accent-deep);
+ font-weight:950;
+}
+.site-links a[aria-current="page"]::after{
+ transform:scaleX(1);
+}
+@media(max-width:760px){
+ .site-links a[aria-current="page"]{
+  background:color-mix(in srgb,var(--vc-accent) 10%,var(--vc-surface));
+  color:var(--vc-accent-deep);
+  border-inline-start:3px solid var(--vc-accent);
+ }
+}
+.dark-mode .site-links a[aria-current="page"]{
+ color:var(--vc-accent);
+}
+@media(prefers-reduced-motion:reduce){
+ .site-links a[aria-current="page"]::after{transition:none}
+}
