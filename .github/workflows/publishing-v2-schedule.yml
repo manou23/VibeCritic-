@@ -10,7 +10,8 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: vibecritic-publisher-v2-main-recovery
+  # Share one lock with the manual recovery workflow so both cannot publish concurrently.
+  group: vibecritic-publisher-v2-schedule-main
   cancel-in-progress: false
 jobs:
   publish-cycle:
