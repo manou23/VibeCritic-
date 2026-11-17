@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import MagazineNav from '../../components/MagazineNav.astro';
 import ReviewCard from '../../components/ReviewCard.astro';
 import { getCollection } from 'astro:content';
 const reviews=(await getCollection('reviews')).sort((a,b)=>(b.data.publishedAt??b.data.date).valueOf()-(a.data.publishedAt??a.data.date).valueOf());
@@ -10,6 +11,7 @@ const groups=[
 ].map(group=>({...group,items:reviews.filter(r=>r.data.type===group.type).slice(0,4)}));
 ---
 <Base title="قوائم مختارة" description="قوائم تحريرية لاكتشاف ألعاب وأفلام ومسلسلات من مكتبة VibeCritic.">
+<MagazineNav active="lists" />
 <section class="wrap magazine-page-hero"><p class="catalog-eyebrow">CURATED COLLECTIONS</p><h1>قوائم مختارة</h1><p>طرق أسهل لاكتشاف ما يناسب مزاجك؛ قوائم منفصلة للألعاب والأفلام والمسلسلات، تتجدد مع إضافة مراجعات جديدة.</p></section>
 {groups.map(group=><section class="wrap catalog-section"><div class="catalog-heading"><div><p class="catalog-eyebrow">VIBECRITIC COLLECTION</p><h2>{group.title}</h2><p>{group.description}</p></div><span class="catalog-total">{group.items.length} أعمال</span></div>
 {group.items.length?<div class="catalog-rail">{group.items.map(review=><ReviewCard review={review}/>)}</div>:<div class="catalog-empty">ستظهر الأعمال هنا عند توفر مراجعات منشورة في هذا القسم.</div>}
