@@ -30,8 +30,8 @@ crew: ["Asghar Farhadi"]
 sourceName: "Sony Pictures Classics / Film at Lincoln Center / The Academy"
 sourceId: "manual-movie-a-separation"
 sourceUrl: "https://www.sonyclassics.com/aseparation/"
-poster: "https://m.media-amazon.com/images/M/MV5BZTdmM2MwMmItZTBlNC00ZDM5LTllZWYtYTZhM2M2MTU4ZTUxXkEyXkFqcGc%40._V1_.jpg"
-backdrop: "https://m.media-amazon.com/images/M/MV5BZTdmM2MwMmItZTBlNC00ZDM5LTllZWYtYTZhM2M2MTU4ZTUxXkEyXkFqcGc%40._V1_.jpg"
+poster: "https://i.ytimg.com/vi/58Onuy5USTc/hqdefault.jpg"
+backdrop: "https://i.ytimg.com/vi/58Onuy5USTc/hqdefault.jpg"
 youtubeVideoId: "58Onuy5USTc"
 youtubeVideoTitle: "A Separation — Official Trailer HD (Sony Pictures Classics)"
 aiGenerated: true
