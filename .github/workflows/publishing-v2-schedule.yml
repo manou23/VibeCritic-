@@ -6,7 +6,7 @@ on:
     paths: ['.github/workflows/publishing-v2-schedule.yml']
   schedule:
     # Offset from quarter-hour boundaries to reduce GitHub scheduled-run contention.
-    # The durable V2 cycle guard enforces one five-hour publishing cycle.
+    # The durable V2 cycle guard opens a new article slot every 30 minutes.
     - cron: '7,22,37,52 * * * *'
 permissions:
   contents: write
