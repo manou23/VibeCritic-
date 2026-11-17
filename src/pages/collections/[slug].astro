@@ -26,7 +26,7 @@ export function getStaticPaths() {
 const slug = Astro.params.slug || '';
 const collection = collections[slug as keyof typeof collections];
 const allReviews = await getCollection('reviews', ({ data }) => data.type === collection.type);
-const reviews = allReviews.filter(collection.matches).sort((a,b) => b.data.date.valueOf() - a.data.date.valueOf());
+const reviews = allReviews.filter(collection.matches).sort((a,b) => (b.data.publishedAt ?? b.data.date).valueOf() - (a.data.publishedAt ?? a.data.date).valueOf());
 ---
 <Base title={collection.title} description={collection.description} noindex={reviews.length === 0}>
 <section class="wrap catalog-section curated-collection">
