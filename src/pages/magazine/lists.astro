@@ -1,0 +1,20 @@
+---
+import Base from '../../../layouts/Base.astro';
+import ReviewCard from '../../../components/ReviewCard.astro';
+import { getCollection } from 'astro:content';
+const reviews=(await getCollection('reviews')).sort((a,b)=>(b.data.publishedAt??b.data.date).valueOf()-(a.data.publishedAt??a.data.date).valueOf());
+const groups=[
+ {title:'ألعاب تستحق التجربة',type:'game',description:'تجارب تفاعلية من مكتبة مراجعاتنا.'},
+ {title:'أفلام لسهرة قادمة',type:'movie',description:'أعمال سينمائية يمكنك إضافتها إلى قائمة المشاهدة.'},
+ {title:'مسلسلات تستحق المتابعة',type:'series',description:'حكايات وشخصيات لمساحة مشاهدة أطول.'}
+].map(group=>({...group,items:reviews.filter(r=>r.data.type===group.type).slice(0,4)}));
+---
+<Base title="قوائم مختارة" description="قوائم تحريرية لاكتشاف ألعاب وأفلام ومسلسلات من مكتبة VibeCritic.">
+<section class="wrap magazine-page-hero"><p class="catalog-eyebrow">CURATED COLLECTIONS</p><h1>قوائم مختارة</h1><p>طرق أسهل لاكتشاف ما يناسب مزاجك؛ قوائم منفصلة للألعاب والأفلام والمسلسلات، تتجدد مع إضافة مراجعات جديدة.</p></section>
+{groups.map(group=><section class="wrap catalog-section"><div class="catalog-heading"><div><p class="catalog-eyebrow">VIBECRITIC COLLECTION</p><h2>{group.title}</h2><p>{group.description}</p></div><span class="catalog-total">{group.items.length} أعمال</span></div>
+{group.items.length?<div class="catalog-rail">{group.items.map(review=><ReviewCard review={review}/>)}</div>:<div class="catalog-empty">ستظهر الأعمال هنا عند توفر مراجعات منشورة في هذا القسم.</div>}
+</section>)}
+<style>
+.magazine-page-hero{padding:2.5rem 0 1rem}.magazine-page-hero h1{font-size:clamp(2rem,5vw,3.5rem);margin:.35rem 0}.magazine-page-hero>p:last-child{max-width:760px;color:var(--vc-muted);line-height:1.9}
+</style>
+</Base>
