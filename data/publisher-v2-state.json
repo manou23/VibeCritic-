@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T23:44:54.941Z",
+  "updatedAt": "2026-11-17T23:47:53.278Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -1428,6 +1428,108 @@
       "updatedAt": "2026-11-17T23:44:45.777Z",
       "nextAttemptAt": null,
       "lastError": "Evidence rejected: No verified trailer available"
+    },
+    "series:231100": {
+      "key": "series:231100",
+      "item": {
+        "type": "series",
+        "id": "231100",
+        "name": "Boundless Love",
+        "originalTitle": "Hudutsuz Sevda",
+        "overview": "When he was a little child, Halil İbrahim lost his father due to a blood feud and was exiled to Istanbul. Twenty years later, he returns to his homeland in the Karadeniz region as a handsome, powerful young man. He plans to marry the girl he loves, Yasemin, and start a new life. However, events do not allow this. Halil İbrahim embarks on a journey of revenge, and his life will change completely when he encounters Zeynep from the Leto family.",
+        "date": "2023-09-21",
+        "poster": "https://image.tmdb.org/t/p/w780/1BQSLOIvjnBzrxkXjX9R0JfHTWI.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/vV5GFJtp8DgAysY1F0WfIwedi81.jpg",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/231100",
+        "popularity": 32
+      },
+      "status": "abandoned",
+      "stage": 0,
+      "parts": [],
+      "evidence": null,
+      "attempts": 0,
+      "createdAt": "2026-11-17T23:47:48.744Z",
+      "updatedAt": "2026-11-17T23:47:48.744Z",
+      "nextAttemptAt": null,
+      "lastError": "Evidence rejected: No sufficiently matching independent encyclopedia page: Boundless Love"
+    },
+    "series:83631": {
+      "key": "series:83631",
+      "item": {
+        "type": "series",
+        "id": "83631",
+        "name": "What We Do in the Shadows",
+        "originalTitle": "What We Do in the Shadows",
+        "overview": "A documentary-style look into the daily (or rather, nightly) lives of a group of vampires in Staten Island who have “lived” together for hundreds and hundreds of years.",
+        "date": "2019-03-27",
+        "poster": "https://image.tmdb.org/t/p/w780/wa3ZQE9kLnqwN3vQ0NNjg1NPsCa.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/mKikck71CvVISUSTLk29fwRbH4y.jpg",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/83631",
+        "popularity": 1103
+      },
+      "status": "writing",
+      "stage": 1,
+      "parts": [
+        {
+          "stage": 1,
+          "text": "{\"review\":\"تُقدِّم السلسلة نسخةً مسلسليةً من الفكرة التي نجحت في الفيلم الأصلي، حيث تُستَخدم أسلوب الوثائقي الكاذب لتسلط الضوء على حياة مجموعة من مصاصي الدماء المتعايشين في ستاتن آيلاند. الفكرة الأساسية تدور حول صراعهم اليومي مع التحديات الحديثة—من التكنولوجيا إلى القوانين—مما يخلق مزيجًا من السخرية والحنين إلى الماضي. الشخصيات تتنوع بين النمط الكلاسيكي للمخلوقات الخالدة واللمسات العصرية: كايڤان نوڤاك يجسد شخصية نيكولاس المتقلب، بينما مات بيري يضيف طابعًا بريطانيًا متهكمًا من خلال لورد ديكستر. ناتاسيا ديميتريو تقدم شخصية ناديا المتفائلة، في حين يضيف هارفي غيلن شخصية إيتان الشاب المتحمس لتعلم فنون الدم. مارك بروكش يضيف عنصرًا غريبًا كـ \\\"جورج\\\"، وهو كائن غير مصري يضيف طابعًا غير متوقع. التفاعل بين هؤلاء يخلق ديناميكيةً غنيةً، حيث تتقاطع الصراعات الداخلية للخلود مع المواقف اليومية العادية، ما يتيح للكاتب استكشاف مواضيع الهوية والاندماج في مجتمعٍ متغير. رغم أن السرد يتجنب الكشف عن تفاصيل القصة الرئيسية لتفادي الحرق، إلا أن الإطار العام يوحي بأن السلسلة ستحافظ على روح الفكاهة المظلمة التي ميزت الفيلم، مع توسيع قاعدة الشخصيات لتشمل تنوعًا ثقافيًا وإجتماعيًا يُثري التجربة الدرامية.\",\"scores\":{\"story\":7.5,\"visuals\":8,\"sound\":7,\"pacing\":7.5},\"pros\":[],\"cons\":[],\"verdict\":\"\"}",
+          "savedAt": "2026-11-17T23:47:48.744Z"
+        }
+      ],
+      "evidence": {
+        "title": "What We Do in the Shadows",
+        "originalTitle": "What We Do in the Shadows",
+        "type": "series",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/83631",
+        "sourceId": "series:83631",
+        "releaseDate": "2019-03-27",
+        "overview": "A documentary-style look into the daily (or rather, nightly) lives of a group of vampires in Staten Island who have “lived” together for hundreds and hundreds of years.",
+        "poster": "https://image.tmdb.org/t/p/w780/wa3ZQE9kLnqwN3vQ0NNjg1NPsCa.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/mKikck71CvVISUSTLk29fwRbH4y.jpg",
+        "genres": [
+          "Comedy",
+          "Sci-Fi & Fantasy"
+        ],
+        "platforms": [],
+        "cast": [
+          "Kayvan Novak",
+          "Matt Berry",
+          "Natasia Demetriou",
+          "Harvey Guillén",
+          "Mark Proksch"
+        ],
+        "crew": [],
+        "youtubeVideoId": "3_jTVuExbAo",
+        "youtubeVideoTitle": "Official Series Trailer",
+        "externalVideoUrl": "",
+        "externalVideoTitle": "",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/83631",
+            "extract": "A documentary-style look into the daily (or rather, nightly) lives of a group of vampires in Staten Island who have “lived” together for hundreds and hundreds of years."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/What_We_Do_in_the_Shadows",
+            "extract": "What We Do in the Shadows is a 2014 New Zealand mockumentary comedy horror film written and directed by Jemaine Clement and Taika Waititi and the first installment in the What We Do in the Shadows franchise. The film also stars Clement and Waititi, along with Jonathan Brugh, Ben Fransham, Cori Gonzalez-Macuer, Stu Rutherford, and Jackie van Beek. The film's plot concerns several vampires who live together in a flat in Wellington. What We Do in the Shadows premiered at the Sundance Film Festival in January 2014. It was released theatrically on 18 August 2014 by Madman Entertainment and received critical acclaim. The film earned $6.9 million on a $1.6 million budget."
+          }
+        ],
+        "metadata": {
+          "rating": 8.003,
+          "votes": 1103
+        }
+      },
+      "attempts": 0,
+      "createdAt": "2026-11-17T23:47:48.744Z",
+      "updatedAt": "2026-11-17T23:47:48.744Z",
+      "nextAttemptAt": null,
+      "lastError": null,
+      "lastProvider": "groq",
+      "nextStageAt": 1794961068744
     }
   },
   "providerUsage": {
@@ -1459,9 +1561,9 @@
     },
     "2026-11-17": {
       "groq": {
-        "requests": 27,
-        "tokens": 75062,
-        "successes": 17,
+        "requests": 28,
+        "tokens": 76482,
+        "successes": 18,
         "failures": 3
       },
       "openrouter": {
@@ -1489,6 +1591,6 @@
     "startedAt": 1794958514861,
     "deadlineAt": 1794960314861,
     "nextStartAt": 1794960314861,
-    "articleKey": null
+    "articleKey": "series:83631"
   }
 }
