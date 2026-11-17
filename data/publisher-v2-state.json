@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T08:23:01.857Z",
+  "updatedAt": "2026-11-17T08:26:33.781Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -688,11 +688,11 @@
           "votes": 5595
         }
       },
-      "attempts": 1,
+      "attempts": 2,
       "createdAt": "2026-11-17T08:22:20.499Z",
-      "updatedAt": "2026-11-17T08:22:20.499Z",
-      "nextAttemptAt": 1794904040499,
-      "lastError": "gemini: رد النموذج JSON غير مكتمل أو ينقصه قوس إغلاق",
+      "updatedAt": "2026-11-17T08:26:11.121Z",
+      "nextAttemptAt": 1794904271121,
+      "lastError": "gemini: gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
       "resumeTo": "writing"
     }
   },
@@ -737,14 +737,20 @@
         "failures": 4
       },
       "gemini": {
-        "requests": 2,
+        "requests": 4,
         "tokens": 0,
         "successes": 0,
-        "failures": 1
+        "failures": 2
       }
     }
   },
-  "providerCooldowns": {},
+  "providerCooldowns": {
+    "gemini": {
+      "failures": 1,
+      "until": 1794911171121,
+      "lastError": "gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
+    }
+  },
   "cycle": {
     "startedAt": 1794903740499,
     "deadlineAt": 1794914540499,
