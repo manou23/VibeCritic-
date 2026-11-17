@@ -81,7 +81,7 @@ async function wiki(title){
  catch(error){
   // Wikipedia's search API can temporarily rate-limit automated requests.
   // Retry the exact title through its public REST summary endpoint before deferring research.
-  if(!/Source HTTP (?:429|5\\d\\d)/.test(String(error?.message||'')))throw error;
+  if(!/Source HTTP (?:429|5\d\d)/.test(String(error?.message||'')))throw error;
   const fallback='https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(String(title).trim().replace(/ /g,'_'));
   const summary=await get(fallback),extract=clean(summary.extract||'');
   if(extract.length<180)throw new Error('Independent source has insufficient detail.');
