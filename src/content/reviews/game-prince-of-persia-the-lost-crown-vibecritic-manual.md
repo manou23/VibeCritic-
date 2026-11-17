@@ -14,7 +14,7 @@ visualsScore: 8.4
 soundScore: 7.8
 pacingScore: 8.7
 reviewMode: review
-platforms: ["PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series X|S", "Nintendo Switch", "PC", "macOS", "iOS", "Android"]
+platforms: ["PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series X|S", "Nintendo Switch", "PC"]
 pros:
   - "استجابة دقيقة تجعل القفز والصد والمراوغة واضحين"
   - "تصميم مترابط للمناطق يربط الاستكشاف بالتقدم"
@@ -50,5 +50,6 @@ editorialWorkflow: "manual-assisted"
 - [Ubisoft — Prince of Persia: The Lost Crown](https://www.ubisoft.com/en-us/game/prince-of-persia/the-lost-crown): معلومات اللعبة والمنصات والناشر.
 - [PlayStation Store](https://store.playstation.com/): صفحة الإصدار على منصات PlayStation.
 - [Xbox](https://www.xbox.com/): معلومات توفر اللعبة على Xbox.
+- [Ubisoft News — Apple Arcade version](https://news.ubisoft.com/en-au/article/21LGThZXAzebj9KKn3hHWk/play-prince-of-persia-the-lost-crown-on-apple-arcade-on-december-3): أعلنت Ubisoft إصدار The Lost Crown+ لأجهزة iPhone وiPad وMac وApple Vision Pro في 3 ديسمبر 2026؛ لذلك لم يُدرج ضمن المنصات المتاحة بتاريخ هذا التدقيق (17 نوفمبر 2026).
 
 > مراجعة تحريرية مستقلة؛ لا تدّعي تجربة شخصية أو اختباراً تقنياً على كل منصة.
