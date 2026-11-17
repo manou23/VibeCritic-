@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T01:14:54.571Z",
+  "updatedAt": "2026-11-17T08:23:01.857Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -595,6 +595,105 @@
       "articlePath": "src/content/reviews/game-apex-legends-290856.md",
       "deployedAt": "2026-11-17T01:14:54.143Z",
       "publishedAt": "2026-11-17T01:14:54.143Z"
+    },
+    "movie:656908": {
+      "key": "movie:656908",
+      "item": {
+        "type": "movie",
+        "id": "656908",
+        "name": "Ramayana: Rise of a Legend",
+        "originalTitle": "रामायणम्",
+        "overview": "An ancient epic follows a young prince and princess whose marriage and subsequent exile mark the beginning of a legendary journey. Their story of love, duty and destiny sets the stage for greater challenges ahead.",
+        "date": "2026-11-05",
+        "poster": "https://image.tmdb.org/t/p/w780/vBQ7wks68OhJKlb3RnXSl2yXBXK.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/yHVZncPRZr63mezRX20IyKLrSkv.jpg",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/656908",
+        "popularity": 56
+      },
+      "status": "abandoned",
+      "stage": 0,
+      "parts": [],
+      "evidence": null,
+      "attempts": 0,
+      "createdAt": "2026-11-17T08:22:20.499Z",
+      "updatedAt": "2026-11-17T08:22:20.499Z",
+      "nextAttemptAt": null,
+      "lastError": "Evidence rejected: No sufficiently matching independent encyclopedia page: Ramayana: Rise of a Legend"
+    },
+    "game:28": {
+      "key": "game:28",
+      "item": {
+        "type": "game",
+        "id": "28",
+        "name": "Red Dead Redemption 2",
+        "overview": "",
+        "date": "2018-10-26",
+        "poster": "https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg",
+        "backdrop": "https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/red-dead-redemption-2",
+        "genres": [
+          "Action"
+        ],
+        "platforms": [
+          "PC",
+          "PlayStation 4",
+          "Xbox One"
+        ],
+        "popularity": 17082
+      },
+      "status": "waiting",
+      "stage": 0,
+      "parts": [],
+      "evidence": {
+        "title": "Red Dead Redemption 2",
+        "originalTitle": "",
+        "type": "game",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/red-dead-redemption-2",
+        "sourceId": "game:28",
+        "releaseDate": "2018-10-26",
+        "overview": "America, 1899. The end of the wild west era has begun as lawmen hunt down the last remaining outlaw gangs. Those who will not surrender or succumb are killed. After a robbery goes badly wrong in the western town of Blackwater, Arthur Morgan and the Van der Linde gang are forced to flee. With federal agents and the best bounty hunters in the nation massing on their heels, the gang must rob, steal and fight their way across the rugged heartland of America in order to survive. As deepening internal divisions threaten to tear the gang apart, Arthur must make a choice between his own ideals and loyalty to the gang who raised him. From the creators of Grand Theft Auto V and Red Dead Redemption, Red Dead Redemption 2 is an epic tale of life in America at the dawn of the modern age.",
+        "poster": "https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg",
+        "backdrop": "https://media.rawg.io/media/screenshots/f3d/f3d6c0eaf1db2bdbb44ad84f15e43f4f.jpg",
+        "genres": [
+          "Action"
+        ],
+        "platforms": [
+          "PC",
+          "PlayStation 4",
+          "Xbox One"
+        ],
+        "cast": [],
+        "crew": [],
+        "youtubeVideoId": "",
+        "youtubeVideoTitle": "",
+        "externalVideoUrl": "",
+        "externalVideoTitle": "",
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/red-dead-redemption-2",
+            "extract": "America, 1899. The end of the wild west era has begun as lawmen hunt down the last remaining outlaw gangs. Those who will not surrender or succumb are killed. After a robbery goes badly wrong in the western town of Blackwater, Arthur Morgan and the Van der Linde gang are forced to flee. With federal agents and the best bounty hunters in the nation massing on their heels, the gang must rob, steal and fight their way across the rugged heartland of America in order to survive. As deepening internal divisions threaten to tear the gang apart, Arthur must make a choice between his own ideals and loyalty to the gang who raised him. From the creators of Grand Theft Auto V and Red Dead Redemption, Red Dead Redemption 2 is an epic tale of life in America at the dawn of the modern age."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Red_Dead_Redemption_2",
+            "extract": "Red Dead Redemption 2 is a 2018 action-adventure game developed and published by Rockstar Games. The game is the third entry in the Red Dead series and a prequel to the 2010 game Red Dead Redemption. The story is set in a fictionalized representation of the United States in 1899 and follows the exploits of Arthur Morgan, an outlaw and member of the Van der Linde gang, who must face the challenges of a declining Wild West, while attempting to survive against government forces, rival gangs, and other adversaries. The game is presented through first- and third-person perspectives, and the player may freely roam its interactive open world. Gameplay elements include shootouts, robberies, hunting, horseback riding, interacting with non-player characters, and maintaining the character's honor rating through moral choices and deeds. A bounty system governs the response of law enforcement and bounty hunters to crimes committed by the player. The game's development lasted over eight years, beginning soon after Red Dead Redemption's release, and it became one of the most expensive video games ever made. Rockstar co-opted all of its studios into one large team to facilitate development. They drew influence from real locations as opposed to film or art, focused on creating an accurate reflection of the time with the game's characters and world. The game was Rockstar's first built specifically for eighth-generation consoles, having tested their technical capabilities while porting Grand Theft Auto V. The game's soundtrack features an original score composed by Woody Jackson and several vocal tracks produced by Daniel Lanois. Development included a crunch schedule of 100-hour weeks, leading to reports of mandatory and unpaid overtime. Red Dead Online, the game's online multiplayer mode, lets up to 32 players engage in a variety of cooperative and competitive game modes. Red Dead Redemption 2 was released for the PlayStation 4 and Xbox One in October 2018, and for Windows and Stadia in November 2019. It broke several records and had the second-biggest launch in the history of entertainment, generating US$725 million in sales from its opening weekend and exceeding the lifetime sales of Red Dead Redemption within eight days. The game received critical acclaim, with praise directed at its story, characters, open world, graphics, music, and level of detail, but some criticism at its control scheme and emphasis on realism over player freedom. It won more than 175 Game of the Year awards and received multiple other accolades from awards shows and gaming publications. It is considered one of eighth-generation console gaming's most significant releases and among the greatest video games ever made. It is the third-best-selling video game with over 89 million copies shipped."
+          }
+        ],
+        "metadata": {
+          "rating": 4.59,
+          "votes": 5595
+        }
+      },
+      "attempts": 1,
+      "createdAt": "2026-11-17T08:22:20.499Z",
+      "updatedAt": "2026-11-17T08:22:20.499Z",
+      "nextAttemptAt": 1794904040499,
+      "lastError": "gemini: رد النموذج JSON غير مكتمل أو ينقصه قوس إغلاق",
+      "resumeTo": "writing"
     }
   },
   "providerUsage": {
@@ -636,20 +735,20 @@
         "tokens": 13603,
         "successes": 2,
         "failures": 4
+      },
+      "gemini": {
+        "requests": 2,
+        "tokens": 0,
+        "successes": 0,
+        "failures": 1
       }
     }
   },
-  "providerCooldowns": {
-    "gemini": {
-      "failures": 3,
-      "until": 1794886567766,
-      "lastError": "gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
-    }
-  },
+  "providerCooldowns": {},
   "cycle": {
-    "startedAt": 1794876476078,
-    "deadlineAt": 1794887276078,
-    "nextStartAt": 1794894476078,
-    "articleKey": "game:290856"
+    "startedAt": 1794903740499,
+    "deadlineAt": 1794914540499,
+    "nextStartAt": 1794921740499,
+    "articleKey": "game:28"
   }
 }
