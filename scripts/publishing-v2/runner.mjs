@@ -9,6 +9,14 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
  for(const [providerId,cooldown] of Object.entries(state.providerCooldowns||{})){
   if(/Section word count rejected:|Stage 3 required fields missing:|رد النموذج JSON غير مكتمل|Invalid JSON/.test(String(cooldown?.lastError||'')))delete state.providerCooldowns[providerId];
  }
+ // If a previous run deferred only because all providers were temporarily cooling down,
+ // retry immediately once cleanup exposes an eligible free provider.
+ if(job?.status==='waiting'&&job.resumeTo==='writing'&&job.lastError==='No free provider within configured daily budget.'){
+  const day=new Date(now).toISOString().slice(0,10);state.providerUsage[day]||={};
+  const eligibility={...state.providerUsage[day]};
+  for(const p0 of providers)eligibility[p0.id]={...(eligibility[p0.id]||{}),cooldownUntil:state.providerCooldowns?.[p0.id]?.until||null};
+  if(chooseFreeProvider(providers,eligibility,now)){job={...job,nextAttemptAt:now,updatedAt:new Date(now).toISOString()};state.jobs[job.key]=job;await save();}
+ }
  // A cycle is five hours: allow work for the first three hours, then rest for two.
  // The workflow ticks every 15 minutes; no long Sleep keeps a GitHub runner occupied.
  const FIVE_HOURS=5*60*60*1000, THREE_HOURS=3*60*60*1000;
