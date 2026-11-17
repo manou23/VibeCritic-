@@ -16,6 +16,14 @@ visualsScore: 9.0
 soundScore: 8.7
 pacingScore: 7.5
 reviewMode: review
+pros:
+  - "بناء سياسي يجعل المدينة جزءاً من الحكاية"
+  - "أداء Wagner Moura يمنح السرد مركزاً إنسانياً"
+  - "الصورة والصوت يصنعان إحساساً تاريخياً متماسكاً"
+cons:
+  - "تشعب بعض المسارات يضعف تركيز الحكاية"
+  - "المدة الطويلة لا تخدم كل المقاطع بالقدر نفسه"
+  - "بعض الشخصيات المساندة أقل تطوراً"
 poster: "https://img.festival-cannes.com/eyJidWNrZXQiOiJtZWRpYSIsImtleSI6InVwbG9hZHNcLzIwMjVcLzA1XC8xOTEwNTUuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMzYwLCJmaXQiOiJjb3ZlciJ9fX0%3D"
 externalVideoUrl: "https://vimeo.com/1085608819?dnt=1"
 externalVideoTitle: "The Secret Agent — official Cannes clip"

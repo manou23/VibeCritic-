@@ -16,6 +16,14 @@ visualsScore: 7.8
 soundScore: 7.5
 pacingScore: 8.1
 reviewMode: review
+pros:
+  - "مشاهد طوارئ سريعة ومشدودة"
+  - "علاقة تعليمية تمنح القصة بعداً إنسانياً"
+  - "فكرة اجتماعية عن البيروقراطية والموارد"
+cons:
+  - "مبالغة في تصوير الطبيب كبطل خارق"
+  - "شخصيات مساندة لا تحصل على عمق كافٍ"
+  - "التنقل بين الواقعية والاستعراض غير متوازن دائماً"
 poster: "https://www.dramawave.de/media/2025/01/The-Trauma-Code-Heroes-on-Call-.jpeg"
 youtubeVideoId: "uOU7kzfmfb8"
 youtubeVideoTitle: "The Trauma Code — Official Netflix Teaser"

@@ -16,6 +16,14 @@ visualsScore: 8.0
 soundScore: 7.8
 pacingScore: 7.7
 reviewMode: review
+pros:
+  - "أداء Park Ji-hoon يعتمد على التعبير الصامت"
+  - "قتال حاد وتصوير متماسك"
+  - "استمرار موضوع الصداقة وأثر الصدمة"
+cons:
+  - "تطوير محدود لبعض الشخصيات الجديدة"
+  - "تسارع نحو المواجهة النهائية"
+  - "الأثر العاطفي أقل من الموسم الأول"
 poster: "https://falardewebtoon.com.br/wp-content/uploads/2025/04/weak-hero-class-2-netflix-04_fdw.jpg"
 youtubeVideoId: "NuI2u_9it4o"
 youtubeVideoTitle: "Weak Hero Class 2 — Official Netflix Teaser"

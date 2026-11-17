@@ -16,6 +16,14 @@ visualsScore: 8.0
 soundScore: 8.0
 pacingScore: 8.2
 reviewMode: review
+pros:
+  - "معضلة أخلاقية لا تقدم إجابة سهلة"
+  - "أداءات جماعية تحافظ على تعقيد الشخصيات"
+  - "مزج جريء بين التشويق والكوميديا السوداء"
+cons:
+  - "بعض التحولات النغمية مفاجئة"
+  - "تكرار الشك يبطئ بعض المقاطع"
+  - "النهاية الأخلاقية تبقي مساحة كبيرة من الالتباس"
 poster: "https://img.festival-cannes.com/eyJidWNrZXQiOiJtZWRpYSIsImtleSI6InVwbG9hZHNcLzIwMjVcLzA1XC8xODk1NDktMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEzNjAsImZpdCI6ImNvdmVyIn19fQ%3D%3D"
 externalVideoUrl: "https://vimeo.com/1086012176?dnt=1"
 externalVideoTitle: "Un simple accident — official Cannes clip"

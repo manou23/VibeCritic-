@@ -16,6 +16,14 @@ visualsScore: 8.8
 soundScore: 8.5
 pacingScore: 7.8
 reviewMode: review
+pros:
+  - "بوينس آيرس حاضرة كعنصر درامي لا كخلفية"
+  - "أداء Ricardo Darín هادئ ومقنع"
+  - "تصميم بصري وصوتي يعزز الإحساس بالحصار"
+cons:
+  - "تخفيف بعض الدلالات السياسية للأصل"
+  - "إيقاع متمهل في بعض الحلقات"
+  - "نهاية الموسم تترك أسئلة واسعة مفتوحة"
 poster: "https://images.ctfassets.net/4cd45et68cgf/1mVbB15TI7b9cNNZ1V1eZN/43dc9b18e7ab1371b968ea1d50ab6ca3/en_us_ee_main_the_mask_vertical_27x40_rgb_pre_1.jpg?w=2000"
 youtubeVideoId: "Y5fbyh_xPXo"
 youtubeVideoTitle: "The Eternaut — Official Netflix Teaser"

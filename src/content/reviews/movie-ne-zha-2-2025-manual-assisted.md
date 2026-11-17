@@ -16,6 +16,14 @@ visualsScore: 9.2
 soundScore: 8.7
 pacingScore: 8.0
 reviewMode: review
+pros:
+  - "تصميم بصري وحركي واسع الخيال"
+  - "توظيف غني للأساطير الصينية"
+  - "صوت ومعارك يمنحان المشاهد حجماً واضحاً"
+cons:
+  - "ازدحام الشخصيات والمرجعيات"
+  - "كوميديا جسدية متكررة تقطع التوتر"
+  - "الإيقاع الطويل يرهق بعض المقاطع"
 poster: "https://static2.showtimes.com/poster/160x236/ne-zha-2-209749.jpg"
 youtubeVideoId: "iPZYPWdrta4"
 youtubeVideoTitle: "Ne Zha II — Official IMAX Trailer"

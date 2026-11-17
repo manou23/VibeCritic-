@@ -16,6 +16,14 @@ visualsScore: 8.2
 soundScore: 8.1
 pacingScore: 7.6
 reviewMode: review
+pros:
+  - "أداء مركزي قوي من Jaideep Ahlawat"
+  - "توسيع جغرافي واجتماعي لعالم السلسلة"
+  - "مناخ بصري وصوتي قاتم ومتزن"
+cons:
+  - "كثرة الخيوط تزدحم على القضية المركزية"
+  - "بعض الشخصيات الجديدة لا تكتسب عمقاً كافياً"
+  - "تفاوت في الإيقاع بين المسارات"
 backdrop: "https://assets.aboutamazon.com/d8/dc/f4935e6e4c988e13bd7db9b8f559/paatal-lok-dg-dt-16x9.jpg"
 platforms: ["Prime Video"]
 cast: ["Jaideep Ahlawat", "Ishwak Singh", "Tillotama Shome", "Gul Panag", "Nagesh Kukunoor", "Jahnu Barua"]
