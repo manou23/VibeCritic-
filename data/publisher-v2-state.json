@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T10:13:00.000Z",
+  "updatedAt": "2026-11-17T10:16:00.062Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -734,7 +734,7 @@
         ],
         "popularity": 14709
       },
-      "status": "writing",
+      "status": "waiting",
       "stage": 0,
       "parts": [],
       "evidence": {
@@ -783,14 +783,15 @@
           "votes": 5230
         }
       },
-      "attempts": 0,
+      "attempts": 1,
       "createdAt": "2026-11-17T09:59:43.256Z",
-      "updatedAt": "2026-11-17T10:13:00.000Z",
-      "nextAttemptAt": null,
-      "lastError": null,
+      "updatedAt": "2026-11-17T10:15:56.292Z",
+      "nextAttemptAt": 1794910856292,
+      "lastError": "groq: Section word count rejected: 186",
       "lastProvider": "groq",
       "fileWritten": false,
-      "articlePath": null
+      "articlePath": null,
+      "resumeTo": "writing"
     }
   },
   "providerUsage": {
@@ -822,10 +823,10 @@
     },
     "2026-11-17": {
       "groq": {
-        "requests": 17,
-        "tokens": 49406,
+        "requests": 19,
+        "tokens": 54517,
         "successes": 11,
-        "failures": 2
+        "failures": 3
       },
       "openrouter": {
         "requests": 8,
