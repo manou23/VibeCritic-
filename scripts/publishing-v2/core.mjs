@@ -1,3 +1,4 @@
+import { calculateWeightedReviewScore } from '../scoring-rubric.mjs';
 // Deterministic core for VibeCritic Publishing Engine v2. No network calls.
 export const ENGINE_VERSION=2;
 export const ACTIVE=new Set(["queued","researching","writing","waiting","quality-check","ready"]);
@@ -130,7 +131,7 @@ export function validateArticle(a,{minWords=600,minCharacters=3200}={}){
  for(const f of dims)if(!Number.isFinite(Number(a?.[f]))||Number(a[f])<0||Number(a[f])>10)errors.push("Invalid score: "+f);
  if(!Number.isFinite(Number(a?.score))||Number(a.score)<=0||Number(a.score)>10)errors.push("Invalid final score");
  if(dims.every(f=>Number.isFinite(Number(a?.[f])))){
-  const expected=Math.round((a.storyScore*.30+a.visualsScore*.25+a.soundScore*.20+a.pacingScore*.25)*10)/10;
+  const expected=calculateWeightedReviewScore({ story:a.storyScore, visuals:a.visualsScore, sound:a.soundScore, pacing:a.pacingScore });
   if(Math.abs(expected-Number(a.score))>.05)errors.push("Final score does not match VibeCritic weighted rubric");
  }
  if(!Array.isArray(a?.pros)||a.pros.length<3)errors.push("At least three strengths are required");
