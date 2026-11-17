@@ -6,6 +6,7 @@ import path from 'node:path';
 const root = path.resolve('src/content/reviews');
 const files = (await fs.readdir(root)).filter(name => name.endsWith('.md')).sort();
 const failures = [];
+const ROUNDING_EPSILON = 1e-9; // Stabilizes half-up rounding at exact decimal ties.
 
 for (const file of files) {
   const fullPath = path.join(root, file);
@@ -60,7 +61,7 @@ for (const file of files) {
     } else {
       // Add a tiny epsilon so decimal half-steps (for example 8.55) are rounded consistently despite IEEE-754 representation.
       const weighted = values.storyScore * 0.30 + values.visualsScore * 0.25 + values.soundScore * 0.20 + values.pacingScore * 0.25;
-      const calculated = Math.round((weighted + 1e-9) * 10) / 10;
+      const calculated = Math.round((weighted + ROUNDING_EPSILON) * 10) / 10;
       if (Math.abs(calculated - score) > 0.05) failures.push(file + ': final score does not match the fixed weighted breakdown (' + calculated + ' vs ' + score + ')');
       if (score >= 9 && Math.min(...Object.values(values)) < 8.5) failures.push(file + ': exceptional overall scores (9+) require every review dimension to reach at least 8.5');
       if (score >= 9.5 && (Object.values(values).filter(value => value >= 9.5).length < 3 || Math.min(...Object.values(values)) < 9)) failures.push(file + ': near-perfect overall scores (9.5+) require at least three dimensions at 9.5 and no dimension below 9');
