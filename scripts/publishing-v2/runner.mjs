@@ -4,6 +4,11 @@ function candidate(items,state,counts={}) { const used=new Set(Object.keys(state
 export async function runCycle({state,adapters,providers,now=Date.now(),persist=async()=>{},publishedCounts={},articleLimits={},researchSkips=0}) {
  if(!state||state.version!==2||!adapters) throw Error('Publisher v2 state and adapters are required.');
  const save=async()=>{state.updatedAt=new Date(now).toISOString();await persist(state);}; let job=selectActiveJob(state.jobs);
+ // Clear legacy cooldowns caused by malformed/undersized model text; these are editorial
+ // retries, not provider outages. Keep genuine HTTP/network cooldowns intact.
+ for(const [providerId,cooldown] of Object.entries(state.providerCooldowns||{})){
+  if(/Section word count rejected:|Stage 3 required fields missing:|رد النموذج JSON غير مكتمل|Invalid JSON/.test(String(cooldown?.lastError||'')))delete state.providerCooldowns[providerId];
+ }
  // A cycle is five hours: allow work for the first three hours, then rest for two.
  // The workflow ticks every 15 minutes; no long Sleep keeps a GitHub runner occupied.
  const FIVE_HOURS=5*60*60*1000, THREE_HOURS=3*60*60*1000;
