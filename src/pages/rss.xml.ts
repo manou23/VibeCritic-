@@ -11,14 +11,14 @@ const escapeXml = (value: unknown) => String(value ?? '')
 
 export async function GET({ site }: { site?: URL }) {
   const reviews = (await getCollection('reviews'))
-    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+    .sort((a, b) => (b.data.publishedAt ?? b.data.date).valueOf() - (a.data.publishedAt ?? a.data.date).valueOf())
     .slice(0, 100);
   const base = (site || new URL('https://vibecritic.pages.dev')).href.replace(/\/$/, '');
   const items = reviews.map((review) => {
     const link = new URL('/reviews/' + review.id + '/', base).href;
     const title = review.data.title + ' — مراجعة VibeCritic';
     const description = [review.data.headline, review.data.summary].filter(Boolean).join(' — ');
-    return `<item><title>${escapeXml(title)}</title><link>${escapeXml(link)}</link><guid isPermaLink="true">${escapeXml(link)}</guid><description>${escapeXml(description)}</description><pubDate>${review.data.date.toUTCString()}</pubDate></item>`;
+    return `<item><title>${escapeXml(title)}</title><link>${escapeXml(link)}</link><guid isPermaLink="true">${escapeXml(link)}</guid><description>${escapeXml(description)}</description><pubDate>${(review.data.publishedAt ?? review.data.date).toUTCString()}</pubDate></item>`;
   }).join('');
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"><channel><title>VibeCritic — أحدث المراجعات</title><link>${escapeXml(base)}</link><description>آخر مراجعات الألعاب والأفلام والمسلسلات باللغة العربية.</description><language>ar</language>${items}</channel></rss>`;
