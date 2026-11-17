@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import MagazineNav from '../../components/MagazineNav.astro';
 import ReviewCard from '../../components/ReviewCard.astro';
 import { getCollection } from 'astro:content';
 const all=await getCollection('reviews');
@@ -7,6 +8,7 @@ const score=(r)=>{const d=r.data;const parts=[d.storyScore,d.visualsScore,d.soun
 const picks=all.filter(r=>r.data.reviewMode==='review'&&score(r)!==null).sort((a,b)=>score(b)-score(a)).slice(0,12);
 ---
 <Base title="ترشيحات VibeCritic" description="اختيارات تحريرية من مراجعات VibeCritic للأفلام والمسلسلات والألعاب.">
+<MagazineNav active="recommendations" />
 <section class="wrap magazine-page-hero"><p class="catalog-eyebrow">EDITOR'S PICKS</p><h1>ترشيحات VibeCritic</h1><p>اختيارات مبنية على مراجعات مكتملة وتقييم تحريري موزون. نعرض الأعمال التي تستحق أن تكون على قائمتك التالية.</p></section>
 <section class="wrap catalog-section"><div class="catalog-heading"><div><p class="catalog-eyebrow">RECOMMENDED</p><h2>اختيارات تستحق وقتك</h2><p>الترتيب حسب التقييم التحريري، وليس حسب الشعبية وحدها.</p></div><span class="catalog-total">{picks.length} عملاً</span></div>
 {picks.length?<div class="editorial-grid">{picks.map(review=><ReviewCard review={review}/>)}</div>:<div class="catalog-empty">لا توجد حالياً مراجعات مكتملة كافية لإعداد ترشيحات موثوقة.</div>}
