@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths: ['.github/workflows/publishing-v2-schedule.yml']
   schedule:
-    # Checkpoint every 15 minutes; the publisher itself gates each saved writing stage at 30 minutes.
+    # Single automatic publisher: check every 15 minutes; each saved writing stage remains gated at 30 minutes.
     - cron: '*/15 * * * *'
 permissions:
   contents: write
