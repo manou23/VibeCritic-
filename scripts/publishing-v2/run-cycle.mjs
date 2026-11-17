@@ -17,7 +17,7 @@ try{
 }catch{}
 const result=await runCycle({
  state,adapters,providers,publishedCounts,
- articleLimits:{minWords:650,minCharacters:3200},
+ articleLimits:{minWords:600,minCharacters:3200},
  persist:saveState
 });
 console.log('V2 cycle:',JSON.stringify({action:result.action,key:result.key,stage:result.stage,provider:result.provider,providerCalls:result.providerCalls,errors:result.errors||[]}));
