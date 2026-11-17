@@ -1,0 +1,64 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { TYPE_LABEL } from '../../consts';
+const works=(await getCollection('reviews'))
+ .filter(review=>review.data.reviewMode==='review'&&typeof review.data.score==='number'&&review.data.score>0)
+ .sort((a,b)=>(b.data.publishedAt??b.data.date).valueOf()-(a.data.publishedAt??a.data.date).valueOf());
+const first=works[0]?.id??'';
+const second=works[1]?.id??first;
+---
+<Base title="قارن بين عملين" description="قارن بين مراجعات وتقييمات الألعاب والأفلام والمسلسلات في VibeCritic.">
+<section class="wrap magazine-page-hero"><p class="catalog-eyebrow">SIDE-BY-SIDE COMPARISON</p><h1>قارن بين عملين</h1><p>اختر عملين من مراجعاتنا المكتملة، وشاهد التقييم والنوع وتاريخ النشر والملخص جنباً إلى جنب لتسهيل قرارك.</p></section>
+<section class="wrap compare-section">
+ {works.length>=2?<>
+ <div class="compare-selectors">
+  <label>العمل الأول<select id="compare-first"><option value="">اختر العمل الأول</option>{works.map(work=><option value={work.id} selected={work.id===first} data-title={work.data.title} data-type={TYPE_LABEL[work.data.type]} data-score={work.data.score.toFixed(1)} data-date={(work.data.publishedAt??work.data.date).toISOString()} data-genres={(work.data.genres??[]).join('، ')} data-summary={work.data.summary}>{work.data.title}</option>)}</select></label>
+  <div class="versus" aria-hidden="true">VS</div>
+  <label>العمل الثاني<select id="compare-second"><option value="">اختر العمل الثاني</option>{works.map(work=><option value={work.id} selected={work.id===second} data-title={work.data.title} data-type={TYPE_LABEL[work.data.type]} data-score={work.data.score.toFixed(1)} data-date={(work.data.publishedAt??work.data.date).toISOString()} data-genres={(work.data.genres??[]).join('، ')} data-summary={work.data.summary}>{work.data.title}</option>)}</select></label>
+ </div>
+ <p id="compare-message" class="compare-message" aria-live="polite">اختر عملين مختلفين لعرض المقارنة.</p>
+ <div class="compare-table-wrap"><table class="compare-table">
+  <thead><tr><th>عنصر المقارنة</th><th id="first-title">العمل الأول</th><th id="second-title">العمل الثاني</th></tr></thead>
+  <tbody>
+   <tr><th>التقييم</th><td id="first-score">—</td><td id="second-score">—</td></tr>
+   <tr><th>النوع</th><td id="first-type">—</td><td id="second-type">—</td></tr>
+   <tr><th>تاريخ النشر</th><td id="first-date">—</td><td id="second-date">—</td></tr>
+   <tr><th>التصنيفات</th><td id="first-genres">—</td><td id="second-genres">—</td></tr>
+   <tr><th>الملخص</th><td id="first-summary">—</td><td id="second-summary">—</td></tr>
+  </tbody>
+ </table></div>
+ </>:<div class="catalog-empty">نحتاج إلى مراجعتين مكتملتين على الأقل حتى تتمكن من المقارنة. ستظهر الخيارات تلقائياً عند توفرهما.</div>}
+</section>
+<script>
+ const firstSelect=document.querySelector('#compare-first');
+ const secondSelect=document.querySelector('#compare-second');
+ const message=document.querySelector('#compare-message');
+ const fields=['title','score','type','date','genres','summary'];
+ const read=(select)=>select?.selectedOptions?.[0];
+ const put=(side,field,value)=>{const node=document.getElementById(side+'-'+field);if(node)node.textContent=value||'—';};
+ const formatDate=(value)=>{const date=new Date(value);return Number.isNaN(date.valueOf())?'—':new Intl.DateTimeFormat('ar-u-ca-gregory',{dateStyle:'long'}).format(date);};
+ const renderSide=(side,option)=>{
+  put(side,'title',option?.dataset.title);
+  put(side,'score',option?.dataset.score?option.dataset.score+' / 10':'—');
+  put(side,'type',option?.dataset.type);
+  put(side,'date',option?.dataset.date?formatDate(option.dataset.date):'—');
+  put(side,'genres',option?.dataset.genres);
+  put(side,'summary',option?.dataset.summary);
+ };
+ const update=()=>{
+  const a=read(firstSelect),b=read(secondSelect);
+  renderSide('first',a);renderSide('second',b);
+  if(!a?.value||!b?.value){message.textContent='اختر عملاً في كل قائمة لإكمال المقارنة.';return;}
+  if(a.value===b.value){message.textContent='اختر عملين مختلفين حتى تكون المقارنة مفيدة.';return;}
+  const sa=Number(a.dataset.score),sb=Number(b.dataset.score);
+  message.textContent=sa===sb?'العملان متساويان في التقييم التحريري الحالي.':sa>sb?'الأول يتقدم في التقييم التحريري الحالي.':'الثاني يتقدم في التقييم التحريري الحالي.';
+ };
+ firstSelect?.addEventListener('change',update);secondSelect?.addEventListener('change',update);update();
+</script>
+<style>
+.magazine-page-hero{padding:2.5rem 0 1rem}.magazine-page-hero h1{font-size:clamp(2rem,5vw,3.5rem);margin:.35rem 0}.magazine-page-hero>p:last-child{max-width:760px;color:var(--vc-muted);line-height:1.9}
+.compare-section{padding:1.5rem 0 4rem}.compare-selectors{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:end;gap:1rem}.compare-selectors label{display:grid;gap:.6rem;font-weight:850;color:var(--vc-text)}.compare-selectors select{width:100%;min-width:0;padding:.9rem 1rem;border:1px solid var(--vc-border);border-radius:12px;background:var(--vc-surface);color:var(--vc-text);font:inherit}.versus{padding:.7rem;color:var(--vc-accent);font-weight:950}.compare-message{padding:.8rem 1rem;margin:1.2rem 0;border-inline-start:3px solid var(--vc-accent);background:var(--vc-surface);border-radius:8px;color:var(--vc-muted);line-height:1.7}.compare-table-wrap{overflow-x:auto;border:1px solid var(--vc-border);border-radius:14px}.compare-table{width:100%;min-width:650px;border-collapse:collapse;text-align:start}.compare-table th,.compare-table td{padding:1rem;border-bottom:1px solid var(--vc-border);vertical-align:top;line-height:1.8}.compare-table thead th{background:var(--vc-surface);font-weight:900}.compare-table tbody th{width:17%;white-space:nowrap;color:var(--vc-accent)}.compare-table tbody td{width:41.5%;color:var(--vc-text)}.compare-table tr:last-child>*{border-bottom:0}#first-score,#second-score{font-size:1.2rem;font-weight:950;color:var(--vc-accent)}
+@media(max-width:640px){.compare-selectors{grid-template-columns:1fr;gap:.8rem}.versus{text-align:center;padding:.1rem}.compare-table th,.compare-table td{padding:.75rem;font-size:.9rem}}
+</style>
+</Base>

@@ -1,0 +1,22 @@
+---
+import Base from '../../layouts/Base.astro';
+import ReviewCard from '../../components/ReviewCard.astro';
+import { getCollection } from 'astro:content';
+const reviews=await getCollection('reviews');
+const rated=reviews.map(review=>{
+ const d=review.data;
+ const scores=[d.storyScore,d.visualsScore,d.soundScore,d.pacingScore];
+ if(d.reviewMode!=='review'||scores.some(v=>typeof v!=='number'||!Number.isFinite(v)||v<0||v>10))return null;
+ return {review,score:Math.round((d.storyScore*.30+d.visualsScore*.25+d.soundScore*.20+d.pacingScore*.25)*10)/10};
+}).filter(Boolean).sort((a,b)=>b.score-a.score||(b.review.data.publishedAt??b.review.data.date).valueOf()-(a.review.data.publishedAt??a.review.data.date).valueOf()).slice(0,18);
+---
+<Base title="الأعلى تقييماً" description="أعلى مراجعات VibeCritic تقييماً للألعاب والأفلام والمسلسلات وفق معايير تحريرية موحدة.">
+<section class="wrap magazine-page-hero"><p class="catalog-eyebrow">TOP RATED / VIBECRITIC</p><h1>الأعلى تقييماً</h1><p>اكتشف الأعمال التي حصلت على أعلى درجاتنا التحريرية. لا ندرج هنا المعاينات أو المراجعات محدودة الأدلة، ولا نعرض ترتيباً دون اكتمال عناصر التقييم.</p></section>
+<section class="wrap catalog-section"><div class="catalog-heading"><div><p class="catalog-eyebrow">EDITORIAL SCORE</p><h2>أفضل الدرجات</h2><p>الترتيب يعتمد على تقييم موزون للقصة والصورة والصوت والإيقاع.</p></div><span class="catalog-total">{rated.length} أعمال</span></div>
+{rated.length?<div class="editorial-grid">{rated.map(({review,score})=><article class="rated-item"><div class="rated-score"><strong>{score.toFixed(1)}</strong><span>/ 10</span></div><ReviewCard review={review}/></article>)}</div>:<div class="catalog-empty">ستظهر القائمة عند توفر مراجعات مكتملة بعناصر تقييم صالحة.</div>}
+</section>
+<style>
+.magazine-page-hero{padding:2.5rem 0 1rem}.magazine-page-hero h1{font-size:clamp(2rem,5vw,3.5rem);margin:.35rem 0}.magazine-page-hero>p:last-child{max-width:760px;color:var(--vc-muted);line-height:1.9}
+.editorial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:1.2rem}.rated-item{position:relative;min-width:0}.rated-score{position:absolute;z-index:2;top:.65rem;right:.65rem;display:flex;align-items:baseline;gap:.15rem;padding:.35rem .6rem;border-radius:9px;background:var(--vc-accent);color:#17120b;box-shadow:0 4px 16px #0003}.rated-score strong{font-size:1.15rem;font-weight:900}.rated-score span{font-size:.65rem;font-weight:800}
+</style>
+</Base>
