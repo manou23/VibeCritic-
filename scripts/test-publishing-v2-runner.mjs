@@ -127,8 +127,8 @@ const qualityAdapters={
 };
 const qualityNow=now+100000;
 await runCycle({state:qualityState,adapters:qualityAdapters,providers,now:qualityNow,persist:async()=>{}});
-await runCycle({state:qualityState,adapters:qualityAdapters,providers,now:qualityNow+1,persist:async()=>{}});
-const rejectedQuality=await runCycle({state:qualityState,adapters:qualityAdapters,providers,now:qualityNow+2,persist:async()=>{}});
+await runCycle({state:qualityState,adapters:qualityAdapters,providers,now:qualityNow+30*60*1000,persist:async()=>{}});
+const rejectedQuality=await runCycle({state:qualityState,adapters:qualityAdapters,providers,now:qualityNow+60*60*1000,persist:async()=>{}});
 assert.equal(rejectedQuality.action,'quality-rejected');
 assert.equal(qualityState.jobs['movie:repeat'].stage,2,'the later overlapping section is the retry boundary');
 assert.equal(qualityState.jobs['movie:repeat'].parts.length,2,'keep the two earlier sections and regenerate only the third');
