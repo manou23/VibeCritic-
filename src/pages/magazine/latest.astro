@@ -1,10 +1,12 @@
 ---
 import Base from '../../layouts/Base.astro';
+import MagazineNav from '../../components/MagazineNav.astro';
 import ReviewCard from '../../components/ReviewCard.astro';
 import { getCollection } from 'astro:content';
 const latest=(await getCollection('reviews')).sort((a,b)=>(b.data.publishedAt??b.data.date).valueOf()-(a.data.publishedAt??a.data.date).valueOf());
 ---
 <Base title="أحدث المراجعات" description="تابع أحدث مراجعات VibeCritic للألعاب والأفلام والمسلسلات حسب وقت النشر.">
+<MagazineNav active="latest" />
 <section class="wrap magazine-page-hero"><p class="catalog-eyebrow">LATEST / VIBECRITIC</p><h1>أحدث المراجعات</h1><p>كل ما نُشر حديثاً في VibeCritic، مرتباً حسب تاريخ النشر الفعلي حتى تصل إلى الجديد أولاً.</p></section>
 <section class="wrap catalog-section"><div class="catalog-heading"><div><p class="catalog-eyebrow">NEWEST FIRST</p><h2>آخر الإضافات</h2><p>الترتيب حسب وقت النشر، لا حسب تاريخ إصدار العمل.</p></div><span class="catalog-total">{latest.length} مراجعة</span></div>
 {latest.length?<div class="editorial-grid">{latest.map(review=><ReviewCard review={review}/>)}</div>:<div class="catalog-empty">لا توجد مراجعات منشورة بعد.</div>}
