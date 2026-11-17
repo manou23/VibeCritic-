@@ -13,11 +13,11 @@ date: 2026-11-14
 releaseDate: "2024-02-27"
 youtubeVideoId: "yAN5uspO_hk"
 youtubeVideoTitle: "Shōgun — Official Trailer | FX Networks"
-score: 9.1
-storyScore: 9.3
-visualsScore: 9.1
-soundScore: 9.0
-pacingScore: 8.8
+score: 8.8
+storyScore: 9.0
+visualsScore: 8.9
+soundScore: 8.8
+pacingScore: 8.3
 pros:
   - "الصراع السياسي يتقدم عبر التحالفات والمعلومات لا عبر المواجهة المباشرة فقط"
   - "اختلاف اللغات والثقافات عنصر درامي فعلي وليس زينة شكلية"
