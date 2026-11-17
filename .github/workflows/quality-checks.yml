@@ -4,7 +4,18 @@ on:
   pull_request:
     branches: [main]
   push:
-    branches: [quality/score-integrity-and-gates, 'feature/**']
+    branches: [main, quality/score-integrity-and-gates, 'feature/**']
+    paths:
+      - '.github/workflows/**'
+      - 'src/**'
+      - 'functions/**'
+      - 'public/**'
+      - 'scripts/**'
+      - 'migrations/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'astro.config.mjs'
+      - 'wrangler.jsonc'
   workflow_dispatch:
 
 permissions:
