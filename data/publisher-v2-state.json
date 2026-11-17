@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T00:48:02.619Z",
+  "updatedAt": "2026-11-17T00:49:26.758Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -342,9 +342,15 @@
         "sourceUrl": "https://www.themoviedb.org/movie/1170608",
         "popularity": 0
       },
-      "status": "waiting",
-      "stage": 0,
-      "parts": [],
+      "status": "writing",
+      "stage": 1,
+      "parts": [
+        {
+          "stage": 1,
+          "text": "{\"review\":\"## القصة والشخصيات والبناء\\n\\nالمرحلة 1: تستند الحبكة إلى ما بعد عقدين من سيطرة بول أتراديس على الإمبراطورية، حيث يتحول إلى إمبراطور قاسٍ يواجه عواقب حكمه. العائدون القدامى، التهديدات الجديدة، والخيانة في كل زاوية تخلق جواً من الترقب. بول مطارد برؤى انهيار الإمبراطورية وظهور حبه المفقود، ما يجذبه إلى مؤامرة واسعة تقع تشاني في قلب لغزها المتكشف. مع اقتراب الأعداء، يواجه بول تكلفة السلطة الحقيقية ومصير من يحبهم. هذه الخطوط العريضة تركز على التكلفة النفسية والسياسية للسلطة دون الكشف عن تفاصيل الحبكة.\\n\\nالمرحلة 2: العمل من إخراج دينيس فيلنوف، الذي كتب السيناريو مع برايان ك. فون، استناداً إلى رواية \\\"مسيح الكثيب\\\" لفرانك هربرت عام 1969. التصوير الرئيسي جرى في المجر والإمارات العربية المتحدة، وألحان هانز زيمر. القائمة تشمل تيموثي شالاميت، زندايا، جايسون موموا، فلورنس بيو، ريبيكا فيرغسون، إيساك دي بانكوليه، شارلوت رامبلينغ، وأنيا تايلور-جوي. لا توجد بيانات تقييم أو أصوات، والفيلم منتظر في 15 ديسمبر 2026.\\n\\nالمرحلة 3:\\n- توظيف رواية هربرت كمصدر أدبي راسخ.\\n- إخراج فيلنوف وسجله في الجزء الثاني.\\n- تشكيلة تمثيلية دولية متنوعة.\\n- غياب تقييمات الجمهور أو النقاد حتى الآن.\\n- تاريخ الإصدار مستقبلي ولا يمكن الحكم على المنتج النهائي.\\nverdict: العمل يستند إلى مادة أصلية موثوقة وفريق إبداعي ذي خبرة، لكن غياب العروض والتقييمات يمنع إصدار حكم نهائي على الجودة الفعلية.\",\"scores\":{\"story\":0,\"visuals\":0,\"sound\":0,\"pacing\":0},\"pros\":[],\"cons\":[],\"verdict\":\"\"}",
+          "savedAt": "2026-11-17T00:49:21.047Z"
+        }
+      ],
       "evidence": {
         "title": "Dune: Part Three",
         "originalTitle": "Dune: Part Three",
@@ -395,12 +401,12 @@
           "votes": 0
         }
       },
-      "attempts": 1,
+      "attempts": 0,
       "createdAt": "2026-11-17T00:47:56.078Z",
-      "updatedAt": "2026-11-17T00:47:56.078Z",
-      "nextAttemptAt": 1794876776078,
-      "lastError": "groq: Section word count rejected: 213",
-      "resumeTo": "writing"
+      "updatedAt": "2026-11-17T00:49:21.047Z",
+      "nextAttemptAt": null,
+      "lastError": null,
+      "lastProvider": "openrouter"
     }
   },
   "providerUsage": {
@@ -436,6 +442,12 @@
         "tokens": 3991,
         "successes": 0,
         "failures": 1
+      },
+      "openrouter": {
+        "requests": 1,
+        "tokens": 1485,
+        "successes": 1,
+        "failures": 0
       }
     }
   },
@@ -444,11 +456,6 @@
       "failures": 3,
       "until": 1794886567766,
       "lastError": "gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
-    },
-    "openrouter": {
-      "failures": 1,
-      "until": 1794864631439,
-      "lastError": "openrouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day: https://openrouter.ai/settings/credits?utm_source=api&utm_campaign=free_daily_limit\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1794873600000\"},\"limit_source\":\"openrouter_free_tier_daily\",\"remedy_hint\":\"Wait for the daily reset (see X-RateLimit-Reset), or purchase credits to raise your free-"
     },
     "groq": {
       "failures": 1,
