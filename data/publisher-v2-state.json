@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T10:24:45.775Z",
+  "updatedAt": "2026-11-17T13:25:19.919Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -734,7 +734,7 @@
         ],
         "popularity": 14709
       },
-      "status": "writing",
+      "status": "waiting",
       "stage": 1,
       "parts": [
         {
@@ -789,14 +789,15 @@
           "votes": 5230
         }
       },
-      "attempts": 0,
+      "attempts": 1,
       "createdAt": "2026-11-17T09:59:43.256Z",
-      "updatedAt": "2026-11-17T10:24:44.063Z",
-      "nextAttemptAt": null,
-      "lastError": null,
+      "updatedAt": "2026-11-17T13:25:14.775Z",
+      "nextAttemptAt": 1794922214775,
+      "lastError": "gemini: gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
       "lastProvider": "groq",
       "fileWritten": false,
-      "articlePath": null
+      "articlePath": null,
+      "resumeTo": "writing"
     }
   },
   "providerUsage": {
@@ -840,24 +841,24 @@
         "failures": 4
       },
       "gemini": {
-        "requests": 4,
+        "requests": 5,
         "tokens": 0,
         "successes": 0,
-        "failures": 2
+        "failures": 3
       }
     }
   },
   "providerCooldowns": {
     "gemini": {
-      "failures": 1,
-      "until": 1794911171121,
+      "failures": 2,
+      "until": 1794936314775,
       "lastError": "gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
     }
   },
   "cycle": {
-    "startedAt": 1794903740499,
-    "deadlineAt": 1794914540499,
-    "nextStartAt": 1794921740499,
+    "startedAt": 1794921914775,
+    "deadlineAt": 1794932714775,
+    "nextStartAt": 1794939914775,
     "articleKey": "game:58175"
   }
 }
