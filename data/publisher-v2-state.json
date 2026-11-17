@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T00:51:55.845Z",
+  "updatedAt": "2026-11-17T00:53:30.739Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -403,8 +403,8 @@
       },
       "attempts": 3,
       "createdAt": "2026-11-17T00:47:56.078Z",
-      "updatedAt": "2026-11-17T00:51:40.632Z",
-      "nextAttemptAt": 1794877180632,
+      "updatedAt": "2026-11-17T00:53:30.718Z",
+      "nextAttemptAt": 1794877110718,
       "lastError": "openrouter: رد النموذج JSON غير مكتمل أو ينقصه قوس إغلاق",
       "lastProvider": "openrouter",
       "resumeTo": "writing"
