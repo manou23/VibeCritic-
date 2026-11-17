@@ -30,10 +30,10 @@ creator: "Mobius Digital"
 sourceName: "Mobius Digital / Annapurna Interactive / Steam"
 sourceId: "manual-game-outer-wilds"
 sourceUrl: "https://store.steampowered.com/app/753640/Outer_Wilds/"
-poster: "https://www.mobygames.com/images/covers/l/599729-outer-wilds-playstation-4-front-cover.jpg"
+poster: "https://m.media-amazon.com/images/M/MV5BNDY3YzliYTUtMmEzMy00OWYwLThhYzUtYWI1ZGIwYTE0NTA3XkEyXkFqcGc%40._V1_.jpg"
 youtubeVideoId: "ZKJUMMCJvGM"
 youtubeVideoTitle: "Outer Wilds — Launch Trailer (Annapurna Interactive)"
-backdrop: "https://www.mobygames.com/images/covers/l/599729-outer-wilds-playstation-4-front-cover.jpg"
+backdrop: "https://m.media-amazon.com/images/M/MV5BNDY3YzliYTUtMmEzMy00OWYwLThhYzUtYWI1ZGIwYTE0NTA3XkEyXkFqcGc%40._V1_.jpg"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
 ---
