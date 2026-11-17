@@ -112,7 +112,7 @@ const reviewStructuredData = {
         <div class="article-video-frame">
           {youtubeVideoId ? <div data-youtube-facade data-video-id={youtubeVideoId} data-video-title={youtubeVideoTitle}>
             <button class="youtube-facade-button" type="button" aria-label="تشغيل المقطع">
-              <img src={optimizeImage(d.backdrop || d.poster || '', 'backdrop')} alt="" loading="lazy" decoding="async" width="480" height="360"/>
+              <img src={`https://i.ytimg.com/vi/${youtubeVideoId}/hqdefault.jpg`} data-fallback-src={optimizeImage(d.backdrop || d.poster || '', 'backdrop')} alt={`صورة معاينة فيديو ${d.title}`} loading="lazy" decoding="async" width="480" height="360"/>
               <span class="youtube-play-icon" aria-hidden="true">▶</span>
             </button>
           </div> : <video controls preload="none" playsinline poster={optimizeImage(d.backdrop || d.poster || '', 'backdrop')} aria-label={externalVideoTitle}>
@@ -120,6 +120,7 @@ const reviewStructuredData = {
             متصفحك لا يدعم تشغيل الفيديو.
           </video>}
         </div>
+        {youtubeVideoId && <p class="article-video-fallback"><a href={`https://www.youtube.com/watch?v=${youtubeVideoId}`} target="_blank" rel="noopener noreferrer">إذا لم يعمل المشغل، شاهد الفيديو مباشرة على YouTube ↗</a></p>}
         <p class="article-video-note">{youtubeVideoId ? 'لن يتم تحميل مشغل YouTube أو الاتصال به إلا عند النقر على التشغيل.' : 'يبدأ تحميل الفيديو عند تشغيله فقط.'}</p>
       </section>}
       <section class="article-summary">
@@ -216,6 +217,12 @@ voteButtons.forEach(button=>button.addEventListener('click',()=>{
  try{localStorage.setItem(currentVoteKey,value);}catch{}
  paintVote(value);
 }));
+document.querySelectorAll<HTMLImageElement>('.youtube-facade-button img[data-fallback-src]').forEach((img)=>{
+ img.addEventListener('error',()=>{
+  const fallback=img.dataset.fallbackSrc;
+  if(fallback&&img.src!==fallback)img.src=fallback;
+ },{once:true});
+});
 document.querySelectorAll<HTMLElement>('[data-youtube-facade]').forEach((facade)=>{
  const button=facade.querySelector<HTMLButtonElement>('.youtube-facade-button');
  button?.addEventListener('click',()=>{
