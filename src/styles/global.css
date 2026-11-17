@@ -1287,3 +1287,144 @@ img{max-width:100%}
  .article-meta{align-items:flex-start;gap:7px}
  .article-date-item{min-height:32px;padding:6px 9px;font-size:10px}
 }
+
+
+/* Review pages: cinematic artwork and a clearer rating rail */
+.article-backdrop{
+  overflow:hidden;
+  border:1px solid var(--vc-border);
+  border-radius:16px;
+  box-shadow:0 18px 46px #241b1118;
+  background:var(--vc-surface-muted);
+}
+.article-backdrop img{
+  width:100%;
+  height:clamp(250px,38vw,500px);
+  max-height:none;
+  object-fit:cover;
+  object-position:center 38%;
+}
+.article-backdrop figcaption{
+  position:relative;
+  padding:11px 16px;
+  background:linear-gradient(90deg,var(--vc-surface-muted),var(--vc-surface));
+  color:var(--vc-muted);
+  font-size:10px;
+  letter-spacing:.35px;
+}
+.article-aside{min-width:0}
+.article-poster{
+  border:1px solid var(--vc-border);
+  box-shadow:10px 10px 0 var(--vc-surface-muted);
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.article-score-wrap{
+  border-radius:14px;
+  box-shadow:0 10px 28px #241b110c;
+}
+.article-score-wrap>.glass{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:12px;
+  border:1px solid var(--vc-border);
+  border-radius:12px;
+  background:var(--vc-surface);
+}
+.article-score-wrap>.glass svg{flex:0 0 76px;width:76px;height:76px}
+.article-score-wrap>.glass>div{min-width:0}
+.article-score-wrap>.glass>div p{margin:2px 0;line-height:1.6}
+.score-breakdown{
+  display:grid;
+  gap:11px;
+  margin-top:18px;
+  padding-top:15px;
+  border-top:1px solid var(--vc-border);
+}
+.score-breakdown-row>div{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:6px;
+  color:var(--vc-muted);
+  font-size:11px;
+}
+.score-breakdown-row strong{color:var(--vc-text);font-variant-numeric:tabular-nums}
+.score-breakdown-track{
+  display:block;
+  height:6px;
+  overflow:hidden;
+  border-radius:99px;
+  background:var(--vc-border);
+}
+.score-breakdown-track i{
+  display:block;
+  width:var(--score-fill);
+  height:100%;
+  border-radius:inherit;
+  background:linear-gradient(90deg,var(--vc-accent-deep),var(--vc-accent));
+}
+.article-score-note{
+  overflow-wrap:anywhere;
+}
+.dark-mode .article-backdrop{
+  border-color:#303946;
+  box-shadow:0 18px 46px #0005;
+}
+.dark-mode .article-backdrop figcaption{
+  background:linear-gradient(90deg,#171c23,#1d242d);
+  color:#a5afbb;
+}
+.dark-mode .article-poster{
+  border-color:#303946;
+  box-shadow:10px 10px 0 #252c35;
+}
+.dark-mode .article-score-wrap>.glass{
+  background:#202832;
+  border-color:#303946;
+}
+.dark-mode .score-breakdown{border-color:#303946}
+.dark-mode .score-breakdown-track{background:#303946}
+@media(max-width:760px){
+  .article-aside{
+    display:grid;
+    grid-template-columns:minmax(104px,.38fr) minmax(0,1fr);
+    align-items:stretch;
+    gap:14px;
+    order:-1;
+  }
+  .article-poster{
+    width:100%;
+    height:100%;
+    min-height:190px;
+    max-height:260px;
+    aspect-ratio:auto;
+    object-fit:cover;
+    box-shadow:6px 6px 0 var(--vc-surface-muted);
+  }
+  .article-score-wrap{
+    min-width:0;
+    padding:12px;
+  }
+  .article-score-wrap>.glass{gap:9px;padding:8px}
+  .article-score-wrap>.glass svg{flex-basis:64px;width:64px;height:64px}
+  .score-breakdown{gap:8px;margin-top:12px;padding-top:11px}
+  .score-breakdown-row>div{font-size:10px}
+}
+@media(max-width:480px){
+  .article-backdrop{margin-inline:-2px;border-radius:12px}
+  .article-backdrop img{height:clamp(205px,58vw,290px);object-position:center}
+  .article-backdrop figcaption{padding:9px 12px}
+  .article-aside{grid-template-columns:100px minmax(0,1fr);gap:11px}
+  .article-poster{min-height:176px;max-height:220px}
+  .article-score-wrap{padding:9px}
+  .article-score-wrap>.glass{gap:7px;padding:6px}
+  .article-score-wrap>.glass svg{flex-basis:56px;width:56px;height:56px}
+  .article-score-wrap>.glass>div p:first-child{font-size:10px}
+  .article-score-wrap>.glass>div p:nth-child(2){font-size:15px}
+  .article-score-wrap>.glass>div p:last-child{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){
+  .article-poster{transition:none}
+}
