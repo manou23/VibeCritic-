@@ -1,0 +1,18 @@
+---
+import Base from '../../../layouts/Base.astro';
+import ReviewCard from '../../../components/ReviewCard.astro';
+import { getCollection } from 'astro:content';
+const all=await getCollection('reviews');
+const score=(r)=>{const d=r.data;const parts=[d.storyScore,d.visualsScore,d.soundScore,d.pacingScore];if(parts.some(v=>typeof v!=='number'||!Number.isFinite(v)||v<0||v>10))return null;return Math.round((d.storyScore*.30+d.visualsScore*.25+d.soundScore*.20+d.pacingScore*.25)*10)/10;};
+const picks=all.filter(r=>r.data.reviewMode==='review'&&score(r)!==null).sort((a,b)=>score(b)-score(a)).slice(0,12);
+---
+<Base title="ترشيحات VibeCritic" description="اختيارات تحريرية من مراجعات VibeCritic للأفلام والمسلسلات والألعاب.">
+<section class="wrap magazine-page-hero"><p class="catalog-eyebrow">EDITOR'S PICKS</p><h1>ترشيحات VibeCritic</h1><p>اختيارات مبنية على مراجعات مكتملة وتقييم تحريري موزون. نعرض الأعمال التي تستحق أن تكون على قائمتك التالية.</p></section>
+<section class="wrap catalog-section"><div class="catalog-heading"><div><p class="catalog-eyebrow">RECOMMENDED</p><h2>اختيارات تستحق وقتك</h2><p>الترتيب حسب التقييم التحريري، وليس حسب الشعبية وحدها.</p></div><span class="catalog-total">{picks.length} عملاً</span></div>
+{picks.length?<div class="editorial-grid">{picks.map(review=><ReviewCard review={review}/>)}</div>:<div class="catalog-empty">لا توجد حالياً مراجعات مكتملة كافية لإعداد ترشيحات موثوقة.</div>}
+</section>
+<style>
+.magazine-page-hero{padding:2.5rem 0 1rem}.magazine-page-hero h1{font-size:clamp(2rem,5vw,3.5rem);margin:.35rem 0}.magazine-page-hero>p:last-child{max-width:760px;color:var(--vc-muted);line-height:1.9}
+.editorial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:1.2rem}
+</style>
+</Base>
