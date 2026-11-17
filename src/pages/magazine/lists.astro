@@ -1,6 +1,6 @@
 ---
-import Base from '../../../layouts/Base.astro';
-import ReviewCard from '../../../components/ReviewCard.astro';
+import Base from '../../layouts/Base.astro';
+import ReviewCard from '../../components/ReviewCard.astro';
 import { getCollection } from 'astro:content';
 const reviews=(await getCollection('reviews')).sort((a,b)=>(b.data.publishedAt??b.data.date).valueOf()-(a.data.publishedAt??a.data.date).valueOf());
 const groups=[
