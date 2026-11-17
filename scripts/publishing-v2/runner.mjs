@@ -22,12 +22,12 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
   for(const p0 of providers)eligibility[p0.id]={...(eligibility[p0.id]||{}),cooldownUntil:state.providerCooldowns?.[p0.id]?.until||null};
   if(chooseFreeProvider(providers,eligibility,now)){job={...job,nextAttemptAt:now,updatedAt:new Date(now).toISOString()};state.jobs[job.key]=job;await save();}
  }
- // Continuous publishing: keep the existing three-hour article cycle, with no two-hour rest window.
- // The workflow ticks every 15 minutes; no long Sleep keeps a GitHub runner occupied.
- const THREE_HOURS=3*60*60*1000;
+ // Continuous publishing: allow a new article slot every 30 minutes, with no rest window.
+ // The workflow checks every 15 minutes; a single active draft is still completed before another starts.
+ const CYCLE_INTERVAL=30*60*1000;
  const previousCycle=state.cycle||{};
  if(!Number(previousCycle.nextStartAt)||now>=Number(previousCycle.nextStartAt)){
-  state.cycle={startedAt:now,deadlineAt:now+THREE_HOURS,nextStartAt:now+THREE_HOURS,articleKey:null};
+  state.cycle={startedAt:now,deadlineAt:now+CYCLE_INTERVAL,nextStartAt:now+CYCLE_INTERVAL,articleKey:null};
   await save();
  }
  // Never score or publish an unreleased movie/series/game as a completed review.
