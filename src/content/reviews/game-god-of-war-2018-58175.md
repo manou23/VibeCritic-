@@ -10,7 +10,7 @@ reviewMode: review
 date: 2026-11-17
 publishedAt: "2026-11-17T13:27:26.444Z"
 type: game
-score: 8.5
+score: 8.6
 storyScore: 9
 visualsScore: 9
 soundScore: 8
