@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import MagazineNav from '../../components/MagazineNav.astro';
 import ReviewCard from '../../components/ReviewCard.astro';
 import { getCollection } from 'astro:content';
 import { url } from '../../consts';
@@ -7,6 +8,7 @@ const reviews=(await getCollection('reviews')).sort((a,b)=>(b.data.publishedAt??
 const latest=reviews.slice(0,6);
 ---
 <Base title="المجلة" description="مساحة VibeCritic للترشيحات والقوائم والقراءات التحريرية في عالم الأفلام والمسلسلات والألعاب.">
+<MagazineNav active="home" />
 <section class="wrap magazine-hero">
  <p class="catalog-eyebrow">VIBECRITIC / MAGAZINE</p>
  <h1>المجلة</h1>
