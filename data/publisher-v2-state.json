@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T00:49:26.758Z",
+  "updatedAt": "2026-11-17T00:49:50.633Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -342,7 +342,7 @@
         "sourceUrl": "https://www.themoviedb.org/movie/1170608",
         "popularity": 0
       },
-      "status": "writing",
+      "status": "waiting",
       "stage": 1,
       "parts": [
         {
@@ -401,12 +401,13 @@
           "votes": 0
         }
       },
-      "attempts": 0,
+      "attempts": 1,
       "createdAt": "2026-11-17T00:47:56.078Z",
-      "updatedAt": "2026-11-17T00:49:21.047Z",
-      "nextAttemptAt": null,
-      "lastError": null,
-      "lastProvider": "openrouter"
+      "updatedAt": "2026-11-17T00:49:48.590Z",
+      "nextAttemptAt": 1794876888590,
+      "lastError": "openrouter: Section word count rejected: 131",
+      "lastProvider": "openrouter",
+      "resumeTo": "writing"
     }
   },
   "providerUsage": {
@@ -444,10 +445,10 @@
         "failures": 1
       },
       "openrouter": {
-        "requests": 1,
-        "tokens": 1485,
+        "requests": 2,
+        "tokens": 3302,
         "successes": 1,
-        "failures": 0
+        "failures": 1
       }
     }
   },
