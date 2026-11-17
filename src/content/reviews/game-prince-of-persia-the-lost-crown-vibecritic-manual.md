@@ -14,7 +14,7 @@ visualsScore: 8.4
 soundScore: 7.8
 pacingScore: 8.7
 reviewMode: review
-platforms: ["PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series X|S", "Nintendo Switch", "PC"]
+platforms: ["PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series X|S", "Nintendo Switch", "PC", "macOS", "iOS", "Android"]
 pros:
   - "استجابة دقيقة تجعل القفز والصد والمراوغة واضحين"
   - "تصميم مترابط للمناطق يربط الاستكشاف بالتقدم"

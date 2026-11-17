@@ -14,7 +14,7 @@ visualsScore: 8.3
 soundScore: 8.8
 pacingScore: 8.2
 reviewMode: review
-platforms: ["PC", "Xbox One", "PlayStation 4", "Nintendo Switch"]
+platforms: ["PC", "Xbox One", "Xbox Series X|S", "PlayStation 4", "PlayStation 5", "Nintendo Switch"]
 pros:
   - "التقدم قائم على المعرفة لا على جمع مستويات أو معدات"
   - "كل كوكب يقدم فكرة بيئية مختلفة ومترابطة"
@@ -29,7 +29,7 @@ genres: ["مغامرة", "استكشاف", "ألغاز"]
 creator: "Mobius Digital"
 sourceName: "Mobius Digital / Annapurna Interactive / Steam"
 sourceId: "manual-game-outer-wilds"
-sourceUrl: "https://store.steampowered.com/app/753640/Outer_Wilds/"
+sourceUrl: "https://www.mobiusdigitalgames.com/press.html"
 poster: "https://m.media-amazon.com/images/M/MV5BNDY3YzliYTUtMmEzMy00OWYwLThhYzUtYWI1ZGIwYTE0NTA3XkEyXkFqcGc%40._V1_.jpg"
 youtubeVideoId: "ZKJUMMCJvGM"
 youtubeVideoTitle: "Outer Wilds — Launch Trailer (Annapurna Interactive)"
@@ -47,8 +47,9 @@ editorialWorkflow: "manual-assisted"
 لكل كوكب شخصية فيزيائية ومزاج بصري مختلف، وتعمل الموسيقى كخيط يربط المستكشفين ببعضهم وبالمكان. استخدام الصمت والضجيج الطبيعي أكثر تأثيراً من الاعتماد على موسيقى مستمرة؛ فالصوت هنا يساعد على قراءة الخطر والمسافة والعزلة. مع ذلك، لا تصل التفاصيل الرسومية دائماً إلى مستوى الألعاب ذات الميزانيات الأكبر، وقد تبدو بعض البيئات بسيطة تقنياً. لكن هذا التبسيط يخدم الوضوح ويمنح كل كوكب هوية سهلة التذكر.
 
 ## مصادر التحقق
-- [Mobius Digital — Outer Wilds](https://www.mobiusdigitalgames.com/outer-wilds.html): معلومات المطور واللعبة.
+- [Mobius Digital — Outer Wilds](https://www.mobiusdigitalgames.com/outer-wilds.html): صفحة اللعبة الرسمية.
+- [Mobius Digital — Press Kit](https://www.mobiusdigitalgames.com/press.html): خط زمني رسمي لإصدارات اللعبة على PC وPlayStation وXbox وSwitch.
 - [Annapurna Interactive](https://annapurnainteractive.com/): الناشر وصفحة اللعبة.
-- [Steam — Outer Wilds](https://store.steampowered.com/app/753640/Outer_Wilds/): تاريخ الإصدار والمنصة والوصف الرسمي.
+- [Steam — Outer Wilds](https://store.steampowered.com/app/753640/Outer_Wilds/): بيانات نسخة Steam؛ تاريخها هناك لاحق للإصدار الأول.
 
 > مراجعة تحريرية مستقلة، ولا تدّعي أن جميع الأسرار أو المسارات الاختيارية قد اختُبرت.

@@ -14,7 +14,7 @@ visualsScore: 9.0
 soundScore: 9.0
 pacingScore: 8.0
 reviewMode: review
-platforms: ["PC", "Xbox One", "Nintendo Switch"]
+platforms: ["PC", "Xbox One", "Xbox Series X|S", "Nintendo Switch"]
 pros:
   - "عالم مرسوم بتفاصيل غنية مع وضوح جيد لمسارات الحركة"
   - "تنوع القدرات يجعل التنقل ممتعاً ومتجدداً"
@@ -49,6 +49,7 @@ editorialWorkflow: "manual-assisted"
 ## مصادر التحقق
 - [Xbox — Ori and the Will of the Wisps](https://www.xbox.com/games/store/ori-and-the-will-of-the-wisps/9N8CD0XZKLP4): صفحة اللعبة الرسمية.
 - [Moon Studios](https://www.orithegame.com/): معلومات السلسلة والمطور.
-- [Steam](https://store.steampowered.com/app/1057090/Ori_and_the_Will_of_the_Wisps/): بيانات الإصدار والمنصة.
+- [Steam](https://store.steampowered.com/app/1057090/Ori_and_the_Will_of_the_Wisps/): بيانات إصدار نسخة Steam.
+- [Nintendo — Ori and the Will of the Wisps](https://www.nintendo.com/us/store/products/ori-and-the-will-of-the-wisps-switch/): تأكيد إصدار Nintendo Switch.
 
 > مراجعة تحريرية مستقلة؛ لم تُنسب إليها اختبارات أداء على كل الأجهزة.
