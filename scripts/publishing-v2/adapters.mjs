@@ -76,7 +76,18 @@ async function discover(){
 }
 async function wiki(title){
  const u=new URL('https://en.wikipedia.org/w/api.php');for(const [k,v] of Object.entries({action:'query',list:'search',srsearch:title,format:'json',srlimit:'5'}))u.searchParams.set(k,v);
- const hits=arr((await get(u.toString())).query?.search);
+ let search;
+ try{search=await get(u.toString());}
+ catch(error){
+  // Wikipedia's search API can temporarily rate-limit automated requests.
+  // Retry the exact title through its public REST summary endpoint before deferring research.
+  if(!/Source HTTP (?:429|5\\d\\d)/.test(String(error?.message||'')))throw error;
+  const fallback='https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(String(title).trim().replace(/ /g,'_'));
+  const summary=await get(fallback),extract=clean(summary.extract||'');
+  if(extract.length<180)throw new Error('Independent source has insufficient detail.');
+  return {name:'Wikipedia',url:summary.content_urls?.desktop?.page||'https://en.wikipedia.org/wiki/'+encodeURIComponent(String(title).trim().replace(/ /g,'_')),extract:extract.slice(0,4500)};
+ }
+ const hits=arr(search.query?.search);
  const hit=hits.find(x=>norm(x.title)===norm(title))||hits.find(x=>norm(x.title).includes(norm(title))||norm(title).includes(norm(x.title)));
  if(!hit)throw new Error('No sufficiently matching independent encyclopedia page: '+title);
  const p=new URL('https://en.wikipedia.org/w/api.php');for(const [k,v] of Object.entries({action:'query',prop:'extracts',exintro:'1',explaintext:'1',titles:hit.title,format:'json'}))p.searchParams.set(k,v);
