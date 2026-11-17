@@ -49,6 +49,8 @@ const next = document.querySelector<HTMLButtonElement>('#catalog-next');
 const dialog = document.querySelector<HTMLDialogElement>('#catalog-detail');
 const detailContent = document.querySelector<HTMLElement>('#catalog-detail-content');
 let currentPage = 1, totalPages = 1, requestController: AbortController | undefined;
+let detailController: AbortController | undefined;
+let detailRequestId = 0;
 
 function posterUrl(path: string | null) { return path && path.startsWith('/') && !path.includes('..') ? 'https://image.tmdb.org/t/p/w500' + path : ''; }
 function addText(parent: HTMLElement, tag: string, className: string, value: string) {
@@ -90,25 +92,51 @@ async function loadCatalog(page = 1) {
   }
 }
 async function showDetails(id: number) {
-  detailContent!.textContent = 'جارٍ تحميل التفاصيل...'; dialog!.showModal();
+  detailController?.abort();
+  const controller = new AbortController();
+  detailController = controller;
+  const requestId = ++detailRequestId;
+  detailContent!.textContent = 'جارٍ تحميل التفاصيل...';
+  detailContent!.setAttribute('aria-busy', 'true');
+  if (!dialog!.open) dialog!.showModal();
   try {
-    const response = await fetch('/api/catalog?id=' + encodeURIComponent(String(id)));
-    const data = await response.json(); if (!response.ok) throw new Error(data.error || 'تعذر تحميل التفاصيل.');
+    const response = await fetch('/api/catalog?id=' + encodeURIComponent(String(id)), {
+      signal: controller.signal,
+      headers: { accept: 'application/json' }
+    });
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || 'تعذر تحميل التفاصيل.');
+    if (requestId !== detailRequestId || controller.signal.aborted || !dialog!.open) return;
     const item = data.title, body = document.createElement('div'); body.className = 'catalog-detail-body';
-    const src = posterUrl(item.poster_path); if (src) { const img = document.createElement('img'); img.src = src; img.alt = item.title_ar || item.title; body.append(img); }
+    const src = posterUrl(item.poster_path); if (src) { const img = document.createElement('img'); img.src = src; img.alt = item.title_ar || item.title; img.loading = 'lazy'; img.decoding = 'async'; body.append(img); }
     const copy = document.createElement('div'); addText(copy, 'h2', '', item.title_ar || item.title);
     addText(copy, 'div', 'catalog-item-meta', [item.type === 'movie' ? 'فيلم' : 'مسلسل', item.year || '', item.genres || ''].filter(Boolean).join(' · '));
     addText(copy, 'p', '', item.overview_ar || 'لا يتوفر ملخص عربي لهذا العمل حالياً.');
     if (item.rating) addText(copy, 'p', '', 'تقييم TMDB: ' + Number(item.rating).toFixed(1) + '/10 (' + Number(item.votes || 0).toLocaleString('ar-DZ') + ' صوت)');
     if (data.credits?.length) addText(copy, 'div', 'catalog-credit-list', 'طاقم العمل: ' + data.credits.slice(0, 12).map((person: any) => person.kind === 'cast' ? person.name + (person.character ? ' بدور ' + person.character : '') : person.name + ' (' + (person.job || 'طاقم') + ')').join('، '));
     body.append(copy); detailContent!.replaceChildren(body);
-  } catch (error: any) { detailContent!.textContent = error.message || 'تعذر تحميل التفاصيل.'; }
+  } catch (error: any) {
+    if (error.name === 'AbortError' || requestId !== detailRequestId) return;
+    detailContent!.textContent = error.message || 'تعذر تحميل التفاصيل.';
+  } finally {
+    if (requestId === detailRequestId) {
+      detailContent!.removeAttribute('aria-busy');
+      if (detailController === controller) detailController = undefined;
+    }
+  }
 }
 form?.addEventListener('submit', event => { event.preventDefault(); loadCatalog(1); });
 form?.addEventListener('reset', () => window.setTimeout(() => loadCatalog(1), 0));
 prev?.addEventListener('click', () => loadCatalog(currentPage - 1));
 next?.addEventListener('click', () => loadCatalog(currentPage + 1));
+const closeDetails = () => {
+  detailRequestId++;
+  detailController?.abort();
+  detailController = undefined;
+  detailContent?.removeAttribute('aria-busy');
+};
 document.querySelector('#catalog-detail-close')?.addEventListener('click', () => dialog?.close());
+dialog?.addEventListener('close', closeDetails);
 dialog?.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
 fetch('/api/catalog?mode=genres').then(response => response.json()).then(data => {
   for (const genre of data.genres || []) { const option = document.createElement('option'); option.value = String(genre.id); option.textContent = genre.name_ar || genre.name_en || 'تصنيف'; genreSelect?.append(option); }
