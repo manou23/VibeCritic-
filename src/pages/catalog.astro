@@ -496,13 +496,14 @@ async function loadCatalog(page = 1) {
   if (params.get('type') === 'game') {
     const query = (params.get('q') || '').trim().toLocaleLowerCase();
     const year = params.get('year') || '';
-    const genre = params.get('genre') || '';
+    const genreOption = genreSelect?.selectedOptions?.[0];
+    const genre = genreOption?.textContent?.trim() || '';
     const sort = params.get('sort') || 'newest';
     let items = gameCatalogItems.filter((item: any) => {
       const searchable = [item.title, ...(item.genres || []), ...(item.tags || [])].join(' ').toLocaleLowerCase();
       return (!query || searchable.includes(query)) &&
         (!year || String(item.year) === year) &&
-        (!genre || [...(item.genres || []), ...(item.tags || [])].some((value: string) => value.toLocaleLowerCase() === genre.toLocaleLowerCase()));
+        (!params.get('genre') || [...(item.genres || []), ...(item.tags || [])].some((value: string) => value.toLocaleLowerCase() === genre.toLocaleLowerCase()));
     });
     items = [...items].sort((a: any, b: any) => {
       if (sort === 'title') return a.title.localeCompare(b.title, 'ar');
