@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../consts';
+---
+<Base title="الصفحة غير موجودة" description="تعذر العثور على الصفحة التي تبحث عنها في VibeCritic.">
+  <section class="not-found" aria-labelledby="not-found-title">
+    <p class="not-found-code">ERROR / 404</p>
+    <h1 id="not-found-title">يبدو أننا خرجنا عن المسار.</h1>
+    <p class="not-found-copy">الصفحة التي تبحث عنها غير متاحة؛ ربما تغير رابطها أو لم تعد موجودة. يمكنك العودة إلى الصفحة الرئيسية أو استكشاف مكتبة VibeCritic.</p>
+    <div class="not-found-actions">
+      <a class="primary-action" href={url('')}>العودة إلى الرئيسية</a>
+      <a class="secondary-action" href={url('catalog/')}>استكشاف الكتالوج</a>
+    </div>
+    <p class="not-found-hint">إذا وصلت إلى هنا من رابط داخل الموقع، نرجو <a href={url('contact/')}>إبلاغنا</a> حتى نتمكن من إصلاحه.</p>
+  </section>
+</Base>
+<style>
+.not-found{width:min(760px,calc(100% - 40px));min-height:62vh;margin:0 auto;padding:clamp(76px,12vw,150px) 0;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;color:var(--vc-text)}
+.not-found-code{margin:0 0 18px;color:var(--vc-accent);font:850 12px/1.5 ui-monospace,monospace;letter-spacing:.18em}
+.not-found h1{max-width:680px;margin:0;font-size:clamp(38px,8vw,72px);line-height:1.16;letter-spacing:-.045em}
+.not-found-copy{max-width:610px;margin:20px 0 0;color:var(--vc-muted);font-size:15px;line-height:2.1}
+.not-found-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.not-found-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:12px;font-size:13px;font-weight:800;text-decoration:none}
+.primary-action{background:var(--vc-accent);color:#fff}
+.secondary-action{border:1px solid var(--vc-border);background:var(--vc-surface);color:var(--vc-text)}
+.not-found-hint{margin:30px 0 0;color:var(--vc-muted);font-size:12px;line-height:2}
+.not-found-hint a{color:var(--vc-accent-deep);font-weight:800;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:520px){.not-found{min-height:58vh}.not-found-actions{width:100%;flex-direction:column}.not-found-actions a{width:100%}}
+</style>
