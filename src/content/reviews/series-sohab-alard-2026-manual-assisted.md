@@ -10,8 +10,8 @@ type: series
 date: 2026-11-17
 releaseDate: "2026-02-19"
 poster: "https://assets.cairo360.com/app/uploads/2026/02/28/sohab-l-ard.webp"
-externalVideoUrl: "https://www.watchit.com/watch/ar/series/%D8%B5%D8%AD%D8%A7%D8%A8-%D8%A7%D9%84%D8%A3%D8%B1%D8%B6/series-1205"
-externalVideoTitle: "صحاب الأرض — الإعلان والحلقات على WATCH IT"
+externalVideoUrl: "https://elcinema.com/work/2097153/video/1028522"
+externalVideoTitle: "الإعلان الرسمي لمسلسل صحاب الأرض"
 reviewMode: limited
 pros:
   - "اختيار منظور إنساني عبر طبيبة مصرية ورجل فلسطيني يمنح السرد نقطة دخول شخصية"
