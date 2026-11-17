@@ -5,12 +5,12 @@ import Base from '../layouts/Base.astro';
 <section class="info-page">
  <header class="info-hero"><p class="info-kicker">CONTACT / VIBECRITIC</p><h1>يسعدنا أن نسمع منك.</h1><p>نرحب بملاحظات القراء والتصحيحات والاستفسارات المتعلقة بالمراجعات أو مصادر البيانات أو حقوق المحتوى.</p></header>
  <div class="contact-grid">
-  <article><span>01 / FEEDBACK</span><h2>ملاحظات واقتراحات</h2><p>شاركنا اقتراحاً لتحسين الموقع أو أخبرنا عن مشكلة في صفحة أو ميزة.</p><a href="https://github.com/manou23/VibeCritic-/issues/new" target="_blank" rel="noopener noreferrer">إرسال ملاحظة عبر GitHub ↗</a></article>
-  <article><span>02 / CORRECTIONS</span><h2>تصحيح معلومة</h2><p>إذا وجدت خطأ في مراجعة أو معلومة منسوبة إلى مصدر، أرسل رابط الصفحة والتفصيل الذي يحتاج إلى مراجعة، مع مرجع موثوق إن أمكن.</p><a href="https://github.com/manou23/VibeCritic-/issues/new" target="_blank" rel="noopener noreferrer">إرسال طلب تصحيح ↗</a></article>
-  <article><span>03 / RIGHTS</span><h2>حقوق المحتوى</h2><p>للاستفسارات المتعلقة بالصور أو الاقتباسات أو حقوق الملكية، يرجى تحديد المادة المعنية وإرفاق ما يثبت صفتك أو حقك في طلب المراجعة. لا تنشر بيانات شخصية أو وثائق حساسة في بلاغ عام.</p><a href="https://github.com/manou23/VibeCritic-/issues/new" target="_blank" rel="noopener noreferrer">التواصل بشأن الحقوق ↗</a></article>
-  <article><span>04 / SECURITY</span><h2>بلاغ أمني خاص</h2><p>لا تنشر تفاصيل ثغرة قابلة للاستغلال أو مفاتيح وصول في Issue عام. استخدم قناة البلاغ الأمني الخاص في GitHub إذا كانت مفعلة للمستودع.</p><a href="https://github.com/manou23/VibeCritic-/security/advisories/new" target="_blank" rel="noopener noreferrer">إرسال بلاغ أمني خاص ↗</a></article>
+  <article><span>01 / FEEDBACK</span><h2>ملاحظات واقتراحات</h2><p>شاركنا اقتراحاً لتحسين الموقع أو أخبرنا عن مشكلة في صفحة أو ميزة.</p><a href="/contact/form/">إرسال ملاحظة واقتراح ←</a></article>
+  <article><span>02 / CORRECTIONS</span><h2>تصحيح معلومة</h2><p>إذا وجدت خطأ في مراجعة أو معلومة منسوبة إلى مصدر، أرسل رابط الصفحة والتفصيل الذي يحتاج إلى مراجعة، مع مرجع موثوق إن أمكن.</p><a href="/contact/form/">إرسال طلب تصحيح ←</a></article>
+  <article><span>03 / RIGHTS</span><h2>حقوق المحتوى</h2><p>للاستفسارات المتعلقة بالصور أو الاقتباسات أو حقوق الملكية، يرجى تحديد المادة المعنية وشرح سبب طلب المراجعة بوضوح.</p><a href="/contact/form/">التواصل بشأن الحقوق ←</a></article>
+  <article><span>04 / SECURITY</span><h2>بلاغ أمني خاص</h2><p>يمكنك مراسلتنا عبر النموذج بخصوص الملاحظات الأمنية العامة. لا ترسل تفاصيل ثغرات قابلة للاستغلال أو كلمات مرور أو مفاتيح وصول؛ فهذا النموذج ليس قناة مشفرة للبلاغات الأمنية الحساسة.</p><a href="/contact/form/">التواصل بشأن مسألة أمنية ←</a></article>
  </div>
- <p class="contact-note">ملاحظة: البلاغات عبر GitHub Issues قد تكون عامة ومرئية للآخرين. لا ترسل كلمات مرور أو مفاتيح API أو بيانات شخصية حساسة عبرها. لا نقدم في هذه الصفحة عنوان بريد إلكتروني لأن عنواناً عاماً مخصصاً للتواصل لم يتم تأكيده.</p>
+ <p class="contact-note">تُرسل الرسائل عبر نموذج التواصل إلى بريد VibeCritic المخصص. لا ترفق كلمات مرور أو مفاتيح API أو بيانات شخصية أو مالية حساسة. أما البلاغات الأمنية الحساسة، فلا ترسل تفاصيل الاستغلال عبر النموذج العام.</p>
 </section>
 <style>
 .info-page{width:min(1000px,calc(100% - 40px));margin:0 auto;padding:clamp(48px,8vw,100px) 0;color:var(--vc-text)}
