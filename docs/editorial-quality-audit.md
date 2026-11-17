@@ -12,7 +12,7 @@
 - تمت معايرة درجات ستة مقالات في مراجعة الاتساق التحريري: Arrival (8.9→8.6)، F1: The Movie (8.7→8.4)، Frankenstein (8.6→8.3)، Dune: Part Two (8.9→8.6)، The Prestige (8.7→8.5)، وA Separation (8.3→8.2 بعد تطبيق الوزن الحسابي الثابت).
 - إصلاحات حسابية إضافية بعد معالجة دقة التقريب: God of War (2018) من 8.5 إلى 8.6، وThe Odyssey من 8.5 إلى 8.6، وDept. Q من 8.2 إلى 8.3. السبب أن المتوسطات الموزونة تقع عند أنصاف الأعشار، ويجب تقريبها بصورة ثابتة لا تتأثر بتمثيل الأعداد العشرية.
 - المشكلة المؤكدة: تكرار مجموعتين من العناوين والفقرات التحليلية، مع تكرار الحكم والدرجة داخل متن المقال رغم أن قالب الصفحة يعرض الخلاصة والدرجة مرة أخرى.
-- الإجراء: الإبقاء على التحليل الأوسع والأكثر تخصيصاً، حذف المقدمات التحليلية المكررة والحكم/الدرجة المكررين من المتن، ونقل مصادر التحقق إلى نهاية التحليل. لم تتغير درجات المقالات.
+- الإجراء: الإبقاء على التحليل الأوسع والأكثر تخصيصاً، حذف المقدمات التحليلية المكررة والحكم/الدرجة المكررين من المتن، ونقل مصادر التحقق إلى نهاية التحليل. لم تتغير درجات مقالات الدفعة البنيوية الخمسة عشر؛ أما معايرات الدرجات اللاحقة فسُجلت بشكل منفصل أدناه.
 - تصحيح معلومات مثبت: توضيح أن إصدار Nintendo Switch من Control هو Cloud Version وليس إصداراً محلياً.
 - تدقيق منصات الدفعة: إضافة Xbox Series X|S إلى Ori، وإضافة PS5 وXbox Series X|S إلى Outer Wilds، والإبقاء على منصات إطلاق Prince of Persia: The Lost Crown وعدم إدراج Android أو إصدار Apple Arcade المعلن للمستقبل؛ إذ أعلنت Ubisoft أن نسخة iPhone/iPad/Mac/Apple Vision Pro ستصدر في 3 ديسمبر 2026، بعد تاريخ هذا التدقيق.
 - إضافة روابط رسمية مباشرة لتوضيح إصدار Control السحابي وإصدار Ori على Switch وخط زمني منصات Outer Wilds لدى Mobius Digital، مع توضيح أن نسخة Apple Arcade من Prince of Persia معلنة للمستقبل وليست متاحة بعد.
@@ -95,15 +95,15 @@
 | `game-the-witcher-3-wild-hunt-manual.md` | غير مدقق | — |
 | `game-tomb-raider-catalyst-381234.md` | غير مدقق | — |
 | `game-world-of-warcraft-123.md` | غير مدقق | — |
-| `movie-a-separation-vibecritic-manual.md` | تحسين بنيوي؛ تدقيق المصادر والوسائط متبقٍ | 2026-11-17 |
+| `movie-a-separation-vibecritic-manual.md` | تحسين بنيوي ومعايرة درجة؛ تدقيق المصادر والوسائط متبقٍ | 2026-11-17 |
 | `movie-all-thats-left-of-you-2025-manual-assisted.md` | غير مدقق | — |
 | `movie-amelie-vibecritic-manual.md` | تحسين بنيوي؛ تدقيق المصادر والوسائط متبقٍ | 2026-11-17 |
-| `movie-arrival-329865.md` | غير مدقق | — |
+| `movie-arrival-329865.md` | معايرة درجة؛ تدقيق المصادر والوسائط متبقٍ | 2026-11-17 |
 | `movie-blade-runner-2049-manual.md` | غير مدقق | — |
 | `movie-city-of-god-vibecritic-manual.md` | تحسين بنيوي؛ تدقيق المصادر والوسائط متبقٍ | 2026-11-17 |
-| `movie-dune-part-two-693134.md` | غير مدقق | — |
-| `movie-f1-the-movie-2025-manual-assisted.md` | غير مدقق | — |
-| `movie-frankenstein-2025-manual-assisted.md` | غير مدقق | — |
+| `movie-dune-part-two-693134.md` | معايرة درجة؛ تدقيق المصادر والوسائط متبقٍ | 2026-11-17 |
+| `movie-f1-the-movie-2025-manual-assisted.md` | معايرة درجة؛ تدقيق المصادر والوسائط متبقٍ | 2026-11-17 |
+| `movie-frankenstein-2025-manual-assisted.md` | معايرة درجة؛ تدقيق المصادر والوسائط متبقٍ | 2026-11-17 |
 | `movie-hunger-games-sunrise-on-the-reaping-2026.md` | غير مدقق | — |
 | `movie-inception-manual.md` | غير مدقق | — |
 | `movie-interstellar-157336.md` | غير مدقق | — |
@@ -121,7 +121,7 @@
 | `movie-the-godfather-238.md` | غير مدقق | — |
 | `movie-the-hunger-games-sunrise-on-the-reaping-1300968.md` | غير مدقق | — |
 | `movie-the-lunchbox-vibecritic-manual.md` | تحسين بنيوي؛ تدقيق المصادر والوسائط متبقٍ | 2026-11-17 |
-| `movie-the-prestige-1124.md` | غير مدقق | — |
+| `movie-the-prestige-1124.md` | معايرة درجة؛ تدقيق المصادر والوسائط متبقٍ | 2026-11-17 |
 | `movie-the-shawshank-redemption-278.md` | غير مدقق | — |
 | `movie-the-truman-show-manual.md` | غير مدقق | — |
 | `movie-weapons-2025-manual-assisted.md` | غير مدقق | — |
