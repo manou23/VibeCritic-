@@ -75,6 +75,32 @@ import Base from '../layouts/Base.astro';
  .catalog-detail-person{min-height:56px}
  .catalog-detail-hero-meta span{font-size:11px;padding:6px 9px}
 }
+
+/* Larger artwork and a vivid frame that gives the text a clear visual focus */
+.catalog-detail-hero{min-height:390px}
+.catalog-detail-main{grid-template-columns:minmax(270px,330px) minmax(0,1fr);gap:30px;padding-inline:36px}
+.catalog-detail-poster-wrap{margin-top:-48px}
+.catalog-detail-poster{border:3px solid var(--vc-accent);border-radius:18px;box-shadow:0 0 0 5px color-mix(in srgb,var(--vc-accent) 20%,transparent),0 22px 55px #0009}
+.catalog-detail-info{position:relative;margin-top:18px;padding:24px;border:2px solid var(--vc-accent);border-radius:18px;background:linear-gradient(145deg,color-mix(in srgb,var(--vc-accent) 12%,var(--vc-surface)),var(--vc-surface) 58%);box-shadow:0 12px 34px color-mix(in srgb,var(--vc-accent) 15%,transparent),inset 0 0 24px color-mix(in srgb,var(--vc-accent) 5%,transparent)}
+.catalog-detail-info::before{content:"";position:absolute;top:-2px;right:22px;width:74px;height:4px;border-radius:0 0 6px 6px;background:var(--vc-accent);box-shadow:0 0 16px color-mix(in srgb,var(--vc-accent) 65%,transparent)}
+.catalog-detail-fact{border-color:color-mix(in srgb,var(--vc-accent) 30%,var(--vc-border));background:color-mix(in srgb,var(--vc-accent) 6%,var(--vc-surface))}
+.catalog-detail-section{border-top-color:color-mix(in srgb,var(--vc-accent) 30%,var(--vc-border))}
+.catalog-detail-section-title::before{width:5px;height:23px;box-shadow:0 0 12px color-mix(in srgb,var(--vc-accent) 55%,transparent)}
+.catalog-detail-overview{color:var(--vc-text);font-size:14px;line-height:2.2}
+.catalog-detail-person{border-color:color-mix(in srgb,var(--vc-accent) 28%,var(--vc-border));background:color-mix(in srgb,var(--vc-accent) 6%,var(--vc-surface))}
+@media(max-width:700px){
+ .catalog-detail-hero{min-height:310px}
+ .catalog-detail-main{grid-template-columns:180px minmax(0,1fr);gap:16px;padding-inline:16px}
+ .catalog-detail-poster-wrap{margin-top:-30px}
+ .catalog-detail-info{margin-top:12px;padding:16px;border-radius:15px}
+ .catalog-detail-overview{font-size:13px;line-height:2.05}
+}
+@media(max-width:420px){
+ .catalog-detail-main{grid-template-columns:1fr;justify-items:center}
+ .catalog-detail-poster-wrap{width:min( min(72vw,250px),100%);margin-top:-28px}
+ .catalog-detail-poster{width:100%}
+ .catalog-detail-info{width:100%;margin-top:18px;padding:18px}
+}
 </style>
 
 <script>
