@@ -1,0 +1,37 @@
+---
+import Base from '../../layouts/Base.astro';
+import { url } from '../../consts';
+---
+<Base title="كيف نقيّم الأعمال؟" description="تعرف إلى معايير التقييم التحريري في VibeCritic وكيف نحتسب الدرجة النهائية للألعاب والأفلام والمسلسلات.">
+<section class="wrap magazine-page-hero">
+ <p class="catalog-eyebrow">OUR RATING SYSTEM</p>
+ <h1>كيف نقيّم الأعمال؟</h1>
+ <p>الدرجة في VibeCritic ليست رقماً عشوائياً ولا تصويتاً جماهيرياً. إنها خلاصة قراءة تحريرية نحاول أن نشرح أسبابها بوضوح، مع إظهار نقاط القوة والتحفظات.</p>
+</section>
+<section class="wrap scoring-section">
+ <div class="scoring-intro"><div><p class="catalog-eyebrow">THE FORMULA</p><h2>أربعة محاور، ودرجة واحدة</h2><p>عندما تتوفر درجات المحاور الأربعة في مراجعة مكتملة، نحسب الدرجة التحريرية الموزونة وفق الأوزان التالية:</p></div><a href={url('magazine/top-rated/')}>شاهد الأعلى تقييماً ↗</a></div>
+ <div class="weight-grid">
+  <article><span>30%</span><h3>القصة والسرد</h3><p>تماسك الفكرة، بناء الأحداث أو التجربة، الشخصيات، والقدرة على إبقاء العمل مقنعاً ومتماسكاً.</p></article>
+  <article><span>25%</span><h3>الصورة والتصميم</h3><p>الإخراج البصري، التكوين، الهوية الفنية، جودة العرض أو التصميم، ومدى خدمتها لطبيعة العمل.</p></article>
+  <article><span>20%</span><h3>الصوت</h3><p>الموسيقى والمؤثرات والأداء الصوتي أو الحوار، ومدى انسجامها مع الأجواء والتجربة.</p></article>
+  <article><span>25%</span><h3>الإيقاع والتماسك</h3><p>توازن التقدم، توزيع اللحظات، تجنب الترهل أو الاستعجال، واستمرار اهتمام المتلقي أو اللاعب.</p></article>
+ </div>
+ <div class="formula"><span>طريقة الاحتساب</span><strong>القصة × 0.30 + الصورة × 0.25 + الصوت × 0.20 + الإيقاع × 0.25</strong><p>كل محور من 10، والنتيجة النهائية من 10 بعد التقريب إلى منزلة عشرية واحدة.</p></div>
+</section>
+<section class="wrap scoring-section">
+ <p class="catalog-eyebrow">READ THE CONTEXT</p><h2>ما الذي تعنيه حالة المراجعة؟</h2>
+ <div class="status-grid">
+  <article><h3>مراجعة مكتملة</h3><p>قراءة للعمل الصادر، مع تحليل وتقييم نهائي عندما تتوفر الأدلة والبيانات الكافية.</p></article>
+  <article><h3>قراءة استباقية</h3><p>مادة قبل الإصدار، هدفها تقديم المعلومات والتوقعات المتاحة. لا تُعامل كتقييم نهائي.</p></article>
+  <article><h3>قراءة محدودة الأدلة</h3><p>مادة نوضح فيها حدود المعلومات المتاحة. لا تدخل في ترتيب الأعلى تقييماً.</p></article>
+ </div>
+ <p class="scoring-note">قد تختلف التفاصيل التي نناقشها بحسب نوع العمل؛ فما نقيمه في لعبة ليس مطابقاً تماماً لما نناقشه في فيلم أو مسلسل. لذلك اقرأ الدرجة إلى جانب التحليل ونقاط القوة والتحفظات، ولا تعتمد على الرقم وحده.</p>
+ <div class="scoring-links"><a href={url('magazine/recommendations/')}>ترشيحاتنا ↗</a><a href={url('magazine/latest/')}>أحدث المراجعات ↗</a><a href={url('about/')}>عن VibeCritic ↗</a></div>
+</section>
+<style>
+.magazine-page-hero{padding:2.5rem 0 1rem}.magazine-page-hero h1{font-size:clamp(2rem,5vw,3.5rem);margin:.35rem 0}.magazine-page-hero>p:last-child{max-width:760px;color:var(--vc-muted);line-height:1.9}
+.scoring-section{padding:2rem 0}.scoring-section h2{font-size:clamp(1.45rem,3vw,2.2rem);margin:.35rem 0 1rem}.scoring-intro{display:flex;justify-content:space-between;align-items:end;gap:1rem;flex-wrap:wrap}.scoring-intro>div{max-width:700px}.scoring-intro p:not(.catalog-eyebrow),.scoring-note{color:var(--vc-muted);line-height:1.9}.scoring-intro>a,.scoring-links a{color:var(--vc-accent);font-weight:800;text-decoration:none}
+.weight-grid,.status-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:1rem;margin:1.4rem 0}.weight-grid article,.status-grid article{padding:1.25rem;border:1px solid var(--vc-border);border-radius:16px;background:var(--vc-surface)}.weight-grid article>span{display:inline-block;color:var(--vc-accent);font-size:1.7rem;font-weight:950}.weight-grid h3,.status-grid h3{margin:.45rem 0}.weight-grid p,.status-grid p{color:var(--vc-muted);line-height:1.8;margin:0}
+.formula{padding:1.4rem;border:1px solid var(--vc-accent);border-radius:16px;background:color-mix(in srgb,var(--vc-accent) 7%,var(--vc-surface));display:grid;gap:.6rem}.formula>span{font-size:.8rem;color:var(--vc-muted);font-weight:800}.formula strong{font-size:clamp(1rem,2.8vw,1.45rem);overflow-wrap:anywhere}.formula p{margin:0;color:var(--vc-muted);line-height:1.7}.scoring-links{display:flex;flex-wrap:wrap;gap:1.2rem;margin-top:1.5rem}
+</style>
+</Base>
