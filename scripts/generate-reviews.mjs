@@ -12,7 +12,7 @@ import { compactLearningMemory } from './memory-maintenance.mjs';
 import { buildPersonalityEvolutionGuidance, assessPersonalityEvolution } from './personality-evolution.mjs';
 import { buildHistoricalProfile, buildHistoricalComparisonReport, formatHistoricalComparisonContext, buildHistoricalComparisonRecord } from './historical-comparisons.mjs';
 import { loadJudgmentHistory, buildJudgmentRevisionContext, recordJudgmentVersion } from './judgment-history.mjs';
-import { SCORE_SCALE_PROMPT } from './scoring-rubric.mjs';
+import { SCORE_SCALE_PROMPT, calculateWeightedReviewScore } from './scoring-rubric.mjs';
 import { retryHintTimestamp, isDailyQuotaMessage } from './provider-cooldown.mjs';
 import { parseJsonResponse, REVIEW_OUTPUT_CONTRACT } from './review-json.mjs';
 
@@ -596,7 +596,7 @@ export function validateGeneratedReview(d,{stage=2}={}){
  const scores={story:Number(d?.scores?.story),visuals:Number(d?.scores?.visuals),sound:Number(d?.scores?.sound),pacing:Number(d?.scores?.pacing)};
  if(Object.values(scores).some(value=>!Number.isFinite(value)||value<0||value>10))throw new Error('الدرجات الفرعية الأربعة غير مكتملة أو خارج النطاق 0–10');
  if(Object.values(scores).some(value=>Math.abs(value*10-Math.round(value*10))>0.001))throw new Error('يجب أن تكون الدرجات الفرعية بخطوة عشرية واحدة فقط');
- const calibratedScore=Math.round((scores.story*.30+scores.visuals*.25+scores.sound*.20+scores.pacing*.25)*10)/10;
+ const calibratedScore=calculateWeightedReviewScore(scores);
  if(calibratedScore>=9&&Math.min(...Object.values(scores))<8.5)throw new Error('التقييم الإجمالي 9 أو أكثر غير متوازن؛ أعد معايرة المحاور أو خفّض الحكم النهائي');
  if(calibratedScore>=9.5&&(Object.values(scores).filter(value=>value>=9.5).length<3||Math.min(...Object.values(scores))<9))throw new Error('التقييم 9.5 أو أكثر يتطلب تميزاً استثنائياً في ثلاثة محاور على الأقل');
  const words=review.split(/\s+/u).filter(Boolean).length;
@@ -892,7 +892,7 @@ async function generateReview(item, stage=0, previousParts=[]){
  if(stage===2&&cons.length<2)throw new Error('قائمة التحفظات النقدية غير مكتملة');
  const scores={story:Number(d.scores?.story),visuals:Number(d.scores?.visuals),sound:Number(d.scores?.sound),pacing:Number(d.scores?.pacing)};
  if(Object.values(scores).some(value=>!Number.isFinite(value)||value<0||value>10))throw new Error('الدرجات الفرعية الأربعة غير مكتملة أو خارج النطاق 0–10');
- const score=Math.round((scores.story*.30+scores.visuals*.25+scores.sound*.20+scores.pacing*.25)*10)/10;
+ const score=calculateWeightedReviewScore(scores);
  const headline=clean(item.name).slice(0,78)+' — مراجعة نقدية';
  const hook='قراءة نقدية موجزة لـ'+clean(item.name)+' تستند إلى بيانات '+clean(item.source||'المصدر')+' المتاحة، لا إلى تجربة مشاهدة أو لعب مباشرة.';
  const summary=clean(item.description);
