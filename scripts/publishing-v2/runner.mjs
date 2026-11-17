@@ -9,6 +9,11 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
  if(job?.status==='waiting'&&job.resumeTo==='writing'&&/Article below minimum word count|Article below minimum character count/.test(String(job.lastError||''))){
   job={...job,nextAttemptAt:now,updatedAt:new Date(now).toISOString()};state.jobs[job.key]=job;await save();
  }
+ // After deploying the alternate Wikipedia REST lookup, give one previously rate-limited
+ // research job an immediate fallback attempt. If it is still throttled, normal short retry applies.
+ if(job?.status==='waiting'&&job.resumeTo==='researching'&&/Source HTTP 429/.test(String(job.lastError||''))&&!job.researchFallbackAttempted){
+  job={...job,nextAttemptAt:now,researchFallbackAttempted:true,updatedAt:new Date(now).toISOString()};state.jobs[job.key]=job;await save();
+ }
  // Clear legacy cooldowns caused by malformed/undersized model text; these are editorial
  // retries, not provider outages. Keep genuine HTTP/network cooldowns intact.
  for(const [providerId,cooldown] of Object.entries(state.providerCooldowns||{})){
@@ -128,7 +133,8 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
     if(researchSkips<5)return runCycle({state,adapters,providers,now,persist,publishedCounts,articleLimits,researchSkips:researchSkips+1});
     return {action:'research-rejected',key:job.key,reason:message,skipped:researchSkips+1,providerCalls:0};
    }
-   job=transition(job,'provider-deferred',{lastError:'Evidence: '+message,nextAttemptAt:now+3600000,resumeTo:'researching',countAttempt:false},now);
+   const retryDelayMs=/Source HTTP 429/.test(message)?15*60*1000:3600000;
+   job=transition(job,'provider-deferred',{lastError:'Evidence: '+message,nextAttemptAt:now+retryDelayMs,retryDelayMs,resumeTo:'researching',countAttempt:false},now);
    state.jobs[job.key]=job;await save();return {action:'research-deferred',key:job.key,providerCalls:0};
   }
  }
