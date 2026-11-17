@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T13:26:21.628Z",
+  "updatedAt": "2026-11-17T13:27:26.444Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -734,8 +734,8 @@
         ],
         "popularity": 14709
       },
-      "status": "writing",
-      "stage": 2,
+      "status": "ready",
+      "stage": 3,
       "parts": [
         {
           "stage": 1,
@@ -746,6 +746,11 @@
           "stage": 2,
           "text": "{\"review\":\"يعتمد أسلوب اللعب في God of War (2018) على دمج عناصر الحركة القتالية السريعة مع نظام تقني عميق يتيح للاعبين التحكم في سلاح الفأس السحري، Leviathan Axe، الذي يضيف بعدًا استراتيجيًا جديدًا عبر إمكانية رميه وإعادته إلى اليد. هذا التغيير ينعكس بوضوح في الإخراج الفني للمعارك؛ فالمواجهات مع مخلوقات النوردية تتسم بالجرأة والوزن، وتستفيد من كاميرا الكتف الحرّة التي تُقرب اللاعب من تفاصيل الضربة وتُعطي إحساسًا بالاندماج مع المشهد. التصميم البيئي يبرز تنوعًا غنيًا بين الغابات المتجمدة والجبال الشاهقة والكهوف المظلمة، حيث يُستغل الإضاءة والظلال لتوليد جوٍّ مهيبٍ ينعكس على تجربة الاستكشاف. الإيقاع يُدار بحنكة بين لحظات القتال المكثفة وفترات الاستكشاف الهادئة، ما يسمح لللاعب بالتنفس بين المعارك وتطوير علاقة أعمق مع القصة والشخصيات. الموسيقى التصويرية، رغم عدم ذكر تفاصيلها في الأدلة، تُعزز الأجواء وتُنسق مع تغيرات المشهد، بينما تُظهر الرسوميات مستوىً بصريًا عاليًا يبرز تفاصيل الأسلحة والملابس والبيئات. بشكل عام، ينجح النظام القتالي المتطور في تقديم تجربة متوازنة تجمع بين التحدي والراحة، مع إيقاع يضمن تدفقًا سلسًا بين الفصول المختلفة للعبة.\",\"scores\":{\"story\":0,\"visuals\":0,\"sound\":0,\"pacing\":0},\"pros\":[],\"cons\":[],\"verdict\":\"\"}",
           "savedAt": "2026-11-17T13:26:18.323Z"
+        },
+        {
+          "stage": 3,
+          "text": "{\"review\":\"تُظهر God of War (2018) قدرة غير مسبوقة على الجمع بين العمق السردي والابتكار الميكانيكي، فالقصة لا تقتصر على صراع إلهي بل تتعمق في صراع أبوي بين كريتو وأتريوس، ما يضفي طابعًا إنسانيًا على الأساطير النوردية. هذا التوجه ينعكس في كل تفاصيل اللعبة؛ فالتفاعل بين الأب والابن يُستغل ليس فقط في الحوارات بل في المعارك، حيث يضيف أتريوس مساعدة تكتيكية تُثري التجربة وتُظهر تطور العلاقة. من الناحية البصرية، تُبرز الرسوميات تفاصيل البيئة المتنوعة من الغابات المتجمدة إلى الكهوف المظلمة، مع إضاءة ديناميكية تُعطي إحساسًا بالعمق والرهبة. الموسيقى التصويرية، رغم عدم ذكر تفاصيلها في الأدلة، تُدعم الأجواء وتتناغم مع تغير المشهد، ما يعزز الانغماس. الإيقاع يُدار بحنكة، فالفترات الهادئة من الاستكشاف تُقابلها معارك مكثفة تُظهر نظام القتال المتطور بالـ Leviathan Axe، الذي يضيف بعدًا استراتيجيًا عبر إمكانية رميه وإعادته. ومع ذلك، قد يشعر بعض اللاعبين بأن حجم العالم الضخم قد يخلق لحظات من التكرار في المهام الجانبية، وأن صعوبة بعض الألغاز قد تكون مرتفعة للمتقن غير المتمرس. بشكل عام، تُعد اللعبة تحفة فنية تُعيد تعريف السلسلة وتضع معيارًا جديدًا للتوازن بين السرد واللعب.\",\"scores\":{\"story\":9,\"visuals\":9,\"sound\":8,\"pacing\":8},\"pros\":[\"قصة عميقة تجمع بين الأساطير والنضج العاطفي للأب والابن\",\"تصميم بصري مدهش يبرز تفاصيل البيئة والإضاءة الديناميكية\",\"نظام قتال مبتكر بالـ Leviathan Axe يضيف عمقًا استراتيجيًا\"],\"cons\":[\"بعض المهام الجانبية قد تشعر بالتكرار بسبب اتساع العالم\",\"صعوبة بعض الألغاز قد تكون مرتفعة للمبتدئين\"],\"verdict\":\"God of War (2018) تُثبت أن السلسلة يمكن أن تتجدد بذكاء، حيث يلتقي السرد العاطفي المتقن بالتصميم الفني المتقن ونظام قتال مبتكر. رغم بعض النقاط القابلة للتحسين، تظل التجربة شاملة ومؤثرة، وتستحق التوصية لكل من يبحث عن لعبة تجمع بين العمق الروائي والمتعة الحركية.\"}",
+          "savedAt": "2026-11-17T13:27:24.423Z"
         }
       ],
       "evidence": {
@@ -796,12 +801,81 @@
       },
       "attempts": 0,
       "createdAt": "2026-11-17T09:59:43.256Z",
-      "updatedAt": "2026-11-17T13:26:18.323Z",
+      "updatedAt": "2026-11-17T13:27:24.423Z",
       "nextAttemptAt": null,
       "lastError": null,
       "lastProvider": "groq",
-      "fileWritten": false,
-      "articlePath": null
+      "fileWritten": true,
+      "articlePath": "src/content/reviews/game-god-of-war-2018-58175.md",
+      "article": {
+        "title": "God of War (2018)",
+        "originalTitle": "",
+        "headline": "مراجعة نقدية: God of War (2018) بين نقاط القوة وحدود التجربة",
+        "hook": "تُعيد God of War (2018) تعريف السلسلة عبر انتقالها إلى أساطير نورس، حيث يُقدَّم كريتو كأبٍ مُنقلبٍ عن ماضيه الإلهي، يسعى لتعليم ابنه أتريوس قيم البقاء والمسؤولية في عالمٍ قاسٍ ومليء بالوحوش والآلهة. يَستند السرد إلى رحلة شخصية عميقة، تُظهر صراع كريتو الداخلي بين الغضب المتجذر والرغبة في أن يصبح قدوة حسنة، بينما يُظهر أتريوس شغفًا بالمعرفة وإصرارًا على إثبات ذاته.",
+        "summary": "تُعيد God of War (2018) تعريف السلسلة عبر انتقالها إلى أساطير نورس، حيث يُقدَّم كريتو كأبٍ مُنقلبٍ عن ماضيه الإلهي، يسعى لتعليم ابنه أتريوس قيم البقاء والمسؤولية في عالمٍ قاسٍ ومليء بالوحوش والآلهة. يَستند السرد إلى رحلة شخصية عميقة، تُظهر صراع كريتو الداخلي بين الغضب المتجذر والرغبة في أن يصبح قدوة حسنة، بينما يُظهر أتريوس شغفًا بالمعرفة وإصرارًا على إثبات ذاته.",
+        "verdict": "God of War (2018) تُثبت أن السلسلة يمكن أن تتجدد بذكاء، حيث يلتقي السرد العاطفي المتقن بالتصميم الفني المتقن ونظام قتال مبتكر. رغم بعض النقاط القابلة للتحسين، تظل التجربة شاملة ومؤثرة، وتستحق التوصية لكل من يبحث عن لعبة تجمع بين العمق الروائي والمتعة الحركية.",
+        "type": "game",
+        "sourceId": "game:58175",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/god-of-war-2",
+        "date": "2026-11-17",
+        "score": 8.5,
+        "storyScore": 9,
+        "visualsScore": 9,
+        "soundScore": 8,
+        "pacingScore": 8,
+        "pros": [
+          "قصة عميقة تجمع بين الأساطير والنضج العاطفي للأب والابن",
+          "تصميم بصري مدهش يبرز تفاصيل البيئة والإضاءة الديناميكية",
+          "نظام قتال مبتكر بالـ Leviathan Axe يضيف عمقًا استراتيجيًا"
+        ],
+        "cons": [
+          "بعض المهام الجانبية قد تشعر بالتكرار بسبب اتساع العالم",
+          "صعوبة بعض الألغاز قد تكون مرتفعة للمبتدئين"
+        ],
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/god-of-war-2",
+            "extract": "It is a new beginning for Kratos. Living as a man outside the shadow of the gods, he ventures into the brutal Norse wilds with his son Atreus, fighting to fulfill a deeply personal quest. His vengeance against the Gods of Olympus years behind him, Kratos now lives as a man in the realm of Norse Gods and monsters. It is in this harsh, unforgiving world that he must fight to survive… And teach his son to do the same. This startling reimagining of God of War deconstructs the core elements that defined the series—satisfying combat; breathtaking scale; and a powerful narrative—and fuses them anew. Kratos is a father again. As mentor and protector to Atreus, a son determined to earn his respect, he is forced to deal with and control the rage that has long defined him while out in a very dangerous world with his son. From the marble and columns of ornate Olympus to the gritty forests, mountains, and caves of Pre-Viking Norse lore, this is a distinctly new realm with its own pantheon of creatures, monsters, and gods. With an added emphasis on discovery and exploration, the world will draw players in to explore every inch of God of War’s breathtakingly threatening landscape—by far the largest in the franchise. With an over the shoulder free camera that brings the player closer to the action than ever before, fights in God of War mirror the pantheon of Norse creatures Kratos will face: grand, gritty, and grueling. A new main weapon and new abilities retain the defining spirit of God of War while presenting a vision of violent conflict that forges new ground in the genre"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/God_of_War_(2018_video_game)",
+            "extract": "God of War is a 2018 action-adventure game developed by Santa Monica Studio and published by Sony Interactive Entertainment. It was released worldwide for the PlayStation 4 in April 2018, with a Windows port released in January 2022. It is the eighth game in the God of War series, tenth chronologically, and the sequel to 2010's God of War III. While previous games were based on Greek mythology, God of War transitioned to Norse mythology, and takes places in mythical ancient Scandinavia in the realm of Midgard. Players control Kratos, who embarks on a journey with his son, Atreus, to scatter the ashes of Atreus's mother from the highest peak of the nine realms. Kratos keeps his past a secret from Atreus, who is unaware he is a demigod. Along their journey, they come into conflict with monsters and gods of the Norse world. Described by creative director Cory Barlog as a reimagining of the franchise, a major gameplay change is that Kratos now uses a magical battle axe, the Leviathan Axe, instead of his signature double-chained blades. The game also uses an over-the-shoulder free camera, with the game in one shot, as opposed to the fixed cinematic camera of the previous entries. It also includes role-playing game elements, and Kratos's son Atreus provides assistance in combat. The majority of the original game's development team worked on God of War and designed it to be accessible and grounded. A short text-based game, A Call from the Wilds, was released in February 2018 through Facebook Messenger and follows Atreus on his first adventure. A smartphone app, Mímir's Vision, was released three days before the release, providing additional information about the Norse setting. God of War received acclaim for its story, world design, art direction, music, graphics, combat system, and characters, in particular the dynamic between Kratos and Atreus. Many reviewers felt it had successfully revitalized the series without losing its core identity. It was named Game of the Year by numerous media outlets and award shows, and has been cited as among the greatest video games. It sold more than five million copies within a month of release and had sold 23 million by November 2022, making it one of the best-selling PlayStation 4 games and the best-selling game in the series. A novelization was released in August 2018, followed by a prequel comic series published from November 2018 to June 2021, while a live-action television series is in development for Amazon Prime Video. A sequel, God of War Ragnarök, was released for the PlayStation 4 and PlayStation 5 in 2022, and for Windows in 2024."
+          },
+          {
+            "name": "PlayStation Blog",
+            "url": "https://blog.playstation.com/2018/01/23/god-of-war-out-april-20-on-ps4/",
+            "extract": "Official PlayStation Blog post embeds the God of War story trailer."
+          }
+        ],
+        "poster": "https://media.rawg.io/media/games/4be/4be6a6ad0364751a96229c56bf69be59.jpg",
+        "backdrop": "https://media.rawg.io/media/screenshots/e2e/e2e16b63691fab32fa20d99f3e6895a0.jpeg",
+        "platforms": [
+          "PC",
+          "PlayStation 4"
+        ],
+        "genres": [
+          "Action"
+        ],
+        "cast": [],
+        "crew": [],
+        "tags": [
+          "Action"
+        ],
+        "youtubeVideoId": "K0u_kAWLJOA",
+        "youtubeVideoTitle": "God of War – Story Trailer | PlayStation",
+        "externalVideoUrl": "",
+        "externalVideoTitle": "",
+        "body": "## القصة والعالم والشخصيات\n\nتُعيد God of War (2018) تعريف السلسلة عبر انتقالها إلى أساطير نورس، حيث يُقدَّم كريتو كأبٍ مُنقلبٍ عن ماضيه الإلهي، يسعى لتعليم ابنه أتريوس قيم البقاء والمسؤولية في عالمٍ قاسٍ ومليء بالوحوش والآلهة. يَستند السرد إلى رحلة شخصية عميقة، تُظهر صراع كريتو الداخلي بين الغضب المتجذر والرغبة في أن يصبح قدوة حسنة، بينما يُظهر أتريوس شغفًا بالمعرفة وإصرارًا على إثبات ذاته. يُبنى العالم على تفاصيل دقيقة للغابات المتجمدة، الجبال الشاهقة، والكهوف المظلمة، ما يخلق بيئة غنية تُشعر اللاعب بامتداد الأساطير النوردية. تُعطي القصة وزنًا إنسانيًا من خلال الحوارات المتقنة التي تُظهر تطور العلاقة بين الأب والابن، وتُبرز مواضيع مثل الفقدان، والهوية، والبحث عن الخلاص. تُعتمد على أساطير معروفة مثل أودين وثور، لكن تُعيد صياغتها لتتناسب مع سردٍ يركز على الصراعات الداخلية أكثر من الصراعات الإلهية التقليدية. تُعطي اللعبة إحساسًا بالاستكشاف المستمر، حيث تُكشف كل زاوية عن قصة فرعية أو مخلوق يُضيف عمقًا إلى السرد العام. في المجمل، تُظهر القصة قدرة على دمج الأساطير مع دراما عائلية، ما يجعلها تجربة سردية متميزة في عالم الألعاب.\n\n## أسلوب اللعب والتصميم والإيقاع\n\nيعتمد أسلوب اللعب في God of War (2018) على دمج عناصر الحركة القتالية السريعة مع نظام تقني عميق يتيح للاعبين التحكم في سلاح الفأس السحري، Leviathan Axe، الذي يضيف بعدًا استراتيجيًا جديدًا عبر إمكانية رميه وإعادته إلى اليد. هذا التغيير ينعكس بوضوح في الإخراج الفني للمعارك؛ فالمواجهات مع مخلوقات النوردية تتسم بالجرأة والوزن، وتستفيد من كاميرا الكتف الحرّة التي تُقرب اللاعب من تفاصيل الضربة وتُعطي إحساسًا بالاندماج مع المشهد. التصميم البيئي يبرز تنوعًا غنيًا بين الغابات المتجمدة والجبال الشاهقة والكهوف المظلمة، حيث يُستغل الإضاءة والظلال لتوليد جوٍّ مهيبٍ ينعكس على تجربة الاستكشاف. الإيقاع يُدار بحنكة بين لحظات القتال المكثفة وفترات الاستكشاف الهادئة، ما يسمح لللاعب بالتنفس بين المعارك وتطوير علاقة أعمق مع القصة والشخصيات. الموسيقى التصويرية، رغم عدم ذكر تفاصيلها في الأدلة، تُعزز الأجواء وتُنسق مع تغيرات المشهد، بينما تُظهر الرسوميات مستوىً بصريًا عاليًا يبرز تفاصيل الأسلحة والملابس والبيئات. بشكل عام، ينجح النظام القتالي المتطور في تقديم تجربة متوازنة تجمع بين التحدي والراحة، مع إيقاع يضمن تدفقًا سلسًا بين الفصول المختلفة للعبة.\n\n## التقييم النقدي وحدود التجربة\n\nتُظهر God of War (2018) قدرة غير مسبوقة على الجمع بين العمق السردي والابتكار الميكانيكي، فالقصة لا تقتصر على صراع إلهي بل تتعمق في صراع أبوي بين كريتو وأتريوس، ما يضفي طابعًا إنسانيًا على الأساطير النوردية. هذا التوجه ينعكس في كل تفاصيل اللعبة؛ فالتفاعل بين الأب والابن يُستغل ليس فقط في الحوارات بل في المعارك، حيث يضيف أتريوس مساعدة تكتيكية تُثري التجربة وتُظهر تطور العلاقة. من الناحية البصرية، تُبرز الرسوميات تفاصيل البيئة المتنوعة من الغابات المتجمدة إلى الكهوف المظلمة، مع إضاءة ديناميكية تُعطي إحساسًا بالعمق والرهبة. الموسيقى التصويرية، رغم عدم ذكر تفاصيلها في الأدلة، تُدعم الأجواء وتتناغم مع تغير المشهد، ما يعزز الانغماس. الإيقاع يُدار بحنكة، فالفترات الهادئة من الاستكشاف تُقابلها معارك مكثفة تُظهر نظام القتال المتطور بالـ Leviathan Axe، الذي يضيف بعدًا استراتيجيًا عبر إمكانية رميه وإعادته. ومع ذلك، قد يشعر بعض اللاعبين بأن حجم العالم الضخم قد يخلق لحظات من التكرار في المهام الجانبية، وأن صعوبة بعض الألغاز قد تكون مرتفعة للمتقن غير المتمرس. بشكل عام، تُعد اللعبة تحفة فنية تُعيد تعريف السلسلة وتضع معيارًا جديدًا للتوازن بين السرد واللعب.\n\n### المصادر والمراجع\n\n- [RAWG](https://rawg.io/games/god-of-war-2)\n- [Wikipedia](https://en.wikipedia.org/wiki/God_of_War_(2018_video_game))\n- [PlayStation Blog](https://blog.playstation.com/2018/01/23/god-of-war-out-april-20-on-ps4/)"
+      },
+      "quality": {
+        "valid": true,
+        "errors": [],
+        "words": 600,
+        "characters": 3440
+      }
     }
   },
   "providerUsage": {
@@ -833,9 +907,9 @@
     },
     "2026-11-17": {
       "groq": {
-        "requests": 22,
-        "tokens": 62818,
-        "successes": 13,
+        "requests": 23,
+        "tokens": 66269,
+        "successes": 14,
         "failures": 3
       },
       "openrouter": {
