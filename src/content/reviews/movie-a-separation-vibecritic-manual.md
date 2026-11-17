@@ -8,7 +8,7 @@ verdict: "قوة انفصال في بناء نزاع تتغير دلالته م�
 type: movie
 date: 2026-11-17
 releaseDate: "2011-02-15"
-score: 8.3
+score: 8.2
 storyScore: 8.7
 visualsScore: 8.2
 soundScore: 7.8
