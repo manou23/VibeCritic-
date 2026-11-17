@@ -18,11 +18,11 @@ function tmdb(pathname,params={}){
 }
 const norm=v=>clean(v).toLowerCase().normalize('NFKD').replace(/[^\p{L}\p{N}]/gu,'');
 function frontMatterFields(source){
- const block=String(source||'').match(/^---\\s*\\r?\\n([\\s\\S]*?)\\r?\\n---/);
+ const block=String(source||'').match(/^---\s*\r?\n([\s\S]*?)\r?\n---/);
  if(!block)return {};
  const fields={};
- for(const line of block[1].split(/\\r?\\n/)){
-  const match=line.match(/^([A-Za-z][A-Za-z0-9_-]*):\\s*(.*)$/);
+ for(const line of block[1].split(/\r?\n/)){
+  const match=line.match(/^([A-Za-z][A-Za-z0-9_-]*):\s*(.*)$/);
   if(match)fields[match[1]]=clean(match[2].replace(/^["']|["']$/g,''));
  }
  return fields;
