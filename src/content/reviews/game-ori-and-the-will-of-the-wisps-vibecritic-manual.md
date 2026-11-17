@@ -31,6 +31,8 @@ sourceName: "Xbox / Moon Studios / Steam"
 sourceId: "manual-game-ori-will-of-the-wisps"
 sourceUrl: "https://www.xbox.com/games/store/ori-and-the-will-of-the-wisps/9N8CD0XZKLP4"
 poster: "https://s3.gamescribe.io/high/42bc1f9d-858e-556c-4959-cb7603923ba8.jpg"
+youtubeVideoId: "-QFOJ_L6yFM"
+youtubeVideoTitle: "Ori and the Will of the Wisps — Launch Trailer (Nintendo of America)"
 backdrop: "https://s3.gamescribe.io/high/42bc1f9d-858e-556c-4959-cb7603923ba8.jpg"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
