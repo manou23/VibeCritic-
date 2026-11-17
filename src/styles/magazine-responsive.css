@@ -1,0 +1,298 @@
+/* Magazine layout: consistent spacing and touch-friendly responsive behavior. */
+.magazine-nav {
+  min-width: 0;
+  box-sizing: border-box;
+}
+.magazine-nav-links {
+  min-width: 0;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  overscroll-behavior-x: contain;
+}
+.magazine-nav-links a {
+  scroll-snap-align: start;
+  min-height: 44px;
+}
+.magazine-page-hero,
+.magazine-hero,
+.scoring-section,
+.compare-section,
+.discover-section {
+  min-width: 0;
+  box-sizing: border-box;
+}
+.magazine-page-hero h1,
+.magazine-hero h1,
+.magazine-page-hero p,
+.magazine-hero p {
+  overflow-wrap: anywhere;
+}
+.magazine-page-hero > p:last-child,
+.magazine-hero > p:not(.catalog-eyebrow) {
+  font-size: clamp(.96rem, 2.2vw, 1.1rem);
+}
+.editorial-grid,
+.discover-grid,
+.weight-grid,
+.status-grid {
+  min-width: 0;
+}
+.editorial-grid > *,
+.discover-grid > *,
+.weight-grid > *,
+.status-grid > * {
+  min-width: 0;
+}
+.magazine-nav ~ .catalog-section,
+.magazine-nav ~ .scoring-section,
+.magazine-nav ~ .compare-section,
+.magazine-nav ~ .discover-section {
+  min-width: 0;
+}
+.magazine-nav ~ .catalog-section .catalog-heading,
+.magazine-nav ~ .scoring-section .scoring-intro {
+  min-width: 0;
+}
+.compare-selectors select,
+.discover-controls select {
+  min-height: 46px;
+  max-width: 100%;
+}
+.compare-table-wrap {
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+.compare-table td,
+.compare-table th {
+  overflow-wrap: anywhere;
+}
+.formula strong {
+  line-height: 1.7;
+}
+@media (max-width: 760px) {
+  .magazine-nav {
+    margin-top: .75rem;
+    margin-bottom: .9rem;
+  }
+  .magazine-nav ~ .magazine-page-hero,
+  .magazine-nav ~ .magazine-hero {
+    margin-top: .75rem;
+  }
+  .magazine-page-hero {
+    padding: 1.4rem 0 .7rem;
+  }
+  .magazine-page-hero h1 {
+    font-size: clamp(1.85rem, 7vw, 2.7rem);
+    line-height: 1.3;
+  }
+  .magazine-hero {
+    padding: clamp(1.35rem, 5vw, 2.3rem);
+    border-radius: 18px;
+  }
+  .magazine-hero h1 {
+    font-size: clamp(2.1rem, 9vw, 3.4rem);
+    line-height: 1.2;
+  }
+  .magazine-hero > p:not(.catalog-eyebrow) {
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+  .magazine-nav ~ .catalog-section {
+    padding-top: 1.5rem;
+  }
+  .magazine-nav ~ .scoring-section,
+  .magazine-nav ~ .compare-section,
+  .magazine-nav ~ .discover-section {
+    padding-top: 1.25rem;
+    padding-bottom: 2.5rem;
+  }
+  .magazine-nav ~ .catalog-section .catalog-heading {
+    align-items: flex-start;
+    gap: .7rem;
+    margin-bottom: 1rem;
+  }
+  .magazine-nav ~ .catalog-section .catalog-heading > div {
+    min-width: 0;
+  }
+  .magazine-nav ~ .catalog-section .catalog-heading h2 {
+    font-size: clamp(1.25rem, 5vw, 1.65rem);
+    line-height: 1.4;
+  }
+  .magazine-nav ~ .catalog-section .catalog-heading p:not(.catalog-eyebrow) {
+    font-size: .78rem;
+    line-height: 1.75;
+  }
+  .magazine-nav ~ .catalog-section .catalog-total {
+    flex: 0 0 auto;
+    padding-top: .35rem;
+  }
+  .magazine-nav ~ .catalog-section .catalog-rail {
+    gap: .75rem;
+    padding-inline: 2px;
+    scroll-padding-inline: 2px;
+  }
+  .magazine-nav ~ .catalog-section .catalog-rail > * {
+    flex-basis: min(72vw, 205px);
+  }
+  .magazine-nav ~ .catalog-section .catalog-rail > .review-card,
+  .magazine-nav ~ .catalog-section .catalog-rail > div {
+    width: min(72vw, 205px);
+  }
+  .editorial-grid,
+  .discover-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .8rem;
+  }
+  .editorial-grid .review-content,
+  .discover-grid .review-content {
+    padding: .7rem;
+  }
+  .editorial-grid .review-title,
+  .discover-grid .review-title {
+    font-size: .84rem;
+    line-height: 1.5;
+  }
+  .editorial-grid .review-headline,
+  .discover-grid .review-headline {
+    font-size: .72rem;
+    line-height: 1.65;
+  }
+  .editorial-grid .review-date,
+  .discover-grid .review-date {
+    font-size: .65rem;
+  }
+  .rated-score {
+    top: .4rem;
+    right: .4rem;
+    padding: .25rem .45rem;
+  }
+  .rated-score strong {
+    font-size: 1rem;
+  }
+  .scoring-section {
+    padding-block: 1.2rem;
+  }
+  .scoring-section h2 {
+    font-size: 1.35rem;
+    line-height: 1.5;
+  }
+  .weight-grid,
+  .status-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .7rem;
+    margin-block: 1rem;
+  }
+  .weight-grid article,
+  .status-grid article {
+    padding: .9rem;
+    border-radius: 13px;
+  }
+  .weight-grid h3,
+  .status-grid h3 {
+    font-size: .95rem;
+    line-height: 1.55;
+  }
+  .weight-grid p,
+  .status-grid p {
+    font-size: .8rem;
+    line-height: 1.75;
+  }
+  .formula {
+    padding: 1rem;
+    gap: .5rem;
+  }
+  .formula strong {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+  .compare-selectors {
+    grid-template-columns: minmax(0, 1fr);
+    gap: .65rem;
+  }
+  .compare-selectors label {
+    font-size: .9rem;
+  }
+  .versus {
+    padding: .1rem;
+    text-align: center;
+  }
+  .compare-table-wrap {
+    border-radius: 12px;
+  }
+  .compare-table {
+    min-width: 590px;
+  }
+  .compare-table th,
+  .compare-table td {
+    padding: .7rem;
+    font-size: .82rem;
+    line-height: 1.75;
+  }
+  .discover-controls {
+    grid-template-columns: minmax(0, 1fr);
+    gap: .8rem;
+    padding: .9rem;
+  }
+  .discover-controls label {
+    font-size: .9rem;
+  }
+  .discover-summary {
+    align-items: stretch;
+    flex-direction: column;
+    gap: .65rem;
+  }
+  .discover-summary button {
+    min-height: 44px;
+    width: 100%;
+  }
+}
+@media (max-width: 420px) {
+  .magazine-nav {
+    padding: .7rem;
+    border-radius: 13px;
+  }
+  .magazine-nav-head {
+    font-size: .76rem;
+  }
+  .magazine-nav-links {
+    gap: .4rem;
+  }
+  .magazine-nav-links a {
+    min-height: 44px;
+    padding: .55rem .78rem;
+    font-size: .8rem;
+  }
+  .magazine-page-hero h1 {
+    font-size: 1.8rem;
+  }
+  .magazine-nav ~ .catalog-section .catalog-heading {
+    flex-wrap: wrap;
+  }
+  .editorial-grid,
+  .discover-grid,
+  .weight-grid,
+  .status-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .editorial-grid .review-content,
+  .discover-grid .review-content {
+    padding: .85rem;
+  }
+  .editorial-grid .review-title,
+  .discover-grid .review-title {
+    font-size: .95rem;
+  }
+  .editorial-grid .review-headline,
+  .discover-grid .review-headline {
+    font-size: .8rem;
+  }
+  .formula strong {
+    font-size: .9rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .magazine-nav-links {
+    scroll-behavior: auto;
+  }
+}
