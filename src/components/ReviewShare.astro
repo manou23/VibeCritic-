@@ -1,0 +1,54 @@
+---
+const { title, shareUrl } = Astro.props;
+const encodedUrl = encodeURIComponent(shareUrl);
+const encodedText = encodeURIComponent(`${title} — مراجعة VibeCritic`);
+---
+<section class="review-share" aria-labelledby="review-share-title">
+  <div class="review-share-copy">
+    <p class="eyebrow">شارك رأيك</p>
+    <h2 id="review-share-title">هل تعرف شخصاً سيهتم بهذا العمل؟</h2>
+    <p>أرسل له المراجعة أو احتفظ بالرابط للعودة إليها لاحقاً.</p>
+  </div>
+  <div class="review-share-actions">
+    <a class="review-share-link whatsapp" href={`https://wa.me/?text=${encodedText}%20${encodedUrl}`} target="_blank" rel="noopener noreferrer" aria-label="مشاركة المراجعة عبر واتساب">
+      <span aria-hidden="true">◉</span> واتساب
+    </a>
+    <a class="review-share-link facebook" href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`} target="_blank" rel="noopener noreferrer" aria-label="مشاركة المراجعة عبر فيسبوك">
+      <span aria-hidden="true">f</span> Facebook
+    </a>
+    <button class="review-share-link copy" type="button" data-share-copy data-share-url={shareUrl}>
+      <span aria-hidden="true">⧉</span> نسخ الرابط
+    </button>
+  </div>
+  <p class="review-share-status" data-share-status role="status" aria-live="polite"></p>
+</section>
+
+<style>
+  .review-share{display:grid;gap:1rem;margin:2rem 0;padding:1.25rem;border:1px solid var(--vc-border,rgba(255,255,255,.12));border-radius:18px;background:linear-gradient(135deg,rgba(240,153,54,.09),rgba(255,255,255,.025))}
+  .review-share-copy h2{margin:.25rem 0 .4rem;font-size:clamp(1.05rem,2.5vw,1.35rem);color:var(--vc-text)}
+  .review-share-copy p:last-child{margin:0;color:var(--vc-muted);font-size:.92rem;line-height:1.7}
+  .review-share-actions{display:flex;flex-wrap:wrap;gap:.65rem}
+  .review-share-link{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:44px;padding:.65rem 1rem;border:1px solid var(--vc-border,rgba(255,255,255,.16));border-radius:12px;background:var(--vc-surface,rgba(255,255,255,.04));color:var(--vc-text);font:inherit;font-size:.9rem;font-weight:700;text-decoration:none;cursor:pointer;transition:transform .18s ease,border-color .18s ease}
+  .review-share-link:hover{transform:translateY(-2px);border-color:var(--vc-accent)}
+  .review-share-link.whatsapp span{color:#25d366;font-size:1.15rem}
+  .review-share-link.facebook span{display:grid;place-items:center;width:19px;height:19px;border-radius:50%;background:#1877f2;color:white;font-family:Arial,sans-serif;font-weight:800}
+  .review-share-link.copy span{font-size:1.15rem;color:var(--vc-accent)}
+  .review-share-status{min-height:1.2em;margin:0;color:var(--vc-muted);font-size:.82rem}
+  @media(max-width:480px){.review-share{padding:1rem}.review-share-actions{display:grid;grid-template-columns:1fr 1fr}.review-share-link.copy{grid-column:1/-1}}
+  @media(prefers-reduced-motion:reduce){.review-share-link{transition:none}.review-share-link:hover{transform:none}}
+</style>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-share-copy]').forEach((button) => {
+    button.addEventListener('click', async () => {
+      const value = button.dataset.shareUrl || location.href;
+      const status = button.closest('.review-share')?.querySelector<HTMLElement>('[data-share-status]');
+      try {
+        await navigator.clipboard.writeText(value);
+        if (status) status.textContent = 'تم نسخ رابط المراجعة.';
+      } catch {
+        if (status) status.textContent = 'تعذر النسخ التلقائي. يمكنك نسخ الرابط من شريط العنوان.';
+      }
+    });
+  });
+</script>
