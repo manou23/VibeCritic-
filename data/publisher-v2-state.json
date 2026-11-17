@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T01:13:36.096Z",
+  "updatedAt": "2026-11-17T01:14:54.571Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -452,7 +452,7 @@
         ],
         "popularity": 12056
       },
-      "status": "ready",
+      "status": "published",
       "stage": 3,
       "parts": [
         {
@@ -518,7 +518,7 @@
       },
       "attempts": 0,
       "createdAt": "2026-11-17T01:00:32.140Z",
-      "updatedAt": "2026-11-17T01:13:33.102Z",
+      "updatedAt": "2026-11-17T01:14:54.143Z",
       "nextAttemptAt": null,
       "lastError": null,
       "lastProvider": "groq",
@@ -592,7 +592,9 @@
         "characters": 4414
       },
       "fileWritten": true,
-      "articlePath": "src/content/reviews/game-apex-legends-290856.md"
+      "articlePath": "src/content/reviews/game-apex-legends-290856.md",
+      "deployedAt": "2026-11-17T01:14:54.143Z",
+      "publishedAt": "2026-11-17T01:14:54.143Z"
     }
   },
   "providerUsage": {
