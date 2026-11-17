@@ -14,6 +14,13 @@ const gameReviews = (await getCollection('reviews'))
     <h1>اكتشف عملك القادم</h1>
     <p>اكتشف الأفلام والمسلسلات ببحث عربي ومرشحات دقيقة، وتصفح مراجعات الألعاب المنشورة في مكتبة واحدة.</p>
   </header>
+  <section class="catalog-games-section" aria-labelledby="catalog-games-title">
+    <div class="catalog-games-heading">
+      <div><p class="catalog-eyebrow">VIBECRITIC GAME REVIEWS</p><h2 id="catalog-games-title">مكتبة الألعاب</h2><p>أحدث مراجعات الألعاب المنشورة، مرتبة حسب تاريخ النشر.</p></div>
+      <a class="catalog-games-more" href={url('category/game/')}>كل مراجعات الألعاب <span aria-hidden="true">←</span></a>
+    </div>
+    {gameReviews.length > 0 ? <div class="catalog-games-grid">{gameReviews.slice(0, 12).map(review => <ReviewCard review={review} />)}</div> : <p class="catalog-games-empty">ستظهر مراجعات الألعاب هنا فور نشرها.</p>}
+  </section>
   <form id="catalog-filters" class="catalog-filters">
     <label class="catalog-search-label" for="catalog-query">ابحث عن فيلم أو مسلسل</label>
     <input id="catalog-query" name="q" type="search" placeholder="اسم العمل بالعربية أو بلغته الأصلية..." autocomplete="off"/>
@@ -29,13 +36,7 @@ const gameReviews = (await getCollection('reviews'))
   <div id="catalog-results" class="catalog-results"></div>
   <nav class="catalog-pagination" aria-label="صفحات الكتالوج"><button id="catalog-prev" type="button" disabled>السابق</button><span id="catalog-page-label">1</span><button id="catalog-next" type="button" disabled>التالي</button></nav>
   <aside class="tmdb-attribution"><strong>TMDB</strong><span>يستخدم هذا المنتج واجهة TMDB API، لكنه غير معتمد أو مصادق عليه من TMDB.</span><a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer">The Movie Database</a></aside>
-  <section class="catalog-games-section" aria-labelledby="catalog-games-title">
-    <div class="catalog-games-heading">
-      <div><p class="catalog-eyebrow">VIBECRITIC GAME REVIEWS</p><h2 id="catalog-games-title">مكتبة الألعاب</h2><p>أحدث مراجعات الألعاب المنشورة، مرتبة حسب تاريخ النشر.</p></div>
-      <a class="catalog-games-more" href={url('category/game/')}>كل مراجعات الألعاب <span aria-hidden="true">←</span></a>
-    </div>
-    {gameReviews.length > 0 ? <div class="catalog-games-grid">{gameReviews.slice(0, 12).map(review => <ReviewCard review={review} />)}</div> : <p class="catalog-games-empty">ستظهر مراجعات الألعاب هنا فور نشرها.</p>}
-  </section>
+
 </section>
 <dialog id="catalog-detail" class="catalog-detail" aria-labelledby="catalog-detail-title"><button type="button" id="catalog-detail-close" class="catalog-detail-close" aria-label="إغلاق النافذة">×</button><div id="catalog-detail-content"><div class="detail-loading" role="status">جارٍ تجهيز تفاصيل العمل...</div></div></dialog>
 </Base>
