@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T00:55:51.168Z",
+  "updatedAt": "2026-11-17T00:56:18.262Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -406,12 +406,12 @@
           "votes": 0
         }
       },
-      "attempts": 0,
+      "attempts": 1,
       "createdAt": "2026-11-17T00:47:56.078Z",
-      "updatedAt": "2026-11-17T00:55:51.149Z",
-      "nextAttemptAt": 1794877251149,
-      "lastError": "No free provider within configured daily budget.",
-      "lastProvider": "openrouter",
+      "updatedAt": "2026-11-17T00:56:15.884Z",
+      "nextAttemptAt": 1794880575884,
+      "lastError": "Article below minimum word count: 30/650 | Article below minimum character count: 237/3200",
+      "lastProvider": "groq",
       "resumeTo": "writing"
     }
   },
@@ -444,9 +444,9 @@
     },
     "2026-11-17": {
       "groq": {
-        "requests": 2,
-        "tokens": 3991,
-        "successes": 0,
+        "requests": 3,
+        "tokens": 7035,
+        "successes": 1,
         "failures": 1
       },
       "openrouter": {
