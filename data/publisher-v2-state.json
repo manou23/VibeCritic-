@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T00:49:50.633Z",
+  "updatedAt": "2026-11-17T00:50:42.079Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -401,11 +401,11 @@
           "votes": 0
         }
       },
-      "attempts": 1,
+      "attempts": 2,
       "createdAt": "2026-11-17T00:47:56.078Z",
-      "updatedAt": "2026-11-17T00:49:48.590Z",
-      "nextAttemptAt": 1794876888590,
-      "lastError": "openrouter: Section word count rejected: 131",
+      "updatedAt": "2026-11-17T00:50:34.898Z",
+      "nextAttemptAt": 1794876934898,
+      "lastError": "openrouter: Section word count rejected: 189",
       "lastProvider": "openrouter",
       "resumeTo": "writing"
     }
@@ -445,10 +445,10 @@
         "failures": 1
       },
       "openrouter": {
-        "requests": 2,
-        "tokens": 3302,
+        "requests": 4,
+        "tokens": 7627,
         "successes": 1,
-        "failures": 1
+        "failures": 2
       }
     }
   },
