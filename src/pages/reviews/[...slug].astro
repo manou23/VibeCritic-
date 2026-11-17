@@ -101,8 +101,6 @@ const reviewStructuredData = {
     <p class="article-deck">{d.headline}</p>
   </header>
 
-  <ReviewShare title={d.title} shareUrl={canonicalUrl} />
-
   {d.backdrop&&<figure class="article-backdrop"><img src={optimizeImage(d.backdrop, 'backdrop')} alt={d.title} loading="eager" fetchpriority="high" decoding="async"/><figcaption>VibeCritic — قراءة نقدية بلا مجاملة</figcaption></figure>}
 
   <div class="article-layout">
@@ -196,6 +194,8 @@ const reviewStructuredData = {
       </section>}
     </aside>
   </div>
+
+  <ReviewShare title={d.title} shareUrl={canonicalUrl} />
 </article>
 </Base>
 
