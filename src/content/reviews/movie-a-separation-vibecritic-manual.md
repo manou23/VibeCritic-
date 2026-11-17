@@ -30,8 +30,8 @@ crew: ["Asghar Farhadi"]
 sourceName: "Sony Pictures Classics / Berlinale / Academy Awards"
 sourceId: "manual-movie-a-separation"
 sourceUrl: "https://www.sonyclassics.com/aseparation/"
-poster: "https://bifa.imgix.net/web/2018/10/MV5BMTYzMzU4NDUwOF5BMl5BanBnXkFtZTcwMTM5MjA5Ng%40%40._V1_SX1920-1.jpg?auto=compress%2Cformat&ixlib=php-3.3.1"
-backdrop: "https://bifa.imgix.net/web/2018/10/MV5BMTYzMzU4NDUwOF5BMl5BanBnXkFtZTcwMTM5MjA5Ng%40%40._V1_SX1920-1.jpg?auto=compress%2Cformat&ixlib=php-3.3.1"
+poster: "https://m.media-amazon.com/images/M/MV5BZTdmM2MwMmItZTBlNC00ZDM5LTllZWYtYTZhM2M2MTU4ZTUxXkEyXkFqcGc%40._V1_.jpg"
+backdrop: "https://m.media-amazon.com/images/M/MV5BZTdmM2MwMmItZTBlNC00ZDM5LTllZWYtYTZhM2M2MTU4ZTUxXkEyXkFqcGc%40._V1_.jpg"
 youtubeVideoId: "58Onuy5USTc"
 youtubeVideoTitle: "A Separation — Official Trailer HD (Sony Pictures Classics)"
 aiGenerated: true
