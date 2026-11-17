@@ -1,6 +1,9 @@
 name: VibeCritic Publishing V2 Schedule
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/publishing-v2-schedule.yml']
   schedule:
     # Offset from quarter-hour boundaries to reduce GitHub scheduled-run contention.
     # The durable V2 cycle guard enforces one five-hour publishing cycle.
