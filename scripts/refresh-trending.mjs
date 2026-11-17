@@ -2,7 +2,7 @@ import { pathToFileURL } from 'node:url';
 import { resolve } from 'node:path';
 
 const TMDB_API = 'https://api.themoviedb.org/3';
-const clean = value => typeof value === 'string' ? value.replace(/<[^>]*>/g, ' ').replace(/\\s+/g, ' ').trim() : '';
+const clean = value => typeof value === 'string' ? value.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim() : '';
 const numeric = value => Number.isFinite(Number(value)) ? Number(value) : 0;
 
 async function request(url, headers = {}) {
