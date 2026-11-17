@@ -1,6 +1,6 @@
----
 import Base from '../../layouts/Base.astro';
 import ScoreCard from '../../components/ScoreCard.astro';
+import ReviewShare from '../../components/ReviewShare.astro';
 import { getCollection, render } from 'astro:content';
 import { TYPE_LABEL, fmtDate, url, optimizeImage, SITE_NAME } from '../../consts';
 import { scoreBandFor } from '../../../scripts/scoring-rubric.mjs';
@@ -99,6 +99,8 @@ const reviewStructuredData = {
     {d.originalTitle && d.originalTitle !== d.title && <p class="article-original-title" lang="en" dir="auto">{d.originalTitle}</p>}
     <p class="article-deck">{d.headline}</p>
   </header>
+
+  <ReviewShare title={d.title} shareUrl={canonicalUrl} />
 
   {d.backdrop&&<figure class="article-backdrop"><img src={optimizeImage(d.backdrop, 'backdrop')} alt={d.title} loading="eager" fetchpriority="high" decoding="async"/><figcaption>VibeCritic — قراءة نقدية بلا مجاملة</figcaption></figure>}
 
