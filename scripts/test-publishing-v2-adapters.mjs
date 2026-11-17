@@ -63,6 +63,8 @@ globalThis.fetch=async(url,options)=>{
 };
 try{
  const adapters=createPublishingAdapters();
+ assert.equal(await adapters.isAlreadyPublished({type:'game',id:'28',name:'Red Dead Redemption 2'}),true,'manual Arabic-title reviews must match their originalTitle and RAWG source ID');
+ assert.equal(await adapters.isAlreadyPublished({type:'game',id:'999999',name:'Unpublished test game'}),false,'unpublished titles must remain eligible');
  const generated=await adapters.generatePart({job:{item:{type:'movie',id:'77'},evidence:{title:'فيلم تجريبي',type:'movie',releaseDate:'2026',overview:'وصف موثق',genres:[],platforms:[],cast:[],crew:[],metadata:{},sources:[{name:'TMDB',url:'https://www.themoviedb.org/movie/77',extract:'معلومات'},{name:'Wikipedia',url:'https://en.wikipedia.org/wiki/Test',extract:'معلومات مستقلة'}]},parts:[]},provider:providers[0],stage:1});
  assert.equal(calls,1,'exactly one provider request per stage');
  assert.ok(JSON.parse(generated.text).review);
