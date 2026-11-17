@@ -26,7 +26,7 @@ const similarityFor=entry=>{
 const similarReviews=allReviews.filter(entry=>entry.id!==review.id&&entry.data.type===d.type)
  .map(similarityFor).filter(item=>item.tagHits>0||item.genreHits>=2)
  .sort((a,b)=>b.score-a.score||b.tagHits-a.tagHits||b.genreHits-a.genreHits)
- .slice(0,3).map(item=>item.entry);
+ .slice(0,3);
 
 const typeLabel = TYPE_LABEL[d.type];
 const isPreview = d.reviewMode === 'preview';
@@ -162,9 +162,28 @@ const reviewStructuredData = {
         {d.watchProviderUrl && <a href={d.watchProviderUrl} target="_blank" rel="noopener noreferrer">تحقق من خيارات المشاهدة على TMDB ↗</a>}
       </section>)}
       {d.sourceUrl && <section class="article-facts" aria-label="مصدر بيانات العمل"><h2>مصدر البيانات</h2><p>بيانات العمل الأساسية مستندة إلى {d.sourceName || 'المصدر المدرج'}؛ وهي مرجع للمعلومات الوصفية وليست حكماً نقدياً مستقلاً.</p><a href={d.sourceUrl} target="_blank" rel="noopener noreferrer">عرض صفحة العمل في المصدر ↗</a></section>}
-      {similarReviews.length>0 && <section class="article-facts" aria-label="مراجعات مشابهة">
-        <h2>مراجعات مشابهة</h2>
-        <ul>{similarReviews.map(entry=><li><a href={url('reviews/'+entry.id+'/')}>{entry.data.title} — {entry.data.reviewMode === 'preview' ? 'قراءة استباقية' : entry.data.reviewMode === 'limited' ? 'قيد التقييم' : entry.data.score.toFixed(1) + '/10'}</a></li>)}</ul>
+      {similarReviews.length>0 && <section class="related-reviews" aria-labelledby="related-reviews-title">
+        <div class="related-reviews-heading">
+          <p class="eyebrow">قد يثير اهتمامك أيضاً</p>
+          <h2 id="related-reviews-title">مراجعات قريبة من هذا العمل</h2>
+          <p>اخترنا هذه الأعمال اعتماداً على النوع والموضوعات المشتركة، لا على التقييم وحده.</p>
+        </div>
+        <div class="related-reviews-grid">
+          {similarReviews.map(({entry,tagHits,genreHits}) => <a class="related-review-card" href={url('reviews/'+entry.id+'/')}>
+            <div class="related-review-poster">
+              {entry.data.poster ? <img src={optimizeImage(entry.data.poster)} alt={entry.data.title} loading="lazy" decoding="async" width="342" height="513"/> : <span aria-hidden="true">✦</span>}
+              <span class="related-review-type">{TYPE_LABEL[entry.data.type]}</span>
+            </div>
+            <div class="related-review-copy">
+              <h3>{entry.data.title}</h3>
+              <p>{entry.data.headline}</p>
+              <div class="related-review-meta">
+                <span>{entry.data.reviewMode === 'preview' ? 'قراءة استباقية' : entry.data.reviewMode === 'limited' ? 'قيد التقييم' : entry.data.score.toFixed(1) + ' / 10'}</span>
+                <span>{tagHits>0 ? 'موضوعات مشتركة' : 'تصنيفات متقاربة'}</span>
+              </div>
+            </div>
+          </a>)}
+        </div>
       </section>}
       <p class="review-method-note">{isPreview ? 'منهجية VibeCritic: هذه قراءة استباقية تفصل المعلومات الرسمية عن التوقعات، ولا تمنح العمل تقييماً نهائياً قبل صدوره.' : isLimited ? 'منهجية VibeCritic: لا نعرض درجة عندما تكون الأدلة المتاحة غير كافية. هذه الصفحة مادة تعريفية محدودة وليست حكماً نقدياً نهائياً.' : 'منهجية VibeCritic: هذا تحليل نقدي مبني على المعلومات المنشورة والبيانات المتاحة، وليس ادعاءً باختبار مباشر للعمل. التقييم تقدير تحريري مستقل وليس تقييماً رسمياً.'}</p>
       <section class="article-facts article-feedback" aria-labelledby="review-feedback-title">
@@ -245,3 +264,25 @@ document.querySelectorAll<HTMLElement>('[data-youtube-facade]').forEach((facade)
  },{once:true});
 });
 </script>
+
+<style>
+  .related-reviews{margin:2.4rem 0;padding:clamp(1rem,2.5vw,1.5rem);border:1px solid var(--vc-border,rgba(255,255,255,.12));border-radius:20px;background:linear-gradient(145deg,rgba(240,153,54,.07),rgba(255,255,255,.018));}
+  .related-reviews-heading{margin-bottom:1.15rem}
+  .related-reviews-heading h2{margin:.2rem 0 .4rem;color:var(--vc-text);font-size:clamp(1.15rem,2.5vw,1.45rem)}
+  .related-reviews-heading>p:last-child{margin:0;color:var(--vc-muted);font-size:.9rem;line-height:1.7}
+  .related-reviews-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem}
+  .related-review-card{display:grid;grid-template-columns:84px minmax(0,1fr);gap:.8rem;min-width:0;padding:.7rem;border:1px solid var(--vc-border,rgba(255,255,255,.1));border-radius:15px;background:rgba(0,0,0,.13);color:inherit;text-decoration:none;transition:border-color .18s ease,transform .18s ease,background .18s ease}
+  .related-review-card:hover{transform:translateY(-3px);border-color:rgba(240,153,54,.55);background:rgba(240,153,54,.055)}
+  .related-review-poster{position:relative;overflow:hidden;aspect-ratio:2/3;border-radius:9px;background:rgba(255,255,255,.06);display:grid;place-items:center;color:var(--vc-accent,#f09936)}
+  .related-review-poster img{width:100%;height:100%;object-fit:cover}
+  .related-review-type{position:absolute;right:.3rem;bottom:.3rem;padding:.18rem .4rem;border:1px solid rgba(255,255,255,.18);border-radius:6px;background:rgba(0,0,0,.78);color:#fff;font-size:.65rem;font-weight:750}
+  .related-review-copy{display:flex;min-width:0;flex-direction:column;align-items:flex-start;gap:.35rem}
+  .related-review-copy h3{display:-webkit-box;overflow:hidden;margin:0;color:var(--vc-text);font-size:.95rem;line-height:1.45;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+  .related-review-copy>p{display:-webkit-box;overflow:hidden;margin:0;color:var(--vc-muted);font-size:.78rem;line-height:1.6;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+  .related-review-meta{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:auto;padding-top:.25rem}
+  .related-review-meta span{padding:.2rem .42rem;border-radius:6px;background:rgba(240,153,54,.1);color:var(--vc-accent,#f09936);font-size:.66rem;font-weight:700}
+  .related-review-card:focus-visible{outline:2px solid var(--vc-accent,#f09936);outline-offset:3px}
+  @media(max-width:900px){.related-reviews-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:560px){.related-reviews{margin:1.8rem 0;border-radius:16px}.related-reviews-grid{grid-template-columns:1fr;gap:.65rem}.related-review-card{grid-template-columns:76px minmax(0,1fr);padding:.6rem}.related-review-copy>p{-webkit-line-clamp:2}}
+  @media(prefers-reduced-motion:reduce){.related-review-card{transition:none}.related-review-card:hover{transform:none}}
+</style>
