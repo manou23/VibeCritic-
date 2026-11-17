@@ -75,10 +75,11 @@ assert.equal(failedProviderCalls,2,'fallback provider should receive the next si
 // Duplicate titles must be retired before they reserve the cycle's single article slot.
 const duplicateState=createState();
 duplicateState.jobs['movie:dupe']={key:'movie:dupe',item:{type:'movie',id:'dupe'},status:'writing',stage:1,parts:[],createdAt:new Date(now).toISOString(),updatedAt:new Date(now).toISOString()};
+duplicateState.cycle={startedAt:now,deadlineAt:now+3*60*60*1000,nextStartAt:now+5*60*60*1000,articleKey:'movie:dupe'};
 const duplicateAdapters={...adapters,discover:async()=>[],isAlreadyPublished:async()=>true};
 const duplicateResult=await runCycle({state:duplicateState,adapters:duplicateAdapters,providers,now,persist:async()=>{}});
 assert.equal(duplicateResult.action,'no-candidates');
-assert.equal(duplicateState.cycle.articleKey,undefined,'a duplicate must not consume the cycle article slot');
+assert.equal(duplicateState.cycle.articleKey,null,'a duplicate must release any previously reserved cycle article slot');
 
 // A ready article must not be mistaken for a duplicate of its own newly written file.
 const readyState=createState();
