@@ -24,7 +24,7 @@ import Base from '../layouts/Base.astro';
   <nav class="catalog-pagination" aria-label="صفحات الكتالوج"><button id="catalog-prev" type="button" disabled>السابق</button><span id="catalog-page-label">1</span><button id="catalog-next" type="button" disabled>التالي</button></nav>
   <aside class="tmdb-attribution"><strong>TMDB</strong><span>يستخدم هذا المنتج واجهة TMDB API، لكنه غير معتمد أو مصادق عليه من TMDB.</span><a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer">The Movie Database</a></aside>
 </section>
-<dialog id="catalog-detail" class="catalog-detail"><button type="button" id="catalog-detail-close" class="catalog-detail-close" aria-label="إغلاق">×</button><div id="catalog-detail-content"></div></dialog>
+<dialog id="catalog-detail" class="catalog-detail" aria-labelledby="catalog-detail-title"><button type="button" id="catalog-detail-close" class="catalog-detail-close" aria-label="إغلاق">×</button><div id="catalog-detail-content"></div></dialog>
 </Base>
 
 <style>
@@ -49,6 +49,8 @@ const next = document.querySelector<HTMLButtonElement>('#catalog-next');
 const dialog = document.querySelector<HTMLDialogElement>('#catalog-detail');
 const detailContent = document.querySelector<HTMLElement>('#catalog-detail-content');
 let currentPage = 1, totalPages = 1, requestController: AbortController | undefined;
+let catalogRequestId = 0;
+let searchDebounce: ReturnType<typeof setTimeout> | undefined;
 let detailController: AbortController | undefined;
 let detailRequestId = 0;
 
@@ -74,21 +76,34 @@ function renderItems(items: any[]) {
   }
 }
 async function loadCatalog(page = 1) {
-  if (requestController) requestController.abort();
-  requestController = new AbortController(); currentPage = page;
-  status!.textContent = 'جارٍ البحث في قاعدة البيانات...'; results!.replaceChildren();
+  requestController?.abort();
+  const controller = new AbortController();
+  requestController = controller;
+  const requestId = ++catalogRequestId;
+  currentPage = page;
+  status!.textContent = 'جارٍ البحث في قاعدة البيانات...';
+  status!.setAttribute('aria-busy', 'true');
+  prev!.disabled = true; next!.disabled = true;
+  results!.replaceChildren();
   const params = new URLSearchParams(); new FormData(form!).forEach((value, key) => params.set(key, String(value)));
   params.set('page', String(page)); params.set('limit', '18');
   try {
-    const response = await fetch('/api/catalog?' + params.toString(), { signal: requestController.signal, headers: { accept: 'application/json' } });
-    const data = await response.json(); if (!response.ok) throw new Error(data.error || 'تعذر تحميل الكتالوج.');
+    const response = await fetch('/api/catalog?' + params.toString(), { signal: controller.signal, headers: { accept: 'application/json' } });
+    const data = await response.json();
+    if (requestId !== catalogRequestId || controller.signal.aborted) return;
+    if (!response.ok) throw new Error(data.error || 'تعذر تحميل الكتالوج.');
     renderItems(data.items || []); totalPages = Math.max(1, data.pages || 1);
     count!.textContent = Number(data.total || 0).toLocaleString('ar-DZ') + ' عمل';
     pageLabel!.textContent = currentPage + ' / ' + totalPages; prev!.disabled = currentPage <= 1; next!.disabled = currentPage >= totalPages;
     status!.textContent = data.total ? 'اختر أي عمل لعرض تفاصيله وطاقمه.' : 'لا توجد نتائج مطابقة. جرّب تغيير كلمات البحث أو المرشحات.';
   } catch (error: any) {
-    if (error.name === 'AbortError') return;
+    if (error.name === 'AbortError' || requestId !== catalogRequestId) return;
     status!.textContent = error.message || 'حدث خطأ أثناء البحث.'; prev!.disabled = true; next!.disabled = true;
+  } finally {
+    if (requestId === catalogRequestId) {
+      status!.removeAttribute('aria-busy');
+      if (requestController === controller) requestController = undefined;
+    }
   }
 }
 async function showDetails(id: number) {
@@ -109,7 +124,9 @@ async function showDetails(id: number) {
     if (requestId !== detailRequestId || controller.signal.aborted || !dialog!.open) return;
     const item = data.title, body = document.createElement('div'); body.className = 'catalog-detail-body';
     const src = posterUrl(item.poster_path); if (src) { const img = document.createElement('img'); img.src = src; img.alt = item.title_ar || item.title; img.loading = 'lazy'; img.decoding = 'async'; body.append(img); }
-    const copy = document.createElement('div'); addText(copy, 'h2', '', item.title_ar || item.title);
+    const copy = document.createElement('div');
+    const heading = addText(copy, 'h2', '', item.title_ar || item.title);
+    heading.id = 'catalog-detail-title';
     addText(copy, 'div', 'catalog-item-meta', [item.type === 'movie' ? 'فيلم' : 'مسلسل', item.year || '', item.genres || ''].filter(Boolean).join(' · '));
     addText(copy, 'p', '', item.overview_ar || 'لا يتوفر ملخص عربي لهذا العمل حالياً.');
     if (item.rating) addText(copy, 'p', '', 'تقييم TMDB: ' + Number(item.rating).toFixed(1) + '/10 (' + Number(item.votes || 0).toLocaleString('ar-DZ') + ' صوت)');
@@ -125,8 +142,15 @@ async function showDetails(id: number) {
     }
   }
 }
-form?.addEventListener('submit', event => { event.preventDefault(); loadCatalog(1); });
-form?.addEventListener('reset', () => window.setTimeout(() => loadCatalog(1), 0));
+form?.addEventListener('submit', event => { event.preventDefault(); if (searchDebounce) clearTimeout(searchDebounce); loadCatalog(1); });
+form?.querySelector<HTMLInputElement>('input[name="q"]')?.addEventListener('input', () => {
+  if (searchDebounce) clearTimeout(searchDebounce);
+  searchDebounce = setTimeout(() => loadCatalog(1), 350);
+});
+form?.addEventListener('reset', () => {
+  if (searchDebounce) clearTimeout(searchDebounce);
+  window.setTimeout(() => loadCatalog(1), 0);
+});
 prev?.addEventListener('click', () => loadCatalog(currentPage - 1));
 next?.addEventListener('click', () => loadCatalog(currentPage + 1));
 const closeDetails = () => {
