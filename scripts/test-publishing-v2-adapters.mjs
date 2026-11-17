@@ -13,7 +13,10 @@ assert.deepEqual(providers.map(x=>x.id),['gemini','cloudflare','groq','openroute
 assert.equal(providers[1].dailyRequestLimit,3,'Cloudflare must remain below the published free Neurons allocation');
 assert.equal(providers[1].dailyTokenLimit,9000);
 assert.equal(providers[2].model,'openai/gpt-oss-120b','Groq must use a currently listed production model');
-assert.equal(providers[2].dailyRequestLimit,8);
+assert.equal(providers[2].dailyRequestLimit,50,'Groq budget must stay below the documented free-tier daily request allowance');
+assert.equal(providers[2].dailyTokenLimit,100000,'Groq token budget must stay below the documented daily token allowance');
+assert.equal(providers[3].dailyRequestLimit,40,'OpenRouter free-model budget must stay below its 50 requests/day cap');
+assert.equal(providers[3].dailyTokenLimit,40000);
 assert.equal(providers[1].model,'@cf/meta/llama-3.3-70b-instruct-fp8-fast');
 assert.equal(providers[3].model,'nvidia/nemotron-3.5-super-vl:free');
 assert.ok(providers.every(x=>x.free===true&&x.enabled===true));
