@@ -5,6 +5,11 @@ import { parseJsonResponse } from '../review-json.mjs';
 // V2 adapters: free-tier-only model calls and source-grounded editorial metadata.
 const env=process.env, ROOT='src/content/reviews';
 const clean=v=>String(v??'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
+const cleanSection=v=>{
+ let text=String(v??'').replace(/<[^>]*>/g,' ').replace(/\r\n?/g,'\n').replace(/\\+\s*\n/g,'\n').replace(/\\+$/gm,'');
+ const lines=text.split('\n').map(line=>line.trim()).filter(line=>!/^#{1,6}\s+/.test(line)).map(line=>line.replace(/^\*{0,2}\s*(?:المرحلة|مرحلة|stage|part)\s*[1-3]\s*[–—:-]\s*[^*]{1,120}\*{0,2}\s*/i,''));
+ return lines.map(line=>line.replace(/[ \t]+/g,' ').trim()).filter(Boolean).join('\n\n').replace(/\n{3,}/g,'\n\n').trim();
+};
 const slug=v=>clean(v).toLowerCase().normalize('NFKD').replace(/[^\p{L}\p{N}]+/gu,'-').replace(/^-|-$/g,'').slice(0,60)||'review';
 const arr=v=>Array.isArray(v)?v:[];
 async function get(url){
@@ -114,7 +119,7 @@ function prompt(job,stage){
  'العمل: '+e.title+' | النوع: '+e.type+' | تاريخ الإصدار: '+(e.releaseDate||'غير مثبت'),
  'الأدلة: '+JSON.stringify({overview:e.overview,genres:e.genres,platforms:e.platforms,cast:e.cast,crew:e.crew,metadata:e.metadata,sources:e.sources.map(s=>({name:s.name,url:s.url,extract:s.extract}))}),
  'ما كتب سابقاً، لا تكرره: '+(prior||'لا شيء'),
- 'اكتب القسم '+stage+' من 3، واستهدف نحو 230 كلمة عربية فعلية (الحد الأدنى 190 والحد الأعلى 280). ابدأ review بعنوان Markdown واضح: '+(e.type==='game'?['## القصة والعالم والشخصيات','## أسلوب اللعب والتصميم والإيقاع','## التقييم النقدي وحدود التجربة'][stage-1]:['## القصة والشخصيات والبناء','## الإخراج والصورة والصوت والإيقاع','## التقييم النقدي وحدود العمل'][stage-1])+'. المرحلة 1 تشرح الفكرة والشخصيات دون حرق؛ المرحلة 2 تحلل الأنظمة أو الإخراج والعناصر الفنية والإيقاع؛ المرحلة 3 تضيف موازنة نقدية جديدة ولا تعيد صياغة القسمين السابقين.',
+ 'اكتب القسم '+stage+' من 3، واستهدف نحو 230 كلمة عربية فعلية (الحد الأدنى 190 والحد الأعلى 280). اكتب فقرات تحليلية فقط دون عناوين Markdown داخل review ودون ذكر المرحلة أو ترقيمها؛ سيضيف المحرك العنوان الرئيسي تلقائياً. لا تكرر محتوى الأقسام السابقة. '+(e.type==='game'?['## القصة والعالم والشخصيات','## أسلوب اللعب والتصميم والإيقاع','## التقييم النقدي وحدود التجربة'][stage-1]:['## القصة والشخصيات والبناء','## الإخراج والصورة والصوت والإيقاع','## التقييم النقدي وحدود العمل'][stage-1])+'. المرحلة 1 تشرح الفكرة والشخصيات دون حرق؛ المرحلة 2 تحلل الأنظمة أو الإخراج والعناصر الفنية والإيقاع؛ المرحلة 3 تضيف موازنة نقدية جديدة ولا تعيد صياغة القسمين السابقين.',
  'أعد JSON فقط: review,scores,pros,cons,verdict. scores تحوي story,visuals,sound,pacing من 0 إلى 10. في المرحلة 3 فقط اكتب 3 نقاط قوة و2 تحفظات محددة وverdict من 50 إلى 90 كلمة. قبل ذلك اجعل القوائم والحكم فارغة. لا تكتب نصاً خارج review.',
  'لا تحول غياب البيانات إلى ادعاءات. لا تستخدم التوقعات كحقائق. اجعل كل حكم مرتبطاً بما ورد في الأدلة.'].join('\n\n');
 }
@@ -195,8 +200,8 @@ export function createPublishingAdapters(){return {
   const dims={storyScore:Number(last.scores.story),visualsScore:Number(last.scores.visuals),soundScore:Number(last.scores.sound),pacingScore:Number(last.scores.pacing)};
   const score=Math.round((dims.storyScore*.3+dims.visualsScore*.25+dims.soundScore*.2+dims.pacingScore*.25)*10)/10;
   const headings=e.type==='game'?['القصة والعالم والشخصيات','أسلوب اللعب والتصميم والإيقاع','التقييم النقدي وحدود التجربة']:['القصة والشخصيات والبناء','الإخراج والصورة والصوت والإيقاع','التقييم النقدي وحدود العمل'];
-  const sections=p.map((x,i)=>'## '+headings[i]+'\n\n'+clean(String(x.review||'').replace(/^##\s+[^\n]+\n?/,'').trim()));
-  const firstSection=clean(String(p[0]?.review||'').replace(/^##\s+[^\n]+\n?/,'').trim());
+  const sections=p.map((x,i)=>'## '+headings[i]+'\n\n'+cleanSection(x.review));
+  const firstSection=clean(cleanSection(p[0]?.review||''));
   const summary=(firstSection.split(/(?<=[.!؟])\s+/).slice(0,2).join(' ').slice(0,420)||clean(e.overview).slice(0,420));
   return {title:e.title,originalTitle:e.originalTitle,headline:'مراجعة نقدية: '+e.title+' بين نقاط القوة وحدود التجربة',hook:summary,summary,verdict:clean(last.verdict),type:e.type,sourceId:e.sourceId,sourceName:e.sourceName,sourceUrl:e.sourceUrl,date:new Date().toISOString().slice(0,10),score,...dims,pros:arr(last.pros).map(clean),cons:arr(last.cons).map(clean),sources:e.sources,poster:e.poster,backdrop:e.backdrop,platforms:e.platforms,genres:e.genres,cast:e.cast,crew:e.crew,tags:e.genres,youtubeVideoId:e.youtubeVideoId,youtubeVideoTitle:e.youtubeVideoTitle,externalVideoUrl:e.externalVideoUrl,externalVideoTitle:e.externalVideoTitle,body:sections.join('\n\n')+'\n\n### المصادر والمراجع\n\n'+e.sources.map(x=>'- ['+x.name+']('+x.url+')').join('\n')};
  },

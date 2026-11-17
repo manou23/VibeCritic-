@@ -26,7 +26,7 @@ const usage={};recordUsage(usage,"free",{requests:1,tokens:250,success:true});as
 assert.equal(countWords("هذه مراجعة نقدية من VibeCritic"),5);
 const sectionText=prefix=>Array.from({length:220},(_,i)=>prefix+i).join(" ");
 const body=["## القصة",sectionText("story"),"## الأنظمة",sectionText("systems"),"## التقييم",sectionText("verdict")].join("\n\n");
-const article={title:"عنوان",headline:"عنوان نقدي",summary:"ملخص",verdict:"حكم نقدي",type:"series",sourceId:"series:101",body,storyScore:8,visualsScore:8,soundScore:8,pacingScore:8,score:8,pros:["أ","ب","ج"],cons:["د","هـ"],sources:[{name:"Official",url:"https://example.com/a"},{name:"Independent",url:"https://example.org/b"}],poster:"https://example.com/poster.jpg"};
+const article={title:"عنوان",headline:"عنوان نقدي",summary:"ملخص",verdict:"حكم نقدي",type:"series",sourceId:"series:101",body,storyScore:8,visualsScore:8,soundScore:8,pacingScore:8,score:8,pros:["أ","ب","ج"],cons:["د","هـ"],sources:[{name:"Official",url:"https://example.com/a"},{name:"Independent",url:"https://example.org/b"}],poster:"https://example.com/poster.jpg",youtubeVideoId:"Abcdef12345"};
 assert.equal(validateArticle(article).valid,true);
 const repeatedBody=["## القصة",sectionText("first"),"## الأنظمة",sectionText("second"),"## التقييم",sectionText("second")].join("\n\n");
 const repeatedCheck=validateArticle({...article,body:repeatedBody});
@@ -36,16 +36,18 @@ const earlyRepeatBody=["## القصة",sectionText("shared"),"## الأنظمة"
 const earlyRepeatCheck=validateArticle({...article,body:earlyRepeatBody});
 assert.equal(earlyRepeatCheck.valid,false);
 assert.equal(earlyRepeatCheck.retryFromStage,2,"regenerate the earliest later section that overlaps");
-assert.equal(validateEvidence({sources:article.sources}).valid,true);
-assert.equal(validateEvidence({sources:[{name:"A",url:"https://example.com/a"},{name:"B",url:"https://example.com/b"}]}).valid,false,"same host is not independent evidence");
-assert.equal(validateEvidence({sources:[{name:"A",url:"http://example.com/a"},{name:"B",url:"https://example.org/b"}]}).valid,false,"HTTP evidence is rejected");
+assert.equal(validateEvidence({sources:article.sources,youtubeVideoId:article.youtubeVideoId}).valid,true);
+assert.equal(validateEvidence({sources:[{name:"A",url:"https://example.com/a"},{name:"B",url:"https://example.com/b"}],youtubeVideoId:article.youtubeVideoId}).valid,false,"same host is not independent evidence");
+assert.equal(validateEvidence({sources:[{name:"A",url:"http://example.com/a"},{name:"B",url:"https://example.org/b"}],youtubeVideoId:article.youtubeVideoId}).valid,false,"HTTP evidence is rejected");
 assert.equal(validateArticle({...article,body:"نص قصير"}).valid,false);
+assert.equal(validateArticle({...article,youtubeVideoId:""}).valid,false,"articles without a verified trailer must not pass quality validation");
+assert.equal(validateEvidence({sources:article.sources}).valid,false,"research without a verified video must be rejected before writing");
 assert.equal(validateArticle({...article,sources:[article.sources[0]]}).valid,false);
 assert.equal(validateArticle({...article,sources:[{name:"API",url:"https://api.example.com/a"},{name:"WWW",url:"https://www.example.com/b"}]}).valid,false,"subdomains of one publisher are not independent evidence");
 assert.equal(validateArticle({...article,sources:[{name:"TMDB",url:"https://www.themoviedb.org/a"},{name:"Wikipedia",url:"https://en.wikipedia.org/b"}]}).valid,true);
-const sameSite=validateEvidence({sources:[{name:"one",url:"https://api.example.co.uk/a"},{name:"two",url:"https://www.example.co.uk/b"}]});
+const sameSite=validateEvidence({sources:[{name:"one",url:"https://api.example.co.uk/a"},{name:"two",url:"https://www.example.co.uk/b"}],youtubeVideoId:article.youtubeVideoId});
 assert.equal(sameSite.valid,false,"two subdomains of one registrable domain count as one source");
-const independent=validateEvidence({sources:[{name:"TMDB",url:"https://www.themoviedb.org/a"},{name:"Wikipedia",url:"https://en.wikipedia.org/b"}]});
+const independent=validateEvidence({sources:[{name:"TMDB",url:"https://www.themoviedb.org/a"},{name:"Wikipedia",url:"https://en.wikipedia.org/b"}],youtubeVideoId:article.youtubeVideoId});
 assert.equal(independent.valid,true);
 assert.throws(()=>transition(job,"published"),/Illegal transition/);
 // A waiting draft owns the queue: no later candidate may be discovered or enqueued.

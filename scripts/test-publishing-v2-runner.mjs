@@ -7,10 +7,10 @@ let aiCalls=0,fileWrites=0,deployChecks=0,saves=0,crashOnce=true,deploymentReady
 const text=Array.from({length:240},()=> 'تحليل نقدي يشرح بناء الشخصيات والصورة والإيقاع وحدود التجربة').join(' ');
 const sectionWords=prefix=>Array.from({length:220},(_,i)=>prefix+i).join(' ');
 const articleBody=["## القصة",sectionWords("story"),"## الأنظمة",sectionWords("systems"),"## التقييم",sectionWords("verdict")].join("\n\n");
-const article={title:'عنوان',headline:'عنوان نقدي',summary:'ملخص',verdict:'حكم نقدي',type:'series',sourceId:'series:1',body:articleBody,storyScore:8,visualsScore:8,soundScore:8,pacingScore:8,score:8,pros:['قوة أولى','قوة ثانية','قوة ثالثة'],cons:['تحفظ أول','تحفظ ثان'],sources:[{name:'Official',url:'https://example.com/a'},{name:'Independent',url:'https://example.org/b'}],poster:'https://example.com/poster.jpg'};
+const article={title:'عنوان',headline:'عنوان نقدي',summary:'ملخص',verdict:'حكم نقدي',type:'series',sourceId:'series:1',body:articleBody,storyScore:8,visualsScore:8,soundScore:8,pacingScore:8,score:8,pros:['قوة أولى','قوة ثانية','قوة ثالثة'],cons:['تحفظ أول','تحفظ ثان'],youtubeVideoId:'Abcdef12345',sources:[{name:'Official',url:'https://example.com/a'},{name:'Independent',url:'https://example.org/b'}],poster:'https://example.com/poster.jpg',youtubeVideoId:'Abcdef12345'};
 const adapters={
  discover:async()=>[{type:'series',id:'1',date:'2026-11-16'}],
- collectEvidence:async()=>({sources:[{name:'Official',url:'https://example.com/a'},{name:'Independent',url:'https://example.org/b'}]}),
+ collectEvidence:async()=>({youtubeVideoId:'Abcdef12345',sources:[{name:'Official',url:'https://example.com/a'},{name:'Independent',url:'https://example.org/b'}]}),
  generatePart:async({stage})=>{aiCalls++;return {text:'مرحلة '+stage+' '+text,tokens:120};},
  assembleArticle:async()=>{if(crashOnce){crashOnce=false;throw new Error('simulated interruption before quality gate');}return article;},
  publishFile:async()=>{fileWrites++;return {path:'src/content/reviews/series-1.md'};},
@@ -55,7 +55,7 @@ assert.equal(aiCalls,3);
 const failureState=createState();let failedProviderCalls=0;
 const failureAdapters={
  discover:async()=>[{type:'movie',id:'cooldown-test'}],
- collectEvidence:async()=>({sources:[{name:'Official',url:'https://example.com/a'},{name:'Independent',url:'https://example.org/b'}]}),
+ collectEvidence:async()=>({youtubeVideoId:'Abcdef12345',sources:[{name:'Official',url:'https://example.com/a'},{name:'Independent',url:'https://example.org/b'}]}),
  generatePart:async({provider})=>{failedProviderCalls++;if(provider.id==='rate-limited')throw new Error('429 rate limit');return {text:'backup stage',tokens:100};},
  assembleArticle:async()=>article,publishFile:async()=>({path:'unused'}),verifyDeployment:async()=>false
 };
@@ -111,7 +111,7 @@ let qualityCalls=0,qualityAssembles=0,qualityWrites=0;
 const repeatedArticle={...article,body:["## القصة",sectionWords("alpha"),"## الأنظمة",sectionWords("beta"),"## التقييم",sectionWords("beta")].join("\n\n")};
 const qualityAdapters={
  discover:async()=>[{type:'movie',id:'repeat',date:'2026-11-16'}],
- collectEvidence:async()=>({sources:[{name:'Official',url:'https://example.com/a'},{name:'Independent',url:'https://example.org/b'}]}),
+ collectEvidence:async()=>({youtubeVideoId:'Abcdef12345',sources:[{name:'Official',url:'https://example.com/a'},{name:'Independent',url:'https://example.org/b'}]}),
  generatePart:async({stage})=>{qualityCalls++;return {text:'stage '+stage+' '+text,tokens:100};},
  assembleArticle:async()=>{qualityAssembles++;return qualityAssembles===1?repeatedArticle:article;},
  publishFile:async()=>{qualityWrites++;return {path:'src/content/reviews/movie-repeat.md'};},

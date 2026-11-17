@@ -59,7 +59,7 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
  }
  // Permanent evidence failures were previously deferred as generic research errors.
  // Retire those legacy checkpoints immediately so one unsupported title cannot block discovery.
- if(job?.status==='waiting'&&job.resumeTo==='researching'&&/^Evidence: /.test(String(job.lastError||''))&&/Independent source has insufficient detail|No sufficiently matching independent encyclopedia page|Primary source metadata is too thin|No HTTPS poster available/.test(String(job.lastError||''))){
+ if(job?.status==='waiting'&&job.resumeTo==='researching'&&/^Evidence: /.test(String(job.lastError||''))&&/Independent source has insufficient detail|No sufficiently matching independent encyclopedia page|Primary source metadata is too thin|No HTTPS poster available|No verified trailer available/.test(String(job.lastError||''))){
   state.jobs[job.key]=transition(job,'abandoned',{lastError:'Evidence rejected: '+String(job.lastError).replace(/^Evidence: /,'')},now);
   await save();job=null;
  }
@@ -125,7 +125,7 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
   catch(error){
    const message=String(error?.message||error);
    // Permanent evidence gaps should not pin the single-job queue for hours.
-   if(/No sufficiently matching independent encyclopedia page|Independent source has insufficient detail|Primary source metadata is too thin|No HTTPS poster available/.test(message)){
+   if(/No sufficiently matching independent encyclopedia page|Independent source has insufficient detail|Primary source metadata is too thin|No HTTPS poster available|No verified trailer available/.test(message)){
     job=transition(job,'abandoned',{lastError:'Evidence rejected: '+message},now);
     state.jobs[job.key]=job;await save();
     // Evidence-only failures cost no model tokens. Skip a small bounded batch in one
