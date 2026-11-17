@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import MagazineNav from '../../components/MagazineNav.astro';
 import { getCollection } from 'astro:content';
 import { TYPE_LABEL } from '../../consts';
 const works=(await getCollection('reviews'))
@@ -9,6 +10,7 @@ const first=works[0]?.id??'';
 const second=works[1]?.id??first;
 ---
 <Base title="قارن بين عملين" description="قارن بين مراجعات وتقييمات الألعاب والأفلام والمسلسلات في VibeCritic.">
+<MagazineNav active="compare" />
 <section class="wrap magazine-page-hero"><p class="catalog-eyebrow">SIDE-BY-SIDE COMPARISON</p><h1>قارن بين عملين</h1><p>اختر عملين من مراجعاتنا المكتملة، وشاهد التقييم والنوع وتاريخ النشر والملخص جنباً إلى جنب لتسهيل قرارك.</p></section>
 <section class="wrap compare-section">
  {works.length>=2?<>
