@@ -1,0 +1,61 @@
+---
+---
+<div class="reading-progress" data-reading-progress aria-hidden="true">
+  <span class="reading-progress-fill" data-reading-progress-fill></span>
+</div>
+
+<style>
+  .reading-progress {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 9999;
+    height: 3px;
+    overflow: hidden;
+    pointer-events: none;
+    background: color-mix(in srgb, var(--vc-accent, #f09936) 13%, transparent);
+  }
+
+  .reading-progress-fill {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);
+    transform-origin: right center;
+    background: linear-gradient(90deg, #f6bd68, var(--vc-accent, #f09936));
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reading-progress-fill { will-change: auto; }
+  }
+</style>
+
+<script>
+  const progressBars = document.querySelectorAll<HTMLElement>('[data-reading-progress]');
+  progressBars.forEach((bar) => {
+    const fill = bar.querySelector<HTMLElement>('[data-reading-progress-fill]');
+    const article = bar.closest('body')?.querySelector<HTMLElement>('.article-page');
+    if (!fill || !article) {
+      bar.remove();
+      return;
+    }
+
+    let frame = 0;
+    const updateProgress = () => {
+      frame = 0;
+      const bounds = article.getBoundingClientRect();
+      const scrollableDistance = article.offsetHeight - window.innerHeight;
+      const travelled = Math.min(Math.max(-bounds.top, 0), Math.max(scrollableDistance, 0));
+      const progress = scrollableDistance > 0 ? travelled / scrollableDistance : 0;
+      fill.style.transform = `scaleX(${progress})`;
+    };
+    const scheduleUpdate = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(updateProgress);
+    };
+
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate, { passive: true });
+    updateProgress();
+  });
+</script>
