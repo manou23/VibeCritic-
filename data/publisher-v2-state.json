@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T13:37:44.659Z",
+  "updatedAt": "2026-11-17T19:39:03.138Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -878,6 +878,79 @@
       },
       "deployedAt": "2026-11-17T13:37:44.297Z",
       "publishedAt": "2026-11-17T13:37:44.297Z"
+    },
+    "series:279155": {
+      "key": "series:279155",
+      "item": {
+        "type": "series",
+        "id": "279155",
+        "name": "The Silent Storm",
+        "originalTitle": "谷雨",
+        "overview": "In 1994, tax auditor Ouyang Xu, criminal investigator Yan Ping'an, and Zhou Haiyang—who was searching for his missing wife—met through a counterfeit invoice case in Chunjiang City. Under the tide of the times, the three experienced vastly different circumstances, and their fates gradually diverged. Years later, Operation Grain Rain brings them together again—but the brothers of old now stand on opposite sides. Ouyang Xu faces off against the tax fraud ring led by Zhou Haiyang and the protective umbrella behind it, caught in a painful choice between emotion and the law. Starting from a single invoice, he tears away the veil of greed and ultimately eliminates evil, safeguarding justice.",
+        "date": "2026-11-05",
+        "poster": "https://image.tmdb.org/t/p/w780/c8UHaCOfzyQYagHv7vAAOkrmgDb.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/m5tiVhzIFIqDyIPwOsHDsMDGMsK.jpg",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/279155",
+        "popularity": 1
+      },
+      "status": "waiting",
+      "stage": 0,
+      "parts": [],
+      "evidence": {
+        "title": "The Silent Storm",
+        "originalTitle": "谷雨",
+        "type": "series",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/279155",
+        "sourceId": "series:279155",
+        "releaseDate": "2026-11-05",
+        "overview": "In 1994, tax auditor Ouyang Xu, criminal investigator Yan Ping'an, and Zhou Haiyang—who was searching for his missing wife—met through a counterfeit invoice case in Chunjiang City. Under the tide of the times, the three experienced vastly different circumstances, and their fates gradually diverged. Years later, Operation Grain Rain brings them together again—but the brothers of old now stand on opposite sides. Ouyang Xu faces off against the tax fraud ring led by Zhou Haiyang and the protective umbrella behind it, caught in a painful choice between emotion and the law. Starting from a single invoice, he tears away the veil of greed and ultimately eliminates evil, safeguarding justice.",
+        "poster": "https://image.tmdb.org/t/p/w780/c8UHaCOfzyQYagHv7vAAOkrmgDb.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/m5tiVhzIFIqDyIPwOsHDsMDGMsK.jpg",
+        "genres": [
+          "Drama"
+        ],
+        "platforms": [],
+        "cast": [
+          "Jing Boran",
+          "Zhang Songwen",
+          "Sun Yizhou",
+          "Sui Junbo",
+          "Li Xiaoran",
+          "Sophie Zhang",
+          "Yue Man-lok"
+        ],
+        "crew": [
+          "Li Lu"
+        ],
+        "youtubeVideoId": "dFuaGlCgnEk",
+        "youtubeVideoTitle": "Official Trailer 2 [Subtitled]",
+        "externalVideoUrl": "",
+        "externalVideoTitle": "",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/279155",
+            "extract": "In 1994, tax auditor Ouyang Xu, criminal investigator Yan Ping'an, and Zhou Haiyang—who was searching for his missing wife—met through a counterfeit invoice case in Chunjiang City. Under the tide of the times, the three experienced vastly different circumstances, and their fates gradually diverged. Years later, Operation Grain Rain brings them together again—but the brothers of old now stand on opposite sides. Ouyang Xu faces off against the tax fraud ring led by Zhou Haiyang and the protective umbrella behind it, caught in a painful choice between emotion and the law. Starting from a single invoice, he tears away the veil of greed and ultimately eliminates evil, safeguarding justice."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/The_Silent_Storm",
+            "extract": "The Silent Storm is a 2014 British romantic drama film written and directed by Corinna McFarlane and starring Andrea Riseborough and Damian Lewis. It is the first non-James Bond film to be produced by Eon Productions, since Call Me Bwana."
+          }
+        ],
+        "metadata": {
+          "rating": 9,
+          "votes": 1
+        }
+      },
+      "attempts": 1,
+      "createdAt": "2026-11-17T19:38:55.226Z",
+      "updatedAt": "2026-11-17T19:38:55.226Z",
+      "nextAttemptAt": 1794944635226,
+      "lastError": "gemini: gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
+      "resumeTo": "writing"
     }
   },
   "providerUsage": {
@@ -921,24 +994,24 @@
         "failures": 4
       },
       "gemini": {
-        "requests": 5,
+        "requests": 6,
         "tokens": 0,
         "successes": 0,
-        "failures": 3
+        "failures": 4
       }
     }
   },
   "providerCooldowns": {
     "gemini": {
-      "failures": 2,
-      "until": 1794936314775,
+      "failures": 3,
+      "until": 1794973135226,
       "lastError": "gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
     }
   },
   "cycle": {
-    "startedAt": 1794921914775,
-    "deadlineAt": 1794932714775,
-    "nextStartAt": 1794939914775,
-    "articleKey": "game:58175"
+    "startedAt": 1794944335226,
+    "deadlineAt": 1794955135226,
+    "nextStartAt": 1794955135226,
+    "articleKey": "series:279155"
   }
 }
