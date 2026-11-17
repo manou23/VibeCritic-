@@ -44,7 +44,9 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
  }
  // Avoid creating a duplicate review when an existing manual or assisted article covers this title.
  if(job&&!job.fileWritten&&job.status!=='ready'&&adapters.isAlreadyPublished&&await adapters.isAlreadyPublished(job.item)){
-  state.jobs[job.key]=transition(job,'abandoned',{lastError:'Skipped: an existing review already covers this title.'},now);
+  const duplicateKey=job.key;
+  state.jobs[duplicateKey]=transition(job,'abandoned',{lastError:'Skipped: an existing review already covers this title or source ID.'},now);
+  if(state.cycle?.articleKey===duplicateKey)state.cycle.articleKey=null;
   await save();job=null;
  }
  // A recovered draft owns this cycle only after duplicate detection; do not enqueue
