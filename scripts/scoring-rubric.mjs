@@ -15,3 +15,8 @@ export function scoreBandFor(value) {
   return SCORE_BANDS.find(band => score >= band.min && score <= band.max) || null;
 }
 export const SCORE_SCALE_PROMPT = SCORE_BANDS.map(band => band.min.toFixed(1) + '–' + band.max.toFixed(1) + ': ' + band.label).join('؛ ');
+
+// Shared fixed-point weighted score calculation used by generation, publishing and validation.
+export function calculateWeightedReviewScore({ story, visuals, sound, pacing } = {}) {
+  return Math.round((Number(story) * 300 + Number(visuals) * 250 + Number(sound) * 200 + Number(pacing) * 250) / 100) / 10;
+}
