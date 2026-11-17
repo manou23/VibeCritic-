@@ -151,7 +151,7 @@ export function createPublishingAdapters(){return {
   const isStage3Complete=r=>stage!==3||(String(r.parsed.verdict||'').trim().length>=30&&Array.isArray(r.parsed.pros)&&r.parsed.pros.filter(x=>String(x||'').trim()).length>=3&&Array.isArray(r.parsed.cons)&&r.parsed.cons.filter(x=>String(x||'').trim()).length>=2);
   try{const r=await modelCall(provider,basePrompt);if(!isStage3Complete(r))throw new Error('Stage 3 required fields missing: verdict/pros/cons');return {text:JSON.stringify(r.parsed),tokens:r.tokens,requests:1};}
   catch(firstError){
-   if(provider.id!=='groq'||!(/^(Section word count rejected:|Stage 3 required fields missing:)/.test(String(firstError?.message||''))))throw firstError;
+   if(!(/^(Section word count rejected:|Stage 3 required fields missing:)/.test(String(firstError?.message||''))))throw firstError;
    const firstTokens=Number(firstError.tokens)||0;
    const retryInstruction=stage===3?'إصلاح إلزامي للمرحلة الثالثة: أعد JSON كاملاً مع review من 210 إلى 250 كلمة، وverdict عربي واضح لا يقل عن 30 كلمة، وpros مصفوفة تحتوي ثلاث نقاط قوة فعلية على الأقل، وcons مصفوفة تحتوي تحفظين فعليين على الأقل. لا تترك أي حقل فارغاً.':'مراجعة إلزامية للطول: الإجابة السابقة أقصر من الحد المطلوب. أعد كتابة القسم كاملاً بتفصيل أكبر، واجعل review بين 210 و250 كلمة عربية فعلية. أضف تحليلاً محدداً مرتبطاً بالأدلة ولا تكرر الجمل ولا تضف حقائق غير موثقة.';
    const retryPrompt=basePrompt+'\\n\\n'+retryInstruction;
