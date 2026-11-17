@@ -58,7 +58,8 @@ for (const file of files) {
     if (Object.values(values).some(value => !Number.isFinite(value) || value < 0 || value > 10)) {
       failures.push(file + ': score breakdown values must be between 0 and 10');
     } else {
-      const calculated = Math.round((values.storyScore * 0.30 + values.visualsScore * 0.25 + values.soundScore * 0.20 + values.pacingScore * 0.25) * 10) / 10;
+      // Integer-scaled weights avoid floating-point half-step errors (for example 8.55 rounding down to 8.5).
+      const calculated = Math.round((values.storyScore * 300 + values.visualsScore * 250 + values.soundScore * 200 + values.pacingScore * 250) / 100) / 10;
       if (Math.abs(calculated - score) > 0.05) failures.push(file + ': final score does not match the fixed weighted breakdown (' + calculated + ' vs ' + score + ')');
       if (score >= 9 && Math.min(...Object.values(values)) < 8.5) failures.push(file + ': exceptional overall scores (9+) require every review dimension to reach at least 8.5');
       if (score >= 9.5 && (Object.values(values).filter(value => value >= 9.5).length < 3 || Math.min(...Object.values(values)) < 9)) failures.push(file + ': near-perfect overall scores (9.5+) require at least three dimensions at 9.5 and no dimension below 9');
