@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T19:43:12.998Z",
+  "updatedAt": "2026-11-17T19:49:16.289Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -894,7 +894,7 @@
         "sourceUrl": "https://www.themoviedb.org/tv/279155",
         "popularity": 1
       },
-      "status": "ready",
+      "status": "published",
       "stage": 3,
       "parts": [
         {
@@ -963,7 +963,7 @@
       },
       "attempts": 0,
       "createdAt": "2026-11-17T19:38:55.226Z",
-      "updatedAt": "2026-11-17T19:43:08.797Z",
+      "updatedAt": "2026-11-17T19:49:15.980Z",
       "nextAttemptAt": null,
       "lastError": null,
       "lastProvider": "groq",
@@ -1039,7 +1039,9 @@
         "characters": 3790
       },
       "fileWritten": true,
-      "articlePath": "src/content/reviews/series-the-silent-storm-279155.md"
+      "articlePath": "src/content/reviews/series-the-silent-storm-279155.md",
+      "deployedAt": "2026-11-17T19:49:15.980Z",
+      "publishedAt": "2026-11-17T19:49:15.980Z"
     }
   },
   "providerUsage": {
