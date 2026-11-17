@@ -90,20 +90,19 @@ const readyResult=await runCycle({state:readyState,adapters:readyAdapters,provid
 assert.equal(readyResult.action,'published','ready article should proceed to deployment verification despite duplicate lookup matching its own file');
 assert.equal(readyState.jobs['game:ready'].status,'published');
 
-// The durable cycle allows work for three hours and rests until the five-hour boundary.
+// Publishing runs continuously through the full three-hour article cycle; there is no rest window.
 const cycleState=createState();
-let cycleNow=now;
 const cycleAdapters={...adapters,discover:async()=>[]};
-const firstCycle=await runCycle({state:cycleState,adapters:cycleAdapters,providers,now:cycleNow,persist:async()=>{}});
+const firstCycle=await runCycle({state:cycleState,adapters:cycleAdapters,providers,now,persist:async()=>{}});
 assert.equal(firstCycle.action,'no-candidates');
 assert.equal(cycleState.cycle.deadlineAt,now+3*60*60*1000);
-assert.equal(cycleState.cycle.nextStartAt,now+5*60*60*1000);
-const duringRest=await runCycle({state:cycleState,adapters:cycleAdapters,providers,now:now+4*60*60*1000,persist:async()=>{}});
-assert.equal(duringRest.action,'cycle-rest','the final two hours must remain idle');
-const nextCycle=await runCycle({state:cycleState,adapters:cycleAdapters,providers,now:now+5*60*60*1000,persist:async()=>{}});
+assert.equal(cycleState.cycle.nextStartAt,now+3*60*60*1000);
+const duringFormerRest=await runCycle({state:cycleState,adapters:cycleAdapters,providers,now:now+2*60*60*1000,persist:async()=>{}});
+assert.equal(duringFormerRest.action,'no-candidates','the former rest window must remain active for publishing');
+const nextCycle=await runCycle({state:cycleState,adapters:cycleAdapters,providers,now:now+3*60*60*1000,persist:async()=>{}});
 assert.equal(nextCycle.action,'no-candidates');
-assert.equal(cycleState.cycle.startedAt,now+5*60*60*1000);
-assert.equal(cycleState.cycle.nextStartAt,now+10*60*60*1000);
+assert.equal(cycleState.cycle.startedAt,now+3*60*60*1000);
+assert.equal(cycleState.cycle.nextStartAt,now+6*60*60*1000);
 
 // A repetitive third section is rejected and only that section is regenerated after the bounded retry delay.
 const qualityState=createState();
@@ -131,4 +130,4 @@ assert.equal(qualityCalls,4,'only the rejected third section is regenerated');
 assert.equal(qualityAssembles,2);
 assert.equal(qualityWrites,1);
 
-console.log('VibeCritic Publishing Engine v2 crash-recovery and five-hour cycle tests passed.');
+console.log('VibeCritic Publishing Engine v2 crash-recovery and continuous-cycle tests passed.');
