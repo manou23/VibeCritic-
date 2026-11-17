@@ -59,7 +59,7 @@ const afterPublish=await runCycle({state,adapters,providers,now:now+60*60*1000+5
 assert.equal(afterPublish.action,'cycle-complete','only one article may be processed per cycle');
 assert.equal(afterPublish.key,'series:1');
 assert.equal(aiCalls,3);
-// A failed provider is cooled down durably instead of being retried on every hourly cycle.
+// A failed provider is cooled down durably instead of being retried on every 30-minute checkpoint.
 const failureState=createState();let failedProviderCalls=0;
 const failureAdapters={
  discover:async()=>[{type:'movie',id:'cooldown-test'}],
@@ -73,8 +73,8 @@ assert.equal(failed.action,'generation-deferred');
 assert.equal(failedProviderCalls,1);
 assert.equal(failureState.providerCooldowns['rate-limited'].failures,1);
 // Simulate an old persisted checkpoint whose retryAt was incorrectly tied to the provider cooldown.
-failureState.jobs['movie:cooldown-test'].nextAttemptAt=now+3*60*60*1000;
-assert.ok(failureState.providerCooldowns['rate-limited'].until-now>=2*60*60*1000,'provider cooldown must span the next hourly schedule so fallback providers can be selected');
+failureState.jobs['movie:cooldown-test'].nextAttemptAt=now+30*60*1000;
+assert.ok(failureState.providerCooldowns['rate-limited'].until-now>=2*60*60*1000,'provider cooldown must span the next scheduled checkpoint so fallback providers can be selected');
 const fallback=await runCycle({state:failureState,adapters:failureAdapters,providers:failureProviders,now:now+1000,persist:async()=>{}});
 assert.equal(fallback.action,'stage-saved','an available free fallback should resume immediately after a provider failure');
 assert.equal(fallback.provider,'backup-free');
@@ -83,7 +83,7 @@ assert.equal(failedProviderCalls,2,'fallback provider should receive the next si
 // Duplicate titles must be retired before they reserve the cycle's single article slot.
 const duplicateState=createState();
 duplicateState.jobs['movie:dupe']={key:'movie:dupe',item:{type:'movie',id:'dupe'},status:'writing',stage:1,parts:[],createdAt:new Date(now).toISOString(),updatedAt:new Date(now).toISOString()};
-duplicateState.cycle={startedAt:now,deadlineAt:now+3*60*60*1000,nextStartAt:now+5*60*60*1000,articleKey:'movie:dupe'};
+duplicateState.cycle={startedAt:now,deadlineAt:now+3*60*60*1000,nextStartAt:now+30*60*1000,articleKey:'movie:dupe'};
 const duplicateAdapters={...adapters,discover:async()=>[],isAlreadyPublished:async()=>true};
 const duplicateResult=await runCycle({state:duplicateState,adapters:duplicateAdapters,providers,now,persist:async()=>{}});
 assert.equal(duplicateResult.action,'no-candidates');
