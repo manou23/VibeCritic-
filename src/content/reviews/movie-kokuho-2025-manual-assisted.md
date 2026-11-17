@@ -14,6 +14,8 @@ storyScore: 8.4
 visualsScore: 9.0
 soundScore: 8.5
 pacingScore: 7.6
+youtubeVideoId: "DAiq_4YWXow"
+youtubeVideoTitle: "KOKUHO | Official Trailer | Japanese Film Database"
 reviewMode: review
 poster: "https://jfdb.jp/data/photo/movie/74/08/3d/14/964599663d31793cfaba488eeb771188_640.jpg"
 pros:
@@ -60,6 +62,7 @@ editorialWorkflow: "manual-assisted"
 **الخلاصة:** الكنز الوطني عمل طموح عن ثمن التفوق وعن الفرق بين أن ترث اسماً وأن تستحق مكانة. تقييم 8.4/10 يكافئ البناء الفني والأداء والصورة، مع خصم واضح بسبب امتداد الحكاية وتفاوت إحكام بعض مراحلها.
 
 ## مصادر التحقق
+- [KOKUHO — المقطع الدعائي الرسمي](https://www.youtube.com/watch?v=DAiq_4YWXow): المقطع المرتبط بصفحة قاعدة بيانات الأفلام اليابانية الرسمية.
 - [Japanese Film Database — Kokuho](https://jfdb.jp/en/title/10374): تاريخ الإصدار الياباني، المخرج، الكاتب، الطاقم والملخص.
 - [AFI Fest — KOKUHO](https://fest.afi.com/2025/world-cinema-2025/kokuho-%E5%9B%BD%E5%AE%9D/): خلفية الحكاية وفن الكابوكي والطاقم الفني.
 - [Associated Press — A movie about the Kabuki theater](https://apnews.com/article/d07d73aef38905b178a778520e92f38e): سياق الكابوكي وأثر الفيلم في الجمهور الياباني.

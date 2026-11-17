@@ -14,6 +14,8 @@ storyScore: 8.7
 visualsScore: 8.1
 soundScore: 9.0
 pacingScore: 7.7
+youtubeVideoId: "MXTNzdSR2jg"
+youtubeVideoTitle: "The Voice of Hind Rajab | Official Trailer | TIFF 2025"
 reviewMode: review
 poster: "https://static.wixstatic.com/media/b70b72_aaf5980621a644f39aaf372a6ba1e5a2~mv2.jpg/v1/fill/w_736%2Ch_1000%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01/b70b72_aaf5980621a644f39aaf372a6ba1e5a2~mv2.jpg"
 pros:
@@ -60,6 +62,7 @@ editorialWorkflow: "manual-assisted"
 **الخلاصة:** صوت هند رجب عمل مسؤول في اختياره لمركز السرد، وقوي في بناء توتره عبر الصوت والوقت والحدود المؤسسية. تقييم 8.4/10 يقدّر انضباطه السمعي وأداءه الجماعي، مع تحفظ على ضيق المساحة وتحديات إعادة تمثيل واقعة حقيقية شديدة الحساسية.
 
 ## مصادر التحقق
+- [TIFF — المقطع الدعائي الرسمي](https://www.youtube.com/watch?v=MXTNzdSR2jg): إعلان نشره مهرجان تورونتو السينمائي الدولي.
 - [Venice Biennale — The Voice of Hind Rajab](https://www.labiennale.org/en/cinema/2025/program-cinema-2025-public/voice-hind-rajab-2025-09-03-16-30): المخرجة والبلدان والطاقم والاعتمادات الفنية.
 - [MAD Distribution — Venice premiere](https://mad-distribution.film/press/8371066669513.php): معلومات العرض الأول والإنتاج.
 - [Radio Culturelle Tunisia — العرض التونسي](https://www.radioculturelle.tn/article/68c28f229d8e78a5f78e93ef/%D8%A7%D9%84%D8%B9%D8%B1%D8%B6-%D9%85%D8%A7-%D9%82%D8%A8%D9%84-%D8%A7%D9%84%D8%A3%D9%88%D9%84-%D9%84%D9%81%D9%8A%D9%84%D9%85-%D8%B5%D9%88%D8%AA-%D9%87%D9%86%D8%AF-%D8%B1%D8%AC%D8%A8-%D9%81%D9%8A-%D8%AA%D9%88%D9%86%D8%B3-%D8%B5%D8%B1%D8%AE%D8%A9-%D8%B7%D9%81%D9%84%D8%A9-%D8%B4%D9%87%D9%8A%D8%AF%D8%A9-%D8%AA%D9%81%D8%B6%D8%AD-%D9%87%D9%88%D9%84-%D8%A7%D9%84%D8%A5%D8%A8%D8%A7%D8%AF%D8%A9-%D8%A7%D9%84%D8%A5%D9%86%D8%B3%D8%A7%D9%86%D9%8A%D8%A9-%D9%81%D9%8A-%D8%BA%D8%B2%D8%A9): تاريخ العرض الأول وبدء العرض للجمهور في تونس.
