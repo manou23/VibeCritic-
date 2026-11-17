@@ -1,0 +1,64 @@
+---
+import Base from '../layouts/Base.astro';
+const sent = Astro.url.searchParams.get('sent') === '1';
+---
+<Base title="اتصل بنا" description="تواصل مباشرة مع فريق VibeCritic لإرسال الملاحظات والتصحيحات والاستفسارات وطلبات حقوق المحتوى.">
+<section class="info-page">
+ <header class="info-hero">
+  <p class="info-kicker">CONTACT / VIBECRITIC</p>
+  <h1>نحن هنا للاستماع إليك.</h1>
+  <p>لديك ملاحظة أو تصحيح أو استفسار؟ أرسل رسالتك مباشرة إلى فريق VibeCritic، وسنراجعها بعناية.</p>
+ </header>
+ {sent && <div class="success-message" role="status"><strong>تم إرسال رسالتك.</strong><span>شكراً لتواصلك مع VibeCritic. سنراجع رسالتك ونرد عليك عبر البريد الإلكتروني عند الحاجة.</span></div>}
+ <div class="contact-layout">
+  <form class="contact-form" action="https://formsubmit.co/mesut.amari23@gmail.com" method="POST">
+   <input type="hidden" name="_subject" value="رسالة جديدة من نموذج التواصل — VibeCritic">
+   <input type="hidden" name="_template" value="table">
+   <input type="hidden" name="_next" value="https://vibecritic.pages.dev/contact/?sent=1">
+   <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+   <div class="form-heading"><span>01 / SEND A MESSAGE</span><h2>أرسل لنا رسالة</h2><p>املأ الحقول التالية، وستصل رسالتك إلى صندوق البريد المخصص للتواصل.</p></div>
+   <div class="field-row">
+    <label>الاسم الكامل<input type="text" name="name" placeholder="اكتب اسمك" autocomplete="name" maxlength="100" required></label>
+    <label>بريدك الإلكتروني<input type="email" name="email" placeholder="name@example.com" autocomplete="email" maxlength="254" required></label>
+   </div>
+   <label>موضوع الرسالة
+    <select name="subject" required>
+     <option value="" selected disabled>اختر موضوع الرسالة</option>
+     <option>ملاحظة أو اقتراح</option>
+     <option>تصحيح معلومة في مقال</option>
+     <option>حقوق المحتوى والملكية</option>
+     <option>مشكلة تقنية في الموقع</option>
+     <option>شراكة أو استفسار تجاري</option>
+     <option>أخرى</option>
+    </select>
+   </label>
+   <label>نص الرسالة<textarea name="message" rows="7" placeholder="اكتب رسالتك هنا بالتفصيل..." minlength="10" maxlength="5000" required></textarea></label>
+   <button type="submit">إرسال الرسالة <span aria-hidden="true">←</span></button>
+   <p class="form-privacy">لن نطلب منك كلمة مرور أو بيانات دفع. لا ترفق مفاتيح API أو معلومات شخصية حساسة.</p>
+  </form>
+  <aside class="contact-aside">
+   <article><span>02 / DIRECT EMAIL</span><h2>بريد التواصل</h2><p>يمكنك أيضاً مراسلتنا مباشرة على العنوان التالي:</p><a href="mailto:mesut.amari23@gmail.com">mesut.amari23@gmail.com</a></article>
+   <article><span>03 / WHAT TO INCLUDE</span><h2>للحصول على رد أدق</h2><p>عند الإبلاغ عن خطأ، أرسل رابط الصفحة ووصف المشكلة. وفي طلبات حقوق المحتوى، حدد المادة المعنية وسبب الطلب بوضوح.</p></article>
+   <article><span>04 / PRIVACY</span><h2>خصوصية رسالتك</h2><p>تُرسل بيانات النموذج عبر خدمة معالجة نماذج خارجية لتوصيلها إلى بريد التواصل. لا تضع في الرسالة كلمات مرور أو معلومات مالية أو أسراراً تقنية.</p></article>
+  </aside>
+ </div>
+</section>
+<style>
+.info-page{width:min(1080px,calc(100% - 40px));margin:0 auto;padding:clamp(48px,8vw,100px) 0;color:var(--vc-text)}
+.info-hero{max-width:760px;margin-bottom:34px}.info-kicker{font:800 11px/1.5 ui-monospace,monospace;letter-spacing:.16em;color:var(--vc-accent);margin:0 0 17px}
+.info-hero h1{font-size:clamp(38px,7vw,66px);line-height:1.15;margin:0 0 16px}.info-hero>p:last-child{font-size:16px;line-height:2;color:var(--vc-muted)}
+.contact-layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(260px,.8fr);gap:20px;align-items:start}
+.contact-form,.contact-aside article{border:1px solid var(--vc-border);border-radius:20px;background:var(--vc-surface);padding:clamp(20px,4vw,30px)}
+.form-heading{margin-bottom:24px}.form-heading>span,.contact-aside article>span{font:750 10px/1.5 ui-monospace,monospace;letter-spacing:.12em;color:var(--vc-accent)}
+.form-heading h2,.contact-aside h2{font-size:22px;margin:10px 0}.form-heading p,.contact-aside p{font-size:13px;line-height:2;color:var(--vc-muted)}
+.contact-form label{display:grid;gap:8px;margin:0 0 17px;font-size:13px;font-weight:750}
+.contact-form input:not([type=hidden]),.contact-form select,.contact-form textarea{width:100%;border:1px solid var(--vc-border);border-radius:11px;background:var(--vc-bg);color:var(--vc-text);padding:13px 14px;font:inherit;font-size:14px;outline:none}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{border-color:var(--vc-accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--vc-accent) 16%,transparent)}
+.contact-form textarea{resize:vertical;min-height:150px}.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.contact-form button{display:flex;justify-content:center;align-items:center;gap:12px;width:100%;border:0;border-radius:12px;padding:14px 18px;background:var(--vc-accent);color:white;font-family:inherit;font-size:14px;font-weight:800;cursor:pointer}
+.form-privacy{font-size:11px;line-height:1.9;color:var(--vc-muted);margin:13px 0 0}.contact-aside{display:grid;gap:14px}.contact-aside article h2{font-size:18px}.contact-aside a{display:inline-block;margin-top:8px;color:var(--vc-accent-deep);font-weight:800;overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:4px}
+.success-message{display:grid;gap:5px;margin:0 0 20px;padding:17px 20px;border:1px solid #23865b;border-radius:14px;background:color-mix(in srgb,#23865b 10%,var(--vc-surface));color:var(--vc-text);line-height:1.8}.success-message strong{color:#23865b}.success-message span{font-size:13px}
+.honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;opacity:0!important}
+@media(max-width:760px){.contact-layout{grid-template-columns:1fr}.field-row{grid-template-columns:1fr;gap:0}}
+</style>
+</Base>
