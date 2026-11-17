@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 process.env.GEMINI_API_KEY='test-key';
 process.env.TMDB_API_KEY='test-tmdb-key';
+process.env.RAWG_API_KEY='test-rawg-key';
 process.env.GEMINI_MODEL='gemini-2.5-flash';
 process.env.CLOUDFLARE_API_TOKEN='test-token';
 process.env.CLOUDFLARE_ACCOUNT_ID='test-account';
@@ -30,6 +31,20 @@ const originalFetch=globalThis.fetch;let calls=0,mode='gemini',groqShortOnce=fal
 globalThis.fetch=async(url,options)=>{
  calls++;
  const parsedUrl=new URL(String(url));
+ if(mode==='discover-expansion'){
+  if(parsedUrl.hostname==='api.themoviedb.org'&&parsedUrl.pathname==='/3/trending/all/week')return new Response(JSON.stringify({results:[]}),{status:200,headers:{'content-type':'application/json'}});
+  if(parsedUrl.hostname==='api.themoviedb.org'&&parsedUrl.pathname==='/3/movie/popular')return new Response(JSON.stringify({results:[{id:101,title:'Popular Movie',overview:'A detailed premise for the popular movie discovery test.',release_date:'2020-01-01',poster_path:'/movie.jpg',backdrop_path:'/movie-backdrop.jpg',vote_count:1000}]}),{status:200,headers:{'content-type':'application/json'}});
+  if(parsedUrl.hostname==='api.themoviedb.org'&&parsedUrl.pathname==='/3/tv/popular')return new Response(JSON.stringify({results:[{id:202,name:'Popular Series',overview:'A detailed premise for the popular series discovery test.',first_air_date:'2020-01-01',poster_path:'/series.jpg',backdrop_path:'/series-backdrop.jpg',vote_count:900}]}),{status:200,headers:{'content-type':'application/json'}});
+  if(parsedUrl.hostname==='api.rawg.io')return new Response(JSON.stringify({results:[]}),{status:200,headers:{'content-type':'application/json'}});
+  throw new Error('Unexpected discovery URL: '+String(url));
+ }
+ if(mode==='game-video-fallback'){
+  if(parsedUrl.hostname==='api.rawg.io'&&parsedUrl.pathname==='/api/games/99')return new Response(JSON.stringify({name:'Game With Clip',description_raw:'A verified and sufficiently detailed game description that explains its setting, premise, and gameplay systems for the adapter test.',released:'2020-01-01',background_image:'https://media.rawg.io/media/game-poster.jpg',clip:{clip:'https://media.rawg.io/media/game-trailer.mp4'},genres:[{name:'Action'}],platforms:[{platform:{name:'PC'}}]}),{status:200,headers:{'content-type':'application/json'}});
+  if(parsedUrl.hostname==='api.rawg.io'&&parsedUrl.pathname==='/api/games/99/movies')return new Response(JSON.stringify({results:[]}),{status:200,headers:{'content-type':'application/json'}});
+  if(parsedUrl.hostname==='en.wikipedia.org'&&parsedUrl.pathname==='/w/api.php'&&parsedUrl.searchParams.get('list')==='search')return new Response(JSON.stringify({query:{search:[{title:'Game With Clip'}]}}),{status:200,headers:{'content-type':'application/json'}});
+  if(parsedUrl.hostname==='en.wikipedia.org'&&parsedUrl.pathname==='/w/api.php')return new Response(JSON.stringify({query:{pages:{1:{extract:Array.from({length:25},()=> 'Independent encyclopedia information describes the game and its development history in factual detail.').join(' ')}}}}),{status:200,headers:{'content-type':'application/json'}});
+  throw new Error('Unexpected game clip URL: '+String(url));
+ }
  if(mode==='evidence-fallback'){
   if(parsedUrl.hostname==='api.themoviedb.org')return new Response(JSON.stringify({title:'Test Film',original_title:'Test Film',overview:'A sufficiently detailed verified overview for this test film, describing its premise, characters, setting, and central conflict in a factual way.',release_date:'2020-01-01',poster_path:'/poster.jpg',backdrop_path:'/backdrop.jpg',genres:[{name:'Drama'}],credits:{cast:[{name:'Actor One'}],crew:[{name:'Director One',job:'Director'}]},videos:{results:[{site:'YouTube',type:'Trailer',official:true,key:'Abcdef12345',name:'Official Trailer'}]}}),{status:200,headers:{'content-type':'application/json'}});
   if(parsedUrl.hostname==='en.wikipedia.org'&&parsedUrl.pathname==='/w/api.php')return new Response('rate limited',{status:429});
@@ -71,6 +86,13 @@ globalThis.fetch=async(url,options)=>{
 };
 try{
  const adapters=createPublishingAdapters();
+ mode='discover-expansion';
+ const expanded=await adapters.discover();
+ assert.ok(expanded.some(x=>x.type==='movie'&&x.id==='101'),'popular movies must remain discoverable when trending results are exhausted');
+ assert.ok(expanded.some(x=>x.type==='series'&&x.id==='202'),'popular series must remain discoverable when trending results are exhausted');
+ mode='game-video-fallback';
+ const gameEvidence=await adapters.collectEvidence({type:'game',id:'99',name:'Game With Clip',date:'2020-01-01',overview:'A verified and sufficiently detailed game description that explains its setting, premise, and gameplay systems for the adapter test.',sourceName:'RAWG',sourceUrl:'https://rawg.io/games/game-with-clip',poster:'https://media.rawg.io/media/game-poster.jpg',backdrop:'https://media.rawg.io/media/game-poster.jpg'});
+ assert.equal(gameEvidence.externalVideoUrl,'https://media.rawg.io/media/game-trailer.mp4','RAWG detail-page clips should be accepted when the movies endpoint is empty');
  mode='evidence-fallback';
  const recoveredEvidence=await adapters.collectEvidence({type:'movie',id:'77',name:'Test Film',date:'2020-01-01',overview:'A sufficiently detailed verified overview for this test film, describing its premise, characters, setting, and central conflict in a factual way.',sourceName:'TMDB',sourceUrl:'https://www.themoviedb.org/movie/77',poster:'https://image.tmdb.org/t/p/w780/poster.jpg',backdrop:'https://image.tmdb.org/t/p/w1280/backdrop.jpg'});
  assert.equal(recoveredEvidence.sources[1].name,'Wikipedia');
