@@ -59,7 +59,7 @@ const reviewStructuredData = {
   '@type': hasFinalRating ? 'Review' : 'Article',
   name: d.title + (isPreview ? ' — قراءة استباقية' : isLimited ? ' — قراءة محدودة الأدلة' : ' — مراجعة وتقييم'),
   url: canonicalUrl,
-  datePublished: d.date.toISOString().slice(0, 10),
+  datePublished: (d.publishedAt ?? d.date).toISOString(),
   reviewBody: [d.summary, isLimited ? 'لا تتوفر أدلة كافية لمنح تقييم نهائي.' : d.verdict, d.hook].filter(Boolean).join(' '),
   ...(hasFinalRating ? { reviewRating: {
     '@type': 'Rating',
@@ -81,7 +81,7 @@ const reviewStructuredData = {
 };
 
 ---
-<Base title={`${d.title} — ${isPreview ? 'قراءة استباقية' : isLimited ? 'قراءة محدودة الأدلة' : 'مراجعة وتقييم'}`} description={reviewDescription} keywords={reviewKeywords} structuredData={reviewStructuredData} image={optimizeImage(d.backdrop || d.poster, 'backdrop')} pageType="article" publishedAt={d.date.toISOString()} articleSection={typeLabel}>
+<Base title={`${d.title} — ${isPreview ? 'قراءة استباقية' : isLimited ? 'قراءة محدودة الأدلة' : 'مراجعة وتقييم'}`} description={reviewDescription} keywords={reviewKeywords} structuredData={reviewStructuredData} image={optimizeImage(d.backdrop || d.poster, 'backdrop')} pageType="article" publishedAt={(d.publishedAt ?? d.date).toISOString()} articleSection={typeLabel}>
 <article class="wrap article-page">
   <nav class="article-breadcrumbs" aria-label="مسار الصفحة"><a href={url('')}>الرئيسية</a><span aria-hidden="true">/</span><a href={url(`category/${d.type}/`)}>{TYPE_LABEL[d.type]}</a><span aria-hidden="true">/</span><span aria-current="page">{d.title}</span></nav>
   <a href={url('')} class="article-back">← العودة إلى VibeCritic</a>
@@ -89,7 +89,7 @@ const reviewStructuredData = {
     <p class="eyebrow">VIBECRITIC / قراءة نقدية تحريرية</p>
     <div class="article-meta">
       <span class="article-category">{typeLabel}</span>
-      <time datetime={d.date.toISOString()}>{fmtDate(d.date)}</time>
+      <time datetime={(d.publishedAt ?? d.date).toISOString()}>{fmtDate(d.publishedAt ?? d.date)}</time>
       {d.aiGenerated&&<span class="article-ai">تحليل مدعوم بالذكاء الاصطناعي</span>}
       {isPreview && <span class="article-ai">قراءة استباقية — قبل الإصدار</span>}
       {isLimited && <span class="article-ai">لا يوجد تقييم نهائي — الأدلة غير كافية</span>}
