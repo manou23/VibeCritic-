@@ -139,4 +139,19 @@ assert.equal(qualityCalls,4,'only the rejected third section is regenerated');
 assert.equal(qualityAssembles,2);
 assert.equal(qualityWrites,1);
 
+// A saved research job that hit Wikipedia's 429 receives one immediate alternate-endpoint attempt.
+const rateLimitState=createState();
+rateLimitState.jobs["movie:rate-limit"]={key:"movie:rate-limit",item:{type:"movie",id:"rate-limit",date:"2020-01-01"},status:"waiting",stage:0,parts:[],evidence:null,attempts:0,createdAt:new Date(now).toISOString(),updatedAt:new Date(now).toISOString(),nextAttemptAt:now+60*60*1000,lastError:"Evidence: Source HTTP 429 (en.wikipedia.org)",resumeTo:"researching"};
+let alternateEvidenceCalls=0;
+const rateLimitAdapters={
+ discover:async()=>[],
+ collectEvidence:async()=>{alternateEvidenceCalls++;return {title:"Test",type:"movie",sourceId:"movie:rate-limit",overview:"Verified source detail",sources:[{name:"TMDB",url:"https://www.themoviedb.org/movie/1"},{name:"Wikipedia",url:"https://en.wikipedia.org/wiki/Test"}],youtubeVideoId:"Abcdef12345",poster:"https://example.com/poster.jpg"};},
+ generatePart:async()=>({text:"saved first section",tokens:100}),
+ assembleArticle:async()=>article,publishFile:async()=>({path:"unused"}),verifyDeployment:async()=>false
+};
+const rateLimitRetry=await runCycle({state:rateLimitState,adapters:rateLimitAdapters,providers,now:now+1000,persist:async()=>{}});
+assert.equal(alternateEvidenceCalls,1,"the current blocked research job must get one immediate fallback attempt");
+assert.equal(rateLimitRetry.action,"stage-saved");
+assert.equal(rateLimitState.jobs["movie:rate-limit"].researchFallbackAttempted,true,"the one-time fallback marker must persist across restarts");
+
 console.log('VibeCritic Publishing Engine v2 crash-recovery and continuous-cycle tests passed.');
