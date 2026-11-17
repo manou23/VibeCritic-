@@ -10,7 +10,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: vibecritic-publisher-v2-main-recovery
+  group: vibecritic-publisher-v2-schedule-main
   cancel-in-progress: false
 jobs:
   publish-cycle:
