@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T19:50:49.200Z",
+  "updatedAt": "2026-11-17T00:48:02.619Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -301,6 +301,106 @@
       "articlePath": "src/content/reviews/game-cyberpunk-2077-41494.md",
       "deployedAt": "2026-11-16T19:50:48.930Z",
       "publishedAt": "2026-11-16T19:50:48.930Z"
+    },
+    "series:85077": {
+      "key": "series:85077",
+      "item": {
+        "type": "series",
+        "id": "85077",
+        "name": "The Chosen",
+        "originalTitle": "The Chosen",
+        "overview": "The life of Christ through the eyes of those who encountered him.",
+        "date": "2019-04-21",
+        "poster": "https://image.tmdb.org/t/p/w780/nr0r7YTn1l84KLG1iCSO5ofHTvO.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/2YQFwn9aF7huTFHxn9lFTAn14F.jpg",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/85077",
+        "popularity": 1064
+      },
+      "status": "abandoned",
+      "stage": 0,
+      "parts": [],
+      "evidence": null,
+      "attempts": 0,
+      "createdAt": "2026-11-17T00:47:56.078Z",
+      "updatedAt": "2026-11-17T00:47:56.078Z",
+      "nextAttemptAt": null,
+      "lastError": "Evidence rejected: Primary source metadata is too thin"
+    },
+    "movie:1170608": {
+      "key": "movie:1170608",
+      "item": {
+        "type": "movie",
+        "id": "1170608",
+        "name": "Dune: Part Three",
+        "originalTitle": "Dune: Part Three",
+        "overview": "Nearly two decades after he seized control of the Imperium, Paul Atreides is now a ruthless Emperor, and must face the consequences of his reign as old allies return, terrifying new threats emerge, and betrayal lurks in every shadow. Haunted by visions of Imperial collapse and the reappearance of his long-lost love, Paul is drawn into a sweeping conspiracy, with Chani at the heart of its unfolding mystery. As enemies close in, Paul must confront the true cost of power and the fate of those he loves the most.",
+        "date": "2026-12-15",
+        "poster": "https://image.tmdb.org/t/p/w780/glt0v4I89rMWstDNCaFXc5SNyO1.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/i5E9H7Ik0u61ylDDTbmUpTL3Yw.jpg",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1170608",
+        "popularity": 0
+      },
+      "status": "waiting",
+      "stage": 0,
+      "parts": [],
+      "evidence": {
+        "title": "Dune: Part Three",
+        "originalTitle": "Dune: Part Three",
+        "type": "movie",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1170608",
+        "sourceId": "movie:1170608",
+        "releaseDate": "2026-12-15",
+        "overview": "Nearly two decades after he seized control of the Imperium, Paul Atreides is now a ruthless Emperor, and must face the consequences of his reign as old allies return, terrifying new threats emerge, and betrayal lurks in every shadow. Haunted by visions of Imperial collapse and the reappearance of his long-lost love, Paul is drawn into a sweeping conspiracy, with Chani at the heart of its unfolding mystery. As enemies close in, Paul must confront the true cost of power and the fate of those he loves the most.",
+        "poster": "https://image.tmdb.org/t/p/w780/glt0v4I89rMWstDNCaFXc5SNyO1.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/i5E9H7Ik0u61ylDDTbmUpTL3Yw.jpg",
+        "genres": [
+          "Science Fiction",
+          "Adventure"
+        ],
+        "platforms": [],
+        "cast": [
+          "Timothée Chalamet",
+          "Zendaya",
+          "Jason Momoa",
+          "Florence Pugh",
+          "Rebecca Ferguson",
+          "Isaach de Bankolé",
+          "Charlotte Rampling",
+          "Anya Taylor-Joy"
+        ],
+        "crew": [
+          "Denis Villeneuve"
+        ],
+        "youtubeVideoId": "uJqaGLmZpGo",
+        "youtubeVideoTitle": "Final Trailer",
+        "externalVideoUrl": "",
+        "externalVideoTitle": "",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1170608",
+            "extract": "Nearly two decades after he seized control of the Imperium, Paul Atreides is now a ruthless Emperor, and must face the consequences of his reign as old allies return, terrifying new threats emerge, and betrayal lurks in every shadow. Haunted by visions of Imperial collapse and the reappearance of his long-lost love, Paul is drawn into a sweeping conspiracy, with Chani at the heart of its unfolding mystery. As enemies close in, Paul must confront the true cost of power and the fate of those he loves the most."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Dune%3A_Part_Three",
+            "extract": "Dune: Part Three is an upcoming American epic space opera film directed by Denis Villeneuve, from a screenplay he wrote with Brian K. Vaughan. Based on the 1969 novel Dune Messiah by Frank Herbert, it is the sequel to Dune: Part Two (2024) and the final installment of a trilogy of films developed by Legendary Pictures. Villeneuve produced the film with his wife and business partner Tanya Lapointe, Legendary's Mary Parent and Cale Boyter, and Joseph M. Caracciolo Jr. Timothée Chalamet leads an ensemble cast as Paul Atreides, the despotic Emperor of the Known Universe forced to contend with the fallout of his ascent to the throne, including threats of an insurgency and visions of widespread pandemonium. The film is the second adaptation of Dune Messiah, preceded by its collective adaptation with Children of Dune as John Harrison's 2003 television miniseries Frank Herbert's Children of Dune. Villeneuve envisioned a trilogy of films as early as 2021. He commenced work on the script to develop a story concluding Paul's character arc in late 2023, and Legendary commissioned Dune: Part Three the following year. The producers then began hiring filmmakers for the production. Principal photography started in July 2025 and wrapped that November, taking place in Hungary and the United Arab Emirates. Hans Zimmer composed the film's score. Dune: Part Three is scheduled for release in the United States on December 18, 2026."
+          }
+        ],
+        "metadata": {
+          "rating": null,
+          "votes": 0
+        }
+      },
+      "attempts": 1,
+      "createdAt": "2026-11-17T00:47:56.078Z",
+      "updatedAt": "2026-11-17T00:47:56.078Z",
+      "nextAttemptAt": 1794876776078,
+      "lastError": "groq: Section word count rejected: 213",
+      "resumeTo": "writing"
     }
   },
   "providerUsage": {
@@ -329,6 +429,14 @@
         "successes": 0,
         "failures": 1
       }
+    },
+    "2026-11-17": {
+      "groq": {
+        "requests": 2,
+        "tokens": 3991,
+        "successes": 0,
+        "failures": 1
+      }
     }
   },
   "providerCooldowns": {
@@ -341,12 +449,17 @@
       "failures": 1,
       "until": 1794864631439,
       "lastError": "openrouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day: https://openrouter.ai/settings/credits?utm_source=api&utm_campaign=free_daily_limit\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1794873600000\"},\"limit_source\":\"openrouter_free_tier_daily\",\"remedy_hint\":\"Wait for the daily reset (see X-RateLimit-Reset), or purchase credits to raise your free-"
+    },
+    "groq": {
+      "failures": 1,
+      "until": 1794883676078,
+      "lastError": "Section word count rejected: 213"
     }
   },
   "cycle": {
-    "startedAt": 1794857431439,
-    "deadlineAt": 1794868231439,
-    "nextStartAt": 1794875431439,
-    "articleKey": "game:41494"
+    "startedAt": 1794876476078,
+    "deadlineAt": 1794887276078,
+    "nextStartAt": 1794894476078,
+    "articleKey": "movie:1170608"
   }
 }
