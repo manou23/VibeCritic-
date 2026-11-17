@@ -77,6 +77,9 @@ jobs:
           node --check scripts/backfill-game-platforms.mjs
           node --check scripts/rawg-catalog-utils.mjs
           npm run test:rawg-backfill
+          node --check scripts/scoring-rubric.mjs
+          node --check scripts/test-scoring-rubric.mjs
+          npm run test:scoring-rubric
           node --check scripts/validate-review-scores.mjs
           node --check functions/api/review.js
           node --check functions/api/catalog.js
