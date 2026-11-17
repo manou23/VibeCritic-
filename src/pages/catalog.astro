@@ -3,9 +3,22 @@ import Base from '../layouts/Base.astro';
 import ReviewCard from '../components/ReviewCard.astro';
 import { getCollection } from 'astro:content';
 import { url } from '../consts';
-const gameReviews = (await getCollection('reviews'))
+const gameCatalogItems = (await getCollection('reviews'))
   .filter(review => review.data.type === 'game')
-  .sort((a, b) => (b.data.publishedAt ?? b.data.date).valueOf() - (a.data.publishedAt ?? a.data.date).valueOf());
+  .sort((a, b) => (b.data.publishedAt ?? b.data.date).valueOf() - (a.data.publishedAt ?? a.data.date).valueOf())
+  .map(review => ({
+    id: review.id,
+    type: 'game',
+    title: review.data.title,
+    title_ar: review.data.title,
+    year: review.data.releaseDate?.slice(0, 4) || String((review.data.publishedAt ?? review.data.date).getFullYear()),
+    rating: review.data.score ?? null,
+    poster_path: review.data.poster ?? '',
+    genres: review.data.genres ?? [],
+    tags: review.data.tags ?? [],
+    review_url: url(`reviews/${review.id}/`),
+    published_at: (review.data.publishedAt ?? review.data.date).toISOString(),
+  }));
 ---
 <Base title="كتالوج VibeCritic للأفلام والمسلسلات والألعاب" description="اكتشف الأفلام والمسلسلات في قاعدة بيانات VibeCritic، وتصفح أحدث مراجعات الألعاب المنشورة.">
 <section class="wrap catalog-page">
@@ -14,18 +27,12 @@ const gameReviews = (await getCollection('reviews'))
     <h1>اكتشف عملك القادم</h1>
     <p>اكتشف الأفلام والمسلسلات ببحث عربي ومرشحات دقيقة، وتصفح مراجعات الألعاب المنشورة في مكتبة واحدة.</p>
   </header>
-  <section class="catalog-games-section" aria-labelledby="catalog-games-title">
-    <div class="catalog-games-heading">
-      <div><p class="catalog-eyebrow">VIBECRITIC GAME REVIEWS</p><h2 id="catalog-games-title">مكتبة الألعاب</h2><p>أحدث مراجعات الألعاب المنشورة، مرتبة حسب تاريخ النشر.</p></div>
-      <a class="catalog-games-more" href={url('category/game/')}>كل مراجعات الألعاب <span aria-hidden="true">←</span></a>
-    </div>
-    {gameReviews.length > 0 ? <div class="catalog-games-grid">{gameReviews.slice(0, 12).map(review => <ReviewCard review={review} />)}</div> : <p class="catalog-games-empty">ستظهر مراجعات الألعاب هنا فور نشرها.</p>}
-  </section>
+>
   <form id="catalog-filters" class="catalog-filters">
-    <label class="catalog-search-label" for="catalog-query">ابحث عن فيلم أو مسلسل</label>
-    <input id="catalog-query" name="q" type="search" placeholder="اسم العمل بالعربية أو بلغته الأصلية..." autocomplete="off"/>
+    <label class="catalog-search-label" for="catalog-query">ابحث عن فيلم أو مسلسل أو لعبة</label>
+    <input id="catalog-query" name="q" type="search" placeholder="اسم الفيلم أو المسلسل أو اللعبة..." autocomplete="off"/>
     <div class="catalog-filter-row">
-      <label>النوع<select name="type"><option value="">الكل</option><option value="movie">أفلام</option><option value="tv">مسلسلات</option></select></label>
+      <label>النوع<select name="type"><option value="">الكل</option><option value="movie">أفلام</option><option value="tv">مسلسلات</option><option value="game">ألعاب</option></select></label>
       <label>التصنيف<select name="genre" id="catalog-genre"><option value="">كل التصنيفات</option></select></label>
       <label>سنة الإصدار<input name="year" type="number" min="1888" max="2100" inputmode="numeric" placeholder="مثلاً 2024"/></label>
       <label>الترتيب<select name="sort"><option value="popular">الأكثر رواجاً</option><option value="rating">الأعلى تقييماً</option><option value="newest">الأحدث</option><option value="title">الاسم</option></select></label>
@@ -432,7 +439,7 @@ const gameReviews = (await getCollection('reviews'))
 
 </style>
 
-<script>
+<script define:vars={{ gameCatalogItems }}>
 const form = document.querySelector<HTMLFormElement>('#catalog-filters');
 const results = document.querySelector<HTMLElement>('#catalog-results');
 const status = document.querySelector<HTMLElement>('#catalog-status');
@@ -449,7 +456,7 @@ let searchDebounce: ReturnType<typeof setTimeout> | undefined;
 let detailController: AbortController | undefined;
 let detailRequestId = 0;
 
-function posterUrl(path: string | null) { return path && path.startsWith('/') && !path.includes('..') ? 'https://image.tmdb.org/t/p/w500' + path : ''; }
+function posterUrl(path: string | null) { if (path && /^https:\/\//i.test(path)) return path; return path && path.startsWith('/') && !path.includes('..') ? 'https://image.tmdb.org/t/p/w500' + path : ''; }
 function addText(parent: HTMLElement, tag: string, className: string, value: string) {
   const node = document.createElement(tag); node.className = className; node.textContent = value; parent.append(node); return node;
 }
@@ -469,9 +476,9 @@ function renderItems(items: any[]) {
     button.append(posterFrame);
     const copy = document.createElement('span'); copy.className = 'catalog-item-copy';
     addText(copy, 'span', 'catalog-item-title', item.title_ar || item.title);
-    const meta = [item.type === 'movie' ? 'فيلم' : 'مسلسل', item.year || 'سنة غير محددة', item.rating ? '★ ' + Number(item.rating).toFixed(1) : ''].filter(Boolean).join(' · ');
+    const meta = [item.type === 'movie' ? 'فيلم' : item.type === 'tv' ? 'مسلسل' : 'لعبة', item.year || 'سنة غير محددة', item.rating ? '★ ' + Number(item.rating).toFixed(1) : ''].filter(Boolean).join(' · ');
     addText(copy, 'span', 'catalog-item-meta', meta); button.append(copy);
-    button.addEventListener('click', () => showDetails(item.id)); results!.append(button);
+    button.addEventListener('click', () => item.type === 'game' && item.review_url ? window.location.assign(item.review_url) : showDetails(item.id)); results!.append(button);
   }
 }
 async function loadCatalog(page = 1) {
@@ -486,6 +493,34 @@ async function loadCatalog(page = 1) {
   results!.replaceChildren();
   const params = new URLSearchParams(); new FormData(form!).forEach((value, key) => params.set(key, String(value)));
   params.set('page', String(page)); params.set('limit', '18');
+  if (params.get('type') === 'game') {
+    const query = (params.get('q') || '').trim().toLocaleLowerCase();
+    const year = params.get('year') || '';
+    const genre = params.get('genre') || '';
+    const sort = params.get('sort') || 'newest';
+    let items = gameCatalogItems.filter((item: any) => {
+      const searchable = [item.title, ...(item.genres || []), ...(item.tags || [])].join(' ').toLocaleLowerCase();
+      return (!query || searchable.includes(query)) &&
+        (!year || String(item.year) === year) &&
+        (!genre || [...(item.genres || []), ...(item.tags || [])].some((value: string) => value.toLocaleLowerCase() === genre.toLocaleLowerCase()));
+    });
+    items = [...items].sort((a: any, b: any) => {
+      if (sort === 'title') return a.title.localeCompare(b.title, 'ar');
+      if (sort === 'rating') return (b.rating || 0) - (a.rating || 0);
+      if (sort === 'popular') return (b.rating || 0) - (a.rating || 0);
+      return new Date(b.published_at).getTime() - new Date(a.published_at).getTime();
+    });
+    totalPages = Math.max(1, Math.ceil(items.length / 18));
+    const pageItems = items.slice((page - 1) * 18, page * 18);
+    renderItems(pageItems);
+    count!.textContent = items.length.toLocaleString('ar-DZ') + ' مراجعة لعبة';
+    pageLabel!.textContent = currentPage + ' / ' + totalPages;
+    prev!.disabled = currentPage <= 1; next!.disabled = currentPage >= totalPages;
+    status!.textContent = items.length ? 'اختر لعبة لفتح مراجعتها الكاملة.' : 'لا توجد مراجعات ألعاب مطابقة. جرّب تغيير كلمات البحث أو المرشحات.';
+    status!.removeAttribute('aria-busy');
+    if (requestController === controller) requestController = undefined;
+    return;
+  }
   try {
     const response = await fetch('/api/catalog?' + params.toString(), { signal: controller.signal, headers: { accept: 'application/json' } });
     const data = await response.json();
@@ -596,5 +631,8 @@ dialog?.addEventListener('click', event => { if (event.target === dialog) dialog
 fetch('/api/catalog?mode=genres').then(response => response.json()).then(data => {
   for (const genre of data.genres || []) { const option = document.createElement('option'); option.value = String(genre.id); option.textContent = genre.name_ar || genre.name_en || 'تصنيف'; genreSelect?.append(option); }
 }).catch(() => {});
+for (const genre of [...new Set(gameCatalogItems.flatMap((item: any) => [...(item.genres || []), ...(item.tags || [])]))].sort()) {
+  const option = document.createElement('option'); option.value = genre; option.textContent = genre; genreSelect?.append(option);
+}
 loadCatalog();
 </script>
