@@ -27,6 +27,11 @@ const similarReviews=allReviews.filter(entry=>entry.id!==review.id&&entry.data.t
  .map(similarityFor).filter(item=>item.tagHits>0||item.genreHits>=2)
  .sort((a,b)=>b.score-a.score||b.tagHits-a.tagHits||b.genreHits-a.genreHits)
  .slice(0,3);
+const latestReviewsByType=allReviews
+ .filter(entry=>entry.id!==review.id&&entry.data.type===d.type)
+ .sort((a,b)=>new Date(b.data.publishedAt??b.data.date).getTime()-new Date(a.data.publishedAt??a.data.date).getTime())
+ .slice(0,3);
+const recommendedReviews=similarReviews.length?similarReviews:latestReviewsByType.map(entry=>({entry,tagHits:0,genreHits:0}));
 
 const typeLabel = TYPE_LABEL[d.type];
 const isPreview = d.reviewMode === 'preview';
@@ -162,14 +167,14 @@ const reviewStructuredData = {
         {d.watchProviderUrl && <a href={d.watchProviderUrl} target="_blank" rel="noopener noreferrer">تحقق من خيارات المشاهدة على TMDB ↗</a>}
       </section>)}
       {d.sourceUrl && <section class="article-facts" aria-label="مصدر بيانات العمل"><h2>مصدر البيانات</h2><p>بيانات العمل الأساسية مستندة إلى {d.sourceName || 'المصدر المدرج'}؛ وهي مرجع للمعلومات الوصفية وليست حكماً نقدياً مستقلاً.</p><a href={d.sourceUrl} target="_blank" rel="noopener noreferrer">عرض صفحة العمل في المصدر ↗</a></section>}
-      {similarReviews.length>0 && <section class="related-reviews" aria-labelledby="related-reviews-title">
+      {recommendedReviews.length>0 && <section class="related-reviews" aria-labelledby="related-reviews-title">
         <div class="related-reviews-heading">
-          <p class="eyebrow">قد يثير اهتمامك أيضاً</p>
-          <h2 id="related-reviews-title">مراجعات قريبة من هذا العمل</h2>
-          <p>اخترنا هذه الأعمال اعتماداً على النوع والموضوعات المشتركة، لا على التقييم وحده.</p>
+          <p class="eyebrow">{similarReviews.length>0 ? 'قد يثير اهتمامك أيضاً' : 'واصل الاستكشاف'}</p>
+          <h2 id="related-reviews-title">{similarReviews.length>0 ? 'مراجعات قريبة من هذا العمل' : 'أحدث مراجعات '+typeLabel}</h2>
+          <p>{similarReviews.length>0 ? 'اخترنا هذه الأعمال اعتماداً على النوع والموضوعات المشتركة، لا على التقييم وحده.' : 'لم نعثر على تشابه موضوعي كافٍ؛ إليك أحدث المراجعات من الفئة نفسها لتواصل الاستكشاف.'}</p>
         </div>
         <div class="related-reviews-grid">
-          {similarReviews.map(({entry,tagHits,genreHits}) => <a class="related-review-card" href={url('reviews/'+entry.id+'/')}>
+          {recommendedReviews.map(({entry,tagHits}) => <a class="related-review-card" href={url('reviews/'+entry.id+'/')}>
             <div class="related-review-poster">
               {entry.data.poster ? <img src={optimizeImage(entry.data.poster)} alt={entry.data.title} loading="lazy" decoding="async" width="342" height="513"/> : <span aria-hidden="true">✦</span>}
               <span class="related-review-type">{TYPE_LABEL[entry.data.type]}</span>
@@ -179,7 +184,7 @@ const reviewStructuredData = {
               <p>{entry.data.headline}</p>
               <div class="related-review-meta">
                 <span>{entry.data.reviewMode === 'preview' ? 'قراءة استباقية' : entry.data.reviewMode === 'limited' ? 'قيد التقييم' : entry.data.score.toFixed(1) + ' / 10'}</span>
-                <span>{tagHits>0 ? 'موضوعات مشتركة' : 'تصنيفات متقاربة'}</span>
+                <span>{similarReviews.length>0 ? (tagHits>0 ? 'موضوعات مشتركة' : 'تصنيفات متقاربة') : 'أحدث مراجعة'}</span>
               </div>
             </div>
           </a>)}
