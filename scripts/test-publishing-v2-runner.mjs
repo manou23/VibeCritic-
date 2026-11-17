@@ -48,7 +48,7 @@ assert.equal(fileWrites,1,'deployment retries must not rewrite an already commit
 assert.equal(state.jobs['series:1'].status,'published');
 assert.ok(saves>=7);
 const afterPublish=await runCycle({state,adapters,providers,now:now+7,persist:async()=>{saves++;}});
-assert.equal(afterPublish.action,'cycle-complete','only one article may be processed in a five-hour cycle');
+assert.equal(afterPublish.action,'cycle-complete','only one article may be processed per cycle');
 assert.equal(afterPublish.key,'series:1');
 assert.equal(aiCalls,3);
 // A failed provider is cooled down durably instead of being retried on every hourly cycle.
@@ -90,19 +90,20 @@ const readyResult=await runCycle({state:readyState,adapters:readyAdapters,provid
 assert.equal(readyResult.action,'published','ready article should proceed to deployment verification despite duplicate lookup matching its own file');
 assert.equal(readyState.jobs['game:ready'].status,'published');
 
-// Publishing runs continuously through the full three-hour article cycle; there is no rest window.
+// Publishing runs continuously with a 30-minute article cycle and no rest window.
 const cycleState=createState();
 const cycleAdapters={...adapters,discover:async()=>[]};
 const firstCycle=await runCycle({state:cycleState,adapters:cycleAdapters,providers,now,persist:async()=>{}});
 assert.equal(firstCycle.action,'no-candidates');
-assert.equal(cycleState.cycle.deadlineAt,now+3*60*60*1000);
-assert.equal(cycleState.cycle.nextStartAt,now+3*60*60*1000);
-const duringFormerRest=await runCycle({state:cycleState,adapters:cycleAdapters,providers,now:now+2*60*60*1000,persist:async()=>{}});
-assert.equal(duringFormerRest.action,'no-candidates','the former rest window must remain active for publishing');
-const nextCycle=await runCycle({state:cycleState,adapters:cycleAdapters,providers,now:now+3*60*60*1000,persist:async()=>{}});
+assert.equal(cycleState.cycle.deadlineAt,now+30*60*1000);
+assert.equal(cycleState.cycle.nextStartAt,now+30*60*1000);
+const midCycle=await runCycle({state:cycleState,adapters:cycleAdapters,providers,now:now+15*60*1000,persist:async()=>{}});
+assert.equal(midCycle.action,'no-candidates','the same cycle remains active for its first 30 minutes');
+assert.equal(cycleState.cycle.startedAt,now);
+const nextCycle=await runCycle({state:cycleState,adapters:cycleAdapters,providers,now:now+30*60*1000,persist:async()=>{}});
 assert.equal(nextCycle.action,'no-candidates');
-assert.equal(cycleState.cycle.startedAt,now+3*60*60*1000);
-assert.equal(cycleState.cycle.nextStartAt,now+6*60*60*1000);
+assert.equal(cycleState.cycle.startedAt,now+30*60*1000);
+assert.equal(cycleState.cycle.nextStartAt,now+60*60*1000);
 
 // A repetitive third section is rejected and only that section is regenerated after the bounded retry delay.
 const qualityState=createState();
