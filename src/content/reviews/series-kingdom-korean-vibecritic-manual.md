@@ -30,10 +30,10 @@ crew: ["Kim Seong-hun", "Kim Eun-hee"]
 sourceName: "Netflix official / Studio Dragon"
 sourceId: "manual-series-kingdom-korea"
 sourceUrl: "https://www.netflix.com/title/80180171"
-poster: "https://www.impawards.com/intl/south_korea/tv/posters/kingdom_netflix_ver2_xlg.jpg"
+poster: "https://wenhui.whb.cn/u/cms/www/201901/30101450hbi1.jpg"
 youtubeVideoId: "KwPdfV_vn4M"
 youtubeVideoTitle: "Kingdom Season 2 — Official Trailer (Netflix K-Content)"
-backdrop: "https://www.impawards.com/intl/south_korea/tv/posters/kingdom_netflix_ver2_xlg.jpg"
+backdrop: "https://wenhui.whb.cn/u/cms/www/201901/30101450hbi1.jpg"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
 ---
