@@ -10,8 +10,8 @@ type: movie
 date: 2026-11-17
 releaseDate: "2026-05-12"
 poster: "https://www.trendreel.ae/Upload/libfiles/4/8/544.jpg"
-externalVideoUrl: "https://elcinema.com/work/2083144/"
-externalVideoTitle: "أسد — صفحة الفيلم والإعلان"
+youtubeVideoId: "0TQj1nC_ltk"
+youtubeVideoTitle: "الإعلان الأول لفيلم أسد"
 reviewMode: limited
 pros:
   - "اختيار العبودية في مصر القرن التاسع عشر يمنح الفيلم صراعاً تاريخياً واجتماعياً واضحاً"
