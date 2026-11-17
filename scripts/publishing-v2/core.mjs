@@ -73,7 +73,7 @@ export function recordUsage(usage,id,{requests=1,tokens=0,success=false}={}){
  usage[id]={requests:u.requests+requests,tokens:u.tokens+tokens,successes:u.successes+(success?1:0),failures:u.failures+(success?0:1)};return usage;
 }
 export function countWords(s){return (String(s||"").match(/[\p{L}\p{N}]+(?:[’'-][\p{L}\p{N}]+)*/gu)||[]).length;}
-export function validateArticle(a,{minWords=650,minCharacters=3200}={}){
+export function validateArticle(a,{minWords=600,minCharacters=3200}={}){
  const errors=[],body=String(a?.body||"").trim(),words=countWords(body);
  if(words<minWords)errors.push("Article below minimum word count: "+words+"/"+minWords);
  if(body.length<minCharacters)errors.push("Article below minimum character count: "+body.length+"/"+minCharacters);
