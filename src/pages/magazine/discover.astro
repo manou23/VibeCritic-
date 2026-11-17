@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import MagazineNav from '../../components/MagazineNav.astro';
 import ReviewCard from '../../components/ReviewCard.astro';
 import { getCollection } from 'astro:content';
 import { TYPE_LABEL } from '../../consts';
@@ -9,6 +10,7 @@ const reviews=(await getCollection('reviews'))
 const genres=[...new Set(reviews.flatMap(item=>item.data.genres??[]).map(value=>value.trim()).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'ar'));
 ---
 <Base title="اكتشف عملك القادم" description="اكتشف مراجعات الألعاب والأفلام والمسلسلات في VibeCritic باستخدام فلاتر النوع والتصنيف والتقييم.">
+<MagazineNav active="discover" />
 <section class="wrap magazine-page-hero"><p class="catalog-eyebrow">FIND YOUR NEXT FAVORITE</p><h1>اكتشف عملك القادم</h1><p>لا تعرف ماذا تشاهد أو تلعب بعد؟ صفِّ مكتبة مراجعاتنا حسب نوع العمل وتصنيفه وتقييمه، واعثر على اقتراح يناسب مزاجك.</p></section>
 <section class="wrap discover-section">
  <div class="discover-controls">
