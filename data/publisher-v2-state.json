@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T01:00:09.012Z",
+  "updatedAt": "2026-11-17T01:00:37.059Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -426,6 +426,92 @@
       },
       "fileWritten": false,
       "articlePath": null
+    },
+    "game:290856": {
+      "key": "game:290856",
+      "item": {
+        "type": "game",
+        "id": "290856",
+        "name": "Apex Legends",
+        "overview": "",
+        "date": "2019-02-04",
+        "poster": "https://media.rawg.io/media/games/737/737ea5662211d2e0bbd6f5989189e4f1.jpg",
+        "backdrop": "https://media.rawg.io/media/games/737/737ea5662211d2e0bbd6f5989189e4f1.jpg",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/apex-legends",
+        "genres": [
+          "Action",
+          "Shooter"
+        ],
+        "platforms": [
+          "PlayStation 4",
+          "Nintendo Switch",
+          "macOS",
+          "PC",
+          "Xbox One"
+        ],
+        "popularity": 12056
+      },
+      "status": "writing",
+      "stage": 1,
+      "parts": [
+        {
+          "stage": 1,
+          "text": "{\"review\":\"## القصة والعالم والشخصيات\\n\\nفي **Apex Legends**، تُقدَّم لنا تجربة معركة بقاء في عالم خيالي يُدعى \\\"الحدود\\\"، حيث تتقاطع قصص شخصيات تُعرف بـ \\\"الأساطير\\\" مع صراعاتها الخاصة. كل أسطورة تحمل خلفية فريدة، من القناص المتقن \\\"بنجالور\\\" إلى المخترع المتهور \\\"أوكتان\\\"، ما يضيف طبقة سردية غنية دون الحاجة إلى حرق تفاصيل القصة أثناء اللعب. البيئة نفسها مزيج من المدن المتفحمة والجبال الوعرة، تُظهر تنوعاً جغرافياً يُحفِّز اللاعبين على استكشاف مناطق مختلفة في كل جولة.\\n\\n### التحليل الفني والإيقاع\\n\\nمن الناحية التقنية، يعتمد **Apex Legends** على محركٍ يُظهر تفاصيل بصرية متقنة، مع إضاءة ديناميكية وتأثيرات جزيئية تُعزز من واقعية المعارك. الصوتيات تتضمن مؤثرات سلاح واضحة وموسيقى خلفية تُرفع من حدة التوتر. الإيقاع يُحافظ على توازنٍ بين لحظات القتال المكثفة وفترات التجميع والاستراتيجية، ما يجعل الجلسات لا تشعر بالملل. نظام التقدم يُتيح للاعبين فتح أساطير جديدة وتخصيص مهاراتهم، مما يضيف عمقاً استراتيجياً للعبة.\\n\\n### الموازنة النقدية\\n\\n**نقاط القوة**:\\n- تنوع الأساطير وقدراتها يخلق استراتيجيات متعددة.\\n- جودة الرسوميات والإضاءة تدعم تجربة بصرية متميزة.\\n- نظام الصوت يضيف واقعية وإثارة للمعارك.\\n\\n**التحفظات**:\\n- قد يشعر اللاعبون الجدد بعبء التعلم بسبب عدد الأساطير المتاح.\\n- بعض الخوادم تعاني أحياناً من تأخرٍ يؤثر على تجربة اللعب.\\n\\n**الحكم النهائي**: تقدم **Apex Legends** مزيجاً متقناً من السرد البصري واللعب التعاوني، مع نظام تقدم يُحفّز على الاستمرار. رغم بعض الصعوبات التقنية للوافدين الجدد، فإن جودة الإنتاج والابتكار في أسلوب المعركة تجعلها خياراً بارزاً في فئة ألعاب الباتل رويال.\\n\",\"scores\":{\"story\":8,\"visuals\":9,\"sound\":8,\"pacing\":8},\"pros\":[\"تنوع الأساطير وقدراتها يخلق استراتيجيات متعددة\",\"جودة الرسوميات والإضاءة تدعم تجربة بصرية متميزة\",\"نظام الصوت يضيف واقعية وإثارة للمعارك\"],\"cons\":[\"عبء التعلم للوافدين الجدد بسبب عدد الأساطير المتاح\",\"تأخر الخوادم أحياناً يؤثر على تجربة اللعب\"],\"verdict\":\"Apex Legends تُقدِّم تجربة معركة بقاء متقنة تجمع بين سرد غني، رسومات عالية الجودة، وصوتيات مبهرة. رغم بعض التحديات للمنضمين الجدد ومشكلات الخوادم المتقطعة، فإن الابتكار في شخصيات اللعبة وتوازن الإيقاع يجعلها خياراً مفضلاً لعشاق الباتل رويال.\"}",
+          "savedAt": "2026-11-17T01:00:32.140Z"
+        }
+      ],
+      "evidence": {
+        "title": "Apex Legends",
+        "originalTitle": "",
+        "type": "game",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/apex-legends",
+        "sourceId": "game:290856",
+        "releaseDate": "2019-02-04",
+        "overview": "Conquer with character in Apex Legends, a free-to-play* Battle Royale shooter where legendary characters with powerful abilities team up to battle for fame and fortune on the fringes of the Frontier. Master an ever-growing roster of diverse legends, deep tactical squad play, and bold new innovations that level-up the Battle Royale experience—all within a rugged world where anything goes. Welcome to the next evolution of Battle Royale. Characters you can play as: Caustic, Bangalore, Bloodhound, Crypto, Gibraltar, Lifeline, Loba, Mirage, Octane, Pathfinder, Rampart, Revenant.",
+        "poster": "https://media.rawg.io/media/games/737/737ea5662211d2e0bbd6f5989189e4f1.jpg",
+        "backdrop": "https://media.rawg.io/media/screenshots/1dc/1dc3b778f00b6d2c3de8a9b3035ed2df_j1vHdmy.jpg",
+        "genres": [
+          "Action",
+          "Shooter"
+        ],
+        "platforms": [
+          "PlayStation 4",
+          "Nintendo Switch",
+          "macOS",
+          "PC",
+          "Xbox One"
+        ],
+        "cast": [],
+        "crew": [],
+        "youtubeVideoId": "",
+        "youtubeVideoTitle": "",
+        "externalVideoUrl": "",
+        "externalVideoTitle": "",
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/apex-legends",
+            "extract": "Conquer with character in Apex Legends, a free-to-play* Battle Royale shooter where legendary characters with powerful abilities team up to battle for fame and fortune on the fringes of the Frontier. Master an ever-growing roster of diverse legends, deep tactical squad play, and bold new innovations that level-up the Battle Royale experience—all within a rugged world where anything goes. Welcome to the next evolution of Battle Royale. Characters you can play as: Caustic, Bangalore, Bloodhound, Crypto, Gibraltar, Lifeline, Loba, Mirage, Octane, Pathfinder, Rampart, Revenant."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Apex_Legends",
+            "extract": "Apex Legends is a 2019 battle royale-hero shooter video game developed by Respawn Entertainment and published by Electronic Arts, set in the same science fiction universe as Respawn's Titanfall series. It is offered free-to-play and is continuously updated under the games as a service model; the game was originally released for PlayStation 4, Windows, and Xbox One in February 2019 and was followed by versions for Nintendo Switch in 2021 and both PlayStation 5 and Xbox Series X/S in 2022, and Nintendo Switch 2 in 2025. All versions support cross-platform multiplayer. A mobile version designed for touchscreens was briefly available until its discontinuation in 2023. Before the match, players form into 1 to 4-player squads and select from pre-designed characters with distinct abilities, known as \"Legends\". The game has multiple gameplay modes - with a range of team sizes. The battle royale mode hosts up to 20 three-person squads or 15 two-person duos. In \"Arenas\", players form into three-player squads and fight against another squad in a 3v3 team deathmatch over a series of rounds to determine the winner of the match. Teams win when their team has at least 3 points and is 2 points ahead. Work on Apex Legends began around late 2016, though the project remained a secret right up until its launch. The game's release in 2019 came as a surprise, as the game released suddenly without any prior marketing or official announcement. Until that point, it had been assumed that Respawn Entertainment was working on a third installment to the Titanfall franchise, the studio's previous major game, although a number of Titanfall characters do appear as minor characters or playable Legends. Apex Legends received generally positive reviews from critics, who praised its gameplay, progression system, and fusion of elements from various genres. Some considered it a worthy competitor to other battle royale games. Apex Legends surpassed 25 million players by the end of its first week, and 50 million within its first month. By April 2021, it had approximately 100 million players, making it one of the most played video games of all time by player count."
+          }
+        ],
+        "metadata": {
+          "rating": 3.63,
+          "votes": 2425
+        }
+      },
+      "attempts": 0,
+      "createdAt": "2026-11-17T01:00:32.140Z",
+      "updatedAt": "2026-11-17T01:00:32.140Z",
+      "nextAttemptAt": null,
+      "lastError": null,
+      "lastProvider": "groq"
     }
   },
   "providerUsage": {
@@ -457,9 +543,9 @@
     },
     "2026-11-17": {
       "groq": {
-        "requests": 5,
-        "tokens": 13113,
-        "successes": 2,
+        "requests": 6,
+        "tokens": 15262,
+        "successes": 3,
         "failures": 1
       },
       "openrouter": {
@@ -481,6 +567,6 @@
     "startedAt": 1794876476078,
     "deadlineAt": 1794887276078,
     "nextStartAt": 1794894476078,
-    "articleKey": null
+    "articleKey": "game:290856"
   }
 }
