@@ -95,7 +95,7 @@ function prompt(job,stage){
  'العمل: '+e.title+' | النوع: '+e.type+' | تاريخ الإصدار: '+(e.releaseDate||'غير مثبت'),
  'الأدلة: '+JSON.stringify({overview:e.overview,genres:e.genres,platforms:e.platforms,cast:e.cast,crew:e.crew,metadata:e.metadata,sources:e.sources.map(s=>({name:s.name,url:s.url,extract:s.extract}))}),
  'ما كتب سابقاً، لا تكرره: '+(prior||'لا شيء'),
- 'اكتب القسم '+stage+' من 3، واستهدف نحو 230 كلمة عربية فعلية (الحد الأدنى 200 والحد الأعلى 280). ابدأ review بعنوان Markdown واضح: '+(e.type==='game'?['## القصة والعالم والشخصيات','## أسلوب اللعب والتصميم والإيقاع','## التقييم النقدي وحدود التجربة'][stage-1]:['## القصة والشخصيات والبناء','## الإخراج والصورة والصوت والإيقاع','## التقييم النقدي وحدود العمل'][stage-1])+'. المرحلة 1 تشرح الفكرة والشخصيات دون حرق؛ المرحلة 2 تحلل الأنظمة أو الإخراج والعناصر الفنية والإيقاع؛ المرحلة 3 تضيف موازنة نقدية جديدة ولا تعيد صياغة القسمين السابقين.',
+ 'اكتب القسم '+stage+' من 3، واستهدف نحو 230 كلمة عربية فعلية (الحد الأدنى 190 والحد الأعلى 280). ابدأ review بعنوان Markdown واضح: '+(e.type==='game'?['## القصة والعالم والشخصيات','## أسلوب اللعب والتصميم والإيقاع','## التقييم النقدي وحدود التجربة'][stage-1]:['## القصة والشخصيات والبناء','## الإخراج والصورة والصوت والإيقاع','## التقييم النقدي وحدود العمل'][stage-1])+'. المرحلة 1 تشرح الفكرة والشخصيات دون حرق؛ المرحلة 2 تحلل الأنظمة أو الإخراج والعناصر الفنية والإيقاع؛ المرحلة 3 تضيف موازنة نقدية جديدة ولا تعيد صياغة القسمين السابقين.',
  'أعد JSON فقط: review,scores,pros,cons,verdict. scores تحوي story,visuals,sound,pacing من 0 إلى 10. في المرحلة 3 فقط اكتب 3 نقاط قوة و2 تحفظات محددة وverdict من 50 إلى 90 كلمة. قبل ذلك اجعل القوائم والحكم فارغة. لا تكتب نصاً خارج review.',
  'لا تحول غياب البيانات إلى ادعاءات. لا تستخدم التوقعات كحقائق. اجعل كل حكم مرتبطاً بما ورد في الأدلة.'].join('\n\n');
 }
@@ -121,7 +121,7 @@ async function modelCall(provider,text){
  if(Array.isArray(raw))raw=raw.map(x=>x.text||'').join('');
  if(typeof raw!=='string'||!raw.trim()){const c=d.choices?.[0],m=c?.message||{};throw new Error(provider.id+' empty response: '+JSON.stringify({model:d.model,finish_reason:c?.finish_reason,message_keys:Object.keys(m),error:d.error||null}).slice(0,500));}
  const parsed=parseJsonResponse(raw),words=(clean(parsed.review).match(/[\p{L}\p{N}]+/gu)||[]).length;
- const tokens=Number(d.usage?.total_tokens)||Math.ceil((text.length+raw.length)/4);if(words<200||words>280){const error=new Error('Section word count rejected: '+words);error.tokens=tokens;throw error;}
+ const tokens=Number(d.usage?.total_tokens)||Math.ceil((text.length+raw.length)/4);if(words<190||words>280){const error=new Error('Section word count rejected: '+words);error.tokens=tokens;throw error;}
  for(const k of ['story','visuals','sound','pacing'])if(!Number.isFinite(Number(parsed.scores?.[k]))||Number(parsed.scores[k])<0||Number(parsed.scores[k])>10)throw new Error('Invalid score '+k);
  return {parsed,tokens};
 }
