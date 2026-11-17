@@ -39,7 +39,7 @@ jobs:
         run: node scripts/refresh-trending.mjs
       - name: Validate JSON and trend balance
         run: |
-          node --input-type=module -e "import fs from 'node:fs'; const data=JSON.parse(fs.readFileSync('src/data/trending.json','utf8')); if(data.length<3) throw new Error('Insufficient trend items'); for(const type of ['movie','series','game']) if(!data.some(x=>x.type===type)) throw new Error('Missing category: '+type); if(data.some(x=>!x.poster?.startsWith('https://')||!x.sourceUrl?.startsWith('https://'))) throw new Error('Invalid trend URL'); console.log('Validated',data.length,'weekly trend items');"
+          node --input-type=module -e "import fs from 'node:fs'; const data=JSON.parse(fs.readFileSync('src/data/trending.json','utf8')); if(data.length!==9) throw new Error('Expected exactly 9 trend items; got '+data.length); for(const type of ['movie','series','game']) if(data.filter(x=>x.type===type).length!==3) throw new Error('Expected exactly 3 items in category: '+type); if(data.some(x=>!x.poster?.startsWith('https://')||!x.sourceUrl?.startsWith('https://'))) throw new Error('Invalid trend URL'); console.log('Validated',data.length,'weekly trend items');"
       - name: Commit updated weekly snapshot
         run: |
           git config user.name "github-actions[bot]"
