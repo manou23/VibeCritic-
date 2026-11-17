@@ -1,0 +1,31 @@
+---
+import { url } from '../consts';
+interface Props { active: string }
+const { active } = Astro.props;
+const links = [
+  { id: 'home', label: 'المجلة', href: 'magazine/' },
+  { id: 'recommendations', label: 'الترشيحات', href: 'magazine/recommendations/' },
+  { id: 'lists', label: 'القوائم', href: 'magazine/lists/' },
+  { id: 'top-rated', label: 'الأعلى تقييماً', href: 'magazine/top-rated/' },
+  { id: 'latest', label: 'أحدث المراجعات', href: 'magazine/latest/' },
+  { id: 'discover', label: 'اكتشف', href: 'magazine/discover/' },
+  { id: 'compare', label: 'المقارنة', href: 'magazine/compare/' },
+  { id: 'scoring', label: 'منهجية التقييم', href: 'magazine/scoring/' },
+];
+---
+<nav class="magazine-nav wrap" aria-label="أقسام المجلة">
+  <div class="magazine-nav-head"><span>تصفّح المجلة</span><span class="magazine-nav-hint">انتقل مباشرةً بين الأقسام</span></div>
+  <div class="magazine-nav-links">
+    {links.map(link => <a href={url(link.href)} class:list={{ active: active === link.id }} aria-current={active === link.id ? 'page' : undefined}>{link.label}</a>)}
+  </div>
+</nav>
+<style>
+.magazine-nav{margin-top:1.25rem;margin-bottom:1.25rem;padding:1rem 1.1rem;border:1px solid var(--vc-border);border-radius:16px;background:var(--vc-surface)}
+.magazine-nav-head{display:flex;align-items:center;justify-content:space-between;gap:.7rem;margin-bottom:.8rem;font-size:.82rem;font-weight:900;color:var(--vc-text)}
+.magazine-nav-hint{font-size:.72rem;font-weight:600;color:var(--vc-muted)}
+.magazine-nav-links{display:flex;gap:.55rem;overflow-x:auto;overscroll-behavior-inline:contain;padding:0 0 .25rem;scrollbar-width:thin}
+.magazine-nav-links a{flex:0 0 auto;min-height:42px;display:inline-flex;align-items:center;justify-content:center;padding:.62rem .95rem;border:1px solid var(--vc-border);border-radius:999px;color:var(--vc-text);text-decoration:none;font-size:.88rem;font-weight:800;white-space:nowrap;transition:background .18s,border-color .18s,color .18s}
+.magazine-nav-links a:hover{border-color:var(--vc-accent);color:var(--vc-accent)}
+.magazine-nav-links a.active{background:var(--vc-accent);border-color:var(--vc-accent);color:#17120b}
+@media(max-width:600px){.magazine-nav{padding:.85rem}.magazine-nav-hint{display:none}.magazine-nav-links{margin-inline:-.1rem}}
+</style>
