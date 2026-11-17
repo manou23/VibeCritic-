@@ -31,6 +31,8 @@ sourceName: "Netflix official / Studio Dragon"
 sourceId: "manual-series-kingdom-korea"
 sourceUrl: "https://www.netflix.com/title/80180171"
 poster: "https://www.impawards.com/intl/south_korea/tv/posters/kingdom_netflix_ver2_xlg.jpg"
+youtubeVideoId: "KwPdfV_vn4M"
+youtubeVideoTitle: "Kingdom Season 2 — Official Trailer (Netflix K-Content)"
 backdrop: "https://www.impawards.com/intl/south_korea/tv/posters/kingdom_netflix_ver2_xlg.jpg"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
