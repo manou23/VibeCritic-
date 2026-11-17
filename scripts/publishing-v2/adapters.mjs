@@ -57,19 +57,28 @@ export function buildFreeProviders(){
 }
 async function discover(){
  const used=await seen();
- const [trending,games]=await Promise.all([
-  env.TMDB_API_KEY?get(tmdb('trending/all/week',{language:'en-US'})).catch(()=>({results:[]})):Promise.resolve({results:[]}),
-  env.RAWG_API_KEY?get('https://api.rawg.io/api/games?key='+encodeURIComponent(env.RAWG_API_KEY)+'&ordering=-added&page_size=40').catch(()=>({results:[]})):Promise.resolve({results:[]})
+ const empty={results:[]};
+ const [trending,popularMovies,popularSeries,games]=await Promise.all([
+  env.TMDB_API_KEY?get(tmdb('trending/all/week',{language:'en-US'})).catch(()=>empty):Promise.resolve(empty),
+  env.TMDB_API_KEY?get(tmdb('movie/popular',{language:'en-US',page:1})).catch(()=>empty):Promise.resolve(empty),
+  env.TMDB_API_KEY?get(tmdb('tv/popular',{language:'en-US',page:1})).catch(()=>empty):Promise.resolve(empty),
+  env.RAWG_API_KEY?get('https://api.rawg.io/api/games?key='+encodeURIComponent(env.RAWG_API_KEY)+'&ordering=-added&page_size=40').catch(()=>empty):Promise.resolve(empty)
  ]);
- const items=[];
- for(const x of arr(trending.results)){
-  if(!['movie','tv'].includes(x.media_type)||!x.id)continue;
-  const type=x.media_type==='tv'?'series':'movie',id=String(x.id);if(used.has(type+':'+id)||used.has('title:'+norm(x.title||x.name)))continue;
-  items.push({type,id,name:clean(x.title||x.name),originalTitle:x.original_title||x.original_name||'',overview:clean(x.overview),date:x.release_date||x.first_air_date||'',poster:x.poster_path?'https://image.tmdb.org/t/p/w780'+x.poster_path:'',backdrop:x.backdrop_path?'https://image.tmdb.org/t/p/w1280'+x.backdrop_path:'',sourceName:'TMDB',sourceUrl:'https://www.themoviedb.org/'+(type==='series'?'tv':'movie')+'/'+id,popularity:Number(x.vote_count||0)});
- }
+ const items=[],added=new Set();
+ const addMedia=(x,type)=>{
+  const id=String(x?.id||'');const name=clean(x?.title||x?.name);
+  if(!id||!name||used.has(type+':'+id)||used.has('title:'+norm(name))||added.has(type+':'+id))return;
+  added.add(type+':'+id);
+  items.push({type,id,name,originalTitle:x.original_title||x.original_name||'',overview:clean(x.overview),date:x.release_date||x.first_air_date||'',poster:x.poster_path?'https://image.tmdb.org/t/p/w780'+x.poster_path:'',backdrop:x.backdrop_path?'https://image.tmdb.org/t/p/w1280'+x.backdrop_path:'',sourceName:'TMDB',sourceUrl:'https://www.themoviedb.org/'+(type==='series'?'tv':'movie')+'/'+id,popularity:Number(x.vote_count||x.popularity||0)});
+ };
+ for(const x of arr(trending.results))if(x.media_type==='movie'||x.media_type==='tv')addMedia(x,x.media_type==='tv'?'series':'movie');
+ for(const x of arr(popularMovies.results))addMedia(x,'movie');
+ for(const x of arr(popularSeries.results))addMedia(x,'series');
  for(const x of arr(games.results)){
-  const id=String(x.id||'');if(!id||used.has('game:'+id)||used.has('title:'+norm(x.name)))continue;
-  items.push({type:'game',id,name:clean(x.name),overview:clean(x.description_raw||x.description),date:x.released||'',poster:x.background_image||'',backdrop:x.background_image_additional||x.background_image||'',sourceName:'RAWG',sourceUrl:'https://rawg.io/games/'+(x.slug||id),genres:arr(x.genres).map(v=>v.name).filter(Boolean),platforms:arr(x.platforms).map(v=>v.platform?.name).filter(Boolean),popularity:Number(x.added||0)});
+  const id=String(x.id||''),name=clean(x.name);
+  if(!id||!name||used.has('game:'+id)||used.has('title:'+norm(name))||added.has('game:'+id))continue;
+  added.add('game:'+id);
+  items.push({type:'game',id,name,overview:clean(x.description_raw||x.description),date:x.released||'',poster:x.background_image||'',backdrop:x.background_image_additional||x.background_image||'',sourceName:'RAWG',sourceUrl:'https://rawg.io/games/'+(x.slug||id),genres:arr(x.genres).map(v=>v.name).filter(Boolean),platforms:arr(x.platforms).map(v=>v.platform?.name).filter(Boolean),popularity:Number(x.added||0)});
  }
  const counts={game:0,movie:0,series:0};for(const x of items)counts[x.type]++;
  return items.sort((a,b)=>(counts[a.type]-counts[b.type])-(counts[b.type]-counts[a.type])||b.popularity-a.popularity).slice(0,80);
@@ -105,7 +114,9 @@ async function collectEvidence(item){
   genres=arr(data.genres).map(x=>x.name).filter(Boolean);platforms=arr(data.platforms).map(x=>x.platform?.name).filter(Boolean);releaseDate=data.released||releaseDate;
   const clips=await get('https://api.rawg.io/api/games/'+item.id+'/movies?key='+encodeURIComponent(env.RAWG_API_KEY)).catch(()=>({results:[]}));
   const clip=arr(clips.results).find(x=>{const candidate=x?.data?.max||x?.data?.['480'];try{const u=new URL(candidate);return u.protocol==='https:'&&u.hostname==='media.rawg.io';}catch{return false;}});
+  const detailClip=data.clip?.clip||data.clip?.preview||'';
   if(clip){externalVideoUrl=clip.data.max||clip.data['480'];externalVideoTitle=clean(clip.name||('مقطع من '+item.name));}
+  else if(detailClip){try{const u=new URL(detailClip);if(u.protocol==='https:'&&u.hostname==='media.rawg.io'){externalVideoUrl=detailClip;externalVideoTitle='مقطع موثق من RAWG: '+item.name;}}catch{}}
  }else{
   const kind=item.type==='series'?'tv':'movie';
   data=await get(tmdb(kind+'/'+item.id,{language:'en-US',append_to_response:'credits,videos'}));
