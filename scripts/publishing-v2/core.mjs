@@ -57,7 +57,10 @@ export function transition(job,event,patch={},now=Date.now()){
   next.attempts=Number(job.attempts||0)+(countsAsFailure?1:0);delete next.countAttempt;
   next.lastError=String(patch.lastError||"Temporary failure").slice(0,1200);
   const exponential=Math.min(24*60*60*1000,60000*Math.pow(2,Math.min(next.attempts,10)));
-  next.nextAttemptAt=Math.max(now+(countsAsFailure?exponential:3600000),time(patch.nextAttemptAt));
+  const requestedDelay=Number(patch.retryDelayMs);
+  const minimumDelay=countsAsFailure?exponential:(Number.isFinite(requestedDelay)&&requestedDelay>=0?requestedDelay:3600000);
+  delete next.retryDelayMs;
+  next.nextAttemptAt=Math.max(now+minimumDelay,time(patch.nextAttemptAt));
  }
  if(event==="resumed"){next.status=patch.resumeTo||"writing";next.nextAttemptAt=null;next.lastError=null;delete next.resumeTo;}
  if(event==="published"){next.publishedAt=iso(now);next.nextAttemptAt=null;next.lastError=null;}
