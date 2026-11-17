@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T13:27:26.444Z",
+  "updatedAt": "2026-11-17T13:37:44.659Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -734,7 +734,7 @@
         ],
         "popularity": 14709
       },
-      "status": "ready",
+      "status": "published",
       "stage": 3,
       "parts": [
         {
@@ -801,7 +801,7 @@
       },
       "attempts": 0,
       "createdAt": "2026-11-17T09:59:43.256Z",
-      "updatedAt": "2026-11-17T13:27:24.423Z",
+      "updatedAt": "2026-11-17T13:37:44.297Z",
       "nextAttemptAt": null,
       "lastError": null,
       "lastProvider": "groq",
@@ -875,7 +875,9 @@
         "errors": [],
         "words": 600,
         "characters": 3440
-      }
+      },
+      "deployedAt": "2026-11-17T13:37:44.297Z",
+      "publishedAt": "2026-11-17T13:37:44.297Z"
     }
   },
   "providerUsage": {
