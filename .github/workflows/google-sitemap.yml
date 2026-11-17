@@ -1,6 +1,15 @@
 name: Verify and submit sitemap to Google
 
 on:
+  # Recheck and submit the sitemap whenever published review content or SEO routing changes.
+  push:
+    branches: [main]
+    paths:
+      - 'src/content/reviews/**'
+      - 'public/robots.txt'
+      - 'astro.config.mjs'
+      - 'scripts/prepare-sitemap.mjs'
+      - 'scripts/submit-sitemap-google.mjs'
   workflow_run:
     workflows: ["Generate reviews and publish"]
     types: [completed]
