@@ -1,5 +1,5 @@
 import { enqueue, selectActiveJob, cycleDecision, transition, chooseFreeProvider, recordUsage, validateArticle, validateEvidence } from './core.mjs';
-function candidate(items,state,counts={}) { const used=new Set(Object.keys(state.jobs)); const c={game:counts.game||0,movie:counts.movie||0,series:counts.series||0}; for(const j of Object.values(state.jobs)) if(j.status==='published') c[j.item.type]=(c[j.item.type]||0)+1; return (items||[]).filter(x=>x&&['game','movie','series'].includes(x.type)&&String(x.id||'').trim()&&!used.has(x.type+':'+x.id)).sort((a,b)=>c[a.type]-c[b.type]||Number(b.editorialPriority||0)-Number(a.editorialPriority||0)||String(b.date||'').localeCompare(String(a.date||'')))[0]||null; }
+function candidate(items,state,counts={},now=Date.now()) { const used=new Set(Object.keys(state.jobs)); const today=new Date(now).toISOString().slice(0,10); const c={game:counts.game||0,movie:counts.movie||0,series:counts.series||0}; for(const j of Object.values(state.jobs)) if(j.status==='published') c[j.item.type]=(c[j.item.type]||0)+1; return (items||[]).filter(x=>x&&['game','movie','series'].includes(x.type)&&String(x.id||'').trim()&&(!x.date||String(x.date).slice(0,10)<=today)&&!used.has(x.type+':'+x.id)).sort((a,b)=>c[a.type]-c[b.type]||Number(b.editorialPriority||0)-Number(a.editorialPriority||0)||String(b.date||'').localeCompare(String(a.date||'')))[0]||null; }
 // One bounded task per invocation; a durable five-hour cycle reserves its first three hours for work.
 export async function runCycle({state,adapters,providers,now=Date.now(),persist=async()=>{},publishedCounts={},articleLimits={},researchSkips=0}) {
  if(!state||state.version!==2||!adapters) throw Error('Publisher v2 state and adapters are required.');
@@ -34,6 +34,13 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
   await save();
  }else if(now>=Number(previousCycle.deadlineAt||0)){
   return {action:'cycle-rest',retryAt:Number(previousCycle.nextStartAt),providerCalls:0};
+ }
+ // Never score or publish an unreleased movie/series/game as a completed review.
+ const today=new Date(now).toISOString().slice(0,10);
+ if(job&&job.item?.date&&String(job.item.date).slice(0,10)>today&&job.status!=='published'){
+  state.jobs[job.key]=transition(job,'abandoned',{lastError:'Editorial rejection: release date is in the future; wait until release before reviewing.'},now);
+  if(state.cycle?.articleKey===job.key)state.cycle.articleKey=null;
+  await save();job=null;
  }
  // Avoid creating a duplicate review when an existing manual or assisted article covers this title.
  if(job&&!job.fileWritten&&job.status!=='ready'&&adapters.isAlreadyPublished&&await adapters.isAlreadyPublished(job.item)){
@@ -81,7 +88,7 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
    }
   }
  }
- if(!job){const item=candidate(await adapters.discover(),state,publishedCounts);if(!item)return {action:'no-candidates',providerCalls:0};job=enqueue(state,item,now).job;await save();}
+ if(!job){const item=candidate(await adapters.discover(),state,publishedCounts,now);if(!item)return {action:'no-candidates',providerCalls:0};job=enqueue(state,item,now).job;await save();}
  let decision=cycleDecision(state,now);
  if(decision.action==='wait')return {action:'waiting',key:job.key,retryAt:decision.retryAt,providerCalls:0};
  if(decision.action==='publish'){
