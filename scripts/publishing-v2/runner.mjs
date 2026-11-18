@@ -1,25 +1,61 @@
 import { enqueue, selectRunnableJob, cycleDecision, transition, chooseFreeProvider, recordUsage, validateArticle, validateEvidence } from './core.mjs';
 import { recoverAbandonedJobs } from './recovery.mjs';
-function jobIsBlocked(job,now){if(!job)return false;if(job.status==='waiting'&&(Number(job.nextAttemptAt)||Date.parse(job.nextAttemptAt||'')||0)>now)return true;if(job.status==='writing'&&job.stage>0&&(Number(job.nextStageAt)||Date.parse(job.nextStageAt||'')||0)>now)return true;return false;}
 function candidate(items,state,counts={},now=Date.now()) { const used=new Set(Object.keys(state.jobs)); const c={game:counts.game||0,movie:counts.movie||0,series:counts.series||0}; for(const j of Object.values(state.jobs)) if(j.status==='published') c[j.item.type]=(c[j.item.type]||0)+1; return (items||[]).filter(x=>x&&['game','movie','series'].includes(x.type)&&String(x.id||'').trim()&&!used.has(x.type+':'+x.id)).sort((a,b)=>Number(b.editorialPriority||0)-Number(a.editorialPriority||0)||c[a.type]-c[b.type]||String(b.date||'').localeCompare(String(a.date||'')) )[0]||null; }
 // One bounded task per invocation. Publication cadence and writing-stage pacing are separate clocks.
 export async function runCycle({state,adapters,providers,now=Date.now(),persist=async()=>{},publishedCounts={},articleLimits={},researchSkips=0,cycleIntervalMinutes=30,stageIntervalMinutes=30}) {
  if(!state||state.version!==2||!adapters) throw Error('Publisher v2 state and adapters are required.');
  const save=async()=>{state.updatedAt=new Date(now).toISOString();await persist(state);};
  const recoveredJobs=recoverAbandonedJobs(state,now);if(recoveredJobs)await save();
- let job=selectRunnableJob(state.jobs,now);
- // Collect and persist the full editorial backlog even while another saved article is being written.
- // This makes a large themed collection durable instead of waiting for the current draft to finish.
- state.discoveryBacklog ||= {};
- const excluded=[...Object.keys(state.jobs),...Object.keys(state.discoveryBacklog)];
- const discovered=await adapters.discover(excluded);
- let addedToBacklog=0;
- for(const item of Array.isArray(discovered)?discovered:[]){
-  const key=item?.type+':'+item?.id;
-  if(!item?.id||state.jobs[key]||state.discoveryBacklog[key])continue;
-  state.discoveryBacklog[key]=item;addedToBacklog++;
+ const CYCLE_INTERVAL=Math.max(15,Math.min(1440,Number(cycleIntervalMinutes)||45))*60*1000;
+ const STAGE_INTERVAL=Math.max(5,Math.min(240,Number(stageIntervalMinutes)||15))*60*1000;
+ state.cycle ||= {};
+ if(!Number(state.cycle.nextPublishAt)){
+  state.cycle.nextPublishAt=Number(state.cycle.nextStartAt)||now+CYCLE_INTERVAL;
+  await save();
  }
- if(addedToBacklog)await save();
+ state.discoveryBacklog ||= {};
+ const DISCOVERY_INTERVAL=6*60*60*1000;
+ const lastDiscovery=Number(state.discoveryCheckedAt)||Date.parse(state.discoveryCheckedAt||'')||0;
+ if(!lastDiscovery||now-lastDiscovery>=DISCOVERY_INTERVAL){
+  const excluded=[...Object.keys(state.jobs),...Object.keys(state.discoveryBacklog)];
+  const discovered=await adapters.discover(excluded);
+  let addedToBacklog=0;
+  for(const item of Array.isArray(discovered)?discovered:[]){
+   const key=item?.type+':'+item?.id;
+   if(!item?.id||state.jobs[key]||state.discoveryBacklog[key])continue;
+   state.discoveryBacklog[key]=item;addedToBacklog++;
+  }
+  state.discoveryCheckedAt=now;
+  state.discoveryCount=Number(state.discoveryCount||0)+addedToBacklog;
+  await save();
+ }
+ // Ready articles live in a separate publication queue. Preparation continues while
+ // a ready article waits for its fixed 45-minute publication slot.
+ let readyJobs=Object.values(state.jobs).filter(j=>j?.status==='ready').sort((a,b)=>(Number(a.scheduledFor)||0)-(Number(b.scheduledFor)||0)||String(a.createdAt).localeCompare(String(b.createdAt)));
+ let ready=readyJobs[0]||null;
+ if(ready&&!Number(ready.scheduledFor)){
+  ready={...ready,scheduledFor:Math.max(now,Number(state.cycle.nextPublishAt)||now+CYCLE_INTERVAL)};
+  state.jobs[ready.key]=ready;await save();
+ }
+ let deploymentPending=false;
+ if(ready&&Number(ready.scheduledFor)<=now){
+  if(!ready.fileWritten){
+   const written=await adapters.publishFile(ready.article,ready);
+   ready={...ready,fileWritten:true,articlePath:written?.path||null,updatedAt:new Date(now).toISOString()};
+   state.jobs[ready.key]=ready;await save();
+  }
+  if(await adapters.verifyDeployment({article:ready.article,job:ready,articlePath:ready.articlePath})){
+   state.jobs[ready.key]=transition(ready,'published',{deployedAt:new Date(now).toISOString()},now);
+   state.cycle.lastPublishedAt=now;
+   state.cycle.lastPublishedKey=ready.key;
+   state.cycle.nextPublishAt=now+CYCLE_INTERVAL;
+   await save();
+   return {action:'published',key:ready.key,articlePath:ready.articlePath,scheduledFor:ready.scheduledFor,providerCalls:0};
+  }
+  deploymentPending=true;
+  ready={...ready,lastDeploymentCheckAt:now};state.jobs[ready.key]=ready;await save();
+ }
+ let job=selectRunnableJob(state.jobs,now,{includeReady:false});
  // A code-level article assembly/validation fix should not leave a valid saved draft
  // sleeping for an hour; resume it immediately after the corrected build is deployed.
  if(job?.status==='waiting'&&job.resumeTo==='writing'&&/Article below minimum word count|Article below minimum character count/.test(String(job.lastError||''))){
@@ -43,15 +79,6 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
   for(const p0 of providers)eligibility[p0.id]={...(eligibility[p0.id]||{}),cooldownUntil:state.providerCooldowns?.[p0.id]?.until||null};
   if(chooseFreeProvider(providers,eligibility,now)){job={...job,nextAttemptAt:now,updatedAt:new Date(now).toISOString()};state.jobs[job.key]=job;await save();}
  }
- // Continuous publishing: allow a new article slot every 30 minutes, with no rest window.
- // The workflow checks every 15 minutes; a single active draft is still completed before another starts.
- const CYCLE_INTERVAL=Math.max(15,Math.min(1440,Number(cycleIntervalMinutes)||30))*60*1000;
- const STAGE_INTERVAL=Math.max(5,Math.min(240,Number(stageIntervalMinutes)||30))*60*1000;
- const previousCycle=state.cycle||{};
- if(!Number(previousCycle.nextStartAt)||now>=Number(previousCycle.nextStartAt)){
-  state.cycle={startedAt:now,deadlineAt:now+CYCLE_INTERVAL,nextStartAt:now+CYCLE_INTERVAL,articleKey:null};
-  await save();
- }
  // Upcoming titles are eligible for clearly labeled advance-reading articles; the adapter
  // instructs the writer not to present predictions as hands-on reviews.
  // Avoid creating a duplicate review when an existing manual or assisted article covers this title.
@@ -60,18 +87,6 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
   state.jobs[duplicateKey]=transition(job,'abandoned',{lastError:'Skipped: an existing review already covers this title or source ID.'},now);
   if(state.cycle?.articleKey===duplicateKey)state.cycle.articleKey=null;
   await save();job=null;
- }
- // Publish at most one verified article per 45-minute slot. If its draft is paused
- // for a future stage/retry, release the slot to another runnable queued title.
- let owner=state.cycle.articleKey?state.jobs[state.cycle.articleKey]:null;
- if(owner?.status==='published'){
-  return {action:'cycle-complete',key:owner.key,retryAt:Number(state.cycle.nextStartAt),providerCalls:0};
- }
- if(!job&&state.cycle.articleKey&&(!owner||jobIsBlocked(owner,now)||['abandoned','rejected'].includes(owner.status))){
-  state.cycle.articleKey=null;owner=null;await save();
- }
- if(!job&&state.cycle.articleKey){
-  return {action:'cycle-complete',key:state.cycle.articleKey,retryAt:Number(state.cycle.nextStartAt),providerCalls:0};
  }
  // Permanent evidence failures were previously deferred as generic research errors.
  // Retire those legacy checkpoints immediately so one unsupported title cannot block discovery.
@@ -118,14 +133,9 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
  }
  if(!job){
   const item=candidate(Object.values(state.discoveryBacklog||{}),state,publishedCounts,now);
-  if(!item)return {action:'no-candidates',providerCalls:0,queuedCandidates:Object.keys(state.discoveryBacklog||{}).length};
+  if(!item)return deploymentPending?{action:'deployment-pending',key:ready?.key,articlePath:ready?.articlePath,providerCalls:0}:ready?{action:'publication-waiting',key:ready.key,scheduledFor:ready.scheduledFor,nextPublishAt:state.cycle.nextPublishAt,providerCalls:0}:{action:'no-candidates',providerCalls:0,queuedCandidates:Object.keys(state.discoveryBacklog||{}).length};
   delete state.discoveryBacklog[item.type+':'+item.id];
   job=enqueue(state,item,now,{allowConcurrent:true}).job;await save();
- }
- if(!state.cycle.articleKey||jobIsBlocked(state.jobs[state.cycle.articleKey],now)||job.status==='ready'){
-  state.cycle.articleKey=job.key;await save();
- }else if(state.cycle.articleKey!==job.key){
-  return {action:'cycle-complete',key:state.cycle.articleKey,retryAt:Number(state.cycle.nextStartAt),providerCalls:0};
  }
  let decision=cycleDecision(state,now,job);
  if(decision.action==='wait')return {action:'waiting',key:job.key,retryAt:decision.retryAt,providerCalls:0};
@@ -147,7 +157,7 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
    state.jobs[job.key]=job;await save();
    return {action:'quality-rejected',key:job.key,errors:quality.errors,providerCalls:0};
   }
-  job=transition(job,'quality-passed',{article,quality,fileWritten:false},now);
+  job=transition(job,'quality-passed',{article,quality,fileWritten:false,scheduledFor:Math.max(now,Number(state.cycle.nextPublishAt)||now+CYCLE_INTERVAL)},now);
   state.jobs[job.key]=job;await save();
   const written=await adapters.publishFile(article,job);
   job={...job,fileWritten:true,articlePath:written?.path||null,updatedAt:new Date(now).toISOString()};
@@ -205,13 +215,15 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
   const excludedNow=new Set(job.excludedProviders||[]);
   if(!contentQualityFailure)excludedNow.add(p.id);
   const fallback=chooseFreeProvider(providers.filter(candidateProvider=>!excludedNow.has(candidateProvider.id)),fallbackUsage,now);
-  if(fallback)return runCycle({state,adapters,providers,now,persist,publishedCounts,articleLimits,researchSkips,cycleIntervalMinutes,stageIntervalMinutes});
+  if(fallback){job={...job,nextAttemptAt:now,updatedAt:new Date(now).toISOString()};state.jobs[job.key]=job;await save();return runCycle({state,adapters,providers,now,persist,publishedCounts,articleLimits,researchSkips,cycleIntervalMinutes,stageIntervalMinutes});}
   return {action:'generation-deferred',key:job.key,provider:p.id,providerCalls:requestCount};}
   job=transition(job,'part-saved',{part:{text:part.text},lastProvider:p.id,excludedProviders:[],...(job.stage<2?{nextStageAt:now+STAGE_INTERVAL}:{})},now);state.jobs[job.key]=job;await save();if(job.stage<3)return {action:'stage-saved',key:job.key,stage:job.stage,nextStageAt:job.nextStageAt||null,provider:p.id,providerCalls:requestCount};
   const article=await adapters.assembleArticle(job);let quality=validateArticle(article,articleLimits);
   if(quality.valid&&adapters.editorialGate){const editorial=await adapters.editorialGate(article,job);if(editorial!==true&&editorial?.valid!==true)quality={...quality,valid:false,errors:[...quality.errors,...(editorial?.errors||['Editorial gate rejected draft.'])]};}
   if(!quality.valid){const retryFromStage=Math.min(3,Math.max(1,Number(quality.retryFromStage)||3));job=transition(job,'quality-failed',{lastError:quality.errors.join(' | '),nextAttemptAt:now+3600000,resumeTo:'writing',stage:retryFromStage-1,parts:job.parts.slice(0,retryFromStage-1)},now);state.jobs[job.key]=job;await save();return {action:'quality-rejected',key:job.key,errors:quality.errors,providerCalls:1};}
-  job=transition(job,'quality-passed',{article,quality,fileWritten:false},now);state.jobs[job.key]=job;await save();const written=await adapters.publishFile(article,job);job={...job,fileWritten:true,articlePath:written?.path||null,updatedAt:new Date(now).toISOString()};state.jobs[job.key]=job;await save();return {action:'file-ready',key:job.key,articlePath:job.articlePath,quality,providerCalls:requestCount};
+  job=transition(job,'quality-passed',{article,quality,fileWritten:false,scheduledFor:Math.max(now,Number(state.cycle.nextPublishAt)||now+CYCLE_INTERVAL)},now);state.jobs[job.key]=job;await save();const written=await adapters.publishFile(article,job);job={...job,fileWritten:true,articlePath:written?.path||null,updatedAt:new Date(now).toISOString()};state.jobs[job.key]=job;await save();return {action:'file-ready',key:job.key,articlePath:job.articlePath,quality,providerCalls:requestCount};
  }
+ if(deploymentPending)return {action:'deployment-pending',key:ready.key,articlePath:ready.articlePath,scheduledFor:ready.scheduledFor,providerCalls:0};
+ if(ready)return {action:'publication-waiting',key:ready.key,scheduledFor:ready.scheduledFor,nextPublishAt:state.cycle.nextPublishAt,providerCalls:0};
  return {action:'checkpointed',key:job.key,status:job.status,stage:job.stage,providerCalls:0};
 }
