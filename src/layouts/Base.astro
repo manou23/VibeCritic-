@@ -123,6 +123,14 @@ const searchReviews = await getCollection('reviews');
 {image && <meta name="twitter:image" content={image} />}
 <title>{pageTitle}</title>
 <script type="application/ld+json" set:html={safeJson(structuredData)}></script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3CS5WFPFY"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-D3CS5WFPFY');
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main-content">تجاوز إلى المحتوى</a>
