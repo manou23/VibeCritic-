@@ -13,6 +13,14 @@ assert.equal(cycleDecision(state,now+5).action,"wait");
 assert.equal(job.attempts,1,"real provider failures increment retry accounting");
 assert.ok(job.nextAttemptAt>=now+3600000,"explicit retry-after remains respected");
 assert.equal(selectActiveJob(state.jobs).key,first.key);
+const priorityJobs={
+ 'movie:waiting-research':{key:'movie:waiting-research',status:'waiting',resumeTo:'researching',createdAt:new Date(now-100000).toISOString()},
+ 'series:queued-next':{key:'series:queued-next',status:'queued',createdAt:new Date(now+100000).toISOString()},
+ 'movie:ready-now':{key:'movie:ready-now',status:'ready',createdAt:new Date(now+200000).toISOString()}
+};
+assert.equal(selectActiveJob(priorityJobs).key,'movie:ready-now','a validated ready article must publish before retrying research failures');
+delete priorityJobs['movie:ready-now'];
+assert.equal(selectActiveJob(priorityJobs).key,'series:queued-next','a research-only cooldown must not freeze queued articles');
 assert.equal(cycleDecision(state,now+3600005).action,"resume");
 job=transition(job,"resumed",{},now+3600006);assert.equal(job.nextAttemptAt,null);
 job=transition(job,"part-saved",{part:{text:"section 2"}},now+3600007);assert.equal(job.attempts,0,"successful stages reset consecutive failures");
