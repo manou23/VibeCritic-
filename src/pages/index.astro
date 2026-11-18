@@ -54,6 +54,12 @@ const latestReviews=reviews.filter(review=>!isUpcomingReview(review)&&review.dat
    <a class="discovery-secondary" href="#trending">كل الترندات</a>
   </div>
  </div>
+ <nav class="spotlight-thumbnails" aria-label="اختيار العمل المميز">
+  {trendReviews.slice(0,4).map((item,index)=><button type="button" class:list={['spotlight-thumbnail',index===0&&'is-active']} data-spotlight-index={index} aria-label={`عرض ${item.title}`} aria-pressed={String(index===0)}>
+   {item.poster&&<img src={item.poster} alt="" loading="lazy" decoding="async" width="48" height="68"/>}
+   <span>{item.title}</span>
+  </button>)}
+ </nav>
  <div class="spotlight-controls">
   <button type="button" class="spotlight-prev" aria-label="الترند السابق" disabled={trendReviews.length < 2}>‹</button>
   <span class="discovery-index"><strong class="spotlight-count">01</strong><span>من <b class="spotlight-total">{String(Math.max(1,trendReviews.length)).padStart(2,'0')}</b> ترندات</span></span>
@@ -151,6 +157,7 @@ if(hero){
  const prev=hero.querySelector<HTMLButtonElement>('.spotlight-prev');
  const next=hero.querySelector<HTMLButtonElement>('.spotlight-next');
  const pause=hero.querySelector<HTMLButtonElement>('.spotlight-pause');
+ const thumbnails=[...hero.querySelectorAll<HTMLButtonElement>('.spotlight-thumbnail')];
  let current=0,activeImage=0,timer:number|undefined,textTimer:number|undefined,paused=false,temporarilyStopped=false;
  const duration=7000;
  const labels:Record<string,string>={game:'ترند الألعاب',series:'ترند المسلسلات',movie:'ترند الأفلام'};
@@ -190,6 +197,7 @@ if(hero){
    hero.querySelector('.spotlight-copy')?.classList.remove('is-changing');
   },reduced?0:220);
   if(progress)progress.style.width=((current+1)/data.length*100)+'%';
+  thumbnails.forEach((button,index)=>{const active=index===current;button.classList.toggle('is-active',active);button.setAttribute('aria-pressed',String(active));});
  }
  function stop(){if(timer){window.clearInterval(timer);timer=undefined;}}
  function start(){stop();if(data.length<2||reduced||paused||temporarilyStopped)return;timer=window.setInterval(()=>show(current+1),duration);}
@@ -197,6 +205,7 @@ if(hero){
  prev?.addEventListener('click',()=>{show(current-1);start();});
  next?.addEventListener('click',()=>{show(current+1);start();});
  pause?.addEventListener('click',()=>{paused=!paused;syncPauseButton();paused?stop():start();});
+ thumbnails.forEach((button)=>button.addEventListener('click',()=>{const index=Number(button.dataset.spotlightIndex);if(Number.isInteger(index)&&index>=0&&index<data.length){show(index);start();}}));
  hero.addEventListener('mouseenter',()=>{temporarilyStopped=true;stop();});
  hero.addEventListener('mouseleave',()=>{temporarilyStopped=false;start();});
  hero.addEventListener('focusin',()=>{temporarilyStopped=true;stop();});
@@ -242,6 +251,24 @@ if(aiPromo){
 .home-latest-section .catalog-more{white-space:nowrap}
 @media(max-width:480px){.home-latest-section .catalog-heading{gap:10px}.home-latest-section .catalog-heading>div>p:last-child{max-width:260px;line-height:1.8}.home-latest-section .catalog-more{font-size:10px}}
 </style>
+<style>
+/* Visual navigation for featured works */
+.spotlight-thumbnails{position:absolute;right:28px;bottom:22px;z-index:3;display:flex;gap:9px;max-width:min(58%,620px);overflow-x:auto;padding:5px;scrollbar-width:thin;scrollbar-color:#ffffff70 transparent}
+.spotlight-thumbnail{position:relative;display:flex;align-items:center;gap:8px;flex:0 0 142px;min-width:0;min-height:66px;padding:6px;text-align:right;color:#fff;background:#171613b8;border:1px solid #ffffff45;border-radius:9px;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+.spotlight-thumbnail img{width:38px;height:54px;flex:0 0 38px;object-fit:cover;border-radius:4px;background:#38352e}
+.spotlight-thumbnail span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:10px;font-weight:850;line-height:1.6}
+.spotlight-thumbnail:hover{transform:translateY(-2px);background:#30251f}
+.spotlight-thumbnail.is-active{border-color:var(--vc-accent);background:#35231d;box-shadow:inset 0 -2px var(--vc-accent)}
+.spotlight-thumbnail:focus-visible{outline:2px solid #fff;outline-offset:3px}
+@media(max-width:760px){
+ .spotlight-thumbnails{right:12px;bottom:58px;max-width:calc(100% - 24px);gap:6px}
+ .spotlight-thumbnail{flex-basis:54px;min-height:62px;padding:4px;justify-content:center;border-radius:7px}
+ .spotlight-thumbnail img{width:42px;height:52px;flex-basis:42px}
+ .spotlight-thumbnail span{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+}
+@media(prefers-reduced-motion:reduce){.spotlight-thumbnail{transition:none}}
+</style>
+
 
 
 
