@@ -217,3 +217,16 @@ assert.ok(collectionState.discoveryBacklog['series:netflix-series-2026']);
 assert.ok(collectionPersisted,'the discovered collection must be durably checkpointed');
 
 console.log('VibeCritic Publishing Engine v2 crash-recovery and continuous-cycle tests passed.');
+
+
+// Upcoming titles are eligible candidates, but released titles retain priority;
+// upcoming titles are ordered by the nearest release date.
+const upcomingState=createState();
+const upcomingAdapters={...adapters,discover:async()=>[
+ {type:'movie',id:'later',name:'Later',date:'2027-04-01'},
+ {type:'movie',id:'released',name:'Released',date:'2026-11-15'},
+ {type:'movie',id:'soon',name:'Soon',date:'2026-12-01'}
+]};
+await runCycle({state:upcomingState,adapters:upcomingAdapters,providers,now,persist:async()=>{}});
+assert.ok(upcomingState.jobs['movie:released'],'released work is not displaced by upcoming titles');
+assert.ok(upcomingState.discoveryBacklog['movie:soon']&&upcomingState.discoveryBacklog['movie:later'],'future titles remain in the publishing backlog for pre-release coverage');
