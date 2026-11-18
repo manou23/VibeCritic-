@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T23:38:32.339Z",
+  "updatedAt": "2026-11-18T23:39:09.635Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -1423,20 +1423,68 @@
         ],
         "popularity": 14098
       },
-      "status": "researching",
+      "status": "waiting",
       "stage": 0,
       "parts": [],
-      "evidence": null,
-      "attempts": 1,
+      "evidence": {
+        "title": "DOOM (2016)",
+        "originalTitle": "",
+        "type": "game",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/doom",
+        "sourceId": "game:2454",
+        "releaseDate": "2016-05-12",
+        "overview": "Return of the classic FPS, Doom (2016) acts as a reboot of the series and brings back the Doomslayer, protagonist of the original Doom games. In order to solve the energy crisis, humanity learned to harvest the energy from Hell, and when something went wrong and a demon invasion has started, it’s up to the player to control the Doomslayer and destroy the evil. Doom is a fast-paced game that restores the concept of instant health packs and leaves the player against armies of Hell with no cover, no health regeneration, or help from anyone. After damaging monsters enough, they will start glowing, which will allow players to perform glory kills to restore some health. While exploring the levels, players will come across secrets, collectible items, or upgrade points for the weapons and armor. The single-player campaign silent protagonist has a noticeable personality. He gets visibly annoyed and angry in his actions during expository cutscenes and forces his way through the game. Multiplayer maps gather players in Deathmatch/”king-of-the-hill” type game modes, with all the weapons from the single-player campaign.",
+        "poster": "https://media.rawg.io/media/games/587/587588c64afbff80e6f444eb2e46f9da.jpg",
+        "backdrop": "https://media.rawg.io/media/screenshots/d3b/d3b881ae214f9ad14724afc41b49dcea.jpg",
+        "genres": [
+          "Action",
+          "Shooter"
+        ],
+        "platforms": [
+          "PC",
+          "PlayStation 4",
+          "Nintendo Switch",
+          "Xbox One"
+        ],
+        "cast": [],
+        "crew": [],
+        "youtubeVideoId": "",
+        "youtubeVideoTitle": "",
+        "externalVideoUrl": "",
+        "externalVideoTitle": "",
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/doom",
+            "extract": "Return of the classic FPS, Doom (2016) acts as a reboot of the series and brings back the Doomslayer, protagonist of the original Doom games. In order to solve the energy crisis, humanity learned to harvest the energy from Hell, and when something went wrong and a demon invasion has started, it’s up to the player to control the Doomslayer and destroy the evil. Doom is a fast-paced game that restores the concept of instant health packs and leaves the player against armies of Hell with no cover, no health regeneration, or help from anyone. After damaging monsters enough, they will start glowing, which will allow players to perform glory kills to restore some health. While exploring the levels, players will come across secrets, collectible items, or upgrade points for the weapons and armor. The single-player campaign silent protagonist has a noticeable personality. He gets visibly annoyed and angry in his actions during expository cutscenes and forces his way through the game. Multiplayer maps gather players in Deathmatch/”king-of-the-hill” type game modes, with all the weapons from the single-player campaign."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Doom_(2016_video_game)",
+            "extract": "Doom is a 2016 first-person shooter game developed by id Software and published by Bethesda Softworks. The game is the first major installment in the Doom series since 2004's Doom 3 and is a reboot of the franchise. It was released for PlayStation 4, Windows, and Xbox One in May 2016. A port for Nintendo Switch was co-developed with Panic Button and released in November 2017, and a version for Stadia was released in August 2020. Players take the role of an ancient warrior, known colloquially as the Doom Slayer, as he battles demonic forces within an energy-mining facility on Mars and in Hell. The game was announced as Doom 4 in 2008, and that version underwent an extensive development cycle with different builds and designs before the game was restarted in 2011 and re-revealed as simply Doom in 2014. It was tested by customers who pre-ordered the 2014 MachineGames game Wolfenstein: The New Order and the general public. Mick Gordon composed the music, with contributions by Richard Devine. The game also has an online multiplayer component and a level editor known as \"SnapMap\", co-developed with Certain Affinity and Escalation Studios respectively. Doom was well received by critics and players. The single-player campaign, graphics, soundtrack, and gameplay received considerable praise, whereas the multiplayer mode drew significant criticism. It was the second best-selling video game in North America and the United Kingdom in the week of its release and sold over 500,000 copies for PCs by the end of May 2016. A sequel, Doom Eternal, was released in March 2020. A prequel, Doom: The Dark Ages, was released in May 2025."
+          }
+        ],
+        "metadata": {
+          "rating": 4.38,
+          "votes": 3646
+        },
+        "streamingPlatform": "",
+        "collection": "",
+        "netflixOriginal": false,
+        "streamingRegion": ""
+      },
+      "attempts": 3,
       "createdAt": "2026-11-17T23:35:14.861Z",
-      "updatedAt": "2026-11-18T23:35:36.650Z",
-      "nextAttemptAt": null,
-      "lastError": "Saved evidence invalidated; researching again: Saved independent source does not verify this title and media type.",
+      "updatedAt": "2026-11-18T23:38:57.730Z",
+      "nextAttemptAt": 1795045617730,
+      "lastError": "groq: groq HTTP 400: {\"error\":{\"message\":\"Generated JSON does not match the expected schema. Please adjust your prompt. See 'failed_generation' for more details. Error: jsonschema: '/scores/story' does not validate with /properties/scores/properties/story/type: expected number, but got null\",\"type\":\"invalid_request_error\",\"code\":\"json_validate_failed\",\"failed_generation\":\"{\\n  \\\"review\\\": \\\"تستعيد لعبة Doom (2016) جوهر السلسلة الكلاسيكية من خلال إحياء شخصية الـ Doomslayer، وهو محارب صامت يتسم بالغضب والعدوانية التي تتجلى في مشاهد القصصية التوضيحية. تدور القصة حول أزمة طاقة تدفع البشرية إلى استخراج الطاقة من جحيم ا",
       "recoveryAttempts": 1,
       "evidenceRecoveryAttempts": 0,
-      "resumeTo": null,
+      "resumeTo": "writing",
       "excludedProviders": [
-        "openrouter"
+        "openrouter",
+        "groq"
       ]
     },
     "game:7689": {
@@ -2334,10 +2382,10 @@
     },
     "2026-11-18": {
       "groq": {
-        "requests": 15,
-        "tokens": 29791,
+        "requests": 17,
+        "tokens": 31976,
         "successes": 9,
-        "failures": 2
+        "failures": 3
       },
       "gemini": {
         "requests": 5,
@@ -2350,6 +2398,12 @@
         "tokens": 30281,
         "successes": 1,
         "failures": 6
+      },
+      "cloudflare": {
+        "requests": 1,
+        "tokens": 0,
+        "successes": 0,
+        "failures": 1
       }
     }
   },
@@ -2358,13 +2412,18 @@
       "failures": 3,
       "until": 1795073906953,
       "lastError": "gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
+    },
+    "cloudflare": {
+      "failures": 1,
+      "until": 1795052337730,
+      "lastError": "cloudflare HTTP 401: {\"result\":null,\"success\":false,\"errors\":[{\"code\":10000,\"message\":\"Authentication error\"}],\"messages\":[]}"
     }
   },
   "cycle": {
     "startedAt": 1795042641925,
     "deadlineAt": 1795045341925,
     "nextStartAt": 1795045341925,
-    "articleKey": "movie:656908",
+    "articleKey": "game:2454",
     "nextPublishAt": 1795045341925
   },
   "discoveryBacklog": {
