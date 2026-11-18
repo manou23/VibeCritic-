@@ -62,12 +62,14 @@ async function discover(excludedKeys=[]){
  const empty={results:[]};
  const today=new Date().toISOString().slice(0,10);
  const netflixPages=Array.from({length:10},(_,i)=>i+1),netflixProviderPages=Array.from({length:5},(_,i)=>i+1);
+ const companySearch=env.TMDB_API_KEY?await get(tmdb('search/company',{query:'Netflix',page:1})).catch(()=>({results:[]})):{results:[]};
+ const netflixCompanyIds=[...new Set([178464,...arr(companySearch.results).filter(x=>norm(x.name).includes('netflix')).map(x=>Number(x.id)).filter(Number.isFinite)])];
  const [trending,popularMovies,popularSeries,games,netflixMovies,netflixSeries,netflixAvailableMovies,netflixAvailableSeries]=await Promise.all([
   env.TMDB_API_KEY?get(tmdb('trending/all/week',{language:'en-US'})).catch(()=>empty):Promise.resolve(empty),
   env.TMDB_API_KEY?get(tmdb('movie/popular',{language:'en-US',page:1})).catch(()=>empty):Promise.resolve(empty),
   env.TMDB_API_KEY?get(tmdb('tv/popular',{language:'en-US',page:1})).catch(()=>empty):Promise.resolve(empty),
   env.RAWG_API_KEY?get('https://api.rawg.io/api/games?key='+encodeURIComponent(env.RAWG_API_KEY)+'&ordering=-added&page_size=40').catch(()=>empty):Promise.resolve(empty),
-  env.TMDB_API_KEY?Promise.all(netflixPages.map(page=>get(tmdb('discover/movie',{language:'en-US',include_adult:false,with_companies:'178464','primary_release_date.gte':'2026-01-01','primary_release_date.lte':today,sort_by:'primary_release_date.asc',page})).catch(()=>empty))):Promise.resolve([]),
+  env.TMDB_API_KEY?Promise.all(netflixPages.map(page=>get(tmdb('discover/movie',{language:'en-US',include_adult:false,with_companies:netflixCompanyIds.join('|'),'primary_release_date.gte':'2026-01-01','primary_release_date.lte':today,sort_by:'primary_release_date.asc',page})).catch(()=>empty))):Promise.resolve([]),
   env.TMDB_API_KEY?Promise.all(netflixPages.map(page=>get(tmdb('discover/tv',{language:'en-US',include_adult:false,with_networks:'213','air_date.gte':'2026-01-01','air_date.lte':today,sort_by:'popularity.desc',page})).catch(()=>empty))):Promise.resolve([]),
   env.TMDB_API_KEY?Promise.all(netflixProviderPages.map(page=>get(tmdb('discover/movie',{language:'en-US',include_adult:false,with_watch_providers:'8',watch_region:'DZ','primary_release_date.gte':'2026-01-01','primary_release_date.lte':today,sort_by:'primary_release_date.asc',page})).catch(()=>empty))):Promise.resolve([]),
   env.TMDB_API_KEY?Promise.all(netflixProviderPages.map(page=>get(tmdb('discover/tv',{language:'en-US',include_adult:false,with_watch_providers:'8',watch_region:'DZ','air_date.gte':'2026-01-01','air_date.lte':today,sort_by:'popularity.desc',page})).catch(()=>empty))):Promise.resolve([])
@@ -86,7 +88,7 @@ async function discover(excludedKeys=[]){
  // Only already-released titles enter the queue; future titles become eligible automatically after release.
  for(const page of netflixMovies)for(const x of arr(page.results)){
   const date=String(x.release_date||'').slice(0,10);
-  if(date>='2026-01-01'&&date<=today)addMedia(x,'movie',{streamingPlatform:'Netflix',collection:'Netflix 2026',netflixOriginal:true,editorialPriority:100});
+  if(date>='2026-01-01'&&date<=today)addMedia(x,'movie',{streamingPlatform:'Netflix',collection:'Netflix 2026',netflixOriginal:true,netflixCompanyIds,editorialPriority:100});
  }
  for(const page of netflixSeries)for(const x of arr(page.results))addMedia(x,'series',{streamingPlatform:'Netflix',collection:'Netflix 2026',netflixOriginal:true,editorialPriority:100});
  // Include 2026 releases currently streaming on Netflix Algeria, while keeping licensed titles
@@ -144,7 +146,8 @@ async function collectEvidence(item){
   data=await get(tmdb(kind+'/'+item.id,{language:'en-US',append_to_response:'credits,videos'}));
   if(item.streamingPlatform==='Netflix'){
    if(item.netflixOriginal){
-    const belongsToNetflix=item.type==='series'?arr(data.networks).some(x=>Number(x.id)===213):arr(data.production_companies).some(x=>Number(x.id)===178464);
+    const companyIds=new Set((item.netflixCompanyIds||[178464]).map(Number));
+    const belongsToNetflix=item.type==='series'?arr(data.networks).some(x=>Number(x.id)===213):arr(data.production_companies).some(x=>companyIds.has(Number(x.id)));
     if(!belongsToNetflix)throw new Error('Netflix Original verification failed against TMDB title details');
    }else{
     const watch=await get(tmdb(kind+'/'+item.id+'/watch/providers'));
