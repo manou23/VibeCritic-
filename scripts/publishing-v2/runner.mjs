@@ -55,6 +55,23 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
   deploymentPending=true;
   ready={...ready,lastDeploymentCheckAt:now};state.jobs[ready.key]=ready;await save();
  }
+ // Wake a delayed writing checkpoint only when another configured free provider can
+ // actually continue it. Otherwise leave it paused and let queued titles use this cycle.
+ const providerDay=new Date(now).toISOString().slice(0,10);
+ for(const paused of Object.values(state.jobs)){
+  if(paused?.status!=='waiting'||paused.resumeTo!=='writing'||(Number(paused.nextAttemptAt)||Date.parse(paused.nextAttemptAt||'')||0)<=now)continue;
+  const failedId=providers.find(p=>String(paused.lastError||'').startsWith(p.id+': '))?.id;
+  const excluded=new Set(paused.excludedProviders||[]);
+  if(failedId)excluded.add(failedId);
+  const eligibility={...(state.providerUsage[providerDay]||{})};
+  for(const provider of providers)eligibility[provider.id]={...(eligibility[provider.id]||{}),cooldownUntil:state.providerCooldowns?.[provider.id]?.until||null};
+  const fallback=chooseFreeProvider(providers.filter(provider=>!excluded.has(provider.id)),eligibility,now);
+  if(fallback){
+   state.jobs[paused.key]={...paused,nextAttemptAt:now,fallbackWokenAt:now};
+   await save();
+   break;
+  }
+ }
  let job=selectRunnableJob(state.jobs,now,{includeReady:false});
  // A code-level article assembly/validation fix should not leave a valid saved draft
  // sleeping for an hour; resume it immediately after the corrected build is deployed.
