@@ -210,11 +210,11 @@ const collectionAdapters={
  generatePart:async()=>({text:'unused',tokens:0}),
  assembleArticle:async()=>article,publishFile:async()=>({path:'unused'}),verifyDeployment:async()=>false
 };
-const collectionResult=await runCycle({state:collectionState,adapters:collectionAdapters,providers,now:now+1000,persist:async()=>{collectionPersisted=true;}});
-assert.equal(collectionResult.action,'stage-waiting','the existing draft must keep its 30-minute stage spacing');
-assert.equal(Object.keys(collectionState.discoveryBacklog).length,2,'all Netflix 2026 discoveries must be stored while the current draft is active');
-assert.ok(collectionState.discoveryBacklog['movie:netflix-film-2026']);
-assert.ok(collectionState.discoveryBacklog['series:netflix-series-2026']);
+const collectionResult=await runCycle({state:collectionState,adapters:{...collectionAdapters,collectEvidence:async item=>({title:item.name,type:item.type,sourceId:item.type+':'+item.id,overview:'Verified source detail',sources:[{name:'TMDB',url:'https://www.themoviedb.org/movie/1'},{name:'Wikipedia',url:'https://en.wikipedia.org/wiki/Test'}],youtubeVideoId:'Abcdef12345',poster:'https://example.com/poster.jpg'}),generatePart:async()=>({text:'first prepared section',tokens:100})},providers,now:now+1000,persist:async()=>{collectionPersisted=true;}});
+assert.equal(collectionResult.action,'stage-saved','a future stage checkpoint must not block preparation of another queued article');
+assert.equal(Object.keys(collectionState.discoveryBacklog).length,1,'one discovered title should move from backlog into the runnable preparation queue');
+assert.ok(collectionState.jobs['series:netflix-series-2026']||collectionState.jobs['movie:netflix-film-2026'],'the next discovered title should be prepared while the earlier draft waits');
 assert.ok(collectionPersisted,'the discovered collection must be durably checkpointed');
+assert.notEqual(collectionState.cycle.articleKey,'series:existing','the paused draft must release the current publication slot');
 
 console.log('VibeCritic Publishing Engine v2 crash-recovery and continuous-cycle tests passed.');
