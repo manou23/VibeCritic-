@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T23:14:06.009Z",
+  "updatedAt": "2026-11-18T23:17:32.580Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -1278,20 +1278,68 @@
         ],
         "popularity": 12867
       },
-      "status": "queued",
+      "status": "waiting",
       "stage": 0,
       "parts": [],
-      "evidence": null,
-      "attempts": 0,
+      "evidence": {
+        "title": "Horizon Zero Dawn",
+        "originalTitle": "",
+        "type": "game",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/horizon-zero-dawn",
+        "sourceId": "game:278",
+        "releaseDate": "2017-02-28",
+        "overview": "Horizon Zero Dawn is an experiment. A very impressive experiment that actually succeeded. Having a very curious mix of cyberpunk and prehistorical styles and esthetic, the game provides us with quite a unique experience. We need to arm ourselves with arrows and a bow, with a spear or any other prehistorical-ish weapon in order to defeat out enemies - dinosaur-mechanisms that are spread around the world. If that wasn't enough, Aloy our main protagonist can control an AI named GAIA. What we're having here is an exciting connection with \"very old times\" and \"near future\", even though the game is set up in the 31st century. Being an outcast with her father Rost, Aloy must restore her position in the tribe and save the world by stopping the Eclipse, a cult that wants to rule the world. Join her on that journey, exploring the world and people that live in such hard surroundings.",
+        "poster": "https://media.rawg.io/media/games/b7d/b7d3f1715fa8381a4e780173a197a615.jpg",
+        "backdrop": "https://media.rawg.io/media/screenshots/622/622af78d13d5f1a862fbad82ca0f3260.jpg",
+        "genres": [
+          "Action",
+          "RPG"
+        ],
+        "platforms": [
+          "PC",
+          "PlayStation 4"
+        ],
+        "cast": [],
+        "crew": [],
+        "youtubeVideoId": "",
+        "youtubeVideoTitle": "",
+        "externalVideoUrl": "",
+        "externalVideoTitle": "",
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/horizon-zero-dawn",
+            "extract": "Horizon Zero Dawn is an experiment. A very impressive experiment that actually succeeded. Having a very curious mix of cyberpunk and prehistorical styles and esthetic, the game provides us with quite a unique experience. We need to arm ourselves with arrows and a bow, with a spear or any other prehistorical-ish weapon in order to defeat out enemies - dinosaur-mechanisms that are spread around the world. If that wasn't enough, Aloy our main protagonist can control an AI named GAIA. What we're having here is an exciting connection with \"very old times\" and \"near future\", even though the game is set up in the 31st century. Being an outcast with her father Rost, Aloy must restore her position in the tribe and save the world by stopping the Eclipse, a cult that wants to rule the world. Join her on that journey, exploring the world and people that live in such hard surroundings."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Horizon_Zero_Dawn",
+            "extract": "Horizon Zero Dawn is a 2017 action role-playing game developed by Guerrilla Games and published by Sony Interactive Entertainment. The first instalment in the Horizon video game series, it is set in a post-apocalyptic United States where large robotic machines dominate the Earth while humans live in primitive tribes with varying levels of technological development. The game follows Aloy, a young huntress who sets out to uncover her past. The player uses ranged weapons, a spear, and stealth to combat mechanical creatures and other enemy forces. A skill tree provides the player with new abilities and bonuses. The player can explore the open world to discover locations and take on side quests. Horizon Zero Dawn was Guerrilla Games' first new intellectual property since Killzone in 2004 and its first open-world and role-playing game. Director Mathijs de Jonge considered it the riskiest idea among those pitched. Development began in 2011 after the completion of Killzone 3. The game engine, Decima, was developed for Killzone: Shadow Fall and modified for Zero Dawn. The game uses vibrant colours and was designed to evoke a sense of adventure and hope despite its post-apocalyptic setting. Anthropologists were consulted to inform the world's decay, while experts in robotics were consulted to develop realistic machine designs. Non-fiction books by Jared Diamond, and futuristic fiction such as Nausicaä of the Valley of the Wind (1984) and Princess Mononoke (1997), influenced the design of the game's setting and narrative. The game's cast included Ashly Burch and Lance Reddick, while the soundtrack was composed by Joris de Man, featuring contributions from The Flight. Released for the PlayStation 4 in February 2017, the game was ported to Windows in 2020 as the first in a series of PlayStation-exclusive video games arriving on personal computers. A remastered version of the game, developed by Nixxes Software, was released in October 2024. Zero Dawn received generally positive reviews from critics, who praised its setting, story, visuals, and combat; however, its role-playing mechanics and unoriginal gameplay received some criticism. The game won numerous awards including one British Academy Games Awards and two D.I.C.E. Awards, and has sold over 24 million units. An expansion, The Frozen Wilds, was released in November 2017. A sequel, Horizon Forbidden West, was released in February 2022. Events in the game are reinterpreted comically in Lego Horizon Adventures. A film adaptation is in the works by PlayStation Productions and Columbia Pictures."
+          }
+        ],
+        "metadata": {
+          "rating": 4.27,
+          "votes": 3789
+        },
+        "streamingPlatform": "",
+        "collection": "",
+        "netflixOriginal": false,
+        "streamingRegion": ""
+      },
+      "attempts": 1,
       "createdAt": "2026-11-17T23:35:14.861Z",
-      "updatedAt": "2026-11-18T19:45:30.746Z",
-      "nextAttemptAt": null,
-      "lastError": null,
+      "updatedAt": "2026-11-18T23:17:25.697Z",
+      "nextAttemptAt": 1795044145697,
+      "lastError": "openrouter: Section word count rejected: 140",
       "article": null,
       "quality": null,
       "recoveryAttempts": 1,
       "evidenceRecoveryAttempts": 0,
-      "resumeTo": null
+      "resumeTo": "writing",
+      "excludedProviders": [
+        "openrouter"
+      ]
     },
     "game:2454": {
       "key": "game:2454",
@@ -2239,10 +2287,10 @@
         "failures": 3
       },
       "openrouter": {
-        "requests": 4,
-        "tokens": 7241,
+        "requests": 6,
+        "tokens": 11141,
         "successes": 0,
-        "failures": 2
+        "failures": 3
       }
     }
   },
@@ -2262,7 +2310,7 @@
     "startedAt": 1795042641925,
     "deadlineAt": 1795045341925,
     "nextStartAt": 1795045341925,
-    "articleKey": "game:2454",
+    "articleKey": "game:278",
     "nextPublishAt": 1795045341925
   },
   "discoveryBacklog": {
