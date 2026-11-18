@@ -38,9 +38,9 @@ export function selectActiveJob(jobs={}){
 }
 // Unlike the legacy selector, this skips durable jobs whose retry or next writing stage is not due.
 // It lets the publisher prepare another queued title without discarding a paused draft.
-export function selectRunnableJob(jobs={},now=Date.now()){
+export function selectRunnableJob(jobs={},now=Date.now(),{includeReady=true}={}){
  return Object.values(jobs).filter(j=>{
-  if(!j||!ACTIVE.has(j.status))return false;
+  if(!j||!ACTIVE.has(j.status)||(!includeReady&&j.status==="ready"))return false;
   if(j.status==="waiting"&&time(j.nextAttemptAt)>now)return false;
   if(j.status==="writing"&&j.stage>0&&time(j.nextStageAt)>now)return false;
   return true;
