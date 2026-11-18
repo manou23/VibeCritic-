@@ -327,7 +327,7 @@ export function createPublishingAdapters(){return {
    try{const retry=await modelCall(provider,retryPrompt);return {text:JSON.stringify(retry.parsed),tokens:firstTokens+retry.tokens,requests:2};}
    catch(retryError){
     const retryTokens=(Number(retryError.tokens)||0)+firstTokens;
-    const shortSection=Number((String(retryError.message||'').match(/Section word count rejected: (\\d+)/)||[])[1]||0);
+    const shortSection=Number((String(retryError.message||'').match(/Section word count rejected: (\d+)/)||[])[1]||0);
     if(shortSection>0&&shortSection<180&&retryError.partial?.review){
      const expansionPrompt=basePrompt+'\\n\\nهذه مسودتك السابقة التي كانت أقصر من المطلوب:\\n'+retryError.partial.review+'\\n\\nوسّعها الآن إلى قسم كامل متماسك من 210 إلى 250 كلمة عربية فعلية. احتفظ بالأفكار الصحيحة، وأضف تحليلاً مستنداً حصراً إلى الأدلة أعلاه، ولا تكرر الجمل ولا تخترع معلومات. أعد JSON كاملاً مع جميع الحقول المطلوبة.';
      try{const expanded=await modelCall(provider,expansionPrompt);return {text:JSON.stringify(expanded.parsed),tokens:firstTokens+(Number(retryError.tokens)||0)+expanded.tokens,requests:3};}
