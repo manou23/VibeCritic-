@@ -54,6 +54,12 @@
       "sha256": "dacdd85b7a054f9058d599c6923f09a8b40e578e0d5a2be2a3eaa1302d55f277",
       "articlePath": "src/content/reviews/marvels-wolverine-2026.md",
       "publishedAt": "2026-11-18T01:08:15.246Z"
+    },
+    "gears-of-war-e-day-2026": {
+      "sourceId": "xbox-2026-game-gears-of-war-e-day",
+      "sha256": "60e69b5aec9faa6ccafb475cbe4ebdf3e9c1b8b10b0d7c738754946989d5dc9f",
+      "articlePath": "src/content/reviews/gears-of-war-e-day-2026.md",
+      "publishedAt": "2026-11-18T01:09:25.270Z"
     }
   }
 }
