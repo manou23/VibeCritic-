@@ -6,6 +6,12 @@
       "sha256": "f2b1215abb40aa8f15d982ed5a460994b703622553e871aa90440f14eee3f0e3",
       "articlePath": "src/content/reviews/the-rip-2026.md",
       "publishedAt": "2026-11-18T00:41:59.680Z"
+    },
+    "the-body-2026": {
+      "sourceId": "netflix-2026-series-the-body-81983578",
+      "sha256": "325bc647d582d892c81fb29ac59f8d28906a3d96f7c96c914a0b4a39016310d9",
+      "articlePath": "src/content/reviews/the-body-2026.md",
+      "publishedAt": "2026-11-18T00:44:10.290Z"
     }
   }
 }
