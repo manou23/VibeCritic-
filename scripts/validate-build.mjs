@@ -143,7 +143,7 @@ for (const file of reviewFiles) {
   const source = await fs.readFile(path.join(reviewRoot, file), 'utf8');
   const frontmatter = source.match(/^---\s*\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/)?.[1] || '';
   const body = source.replace(/^---\s*\r?\n[\s\S]*?\r?\n---(?:\r?\n|$)/, '');
-  const manualArticle = frontmatter.includes('editorialWorkflow: "manual-assisted"') || frontmatter.includes('editorialWorkflow: manual-assisted');
+  const manualArticle = frontmatter.includes('mediaVerified: true');
   if (manualArticle) {
     const field = (key) => {
       const line = frontmatter.split(/\r?\n/).find(item => item.startsWith(key + ':'));
