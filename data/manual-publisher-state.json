@@ -12,6 +12,12 @@
       "sha256": "325bc647d582d892c81fb29ac59f8d28906a3d96f7c96c914a0b4a39016310d9",
       "articlePath": "src/content/reviews/the-body-2026.md",
       "publishedAt": "2026-11-18T00:44:10.290Z"
+    },
+    "possible-love-2026": {
+      "sourceId": "netflix-2026-movie-possible-love-82106490",
+      "sha256": "073d7ec36b60f25b07b9783986c31d9def23c103baa46e438fbb56ca00295d59",
+      "articlePath": "src/content/reviews/possible-love-2026.md",
+      "publishedAt": "2026-11-18T00:45:54.587Z"
     }
   }
 }
