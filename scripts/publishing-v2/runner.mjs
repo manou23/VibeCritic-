@@ -1,12 +1,13 @@
-import { enqueue, selectActiveJob, cycleDecision, transition, chooseFreeProvider, recordUsage, validateArticle, validateEvidence } from './core.mjs';
+import { enqueue, selectRunnableJob, cycleDecision, transition, chooseFreeProvider, recordUsage, validateArticle, validateEvidence } from './core.mjs';
 import { recoverAbandonedJobs } from './recovery.mjs';
+function jobIsBlocked(job,now){if(!job)return false;if(job.status==='waiting'&&(Number(job.nextAttemptAt)||Date.parse(job.nextAttemptAt||'')||0)>now)return true;if(job.status==='writing'&&job.stage>0&&(Number(job.nextStageAt)||Date.parse(job.nextStageAt||'')||0)>now)return true;return false;}
 function candidate(items,state,counts={},now=Date.now()) { const used=new Set(Object.keys(state.jobs)); const c={game:counts.game||0,movie:counts.movie||0,series:counts.series||0}; for(const j of Object.values(state.jobs)) if(j.status==='published') c[j.item.type]=(c[j.item.type]||0)+1; return (items||[]).filter(x=>x&&['game','movie','series'].includes(x.type)&&String(x.id||'').trim()&&!used.has(x.type+':'+x.id)).sort((a,b)=>Number(b.editorialPriority||0)-Number(a.editorialPriority||0)||c[a.type]-c[b.type]||String(b.date||'').localeCompare(String(a.date||'')) )[0]||null; }
 // One bounded task per invocation. Publication cadence and writing-stage pacing are separate clocks.
 export async function runCycle({state,adapters,providers,now=Date.now(),persist=async()=>{},publishedCounts={},articleLimits={},researchSkips=0,cycleIntervalMinutes=30,stageIntervalMinutes=30}) {
  if(!state||state.version!==2||!adapters) throw Error('Publisher v2 state and adapters are required.');
  const save=async()=>{state.updatedAt=new Date(now).toISOString();await persist(state);};
  const recoveredJobs=recoverAbandonedJobs(state,now);if(recoveredJobs)await save();
- let job=selectActiveJob(state.jobs);
+ let job=selectRunnableJob(state.jobs,now);
  // Collect and persist the full editorial backlog even while another saved article is being written.
  // This makes a large themed collection durable instead of waiting for the current draft to finish.
  state.discoveryBacklog ||= {};
@@ -60,10 +61,14 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
   if(state.cycle?.articleKey===duplicateKey)state.cycle.articleKey=null;
   await save();job=null;
  }
- // A recovered draft owns this cycle only after duplicate detection; do not enqueue
- // another article after it publishes.
- if(job&&(['writing','quality-check','ready'].includes(job.status)||(job.status==='waiting'&&job.resumeTo==='writing'))){
-  state.cycle.articleKey ||= job.key;
+ // Publish at most one verified article per 45-minute slot. If its draft is paused
+ // for a future stage/retry, release the slot to another runnable queued title.
+ let owner=state.cycle.articleKey?state.jobs[state.cycle.articleKey]:null;
+ if(owner?.status==='published'){
+  return {action:'cycle-complete',key:owner.key,retryAt:Number(state.cycle.nextStartAt),providerCalls:0};
+ }
+ if(!job&&state.cycle.articleKey&&(!owner||jobIsBlocked(owner,now)||['abandoned','rejected'].includes(owner.status))){
+  state.cycle.articleKey=null;owner=null;await save();
  }
  if(!job&&state.cycle.articleKey){
   return {action:'cycle-complete',key:state.cycle.articleKey,retryAt:Number(state.cycle.nextStartAt),providerCalls:0};
@@ -115,9 +120,14 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
   const item=candidate(Object.values(state.discoveryBacklog||{}),state,publishedCounts,now);
   if(!item)return {action:'no-candidates',providerCalls:0,queuedCandidates:Object.keys(state.discoveryBacklog||{}).length};
   delete state.discoveryBacklog[item.type+':'+item.id];
-  job=enqueue(state,item,now).job;await save();
+  job=enqueue(state,item,now,{allowConcurrent:true}).job;await save();
  }
- let decision=cycleDecision(state,now);
+ if(!state.cycle.articleKey||jobIsBlocked(state.jobs[state.cycle.articleKey],now)||job.status==='ready'){
+  state.cycle.articleKey=job.key;await save();
+ }else if(state.cycle.articleKey!==job.key){
+  return {action:'cycle-complete',key:state.cycle.articleKey,retryAt:Number(state.cycle.nextStartAt),providerCalls:0};
+ }
+ let decision=cycleDecision(state,now,job);
  if(decision.action==='wait')return {action:'waiting',key:job.key,retryAt:decision.retryAt,providerCalls:0};
  if(decision.action==='publish'){
   if(!job.fileWritten){const written=await adapters.publishFile(job.article,job);job={...job,fileWritten:true,articlePath:written?.path||null,updatedAt:new Date(now).toISOString()};state.jobs[job.key]=job;await save();return {action:'file-ready',key:job.key,articlePath:job.articlePath,providerCalls:0};}
