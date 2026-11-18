@@ -60,6 +60,12 @@
       "sha256": "60e69b5aec9faa6ccafb475cbe4ebdf3e9c1b8b10b0d7c738754946989d5dc9f",
       "articlePath": "src/content/reviews/gears-of-war-e-day-2026.md",
       "publishedAt": "2026-11-18T01:09:25.270Z"
+    },
+    "black-doves-season-2-2026": {
+      "sourceId": "series:81682935:season-2:manual-editorial",
+      "sha256": "8c0b80cbfca1bf9028b8b44d4d9c8eabf714a2fcc98e06b5bc25de662bfed987",
+      "articlePath": "src/content/reviews/black-doves-season-2-2026.md",
+      "publishedAt": "2026-11-18T01:41:26.434Z"
     }
   }
 }
