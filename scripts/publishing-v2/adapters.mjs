@@ -118,7 +118,7 @@ async function wiki(title){
  return {name:'Wikipedia',url:'https://en.wikipedia.org/wiki/'+encodeURIComponent(hit.title.replace(/ /g,'_')),extract:extract.slice(0,4500)};
 }
 async function collectEvidence(item){
- let data={},sourceUrl=item.sourceUrl,poster=item.poster,backdrop=item.backdrop,genres=item.genres||[],platforms=item.platforms||[],cast=[],crew=[],releaseDate=item.date||'';
+ let data={},sourceUrl=item.sourceUrl,poster=item.poster,backdrop=item.backdrop,genres=item.genres||[],platforms=item.platforms||[],cast=[],crew=[],releaseDate=item.date||'',netflixSeasonNumber=null;
  let youtubeVideoId='',youtubeVideoTitle='',externalVideoUrl='',externalVideoTitle='';
  if(item.type==='game'){
   if(!env.RAWG_API_KEY)throw new Error('RAWG_API_KEY missing');
@@ -139,7 +139,7 @@ async function collectEvidence(item){
    if(item.type==='series'){
     const season=arr(data.seasons).filter(x=>Number(x.season_number)>0&&String(x.air_date||'').slice(0,4)==='2026'&&String(x.air_date||'').slice(0,10)<=new Date().toISOString().slice(0,10)).sort((a,b)=>String(a.air_date).localeCompare(String(b.air_date)))[0];
     if(!season)throw new Error('Netflix 2026 season release date could not be verified');
-    releaseDate=season.air_date;
+    releaseDate=season.air_date;netflixSeasonNumber=Number(season.season_number);
    }else if(String(data.release_date||'').slice(0,4)!=='2026'||String(data.release_date||'').slice(0,10)>new Date().toISOString().slice(0,10)){
     throw new Error('Netflix 2026 film release date could not be verified');
    }
@@ -151,11 +151,17 @@ async function collectEvidence(item){
   if(item.streamingPlatform==='Netflix'&&item.type==='series'){
    const verifiedSeason=arr(data.seasons).filter(x=>Number(x.season_number)>0&&String(x.air_date||'').slice(0,4)==='2026'&&String(x.air_date||'').slice(0,10)<=new Date().toISOString().slice(0,10)).sort((a,b)=>String(a.air_date).localeCompare(String(b.air_date)))[0];
    if(!verifiedSeason)throw new Error('Netflix 2026 season release date could not be verified');
-   releaseDate=verifiedSeason.air_date;
+   releaseDate=verifiedSeason.air_date;netflixSeasonNumber=Number(verifiedSeason.season_number);
   }
   cast=arr(data.credits?.cast).slice(0,8).map(x=>x.name).filter(Boolean);
   crew=arr(data.credits?.crew).filter(x=>['Director','Creator'].includes(x.job)).slice(0,5).map(x=>x.name).filter(Boolean);
-  const trailers=arr(data.videos?.results).filter(v=>v.site==='YouTube'&&v.type==='Trailer'&&/^[A-Za-z0-9_-]{11}$/.test(v.key||''));
+  let videoResults=arr(data.videos?.results);
+  if(item.streamingPlatform==='Netflix'&&item.type==='series'&&Number.isInteger(netflixSeasonNumber)){
+   const seasonVideos=await get(tmdb('tv/'+item.id+'/season/'+netflixSeasonNumber+'/videos',{language:'en-US'})).catch(()=>({results:[]}));
+   const specific=arr(seasonVideos.results);
+   if(specific.length)videoResults=specific;
+  }
+  const trailers=videoResults.filter(v=>v.site==='YouTube'&&v.type==='Trailer'&&/^[A-Za-z0-9_-]{11}$/.test(v.key||''));
   const trailer=trailers.find(v=>v.official===true)||trailers[0];
   if(trailer){youtubeVideoId=trailer.key;youtubeVideoTitle=clean(trailer.name||('المقطع الرسمي لـ '+item.name));}
  }
