@@ -2,12 +2,15 @@ name: VibeCritic Publishing V2 Schedule
 on:
   workflow_dispatch:
   schedule:
-    # Restore the previously proven scheduler; offset checkpoints avoid the top-of-hour burst.
-    - cron: '*/5 * * * *'
+    # Checkpoint at 15-minute offsets; the engine itself enforces 30-minute stage spacing.
+    - cron: '7,22,37,52 * * * *'
+  push:
+    branches: [main]
+    paths: ['.github/workflows/publishing-v2-schedule.yml']
 permissions:
   contents: write
 concurrency:
-  group: vibecritic-publisher-v2-schedule-main
+  group: vibecritic-publishing-v2-scheduled
   cancel-in-progress: false
 jobs:
   publish-cycle:
