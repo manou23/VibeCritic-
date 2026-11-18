@@ -11,8 +11,9 @@ date: 2026-11-17
 releaseDate: "2026-05-27"
 poster: "https://assets.gadgets360cdn.com/pricee/assets/product/202605/7_Dogs_poster_1_1778577626.jpg"
 backdrop: "https://static.sayidaty.net/styles/1375_scale/public/2026-05/491544.jpg?VersionId=7fFYQfPgk2pvcp4PL26L7bV2223Uol9r"
-externalVideoUrl: "https://www.imdb.com/video/vi1490668313/"
-externalVideoTitle: "7 Dogs — Official Trailer (IMDb)"
+youtubeVideoId: "cR-RdaPmBLs"
+youtubeVideoTitle: "7 Dogs — Official Trailer"
+mediaVerified: true
 reviewMode: limited
 pros:
   - "طموح إنتاجي واضح وتعاون بين صناع من أكثر من سوق سينمائي"
