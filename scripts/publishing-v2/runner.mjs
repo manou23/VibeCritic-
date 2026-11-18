@@ -1,9 +1,12 @@
 import { enqueue, selectActiveJob, cycleDecision, transition, chooseFreeProvider, recordUsage, validateArticle, validateEvidence } from './core.mjs';
+import { recoverAbandonedJobs } from './recovery.mjs';
 function candidate(items,state,counts={},now=Date.now()) { const used=new Set(Object.keys(state.jobs)); const today=new Date(now).toISOString().slice(0,10); const c={game:counts.game||0,movie:counts.movie||0,series:counts.series||0}; for(const j of Object.values(state.jobs)) if(j.status==='published') c[j.item.type]=(c[j.item.type]||0)+1; return (items||[]).filter(x=>x&&['game','movie','series'].includes(x.type)&&String(x.id||'').trim()&&(!x.date||String(x.date).slice(0,10)<=today)&&!used.has(x.type+':'+x.id)).sort((a,b)=>Number(b.editorialPriority||0)-Number(a.editorialPriority||0)||c[a.type]-c[b.type]||String(b.date||'').localeCompare(String(a.date||'')) )[0]||null; }
 // One bounded task per invocation; each saved article-writing stage is spaced 30 minutes apart.
 export async function runCycle({state,adapters,providers,now=Date.now(),persist=async()=>{},publishedCounts={},articleLimits={},researchSkips=0,cycleIntervalMinutes=30}) {
  if(!state||state.version!==2||!adapters) throw Error('Publisher v2 state and adapters are required.');
- const save=async()=>{state.updatedAt=new Date(now).toISOString();await persist(state);}; let job=selectActiveJob(state.jobs);
+ const save=async()=>{state.updatedAt=new Date(now).toISOString();await persist(state);};
+ const recoveredJobs=recoverAbandonedJobs(state,now);if(recoveredJobs)await save();
+ let job=selectActiveJob(state.jobs);
  // Collect and persist the full editorial backlog even while another saved article is being written.
  // This makes a large themed collection durable instead of waiting for the current draft to finish.
  state.discoveryBacklog ||= {};
@@ -152,11 +155,15 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
   catch(error){
    const message=String(error?.message||error);
    // Permanent evidence gaps should not pin the single-job queue for hours.
-   if(/No sufficiently matching independent encyclopedia page|Independent source has insufficient detail|Primary source metadata is too thin|No HTTPS poster available|No verified trailer available/.test(message)){
-    job=transition(job,'abandoned',{lastError:'Evidence rejected: '+message},now);
+   if(/No sufficiently matching independent encyclopedia page|No sufficiently matching independent reference|Independent source has insufficient detail|Primary source metadata is too thin|No HTTPS poster(?: or backdrop)? available|No verified trailer available/.test(message)){
+    const recoveryAttempts=Number(job.evidenceRecoveryAttempts||0)+1;
+    if(recoveryAttempts<=2){
+     job=transition(job,'provider-deferred',{lastError:'Evidence recovery attempt '+recoveryAttempts+': '+message,nextAttemptAt:now+15*60*1000,retryDelayMs:15*60*1000,resumeTo:'researching',countAttempt:false,evidenceRecoveryAttempts:recoveryAttempts},now);
+     state.jobs[job.key]=job;await save();
+     return {action:'evidence-recovery-deferred',key:job.key,recoveryAttempts,retryAt:job.nextAttemptAt,reason:message,providerCalls:0};
+    }
+    job=transition(job,'abandoned',{lastError:'Evidence rejected after automatic recovery: '+message,recoveryAttempts:1},now);
     state.jobs[job.key]=job;await save();
-    // Evidence-only failures cost no model tokens. Skip a small bounded batch in one
-    // scheduled cycle instead of waiting an hour for every unsupported trending title.
     if(researchSkips<5)return runCycle({state,adapters,providers,now,persist,publishedCounts,articleLimits,researchSkips:researchSkips+1});
     return {action:'research-rejected',key:job.key,reason:message,skipped:researchSkips+1,providerCalls:0};
    }
