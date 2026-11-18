@@ -6,11 +6,11 @@ import { url, TYPE_PLURAL, optimizeImage } from '../consts';
 import trending from '../data/trending.json';
 const reviews=(await getCollection('reviews')).sort((a,b)=>(b.data.publishedAt??b.data.date).valueOf()-(a.data.publishedAt??a.data.date).valueOf());
 const byType={game:reviews.filter(x=>x.data.type==='game'),series:reviews.filter(x=>x.data.type==='series'),movie:reviews.filter(x=>x.data.type==='movie')};
-// اعرض الترندات الموثوقة حتى عندما لم تُنشر مراجعة VibeCritic للعمل بعد.
-const gta6Preview=reviews.find(review=>review.data.sourceId==='gta-vi-2026');
+// ضع المقال اليدوي الأحدث لـ GTA VI في واجهة مؤشرات الرواج بدلاً من القراءة الاستباقية القديمة.
+const gta6Feature=reviews.find(review=>review.data.sourceId==='manual-game-gta-vi-2026');
 const trendReviews=[
- ...(gta6Preview?[{id:'gta-vi-2026',sourceId:'gta-vi-2026',type:'game',title:gta6Preview.data.title,summary:gta6Preview.data.summary,poster:optimizeImage(gta6Preview.data.poster),backdrop:optimizeImage(gta6Preview.data.backdrop||gta6Preview.data.poster,'backdrop'),source:'قراءة استباقية',review:gta6Preview,href:url(`reviews/${gta6Preview.id}/`),external:false,preview:true}]:[]),
- ...trending.filter(item=>item.sourceId!=='gta-vi-2026'&&['مرتفع','متوسط'].includes(item.trendConfidence)).map(item=>{
+ ...(gta6Feature?[{id:'manual-game-gta-vi-2026',sourceId:'manual-game-gta-vi-2026',type:'game',title:gta6Feature.data.title,summary:gta6Feature.data.summary,poster:optimizeImage(gta6Feature.data.poster),backdrop:optimizeImage(gta6Feature.data.backdrop||gta6Feature.data.poster,'backdrop'),source:'مقال يدوي جديد',review:gta6Feature,href:url(`reviews/${gta6Feature.id}/`),external:false,preview:false}]:[]),
+ ...trending.filter(item=>!['gta-vi-2026','manual-game-gta-vi-2026'].includes(item.sourceId)&&['مرتفع','متوسط'].includes(item.trendConfidence)).map(item=>{
   const review=reviews.find(entry=>entry.data.type===item.type&&entry.data.sourceId===item.sourceId);
   return {...item,title:review?.data.title||item.title,summary:review?.data.summary||item.summary,poster:optimizeImage(item.poster),backdrop:optimizeImage(item.backdrop||item.poster,'backdrop'),review,href:review?url(`reviews/${review.id}/`):item.sourceUrl,external:!review,preview:false};
  }).filter(item=>item.href)
