@@ -35,6 +35,18 @@ globalThis.fetch=async(url,options)=>{
   if(parsedUrl.hostname==='api.themoviedb.org'&&parsedUrl.pathname==='/3/trending/all/week')return new Response(JSON.stringify({results:[]}),{status:200,headers:{'content-type':'application/json'}});
   if(parsedUrl.hostname==='api.themoviedb.org'&&parsedUrl.pathname==='/3/movie/popular')return new Response(JSON.stringify({results:[{id:101,title:'Popular Movie',overview:'A detailed premise for the popular movie discovery test.',release_date:'2020-01-01',poster_path:'/movie.jpg',backdrop_path:'/movie-backdrop.jpg',vote_count:1000}]}),{status:200,headers:{'content-type':'application/json'}});
   if(parsedUrl.hostname==='api.themoviedb.org'&&parsedUrl.pathname==='/3/tv/popular')return new Response(JSON.stringify({results:[{id:202,name:'Popular Series',overview:'A detailed premise for the popular series discovery test.',first_air_date:'2020-01-01',poster_path:'/series.jpg',backdrop_path:'/series-backdrop.jpg',vote_count:900}]}),{status:200,headers:{'content-type':'application/json'}});
+  if(parsedUrl.hostname==='api.themoviedb.org'&&parsedUrl.pathname==='/3/discover/movie'){
+   assert.equal(parsedUrl.searchParams.get('with_companies'),'178464');
+   assert.equal(parsedUrl.searchParams.get('primary_release_date_gte'),'2026-01-01');
+   assert.ok(parsedUrl.searchParams.get('primary_release_date_lte'));
+   return new Response(JSON.stringify({results:parsedUrl.searchParams.get('page')==='1'?[{id:303,title:'Netflix 2026 Film',overview:'A detailed Netflix 2026 film synopsis for discovery.',release_date:'2026-02-10',poster_path:'/netflix-film.jpg',backdrop_path:'/netflix-film-backdrop.jpg',vote_count:250}]:[]}),{status:200,headers:{'content-type':'application/json'}});
+  }
+  if(parsedUrl.hostname==='api.themoviedb.org'&&parsedUrl.pathname==='/3/discover/tv'){
+   assert.equal(parsedUrl.searchParams.get('with_networks'),'213');
+   assert.equal(parsedUrl.searchParams.get('first_air_date_gte'),'2026-01-01');
+   assert.ok(parsedUrl.searchParams.get('first_air_date_lte'));
+   return new Response(JSON.stringify({results:parsedUrl.searchParams.get('page')==='1'?[{id:404,name:'Netflix 2026 Series',overview:'A detailed Netflix 2026 series synopsis for discovery.',first_air_date:'2026-03-12',poster_path:'/netflix-series.jpg',backdrop_path:'/netflix-series-backdrop.jpg',vote_count:400}]:[]}),{status:200,headers:{'content-type':'application/json'}});
+  }
   if(parsedUrl.hostname==='api.rawg.io')return new Response(JSON.stringify({results:[]}),{status:200,headers:{'content-type':'application/json'}});
   throw new Error('Unexpected discovery URL: '+String(url));
  }
@@ -55,6 +67,8 @@ globalThis.fetch=async(url,options)=>{
  if(mode==='gemini'){
   assert.match(String(url),/generativelanguage\.googleapis\.com/);
   assert.equal(body.generationConfig.responseMimeType,'application/json');
+  assert.match(body.contents[0].parts[0].text,/9 أو أكثر إلا لاستثنائية واضحة/,'ratings must use calibrated, non-inflated score bands');
+  assert.match(body.contents[0].parts[0].text,/لا ترفع الدرجة لمجرد شهرة Netflix/,'Netflix brand must not inflate critical scores');
   return new Response(JSON.stringify({candidates:[{content:{parts:[{text:JSON.stringify(payload)}]}}]}),{status:200,headers:{'content-type':'application/json'}});
  }
  if(mode==='groq'||mode==='groq-retry'){
@@ -90,6 +104,9 @@ try{
  const expanded=await adapters.discover();
  assert.ok(expanded.some(x=>x.type==='movie'&&x.id==='101'),'popular movies must remain discoverable when trending results are exhausted');
  assert.ok(expanded.some(x=>x.type==='series'&&x.id==='202'),'popular series must remain discoverable when trending results are exhausted');
+ assert.ok(expanded.some(x=>x.type==='movie'&&x.id==='303'&&x.streamingPlatform==='Netflix'&&x.collection==='Netflix 2026'),'released Netflix 2026 films must enter the editorial queue');
+ assert.ok(expanded.some(x=>x.type==='series'&&x.id==='404'&&x.streamingPlatform==='Netflix'&&x.collection==='Netflix 2026'),'released Netflix 2026 series must enter the editorial queue');
+ assert.ok(expanded.findIndex(x=>x.id==='303')<expanded.findIndex(x=>x.id==='101'),'Netflix 2026 titles must be prioritized ahead of generic popular titles');
  mode='game-video-fallback';
  const gameEvidence=await adapters.collectEvidence({type:'game',id:'99',name:'Game With Clip',date:'2020-01-01',overview:'A verified and sufficiently detailed game description that explains its setting, premise, and gameplay systems for the adapter test.',sourceName:'RAWG',sourceUrl:'https://rawg.io/games/game-with-clip',poster:'https://media.rawg.io/media/game-poster.jpg',backdrop:'https://media.rawg.io/media/game-poster.jpg'});
  assert.equal(gameEvidence.externalVideoUrl,'https://media.rawg.io/media/game-trailer.mp4','RAWG detail-page clips should be accepted when the movies endpoint is empty');
