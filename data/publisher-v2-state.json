@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T19:38:19.700Z",
+  "updatedAt": "2026-11-18T19:45:34.505Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -98,16 +98,20 @@
         "sourceUrl": "https://www.themoviedb.org/movie/1616687",
         "popularity": 35
       },
-      "status": "abandoned",
+      "status": "waiting",
       "stage": 0,
       "parts": [],
       "evidence": null,
       "attempts": 0,
       "createdAt": "2026-11-16T16:55:10.673Z",
-      "updatedAt": "2026-11-16T17:07:11.253Z",
-      "nextAttemptAt": 1794851710673,
-      "lastError": "Evidence rejected: Independent source has insufficient detail.",
-      "resumeTo": "researching"
+      "updatedAt": "2026-11-18T19:45:30.746Z",
+      "nextAttemptAt": 1795032030746,
+      "lastError": "Evidence recovery attempt 1: Independent source has insufficient detail.; fallback: No sufficiently matching independent reference for Never Surrender",
+      "resumeTo": "researching",
+      "article": null,
+      "quality": null,
+      "recoveryAttempts": 1,
+      "evidenceRecoveryAttempts": 1
     },
     "movie:1185344": {
       "key": "movie:1185344",
@@ -124,15 +128,20 @@
         "sourceUrl": "https://www.themoviedb.org/movie/1185344",
         "popularity": 32
       },
-      "status": "abandoned",
+      "status": "queued",
       "stage": 0,
       "parts": [],
       "evidence": null,
       "attempts": 0,
       "createdAt": "2026-11-16T17:07:11.253Z",
-      "updatedAt": "2026-11-16T17:07:11.253Z",
+      "updatedAt": "2026-11-18T19:45:30.746Z",
       "nextAttemptAt": null,
-      "lastError": "Evidence rejected: Independent source has insufficient detail."
+      "lastError": null,
+      "article": null,
+      "quality": null,
+      "recoveryAttempts": 1,
+      "evidenceRecoveryAttempts": 0,
+      "resumeTo": null
     },
     "game:41494": {
       "key": "game:41494",
@@ -317,15 +326,20 @@
         "sourceUrl": "https://www.themoviedb.org/tv/85077",
         "popularity": 1064
       },
-      "status": "abandoned",
+      "status": "queued",
       "stage": 0,
       "parts": [],
       "evidence": null,
       "attempts": 0,
       "createdAt": "2026-11-17T00:47:56.078Z",
-      "updatedAt": "2026-11-17T00:47:56.078Z",
+      "updatedAt": "2026-11-18T19:45:30.746Z",
       "nextAttemptAt": null,
-      "lastError": "Evidence rejected: Primary source metadata is too thin"
+      "lastError": null,
+      "article": null,
+      "quality": null,
+      "recoveryAttempts": 1,
+      "evidenceRecoveryAttempts": 0,
+      "resumeTo": null
     },
     "movie:1170608": {
       "key": "movie:1170608",
@@ -611,15 +625,20 @@
         "sourceUrl": "https://www.themoviedb.org/movie/656908",
         "popularity": 56
       },
-      "status": "abandoned",
+      "status": "queued",
       "stage": 0,
       "parts": [],
       "evidence": null,
       "attempts": 0,
       "createdAt": "2026-11-17T08:22:20.499Z",
-      "updatedAt": "2026-11-17T08:22:20.499Z",
+      "updatedAt": "2026-11-18T19:45:30.746Z",
       "nextAttemptAt": null,
-      "lastError": "Evidence rejected: No sufficiently matching independent encyclopedia page: Ramayana: Rise of a Legend"
+      "lastError": null,
+      "article": null,
+      "quality": null,
+      "recoveryAttempts": 1,
+      "evidenceRecoveryAttempts": 0,
+      "resumeTo": null
     },
     "game:28": {
       "key": "game:28",
@@ -1069,15 +1088,20 @@
         ],
         "popularity": 14604
       },
-      "status": "abandoned",
+      "status": "queued",
       "stage": 0,
       "parts": [],
       "evidence": null,
       "attempts": 0,
       "createdAt": "2026-11-17T23:35:14.861Z",
-      "updatedAt": "2026-11-17T23:35:14.861Z",
+      "updatedAt": "2026-11-18T19:45:30.746Z",
       "nextAttemptAt": null,
-      "lastError": "Evidence rejected: No verified trailer available"
+      "lastError": null,
+      "article": null,
+      "quality": null,
+      "recoveryAttempts": 1,
+      "evidenceRecoveryAttempts": 0,
+      "resumeTo": null
     },
     "game:41": {
       "key": "game:41",
@@ -1105,15 +1129,20 @@
         ],
         "popularity": 11719
       },
-      "status": "abandoned",
+      "status": "queued",
       "stage": 0,
       "parts": [],
       "evidence": null,
       "attempts": 0,
       "createdAt": "2026-11-17T23:35:14.861Z",
-      "updatedAt": "2026-11-17T23:35:14.861Z",
+      "updatedAt": "2026-11-18T19:45:30.746Z",
       "nextAttemptAt": null,
-      "lastError": "Evidence rejected: No verified trailer available"
+      "lastError": null,
+      "article": null,
+      "quality": null,
+      "recoveryAttempts": 1,
+      "evidenceRecoveryAttempts": 0,
+      "resumeTo": null
     },
     "game:278": {
       "key": "game:278",
@@ -1137,15 +1166,20 @@
         ],
         "popularity": 12867
       },
-      "status": "abandoned",
+      "status": "queued",
       "stage": 0,
       "parts": [],
       "evidence": null,
       "attempts": 0,
       "createdAt": "2026-11-17T23:35:14.861Z",
-      "updatedAt": "2026-11-17T23:35:14.861Z",
+      "updatedAt": "2026-11-18T19:45:30.746Z",
       "nextAttemptAt": null,
-      "lastError": "Evidence rejected: No verified trailer available"
+      "lastError": null,
+      "article": null,
+      "quality": null,
+      "recoveryAttempts": 1,
+      "evidenceRecoveryAttempts": 0,
+      "resumeTo": null
     },
     "game:2454": {
       "key": "game:2454",
@@ -1171,15 +1205,20 @@
         ],
         "popularity": 14098
       },
-      "status": "abandoned",
+      "status": "queued",
       "stage": 0,
       "parts": [],
       "evidence": null,
       "attempts": 0,
       "createdAt": "2026-11-17T23:35:14.861Z",
-      "updatedAt": "2026-11-17T23:35:14.861Z",
+      "updatedAt": "2026-11-18T19:45:30.746Z",
       "nextAttemptAt": null,
-      "lastError": "Evidence rejected: No verified trailer available"
+      "lastError": null,
+      "article": null,
+      "quality": null,
+      "recoveryAttempts": 1,
+      "evidenceRecoveryAttempts": 0,
+      "resumeTo": null
     },
     "game:7689": {
       "key": "game:7689",
@@ -1204,15 +1243,20 @@
         ],
         "popularity": 12459
       },
-      "status": "abandoned",
+      "status": "queued",
       "stage": 0,
       "parts": [],
       "evidence": null,
       "attempts": 0,
       "createdAt": "2026-11-17T23:35:14.861Z",
-      "updatedAt": "2026-11-17T23:35:14.861Z",
+      "updatedAt": "2026-11-18T19:45:30.746Z",
       "nextAttemptAt": null,
-      "lastError": "Evidence rejected: No verified trailer available"
+      "lastError": null,
+      "article": null,
+      "quality": null,
+      "recoveryAttempts": 1,
+      "evidenceRecoveryAttempts": 0,
+      "resumeTo": null
     },
     "game:3070": {
       "key": "game:3070",
@@ -1238,16 +1282,21 @@
         ],
         "popularity": 14360
       },
-      "status": "abandoned",
+      "status": "queued",
       "stage": 0,
       "parts": [],
       "evidence": null,
       "attempts": 0,
       "createdAt": "2026-11-17T23:35:14.861Z",
-      "updatedAt": "2026-11-17T23:44:45.777Z",
+      "updatedAt": "2026-11-18T19:45:30.746Z",
       "nextAttemptAt": null,
-      "lastError": "Evidence rejected: No verified trailer available",
-      "researchFallbackAttempted": true
+      "lastError": null,
+      "researchFallbackAttempted": true,
+      "article": null,
+      "quality": null,
+      "recoveryAttempts": 1,
+      "evidenceRecoveryAttempts": 0,
+      "resumeTo": null
     },
     "game:3192": {
       "key": "game:3192",
@@ -1274,15 +1323,20 @@
         ],
         "popularity": 12234
       },
-      "status": "abandoned",
+      "status": "queued",
       "stage": 0,
       "parts": [],
       "evidence": null,
       "attempts": 0,
       "createdAt": "2026-11-17T23:44:45.777Z",
-      "updatedAt": "2026-11-17T23:44:45.777Z",
+      "updatedAt": "2026-11-18T19:45:30.746Z",
       "nextAttemptAt": null,
-      "lastError": "Evidence rejected: No verified trailer available"
+      "lastError": null,
+      "article": null,
+      "quality": null,
+      "recoveryAttempts": 1,
+      "evidenceRecoveryAttempts": 0,
+      "resumeTo": null
     },
     "game:3272": {
       "key": "game:3272",
@@ -1311,15 +1365,20 @@
         ],
         "popularity": 12878
       },
-      "status": "abandoned",
+      "status": "queued",
       "stage": 0,
       "parts": [],
       "evidence": null,
       "attempts": 0,
       "createdAt": "2026-11-17T23:44:45.777Z",
-      "updatedAt": "2026-11-17T23:44:45.777Z",
+      "updatedAt": "2026-11-18T19:45:30.746Z",
       "nextAttemptAt": null,
-      "lastError": "Evidence rejected: No verified trailer available"
+      "lastError": null,
+      "article": null,
+      "quality": null,
+      "recoveryAttempts": 1,
+      "evidenceRecoveryAttempts": 0,
+      "resumeTo": null
     },
     "game:3287": {
       "key": "game:3287",
@@ -1344,15 +1403,20 @@
         ],
         "popularity": 12327
       },
-      "status": "abandoned",
+      "status": "queued",
       "stage": 0,
       "parts": [],
       "evidence": null,
       "attempts": 0,
       "createdAt": "2026-11-17T23:44:45.777Z",
-      "updatedAt": "2026-11-17T23:44:45.777Z",
+      "updatedAt": "2026-11-18T19:45:30.746Z",
       "nextAttemptAt": null,
-      "lastError": "Evidence rejected: No verified trailer available"
+      "lastError": null,
+      "article": null,
+      "quality": null,
+      "recoveryAttempts": 1,
+      "evidenceRecoveryAttempts": 0,
+      "resumeTo": null
     },
     "game:3439": {
       "key": "game:3439",
@@ -1382,15 +1446,20 @@
         ],
         "popularity": 15963
       },
-      "status": "abandoned",
+      "status": "queued",
       "stage": 0,
       "parts": [],
       "evidence": null,
       "attempts": 0,
       "createdAt": "2026-11-17T23:44:45.777Z",
-      "updatedAt": "2026-11-17T23:44:45.777Z",
+      "updatedAt": "2026-11-18T19:45:30.746Z",
       "nextAttemptAt": null,
-      "lastError": "Evidence rejected: No verified trailer available"
+      "lastError": null,
+      "article": null,
+      "quality": null,
+      "recoveryAttempts": 1,
+      "evidenceRecoveryAttempts": 0,
+      "resumeTo": null
     },
     "game:11973": {
       "key": "game:11973",
@@ -1419,15 +1488,20 @@
         ],
         "popularity": 11828
       },
-      "status": "abandoned",
+      "status": "queued",
       "stage": 0,
       "parts": [],
       "evidence": null,
       "attempts": 0,
       "createdAt": "2026-11-17T23:44:45.777Z",
-      "updatedAt": "2026-11-17T23:44:45.777Z",
+      "updatedAt": "2026-11-18T19:45:30.746Z",
       "nextAttemptAt": null,
-      "lastError": "Evidence rejected: No verified trailer available"
+      "lastError": null,
+      "article": null,
+      "quality": null,
+      "recoveryAttempts": 1,
+      "evidenceRecoveryAttempts": 0,
+      "resumeTo": null
     },
     "series:231100": {
       "key": "series:231100",
@@ -1444,15 +1518,20 @@
         "sourceUrl": "https://www.themoviedb.org/tv/231100",
         "popularity": 32
       },
-      "status": "abandoned",
+      "status": "queued",
       "stage": 0,
       "parts": [],
       "evidence": null,
       "attempts": 0,
       "createdAt": "2026-11-17T23:47:48.744Z",
-      "updatedAt": "2026-11-17T23:47:48.744Z",
+      "updatedAt": "2026-11-18T19:45:30.746Z",
       "nextAttemptAt": null,
-      "lastError": "Evidence rejected: No sufficiently matching independent encyclopedia page: Boundless Love"
+      "lastError": null,
+      "article": null,
+      "quality": null,
+      "recoveryAttempts": 1,
+      "evidenceRecoveryAttempts": 0,
+      "resumeTo": null
     },
     "series:83631": {
       "key": "series:83631",
@@ -1639,15 +1718,20 @@
         "netflixOriginal": true,
         "editorialPriority": 100
       },
-      "status": "abandoned",
+      "status": "queued",
       "stage": 0,
       "parts": [],
       "evidence": null,
       "attempts": 0,
       "createdAt": "2026-11-18T16:11:04.389Z",
-      "updatedAt": "2026-11-18T16:11:04.389Z",
+      "updatedAt": "2026-11-18T19:45:30.746Z",
       "nextAttemptAt": null,
-      "lastError": "Evidence rejected: No sufficiently matching independent encyclopedia page: Murder in Galicia"
+      "lastError": null,
+      "article": null,
+      "quality": null,
+      "recoveryAttempts": 1,
+      "evidenceRecoveryAttempts": 0,
+      "resumeTo": null
     },
     "series:341603": {
       "key": "series:341603",
@@ -1668,15 +1752,20 @@
         "netflixOriginal": true,
         "editorialPriority": 100
       },
-      "status": "abandoned",
+      "status": "queued",
       "stage": 0,
       "parts": [],
       "evidence": null,
       "attempts": 0,
       "createdAt": "2026-11-18T16:11:04.389Z",
-      "updatedAt": "2026-11-18T16:11:04.389Z",
+      "updatedAt": "2026-11-18T19:45:30.746Z",
       "nextAttemptAt": null,
-      "lastError": "Evidence rejected: No sufficiently matching independent encyclopedia page: Stars and Vows: Anele & Buzza"
+      "lastError": null,
+      "article": null,
+      "quality": null,
+      "recoveryAttempts": 1,
+      "evidenceRecoveryAttempts": 0,
+      "resumeTo": null
     },
     "series:312661": {
       "key": "series:312661",
@@ -1697,15 +1786,20 @@
         "netflixOriginal": true,
         "editorialPriority": 100
       },
-      "status": "abandoned",
+      "status": "queued",
       "stage": 0,
       "parts": [],
       "evidence": null,
       "attempts": 0,
       "createdAt": "2026-11-18T16:11:04.389Z",
-      "updatedAt": "2026-11-18T16:11:04.389Z",
+      "updatedAt": "2026-11-18T19:45:30.746Z",
       "nextAttemptAt": null,
-      "lastError": "Evidence rejected: No sufficiently matching independent encyclopedia page: Miracles of the ER"
+      "lastError": null,
+      "article": null,
+      "quality": null,
+      "recoveryAttempts": 1,
+      "evidenceRecoveryAttempts": 0,
+      "resumeTo": null
     },
     "series:338562": {
       "key": "series:338562",
@@ -1726,15 +1820,20 @@
         "netflixOriginal": true,
         "editorialPriority": 100
       },
-      "status": "abandoned",
+      "status": "queued",
       "stage": 0,
       "parts": [],
       "evidence": null,
       "attempts": 0,
       "createdAt": "2026-11-18T16:11:04.389Z",
-      "updatedAt": "2026-11-18T16:11:04.389Z",
+      "updatedAt": "2026-11-18T19:45:30.746Z",
       "nextAttemptAt": null,
-      "lastError": "Evidence rejected: No sufficiently matching independent encyclopedia page: Alicia's Law"
+      "lastError": null,
+      "article": null,
+      "quality": null,
+      "recoveryAttempts": 1,
+      "evidenceRecoveryAttempts": 0,
+      "resumeTo": null
     },
     "series:336243": {
       "key": "series:336243",
