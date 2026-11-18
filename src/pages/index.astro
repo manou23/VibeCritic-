@@ -34,6 +34,8 @@ const topRated=reviews
  .sort((a,b)=>b.data.score-a.data.score)
  .slice(0,8);
 const upcoming=reviews.filter(isUpcomingReview).sort((a,b)=>String(a.data.releaseDate||'').localeCompare(String(b.data.releaseDate||''))).slice(0,8);
+// أحدث المراجعات المنشورة، مع استبعاد القراءات الاستباقية للأعمال التي لم تصدر بعد.
+const latestReviews=reviews.filter(review=>!isUpcomingReview(review)&&review.data.reviewMode!=='preview').slice(0,8);
 ---
 <Base title="اكتشف عالم الترفيه" description="اكتشف أحدث الأفلام والمسلسلات والألعاب، تابع الترندات العالمية واقرأ مراجعات VibeCritic." image={spotlight?.backdrop || spotlight?.poster}>
 <section class="wrap discovery-hero spotlight-slider" aria-label="أبرز الترندات">
@@ -110,6 +112,13 @@ const upcoming=reviews.filter(isUpcomingReview).sort((a,b)=>String(a.data.releas
   <span class="ai-review-promo-spark spark-two">✧</span>
  </div>
 </aside>
+<section class="wrap catalog-section home-latest-section" id="latest-reviews">
+ <div class="catalog-heading">
+  <div><p class="catalog-eyebrow">FRESH FROM VIBECRITIC</p><h2>وصل حديثاً</h2><p>أحدث ما نشرناه من مراجعات الألعاب والأفلام والمسلسلات، مرتبة حسب تاريخ النشر.</p></div>
+  <a href={url('catalog/')} class="catalog-more">تصفّح المكتبة <span>←</span></a>
+ </div>
+ {latestReviews.length>0?<div class="catalog-rail">{latestReviews.map(review=><ReviewCard review={review}/>)}</div>:<div class="catalog-empty">ستظهر هنا أحدث المراجعات فور نشرها.</div>}
+</section>
 <section class="wrap catalog-section" id="top-rated">
  <div class="catalog-heading"><div><p class="catalog-eyebrow">EDITOR'S HIGHEST SCORES</p><h2>الأعلى تقييماً</h2><p>الأعمال التي حصلت على أعلى درجات VibeCritic التحريرية</p></div><a href="#all-reviews" class="catalog-more">كل المراجعات <span>←</span></a></div>
  {topRated.length>0?<div class="catalog-rail">{topRated.map(review=><ReviewCard review={review}/>)}</div>:<div class="catalog-empty">ستظهر هنا الأعمال بعد اكتمال مراجعاتها وتقييمها.</div>}
@@ -225,5 +234,14 @@ if(aiPromo){
 @media(max-width:480px){.home-discovery-shortcuts{padding-top:22px}.home-discovery-heading{align-items:start}.home-discovery-heading h2{font-size:21px}.home-discovery-heading>div>p:last-child{font-size:11px}.home-discovery-all{font-size:11px;white-space:nowrap;margin-top:22px}.home-discovery-grid{gap:8px}.home-discovery-card{min-height:82px;padding:11px 9px;gap:9px;border-radius:10px}.home-discovery-icon{flex-basis:36px;width:36px;height:36px;font-size:18px}.home-discovery-copy strong{font-size:13px}.home-discovery-copy small{font-size:9px}.home-discovery-arrow{font-size:13px}}
 @media(prefers-reduced-motion:reduce){.home-discovery-card,.home-discovery-all span{transition:none}}
 </style>
+
+<style>
+.home-latest-section{position:relative}
+.home-latest-section .catalog-heading{align-items:end}
+.home-latest-section .catalog-eyebrow{color:var(--vc-accent-deep)}
+.home-latest-section .catalog-more{white-space:nowrap}
+@media(max-width:480px){.home-latest-section .catalog-heading{gap:10px}.home-latest-section .catalog-heading>div>p:last-child{max-width:260px;line-height:1.8}.home-latest-section .catalog-more{font-size:10px}}
+</style>
+
 
 
