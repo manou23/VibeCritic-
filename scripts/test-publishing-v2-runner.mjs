@@ -44,21 +44,24 @@ assert.equal(resumed.providerCalls,0,'recovery from quality-check must not spend
 assert.equal(aiCalls,3,'recovery must not regenerate the third stage');
 assert.equal(fileWrites,1);
 assert.equal(state.jobs['series:1'].status,'ready');
-const pending=await runCycle({state,adapters,providers,now:now+30*60*1000+3,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}});
+const early=await runCycle({state,adapters,providers,now:now+30*60*1000+3,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}});
+assert.equal(early.action,'publication-waiting','a verified draft must wait for its scheduled 45-minute slot');
+assert.equal(deployChecks,0,'the live deployment check must not run before the publication slot');
+const pending=await runCycle({state,adapters,providers,now:now+45*60*1000,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}});
 assert.equal(pending.action,'deployment-pending','a written file is not published until the live URL is verified');
 assert.equal(state.jobs['series:1'].status,'ready');
 assert.equal(fileWrites,1);
 deploymentReady=true;
-const final=await runCycle({state,adapters,providers,now:now+30*60*1000+4,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}});
+const final=await runCycle({state,adapters,providers,now:now+45*60*1000+1,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}});
 assert.equal(final.action,'published');
 assert.equal(aiCalls,3);
 assert.equal(deployChecks,2);
 assert.equal(fileWrites,1,'deployment retries must not rewrite an already committed article');
 assert.equal(state.jobs['series:1'].status,'published');
 assert.ok(saves>=7);
-const afterPublish=await runCycle({state,adapters,providers,now:now+30*60*1000+5,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}});
-assert.equal(afterPublish.action,'cycle-complete','only one article may be processed per cycle');
-assert.equal(afterPublish.key,'series:1');
+const afterPublish=await runCycle({state,adapters,providers,now:now+45*60*1000+2,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}});
+assert.equal(afterPublish.action,'no-candidates','the next article remains due at the next 45-minute slot');
+assert.equal(state.cycle.nextPublishAt,now+90*60*1000);
 assert.equal(aiCalls,3);
 // A failed provider is cooled down durably instead of being retried on every 30-minute checkpoint.
 const failureState=createState();let failedProviderCalls=0;
@@ -113,7 +116,7 @@ assert.equal(duplicateState.cycle.articleKey,null,'a duplicate must release any 
 // A ready article must not be mistaken for a duplicate of its own newly written file.
 const readyState=createState();
 readyState.jobs['game:ready']={key:'game:ready',item:{type:'game',id:'ready'},status:'ready',stage:3,parts:[],article,articlePath:'src/content/reviews/game-ready.md',fileWritten:true,createdAt:new Date(now).toISOString(),updatedAt:new Date(now).toISOString()};
-readyState.cycle={startedAt:now,deadlineAt:now+3*60*60*1000,nextStartAt:now+5*60*60*1000,articleKey:'game:ready'};
+readyState.cycle={startedAt:now,deadlineAt:now+3*60*60*1000,nextStartAt:now-1,articleKey:'game:ready'};
 const readyAdapters={...adapters,isAlreadyPublished:async()=>true,verifyDeployment:async()=>true};
 const readyResult=await runCycle({state:readyState,adapters:readyAdapters,providers,now,persist:async()=>{}});
 assert.equal(readyResult.action,'published','ready article should proceed to deployment verification despite duplicate lookup matching its own file');
@@ -124,15 +127,14 @@ const cycleState=createState();
 const cycleAdapters={...adapters,discover:async()=>[]};
 const firstCycle=await runCycle({state:cycleState,adapters:cycleAdapters,providers,now,persist:async()=>{}});
 assert.equal(firstCycle.action,'no-candidates');
-assert.equal(cycleState.cycle.deadlineAt,now+30*60*1000);
-assert.equal(cycleState.cycle.nextStartAt,now+30*60*1000);
+assert.equal(cycleState.cycle.nextPublishAt,now+45*60*1000);
+assert.equal(cycleState.cycle.nextPublishAt,now+45*60*1000);
 const midCycle=await runCycle({state:cycleState,adapters:cycleAdapters,providers,now:now+15*60*1000,persist:async()=>{}});
 assert.equal(midCycle.action,'no-candidates','the same cycle remains active for its first 30 minutes');
-assert.equal(cycleState.cycle.startedAt,now);
+assert.equal(cycleState.cycle.nextPublishAt,now+45*60*1000);
 const nextCycle=await runCycle({state:cycleState,adapters:cycleAdapters,providers,now:now+30*60*1000,persist:async()=>{}});
 assert.equal(nextCycle.action,'no-candidates');
-assert.equal(cycleState.cycle.startedAt,now+30*60*1000);
-assert.equal(cycleState.cycle.nextStartAt,now+60*60*1000);
+assert.equal(cycleState.cycle.nextPublishAt,now+45*60*1000);
 
 // A repetitive third section is rejected and only that section is regenerated after the bounded retry delay.
 const qualityState=createState();
@@ -215,6 +217,6 @@ assert.equal(collectionResult.action,'stage-saved','a future stage checkpoint mu
 assert.equal(Object.keys(collectionState.discoveryBacklog).length,1,'one discovered title should move from backlog into the runnable preparation queue');
 assert.ok(collectionState.jobs['series:netflix-series-2026']||collectionState.jobs['movie:netflix-film-2026'],'the next discovered title should be prepared while the earlier draft waits');
 assert.ok(collectionPersisted,'the discovered collection must be durably checkpointed');
-assert.notEqual(collectionState.cycle.articleKey,'series:existing','the paused draft must release the current publication slot');
+assert.notEqual(collectionState.jobs['series:existing'].key,collectionState.jobs['movie:netflix-film-2026']?.key,'the paused draft remains saved while another title is prepared');
 
 console.log('VibeCritic Publishing Engine v2 crash-recovery and continuous-cycle tests passed.');
