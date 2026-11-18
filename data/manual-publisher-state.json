@@ -18,6 +18,12 @@
       "sha256": "073d7ec36b60f25b07b9783986c31d9def23c103baa46e438fbb56ca00295d59",
       "articlePath": "src/content/reviews/possible-love-2026.md",
       "publishedAt": "2026-11-18T00:45:54.587Z"
+    },
+    "heartland-2026": {
+      "sourceId": "netflix-2026-movie-heartland-81486332",
+      "sha256": "43bc0ac690abd7d03e8de3bfcf0195625d1967d22ae1e741d3b75bea2bf42619",
+      "articlePath": "src/content/reviews/heartland-2026.md",
+      "publishedAt": "2026-11-18T00:48:25.423Z"
     }
   }
 }
