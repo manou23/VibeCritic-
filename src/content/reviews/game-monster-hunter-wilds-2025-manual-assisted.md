@@ -10,6 +10,10 @@ type: game
 date: 2026-11-15
 releaseDate: "2025-02-28"
 poster: "https://myhotposters.com/cdn/shop/files/mL7640_1024x1024.jpg?v=1748530798"
+backdrop: "https://images.pushsquare.com/d5249c9c28902/monster-hunter-wilds-gameplay-details-2.large.jpg"
+youtubeVideoId: "a_wNFT4j6qI"
+youtubeVideoTitle: "Monster Hunter Wilds — Launch Trailer"
+mediaVerified: true
 score: 8.3
 storyScore: 7.8
 visualsScore: 9.0
