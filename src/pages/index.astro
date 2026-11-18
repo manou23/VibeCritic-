@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import ReviewCard from '../components/ReviewCard.astro';
 import { getCollection } from 'astro:content';
-import { url, TYPE_PLURAL, optimizeImage } from '../consts';
+import { url, TYPE_PLURAL, optimizeImage, responsiveImageSrcSet } from '../consts';
 import trending from '../data/trending.json';
 const reviews=(await getCollection('reviews')).sort((a,b)=>(b.data.publishedAt??b.data.date).valueOf()-(a.data.publishedAt??a.data.date).valueOf());
 const byType={game:reviews.filter(x=>x.data.type==='game'),series:reviews.filter(x=>x.data.type==='series'),movie:reviews.filter(x=>x.data.type==='movie')};
@@ -40,7 +40,7 @@ const latestReviews=reviews.filter(review=>!isUpcomingReview(review)&&review.dat
 <Base title="اكتشف عالم الترفيه" description="اكتشف أحدث الأفلام والمسلسلات والألعاب، تابع الترندات العالمية واقرأ مراجعات VibeCritic." image={spotlight?.backdrop || spotlight?.poster}>
 <section class="wrap discovery-hero spotlight-slider" aria-label="أبرز الترندات">
  <div class="spotlight-backdrops" aria-hidden="true">
-  <img class="spotlight-image is-active" src={spotlight?.backdrop||spotlight?.poster||''} alt="" fetchpriority="high" loading="eager" decoding="async"/>
+  <img class="spotlight-image is-active" src={spotlight?.backdrop||spotlight?.poster||''} srcset={responsiveImageSrcSet(spotlight?.backdrop||spotlight?.poster)||undefined} sizes="100vw" alt="" fetchpriority="high" loading="eager" decoding="async"/>
   <img class="spotlight-image" alt="" loading="lazy" decoding="async"/>
  </div>
  <div class="discovery-shade"></div>
@@ -62,7 +62,7 @@ const latestReviews=reviews.filter(review=>!isUpcomingReview(review)&&review.dat
  </div>
  <div class="spotlight-progress" aria-hidden="true"><span></span></div>
  <div class="spotlight-data" hidden>
-  {trendReviews.map(item=><i data-title={item.title} data-summary={item.summary||''} data-backdrop={item.backdrop||item.poster||''} data-poster={item.poster||''} data-type={item.type} data-source={item.source||''} data-href={item.href} data-external={String(item.external)} data-preview={String(item.preview||false)}></i>)}
+  {trendReviews.map(item=><i data-title={item.title} data-summary={item.summary||''} data-backdrop={item.backdrop||item.poster||''} data-backdrop-srcset={responsiveImageSrcSet(item.backdrop||item.poster)} data-poster={item.poster||''} data-type={item.type} data-source={item.source||''} data-href={item.href} data-external={String(item.external)} data-preview={String(item.preview||false)}></i>)}
  </div>
 </section>
 <aside class="wrap ai-review-promo" data-expires="2026-11-19T23:59:59+01:00" aria-label="جرّب المراجع الذكي">
@@ -133,6 +133,8 @@ if(hero){
   if(src){
    images[nextImage].onload=null;
    images[nextImage].removeAttribute('src');
+   if(item.backdropSrcset){images[nextImage].srcset=item.backdropSrcset;images[nextImage].sizes='100vw';}
+   else{images[nextImage].removeAttribute('srcset');images[nextImage].removeAttribute('sizes');}
    let activated=false;
    const activateImage=()=>{
     if(activated||current!==target||!images[nextImage].naturalWidth)return;
