@@ -170,4 +170,28 @@ assert.ok(netflixPriorityState.jobs['movie:netflix-2026'],'Netflix 2026 content 
 assert.equal(netflixPriorityState.jobs['movie:netflix-2026'].item.streamingPlatform,'Netflix');
 assert.equal(netflixPriorityState.jobs['movie:netflix-2026'].item.collection,'Netflix 2026');
 
+// Netflix titles are collected into durable storage even while an older saved draft owns the active slot.
+const collectionState=createState();
+collectionState.jobs['series:existing']={key:'series:existing',item:{type:'series',id:'existing'},status:'writing',stage:1,parts:[{text:'saved stage one'}],createdAt:new Date(now).toISOString(),updatedAt:new Date(now).toISOString(),nextStageAt:now+30*60*1000};
+collectionState.cycle={startedAt:now,deadlineAt:now+30*60*1000,nextStartAt:now+30*60*1000,articleKey:'series:existing'};
+let collectionPersisted=false;
+const collectionAdapters={
+ discover:async excluded=>{
+  assert.ok(excluded.includes('series:existing'),'active jobs must be excluded from fresh discovery');
+  return [
+   {type:'movie',id:'netflix-film-2026',name:'Netflix Film 2026',date:'2026-02-10',streamingPlatform:'Netflix',collection:'Netflix 2026',editorialPriority:100},
+   {type:'series',id:'netflix-series-2026',name:'Netflix Series 2026',date:'2026-03-10',streamingPlatform:'Netflix',collection:'Netflix 2026',editorialPriority:100}
+  ];
+ },
+ collectEvidence:async()=>({}),
+ generatePart:async()=>({text:'unused',tokens:0}),
+ assembleArticle:async()=>article,publishFile:async()=>({path:'unused'}),verifyDeployment:async()=>false
+};
+const collectionResult=await runCycle({state:collectionState,adapters:collectionAdapters,providers,now:now+1000,persist:async()=>{collectionPersisted=true;}});
+assert.equal(collectionResult.action,'stage-waiting','the existing draft must keep its 30-minute stage spacing');
+assert.equal(Object.keys(collectionState.discoveryBacklog).length,2,'all Netflix 2026 discoveries must be stored while the current draft is active');
+assert.ok(collectionState.discoveryBacklog['movie:netflix-film-2026']);
+assert.ok(collectionState.discoveryBacklog['series:netflix-series-2026']);
+assert.ok(collectionPersisted,'the discovered collection must be durably checkpointed');
+
 console.log('VibeCritic Publishing Engine v2 crash-recovery and continuous-cycle tests passed.');
