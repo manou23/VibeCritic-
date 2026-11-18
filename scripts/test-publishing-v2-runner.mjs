@@ -3,7 +3,7 @@ import {createState} from './publishing-v2/core.mjs';
 import {runCycle} from './publishing-v2/runner.mjs';
 
 const now=Date.parse('2026-11-16T12:00:00Z'),state=createState();
-let aiCalls=0,fileWrites=0,deployChecks=0,saves=0,crashOnce=true,deploymentReady=false;
+let aiCalls=0,fileWrites=0,stageWrites=0,deployChecks=0,saves=0,crashOnce=true,deploymentReady=false;
 const text=Array.from({length:240},()=> 'تحليل نقدي يشرح بناء الشخصيات والصورة والإيقاع وحدود التجربة').join(' ');
 const sectionWords=prefix=>Array.from({length:220},(_,i)=>prefix+i).join(' ');
 const articleBody=["## القصة",sectionWords("story"),"## الأنظمة",sectionWords("systems"),"## التقييم",sectionWords("verdict")].join("\n\n");
@@ -13,6 +13,7 @@ const adapters={
  collectEvidence:async()=>({youtubeVideoId:'Abcdef12345',sources:[{name:'Official',url:'https://example.com/a'},{name:'Independent',url:'https://example.org/b'}]}),
  generatePart:async({stage})=>{aiCalls++;return {text:'مرحلة '+stage+' '+text,tokens:120};},
  assembleArticle:async()=>{if(crashOnce){crashOnce=false;throw new Error('simulated interruption before quality gate');}return article;},
+ stageFile:async()=>{stageWrites++;return {path:'content-queue/series-1.md'};},
  publishFile:async()=>{fileWrites++;return {path:'src/content/reviews/series-1.md'};},
  verifyDeployment:async()=>{deployChecks++;return deploymentReady;}
 };
@@ -39,10 +40,11 @@ await assert.rejects(
 assert.equal(aiCalls,3);
 assert.equal(state.jobs['series:1'].status,'quality-check','stage three must be checkpointed before quality validation');
 const resumed=await runCycle({state,adapters,providers,now:now+30*60*1000+2,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}});
-assert.equal(resumed.action,'file-ready');
+assert.equal(resumed.action,'article-prepared');
 assert.equal(resumed.providerCalls,0,'recovery from quality-check must not spend another AI request');
 assert.equal(aiCalls,3,'recovery must not regenerate the third stage');
-assert.equal(fileWrites,1);
+assert.equal(stageWrites,1,'the prepared article is saved outside the live content collection');
+assert.equal(fileWrites,0,'preparation must not write into the public content directory');
 assert.equal(state.jobs['series:1'].status,'ready');
 const early=await runCycle({state,adapters,providers,now:now+30*60*1000+3,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}});
 assert.equal(early.action,'publication-waiting','a verified draft must wait for its scheduled 45-minute slot');
@@ -50,7 +52,7 @@ assert.equal(deployChecks,0,'the live deployment check must not run before the p
 const pending=await runCycle({state,adapters,providers,now:now+45*60*1000+4,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}});
 assert.equal(pending.action,'deployment-pending','a written file is not published until the live URL is verified');
 assert.equal(state.jobs['series:1'].status,'ready');
-assert.equal(fileWrites,1);
+assert.equal(fileWrites,1,'the staged file moves into the live directory only at its scheduled slot');
 deploymentReady=true;
 const final=await runCycle({state,adapters,providers,now:now+45*60*1000+5,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}});
 assert.equal(final.action,'published');
