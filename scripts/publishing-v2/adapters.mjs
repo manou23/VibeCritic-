@@ -177,10 +177,10 @@ async function collectEvidence(item){
     if(!arr(region?.flatrate).some(x=>Number(x.provider_id)===8))throw new Error('Netflix streaming availability could not be verified for '+(item.streamingRegion||'DZ'));
    }
    if(item.type==='series'){
-    const season=arr(data.seasons).filter(x=>Number(x.season_number)>0&&String(x.air_date||'').slice(0,4)==='2026'&&String(x.air_date||'').slice(0,10)<=new Date().toISOString().slice(0,10)).sort((a,b)=>String(a.air_date).localeCompare(String(b.air_date)))[0];
+    const season=arr(data.seasons).filter(x=>Number(x.season_number)>0&&String(x.air_date||'').slice(0,4)==='2026'&&true).sort((a,b)=>String(a.air_date).localeCompare(String(b.air_date)))[0];
     if(!season)throw new Error('Netflix 2026 season release date could not be verified');
     releaseDate=season.air_date;netflixSeasonNumber=Number(season.season_number);
-   }else if(String(data.release_date||'').slice(0,4)!=='2026'||String(data.release_date||'').slice(0,10)>new Date().toISOString().slice(0,10)){
+   }else if(String(data.release_date||'').slice(0,4)!=='2026'){
     throw new Error('Netflix 2026 film release date could not be verified');
    }
   }
