@@ -2,7 +2,7 @@ name: VibeCritic Publishing V2 Heartbeat
 on:
   workflow_dispatch:
   schedule:
-    # Fresh workflow registration; the engine itself enforces 30-minute stage spacing.
+    # Re-registered heartbeat: GitHub invokes this every 10 minutes; the engine enforces 30-minute stage spacing and resumes saved drafts.
     - cron: '*/10 * * * *'
   push:
     branches: [main]
