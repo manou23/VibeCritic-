@@ -1,8 +1,8 @@
 import { enqueue, selectActiveJob, cycleDecision, transition, chooseFreeProvider, recordUsage, validateArticle, validateEvidence } from './core.mjs';
 import { recoverAbandonedJobs } from './recovery.mjs';
 function candidate(items,state,counts={},now=Date.now()) { const used=new Set(Object.keys(state.jobs)); const c={game:counts.game||0,movie:counts.movie||0,series:counts.series||0}; for(const j of Object.values(state.jobs)) if(j.status==='published') c[j.item.type]=(c[j.item.type]||0)+1; return (items||[]).filter(x=>x&&['game','movie','series'].includes(x.type)&&String(x.id||'').trim()&&!used.has(x.type+':'+x.id)).sort((a,b)=>Number(b.editorialPriority||0)-Number(a.editorialPriority||0)||c[a.type]-c[b.type]||String(b.date||'').localeCompare(String(a.date||'')) )[0]||null; }
-// One bounded task per invocation; each saved article-writing stage is spaced 30 minutes apart.
-export async function runCycle({state,adapters,providers,now=Date.now(),persist=async()=>{},publishedCounts={},articleLimits={},researchSkips=0,cycleIntervalMinutes=30}) {
+// One bounded task per invocation. Publication cadence and writing-stage pacing are separate clocks.
+export async function runCycle({state,adapters,providers,now=Date.now(),persist=async()=>{},publishedCounts={},articleLimits={},researchSkips=0,cycleIntervalMinutes=30,stageIntervalMinutes=30}) {
  if(!state||state.version!==2||!adapters) throw Error('Publisher v2 state and adapters are required.');
  const save=async()=>{state.updatedAt=new Date(now).toISOString();await persist(state);};
  const recoveredJobs=recoverAbandonedJobs(state,now);if(recoveredJobs)await save();
@@ -45,6 +45,7 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
  // Continuous publishing: allow a new article slot every 30 minutes, with no rest window.
  // The workflow checks every 15 minutes; a single active draft is still completed before another starts.
  const CYCLE_INTERVAL=Math.max(15,Math.min(1440,Number(cycleIntervalMinutes)||30))*60*1000;
+ const STAGE_INTERVAL=Math.max(5,Math.min(240,Number(stageIntervalMinutes)||30))*60*1000;
  const previousCycle=state.cycle||{};
  if(!Number(previousCycle.nextStartAt)||now>=Number(previousCycle.nextStartAt)){
   state.cycle={startedAt:now,deadlineAt:now+CYCLE_INTERVAL,nextStartAt:now+CYCLE_INTERVAL,articleKey:null};
@@ -159,7 +160,7 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
     }
     job=transition(job,'abandoned',{lastError:'Evidence rejected after automatic recovery: '+message,recoveryAttempts:1},now);
     state.jobs[job.key]=job;await save();
-    if(researchSkips<5)return runCycle({state,adapters,providers,now,persist,publishedCounts,articleLimits,researchSkips:researchSkips+1});
+    if(researchSkips<5)return runCycle({state,adapters,providers,now,persist,publishedCounts,articleLimits,researchSkips:researchSkips+1,cycleIntervalMinutes,stageIntervalMinutes});
     return {action:'research-rejected',key:job.key,reason:message,skipped:researchSkips+1,providerCalls:0};
    }
    const retryDelayMs=/Source HTTP 429/.test(message)?15*60*1000:3600000;
@@ -194,9 +195,9 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
   const excludedNow=new Set(job.excludedProviders||[]);
   if(!contentQualityFailure)excludedNow.add(p.id);
   const fallback=chooseFreeProvider(providers.filter(candidateProvider=>!excludedNow.has(candidateProvider.id)),fallbackUsage,now);
-  if(fallback)return runCycle({state,adapters,providers,now,persist,publishedCounts,articleLimits,researchSkips});
+  if(fallback)return runCycle({state,adapters,providers,now,persist,publishedCounts,articleLimits,researchSkips,cycleIntervalMinutes,stageIntervalMinutes});
   return {action:'generation-deferred',key:job.key,provider:p.id,providerCalls:requestCount};}
-  job=transition(job,'part-saved',{part:{text:part.text},lastProvider:p.id,excludedProviders:[],...(job.stage<2?{nextStageAt:now+CYCLE_INTERVAL}:{})},now);state.jobs[job.key]=job;await save();if(job.stage<3)return {action:'stage-saved',key:job.key,stage:job.stage,nextStageAt:job.nextStageAt||null,provider:p.id,providerCalls:requestCount};
+  job=transition(job,'part-saved',{part:{text:part.text},lastProvider:p.id,excludedProviders:[],...(job.stage<2?{nextStageAt:now+STAGE_INTERVAL}:{})},now);state.jobs[job.key]=job;await save();if(job.stage<3)return {action:'stage-saved',key:job.key,stage:job.stage,nextStageAt:job.nextStageAt||null,provider:p.id,providerCalls:requestCount};
   const article=await adapters.assembleArticle(job);let quality=validateArticle(article,articleLimits);
   if(quality.valid&&adapters.editorialGate){const editorial=await adapters.editorialGate(article,job);if(editorial!==true&&editorial?.valid!==true)quality={...quality,valid:false,errors:[...quality.errors,...(editorial?.errors||['Editorial gate rejected draft.'])]};}
   if(!quality.valid){const retryFromStage=Math.min(3,Math.max(1,Number(quality.retryFromStage)||3));job=transition(job,'quality-failed',{lastError:quality.errors.join(' | '),nextAttemptAt:now+3600000,resumeTo:'writing',stage:retryFromStage-1,parts:job.parts.slice(0,retryFromStage-1)},now);state.jobs[job.key]=job;await save();return {action:'quality-rejected',key:job.key,errors:quality.errors,providerCalls:1};}
