@@ -75,8 +75,8 @@ for (const options of [{ aiGenerated: 'true' }, { workflow: 'automated' }, { wor
 }
 
 for (const [label, mutate] of [
-  ['missing video ID', source => source.replace('youtubeVideoId: "AbCdEfGhI12"\\n', '')],
-  ['missing video title', source => source.replace('youtubeVideoTitle: "Official Trailer"\\n', '')],
+  ['missing video ID', source => source.split('\\n').filter(line => !line.startsWith('youtubeVideoId:')).join('\\n')],
+  ['missing video title', source => source.split('\\n').filter(line => !line.startsWith('youtubeVideoTitle:')).join('\\n')],
   ['same poster and backdrop', source => source.replace('https://image.tmdb.org/t/p/w1280/backdrop.jpg', 'https://image.tmdb.org/t/p/w780/poster.jpg')],
 ]) {
   const badRoot = await setup();
