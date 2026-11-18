@@ -106,6 +106,29 @@ assert.ok(failureState.providerCooldowns['rate-limited'].until-now>=2*60*60*1000
  assert.equal(malformedState.providerCooldowns['primary-free'],undefined,'invalid JSON must not create a provider-outage cooldown');
  assert.equal(malformedState.providerUsage['2026-11-16']['primary-free'].requests,2,'both malformed JSON attempts must count against the free request budget');
 
+// Provider-side JSON schema rejections are output-quality failures, not provider outages.
+const schemaState=createState();const schemaProviderCalls=[];
+const schemaAdapters={
+ discover:async()=>[{type:'movie',id:'schema-rejection'}],
+ collectEvidence:async()=>({youtubeVideoId:'Abcdef12345',sources:[{name:'Official',url:'https://example.com/a'},{name:'Independent',url:'https://example.org/b'}]}),
+ generatePart:async({provider})=>{
+  schemaProviderCalls.push(provider.id);
+  if(provider.id==='groq'){
+   const error=new Error('groq HTTP 400: {"error":{"code":"json_validate_failed","message":"Generated JSON does not match the expected schema. Missing properties: story, visuals, sound, pacing"}}');
+   error.requests=1;error.tokens=90;throw error;
+  }
+  return {text:'backup stage',tokens:100};
+ },
+ assembleArticle:async()=>article,publishFile:async()=>({path:'unused'}),verifyDeployment:async()=>false
+};
+const schemaProviders=[{id:'groq',enabled:true,free:true,priority:1,dailyRequestLimit:50,dailyTokenLimit:100000},{id:'backup-free',enabled:true,free:true,priority:2,dailyRequestLimit:5,dailyTokenLimit:5000}];
+const schemaFallback=await runCycle({state:schemaState,adapters:schemaAdapters,providers:schemaProviders,now,persist:async()=>{}});
+assert.equal(schemaFallback.action,'stage-saved','schema validation rejection must immediately fall back to another free provider');
+assert.equal(schemaFallback.provider,'backup-free');
+assert.deepEqual(schemaProviderCalls,['groq','backup-free']);
+assert.equal(schemaState.providerCooldowns.groq,undefined,'invalid model JSON must not create a global provider outage cooldown');
+assert.deepEqual(schemaState.jobs['movie:schema-rejection'].excludedProviders,[],'successful fallback clears the temporary draft exclusion');
+
 // Duplicate titles must be retired before they reserve the cycle's single article slot.
 const duplicateState=createState();
 duplicateState.jobs['movie:dupe']={key:'movie:dupe',item:{type:'movie',id:'dupe'},status:'writing',stage:1,parts:[],createdAt:new Date(now).toISOString(),updatedAt:new Date(now).toISOString()};
