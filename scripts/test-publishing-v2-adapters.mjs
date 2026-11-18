@@ -58,6 +58,7 @@ globalThis.fetch=async(url,options)=>{
   throw new Error('Unexpected game clip URL: '+String(url));
  }
  if(mode==='netflix-series-evidence'){
+  if(parsedUrl.hostname==='api.themoviedb.org'&&parsedUrl.pathname==='/3/tv/505/season/4/videos')return new Response(JSON.stringify({results:[{site:'YouTube',type:'Trailer',official:true,key:'Seas0n12345',name:'Official Season 4 Trailer'}]}),{status:200,headers:{'content-type':'application/json'}});
   if(parsedUrl.hostname==='api.themoviedb.org')return new Response(JSON.stringify({name:'Netflix Returning Series',original_name:'Netflix Returning Series',overview:'A detailed factual synopsis of the Netflix returning series, its setting, characters, and main conflict, long enough to support an independent critical review.',first_air_date:'2016-07-15',release_date:'',poster_path:'/netflix-series-poster.jpg',backdrop_path:'/netflix-series-backdrop.jpg',networks:[{id:213,name:'Netflix'}],seasons:[{season_number:1,air_date:'2016-07-15'},{season_number:4,air_date:'2026-02-01'}],genres:[{name:'Drama'}],credits:{cast:[{name:'Lead Actor'}],crew:[{name:'Creator',job:'Creator'}]},videos:{results:[{site:'YouTube',type:'Trailer',official:true,key:'Abcdef12345',name:'Official Season Trailer'}]}}),{status:200,headers:{'content-type':'application/json'}});
   if(parsedUrl.hostname==='en.wikipedia.org'&&parsedUrl.pathname==='/w/api.php'&&parsedUrl.searchParams.get('list')==='search')return new Response(JSON.stringify({query:{search:[{title:'Netflix Returning Series'}]}}),{status:200,headers:{'content-type':'application/json'}});
   if(parsedUrl.hostname==='en.wikipedia.org'&&parsedUrl.pathname==='/w/api.php')return new Response(JSON.stringify({query:{pages:{1:{extract:Array.from({length:30},()=> 'Independent reference details the series production and narrative history using factual information.').join(' ')}}}}),{status:200,headers:{'content-type':'application/json'}});
@@ -121,6 +122,7 @@ try{
  assert.equal(netflixSeriesEvidence.releaseDate,'2026-02-01','returning Netflix series must use the 2026 season release date, not its original premiere date');
  assert.equal(netflixSeriesEvidence.streamingPlatform,'Netflix');
  assert.equal(netflixSeriesEvidence.collection,'Netflix 2026');
+ assert.equal(netflixSeriesEvidence.youtubeVideoId,'Seas0n12345','use the verified season-specific trailer when TMDB provides one');
  mode='evidence-fallback';
  const recoveredEvidence=await adapters.collectEvidence({type:'movie',id:'77',name:'Test Film',date:'2020-01-01',overview:'A sufficiently detailed verified overview for this test film, describing its premise, characters, setting, and central conflict in a factual way.',sourceName:'TMDB',sourceUrl:'https://www.themoviedb.org/movie/77',poster:'https://image.tmdb.org/t/p/w780/poster.jpg',backdrop:'https://image.tmdb.org/t/p/w1280/backdrop.jpg'});
  assert.equal(recoveredEvidence.sources[1].name,'Wikipedia');
