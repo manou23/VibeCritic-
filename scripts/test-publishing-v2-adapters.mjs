@@ -27,7 +27,7 @@ assert.ok(!providers.some(x=>x.id==='openai'),'paid OpenAI must never enter the 
 const review=Array.from({length:25},()=> 'تحليل نقدي موثق يشرح تفاصيل العمل وحدود الأدلة المتاحة').join(' ');
 const shortPayload={review:Array.from({length:8},()=> 'مراجعة قصيرة لا تبلغ الحد المطلوب للكلمات').join(' '),scores:{story:7.2,visuals:8.1,sound:7.4,pacing:6.8},pros:[],cons:[],verdict:''};
 const payload={review,scores:{story:7.2,visuals:8.1,sound:7.4,pacing:6.8},pros:[],cons:[],verdict:''};
-const originalFetch=globalThis.fetch;let calls=0,mode='gemini',groqShortOnce=false;
+const originalFetch=globalThis.fetch;let calls=0,mode='gemini',groqShortOnce=false,groqShortTwice=0;
 globalThis.fetch=async(url,options)=>{
  calls++;
  const parsedUrl=new URL(String(url));
@@ -112,11 +112,11 @@ globalThis.fetch=async(url,options)=>{
   assert.match(body.contents[0].parts[0].text,/لا ترفع الدرجة لمجرد شهرة Netflix/,'Netflix brand must not inflate critical scores');
   return new Response(JSON.stringify({candidates:[{content:{parts:[{text:JSON.stringify(payload)}]}}]}),{status:200,headers:{'content-type':'application/json'}});
  }
- if(mode==='groq'||mode==='groq-retry'){
+ if(mode==='groq'||mode==='groq-retry'||mode==='groq-expand-retry'){
   assert.match(String(url),/api\.groq\.com\/openai\/v1\/chat\/completions/);
   assert.equal(body.model,'openai/gpt-oss-120b');
   assert.equal(Object.hasOwn(body,'reasoning'),false,'Groq API does not accept OpenRouter reasoning options');
-  assert.equal(body.max_completion_tokens,4096,'Groq GPT-OSS needs an explicit completion-token budget');
+  assert.equal(body.max_completion_tokens,6144,'Groq GPT-OSS needs an explicit completion-token budget');
   assert.equal(body.max_tokens,undefined,'use Groq max_completion_tokens instead of deprecated max_tokens');
   assert.equal(body.reasoning_effort,'low','bound GPT-OSS reasoning tokens so JSON has room to complete');
   assert.equal(body.response_format.type,'json_schema','Groq must use strict structured JSON output');
@@ -125,6 +125,7 @@ globalThis.fetch=async(url,options)=>{
   assert.equal(body.include_reasoning,false,'do not include internal reasoning in the JSON response');
   assert.equal(options.headers.authorization,'Bearer test-key');
   if(mode==='groq-retry'&&groqShortOnce){groqShortOnce=false;return new Response(JSON.stringify({choices:[{message:{content:JSON.stringify(shortPayload)},finish_reason:'stop'}],usage:{total_tokens:123}}),{status:200,headers:{'content-type':'application/json'}});}
+  if(mode==='groq-expand-retry'&&groqShortTwice>0){groqShortTwice--;return new Response(JSON.stringify({choices:[{message:{content:JSON.stringify(shortPayload)},finish_reason:'stop'}],usage:{total_tokens:123}}),{status:200,headers:{'content-type':'application/json'}});}
   return new Response(JSON.stringify({choices:[{message:{content:JSON.stringify(payload)},finish_reason:'stop'}],usage:{total_tokens:321}}),{status:200,headers:{'content-type':'application/json'}});
  }
  if(mode==='cloudflare'){
@@ -202,6 +203,12 @@ try{
  assert.equal(calls-beforeGroqRetry,2,'a short Groq section is retried exactly once');
  assert.equal(groqRetried.requests,2,'both Groq requests are reported for quota accounting');
  assert.equal(groqRetried.tokens,444,'token usage includes the rejected and successful Groq attempts');
+ mode='groq-expand-retry';groqShortTwice=2;const beforeExpansion=calls;
+ const expandedRetry=await adapters.generatePart({job:{item:{type:'movie',id:'77'},evidence:{title:'فيلم تجريبي',type:'movie',releaseDate:'2026',overview:'وصف موثق',genres:[],platforms:[],cast:[],crew:[],metadata:{},sources:[{name:'TMDB',url:'https://www.themoviedb.org/movie/77',extract:'معلومات'},{name:'Wikipedia',url:'https://en.wikipedia.org/wiki/Test',extract:'معلومات مستقلة'}]},parts:[]},provider:providers[2],stage:1});
+ assert.equal(calls-beforeExpansion,3,'if the same free provider returns a short section twice, a third evidence-bound expansion attempt runs before provider fallback');
+ assert.equal(expandedRetry.requests,3,'all three same-provider requests are counted against the free quota');
+ assert.equal(expandedRetry.tokens,567,'all three attempts contribute to token accounting');
+ assert.ok(JSON.parse(expandedRetry.text).review.length>0);
  mode='cloudflare';
  const cloudflareGenerated=await adapters.generatePart({job:{item:{type:'movie',id:'77'},evidence:{title:'فيلم تجريبي',type:'movie',releaseDate:'2026',overview:'وصف موثق',genres:[],platforms:[],cast:[],crew:[],metadata:{},sources:[{name:'TMDB',url:'https://www.themoviedb.org/movie/77',extract:'معلومات'},{name:'Wikipedia',url:'https://en.wikipedia.org/wiki/Test',extract:'معلومات مستقلة'}]},parts:[]},provider:providers[1],stage:1});
  assert.ok(JSON.parse(cloudflareGenerated.text).review);
