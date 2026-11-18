@@ -4,10 +4,11 @@ const { review } = Astro.props;
 const data = review.data;
 const displayDate = data.releaseDate ? new Date(`${data.releaseDate}T00:00:00Z`) : data.date;
 const href = url(`reviews/${review.id}/`);
+const cardImageFallback = data.backdrop && data.backdrop !== data.poster ? optimizeImage(data.backdrop, 'backdrop') : data.youtubeVideoId ? `https://i.ytimg.com/vi/${data.youtubeVideoId}/hqdefault.jpg` : '';
 ---
 <a href={href} class="review-card group" aria-label={`${TYPE_LABEL[data.type]}: ${data.title}${data.reviewMode === 'preview' ? ' — قراءة استباقية قبل الإصدار' : data.reviewMode === 'limited' ? ' — قراءة محدودة الأدلة بلا تقييم نهائي' : ' — التقييم ' + data.score.toFixed(1) + ' من 10'}`}>
 <div class="review-poster-wrap">
-{data.poster ? <img src={optimizeImage(data.poster)} alt={data.title} loading="lazy" decoding="async" class="review-poster" width="600" height="900"/> : <div class="review-poster grid place-items-center text-5xl text-[#e45c38]">✦</div>}
+{data.poster ? <img src={optimizeImage(data.poster)} data-fallback-src={cardImageFallback || undefined} data-last-fallback-src={data.youtubeVideoId ? `https://i.ytimg.com/vi/${data.youtubeVideoId}/hqdefault.jpg` : undefined} alt={data.title} loading="lazy" decoding="async" class="review-poster" width="600" height="900"/> : <div class="review-poster grid place-items-center text-5xl text-[#e45c38]">✦</div>}
 <span class="review-type">{TYPE_LABEL[data.type]}</span>
 {data.reviewMode === 'preview' ? <span class="review-score">استباقية</span> : data.reviewMode === 'limited' ? <span class="review-score">قيد التقييم</span> : <span class="review-score">{data.score.toFixed(1)} <small>/10</small></span>}
 </div>
