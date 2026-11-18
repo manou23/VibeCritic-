@@ -17,45 +17,46 @@ const adapters={
  verifyDeployment:async()=>{deployChecks++;return deploymentReady;}
 };
 const providers=[{id:'free-model',enabled:true,free:true,dailyRequestLimit:5,dailyTokenLimit:5000}];
-const firstStage=await runCycle({state,adapters,providers,now:now+1,persist:async()=>{saves++;}});
+const firstStage=await runCycle({state,adapters,providers,now:now+1,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}});
 assert.equal(firstStage.action,'stage-saved');
 assert.equal(firstStage.providerCalls,1);
 assert.equal(firstStage.stage,1);
-assert.equal(firstStage.nextStageAt,now+1+30*60*1000);
-const blockedStage=await runCycle({state,adapters,providers,now:now+15*60*1000,persist:async()=>{saves++;}});
-assert.equal(blockedStage.action,'stage-waiting','a scheduled run inside the 30-minute slot must not consume another AI request');
+assert.equal(firstStage.nextStageAt,now+1+15*60*1000);
+assert.equal(state.cycle.nextStartAt,now+1+45*60*1000,'publication slots must be spaced 45 minutes apart');
+const blockedStage=await runCycle({state,adapters,providers,now:now+10*60*1000,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}});
+assert.equal(blockedStage.action,'stage-waiting','a scheduled run before the 15-minute writing checkpoint must not consume another AI request');
 assert.equal(blockedStage.providerCalls,0);
 assert.equal(aiCalls,1);
-const secondStage=await runCycle({state,adapters,providers,now:now+30*60*1000+1,persist:async()=>{saves++;}});
+const secondStage=await runCycle({state,adapters,providers,now:now+15*60*1000+1,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}});
 assert.equal(secondStage.action,'stage-saved');
 assert.equal(secondStage.providerCalls,1);
 assert.equal(secondStage.stage,2);
-assert.equal(secondStage.nextStageAt,now+60*60*1000+1);
+assert.equal(secondStage.nextStageAt,now+30*60*1000+1);
 await assert.rejects(
- runCycle({state,adapters,providers,now:now+60*60*1000+1,persist:async()=>{saves++;}}),
+ runCycle({state,adapters,providers,now:now+30*60*1000+1,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}}),
  /simulated interruption/
 );
 assert.equal(aiCalls,3);
 assert.equal(state.jobs['series:1'].status,'quality-check','stage three must be checkpointed before quality validation');
-const resumed=await runCycle({state,adapters,providers,now:now+60*60*1000+2,persist:async()=>{saves++;}});
+const resumed=await runCycle({state,adapters,providers,now:now+30*60*1000+2,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}});
 assert.equal(resumed.action,'file-ready');
 assert.equal(resumed.providerCalls,0,'recovery from quality-check must not spend another AI request');
 assert.equal(aiCalls,3,'recovery must not regenerate the third stage');
 assert.equal(fileWrites,1);
 assert.equal(state.jobs['series:1'].status,'ready');
-const pending=await runCycle({state,adapters,providers,now:now+60*60*1000+3,persist:async()=>{saves++;}});
+const pending=await runCycle({state,adapters,providers,now:now+30*60*1000+3,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}});
 assert.equal(pending.action,'deployment-pending','a written file is not published until the live URL is verified');
 assert.equal(state.jobs['series:1'].status,'ready');
 assert.equal(fileWrites,1);
 deploymentReady=true;
-const final=await runCycle({state,adapters,providers,now:now+60*60*1000+4,persist:async()=>{saves++;}});
+const final=await runCycle({state,adapters,providers,now:now+30*60*1000+4,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}});
 assert.equal(final.action,'published');
 assert.equal(aiCalls,3);
 assert.equal(deployChecks,2);
 assert.equal(fileWrites,1,'deployment retries must not rewrite an already committed article');
 assert.equal(state.jobs['series:1'].status,'published');
 assert.ok(saves>=7);
-const afterPublish=await runCycle({state,adapters,providers,now:now+60*60*1000+5,persist:async()=>{saves++;}});
+const afterPublish=await runCycle({state,adapters,providers,now:now+30*60*1000+5,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}});
 assert.equal(afterPublish.action,'cycle-complete','only one article may be processed per cycle');
 assert.equal(afterPublish.key,'series:1');
 assert.equal(aiCalls,3);
