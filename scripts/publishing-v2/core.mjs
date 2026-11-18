@@ -142,7 +142,6 @@ export function validateArticle(a,{minWords=600,minCharacters=3200}={}){
  const sources=(a?.sources||[]).filter(s=>{try{return new URL(s.url).protocol==="https:"&&String(s.name||"").trim()}catch{return false}});
  if(new Set(sources.map(s=>registrableDomain(new URL(s.url).hostname))).size<2)errors.push("At least two independent HTTPS source domains are required");
  if(!String(a?.poster||a?.backdrop||"").startsWith("https://"))errors.push("A verified poster or backdrop is required");
- if(!hasVerifiedVideo(a))errors.push("A verified trailer or video is required");
  if(a?.youtubeVideoId&&!/^[A-Za-z0-9_-]{11}$/.test(a.youtubeVideoId))errors.push("Invalid YouTube video id");
  const sectionCheck=inspectEditorialSections(body,a?.title);
  errors.push(...sectionCheck.errors);
@@ -157,6 +156,5 @@ export function validateEvidence(evidence){
  const sources=(evidence?.sources||[]).filter(s=>{try{return new URL(s.url).protocol==="https:"&&String(s.name||"").trim()}catch{return false}});
  const domains=new Set(sources.map(s=>registrableDomain(new URL(s.url).hostname)));
  const errors=[];if(domains.size<2)errors.push("Evidence requires at least two independent HTTPS source domains.");
- if(!hasVerifiedVideo(evidence))errors.push("No verified trailer available");
  return {valid:errors.length===0,domains:[...domains],sources:sources.length,errors};
 }
