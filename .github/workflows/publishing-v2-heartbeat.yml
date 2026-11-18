@@ -6,7 +6,12 @@ on:
     - cron: '*/10 * * * *'
   push:
     branches: [main]
-    paths: ['.github/workflows/publishing-v2-heartbeat.yml']
+    # Re-arm the heartbeat when its engine or schedule settings change, without
+    # creating a loop from the publisher's own state/article checkpoint commits.
+    paths:
+      - '.github/workflows/publishing-v2-heartbeat.yml'
+      - 'scripts/publishing-v2/**'
+      - 'data/publisher-v2-settings.json'
 permissions:
   contents: write
 concurrency:
