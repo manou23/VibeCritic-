@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T00:39:27.982Z",
+  "updatedAt": "2026-11-18T08:00:33.075Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -1469,7 +1469,7 @@
         "sourceUrl": "https://www.themoviedb.org/tv/83631",
         "popularity": 1103
       },
-      "status": "writing",
+      "status": "waiting",
       "stage": 2,
       "parts": [
         {
@@ -1528,13 +1528,14 @@
           "votes": 1103
         }
       },
-      "attempts": 0,
+      "attempts": 1,
       "createdAt": "2026-11-17T23:47:48.744Z",
-      "updatedAt": "2026-11-18T00:22:15.265Z",
-      "nextAttemptAt": null,
-      "lastError": null,
+      "updatedAt": "2026-11-18T07:59:32.538Z",
+      "nextAttemptAt": 1794989072538,
+      "lastError": "gemini: رد النموذج JSON غير مكتمل أو ينقصه قوس إغلاق",
       "lastProvider": "groq",
-      "nextStageAt": 1794963135265
+      "nextStageAt": 1794963135265,
+      "resumeTo": "writing"
     }
   },
   "providerUsage": {
@@ -1590,20 +1591,20 @@
         "tokens": 2071,
         "successes": 1,
         "failures": 0
+      },
+      "gemini": {
+        "requests": 2,
+        "tokens": 0,
+        "successes": 0,
+        "failures": 1
       }
     }
   },
-  "providerCooldowns": {
-    "gemini": {
-      "failures": 3,
-      "until": 1794973135226,
-      "lastError": "gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
-    }
-  },
+  "providerCooldowns": {},
   "cycle": {
-    "startedAt": 1794961335265,
-    "deadlineAt": 1794963135265,
-    "nextStartAt": 1794963135265,
+    "startedAt": 1794988772538,
+    "deadlineAt": 1794990572538,
+    "nextStartAt": 1794990572538,
     "articleKey": "series:83631"
   },
   "discoveryBacklog": {
@@ -8843,6 +8844,49 @@
       "sourceName": "TMDB",
       "sourceUrl": "https://www.themoviedb.org/movie/1562642",
       "popularity": 25
+    },
+    "movie:1391325": {
+      "type": "movie",
+      "id": "1391325",
+      "name": "Uncle Trouble +2",
+      "originalTitle": "La familia Benetón +2",
+      "overview": "When Toni Benetón thinks he has everything under control in his lovable and fun multicultural family, the arrival of two new babies turns the house, and the whole family, upside down. Problems double, but so do the adventures.",
+      "date": "2026-04-17",
+      "poster": "https://image.tmdb.org/t/p/w780/m0LzWedEi0bWmPSt98o4kkAFYTa.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/1jSW5NoWWEFeC84PTQ5VKChm4is.jpg",
+      "sourceName": "TMDB",
+      "sourceUrl": "https://www.themoviedb.org/movie/1391325",
+      "popularity": 13,
+      "streamingPlatform": "Netflix",
+      "collection": "Netflix 2026",
+      "netflixOriginal": true,
+      "netflixCompanyIds": [
+        178464,
+        185004,
+        198834,
+        145174,
+        171251,
+        192478,
+        266997
+      ],
+      "editorialPriority": 100
+    },
+    "series:272608": {
+      "type": "series",
+      "id": "272608",
+      "name": "Chicken Shop Date",
+      "originalTitle": "Chicken Shop Date",
+      "overview": "Amelia Dimoldenberg meets a celebrity guest at a local chicken shop for a date, engaging in casual, awkward, and sometimes flirtatious conversation.",
+      "date": "2014-12-03",
+      "poster": "https://image.tmdb.org/t/p/w780/yWzqMTpyS6j16uBS4I7Sds02bY1.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/rt4hDM4bAH2BVE8VvFNkfufP3Cn.jpg",
+      "sourceName": "TMDB",
+      "sourceUrl": "https://www.themoviedb.org/tv/272608",
+      "popularity": 3,
+      "streamingPlatform": "Netflix",
+      "collection": "Netflix 2026",
+      "netflixOriginal": true,
+      "editorialPriority": 100
     }
   }
 }
