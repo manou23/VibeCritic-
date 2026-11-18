@@ -248,15 +248,6 @@ voteButtons.forEach(button=>button.addEventListener('click',()=>{
  try{localStorage.setItem(currentVoteKey,value);}catch{}
  paintVote(value);
 }));
-document.querySelectorAll<HTMLImageElement>('img[data-fallback-src]').forEach((img)=>{
- img.addEventListener('error',()=>{
-  const next=img.dataset.fallbackStep==='1'?img.dataset.lastFallbackSrc:img.dataset.fallbackSrc;
-  img.dataset.fallbackStep=img.dataset.fallbackStep==='1'?'2':'1';
-  if(next&&img.src!==next){img.src=next;return;}
-  img.removeAttribute('data-fallback-src');
-  img.removeAttribute('data-last-fallback-src');
- });
-});
 document.querySelectorAll<HTMLElement>('[data-youtube-facade]').forEach((facade)=>{
  const button=facade.querySelector<HTMLButtonElement>('.youtube-facade-button');
  button?.addEventListener('click',()=>{
