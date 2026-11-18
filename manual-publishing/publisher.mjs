@@ -109,7 +109,7 @@ export async function publishManualInbox({ root = process.cwd(), now = () => new
   await fs.mkdir(reviews, { recursive: true });
   await fs.mkdir(archive, { recursive: true });
   await fs.mkdir(path.dirname(statePath), { recursive: true });
-  await fs.copyFile(file, destination, fs.constants?.COPYFILE_EXCL);
+  await fs.writeFile(destination, article.markdown, { flag: 'wx' });
   await fs.rename(file, archived);
   state.published[article.slug] = {
     sourceId: article.sourceId,
