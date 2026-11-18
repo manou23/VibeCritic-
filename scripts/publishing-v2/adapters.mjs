@@ -276,6 +276,9 @@ async function publishFile(a,job){
  }else{
   await fs.writeFile(target,renderArticleFile(a,job),{flag:'wx',encoding:'utf8'});
  }
+ const publishedAt=new Date().toISOString();
+ const finalContent=await fs.readFile(target,'utf8');
+ await fs.writeFile(target,finalContent.replace(/^publishedAt: .*$/m,'publishedAt: '+y(publishedAt)));
  return {path:target.replace(/\\\\/g,'/')};
 }
 async function verifyDeployment({article,articlePath}){
