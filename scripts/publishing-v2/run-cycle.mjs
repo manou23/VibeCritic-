@@ -44,6 +44,7 @@ try{
   if(type)publishedCounts[type]++;
  }
 }catch{}
+// The 45-minute interval controls live publication slots; draft preparation runs independently between slots.
 const result=await runCycle({
  state,adapters,providers,publishedCounts,
  articleLimits:{minWords:600,minCharacters:3200},
