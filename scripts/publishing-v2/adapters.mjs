@@ -171,7 +171,7 @@ function validateSavedEvidence(item,evidence){
  const verified=independent.some(source=>{
   const extract=norm(source.extract||'');
   const titleMatches=wanted.some(title=>extract.includes(title));
-  const typeMatches=item.type==='game'?/\\b(game|video game)\\b/i.test(String(source.extract||'')):item.type==='series'?/\\b(television series|tv series|television|series)\\b/i.test(String(source.extract||'')):/\\b(film|movie)\\b/i.test(String(source.extract||''));
+  const typeMatches=item.type==='game'?/\b(game|video game)\b/i.test(String(source.extract||'')):item.type==='series'?/\b(television series|tv series|television|series)\b/i.test(String(source.extract||'')):/\b(film|movie)\b/i.test(String(source.extract||''));
   return titleMatches&&typeMatches;
  });
  return verified?{valid:true}:{valid:false,reason:'Saved independent source does not verify this title and media type.'};
