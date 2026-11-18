@@ -211,7 +211,7 @@ async function collectEvidence(item){
  const primaryText=[item.overview,data.overview,data.description_raw,data.tagline].map(clean).sort((a,b)=>b.length-a.length)[0]||'';
  const primary={name:item.sourceName,url:sourceUrl,extract:primaryText.slice(0,4000)};
  if(primary.extract.length<80)throw new Error('Primary source metadata is too thin');
- const previewMode=/^\\d{4}-\\d{2}-\\d{2}$/.test(String(releaseDate||''))&&String(releaseDate).slice(0,10)>new Date().toISOString().slice(0,10);
+ const previewMode=/^\d{4}-\d{2}-\d{2}$/.test(String(releaseDate||''))&&String(releaseDate).slice(0,10)>new Date().toISOString().slice(0,10);
  return {title:item.name,originalTitle:item.originalTitle||data.original_title||data.original_name||'',type:item.type,sourceName:item.sourceName,sourceUrl,sourceId:item.type+':'+item.id,releaseDate,previewMode,overview:primary.extract,poster,backdrop:backdrop||poster,genres,platforms,cast,crew,youtubeVideoId,youtubeVideoTitle,externalVideoUrl,externalVideoTitle,sources:[primary,independent],metadata:{rating:data.vote_average||data.rating||null,votes:data.vote_count||data.ratings_count||0},streamingPlatform:item.streamingPlatform||'',collection:item.collection||'',netflixOriginal:item.netflixOriginal===true,streamingRegion:item.streamingRegion||''};
 }
 function prompt(job,stage){
