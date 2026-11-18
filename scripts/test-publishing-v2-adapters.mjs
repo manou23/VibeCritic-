@@ -207,6 +207,14 @@ try{
  assert.equal(article.pros.length,3);
  assert.equal(article.cons.length,2);
  assert.ok(article.body.startsWith('## القصة والشخصيات والبناء\n\n'),'generated reviews must use the established Markdown section layout');
+ const advanceJob={...job,evidence:{...job.evidence,releaseDate:'2027-01-15'}};
+ const advanceArticle=await adapters.assembleArticle(advanceJob);
+ assert.equal(advanceArticle.reviewMode,'preview','future releases must be explicitly marked as advance-reading previews');
+ assert.equal(advanceArticle.isAdvanceReading,true);
+ assert.ok(advanceArticle.headline.startsWith('قراءة استباقية:'),'upcoming titles must have an advance-reading headline');
+ assert.ok(advanceArticle.body.startsWith('> **قراءة استباقية:**'),'the article body must visibly disclose that the work has not released yet');
+ assert.ok(advanceArticle.body.includes('تقديرية ومؤقتة'),'pre-release scores must be labeled provisional');
+
  assert.ok(article.body.includes(review),'all generated review sections must be retained');
  assert.ok(article.body.includes('## التقييم النقدي وحدود العمل'),'the final section must have a clear editorial heading');
  assert.equal(article.youtubeVideoId,'UnA7tepsc7s','verified trailer metadata must be carried into the article');
