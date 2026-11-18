@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T19:45:34.505Z",
+  "updatedAt": "2026-11-18T19:47:24.816Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -1854,7 +1854,7 @@
         "netflixOriginal": true,
         "editorialPriority": 100
       },
-      "status": "ready",
+      "status": "published",
       "stage": 3,
       "parts": [
         {
@@ -1926,7 +1926,7 @@
       },
       "attempts": 0,
       "createdAt": "2026-11-18T16:11:04.389Z",
-      "updatedAt": "2026-11-18T19:38:01.734Z",
+      "updatedAt": "2026-11-18T19:47:22.364Z",
       "nextAttemptAt": null,
       "lastError": null,
       "excludedProviders": [],
@@ -2011,7 +2011,9 @@
         "characters": 3571
       },
       "fileWritten": true,
-      "articlePath": "src/content/reviews/series-chiaroscuro-336243.md"
+      "articlePath": "src/content/reviews/series-chiaroscuro-336243.md",
+      "deployedAt": "2026-11-18T19:47:22.364Z",
+      "publishedAt": "2026-11-18T19:47:22.364Z"
     }
   },
   "providerUsage": {
