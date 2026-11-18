@@ -52,16 +52,16 @@ assert.equal(pending.action,'deployment-pending','a written file is not publishe
 assert.equal(state.jobs['series:1'].status,'ready');
 assert.equal(fileWrites,1);
 deploymentReady=true;
-const final=await runCycle({state,adapters,providers,now:now+45*60*1000+3,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}});
+const final=await runCycle({state,adapters,providers,now:now+45*60*1000+5,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}});
 assert.equal(final.action,'published');
 assert.equal(aiCalls,3);
 assert.equal(deployChecks,2);
 assert.equal(fileWrites,1,'deployment retries must not rewrite an already committed article');
 assert.equal(state.jobs['series:1'].status,'published');
 assert.ok(saves>=7);
-const afterPublish=await runCycle({state,adapters,providers,now:now+45*60*1000+2,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}});
+const afterPublish=await runCycle({state,adapters,providers,now:now+45*60*1000+6,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}});
 assert.equal(afterPublish.action,'no-candidates','the next article remains due at the next 45-minute slot');
-assert.equal(state.cycle.nextPublishAt,now+90*60*1000);
+assert.equal(state.cycle.nextPublishAt,now+90*60*1000+5);
 assert.equal(aiCalls,3);
 // A failed provider is cooled down durably instead of being retried on every 30-minute checkpoint.
 const failureState=createState();let failedProviderCalls=0;
