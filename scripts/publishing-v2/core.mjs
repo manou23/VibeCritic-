@@ -144,11 +144,13 @@ export function validateArticle(a,{minWords=600,minCharacters=3200}={}){
  for(const f of ["title","headline","summary","verdict","sourceId"])if(!String(a?.[f]||"").trim())errors.push("Missing field: "+f);
  if(!["game","movie","series"].includes(a?.type))errors.push("Invalid content type");
  const dims=["storyScore","visualsScore","soundScore","pacingScore"];
- for(const f of dims)if(!Number.isFinite(Number(a?.[f]))||Number(a[f])<0||Number(a[f])>10)errors.push("Invalid score: "+f);
- if(!Number.isFinite(Number(a?.score))||Number(a.score)<=0||Number(a.score)>10)errors.push("Invalid final score");
- if(dims.every(f=>Number.isFinite(Number(a?.[f])))){
-  const expected=calculateWeightedReviewScore({ story:a.storyScore, visuals:a.visualsScore, sound:a.soundScore, pacing:a.pacingScore });
-  if(Math.abs(expected-Number(a.score))>.05)errors.push("Final score does not match VibeCritic weighted rubric");
+ if(a?.reviewMode!=='preview'){
+  for(const f of dims)if(!Number.isFinite(Number(a?.[f]))||Number(a[f])<0||Number(a[f])>10)errors.push("Invalid score: "+f);
+  if(!Number.isFinite(Number(a?.score))||Number(a.score)<=0||Number(a.score)>10)errors.push("Invalid final score");
+  if(dims.every(f=>Number.isFinite(Number(a?.[f])))){
+   const expected=calculateWeightedReviewScore({ story:a.storyScore, visuals:a.visualsScore, sound:a.soundScore, pacing:a.pacingScore });
+   if(Math.abs(expected-Number(a.score))>.05)errors.push("Final score does not match VibeCritic weighted rubric");
+  }
  }
  if(!Array.isArray(a?.pros)||a.pros.length<3)errors.push("At least three strengths are required");
  if(!Array.isArray(a?.cons)||a.cons.length<2)errors.push("At least two critical limitations are required");
