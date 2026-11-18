@@ -61,14 +61,16 @@ async function discover(excludedKeys=[]){
  for(const key of excludedKeys||[])used.add(String(key));
  const empty={results:[]};
  const today=new Date().toISOString().slice(0,10);
- const netflixPages=Array.from({length:10},(_,i)=>i+1);
- const [trending,popularMovies,popularSeries,games,netflixMovies,netflixSeries]=await Promise.all([
+ const netflixPages=Array.from({length:10},(_,i)=>i+1),netflixProviderPages=Array.from({length:5},(_,i)=>i+1);
+ const [trending,popularMovies,popularSeries,games,netflixMovies,netflixSeries,netflixAvailableMovies,netflixAvailableSeries]=await Promise.all([
   env.TMDB_API_KEY?get(tmdb('trending/all/week',{language:'en-US'})).catch(()=>empty):Promise.resolve(empty),
   env.TMDB_API_KEY?get(tmdb('movie/popular',{language:'en-US',page:1})).catch(()=>empty):Promise.resolve(empty),
   env.TMDB_API_KEY?get(tmdb('tv/popular',{language:'en-US',page:1})).catch(()=>empty):Promise.resolve(empty),
   env.RAWG_API_KEY?get('https://api.rawg.io/api/games?key='+encodeURIComponent(env.RAWG_API_KEY)+'&ordering=-added&page_size=40').catch(()=>empty):Promise.resolve(empty),
   env.TMDB_API_KEY?Promise.all(netflixPages.map(page=>get(tmdb('discover/movie',{language:'en-US',include_adult:false,with_companies:'178464','primary_release_date.gte':'2026-01-01','primary_release_date.lte':today,sort_by:'primary_release_date.asc',page})).catch(()=>empty))):Promise.resolve([]),
-  env.TMDB_API_KEY?Promise.all(netflixPages.map(page=>get(tmdb('discover/tv',{language:'en-US',include_adult:false,with_networks:'213','air_date.gte':'2026-01-01','air_date.lte':today,sort_by:'popularity.desc',page})).catch(()=>empty))):Promise.resolve([])
+  env.TMDB_API_KEY?Promise.all(netflixPages.map(page=>get(tmdb('discover/tv',{language:'en-US',include_adult:false,with_networks:'213','air_date.gte':'2026-01-01','air_date.lte':today,sort_by:'popularity.desc',page})).catch(()=>empty))):Promise.resolve([]),
+  env.TMDB_API_KEY?Promise.all(netflixProviderPages.map(page=>get(tmdb('discover/movie',{language:'en-US',include_adult:false,with_watch_providers:'8',watch_region:'DZ','primary_release_date.gte':'2026-01-01','primary_release_date.lte':today,sort_by:'primary_release_date.asc',page})).catch(()=>empty))):Promise.resolve([]),
+  env.TMDB_API_KEY?Promise.all(netflixProviderPages.map(page=>get(tmdb('discover/tv',{language:'en-US',include_adult:false,with_watch_providers:'8',watch_region:'DZ','air_date.gte':'2026-01-01','air_date.lte':today,sort_by:'popularity.desc',page})).catch(()=>empty))):Promise.resolve([])
  ]);
  const items=[],added=new Set();
  const addMedia=(x,type,extra={})=>{
@@ -84,9 +86,16 @@ async function discover(excludedKeys=[]){
  // Only already-released titles enter the queue; future titles become eligible automatically after release.
  for(const page of netflixMovies)for(const x of arr(page.results)){
   const date=String(x.release_date||'').slice(0,10);
-  if(date>='2026-01-01'&&date<=today)addMedia(x,'movie',{streamingPlatform:'Netflix',collection:'Netflix 2026',editorialPriority:100});
+  if(date>='2026-01-01'&&date<=today)addMedia(x,'movie',{streamingPlatform:'Netflix',collection:'Netflix 2026',netflixOriginal:true,editorialPriority:100});
  }
- for(const page of netflixSeries)for(const x of arr(page.results))addMedia(x,'series',{streamingPlatform:'Netflix',collection:'Netflix 2026',editorialPriority:100});
+ for(const page of netflixSeries)for(const x of arr(page.results))addMedia(x,'series',{streamingPlatform:'Netflix',collection:'Netflix 2026',netflixOriginal:true,editorialPriority:100});
+ // Include 2026 releases currently streaming on Netflix Algeria, while keeping licensed titles
+ // explicitly distinct from Netflix Originals in the saved editorial metadata.
+ for(const page of netflixAvailableMovies)for(const x of arr(page.results)){
+  const date=String(x.release_date||'').slice(0,10);
+  if(date>='2026-01-01'&&date<=today)addMedia(x,'movie',{streamingPlatform:'Netflix',collection:'Netflix 2026',netflixOriginal:false,streamingRegion:'DZ',editorialPriority:95});
+ }
+ for(const page of netflixAvailableSeries)for(const x of arr(page.results))addMedia(x,'series',{streamingPlatform:'Netflix',collection:'Netflix 2026',netflixOriginal:false,streamingRegion:'DZ',editorialPriority:95});
  for(const x of arr(games.results)){
   const id=String(x.id||''),name=clean(x.name);
   if(!id||!name||used.has('game:'+id)||used.has('title:'+norm(name))||added.has('game:'+id))continue;
@@ -134,8 +143,14 @@ async function collectEvidence(item){
   const kind=item.type==='series'?'tv':'movie';
   data=await get(tmdb(kind+'/'+item.id,{language:'en-US',append_to_response:'credits,videos'}));
   if(item.streamingPlatform==='Netflix'){
-   const belongsToNetflix=item.type==='series'?arr(data.networks).some(x=>Number(x.id)===213):arr(data.production_companies).some(x=>Number(x.id)===178464);
-   if(!belongsToNetflix)throw new Error('Netflix collection verification failed against TMDB title details');
+   if(item.netflixOriginal){
+    const belongsToNetflix=item.type==='series'?arr(data.networks).some(x=>Number(x.id)===213):arr(data.production_companies).some(x=>Number(x.id)===178464);
+    if(!belongsToNetflix)throw new Error('Netflix Original verification failed against TMDB title details');
+   }else{
+    const watch=await get(tmdb(kind+'/'+item.id+'/watch/providers'));
+    const region=watch.results?.[item.streamingRegion||'DZ'];
+    if(!arr(region?.flatrate).some(x=>Number(x.provider_id)===8))throw new Error('Netflix streaming availability could not be verified for '+(item.streamingRegion||'DZ'));
+   }
    if(item.type==='series'){
     const season=arr(data.seasons).filter(x=>Number(x.season_number)>0&&String(x.air_date||'').slice(0,4)==='2026'&&String(x.air_date||'').slice(0,10)<=new Date().toISOString().slice(0,10)).sort((a,b)=>String(a.air_date).localeCompare(String(b.air_date)))[0];
     if(!season)throw new Error('Netflix 2026 season release date could not be verified');
@@ -168,7 +183,7 @@ async function collectEvidence(item){
  if(!poster?.startsWith('https://'))throw new Error('No HTTPS poster available');
  const independent=await wiki(item.name),primary={name:item.sourceName,url:sourceUrl,extract:clean(item.overview||data.overview||data.description_raw||'').slice(0,4000)};
  if(primary.extract.length<80)throw new Error('Primary source metadata is too thin');
- return {title:item.name,originalTitle:item.originalTitle||data.original_title||data.original_name||'',type:item.type,sourceName:item.sourceName,sourceUrl,sourceId:item.type+':'+item.id,releaseDate,overview:primary.extract,poster,backdrop:backdrop||poster,genres,platforms,cast,crew,youtubeVideoId,youtubeVideoTitle,externalVideoUrl,externalVideoTitle,sources:[primary,independent],metadata:{rating:data.vote_average||data.rating||null,votes:data.vote_count||data.ratings_count||0},streamingPlatform:item.streamingPlatform||'',collection:item.collection||''};
+ return {title:item.name,originalTitle:item.originalTitle||data.original_title||data.original_name||'',type:item.type,sourceName:item.sourceName,sourceUrl,sourceId:item.type+':'+item.id,releaseDate,overview:primary.extract,poster,backdrop:backdrop||poster,genres,platforms,cast,crew,youtubeVideoId,youtubeVideoTitle,externalVideoUrl,externalVideoTitle,sources:[primary,independent],metadata:{rating:data.vote_average||data.rating||null,votes:data.vote_count||data.ratings_count||0},streamingPlatform:item.streamingPlatform||'',collection:item.collection||'',netflixOriginal:item.netflixOriginal===true,streamingRegion:item.streamingRegion||''};
 }
 function prompt(job,stage){
  const e=job.evidence,prior=job.parts.map(p=>p.text).join('\n\n');
@@ -213,7 +228,7 @@ async function publishFile(a,job){
  const filename=a.type+'-'+slug(a.title)+'-'+String(job.item.id).replace(/[^\w-]/g,'')+'.md',target=path.join(ROOT,filename);
  await fs.mkdir(ROOT,{recursive:true});
  try{await fs.access(target);throw new Error('Refusing to overwrite '+target);}catch(e){if(e.code!=='ENOENT')throw e;}
- const fm=['---','title: '+y(a.title),'originalTitle: '+y(a.originalTitle),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 5','reviewMode: review','date: '+a.date,'releaseDate: '+y(a.releaseDate||''),'publishedAt: '+y(new Date().toISOString()),'type: '+a.type,'score: '+a.score,'storyScore: '+a.storyScore,'visualsScore: '+a.visualsScore,'soundScore: '+a.soundScore,'pacingScore: '+a.pacingScore,'sourceName: '+y(a.sourceName),'sourceId: '+y(a.sourceId),'sourceUrl: '+y(a.sourceUrl),...(a.streamingPlatform?['streamingPlatform: '+y(a.streamingPlatform)]:[]),...(a.collection?['editorialCollection: '+y(a.collection)]:[]),...(a.youtubeVideoId?['youtubeVideoId: '+y(a.youtubeVideoId),'youtubeVideoTitle: '+y(a.youtubeVideoTitle)]:[]),...(a.externalVideoUrl?['externalVideoUrl: '+y(a.externalVideoUrl),'externalVideoTitle: '+y(a.externalVideoTitle)]:[]),'aiGenerated: true','editorialWorkflow: automated','poster: '+y(a.poster),'backdrop: '+y(a.backdrop),'platforms:'+yamlList(a.platforms),'genres:'+yamlList(a.genres),'cast:'+yamlList(a.cast),'crew:'+yamlList(a.crew),'pros:'+yamlList(a.pros),'cons:'+yamlList(a.cons),'tags:'+yamlList(a.tags)].join('\n');
+ const fm=['---','title: '+y(a.title),'originalTitle: '+y(a.originalTitle),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 5','reviewMode: review','date: '+a.date,'releaseDate: '+y(a.releaseDate||''),'publishedAt: '+y(new Date().toISOString()),'type: '+a.type,'score: '+a.score,'storyScore: '+a.storyScore,'visualsScore: '+a.visualsScore,'soundScore: '+a.soundScore,'pacingScore: '+a.pacingScore,'sourceName: '+y(a.sourceName),'sourceId: '+y(a.sourceId),'sourceUrl: '+y(a.sourceUrl),...(a.streamingPlatform?['streamingPlatform: '+y(a.streamingPlatform)]:[]),...(a.collection?['editorialCollection: '+y(a.collection)]:[]),...(a.streamingPlatform?['netflixOriginal: '+String(a.netflixOriginal===true),'streamingRegion: '+y(a.streamingRegion||'')]:[]),...(a.youtubeVideoId?['youtubeVideoId: '+y(a.youtubeVideoId),'youtubeVideoTitle: '+y(a.youtubeVideoTitle)]:[]),...(a.externalVideoUrl?['externalVideoUrl: '+y(a.externalVideoUrl),'externalVideoTitle: '+y(a.externalVideoTitle)]:[]),'aiGenerated: true','editorialWorkflow: automated','poster: '+y(a.poster),'backdrop: '+y(a.backdrop),'platforms:'+yamlList(a.platforms),'genres:'+yamlList(a.genres),'cast:'+yamlList(a.cast),'crew:'+yamlList(a.crew),'pros:'+yamlList(a.pros),'cons:'+yamlList(a.cons),'tags:'+yamlList(a.tags)].join('\n');
  await fs.writeFile(target,fm+'\n---\n\n'+a.body+'\n\n> مراجعة تحريرية مبنية على المصادر المذكورة، ولا تدّعي تجربة مباشرة.\n',{flag:'wx',encoding:'utf8'});
  return {path:target.replace(/\\/g,'/')};
 }
@@ -261,7 +276,7 @@ export function createPublishingAdapters(){return {
   const sections=p.map((x,i)=>'## '+headings[i]+'\n\n'+cleanSection(x.review));
   const firstSection=clean(cleanSection(p[0]?.review||''));
   const summary=(firstSection.split(/(?<=[.!؟])\s+/).slice(0,2).join(' ').slice(0,420)||clean(e.overview).slice(0,420));
-  return {title:e.title,originalTitle:e.originalTitle,headline:'مراجعة نقدية: '+e.title+' بين نقاط القوة وحدود التجربة',hook:summary,summary,verdict:clean(last.verdict),type:e.type,sourceId:e.sourceId,sourceName:e.sourceName,sourceUrl:e.sourceUrl,streamingPlatform:e.streamingPlatform||'',collection:e.collection||'',releaseDate:e.releaseDate||'',date:new Date().toISOString().slice(0,10),score,...dims,pros:arr(last.pros).map(clean),cons:arr(last.cons).map(clean),sources:e.sources,poster:e.poster,backdrop:e.backdrop,platforms:e.platforms,genres:e.genres,cast:e.cast,crew:e.crew,tags:[...e.genres,...(e.streamingPlatform?['Netflix','Netflix 2026']:[])],youtubeVideoId:e.youtubeVideoId,youtubeVideoTitle:e.youtubeVideoTitle,externalVideoUrl:e.externalVideoUrl,externalVideoTitle:e.externalVideoTitle,body:sections.join('\n\n')+'\n\n### المصادر والمراجع\n\n'+e.sources.map(x=>'- ['+x.name+']('+x.url+')').join('\n')};
+  return {title:e.title,originalTitle:e.originalTitle,headline:'مراجعة نقدية: '+e.title+' بين نقاط القوة وحدود التجربة',hook:summary,summary,verdict:clean(last.verdict),type:e.type,sourceId:e.sourceId,sourceName:e.sourceName,sourceUrl:e.sourceUrl,streamingPlatform:e.streamingPlatform||'',collection:e.collection||'',netflixOriginal:e.netflixOriginal===true,streamingRegion:e.streamingRegion||'',releaseDate:e.releaseDate||'',date:new Date().toISOString().slice(0,10),score,...dims,pros:arr(last.pros).map(clean),cons:arr(last.cons).map(clean),sources:e.sources,poster:e.poster,backdrop:e.backdrop,platforms:e.platforms,genres:e.genres,cast:e.cast,crew:e.crew,tags:[...e.genres,...(e.streamingPlatform?['Netflix','Netflix 2026']:[])],youtubeVideoId:e.youtubeVideoId,youtubeVideoTitle:e.youtubeVideoTitle,externalVideoUrl:e.externalVideoUrl,externalVideoTitle:e.externalVideoTitle,body:sections.join('\n\n')+'\n\n### المصادر والمراجع\n\n'+e.sources.map(x=>'- ['+x.name+']('+x.url+')').join('\n')};
  },
  publishFile,verifyDeployment
 };}
