@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T22:58:01.407Z",
+  "updatedAt": "2026-11-18T23:09:41.509Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -420,13 +420,72 @@
         "sourceUrl": "https://www.themoviedb.org/movie/1170608",
         "popularity": 0
       },
-      "status": "queued",
-      "stage": 0,
-      "parts": [],
-      "evidence": null,
+      "status": "writing",
+      "stage": 1,
+      "parts": [
+        {
+          "stage": 1,
+          "text": "{\"review\":\"الإصدار المتوقع لفيلم Dune: Part Three في ديسمبر 2026 يظل في مرحلة ما قبل العرض، لذا فإن التحليل يقتصر على ما تم الإعلان عنه رسمياً. تدور الفكرة حول تحول بول أتريدس إلى إمبراطور قاسٍ بعد عشرين عاماً من سيطرته على الإمبراطورية، وهو ما يفتح باباً لاستكشاف عواقب السلطة المطلقة. يبدو أن السرد سيستند إلى رواية Dune Messiah، التي تركز على الانقسام الداخلي للبطلة وصراعاتها مع رؤى الانهيار الإمبراطوري وعودة حبه المفقود. من حيث الشخصيات، سيستمر تيموثي شالاميت في تجسيد بول، مع عودة تشاني (زياندا) لتلعب دوراً محورياً في المؤامرة، بينما يضيف طاقم الممثلين مثل جيسون موموا وفلورنس بوج ومجموعة من الوجوه المعروفة عمقاً إلى عالم القصة. لا توجد تفاصيل دقيقة حول تطور الشخصيات الثانوية، لكن وجود أسماء مثل أنيا تايلور-جوي وتشارلوت رامبلينغ يوحي بإضافة طبقات جديدة من التعقيد الدرامي. بناءً على ما تم الكشف عنه، من المتوقع أن يركز الفيلم على صراع داخلي وخارجي لبول، مع تركيز على مؤامرات سياسية ومخاطر تمرد محتملة، ما قد يعزز عمق السرد ويعطي مساحة لاستكشاف مواضيع السلطة والهوية. ومع ذلك، يبقى من غير الممكن تقييم جودة الحوار أو التوازن الدرامي قبل مشاهدة الفيلم.\",\"scores\":{\"story\":0,\"visuals\":0,\"sound\":0,\"pacing\":0},\"pros\":[],\"cons\":[],\"verdict\":\"\"}",
+          "savedAt": "2026-11-18T23:09:35.579Z"
+        }
+      ],
+      "evidence": {
+        "title": "Dune: Part Three",
+        "originalTitle": "Dune: Part Three",
+        "type": "movie",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1170608",
+        "sourceId": "movie:1170608",
+        "releaseDate": "2026-12-15",
+        "overview": "Nearly two decades after he seized control of the Imperium, Paul Atreides is now a ruthless Emperor, and must face the consequences of his reign as old allies return, terrifying new threats emerge, and betrayal lurks in every shadow. Haunted by visions of Imperial collapse and the reappearance of his long-lost love, Paul is drawn into a sweeping conspiracy, with Chani at the heart of its unfolding mystery. As enemies close in, Paul must confront the true cost of power and the fate of those he loves the most.",
+        "poster": "https://image.tmdb.org/t/p/w780/d43fvHQsIMa4kpyhKXw0haEJIvI.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/i5E9H7Ik0u61ylDDTbmUpTL3Yw.jpg",
+        "genres": [
+          "Science Fiction",
+          "Adventure"
+        ],
+        "platforms": [],
+        "cast": [
+          "Timothée Chalamet",
+          "Zendaya",
+          "Jason Momoa",
+          "Florence Pugh",
+          "Rebecca Ferguson",
+          "Isaach de Bankolé",
+          "Charlotte Rampling",
+          "Anya Taylor-Joy"
+        ],
+        "crew": [
+          "Denis Villeneuve"
+        ],
+        "youtubeVideoId": "uJqaGLmZpGo",
+        "youtubeVideoTitle": "Final Trailer",
+        "externalVideoUrl": "",
+        "externalVideoTitle": "",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1170608",
+            "extract": "Nearly two decades after he seized control of the Imperium, Paul Atreides is now a ruthless Emperor, and must face the consequences of his reign as old allies return, terrifying new threats emerge, and betrayal lurks in every shadow. Haunted by visions of Imperial collapse and the reappearance of his long-lost love, Paul is drawn into a sweeping conspiracy, with Chani at the heart of its unfolding mystery. As enemies close in, Paul must confront the true cost of power and the fate of those he loves the most."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Dune%3A_Part_Three",
+            "extract": "Dune: Part Three is an upcoming American epic space opera film directed by Denis Villeneuve, from a screenplay he wrote with Brian K. Vaughan. Based on the 1969 novel Dune Messiah by Frank Herbert, it is the sequel to Dune: Part Two (2024) and the final installment of a trilogy of films developed by Legendary Pictures. Villeneuve produced the film with his wife and business partner Tanya Lapointe, Legendary's Mary Parent and Cale Boyter, and Joseph M. Caracciolo Jr. Timothée Chalamet leads an ensemble cast as Paul Atreides, the despotic Emperor of the Known Universe forced to contend with the fallout of his ascent to the throne, including threats of an insurgency and visions of widespread pandemonium. The film is the second adaptation of Dune Messiah, preceded by its collective adaptation with Children of Dune as John Harrison's 2003 television miniseries Frank Herbert's Children of Dune. Villeneuve envisioned a trilogy of films as early as 2021. He commenced work on the script to develop a story concluding Paul's character arc in late 2023, and Legendary commissioned Dune: Part Three the following year. The producers then began hiring filmmakers for the production. Principal photography started in July 2025 and wrapped that November, taking place in Hungary and the United Arab Emirates. Hans Zimmer composed the film's score. Dune: Part Three is scheduled for release in the United States on December 18, 2026."
+          }
+        ],
+        "metadata": {
+          "rating": null,
+          "votes": 0
+        },
+        "streamingPlatform": "",
+        "collection": "",
+        "netflixOriginal": false,
+        "streamingRegion": ""
+      },
       "attempts": 0,
       "createdAt": "2026-11-17T00:47:56.078Z",
-      "updatedAt": "2026-11-18T20:01:39.842Z",
+      "updatedAt": "2026-11-18T23:09:35.579Z",
       "nextAttemptAt": null,
       "lastError": null,
       "lastProvider": "groq",
@@ -436,7 +495,9 @@
       "articlePath": null,
       "recoveryAttempts": 1,
       "evidenceRecoveryAttempts": 0,
-      "resumeTo": null
+      "resumeTo": null,
+      "excludedProviders": [],
+      "nextStageAt": 1795044275579
     },
     "game:290856": {
       "key": "game:290856",
@@ -2062,9 +2123,9 @@
     },
     "2026-11-18": {
       "groq": {
-        "requests": 11,
-        "tokens": 24277,
-        "successes": 7,
+        "requests": 12,
+        "tokens": 26438,
+        "successes": 8,
         "failures": 1
       },
       "gemini": {
@@ -2092,7 +2153,8 @@
     "startedAt": 1795042641925,
     "deadlineAt": 1795045341925,
     "nextStartAt": 1795045341925,
-    "articleKey": "movie:1185344"
+    "articleKey": "movie:1170608",
+    "nextPublishAt": 1795045341925
   },
   "discoveryBacklog": {
     "movie:1368881": {
@@ -9381,5 +9443,7 @@
       "sourceUrl": "https://www.themoviedb.org/movie/1286656",
       "popularity": 44
     }
-  }
+  },
+  "discoveryCheckedAt": 1795043375579,
+  "discoveryCount": 0
 }
