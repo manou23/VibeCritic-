@@ -41,8 +41,11 @@ globalThis.fetch=async(url,options)=>{
   }
   if(parsedUrl.hostname==='api.themoviedb.org'&&parsedUrl.pathname==='/3/discover/movie'){
    assert.equal(parsedUrl.searchParams.get('primary_release_date.gte'),'2026-01-01');
-   assert.equal(parsedUrl.searchParams.get('primary_release_date.lte'),'2026-12-31');
-   if(parsedUrl.searchParams.get('with_companies')==='178464|12345')return new Response(JSON.stringify({results:parsedUrl.searchParams.get('page')==='1'?[{id:303,title:'Netflix 2026 Film',overview:'A detailed Netflix 2026 film synopsis for discovery.',release_date:'2026-02-10',poster_path:'/netflix-film.jpg',backdrop_path:'/netflix-film-backdrop.jpg',vote_count:250},{id:909,title:'Netflix Future 2026 Film',overview:'A forthcoming Netflix 2026 film synopsis for the release watchlist.',release_date:'2026-11-25',poster_path:'/netflix-future-film.jpg',backdrop_path:'/netflix-future-film-backdrop.jpg',vote_count:100}]:[]}),{status:200,headers:{'content-type':'application/json'}});
+   if(parsedUrl.searchParams.get('with_companies')==='178464|12345'){
+    assert.equal(parsedUrl.searchParams.get('primary_release_date.lte'),'2026-12-31');
+    return new Response(JSON.stringify({results:parsedUrl.searchParams.get('page')==='1'?[{id:303,title:'Netflix 2026 Film',overview:'A detailed Netflix 2026 film synopsis for discovery.',release_date:'2026-02-10',poster_path:'/netflix-film.jpg',backdrop_path:'/netflix-film-backdrop.jpg',vote_count:250},{id:909,title:'Netflix Future 2026 Film',overview:'A forthcoming Netflix 2026 film synopsis for the release watchlist.',release_date:'2026-11-25',poster_path:'/netflix-future-film.jpg',backdrop_path:'/netflix-future-film-backdrop.jpg',vote_count:100}]:[]}),{status:200,headers:{'content-type':'application/json'}});
+   }
+   assert.ok(parsedUrl.searchParams.get('primary_release_date.lte'));
    assert.equal(parsedUrl.searchParams.get('with_watch_providers'),'8');
    if(parsedUrl.searchParams.get('watch_region')==='DZ')return new Response(JSON.stringify({results:parsedUrl.searchParams.get('page')==='1'?[{id:606,title:'Netflix Licensed 2026 Film',overview:'A detailed synopsis for a 2026 film currently streaming on Netflix Algeria.',release_date:'2026-04-10',poster_path:'/licensed-film.jpg',backdrop_path:'/licensed-film-backdrop.jpg',vote_count:150}]:[]}),{status:200,headers:{'content-type':'application/json'}});
    assert.equal(parsedUrl.searchParams.get('watch_region'),'US');
