@@ -44,8 +44,9 @@ globalThis.fetch=async(url,options)=>{
    assert.ok(parsedUrl.searchParams.get('primary_release_date.lte'));
    if(parsedUrl.searchParams.get('with_companies')==='178464|12345')return new Response(JSON.stringify({results:parsedUrl.searchParams.get('page')==='1'?[{id:303,title:'Netflix 2026 Film',overview:'A detailed Netflix 2026 film synopsis for discovery.',release_date:'2026-02-10',poster_path:'/netflix-film.jpg',backdrop_path:'/netflix-film-backdrop.jpg',vote_count:250}]:[]}),{status:200,headers:{'content-type':'application/json'}});
    assert.equal(parsedUrl.searchParams.get('with_watch_providers'),'8');
-   assert.equal(parsedUrl.searchParams.get('watch_region'),'DZ');
-   return new Response(JSON.stringify({results:parsedUrl.searchParams.get('page')==='1'?[{id:606,title:'Netflix Licensed 2026 Film',overview:'A detailed synopsis for a 2026 film currently streaming on Netflix Algeria.',release_date:'2026-04-10',poster_path:'/licensed-film.jpg',backdrop_path:'/licensed-film-backdrop.jpg',vote_count:150}]:[]}),{status:200,headers:{'content-type':'application/json'}});
+   if(parsedUrl.searchParams.get('watch_region')==='DZ')return new Response(JSON.stringify({results:parsedUrl.searchParams.get('page')==='1'?[{id:606,title:'Netflix Licensed 2026 Film',overview:'A detailed synopsis for a 2026 film currently streaming on Netflix Algeria.',release_date:'2026-04-10',poster_path:'/licensed-film.jpg',backdrop_path:'/licensed-film-backdrop.jpg',vote_count:150}]:[]}),{status:200,headers:{'content-type':'application/json'}});
+   assert.equal(parsedUrl.searchParams.get('watch_region'),'US');
+   return new Response(JSON.stringify({results:parsedUrl.searchParams.get('page')==='1'?[{id:808,title:'Netflix US 2026 Film',overview:'A detailed synopsis for a 2026 film streaming on Netflix US.',release_date:'2026-05-15',poster_path:'/us-film.jpg',backdrop_path:'/us-film-backdrop.jpg',vote_count:120}]:[]}),{status:200,headers:{'content-type':'application/json'}});
   }
   if(parsedUrl.hostname==='api.themoviedb.org'&&parsedUrl.pathname==='/3/discover/tv'){
    assert.equal(parsedUrl.searchParams.get('air_date.gte'),'2026-01-01');
@@ -132,6 +133,7 @@ try{
  assert.ok(expanded.findIndex(x=>x.id==='303')<expanded.findIndex(x=>x.id==='101'),'Netflix 2026 titles must be prioritized ahead of generic popular titles');
  assert.ok(expanded.some(x=>x.type==='movie'&&x.id==='606'&&x.netflixOriginal===false&&x.streamingRegion==='DZ'),'2026 titles currently streaming on Netflix Algeria must also enter the collection');
  assert.ok(expanded.some(x=>x.type==='series'&&x.id==='707'&&x.netflixOriginal===false&&x.streamingRegion==='DZ'),'2026 series airing on Netflix Algeria must also enter the collection');
+ assert.ok(expanded.some(x=>x.type==='movie'&&x.id==='808'&&x.netflixOriginal===false&&x.streamingRegion==='US'),'global Netflix 2026 films unavailable in the Algeria provider feed must be retained with their actual US region');
  mode='game-video-fallback';
  const gameEvidence=await adapters.collectEvidence({type:'game',id:'99',name:'Game With Clip',date:'2020-01-01',overview:'A verified and sufficiently detailed game description that explains its setting, premise, and gameplay systems for the adapter test.',sourceName:'RAWG',sourceUrl:'https://rawg.io/games/game-with-clip',poster:'https://media.rawg.io/media/game-poster.jpg',backdrop:'https://media.rawg.io/media/game-poster.jpg'});
  assert.equal(gameEvidence.externalVideoUrl,'https://media.rawg.io/media/game-trailer.mp4','RAWG detail-page clips should be accepted when the movies endpoint is empty');
