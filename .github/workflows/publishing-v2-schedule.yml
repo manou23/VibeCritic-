@@ -1,7 +1,9 @@
 name: VibeCritic Publishing V2 Schedule
 on:
-  # Retained as a manual recovery entry point; automatic scheduling moved to publishing-v2-automatic.yml.
   workflow_dispatch:
+  schedule:
+    # Restore the previously proven scheduler; offset checkpoints avoid the top-of-hour burst.
+    - cron: '7,22,37,52 * * * *'
 permissions:
   contents: write
 concurrency:
