@@ -13,6 +13,7 @@ poster: "https://www.nintendojo.com/wp-content/uploads/2025/12/Resident_Evil_Req
 backdrop: "https://assetsio.gnwcdn.com/resident-evil-requiem-grace-key-art.webp?auto=webp&enable=upscale&fit=crop&height=600&width=1200"
 youtubeVideoId: "9lrThxCoznw"
 youtubeVideoTitle: "Resident Evil Requiem - Launch Trailer"
+mediaVerified: true
 score: 8.5
 storyScore: 8.1
 visualsScore: 9.2
