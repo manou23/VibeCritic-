@@ -1,4 +1,4 @@
-const RECOVERABLE=/^(?:Evidence rejected: (?:Independent source has insufficient detail|No sufficiently matching independent encyclopedia page|Primary source metadata is too thin|No HTTPS poster available|No verified trailer available)|Editorial rejection: release date is in the future; wait until release before reviewing\.)/i;
+const RECOVERABLE=/^(?:Evidence rejected: (?:Independent source has insufficient detail|No sufficiently matching independent encyclopedia page|Primary source metadata is too thin|No HTTPS poster available|No verified trailer available)|Editorial rejection: release date is in the future[^.]*)/i;
 
 // Reactivate one-time recoverable research failures without touching duplicates,
 // already-written articles, duplicates, or unrelated editorial rejections.
