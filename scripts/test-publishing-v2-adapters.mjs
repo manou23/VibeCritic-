@@ -45,7 +45,7 @@ globalThis.fetch=async(url,options)=>{
    assert.equal(parsedUrl.searchParams.get('with_networks'),'213');
    assert.equal(parsedUrl.searchParams.get('air_date.gte'),'2026-01-01');
    assert.ok(parsedUrl.searchParams.get('air_date.lte'));
-   return new Response(JSON.stringify({results:parsedUrl.searchParams.get('page')==='1'?[{id:404,name:'Netflix 2026 Series',overview:'A detailed Netflix 2026 series synopsis for discovery.',first_air_date:'2026-03-12',poster_path:'/netflix-series.jpg',backdrop_path:'/netflix-series-backdrop.jpg',vote_count:400}]:[]}),{status:200,headers:{'content-type':'application/json'}});
+   return new Response(JSON.stringify({results:parsedUrl.searchParams.get('page')==='1'?[{id:404,name:'Netflix 2026 Series',overview:'A detailed Netflix 2026 series synopsis for discovery.',first_air_date:'2016-07-15',poster_path:'/netflix-series.jpg',backdrop_path:'/netflix-series-backdrop.jpg',vote_count:400}]:[]}),{status:200,headers:{'content-type':'application/json'}});
   }
   if(parsedUrl.hostname==='api.rawg.io')return new Response(JSON.stringify({results:[]}),{status:200,headers:{'content-type':'application/json'}});
   throw new Error('Unexpected discovery URL: '+String(url));
@@ -56,6 +56,12 @@ globalThis.fetch=async(url,options)=>{
   if(parsedUrl.hostname==='en.wikipedia.org'&&parsedUrl.pathname==='/w/api.php'&&parsedUrl.searchParams.get('list')==='search')return new Response(JSON.stringify({query:{search:[{title:'Game With Clip'}]}}),{status:200,headers:{'content-type':'application/json'}});
   if(parsedUrl.hostname==='en.wikipedia.org'&&parsedUrl.pathname==='/w/api.php')return new Response(JSON.stringify({query:{pages:{1:{extract:Array.from({length:25},()=> 'Independent encyclopedia information describes the game and its development history in factual detail.').join(' ')}}}}),{status:200,headers:{'content-type':'application/json'}});
   throw new Error('Unexpected game clip URL: '+String(url));
+ }
+ if(mode==='netflix-series-evidence'){
+  if(parsedUrl.hostname==='api.themoviedb.org')return new Response(JSON.stringify({name:'Netflix Returning Series',original_name:'Netflix Returning Series',overview:'A detailed factual synopsis of the Netflix returning series, its setting, characters, and main conflict, long enough to support an independent critical review.',first_air_date:'2016-07-15',release_date:'',poster_path:'/netflix-series-poster.jpg',backdrop_path:'/netflix-series-backdrop.jpg',networks:[{id:213,name:'Netflix'}],seasons:[{season_number:1,air_date:'2016-07-15'},{season_number:4,air_date:'2026-02-01'}],genres:[{name:'Drama'}],credits:{cast:[{name:'Lead Actor'}],crew:[{name:'Creator',job:'Creator'}]},videos:{results:[{site:'YouTube',type:'Trailer',official:true,key:'Abcdef12345',name:'Official Season Trailer'}]}}),{status:200,headers:{'content-type':'application/json'}});
+  if(parsedUrl.hostname==='en.wikipedia.org'&&parsedUrl.pathname==='/w/api.php'&&parsedUrl.searchParams.get('list')==='search')return new Response(JSON.stringify({query:{search:[{title:'Netflix Returning Series'}]}}),{status:200,headers:{'content-type':'application/json'}});
+  if(parsedUrl.hostname==='en.wikipedia.org'&&parsedUrl.pathname==='/w/api.php')return new Response(JSON.stringify({query:{pages:{1:{extract:Array.from({length:30},()=> 'Independent reference details the series production and narrative history using factual information.').join(' ')}}}}),{status:200,headers:{'content-type':'application/json'}});
+  throw new Error('Unexpected Netflix series evidence URL: '+String(url));
  }
  if(mode==='evidence-fallback'){
   if(parsedUrl.hostname==='api.themoviedb.org')return new Response(JSON.stringify({title:'Test Film',original_title:'Test Film',overview:'A sufficiently detailed verified overview for this test film, describing its premise, characters, setting, and central conflict in a factual way.',release_date:'2020-01-01',poster_path:'/poster.jpg',backdrop_path:'/backdrop.jpg',genres:[{name:'Drama'}],credits:{cast:[{name:'Actor One'}],crew:[{name:'Director One',job:'Director'}]},videos:{results:[{site:'YouTube',type:'Trailer',official:true,key:'Abcdef12345',name:'Official Trailer'}]}}),{status:200,headers:{'content-type':'application/json'}});
@@ -110,6 +116,11 @@ try{
  mode='game-video-fallback';
  const gameEvidence=await adapters.collectEvidence({type:'game',id:'99',name:'Game With Clip',date:'2020-01-01',overview:'A verified and sufficiently detailed game description that explains its setting, premise, and gameplay systems for the adapter test.',sourceName:'RAWG',sourceUrl:'https://rawg.io/games/game-with-clip',poster:'https://media.rawg.io/media/game-poster.jpg',backdrop:'https://media.rawg.io/media/game-poster.jpg'});
  assert.equal(gameEvidence.externalVideoUrl,'https://media.rawg.io/media/game-trailer.mp4','RAWG detail-page clips should be accepted when the movies endpoint is empty');
+ mode='netflix-series-evidence';
+ const netflixSeriesEvidence=await adapters.collectEvidence({type:'series',id:'505',name:'Netflix Returning Series',date:'2016-07-15',overview:'A detailed factual synopsis of the Netflix returning series, its setting, characters, and main conflict, long enough to support an independent critical review.',sourceName:'TMDB',sourceUrl:'https://www.themoviedb.org/tv/505',poster:'https://image.tmdb.org/t/p/w780/netflix-series-poster.jpg',backdrop:'https://image.tmdb.org/t/p/w1280/netflix-series-backdrop.jpg',streamingPlatform:'Netflix',collection:'Netflix 2026'});
+ assert.equal(netflixSeriesEvidence.releaseDate,'2026-02-01','returning Netflix series must use the 2026 season release date, not its original premiere date');
+ assert.equal(netflixSeriesEvidence.streamingPlatform,'Netflix');
+ assert.equal(netflixSeriesEvidence.collection,'Netflix 2026');
  mode='evidence-fallback';
  const recoveredEvidence=await adapters.collectEvidence({type:'movie',id:'77',name:'Test Film',date:'2020-01-01',overview:'A sufficiently detailed verified overview for this test film, describing its premise, characters, setting, and central conflict in a factual way.',sourceName:'TMDB',sourceUrl:'https://www.themoviedb.org/movie/77',poster:'https://image.tmdb.org/t/p/w780/poster.jpg',backdrop:'https://image.tmdb.org/t/p/w1280/backdrop.jpg'});
  assert.equal(recoveredEvidence.sources[1].name,'Wikipedia');
