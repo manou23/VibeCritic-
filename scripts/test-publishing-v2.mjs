@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import {createState,validateState,enqueue,selectActiveJob,cycleDecision,transition,chooseFreeProvider,recordUsage,countWords,validateArticle,validateEvidence} from "./publishing-v2/core.mjs";
+import {createState,validateState,enqueue,selectActiveJob,selectRunnableJob,cycleDecision,transition,chooseFreeProvider,recordUsage,countWords,validateArticle,validateEvidence} from "./publishing-v2/core.mjs";
 const now=Date.parse("2026-11-16T12:00:00Z"),state=createState();
 const {job:first}=enqueue(state,{type:"series",id:"101"},now);
 assert.equal(cycleDecision(state,now).action,"advance");
@@ -21,6 +21,17 @@ const priorityJobs={
 assert.equal(selectActiveJob(priorityJobs).key,'movie:ready-now','a validated ready article must publish before retrying research failures');
 delete priorityJobs['movie:ready-now'];
 assert.equal(selectActiveJob(priorityJobs).key,'series:queued-next','a research-only cooldown must not freeze queued articles');
+const pacedJobs={
+ 'movie:stage-wait':{key:'movie:stage-wait',status:'writing',stage:1,nextStageAt:now+60000,createdAt:new Date(now-1000).toISOString()},
+ 'series:retry-wait':{key:'series:retry-wait',status:'waiting',resumeTo:'writing',nextAttemptAt:now+60000,createdAt:new Date(now-2000).toISOString()},
+ 'game:ready-next':{key:'game:ready-next',status:'queued',stage:0,createdAt:new Date(now).toISOString()}
+};
+assert.equal(selectRunnableJob(pacedJobs,now).key,'game:ready-next','a future stage/retry must not block another runnable draft');
+const concurrentState=createState();
+const {job:pausedDraft}=enqueue(concurrentState,{type:'movie',id:'paused'},now);
+concurrentState.jobs[pausedDraft.key]={...pausedDraft,status:'waiting',nextAttemptAt:now+60000,resumeTo:'writing'};
+const {job:nextDraft}=enqueue(concurrentState,{type:'series',id:'next'},now+1,{allowConcurrent:true});
+assert.ok(nextDraft.key==='series:next','a queued draft may be added while another draft is durably paused');
 assert.equal(cycleDecision(state,now+3600005).action,"resume");
 job=transition(job,"resumed",{},now+3600006);assert.equal(job.nextAttemptAt,null);
 job=transition(job,"part-saved",{part:{text:"section 2"}},now+3600007);assert.equal(job.attempts,0,"successful stages reset consecutive failures");
