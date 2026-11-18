@@ -162,8 +162,9 @@ for (const file of reviewFiles) {
     const html = await fs.readFile(pagePath, 'utf8').catch(() => '');
     if (!html.includes('class="article-backdrop"') || !html.includes('class="article-poster"')) reviewFailures.push(file + ': built page must render both backdrop and poster images');
     if (!html.includes('data-youtube-facade') || !html.includes('data-video-id="' + videoId + '"')) reviewFailures.push(file + ': built page must render the embedded official video');
-    if (poster && !html.includes(poster)) reviewFailures.push(file + ': poster URL is missing from the built page');
-    if (backdrop && !html.includes(backdrop)) reviewFailures.push(file + ': backdrop URL is missing from the built page');
+    const containsRenderedUrl = (url) => html.includes(url) || html.includes(url.replace(/&/g, '&amp;'));
+    if (poster && !containsRenderedUrl(poster)) reviewFailures.push(file + ': poster URL is missing from the built page');
+    if (backdrop && !containsRenderedUrl(backdrop)) reviewFailures.push(file + ': backdrop URL is missing from the built page');
   }
   const modeMatch = frontmatter.match(/^reviewMode:\s*(review|preview|limited)\s*$/m);
   const reviewMode = modeMatch?.[1] || 'review';
