@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { parseJsonResponse } from '../review-json.mjs';
+import { SCORE_SCALE_PROMPT } from '../scoring-rubric.mjs';
 
 // V2 adapters: free-tier-only model calls and source-grounded editorial metadata.
 const env=process.env, ROOT='src/content/reviews';
@@ -58,22 +59,30 @@ export function buildFreeProviders(){
 async function discover(){
  const used=await seen();
  const empty={results:[]};
- const [trending,popularMovies,popularSeries,games]=await Promise.all([
+ const today=new Date().toISOString().slice(0,10);
+ const netflixPages=Array.from({length:10},(_,i)=>i+1);
+ const [trending,popularMovies,popularSeries,games,netflixMovies,netflixSeries]=await Promise.all([
   env.TMDB_API_KEY?get(tmdb('trending/all/week',{language:'en-US'})).catch(()=>empty):Promise.resolve(empty),
   env.TMDB_API_KEY?get(tmdb('movie/popular',{language:'en-US',page:1})).catch(()=>empty):Promise.resolve(empty),
   env.TMDB_API_KEY?get(tmdb('tv/popular',{language:'en-US',page:1})).catch(()=>empty):Promise.resolve(empty),
-  env.RAWG_API_KEY?get('https://api.rawg.io/api/games?key='+encodeURIComponent(env.RAWG_API_KEY)+'&ordering=-added&page_size=40').catch(()=>empty):Promise.resolve(empty)
+  env.RAWG_API_KEY?get('https://api.rawg.io/api/games?key='+encodeURIComponent(env.RAWG_API_KEY)+'&ordering=-added&page_size=40').catch(()=>empty):Promise.resolve(empty),
+  env.TMDB_API_KEY?Promise.all(netflixPages.map(page=>get(tmdb('discover/movie',{language:'en-US',include_adult:false,with_companies:'178464',primary_release_date_gte:'2026-01-01',primary_release_date_lte:today,sort_by:'primary_release_date.asc',page})).catch(()=>empty))):Promise.resolve([]),
+  env.TMDB_API_KEY?Promise.all(netflixPages.map(page=>get(tmdb('discover/tv',{language:'en-US',include_adult:false,with_networks:'213',first_air_date_gte:'2026-01-01',first_air_date_lte:today,sort_by:'first_air_date.asc',page})).catch(()=>empty))):Promise.resolve([])
  ]);
  const items=[],added=new Set();
- const addMedia=(x,type)=>{
+ const addMedia=(x,type,extra={})=>{
   const id=String(x?.id||'');const name=clean(x?.title||x?.name);
   if(!id||!name||used.has(type+':'+id)||used.has('title:'+norm(name))||added.has(type+':'+id))return;
   added.add(type+':'+id);
-  items.push({type,id,name,originalTitle:x.original_title||x.original_name||'',overview:clean(x.overview),date:x.release_date||x.first_air_date||'',poster:x.poster_path?'https://image.tmdb.org/t/p/w780'+x.poster_path:'',backdrop:x.backdrop_path?'https://image.tmdb.org/t/p/w1280'+x.backdrop_path:'',sourceName:'TMDB',sourceUrl:'https://www.themoviedb.org/'+(type==='series'?'tv':'movie')+'/'+id,popularity:Number(x.vote_count||x.popularity||0)});
+  items.push({type,id,name,originalTitle:x.original_title||x.original_name||'',overview:clean(x.overview),date:x.release_date||x.first_air_date||'',poster:x.poster_path?'https://image.tmdb.org/t/p/w780'+x.poster_path:'',backdrop:x.backdrop_path?'https://image.tmdb.org/t/p/w1280'+x.backdrop_path:'',sourceName:'TMDB',sourceUrl:'https://www.themoviedb.org/'+(type==='series'?'tv':'movie')+'/'+id,popularity:Number(x.vote_count||x.popularity||0),...extra});
  };
  for(const x of arr(trending.results))if(x.media_type==='movie'||x.media_type==='tv')addMedia(x,x.media_type==='tv'?'series':'movie');
  for(const x of arr(popularMovies.results))addMedia(x,'movie');
  for(const x of arr(popularSeries.results))addMedia(x,'series');
+ // Build the Netflix 2026 editorial queue from Netflix's TMDB studio/network records.
+ // Only already-released titles enter the queue; future titles become eligible automatically after release.
+ for(const page of netflixMovies)for(const x of arr(page.results))addMedia(x,'movie',{streamingPlatform:'Netflix',collection:'Netflix 2026',editorialPriority:100});
+ for(const page of netflixSeries)for(const x of arr(page.results))addMedia(x,'series',{streamingPlatform:'Netflix',collection:'Netflix 2026',editorialPriority:100});
  for(const x of arr(games.results)){
   const id=String(x.id||''),name=clean(x.name);
   if(!id||!name||used.has('game:'+id)||used.has('title:'+norm(name))||added.has('game:'+id))continue;
@@ -81,7 +90,7 @@ async function discover(){
   items.push({type:'game',id,name,overview:clean(x.description_raw||x.description),date:x.released||'',poster:x.background_image||'',backdrop:x.background_image_additional||x.background_image||'',sourceName:'RAWG',sourceUrl:'https://rawg.io/games/'+(x.slug||id),genres:arr(x.genres).map(v=>v.name).filter(Boolean),platforms:arr(x.platforms).map(v=>v.platform?.name).filter(Boolean),popularity:Number(x.added||0)});
  }
  const counts={game:0,movie:0,series:0};for(const x of items)counts[x.type]++;
- return items.sort((a,b)=>(counts[a.type]-counts[b.type])-(counts[b.type]-counts[a.type])||b.popularity-a.popularity).slice(0,80);
+ return items.sort((a,b)=>Number(b.editorialPriority||0)-Number(a.editorialPriority||0)||(counts[a.type]-counts[b.type])-(counts[b.type]-counts[a.type])||b.popularity-a.popularity).slice(0,80);
 }
 async function wiki(title){
  const u=new URL('https://en.wikipedia.org/w/api.php');for(const [k,v] of Object.entries({action:'query',list:'search',srsearch:title,format:'json',srlimit:'5'}))u.searchParams.set(k,v);
@@ -133,13 +142,14 @@ async function collectEvidence(item){
  if(!poster?.startsWith('https://'))throw new Error('No HTTPS poster available');
  const independent=await wiki(item.name),primary={name:item.sourceName,url:sourceUrl,extract:clean(item.overview||data.overview||data.description_raw||'').slice(0,4000)};
  if(primary.extract.length<80)throw new Error('Primary source metadata is too thin');
- return {title:item.name,originalTitle:item.originalTitle||data.original_title||data.original_name||'',type:item.type,sourceName:item.sourceName,sourceUrl,sourceId:item.type+':'+item.id,releaseDate,overview:primary.extract,poster,backdrop:backdrop||poster,genres,platforms,cast,crew,youtubeVideoId,youtubeVideoTitle,externalVideoUrl,externalVideoTitle,sources:[primary,independent],metadata:{rating:data.vote_average||data.rating||null,votes:data.vote_count||data.ratings_count||0}};
+ return {title:item.name,originalTitle:item.originalTitle||data.original_title||data.original_name||'',type:item.type,sourceName:item.sourceName,sourceUrl,sourceId:item.type+':'+item.id,releaseDate,overview:primary.extract,poster,backdrop:backdrop||poster,genres,platforms,cast,crew,youtubeVideoId,youtubeVideoTitle,externalVideoUrl,externalVideoTitle,sources:[primary,independent],metadata:{rating:data.vote_average||data.rating||null,votes:data.vote_count||data.ratings_count||0},streamingPlatform:item.streamingPlatform||'',collection:item.collection||''};
 }
 function prompt(job,stage){
  const e=job.evidence,prior=job.parts.map(p=>p.text).join('\n\n');
  return ['أنت محرر VibeCritic وناقد عربي. لا تدّع مشاهدة أو لعباً مباشراً ولا تخترع حقائق.',
  'العمل: '+e.title+' | النوع: '+e.type+' | تاريخ الإصدار: '+(e.releaseDate||'غير مثبت'),
  'الأدلة: '+JSON.stringify({overview:e.overview,genres:e.genres,platforms:e.platforms,cast:e.cast,crew:e.crew,metadata:e.metadata,sources:e.sources.map(s=>({name:s.name,url:s.url,extract:s.extract}))}),
+ 'معايرة الدرجات: '+SCORE_SCALE_PROMPT+'. لا تمنح 9 أو أكثر إلا لاستثنائية واضحة ونادرة، ولا ترفع الدرجة لمجرد شهرة Netflix أو شعبية العمل. استخدم متوسطات TMDB وعدد الأصوات كإشارة جماهيرية ثانوية فقط، لا كدرجة نقدية ولا كبديل عن تحليل الأدلة. إذا كانت الأدلة محدودة فكن متحفظاً واذكر حدود الحكم.',
  'ما كتب سابقاً، لا تكرره: '+(prior||'لا شيء'),
  'اكتب القسم '+stage+' من 3، واستهدف نحو 230 كلمة عربية فعلية (الحد الأدنى 190 والحد الأعلى 280). اكتب فقرات تحليلية فقط دون عناوين Markdown داخل review ودون ذكر المرحلة أو ترقيمها؛ سيضيف المحرك العنوان الرئيسي تلقائياً. لا تكرر محتوى الأقسام السابقة. '+(e.type==='game'?['## القصة والعالم والشخصيات','## أسلوب اللعب والتصميم والإيقاع','## التقييم النقدي وحدود التجربة'][stage-1]:['## القصة والشخصيات والبناء','## الإخراج والصورة والصوت والإيقاع','## التقييم النقدي وحدود العمل'][stage-1])+'. المرحلة 1 تشرح الفكرة والشخصيات دون حرق؛ المرحلة 2 تحلل الأنظمة أو الإخراج والعناصر الفنية والإيقاع؛ المرحلة 3 تضيف موازنة نقدية جديدة ولا تعيد صياغة القسمين السابقين.',
  'أعد JSON فقط: review,scores,pros,cons,verdict. scores تحوي story,visuals,sound,pacing من 0 إلى 10. في المرحلة 3 فقط اكتب 3 نقاط قوة و2 تحفظات محددة وverdict من 50 إلى 90 كلمة. قبل ذلك اجعل القوائم والحكم فارغة. لا تكتب نصاً خارج review.',
@@ -177,7 +187,7 @@ async function publishFile(a,job){
  const filename=a.type+'-'+slug(a.title)+'-'+String(job.item.id).replace(/[^\w-]/g,'')+'.md',target=path.join(ROOT,filename);
  await fs.mkdir(ROOT,{recursive:true});
  try{await fs.access(target);throw new Error('Refusing to overwrite '+target);}catch(e){if(e.code!=='ENOENT')throw e;}
- const fm=['---','title: '+y(a.title),'originalTitle: '+y(a.originalTitle),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 5','reviewMode: review','date: '+a.date,'publishedAt: '+y(new Date().toISOString()),'type: '+a.type,'score: '+a.score,'storyScore: '+a.storyScore,'visualsScore: '+a.visualsScore,'soundScore: '+a.soundScore,'pacingScore: '+a.pacingScore,'sourceName: '+y(a.sourceName),'sourceId: '+y(a.sourceId),'sourceUrl: '+y(a.sourceUrl),...(a.youtubeVideoId?['youtubeVideoId: '+y(a.youtubeVideoId),'youtubeVideoTitle: '+y(a.youtubeVideoTitle)]:[]),...(a.externalVideoUrl?['externalVideoUrl: '+y(a.externalVideoUrl),'externalVideoTitle: '+y(a.externalVideoTitle)]:[]),'aiGenerated: true','editorialWorkflow: automated','poster: '+y(a.poster),'backdrop: '+y(a.backdrop),'platforms:'+yamlList(a.platforms),'genres:'+yamlList(a.genres),'cast:'+yamlList(a.cast),'crew:'+yamlList(a.crew),'pros:'+yamlList(a.pros),'cons:'+yamlList(a.cons),'tags:'+yamlList(a.tags)].join('\n');
+ const fm=['---','title: '+y(a.title),'originalTitle: '+y(a.originalTitle),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 5','reviewMode: review','date: '+a.date,'publishedAt: '+y(new Date().toISOString()),'type: '+a.type,'score: '+a.score,'storyScore: '+a.storyScore,'visualsScore: '+a.visualsScore,'soundScore: '+a.soundScore,'pacingScore: '+a.pacingScore,'sourceName: '+y(a.sourceName),'sourceId: '+y(a.sourceId),'sourceUrl: '+y(a.sourceUrl),...(a.streamingPlatform?['streamingPlatform: '+y(a.streamingPlatform)]:[]),...(a.collection?['editorialCollection: '+y(a.collection)]:[]),...(a.youtubeVideoId?['youtubeVideoId: '+y(a.youtubeVideoId),'youtubeVideoTitle: '+y(a.youtubeVideoTitle)]:[]),...(a.externalVideoUrl?['externalVideoUrl: '+y(a.externalVideoUrl),'externalVideoTitle: '+y(a.externalVideoTitle)]:[]),'aiGenerated: true','editorialWorkflow: automated','poster: '+y(a.poster),'backdrop: '+y(a.backdrop),'platforms:'+yamlList(a.platforms),'genres:'+yamlList(a.genres),'cast:'+yamlList(a.cast),'crew:'+yamlList(a.crew),'pros:'+yamlList(a.pros),'cons:'+yamlList(a.cons),'tags:'+yamlList(a.tags)].join('\n');
  await fs.writeFile(target,fm+'\n---\n\n'+a.body+'\n\n> مراجعة تحريرية مبنية على المصادر المذكورة، ولا تدّعي تجربة مباشرة.\n',{flag:'wx',encoding:'utf8'});
  return {path:target.replace(/\\/g,'/')};
 }
