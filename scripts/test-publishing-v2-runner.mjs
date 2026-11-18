@@ -180,7 +180,7 @@ const netflixPriorityAdapters={
  discover:async()=>[
   {type:'game',id:'general-game',name:'General Game',date:'2026-11-16'},
   {type:'movie',id:'netflix-2026',name:'Netflix 2026 Film',date:'2026-11-16',streamingPlatform:'Netflix',collection:'Netflix 2026',editorialPriority:100},
-  {type:'movie',id:'netflix-future-2026',name:'Upcoming Netflix 2026 Film',date:new Date(now+365*24*60*60*1000).toISOString().slice(0,10),streamingPlatform:'Netflix',collection:'Netflix 2026',editorialPriority:100}
+  {type:'movie',id:'netflix-future-2026',name:'Upcoming Netflix 2026 Film',date:new Date(now+365*24*60*60*1000).toISOString().slice(0,10),streamingPlatform:'Netflix',collection:'Netflix 2026',editorialPriority:99}
  ],
  collectEvidence:async item=>({title:item.name,type:item.type,sourceId:item.type+':'+item.id,overview:'Verified synopsis',sources:[{name:'TMDB',url:'https://www.themoviedb.org/movie/1'},{name:'Wikipedia',url:'https://en.wikipedia.org/wiki/Test'}],youtubeVideoId:'Abcdef12345',poster:'https://example.com/poster.jpg'}),
  generatePart:async({stage})=>({text:'Netflix queue stage '+stage+' '+text,tokens:100}),
