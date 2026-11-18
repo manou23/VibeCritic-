@@ -237,6 +237,16 @@ normalizedSearchInput?.addEventListener('input',()=>{
  const matches=normalizedSearchEntries.filter(item=>normalizeArabicSearch(item.search).includes(query)).slice(0,10);
  if(!matches.length){const empty=document.createElement('p');empty.textContent='لا توجد مراجعات مطابقة. جرّب كتابة جزء آخر من الاسم.';normalizedSearchResults.append(empty);return;}
  for(const item of matches){const link=document.createElement('a');link.className='site-search-result';link.href=item.href;const title=document.createElement('strong');title.textContent=item.title;const summary=document.createElement('span');summary.textContent=item.summary;link.append(title,summary);normalizedSearchResults.append(link);}
-});</script>
+});
+document.querySelectorAll('img[data-fallback-src]').forEach((img)=>{
+  img.addEventListener('error',()=>{
+    const next=img.dataset.fallbackStep==='1'?img.dataset.lastFallbackSrc:img.dataset.fallbackSrc;
+    img.dataset.fallbackStep=img.dataset.fallbackStep==='1'?'2':'1';
+    if(next&&img.src!==next){img.src=next;return;}
+    img.removeAttribute('data-fallback-src');
+    img.removeAttribute('data-last-fallback-src');
+  });
+});
+</script>
 </body>
 </html>
