@@ -48,6 +48,12 @@
       "sha256": "b4f8edb0e6b888f5c567ef218b31b70618984b1446ae762b0bdf84c1b5684d69",
       "articlePath": "src/content/reviews/unchosen-2026.md",
       "publishedAt": "2026-11-18T01:06:29.365Z"
+    },
+    "marvels-wolverine-2026": {
+      "sourceId": "playstation-2026-game-marvels-wolverine-ps5",
+      "sha256": "dacdd85b7a054f9058d599c6923f09a8b40e578e0d5a2be2a3eaa1302d55f277",
+      "articlePath": "src/content/reviews/marvels-wolverine-2026.md",
+      "publishedAt": "2026-11-18T01:08:15.246Z"
     }
   }
 }
