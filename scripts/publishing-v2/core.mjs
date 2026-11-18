@@ -21,8 +21,21 @@ export function validateState(s){
  }
  return s;
 }
-// Oldest active draft owns the queue, including while cooling down. Never hop to newer work.
-export function selectActiveJob(jobs={}){return Object.values(jobs).filter(j=>j&&ACTIVE.has(j.status)).sort((a,b)=>time(a.createdAt)-time(b.createdAt)||a.key.localeCompare(b.key))[0]||null;}
+// Finish a validated or partially written draft first. A research-only cooldown
+// must not freeze unrelated queued work; retry it after ready/writing/queued jobs.
+function activePriority(job){
+ if(job.status==='ready')return 0;
+ if(job.status==='quality-check')return 1;
+ if(job.status==='writing'||(job.status==='waiting'&&job.resumeTo==='writing'))return 2;
+ if(job.status==='researching')return 3;
+ if(job.status==='queued')return 4;
+ if(job.status==='waiting'&&job.resumeTo==='researching')return 5;
+ return 6;
+}
+export function selectActiveJob(jobs={}){
+ return Object.values(jobs).filter(j=>j&&ACTIVE.has(j.status))
+  .sort((a,b)=>activePriority(a)-activePriority(b)||time(a.createdAt)-time(b.createdAt)||a.key.localeCompare(b.key))[0]||null;
+}
 export function cycleDecision(state,now=Date.now()){
  validateState(state);const job=selectActiveJob(state.jobs);if(!job)return {action:"discover",job:null};
  const retry=time(job.nextAttemptAt);if(job.status==="waiting"&&retry>now)return {action:"wait",job,retryAt:retry};
