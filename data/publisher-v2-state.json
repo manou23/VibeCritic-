@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T09:31:57.608Z",
+  "updatedAt": "2026-11-18T11:47:24.608Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -1469,7 +1469,7 @@
         "sourceUrl": "https://www.themoviedb.org/tv/83631",
         "popularity": 1103
       },
-      "status": "ready",
+      "status": "published",
       "stage": 3,
       "parts": [
         {
@@ -1535,7 +1535,7 @@
       },
       "attempts": 0,
       "createdAt": "2026-11-17T23:47:48.744Z",
-      "updatedAt": "2026-11-18T09:31:51.283Z",
+      "updatedAt": "2026-11-18T11:47:22.144Z",
       "nextAttemptAt": null,
       "lastError": null,
       "lastProvider": "groq",
@@ -1616,7 +1616,9 @@
         "characters": 3676
       },
       "fileWritten": true,
-      "articlePath": "src/content/reviews/series-what-we-do-in-the-shadows-83631.md"
+      "articlePath": "src/content/reviews/series-what-we-do-in-the-shadows-83631.md",
+      "deployedAt": "2026-11-18T11:47:22.144Z",
+      "publishedAt": "2026-11-18T11:47:22.144Z"
     }
   },
   "providerUsage": {
@@ -1683,9 +1685,9 @@
   },
   "providerCooldowns": {},
   "cycle": {
-    "startedAt": 1794994311283,
-    "deadlineAt": 1794996111283,
-    "nextStartAt": 1794996111283,
+    "startedAt": 1795002442144,
+    "deadlineAt": 1795004242144,
+    "nextStartAt": 1795004242144,
     "articleKey": "series:83631"
   },
   "discoveryBacklog": {
@@ -8968,6 +8970,19 @@
       "collection": "Netflix 2026",
       "netflixOriginal": true,
       "editorialPriority": 100
+    },
+    "movie:1131943": {
+      "type": "movie",
+      "id": "1131943",
+      "name": "Madden",
+      "originalTitle": "Madden",
+      "overview": "Chronicles John Madden's incredible journey alongside best friend and true original Al Davis—from a Super Bowl-winning partnership with the Raiders, to becoming football’s most recognizable voice, to building the worldwide Madden NFL video game.",
+      "date": "2026-11-18",
+      "poster": "https://image.tmdb.org/t/p/w780/bRa83oPFFPqaAF3wrpVWPqqfFel.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/iNKyRudHcd2oXV5eaWE0LbixkX3.jpg",
+      "sourceName": "TMDB",
+      "sourceUrl": "https://www.themoviedb.org/movie/1131943",
+      "popularity": 8.7057
     }
   }
 }
