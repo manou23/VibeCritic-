@@ -50,13 +50,8 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
   state.cycle={startedAt:now,deadlineAt:now+CYCLE_INTERVAL,nextStartAt:now+CYCLE_INTERVAL,articleKey:null};
   await save();
  }
- // Never score or publish an unreleased movie/series/game as a completed review.
- const today=new Date(now).toISOString().slice(0,10);
- if(job&&job.item?.date&&String(job.item.date).slice(0,10)>today&&job.status!=='published'){
-  state.jobs[job.key]=transition(job,'abandoned',{lastError:'Editorial rejection: release date is in the future; wait until release before reviewing.'},now);
-  if(state.cycle?.articleKey===job.key)state.cycle.articleKey=null;
-  await save();job=null;
- }
+ // Upcoming titles are eligible for clearly labeled advance-reading articles; the adapter
+ // instructs the writer not to present predictions as hands-on reviews.
  // Avoid creating a duplicate review when an existing manual or assisted article covers this title.
  if(job&&!job.fileWritten&&job.status!=='ready'&&adapters.isAlreadyPublished&&await adapters.isAlreadyPublished(job.item)){
   const duplicateKey=job.key;
