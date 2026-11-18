@@ -165,6 +165,26 @@ assert.equal(qualityCalls,4,'only the rejected third section is regenerated');
 assert.equal(qualityAssembles,2);
 assert.equal(qualityWrites,1);
 
+// Stale saved independent evidence must be invalidated before a waiting draft resumes writing.
+const staleEvidenceState=createState();
+staleEvidenceState.jobs['movie:stale-evidence']={key:'movie:stale-evidence',item:{type:'movie',id:'stale-evidence',name:'The Beast',sourceName:'TMDB'},status:'waiting',resumeTo:'writing',stage:2,parts:[{text:'old section one'},{text:'old section two'}],evidence:{title:'The Beast',type:'movie',sources:[{name:'TMDB',url:'https://www.themoviedb.org/movie/1',extract:'A film synopsis long enough to pass the primary source check.'},{name:'Wikidata',url:'https://www.wikidata.org/wiki/Q1',extract:'The Beast. album by Polish death metal band Vader'}]},nextAttemptAt:now+3600000,createdAt:new Date(now).toISOString(),updatedAt:new Date(now).toISOString()};
+let staleResearchCalls=0,staleWriterCalls=0;
+const staleAdapters={
+ discover:async()=>[],
+ validateSavedEvidence:(_item,evidence)=>({valid:!String(evidence?.sources?.[1]?.extract||'').includes('album by Polish death metal band'),reason:'Independent source title/type mismatch.'}),
+ collectEvidence:async item=>{staleResearchCalls++;return {title:item.name,type:item.type,sourceId:item.type+':'+item.id,overview:'Verified film synopsis with sufficient detail.',sources:[{name:'TMDB',url:'https://www.themoviedb.org/movie/1',extract:'Verified film synopsis with sufficient detail.'},{name:'Wikipedia',url:'https://en.wikipedia.org/wiki/The_Beast_film',extract:'The Beast is a 2026 science fiction film directed by a verified filmmaker.'}],poster:'https://example.com/poster.jpg',youtubeVideoId:'Abcdef12345'};},
+ generatePart:async({stage})=>{staleWriterCalls++;return {text:'fresh stage '+stage,tokens:100};},
+ assembleArticle:async()=>article,publishFile:async()=>({path:'unused'}),verifyDeployment:async()=>false
+};
+const staleRecovery=await runCycle({state:staleEvidenceState,adapters:staleAdapters,providers,now,persist:async()=>{}});
+assert.equal(staleResearchCalls,1,'invalid saved evidence must trigger fresh research');
+assert.equal(staleWriterCalls,1,'writing may resume only after fresh evidence has been collected');
+assert.equal(staleRecovery.action,'stage-saved');
+assert.equal(staleEvidenceState.jobs['movie:stale-evidence'].evidence.title,'The Beast');
+assert.equal(staleEvidenceState.jobs['movie:stale-evidence'].parts.length,1,'old sections must be discarded when their evidence is invalidated');
+assert.equal(staleEvidenceState.jobs['movie:stale-evidence'].stage,1);
+assert.ok(staleEvidenceState.jobs['movie:stale-evidence'].evidence.sources[1].extract.includes('science fiction film'));
+
 // A saved research job that hit Wikipedia's 429 receives one immediate alternate-endpoint attempt.
 const rateLimitState=createState();
 rateLimitState.jobs["movie:rate-limit"]={key:"movie:rate-limit",item:{type:"movie",id:"rate-limit",date:"2020-01-01"},status:"waiting",stage:0,parts:[],evidence:null,attempts:0,createdAt:new Date(now).toISOString(),updatedAt:new Date(now).toISOString(),nextAttemptAt:now+60*60*1000,lastError:"Evidence: Source HTTP 429 (en.wikipedia.org)",resumeTo:"researching"};
