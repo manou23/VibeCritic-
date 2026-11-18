@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T23:17:32.580Z",
+  "updatedAt": "2026-11-18T23:21:39.147Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -1492,21 +1492,71 @@
         ],
         "popularity": 14360
       },
-      "status": "queued",
+      "status": "waiting",
       "stage": 0,
       "parts": [],
-      "evidence": null,
-      "attempts": 0,
+      "evidence": {
+        "title": "Fallout 4",
+        "originalTitle": "",
+        "type": "game",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/fallout-4",
+        "sourceId": "game:3070",
+        "releaseDate": "2015-11-09",
+        "overview": "The fourth game in the post-apocalyptic action RPG series from Bethesda studious brings players back to the retro-future. After customizing the facial features of the character, players will be admitted to the Vault 111 with their family, and tricked into entering the cryogenic capsule. After the rude awakening after the unknown amount of time has passed, the child is separated from the parents and the loving partner is killed in front of them – the main quest is settled. Now there’s only the giant open world to explore. Fallout 4 introduces the mechanics of settlement building, where players can build their own little town. Gathering material for crafting and building brings more “survival” elements into the old formula. Within their own settlements, players will be able to build all needed utilities, from storage spaces to power armor stations. Visual upgrade from the previous game brings life to what used to be brown wastelands, now filled with details and color.",
+        "poster": "https://media.rawg.io/media/games/d82/d82990b9c67ba0d2d09d4e6fa88885a7.jpg",
+        "backdrop": "https://media.rawg.io/media/screenshots/fdf/fdf7213f4eccd1d7257491b893068310.jpg",
+        "genres": [
+          "Action",
+          "RPG"
+        ],
+        "platforms": [
+          "PlayStation 4",
+          "PC",
+          "PlayStation 5",
+          "Xbox One"
+        ],
+        "cast": [],
+        "crew": [],
+        "youtubeVideoId": "",
+        "youtubeVideoTitle": "",
+        "externalVideoUrl": "",
+        "externalVideoTitle": "",
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/fallout-4",
+            "extract": "The fourth game in the post-apocalyptic action RPG series from Bethesda studious brings players back to the retro-future. After customizing the facial features of the character, players will be admitted to the Vault 111 with their family, and tricked into entering the cryogenic capsule. After the rude awakening after the unknown amount of time has passed, the child is separated from the parents and the loving partner is killed in front of them – the main quest is settled. Now there’s only the giant open world to explore. Fallout 4 introduces the mechanics of settlement building, where players can build their own little town. Gathering material for crafting and building brings more “survival” elements into the old formula. Within their own settlements, players will be able to build all needed utilities, from storage spaces to power armor stations. Visual upgrade from the previous game brings life to what used to be brown wastelands, now filled with details and color."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Fallout_4",
+            "extract": "Fallout 4 is a 2015 action role-playing game developed by Bethesda Game Studios and published by Bethesda Softworks. It is the fourth main game in the Fallout series and was released worldwide on November 10, 2015, for PlayStation 4, Windows, and Xbox One, with versions for PlayStation 5 and Xbox Series X/S released on April 25, 2024. The open world is set within a post-apocalyptic environment that encompasses the American city of Boston and the surrounding Massachusetts region, known in-game as \"the Commonwealth\". The main story takes place in the year 2287, 10 years after the events of Fallout 3 and 210 years after a nuclear holocaust known as the \"Great War\". The player assumes control of a character simply referred to as the \"Sole Survivor\", who emerges from a long-term cryogenic stasis in Vault 111, an underground nuclear fallout shelter. After witnessing the murder of their spouse and the kidnapping of their son Shaun, the Sole Survivor ventures out into the Commonwealth to search for their missing child. The player explores the game's dilapidated world, completes quests, assists factions, and acquires experience points to level up and increase the abilities of their character. New features to the series include the ability to develop and manage settlements and an extensive crafting system where materials scavenged from the environment can be used to craft explosives, upgrade weapons and armor, and construct, furnish, and improve settlements. It is the first game in the series to feature a fully voiced protagonist. Fallout 4 received positive reviews from critics; many praised the world depth, player freedom, overall amount of content, crafting, story, characters, and soundtrack. Criticism was mainly directed at the game's simplified role-playing elements compared to its predecessors and technical issues. It shipped 12 million units to retailers, which generated US$750 million within the first 24 hours of its launch. It received numerous accolades from various gaming publications and award events, including the respective awards for Game of the Year and Best Game at the D.I.C.E. Awards and British Academy Games Awards. Bethesda released six downloadable content add-ons, including the expansions Far Harbor and Nuka-World. A version bundling the base game, its downloadable content and all previously released Creation Club content, called the Fallout 4: Anniversary Edition, was released on November 10, 2025, for all platforms, followed by a Nintendo Switch 2 version on February 24, 2026."
+          }
+        ],
+        "metadata": {
+          "rating": 3.81,
+          "votes": 3452
+        },
+        "streamingPlatform": "",
+        "collection": "",
+        "netflixOriginal": false,
+        "streamingRegion": ""
+      },
+      "attempts": 1,
       "createdAt": "2026-11-17T23:35:14.861Z",
-      "updatedAt": "2026-11-18T19:45:30.746Z",
-      "nextAttemptAt": null,
-      "lastError": null,
+      "updatedAt": "2026-11-18T23:21:30.972Z",
+      "nextAttemptAt": 1795044390972,
+      "lastError": "openrouter: Section word count rejected: 177",
       "researchFallbackAttempted": true,
       "article": null,
       "quality": null,
       "recoveryAttempts": 1,
       "evidenceRecoveryAttempts": 0,
-      "resumeTo": null
+      "resumeTo": "writing",
+      "excludedProviders": [
+        "openrouter"
+      ]
     },
     "game:3192": {
       "key": "game:3192",
@@ -2287,10 +2337,10 @@
         "failures": 3
       },
       "openrouter": {
-        "requests": 6,
-        "tokens": 11141,
+        "requests": 8,
+        "tokens": 15122,
         "successes": 0,
-        "failures": 3
+        "failures": 4
       }
     }
   },
@@ -2310,7 +2360,7 @@
     "startedAt": 1795042641925,
     "deadlineAt": 1795045341925,
     "nextStartAt": 1795045341925,
-    "articleKey": "game:278",
+    "articleKey": "game:3070",
     "nextPublishAt": 1795045341925
   },
   "discoveryBacklog": {
