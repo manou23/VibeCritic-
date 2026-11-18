@@ -37,11 +37,12 @@ export function selectActiveJob(jobs={}){
  return Object.values(jobs).filter(j=>j&&ACTIVE.has(j.status))
   .sort((a,b)=>activePriority(a)-activePriority(b)||time(a.createdAt)-time(b.createdAt)||a.key.localeCompare(b.key))[0]||null;
 }
-// Unlike the legacy selector, this skips durable jobs whose retry or next writing stage is not due.
-// It lets the publisher prepare another queued title without discarding a paused draft.
+// Skip future retry/stage checkpoints so the preparation queue keeps moving; the runner
+// explicitly wakes a delayed writing job only when an eligible free fallback is available.
 export function selectRunnableJob(jobs={},now=Date.now(),{includeReady=true}={}){
  return Object.values(jobs).filter(j=>{
   if(!j||!ACTIVE.has(j.status)||(!includeReady&&j.status==="ready"))return false;
+  if(j.status==="waiting"&&time(j.nextAttemptAt)>now)return false;
   if(j.status==="writing"&&j.stage>0&&time(j.nextStageAt)>now)return false;
   return true;
  }).sort((a,b)=>activePriority(a)-activePriority(b)||time(a.createdAt)-time(b.createdAt)||a.key.localeCompare(b.key))[0]||null;
