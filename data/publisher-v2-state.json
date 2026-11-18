@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T19:47:24.816Z",
+  "updatedAt": "2026-11-18T19:59:34.681Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -128,20 +128,79 @@
         "sourceUrl": "https://www.themoviedb.org/movie/1185344",
         "popularity": 32
       },
-      "status": "queued",
-      "stage": 0,
-      "parts": [],
-      "evidence": null,
+      "status": "writing",
+      "stage": 1,
+      "parts": [
+        {
+          "stage": 1,
+          "text": "{\"review\":\"تدور فكرة الفيلم حول انقلاب غير متوقع يشنه ميليشيا مجهولة على الولايات المتحدة، ما يدفع الرئيس إلى اللجوء إلى سلاح غير تقليدي: سيارة ليموزين مدرعة تُدعى \\\"الوحش\\\" وتتمتع بقدرات هجومية سرية. الفكرة تحمل طابعاً سياسياً وعسكرياً يجمع بين الخيال التكنولوجي والدراما الرئاسية، ما يخلق توتراً فوريًا بين السلطة والمسؤولية. يشارك في طاقم التمثيل سامويل ل. جاكسون، الذي من المتوقع أن يجسد شخصية قيادية أو مستشار حكومي، وجويل كينامان الذي قد يلعب دور الرئيس أو أحد الضباط العليا. غاي بورت، إوين ماكن، وكولين مورغان يضيفون أبعاداً ثانوية قد تشمل ضباطاً عسكريين أو أفراد ميليشيا. رغم غياب تفاصيل دقيقة عن تطور الشخصيات، يبدو أن التركيز سينصب على صراع الرئيس مع تهديد داخلي وخارجي، مع إبراز التحديات الأخلاقية لاستخدام سلاح مدمر في سبيل حماية الوطن. لا تُكشف تفاصيل عن خلفيات الأعداء أو دوافعهم، ما يترك مساحة للخيال حول طبيعة الميليشيا وأهدافها. من الناحية السردية، يُحتمل أن يتبع الفيلم نمطاً تقليدياً يتضمن تصعيداً تدريجياً للتهديد، ثم لحظة حاسمة تُستغل فيها \\\"الوحش\\\" لتغيير مسار الأحداث. هذا الإطار يتيح للمخرج ريني هارلين، المعروف بأفلام الحركة، أن يدمج مشاهد قتال سريعة مع لحظات توتر سياسي، ما قد يخلق توازناً بين الإثارة والدراما دون إغراق المشاهد في تفاصيل معقدة.\",\"scores\":{\"story\":0,\"visuals\":0,\"sound\":0,\"pacing\":0},\"pros\":[],\"cons\":[],\"verdict\":\"\"}",
+          "savedAt": "2026-11-18T19:59:30.450Z"
+        }
+      ],
+      "evidence": {
+        "title": "The Beast",
+        "originalTitle": "The Beast",
+        "type": "movie",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1185344",
+        "sourceId": "movie:1185344",
+        "releaseDate": "2026-10-08",
+        "overview": "When a militia of unidentified hostiles coordinates a coup against the United States, the president must fight back by utilizing the highly classified offensive capabilities of his armored limousine, nicknamed The Beast.",
+        "poster": "https://image.tmdb.org/t/p/w780/ocg5JfJP19fodcv5uQUApkmZMdI.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/r5RYEmZzm1Z6imS7XfiKPnMlyc7.jpg",
+        "genres": [
+          "Action",
+          "Thriller"
+        ],
+        "platforms": [],
+        "cast": [
+          "Samuel L. Jackson",
+          "Joel Kinnaman",
+          "Guy Burnet",
+          "Eoin Macken",
+          "Colin Morgan"
+        ],
+        "crew": [
+          "Renny Harlin"
+        ],
+        "youtubeVideoId": "5ckqV_uf8E0",
+        "youtubeVideoTitle": "Official Trailer",
+        "externalVideoUrl": "",
+        "externalVideoTitle": "",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1185344",
+            "extract": "When a militia of unidentified hostiles coordinates a coup against the United States, the president must fight back by utilizing the highly classified offensive capabilities of his armored limousine, nicknamed The Beast."
+          },
+          {
+            "name": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q1781715",
+            "extract": "The Beast. album by Polish death metal band Vader"
+          }
+        ],
+        "metadata": {
+          "rating": 5.25,
+          "votes": 45
+        },
+        "streamingPlatform": "",
+        "collection": "",
+        "netflixOriginal": false,
+        "streamingRegion": ""
+      },
       "attempts": 0,
       "createdAt": "2026-11-16T17:07:11.253Z",
-      "updatedAt": "2026-11-18T19:45:30.746Z",
+      "updatedAt": "2026-11-18T19:59:30.450Z",
       "nextAttemptAt": null,
       "lastError": null,
       "article": null,
       "quality": null,
       "recoveryAttempts": 1,
       "evidenceRecoveryAttempts": 0,
-      "resumeTo": null
+      "resumeTo": null,
+      "lastProvider": "groq",
+      "excludedProviders": [],
+      "nextStageAt": 1795033770450
     },
     "game:41494": {
       "key": "game:41494",
@@ -2065,9 +2124,9 @@
     },
     "2026-11-18": {
       "groq": {
-        "requests": 6,
-        "tokens": 14320,
-        "successes": 5,
+        "requests": 8,
+        "tokens": 17333,
+        "successes": 6,
         "failures": 0
       },
       "gemini": {
@@ -2089,7 +2148,7 @@
     "startedAt": 1795030681734,
     "deadlineAt": 1795032481734,
     "nextStartAt": 1795032481734,
-    "articleKey": "series:336243"
+    "articleKey": "movie:1185344"
   },
   "discoveryBacklog": {
     "movie:1368881": {
