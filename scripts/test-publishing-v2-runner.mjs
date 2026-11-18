@@ -159,7 +159,7 @@ assert.equal(qualityState.jobs['movie:repeat'].stage,2,'the later overlapping se
 assert.equal(qualityState.jobs['movie:repeat'].parts.length,2,'keep the two earlier sections and regenerate only the third');
 assert.equal(qualityWrites,0,'repetitive content must never be written');
 const repairedQuality=await runCycle({state:qualityState,adapters:qualityAdapters,providers,now:qualityNow+60*60*1000+3600003,persist:async()=>{}});
-assert.equal(repairedQuality.action,'file-ready');
+assert.equal(repairedQuality.action,'article-prepared');
 assert.equal(qualityCalls,4,'only the rejected third section is regenerated');
 assert.equal(qualityAssembles,2);
 assert.equal(qualityWrites,1);
