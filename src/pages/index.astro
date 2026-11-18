@@ -65,21 +65,6 @@ const latestReviews=reviews.filter(review=>!isUpcomingReview(review)&&review.dat
   {trendReviews.map(item=><i data-title={item.title} data-summary={item.summary||''} data-backdrop={item.backdrop||item.poster||''} data-backdrop-srcset={responsiveImageSrcSet(item.backdrop||item.poster)} data-poster={item.poster||''} data-type={item.type} data-source={item.source||''} data-href={item.href} data-external={String(item.external)} data-preview={String(item.preview||false)}></i>)}
  </div>
 </section>
-<aside class="wrap ai-review-promo" data-expires="2026-11-19T23:59:59+01:00" aria-label="جرّب المراجع الذكي">
- <div class="ai-review-promo-copy">
-  <span class="ai-review-promo-badge">ميزة جديدة · لفترة محدودة</span><small class="ai-review-promo-expiry">تنتهي في 19 نوفمبر 2026</small>
-  <p class="ai-review-promo-kicker">MEET YOUR AI CRITIC</p>
-  <h2>رأيك القادم يبدأ من هنا!</h2>
-  <p>اكتشف مراجعة ذكية لفيلمك أو مسلسلك أو لعبتك المفضلة، مع تقييم وتحليل ونقاط القوة والضعف في ثوانٍ.</p>
-  <a class="ai-review-promo-cta" href="/ai-review/">جرّب المراجع الذكي <span aria-hidden="true">↗</span></a>
- </div>
- <div class="ai-review-promo-art" aria-hidden="true">
-  <div class="ai-review-promo-orbit"></div>
-  <div class="ai-review-promo-score"><strong>AI</strong><span>REVIEW</span></div>
-  <span class="ai-review-promo-spark spark-one">✦</span>
-  <span class="ai-review-promo-spark spark-two">✧</span>
- </div>
-</aside>
 <section class="wrap catalog-section home-latest-section" id="latest-reviews">
  <div class="catalog-heading">
   <div><p class="catalog-eyebrow">FRESH FROM VIBECRITIC</p><h2>وصل حديثاً</h2><p>أحدث ما نشرناه من مراجعات الألعاب والأفلام والمسلسلات، مرتبة حسب تاريخ النشر.</p></div>
@@ -176,11 +161,6 @@ if(hero){
  if(data.length>1)start();
 }
 
-const aiPromo=document.querySelector<HTMLElement>('.ai-review-promo');
-if(aiPromo){
- const expires=Date.parse(aiPromo.dataset.expires||'');
- if(!Number.isFinite(expires)||Date.now()>=expires)aiPromo.remove();
-}
 </script>
 
 
