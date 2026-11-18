@@ -1,5 +1,5 @@
 name: VibeCritic Automatic Publishing V2
-# Manual recovery checkpoint: this workflow also provides an immediate push-triggered cycle.
+# Manual recovery checkpoint: this workflow provides an immediate push-triggered cycle after publisher fixes.
 on:
   workflow_dispatch:
   push:
