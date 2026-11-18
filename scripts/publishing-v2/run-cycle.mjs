@@ -1,5 +1,5 @@
 import fs from 'node:fs/promises';
-import {loadState,saveState from './store.mjs';
+import {loadState,saveState} from './store.mjs';
 import {runCycle} from './runner.mjs';
 import {createPublishingAdapters,buildFreeProviders} from './adapters.mjs';
 
