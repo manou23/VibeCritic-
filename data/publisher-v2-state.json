@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T23:35:47.524Z",
+  "updatedAt": "2026-11-18T23:38:32.339Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -185,7 +185,7 @@
       "attempts": 3,
       "createdAt": "2026-11-16T17:07:11.253Z",
       "updatedAt": "2026-11-18T23:35:36.650Z",
-      "nextAttemptAt": 1795045416650,
+      "nextAttemptAt": 1795045106953,
       "lastError": "openrouter: Section word count rejected: 166",
       "recoveryAttempts": 1,
       "evidenceRecoveryAttempts": 0,
@@ -194,7 +194,8 @@
         "openrouter"
       ],
       "nextStageAt": 1795041986946,
-      "resumeTo": "writing"
+      "resumeTo": "writing",
+      "fallbackWokenAt": 1795045106953
     },
     "game:41494": {
       "key": "game:41494",
@@ -475,7 +476,7 @@
       "attempts": 1,
       "createdAt": "2026-11-17T00:47:56.078Z",
       "updatedAt": "2026-11-18T23:33:37.589Z",
-      "nextAttemptAt": 1795045117589,
+      "nextAttemptAt": 1795045106953,
       "lastError": "openrouter: Section word count rejected: 155",
       "lastProvider": "groq",
       "article": null,
@@ -488,7 +489,8 @@
       "excludedProviders": [
         "openrouter"
       ],
-      "nextStageAt": 1795044275579
+      "nextStageAt": 1795044275579,
+      "fallbackWokenAt": 1795045106953
     },
     "game:290856": {
       "key": "game:290856",
@@ -674,18 +676,81 @@
         "sourceUrl": "https://www.themoviedb.org/movie/656908",
         "popularity": 56
       },
-      "status": "researching",
-      "stage": 0,
-      "parts": [],
-      "evidence": null,
-      "attempts": 1,
+      "status": "writing",
+      "stage": 1,
+      "parts": [
+        {
+          "stage": 1,
+          "text": "{\"review\":\"تستند \\\"Ramayana: Rise of a Legend\\\" إلى الأساطير الهندية القديمة، وتستعرض بداية رحلة الأمير راما والأميرة سيتا من زواجهما إلى نفيهما، ما يضع الأساس لسلسلة من التحديات الأسطورية. يبرز الفيلم فكرة الحب والواجب والقدر كعناصر محورية، حيث يُصوَّر الزواج كحدث محوري يحدد مسار الشخصيات ويقودهما إلى مسارٍ مليء بالمصاعب. الشخصيات الرئيسية، راما (رانبير كابور) وسيتا (ساي بالافي)، تُعطى عمقًا نفسيًا من خلال صراعات داخلية بين الواجب العائلي والرغبة الشخصية، ما يخلق توترًا دراميًا يُظهر التناقض بين الميثولوجيا التقليدية والنهج السردي الحديث. الدعم الجماعي يضيف طبقة من التعقيد؛ فمثلاً، شخصية لاكشمان (يَش) تُظهر صداقة وفاء تتقاطع مع مسارات القتال، بينما يضيف أران غوفي (آرن غوفي) لمسة من الحكمة الأسطورية التي تُعيد إحياء النصوص القديمة. رغم أن القصة تُعتمد على أحداث معروفة من رامايانا، إلا أن التركيز على مرحلة الزواج والنفي يتيح مساحة لتجديد السرد وتقديم منظور جديد للجمهور المعاصر. لا يُكشف عن تفاصيل الصراع النهائي أو تفاصيل النفي، مما يحافظ على عنصر المفاجأة ويُشجع المشاهد على متابعة الجزء الثاني. في المجمل، ينجح الفيلم في تقديم إطار سردي واضح يربط بين الأساطير والدراما الشخصية، مع الحفاظ على توازن بين الوفاء للنص الأصلي وإضفاء طابع معاصر على الشخصيات.\",\"scores\":{\"story\":0,\"visuals\":0,\"sound\":0,\"pacing\":0},\"pros\":[],\"cons\":[],\"verdict\":\"\"}",
+          "savedAt": "2026-11-18T23:38:26.953Z"
+        }
+      ],
+      "evidence": {
+        "title": "Ramayana: Rise of a Legend",
+        "originalTitle": "रामायणम्",
+        "type": "movie",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/656908",
+        "sourceId": "movie:656908",
+        "releaseDate": "2026-11-05",
+        "overview": "An ancient epic follows a young prince and princess whose marriage and subsequent exile mark the beginning of a legendary journey. Their story of love, duty and destiny sets the stage for greater challenges ahead.",
+        "poster": "https://image.tmdb.org/t/p/w780/vBQ7wks68OhJKlb3RnXSl2yXBXK.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/yHVZncPRZr63mezRX20IyKLrSkv.jpg",
+        "genres": [
+          "Fantasy",
+          "Action",
+          "Adventure"
+        ],
+        "platforms": [],
+        "cast": [
+          "Ranbir Kapoor",
+          "Yash",
+          "Sai Pallavi",
+          "Ravi Dubey",
+          "Arun Govil",
+          "Shobana",
+          "Lara Dutta",
+          "Rakul Preet Singh"
+        ],
+        "crew": [
+          "Nitesh Tiwari"
+        ],
+        "youtubeVideoId": "AYkPRN874m8",
+        "youtubeVideoTitle": "New Trailer",
+        "externalVideoUrl": "",
+        "externalVideoTitle": "",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/656908",
+            "extract": "An ancient epic follows a young prince and princess whose marriage and subsequent exile mark the beginning of a legendary journey. Their story of love, duty and destiny sets the stage for greater challenges ahead."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Ramayana%3A_Part_1",
+            "extract": "Ramayana: Part 1 is a 2026 Indian Hindi-language epic mythological film directed by Nitesh Tiwari, who co-wrote the screenplay with Shridhar Raghavan. Produced by Namit Malhotra and Yash, the film is based on the Hindu epic Ramayana by Valmiki. It is the first instalment of a two-part film series, with Part 1 being based on the first three kāṇḍa (chapters) of Ramayana, which chronicle the life of Prince Rama from childhood up to his adventurous 14-year exile. The first part features an ensemble cast that includes Ranbir Kapoor, Yash, Sai Pallavi, Ravi Dubey, Anupam Kher, Kajal Aggarwal, Rakul Preet Singh, Vivek Oberoi, Kunal Kapoor, Adinath Kothare, Arun Govil, Indira Krishnan, and Lara Dutta."
+          }
+        ],
+        "metadata": {
+          "rating": 7.525,
+          "votes": 59
+        },
+        "streamingPlatform": "",
+        "collection": "",
+        "netflixOriginal": false,
+        "streamingRegion": ""
+      },
+      "attempts": 0,
       "createdAt": "2026-11-17T08:22:20.499Z",
-      "updatedAt": "2026-11-18T23:35:36.650Z",
+      "updatedAt": "2026-11-18T23:38:26.953Z",
       "nextAttemptAt": null,
       "lastError": "Saved evidence invalidated; researching again: Saved independent source does not verify this title and media type.",
       "recoveryAttempts": 1,
       "evidenceRecoveryAttempts": 0,
-      "resumeTo": null
+      "resumeTo": null,
+      "lastProvider": "groq",
+      "excludedProviders": [],
+      "nextStageAt": 1795046006953
     },
     "game:28": {
       "key": "game:28",
@@ -2269,16 +2334,16 @@
     },
     "2026-11-18": {
       "groq": {
-        "requests": 14,
-        "tokens": 28109,
-        "successes": 8,
+        "requests": 15,
+        "tokens": 29791,
+        "successes": 9,
         "failures": 2
       },
       "gemini": {
-        "requests": 4,
+        "requests": 5,
         "tokens": 0,
         "successes": 0,
-        "failures": 3
+        "failures": 4
       },
       "openrouter": {
         "requests": 16,
@@ -2290,21 +2355,16 @@
   },
   "providerCooldowns": {
     "gemini": {
-      "failures": 2,
-      "until": 1795045081734,
+      "failures": 3,
+      "until": 1795073906953,
       "lastError": "gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
-    },
-    "groq": {
-      "failures": 1,
-      "until": 1795050836552,
-      "lastError": "groq HTTP 400: {\"error\":{\"message\":\"Generated JSON does not match the expected schema. Please adjust your prompt. See 'failed_generation' for more details. Error: jsonschema: '/scores' does not validate with /properties/scores/required: missing properties: 'story', 'visuals', 'sound', 'pacing'\",\"type\":\"invalid_request_error\",\"code\":\"json_validate_failed\",\"failed_generation\":\"{\\n  \\\"review\\\": \\\"تستند \\\\\\\"Ramayana: Rise of a Legend\\\\\\\" إلى الأساطير الهندية القديمة، وتستعرض بداية رحلة الأمير راما و"
     }
   },
   "cycle": {
     "startedAt": 1795042641925,
     "deadlineAt": 1795045341925,
     "nextStartAt": 1795045341925,
-    "articleKey": "movie:1185344",
+    "articleKey": "movie:656908",
     "nextPublishAt": 1795045341925
   },
   "discoveryBacklog": {
