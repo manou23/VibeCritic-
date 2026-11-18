@@ -9,7 +9,11 @@ reviewVersion: 1
 type: game
 date: 2026-11-15
 releaseDate: "2025-06-26"
-poster: "https://m.media-amazon.com/images/M/MV5BYmVkNDM3MzUtN2YyYS00MDg0LWIxN2EtMjQ2ZGQ1ZDhlZWY4XkEyXkFqcGc%40._V1_.jpg"
+poster: "https://kojimaproductions.jp/sites/default/files/styles/max_2600x2600/public/2026-03/coverimage_nocopy_mobile.jpg?itok=Kdc7eH4n"
+backdrop: "https://kojimaproductions.jp/sites/default/files/2025-03/ds2_sxsw2025_screenshots001.jpg"
+youtubeVideoId: "HdzIwQhYABQ"
+youtubeVideoTitle: "DEATH STRANDING 2: ON THE BEACH | Pre-Order Trailer"
+mediaVerified: true
 score: 8.7
 storyScore: 8.6
 visualsScore: 9.5
