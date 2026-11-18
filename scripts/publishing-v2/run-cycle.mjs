@@ -6,7 +6,7 @@ import {createPublishingAdapters,buildFreeProviders} from './adapters.mjs';
 async function readPublisherSettings(){
   try {
     const value=JSON.parse(await fs.readFile('data/publisher-v2-settings.json','utf8'));
-    const interval=Number(value.intervalMinutes||30);
+    const interval=Number(value.intervalMinutes||45);
     if(![30,45,60,90,120,180].includes(interval)) throw new Error('Invalid publisher interval');
     const timezone=String(value.timezone||'Africa/Algiers');
     const parts=new Intl.DateTimeFormat('en-GB',{timeZone:timezone,hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
@@ -17,7 +17,7 @@ async function readPublisherSettings(){
     const inWindow=start===end||(start<end?nowMinute>=start&&nowMinute<=end:nowMinute>=start||nowMinute<=end);
     return {enabled:value.enabled!==false,intervalMinutes:interval,inWindow,timezone,localTime:parts.map(x=>x.value).join('')};
   } catch(error) {
-    if(error?.code==='ENOENT') return {enabled:true,intervalMinutes:30,inWindow:true,timezone:'Africa/Algiers'};
+    if(error?.code==='ENOENT') return {enabled:true,intervalMinutes:45,inWindow:true,timezone:'Africa/Algiers'};
     throw error;
   }
 }
@@ -48,6 +48,7 @@ const result=await runCycle({
  state,adapters,providers,publishedCounts,
  articleLimits:{minWords:600,minCharacters:3200},
  cycleIntervalMinutes:settings.intervalMinutes,
+ stageIntervalMinutes:Math.max(5,Math.floor(settings.intervalMinutes/3)),
  persist:saveState
 });
 console.log('V2 cycle:',JSON.stringify({action:result.action,key:result.key,stage:result.stage,provider:result.provider,providerCalls:result.providerCalls,errors:result.errors||[]}));
