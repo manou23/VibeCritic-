@@ -129,6 +129,10 @@ async function collectEvidence(item){
  }else{
   const kind=item.type==='series'?'tv':'movie';
   data=await get(tmdb(kind+'/'+item.id,{language:'en-US',append_to_response:'credits,videos'}));
+  if(item.streamingPlatform==='Netflix'){
+   const belongsToNetflix=item.type==='series'?arr(data.networks).some(x=>Number(x.id)===213):arr(data.production_companies).some(x=>Number(x.id)===178464);
+   if(!belongsToNetflix)throw new Error('Netflix collection verification failed against TMDB title details');
+  }
   sourceUrl='https://www.themoviedb.org/'+kind+'/'+item.id;
   poster=data.poster_path?'https://image.tmdb.org/t/p/w780'+data.poster_path:poster;
   backdrop=data.backdrop_path?'https://image.tmdb.org/t/p/w1280'+data.backdrop_path:backdrop;
@@ -235,7 +239,7 @@ export function createPublishingAdapters(){return {
   const sections=p.map((x,i)=>'## '+headings[i]+'\n\n'+cleanSection(x.review));
   const firstSection=clean(cleanSection(p[0]?.review||''));
   const summary=(firstSection.split(/(?<=[.!؟])\s+/).slice(0,2).join(' ').slice(0,420)||clean(e.overview).slice(0,420));
-  return {title:e.title,originalTitle:e.originalTitle,headline:'مراجعة نقدية: '+e.title+' بين نقاط القوة وحدود التجربة',hook:summary,summary,verdict:clean(last.verdict),type:e.type,sourceId:e.sourceId,sourceName:e.sourceName,sourceUrl:e.sourceUrl,date:new Date().toISOString().slice(0,10),score,...dims,pros:arr(last.pros).map(clean),cons:arr(last.cons).map(clean),sources:e.sources,poster:e.poster,backdrop:e.backdrop,platforms:e.platforms,genres:e.genres,cast:e.cast,crew:e.crew,tags:e.genres,youtubeVideoId:e.youtubeVideoId,youtubeVideoTitle:e.youtubeVideoTitle,externalVideoUrl:e.externalVideoUrl,externalVideoTitle:e.externalVideoTitle,body:sections.join('\n\n')+'\n\n### المصادر والمراجع\n\n'+e.sources.map(x=>'- ['+x.name+']('+x.url+')').join('\n')};
+  return {title:e.title,originalTitle:e.originalTitle,headline:'مراجعة نقدية: '+e.title+' بين نقاط القوة وحدود التجربة',hook:summary,summary,verdict:clean(last.verdict),type:e.type,sourceId:e.sourceId,sourceName:e.sourceName,sourceUrl:e.sourceUrl,streamingPlatform:e.streamingPlatform||'',collection:e.collection||'',date:new Date().toISOString().slice(0,10),score,...dims,pros:arr(last.pros).map(clean),cons:arr(last.cons).map(clean),sources:e.sources,poster:e.poster,backdrop:e.backdrop,platforms:e.platforms,genres:e.genres,cast:e.cast,crew:e.crew,tags:e.genres,youtubeVideoId:e.youtubeVideoId,youtubeVideoTitle:e.youtubeVideoTitle,externalVideoUrl:e.externalVideoUrl,externalVideoTitle:e.externalVideoTitle,body:sections.join('\n\n')+'\n\n### المصادر والمراجع\n\n'+e.sources.map(x=>'- ['+x.name+']('+x.url+')').join('\n')};
  },
  publishFile,verifyDeployment
 };}
