@@ -4,10 +4,10 @@ This is a separate, human-authored publication lane. It does not use the AI publ
 
 ## Ownership and workflow
 
-- ChatGPT prepares and places one completed, source-checked Markdown review at a time in \`manual-publishing/inbox/\`.
+- ChatGPT prepares and places one completed, source-checked Markdown review at a time in `manual-publishing/inbox/`.
 - The manual lane never discovers titles, chooses topics, writes drafts, calls AI providers, or schedules work.
 - A push containing an inbox article triggers only this deterministic validator/publisher.
-- The publisher validates the article, copies it into the site's public review collection, archives the submitted source, and records its own state in \`data/manual-publisher-state.json\`.
+- The publisher validates the article, copies it into the site's public review collection, archives the submitted source, and records its own state in `data/manual-publisher-state.json`.
 - The normal Cloudflare Pages production build then deploys the commit to the live site.
 - The user does not need to run a command or start a workflow.
 
@@ -15,10 +15,10 @@ This is a separate, human-authored publication lane. It does not use the AI publ
 
 | Manual editorial lane | Automatic AI lane |
 | --- | --- |
-| \`manual-publishing/inbox/\` | Existing V2 queue |
-| \`manual-publishing/archive/\` | Existing automated review output |
-| \`data/manual-publisher-state.json\` | \`data/publisher-v2-state.json\` |
-| \`.github/workflows/manual-editorial-publishing.yml\` | Existing publishing V2 workflows |
+| `manual-publishing/inbox/` | Existing V2 queue |
+| `manual-publishing/archive/` | Existing automated review output |
+| `data/manual-publisher-state.json` | `data/publisher-v2-state.json` |
+| `.github/workflows/manual-editorial-publishing.yml` | Existing publishing V2 workflows |
 | No AI credentials or provider calls | Existing configured free providers |
 | No cron or recurring trigger | Existing automatic schedule |
 
@@ -28,11 +28,11 @@ The manual workflow has its own concurrency group and only watches inbox changes
 
 One article per release. The Markdown filename must be a lowercase kebab-case slug. Frontmatter must explicitly set:
 
-- \`aiGenerated: false\`
-- \`editorialWorkflow: manual-assisted\`
-- \`reviewMode: review\`
-- \`type: movie | series | game\`
-- A unique \`sourceId\`, HTTPS \`sourceUrl\`, HTTPS poster and backdrop
+- `aiGenerated: false`
+- `editorialWorkflow: manual-assisted`
+- `reviewMode: review`
+- `type: movie | series | game`
+- A unique `sourceId`, HTTPS `sourceUrl`, HTTPS poster and backdrop
 - Overall score and all four category scores, each from 0 to 10
 - At least three specific pros and two genuine cons
 
