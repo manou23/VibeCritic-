@@ -52,7 +52,12 @@ const result=await runCycle({
  persist:saveState
 });
 console.log('V2 cycle:',JSON.stringify({action:result.action,key:result.key,stage:result.stage,provider:result.provider,providerCalls:result.providerCalls,errors:result.errors||[]}));
-console.log('Queue:',JSON.stringify(Object.values(state.jobs).map(j=>({key:j.key,status:j.status,stage:j.stage,attempts:j.attempts,nextAttemptAt:j.nextAttemptAt,fileWritten:!!j.fileWritten,lastError:j.lastError?String(j.lastError).slice(0,240):null}))));
+console.log('Queue:',JSON.stringify(Object.values(state.jobs).map(j=>({key:j.key,status:j.status,stage:j.stage,attempts:j.attempts,nextAttemptAt:j.nextAttemptAt,nextStageAt:j.nextStageAt,scheduledFor:j.scheduledFor,fileWritten:!!j.fileWritten,lastError:j.lastError?String(j.lastError).slice(0,240):null}))));
+const actionLabel=({published:'PUBLISHED', 'file-ready':'ARTICLE_READY','publication-waiting':'WAITING_FOR_PUBLICATION','deployment-pending':'DEPLOYMENT_PENDING','quality-rejected':'QUALITY_REJECTED','research-rejected':'RESEARCH_REJECTED','provider-unavailable':'PROVIDER_UNAVAILABLE'})[result.action]||String(result.action||'UNKNOWN').toUpperCase();
+const summaryLines=['## VibeCritic automatic publishing','- **Result:** '+actionLabel,'- **Article:** '+(result.key||'—'),'- **Action:** '+result.action,'- **Scheduled publication:** '+(result.scheduledFor?new Date(result.scheduledFor).toISOString():'—'),'- **Next publication slot:** '+(state.cycle?.nextPublishAt?new Date(state.cycle.nextPublishAt).toISOString():'—'),'- **Prepared backlog:** '+Object.keys(state.discoveryBacklog||{}).length,'- **Prepared / active jobs:** '+Object.values(state.jobs).filter(j=>['queued','researching','writing','waiting','quality-check','ready'].includes(j.status)).length,'- **Provider calls:** '+Number(result.providerCalls||0)];
+if(result.errors?.length)summaryLines.push('- **Validation issues:** '+result.errors.join('; '));
+if(result.reason)summaryLines.push('- **Reason:** '+result.reason);
+if(process.env.GITHUB_STEP_SUMMARY)await fs.appendFile(process.env.GITHUB_STEP_SUMMARY,summaryLines.join('\n')+'\n');
 if(result.articlePath){const articleId=String(result.articlePath).split('/').pop().replace(/\.md$/,'');console.log('Article deployment URL:','https://vibecritic.pages.dev/reviews/'+encodeURIComponent(articleId)+'/');}
 if(result.action==='deployment-pending')console.log('Deployment not visible yet; the next scheduled cycle will verify again.');
 if(result.action==='published')console.log('Verified live article:',result.articlePath);
