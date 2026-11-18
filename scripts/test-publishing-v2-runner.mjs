@@ -69,16 +69,11 @@ const failureAdapters={
 };
 const failureProviders=[{id:'rate-limited',enabled:true,free:true,priority:1,dailyRequestLimit:5,dailyTokenLimit:5000},{id:'backup-free',enabled:true,free:true,priority:2,dailyRequestLimit:5,dailyTokenLimit:5000}];
 const failed=await runCycle({state:failureState,adapters:failureAdapters,providers:failureProviders,now,persist:async()=>{}});
-assert.equal(failed.action,'generation-deferred');
-assert.equal(failedProviderCalls,1);
+assert.equal(failed.action,'stage-saved','an available free fallback should run in the same invocation');
+assert.equal(failed.provider,'backup-free');
+assert.equal(failedProviderCalls,2,'fallback provider should be called immediately after the first provider fails');
 assert.equal(failureState.providerCooldowns['rate-limited'].failures,1);
-// Simulate an old persisted checkpoint whose retryAt was incorrectly tied to the provider cooldown.
-failureState.jobs['movie:cooldown-test'].nextAttemptAt=now+30*60*1000;
-assert.ok(failureState.providerCooldowns['rate-limited'].until-now>=2*60*60*1000,'provider cooldown must span the next scheduled checkpoint so fallback providers can be selected');
-const fallback=await runCycle({state:failureState,adapters:failureAdapters,providers:failureProviders,now:now+1000,persist:async()=>{}});
-assert.equal(fallback.action,'stage-saved','an available free fallback should resume immediately after a provider failure');
-assert.equal(fallback.provider,'backup-free');
-assert.equal(failedProviderCalls,2,'fallback provider should receive the next single AI call without waiting for the failed provider cooldown');
+assert.ok(failureState.providerCooldowns['rate-limited'].until-now>=2*60*60*1000,'provider cooldown should remain durable after fallback succeeds');
 
 // Malformed model JSON is an article-quality failure, not a provider outage:
  // exclude the failing provider for this draft and use the next eligible free provider.
@@ -98,15 +93,12 @@ assert.equal(failedProviderCalls,2,'fallback provider should receive the next si
  };
  const malformedProviders=[{id:'primary-free',enabled:true,free:true,priority:1,dailyRequestLimit:5,dailyTokenLimit:5000},{id:'backup-free',enabled:true,free:true,priority:2,dailyRequestLimit:5,dailyTokenLimit:5000}];
  const malformedFailure=await runCycle({state:malformedState,adapters:malformedAdapters,providers:malformedProviders,now,persist:async()=>{}});
- assert.equal(malformedFailure.action,'generation-deferred');
- assert.deepEqual(malformedState.jobs['movie:malformed-json'].excludedProviders,['primary-free']);
- assert.equal(malformedState.providerCooldowns['primary-free'],undefined,'invalid JSON must not create a provider-outage cooldown');
- assert.equal(malformedState.providerUsage['2026-11-16']['primary-free'].requests,2,'both malformed JSON attempts must count against the free request budget');
- const malformedFallback=await runCycle({state:malformedState,adapters:malformedAdapters,providers:malformedProviders,now:now+5*60*1000+1,persist:async()=>{}});
- assert.equal(malformedFallback.action,'stage-saved');
- assert.equal(malformedFallback.provider,'backup-free','the next eligible free provider must be selected instead of repeating the malformed provider');
+ assert.equal(malformedFailure.action,'stage-saved','malformed JSON should immediately fall back within the same run');
+ assert.equal(malformedFailure.provider,'backup-free');
  assert.deepEqual(malformedProviderCalls,['primary-free','backup-free']);
  assert.deepEqual(malformedState.jobs['movie:malformed-json'].excludedProviders,[],'a successful fallback clears the per-job provider exclusion');
+ assert.equal(malformedState.providerCooldowns['primary-free'],undefined,'invalid JSON must not create a provider-outage cooldown');
+ assert.equal(malformedState.providerUsage['2026-11-16']['primary-free'].requests,2,'both malformed JSON attempts must count against the free request budget');
 
 // Duplicate titles must be retired before they reserve the cycle's single article slot.
 const duplicateState=createState();
