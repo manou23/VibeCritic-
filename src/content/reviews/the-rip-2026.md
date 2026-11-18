@@ -15,8 +15,8 @@ visualsScore: 7.5
 soundScore: 7.6
 pacingScore: 7.3
 reviewMode: review
-poster: "https://img.youtube.com/vi/yeR5bcbRPak/maxresdefault.jpg"
-backdrop: "https://img.youtube.com/vi/yeR5bcbRPak/maxresdefault.jpg"
+poster: "https://dnm.nflximg.net/api/v6/s0XAg4q_jvYbSSbLvySyUsliNSg/AAAAQbFtVxPlu6wHneg1K1NVH9QkhU0HW7LTH3xtSAK2sEFPasZO2dUrhkDykwSMbOz5FeSbKRIz0_H7j9WojnciWR0m3lm-UMw7eRppA2jCTnLamUi3uLfXfvoJKdQx9QnN8yikU74t8KT6AnOtQr9NvqFtc_0.jpg?r=0ce"
+backdrop: "https://dnm.nflximg.net/api/v6/a01MIaQTUgSJoLaS_OCn68Eg3hU/AAAAQZFoBIsppDhEUS9y3veBRkm3sdWZTilnuw21hQwpQPWteyfrGwUOBr9IqjKDPCBLTHcjdVub2YvTdBxu_rTw1iwhHBhl1uKiM1LbMI9ZmRuWplfLKob63xZCgSClW-OIfhlaySDb4zKys55G8Jhv0yrF.jpg?r=062"
 youtubeVideoId: "yeR5bcbRPak"
 youtubeVideoTitle: "The Rip | Official Trailer | Netflix"
 platforms: ["Netflix"]
