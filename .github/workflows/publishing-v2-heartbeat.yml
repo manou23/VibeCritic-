@@ -1,33 +1,28 @@
 name: VibeCritic Publishing V2 Heartbeat
+
+# Automatic scheduling is centralized in publishing-v2-automatic.yml.
+# Keep this workflow as a manual recovery entry point only.
 on:
   workflow_dispatch:
-  schedule:
-    # Re-registered heartbeat: GitHub invokes this every 10 minutes; the engine enforces 30-minute stage spacing and resumes saved drafts.
-    - cron: '*/10 * * * *'
-  push:
-    branches: [main]
-    # Re-arm the heartbeat when its engine or schedule settings change, without
-    # creating a loop from the publisher's own state/article checkpoint commits.
-    paths:
-      - '.github/workflows/publishing-v2-heartbeat.yml'
-      - 'scripts/publishing-v2/**'
-      - 'data/publisher-v2-settings.json'
+
 permissions:
   contents: write
+
 concurrency:
-  group: vibecritic-publishing-v2-scheduled
+  group: vibecritic-publisher-v2-main
   cancel-in-progress: false
+
 jobs:
   publish-cycle:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v4
         with:
           ref: main
           fetch-depth: 0
-      - uses: actions/setup-node@v7
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
@@ -60,7 +55,7 @@ jobs:
             npm run build
             npm run validate:build
           else
-            echo "No review article changed; skipping the full site build for this checkpoint."
+            echo "No article was written in this recovery cycle."
           fi
       - name: Commit durable queue and any newly written article
         if: always()
@@ -70,17 +65,9 @@ jobs:
           git add data/publisher-v2-state.json src/content/reviews
           if git diff --cached --quiet; then
             echo "No durable state or article changes to commit."
-          else
-            git commit -m "chore(publisher-v2): checkpoint editorial cycle"
-            for attempt in 1 2 3 4 5; do
-              git fetch origin main
-              git rebase origin/main
-              if git push origin HEAD:main; then
-                exit 0
-              fi
-              echo "Push raced with another main-branch update (attempt $attempt/5); retrying safely."
-              sleep 2
-            done
-            echo "Could not checkpoint after five safe rebase/push attempts."
-            exit 1
+            exit 0
           fi
+          git commit -m "chore(publisher-v2): checkpoint editorial cycle"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
