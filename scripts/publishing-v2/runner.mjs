@@ -55,6 +55,13 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
   deploymentPending=true;
   ready={...ready,lastDeploymentCheckAt:now};state.jobs[ready.key]=ready;await save();
  }
+ // Give one saved research job its explicitly allowed alternate-source retry even when its
+ // previous backoff is still active; the marker prevents repeated free-API hammering.
+ const alternateResearch=Object.values(state.jobs).find(j=>j?.status==='waiting'&&j.resumeTo==='researching'&&!j.researchFallbackAttempted&&/Source HTTP 429/.test(String(j.lastError||'')));
+ if(alternateResearch){
+  state.jobs[alternateResearch.key]={...alternateResearch,nextAttemptAt:now,researchFallbackAttempted:true};
+  await save();
+ }
  // Wake a delayed writing checkpoint only when another configured free provider can
  // actually continue it. Otherwise leave it paused and let queued titles use this cycle.
  const providerDay=new Date(now).toISOString().slice(0,10);
