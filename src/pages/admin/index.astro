@@ -28,7 +28,7 @@ export const prerender = true;
 <footer class="small" style="text-align:center;padding:22px 0">VibeCritic Admin · لا تعرض هذه الصفحة مفاتيح API أو أسرار المستودع.</footer>
 </main>
 <script type="module">
-const $=id=>document.getElementById(id);let current=null;
+const $=id=>document.getElementById(id);let current=null;const esc=v=>String(v??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll(String.fromCharCode(39),'&#39;');
 const date=v=>v?new Date(v).toLocaleString("ar-DZ",{dateStyle:"medium",timeStyle:"short"}):"غير متوفر";
 const ago=v=>{if(!v)return"غير معروف";const m=Math.max(0,Math.floor((Date.now()-new Date(v).getTime())/60000));return m<60?"قبل "+m+" دقيقة":"قبل "+Math.floor(m/60)+" ساعة"};
 const statusName=s=>({queued:"في الانتظار",researching:"جمع المصادر",writing:"كتابة المقال",waiting:"انتظار إعادة المحاولة","quality-check":"فحص الجودة",ready:"جاهز للنشر",published:"منشور",abandoned:"متروك",rejected:"مرفوض"}[s]||s||"غير معروف");
@@ -43,12 +43,12 @@ function render(data){
  $("activeMeta").textContent=active?statusName(active.status)+" · المرحلة "+(active.stage||0)+"/3 · آخر محاولة: "+date(active.nextAttemptAt||s.updatedAt):"الطابور لا يحتوي حالياً على مهمة نشطة";
  $("activeStatus").textContent=active?statusName(active.status):"خامل";$("activeStatus").className="tag "+(active?.status==="waiting"?"warn":active?"ok":"");
  $("activeError").textContent=active?.lastError||"";$("progress").style.width=active?Math.min(100,(Number(active.stage||0)/3)*100)+"%":"0%";
- $("counts").innerHTML=Object.entries(c).map(([k,v])=>'<div class="row small"><span>'+statusName(k)+'</span><b>'+v+'</b></div>').join("")||'<div class="empty">لا توجد مهام مسجلة</div>';
+ $("counts").innerHTML=Object.entries(c).map(([k,v])=>'<div class="row small"><span>'+esc(statusName(k))+'</span><b>'+Number(v||0)+'</b></div>').join("")||'<div class="empty">لا توجد مهام مسجلة</div>';
  const st=data.settings||{};$("enabled").value=String(st.enabled!==false);$("interval").value=String(st.intervalMinutes||30);$("start").value=st.startTime||"00:00";$("end").value=st.endTime||"23:59";$("timezone").value=st.timezone||"Africa/Algiers";
- $("runs").innerHTML=(data.runs||[]).map(r=>'<div class="item row"><div><div class="item-title">'+(r.name||"V2 schedule")+' · #'+(r.run_number||r.id)+'</div><div class="small">'+r.event+' · '+date(r.created_at)+'</div></div><div style="text-align:left"><span class="tag '+(r.conclusion==="success"?"ok":r.conclusion?"bad":"warn")+'">'+(r.status==="in_progress"?"قيد التنفيذ":r.conclusion||r.status)+'</span><div class="small"><a href="'+r.html_url+'" target="_blank" rel="noreferrer">تفاصيل التشغيل ↗</a></div></div></div>').join("")||'<div class="empty">لا توجد تشغيلات حديثة.</div>';
- $("errors").innerHTML=(s.errors||[]).map(e=>'<div class="item"><div class="row"><div class="item-title">'+(e.title||e.key)+'</div><span class="tag '+(e.status==="waiting"?"warn":"bad")+'">'+statusName(e.status)+'</span></div><div class="small">'+e.key+' · '+date(e.updatedAt)+' · المرحلة '+(e.stage||0)+'/3</div><div class="error">'+e.lastError+'</div></div>').join("")||'<div class="empty">لا توجد أخطاء مسجلة في الحالة الحالية.</div>';
+ $("runs").innerHTML=(data.runs||[]).map(r=>'<div class="item row"><div><div class="item-title">'+(r.name||"V2 schedule")+' · #'+(r.run_number||r.id)+'</div><div class="small">'+r.event+' · '+date(r.created_at)+'</div></div><div style="text-align:left"><span class="tag '+(r.conclusion==="success"?"ok":r.conclusion?"bad":"warn")+'">'+(r.status==="in_progress"?"قيد التنفيذ":r.conclusion||r.status)+'</span><div class="small"><a href="'+(String(r.html_url||'').startsWith('https://github.com/')?esc(r.html_url):'#')+'" target="_blank" rel="noreferrer">تفاصيل التشغيل ↗</a></div></div></div>').join("")||'<div class="empty">لا توجد تشغيلات حديثة.</div>';
+ $("errors").innerHTML=(s.errors||[]).map(e=>'<div class="item"><div class="row"><div class="item-title">'+esc(e.title||e.key)+'</div><span class="tag '+(e.status==="waiting"?"warn":"bad")+'">'+statusName(e.status)+'</span></div><div class="small">'+esc(e.key)+' · '+date(e.updatedAt)+' · المرحلة '+(e.stage||0)+'/3</div><div class="error">'+e.lastError+'</div></div>').join("")||'<div class="empty">لا توجد أخطاء مسجلة في الحالة الحالية.</div>';
  const stale=s.updatedAt&&Date.now()-new Date(s.updatedAt).getTime()>45*60*1000;
- message("تم الاتصال بالمستودع "+data.repository+". "+(stale?"تحذير: بيانات الناشر قديمة؛ آخر تحديث "+ago(s.updatedAt):"بيانات الحالة متاحة وحديثة نسبياً."),!!stale);
+ message("تم الاتصال بالمستودع "+esc(data.repository)+". "+(stale?"تحذير: بيانات الناشر قديمة؛ آخر تحديث "+ago(s.updatedAt):"بيانات الحالة متاحة وحديثة نسبياً."),!!stale);
 }
 async function refresh(){$("refresh").disabled=true;try{render(await request());}catch(e){message(e.message,true);}finally{$("refresh").disabled=false;}}
 $("refresh").addEventListener("click",refresh);
