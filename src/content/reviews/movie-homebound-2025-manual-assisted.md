@@ -16,6 +16,10 @@ soundScore: 8.1
 pacingScore: 8.0
 reviewMode: review
 poster: "https://static.moviecrow.com/gallery/20250926/251284-HB.jpeg"
+backdrop: "https://img.festival-cannes.com/eyJidWNrZXQiOiJtZWRpYSIsImtleSI6InVwbG9hZHNcLzIwMjVcLzA1XC8xODU5MjMtc2NhbGVkLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTM2MCwiZml0IjoiY292ZXIifX19"
+youtubeVideoId: "WojNkusud84"
+youtubeVideoTitle: "HOMEBOUND — Official Trailer | Dharma Productions"
+mediaVerified: true
 pros:
   - "يربط الطموح الشخصي ببنية اجتماعية واضحة بدلاً من الاكتفاء بخطاب تحفيزي"
   - "الصداقة تمنح الصراع الاجتماعي بعداً عاطفياً"
