@@ -19,6 +19,7 @@ function article({ aiGenerated = 'false', workflow = 'manual-assisted', words = 
     'backdrop: "https://image.tmdb.org/t/p/w1280/backdrop.jpg"',
     'youtubeVideoId: "AbCdEfGhI12"',
     'youtubeVideoTitle: "Official Trailer"',
+    'mediaVerified: true',
     'reviewMode: review',
     'aiGenerated: ' + aiGenerated,
     'editorialWorkflow: ' + workflow,
