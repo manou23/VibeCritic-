@@ -29,6 +29,8 @@ jobs:
           cache: npm
       - name: Install locked dependencies
         run: npm ci
+      - name: Test isolated manual publisher
+        run: npm run test:manual-publisher
       - name: Run isolated manual publisher
         id: publish
         run: node manual-publishing/publisher.mjs
