@@ -1,0 +1,55 @@
+name: VibeCritic Manual Editorial Publisher
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'manual-publishing/inbox/**'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vibecritic-manual-editorial-publisher
+  cancel-in-progress: false
+
+jobs:
+  publish-manual-article:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Run isolated manual publisher
+        id: publish
+        run: node manual-publishing/publisher.mjs
+      - name: Validate review scores
+        if: steps.publish.outputs.published == 'true'
+        run: npm run validate:reviews
+      - name: Build production site
+        if: steps.publish.outputs.published == 'true'
+        env:
+          CF_PAGES: '1'
+        run: npm run build
+      - name: Validate production build and sitemap
+        if: steps.publish.outputs.published == 'true'
+        run: npm run validate:build
+      - name: Commit the manually approved article
+        if: steps.publish.outputs.published == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add manual-publishing/inbox manual-publishing/archive src/content/reviews data/manual-publisher-state.json
+          git commit -m "publish(manual): release editorial review"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
