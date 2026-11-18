@@ -1,0 +1,33 @@
+name: Manual Publisher Isolation Tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'manual-publishing/**'
+      - 'scripts/test-manual-publisher.mjs'
+      - '.github/workflows/manual-publisher-tests.yml'
+  pull_request:
+    paths:
+      - 'manual-publishing/**'
+      - 'scripts/test-manual-publisher.mjs'
+      - '.github/workflows/manual-publisher-tests.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  manual-publisher-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check publisher syntax
+        run: node --check manual-publishing/publisher.mjs
+      - name: Check test syntax
+        run: node --check scripts/test-manual-publisher.mjs
+      - name: Run manual publisher isolation tests
+        run: node scripts/test-manual-publisher.mjs
