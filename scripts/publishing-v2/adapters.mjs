@@ -69,7 +69,7 @@ async function discover(excludedKeys=[]){
   env.TMDB_API_KEY?get(tmdb('movie/popular',{language:'en-US',page:1})).catch(()=>empty):Promise.resolve(empty),
   env.TMDB_API_KEY?get(tmdb('tv/popular',{language:'en-US',page:1})).catch(()=>empty):Promise.resolve(empty),
   env.RAWG_API_KEY?get('https://api.rawg.io/api/games?key='+encodeURIComponent(env.RAWG_API_KEY)+'&ordering=-added&page_size=40').catch(()=>empty):Promise.resolve(empty),
-  env.TMDB_API_KEY?Promise.all(netflixPages.map(page=>get(tmdb('discover/movie',{language:'en-US',include_adult:false,with_companies:netflixCompanyIds.join('|'),'primary_release_date.gte':'2026-01-01','primary_release_date.lte':today,sort_by:'primary_release_date.asc',page})).catch(()=>empty))):Promise.resolve([]),
+  env.TMDB_API_KEY?Promise.all(netflixPages.map(page=>get(tmdb('discover/movie',{language:'en-US',include_adult:false,with_companies:netflixCompanyIds.join('|'),'primary_release_date.gte':'2026-01-01','primary_release_date.lte':'2026-12-31',sort_by:'primary_release_date.asc',page})).catch(()=>empty))):Promise.resolve([]),
   env.TMDB_API_KEY?Promise.all(netflixPages.map(page=>get(tmdb('discover/tv',{language:'en-US',include_adult:false,with_networks:'213','air_date.gte':'2026-01-01','air_date.lte':today,sort_by:'popularity.desc',page})).catch(()=>empty))):Promise.resolve([]),
   env.TMDB_API_KEY?Promise.all(netflixProviderPages.map(page=>get(tmdb('discover/movie',{language:'en-US',include_adult:false,with_watch_providers:'8',watch_region:'DZ','primary_release_date.gte':'2026-01-01','primary_release_date.lte':today,sort_by:'primary_release_date.asc',page})).catch(()=>empty))):Promise.resolve([]),
   env.TMDB_API_KEY?Promise.all(netflixProviderPages.map(page=>get(tmdb('discover/tv',{language:'en-US',include_adult:false,with_watch_providers:'8',watch_region:'DZ','air_date.gte':'2026-01-01','air_date.lte':today,sort_by:'popularity.desc',page})).catch(()=>empty))):Promise.resolve([]),
@@ -89,7 +89,7 @@ async function discover(excludedKeys=[]){
  // Only already-released titles enter the queue; future titles become eligible automatically after release.
  for(const page of netflixMovies)for(const x of arr(page.results)){
   const date=String(x.release_date||'').slice(0,10);
-  if(date>='2026-01-01'&&date<=today)addMedia(x,'movie',{streamingPlatform:'Netflix',collection:'Netflix 2026',netflixOriginal:true,netflixCompanyIds,editorialPriority:100});
+  if(date>='2026-01-01'&&date<='2026-12-31')addMedia(x,'movie',{streamingPlatform:'Netflix',collection:'Netflix 2026',netflixOriginal:true,netflixCompanyIds,editorialPriority:100});
  }
  for(const page of netflixSeries)for(const x of arr(page.results))addMedia(x,'series',{streamingPlatform:'Netflix',collection:'Netflix 2026',netflixOriginal:true,editorialPriority:100});
  // Include 2026 releases currently streaming on Netflix Algeria, while keeping licensed titles
