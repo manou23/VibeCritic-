@@ -36,16 +36,26 @@ export function selectActiveJob(jobs={}){
  return Object.values(jobs).filter(j=>j&&ACTIVE.has(j.status))
   .sort((a,b)=>activePriority(a)-activePriority(b)||time(a.createdAt)-time(b.createdAt)||a.key.localeCompare(b.key))[0]||null;
 }
-export function cycleDecision(state,now=Date.now()){
- validateState(state);const job=selectActiveJob(state.jobs);if(!job)return {action:"discover",job:null};
+// Unlike the legacy selector, this skips durable jobs whose retry or next writing stage is not due.
+// It lets the publisher prepare another queued title without discarding a paused draft.
+export function selectRunnableJob(jobs={},now=Date.now()){
+ return Object.values(jobs).filter(j=>{
+  if(!j||!ACTIVE.has(j.status))return false;
+  if(j.status==="waiting"&&time(j.nextAttemptAt)>now)return false;
+  if(j.status==="writing"&&j.stage>0&&time(j.nextStageAt)>now)return false;
+  return true;
+ }).sort((a,b)=>activePriority(a)-activePriority(b)||time(a.createdAt)-time(b.createdAt)||a.key.localeCompare(b.key))[0]||null;
+}
+export function cycleDecision(state,now=Date.now(),jobOverride){
+ validateState(state);const job=jobOverride===undefined?selectActiveJob(state.jobs):jobOverride;if(!job)return {action:"discover",job:null};
  const retry=time(job.nextAttemptAt);if(job.status==="waiting"&&retry>now)return {action:"wait",job,retryAt:retry};
  if(job.status==="waiting")return {action:"resume",job};if(job.status==="ready")return {action:"publish",job};
  if(job.status==="quality-check")return {action:"validate",job};return {action:"advance",job};
 }
-export function enqueue(state,item,now=Date.now()){
+export function enqueue(state,item,now=Date.now(),{allowConcurrent=false}={}){
  validateState(state);if(!item||!["game","movie","series"].includes(item.type)||!String(item.id||"").trim())throw Error("Invalid source item");
  const key=item.type+":"+item.id;if(state.jobs[key])return {job:state.jobs[key],created:false};
- if(selectActiveJob(state.jobs))throw Error("Only one active draft is allowed");
+ if(!allowConcurrent&&selectActiveJob(state.jobs))throw Error("Only one active draft is allowed");
  const job={key,item,status:"queued",stage:0,parts:[],evidence:null,attempts:0,createdAt:iso(now),updatedAt:iso(now),nextAttemptAt:null,lastError:null};
  state.jobs[key]=job;state.updatedAt=iso(now);return {job,created:true};
 }
