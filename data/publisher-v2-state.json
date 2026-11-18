@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T00:31:52.378Z",
+  "updatedAt": "2026-11-18T00:39:27.982Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -8598,6 +8598,251 @@
         "PC"
       ],
       "popularity": 13180
+    },
+    "series:249565": {
+      "type": "series",
+      "id": "249565",
+      "name": "The Good Daughter",
+      "originalTitle": "The Good Daughter",
+      "overview": "Sisters Charlotte and Samantha Quinn have spent the last twenty-eight years trying to piece together the lives that were fractured by a single night of violence. When another attack splinters the small town of Pikeville, Charlotte is the first witness on the scene. Now a lawyer like her father, she’s forced to confront her own demons as the case twists through one shocking revelation after another. In the end, both she and Samantha find themselves wondering if the price of being the good daughter was worth it after all.",
+      "date": "2026-11-12",
+      "poster": "https://image.tmdb.org/t/p/w780/qJPvyo9Pxz3MQndd3tKSocLz1Nt.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/nDU6mUk4wVU1EkDkDvcLvT2UWdy.jpg",
+      "sourceName": "TMDB",
+      "sourceUrl": "https://www.themoviedb.org/tv/249565",
+      "popularity": 21
+    },
+    "game:29028": {
+      "type": "game",
+      "id": "29028",
+      "name": "Metro 2033",
+      "overview": "",
+      "date": "2010-03-16",
+      "poster": "https://media.rawg.io/media/games/120/1201a40e4364557b124392ee50317b99.jpg",
+      "backdrop": "https://media.rawg.io/media/games/120/1201a40e4364557b124392ee50317b99.jpg",
+      "sourceName": "RAWG",
+      "sourceUrl": "https://rawg.io/games/metro-2033",
+      "genres": [
+        "Action",
+        "Shooter"
+      ],
+      "platforms": [
+        "PC",
+        "Xbox 360"
+      ],
+      "popularity": 12797
+    },
+    "game:416": {
+      "type": "game",
+      "id": "416",
+      "name": "Grand Theft Auto: San Andreas",
+      "overview": "",
+      "date": "2004-10-26",
+      "poster": "https://media.rawg.io/media/games/960/960b601d9541cec776c5fa42a00bf6c4.jpg",
+      "backdrop": "https://media.rawg.io/media/games/960/960b601d9541cec776c5fa42a00bf6c4.jpg",
+      "sourceName": "RAWG",
+      "sourceUrl": "https://rawg.io/games/grand-theft-auto-san-andreas",
+      "genres": [
+        "Action"
+      ],
+      "platforms": [
+        "macOS",
+        "PC",
+        "iOS",
+        "Xbox",
+        "Android",
+        "PlayStation 4",
+        "PlayStation 3",
+        "PlayStation 2",
+        "Xbox 360",
+        "Xbox One"
+      ],
+      "popularity": 12259
+    },
+    "game:16944": {
+      "type": "game",
+      "id": "16944",
+      "name": "The Witcher 2: Assassins of Kings Enhanced Edition",
+      "overview": "",
+      "date": "2012-04-16",
+      "poster": "https://media.rawg.io/media/games/6cd/6cd653e0aaef5ff8bbd295bf4bcb12eb.jpg",
+      "backdrop": "https://media.rawg.io/media/games/6cd/6cd653e0aaef5ff8bbd295bf4bcb12eb.jpg",
+      "sourceName": "RAWG",
+      "sourceUrl": "https://rawg.io/games/the-witcher-2-assassins-of-kings-enhanced-edition",
+      "genres": [
+        "RPG"
+      ],
+      "platforms": [
+        "macOS",
+        "PC",
+        "Xbox 360"
+      ],
+      "popularity": 12063
+    },
+    "game:17822": {
+      "type": "game",
+      "id": "17822",
+      "name": "The Witcher: Enhanced Edition Director's Cut",
+      "overview": "",
+      "date": "2008-09-16",
+      "poster": "https://media.rawg.io/media/games/ee3/ee3e10193aafc3230ba1cae426967d10.jpg",
+      "backdrop": "https://media.rawg.io/media/games/ee3/ee3e10193aafc3230ba1cae426967d10.jpg",
+      "sourceName": "RAWG",
+      "sourceUrl": "https://rawg.io/games/the-witcher-enhanced-edition-directors-cut",
+      "genres": [
+        "Action",
+        "RPG"
+      ],
+      "platforms": [
+        "PC",
+        "macOS"
+      ],
+      "popularity": 11947
+    },
+    "game:23027": {
+      "type": "game",
+      "id": "23027",
+      "name": "The Walking Dead: Season 1",
+      "overview": "",
+      "date": "2012-04-23",
+      "poster": "https://media.rawg.io/media/games/8d6/8d69eb6c32ed6acfd75f82d532144993.jpg",
+      "backdrop": "https://media.rawg.io/media/games/8d6/8d69eb6c32ed6acfd75f82d532144993.jpg",
+      "sourceName": "RAWG",
+      "sourceUrl": "https://rawg.io/games/the-walking-dead",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "platforms": [
+        "Android",
+        "PS Vita",
+        "macOS",
+        "PC",
+        "iOS",
+        "PlayStation 4",
+        "PlayStation 3",
+        "Xbox 360",
+        "Nintendo Switch",
+        "Xbox One"
+      ],
+      "popularity": 11717
+    },
+    "movie:687163": {
+      "type": "movie",
+      "id": "687163",
+      "name": "Project Hail Mary",
+      "originalTitle": "Project Hail Mary",
+      "overview": "Science teacher Ryland Grace wakes up on a spaceship light years from home with no recollection of who he is or how he got there. As his memory returns, he begins to uncover his mission: solve the riddle of the mysterious substance causing the sun to die out. He must call on his scientific knowledge and unorthodox ideas to save everything on Earth from extinction.",
+      "date": "2026-03-15",
+      "poster": "https://image.tmdb.org/t/p/w780/iOb2fjXLbpJgyQXe46n1WtGCnaa.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/8Tfys3mDZVp4tNoH2ktm06a0Tau.jpg",
+      "sourceName": "TMDB",
+      "sourceUrl": "https://www.themoviedb.org/movie/687163",
+      "popularity": 8924
+    },
+    "movie:1101412": {
+      "type": "movie",
+      "id": "1101412",
+      "name": "Fall 2: Deadpoint",
+      "originalTitle": "Fall 2: Deadpoint",
+      "overview": "On a perilous climb across Thailand's Mount Kwan, two climbers become trapped thousands of feet above the ground, where vertigo-inducing heights, sheer exposure, and impossible odds turn every moment into a fight for survival.",
+      "date": "2026-09-01",
+      "poster": "https://image.tmdb.org/t/p/w780/fgSm5ylwiXbIHn8UbUXDjk9RRu4.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/nGau0KBOaRILSK5MqFcuTfv7GMl.jpg",
+      "sourceName": "TMDB",
+      "sourceUrl": "https://www.themoviedb.org/movie/1101412",
+      "popularity": 838
+    },
+    "movie:1283515": {
+      "type": "movie",
+      "id": "1283515",
+      "name": "Verity",
+      "originalTitle": "Verity",
+      "overview": "Lowen Ashleigh, hired to ghostwrite for best-selling author Verity Crawford, uncovers Verity's autobiographical notes, and becomes involved in what may prove to be a lethal conspiracy.",
+      "date": "2026-09-30",
+      "poster": "https://image.tmdb.org/t/p/w780/rmaNMA1seHqpjtnYKzyynFAr1g8.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/cKetrF2dAnQ0AMV5i4BMOs41I5P.jpg",
+      "sourceName": "TMDB",
+      "sourceUrl": "https://www.themoviedb.org/movie/1283515",
+      "popularity": 733
+    },
+    "movie:1058424": {
+      "type": "movie",
+      "id": "1058424",
+      "name": "Hope",
+      "originalTitle": "호프",
+      "overview": "In the remote South Korean village of Hope Harbor, police chief Bum-seok and officer Sung-ae are called to investigate a mysterious creature wreaking havoc on the community. But all is not as it seems, and perceptions can be misleading. What begins as ignorance plants the seed of disaster, escalating through human conflict into a tragedy of cosmic proportions.",
+      "date": "2026-07-15",
+      "poster": "https://image.tmdb.org/t/p/w780/6VY1ZKgpsc8CfGsQcCGiYEgHdH0.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/qqHFLg90IUSoTmSMpKOOW5RyqN3.jpg",
+      "sourceName": "TMDB",
+      "sourceUrl": "https://www.themoviedb.org/movie/1058424",
+      "popularity": 700
+    },
+    "movie:1507696": {
+      "type": "movie",
+      "id": "1507696",
+      "name": "Apocalypse Z: New World",
+      "originalTitle": "Apocalipsis Z: Nuevo mundo",
+      "overview": "The Canary Islands have become Europe’s last refuge following the outbreak of the TSJ virus. When a special mission sets out for the mainland in search of vital supplies, Roberto joins the team with questionable intentions. The dangerous operation turns into a desperate race for survival, and Roberto and his companions find themselves caught between hordes of infected and divided loyalties.",
+      "date": "2026-10-09",
+      "poster": "https://image.tmdb.org/t/p/w780/wXln4DUrwcyjcFPwgQxFPYTlG1Z.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/o3XwuDUj0n8qnK91p6q8LKfr6rj.jpg",
+      "sourceName": "TMDB",
+      "sourceUrl": "https://www.themoviedb.org/movie/1507696",
+      "popularity": 224
+    },
+    "movie:1813355": {
+      "type": "movie",
+      "id": "1813355",
+      "name": "A Story of Derry",
+      "originalTitle": "A Story of Derry",
+      "overview": "Hundreds of years before Pennywise, three youngsters venture into the Western Wood...where they encounter a terrifying ancient spirit.",
+      "date": "2026-10-31",
+      "poster": "https://image.tmdb.org/t/p/w780/4PtzGcegF5Po1NmDAW9IklyvAUh.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/z26LxXDMmAIzKr06FPDudCJyvsM.jpg",
+      "sourceName": "TMDB",
+      "sourceUrl": "https://www.themoviedb.org/movie/1813355",
+      "popularity": 131
+    },
+    "movie:1244523": {
+      "type": "movie",
+      "id": "1244523",
+      "name": "Beware Boiúna",
+      "originalTitle": "Beware Boiúna",
+      "overview": "A medical mission deep in the Amazon becomes a desperate fight for survival when a colossal ancient predator awakens, turning the jungle into a deadly battleground where nature decides who lives and dies.",
+      "date": "2026-10-01",
+      "poster": "https://image.tmdb.org/t/p/w780/7mI13sTZcuwWEIUK9fckAb8Zmba.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/9nU0FKNefmhbgi2xXlvZchZsqwm.jpg",
+      "sourceName": "TMDB",
+      "sourceUrl": "https://www.themoviedb.org/movie/1244523",
+      "popularity": 65
+    },
+    "movie:1518204": {
+      "type": "movie",
+      "id": "1518204",
+      "name": "Allen",
+      "originalTitle": "Allen",
+      "overview": "20 years after his encounter with an alien, Petey never moved on. Now his old friend has returned, and the reason why is complicated — and unexpected.",
+      "date": "2026-11-12",
+      "poster": "https://image.tmdb.org/t/p/w780/alhhrpj1PSAn5bfz4Os1k7Bweoj.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/51fGmBW7WjyJouP9TjIcxRpCUNk.jpg",
+      "sourceName": "TMDB",
+      "sourceUrl": "https://www.themoviedb.org/movie/1518204",
+      "popularity": 45
+    },
+    "movie:1562642": {
+      "type": "movie",
+      "id": "1562642",
+      "name": "Ghost Soldier",
+      "originalTitle": "Ghost Soldier",
+      "overview": "Henry “Fitz” Fitzgerald has spent years living quietly off the grid, hiding from a past few people know anything about. But when a powerful foreign corporation moves into his hometown to seize his neighbors’ land for a massive payday, Fitz is forced to reveal who he really is: a former Special Forces soldier and advanced weapons developer. Armed with experimental technology, lethal combat skills, and an unwavering code of justice, Fitz wages a one-man war against an enemy that never saw him coming.",
+      "date": "2026-11-06",
+      "poster": "https://image.tmdb.org/t/p/w780/8Y4oJ5iUs3hgPcDB3SIEmsNYjZk.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/ggqvhSdAASrseKuMlzk51sbvbE8.jpg",
+      "sourceName": "TMDB",
+      "sourceUrl": "https://www.themoviedb.org/movie/1562642",
+      "popularity": 25
     }
   }
 }
