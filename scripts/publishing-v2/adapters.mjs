@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { parseJsonResponse } from '../review-json.mjs';
 import { SCORE_SCALE_PROMPT } from '../scoring-rubric.mjs';
+import { validateEvidence } from './core.mjs';
 
 // V2 adapters: free-tier-only model calls and source-grounded editorial metadata.
 const env=process.env, ROOT='src/content/reviews';
