@@ -9,7 +9,7 @@ const state={jobs:{
  'movie:6':{key:'movie:6',item:{type:'movie',id:'6',name:'Legacy Future',date:'2027-01-01'},status:'abandoned',stage:0,parts:[],lastError:'Editorial rejection: release date is in the future; wait until release before reviewing.'},
  'series:5':{key:'series:5',item:{type:'series',id:'5',name:'Already Retried',date:'2020-01-01'},status:'abandoned',stage:0,parts:[],recoveryAttempts:1,lastError:'Evidence rejected: Primary source metadata is too thin'}
 }};
-assert.equal(recoverAbandonedJobs(state,now),1,'only eligible evidence failures are reactivated');
+assert.equal(recoverAbandonedJobs(state,now),3,'recoverable evidence failures and legacy future-release rejections are reactivated');
 const recovered=state.jobs['game:1'];
 assert.equal(recovered.status,'queued');
 assert.equal(recovered.stage,0);
