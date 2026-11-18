@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T22:57:33.357Z",
+  "updatedAt": "2026-11-18T22:58:01.407Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -195,18 +195,15 @@
       },
       "attempts": 2,
       "createdAt": "2026-11-16T17:07:11.253Z",
-      "updatedAt": "2026-11-18T22:57:21.925Z",
-      "nextAttemptAt": 1795042941925,
-      "lastError": "openrouter: Section word count rejected: 132",
+      "updatedAt": "2026-11-18T22:57:59.578Z",
+      "nextAttemptAt": 1795042979578,
+      "lastError": "All eligible free providers returned unusable content; retrying after a short pause.",
       "article": null,
       "quality": null,
       "recoveryAttempts": 1,
       "evidenceRecoveryAttempts": 0,
       "lastProvider": "groq",
-      "excludedProviders": [
-        "groq",
-        "openrouter"
-      ],
+      "excludedProviders": [],
       "nextStageAt": 1795041986946,
       "resumeTo": "writing"
     },
