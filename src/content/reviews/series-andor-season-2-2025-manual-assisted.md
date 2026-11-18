@@ -9,7 +9,11 @@ reviewVersion: 1
 type: series
 date: 2026-11-15
 releaseDate: "2025-04-22"
-poster: "https://cdn.moviepilot.de/files/1a74e72be77694543c5070b9a6241615ffea4156d82a3cc7cf202be4a68c/copyright/GlSs8vjW8AARR9s.jpeg"
+poster: "https://lumiere-a.akamaihd.net/v1/images/pilgrim_s2_payoff_poster_united_kingdom_2_e4f62c1f.jpeg?region=0%2C0%2C770%2C1100"
+backdrop: "https://lumiere-a.akamaihd.net/v1/images/andor_s2_online_trailer_2_uhd_r709f_stills_250320_0066cbeb.jpeg?region=496%2C0%2C2848%2C1602"
+youtubeVideoId: "ubeoyF007WM"
+youtubeVideoTitle: "Andor Season 2 — Official Teaser Trailer | Disney+"
+mediaVerified: true
 score: 8.9
 storyScore: 9.2
 visualsScore: 9.1
