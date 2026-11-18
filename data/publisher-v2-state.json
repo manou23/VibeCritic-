@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T23:21:39.147Z",
+  "updatedAt": "2026-11-18T23:33:44.880Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -420,7 +420,7 @@
         "sourceUrl": "https://www.themoviedb.org/movie/1170608",
         "popularity": 0
       },
-      "status": "writing",
+      "status": "waiting",
       "stage": 1,
       "parts": [
         {
@@ -483,11 +483,11 @@
         "netflixOriginal": false,
         "streamingRegion": ""
       },
-      "attempts": 0,
+      "attempts": 1,
       "createdAt": "2026-11-17T00:47:56.078Z",
-      "updatedAt": "2026-11-18T23:09:35.579Z",
-      "nextAttemptAt": null,
-      "lastError": null,
+      "updatedAt": "2026-11-18T23:33:37.589Z",
+      "nextAttemptAt": 1795045117589,
+      "lastError": "openrouter: Section word count rejected: 155",
       "lastProvider": "groq",
       "article": null,
       "quality": null,
@@ -495,8 +495,10 @@
       "articlePath": null,
       "recoveryAttempts": 1,
       "evidenceRecoveryAttempts": 0,
-      "resumeTo": null,
-      "excludedProviders": [],
+      "resumeTo": "writing",
+      "excludedProviders": [
+        "openrouter"
+      ],
       "nextStageAt": 1795044275579
     },
     "game:290856": {
@@ -2337,10 +2339,10 @@
         "failures": 3
       },
       "openrouter": {
-        "requests": 8,
-        "tokens": 15122,
+        "requests": 11,
+        "tokens": 21591,
         "successes": 0,
-        "failures": 4
+        "failures": 5
       }
     }
   },
