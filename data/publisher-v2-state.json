@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T22:16:30.159Z",
+  "updatedAt": "2026-11-18T22:57:33.357Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -128,7 +128,7 @@
         "sourceUrl": "https://www.themoviedb.org/movie/1185344",
         "popularity": 32
       },
-      "status": "writing",
+      "status": "waiting",
       "stage": 2,
       "parts": [
         {
@@ -193,19 +193,22 @@
         "netflixOriginal": false,
         "streamingRegion": ""
       },
-      "attempts": 0,
+      "attempts": 2,
       "createdAt": "2026-11-16T17:07:11.253Z",
-      "updatedAt": "2026-11-18T22:16:26.946Z",
-      "nextAttemptAt": null,
-      "lastError": null,
+      "updatedAt": "2026-11-18T22:57:21.925Z",
+      "nextAttemptAt": 1795042941925,
+      "lastError": "openrouter: Section word count rejected: 132",
       "article": null,
       "quality": null,
       "recoveryAttempts": 1,
       "evidenceRecoveryAttempts": 0,
-      "resumeTo": null,
       "lastProvider": "groq",
-      "excludedProviders": [],
-      "nextStageAt": 1795041986946
+      "excludedProviders": [
+        "groq",
+        "openrouter"
+      ],
+      "nextStageAt": 1795041986946,
+      "resumeTo": "writing"
     },
     "game:41494": {
       "key": "game:41494",
@@ -2062,16 +2065,22 @@
     },
     "2026-11-18": {
       "groq": {
-        "requests": 9,
-        "tokens": 19226,
+        "requests": 11,
+        "tokens": 24277,
         "successes": 7,
-        "failures": 0
+        "failures": 1
       },
       "gemini": {
         "requests": 4,
         "tokens": 0,
         "successes": 0,
         "failures": 3
+      },
+      "openrouter": {
+        "requests": 2,
+        "tokens": 3627,
+        "successes": 0,
+        "failures": 1
       }
     }
   },
@@ -2083,9 +2092,9 @@
     }
   },
   "cycle": {
-    "startedAt": 1795040186946,
-    "deadlineAt": 1795041986946,
-    "nextStartAt": 1795041986946,
+    "startedAt": 1795042641925,
+    "deadlineAt": 1795045341925,
+    "nextStartAt": 1795045341925,
     "articleKey": "movie:1185344"
   },
   "discoveryBacklog": {
