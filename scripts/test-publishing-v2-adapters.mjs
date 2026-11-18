@@ -136,7 +136,7 @@ try{
  assert.equal(licensedMovieEvidence.netflixOriginal,false);
  assert.equal(licensedMovieEvidence.streamingRegion,'DZ','licensed titles must keep the region where Netflix availability was verified');
  mode='netflix-series-evidence';
- const netflixSeriesEvidence=await adapters.collectEvidence({type:'series',id:'505',name:'Netflix Returning Series',date:'2016-07-15',overview:'A detailed factual synopsis of the Netflix returning series, its setting, characters, and main conflict, long enough to support an independent critical review.',sourceName:'TMDB',sourceUrl:'https://www.themoviedb.org/tv/505',poster:'https://image.tmdb.org/t/p/w780/netflix-series-poster.jpg',backdrop:'https://image.tmdb.org/t/p/w1280/netflix-series-backdrop.jpg',streamingPlatform:'Netflix',collection:'Netflix 2026'});
+ const netflixSeriesEvidence=await adapters.collectEvidence({type:'series',id:'505',name:'Netflix Returning Series',date:'2016-07-15',overview:'A detailed factual synopsis of the Netflix returning series, its setting, characters, and main conflict, long enough to support an independent critical review.',sourceName:'TMDB',sourceUrl:'https://www.themoviedb.org/tv/505',poster:'https://image.tmdb.org/t/p/w780/netflix-series-poster.jpg',backdrop:'https://image.tmdb.org/t/p/w1280/netflix-series-backdrop.jpg',streamingPlatform:'Netflix',collection:'Netflix 2026',netflixOriginal:true});
  assert.equal(netflixSeriesEvidence.releaseDate,'2026-02-01','returning Netflix series must use the 2026 season release date, not its original premiere date');
  assert.equal(netflixSeriesEvidence.streamingPlatform,'Netflix');
  assert.equal(netflixSeriesEvidence.collection,'Netflix 2026');
