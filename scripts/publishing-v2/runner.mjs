@@ -2,7 +2,7 @@ import { enqueue, selectRunnableJob, cycleDecision, transition, chooseFreeProvid
 import { recoverAbandonedJobs } from './recovery.mjs';
 function candidate(items,state,counts={},now=Date.now()) { const used=new Set(Object.keys(state.jobs)); const c={game:counts.game||0,movie:counts.movie||0,series:counts.series||0}; for(const j of Object.values(state.jobs)) if(j.status==='published') c[j.item.type]=(c[j.item.type]||0)+1; return (items||[]).filter(x=>x&&['game','movie','series'].includes(x.type)&&String(x.id||'').trim()&&!used.has(x.type+':'+x.id)).sort((a,b)=>Number(b.editorialPriority||0)-Number(a.editorialPriority||0)||c[a.type]-c[b.type]||String(b.date||'').localeCompare(String(a.date||'')) )[0]||null; }
 // One bounded task per invocation. Publication cadence and writing-stage pacing are separate clocks.
-export async function runCycle({state,adapters,providers,now=Date.now(),persist=async()=>{},publishedCounts={},articleLimits={},researchSkips=0,cycleIntervalMinutes=30,stageIntervalMinutes=30}) {
+export async function runCycle({state,adapters,providers,now=Date.now(),persist=async()=>{},publishedCounts={},articleLimits={},researchSkips=0,cycleIntervalMinutes=45,stageIntervalMinutes=15}) {
  if(!state||state.version!==2||!adapters) throw Error('Publisher v2 state and adapters are required.');
  const save=async()=>{state.updatedAt=new Date(now).toISOString();await persist(state);};
  const recoveredJobs=recoverAbandonedJobs(state,now);if(recoveredJobs)await save();
