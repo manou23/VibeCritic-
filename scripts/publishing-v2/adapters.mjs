@@ -61,10 +61,10 @@ async function discover(excludedKeys=[]){
  for(const key of excludedKeys||[])used.add(String(key));
  const empty={results:[]};
  const today=new Date().toISOString().slice(0,10);
- const netflixPages=Array.from({length:10},(_,i)=>i+1),netflixProviderPages=Array.from({length:5},(_,i)=>i+1);
+ const netflixPages=Array.from({length:7},(_,i)=>i+1),netflixProviderPages=Array.from({length:5},(_,i)=>i+1),netflixUSPages=Array.from({length:5},(_,i)=>i+1);
  const companySearch=env.TMDB_API_KEY?await get(tmdb('search/company',{query:'Netflix',page:1})).catch(()=>({results:[]})):{results:[]};
  const netflixCompanyIds=[...new Set([178464,...arr(companySearch.results).filter(x=>norm(x.name).includes('netflix')).map(x=>Number(x.id)).filter(Number.isFinite)])];
- const [trending,popularMovies,popularSeries,games,netflixMovies,netflixSeries,netflixAvailableMovies,netflixAvailableSeries]=await Promise.all([
+ const [trending,popularMovies,popularSeries,games,netflixMovies,netflixSeries,netflixAvailableMovies,netflixAvailableSeries,netflixUSMovies]=await Promise.all([
   env.TMDB_API_KEY?get(tmdb('trending/all/week',{language:'en-US'})).catch(()=>empty):Promise.resolve(empty),
   env.TMDB_API_KEY?get(tmdb('movie/popular',{language:'en-US',page:1})).catch(()=>empty):Promise.resolve(empty),
   env.TMDB_API_KEY?get(tmdb('tv/popular',{language:'en-US',page:1})).catch(()=>empty):Promise.resolve(empty),
@@ -72,7 +72,8 @@ async function discover(excludedKeys=[]){
   env.TMDB_API_KEY?Promise.all(netflixPages.map(page=>get(tmdb('discover/movie',{language:'en-US',include_adult:false,with_companies:netflixCompanyIds.join('|'),'primary_release_date.gte':'2026-01-01','primary_release_date.lte':today,sort_by:'primary_release_date.asc',page})).catch(()=>empty))):Promise.resolve([]),
   env.TMDB_API_KEY?Promise.all(netflixPages.map(page=>get(tmdb('discover/tv',{language:'en-US',include_adult:false,with_networks:'213','air_date.gte':'2026-01-01','air_date.lte':today,sort_by:'popularity.desc',page})).catch(()=>empty))):Promise.resolve([]),
   env.TMDB_API_KEY?Promise.all(netflixProviderPages.map(page=>get(tmdb('discover/movie',{language:'en-US',include_adult:false,with_watch_providers:'8',watch_region:'DZ','primary_release_date.gte':'2026-01-01','primary_release_date.lte':today,sort_by:'primary_release_date.asc',page})).catch(()=>empty))):Promise.resolve([]),
-  env.TMDB_API_KEY?Promise.all(netflixProviderPages.map(page=>get(tmdb('discover/tv',{language:'en-US',include_adult:false,with_watch_providers:'8',watch_region:'DZ','air_date.gte':'2026-01-01','air_date.lte':today,sort_by:'popularity.desc',page})).catch(()=>empty))):Promise.resolve([])
+  env.TMDB_API_KEY?Promise.all(netflixProviderPages.map(page=>get(tmdb('discover/tv',{language:'en-US',include_adult:false,with_watch_providers:'8',watch_region:'DZ','air_date.gte':'2026-01-01','air_date.lte':today,sort_by:'popularity.desc',page})).catch(()=>empty))):Promise.resolve([]),
+  env.TMDB_API_KEY?Promise.all(netflixUSPages.map(page=>get(tmdb('discover/movie',{language:'en-US',include_adult:false,with_watch_providers:'8',watch_region:'US','primary_release_date.gte':'2026-01-01','primary_release_date.lte':today,sort_by:'primary_release_date.asc',page})).catch(()=>empty))):Promise.resolve([])
  ]);
  const items=[],added=new Set();
  const addMedia=(x,type,extra={})=>{
@@ -98,6 +99,12 @@ async function discover(excludedKeys=[]){
   if(date>='2026-01-01'&&date<=today)addMedia(x,'movie',{streamingPlatform:'Netflix',collection:'Netflix 2026',netflixOriginal:false,streamingRegion:'DZ',editorialPriority:95});
  }
  for(const page of netflixAvailableSeries)for(const x of arr(page.results))addMedia(x,'series',{streamingPlatform:'Netflix',collection:'Netflix 2026',netflixOriginal:false,streamingRegion:'DZ',editorialPriority:95});
+ // A secondary US availability pass catches global 2026 Netflix releases missing from regional metadata.
+ // The region is retained on each title so the site never implies it is available in Algeria.
+ for(const page of netflixUSMovies)for(const x of arr(page.results)){
+  const date=String(x.release_date||'').slice(0,10);
+  if(date>='2026-01-01'&&date<=today)addMedia(x,'movie',{streamingPlatform:'Netflix',collection:'Netflix 2026',netflixOriginal:false,streamingRegion:'US',editorialPriority:90});
+ }
  for(const x of arr(games.results)){
   const id=String(x.id||''),name=clean(x.name);
   if(!id||!name||used.has('game:'+id)||used.has('title:'+norm(name))||added.has('game:'+id))continue;
