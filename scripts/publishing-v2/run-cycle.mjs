@@ -1,8 +1,7 @@
 import fs from 'node:fs/promises';
-import {loadState,saveState} from './store.mjs';
+import {loadState,saveState from './store.mjs';
 import {runCycle} from './runner.mjs';
 import {createPublishingAdapters,buildFreeProviders} from './adapters.mjs';
-import fs from 'node:fs/promises';
 
 async function readPublisherSettings(){
   try {
@@ -13,7 +12,7 @@ async function readPublisherSettings(){
     const parts=new Intl.DateTimeFormat('en-GB',{timeZone:timezone,hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
     const part=name=>Number(parts.find(x=>x.type===name)?.value||0);
     const nowMinute=part('hour')*60+part('minute');
-    const parse=v=>{const m=String(v||'').match(/^([01]\\d|2[0-3]):([0-5]\\d)$/);if(!m)throw new Error('Invalid publisher time window');return Number(m[1])*60+Number(m[2]);};
+    const parse=v=>{const m=String(v||'').match(/^([01]\d|2[0-3]):([0-5]\d)$/);if(!m)throw new Error('Invalid publisher time window');return Number(m[1])*60+Number(m[2]);};
     const start=parse(value.startTime||'00:00'),end=parse(value.endTime||'23:59');
     const inWindow=start===end||(start<end?nowMinute>=start&&nowMinute<=end:nowMinute>=start||nowMinute<=end);
     return {enabled:value.enabled!==false,intervalMinutes:interval,inWindow,timezone,localTime:parts.map(x=>x.value).join('')};
