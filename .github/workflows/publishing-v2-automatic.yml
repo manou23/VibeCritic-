@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths: ['.github/workflows/publishing-v2-automatic.yml']
   schedule:
-    # Every 15-minute checkpoint persists released Netflix 2026 Originals and titles streaming in Algeria; keep 30-minute article stages and quality gates.
+    # Every 15-minute checkpoint expands the Netflix 2026 backlog across Netflix studios and Algerian streaming availability; article stages stay 30 minutes apart.
     - cron: '*/15 * * * *'
 permissions:
   contents: write
