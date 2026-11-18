@@ -147,7 +147,8 @@ const qualityAdapters={
  collectEvidence:async()=>({youtubeVideoId:'Abcdef12345',sources:[{name:'Official',url:'https://example.com/a'},{name:'Independent',url:'https://example.org/b'}]}),
  generatePart:async({stage})=>{qualityCalls++;return {text:'stage '+stage+' '+text,tokens:100};},
  assembleArticle:async()=>{qualityAssembles++;return qualityAssembles===1?repeatedArticle:article;},
- publishFile:async()=>{qualityWrites++;return {path:'src/content/reviews/movie-repeat.md'};},
+ stageFile:async()=>{qualityWrites++;return {path:'content-queue/movie-repeat.md'};},
+ publishFile:async()=>({path:'src/content/reviews/movie-repeat.md'}),
  verifyDeployment:async()=>true
 };
 const qualityNow=now+100000;
