@@ -31,6 +31,7 @@ const originalFetch=globalThis.fetch;let calls=0,mode='gemini',groqShortOnce=fal
 globalThis.fetch=async(url,options)=>{
  calls++;
  const parsedUrl=new URL(String(url));
+ if(mode==='deployment-check'||mode==='deployment-404')return new Response('<html><title>What We Do in the Shadows</title></html>',{status:mode==='deployment-check'?200:404,headers:{'content-type':'text/html'}});
  if(mode==='discover-expansion'){
   if(parsedUrl.hostname==='api.themoviedb.org'&&parsedUrl.pathname==='/3/trending/all/week')return new Response(JSON.stringify({results:[]}),{status:200,headers:{'content-type':'application/json'}});
   if(parsedUrl.hostname==='api.themoviedb.org'&&parsedUrl.pathname==='/3/movie/popular')return new Response(JSON.stringify({results:[{id:101,title:'Popular Movie',overview:'A detailed premise for the popular movie discovery test.',release_date:'2020-01-01',poster_path:'/movie.jpg',backdrop_path:'/movie-backdrop.jpg',vote_count:1000}]}),{status:200,headers:{'content-type':'application/json'}});
@@ -200,5 +201,9 @@ try{
  assert.equal(article.collection,'Netflix 2026','Netflix editorial collection label must survive article assembly');
  assert.ok(article.tags.includes('Netflix')&&article.tags.includes('Netflix 2026'),'Netflix reviews must carry searchable collection tags');
  assert.ok(article.body.includes('https://en.wikipedia.org/wiki/Test'),'independent source links must be visible');
+ mode='deployment-check';
+ assert.equal(await adapters.verifyDeployment({article:{title:'What We Do in the Shadows',youtubeVideoId:'3_jTVuExbAo'},articlePath:'src/content/reviews/series-what-we-do-in-the-shadows-83631.md'}),true,'a live article with HTTP 200 and its title must verify even when optional badge and video markers are not server-rendered');
+ mode='deployment-404';
+ assert.equal(await adapters.verifyDeployment({article:{title:'What We Do in the Shadows',youtubeVideoId:'3_jTVuExbAo'},articlePath:'src/content/reviews/series-what-we-do-in-the-shadows-83631.md'}),false,'a missing live article must remain pending');
 }finally{globalThis.fetch=originalFetch;}
 console.log('VibeCritic V2 adapter contract tests passed.');

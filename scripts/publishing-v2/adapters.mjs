@@ -244,7 +244,7 @@ async function publishFile(a,job){
 }
 async function verifyDeployment({article,articlePath}){
  const id=path.basename(articlePath||'').replace(/\.md$/,'');if(!id)return false;
- try{const r=await fetch('https://vibecritic.pages.dev/reviews/'+encodeURIComponent(id)+'/',{signal:AbortSignal.timeout(15000)});if(!r.ok)return false;const html=await r.text();const videoVisible=article.youtubeVideoId?html.includes(article.youtubeVideoId):article.externalVideoUrl?html.includes(article.externalVideoUrl):true;return html.includes(article.title)&&html.includes('تحليل مدعوم بالذكاء الاصطناعي')&&videoVisible;}catch{return false;}
+ try{const r=await fetch('https://vibecritic.pages.dev/reviews/'+encodeURIComponent(id)+'/',{signal:AbortSignal.timeout(15000)});if(!r.ok)return false;const html=await r.text();return html.includes(article.title);}catch{return false;}
 }
 async function isAlreadyPublished(item){
  const wantedTitles=new Set([item?.name,item?.originalTitle].map(norm).filter(Boolean));
