@@ -241,16 +241,16 @@ async function modelCall(provider,text){
  let url,headers={'content-type':'application/json'},body;
  if(provider.id==='gemini'){
   url='https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(provider.model)+':generateContent?key='+encodeURIComponent(key);
-  body={contents:[{parts:[{text:text}]}],generationConfig:{temperature:.3,maxOutputTokens:2500,responseMimeType:'application/json'}};
+  body={contents:[{parts:[{text:text}]}],generationConfig:{temperature:.3,maxOutputTokens:3500,responseMimeType:'application/json'}};
  }else if(provider.id==='cloudflare'){
   url='https://api.cloudflare.com/client/v4/accounts/'+encodeURIComponent(env.CLOUDFLARE_ACCOUNT_ID)+'/ai/run/'+provider.model.split('/').map(x=>encodeURIComponent(x).replace(/%40/gi,'@')).join('/');
   headers.authorization='Bearer '+key;
-  body={messages:[{role:'system',content:'ناقد عربي دقيق. أعد JSON صالحاً فقط، ولا تختلق معلومات.'},{role:'user',content:text}],temperature:.3,max_tokens:2500,response_format:{type:'json_object'}};
+  body={messages:[{role:'system',content:'ناقد عربي دقيق. أعد JSON صالحاً فقط، ولا تختلق معلومات.'},{role:'user',content:text}],temperature:.3,max_tokens:3500,response_format:{type:'json_object'}};
  }else{
   url=provider.id==='groq'?'https://api.groq.com/openai/v1/chat/completions':'https://openrouter.ai/api/v1/chat/completions';headers.authorization='Bearer '+key;
   if(provider.id==='openrouter'){headers['HTTP-Referer']='https://vibecritic.pages.dev/';headers['X-Title']='VibeCritic';}
   const fallbacks=['nvidia/nemotron-3.5-super-vl:free','google/gemma-4-26b-a4b-it:free'].filter(x=>x!==provider.model);
-  body=provider.id==='groq'?{model:provider.model,temperature:.3,max_completion_tokens:4096,reasoning_effort:'low',include_reasoning:false,response_format:{type:'json_schema',json_schema:{name:'vibecritic_review_section',strict:true,schema:{type:'object',additionalProperties:false,properties:{review:{type:'string'},scores:{type:'object',additionalProperties:false,properties:{story:{type:'number'},visuals:{type:'number'},sound:{type:'number'},pacing:{type:'number'}},required:['story','visuals','sound','pacing']},pros:{type:'array',items:{type:'string'}},cons:{type:'array',items:{type:'string'}},verdict:{type:'string'}},required:['review','scores','pros','cons','verdict']}}},messages:[{role:'system',content:'ناقد عربي دقيق. JSON فقط، لا تختلق.'},{role:'user',content:text}]}:{...(provider.id==='openrouter'?{models:[provider.model,...fallbacks],reasoning:{enabled:false}}:{}),model:provider.model,temperature:.3,max_tokens:2500,response_format:{type:'json_object'},messages:[{role:'system',content:'ناقد عربي دقيق. JSON فقط، لا تختلق.'},{role:'user',content:text}]};
+  body=provider.id==='groq'?{model:provider.model,temperature:.3,max_completion_tokens:6144,reasoning_effort:'low',include_reasoning:false,response_format:{type:'json_schema',json_schema:{name:'vibecritic_review_section',strict:true,schema:{type:'object',additionalProperties:false,properties:{review:{type:'string'},scores:{type:'object',additionalProperties:false,properties:{story:{type:'number'},visuals:{type:'number'},sound:{type:'number'},pacing:{type:'number'}},required:['story','visuals','sound','pacing']},pros:{type:'array',items:{type:'string'}},cons:{type:'array',items:{type:'string'}},verdict:{type:'string'}},required:['review','scores','pros','cons','verdict']}}},messages:[{role:'system',content:'ناقد عربي دقيق. JSON فقط، لا تختلق.'},{role:'user',content:text}]}:{...(provider.id==='openrouter'?{models:[provider.model,...fallbacks],reasoning:{enabled:false}}:{}),model:provider.model,temperature:.3,max_tokens:3500,response_format:{type:'json_object'},messages:[{role:'system',content:'ناقد عربي دقيق. JSON فقط، لا تختلق.'},{role:'user',content:text}]};
  }
  const r=await fetch(url,{method:'POST',headers,body:JSON.stringify(body),signal:AbortSignal.timeout(90000)});
  if(!r.ok)throw new Error(provider.id+' HTTP '+r.status+': '+(await r.text()).slice(0,600));
@@ -258,7 +258,7 @@ async function modelCall(provider,text){
  if(Array.isArray(raw))raw=raw.map(x=>x.text||'').join('');
  if(typeof raw!=='string'||!raw.trim()){const c=d.choices?.[0],m=c?.message||{};throw new Error(provider.id+' empty response: '+JSON.stringify({model:d.model,finish_reason:c?.finish_reason,message_keys:Object.keys(m),error:d.error||null}).slice(0,500));}
  const parsed=parseJsonResponse(raw),words=(clean(parsed.review).match(/[\p{L}\p{N}]+/gu)||[]).length;
- const tokens=Number(d.usage?.total_tokens)||Math.ceil((text.length+raw.length)/4);if(words<180||words>280){const error=new Error('Section word count rejected: '+words);error.tokens=tokens;throw error;}
+ const tokens=Number(d.usage?.total_tokens)||Math.ceil((text.length+raw.length)/4);if(words<180||words>280){const error=new Error('Section word count rejected: '+words);error.tokens=tokens;error.partial=parsed;throw error;}
  for(const k of ['story','visuals','sound','pacing'])if(!Number.isFinite(Number(parsed.scores?.[k]))||Number(parsed.scores[k])<0||Number(parsed.scores[k])>10)throw new Error('Invalid score '+k);
  return {parsed,tokens};
 }
@@ -325,7 +325,16 @@ export function createPublishingAdapters(){return {
    const parseFailure=/رد النموذج JSON غير مكتمل|Invalid JSON/.test(String(firstError?.message||''));const retryInstruction=stage===3?'إصلاح إلزامي للمرحلة الثالثة: أعد JSON كاملاً وصحيح البنية مع review من 210 إلى 250 كلمة، وverdict عربي واضح لا يقل عن 30 كلمة، وpros مصفوفة تحتوي ثلاث نقاط قوة فعلية على الأقل، وcons مصفوفة تحتوي تحفظين فعليين على الأقل. لا تترك أي حقل فارغاً.':'مراجعة إلزامية: '+(parseFailure?'الإجابة السابقة لم تكن JSON صالحاً. أعد JSON صحيحاً ومغلق الأقواس تماماً، مع جميع المفاتيح المطلوبة،':'الإجابة السابقة أقصر من الحد المطلوب. أعد كتابة القسم كاملاً بتفصيل أكبر،')+' واجعل review بين 210 و250 كلمة عربية فعلية. أضف تحليلاً محدداً مرتبطاً بالأدلة ولا تكرر الجمل ولا تضف حقائق غير موثقة.';
    const retryPrompt=basePrompt+'\\n\\n'+retryInstruction;
    try{const retry=await modelCall(provider,retryPrompt);return {text:JSON.stringify(retry.parsed),tokens:firstTokens+retry.tokens,requests:2};}
-   catch(retryError){retryError.tokens=(Number(retryError.tokens)||0)+firstTokens;retryError.requests=2;throw retryError;}
+   catch(retryError){
+    const retryTokens=(Number(retryError.tokens)||0)+firstTokens;
+    const shortSection=Number((String(retryError.message||'').match(/Section word count rejected: (\\d+)/)||[])[1]||0);
+    if(shortSection>0&&shortSection<180&&retryError.partial?.review){
+     const expansionPrompt=basePrompt+'\\n\\nهذه مسودتك السابقة التي كانت أقصر من المطلوب:\\n'+retryError.partial.review+'\\n\\nوسّعها الآن إلى قسم كامل متماسك من 210 إلى 250 كلمة عربية فعلية. احتفظ بالأفكار الصحيحة، وأضف تحليلاً مستنداً حصراً إلى الأدلة أعلاه، ولا تكرر الجمل ولا تخترع معلومات. أعد JSON كاملاً مع جميع الحقول المطلوبة.';
+     try{const expanded=await modelCall(provider,expansionPrompt);return {text:JSON.stringify(expanded.parsed),tokens:firstTokens+(Number(retryError.tokens)||0)+expanded.tokens,requests:3};}
+     catch(expansionError){expansionError.tokens=(Number(expansionError.tokens)||0)+retryTokens;expansionError.requests=3;throw expansionError;}
+    }
+    retryError.tokens=retryTokens;retryError.requests=2;throw retryError;
+   }
   }
  },
  assembleArticle:async job=>{
