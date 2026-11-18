@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T11:47:24.608Z",
+  "updatedAt": "2026-11-18T16:11:15.055Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -1619,6 +1619,210 @@
       "articlePath": "src/content/reviews/series-what-we-do-in-the-shadows-83631.md",
       "deployedAt": "2026-11-18T11:47:22.144Z",
       "publishedAt": "2026-11-18T11:47:22.144Z"
+    },
+    "series:303182": {
+      "key": "series:303182",
+      "item": {
+        "type": "series",
+        "id": "303182",
+        "name": "Murder in Galicia",
+        "originalTitle": "El crimen de Pazos",
+        "overview": "In Pazos, Irene is brutally attacked, and Civil Guard sergeant Elías suspects her husband Aniceto, racing against time to uncover the truth before it’s too late.",
+        "date": "2026-11-13",
+        "poster": "https://image.tmdb.org/t/p/w780/pooxlKqgM7NhBHkgt9RjmrY7n2l.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/jM5dhDrpRiVxuzcvAEeHhcAKt50.jpg",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/303182",
+        "popularity": 15,
+        "streamingPlatform": "Netflix",
+        "collection": "Netflix 2026",
+        "netflixOriginal": true,
+        "editorialPriority": 100
+      },
+      "status": "abandoned",
+      "stage": 0,
+      "parts": [],
+      "evidence": null,
+      "attempts": 0,
+      "createdAt": "2026-11-18T16:11:04.389Z",
+      "updatedAt": "2026-11-18T16:11:04.389Z",
+      "nextAttemptAt": null,
+      "lastError": "Evidence rejected: No sufficiently matching independent encyclopedia page: Murder in Galicia"
+    },
+    "series:341603": {
+      "key": "series:341603",
+      "item": {
+        "type": "series",
+        "id": "341603",
+        "name": "Stars and Vows: Anele & Buzza",
+        "originalTitle": "Stars and Vows: Anele & Buzza",
+        "overview": "Follow media darling Anele Mdoda and her royal fiance Buzza James from pre-wedding celebrations and tense family moments to their long-awaited \"I do.\"",
+        "date": "2026-11-13",
+        "poster": "https://image.tmdb.org/t/p/w780/lcCadlmIDtTdYbYfM2UlkCXhxEO.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/xaSO3ejty5l7NO2NSbIieOKWs5c.jpg",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/341603",
+        "popularity": 6.4441,
+        "streamingPlatform": "Netflix",
+        "collection": "Netflix 2026",
+        "netflixOriginal": true,
+        "editorialPriority": 100
+      },
+      "status": "abandoned",
+      "stage": 0,
+      "parts": [],
+      "evidence": null,
+      "attempts": 0,
+      "createdAt": "2026-11-18T16:11:04.389Z",
+      "updatedAt": "2026-11-18T16:11:04.389Z",
+      "nextAttemptAt": null,
+      "lastError": "Evidence rejected: No sufficiently matching independent encyclopedia page: Stars and Vows: Anele & Buzza"
+    },
+    "series:312661": {
+      "key": "series:312661",
+      "item": {
+        "type": "series",
+        "id": "312661",
+        "name": "Miracles of the ER",
+        "originalTitle": "急診室的奇蹟",
+        "overview": "A bold decision brings an average med student to an elite ER team, where he encounters medical crises, ethical dilemmas, and personal growth.",
+        "date": "2026-11-12",
+        "poster": "https://image.tmdb.org/t/p/w780/AaeU5NdIyoRl3qXy1z2sT5hDyio.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/wZ0EW0svlRLRBNaUpIYjSSOM9Rt.jpg",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/312661",
+        "popularity": 6,
+        "streamingPlatform": "Netflix",
+        "collection": "Netflix 2026",
+        "netflixOriginal": true,
+        "editorialPriority": 100
+      },
+      "status": "abandoned",
+      "stage": 0,
+      "parts": [],
+      "evidence": null,
+      "attempts": 0,
+      "createdAt": "2026-11-18T16:11:04.389Z",
+      "updatedAt": "2026-11-18T16:11:04.389Z",
+      "nextAttemptAt": null,
+      "lastError": "Evidence rejected: No sufficiently matching independent encyclopedia page: Miracles of the ER"
+    },
+    "series:338562": {
+      "key": "series:338562",
+      "item": {
+        "type": "series",
+        "id": "338562",
+        "name": "Alicia's Law",
+        "originalTitle": "La ley de Alicia",
+        "overview": "When her carefully built life comes undone, Alicia returns to practicing law and discovers that rebuilding her career also means redefining herself.",
+        "date": "2026-11-11",
+        "poster": "https://image.tmdb.org/t/p/w780/7o9nY3GO97jyeVWdtWr12nR0Qpt.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/yb58l4VGT687EbQAYjc6ecPRjmg.jpg",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/338562",
+        "popularity": 11,
+        "streamingPlatform": "Netflix",
+        "collection": "Netflix 2026",
+        "netflixOriginal": true,
+        "editorialPriority": 100
+      },
+      "status": "abandoned",
+      "stage": 0,
+      "parts": [],
+      "evidence": null,
+      "attempts": 0,
+      "createdAt": "2026-11-18T16:11:04.389Z",
+      "updatedAt": "2026-11-18T16:11:04.389Z",
+      "nextAttemptAt": null,
+      "lastError": "Evidence rejected: No sufficiently matching independent encyclopedia page: Alicia's Law"
+    },
+    "series:336243": {
+      "key": "series:336243",
+      "item": {
+        "type": "series",
+        "id": "336243",
+        "name": "ChiaroScuro",
+        "originalTitle": "ChiaroScuro",
+        "overview": "After a body is found in a Roman museum, an art expert must apply his instincts and skills to help police solve a mystery connected to his own past.",
+        "date": "2026-11-11",
+        "poster": "https://image.tmdb.org/t/p/w780/m9eZy0jzWCHSUUzbzIpysOrLgFb.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/wM62vjwgxjQTlXX76xmQS1T49O2.jpg",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/336243",
+        "popularity": 10,
+        "streamingPlatform": "Netflix",
+        "collection": "Netflix 2026",
+        "netflixOriginal": true,
+        "editorialPriority": 100
+      },
+      "status": "writing",
+      "stage": 1,
+      "parts": [
+        {
+          "stage": 1,
+          "text": "{\"review\":\"تقدم سلسلة \\\"ChiaroScuro\\\" فكرة جذابة تجمع بين الجريمة والكوميديا في إطار إيطالي معاصر، حيث يُستدعى خبير فنون لتفكيك لغز جريمة اكتُشفت داخل متحف روماني. الفكرة تستند إلى تلاعب الضوء والظل ليس فقط في العنوان بل في السرد نفسه، ما يخلق جواً من الغموض المتوازن مع لحظات فكاهية خفيفة تخفف من توتر التحقيق. الشخصيات الأساسية تبدو مُصاغة بعناية؛ فالبطل الخبير يُظهر مزيجاً من الذكاء التحليلي والشغف الفني، ما يمنحه عمقاً يُسهم في ربط القصة بماضيه الشخصي دون كشف تفاصيل محددة. الدعم من طاقم الممثلين مثل بييرباولو سبولون وأندريا لاتانزي يضيف طبقة من التفاعل الديناميكي، حيث يُظهر كل منهم قدرة على إضفاء طابع مميز على أدوارهم، سواءً في لحظات الجدية أو الكوميديا. من حيث البناء السردي، تُظهر السلسلة إيقاعاً معتدلاً يبدأ بتقديم الحادثة وتفصيل الخلفيات، ثم ينتقل إلى تتبع الأدلة عبر مشاهد متقنة تُظهر تفاصيل المتحف وتاريخ الفن. رغم أن السرد لا يغوص بعمق كبير في تعقيدات الجريمة، إلا أن التوازن بين الجوانب الكوميدية والدرامية يُحافظ على جذب المشاهدين، مع ترك مساحة لتطور القصة في الحلقات القادمة. في المجمل، تُعطي السلسلة انطباعاً أولياً واعداً بفضل الفكرة المبتكرة والشخصيات المتناغمة، ما يجعلها تستحق المتابعة لتقييم مدى نجاحها في دمج عناصر الجريمة والفن معاً.\",\"scores\":{\"story\":0,\"visuals\":0,\"sound\":0,\"pacing\":0},\"pros\":[],\"cons\":[],\"verdict\":\"\"}",
+          "savedAt": "2026-11-18T16:11:04.389Z"
+        }
+      ],
+      "evidence": {
+        "title": "ChiaroScuro",
+        "originalTitle": "ChiaroScuro",
+        "type": "series",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/336243",
+        "sourceId": "series:336243",
+        "releaseDate": "2026-11-11",
+        "overview": "After a body is found in a Roman museum, an art expert must apply his instincts and skills to help police solve a mystery connected to his own past.",
+        "poster": "https://image.tmdb.org/t/p/w780/h4dM4FjqSJihwGpo3x0llMvNSfg.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/wM62vjwgxjQTlXX76xmQS1T49O2.jpg",
+        "genres": [
+          "Comedy",
+          "Crime"
+        ],
+        "platforms": [],
+        "cast": [
+          "Pierpaolo Spollon",
+          "Andrea Lattanzi",
+          "Romana Maggiora Vergano",
+          "Matilde Gioli",
+          "Aurora Giovinazzo"
+        ],
+        "crew": [
+          "Jan Maria Michelini"
+        ],
+        "youtubeVideoId": "DKjB0JPhmYc",
+        "youtubeVideoTitle": "Official Trailer [Subtitled]",
+        "externalVideoUrl": "",
+        "externalVideoTitle": "",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/336243",
+            "extract": "After a body is found in a Roman museum, an art expert must apply his instincts and skills to help police solve a mystery connected to his own past."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Chiaroscuro",
+            "extract": "In art, chiaroscuro (English: kee-AR-ə-SKOOR-oh, -⁠SKURE-, Italian: [ˌkjaroˈskuːro]; lit. 'light-dark') is the use of strong contrasts between light and dark, usually bold contrasts affecting a whole composition. It is also a technical term used by artists and art historians for the use of contrasts of light to achieve a sense of volume in modelling three-dimensional objects and figures. Similar effects in cinema, and black and white and low-key photography, are also called chiaroscuro. Taken to its extreme, the use of shadow and contrast to focus strongly on the subject of a painting is called tenebrism. Further specialized uses of the term include chiaroscuro woodcut for colour woodcuts printed with different blocks, each using a different coloured ink; and chiaroscuro for drawings on coloured paper in a dark medium with white highlighting. Chiaroscuro originated in the Renaissance period but is most notably associated with Baroque art. Chiaroscuro is one of the canonical painting modes of the Renaissance (alongside cangiante, sfumato and unione) (see also Renaissance art). Artists known for using the technique include Leonardo da Vinci, Caravaggio, Rembrandt, Vermeer, Goya, and Georges de La Tour."
+          }
+        ],
+        "metadata": {
+          "rating": 7.727,
+          "votes": 11
+        },
+        "streamingPlatform": "Netflix",
+        "collection": "Netflix 2026",
+        "netflixOriginal": true,
+        "streamingRegion": ""
+      },
+      "attempts": 0,
+      "createdAt": "2026-11-18T16:11:04.389Z",
+      "updatedAt": "2026-11-18T16:11:04.389Z",
+      "nextAttemptAt": null,
+      "lastError": null,
+      "excludedProviders": [],
+      "lastProvider": "groq",
+      "nextStageAt": 1795020064389
     }
   },
   "providerUsage": {
@@ -1670,25 +1874,31 @@
     },
     "2026-11-18": {
       "groq": {
-        "requests": 3,
-        "tokens": 7548,
-        "successes": 2,
+        "requests": 4,
+        "tokens": 9341,
+        "successes": 3,
         "failures": 0
       },
       "gemini": {
-        "requests": 2,
+        "requests": 3,
         "tokens": 0,
         "successes": 0,
-        "failures": 1
+        "failures": 2
       }
     }
   },
-  "providerCooldowns": {},
+  "providerCooldowns": {
+    "gemini": {
+      "failures": 1,
+      "until": 1795025464389,
+      "lastError": "gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
+    }
+  },
   "cycle": {
-    "startedAt": 1795002442144,
-    "deadlineAt": 1795004242144,
-    "nextStartAt": 1795004242144,
-    "articleKey": "series:83631"
+    "startedAt": 1795018264389,
+    "deadlineAt": 1795020064389,
+    "nextStartAt": 1795020064389,
+    "articleKey": "series:336243"
   },
   "discoveryBacklog": {
     "movie:1368881": {
@@ -4365,23 +4575,6 @@
       "netflixOriginal": true,
       "editorialPriority": 100
     },
-    "series:303182": {
-      "type": "series",
-      "id": "303182",
-      "name": "Murder in Galicia",
-      "originalTitle": "El crimen de Pazos",
-      "overview": "In Pazos, Irene is brutally attacked, and Civil Guard sergeant Elías suspects her husband Aniceto, racing against time to uncover the truth before it’s too late.",
-      "date": "2026-11-13",
-      "poster": "https://image.tmdb.org/t/p/w780/pooxlKqgM7NhBHkgt9RjmrY7n2l.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w1280/jM5dhDrpRiVxuzcvAEeHhcAKt50.jpg",
-      "sourceName": "TMDB",
-      "sourceUrl": "https://www.themoviedb.org/tv/303182",
-      "popularity": 15,
-      "streamingPlatform": "Netflix",
-      "collection": "Netflix 2026",
-      "netflixOriginal": true,
-      "editorialPriority": 100
-    },
     "series:262838": {
       "type": "series",
       "id": "262838",
@@ -4586,23 +4779,6 @@
       "netflixOriginal": true,
       "editorialPriority": 100
     },
-    "series:338562": {
-      "type": "series",
-      "id": "338562",
-      "name": "Alicia's Law",
-      "originalTitle": "La ley de Alicia",
-      "overview": "When her carefully built life comes undone, Alicia returns to practicing law and discovers that rebuilding her career also means redefining herself.",
-      "date": "2026-11-11",
-      "poster": "https://image.tmdb.org/t/p/w780/7o9nY3GO97jyeVWdtWr12nR0Qpt.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w1280/yb58l4VGT687EbQAYjc6ecPRjmg.jpg",
-      "sourceName": "TMDB",
-      "sourceUrl": "https://www.themoviedb.org/tv/338562",
-      "popularity": 11,
-      "streamingPlatform": "Netflix",
-      "collection": "Netflix 2026",
-      "netflixOriginal": true,
-      "editorialPriority": 100
-    },
     "series:321221": {
       "type": "series",
       "id": "321221",
@@ -4648,23 +4824,6 @@
       "backdrop": "https://image.tmdb.org/t/p/w1280/xlyT6E0jceTQ9s4BpHY6PkeOilr.jpg",
       "sourceName": "TMDB",
       "sourceUrl": "https://www.themoviedb.org/tv/50524",
-      "popularity": 10,
-      "streamingPlatform": "Netflix",
-      "collection": "Netflix 2026",
-      "netflixOriginal": true,
-      "editorialPriority": 100
-    },
-    "series:336243": {
-      "type": "series",
-      "id": "336243",
-      "name": "ChiaroScuro",
-      "originalTitle": "ChiaroScuro",
-      "overview": "After a body is found in a Roman museum, an art expert must apply his instincts and skills to help police solve a mystery connected to his own past.",
-      "date": "2026-11-11",
-      "poster": "https://image.tmdb.org/t/p/w780/m9eZy0jzWCHSUUzbzIpysOrLgFb.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w1280/wM62vjwgxjQTlXX76xmQS1T49O2.jpg",
-      "sourceName": "TMDB",
-      "sourceUrl": "https://www.themoviedb.org/tv/336243",
       "popularity": 10,
       "streamingPlatform": "Netflix",
       "collection": "Netflix 2026",
@@ -4785,40 +4944,6 @@
       "sourceName": "TMDB",
       "sourceUrl": "https://www.themoviedb.org/tv/243555",
       "popularity": 7,
-      "streamingPlatform": "Netflix",
-      "collection": "Netflix 2026",
-      "netflixOriginal": true,
-      "editorialPriority": 100
-    },
-    "series:341603": {
-      "type": "series",
-      "id": "341603",
-      "name": "Stars and Vows: Anele & Buzza",
-      "originalTitle": "Stars and Vows: Anele & Buzza",
-      "overview": "Follow media darling Anele Mdoda and her royal fiance Buzza James from pre-wedding celebrations and tense family moments to their long-awaited \"I do.\"",
-      "date": "2026-11-13",
-      "poster": "https://image.tmdb.org/t/p/w780/lcCadlmIDtTdYbYfM2UlkCXhxEO.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w1280/xaSO3ejty5l7NO2NSbIieOKWs5c.jpg",
-      "sourceName": "TMDB",
-      "sourceUrl": "https://www.themoviedb.org/tv/341603",
-      "popularity": 6.4441,
-      "streamingPlatform": "Netflix",
-      "collection": "Netflix 2026",
-      "netflixOriginal": true,
-      "editorialPriority": 100
-    },
-    "series:312661": {
-      "type": "series",
-      "id": "312661",
-      "name": "Miracles of the ER",
-      "originalTitle": "急診室的奇蹟",
-      "overview": "A bold decision brings an average med student to an elite ER team, where he encounters medical crises, ethical dilemmas, and personal growth.",
-      "date": "2026-11-12",
-      "poster": "https://image.tmdb.org/t/p/w780/AaeU5NdIyoRl3qXy1z2sT5hDyio.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w1280/wZ0EW0svlRLRBNaUpIYjSSOM9Rt.jpg",
-      "sourceName": "TMDB",
-      "sourceUrl": "https://www.themoviedb.org/tv/312661",
-      "popularity": 6,
       "streamingPlatform": "Netflix",
       "collection": "Netflix 2026",
       "netflixOriginal": true,
@@ -8983,6 +9108,58 @@
       "sourceName": "TMDB",
       "sourceUrl": "https://www.themoviedb.org/movie/1131943",
       "popularity": 8.7057
+    },
+    "movie:1551025": {
+      "type": "movie",
+      "id": "1551025",
+      "name": "Guarding Stars",
+      "originalTitle": "Guarding Stars",
+      "overview": "When a no-nonsense bodyguard is assigned to protect a charming action star over the holidays, sparks fly, secrets unravel, and Christmas gets a whole lot more complicated.",
+      "date": "2026-11-18",
+      "poster": "https://image.tmdb.org/t/p/w780/wWNizZ4IcSld3xXH1WEXziJiNJN.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/qHvap0vpfTBIbv7cnR0OyBRqQHG.jpg",
+      "sourceName": "TMDB",
+      "sourceUrl": "https://www.themoviedb.org/movie/1551025",
+      "popularity": 5
+    },
+    "series:1622": {
+      "type": "series",
+      "id": "1622",
+      "name": "Supernatural",
+      "originalTitle": "Supernatural",
+      "overview": "When they were boys, Sam and Dean Winchester lost their mother to a mysterious and demonic supernatural force. Subsequently, their father raised them to be soldiers. He taught them about the paranormal evil that lives in the dark corners and on the back roads of America ... and he taught them how to kill it. Now, the Winchester brothers crisscross the country in their '67 Chevy Impala, battling every kind of supernatural threat they encounter along the way.",
+      "date": "2005-09-13",
+      "poster": "https://image.tmdb.org/t/p/w780/8iixmfGx5EIFPdpNvB2JvI3VIqX.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/lirPqYLTtd6XZqGn4cS1wiesTq0.jpg",
+      "sourceName": "TMDB",
+      "sourceUrl": "https://www.themoviedb.org/tv/1622",
+      "popularity": 8841
+    },
+    "series:1434": {
+      "type": "series",
+      "id": "1434",
+      "name": "Family Guy",
+      "originalTitle": "Family Guy",
+      "overview": "Sick, twisted, politically incorrect and Freakin' Sweet animated series featuring the adventures of the dysfunctional Griffin family. Bumbling Peter and long-suffering Lois have three kids. Stewie (a brilliant but sadistic baby bent on killing his mother and taking over the world), Meg (the oldest, and is the most unpopular girl in town) and Chris (the middle kid, he's not very bright but has a passion for movies). The final member of the family is Brian - a talking dog and much more than a pet, he keeps Stewie in check whilst sipping Martinis and sorting through his own life issues.",
+      "date": "1999-01-31",
+      "poster": "https://image.tmdb.org/t/p/w780/3PFsEuAiyLkWsP4GG6dIV37Q6gu.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/jbTqU6BJMufoMnPSlO4ThrcXs3Y.jpg",
+      "sourceName": "TMDB",
+      "sourceUrl": "https://www.themoviedb.org/tv/1434",
+      "popularity": 5217
+    },
+    "series:32573": {
+      "type": "series",
+      "id": "32573",
+      "name": "Strike Back",
+      "originalTitle": "Strike Back",
+      "overview": "The series follows John Porter, a former British Special Forces soldier, who is drafted back into service by Section 20, a fictional branch of the Secret Intelligence Service.",
+      "date": "2010-05-05",
+      "poster": "https://image.tmdb.org/t/p/w780/c0ItaC2Grf4WVJ06G87BjNn9pRs.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/2tL3pNaPQb2ioEYswMkDGVTo1pt.jpg",
+      "sourceName": "TMDB",
+      "sourceUrl": "https://www.themoviedb.org/tv/32573",
+      "popularity": 420
     }
   }
 }
