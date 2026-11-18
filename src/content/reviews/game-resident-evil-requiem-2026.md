@@ -10,7 +10,7 @@ type: game
 date: 2026-11-14
 releaseDate: "2026-02-27"
 poster: "https://www.nintendojo.com/wp-content/uploads/2025/12/Resident_Evil_Requiem_-_Key_Art_Horizontal.png"
-backdrop: "https://assetsio.gnwcdn.com/resident-evil-requiem-grace-key-art.webp?auto=webp&enable=upscale&fit=crop&height=600&width=1200"
+backdrop: "https://assetsio.gnwcdn.com/resident-evil-requiem-grace-key-art.webp"
 youtubeVideoId: "9lrThxCoznw"
 youtubeVideoTitle: "Resident Evil Requiem - Launch Trailer"
 mediaVerified: true
