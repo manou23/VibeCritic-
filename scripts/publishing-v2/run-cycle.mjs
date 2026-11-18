@@ -3,6 +3,35 @@ import {loadState,saveState} from './store.mjs';
 import {runCycle} from './runner.mjs';
 import {createPublishingAdapters,buildFreeProviders} from './adapters.mjs';
 
+async function readPublisherSettings(){
+  try {
+    const value=JSON.parse(await fs.readFile('data/publisher-v2-settings.json','utf8'));
+    const interval=Number(value.intervalMinutes||30);
+    if(![30,45,60,90,120,180].includes(interval)) throw new Error('Invalid publisher interval');
+    const timezone=String(value.timezone||'Africa/Algiers');
+    const parts=new Intl.DateTimeFormat('en-GB',{timeZone:timezone,hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
+    const part=name=>Number(parts.find(x=>x.type===name)?.value||0);
+    const nowMinute=part('hour')*60+part('minute');
+    const parse=v=>{const m=String(v||'').match(/^([01]\d|2[0-3]):([0-5]\d)$/);if(!m)throw new Error('Invalid publisher time window');return Number(m[1])*60+Number(m[2]);};
+    const start=parse(value.startTime||'00:00'),end=parse(value.endTime||'23:59');
+    const inWindow=start===end||(start<end?nowMinute>=start&&nowMinute<=end:nowMinute>=start||nowMinute<=end);
+    return {enabled:value.enabled!==false,intervalMinutes:interval,inWindow,timezone,localTime:parts.map(x=>x.value).join('')};
+  } catch(error) {
+    if(error?.code==='ENOENT') return {enabled:true,intervalMinutes:30,inWindow:true,timezone:'Africa/Algiers'};
+    throw error;
+  }
+}
+
+
+const settings=await readPublisherSettings();
+if(!settings.enabled){
+ console.log('V2 cycle skipped: publisher paused from admin settings.');
+ process.exit(0);
+}
+if(!settings.inWindow){
+ console.log('V2 cycle skipped: outside configured publishing window ('+settings.timezone+' '+settings.localTime+').');
+ process.exit(0);
+}
 const state=await loadState();
 const adapters=createPublishingAdapters();
 const providers=buildFreeProviders();
@@ -18,6 +47,7 @@ try{
 const result=await runCycle({
  state,adapters,providers,publishedCounts,
  articleLimits:{minWords:600,minCharacters:3200},
+ cycleIntervalMinutes:settings.intervalMinutes,
  persist:saveState
 });
 console.log('V2 cycle:',JSON.stringify({action:result.action,key:result.key,stage:result.stage,provider:result.provider,providerCalls:result.providerCalls,errors:result.errors||[]}));
