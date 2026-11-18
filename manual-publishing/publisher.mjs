@@ -49,7 +49,7 @@ function validateArticle(file, markdown) {
   if (listCount(raw, 'pros') < 3) throw new Error(file + ': at least three specific pros are required.');
   if (listCount(raw, 'cons') < 2) throw new Error(file + ': at least two genuine cons are required.');
   if (!/^## .+/m.test(body)) throw new Error(file + ': article body needs editorial section headings.');
-  if ((body.match(/\b[\p{L}\p{N}]+\b/gu) || []).length < 600) throw new Error(file + ': article body must contain at least 600 words.');
+  if (body.trim().split(/\\s+/).filter(Boolean).length < 600) throw new Error(file + ': article body must contain at least 600 words.');
   if (!/https:\/\/\S+/i.test(body)) throw new Error(file + ': include source links in the article body.');
   return { slug, sourceId: scalar(raw, 'sourceId'), markdown, sha256: crypto.createHash('sha256').update(markdown).digest('hex') };
 }
