@@ -39,7 +39,7 @@ export const responsivePosterSrcSet = (src?: string) => {
   try {
     const image = new URL(src);
     if (image.hostname !== 'image.tmdb.org') return '';
-    const pattern = /\\/w(?:92|154|185|342|500|780|1280|original)\\//;
+    const pattern = new RegExp('/w(?:92|154|185|342|500|780|1280|original)/');
     if (!pattern.test(image.pathname)) return '';
     const small = new URL(image.href);
     const medium = new URL(image.href);
