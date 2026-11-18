@@ -80,6 +80,34 @@ assert.equal(fallback.action,'stage-saved','an available free fallback should re
 assert.equal(fallback.provider,'backup-free');
 assert.equal(failedProviderCalls,2,'fallback provider should receive the next single AI call without waiting for the failed provider cooldown');
 
+// Malformed model JSON is an article-quality failure, not a provider outage:
+ // exclude the failing provider for this draft and use the next eligible free provider.
+ const malformedState=createState();const malformedProviderCalls=[];
+ const malformedAdapters={
+  discover:async()=>[{type:'movie',id:'malformed-json',date:'2020-01-01'}],
+  collectEvidence:async()=>({youtubeVideoId:'Abcdef12345',sources:[{name:'Official',url:'https://example.com/a'},{name:'Independent',url:'https://example.org/b'}]}),
+  generatePart:async({provider})=>{
+   malformedProviderCalls.push(provider.id);
+   if(provider.id==='primary-free'){
+    const error=new Error('رد النموذج JSON غير مكتمل أو ينقصه قوس إغلاق');
+    error.requests=2;error.tokens=80;throw error;
+   }
+   return {text:'backup stage',tokens:100};
+  },
+  assembleArticle:async()=>article,publishFile:async()=>({path:'unused'}),verifyDeployment:async()=>false
+ };
+ const malformedProviders=[{id:'primary-free',enabled:true,free:true,priority:1,dailyRequestLimit:5,dailyTokenLimit:5000},{id:'backup-free',enabled:true,free:true,priority:2,dailyRequestLimit:5,dailyTokenLimit:5000}];
+ const malformedFailure=await runCycle({state:malformedState,adapters:malformedAdapters,providers:malformedProviders,now,persist:async()=>{}});
+ assert.equal(malformedFailure.action,'generation-deferred');
+ assert.deepEqual(malformedState.jobs['movie:malformed-json'].excludedProviders,['primary-free']);
+ assert.equal(malformedState.providerCooldowns['primary-free'],undefined,'invalid JSON must not create a provider-outage cooldown');
+ assert.equal(malformedState.providerUsage['2026-11-16']['primary-free'].requests,2,'both malformed JSON attempts must count against the free request budget');
+ const malformedFallback=await runCycle({state:malformedState,adapters:malformedAdapters,providers:malformedProviders,now:now+5*60*1000+1,persist:async()=>{}});
+ assert.equal(malformedFallback.action,'stage-saved');
+ assert.equal(malformedFallback.provider,'backup-free','the next eligible free provider must be selected instead of repeating the malformed provider');
+ assert.deepEqual(malformedProviderCalls,['primary-free','backup-free']);
+ assert.deepEqual(malformedState.jobs['movie:malformed-json'].excludedProviders,[],'a successful fallback clears the per-job provider exclusion');
+
 // Duplicate titles must be retired before they reserve the cycle's single article slot.
 const duplicateState=createState();
 duplicateState.jobs['movie:dupe']={key:'movie:dupe',item:{type:'movie',id:'dupe'},status:'writing',stage:1,parts:[],createdAt:new Date(now).toISOString(),updatedAt:new Date(now).toISOString()};

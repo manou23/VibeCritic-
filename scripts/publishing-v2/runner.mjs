@@ -79,7 +79,12 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
  // left by older runs so the same free provider can retry after the short content retry window.
  if(job?.status==='waiting'&&job.resumeTo==='writing'&&/Section word count rejected:|Stage 3 required fields missing:|رد النموذج JSON غير مكتمل|Invalid JSON/.test(String(job.lastError||''))){
   const failedId=providers.find(p=>String(job.lastError||'').startsWith(p.id+': '))?.id;
-  if(failedId){state.providerCooldowns||={};delete state.providerCooldowns[failedId];job={...job,nextAttemptAt:now,updatedAt:new Date(now).toISOString()};state.jobs[job.key]=job;await save();}
+  if(failedId){
+   state.providerCooldowns||={};delete state.providerCooldowns[failedId];
+   const excluded=new Set(job.excludedProviders||[]);excluded.add(failedId);
+   job={...job,excludedProviders:[...excluded],nextAttemptAt:now,updatedAt:new Date(now).toISOString()};
+   state.jobs[job.key]=job;await save();
+  }
  }
  // Migrate legacy waiting checkpoints: a provider cooldown must not freeze the whole draft queue.
  // On the next scheduled cycle, the failed provider remains excluded while eligible free fallbacks can run.
@@ -88,17 +93,22 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
   const hasCoolingProvider=Object.values(cooldowns).some(x=>(Number(x?.until)||Date.parse(x?.until||'')||0)>now);
   if(hasCoolingProvider){job={...job,nextAttemptAt:now+5*60*1000,updatedAt:new Date(now).toISOString()};state.jobs[job.key]=job;await save();}
  }
- // If a provider failed but another free provider is ready, do not make the draft wait five minutes.
- // Keep the failed provider excluded by its durable cooldown and immediately try the next eligible provider.
+ // If a provider failed but another free provider is ready, resume without waiting for the retry delay.
+ // Content-quality failures are excluded for this draft only; real provider outages use global cooldowns.
  if(job?.status==='waiting'&&job.resumeTo==='writing'){
   const failedId=providers.find(p=>String(job.lastError||'').startsWith(p.id+': '))?.id;
-  if(failedId){
+  const excluded=new Set(job.excludedProviders||[]);
+  if(failedId)excluded.add(failedId);
+  if(excluded.size){
+   job={...job,excludedProviders:[...excluded]};
    const day=new Date(now).toISOString().slice(0,10);state.providerUsage[day]||={};state.providerCooldowns||={};
    const eligibility={...state.providerUsage[day]};
    for(const p0 of providers)eligibility[p0.id]={...(eligibility[p0.id]||{}),cooldownUntil:state.providerCooldowns[p0.id]?.until||null};
-   const fallback=chooseFreeProvider(providers.filter(p=>p.id!==failedId),eligibility,now);
+   const fallback=chooseFreeProvider(providers.filter(p=>!excluded.has(p.id)),eligibility,now);
    if(fallback&&(Number(job.nextAttemptAt)||Date.parse(job.nextAttemptAt||'')||0)>now){
     job={...job,nextAttemptAt:now,updatedAt:new Date(now).toISOString()};state.jobs[job.key]=job;await save();
+   }else{
+    state.jobs[job.key]=job;await save();
    }
   }
  }
@@ -160,11 +170,21 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
  const stageDue=Number(job?.nextStageAt)||Date.parse(job?.nextStageAt||'')||0;
  if(job?.status==='writing'&&job.stage>0&&stageDue>now)return {action:'stage-waiting',key:job.key,stage:job.stage,retryAt:stageDue,providerCalls:0};
  if(job.status==='writing'){
-  const day=new Date(now).toISOString().slice(0,10);state.providerUsage[day]||={};state.providerCooldowns||={};const eligibility={...state.providerUsage[day]};for(const p0 of providers){eligibility[p0.id]={...(eligibility[p0.id]||{}),cooldownUntil:state.providerCooldowns[p0.id]?.until||null};}const p=chooseFreeProvider(providers,eligibility,now);
+  const day=new Date(now).toISOString().slice(0,10);state.providerUsage[day]||={};state.providerCooldowns||={};const eligibility={...state.providerUsage[day]};for(const p0 of providers){eligibility[p0.id]={...(eligibility[p0.id]||{}),cooldownUntil:state.providerCooldowns[p0.id]?.until||null};}
+  const excludedProviders=new Set(job.excludedProviders||[]);
+  const p=chooseFreeProvider(providers.filter(p0=>!excludedProviders.has(p0.id)),eligibility,now);
+  if(!p&&excludedProviders.size){
+   const retryProvider=chooseFreeProvider(providers,eligibility,now);
+   if(retryProvider){
+    job=transition(job,'provider-deferred',{lastError:'All eligible free providers returned unusable content; retrying after a short pause.',nextAttemptAt:now+5*60*1000,retryDelayMs:5*60*1000,resumeTo:'writing',countAttempt:false,excludedProviders:[]},now);
+    state.jobs[job.key]=job;await save();
+    return {action:'provider-retry-deferred',key:job.key,providerCalls:0};
+   }
+  }
   if(!p){job=transition(job,'provider-deferred',{lastError:'No free provider within configured daily budget.',nextAttemptAt:now+3600000,resumeTo:'writing',countAttempt:false},now);state.jobs[job.key]=job;await save();return {action:'provider-unavailable',key:job.key,providerCalls:0};}
   let part,requestCount=1;try{part=await adapters.generatePart({job,provider:p,stage:job.stage+1});if(!part||typeof part.text!=='string'||!part.text.trim())throw Error('Empty article stage.');requestCount=Math.max(1,Number(part.requests)||1);recordUsage(state.providerUsage[day],p.id,{requests:requestCount,tokens:Number(part.tokens||0),success:true});delete state.providerCooldowns[p.id];}
-  catch(error){requestCount=Math.max(1,Number(error?.requests)||1);recordUsage(state.providerUsage[day],p.id,{requests:requestCount,tokens:Number(error?.tokens||0),success:false});const message=String(error?.message||error);const contentQualityFailure=/^Section word count rejected:|^Stage 3 required fields missing:|^رد النموذج JSON غير مكتمل|^Invalid JSON/.test(message);if(contentQualityFailure){delete state.providerCooldowns[p.id];job=transition(job,'provider-deferred',{lastError:p.id+': '+message,nextAttemptAt:now+5*60*1000,resumeTo:'writing'},now);}else{const prior=state.providerCooldowns[p.id]||{failures:0};const failures=Number(prior.failures||0)+1;const cooldownMs=Math.min(24*60*60*1000,2*60*60*1000*Math.pow(2,Math.min(failures-1,3)));const retryAt=Number(error?.retryAt)>now?Number(error.retryAt):now+cooldownMs;state.providerCooldowns[p.id]={failures,until:retryAt,lastError:message.slice(0,500)};job=transition(job,'provider-deferred',{lastError:p.id+': '+message,nextAttemptAt:now+5*60*1000,resumeTo:'writing'},now);}state.jobs[job.key]=job;await save();return {action:'generation-deferred',key:job.key,provider:p.id,providerCalls:requestCount};}
-  job=transition(job,'part-saved',{part:{text:part.text},lastProvider:p.id,...(job.stage<2?{nextStageAt:now+CYCLE_INTERVAL}:{})},now);state.jobs[job.key]=job;await save();if(job.stage<3)return {action:'stage-saved',key:job.key,stage:job.stage,nextStageAt:job.nextStageAt||null,provider:p.id,providerCalls:requestCount};
+  catch(error){requestCount=Math.max(1,Number(error?.requests)||1);recordUsage(state.providerUsage[day],p.id,{requests:requestCount,tokens:Number(error?.tokens||0),success:false});const message=String(error?.message||error);const contentQualityFailure=/^Section word count rejected:|^Stage 3 required fields missing:|^رد النموذج JSON غير مكتمل|^Invalid JSON/.test(message);if(contentQualityFailure){delete state.providerCooldowns[p.id];const excluded=new Set(job.excludedProviders||[]);excluded.add(p.id);job=transition(job,'provider-deferred',{lastError:p.id+': '+message,nextAttemptAt:now+5*60*1000,resumeTo:'writing',excludedProviders:[...excluded]},now);}else{const prior=state.providerCooldowns[p.id]||{failures:0};const failures=Number(prior.failures||0)+1;const cooldownMs=Math.min(24*60*60*1000,2*60*60*1000*Math.pow(2,Math.min(failures-1,3)));const retryAt=Number(error?.retryAt)>now?Number(error.retryAt):now+cooldownMs;state.providerCooldowns[p.id]={failures,until:retryAt,lastError:message.slice(0,500)};job=transition(job,'provider-deferred',{lastError:p.id+': '+message,nextAttemptAt:now+5*60*1000,resumeTo:'writing'},now);}state.jobs[job.key]=job;await save();return {action:'generation-deferred',key:job.key,provider:p.id,providerCalls:requestCount};}
+  job=transition(job,'part-saved',{part:{text:part.text},lastProvider:p.id,excludedProviders:[],...(job.stage<2?{nextStageAt:now+CYCLE_INTERVAL}:{})},now);state.jobs[job.key]=job;await save();if(job.stage<3)return {action:'stage-saved',key:job.key,stage:job.stage,nextStageAt:job.nextStageAt||null,provider:p.id,providerCalls:requestCount};
   const article=await adapters.assembleArticle(job);let quality=validateArticle(article,articleLimits);
   if(quality.valid&&adapters.editorialGate){const editorial=await adapters.editorialGate(article,job);if(editorial!==true&&editorial?.valid!==true)quality={...quality,valid:false,errors:[...quality.errors,...(editorial?.errors||['Editorial gate rejected draft.'])]};}
   if(!quality.valid){const retryFromStage=Math.min(3,Math.max(1,Number(quality.retryFromStage)||3));job=transition(job,'quality-failed',{lastError:quality.errors.join(' | '),nextAttemptAt:now+3600000,resumeTo:'writing',stage:retryFromStage-1,parts:job.parts.slice(0,retryFromStage-1)},now);state.jobs[job.key]=job;await save();return {action:'quality-rejected',key:job.key,errors:quality.errors,providerCalls:1};}
