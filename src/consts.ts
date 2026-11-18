@@ -20,7 +20,21 @@ export function scoreTone(score: number) {
 export const fmtDate = (d: string | Date) =>
   new Intl.DateTimeFormat('ar-u-ca-gregory', { dateStyle: 'long' }).format(new Date(d));
  // Request lighter CDN renditions for large hero and poster images.
- export const optimizeImage = (src?: string, kind: 'poster' | 'backdrop' = 'poster') => {
+ export const responsiveImageSrcSet = (src?: string) => {
+  if (!src) return '';
+  try {
+    const image = new URL(src);
+    if (image.hostname !== 'image.tmdb.org') return '';
+    const small = new URL(image.href);
+    const large = new URL(image.href);
+    const pattern = /\\/w(?:92|154|185|342|500|780|1280|original)\\//;
+    if (!pattern.test(image.pathname)) return '';
+    small.pathname = small.pathname.replace(pattern, '/w500/');
+    large.pathname = large.pathname.replace(pattern, '/w780/');
+    return small.href + ' 500w, ' + large.href + ' 780w';
+  } catch { return ''; }
+};
+export const optimizeImage = (src?: string, kind: 'poster' | 'backdrop' = 'poster') => {
    if (!src) return '';
    try {
      const image = new URL(src);
