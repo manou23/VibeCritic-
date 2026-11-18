@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T16:57:33.412Z",
+  "updatedAt": "2026-11-18T19:38:19.700Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -1755,8 +1755,8 @@
         "netflixOriginal": true,
         "editorialPriority": 100
       },
-      "status": "writing",
-      "stage": 2,
+      "status": "ready",
+      "stage": 3,
       "parts": [
         {
           "stage": 1,
@@ -1767,6 +1767,11 @@
           "stage": 2,
           "text": "{\"review\":\"تُظهر إبداعات الإخراج في \\\"ChiaroScuro\\\" حساً واضحاً للتمازج بين الظلال والضوء، وهو ما ينعكس ليس فقط في اسم السلسلة بل في طريقة تصوير المشاهد داخل المتحف الروماني. تُستغل الإضاءة لتسليط الانتباه على القطع الفنية وتكوين جو من الغموض، بينما تُقابل اللقطات القريبة للمعروضات بتقنيات تصوير ثابتة تُعطي إحساساً بالواقعية. من الناحية البصرية، تُظهر السلسلة ألواناً محايدة مع لمسات من الأحمر الداكن أو الأصفر الفاتح لتسليط الضوء على أدلة محددة، ما يخلق تبايناً يذكر بمفهوم الـ chiaroscuro في الرسم. أما الصوت فيتماشى مع النبرة المختلطة بين الجريمة والكوميديا؛ فالموسيقى الخلفية تتنقل بين إيقاعات جاز خفيفة تُخفف حدة المشهد التوتري إلى جانب أصوات المتحف الصاخبة التي تُعزز الإحساس بالمكان. الإيقاع يُدار بحذر، حيث تُعطي الحلقة الافتتاحية مساحة كافية لتقديم الخلفية والشخصيات قبل الانقضاض على تفاصيل الجريمة، ثم تُسرّع الوتيرة تدريجياً مع تقدم التحقيق. رغم ذلك، قد يشعر المشاهد ببطء طفيف في الفواصل الكوميدية التي تُطيل بعض الحوارات دون إضافة جوهرية إلى الحبكة، ما قد يُؤخر تدفق السرد في بعض الأجزاء. بشكل عام، ينجح الإخراج في دمج العناصر الفنية مع السرد الجريمة‑الكوميدي، مع بعض التحديات الطفيفة في الحفاظ على إيقاع متوازن طوال الحلقة.\",\"scores\":{\"story\":7.2,\"visuals\":8.1,\"sound\":7.5,\"pacing\":6.8},\"pros\":[],\"cons\":[],\"verdict\":\"\"}",
           "savedAt": "2026-11-18T16:57:30.869Z"
+        },
+        {
+          "stage": 3,
+          "text": "{\"review\":\"تُظهر \\\"ChiaroScuro\\\" قدرة ملحوظة على استثمار مفهوم الظلال والضوء ليس فقط في عنوانها بل في بنية السرد، حيث يتقاطع التباين البصري مع التوتر السردي لتشكيل نسيج قصصي متماسك. تتقن السلسلة المزج بين الجريمة والكوميديا عبر حوارٍ ذكي يُظهر معرفة الشخصيات الفنية، ما يضيف عمقاً إلى التحقيق ويمنح المشاهدين فرصة لاستكشاف تاريخ الفن من منظور غير تقليدي. الإيقاع العام يُحافظ على توازنٍ بين لحظات التشويق والراحة الكوميدية، مع تقدمٍ تدريجيٍ في كشف الأدلة يضمن بقاء الفضول متجددًا. من الناحية البصرية، تُستغل الإضاءة لتسليط الضوء على تفاصيل المتحف وتكوين جوٍ من الغموض، بينما تُعزز الألوان المحدودة التركيز على العناصر الدرامية. الصوت ينسق بين نغمات الجاز الخفيفة التي تخفف حدة المشاهد المتوترة وأصوات المتحف التي تُعطي إحساسًا بالمكان. ومع ذلك، يظل هناك بعض التباطؤ في الفواصل الكوميدية التي قد تُطيل الحوارات دون إضافة قيمة سردية، كما أن بعض الخيوط الدرامية تُترك غير مكتملة في الحلقة الأولى، ما يترك مساحة لتطوير مستقبل السلسلة. في المجمل، تُقدِّم \\\"ChiaroScuro\\\" تجربة فنية جذابة تستحق المتابعة، مع ضرورة تحسين وتيرة بعض المشاهد وتعميق بعض الخطوط الدرامية لتصل إلى إمكاناتها الكاملة.\",\"scores\":{\"story\":7.4,\"visuals\":8.2,\"sound\":7.6,\"pacing\":6.9},\"pros\":[\"استخدام مبدع للضوء والظل يعكس مفهوم الـ chiaroscuro في السرد البصري.\",\"حوار ذكي يدمج المعرفة الفنية مع عناصر الجريمة، ما يضيف عمقاً للشخصيات.\",\"تناغم صوتي يجمع بين موسيقى الجاز وأصوات المتحف لتعزيز الجو العام.\"],\"cons\":[\"فواصل كوميدية طويلة قد تُبطئ إيقاع القصة.\",\"بعض الخيوط الدرامية تُترك غير مكتملة في الحلقة الأولى.\"],\"verdict\":\"\\\"ChiaroScuro\\\" تُقدِّم فكرة مبتكرة وتوازنًا جيدًا بين الجريمة والكوميديا، مع إضاءة بصرية متميزة وصوت متقن. رغم وجود بعض التباطؤ في الفواصل الكوميدية وعدم اكتمال بعض الخطوط الدرامية، فإن السلسلة تستحق المتابعة لتطورها المحتمل وتعمقها في المستقبل.\"}",
+          "savedAt": "2026-11-18T19:38:01.734Z"
         }
       ],
       "evidence": {
@@ -1822,12 +1827,92 @@
       },
       "attempts": 0,
       "createdAt": "2026-11-18T16:11:04.389Z",
-      "updatedAt": "2026-11-18T16:57:30.869Z",
+      "updatedAt": "2026-11-18T19:38:01.734Z",
       "nextAttemptAt": null,
       "lastError": null,
       "excludedProviders": [],
       "lastProvider": "groq",
-      "nextStageAt": 1795022850869
+      "nextStageAt": 1795022850869,
+      "article": {
+        "title": "ChiaroScuro",
+        "originalTitle": "ChiaroScuro",
+        "headline": "مراجعة نقدية: ChiaroScuro بين نقاط القوة وحدود التجربة",
+        "hook": "تقدم سلسلة \"ChiaroScuro\" فكرة جذابة تجمع بين الجريمة والكوميديا في إطار إيطالي معاصر، حيث يُستدعى خبير فنون لتفكيك لغز جريمة اكتُشفت داخل متحف روماني. الفكرة تستند إلى تلاعب الضوء والظل ليس فقط في العنوان بل في السرد نفسه، ما يخلق جواً من الغموض المتوازن مع لحظات فكاهية خفيفة تخفف من توتر التحقيق.",
+        "summary": "تقدم سلسلة \"ChiaroScuro\" فكرة جذابة تجمع بين الجريمة والكوميديا في إطار إيطالي معاصر، حيث يُستدعى خبير فنون لتفكيك لغز جريمة اكتُشفت داخل متحف روماني. الفكرة تستند إلى تلاعب الضوء والظل ليس فقط في العنوان بل في السرد نفسه، ما يخلق جواً من الغموض المتوازن مع لحظات فكاهية خفيفة تخفف من توتر التحقيق.",
+        "verdict": "\"ChiaroScuro\" تُقدِّم فكرة مبتكرة وتوازنًا جيدًا بين الجريمة والكوميديا، مع إضاءة بصرية متميزة وصوت متقن. رغم وجود بعض التباطؤ في الفواصل الكوميدية وعدم اكتمال بعض الخطوط الدرامية، فإن السلسلة تستحق المتابعة لتطورها المحتمل وتعمقها في المستقبل.",
+        "type": "series",
+        "sourceId": "series:336243",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/336243",
+        "streamingPlatform": "Netflix",
+        "collection": "Netflix 2026",
+        "netflixOriginal": true,
+        "streamingRegion": "",
+        "releaseDate": "2026-11-11",
+        "date": "2026-11-18",
+        "score": 7.5,
+        "storyScore": 7.4,
+        "visualsScore": 8.2,
+        "soundScore": 7.6,
+        "pacingScore": 6.9,
+        "pros": [
+          "استخدام مبدع للضوء والظل يعكس مفهوم الـ chiaroscuro في السرد البصري.",
+          "حوار ذكي يدمج المعرفة الفنية مع عناصر الجريمة، ما يضيف عمقاً للشخصيات.",
+          "تناغم صوتي يجمع بين موسيقى الجاز وأصوات المتحف لتعزيز الجو العام."
+        ],
+        "cons": [
+          "فواصل كوميدية طويلة قد تُبطئ إيقاع القصة.",
+          "بعض الخيوط الدرامية تُترك غير مكتملة في الحلقة الأولى."
+        ],
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/336243",
+            "extract": "After a body is found in a Roman museum, an art expert must apply his instincts and skills to help police solve a mystery connected to his own past."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Chiaroscuro",
+            "extract": "In art, chiaroscuro (English: kee-AR-ə-SKOOR-oh, -⁠SKURE-, Italian: [ˌkjaroˈskuːro]; lit. 'light-dark') is the use of strong contrasts between light and dark, usually bold contrasts affecting a whole composition. It is also a technical term used by artists and art historians for the use of contrasts of light to achieve a sense of volume in modelling three-dimensional objects and figures. Similar effects in cinema, and black and white and low-key photography, are also called chiaroscuro. Taken to its extreme, the use of shadow and contrast to focus strongly on the subject of a painting is called tenebrism. Further specialized uses of the term include chiaroscuro woodcut for colour woodcuts printed with different blocks, each using a different coloured ink; and chiaroscuro for drawings on coloured paper in a dark medium with white highlighting. Chiaroscuro originated in the Renaissance period but is most notably associated with Baroque art. Chiaroscuro is one of the canonical painting modes of the Renaissance (alongside cangiante, sfumato and unione) (see also Renaissance art). Artists known for using the technique include Leonardo da Vinci, Caravaggio, Rembrandt, Vermeer, Goya, and Georges de La Tour."
+          }
+        ],
+        "poster": "https://image.tmdb.org/t/p/w780/h4dM4FjqSJihwGpo3x0llMvNSfg.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/wM62vjwgxjQTlXX76xmQS1T49O2.jpg",
+        "platforms": [],
+        "genres": [
+          "Comedy",
+          "Crime"
+        ],
+        "cast": [
+          "Pierpaolo Spollon",
+          "Andrea Lattanzi",
+          "Romana Maggiora Vergano",
+          "Matilde Gioli",
+          "Aurora Giovinazzo"
+        ],
+        "crew": [
+          "Jan Maria Michelini"
+        ],
+        "tags": [
+          "Comedy",
+          "Crime",
+          "Netflix",
+          "Netflix 2026"
+        ],
+        "youtubeVideoId": "DKjB0JPhmYc",
+        "youtubeVideoTitle": "Official Trailer [Subtitled]",
+        "externalVideoUrl": "",
+        "externalVideoTitle": "",
+        "body": "## القصة والشخصيات والبناء\n\nتقدم سلسلة \"ChiaroScuro\" فكرة جذابة تجمع بين الجريمة والكوميديا في إطار إيطالي معاصر، حيث يُستدعى خبير فنون لتفكيك لغز جريمة اكتُشفت داخل متحف روماني. الفكرة تستند إلى تلاعب الضوء والظل ليس فقط في العنوان بل في السرد نفسه، ما يخلق جواً من الغموض المتوازن مع لحظات فكاهية خفيفة تخفف من توتر التحقيق. الشخصيات الأساسية تبدو مُصاغة بعناية؛ فالبطل الخبير يُظهر مزيجاً من الذكاء التحليلي والشغف الفني، ما يمنحه عمقاً يُسهم في ربط القصة بماضيه الشخصي دون كشف تفاصيل محددة. الدعم من طاقم الممثلين مثل بييرباولو سبولون وأندريا لاتانزي يضيف طبقة من التفاعل الديناميكي، حيث يُظهر كل منهم قدرة على إضفاء طابع مميز على أدوارهم، سواءً في لحظات الجدية أو الكوميديا. من حيث البناء السردي، تُظهر السلسلة إيقاعاً معتدلاً يبدأ بتقديم الحادثة وتفصيل الخلفيات، ثم ينتقل إلى تتبع الأدلة عبر مشاهد متقنة تُظهر تفاصيل المتحف وتاريخ الفن. رغم أن السرد لا يغوص بعمق كبير في تعقيدات الجريمة، إلا أن التوازن بين الجوانب الكوميدية والدرامية يُحافظ على جذب المشاهدين، مع ترك مساحة لتطور القصة في الحلقات القادمة. في المجمل، تُعطي السلسلة انطباعاً أولياً واعداً بفضل الفكرة المبتكرة والشخصيات المتناغمة، ما يجعلها تستحق المتابعة لتقييم مدى نجاحها في دمج عناصر الجريمة والفن معاً.\n\n## الإخراج والصورة والصوت والإيقاع\n\nتُظهر إبداعات الإخراج في \"ChiaroScuro\" حساً واضحاً للتمازج بين الظلال والضوء، وهو ما ينعكس ليس فقط في اسم السلسلة بل في طريقة تصوير المشاهد داخل المتحف الروماني. تُستغل الإضاءة لتسليط الانتباه على القطع الفنية وتكوين جو من الغموض، بينما تُقابل اللقطات القريبة للمعروضات بتقنيات تصوير ثابتة تُعطي إحساساً بالواقعية. من الناحية البصرية، تُظهر السلسلة ألواناً محايدة مع لمسات من الأحمر الداكن أو الأصفر الفاتح لتسليط الضوء على أدلة محددة، ما يخلق تبايناً يذكر بمفهوم الـ chiaroscuro في الرسم. أما الصوت فيتماشى مع النبرة المختلطة بين الجريمة والكوميديا؛ فالموسيقى الخلفية تتنقل بين إيقاعات جاز خفيفة تُخفف حدة المشهد التوتري إلى جانب أصوات المتحف الصاخبة التي تُعزز الإحساس بالمكان. الإيقاع يُدار بحذر، حيث تُعطي الحلقة الافتتاحية مساحة كافية لتقديم الخلفية والشخصيات قبل الانقضاض على تفاصيل الجريمة، ثم تُسرّع الوتيرة تدريجياً مع تقدم التحقيق. رغم ذلك، قد يشعر المشاهد ببطء طفيف في الفواصل الكوميدية التي تُطيل بعض الحوارات دون إضافة جوهرية إلى الحبكة، ما قد يُؤخر تدفق السرد في بعض الأجزاء. بشكل عام، ينجح الإخراج في دمج العناصر الفنية مع السرد الجريمة‑الكوميدي، مع بعض التحديات الطفيفة في الحفاظ على إيقاع متوازن طوال الحلقة.\n\n## التقييم النقدي وحدود العمل\n\nتُظهر \"ChiaroScuro\" قدرة ملحوظة على استثمار مفهوم الظلال والضوء ليس فقط في عنوانها بل في بنية السرد، حيث يتقاطع التباين البصري مع التوتر السردي لتشكيل نسيج قصصي متماسك. تتقن السلسلة المزج بين الجريمة والكوميديا عبر حوارٍ ذكي يُظهر معرفة الشخصيات الفنية، ما يضيف عمقاً إلى التحقيق ويمنح المشاهدين فرصة لاستكشاف تاريخ الفن من منظور غير تقليدي. الإيقاع العام يُحافظ على توازنٍ بين لحظات التشويق والراحة الكوميدية، مع تقدمٍ تدريجيٍ في كشف الأدلة يضمن بقاء الفضول متجددًا. من الناحية البصرية، تُستغل الإضاءة لتسليط الضوء على تفاصيل المتحف وتكوين جوٍ من الغموض، بينما تُعزز الألوان المحدودة التركيز على العناصر الدرامية. الصوت ينسق بين نغمات الجاز الخفيفة التي تخفف حدة المشاهد المتوترة وأصوات المتحف التي تُعطي إحساسًا بالمكان. ومع ذلك، يظل هناك بعض التباطؤ في الفواصل الكوميدية التي قد تُطيل الحوارات دون إضافة قيمة سردية، كما أن بعض الخيوط الدرامية تُترك غير مكتملة في الحلقة الأولى، ما يترك مساحة لتطوير مستقبل السلسلة. في المجمل، تُقدِّم \"ChiaroScuro\" تجربة فنية جذابة تستحق المتابعة، مع ضرورة تحسين وتيرة بعض المشاهد وتعميق بعض الخطوط الدرامية لتصل إلى إمكاناتها الكاملة.\n\n### المصادر والمراجع\n\n- [TMDB](https://www.themoviedb.org/tv/336243)\n- [Wikipedia](https://en.wikipedia.org/wiki/Chiaroscuro)"
+      },
+      "quality": {
+        "valid": true,
+        "errors": [],
+        "words": 605,
+        "characters": 3571
+      },
+      "fileWritten": true,
+      "articlePath": "src/content/reviews/series-chiaroscuro-336243.md"
     }
   },
   "providerUsage": {
@@ -1879,30 +1964,30 @@
     },
     "2026-11-18": {
       "groq": {
-        "requests": 5,
-        "tokens": 11494,
-        "successes": 4,
+        "requests": 6,
+        "tokens": 14320,
+        "successes": 5,
         "failures": 0
       },
       "gemini": {
-        "requests": 3,
+        "requests": 4,
         "tokens": 0,
         "successes": 0,
-        "failures": 2
+        "failures": 3
       }
     }
   },
   "providerCooldowns": {
     "gemini": {
-      "failures": 1,
-      "until": 1795025464389,
+      "failures": 2,
+      "until": 1795045081734,
       "lastError": "gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
     }
   },
   "cycle": {
-    "startedAt": 1795021050869,
-    "deadlineAt": 1795022850869,
-    "nextStartAt": 1795022850869,
+    "startedAt": 1795030681734,
+    "deadlineAt": 1795032481734,
+    "nextStartAt": 1795032481734,
     "articleKey": "series:336243"
   },
   "discoveryBacklog": {
@@ -9165,6 +9250,19 @@
       "sourceName": "TMDB",
       "sourceUrl": "https://www.themoviedb.org/tv/32573",
       "popularity": 420
+    },
+    "series:307853": {
+      "type": "series",
+      "id": "307853",
+      "name": "Sunshine through the Rain",
+      "originalTitle": "今天是太阳雨",
+      "overview": "Two struggling biology students, initially rivals for a scholarship, find mutual support and solace, transforming their relationship from competition to companionship.",
+      "date": "2026-11-06",
+      "poster": "https://image.tmdb.org/t/p/w780/pG00jI2UCm0Q6U9SDonIlvy3M3i.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/9LtN1ac91JAqXMke8CAJ6BiBSLS.jpg",
+      "sourceName": "TMDB",
+      "sourceUrl": "https://www.themoviedb.org/tv/307853",
+      "popularity": 17
     }
   }
 }
