@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths: ['.github/workflows/publishing-v2-automatic.yml']
   schedule:
-    # Every 15-minute check also checkpoints the durable backlog; article stages remain 30 minutes apart. Released Netflix 2026 films use company 178464 and series use network 213.
+    # Every 15-minute checkpoint persists the Netflix 2026 backlog; only released films and aired seasons qualify, with 30-minute article stages.
     - cron: '*/15 * * * *'
 permissions:
   contents: write
