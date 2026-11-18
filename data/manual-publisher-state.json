@@ -66,6 +66,12 @@
       "sha256": "8c0b80cbfca1bf9028b8b44d4d9c8eabf714a2fcc98e06b5bc25de662bfed987",
       "articlePath": "src/content/reviews/black-doves-season-2-2026.md",
       "publishedAt": "2026-11-18T01:41:26.434Z"
+    },
+    "ninho-le-prix-a-payer-2026": {
+      "sourceId": "movie:81763154:manual-editorial",
+      "sha256": "cf88539155e8f91ef92bd97d3aa4c66a3a06840a50ebc6f338c472b8a9eb7ec3",
+      "articlePath": "src/content/reviews/ninho-le-prix-a-payer-2026.md",
+      "publishedAt": "2026-11-18T01:47:55.410Z"
     }
   }
 }
