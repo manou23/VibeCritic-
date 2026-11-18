@@ -1,5 +1,5 @@
 name: VibeCritic Automatic Publishing V2
-# Manual recovery checkpoint: this workflow provides an immediate push-triggered cycle after publisher fixes.
+# Post-fix recovery checkpoint: run one real V2 cycle after deployment-verification changes reach main.
 on:
   workflow_dispatch:
   push:
