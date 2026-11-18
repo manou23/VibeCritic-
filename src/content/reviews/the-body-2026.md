@@ -16,7 +16,9 @@ soundScore: 8.2
 pacingScore: 7.0
 reviewMode: review
 poster: "https://occ-0-3012-2433.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO/AAAABWzs1ktbKn-hg6O0_RGutHrPxqDPwRuaxtmSS8aV5iYrrcB11I4sTU-tBJBfamjWD9az3HS7WcTrinhInNa43sanKbV0SkOGEjG5.jpg?r=bfb"
-backdrop: "https://occ-0-3012-2433.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO/AAAABWzs1ktbKn-hg6O0_RGutHrPxqDPwRuaxtmSS8aV5iYrrcB11I4sTU-tBJBfamjWD9az3HS7WcTrinhInNa43sanKbV0SkOGEjG5.jpg?r=bfb"
+backdrop: "https://dnm.nflximg.net/api/v6/a01MIaQTUgSJoLaS_OCn68Eg3hU/AAAAQX318FqX_SxuHczMM2Rax2taykcwKXozAnwLlSnTJPuFTq2SE5X6AMGLSDN02kRgw_Fe3xehdwMmB54rDPWSdWwNzVE_iy0mWjlk6Ja3DEfYwsmqog3NbWcSYoJ9M7KyWFjyJnkTrGoTR2IbSDb9ZTA7.jpg?r=c58"
+youtubeVideoId: "wl7uj7n7DoY"
+youtubeVideoTitle: "The Body | Official Trailer | Netflix"
 platforms: ["Netflix"]
 pros:
   - "خلطة نغمية مميزة تجمع الرعب النفسي ودراما المدرسة والكوميديا السوداء"
