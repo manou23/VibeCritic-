@@ -108,7 +108,7 @@ const reviewStructuredData = {
     <p class="article-deck">{d.headline}</p>
   </header>
 
-  {d.backdrop&&<figure class="article-backdrop"><img src={optimizeImage(d.backdrop, 'backdrop')} alt={d.title} loading="eager" fetchpriority="high" decoding="async"/><figcaption>VibeCritic — قراءة نقدية بلا مجاملة</figcaption></figure>}
+  {(d.backdrop || d.poster)&&<figure class="article-backdrop"><img src={optimizeImage(d.backdrop || d.poster, d.backdrop ? 'backdrop' : 'poster')} alt={d.title} loading="eager" fetchpriority="high" decoding="async"/><figcaption>VibeCritic — قراءة نقدية بلا مجاملة</figcaption></figure>}
 
   <div class="article-layout">
     <div class="article-main">
