@@ -154,4 +154,20 @@ assert.equal(alternateEvidenceCalls,1,"the current blocked research job must get
 assert.equal(rateLimitRetry.action,"stage-saved");
 assert.equal(rateLimitState.jobs["movie:rate-limit"].researchFallbackAttempted,true,"the one-time fallback marker must persist across restarts");
 
+// A dedicated Netflix 2026 editorial collection outranks the general mixed discovery pool.
+const netflixPriorityState=createState();
+const netflixPriorityAdapters={
+ discover:async()=>[
+  {type:'game',id:'general-game',name:'General Game',date:'2026-11-16'},
+  {type:'movie',id:'netflix-2026',name:'Netflix 2026 Film',date:'2026-11-16',streamingPlatform:'Netflix',collection:'Netflix 2026',editorialPriority:100}
+ ],
+ collectEvidence:async item=>({title:item.name,type:item.type,sourceId:item.type+':'+item.id,overview:'Verified synopsis',sources:[{name:'TMDB',url:'https://www.themoviedb.org/movie/1'},{name:'Wikipedia',url:'https://en.wikipedia.org/wiki/Test'}],youtubeVideoId:'Abcdef12345',poster:'https://example.com/poster.jpg'}),
+ generatePart:async({stage})=>({text:'Netflix queue stage '+stage+' '+text,tokens:100}),
+ assembleArticle:async()=>article,publishFile:async()=>({path:'unused'}),verifyDeployment:async()=>false
+};
+await runCycle({state:netflixPriorityState,adapters:netflixPriorityAdapters,providers,now:now+20000000,persist:async()=>{}});
+assert.ok(netflixPriorityState.jobs['movie:netflix-2026'],'Netflix 2026 content must be selected ahead of lower-priority general discovery items');
+assert.equal(netflixPriorityState.jobs['movie:netflix-2026'].item.streamingPlatform,'Netflix');
+assert.equal(netflixPriorityState.jobs['movie:netflix-2026'].item.collection,'Netflix 2026');
+
 console.log('VibeCritic Publishing Engine v2 crash-recovery and continuous-cycle tests passed.');
