@@ -16,6 +16,10 @@ soundScore: 8.6
 pacingScore: 9.1
 reviewMode: review
 poster: "https://img.succesone.fr/2025/01/Split-Fiction-SuccesOneFR-Microsoft.jpg"
+backdrop: "https://drop-assets.ea.com/images/3gYI0jlTy9H46Q18GTnoLJ/4b3965b13b0c746cc39fb79a7ccc72e8/SPLIT_Screenshot_Gameplay_Summit02_3840x2160_no-logo.jpg?im=AspectCrop%3D%2816%2C9%29%2CxPosition%3D0.8200520833333333%2CyPosition%3D0.5407407407407407"
+youtubeVideoId: "es6YsZUxLpE"
+youtubeVideoTitle: "Split Fiction | Official Story Trailer"
+mediaVerified: true
 platforms: ["PlayStation 5", "Xbox Series X|S", "PC", "Nintendo Switch 2"]
 gameStores:
   - name: "Epic Games"
