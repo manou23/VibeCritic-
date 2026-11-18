@@ -143,6 +143,28 @@ for (const file of reviewFiles) {
   const source = await fs.readFile(path.join(reviewRoot, file), 'utf8');
   const frontmatter = source.match(/^---\s*\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/)?.[1] || '';
   const body = source.replace(/^---\s*\r?\n[\s\S]*?\r?\n---(?:\r?\n|$)/, '');
+  const manualArticle = /^editorialWorkflow:\\s*["']?manual-assisted["']?\\s*$/m.test(frontmatter);
+  if (manualArticle) {
+    const field = (key) => {
+      const match = frontmatter.match(new RegExp('^' + key + ':\\\\s*(.*?)\\\\s*$', 'm'));
+      return match?.[1]?.replace(/^(['"])(.*)\\1$/, '$2').trim() || '';
+    };
+    const poster = field('poster');
+    const backdrop = field('backdrop');
+    const videoId = field('youtubeVideoId');
+    const videoTitle = field('youtubeVideoTitle');
+    if (!/^https:\\/\\/\\/\\S+$/i.test(poster)) reviewFailures.push(file + ': manual article poster must be an HTTPS image URL');
+    if (!/^https:\\/\\/\\/\\S+$/i.test(backdrop)) reviewFailures.push(file + ': manual article backdrop must be an HTTPS image URL');
+    if (poster && poster === backdrop) reviewFailures.push(file + ': manual article poster and backdrop must be distinct images');
+    if (!/^[A-Za-z0-9_-]{11}$/.test(videoId)) reviewFailures.push(file + ': manual article must include a valid embedded official YouTube video ID');
+    if (!videoTitle) reviewFailures.push(file + ': manual article must include a video title');
+    const pagePath = path.join(dist, 'reviews', file.replace(/\\.md$/, ''), 'index.html');
+    const html = await fs.readFile(pagePath, 'utf8').catch(() => '');
+    if (!html.includes('class="article-backdrop"') || !html.includes('class="article-poster"')) reviewFailures.push(file + ': built page must render both backdrop and poster images');
+    if (!html.includes('data-youtube-facade') || !html.includes('data-video-id="' + videoId + '"')) reviewFailures.push(file + ': built page must render the embedded official video');
+    if (poster && !html.includes(poster)) reviewFailures.push(file + ': poster URL is missing from the built page');
+    if (backdrop && !html.includes(backdrop)) reviewFailures.push(file + ': backdrop URL is missing from the built page');
+  }
   const modeMatch = frontmatter.match(/^reviewMode:\s*(review|preview|limited)\s*$/m);
   const reviewMode = modeMatch?.[1] || 'review';
   if (frontmatter.match(/^reviewMode:/m) && !modeMatch) reviewFailures.push(file + ': invalid reviewMode');
