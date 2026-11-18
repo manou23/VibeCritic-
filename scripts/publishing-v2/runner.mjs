@@ -1,6 +1,6 @@
 import { enqueue, selectActiveJob, cycleDecision, transition, chooseFreeProvider, recordUsage, validateArticle, validateEvidence } from './core.mjs';
 import { recoverAbandonedJobs } from './recovery.mjs';
-function candidate(items,state,counts={},now=Date.now()) { const used=new Set(Object.keys(state.jobs)); const today=new Date(now).toISOString().slice(0,10); const c={game:counts.game||0,movie:counts.movie||0,series:counts.series||0}; for(const j of Object.values(state.jobs)) if(j.status==='published') c[j.item.type]=(c[j.item.type]||0)+1; return (items||[]).filter(x=>x&&['game','movie','series'].includes(x.type)&&String(x.id||'').trim()&&(!x.date||String(x.date).slice(0,10)<=today)&&!used.has(x.type+':'+x.id)).sort((a,b)=>Number(b.editorialPriority||0)-Number(a.editorialPriority||0)||c[a.type]-c[b.type]||String(b.date||'').localeCompare(String(a.date||'')) )[0]||null; }
+function candidate(items,state,counts={},now=Date.now()) { const used=new Set(Object.keys(state.jobs)); const c={game:counts.game||0,movie:counts.movie||0,series:counts.series||0}; for(const j of Object.values(state.jobs)) if(j.status==='published') c[j.item.type]=(c[j.item.type]||0)+1; return (items||[]).filter(x=>x&&['game','movie','series'].includes(x.type)&&String(x.id||'').trim()&&!used.has(x.type+':'+x.id)).sort((a,b)=>Number(b.editorialPriority||0)-Number(a.editorialPriority||0)||c[a.type]-c[b.type]||String(b.date||'').localeCompare(String(a.date||'')) )[0]||null; }
 // One bounded task per invocation; each saved article-writing stage is spaced 30 minutes apart.
 export async function runCycle({state,adapters,providers,now=Date.now(),persist=async()=>{},publishedCounts={},articleLimits={},researchSkips=0,cycleIntervalMinutes=30}) {
  if(!state||state.version!==2||!adapters) throw Error('Publisher v2 state and adapters are required.');
@@ -50,13 +50,8 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
   state.cycle={startedAt:now,deadlineAt:now+CYCLE_INTERVAL,nextStartAt:now+CYCLE_INTERVAL,articleKey:null};
   await save();
  }
- // Never score or publish an unreleased movie/series/game as a completed review.
- const today=new Date(now).toISOString().slice(0,10);
- if(job&&job.item?.date&&String(job.item.date).slice(0,10)>today&&job.status!=='published'){
-  state.jobs[job.key]=transition(job,'abandoned',{lastError:'Editorial rejection: release date is in the future; wait until release before reviewing.'},now);
-  if(state.cycle?.articleKey===job.key)state.cycle.articleKey=null;
-  await save();job=null;
- }
+ // Upcoming titles are eligible for clearly labeled advance-reading articles; the adapter
+ // instructs the writer not to present predictions as hands-on reviews.
  // Avoid creating a duplicate review when an existing manual or assisted article covers this title.
  if(job&&!job.fileWritten&&job.status!=='ready'&&adapters.isAlreadyPublished&&await adapters.isAlreadyPublished(job.item)){
   const duplicateKey=job.key;

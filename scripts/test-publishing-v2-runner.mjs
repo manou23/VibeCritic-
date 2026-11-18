@@ -187,10 +187,10 @@ const netflixPriorityAdapters={
  assembleArticle:async()=>article,publishFile:async()=>({path:'unused'}),verifyDeployment:async()=>false
 };
 await runCycle({state:netflixPriorityState,adapters:netflixPriorityAdapters,providers,now:now+20000000,persist:async()=>{}});
-assert.ok(netflixPriorityState.jobs['movie:netflix-2026'],'Netflix 2026 content must be selected ahead of lower-priority general discovery items');
-assert.equal(netflixPriorityState.jobs['movie:netflix-2026'].item.streamingPlatform,'Netflix');
-assert.equal(netflixPriorityState.jobs['movie:netflix-2026'].item.collection,'Netflix 2026');
- assert.ok(netflixPriorityState.discoveryBacklog['movie:netflix-future-2026'],'upcoming 2026 Netflix films must remain queued until their release date');
+assert.ok(netflixPriorityState.jobs['movie:netflix-future-2026'],'upcoming Netflix titles must now enter the active publishing queue as advance-reading work');
+assert.equal(netflixPriorityState.jobs['movie:netflix-future-2026'].item.streamingPlatform,'Netflix');
+assert.equal(netflixPriorityState.jobs['movie:netflix-future-2026'].item.collection,'Netflix 2026');
+assert.ok(netflixPriorityState.discoveryBacklog['movie:netflix-2026'],'released Netflix titles must remain in the durable backlog while the upcoming preview is processed');
 
 // Netflix titles are collected into durable storage even while an older saved draft owns the active slot.
 const collectionState=createState();
