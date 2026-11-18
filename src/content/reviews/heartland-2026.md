@@ -15,6 +15,7 @@ visualsScore: 7.2
 soundScore: 7.1
 pacingScore: 6.5
 reviewMode: review
+mediaVerified: true
 poster: "https://occ-0-3012-2433.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO/AAAABaQm-3W335rdX5Mb17do604lnDkudfCbyfK_eALW_r1IVmTcF7c46lmAVfrDfLevc49PmbUqZ5Vw5LM5DPSge9KYc8sYPIcr08bB.jpg?r=1ee"
 backdrop: "https://dnm.nflximg.net/api/v6/a01MIaQTUgSJoLaS_OCn68Eg3hU/AAAAQeOUNnxxQ7xZlhFgdYD2ZaOikqmWk9IFzOCN9RZCmaFL5Yir4oXEy1t0sfgDu-GFl0v5a8xZUQQFw0ffn8_cgeXBGYvRIlP971gsPJUbB4mJQLtr1Bg_NCR5PJhwPUonJZ3h6glSr3Hx_835ftlb66d8.jpg?r=2fa"
 youtubeVideoId: "ziIz59enN1c"

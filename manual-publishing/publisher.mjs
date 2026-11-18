@@ -27,7 +27,7 @@ function validateArticle(file, markdown) {
   const slug = file.replace(/\.md$/i, '');
   if (!SLUG.test(slug)) throw new Error(file + ': filename must be a lowercase kebab-case slug.');
   const { raw, body } = frontmatterOf(markdown);
-  const required = ['title', 'headline', 'summary', 'type', 'date', 'sourceId', 'sourceUrl', 'poster', 'backdrop'];
+  const required = ['title', 'headline', 'summary', 'type', 'date', 'sourceId', 'sourceUrl', 'poster', 'backdrop', 'youtubeVideoId', 'youtubeVideoTitle', 'mediaVerified'];
   for (const key of required) if (!scalar(raw, key)) throw new Error(file + ': missing required field ' + key + '.');
   if (!['movie', 'series', 'game'].includes(scalar(raw, 'type'))) throw new Error(file + ': type must be movie, series, or game.');
   if (scalar(raw, 'aiGenerated') !== 'false') throw new Error(file + ': manual articles must set aiGenerated: false.');
@@ -37,8 +37,13 @@ function validateArticle(file, markdown) {
     const value = scalar(raw, key);
     if (!HTTPS.test(value || '')) throw new Error(file + ': ' + key + ' must be an HTTPS URL.');
   }
+  if (scalar(raw, 'mediaVerified') !== 'true') throw new Error(file + ': mediaVerified: true is required after all media assets are checked.');
+  const poster = scalar(raw, 'poster');
+  const backdrop = scalar(raw, 'backdrop');
+  if (poster === backdrop) throw new Error(file + ': poster and backdrop must be two distinct images.');
   const videoId = scalar(raw, 'youtubeVideoId');
-  if (videoId && !/^[A-Za-z0-9_-]{11}$/.test(videoId)) throw new Error(file + ': youtubeVideoId is not a valid 11-character YouTube ID.');
+  if (!/^[A-Za-z0-9_-]{11}$/.test(videoId || '')) throw new Error(file + ': youtubeVideoId must be a valid 11-character official video ID.');
+  if (!scalar(raw, 'youtubeVideoTitle')) throw new Error(file + ': youtubeVideoTitle is required for the embedded video.');
   const scoreKeys = ['score', 'storyScore', 'visualsScore', 'soundScore', 'pacingScore'];
   for (const key of scoreKeys) {
     const value = numeric(raw, key);
