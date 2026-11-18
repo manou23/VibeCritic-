@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T23:09:41.509Z",
+  "updatedAt": "2026-11-18T23:12:15.320Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -390,20 +390,20 @@
         "sourceUrl": "https://www.themoviedb.org/tv/85077",
         "popularity": 1064
       },
-      "status": "queued",
+      "status": "waiting",
       "stage": 0,
       "parts": [],
       "evidence": null,
       "attempts": 0,
       "createdAt": "2026-11-17T00:47:56.078Z",
-      "updatedAt": "2026-11-18T19:45:30.746Z",
-      "nextAttemptAt": null,
-      "lastError": null,
+      "updatedAt": "2026-11-18T23:12:14.702Z",
+      "nextAttemptAt": 1795044434702,
+      "lastError": "Evidence recovery attempt 1: Primary source metadata is too thin",
       "article": null,
       "quality": null,
       "recoveryAttempts": 1,
-      "evidenceRecoveryAttempts": 0,
-      "resumeTo": null
+      "evidenceRecoveryAttempts": 1,
+      "resumeTo": "researching"
     },
     "movie:1170608": {
       "key": "movie:1170608",
