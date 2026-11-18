@@ -6,9 +6,10 @@ const state={jobs:{
  'movie:2':{key:'movie:2',item:{type:'movie',id:'2',name:'Duplicate',date:'2020-01-01'},status:'abandoned',stage:0,parts:[],lastError:'Skipped: an existing review already covers this title.'},
  'movie:3':{key:'movie:3',item:{type:'movie',id:'3',name:'Future Film',date:'2027-01-01'},status:'abandoned',stage:0,parts:[],lastError:'Evidence rejected: Independent source has insufficient detail'},
  'series:4':{key:'series:4',item:{type:'series',id:'4',name:'Already Written',date:'2020-01-01'},status:'abandoned',stage:3,parts:[],fileWritten:true,lastError:'Evidence rejected: No sufficiently matching independent encyclopedia page'},
- 'series:5':{key:'series:5',item:{type:'series',id:'5',name:'Already Retried',date:'2020-01-01'},status:'abandoned',stage:0,parts:[],recoveryAttempts:1,lastError:'Evidence rejected: Primary source metadata is too thin'}
+ 'series:5':{key:'series:5',item:{type:'series',id:'5',name:'Already Retried',date:'2020-01-01'},status:'abandoned',stage:0,parts:[],recoveryAttempts:1,lastError:'Evidence rejected: Primary source metadata is too thin'},
+ 'movie:6':{key:'movie:6',item:{type:'movie',id:'6',name:'Legacy Preview',date:'2027-02-01'},status:'abandoned',stage:0,parts:[],lastError:'Editorial rejection: release date is in the future; wait until release before reviewing.'}
 }};
-assert.equal(recoverAbandonedJobs(state,now),1,'only eligible evidence failures are reactivated');
+assert.equal(recoverAbandonedJobs(state,now),2,'eligible evidence failures, including future releases, are reactivated');
 const recovered=state.jobs['game:1'];
 assert.equal(recovered.status,'queued');
 assert.equal(recovered.stage,0);
@@ -17,7 +18,8 @@ assert.equal(recovered.evidence,null);
 assert.equal(recovered.recoveryAttempts,1);
 assert.equal(recovered.evidenceRecoveryAttempts,0);
 assert.equal(state.jobs['movie:2'].status,'abandoned','duplicates must never be retried');
-assert.equal(state.jobs['movie:3'].status,'abandoned','future releases must not be reactivated');
+assert.equal(state.jobs['movie:3'].status,'queued','future releases with recoverable evidence failures must be reactivated as previews');
 assert.equal(state.jobs['series:4'].status,'abandoned','already written articles must not be duplicated');
 assert.equal(state.jobs['series:5'].status,'abandoned','recovery is bounded to one reactivation');
+assert.equal(state.jobs['movie:6'].status,'queued','legacy future-release rejections must be migrated into the preview queue');
 console.log('VibeCritic automatic evidence recovery tests passed.');
