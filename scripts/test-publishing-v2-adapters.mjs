@@ -70,6 +70,13 @@ globalThis.fetch=async(url,options)=>{
   if(parsedUrl.hostname==='www.wikidata.org'&&parsedUrl.pathname==='/w/api.php')return new Response(JSON.stringify({search:[{id:'Q12345',label:'Evidence Recovery Film',description:'2020 drama film about a family facing a difficult decision',aliases:[]}]}),{status:200,headers:{'content-type':'application/json'}});
   throw new Error('Unexpected Wikidata recovery URL: '+String(url));
  }
+ if(mode==='wikidata-unrelated-evidence'){
+  if(parsedUrl.hostname==='api.themoviedb.org')return new Response(JSON.stringify({title:'The Beast',original_title:'The Beast',overview:'A sufficiently detailed verified synopsis for the upcoming action film, describing its premise, characters, setting, and central conflict with enough context for analysis.',release_date:'2026-10-08',poster_path:'/beast.jpg',backdrop_path:'/beast-backdrop.jpg',genres:[{name:'Action'}],credits:{cast:[],crew:[]},videos:{results:[]}}),{status:200,headers:{'content-type':'application/json'}});
+  if(parsedUrl.hostname==='en.wikipedia.org'&&parsedUrl.pathname==='/w/api.php')return new Response(JSON.stringify({query:{search:[]}}),{status:200,headers:{'content-type':'application/json'}});
+  if(parsedUrl.hostname==='en.wikipedia.org'&&parsedUrl.pathname.startsWith('/api/rest_v1/page/summary/'))return new Response('not found',{status:404});
+  if(parsedUrl.hostname==='www.wikidata.org'&&parsedUrl.pathname==='/w/api.php')return new Response(JSON.stringify({search:[{id:'Q1781715',label:'The Beast',description:'album by Polish death metal band Vader',aliases:[]}]}),{status:200,headers:{'content-type':'application/json'}});
+  throw new Error('Unexpected unrelated Wikidata URL: '+String(url));
+ }
  if(mode==='game-video-fallback'){
   if(parsedUrl.hostname==='api.rawg.io'&&parsedUrl.pathname==='/api/games/99')return new Response(JSON.stringify({name:'Game With Clip',description_raw:'A verified and sufficiently detailed game description that explains its setting, premise, and gameplay systems for the adapter test.',released:'2020-01-01',background_image:'https://media.rawg.io/media/game-poster.jpg',clip:{clip:'https://media.rawg.io/media/game-trailer.mp4'},genres:[{name:'Action'}],platforms:[{platform:{name:'PC'}}]}),{status:200,headers:{'content-type':'application/json'}});
   if(parsedUrl.hostname==='api.rawg.io'&&parsedUrl.pathname==='/api/games/99/movies')return new Response(JSON.stringify({results:[]}),{status:200,headers:{'content-type':'application/json'}});
@@ -156,6 +163,12 @@ try{
  assert.equal(wikidataRecovered.youtubeVideoId,'','a missing trailer must not block evidence-backed review generation');
  assert.equal(wikidataRecovered.poster,'https://image.tmdb.org/t/p/w1280/recovery-backdrop.jpg','a verified backdrop may replace a missing poster');
  assert.ok(wikidataRecovered.overview.length>80,'the adapter must choose the richer detail-page synopsis over a short discovery snippet');
+ mode='wikidata-unrelated-evidence';
+ await assert.rejects(
+  adapters.collectEvidence({type:'movie',id:'1185344',name:'The Beast',date:'2026-10-08',overview:'A sufficiently detailed verified synopsis for the upcoming action film, describing its premise, characters, setting, and central conflict with enough context for analysis.',sourceName:'TMDB',sourceUrl:'https://www.themoviedb.org/movie/1185344',poster:'',backdrop:''}),
+  /No sufficiently matching independent movie reference/,
+  'an unrelated Wikidata album with the same title must never be accepted as evidence for a film'
+ );
  mode='netflix-licensed-movie-evidence';
  const licensedMovieEvidence=await adapters.collectEvidence({type:'movie',id:'606',name:'Netflix Licensed 2026 Film',date:'2026-04-10',overview:'A detailed factual synopsis of this 2026 film, including its premise, setting, principal characters, and central conflict, with enough detail for critical review.',sourceName:'TMDB',sourceUrl:'https://www.themoviedb.org/movie/606',poster:'https://image.tmdb.org/t/p/w780/licensed-film.jpg',backdrop:'https://image.tmdb.org/t/p/w1280/licensed-film-backdrop.jpg',streamingPlatform:'Netflix',collection:'Netflix 2026',netflixOriginal:false,streamingRegion:'DZ'});
  assert.equal(licensedMovieEvidence.releaseDate,'2026-04-10');
