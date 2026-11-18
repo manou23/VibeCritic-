@@ -117,7 +117,7 @@ async function discover(excludedKeys=[]){
 function independentMediaMatch(title,type,referenceTitle,extract){
  const wanted=norm(title),reference=norm(referenceTitle),detail=String(extract||'');
  const titleMatches=wanted.length>=5&&(reference===wanted||reference.startsWith(wanted)||reference.includes(wanted));
- const typeMatches=type==='game'?/\\b(game|video game)\\b/i.test(detail):type==='series'?/\\b(television series|tv series|television|series)\\b/i.test(detail):/\\b(film|movie)\\b/i.test(detail);
+ const typeMatches=type==='game'?/\b(game|video game)\b/i.test(detail):type==='series'?/\b(television series|tv series|television|series)\b/i.test(detail):/\b(film|movie)\b/i.test(detail);
  return titleMatches&&typeMatches;
 }
 async function wikidataEvidence(title,type){
