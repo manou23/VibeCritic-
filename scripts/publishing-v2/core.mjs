@@ -26,11 +26,12 @@ export function validateState(s){
 function activePriority(job){
  if(job.status==='ready')return 0;
  if(job.status==='quality-check')return 1;
- if(job.status==='writing'||(job.status==='waiting'&&job.resumeTo==='writing'))return 2;
+ if(job.status==='writing')return 2;
  if(job.status==='researching')return 3;
  if(job.status==='queued')return 4;
- if(job.status==='waiting'&&job.resumeTo==='researching')return 5;
- return 6;
+ if(job.status==='waiting'&&job.resumeTo==='writing')return 5;
+ if(job.status==='waiting'&&job.resumeTo==='researching')return 6;
+ return 7;
 }
 export function selectActiveJob(jobs={}){
  return Object.values(jobs).filter(j=>j&&ACTIVE.has(j.status))
@@ -41,7 +42,6 @@ export function selectActiveJob(jobs={}){
 export function selectRunnableJob(jobs={},now=Date.now(),{includeReady=true}={}){
  return Object.values(jobs).filter(j=>{
   if(!j||!ACTIVE.has(j.status)||(!includeReady&&j.status==="ready"))return false;
-  if(j.status==="waiting"&&time(j.nextAttemptAt)>now)return false;
   if(j.status==="writing"&&j.stage>0&&time(j.nextStageAt)>now)return false;
   return true;
  }).sort((a,b)=>activePriority(a)-activePriority(b)||time(a.createdAt)-time(b.createdAt)||a.key.localeCompare(b.key))[0]||null;
