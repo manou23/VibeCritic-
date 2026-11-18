@@ -148,6 +148,11 @@ async function collectEvidence(item){
   poster=data.poster_path?'https://image.tmdb.org/t/p/w780'+data.poster_path:poster;
   backdrop=data.backdrop_path?'https://image.tmdb.org/t/p/w1280'+data.backdrop_path:backdrop;
   genres=arr(data.genres).map(x=>x.name).filter(Boolean);releaseDate=data.release_date||data.first_air_date||releaseDate;
+  if(item.streamingPlatform==='Netflix'&&item.type==='series'){
+   const verifiedSeason=arr(data.seasons).filter(x=>Number(x.season_number)>0&&String(x.air_date||'').slice(0,4)==='2026'&&String(x.air_date||'').slice(0,10)<=new Date().toISOString().slice(0,10)).sort((a,b)=>String(a.air_date).localeCompare(String(b.air_date)))[0];
+   if(!verifiedSeason)throw new Error('Netflix 2026 season release date could not be verified');
+   releaseDate=verifiedSeason.air_date;
+  }
   cast=arr(data.credits?.cast).slice(0,8).map(x=>x.name).filter(Boolean);
   crew=arr(data.credits?.crew).filter(x=>['Director','Creator'].includes(x.job)).slice(0,5).map(x=>x.name).filter(Boolean);
   const trailers=arr(data.videos?.results).filter(v=>v.site==='YouTube'&&v.type==='Trailer'&&/^[A-Za-z0-9_-]{11}$/.test(v.key||''));
