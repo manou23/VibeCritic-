@@ -190,7 +190,14 @@ await runCycle({state:netflixPriorityState,adapters:netflixPriorityAdapters,prov
 assert.ok(netflixPriorityState.jobs['movie:netflix-2026'],'Netflix 2026 content must be selected ahead of lower-priority general discovery items');
 assert.equal(netflixPriorityState.jobs['movie:netflix-2026'].item.streamingPlatform,'Netflix');
 assert.equal(netflixPriorityState.jobs['movie:netflix-2026'].item.collection,'Netflix 2026');
- assert.ok(netflixPriorityState.discoveryBacklog['movie:netflix-future-2026'],'upcoming 2026 Netflix films must remain queued until their release date');
+ assert.ok(netflixPriorityState.discoveryBacklog['movie:netflix-future-2026'],'upcoming titles remain in the durable discovery backlog until selected');
+ const previewState=createState();
+ const previewItem={type:'movie',id:'future-preview',name:'Future Preview',date:'2027-05-20'};
+ const previewAdapters={...netflixPriorityAdapters,discover:async()=>[previewItem],collectEvidence:async item=>({title:item.name,type:item.type,releaseDate:item.date,overview:'Verified announced details',sources:[{name:'TMDB',url:'https://www.themoviedb.org/movie/2'},{name:'Wikipedia',url:'https://en.wikipedia.org/wiki/Future_Preview'}],poster:'https://example.com/preview.jpg'})};
+ const previewStart=await runCycle({state:previewState,adapters:previewAdapters,providers,now:now+30000000,persist:async()=>{}});
+ assert.equal(previewStart.action,'stage-saved','future-dated titles should start the normal article workflow');
+ assert.equal(previewState.jobs['movie:future-preview'].reviewMode,'preview','future-dated titles must be explicitly marked as pre-release previews');
+ assert.equal(previewState.jobs['movie:future-preview'].evidence.reviewMode,'preview');
 
 // Netflix titles are collected into durable storage even while an older saved draft owns the active slot.
 const collectionState=createState();
