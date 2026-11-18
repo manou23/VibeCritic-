@@ -1,30 +1,30 @@
-# VibeCritic Admin Console setup
+# إعداد لوحة إدارة VibeCritic
 
-The admin console is protected by Cloudflare Access at the edge and independently verifies the Access JWT in the Pages Function. Never put credentials in source control or paste tokens into chat.
+تعمل لوحة الإدارة على `vibecritic.pages.dev` دون Cloudflare Access. تسجيل الدخول محمي بكلمة مرور محفوظة كـ Cloudflare Secret، وتُنشأ جلسة موقعة من الخادم داخل Cookie بخصائص HttpOnly وSecure وSameSite=Strict. لا تضع أي قيمة سرية في ملفات المستودع أو في المحادثة.
 
-## Cloudflare Pages environment variables
+## متغيرات Cloudflare Pages المطلوبة
 
-Add these as Production environment variables:
+من Workers & Pages ← مشروع vibecritic ← Settings ← Variables and Secrets، أضف القيم التالية في بيئة Production:
 
-- `CF_ACCESS_TEAM_DOMAIN`: your Cloudflare Access team issuer, e.g. `https://your-team.cloudflareaccess.com`
-- `CF_ACCESS_AUD`: the Access application AUD tag for the admin application
-- `ADMIN_EMAIL`: the permitted administrator email (or comma-separated allowlist)
-- `GITHUB_ADMIN_TOKEN`: a fine-grained GitHub token restricted to this repository with Contents: Read and write, Actions: Read and write, and Metadata: Read
-- `GITHUB_REPOSITORY`: `manou23/VibeCritic-`
+- `ADMIN_PASSWORD` — اختر كلمة مرور طويلة وفريدة (20 حرفاً أو أكثر). أضفها كـ Secret، وليس Text.
+- `ADMIN_SESSION_SECRET` — سلسلة عشوائية قوية لا تقل عن 32 بايت. أضفها كـ Secret.
+- `GITHUB_ADMIN_TOKEN` — GitHub fine-grained personal access token مقيد بالمستودع `manou23/VibeCritic-` فقط. الصلاحيات: Contents Read and write، Actions Read and write، Metadata Read-only. أضفه كـ Secret.
+- `GITHUB_REPOSITORY` — القيمة `manou23/VibeCritic-` كـ Text (اختياري لأن الكود يستخدمها افتراضياً).
 
-## Cloudflare Access
+لا تضف `CF_ACCESS_TEAM_DOMAIN` أو `CF_ACCESS_AUD` أو `ADMIN_EMAIL`؛ لم تعد مطلوبة في هذا التصميم.
 
-Create a self-hosted Access application for `vibecritic.pages.dev/admin*` and `vibecritic.pages.dev/api/admin`. Apply an allow policy for the exact administrator email(s) only. The Pages Function also validates JWT signature, issuer, audience, expiry, and email allowlist.
+## النشر والتحقق
 
-## First release
+1. أضف المتغيرات إلى Production بعد دمج التعديلات ونشرها.
+2. أعد نشر Pages حتى تُحمّل المتغيرات الجديدة.
+3. افتح `https://vibecritic.pages.dev/admin/`.
+4. أدخل كلمة مرور الإدارة التي حفظتها في `ADMIN_PASSWORD`.
+5. تأكد من ظهور حالة الناشر وسجل GitHub Actions.
 
-- Reads the real V2 durable state and recent GitHub Actions runs.
-- Shows the active job, stage, published/abandoned counts, stale-state warnings, and recent errors.
-- Saves pause/resume, interval, daily time window, and timezone settings to `data/publisher-v2-settings.json`.
-- Dispatches a manual recovery cycle through GitHub Actions.
+## الصلاحيات والخصوصية
 
-The scheduled workflow remains a 15-minute heartbeat. The engine reads the saved settings before doing work, so the dashboard does not need to rewrite workflow cron expressions. The current publishing engine keeps its existing stage spacing and one-active-draft safety.
-
-## Verify after deployment
-
-Open `https://vibecritic.pages.dev/admin/` while signed in through Cloudflare Access. Confirm the identity email, latest state timestamp, and recent workflow runs. Missing environment variables are configuration errors, not successful authentication.
+- كلمة المرور ومفتاح الجلسات ورمز GitHub أسرار خادمية لا تُرسل إلى المتصفح.
+- جلسة الإدارة صالحة لمدة 8 ساعات، وتُحفظ في Cookie من نوع HttpOnly وSecure وSameSite=Strict.
+- لا تشارك كلمة المرور أو GitHub token مع أي شخص.
+- تغيير الإعدادات يكتب إلى `data/publisher-v2-settings.json` في فرع `main`، وتشغيل دورة يرسل dispatch إلى workflow `publishing-v2-schedule.yml`.
+- إعدادات الناشر الآلي ومحرك V2 والنشر اليدوي تبقى منفصلة؛ لا تغيّر هذه اللوحة مسار النشر اليدوي.
