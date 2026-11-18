@@ -42,6 +42,12 @@
       "sha256": "2705f2f906ac8166ce0a7df4bd84fddd336ed4a511b6d63fb8db643d1f8520be",
       "articlePath": "src/content/reviews/apex-2026.md",
       "publishedAt": "2026-11-18T01:05:00.455Z"
+    },
+    "unchosen-2026": {
+      "sourceId": "netflix-2026-series-unchosen-81703047",
+      "sha256": "b4f8edb0e6b888f5c567ef218b31b70618984b1446ae762b0bdf84c1b5684d69",
+      "articlePath": "src/content/reviews/unchosen-2026.md",
+      "publishedAt": "2026-11-18T01:06:29.365Z"
     }
   }
 }
