@@ -156,6 +156,7 @@ try{
  assert.equal(article.youtubeVideoTitle,'المقطع الرسمي');
  assert.equal(article.streamingPlatform,'Netflix','Netflix platform label must survive article assembly');
  assert.equal(article.collection,'Netflix 2026','Netflix editorial collection label must survive article assembly');
+ assert.ok(article.tags.includes('Netflix')&&article.tags.includes('Netflix 2026'),'Netflix reviews must carry searchable collection tags');
  assert.ok(article.body.includes('https://en.wikipedia.org/wiki/Test'),'independent source links must be visible');
 }finally{globalThis.fetch=originalFetch;}
 console.log('VibeCritic V2 adapter contract tests passed.');
