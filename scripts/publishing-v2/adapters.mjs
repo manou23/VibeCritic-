@@ -253,13 +253,30 @@ async function modelCall(provider,text){
 }
 const y=v=>JSON.stringify(String(v??''));
 const yamlList=a=>a?.length?'\n'+a.map(v=>'  - '+y(v)).join('\n'):' []';
+function renderArticleFile(a,job){
+ const fm=['---','title: '+y(a.title),'originalTitle: '+y(a.originalTitle),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 5','reviewMode: '+(a.reviewMode||'review'),...(a.isAdvanceReading?['advanceReading: true']:[]),'date: '+a.date,'releaseDate: '+y(a.releaseDate||''),'publishedAt: '+y(new Date().toISOString()),'type: '+a.type,'score: '+a.score,'storyScore: '+a.storyScore,'visualsScore: '+a.visualsScore,'soundScore: '+a.soundScore,'pacingScore: '+a.pacingScore,'sourceName: '+y(a.sourceName),'sourceId: '+y(a.sourceId),'sourceUrl: '+y(a.sourceUrl),...(a.streamingPlatform?['streamingPlatform: '+y(a.streamingPlatform)]:[]),...(a.collection?['editorialCollection: '+y(a.collection)]:[]),...(a.streamingPlatform?['netflixOriginal: '+String(a.netflixOriginal===true),'streamingRegion: '+y(a.streamingRegion||'')]:[]),...(a.youtubeVideoId?['youtubeVideoId: '+y(a.youtubeVideoId),'youtubeVideoTitle: '+y(a.youtubeVideoTitle)]:[]),...(a.externalVideoUrl?['externalVideoUrl: '+y(a.externalVideoUrl),'externalVideoTitle: '+y(a.externalVideoTitle)]:[]),'aiGenerated: true','editorialWorkflow: automated','poster: '+y(a.poster),'backdrop: '+y(a.backdrop),'platforms:'+yamlList(a.platforms),'genres:'+yamlList(a.genres),'cast:'+yamlList(a.cast),'crew:'+yamlList(a.crew),'pros:'+yamlList(a.pros),'cons:'+yamlList(a.cons),'tags:'+yamlList(a.tags)].join('\\n');
+ return fm+'\\n---\\n\\n'+a.body+'\\n\\n> مراجعة تحريرية مبنية على المصادر المذكورة، ولا تدّعي تجربة مباشرة.\\n';
+}
+function articleFilename(a,job){
+ return a.type+'-'+slug(a.title)+'-'+String(job.item.id).replace(/[^\\w-]/g,'')+'.md';
+}
+async function stageFile(a,job){
+ const target=path.join('content-queue',articleFilename(a,job));
+ await fs.mkdir(path.dirname(target),{recursive:true});
+ try{await fs.access(target);throw new Error('Refusing to overwrite staged '+target);}catch(e){if(e.code!=='ENOENT')throw e;}
+ await fs.writeFile(target,renderArticleFile(a,job),{flag:'wx',encoding:'utf8'});
+ return {path:target.replace(/\\\\/g,'/')};
+}
 async function publishFile(a,job){
- const filename=a.type+'-'+slug(a.title)+'-'+String(job.item.id).replace(/[^\w-]/g,'')+'.md',target=path.join(ROOT,filename);
+ const filename=articleFilename(a,job),target=path.join(ROOT,filename);
  await fs.mkdir(ROOT,{recursive:true});
  try{await fs.access(target);throw new Error('Refusing to overwrite '+target);}catch(e){if(e.code!=='ENOENT')throw e;}
- const fm=['---','title: '+y(a.title),'originalTitle: '+y(a.originalTitle),'headline: '+y(a.headline),'hook: '+y(a.hook),'summary: '+y(a.summary),'verdict: '+y(a.verdict),'reviewVersion: 5','reviewMode: '+(a.reviewMode||'review'),...(a.isAdvanceReading?['advanceReading: true']:[]),'date: '+a.date,'releaseDate: '+y(a.releaseDate||''),'publishedAt: '+y(new Date().toISOString()),'type: '+a.type,'score: '+a.score,'storyScore: '+a.storyScore,'visualsScore: '+a.visualsScore,'soundScore: '+a.soundScore,'pacingScore: '+a.pacingScore,'sourceName: '+y(a.sourceName),'sourceId: '+y(a.sourceId),'sourceUrl: '+y(a.sourceUrl),...(a.streamingPlatform?['streamingPlatform: '+y(a.streamingPlatform)]:[]),...(a.collection?['editorialCollection: '+y(a.collection)]:[]),...(a.streamingPlatform?['netflixOriginal: '+String(a.netflixOriginal===true),'streamingRegion: '+y(a.streamingRegion||'')]:[]),...(a.youtubeVideoId?['youtubeVideoId: '+y(a.youtubeVideoId),'youtubeVideoTitle: '+y(a.youtubeVideoTitle)]:[]),...(a.externalVideoUrl?['externalVideoUrl: '+y(a.externalVideoUrl),'externalVideoTitle: '+y(a.externalVideoTitle)]:[]),'aiGenerated: true','editorialWorkflow: automated','poster: '+y(a.poster),'backdrop: '+y(a.backdrop),'platforms:'+yamlList(a.platforms),'genres:'+yamlList(a.genres),'cast:'+yamlList(a.cast),'crew:'+yamlList(a.crew),'pros:'+yamlList(a.pros),'cons:'+yamlList(a.cons),'tags:'+yamlList(a.tags)].join('\n');
- await fs.writeFile(target,fm+'\n---\n\n'+a.body+'\n\n> مراجعة تحريرية مبنية على المصادر المذكورة، ولا تدّعي تجربة مباشرة.\n',{flag:'wx',encoding:'utf8'});
- return {path:target.replace(/\\/g,'/')};
+ if(job?.stagedPath){
+  await fs.rename(job.stagedPath,target);
+ }else{
+  await fs.writeFile(target,renderArticleFile(a,job),{flag:'wx',encoding:'utf8'});
+ }
+ return {path:target.replace(/\\\\/g,'/')};
 }
 async function verifyDeployment({article,articlePath}){
  const id=path.basename(articlePath||'').replace(/\.md$/,'');if(!id)return false;
