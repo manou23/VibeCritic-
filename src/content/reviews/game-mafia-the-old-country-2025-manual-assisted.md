@@ -15,7 +15,11 @@ visualsScore: 9.0
 soundScore: 8.4
 pacingScore: 8.0
 reviewMode: review
-poster: "https://album.mediaset.es/eimg/2025/11/11/mafia-the-old-country-key-art-jpg-16-9-aspect-ratio-default-0_da39.jpg?h=900&w=1200"
+poster: "https://cdn.prgloo.com/media/64348e633c9740eaa7d09c7000d6537e.jpg?height=1452&width=968"
+backdrop: "https://www.videogameschronicle.com/files/2025/08/mafia-the-old-country-pic-05.jpg"
+youtubeVideoId: "EAEYZDgHNv8"
+youtubeVideoTitle: "Mafia: The Old Country — Family Takes Sacrifice | Launch Trailer"
+mediaVerified: true
 platforms: ["PlayStation 5", "Xbox Series X|S", "PC"]
 gameStores:
   - name: "Steam"
