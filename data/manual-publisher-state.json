@@ -36,6 +36,12 @@
       "sha256": "88599f646448359690ab9203585f8460ffce84ac1fb3cc00e5e871150c575fe0",
       "articlePath": "src/content/reviews/saros-2026.md",
       "publishedAt": "2026-11-18T01:03:35.821Z"
+    },
+    "apex-2026": {
+      "sourceId": "netflix-2026-movie-apex-81763251",
+      "sha256": "2705f2f906ac8166ce0a7df4bd84fddd336ed4a511b6d63fb8db643d1f8520be",
+      "articlePath": "src/content/reviews/apex-2026.md",
+      "publishedAt": "2026-11-18T01:05:00.455Z"
     }
   }
 }
