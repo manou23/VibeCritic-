@@ -114,13 +114,19 @@ async function discover(excludedKeys=[]){
  const counts={game:0,movie:0,series:0};for(const x of items)counts[x.type]++;
  return items.sort((a,b)=>Number(b.editorialPriority||0)-Number(a.editorialPriority||0)||(counts[a.type]-counts[b.type])-(counts[b.type]-counts[a.type])||b.popularity-a.popularity).slice(0,80);
 }
-async function wikidataEvidence(title){
+function independentMediaMatch(title,type,referenceTitle,extract){
+ const wanted=norm(title),reference=norm(referenceTitle),detail=String(extract||'');
+ const titleMatches=wanted.length>=5&&(reference===wanted||reference.startsWith(wanted)||reference.includes(wanted));
+ const typeMatches=type==='game'?/\\b(game|video game)\\b/i.test(detail):type==='series'?/\\b(television series|tv series|television|series)\\b/i.test(detail):/\\b(film|movie)\\b/i.test(detail);
+ return titleMatches&&typeMatches;
+}
+async function wikidataEvidence(title,type){
  const u=new URL('https://www.wikidata.org/w/api.php');
- for(const [k,v] of Object.entries({action:'wbsearchentities',search:title,language:'en',uselang:'en',format:'json',limit:'5'}))u.searchParams.set(k,v);
+ for(const [k,v] of Object.entries({action:'wbsearchentities',search:title,language:'en',uselang:'en',format:'json',limit:'8'}))u.searchParams.set(k,v);
  const results=arr((await get(u.toString())).search);
  const wanted=norm(title);
- const hit=results.find(x=>norm(x.label)===wanted||arr(x.aliases).some(a=>norm(a.value||a)===wanted));
- if(!hit?.id||!clean(hit.description)||clean(hit.description).length<20)throw new Error('No sufficiently matching independent reference for '+title);
+ const hit=results.find(x=>(norm(x.label)===wanted||arr(x.aliases).some(a=>norm(a.value||a)===wanted))&&independentMediaMatch(title,type,x.label,x.description));
+ if(!hit?.id||!clean(hit.description)||clean(hit.description).length<20)throw new Error('No sufficiently matching independent '+type+' reference for '+title);
  return {name:'Wikidata',url:'https://www.wikidata.org/wiki/'+hit.id,extract:clean(hit.label+'. '+hit.description+(arr(hit.aliases).length?'. Known as: '+arr(hit.aliases).slice(0,4).map(a=>a.value).filter(Boolean).join(', '):'' )).slice(0,1200)};
 }
 async function wikipediaSummary(title){
@@ -129,24 +135,29 @@ async function wikipediaSummary(title){
  if(extract.length<180)throw new Error('Independent source has insufficient detail.');
  return {name:'Wikipedia',url:summary.content_urls?.desktop?.page||'https://en.wikipedia.org/wiki/'+encodeURIComponent(String(title).trim().replace(/ /g,'_')),extract:extract.slice(0,4500)};
 }
-async function wiki(title){
+async function wiki(title,type){
  let originalError=null;
  try{
   const u=new URL('https://en.wikipedia.org/w/api.php');
-  for(const [k,v] of Object.entries({action:'query',list:'search',srsearch:title,format:'json',srlimit:'5'}))u.searchParams.set(k,v);
+  for(const [k,v] of Object.entries({action:'query',list:'search',srsearch:title,format:'json',srlimit:'8'}))u.searchParams.set(k,v);
   const search=await get(u.toString()),hits=arr(search.query?.search);
   const wanted=norm(title);
-  const hit=hits.find(x=>norm(x.title)===wanted)||hits.find(x=>norm(x.title).length>4&&(norm(x.title).includes(wanted)||wanted.includes(norm(x.title))));
-  if(hit){
+  const candidates=hits.filter(x=>{const candidate=norm(x.title);return wanted.length>=5&&(candidate===wanted||candidate.startsWith(wanted)||candidate.includes(wanted));});
+  for(const hit of candidates){
    const p=new URL('https://en.wikipedia.org/w/api.php');
    for(const [k,v] of Object.entries({action:'query',prop:'extracts',exintro:'1',explaintext:'1',titles:hit.title,format:'json'}))p.searchParams.set(k,v);
    const pages=(await get(p.toString())).query?.pages||{},page=Object.values(pages)[0],extract=clean(page?.extract||'');
-   if(extract.length>=180)return {name:'Wikipedia',url:'https://en.wikipedia.org/wiki/'+encodeURIComponent(hit.title.replace(/ /g,'_')),extract:extract.slice(0,4500)};
-   originalError=new Error('Independent source has insufficient detail.');
-  }else originalError=new Error('No sufficiently matching independent encyclopedia page: '+title);
+   if(extract.length>=180&&independentMediaMatch(title,type,hit.title,extract))return {name:'Wikipedia',url:'https://en.wikipedia.org/wiki/'+encodeURIComponent(hit.title.replace(/ /g,'_')),extract:extract.slice(0,4500)};
+   originalError=new Error('Wikipedia result did not verify the title and media type for '+title);
+  }
+  if(!candidates.length)originalError=new Error('No sufficiently matching independent encyclopedia page: '+title);
  }catch(error){originalError=error;}
- try{return await wikipediaSummary(title);}catch{}
- try{return await wikidataEvidence(title);}catch(error){
+ try{
+  const summary=await wikipediaSummary(title);
+  if(independentMediaMatch(title,type,summary.title||title,summary.extract))return summary;
+  originalError=new Error('Wikipedia summary did not verify the media type for '+title);
+ }catch(error){originalError=error;}
+ try{return await wikidataEvidence(title,type);}catch(error){
   throw new Error(String(originalError?.message||'Independent source unavailable')+'; fallback: '+String(error?.message||error));
  }
 }
@@ -207,7 +218,7 @@ async function collectEvidence(item){
  }
  poster=poster||backdrop;backdrop=backdrop||poster;
  if(!String(poster||'').startsWith('https://'))throw new Error('No HTTPS poster or backdrop available');
- const independent=await wiki(item.name);
+ const independent=await wiki(item.name,item.type);
  const primaryText=[item.overview,data.overview,data.description_raw,data.tagline].map(clean).sort((a,b)=>b.length-a.length)[0]||'';
  const primary={name:item.sourceName,url:sourceUrl,extract:primaryText.slice(0,4000)};
  if(primary.extract.length<80)throw new Error('Primary source metadata is too thin');
