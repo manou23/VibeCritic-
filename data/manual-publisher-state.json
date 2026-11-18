@@ -24,6 +24,12 @@
       "sha256": "43bc0ac690abd7d03e8de3bfcf0195625d1967d22ae1e741d3b75bea2bf42619",
       "articlePath": "src/content/reviews/heartland-2026.md",
       "publishedAt": "2026-11-18T00:48:25.423Z"
+    },
+    "murder-in-galicia-2026": {
+      "sourceId": "series:82023389",
+      "sha256": "90a6374166471e2108ec1d5f470ddb86ad3f110c0094f8b3127cb3b37839fccf",
+      "articlePath": "src/content/reviews/murder-in-galicia-2026.md",
+      "publishedAt": "2026-11-18T00:57:30.335Z"
     }
   }
 }
