@@ -119,8 +119,7 @@ async function wikidataEvidence(title){
  for(const [k,v] of Object.entries({action:'wbsearchentities',search:title,language:'en',uselang:'en',format:'json',limit:'5'}))u.searchParams.set(k,v);
  const results=arr((await get(u.toString())).search);
  const wanted=norm(title);
- const hit=results.find(x=>norm(x.label)===wanted||arr(x.aliases).some(a=>norm(a.value||a)===wanted))
-  ||results.find(x=>norm(x.label).length>4&&(norm(x.label).includes(wanted)||wanted.includes(norm(x.label))));
+ const hit=results.find(x=>norm(x.label)===wanted||arr(x.aliases).some(a=>norm(a.value||a)===wanted));
  if(!hit?.id||!clean(hit.description)||clean(hit.description).length<20)throw new Error('No sufficiently matching independent reference for '+title);
  return {name:'Wikidata',url:'https://www.wikidata.org/wiki/'+hit.id,extract:clean(hit.label+'. '+hit.description+(arr(hit.aliases).length?'. Known as: '+arr(hit.aliases).slice(0,4).map(a=>a.value).filter(Boolean).join(', '):'' )).slice(0,1200)};
 }
