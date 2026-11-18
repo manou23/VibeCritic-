@@ -93,6 +93,9 @@ jobs:
           node --check scripts/test-scoring-rubric.mjs
           npm run test:scoring-rubric
           node --check scripts/validate-review-scores.mjs
+          node --check manual-publishing/publisher.mjs
+          node --check scripts/test-manual-publisher.mjs
+          npm run test:manual-publisher
           node --check functions/api/review.js
           node --check functions/api/catalog.js
           npm run test:catalog-api
