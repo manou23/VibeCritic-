@@ -92,6 +92,17 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
   }
  }
  let job=selectRunnableJob(state.jobs,now,{includeReady:false});
+ // Re-check durable evidence before resuming any legacy writing checkpoint. Invalid
+ // evidence resets only the draft checkpoint; published/manual content and usage stay intact.
+ if(job&&job.status==='waiting'&&job.resumeTo==='writing'&&job.evidence&&adapters.validateSavedEvidence){
+  const evidenceCheck=adapters.validateSavedEvidence(job.item,job.evidence);
+  if(evidenceCheck!==true&&evidenceCheck?.valid!==true){
+   const reason=String(evidenceCheck?.reason||'Saved evidence failed title/type verification.');
+   const reset={...job,status:'researching',stage:0,parts:[],evidence:null,nextAttemptAt:null,resumeTo:null,lastError:'Saved evidence invalidated; researching again: '+reason,updatedAt:new Date(now).toISOString()};
+   for(const field of ['article','quality','qualityCheck','qualityCheckpoint','fileWritten','siteFileWritten','stagedPath','articlePath','scheduledFor','deployedAt','publishedAt'])delete reset[field];
+   state.jobs[job.key]=reset;job=reset;await save();
+  }
+ }
  // A code-level article assembly/validation fix should not leave a valid saved draft
  // sleeping for an hour; resume it immediately after the corrected build is deployed.
  if(job?.status==='waiting'&&job.resumeTo==='writing'&&/Article below minimum word count|Article below minimum character count/.test(String(job.lastError||''))){
