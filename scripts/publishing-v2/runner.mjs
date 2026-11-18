@@ -4,6 +4,18 @@ function candidate(items,state,counts={},now=Date.now()) { const used=new Set(Ob
 export async function runCycle({state,adapters,providers,now=Date.now(),persist=async()=>{},publishedCounts={},articleLimits={},researchSkips=0}) {
  if(!state||state.version!==2||!adapters) throw Error('Publisher v2 state and adapters are required.');
  const save=async()=>{state.updatedAt=new Date(now).toISOString();await persist(state);}; let job=selectActiveJob(state.jobs);
+ // Collect and persist the full editorial backlog even while another saved article is being written.
+ // This makes a large themed collection durable instead of waiting for the current draft to finish.
+ state.discoveryBacklog ||= {};
+ const excluded=[...Object.keys(state.jobs),...Object.keys(state.discoveryBacklog)];
+ const discovered=await adapters.discover(excluded);
+ let addedToBacklog=0;
+ for(const item of Array.isArray(discovered)?discovered:[]){
+  const key=item?.type+':'+item?.id;
+  if(!item?.id||state.jobs[key]||state.discoveryBacklog[key])continue;
+  state.discoveryBacklog[key]=item;addedToBacklog++;
+ }
+ if(addedToBacklog)await save();
  // A code-level article assembly/validation fix should not leave a valid saved draft
  // sleeping for an hour; resume it immediately after the corrected build is deployed.
  if(job?.status==='waiting'&&job.resumeTo==='writing'&&/Article below minimum word count|Article below minimum character count/.test(String(job.lastError||''))){
@@ -90,7 +102,12 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
    }
   }
  }
- if(!job){const item=candidate(await adapters.discover(),state,publishedCounts,now);if(!item)return {action:'no-candidates',providerCalls:0};job=enqueue(state,item,now).job;await save();}
+ if(!job){
+  const item=candidate(Object.values(state.discoveryBacklog||{}),state,publishedCounts,now);
+  if(!item)return {action:'no-candidates',providerCalls:0,queuedCandidates:Object.keys(state.discoveryBacklog||{}).length};
+  delete state.discoveryBacklog[item.type+':'+item.id];
+  job=enqueue(state,item,now).job;await save();
+ }
  let decision=cycleDecision(state,now);
  if(decision.action==='wait')return {action:'waiting',key:job.key,retryAt:decision.retryAt,providerCalls:0};
  if(decision.action==='publish'){
