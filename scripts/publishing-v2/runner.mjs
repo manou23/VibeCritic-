@@ -19,6 +19,13 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
   state.discoveryBacklog[key]=item;addedToBacklog++;
  }
  if(addedToBacklog)await save();
+ // Upgrade active legacy drafts whose evidence was collected before preview mode existed.
+ if(job?.evidence&&!job.evidence.reviewMode){
+  const releaseDate=String(job.evidence.releaseDate||job.item?.date||'').slice(0,10);
+  const today=new Date(now).toISOString().slice(0,10);
+  const reviewMode=/^\d{4}-\d{2}-\d{2}$/.test(releaseDate)&&releaseDate>today?'preview':'review';
+  job={...job,reviewMode,evidence:{...job.evidence,reviewMode}};state.jobs[job.key]=job;await save();
+ }
  // A code-level article assembly/validation fix should not leave a valid saved draft
  // sleeping for an hour; resume it immediately after the corrected build is deployed.
  if(job?.status==='waiting'&&job.resumeTo==='writing'&&/Article below minimum word count|Article below minimum character count/.test(String(job.lastError||''))){
@@ -146,7 +153,7 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
  if(decision.action==='resume'){job=transition(job,'resumed',{resumeTo:job.resumeTo||'writing'},now);state.jobs[job.key]=job;await save();}
  if(job.status==='queued'){job=transition(job,'research-started',{},now);state.jobs[job.key]=job;await save();}
  if(job.status==='researching'){
-  try{const evidence=await adapters.collectEvidence(job.item);const evidenceCheck=validateEvidence(evidence);if(!evidenceCheck.valid)throw Error(evidenceCheck.errors.join(' '));const releaseDate=String(evidence.releaseDate||job.item.date||'').slice(0,10);const today=new Date(now).toISOString().slice(0,10);const reviewMode=/^\\d{4}-\\d{2}-\\d{2}$/.test(releaseDate)&&releaseDate>today?'preview':'review';job=transition(job,'research-saved',{evidence:{...evidence,reviewMode},reviewMode},now);state.jobs[job.key]=job;state.cycle.articleKey=job.key;await save();}
+  try{const evidence=await adapters.collectEvidence(job.item);const evidenceCheck=validateEvidence(evidence);if(!evidenceCheck.valid)throw Error(evidenceCheck.errors.join(' '));const releaseDate=String(evidence.releaseDate||job.item.date||'').slice(0,10);const today=new Date(now).toISOString().slice(0,10);const reviewMode=/^\d{4}-\d{2}-\d{2}$/.test(releaseDate)&&releaseDate>today?'preview':'review';job=transition(job,'research-saved',{evidence:{...evidence,reviewMode},reviewMode},now);state.jobs[job.key]=job;state.cycle.articleKey=job.key;await save();}
   catch(error){
    const message=String(error?.message||error);
    // Permanent evidence gaps should not pin the single-job queue for hours.
