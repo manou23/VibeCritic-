@@ -37,14 +37,14 @@ globalThis.fetch=async(url,options)=>{
   if(parsedUrl.hostname==='api.themoviedb.org'&&parsedUrl.pathname==='/3/tv/popular')return new Response(JSON.stringify({results:[{id:202,name:'Popular Series',overview:'A detailed premise for the popular series discovery test.',first_air_date:'2020-01-01',poster_path:'/series.jpg',backdrop_path:'/series-backdrop.jpg',vote_count:900}]}),{status:200,headers:{'content-type':'application/json'}});
   if(parsedUrl.hostname==='api.themoviedb.org'&&parsedUrl.pathname==='/3/discover/movie'){
    assert.equal(parsedUrl.searchParams.get('with_companies'),'178464');
-   assert.equal(parsedUrl.searchParams.get('primary_release_date_gte'),'2026-01-01');
-   assert.ok(parsedUrl.searchParams.get('primary_release_date_lte'));
+   assert.equal(parsedUrl.searchParams.get('primary_release_date.gte'),'2026-01-01');
+   assert.ok(parsedUrl.searchParams.get('primary_release_date.lte'));
    return new Response(JSON.stringify({results:parsedUrl.searchParams.get('page')==='1'?[{id:303,title:'Netflix 2026 Film',overview:'A detailed Netflix 2026 film synopsis for discovery.',release_date:'2026-02-10',poster_path:'/netflix-film.jpg',backdrop_path:'/netflix-film-backdrop.jpg',vote_count:250}]:[]}),{status:200,headers:{'content-type':'application/json'}});
   }
   if(parsedUrl.hostname==='api.themoviedb.org'&&parsedUrl.pathname==='/3/discover/tv'){
    assert.equal(parsedUrl.searchParams.get('with_networks'),'213');
-   assert.equal(parsedUrl.searchParams.get('first_air_date_gte'),'2026-01-01');
-   assert.ok(parsedUrl.searchParams.get('first_air_date_lte'));
+   assert.equal(parsedUrl.searchParams.get('air_date.gte'),'2026-01-01');
+   assert.ok(parsedUrl.searchParams.get('air_date.lte'));
    return new Response(JSON.stringify({results:parsedUrl.searchParams.get('page')==='1'?[{id:404,name:'Netflix 2026 Series',overview:'A detailed Netflix 2026 series synopsis for discovery.',first_air_date:'2026-03-12',poster_path:'/netflix-series.jpg',backdrop_path:'/netflix-series-backdrop.jpg',vote_count:400}]:[]}),{status:200,headers:{'content-type':'application/json'}});
   }
   if(parsedUrl.hostname==='api.rawg.io')return new Response(JSON.stringify({results:[]}),{status:200,headers:{'content-type':'application/json'}});
