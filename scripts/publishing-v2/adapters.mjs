@@ -56,8 +56,9 @@ export function buildFreeProviders(){
  if(env.OPENROUTER_API_KEY)out.push({id:'openrouter',enabled:true,free:true,model:(String(env.OPENROUTER_MODEL||'').endsWith(':free')?String(env.OPENROUTER_MODEL):'nvidia/nemotron-3.5-super-vl:free'),priority:4,dailyRequestLimit:40,dailyTokenLimit:40000});
  return out;
 }
-async function discover(){
+async function discover(excludedKeys=[]){
  const used=await seen();
+ for(const key of excludedKeys||[])used.add(String(key));
  const empty={results:[]};
  const today=new Date().toISOString().slice(0,10);
  const netflixPages=Array.from({length:10},(_,i)=>i+1);
