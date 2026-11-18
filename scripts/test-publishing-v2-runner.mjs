@@ -22,7 +22,7 @@ assert.equal(firstStage.action,'stage-saved');
 assert.equal(firstStage.providerCalls,1);
 assert.equal(firstStage.stage,1);
 assert.equal(firstStage.nextStageAt,now+1+15*60*1000);
-assert.equal(state.cycle.nextStartAt,now+1+45*60*1000,'publication slots must be spaced 45 minutes apart');
+assert.equal(state.cycle.nextPublishAt,now+1+45*60*1000,'publication slots must be spaced 45 minutes apart');
 const blockedStage=await runCycle({state,adapters,providers,now:now+10*60*1000,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}});
 assert.equal(blockedStage.action,'no-candidates','a paused stage is skipped without spending another AI request when no other runnable draft exists');
 assert.equal(blockedStage.providerCalls,0);
