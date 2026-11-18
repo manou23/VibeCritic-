@@ -63,6 +63,13 @@ globalThis.fetch=async(url,options)=>{
   if(parsedUrl.hostname==='api.rawg.io')return new Response(JSON.stringify({results:[]}),{status:200,headers:{'content-type':'application/json'}});
   throw new Error('Unexpected discovery URL: '+String(url));
  }
+ if(mode==='wikidata-evidence'){
+  if(parsedUrl.hostname==='api.themoviedb.org')return new Response(JSON.stringify({title:'Evidence Recovery Film',original_title:'Evidence Recovery Film',overview:'A detailed and verified synopsis for the evidence recovery film, describing its central premise, principal characters, setting, and conflict with enough context for critical analysis.',release_date:'2020-01-01',poster_path:null,backdrop_path:'/recovery-backdrop.jpg',genres:[{name:'Drama'}],credits:{cast:[],crew:[]},videos:{results:[]}}),{status:200,headers:{'content-type':'application/json'}});
+  if(parsedUrl.hostname==='en.wikipedia.org'&&parsedUrl.pathname==='/w/api.php')return new Response(JSON.stringify({query:{search:[]}}),{status:200,headers:{'content-type':'application/json'}});
+  if(parsedUrl.hostname==='en.wikipedia.org'&&parsedUrl.pathname.startsWith('/api/rest_v1/page/summary/'))return new Response('not found',{status:404});
+  if(parsedUrl.hostname==='www.wikidata.org'&&parsedUrl.pathname==='/w/api.php')return new Response(JSON.stringify({search:[{id:'Q12345',label:'Evidence Recovery Film',description:'2020 drama film about a family facing a difficult decision',aliases:[]}]}),{status:200,headers:{'content-type':'application/json'}});
+  throw new Error('Unexpected Wikidata recovery URL: '+String(url));
+ }
  if(mode==='game-video-fallback'){
   if(parsedUrl.hostname==='api.rawg.io'&&parsedUrl.pathname==='/api/games/99')return new Response(JSON.stringify({name:'Game With Clip',description_raw:'A verified and sufficiently detailed game description that explains its setting, premise, and gameplay systems for the adapter test.',released:'2020-01-01',background_image:'https://media.rawg.io/media/game-poster.jpg',clip:{clip:'https://media.rawg.io/media/game-trailer.mp4'},genres:[{name:'Action'}],platforms:[{platform:{name:'PC'}}]}),{status:200,headers:{'content-type':'application/json'}});
   if(parsedUrl.hostname==='api.rawg.io'&&parsedUrl.pathname==='/api/games/99/movies')return new Response(JSON.stringify({results:[]}),{status:200,headers:{'content-type':'application/json'}});
@@ -142,6 +149,13 @@ try{
  mode='game-video-fallback';
  const gameEvidence=await adapters.collectEvidence({type:'game',id:'99',name:'Game With Clip',date:'2020-01-01',overview:'A verified and sufficiently detailed game description that explains its setting, premise, and gameplay systems for the adapter test.',sourceName:'RAWG',sourceUrl:'https://rawg.io/games/game-with-clip',poster:'https://media.rawg.io/media/game-poster.jpg',backdrop:'https://media.rawg.io/media/game-poster.jpg'});
  assert.equal(gameEvidence.externalVideoUrl,'https://media.rawg.io/media/game-trailer.mp4','RAWG detail-page clips should be accepted when the movies endpoint is empty');
+ mode='wikidata-evidence';
+ const wikidataRecovered=await adapters.collectEvidence({type:'movie',id:'777',name:'Evidence Recovery Film',date:'2020-01-01',overview:'Short synopsis',sourceName:'TMDB',sourceUrl:'https://www.themoviedb.org/movie/777',poster:'',backdrop:''});
+ assert.equal(wikidataRecovered.sources[1].name,'Wikidata','Wikidata must be used when no matching Wikipedia article is available');
+ assert.equal(wikidataRecovered.sources[1].url,'https://www.wikidata.org/wiki/Q12345');
+ assert.equal(wikidataRecovered.youtubeVideoId,'','a missing trailer must not block evidence-backed review generation');
+ assert.equal(wikidataRecovered.poster,'https://image.tmdb.org/t/p/w1280/recovery-backdrop.jpg','a verified backdrop may replace a missing poster');
+ assert.ok(wikidataRecovered.overview.length>80,'the adapter must choose the richer detail-page synopsis over a short discovery snippet');
  mode='netflix-licensed-movie-evidence';
  const licensedMovieEvidence=await adapters.collectEvidence({type:'movie',id:'606',name:'Netflix Licensed 2026 Film',date:'2026-04-10',overview:'A detailed factual synopsis of this 2026 film, including its premise, setting, principal characters, and central conflict, with enough detail for critical review.',sourceName:'TMDB',sourceUrl:'https://www.themoviedb.org/movie/606',poster:'https://image.tmdb.org/t/p/w780/licensed-film.jpg',backdrop:'https://image.tmdb.org/t/p/w1280/licensed-film-backdrop.jpg',streamingPlatform:'Netflix',collection:'Netflix 2026',netflixOriginal:false,streamingRegion:'DZ'});
  assert.equal(licensedMovieEvidence.releaseDate,'2026-04-10');

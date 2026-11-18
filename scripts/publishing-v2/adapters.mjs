@@ -114,26 +114,41 @@ async function discover(excludedKeys=[]){
  const counts={game:0,movie:0,series:0};for(const x of items)counts[x.type]++;
  return items.sort((a,b)=>Number(b.editorialPriority||0)-Number(a.editorialPriority||0)||(counts[a.type]-counts[b.type])-(counts[b.type]-counts[a.type])||b.popularity-a.popularity).slice(0,80);
 }
-async function wiki(title){
- const u=new URL('https://en.wikipedia.org/w/api.php');for(const [k,v] of Object.entries({action:'query',list:'search',srsearch:title,format:'json',srlimit:'5'}))u.searchParams.set(k,v);
- let search;
- try{search=await get(u.toString());}
- catch(error){
-  // Wikipedia's search API can temporarily rate-limit automated requests.
-  // Retry the exact title through its public REST summary endpoint before deferring research.
-  if(!/Source HTTP (?:429|5\d\d)/.test(String(error?.message||'')))throw error;
-  const fallback='https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(String(title).trim().replace(/ /g,'_'));
-  const summary=await get(fallback),extract=clean(summary.extract||'');
-  if(extract.length<180)throw new Error('Independent source has insufficient detail.');
-  return {name:'Wikipedia',url:summary.content_urls?.desktop?.page||'https://en.wikipedia.org/wiki/'+encodeURIComponent(String(title).trim().replace(/ /g,'_')),extract:extract.slice(0,4500)};
- }
- const hits=arr(search.query?.search);
- const hit=hits.find(x=>norm(x.title)===norm(title))||hits.find(x=>norm(x.title).includes(norm(title))||norm(title).includes(norm(x.title)));
- if(!hit)throw new Error('No sufficiently matching independent encyclopedia page: '+title);
- const p=new URL('https://en.wikipedia.org/w/api.php');for(const [k,v] of Object.entries({action:'query',prop:'extracts',exintro:'1',explaintext:'1',titles:hit.title,format:'json'}))p.searchParams.set(k,v);
- const pages=(await get(p.toString())).query?.pages||{},page=Object.values(pages)[0],extract=clean(page?.extract||'');
+async function wikidataEvidence(title){
+ const u=new URL('https://www.wikidata.org/w/api.php');
+ for(const [k,v] of Object.entries({action:'wbsearchentities',search:title,language:'en',uselang:'en',format:'json',limit:'5'}))u.searchParams.set(k,v);
+ const results=arr((await get(u.toString())).search);
+ const wanted=norm(title);
+ const hit=results.find(x=>norm(x.label)===wanted||arr(x.aliases).some(a=>norm(a.value||a)===wanted));
+ if(!hit?.id||!clean(hit.description)||clean(hit.description).length<20)throw new Error('No sufficiently matching independent reference for '+title);
+ return {name:'Wikidata',url:'https://www.wikidata.org/wiki/'+hit.id,extract:clean(hit.label+'. '+hit.description+(arr(hit.aliases).length?'. Known as: '+arr(hit.aliases).slice(0,4).map(a=>a.value).filter(Boolean).join(', '):'' )).slice(0,1200)};
+}
+async function wikipediaSummary(title){
+ const fallback='https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(String(title).trim().replace(/ /g,'_'));
+ const summary=await get(fallback),extract=clean(summary.extract||'');
  if(extract.length<180)throw new Error('Independent source has insufficient detail.');
- return {name:'Wikipedia',url:'https://en.wikipedia.org/wiki/'+encodeURIComponent(hit.title.replace(/ /g,'_')),extract:extract.slice(0,4500)};
+ return {name:'Wikipedia',url:summary.content_urls?.desktop?.page||'https://en.wikipedia.org/wiki/'+encodeURIComponent(String(title).trim().replace(/ /g,'_')),extract:extract.slice(0,4500)};
+}
+async function wiki(title){
+ let originalError=null;
+ try{
+  const u=new URL('https://en.wikipedia.org/w/api.php');
+  for(const [k,v] of Object.entries({action:'query',list:'search',srsearch:title,format:'json',srlimit:'5'}))u.searchParams.set(k,v);
+  const search=await get(u.toString()),hits=arr(search.query?.search);
+  const wanted=norm(title);
+  const hit=hits.find(x=>norm(x.title)===wanted)||hits.find(x=>norm(x.title).length>4&&(norm(x.title).includes(wanted)||wanted.includes(norm(x.title))));
+  if(hit){
+   const p=new URL('https://en.wikipedia.org/w/api.php');
+   for(const [k,v] of Object.entries({action:'query',prop:'extracts',exintro:'1',explaintext:'1',titles:hit.title,format:'json'}))p.searchParams.set(k,v);
+   const pages=(await get(p.toString())).query?.pages||{},page=Object.values(pages)[0],extract=clean(page?.extract||'');
+   if(extract.length>=180)return {name:'Wikipedia',url:'https://en.wikipedia.org/wiki/'+encodeURIComponent(hit.title.replace(/ /g,'_')),extract:extract.slice(0,4500)};
+   originalError=new Error('Independent source has insufficient detail.');
+  }else originalError=new Error('No sufficiently matching independent encyclopedia page: '+title);
+ }catch(error){originalError=error;}
+ try{return await wikipediaSummary(title);}catch{}
+ try{return await wikidataEvidence(title);}catch(error){
+  throw new Error(String(originalError?.message||'Independent source unavailable')+'; fallback: '+String(error?.message||error));
+ }
 }
 async function collectEvidence(item){
  let data={},sourceUrl=item.sourceUrl,poster=item.poster,backdrop=item.backdrop,genres=item.genres||[],platforms=item.platforms||[],cast=[],crew=[],releaseDate=item.date||'',netflixSeasonNumber=null;
@@ -190,8 +205,11 @@ async function collectEvidence(item){
   const trailer=trailers.find(v=>v.official===true)||trailers[0];
   if(trailer){youtubeVideoId=trailer.key;youtubeVideoTitle=clean(trailer.name||('المقطع الرسمي لـ '+item.name));}
  }
- if(!poster?.startsWith('https://'))throw new Error('No HTTPS poster available');
- const independent=await wiki(item.name),primary={name:item.sourceName,url:sourceUrl,extract:clean(item.overview||data.overview||data.description_raw||'').slice(0,4000)};
+ poster=poster||backdrop;backdrop=backdrop||poster;
+ if(!String(poster||'').startsWith('https://'))throw new Error('No HTTPS poster or backdrop available');
+ const independent=await wiki(item.name);
+ const primaryText=[item.overview,data.overview,data.description_raw,data.tagline].map(clean).sort((a,b)=>b.length-a.length)[0]||'';
+ const primary={name:item.sourceName,url:sourceUrl,extract:primaryText.slice(0,4000)};
  if(primary.extract.length<80)throw new Error('Primary source metadata is too thin');
  return {title:item.name,originalTitle:item.originalTitle||data.original_title||data.original_name||'',type:item.type,sourceName:item.sourceName,sourceUrl,sourceId:item.type+':'+item.id,releaseDate,overview:primary.extract,poster,backdrop:backdrop||poster,genres,platforms,cast,crew,youtubeVideoId,youtubeVideoTitle,externalVideoUrl,externalVideoTitle,sources:[primary,independent],metadata:{rating:data.vote_average||data.rating||null,votes:data.vote_count||data.ratings_count||0},streamingPlatform:item.streamingPlatform||'',collection:item.collection||'',netflixOriginal:item.netflixOriginal===true,streamingRegion:item.streamingRegion||''};
 }
