@@ -143,7 +143,7 @@ try{
  assert.equal(openrouterGenerated.tokens,456);
  assert.equal(calls,6,'one request per OpenRouter adapter invocation after Groq retry');
  const stage3={review,scores:{story:8,visuals:7,sound:6,pacing:9},pros:['قوة سردية موثقة','تصميم متماسك','أداء مناسب'],cons:['معلومات فنية ناقصة','إيقاع غير متوازن'],verdict:'حكم نقدي واضح يستند إلى المصادر ولا يدعي تجربة مباشرة.'};
- const job={item:{id:'77'},evidence:{title:'فيلم تجريبي',originalTitle:'',type:'movie',sourceId:'movie:77',sourceName:'TMDB',sourceUrl:'https://www.themoviedb.org/movie/77',overview:'وصف موثق',releaseDate:'2026',poster:'https://image.tmdb.org/t/p/w780/poster.jpg',backdrop:'https://image.tmdb.org/t/p/w1280/backdrop.jpg',genres:['دراما'],platforms:[],cast:[],crew:[],youtubeVideoId:'UnA7tepsc7s',youtubeVideoTitle:'المقطع الرسمي',sources:[{name:'TMDB',url:'https://www.themoviedb.org/movie/77'},{name:'Wikipedia',url:'https://en.wikipedia.org/wiki/Test'}]},parts:[{text:JSON.stringify(payload)},{text:JSON.stringify(payload)},{text:JSON.stringify(stage3)}]};
+ const job={item:{id:'77'},evidence:{title:'فيلم تجريبي',originalTitle:'',type:'movie',sourceId:'movie:77',sourceName:'TMDB',sourceUrl:'https://www.themoviedb.org/movie/77',overview:'وصف موثق',releaseDate:'2026',poster:'https://image.tmdb.org/t/p/w780/poster.jpg',backdrop:'https://image.tmdb.org/t/p/w1280/backdrop.jpg',genres:['دراما'],platforms:[],cast:[],crew:[],streamingPlatform:'Netflix',collection:'Netflix 2026',youtubeVideoId:'UnA7tepsc7s',youtubeVideoTitle:'المقطع الرسمي',sources:[{name:'TMDB',url:'https://www.themoviedb.org/movie/77'},{name:'Wikipedia',url:'https://en.wikipedia.org/wiki/Test'}]},parts:[{text:JSON.stringify(payload)},{text:JSON.stringify(payload)},{text:JSON.stringify(stage3)}]};
  const article=await adapters.assembleArticle(job);
  assert.equal(article.score,7.6);
  assert.equal(article.sourceId,'movie:77');
@@ -154,6 +154,8 @@ try{
  assert.ok(article.body.includes('## التقييم النقدي وحدود العمل'),'the final section must have a clear editorial heading');
  assert.equal(article.youtubeVideoId,'UnA7tepsc7s','verified trailer metadata must be carried into the article');
  assert.equal(article.youtubeVideoTitle,'المقطع الرسمي');
+ assert.equal(article.streamingPlatform,'Netflix','Netflix platform label must survive article assembly');
+ assert.equal(article.collection,'Netflix 2026','Netflix editorial collection label must survive article assembly');
  assert.ok(article.body.includes('https://en.wikipedia.org/wiki/Test'),'independent source links must be visible');
 }finally{globalThis.fetch=originalFetch;}
 console.log('VibeCritic V2 adapter contract tests passed.');
