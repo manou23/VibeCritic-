@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "enabled": true,
+  "intervalMinutes": 30,
+  "startTime": "00:00",
+  "endTime": "23:59",
+  "timezone": "Africa/Algiers"
+}
