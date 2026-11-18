@@ -1,9 +1,9 @@
 name: VibeCritic Automatic Publishing V2
 
 on:
-  # The only automatic publisher. One bounded stage per run; the engine preserves drafts.
+  # The only automatic publisher. Five-minute checks service durable 45-minute publication slots.
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
   push:
     branches: [main]
