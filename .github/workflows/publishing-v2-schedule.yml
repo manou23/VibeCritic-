@@ -2,7 +2,7 @@ name: VibeCritic Publishing V2 Schedule
 on:
   workflow_dispatch:
   schedule:
-    # Checkpoint at 15-minute offsets; the engine itself enforces 30-minute stage spacing.
+    # Re-armed schedule checkpoint at 15-minute offsets; the engine enforces 30-minute stage spacing.
     - cron: '7,22,37,52 * * * *'
   push:
     branches: [main]
