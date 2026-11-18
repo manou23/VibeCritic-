@@ -37,7 +37,9 @@ externalVideoTitle: "Guillermo del Toro’s Frankenstein — Official Trailer"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
 youtubeVideoId: "9WZllcEgWrM"
-youtubeVideoTitle: "Final Trailer"
+youtubeVideoTitle: "Frankenstein | Guillermo del Toro | Final Trailer | Netflix"
+backdrop: "https://dnm.nflximg.net/api/v6/s0XAg4q_jvYbSSbLvySyUsliNSg/AAAAQcu2Qj378IBf_ak92ssJTHTf16GwRLinJwXwuO39ShJuilXRVURuNZ6iVT5tRcoqVqbQEHIkbmhHBGs-Fww_iqc9osx-Ro6PvoqyQpyfLJp5ElowP1AiIqU8iYisf57mhyR7i9rR7wy7OK3_ruxzoscLdGM.jpg?r=011"
+mediaVerified: true
 ---
 > **منهجية المراجعة:** قراءة تحريرية بحثية تستند إلى المواد الرسمية المتاحة ومعلومات الإنتاج والإصدار وتحليل الفيلم. لا تدعي هذه المادة اختباراً شخصياً جديداً أو مشاهدة مباشرة، ولا تنقل تقييم الجمهور بوصفه حكماً تحريرياً.
 
