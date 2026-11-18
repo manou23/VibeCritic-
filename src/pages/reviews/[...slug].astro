@@ -100,6 +100,7 @@ const reviewStructuredData = {
       {d.releaseDate && <span class="article-date-item"><strong>الإصدار</strong><time datetime={new Date(`${d.releaseDate}T00:00:00Z`).toISOString()}>{fmtDate(new Date(`${d.releaseDate}T00:00:00Z`))}</time></span>}
       <span class="article-date-item article-published-date"><strong>نُشرت</strong><time datetime={(d.publishedAt ?? d.date).toISOString()}>{fmtDate(d.publishedAt ?? d.date)}</time></span>
       {d.aiGenerated&&<span class="article-ai">تحليل مدعوم بالذكاء الاصطناعي</span>}
+      {!d.aiGenerated && d.editorialWorkflow === 'manual-assisted' && <span class="article-ai">مراجعة أُعدّت بمساعدة الذكاء الاصطناعي وخضعت للمراجعة التحريرية</span>}
       {isPreview && <span class="article-ai">قراءة استباقية — قبل الإصدار</span>}
       {isLimited && <span class="article-ai">لا يوجد تقييم نهائي — الأدلة غير كافية</span>}
     </div>
