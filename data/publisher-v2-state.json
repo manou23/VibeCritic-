@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T23:33:44.880Z",
+  "updatedAt": "2026-11-18T23:34:16.534Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -1202,20 +1202,78 @@
         ],
         "popularity": 14604
       },
-      "status": "queued",
-      "stage": 0,
-      "parts": [],
-      "evidence": null,
+      "status": "writing",
+      "stage": 1,
+      "parts": [
+        {
+          "stage": 1,
+          "text": "{\"review\":\"Destiny 2 يقدم تجربة إطلاق نار من منظور أول عبر الإنترنت، حيث يتولى اللاعب دور حارس مكلف بحماية آخر مدينة على الأرض من الغزاة الأجانب، في إطار عالم خيال علمي أسطوري. تستمر القصة في تتبع predecessor، مع هدف أساسي يتمثل في استعادة النور الذي سُرق من الحراس. يقسم العمل أنشطته بين نمط اللاعب ضد البيئة، الذي يركز على الاستكشاف والمهام القصصية والتفاعل مع الشخصيات غير اللاعبين والمهام الجانبية، ونمط اللاعب ضد اللاعب، الذي يقدم مباريات جماعية 4 ضد 4 في أوضاع مختلفة. تضيف المهام الجماعية، مثل الضربات المكونة من ثلاثة لاعبين والغارات المكونة من ستة لاعبين، بعداً تعاونياً مهماً. من الناحية التقنية، يعتمد اللعبة على ثلاثة فئات رئيسية هي warlock وhunter وtitan، كل منها يوفر أسلوب لعب مختلفاً بناءً على التخصص والقدرات الفريدة، مع جانب تقمص أدوار قوي يشمل تخصيص الشخصية وتطويرها عبر اكتساب نقاط الخبرة من إكمال المهام القصصية والجانبية. يتوفر العمل على منصات متعددة تشمل بلايستيشن 4 وإكس بوكس ون والحاسوب الشخصي، ثم امتد لاحقاً إلى منصات الجيل الجديد. يعتمد الإيقاع على التنقل بين الاستكشاف الفردي والمهام الجماعية، مع تفاعل مستمر مع البيئة واللاعبين الآخرين. ومع ذلك، فإن الأدلة المتاحة لا توضح تفاصيل دقيقة حول جودة السرد أو عمق الشخصيات أو مستوى الإخراج البصري والصوتي، مما يحد من إمكانية إصدار حكم نهائي شامل على هذه العناصر.\",\"scores\":{\"story\":0,\"visuals\":0,\"sound\":0,\"pacing\":0},\"pros\":[],\"cons\":[],\"verdict\":\"\"}",
+          "savedAt": "2026-11-18T23:34:04.606Z"
+        }
+      ],
+      "evidence": {
+        "title": "Destiny 2",
+        "originalTitle": "",
+        "type": "game",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/destiny-2",
+        "sourceId": "game:32",
+        "releaseDate": "2017-09-06",
+        "overview": "Destiny 2 is an online multiplayer first-person shooter. You take on the role of a Guardian that needs to protect the last city on Earth from alien invaders. The game follows its predecessor, Destiny. The goal of the game is to return the Light that was stolen from the Guardians by the aliens. Destiny 2 features two main activity types: player versus environment and player versus player. PvE is focused on exploration, story missions interaction with NPCs and side quests. PvP features 4v4 team matches in different modes. The game also allows taking part in group missions, such as three-player strikes and six-player raids. Destiny 2 has a strong RPG aspect that includes character customization and development. There are three classes in the game - Warlock, Hunter, and Titan; they provide different playstyles depending on their specialization and unique abilities. To develop the character you can gain experience points completing the story and side missions.",
+        "poster": "https://media.rawg.io/media/games/34b/34b1f1850a1c06fd971bc6ab3ac0ce0e.jpg",
+        "backdrop": "https://media.rawg.io/media/screenshots/9dd/9dd2669387f9a1519dfda2a0b7030e45.jpg",
+        "genres": [
+          "Action",
+          "Shooter"
+        ],
+        "platforms": [
+          "PlayStation 4",
+          "Xbox One",
+          "PC",
+          "Web",
+          "Xbox Series S/X",
+          "PlayStation 5"
+        ],
+        "cast": [],
+        "crew": [],
+        "youtubeVideoId": "",
+        "youtubeVideoTitle": "",
+        "externalVideoUrl": "",
+        "externalVideoTitle": "",
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/destiny-2",
+            "extract": "Destiny 2 is an online multiplayer first-person shooter. You take on the role of a Guardian that needs to protect the last city on Earth from alien invaders. The game follows its predecessor, Destiny. The goal of the game is to return the Light that was stolen from the Guardians by the aliens. Destiny 2 features two main activity types: player versus environment and player versus player. PvE is focused on exploration, story missions interaction with NPCs and side quests. PvP features 4v4 team matches in different modes. The game also allows taking part in group missions, such as three-player strikes and six-player raids. Destiny 2 has a strong RPG aspect that includes character customization and development. There are three classes in the game - Warlock, Hunter, and Titan; they provide different playstyles depending on their specialization and unique abilities. To develop the character you can gain experience points completing the story and side missions."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Destiny_2",
+            "extract": "Destiny 2 is a free-to-play online first-person shooter video game developed by Bungie. The sequel to 2014's Destiny and its subsequent expansions, it was originally released as a paid title in 2017 for PlayStation 4, Xbox One, and Windows before transitioning to a free-to-play live service game under the New Light title on October 1, 2019, followed by the game's release on Stadia the following month, and then PlayStation 5 and Xbox Series X/S platforms in December 2020. Set in a \"mythic science fiction\" world, the game features a multiplayer \"shared-world\" environment with elements of role-playing games. Like the original, activities in Destiny 2 are divided among player versus environment (PvE) and player versus player (PvP) game types. In addition to normal story missions, PvE features three-player \"strikes\" and dungeons and six-player raids. A free roam patrol mode is also available for most destinations which feature public events as well as activities not available in the original. These activities have an emphasis on exploration of the destinations and interactions with non-player characters (NPCs); the original Destiny only featured NPCs in social spaces. PvP features objective-based modes, as well as traditional deathmatch game modes. Players assume the role of a Guardian, protectors of Earth's last safe city as they wield a power called Light to protect humanity from different alien races and combat the looming threat of the Darkness—later on, players also learn to wield the power of Darkness. Upon release, Destiny 2 received generally favorable reviews from critics. Praise focused on its improvements, particularly with regards to its initial story, as well as its gameplay, visuals, exploration focus, multiplayer, and public occasions. Reviews were divided on the recategorization of the weapons, the Leviathan raid, and new modes. Destiny 2 was nominated for and won various awards, such as at The Game Awards 2017 and Game Critics Awards. Like the original Destiny, the game featured expansion packs which furthered the story and added new content. Bungie supported the game with 10 expansion packs among smaller seasonal updates released between each expansion; the seasonal model began in Year Two. Year Three marked a transition to a free-to-play model, where only the expansions and seasonal content required purchasing to access their narratives and activities. Year Four had the biggest impact on the game, as it introduced the Destiny Content Vault (DCV), wherein older content was removed periodically from the game and placed in the DCV (which included content from the original Destiny), possibly to be re-worked and re-added at a later time. Upon this initial introduction of the DCV, the game's original \"Red War\" campaign and raid, as well as the first two expansions, Curse of Osiris and Warmind, were removed, with the Forsaken expansion's campaign later removed as well. The franchise concluded its first major narrative arc, called the \"Light and Darkness\" saga, with Destiny 2's eighth expansion, The Final Shape, in June 2024. Year Eight had originally begun a new saga called the \"Fate\" saga as Destiny 2 was intended to continue past the Renegades expansion, which was released in December 2025 as the game's 10th expansion, but due to a financial loss for parent company Sony, Bungie refocused their efforts into their other titles and cancelled the two expansions intended for Year Nine. At the time, the June 2026 major update, Monument of Triumph, was announced as the final content update for Destiny 2, and although Bungie had ended active development, the game remains online and playable, much like the original. Alongside the final update, all available expansions, content packs, and dungeon keys were packaged into Destiny 2: The Collection. In September 2026, Bungie announced their plans to return to the game and re-add all previously removed content to lay the foundation for new Destiny stories and games."
+          }
+        ],
+        "metadata": {
+          "rating": 3.52,
+          "votes": 2676
+        },
+        "streamingPlatform": "",
+        "collection": "",
+        "netflixOriginal": false,
+        "streamingRegion": ""
+      },
       "attempts": 0,
       "createdAt": "2026-11-17T23:35:14.861Z",
-      "updatedAt": "2026-11-18T19:45:30.746Z",
+      "updatedAt": "2026-11-18T23:34:04.606Z",
       "nextAttemptAt": null,
       "lastError": null,
       "article": null,
       "quality": null,
       "recoveryAttempts": 1,
       "evidenceRecoveryAttempts": 0,
-      "resumeTo": null
+      "resumeTo": null,
+      "lastProvider": "openrouter",
+      "excludedProviders": [],
+      "nextStageAt": 1795045744606
     },
     "game:41": {
       "key": "game:41",
@@ -2339,9 +2397,9 @@
         "failures": 3
       },
       "openrouter": {
-        "requests": 11,
-        "tokens": 21591,
-        "successes": 0,
+        "requests": 13,
+        "tokens": 26184,
+        "successes": 1,
         "failures": 5
       }
     }
@@ -2362,7 +2420,7 @@
     "startedAt": 1795042641925,
     "deadlineAt": 1795045341925,
     "nextStartAt": 1795045341925,
-    "articleKey": "game:3070",
+    "articleKey": "game:32",
     "nextPublishAt": 1795045341925
   },
   "discoveryBacklog": {
