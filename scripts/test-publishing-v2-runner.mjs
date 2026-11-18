@@ -129,6 +129,25 @@ assert.deepEqual(schemaProviderCalls,['groq','backup-free']);
 assert.equal(schemaState.providerCooldowns.groq,undefined,'invalid model JSON must not create a global provider outage cooldown');
 assert.deepEqual(schemaState.jobs['movie:schema-rejection'].excludedProviders,[],'successful fallback clears the temporary draft exclusion');
 
+// Invalid numeric score output is a content-quality failure and must not cool down the provider globally.
+const scoreState=createState();const scoreProviderCalls=[];
+const scoreAdapters={
+ discover:async()=>[{type:'movie',id:'invalid-score'}],
+ collectEvidence:async()=>({youtubeVideoId:'Abcdef12345',sources:[{name:'Official',url:'https://example.com/a'},{name:'Independent',url:'https://example.org/b'}]}),
+ generatePart:async({provider})=>{
+  scoreProviderCalls.push(provider.id);
+  if(provider.id==='primary-free')throw new Error('Invalid score story');
+  return {text:'backup stage',tokens:100};
+ },
+ assembleArticle:async()=>article,publishFile:async()=>({path:'unused'}),verifyDeployment:async()=>false
+};
+const scoreProviders=[{id:'primary-free',enabled:true,free:true,priority:1,dailyRequestLimit:5,dailyTokenLimit:5000},{id:'backup-free',enabled:true,free:true,priority:2,dailyRequestLimit:5,dailyTokenLimit:5000}];
+const scoreFallback=await runCycle({state:scoreState,adapters:scoreAdapters,providers:scoreProviders,now,persist:async()=>{}});
+assert.equal(scoreFallback.action,'stage-saved','invalid numeric scores must immediately fall back to another free provider');
+assert.equal(scoreFallback.provider,'backup-free');
+assert.deepEqual(scoreProviderCalls,['primary-free','backup-free']);
+assert.equal(scoreState.providerCooldowns['primary-free'],undefined,'invalid score output must not create a provider outage cooldown');
+
 // Duplicate titles must be retired before they reserve the cycle's single article slot.
 const duplicateState=createState();
 duplicateState.jobs['movie:dupe']={key:'movie:dupe',item:{type:'movie',id:'dupe'},status:'writing',stage:1,parts:[],createdAt:new Date(now).toISOString(),updatedAt:new Date(now).toISOString()};
