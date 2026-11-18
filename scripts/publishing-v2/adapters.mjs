@@ -161,6 +161,21 @@ async function wiki(title,type){
   throw new Error(String(originalError?.message||'Independent source unavailable')+'; fallback: '+String(error?.message||error));
  }
 }
+function validateSavedEvidence(item,evidence){
+ const base=validateEvidence(evidence);
+ if(!base.valid)return {valid:false,reason:base.errors.join(' ')};
+ if(!item||!evidence||evidence.type!==item.type)return {valid:false,reason:'Saved evidence media type does not match queued item.'};
+ const wanted=[item.name,item.originalTitle].map(norm).filter(x=>x.length>=4);
+ if(!wanted.length)return {valid:false,reason:'Queued item has no verifiable title.'};
+ const independent=arr(evidence.sources).filter(source=>String(source.name||'').toLowerCase()!==String(item.sourceName||'').toLowerCase());
+ const verified=independent.some(source=>{
+  const extract=norm(source.extract||'');
+  const titleMatches=wanted.some(title=>extract.includes(title));
+  const typeMatches=item.type==='game'?/\\b(game|video game)\\b/i.test(String(source.extract||'')):item.type==='series'?/\\b(television series|tv series|television|series)\\b/i.test(String(source.extract||'')):/\\b(film|movie)\\b/i.test(String(source.extract||''));
+  return titleMatches&&typeMatches;
+ });
+ return verified?{valid:true}:{valid:false,reason:'Saved independent source does not verify this title and media type.'};
+}
 async function collectEvidence(item){
  let data={},sourceUrl=item.sourceUrl,poster=item.poster,backdrop=item.backdrop,genres=item.genres||[],platforms=item.platforms||[],cast=[],crew=[],releaseDate=item.date||'',netflixSeasonNumber=null;
  let youtubeVideoId='',youtubeVideoTitle='',externalVideoUrl='',externalVideoTitle='';
@@ -314,7 +329,7 @@ async function isAlreadyPublished(item){
  return false;
 }
 export function createPublishingAdapters(){return {
- discover,collectEvidence,isAlreadyPublished,
+ discover,collectEvidence,isAlreadyPublished,validateSavedEvidence:(item,evidence)=>validateSavedEvidence(item,evidence),
  generatePart:async({job,provider,stage})=>{
   const basePrompt=prompt(job,stage);
   const isStage3Complete=r=>stage!==3||(String(r.parsed.verdict||'').trim().length>=30&&Array.isArray(r.parsed.pros)&&r.parsed.pros.filter(x=>String(x||'').trim()).length>=3&&Array.isArray(r.parsed.cons)&&r.parsed.cons.filter(x=>String(x||'').trim()).length>=2);
