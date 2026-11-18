@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
-import { publishManualInbox } from './manual-publishing/publisher.mjs';
+import { publishManualInbox } from '../manual-publishing/publisher.mjs';
 
 function article({ aiGenerated = 'false', workflow = 'manual-assisted', words = 620 } = {}) {
   const body = Array.from({ length: words }, (_, i) => 'تحليل نقدي موثق للتجربة الفنية والسردية والتقنية').join(' ');
