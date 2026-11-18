@@ -4,9 +4,6 @@ on:
   push:
     branches: [main]
     paths: ['.github/workflows/publishing-v2-automatic.yml']
-  schedule:
-    # Check every 15 minutes; save each article stage 30 minutes apart. Queue released Netflix 2026 movies (TMDB company 178464) and series (network 213).
-    - cron: '*/15 * * * *'
 permissions:
   contents: write
 concurrency:
