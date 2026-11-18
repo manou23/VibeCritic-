@@ -36,6 +36,8 @@ const sectionText=prefix=>Array.from({length:220},(_,i)=>prefix+i).join(" ");
 const body=["## القصة",sectionText("story"),"## الأنظمة",sectionText("systems"),"## التقييم",sectionText("verdict")].join("\n\n");
 const article={title:"عنوان",headline:"عنوان نقدي",summary:"ملخص",verdict:"حكم نقدي",type:"series",sourceId:"series:101",body,storyScore:8,visualsScore:8,soundScore:8,pacingScore:8,score:8,pros:["أ","ب","ج"],cons:["د","هـ"],sources:[{name:"Official",url:"https://example.com/a"},{name:"Independent",url:"https://example.org/b"}],poster:"https://example.com/poster.jpg",youtubeVideoId:"Abcdef12345"};
 assert.equal(validateArticle(article).valid,true);
+const previewArticle={...article,reviewMode:'preview',score:undefined,storyScore:undefined,visualsScore:undefined,soundScore:undefined,pacingScore:undefined};
+assert.equal(validateArticle(previewArticle).valid,true,'pre-release previews must validate without inventing a final score');
 const repeatedBody=["## القصة",sectionText("first"),"## الأنظمة",sectionText("second"),"## التقييم",sectionText("second")].join("\n\n");
 const repeatedCheck=validateArticle({...article,body:repeatedBody});
 assert.equal(repeatedCheck.valid,false,"near-duplicate analysis sections must be rejected");
