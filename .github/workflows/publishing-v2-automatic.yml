@@ -4,9 +4,6 @@ on:
   push:
     branches: [main]
     paths: ['.github/workflows/publishing-v2-automatic.yml']
-  schedule:
-    # GitHub checks every 15 minutes; the engine saves one article stage every 30 minutes.
-    - cron: '*/15 * * * *'
 permissions:
   contents: write
 concurrency:
