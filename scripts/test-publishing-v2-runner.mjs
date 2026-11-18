@@ -159,7 +159,8 @@ const netflixPriorityState=createState();
 const netflixPriorityAdapters={
  discover:async()=>[
   {type:'game',id:'general-game',name:'General Game',date:'2026-11-16'},
-  {type:'movie',id:'netflix-2026',name:'Netflix 2026 Film',date:'2026-11-16',streamingPlatform:'Netflix',collection:'Netflix 2026',editorialPriority:100}
+  {type:'movie',id:'netflix-2026',name:'Netflix 2026 Film',date:'2026-11-16',streamingPlatform:'Netflix',collection:'Netflix 2026',editorialPriority:100},
+  {type:'movie',id:'netflix-future-2026',name:'Upcoming Netflix 2026 Film',date:new Date(now+365*24*60*60*1000).toISOString().slice(0,10),streamingPlatform:'Netflix',collection:'Netflix 2026',editorialPriority:100}
  ],
  collectEvidence:async item=>({title:item.name,type:item.type,sourceId:item.type+':'+item.id,overview:'Verified synopsis',sources:[{name:'TMDB',url:'https://www.themoviedb.org/movie/1'},{name:'Wikipedia',url:'https://en.wikipedia.org/wiki/Test'}],youtubeVideoId:'Abcdef12345',poster:'https://example.com/poster.jpg'}),
  generatePart:async({stage})=>({text:'Netflix queue stage '+stage+' '+text,tokens:100}),
@@ -169,6 +170,7 @@ await runCycle({state:netflixPriorityState,adapters:netflixPriorityAdapters,prov
 assert.ok(netflixPriorityState.jobs['movie:netflix-2026'],'Netflix 2026 content must be selected ahead of lower-priority general discovery items');
 assert.equal(netflixPriorityState.jobs['movie:netflix-2026'].item.streamingPlatform,'Netflix');
 assert.equal(netflixPriorityState.jobs['movie:netflix-2026'].item.collection,'Netflix 2026');
+ assert.ok(netflixPriorityState.discoveryBacklog['movie:netflix-future-2026'],'upcoming 2026 Netflix films must remain queued until their release date');
 
 // Netflix titles are collected into durable storage even while an older saved draft owns the active slot.
 const collectionState=createState();
