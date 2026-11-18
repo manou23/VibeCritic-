@@ -17,6 +17,8 @@ function article({ aiGenerated = 'false', workflow = 'manual-assisted', words = 
     'sourceUrl: "https://www.themoviedb.org/tv/1"',
     'poster: "https://image.tmdb.org/t/p/w780/poster.jpg"',
     'backdrop: "https://image.tmdb.org/t/p/w1280/backdrop.jpg"',
+    'youtubeVideoId: "AbCdEfGhI12"',
+    'youtubeVideoTitle: "Official Trailer"',
     'reviewMode: review',
     'aiGenerated: ' + aiGenerated,
     'editorialWorkflow: ' + workflow,
@@ -71,4 +73,20 @@ for (const options of [{ aiGenerated: 'true' }, { workflow: 'automated' }, { wor
     await fs.rm(badRoot, { recursive: true, force: true });
   }
 }
-console.log('Manual publisher tests passed.');
+
+for (const [label, mutate] of [
+  ['missing video ID', source => source.replace('youtubeVideoId: "AbCdEfGhI12"\\n', '')],
+  ['missing video title', source => source.replace('youtubeVideoTitle: "Official Trailer"\\n', '')],
+  ['same poster and backdrop', source => source.replace('https://image.tmdb.org/t/p/w1280/backdrop.jpg', 'https://image.tmdb.org/t/p/w780/poster.jpg')],
+]) {
+  const badRoot = await setup();
+  try {
+    const inboxFile = path.join(badRoot, 'manual-publishing/inbox/manual-test-1.md');
+    await fs.writeFile(inboxFile, mutate(article()));
+    await assert.rejects(() => publishManualInbox({ root: badRoot }), undefined, label);
+    await assert.rejects(() => fs.access(path.join(badRoot, 'src/content/reviews/manual-test-1.md')));
+  } finally {
+    await fs.rm(badRoot, { recursive: true, force: true });
+  }
+}
+console.log('Manual publisher tests passed, including mandatory distinct images and embedded official video.');
