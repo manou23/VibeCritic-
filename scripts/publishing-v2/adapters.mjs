@@ -177,7 +177,7 @@ async function collectEvidence(item){
     if(!arr(region?.flatrate).some(x=>Number(x.provider_id)===8))throw new Error('Netflix streaming availability could not be verified for '+(item.streamingRegion||'DZ'));
    }
    if(item.type==='series'){
-    const season=arr(data.seasons).filter(x=>Number(x.season_number)>0&&String(x.air_date||'').slice(0,4)==='2026'&&true).sort((a,b)=>String(a.air_date).localeCompare(String(b.air_date)))[0];
+    const season=arr(data.seasons).filter(x=>Number(x.season_number)>0&&String(x.air_date||'').slice(0,4)==='2026').sort((a,b)=>String(a.air_date).localeCompare(String(b.air_date)))[0];
     if(!season)throw new Error('Netflix 2026 season release date could not be verified');
     releaseDate=season.air_date;netflixSeasonNumber=Number(season.season_number);
    }else if(String(data.release_date||'').slice(0,4)!=='2026'){
@@ -189,7 +189,7 @@ async function collectEvidence(item){
   backdrop=data.backdrop_path?'https://image.tmdb.org/t/p/w1280'+data.backdrop_path:backdrop;
   genres=arr(data.genres).map(x=>x.name).filter(Boolean);releaseDate=data.release_date||data.first_air_date||releaseDate;
   if(item.streamingPlatform==='Netflix'&&item.type==='series'){
-   const verifiedSeason=arr(data.seasons).filter(x=>Number(x.season_number)>0&&String(x.air_date||'').slice(0,4)==='2026'&&String(x.air_date||'').slice(0,10)<=new Date().toISOString().slice(0,10)).sort((a,b)=>String(a.air_date).localeCompare(String(b.air_date)))[0];
+   const verifiedSeason=arr(data.seasons).filter(x=>Number(x.season_number)>0&&String(x.air_date||'').slice(0,4)==='2026').sort((a,b)=>String(a.air_date).localeCompare(String(b.air_date)))[0];
    if(!verifiedSeason)throw new Error('Netflix 2026 season release date could not be verified');
    releaseDate=verifiedSeason.air_date;netflixSeasonNumber=Number(verifiedSeason.season_number);
   }
@@ -214,7 +214,7 @@ async function collectEvidence(item){
  return {title:item.name,originalTitle:item.originalTitle||data.original_title||data.original_name||'',type:item.type,sourceName:item.sourceName,sourceUrl,sourceId:item.type+':'+item.id,releaseDate,overview:primary.extract,poster,backdrop:backdrop||poster,genres,platforms,cast,crew,youtubeVideoId,youtubeVideoTitle,externalVideoUrl,externalVideoTitle,sources:[primary,independent],metadata:{rating:data.vote_average||data.rating||null,votes:data.vote_count||data.ratings_count||0},streamingPlatform:item.streamingPlatform||'',collection:item.collection||'',netflixOriginal:item.netflixOriginal===true,streamingRegion:item.streamingRegion||''};
 }
 function prompt(job,stage){
- const e=job.evidence,prior=job.parts.map(p=>p.text).join('\\n\\n'),preview=e.reviewMode==='preview';
+ const e=job.evidence,prior=job.parts.map(p=>p.text).join('\n\n'),preview=e.reviewMode==='preview';
  const mode=preview
   ? 'أنت محرر VibeCritic تكتب قراءة استباقية قبل الإصدار، لا مراجعة للنسخة النهائية. حلل المعلومات والإعلانات والمواد المنشورة فقط، وافصل المؤكد عن التوقعات والأسئلة المفتوحة. لا تدّع تجربة العمل ولا تحكم على الأداء أو التنفيذ الفعلي الذي لم يتوفر.'
   : 'أنت محرر VibeCritic وناقد عربي. لا تدّع مشاهدة أو لعباً مباشراً ولا تخترع حقائق.';
@@ -230,7 +230,7 @@ function prompt(job,stage){
  'ما كتب سابقاً، لا تكرره: '+(prior||'لا شيء'),
  'اكتب القسم '+stage+' من 3، واستهدف نحو 230 كلمة عربية فعلية (الحد الأدنى 190 والحد الأعلى 280). اكتب فقرات تحليلية فقط دون عناوين Markdown داخل review ودون ذكر المرحلة أو ترقيمها؛ سيضيف المحرك العنوان الرئيسي تلقائياً. لا تكرر محتوى الأقسام السابقة. ## '+sectionNames[stage-1]+'. المرحلة 1 تقدم الفكرة والشخصيات دون حرق؛ المرحلة 2 تحلل المواد والأنظمة أو العناصر الفنية؛ المرحلة 3 تقدم خلاصة جديدة توازن بين المؤكد والمجهول'+(preview?'، وتشرح ما يجب اختباره بعد الإصدار':'، ولا تعيد صياغة القسمين السابقين')+'.',
  'أعد JSON فقط: review,scores,pros,cons,verdict. scores تحوي story,visuals,sound,pacing من 0 إلى 10'+(preview?'، واجعلها كلها 0 لأنها قراءة استباقية بلا تقييم رقمي':'')+'. في المرحلة 3 فقط اكتب 3 عناصر واعدة/نقاط قوة و2 أسئلة مفتوحة/تحفظات محددة وverdict من 50 إلى 90 كلمة. قبل ذلك اجعل القوائم والحكم فارغة. لا تكتب نصاً خارج review.',
- 'لا تحول غياب البيانات إلى ادعاءات. لا تستخدم التوقعات كحقائق. اجعل كل حكم مرتبطاً بما ورد في الأدلة.'].join('\\n\\n');
+ 'لا تحول غياب البيانات إلى ادعاءات. لا تستخدم التوقعات كحقائق. اجعل كل حكم مرتبطاً بما ورد في الأدلة.'].join('\n\n');
 }
 async function modelCall(provider,text){
  const key=env[provider.id==='gemini'?'GEMINI_API_KEY':provider.id==='cloudflare'?'CLOUDFLARE_API_TOKEN':provider.id==='groq'?'GROQ_API_KEY':'OPENROUTER_API_KEY'];
