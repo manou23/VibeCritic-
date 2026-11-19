@@ -19,6 +19,15 @@ function listCount(raw, key) {
   const match = raw.match(new RegExp('^' + key + ':\\s*\\r?\\n((?:[ \\t]+-.*\\r?\\n?)+)', 'm'));
   return match ? (match[1].match(/^[ \t]+-\s*\S/gm) || []).length : 0;
 }
+function validCalendarDate(value) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value || '');
+  if (!match) return false;
+  const year = Number(match[1]);
+  const month = Number(match[2]);
+  const day = Number(match[3]);
+  const date = new Date(Date.UTC(year, month - 1, day));
+  return date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day;
+}
 function numeric(raw, key) {
   const value = scalar(raw, key);
   return value !== null && value !== '' && Number.isFinite(Number(value)) ? Number(value) : null;
@@ -89,13 +98,13 @@ export async function publishManualInbox({ root = process.cwd(), now = () => new
   const statePath = path.join(root, 'data/manual-publisher-state.json');
   const inboxFiles = await markdownFiles(inbox);
   if (isEditorialLibrary) {
-    // Release order is based on the work's original release date in frontmatter, never file names or checkout timestamps.
+    // releaseDate is the work's original release date; date is the review publication date and must never control queue order.
     const datedFiles = [];
     for (const file of inboxFiles) {
       const markdown = await fs.readFile(file, 'utf8');
       const { raw } = frontmatterOf(markdown);
-      const releaseDate = scalar(raw, 'date');
-      if (!releaseDate || !/^\d{4}-\d{2}-\d{2}$/.test(releaseDate) || Number.isNaN(Date.parse(releaseDate + 'T00:00:00Z'))) {
+      const releaseDate = scalar(raw, 'releaseDate');
+      if (!validCalendarDate(releaseDate)) {
         throw new Error('Editorial library article must have a valid original release date in YYYY-MM-DD format: ' + path.basename(file));
       }
       datedFiles.push({ file, releaseDate });
