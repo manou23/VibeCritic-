@@ -4,7 +4,7 @@ import { loadState, saveState } from "./store.mjs";
 import { enqueue, transition, chooseJob, validateEvidence } from "./core.mjs";
 import { discoverCandidate, collectEvidence } from "./sources.mjs";
 import { writeArticle } from "./writer.mjs";
-import { publishArticle } from "./publisher.mjs";
+import { publishArticle, articleFilePath } from "./publisher.mjs";
 
 const result = await withRunLock(async () => {
   const state = await loadState();
@@ -30,6 +30,13 @@ const result = await withRunLock(async () => {
       if (!candidate) return { action:"no-candidate" };
       job = enqueue(state,candidate).job;
       await saveState(state);
+    }
+    if (["researching","writing"].includes(job.status)) transition(job,"queued");
+    if (job.status === "reviewing") transition(job,"ready");
+    if (job.status === "publishing") {
+      job.articlePath ||= articleFilePath(job.article);
+      try { await fs.access(job.articlePath); transition(job,"verifying"); }
+      catch { transition(job,"ready"); }
     }
     if (job.status === "verifying") {
       const response = await fetch(job.verifiedUrl,{signal:AbortSignal.timeout(15000)});
@@ -67,7 +74,9 @@ const result = await withRunLock(async () => {
       transition(job,"ready");
     }
     if (job.status === "ready") {
+      job.articlePath = articleFilePath(job.article);
       transition(job,"publishing");
+      await saveState(state);
       try {
         job.articlePath = await publishArticle(job.article);
       } catch (error) {
