@@ -21,7 +21,13 @@ assert.equal(providers[3].dailyRequestLimit,40,'OpenRouter free-model budget mus
 assert.equal(providers[3].dailyTokenLimit,40000);
 assert.equal(providers[1].model,'@cf/meta/llama-3.3-70b-instruct-fp8-fast');
 assert.equal(providers[3].model,'nvidia/nemotron-3.5-super-vl:free');
-assert.ok(providers.every(x=>x.free===true&&x.enabled===true));
+assert.ok(providers.every(x=>x.free===true));
+assert.deepEqual(providers.map(x=>x.enabled),[false,false,true,true],'unstable Gemini and Cloudflare routes stay quarantined unless explicitly re-enabled');
+assert.deepEqual(providers.map(x=>x.priority),[3,4,1,2],'reliable Groq and OpenRouter routes must be preferred by the publisher');
+process.env.GEMINI_PROVIDER_ENABLED='true';process.env.CLOUDFLARE_PROVIDER_ENABLED='true';
+const optInProviders=buildFreeProviders();
+assert.ok(optInProviders.filter(x=>x.id==='gemini'||x.id==='cloudflare').every(x=>x.enabled===true),'quarantined providers can be re-enabled explicitly after verification');
+delete process.env.GEMINI_PROVIDER_ENABLED;delete process.env.CLOUDFLARE_PROVIDER_ENABLED;
 assert.equal(providers[0].model,'gemini-3.8-flash','retired Gemini default must be upgraded to the currently recommended model');
 assert.ok(!providers.some(x=>x.id==='openai'),'paid OpenAI must never enter the V2 free provider pool');
 const review=Array.from({length:25},()=> 'تحليل نقدي موثق يشرح تفاصيل العمل وحدود الأدلة المتاحة').join(' ');
