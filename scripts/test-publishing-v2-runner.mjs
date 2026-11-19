@@ -63,7 +63,7 @@ assert.equal(state.jobs['series:1'].status,'published');
 assert.ok(saves>=7);
 const afterPublish=await runCycle({state,adapters,providers,now:now+45*60*1000+6,cycleIntervalMinutes:45,stageIntervalMinutes:15,persist:async()=>{saves++;}});
 assert.equal(afterPublish.action,'no-candidates','the next article remains due at the next 45-minute slot');
-assert.equal(state.cycle.nextPublishAt,now+90*60*1000+5);
+assert.equal(state.cycle.nextPublishAt,now+90*60*1000+1,'publication cadence stays anchored to the scheduled slot during catch-up');
 assert.equal(aiCalls,3);
 // A failed provider is cooled down durably instead of being retried on every 30-minute checkpoint.
 const failureState=createState();let failedProviderCalls=0;
