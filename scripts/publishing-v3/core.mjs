@@ -1,8 +1,6 @@
 export const ENGINE_VERSION = 3;
 export const JOB_STATES = Object.freeze(["queued","researching","writing","reviewing","ready","publishing","verifying","published","waiting","rejected"]);
 const ACTIVE = new Set(["queued","researching","writing","reviewing","ready","publishing","verifying","waiting"]);
-const TERMINAL = new Set(["published","rejected"]);
-
 export function createState() {
   return { version: ENGINE_VERSION, updatedAt: new Date(0).toISOString(), jobs: {}, providers: {}, history: [] };
 }
@@ -26,10 +24,10 @@ export function enqueue(state, item, now = Date.now()) {
 const NEXT = Object.freeze({
   queued: new Set(["researching","waiting","rejected"]),
   researching: new Set(["writing","waiting","rejected"]),
-  writing: new Set(["writing","reviewing","waiting","rejected"]),
+  writing: new Set(["reviewing","waiting","rejected"]),
   reviewing: new Set(["ready","writing","waiting","rejected"]),
   ready: new Set(["publishing","waiting","rejected"]),
-  publishing: new Set(["verifying","waiting"]),
+  publishing: new Set(["verifying","waiting","rejected"]),
   verifying: new Set(["published","waiting","rejected"]),
   waiting: new Set(["queued","researching","writing","reviewing","ready","publishing","verifying","rejected"])
 });
@@ -61,6 +59,7 @@ export function validateArticle(article, { minWords = 650, minCharacters = 3200 
   if (String(article.body).length < minCharacters) throw new Error("Article is too short in characters");
   if (!Array.isArray(article.pros) || article.pros.length < 3 || !Array.isArray(article.cons) || article.cons.length < 2) throw new Error("Article strengths/limitations are incomplete");
   for (const k of ["story","visuals","sound","pacing"]) if (!Number.isFinite(article.scores?.[k]) || article.scores[k] < 0 || article.scores[k] > 10) throw new Error("Invalid score: " + k);
+  if (!Number.isFinite(article.score) || article.score <= 0 || article.score > 10) throw new Error("Invalid weighted score");
   if (!Array.isArray(article.sources) || article.sources.length < 2) throw new Error("Article sources are missing");
   return { words, characters: String(article.body).length };
 }
