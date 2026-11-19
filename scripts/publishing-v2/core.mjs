@@ -73,7 +73,7 @@ export function transition(job,event,patch={},now=Date.now()){
  const next={...job,...patch,status:rule[1],updatedAt:iso(now)};
  if(event==="part-saved"){
   if(!patch.part||typeof patch.part.text!=="string"||!patch.part.text.trim()||job.stage>=3)throw Error("Invalid or excess article stage");
-  next.parts=[...(job.parts||[]),{stage:job.stage+1,text:patch.part.text.trim(),savedAt:iso(now)}];next.stage=job.stage+1;next.attempts=0;delete next.part;
+  next.parts=[...(job.parts||[]),{stage:job.stage+1,text:patch.part.text.trim(),providerId:String(patch.part.providerId||""),savedAt:iso(now)}];next.stage=job.stage+1;next.attempts=0;delete next.part;
   if(next.stage===3)next.status="quality-check";
  }
  if(event==="provider-deferred"||event==="quality-failed"){
@@ -95,6 +95,24 @@ export function chooseFreeProvider(providers,usage={},now=Date.now()){
   if(!p||p.enabled!==true||p.free!==true||time(p.cooldownUntil)>now)return false;
   const u=usage[p.id]||{};if(time(u.cooldownUntil)>now)return false;return !(Number.isFinite(p.dailyRequestLimit)&&Number(u.requests||0)>=p.dailyRequestLimit)&&!(Number.isFinite(p.dailyTokenLimit)&&Number(u.tokens||0)>=p.dailyTokenLimit);
  }).sort((a,b)=>Number(a.priority||100)-Number(b.priority||100)||String(a.id).localeCompare(String(b.id)))[0]||null;
+}
+// Spread a draft across different free providers, one specialist section per stage.
+// Keep the stage preference deterministic so saved checkpoints resume without reshuffling.
+export function chooseEditorialProvider(providers,usage={},now=Date.now(),{stage=1,usedProviderIds=[],excludedProviderIds=[]}={}){
+ const excluded=new Set(excludedProviderIds||[]);
+ const eligible=(providers||[]).filter(p=>{
+  if(!p||p.enabled!==true||p.free!==true||excluded.has(p.id)||time(p.cooldownUntil)>now)return false;
+  const u=usage[p.id]||{};
+  return time(u.cooldownUntil)<=now&&!(Number.isFinite(p.dailyRequestLimit)&&Number(u.requests||0)>=p.dailyRequestLimit)&&!(Number.isFinite(p.dailyTokenLimit)&&Number(u.tokens||0)>=p.dailyTokenLimit);
+ }).sort((a,b)=>Number(a.priority||100)-Number(b.priority||100)||String(a.id).localeCompare(String(b.id)));
+ if(!eligible.length)return null;
+ const used=new Set(usedProviderIds||[]);
+ const preferred=(Math.max(1,Number(stage)||1)-1)%eligible.length;
+ for(let offset=0;offset<eligible.length;offset++){
+  const candidate=eligible[(preferred+offset)%eligible.length];
+  if(!used.has(candidate.id))return candidate;
+ }
+ return eligible[preferred];
 }
 export function recordUsage(usage,id,{requests=1,tokens=0,success=false}={}){
  const u=usage[id]||{requests:0,tokens:0,successes:0,failures:0};
