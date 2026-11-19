@@ -10,7 +10,7 @@ type: movie
 date: 2026-11-19
 releaseDate: "2000-05-05"
 poster: "https://www.originalfilmart.com/cdn/shop/products/gladiator_2000_original_film_art_1200x.jpg?v=1621986723"
-backdrop: "https://image.tmdb.org/t/p/original/5g7zQzK5k5Y2V7x7xQ5Q0b8xJQx.jpg"
+backdrop: "https://m.media-amazon.com/images/M/MV5BZWU0ZmU1NTctM2QxYy00ZmFjLThhNjItYzA0NjlmMTQyYmUzXkEyXkFqcGc%40._V1_.jpg"
 score: 9.1
 storyScore: 8.8
 visualsScore: 9.5
