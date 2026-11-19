@@ -15,7 +15,7 @@ visualsScore: 8.9
 soundScore: 8.5
 pacingScore: 7.8
 reviewMode: review
-poster: "https://i.computer-bild.de/imgs/1/5/5/0/6/9/6/3/Niemals-allein-in-Elden-Ring--Nightreign-enthuellt-3567-3840x2160-9eaaa812ed73d497.jpg"
+poster: "https://www.videogameschronicle.com/files/2025/12/ELDEN-RING-NIGHTREIGN_20250520213809.jpg"
 backdrop: "https://www.videogameschronicle.com/files/2025/12/ELDEN-RING-NIGHTREIGN_20250520213809.jpg"
 youtubeVideoId: "Djtsw5k_DNc"
 youtubeVideoTitle: "ELDEN RING NIGHTREIGN — Official Announcement Trailer | Bandai Namco"
