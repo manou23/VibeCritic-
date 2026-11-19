@@ -11,6 +11,8 @@ date: 2026-11-19
 releaseDate: "2000-05-05"
 poster: "https://www.originalfilmart.com/cdn/shop/products/gladiator_2000_original_film_art_1200x.jpg?v=1621986723"
 backdrop: "https://m.media-amazon.com/images/M/MV5BZWU0ZmU1NTctM2QxYy00ZmFjLThhNjItYzA0NjlmMTQyYmUzXkEyXkFqcGc%40._V1_.jpg"
+youtubeVideoId: "TcYIqlBihW4"
+youtubeVideoTitle: "GLADIATOR (2000) | Theatrical Trailer | Amblin"
 score: 9.1
 storyScore: 8.8
 visualsScore: 9.5
