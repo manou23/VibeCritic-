@@ -15,6 +15,6 @@ const queued = { cycle: { nextPublishAt: now - hour }, jobs: {
 }};
 assert.equal(nextScheduledAt(queued, now, 45 * 60 * 1000), now + 30 * 60 * 1000,
   'new ready articles must be spaced after all already queued publication slots');
-assert.equal(nextPublishAtAfterSuccess({ cycle: { nextPublishAt: now - hour } }, now - 30 * 60 * 1000, 45 * 60 * 1000), now - 15 * 60 * 1000,
+assert.equal(nextPublishAtAfterSuccess({ cycle: { nextPublishAt: now - hour } }, now - 30 * 60 * 1000, 45 * 60 * 1000), now + 15 * 60 * 1000,
   'advancement must use the later of the current slot and published slot');
 console.log('VibeCritic publication schedule recovery tests passed.');
