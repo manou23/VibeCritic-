@@ -39,9 +39,9 @@
     "test:scoring-rubric": "node scripts/test-scoring-rubric.mjs",
     "test:provider-cooldown": "node scripts/test-provider-cooldown.mjs",
     "test:review-json": "node scripts/test-review-json.mjs",
-    "test:publishing-v2": "node scripts/test-publishing-v2.mjs && node scripts/test-publishing-v2-runner.mjs && node scripts/test-publishing-v2-adapters.mjs && node scripts/test-publishing-v2-recovery.mjs && node scripts/test-publishing-v2-schedule.mjs && node workers/publishing-heartbeat/test.mjs",
     "publish:manual": "node manual-publishing/publisher.mjs",
-    "test:manual-publisher": "node scripts/test-manual-publisher.mjs"
+    "test:manual-publisher": "node scripts/test-manual-publisher.mjs",
+    "test:publishing-v3": "node --check scripts/publishing-v3/core.mjs && node --check scripts/publishing-v3/store.mjs && node --check scripts/publishing-v3/lock.mjs && node --check scripts/publishing-v3/sources.mjs && node --check scripts/publishing-v3/providers.mjs && node --check scripts/publishing-v3/writer.mjs && node --check scripts/publishing-v3/publisher.mjs && node --check scripts/publishing-v3/run.mjs && node scripts/publishing-v3/test.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",
