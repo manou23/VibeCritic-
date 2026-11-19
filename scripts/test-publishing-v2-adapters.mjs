@@ -131,7 +131,7 @@ globalThis.fetch=async(url,options)=>{
   assert.equal(body.response_format.type,'json_object','Groq uses flexible JSON mode so invalid score values can be caught locally and routed to a fallback provider');
   assert.equal(body.response_format.json_schema,undefined,'do not let Groq reject an otherwise usable response before local validation');
   assert.ok(body.messages[0].content.includes('ولا تستخدم null'),'Groq prompt must require numeric score values');
-  assert.ok(body.messages[1].content.includes('210 إلى 240 كلمة عربية فعلية'),'Groq must receive the same complete-section length target');
+  assert.ok(body.messages[1].content.includes('210 إلى 230 كلمة عربية فعلية'),'Groq must receive the same complete-section length target');
   assert.equal(body.include_reasoning,false,'do not include internal reasoning in the JSON response');
   assert.equal(options.headers.authorization,'Bearer test-key');
   if(mode==='groq-retry'&&groqShortOnce){groqShortOnce=false;return new Response(JSON.stringify({choices:[{message:{content:JSON.stringify(shortPayload)},finish_reason:'stop'}],usage:{total_tokens:123}}),{status:200,headers:{'content-type':'application/json'}});}
