@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-19T01:12:40.528Z",
+  "updatedAt": "2026-11-19T03:58:20.310Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -676,20 +676,9 @@
         "sourceUrl": "https://www.themoviedb.org/movie/656908",
         "popularity": 56
       },
-      "status": "writing",
-      "stage": 2,
-      "parts": [
-        {
-          "stage": 1,
-          "text": "{\"review\":\"تستند \\\"Ramayana: Rise of a Legend\\\" إلى الأساطير الهندية القديمة، وتستعرض بداية رحلة الأمير راما والأميرة سيتا من زواجهما إلى نفيهما، ما يضع الأساس لسلسلة من التحديات الأسطورية. يبرز الفيلم فكرة الحب والواجب والقدر كعناصر محورية، حيث يُصوَّر الزواج كحدث محوري يحدد مسار الشخصيات ويقودهما إلى مسارٍ مليء بالمصاعب. الشخصيات الرئيسية، راما (رانبير كابور) وسيتا (ساي بالافي)، تُعطى عمقًا نفسيًا من خلال صراعات داخلية بين الواجب العائلي والرغبة الشخصية، ما يخلق توترًا دراميًا يُظهر التناقض بين الميثولوجيا التقليدية والنهج السردي الحديث. الدعم الجماعي يضيف طبقة من التعقيد؛ فمثلاً، شخصية لاكشمان (يَش) تُظهر صداقة وفاء تتقاطع مع مسارات القتال، بينما يضيف أران غوفي (آرن غوفي) لمسة من الحكمة الأسطورية التي تُعيد إحياء النصوص القديمة. رغم أن القصة تُعتمد على أحداث معروفة من رامايانا، إلا أن التركيز على مرحلة الزواج والنفي يتيح مساحة لتجديد السرد وتقديم منظور جديد للجمهور المعاصر. لا يُكشف عن تفاصيل الصراع النهائي أو تفاصيل النفي، مما يحافظ على عنصر المفاجأة ويُشجع المشاهد على متابعة الجزء الثاني. في المجمل، ينجح الفيلم في تقديم إطار سردي واضح يربط بين الأساطير والدراما الشخصية، مع الحفاظ على توازن بين الوفاء للنص الأصلي وإضفاء طابع معاصر على الشخصيات.\",\"scores\":{\"story\":0,\"visuals\":0,\"sound\":0,\"pacing\":0},\"pros\":[],\"cons\":[],\"verdict\":\"\"}",
-          "savedAt": "2026-11-18T23:38:26.953Z"
-        },
-        {
-          "stage": 2,
-          "text": "{\"review\":\"يعتمد الإخراج في \\\"Ramayana: Rise of a Legend\\\" على مزيج من الأسلوب الأسطوري والحداثة التقنية، حيث يدمج المخرج نيتش تيوري مشاهد القتال الكلاسيكية مع تقنيات CGI متقدمة لتصوير معارك السحرة والوحوش. تُظهر اللقطات الواسعة للغابات والجبال الهندية إتقاناً في تكوين المشهد، مع إضاءة طبيعية تُبرز تفاصيل الأزياء التقليدية وتضفي طابعاً مهيباً على المشهد. ومع ذلك، يظل التوازن بين الواقعية والخيال غير ثابت؛ فبعض المشاهد السحرية تبدو متقنة جداً مقارنةً باللقطات الأرضية التي تعاني من إضاءة غير متساوية. من ناحية الصوت، يبرز الموسيقى التصويرية التي أُلفت بأدوات تقليدية هندية، ما يعمق الإحساس بالتراث ويعزز اللحظات العاطفية، بينما يظل مزيج المؤثرات الصوتية للمعارك أحياناً مرتفعاً إلى حد التشويش، ما يطغى على حوار الشخصيات. الإيقاع السردي يتسم بالثبات في بداية الفيلم، حيث تُعطى الشخصيات وقتاً كافياً لتطوير دوافعها، لكن بعد الانتقال إلى مرحلة النفي يتسارع الإيقاع بشكل ملحوظ، ما يخلق توتراً درامياً لكنه يترك بعض المشاهدين في حالة ارتباك بسبب قفزات زمنية سريعة. بشكل عام، ينجح الإخراج في إحياء الأساطير عبر تقنيات بصرية وصوتية متقنة، إلا أن التفاوت في جودة المشاهد وتوازن الصوت قد يؤثران على تجربة المشاهد المتوسطة.\",\"scores\":{\"story\":0,\"visuals\":0,\"sound\":0,\"pacing\":0},\"pros\":[],\"cons\":[],\"verdict\":\"\"}",
-          "savedAt": "2026-11-19T01:07:44.790Z"
-        }
-      ],
+      "status": "waiting",
+      "stage": 0,
+      "parts": [],
       "evidence": {
         "title": "Ramayana: Rise of a Legend",
         "originalTitle": "रामायणम्",
@@ -745,16 +734,19 @@
         "netflixOriginal": false,
         "streamingRegion": ""
       },
-      "attempts": 0,
+      "attempts": 3,
       "createdAt": "2026-11-17T08:22:20.499Z",
-      "updatedAt": "2026-11-19T01:07:44.790Z",
-      "nextAttemptAt": null,
-      "lastError": "Saved evidence invalidated; researching again: Saved independent source does not verify this title and media type.",
+      "updatedAt": "2026-11-19T03:58:00.004Z",
+      "nextAttemptAt": 1795061160004,
+      "lastError": "groq: Section word count rejected: 161",
       "recoveryAttempts": 1,
       "evidenceRecoveryAttempts": 0,
-      "resumeTo": null,
+      "resumeTo": "writing",
       "lastProvider": "groq",
-      "excludedProviders": [],
+      "excludedProviders": [
+        "openrouter",
+        "groq"
+      ],
       "nextStageAt": 1795051364790
     },
     "game:28": {
@@ -1430,73 +1422,21 @@
         ],
         "popularity": 14098
       },
-      "status": "writing",
-      "stage": 1,
-      "parts": [
-        {
-          "stage": 1,
-          "text": "{\"review\":\"تُعيد لعبة Doom (2016) إحياء روح ألعاب التصويب من منظور الشخص الأول الكلاسيكية، حيث يُعيد المطورون إحياء شخصية الـ Doomslayer في قالب حديث يدمج بين السرعة الفائقة والقتال القريب. تدور القصة حول محاولة البشرية استغلال طاقة الجحيم لتقليل أزمة الطاقة، ما يفضي إلى تسرب شياطين إلى منشأة التعدين على المريخ. يتوجب على اللاعب، عبر حملة منفردة صامتة لكن ذات تعابير واضحة، أن يطارد الشياطين، مستغلاً نظام “glory kills” لاستعادة الصحة، ما يضيف بُعداً استراتيجياً للمعارك. المستويات مليئة بالأسرار وعناصر الترقية التي تشجع على الاستكشاف، بينما تُظهر المشاهد القصصية حنق البطل وتفاعله مع الأحداث. من الناحية التقنية، تُظهر الرسوميات تفاصيل مبهرة للبيئات الجحيمية، مع إضاءة ديناميكية تُبرز أجواء الرعب. الموسيقى التي ألفها Mick Gordon تُعزز الإحساس بالضغط والاندفاع، مع إيقاعات ثقيلة تتماشى مع وتيرة القتال. ومع ذلك، يُلاحظ أن الإيقاع قد يصبح متقلباً في بعض الفصول، حيث تُطيل بعض المهام الجانبية دون إضافة جوهرية، ما قد يضعف تدفق التجربة. في النهاية، ينجح Doom في تقديم تجربة تصويب مفعمة بالحركة، مع تركيز واضح على الأداء السريع والدمج بين القصة واللعب، رغم وجود بعض الفترات التي تحتاج إلى تحسين في الإيقاع وتوازن المحتوى الجانبي.\",\"scores\":{\"story\":8.2,\"visuals\":9,\"sound\":8.8,\"pacing\":7.5},\"pros\":[\"قصة مدمجة تُظهر صراع البشرية مع طاقة الجحيم وتبرز شخصية Doomslayer القوية.\",\"رسوميات مذهلة مع إضاءة ديناميكية تعكس أجواء الجحيم بدقة.\",\"موسيقى قوية من Mick Gordon تعزز حماس القتال وتدعم الإيقاع السريع.\"],\"cons\":[\"الإيقاع يتقلب في بعض المهام الجانبية التي تُطيل التجربة دون إضافة جوهرية.\",\"قليل من التنوع في الألغاز قد يجعل بعض الفصول تشعر بالرتابة.\"],\"verdict\":\"Doom (2016) تُعيد تعريف تصويب FPS بدمج قصة مفعمة بالحركة مع رسومات وصوتيات عالية المستوى. رغم بعض الفترات المتقلبة في الإيقاع وتكرار بعض المهام الجانبية، تظل التجربة جذابة لللاعبين الباحثين عن قتال سريع ومكثف. يُنصح بها لمن يفضلون ألعاب الأكشن السريعة التي تُركز على الأداء والدمج بين القصة واللعب.\"}",
-          "providerId": "groq",
-          "savedAt": "2026-11-19T01:12:30.910Z"
-        }
-      ],
-      "evidence": {
-        "title": "DOOM (2016)",
-        "originalTitle": "",
-        "type": "game",
-        "sourceName": "RAWG",
-        "sourceUrl": "https://rawg.io/games/doom",
-        "sourceId": "game:2454",
-        "releaseDate": "2016-05-12",
-        "overview": "Return of the classic FPS, Doom (2016) acts as a reboot of the series and brings back the Doomslayer, protagonist of the original Doom games. In order to solve the energy crisis, humanity learned to harvest the energy from Hell, and when something went wrong and a demon invasion has started, it’s up to the player to control the Doomslayer and destroy the evil. Doom is a fast-paced game that restores the concept of instant health packs and leaves the player against armies of Hell with no cover, no health regeneration, or help from anyone. After damaging monsters enough, they will start glowing, which will allow players to perform glory kills to restore some health. While exploring the levels, players will come across secrets, collectible items, or upgrade points for the weapons and armor. The single-player campaign silent protagonist has a noticeable personality. He gets visibly annoyed and angry in his actions during expository cutscenes and forces his way through the game. Multiplayer maps gather players in Deathmatch/”king-of-the-hill” type game modes, with all the weapons from the single-player campaign.",
-        "poster": "https://media.rawg.io/media/games/587/587588c64afbff80e6f444eb2e46f9da.jpg",
-        "backdrop": "https://media.rawg.io/media/screenshots/d3b/d3b881ae214f9ad14724afc41b49dcea.jpg",
-        "genres": [
-          "Action",
-          "Shooter"
-        ],
-        "platforms": [
-          "PC",
-          "PlayStation 4",
-          "Nintendo Switch",
-          "Xbox One"
-        ],
-        "cast": [],
-        "crew": [],
-        "youtubeVideoId": "",
-        "youtubeVideoTitle": "",
-        "externalVideoUrl": "",
-        "externalVideoTitle": "",
-        "sources": [
-          {
-            "name": "RAWG",
-            "url": "https://rawg.io/games/doom",
-            "extract": "Return of the classic FPS, Doom (2016) acts as a reboot of the series and brings back the Doomslayer, protagonist of the original Doom games. In order to solve the energy crisis, humanity learned to harvest the energy from Hell, and when something went wrong and a demon invasion has started, it’s up to the player to control the Doomslayer and destroy the evil. Doom is a fast-paced game that restores the concept of instant health packs and leaves the player against armies of Hell with no cover, no health regeneration, or help from anyone. After damaging monsters enough, they will start glowing, which will allow players to perform glory kills to restore some health. While exploring the levels, players will come across secrets, collectible items, or upgrade points for the weapons and armor. The single-player campaign silent protagonist has a noticeable personality. He gets visibly annoyed and angry in his actions during expository cutscenes and forces his way through the game. Multiplayer maps gather players in Deathmatch/”king-of-the-hill” type game modes, with all the weapons from the single-player campaign."
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Doom_(2016_video_game)",
-            "extract": "Doom is a 2016 first-person shooter game developed by id Software and published by Bethesda Softworks. The game is the first major installment in the Doom series since 2004's Doom 3 and is a reboot of the franchise. It was released for PlayStation 4, Windows, and Xbox One in May 2016. A port for Nintendo Switch was co-developed with Panic Button and released in November 2017, and a version for Stadia was released in August 2020. Players take the role of an ancient warrior, known colloquially as the Doom Slayer, as he battles demonic forces within an energy-mining facility on Mars and in Hell. The game was announced as Doom 4 in 2008, and that version underwent an extensive development cycle with different builds and designs before the game was restarted in 2011 and re-revealed as simply Doom in 2014. It was tested by customers who pre-ordered the 2014 MachineGames game Wolfenstein: The New Order and the general public. Mick Gordon composed the music, with contributions by Richard Devine. The game also has an online multiplayer component and a level editor known as \"SnapMap\", co-developed with Certain Affinity and Escalation Studios respectively. Doom was well received by critics and players. The single-player campaign, graphics, soundtrack, and gameplay received considerable praise, whereas the multiplayer mode drew significant criticism. It was the second best-selling video game in North America and the United Kingdom in the week of its release and sold over 500,000 copies for PCs by the end of May 2016. A sequel, Doom Eternal, was released in March 2020. A prequel, Doom: The Dark Ages, was released in May 2025."
-          }
-        ],
-        "metadata": {
-          "rating": 4.38,
-          "votes": 3646
-        },
-        "streamingPlatform": "",
-        "collection": "",
-        "netflixOriginal": false,
-        "streamingRegion": ""
-      },
-      "attempts": 0,
+      "status": "researching",
+      "stage": 0,
+      "parts": [],
+      "evidence": null,
+      "attempts": 1,
       "createdAt": "2026-11-17T23:35:14.861Z",
-      "updatedAt": "2026-11-19T01:12:30.910Z",
+      "updatedAt": "2026-11-19T03:58:00.004Z",
       "nextAttemptAt": null,
       "lastError": "Saved evidence invalidated; researching again: Saved independent source does not verify this title and media type.",
       "recoveryAttempts": 1,
       "evidenceRecoveryAttempts": 0,
       "resumeTo": null,
-      "excludedProviders": [],
+      "excludedProviders": [
+        "openrouter"
+      ],
       "lastProvider": "groq",
       "nextStageAt": 1795051650910
     },
@@ -2421,14 +2361,20 @@
     },
     "2026-11-19": {
       "groq": {
-        "requests": 3,
-        "tokens": 6337,
+        "requests": 6,
+        "tokens": 11257,
         "successes": 2,
-        "failures": 0
+        "failures": 1
       },
       "openrouter": {
-        "requests": 2,
-        "tokens": 2508,
+        "requests": 6,
+        "tokens": 9149,
+        "successes": 0,
+        "failures": 3
+      },
+      "cloudflare": {
+        "requests": 1,
+        "tokens": 0,
         "successes": 0,
         "failures": 1
       }
@@ -2441,16 +2387,16 @@
       "lastError": "gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
     },
     "cloudflare": {
-      "failures": 1,
-      "until": 1795052337730,
-      "lastError": "cloudflare HTTP 401: {\"result\":null,\"success\":false,\"errors\":[{\"code\":10000,\"message\":\"Authentication error\"}],\"messages\":[]}"
+      "failures": 2,
+      "until": 1795075080004,
+      "lastError": "cloudflare empty response: {\"message_keys\":[],\"error\":null}"
     }
   },
   "cycle": {
     "startedAt": 1795042641925,
     "deadlineAt": 1795045341925,
     "nextStartAt": 1795045341925,
-    "articleKey": "game:2454",
+    "articleKey": "movie:656908",
     "nextPublishAt": 1795045341925
   },
   "discoveryBacklog": {
