@@ -1,7 +1,7 @@
 name: VibeCritic Automatic Publishing V2
 
 on:
-  # The only automatic publisher. It prepares drafts into content-queue and moves one verified-ready article live on each durable 45-minute slot; five-minute checks recover due work.
+  # The only automatic publisher. Five-minute checks resume due editorial stages; a verified-ready article is deployed only on its durable 45-minute publication slot.
   schedule:
     - cron: '*/5 * * * *'
   workflow_dispatch:
