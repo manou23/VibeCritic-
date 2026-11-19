@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-19T09:09:09.631Z",
+  "updatedAt": "2026-11-19T09:50:03.638Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -736,17 +736,14 @@
       },
       "attempts": 5,
       "createdAt": "2026-11-17T08:22:20.499Z",
-      "updatedAt": "2026-11-19T09:07:35.333Z",
-      "nextAttemptAt": 1795081175333,
-      "lastError": "cloudflare: cloudflare empty response: {\"message_keys\":[],\"error\":null}",
+      "updatedAt": "2026-11-19T09:50:02.820Z",
+      "nextAttemptAt": 1795082102820,
+      "lastError": "All eligible free providers returned unusable content; retrying after a short pause.",
       "recoveryAttempts": 1,
       "evidenceRecoveryAttempts": 0,
       "resumeTo": "writing",
       "lastProvider": "groq",
-      "excludedProviders": [
-        "openrouter",
-        "groq"
-      ],
+      "excludedProviders": [],
       "nextStageAt": 1795051364790
     },
     "game:28": {
