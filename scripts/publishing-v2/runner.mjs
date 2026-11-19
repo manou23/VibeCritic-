@@ -1,10 +1,6 @@
 import { enqueue, selectRunnableJob, cycleDecision, transition, chooseFreeProvider, chooseEditorialProvider, recordUsage, validateArticle, validateEvidence } from './core.mjs';
 import { recoverAbandonedJobs } from './recovery.mjs';
-function nextScheduledAt(state,now,interval){
- const base=Math.max(now,Number(state.cycle?.nextPublishAt)||now+interval);
- const queued=Object.values(state.jobs||{}).filter(j=>j?.status==='ready'&&Number(j.scheduledFor)>0).map(j=>Number(j.scheduledFor));
- return Math.max(base,...queued.map(t=>t+interval));
-}
+import { nextScheduledAt, nextPublishAtAfterSuccess } from './schedule.mjs';
 function candidate(items,state,counts={},now=Date.now()) { const used=new Set(Object.keys(state.jobs)); const c={game:counts.game||0,movie:counts.movie||0,series:counts.series||0}; for(const j of Object.values(state.jobs)) if(j.status==='published') c[j.item.type]=(c[j.item.type]||0)+1; return (items||[]).filter(x=>x&&['game','movie','series'].includes(x.type)&&String(x.id||'').trim()&&!used.has(x.type+':'+x.id)).sort((a,b)=>Number(b.editorialPriority||0)-Number(a.editorialPriority||0)||c[a.type]-c[b.type]||String(b.date||'').localeCompare(String(a.date||'')) )[0]||null; }
 // One bounded task per invocation. Publication cadence and writing-stage pacing are separate clocks.
 export async function runCycle({state,adapters,providers,now=Date.now(),persist=async()=>{},publishedCounts={},articleLimits={},researchSkips=0,cycleIntervalMinutes=45,stageIntervalMinutes=15}) {
@@ -60,7 +56,7 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
    state.jobs[ready.key]=transition(ready,'published',{deployedAt:new Date(now).toISOString()},now);
    state.cycle.lastPublishedAt=now;
    state.cycle.lastPublishedKey=ready.key;
-   state.cycle.nextPublishAt=Math.max(now,Number(ready.scheduledFor)||now)+CYCLE_INTERVAL;
+   state.cycle.nextPublishAt=nextPublishAtAfterSuccess(state,ready.scheduledFor,CYCLE_INTERVAL);
    await save();
    return {action:'published',key:ready.key,articlePath:ready.articlePath,scheduledFor:ready.scheduledFor,providerCalls:0};
   }
@@ -197,7 +193,7 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
    state.jobs[job.key]=job;await save();
   }
   if(!await adapters.verifyDeployment({article:job.article,job,articlePath:job.articlePath}))return {action:'deployment-pending',key:job.key,providerCalls:0};
-  state.jobs[job.key]=transition(job,'published',{deployedAt:new Date(now).toISOString()},now);await save();return {action:'published',key:job.key,articlePath:job.articlePath,providerCalls:0};
+  state.jobs[job.key]=transition(job,'published',{deployedAt:new Date(now).toISOString()},now);state.cycle.lastPublishedAt=now;state.cycle.lastPublishedKey=job.key;state.cycle.nextPublishAt=nextPublishAtAfterSuccess(state,job.scheduledFor,CYCLE_INTERVAL);await save();return {action:'published',key:job.key,articlePath:job.articlePath,scheduledFor:job.scheduledFor,providerCalls:0};
  }
  // Resume a durable stage-three checkpoint through validation only; never spend another model request.
  if(decision.action==='validate'){
