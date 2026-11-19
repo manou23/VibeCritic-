@@ -117,7 +117,7 @@ globalThis.fetch=async(url,options)=>{
   assert.match(String(url),/generativelanguage\.googleapis\.com/);
   assert.equal(body.generationConfig.responseMimeType,'application/json');
   assert.match(body.contents[0].parts[0].text,/9 أو أكثر إلا لاستثنائية واضحة/,'ratings must use calibrated, non-inflated score bands');
-  assert.match(body.contents[0].parts[0].text,/210 إلى 230 كلمة عربية فعلية/,'each section must target enough words to meet the full article minimum');
+  assert.match(body.contents[0].parts[0].text,/210 إلى 240 كلمة عربية فعلية/,'each section must target enough words to meet the full article minimum');
   assert.match(body.contents[0].parts[0].text,/لا ترفع الدرجة لمجرد شهرة Netflix/,'Netflix brand must not inflate critical scores');
   return new Response(JSON.stringify({candidates:[{content:{parts:[{text:JSON.stringify(mode==='gemini-adequate'?adequatePayload:payload)}]}}]}),{status:200,headers:{'content-type':'application/json'}});
  }
