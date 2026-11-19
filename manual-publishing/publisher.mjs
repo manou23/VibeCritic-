@@ -89,14 +89,19 @@ export async function publishManualInbox({ root = process.cwd(), now = () => new
   const statePath = path.join(root, 'data/manual-publisher-state.json');
   const inboxFiles = await markdownFiles(inbox);
   if (isEditorialLibrary) {
-    // Git checkout timestamps are not reliable queue order; require sortable UTC timestamps in filenames.
-    const queuePattern = /^(\\d{8}T\\d{6}Z)--([a-z0-9]+(?:-[a-z0-9]+)*)\\.md$/;
+    // Release order is based on the work's original release date in frontmatter, never file names or checkout timestamps.
+    const datedFiles = [];
     for (const file of inboxFiles) {
-      if (!queuePattern.test(path.basename(file))) {
-        throw new Error('Editorial library filenames must use YYYYMMDDTHHmmssZ--slug.md: ' + path.basename(file));
+      const markdown = await fs.readFile(file, 'utf8');
+      const { raw } = frontmatterOf(markdown);
+      const releaseDate = scalar(raw, 'date');
+      if (!releaseDate || !/^\\d{4}-\\d{2}-\\d{2}$/.test(releaseDate) || Number.isNaN(Date.parse(releaseDate + 'T00:00:00Z'))) {
+        throw new Error('Editorial library article must have a valid original release date in YYYY-MM-DD format: ' + path.basename(file));
       }
+      datedFiles.push({ file, releaseDate });
     }
-    inboxFiles.sort((a, b) => path.basename(a).localeCompare(path.basename(b)));
+    datedFiles.sort((a, b) => a.releaseDate.localeCompare(b.releaseDate) || path.basename(a.file).localeCompare(path.basename(b.file)));
+    inboxFiles.splice(0, inboxFiles.length, ...datedFiles.map(item => item.file));
   } else {
     inboxFiles.sort();
   }
@@ -108,8 +113,7 @@ export async function publishManualInbox({ root = process.cwd(), now = () => new
   // The editorial library is a FIFO queue: publish only its first eligible file per scheduled run.
   const file = inboxFiles[0];
   const fileName = path.basename(file);
-  const articleFileName = isEditorialLibrary ? fileName.replace(/^\\d{8}T\\d{6}Z--/, '') : fileName;
-  const article = validateArticle(articleFileName, await fs.readFile(file, 'utf8'));
+  const article = validateArticle(fileName, await fs.readFile(file, 'utf8'));
   const destination = path.join(reviews, article.slug + '.md');
   const archived = path.join(archive, article.slug + '.md');
   for (const target of [destination, archived]) {
