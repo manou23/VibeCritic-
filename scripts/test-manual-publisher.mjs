@@ -85,6 +85,23 @@ try {
   await fs.rm(libraryRoot, { recursive: true, force: true });
 }
 
+
+const invalidReleaseDateRoot = await setup();
+try {
+  const library = path.join(invalidReleaseDateRoot, 'manual-publishing/library');
+  await fs.mkdir(library, { recursive: true });
+  const invalidFile = path.join(library, 'invalid-release-date.md');
+  await fs.writeFile(invalidFile, article().replace('releaseDate: 2026-11-18', 'releaseDate: 2020-02-31'));
+  await assert.rejects(
+    () => publishManualInbox({ root: invalidReleaseDateRoot, sourceDirectory: 'manual-publishing/library' }),
+    /valid original release date/
+  );
+  await fs.access(invalidFile);
+  await assert.rejects(fs.access(path.join(invalidReleaseDateRoot, 'src/content/reviews/invalid-release-date.md')));
+} finally {
+  await fs.rm(invalidReleaseDateRoot, { recursive: true, force: true });
+}
+
 for (const options of [{ aiGenerated: 'true' }, { workflow: 'automated' }, { words: 20 }]) {
   const badRoot = await setup();
   try {
