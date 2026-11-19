@@ -40,6 +40,7 @@ jobs:
           npm run test:reasoning-quality
           npm run test:rawg-backfill
           npm run test:scoring-rubric
+          npm run test:publishing-v3
           npm run validate:reviews
 
       - name: Build production site
