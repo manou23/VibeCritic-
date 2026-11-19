@@ -33,17 +33,17 @@ jobs:
       - name: Run one bounded V3 publishing cycle
         id: publisher
         env:
-          TMDB_API_KEY: \${{ secrets.TMDB_API_KEY }}
-          RAWG_API_KEY: \${{ secrets.RAWG_API_KEY }}
-          GEMINI_API_KEY: \${{ secrets.GEMINI_API_KEY }}
-          GROQ_API_KEY: \${{ secrets.GROQ_API_KEY }}
-          OPENROUTER_API_KEY: \${{ secrets.OPENROUTER_API_KEY }}
-          PUBLISHER_V3_GEMINI_FREE_ONLY: \${{ vars.PUBLISHER_V3_GEMINI_FREE_ONLY }}
-          PUBLISHER_V3_GROQ_FREE_ONLY: \${{ vars.PUBLISHER_V3_GROQ_FREE_ONLY }}
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          PUBLISHER_V3_GEMINI_FREE_ONLY: ${{ vars.PUBLISHER_V3_GEMINI_FREE_ONLY }}
+          PUBLISHER_V3_GROQ_FREE_ONLY: ${{ vars.PUBLISHER_V3_GROQ_FREE_ONLY }}
           PUBLISHER_V3_OPENROUTER_FREE_ONLY: 'true'
-          PUBLISHER_V3_GEMINI_MODEL: \${{ vars.PUBLISHER_V3_GEMINI_MODEL }}
-          PUBLISHER_V3_GROQ_MODEL: \${{ vars.PUBLISHER_V3_GROQ_MODEL }}
-          PUBLISHER_V3_OPENROUTER_MODEL: \${{ vars.PUBLISHER_V3_OPENROUTER_MODEL }}
+          PUBLISHER_V3_GEMINI_MODEL: ${{ vars.PUBLISHER_V3_GEMINI_MODEL }}
+          PUBLISHER_V3_GROQ_MODEL: ${{ vars.PUBLISHER_V3_GROQ_MODEL }}
+          PUBLISHER_V3_OPENROUTER_MODEL: ${{ vars.PUBLISHER_V3_OPENROUTER_MODEL }}
         run: node scripts/publishing-v3/run.mjs
       - name: Validate and build new article
         id: build
@@ -61,7 +61,7 @@ jobs:
       - name: Commit V3 state and validated article
         if: always()
         env:
-          BUILD_OUTCOME: \${{ steps.build.outcome }}
+          BUILD_OUTCOME: ${{ steps.build.outcome }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
