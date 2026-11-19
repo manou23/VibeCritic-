@@ -75,6 +75,8 @@ const result = await withRunLock(async () => {
     }
     if (job.status === "ready") {
       job.articlePath = articleFilePath(job.article);
+      const slug = job.articlePath.split("/").pop().replace(/\.md$/,"");
+      job.verifiedUrl = "https://vibecritic.pages.dev/reviews/" + encodeURIComponent(slug) + "/";
       transition(job,"publishing");
       await saveState(state);
       try {
@@ -87,8 +89,6 @@ const result = await withRunLock(async () => {
         }
         throw error;
       }
-      const slug = job.articlePath.split("/").pop().replace(/\.md$/,"");
-      job.verifiedUrl = "https://vibecritic.pages.dev/reviews/" + encodeURIComponent(slug) + "/";
       transition(job,"verifying");
       await saveState(state);
       return { action:"article-created-awaiting-deploy", key:job.key, articlePath:job.articlePath, url:job.verifiedUrl, provider:job.provider, daily };
