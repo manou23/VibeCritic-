@@ -28,7 +28,7 @@ const NEXT = Object.freeze({
   reviewing: new Set(["ready","writing","waiting","rejected"]),
   ready: new Set(["publishing","waiting","rejected"]),
   publishing: new Set(["verifying","waiting","rejected"]),
-  verifying: new Set(["published","waiting","rejected"]),
+  verifying: new Set(["published","ready","waiting","rejected"]),
   waiting: new Set(["queued","researching","writing","reviewing","ready","publishing","verifying","rejected"])
 });
 export function transition(job, status, patch = {}, now = Date.now()) {
