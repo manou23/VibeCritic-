@@ -1,7 +1,7 @@
 # VibeCritic Publishing Operations
 
 ## Automated publisher V3
-The V3 publisher is the only automated AI publishing workflow. It runs on a 15-minute GitHub Actions schedule and can also be started manually. Each run handles at most one article job.
+The V3 publisher is the only automated AI publishing workflow. A Cloudflare Cron Worker dispatches it every 15 minutes; GitHub Actions keeps a daily backup schedule and manual dispatch. Each run handles at most one article job.
 
 ## Safe completion criteria
 A cycle is complete only when:
