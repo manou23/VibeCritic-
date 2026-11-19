@@ -26,6 +26,7 @@ assert.equal(providers[0].model,'gemini-3.8-flash','retired Gemini default must 
 assert.ok(!providers.some(x=>x.id==='openai'),'paid OpenAI must never enter the V2 free provider pool');
 const review=Array.from({length:25},()=> 'تحليل نقدي موثق يشرح تفاصيل العمل وحدود الأدلة المتاحة').join(' ');
 const shortPayload={review:Array.from({length:8},()=> 'مراجعة قصيرة لا تبلغ الحد المطلوب للكلمات').join(' '),scores:{story:7.2,visuals:8.1,sound:7.4,pacing:6.8},pros:[],cons:[],verdict:''};
+const adequatePayload={review:Array.from({length:18},()=> 'تحليل نقدي موثق يشرح تفاصيل العمل وحدود الأدلة المتاحة').join(' '),scores:{story:7.2,visuals:8.1,sound:7.4,pacing:6.8},pros:[],cons:[],verdict:''};
 const payload={review,scores:{story:7.2,visuals:8.1,sound:7.4,pacing:6.8},pros:[],cons:[],verdict:''};
 const originalFetch=globalThis.fetch;let calls=0,mode='gemini',groqShortOnce=false,groqShortTwice=0;
 globalThis.fetch=async(url,options)=>{
@@ -105,12 +106,12 @@ globalThis.fetch=async(url,options)=>{
   throw new Error('Unexpected evidence fallback URL: '+String(url));
  }
  const body=JSON.parse(options.body);
- if(mode==='gemini'){
+ if(mode==='gemini'||mode==='gemini-adequate'){
   assert.match(String(url),/generativelanguage\.googleapis\.com/);
   assert.equal(body.generationConfig.responseMimeType,'application/json');
   assert.match(body.contents[0].parts[0].text,/9 أو أكثر إلا لاستثنائية واضحة/,'ratings must use calibrated, non-inflated score bands');
   assert.match(body.contents[0].parts[0].text,/لا ترفع الدرجة لمجرد شهرة Netflix/,'Netflix brand must not inflate critical scores');
-  return new Response(JSON.stringify({candidates:[{content:{parts:[{text:JSON.stringify(payload)}]}}]}),{status:200,headers:{'content-type':'application/json'}});
+  return new Response(JSON.stringify({candidates:[{content:{parts:[{text:JSON.stringify(mode==='gemini-adequate'?adequatePayload:payload)}]}}]}),{status:200,headers:{'content-type':'application/json'}});
  }
  if(mode==='groq'||mode==='groq-retry'||mode==='groq-expand-retry'){
   assert.match(String(url),/api\.groq\.com\/openai\/v1\/chat\/completions/);
@@ -198,6 +199,10 @@ try{
  assert.ok(JSON.parse(groqGenerated.text).review);
  assert.equal(groqGenerated.tokens,321);
  assert.equal(calls,2,'Groq uses one compatible API request per stage');
+ mode='gemini-adequate';const beforeAdequate=calls;
+ const adequateGenerated=await adapters.generatePart({job:{item:{type:'movie',id:'76'},evidence:{title:'فيلم تجريبي',type:'movie',releaseDate:'2026',overview:'وصف موثق',genres:[],platforms:[],cast:[],crew:[],metadata:{},sources:[{name:'TMDB',url:'https://www.themoviedb.org/movie/76',extract:'معلومات'},{name:'Wikipedia',url:'https://en.wikipedia.org/wiki/Test',extract:'معلومات مستقلة'}]},parts:[]},provider:providers[0],stage:1});
+ assert.equal(calls-beforeAdequate,1,'a section meeting the site validator 150-word minimum must not be needlessly rejected and retried');
+ assert.ok(JSON.parse(adequateGenerated.text).review);
  mode='groq-retry';groqShortOnce=true;const beforeGroqRetry=calls;
  const groqRetried=await adapters.generatePart({job:{item:{type:'movie',id:'77'},evidence:{title:'فيلم تجريبي',type:'movie',releaseDate:'2026',overview:'وصف موثق',genres:[],platforms:[],cast:[],crew:[],metadata:{},sources:[{name:'TMDB',url:'https://www.themoviedb.org/movie/77',extract:'معلومات'},{name:'Wikipedia',url:'https://en.wikipedia.org/wiki/Test',extract:'معلومات مستقلة'}]},parts:[]},provider:providers[2],stage:1});
  assert.equal(calls-beforeGroqRetry,2,'a short Groq section is retried exactly once');
