@@ -1,9 +1,9 @@
 name: VibeCritic Automatic Publishing V2
 
 on:
-  # The only automatic publisher. Five-minute checks resume due editorial stages; a verified-ready article is deployed only on its durable 45-minute publication slot.
+  # Single automatic publisher. Staggered 15-minute checks match the editorial-stage interval; verified-ready articles publish on the durable 45-minute cadence.
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '7,22,37,52 * * * *'
   workflow_dispatch:
   push:
     branches: [main]
