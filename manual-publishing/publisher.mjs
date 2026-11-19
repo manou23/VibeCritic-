@@ -81,11 +81,25 @@ function writeGithubOutput(value) {
 }
 export async function publishManualInbox({ root = process.cwd(), now = () => new Date(), sourceDirectory = process.env.MANUAL_PUBLISH_SOURCE_DIR || 'manual-publishing/inbox' } = {}) {
   const inbox = path.isAbsolute(sourceDirectory) ? sourceDirectory : path.join(root, sourceDirectory);
-  const isLegacyInbox = path.relative(root, inbox).split(path.sep).join('/') === 'manual-publishing/inbox';
+  const sourcePath = path.relative(root, inbox).split(path.sep).join('/');
+  const isLegacyInbox = sourcePath === 'manual-publishing/inbox';
+  const isEditorialLibrary = sourcePath === 'manual-publishing/library';
   const archive = path.join(root, 'manual-publishing/archive');
   const reviews = path.join(root, 'src/content/reviews');
   const statePath = path.join(root, 'data/manual-publisher-state.json');
-  const inboxFiles = (await markdownFiles(inbox)).sort();
+  const inboxFiles = await markdownFiles(inbox);
+  if (isEditorialLibrary) {
+    // Git checkout timestamps are not reliable queue order; require sortable UTC timestamps in filenames.
+    const queuePattern = /^(\\d{8}T\\d{6}Z)--([a-z0-9]+(?:-[a-z0-9]+)*)\\.md$/;
+    for (const file of inboxFiles) {
+      if (!queuePattern.test(path.basename(file))) {
+        throw new Error('Editorial library filenames must use YYYYMMDDTHHmmssZ--slug.md: ' + path.basename(file));
+      }
+    }
+    inboxFiles.sort((a, b) => path.basename(a).localeCompare(path.basename(b)));
+  } else {
+    inboxFiles.sort();
+  }
   if (inboxFiles.length === 0) {
     await writeGithubOutput('published=false');
     return { published: false, reason: 'empty-inbox' };
@@ -93,7 +107,9 @@ export async function publishManualInbox({ root = process.cwd(), now = () => new
   if (isLegacyInbox && inboxFiles.length !== 1) throw new Error('Manual publisher accepts exactly one article per inbox release. Leave one .md file in manual-publishing/inbox.');
   // The editorial library is a FIFO queue: publish only its first eligible file per scheduled run.
   const file = inboxFiles[0];
-  const article = validateArticle(path.basename(file), await fs.readFile(file, 'utf8'));
+  const fileName = path.basename(file);
+  const articleFileName = isEditorialLibrary ? fileName.replace(/^\\d{8}T\\d{6}Z--/, '') : fileName;
+  const article = validateArticle(articleFileName, await fs.readFile(file, 'utf8'));
   const destination = path.join(reviews, article.slug + '.md');
   const archived = path.join(archive, article.slug + '.md');
   for (const target of [destination, archived]) {
