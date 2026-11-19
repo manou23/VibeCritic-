@@ -78,6 +78,12 @@
       "sha256": "c75c907afd66c2a9985f9d150fea58bd703fb8402732a2eb472f521c8c5030cb",
       "articlePath": "src/content/reviews/project-hail-mary-2026.md",
       "publishedAt": "2026-11-19T18:57:30.966Z"
+    },
+    "hollow-knight-silksong-2026": {
+      "sourceId": "team-cherry-hollow-knight-silksong-manual-2026",
+      "sha256": "88d6724090e940638d2cd7393900691a09337301a16432905cb83f1ea045bbb8",
+      "articlePath": "src/content/reviews/hollow-knight-silksong-2026.md",
+      "publishedAt": "2026-11-19T19:00:16.450Z"
     }
   }
 }
