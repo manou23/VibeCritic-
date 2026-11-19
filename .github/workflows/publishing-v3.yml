@@ -2,7 +2,7 @@ name: VibeCritic Publishing V3
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '17 3 * * *' # Daily backup; the Cloudflare Worker dispatches every 15 minutes.
   workflow_dispatch:
 
 permissions:
