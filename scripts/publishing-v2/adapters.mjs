@@ -274,7 +274,7 @@ async function modelCall(provider,text){
  if(Array.isArray(raw))raw=raw.map(x=>x.text||'').join('');
  if(typeof raw!=='string'||!raw.trim()){const c=d.choices?.[0],m=c?.message||{};throw new Error(provider.id+' empty response: '+JSON.stringify({model:d.model,finish_reason:c?.finish_reason,message_keys:Object.keys(m),error:d.error||null}).slice(0,500));}
  const parsed=parseJsonResponse(raw),words=(clean(parsed.review).match(/[\p{L}\p{N}]+/gu)||[]).length;
- const tokens=Number(d.usage?.total_tokens)||Math.ceil((text.length+raw.length)/4);if(words<180||words>280){const error=new Error('Section word count rejected: '+words);error.tokens=tokens;error.partial=parsed;throw error;}
+ const tokens=Number(d.usage?.total_tokens)||Math.ceil((text.length+raw.length)/4);if(words<150||words>280){const error=new Error('Section word count rejected: '+words);error.tokens=tokens;error.partial=parsed;throw error;}
  for(const k of ['story','visuals','sound','pacing'])if(!Number.isFinite(Number(parsed.scores?.[k]))||Number(parsed.scores[k])<0||Number(parsed.scores[k])>10)throw new Error('Invalid score '+k);
  return {parsed,tokens};
 }
