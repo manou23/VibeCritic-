@@ -72,6 +72,12 @@
       "sha256": "cf88539155e8f91ef92bd97d3aa4c66a3a06840a50ebc6f338c472b8a9eb7ec3",
       "articlePath": "src/content/reviews/ninho-le-prix-a-payer-2026.md",
       "publishedAt": "2026-11-18T01:47:55.410Z"
+    },
+    "project-hail-mary-2026": {
+      "sourceId": "tmdb-movie-687163-vibecritic-manual-2026",
+      "sha256": "c75c907afd66c2a9985f9d150fea58bd703fb8402732a2eb472f521c8c5030cb",
+      "articlePath": "src/content/reviews/project-hail-mary-2026.md",
+      "publishedAt": "2026-11-19T18:57:30.966Z"
     }
   }
 }
