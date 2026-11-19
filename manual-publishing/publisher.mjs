@@ -79,8 +79,9 @@ function writeGithubOutput(value) {
   }
   return Promise.resolve();
 }
-export async function publishManualInbox({ root = process.cwd(), now = () => new Date() } = {}) {
-  const inbox = path.join(root, 'manual-publishing/inbox');
+export async function publishManualInbox({ root = process.cwd(), now = () => new Date(), sourceDirectory = process.env.MANUAL_PUBLISH_SOURCE_DIR || 'manual-publishing/inbox' } = {}) {
+  const inbox = path.isAbsolute(sourceDirectory) ? sourceDirectory : path.join(root, sourceDirectory);
+  const isLegacyInbox = path.relative(root, inbox).split(path.sep).join('/') === 'manual-publishing/inbox';
   const archive = path.join(root, 'manual-publishing/archive');
   const reviews = path.join(root, 'src/content/reviews');
   const statePath = path.join(root, 'data/manual-publisher-state.json');
@@ -89,7 +90,8 @@ export async function publishManualInbox({ root = process.cwd(), now = () => new
     await writeGithubOutput('published=false');
     return { published: false, reason: 'empty-inbox' };
   }
-  if (inboxFiles.length !== 1) throw new Error('Manual publisher accepts exactly one article per release. Leave one .md file in manual-publishing/inbox.');
+  if (isLegacyInbox && inboxFiles.length !== 1) throw new Error('Manual publisher accepts exactly one article per inbox release. Leave one .md file in manual-publishing/inbox.');
+  // The editorial library is a FIFO queue: publish only its first eligible file per scheduled run.
   const file = inboxFiles[0];
   const article = validateArticle(path.basename(file), await fs.readFile(file, 'utf8'));
   const destination = path.join(reviews, article.slug + '.md');
