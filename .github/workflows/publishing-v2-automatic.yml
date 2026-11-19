@@ -10,6 +10,7 @@ on:
     paths:
       - '.github/workflows/publishing-v2-automatic.yml'
       - 'scripts/publishing-v2/**'
+      - 'scripts/test-publishing-v2*.mjs'
       - 'data/publisher-v2-settings.json'
 
 permissions:
