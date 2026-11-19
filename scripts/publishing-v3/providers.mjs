@@ -13,7 +13,9 @@ export async function generateJson(prompt, { providerId, maxTokens = 6500 } = {}
   const ordered = providerId ? pool.filter(p=>p.id===providerId) : pool;
   if (!ordered.length) throw new Error("No explicitly enabled free-only AI provider is available");
   const errors = [];
+  let requests = 0;
   for (const p of ordered) {
+    requests++;
     try {
       const key = env[p.key];
       let url, headers = { "content-type":"application/json" }, body;
@@ -31,8 +33,10 @@ export async function generateJson(prompt, { providerId, maxTokens = 6500 } = {}
       const data = await response.json();
       const raw = p.id === "gemini" ? data.candidates?.[0]?.content?.parts?.map(x=>x.text||"").join("") : data.choices?.[0]?.message?.content;
       if (!raw) throw new Error(p.id + " returned an empty response");
-      return { value:parseJsonResponse(raw), provider:p.id, tokens:Number(data.usage?.total_tokens)||0 };
+      return { value:parseJsonResponse(raw), provider:p.id, tokens:Number(data.usage?.total_tokens)||0, requests };
     } catch (error) { errors.push(String(error.message||error)); }
   }
-  throw new Error("All enabled free-only providers failed: " + errors.join(" | "));
+  const failure = new Error("All enabled free-only providers failed: " + errors.join(" | "));
+  failure.requests = requests;
+  throw failure;
 }
