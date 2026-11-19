@@ -15,7 +15,7 @@ visualsScore: 8.9
 soundScore: 8.5
 pacingScore: 7.8
 reviewMode: review
-poster: "https://www.videogameschronicle.com/files/2025/12/ELDEN-RING-NIGHTREIGN_20250520213809.jpg"
+poster: "https://media.graphassets.com/zR249sYTuumbsLpWbE9W"
 backdrop: "https://www.videogameschronicle.com/files/2025/12/ELDEN-RING-NIGHTREIGN_20250520213809.jpg"
 youtubeVideoId: "Djtsw5k_DNc"
 youtubeVideoTitle: "ELDEN RING NIGHTREIGN — Official Announcement Trailer | Bandai Namco"
