@@ -24,7 +24,7 @@ export async function generateJson(prompt, { providerId, maxTokens = 6500 } = {}
         url = p.id === "groq" ? "https://api.groq.com/openai/v1/chat/completions" : "https://openrouter.ai/api/v1/chat/completions";
         headers.authorization = "Bearer " + key;
         if (p.id === "openrouter") { headers["HTTP-Referer"]="https://vibecritic.pages.dev/"; headers["X-Title"]="VibeCritic"; }
-        body = { model:p.model, temperature:0.35, max_tokens:maxTokens, response_format:{type:"json_object"}, messages:[{role:"system",content:"أنت محرر نقدي عربي دقيق. أعد JSON صالحاً فقط ولا تختلق معلومات."},{role:"user",content:prompt}] };
+        body = { model:p.model, ...(p.id === "openrouter" ? { models:[p.model,"google/gemma-4-26b-a4b-it:free","meta-llama/llama-3.3-70b-instruct:free"].filter((value,index,array)=>value.endsWith(":free") && array.indexOf(value)===index) } : {}), temperature:0.35, max_tokens:maxTokens, response_format:{type:"json_object"}, messages:[{role:"system",content:"أنت محرر نقدي عربي دقيق. أعد JSON صالحاً فقط ولا تختلق معلومات."},{role:"user",content:prompt}] };
       }
       const response = await fetch(url,{method:"POST",headers,body:JSON.stringify(body),signal:AbortSignal.timeout(90000)});
       if (!response.ok) throw new Error(p.id + " HTTP " + response.status + ": " + (await response.text()).slice(0,300));
