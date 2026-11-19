@@ -23,7 +23,7 @@ assert.throws(() => validateEvidence({ title:"x", type:"game", overview:"short",
 const evidence = { title:"x", type:"game", overview:"A".repeat(100), sources:[{url:"https://one.example/a"},{url:"https://two.example/b"}] };
 assert.equal(validateEvidence(evidence), true);
 assert.equal(isDuplicate({type:"game",id:"42",name:"Test Game"}, new Set(["game:42"])), true);
-const body = ("تحليل نقدي مفصل يشرح البناء الفني والسردي ويوازن بين نقاط القوة والقيود. ").repeat(100);
+const body = ["## تحليل السرد والبناء\n\n"+("تحليل نقدي مفصل يشرح البناء الفني والسردي ويوازن بين نقاط القوة والقيود في هذا القسم. ").repeat(24),"## قراءة العناصر الفنية\n\n"+("تفصيل نقدي يربط الخيارات الفنية بالأثر الدرامي ويشرح حدود الأدلة المتاحة للقارئ. ").repeat(24),"## الإيقاع والحكم النهائي\n\n"+("تقييم متوازن يوضح عناصر النجاح ومواطن القصور دون تكرار أو ادعاء تجربة مباشرة. ").repeat(24)].join("\n\n");
 const article = { title:"x", body, verdict:"حكم نقدي", pros:["a","b","c"], cons:["a","b"], scores:{story:7,visuals:7,sound:7,pacing:7}, score:7, sources:evidence.sources };
 assert.ok(validateArticle(article).words >= 650);
 assert.throws(() => validateArticle({ ...article, scores:{...article.scores,story:11} }), /Invalid score/);
