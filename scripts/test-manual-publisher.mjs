@@ -69,16 +69,17 @@ const libraryRoot = await setup();
 try {
   const library = path.join(libraryRoot, 'manual-publishing/library');
   await fs.mkdir(library, { recursive: true });
-  await fs.writeFile(path.join(library, 'a-first.md'), article().replace('series:manual-test-1','series:library-first'));
-  await fs.writeFile(path.join(library, 'b-next.md'), article().replace('series:manual-test-1','series:library-next'));
+  // Deliberately make alphabetical order disagree with arrival order.
+  await fs.writeFile(path.join(library, '20261120T080000Z--a-later.md'), article().replace('series:manual-test-1','series:library-later'));
+  await fs.writeFile(path.join(library, '20261119T080000Z--z-earlier.md'), article().replace('series:manual-test-1','series:library-earlier'));
   const first = await publishManualInbox({ root: libraryRoot, sourceDirectory: 'manual-publishing/library', now: () => new Date('2026-11-19T08:00:00.000Z') });
   assert.equal(first.published, true);
-  assert.equal(first.slug, 'a-first');
-  await fs.access(path.join(library, 'b-next.md'));
-  await fs.access(path.join(libraryRoot, 'src/content/reviews/a-first.md'));
+  assert.equal(first.slug, 'z-earlier');
+  await fs.access(path.join(library, '20261120T080000Z--a-later.md'));
+  await fs.access(path.join(libraryRoot, 'src/content/reviews/z-earlier.md'));
   const next = await publishManualInbox({ root: libraryRoot, sourceDirectory: 'manual-publishing/library' });
   assert.equal(next.published, true);
-  assert.equal(next.slug, 'b-next');
+  assert.equal(next.slug, 'a-later');
 } finally {
   await fs.rm(libraryRoot, { recursive: true, force: true });
 }
