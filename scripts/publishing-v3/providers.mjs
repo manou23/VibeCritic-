@@ -26,14 +26,14 @@ export async function generateJson(prompt, { providerId, maxTokens = 10000 } = {
         url = p.id === "groq" ? "https://api.groq.com/openai/v1/chat/completions" : "https://openrouter.ai/api/v1/chat/completions";
         headers.authorization = "Bearer " + key;
         if (p.id === "openrouter") { headers["HTTP-Referer"]="https://vibecritic.pages.dev/"; headers["X-Title"]="VibeCritic"; }
-        body = { model:p.model, ...(p.id === "openrouter" ? { models:[p.model,"google/gemma-4-26b-a4b-it:free","meta-llama/llama-3.3-70b-instruct:free"].filter((value,index,array)=>value.endsWith(":free") && array.indexOf(value)===index) } : {}), temperature:0.25, max_tokens:maxTokens, response_format:{type:"json_object"}, plugins:[{id:"response-healing"}], provider:{require_parameters:true}, messages:[{role:"system",content:"أنت محرر نقدي عربي دقيق. أعد JSON صالحاً فقط ولا تختلق معلومات."},{role:"user",content:prompt}] };
+        body = { model:p.model, ...(p.id === "openrouter" ? { models:[p.model,"google/gemma-4-26b-a4b-it:free","meta-llama/llama-3.3-70b-instruct:free"].filter((value,index,array)=>value.endsWith(":free") && array.indexOf(value)===index), plugins:[{id:"response-healing"}], provider:{require_parameters:true} } : {}), temperature:0.25, max_tokens:maxTokens, response_format:{type:"json_object"}, messages:[{role:"system",content:"أنت محرر نقدي عربي دقيق. أعد JSON صالحاً فقط ولا تختلق معلومات."},{role:"user",content:prompt}] };
       }
       const response = await fetch(url,{method:"POST",headers,body:JSON.stringify(body),signal:AbortSignal.timeout(90000)});
       if (!response.ok) throw new Error(p.id + " HTTP " + response.status + ": " + (await response.text()).slice(0,300));
       const data = await response.json();
       const choice = data.choices?.[0];
-      const finishReason = choice?.finish_reason;
-      if (finishReason === "length") throw new Error(p.id + " output was truncated at max_tokens=" + maxTokens);
+      const finishReason = p.id === "gemini" ? data.candidates?.[0]?.finishReason : choice?.finish_reason;
+      if (finishReason === "length" || finishReason === "MAX_TOKENS") throw new Error(p.id + " output was truncated at max_tokens=" + maxTokens);
       const raw = p.id === "gemini" ? data.candidates?.[0]?.content?.parts?.map(x=>x.text||"").join("") : choice?.message?.content;
       if (!raw) throw new Error(p.id + " returned an empty response (finish_reason=" + String(finishReason||"unknown") + ")");
       let value;
