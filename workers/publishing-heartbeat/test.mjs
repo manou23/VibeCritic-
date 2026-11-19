@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { dispatchWorkflow } from './src/index.js';
 
 let captured;
-const result = await dispatchWorkflow({ GITHUB_ACTIONS_TOKEN: 'test-token' }, async (url, init) => {
+const result = await dispatchWorkflow({ GH_ACTIONS_TOKEN: 'test-token' }, async (url, init) => {
   captured = { url, init };
   return new Response(null, { status: 204 });
 });
@@ -13,7 +13,7 @@ assert.equal(captured.init.headers.Authorization, 'Bearer test-token');
 assert.deepEqual(JSON.parse(captured.init.body), { ref: 'main' });
 
 await assert.rejects(() => dispatchWorkflow({}, async () => new Response(null, { status: 204 })),
-  /Missing Cloudflare secret/);
-await assert.rejects(() => dispatchWorkflow({ GITHUB_ACTIONS_TOKEN: 'test-token' }, async () =>
+  /Missing Cloudflare secret: GH_ACTIONS_TOKEN/);
+await assert.rejects(() => dispatchWorkflow({ GH_ACTIONS_TOKEN: 'test-token' }, async () =>
   new Response('forbidden', { status: 403 })), /HTTP 403/);
 console.log('VibeCritic Cloudflare heartbeat tests passed.');
