@@ -10,7 +10,7 @@ type: series
 date: 2026-11-19
 releaseDate: "2000-10-06"
 poster: "https://image.tmdb.org/t/p/original/sWxi4LbJ8roPkvJVUJnjfDob7gw.jpg"
-backdrop: "https://image.tmdb.org/t/p/original/9X7Y4V6z1x2m3n4b5c6d7e8f9g0.jpg"
+backdrop: "https://images8.alphacoders.com/678/678681.jpg"
 score: 8.8
 storyScore: 8.7
 visualsScore: 8.6
