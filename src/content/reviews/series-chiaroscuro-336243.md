@@ -14,8 +14,6 @@ type: series
 sourceName: "Netflix"
 sourceId: "series:336243"
 sourceUrl: "https://www.netflix.com/title/81707977"
-watchProviders: ["Netflix"]
-watchProviderUrl: "https://www.netflix.com/title/81707977"
 poster: "https://image.tmdb.org/t/p/w780/h4dM4FjqSJihwGpo3x0llMvNSfg.jpg"
 backdrop: "https://image.tmdb.org/t/p/w1280/wM62vjwgxjQTlXX76xmQS1T49O2.jpg"
 platforms: []
