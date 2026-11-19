@@ -243,7 +243,7 @@ async function collectEvidence(item){
 }
 function prompt(job,stage){
  const e=job.evidence,prior=job.parts.map(p=>p.text).join('\n\n');
- const priorWords=job.parts.reduce((sum,p)=>{try{return sum+(clean(JSON.parse(p.text).review).match(/[\\p{L}\\p{N}]+/gu)||[]).length;}catch{return sum;}},0);
+ const priorWords=job.parts.reduce((sum,p)=>{try{return sum+(clean(JSON.parse(p.text).review).match(/[\p{L}\p{N}]+/gu)||[]).length;}catch{return sum;}},0);
  const targetMin=stage===3?Math.max(260,Math.min(380,620-priorWords)):210;
  const targetMax=targetMin+30;
  return ['أنت محرر VibeCritic وناقد عربي. لا تدّع مشاهدة أو لعباً مباشراً ولا تخترع حقائق.',
@@ -337,19 +337,20 @@ export function createPublishingAdapters(){return {
  discover,collectEvidence,isAlreadyPublished,validateSavedEvidence:(item,evidence)=>validateSavedEvidence(item,evidence),
  generatePart:async({job,provider,stage})=>{
   const basePrompt=prompt(job,stage);
+  const retryRange=stage===3?'260 إلى 410':'210 إلى 230';
   const isStage3Complete=r=>stage!==3||(String(r.parsed.verdict||'').trim().length>=30&&Array.isArray(r.parsed.pros)&&r.parsed.pros.filter(x=>String(x||'').trim()).length>=3&&Array.isArray(r.parsed.cons)&&r.parsed.cons.filter(x=>String(x||'').trim()).length>=2);
   try{const r=await modelCall(provider,basePrompt);if(!isStage3Complete(r))throw new Error('Stage 3 required fields missing: verdict/pros/cons');return {text:JSON.stringify(r.parsed),tokens:r.tokens,requests:1};}
   catch(firstError){
    if(!(/^(Section word count rejected:|Stage 3 required fields missing:|رد النموذج JSON غير مكتمل|Invalid JSON|Invalid score )/.test(String(firstError?.message||''))))throw firstError;
    const firstTokens=Number(firstError.tokens)||0;
-   const firstMessage=String(firstError?.message||'');const parseFailure=/رد النموذج JSON غير مكتمل|Invalid JSON/.test(firstMessage);const invalidScore=/^Invalid score /.test(firstMessage);const retryInstruction=stage===3?'إصلاح إلزامي للمرحلة الثالثة: أعد JSON كاملاً وصحيح البنية مع review من 260 إلى 410 كلمة، وverdict عربي واضح لا يقل عن 30 كلمة، وpros مصفوفة تحتوي ثلاث نقاط قوة فعلية على الأقل، وcons مصفوفة تحتوي تحفظين فعليين على الأقل. يجب أن تكون scores.story وscores.visuals وscores.sound وscores.pacing أرقاماً من 0 إلى 10 وليست null. لا تترك أي حقل مطلوب فارغاً.':invalidScore?'تصحيح إلزامي: الإجابة السابقة احتوت درجة غير صالحة. أعد JSON كاملاً مع scores.story وscores.visuals وscores.sound وscores.pacing كأرقام فعلية من 0 إلى 10، ولا تستخدم null أو نصاً. احتفظ بتحليل review كاملاً من 210 إلى 250 كلمة، ولا تخترع حقائق.':'مراجعة إلزامية: '+(parseFailure?'الإجابة السابقة لم تكن JSON صالحاً. أعد JSON صحيحاً ومغلق الأقواس تماماً، مع جميع المفاتيح المطلوبة.':'الإجابة السابقة أقصر من الحد المطلوب. أعد كتابة القسم كاملاً بتفصيل أكبر،')+' واجعل review بين 260 و410 كلمة عربية فعلية. أضف تحليلاً محدداً مرتبطاً بالأدلة ولا تكرر الجمل ولا تضف حقائق غير موثقة.';
+   const firstMessage=String(firstError?.message||'');const parseFailure=/رد النموذج JSON غير مكتمل|Invalid JSON/.test(firstMessage);const invalidScore=/^Invalid score /.test(firstMessage);const retryInstruction=stage===3?'إصلاح إلزامي للمرحلة الثالثة: أعد JSON كاملاً وصحيح البنية مع review من 260 إلى 410 كلمة، وverdict عربي واضح لا يقل عن 30 كلمة، وpros مصفوفة تحتوي ثلاث نقاط قوة فعلية على الأقل، وcons مصفوفة تحتوي تحفظين فعليين على الأقل. يجب أن تكون scores.story وscores.visuals وscores.sound وscores.pacing أرقاماً من 0 إلى 10 وليست null. لا تترك أي حقل مطلوب فارغاً.':invalidScore?'تصحيح إلزامي: الإجابة السابقة احتوت درجة غير صالحة. أعد JSON كاملاً مع scores.story وscores.visuals وscores.sound وscores.pacing كأرقام فعلية من 0 إلى 10، ولا تستخدم null أو نصاً. احتفظ بتحليل review كاملاً من '+retryRange+' كلمة، ولا تخترع حقائق.':'مراجعة إلزامية: '+(parseFailure?'الإجابة السابقة لم تكن JSON صالحاً. أعد JSON صحيحاً ومغلق الأقواس تماماً، مع جميع المفاتيح المطلوبة.':'الإجابة السابقة أقصر من الحد المطلوب. أعد كتابة القسم كاملاً بتفصيل أكبر،')+' واجعل review بين '+retryRange+' كلمة عربية فعلية. أضف تحليلاً محدداً مرتبطاً بالأدلة ولا تكرر الجمل ولا تضف حقائق غير موثقة.';
    const retryPrompt=basePrompt+'\\n\\n'+retryInstruction;
    try{const retry=await modelCall(provider,retryPrompt);return {text:JSON.stringify(retry.parsed),tokens:firstTokens+retry.tokens,requests:2};}
    catch(retryError){
     const retryTokens=(Number(retryError.tokens)||0)+firstTokens;
     const shortSection=Number((String(retryError.message||'').match(/Section word count rejected: (\d+)/)||[])[1]||0);
     if(shortSection>0&&shortSection<200&&retryError.partial?.review){
-     const expansionPrompt=basePrompt+'\\n\\nهذه مسودتك السابقة التي كانت أقصر من المطلوب:\\n'+retryError.partial.review+'\\n\\nوسّعها الآن إلى قسم كامل متماسك من 260 إلى 410 كلمة عربية فعلية. احتفظ بالأفكار الصحيحة، وأضف تحليلاً مستنداً حصراً إلى الأدلة أعلاه، ولا تكرر الجمل ولا تخترع معلومات. أعد JSON كاملاً مع جميع الحقول المطلوبة.';
+     const expansionPrompt=basePrompt+'\\n\\nهذه مسودتك السابقة التي كانت أقصر من المطلوب:\\n'+retryError.partial.review+'\\n\\nوسّعها الآن إلى قسم كامل متماسك من '+retryRange+' كلمة عربية فعلية. احتفظ بالأفكار الصحيحة، وأضف تحليلاً مستنداً حصراً إلى الأدلة أعلاه، ولا تكرر الجمل ولا تخترع معلومات. أعد JSON كاملاً مع جميع الحقول المطلوبة.';
      try{const expanded=await modelCall(provider,expansionPrompt);return {text:JSON.stringify(expanded.parsed),tokens:firstTokens+(Number(retryError.tokens)||0)+expanded.tokens,requests:3};}
      catch(expansionError){expansionError.tokens=(Number(expansionError.tokens)||0)+retryTokens;expansionError.requests=3;throw expansionError;}
     }
