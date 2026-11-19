@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-19T03:58:20.310Z",
+  "updatedAt": "2026-11-19T09:09:09.631Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -726,7 +726,7 @@
           }
         ],
         "metadata": {
-          "rating": 7.525,
+          "rating": 7.5,
           "votes": 59
         },
         "streamingPlatform": "",
@@ -734,11 +734,11 @@
         "netflixOriginal": false,
         "streamingRegion": ""
       },
-      "attempts": 3,
+      "attempts": 5,
       "createdAt": "2026-11-17T08:22:20.499Z",
-      "updatedAt": "2026-11-19T03:58:00.004Z",
-      "nextAttemptAt": 1795061160004,
-      "lastError": "groq: Section word count rejected: 161",
+      "updatedAt": "2026-11-19T09:07:35.333Z",
+      "nextAttemptAt": 1795081175333,
+      "lastError": "cloudflare: cloudflare empty response: {\"message_keys\":[],\"error\":null}",
       "recoveryAttempts": 1,
       "evidenceRecoveryAttempts": 0,
       "resumeTo": "writing",
@@ -2373,6 +2373,12 @@
         "failures": 3
       },
       "cloudflare": {
+        "requests": 2,
+        "tokens": 0,
+        "successes": 0,
+        "failures": 2
+      },
+      "gemini": {
         "requests": 1,
         "tokens": 0,
         "successes": 0,
@@ -2382,13 +2388,13 @@
   },
   "providerCooldowns": {
     "gemini": {
-      "failures": 3,
-      "until": 1795073906953,
-      "lastError": "gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
+      "failures": 4,
+      "until": 1795136855333,
+      "lastError": "The operation was aborted due to timeout"
     },
     "cloudflare": {
-      "failures": 2,
-      "until": 1795075080004,
+      "failures": 3,
+      "until": 1795108055333,
       "lastError": "cloudflare empty response: {\"message_keys\":[],\"error\":null}"
     }
   },
@@ -9685,8 +9691,59 @@
       "sourceName": "TMDB",
       "sourceUrl": "https://www.themoviedb.org/movie/1286656",
       "popularity": 44
+    },
+    "series:332839": {
+      "type": "series",
+      "id": "332839",
+      "name": "The Law of Beasts",
+      "originalTitle": "Prawo bestii",
+      "overview": "When the case of a child serial killer resurfaces after 25 years as an unresolved legal and social problem, two former friends are forced to confront the choices that broke their friendship and shaped their lives.",
+      "date": "2026-11-18",
+      "poster": "https://image.tmdb.org/t/p/w780/KnhUSXgKqiG96mf4GofisAhhS2.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/iMvGSFcxzvwLWyHDOLqwDX9JQ27.jpg",
+      "sourceName": "TMDB",
+      "sourceUrl": "https://www.themoviedb.org/tv/332839",
+      "popularity": 8,
+      "streamingPlatform": "Netflix",
+      "collection": "Netflix 2026",
+      "netflixOriginal": true,
+      "editorialPriority": 100
+    },
+    "series:340280": {
+      "type": "series",
+      "id": "340280",
+      "name": "Gordon",
+      "originalTitle": "Gordon",
+      "overview": "Aníbal Gordon rises from a small-time thief to a convicted murderer in Argentina during the '70s.",
+      "date": "2026-11-18",
+      "poster": "https://image.tmdb.org/t/p/w780/yLgl70D5Up0MlvBWP2MJTLAbFAF.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/o8wVY0c4v54KsFQ5IdU2uvOves1.jpg",
+      "sourceName": "TMDB",
+      "sourceUrl": "https://www.themoviedb.org/tv/340280",
+      "popularity": 3,
+      "streamingPlatform": "Netflix",
+      "collection": "Netflix 2026",
+      "netflixOriginal": true,
+      "editorialPriority": 100
+    },
+    "series:318420": {
+      "type": "series",
+      "id": "318420",
+      "name": "Valentina and the 12 Signs",
+      "originalTitle": "Os 12 Signos de Valentina",
+      "overview": "After a devastating breakup, Valentina decides to date one man from every zodiac sign. But the universe has other plans.",
+      "date": "2026-11-18",
+      "poster": "https://image.tmdb.org/t/p/w780/ihjonCRR5gEUEH8RG2Qbk4Fy3HB.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w1280/wf8UcYFLgo6QYi49O13lMMaZrod.jpg",
+      "sourceName": "TMDB",
+      "sourceUrl": "https://www.themoviedb.org/tv/318420",
+      "popularity": 2,
+      "streamingPlatform": "Netflix",
+      "collection": "Netflix 2026",
+      "netflixOriginal": true,
+      "editorialPriority": 100
     }
   },
-  "discoveryCheckedAt": 1795043375579,
-  "discoveryCount": 0
+  "discoveryCheckedAt": 1795079255333,
+  "discoveryCount": 3
 }
