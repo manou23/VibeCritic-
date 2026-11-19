@@ -2,7 +2,7 @@ export const ENGINE_VERSION = 3;
 export const JOB_STATES = Object.freeze(["queued","researching","writing","reviewing","ready","publishing","verifying","published","waiting","rejected"]);
 const ACTIVE = new Set(["queued","researching","writing","reviewing","ready","publishing","verifying","waiting"]);
 export function createState() {
-  return { version: ENGINE_VERSION, updatedAt: new Date(0).toISOString(), jobs: {}, providers: {}, history: [] };
+  return { version: ENGINE_VERSION, updatedAt: new Date(0).toISOString(), jobs: {}, providers: {}, usage: {}, history: [] };
 }
 export function validateState(state) {
   if (!state || state.version !== ENGINE_VERSION || !state.jobs || typeof state.jobs !== "object" || Array.isArray(state.jobs)) throw new Error("Invalid V3 state schema");
