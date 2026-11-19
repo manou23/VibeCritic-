@@ -84,6 +84,12 @@
       "sha256": "88d6724090e940638d2cd7393900691a09337301a16432905cb83f1ea045bbb8",
       "articlePath": "src/content/reviews/hollow-knight-silksong-2026.md",
       "publishedAt": "2026-11-19T19:00:16.450Z"
+    },
+    "elden-ring-nightreign-2026": {
+      "sourceId": "fromsoftware-elden-ring-nightreign-manual-2026",
+      "sha256": "54306a22a251ac73ebe6ffef33ca598b5d6c4f7c62e7a4e4c5a6d7546c2de18b",
+      "articlePath": "src/content/reviews/elden-ring-nightreign-2026.md",
+      "publishedAt": "2026-11-19T19:01:45.387Z"
     }
   }
 }
