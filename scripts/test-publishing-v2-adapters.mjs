@@ -120,7 +120,7 @@ globalThis.fetch=async(url,options)=>{
   assert.match(body.contents[0].parts[0].text,/لا ترفع الدرجة لمجرد شهرة Netflix/,'Netflix brand must not inflate critical scores');
   return new Response(JSON.stringify({candidates:[{content:{parts:[{text:JSON.stringify(mode==='gemini-adequate'?adequatePayload:payload)}]}}]}),{status:200,headers:{'content-type':'application/json'}});
  }
- if(mode==='groq'||mode==='groq-retry'||mode==='groq-expand-retry'){
+ if(mode==='groq'||mode==='groq-retry'||mode==='groq-expand-retry'||mode==='groq-invalid-score'){
   assert.match(String(url),/api\.groq\.com\/openai\/v1\/chat\/completions/);
   assert.equal(body.model,'openai/gpt-oss-120b');
   assert.equal(Object.hasOwn(body,'reasoning'),false,'Groq API does not accept OpenRouter reasoning options');
