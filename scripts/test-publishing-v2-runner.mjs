@@ -180,7 +180,7 @@ const nextCycle=await runCycle({state:cycleState,adapters:cycleAdapters,provider
 assert.equal(nextCycle.action,'no-candidates');
 assert.equal(cycleState.cycle.nextPublishAt,now+45*60*1000);
 
-// A repetitive third section is rejected and only that section is regenerated after the bounded retry delay.
+// A repetitive third section is rejected and only that section is regenerated after the next 15-minute editorial retry.
 const qualityState=createState();
 let qualityCalls=0,qualityAssembles=0,qualityWrites=0;
 const repeatedArticle={...article,body:["## القصة",sectionWords("alpha"),"## الأنظمة",sectionWords("beta"),"## التقييم",sectionWords("beta")].join("\n\n")};
@@ -201,7 +201,8 @@ assert.equal(rejectedQuality.action,'quality-rejected');
 assert.equal(qualityState.jobs['movie:repeat'].stage,2,'the later overlapping section is the retry boundary');
 assert.equal(qualityState.jobs['movie:repeat'].parts.length,2,'keep the two earlier sections and regenerate only the third');
 assert.equal(qualityWrites,0,'repetitive content must never be written');
-const repairedQuality=await runCycle({state:qualityState,adapters:qualityAdapters,providers,now:qualityNow+60*60*1000+3600003,persist:async()=>{}});
+assert.equal(qualityState.jobs['movie:repeat'].nextAttemptAt,qualityNow+75*60*1000,'quality repairs should wait one editorial interval, not a full hour');
+const repairedQuality=await runCycle({state:qualityState,adapters:qualityAdapters,providers,now:qualityNow+75*60*1000+3,persist:async()=>{}});
 assert.equal(repairedQuality.action,'article-prepared');
 assert.equal(qualityCalls,4,'only the rejected third section is regenerated');
 assert.equal(qualityAssembles,2);
