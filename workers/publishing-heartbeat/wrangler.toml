@@ -1,0 +1,10 @@
+name = "vibecritic-publishing-heartbeat"
+main = "src/index.js"
+compatibility_date = "2026-11-19"
+
+[triggers]
+crons = ["*/15 * * * *"]
+
+# Configure the secret after creating a fine-grained GitHub token:
+# npx wrangler secret put GITHUB_ACTIONS_TOKEN
+# Grant only Actions: Read and write, scoped to manou23/VibeCritic-.
