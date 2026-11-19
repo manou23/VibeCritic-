@@ -10,6 +10,7 @@ process.env.GROQ_API_KEY='test-key';
 process.env.GROQ_FREE_TIER_ONLY='true';
 process.env.OPENROUTER_API_KEY='test-key';
 const {buildFreeProviders,createPublishingAdapters}=await import('./publishing-v2/adapters.mjs?adapter-test');
+// Keep the free-provider routing policy covered by the production reliability gate.
 const providers=buildFreeProviders();
 assert.deepEqual(providers.map(x=>x.id),['gemini','cloudflare','groq','openrouter']);
 assert.equal(providers[1].dailyRequestLimit,3,'Cloudflare must remain below the published free Neurons allocation');
