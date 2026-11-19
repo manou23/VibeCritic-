@@ -1,8 +1,13 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+import { randomUUID } from "node:crypto";
 import { validateArticle } from "./core.mjs";
 const quote = value => JSON.stringify(String(value ?? ""));
 const slug = value => String(value||"").normalize("NFKD").toLowerCase().replace(/[^\p{L}\p{N}]+/gu,"-").replace(/^-|-$/g,"").slice(0,55) || "review";
+export function articleFilePath(article, root="src/content/reviews") {
+  const file = article.type+"-"+slug(article.title)+"-"+String(article.sourceId.split(":").pop()).replace(/[^\w-]/g,"")+".md";
+  return path.join(root,file).replace(/\\/g,"/");
+}
 export function renderMarkdown(article) {
   validateArticle(article);
   const list = values => (values||[]).map(x=>"  - "+quote(x)).join("\n") || " []";
@@ -24,8 +29,13 @@ export function renderMarkdown(article) {
 export async function publishArticle(article, root="src/content/reviews") {
   validateArticle(article);
   await fs.mkdir(root,{recursive:true});
-  const file = article.type+"-"+slug(article.title)+"-"+String(article.sourceId.split(":").pop()).replace(/[^\w-]/g,"")+".md";
-  const target = path.join(root,file);
-  await fs.writeFile(target,renderMarkdown(article),{flag:"wx",encoding:"utf8"});
-  return target.replace(/\\/g,"/");
+  const target = articleFilePath(article,root);
+  const temp = target+".tmp-"+randomUUID();
+  try {
+    await fs.writeFile(temp,renderMarkdown(article),{flag:"wx",encoding:"utf8"});
+    await fs.link(temp,target);
+    return target;
+  } finally {
+    await fs.rm(temp,{force:true}).catch(()=>{});
+  }
 }
