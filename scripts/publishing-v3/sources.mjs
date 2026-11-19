@@ -28,7 +28,7 @@ async function publishedKeys() {
 }
 async function wikiEvidence(title) {
   const search = await get("https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srsearch=" + encodeURIComponent(title) + "&srlimit=5");
-  const normalize = value => clean(value).toLowerCase().replace(/[^\\p{L}\\p{N}]+/gu,"");
+  const normalize = value => clean(value).toLowerCase().replace(/[^\p{L}\p{N}]+/gu,"");
   const target = normalize(title);
   const hit = (search.query?.search || []).find(x => normalize(x.title) === target);
   if (!hit) throw new Error("No exact independent encyclopedia match for " + title);
@@ -43,7 +43,7 @@ async function publishedTypeCounts() {
   for (const file of await fs.readdir(ROOT).catch(()=>[])) {
     if (!file.endsWith(".md")) continue;
     const text = await fs.readFile(ROOT + "/" + file,"utf8");
-    const type = text.match(/^type:\\s*(game|movie|series)\\s*$/m)?.[1];
+    const type = text.match(/^type:\s*(game|movie|series)\s*$/m)?.[1];
     if (type) counts[type]++;
   }
   return counts;
@@ -66,7 +66,6 @@ export async function discoverCandidate(state) {
   const now = new Date().toISOString().slice(0,10);
   const eligible = candidates.filter(x => x.id && x.name && (!x.date || x.date <= now) && !used.has(x.type + ":" + x.id) && !used.has("title:" + x.name.toLowerCase().replace(/[^\p{L}\p{N}]+/gu,"")) && !state.jobs[x.type + ":" + x.id]);
   if (!eligible.length) return null;
-  for (const job of Object.values(state.jobs)) if (job.status === "published" && !job.countedInPublishedFiles) counts[job.type] = (counts[job.type]||0)+1;
   eligible.sort((a,b) => counts[a.type]-counts[b.type] || b.popularity-a.popularity);
   return eligible[0];
 }
