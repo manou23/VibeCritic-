@@ -245,7 +245,7 @@ function prompt(job,stage){
  const e=job.evidence,prior=job.parts.map(p=>p.text).join('\n\n');
  const priorWords=job.parts.reduce((sum,p)=>{try{return sum+(clean(JSON.parse(p.text).review).match(/[\p{L}\p{N}]+/gu)||[]).length;}catch{return sum;}},0);
  const targetMin=stage===3?Math.max(260,Math.min(380,620-priorWords)):210;
- const targetMax=targetMin+30;
+ const targetMax=targetMin+(stage===3?30:20);
  return ['أنت محرر VibeCritic وناقد عربي. لا تدّع مشاهدة أو لعباً مباشراً ولا تخترع حقائق.',
  'العمل: '+e.title+' | النوع: '+e.type+' | تاريخ الإصدار: '+(e.releaseDate||'غير مثبت'),
   ...(e.releaseDate&&String(e.releaseDate).slice(0,10)>new Date().toISOString().slice(0,10)?['هذا العمل لم يصدر بعد. اكتب قراءة استباقية صريحة لا مراجعة نهائية: ابدأ بتوضيح أن الإصدار مستقبلي، وحلل المعلومات الرسمية المتاحة فقط. لا تدّع تجربة اللعب أو المشاهدة، ولا تمنح حكماً نهائياً أو درجات توحي بتجربة فعلية؛ اجعل الدرجات تقديرات استباقية مؤقتة مبنية على المعلومات المنشورة فقط وليست تقييماً نهائياً، واذكر ما لا يمكن الحكم عليه قبل الإصدار.']:[]),
