@@ -95,7 +95,7 @@ export async function publishManualInbox({ root = process.cwd(), now = () => new
       const markdown = await fs.readFile(file, 'utf8');
       const { raw } = frontmatterOf(markdown);
       const releaseDate = scalar(raw, 'date');
-      if (!releaseDate || !/^\\d{4}-\\d{2}-\\d{2}$/.test(releaseDate) || Number.isNaN(Date.parse(releaseDate + 'T00:00:00Z'))) {
+      if (!releaseDate || !/^\d{4}-\d{2}-\d{2}$/.test(releaseDate) || Number.isNaN(Date.parse(releaseDate + 'T00:00:00Z'))) {
         throw new Error('Editorial library article must have a valid original release date in YYYY-MM-DD format: ' + path.basename(file));
       }
       datedFiles.push({ file, releaseDate });
