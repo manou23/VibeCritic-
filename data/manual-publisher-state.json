@@ -96,6 +96,12 @@
       "sha256": "658c8fc25396b5ca607f51f243529b1626b20a85cce6c02bfe8224b68ab925be",
       "articlePath": "src/content/reviews/pragmata-2026.md",
       "publishedAt": "2026-11-19T19:03:08.737Z"
+    },
+    "mickey-17-2026": {
+      "sourceId": "warner-bros-mickey-17-manual-editorial-2026",
+      "sha256": "571e9b993a744e72551047c17db7a72dc98149ef3feeb4e57846ce5dbe2be31e",
+      "articlePath": "src/content/reviews/mickey-17-2026.md",
+      "publishedAt": "2026-11-19T19:04:16.316Z"
     }
   }
 }
