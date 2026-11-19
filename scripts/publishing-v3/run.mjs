@@ -99,7 +99,7 @@ const result = await withRunLock(async () => {
     if (Number(error?.requests)>0) daily.requests += Number(error.requests);
     if (job && !["published","rejected"].includes(job.status)) {
       const message = String(error.message||error).slice(0,800);
-      if (/Candidate release date is still in the future|Primary catalog description is too thin|Independent source is too thin|At least two independent HTTPS source domains/.test(message)) {
+      if (/Candidate release date is still in the future|Primary catalog description is too thin|Independent source is too thin|No exact independent encyclopedia match|Independent source title mismatch|At least two independent HTTPS source domains/.test(message)) {
         transition(job,"rejected",{lastError:message});
       } else {
         const resumeStatus = ["researching","writing"].includes(job.status) ? "queued" : job.status === "reviewing" ? "ready" : job.status === "publishing" ? "ready" : job.status;
