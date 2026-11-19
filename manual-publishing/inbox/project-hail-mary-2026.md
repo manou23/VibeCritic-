@@ -15,7 +15,7 @@ visualsScore: 9.1
 soundScore: 8.4
 pacingScore: 7.4
 reviewMode: review
-poster: "https://image.tmdb.org/t/p/w500/7KAoYK7La4OLXgDspPaS7GBVv8U.jpg"
+poster: "https://image.tmdb.org/t/p/w342/7KAoYK7La4OLXgDspPaS7GBVv8U.jpg"
 backdrop: "https://image.tmdb.org/t/p/w780/8Tfys3mDZVp4tNoH2ktm06a0Tau.jpg"
 youtubeVideoId: "P0XN3-n-2Lo"
 youtubeVideoTitle: "Project Hail Mary | Final Trailer — Amazon MGM Studios"
