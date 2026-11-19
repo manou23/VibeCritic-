@@ -9,7 +9,7 @@ const href = url(`reviews/${review.id}/`);
 <div class="review-poster-wrap">
 {data.poster ? <img src={optimizeImage(data.poster)} alt={data.title} loading="lazy" decoding="async" class="review-poster" width="600" height="900"/> : <div class="review-poster grid place-items-center text-5xl text-[#e45c38]">✦</div>}
 <span class="review-type">{TYPE_LABEL[data.type]}</span>
-{data.reviewMode === 'preview' ? <span class="review-score">استباقية</span> : data.reviewMode === 'limited' ? <span class="review-score">قيد التقييم</span> : <span class="review-score">{data.score.toFixed(1)} <small>/10</small></span>}
+{data.reviewMode === 'preview' ? <span class="review-score">استباقية</span> : data.reviewMode === 'limited' ? <span class="review-score">{data.sourceId === 'manual-game-gta-vi-2026' ? 'قراءة الإطلاق' : 'قيد التقييم'}</span> : <span class="review-score">{data.score.toFixed(1)} <small>/10</small></span>}
 </div>
 <div class="review-content">
 <h3 class="review-title">{data.title}</h3>
