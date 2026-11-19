@@ -73,7 +73,8 @@ const result = await withRunLock(async () => {
       const resumeStatus = ["researching","writing"].includes(job.status) ? "queued" : job.status === "reviewing" ? "ready" : job.status === "publishing" ? "ready" : job.status;
       job.attempts = (job.attempts||0)+1;
       job.lastError = String(error.message||error).slice(0,800);
-      transition(job,"waiting",{resumeStatus,nextAttemptAt:new Date(Date.now()+Math.min(24,Math.pow(2,job.attempts-1))*60*60*1000).toISOString()});
+      const retryDelay = resumeStatus === "verifying" ? 10*60*1000 : Math.min(24,Math.pow(2,job.attempts-1))*60*60*1000;
+      transition(job,"waiting",{resumeStatus,nextAttemptAt:new Date(Date.now()+retryDelay).toISOString()});
     }
     await saveState(state);
     throw error;
