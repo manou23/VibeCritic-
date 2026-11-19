@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import {createState,validateState,enqueue,selectActiveJob,selectRunnableJob,cycleDecision,transition,chooseFreeProvider,recordUsage,countWords,validateArticle,validateEvidence} from "./publishing-v2/core.mjs";
+import {createState,validateState,enqueue,selectActiveJob,selectRunnableJob,cycleDecision,transition,chooseFreeProvider,chooseEditorialProvider,recordUsage,countWords,validateArticle,validateEvidence} from "./publishing-v2/core.mjs";
 const now=Date.parse("2026-11-16T12:00:00Z"),state=createState();
 const {job:first}=enqueue(state,{type:"series",id:"101"},now);
 assert.equal(cycleDecision(state,now).action,"advance");
@@ -39,6 +39,19 @@ job=transition(job,"provider-deferred",{lastError:"administrative wait",nextAtte
 const providers=[{id:"paid",enabled:true,free:false,priority:1},{id:"cool",enabled:true,free:true,priority:2,cooldownUntil:now+5000},{id:"free",enabled:true,free:true,priority:3,dailyRequestLimit:2,dailyTokenLimit:500}];
 assert.equal(chooseFreeProvider(providers,{},now).id,"free");
 assert.equal(chooseFreeProvider(providers,{"free":{cooldownUntil:now+60000}},now),null,"persisted usage cooldown excludes a failing free provider");
+const editorialProviders=[
+ {id:"gemini",enabled:true,free:true,priority:1,dailyRequestLimit:12,dailyTokenLimit:18000},
+ {id:"groq",enabled:true,free:true,priority:2,dailyRequestLimit:50,dailyTokenLimit:100000},
+ {id:"openrouter",enabled:true,free:true,priority:3,dailyRequestLimit:40,dailyTokenLimit:40000}
+];
+assert.equal(chooseEditorialProvider(editorialProviders,{},now,{stage:1}).id,"gemini","stage one starts with the highest-priority eligible free provider");
+assert.equal(chooseEditorialProvider(editorialProviders,{},now,{stage:2,usedProviderIds:["gemini"]}).id,"groq","stage two is routed to a different free provider");
+assert.equal(chooseEditorialProvider(editorialProviders,{},now,{stage:3,usedProviderIds:["gemini","groq"]}).id,"openrouter","stage three is routed to a third provider when available");
+assert.equal(chooseEditorialProvider(editorialProviders,{},now,{stage:2,usedProviderIds:["gemini"],excludedProviderIds:["groq"]}).id,"openrouter","an excluded provider is skipped without blocking the draft");
+assert.equal(chooseEditorialProvider(editorialProviders,{},now,{stage:2,usedProviderIds:["gemini","groq","openrouter"]}).id,"groq","a retry may reuse a provider only after all eligible providers have contributed");
+let providerCheckpoint=transition(transition(first,"research-started",{},now+11),"research-saved",{evidence:{}},now+12);
+providerCheckpoint=transition(providerCheckpoint,"part-saved",{part:{text:"saved section",providerId:"gemini"}},now+13);
+assert.equal(providerCheckpoint.parts[0].providerId,"gemini","provider identity is saved with each durable article section");
 assert.deepEqual(Object.keys(createState()).sort(),["jobs","providerCooldowns","providerUsage","updatedAt","version"].sort(),"provider cooldowns survive state checkpoints");
 assert.equal(chooseFreeProvider(providers,{"free":{requests:2}},now),null);
 const usage={};recordUsage(usage,"free",{requests:1,tokens:250,success:true});assert.deepEqual(usage.free,{requests:1,tokens:250,successes:1,failures:0});
