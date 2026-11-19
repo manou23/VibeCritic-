@@ -1,0 +1,90 @@
+name: VibeCritic Publishing V3
+
+on:
+  schedule:
+    - cron: '17 3 * * *' # Daily backup; the Cloudflare Worker dispatches every 15 minutes.
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vibecritic-publisher-v3-main
+  cancel-in-progress: false
+
+jobs:
+  publish-cycle:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Run V3 reliability tests
+        run: npm run test:publishing-v3
+      - name: Run one bounded V3 publishing cycle
+        id: publisher
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          PUBLISHER_V3_GEMINI_FREE_ONLY: ${{ vars.PUBLISHER_V3_GEMINI_FREE_ONLY }}
+          PUBLISHER_V3_GROQ_FREE_ONLY: ${{ vars.PUBLISHER_V3_GROQ_FREE_ONLY }}
+          PUBLISHER_V3_OPENROUTER_FREE_ONLY: 'true'
+          PUBLISHER_V3_GEMINI_MODEL: ${{ vars.PUBLISHER_V3_GEMINI_MODEL }}
+          PUBLISHER_V3_GROQ_MODEL: ${{ vars.PUBLISHER_V3_GROQ_MODEL }}
+          PUBLISHER_V3_OPENROUTER_MODEL: ${{ vars.PUBLISHER_V3_OPENROUTER_MODEL }}
+        run: node scripts/publishing-v3/run.mjs
+      - name: Validate and build new article
+        id: build
+        if: success()
+        env:
+          CF_PAGES: '1'
+        run: |
+          if git status --porcelain -- src/content/reviews | grep -q .; then
+            npm run validate:reviews
+            npm run build
+            npm run validate:build
+          else
+            echo "No new article file was created in this cycle."
+          fi
+      - name: Commit V3 state and validated article
+        if: always()
+        env:
+          BUILD_OUTCOME: ${{ steps.build.outcome }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -f data/publisher-v3-state.json ]; then git add data/publisher-v3-state.json; fi
+          if [ "$BUILD_OUTCOME" = "success" ]; then
+            git add src/content/reviews
+          else
+            git clean -f -- src/content/reviews
+            echo "Article was not committed because build validation did not pass."
+          fi
+          if git diff --cached --quiet; then
+            echo "No V3 state changes to commit."
+            exit 0
+          fi
+          git commit -m "chore(publisher-v3): checkpoint publishing cycle"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Concurrent main update; retrying safe push ($attempt/5)."
+            sleep 3
+          done
+          echo "Could not checkpoint V3 after five safe rebase/push attempts."
+          exit 1

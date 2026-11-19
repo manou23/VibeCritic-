@@ -1,19 +1,15 @@
-import assert from 'node:assert/strict';
-import { dispatchWorkflow } from './src/index.js';
-
+import assert from "node:assert/strict";
+import { dispatchPublishingWorkflow } from "./src/index.js";
 let captured;
-const result = await dispatchWorkflow({ GITHUB_ACTIONS_TOKEN: 'test-token' }, async (url, init) => {
-  captured = { url, init };
-  return new Response(null, { status: 204 });
+const ok = await dispatchPublishingWorkflow({ GH_ACTIONS_TOKEN:"test-token" }, async (url, options) => {
+  captured = { url, options };
+  return { status:204 };
 });
-assert.equal(result.ok, true);
-assert.match(captured.url, /actions\/workflows\/publishing-v2-automatic\.yml\/dispatches$/);
-assert.equal(captured.init.method, 'POST');
-assert.equal(captured.init.headers.Authorization, 'Bearer test-token');
-assert.deepEqual(JSON.parse(captured.init.body), { ref: 'main' });
-
-await assert.rejects(() => dispatchWorkflow({}, async () => new Response(null, { status: 204 })),
-  /Missing Cloudflare secret/);
-await assert.rejects(() => dispatchWorkflow({ GITHUB_ACTIONS_TOKEN: 'test-token' }, async () =>
-  new Response('forbidden', { status: 403 })), /HTTP 403/);
-console.log('VibeCritic Cloudflare heartbeat tests passed.');
+assert.deepEqual(ok,{dispatched:true,status:204});
+assert.match(captured.url,/actions\/workflows\/publishing-v3\.yml\/dispatches$/);
+assert.equal(captured.options.method,"POST");
+assert.equal(captured.options.headers.authorization,"Bearer test-token");
+assert.deepEqual(JSON.parse(captured.options.body),{ref:"main"});
+await assert.rejects(dispatchPublishingWorkflow({},async()=>({status:204})),/Missing GH_ACTIONS_TOKEN/);
+await assert.rejects(dispatchPublishingWorkflow({GH_ACTIONS_TOKEN:"test"},async()=>({status:403,text:async()=>"forbidden"})),/HTTP 403/);
+console.log("Publishing V3 heartbeat tests passed.");

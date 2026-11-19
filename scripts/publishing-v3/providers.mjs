@@ -1,0 +1,42 @@
+import { parseJsonResponse } from "../review-json.mjs";
+const env = process.env;
+const providers = [
+  { id:"gemini", key:"GEMINI_API_KEY", enabled:env.PUBLISHER_V3_GEMINI_FREE_ONLY === "true", model:env.PUBLISHER_V3_GEMINI_MODEL || "gemini-2.5-flash" },
+  { id:"groq", key:"GROQ_API_KEY", enabled:env.PUBLISHER_V3_GROQ_FREE_ONLY === "true", model:env.PUBLISHER_V3_GROQ_MODEL || "openai/gpt-oss-120b" },
+  { id:"openrouter", key:"OPENROUTER_API_KEY", enabled:env.PUBLISHER_V3_OPENROUTER_FREE_ONLY === "true", model:env.PUBLISHER_V3_OPENROUTER_MODEL || "nvidia/nemotron-3.5-super-vl:free" }
+];
+export function availableProviders() {
+  return providers.filter(p => p.enabled && env[p.key] && (p.id !== "openrouter" || p.model.endsWith(":free")));
+}
+export async function generateJson(prompt, { providerId, maxTokens = 6500 } = {}) {
+  const pool = availableProviders();
+  const ordered = providerId ? pool.filter(p=>p.id===providerId) : pool;
+  if (!ordered.length) throw new Error("No explicitly enabled free-only AI provider is available");
+  const errors = [];
+  let requests = 0;
+  for (const p of ordered) {
+    requests++;
+    try {
+      const key = env[p.key];
+      let url, headers = { "content-type":"application/json" }, body;
+      if (p.id === "gemini") {
+        url = "https://generativelanguage.googleapis.com/v1beta/models/" + encodeURIComponent(p.model) + ":generateContent?key=" + encodeURIComponent(key);
+        body = { contents:[{parts:[{text:prompt}]}], generationConfig:{temperature:0.35,maxOutputTokens:maxTokens,responseMimeType:"application/json"} };
+      } else {
+        url = p.id === "groq" ? "https://api.groq.com/openai/v1/chat/completions" : "https://openrouter.ai/api/v1/chat/completions";
+        headers.authorization = "Bearer " + key;
+        if (p.id === "openrouter") { headers["HTTP-Referer"]="https://vibecritic.pages.dev/"; headers["X-Title"]="VibeCritic"; }
+        body = { model:p.model, ...(p.id === "openrouter" ? { models:[p.model,"google/gemma-4-26b-a4b-it:free","meta-llama/llama-3.3-70b-instruct:free"].filter((value,index,array)=>value.endsWith(":free") && array.indexOf(value)===index) } : {}), temperature:0.35, max_tokens:maxTokens, response_format:{type:"json_object"}, messages:[{role:"system",content:"أنت محرر نقدي عربي دقيق. أعد JSON صالحاً فقط ولا تختلق معلومات."},{role:"user",content:prompt}] };
+      }
+      const response = await fetch(url,{method:"POST",headers,body:JSON.stringify(body),signal:AbortSignal.timeout(90000)});
+      if (!response.ok) throw new Error(p.id + " HTTP " + response.status + ": " + (await response.text()).slice(0,300));
+      const data = await response.json();
+      const raw = p.id === "gemini" ? data.candidates?.[0]?.content?.parts?.map(x=>x.text||"").join("") : data.choices?.[0]?.message?.content;
+      if (!raw) throw new Error(p.id + " returned an empty response");
+      return { value:parseJsonResponse(raw), provider:p.id, tokens:Number(data.usage?.total_tokens)||0, requests };
+    } catch (error) { errors.push(String(error.message||error)); }
+  }
+  const failure = new Error("All enabled free-only providers failed: " + errors.join(" | "));
+  failure.requests = requests;
+  throw failure;
+}
