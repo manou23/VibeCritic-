@@ -1,4 +1,4 @@
-import { enqueue, selectRunnableJob, cycleDecision, transition, chooseFreeProvider, recordUsage, validateArticle, validateEvidence } from './core.mjs';
+import { enqueue, selectRunnableJob, cycleDecision, transition, chooseFreeProvider, chooseEditorialProvider, recordUsage, validateArticle, validateEvidence } from './core.mjs';
 import { recoverAbandonedJobs } from './recovery.mjs';
 function nextScheduledAt(state,now,interval){
  const base=Math.max(now,Number(state.cycle?.nextPublishAt)||now+interval);
@@ -251,7 +251,7 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
  if(job.status==='writing'){
   const day=new Date(now).toISOString().slice(0,10);state.providerUsage[day]||={};state.providerCooldowns||={};const eligibility={...state.providerUsage[day]};for(const p0 of providers){eligibility[p0.id]={...(eligibility[p0.id]||{}),cooldownUntil:state.providerCooldowns[p0.id]?.until||null};}
   const excludedProviders=new Set(job.excludedProviders||[]);
-  const p=chooseFreeProvider(providers.filter(p0=>!excludedProviders.has(p0.id)),eligibility,now);
+  const p=chooseEditorialProvider(providers,eligibility,now,{stage:job.stage+1,usedProviderIds:(job.parts||[]).map(part=>part.providerId).filter(Boolean),excludedProviderIds:[...excludedProviders]});
   if(!p&&excludedProviders.size){
    const retryProvider=chooseFreeProvider(providers,eligibility,now);
    if(retryProvider){
@@ -274,10 +274,10 @@ export async function runCycle({state,adapters,providers,now=Date.now(),persist=
   const fallback=chooseFreeProvider(providers.filter(candidateProvider=>!excludedNow.has(candidateProvider.id)),fallbackUsage,now);
   if(fallback){job={...job,nextAttemptAt:now,updatedAt:new Date(now).toISOString()};state.jobs[job.key]=job;await save();return runCycle({state,adapters,providers,now,persist,publishedCounts,articleLimits,researchSkips,cycleIntervalMinutes,stageIntervalMinutes});}
   return {action:'generation-deferred',key:job.key,provider:p.id,providerCalls:requestCount};}
-  job=transition(job,'part-saved',{part:{text:part.text},lastProvider:p.id,excludedProviders:[],...(job.stage<2?{nextStageAt:now+STAGE_INTERVAL}:{})},now);state.jobs[job.key]=job;await save();if(job.stage<3)return {action:'stage-saved',key:job.key,stage:job.stage,nextStageAt:job.nextStageAt||null,provider:p.id,providerCalls:requestCount};
+  job=transition(job,'part-saved',{part:{text:part.text,providerId:p.id},lastProvider:p.id,excludedProviders:[],...(job.stage<2?{nextStageAt:now+STAGE_INTERVAL}:{})},now);state.jobs[job.key]=job;await save();if(job.stage<3)return {action:'stage-saved',key:job.key,stage:job.stage,nextStageAt:job.nextStageAt||null,provider:p.id,providerCalls:requestCount};
   const article=await adapters.assembleArticle(job);let quality=validateArticle(article,articleLimits);
   if(quality.valid&&adapters.editorialGate){const editorial=await adapters.editorialGate(article,job);if(editorial!==true&&editorial?.valid!==true)quality={...quality,valid:false,errors:[...quality.errors,...(editorial?.errors||['Editorial gate rejected draft.'])]};}
-  if(!quality.valid){const retryFromStage=Math.min(3,Math.max(1,Number(quality.retryFromStage)||3));job=transition(job,'quality-failed',{lastError:quality.errors.join(' | '),nextAttemptAt:now+3600000,resumeTo:'writing',stage:retryFromStage-1,parts:job.parts.slice(0,retryFromStage-1)},now);state.jobs[job.key]=job;await save();return {action:'quality-rejected',key:job.key,errors:quality.errors,providerCalls:1};}
+  if(!quality.valid){const retryFromStage=Math.min(3,Math.max(1,Number(quality.retryFromStage)||3));job=transition(job,'quality-failed',{lastError:quality.errors.join(' | '),nextAttemptAt:now+3600000,resumeTo:'writing',stage:retryFromStage-1,parts:job.parts.slice(0,retryFromStage-1)},now);state.jobs[job.key]=job;await save();return {action:'quality-rejected',key:job.key,errors:quality.errors,providerCalls:requestCount};}
   const scheduledFor=nextScheduledAt(state,now,CYCLE_INTERVAL);
   job=transition(job,'quality-passed',{article,quality,fileWritten:false,siteFileWritten:false,scheduledFor},now);state.jobs[job.key]=job;await save();
   const staged=adapters.stageFile?await adapters.stageFile(article,job):null;
