@@ -7,3 +7,5 @@
     "crons": ["*/15 * * * *"]
   }
 }
+
+// Keep this Worker config in the PR build path so Cloudflare validates deployments.
