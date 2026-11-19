@@ -5,6 +5,7 @@ import { SCORE_SCALE_PROMPT } from '../scoring-rubric.mjs';
 import { validateEvidence } from './core.mjs';
 
 // V2 adapters: free-tier-only model calls and source-grounded editorial metadata.
+// Gemini and Workers AI stay opt-in until live response checks pass; Groq/OpenRouter are the active fallback chain.
 const env=process.env, ROOT='src/content/reviews';
 const clean=v=>String(v??'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
 const cleanSection=v=>{
