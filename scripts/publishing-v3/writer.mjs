@@ -30,6 +30,9 @@ export async function writeArticle(evidence) {
     let retry;
     try { retry = await generateJson(prompt + "\n\nمراجعة تصحيح إلزامية. أخفقت المسودة السابقة في بوابة الجودة: " + String(qualityError.message).slice(0,250) + ". أعد كتابة المقال كاملاً مع إصلاح الخطأ، ولا تختصر body عن 700 كلمة، وأكمل كل الحقول المطلوبة."); }
     catch (error) { error.requests = (Number(error.requests)||0) + (Number(first.requests)||1); throw error; }
-    return { article:assemble(retry.value,evidence), provider:retry.provider, tokens:first.tokens+retry.tokens, requests:first.requests+retry.requests };
+    let article;
+    try { article = assemble(retry.value,evidence); }
+    catch (error) { error.requests = (Number(first.requests)||1) + (Number(retry.requests)||1); throw error; }
+    return { article, provider:retry.provider, tokens:first.tokens+retry.tokens, requests:first.requests+retry.requests };
   }
 }
