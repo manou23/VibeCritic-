@@ -39,7 +39,7 @@
     "test:scoring-rubric": "node scripts/test-scoring-rubric.mjs",
     "test:provider-cooldown": "node scripts/test-provider-cooldown.mjs",
     "test:review-json": "node scripts/test-review-json.mjs",
-    "test:publishing-v2": "node scripts/test-publishing-v2.mjs && node scripts/test-publishing-v2-runner.mjs && node scripts/test-publishing-v2-adapters.mjs && node scripts/test-publishing-v2-recovery.mjs",
+    "test:publishing-v2": "node scripts/test-publishing-v2.mjs && node scripts/test-publishing-v2-runner.mjs && node scripts/test-publishing-v2-adapters.mjs && node scripts/test-publishing-v2-recovery.mjs && node scripts/test-publishing-v2-schedule.mjs && node workers/publishing-heartbeat/test.mjs",
     "publish:manual": "node manual-publishing/publisher.mjs",
     "test:manual-publisher": "node scripts/test-manual-publisher.mjs"
   },
