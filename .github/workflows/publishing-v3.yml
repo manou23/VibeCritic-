@@ -65,7 +65,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/publisher-v3-state.json
+          if [ -f data/publisher-v3-state.json ]; then git add data/publisher-v3-state.json; fi
           if [ "$BUILD_OUTCOME" = "success" ]; then
             git add src/content/reviews
           else
