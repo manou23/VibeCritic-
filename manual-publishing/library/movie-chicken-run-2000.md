@@ -9,7 +9,6 @@ reviewVersion: 1
 type: movie
 date: 2026-11-19
 releaseDate: "2000-06-21"
-poster: "https://www.impawards.com/2000/chicken_run_ver1_xxlg.html"
 score: 9.0
 storyScore: 8.8
 visualsScore: 9.5
@@ -53,7 +52,7 @@ sourceId: "movie:chicken-run:2000:vibecritic-editorial"
 sourceUrl: "https://aardman.com/film-tv-games/chicken-run/"
 aiGenerated: false
 editorialWorkflow: "manual-assisted"
-mediaVerified: true
+mediaVerified: false
 ---
 
 > **منهجية المراجعة:** مراجعة مستقلة للفيلم الروائي الطويل الصادر عام 2000. يعتمد تاريخ المكتبة على افتتاح لوس أنجلوس في 21 يونيو 2000، كما يسجل AFI، مع اختلاف مواعيد العرض بين البلدان.
