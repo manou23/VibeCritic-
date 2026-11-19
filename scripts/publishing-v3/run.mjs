@@ -1,3 +1,4 @@
+import fs from "node:fs/promises";
 import { withRunLock } from "./lock.mjs";
 import { loadState, saveState } from "./store.mjs";
 import { enqueue, transition, chooseJob, validateEvidence } from "./core.mjs";
@@ -16,9 +17,16 @@ const result = await withRunLock(async () => {
       job = enqueue(state,candidate).job;
       await saveState(state);
     }
-    if (job.status === "waiting") transition(job,"queued",{nextAttemptAt:null});
+    if (job.status === "waiting") {
+      const resume = job.resumeStatus || "queued";
+      transition(job,resume,{nextAttemptAt:null,resumeStatus:null});
+    }
     if (job.status === "verifying") {
       const response = await fetch(job.verifiedUrl,{signal:AbortSignal.timeout(15000)});
+      if (response.status === 404) {
+        try { await fs.access(job.articlePath); }
+        catch { transition(job,"ready"); await saveState(state); return { action:"ready-after-build-rollback", key:job.key }; }
+      }
       if (!response.ok) throw new Error("Live verification returned HTTP " + response.status);
       const html = await response.text();
       if (!html.includes(job.title)) throw new Error("Live page does not contain the expected article title");
@@ -62,9 +70,10 @@ const result = await withRunLock(async () => {
     return { action:job.status, key:job.key };
   } catch (error) {
     if (job && !["published","rejected"].includes(job.status)) {
+      const resumeStatus = job.status;
       job.attempts = (job.attempts||0)+1;
       job.lastError = String(error.message||error).slice(0,800);
-      transition(job,"waiting",{nextAttemptAt:new Date(Date.now()+Math.min(24,Math.pow(2,job.attempts-1))*60*60*1000).toISOString()});
+      transition(job,"waiting",{resumeStatus,nextAttemptAt:new Date(Date.now()+Math.min(24,Math.pow(2,job.attempts-1))*60*60*1000).toISOString()});
     }
     await saveState(state);
     throw error;
@@ -72,6 +81,5 @@ const result = await withRunLock(async () => {
 });
 console.log("VibeCritic Publishing V3:",JSON.stringify(result));
 if (process.env.GITHUB_STEP_SUMMARY) {
-  const fs = await import("node:fs/promises");
   await fs.appendFile(process.env.GITHUB_STEP_SUMMARY,"## VibeCritic Publishing V3\n- Result: "+result.action+"\n- Article: "+(result.url||"—")+"\n");
 }
