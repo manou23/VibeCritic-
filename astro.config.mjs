@@ -3,17 +3,17 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import pagefind from 'astro-pagefind';
 
-// Keep GitHub Pages working while allowing Cloudflare Pages to use the root path.
-const isCloudflarePages = process.env.CF_PAGES === '1';
+// Cloudflare Pages is the production host. Keep GitHub Pages available only
+// when explicitly selected, so a missing CF_PAGES variable cannot silently
+// generate sitemap URLs for the old GitHub Pages domain.
+const isGitHubPages = process.env.PUBLIC_DEPLOY_TARGET === 'github-pages';
 const site =
   process.env.PUBLIC_SITE_URL ||
-  (isCloudflarePages
-    ? 'https://vibecritic.pages.dev'
-    : 'https://manou23.github.io');
+  (isGitHubPages ? 'https://manou23.github.io' : 'https://vibecritic.pages.dev');
 
 export default defineConfig({
   site,
-  base: isCloudflarePages ? '/' : '/VibeCritic-',
+  base: isGitHubPages ? '/VibeCritic-' : '/',
   trailingSlash: 'always',
   compressHTML: true,
   integrations: [sitemap(), pagefind()],
