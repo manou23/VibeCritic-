@@ -64,6 +64,25 @@ try {
 } finally {
   await fs.rm(root, { recursive: true, force: true });
 }
+
+const libraryRoot = await setup();
+try {
+  const library = path.join(libraryRoot, 'manual-publishing/library');
+  await fs.mkdir(library, { recursive: true });
+  await fs.writeFile(path.join(library, 'a-first.md'), article().replace('series:manual-test-1','series:library-first'));
+  await fs.writeFile(path.join(library, 'b-next.md'), article().replace('series:manual-test-1','series:library-next'));
+  const first = await publishManualInbox({ root: libraryRoot, sourceDirectory: 'manual-publishing/library', now: () => new Date('2026-11-19T08:00:00.000Z') });
+  assert.equal(first.published, true);
+  assert.equal(first.slug, 'a-first');
+  await fs.access(path.join(library, 'b-next.md'));
+  await fs.access(path.join(libraryRoot, 'src/content/reviews/a-first.md'));
+  const next = await publishManualInbox({ root: libraryRoot, sourceDirectory: 'manual-publishing/library' });
+  assert.equal(next.published, true);
+  assert.equal(next.slug, 'b-next');
+} finally {
+  await fs.rm(libraryRoot, { recursive: true, force: true });
+}
+
 for (const options of [{ aiGenerated: 'true' }, { workflow: 'automated' }, { words: 20 }]) {
   const badRoot = await setup();
   try {
