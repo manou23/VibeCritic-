@@ -13,6 +13,7 @@ function article({ aiGenerated = 'false', workflow = 'manual-assisted', words = 
     'summary: "ملخص تحريري"',
     'type: series',
     'date: 2026-11-18',
+    'releaseDate: 2026-11-18',
     'sourceId: "series:manual-test-1"',
     'sourceUrl: "https://www.themoviedb.org/tv/1"',
     'poster: "https://image.tmdb.org/t/p/w780/poster.jpg"',
@@ -69,9 +70,9 @@ const libraryRoot = await setup();
 try {
   const library = path.join(libraryRoot, 'manual-publishing/library');
   await fs.mkdir(library, { recursive: true });
-  // Deliberately make filename order disagree with original release-date order.
-  await fs.writeFile(path.join(library, 'z-newer-work.md'), article().replace('series:manual-test-1','series:library-newer').replace('date: 2026-11-18','date: 2020-05-12'));
-  await fs.writeFile(path.join(library, 'a-older-work.md'), article().replace('series:manual-test-1','series:library-older').replace('date: 2026-11-18','date: 2004-09-23'));
+  // File names and review publication dates deliberately disagree with original release-date order.
+  await fs.writeFile(path.join(library, 'z-newer-work.md'), article().replace('series:manual-test-1','series:library-newer').replace('date: 2026-11-18','date: 2001-01-01').replace('releaseDate: 2026-11-18','releaseDate: 2020-05-12'));
+  await fs.writeFile(path.join(library, 'a-older-work.md'), article().replace('series:manual-test-1','series:library-older').replace('date: 2026-11-18','date: 2026-11-19').replace('releaseDate: 2026-11-18','releaseDate: 2004-09-23'));
   const first = await publishManualInbox({ root: libraryRoot, sourceDirectory: 'manual-publishing/library', now: () => new Date('2026-11-19T08:00:00.000Z') });
   assert.equal(first.published, true);
   assert.equal(first.slug, 'a-older-work');
