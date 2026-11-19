@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-19T11:52:43.806Z",
+  "updatedAt": "2026-11-19T11:55:46.038Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -736,19 +736,19 @@
       },
       "attempts": 3,
       "createdAt": "2026-11-17T08:22:20.499Z",
-      "updatedAt": "2026-11-19T11:52:19.393Z",
-      "nextAttemptAt": 1795089619393,
+      "updatedAt": "2026-11-19T11:55:46.038Z",
+      "nextAttemptAt": 1795089406038,
       "lastError": "openrouter: Section word count rejected: 155",
       "recoveryAttempts": 1,
       "evidenceRecoveryAttempts": 0,
       "resumeTo": "writing",
       "lastProvider": "groq",
       "excludedProviders": [
-        "groq",
         "openrouter"
       ],
       "nextStageAt": 1795086197232,
-      "fallbackWokenAt": 1795089139393
+      "fallbackWokenAt": 1795089139393,
+      "retryDelayMs": 900000
     },
     "game:28": {
       "key": "game:28",
