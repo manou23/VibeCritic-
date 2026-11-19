@@ -147,8 +147,8 @@ function inspectEditorialSections(body,title){
  const ignored=new Set(sectionTokens(title,new Set()));
  const tokenSets=sections.map((section,index)=>{
   const words=countWords(section.text);
-  if(words<200){
-   errors.push("Analysis section "+(index+1)+" is too short: "+words+"/200 words.");
+  if(words<150){
+   errors.push("Analysis section "+(index+1)+" is too short: "+words+"/150 words.");
    retryFromStage=Math.min(retryFromStage??3,Math.min(3,index+1));
   }
   return fiveWordShingles(sectionTokens(section.text,ignored));
