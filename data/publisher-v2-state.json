@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-19T11:51:48.111Z",
+  "updatedAt": "2026-11-19T11:52:43.806Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -677,15 +677,8 @@
         "popularity": 56
       },
       "status": "waiting",
-      "stage": 1,
-      "parts": [
-        {
-          "stage": 1,
-          "text": "{\"review\":\"تستند قصة \\\"Ramayana: Rise of a Legend\\\" إلى ملحمة هندية قديمة، وتختار أن تبدأ برواية زواج الأمير راما والأميرة سيتا ثم نفيهما، ما يضع الأساس لتطور شخصياتهما عبر مراحل متعددة من الحب والواجب والقدر. يبرز النصّ السردي اهتماماً واضحاً بتصوير الصراع الداخلي بين الواجب العائلي والبحث عن الذات، ما يمنح المشاهدين فرصة لتتبع نمو راما من طفل إلى محارب ناضج. تُعطي السردية مساحة لتسليط الضوء على شخصيات ثانوية مثل لاكشمان وهانومان، لكن التركيز يبقى على العلاقة المركزية بين راما وسيتا، ما يخلق توتراً درامياً مستمراً. بالرغم من أن القصة تتبع بنية تقليدية للملحمة، إلا أن إدخال عناصر خيالية حديثة—مثل مشاهد معارك مبهرة واستخدام تقنيات بصرية متقدمة—يسهم في تجديد السرد دون إغفال جذوره الأسطورية. ومع ذلك، يظل الإطار الزمني للجزء الأول محدوداً بثلاثة كاندات، ما قد يترك بعض الفجوات في تطور الأحداث وتفسير دوافع بعض الشخصيات. في المجمل، ينجح الفيلم في تقديم عالم غني ومترابط، لكنه يحتاج إلى توسيع بعض الخطوط الدرامية لتجنب الإحساس بالتقليص السردي.\",\"scores\":{\"story\":8.2,\"visuals\":8.5,\"sound\":8,\"pacing\":7.8},\"pros\":[\"إعادة إحياء ملحمة رميا الناطقة بعمق ثقافي\",\"تطور شخصيات رئيسية معقد ومقنع\",\"استخدام تقنيات بصرية حديثة تعزز المشهد الملحمي\"],\"cons\":[\"تقييد السرد بثلاثة كاندات يخلق فجوات درامية\",\"بعض المشاهد تتسارع في الإيقاع ما يؤثر على التوازن السردي\"],\"verdict\":\"الفيلم يقدم سرداً ملحمياً متقناً يجمع بين التراث الهندي والابتكار البصري، لكنه يعاني من بعض الاختصارات السردية التي قد تُشعر المشاهدين بنقص في العمق. رغم ذلك، يبقى عملًا جذابًا يستحق المشاهدة لمن يبحث عن قصة أسطورية مع معالجة حديثة.\"}",
-          "providerId": "groq",
-          "savedAt": "2026-11-19T09:51:23.646Z"
-        }
-      ],
+      "stage": 0,
+      "parts": [],
       "evidence": {
         "title": "Ramayana: Rise of a Legend",
         "originalTitle": "रामायणम्",
@@ -741,19 +734,21 @@
         "netflixOriginal": false,
         "streamingRegion": ""
       },
-      "attempts": 1,
+      "attempts": 3,
       "createdAt": "2026-11-17T08:22:20.499Z",
-      "updatedAt": "2026-11-19T11:51:48.111Z",
-      "nextAttemptAt": 1795089168111,
-      "lastError": "Article below minimum word count: 536/600 | Analysis sections 1 and 2 are repetitive (87% five-word overlap). | Analysis sections 1 and 3 are repetitive (25% five-word overlap). | Analysis sections 2 and 3 are repetitive (25% five-word overlap).",
+      "updatedAt": "2026-11-19T11:52:19.393Z",
+      "nextAttemptAt": 1795089619393,
+      "lastError": "openrouter: Section word count rejected: 155",
       "recoveryAttempts": 1,
       "evidenceRecoveryAttempts": 0,
       "resumeTo": "writing",
       "lastProvider": "groq",
-      "excludedProviders": [],
+      "excludedProviders": [
+        "groq",
+        "openrouter"
+      ],
       "nextStageAt": 1795086197232,
-      "fallbackWokenAt": 1795081883646,
-      "retryDelayMs": 900000
+      "fallbackWokenAt": 1795089139393
     },
     "game:28": {
       "key": "game:28",
@@ -1428,73 +1423,21 @@
         ],
         "popularity": 14098
       },
-      "status": "writing",
-      "stage": 1,
-      "parts": [
-        {
-          "stage": 1,
-          "text": "{\"review\":\"تُعيد لعبة Doom (2016) روح الفضاء المفتوح للعبة تصويب من منظور أول، حيث يُعيد المطورون إحياء شخصية الـ Doomslayer بأسلوبٍ عصريٍ يدمج بين السرد السريع والبيئات المتقنة. تدور القصة حول أزمة طاقة تدفع البشرية لاستغلال طاقة الجحيم، ما يفضي إلى انفتاح بوابات شيطانية على مستعمرة المريخ. يتنقل اللاعب بين مرافق التعدين والطبقات الجحيمية، معتمدًا على نظام القتل المهيب (Glory Kills) لاستعادة الصحة، ما يضيف بُعدًا استراتيجيًا للمعارك. السرد يُظهر شخصية الصمت المتقلبة للـ Doomslayer، حيث تُظهر المشاهد القصيرة غضبه وإحباطه من الفوضى المحيطة، ما يخلق تباينًا بين الصمت والعدوانية. تُعطي المستويات المتنوعة—من الأنفاق الصناعية إلى الساحات الجحيمية المتوهجة—إحساسًا بالاستكشاف، مع وجود أسرار وعناصر تحسين تُحفّز اللاعبين على إعادة اللعب. رغم أن القصة لا تتجاوز إطارًا تقليديًا للبطولة، فإنها تُستغل بذكاء لتدعم إيقاع اللعب السريع وتُعطي دافعًا واضحًا للانغماس في عالمٍ مليءٍ بالدمار والشرارة. في النهاية، يظل التركيز على تجربة القتال الفورية، مع إضفاء لمسة سردية خفيفة تُعطي الشخصية عمقًا بسيطًا دون إبطاء الوتيرة.\",\"scores\":{\"story\":7.5,\"visuals\":8.8,\"sound\":8.5,\"pacing\":9},\"pros\":[\"إيقاع قتالي سريع ومُحَفِّز\",\"تصميم مستويات متنوع يجمع بين التقنية والجحيم\",\"موسيقى وصوتيات قوية تعزز الجو الشيطاني\"],\"cons\":[\"قصة بسيطة ولا تتعمق في الخلفية\",\"وضعية اللعب المتعددة قد تُشعِر ببعض التكرار\"],\"verdict\":\"Doom (2016) تُعيد تعريف تجربة FPS الكلاسيكية بدمجها بين السرعة البالغة والبيئات المتقنة، مع صوتيات تُغمر اللاعب في أجواء الجحيم. رغم بساطة السرد، فإن التركيز على القتال والابتكار في نظام الشفاء عبر القتل المهيب يجعلها تجربة لا تُفوّت لعشّاق الحركة.\"}",
-          "providerId": "groq",
-          "savedAt": "2026-11-19T09:52:54.343Z"
-        }
-      ],
-      "evidence": {
-        "title": "DOOM (2016)",
-        "originalTitle": "",
-        "type": "game",
-        "sourceName": "RAWG",
-        "sourceUrl": "https://rawg.io/games/doom",
-        "sourceId": "game:2454",
-        "releaseDate": "2016-05-12",
-        "overview": "Return of the classic FPS, Doom (2016) acts as a reboot of the series and brings back the Doomslayer, protagonist of the original Doom games. In order to solve the energy crisis, humanity learned to harvest the energy from Hell, and when something went wrong and a demon invasion has started, it’s up to the player to control the Doomslayer and destroy the evil. Doom is a fast-paced game that restores the concept of instant health packs and leaves the player against armies of Hell with no cover, no health regeneration, or help from anyone. After damaging monsters enough, they will start glowing, which will allow players to perform glory kills to restore some health. While exploring the levels, players will come across secrets, collectible items, or upgrade points for the weapons and armor. The single-player campaign silent protagonist has a noticeable personality. He gets visibly annoyed and angry in his actions during expository cutscenes and forces his way through the game. Multiplayer maps gather players in Deathmatch/”king-of-the-hill” type game modes, with all the weapons from the single-player campaign.",
-        "poster": "https://media.rawg.io/media/games/587/587588c64afbff80e6f444eb2e46f9da.jpg",
-        "backdrop": "https://media.rawg.io/media/screenshots/d3b/d3b881ae214f9ad14724afc41b49dcea.jpg",
-        "genres": [
-          "Action",
-          "Shooter"
-        ],
-        "platforms": [
-          "PC",
-          "PlayStation 4",
-          "Nintendo Switch",
-          "Xbox One"
-        ],
-        "cast": [],
-        "crew": [],
-        "youtubeVideoId": "",
-        "youtubeVideoTitle": "",
-        "externalVideoUrl": "",
-        "externalVideoTitle": "",
-        "sources": [
-          {
-            "name": "RAWG",
-            "url": "https://rawg.io/games/doom",
-            "extract": "Return of the classic FPS, Doom (2016) acts as a reboot of the series and brings back the Doomslayer, protagonist of the original Doom games. In order to solve the energy crisis, humanity learned to harvest the energy from Hell, and when something went wrong and a demon invasion has started, it’s up to the player to control the Doomslayer and destroy the evil. Doom is a fast-paced game that restores the concept of instant health packs and leaves the player against armies of Hell with no cover, no health regeneration, or help from anyone. After damaging monsters enough, they will start glowing, which will allow players to perform glory kills to restore some health. While exploring the levels, players will come across secrets, collectible items, or upgrade points for the weapons and armor. The single-player campaign silent protagonist has a noticeable personality. He gets visibly annoyed and angry in his actions during expository cutscenes and forces his way through the game. Multiplayer maps gather players in Deathmatch/”king-of-the-hill” type game modes, with all the weapons from the single-player campaign."
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Doom_(2016_video_game)",
-            "extract": "Doom is a 2016 first-person shooter game developed by id Software and published by Bethesda Softworks. The game is the first major installment in the Doom series since 2004's Doom 3 and is a reboot of the franchise. It was released for PlayStation 4, Windows, and Xbox One in May 2016. A port for Nintendo Switch was co-developed with Panic Button and released in November 2017, and a version for Stadia was released in August 2020. Players take the role of an ancient warrior, known colloquially as the Doom Slayer, as he battles demonic forces within an energy-mining facility on Mars and in Hell. The game was announced as Doom 4 in 2008, and that version underwent an extensive development cycle with different builds and designs before the game was restarted in 2011 and re-revealed as simply Doom in 2014. It was tested by customers who pre-ordered the 2014 MachineGames game Wolfenstein: The New Order and the general public. Mick Gordon composed the music, with contributions by Richard Devine. The game also has an online multiplayer component and a level editor known as \"SnapMap\", co-developed with Certain Affinity and Escalation Studios respectively. Doom was well received by critics and players. The single-player campaign, graphics, soundtrack, and gameplay received considerable praise, whereas the multiplayer mode drew significant criticism. It was the second best-selling video game in North America and the United Kingdom in the week of its release and sold over 500,000 copies for PCs by the end of May 2016. A sequel, Doom Eternal, was released in March 2020. A prequel, Doom: The Dark Ages, was released in May 2025."
-          }
-        ],
-        "metadata": {
-          "rating": 4.38,
-          "votes": 3646
-        },
-        "streamingPlatform": "",
-        "collection": "",
-        "netflixOriginal": false,
-        "streamingRegion": ""
-      },
-      "attempts": 0,
+      "status": "researching",
+      "stage": 0,
+      "parts": [],
+      "evidence": null,
+      "attempts": 1,
       "createdAt": "2026-11-17T23:35:14.861Z",
-      "updatedAt": "2026-11-19T09:52:54.343Z",
+      "updatedAt": "2026-11-19T11:52:19.393Z",
       "nextAttemptAt": null,
       "lastError": "Saved evidence invalidated; researching again: Saved independent source does not verify this title and media type.",
       "recoveryAttempts": 1,
       "evidenceRecoveryAttempts": 0,
       "resumeTo": null,
-      "excludedProviders": [],
+      "excludedProviders": [
+        "openrouter"
+      ],
       "lastProvider": "groq",
       "nextStageAt": 1795082874343
     },
@@ -2419,16 +2362,16 @@
     },
     "2026-11-19": {
       "groq": {
-        "requests": 12,
-        "tokens": 23649,
+        "requests": 15,
+        "tokens": 29060,
         "successes": 5,
-        "failures": 1
+        "failures": 2
       },
       "openrouter": {
-        "requests": 7,
-        "tokens": 10911,
+        "requests": 13,
+        "tokens": 22895,
         "successes": 1,
-        "failures": 3
+        "failures": 5
       },
       "cloudflare": {
         "requests": 2,
@@ -2460,7 +2403,7 @@
     "startedAt": 1795042641925,
     "deadlineAt": 1795045341925,
     "nextStartAt": 1795045341925,
-    "articleKey": "game:2454",
+    "articleKey": "movie:656908",
     "nextPublishAt": 1795045341925
   },
   "discoveryBacklog": {
