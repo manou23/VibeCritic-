@@ -12,12 +12,12 @@ V3 is a clean, isolated publishing engine. It does not import V2 runtime modules
 7. Verify the public article URL before marking the job published.
 
 ## Reliability
-- A filesystem lock prevents overlapping local runs; GitHub Actions concurrency provides the hosted lock.
+- A filesystem lock prevents overlapping local runs; GitHub Actions concurrency provides the hosted lock. A separate Cloudflare Cron Worker dispatches the workflow every 15 minutes; GitHub's daily schedule is only a backup.
 - State is versioned and atomically replaced.
 - Jobs are resumed from durable state and retried with bounded exponential backoff.
 - A failed generation is never published.
 - Provider allowlisting is explicit. OpenRouter is restricted to model IDs ending in :free.
-- The workflow runs tests before every publishing cycle and commits state even when a cycle fails.
+- The workflow runs tests before every publishing cycle and commits state even when a cycle fails. The heartbeat uses the GH_ACTIONS_TOKEN secret and a fine-grained GitHub token limited to Actions: Read and write on this repository.
 - No paid provider or paid fallback is permitted by the V3 provider router.
 
 ## Safety boundaries
