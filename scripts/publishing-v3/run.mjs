@@ -70,7 +70,7 @@ const result = await withRunLock(async () => {
     return { action:job.status, key:job.key };
   } catch (error) {
     if (job && !["published","rejected"].includes(job.status)) {
-      const resumeStatus = job.status;
+      const resumeStatus = ["researching","writing"].includes(job.status) ? "queued" : job.status === "reviewing" ? "ready" : job.status === "publishing" ? "ready" : job.status;
       job.attempts = (job.attempts||0)+1;
       job.lastError = String(error.message||error).slice(0,800);
       transition(job,"waiting",{resumeStatus,nextAttemptAt:new Date(Date.now()+Math.min(24,Math.pow(2,job.attempts-1))*60*60*1000).toISOString()});
