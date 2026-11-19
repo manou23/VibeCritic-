@@ -58,8 +58,8 @@ export function validateArticle(article, { minWords = 650, minCharacters = 3200 
   if (words < minWords) throw new Error("Article is too short: " + words + " words");
   if (String(article.body).length < minCharacters) throw new Error("Article is too short in characters");
   if (!Array.isArray(article.pros) || article.pros.filter(x=>String(x||"").trim()).length < 3 || !Array.isArray(article.cons) || article.cons.filter(x=>String(x||"").trim()).length < 2) throw new Error("Article strengths/limitations are incomplete");
-  if ((String(article.body).match(/^#{2,3}\\s+/gm)||[]).length < 3) throw new Error("Article needs at least three distinct analysis headings");
-  const paragraphs = String(article.body).split(/\\n\\s*\\n/).map(x=>x.trim()).filter(x=>x.length>80);
+  if ((String(article.body).match(/^#{2,3}\s+/gm)||[]).length < 3) throw new Error("Article needs at least three distinct analysis headings");
+  const paragraphs = String(article.body).split(/\n\s*\n/).map(x=>x.trim()).filter(x=>x.length>80);
   if (new Set(paragraphs).size < Math.min(3,paragraphs.length)) throw new Error("Article contains repeated paragraphs");
   for (const k of ["story","visuals","sound","pacing"]) if (!Number.isFinite(article.scores?.[k]) || article.scores[k] < 0 || article.scores[k] > 10) throw new Error("Invalid score: " + k);
   if (!Number.isFinite(article.score) || article.score <= 0 || article.score > 10) throw new Error("Invalid weighted score");
