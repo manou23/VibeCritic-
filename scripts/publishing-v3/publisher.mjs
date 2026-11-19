@@ -9,7 +9,7 @@ export function renderMarkdown(article) {
   const fm = [
     "---","title: "+quote(article.title),"headline: "+quote(article.headline||article.title),
     "hook: "+quote(article.summary||article.verdict),"summary: "+quote(article.summary||article.verdict),"verdict: "+quote(article.verdict),
-    "reviewVersion: 5","reviewMode: review",
+    "reviewVersion: 5","reviewMode: limited",
     "date: "+new Date().toISOString().slice(0,10),"publishedAt: "+quote(new Date().toISOString()),
     "releaseDate: "+quote(article.releaseDate||""),"type: "+article.type,
     "score: "+article.score,"storyScore: "+article.scores.story,"visualsScore: "+article.scores.visuals,
@@ -17,7 +17,7 @@ export function renderMarkdown(article) {
     "sourceName: "+quote(article.sourceName),"sourceId: "+quote(article.sourceId),"sourceUrl: "+quote(article.sourceUrl),
     "aiGenerated: true","editorialWorkflow: automated","poster: "+quote(article.poster),"backdrop: "+quote(article.backdrop),
     "genres:\n"+list(article.genres),"platforms:\n"+list(article.platforms),"cast:\n"+list(article.cast),"crew:\n"+list(article.crew),"pros:\n"+list(article.pros),"cons:\n"+list(article.cons),"tags:\n"+list(article.tags),
-    "---","",article.body,"","### المصادر والمراجع","",...(article.sources||[]).map(s=>"- ["+s.name+"]("+s.url+")")
+    "---","",article.body,"","> مراجعة تحريرية محدودة مبنية على المصادر المذكورة، ولا تدّعي تجربة مباشرة للعب أو المشاهدة.","","### المصادر والمراجع","",...(article.sources||[]).map(s=>"- ["+s.name+"]("+s.url+")")
   ];
   return fm.join("\n")+"\n";
 }
