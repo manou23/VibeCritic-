@@ -108,6 +108,12 @@
       "sha256": "f29679d2746bddaf30919bf87458efb28be028555954b1b84ccc18e9b6d19f1c",
       "articlePath": "src/content/reviews/phantom-blade-zero-2026.md",
       "publishedAt": "2026-11-19T19:13:47.021Z"
+    },
+    "the-substance-2024": {
+      "sourceId": "the-substance-2024-manual-vibecritic",
+      "sha256": "d1d1fc690195e7cc3d907b49540f30b2155b3be5ea7742157b5abc9e8eb088cf",
+      "articlePath": "src/content/reviews/the-substance-2024.md",
+      "publishedAt": "2026-11-19T19:18:06.634Z"
     }
   }
 }
