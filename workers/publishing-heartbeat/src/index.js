@@ -2,11 +2,12 @@ const OWNER = 'manou23';
 const REPOSITORY = 'VibeCritic-';
 const WORKFLOW = 'publishing-v2-automatic.yml';
 const REF = 'main';
+const SECRET_NAME = 'GH_ACTIONS_TOKEN';
 const DISPATCH_URL = `https://api.github.com/repos/${OWNER}/${REPOSITORY}/actions/workflows/${WORKFLOW}/dispatches`;
 
 export async function dispatchWorkflow(env, fetchImpl = fetch) {
-  const token = String(env?.GITHUB_ACTIONS_TOKEN || '').trim();
-  if (!token) throw new Error('Missing Cloudflare secret: GITHUB_ACTIONS_TOKEN');
+  const token = String(env?.[SECRET_NAME] || '').trim();
+  if (!token) throw new Error(`Missing Cloudflare secret: ${SECRET_NAME}`);
 
   const response = await fetchImpl(DISPATCH_URL, {
     method: 'POST',
