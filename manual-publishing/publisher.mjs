@@ -19,6 +19,15 @@ function listCount(raw, key) {
   const match = raw.match(new RegExp('^' + key + ':\\s*\\r?\\n((?:[ \\t]+-.*\\r?\\n?)+)', 'm'));
   return match ? (match[1].match(/^[ \t]+-\s*\S/gm) || []).length : 0;
 }
+function validCalendarDate(value) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value || '');
+  if (!match) return false;
+  const year = Number(match[1]);
+  const month = Number(match[2]);
+  const day = Number(match[3]);
+  const date = new Date(Date.UTC(year, month - 1, day));
+  return date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day;
+}
 function numeric(raw, key) {
   const value = scalar(raw, key);
   return value !== null && value !== '' && Number.isFinite(Number(value)) ? Number(value) : null;
@@ -79,19 +88,41 @@ function writeGithubOutput(value) {
   }
   return Promise.resolve();
 }
-export async function publishManualInbox({ root = process.cwd(), now = () => new Date() } = {}) {
-  const inbox = path.join(root, 'manual-publishing/inbox');
+export async function publishManualInbox({ root = process.cwd(), now = () => new Date(), sourceDirectory = process.env.MANUAL_PUBLISH_SOURCE_DIR || 'manual-publishing/inbox' } = {}) {
+  const inbox = path.isAbsolute(sourceDirectory) ? sourceDirectory : path.join(root, sourceDirectory);
+  const sourcePath = path.relative(root, inbox).split(path.sep).join('/');
+  const isLegacyInbox = sourcePath === 'manual-publishing/inbox';
+  const isEditorialLibrary = sourcePath === 'manual-publishing/library';
   const archive = path.join(root, 'manual-publishing/archive');
   const reviews = path.join(root, 'src/content/reviews');
   const statePath = path.join(root, 'data/manual-publisher-state.json');
-  const inboxFiles = (await markdownFiles(inbox)).sort();
+  const inboxFiles = await markdownFiles(inbox);
+  if (isEditorialLibrary) {
+    // releaseDate is the work's original release date; date is the review publication date and must never control queue order.
+    const datedFiles = [];
+    for (const file of inboxFiles) {
+      const markdown = await fs.readFile(file, 'utf8');
+      const { raw } = frontmatterOf(markdown);
+      const releaseDate = scalar(raw, 'releaseDate');
+      if (!validCalendarDate(releaseDate)) {
+        throw new Error('Editorial library article must have a valid original release date in YYYY-MM-DD format: ' + path.basename(file));
+      }
+      datedFiles.push({ file, releaseDate });
+    }
+    datedFiles.sort((a, b) => a.releaseDate.localeCompare(b.releaseDate) || path.basename(a.file).localeCompare(path.basename(b.file)));
+    inboxFiles.splice(0, inboxFiles.length, ...datedFiles.map(item => item.file));
+  } else {
+    inboxFiles.sort();
+  }
   if (inboxFiles.length === 0) {
     await writeGithubOutput('published=false');
     return { published: false, reason: 'empty-inbox' };
   }
-  if (inboxFiles.length !== 1) throw new Error('Manual publisher accepts exactly one article per release. Leave one .md file in manual-publishing/inbox.');
+  if (isLegacyInbox && inboxFiles.length !== 1) throw new Error('Manual publisher accepts exactly one article per inbox release. Leave one .md file in manual-publishing/inbox.');
+  // The editorial library is a FIFO queue: publish only its first eligible file per scheduled run.
   const file = inboxFiles[0];
-  const article = validateArticle(path.basename(file), await fs.readFile(file, 'utf8'));
+  const fileName = path.basename(file);
+  const article = validateArticle(fileName, await fs.readFile(file, 'utf8'));
   const destination = path.join(reviews, article.slug + '.md');
   const archived = path.join(archive, article.slug + '.md');
   for (const target of [destination, archived]) {
