@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-19T11:48:58.951Z",
+  "updatedAt": "2026-11-19T11:51:48.111Z",
   "jobs": {
     "series:254630": {
       "key": "series:254630",
@@ -743,8 +743,8 @@
       },
       "attempts": 1,
       "createdAt": "2026-11-17T08:22:20.499Z",
-      "updatedAt": "2026-11-19T11:48:55.629Z",
-      "nextAttemptAt": 1795092535629,
+      "updatedAt": "2026-11-19T11:51:48.111Z",
+      "nextAttemptAt": 1795089168111,
       "lastError": "Article below minimum word count: 536/600 | Analysis sections 1 and 2 are repetitive (87% five-word overlap). | Analysis sections 1 and 3 are repetitive (25% five-word overlap). | Analysis sections 2 and 3 are repetitive (25% five-word overlap).",
       "recoveryAttempts": 1,
       "evidenceRecoveryAttempts": 0,
@@ -752,7 +752,8 @@
       "lastProvider": "groq",
       "excludedProviders": [],
       "nextStageAt": 1795086197232,
-      "fallbackWokenAt": 1795081883646
+      "fallbackWokenAt": 1795081883646,
+      "retryDelayMs": 900000
     },
     "game:28": {
       "key": "game:28",
