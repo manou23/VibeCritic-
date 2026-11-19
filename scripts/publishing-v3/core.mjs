@@ -23,11 +23,11 @@ export function enqueue(state, item, now = Date.now()) {
 }
 const NEXT = Object.freeze({
   queued: new Set(["researching","waiting","rejected"]),
-  researching: new Set(["writing","waiting","rejected"]),
-  writing: new Set(["reviewing","waiting","rejected"]),
+  researching: new Set(["queued","writing","waiting","rejected"]),
+  writing: new Set(["queued","reviewing","waiting","rejected"]),
   reviewing: new Set(["ready","writing","waiting","rejected"]),
   ready: new Set(["publishing","waiting","rejected"]),
-  publishing: new Set(["verifying","waiting","rejected"]),
+  publishing: new Set(["ready","verifying","waiting","rejected"]),
   verifying: new Set(["published","ready","waiting","rejected"]),
   waiting: new Set(["queued","researching","writing","reviewing","ready","publishing","verifying","rejected"])
 });
