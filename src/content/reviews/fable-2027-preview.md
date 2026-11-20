@@ -42,7 +42,7 @@ sourceName: "Playground Games / Xbox Game Studios"
 sourceId: "fable-reboot-2027-vibecritic-preview"
 sourceUrl: "https://www.fablethegame.com/en-US/news/fable-faq"
 aiGenerated: true
-editorialWorkflow: "ai-assisted-preview"
+editorialWorkflow: "manual-assisted"
 mediaVerified: true
 ---
 
