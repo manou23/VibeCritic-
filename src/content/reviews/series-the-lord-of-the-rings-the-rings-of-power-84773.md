@@ -13,7 +13,7 @@ score: 7.9
 storyScore: 7.5
 visualsScore: 9.2
 soundScore: 8.6
-pacingScore: 7.0
+pacingScore: 6.7
 sourceName: "Prime Video / Rotten Tomatoes / The Guardian / RogerEbert.com / Variety"
 sourceId: "series:84773"
 sourceUrl: "https://www.themoviedb.org/tv/84773"
