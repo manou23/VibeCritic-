@@ -150,6 +150,12 @@
       "sha256": "b4383756ddb09ee0114005a38da9105e6a3a76b50136527a74c136df87351dc0",
       "articlePath": "src/content/reviews/series-la-casa-de-papel-review.md",
       "publishedAt": "2026-11-20T17:28:21.599Z"
+    },
+    "series-vikings-review": {
+      "sourceId": "manual-series-vikings-review",
+      "sha256": "aabbb0785fe8bf9e918ce10da194fa0e30e235573a21a3966c2b1f1616170255",
+      "articlePath": "src/content/reviews/series-vikings-review.md",
+      "publishedAt": "2026-11-20T17:28:58.961Z"
     }
   }
 }
