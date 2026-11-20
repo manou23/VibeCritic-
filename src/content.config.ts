@@ -24,6 +24,7 @@ const reviews = defineCollection({
     releaseDate: z.string().optional(),
     poster: z.string().optional(),
     backdrop: z.string().optional(),
+    mediaVerified: z.boolean().optional(),
     youtubeVideoId: z.string().regex(/^[A-Za-z0-9_-]{11}$/).optional(),
     youtubeVideoTitle: z.string().optional(),
     externalVideoUrl: z.string().url().optional(),
