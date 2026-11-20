@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-20T01:05:55.839Z",
+  "updatedAt": "2026-11-20T08:34:26.772Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -17,10 +17,10 @@
       },
       "status": "waiting",
       "stage": 0,
-      "attempts": 2,
+      "attempts": 3,
       "createdAt": "2026-11-19T16:51:34.241Z",
-      "updatedAt": "2026-11-20T01:05:55.839Z",
-      "nextAttemptAt": "2026-11-20T03:05:55.839Z",
+      "updatedAt": "2026-11-20T08:34:26.771Z",
+      "nextAttemptAt": "2026-11-20T12:34:26.771Z",
       "evidence": {
         "title": "Grand Theft Auto V",
         "type": "game",
@@ -63,7 +63,7 @@
       },
       "sections": [],
       "article": null,
-      "lastError": "Article is too short: 512 words",
+      "lastError": "All configured AI providers failed: gemini HTTP 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get- | groq HTTP 400: {\"error\":{\"message\":\"Failed to generate JSON. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"code\":\"json_validate_failed\",\"failed_generation\":\"max completion tokens reached before generating a valid document\"}}\n | openrouter output was truncated at max_tokens=9000",
       "resumeStatus": "queued"
     }
   },
@@ -76,7 +76,7 @@
     },
     "2026-11-20": {
       "articles": 0,
-      "requests": 4,
+      "requests": 7,
       "tokens": 0
     }
   },
