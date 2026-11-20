@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-20T22:25:53.379Z",
+  "updatedAt": "2026-11-20T22:26:45.046Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -410,6 +410,71 @@
       "sections": [],
       "article": null,
       "lastError": "Independent source is too thin"
+    },
+    "series:213375": {
+      "key": "series:213375",
+      "type": "series",
+      "id": "213375",
+      "title": "VisionQuest",
+      "item": {
+        "type": "series",
+        "id": "213375",
+        "name": "VisionQuest",
+        "date": "2026-10-13",
+        "popularity": 179.2351,
+        "source": "TMDB"
+      },
+      "status": "waiting",
+      "stage": 0,
+      "attempts": 1,
+      "createdAt": "2026-11-20T22:26:14.469Z",
+      "updatedAt": "2026-11-20T22:26:45.046Z",
+      "nextAttemptAt": "2026-11-20T23:26:45.046Z",
+      "evidence": {
+        "title": "VisionQuest",
+        "type": "series",
+        "sourceId": "series:213375",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/213375",
+        "overview": "With a bounty on his head, Vision must confront his nature and resist Ultron's influence to survive.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/213375",
+            "extract": "With a bounty on his head, Vision must confront his nature and resist Ultron's influence to survive."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/VisionQuest",
+            "extract": "VisionQuest is an American television miniseries created by Terry Matalas for the streaming service Disney+, based on Marvel Comics featuring the character Vision. A spin-off from and sequel to the miniseries WandaVision (2021), it is the 18th television series in the Marvel Cinematic Universe (MCU) from Marvel Studios and is produced under its Marvel Television label. The series shares continuity with the films of the MCU. It follows the synthezoid Vision as he attempts to understand who he is by communicating with AI personas embedded in his programming, and goes on the run with a mysterious teenager who may be his reincarnated son. Matalas serves as showrunner and a director."
+          }
+        ],
+        "releaseDate": "2026-10-13",
+        "genres": [
+          "Sci-Fi & Fantasy",
+          "Drama"
+        ],
+        "platforms": [],
+        "cast": [
+          "Paul Bettany",
+          "James Spader",
+          "Ruaridh Mollica",
+          "Todd Stashwick",
+          "Lauren Morais",
+          "T'Nia Miller",
+          "Orla Brady",
+          "Henry Lewis"
+        ],
+        "crew": [],
+        "rating": 8.2,
+        "votes": 551,
+        "poster": "https://image.tmdb.org/t/p/w780/WGyAyBPncfuu8MZhLY9RtfZPM0.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/uoXXbN2PrOxH6UKyP7kYwmGpAAP.jpg"
+      },
+      "sections": [],
+      "article": null,
+      "lastError": "Gemini editorial review HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
+      "resumeStatus": "queued"
     }
   },
   "providers": {},
@@ -421,7 +486,7 @@
     },
     "2026-11-20": {
       "articles": 2,
-      "requests": 13,
+      "requests": 15,
       "tokens": 9858
     }
   },
