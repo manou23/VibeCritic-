@@ -11,7 +11,7 @@ releaseDate: "1999-10-20"
 type: series
 score: 8.9
 storyScore: 9.3
-visualsScore: 8.8
+visualsScore: 9.3
 soundScore: 8.7
 pacingScore: 8.0
 sourceName: "Toei Animation / One Piece Official / Crunchyroll"
