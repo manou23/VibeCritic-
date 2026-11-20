@@ -126,6 +126,12 @@
       "sha256": "541f5c8a286c54595e76c7052cc8e0ab7bb5bfa5f68ac2b6d7807717b61e69aa",
       "articlePath": "src/content/reviews/game-red-dead-redemption-2010.md",
       "publishedAt": "2026-11-20T11:22:38.958Z"
+    },
+    "game-ea-sports-fc-27-2026": {
+      "sourceId": "manual-review-ea-sports-fc-27-2026",
+      "sha256": "28606fa3995e57a5903983bd4b8d4210f07fd2fbb9b3b1bf9b1e68ed10e4f13b",
+      "articlePath": "src/content/reviews/game-ea-sports-fc-27-2026.md",
+      "publishedAt": "2026-11-20T17:17:06.249Z"
     }
   }
 }
