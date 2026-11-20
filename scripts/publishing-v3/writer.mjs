@@ -40,7 +40,13 @@ export async function writeArticle(evidence) {
 
   // Gemini acts as an independent pre-publication editor when its key is configured.
   // A configured reviewer failure blocks publication; a missing optional key never blocks it.
-  const editorial = await reviewArticle(result.article,evidence);
+  let editorial;
+  try {
+    editorial = await reviewArticle(result.article,evidence);
+  } catch (error) {
+    error.requests = (Number(generation.requests)||1) + Math.max(1,Number(error.requests)||0);
+    throw error;
+  }
   return {
     ...result,
     provider:generation.provider,
