@@ -15,7 +15,8 @@ export function renderMarkdown(article) {
   const fm = [
     "---","title: "+quote(article.title),"headline: "+quote(article.headline||article.title),
     "hook: "+quote(article.summary||article.verdict),"summary: "+quote(article.summary||article.verdict),"verdict: "+quote(article.verdict),
-    "reviewVersion: 6","reviewMode: review",\n    "score: "+Number(article.score).toFixed(2),"storyScore: "+Number(article.scores.story).toFixed(2),"visualsScore: "+Number(article.scores.visuals).toFixed(2),"soundScore: "+Number(article.scores.sound).toFixed(2),"pacingScore: "+Number(article.scores.pacing).toFixed(2),
+    "reviewVersion: 6","reviewMode: review",
+    "score: "+Number(article.score).toFixed(2),"storyScore: "+Number(article.scores.story).toFixed(2),"visualsScore: "+Number(article.scores.visuals).toFixed(2),"soundScore: "+Number(article.scores.sound).toFixed(2),"pacingScore: "+Number(article.scores.pacing).toFixed(2),
     "date: "+new Date().toISOString().slice(0,10),"publishedAt: "+quote(new Date().toISOString()),
     "releaseDate: "+quote(article.releaseDate||""),"type: "+article.type,
     "sourceName: "+quote(article.sourceName),"sourceId: "+quote(article.sourceId),"sourceUrl: "+quote(article.sourceUrl),
