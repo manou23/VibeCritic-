@@ -13,14 +13,14 @@ export async function reviewArticle(article, evidence) {
 
   const model = env.PUBLISHER_V3_GEMINI_REVIEW_MODEL || "gemini-3.8-flash";
   const prompt = [
-    "أنت محرر تدقيق مستقل لموقع VibeCritic. راجع المقال العربي قبل النشر، ولا تعِد كتابته.",
+    "أنت محرر تدقيق مستقل لموقع VibeCritic. راجع المراجعة التحريرية النهائية العربية قبل النشر، ولا تعِد كتابتها.",
     "قارن كل ادعاء واقعي في المقال بملف الأدلة المرفق. لا تعتبر وجود رابط مصدر دليلاً على أن كل ما في المقال صحيح.",
-    "افحص: اختلاق التفاصيل، الخلط بين الحقائق والاستنتاجات، المبالغة في وصف عمل لم يصدر/لم تتم تجربته، التكرار والحشو، التوازن النقدي، ومدى ارتباط الحكم بالأدلة.",
-    "لا ترفض المقال لمجرد أنه مراجعة محدودة لا تدعي تجربة مباشرة؛ هذا مطلوب. لا تخترع حقائق بديلة.",
+    "افحص: اختلاق التفاصيل، الخلط بين الحقائق والاستنتاجات، الادعاء الكاذب بتجربة مباشرة، التكرار والحشو، التوازن النقدي، اكتمال الأقسام، منطق الدرجة النهائية، ومدى ارتباط الحكم بالأدلة والفيديو الرسمي.",
+    "المطلوب مراجعة نهائية تحريرية مبنية على مصادر ومواد رسمية، وليست ادعاء تجربة شخصية. لا تطلب من الكاتب تحويلها إلى قراءة محدودة ولا ترفضها لمجرد أنه لم يدّع تجربة مباشرة.",
     "أخرج JSON فقط بهذه المفاتيح: approved (boolean), score (number 0..10), factualRisk (low|medium|high), repetition (low|medium|high), exaggeration (low|medium|high), issues (array of short Arabic strings), notes (short Arabic string).",
-    "ارفض فقط عند وجود خطر واقعي جوهري أو اختلاق واضح أو حشو/تكرار شديد أو تضليل القارئ. لا تكن متساهلاً ولا متشدداً بلا سبب.",
+    "ارفض عند وجود خطر واقعي جوهري أو اختلاق واضح أو نقص شديد في اكتمال المراجعة أو حشو/تكرار شديد أو تضليل القارئ. لا تكن متساهلاً ولا متشدداً بلا سبب.",
     "ملف الأدلة: " + JSON.stringify(evidence),
-    "المقال: " + JSON.stringify({title:article.title,summary:article.summary,verdict:article.verdict,body:article.body,pros:article.pros,cons:article.cons,sources:article.sources})
+    "المقال: " + JSON.stringify({title:article.title,summary:article.summary,verdict:article.verdict,body:article.body,pros:article.pros,cons:article.cons,sources:article.sources,youtubeVideoId:article.youtubeVideoId,youtubeVideoTitle:article.youtubeVideoTitle})
   ].join("\n\n");
 
   let response;
@@ -30,13 +30,11 @@ export async function reviewArticle(article, evidence) {
       headers:{ "content-type":"application/json", "x-goog-api-key":apiKey },
       body:JSON.stringify({
         contents:[{role:"user",parts:[{text:prompt}]}],
-        generationConfig:{temperature:0.1,responseMimeType:"application/json",maxOutputTokens:1200}
+        generationConfig:{temperature:0.1,responseMimeType:"application/json",maxOutputTokens:1600}
       }),
       signal:AbortSignal.timeout(25000)
     });
   } catch (error) {
-    // Gemini is an independent enhancement, not the publishing engine.
-    // A transient timeout must not cancel a locally validated OpenAI article.
     if (error?.name === "TimeoutError" || error?.name === "AbortError") {
       return { skipped:true, reason:"Gemini editorial review timed out; local article validation remains required", provider:"gemini", model, tokens:0, requests:1 };
     }
