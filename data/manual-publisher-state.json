@@ -72,6 +72,48 @@
       "sha256": "cf88539155e8f91ef92bd97d3aa4c66a3a06840a50ebc6f338c472b8a9eb7ec3",
       "articlePath": "src/content/reviews/ninho-le-prix-a-payer-2026.md",
       "publishedAt": "2026-11-18T01:47:55.410Z"
+    },
+    "project-hail-mary-2026": {
+      "sourceId": "tmdb-movie-687163-vibecritic-manual-2026",
+      "sha256": "c75c907afd66c2a9985f9d150fea58bd703fb8402732a2eb472f521c8c5030cb",
+      "articlePath": "src/content/reviews/project-hail-mary-2026.md",
+      "publishedAt": "2026-11-19T18:57:30.966Z"
+    },
+    "hollow-knight-silksong-2026": {
+      "sourceId": "team-cherry-hollow-knight-silksong-manual-2026",
+      "sha256": "88d6724090e940638d2cd7393900691a09337301a16432905cb83f1ea045bbb8",
+      "articlePath": "src/content/reviews/hollow-knight-silksong-2026.md",
+      "publishedAt": "2026-11-19T19:00:16.450Z"
+    },
+    "elden-ring-nightreign-2026": {
+      "sourceId": "fromsoftware-elden-ring-nightreign-manual-2026",
+      "sha256": "54306a22a251ac73ebe6ffef33ca598b5d6c4f7c62e7a4e4c5a6d7546c2de18b",
+      "articlePath": "src/content/reviews/elden-ring-nightreign-2026.md",
+      "publishedAt": "2026-11-19T19:01:45.387Z"
+    },
+    "pragmata-2026": {
+      "sourceId": "capcom-pragmata-manual-editorial-2026",
+      "sha256": "658c8fc25396b5ca607f51f243529b1626b20a85cce6c02bfe8224b68ab925be",
+      "articlePath": "src/content/reviews/pragmata-2026.md",
+      "publishedAt": "2026-11-19T19:03:08.737Z"
+    },
+    "mickey-17-2026": {
+      "sourceId": "warner-bros-mickey-17-manual-editorial-2026",
+      "sha256": "571e9b993a744e72551047c17db7a72dc98149ef3feeb4e57846ce5dbe2be31e",
+      "articlePath": "src/content/reviews/mickey-17-2026.md",
+      "publishedAt": "2026-11-19T19:04:16.316Z"
+    },
+    "phantom-blade-zero-2026": {
+      "sourceId": "manual-assisted-phantom-blade-zero-2026",
+      "sha256": "f29679d2746bddaf30919bf87458efb28be028555954b1b84ccc18e9b6d19f1c",
+      "articlePath": "src/content/reviews/phantom-blade-zero-2026.md",
+      "publishedAt": "2026-11-19T19:13:47.021Z"
+    },
+    "the-substance-2024": {
+      "sourceId": "the-substance-2024-manual-vibecritic",
+      "sha256": "d1d1fc690195e7cc3d907b49540f30b2155b3be5ea7742157b5abc9e8eb088cf",
+      "articlePath": "src/content/reviews/the-substance-2024.md",
+      "publishedAt": "2026-11-19T19:18:06.634Z"
     }
   }
 }

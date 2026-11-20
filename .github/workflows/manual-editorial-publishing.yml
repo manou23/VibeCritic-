@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - 'manual-publishing/inbox/**'
+  schedule:
+    # Five daily release windows in Algeria time (UTC+1): 08:00, 11:00, 14:00, 17:00, 20:00.
+    - cron: '0 7,10,13,16,19 * * *'
 
 permissions:
   contents: write
@@ -33,6 +36,8 @@ jobs:
         run: npm run test:manual-publisher
       - name: Run isolated manual publisher
         id: publish
+        env:
+          MANUAL_PUBLISH_SOURCE_DIR: ${{ github.event_name == 'schedule' && 'manual-publishing/library' || 'manual-publishing/inbox' }}
         run: node manual-publishing/publisher.mjs
       - name: Validate review scores
         if: steps.publish.outputs.published == 'true'
@@ -50,7 +55,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add manual-publishing/inbox manual-publishing/archive src/content/reviews data/manual-publisher-state.json
+          git add manual-publishing/inbox manual-publishing/library manual-publishing/archive src/content/reviews data/manual-publisher-state.json
           git commit -m "publish(manual): release editorial review"
           git fetch origin main
           git rebase origin/main

@@ -1,0 +1,84 @@
+{
+  "version": 3,
+  "updatedAt": "2026-11-20T08:34:26.772Z",
+  "jobs": {
+    "game:3498": {
+      "key": "game:3498",
+      "type": "game",
+      "id": "3498",
+      "title": "Grand Theft Auto V",
+      "item": {
+        "type": "game",
+        "id": "3498",
+        "name": "Grand Theft Auto V",
+        "date": "2013-09-17",
+        "popularity": 22774,
+        "source": "RAWG"
+      },
+      "status": "waiting",
+      "stage": 0,
+      "attempts": 3,
+      "createdAt": "2026-11-19T16:51:34.241Z",
+      "updatedAt": "2026-11-20T08:34:26.771Z",
+      "nextAttemptAt": "2026-11-20T12:34:26.771Z",
+      "evidence": {
+        "title": "Grand Theft Auto V",
+        "type": "game",
+        "sourceId": "game:3498",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/grand-theft-auto-v",
+        "overview": "Rockstar Games went bigger, since their previous installment of the series. You get the complicated and realistic world-building from Liberty City of GTA4 in the setting of lively and diverse Los Santos, from an old fan favorite GTA San Andreas. 561 different vehicles (including every transport you can operate) and the amount is rising with every update. Simultaneous storytelling from three unique perspectives: Follow Michael, ex-criminal living his life of leisure away from the past, Franklin, a kid that seeks the better future, and Trevor, the exact past Michael is trying to run away from. GTA Online will provide a lot of additional challenge even for the experienced players, coming fresh from the story mode. Now you will have other players around that can help you just as likely as ruin your mission. Every GTA mechanic up to date can be experienced by players through the unique customizable character, and community content paired with the leveling system tends to keep everyone busy and engaged. Español Rockstar Games se hizo más grande desde su entrega anterior de la serie. Obtienes la construcción del mundo complicada y realista de Liberty City de GTA4 en el escenario de Los Santos, un viejo favorito de los fans, GTA San Andreas. 561 vehículos diferentes (incluidos todos los transportes que puede operar) y la cantidad aumenta con cada actualización. Narración simultánea desde tres perspectivas únicas: Sigue a Michael, ex-criminal que vive su vida de ocio lejos del pasado, Franklin, un niño que busca un futuro mejor, y Trevor, el pasado exacto del que Michael está tratando de huir. GTA Online proporcionará muchos desafíos adicionales incluso para los jugadores experimentados, recién llegados del modo historia. Ahora tendrás otros jugadores cerca que pueden ayudarte con la misma probabilidad que arruinar tu misión. Los jugadores pueden experimentar todas las mecánicas de GTA actualizadas a través del personaje personalizable único, y el contenido de la comunidad combinado con el sistema de nivelación tiende a mantener a todos ocupados y comprometidos.",
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/grand-theft-auto-v",
+            "extract": "Rockstar Games went bigger, since their previous installment of the series. You get the complicated and realistic world-building from Liberty City of GTA4 in the setting of lively and diverse Los Santos, from an old fan favorite GTA San Andreas. 561 different vehicles (including every transport you can operate) and the amount is rising with every update. Simultaneous storytelling from three unique perspectives: Follow Michael, ex-criminal living his life of leisure away from the past, Franklin, a kid that seeks the better future, and Trevor, the exact past Michael is trying to run away from. GTA Online will provide a lot of additional challenge even for the experienced players, coming fresh from the story mode. Now you will have other players around that can help you just as likely as ruin your mission. Every GTA mechanic up to date can be experienced by players through the unique customizable character, and community content paired with the leveling system tends to keep everyone busy and engaged. Español Rockstar Games se hizo más grande desde su entrega anterior de la serie. Obtienes la construcción del mundo complicada y realista de Liberty City de GTA4 en el escenario de Los Santos, un viejo favorito de los fans, GTA San Andreas. 561 vehículos diferentes (incluidos todos los transportes que puede operar) y la cantidad aumenta con cada actualización. Narración simultánea desde tres perspectivas únicas: Sigue a Michael, ex-criminal que vive su vida de ocio lejos del pasado, Franklin, un niño que busca un futuro mejor, y Trevor, el pasado exacto del que Michael está tratando de huir. GTA Online proporcionará muchos desafíos adicionales incluso para los jugadores experimentados, recién llegados del modo historia. Ahora tendrás otros jugadores cerca que pueden ayudarte con la misma probabilidad que arruinar tu misión. Los jugadores pueden experimentar todas las mecánicas de GTA actualizadas a través del personaje personalizable único, y el contenido de la comunidad combinado con el sistema de nivelación tiende a mantener a todos ocupados y comprometidos."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Grand_Theft_Auto_V",
+            "extract": "Grand Theft Auto V is a 2013 action-adventure game developed by Rockstar North and published by Rockstar Games. It is the seventh main entry in the Grand Theft Auto series, following 2008's Grand Theft Auto IV, and the fifteenth entry overall. Set within the fictional state of San Andreas, based on Southern California, the single-player story follows three protagonists—retired bank robber Michael De Santa, street gangster Franklin Clinton, and drug dealer and gunrunner Trevor Philips —and their attempts to commit heists while under pressure from a corrupt government agency and powerful criminals. Players freely roam San Andreas's open-world countryside and fictional city of Los Santos, based on Los Angeles."
+          }
+        ],
+        "releaseDate": "2013-09-17",
+        "genres": [
+          "Action"
+        ],
+        "platforms": [
+          "PlayStation 5",
+          "Xbox Series S/X",
+          "PlayStation 3",
+          "PC",
+          "PlayStation 4",
+          "Xbox 360",
+          "Xbox One"
+        ],
+        "developers": [
+          "Rockstar North",
+          "Rockstar Games"
+        ],
+        "rating": 4.46,
+        "votes": 7459,
+        "poster": "https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg"
+      },
+      "sections": [],
+      "article": null,
+      "lastError": "All configured AI providers failed: gemini HTTP 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get- | groq HTTP 400: {\"error\":{\"message\":\"Failed to generate JSON. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"code\":\"json_validate_failed\",\"failed_generation\":\"max completion tokens reached before generating a valid document\"}}\n | openrouter output was truncated at max_tokens=9000",
+      "resumeStatus": "queued"
+    }
+  },
+  "providers": {},
+  "usage": {
+    "2026-11-19": {
+      "articles": 0,
+      "requests": 1,
+      "tokens": 0
+    },
+    "2026-11-20": {
+      "articles": 0,
+      "requests": 7,
+      "tokens": 0
+    }
+  },
+  "history": []
+}
