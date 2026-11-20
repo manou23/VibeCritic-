@@ -11,14 +11,15 @@ const result = await withRunLock(async () => {
   state.usage ||= {};
   const day = new Date().toISOString().slice(0,10);
   const daily = state.usage[day] ||= { articles:0, requests:0, tokens:0 };
+  const dailyLimit = Math.max(3, Math.min(4, Number(process.env.PUBLISHER_V3_DAILY_LIMIT) || 3));
   const tomorrow = () => new Date(Date.UTC(new Date().getUTCFullYear(),new Date().getUTCMonth(),new Date().getUTCDate()+1,0,5)).toISOString();
   let job = null;
   try {
     job = chooseJob(state);
-    if (!job && (daily.articles >= 3)) return { action:"daily-free-budget-reached", ...daily };
+    if (!job && (daily.articles >= dailyLimit)) return { action:"daily-free-budget-reached", ...daily };
     if (job?.status === "waiting") {
       const resume = job.resumeStatus || "queued";
-      if (["queued","researching","writing"].includes(resume) && (daily.articles >= 3)) {
+      if (["queued","researching","writing"].includes(resume) && (daily.articles >= dailyLimit)) {
         job.nextAttemptAt = tomorrow();
         await saveState(state);
         return { action:"daily-free-budget-reached", key:job.key, ...daily };
@@ -67,7 +68,7 @@ const result = await withRunLock(async () => {
       }
     }
     if (job.status === "queued") {
-      if (daily.articles >= 3) {
+      if (daily.articles >= dailyLimit) {
         transition(job,"waiting",{resumeStatus:"queued",nextAttemptAt:tomorrow()});
         await saveState(state);
         return { action:"daily-free-budget-reached", key:job.key, ...daily };
