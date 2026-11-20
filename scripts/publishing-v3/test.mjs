@@ -95,6 +95,38 @@ process.env.OPENAI_API_KEY = "";
 const missingKey = await import("./providers.mjs?openai-missing-key-test");
 assert.equal(missingKey.availableProviders().length,0);
 await assert.rejects(missingKey.generateJson("test"),/OpenAI is not configured/);
+
+// Gemini editorial reviewer contract: strict approval schema, rejection threshold, and optional-key behavior.
+process.env.GEMINI_API_KEY = "test-gemini-key";
+const geminiReviewer = await import("./editorial-reviewer.mjs?gemini-review-test");
+let geminiCalls = 0;
+globalThis.fetch = async (url, options) => {
+  geminiCalls++;
+  assert.match(url,/generativelanguage.googleapis.com\/v1beta\/models\/gemini-2\.5-flash:generateContent$/);
+  assert.equal(options.headers["x-goog-api-key"],"test-gemini-key");
+  return {
+    ok:true,
+    json:async()=>({
+      candidates:[{content:{parts:[{text:JSON.stringify({approved:true,score:8.2,factualRisk:"low",repetition:"low",exaggeration:"low",issues:[],notes:"مقبول"})}]}}],
+      usageMetadata:{promptTokenCount:100,candidatesTokenCount:20}
+    })
+  };
+};
+const acceptedReview = await geminiReviewer.reviewArticle({title:"Test",body:"مقال"}, {title:"Test",sources:[]});
+assert.equal(acceptedReview.provider,"gemini");
+assert.equal(acceptedReview.requests,1);
+assert.equal(acceptedReview.tokens,120);
+assert.equal(geminiCalls,1);
+globalThis.fetch = async () => ({
+  ok:true,
+  json:async()=>({candidates:[{content:{parts:[{text:JSON.stringify({approved:false,score:5,factualRisk:"high",repetition:"low",exaggeration:"medium",issues:["ادعاء غير مدعوم"],notes:"مرفوض"})}]}}]})
+});
+await assert.rejects(geminiReviewer.reviewArticle({title:"Test",body:"مقال"}, {title:"Test",sources:[]}),/Gemini editorial review rejected article/);
+process.env.GEMINI_API_KEY = "";
+const optionalReviewer = await geminiReviewer.reviewArticle({title:"Test"}, {});
+assert.equal(optionalReviewer.skipped,true);
+globalThis.fetch = originalFetch;
+
 const after = await withRunLock(async () => "lock-released", lock);
 assert.equal(after, "lock-released");
 await fs.rm(dir, { recursive:true, force:true });
