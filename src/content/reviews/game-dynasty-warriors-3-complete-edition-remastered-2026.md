@@ -9,11 +9,11 @@ reviewVersion: 1
 type: game
 date: 2026-11-20
 releaseDate: "2026-10-01"
-poster: "https://img.youtube.com/vi/UTVVw9fsHVA/hqdefault.jpg"
+poster: "https://img.youtube.com/vi/CPBxiZlyk0o/hqdefault.jpg"
 backdrop: "https://img.youtube.com/vi/UTVVw9fsHVA/hqdefault.jpg"
 youtubeVideoId: "UTVVw9fsHVA"
 youtubeVideoTitle: "Dynasty Warriors 3: Complete Edition Remastered - Overview Trailer | PlayStation"
-score: 8.0
+score: 8
 storyScore: 7.6
 visualsScore: 8.2
 soundScore: 8.5
@@ -37,6 +37,7 @@ sourceId: "manual-review-dynasty-warriors-3-remastered-2026"
 sourceUrl: "https://www.koeitecmoamerica.com/news/witness-a-warrior-reignited-in-dynasty-warriors-3-complete-edition-remastered-out-now/"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
+mediaVerified: true
 ---
 > **منهجية المراجعة:** تحليل تحريري بحثي يستند إلى وصف الناشر الرسمي ومراجعات منشورة بعد الإطلاق. لا تدعي المادة اختباراً شخصياً جديداً على جهاز محدد؛ والتقييم هنا تقدير تحريري مستقل يوازن بين وفاء النسخة للأصل، والتحسينات، ومدى ملاءمة تصميمها لجمهور اليوم.
 
@@ -68,6 +69,11 @@ editorialWorkflow: "manual-assisted"
 
 **تقييم VibeCritic: 8.0/10.** إعادة إصدار موفقة ومحترمة، خصوصاً لمن يريد اكتشاف جذور Musou أو العودة إليها، لكنها ليست بديلاً عن لعبة حديثة لمن لا ينسجم مع تصميمها الكلاسيكي.
 
+## لمن تناسب العودة إلى هذا الإصدار؟
+
+تبدو هذه النسخة أنسب لمن يريد فهم تطور ألعاب Musou أو اختبار نقطة مبكرة من تاريخ السلسلة، لا لمن يبحث عن نظام قتال حديث بكل تفاصيله. من المفيد أيضاً التعامل مع خيارات الجودة بوصفها أدوات لضبط التجربة لا دليلاً على أن كل احتكاك قديم اختفى. اللاعب الذي يستمتع بتكرار المعارك وفتح الضباط سيجد سبباً للعودة، بينما قد يحتاج من يفضّل المهمات المتغيرة باستمرار إلى فترات لعب أقصر.
+
+وتبقى قيمة الترميم مرتبطة بوضوح الهدف: حفظ لعبة مؤثرة وإتاحتها على أجهزة حديثة. لا ينبغي أن نقيسها فقط بعدد المؤثرات أو حجم الخرائط، بل بمدى نجاحها في إبقاء الإيقاع الأصلي قابلاً للعب اليوم. هنا تحقق الحزمة معظم ما تعد به، لكنها تترك قرار تقبل البنية الكلاسيكية للاعب نفسه.
 ## مصادر التحقق
 - [KOEI TECMO — إعلان الإطلاق ومحتويات النسخة](https://www.koeitecmoamerica.com/news/witness-a-warrior-reignited-in-dynasty-warriors-3-complete-edition-remastered-out-now/)
 - [PlayStation — العرض التعريفي الرسمي](https://www.youtube.com/watch?v=UTVVw9fsHVA)
