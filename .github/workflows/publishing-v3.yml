@@ -1,6 +1,11 @@
 name: VibeCritic Publishing V3
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publishing-v3.yml'
+      - 'scripts/publishing-v3/**'
   schedule:
     - cron: '*/15 * * * *' # GitHub-hosted fallback; Cloudflare Worker remains an additional trigger.
   workflow_dispatch:
