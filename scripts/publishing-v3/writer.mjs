@@ -3,10 +3,17 @@ import { reviewArticle } from "./editorial-reviewer.mjs";
 import { validateArticle } from "./core.mjs";
 import { calculateWeightedReviewScore, SCORE_SCALE_PROMPT } from "../scoring-rubric.mjs";
 
+export function normalizeFinalRating(text, score) {
+  const canonical = Number(score).toFixed(1) + "/10";
+  return String(text || "").replace(/(\\d+(?:[.,]\\d+)?)\\s*(?:\\/\\s*10|من\\s*10)/g, canonical);
+}
+
 function assemble(value, evidence) {
   const article = { ...value, title:evidence.title, type:evidence.type, sourceId:evidence.sourceId, sourceName:evidence.sourceName, sourceUrl:evidence.sourceUrl, releaseDate:evidence.releaseDate||"", poster:evidence.poster||"", backdrop:evidence.backdrop||evidence.poster||"", genres:evidence.genres||[], platforms:evidence.platforms||[], cast:evidence.cast||[], crew:evidence.crew||[], tags:evidence.genres||[], sources:evidence.sources, youtubeVideoId:evidence.youtubeVideoId, youtubeVideoTitle:evidence.youtubeVideoTitle };
   if (!/^[A-Za-z0-9_-]{11}$/.test(article.youtubeVideoId || "")) throw new Error("A verified official YouTube trailer is required for a final review");
   article.score = calculateWeightedReviewScore({ story:article.scores?.story, visuals:article.scores?.visuals, sound:article.scores?.sound, pacing:article.scores?.pacing });
+  article.verdict = normalizeFinalRating(article.verdict, article.score);
+  article.body = normalizeFinalRating(article.body, article.score);
   const quality = validateArticle(article, { minWords:1000, minCharacters:5200 });
   if (String(article.verdict||"").trim().length < 90) throw new Error("Final verdict is too short");
   if (String(article.summary||"").trim().length < 90) throw new Error("Review summary is too short");
@@ -21,7 +28,7 @@ export async function writeArticle(evidence) {
     "اكتب متن body بين 1000 و1200 كلمة عربية فعلية على الأقل. لا تحتسب العناوين والقوائم والملخص ضمن العدد. لا تختصر التحليل ولا تكرر الفكرة بصيغ مختلفة.",
     "استخدم الأقسام التالية بعناوين Markdown واضحة ومترابطة: ## مقدمة وسياق العمل؛ ## الفكرة والقصة أو التجربة؛ ## السرد والشخصيات أو تصميم اللعب؛ ## الإخراج والجوانب الفنية؛ ## الصورة والهوية البصرية؛ ## الصوت والموسيقى والأداء؛ ## الإيقاع والبناء وتنوع المحتوى؛ ## نقاط القوة؛ ## نقاط الضعف؛ ## لمن يناسب هذا العمل؟؛ ## الحكم النهائي. خصّص لكل جانب مساحة تناسب طبيعة العمل ونوعه، ولا تفرض تحليل الصوت/القصة على لعبة أو عمل لا تسمح أدلته بذلك.",
     "قدّم تفاصيل محددة لا كلاماً إنشائياً عاماً. ناقش عناصر العمل التي تدعمها الأدلة فقط. لا تخترع أحداثاً أو مشاهد أو آليات لعب أو أداءً أو مشكلات تقنية أو انطباعات تجربة مباشرة. إذا لم تتوفر أدلة كافية على عنصر بعينه، قل ذلك بوضوح ولا تملأ الفراغ بالتخمين. لا تحرق أحداثاً محورية.",
-    "قيّم العمل ككل بميزان نقدي متزن: لا تمنح درجات مرتفعة تلقائياً، ولا تخلط شعبية العمل بجودته، ولا تعتبر تقييمات الجمهور دليلاً على كل جوانب الجودة. اشرح في الحكم النهائي سبب الدرجة، ولمن توصي بالعمل، وما أبرز تحفظ يجب معرفته قبل اختياره.",
+    "قيّم العمل ككل بميزان نقدي متزن: لا تمنح درجات مرتفعة تلقائياً، ولا تخلط شعبية العمل بجودته، ولا تعتبر تقييمات الجمهور دليلاً على كل جوانب الجودة. اشرح في الحكم النهائي سبب الدرجة، ولمن توصي بالعمل، وما أبرز تحفظ يجب معرفته قبل اختياره. لا تضع رقماً نهائياً في verdict أو body من عندك؛ سيُحتسب الرقم النهائي آلياً من درجات المحاور ويُوحّد تلقائياً في مواضع التقييم النهائي.",
     "أخرج JSON كاملاً صالحاً فقط بالمفاتيح: headline, summary, verdict, body, scores, pros, cons.",
     "scores كائن يحوي story وvisuals وsound وpacing بأرقام من 0 إلى 10. معيار المعايرة: "+SCORE_SCALE_PROMPT+". إذا كان أحد المحاور غير قابل للتقييم من الأدلة، استخدم درجة متحفظة واشرح حدودها داخل المقال بدلاً من اختلاق معلومات.",
     "pros أربع نقاط محددة على الأقل، وcons ثلاث نقاط محددة على الأقل، ما لم تكن الأدلة لا تثبت ذلك؛ عندها اذكر تحفظات موثقة لا عيوباً مختلقة. verdict حكم نهائي معلل لا يقل عن 90 كلمة. summary لا يقل عن 90 كلمة.",
