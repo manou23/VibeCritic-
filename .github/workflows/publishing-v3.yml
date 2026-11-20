@@ -44,9 +44,6 @@ jobs:
           PUBLISHER_V3_GEMINI_FREE_ONLY: 'true'
           PUBLISHER_V3_GROQ_FREE_ONLY: 'true'
           PUBLISHER_V3_OPENROUTER_FREE_ONLY: 'true'
-          PUBLISHER_V3_GEMINI_MODEL: ${{ vars.PUBLISHER_V3_GEMINI_MODEL }}
-          PUBLISHER_V3_GROQ_MODEL: ${{ vars.PUBLISHER_V3_GROQ_MODEL }}
-          PUBLISHER_V3_OPENROUTER_MODEL: ${{ vars.PUBLISHER_V3_OPENROUTER_MODEL }}
         run: node scripts/publishing-v3/run.mjs
       - name: Validate and build new article
         id: build
