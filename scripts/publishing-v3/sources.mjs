@@ -34,8 +34,16 @@ async function wikiEvidence(title) {
   if (!hit) throw new Error("No exact independent encyclopedia match for " + title);
   const page = await get("https://en.wikipedia.org/api/rest_v1/page/summary/" + encodeURIComponent(hit.title.replace(/ /g,"_")));
   if (normalize(page.title) !== target) throw new Error("Independent source title mismatch");
-  const extract = clean(page.extract);
-  if (extract.length < 100) throw new Error("Independent source is too thin");
+  let extract = clean(page.extract);
+  // The REST summary endpoint sometimes returns a very short extract.
+  // Retry against MediaWiki's lead-section API before rejecting otherwise valid evidence.
+  if (extract.length < 100) {
+    const full = await get("https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&exintro=1&format=json&redirects=1&titles=" + encodeURIComponent(hit.title));
+    const pages = Object.values(full.query?.pages || {});
+    const fallback = clean(pages[0]?.extract);
+    if (fallback.length > extract.length) extract = fallback;
+  }
+  if (extract.length < 100) throw new Error("Independent source is too thin after full lead-section fallback");
   return { name:"Wikipedia", url:page.content_urls?.desktop?.page || "https://en.wikipedia.org/wiki/" + encodeURIComponent(hit.title.replace(/ /g,"_")), extract };
 }
 async function publishedTypeCounts() {
