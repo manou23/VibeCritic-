@@ -6,14 +6,16 @@ summary: "يحوّل أنمي One Piece مغامرة لوفي للعثور عل�
 verdict: "واحد من أكثر أعمال المغامرة التلفزيونية طموحاً وتأثيراً، لا بسبب حجمه وحده، بل لأن عالمه وشخصياته يحملان ذاكرة سردية طويلة. ينجح في الجمع بين الضحك والمأساة والحركة، لكنه يطلب صبراً كبيراً ويعاني في أجزاء من مسيرته من إطالة الإيقاع وتفاوت التنفيذ الفني. تجربة استثنائية لمحبي المغامرات الطويلة وبناء العوالم، لكنها ليست نقطة دخول خفيفة أو متساوية المستوى في كل حلقاتها."
 reviewVersion: 6
 reviewMode: review
+youtubeVideoId: "R-EeF-wcYAU"
+youtubeVideoTitle: "ONE PIECE — إعلان قوس إلباف الرسمي | Toei Animation"
 date: 2026-11-20
 releaseDate: "1999-10-20"
 type: series
-score: 8.9
-storyScore: 9.3
-visualsScore: 9.3
-soundScore: 8.7
-pacingScore: 8.0
+score: 8.2
+storyScore: 8.8
+visualsScore: 8.1
+soundScore: 8.5
+pacingScore: 7.4
 sourceName: "Toei Animation / One Piece Official / Crunchyroll"
 sourceId: "series:37854"
 sourceUrl: "https://www.themoviedb.org/tv/37854"
