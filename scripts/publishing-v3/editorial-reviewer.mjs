@@ -23,15 +23,25 @@ export async function reviewArticle(article, evidence) {
     "المقال: " + JSON.stringify({title:article.title,summary:article.summary,verdict:article.verdict,body:article.body,pros:article.pros,cons:article.cons,sources:article.sources})
   ].join("\n\n");
 
-  const response = await fetch("https://generativelanguage.googleapis.com/v1beta/models/" + encodeURIComponent(model) + ":generateContent", {
-    method:"POST",
-    headers:{ "content-type":"application/json", "x-goog-api-key":apiKey },
-    body:JSON.stringify({
-      contents:[{role:"user",parts:[{text:prompt}]}],
-      generationConfig:{temperature:0.1,responseMimeType:"application/json",maxOutputTokens:1200}
-    }),
-    signal:AbortSignal.timeout(60000)
-  });
+  let response;
+  try {
+    response = await fetch("https://generativelanguage.googleapis.com/v1beta/models/" + encodeURIComponent(model) + ":generateContent", {
+      method:"POST",
+      headers:{ "content-type":"application/json", "x-goog-api-key":apiKey },
+      body:JSON.stringify({
+        contents:[{role:"user",parts:[{text:prompt}]}],
+        generationConfig:{temperature:0.1,responseMimeType:"application/json",maxOutputTokens:1200}
+      }),
+      signal:AbortSignal.timeout(25000)
+    });
+  } catch (error) {
+    // Gemini is an independent enhancement, not the publishing engine.
+    // A transient timeout must not cancel a locally validated OpenAI article.
+    if (error?.name === "TimeoutError" || error?.name === "AbortError") {
+      return { skipped:true, reason:"Gemini editorial review timed out; local article validation remains required", provider:"gemini", model, tokens:0, requests:1 };
+    }
+    throw error;
+  }
   if (!response.ok) throw new Error("Gemini editorial review HTTP " + response.status + ": " + (await response.text()).slice(0,400));
   const data = await response.json();
   const raw = (data.candidates?.[0]?.content?.parts || []).map(part=>part.text || "").join("");
