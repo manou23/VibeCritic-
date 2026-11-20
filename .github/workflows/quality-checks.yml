@@ -90,6 +90,7 @@ jobs:
           node --check scripts/rawg-catalog-utils.mjs
           npm run test:rawg-backfill
           node --check scripts/scoring-rubric.mjs
+          npm run test:publishing-v3
           node --check scripts/test-scoring-rubric.mjs
           npm run test:scoring-rubric
           node --check scripts/validate-review-scores.mjs
