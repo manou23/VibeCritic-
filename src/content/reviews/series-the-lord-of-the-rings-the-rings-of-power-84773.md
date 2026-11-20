@@ -6,14 +6,16 @@ summary: "توسّع The Lord of the Rings: The Rings of Power عالم تولك
 verdict: "خواتم القوة عمل فانتازيا ضخم ومثير بصرياً، ينجح في إعادة فتح أبواب الأرض الوسطى وتقديم شخصيات وصراعات جديدة، لكنه لا يحافظ دائماً على التوازن بين اتساع العالم ووضوح الدراما. الموسم الأول يبني الأساس بتفاوت، والثاني يمنح ساورون والصراع ثقلاً أكبر، والثالث يبدو أكثر تركيزاً في بعض خطوطه لكنه لا يتخلص من ازدحام الحكايات. تجربة تستحق المشاهدة لمحبي عالم تولكين والفانتازيا الملحمية، مع توقع أن تكون الصورة أقوى من تماسك السرد في أوقات كثيرة."
 reviewVersion: 6
 reviewMode: review
+youtubeVideoId: "QmS7WuI9u40"
+youtubeVideoTitle: "The Rings of Power — الإعلان التشويقي الرسمي للموسم الثالث | Prime Video"
 date: 2026-11-20
 releaseDate: "2022-09-01"
 type: series
-score: 7.9
-storyScore: 7.5
-visualsScore: 9.2
-soundScore: 8.6
-pacingScore: 6.7
+score: 7.1
+storyScore: 6.3
+visualsScore: 8.5
+soundScore: 7.7
+pacingScore: 5.9
 sourceName: "Prime Video / Rotten Tomatoes / The Guardian / RogerEbert.com / Variety"
 sourceId: "series:84773"
 sourceUrl: "https://www.themoviedb.org/tv/84773"
