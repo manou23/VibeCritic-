@@ -4,7 +4,7 @@ originalTitle: "Dynasty Warriors 3: Complete Edition Remastered"
 headline: "إعادة بناء لعبة صنعت هوية موسو؛ تحسينات مدروسة تحترم الأصل، لكنها لا تلغي قِدم تصميمه"
 hook: "قيمة هذا الإصدار لا تأتي من تحويل Dynasty Warriors 3 إلى لعبة حديثة بالكامل، بل من محاولة صيانة إيقاعها القديم وإزالة بعض احتكاكاته من دون محو قسوتها."
 summary: "مراجعة تحريرية بحثية للنسخة المحسنة التي تجمع Dynasty Warriors 3 وXtreme Legends، مع تحليل القتال والتقدم والمحتوى الإضافي وخيارات العودة إلى أسلوب اللعب الكلاسيكي."
-verdict: "تنجح Complete Edition Remastered في تقديم حزمة سخية ومحترمة لتاريخ السلسلة، وتمنح اللاعبين الجدد والقدامى طرقاً مختلفة للتعامل مع تصميمها. لكن بساطة الأهداف وتكرار المعارك يظلان جزءاً من التجربة، لا عيوباً يمكن لمسات الجودة أن تمحوها. تقييم VibeCritic التحريري: 8.1/10."
+verdict: "تنجح Complete Edition Remastered في تقديم حزمة سخية ومحترمة لتاريخ السلسلة، وتمنح اللاعبين الجدد والقدامى طرقاً مختلفة للتعامل مع تصميمها. لكن بساطة الأهداف وتكرار المعارك يظلان جزءاً من التجربة، لا عيوباً يمكن لمسات الجودة أن تمحوها. تقييم VibeCritic التحريري: 8.0/10."
 reviewVersion: 1
 type: game
 date: 2026-11-20
@@ -13,7 +13,7 @@ poster: "https://img.youtube.com/vi/UTVVw9fsHVA/hqdefault.jpg"
 backdrop: "https://img.youtube.com/vi/UTVVw9fsHVA/hqdefault.jpg"
 youtubeVideoId: "UTVVw9fsHVA"
 youtubeVideoTitle: "Dynasty Warriors 3: Complete Edition Remastered - Overview Trailer | PlayStation"
-score: 8.1
+score: 8.0
 storyScore: 7.6
 visualsScore: 8.2
 soundScore: 8.5
@@ -66,7 +66,7 @@ editorialWorkflow: "manual-assisted"
 
 هذه نسخة تستحق التقدير لأنها تفهم ما ينبغي الحفاظ عليه وما يمكن تحسينه. حزمة المحتوى سخية، وخيارات التحكم والجودة قابلة للتكييف، والهوية الأصلية بقيت حاضرة. لكنها لا تخفي أن اللعبة تنتمي إلى مرحلة تصميمية مختلفة، وأن بعض اللاعبين سيحتاجون إلى تقبل التكرار والخشونة القديمة.
 
-**تقييم VibeCritic: 8.1/10.** إعادة إصدار موفقة ومحترمة، خصوصاً لمن يريد اكتشاف جذور Musou أو العودة إليها، لكنها ليست بديلاً عن لعبة حديثة لمن لا ينسجم مع تصميمها الكلاسيكي.
+**تقييم VibeCritic: 8.0/10.** إعادة إصدار موفقة ومحترمة، خصوصاً لمن يريد اكتشاف جذور Musou أو العودة إليها، لكنها ليست بديلاً عن لعبة حديثة لمن لا ينسجم مع تصميمها الكلاسيكي.
 
 ## مصادر التحقق
 - [KOEI TECMO — إعلان الإطلاق ومحتويات النسخة](https://www.koeitecmoamerica.com/news/witness-a-warrior-reignited-in-dynasty-warriors-3-complete-edition-remastered-out-now/)
