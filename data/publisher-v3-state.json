@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-20T22:19:57.187Z",
+  "updatedAt": "2026-11-20T22:20:23.207Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -132,12 +132,12 @@
         "popularity": 334.9245,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "waiting",
       "stage": 0,
-      "attempts": 0,
+      "attempts": 1,
       "createdAt": "2026-11-20T22:19:30.096Z",
-      "updatedAt": "2026-11-20T22:19:57.187Z",
-      "nextAttemptAt": null,
+      "updatedAt": "2026-11-20T22:20:23.206Z",
+      "nextAttemptAt": "2026-11-20T22:30:23.206Z",
       "evidence": {
         "title": "One Piece",
         "type": "series",
@@ -248,11 +248,12 @@
         ],
         "score": 5.3
       },
-      "lastError": null,
+      "lastError": "Live verification returned HTTP 404",
       "provider": "openai",
       "tokens": 4317,
       "articlePath": "src/content/reviews/series-one-piece-37854.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-one-piece-37854/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-one-piece-37854/",
+      "resumeStatus": "verifying"
     }
   },
   "providers": {},
