@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-20T22:52:44.919Z",
+  "updatedAt": "2026-11-20T22:54:35.254Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -695,6 +695,177 @@
       "articlePath": "src/content/reviews/series-the-altruists-308007.md",
       "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-the-altruists-308007/",
       "resumeStatus": "verifying"
+    },
+    "series:103540": {
+      "key": "series:103540",
+      "type": "series",
+      "id": "103540",
+      "title": "Percy Jackson and the Olympians",
+      "item": {
+        "type": "series",
+        "id": "103540",
+        "name": "Percy Jackson and the Olympians",
+        "date": "2023-12-19",
+        "popularity": 38.014,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-20T22:53:45.543Z",
+      "updatedAt": "2026-11-20T22:53:45.838Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "No exact independent encyclopedia match for Percy Jackson and the Olympians"
+    },
+    "series:249565": {
+      "key": "series:249565",
+      "type": "series",
+      "id": "249565",
+      "title": "The Good Daughter",
+      "item": {
+        "type": "series",
+        "id": "249565",
+        "name": "The Good Daughter",
+        "date": "2026-11-12",
+        "popularity": 36.3321,
+        "source": "TMDB"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-20T22:53:52.946Z",
+      "updatedAt": "2026-11-20T22:54:35.253Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "The Good Daughter",
+        "type": "series",
+        "sourceId": "series:249565",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/249565",
+        "overview": "Sisters Charlotte and Samantha Quinn have spent the last twenty-eight years trying to piece together the lives that were fractured by a single night of violence. When another attack splinters the small town of Pikeville, Charlotte is the first witness on the scene. Now a lawyer like her father, she’s forced to confront her own demons as the case twists through one shocking revelation after another. In the end, both she and Samantha find themselves wondering if the price of being the good daughter was worth it after all.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/249565",
+            "extract": "Sisters Charlotte and Samantha Quinn have spent the last twenty-eight years trying to piece together the lives that were fractured by a single night of violence. When another attack splinters the small town of Pikeville, Charlotte is the first witness on the scene. Now a lawyer like her father, she’s forced to confront her own demons as the case twists through one shocking revelation after another. In the end, both she and Samantha find themselves wondering if the price of being the good daughter was worth it after all."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/The_Good_Daughter",
+            "extract": "The Good Daughter is a 2012 Philippine television drama series broadcast by GMA Network. Directed by Mike Tuviera, it stars Kylie Padilla in the title role. It premiered on February 13, 2012 on the network's Afternoon Prime line up. The series concluded on June 1, 2012, with a total of 78 episodes."
+          },
+          {
+            "name": "YouTube — Spawn Movie's ",
+            "url": "https://www.youtube.com/watch?v=Nh_cPOE1F2E",
+            "extract": "Verified public, embeddable official trailer: The Good Daughter (2026) season 1 | Official trailer "
+          }
+        ],
+        "youtubeVideoId": "Nh_cPOE1F2E",
+        "youtubeVideoTitle": "The Good Daughter (2026) season 1 | Official trailer ",
+        "youtubeChannel": "Spawn Movie's ",
+        "releaseDate": "2026-11-12",
+        "genres": [
+          "Drama",
+          "Mystery"
+        ],
+        "platforms": [],
+        "cast": [
+          "Rose Byrne",
+          "Meghann Fahy",
+          "Brendan Gleeson",
+          "Harper Steele",
+          "Michael Dorman",
+          "Audrey Grace Marshall",
+          "Drew Cheek",
+          "Olivia Williams"
+        ],
+        "crew": [],
+        "rating": 7.667,
+        "votes": 30,
+        "poster": "https://image.tmdb.org/t/p/w780/qJPvyo9Pxz3MQndd3tKSocLz1Nt.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/nDU6mUk4wVU1EkDkDvcLvT2UWdy.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "The Good Daughter: فرضية درامية واعدة، لكن الأدلة المتاحة لا تبرر مراجعة مشاهدة نهائية",
+        "summary": "تقدّم المعلومات المتاحة مسلسل The Good Daughter بوصفه دراما وغموضاً عن الأختين شارلوت وسامانثا كوين، اللتين تحاولان منذ عقود استيعاب أثر ليلة عنف مزّقت حياتهما. ثم يعيد اعتداء جديد في بلدة بايكفيل الماضي إلى الواجهة، مع وجود شارلوت، المحامية مثل والدها، شاهدةً أولى على الواقعة. هذه فرضية تحمل توتراً عائلياً وقضائياً واضحاً، لكن ملف الأدلة لا يضم ملخصاً للحلقات أو تفاصيل عن التنفيذ الفني أو الأداء أو الإيقاع، ولا يثبت حالة الإصدار بما يكفي للجزم بأن العمل متاح للمشاهدة. لذلك تقيّم هذه المراجعة ما يمكن توثيقه، وتفصل بين إمكانات الفكرة وبين جودة مسلسل لا تسمح المواد المتاحة بالحكم المباشر عليه.",
+        "verdict": "الحكم التحريري الأكثر نزاهة هو أن The Good Daughter يملك أساساً سردياً قابلاً للاهتمام: أختان، أثر طويل الأمد لعنف سابق، وواقعة جديدة تضع إحداهما في قلب تحقيق ذي امتدادات شخصية. لكن هذه العناصر تصف الوعد الدرامي ولا تثبت نجاح المسلسل في تحويله إلى تجربة متماسكة. لا تتوافر هنا معلومات كافية عن الحلقات أو الصورة أو الصوت أو أداء الممثلين، كما أن تاريخ الإصدار المدرج وحده لا يثبت إتاحة العمل أو اكتمال عرضه. وعليه، فالدرجة المرفقة حكم متحفظ على قوة الملف المتاح، لا ادعاء بقياس جودة مشاهدة فعلية. التوصية الآن هي التريث حتى تتوفر مراجعات موثقة أو تفاصيل أكثر، مع اعتبار الخلط المحتمل في بيانات العمل أبرز ما ينبغي التحقق منه قبل اختياره.",
+        "body": "## مقدمة وسياق العمل\n\nتتناول هذه المراجعة مسلسل The Good Daughter وفق ملف الأدلة المقدم، لا بوصفها شهادة مشاهدة مباشرة. وهذه نقطة جوهرية لأن المواد المتاحة محدودة: صفحة بيانات تنسب العمل إلى فئتي الدراما والغموض، وملخص عام للحبكة، وقائمة ممثلين، وإشارة إلى مقطع موصوف بأنه إعلان رسمي للموسم الأول. لا توجد في الملف تفاصيل عن عدد الحلقات أو مدتها أو منصة العرض، ولا مراجعات موثقة أو وصف تفصيلي للحلقات. لذلك يمكن فحص الفكرة المعلنة وتماسك المعلومات المحيطة بها، لكن لا يمكن إصدار أحكام مشاهدة موثوقة على نجاح التنفيذ.\n\nوتزيد الحاجة إلى هذا التحفظ لأن سجل المصادر يضم أيضاً مقتطفاً من صفحة ويكيبيديا عن مسلسل فلبيني مختلف يحمل الاسم نفسه، عُرض عام 2012. لا يثبت ذلك أن بيانات المسلسل موضوع المراجعة خاطئة، لكنه يبيّن أن تطابق العنوان قد يسبب خلطاً بين عملين، وأن الاعتماد على نتائج البحث بالاسم وحده غير كافٍ. يذكر السجل تاريخ 12 نوفمبر 2026، لكنه لا يقدم ما يثبت حالة الإتاحة الفعلية أو اكتمال الموسم. وجود عنوان إعلان للموسم الأول لا يسد هذه الفجوة.\n\n## الفكرة والقصة أو التجربة\n\nبحسب الملخص، تحاول الأختان شارلوت وسامانثا كوين منذ ثمانية وعشرين عاماً إعادة تركيب حياتهما بعد ليلة واحدة من العنف أحدثت شرخاً عميقاً فيهما. ثم يقع اعتداء آخر في بلدة بايكفيل الصغيرة، وتكون شارلوت أول شاهدة في موقعه. وهي تعمل محامية مثل والدها، ما يضع صلتها بالمهنة والعائلة والقضية في نقطة تقاطع درامية واضحة. ويشير الملخص إلى أن مسار القضية يتضمن انكشافات صادمة، وإلى سؤال الأختين عما إذا كان ثمن محاولة أن تكونا «الابنة الصالحة» يستحق ما دفعته كل منهما.\n\nتمنح هذه العناصر المسلسل أكثر من مدخل واحد: لغز الاعتداء الجديد، وذاكرة العنف السابق، والعلاقة بين الأختين، ومعنى الدور العائلي الذي يوحي به العنوان. هذا التداخل قد يصنع دراما تجمع التحقيق بالتوتر النفسي، لكنه لا يضمن أن تكون الخطوط متوازنة أو أن تتطور الشخصيات بعمق. لا يحدد الملخص طبيعة الاعتداء الجديد، ولا يشرح كيف ترتبط تفاصيله بالماضي، ومن الأفضل عدم استنتاج ذلك أو كشف أحداث غير واردة في المصادر. كذلك لا تكفي عبارة «انكشافات صادمة» للحكم على جودة الحبكات أو أصالتها؛ فهي صياغة تعريفية عامة وليست دليلاً على نجاحها.\n\n## السرد والشخصيات أو تصميم اللعب\n\nلأن العمل مسلسل درامي، فالمحور المناسب هنا هو السرد والشخصيات لا تصميم اللعب. تبدو شارلوت الشخصية التي تربط المجال القانوني بالقضية الجديدة وبالجرح العائلي القديم، فيما يوحي ذكر الأختين بأن أثر الماضي لن يقتصر على بطلة واحدة. هذه وظائف درامية محتملة تستند إلى الملخص، لكنها لا تكشف طبيعة علاقتهما أو اختلاف موقفيهما، ولا مقدار حضور سامانثا في الأحداث. لا توجد معلومات عن كتابة الحلقات، أو وجهات النظر السردية، أو كيفية توزيع الكشف عن الماضي، ولذلك لا يصح وصف السرد بأنه محكم أو متعثر.\n\nتسرد البيانات أسماء روز بيرن، ميغان فاهي، بريندان غليسون، هاربر ستيل، مايكل دورمان، أودري غريس مارشال، درو تشيك وأوليفيا ويليامز ضمن طاقم التمثيل. لكنها لا تحدد الأدوار، باستثناء اسمي شارلوت وسامانثا في الملخص من دون ربط موثق بين كل دور وممثل. وجود أسماء معروفة قد يلفت الانتباه إلى المشروع، لكنه لا يثبت جودة الأداء أو انسجام المجموعة. لا تتوفر أوصاف للشخصيات الثانوية أو معلومات عن مساراتها، لذا يظل تقييم بناء الشخصيات محصوراً في الإمكان الذي تتيحه الفرضية، لا في نتيجة مكتملة أمكن التحقق منها.\n\n## الإخراج والجوانب الفنية\n\nلا يتضمن ملف الأدلة أسماء مخرجين أو كتّاب أو محررين، ولا وصفاً لأسلوب الإخراج أو بنية الإنتاج. لذلك لا يمكن تقييم إدارة المشاهد أو الانتقال بين الحاضر والماضي، ولا الحكم على ما إذا كان الغموض يُبنى بالصورة أم بالحوار أم بتأخير المعلومات. وحتى وجود مقطع إعلان رسمي موثق يثبت وجود مادة ترويجية مرتبطة بالعمل فحسب؛ لا يوفر مقتطفه وصفاً لمحتواه، ولا يتيح هنا استخدامه دليلاً على جودة التنفيذ. ومن غير المنصف تحويل غياب تفاصيل الإنتاج إلى عيب فني في المسلسل نفسه. النتيجة الأدق أن هذا الجانب غير قابل للتقييم بثقة من المواد المرفقة.\n\n## الصورة والهوية البصرية\n\nلا يقدم الملف تحليلاً للقطات أو معلومات عن التصوير، والإضاءة، والألوان، وتصميم المواقع أو الملابس. كما أن إتاحة رابط لملصق وخلفية في البيانات لا تكفي لوصف هوية بصرية متماسكة، ولا تثبت أن خيارات العمل تخدم أجواء بلدة بايكفيل أو ذاكرة العنف. يمكن توقع أن يكون للمكان الصغير والعودة إلى الماضي دور بصري محتمل، لكن ذلك يظل توقعاً لا حقيقة موثقة؛ فلا ينبغي نسبته إلى المسلسل. وبناء على ذلك، لا يمكن اعتبار الصورة نقطة قوة أو ضعف مثبتة. الدرجة المتحفظة لهذا المحور تعكس نقص الدليل، لا حكماً بأن الصورة متوسطة الجودة فعلاً.\n\n## الصوت والموسيقى والأداء\n\nلا توجد معلومات عن الموسيقى أو تصميم الصوت أو اللغة المستخدمة أو أداء الممثلين في مشاهد بعينها. وتقتصر البيانات على أسماء أفراد الطاقم، وهي لا تسمح باستنتاج مستوى الأداء، كما لا يتيح وجود إعلان رسمي وحده تقويم الموسيقى أو الحوار ما دام الملف لا يصف ما يسمع فيه. قد تكون هذه العناصر مؤثرة خصوصاً في دراما الغموض، حيث يمكن للصوت والإيقاع التمثيلي أن يوجها التوتر، لكن أهمية العنصر لا تعوض غياب الدليل عليه. لهذا لا يصح اختلاق ملاحظات عن الأجواء الصوتية أو الكيمياء بين الممثلين، ويبقى هذا المحور منخفض الثقة إلى حين توفر مصادر مباشرة قابلة للفحص.\n\n## الإيقاع والبناء وتنوع المحتوى\n\nيشير الملخص إلى امتداد أثر حادثة قديمة لثمانية وعشرين عاماً ثم وقوع اعتداء جديد، وهو ترتيب زمني يتيح، نظرياً، بناءً متناوباً بين تبعات الماضي وتحقيق الحاضر. غير أن كلمة «نظرياً» مهمة: لا نعرف إن كان المسلسل يعرض الفترتين بالتوازي، أو يركز على زمن واحد، ولا نملك عدد الحلقات أو وصفاً لتوزيع الأحداث. لذلك لا يمكن تقرير ما إذا كانت الانكشافات متدرجة أو مكررة، أو ما إذا كان الموسم يحافظ على إيقاعه. كذلك لا توجد معلومات عن تنوع الحلقات أو امتداد القصة عبر الموسم. الطموح إلى الجمع بين لغز وتحليل عائلي واضح، أما نجاح البناء فيظل مجهولاً.\n\n## نقاط القوة\n\nأقوى ما يثبته الملف هو وجود فرضية ذات روابط درامية محددة، لا مجرد تصنيف عام: ماضٍ عنيف له أثر طويل، وأختان تواجهان تبعاته، وواقعة جديدة تضع شارلوت داخل القضية بصفتها شاهدة ومحامية. يتيح ذلك تقاطعاً واضحاً بين الخاص والعام، وبين العلاقة العائلية ومسار التحقيق. كما يمنح سؤال «الابنة الصالحة» العنوان صلة بموضوع الاختيارات والتوقعات العائلية، بدلاً من أن يكون العنوان منفصلاً تماماً عن الملخص. وتضيف قائمة الممثلين أسماء معلنة يمكن للقارئ استخدامها للتعرف إلى العمل، فيما يؤكد وجود إعلان موسوم بالموسم الأول أن للمشروع مادة ترويجية رسمية متداولة. هذه نقاط قوة في العرض الموثق والفرضية، وليست إثباتاً لجودة التنفيذ.\n\n## نقاط الضعف\n\nأبرز تحفظ هو نقص المعلومات اللازمة لإصدار حكم فني مكتمل: لا وصف للحلقات، ولا اعتمادات إخراجية أو كتابية، ولا تفاصيل موثقة عن الصورة والصوت والأداء والإيقاع. وثانياً، لا يثبت سجل الإصدار وحده أن الموسم متاح للمشاهدة أو أن عرضه اكتمل، ما يجعل وصف النص بأنه مراجعة مشاهدة نهائية مضللاً. وثالثاً، وجود عمل آخر بالعنوان نفسه في بيانات المصادر يفرض التحقق من الهوية قبل دمج المعلومات، حتى لو بدا الملخص الأساسي منسوباً إلى سجل مستقل. هذه قيود في الأدلة والبيانات، لا عيوب مؤكدة في المسلسل؛ ومن المهم ألا تتحول إلى اتهام للعمل بسوء التنفيذ.\n\n## لمن يناسب هذا العمل؟\n\nعلى مستوى الفكرة المعلنة، قد يجذب المسلسل من يبحث عن دراما عائلية ممزوجة بلغز جنائي، وعن قصص تتابع أثر صدمة قديمة في حياة شخصياتها، لا عن تحقيق منفصل عن الروابط الشخصية. وقد يثير اهتمام من يفضل الحكايات التي تجعل المهنة والعائلة جزءاً من الضغط الواقع على الشخصية الرئيسية. لكن لا توجد أدلة كافية للتوصية به بناء على جودة الحوارات أو العنف المعروض أو مستوى التشويق، ولا تتوفر بيانات منصات تتيح توجيه المشاهد إلى مكان محدد لمتابعته. الأنسب حالياً هو التعامل معه كعنوان ذي فرضية لافتة تستحق التحقق، لا كاختيار مضمون لمن يطلب مسلسلاً متقناً ومكتمل المعلومات.\n\n## الحكم النهائي\n\nيحتوي The Good Daughter، وفق الملخص المتاح، على مادة أولية صالحة لدراما غموض ذات بعد عائلي: أختان، جرح قديم، قضية جديدة، وسؤال عن كلفة الدور الذي تفرضه الأسرة. لكن التقييم المهني لا يستطيع مساواة صلاحية الفكرة بنجاح المسلسل. الأدلة لا تتيح فحص الكتابة أو الإخراج أو الصورة أو الصوت أو الإيقاع، ولا تثبت حالة الإصدار بما يكفي لتقديمه بثقة على أنه عمل مكتمل العرض. لذلك تعكس الدرجات المرفقة تحفظاً في تقدير ما يمكن إثباته، لا حكماً مشاهدة مباشراً أو وصفاً لجودة مجهولة. أوصي المهتمين بالفكرة بالانتظار حتى تتوافر مراجعات موثقة ومعلومات أوضح عن العرض، وأبرز ما ينبغي التحقق منه قبل الاختيار هو هوية العمل وحالة إتاحته، ثم جودة التنفيذ الفعلية.",
+        "scores": {
+          "story": 5.5,
+          "visuals": 5,
+          "sound": 5,
+          "pacing": 5
+        },
+        "pros": [
+          "فرضية تجمع بين أثر حادثة عنف قديمة وواقعة جديدة في البلدة نفسها.",
+          "صلة واضحة بين التحقيق والعائلة عبر كون شارلوت شاهدة ومحامية مثل والدها.",
+          "وجود الأختين يتيح للدراما، وفق الملخص، أكثر من منظور تجاه الماضي المشترك.",
+          "سؤال «الابنة الصالحة» يمنح العنوان ارتباطاً موضوعياً معلناً بالحكاية."
+        ],
+        "cons": [
+          "لا تتوفر تفاصيل كافية عن الحلقات أو الكتابة أو الإخراج لتقييم نجاح التنفيذ.",
+          "لا يقدم الملف أدلة مباشرة تسمح بالحكم على الصورة أو الموسيقى أو أداء الممثلين.",
+          "تاريخ الإصدار المسجل لا يثبت وحده أن الموسم متاح أو أن عرضه اكتمل.",
+          "وجود مسلسل فلبيني سابق بالعنوان نفسه يستدعي الحذر من خلط بيانات العملين."
+        ],
+        "title": "The Good Daughter",
+        "type": "series",
+        "sourceId": "series:249565",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/249565",
+        "releaseDate": "2026-11-12",
+        "poster": "https://image.tmdb.org/t/p/w780/qJPvyo9Pxz3MQndd3tKSocLz1Nt.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/nDU6mUk4wVU1EkDkDvcLvT2UWdy.jpg",
+        "genres": [
+          "Drama",
+          "Mystery"
+        ],
+        "platforms": [],
+        "cast": [
+          "Rose Byrne",
+          "Meghann Fahy",
+          "Brendan Gleeson",
+          "Harper Steele",
+          "Michael Dorman",
+          "Audrey Grace Marshall",
+          "Drew Cheek",
+          "Olivia Williams"
+        ],
+        "crew": [],
+        "tags": [
+          "Drama",
+          "Mystery"
+        ],
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/249565",
+            "extract": "Sisters Charlotte and Samantha Quinn have spent the last twenty-eight years trying to piece together the lives that were fractured by a single night of violence. When another attack splinters the small town of Pikeville, Charlotte is the first witness on the scene. Now a lawyer like her father, she’s forced to confront her own demons as the case twists through one shocking revelation after another. In the end, both she and Samantha find themselves wondering if the price of being the good daughter was worth it after all."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/The_Good_Daughter",
+            "extract": "The Good Daughter is a 2012 Philippine television drama series broadcast by GMA Network. Directed by Mike Tuviera, it stars Kylie Padilla in the title role. It premiered on February 13, 2012 on the network's Afternoon Prime line up. The series concluded on June 1, 2012, with a total of 78 episodes."
+          },
+          {
+            "name": "YouTube — Spawn Movie's ",
+            "url": "https://www.youtube.com/watch?v=Nh_cPOE1F2E",
+            "extract": "Verified public, embeddable official trailer: The Good Daughter (2026) season 1 | Official trailer "
+          }
+        ],
+        "youtubeVideoId": "Nh_cPOE1F2E",
+        "youtubeVideoTitle": "The Good Daughter (2026) season 1 | Official trailer ",
+        "score": 5.2
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 10163,
+      "articlePath": "src/content/reviews/series-the-good-daughter-249565.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-the-good-daughter-249565/"
     }
   },
   "providers": {},
@@ -705,9 +876,9 @@
       "tokens": 0
     },
     "2026-11-20": {
-      "articles": 4,
-      "requests": 22,
-      "tokens": 22277
+      "articles": 5,
+      "requests": 24,
+      "tokens": 32440
     }
   },
   "history": []
