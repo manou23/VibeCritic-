@@ -12,7 +12,7 @@ export function availableProviders() {
 export async function generateJson(prompt, { providerId, maxTokens = 10000 } = {}) {
   const pool = availableProviders();
   const ordered = providerId ? pool.filter(p=>p.id===providerId) : pool;
-  if (!ordered.length) throw new Error("No explicitly enabled free-only AI provider is available");
+  if (!ordered.length) throw new Error("No explicitly enabled AI provider is available");
   const errors = [];
   let requests = 0;
   for (const p of ordered) {
