@@ -35,8 +35,6 @@ async function wikiEvidence(title) {
   const page = await get("https://en.wikipedia.org/api/rest_v1/page/summary/" + encodeURIComponent(hit.title.replace(/ /g,"_")));
   if (normalize(page.title) !== target) throw new Error("Independent source title mismatch");
   let extract = clean(page.extract);
-  // The REST summary endpoint sometimes returns a very short extract.
-  // Retry against MediaWiki's lead-section API before rejecting otherwise valid evidence.
   if (extract.length < 100) {
     const full = await get("https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&exintro=1&format=json&redirects=1&titles=" + encodeURIComponent(hit.title));
     const pages = Object.values(full.query?.pages || {});
@@ -55,6 +53,48 @@ async function publishedTypeCounts() {
     if (type) counts[type]++;
   }
   return counts;
+}
+function normalizeWords(value) {
+  return clean(value).toLowerCase().normalize("NFKD").replace(/\p{M}/gu,"").split(/[^a-z0-9]+/).filter(word=>word.length>2);
+}
+async function findOfficialYoutubeTrailer(title,type) {
+  const key = String(env.YOUTUBE_API_KEY || "").trim();
+  if (!key) throw new Error("YOUTUBE_API_KEY is not configured; refusing to publish a final review without a verified video");
+  const kind = type === "game" ? "game official trailer" : type === "series" ? "official TV series trailer" : "official movie trailer";
+  const query = title + " " + kind;
+  const params = new URLSearchParams({
+    part:"snippet", q:query, type:"video", maxResults:"20", order:"relevance",
+    videoEmbeddable:"true", videoSyndicated:"true", regionCode:"US", relevanceLanguage:"en", key
+  });
+  const search = await get("https://www.googleapis.com/youtube/v3/search?" + params);
+  const candidates = (search.items || []).filter(item=>item.id?.videoId && item.snippet?.title);
+  if (!candidates.length) throw new Error("No verified official YouTube trailer found for " + title);
+  const ids = candidates.map(item=>item.id.videoId).join(",");
+  const details = await get("https://www.googleapis.com/youtube/v3/videos?" + new URLSearchParams({part:"snippet,status",id:ids,key}));
+  const byId = new Map((details.items || []).map(item=>[item.id,item]));
+  const trustedChannel = /official|pictures|studios|films|hbo|netflix|prime video|disney|warner|paramount|sony|universal|20th century|lionsgate|bandai|capcom|nintendo|playstation|xbox|ubisoft|electronic arts|ea games|rockstar|bethesda|square enix|konami|sega|riot games|blizzard|activision|cd projekt|fromsoftware/i;
+  const tokens = [...new Set(normalizeWords(title))];
+  const ranked = candidates.map(candidate=>{
+    const video = byId.get(candidate.id.videoId);
+    if (!video || video.status?.privacyStatus !== "public" || video.status?.embeddable !== true) return null;
+    const videoTitle = video.snippet?.title || candidate.snippet.title || "";
+    const channel = video.snippet?.channelTitle || candidate.snippet.channelTitle || "";
+    if (/fan.?made|concept trailer|reaction|review|parody|trailer breakdown|gameplay walkthrough|compilation|edit/i.test(videoTitle)) return null;
+    if (!/\b(trailer|teaser)\b/i.test(videoTitle)) return null;
+    if (!/\bofficial\b/i.test(videoTitle + " " + channel) && !trustedChannel.test(channel)) return null;
+    const words = normalizeWords(videoTitle);
+    const overlap = tokens.filter(token=>words.includes(token)).length;
+    if (!overlap || overlap < Math.min(2,tokens.length)) return null;
+    return {
+      id:candidate.id.videoId,
+      title:videoTitle,
+      channel,
+      publishedAt:video.snippet?.publishedAt || "",
+      score:overlap + (trustedChannel.test(channel)?3:0) + (/\bofficial\b/i.test(videoTitle + " " + channel)?2:0) + (/\btrailer\b/i.test(videoTitle)?1:0)
+    };
+  }).filter(Boolean).sort((a,b)=>b.score-a.score || String(b.publishedAt).localeCompare(String(a.publishedAt)));
+  if (!ranked.length) throw new Error("No verified official YouTube trailer found for " + title);
+  return ranked[0];
 }
 export async function discoverCandidate(state) {
   const [used,counts] = await Promise.all([publishedKeys(),publishedTypeCounts()]);
@@ -94,6 +134,10 @@ export async function collectEvidence(candidate) {
     metadata = { releaseDate:data.release_date || data.first_air_date || "", genres:(data.genres||[]).map(x=>x.name), platforms:[], cast:(credits.cast||[]).slice(0,8).map(x=>x.name), crew:(credits.crew||[]).filter(x=>["Director","Creator","Writer"].includes(x.job)).slice(0,8).map(x=>x.name), rating:data.vote_average||null, votes:data.vote_count||0, poster:data.poster_path ? "https://image.tmdb.org/t/p/w780"+data.poster_path : "", backdrop:data.backdrop_path ? "https://image.tmdb.org/t/p/w1280"+data.backdrop_path : "" };
   }
   if (primary.extract.length < 80) throw new Error("Primary catalog description is too thin");
-  const independent = await wikiEvidence(candidate.name);
-  return { title:candidate.name, type:candidate.type, sourceId:candidate.type+":"+candidate.id, sourceName:primary.name, sourceUrl:primary.url, overview:primary.extract, sources:[primary,independent], ...metadata };
+  const [independent, youtubeTrailer] = await Promise.all([
+    wikiEvidence(candidate.name),
+    findOfficialYoutubeTrailer(candidate.name,candidate.type)
+  ]);
+  const sources = [primary,independent,{name:"YouTube — "+youtubeTrailer.channel,url:"https://www.youtube.com/watch?v="+youtubeTrailer.id,extract:"Verified public, embeddable official trailer: "+youtubeTrailer.title}];
+  return { title:candidate.name, type:candidate.type, sourceId:candidate.type+":"+candidate.id, sourceName:primary.name, sourceUrl:primary.url, overview:primary.extract, sources, youtubeVideoId:youtubeTrailer.id, youtubeVideoTitle:youtubeTrailer.title, youtubeChannel:youtubeTrailer.channel, ...metadata };
 }
