@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-20T22:11:46.721Z",
+  "updatedAt": "2026-11-20T22:15:28.277Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -94,6 +94,30 @@
       "articlePath": "src/content/reviews/series-the-lord-of-the-rings-the-rings-of-power-84773.md",
       "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-the-lord-of-the-rings-the-rings-of-power-84773/",
       "publishedAt": "2026-11-20T22:11:46.720Z"
+    },
+    "series:247718": {
+      "key": "series:247718",
+      "type": "series",
+      "id": "247718",
+      "title": "MobLand",
+      "item": {
+        "type": "series",
+        "id": "247718",
+        "name": "MobLand",
+        "date": "2025-03-30",
+        "popularity": 404.7715,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-20T22:15:28.166Z",
+      "updatedAt": "2026-11-20T22:15:28.276Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "Primary catalog description is too thin"
     }
   },
   "providers": {},
