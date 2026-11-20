@@ -102,7 +102,7 @@ const geminiReviewer = await import("./editorial-reviewer.mjs?gemini-review-test
 let geminiCalls = 0;
 globalThis.fetch = async (url, options) => {
   geminiCalls++;
-  assert.match(url,/generativelanguage.googleapis.com\/v1beta\/models\/gemini-2\.5-flash:generateContent$/);
+  assert.match(url,/generativelanguage.googleapis.com\/v1beta\/models\/gemini-3\.8-flash:generateContent$/);
   assert.equal(options.headers["x-goog-api-key"],"test-gemini-key");
   return {
     ok:true,
