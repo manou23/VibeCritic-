@@ -133,7 +133,7 @@ if(grid){
   });
   matchingCards.forEach(card=>grid.append(card));
   const controls=[genre,platform,year,minScore,sort];
-  controls.forEach(control=>{if(!control)return;const active=control===search?Boolean(control.value.trim()):control.value!==(control===minScore?'0':control===sort?'newest':'all');control.classList.toggle('has-selection',active);control.closest('label')?.classList.toggle('has-selection',active);});
+  controls.forEach(control=>{if(!control)return;const active=control.value!==(control===minScore?'0':control===sort?'newest':'all');control.classList.toggle('has-selection',active);control.closest('label')?.classList.toggle('has-selection',active);});
   const hasFilters=controls.some(control=>control&&control.value!==(control===minScore?'0':control===sort?'newest':'all'));
   if(reset)reset.hidden=!hasFilters;
   if(filterFeedback)filterFeedback.textContent=hasFilters?'تم العثور على '+matchingCards.length+' نتيجة مطابقة للفلاتر المختارة.':'تعرض المكتبة أحدث المراجعات أولاً. يمكنك اختيار فلتر واحد أو أكثر لتضييق النتائج.';
