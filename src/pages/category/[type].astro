@@ -22,26 +22,19 @@ const copy={game:{en:'GAMES & INTERACTIVE',title:'اكتشف عالم الألع
 </section>
 <section class="wrap catalog-section">
  <div class="catalog-heading"><div><p class="catalog-eyebrow">LATEST REVIEWS</p><h2>مكتبة {TYPE_PLURAL[type]}</h2><p>ابحث وصفِّ النتائج ورتّبها حسب ما يهمك</p></div><span class="catalog-total" id="category-result-count" aria-live="polite">{reviews.length} مراجعة</span></div>
- {reviews.length>0&&<div class="category-filters" aria-label="تصفية المراجعات">
-  <label class="category-filter-field">بحث
-   <input id="review-search" type="search" list="review-title-suggestions" placeholder="اسم العمل أو العنوان..." autocomplete="off" aria-describedby="review-search-help"/><datalist id="review-title-suggestions">{reviews.map(review=><option value={review.data.title}/>)}{reviews.filter(review=>review.data.originalTitle).map(review=><option value={review.data.originalTitle}/>)}</datalist><span id="review-search-help" class="category-search-help">يدعم اختلاف الألف والهمزة والتاء المربوطة والتشكيل</span>
-  </label>
-  <label class="category-filter-field">النوع
-   <select id="review-genre"><option value="all">كل التصنيفات</option>{genres.map(genre=><option value={genre.toLowerCase()}>{genre}</option>)}</select>
-  </label>
-  {type==='game'&&<label class="category-filter-field">المنصة
-   <select id="review-platform"><option value="all">كل المنصات</option>{platforms.map(platform=><option value={platform.toLowerCase()}>{platform}</option>)}</select>
-  </label>}
-  <label class="category-filter-field">السنة
-   <select id="review-year"><option value="all">كل السنوات</option>{years.map(year=><option value={year}>{year}</option>)}</select>
-  </label>
-  <label class="category-filter-field">الحد الأدنى للدرجة
-   <select id="review-min-score"><option value="0">كل الدرجات</option><option value="6">6 / 10 فأعلى</option><option value="7">7 / 10 فأعلى</option><option value="8">8 / 10 فأعلى</option><option value="9">9 / 10 فأعلى</option></select>
-  </label>
-  <label class="category-filter-field">الترتيب
-   <select id="review-sort"><option value="newest">الأحدث أولاً</option><option value="highest">الأعلى تقييماً</option><option value="lowest">الأقل تقييماً</option></select>
-  </label>
- </div>}
+ {reviews.length>0&&<section class="category-filter-panel" aria-label="البحث وتصفية المراجعات">
+  <div class="category-filter-topline"><div><p class="catalog-eyebrow">FIND YOUR NEXT REVIEW</p><h3>ابحث عن عمل محدد</h3><p>اكتب اسم اللعبة أو الفيلم أو المسلسل، ثم استخدم خيارات التصفية عند الحاجة.</p></div><button type="button" class="category-filter-reset" id="review-reset">إعادة ضبط الكل</button></div>
+  <label class="category-search-field" for="review-search"><span>البحث بالاسم</span><input id="review-search" type="search" list="review-title-suggestions" placeholder="مثال: GTA VI أو The Last of Us..." autocomplete="off" aria-describedby="review-search-help"/><datalist id="review-title-suggestions">{reviews.map(review=><option value={review.data.title}/>)}{reviews.filter(review=>review.data.originalTitle).map(review=><option value={review.data.originalTitle}/>)}</datalist><small id="review-search-help">يمكنك كتابة الاسم بالعربية أو الإنجليزية.</small></label>
+  <div class="category-filter-heading"><strong>تصفية النتائج</strong><span>اختياري — اختر ما تريد تضييقه فقط</span></div>
+  <div class="category-filters">
+   <label class="category-filter-field"><span>التصنيف</span><select id="review-genre"><option value="all">كل التصنيفات</option>{genres.map(genre=><option value={genre.toLowerCase()}>{genre}</option>)}</select></label>
+   {type==='game'&&<label class="category-filter-field"><span>المنصة</span><select id="review-platform"><option value="all">كل المنصات</option>{platforms.map(platform=><option value={platform.toLowerCase()}>{platform}</option>)}</select></label>}
+   <label class="category-filter-field"><span>سنة الإصدار</span><select id="review-year"><option value="all">كل السنوات</option>{years.map(year=><option value={year}>{year}</option>)}</select></label>
+   <label class="category-filter-field"><span>التقييم</span><select id="review-min-score"><option value="0">جميع التقييمات</option><option value="6">6/10 فأعلى</option><option value="7">7/10 فأعلى</option><option value="8">8/10 فأعلى</option><option value="9">9/10 فأعلى</option></select></label>
+   <label class="category-filter-field"><span>ترتيب النتائج</span><select id="review-sort"><option value="newest">الأحدث أولاً</option><option value="highest">الأعلى تقييماً</option><option value="lowest">الأقل تقييماً</option></select></label>
+  </div>
+  <p class="category-filter-feedback" id="category-filter-feedback" aria-live="polite">تعرض المكتبة أحدث المراجعات أولاً.</p>
+ </section>}
  {reviews.length?<div class="category-review-grid" id="category-review-grid">{reviews.map(review=><div class="category-review-item" data-title={normalizeArabic([review.data.title,review.data.originalTitle,review.data.headline,...(review.data.tags||[]),...(review.data.genres||[])].join(' '))} data-year={review.data.releaseDate?.slice(0,4)||String(review.data.date.getFullYear())} data-score={review.data.score} data-rated={review.data.reviewMode==='review'} data-date={(review.data.publishedAt??review.data.date).toISOString()} data-genres={(review.data.genres||[]).join('|').toLowerCase()} data-platforms={(review.data.platforms||[]).join('|').toLowerCase()}><ReviewCard review={review}/></div>)}</div>:<div class="catalog-empty">قسم {TYPE_PLURAL[type]} قيد الإثراء. ستظهر هنا الأعمال الجديدة ومراجعاتها تلقائياً.</div>}
  <div class="catalog-empty" id="category-filter-empty" hidden>لا توجد مراجعات تطابق خيارات التصفية الحالية.</div>
  <nav class="category-pagination" id="category-pagination" aria-label="صفحات المراجعات" hidden></nav>
@@ -63,6 +56,8 @@ if(grid){
  const year=document.querySelector<HTMLSelectElement>('#review-year');
  const minScore=document.querySelector<HTMLSelectElement>('#review-min-score');
  const sort=document.querySelector<HTMLSelectElement>('#review-sort');
+ const reset=document.querySelector<HTMLButtonElement>('#review-reset');
+ const filterFeedback=document.querySelector<HTMLElement>('#category-filter-feedback');
  const count=document.querySelector<HTMLElement>('#category-result-count');
  const empty=document.querySelector<HTMLElement>('#category-filter-empty');
  const pagination=document.querySelector<HTMLElement>('#category-pagination');
@@ -141,11 +136,17 @@ if(grid){
    return String(b.dataset.date).localeCompare(String(a.dataset.date));
   });
   matchingCards.forEach(card=>grid.append(card));
+  const controls=[search,genre,platform,year,minScore,sort];
+  controls.forEach(control=>{if(!control)return;const active=control===search?Boolean(control.value.trim()):control.value!==(control===minScore?'0':control===sort?'newest':'all');control.classList.toggle('has-selection',active);control.closest('label')?.classList.toggle('has-selection',active);});
+  const hasFilters=controls.some(control=>control&&(control===search?Boolean(control.value.trim()):control.value!==(control===minScore?'0':control===sort?'newest':'all')));
+  if(reset)reset.hidden=!hasFilters;
+  if(filterFeedback)filterFeedback.textContent=hasFilters?'تم العثور على '+matchingCards.length+' نتيجة مطابقة لاختياراتك.':'تعرض المكتبة أحدث المراجعات أولاً. يمكنك استخدام البحث أو اختيار فلتر واحد أو أكثر.';
   if(resetPage)currentPage=1;
   renderPage();
  };
  [search,genre,platform,year,minScore,sort].forEach(control=>control?.addEventListener('input',()=>update(true)));
  [genre,platform,year,minScore,sort].forEach(control=>control?.addEventListener('change',()=>update(true)));
+ reset?.addEventListener('click',()=>{if(search)search.value='';[genre,platform,year].forEach(control=>{if(control)control.value='all';});if(minScore)minScore.value='0';if(sort)sort.value='newest';update(true);search?.focus();});
  window.addEventListener('popstate',()=>{currentPage=Math.max(1,Number(new URLSearchParams(location.search).get('page'))||1);renderPage();});
  update(false);
 }
@@ -195,6 +196,33 @@ if(grid){
 .dark-mode .category-pagination button:not(:disabled):not(.is-active):hover{background:var(--vc-surface-muted);border-color:var(--vc-accent);color:var(--vc-accent)}
 .dark-mode .category-pagination button.is-active{background:var(--vc-accent);border-color:var(--vc-accent);color:#fff;box-shadow:inset 0 3px 0 rgba(255,255,255,.28)}
 .dark-mode .category-pagination button:first-child,.dark-mode .category-pagination button:last-child{background:transparent;color:var(--vc-accent)}
+
+.category-filter-panel{margin:24px 0 30px;padding:24px;border:1px solid var(--vc-border);border-top:3px solid var(--vc-accent);background:var(--vc-surface);box-shadow:0 8px 24px rgba(25,25,25,.045);direction:rtl}
+.category-filter-topline{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:22px}
+.category-filter-topline h3{margin:4px 0 6px;font-size:21px;font-weight:900;color:var(--vc-text)}
+.category-filter-topline p:not(.catalog-eyebrow){margin:0;color:var(--vc-muted);font-size:13px;line-height:1.7}
+.category-filter-reset{min-height:44px;padding:0 16px;border:1px solid var(--vc-border);background:transparent;color:var(--vc-muted);font:inherit;font-size:12px;font-weight:850;cursor:pointer;white-space:nowrap}
+.category-filter-reset:hover{border-color:var(--vc-accent);color:var(--vc-accent)}
+.category-filter-reset[hidden]{display:none}
+.category-search-field{display:grid;gap:8px;max-width:100%;margin-bottom:24px;color:var(--vc-text);font-size:13px;font-weight:900}
+.category-search-field input,.category-filter-field select{width:100%;min-height:50px;padding:0 14px;border:1px solid var(--vc-border);border-radius:3px;background:var(--vc-bg);color:var(--vc-text);font:inherit;font-size:14px;outline-offset:3px}
+.category-search-field input{font-weight:500}
+.category-search-field input:focus,.category-filter-field select:focus{border-color:var(--vc-accent);outline:2px solid color-mix(in srgb,var(--vc-accent) 22%,transparent)}
+.category-search-field small{color:var(--vc-muted);font-size:11px;font-weight:500}
+.category-filter-heading{display:flex;align-items:baseline;gap:12px;margin-bottom:12px;padding-bottom:9px;border-bottom:1px solid var(--vc-border)}
+.category-filter-heading strong{font-size:14px;color:var(--vc-text)}
+.category-filter-heading span{font-size:11px;color:var(--vc-muted)}
+.category-filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.category-filter-field{display:grid;gap:7px;min-width:0;color:var(--vc-text);font-size:12px;font-weight:850}
+.category-filter-field select{min-width:0;cursor:pointer}
+.category-filter-field select.has-selection,.category-search-field input.has-selection{border-color:var(--vc-accent);background:color-mix(in srgb,var(--vc-accent) 8%,var(--vc-surface));box-shadow:inset 3px 0 0 var(--vc-accent)}
+.category-filter-field.has-selection>span{color:var(--vc-accent-deep)}
+.category-filter-feedback{margin:18px 0 0;padding:10px 12px;border-right:3px solid var(--vc-accent);background:var(--vc-surface-muted);color:var(--vc-muted);font-size:12px;line-height:1.6}
+.dark-mode .category-filter-panel{background:var(--vc-surface);box-shadow:0 8px 24px #0003}
+.dark-mode .category-search-field input,.dark-mode .category-filter-field select{background:var(--vc-bg);color:var(--vc-text)}
+.dark-mode .category-filter-field select.has-selection,.dark-mode .category-search-field input.has-selection{background:color-mix(in srgb,var(--vc-accent) 13%,var(--vc-surface))}
+@media(max-width:760px){.category-filter-panel{padding:18px;margin:20px 0 24px}.category-filters{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
+@media(max-width:480px){.category-filter-topline{display:grid;grid-template-columns:1fr;gap:12px}.category-filter-topline h3{font-size:19px}.category-filter-reset{justify-self:start}.category-filter-heading{display:grid;gap:3px}.category-filters{grid-template-columns:1fr}.category-search-field input,.category-filter-field select{min-height:52px;font-size:16px}}
 .category-review-item[hidden]{display:none!important}
 @media(max-width:560px){
  .category-pagination{flex-wrap:nowrap;gap:14px;margin:34px auto 20px;padding:22px 8px}
