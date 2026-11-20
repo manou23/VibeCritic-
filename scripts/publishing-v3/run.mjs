@@ -15,10 +15,10 @@ const result = await withRunLock(async () => {
   let job = null;
   try {
     job = chooseJob(state);
-    if (!job && (daily.articles >= 1)) return { action:"daily-free-budget-reached", ...daily };
+    if (!job && (daily.articles >= 3)) return { action:"daily-free-budget-reached", ...daily };
     if (job?.status === "waiting") {
       const resume = job.resumeStatus || "queued";
-      if (["queued","researching","writing"].includes(resume) && (daily.articles >= 1)) {
+      if (["queued","researching","writing"].includes(resume) && (daily.articles >= 3)) {
         job.nextAttemptAt = tomorrow();
         await saveState(state);
         return { action:"daily-free-budget-reached", key:job.key, ...daily };
@@ -49,10 +49,12 @@ const result = await withRunLock(async () => {
       if (!html.includes(job.title)) throw new Error("Live page does not contain the expected article title");
       transition(job,"published",{publishedAt:new Date().toISOString(),article:null,evidence:null});
       await saveState(state);
-      return { action:"published", key:job.key, articlePath:job.articlePath, url:job.verifiedUrl, provider:job.provider };
+      job = null;
+      // A successful live verification frees this cycle to create the next daily article.
+    }
     }
     if (job.status === "queued") {
-      if (daily.articles >= 1) {
+      if (daily.articles >= 3) {
         transition(job,"waiting",{resumeStatus:"queued",nextAttemptAt:tomorrow()});
         await saveState(state);
         return { action:"daily-free-budget-reached", key:job.key, ...daily };
