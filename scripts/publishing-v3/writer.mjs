@@ -5,7 +5,7 @@ import { calculateWeightedReviewScore, SCORE_SCALE_PROMPT } from "../scoring-rub
 
 export function normalizeFinalRating(text, score) {
   const canonical = Number(score).toFixed(1) + "/10";
-  return String(text || "").replace(/(\\d+(?:[.,]\\d+)?)\\s*(?:\\/\\s*10|من\\s*10)/g, canonical);
+  return String(text || "").replace(/(\d+(?:[.,]\d+)?)\s*(?:\/\s*10|من\s*10)/g, canonical);
 }
 
 function assemble(value, evidence) {
