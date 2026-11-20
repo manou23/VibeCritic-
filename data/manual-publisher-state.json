@@ -144,6 +144,12 @@
       "sha256": "67ea6915215f010ca0a02fd67ca7ed5d4d50cc8feb04b9bdbfc721ed9177fe0b",
       "articlePath": "src/content/reviews/game-ufl-2026-27.md",
       "publishedAt": "2026-11-20T17:21:55.699Z"
+    },
+    "series-la-casa-de-papel-review": {
+      "sourceId": "manual-series-la-casa-de-papel-review",
+      "sha256": "b4383756ddb09ee0114005a38da9105e6a3a76b50136527a74c136df87351dc0",
+      "articlePath": "src/content/reviews/series-la-casa-de-papel-review.md",
+      "publishedAt": "2026-11-20T17:28:21.599Z"
     }
   }
 }
