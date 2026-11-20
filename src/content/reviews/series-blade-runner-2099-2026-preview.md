@@ -10,6 +10,11 @@ type: series
 date: 2026-11-20
 releaseDate: "2026-11-25"
 reviewMode: preview
+poster: "https://assets.aboutamazon.com/e5/19/421bff3c48a9970f09756b2c0f5e/untitled-24-july-2026-at-10-34-27-1.png"
+backdrop: "https://assets.aboutamazon.com/e5/19/421bff3c48a9970f09756b2c0f5e/untitled-24-july-2026-at-10-34-27-1.png"
+youtubeVideoId: "0Dr8I_RyRCg"
+youtubeVideoTitle: "Blade Runner 2099 - Official Teaser | Prime Video"
+mediaVerified: true
 platforms: ["Prime Video"]
 pros:
   - "القفزة الزمنية خمسين عاماً بعد Blade Runner 2049 تتيح استكشاف مستقبل جديد بدلاً من إعادة الحكاية نفسها"
