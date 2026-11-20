@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-20T22:06:58.215Z",
+  "updatedAt": "2026-11-20T22:11:46.721Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -79,122 +79,21 @@
         "popularity": 2053.4442,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-20T22:04:38.094Z",
-      "updatedAt": "2026-11-20T22:06:58.215Z",
+      "updatedAt": "2026-11-20T22:11:46.720Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "The Lord of the Rings: The Rings of Power",
-        "type": "series",
-        "sourceId": "series:84773",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/84773",
-        "overview": "Beginning in a time of relative peace, we follow an ensemble cast of characters as they confront the re-emergence of evil to Middle-earth. From the darkest depths of the Misty Mountains, to the majestic forests of Lindon, to the breathtaking island kingdom of Númenor, to the furthest reaches of the map, these kingdoms and characters will carve out legacies that live on long after they are gone.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/84773",
-            "extract": "Beginning in a time of relative peace, we follow an ensemble cast of characters as they confront the re-emergence of evil to Middle-earth. From the darkest depths of the Misty Mountains, to the majestic forests of Lindon, to the breathtaking island kingdom of Númenor, to the furthest reaches of the map, these kingdoms and characters will carve out legacies that live on long after they are gone."
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings%3A_The_Rings_of_Power",
-            "extract": "The Lord of the Rings: The Rings of Power is an American fantasy television series developed by J. D. Payne and Patrick McKay for the streaming service Amazon Prime Video. It is based on J. R. R. Tolkien's history of Middle-earth, primarily material from the appendices of the novel The Lord of the Rings (1954–55). The series is set thousands of years before the novel and depicts the major events of Middle-earth's Second Age. It is produced by Amazon MGM Studios in association with New Line Cinema."
-          }
-        ],
-        "releaseDate": "2022-09-01",
-        "genres": [
-          "Action & Adventure",
-          "Sci-Fi & Fantasy"
-        ],
-        "platforms": [],
-        "cast": [
-          "Charlie Vickers",
-          "Morfydd Clark",
-          "Robert Aramayo",
-          "Owain Arthur",
-          "Sophia Nomvete",
-          "Markella Kavenagh",
-          "Ismael Cruz Cordova",
-          "Tyroe Muhafidin"
-        ],
-        "crew": [],
-        "rating": 7.2,
-        "votes": 4114,
-        "poster": "https://image.tmdb.org/t/p/w780/bMXWXKM9ydUmMTNvDnYo9QtCBRt.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/i1phX1JpaqSnHBBGta6LBFYVCZq.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "طموح واسع تحكمه حدود الأدلة",
-        "summary": "تبدو The Lord of the Rings: The Rings of Power مشروعاً فانتازياً واسع الإطار، يستند إلى العصر الثاني للأرض الوسطى ويجمع شخصيات وممالك متعددة في مواجهة عودة الشر. لكن ملف الأدلة يثبت الفكرة العامة والسياق فقط، ولا يقدم مادة كافية للحكم على جودة السرد أو الصورة أو الصوت أو الإيقاع. لذلك فهذه مراجعة تحريرية محدودة، لا انطباع مشاهدة، ودرجاتها احترازية تعكس نقص المعلومات بقدر ما تعكس قراءة الوصف.",
-        "verdict": "الفكرة المعلنة تملك اتساعاً تاريخياً وجغرافياً يمنح السلسلة إمكانات درامية واضحة، لكن الإمكان ليس دليلاً على نجاح التنفيذ. وبغياب معلومات موثقة عن الحلقات والصورة والصوت والإيقاع، لا يصح إصدار حكم حاسم على التجربة. النتيجة تقدير أولي مشروط، يرى وعداً سردياً معقولاً ويترك جودة تحققه مفتوحة.",
-        "body": "مقدمة وسياق\nهذه مراجعة تحريرية محدودة لموقع VibeCritic، مبنية حصراً على ملف الأدلة، وليست ثمرة مشاهدة مباشرة للمسلسل. يثبت الملف أن «The Lord of the Rings: The Rings of Power» مسلسل فانتازيا ومغامرة صدر في الأول من سبتمبر 2022، وأن مادته تستند إلى تاريخ الأرض الوسطى، ولا سيما ملاحق رواية «سيد الخواتم». يضع ذلك أساساً لقراءة مشروع واسع الزمن والمكان، لكنه لا يتيح الحكم على التنفيذ التفصيلي أو تجربة المشاهدة. لذلك أفصل بين ما يقرره الوصف وما يمكن استنتاجه بحذر، وأتعامل مع تقييم TMDB بوصفه مؤشراً لا بديلاً عن النقد.\n\n## الفكرة والسياق\nتستمد السلسلة مادتها من العصر الثاني للأرض الوسطى، أي قبل أحداث رواية «سيد الخواتم» بآلاف السنين، وفق ملف الأدلة. ويمنحها هذا الإطار فسحة لتناول تاريخ أوسع من حكاية فردية، فيما يقدّم الوصف انتقالاً من سلام نسبي إلى عودة الشر، مع شخصيات متعددة وممالك متباعدة، بينها ليندون ونومنور وجبال الضباب. هذه عناصر تعد بتقاطع السياسة والمصير والأسطورة، لكن الوصف لا يحدد كيف تتفاعل فعلياً، ولا يكشف مقدار الالتزام بملاحق تولكين أو طريقة تحويل مادتها التاريخية إلى دراما. وهو وعد طموح، لا نتيجة مثبتة في المادة المتاحة؛ فمعيار الحكم يظل تماسك العرض لا مجرد كثرة الأسماء والأقاليم.\n\n## السرد والبناء\nالمتاح عن السرد يقتصر على إطار عام: شخصيات متعددة تواجه عودة الشر بعد زمن من الهدوء، ثم تصوغ ممالك وشخصيات إرثاً باقياً. لا يقدم الملف ترتيباً للأحداث أو وصفاً للحلقات، ولذلك لا يمكن تقييم الحبكة، وتطور الشخصيات، أو توازن خطوطها على نحو موثوق. مع ذلك، توحي البنية المعلنة بطموح ملحمي قد يكون مصدر ثراء إذا منحت كل مجموعة وظيفة واضحة وربطت المصائر بمسار مفهوم. وقد يتحول الاتساع نفسه إلى عبء إذا تكاثرت المسارات قبل أن تتضح دوافع الشخصيات، لكن هذا احتمال نقدي لا معلومة عن التنفيذ. الأمانة هنا تقتضي ألا أصف حبكة أو منعطفات أو خواتيم غير واردة في المصادر، ولا أن أستنتج وقوعها.\n\n## الجوانب الفنية والتصميم\nيمنح الوصف الجغرافي تصوراً عن عالم متنوع: أعماق جبال الضباب، وغابات ليندون، ومملكة نومنور الجزيرية، إلى جانب مناطق أبعد. لكنه يثبت حضور هذه الأمكنة في تقديم العمل، لا مستوى تصميمها أو جودة تصويرها أو تمايزها البصري. كما أن نعت الوصف لبعض المواقع بالعظمة أو الإبهار يظل لغة تعريفية، لا دليلاً مستقلاً على أثرها عند المشاهدة. لا تتضمن الأدلة معلومات عن الأزياء أو المؤثرات أو الإضاءة أو الديكور، ولا مراجعات موثقة لهذه العناصر. لذلك لا يمكن منح الإنتاج شهادة تفوق بصري لمجرد أن عالمه واسع، كما لا يصح انتقاده على تفاصيل غير معروفة. أقصى ما يمكن قوله إن اتساع الخريطة يضع أمام التصميم تحدياً واضحاً: جعل البيئات مميزة ومفهومة، لا مجرد أسماء ضمن عالم كبير.\n\n## الصوت والإيقاع\nلا يقدم الملف معلومات عن الموسيقى أو تصميم الصوت أو أداء الممثلين، حتى مع إدراجه أسماء من طاقم التمثيل؛ وجود الأسماء لا يثبت طبيعة الأداء ولا مستواه. كذلك لا يورد أطوال الحلقات أو إيقاع انتقال السرد بينها، فلا يمكن قياس التمهيد أو السرعة أو التفاوت. ويمكن استنتاج أن تعدد الشخصيات والأقاليم يطرح تحدياً في توزيع الوقت، لكنه لا يكشف إن كانت السلسلة قد واجهته بنجاح. لذا تبقى درجات الصوت والإيقاع تقديرات محايدة احترازية، لا أحكاماً سمعية أو مشاهدة فعلية.\n\n## نقاط القوة والقيود\nأوضح نقاط القوة المدعومة هي ثراء نقطة الانطلاق التاريخية، واتساع المجال الجغرافي، واعتماد الحكاية على شخصيات وممالك متعددة بدلاً من منظور منفرد، وفق الوصف المتاح. كما أن الإحالة إلى العصر الثاني تمنح العمل سياقاً متميزاً عن أحداث الرواية، وتتيح تصور امتداد زمني ذي رهانات إرثية. في المقابل، لا يشرح الملف كيف تتحول هذه الإمكانات إلى شخصيات متماسكة أو بناء متوازن، ولا يقدم شواهد على جودة التنفيذ الفني. تقييم TMDB البالغ 7.2 مع 4114 صوتاً يصف استقبالاً رقمياً مجمعاً، لكنه لا يفسر أسباب التقييم ولا يغني عن تحليل العمل. لذا تبقى هذه نقاط قوة في الفكرة والقيود في قابلية الحكم، لا قائمة محاسن وعيوب ناتجة من مشاهدة.\n\n## الحكم النهائي\nالحكم الأكثر إنصافاً هو أن المسلسل يملك أساساً واعداً على مستوى الفكرة والسياق، مع طموح واضح في تصوير مرحلة واسعة من تاريخ الأرض الوسطى. غير أن الأدلة المتاحة لا تسمح بتأكيد أن السرد يفي بهذا الوعد، ولا بتقييم الجوانب التي تعتمد على المشاهدة أو الاستماع. لذلك تحمل الدرجات معنى احترازياً: درجة القصة تقدّر الفكرة العامة فقط، فيما تقترب بقية الدرجات من الحياد بسبب غياب الشواهد. هذه قراءة تحريرية محدودة تصلح مدخلاً، لا بديلاً عن مراجعة مباشرة.",
-        "scores": {
-          "story": 6.5,
-          "visuals": 5,
-          "sound": 5,
-          "pacing": 5
-        },
-        "pros": [
-          "إطار العصر الثاني يضع الحكاية في سياق تاريخي أوسع من أحداث «سيد الخواتم».",
-          "الوصف يحدد مجالاً جغرافياً متنوعاً يشمل ليندون ونومنور وجبال الضباب.",
-          "الاعتماد المعلن على شخصيات متعددة يتيح إمكان بناء منظور جماعي للعالم."
-        ],
-        "cons": [
-          "المصادر لا توضح كيف تتفاعل خطوط الشخصيات أو مدى تماسك البناء السردي.",
-          "لا توجد أدلة كافية لتقييم الصورة أو تصميم الصوت أو أداء الممثلين.",
-          "غياب معلومات الحلقات ومددها يجعل الحكم على الإيقاع غير ممكن."
-        ],
-        "title": "The Lord of the Rings: The Rings of Power",
-        "type": "series",
-        "sourceId": "series:84773",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/84773",
-        "releaseDate": "2022-09-01",
-        "poster": "https://image.tmdb.org/t/p/w780/bMXWXKM9ydUmMTNvDnYo9QtCBRt.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/i1phX1JpaqSnHBBGta6LBFYVCZq.jpg",
-        "genres": [
-          "Action & Adventure",
-          "Sci-Fi & Fantasy"
-        ],
-        "platforms": [],
-        "cast": [
-          "Charlie Vickers",
-          "Morfydd Clark",
-          "Robert Aramayo",
-          "Owain Arthur",
-          "Sophia Nomvete",
-          "Markella Kavenagh",
-          "Ismael Cruz Cordova",
-          "Tyroe Muhafidin"
-        ],
-        "crew": [],
-        "tags": [
-          "Action & Adventure",
-          "Sci-Fi & Fantasy"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/84773",
-            "extract": "Beginning in a time of relative peace, we follow an ensemble cast of characters as they confront the re-emergence of evil to Middle-earth. From the darkest depths of the Misty Mountains, to the majestic forests of Lindon, to the breathtaking island kingdom of Númenor, to the furthest reaches of the map, these kingdoms and characters will carve out legacies that live on long after they are gone."
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings%3A_The_Rings_of_Power",
-            "extract": "The Lord of the Rings: The Rings of Power is an American fantasy television series developed by J. D. Payne and Patrick McKay for the streaming service Amazon Prime Video. It is based on J. R. R. Tolkien's history of Middle-earth, primarily material from the appendices of the novel The Lord of the Rings (1954–55). The series is set thousands of years before the novel and depicts the major events of Middle-earth's Second Age. It is produced by Amazon MGM Studios in association with New Line Cinema."
-          }
-        ],
-        "score": 5.5
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 5541,
       "articlePath": "src/content/reviews/series-the-lord-of-the-rings-the-rings-of-power-84773.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-the-lord-of-the-rings-the-rings-of-power-84773/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-the-lord-of-the-rings-the-rings-of-power-84773/",
+      "publishedAt": "2026-11-20T22:11:46.720Z"
     }
   },
   "providers": {},
