@@ -120,6 +120,12 @@
       "sha256": "ed101cb165e910d9cfd80b06a1b5ebc4f19f87916217f80a8b8ee19dd91f9b3d",
       "articlePath": "src/content/reviews/movie-the-social-network-2010.md",
       "publishedAt": "2026-11-20T10:11:09.106Z"
+    },
+    "game-red-dead-redemption-2010": {
+      "sourceId": "game:red-dead-redemption:2010:vibecritic-editorial",
+      "sha256": "541f5c8a286c54595e76c7052cc8e0ab7bb5bfa5f68ac2b6d7807717b61e69aa",
+      "articlePath": "src/content/reviews/game-red-dead-redemption-2010.md",
+      "publishedAt": "2026-11-20T11:22:38.958Z"
     }
   }
 }
