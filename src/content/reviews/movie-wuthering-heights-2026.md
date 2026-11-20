@@ -9,7 +9,7 @@ reviewVersion: 1
 type: movie
 date: 2026-11-20
 releaseDate: "2026-02-13"
-poster: "https://img.youtube.com/vi/3fLCdIYShEQ/hqdefault.jpg"
+poster: "https://img.youtube.com/vi/ID0rqEWrN44/hqdefault.jpg"
 backdrop: "https://img.youtube.com/vi/3fLCdIYShEQ/hqdefault.jpg"
 youtubeVideoId: "3fLCdIYShEQ"
 youtubeVideoTitle: "Wuthering Heights | Official Trailer | Warner Bros."
@@ -39,6 +39,7 @@ sourceId: "manual-review-wuthering-heights-2026"
 sourceUrl: "https://www.wutheringheightsfilm.com/synopsis/"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
+mediaVerified: true
 ---
 > **منهجية المراجعة:** تحليل نقدي بحثي يستند إلى المواد الرسمية ومراجعات منشورة بعد العرض. لا تدعي هذه المادة مشاهدة شخصية جديدة، ولا تعتبر تقييم النقاد أو الجمهور حقيقة نهائية؛ بل تقارن بين اختيارات الفيلم المعلنة والاستقبال النقدي وحدود الاقتباس.
 
@@ -72,6 +73,11 @@ Wuthering Heights فيلم ذو هوية قوية، ومن الصعب اتهام
 
 **تقييم VibeCritic: 7.6/10.** تجربة بصرية وموسيقية جريئة، لكنها أكثر نجاحاً في صناعة المزاج من تعميق كل الشخصيات والعلاقات.
 
+## هل ينجح الفيلم خارج المقارنة مع الرواية؟
+
+يمكن للمشاهد الذي لا يحمل ارتباطاً مسبقاً بنص برونتي أن يتعامل مع الفيلم باعتباره دراما رومانسية ذات توقيع بصري واضح، وهذا يمنحه مساحة أوسع للاستمتاع بالاختيارات الشكلية. لكن الاستقلال عن الرواية لا يعني أن الفيلم يُعفى من بناء دوافع الشخصيات؛ فحتى الاقتباس الحر يحتاج إلى جعل التحولات مفهومة ومؤثرة داخل عالمه الخاص. في بعض اللحظات ينجح العمل في ذلك عبر الصورة والموسيقى، وفي لحظات أخرى يبدو أن الرمز أو التكوين البصري يؤديان وظيفة كان ينبغي أن تحملها الكتابة.
+
+لهذا لا تكفي عبارة «اقتباس غير وفي» لوصف التجربة، كما لا تكفي الإشادة بالتصوير لتبرير كل اختصار. السؤال الأدق هو ما إذا كانت الإضافات تصنع معنى جديداً. الإجابة متفاوتة: الفيلم يملك رؤية يمكن تمييزها، لكنه لا يحول كل عناصرها إلى دراما متساوية القوة.
 ## مصادر التحقق
 - [Warner Bros. — الموقع الرسمي للفيلم](https://www.wutheringheightsfilm.com/synopsis/)
 - [Warner Bros. — الإعلان الرسمي](https://www.youtube.com/watch?v=3fLCdIYShEQ)
