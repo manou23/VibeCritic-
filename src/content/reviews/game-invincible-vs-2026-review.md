@@ -16,8 +16,8 @@ soundScore: 8.1
 pacingScore: 8
 reviewMode: review
 platforms: ["PlayStation 5","Xbox Series X|S","PC"]
-poster: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2353060/header.jpg"
-backdrop: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2353060/library_hero.jpg"
+poster: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2353060/8cd8eff0576c0503650c611cd0ef76faf905d13d/header.jpg?t=1794854337"
+backdrop: "https://xboxwire.thesourcemediaassets.com/sites/2/2026/06/Universa5-b981dfe59de077c5473a-1900x1080.jpg"
 pros:
   - "نظام فرق 3 ضد 3 يمنح بناء الفريق وتبديل المقاتلين قيمة تكتيكية"
   - "هوية بصرية دموية تنسجم مع عالم Invincible"
