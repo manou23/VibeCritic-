@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-19T16:52:43.247Z",
+  "updatedAt": "2026-11-20T01:05:55.839Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -17,10 +17,10 @@
       },
       "status": "waiting",
       "stage": 0,
-      "attempts": 1,
+      "attempts": 2,
       "createdAt": "2026-11-19T16:51:34.241Z",
-      "updatedAt": "2026-11-19T16:52:43.247Z",
-      "nextAttemptAt": "2026-11-19T17:52:43.247Z",
+      "updatedAt": "2026-11-20T01:05:55.839Z",
+      "nextAttemptAt": "2026-11-20T03:05:55.839Z",
       "evidence": {
         "title": "Grand Theft Auto V",
         "type": "game",
@@ -63,7 +63,7 @@
       },
       "sections": [],
       "article": null,
-      "lastError": "All enabled free-only providers failed: رد النموذج JSON غير مكتمل أو ينقصه قوس إغلاق",
+      "lastError": "Article is too short: 512 words",
       "resumeStatus": "queued"
     }
   },
@@ -72,6 +72,11 @@
     "2026-11-19": {
       "articles": 0,
       "requests": 1,
+      "tokens": 0
+    },
+    "2026-11-20": {
+      "articles": 0,
+      "requests": 4,
       "tokens": 0
     }
   },
