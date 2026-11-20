@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-20T22:20:23.207Z",
+  "updatedAt": "2026-11-20T22:22:55.312Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -254,6 +254,72 @@
       "articlePath": "src/content/reviews/series-one-piece-37854.md",
       "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-one-piece-37854/",
       "resumeStatus": "verifying"
+    },
+    "series:153312": {
+      "key": "series:153312",
+      "type": "series",
+      "id": "153312",
+      "title": "Tulsa King",
+      "item": {
+        "type": "series",
+        "id": "153312",
+        "name": "Tulsa King",
+        "date": "2022-11-13",
+        "popularity": 242.3391,
+        "source": "TMDB"
+      },
+      "status": "waiting",
+      "stage": 0,
+      "attempts": 1,
+      "createdAt": "2026-11-20T22:22:25.727Z",
+      "updatedAt": "2026-11-20T22:22:55.311Z",
+      "nextAttemptAt": "2026-11-20T23:22:55.311Z",
+      "evidence": {
+        "title": "Tulsa King",
+        "type": "series",
+        "sourceId": "series:153312",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/153312",
+        "overview": "New York mafia capo Dwight \"The General\" Manfredi is released from prison after 25 years and exiled by his boss to set up shop in Tulsa, Oklahoma. Realizing that his mob family may not have his best interests in mind, Dwight slowly builds a crew.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/153312",
+            "extract": "New York mafia capo Dwight \"The General\" Manfredi is released from prison after 25 years and exiled by his boss to set up shop in Tulsa, Oklahoma. Realizing that his mob family may not have his best interests in mind, Dwight slowly builds a crew."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Tulsa_King",
+            "extract": "Tulsa King is an American comedy and crime drama television series created by Taylor Sheridan for the streaming platform Paramount+. The series stars Sylvester Stallone as Dwight \"The General\" Manfredi, an American Mafia caporegime who has been recently released from prison in New York and is sent to Tulsa, Oklahoma, where he begins to set up a criminal organization. It is Stallone's first leading role in a scripted television series."
+          }
+        ],
+        "releaseDate": "2022-11-13",
+        "genres": [
+          "Crime",
+          "Drama",
+          "Comedy"
+        ],
+        "platforms": [],
+        "cast": [
+          "Sylvester Stallone",
+          "Martin Starr",
+          "Jay Will",
+          "Vincent Piazza",
+          "Annabella Sciorra",
+          "Chris Caldovino",
+          "McKenna Quigley Harrington",
+          "Frank Grillo"
+        ],
+        "crew": [],
+        "rating": 8.3,
+        "votes": 2969,
+        "poster": "https://image.tmdb.org/t/p/w780/y13WOeZ2rz2Ezpws0RJ0I8sQpG4.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/mNHRGO1gFpR2CYZdANe72kcKq7G.jpg"
+      },
+      "sections": [],
+      "article": null,
+      "lastError": "Gemini editorial review HTTP 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n",
+      "resumeStatus": "queued"
     }
   },
   "providers": {},
@@ -265,7 +331,7 @@
     },
     "2026-11-20": {
       "articles": 2,
-      "requests": 9,
+      "requests": 11,
       "tokens": 9858
     }
   },
