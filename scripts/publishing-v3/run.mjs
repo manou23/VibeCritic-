@@ -43,6 +43,11 @@ const result = await withRunLock(async () => {
       if (response.status === 404) {
         try { await fs.access(job.articlePath); }
         catch { transition(job,"ready"); await saveState(state); return { action:"ready-after-build-rollback", key:job.key }; }
+        job.attempts = (job.attempts || 0) + 1;
+        const retryAt = new Date(Date.now() + 10 * 60 * 1000).toISOString();
+        transition(job,"waiting",{resumeStatus:"verifying",nextAttemptAt:retryAt,lastError:"Article file exists, but the live site still returns HTTP 404; deployment verification will retry."});
+        await saveState(state);
+        return { action:"deployment-pending", key:job.key, url:job.verifiedUrl, retryAt };
       }
       if (!response.ok) throw new Error("Live verification returned HTTP " + response.status);
       const html = await response.text();
