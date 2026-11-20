@@ -6,14 +6,16 @@ summary: "يعيد Dexter: Resurrection تنشيط عالم ديكستر عبر 
 verdict: "عودة قوية وممتعة. مايكل سي. هول يستعيد الشخصية بثقة، ونيويورك تمنحها مساحة جديدة، والخصوم والضيوف يعيدون روح المطاردة والفكاهة السوداء. يضعف العمل حين لا يمنح خط هاريسون العمق الكافي أو يبالغ في بعض التحولات، لكنه يظل أكثر حيوية مما كان متوقعاً من عودة أخرى لديكسـتر."
 reviewVersion: 6
 reviewMode: review
+youtubeVideoId: "nTOf1FIsBcs"
+youtubeVideoTitle: "Dexter: Resurrection — الإعلان الرسمي للموسم الثاني | Paramount+"
 date: 2026-11-20
 releaseDate: "2025-07-13"
 type: series
-score: 8.5
-storyScore: 8.6
-visualsScore: 8.4
-soundScore: 8.2
-pacingScore: 8.6
+score: 7.7
+storyScore: 7.7
+visualsScore: 7.8
+soundScore: 7.8
+pacingScore: 7.5
 sourceName: "Paramount+ / Rotten Tomatoes / Metacritic / RogerEbert.com / Skydance"
 sourceId: "series:259909"
 sourceUrl: "https://www.themoviedb.org/tv/259909"
