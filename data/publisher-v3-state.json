@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-20T22:39:11.270Z",
+  "updatedAt": "2026-11-20T22:40:14.786Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -473,6 +473,80 @@
       "article": null,
       "lastError": null,
       "resumeStatus": "queued"
+    },
+    "series:293610": {
+      "key": "series:293610",
+      "type": "series",
+      "id": "293610",
+      "title": "Doctor X: Mafia in White",
+      "item": {
+        "type": "series",
+        "id": "293610",
+        "name": "Doctor X: Mafia in White",
+        "date": "2026-10-09",
+        "popularity": 59.4024,
+        "source": "TMDB"
+      },
+      "status": "waiting",
+      "stage": 0,
+      "attempts": 1,
+      "createdAt": "2026-11-20T22:39:33.046Z",
+      "updatedAt": "2026-11-20T22:40:14.786Z",
+      "nextAttemptAt": "2026-11-20T23:40:14.786Z",
+      "evidence": {
+        "title": "Doctor X: Mafia in White",
+        "type": "series",
+        "sourceId": "series:293610",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/293610",
+        "overview": "In a hospital dominated by ego and corruption, an enigmatic but brilliant surgeon arrives — taking on seemingly impossible cases amid fierce opposition.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/293610",
+            "extract": "In a hospital dominated by ego and corruption, an enigmatic but brilliant surgeon arrives — taking on seemingly impossible cases amid fierce opposition."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Doctor_X%3A_Mafia_in_White",
+            "extract": "Doctor X: Mafia in White is a 2026 South Korean medical noir television series written by Pyeon Seong-geun, directed by Lee Jung-rim, and starring Kim Ji-won, Lee Jung-eun, Son Hyun-joo, and Kim Woo-seok. Based on TV Asahi's Doctor-X: Surgeon Michiko Daimon, the series depicts a surgeon who proves her worth purely through her skill, as she operates on corrupt organizations riddled with injustice. It aired on SBS TV from October 9, to November 14, 2026, every Friday and Saturday at 21:50 (KST). It is also available for streaming on Netflix."
+          },
+          {
+            "name": "YouTube — Netflix India",
+            "url": "https://www.youtube.com/watch?v=nGkVEJNPHpg",
+            "extract": "Verified public, embeddable official trailer: Doctor X: Mafia in White | Official Trailer | Netflix India"
+          }
+        ],
+        "youtubeVideoId": "nGkVEJNPHpg",
+        "youtubeVideoTitle": "Doctor X: Mafia in White | Official Trailer | Netflix India",
+        "youtubeChannel": "Netflix India",
+        "releaseDate": "2026-10-09",
+        "genres": [
+          "Mystery",
+          "Drama",
+          "Crime"
+        ],
+        "platforms": [],
+        "cast": [
+          "Kim Ji-won",
+          "Lee Jung-eun",
+          "Son Hyun-joo",
+          "Kim Woo-seok",
+          "Lee Jin-hee",
+          "Kim Young-min",
+          "Lee Sung-wook",
+          "Kwon Seung-woo"
+        ],
+        "crew": [],
+        "rating": 8.6,
+        "votes": 70,
+        "poster": "https://image.tmdb.org/t/p/w780/nDDVzQfv95PGwj9nV2fJvUrkcvU.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/mDYIV71RL3mkaW8IfSGNthuVB7l.jpg"
+      },
+      "sections": [],
+      "article": null,
+      "lastError": "Gemini editorial review HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
+      "resumeStatus": "queued"
     }
   },
   "providers": {},
@@ -484,7 +558,7 @@
     },
     "2026-11-20": {
       "articles": 3,
-      "requests": 18,
+      "requests": 20,
       "tokens": 16807
     }
   },
