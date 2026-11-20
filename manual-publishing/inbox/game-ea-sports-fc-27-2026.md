@@ -14,12 +14,12 @@ youtubeVideoTitle: "EA SPORTS FC 27 | Official Reveal Trailer"
 mediaVerified: true
 aiGenerated: false
 editorialWorkflow: "manual-assisted"
-reviewMode: "review"
+reviewMode: review
 score: 8.4
-storyScore: 7.8
+storyScore: 8.3
 visualsScore: 8.7
 soundScore: 8.2
-pacingScore: 8.3
+pacingScore: 8.4
 pros:
   - "تحديث ملموس لعمق سوق الانتقالات في Manager Career"
   - "The Grounds يضيف مساحة اجتماعية وأنشطة تتجاوز مباريات 11 ضد 11"
