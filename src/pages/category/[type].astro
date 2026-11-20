@@ -21,11 +21,10 @@ const copy={game:{en:'GAMES & INTERACTIVE',title:'اكتشف عالم الألع
  <div class="category-discovery-copy"><p class="catalog-eyebrow">{copy.en}</p><h1>{copy.title}</h1><p>{copy.desc}</p><div class="category-stat"><strong>{reviews.length}</strong><span>مراجعة منشورة في {TYPE_PLURAL[type]}</span></div></div>
 </section>
 <section class="wrap catalog-section">
- <div class="catalog-heading"><div><p class="catalog-eyebrow">LATEST REVIEWS</p><h2>مكتبة {TYPE_PLURAL[type]}</h2><p>ابحث وصفِّ النتائج ورتّبها حسب ما يهمك</p></div><span class="catalog-total" id="category-result-count" aria-live="polite">{reviews.length} مراجعة</span></div>
- {reviews.length>0&&<section class="category-filter-panel" aria-label="البحث وتصفية المراجعات">
-  <div class="category-filter-topline"><div><p class="catalog-eyebrow">FIND YOUR NEXT REVIEW</p><h3>ابحث عن عمل محدد</h3><p>اكتب اسم اللعبة أو الفيلم أو المسلسل، ثم استخدم خيارات التصفية عند الحاجة.</p></div><button type="button" class="category-filter-reset" id="review-reset">إعادة ضبط الكل</button></div>
-  <label class="category-search-field" for="review-search"><span>البحث بالاسم</span><input id="review-search" type="search" list="review-title-suggestions" placeholder="مثال: GTA VI أو The Last of Us..." autocomplete="off" aria-describedby="review-search-help"/><datalist id="review-title-suggestions">{reviews.map(review=><option value={review.data.title}/>)}{reviews.filter(review=>review.data.originalTitle).map(review=><option value={review.data.originalTitle}/>)}</datalist><small id="review-search-help">يمكنك كتابة الاسم بالعربية أو الإنجليزية.</small></label>
-  <div class="category-filter-heading"><strong>تصفية النتائج</strong><span>اختياري — اختر ما تريد تضييقه فقط</span></div>
+ <div class="catalog-heading"><div><p class="catalog-eyebrow">LATEST REVIEWS</p><h2>مكتبة {TYPE_PLURAL[type]}</h2><p>صفِّ المراجعات ورتّب النتائج بالطريقة التي تناسبك</p></div><span class="catalog-total" id="category-result-count" aria-live="polite">{reviews.length} مراجعة</span></div>
+ {reviews.length>0&&<section class="category-filter-panel" aria-label="تصفية المراجعات">
+  <div class="category-filter-topline"><div><p class="catalog-eyebrow">REFINE THE LIBRARY</p><h3>تصفية المراجعات</h3><p>اختر التصنيف أو المنصة أو السنة أو التقييم، ثم رتّب النتائج كما تحب.</p></div><button type="button" class="category-filter-reset" id="review-reset">إعادة ضبط الفلاتر</button></div>
+  <div class="category-filter-heading"><strong>خيارات التصفية</strong><span>يمكنك اختيار فلتر واحد أو أكثر</span></div>
   <div class="category-filters">
    <label class="category-filter-field"><span>التصنيف</span><select id="review-genre"><option value="all">كل التصنيفات</option>{genres.map(genre=><option value={genre.toLowerCase()}>{genre}</option>)}</select></label>
    {type==='game'&&<label class="category-filter-field"><span>المنصة</span><select id="review-platform"><option value="all">كل المنصات</option>{platforms.map(platform=><option value={platform.toLowerCase()}>{platform}</option>)}</select></label>}
@@ -50,7 +49,6 @@ const copy={game:{en:'GAMES & INTERACTIVE',title:'اكتشف عالم الألع
 const grid=document.querySelector<HTMLElement>('#category-review-grid');
 if(grid){
  const cards=[...grid.querySelectorAll<HTMLElement>('.category-review-item')];
- const search=document.querySelector<HTMLInputElement>('#review-search');
  const genre=document.querySelector<HTMLSelectElement>('#review-genre');
  const platform=document.querySelector<HTMLSelectElement>('#review-platform');
  const year=document.querySelector<HTMLSelectElement>('#review-year');
@@ -112,7 +110,6 @@ if(grid){
   history.replaceState({},'',url);
  };
  const update=(resetPage=true)=>{
-  const term=normalize(search?.value||'');
   const selectedGenre=genre?.value||'all';
   const selectedPlatform=platform?.value||'all';
   const selectedYear=year?.value||'all';
@@ -121,8 +118,7 @@ if(grid){
   matchingCards=cards.filter(card=>{
    const title=card.dataset.title||'';
    const genres=(card.dataset.genres||'').split('|');
-   return (!term||title.includes(term))
-    &&(selectedGenre==='all'||genres.includes(selectedGenre))
+   return (selectedGenre==='all'||genres.includes(selectedGenre))
     &&(selectedPlatform==='all'||(card.dataset.platforms||'').split('|').includes(selectedPlatform))
     &&(selectedYear==='all'||card.dataset.year===selectedYear)
     &&(minimum===0||(card.dataset.rated==='true'&&Number(card.dataset.score||0)>=minimum));
@@ -136,21 +132,21 @@ if(grid){
    return String(b.dataset.date).localeCompare(String(a.dataset.date));
   });
   matchingCards.forEach(card=>grid.append(card));
-  const controls=[search,genre,platform,year,minScore,sort];
+  const controls=[genre,platform,year,minScore,sort];
   controls.forEach(control=>{if(!control)return;const active=control===search?Boolean(control.value.trim()):control.value!==(control===minScore?'0':control===sort?'newest':'all');control.classList.toggle('has-selection',active);control.closest('label')?.classList.toggle('has-selection',active);});
-  const hasFilters=controls.some(control=>control&&(control===search?Boolean(control.value.trim()):control.value!==(control===minScore?'0':control===sort?'newest':'all')));
+  const hasFilters=controls.some(control=>control&&control.value!==(control===minScore?'0':control===sort?'newest':'all'));
   if(reset)reset.hidden=!hasFilters;
-  if(filterFeedback)filterFeedback.textContent=hasFilters?'تم العثور على '+matchingCards.length+' نتيجة مطابقة لاختياراتك.':'تعرض المكتبة أحدث المراجعات أولاً. يمكنك استخدام البحث أو اختيار فلتر واحد أو أكثر.';
+  if(filterFeedback)filterFeedback.textContent=hasFilters?'تم العثور على '+matchingCards.length+' نتيجة مطابقة للفلاتر المختارة.':'تعرض المكتبة أحدث المراجعات أولاً. يمكنك اختيار فلتر واحد أو أكثر لتضييق النتائج.';
   if(resetPage)currentPage=1;
   renderPage();
  };
- [search,genre,platform,year,minScore,sort].forEach(control=>control?.addEventListener('input',()=>update(true)));
+ [genre,platform,year,minScore,sort].forEach(control=>control?.addEventListener('input',()=>update(true)));
  [genre,platform,year,minScore,sort].forEach(control=>control?.addEventListener('change',()=>update(true)));
- reset?.addEventListener('click',()=>{if(search)search.value='';[genre,platform,year].forEach(control=>{if(control)control.value='all';});if(minScore)minScore.value='0';if(sort)sort.value='newest';update(true);search?.focus();});
+ reset?.addEventListener('click',()=>{[genre,platform,year].forEach(control=>{if(control)control.value='all';});if(minScore)minScore.value='0';if(sort)sort.value='newest';update(true);});
  window.addEventListener('popstate',()=>{currentPage=Math.max(1,Number(new URLSearchParams(location.search).get('page'))||1);renderPage();});
  update(false);
 }
-</script>>
+</script>
 
 <style>
 .category-pagination{
@@ -163,41 +159,46 @@ if(grid){
 .category-pagination button{
  position:relative;display:inline-flex;align-items:center;justify-content:center;
  min-width:48px;min-height:48px;padding:0 14px;
- border:1px solid var(--vc-border);border-radius:3px;
- background:var(--vc-surface);color:var(--vc-text);
- font:inherit;font-size:14px;font-weight:850;line-height:1;
+ border:1px solid color-mix(in srgb,var(--vc-text) 22%,transparent);border-radius:8px;
+ background:transparent;color:var(--vc-text);
+ font:inherit;font-size:15px;font-weight:900;line-height:1;
  cursor:pointer;touch-action:manipulation;
- transition:background .18s ease,border-color .18s ease,color .18s ease
+ transition:background .2s ease,border-color .2s ease,color .2s ease,box-shadow .2s ease,transform .2s ease
 }
 .category-pagination button:not(:disabled):not(.is-active):hover{
- border-color:var(--vc-accent);background:var(--vc-surface-muted);color:var(--vc-accent-deep)
+ border-color:var(--vc-accent);background:color-mix(in srgb,var(--vc-accent) 9%,transparent);
+ color:var(--vc-text);transform:translateY(-2px)
 }
 .category-pagination button:focus-visible{outline:2px solid var(--vc-accent);outline-offset:3px}
 .category-pagination button:disabled{
- color:var(--vc-muted);opacity:.42;cursor:not-allowed
+ color:var(--vc-muted);opacity:.38;cursor:not-allowed
 }
 .category-pagination button.is-active{
- border-color:var(--vc-accent);background:var(--vc-accent);color:#17120b;
- box-shadow:0 0 0 3px color-mix(in srgb,var(--vc-accent) 22%,transparent),inset 0 -3px 0 rgba(0,0,0,.14);
- font-weight:950
+ border:1px solid color-mix(in srgb,var(--vc-accent) 88%,white);
+ background:color-mix(in srgb,var(--vc-accent) 8%,transparent);
+ color:var(--vc-text);
+ box-shadow:0 0 0 1px color-mix(in srgb,var(--vc-accent) 22%,transparent),0 0 16px color-mix(in srgb,var(--vc-accent) 34%,transparent),inset 0 0 14px color-mix(in srgb,var(--vc-accent) 9%,transparent);
+ font-weight:1000
 }
-.category-pagination button.is-active:hover{background:var(--vc-accent);color:#17120b}
+.category-pagination button.is-active:hover{background:color-mix(in srgb,var(--vc-accent) 11%,transparent);color:var(--vc-text)}
 .category-pagination button:first-child,.category-pagination button:last-child{
- min-width:104px;min-height:48px;padding-inline:18px;
- border-color:var(--vc-accent);background:transparent;
- color:var(--vc-accent-deep);font-size:13px;font-weight:900
+ min-width:112px;min-height:50px;padding-inline:19px;
+ border:1px solid var(--vc-accent);border-radius:8px;
+ background:var(--vc-accent);color:#fff;
+ box-shadow:0 5px 14px color-mix(in srgb,var(--vc-accent) 23%,transparent);
+ font-size:13px;font-weight:950
 }
 .category-pagination button:first-child:not(:disabled):hover,.category-pagination button:last-child:not(:disabled):hover{
- border-color:var(--vc-accent);background:var(--vc-accent);color:#fff
+ border-color:var(--vc-accent-deep);background:var(--vc-accent-deep);color:#fff;
+ box-shadow:0 7px 18px color-mix(in srgb,var(--vc-accent) 34%,transparent);transform:translateY(-2px)
 }
 .category-page-dots{display:inline-flex;align-items:center;justify-content:center;min-width:28px;color:var(--vc-muted);font-size:15px;user-select:none}
 .category-page-indicator{display:none}
 .dark-mode .category-pagination{border-color:var(--vc-border)}
-.dark-mode .category-pagination button{background:var(--vc-surface);color:var(--vc-text)}
-.dark-mode .category-pagination button:not(:disabled):not(.is-active):hover{background:var(--vc-surface-muted);border-color:var(--vc-accent);color:var(--vc-accent)}
-.dark-mode .category-pagination button.is-active{background:var(--vc-accent);border-color:var(--vc-accent);color:#17120b;box-shadow:0 0 0 3px color-mix(in srgb,var(--vc-accent) 24%,transparent),inset 0 -3px 0 rgba(0,0,0,.18)}
-.dark-mode .category-pagination button:first-child,.dark-mode .category-pagination button:last-child{background:transparent;color:var(--vc-accent)}
-
+.dark-mode .category-pagination button{background:transparent;color:var(--vc-text);border-color:color-mix(in srgb,var(--vc-text) 26%,transparent)}
+.dark-mode .category-pagination button:not(:disabled):not(.is-active):hover{background:color-mix(in srgb,var(--vc-accent) 13%,transparent);border-color:var(--vc-accent);color:var(--vc-text)}
+.dark-mode .category-pagination button.is-active{background:color-mix(in srgb,var(--vc-accent) 10%,transparent);border-color:var(--vc-accent);color:var(--vc-text);box-shadow:0 0 0 1px color-mix(in srgb,var(--vc-accent) 26%,transparent),0 0 18px color-mix(in srgb,var(--vc-accent) 38%,transparent),inset 0 0 15px color-mix(in srgb,var(--vc-accent) 11%,transparent)}
+.dark-mode .category-pagination button:first-child,.dark-mode .category-pagination button:last-child{background:var(--vc-accent);border-color:var(--vc-accent);color:#fff}
 .category-filter-panel{margin:24px 0 30px;padding:24px;border:1px solid var(--vc-border);border-top:3px solid var(--vc-accent);background:var(--vc-surface);box-shadow:0 8px 24px rgba(25,25,25,.045);direction:rtl}
 .category-filter-topline{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:22px}
 .category-filter-topline h3{margin:4px 0 6px;font-size:21px;font-weight:900;color:var(--vc-text)}
@@ -227,7 +228,7 @@ if(grid){
 .category-review-item[hidden]{display:none!important}
 @media(max-width:560px){
  .category-pagination{flex-wrap:nowrap;gap:14px;margin:34px auto 20px;padding:22px 8px}
- .category-pagination button{min-width:104px;min-height:52px;padding-inline:16px;font-size:14px}
+ .category-pagination button{min-width:48px;min-height:52px;padding-inline:13px;font-size:15px}
  .category-pagination button:first-child,.category-pagination button:last-child{min-width:104px;min-height:52px;padding-inline:14px;font-size:13px}
  .category-page-indicator{display:inline-flex;align-items:center;justify-content:center;min-width:92px;min-height:48px;padding:0 8px;color:var(--vc-text);font-size:14px;font-weight:850;white-space:nowrap}
  .category-page-dots{display:none}
