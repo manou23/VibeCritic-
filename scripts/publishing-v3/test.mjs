@@ -117,6 +117,11 @@ assert.equal(acceptedReview.provider,"gemini");
 assert.equal(acceptedReview.requests,1);
 assert.equal(acceptedReview.tokens,120);
 assert.equal(geminiCalls,1);
+globalThis.fetch = async () => { throw new DOMException("simulated Gemini timeout","TimeoutError"); };
+const timeoutReview = await geminiReviewer.reviewArticle({title:"Test",body:"مقال"}, {title:"Test",sources:[]});
+assert.equal(timeoutReview.skipped,true);
+assert.match(timeoutReview.reason,/timed out/);
+assert.equal(timeoutReview.requests,1);
 globalThis.fetch = async () => ({
   ok:true,
   json:async()=>({candidates:[{content:{parts:[{text:JSON.stringify({approved:false,score:5,factualRisk:"high",repetition:"low",exaggeration:"medium",issues:["ادعاء غير مدعوم"],notes:"مرفوض"})}]}}]})
