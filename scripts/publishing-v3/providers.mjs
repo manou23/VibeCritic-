@@ -5,7 +5,7 @@ let openAICallsThisRun = 0;
 const OPENAI_MAX_CALLS_PER_RUN = 1;
 const OPENAI_MAX_OUTPUT_TOKENS = 5000;
 const providers = [
-  { id:"gemini", key:"GEMINI_API_KEY", enabled:env.PUBLISHER_V3_GEMINI_FREE_ONLY === "true", model:env.PUBLISHER_V3_GEMINI_MODEL || "gemini-2.5-flash" },
+  { id:"gemini", key:"GEMINI_API_KEY", enabled:env.PUBLISHER_V3_GEMINI_FREE_ONLY === "true", model:env.PUBLISHER_V3_GEMINI_MODEL || "gemini-3.8-flash" },
   { id:"groq", key:"GROQ_API_KEY", enabled:env.PUBLISHER_V3_GROQ_FREE_ONLY === "true", model:env.PUBLISHER_V3_GROQ_MODEL || "openai/gpt-oss-120b" },
   { id:"openrouter", key:"OPENROUTER_API_KEY", enabled:env.PUBLISHER_V3_OPENROUTER_FREE_ONLY === "true", model:env.PUBLISHER_V3_OPENROUTER_MODEL || "nvidia/nemotron-3.5-super-vl:free" },
   { id:"openai", key:"OPENAI_API_KEY", enabled:env.PUBLISHER_V3_OPENAI_ENABLED === "true", model:env.PUBLISHER_V3_OPENAI_MODEL || "gpt-4o-mini" }

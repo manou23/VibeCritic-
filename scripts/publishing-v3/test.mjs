@@ -90,6 +90,18 @@ globalThis.fetch = originalFetch;
 process.env.PUBLISHER_V3_OPENAI_ENABLED = "false";
 const disabledOpenai = await import("./providers.mjs?openai-disabled-test");
 assert.equal(disabledOpenai.availableProviders().length,0);
+// Keep the free Gemini fallback aligned with the model recommended by Google's API.
+process.env.GEMINI_API_KEY = "test-gemini-key";
+process.env.PUBLISHER_V3_GEMINI_FREE_ONLY = "true";
+delete process.env.PUBLISHER_V3_GEMINI_MODEL;
+process.env.GROQ_API_KEY = "";
+process.env.PUBLISHER_V3_GROQ_FREE_ONLY = "false";
+process.env.OPENROUTER_API_KEY = "";
+process.env.PUBLISHER_V3_OPENROUTER_FREE_ONLY = "false";
+process.env.OPENAI_API_KEY = "";
+process.env.PUBLISHER_V3_OPENAI_ENABLED = "false";
+const geminiDefault = await import("./providers.mjs?gemini-default-model-test");
+assert.deepEqual(geminiDefault.availableProviders().map(x=>({id:x.id,model:x.model})),[{id:"gemini",model:"gemini-3.8-flash"}]);
 const after = await withRunLock(async () => "lock-released", lock);
 assert.equal(after, "lock-released");
 await fs.rm(dir, { recursive:true, force:true });
