@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-20T22:24:43.509Z",
+  "updatedAt": "2026-11-20T22:25:53.379Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -386,6 +386,30 @@
       "article": null,
       "lastError": "The operation was aborted due to timeout",
       "resumeStatus": "queued"
+    },
+    "series:291507": {
+      "key": "series:291507",
+      "type": "series",
+      "id": "291507",
+      "title": "The Body",
+      "item": {
+        "type": "series",
+        "id": "291507",
+        "name": "The Body",
+        "date": "2026-11-11",
+        "popularity": 187.9399,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-20T22:25:52.713Z",
+      "updatedAt": "2026-11-20T22:25:53.378Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "Independent source is too thin"
     }
   },
   "providers": {},
