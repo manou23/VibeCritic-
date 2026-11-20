@@ -38,6 +38,9 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          PUBLISHER_V3_OPENAI_ENABLED: 'true'
+          PUBLISHER_V3_OPENAI_MODEL: ${{ vars.PUBLISHER_V3_OPENAI_MODEL }}
           PUBLISHER_V3_GEMINI_FREE_ONLY: 'true'
           PUBLISHER_V3_GROQ_FREE_ONLY: 'true'
           PUBLISHER_V3_OPENROUTER_FREE_ONLY: 'true'
