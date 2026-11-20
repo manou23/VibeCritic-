@@ -28,7 +28,7 @@ export async function writeArticle(evidence) {
     return { article:assemble(first.value,evidence), provider:first.provider, tokens:first.tokens, requests:first.requests };
   } catch (qualityError) {
     let retry;
-    try { retry = await generateJson(prompt + "\n\nمراجعة تصحيح إلزامية. أخفقت المسودة السابقة في بوابة الجودة: " + String(qualityError.message).slice(0,250) + ". أعد كتابة المقال كاملاً مع إصلاح الخطأ، ولا تختصر body عن 700 كلمة، وأكمل كل الحقول المطلوبة."); }
+    try { retry = await generateJson(prompt + "\n\nمراجعة تصحيح إلزامية. أخفقت المسودة السابقة في بوابة الجودة: " + String(qualityError.message).slice(0,250) + ". أعد كتابة المقال كاملاً مع إصلاح الخطأ، ولا تختصر body عن 700 كلمة، وأكمل كل الحقول المطلوبة.", { skipProviderId:first.provider }); }
     catch (error) { error.requests = (Number(error.requests)||0) + (Number(first.requests)||1); throw error; }
     let article;
     try { article = assemble(retry.value,evidence); }
