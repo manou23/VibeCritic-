@@ -10,6 +10,11 @@ type: movie
 date: 2026-11-20
 releaseDate: "2026-11-25"
 reviewMode: preview
+poster: "https://dnm.nflximg.net/api/v6/s0XAg4q_jvYbSSbLvySyUsliNSg/AAAAQdt0qpxP2ssx3fr2ECa9E3w0LtGWCajmkejefQfHdkHngjV5GRFtl1W8Vs5UZGHrdPbr9Lg0OXyb3j4MP41rosbG9btxOuBwRRDSrgf0GuBp8kGtexFSWPpVBb1iLsPzaicWyGoIxXmewbMWJCRfvrx7.jpg?r=621"
+backdrop: "https://dnm.nflximg.net/api/v6/s0XAg4q_jvYbSSbLvySyUsliNSg/AAAAQdt0qpxP2ssx3fr2ECa9E3w0LtGWCajmkejefQfHdkHngjV5GRFtl1W8Vs5UZGHrdPbr9Lg0OXyb3j4MP41rosbG9btxOuBwRRDSrgf0GuBp8kGtexFSWPpVBb1iLsPzaicWyGoIxXmewbMWJCRfvrx7.jpg?r=621"
+youtubeVideoId: "fJH-wfSXnWg"
+youtubeVideoTitle: "THE FURTHER MIS-ADVENTURES OF CLIFF BOOTH | Official Trailer #2 | Netflix"
+mediaVerified: true
 platforms: ["IMAX (عرض سينمائي محدود)", "Netflix (23 ديسمبر 2026)"]
 pros:
   - "عودة براد بيت إلى شخصية كليف بوث تمنح الفيلم نقطة انطلاق درامية معروفة"
