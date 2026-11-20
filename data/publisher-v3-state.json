@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-20T22:52:05.436Z",
+  "updatedAt": "2026-11-20T22:52:44.919Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -563,10 +563,10 @@
       },
       "status": "waiting",
       "stage": 0,
-      "attempts": 1,
+      "attempts": 2,
       "createdAt": "2026-11-20T22:41:46.799Z",
-      "updatedAt": "2026-11-20T22:52:05.436Z",
-      "nextAttemptAt": "2026-11-20T22:51:00.000Z",
+      "updatedAt": "2026-11-20T22:52:44.918Z",
+      "nextAttemptAt": "2026-11-20T22:53:44.918Z",
       "evidence": {
         "title": "The Altruists",
         "type": "series",
