@@ -40,6 +40,7 @@ export async function reviewArticle(article, evidence) {
     }
     throw error;
   }
+  if ([500,502,503,504].includes(response.status)) return { skipped:true, reason:"Gemini editorial review temporarily unavailable (HTTP " + response.status + "); local article validation remains required", provider:"gemini", model, tokens:0, requests:1 };
   if (!response.ok) throw new Error("Gemini editorial review HTTP " + response.status + ": " + (await response.text()).slice(0,400));
   const data = await response.json();
   const raw = (data.candidates?.[0]?.content?.parts || []).map(part=>part.text || "").join("");
