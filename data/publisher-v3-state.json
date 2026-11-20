@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-20T22:22:55.312Z",
+  "updatedAt": "2026-11-20T22:24:43.509Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -320,6 +320,72 @@
       "article": null,
       "lastError": "Gemini editorial review HTTP 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n",
       "resumeStatus": "queued"
+    },
+    "series:279246": {
+      "key": "series:279246",
+      "type": "series",
+      "id": "279246",
+      "title": "The Remarried Empress",
+      "item": {
+        "type": "series",
+        "id": "279246",
+        "name": "The Remarried Empress",
+        "date": "2026-11-03",
+        "popularity": 242.3295,
+        "source": "TMDB"
+      },
+      "status": "waiting",
+      "stage": 0,
+      "attempts": 1,
+      "createdAt": "2026-11-20T22:23:15.392Z",
+      "updatedAt": "2026-11-20T22:24:43.508Z",
+      "nextAttemptAt": "2026-11-20T23:24:43.508Z",
+      "evidence": {
+        "title": "The Remarried Empress",
+        "type": "series",
+        "sourceId": "series:279246",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/279246",
+        "overview": "Beloved Empress Navier rules the Eastern Empire alongside Emperor Sovieshu. But when Sovieshu falls for a runaway slave and demands a divorce, Navier will agree on one condition: that she's given approval to remarry rival Prince Heinrey of the Western Kingdom.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/279246",
+            "extract": "Beloved Empress Navier rules the Eastern Empire alongside Emperor Sovieshu. But when Sovieshu falls for a runaway slave and demands a divorce, Navier will agree on one condition: that she's given approval to remarry rival Prince Heinrey of the Western Kingdom."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/The_Remarried_Empress",
+            "extract": "The Remarried Empress is an ongoing South Korean romantic fantasy television series written by Yeoh Geena and Hyun Choong-yeol, directed by Cho Su-won and Kim Chang-ju, and starring Shin Min-a, Ju Ji-hoon, Lee Jong-suk, and Lee Se-young. Based on the web novel of the same name by Alphatart, Sumpul, and HereLee, the series depicts Empress Navier, who is divorced by Emperor Sovieshu and remarries Prince Heinrey of the Western Kingdom."
+          }
+        ],
+        "releaseDate": "2026-11-03",
+        "genres": [
+          "Drama",
+          "Sci-Fi & Fantasy"
+        ],
+        "platforms": [],
+        "cast": [
+          "Shin Min-a",
+          "Ju Ji-hoon",
+          "Lee Jong-suk",
+          "Lee Se-young"
+        ],
+        "crew": [
+          "Jo Soo-won",
+          "Hyeon Choong-yeol",
+          "Yeoh Gee-na",
+          "Sim Na-yeon"
+        ],
+        "rating": 8.798,
+        "votes": 121,
+        "poster": "https://image.tmdb.org/t/p/w780/zn3IXZzGavH3qle3o3g1r32eXDy.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/fNcpHmuZLKoyhNMBEzdqzX8iIvg.jpg"
+      },
+      "sections": [],
+      "article": null,
+      "lastError": "The operation was aborted due to timeout",
+      "resumeStatus": "queued"
     }
   },
   "providers": {},
@@ -331,7 +397,7 @@
     },
     "2026-11-20": {
       "articles": 2,
-      "requests": 11,
+      "requests": 13,
       "tokens": 9858
     }
   },
