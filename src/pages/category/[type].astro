@@ -23,7 +23,7 @@ const copy={game:{en:'GAMES & INTERACTIVE',title:'اكتشف عالم الألع
 <section class="wrap catalog-section">
  <div class="catalog-heading"><div><p class="catalog-eyebrow">LATEST REVIEWS</p><h2>مكتبة {TYPE_PLURAL[type]}</h2><p>صفِّ المراجعات ورتّب النتائج بالطريقة التي تناسبك</p></div><span class="catalog-total" id="category-result-count" aria-live="polite">{reviews.length} مراجعة</span></div>
  {reviews.length>0&&<section class="category-filter-panel" aria-label="تصفية المراجعات">
-  <div class="category-filter-topline"><div><p class="catalog-eyebrow">REFINE THE LIBRARY</p><h3>تصفية المراجعات</h3><p>اختر التصنيف أو المنصة أو السنة أو التقييم، ثم رتّب النتائج كما تحب.</p></div><button type="button" class="category-filter-reset" id="review-reset">إعادة ضبط الفلاتر</button></div>
+  <div class="category-filter-topline"><div><p class="catalog-eyebrow">REFINE THE LIBRARY</p><p>اختر التصنيف أو المنصة أو السنة أو التقييم، ثم رتّب النتائج كما تحب.</p></div><button type="button" class="category-filter-reset" id="review-reset">إعادة ضبط الفلاتر</button></div>
   <div class="category-filter-heading"><strong>خيارات التصفية</strong><span>يمكنك اختيار فلتر واحد أو أكثر</span></div>
   <div class="category-filters">
    <label class="category-filter-field"><span>التصنيف</span><select id="review-genre"><option value="all">كل التصنيفات</option>{genres.map(genre=><option value={genre.toLowerCase()}>{genre}</option>)}</select></label>
