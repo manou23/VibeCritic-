@@ -41,30 +41,39 @@ const result = await withRunLock(async () => {
     }
     if (job.status === "verifying") {
       const response = await fetch(job.verifiedUrl,{signal:AbortSignal.timeout(15000)});
+      let articleFileMissing = false;
       if (response.status === 404) {
         try { await fs.access(job.articlePath); }
-        catch { transition(job,"ready"); await saveState(state); return { action:"ready-after-build-rollback", key:job.key }; }
-        job.attempts = (job.attempts || 0) + 1;
-        const retryAt = new Date(Date.now() + 10 * 60 * 1000).toISOString();
-        transition(job,"waiting",{resumeStatus:"verifying",nextAttemptAt:retryAt,lastError:"Article file exists, but the live site still returns HTTP 404; deployment verification will retry."});
-        await saveState(state);
-        return { action:"deployment-pending", key:job.key, url:job.verifiedUrl, retryAt };
+        catch {
+          transition(job,"ready");
+          await saveState(state);
+          articleFileMissing = true;
+        }
+        if (!articleFileMissing) {
+          job.attempts = (job.attempts || 0) + 1;
+          const retryAt = new Date(Date.now() + 10 * 60 * 1000).toISOString();
+          transition(job,"waiting",{resumeStatus:"verifying",nextAttemptAt:retryAt,lastError:"Article file exists, but the live site still returns HTTP 404; deployment verification will retry."});
+          await saveState(state);
+          return { action:"deployment-pending", key:job.key, url:job.verifiedUrl, retryAt };
+        }
       }
-      if (!response.ok) throw new Error("Live verification returned HTTP " + response.status);
-      const html = await response.text();
-      if (!html.includes(job.title)) throw new Error("Live page does not contain the expected article title");
-      const completedKey = job.key;
-      const completedPath = job.articlePath;
-      const completedUrl = job.verifiedUrl;
-      const completedProvider = job.provider;
-      transition(job,"published",{publishedAt:new Date().toISOString(),article:null,evidence:null});
-      await saveState(state);
-      job = chooseJob(state);
-      if (!job) {
-        const candidate = await discoverCandidate(state);
-        if (!candidate) return { action:"published", key:completedKey, articlePath:completedPath, url:completedUrl, provider:completedProvider };
-        job = enqueue(state,candidate).job;
+      if (!articleFileMissing) {
+        if (!response.ok) throw new Error("Live verification returned HTTP " + response.status);
+        const html = await response.text();
+        if (!html.includes(job.title)) throw new Error("Live page does not contain the expected article title");
+        const completedKey = job.key;
+        const completedPath = job.articlePath;
+        const completedUrl = job.verifiedUrl;
+        const completedProvider = job.provider;
+        transition(job,"published",{publishedAt:new Date().toISOString(),article:null,evidence:null});
         await saveState(state);
+        job = chooseJob(state);
+        if (!job) {
+          const candidate = await discoverCandidate(state);
+          if (!candidate) return { action:"published", key:completedKey, articlePath:completedPath, url:completedUrl, provider:completedProvider };
+          job = enqueue(state,candidate).job;
+          await saveState(state);
+        }
       }
     }
     if (job.status === "queued") {
