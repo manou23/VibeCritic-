@@ -67,9 +67,27 @@ const result = await withRunLock(async () => {
         await saveState(state);
         return { action:"daily-free-budget-reached", key:job.key, ...daily };
       }
-      transition(job,"researching");
-      job.evidence = await collectEvidence(job.item);
-      validateEvidence(job.evidence);
+      let evidenceReady = false;
+      for (let candidateAttempt = 0; candidateAttempt < 5; candidateAttempt++) {
+        transition(job,"researching");
+        try {
+          job.evidence = await collectEvidence(job.item);
+          validateEvidence(job.evidence);
+          evidenceReady = true;
+          break;
+        } catch (error) {
+          const message = String(error?.message || error);
+          const candidateSpecific = /Candidate release date is still in the future|Primary catalog description is too thin|Independent source is too thin|No exact independent encyclopedia match|Independent source title mismatch|At least two independent HTTPS source domains required|Evidence overview is too thin/.test(message);
+          if (!candidateSpecific) throw error;
+          transition(job,"rejected",{lastError:message});
+          await saveState(state);
+          const next = await discoverCandidate(state);
+          if (!next) return { action:"candidate-rejected-no-alternative", key:job.key, reason:message };
+          job = enqueue(state,next).job;
+          await saveState(state);
+        }
+      }
+      if (!evidenceReady) return { action:"candidate-scan-limit-reached", attempts:5 };
       transition(job,"writing");
       await saveState(state);
       const generated = await writeArticle(job.evidence);
