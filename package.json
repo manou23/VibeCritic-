@@ -41,7 +41,7 @@
     "test:review-json": "node scripts/test-review-json.mjs",
     "publish:manual": "node manual-publishing/publisher.mjs",
     "test:manual-publisher": "node scripts/test-manual-publisher.mjs",
-    "test:publishing-v3": "node --check scripts/publishing-v3/core.mjs && node --check scripts/publishing-v3/store.mjs && node --check scripts/publishing-v3/lock.mjs && node --check scripts/publishing-v3/sources.mjs && node --check scripts/publishing-v3/providers.mjs && node --check scripts/publishing-v3/writer.mjs && node --check scripts/publishing-v3/publisher.mjs && node --check scripts/publishing-v3/run.mjs && node scripts/publishing-v3/test.mjs && node --check workers/publishing-heartbeat/src/index.js && node workers/publishing-heartbeat/test.mjs"
+    "test:publishing-v3": "node --check scripts/publishing-v3/core.mjs && node --check scripts/publishing-v3/store.mjs && node --check scripts/publishing-v3/lock.mjs && node --check scripts/publishing-v3/sources.mjs && node --check scripts/publishing-v3/providers.mjs && node --check scripts/publishing-v3/editorial-reviewer.mjs && node --check scripts/publishing-v3/writer.mjs && node --check scripts/publishing-v3/publisher.mjs && node --check scripts/publishing-v3/run.mjs && node scripts/publishing-v3/test.mjs && node --check workers/publishing-heartbeat/src/index.js && node workers/publishing-heartbeat/test.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",
