@@ -9,7 +9,7 @@ reviewVersion: 1
 type: game
 date: 2026-11-20
 releaseDate: "2026-10-21"
-poster: "https://img.youtube.com/vi/Ugl0ul-ibxc/hqdefault.jpg"
+poster: "https://img.youtube.com/vi/mgWFOfJBNRc/hqdefault.jpg"
 backdrop: "https://img.youtube.com/vi/Ugl0ul-ibxc/hqdefault.jpg"
 youtubeVideoId: "Ugl0ul-ibxc"
 youtubeVideoTitle: "Stupid Never Dies | 1st Trailer | SEGA"
@@ -38,6 +38,7 @@ sourceId: "manual-review-stupid-never-dies-2026"
 sourceUrl: "https://www.playstation.com/ar-sa/games/stupid-never-dies/"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
+mediaVerified: true
 ---
 > **منهجية المراجعة:** مراجعة تحريرية بحثية تستند إلى معلومات الإطلاق الرسمية ومراجعات منشورة بعد الإصدار. لا تدعي المادة تجربة لعب شخصية جديدة؛ وهي تميز بين ما تؤكده المواد المنشورة وبين الحكم التحريري المستخلص من مقارنة نقاط القوة والضعف.
 
@@ -69,6 +70,11 @@ Stupid Never Dies عمل ذو شخصية واضحة، وهذا إنجاز حقي
 
 **تقييم VibeCritic: 7.3/10.** لعبة غريبة ومسلية في لحظاتها الأفضل، لكنها تحتاج إلى أنظمة قتالية وتقدم أكثر إحكاماً كي تتحول شخصيتها اللافتة إلى تجربة متماسكة.
 
+## من سيستمتع بها أكثر؟
+
+الجمهور الأقرب إلى Stupid Never Dies هو من يتقبل الكوميديا السوداء والتصميم الصاخب، ويستمتع بتجريب القدرات حتى عندما لا تكون كل محاولة متوازنة تماماً. أما من يدخلها بحثاً عن قتال دقيق يعتمد على التوقيت والمهارة وحدهما، فقد يجد أن أرقام التطوير والموارد تؤثر في المواجهات أكثر مما يرغب. هذا الفرق في التوقعات مهم، لأن اللعبة تبيع شخصية فنية قبل أن تبيع نظاماً قتالياً مصقولاً.
+
+كما أن وجود فكرة غريبة لا يعفي السرد من مسؤولية بناء علاقة مقنعة. أفضل لحظات العمل هي تلك التي تترجم غرابة دافي إلى سلوك أو موقف يمكن فهمه، لا تلك التي تعتمد على المفاجأة وحدها. لذلك تبدو التجربة أكثر نجاحاً عندما يتعامل اللاعب معها بوصفها مغامرة أكشن ذات نبرة خاصة، لا بوصفها قصة عاطفية تقليدية أو لعبة أدوار عميقة.
 ## مصادر التحقق
 - [PlayStation — صفحة اللعبة وتاريخ الإصدار](https://www.playstation.com/ar-sa/games/stupid-never-dies/)
 - [SEGA — العرض الرسمي الأول](https://www.youtube.com/watch?v=Ugl0ul-ibxc)
