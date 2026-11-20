@@ -11,7 +11,7 @@ export async function reviewArticle(article, evidence) {
   const apiKey = env.GEMINI_API_KEY;
   if (!apiKey) return { skipped:true, reason:"GEMINI_API_KEY is not configured", provider:null, tokens:0, requests:0 };
 
-  const model = env.PUBLISHER_V3_GEMINI_REVIEW_MODEL || "gemini-2.5-flash";
+  const model = env.PUBLISHER_V3_GEMINI_REVIEW_MODEL || "gemini-3.8-flash";
   const prompt = [
     "أنت محرر تدقيق مستقل لموقع VibeCritic. راجع المقال العربي قبل النشر، ولا تعِد كتابته.",
     "قارن كل ادعاء واقعي في المقال بملف الأدلة المرفق. لا تعتبر وجود رابط مصدر دليلاً على أن كل ما في المقال صحيح.",
