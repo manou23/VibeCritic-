@@ -10,7 +10,7 @@ export function normalizeFinalRating(text, score) {
 
 export function normalizeBodyFinalRating(text, score) {
   const canonical = Number(score).toFixed(1) + "/10";
-  return String(text || "").replace(/((?:التقييم النهائي|التقييم العام|الدرجة النهائية|Final score|Overall score)\\s*[:：]?\\s*)(\\*{0,2})(\\d+(?:[.,]\\d+)?\\s*(?:\\/\\s*10|من\\s*10))/gi, (_, label, emphasis) => label + emphasis + canonical);
+  return String(text || "").replace(/((?:التقييم النهائي|التقييم العام|الدرجة النهائية|Final score|Overall score)\s*[:：]?\s*)(\*{0,2})(\d+(?:[.,]\d+)?\s*(?:\/\s*10|من\s*10))/gi, (_, label, emphasis) => label + emphasis + canonical);
 }
 
 function assemble(value, evidence) {
