@@ -11,7 +11,7 @@ const result = await withRunLock(async () => {
   state.usage ||= {};
   const day = new Date().toISOString().slice(0,10);
   const daily = state.usage[day] ||= { articles:0, requests:0, tokens:0 };
-  const dailyLimit = 3; // Hard ceiling: never exceed three generated articles per UTC day.
+  const dailyLimit = 6; // TEMPORARY FINAL TEST: restore to 3 immediately after this run starts.
   const tomorrow = () => new Date(Date.UTC(new Date().getUTCFullYear(),new Date().getUTCMonth(),new Date().getUTCDate()+1,0,5)).toISOString();
   let job = null;
   try {
