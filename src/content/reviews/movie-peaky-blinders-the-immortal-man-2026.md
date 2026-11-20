@@ -9,11 +9,11 @@ reviewVersion: 1
 type: movie
 date: 2026-11-20
 releaseDate: "2026-03-20"
-poster: "https://img.youtube.com/vi/lcvUGs3xaDM/hqdefault.jpg"
+poster: "https://img.youtube.com/vi/hd8-Y5FnPJ8/hqdefault.jpg"
 backdrop: "https://img.youtube.com/vi/lcvUGs3xaDM/hqdefault.jpg"
 youtubeVideoId: "lcvUGs3xaDM"
 youtubeVideoTitle: "Peaky Blinders: The Immortal Man | Official Trailer | Netflix"
-score: 8.0
+score: 8
 storyScore: 7.8
 visualsScore: 8.4
 soundScore: 8.2
@@ -39,6 +39,7 @@ sourceId: "manual-review-peaky-blinders-immortal-man-2026"
 sourceUrl: "https://media.netflix.com/en/only-on-netflix/81319485"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
+mediaVerified: true
 ---
 > **منهجية المراجعة:** قراءة نقدية بحثية تستند إلى مواد Netflix الرسمية ومراجعات صحفية منشورة بعد العرض. لا تدعي المادة مشاهدة شخصية جديدة، ولا تساوي بين خدمة المعجبين والجودة الدرامية؛ بل تفحص استقلال الفيلم وتطور الشخصية وبناء الصراع.
 
@@ -72,6 +73,11 @@ The Immortal Man ليس محاولة لتغيير هوية Peaky Blinders، بل
 
 **تقييم VibeCritic: 8.0/10.** عودة سينمائية قوية ومشبعة بالشخصية، وإن كانت أكثر إقناعاً بوصفها فصلاً أخيراً لمحبي السلسلة من كونها فيلماً مستقلاً بالكامل.
 
+## هل يصلح الفيلم مدخلاً إلى عالم Peaky Blinders؟
+
+المشاهد الذي لم يتابع المسلسل يستطيع فهم الخطوط العامة للحرب والعائلة والعودة، لكن كثيراً من الثقل العاطفي يعتمد على معرفة سابقة بتومي وعلاقاته وخساراته. لذلك لا يعمل الفيلم كمدخل مثالي إلى العالم، بل كامتداد يكافئ من يعرف كيف تشكلت شخصية شيلبي عبر المواسم. هذه ليست مشكلة تلقائياً؛ فالأفلام المقتبسة من المسلسلات تستطيع أن تكون فصولاً لاحقة، لكن عليها أن تمنح المشاهد الجديد ما يكفي من السياق كي لا يشعر أنه وصل متأخراً.
+
+الأهم أن قيمة النهاية لا تقاس بعدد الوجوه العائدة أو الإشارات التي يتعرف إليها الجمهور، بل بمدى حسمها للسؤال الذي يطرحه الفيلم عن الإرث. عندما يضع تومي نفسه أمام نتائج اختياراته، يقترب العمل من خاتمة ذات معنى. وعندما يتوقف عند استعادة النبرة والموسيقى، يصبح أقرب إلى احتفال بالعلامة. هذا التوازن هو ما يجعل الفيلم مؤثراً في مواضع ومحدوداً في أخرى.
 ## مصادر التحقق
 - [Netflix Media Center — القصة والطاقم وتاريخ العرض](https://media.netflix.com/en/only-on-netflix/81319485)
 - [Netflix — الإعلان الرسمي](https://www.youtube.com/watch?v=lcvUGs3xaDM)
