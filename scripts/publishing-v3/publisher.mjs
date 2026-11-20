@@ -9,23 +9,25 @@ export function articleFilePath(article, root="src/content/reviews") {
   return path.join(root,file).replace(/\\/g,"/");
 }
 export function renderMarkdown(article) {
-  validateArticle(article);
+  validateArticle(article,{minWords:1000,minCharacters:5200});
+  if (!/^[A-Za-z0-9_-]{11}$/.test(article.youtubeVideoId || "")) throw new Error("Final review requires a verified YouTube video ID");
   const list = values => (values||[]).map(x=>"  - "+quote(x)).join("\n") || " []";
   const fm = [
     "---","title: "+quote(article.title),"headline: "+quote(article.headline||article.title),
     "hook: "+quote(article.summary||article.verdict),"summary: "+quote(article.summary||article.verdict),"verdict: "+quote(article.verdict),
-    "reviewVersion: 5","reviewMode: limited",
+    "reviewVersion: 6","reviewMode: review",
     "date: "+new Date().toISOString().slice(0,10),"publishedAt: "+quote(new Date().toISOString()),
     "releaseDate: "+quote(article.releaseDate||""),"type: "+article.type,
     "sourceName: "+quote(article.sourceName),"sourceId: "+quote(article.sourceId),"sourceUrl: "+quote(article.sourceUrl),
     "aiGenerated: true","editorialWorkflow: automated","poster: "+quote(article.poster),"backdrop: "+quote(article.backdrop),
+    "youtubeVideoId: "+quote(article.youtubeVideoId),"youtubeVideoTitle: "+quote(article.youtubeVideoTitle||("Official trailer — "+article.title)),
     "genres:\n"+list(article.genres),"platforms:\n"+list(article.platforms),"cast:\n"+list(article.cast),"crew:\n"+list(article.crew),"pros:\n"+list(article.pros),"cons:\n"+list(article.cons),"tags:\n"+list(article.tags),
-    "---","",article.body,"","> مراجعة تحريرية محدودة مبنية على المصادر المذكورة، ولا تدّعي تجربة مباشرة للعب أو المشاهدة.","","### المصادر والمراجع","",...(article.sources||[]).map(s=>"- ["+s.name+"]("+s.url+")")
+    "---","",article.body,"","> مراجعة تحريرية نهائية مبنية على مصادر موثوقة ومواد رسمية متاحة. لا تدّعي تجربة لعب أو مشاهدة مباشرة لم ينفذها المحرر.","","### المصادر والمراجع","",...(article.sources||[]).map(s=>"- ["+s.name+"]("+s.url+")")
   ];
   return fm.join("\n")+"\n";
 }
 export async function publishArticle(article, root="src/content/reviews") {
-  validateArticle(article);
+  validateArticle(article,{minWords:1000,minCharacters:5200});
   await fs.mkdir(root,{recursive:true});
   const target = articleFilePath(article,root);
   const temp = target+".tmp-"+randomUUID();
