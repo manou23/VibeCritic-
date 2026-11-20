@@ -16,7 +16,7 @@ export async function writeArticle(evidence) {
   const prompt = [
     "اكتب مراجعة نقدية عربية أصلية لموقع VibeCritic اعتماداً حصراً على ملف الأدلة أدناه.",
     "لا تدّع أنك شاهدت الفيلم أو المسلسل أو لعبت اللعبة. ميّز بين الحقائق والاستنتاجات، واذكر حدود الأدلة بوضوح. يجب أن يكون واضحاً أنها مراجعة تحريرية محدودة مبنية على المصادر وليست تجربة مباشرة.",
-    "اكتب body لا يقل عن 700 كلمة عربية فعلية، موزعة على أربعة عناوين تحليلية على الأقل، بلا حشو أو تكرار. تناول البناء السردي، العناصر الفنية/التصميمية، الإيقاع، نقاط القوة والقيود، ثم خلاصة نقدية. تجنب حرق الأحداث.",
+    "اكتب body بين 900 و1000 كلمة عربية فعلية وفق عدّ الكلمات العادي، ولا تقل مطلقاً عن 850 كلمة. هذا شرط إلزامي لأن بوابة النشر ترفض أي نص يقل عن 650 كلمة. لا تحتسب العناوين ضمن العدد. وزّع التحليل على خمسة عناوين فرعية على الأقل وفقرات متوازنة، بلا حشو أو تكرار. تناول البناء السردي، العناصر الفنية/التصميمية، الإيقاع، نقاط القوة والقيود، ثم خلاصة نقدية. تجنب حرق الأحداث.",
     "أعد JSON فقط بالمفاتيح: headline, summary, verdict, body, scores, pros, cons.",
     "scores كائن يحوي story وvisuals وsound وpacing بأرقام من 0 إلى 10. معيار المعايرة: "+SCORE_SCALE_PROMPT+". استخدم درجات متحفظة إذا كانت الأدلة محدودة.",
     "pros ثلاث نقاط محددة على الأقل، وcons نقطتان محددتان على الأقل. verdict حكم عربي معلل من 45 كلمة على الأقل.",
@@ -28,7 +28,7 @@ export async function writeArticle(evidence) {
     return { article:assemble(first.value,evidence), provider:first.provider, tokens:first.tokens, requests:first.requests };
   } catch (qualityError) {
     let retry;
-    try { retry = await generateJson(prompt + "\n\nمراجعة تصحيح إلزامية. أخفقت المسودة السابقة في بوابة الجودة: " + String(qualityError.message).slice(0,250) + ". أعد كتابة المقال كاملاً مع إصلاح الخطأ، ولا تختصر body عن 700 كلمة، وأكمل كل الحقول المطلوبة.", { skipProviderId:first.provider }); }
+    try { retry = await generateJson(prompt + "\n\nمراجعة تصحيح إلزامية: فشل النص السابق في بوابة الجودة (" + String(qualityError.message).slice(0,250) + "). أعد كتابة المقال كاملاً من البداية، لا تكتفِ بإضافة خاتمة، واجعل body بين 900 و1000 كلمة فعلية ولا يقل عن 850 كلمة. تحقق من طول النص قبل إعادة JSON وأكمل جميع الحقول المطلوبة.", { skipProviderId:first.provider }); }
     catch (error) { error.requests = (Number(error.requests)||0) + (Number(first.requests)||1); throw error; }
     let article;
     try { article = assemble(retry.value,evidence); }
