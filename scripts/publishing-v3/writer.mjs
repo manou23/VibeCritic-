@@ -1,4 +1,5 @@
 import { generateJson } from "./providers.mjs";
+import { reviewArticle } from "./editorial-reviewer.mjs";
 import { validateArticle } from "./core.mjs";
 import { calculateWeightedReviewScore, SCORE_SCALE_PROMPT } from "../scoring-rubric.mjs";
 
@@ -24,17 +25,27 @@ export async function writeArticle(evidence) {
     "pros ثلاث نقاط محددة على الأقل، وcons نقطتان محددتان على الأقل. verdict حكم عربي معلل من 45 كلمة على الأقل. summary لا يقل عن 50 كلمة.",
     "الأدلة: " + JSON.stringify(evidence)
   ].join("\n\n");
+
   const first = await generateJson(prompt, { maxTokens:10000 });
+  let result;
+  let generation = first;
   try {
-    const result = assemble(first.value,evidence);
-    return { ...result, provider:first.provider, tokens:first.tokens, requests:first.requests };
+    result = assemble(first.value,evidence);
   } catch (qualityError) {
-    let retry;
-    try { retry = await generateJson(prompt + "\n\nفشلت المسودة السابقة في فحص الجودة: " + String(qualityError.message).slice(0,250) + ". أعد إنشاء المقال كاملاً مع الالتزام بنطاق 650 إلى 720 كلمة فعلية، وافحص اكتمال JSON.", { skipProviderId:first.provider, maxTokens:10000 }); }
-    catch (error) { error.requests = (Number(error.requests)||0) + (Number(first.requests)||1); throw error; }
-    let result;
+    const retry = await generateJson(prompt + "\n\nفشلت المسودة السابقة في فحص الجودة: " + String(qualityError.message).slice(0,250) + ". أعد إنشاء المقال كاملاً مع الالتزام بنطاق 650 إلى 720 كلمة فعلية، وافحص اكتمال JSON.", { skipProviderId:first.provider, maxTokens:10000 });
     try { result = assemble(retry.value,evidence); }
     catch (error) { error.requests = (Number(first.requests)||1) + (Number(retry.requests)||1); throw error; }
-    return { ...result, provider:retry.provider, tokens:first.tokens+retry.tokens, requests:first.requests+retry.requests };
+    generation = { provider:retry.provider, tokens:(Number(first.tokens)||0)+(Number(retry.tokens)||0), requests:(Number(first.requests)||1)+(Number(retry.requests)||1) };
   }
+
+  // Gemini acts as an independent pre-publication editor when its key is configured.
+  // A configured reviewer failure blocks publication; a missing optional key never blocks it.
+  const editorial = await reviewArticle(result.article,evidence);
+  return {
+    ...result,
+    provider:generation.provider,
+    tokens:(Number(generation.tokens)||0)+(Number(editorial.tokens)||0),
+    requests:(Number(generation.requests)||1)+(Number(editorial.requests)||0),
+    editorialReview:editorial.skipped ? { skipped:true, reason:editorial.reason } : editorial.review
+  };
 }
