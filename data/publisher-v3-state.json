@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-20T22:59:31.696Z",
+  "updatedAt": "2026-11-20T23:00:01.535Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -740,12 +740,12 @@
         "popularity": 431.8908,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "waiting",
       "stage": 0,
-      "attempts": 0,
+      "attempts": 1,
       "createdAt": "2026-11-20T22:58:50.216Z",
-      "updatedAt": "2026-11-20T22:59:31.696Z",
-      "nextAttemptAt": null,
+      "updatedAt": "2026-11-20T23:00:01.535Z",
+      "nextAttemptAt": "2026-11-20T23:01:01.535Z",
       "evidence": {
         "title": "Heart of the Beast",
         "type": "movie",
@@ -868,11 +868,12 @@
         "youtubeVideoTitle": "Heart of the Beast (2026) | Official Trailer (feat. Brad Pitt) | Watch At Home",
         "score": 5.2
       },
-      "lastError": null,
+      "lastError": "Article file exists, but the live site still returns HTTP 404; deployment verification will retry.",
       "provider": "openai",
       "tokens": 5898,
       "articlePath": "src/content/reviews/movie-heart-of-the-beast-1263337.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-heart-of-the-beast-1263337/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-heart-of-the-beast-1263337/",
+      "resumeStatus": "verifying"
     }
   },
   "providers": {},
