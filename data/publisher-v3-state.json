@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-20T22:51:28.620Z",
+  "updatedAt": "2026-11-20T22:52:05.436Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -561,12 +561,12 @@
         "popularity": 40.1225,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "waiting",
       "stage": 0,
-      "attempts": 0,
+      "attempts": 1,
       "createdAt": "2026-11-20T22:41:46.799Z",
-      "updatedAt": "2026-11-20T22:51:28.619Z",
-      "nextAttemptAt": null,
+      "updatedAt": "2026-11-20T22:52:05.436Z",
+      "nextAttemptAt": "2026-11-20T23:02:05.436Z",
       "evidence": {
         "title": "The Altruists",
         "type": "series",
@@ -689,11 +689,12 @@
         "youtubeVideoTitle": "The Altruists | Official Trailer | Netflix",
         "score": 5.3
       },
-      "lastError": null,
+      "lastError": "Article file exists, but the live site still returns HTTP 404; deployment verification will retry.",
       "provider": "openai",
       "tokens": 5470,
       "articlePath": "src/content/reviews/series-the-altruists-308007.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-the-altruists-308007/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-the-altruists-308007/",
+      "resumeStatus": "verifying"
     }
   },
   "providers": {},
