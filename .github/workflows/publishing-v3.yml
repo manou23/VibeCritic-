@@ -7,7 +7,7 @@ on:
       - '.github/workflows/publishing-v3.yml'
       - 'scripts/publishing-v3/**'
   schedule:
-    - cron: '*/15 * * * *' # GitHub-hosted fallback; Cloudflare Worker remains an additional trigger.
+    - cron: '*/15 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -35,20 +35,14 @@ jobs:
         run: npm ci
       - name: Run V3 reliability tests
         run: npm run test:publishing-v3
-      - name: Run one bounded V3 publishing cycle
+      - name: Run one bounded V3 publishing cycle with OpenAI
         id: publisher
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
           RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          PUBLISHER_V3_OPENAI_ENABLED: ${{ vars.PUBLISHER_V3_OPENAI_ENABLED == 'true' && secrets.OPENAI_API_KEY != '' }}
-          PUBLISHER_V3_OPENAI_MODEL: ${{ vars.PUBLISHER_V3_OPENAI_MODEL }}
-          PUBLISHER_V3_GEMINI_FREE_ONLY: 'true'
-          PUBLISHER_V3_GROQ_FREE_ONLY: 'true'
-          PUBLISHER_V3_OPENROUTER_FREE_ONLY: 'true'
+          PUBLISHER_V3_OPENAI_ENABLED: ${{ secrets.OPENAI_API_KEY != '' }}
+          PUBLISHER_V3_OPENAI_MODEL: gpt-6-luna
         run: node scripts/publishing-v3/run.mjs
       - name: Validate and build new article
         id: build
