@@ -114,6 +114,12 @@
       "sha256": "d1d1fc690195e7cc3d907b49540f30b2155b3be5ea7742157b5abc9e8eb088cf",
       "articlePath": "src/content/reviews/the-substance-2024.md",
       "publishedAt": "2026-11-19T19:18:06.634Z"
+    },
+    "movie-the-social-network-2010": {
+      "sourceId": "movie:the-social-network:2010:vibecritic-editorial",
+      "sha256": "ed101cb165e910d9cfd80b06a1b5ebc4f19f87916217f80a8b8ee19dd91f9b3d",
+      "articlePath": "src/content/reviews/movie-the-social-network-2010.md",
+      "publishedAt": "2026-11-20T10:11:09.106Z"
     }
   }
 }
