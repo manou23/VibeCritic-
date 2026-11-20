@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
 import { validateArticle } from "./core.mjs";
+import { normalizeFinalRating, normalizeBodyFinalRating } from "./writer.mjs";
 const quote = value => JSON.stringify(String(value ?? ""));
 const slug = value => String(value||"").normalize("NFKD").toLowerCase().replace(/[^\p{L}\p{N}]+/gu,"-").replace(/^-|-$/g,"").slice(0,55) || "review";
 export function articleFilePath(article, root="src/content/reviews") {
@@ -12,9 +13,11 @@ export function renderMarkdown(article) {
   validateArticle(article,{minWords:1000,minCharacters:5200});
   if (!/^[A-Za-z0-9_-]{11}$/.test(article.youtubeVideoId || "")) throw new Error("Final review requires a verified YouTube video ID");
   const list = values => (values||[]).map(x=>"  - "+quote(x)).join("\n") || " []";
+  const finalVerdict = normalizeFinalRating(article.verdict, article.score);
+  const finalBody = normalizeBodyFinalRating(article.body, article.score);
   const fm = [
     "---","title: "+quote(article.title),"headline: "+quote(article.headline||article.title),
-    "hook: "+quote(article.summary||article.verdict),"summary: "+quote(article.summary||article.verdict),"verdict: "+quote(article.verdict),
+    "hook: "+quote(article.summary||finalVerdict),"summary: "+quote(article.summary||finalVerdict),"verdict: "+quote(finalVerdict),
     "reviewVersion: 6","reviewMode: review",
     "score: "+Number(article.score).toFixed(2),"storyScore: "+Number(article.scores.story).toFixed(2),"visualsScore: "+Number(article.scores.visuals).toFixed(2),"soundScore: "+Number(article.scores.sound).toFixed(2),"pacingScore: "+Number(article.scores.pacing).toFixed(2),
     "date: "+new Date().toISOString().slice(0,10),"publishedAt: "+quote(new Date().toISOString()),
@@ -23,7 +26,7 @@ export function renderMarkdown(article) {
     "aiGenerated: true","editorialWorkflow: automated","poster: "+quote(article.poster),"backdrop: "+quote(article.backdrop),
     "youtubeVideoId: "+quote(article.youtubeVideoId),"youtubeVideoTitle: "+quote(article.youtubeVideoTitle||("Official trailer — "+article.title)),
     "genres:\n"+list(article.genres),"platforms:\n"+list(article.platforms),"cast:\n"+list(article.cast),"crew:\n"+list(article.crew),"pros:\n"+list(article.pros),"cons:\n"+list(article.cons),"tags:\n"+list(article.tags),
-    "---","",article.body,"","> مراجعة تحريرية نهائية مبنية على مصادر موثوقة ومواد رسمية متاحة. لا تدّعي تجربة لعب أو مشاهدة مباشرة لم ينفذها المحرر.","","### المصادر والمراجع","",...(article.sources||[]).map(s=>"- ["+s.name+"]("+s.url+")")
+    "---","",finalBody,"","> مراجعة تحريرية نهائية مبنية على مصادر موثوقة ومواد رسمية متاحة. لا تدّعي تجربة لعب أو مشاهدة مباشرة لم ينفذها المحرر.","","### المصادر والمراجع","",...(article.sources||[]).map(s=>"- ["+s.name+"]("+s.url+")")
   ];
   return fm.join("\n")+"\n";
 }
