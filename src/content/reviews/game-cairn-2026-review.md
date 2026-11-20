@@ -17,7 +17,7 @@ pacingScore: 8.6
 reviewMode: review
 platforms: ["PC","PlayStation 5"]
 poster: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1588550/header.jpg"
-backdrop: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1588550/library_hero.jpg"
+backdrop: "https://d1lss44hh2trtw.cloudfront.net/assets/editorial/2026/01/cairn-review-new-horizons.jpg"
 pros:
   - "تحويل التحكم بكل طرف إلى قرارات تكتيكية متواصلة"
   - "دمج موارد البقاء بالمخاطرة بدلاً من جعلها قوائم منفصلة"
