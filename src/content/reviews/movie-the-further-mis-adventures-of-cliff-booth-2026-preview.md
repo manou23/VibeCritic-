@@ -11,7 +11,7 @@ date: 2026-11-20
 releaseDate: "2026-11-25"
 reviewMode: preview
 poster: "https://dnm.nflximg.net/api/v6/s0XAg4q_jvYbSSbLvySyUsliNSg/AAAAQdt0qpxP2ssx3fr2ECa9E3w0LtGWCajmkejefQfHdkHngjV5GRFtl1W8Vs5UZGHrdPbr9Lg0OXyb3j4MP41rosbG9btxOuBwRRDSrgf0GuBp8kGtexFSWPpVBb1iLsPzaicWyGoIxXmewbMWJCRfvrx7.jpg?r=621"
-backdrop: "https://dnm.nflximg.net/api/v6/s0XAg4q_jvYbSSbLvySyUsliNSg/AAAAQdt0qpxP2ssx3fr2ECa9E3w0LtGWCajmkejefQfHdkHngjV5GRFtl1W8Vs5UZGHrdPbr9Lg0OXyb3j4MP41rosbG9btxOuBwRRDSrgf0GuBp8kGtexFSWPpVBb1iLsPzaicWyGoIxXmewbMWJCRfvrx7.jpg?r=621"
+backdrop: "https://img.youtube.com/vi/fJH-wfSXnWg/hqdefault.jpg"
 youtubeVideoId: "fJH-wfSXnWg"
 youtubeVideoTitle: "THE FURTHER MIS-ADVENTURES OF CLIFF BOOTH | Official Trailer #2 | Netflix"
 mediaVerified: true
