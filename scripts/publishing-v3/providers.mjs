@@ -9,9 +9,10 @@ const providers = [
 export function availableProviders() {
   return providers.filter(p => p.enabled && env[p.key] && (p.id !== "openrouter" || p.model.endsWith(":free")));
 }
-export async function generateJson(prompt, { providerId, maxTokens = 10000 } = {}) {
+export async function generateJson(prompt, { providerId, skipProviderId, maxTokens = 10000 } = {}) {
   const pool = availableProviders();
-  const ordered = providerId ? pool.filter(p=>p.id===providerId) : pool;
+  const remaining = skipProviderId ? pool.filter(p=>p.id!==skipProviderId) : pool;
+  const ordered = providerId ? pool.filter(p=>p.id===providerId) : (remaining.length ? remaining : pool);
   if (!ordered.length) throw new Error("No explicitly enabled AI provider is available");
   const errors = [];
   let requests = 0;
