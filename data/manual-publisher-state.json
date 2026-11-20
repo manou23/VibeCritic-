@@ -138,6 +138,12 @@
       "sha256": "e48957f148ebe0cee96de4fbd7d918de641d9f5fc3b096364afa00e3aec90c12",
       "articlePath": "src/content/reviews/game-efootball-2027-2026.md",
       "publishedAt": "2026-11-20T17:21:04.880Z"
+    },
+    "game-ufl-2026-27": {
+      "sourceId": "manual-review-ufl-season-2026-27",
+      "sha256": "67ea6915215f010ca0a02fd67ca7ed5d4d50cc8feb04b9bdbfc721ed9177fe0b",
+      "articlePath": "src/content/reviews/game-ufl-2026-27.md",
+      "publishedAt": "2026-11-20T17:21:55.699Z"
     }
   }
 }
