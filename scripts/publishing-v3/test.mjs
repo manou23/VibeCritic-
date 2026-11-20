@@ -71,6 +71,22 @@ delete process.env.PUBLISHER_V3_OPENAI_MODEL;
 const openaiProvider = await import("./providers.mjs?openai-provider-test");
 assert.deepEqual(openaiProvider.availableProviders().map(x=>x.id),["openai"]);
 assert.equal(openaiProvider.availableProviders()[0].model,"gpt-4o-mini");
+// OpenAI fallback is bounded to one request per publishing process and 5,000 output tokens.
+process.env.PUBLISHER_V3_OPENAI_ENABLED = "true";
+process.env.OPENAI_API_KEY = "test-openai-key";
+const budgetProvider = await import("./providers.mjs?openai-budget-test");
+const originalFetch = globalThis.fetch;
+let openAIFetchCalls = 0;
+globalThis.fetch = async (_url, options) => {
+  openAIFetchCalls++;
+  const requestBody = JSON.parse(options.body);
+  assert.equal(requestBody.max_tokens, 5000);
+  return { ok:true, json:async()=>({choices:[{finish_reason:"stop",message:{content:'{"ok":true}'}}],usage:{total_tokens:20}}) };
+};
+assert.deepEqual((await budgetProvider.generateJson("test",{maxTokens:10000})).value,{ok:true});
+await assert.rejects(budgetProvider.generateJson("test"), /No explicitly enabled AI provider is available/);
+assert.equal(openAIFetchCalls,1);
+globalThis.fetch = originalFetch;
 process.env.PUBLISHER_V3_OPENAI_ENABLED = "false";
 const disabledOpenai = await import("./providers.mjs?openai-disabled-test");
 assert.equal(disabledOpenai.availableProviders().length,0);
