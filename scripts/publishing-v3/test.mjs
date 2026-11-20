@@ -55,54 +55,44 @@ assert.equal(recovered, "stale-lock-recovered");
 const stateFile = path.join(dir,"state.json");
 await saveState(createState(),stateFile);
 assert.equal((await loadState(stateFile)).version,3);
-const paidEnv = { ...process.env, OPENROUTER_API_KEY:"test", PUBLISHER_V3_OPENROUTER_FREE_ONLY:"true", PUBLISHER_V3_OPENROUTER_MODEL:"some/paid-model" };
-process.env.OPENROUTER_API_KEY = paidEnv.OPENROUTER_API_KEY;
-process.env.PUBLISHER_V3_OPENROUTER_FREE_ONLY = paidEnv.PUBLISHER_V3_OPENROUTER_FREE_ONLY;
-process.env.PUBLISHER_V3_OPENROUTER_MODEL = paidEnv.PUBLISHER_V3_OPENROUTER_MODEL;
-const paidRouter = await import("./providers.mjs?paid-model-test");
-assert.equal(paidRouter.availableProviders().length,0);
-process.env.PUBLISHER_V3_OPENROUTER_MODEL = "nvidia/nemotron-3.5-super-vl:free";
-const freeRouter = await import("./providers.mjs?free-model-test");
-assert.deepEqual(freeRouter.availableProviders().map(x=>x.id),["openrouter"]);
-process.env.PUBLISHER_V3_OPENROUTER_FREE_ONLY = "false";
+
+// OpenAI is the only configured provider; exercise its Responses API and bounded quality retry.
 process.env.OPENAI_API_KEY = "test-openai-key";
 process.env.PUBLISHER_V3_OPENAI_ENABLED = "true";
 delete process.env.PUBLISHER_V3_OPENAI_MODEL;
-const openaiProvider = await import("./providers.mjs?openai-provider-test");
+const openaiProvider = await import("./providers.mjs?openai-exclusive-test");
 assert.deepEqual(openaiProvider.availableProviders().map(x=>x.id),["openai"]);
-assert.equal(openaiProvider.availableProviders()[0].model,"gpt-4o-mini");
-// OpenAI fallback is bounded to one request per publishing process and 5,000 output tokens.
-process.env.PUBLISHER_V3_OPENAI_ENABLED = "true";
-process.env.OPENAI_API_KEY = "test-openai-key";
-const budgetProvider = await import("./providers.mjs?openai-budget-test");
+assert.equal(openaiProvider.availableProviders()[0].model,"gpt-6-luna");
 const originalFetch = globalThis.fetch;
 let openAIFetchCalls = 0;
-globalThis.fetch = async (_url, options) => {
+globalThis.fetch = async (url, options) => {
   openAIFetchCalls++;
+  assert.equal(url,"https://api.openai.com/v1/responses");
+  assert.equal(options.headers.authorization,"Bearer test-openai-key");
   const requestBody = JSON.parse(options.body);
-  assert.equal(requestBody.max_tokens, 5000);
-  return { ok:true, json:async()=>({choices:[{finish_reason:"stop",message:{content:'{"ok":true}'}}],usage:{total_tokens:20}}) };
+  assert.equal(requestBody.model,"gpt-6-luna");
+  assert.equal(requestBody.max_output_tokens,7000);
+  assert.deepEqual(requestBody.text,{format:{type:"json_object"}});
+  return {
+    ok:true,
+    json:async()=>({
+      status:"completed",
+      output:[{type:"message",content:[{type:"output_text",text:'{"ok":true}'}]}],
+      usage:{input_tokens:12,output_tokens:8,total_tokens:20}
+    })
+  };
 };
-assert.deepEqual((await budgetProvider.generateJson("test",{maxTokens:10000})).value,{ok:true});
-await assert.rejects(budgetProvider.generateJson("test"), /No explicitly enabled AI provider is available/);
-assert.equal(openAIFetchCalls,1);
+assert.deepEqual((await openaiProvider.generateJson("test",{maxTokens:10000})).value,{ok:true});
+assert.deepEqual((await openaiProvider.generateJson("retry",{skipProviderId:"openai"})).value,{ok:true});
+await assert.rejects(openaiProvider.generateJson("third"),/per-run request limit reached/);
+assert.equal(openAIFetchCalls,2);
 globalThis.fetch = originalFetch;
-process.env.PUBLISHER_V3_OPENAI_ENABLED = "false";
-const disabledOpenai = await import("./providers.mjs?openai-disabled-test");
-assert.equal(disabledOpenai.availableProviders().length,0);
-// Keep the free Gemini fallback aligned with the model recommended by Google's API.
-process.env.GEMINI_API_KEY = "test-gemini-key";
-process.env.PUBLISHER_V3_GEMINI_FREE_ONLY = "true";
-delete process.env.PUBLISHER_V3_GEMINI_MODEL;
-process.env.GROQ_API_KEY = "";
-process.env.PUBLISHER_V3_GROQ_FREE_ONLY = "false";
-process.env.OPENROUTER_API_KEY = "";
-process.env.PUBLISHER_V3_OPENROUTER_FREE_ONLY = "false";
+
 process.env.OPENAI_API_KEY = "";
-process.env.PUBLISHER_V3_OPENAI_ENABLED = "false";
-const geminiDefault = await import("./providers.mjs?gemini-default-model-test");
-assert.deepEqual(geminiDefault.availableProviders().map(x=>({id:x.id,model:x.model})),[{id:"gemini",model:"gemini-3.8-flash"}]);
+const missingKey = await import("./providers.mjs?openai-missing-key-test");
+assert.equal(missingKey.availableProviders().length,0);
+await assert.rejects(missingKey.generateJson("test"),/OpenAI is not configured/);
 const after = await withRunLock(async () => "lock-released", lock);
 assert.equal(after, "lock-released");
 await fs.rm(dir, { recursive:true, force:true });
-console.log("Publishing V3 core tests passed.");
+console.log("Publishing V3 core tests passed (OpenAI-only).");
