@@ -3,7 +3,7 @@ import { createState, enqueue, transition, chooseJob, validateEvidence, validate
 import { withRunLock } from "./lock.mjs";
 import { publishArticle, articleFilePath, renderMarkdown } from "./publisher.mjs";
 import { loadState, saveState } from "./store.mjs";
-import { normalizeFinalRating } from "./writer.mjs";
+import { normalizeFinalRating, normalizeBodyFinalRating } from "./writer.mjs";
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
@@ -32,6 +32,7 @@ assert.ok(validateArticle(article).words >= 650);
 assert.throws(() => validateArticle({ ...article, scores:{...article.scores,story:11} }), /Invalid score/);
 assert.equal(normalizeFinalRating("الحكم النهائي: 6/10",5.3),"الحكم النهائي: 5.3/10");
 assert.equal(normalizeFinalRating("التقييم النهائي 8 من 10",7.4),"التقييم النهائي 7.4/10");
+assert.equal(normalizeBodyFinalRating("**التقييم النهائي: 6/10**\\nالقصة: 8.5/10",5.3),"**التقييم النهائي: 5.3/10**\\nالقصة: 8.5/10");
 const interrupted = enqueue(state,{type:"movie",id:"77",name:"Interrupted"}).job;
 transition(interrupted,"researching");
 transition(interrupted,"queued");
