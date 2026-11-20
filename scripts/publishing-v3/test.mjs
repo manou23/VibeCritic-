@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { createState, enqueue, transition, chooseJob, validateEvidence, validateArticle, isDuplicate } from "./core.mjs";
 import { withRunLock } from "./lock.mjs";
-import { publishArticle, articleFilePath } from "./publisher.mjs";
+import { publishArticle, articleFilePath, renderMarkdown } from "./publisher.mjs";
 import { loadState, saveState } from "./store.mjs";
 import fs from "node:fs/promises";
 import os from "node:os";
@@ -44,6 +44,9 @@ const lock = path.join(dir, "run.lock");
 const reviewRoot = path.join(dir,"reviews");
 const createdPath = await publishArticle(article,reviewRoot);
 assert.equal(createdPath,articleFilePath(article,reviewRoot));
+const renderedPreview = renderMarkdown(article);
+assert.match(renderedPreview,/reviewMode: limited/);
+assert.doesNotMatch(renderedPreview,/^(?:score|storyScore|visualsScore|soundScore|pacingScore):/m);
 await assert.rejects(publishArticle(article,reviewRoot), error=>error.code==="EEXIST");
 const nested = await withRunLock(async () => withRunLock(async () => "should-not-run", lock), lock);
 assert.equal(nested.skipped, true);
