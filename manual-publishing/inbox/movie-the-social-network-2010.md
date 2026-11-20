@@ -13,7 +13,7 @@ poster: "https://m.media-amazon.com/images/M/MV5BOWQ5MDBjNTQtZWFmYS00YzQ0LWFjOWQ
 backdrop: "https://movieplayer.net-cdn.it/t/images/2020/09/23/the-social-network-capolavoro-fincher-parla-tutti-noi_jpg_1280x720_crop_q85.jpg"
 youtubeVideoId: "mWoUgftTj3Y"
 youtubeVideoTitle: "The Social Network - In Theaters This October | Sony Pictures"
-score: 9.0
+score: 9.1
 storyScore: 9.2
 visualsScore: 8.9
 soundScore: 9.3
@@ -108,7 +108,7 @@ mediaVerified: true
 
 يستحق The Social Network مكانته لأنه يحول موضوعاً حديثاً نسبياً إلى دراما كلاسيكية عن الطموح والخيانة والملكية. السيناريو محكم، والإخراج منضبط، والأداءات متوازنة، والموسيقى والمونتاج يمنحان الفيلم نبضاً لا يهدأ. والأهم أنه لا يختزل القصة في سؤال من اخترع Facebook، بل في الثمن الإنساني الذي يمكن أن يدفعه الناس عندما يصبح النجاح أكبر من قدرتهم على الحفاظ على علاقاتهم.
 
-تقييم VibeCritic البالغ 9.0/10 يعكس تميز البناء السينمائي والحوار والأداء، مع التحفظ على الاختزال التاريخي وبعض الشخصيات الثانوية. إنه فيلم يستحق العودة إليه، ليس لأنه يشرح تاريخ شبكة اجتماعية فحسب، بل لأنه يكشف كيف يمكن لفكرة أن تكبر أسرع من أصحابها.
+تقييم VibeCritic البالغ 9.1/10 يعكس تميز البناء السينمائي والحوار والأداء، مع التحفظ على الاختزال التاريخي وبعض الشخصيات الثانوية. إنه فيلم يستحق العودة إليه، ليس لأنه يشرح تاريخ شبكة اجتماعية فحسب، بل لأنه يكشف كيف يمكن لفكرة أن تكبر أسرع من أصحابها.
 
 **مصادر ومراجع للتحقق والمتابعة:**
 - [Sony Pictures — The Social Network](https://www.sonypictures.com/movies/thesocialnetwork) — الصفحة الرسمية للفيلم.
