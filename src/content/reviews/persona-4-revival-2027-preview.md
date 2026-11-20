@@ -11,7 +11,7 @@ date: 2026-11-20
 releaseDate: "2027-02-18"
 reviewMode: preview
 poster: "https://img.youtube.com/vi/1osdiOAkBKc/maxresdefault.jpg"
-backdrop: "https://img.youtube.com/vi/1osdiOAkBKc/maxresdefault.jpg"
+backdrop: "https://asia.sega.com/p4r/en/resources/img/top/about_pict_shot_1.DtsOT_Fa.webp"
 youtubeVideoId: "1osdiOAkBKc"
 youtubeVideoTitle: "Persona 4 Revival - Pre-Order Trailer"
 platforms:
