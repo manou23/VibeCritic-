@@ -130,4 +130,4 @@ globalThis.fetch = originalFetch;
 const after = await withRunLock(async () => "lock-released", lock);
 assert.equal(after, "lock-released");
 await fs.rm(dir, { recursive:true, force:true });
-console.log("Publishing V3 core tests passed (OpenAI-only).");
+console.log("Publishing V3 core tests passed (OpenAI generation + optional Gemini editorial review).");
