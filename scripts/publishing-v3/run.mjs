@@ -47,11 +47,19 @@ const result = await withRunLock(async () => {
       if (!response.ok) throw new Error("Live verification returned HTTP " + response.status);
       const html = await response.text();
       if (!html.includes(job.title)) throw new Error("Live page does not contain the expected article title");
+      const completedKey = job.key;
+      const completedPath = job.articlePath;
+      const completedUrl = job.verifiedUrl;
+      const completedProvider = job.provider;
       transition(job,"published",{publishedAt:new Date().toISOString(),article:null,evidence:null});
       await saveState(state);
-      job = null;
-      // A successful live verification frees this cycle to create the next daily article.
-    }
+      job = chooseJob(state);
+      if (!job) {
+        const candidate = await discoverCandidate(state);
+        if (!candidate) return { action:"published", key:completedKey, articlePath:completedPath, url:completedUrl, provider:completedProvider };
+        job = enqueue(state,candidate).job;
+        await saveState(state);
+      }
     }
     if (job.status === "queued") {
       if (daily.articles >= 3) {
