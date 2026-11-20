@@ -128,6 +128,11 @@ const timeoutReview = await geminiReviewer.reviewArticle({title:"Test",body:"م�
 assert.equal(timeoutReview.skipped,true);
 assert.match(timeoutReview.reason,/timed out/);
 assert.equal(timeoutReview.requests,1);
+globalThis.fetch = async () => ({ ok:false, status:503, text:async()=>"temporarily unavailable" });
+const unavailableReview = await geminiReviewer.reviewArticle({title:"Test",body:"مقال"}, {title:"Test",sources:[]});
+assert.equal(unavailableReview.skipped,true);
+assert.match(unavailableReview.reason,/HTTP 503/);
+assert.equal(unavailableReview.requests,1);
 globalThis.fetch = async () => ({
   ok:true,
   json:async()=>({candidates:[{content:{parts:[{text:JSON.stringify({approved:false,score:5,factualRisk:"high",repetition:"low",exaggeration:"medium",issues:["ادعاء غير مدعوم"],notes:"مرفوض"})}]}}]})
