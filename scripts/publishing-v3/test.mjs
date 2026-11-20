@@ -46,6 +46,7 @@ const createdPath = await publishArticle(article,reviewRoot);
 assert.equal(createdPath,articleFilePath(article,reviewRoot));
 const renderedPreview = renderMarkdown(article);
 assert.match(renderedPreview,/reviewMode: review/);
+assert.match(renderedPreview,/score: 7.00/);
 assert.match(renderedPreview,/youtubeVideoId: "AbCdEfGhI_1"/);
 assert.match(renderedPreview,/مراجعة تحريرية نهائية/);
 assert.doesNotMatch(renderedPreview,/^(?:score|storyScore|visualsScore|soundScore|pacingScore):/m);
