@@ -8,12 +8,17 @@ export function normalizeFinalRating(text, score) {
   return String(text || "").replace(/(\d+(?:[.,]\d+)?)\s*(?:\/\s*10|من\s*10)/g, canonical);
 }
 
+export function normalizeBodyFinalRating(text, score) {
+  const canonical = Number(score).toFixed(1) + "/10";
+  return String(text || "").replace(/((?:التقييم النهائي|التقييم العام|الدرجة النهائية|Final score|Overall score)\\s*[:：]?\\s*)(\\*{0,2})(\\d+(?:[.,]\\d+)?\\s*(?:\\/\\s*10|من\\s*10))/gi, (_, label, emphasis) => label + emphasis + canonical);
+}
+
 function assemble(value, evidence) {
   const article = { ...value, title:evidence.title, type:evidence.type, sourceId:evidence.sourceId, sourceName:evidence.sourceName, sourceUrl:evidence.sourceUrl, releaseDate:evidence.releaseDate||"", poster:evidence.poster||"", backdrop:evidence.backdrop||evidence.poster||"", genres:evidence.genres||[], platforms:evidence.platforms||[], cast:evidence.cast||[], crew:evidence.crew||[], tags:evidence.genres||[], sources:evidence.sources, youtubeVideoId:evidence.youtubeVideoId, youtubeVideoTitle:evidence.youtubeVideoTitle };
   if (!/^[A-Za-z0-9_-]{11}$/.test(article.youtubeVideoId || "")) throw new Error("A verified official YouTube trailer is required for a final review");
   article.score = calculateWeightedReviewScore({ story:article.scores?.story, visuals:article.scores?.visuals, sound:article.scores?.sound, pacing:article.scores?.pacing });
   article.verdict = normalizeFinalRating(article.verdict, article.score);
-  article.body = normalizeFinalRating(article.body, article.score);
+  article.body = normalizeBodyFinalRating(article.body, article.score);
   const quality = validateArticle(article, { minWords:1000, minCharacters:5200 });
   if (String(article.verdict||"").trim().length < 90) throw new Error("Final verdict is too short");
   if (String(article.summary||"").trim().length < 90) throw new Error("Review summary is too short");
