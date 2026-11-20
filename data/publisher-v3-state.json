@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-20T22:49:51.549Z",
+  "updatedAt": "2026-11-20T22:50:48.757Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -561,11 +561,11 @@
         "popularity": 40.1225,
         "source": "TMDB"
       },
-      "status": "ready",
+      "status": "verifying",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-20T22:41:46.799Z",
-      "updatedAt": "2026-11-20T22:49:51.548Z",
+      "updatedAt": "2026-11-20T22:50:48.757Z",
       "nextAttemptAt": null,
       "evidence": {
         "title": "The Altruists",
