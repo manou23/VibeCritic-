@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-20T22:26:45.046Z",
+  "updatedAt": "2026-11-20T22:28:16.400Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -475,6 +475,163 @@
       "article": null,
       "lastError": "Gemini editorial review HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
       "resumeStatus": "queued"
+    },
+    "series:85077": {
+      "key": "series:85077",
+      "type": "series",
+      "id": "85077",
+      "title": "The Chosen",
+      "item": {
+        "type": "series",
+        "id": "85077",
+        "name": "The Chosen",
+        "date": "2019-04-21",
+        "popularity": 116.9197,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-20T22:27:10.283Z",
+      "updatedAt": "2026-11-20T22:27:10.303Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "Primary catalog description is too thin"
+    },
+    "series:259909": {
+      "key": "series:259909",
+      "type": "series",
+      "id": "259909",
+      "title": "Dexter: Resurrection",
+      "item": {
+        "type": "series",
+        "id": "259909",
+        "name": "Dexter: Resurrection",
+        "date": "2025-07-13",
+        "popularity": 84.0761,
+        "source": "TMDB"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-20T22:27:10.993Z",
+      "updatedAt": "2026-11-20T22:28:16.400Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Dexter: Resurrection",
+        "type": "series",
+        "sourceId": "series:259909",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/259909",
+        "overview": "Set 10 weeks after Dexter: New Blood, Dexter Morgan chases a missing Harrison to New York City, where Captain Angel Batista is hot on their trail from way down in Miami.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/259909",
+            "extract": "Set 10 weeks after Dexter: New Blood, Dexter Morgan chases a missing Harrison to New York City, where Captain Angel Batista is hot on their trail from way down in Miami."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Dexter%3A_Resurrection",
+            "extract": "Dexter: Resurrection is an American crime drama mystery television series developed by Clyde Phillips. It is a sequel series to Dexter and Dexter: New Blood, and it features Michael C. Hall reprising his role as Dexter Morgan alongside Uma Thurman, Jack Alcott, David Zayas, Ntare Guma Mbaho Mwine, Kadia Saraf, Dominic Fumusa, Emilia Suárez, James Remar, and Peter Dinklage."
+          }
+        ],
+        "releaseDate": "2025-07-13",
+        "genres": [
+          "Crime",
+          "Drama",
+          "Mystery"
+        ],
+        "platforms": [],
+        "cast": [
+          "Michael C. Hall",
+          "Uma Thurman",
+          "Jack Alcott",
+          "Dan Stevens",
+          "Bokeem Woodbine",
+          "Ntare Guma Mbaho Mwine",
+          "Kadia Saraf",
+          "Dominic Fumusa"
+        ],
+        "crew": [],
+        "rating": 8.5,
+        "votes": 770,
+        "poster": "https://image.tmdb.org/t/p/w780/o2Oyi3boT100bY5kCP4MBiTeetO.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/vcpj6rRDS93ImHCLPY8bwBuFGjR.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "Dexter: Resurrection: عودة إلى نيويورك لا تكشف الأدلة المتاحة أكثر من ملامحها",
+        "summary": "تقدّم Dexter: Resurrection نقطة انطلاق واضحة: بعد عشرة أسابيع من أحداث Dexter: New Blood، يتجه ديكستر مورغان إلى نيويورك بحثاً عن هاريسون، بينما يلاحقه أنخل باتيستا من ميامي. لكن هذه المعاينة التحريرية تعتمد على ملخص تعريفي ومعلومات عن المسلسل وطاقمه، لا على مشاهدة الحلقات؛ لذلك يمكنها تقييم الوعد الدرامي وحدود المعلومات، لا الحكم على التنفيذ أو الأداء أو الصورة والصوت.",
+        "verdict": "تبدو العودة واعدة من حيث وضع شخصيات معروفة على مسارات متقاطعة، ومنح نيويورك دوراً جديداً في استمرار الحكاية. لكن الأدلة المتاحة لا تتجاوز الفرضية الأساسية وبيانات الإنتاج والطاقم؛ فلا تسمح بالحكم على جودة الكتابة الفعلية، أو التمثيل، أو الإخراج، أو الإيقاع. لذلك يظل هذا انطباعاً تحريرياً أولياً مشروطاً، لا مراجعة نهائية للعمل.",
+        "body": "هذه معاينة تحريرية محدودة لمسلسل Dexter: Resurrection، مبنية حصراً على ملخصه التعريفي والبيانات المنشورة عن نوعه وطاقمه وموعد عرضه. لا تستند إلى مشاهدة الحلقات، ولذلك لا تصف مشاهد أو أداءً أو تفاصيل إخراجية غير موثقة. ما يمكن قراءته هنا هو شكل الفرضية وما تعد به من تقاطع شخصيات، مع إبقاء الحكم على التنفيذ مفتوحاً. هذا التمييز مهم خصوصاً لمسلسل يواصل حكاية سابقة ويعتمد، وفق المعلومات المتاحة، على علاقات يعرفها جمهور العمل الأصلي.\n\n## الفكرة والسياق\nتضع البيانات بداية الحكاية بعد عشرة أسابيع من Dexter: New Blood. يتجه ديكستر مورغان إلى نيويورك بحثاً عن هاريسون، فيما يلاحقه الكابتن أنخل باتيستا من ميامي. هذه الوقائع تمنح المسلسل نقطة انطلاق مباشرة، لا مدخلاً منفصلاً عن المسلسل السابق؛ ومن المرجح أن يكون فهم العلاقة بين الشخصيات وسوابقها ذا أهمية، لكن المصادر لا تحدد مقدار ما يلزم تذكره من العملين السابقين. تصنيف المسلسل جريمة ودراما وغموض ينسجم مع هذا الإطار، لكنه لا يثبت وحده كيف ستتوزع عناصره. أما اختيار نيويورك، فيمثل انتقالاً مكانياً معلناً، لا دليلاً كافياً على أن المدينة ستصبح عنصراً درامياً متماسكاً أو مميزاً.\n\n## السرد والبناء\nتجمع الفرضية بين بحث ديكستر عن ابنه وملاحقة باتيستا له، فتعد بخطين سرديين يمكن أن يتقاربا. هذا التقابل يحمل إمكاناً للصراع بين علاقة عائلية ومطاردة ذات تبعات، لكنه يظل استنتاجاً من الملخص لا وصفاً لما يحدث فعلاً في الحلقات. لا نعرف ما الذي دفع هاريسون إلى الاختفاء، ولا كيف تتطور المطاردة، ولا ما إذا كان المسلسل يمنح كل خط مساحة متوازنة. لذلك يصعب تقييم تماسك الحبكة أو مفاجآتها أو قدرتها على بناء الغموض. وتؤكد المعلومات أن العمل مسلسل تكملة لـ Dexter وDexter: New Blood، وأن كلايد فيليبس طوّره؛ لكنها لا تقدم تفاصيل عن عدد الحلقات أو بنائها. النتيجة أن الفكرة قابلة للشرح، أما نجاح تحويلها إلى سرد مشدود فغير قابل للتحقق هنا.\n\n## الجوانب الفنية والتصميم\nتسمح بيانات الطاقم بتحديد عودة مايكل سي. هول بدور ديكستر مورغان، إلى جانب جاك ألكوت وديفيد زاياس وأسماء أخرى، كما تذكر أوما ثورمان ودان ستيفنز وبوكيـم وودباين ضمن قائمة الممثلين. هذا يثبت اتساع الأسماء المشاركة، لكنه لا يتيح وصف جودة الأداء أو طبيعة أدوار الجميع؛ فالملخص لا يحدد وظيفة كل ممثل في الحكاية، كما أن القائمة تختلف بين المواد المقدمة. لا تتوفر معلومات عن التصوير، أو تصميم الإنتاج، أو الملابس، أو الإضاءة، ولا ينبغي استنتاج شكل نيويورك البصري من موقع الأحداث وحده. لذلك لا يمكن القول إن المسلسل يبتكر لغة بصرية أو يحافظ على أسلوب سابق. هذا النقص ليس حكماً سلبياً على الجودة، بل حد واضح لما تستطيع هذه المعاينة إثباته.\n\n## الصوت والإيقاع\nلا تقدم الأدلة وصفاً للموسيقى أو المؤثرات الصوتية أو المزج، فلا أساس لتقييم الصوت بوصفه عنصراً فنياً. كذلك لا تكشف مدة الحلقات أو تواتر التحولات السردية أو سرعة الانتقال بين مساري البحث والملاحقة. يمكن فقط ملاحظة أن الملخص يضع حدثين متوازيين في نقطة البداية، وهو ترتيب قد يتيح بناء توتر تدريجي، لكنه لا يضمن ذلك. وقد يكون إيقاع المسلسل سريعاً أو متأنياً؛ لا مادة موثوقة هنا ترجح أحد الاحتمالين. لهذا يبقى أي حكم على الموسيقى أو الإيقاع مؤجلاً إلى مشاهدة فعلية، ولا يصح تحويل طبيعة التصنيف إلى دليل على طريقة التنفيذ.\n\n## نقاط القوة والقيود\nأوضح عناصر الجذب في المعلومات المتاحة هو اجتماع ديكستر وهاريسون وباتيستا ضمن متابعة زمنية محددة، مع انتقال الحكاية إلى نيويورك. كما تمنح عودة مايكل سي. هول للدور الرئيسي، ووجود وجوه متعددة في الطاقم، المشروع استمرارية معلنة مع عالمه السابق. غير أن هذه نقاط قوة في التصور والبيانات، لا شهادة على نجاحها على الشاشة. القيود جوهرية: لا توجد مراجعات حلقات أو أوصاف تفصيلية للأحداث أو معلومات فنية تسمح بفحص الكتابة والأداء والصورة والصوت. حتى بيانات الطاقم لا تشرح توزيع الأدوار، ولا تكفي لتوقع أثر كل شخصية. كما أن المعلومات عن الموعد والتصنيف لا تضيف دليلاً على جودة العمل. لهذا ينبغي التعامل مع الوعد بحذر، وتجنب ملء الفراغات بتوقعات تُعرض كأنها حقائق.\n\n## الحكم النهائي\nبحسب المواد المتاحة، يقدّم Dexter: Resurrection إطاراً مفهوماً لاستمرار القصة: بحث عن هاريسون في نيويورك وملاحقة من باتيستا قادمة من ميامي، بعد عشرة أسابيع من Dexter: New Blood. هذا يكفي لتحديد موضوع المعاينة، لا لتقرير إن كان المسلسل يفي بوعده درامياً أو فنياً. أرى أن الفرضية تملك عناصر متابعة واضحة، لكن الأدلة لا تبرر حكماً نهائياً على جودتها. لذا فهذه قراءة تمهيدية مشروطة، وينبغي أن يبقى تقييم الحلقات والأداء والإيقاع والصوت معلقاً إلى أن تتوفر مشاهدة مباشرة أو مصادر نقدية موثوقة.",
+        "scores": {
+          "story": 6,
+          "visuals": 5,
+          "sound": 5,
+          "pacing": 5
+        },
+        "pros": [
+          "نقطة انطلاق زمنية واضحة تصل المسلسل مباشرة بأحداث Dexter: New Blood.",
+          "تقاطع معلن بين بحث ديكستر عن هاريسون وملاحقة باتيستا له.",
+          "عودة مايكل سي. هول إلى دور ديكستر، مع مشاركة طاقم يضم أسماء معروفة."
+        ],
+        "cons": [
+          "المعلومات المتاحة لا تكشف تطور الحبكة أو كيفية بناء الغموض، ما يمنع تقييم السرد الفعلي.",
+          "لا توجد أدلة عن جودة التمثيل أو التصوير أو تصميم الإنتاج أو الموسيقى.",
+          "لا يمكن الحكم على الإيقاع أو توزيع أدوار الطاقم من الملخص والبيانات التعريفية وحدهما."
+        ],
+        "title": "Dexter: Resurrection",
+        "type": "series",
+        "sourceId": "series:259909",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/259909",
+        "releaseDate": "2025-07-13",
+        "poster": "https://image.tmdb.org/t/p/w780/o2Oyi3boT100bY5kCP4MBiTeetO.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/vcpj6rRDS93ImHCLPY8bwBuFGjR.jpg",
+        "genres": [
+          "Crime",
+          "Drama",
+          "Mystery"
+        ],
+        "platforms": [],
+        "cast": [
+          "Michael C. Hall",
+          "Uma Thurman",
+          "Jack Alcott",
+          "Dan Stevens",
+          "Bokeem Woodbine",
+          "Ntare Guma Mbaho Mwine",
+          "Kadia Saraf",
+          "Dominic Fumusa"
+        ],
+        "crew": [],
+        "tags": [
+          "Crime",
+          "Drama",
+          "Mystery"
+        ],
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/259909",
+            "extract": "Set 10 weeks after Dexter: New Blood, Dexter Morgan chases a missing Harrison to New York City, where Captain Angel Batista is hot on their trail from way down in Miami."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Dexter%3A_Resurrection",
+            "extract": "Dexter: Resurrection is an American crime drama mystery television series developed by Clyde Phillips. It is a sequel series to Dexter and Dexter: New Blood, and it features Michael C. Hall reprising his role as Dexter Morgan alongside Uma Thurman, Jack Alcott, David Zayas, Ntare Guma Mbaho Mwine, Kadia Saraf, Dominic Fumusa, Emilia Suárez, James Remar, and Peter Dinklage."
+          }
+        ],
+        "score": 5.3
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 6949,
+      "articlePath": "src/content/reviews/series-dexter-resurrection-259909.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-dexter-resurrection-259909/"
     }
   },
   "providers": {},
@@ -485,9 +642,9 @@
       "tokens": 0
     },
     "2026-11-20": {
-      "articles": 2,
-      "requests": 15,
-      "tokens": 9858
+      "articles": 3,
+      "requests": 18,
+      "tokens": 16807
     }
   },
   "history": []
