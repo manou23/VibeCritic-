@@ -15,10 +15,10 @@ const result = await withRunLock(async () => {
   let job = null;
   try {
     job = chooseJob(state);
-    if (!job && (daily.articles >= 2 || daily.requests >= 6)) return { action:"daily-free-budget-reached", ...daily };
+    if (!job && (daily.articles >= 1)) return { action:"daily-free-budget-reached", ...daily };
     if (job?.status === "waiting") {
       const resume = job.resumeStatus || "queued";
-      if (["queued","researching","writing"].includes(resume) && (daily.articles >= 2 || daily.requests >= 6)) {
+      if (["queued","researching","writing"].includes(resume) && (daily.articles >= 1)) {
         job.nextAttemptAt = tomorrow();
         await saveState(state);
         return { action:"daily-free-budget-reached", key:job.key, ...daily };
@@ -52,7 +52,7 @@ const result = await withRunLock(async () => {
       return { action:"published", key:job.key, articlePath:job.articlePath, url:job.verifiedUrl, provider:job.provider };
     }
     if (job.status === "queued") {
-      if (daily.articles >= 2 || daily.requests >= 6) {
+      if (daily.articles >= 1) {
         transition(job,"waiting",{resumeStatus:"queued",nextAttemptAt:tomorrow()});
         await saveState(state);
         return { action:"daily-free-budget-reached", key:job.key, ...daily };
