@@ -41,6 +41,8 @@ jobs:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
           RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PUBLISHER_V3_GEMINI_REVIEW_MODEL: gemini-2.5-flash
           PUBLISHER_V3_OPENAI_ENABLED: ${{ secrets.OPENAI_API_KEY != '' }}
           PUBLISHER_V3_OPENAI_MODEL: gpt-6-luna
         run: node scripts/publishing-v3/run.mjs
