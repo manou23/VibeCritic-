@@ -11,7 +11,7 @@ youtubeVideoTitle: "The Rings of Power — الإعلان التشويقي ال�
 date: 2026-11-20
 releaseDate: "2022-09-01"
 type: series
-score: 7.1
+score: 7.0
 storyScore: 6.3
 visualsScore: 8.5
 soundScore: 7.7
