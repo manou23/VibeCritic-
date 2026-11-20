@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-20T22:05:12.449Z",
+  "updatedAt": "2026-11-20T22:06:25.964Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -79,11 +79,11 @@
         "popularity": 2053.4442,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "ready",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-20T22:04:38.094Z",
-      "updatedAt": "2026-11-20T22:05:12.448Z",
+      "updatedAt": "2026-11-20T22:06:25.963Z",
       "nextAttemptAt": null,
       "evidence": {
         "title": "The Lord of the Rings: The Rings of Power",
