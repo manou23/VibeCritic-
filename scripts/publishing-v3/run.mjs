@@ -77,7 +77,7 @@ const result = await withRunLock(async () => {
           break;
         } catch (error) {
           const message = String(error?.message || error);
-          const candidateSpecific = /Candidate release date is still in the future|Primary catalog description is too thin|Independent source is too thin|No exact independent encyclopedia match|Independent source title mismatch|At least two independent HTTPS source domains required|Evidence overview is too thin/.test(message);
+          const candidateSpecific = /Candidate release date is still in the future|Primary catalog description is too thin|Independent source is too thin|No exact independent encyclopedia match|Independent source title mismatch|At least two independent HTTPS source domains (?:are )?required|Evidence overview is too thin/.test(message);
           if (!candidateSpecific) throw error;
           transition(job,"rejected",{lastError:message});
           await saveState(state);
