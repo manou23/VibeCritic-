@@ -10,6 +10,11 @@ type: movie
 date: 2026-11-20
 releaseDate: "2027-06"
 reviewMode: preview
+poster: "https://img.youtube.com/vi/Swiz1XyfhcI/maxresdefault.jpg"
+backdrop: "https://img.youtube.com/vi/Swiz1XyfhcI/maxresdefault.jpg"
+youtubeVideoId: "Swiz1XyfhcI"
+youtubeVideoTitle: "Shrek 5 | Official Teaser Trailer | Universal Pictures"
+mediaVerified: true
 sourceName: "Universal Pictures"
 sourceId: "shrek-5-2027-preview"
 sourceUrl: "https://www.universalpictures.com/movies/"
