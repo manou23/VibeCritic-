@@ -10,7 +10,7 @@ date: 2026-11-20
 releaseDate: "2025-07-13"
 type: series
 score: 8.5
-storyScore: 8.3
+storyScore: 8.6
 visualsScore: 8.4
 soundScore: 8.2
 pacingScore: 8.6
