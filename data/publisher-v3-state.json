@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-20T22:28:16.400Z",
+  "updatedAt": "2026-11-20T22:28:53.696Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -513,12 +513,12 @@
         "popularity": 84.0761,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "waiting",
       "stage": 0,
-      "attempts": 0,
+      "attempts": 1,
       "createdAt": "2026-11-20T22:27:10.993Z",
-      "updatedAt": "2026-11-20T22:28:16.400Z",
-      "nextAttemptAt": null,
+      "updatedAt": "2026-11-20T22:28:53.695Z",
+      "nextAttemptAt": "2026-11-20T22:38:53.695Z",
       "evidence": {
         "title": "Dexter: Resurrection",
         "type": "series",
@@ -627,11 +627,12 @@
         ],
         "score": 5.3
       },
-      "lastError": null,
+      "lastError": "Live verification returned HTTP 404",
       "provider": "openai",
       "tokens": 6949,
       "articlePath": "src/content/reviews/series-dexter-resurrection-259909.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-dexter-resurrection-259909/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-dexter-resurrection-259909/",
+      "resumeStatus": "verifying"
     }
   },
   "providers": {},
