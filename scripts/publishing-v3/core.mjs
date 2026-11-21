@@ -64,14 +64,15 @@ export function validateArticle(article, { minWords = 650, minCharacters = 3200 
   const paragraphs = String(article.body).split(/\n\s*\n/).map(x=>x.trim()).filter(x=>x.length>80);
   if (new Set(paragraphs).size < Math.min(3,paragraphs.length)) throw new Error("Article contains repeated paragraphs");
   const reviewMode = article.reviewMode || "review";
-  if (!["review","preview","limited"].includes(reviewMode)) throw new Error("Invalid review mode: " + reviewMode);
+  if (!["review","preview"].includes(reviewMode) throw new Error("Invalid review mode: " + reviewMode);
   if (reviewMode === "review") {
     for (const k of ["story","visuals","sound","pacing"]) if (!Number.isFinite(article.scores?.[k]) || article.scores[k] < 0 || article.scores[k] > 10) throw new Error("Invalid score: " + k);
     if (!Number.isFinite(article.score) || article.score <= 0 || article.score > 10) throw new Error("Invalid weighted score");
   } else {
-    if (article.score != null || article.scores != null) throw new Error("Preview/limited article must not contain numeric score metadata");
+    if (article.score != null || article.scores != null) throw new Error("Preview article must not contain numeric score metadata");
+    if (!article.releaseDate || !(article.releaseDate > new Date().toISOString().slice(0,10))) throw new Error("Unrated preview must have a verified future release date");
     const publicText = [article.headline,article.summary,article.verdict,article.body].join("\n").replace(/https?:\/\/[^\s)\]>]+/gi,"");
-    if (/(?<![0-9])\d{1,2}(?:[.,]\d+)?\s*(?:\/\s*10|من\s*10)(?![0-9])/i.test(publicText)) throw new Error("Preview/limited article must not contain a numeric final rating");
+    if (/(?<![0-9])\d{1,2}(?:[.,]\d+)?\s*(?:\/\s*10|من\s*10)(?![0-9])/i.test(publicText)) throw new Error("Preview article must not contain a numeric final rating");
   }
   if (!Array.isArray(article.sources) || article.sources.length < 2) throw new Error("Article sources are missing");
   return { words, characters: String(article.body).length };
