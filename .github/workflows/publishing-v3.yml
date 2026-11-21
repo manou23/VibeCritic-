@@ -6,8 +6,6 @@ on:
     paths:
       - '.github/workflows/publishing-v3.yml'
       - 'scripts/publishing-v3/**'
-  schedule:
-    - cron: '15 7,10,13,16,19 * * *' # 08:15, 11:15, 14:15, 17:15, 20:15 Algeria time (UTC+1)
   workflow_dispatch:
 
 permissions:
