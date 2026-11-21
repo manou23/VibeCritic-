@@ -136,7 +136,7 @@ export async function collectEvidence(candidate) {
   if (candidate.type === "game") {
     const data = await get("https://api.rawg.io/api/games/" + encodeURIComponent(candidate.id) + "?key=" + encodeURIComponent(env.RAWG_API_KEY));
     primary = { name:"RAWG", url:data.slug ? "https://rawg.io/games/" + data.slug : "https://rawg.io", extract:clean(data.description_raw || data.description) };
-    metadata = { releaseDate:data.released || "", genres:(data.genres||[]).map(x=>x.name), platforms:(data.platforms||[]).map(x=>x.platform?.name).filter(Boolean), developers:(data.developers||[]).map(x=>x.name), rating:data.rating||null, votes:data.ratings_count||0, poster:data.background_image||"" };
+    metadata = { releaseDate:data.released || "", genres:(data.genres||[]).map(x=>x.name), platforms:(data.platforms||[]).map(x=>x.platform?.name).filter(Boolean), developers:(data.developers||[]).map(x=>x.name), rating:data.rating||null, ratingScale:5, votes:data.ratings_count||0, poster:data.background_image||"" };
   } else {
     const kind = candidate.type === "series" ? "tv" : "movie";
     const [data,credits] = await Promise.all([
@@ -144,7 +144,7 @@ export async function collectEvidence(candidate) {
       get(tmdb(kind + "/" + candidate.id + "/credits")).catch(()=>({cast:[],crew:[]}))
     ]);
     primary = { name:"TMDB", url:"https://www.themoviedb.org/" + kind + "/" + candidate.id, extract:clean(data.overview) };
-    metadata = { releaseDate:data.release_date || data.first_air_date || "", genres:(data.genres||[]).map(x=>x.name), platforms:[], cast:(credits.cast||[]).slice(0,8).map(x=>x.name), crew:(credits.crew||[]).filter(x=>["Director","Creator","Writer"].includes(x.job)).slice(0,8).map(x=>x.name), rating:data.vote_average||null, votes:data.vote_count||0, poster:data.poster_path ? "https://image.tmdb.org/t/p/w780"+data.poster_path : "", backdrop:data.backdrop_path ? "https://image.tmdb.org/t/p/w1280"+data.backdrop_path : "" };
+    metadata = { releaseDate:data.release_date || data.first_air_date || "", genres:(data.genres||[]).map(x=>x.name), platforms:[], cast:(credits.cast||[]).slice(0,8).map(x=>x.name), crew:(credits.crew||[]).filter(x=>["Director","Creator","Writer"].includes(x.job)).slice(0,8).map(x=>x.name), rating:data.vote_average||null, ratingScale:10, votes:data.vote_count||0, poster:data.poster_path ? "https://image.tmdb.org/t/p/w780"+data.poster_path : "", backdrop:data.backdrop_path ? "https://image.tmdb.org/t/p/w1280"+data.backdrop_path : "" };
   }
   if (primary.extract.length < 80) throw new Error("Primary catalog description is too thin");
   const [independent, youtubeTrailer] = await Promise.all([
@@ -166,8 +166,8 @@ export async function collectEvidence(candidate) {
     sources,
     // Catalog metadata, an encyclopedia entry and a promotional trailer support an informative profile,
     // but do not establish episode-level or hands-on evidence for a scored critical review.
-    reviewReadiness: candidate.preview === true && metadata.releaseDate > new Date().toISOString().slice(0,10) ? "preview" : "limited",
-    reviewReadinessReason: candidate.preview === true && metadata.releaseDate > new Date().toISOString().slice(0,10) ? "Verified pre-release item; preview only, no final rating." : "Available evidence is catalog metadata, an encyclopedia summary and promotional material; no independently verifiable episode-level or hands-on review evidence was collected.",
+    reviewReadiness: candidate.preview === true && metadata.releaseDate > new Date().toISOString().slice(0,10) ? "preview" : Number(metadata.votes) >= 100 && Number(metadata.rating) > 0 ? "audience" : "limited",
+    reviewReadinessReason: candidate.preview === true && metadata.releaseDate > new Date().toISOString().slice(0,10) ? "Verified pre-release item; preview only, no final rating." : Number(metadata.votes) >= 100 && Number(metadata.rating) > 0 ? "A source-backed audience average is available from " + primary.name + " with " + metadata.votes + " votes; this is not an independent VibeCritic score." : "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
     youtubeVideoId:youtubeTrailer.id,
     youtubeVideoTitle:youtubeTrailer.title,
     youtubeChannel:youtubeTrailer.channel,
