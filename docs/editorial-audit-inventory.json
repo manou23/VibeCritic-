@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "lastUpdated": "2026-11-21",
+  "sourceMainSha": "44b1cd1e130904d790499011946967158032200a",
+  "previousAuditMainSha": "2802e29b078e53cd574880d6482248ee311bd8f6",
+  "articleCount": 229,
+  "previousArticleCount": 176,
+  "growthSincePreviousAudit": 53,
+  "reviewedUniqueCount": 24,
+  "pendingCount": 205,
+  "currentRun": {
+    "articlesChecked": 8,
+    "newlyReviewed": 8,
+    "revalidated": 0,
+    "articleCorrections": 8,
+    "sitePolicyPageUpdated": false
+  },
+  "reviewed": [
+    {
+      "path": "src/content/reviews/series-chiaroscuro-336243.md",
+      "reviewedAt": "2026-11-20",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "26bcfe448ddb31e76c58e75fd31f8b3f82087f5e",
+      "status": "corrected-to-limited",
+      "note": "Official-source fact sheet only; no score until evidence supports a full review."
+    },
+    {
+      "path": "src/content/reviews/series-what-we-do-in-the-shadows-83631.md",
+      "reviewedAt": "2026-11-20",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "bc436c537fd385f0a9d6b7340a9c86633cc1c5f4",
+      "status": "corrected-to-limited",
+      "note": "Verified cast/crew and final-season facts; no unsupported final score."
+    },
+    {
+      "path": "src/content/reviews/rings-of-power-season-3-2026.md",
+      "reviewedAt": "2026-11-20",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "3a790a44a64ccb7e1ce438eea629667134031548",
+      "status": "corrected-to-limited",
+      "note": "Six of eight episodes were available; removed premature 7.7/10 and marked as limited."
+    },
+    {
+      "path": "src/content/reviews/game-grand-theft-auto-vi-2026-review.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "87d05ed976988ef84806ec537781ddd335f53ca9",
+      "status": "revalidated-no-change",
+      "note": "Research-based review explicitly discloses no firsthand play; score 8.9 matches weighted rubric; ending details withheld pending evidence."
+    },
+    {
+      "path": "src/content/reviews/stellar-blade-switch-2-2026.md",
+      "reviewedAt": "2026-11-20",
+      "contentSha": "20c33a7540f5a50280536f7ab6cc9ba826f05d88",
+      "status": "reviewed-no-change"
+    },
+    {
+      "path": "src/content/reviews/zelda-ocarina-of-time-switch-2-2026.md",
+      "reviewedAt": "2026-11-20",
+      "contentSha": "43ef988dffaca063dc1c02c087b38126d1f1f2e7",
+      "status": "reviewed-no-change"
+    },
+    {
+      "path": "src/content/reviews/elden-ring-nightreign-2026.md",
+      "reviewedAt": "2026-11-20",
+      "contentSha": "3124e3a105bb0c6dec2b742dc4839b4d0127dd3d",
+      "status": "reviewed-no-change"
+    },
+    {
+      "path": "src/content/reviews/movie-the-devil-wears-prada-2-2026.md",
+      "reviewedAt": "2026-11-21",
+      "contentSha": "59b6058c924c46c6ee76456d2fd98fb138f25fda",
+      "status": "corrected",
+      "note": "Removed Hulu as an unverified film streaming provider; Disney+ is confirmed by its official title page."
+    },
+    {
+      "path": "src/content/reviews/game-ea-sports-fc-27-2026.md",
+      "reviewedAt": "2026-11-21",
+      "contentSha": "3f84cabc8ce8b454cacdfaae906b1b84880b5733",
+      "status": "reviewed-no-change",
+      "note": "Research-based analysis; official release/features and embedded trailer; score matches weighted rubric."
+    },
+    {
+      "path": "src/content/reviews/game-efootball-2027-2026.md",
+      "reviewedAt": "2026-11-21",
+      "contentSha": "e79934eff8b4ab5e378fdda69f581999325982be",
+      "status": "corrected",
+      "note": "Changed v6.0.0 season-update date from 13 to 12 August 2026 per Konami's official notice."
+    },
+    {
+      "path": "src/content/reviews/game-ufl-2026-27.md",
+      "reviewedAt": "2026-11-21",
+      "contentSha": "632919183ca8b08b07eff802cffb71a1c4b80e7c",
+      "status": "reviewed-no-change",
+      "note": "Official UFL page confirms 19 August 2026 season update; score matches weighted rubric."
+    },
+    {
+      "path": "src/content/reviews/series-la-casa-de-papel-review.md",
+      "reviewedAt": "2026-11-21",
+      "contentSha": "d896c039e78479cf873cf4734ca1f33dc1fa9acb",
+      "status": "reviewed-no-change",
+      "note": "Distinct analysis and source links; no first-person viewing claim; score matches weighted rubric."
+    },
+    {
+      "path": "src/content/reviews/series-vikings-review.md",
+      "reviewedAt": "2026-11-21",
+      "contentSha": "e961b1d4eab03a780623832a4706861bb59d290a",
+      "status": "reviewed-no-change",
+      "note": "Full-series structure and sources; no first-person viewing claim; score matches weighted rubric."
+    },
+    {
+      "path": "src/content/reviews/series-dexter-resurrection-259909.md",
+      "reviewedAt": "2026-11-21",
+      "contentSha": "7686fea3aff529015133cba80d0441c32e7595f6",
+      "status": "corrected",
+      "note": "Aligned body score/table to the metadata score 7.7 and the four weighted dimensions; season-two coverage remains explicitly ongoing."
+    },
+    {
+      "path": "src/content/reviews/series-the-lord-of-the-rings-the-rings-of-power-84773.md",
+      "reviewedAt": "2026-11-21",
+      "contentSha": "3db3b98d0b2691355a1630dfb8ec145c416d67be",
+      "status": "corrected",
+      "note": "Aligned body score/table to metadata 7.0 and four weighted dimensions; relabelled as interim and linked to the separate limited season-three reading."
+    },
+    {
+      "path": "src/content/reviews/fable-2027-preview.md",
+      "reviewedAt": "2026-11-21",
+      "contentSha": "f557e66d500a36ce3de151a088c3d0bc7fba55ff",
+      "status": "reviewed-no-change",
+      "note": "Clearly labelled preview with no score or firsthand claim; release date and platforms match official Fable FAQ."
+    },
+    {
+      "path": "src/content/reviews/movie-wuthering-heights-2026.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "5cd426a3353f9cf98cbd85859a5751b00a75341d",
+      "status": "corrected",
+      "note": "Removed repeated body verdict and score; retained the distinct comparison analysis and template verdict card. Score remains aligned with the fixed weighted rubric. YouTube ID matches the official trailer title."
+    },
+    {
+      "path": "src/content/reviews/murder-in-galicia-2026.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "0fc57c2ab6ef9f9b7fbb502b69efe2e3334f5cc1",
+      "status": "corrected",
+      "note": "Removed duplicated verdict/score; clarified fictional series versus the Isabel Fuentes case using Netflix's official documentary and press release; corrected creator/writer roles; linked sources and replaced the third-party poster with the AlloCiné poster plus an official Netflix backdrop. Trailer ID corroborated by Netflix trailer listing and a matching trailer reference."
+    },
+    {
+      "path": "src/content/reviews/ninho-le-prix-a-payer-2026.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "17e8a683d4072614cf16f6f360a63e366de3f733",
+      "status": "corrected",
+      "note": "Removed duplicated verdict/score; added co-director Jules Renault to credits and cited the verified AlloCiné credit record. Video ID is linked from the Netflix France trailer reference."
+    },
+    {
+      "path": "src/content/reviews/persona-4-revival-2027-preview.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "f36c60f71be30ab158fac0570826d0605f7b07b3",
+      "status": "corrected",
+      "note": "Removed repeated preview verdict; kept the explicit no-score, no-firsthand-experience preview disclaimer. Video ID is corroborated by an Atlus West pre-order trailer reference."
+    },
+    {
+      "path": "src/content/reviews/phantom-blade-zero-2026.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "15b7226d1f22b5a9302c6bfbb64f2ac8fee5589e",
+      "status": "corrected",
+      "note": "Removed duplicated verdict; clarified store-displayed dates (PlayStation/Epic 29 Oct; Steam 28 Oct) and added verified direct store links. Video ID is corroborated by the official pre-order trailer reference."
+    },
+    {
+      "path": "src/content/reviews/possible-love-2026.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "8185b0516741729d79d8b74a5302d5eb9ae6783e",
+      "status": "corrected",
+      "note": "Removed repeated verdict and numeric score from the body; retained the independent research-based methodology note. YouTube ID matches the official Netflix trailer title."
+    },
+    {
+      "path": "src/content/reviews/pragmata-2026.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "906dd24408b675e8d146d9915b66f15853c3cdc3",
+      "status": "corrected",
+      "note": "Removed repeated verdict and score from the body; retained source-based methodology note and verified weighted score. YouTube ID matches the Official Capcom Europe main trailer."
+    },
+    {
+      "path": "src/content/reviews/project-hail-mary-2026.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "4ce66de619f928143b1ee6ac75f5561c490d951a",
+      "status": "corrected",
+      "note": "Removed repeated verdict and score from the body; retained research-based methodology note and verified weighted score. YouTube ID matches the official final-trailer title."
+    }
+  ],
+  "siteChecks": {
+    "about": "Reviewed; editorial purpose and AI-assisted content disclosure are present.",
+    "contact": "Reviewed; contact form uses FormSubmit and identifies the submitted fields.",
+    "privacy": "Uses the detailed FormSubmit disclosure first prepared in PR #148, mirrored exactly in this audit branch to avoid divergent privacy-page edits. Cloudflare preview build succeeded, but the rendered privacy page could not be independently opened from this environment.",
+    "consent": "No site CMP/consent banner found. Before personalized Google ads are served to EEA/UK/Switzerland users, use a Google-certified CMP integrated with IAB TCF; TCF v2.3 applies to new TC strings since 2026-03-01.",
+    "ads": "No publisher ID, ad code, ads.txt, verification setting, or AdSense application setting changed.",
+    "articles": "The review detail template renders a final-verdict card; this batch removes duplicated verdict/score sections from all 8 reviewed article bodies.",
+    "media": "All 8 articles retain a relevant video ID with a corroborating official/source reference; direct YouTube page fetch was throttled for some IDs. Murder in Galicia uses an AlloCiné-hosted official poster and an official Netflix CDN backdrop; Phantom Blade Zero store links and store-displayed dates were verified.",
+    "preview": "Cloudflare Pages preview deployment succeeded for commit 52a8766 (https://22c2322c.vibecritic.pages.dev). The preview URL and individual pages were not readable through the browser tool, so rendered appearance remains unverified."
+  },
+  "policyReview": {
+    "reviewedAt": "2026-11-21",
+    "sources": [
+      "https://support.google.com/adsense/answer/10502938?hl=en",
+      "https://support.google.com/adsense/answer/9804260?hl=en",
+      "https://support.google.com/admanager/answer/13554116?hl=en",
+      "https://developers.google.com/search/docs/essentials",
+      "https://developers.google.com/search/docs/essentials/spam-policies"
+    ],
+    "summary": "Rechecked official Google Publisher Policies, AdSense policies, Search Essentials and scaled-content spam guidance on 2026-11-21. No material policy change identified. Google prohibits copied/low-value content and ads on screens without publisher content; scaled-content abuse applies regardless of whether content is produced by AI, automation or people. No fixed minimum word count or article count is stated in the reviewed guidance."
+  },
+  "nextBatch": [
+    "src/content/reviews/saros-2026.md",
+    "src/content/reviews/series-12-12-12-2026-manual-assisted.md",
+    "src/content/reviews/series-2734.md",
+    "src/content/reviews/series-alkhallat-2026-manual-assisted.md",
+    "src/content/reviews/series-blade-runner-2099-2026-preview.md",
+    "src/content/reviews/series-harry-potter-philosophers-stone-2026-preview.md",
+    "src/content/reviews/series-invincible-season-5-2027-preview.md",
+    "src/content/reviews/series-neuromancer-2027-preview.md"
+  ],
+  "deferred": [
+    {
+      "path": "src/content/reviews/game-red-dead-redemption-2010.md",
+      "reason": "Previously deferred from the priority batch as an older/non-proactive title; remains pending for a later full-cycle decision."
+    }
+  ],
+  "runHistory": [
+    {
+      "date": "2026-11-21",
+      "batch": "previous batch",
+      "branchCommit": "430f68671edbabec41263d08170ef51890de8e2c",
+      "articlesChecked": 10,
+      "newlyReviewed": 9,
+      "revalidated": 1,
+      "articleCorrections": 7,
+      "sitePolicyPageUpdated": true
+    },
+    {
+      "date": "2026-11-21",
+      "batch": "current batch",
+      "articlesChecked": 8,
+      "newlyReviewed": 8,
+      "revalidated": 0,
+      "articleCorrections": 8,
+      "sitePolicyPageUpdated": false
+    }
+  ]
+}

@@ -3,7 +3,7 @@ title: "جريمة في غاليسيا"
 originalTitle: "Murder in Galicia"
 headline: "جريمة في غاليسيا: مسلسل جريمة هادئ يفضح بطء العدالة… ويخسر بعض قوته حين يختزل الضحية في ملف"
 hook: "في بلدة غاليسية هادئة، تنجو امرأة من اعتداء وحشي، لكن الخطر لا ينتهي عند باب المستشفى؛ فالمحقق الذي يشك في الزوج يصطدم بإجراءات بطيئة ونظام لا يتحرك بالسرعة التي تتطلبها حياة إنسان."
-summary: "مسلسل إسباني محدود من ثلاثة أجزاء، مستوحى من قضية حقيقية وقعت في غاليسيا عام 2015. يتابع الرقيب إلياس لاغو، الذي يؤديه تريستان أولوا، وهو يحقق في اعتداء على إيريني ويشك في رواية زوجها أنيسيتو، بينما تتعثر محاولاته أمام بطء الإجراءات والقرارات المؤسسية."
+summary: "مسلسل إسباني درامي خيالي محدود من ثلاثة أجزاء، مستوحى من قضية حقيقية وقعت في غاليسيا عام 2015. يتابع الرقيب إلياس لاغو، الذي يؤديه تريستان أولوا، وهو يحقق في اعتداء على إيريني ويشك في رواية زوجها أنيسيتو، بينما تتعثر محاولاته أمام بطء الإجراءات والقرارات المؤسسية."
 verdict: "Murder in Galicia دراما جريمة جادة ومتماسكة، تبتعد عن الإثارة الرخيصة لتكشف كيف يمكن للتأخير الإداري وسوء التنسيق أن يتحولا إلى خطر حقيقي. تريستان أولوا يقود العمل بأداء هادئ ومقنع، والصورة تخدم أجواء غاليسيا الكئيبة. لكن الإيقاع يعيد بعض الانتظارات أكثر مما ينبغي، كما أن إيريني لا تحصل دائماً على العمق الذي تستحقه بوصفها مركز القضية. تقييم VibeCritic: 7.2/10."
 reviewVersion: 1
 type: series
@@ -16,17 +16,23 @@ soundScore: 7.0
 pacingScore: 6.8
 reviewMode: review
 mediaVerified: true
-poster: "https://bollybourse.com/media/hd/ott-murder-in-galicia-netflix/poster-56fe01aa.jpg"
-backdrop: "https://bollybourse.com/assets/img/975166cb72-full.jpg"
+poster: "https://fr.web.img5.acsta.net/c_310_420/img/fe/c1/fec11f768e089192997e3e3c2355fbfb.jpeg"
+backdrop: "https://occ-0-3012-116.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABTb471oQudhbYSfWkTMI2PYEypbXTHU4tTdIZRdYeeW_9FRgTRgANSwVxCTQ7sMWdtwP_hnZsKwKK0VL0oQiMh0anZh6juz_sdHY5_9cYHprw5o9hijTyxlmLQ.jpg?r=4f5"
 youtubeVideoId: "V7qdKH-USL8"
 youtubeVideoTitle: "Murder in Galicia | Official Trailer | Netflix"
 platforms: ["Netflix"]
 sourceId: "series:82023389"
-sourceName: "Netflix"
+sourceName: "Netflix / About Netflix / What's on Netflix / Decider / Rotten Tomatoes / AlloCiné"
 sourceUrl: "https://www.netflix.com/title/82023389"
 aiGenerated: false
 editorialWorkflow: "manual-assisted"
-creator: "Ramón Campos, Gema R. Neira, David Orea Arribas, Curro Serrano"
+creator: "Ramón Campos, Gema R. Neira, David Orea Arribas"
+crew:
+  - "Carlos Sedes — director"
+  - "Ramón Campos — writer and executive producer"
+  - "David Orea Arribas — writer"
+  - "Curro Serrano — writer"
+  - "Gema R. Neira — writer"
 cast:
   - "Tristán Ulloa"
   - "Miguel Borines"
@@ -49,7 +55,7 @@ cons:
 
 يختار Murder in Galicia منذ البداية أن يغيّر السؤال المعتاد في دراما الجريمة. لا يضع المشاهد أمام لغز متشابك هدفه إخفاء الحقيقة حتى اللحظة الأخيرة، بل يوجه الانتباه إلى شيء أكثر إزعاجاً: ماذا يحدث عندما تظهر مؤشرات الخطر مبكراً، لكن المؤسسات لا تتعامل معها بالجدية والسرعة اللازمتين؟ في قرية بازوس، تتعرض إيريني لاعتداء عنيف داخل منزلها، وتبدو رواية زوجها أنيسيتو عن اقتحام وسرقة غير مقنعة للرقيب إلياس لاغو. ومن هنا يبدأ صراع طويل مع الأدلة والإجراءات والوقت.
 
-المسلسل مستوحى من قضية حقيقية وقعت في غاليسيا عام 2015، لكنه ليس وثيقة حرفية لكل تفصيل. المواد الترويجية والمراجعات المنشورة تشير إلى أن بعض الأسماء والتسلسل الزمني والعناصر الدرامية عولجت بما يخدم السرد ويحمي خصوصية المعنيين. لذلك من المهم مشاهدة العمل بوصفه معالجة درامية مستندة إلى أحداث حقيقية، لا بديلاً عن التحقيق الوثائقي أو سجلاً قضائياً كاملاً. وتوجد مادة وثائقية منفصلة بعنوان Unprotected: Murder in Galicia تتناول القضية الواقعية من خلال شهادات ومصادر أخرى.
+المسلسل مستوحى من قضية حقيقية وقعت في غاليسيا عام 2015، لكن Netflix تصفه بأنه عمل درامي خيالي لا وثيقة حرفية. والتمييز بينه وبين الوثائقي المنفصل Unprotected: Murder in Galicia مهم: الوثائقي يسمّي الضحية الحقيقية إيزابيل فوينتيس، ويذكر أن الاعتداء وقع في أبريل 2015 داخل منزلها في قرية بازوس ببلدية فيرين، ثم قُتلت في المستشفى بعد 37 يوماً. أما المسلسل فيستخدم اسم إيريني ويعيد بناء القضية درامياً. لذلك يمكن التحقق من أصل القصة، لكن لا يصح افتراض أن كل مشهد أو ترتيب زمني أو حوار يعكس الواقعة.
 
 ## تريستان أولوا يقود العمل بصوت منخفض
 
@@ -73,18 +79,14 @@ cons:
 
 ميزة العمل أنه محدود بثلاث حلقات، فلا يمد القضية إلى موسم طويل أو خطوط جانبية لا تخدمها. لكنه لا يستثمر هذا الاختصار دائماً بأفضل صورة؛ فبعض لحظات التعطيل والانتظار تتكرر، وكان من الممكن ضغطها مع الحفاظ على الفكرة. في المقابل، يترك المسلسل مساحة للمشاهد كي يفهم كيف يمكن لتفصيل إداري يبدو بسيطاً أن يغيّر مسار حماية إنسان في وضع هش.
 
-تقييم VibeCritic البالغ 7.2/10 يعكس هذا التوازن: أداء رئيسي قوي، إخراج متزن، وموضوع مهم يُقدَّم دون استعراض رخيص؛ في مقابل إيقاع متكرر وشخصية ضحية لا تنال كل العمق الذي تستحقه. إنه عمل جيد ومؤثر في لحظاته الأقوى، لكنه ليس تجربة تشويق متقنة الإيقاع من البداية إلى النهاية.
-
-## الحكم النهائي
-
-يستحق Murder in Galicia المشاهدة إذا كنت تفضّل دراما الجريمة التي تهتم بفشل المؤسسات وبالنتائج الإنسانية للتأخير أكثر من اهتمامها بالمفاجآت. ابدأ بالمسلسل إذا أردت معالجة درامية للقضية، ثم انتقل إلى الوثائقي Unprotected: Murder in Galicia إذا أردت سماع شهادات مرتبطة بالواقعة الحقيقية. أما إذا كان مطلبك إثارة سريعة وتحولات مستمرة، فقد لا يكون هذا العمل خيارك الأول.
 
 ## مصادر التحقق والمراجعة
 
-- Netflix — صفحة العمل الرسمية: https://www.netflix.com/title/82023389
-- About Netflix — الإعلان عن موعد الإصدار والصور الأولى: https://about.netflix.com/en/news/murder-in-galicia-comes-to-netflix-on-13-november
-- About Netflix — الإعلان عن المقطع الرسمي: https://about.netflix.com/en/news/en-netflix-unveils-the-official-trailer-for-murder-in-galicia
-- What's on Netflix — مراجعة العمل: https://www.whats-on-netflix.com/what-to-watch/murder-in-galicia-netflix-review/
-- Decider — مراجعة العمل: https://decider.com/2026/11/13/murder-in-galicia-netflix-review/
-- Rotten Tomatoes — آراء النقاد للموسم الأول: https://www.rottentomatoes.com/tv/murder_in_galicia/s01
-- AlloCiné — آراء الجمهور: https://www.allocine.fr/series/ficheserie-1000002568/critiques/
+- [Netflix — صفحة المسلسل الرسمية](https://www.netflix.com/title/82023389): الملخص والحلقات والطاقم.
+- [About Netflix — إعلان المسلسل وتفاصيله](https://about.netflix.com/en/news/murder-in-galicia-comes-to-netflix-on-13-november): تاريخ العرض ووصف المسلسل بوصفه عملاً خيالياً مستنداً إلى قضية حقيقية.
+- [Netflix — Unprotected: Murder in Galicia](https://www.netflix.com/title/82112156): صفحة الوثائقي الذي يعيد بناء القضية الواقعية.
+- [About Netflix — وثائقي Unprotected](https://about.netflix.com/en/news/netflix-premieres-the-documentary-unprotected-murder-in-galicia-on-november-6): اسم إيزابيل فوينتيس وتفاصيل الاعتداء في أبريل 2015 والوفاة بعد 37 يوماً.
+- [What's on Netflix — مراجعة المسلسل](https://www.whats-on-netflix.com/what-to-watch/murder-in-galicia-netflix-review/): قراءة نقدية للعمل.
+- [Decider — مراجعة المسلسل](https://decider.com/2026/11/13/murder-in-galicia-netflix-review/): تحليل البناء والإيقاع.
+- [Rotten Tomatoes — مراجعات النقاد](https://www.rottentomatoes.com/tv/murder_in_galicia/s01): مؤشر تجميعي متغير.
+- [AlloCiné — بيانات المسلسل](https://www.allocine.fr/series/ficheserie_gen_cserie%3D1000002568.html): بيانات الطاقم والاستقبال.
