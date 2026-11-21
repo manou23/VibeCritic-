@@ -30,7 +30,7 @@ const reviews = defineCollection({
     externalVideoUrl: z.string().url().optional(),
     externalVideoTitle: z.string().optional(),
     score: z.number().gt(0).max(10).optional(),
-    reviewMode: z.enum(['review', 'preview', 'limited']).default('review'),
+    reviewMode: z.enum(['review', 'audience', 'preview', 'limited']).default('review'),
     sourceName: z.string().optional(),
     sourceVoteCount: z.number().int().nonnegative().optional(),
     sourceRatingScale: z.number().positive().optional(),
