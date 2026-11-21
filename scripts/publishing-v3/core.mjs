@@ -64,10 +64,14 @@ export function validateArticle(article, { minWords = 650, minCharacters = 3200 
   const paragraphs = String(article.body).split(/\n\s*\n/).map(x=>x.trim()).filter(x=>x.length>80);
   if (new Set(paragraphs).size < Math.min(3,paragraphs.length)) throw new Error("Article contains repeated paragraphs");
   const reviewMode = article.reviewMode || "review";
-  if (!["review","preview"].includes(reviewMode)) throw new Error("Invalid review mode: " + reviewMode);
+  if (!["review","audience","preview"].includes(reviewMode)) throw new Error("Invalid review mode: " + reviewMode);
   if (reviewMode === "review") {
     for (const k of ["story","visuals","sound","pacing"]) if (!Number.isFinite(article.scores?.[k]) || article.scores[k] < 0 || article.scores[k] > 10) throw new Error("Invalid score: " + k);
     if (!Number.isFinite(article.score) || article.score <= 0 || article.score > 10) throw new Error("Invalid weighted score");
+  } else if (reviewMode === "audience") {
+    if (article.score != null || article.scores != null) throw new Error("Audience article must not contain an editorial score");
+    if (!Number.isFinite(article.audienceScore) || article.audienceScore < 0 || article.audienceScore > 10) throw new Error("Invalid normalized audience score");
+    if (!Number.isFinite(article.sourceRating) || !Number.isFinite(article.sourceRatingScale) || article.sourceRatingScale <= 0 || !Number.isInteger(article.sourceVoteCount) || article.sourceVoteCount < 100 || !article.sourceName) throw new Error("Audience rating source or vote threshold is invalid");
   } else {
     if (article.score != null || article.scores != null) throw new Error("Preview article must not contain numeric score metadata");
     if (!article.releaseDate || !(article.releaseDate > new Date().toISOString().slice(0,10))) throw new Error("Unrated preview must have a verified future release date");
