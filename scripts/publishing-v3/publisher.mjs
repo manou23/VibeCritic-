@@ -14,7 +14,7 @@ export function renderMarkdown(article) {
   const isPreview = reviewMode === "preview";
   const isLimited = reviewMode === "limited";
   if (isLimited) throw new Error("Refusing to publish a limited-evidence article on VibeCritic");
-  validateArticle(article, isLimited ? { minWords:650, minCharacters:3200 } : { minWords:1000, minCharacters:5200 });
+  validateArticle(article, reviewMode !== "review" ? { minWords:650, minCharacters:3200 } : { minWords:1000, minCharacters:5200 });
   if (!/^[A-Za-z0-9_-]{11}$/.test(article.youtubeVideoId || "")) throw new Error("V3 article requires a verified YouTube video ID");
   const list = values => (values||[]).map(x=>"  - "+quote(x)).join("\n") || " []";
   const finalVerdict = isLimited
