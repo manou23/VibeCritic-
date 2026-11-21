@@ -21,8 +21,8 @@ poster: "https://prod5.agileticketing.net/images/user/shcac_3673/DWP2_poster-web
 backdrop: "https://thewaltdisneycompany.com/app/uploads/2026/04/TDWP2-19400_R-1024x683.jpg"
 youtubeVideoId: "gFJIo2aoP24"
 youtubeVideoTitle: "The Devil Wears Prada 2 | Official Trailer | 20th Century Studios"
-platforms: ["Disney+", "Hulu"]
-watchProviders: ["Disney+", "Hulu"]
+platforms: ["Disney+"]
+watchProviders: ["Disney+"]
 cast: ["Meryl Streep", "Anne Hathaway", "Emily Blunt", "Stanley Tucci", "Kenneth Branagh", "Simone Ashley", "Justin Theroux", "Lucy Liu", "Patrick Brammall", "Caleb Hearon", "Helen J. Shen", "Pauline Chalamet", "B.J. Novak", "Conrad Ricamora", "Tracie Thoms", "Tibor Feldman"]
 crew: ["David Frankel", "Aline Brosh McKenna", "Wendy Finerman"]
 pros:

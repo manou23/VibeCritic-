@@ -4,7 +4,7 @@ headline: "eFootball 2027 تتوسع تكتيكياً: هل تمنح نسخة v6
 summary: "مراجعة تحريرية بحثية للموسم الجديد من eFootball، تحلل أسلوب اللعب والتكتيكات وطور Dream Team والبطولات المخصصة والتحديثات الموسمية، مع تقييم نقاط القوة والقيود."
 type: game
 date: 2026-11-20
-releaseDate: "2026-08-13"
+releaseDate: "2026-08-12"
 sourceId: "manual-review-efootball-2027-v6-0-2026"
 sourceUrl: "https://www.konami.com/efootball/en/topic/news/5633"
 poster: "https://img.youtube.com/vi/Ijen5UPuG6U/hqdefault.jpg"
