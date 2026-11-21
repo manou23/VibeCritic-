@@ -135,7 +135,7 @@
       "verifiedAt": "2026-11-21",
       "contentSha": "5cd426a3353f9cf98cbd85859a5751b00a75341d",
       "status": "corrected",
-      "note": "Removed repeated body verdict and score; retained the distinct comparison analysis and template verdict card. Score remains aligned with the fixed weighted rubric."
+      "note": "Removed repeated body verdict and score; retained the distinct comparison analysis and template verdict card. Score remains aligned with the fixed weighted rubric. YouTube ID matches the official trailer title."
     },
     {
       "path": "src/content/reviews/murder-in-galicia-2026.md",
@@ -143,7 +143,7 @@
       "verifiedAt": "2026-11-21",
       "contentSha": "0fc57c2ab6ef9f9b7fbb502b69efe2e3334f5cc1",
       "status": "corrected",
-      "note": "Removed duplicated verdict/score; clarified fictional series versus the Isabel Fuentes case using Netflix's official documentary and press release; corrected creator/writer roles; linked sources and replaced the third-party poster with the AlloCiné poster plus an official Netflix backdrop."
+      "note": "Removed duplicated verdict/score; clarified fictional series versus the Isabel Fuentes case using Netflix's official documentary and press release; corrected creator/writer roles; linked sources and replaced the third-party poster with the AlloCiné poster plus an official Netflix backdrop. Trailer ID corroborated by Netflix trailer listing and a matching trailer reference."
     },
     {
       "path": "src/content/reviews/ninho-le-prix-a-payer-2026.md",
@@ -151,7 +151,7 @@
       "verifiedAt": "2026-11-21",
       "contentSha": "17e8a683d4072614cf16f6f360a63e366de3f733",
       "status": "corrected",
-      "note": "Removed duplicated verdict/score; added co-director Jules Renault to credits and cited the verified AlloCiné credit record."
+      "note": "Removed duplicated verdict/score; added co-director Jules Renault to credits and cited the verified AlloCiné credit record. Video ID is linked from the Netflix France trailer reference."
     },
     {
       "path": "src/content/reviews/persona-4-revival-2027-preview.md",
@@ -159,7 +159,7 @@
       "verifiedAt": "2026-11-21",
       "contentSha": "f36c60f71be30ab158fac0570826d0605f7b07b3",
       "status": "corrected",
-      "note": "Removed repeated preview verdict; kept the explicit no-score, no-firsthand-experience preview disclaimer."
+      "note": "Removed repeated preview verdict; kept the explicit no-score, no-firsthand-experience preview disclaimer. Video ID is corroborated by an Atlus West pre-order trailer reference."
     },
     {
       "path": "src/content/reviews/phantom-blade-zero-2026.md",
@@ -167,7 +167,7 @@
       "verifiedAt": "2026-11-21",
       "contentSha": "15b7226d1f22b5a9302c6bfbb64f2ac8fee5589e",
       "status": "corrected",
-      "note": "Removed duplicated verdict; clarified store-displayed dates (PlayStation/Epic 29 Oct; Steam 28 Oct) and added verified direct store links."
+      "note": "Removed duplicated verdict; clarified store-displayed dates (PlayStation/Epic 29 Oct; Steam 28 Oct) and added verified direct store links. Video ID is corroborated by the official pre-order trailer reference."
     },
     {
       "path": "src/content/reviews/possible-love-2026.md",
@@ -175,7 +175,7 @@
       "verifiedAt": "2026-11-21",
       "contentSha": "8185b0516741729d79d8b74a5302d5eb9ae6783e",
       "status": "corrected",
-      "note": "Removed repeated verdict and numeric score from the body; retained the independent research-based methodology note."
+      "note": "Removed repeated verdict and numeric score from the body; retained the independent research-based methodology note. YouTube ID matches the official Netflix trailer title."
     },
     {
       "path": "src/content/reviews/pragmata-2026.md",
@@ -183,7 +183,7 @@
       "verifiedAt": "2026-11-21",
       "contentSha": "906dd24408b675e8d146d9915b66f15853c3cdc3",
       "status": "corrected",
-      "note": "Removed repeated verdict and score from the body; retained source-based methodology note and verified weighted score."
+      "note": "Removed repeated verdict and score from the body; retained source-based methodology note and verified weighted score. YouTube ID matches the Official Capcom Europe main trailer."
     },
     {
       "path": "src/content/reviews/project-hail-mary-2026.md",
@@ -191,17 +191,18 @@
       "verifiedAt": "2026-11-21",
       "contentSha": "4ce66de619f928143b1ee6ac75f5561c490d951a",
       "status": "corrected",
-      "note": "Removed repeated verdict and score from the body; retained research-based methodology note and verified weighted score."
+      "note": "Removed repeated verdict and score from the body; retained research-based methodology note and verified weighted score. YouTube ID matches the official final-trailer title."
     }
   ],
   "siteChecks": {
     "about": "Reviewed; editorial purpose and AI-assisted content disclosure are present.",
     "contact": "Reviewed; contact form uses FormSubmit and identifies the submitted fields.",
-    "privacy": "Mirrors the detailed FormSubmit disclosure already prepared in PR #148 (18 Nov 2026) so both audit branches carry the same policy text; not live until one of the PRs is merged.",
+    "privacy": "Uses the detailed FormSubmit disclosure first prepared in PR #148, mirrored exactly in this audit branch to avoid divergent privacy-page edits. Cloudflare preview build succeeded, but the rendered privacy page could not be independently opened from this environment.",
     "consent": "No site CMP/consent banner found. Before personalized Google ads are served to EEA/UK/Switzerland users, use a Google-certified CMP integrated with IAB TCF; TCF v2.3 applies to new TC strings since 2026-03-01.",
     "ads": "No publisher ID, ad code, ads.txt, verification setting, or AdSense application setting changed.",
     "articles": "The review detail template renders a final-verdict card; this batch removes duplicated verdict/score sections from all 8 reviewed article bodies.",
-    "media": "Murder in Galicia now uses an AlloCiné-hosted official poster and an official Netflix CDN backdrop; Phantom Blade Zero store links and store-specific release-date displays were verified against official stores."
+    "media": "All 8 articles retain a relevant video ID with a corroborating official/source reference; direct YouTube page fetch was throttled for some IDs. Murder in Galicia uses an AlloCiné-hosted official poster and an official Netflix CDN backdrop; Phantom Blade Zero store links and store-displayed dates were verified.",
+    "preview": "Cloudflare Pages preview deployment succeeded for commit 52a8766 (https://22c2322c.vibecritic.pages.dev). The preview URL and individual pages were not readable through the browser tool, so rendered appearance remains unverified."
   },
   "policyReview": {
     "reviewedAt": "2026-11-21",
