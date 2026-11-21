@@ -162,6 +162,12 @@
       "sha256": "001358fde54f1e44a9bf6ef8cb93e64b87ff3113dc3ffd5edb14fa4c296fb0cc",
       "articlePath": "src/content/reviews/movie-the-devil-wears-prada-2-2026.md",
       "publishedAt": "2026-11-21T07:12:55.777Z"
+    },
+    "game-nba-2k27-2026": {
+      "sourceId": "manual-editorial-nba-2k27-vibecritic-2026",
+      "sha256": "c738d4386a23c5e3f8f73c770bc3fd897862e5bb79a159c73f912368faf64327",
+      "articlePath": "src/content/reviews/game-nba-2k27-2026.md",
+      "publishedAt": "2026-11-21T23:27:07.351Z"
     }
   }
 }
