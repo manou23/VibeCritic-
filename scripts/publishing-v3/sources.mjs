@@ -159,6 +159,7 @@ export async function collectEvidence(candidate) {
   return {
     title:candidate.name,
     type:candidate.type,
+    collectedAt:new Date().toISOString(),
     sourceId:candidate.type+":"+candidate.id,
     sourceName:primary.name,
     sourceUrl:primary.url,
