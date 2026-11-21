@@ -43,7 +43,7 @@ const result = await withRunLock(async () => {
       const response = await fetch(job.verifiedUrl,{signal:AbortSignal.timeout(15000),headers:{"cache-control":"no-cache"}});
       if (redirectedToDifferentPath(response,job.verifiedUrl)) {
         const canonicalUrl = response.url;
-        transition(job,"rejected",{lastError:"The article URL redirects to a different canonical article; this duplicate publishing job was superseded."});
+        transition(job,"rejected",{lastError:"The article URL redirects to a different canonical article; this duplicate publishing job was superseded.",article:null,evidence:null,sections:[]});
         await saveState(state);
         return { action:"superseded-by-canonical-redirect", key:job.key, url:job.verifiedUrl, canonicalUrl };
       }
