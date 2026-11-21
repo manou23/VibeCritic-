@@ -82,6 +82,21 @@ if (!robots.includes(new URL('sitemap.xml', site).href)) {
   throw new Error('robots.txt لا يشير إلى ملف sitemap.xml المباشر.');
 }
 
+// The duplicate English article is consolidated into the already indexed Arabic URL.
+const redirects = await read('_redirects');
+const duplicatePath = '/reviews/series-the-remarried-empress-279246/';
+const canonicalPath = '/reviews/series-%D8%A7%D9%84%D8%A7-%D9%85%D8%A8%D8%B1%D8%A7%D8%B7%D9%88%D8%B1%D8%A9-%D8%A7%D9%84%D9%85%D8%AA%D8%B2%D9%88%D8%AC%D8%A9-%D9%85%D8%AC%D8%AF%D8%AF%D8%A7-279246/';
+const redirectRule = duplicatePath + ' ' + canonicalPath + ' 301';
+if (!redirects.split(/\r?\n/).some(line => line.trim() === redirectRule)) {
+  throw new Error('Permanent redirect for the duplicate Remarried Empress URL is missing.');
+}
+if (seen.has(new URL(duplicatePath, site).href)) {
+  throw new Error('The duplicate Remarried Empress URL must not remain in the sitemap.');
+}
+if (!seen.has(new URL(canonicalPath, site).href)) {
+  throw new Error('The canonical indexed Remarried Empress URL is missing from the sitemap.');
+}
+
 // Every review must ship its own share metadata and structured review/article data.
 const reviewOutput = path.join(dist, 'reviews');
 const reviewHtmlPaths = await fs.readdir(reviewOutput, { recursive: true }).catch(() => []);
