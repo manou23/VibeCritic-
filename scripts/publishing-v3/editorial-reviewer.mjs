@@ -13,18 +13,23 @@ export async function reviewArticle(article, evidence) {
 
   const model = env.PUBLISHER_V3_GEMINI_REVIEW_MODEL || "gemini-3.8-flash";
   const isPreview = article.reviewMode === "preview";
+  const isAudience = article.reviewMode === "audience";
   const prompt = [
     "أنت محرر تدقيق مستقل لموقع VibeCritic. راجع المقال العربي قبل النشر، ولا تعِد كتابته.",
-    "نوع المقال: " + (isPreview ? "معاينة استباقية قبل الإصدار بلا درجة نهائية" : "مراجعة نقدية كاملة ذات درجة نهائية"),
+    "نوع المقال: " + (isPreview ? "معاينة استباقية قبل الإصدار بلا درجة نهائية" : isAudience ? "تحليل مبني على تقييم الجمهور من مصدر موثق، وليس درجة تحريرية" : "مراجعة نقدية كاملة ذات درجة نهائية"),
     "قارن كل ادعاء واقعي في المقال بملف الأدلة المرفق. لا تعتبر وجود رابط مصدر دليلاً على أن كل ما في المقال صحيح.",
     "افحص: اختلاق التفاصيل، الخلط بين الحقائق والاستنتاجات، الادعاء الكاذب بتجربة مباشرة، التكرار والحشو، وضوح حدود الأدلة، ودقة وصف المصادر.",
     isPreview
       ? "لأن المقال معاينة قبل الإصدار، يجب ألا يحتوي على درجة رقمية أو حكم نهائي. تحقق من أن تاريخ الإصدار مستقبلي وأن الحقائق منفصلة عن التوقعات."
-      : "لأن المقال مراجعة كاملة، افحص أن كل درجة ومحور نقدي مدعوم بأدلة فعلية كافية، وارفض أي محور لا تسمح الأدلة بتقييمه.",
+      : isAudience
+        ? "تحقق من تطابق متوسط الجمهور وعدد الأصوات واسم المنصة مع الأدلة. يجب نسب الدرجة للمصدر بوضوح، وعدم عرضها كتقييم VibeCritic أو اختراع درجات فرعية."
+        : "لأن المقال مراجعة كاملة، افحص أن كل درجة ومحور نقدي مدعوم بأدلة فعلية كافية، وارفض أي محور لا تسمح الأدلة بتقييمه.",
     "أخرج JSON فقط بهذه المفاتيح: approved (boolean), score (number 0..10), factualRisk (low|medium|high), repetition (low|medium|high), exaggeration (low|medium|high), issues (array of short Arabic strings), notes (short Arabic string).",
     isPreview
       ? "ارفض إذا كان تاريخ الإصدار غير مستقبلي، أو عرض المقال توقعات كحقائق، أو تضمن تقييماً نهائياً."
-      : "ارفض عند وجود خطر واقعي جوهري أو اختلاق واضح أو نقص شديد في اكتمال المراجعة أو حشو/تكرار شديد أو تضليل القارئ. لا تكن متساهلاً ولا متشدداً بلا سبب.",
+      : isAudience
+        ? "ارفض إذا كان متوسط الجمهور أو عدد الأصوات غير مطابق للمصدر، أو نُسبت الدرجة إلى VibeCritic، أو اختُلقت آراء الجمهور أو تفاصيل التجربة."
+        : "ارفض عند وجود خطر واقعي جوهري أو اختلاق واضح أو نقص شديد في اكتمال المراجعة أو حشو/تكرار شديد أو تضليل القارئ. لا تكن متساهلاً ولا متشدداً بلا سبب.",
     "ملف الأدلة: " + JSON.stringify(evidence),
     "المقال: " + JSON.stringify({title:article.title,summary:article.summary,verdict:article.verdict,body:article.body,pros:article.pros,cons:article.cons,sources:article.sources,youtubeVideoId:article.youtubeVideoId,youtubeVideoTitle:article.youtubeVideoTitle})
   ].join("\n\n");
