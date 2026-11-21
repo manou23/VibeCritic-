@@ -11,7 +11,9 @@ export function articleFilePath(article, root="src/content/reviews") {
 }
 export function renderMarkdown(article) {
   const reviewMode = article.reviewMode || "review";
-  const isLimited = reviewMode !== "review";
+  const isPreview = reviewMode === "preview";
+  const isLimited = reviewMode === "limited";
+  if (isLimited) throw new Error("Refusing to publish a limited-evidence article on VibeCritic");
   validateArticle(article, isLimited ? { minWords:650, minCharacters:3200 } : { minWords:1000, minCharacters:5200 });
   if (!/^[A-Za-z0-9_-]{11}$/.test(article.youtubeVideoId || "")) throw new Error("V3 article requires a verified YouTube video ID");
   const list = values => (values||[]).map(x=>"  - "+quote(x)).join("\n") || " []";
@@ -26,8 +28,8 @@ export function renderMarkdown(article) {
     "soundScore: "+Number(article.scores.sound).toFixed(2),
     "pacingScore: "+Number(article.scores.pacing).toFixed(2)
   ];
-  const editorialNote = isLimited
-    ? "> قراءة معلوماتية محدودة مبنية على بيانات العمل ومصادر تعريفية ومواد ترويجية. لا تمثل مراجعة مشاهدة أو لعب، ولا تمنح درجة نهائية."
+  const editorialNote = isPreview
+    ? "> معاينة استباقية قبل الإصدار، وليست مراجعة نهائية ولا تتضمن تقييماً رقمياً."
     : "> مراجعة تحريرية نهائية مبنية على مصادر موثوقة ومواد رسمية متاحة. لا تدّعي تجربة لعب أو مشاهدة مباشرة لم ينفذها المحرر.";
   const fm = [
     "---",
@@ -72,7 +74,8 @@ export function renderMarkdown(article) {
   return fm.join("\n")+"\n";
 }
 export async function publishArticle(article, root="src/content/reviews") {
-  const isLimited = (article.reviewMode || "review") !== "review";
+  const isLimited = article.reviewMode === "preview" || article.reviewMode === "limited";
+  if (article.reviewMode === "limited") throw new Error("Refusing to publish a limited-evidence article on VibeCritic");
   validateArticle(article,isLimited ? {minWords:650,minCharacters:3200} : {minWords:1000,minCharacters:5200});
   await fs.mkdir(root,{recursive:true});
   const target = articleFilePath(article,root);
