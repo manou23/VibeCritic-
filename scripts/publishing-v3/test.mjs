@@ -153,7 +153,15 @@ globalThis.fetch = async () => ({ ok:false, status:503, text:async()=>"temporari
 const unavailableReview = await geminiReviewer.reviewArticle({title:"Test",body:"مقال"}, {title:"Test",sources:[]});
 assert.equal(unavailableReview.skipped,true);
 assert.match(unavailableReview.reason,/HTTP 503/);
+
 assert.equal(unavailableReview.requests,1);
+for (const status of [404,429]) {
+  globalThis.fetch = async () => ({ ok:false, status, text:async()=>status === 404 ? "model not found" : "quota exceeded" });
+  const skippedReview = await geminiReviewer.reviewArticle({title:"Test",body:"مقال"}, {title:"Test",sources:[]});
+  assert.equal(skippedReview.skipped,true);
+  assert.equal(skippedReview.requests,1);
+  assert.match(skippedReview.reason,new RegExp("HTTP " + status));
+}
 globalThis.fetch = async () => ({
   ok:true,
   json:async()=>({candidates:[{content:{parts:[{text:JSON.stringify({approved:false,score:5,factualRisk:"high",repetition:"low",exaggeration:"medium",issues:["ادعاء غير مدعوم"],notes:"مرفوض"})}]}}]})
