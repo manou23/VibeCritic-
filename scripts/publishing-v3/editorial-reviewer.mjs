@@ -22,7 +22,9 @@ export async function reviewArticle(article, evidence) {
       ? "لأن المقال محدود الأدلة، يجب ألا يحتوي على درجة رقمية أو أحكام نهائية عن جودة التنفيذ. يجب أن يميز بوضوح بين الحقائق المؤكدة والأسئلة غير المحسومة، وألا يعرض نقص المعلومات كعيب فني مثبت."
       : "لأن المقال مراجعة كاملة، افحص أن كل درجة ومحور نقدي مدعوم بأدلة فعلية كافية، وارفض أي محور لا تسمح الأدلة بتقييمه.",
     "أخرج JSON فقط بهذه المفاتيح: approved (boolean), score (number 0..10), factualRisk (low|medium|high), repetition (low|medium|high), exaggeration (low|medium|high), issues (array of short Arabic strings), notes (short Arabic string).",
-    "ارفض عند وجود خطر واقعي جوهري أو اختلاق واضح أو نقص شديد في اكتمال المراجعة أو حشو/تكرار شديد أو تضليل القارئ. لا تكن متساهلاً ولا متشدداً بلا سبب.",
+    isLimited
+      ? "ارفض عند وجود اختلاق واقعي أو تضليل أو ادعاء جودة غير مدعوم أو حشو شديد. لا ترفض المقال لمجرد أنه لا يقدم مراجعة كاملة؛ فحدود الأدلة معلنة ومقصودة."
+      : "ارفض عند وجود خطر واقعي جوهري أو اختلاق واضح أو نقص شديد في اكتمال المراجعة أو حشو/تكرار شديد أو تضليل القارئ. لا تكن متساهلاً ولا متشدداً بلا سبب.",
     "ملف الأدلة: " + JSON.stringify(evidence),
     "المقال: " + JSON.stringify({title:article.title,summary:article.summary,verdict:article.verdict,body:article.body,pros:article.pros,cons:article.cons,sources:article.sources,youtubeVideoId:article.youtubeVideoId,youtubeVideoTitle:article.youtubeVideoTitle})
   ].join("\n\n");
