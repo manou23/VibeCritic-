@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-21T22:26:15.780Z",
+  "updatedAt": "2026-11-21T22:48:21.205Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -563,14 +563,63 @@
       },
       "status": "waiting",
       "stage": 0,
-      "attempts": 0,
+      "attempts": 1,
       "createdAt": "2026-11-20T22:39:11.268Z",
-      "updatedAt": "2026-11-20T22:39:11.270Z",
-      "nextAttemptAt": "2026-11-21T00:05:00.000Z",
-      "evidence": null,
+      "updatedAt": "2026-11-21T22:48:21.204Z",
+      "nextAttemptAt": "2026-11-21T23:48:21.204Z",
+      "evidence": {
+        "title": "The Apothecary Diaries",
+        "type": "series",
+        "sourceId": "series:220542",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/220542",
+        "overview": "Maomao lived a peaceful life with her apothecary father. Until one day, she's sold as a lowly servant to the emperor's palace. But she wasn't meant for a compliant life among royalty. So when imperial heirs fall ill, she decides to step in and find a cure! This catches the eye of Jinshi, a handsome palace official who promotes her. Now, she's making a name for herself solving medical mysteries!",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/220542",
+            "extract": "Maomao lived a peaceful life with her apothecary father. Until one day, she's sold as a lowly servant to the emperor's palace. But she wasn't meant for a compliant life among royalty. So when imperial heirs fall ill, she decides to step in and find a cure! This catches the eye of Jinshi, a handsome palace official who promotes her. Now, she's making a name for herself solving medical mysteries!",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/The_Apothecary_Diaries",
+            "extract": "The Apothecary Diaries is a Japanese light novel series written by Hyūganatsu and illustrated by Touko Shino. Since 2011, it has been serialized on the user-generated novel publishing website Shōsetsuka ni Narō. In 2012, Shufunotomo acquired the work, releasing it as a single-volume novel that year and then as a light novel series in 2014.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — AnimeVibe Official",
+            "url": "https://www.youtube.com/watch?v=EwbmJn-zslI",
+            "extract": "Verified public, embeddable promotional trailer: The Apothecary Diaries Movie 🌿🔥 | Official Teaser Trailer",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "limited",
+        "reviewReadinessReason": "Available evidence is catalog metadata, an encyclopedia summary and promotional material; no independently verifiable episode-level or hands-on review evidence was collected.",
+        "youtubeVideoId": "EwbmJn-zslI",
+        "youtubeVideoTitle": "The Apothecary Diaries Movie 🌿🔥 | Official Teaser Trailer",
+        "youtubeChannel": "AnimeVibe Official",
+        "releaseDate": "2023-10-22",
+        "genres": [
+          "Animation",
+          "Mystery",
+          "Drama"
+        ],
+        "platforms": [],
+        "cast": [
+          "Aoi Yuki",
+          "Takeo Otsuka",
+          "Katsuyuki Konishi"
+        ],
+        "crew": [],
+        "rating": 8.67,
+        "votes": 716,
+        "poster": "https://image.tmdb.org/t/p/w780/sJZcy8QsOPuRPiCfoCWVB3r9Ohg.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/gffVOVZ2Y9cmVIZ26Gt9ByMGCYH.jpg"
+      },
       "sections": [],
       "article": null,
-      "lastError": null,
+      "lastError": "openai HTTP 400: {\n  \"error\": {\n    \"message\": \"Invalid type for 'input[1].content[0].text': expected a string, but got an array instead.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"input[1].content[0].text\",\n    \"code\": \"invalid_type\"\n  }\n}",
       "resumeStatus": "queued"
     },
     "series:293610": {
