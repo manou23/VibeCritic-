@@ -3,7 +3,7 @@ import { createState, enqueue, transition, chooseJob, validateEvidence, validate
 import { withRunLock } from "./lock.mjs";
 import { publishArticle, articleFilePath, renderMarkdown } from "./publisher.mjs";
 import { loadState, saveState } from "./store.mjs";
-import { normalizeFinalRating, normalizeBodyFinalRating } from "./writer.mjs";
+import { normalizeFinalRating, normalizeBodyFinalRating, assemble } from "./writer.mjs";
 import { publishedIdentityKeys } from "./sources.mjs";
 import fs from "node:fs/promises";
 import os from "node:os";
@@ -47,6 +47,39 @@ assert.ok(publishedIdentityKeys("series","series:279246","The Remarried Empress"
 const body = ["## تحليل السرد والبناء\n\n"+("تحليل نقدي مفصل يشرح البناء الفني والسردي ويوازن بين نقاط القوة والقيود في هذا القسم. ").repeat(45),"## قراءة العناصر الفنية\n\n"+("تفصيل نقدي يربط الخيارات الفنية بالأثر الدرامي ويشرح حدود الأدلة المتاحة للقارئ. ").repeat(45),"## الإيقاع والحكم النهائي\n\n"+("تقييم متوازن يوضح عناصر النجاح ومواطن القصور دون تكرار أو ادعاء تجربة مباشرة. ").repeat(45)].join("\n\n");
 const article = { title:"x", sourceId:"game:42", type:"game", body, verdict:"حكم نقدي", pros:["a","b","c"], cons:["a","b"], scores:{story:7,visuals:7,sound:7,pacing:7}, score:7, sources:evidence.sources, youtubeVideoId:"AbCdEfGhI_1", youtubeVideoTitle:"Official Test Trailer" };
 assert.ok(validateArticle(article).words >= 650);
+
+// Metadata + encyclopedia + promotional evidence must produce a limited article without a numeric rating.
+const limitedEvidence = {
+  ...evidence,
+  title:"Limited Evidence Test",
+  type:"game",
+  sourceId:"game:42",
+  sourceName:"RAWG",
+  sourceUrl:"https://one.example/a",
+  youtubeVideoId:"AbCdEfGhI_1",
+  youtubeVideoTitle:"Official Test Trailer",
+  reviewReadiness:"limited",
+  reviewReadinessReason:"No independently verifiable hands-on evidence was collected."
+};
+const limitedDraft = {
+  ...article,
+  headline:"قراءة معلوماتية محدودة لا تمنح حكماً نهائياً على العمل",
+  summary:"هذه قراءة تعريفية تجمع المعلومات المتاحة عن العمل ومصادره الأساسية، وتوضح ما يمكن تأكيده وما لا تسمح الأدلة الحالية بالحكم عليه. لا تمثل تجربة لعب مباشرة ولا مراجعة نقدية مكتملة، لذلك لا تتضمن درجة رقمية أو حكماً نهائياً على جودة التنفيذ.",
+  verdict:"تظل هذه الصفحة قراءة معلوماتية محدودة لأن المصادر المتاحة تصف العمل وتقدم معلومات عامة ومواد ترويجية، لكنها لا توفر شواهد كافية على تجربة اللعب أو جودة التنفيذ. لذلك نعرض الحقائق المؤكدة ونوضح الأسئلة التي لا تزال مفتوحة، ولا نحول نقص المعلومات إلى عيوب مختلقة أو درجة رقمية قد تضلل القارئ.",
+  reviewMode:undefined
+};
+const limitedResult = assemble(limitedDraft,limitedEvidence);
+assert.equal(limitedResult.article.reviewMode,"limited");
+assert.equal(limitedResult.article.score,undefined);
+assert.equal(limitedResult.article.scores,undefined);
+assert.ok(validateArticle(limitedResult.article,{minWords:650,minCharacters:3200}).words >= 650);
+assert.throws(() => validateArticle({ ...limitedResult.article, score:5.3 }), /must not contain numeric score metadata/);
+assert.throws(() => assemble({ ...limitedDraft, body:body+"\\n\\nالتقييم النهائي: 5/10" },limitedEvidence), /numeric final rating/);
+const limitedMarkdown = renderMarkdown(limitedResult.article);
+assert.match(limitedMarkdown,/reviewMode: limited/);
+assert.doesNotMatch(limitedMarkdown,/^score:/m);
+assert.doesNotMatch(limitedMarkdown,/^storyScore:/m);
+assert.match(limitedMarkdown,/قراءة معلوماتية محدودة/);
 assert.throws(() => validateArticle({ ...article, scores:{...article.scores,story:11} }), /Invalid score/);
 assert.equal(normalizeFinalRating("الحكم النهائي: 6/10",5.3),"الحكم النهائي: 5.3/10");
 assert.equal(normalizeFinalRating("التقييم النهائي 8 من 10",7.4),"التقييم النهائي 7.4/10");
