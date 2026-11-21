@@ -39,7 +39,9 @@ export function transition(job, status, patch = {}, now = Date.now()) {
 }
 export function chooseJob(state, now = Date.now()) {
   return Object.values(state.jobs).filter(j => ACTIVE.has(j.status) && (j.status !== "waiting" || !j.nextAttemptAt || Date.parse(j.nextAttemptAt) <= now))
-    .sort((a,b) => Date.parse(a.createdAt) - Date.parse(b.createdAt))[0] || null;
+    // Fairness: choose the least recently updated eligible job, not simply the oldest job.
+    // A retrying timeout job therefore moves behind other work after each attempt.
+    .sort((a,b) => Date.parse(a.updatedAt || a.createdAt) - Date.parse(b.updatedAt || b.createdAt) || Date.parse(a.createdAt) - Date.parse(b.createdAt))[0] || null;
 }
 export function validateEvidence(evidence) {
   if (!evidence || !evidence.title || !["game","movie","series"].includes(evidence.type)) throw new Error("Evidence identity missing");
