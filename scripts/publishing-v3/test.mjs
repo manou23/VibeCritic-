@@ -12,7 +12,22 @@ const state = createState();
 const a = enqueue(state, { type: "game", id: "42", name: "Test Game" }, 1000);
 assert.equal(a.created, true);
 assert.equal(enqueue(state, { type: "game", id: "42", name: "Test Game" }, 2000).created, false);
+
 assert.equal(chooseJob(state, 3000).key, "game:42");
+
+// Fair queue: an older job that was just retried must not starve a less-recently-touched job.
+const fairState = createState();
+const oldButRecentlyRetried = enqueue(fairState, { type:"movie", id:"101", name:"Old retry" }, 1000).job;
+const newerButStale = enqueue(fairState, { type:"movie", id:"102", name:"Stale job" }, 2000).job;
+transition(oldButRecentlyRetried, "researching", {}, 8000);
+transition(oldButRecentlyRetried, "waiting", { resumeStatus:"queued", nextAttemptAt:new Date(0).toISOString() }, 9000);
+transition(newerButStale, "researching", {}, 2500);
+transition(newerButStale, "waiting", { resumeStatus:"queued", nextAttemptAt:new Date(0).toISOString() }, 3000);
+assert.equal(chooseJob(fairState, 10000).key, "movie:102");
+transition(newerButStale, "queued", {}, 11000);
+transition(newerButStale, "researching", {}, 12000);
+transition(newerButStale, "waiting", { resumeStatus:"queued", nextAttemptAt:new Date(0).toISOString() }, 13000);
+assert.equal(chooseJob(fairState, 14000).key, "movie:101");
 transition(a.job, "researching", {}, 4000);
 assert.throws(() => transition(a.job, "published"), /Illegal transition/);
 transition(a.job, "writing", { stage: 1 }, 5000);
