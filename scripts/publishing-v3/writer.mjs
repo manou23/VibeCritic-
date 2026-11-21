@@ -62,9 +62,7 @@ export function assemble(value, evidence) {
   if (String(article.summary||"").trim().length < 90) throw new Error("Limited-evidence summary is too short");
   return { article, quality };
 }
-export async function writeArticle(evidence) {
-  const today = new Date().toISOString().slice(0,10);
-  if (evidence.releaseDate && evidence.releaseDate > today) throw new Error("Candidate release date is still in the future");
+export function buildPrompt(evidence) {
   const isLimited = evidence.reviewReadiness !== "review";
   const prompt = isLimited ? [
     "اكتب قراءة معلوماتية عربية محدودة الأدلة لموقع VibeCritic اعتماداً حصراً على ملف الأدلة أدناه.",
@@ -90,6 +88,13 @@ export async function writeArticle(evidence) {
     "بيانات الفيديو الرسمية الموثقة: " + JSON.stringify({youtubeVideoId:evidence.youtubeVideoId,youtubeVideoTitle:evidence.youtubeVideoTitle,youtubeChannel:evidence.youtubeChannel}),
     "الأدلة والمصادر: " + JSON.stringify(evidence)
   ].join("\n\n");
+  return prompt;
+}
+export async function writeArticle(evidence) {
+  const today = new Date().toISOString().slice(0,10);
+  if (evidence.releaseDate && evidence.releaseDate > today) throw new Error("Candidate release date is still in the future");
+  const isLimited = evidence.reviewReadiness !== "review";
+  const prompt = buildPrompt(evidence);
 
   const first = await generateJson(prompt, { maxTokens:10000 });
   let result;
