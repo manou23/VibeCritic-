@@ -59,13 +59,13 @@ const reviewKeywords = [...new Set([
   ...(d.genres || []),
   ...(d.tags || []),
 ].map(cleanKeyword).filter(Boolean))].slice(0, 20);
-const reviewDescription = d.title + ' — ' + (isPreview ? 'قراءة استباقية لـ' : isGtaLaunchReading ? 'قراءة إطلاق أولية لـ' : isLimited ? 'قراءة محدودة الأدلة لـ' : 'مراجعة ') + typeKeyword + ' وتحليل نقدي للقصة والعناصر الفنية. ' + d.summary + (isPreview ? ' هذه قراءة قبل الإصدار ولا تتضمن تقييماً نهائياً.' : isGtaLaunchReading ? ' بدأ الإصدار، لكن الصفحة لا تمنح درجة نهائية قبل اختبار مستقل كافٍ.' : isLimited ? ' لا تمنح هذه الصفحة تقييماً نهائياً لأن الأدلة المنشورة غير كافية.' : ' تقييم VibeCritic: ' + d.score + '/10.');
+const reviewDescription = d.title + ' — ' + (isPreview ? 'قراءة استباقية لـ' : isGtaLaunchReading ? 'قراءة إطلاق أولية لـ' : isLimited ? 'مقال معلوماتي عن' : 'مراجعة ') + typeKeyword + ' وتحليل نقدي للقصة والعناصر الفنية. ' + d.summary + (isPreview ? ' هذه قراءة قبل الإصدار ولا تتضمن تقييماً نهائياً.' : isGtaLaunchReading ? ' بدأ الإصدار، لكن الصفحة لا تمنح درجة نهائية قبل اختبار مستقل كافٍ.' : isLimited ? ' لا تمنح هذه الصفحة تقييماً نهائياً لأن الأدلة المنشورة غير كافية.' : ' تقييم VibeCritic: ' + d.score + '/10.');
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 const schemaType = d.type === 'game' ? 'Game' : d.type === 'series' ? 'CreativeWorkSeries' : 'Movie';
 const reviewStructuredData = {
   '@context': 'https://schema.org',
   '@type': hasFinalRating ? 'Review' : 'Article',
-  name: d.title + (isPreview ? ' — قراءة استباقية' : isGtaLaunchReading ? ' — قراءة إطلاق أولية' : isLimited ? ' — قراءة محدودة الأدلة' : ' — مراجعة وتقييم'),
+  name: d.title + (isPreview ? ' — قراءة استباقية' : isGtaLaunchReading ? ' — قراءة إطلاق أولية' : isLimited ? ' — مقال معلوماتي' : ' — مراجعة وتقييم'),
   url: canonicalUrl,
   datePublished: (d.publishedAt ?? d.date).toISOString(),
   reviewBody: [d.summary, isLimited ? 'لا تتوفر أدلة كافية لمنح تقييم نهائي.' : d.verdict, d.hook].filter(Boolean).join(' '),
@@ -89,7 +89,7 @@ const reviewStructuredData = {
 };
 
 ---
-<Base title={`${d.title} — ${isPreview ? 'قراءة استباقية' : isLimited ? 'قراءة محدودة الأدلة' : 'مراجعة وتقييم'}`} description={reviewDescription} keywords={reviewKeywords} structuredData={reviewStructuredData} image={optimizeImage(d.backdrop || d.poster, 'backdrop')} pageType="article" publishedAt={(d.publishedAt ?? d.date).toISOString()} articleSection={typeLabel}>
+<Base title={`${d.title} — ${isPreview ? 'قراءة استباقية' : isLimited ? 'مقال معلوماتي' : 'مراجعة وتقييم'}`} description={reviewDescription} keywords={reviewKeywords} structuredData={reviewStructuredData} image={optimizeImage(d.backdrop || d.poster, 'backdrop')} pageType="article" publishedAt={(d.publishedAt ?? d.date).toISOString()} articleSection={typeLabel}>
 <ReadingProgress />
 <article class="wrap article-page">
   <nav class="article-breadcrumbs" aria-label="مسار الصفحة"><a href={url('')}>الرئيسية</a><span aria-hidden="true">/</span><a href={url(`category/${d.type}/`)}>{TYPE_LABEL[d.type]}</a><span aria-hidden="true">/</span><span aria-current="page">{d.title}</span></nav>
@@ -151,7 +151,7 @@ const reviewStructuredData = {
       <section class="article-final-verdict">
         <p class="eyebrow">{isPreview ? 'الخلاصة الاستباقية' : isLimited ? 'حدود المادة الحالية' : 'الحكم النهائي'}</p>
         <h2>{isPreview ? 'ما الذي ننتظره عند الإصدار؟' : isGtaLaunchReading ? 'ما الذي نعرفه بعد الإطلاق؟' : isLimited ? 'لماذا لا نمنحه درجة الآن؟' : 'هل يستحق وقتك؟'}</h2>
-        <p>{isGtaLaunchReading ? 'بدأ الإطلاق العالمي بالفعل، لكن صدور اللعبة لا يساوي اكتمال مراجعتها. لا ننسب إلى VibeCritic تجربة لعب لم تُختبر وتُوثق، ولا نمنح درجة رقمية اعتماداً على العروض أو آراء مراجعين آخرين. سنحدّث الحكم عندما تتوفر أدلة مستقلة كافية عن الأداء والأنظمة والإيقاع والمحتوى.' : isLimited ? 'المعلومات المتاحة هنا لا تكفي للحكم على جودة التنفيذ الفعلي أو منح العمل درجة عادلة. لذلك أوقفنا التقييم الرقمي مؤقتاً بدلاً من تحويل الوصف المختصر أو التوقعات إلى حكم نقدي. ستعود الدرجة عندما تتوفر مراجعة موثقة وتحليل للعناصر الفنية.' : d.verdict || 'تتحدد قيمة هذا العمل بحسب مدى اهتمامك بنوعه وعناصره الفنية، مع مراعاة نقاط القوة والتحفظات المذكورة أعلاه.'}</p>
+        <p>{isGtaLaunchReading ? 'بدأ الإطلاق العالمي بالفعل، لكن صدور اللعبة لا يساوي اكتمال مراجعتها. لا ننسب إلى VibeCritic تجربة لعب لم تُختبر وتُوثق، ولا نمنح درجة رقمية اعتماداً على العروض أو آراء مراجعين آخرين. سنحدّث الحكم عندما تتوفر أدلة مستقلة كافية عن الأداء والأنظمة والإيقاع والمحتوى.' : isLimited ? 'هذا مقال معلوماتي منشور يقدّم ما أمكن التحقق منه عن العمل اعتماداً على المصادر المتاحة. لا يضع تقييماً رقمياً أو حكماً على جودة التنفيذ لأن الأدلة المستقلة لا تكفي لذلك؛ وهذا لا يعني أن المقال ينتظر المراجعة، بل أن نطاقه معلوماتي بوضوح.' : d.verdict || 'تتحدد قيمة هذا العمل بحسب مدى اهتمامك بنوعه وعناصره الفنية، مع مراعاة نقاط القوة والتحفظات المذكورة أعلاه.'}</p>
       </section>
       {(d.cast?.length || d.crew?.length) && <section class="article-facts" aria-label="طاقم العمل">
         <h2>طاقم العمل</h2>
@@ -184,14 +184,14 @@ const reviewStructuredData = {
               <h3>{entry.data.title}</h3>
               <p>{entry.data.headline}</p>
               <div class="related-review-meta">
-                <span>{entry.data.reviewMode === 'preview' ? 'قراءة استباقية' : entry.data.reviewMode === 'limited' ? 'قيد التقييم' : entry.data.score.toFixed(1) + ' / 10'}</span>
+                <span>{entry.data.reviewMode === 'preview' ? 'قراءة استباقية' : entry.data.reviewMode === 'limited' ? 'معلوماتي' : entry.data.score.toFixed(1) + ' / 10'}</span>
                 <span>{similarReviews.length>0 ? (tagHits>0 ? 'موضوعات مشتركة' : 'تصنيفات متقاربة') : 'أحدث مراجعة'}</span>
               </div>
             </div>
           </a>)}
         </div>
       </section>}
-      <p class="review-method-note">{isPreview ? 'منهجية VibeCritic: هذه قراءة استباقية تفصل المعلومات الرسمية عن التوقعات، ولا تمنح العمل تقييماً نهائياً قبل صدوره.' : isLimited ? 'منهجية VibeCritic: لا نعرض درجة عندما تكون الأدلة المتاحة غير كافية. هذه الصفحة مادة تعريفية محدودة وليست حكماً نقدياً نهائياً.' : 'منهجية VibeCritic: هذا تحليل نقدي مبني على المعلومات المنشورة والبيانات المتاحة، وليس ادعاءً باختبار مباشر للعمل. التقييم تقدير تحريري مستقل وليس تقييماً رسمياً.'}</p>
+      <p class="review-method-note">{isPreview ? 'منهجية VibeCritic: هذه قراءة استباقية تفصل المعلومات الرسمية عن التوقعات، ولا تمنح العمل تقييماً نهائياً قبل صدوره.' : isLimited ? 'منهجية VibeCritic: هذا مقال معلوماتي مكتمل النشر ضمن حدود المصادر المتاحة. لا نعرض درجة رقمية من دون أدلة مستقلة كافية، ولا نقدّمه على أنه مراجعة مشاهدة أو لعب.' : 'منهجية VibeCritic: هذا تحليل نقدي مبني على المعلومات المنشورة والبيانات المتاحة، وليس ادعاءً باختبار مباشر للعمل. التقييم تقدير تحريري مستقل وليس تقييماً رسمياً.'}</p>
       <section class="article-facts article-feedback" aria-labelledby="review-feedback-title">
         <h2 id="review-feedback-title">هل أفادتك هذه المراجعة؟</h2>
         <p>شاركنا رأيك السريع؛ اختيارك يُحفظ على هذا الجهاز فقط.</p>
