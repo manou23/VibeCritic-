@@ -164,7 +164,7 @@ globalThis.fetch = async (url, options) => {
   assert.equal(requestBody.max_output_tokens,7000);
   assert.equal(typeof requestBody.input[0].content[0].text,"string");
   assert.equal(typeof requestBody.input[1].content[0].text,"string");
-  assert.equal(requestBody.input[1].content[0].text,"test");
+  assert.equal(requestBody.input[1].content[0].text,openAIFetchCalls === 1 ? "test" : "retry");
   assert.deepEqual(requestBody.text,{format:{type:"json_object"}});
   return {
     ok:true,
