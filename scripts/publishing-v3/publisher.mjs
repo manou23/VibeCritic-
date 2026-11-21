@@ -72,7 +72,8 @@ export function renderMarkdown(article) {
   return fm.join("\n")+"\n";
 }
 export async function publishArticle(article, root="src/content/reviews") {
-  validateArticle(article,{minWords:1000,minCharacters:5200});
+  const isLimited = (article.reviewMode || "review") !== "review";
+  validateArticle(article,isLimited ? {minWords:650,minCharacters:3200} : {minWords:1000,minCharacters:5200});
   await fs.mkdir(root,{recursive:true});
   const target = articleFilePath(article,root);
   const temp = target+".tmp-"+randomUUID();
