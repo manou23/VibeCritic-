@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import { withRunLock } from "./lock.mjs";
 import { loadState, saveState } from "./store.mjs";
-import { enqueue, transition, chooseJob, validateEvidence } from "./core.mjs";
+import { enqueue, transition, chooseJob, validateEvidence, redirectedToDifferentPath } from "./core.mjs";
 import { discoverCandidate, collectEvidence } from "./sources.mjs";
 import { writeArticle } from "./writer.mjs";
 import { publishArticle, articleFilePath } from "./publisher.mjs";
@@ -41,6 +41,12 @@ const result = await withRunLock(async () => {
     }
     if (job.status === "verifying") {
       const response = await fetch(job.verifiedUrl,{signal:AbortSignal.timeout(15000),headers:{"cache-control":"no-cache"}});
+      if (redirectedToDifferentPath(response,job.verifiedUrl)) {
+        const canonicalUrl = response.url;
+        transition(job,"rejected",{lastError:"The article URL redirects to a different canonical article; this duplicate publishing job was superseded."});
+        await saveState(state);
+        return { action:"superseded-by-canonical-redirect", key:job.key, url:job.verifiedUrl, canonicalUrl };
+      }
       let articleFileMissing = false;
       if (response.status === 404) {
         try { await fs.access(job.articlePath); }
