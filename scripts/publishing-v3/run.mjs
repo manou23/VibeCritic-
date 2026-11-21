@@ -39,7 +39,7 @@ const result = await withRunLock(async () => {
       try { await fs.access(job.articlePath); transition(job,"verifying"); }
       catch { transition(job,"ready"); }
     }
-    if (job.status === "verifying") {
+    while (job.status === "verifying") {
       const response = await fetch(job.verifiedUrl,{signal:AbortSignal.timeout(15000),headers:{"cache-control":"no-cache"}});
       if (redirectedToDifferentPath(response,job.verifiedUrl)) {
         const canonicalUrl = response.url;
