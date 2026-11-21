@@ -4,6 +4,7 @@ import { withRunLock } from "./lock.mjs";
 import { publishArticle, articleFilePath, renderMarkdown } from "./publisher.mjs";
 import { loadState, saveState } from "./store.mjs";
 import { normalizeFinalRating, normalizeBodyFinalRating } from "./writer.mjs";
+import { publishedIdentityKeys } from "./sources.mjs";
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
@@ -41,6 +42,8 @@ assert.throws(() => validateEvidence({ title:"x", type:"game", overview:"short",
 const evidence = { title:"x", type:"game", overview:"A".repeat(100), sources:[{url:"https://one.example/a"},{url:"https://two.example/b"}] };
 assert.equal(validateEvidence(evidence), true);
 assert.equal(isDuplicate({type:"game",id:"42",name:"Test Game"}, new Set(["game:42"])), true);
+assert.ok(publishedIdentityKeys("series","279246","الإمبراطورة المتزوجة مجدداً").includes("series:279246"));
+assert.ok(publishedIdentityKeys("series","series:279246","The Remarried Empress").includes("series:279246"));
 const body = ["## تحليل السرد والبناء\n\n"+("تحليل نقدي مفصل يشرح البناء الفني والسردي ويوازن بين نقاط القوة والقيود في هذا القسم. ").repeat(45),"## قراءة العناصر الفنية\n\n"+("تفصيل نقدي يربط الخيارات الفنية بالأثر الدرامي ويشرح حدود الأدلة المتاحة للقارئ. ").repeat(45),"## الإيقاع والحكم النهائي\n\n"+("تقييم متوازن يوضح عناصر النجاح ومواطن القصور دون تكرار أو ادعاء تجربة مباشرة. ").repeat(45)].join("\n\n");
 const article = { title:"x", sourceId:"game:42", type:"game", body, verdict:"حكم نقدي", pros:["a","b","c"], cons:["a","b"], scores:{story:7,visuals:7,sound:7,pacing:7}, score:7, sources:evidence.sources, youtubeVideoId:"AbCdEfGhI_1", youtubeVideoTitle:"Official Test Trailer" };
 assert.ok(validateArticle(article).words >= 650);
