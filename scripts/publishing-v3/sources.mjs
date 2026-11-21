@@ -151,6 +151,26 @@ export async function collectEvidence(candidate) {
     wikiEvidence(candidate.name),
     findOfficialYoutubeTrailer(candidate.name,candidate.type)
   ]);
-  const sources = [primary,independent,{name:"YouTube — "+youtubeTrailer.channel,url:"https://www.youtube.com/watch?v="+youtubeTrailer.id,extract:"Verified public, embeddable official trailer: "+youtubeTrailer.title}];
-  return { title:candidate.name, type:candidate.type, sourceId:candidate.type+":"+candidate.id, sourceName:primary.name, sourceUrl:primary.url, overview:primary.extract, sources, youtubeVideoId:youtubeTrailer.id, youtubeVideoTitle:youtubeTrailer.title, youtubeChannel:youtubeTrailer.channel, ...metadata };
+  const sources = [
+    { ...primary, kind:"catalog-metadata" },
+    { ...independent, kind:"encyclopedia" },
+    { name:"YouTube — "+youtubeTrailer.channel, url:"https://www.youtube.com/watch?v="+youtubeTrailer.id, extract:"Verified public, embeddable promotional trailer: "+youtubeTrailer.title, kind:"promotional" }
+  ];
+  return {
+    title:candidate.name,
+    type:candidate.type,
+    sourceId:candidate.type+":"+candidate.id,
+    sourceName:primary.name,
+    sourceUrl:primary.url,
+    overview:primary.extract,
+    sources,
+    // Catalog metadata, an encyclopedia entry and a promotional trailer support an informative profile,
+    // but do not establish episode-level or hands-on evidence for a scored critical review.
+    reviewReadiness:"limited",
+    reviewReadinessReason:"Available evidence is catalog metadata, an encyclopedia summary and promotional material; no independently verifiable episode-level or hands-on review evidence was collected.",
+    youtubeVideoId:youtubeTrailer.id,
+    youtubeVideoTitle:youtubeTrailer.title,
+    youtubeChannel:youtubeTrailer.channel,
+    ...metadata
+  };
 }
