@@ -125,7 +125,8 @@ export async function writeArticle(evidence) {
   const today = new Date().toISOString().slice(0,10);
   if (evidence.releaseDate && evidence.releaseDate > today && evidence.reviewReadiness !== "preview") throw new Error("Candidate release date is still in the future");
   const isPreview = evidence.reviewReadiness === "preview";
-  const isLimited = !isPreview && evidence.reviewReadiness !== "review";
+  const isAudience = evidence.reviewReadiness === "audience";
+  const isLimited = !isPreview && !isAudience && evidence.reviewReadiness !== "review";
   const prompt = buildPrompt(evidence);
 
   const first = await generateJson(prompt, { maxTokens:10000 });
@@ -134,7 +135,7 @@ export async function writeArticle(evidence) {
   try {
     result = assemble(first.value,evidence);
   } catch (qualityError) {
-    const retry = await generateJson(prompt + "\n\nفشلت المسودة السابقة في فحص الجودة: " + String(qualityError.message).slice(0,300) + (isLimited || isPreview ? ". أعد النص وفق نوعه بلا درجة رقمية، وتأكد من أن المتن لا يقل عن 650 كلمة وأن الخلاصة والملخص مستوفيان للحد الأدنى." : ". أعد المراجعة النهائية كاملة، وتأكد من أن المتن لا يقل عن 1000 كلمة وأن الحكم والملخص مستوفيان للحد الأدنى."), { skipProviderId:first.provider, maxTokens:10000 });
+    const retry = await generateJson(prompt + "\n\nفشلت المسودة السابقة في فحص الجودة: " + String(qualityError.message).slice(0,300) + (isAudience ? ". أعد التحليل مع إبقاء متوسط الجمهور واسم المصدر وعدد الأصوات واضحين، دون اختراع درجة تحريرية أو درجات فرعية." : isLimited || isPreview ? ". أعد النص وفق نوعه بلا درجة رقمية، وتأكد من أن المتن لا يقل عن 650 كلمة وأن الخلاصة والملخص مستوفيان للحد الأدنى." : ". أعد المراجعة النهائية كاملة، وتأكد من أن المتن لا يقل عن 1000 كلمة وأن الحكم والملخص مستوفيان للحد الأدنى."), { skipProviderId:first.provider, maxTokens:10000 });
     try { result = assemble(retry.value,evidence); }
     catch (error) { error.requests = (Number(first.requests)||1) + (Number(retry.requests)||1); throw error; }
     generation = { provider:retry.provider, tokens:(Number(first.tokens)||0)+(Number(retry.tokens)||0), requests:(Number(first.requests)||1)+(Number(retry.requests)||1) };
