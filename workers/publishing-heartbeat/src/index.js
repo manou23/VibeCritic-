@@ -38,7 +38,7 @@ export default {
   async fetch(request) {
     const url = new URL(request.url);
     if (request.method === "GET" && url.pathname === "/health") {
-      return Response.json({ service: "vibecritic-publishing-heartbeat", status: "ok", cron: "*/15 * * * *", purpose: "GitHub Actions publishing fallback" }, {
+      return Response.json({ service: "vibecritic-publishing-heartbeat", status: "ok", cron: "15 7,10,13,16,19 * * *", purpose: "GitHub Actions publishing scheduler" }, {
         headers: { "cache-control": "no-store" }
       });
     }
