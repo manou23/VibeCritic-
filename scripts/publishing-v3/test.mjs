@@ -81,6 +81,23 @@ assert.equal(previewResult.article.score,undefined);
 assert.equal(previewResult.article.scores,undefined);
 assert.ok(validateArticle(previewResult.article,{minWords:650,minCharacters:3200}).words >= 650);
 assert.match(renderMarkdown(previewResult.article),/معاينة استباقية قبل الإصدار/);
+
+const audienceEvidence = { ...limitedEvidence, rating:4.2, ratingScale:5, votes:1200, reviewReadiness:"audience", reviewReadinessReason:"RAWG audience average backed by 1200 votes." };
+const audienceDraft = { ...limitedDraft, headline:"تحليل العمل وفق تقييم الجمهور ومؤشرات المنصة", summary:"يعرض هذا التحليل متوسط تقييم جمهور RAWG بوصفه مؤشراً جماهيرياً لا حكماً تحريرياً من VibeCritic. نوضح عدد الأصوات ومصدر البيانات ونحلل المعلومات المتاحة عن العمل دون ادعاء تجربة مباشرة أو اختلاق درجات فرعية.", verdict:"يعتمد هذا المقال على متوسط تقييم المستخدمين في RAWG، حيث بلغ التقييم الأصلي 4.2 من 5 استناداً إلى 1200 صوت. هذا المتوسط يعكس آراء المستخدمين المشاركين في المنصة ولا يمثل تقييماً تحريرياً مستقلاً من VibeCritic أو إجماعاً لجميع اللاعبين. يظل التحليل مقيداً بالمعلومات والمصادر المتاحة، ولا يدعي تجربة لعب مباشرة أو يختلق أحكاماً على عناصر فنية لا تدعمها الأدلة.", reviewMode:undefined };
+const audienceResult = assemble(audienceDraft,audienceEvidence);
+assert.equal(audienceResult.article.reviewMode,"audience");
+assert.equal(audienceResult.article.audienceScore,8.4);
+assert.equal(audienceResult.article.score,undefined);
+assert.equal(audienceResult.article.scores,undefined);
+assert.equal(audienceResult.article.sourceVoteCount,1200);
+assert.ok(validateArticle(audienceResult.article,{minWords:650,minCharacters:3200}).words>=650);
+const audienceMarkdown=renderMarkdown(audienceResult.article);
+assert.match(audienceMarkdown,/reviewMode: audience/);
+assert.match(audienceMarkdown,/sourceRating: 4.20/);
+assert.match(audienceMarkdown,/sourceVoteCount: 1200/);
+assert.match(audienceMarkdown,/تقييم الجمهور/);
+assert.throws(()=>assemble(audienceDraft,{...audienceEvidence,votes:99}),/minimum of 100 votes/);
+
 assert.throws(() => validateArticle({ ...article, scores:{...article.scores,story:11} }), /Invalid score/);
 assert.equal(normalizeFinalRating("الحكم النهائي: 6/10",5.3),"الحكم النهائي: 5.3/10");
 assert.equal(normalizeFinalRating("التقييم النهائي 8 من 10",7.4),"التقييم النهائي 7.4/10");
