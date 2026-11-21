@@ -20,7 +20,11 @@
     "deferredConflicts": [
       "src/pages/privacy.astro",
       "docs/editorial-quality-audit.md"
-    ]
+    ],
+    "prNumber": 190,
+    "prUrl": "https://github.com/manou23/VibeCritic-/pull/190",
+    "previewUrl": "https://1c93ccbf.vibecritic.pages.dev",
+    "ciPassed": true
   },
   "reviewed": [
     {
@@ -281,8 +285,9 @@
     "ads": "No publisher ID, ad code, ads.txt, verification setting, or AdSense application setting changed. The account review status was not accessed or independently verified.",
     "articles": "Audited 9 articles in this batch. Corrected the SVU episode count to 600 aired episodes, expanded Alkhallat with official episode premises/runtimes and cast, removed the unconfirmed exact Harry Potter date, and reclassified GTA V as limited evidence without a numeric score. No other article was rewritten merely for change.",
     "media": "Eight of the nine reviewed articles include relevant video IDs; the SVU data-led article has no video but now links to an official milestone source. Alkhallat episode details and cast were checked against Netflix's official listing. GTA V's duplicate poster/backdrop field was removed and official Rockstar/PlayStation sources were added. Direct playback was not independently confirmed for every embedded video.",
-    "preview": "This audit branch has not yet completed PR checks or a Cloudflare Pages preview. The live site and rendered article pages could not be independently opened from this environment.",
-    "documentation": "The machine-readable cumulative ledger is current in docs/editorial-audit-inventory.json. The human-readable docs/editorial-quality-audit.md is part of open PR #148 and was not edited to avoid a conflicting write."
+    "preview": "Cloudflare Pages preview deployment succeeded for PR #190. Preview URL: https://1c93ccbf.vibecritic.pages.dev; branch preview: https://audit-editorial-quality-2026-5xsu.vibecritic.pages.dev. The browser tool could not open the rendered home or article pages, so the visual rendering remains independently unverified.",
+    "documentation": "The machine-readable cumulative ledger is current in docs/editorial-audit-inventory.json. The human-readable docs/editorial-quality-audit.md is part of open PR #148 and was not edited to avoid a conflicting write.",
+    "build": "PR #190 checks passed: JavaScript syntax, review-score validation, production build, and build/sitemap validation all succeeded. Pull request checks and the review-quality workflow completed successfully."
   },
   "policyReview": {
     "reviewedAt": "2026-11-21",
@@ -339,7 +344,11 @@
       "newlyReviewed": 9,
       "revalidated": 0,
       "articleCorrections": 4,
-      "sitePolicyPageUpdated": false
+      "sitePolicyPageUpdated": false,
+      "prNumber": 190,
+      "prUrl": "https://github.com/manou23/VibeCritic-/pull/190",
+      "previewUrl": "https://1c93ccbf.vibecritic.pages.dev",
+      "ciPassed": true
     }
   ]
 }
