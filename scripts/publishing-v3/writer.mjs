@@ -14,7 +14,8 @@ export function normalizeBodyFinalRating(text, score) {
 }
 
 export function assemble(value, evidence) {
-  const reviewMode = evidence.reviewReadiness === "review" ? "review" : "limited";
+  const reviewMode = evidence.reviewReadiness === "review" ? "review" : evidence.reviewReadiness === "preview" ? "preview" : "limited";
+  if (reviewMode === "limited") throw new Error("Publishing blocked: VibeCritic publishes scored reviews or explicitly pre-release previews only");
   const article = {
     ...value,
     title:evidence.title,
@@ -63,8 +64,15 @@ export function assemble(value, evidence) {
   return { article, quality };
 }
 export function buildPrompt(evidence) {
-  const isLimited = evidence.reviewReadiness !== "review";
-  const prompt = (isLimited ? [
+  const isPreview = evidence.reviewReadiness === "preview";
+  const isLimited = !isPreview && evidence.reviewReadiness !== "review";
+  const prompt = (isPreview ? [
+    "اكتب معاينة استباقية عربية احترافية لعمل لم يصدر بعد لموقع VibeCritic اعتماداً حصراً على الأدلة.",
+    "هذه معاينة قبل الإصدار وليست مراجعة نهائية. اذكر موعد الإصدار المستقبلي، ولا تمنح درجة أو حكماً نهائياً ولا تدّع تجربة مباشرة. افصل الحقائق عن التوقعات.",
+    "اكتب 650 إلى 850 كلمة عربية مفيدة، مع عرض الفكرة والمعلومات الرسمية وما ننتظره عند الإصدار دون اختلاق تفاصيل أو جودة فنية.",
+    "أخرج JSON صالحاً فقط بالمفاتيح headline, summary, verdict, body, pros, cons. لا تضف scores أو score. summary وverdict لا يقل كل منهما عن 90 كلمة.",
+    "ملف الأدلة: " + JSON.stringify(evidence)
+  ] : isLimited ? [
     "اكتب قراءة معلوماتية عربية محدودة الأدلة لموقع VibeCritic اعتماداً حصراً على ملف الأدلة أدناه.",
     "المصادر المتاحة وصف قاعدة بيانات، ومادة موسوعية، وإعلان ترويجي. هذه المصادر تثبت بعض المعلومات الأساسية فقط، ولا تثبت جودة التنفيذ أو تجربة مشاهدة/لعب. لا تقدّم النص بوصفه مراجعة مشاهدة أو مراجعة نهائية، ولا تدّع تجربة شخصية.",
     "ممنوع وضع أي درجة رقمية أو تقييم من 10 أو ترتيب جودة. لا تملأ محاور الإخراج أو الصورة أو الصوت أو الإيقاع بتخمينات. اذكر بوضوح ما نعرفه وما لا تسمح الأدلة بحسمه.",
@@ -93,7 +101,8 @@ export function buildPrompt(evidence) {
 export async function writeArticle(evidence) {
   const today = new Date().toISOString().slice(0,10);
   if (evidence.releaseDate && evidence.releaseDate > today) throw new Error("Candidate release date is still in the future");
-  const isLimited = evidence.reviewReadiness !== "review";
+  const isPreview = evidence.reviewReadiness === "preview";
+  const isLimited = !isPreview && evidence.reviewReadiness !== "review";
   const prompt = buildPrompt(evidence);
 
   const first = await generateJson(prompt, { maxTokens:10000 });
@@ -102,7 +111,7 @@ export async function writeArticle(evidence) {
   try {
     result = assemble(first.value,evidence);
   } catch (qualityError) {
-    const retry = await generateJson(prompt + "\n\nفشلت المسودة السابقة في فحص الجودة: " + String(qualityError.message).slice(0,300) + (isLimited ? ". أعد القراءة المعلوماتية المحدودة كاملة، بلا درجة رقمية، وتأكد من أن المتن لا يقل عن 650 كلمة وأن الخلاصة والملخص مستوفيان للحد الأدنى." : ". أعد المراجعة النهائية كاملة، وتأكد من أن المتن لا يقل عن 1000 كلمة وأن الحكم والملخص مستوفيان للحد الأدنى."), { skipProviderId:first.provider, maxTokens:10000 });
+    const retry = await generateJson(prompt + "\n\nفشلت المسودة السابقة في فحص الجودة: " + String(qualityError.message).slice(0,300) + (isLimited || isPreview ? ". أعد النص وفق نوعه بلا درجة رقمية، وتأكد من أن المتن لا يقل عن 650 كلمة وأن الخلاصة والملخص مستوفيان للحد الأدنى." : ". أعد المراجعة النهائية كاملة، وتأكد من أن المتن لا يقل عن 1000 كلمة وأن الحكم والملخص مستوفيان للحد الأدنى."), { skipProviderId:first.provider, maxTokens:10000 });
     try { result = assemble(retry.value,evidence); }
     catch (error) { error.requests = (Number(first.requests)||1) + (Number(retry.requests)||1); throw error; }
     generation = { provider:retry.provider, tokens:(Number(first.tokens)||0)+(Number(retry.tokens)||0), requests:(Number(first.requests)||1)+(Number(retry.requests)||1) };
