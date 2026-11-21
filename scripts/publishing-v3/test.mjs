@@ -3,7 +3,7 @@ import { createState, enqueue, transition, chooseJob, validateEvidence, validate
 import { withRunLock } from "./lock.mjs";
 import { publishArticle, articleFilePath, renderMarkdown } from "./publisher.mjs";
 import { loadState, saveState } from "./store.mjs";
-import { normalizeFinalRating, normalizeBodyFinalRating, assemble } from "./writer.mjs";
+import { normalizeFinalRating, normalizeBodyFinalRating, assemble, buildPrompt } from "./writer.mjs";
 import { publishedIdentityKeys } from "./sources.mjs";
 import fs from "node:fs/promises";
 import os from "node:os";
@@ -97,6 +97,12 @@ assert.match(audienceMarkdown,/sourceRating: 4.20/);
 assert.match(audienceMarkdown,/sourceVoteCount: 1200/);
 assert.match(audienceMarkdown,/تقييم الجمهور/);
 assert.throws(()=>assemble(audienceDraft,{...audienceEvidence,votes:99}),/minimum of 100 votes/);
+const audiencePrompt = buildPrompt(audienceEvidence);
+assert.equal(typeof audiencePrompt,"string");
+assert.match(audiencePrompt,/4\.2\/5/);
+assert.match(audiencePrompt,/1200 صوتاً/);
+assert.match(audiencePrompt,/ليس تقييماً تحريرياً من VibeCritic/);
+assert.match(audiencePrompt,/لا تمنح درجات فرعية للقصة أو الصورة أو الصوت أو الإيقاع/);
 
 assert.throws(() => validateArticle({ ...article, scores:{...article.scores,story:11} }), /Invalid score/);
 assert.equal(normalizeFinalRating("الحكم النهائي: 6/10",5.3),"الحكم النهائي: 5.3/10");
@@ -156,6 +162,9 @@ globalThis.fetch = async (url, options) => {
   const requestBody = JSON.parse(options.body);
   assert.equal(requestBody.model,"gpt-6-luna");
   assert.equal(requestBody.max_output_tokens,7000);
+  assert.equal(typeof requestBody.input[0].content[0].text,"string");
+  assert.equal(typeof requestBody.input[1].content[0].text,"string");
+  assert.equal(requestBody.input[1].content[0].text,openAIFetchCalls === 1 ? "test" : "retry");
   assert.deepEqual(requestBody.text,{format:{type:"json_object"}});
   return {
     ok:true,
