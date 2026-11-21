@@ -100,7 +100,7 @@ export function buildPrompt(evidence) {
 }
 export async function writeArticle(evidence) {
   const today = new Date().toISOString().slice(0,10);
-  if (evidence.releaseDate && evidence.releaseDate > today) throw new Error("Candidate release date is still in the future");
+  if (evidence.releaseDate && evidence.releaseDate > today && evidence.reviewReadiness !== "preview") throw new Error("Candidate release date is still in the future");
   const isPreview = evidence.reviewReadiness === "preview";
   const isLimited = !isPreview && evidence.reviewReadiness !== "review";
   const prompt = buildPrompt(evidence);
