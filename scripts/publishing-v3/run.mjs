@@ -94,11 +94,13 @@ const result = await withRunLock(async () => {
         try {
           job.evidence = await collectEvidence(job.item);
           validateEvidence(job.evidence);
+          if (!["review","preview"].includes(job.evidence.reviewReadiness)) throw new Error("Publishing blocked: evidence supports neither a scored review nor an explicit pre-release preview");
+          if (job.evidence.reviewReadiness === "preview" && (!job.evidence.releaseDate || !(job.evidence.releaseDate > new Date().toISOString().slice(0,10)))) throw new Error("Publishing blocked: preview requires a verified future release date");
           evidenceReady = true;
           break;
         } catch (error) {
           const message = String(error?.message || error);
-          const candidateSpecific = /(Candidate release date is still in the future|Primary catalog description is too thin|Independent source is too thin|No exact independent encyclopedia match|Independent source title mismatch|At least two independent HTTPS source domains (?:are )?required|Evidence overview is too thin|No verified official YouTube trailer found)/.test(message);
+          const candidateSpecific = /(Candidate release date is still in the future|Primary catalog description is too thin|Independent source is too thin|No exact independent encyclopedia match|Independent source title mismatch|At least two independent HTTPS source domains (?:are )?required|Evidence overview is too thin|No verified official YouTube trailer found|Publishing blocked: evidence supports neither|Publishing blocked: preview requires)/.test(message);
           if (!candidateSpecific) throw error;
           transition(job,"rejected",{lastError:message});
           await saveState(state);
@@ -148,7 +150,7 @@ const result = await withRunLock(async () => {
     if (Number(error?.requests)>0) daily.requests += Number(error.requests);
     if (job && !["published","rejected"].includes(job.status)) {
       const message = String(error.message||error).slice(0,800);
-      if (/Candidate release date is still in the future|Primary catalog description is too thin|Independent source is too thin|No exact independent encyclopedia match|Independent source title mismatch|At least two independent HTTPS source domains|No verified official YouTube trailer found/.test(message)) {
+      if (/Candidate release date is still in the future|Primary catalog description is too thin|Independent source is too thin|No exact independent encyclopedia match|Independent source title mismatch|At least two independent HTTPS source domains|No verified official YouTube trailer found|Publishing blocked: evidence supports neither|Publishing blocked: preview requires/.test(message)) {
         transition(job,"rejected",{lastError:message});
       } else {
         const resumeStatus = ["researching","writing"].includes(job.status) ? "queued" : job.status === "reviewing" ? "ready" : job.status === "publishing" ? "ready" : job.status;
