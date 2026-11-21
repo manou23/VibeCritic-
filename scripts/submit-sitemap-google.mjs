@@ -86,4 +86,27 @@ if (!submitResponse.ok) {
   throw new Error(`Google Search Console sitemap submission failed with HTTP ${submitResponse.status}: ${(await submitResponse.text()).slice(0, 700)}`);
 }
 console.log(`Google Search Console accepted sitemap submission for ${siteUrl.href}.`);
-console.log('This is a crawl/discovery request, not a guarantee that every URL will be indexed.');
+
+const statusResponse = await fetch(endpoint, {
+  method: 'GET',
+  headers: { authorization: `Bearer ${token}` },
+  signal: AbortSignal.timeout(20000)
+});
+if (!statusResponse.ok) {
+  console.log(`Google accepted the submission, but the sitemap status check returned HTTP ${statusResponse.status}: ${(await statusResponse.text()).slice(0, 500)}`);
+} else {
+  const status = await statusResponse.json();
+  console.log('Google Search Console sitemap status:');
+  console.log(JSON.stringify({
+    path: status.path,
+    lastSubmitted: status.lastSubmitted,
+    lastDownloaded: status.lastDownloaded,
+    isPending: status.isPending,
+    isSitemapsIndex: status.isSitemapsIndex,
+    type: status.type,
+    errors: status.errors,
+    warnings: status.warnings,
+    contents: status.contents
+  }, null, 2));
+}
+console.log('A successful submission is a crawl/discovery request, not a guarantee that every URL will be indexed.');
