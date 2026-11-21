@@ -26,6 +26,7 @@ export function assemble(value, evidence) {
     sourceRating:evidence.rating ?? null,
     sourceRatingScale:evidence.ratingScale ?? null,
     sourceVoteCount:evidence.votes ?? 0,
+    sourceRatingCheckedAt:evidence.collectedAt || new Date().toISOString(),
     audienceScore:Number.isFinite(Number(evidence.rating)) && Number(evidence.ratingScale) > 0 ? Math.round(Number(evidence.rating) / Number(evidence.ratingScale) * 100) / 10 : null,
     releaseDate:evidence.releaseDate||"",
     poster:evidence.poster||"",
