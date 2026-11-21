@@ -12,16 +12,16 @@ export function articleFilePath(article, root="src/content/reviews") {
 export function renderMarkdown(article) {
   const reviewMode = article.reviewMode || "review";
   const isPreview = reviewMode === "preview";
-  const isLimited = reviewMode === "limited";
-  if (isLimited) throw new Error("Refusing to publish a limited-evidence article on VibeCritic");
+  const hasScore = reviewMode === "review";
+  if (reviewMode === "limited") throw new Error("Refusing to publish a limited-evidence article on VibeCritic");
   validateArticle(article, reviewMode !== "review" ? { minWords:650, minCharacters:3200 } : { minWords:1000, minCharacters:5200 });
   if (!/^[A-Za-z0-9_-]{11}$/.test(article.youtubeVideoId || "")) throw new Error("V3 article requires a verified YouTube video ID");
   const list = values => (values||[]).map(x=>"  - "+quote(x)).join("\n") || " []";
-  const finalVerdict = isLimited
-    ? String(article.verdict || "هذه قراءة معلوماتية محدودة، ولا تتضمن حكماً نهائياً على جودة التنفيذ.")
-    : normalizeFinalRating(article.verdict, article.score);
-  const finalBody = isLimited ? String(article.body || "") : normalizeBodyFinalRating(article.body, article.score);
-  const scoreFields = isLimited ? [] : [
+  const finalVerdict = hasScore
+    ? normalizeFinalRating(article.verdict, article.score)
+    : String(article.verdict || "هذه معاينة استباقية قبل الإصدار، ولا تتضمن حكماً نهائياً أو درجة.");
+  const finalBody = hasScore ? normalizeBodyFinalRating(article.body, article.score) : String(article.body || "");
+  const scoreFields = !hasScore ? [] : [
     "score: "+Number(article.score).toFixed(2),
     "storyScore: "+Number(article.scores.story).toFixed(2),
     "visualsScore: "+Number(article.scores.visuals).toFixed(2),
