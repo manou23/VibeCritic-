@@ -1,19 +1,26 @@
 {
   "schemaVersion": 1,
   "lastUpdated": "2026-11-21",
-  "sourceMainSha": "44b1cd1e130904d790499011946967158032200a",
-  "previousAuditMainSha": "2802e29b078e53cd574880d6482248ee311bd8f6",
-  "articleCount": 229,
+  "sourceMainSha": "601df7b7d2df6aa179e7e2c35ec6240e9477d589",
+  "previousAuditMainSha": "44b1cd1e130904d790499011946967158032200a",
+  "articleCount": 230,
   "previousArticleCount": 176,
-  "growthSincePreviousAudit": 53,
-  "reviewedUniqueCount": 24,
-  "pendingCount": 205,
+  "growthSincePreviousAudit": 54,
+  "reviewedUniqueCount": 33,
+  "pendingCount": 197,
   "currentRun": {
-    "articlesChecked": 8,
-    "newlyReviewed": 8,
+    "date": "2026-11-21",
+    "batch": "current batch",
+    "articlesChecked": 9,
+    "newlyReviewed": 9,
     "revalidated": 0,
-    "articleCorrections": 8,
-    "sitePolicyPageUpdated": false
+    "articleCorrections": 4,
+    "sitePolicyPageUpdated": false,
+    "sourceMainSha": "601df7b7d2df6aa179e7e2c35ec6240e9477d589",
+    "deferredConflicts": [
+      "src/pages/privacy.astro",
+      "docs/editorial-quality-audit.md"
+    ]
   },
   "reviewed": [
     {
@@ -192,17 +199,90 @@
       "contentSha": "4ce66de619f928143b1ee6ac75f5561c490d951a",
       "status": "corrected",
       "note": "Removed repeated verdict and score from the body; retained research-based methodology note and verified weighted score. YouTube ID matches the official final-trailer title."
+    },
+    {
+      "path": "src/content/reviews/saros-2026.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "b571ae6f138fa2855c52dbc54e2073080e2a8dc3",
+      "status": "reviewed-no-change",
+      "note": "Verified 30 April 2026 PS5 release and official sources; 8.7 is consistent with the weighted rubric and the article discloses no firsthand play."
+    },
+    {
+      "path": "src/content/reviews/series-12-12-12-2026-manual-assisted.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "39377e678c672c55cac58cfeba4dfe7c6cd70ab1",
+      "status": "reviewed-no-change",
+      "note": "Verified Apple TV eight-episode schedule; the 16 November article accurately time-stamps the first two episodes available at preparation."
+    },
+    {
+      "path": "src/content/reviews/series-2734.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "7e49229fd68f35b353f3bb5cedf133fc64831ef8",
+      "status": "corrected",
+      "note": "Corrected the aired episode count from 602 to 600 and average from 21.5 to 21.4; added the official 600th-episode source and aligned the heading with limited evidence."
+    },
+    {
+      "path": "src/content/reviews/series-alkhallat-2026-manual-assisted.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "2eedcd7a09d8bcffd5e7033af6a4711ca271d28d",
+      "status": "corrected",
+      "note": "Added official episode-by-episode premises and runtimes; aligned the cast list with Netflix's official listing."
+    },
+    {
+      "path": "src/content/reviews/series-blade-runner-2099-2026-preview.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "8fc7b60ace19dbcc28df347f6cdc901b40229d49",
+      "status": "reviewed-no-change",
+      "note": "Verified the 25 November 2026 Prime Video release announcement and retained its preview-only, unscored status."
+    },
+    {
+      "path": "src/content/reviews/series-harry-potter-philosophers-stone-2026-preview.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "e4b2fefc3731601c983cb0215aa34990dc051e71",
+      "status": "corrected",
+      "note": "Removed the unconfirmed 25 December date; retained the official Christmas 2026 release window and no-score preview status."
+    },
+    {
+      "path": "src/content/reviews/series-invincible-season-5-2027-preview.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "80a9c92844f91794d1de090c301586a2945f15ab",
+      "status": "reviewed-no-change",
+      "note": "Verified the 17 February 2027 Prime Video date and the sixth-season renewal against official announcements."
+    },
+    {
+      "path": "src/content/reviews/series-neuromancer-2027-preview.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "2cd8a609951a9ac6825f8a4b52f9a07a30791def",
+      "status": "reviewed-no-change",
+      "note": "Verified the 22 January 2027 Apple TV release date and ten-episode order against Apple TV press material."
+    },
+    {
+      "path": "src/content/reviews/game-grand-theft-auto-v-3498.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "5f5736bae90ad206a0ee2d92db716f901c8edea6",
+      "status": "corrected-to-limited",
+      "note": "Removed an unsupported numeric score because the article itself says key scoring dimensions cannot be assessed from the available evidence; added official Rockstar/PlayStation sources and removed the duplicate backdrop."
     }
   ],
   "siteChecks": {
     "about": "Reviewed; editorial purpose and AI-assisted content disclosure are present.",
     "contact": "Reviewed; contact form uses FormSubmit and identifies the submitted fields.",
-    "privacy": "Uses the detailed FormSubmit disclosure first prepared in PR #148, mirrored exactly in this audit branch to avoid divergent privacy-page edits. Cloudflare preview build succeeded, but the rendered privacy page could not be independently opened from this environment.",
-    "consent": "No site CMP/consent banner found. Before personalized Google ads are served to EEA/UK/Switzerland users, use a Google-certified CMP integrated with IAB TCF; TCF v2.3 applies to new TC strings since 2026-03-01.",
-    "ads": "No publisher ID, ad code, ads.txt, verification setting, or AdSense application setting changed.",
-    "articles": "The review detail template renders a final-verdict card; this batch removes duplicated verdict/score sections from all 8 reviewed article bodies.",
-    "media": "All 8 articles retain a relevant video ID with a corroborating official/source reference; direct YouTube page fetch was throttled for some IDs. Murder in Galicia uses an AlloCiné-hosted official poster and an official Netflix CDN backdrop; Phantom Blade Zero store links and store-displayed dates were verified.",
-    "preview": "Cloudflare Pages preview deployment succeeded for commit 52a8766 (https://22c2322c.vibecritic.pages.dev). The preview URL and individual pages were not readable through the browser tool, so rendered appearance remains unverified."
+    "privacy": "The current privacy page discloses FormSubmit, local theme storage and prospective AdSense, but does not disclose the globally loaded Google Analytics 4 tag in Base.astro. A GA4 disclosure update is deferred because open PR #148 also touches privacy.astro; avoid a conflicting edit until that PR is resolved.",
+    "consent": "No site CMP/consent banner found. Before serving personalized Google ads to EEA/UK/Switzerland users, use a Google-certified CMP integrated with IAB TCF; new TC strings must use TCF v2.3 from 2026-03-01.",
+    "ads": "No publisher ID, ad code, ads.txt, verification setting, or AdSense application setting changed. The account review status was not accessed or independently verified.",
+    "articles": "Audited 9 articles in this batch. Corrected the SVU episode count to 600 aired episodes, expanded Alkhallat with official episode premises/runtimes and cast, removed the unconfirmed exact Harry Potter date, and reclassified GTA V as limited evidence without a numeric score. No other article was rewritten merely for change.",
+    "media": "Eight of the nine reviewed articles include relevant video IDs; the SVU data-led article has no video but now links to an official milestone source. Alkhallat episode details and cast were checked against Netflix's official listing. GTA V's duplicate poster/backdrop field was removed and official Rockstar/PlayStation sources were added. Direct playback was not independently confirmed for every embedded video.",
+    "preview": "This audit branch has not yet completed PR checks or a Cloudflare Pages preview. The live site and rendered article pages could not be independently opened from this environment.",
+    "documentation": "The machine-readable cumulative ledger is current in docs/editorial-audit-inventory.json. The human-readable docs/editorial-quality-audit.md is part of open PR #148 and was not edited to avoid a conflicting write."
   },
   "policyReview": {
     "reviewedAt": "2026-11-21",
@@ -216,14 +296,14 @@
     "summary": "Rechecked official Google Publisher Policies, AdSense policies, Search Essentials and scaled-content spam guidance on 2026-11-21. No material policy change identified. Google prohibits copied/low-value content and ads on screens without publisher content; scaled-content abuse applies regardless of whether content is produced by AI, automation or people. No fixed minimum word count or article count is stated in the reviewed guidance."
   },
   "nextBatch": [
-    "src/content/reviews/saros-2026.md",
-    "src/content/reviews/series-12-12-12-2026-manual-assisted.md",
-    "src/content/reviews/series-2734.md",
-    "src/content/reviews/series-alkhallat-2026-manual-assisted.md",
-    "src/content/reviews/series-blade-runner-2099-2026-preview.md",
-    "src/content/reviews/series-harry-potter-philosophers-stone-2026-preview.md",
-    "src/content/reviews/series-invincible-season-5-2027-preview.md",
-    "src/content/reviews/series-neuromancer-2027-preview.md"
+    "src/content/reviews/exodus-2027-preview.md",
+    "src/content/reviews/game-1015421.md",
+    "src/content/reviews/game-apex-legends-290856.md",
+    "src/content/reviews/game-arc-raiders-2025-manual-assisted.md",
+    "src/content/reviews/game-big-walk-2026-review.md",
+    "src/content/reviews/game-cairn-2026-review.md",
+    "src/content/reviews/game-celeste-manual.md",
+    "src/content/reviews/game-clair-obscur-expedition-33-305152.md"
   ],
   "deferred": [
     {
@@ -249,6 +329,16 @@
       "newlyReviewed": 8,
       "revalidated": 0,
       "articleCorrections": 8,
+      "sitePolicyPageUpdated": false
+    },
+    {
+      "date": "2026-11-21",
+      "batch": "current batch",
+      "branchCommit": "9a85104cb35070be7fc97359096e93403406f8c2",
+      "articlesChecked": 9,
+      "newlyReviewed": 9,
+      "revalidated": 0,
+      "articleCorrections": 4,
       "sitePolicyPageUpdated": false
     }
   ]
