@@ -3,7 +3,7 @@ title: "نينهو: الثمن الذي يجب دفعه"
 originalTitle: "Ninho : Le prix à payer"
 headline: "نينهو يكشف الوجه المكلف للنجاح، لكن الوثائقي يظل قريباً من رواية صاحبه أكثر من مساءلتها"
 hook: "بعد عقد من الأرقام القياسية والحفلات الضخمة، لا يتحدث نينهو عن النجاح بوصفه نهاية سعيدة. يقترب الفيلم من التعب والضغط والصفقات والروابط العائلية التي دفعت الفنان إلى التفكير في التوقف، لكنه يترك بعض الأسئلة الصعبة خارج الكادر."
-summary: "وثائقي موسيقي فرنسي من إخراج Thibaut de Longeville وYanis Tiliouine، عُرض على Netflix في 4 نوفمبر 2026. يتتبع مسيرة مغني الراب نينهو، واسمه William Nzobazola، من بداياته إلى صعوده الكبير، ويركز على الثمن الشخصي والمهني للنجاح وعلى تفكيره في الابتعاد بعد عشر سنوات من العمل."
+summary: "وثائقي موسيقي فرنسي من إخراج Thibaut de Longeville وYanis Tiliouine، مع Jules Renault في الإخراج المشترك، عُرض على Netflix في 4 نوفمبر 2026. يتتبع مسيرة مغني الراب نينهو، واسمه William Nzobazola، من بداياته إلى صعوده الكبير، ويركز على الثمن الشخصي والمهني للنجاح وعلى تفكيره في الابتعاد بعد عشر سنوات من العمل."
 verdict: "يمتلك Ninho : Le prix à payer قيمة واضحة بفضل الوصول القريب إلى الفنان وأرشيفه وشهادات محيطه، ويمنح صورة أكثر تعقيداً من سردية الأرقام والنجاحات. لكنه لا يتحول بالكامل إلى تحقيق مستقل؛ فالرواية تظل متمركزة حول نينهو، وبعض جوانب صناعة الموسيقى والعقود والسلطة لا تُفحص من زوايا متعارضة بما يكفي. تقييم VibeCritic التحريري 7.6/10."
 reviewVersion: 1
 type: movie
@@ -22,12 +22,12 @@ backdrop: "https://www.netflix-news.com/app/uploads/2026/10/news-51731.YzgwNzhkM
 youtubeVideoId: "rwmC80TVN50"
 youtubeVideoTitle: "Ninho : Le prix à payer | Bande-annonce officielle VF | Netflix France"
 platforms: ["Netflix"]
-sourceName: "Netflix / Le Monde / Télérama / Canal+ / Netflix News"
+sourceName: "Netflix / Le Monde / Télérama / Canal+ / Netflix News / AlloCiné"
 sourceId: "movie:81763154:manual-editorial"
 sourceUrl: "https://www.netflix.com/title/81763154"
 aiGenerated: false
 editorialWorkflow: "manual-assisted"
-creator: "Thibaut de Longeville, Yanis Tiliouine"
+creator: "Thibaut de Longeville, Yanis Tiliouine, Jules Renault (co-director)"
 cast:
   - "Ninho"
 pros:
@@ -78,12 +78,6 @@ genres: ["وثائقي", "موسيقى", "سيرة ذاتية", "هيب هوب"]
 
 أما من يبحث عن تحقيق صحفي مستقل يواجه جميع الأطراف ويشرح كل عقد أو نزاع مالي بالتفصيل، فقد لا يحصل على ذلك هنا. الوثائقي أكثر حميمية من كونه استقصائياً، وأكثر اهتماماً بالإنسان الذي يقف خلف الاسم من اهتمامه ببناء ملف قانوني أو اقتصادي شامل.
 
-## الحكم النهائي والتقييم
-
-Ninho : Le prix à payer وثائقي ناجح في الوصول إلى لحظات شخصية نادرة، وفي وضع النجاح التجاري داخل سياق إنساني ومهني أكثر تعقيداً. قوته في الأرشيف والقرب من الشخصية والشهادات المحيطة بها، وضعفه في أن روايته لا تبتعد كثيراً عن منظور بطلها، ولا تمنح كل الأسئلة الاقتصادية والتحريرية المساحة نفسها.
-
-تقييم VibeCritic التحريري **7.6/10**. إنه عمل جيد ومؤثر لمن يهتم بنينهو وبالمشهد الموسيقي الفرنسي، لكنه ليس التحقيق الشامل الذي قد يوحي به عنوانه. الدرجة تعكس قيمة الوصول والصدق الشخصي، مع خصم واضح بسبب محدودية التوازن والاستقصاء.
-
 ## مصادر التحقق والقراءة النقدية
 
 - [Netflix — Ninho : Le prix à payer](https://www.netflix.com/title/81763154): الوصف الرسمي والتصنيف وتاريخ الإتاحة والمواد الترويجية.
@@ -92,3 +86,4 @@ Ninho : Le prix à payer وثائقي ناجح في الوصول إلى لحظا
 - [Télérama — Dans l’intimité de la star du rap français](https://www.telerama.fr/television/ninho-le-prix-a-payer-sur-netflix-dans-l-intimite-de-la-star-du-rap-francais-a-la-carriere-fulgurante_cri-7046708.php): تقييم للطابع الشخصي والحميمي للفيلم.
 - [Canal+ — Pourquoi il ne faut pas rater ce documentaire](https://www.canalplus.com/articles/documentaire/ninho-le-prix-a-payer-pourquoi-il-ne-faut-pas-rater-le-documentaire-netflix): خلفية الإنتاج والأرشيف والشهادات المحيطة بنينهو.
 - [Netflix News — Le documentaire événement](https://www.netflix-news.com/articles/programmes/documentaire/1631514-ninho-le-prix-a-payer-sur-netflix-le-documentaire-evenement-sur-la-star-du-rap-francais-4-novembre-04-11-2026/): تاريخ العرض وتفاصيل الإعلان والسياق الترويجي.
+- [AlloCiné — بيانات الطاقم الفني](https://www.allocine.fr/film/fichefilm_gen_cfilm%3D1000054243.html): يدرج Jules Renault ضمن الإخراج المشترك إلى جانب Thibaut de Longeville وYanis Tiliouine.

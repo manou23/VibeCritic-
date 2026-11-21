@@ -6,14 +6,14 @@
   "articleCount": 229,
   "previousArticleCount": 176,
   "growthSincePreviousAudit": 53,
-  "reviewedUniqueCount": 16,
-  "pendingCount": 213,
+  "reviewedUniqueCount": 24,
+  "pendingCount": 205,
   "currentRun": {
-    "articlesChecked": 10,
-    "newlyReviewed": 9,
-    "revalidated": 1,
-    "articleCorrections": 7,
-    "sitePolicyPageUpdated": true
+    "articlesChecked": 8,
+    "newlyReviewed": 8,
+    "revalidated": 0,
+    "articleCorrections": 8,
+    "sitePolicyPageUpdated": false
   },
   "reviewed": [
     {
@@ -128,14 +128,80 @@
       "contentSha": "f557e66d500a36ce3de151a088c3d0bc7fba55ff",
       "status": "reviewed-no-change",
       "note": "Clearly labelled preview with no score or firsthand claim; release date and platforms match official Fable FAQ."
+    },
+    {
+      "path": "src/content/reviews/movie-wuthering-heights-2026.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "5cd426a3353f9cf98cbd85859a5751b00a75341d",
+      "status": "corrected",
+      "note": "Removed repeated body verdict and score; retained the distinct comparison analysis and template verdict card. Score remains aligned with the fixed weighted rubric."
+    },
+    {
+      "path": "src/content/reviews/murder-in-galicia-2026.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "9594ef7b6cbf27462d0bc8b52dd4ade8dd728a79",
+      "status": "corrected",
+      "note": "Removed duplicated verdict/score; clarified fictional series versus the Isabel Fuentes case using Netflix's official documentary and press release; corrected creator/writer roles, linked sources and replaced third-party image URLs with official Netflix CDN stills."
+    },
+    {
+      "path": "src/content/reviews/ninho-le-prix-a-payer-2026.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "deb43dc2ec80cb809eb7d695718c5a9b9bf8b3c3",
+      "status": "corrected",
+      "note": "Removed duplicated verdict/score; added co-director Jules Renault to credits and cited the verified AlloCiné credit record."
+    },
+    {
+      "path": "src/content/reviews/persona-4-revival-2027-preview.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "f36c60f71be30ab158fac0570826d0605f7b07b3",
+      "status": "corrected",
+      "note": "Removed repeated preview verdict; kept the explicit no-score, no-firsthand-experience preview disclaimer."
+    },
+    {
+      "path": "src/content/reviews/phantom-blade-zero-2026.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "787c9d1c8d56a05b7d8d44f319a892e1b84730d7",
+      "status": "corrected",
+      "note": "Removed duplicated verdict; clarified store-displayed dates (Steam 28 Oct; PlayStation/Epic 29 Oct) and added verified direct store links."
+    },
+    {
+      "path": "src/content/reviews/possible-love-2026.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "8185b0516741729d79d8b74a5302d5eb9ae6783e",
+      "status": "corrected",
+      "note": "Removed repeated verdict and numeric score from the body; retained the independent research-based methodology note."
+    },
+    {
+      "path": "src/content/reviews/pragmata-2026.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "906dd24408b675e8d146d9915b66f15853c3cdc3",
+      "status": "corrected",
+      "note": "Removed repeated verdict and score from the body; retained source-based methodology note and verified weighted score."
+    },
+    {
+      "path": "src/content/reviews/project-hail-mary-2026.md",
+      "reviewedAt": "2026-11-21",
+      "verifiedAt": "2026-11-21",
+      "contentSha": "4ce66de619f928143b1ee6ac75f5561c490d951a",
+      "status": "corrected",
+      "note": "Removed repeated verdict and score from the body; retained research-based methodology note and verified weighted score."
     }
   ],
   "siteChecks": {
     "about": "Reviewed; editorial purpose and AI-assisted content disclosure are present.",
     "contact": "Reviewed; contact form uses FormSubmit and identifies the submitted fields.",
-    "privacy": "Updated to disclose FormSubmit data forwarding alongside existing analytics and prospective advertising disclosures.",
+    "privacy": "Updated in the audit PR to disclose FormSubmit contact-form data forwarding; pending merge and live-site verification.",
     "consent": "No site CMP/consent banner found. Before personalized Google ads are served to EEA/UK/Switzerland users, use a Google-certified CMP integrated with IAB TCF; TCF v2.3 applies to new TC strings since 2026-03-01.",
-    "ads": "No publisher ID, ad code, ads.txt, verification setting, or AdSense application setting changed."
+    "ads": "No publisher ID, ad code, ads.txt, verification setting, or AdSense application setting changed.",
+    "articles": "The review detail template renders a final-verdict card; this batch removes duplicated verdict/score sections from all 8 reviewed article bodies.",
+    "media": "Murder in Galicia poster/backdrop now use official Netflix CDN stills; Phantom Blade Zero store links and store-specific release-date displays were verified against official stores."
   },
   "policyReview": {
     "reviewedAt": "2026-11-21",
@@ -146,22 +212,43 @@
       "https://developers.google.com/search/docs/essentials",
       "https://developers.google.com/search/docs/essentials/spam-policies"
     ],
-    "summary": "Publisher policies prohibit ads on pages without publisher content or with low-value content, copied/embedded material without added value, and copyright infringement; privacy disclosures are required. Search spam policy treats scaled pages made primarily to manipulate rankings with little original value as abuse regardless of production method. No fixed word-count or article-count minimum was identified. Google-certified CMP plus IAB TCF is required for personalized ads in EEA/UK/Switzerland; TCF v2.3 is required for new consent strings from 2026-03-01."
+    "summary": "Rechecked official Google Publisher Policies, AdSense policies, Search Essentials and scaled-content spam guidance on 2026-11-21. No material policy change identified. Google prohibits copied/low-value content and ads on screens without publisher content; scaled-content abuse applies regardless of whether content is produced by AI, automation or people. No fixed minimum word count or article count is stated in the reviewed guidance."
   },
   "nextBatch": [
-    "src/content/reviews/movie-wuthering-heights-2026.md",
-    "src/content/reviews/murder-in-galicia-2026.md",
-    "src/content/reviews/ninho-le-prix-a-payer-2026.md",
-    "src/content/reviews/persona-4-revival-2027-preview.md",
-    "src/content/reviews/phantom-blade-zero-2026.md",
-    "src/content/reviews/possible-love-2026.md",
-    "src/content/reviews/pragmata-2026.md",
-    "src/content/reviews/project-hail-mary-2026.md"
+    "src/content/reviews/saros-2026.md",
+    "src/content/reviews/series-12-12-12-2026-manual-assisted.md",
+    "src/content/reviews/series-2734.md",
+    "src/content/reviews/series-alkhallat-2026-manual-assisted.md",
+    "src/content/reviews/series-blade-runner-2099-2026-preview.md",
+    "src/content/reviews/series-harry-potter-philosophers-stone-2026-preview.md",
+    "src/content/reviews/series-invincible-season-5-2027-preview.md",
+    "src/content/reviews/series-neuromancer-2027-preview.md"
   ],
   "deferred": [
     {
       "path": "src/content/reviews/game-red-dead-redemption-2010.md",
       "reason": "Previously deferred from the priority batch as an older/non-proactive title; remains pending for a later full-cycle decision."
+    }
+  ],
+  "runHistory": [
+    {
+      "date": "2026-11-21",
+      "batch": "previous batch",
+      "branchCommit": "430f68671edbabec41263d08170ef51890de8e2c",
+      "articlesChecked": 10,
+      "newlyReviewed": 9,
+      "revalidated": 1,
+      "articleCorrections": 7,
+      "sitePolicyPageUpdated": true
+    },
+    {
+      "date": "2026-11-21",
+      "batch": "current batch",
+      "articlesChecked": 8,
+      "newlyReviewed": 8,
+      "revalidated": 0,
+      "articleCorrections": 8,
+      "sitePolicyPageUpdated": false
     }
   ]
 }

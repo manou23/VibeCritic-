@@ -45,7 +45,7 @@ genres:
   - "Role-playing (RPG)"
   - "Adventure"
 creator: "S-GAME"
-sourceName: "S-GAME / PlayStation / PC Gamer / TechRadar / Game Informer / VGC / GamesRadar"
+sourceName: "S-GAME / PlayStation Blog / PlayStation Store / Steam / Epic Games Store / PC Gamer / TechRadar / Game Informer / VGC / GamesRadar"
 sourceId: "manual-assisted-phantom-blade-zero-2026"
 sourceUrl: "https://pbz.s-game.com/en-US/"
 aiGenerated: false
@@ -53,8 +53,11 @@ editorialWorkflow: "manual-assisted"
 mediaVerified: true
 gameStores:
   - name: "Steam"
+    url: "https://store.steampowered.com/app/4115450/Phantom_Blade_Zero/"
   - name: "PlayStation Store"
+    url: "https://store.playstation.com/en-us/concept/10017620"
   - name: "Epic Games Store"
+    url: "https://store.epicgames.com/en-US/p/phantom-blade-zero-e78a35"
 ---
 
 > **منهجية المراجعة:** قراءة تحريرية يدوية مبنية على معلومات المطور الرسمية ومراجعات نقدية منشورة بعد الإطلاق. لا تدّعي هذه المادة اختباراً شخصياً جديداً أو قياساً تقنياً على جهاز بعينه. التقييم مستقل عن متوسطات المواقع الأخرى، ويوازن بين جودة القتال والسرد والتقديم والإيقاع، مع توضيح ما تدعمه المصادر وما لا يمكن تعميمه.
@@ -93,18 +96,16 @@ gameStores:
 
 تشير المراجعات المنشورة إلى تجربة قوية إجمالاً، مع اختلاف الملاحظات التقنية بحسب نسخة اللعب والجهاز. لذلك لا يصح تحويل ملاحظة عن هبوط الإطارات أو خلل صوتي في منصة معينة إلى حكم شامل على كل النسخ. الأهم أن كثافة المؤثرات في بعض المعارك قد تكشف تفاوتاً في الأداء أو الوضوح، وأن إيقاع القصة لا يحافظ دائماً على قوة المواجهات. عندما تتوالى المعارك والاستكشافات، تكون اللعبة في أفضل حالاتها؛ وعندما تتراكم الشروحات والمقتنيات، قد تشعر بأن الرحلة فقدت بعض سرعتها.
 
+## موعد الإطلاق والمتاجر
+
+تظهر فروق في التاريخ المعروض بين المتاجر: صفحة PlayStation Store وEpic Games Store تعرضان 29 أكتوبر 2026، بينما صفحة Steam تعرض 28 أكتوبر 2026. لذلك نحتفظ بتاريخ 29 أكتوبر في بيانات الإصدار المرتبطة بإعلان PS5 وEpic، ونوضح اختلاف عرض Steam كما هو، من دون افتراض سبب تقني أو جغرافي لهذا الفرق.
+
 ## لمن ننصح بها؟
 
 Phantom Blade Zero خيار قوي لمن يبحث عن لعبة أكشن تضع القتال في مركز التجربة، ويستمتع بتعلم أنماط الزعماء وتجربة أسلحة مختلفة واستكشاف عالم ذي هوية فنية واضحة. وهي مناسبة أيضاً لمن يحب أجواء الووشيا والقتال السينمائي، ولا يمانع أن تكون القصة أقل وضوحاً من الحركة. أما من يريد حبكة مباشرة تشرح كل شيء بسرعة، أو عالماً مفتوحاً واسع الحرية، فقد يجد بعض جوانبها أقل إرضاءً.
 
-## الحكم النهائي: سيوف تتقن الرقص أكثر من الحكاية
 
-تنجح Phantom Blade Zero في أصعب اختبار لأي لعبة أكشن: تجعل اللاعب يتطلع إلى المواجهة التالية. تنوع الأسلحة وجودة الحركة وتصميم الزعماء والعالم البصري تمنحها شخصية قوية، بينما يظل السرد المتشعب وبعض التوقفات عائقاً أمام اكتمال التجربة. ليست عملاً مثالياً، لكنها لعبة ممتازة تعرف أين تكمن قوتها وتقدم لحظات قتالية يصعب نسيانها. تقييم VibeCritic البالغ 8.8/10 يعكس هذا التوازن: تجربة تستحق الاهتمام بوضوح، مع عيوب حقيقية لا ينبغي تجاهلها.
-
-**مصادر ومراجع للتحقق والمتابعة:**
-- [الموقع الرسمي للعبة S-GAME](https://pbz.s-game.com/en-US/)
-- [مراجعة PC Gamer](https://www.pcgamer.com/games/action/phantom-blade-zero-review/)
-- [مراجعة TechRadar](https://www.techradar.com/gaming/phantom-blade-zero-review)
-- [مراجعة Game Informer](https://gameinformer.com/review/phantom-blade-zero/wuxian-wonder-abounds)
-- [مراجعة VGC](https://www.videogameschronicle.com/review/phantom-blade-zero-review/)
-- [مراجعة GamesRadar+](https://www.gamesradar.com/games/action-rpg/phantom-blade-zero-review/)
+- [PlayStation Blog — إعلان موعد الإطلاق](https://blog.playstation.com/2026/08/11/watch-the-phantom-blade-zero-gameplay-deep-dive-state-of-play-on-august-17-pre-orders-live-today/): يؤكد موعد 29 أكتوبر 2026 على PS5.
+- [PlayStation Store — Phantom Blade Zero](https://store.playstation.com/en-us/concept/10017620): صفحة PS5 وتاريخ الإصدار المعروض.
+- [Steam — Phantom Blade Zero](https://store.steampowered.com/app/4115450/Phantom_Blade_Zero/): صفحة الحاسب وتاريخ 28 أكتوبر المعروض.
+- [Epic Games Store — Phantom Blade Zero](https://store.epicgames.com/en-US/p/phantom-blade-zero-e78a35): صفحة الحاسب وتاريخ 29 أكتوبر المعروض.
