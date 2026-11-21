@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-20T23:00:01.535Z",
+  "updatedAt": "2026-11-21T09:22:24.325Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -15,12 +15,12 @@
         "popularity": 22774,
         "source": "RAWG"
       },
-      "status": "waiting",
+      "status": "verifying",
       "stage": 0,
       "attempts": 3,
       "createdAt": "2026-11-19T16:51:34.241Z",
-      "updatedAt": "2026-11-20T08:34:26.771Z",
-      "nextAttemptAt": "2026-11-21T00:05:00.000Z",
+      "updatedAt": "2026-11-21T09:22:24.325Z",
+      "nextAttemptAt": null,
       "evidence": {
         "title": "Grand Theft Auto V",
         "type": "game",
@@ -38,8 +38,16 @@
             "name": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Grand_Theft_Auto_V",
             "extract": "Grand Theft Auto V is a 2013 action-adventure game developed by Rockstar North and published by Rockstar Games. It is the seventh main entry in the Grand Theft Auto series, following 2008's Grand Theft Auto IV, and the fifteenth entry overall. Set within the fictional state of San Andreas, based on Southern California, the single-player story follows three protagonists—retired bank robber Michael De Santa, street gangster Franklin Clinton, and drug dealer and gunrunner Trevor Philips —and their attempts to commit heists while under pressure from a corrupt government agency and powerful criminals. Players freely roam San Andreas's open-world countryside and fictional city of Los Santos, based on Los Angeles."
+          },
+          {
+            "name": "YouTube — PlayStation",
+            "url": "https://www.youtube.com/watch?v=hBvMSP7cI-Q",
+            "extract": "Verified public, embeddable official trailer: Grand Theft Auto V: The Official Launch Trailer | PS4"
           }
         ],
+        "youtubeVideoId": "hBvMSP7cI-Q",
+        "youtubeVideoTitle": "Grand Theft Auto V: The Official Launch Trailer | PS4",
+        "youtubeChannel": "PlayStation",
         "releaseDate": "2013-09-17",
         "genres": [
           "Action"
@@ -62,9 +70,82 @@
         "poster": "https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg"
       },
       "sections": [],
-      "article": null,
+      "article": {
+        "headline": "Grand Theft Auto V: طموح عالم مفتوح تتقدمه ثلاث حكايات، مع تحفظات لا يخفيها اتساعه",
+        "summary": "تقدّم Grand Theft Auto V مغامرة حركة تدور في ولاية سان أندرياس المتخيلة، وتجمع بين مدينة لوس سانتوس والريف المحيط بها، فيما تتبع حكاية اللاعب ثلاثة أبطال تتقاطع مساراتهم مع عمليات سطو وضغوط من جهات نافذة ومجرمين. تكمن جاذبية الفكرة في تعدد وجهات النظر واتساع العالم، فيما يضيف GTA Online طبقة اجتماعية يمكن أن تمنح المهام تعاوناً أو تعرقلها بحسب اللاعبين الآخرين. لكن اتساع المحتوى وعدد المركبات لا يثبتان وحدهما تماسك التجربة أو تنوعها الفعلي، كما أن الأدلة المتاحة لا تكفي للحكم التفصيلي على التنفيذ البصري أو الصوتي أو الإيقاعي. إنها توصية مشروطة لمن يريد عالماً مفتوحاً واسعاً وشخصيات متباينة، مع ضرورة معرفة أن الأدلة لا تحسم كل جوانب الجودة.",
+        "verdict": "الحكم التحريري على Grand Theft Auto V إيجابي، لكنه ليس حكماً مطلقاً على كل تفاصيل التنفيذ: الفكرة الموثقة تجمع عالماً مفتوحاً واسع النطاق بثلاثة أبطال ذوي مواقع مختلفة، وتربط مساراتهم بعمليات سطو وصراعات مع سلطات فاسدة ومجرمين نافذين. ويمنح GTA Online التجربة امتداداً اجتماعياً واضحاً، وإن كان وجود لاعبين آخرين قد يساعد أو يفسد المهمة. هذه عناصر قوية في التصميم المعلن، لكنها لا تكفي لإثبات جودة كل مهمة أو تماسك السرد أو التميز التقني والصوتي. أوصي بها لمن يبحث عن لعبة حركة بعالم مفتوح غني بالأنشطة والمركبات، ويتقبل اختلاف التجربة بين اللعب الفردي والمتصل. أما أبرز تحفظ فهو أن الوفرة والاتساع قد يطغيان على وحدة التركيز، وأن التفاصيل الفنية لا يمكن تقييمها بثقة من الأدلة المتاحة.",
+        "body": "## مقدمة وسياق العمل\n\nصدرت Grand Theft Auto V عام 2013، وتطورت على يد Rockstar North ونشرتها Rockstar Games. وهي لعبة حركة ومغامرة ضمن سلسلة Grand Theft Auto، تنقل مجالها إلى ولاية سان أندرياس المتخيلة، المستوحاة من جنوب كاليفورنيا، وتجعل مدينة لوس سانتوس، المستوحاة من لوس أنجلوس، مركزاً لعالم قابل للاستكشاف. تسجل المصادر إتاحتها على أجيال ومنصات متعددة، من PlayStation 3 وXbox 360 إلى الحواسيب والمنصات الأحدث. لذلك ينبغي فهمها بوصفها إصداراً ظل حاضراً عبر أكثر من جيل، لا منتجاً محصوراً في لحظة إطلاقه الأولى. هذه المراجعة تحريرية مبنية حصراً على المعلومات الموثقة والمواد الرسمية المدرجة، وليست ادعاءً بتجربة اللعب أو مشاهدة العرض. هذا القيد مهم خصوصاً عند تقدير التنفيذ الفني والتفاصيل التي لا تصفها المصادر.\n\n## الفكرة والقصة أو التجربة\n\nتقوم الحكاية الفردية على ثلاثة أبطال: مايكل دي سانتا، سارق مصارف سابق يحاول الابتعاد عن ماضيه؛ فرانكلين كلينتون، رجل عصابات يسعى إلى مستقبل أفضل؛ وتريفور فيليبس، تاجر مخدرات ومهرب أسلحة، تصفه مادة RAWG بأنه الماضي الذي يحاول مايكل الإفلات منه. وفق ملخص ويكيبيديا، تتقاطع محاولاتهم لتنفيذ عمليات سطو مع ضغط وكالة حكومية فاسدة ومجرمين أقوياء. الواضح إذن أن اللعبة لا تكتفي ببطل واحد أو دافع واحد، بل تبني نقطة انطلاقها على اختلاف مواقع الشخصيات وصلاتها بالماضي والجريمة والطموح. هذه صيغة تحمل إمكانات درامية، لأنها تتيح النظر إلى عالم الجريمة من زوايا متباينة؛ لكنها لا تثبت وحدها أن الانتقال بين هذه الزوايا مكتوب بإحكام أو أن لكل شخصية قوساً متساوي القوة. لا تكشف الأدلة تفاصيل الحبكة اللاحقة، ولذلك لا يصح تجاوز خطوطها العامة أو حرق أحداث محورية.\n\n## السرد والشخصيات أو تصميم اللعب\n\nالتعدد هنا جزء معلن من بنية السرد: ثلاثة أبطال في حكاية واحدة، لا مجرد مجموعة شخصيات مساندة حول شخصية مركزية. اختلاف خلفيات مايكل وفرانكلين وتريفور يهيئ لتباين في الدوافع، ويمنح الصراع المشترك مجالاً للتوتر بين محاولة الإفلات من الماضي والسعي إلى فرصة جديدة والانغماس في عالم الجريمة. غير أن وصف الشخصيات لا يتيح الحكم على عمق الحوار أو تطورها أو توازن حضورها، كما لا يشرح بالتفصيل كيف ينتقل اللعب بينها؛ لذا لا ينبغي تقديم هذه الجوانب كحقائق محسومة. تؤكد المصادر أن اللعبة من نوع الحركة والمغامرة، وأن القصة تشمل عمليات سطو، لكنها لا تسرد أنظمة التخطيط أو تفاصيل تنفيذ المهام. وعليه، تنبع قوة الفكرة المثبتة من توزيع المنظور والدوافع، لا من ادعاء تفوق ميكانيكي بعينه. أما GTA Online فيضيف شخصية قابلة للتخصيص ومحتوى مجتمعياً ونظام مستويات بحسب RAWG، لكن ذلك وصف لاتساع المكوّن، لا قياس لمدى توازنه أو استمرارية متعته.\n\n## الإخراج والجوانب الفنية\n\nعلى مستوى البناء العام، يجمع العمل بين مدينة وريف ضمن ولاية متخيلة، ويضع هذا المجال الواسع في خدمة قصة متشابكة مع عالم الجريمة. تصف RAWG لوس سانتوس بأنها حيوية ومتنوعة، وتربط المشروع بمحاولة توسيع بناء العالم الذي عرفته السلسلة في Grand Theft Auto IV. يمكن استنتاج أن الطموح الإخراجي المعلن هو جعل المكان أكثر من خلفية للحكاية، بحيث تستوعب المدينة والريف حياةً وأنشطةً متعددة؛ لكن المصادر لا تقدم وصفاً موثقاً لتصميم المهمات أو توزيع الأنشطة أو سلاسة الانتقال بين أجزاء الخريطة. لذلك يظل هذا تقديراً لاتجاه التصميم، وليس حكماً مستنداً إلى فحص مباشر. كما لا تتوفر بيانات هنا عن الأداء التقني أو اختلافه بين المنصات والإصدارات، ولا عن التحسينات الخاصة بكل جيل. وجود اللعبة على منصات عديدة لا يبرهن وحده على تكافؤ التجربة بينها، ولا يسمح باختلاق مشكلات أو مزايا تقنية محددة.\n\n## الصورة والهوية البصرية\n\nهوية المكان هي أقوى ما يمكن مناقشته بصرياً على أساس الأدلة: لوس سانتوس مدينة متخيلة مستوحاة من لوس أنجلوس، ضمن سان أندرياس المستوحاة من جنوب كاليفورنيا، مع حضور للريف في العالم القابل للاستكشاف. وتصفها المادة المتاحة بالحيوية والتنوع، ما يدعم قراءة المكان بوصفه مساحة ذات نطاقات مختلفة بدلاً من ساحة واحدة مغلقة. لكن هذه المعلومات لا تثبت جودة الإضاءة أو تفاصيل الوجوه أو ثبات معدل الأداء أو دقة الصورة على أي منصة؛ فهذه مسائل تحتاج إلى مصادر تقنية أو معاينة موثقة غير متاحة هنا. يوجد كذلك عرض إطلاق رسمي بعنوان Grand Theft Auto V: The Official Launch Trailer | PS4 على قناة PlayStation، لكن بيانات العنوان وحدها لا تتيح وصف لقطاته أو استخدامها دليلاً على جودة الرسوم. الدرجة البصرية، بناءً على ذلك، تقدير محدود لقوة تصور العالم واتساع هويته، لا مراجعة تقنية للصورة.\n\n## الصوت والموسيقى والأداء\n\nلا تتضمن الأدلة المقدمة معلومات موثقة عن الموسيقى أو تصميم المؤثرات أو التمثيل الصوتي أو اللغات المتاحة، ولا يصح استنتاج جودة هذه العناصر من وجود عرض إطلاق رسمي فحسب. لهذا لا يمكن تقييم حضور الموسيقى في المشاهد، أو وضوح الحوار، أو الفروق بين أداء الشخصيات، من دون اختلاق انطباعات. أهمية هذا النقص ليست شكلية: لعبة تقودها شخصيات متعددة وحكاية جريمة قد تعتمد على الحوار والأداء في رسم الفروق بينها، لكن احتمال الاعتماد لا يثبت مستوى التنفيذ. أتعامل مع محور الصوت بتحفظ شديد، وأمنحه تقديراً منخفض الثقة يعكس قصور المادة المتاحة لا حكماً بأن الصوت رديء. وينطبق الأمر نفسه على أي ادعاء بشأن جودة المزج أو المؤثرات أو اختلافها بين المنصات. هنا تكون الأمانة النقدية في بيان ما لا نعرفه، لا في ملء الفراغ بعبارات عامة عن أجواء سينمائية أو موسيقى مميزة.\n\n## الإيقاع والبناء وتنوع المحتوى\n\nتوفر اللعبة مسارين مختلفين في طبيعة المشاركة: حكاية فردية تتمحور حول ثلاثة أبطال وعمليات سطو، ومكوّن GTA Online يضيف لاعبين آخرين ومحتوى مجتمعياً ونظام مستويات. وتشير RAWG إلى أن اللاعبين الآخرين قد يساعدون في المهمة أو يعرقلونها، وهي ملاحظة تكشف أن التجربة المتصلة لا تُضبط بالكامل على إيقاع اللاعب المنفرد؛ فالسلوك الاجتماعي جزء من احتمالاتها. كما تذكر المادة 561 مركبة قابلة للاستخدام، مع زيادة العدد عبر التحديثات. هذا رقم يدل على وفرة الخيارات المسجلة، لكنه لا يساوي تلقائياً تنوعاً ذا معنى في الأداء أو اختلافاً عملياً بين المركبات، ولا يخبرنا عن توزيع المحتوى أو وتيرة فتحه. لا تتوفر تفاصيل كافية عن طول القصة، أو توازن المهمات، أو فترات التوقف، لذا لا أصف إيقاعها بأنه سريع أو متماسك من دون سند. تقدير البناء هنا يرتكز على تعدد المسارات واتساع المحتوى المعلن، مع تحفظ على كيفية انتظامه فعلياً.\n\n## نقاط القوة\n\nأبرز نقاط القوة المثبتة هي جمع الحكاية ثلاثة أبطال بخلفيات ودوافع مختلفة، بدلاً من جعل العالم يدور حول منظور واحد. وتمنح عمليات السطو والصراعات مع وكالة فاسدة ومجرمين نافذين إطاراً واضحاً للتقاء قصصهم، من دون أن تكون التفاصيل المتاحة كافية للحكم على كل منعطف. كذلك يلفت اتساع المجال الجغرافي، من مدينة مستوحاة من لوس أنجلوس إلى ريف الولاية المتخيلة، بوصفه أساساً صالحاً لتنوع المكان. أما المركبات الكثيرة والمكوّن المتصل فيمنحان المشروع امتداداً يتجاوز القصة الفردية وفق وصف المصادر. قيمة هذه العناصر في كونها تجمع تنوع الشخصيات والمكان وأنماط المشاركة ضمن عنوان واحد؛ وهي ميزة تصميمية واضحة على مستوى التصور. لكنها لا تحول الكمية إلى حكم تلقائي على جودة المحتوى، ولذلك تُقرأ نقاط القوة هنا باعتبارها ما يثبته الوصف، لا ضماناً بأن كل جزء يحقق الإمكانات نفسها.\n\n## نقاط الضعف\n\nأهم التحفظات المدعومة تتعلق بتفاوت طبيعة التجربة بين القصة الفردية واللعب المتصل: فالمصادر نفسها تشير إلى أن اللاعبين الآخرين قد يعينون المهمة أو يفسدونها، ما يجعل التعاون غير مضمون. وثمة تحفظ نقدي ثانٍ، لا عيب مثبت: تعدد الأبطال قد يوسع المنظور، لكنه قد يوزع التركيز أيضاً، ولا تكفي الملخصات المتاحة لمعرفة مدى نجاح الموازنة بينهم. وثالثاً، كثرة المركبات وتزايدها عبر التحديثات لا تثبت أن لكل مركبة وظيفة مختلفة أو أن المحتوى متوازن؛ إنها أرقام عن الحجم لا عن الجودة. كذلك لا تسمح الأدلة بتقييم الصوت أو التفاصيل التقنية أو الإيقاع، وهذا نقص في أساس الحكم الحالي لا عيب أُلصقه باللعبة. من المهم التفريق بين هذه التحفظات وبين إخفاقات فعلية: لا توجد هنا شواهد موثقة تبرر ادعاءات عن أعطال أو ضعف أداء أو تكرار بعينه.\n\n## لمن يناسب هذا العمل؟\n\nيناسب العمل من ينجذب إلى ألعاب الحركة والمغامرة ذات العالم المفتوح، وإلى حكاية جريمة موزعة على شخصيات متعددة، ويرغب في مساحة تجمع المدينة والريف بدلاً من مسار قصصي مغلق. وقد يجد المهتمون بالمشاركة عبر الإنترنت سبباً إضافياً للاختيار في GTA Online، خصوصاً أن الوصف يذكر شخصية قابلة للتخصيص ومحتوى مجتمعياً ونظام مستويات. لكن على من يفضل تجربة متصلة ومستقرة في أيدي فريقه وحده أن يضع احتمال تدخل لاعبين آخرين في الحسبان؛ فالمصادر تصرح بإمكان المساعدة أو الإفساد. كما أن الباحث عن تقييم موثق للصوت أو الأداء التقني لن يجد في المعلومات المتاحة ما يحسم تلك الجوانب. التوصية إذن موجهة لمن تهمه سعة العالم وتعدد الشخصيات والمحتوى، لا لمن يحتاج ضماناً مسبقاً بأن كل عنصر فني أو كل نمط لعب بلغ مستوى بعينه.\n\n## الحكم النهائي\n\nتقدم Grand Theft Auto V تصوراً واسعاً ومقنعاً على الورق: ولاية مفتوحة، مدينة وريف، ثلاثة أبطال تتقاطع دوافعهم مع عمليات السطو، ومكوّن متصل يضيف إمكانات لعب اجتماعي ومحتوى متجدد بحسب المصدر. هذه قاعدة قوية تبرر توصية واضحة لمحبي العوالم المفتوحة وحكايات الجريمة متعددة المنظورات. وفي المقابل، لا تكفي الأدلة المتاحة لتزكية جودة الكتابة التفصيلية أو الإيقاع أو الصورة التقنية أو الصوت، ولا ينبغي أن تحل شعبية اللعبة أو كثرة مركباتها محل تقييم تلك الجوانب. التحفظ الأهم قبل الاختيار هو أن اتساع المحتوى لا يضمن وحدة التركيز، وأن GTA Online قد يتأثر بتصرفات المشاركين الآخرين. الدرجة النهائية تعكس توازناً بين طموح تصميمي واضح ومثبت، وبين حدود حقيقية في المعلومات التي تسمح بالحكم على التنفيذ.",
+        "scores": {
+          "story": 7.8,
+          "visuals": 7.2,
+          "sound": 5.5,
+          "pacing": 6.5
+        },
+        "pros": [
+          "ثلاثة أبطال ذوو خلفيات ودوافع متباينة، ضمن حكاية واحدة عن عمليات السطو.",
+          "إطار صراع يجمع ضغط وكالة حكومية فاسدة ومجرمين نافذين بحسب الملخص الموثق.",
+          "عالم يضم لوس سانتوس والريف ضمن ولاية مستوحاة من جنوب كاليفورنيا.",
+          "مكوّن GTA Online يضيف لاعبين آخرين وشخصية قابلة للتخصيص ومحتوى مجتمعياً ونظام مستويات.",
+          "وفرة كبيرة من المركبات القابلة للاستخدام، مع زيادة العدد عبر التحديثات وفق RAWG."
+        ],
+        "cons": [
+          "وجود لاعبين آخرين في GTA Online قد يساعد المهمة أو يعرقلها، ما يجعل التعاون غير مضمون.",
+          "تعدد الأبطال قد يوزع التركيز السردي؛ ولا تكفي الأدلة المتاحة لحسم نجاح الموازنة بينهم.",
+          "عدد المركبات الكبير لا يثبت وحده اختلاف وظائفها أو توازنها أو قيمة تنوعها الفعلي.",
+          "الأدلة المتاحة لا تسمح بتقييم موثوق للموسيقى والأداء الصوتي أو تفاصيل الأداء التقني والإيقاع."
+        ],
+        "title": "Grand Theft Auto V",
+        "type": "game",
+        "sourceId": "game:3498",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/grand-theft-auto-v",
+        "releaseDate": "2013-09-17",
+        "poster": "https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg",
+        "backdrop": "https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg",
+        "genres": [
+          "Action"
+        ],
+        "platforms": [
+          "PlayStation 5",
+          "Xbox Series S/X",
+          "PlayStation 3",
+          "PC",
+          "PlayStation 4",
+          "Xbox 360",
+          "Xbox One"
+        ],
+        "cast": [],
+        "crew": [],
+        "tags": [
+          "Action"
+        ],
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/grand-theft-auto-v",
+            "extract": "Rockstar Games went bigger, since their previous installment of the series. You get the complicated and realistic world-building from Liberty City of GTA4 in the setting of lively and diverse Los Santos, from an old fan favorite GTA San Andreas. 561 different vehicles (including every transport you can operate) and the amount is rising with every update. Simultaneous storytelling from three unique perspectives: Follow Michael, ex-criminal living his life of leisure away from the past, Franklin, a kid that seeks the better future, and Trevor, the exact past Michael is trying to run away from. GTA Online will provide a lot of additional challenge even for the experienced players, coming fresh from the story mode. Now you will have other players around that can help you just as likely as ruin your mission. Every GTA mechanic up to date can be experienced by players through the unique customizable character, and community content paired with the leveling system tends to keep everyone busy and engaged. Español Rockstar Games se hizo más grande desde su entrega anterior de la serie. Obtienes la construcción del mundo complicada y realista de Liberty City de GTA4 en el escenario de Los Santos, un viejo favorito de los fans, GTA San Andreas. 561 vehículos diferentes (incluidos todos los transportes que puede operar) y la cantidad aumenta con cada actualización. Narración simultánea desde tres perspectivas únicas: Sigue a Michael, ex-criminal que vive su vida de ocio lejos del pasado, Franklin, un niño que busca un futuro mejor, y Trevor, el pasado exacto del que Michael está tratando de huir. GTA Online proporcionará muchos desafíos adicionales incluso para los jugadores experimentados, recién llegados del modo historia. Ahora tendrás otros jugadores cerca que pueden ayudarte con la misma probabilidad que arruinar tu misión. Los jugadores pueden experimentar todas las mecánicas de GTA actualizadas a través del personaje personalizable único, y el contenido de la comunidad combinado con el sistema de nivelación tiende a mantener a todos ocupados y comprometidos."
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Grand_Theft_Auto_V",
+            "extract": "Grand Theft Auto V is a 2013 action-adventure game developed by Rockstar North and published by Rockstar Games. It is the seventh main entry in the Grand Theft Auto series, following 2008's Grand Theft Auto IV, and the fifteenth entry overall. Set within the fictional state of San Andreas, based on Southern California, the single-player story follows three protagonists—retired bank robber Michael De Santa, street gangster Franklin Clinton, and drug dealer and gunrunner Trevor Philips —and their attempts to commit heists while under pressure from a corrupt government agency and powerful criminals. Players freely roam San Andreas's open-world countryside and fictional city of Los Santos, based on Los Angeles."
+          },
+          {
+            "name": "YouTube — PlayStation",
+            "url": "https://www.youtube.com/watch?v=hBvMSP7cI-Q",
+            "extract": "Verified public, embeddable official trailer: Grand Theft Auto V: The Official Launch Trailer | PS4"
+          }
+        ],
+        "youtubeVideoId": "hBvMSP7cI-Q",
+        "youtubeVideoTitle": "Grand Theft Auto V: The Official Launch Trailer | PS4",
+        "score": 6.9
+      },
       "lastError": "All configured AI providers failed: gemini HTTP 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get- | groq HTTP 400: {\"error\":{\"message\":\"Failed to generate JSON. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"code\":\"json_validate_failed\",\"failed_generation\":\"max completion tokens reached before generating a valid document\"}}\n | openrouter output was truncated at max_tokens=9000",
-      "resumeStatus": "queued"
+      "resumeStatus": null,
+      "provider": "openai",
+      "tokens": 6425,
+      "articlePath": "src/content/reviews/game-grand-theft-auto-v-3498.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-grand-theft-auto-v-3498/"
     },
     "series:84773": {
       "key": "series:84773",
@@ -887,6 +968,11 @@
       "articles": 6,
       "requests": 26,
       "tokens": 38338
+    },
+    "2026-11-21": {
+      "articles": 1,
+      "requests": 2,
+      "tokens": 6425
     }
   },
   "history": []
