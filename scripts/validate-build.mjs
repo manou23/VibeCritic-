@@ -197,14 +197,14 @@ for (const file of reviewFiles) {
     }
   } else if (reviewMode === 'audience') {
     const readField = (key) => {
-      const line = frontmatter.split(/\\r?\\n/).find(item => item.startsWith(key + ':'));
+      const line = frontmatter.split(/\r?\n/).find(item => item.startsWith(key + ':'));
       return line ? line.slice(key.length + 1).trim().replace(/^['"]|['"]$/g, '') : '';
     };
     const sourceRating = Number(readField('sourceRating'));
     const sourceRatingScale = Number(readField('sourceRatingScale'));
     const sourceVoteCount = Number(readField('sourceVoteCount'));
     const sourceName = readField('sourceName');
-    const retainedScores = scoreFields.filter(field => new RegExp('^' + field + ':\\\\s*', 'm').test(frontmatter));
+    const retainedScores = scoreFields.filter(field => frontmatter.split(/\r?\n/).some(line => line.startsWith(field + ':')));
     if (retainedScores.length) reviewFailures.push(file + ': audience review must not store VibeCritic editorial score metadata (' + retainedScores.join(', ') + ')');
     if (!Number.isFinite(sourceRating) || sourceRating <= 0 || !Number.isFinite(sourceRatingScale) || sourceRatingScale <= 0 || sourceRatingScale > 10 || sourceRating > sourceRatingScale) reviewFailures.push(file + ': audience review requires a valid sourceRating within sourceRatingScale (maximum scale 10)');
     if (!Number.isInteger(sourceVoteCount) || sourceVoteCount < 100) reviewFailures.push(file + ': audience review requires at least 100 verified source votes');
