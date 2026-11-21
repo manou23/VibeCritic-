@@ -2,7 +2,8 @@
 import { TYPE_LABEL, url, fmtDate, optimizeImage } from '../consts';
 const { review } = Astro.props;
 const data = review.data;
-const displayDate = data.releaseDate ? new Date(`${data.releaseDate}T00:00:00Z`) : data.date;
+// Card timestamps represent editorial publication, never the work's original release date.
+const displayDate = data.publishedAt ?? data.date;
 const href = url(`reviews/${review.id}/`);
 ---
 <a href={href} class="review-card group" aria-label={`${TYPE_LABEL[data.type]}: ${data.title}${data.reviewMode === 'preview' ? ' — قراءة استباقية قبل الإصدار' : data.reviewMode === 'limited' ? ' — قراءة محدودة الأدلة بلا تقييم نهائي' : ' — التقييم ' + data.score.toFixed(1) + ' من 10'}`}>
