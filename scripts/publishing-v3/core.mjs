@@ -76,6 +76,14 @@ export function validateArticle(article, { minWords = 650, minCharacters = 3200 
   if (!Array.isArray(article.sources) || article.sources.length < 2) throw new Error("Article sources are missing");
   return { words, characters: String(article.body).length };
 }
+export function redirectedToDifferentPath(response, requestedUrl) {
+  if (!response?.redirected || !response?.url || !requestedUrl) return false;
+  try {
+    return new URL(response.url).pathname !== new URL(requestedUrl).pathname;
+  } catch {
+    return false;
+  }
+}
 export function isDuplicate(candidate, published) {
   const key = candidate.type + ":" + candidate.id;
   return published.has(key) || published.has("title:" + String(candidate.name || "").toLowerCase().replace(/[^\p{L}\p{N}]+/gu,""));
