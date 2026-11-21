@@ -14,7 +14,8 @@ export function normalizeBodyFinalRating(text, score) {
 }
 
 export function assemble(value, evidence) {
-  const reviewMode = evidence.reviewReadiness === "review" ? "review" : "limited";
+  const reviewMode = evidence.reviewReadiness === "review" ? "review" : evidence.reviewReadiness === "audience" ? "audience" : evidence.reviewReadiness === "preview" ? "preview" : "limited";
+  if (reviewMode === "limited") throw new Error("Publishing blocked: VibeCritic publishes scored reviews or explicitly pre-release previews only");
   const article = {
     ...value,
     title:evidence.title,
@@ -22,6 +23,11 @@ export function assemble(value, evidence) {
     sourceId:evidence.sourceId,
     sourceName:evidence.sourceName,
     sourceUrl:evidence.sourceUrl,
+    sourceRating:evidence.rating ?? null,
+    sourceRatingScale:evidence.ratingScale ?? null,
+    sourceVoteCount:evidence.votes ?? 0,
+    sourceRatingCheckedAt:evidence.collectedAt || new Date().toISOString(),
+    audienceScore:Number.isFinite(Number(evidence.rating)) && Number(evidence.ratingScale) > 0 ? Math.round(Number(evidence.rating) / Number(evidence.ratingScale) * 100) / 10 : null,
     releaseDate:evidence.releaseDate||"",
     poster:evidence.poster||"",
     backdrop:evidence.backdrop||evidence.poster||"",
@@ -49,6 +55,15 @@ export function assemble(value, evidence) {
     return { article, quality };
   }
 
+  if (reviewMode === "audience") {
+    delete article.score;
+    delete article.scores;
+    if (!Number.isFinite(article.audienceScore) || !Number.isInteger(article.sourceVoteCount) || article.sourceVoteCount < 100 || !Number.isFinite(article.sourceRating) || !Number.isFinite(article.sourceRatingScale) || article.sourceRatingScale <= 0) throw new Error("Audience rating is missing or below the minimum of 100 votes");
+    const quality = validateArticle(article, { minWords:650, minCharacters:3200 });
+    if (String(article.verdict||"").trim().length < 90 || String(article.summary||"").trim().length < 90) throw new Error("Audience review summary and verdict must each contain at least 90 characters");
+    return { article, quality };
+  }
+
   // Fail closed: catalog, encyclopedia and promotional material must never become a scored review.
   delete article.score;
   delete article.scores;
@@ -63,8 +78,24 @@ export function assemble(value, evidence) {
   return { article, quality };
 }
 export function buildPrompt(evidence) {
-  const isLimited = evidence.reviewReadiness !== "review";
-  const prompt = (isLimited ? [
+  const isPreview = evidence.reviewReadiness === "preview";
+  const isAudience = evidence.reviewReadiness === "audience";
+  const isLimited = !isPreview && !isAudience && evidence.reviewReadiness !== "review";
+  const prompt = (isAudience ? [
+    "اكتب مراجعة تحليلية عربية لموقع VibeCritic تعتمد على تقييم الجمهور الموثق، لأن الأدلة المستقلة على التجربة المباشرة غير كافية.",
+    "التقييم الظاهر هو متوسط تقييم المستخدمين في " + String(evidence.sourceName) + "، وليس تقييماً تحريرياً من VibeCritic. المتوسط الأصلي " + String(evidence.rating) + "/" + String(evidence.ratingScale) + " من " + String(evidence.votes) + " صوتاً؛ لا تغير هذه الحقائق ولا تنسبها إلى المحررين.",
+    "اكتب 650 إلى 850 كلمة عربية مفيدة، وحلل المعلومات المؤكدة عن العمل وتوجهات الجمهور بحذر. لا تدّع أنك شاهدت أو لعبت العمل، ولا تخترع انطباعات أو تفاصيل فنية. لا تمنح درجات فرعية للقصة أو الصورة أو الصوت أو الإيقاع.",
+    "يجب أن يوضح العنوان والخلاصة والمتن أن هذا تقييم جمهور المصدر المذكور، وأن متوسطه ليس ضماناً للجودة أو رأياً مستقلاً لـ VibeCritic. فرّق بين بيانات المنصة والحقائق الأخرى، ولا تقدم رأي الجمهور كإجماع عالمي.",
+    "استخدم ثلاثة عناوين تحليلية على الأقل. pros وcons تتناول معلومات مثبتة وملاحظات من البيانات المتاحة، ولا تختلق عيوباً فنية. summary وverdict لا يقل كل منهما عن 90 كلمة.",
+    "أخرج JSON صالحاً فقط بالمفاتيح headline, summary, verdict, body, pros, cons. لا تضف scores أو score ولا تعِد حساب تقييم الجمهور.",
+    "ملف الأدلة: " + JSON.stringify(evidence)
+  ] : isPreview ? [
+    "اكتب معاينة استباقية عربية احترافية لعمل لم يصدر بعد لموقع VibeCritic اعتماداً حصراً على الأدلة.",
+    "هذه معاينة قبل الإصدار وليست مراجعة نهائية. اذكر موعد الإصدار المستقبلي، ولا تمنح درجة أو حكماً نهائياً ولا تدّع تجربة مباشرة. افصل الحقائق عن التوقعات.",
+    "اكتب 650 إلى 850 كلمة عربية مفيدة، مع عرض الفكرة والمعلومات الرسمية وما ننتظره عند الإصدار دون اختلاق تفاصيل أو جودة فنية.",
+    "أخرج JSON صالحاً فقط بالمفاتيح headline, summary, verdict, body, pros, cons. لا تضف scores أو score. summary وverdict لا يقل كل منهما عن 90 كلمة.",
+    "ملف الأدلة: " + JSON.stringify(evidence)
+  ] : isLimited ? [
     "اكتب قراءة معلوماتية عربية محدودة الأدلة لموقع VibeCritic اعتماداً حصراً على ملف الأدلة أدناه.",
     "المصادر المتاحة وصف قاعدة بيانات، ومادة موسوعية، وإعلان ترويجي. هذه المصادر تثبت بعض المعلومات الأساسية فقط، ولا تثبت جودة التنفيذ أو تجربة مشاهدة/لعب. لا تقدّم النص بوصفه مراجعة مشاهدة أو مراجعة نهائية، ولا تدّع تجربة شخصية.",
     "ممنوع وضع أي درجة رقمية أو تقييم من 10 أو ترتيب جودة. لا تملأ محاور الإخراج أو الصورة أو الصوت أو الإيقاع بتخمينات. اذكر بوضوح ما نعرفه وما لا تسمح الأدلة بحسمه.",
@@ -92,8 +123,10 @@ export function buildPrompt(evidence) {
 }
 export async function writeArticle(evidence) {
   const today = new Date().toISOString().slice(0,10);
-  if (evidence.releaseDate && evidence.releaseDate > today) throw new Error("Candidate release date is still in the future");
-  const isLimited = evidence.reviewReadiness !== "review";
+  if (evidence.releaseDate && evidence.releaseDate > today && evidence.reviewReadiness !== "preview") throw new Error("Candidate release date is still in the future");
+  const isPreview = evidence.reviewReadiness === "preview";
+  const isAudience = evidence.reviewReadiness === "audience";
+  const isLimited = !isPreview && !isAudience && evidence.reviewReadiness !== "review";
   const prompt = buildPrompt(evidence);
 
   const first = await generateJson(prompt, { maxTokens:10000 });
@@ -102,7 +135,7 @@ export async function writeArticle(evidence) {
   try {
     result = assemble(first.value,evidence);
   } catch (qualityError) {
-    const retry = await generateJson(prompt + "\n\nفشلت المسودة السابقة في فحص الجودة: " + String(qualityError.message).slice(0,300) + (isLimited ? ". أعد القراءة المعلوماتية المحدودة كاملة، بلا درجة رقمية، وتأكد من أن المتن لا يقل عن 650 كلمة وأن الخلاصة والملخص مستوفيان للحد الأدنى." : ". أعد المراجعة النهائية كاملة، وتأكد من أن المتن لا يقل عن 1000 كلمة وأن الحكم والملخص مستوفيان للحد الأدنى."), { skipProviderId:first.provider, maxTokens:10000 });
+    const retry = await generateJson(prompt + "\n\nفشلت المسودة السابقة في فحص الجودة: " + String(qualityError.message).slice(0,300) + (isAudience ? ". أعد التحليل مع إبقاء متوسط الجمهور واسم المصدر وعدد الأصوات واضحين، دون اختراع درجة تحريرية أو درجات فرعية." : isLimited || isPreview ? ". أعد النص وفق نوعه بلا درجة رقمية، وتأكد من أن المتن لا يقل عن 650 كلمة وأن الخلاصة والملخص مستوفيان للحد الأدنى." : ". أعد المراجعة النهائية كاملة، وتأكد من أن المتن لا يقل عن 1000 كلمة وأن الحكم والملخص مستوفيان للحد الأدنى."), { skipProviderId:first.provider, maxTokens:10000 });
     try { result = assemble(retry.value,evidence); }
     catch (error) { error.requests = (Number(first.requests)||1) + (Number(retry.requests)||1); throw error; }
     generation = { provider:retry.provider, tokens:(Number(first.tokens)||0)+(Number(retry.tokens)||0), requests:(Number(first.requests)||1)+(Number(retry.requests)||1) };

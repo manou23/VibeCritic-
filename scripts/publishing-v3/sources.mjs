@@ -117,15 +117,15 @@ export async function discoverCandidate(state) {
       get(tmdb("trending/movie/week")).catch(()=>({results:[]})),
       get(tmdb("trending/tv/week")).catch(()=>({results:[]}))
     ]);
-    for (const x of movies.results || []) candidates.push({ type:"movie", id:String(x.id), name:x.title, date:x.release_date || "", popularity:Number(x.popularity)||0, source:"TMDB" });
-    for (const x of series.results || []) candidates.push({ type:"series", id:String(x.id), name:x.name, date:x.first_air_date || "", popularity:Number(x.popularity)||0, source:"TMDB" });
+    for (const x of movies.results || []) candidates.push({ type:"movie", id:String(x.id), name:x.title, date:x.release_date || "", preview:Boolean(x.release_date && x.release_date > new Date().toISOString().slice(0,10) && x.release_date <= new Date(Date.now()+120*86400000).toISOString().slice(0,10)), popularity:Number(x.popularity)||0, source:"TMDB" });
+    for (const x of series.results || []) candidates.push({ type:"series", id:String(x.id), name:x.name, date:x.first_air_date || "", preview:Boolean(x.first_air_date && x.first_air_date > new Date().toISOString().slice(0,10) && x.first_air_date <= new Date(Date.now()+120*86400000).toISOString().slice(0,10)), popularity:Number(x.popularity)||0, source:"TMDB" });
   }
   if (env.RAWG_API_KEY) {
     const data = await get("https://api.rawg.io/api/games?key=" + encodeURIComponent(env.RAWG_API_KEY) + "&ordering=-added&page_size=30").catch(()=>({results:[]}));
     for (const x of data.results || []) candidates.push({ type:"game", id:String(x.id), name:x.name, date:x.released || "", popularity:Number(x.added)||0, source:"RAWG" });
   }
   const now = new Date().toISOString().slice(0,10);
-  const eligible = candidates.filter(x => x.id && x.name && (!x.date || x.date <= now) && !used.has(x.type + ":" + x.id) && !used.has("title:" + x.name.toLowerCase().replace(/[^\p{L}\p{N}]+/gu,"")) && !state.jobs[x.type + ":" + x.id]);
+  const eligible = candidates.filter(x => x.id && x.name && (!x.date || x.date <= now || x.preview === true) && !used.has(x.type + ":" + x.id) && !used.has("title:" + x.name.toLowerCase().replace(/[^\p{L}\p{N}]+/gu,"")) && !state.jobs[x.type + ":" + x.id]);
   if (!eligible.length) return null;
   eligible.sort((a,b) => counts[a.type]-counts[b.type] || b.popularity-a.popularity);
   return eligible[0];
@@ -136,7 +136,7 @@ export async function collectEvidence(candidate) {
   if (candidate.type === "game") {
     const data = await get("https://api.rawg.io/api/games/" + encodeURIComponent(candidate.id) + "?key=" + encodeURIComponent(env.RAWG_API_KEY));
     primary = { name:"RAWG", url:data.slug ? "https://rawg.io/games/" + data.slug : "https://rawg.io", extract:clean(data.description_raw || data.description) };
-    metadata = { releaseDate:data.released || "", genres:(data.genres||[]).map(x=>x.name), platforms:(data.platforms||[]).map(x=>x.platform?.name).filter(Boolean), developers:(data.developers||[]).map(x=>x.name), rating:data.rating||null, votes:data.ratings_count||0, poster:data.background_image||"" };
+    metadata = { releaseDate:data.released || "", genres:(data.genres||[]).map(x=>x.name), platforms:(data.platforms||[]).map(x=>x.platform?.name).filter(Boolean), developers:(data.developers||[]).map(x=>x.name), rating:data.rating||null, ratingScale:5, votes:data.ratings_count||0, poster:data.background_image||"" };
   } else {
     const kind = candidate.type === "series" ? "tv" : "movie";
     const [data,credits] = await Promise.all([
@@ -144,7 +144,7 @@ export async function collectEvidence(candidate) {
       get(tmdb(kind + "/" + candidate.id + "/credits")).catch(()=>({cast:[],crew:[]}))
     ]);
     primary = { name:"TMDB", url:"https://www.themoviedb.org/" + kind + "/" + candidate.id, extract:clean(data.overview) };
-    metadata = { releaseDate:data.release_date || data.first_air_date || "", genres:(data.genres||[]).map(x=>x.name), platforms:[], cast:(credits.cast||[]).slice(0,8).map(x=>x.name), crew:(credits.crew||[]).filter(x=>["Director","Creator","Writer"].includes(x.job)).slice(0,8).map(x=>x.name), rating:data.vote_average||null, votes:data.vote_count||0, poster:data.poster_path ? "https://image.tmdb.org/t/p/w780"+data.poster_path : "", backdrop:data.backdrop_path ? "https://image.tmdb.org/t/p/w1280"+data.backdrop_path : "" };
+    metadata = { releaseDate:data.release_date || data.first_air_date || "", genres:(data.genres||[]).map(x=>x.name), platforms:[], cast:(credits.cast||[]).slice(0,8).map(x=>x.name), crew:(credits.crew||[]).filter(x=>["Director","Creator","Writer"].includes(x.job)).slice(0,8).map(x=>x.name), rating:data.vote_average||null, ratingScale:10, votes:data.vote_count||0, poster:data.poster_path ? "https://image.tmdb.org/t/p/w780"+data.poster_path : "", backdrop:data.backdrop_path ? "https://image.tmdb.org/t/p/w1280"+data.backdrop_path : "" };
   }
   if (primary.extract.length < 80) throw new Error("Primary catalog description is too thin");
   const [independent, youtubeTrailer] = await Promise.all([
@@ -159,6 +159,7 @@ export async function collectEvidence(candidate) {
   return {
     title:candidate.name,
     type:candidate.type,
+    collectedAt:new Date().toISOString(),
     sourceId:candidate.type+":"+candidate.id,
     sourceName:primary.name,
     sourceUrl:primary.url,
@@ -166,8 +167,8 @@ export async function collectEvidence(candidate) {
     sources,
     // Catalog metadata, an encyclopedia entry and a promotional trailer support an informative profile,
     // but do not establish episode-level or hands-on evidence for a scored critical review.
-    reviewReadiness:"limited",
-    reviewReadinessReason:"Available evidence is catalog metadata, an encyclopedia summary and promotional material; no independently verifiable episode-level or hands-on review evidence was collected.",
+    reviewReadiness: candidate.preview === true && metadata.releaseDate > new Date().toISOString().slice(0,10) ? "preview" : Number(metadata.votes) >= 100 && Number(metadata.rating) > 0 ? "audience" : "limited",
+    reviewReadinessReason: candidate.preview === true && metadata.releaseDate > new Date().toISOString().slice(0,10) ? "Verified pre-release item; preview only, no final rating." : Number(metadata.votes) >= 100 && Number(metadata.rating) > 0 ? "A source-backed audience average is available from " + primary.name + " with " + metadata.votes + " votes; this is not an independent VibeCritic score." : "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
     youtubeVideoId:youtubeTrailer.id,
     youtubeVideoTitle:youtubeTrailer.title,
     youtubeChannel:youtubeTrailer.channel,

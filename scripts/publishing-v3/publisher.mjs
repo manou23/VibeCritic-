@@ -11,24 +11,29 @@ export function articleFilePath(article, root="src/content/reviews") {
 }
 export function renderMarkdown(article) {
   const reviewMode = article.reviewMode || "review";
-  const isLimited = reviewMode !== "review";
-  validateArticle(article, isLimited ? { minWords:650, minCharacters:3200 } : { minWords:1000, minCharacters:5200 });
+  const isPreview = reviewMode === "preview";
+  const isAudience = reviewMode === "audience";
+  const hasScore = reviewMode === "review";
+  if (reviewMode === "limited") throw new Error("Refusing to publish a limited-evidence article on VibeCritic");
+  validateArticle(article, reviewMode !== "review" ? { minWords:650, minCharacters:3200 } : { minWords:1000, minCharacters:5200 });
   if (!/^[A-Za-z0-9_-]{11}$/.test(article.youtubeVideoId || "")) throw new Error("V3 article requires a verified YouTube video ID");
   const list = values => (values||[]).map(x=>"  - "+quote(x)).join("\n") || " []";
-  const finalVerdict = isLimited
-    ? String(article.verdict || "هذه قراءة معلوماتية محدودة، ولا تتضمن حكماً نهائياً على جودة التنفيذ.")
-    : normalizeFinalRating(article.verdict, article.score);
-  const finalBody = isLimited ? String(article.body || "") : normalizeBodyFinalRating(article.body, article.score);
-  const scoreFields = isLimited ? [] : [
+  const finalVerdict = hasScore
+    ? normalizeFinalRating(article.verdict, article.score)
+    : String(article.verdict || (isAudience ? "يعرض هذا المقال تقييم الجمهور من المصدر المحدد، وليس تقييماً تحريرياً من VibeCritic." : "هذه معاينة استباقية قبل الإصدار، ولا تتضمن حكماً نهائياً أو درجة."));
+  const finalBody = hasScore ? normalizeBodyFinalRating(article.body, article.score) : String(article.body || "");
+  const scoreFields = !hasScore ? [] : [
     "score: "+Number(article.score).toFixed(2),
     "storyScore: "+Number(article.scores.story).toFixed(2),
     "visualsScore: "+Number(article.scores.visuals).toFixed(2),
     "soundScore: "+Number(article.scores.sound).toFixed(2),
     "pacingScore: "+Number(article.scores.pacing).toFixed(2)
   ];
-  const editorialNote = isLimited
-    ? "> قراءة معلوماتية محدودة مبنية على بيانات العمل ومصادر تعريفية ومواد ترويجية. لا تمثل مراجعة مشاهدة أو لعب، ولا تمنح درجة نهائية."
-    : "> مراجعة تحريرية نهائية مبنية على مصادر موثوقة ومواد رسمية متاحة. لا تدّعي تجربة لعب أو مشاهدة مباشرة لم ينفذها المحرر.";
+  const editorialNote = isPreview
+    ? "> معاينة استباقية قبل الإصدار، وليست مراجعة نهائية ولا تتضمن تقييماً رقمياً."
+    : isAudience
+      ? "> تقييم الجمهور: الدرجة المعروضة متوسط المستخدمين في المصدر المذكور وعدد أصواته، وليست درجة تحريرية صادرة عن VibeCritic."
+      : "> مراجعة تحريرية نهائية مبنية على مصادر موثوقة ومواد رسمية متاحة. لا تدّعي تجربة لعب أو مشاهدة مباشرة لم ينفذها المحرر.";
   const fm = [
     "---",
     "title: "+quote(article.title),
@@ -39,6 +44,7 @@ export function renderMarkdown(article) {
     "reviewVersion: 7",
     "reviewMode: "+reviewMode,
     ...scoreFields,
+    ...(isAudience ? ["sourceRating: "+Number(article.sourceRating).toFixed(2),"sourceRatingScale: "+Number(article.sourceRatingScale).toFixed(2),"sourceVoteCount: "+Number(article.sourceVoteCount),"sourceRatingCheckedAt: "+quote(article.sourceRatingCheckedAt)] : []),
     "date: "+new Date().toISOString().slice(0,10),
     "publishedAt: "+quote(new Date().toISOString()),
     "releaseDate: "+quote(article.releaseDate||""),
@@ -72,7 +78,8 @@ export function renderMarkdown(article) {
   return fm.join("\n")+"\n";
 }
 export async function publishArticle(article, root="src/content/reviews") {
-  const isLimited = (article.reviewMode || "review") !== "review";
+  const isLimited = article.reviewMode !== "review";
+  if (article.reviewMode === "limited") throw new Error("Refusing to publish a limited-evidence article on VibeCritic");
   validateArticle(article,isLimited ? {minWords:650,minCharacters:3200} : {minWords:1000,minCharacters:5200});
   await fs.mkdir(root,{recursive:true});
   const target = articleFilePath(article,root);

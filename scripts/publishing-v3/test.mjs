@@ -71,18 +71,33 @@ const limitedDraft = {
   verdict:"تظل هذه الصفحة قراءة معلوماتية محدودة لأن المصادر المتاحة تصف العمل وتقدم معلومات عامة ومواد ترويجية، لكنها لا توفر شواهد كافية على تجربة اللعب أو جودة التنفيذ. لذلك نعرض الحقائق المؤكدة ونوضح الأسئلة التي لا تزال مفتوحة، ولا نحول نقص المعلومات إلى عيوب مختلقة أو درجة رقمية قد تضلل القارئ.",
   reviewMode:undefined
 };
-const limitedResult = assemble(limitedDraft,limitedEvidence);
-assert.equal(limitedResult.article.reviewMode,"limited");
-assert.equal(limitedResult.article.score,undefined);
-assert.equal(limitedResult.article.scores,undefined);
-assert.ok(validateArticle(limitedResult.article,{minWords:650,minCharacters:3200}).words >= 650);
-assert.throws(() => validateArticle({ ...limitedResult.article, score:5.3 }), /must not contain numeric score metadata/);
-assert.throws(() => assemble({ ...limitedDraft, body:body+"\\n\\nالتقييم النهائي: 5/10" },limitedEvidence), /numeric final rating/);
-const limitedMarkdown = renderMarkdown(limitedResult.article);
-assert.match(limitedMarkdown,/reviewMode: limited/);
-assert.doesNotMatch(limitedMarkdown,/^score:/m);
-assert.doesNotMatch(limitedMarkdown,/^storyScore:/m);
-assert.match(limitedMarkdown,/قراءة معلوماتية محدودة/);
+assert.throws(() => assemble(limitedDraft,limitedEvidence), /Publishing blocked: VibeCritic publishes scored reviews or explicitly pre-release previews only/);
+assert.throws(() => renderMarkdown({ ...article, reviewMode:"limited", score:undefined, scores:undefined }), /limited-evidence article/);
+const previewEvidence = { ...limitedEvidence, releaseDate:"2099-01-01", reviewReadiness:"preview" };
+const previewDraft = { ...limitedDraft, headline:"معاينة استباقية قبل الإصدار", summary:"هذه معاينة استباقية للعمل قبل صدوره، تستعرض المعلومات الرسمية المتاحة وتفصل الحقائق عن التوقعات، ولا تمثل مراجعة نهائية ولا تمنح درجة رقمية أو حكماً على جودة التجربة.", verdict:"هذه معاينة استباقية قبل الإصدار، وليست مراجعة نهائية. نستعرض المعلومات المؤكدة وما يمكن توقعه بحذر، ونترك الحكم على الجودة والتقييم الرقمي إلى ما بعد صدور العمل وتوفر أدلة نقدية كافية.", reviewMode:undefined };
+const previewResult = assemble(previewDraft,previewEvidence);
+assert.equal(previewResult.article.reviewMode,"preview");
+assert.equal(previewResult.article.score,undefined);
+assert.equal(previewResult.article.scores,undefined);
+assert.ok(validateArticle(previewResult.article,{minWords:650,minCharacters:3200}).words >= 650);
+assert.match(renderMarkdown(previewResult.article),/معاينة استباقية قبل الإصدار/);
+
+const audienceEvidence = { ...limitedEvidence, rating:4.2, ratingScale:5, votes:1200, reviewReadiness:"audience", reviewReadinessReason:"RAWG audience average backed by 1200 votes." };
+const audienceDraft = { ...limitedDraft, headline:"تحليل العمل وفق تقييم الجمهور ومؤشرات المنصة", summary:"يعرض هذا التحليل متوسط تقييم جمهور RAWG بوصفه مؤشراً جماهيرياً لا حكماً تحريرياً من VibeCritic. نوضح عدد الأصوات ومصدر البيانات ونحلل المعلومات المتاحة عن العمل دون ادعاء تجربة مباشرة أو اختلاق درجات فرعية.", verdict:"يعتمد هذا المقال على متوسط تقييم المستخدمين في RAWG، حيث بلغ التقييم الأصلي 4.2 من 5 استناداً إلى 1200 صوت. هذا المتوسط يعكس آراء المستخدمين المشاركين في المنصة ولا يمثل تقييماً تحريرياً مستقلاً من VibeCritic أو إجماعاً لجميع اللاعبين. يظل التحليل مقيداً بالمعلومات والمصادر المتاحة، ولا يدعي تجربة لعب مباشرة أو يختلق أحكاماً على عناصر فنية لا تدعمها الأدلة.", reviewMode:undefined };
+const audienceResult = assemble(audienceDraft,audienceEvidence);
+assert.equal(audienceResult.article.reviewMode,"audience");
+assert.equal(audienceResult.article.audienceScore,8.4);
+assert.equal(audienceResult.article.score,undefined);
+assert.equal(audienceResult.article.scores,undefined);
+assert.equal(audienceResult.article.sourceVoteCount,1200);
+assert.ok(validateArticle(audienceResult.article,{minWords:650,minCharacters:3200}).words>=650);
+const audienceMarkdown=renderMarkdown(audienceResult.article);
+assert.match(audienceMarkdown,/reviewMode: audience/);
+assert.match(audienceMarkdown,/sourceRating: 4.20/);
+assert.match(audienceMarkdown,/sourceVoteCount: 1200/);
+assert.match(audienceMarkdown,/تقييم الجمهور/);
+assert.throws(()=>assemble(audienceDraft,{...audienceEvidence,votes:99}),/minimum of 100 votes/);
+
 assert.throws(() => validateArticle({ ...article, scores:{...article.scores,story:11} }), /Invalid score/);
 assert.equal(normalizeFinalRating("الحكم النهائي: 6/10",5.3),"الحكم النهائي: 5.3/10");
 assert.equal(normalizeFinalRating("التقييم النهائي 8 من 10",7.4),"التقييم النهائي 7.4/10");
