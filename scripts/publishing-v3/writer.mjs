@@ -64,7 +64,7 @@ export function assemble(value, evidence) {
 }
 export function buildPrompt(evidence) {
   const isLimited = evidence.reviewReadiness !== "review";
-  const prompt = isLimited ? [
+  const prompt = (isLimited ? [
     "اكتب قراءة معلوماتية عربية محدودة الأدلة لموقع VibeCritic اعتماداً حصراً على ملف الأدلة أدناه.",
     "المصادر المتاحة وصف قاعدة بيانات، ومادة موسوعية، وإعلان ترويجي. هذه المصادر تثبت بعض المعلومات الأساسية فقط، ولا تثبت جودة التنفيذ أو تجربة مشاهدة/لعب. لا تقدّم النص بوصفه مراجعة مشاهدة أو مراجعة نهائية، ولا تدّع تجربة شخصية.",
     "ممنوع وضع أي درجة رقمية أو تقييم من 10 أو ترتيب جودة. لا تملأ محاور الإخراج أو الصورة أو الصوت أو الإيقاع بتخمينات. اذكر بوضوح ما نعرفه وما لا تسمح الأدلة بحسمه.",
@@ -87,7 +87,7 @@ export function buildPrompt(evidence) {
     "pros أربع نقاط محددة على الأقل، وcons ثلاث نقاط محددة على الأقل. verdict حكم نهائي معلل لا يقل عن 90 كلمة. summary لا يقل عن 90 كلمة.",
     "بيانات الفيديو الرسمية الموثقة: " + JSON.stringify({youtubeVideoId:evidence.youtubeVideoId,youtubeVideoTitle:evidence.youtubeVideoTitle,youtubeChannel:evidence.youtubeChannel}),
     "الأدلة والمصادر: " + JSON.stringify(evidence)
-  ].join("\n\n");
+  ]).join("\n\n");
   return prompt;
 }
 export async function writeArticle(evidence) {
