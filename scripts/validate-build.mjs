@@ -213,9 +213,9 @@ for (const file of reviewFiles) {
   } else {
     const retainedScores = scoreFields.filter(field => new RegExp('^' + field + ':\\\\s*', 'm').test(frontmatter));
     if (retainedScores.length) reviewFailures.push(file + ': preview/limited review must not store score metadata (' + retainedScores.join(', ') + ')');
-    const prematureRating = /(?<![0-9])\\d{1,2}(?:[.,]\\d+)?\\s*(?:\\/\\s*10|من\\s*10)(?![0-9])/i;
+    const prematureRating = /(?<![0-9])\d{1,2}(?:[.,]\d+)?\s*(?:\/\s*10|من\s*10)(?![0-9])/i;
     // Ignore URL paths: dates such as /2026/06/10 in cited source links are not review scores.
-    const ratingText = (frontmatter + '\\n' + body).replace(/https?:\\/\\/[^\\s)\\]>]+/gi, '');
+    const ratingText = (frontmatter + '\n' + body).replace(/https?:\/\/[^\s)\]>]+/gi, '');
     if (prematureRating.test(ratingText)) reviewFailures.push(file + ': preview/limited review must not publish a numeric final rating');
   }  // Scores are at most 10; limiting the integer part to two digits avoids matching dates such as 2026/10.
   for (const match of body.matchAll(/(?<!\d)(\d{1,2}(?:[.,]\d+)?)\s*\/\s*10/g)) {
