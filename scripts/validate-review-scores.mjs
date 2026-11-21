@@ -18,13 +18,30 @@ for (const file of files) {
 
   const frontmatter = match[1];
   const body = match[2] || '';
-  const modeMatch = frontmatter.match(/^reviewMode:\s*(review|preview|limited)\s*$/m);
+  const modeMatch = frontmatter.match(/^reviewMode:\s*(review|audience|preview|limited)\s*$/m);
   const reviewMode = modeMatch?.[1] || 'review';
   if (frontmatter.match(/^reviewMode:/m) && !modeMatch) {
-    failures.push(file + ': reviewMode must be review, preview or limited');
+    failures.push(file + ': reviewMode must be review, audience, preview or limited');
     continue;
   }
   const allScoreFields = ['score', 'storyScore', 'visualsScore', 'soundScore', 'pacingScore'];
+  if (reviewMode === 'audience') {
+    const readField = key => {
+      const line = frontmatter.split(/\\r?\\n/).find(item => item.startsWith(key + ':'));
+      return line ? line.slice(key.length + 1).trim().replace(/^['"]|['"]$/g, '') : '';
+    };
+    const sourceRating = Number(readField('sourceRating'));
+    const sourceRatingScale = Number(readField('sourceRatingScale'));
+    const sourceVoteCount = Number(readField('sourceVoteCount'));
+    const sourceName = readField('sourceName');
+    const retainedScores = allScoreFields.filter(field => new RegExp('^' + field + ':\\\\s*', 'm').test(frontmatter));
+    if (retainedScores.length) failures.push(file + ': audience review must not store VibeCritic editorial score metadata (' + retainedScores.join(', ') + ')');
+    if (!Number.isFinite(sourceRating) || sourceRating <= 0 || !Number.isFinite(sourceRatingScale) || sourceRatingScale <= 0 || sourceRatingScale > 10 || sourceRating > sourceRatingScale) failures.push(file + ': audience review requires a valid sourceRating within sourceRatingScale (maximum scale 10)');
+    if (!Number.isInteger(sourceVoteCount) || sourceVoteCount < 100) failures.push(file + ': audience review requires at least 100 verified source votes');
+    if (!sourceName) failures.push(file + ': audience review requires a named rating source');
+    if (!body.includes('ليست درجة تحريرية صادرة عن VibeCritic')) failures.push(file + ': audience review must clearly attribute its rating to the source, not VibeCritic');
+    continue;
+  }
   if (reviewMode !== 'review') {
     // URLs can contain date-like path segments such as /2026/10; they are not published ratings.
     const publicText = (frontmatter + '\n' + body).replace(/https?:\/\/\S+/gi, '');
