@@ -44,7 +44,7 @@ export function renderMarkdown(article) {
     "reviewVersion: 7",
     "reviewMode: "+reviewMode,
     ...scoreFields,
-    ...(isAudience ? ["sourceRating: "+Number(article.sourceRating).toFixed(2),"sourceRatingScale: "+Number(article.sourceRatingScale).toFixed(2),"sourceVoteCount: "+Number(article.sourceVoteCount)] : []),
+    ...(isAudience ? ["sourceRating: "+Number(article.sourceRating).toFixed(2),"sourceRatingScale: "+Number(article.sourceRatingScale).toFixed(2),"sourceVoteCount: "+Number(article.sourceVoteCount),"sourceRatingCheckedAt: "+quote(article.sourceRatingCheckedAt)] : []),
     "date: "+new Date().toISOString().slice(0,10),
     "publishedAt: "+quote(new Date().toISOString()),
     "releaseDate: "+quote(article.releaseDate||""),
