@@ -6,11 +6,11 @@ const data = review.data;
 const displayDate = data.publishedAt ?? data.date;
 const href = url(`reviews/${review.id}/`);
 ---
-<a href={href} class="review-card group" aria-label={`${TYPE_LABEL[data.type]}: ${data.title}${data.reviewMode === 'preview' ? ' — قراءة استباقية قبل الإصدار' : data.reviewMode === 'limited' ? ' — قراءة محدودة الأدلة بلا تقييم نهائي' : ' — التقييم ' + data.score.toFixed(1) + ' من 10'}`}>
+<a href={href} class="review-card group" aria-label={`${TYPE_LABEL[data.type]}: ${data.title}${data.reviewMode === 'preview' ? ' — قراءة استباقية قبل الإصدار' : data.reviewMode === 'audience' ? ' — تقييم الجمهور ' + Number(data.audienceScore ?? (Number(data.sourceRating) / Number(data.sourceRatingScale) * 10)).toFixed(1) + ' من 10' : data.reviewMode === 'limited' ? ' — قراءة محدودة الأدلة بلا تقييم نهائي' : ' — التقييم ' + data.score.toFixed(1) + ' من 10'}`}>
 <div class="review-poster-wrap">
 {data.poster ? <img src={optimizeImage(data.poster)} alt={data.title} loading="lazy" decoding="async" class="review-poster" width="600" height="900"/> : <div class="review-poster grid place-items-center text-5xl text-[#e45c38]">✦</div>}
 <span class="review-type">{TYPE_LABEL[data.type]}</span>
-{data.reviewMode === 'preview' ? <span class="review-score">استباقية</span> : data.reviewMode === 'limited' ? <span class="review-score">{data.sourceId === 'manual-game-gta-vi-2026' ? 'قراءة الإطلاق' : 'قيد التقييم'}</span> : <span class="review-score">{data.score.toFixed(1)} <small>/10</small></span>}
+{data.reviewMode === 'preview' ? <span class="review-score">استباقية</span> : data.reviewMode === 'audience' ? <span class="review-score">{Number(data.audienceScore ?? (Number(data.sourceRating) / Number(data.sourceRatingScale) * 10)).toFixed(1)} <small>/10 جمهور</small></span> : data.reviewMode === 'limited' ? <span class="review-score">{data.sourceId === 'manual-game-gta-vi-2026' ? 'قراءة الإطلاق' : 'قيد التقييم'}</span> : <span class="review-score">{data.score.toFixed(1)} <small>/10</small></span>}
 </div>
 <div class="review-content">
 <h3 class="review-title">{data.title}</h3>
