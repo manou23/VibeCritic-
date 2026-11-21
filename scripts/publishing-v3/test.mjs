@@ -71,18 +71,16 @@ const limitedDraft = {
   verdict:"تظل هذه الصفحة قراءة معلوماتية محدودة لأن المصادر المتاحة تصف العمل وتقدم معلومات عامة ومواد ترويجية، لكنها لا توفر شواهد كافية على تجربة اللعب أو جودة التنفيذ. لذلك نعرض الحقائق المؤكدة ونوضح الأسئلة التي لا تزال مفتوحة، ولا نحول نقص المعلومات إلى عيوب مختلقة أو درجة رقمية قد تضلل القارئ.",
   reviewMode:undefined
 };
-const limitedResult = assemble(limitedDraft,limitedEvidence);
-assert.equal(limitedResult.article.reviewMode,"limited");
-assert.equal(limitedResult.article.score,undefined);
-assert.equal(limitedResult.article.scores,undefined);
-assert.ok(validateArticle(limitedResult.article,{minWords:650,minCharacters:3200}).words >= 650);
-assert.throws(() => validateArticle({ ...limitedResult.article, score:5.3 }), /must not contain numeric score metadata/);
-assert.throws(() => assemble({ ...limitedDraft, body:body+"\\n\\nالتقييم النهائي: 5/10" },limitedEvidence), /numeric final rating/);
-const limitedMarkdown = renderMarkdown(limitedResult.article);
-assert.match(limitedMarkdown,/reviewMode: limited/);
-assert.doesNotMatch(limitedMarkdown,/^score:/m);
-assert.doesNotMatch(limitedMarkdown,/^storyScore:/m);
-assert.match(limitedMarkdown,/قراءة معلوماتية محدودة/);
+assert.throws(() => assemble(limitedDraft,limitedEvidence), /Publishing blocked: VibeCritic publishes scored reviews or explicitly pre-release previews only/);
+assert.throws(() => renderMarkdown({ ...article, reviewMode:"limited", score:undefined, scores:undefined }), /limited-evidence article/);
+const previewEvidence = { ...limitedEvidence, releaseDate:"2099-01-01", reviewReadiness:"preview" };
+const previewDraft = { ...limitedDraft, headline:"معاينة استباقية قبل الإصدار", summary:"هذه معاينة استباقية للعمل قبل صدوره، تستعرض المعلومات الرسمية المتاحة وتفصل الحقائق عن التوقعات، ولا تمثل مراجعة نهائية ولا تمنح درجة رقمية أو حكماً على جودة التجربة.", verdict:"هذه معاينة استباقية قبل الإصدار، وليست مراجعة نهائية. نستعرض المعلومات المؤكدة وما يمكن توقعه بحذر، ونترك الحكم على الجودة والتقييم الرقمي إلى ما بعد صدور العمل وتوفر أدلة نقدية كافية.", reviewMode:undefined };
+const previewResult = assemble(previewDraft,previewEvidence);
+assert.equal(previewResult.article.reviewMode,"preview");
+assert.equal(previewResult.article.score,undefined);
+assert.equal(previewResult.article.scores,undefined);
+assert.ok(validateArticle(previewResult.article,{minWords:650,minCharacters:3200}).words >= 650);
+assert.match(renderMarkdown(previewResult.article),/معاينة استباقية قبل الإصدار/);
 assert.throws(() => validateArticle({ ...article, scores:{...article.scores,story:11} }), /Invalid score/);
 assert.equal(normalizeFinalRating("الحكم النهائي: 6/10",5.3),"الحكم النهائي: 5.3/10");
 assert.equal(normalizeFinalRating("التقييم النهائي 8 من 10",7.4),"التقييم النهائي 7.4/10");
