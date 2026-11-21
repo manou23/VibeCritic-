@@ -102,7 +102,7 @@ assert.equal(typeof audiencePrompt,"string");
 assert.match(audiencePrompt,/4\.2\/5/);
 assert.match(audiencePrompt,/1200 صوتاً/);
 assert.match(audiencePrompt,/ليس تقييماً تحريرياً من VibeCritic/);
-assert.doesNotMatch(audiencePrompt,/درجات فرعية للقصة/);
+assert.match(audiencePrompt,/لا تمنح درجات فرعية للقصة أو الصورة أو الصوت أو الإيقاع/);
 
 assert.throws(() => validateArticle({ ...article, scores:{...article.scores,story:11} }), /Invalid score/);
 assert.equal(normalizeFinalRating("الحكم النهائي: 6/10",5.3),"الحكم النهائي: 5.3/10");
