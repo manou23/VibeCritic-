@@ -117,15 +117,15 @@ export async function discoverCandidate(state) {
       get(tmdb("trending/movie/week")).catch(()=>({results:[]})),
       get(tmdb("trending/tv/week")).catch(()=>({results:[]}))
     ]);
-    for (const x of movies.results || []) candidates.push({ type:"movie", id:String(x.id), name:x.title, date:x.release_date || "", popularity:Number(x.popularity)||0, source:"TMDB" });
-    for (const x of series.results || []) candidates.push({ type:"series", id:String(x.id), name:x.name, date:x.first_air_date || "", popularity:Number(x.popularity)||0, source:"TMDB" });
+    for (const x of movies.results || []) candidates.push({ type:"movie", id:String(x.id), name:x.title, date:x.release_date || "", preview:Boolean(x.release_date && x.release_date > new Date().toISOString().slice(0,10) && x.release_date <= new Date(Date.now()+120*86400000).toISOString().slice(0,10)), popularity:Number(x.popularity)||0, source:"TMDB" });
+    for (const x of series.results || []) candidates.push({ type:"series", id:String(x.id), name:x.name, date:x.first_air_date || "", preview:Boolean(x.first_air_date && x.first_air_date > new Date().toISOString().slice(0,10) && x.first_air_date <= new Date(Date.now()+120*86400000).toISOString().slice(0,10)), popularity:Number(x.popularity)||0, source:"TMDB" });
   }
   if (env.RAWG_API_KEY) {
     const data = await get("https://api.rawg.io/api/games?key=" + encodeURIComponent(env.RAWG_API_KEY) + "&ordering=-added&page_size=30").catch(()=>({results:[]}));
     for (const x of data.results || []) candidates.push({ type:"game", id:String(x.id), name:x.name, date:x.released || "", popularity:Number(x.added)||0, source:"RAWG" });
   }
   const now = new Date().toISOString().slice(0,10);
-  const eligible = candidates.filter(x => x.id && x.name && (!x.date || x.date <= now) && !used.has(x.type + ":" + x.id) && !used.has("title:" + x.name.toLowerCase().replace(/[^\p{L}\p{N}]+/gu,"")) && !state.jobs[x.type + ":" + x.id]);
+  const eligible = candidates.filter(x => x.id && x.name && (!x.date || x.date <= now || x.preview === true) && !used.has(x.type + ":" + x.id) && !used.has("title:" + x.name.toLowerCase().replace(/[^\p{L}\p{N}]+/gu,"")) && !state.jobs[x.type + ":" + x.id]);
   if (!eligible.length) return null;
   eligible.sort((a,b) => counts[a.type]-counts[b.type] || b.popularity-a.popularity);
   return eligible[0];
@@ -166,8 +166,8 @@ export async function collectEvidence(candidate) {
     sources,
     // Catalog metadata, an encyclopedia entry and a promotional trailer support an informative profile,
     // but do not establish episode-level or hands-on evidence for a scored critical review.
-    reviewReadiness:"limited",
-    reviewReadinessReason:"Available evidence is catalog metadata, an encyclopedia summary and promotional material; no independently verifiable episode-level or hands-on review evidence was collected.",
+    reviewReadiness: candidate.preview === true && metadata.releaseDate > new Date().toISOString().slice(0,10) ? "preview" : "limited",
+    reviewReadinessReason: candidate.preview === true && metadata.releaseDate > new Date().toISOString().slice(0,10) ? "Verified pre-release item; preview only, no final rating." : "Available evidence is catalog metadata, an encyclopedia summary and promotional material; no independently verifiable episode-level or hands-on review evidence was collected.",
     youtubeVideoId:youtubeTrailer.id,
     youtubeVideoTitle:youtubeTrailer.title,
     youtubeChannel:youtubeTrailer.channel,
