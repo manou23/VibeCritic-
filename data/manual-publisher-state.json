@@ -168,6 +168,12 @@
       "sha256": "c738d4386a23c5e3f8f73c770bc3fd897862e5bb79a159c73f912368faf64327",
       "articlePath": "src/content/reviews/game-nba-2k27-2026.md",
       "publishedAt": "2026-11-21T23:27:07.351Z"
+    },
+    "ghost-of-yotei-2025": {
+      "sourceId": "manual-editorial-ghost-of-yotei-vibecritic-2026",
+      "sha256": "91bbf571c60829b623ace0a7a32ecbbefef0f07f6bb9c70fb974281269653ca9",
+      "articlePath": "src/content/reviews/ghost-of-yotei-2025.md",
+      "publishedAt": "2026-11-21T23:27:51.644Z"
     }
   }
 }
