@@ -14,15 +14,28 @@ const tmdb = (endpoint, params={}) => {
   for (const [key,value] of Object.entries(params)) if (value != null) url.searchParams.set(key,String(value));
   return url.toString();
 };
+export function publishedIdentityKeys(type, sourceId, title) {
+  const keys = [];
+  const id = String(sourceId || "").trim();
+  if (id) {
+    keys.push(id);
+    const typed = id.match(/^(game|movie|series):(.+)$/);
+    if (typed) keys.push(typed[1] + ":" + typed[2]);
+    else if (/^\d+$/.test(id) && ["game","movie","series"].includes(type)) keys.push(type + ":" + id);
+  }
+  const normalizedTitle = String(title || "").toLowerCase().replace(/[^\p{L}\p{N}]+/gu,"");
+  if (normalizedTitle) keys.push("title:" + normalizedTitle);
+  return [...new Set(keys)];
+}
 async function publishedKeys() {
   const keys = new Set();
   for (const file of await fs.readdir(ROOT).catch(()=>[])) {
     if (!file.endsWith(".md")) continue;
     const text = await fs.readFile(ROOT + "/" + file,"utf8");
     const id = text.match(/^sourceId:\s*["']?([^"'\n]+)["']?/m)?.[1];
+    const type = text.match(/^type:\s*(game|movie|series)\s*$/m)?.[1];
     const title = text.match(/^title:\s*["']?([^"'\n]+)["']?/m)?.[1];
-    if (id) keys.add(id.trim());
-    if (title) keys.add("title:" + title.toLowerCase().replace(/[^\p{L}\p{N}]+/gu,""));
+    for (const key of publishedIdentityKeys(type, id, title)) keys.add(key);
   }
   return keys;
 }
