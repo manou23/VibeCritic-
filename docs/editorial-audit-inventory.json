@@ -141,15 +141,15 @@
       "path": "src/content/reviews/murder-in-galicia-2026.md",
       "reviewedAt": "2026-11-21",
       "verifiedAt": "2026-11-21",
-      "contentSha": "9594ef7b6cbf27462d0bc8b52dd4ade8dd728a79",
+      "contentSha": "0fc57c2ab6ef9f9b7fbb502b69efe2e3334f5cc1",
       "status": "corrected",
-      "note": "Removed duplicated verdict/score; clarified fictional series versus the Isabel Fuentes case using Netflix's official documentary and press release; corrected creator/writer roles, linked sources and replaced third-party image URLs with official Netflix CDN stills."
+      "note": "Removed duplicated verdict/score; clarified fictional series versus the Isabel Fuentes case using Netflix's official documentary and press release; corrected creator/writer roles; linked sources and replaced the third-party poster with the AlloCiné poster plus an official Netflix backdrop."
     },
     {
       "path": "src/content/reviews/ninho-le-prix-a-payer-2026.md",
       "reviewedAt": "2026-11-21",
       "verifiedAt": "2026-11-21",
-      "contentSha": "deb43dc2ec80cb809eb7d695718c5a9b9bf8b3c3",
+      "contentSha": "17e8a683d4072614cf16f6f360a63e366de3f733",
       "status": "corrected",
       "note": "Removed duplicated verdict/score; added co-director Jules Renault to credits and cited the verified AlloCiné credit record."
     },
@@ -165,9 +165,9 @@
       "path": "src/content/reviews/phantom-blade-zero-2026.md",
       "reviewedAt": "2026-11-21",
       "verifiedAt": "2026-11-21",
-      "contentSha": "787c9d1c8d56a05b7d8d44f319a892e1b84730d7",
+      "contentSha": "15b7226d1f22b5a9302c6bfbb64f2ac8fee5589e",
       "status": "corrected",
-      "note": "Removed duplicated verdict; clarified store-displayed dates (Steam 28 Oct; PlayStation/Epic 29 Oct) and added verified direct store links."
+      "note": "Removed duplicated verdict; clarified store-displayed dates (PlayStation/Epic 29 Oct; Steam 28 Oct) and added verified direct store links."
     },
     {
       "path": "src/content/reviews/possible-love-2026.md",
@@ -197,11 +197,11 @@
   "siteChecks": {
     "about": "Reviewed; editorial purpose and AI-assisted content disclosure are present.",
     "contact": "Reviewed; contact form uses FormSubmit and identifies the submitted fields.",
-    "privacy": "Updated in the audit PR to disclose FormSubmit contact-form data forwarding; pending merge and live-site verification.",
+    "privacy": "Mirrors the detailed FormSubmit disclosure already prepared in PR #148 (18 Nov 2026) so both audit branches carry the same policy text; not live until one of the PRs is merged.",
     "consent": "No site CMP/consent banner found. Before personalized Google ads are served to EEA/UK/Switzerland users, use a Google-certified CMP integrated with IAB TCF; TCF v2.3 applies to new TC strings since 2026-03-01.",
     "ads": "No publisher ID, ad code, ads.txt, verification setting, or AdSense application setting changed.",
     "articles": "The review detail template renders a final-verdict card; this batch removes duplicated verdict/score sections from all 8 reviewed article bodies.",
-    "media": "Murder in Galicia poster/backdrop now use official Netflix CDN stills; Phantom Blade Zero store links and store-specific release-date displays were verified against official stores."
+    "media": "Murder in Galicia now uses an AlloCiné-hosted official poster and an official Netflix CDN backdrop; Phantom Blade Zero store links and store-specific release-date displays were verified against official stores."
   },
   "policyReview": {
     "reviewedAt": "2026-11-21",

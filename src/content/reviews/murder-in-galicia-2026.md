@@ -16,7 +16,7 @@ soundScore: 7.0
 pacingScore: 6.8
 reviewMode: review
 mediaVerified: true
-poster: "https://occ-0-3012-116.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO/AAAABTAkU9GCdKMSBDXR22k5csfOb7K-f3BKK28-t6jOPtjhhpqAVEjutxjVmW9N8wf0tiHUbdu-Ky6zQIdXD-WbkmSkYB2TRwl00JnN.jpg?r=4f5"
+poster: "https://fr.web.img5.acsta.net/c_310_420/img/fe/c1/fec11f768e089192997e3e3c2355fbfb.jpeg"
 backdrop: "https://occ-0-3012-116.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABTb471oQudhbYSfWkTMI2PYEypbXTHU4tTdIZRdYeeW_9FRgTRgANSwVxCTQ7sMWdtwP_hnZsKwKK0VL0oQiMh0anZh6juz_sdHY5_9cYHprw5o9hijTyxlmLQ.jpg?r=4f5"
 youtubeVideoId: "V7qdKH-USL8"
 youtubeVideoTitle: "Murder in Galicia | Official Trailer | Netflix"

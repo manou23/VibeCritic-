@@ -27,7 +27,7 @@ sourceId: "movie:81763154:manual-editorial"
 sourceUrl: "https://www.netflix.com/title/81763154"
 aiGenerated: false
 editorialWorkflow: "manual-assisted"
-creator: "Thibaut de Longeville, Yanis Tiliouine, Jules Renault (co-director)"
+creator: "Thibaut de Longeville, Yanis Tiliouine, Jules Renault"
 cast:
   - "Ninho"
 pros:
