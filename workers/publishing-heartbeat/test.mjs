@@ -43,8 +43,8 @@ assert.equal(health.headers.get("cache-control"),"no-store");
 assert.deepEqual(await health.json(),{
   service:"vibecritic-publishing-heartbeat",
   status:"ok",
-  cron:"*/15 * * * *",
-  purpose:"GitHub Actions publishing fallback"
+  cron:"15 7,10,13,16,19 * * *",
+  purpose:"GitHub Actions publishing scheduler"
 });
 assert.equal((await worker.fetch(new Request("https://heartbeat.example/"))).status,404);
 console.log("Publishing V3 heartbeat tests passed.");
