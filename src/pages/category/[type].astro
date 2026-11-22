@@ -44,6 +44,7 @@ const copy={game:{en:'GAMES & INTERACTIVE',title:'اكتشف عالم الألع
  </div>}
  {reviews.length?<div class="category-review-grid" id="category-review-grid">{reviews.map(review=><div class="category-review-item" data-title={normalizeArabic([review.data.title,review.data.originalTitle,review.data.headline,...(review.data.tags||[]),...(review.data.genres||[])].join(' '))} data-year={review.data.releaseDate?.slice(0,4)||String(review.data.date.getFullYear())} data-score={review.data.score} data-rated={review.data.reviewMode==='review'} data-date={(review.data.publishedAt??review.data.date).toISOString()} data-genres={(review.data.genres||[]).join('|').toLowerCase()} data-platforms={(review.data.platforms||[]).join('|').toLowerCase()}><ReviewCard review={review}/></div>)}</div>:<div class="catalog-empty">قسم {TYPE_PLURAL[type]} قيد الإثراء. ستظهر هنا الأعمال الجديدة ومراجعاتها تلقائياً.</div>}
  <div class="catalog-empty" id="category-filter-empty" hidden>لا توجد مراجعات تطابق خيارات التصفية الحالية.</div>
+ {reviews.length>0&&<nav class="category-pagination" id="category-pagination" aria-label="صفحات المراجعات" hidden><button type="button" id="category-prev" disabled>السابق</button><span id="category-page-label" aria-live="polite">1 / 1</span><button type="button" id="category-next" disabled>التالي</button></nav>}
 </section>
 {type === 'movie' && <section class="wrap curated-links" aria-label="تصنيفات الأفلام الدقيقة"><h2>استكشف حسب النوع</h2><a href={url('collections/horror-films/')}>أفلام الرعب <span>←</span></a></section>}
 {type === 'game' && <section class="wrap curated-links" aria-label="تصنيفات الألعاب الدقيقة"><h2>استكشف حسب المنصة</h2><a href={url('collections/android-games/')}>ألعاب أندرويد <span>←</span></a></section>}
@@ -64,15 +65,33 @@ if(grid){
  const sort=document.querySelector<HTMLSelectElement>('#review-sort');
  const count=document.querySelector<HTMLElement>('#category-result-count');
  const empty=document.querySelector<HTMLElement>('#category-filter-empty');
+ const pagination=document.querySelector<HTMLElement>('#category-pagination');
+ const previous=document.querySelector<HTMLButtonElement>('#category-prev');
+ const next=document.querySelector<HTMLButtonElement>('#category-next');
+ const pageLabel=document.querySelector<HTMLElement>('#category-page-label');
+ const pageSize=18;
+ let currentPage=1;
+ let filteredCards:HTMLElement[]=[];
+ const renderPage=()=>{
+  const totalPages=Math.max(1,Math.ceil(filteredCards.length/pageSize));
+  currentPage=Math.min(Math.max(1,currentPage),totalPages);
+  const first=(currentPage-1)*pageSize;
+  grid.replaceChildren(...filteredCards.slice(first,first+pageSize));
+  if(pageLabel)pageLabel.textContent=currentPage+' / '+totalPages;
+  if(previous)previous.disabled=currentPage<=1;
+  if(next)next.disabled=currentPage>=totalPages;
+  if(pagination)pagination.hidden=filteredCards.length<=pageSize;
+  if(empty)empty.hidden=filteredCards.length!==0;
+ };
  const update=()=>{
-  const normalize=value=>String(value||'').toLocaleLowerCase('ar').normalize('NFKD').replace(/\p{M}/gu,'').replace(/[أإآٱ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/ؤ/g,'و').replace(/ئ/g,'ي').replace(/[^\p{L}\p{N}\s]/gu,' ').trim().replace(/\s+/g,' ');
+  const normalize=value=>String(value||'').toLocaleLowerCase('ar').normalize('NFKD').replace(/\\p{M}/gu,'').replace(/[أإآٱ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/ؤ/g,'و').replace(/ئ/g,'ي').replace(/[^\\p{L}\\p{N}\\s]/gu,' ').trim().replace(/\\s+/g,' ');
   const term=normalize(search?.value||'');
   const selectedGenre=genre?.value||'all';
   const selectedPlatform=platform?.value||'all';
   const selectedYear=year?.value||'all';
   const minimum=Number(minScore?.value||0);
   const order=sort?.value||'newest';
-  const matches=cards.filter(card=>{
+  filteredCards=cards.filter(card=>{
    const title=card.dataset.title||'';
    const genres=(card.dataset.genres||'').split('|');
    return (!term||title.includes(term))
@@ -81,7 +100,7 @@ if(grid){
     &&(selectedYear==='all'||card.dataset.year===selectedYear)
     &&(minimum===0||(card.dataset.rated==='true'&&Number(card.dataset.score||0)>=minimum));
   });
-  matches.sort((a,b)=>{
+  filteredCards.sort((a,b)=>{
    if(order==='highest'||order==='lowest'){
     const aRated=a.dataset.rated==='true',bRated=b.dataset.rated==='true';
     if(aRated!==bRated)return aRated?-1:1;
@@ -89,13 +108,24 @@ if(grid){
    }
    return String(b.dataset.date).localeCompare(String(a.dataset.date));
   });
-  matches.forEach(card=>{card.hidden=false;grid.append(card);});
-  cards.filter(card=>!matches.includes(card)).forEach(card=>{card.hidden=true;});
-  if(count)count.textContent=matches.length+' من '+cards.length+' مراجعة';
-  if(empty)empty.hidden=matches.length!==0;
+  currentPage=1;
+  if(count)count.textContent=filteredCards.length+' من '+cards.length+' مراجعة';
+  renderPage();
  };
+ previous?.addEventListener('click',()=>{currentPage--;renderPage();});
+ next?.addEventListener('click',()=>{currentPage++;renderPage();});
  [search,genre,platform,year,minScore,sort].forEach(control=>control?.addEventListener('input',update));
  [genre,platform,year,minScore,sort].forEach(control=>control?.addEventListener('change',update));
  update();
 }
-</script>
+</script>>
+
+
+<style>
+.category-pagination{display:flex;align-items:center;justify-content:center;gap:12px;margin:30px 0}
+.category-pagination[hidden]{display:none}
+.category-pagination button{min-height:42px;padding:0 18px;border:1px solid var(--vc-border);border-radius:10px;background:var(--vc-surface);color:var(--vc-text);font:inherit;font-size:12px;font-weight:900;cursor:pointer;transition:border-color .18s,color .18s}
+.category-pagination button:not(:disabled):hover{border-color:var(--vc-accent);color:var(--vc-accent-deep)}
+.category-pagination button:disabled{opacity:.4;cursor:not-allowed}
+.category-pagination span{min-width:62px;text-align:center;color:var(--vc-text);font-size:12px;font-weight:900;font-variant-numeric:tabular-nums}
+</style>
