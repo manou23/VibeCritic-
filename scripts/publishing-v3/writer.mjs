@@ -143,7 +143,7 @@ export async function writeArticle(evidence) {
         : isLimited
           ? "أعد كتابة النص كاملاً من البداية، لا تلخصه. يجب أن يحتوي body وحده على 800 إلى 950 كلمة عربية فعلية، مع ثلاثة عناوين تحليلية على الأقل، ومن دون درجة أو حكم نهائي."
           : "أعد كتابة المراجعة كاملة من البداية، لا تلخصها. يجب أن يحتوي body وحده على 1100 إلى 1300 كلمة عربية فعلية، مع ثلاثة عناوين تحليلية على الأقل، وأدلة واضحة لكل درجة.";
-    const retry = await generateJson(prompt + "\\n\\nفشلت المسودة السابقة في فحص الجودة: " + String(qualityError.message).slice(0,300) + ". الحد الأدنى الإلزامي للمتن هو " + minimumWords + " كلمة. " + retryGuidance + " أخرج JSON كاملاً صالحاً فقط، ولا تحذف أقسام المقال أو تستبدلها بملخص.", { skipProviderId:first.provider, maxTokens:10000 });
+    const retry = await generateJson(prompt + "\n\nفشلت المسودة السابقة في فحص الجودة: " + String(qualityError.message).slice(0,300) + ". الحد الأدنى الإلزامي للمتن هو " + minimumWords + " كلمة. " + retryGuidance + " أخرج JSON كاملاً صالحاً فقط، ولا تحذف أقسام المقال أو تستبدلها بملخص.", { skipProviderId:first.provider, maxTokens:10000 });
     try { result = assemble(retry.value,evidence); }
     catch (error) { error.requests = (Number(first.requests)||1) + (Number(retry.requests)||1); throw error; }
     generation = { provider:retry.provider, tokens:(Number(first.tokens)||0)+(Number(retry.tokens)||0), requests:(Number(first.requests)||1)+(Number(retry.requests)||1) };
