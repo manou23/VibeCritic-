@@ -13,6 +13,7 @@ releaseDate: "2026-11-20"
 platforms:
   - "Cinema"
 poster: "https://www.impawards.com/2026/posters/paper_tiger_xxlg.jpg"
+backdrop: "https://fr.web.img5.acsta.net/r_1280_720/img/00/da/00da79e8244566ae93bc065966e649ce.jpg"
 mediaVerified: true
 youtubeVideoId: "MLwTyQOhBkw"
 youtubeVideoTitle: "Paper Tiger | Official Trailer | NEON"
@@ -127,6 +128,18 @@ editorialWorkflow: "manual-assisted"
 قد لا يناسب إيقاعه الجميع، لكنه يقدم تجربة تستحق اهتمام محبي الدراما الجنائية التي تضع الإنسان والعائلة في مركز الصراع.
 
 **الخلاصة:** فيلم متماسك ومشحون، يقوده أداء قوي وإخراج يعرف كيف يصنع التوتر، مع بعض البطء ونقص التوازن في تطوير الشخصيات الثانوية. تقييم VibeCritic التحريري: **7.6/10**.
+
+## لقطات من الفيلم
+
+تُظهر اللقطات التالية الأجواء البصرية للفيلم وشخصياته، وهي صور ترويجية منشورة من جهات تغطي العمل:
+
+![مايلز تيلر في أحد شوارع نيويورك ضمن أجواء Paper Tiger](https://fr.web.img5.acsta.net/r_1280_720/img/00/da/00da79e8244566ae93bc065966e649ce.jpg)
+
+<small>لقطة من الفيلم — الصورة: AlloCiné. <https://www.allocine.fr/film/fichefilm-1000014559/photos/detail/?cmediafile=9002058064></small>
+
+![آدم درايفر في مشهد متوتر وسط الأشجار في Paper Tiger](https://media2.firstshowing.net/firstshowing/img18/papertigerposterneonbigmaintw1.jpg)
+
+<small>لقطة ترويجية من الفيلم — الصورة: FirstShowing. <https://www.firstshowing.net/2026/adam-driver-miles-teller-are-brothers-in-paper-tiger-official-trailer/></small>
 
 ## المصادر والمشاهدة
 
