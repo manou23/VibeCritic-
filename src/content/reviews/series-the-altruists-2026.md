@@ -12,7 +12,8 @@ publishedAt: 2026-11-22
 releaseDate: "2026-11-19"
 platforms:
   - "Netflix"
-mediaVerified: false
+backdrop: "https://dnm.nflximg.net/api/v6/s0XAg4q_jvYbSSbLvySyUsliNSg/AAAAQS3bDqmQRwcEKpUEfOqJDwyJeymGUU1o_PdeNf4bhRyMIl8cxFb7IP39FC19Ggi1rTGkUs3CYhYxa-ol0lq0nlHb7rEoGDwm8cVQR_RqQRjXWCOZYiRnULy02saNjeIMBbBKvJKYnACZne-lWSgfzGYS5lQ.jpg?r=154"
+mediaVerified: true
 score: 7.3
 storyScore: 7.4
 visualsScore: 7.4
@@ -137,6 +138,25 @@ The Guardian قدمت قراءة إيجابية حذرة، مشيدة بالأد
 لكن كثافة المعلومات قد تربك من يدخل القصة بلا خلفية، وبعض الشخصيات والخطوط تحتاج إلى مساحة أكبر. لذلك ينجح المسلسل أكثر كدراما نفسية عن السلطة والثقة منه كشرح مبسط لعالم العملات المشفرة.
 
 **الخلاصة:** مسلسل محدود جيد، بأداءات قوية وموضوع مهم، لكنه ليس خفيفاً ولا يخلو من الازدحام. تقييم VibeCritic التحريري: **7.3/10**.
+
+## صور من المسلسل
+
+لقطات ترويجية رسمية من **Netflix**، بعدسة Ricardo Hubbs، تعرض أجواء العمل والشخصيات الرئيسية:
+
+![سام وكارولين في لقاء داخل مقر حديث](https://dnm.nflximg.net/api/v6/s0XAg4q_jvYbSSbLvySyUsliNSg/AAAAQS3bDqmQRwcEKpUEfOqJDwyJeymGUU1o_PdeNf4bhRyMIl8cxFb7IP39FC19Ggi1rTGkUs3CYhYxa-ol0lq0nlHb7rEoGDwm8cVQR_RqQRjXWCOZYiRnULy02saNjeIMBbBKvJKYnACZne-lWSgfzGYS5lQ.jpg?r=154)
+
+![سام بانكمان-فرايد أمام شاشات التداول](https://dnm.nflximg.net/api/v6/a01MIaQTUgSJoLaS_OCn68Eg3hU/AAAAQUkErD5qOObw0omHQEXAw0ApXOFYVW5-6rO46IFv8y8mV8eHZkXB3WkkwLkk7UmwHzTnzWmhBv1eLfdZHRrgF670hjUXb1ItNyYAbedVtww7SBhIy6Y6ZyjZzU1CE9zF_fiGUHLw0osvU92Rd89x1_gG.jpg?r=dd1)
+
+![كارولين إليسون في مشهد داخلي](https://dnm.nflximg.net/api/v6/a01MIaQTUgSJoLaS_OCn68Eg3hU/AAAAQbz1b0bknLosC9ifpX1my4HtbDZ1EzNhuvVZxOW7XmvsG9R7zn29G0sXcvJqRrlhNceQ0dPmAl6t1BJNrKhOKRLyDfYm8ID4_Cpmod57pZjgfMv67XBPPsFoENkKzqUuH1mhRoTvt9oXiAetCBiyeRYR.jpg?r=c1d)
+
+<small>الصور: Netflix / Ricardo Hubbs. <https://www.netflix.com/tudum/articles/the-altruists-cast-release-date-news></small>
+
+## الإعلان الرسمي
+
+يمكن مشاهدة الإعلان الترويجي الرسمي للمسلسل عبر مادة **Netflix Tudum** المخصصة للإعلان، أو الانتقال إلى صفحة المسلسل على Netflix حيث يظهر ضمن قسم «Trailers»:
+
+- [مشاهدة الإعلان الرسمي – Netflix Tudum](https://www.netflix.com/tudum/articles/the-altruists-trailer-julia-garner-anthony-boyle)
+- [The Altruists – صفحة Netflix الرسمية](https://www.netflix.com/title/81681910)
 
 ## المصادر والمشاهدة
 
