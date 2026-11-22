@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-22T10:16:05.708Z",
+  "updatedAt": "2026-11-22T13:16:51.365Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -320,148 +320,22 @@
         "popularity": 70.6299,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 2,
       "createdAt": "2026-11-20T22:39:11.268Z",
-      "updatedAt": "2026-11-22T10:16:05.707Z",
+      "updatedAt": "2026-11-22T13:16:02.607Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "The Apothecary Diaries",
-        "type": "series",
-        "collectedAt": "2026-11-22T07:16:03.561Z",
-        "sourceId": "series:220542",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/220542",
-        "overview": "Maomao lived a peaceful life with her apothecary father. Until one day, she's sold as a lowly servant to the emperor's palace. But she wasn't meant for a compliant life among royalty. So when imperial heirs fall ill, she decides to step in and find a cure! This catches the eye of Jinshi, a handsome palace official who promotes her. Now, she's making a name for herself solving medical mysteries!",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/220542",
-            "extract": "Maomao lived a peaceful life with her apothecary father. Until one day, she's sold as a lowly servant to the emperor's palace. But she wasn't meant for a compliant life among royalty. So when imperial heirs fall ill, she decides to step in and find a cure! This catches the eye of Jinshi, a handsome palace official who promotes her. Now, she's making a name for herself solving medical mysteries!",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/The_Apothecary_Diaries",
-            "extract": "The Apothecary Diaries is a Japanese light novel series written by Hyūganatsu and illustrated by Touko Shino. Since 2011, it has been serialized on the user-generated novel publishing website Shōsetsuka ni Narō. In 2012, Shufunotomo acquired the work, releasing it as a single-volume novel that year and then as a light novel series in 2014.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — PlayStation",
-            "url": "https://www.youtube.com/watch?v=CoVZKADP8Ss",
-            "extract": "Verified public, embeddable promotional trailer: The Apothecary Diaries: The False Imperial Brother - Announcement Trailer | PS5 Games",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 716 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "CoVZKADP8Ss",
-        "youtubeVideoTitle": "The Apothecary Diaries: The False Imperial Brother - Announcement Trailer | PS5 Games",
-        "youtubeChannel": "PlayStation",
-        "releaseDate": "2023-10-22",
-        "genres": [
-          "Animation",
-          "Mystery",
-          "Drama"
-        ],
-        "platforms": [],
-        "cast": [
-          "Aoi Yuki",
-          "Takeo Otsuka",
-          "Katsuyuki Konishi"
-        ],
-        "crew": [],
-        "rating": 8.7,
-        "ratingScale": 10,
-        "votes": 716,
-        "poster": "https://image.tmdb.org/t/p/w780/sJZcy8QsOPuRPiCfoCWVB3r9Ohg.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/gffVOVZ2Y9cmVIZ26Gt9ByMGCYH.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "مذكرات الصيدلانية: فرضية غموض جذابة، لكن الأدلة المتاحة لا تحسم جودة التنفيذ",
-        "summary": "تملك «The Apothecary Diaries» أساساً قصصياً واضح الجاذبية: ماوماؤ، التي تعيش مع أبيها الصيدلاني، تُباع خادمةً في القصر الإمبراطوري، ثم تتدخل عندما يمرض ورثة الإمبراطور، فتقودها معرفتها إلى حل ألغاز طبية وتجذب انتباه جينشي. هذا المزج الموثق بين الغموض والدراما والرسوم المتحركة يمنح العمل هوية قابلة للتميّز، ويهيئ مساحة لاستكشاف المعرفة والسلطة داخل بيئة القصر. لكن ملف الأدلة لا يصف حلقات بعينها، ولا يقيّم الرسوم أو الموسيقى أو الإيقاع، ولا يوفر سوى بيانات تعريفية ومقطع إعلان رسمي لمشروع يحمل عنواناً منفصلاً. لذلك تأتي التوصية موجهة إلى محبي الفرضية، بينما تبقى الأحكام الفنية والدرجات الأقل يقيناً من المعتاد.",
-        "verdict": "تستند جاذبية «The Apothecary Diaries» الموثقة إلى فرضية متماسكة: معرفة ماوماؤ بالصيدلة تتيح لها التدخل في ألغاز طبية ضمن قصر إمبراطوري، فيما يضعها انتقالها من حياة هادئة إلى موقع الخادمة في تماس مع تفاوت السلطة. هذا أساس واعد لدراما غموض، لكنه ليس دليلاً كافياً وحده لإثبات جودة الحبكة الممتدة أو التمثيل أو الإخراج. وبما أن ملف الأدلة لا يتضمن وصفاً تفصيلياً للحلقات ولا معلومات موثقة عن الموسيقى والصورة والإيقاع، فالنتيجة التحريرية إيجابية بحذر، لا تزكية شاملة. أوصي به مبدئياً لمن تجذبه ألغاز الطب والدراما في بيئة القصر، مع التنبيه إلى أن الحكم على التنفيذ الفني هنا محدود بما تثبته المصادر، لا بتجربة مشاهدة مباشرة.",
-        "body": "## مقدمة وسياق العمل\nتُعرّف بيانات TMDB العمل بأنه مسلسل من الرسوم المتحركة والغموض والدراما، بتاريخ إصدار مسجل هو 22 أكتوبر 2023. وتضعه المعلومات المتاحة في قلب حكاية عن ماوماؤ، التي تعيش مع أبيها الصيدلاني قبل أن تُباع خادمةً في قصر الإمبراطور. هذه نقطة انطلاق محددة، لا مجرد وصف فضفاض لنوع العمل: المعرفة بالصيدلة تدخل في صلب التحول الذي ينقل البطلة من حياة هادئة إلى فضاء البلاط. لكن ملف الأدلة لا يتضمن مراجعات نقدية مستقلة مفصلة، أو ملخصات للحلقات، أو بيانات إنتاجية كافية. لذلك تتناول هذه المراجعة ما يمكن تبريره من الفرضية والمواد الموثقة، وتفصل بين ما تقوله المصادر وما يمكن استنتاجه منها، من دون ادعاء مشاهدة مباشرة.\n\n## الفكرة والقصة أو التجربة\nبحسب ملخص TMDB، يمرض ورثة الإمبراطور، فتقرر ماوماؤ التدخل والبحث عن علاج. تلفت مبادرتها انتباه جينشي، وهو مسؤول في القصر يرفع مكانتها، ثم تبدأ في صنع اسم لنفسها بحل ألغاز طبية. في هذه السلسلة السببية تكمن أقوى عناصر الفكرة: المعرفة ليست خلفية تعريفية للشخصية، بل أداة تتيح لها الفعل داخل مجتمع لا تدخل إليه بإرادتها. ومن المعقول استنتاج أن الغموض الطبي يوفر للعمل محركاً للقصة، فيما يضيف القصر مجالاً للعلاقات والتراتبية؛ غير أن ذلك استنتاج من الملخص، لا وصف موثق لطريقة تنفيذ كل لغز. لا يحدد الملف طبيعة الحالات أو عددها أو مدى تعقيدها، ولذلك لا يصح الحكم على ابتكار الحبكات التفصيلية أو دقة الحلول العلمية.\n\n## السرد والشخصيات أو تصميم اللعب\nلا ينطبق تحليل تصميم اللعب على هذا العمل، لأن المصادر تصنفه مسلسلاً لا لعبة. أما السرد والشخصيات، فالمتاح يتيح قراءة تأسيسية محدودة: ماوماؤ صاحبة معرفة عملية، لكنها تبدأ في موقع خادمة منخفض المكانة؛ وجينشي مسؤول يملك القدرة على تغيير موقعها داخل القصر. هذا التباين يخلق توتراً محتملاً بين الكفاءة والمكانة الاجتماعية، كما يجعل الترقية نتيجة لحدث قصصي مذكور، لا صفة عامة ألصقها النقد بالشخصية. وتبدو ماوماؤ، وفق الملخص، فاعلة في قرارها التدخل، وهو ما يمنحها قدراً من المبادرة ضمن ظرف مفروض عليها. مع ذلك، لا توجد مادة كافية للحكم على تطورها عبر المسلسل، أو عمق الشخصيات المساندة، أو جودة الحوار، أو ما إذا كانت العلاقات تتجاوز وظائفها الأولية في الحكاية.\n\n## الإخراج والجوانب الفنية\nلا يقدم ملف الأدلة اسم مخرج أو فريق إنتاج، ولا وصفاً مستقلاً للبناء الإخراجي، أو معالجة المشاهد، أو أسلوب الانتقال بين الخطوط الدرامية. وجود تصنيف «رسوم متحركة» يحدد وسيط العمل، لكنه لا يكفي لإثبات تميز إخراجه أو مستوى تحريك ثابت. لذلك لا يمكن تحويل الانطباع عن جاذبية الفكرة إلى مديح فني غير مسند، ولا يصح افتراض أن حلقات حل الألغاز مصممة بإيقاع بعينه. والحكم الأكثر دقة هنا أن الإخراج غير قابل للتقييم بثقة من الوثائق المقدمة. كذلك لا ينبغي الخلط بين إعلان رسمي لمشروع آخر يحمل عنوان «The False Imperial Brother» وبين مواد المسلسل نفسه: الإعلان منشور على قناة PlayStation، وعنوانه يصفه بأنه إعلان عن لعبة على PS5، فلا يقدم دليلاً مباشراً على إخراج المسلسل.\n\n## الصورة والهوية البصرية\nيوحي تصنيف الرسوم المتحركة بأن الصورة عنصر أساسي في تقديم هذا العمل، لكن لا يصف أي مصدر في الملف تصميم الشخصيات أو الألوان أو الخلفيات أو حركة الرسوم. كما أن وجود ملصق وصورة خلفية ضمن بيانات TMDB يثبت توافر مواد تعريفية، لا جودتها الفنية ولا مدى تمثيلها لما يظهر في الحلقات. لذلك لا يمكنني أن أنسب إلى المسلسل طابعاً بصرياً محدداً أو أصف مشاهد لم ترد في الأدلة. ما يمكن قوله بحذر هو أن موقع الحكاية في القصر، وارتباطها بألغاز طبية، يتيحان نظرياً تبايناً بين فضاء البلاط والعمل المعرفي؛ لكن إمكان هذا التباين ليس برهاناً على نجاحه بصرياً. درجة هذا المحور منخفضة الثقة، وتعكس حدود الإثبات المتاح أكثر مما تثبت قصوراً في رسوم العمل.\n\n## الصوت والموسيقى والأداء\nيسجل TMDB أسماء Aoi Yuki وTakeo Otsuka وKatsuyuki Konishi ضمن طاقم التمثيل، لكن القائمة وحدها لا تحدد الأدوار في البيانات المقدمة ولا تسمح بتقييم الأداء أو الانسجام بين المؤدين. ولا يتضمن الملف معلومات موثقة عن الملحن، أو الأغاني، أو تصميم المؤثرات، أو المزج الصوتي. بناءً على ذلك، سيكون اختلاق وصف للموسيقى أو نسب أداء بعينه إلى أحد الأسماء تجاوزاً للأدلة. وجود طاقم مسمى مفيد بوصفه معلومة إنتاجية أولية، لا حجة نقدية على جودة الصوت. كما لا يوفر الإعلان الترويجي المذكور وصفاً صوتياً قابلاً للتحليل؛ الموجود هو عنوانه وقناته ورابطه فقط. لهذا لا يمكن الجزم بأن الصوت يعزز التوتر أو يضعفه، ولا ينبغي تفسير الدرجة الحذرة في هذا المحور باعتبارها رصداً لخلل مسموع.\n\n## الإيقاع والبناء وتنوع المحتوى\nتسمح عبارة «ألغاز طبية» الواردة في ملخص القصة بتوقع وجود أكثر من مسألة، لكنها لا تثبت عددها أو كيفية توزيعها على الحلقات. ولا يذكر الملف طول الحلقات، أو عددها، أو بنية الموسم، أو مقدار الوقت المخصص للحياة الشخصية مقارنةً بالتحقيقات. لذلك لا أساس للقول إن المسلسل سريع أو مترهل، أو إن حالات الغموض تتجدد بنجاح. يمكن مع ذلك ملاحظة أن الفكرة تجمع بين خط واضح لحل المشكلات الطبية وسياق درامي أوسع هو عمل البطلة داخل القصر، وهو تنوع ممكن أن يمنح السرد أكثر من باب للاهتمام إذا أحسن تنفيذه. يظل هذا حكماً على إمكان البناء لا على إنجازه الفعلي؛ ومن ثم تستند الدرجة هنا إلى تحفظ نقدي معلن، لا إلى ادعاء مشاهدة إيقاع الحلقات.\n\n## نقاط القوة\nأبرز نقاط القوة المثبتة تبدأ من وضوح العلاقة بين خبرة ماوماؤ الصيدلانية ومحرك القصة؛ فالملخص يجعل معرفتها سبباً مباشراً لتدخلها، لا تفصيلاً منفصلاً عن الأحداث. وثانياً، يضع انتقالها من حياة هادئة إلى منزلة خادمة القصر بطلةً ذات وضع اجتماعي ملموس، ما يخلق أساساً لصراع بين المعرفة والسلطة. وثالثاً، يمنحها حل الألغاز الطبية نشاطاً سردياً قابلاً للتجدد، على الأقل على مستوى الفرضية. ورابعاً، يربط تدخلها بنتيجة محددة، هي انتباه جينشي ورفع مكانتها، بدلاً من ترك أثر مبادرتها بلا تبعات في الوصف المتاح. هذه نقاط قوة في تصميم الفكرة كما تعرضها المصادر، ولا تعني أن كل حلقة تحققها بالدرجة نفسها.\n\n## نقاط الضعف\nأهم قيد نقدي ليس عيباً مثبتاً في المسلسل، بل نقص جوهري في الملف: لا توجد أوصاف للحلقات أو مصادر مستقلة تحلل التنفيذ، ولذلك يصعب إصدار حكم كامل على الحبكة والشخصيات. كذلك تفتقر الأدلة إلى أي مادة تتيح تقييم الصورة والموسيقى والأداء والإيقاع، وهي محاور لا يمكن استنتاج جودتها من النوع أو أسماء الطاقم. والضعف الثالث في قابلية التحقق أن المقطع الرسمي الوحيد المرفق خاص بإعلان لعبة PS5 عنوانها «The False Imperial Brother»، فلا يصح اعتباره عينة من المسلسل أو دليلاً على مستواه الفني. هذه حدود حقيقية للمراجعة وللدرجات، وليست ادعاءً بأن العمل نفسه يعاني من مشكلات تقنية أو فنية. التمييز مهم كي لا تتحول فجوة المصادر إلى انتقاد مختلق.\n\n## لمن يناسب هذا العمل؟\nتبدو الفرضية مناسبة لمن يبحث عن دراما غموض تتصل بالمعرفة الطبية، ولمن ينجذب إلى بطلة تُعرّفها مهارتها ومبادرتها أكثر مما يعرّفها موقعها الأول في القصر. وقد يستهوي العمل أيضاً من يفضل حكايات تضع حل المشكلات داخل بنية اجتماعية واضحة، إذ إن الملخص يربط مرض الورثة بمكانة البطلة وعلاقتها بمسؤول القصر. هذه توصية مبنية على وصف القصة والأنواع المسجلة، وليست ضماناً بأن كل تلك العناصر نُفذت بإتقان. أما من يختار أعماله أساساً بسبب ابتكار بصري موثق، أو موسيقى بارزة، أو إيقاع سريع، فلن يجد في الملف المتاح معلومات كافية لتحديد مدى ملاءمة المسلسل له. من الأفضل أن يراجع مواد موثوقة إضافية قبل اتخاذ قرار يعتمد على تلك الجوانب تحديداً.\n\n## الحكم النهائي\n«The Apothecary Diaries» يملك أساساً قصصياً واعداً ومحدداً: صيدلانية شابة تُدفع إلى حياة القصر، ثم تحول خبرتها إلى وسيلة للتدخل في أزمة طبية وحل ألغاز تجذب اهتمام مسؤول نافذ. هذا يكفي لتبرير توصية حذرة لمحبي هذا المزيج من الغموض والدراما والرسوم المتحركة، لكنه لا يكفي وحده لإعلان تميز المسلسل في التنفيذ. وبما أن الأدلة لا توثق الحلقات أو الصورة أو الصوت أو الإيقاع، فإن درجات هذه الجوانب تحفظية ومنخفضة الثقة؛ وهي لا تدعي رصد قصور لم تثبته المصادر. الحكم النهائي إيجابي تجاه الفكرة، ومتحفظ تجاه الجودة الكلية التي لا تسمح المواد المقدمة بتقييمها تقييم مشاهدة مباشر.",
-        "scores": {
-          "story": 7.6,
-          "visuals": 5.8,
-          "sound": 5.5,
-          "pacing": 6
-        },
-        "pros": [
-          "ربط واضح بين معرفة ماوماؤ بالصيدلة ومحرك القصة، وفق ملخص TMDB.",
-          "وضع البطلة كخادمة في القصر يمنح الفرضية توتراً اجتماعياً ملموساً.",
-          "ألغاز طبية توفر أساساً قابلاً للتجدد للحكاية، بحسب الوصف المتاح.",
-          "تدخل ماوماؤ يقود إلى أثر قصصي محدد: لفت انتباه جينشي ورفع مكانتها."
-        ],
-        "cons": [
-          "الأدلة لا تتضمن تلخيصاً للحلقات أو تحليلاً مستقلاً كافياً للحكم على تنفيذ الحبكة.",
-          "لا تتوافر معلومات موثقة تسمح بتقييم الرسوم أو الموسيقى أو الأداء أو الإيقاع بثقة.",
-          "الإعلان الرسمي المرفق يخص لعبة PS5 بعنوان «The False Imperial Brother»، وليس دليلاً فنياً على المسلسل."
-        ],
-        "title": "The Apothecary Diaries",
-        "type": "series",
-        "sourceId": "series:220542",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/220542",
-        "sourceRating": 8.7,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 716,
-        "sourceRatingCheckedAt": "2026-11-22T07:16:03.561Z",
-        "audienceScore": 8.7,
-        "releaseDate": "2023-10-22",
-        "poster": "https://image.tmdb.org/t/p/w780/sJZcy8QsOPuRPiCfoCWVB3r9Ohg.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/gffVOVZ2Y9cmVIZ26Gt9ByMGCYH.jpg",
-        "genres": [
-          "Animation",
-          "Mystery",
-          "Drama"
-        ],
-        "platforms": [],
-        "cast": [
-          "Aoi Yuki",
-          "Takeo Otsuka",
-          "Katsuyuki Konishi"
-        ],
-        "crew": [],
-        "tags": [
-          "Animation",
-          "Mystery",
-          "Drama"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/220542",
-            "extract": "Maomao lived a peaceful life with her apothecary father. Until one day, she's sold as a lowly servant to the emperor's palace. But she wasn't meant for a compliant life among royalty. So when imperial heirs fall ill, she decides to step in and find a cure! This catches the eye of Jinshi, a handsome palace official who promotes her. Now, she's making a name for herself solving medical mysteries!",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/The_Apothecary_Diaries",
-            "extract": "The Apothecary Diaries is a Japanese light novel series written by Hyūganatsu and illustrated by Touko Shino. Since 2011, it has been serialized on the user-generated novel publishing website Shōsetsuka ni Narō. In 2012, Shufunotomo acquired the work, releasing it as a single-volume novel that year and then as a light novel series in 2014.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — PlayStation",
-            "url": "https://www.youtube.com/watch?v=CoVZKADP8Ss",
-            "extract": "Verified public, embeddable promotional trailer: The Apothecary Diaries: The False Imperial Brother - Announcement Trailer | PS5 Games",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "CoVZKADP8Ss",
-        "youtubeVideoTitle": "The Apothecary Diaries: The False Imperial Brother - Announcement Trailer | PS5 Games",
-        "reviewMode": "review",
-        "score": 6.3
-      },
+      "article": null,
       "lastError": "Article is too short: 372 words",
       "resumeStatus": null,
       "provider": "openai",
       "tokens": 5642,
       "articlePath": "src/content/reviews/series-the-apothecary-diaries-220542.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-the-apothecary-diaries-220542/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-the-apothecary-diaries-220542/",
+      "publishedAt": "2026-11-22T13:16:02.607Z"
     },
     "series:293610": {
       "key": "series:293610",
@@ -1014,163 +888,22 @@
         "popularity": 69.3939,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 1,
       "createdAt": "2026-11-22T00:39:44.627Z",
-      "updatedAt": "2026-11-22T09:28:10.610Z",
+      "updatedAt": "2026-11-22T13:16:02.362Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "Clayface",
-        "type": "movie",
-        "collectedAt": "2026-11-22T09:27:07.306Z",
-        "sourceId": "movie:1400940",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/movie/1400940",
-        "overview": "Matt Hagen's meteoric rise from Gotham street kid to Hollywood leading man is tragically cut short when a local crime boss's actions leave him horribly disfigured. Abandoned by his team and with nothing left, Matt seeks out a cutting edge treatment that miraculously returns him to his former self… but also unexpectedly affects his grip on reality, spiraling him down a destructive path of all-consuming revenge.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/movie/1400940",
-            "extract": "Matt Hagen's meteoric rise from Gotham street kid to Hollywood leading man is tragically cut short when a local crime boss's actions leave him horribly disfigured. Abandoned by his team and with nothing left, Matt seeks out a cutting edge treatment that miraculously returns him to his former self… but also unexpectedly affects his grip on reality, spiraling him down a destructive path of all-consuming revenge.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Clayface",
-            "extract": "Clayface is an alias used by several characters appearing in American comic books published by DC Comics. Most incarnations of the character possess clay-like bodies and shapeshifting abilities, and almost all of them are adversaries of the superhero Batman. In 2009, Clayface was ranked as IGN's 73rd-greatest comic book villain of all time.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Warner Bros. Indonesia",
-            "url": "https://www.youtube.com/watch?v=0kGNSfnlSbY",
-            "extract": "Verified public, embeddable promotional trailer: Clayface | Official Trailer",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 467 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "0kGNSfnlSbY",
-        "youtubeVideoTitle": "Clayface | Official Trailer",
-        "youtubeChannel": "Warner Bros. Indonesia",
-        "releaseDate": "2026-10-19",
-        "genres": [
-          "Horror",
-          "Thriller",
-          "Science Fiction"
-        ],
-        "platforms": [],
-        "cast": [
-          "Tom Rhys Harries",
-          "Naomi Ackie",
-          "Eddie Marsan",
-          "Max Minghella",
-          "David Dencik",
-          "Francesca Corney",
-          "Ruby Sear",
-          "Wil Coban"
-        ],
-        "crew": [
-          "James Watkins"
-        ],
-        "rating": 7.398,
-        "ratingScale": 10,
-        "votes": 467,
-        "poster": "https://image.tmdb.org/t/p/w780/9l1NuFjel2j89hiuiJbsxfblqjy.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/f1TVhqJJdxMvUsUDuKHS0ekgYkk.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "Clayface: فرضية واعدة، لكن الأدلة المتاحة لا تكفي لإثبات نجاحها على الشاشة",
-        "summary": "تقدّم البيانات الموثقة عن Clayface حكاية منشأ ذات عناصر واضحة: صعود مات هاغن من شوارع غوثام إلى النجومية، تشوّه يقطع مسيرته، علاج يعيده إلى مظهره السابق، ثم اضطراب في إدراكه يقوده إلى الانتقام. وتضعه البيانات ضمن الرعب والإثارة والخيال العلمي، مع جيمس واتكنز ضمن فريق العمل، فيما يثبت الإعلان الرسمي وجود مادة ترويجية من دون أن يوفّر الملف وصفاً لمحتواها. هذه العناصر تكفي لمناقشة الفكرة والسياق، لكنها لا تثبت جودة تنفيذ القصة أو الصورة أو الصوت أو الإيقاع. لذلك تظل هذه مراجعة تحريرية نهائية أمينة لحدود السجل المتاح، لا شهادة مشاهدة أو ادعاءً بأن جوانب الفيلم قد اختُبرت.",
-        "verdict": "الحكم النهائي الممكن من هذا الملف هو أن Clayface يملك أساساً قصصياً قابلاً للاهتمام، لا أن الفيلم نجح فعلاً في تحويله إلى تجربة رعب متماسكة أو مؤثرة. الفكرة الموثقة تجمع التحول الجسدي والاغتراب عن الهوية والانتقام، ويمنحها سياق غوثام وهوليوود إطاراً مميزاً؛ لكن لا توجد هنا مصادر نقدية مستقلة كافية، ولا وصف موثوق للمشاهد أو الأداء أو البناء أو التنفيذ الفني يسمح بإسناد حكم إيجابي أو سلبي حاسم إلى الفيلم نفسه. لا أوصي باتخاذ قرار المشاهدة اعتماداً على هذه المادة وحدها. الدرجة الإجمالية لا تُستنتج هنا من متوسط آلي للدرجات: الأرقام المحايدة في بعض المحاور تعبّر عن نقص الأدلة، لا عن تقييم فعلي لجودتها.",
-        "body": "## مقدمة وسياق العمل\nوفق بيانات TMDB الواردة في الملف، صدر Clayface في 19 أكتوبر 2026، وصُنّف ضمن الرعب والإثارة والخيال العلمي. وتذكر البيانات جيمس واتكنز ضمن فريق العمل، وتورد أسماء الممثلين توم ريس هاريس ونعومي آكي وإيدي مارسان وماكس مينغيلا وديفيد دينسيك وغيرهم. كما يوثّق الملف إعلاناً رسمياً بعنوان Clayface | Official Trailer على قناة Warner Bros. Indonesia. هذه حقائق تعريفية مفيدة، لكنها لا تكفي وحدها لإثبات طبيعة الفيلم كما نُفّذ. لا يتضمن الملف مراجعات نقدية مستقلة، أو مقابلات، أو وصفاً تفصيلياً للإعلان، أو سجلاً لمشاهدة العمل. لذلك تقوم هذه القراءة على المعلومات المثبتة حصراً، وتفصل بين إمكانات الفكرة وبين الحكم على جودتها الفعلية.\n\n## الفكرة والقصة أو التجربة\nيصف الملخص مات هاغن بوصفه شاباً يصعد سريعاً من شوارع غوثام إلى موقع البطولة في هوليوود، قبل أن يقطع فعل زعيم محلي للجريمة هذا المسار بتشويه مظهره. وبعد أن يهجره فريقه، يلجأ إلى علاج متقدم يعيد إليه هيئته السابقة، لكن أثر العلاج يمتد، بحسب الملخص، إلى قبضته على الواقع، ويدفعه إلى طريق انتقام مدمر. هذا الخط يتيح قراءة موضوعات الشهرة والهشاشة الجسدية والهوية، كما يضع التحول الخارق في صلب مأساة شخصية. غير أن الملخص لا يشرح طبيعة العلاج أو تفاصيل الانتقام، ولا يبيّن كيف تتطور الأحداث. لذا يمكن تقييم جاذبية نقطة الانطلاق، لا اكتمال الحبكة أو عمق معالجتها.\n\n## السرد والشخصيات أو تصميم اللعب\nالفيلم، بحسب تصنيفه، عمل سردي لا لعبة؛ ومن ثم ينصب السؤال هنا على الشخصيات والبناء الدرامي، لا على آليات لعب غير موجودة في الأدلة. ما نعرفه عن هاغن هو انتقاله من صعود مهني استثنائي إلى التشوّه والتخلي ثم العلاج والانتقام. هذا التسلسل يرسم قوساً مأساوياً مفهوماً، ويجعل تبدل علاقته بمظهره وبإدراكه محوراً محتملاً للشخصية. لكنه لا يكشف إن كان الفيلم يمنحه دوافع مركبة، أو يجعل الانتقام نتيجة مقنعة، أو يطوّر الشخصيات المحيطة به beyond وظائفها في الملخص. أسماء الممثلين وحدها لا تثبت جودة الأداء ولا طبيعة الأدوار. لذلك لا يصح وصف الشخصيات بأنها ناجحة أو سطحية، ولا إصدار حكم على الحوار أو التمثيل استناداً إلى هذه البيانات.\n\n## الإخراج والجوانب الفنية\nوجود جيمس واتكنز ضمن بيانات فريق العمل حقيقة موثقة، لكنه لا يغني عن أدلة تتعلق بخيارات الإخراج في هذا الفيلم تحديداً. لا يصف الملف ترتيب المشاهد أو أسلوب إدارة الممثلين، ولا يقدّم معلومات عن كتابة السيناريو أو المونتاج أو المؤثرات. لذلك لا يمكن نسبة توتر ناجح أو ارتباك سردي إلى المخرج، ولا افتراض أن موضوع التحول الجسدي عولج بصرياً بطريقة بعينها. ما يمكن قوله إن الفرضية تضع على الإخراج عبئاً واضحاً: الموازنة بين مأساة شخص يفقد صورته عن نفسه وبين مسار رعب وانتقام. أما نجاح الفيلم في حمل هذا العبء، فيحتاج إلى مشاهدة موثقة أو مصادر نقدية لا يوفرها الملف. سيكون أي تفصيل أبعد من ذلك اختلاقاً.\n\n## الصورة والهوية البصرية\nيرتبط Clayface، في المعلومات الموسوعية المرفقة، بشخصيات من قصص DC ذات أجساد شبيهة بالطين وقدرة على تغيير الشكل؛ لكن المصدر نفسه يوضح أن الاسم استخدم لشخصيات متعددة. هذه خلفية عامة عن الشخصية في القصص المصورة، وليست وصفاً لتصميم هذا الفيلم أو دليلاً على اختياراته البصرية. يتضمن الملف رابطاً لملصق وخلفية، لكنه لا يصف عناصرهما، ولا يقدّم لقطات موثقة أو تحليلاً للتصوير والألوان والمؤثرات. وجود إعلان رسمي مثبت يبرهن على توفر مادة ترويجية، لا على مستوى الصورة أو كيفية تجسيد التحولات. ومن ثم لا يمكن الحكم على الهوية البصرية أو تميّزها، إيجاباً أو سلباً. تقييم هذا المحور بثقة يتطلب مشاهدة المادة نفسها ومصادر تتناول التنفيذ، لا استنتاجه من اسم الشخصية أو نوع الفيلم.\n\n## الصوت والموسيقى والأداء\nلا يقدم ملف الأدلة معلومات عن الموسيقى التصويرية أو تصميم الصوت أو الأغاني أو التسجيل، ولا يورد اقتباسات من أداء الممثلين أو تقييماً مستقلاً له. لذلك لا أساس للقول إن الموسيقى تصنع التوتر، أو إن المؤثرات الصوتية تعزز الرعب، أو إن صوتاً بعينه يعبّر عن تغير هاغن. كذلك لا يكفي سرد أسماء طاقم التمثيل لإثبات الانسجام أو الإقناع؛ إنه يحدد المشاركين فقط. يمكن الإشارة إلى أن مساراً يتضمن التشوّه واضطراب إدراك الواقع يتيح نظرياً مجالاً مهماً للصوت والأداء، لكن هذه ملاحظة عن متطلبات الفكرة وليست وصفاً لما أنجزه الفيلم. وبما أن الطلب يقتضي نقداً يستند إلى أدلة، فإن أي مديح أو انتقاد لهذه العناصر سيكون غير موثق هنا.\n\n## الإيقاع والبناء وتنوع المحتوى\nيلخص الملف انتقالات رئيسية في مسار هاغن، لكنه لا يحدد مدة الفيلم أو توزيع فصوله أو سرعة الانتقال بين الصعود المهني والتشوّه والعلاج والانتقام. لذلك لا تتوفر قرائن كافية لوصف الإيقاع بأنه متماسك أو مترهل، ولا للحكم على ما إذا كانت الحبكة تمنح كل تحول مساحة درامية مناسبة. كما أن تصنيفات الرعب والإثارة والخيال العلمي لا تثبت وحدها وجود توازن ناجح بين هذه الأنواع أو تنوع فعلي في المشاهد. لا توجد معلومات موثقة عن مشكلات تقنية أو عن حذف محتوى أو تكرار بنائي، ومن الخطأ اختلاقها. تقييم الإيقاع يتطلب الاطلاع على العمل كاملاً أو على تحليل مستقل موثوق؛ أما الملخص وحده فيحدد الاتجاه العام ولا يكشف طريقة بنائه.\n\n## نقاط القوة\nأبرز ما تدعمه الأدلة هو وضوح الفرضية الأساسية: مسيرة صعود تتعرض للانهيار بسبب تشوّه جسدي، ثم محاولة استعادة المظهر تقترن بفقدان السيطرة على الواقع. ويمنح ربط هاغن بغوثام وهوليوود إطاراً يجمع عالم الشخصية بمسألة الشهرة، وفق الملخص نفسه. كذلك يقدم تصنيف الرعب والإثارة والخيال العلمي سياقاً نوعياً معلناً، بينما يثبت إدراج واتكنز وأسماء الممثلين وجود فريق عمل محدد، لا مستوى أدائه. ويمكن اعتبار اجتماع التحول الجسدي والانتقام نقطة انطلاق درامية ذات إمكانات واضحة. هذه نقاط قوة في المادة القصصية والتعريفية المتاحة، لا شهادات على أن الفيلم يحققها على الشاشة. هذا التمييز ضروري كي لا تتحول جاذبية الفكرة إلى حكم غير مبرر على النتيجة.\n\n## نقاط الضعف\nالقصور الأوضح في هذه المراجعة هو نقص الأدلة، لا ثبوت عيب في الفيلم: لا توجد مراجعات مستقلة كافية أو تفاصيل عن المشاهدة تسمح بتقييم التنفيذ. كما أن ملخص القصة يختزل ما بعد العلاج في اضطراب الواقع والانتقام، فلا يكشف كيف تُبنى الدوافع أو كيف تتطور الشخصيات المساندة. ولا يقدم الملف مادة وصفية عن الصورة والصوت والإيقاع، ما يجعل هذه المحاور غير قابلة للحسم. كذلك لا يشرح اختلافات الفيلم عن خلفية الشخصية في القصص المصورة، فلا يمكن تقييم اقتباسه أو استقلاله عنها. ينبغي ألا تُقرأ هذه القيود باعتبارها إثباتاً لضعف الفيلم؛ لكنها تعني أن ادعاء مراجعة مكتملة لأدائه الفني سيكون مضللاً إذا قُدّم بلا تحفظ.\n\n## لمن يناسب هذا العمل؟\nوفق النوع والملخص فقط، قد يثير العمل اهتمام من ينجذبون إلى حكايات التحول الجسدي، وأبطال المأساة الذين يقودهم الانكسار إلى الانتقام، وإلى شخصيات DC ذات الصلة بغوثام. وقد تلفت فرضية الشهرة التي تنقلب إلى فقدان للهوية انتباه محبي الرعب والخيال العلمي، لكن الملخص لا يثبت مقدار حضور كل عنصر أو شدته. لا يمكن بناء توصية أدق لمحبي أداء ممثل بعينه أو أسلوب إخراجي محدد؛ فالمعلومات المتاحة لا تسند ذلك. لمن يريد معرفة مستوى الفيلم قبل المشاهدة، لا تكفي هذه المادة لاتخاذ قرار واثق. الأنسب أن تُعامل الفرضية كسبب للبحث عن مراجعات مستقلة أو مشاهدة الإعلان الرسمي، لا كضمان لجودة التجربة أو ملاءمتها لذوق محدد.\n\n## الحكم النهائي\nClayface يمتلك في سجله المتاح مقدمة قصصية محددة تجمع الصعود المهني والتشوّه والعلاج والانتقام، وتتيح موضوعات ذات قابلية درامية. لكن هذا لا يثبت أن الفيلم أحسن بناءها أو أنجز جوانبه الفنية بنجاح. لا أستطيع، اعتماداً على الملف وحده، تقديم حكم نهائي مسؤول على جودة الصورة أو الصوت أو الإيقاع أو الأداء، ولا تحويل بيانات تعريفية وإعلان موثق إلى بديل عن مصادر نقدية مستقلة أو مشاهدة. لذلك الحكم التحريري هنا متحفظ: الفكرة تستحق الاهتمام، أما توصية الفيلم نفسه فغير محسومة. الدرجات المحايدة في المحاور التي لا تدعمها الأدلة لا تعني أن تلك الجوانب متوسطة فعلياً؛ إنها تعكس تعذر قياسها من المادة المرفقة، وينبغي ألا تُفهم كبديل عن تقييم مشاهدة مكتمل.",
-        "scores": {
-          "story": 6,
-          "visuals": 5,
-          "sound": 5,
-          "pacing": 5
-        },
-        "pros": [
-          "الملخص يحدد مساراً درامياً واضحاً: صعود هاغن، تشوّهه، علاجه، ثم دخوله طريق الانتقام.",
-          "تجمع الفرضية الموثقة بين التحول الجسدي واضطراب الهوية وفقدان السيطرة على الواقع.",
-          "يربط وصف القصة بين خلفية غوثام ومسيرة هاغن في هوليوود، بما يمنح نقطة الانطلاق سياقاً محدداً.",
-          "يحدد الملف نوع العمل بوصفه رعباً وإثارة وخيالاً علمياً، ويوثق وجود إعلان رسمي وطاقم تمثيل معلوم."
-        ],
-        "cons": [
-          "لا يتضمن الملف مراجعات نقدية مستقلة كافية أو وصفاً موثقاً للتنفيذ، لذلك لا يمكن حسم جودة الفيلم.",
-          "لا تتوفر أدلة كافية لتقييم الصورة أو الصوت أو الموسيقى أو الأداء أو الإيقاع.",
-          "الملخص لا يشرح تطور الشخصيات المساندة أو بناء دوافع الانتقام بعد العلاج.",
-          "الدرجات المحايدة لبعض المحاور تعكس نقص المادة المتاحة، ولا تصلح بوصفها قياساً فعلياً لجودتها."
-        ],
-        "title": "Clayface",
-        "type": "movie",
-        "sourceId": "movie:1400940",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/movie/1400940",
-        "sourceRating": 7.398,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 467,
-        "sourceRatingCheckedAt": "2026-11-22T09:27:07.306Z",
-        "audienceScore": 7.4,
-        "releaseDate": "2026-10-19",
-        "poster": "https://image.tmdb.org/t/p/w780/9l1NuFjel2j89hiuiJbsxfblqjy.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/f1TVhqJJdxMvUsUDuKHS0ekgYkk.jpg",
-        "genres": [
-          "Horror",
-          "Thriller",
-          "Science Fiction"
-        ],
-        "platforms": [],
-        "cast": [
-          "Tom Rhys Harries",
-          "Naomi Ackie",
-          "Eddie Marsan",
-          "Max Minghella",
-          "David Dencik",
-          "Francesca Corney",
-          "Ruby Sear",
-          "Wil Coban"
-        ],
-        "crew": [
-          "James Watkins"
-        ],
-        "tags": [
-          "Horror",
-          "Thriller",
-          "Science Fiction"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/movie/1400940",
-            "extract": "Matt Hagen's meteoric rise from Gotham street kid to Hollywood leading man is tragically cut short when a local crime boss's actions leave him horribly disfigured. Abandoned by his team and with nothing left, Matt seeks out a cutting edge treatment that miraculously returns him to his former self… but also unexpectedly affects his grip on reality, spiraling him down a destructive path of all-consuming revenge.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Clayface",
-            "extract": "Clayface is an alias used by several characters appearing in American comic books published by DC Comics. Most incarnations of the character possess clay-like bodies and shapeshifting abilities, and almost all of them are adversaries of the superhero Batman. In 2009, Clayface was ranked as IGN's 73rd-greatest comic book villain of all time.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Warner Bros. Indonesia",
-            "url": "https://www.youtube.com/watch?v=0kGNSfnlSbY",
-            "extract": "Verified public, embeddable promotional trailer: Clayface | Official Trailer",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "0kGNSfnlSbY",
-        "youtubeVideoTitle": "Clayface | Official Trailer",
-        "reviewMode": "review",
-        "score": 5.3
-      },
+      "article": null,
       "lastError": "Article is too short: 465 words",
       "resumeStatus": null,
       "provider": "openai",
       "tokens": 5899,
       "articlePath": "src/content/reviews/movie-clayface-1400940.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-clayface-1400940/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-clayface-1400940/",
+      "publishedAt": "2026-11-22T13:16:02.362Z"
     },
     "movie:1131943": {
       "key": "movie:1131943",
@@ -1359,6 +1092,162 @@
       "articlePath": "src/content/reviews/movie-dune-part-three-1170608.md",
       "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-dune-part-three-1170608/",
       "publishedAt": "2026-11-22T01:21:33.826Z"
+    },
+    "series:2190": {
+      "key": "series:2190",
+      "type": "series",
+      "id": "2190",
+      "title": "South Park",
+      "item": {
+        "type": "series",
+        "id": "2190",
+        "name": "South Park",
+        "date": "1997-08-13",
+        "preview": false,
+        "popularity": 149.5421,
+        "source": "TMDB"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-22T13:16:03.652Z",
+      "updatedAt": "2026-11-22T13:16:51.365Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "South Park",
+        "type": "series",
+        "collectedAt": "2026-11-22T13:16:04.201Z",
+        "sourceId": "series:2190",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/2190",
+        "overview": "Follow the misadventures of four irreverent grade-schoolers in the quiet, dysfunctional town of South Park, Colorado.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/2190",
+            "extract": "Follow the misadventures of four irreverent grade-schoolers in the quiet, dysfunctional town of South Park, Colorado.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/South_Park",
+            "extract": "South Park is an American animated sitcom created by Trey Parker and Matt Stone for Comedy Central. The series revolves around four boys—Stan Marsh, Kyle Broflovski, Eric Cartman, and Kenny McCormick—and their adventures in and around the titular Colorado town. South Park also features many recurring characters. The series became infamous for its profanity and dark, surreal humor that satirizes a large range of subject matter.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Paramount+ Global",
+            "url": "https://www.youtube.com/watch?v=go-vSlnY13I",
+            "extract": "Verified public, embeddable promotional trailer: South Park: The End Of Obesity | Official Trailer | Paramount+ UK & Ireland",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 5292 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "go-vSlnY13I",
+        "youtubeVideoTitle": "South Park: The End Of Obesity | Official Trailer | Paramount+ UK & Ireland",
+        "youtubeChannel": "Paramount+ Global",
+        "releaseDate": "1997-08-13",
+        "genres": [
+          "Comedy",
+          "Animation"
+        ],
+        "platforms": [],
+        "cast": [
+          "Trey Parker",
+          "Matt Stone",
+          "Mona Marshall",
+          "Jennifer Howell"
+        ],
+        "crew": [],
+        "rating": 8.333,
+        "ratingScale": 10,
+        "votes": 5292,
+        "poster": "https://image.tmdb.org/t/p/w780/k7n2EVge7G77eMr3brztRGG1fFU.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/3UviYOlhn8EgXMBuiT6MnUuo1w9.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "South Park: سخرية ذات هوية راسخة، وحكم يحدّه نقص الأدلة التفصيلية",
+        "summary": "تُظهر المعلومات الموثقة South Park بوصفه مسلسلاً كوميدياً أمريكياً متحركاً يدور حول أربعة تلاميذ في بلدة كولورادو، ويستمد هويته من الفكاهة الفظة والسوداوية والسريالية ومن السخرية الواسعة من موضوعات متعددة. هذه عناصر تمنح العمل أساساً واضحاً ومميزاً، لكنها لا تكفي وحدها لإثبات جودة كل حلقة أو تطور الشخصيات أو مستوى التنفيذ الفني عبر مواسمه. لذلك تأتي هذه المراجعة حكماً تحريرياً نهائياً متحفظاً على السلسلة كما تصفها الأدلة المتاحة، لا ادعاءً بمشاهدة شخصية ولا تقييماً تفصيلياً لحلقة بعينها. والنتيجة: عمل ذو هوية ساخرة قوية وجاذبية واضحة لمحبي الكوميديا المستفزة، مع حدود حقيقية في ما يمكن الجزم به عن عناصره الفنية والإيقاعية.",
+        "verdict": "South Park مشروع كوميدي ذو فكرة وهوية يسهل تمييزهما: مجموعة من الأطفال في بلدة أمريكية صغيرة تصبح مدخلاً إلى فكاهة فظة وسوداوية وسريالية، وإلى تناول ساخر لطيف واسع من الموضوعات. هذا الأساس يمنح السلسلة قوة مفهومية، ويجعلها مرشحة لأن تلائم جمهوراً يبحث عن كوميديا لا تتقيد بالذوق التقليدي. لكن الأدلة المتاحة لا تقدم تفاصيل كافية عن حلقات بعينها أو عن جودة التحريك والصوت والإيقاع، ولذلك لا يصح تحويل السمعة العامة أو تقييم الجمهور إلى برهان على تفوق كل عنصر. حكمي النهائي إيجابي بحذر: أوصي بها لمن يتقبل أسلوبها الهجومي، مع التنبيه إلى أن هذا التقييم يثبت ما تسمح به المصادر، ولا يتظاهر بتجربة مشاهدة مباشرة أو بمعرفة غير موثقة.",
+        "body": "## مقدمة وسياق العمل\nتُعرّف بيانات TMDB العمل بأنه مسلسل كوميدي متحرك بدأ عرضه في الثالث عشر من أغسطس عام 1997، فيما يصفه المصدر نفسه بأنه يتابع مغامرات أربعة تلاميذ في بلدة ساوث بارك الهادئة والمختلة وظيفياً في كولورادو. وتضيف المعلومات الموسوعية أن شخصياته المركزية هي ستان مارش، وكايل برولوفسكي، وإريك كارتمان، وكيني مكورميك، وأن المسلسل اشتهر بالألفاظ النابية والفكاهة السوداوية والسريالية وبالسخرية من نطاق واسع من الموضوعات. هذه هي الأرضية التي يمكن بناء مراجعة مسؤولة عليها. لكنها ليست سجلاً تفصيلياً للمواسم أو الحلقات، ولا مصدراً لمعاينة مباشرة. لذلك يتناول الحكم هوية السلسلة كما تثبتها المعلومات المتاحة، ولا يدّعي أن كل حلقة تطبق هذه الهوية بالمستوى نفسه. كما يثبت المقطع الترويجي الرسمي وجود مادة ترويجية بعنوان South Park: The End Of Obesity، لكنه لا يكفي وحده لوصف أحداث ذلك العمل أو تقييمه؛ موضوعنا هنا هو المسلسل عموماً.\n\n## الفكرة والقصة أو التجربة\nالفكرة الأساسية بسيطة في ظاهرها: أربعة أطفال يعيشون مغامراتهم في بلدة صغيرة، لكن اختيار عالم مدرسي ومحلي يتيح للسلسلة أن تجعل الحياة اليومية مدخلاً إلى موضوعات أوسع. وتصف المصادر العمل بأنه ساخر من طيف كبير من القضايا، من دون أن تسرد قائمة موثقة بحلقات أو موضوعات محددة يمكن تحليلها واحدة واحدة. من هنا تأتي قوة المفهوم لا من حبكة مفردة نعرف تفاصيلها، بل من قابلية الإطار لاستضافة مواقف كوميدية متباينة، مع الاحتفاظ بمجموعة شخصيات وبلدة متكررة تمنح السلسلة مركزاً ثابتاً. هذه مرونة واعدة، لكنها لا تضمن وحدها دقة كل معالجة أو نجاحها في تحويل موضوعها إلى مادة درامية. ولا تتوافر في ملف الأدلة تفاصيل كافية عن قصة حلقة The End Of Obesity، لذا لا ننسب إليها أحداثاً أو موقفاً بعينه. الأمانة تقتضي الفصل بين حقيقة أن عنواناً ترويجياً رسمياً موجود، وبين أي استنتاج عن محتواه.\n\n## السرد والشخصيات أو تصميم اللعب\nلأن العمل مسلسل سردي لا لعبة، فإن السؤال المناسب يتعلق بكيفية استخدام الشخصيات والإطار المتكرر، لا بتصميم اللعب. المعطيات تثبت وجود أربعة أبطال معروفين، وتثبت أن لهم مغامرات في البلدة، لكنها لا تشرح أقواسهم الشخصية أو مقدار التغيير الذي يطرأ عليهم، ولا تصف نماذج الحلقات أو كيفية توزيع الأدوار بين الشخصيات. لذلك يمكن اعتبار المجموعة نقطة انطلاق عملية للكوميديا: تعدد الشخصيات يسمح نظرياً بتباين ردود الفعل، فيما توفر البلدة مساحة لاستدعاء شخصيات متكررة. لكن هذا وصف لإمكانات البناء، لا شهادة على نجاح كل استخدام لها. لا يصح، مثلاً، الجزم بأن السلسلة تمنح أبطالها تطوراً متصاعداً أو أن علاقاتهم هي مصدر قوتها، لأن الأدلة لا تقدم أمثلة محددة. الحكم الأكثر توازناً أن هوية الشخصيات المركزية جزء ثابت من التعريف الموثق للعمل، بينما تبقى جودة الكتابة التفصيلية للشخصيات غير محسومة في ملفنا.\n\n## الإخراج والجوانب الفنية\nتتحدد الحدود هنا بوضوح: وصف المسلسل بأنه رسوم متحركة يثبت وسيطه، ولا يثبت وحده جودة الإخراج أو تنوع تقنيات التحريك أو دقة إدارة المشاهد. كما أن الملف لا يورد أسماء مخرجين أو معلومات إنتاجية مفصلة، ولا يقدم تحليلاً مستقلاً للحلقات. لذلك لا أنسب إلى العمل إنجازات تقنية محددة، ولا أختلق عيوباً مثل ضعف التحريك أو مشكلات التنفيذ. ما يمكن قوله نقدياً هو أن الإطار المتكرر والكوميديا الساخرة يضعان على الإخراج مهمة ضبط النبرة: أن يظل الانتقال بين المألوف والعبث مفهوماً، وأن يخدم التوقيت الكوميدي الفكرة. غير أن هذا معيار نقدي مناسب لنوع العمل، وليس ادعاءً بأن كل حلقة تحقق ذلك. وبالمثل، لا تكفي شهرة المسلسل أو استمراره الزمني لإثبات جودة إخراجية ثابتة؛ إنهما سياق، لا بديل عن مشاهدة وتحليل موثقين.\n\n## الصورة والهوية البصرية\nالدليل البصري المتاح هو تصنيف العمل كرسوم متحركة، إلى جانب ملصق وخلفية مدرجين في بيانات TMDB. لا يتيح ذلك وصفاً دقيقاً لحركة الشخصيات أو تصميم البيئات أو استخدام الألوان أو تطور الأسلوب عبر السنوات. ولهذا لا أخلط بين معرفة الوسيط وبين تقييم تنفيذه: وجود الرسوم المتحركة حقيقة، أما الحكم على جودتها الفنية فيحتاج إلى شواهد لا يوفرها الملف. في المقابل، يتصل الوصف الموثق للبلدة الصغيرة وتكرار الشخصيات بفكرة هوية مكانية وشخصية يسهل التعرف إليها؛ وهذا استنتاج من طبيعة الإطار المعلن، لا تفصيل بصري شاهدناه. النتيجة أن الهوية المفهومية للسلسلة أوضح مما يمكن إثباته عن هويتها التشكيلية. من غير المنصف منحها ثناءً على الابتكار البصري أو انتقادها على محدودية الحركة من دون مصادر مباشرة، ولهذا تعكس الدرجة تحفظاً في الحكم لا اتهاماً بضعف الصورة.\n\n## الصوت والموسيقى والأداء\nتسجل البيانات أسماء تري باركر ومات ستون ومونا مارشال وجنيفر هاول ضمن طاقم التمثيل. هذه معلومة مفيدة عن المشاركين، لكنها لا تكشف توزيع الأصوات على الشخصيات في كل مادة، ولا تقدم وصفاً للأداء أو للموسيقى أو للمؤثرات. لذلك لا أصف أداءً بعينه بأنه بارع أو متنوع، ولا أنسب إلى الموسيقى وظيفة درامية محددة. في مسلسل كوميدي متحرك، يمكن للصوت أن يكون عنصراً أساسياً في إظهار الفروق بين الشخصيات وفي ضبط إيقاع النكتة، لكن هذه ملاحظة عن متطلبات الوسيط وليست نتيجة مشاهدة. وجود أسماء موثقة يدعم القول إن للعمل طاقماً صوتياً معروفاً في بياناته، ولا يكفي وحده لإثبات جودة الأداء النهائي أو اتساقه. لهذا يأتي الحكم على هذا المحور متواضعاً: لا دليل سلبي محدد، ولا مادة تحليلية كافية لتبرير إشادة مرتفعة. إنه تقدير تحفظي صريح، لا تقرير عن تجربة سمعية مباشرة.\n\n## الإيقاع والبناء وتنوع المحتوى\nتمنح صيغة المسلسل وإطار البلدة والشخصيات المتكررة أساساً يمكن أن يستوعب مغامرات متعددة؛ كما أن وصف السخرية بأنها تتناول موضوعات كثيرة يوحي باتساع نطاق المحتوى على مستوى الفكرة. لكن كلمة «يوحي» مهمة هنا: لا يقدم الملف عينة من الحلقات أو بيانات عن أطوالها أو ترتيبها أو توازنها بين الكوميديا والسرد. لذا لا يمكن الجزم بأن الإيقاع سريع، أو أن المواسم متوازنة، أو أن تنوع الموضوعات يمنع التكرار. الحكم الممكن هو أن قابلية الإطار للتجدد ميزة بنيوية محتملة، تقابلها مخاطرة عامة في أي عمل طويل قائم على شخصيات وبيئة ثابتة، وهي أن تتفاوت المعالجة أو تعيد استخدام أدواتها. هذه مخاطرة تحليلية لا ادعاء بوقوعها في مواسم محددة. كما لا يمكن تقييم المقطع الترويجي بوصفه دليلاً على إيقاع المسلسل كله؛ وظيفته الترويجية لا تعوض غياب تحليل موثق للبناء.\n\n## نقاط القوة\nأوضح مكاسب العمل، وفق ما تثبته المصادر، هي امتلاكه مفهوماً يسهل شرحه، وشخصيات مركزية محددة، وبيئة متكررة تسمح بالعودة إلى مجتمع واحد، فضلاً عن هوية معلنة قائمة على الكوميديا الفظة والسوداوية والسريالية والسخرية الواسعة. هذه العناصر تمنحه تماسكاً تعريفياً، وتجعل توقع نوع التجربة أيسر للجمهور من عمل لا يملك نبرة أو موضوعاً واضحاً. وتدعم بيانات المصادر تمييزه بوصفه مسلسلاً كوميدياً متحركاً لا عملاً درامياً ملتبس النوع.\n\n## نقاط الضعف\nالتحفظ الأهم ليس إثبات عيب فني في المسلسل، بل أن ملف الأدلة لا يتيح التحقق من جودة عناصره التفصيلية. لا توجد أوصاف لحلقات تكفي للحكم على الكتابة، ولا أمثلة تحسم مدى نجاح السخرية في التعامل مع موضوعاتها، ولا مواد تحليلية للصورة أو الأداء أو الإيقاع. هذا النقص يحد من قوة أي مراجعة نهائية شاملة، ويمنع تعميم الإشادة على كامل السلسلة. أما من جهة التلقي، فالفكاهة الفظة والسوداوية قد تكون حاجزاً حقيقياً لمن لا يفضل هذا الأسلوب؛ وهذه نتيجة مباشرة لطبيعة النبرة الموثقة، لا عيب خفي مختلق. ويتطلب تقييم مواسم بعينها مصادر أكثر تفصيلاً.\n\n## لمن يناسب هذا العمل؟\nيناسب المسلسل، بحسب هويته الموثقة، المشاهد الذي يفضّل الكوميديا الصريحة والمستفزة، ولا يمانع الفكاهة السوداوية والسريالية أو السخرية من موضوعات متنوعة. كما قد يجذب من يفضل عالماً متكرراً وشخصيات مركزية تعود ضمن إطار واحد بدلاً من حكاية منفصلة تماماً في كل مرة؛ وهذه ملاءمة محتملة مستندة إلى وصف السلسلة، لا ضمان لطبيعة كل حلقة. في المقابل، لا أوصي به بوصفه خياراً آمناً لمن يبحث عن كوميديا لطيفة أو نبرة مهذبة باستمرار، لأن المصادر تصف شهرته صراحة بالألفاظ النابية والأسلوب الحاد. ومن الأفضل لمن يهتم بموسم أو حلقة محددة أن يراجع معلومات مستقلة عنها قبل اتخاذ قرار، إذ لا يقدم الملف تفاصيل كافية لتحديد مدى ملاءمتها. متوسط TMDB البالغ 8.333 من عشرة، المستند إلى 5292 صوتاً، مؤشر جماهيري ثانوي فقط، وليس حكماً تحريرياً أو بديلاً عن تقييم المحاور.\n\n## الحكم النهائي\nالحكم النهائي إيجابي، لكن بحدود معلنة. South Park يملك قاعدة مفهومية مميزة: أربعة أطفال، بلدة صغيرة، ونبرة ساخرة فظة وسوداوية قادرة من حيث الفكرة على تناول موضوعات كثيرة. هذه العناصر تبرر اعتباره عملاً ذا هوية واضحة ومرشحاً قوياً لمن يحب الكوميديا التي تتعمد الاستفزاز. في الوقت نفسه، لا تسمح الأدلة المتاحة بإعلان تفوق شامل في الكتابة أو التحريك أو الموسيقى أو الإيقاع، ولا بتقييم حلقة The End Of Obesity على نحو منفصل. لذلك لا تُقرأ الدرجات على أنها تقرير مشاهدة مباشرة، بل بوصفها حكماً تحريرياً متحفظاً مرتبطاً حصراً بالمعلومات الموثقة. أوصي بالسلسلة لجمهورها المناسب، مع التنبيه إلى حدة أسلوبها وإلى أن التقييم التفصيلي لمادة بعينها يحتاج إلى مصادر أوسع.",
+        "scores": {
+          "story": 7.2,
+          "visuals": 6.2,
+          "sound": 6,
+          "pacing": 6.2
+        },
+        "pros": [
+          "إطار واضح ومحدد: أربعة تلاميذ ومغامراتهم في بلدة ساوث بارك.",
+          "هوية كوميدية موثقة تجمع الفظاظة والفكاهة السوداوية والسريالية.",
+          "اتساع نطاق السخرية المعلن يمنح الفكرة قابلية لتناول موضوعات متعددة.",
+          "وجود شخصيات مركزية وبيئة متكررة يوفران أساساً تعريفياً ثابتاً للسلسلة."
+        ],
+        "cons": [
+          "المعلومات المتاحة لا تكفي لتقييم تطور الشخصيات أو جودة الكتابة في حلقات بعينها.",
+          "لا توجد شواهد تحليلية كافية للحكم على جودة التحريك أو الموسيقى أو الأداء الصوتي.",
+          "الفكاهة الفظة والسوداوية قد لا تلائم من يفضل نبرة أخف أو أكثر تحفظاً.",
+          "لا يمكن استنتاج توازن الإيقاع أو تجدد المواسم من الوصف العام وحده."
+        ],
+        "title": "South Park",
+        "type": "series",
+        "sourceId": "series:2190",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/2190",
+        "sourceRating": 8.333,
+        "sourceRatingScale": 10,
+        "sourceVoteCount": 5292,
+        "sourceRatingCheckedAt": "2026-11-22T13:16:04.201Z",
+        "audienceScore": 8.3,
+        "releaseDate": "1997-08-13",
+        "poster": "https://image.tmdb.org/t/p/w780/k7n2EVge7G77eMr3brztRGG1fFU.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/3UviYOlhn8EgXMBuiT6MnUuo1w9.jpg",
+        "genres": [
+          "Comedy",
+          "Animation"
+        ],
+        "platforms": [],
+        "cast": [
+          "Trey Parker",
+          "Matt Stone",
+          "Mona Marshall",
+          "Jennifer Howell"
+        ],
+        "crew": [],
+        "tags": [
+          "Comedy",
+          "Animation"
+        ],
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/2190",
+            "extract": "Follow the misadventures of four irreverent grade-schoolers in the quiet, dysfunctional town of South Park, Colorado.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/South_Park",
+            "extract": "South Park is an American animated sitcom created by Trey Parker and Matt Stone for Comedy Central. The series revolves around four boys—Stan Marsh, Kyle Broflovski, Eric Cartman, and Kenny McCormick—and their adventures in and around the titular Colorado town. South Park also features many recurring characters. The series became infamous for its profanity and dark, surreal humor that satirizes a large range of subject matter.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Paramount+ Global",
+            "url": "https://www.youtube.com/watch?v=go-vSlnY13I",
+            "extract": "Verified public, embeddable promotional trailer: South Park: The End Of Obesity | Official Trailer | Paramount+ UK & Ireland",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "go-vSlnY13I",
+        "youtubeVideoTitle": "South Park: The End Of Obesity | Official Trailer | Paramount+ UK & Ireland",
+        "reviewMode": "review",
+        "score": 6.5
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 5952,
+      "articlePath": "src/content/reviews/series-south-park-2190.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-south-park-2190/"
     }
   },
   "providers": {},
@@ -1379,9 +1268,9 @@
       "tokens": 32849
     },
     "2026-11-22": {
-      "articles": 4,
-      "requests": 16,
-      "tokens": 31645
+      "articles": 5,
+      "requests": 18,
+      "tokens": 37597
     }
   },
   "history": []
