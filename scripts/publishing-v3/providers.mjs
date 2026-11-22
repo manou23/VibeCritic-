@@ -2,7 +2,7 @@ import { parseJsonResponse } from "../review-json.mjs";
 
 const env = process.env;
 const OPENAI_MAX_CALLS_PER_RUN = 2;
-const OPENAI_MAX_OUTPUT_TOKENS = 7000;
+const OPENAI_MAX_OUTPUT_TOKENS = 10000;
 
 export function availableProviders() {
   return env.OPENAI_API_KEY && env.PUBLISHER_V3_OPENAI_ENABLED === "true"
