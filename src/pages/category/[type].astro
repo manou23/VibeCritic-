@@ -6,8 +6,7 @@ import { TYPE_LABEL, TYPE_PLURAL, type ReviewType, url, optimizeImage } from '..
 export function getStaticPaths(){return ['game','movie','series'].map(type=>({params:{type}}));}
 const type=Astro.params.type as ReviewType;
 const all=await getCollection('reviews',({data})=>data.type===type);
-const workDate=review=>{const parsed=review.data.releaseDate?Date.parse(review.data.releaseDate):NaN;return Number.isFinite(parsed)?parsed:(review.data.publishedAt??review.data.date).valueOf();};
-const reviews=all.sort((a,b)=>workDate(b)-workDate(a));
+const reviews=all.sort((a,b)=>(b.data.publishedAt??b.data.date).valueOf()-(a.data.publishedAt??a.data.date).valueOf());
 const normalizeArabic=value=>String(value||'').toLocaleLowerCase('ar').normalize('NFKD').replace(/\p{M}/gu,'').replace(/[أإآٱ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/ؤ/g,'و').replace(/ئ/g,'ي').replace(/[^\p{L}\p{N}\s]/gu,' ').trim().replace(/\s+/g,' ');
 const featured=reviews[0];
 const years=[...new Set(reviews.map(review=>review.data.releaseDate ? Number(review.data.releaseDate.slice(0,4)) : review.data.date.getFullYear()))].filter(Number.isFinite).sort((a,b)=>b-a);
@@ -40,10 +39,10 @@ const copy={game:{en:'GAMES & INTERACTIVE',title:'اكتشف عالم الألع
    <select id="review-min-score"><option value="0">كل الدرجات</option><option value="6">6 / 10 فأعلى</option><option value="7">7 / 10 فأعلى</option><option value="8">8 / 10 فأعلى</option><option value="9">9 / 10 فأعلى</option></select>
   </label>
   <label class="category-filter-field">الترتيب
-   <select id="review-sort"><option value="newest">الأحدث إصداراً</option><option value="highest">الأعلى تقييماً</option><option value="lowest">الأقل تقييماً</option></select>
+   <select id="review-sort"><option value="newest">الأحدث أولاً</option><option value="highest">الأعلى تقييماً</option><option value="lowest">الأقل تقييماً</option></select>
   </label>
  </div>}
- {reviews.length?<div class="category-review-grid" id="category-review-grid">{reviews.map(review=><div class="category-review-item" data-title={normalizeArabic([review.data.title,review.data.originalTitle,review.data.headline,...(review.data.tags||[]),...(review.data.genres||[])].join(' '))} data-year={review.data.releaseDate?.slice(0,4)||String(review.data.date.getFullYear())} data-score={review.data.score} data-rated={review.data.reviewMode==='review'} data-date={new Date(workDate(review)).toISOString()} data-genres={(review.data.genres||[]).join('|').toLowerCase()} data-platforms={(review.data.platforms||[]).join('|').toLowerCase()}><ReviewCard review={review}/></div>)}</div>:<div class="catalog-empty">قسم {TYPE_PLURAL[type]} قيد الإثراء. ستظهر هنا الأعمال الجديدة ومراجعاتها تلقائياً.</div>}
+ {reviews.length?<div class="category-review-grid" id="category-review-grid">{reviews.map(review=><div class="category-review-item" data-title={normalizeArabic([review.data.title,review.data.originalTitle,review.data.headline,...(review.data.tags||[]),...(review.data.genres||[])].join(' '))} data-year={review.data.releaseDate?.slice(0,4)||String(review.data.date.getFullYear())} data-score={review.data.score} data-rated={review.data.reviewMode==='review'} data-date={(review.data.publishedAt??review.data.date).toISOString()} data-genres={(review.data.genres||[]).join('|').toLowerCase()} data-platforms={(review.data.platforms||[]).join('|').toLowerCase()}><ReviewCard review={review}/></div>)}</div>:<div class="catalog-empty">قسم {TYPE_PLURAL[type]} قيد الإثراء. ستظهر هنا الأعمال الجديدة ومراجعاتها تلقائياً.</div>}
  <div class="catalog-empty" id="category-filter-empty" hidden>لا توجد مراجعات تطابق خيارات التصفية الحالية.</div>
  {reviews.length>0&&<nav class="category-pagination" id="category-pagination" aria-label="صفحات المراجعات" hidden><button type="button" id="category-prev" disabled>السابق</button><span id="category-page-label" aria-live="polite">1 / 1</span><button type="button" id="category-next" disabled>التالي</button></nav>}
 </section>
@@ -122,13 +121,6 @@ if(grid){
 </script>
 
 <style>
-.category-review-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px 13px;align-items:stretch}
-.category-review-item{min-width:0;display:flex}
-.category-review-item>.review-card{width:100%;height:100%;display:flex;flex-direction:column}
-.category-review-item .review-poster-wrap{width:100%;aspect-ratio:2/3;overflow:hidden}
-.category-review-item .review-poster{width:100%;height:100%;object-fit:cover}
-@media(max-width:900px){.category-review-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
-@media(max-width:600px){.category-review-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:13px 8px}}
 .category-pagination{display:flex;align-items:center;justify-content:center;gap:12px;margin:30px 0}
 .category-pagination[hidden]{display:none}
 .category-pagination button{min-height:42px;padding:0 18px;border:1px solid var(--vc-border);border-radius:10px;background:var(--vc-surface);color:var(--vc-text);font:inherit;font-size:12px;font-weight:900;cursor:pointer;transition:border-color .18s,color .18s}
