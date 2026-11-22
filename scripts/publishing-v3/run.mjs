@@ -162,6 +162,12 @@ const result = await withRunLock(async () => {
       }
     }
     await saveState(state);
+    // Provider/source outages are operationally transient, not editorial failures.
+    // Persist the job in waiting and let a later scheduled/manual run resume it.
+    if (/\\b(?:Source HTTP|HTTP) (?:408|425|429|5\\d\\d)\\b|timed out|fetch failed|ECONNRESET|ECONNREFUSED|EAI_AGAIN|ENOTFOUND/i.test(String(error?.message || error))) {
+      const retryAt = job?.nextAttemptAt || new Date(Date.now() + 30 * 60 * 1000).toISOString();
+      return { action:"temporarily-unavailable-retry-scheduled", key:job?.key || null, retryAt, reason:String(error?.message || error).slice(0,300) };
+    }
     throw error;
   }
 });
