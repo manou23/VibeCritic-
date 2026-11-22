@@ -181,7 +181,7 @@ for (const file of reviewFiles) {
     if (poster && !containsRenderedUrl(poster)) reviewFailures.push(file + ': poster URL is missing from the built page');
     if (backdrop && !containsRenderedUrl(backdrop)) reviewFailures.push(file + ': backdrop URL is missing from the built page');
   }
-  const modeMatch = frontmatter.match(/^reviewMode:\s*(review|preview|limited)\s*$/m);
+  const modeMatch = frontmatter.match(/^reviewMode:\s*(review|audience|preview|limited)\s*$/m);
   const reviewMode = modeMatch?.[1] || 'review';
   if (frontmatter.match(/^reviewMode:/m) && !modeMatch) reviewFailures.push(file + ': invalid reviewMode');
   const scoreMatch = frontmatter.match(/^score:\s*["']?(-?\d+(?:\.\d+)?)["']?\s*$/m);
@@ -195,15 +195,29 @@ for (const file of reviewFiles) {
         reviewFailures.push(file + ': score must be greater than 0 and at most 10 (' + scoreMatch[1] + ')');
       }
     }
+  } else if (reviewMode === 'audience') {
+    const readField = (key) => {
+      const line = frontmatter.split(/\r?\n/).find(item => item.startsWith(key + ':'));
+      return line ? line.slice(key.length + 1).trim().replace(/^['"]|['"]$/g, '') : '';
+    };
+    const sourceRating = Number(readField('sourceRating'));
+    const sourceRatingScale = Number(readField('sourceRatingScale'));
+    const sourceVoteCount = Number(readField('sourceVoteCount'));
+    const sourceName = readField('sourceName');
+    const retainedScores = scoreFields.filter(field => frontmatter.split(/\r?\n/).some(line => line.startsWith(field + ':')));
+    if (retainedScores.length) reviewFailures.push(file + ': audience review must not store VibeCritic editorial score metadata (' + retainedScores.join(', ') + ')');
+    if (!Number.isFinite(sourceRating) || sourceRating <= 0 || !Number.isFinite(sourceRatingScale) || sourceRatingScale <= 0 || sourceRatingScale > 10 || sourceRating > sourceRatingScale) reviewFailures.push(file + ': audience review requires a valid sourceRating within sourceRatingScale (maximum scale 10)');
+    if (!Number.isInteger(sourceVoteCount) || sourceVoteCount < 100) reviewFailures.push(file + ': audience review requires at least 100 verified source votes');
+    if (!sourceName) reviewFailures.push(file + ': audience review requires a named rating source');
+    if (!body.includes('ليست درجة تحريرية صادرة عن VibeCritic')) reviewFailures.push(file + ': audience review must clearly attribute its rating to the source, not VibeCritic');
   } else {
-    const retainedScores = scoreFields.filter(field => new RegExp('^' + field + ':\\s*', 'm').test(frontmatter));
+    const retainedScores = scoreFields.filter(field => new RegExp('^' + field + ':\\\\s*', 'm').test(frontmatter));
     if (retainedScores.length) reviewFailures.push(file + ': preview/limited review must not store score metadata (' + retainedScores.join(', ') + ')');
     const prematureRating = /(?<![0-9])\d{1,2}(?:[.,]\d+)?\s*(?:\/\s*10|من\s*10)(?![0-9])/i;
     // Ignore URL paths: dates such as /2026/06/10 in cited source links are not review scores.
     const ratingText = (frontmatter + '\n' + body).replace(/https?:\/\/[^\s)\]>]+/gi, '');
     if (prematureRating.test(ratingText)) reviewFailures.push(file + ': preview/limited review must not publish a numeric final rating');
-  }
-  // Scores are at most 10; limiting the integer part to two digits avoids matching dates such as 2026/10.
+  }  // Scores are at most 10; limiting the integer part to two digits avoids matching dates such as 2026/10.
   for (const match of body.matchAll(/(?<!\d)(\d{1,2}(?:[.,]\d+)?)\s*\/\s*10/g)) {
     const value = Number(match[1].replace(',', '.'));
     if (value <= 0 || value > 10) reviewFailures.push(file + ': invalid body score (' + match[0] + ')');
