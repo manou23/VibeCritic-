@@ -12,7 +12,10 @@ publishedAt: 2026-11-22
 releaseDate: "2026-11-19"
 platforms:
   - "Netflix"
+poster: "https://occ-0-3012-116.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABfNxFQRgUPgZnzIHUKDkrEf5OuQ6gb7xPHCWDG4-ShDoxDp21HJpzeN1e4CgeBBCh60gCxFE-iuSLgAdgge-Bra7AUjTPzegIryn.jpg?r=d06"
 backdrop: "https://dnm.nflximg.net/api/v6/s0XAg4q_jvYbSSbLvySyUsliNSg/AAAAQS3bDqmQRwcEKpUEfOqJDwyJeymGUU1o_PdeNf4bhRyMIl8cxFb7IP39FC19Ggi1rTGkUs3CYhYxa-ol0lq0nlHb7rEoGDwm8cVQR_RqQRjXWCOZYiRnULy02saNjeIMBbBKvJKYnACZne-lWSgfzGYS5lQ.jpg?r=154"
+youtubeVideoId: "9aGeKSSyuhk"
+youtubeVideoTitle: "The Altruists | Official Trailer | Netflix"
 mediaVerified: true
 score: 7.3
 storyScore: 7.4
