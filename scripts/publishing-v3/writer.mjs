@@ -135,7 +135,15 @@ export async function writeArticle(evidence) {
   try {
     result = assemble(first.value,evidence);
   } catch (qualityError) {
-    const retry = await generateJson(prompt + "\n\nفشلت المسودة السابقة في فحص الجودة: " + String(qualityError.message).slice(0,300) + (isAudience ? ". أعد التحليل مع إبقاء متوسط الجمهور واسم المصدر وعدد الأصوات واضحين، دون اختراع درجة تحريرية أو درجات فرعية." : isLimited || isPreview ? ". أعد النص وفق نوعه بلا درجة رقمية، وتأكد من أن المتن لا يقل عن 650 كلمة وأن الخلاصة والملخص مستوفيان للحد الأدنى." : ". أعد المراجعة النهائية كاملة، وتأكد من أن المتن لا يقل عن 1000 كلمة وأن الحكم والملخص مستوفيان للحد الأدنى."), { skipProviderId:first.provider, maxTokens:10000 });
+    const minimumWords = isAudience || isLimited || isPreview ? 650 : 1000;
+    const retryGuidance = isAudience
+      ? "أعد كتابة المقال كاملاً من البداية، لا تلخص المسودة السابقة. يجب أن يحتوي body وحده على 800 إلى 950 كلمة عربية فعلية، مع ثلاثة عناوين تحليلية على الأقل وفقرات متوازنة. احتفظ بمصدر تقييم الجمهور ومتوسطه وعدد الأصوات، ولا تضف درجة تحريرية أو درجات فرعية."
+      : isPreview
+        ? "أعد كتابة المعاينة كاملة من البداية، لا تلخصها. يجب أن يحتوي body وحده على 800 إلى 950 كلمة عربية فعلية، مع ثلاثة عناوين تحليلية على الأقل، ومن دون درجة أو حكم نهائي."
+        : isLimited
+          ? "أعد كتابة النص كاملاً من البداية، لا تلخصه. يجب أن يحتوي body وحده على 800 إلى 950 كلمة عربية فعلية، مع ثلاثة عناوين تحليلية على الأقل، ومن دون درجة أو حكم نهائي."
+          : "أعد كتابة المراجعة كاملة من البداية، لا تلخصها. يجب أن يحتوي body وحده على 1100 إلى 1300 كلمة عربية فعلية، مع ثلاثة عناوين تحليلية على الأقل، وأدلة واضحة لكل درجة.";
+    const retry = await generateJson(prompt + "\\n\\nفشلت المسودة السابقة في فحص الجودة: " + String(qualityError.message).slice(0,300) + ". الحد الأدنى الإلزامي للمتن هو " + minimumWords + " كلمة. " + retryGuidance + " أخرج JSON كاملاً صالحاً فقط، ولا تحذف أقسام المقال أو تستبدلها بملخص.", { skipProviderId:first.provider, maxTokens:10000 });
     try { result = assemble(retry.value,evidence); }
     catch (error) { error.requests = (Number(first.requests)||1) + (Number(retry.requests)||1); throw error; }
     generation = { provider:retry.provider, tokens:(Number(first.tokens)||0)+(Number(retry.tokens)||0), requests:(Number(first.requests)||1)+(Number(retry.requests)||1) };
