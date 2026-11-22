@@ -8,7 +8,7 @@ const temp = await fs.mkdtemp(path.join(os.tmpdir(), 'vibecritic-quality-'));
 const root = path.join(temp, 'reviews');
 const out = path.join(temp, 'out');
 await fs.mkdir(root);
-const repeated = 'This paragraph describes the same critical point with enough detail to test repeated content detection. It discusses the structure, evidence, and implications of the work in nearly identical language.';
+const repeated = 'This paragraph describes the same critical point with enough detail to test repeated content detection. It discusses the structure, evidence, and implications of the work in nearly identical language. It also explains why the argument matters to the audience and how the available examples support the conclusion.';
 await fs.writeFile(path.join(root, 'review.md'), [
   '---', 'title: "Test Review"', 'reviewMode: review', 'score: 7.5', 'sourceRating: 8.1', 'sourceVoteCount: 1200', '---', '',
   '## First angle', repeated, '', '## Second angle', repeated,
