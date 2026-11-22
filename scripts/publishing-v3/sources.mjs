@@ -109,6 +109,14 @@ async function findOfficialYoutubeTrailer(title,type) {
   if (!ranked.length) throw new Error("No verified official YouTube trailer found for " + title);
   return ranked[0];
 }
+export function isEligibleReleaseDate(date, today = new Date().toISOString().slice(0,10), preview = false) {
+  const value = String(date || "").trim();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const timestamp = Date.parse(value + "T00:00:00Z");
+  if (!Number.isFinite(timestamp) || new Date(timestamp).toISOString().slice(0,10) !== value) return false;
+  if (Number(value.slice(0,4)) < 2024) return false;
+  return value <= today || preview === true;
+}
 export async function discoverCandidate(state) {
   const [used,counts] = await Promise.all([publishedKeys(),publishedTypeCounts()]);
   const candidates = [];
@@ -125,14 +133,6 @@ export async function discoverCandidate(state) {
     for (const x of data.results || []) candidates.push({ type:"game", id:String(x.id), name:x.name, date:x.released || "", popularity:Number(x.added)||0, source:"RAWG" });
   }
   const now = new Date().toISOString().slice(0,10);
-export function isEligibleReleaseDate(date, today = new Date().toISOString().slice(0,10), preview = false) {
-  const value = String(date || "").trim();
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
-  const timestamp = Date.parse(value + "T00:00:00Z");
-  if (!Number.isFinite(timestamp) || new Date(timestamp).toISOString().slice(0,10) !== value) return false;
-  if (Number(value.slice(0,4)) < 2024) return false;
-  return value <= today || preview === true;
-}
   const eligible = candidates.filter(x => x.id && x.name && isEligibleReleaseDate(x.date, now, x.preview) && !used.has(x.type + ":" + x.id) && !used.has("title:" + x.name.toLowerCase().replace(/[^\p{L}\p{N}]+/gu,"")) && !state.jobs[x.type + ":" + x.id]);
   if (!eligible.length) return null;
   eligible.sort((a,b) => counts[a.type]-counts[b.type] || b.popularity-a.popularity);
