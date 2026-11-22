@@ -24,7 +24,7 @@ visualsScore: 8.2
 soundScore: 8.0
 pacingScore: 7.2
 gameplayScore: 8.2
-balanceScore: 7.0
+balanceScore: 7.2
 reviewMode: "review"
 cast: []
 crew:
