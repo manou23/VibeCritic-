@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-22T00:02:20.507Z",
+  "updatedAt": "2026-11-22T00:35:03.208Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -322,13 +322,14 @@
       },
       "status": "waiting",
       "stage": 0,
-      "attempts": 1,
+      "attempts": 2,
       "createdAt": "2026-11-20T22:39:11.268Z",
-      "updatedAt": "2026-11-21T22:48:21.204Z",
-      "nextAttemptAt": "2026-11-22T00:05:00.000Z",
+      "updatedAt": "2026-11-22T00:35:03.207Z",
+      "nextAttemptAt": "2026-11-22T02:35:03.207Z",
       "evidence": {
         "title": "The Apothecary Diaries",
         "type": "series",
+        "collectedAt": "2026-11-22T00:34:23.912Z",
         "sourceId": "series:220542",
         "sourceName": "TMDB",
         "sourceUrl": "https://www.themoviedb.org/tv/220542",
@@ -347,17 +348,17 @@
             "kind": "encyclopedia"
           },
           {
-            "name": "YouTube — AnimeVibe Official",
-            "url": "https://www.youtube.com/watch?v=EwbmJn-zslI",
-            "extract": "Verified public, embeddable promotional trailer: The Apothecary Diaries Movie 🌿🔥 | Official Teaser Trailer",
+            "name": "YouTube — PlayStation",
+            "url": "https://www.youtube.com/watch?v=CoVZKADP8Ss",
+            "extract": "Verified public, embeddable promotional trailer: The Apothecary Diaries: The False Imperial Brother - Announcement Trailer | PS5 Games",
             "kind": "promotional"
           }
         ],
-        "reviewReadiness": "limited",
-        "reviewReadinessReason": "Available evidence is catalog metadata, an encyclopedia summary and promotional material; no independently verifiable episode-level or hands-on review evidence was collected.",
-        "youtubeVideoId": "EwbmJn-zslI",
-        "youtubeVideoTitle": "The Apothecary Diaries Movie 🌿🔥 | Official Teaser Trailer",
-        "youtubeChannel": "AnimeVibe Official",
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 716 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "CoVZKADP8Ss",
+        "youtubeVideoTitle": "The Apothecary Diaries: The False Imperial Brother - Announcement Trailer | PS5 Games",
+        "youtubeChannel": "PlayStation",
         "releaseDate": "2023-10-22",
         "genres": [
           "Animation",
@@ -372,13 +373,14 @@
         ],
         "crew": [],
         "rating": 8.67,
+        "ratingScale": 10,
         "votes": 716,
         "poster": "https://image.tmdb.org/t/p/w780/sJZcy8QsOPuRPiCfoCWVB3r9Ohg.jpg",
         "backdrop": "https://image.tmdb.org/t/p/w1280/gffVOVZ2Y9cmVIZ26Gt9ByMGCYH.jpg"
       },
       "sections": [],
       "article": null,
-      "lastError": "openai HTTP 400: {\n  \"error\": {\n    \"message\": \"Invalid type for 'input[1].content[0].text': expected a string, but got an array instead.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"input[1].content[0].text\",\n    \"code\": \"invalid_type\"\n  }\n}",
+      "lastError": "Article is too short: 372 words",
       "resumeStatus": "queued"
     },
     "series:293610": {
@@ -908,7 +910,7 @@
     },
     "2026-11-22": {
       "articles": 0,
-      "requests": 0,
+      "requests": 2,
       "tokens": 0
     }
   },
