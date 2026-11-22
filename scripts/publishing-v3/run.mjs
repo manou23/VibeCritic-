@@ -126,6 +126,18 @@ const result = await withRunLock(async () => {
       transition(job,"ready");
     }
     if (job.status === "ready") {
+      // Migrate a previously generated audience-only draft to the established VibeCritic editorial review format.
+      // Reuse its saved evidence and replace only the draft; do not enqueue or count a second article.
+      if (job.article?.reviewMode === "audience") {
+        if (!job.evidence) throw new Error("Cannot restore editorial scoring: saved evidence is missing");
+        const restored = await writeArticle(job.evidence);
+        job.article = restored.article;
+        job.provider = restored.provider;
+        job.tokens = restored.tokens;
+        daily.requests += Number(restored.requests)||1;
+        daily.tokens += Number(restored.tokens)||0;
+        await saveState(state);
+      }
       job.articlePath = articleFilePath(job.article);
       const slug = job.articlePath.split("/").pop().replace(/\.md$/,"");
       job.verifiedUrl = "https://vibecritic.pages.dev/reviews/" + encodeURIComponent(slug) + "/";
