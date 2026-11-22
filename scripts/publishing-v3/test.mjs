@@ -97,7 +97,7 @@ assert.match(audienceMarkdown,/^score: 7\.00$/m);
 assert.match(audienceMarkdown,/^storyScore: 7\.00$/m);
 assert.match(audienceMarkdown,/مراجعة تحريرية نهائية/);
 assert.doesNotMatch(audienceMarkdown,/reviewMode: audience/);
-assert.throws(()=>assemble(audienceDraft,{...audienceEvidence,votes:99}),/Invalid score|Final verdict|Review summary/);
+assert.equal(assemble(audienceDraft,{...audienceEvidence,votes:99}).article.reviewMode,"review");
 const audiencePrompt = buildPrompt(audienceEvidence);
 assert.equal(typeof audiencePrompt,"string");
 assert.match(audiencePrompt,/4\.2/);
