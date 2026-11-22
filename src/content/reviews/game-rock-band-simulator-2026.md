@@ -14,6 +14,9 @@ platforms:
   - "PC"
   - "Steam"
 poster: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4697880/f877bbbcf9f2a65170626d39dce5740814cc3053/header.jpg?t=1795338167"
+backdrop: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4697880/extras/aac7d624067e1c6228694aba2ecf9e82.avif?t=1795338167"
+youtubeVideoId: "DEBl4EjGo3c"
+youtubeVideoTitle: "We’ve been working on Rock Band Simulator for a while."
 mediaVerified: true
 score: 7.8
 storyScore: 7.8
