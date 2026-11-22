@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-22T13:16:51.365Z",
+  "updatedAt": "2026-11-22T16:16:12.992Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -1107,147 +1107,225 @@
         "popularity": 149.5421,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-22T13:16:03.652Z",
-      "updatedAt": "2026-11-22T13:16:51.365Z",
+      "updatedAt": "2026-11-22T16:16:04.075Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "South Park",
-        "type": "series",
-        "collectedAt": "2026-11-22T13:16:04.201Z",
-        "sourceId": "series:2190",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/2190",
-        "overview": "Follow the misadventures of four irreverent grade-schoolers in the quiet, dysfunctional town of South Park, Colorado.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/2190",
-            "extract": "Follow the misadventures of four irreverent grade-schoolers in the quiet, dysfunctional town of South Park, Colorado.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/South_Park",
-            "extract": "South Park is an American animated sitcom created by Trey Parker and Matt Stone for Comedy Central. The series revolves around four boys—Stan Marsh, Kyle Broflovski, Eric Cartman, and Kenny McCormick—and their adventures in and around the titular Colorado town. South Park also features many recurring characters. The series became infamous for its profanity and dark, surreal humor that satirizes a large range of subject matter.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Paramount+ Global",
-            "url": "https://www.youtube.com/watch?v=go-vSlnY13I",
-            "extract": "Verified public, embeddable promotional trailer: South Park: The End Of Obesity | Official Trailer | Paramount+ UK & Ireland",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 5292 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "go-vSlnY13I",
-        "youtubeVideoTitle": "South Park: The End Of Obesity | Official Trailer | Paramount+ UK & Ireland",
-        "youtubeChannel": "Paramount+ Global",
-        "releaseDate": "1997-08-13",
-        "genres": [
-          "Comedy",
-          "Animation"
-        ],
-        "platforms": [],
-        "cast": [
-          "Trey Parker",
-          "Matt Stone",
-          "Mona Marshall",
-          "Jennifer Howell"
-        ],
-        "crew": [],
-        "rating": 8.333,
-        "ratingScale": 10,
-        "votes": 5292,
-        "poster": "https://image.tmdb.org/t/p/w780/k7n2EVge7G77eMr3brztRGG1fFU.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/3UviYOlhn8EgXMBuiT6MnUuo1w9.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "South Park: سخرية ذات هوية راسخة، وحكم يحدّه نقص الأدلة التفصيلية",
-        "summary": "تُظهر المعلومات الموثقة South Park بوصفه مسلسلاً كوميدياً أمريكياً متحركاً يدور حول أربعة تلاميذ في بلدة كولورادو، ويستمد هويته من الفكاهة الفظة والسوداوية والسريالية ومن السخرية الواسعة من موضوعات متعددة. هذه عناصر تمنح العمل أساساً واضحاً ومميزاً، لكنها لا تكفي وحدها لإثبات جودة كل حلقة أو تطور الشخصيات أو مستوى التنفيذ الفني عبر مواسمه. لذلك تأتي هذه المراجعة حكماً تحريرياً نهائياً متحفظاً على السلسلة كما تصفها الأدلة المتاحة، لا ادعاءً بمشاهدة شخصية ولا تقييماً تفصيلياً لحلقة بعينها. والنتيجة: عمل ذو هوية ساخرة قوية وجاذبية واضحة لمحبي الكوميديا المستفزة، مع حدود حقيقية في ما يمكن الجزم به عن عناصره الفنية والإيقاعية.",
-        "verdict": "South Park مشروع كوميدي ذو فكرة وهوية يسهل تمييزهما: مجموعة من الأطفال في بلدة أمريكية صغيرة تصبح مدخلاً إلى فكاهة فظة وسوداوية وسريالية، وإلى تناول ساخر لطيف واسع من الموضوعات. هذا الأساس يمنح السلسلة قوة مفهومية، ويجعلها مرشحة لأن تلائم جمهوراً يبحث عن كوميديا لا تتقيد بالذوق التقليدي. لكن الأدلة المتاحة لا تقدم تفاصيل كافية عن حلقات بعينها أو عن جودة التحريك والصوت والإيقاع، ولذلك لا يصح تحويل السمعة العامة أو تقييم الجمهور إلى برهان على تفوق كل عنصر. حكمي النهائي إيجابي بحذر: أوصي بها لمن يتقبل أسلوبها الهجومي، مع التنبيه إلى أن هذا التقييم يثبت ما تسمح به المصادر، ولا يتظاهر بتجربة مشاهدة مباشرة أو بمعرفة غير موثقة.",
-        "body": "## مقدمة وسياق العمل\nتُعرّف بيانات TMDB العمل بأنه مسلسل كوميدي متحرك بدأ عرضه في الثالث عشر من أغسطس عام 1997، فيما يصفه المصدر نفسه بأنه يتابع مغامرات أربعة تلاميذ في بلدة ساوث بارك الهادئة والمختلة وظيفياً في كولورادو. وتضيف المعلومات الموسوعية أن شخصياته المركزية هي ستان مارش، وكايل برولوفسكي، وإريك كارتمان، وكيني مكورميك، وأن المسلسل اشتهر بالألفاظ النابية والفكاهة السوداوية والسريالية وبالسخرية من نطاق واسع من الموضوعات. هذه هي الأرضية التي يمكن بناء مراجعة مسؤولة عليها. لكنها ليست سجلاً تفصيلياً للمواسم أو الحلقات، ولا مصدراً لمعاينة مباشرة. لذلك يتناول الحكم هوية السلسلة كما تثبتها المعلومات المتاحة، ولا يدّعي أن كل حلقة تطبق هذه الهوية بالمستوى نفسه. كما يثبت المقطع الترويجي الرسمي وجود مادة ترويجية بعنوان South Park: The End Of Obesity، لكنه لا يكفي وحده لوصف أحداث ذلك العمل أو تقييمه؛ موضوعنا هنا هو المسلسل عموماً.\n\n## الفكرة والقصة أو التجربة\nالفكرة الأساسية بسيطة في ظاهرها: أربعة أطفال يعيشون مغامراتهم في بلدة صغيرة، لكن اختيار عالم مدرسي ومحلي يتيح للسلسلة أن تجعل الحياة اليومية مدخلاً إلى موضوعات أوسع. وتصف المصادر العمل بأنه ساخر من طيف كبير من القضايا، من دون أن تسرد قائمة موثقة بحلقات أو موضوعات محددة يمكن تحليلها واحدة واحدة. من هنا تأتي قوة المفهوم لا من حبكة مفردة نعرف تفاصيلها، بل من قابلية الإطار لاستضافة مواقف كوميدية متباينة، مع الاحتفاظ بمجموعة شخصيات وبلدة متكررة تمنح السلسلة مركزاً ثابتاً. هذه مرونة واعدة، لكنها لا تضمن وحدها دقة كل معالجة أو نجاحها في تحويل موضوعها إلى مادة درامية. ولا تتوافر في ملف الأدلة تفاصيل كافية عن قصة حلقة The End Of Obesity، لذا لا ننسب إليها أحداثاً أو موقفاً بعينه. الأمانة تقتضي الفصل بين حقيقة أن عنواناً ترويجياً رسمياً موجود، وبين أي استنتاج عن محتواه.\n\n## السرد والشخصيات أو تصميم اللعب\nلأن العمل مسلسل سردي لا لعبة، فإن السؤال المناسب يتعلق بكيفية استخدام الشخصيات والإطار المتكرر، لا بتصميم اللعب. المعطيات تثبت وجود أربعة أبطال معروفين، وتثبت أن لهم مغامرات في البلدة، لكنها لا تشرح أقواسهم الشخصية أو مقدار التغيير الذي يطرأ عليهم، ولا تصف نماذج الحلقات أو كيفية توزيع الأدوار بين الشخصيات. لذلك يمكن اعتبار المجموعة نقطة انطلاق عملية للكوميديا: تعدد الشخصيات يسمح نظرياً بتباين ردود الفعل، فيما توفر البلدة مساحة لاستدعاء شخصيات متكررة. لكن هذا وصف لإمكانات البناء، لا شهادة على نجاح كل استخدام لها. لا يصح، مثلاً، الجزم بأن السلسلة تمنح أبطالها تطوراً متصاعداً أو أن علاقاتهم هي مصدر قوتها، لأن الأدلة لا تقدم أمثلة محددة. الحكم الأكثر توازناً أن هوية الشخصيات المركزية جزء ثابت من التعريف الموثق للعمل، بينما تبقى جودة الكتابة التفصيلية للشخصيات غير محسومة في ملفنا.\n\n## الإخراج والجوانب الفنية\nتتحدد الحدود هنا بوضوح: وصف المسلسل بأنه رسوم متحركة يثبت وسيطه، ولا يثبت وحده جودة الإخراج أو تنوع تقنيات التحريك أو دقة إدارة المشاهد. كما أن الملف لا يورد أسماء مخرجين أو معلومات إنتاجية مفصلة، ولا يقدم تحليلاً مستقلاً للحلقات. لذلك لا أنسب إلى العمل إنجازات تقنية محددة، ولا أختلق عيوباً مثل ضعف التحريك أو مشكلات التنفيذ. ما يمكن قوله نقدياً هو أن الإطار المتكرر والكوميديا الساخرة يضعان على الإخراج مهمة ضبط النبرة: أن يظل الانتقال بين المألوف والعبث مفهوماً، وأن يخدم التوقيت الكوميدي الفكرة. غير أن هذا معيار نقدي مناسب لنوع العمل، وليس ادعاءً بأن كل حلقة تحقق ذلك. وبالمثل، لا تكفي شهرة المسلسل أو استمراره الزمني لإثبات جودة إخراجية ثابتة؛ إنهما سياق، لا بديل عن مشاهدة وتحليل موثقين.\n\n## الصورة والهوية البصرية\nالدليل البصري المتاح هو تصنيف العمل كرسوم متحركة، إلى جانب ملصق وخلفية مدرجين في بيانات TMDB. لا يتيح ذلك وصفاً دقيقاً لحركة الشخصيات أو تصميم البيئات أو استخدام الألوان أو تطور الأسلوب عبر السنوات. ولهذا لا أخلط بين معرفة الوسيط وبين تقييم تنفيذه: وجود الرسوم المتحركة حقيقة، أما الحكم على جودتها الفنية فيحتاج إلى شواهد لا يوفرها الملف. في المقابل، يتصل الوصف الموثق للبلدة الصغيرة وتكرار الشخصيات بفكرة هوية مكانية وشخصية يسهل التعرف إليها؛ وهذا استنتاج من طبيعة الإطار المعلن، لا تفصيل بصري شاهدناه. النتيجة أن الهوية المفهومية للسلسلة أوضح مما يمكن إثباته عن هويتها التشكيلية. من غير المنصف منحها ثناءً على الابتكار البصري أو انتقادها على محدودية الحركة من دون مصادر مباشرة، ولهذا تعكس الدرجة تحفظاً في الحكم لا اتهاماً بضعف الصورة.\n\n## الصوت والموسيقى والأداء\nتسجل البيانات أسماء تري باركر ومات ستون ومونا مارشال وجنيفر هاول ضمن طاقم التمثيل. هذه معلومة مفيدة عن المشاركين، لكنها لا تكشف توزيع الأصوات على الشخصيات في كل مادة، ولا تقدم وصفاً للأداء أو للموسيقى أو للمؤثرات. لذلك لا أصف أداءً بعينه بأنه بارع أو متنوع، ولا أنسب إلى الموسيقى وظيفة درامية محددة. في مسلسل كوميدي متحرك، يمكن للصوت أن يكون عنصراً أساسياً في إظهار الفروق بين الشخصيات وفي ضبط إيقاع النكتة، لكن هذه ملاحظة عن متطلبات الوسيط وليست نتيجة مشاهدة. وجود أسماء موثقة يدعم القول إن للعمل طاقماً صوتياً معروفاً في بياناته، ولا يكفي وحده لإثبات جودة الأداء النهائي أو اتساقه. لهذا يأتي الحكم على هذا المحور متواضعاً: لا دليل سلبي محدد، ولا مادة تحليلية كافية لتبرير إشادة مرتفعة. إنه تقدير تحفظي صريح، لا تقرير عن تجربة سمعية مباشرة.\n\n## الإيقاع والبناء وتنوع المحتوى\nتمنح صيغة المسلسل وإطار البلدة والشخصيات المتكررة أساساً يمكن أن يستوعب مغامرات متعددة؛ كما أن وصف السخرية بأنها تتناول موضوعات كثيرة يوحي باتساع نطاق المحتوى على مستوى الفكرة. لكن كلمة «يوحي» مهمة هنا: لا يقدم الملف عينة من الحلقات أو بيانات عن أطوالها أو ترتيبها أو توازنها بين الكوميديا والسرد. لذا لا يمكن الجزم بأن الإيقاع سريع، أو أن المواسم متوازنة، أو أن تنوع الموضوعات يمنع التكرار. الحكم الممكن هو أن قابلية الإطار للتجدد ميزة بنيوية محتملة، تقابلها مخاطرة عامة في أي عمل طويل قائم على شخصيات وبيئة ثابتة، وهي أن تتفاوت المعالجة أو تعيد استخدام أدواتها. هذه مخاطرة تحليلية لا ادعاء بوقوعها في مواسم محددة. كما لا يمكن تقييم المقطع الترويجي بوصفه دليلاً على إيقاع المسلسل كله؛ وظيفته الترويجية لا تعوض غياب تحليل موثق للبناء.\n\n## نقاط القوة\nأوضح مكاسب العمل، وفق ما تثبته المصادر، هي امتلاكه مفهوماً يسهل شرحه، وشخصيات مركزية محددة، وبيئة متكررة تسمح بالعودة إلى مجتمع واحد، فضلاً عن هوية معلنة قائمة على الكوميديا الفظة والسوداوية والسريالية والسخرية الواسعة. هذه العناصر تمنحه تماسكاً تعريفياً، وتجعل توقع نوع التجربة أيسر للجمهور من عمل لا يملك نبرة أو موضوعاً واضحاً. وتدعم بيانات المصادر تمييزه بوصفه مسلسلاً كوميدياً متحركاً لا عملاً درامياً ملتبس النوع.\n\n## نقاط الضعف\nالتحفظ الأهم ليس إثبات عيب فني في المسلسل، بل أن ملف الأدلة لا يتيح التحقق من جودة عناصره التفصيلية. لا توجد أوصاف لحلقات تكفي للحكم على الكتابة، ولا أمثلة تحسم مدى نجاح السخرية في التعامل مع موضوعاتها، ولا مواد تحليلية للصورة أو الأداء أو الإيقاع. هذا النقص يحد من قوة أي مراجعة نهائية شاملة، ويمنع تعميم الإشادة على كامل السلسلة. أما من جهة التلقي، فالفكاهة الفظة والسوداوية قد تكون حاجزاً حقيقياً لمن لا يفضل هذا الأسلوب؛ وهذه نتيجة مباشرة لطبيعة النبرة الموثقة، لا عيب خفي مختلق. ويتطلب تقييم مواسم بعينها مصادر أكثر تفصيلاً.\n\n## لمن يناسب هذا العمل؟\nيناسب المسلسل، بحسب هويته الموثقة، المشاهد الذي يفضّل الكوميديا الصريحة والمستفزة، ولا يمانع الفكاهة السوداوية والسريالية أو السخرية من موضوعات متنوعة. كما قد يجذب من يفضل عالماً متكرراً وشخصيات مركزية تعود ضمن إطار واحد بدلاً من حكاية منفصلة تماماً في كل مرة؛ وهذه ملاءمة محتملة مستندة إلى وصف السلسلة، لا ضمان لطبيعة كل حلقة. في المقابل، لا أوصي به بوصفه خياراً آمناً لمن يبحث عن كوميديا لطيفة أو نبرة مهذبة باستمرار، لأن المصادر تصف شهرته صراحة بالألفاظ النابية والأسلوب الحاد. ومن الأفضل لمن يهتم بموسم أو حلقة محددة أن يراجع معلومات مستقلة عنها قبل اتخاذ قرار، إذ لا يقدم الملف تفاصيل كافية لتحديد مدى ملاءمتها. متوسط TMDB البالغ 8.333 من عشرة، المستند إلى 5292 صوتاً، مؤشر جماهيري ثانوي فقط، وليس حكماً تحريرياً أو بديلاً عن تقييم المحاور.\n\n## الحكم النهائي\nالحكم النهائي إيجابي، لكن بحدود معلنة. South Park يملك قاعدة مفهومية مميزة: أربعة أطفال، بلدة صغيرة، ونبرة ساخرة فظة وسوداوية قادرة من حيث الفكرة على تناول موضوعات كثيرة. هذه العناصر تبرر اعتباره عملاً ذا هوية واضحة ومرشحاً قوياً لمن يحب الكوميديا التي تتعمد الاستفزاز. في الوقت نفسه، لا تسمح الأدلة المتاحة بإعلان تفوق شامل في الكتابة أو التحريك أو الموسيقى أو الإيقاع، ولا بتقييم حلقة The End Of Obesity على نحو منفصل. لذلك لا تُقرأ الدرجات على أنها تقرير مشاهدة مباشرة، بل بوصفها حكماً تحريرياً متحفظاً مرتبطاً حصراً بالمعلومات الموثقة. أوصي بالسلسلة لجمهورها المناسب، مع التنبيه إلى حدة أسلوبها وإلى أن التقييم التفصيلي لمادة بعينها يحتاج إلى مصادر أوسع.",
-        "scores": {
-          "story": 7.2,
-          "visuals": 6.2,
-          "sound": 6,
-          "pacing": 6.2
-        },
-        "pros": [
-          "إطار واضح ومحدد: أربعة تلاميذ ومغامراتهم في بلدة ساوث بارك.",
-          "هوية كوميدية موثقة تجمع الفظاظة والفكاهة السوداوية والسريالية.",
-          "اتساع نطاق السخرية المعلن يمنح الفكرة قابلية لتناول موضوعات متعددة.",
-          "وجود شخصيات مركزية وبيئة متكررة يوفران أساساً تعريفياً ثابتاً للسلسلة."
-        ],
-        "cons": [
-          "المعلومات المتاحة لا تكفي لتقييم تطور الشخصيات أو جودة الكتابة في حلقات بعينها.",
-          "لا توجد شواهد تحليلية كافية للحكم على جودة التحريك أو الموسيقى أو الأداء الصوتي.",
-          "الفكاهة الفظة والسوداوية قد لا تلائم من يفضل نبرة أخف أو أكثر تحفظاً.",
-          "لا يمكن استنتاج توازن الإيقاع أو تجدد المواسم من الوصف العام وحده."
-        ],
-        "title": "South Park",
-        "type": "series",
-        "sourceId": "series:2190",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/2190",
-        "sourceRating": 8.333,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 5292,
-        "sourceRatingCheckedAt": "2026-11-22T13:16:04.201Z",
-        "audienceScore": 8.3,
-        "releaseDate": "1997-08-13",
-        "poster": "https://image.tmdb.org/t/p/w780/k7n2EVge7G77eMr3brztRGG1fFU.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/3UviYOlhn8EgXMBuiT6MnUuo1w9.jpg",
-        "genres": [
-          "Comedy",
-          "Animation"
-        ],
-        "platforms": [],
-        "cast": [
-          "Trey Parker",
-          "Matt Stone",
-          "Mona Marshall",
-          "Jennifer Howell"
-        ],
-        "crew": [],
-        "tags": [
-          "Comedy",
-          "Animation"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/2190",
-            "extract": "Follow the misadventures of four irreverent grade-schoolers in the quiet, dysfunctional town of South Park, Colorado.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/South_Park",
-            "extract": "South Park is an American animated sitcom created by Trey Parker and Matt Stone for Comedy Central. The series revolves around four boys—Stan Marsh, Kyle Broflovski, Eric Cartman, and Kenny McCormick—and their adventures in and around the titular Colorado town. South Park also features many recurring characters. The series became infamous for its profanity and dark, surreal humor that satirizes a large range of subject matter.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Paramount+ Global",
-            "url": "https://www.youtube.com/watch?v=go-vSlnY13I",
-            "extract": "Verified public, embeddable promotional trailer: South Park: The End Of Obesity | Official Trailer | Paramount+ UK & Ireland",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "go-vSlnY13I",
-        "youtubeVideoTitle": "South Park: The End Of Obesity | Official Trailer | Paramount+ UK & Ireland",
-        "reviewMode": "review",
-        "score": 6.5
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 5952,
       "articlePath": "src/content/reviews/series-south-park-2190.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-south-park-2190/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-south-park-2190/",
+      "publishedAt": "2026-11-22T16:16:04.075Z"
+    },
+    "series:330613": {
+      "key": "series:330613",
+      "type": "series",
+      "id": "330613",
+      "title": "The Rules",
+      "item": {
+        "type": "series",
+        "id": "330613",
+        "name": "The Rules",
+        "date": "2026-10-28",
+        "preview": false,
+        "popularity": 179.3185,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-22T16:16:06.865Z",
+      "updatedAt": "2026-11-22T16:16:07.428Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "No verified official YouTube trailer found for The Rules"
+    },
+    "series:79481": {
+      "key": "series:79481",
+      "type": "series",
+      "id": "79481",
+      "title": "Fights Break Sphere",
+      "item": {
+        "type": "series",
+        "id": "79481",
+        "name": "Fights Break Sphere",
+        "date": "2017-01-07",
+        "preview": false,
+        "popularity": 42.6723,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-22T16:16:08.251Z",
+      "updatedAt": "2026-11-22T16:16:08.627Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "No exact independent encyclopedia match for Fights Break Sphere"
+    },
+    "series:332839": {
+      "key": "series:332839",
+      "type": "series",
+      "id": "332839",
+      "title": "The Law of Beasts",
+      "item": {
+        "type": "series",
+        "id": "332839",
+        "name": "The Law of Beasts",
+        "date": "2026-11-18",
+        "preview": false,
+        "popularity": 33.793,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-22T16:16:09.352Z",
+      "updatedAt": "2026-11-22T16:16:09.730Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "No exact independent encyclopedia match for The Law of Beasts"
+    },
+    "series:243761": {
+      "key": "series:243761",
+      "type": "series",
+      "id": "243761",
+      "title": "Good Partner",
+      "item": {
+        "type": "series",
+        "id": "243761",
+        "name": "Good Partner",
+        "date": "2024-07-12",
+        "preview": false,
+        "popularity": 16.9802,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-22T16:16:11.059Z",
+      "updatedAt": "2026-11-22T16:16:11.644Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Good Partner",
+        "type": "series",
+        "collectedAt": "2026-11-22T16:16:11.644Z",
+        "sourceId": "series:243761",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/243761",
+        "overview": "Cha Eun-kyung, a 17-year veteran divorce lawyer, faces a personal crisis when her own marriage is threatened while working alongside rookie lawyer Han Yu-ri, whose differing values lead to tension as they navigate their complex cases at Law Firm Daejung.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/243761",
+            "extract": "Cha Eun-kyung, a 17-year veteran divorce lawyer, faces a personal crisis when her own marriage is threatened while working alongside rookie lawyer Han Yu-ri, whose differing values lead to tension as they navigate their complex cases at Law Firm Daejung.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Good_Partner",
+            "extract": "Good Partner (Korean: 굿파트너) is an ongoing South Korean legal drama workplace television series written by Choi Yu-na, directed by Kim Ga-ram, and starring Jang Na-ra, Nam Ji-hyun, Kim Jun-han, Pyo Ji-hoon, Ji Seung-hyun, Han Jae-yi, Kim Hye-yoon, and Park Hae-jin. The first season aired on SBS TV from July 12 to September 20, 2024, every Friday and Saturday at 22:00 (KST). It is also available for streaming on Wavve and Netflix in South Korea, and on Viki and Viu in selected regions. In April 2025, a second season was confirmed for production and premiered on November 20, 2026, at 21:50 (KST).",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Viki Global TV",
+            "url": "https://www.youtube.com/watch?v=BafpvTJJOIk",
+            "extract": "Verified public, embeddable promotional trailer: Good Partner 2 | OFFICIAL TRAILER | Jang Na Ra, Kim Hye Yoon, Park Hae Jin, Pyo Ji Hoon",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "limited",
+        "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
+        "youtubeVideoId": "BafpvTJJOIk",
+        "youtubeVideoTitle": "Good Partner 2 | OFFICIAL TRAILER | Jang Na Ra, Kim Hye Yoon, Park Hae Jin, Pyo Ji Hoon",
+        "youtubeChannel": "Viki Global TV",
+        "releaseDate": "2024-07-12",
+        "genres": [
+          "Drama",
+          "Comedy"
+        ],
+        "platforms": [],
+        "cast": [
+          "Jang Na-ra",
+          "Kim Hye-yoon",
+          "Park Hae-jin",
+          "P.O",
+          "Ji Seung-hyun"
+        ],
+        "crew": [
+          "Kim Ga-ram"
+        ],
+        "rating": 8.029,
+        "ratingScale": 10,
+        "votes": 17,
+        "poster": "https://image.tmdb.org/t/p/w780/5I9RHQXYhEF0bLP5Waal6iQfnWq.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/tNHTruWAXAEaoqgCnD3Jv5xUmzx.jpg"
+      },
+      "sections": [],
+      "article": null,
+      "lastError": "Publishing blocked: evidence supports neither a scored review nor an explicit pre-release preview"
+    },
+    "movie:1568060": {
+      "key": "movie:1568060",
+      "type": "movie",
+      "id": "1568060",
+      "title": "Perfect Liars",
+      "item": {
+        "type": "movie",
+        "id": "1568060",
+        "name": "Perfect Liars",
+        "date": "2026-11-20",
+        "preview": false,
+        "popularity": 81.9473,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-22T16:16:12.171Z",
+      "updatedAt": "2026-11-22T16:16:12.525Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "No exact independent encyclopedia match for Perfect Liars"
+    },
+    "movie:1538497": {
+      "key": "movie:1538497",
+      "type": "movie",
+      "id": "1538497",
+      "title": "Hexed",
+      "item": {
+        "type": "movie",
+        "id": "1538497",
+        "name": "Hexed",
+        "date": "2026-11-25",
+        "preview": true,
+        "popularity": 42.4685,
+        "source": "TMDB"
+      },
+      "status": "queued",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-22T16:16:12.992Z",
+      "updatedAt": "2026-11-22T16:16:12.992Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": null
     }
   },
   "providers": {},
