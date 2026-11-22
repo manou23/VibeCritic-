@@ -34,8 +34,24 @@ const topRated=reviews
  .sort((a,b)=>b.data.score-a.data.score)
  .slice(0,8);
 const upcoming=reviews.filter(isUpcomingReview).sort((a,b)=>String(a.data.releaseDate||'').localeCompare(String(b.data.releaseDate||''))).slice(0,8);
-// أحدث المراجعات المنشورة، مع استبعاد القراءات الاستباقية للأعمال التي لم تصدر بعد.
-const latestReviews=reviews.filter(review=>!isUpcomingReview(review)&&review.data.reviewMode!=='preview').slice(0,8);
+// «وصل حديثاً» يرتب الأعمال حسب تاريخ صدورها، لا حسب تاريخ نشر مراجعتها.
+const releaseTimestamp=(review)=>{
+ const value=String(review.data.releaseDate||'').slice(0,10);
+ if(!/^\\d{4}-\\d{2}-\\d{2}$/.test(value))return null;
+ const timestamp=Date.parse(value+'T00:00:00Z');
+ return Number.isFinite(timestamp)?timestamp:null;
+};
+const latestReviews=reviews
+ .filter(review=>!isUpcomingReview(review)&&review.data.reviewMode!=='preview')
+ .sort((a,b)=>{
+  const dateA=releaseTimestamp(a);
+  const dateB=releaseTimestamp(b);
+  if(dateA===null&&dateB===null)return 0;
+  if(dateA===null)return 1;
+  if(dateB===null)return -1;
+  return dateB-dateA;
+ })
+ .slice(0,8);
 ---
 <Base title="اكتشف عالم الترفيه" description="اكتشف أحدث الأفلام والمسلسلات والألعاب، تابع الترندات العالمية واقرأ مراجعات VibeCritic." image={spotlight?.backdrop || spotlight?.poster}>
 <section class="wrap discovery-hero spotlight-slider" aria-label="أبرز الترندات">
@@ -67,7 +83,7 @@ const latestReviews=reviews.filter(review=>!isUpcomingReview(review)&&review.dat
 </section>
 <section class="wrap catalog-section home-latest-section" id="latest-reviews">
  <div class="catalog-heading">
-  <div><p class="catalog-eyebrow">FRESH FROM VIBECRITIC</p><h2>وصل حديثاً</h2><p>أحدث ما نشرناه من مراجعات الألعاب والأفلام والمسلسلات، مرتبة حسب تاريخ النشر.</p></div>
+  <div><p class="catalog-eyebrow">FRESH FROM VIBECRITIC</p><h2>وصل حديثاً</h2><p>أحدث الألعاب والأفلام والمسلسلات حسب تاريخ صدورها، وليس تاريخ نشر مراجعاتها.</p></div>
   <a href={url('catalog/')} class="catalog-more">تصفّح المكتبة <span>←</span></a>
  </div>
  {latestReviews.length>0?<div class="catalog-rail">{latestReviews.map(review=><ReviewCard review={review}/>)}</div>:<div class="catalog-empty">ستظهر هنا أحدث المراجعات فور نشرها.</div>}
