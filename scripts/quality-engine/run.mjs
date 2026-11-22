@@ -80,10 +80,10 @@ const analyze = article => {
     detail: 'عدد العناوين الفرعية قليل؛ تحقق من أن المقال يقدّم محاور نقدية واضحة بدلاً من كتلة نصية واحدة.',
     evidence: ['العناوين الفرعية المكتشفة: ' + headings.length]
   });
-  if (urls.length + links.length < 2) flags.push({
+  if (sourceLinkCount < 2) flags.push({
     level: 'high', code: 'few-visible-sources',
     detail: 'عدد الروابط المصدرية الظاهرة منخفض. هذا لا يثبت غياب المصادر، لكنه يستدعي التحقق من إسناد الادعاءات الأساسية.',
-    evidence: ['روابط URL المكتشفة: ' + new Set([...urls, ...links]).size]
+    evidence: ['روابط URL المكتشفة: ' + sourceLinkCount]
   });
   const wordCount = words(body).length;
   if (wordCount < 180) flags.push({
@@ -98,7 +98,7 @@ const analyze = article => {
   });
   return {
     file: article.file, title: article.title, mode: article.mode, wordCount,
-    headingCount: headings.length, visibleSourceLinks: new Set([...urls, ...links]).size,
+    headingCount: headings.length, visibleSourceLinks: sourceLinkCount,
     flags, status: flags.some(flag => flag.level === 'high') ? 'needs-attention' : flags.length ? 'human-check' : 'no-structural-alerts'
   };
 };
