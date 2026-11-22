@@ -19,8 +19,8 @@ reviewMode: review
 mediaVerified: true
 poster: "https://cdn.moviefone.com/image-assets/1437511/ifYDZkr2qkHFz87TNVvlxajOxl5.jpg?d=480x720&q=50"
 backdrop: "https://cdn.moviefone.com/image-assets/1437511/u38hNQbxvIicUdfrHpqa9puBnA9.jpg?d=1280x720&q=20"
-youtubeVideoId: "pAurASykAYs"
-youtubeVideoTitle: "How To Rob A Bank | Official Trailer"
+youtubeVideoId: "JuT1zUG_gvg"
+youtubeVideoTitle: "HOW TO ROB A BANK Official Trailer (2026) Nicholas Hoult, John C. Reilly, Zoë Kravitz, Pete Davidson, Anna Sawai, Christian Slater, Tati Gabrielle"
 cast: ["Nicholas Hoult", "Zoë Kravitz", "Anna Sawai", "Rhenzy Feliz", "Pete Davidson", "John C. Reilly", "Christian Slater", "Tati Gabrielle", "Paul Sparks", "Young Mazino"]
 crew: ["David Leitch — Director", "Mark Bianculli — Writer", "Jonathan Sela — Cinematography", "Dominic Lewis — Music"]
 pros:
@@ -117,7 +117,7 @@ editorialWorkflow: manual-assisted
 ## المصادر والتحقق
 
 - [Imagine Entertainment — الصفحة الرسمية للفيلم](https://imagine-entertainment.com/film/how-to-rob-a-bank/) — الملخص، المخرج، الكاتب، الطاقم، وسنة الإصدار.
-- [Amazon MGM Studios — الإعلان الرسمي](https://www.youtube.com/watch?v=pAurASykAYs) — المادة الترويجية الرسمية للفيلم.
+- [ONE Media — الإعلان المرخّص من Amazon MGM Studios](https://www.youtube.com/watch?v=JuT1zUG_gvg) — إعلان منشور على قناة موثقة، ويذكر وصفه حقوق Amazon MGM Studios لعام 2026.
 - [The Guardian — مراجعة الفيلم](https://www.theguardian.com/film/2026/nov/11/how-to-rob-a-bank-movie-review-amazon) — قراءة نقدية متحفظة للكتابة والرسالة الاجتماعية والنبرة.
 - [Time Out — مراجعة الفيلم](https://www.timeout.com/movies/how-to-rob-a-bank-review-2026) — قراءة أكثر إيجابية للحركة والطاقة والبعد السياسي.
 - [The Times — مراجعة الفيلم](https://www.thetimes.com/culture/film/article/how-to-rob-a-bank-review-nicholas-hoult-zoe-kravitz-d7skkx7qm) — ملاحظات حول الإيقاع والشخصيات والتناقض في الرسالة.
