@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-21T23:59:58.256Z",
+  "updatedAt": "2026-11-22T00:02:20.507Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -394,143 +394,22 @@
         "popularity": 59.4024,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 1,
       "createdAt": "2026-11-20T22:39:33.046Z",
-      "updatedAt": "2026-11-21T22:49:57.710Z",
+      "updatedAt": "2026-11-22T00:02:11.754Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "Doctor X: Mafia in White",
-        "type": "series",
-        "sourceId": "series:293610",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/293610",
-        "overview": "In a hospital dominated by ego and corruption, an enigmatic but brilliant surgeon arrives — taking on seemingly impossible cases amid fierce opposition.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/293610",
-            "extract": "In a hospital dominated by ego and corruption, an enigmatic but brilliant surgeon arrives — taking on seemingly impossible cases amid fierce opposition.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Doctor_X%3A_Mafia_in_White",
-            "extract": "Doctor X: Mafia in White is a 2026 South Korean medical noir television series written by Pyeon Seong-geun, directed by Lee Jung-rim, and starring Kim Ji-won, Lee Jung-eun, Son Hyun-joo, and Kim Woo-seok. Based on TV Asahi's Doctor-X: Surgeon Michiko Daimon, the series depicts a surgeon who proves her worth purely through her skill, as she operates on corrupt organizations riddled with injustice. It aired on SBS TV from October 9, to November 14, 2026, every Friday and Saturday at 21:50 (KST). It is also available for streaming on Netflix.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Netflix India",
-            "url": "https://www.youtube.com/watch?v=nGkVEJNPHpg",
-            "extract": "Verified public, embeddable promotional trailer: Doctor X: Mafia in White | Official Trailer | Netflix India",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "limited",
-        "reviewReadinessReason": "Available evidence is catalog metadata, an encyclopedia summary and promotional material; no independently verifiable episode-level or hands-on review evidence was collected.",
-        "youtubeVideoId": "nGkVEJNPHpg",
-        "youtubeVideoTitle": "Doctor X: Mafia in White | Official Trailer | Netflix India",
-        "youtubeChannel": "Netflix India",
-        "releaseDate": "2026-10-09",
-        "genres": [
-          "Mystery",
-          "Drama",
-          "Crime"
-        ],
-        "platforms": [],
-        "cast": [
-          "Kim Ji-won",
-          "Lee Jung-eun",
-          "Son Hyun-joo",
-          "Kim Woo-seok",
-          "Lee Jin-hee",
-          "Kim Young-min",
-          "Lee Sung-wook",
-          "Kwon Seung-woo"
-        ],
-        "crew": [],
-        "rating": 8.6,
-        "votes": 70,
-        "poster": "https://image.tmdb.org/t/p/w780/nDDVzQfv95PGwj9nV2fJvUrkcvU.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/mDYIV71RL3mkaW8IfSGNthuVB7l.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "Doctor X: Mafia in White — قراءة معلوماتية محدودة الأدلة",
-        "summary": "Doctor X: Mafia in White مسلسل تلفزيوني كوري جنوبي من نوع الدراما الطبية، وتصفه الموسوعة بأنه عمل طبي بنبرة «نوار». تدور فكرته المعلنة حول جرّاحة بارعة تصل إلى مستشفى تهيمن عليه المصالح والفساد، وتواجه حالات صعبة ومؤسسات غير عادلة. وتذكر الموسوعة أنه مقتبس من المسلسل الياباني Doctor-X: Surgeon Michiko Daimon، وتنسب كتابته إلى بيون سونغ-غون وإخراجه إلى لي جونغ-ريم، مع كيم جي-وون ولي جونغ-أون وسون هيون-جو وكيم وو-سوك ضمن طاقمه. لكن المتاح هنا بيانات فهرسة وملخص موسوعي وإعلان ترويجي فقط؛ لذلك لا تكفي الأدلة للحكم على التنفيذ، أو تجربة المشاهدة، أو جودة أي عنصر فني.",
-        "verdict": "هذه قراءة معلوماتية محدودة، وليست مراجعة مشاهدة أو حكماً نهائياً على Doctor X: Mafia in White. يمكن تحديد نوع العمل وفكرته العامة وبعض أسماء الطاقم، كما يمكن الإشارة إلى أن الموسوعة تصفه بأنه مقتبس من Doctor-X: Surgeon Michiko Daimon. لكن هذه المعلومات لا تثبت كيف نُفذت الحلقات، ولا ما إذا كانت الشخصيات أو القضايا تُقدَّم على نحو مقنع، ولا مستوى الإخراج أو الصورة أو الصوت أو الإيقاع. وجود إعلان ترويجي لا يعوّض غياب فحص مستقل للحلقات، كما لا يصح تحويل تقييمات الفهرسة أو وصف الناشر إلى حكم تحريري. بناءً على ذلك، لا أمنح العمل حكماً نهائياً؛ وما يلزم لتكوين رأي موثوق هو مشاهدة الحلقات ومراجعة أدلة مستقلة عنها.",
-        "body": "## ما الذي نعرفه عن العمل؟\n\nDoctor X: Mafia in White مسلسل تلفزيوني كوري جنوبي، وفق المادة الموسوعية المدرجة في ملف الأدلة. يصنفه سجل TMDB ضمن الغموض والدراما والجريمة، بينما تصفه الموسوعة بأنه عمل طبي ذو طابع «نوار». هذه أوصاف تعريفية تساعد على تحديد موقعه العام، لكنها لا تثبت وحدها طبيعة المعالجة أو مقدار حضور كل نوع في الحلقات. لا تتوفر في الملف تفاصيل موثقة عن عدد الحلقات أو مدتها، ولا عن بنية الموسم أو كيفية توزيع القصص الطبية والشخصية. لذلك ينبغي التعامل مع التصنيفات باعتبارها بيانات فهرسة، لا باعتبارها وصفاً كاملاً لتجربة المشاهدة.\n\n## القصة أو الفكرة المعلنة\n\nيقدم ملخص TMDB مستشفى تهيمن عليه الأنانية والفساد، تصل إليه جرّاحة غامضة وموهوبة، ثم تواجه حالات تبدو مستحيلة ومقاومة قوية. وتلخص الموسوعة الفكرة على نحو أوسع: جرّاحة تثبت جدارتها بمهارتها وحدها، وتعمل في مواجهة مؤسسات فاسدة ومليئة بالظلم. هذان الوصفان يحددان الصراع الذي تعلنه المواد المتاحة، لكنهما لا يكشفان تفاصيل الحبكة أو الحالات الطبية أو مسارات الشخصيات، ولا يثبتان كيف تتطور المواجهات على امتداد العمل. كما تذكر الموسوعة أن المسلسل مبني على Doctor-X: Surgeon Michiko Daimon، وهو عمل تابع لقناة TV Asahi؛ ولا تكفي هذه المعلومة لتحديد مقدار الاقتباس أو الاختلاف بين النسختين.\n\n## معلومات الإنتاج والطاقم\n\nتنسب الموسوعة كتابة المسلسل إلى بيون سونغ-غون وإخراجه إلى لي جونغ-ريم. وتورد ضمن الممثلين كيم جي-وون، ولي جونغ-أون، وسون هيون-جو، وكيم وو-سوك، إلى جانب لي جين-هي، وكيم يونغ-مين، ولي سونغ-ووك، وكوون سونغ-وو. هذه أسماء موثقة ضمن المادة المقدمة، لكنها لا تسمح باستنتاج مستوى الأداء أو طبيعة الأدوار؛ إذ لا يورد الملف توصيفاً للشخصيات ولا مراجعات مستقلة للممثلين في العمل. ويعرض سجل الموسوعة المسلسل بوصفه كورياً جنوبياً من عام 2026، ويذكر بثه على SBS TV بين 9 أكتوبر و14 نوفمبر 2026، يومي الجمعة والسبت عند 21:50 بتوقيت كوريا. كما يقول إنه متاح للبث على Netflix، فيما يثبت الملف وجود إعلان ترويجي رسمي منشور عبر Netflix India. ولا تقدم البيانات تفاصيل كافية عن نطاق الإتاحة أو اختلافه بين المناطق.\n\n## ما الذي يمكن تأكيده؟\n\nيمكن تأكيد أن العمل مسلسل تلفزيوني، وأن المصادر تصفه بأنه دراما طبية كورية جنوبية تتصل فكرتها بجرّاحة تواجه الفساد والظلم داخل مؤسسة صحية. ويمكن كذلك تأكيد أسماء الكاتب والمخرج والممثلين كما أوردتها المادة الموسوعية، ووجود صلة اقتباس معلنة بمسلسل Doctor-X الياباني. ويوجد إعلان رسمي بعنوان Doctor X: Mafia in White | Official Trailer | Netflix India، لكن مجرد وجوده لا يثبت محتواه التفصيلي ولا يسمح بوصف مشاهده هنا. هذه مجموعة معلومات عن الهوية والفكرة والاعتمادات، لا أدلة على جودة الإنجاز. أما تقييم TMDB الظاهر في سجل البيانات فلا يعبر عن حكم تحريري مستقل، ولذلك لا يُستخدم هنا لتقرير مستوى العمل.\n\n## ما الذي لا نعرفه بعد؟\n\nلا تتضمن الأدلة مراجعة مستقلة للحلقات أو توثيقاً لتجربة مشاهدة كاملة، ولا مادة قابلة للتحقق عن مشهد أو حلقة بعينها. لذلك لا يمكن حسم جودة الإخراج، أو الصورة، أو الصوت، أو الإيقاع، أو بناء الحبكة، أو التوازن بين الطب والجريمة والدراما. ولا تتوفر معلومات موثقة تسمح بتقييم دقة الإجراءات الطبية، أو عمق الشخصيات، أو أداء الممثلين، أو نجاح العمل في بناء أجواء «النوار». كذلك لا نعرف من الملف كيف يقارن المسلسل بمصدره الياباني على مستوى التنفيذ، ولا تفاصيل الاستقبال النقدي المستقل. الملصق وأسماء الطاقم والتصنيف النوعي لا تسد هذه الفجوات، والإعلان الترويجي مادة دعائية لا بديل عن فحص الحلقات.\n\n## لمن قد يهم هذا العمل؟\n\nقد يلفت العمل، وفق الفكرة المعلنة لا وفق حكم على جودته، انتباه من يبحثون عن دراما تدور في مستشفى وتجمع بين صراع طبي ومواجهة الفساد، أو من لديهم اهتمام بالأعمال الكورية ذات التصنيف الجنائي والدرامي. وقد يهم أيضاً من يعرفون Doctor-X ويرغبون في متابعة اقتباس كوري معلن عنه. لكن هذه الملاءمة احتمالية ومبنية على الموضوع والتصنيف فقط؛ فلا يمكن الجزم بأن المسلسل يناسب تفضيلات مشاهد بعينه من دون معرفة أسلوبه الفعلي أو محتواه التفصيلي. ولا ينبغي اعتبار الإشارة إلى هذه الفئات توصية بمشاهدة العمل أو تزكية له.\n\n## خلاصة حدود الأدلة\n\nالمعلومات المتاحة ترسم ملامح أولية: عنوان المسلسل، بلده، فكرته العامة، بعض اعتمادات إنتاجه، صلته المعلنة بعمل ياباني، ومصادر ترويجية وفهرسية مرتبطة به. لكنها لا توفر مشاهدة موثقة أو تحليلاً مستقلاً للحلقات. وعليه، فإن كل ما يتجاوز هذه الوقائع—ومن ذلك الحكم على الأداء أو الإخراج أو الصورة أو الصوت أو الإيقاع—سيكون تخميناً لا تسنده الأدلة المقدمة. القراءة هنا تشرح ما تقوله المصادر وما تتركه مفتوحاً، ولا تستبدل مراجعة فعلية للعمل.",
-        "pros": [
-          "الفكرة المعلنة محددة: جرّاحة تواجه الفساد والظلم داخل مستشفى.",
-          "المادة الموسوعية تسمي الكاتب والمخرج وأعضاء من طاقم التمثيل.",
-          "تذكر الموسوعة صراحةً أن العمل مقتبس من Doctor-X: Surgeon Michiko Daimon."
-        ],
-        "cons": [
-          "لا تتوفر مراجعة مستقلة للحلقات أو أدلة موثقة على تجربة مشاهدة كاملة.",
-          "جودة الإخراج والصورة والصوت والإيقاع والأداء غير محسومة في المصادر المتاحة.",
-          "تفاصيل الحبكة والشخصيات وطبيعة الاختلاف عن العمل الأصلي غير موثقة بما يكفي."
-        ],
-        "title": "Doctor X: Mafia in White",
-        "type": "series",
-        "sourceId": "series:293610",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/293610",
-        "releaseDate": "2026-10-09",
-        "poster": "https://image.tmdb.org/t/p/w780/nDDVzQfv95PGwj9nV2fJvUrkcvU.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/mDYIV71RL3mkaW8IfSGNthuVB7l.jpg",
-        "genres": [
-          "Mystery",
-          "Drama",
-          "Crime"
-        ],
-        "platforms": [],
-        "cast": [
-          "Kim Ji-won",
-          "Lee Jung-eun",
-          "Son Hyun-joo",
-          "Kim Woo-seok",
-          "Lee Jin-hee",
-          "Kim Young-min",
-          "Lee Sung-wook",
-          "Kwon Seung-woo"
-        ],
-        "crew": [],
-        "tags": [
-          "Mystery",
-          "Drama",
-          "Crime"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/293610",
-            "extract": "In a hospital dominated by ego and corruption, an enigmatic but brilliant surgeon arrives — taking on seemingly impossible cases amid fierce opposition.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Doctor_X%3A_Mafia_in_White",
-            "extract": "Doctor X: Mafia in White is a 2026 South Korean medical noir television series written by Pyeon Seong-geun, directed by Lee Jung-rim, and starring Kim Ji-won, Lee Jung-eun, Son Hyun-joo, and Kim Woo-seok. Based on TV Asahi's Doctor-X: Surgeon Michiko Daimon, the series depicts a surgeon who proves her worth purely through her skill, as she operates on corrupt organizations riddled with injustice. It aired on SBS TV from October 9, to November 14, 2026, every Friday and Saturday at 21:50 (KST). It is also available for streaming on Netflix.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Netflix India",
-            "url": "https://www.youtube.com/watch?v=nGkVEJNPHpg",
-            "extract": "Verified public, embeddable promotional trailer: Doctor X: Mafia in White | Official Trailer | Netflix India",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "nGkVEJNPHpg",
-        "youtubeVideoTitle": "Doctor X: Mafia in White | Official Trailer | Netflix India",
-        "reviewMode": "limited"
-      },
+      "article": null,
       "lastError": "Gemini editorial review HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
       "resumeStatus": null,
       "provider": "openai",
       "tokens": 3429,
       "articlePath": "src/content/reviews/series-doctor-x-mafia-in-white-293610.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-doctor-x-mafia-in-white-293610/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-doctor-x-mafia-in-white-293610/",
+      "publishedAt": "2026-11-22T00:02:11.753Z"
     },
     "series:308007": {
       "key": "series:308007",
@@ -769,6 +648,245 @@
       "articlePath": "src/content/reviews/series-black-clover-73223.md",
       "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-black-clover-73223/",
       "publishedAt": "2026-11-21T23:55:13.638Z"
+    },
+    "series:298852": {
+      "key": "series:298852",
+      "type": "series",
+      "id": "298852",
+      "title": "WAR",
+      "item": {
+        "type": "series",
+        "id": "298852",
+        "name": "WAR",
+        "date": "2026-10-02",
+        "preview": false,
+        "popularity": 51.9167,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-22T00:02:15.241Z",
+      "updatedAt": "2026-11-22T00:02:15.865Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "WAR",
+        "type": "series",
+        "collectedAt": "2026-11-22T00:02:15.864Z",
+        "sourceId": "series:298852",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/298852",
+        "overview": "An anthology series set in the elite world of London law following two rival firms, Cathcarts and Taylor & Byrne, as they face off in a different headline-making legal battle each season.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/298852",
+            "extract": "An anthology series set in the elite world of London law following two rival firms, Cathcarts and Taylor & Byrne, as they face off in a different headline-making legal battle each season.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/War",
+            "extract": "War is an armed conflict between the armed forces of states, or between governmental forces and armed groups that are organized under a certain command structure and have the capacity to sustain military operations, or between such organized groups.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Netflix",
+            "url": "https://www.youtube.com/watch?v=7eqt8zY3D0Y",
+            "extract": "Verified public, embeddable promotional trailer: World War II: Behind Enemy Lines | Official Trailer | Netflix",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "limited",
+        "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
+        "youtubeVideoId": "7eqt8zY3D0Y",
+        "youtubeVideoTitle": "World War II: Behind Enemy Lines | Official Trailer | Netflix",
+        "youtubeChannel": "Netflix",
+        "releaseDate": "2026-10-02",
+        "genres": [
+          "Drama"
+        ],
+        "platforms": [],
+        "cast": [
+          "Dominic West",
+          "Sienna Miller",
+          "Phoebe Fox",
+          "James McArdle",
+          "Nina Sosanya",
+          "Pip Torrens",
+          "Archie Renaux",
+          "Emma Laird"
+        ],
+        "crew": [],
+        "rating": 7.2,
+        "ratingScale": 10,
+        "votes": 35,
+        "poster": "https://image.tmdb.org/t/p/w780/AtCR5LMuvwepTi1kipKq878Rbuq.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/muPKymUvvBqjLCyGSacxKgjrhxN.jpg"
+      },
+      "sections": [],
+      "article": null,
+      "lastError": "Publishing blocked: evidence supports neither a scored review nor an explicit pre-release preview"
+    },
+    "movie:1551025": {
+      "key": "movie:1551025",
+      "type": "movie",
+      "id": "1551025",
+      "title": "Guarding Stars",
+      "item": {
+        "type": "movie",
+        "id": "1551025",
+        "name": "Guarding Stars",
+        "date": "2026-11-18",
+        "preview": false,
+        "popularity": 117.4492,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-22T00:02:16.848Z",
+      "updatedAt": "2026-11-22T00:02:17.409Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Guarding Stars",
+        "type": "movie",
+        "collectedAt": "2026-11-22T00:02:17.409Z",
+        "sourceId": "movie:1551025",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1551025",
+        "overview": "When a no-nonsense bodyguard is assigned to protect a charming action star over the holidays, sparks fly, secrets unravel, and Christmas gets a whole lot more complicated.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1551025",
+            "extract": "When a no-nonsense bodyguard is assigned to protect a charming action star over the holidays, sparks fly, secrets unravel, and Christmas gets a whole lot more complicated.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Guarding_Stars",
+            "extract": "Guarding Stars is a 2026 American Christmas romantic comedy film directed by Elizabeth Allen Rosenbaum and from a screenplay by Erin Cardillo, Richard Keith, Gina Matthews, and Grant Scharbo, based on the 2022 novel The Bodyguard by Katherine Center. It stars Leighton Meester, Jared Padalecki, Noah LaLonde, Phil Brooks, and Andie MacDowell.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — UNIVERSAL TRENDS",
+            "url": "https://www.youtube.com/watch?v=6jOXZqxI7TE",
+            "extract": "Verified public, embeddable promotional trailer: GUARDING STARS OFFICIAL TRAILER",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "limited",
+        "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
+        "youtubeVideoId": "6jOXZqxI7TE",
+        "youtubeVideoTitle": "GUARDING STARS OFFICIAL TRAILER",
+        "youtubeChannel": "UNIVERSAL TRENDS",
+        "releaseDate": "2026-11-18",
+        "genres": [
+          "Romance",
+          "Comedy"
+        ],
+        "platforms": [],
+        "cast": [
+          "Leighton Meester",
+          "Jared Padalecki",
+          "Andie MacDowell",
+          "Walker Hayes",
+          "Noah LaLonde",
+          "Toby Sandeman",
+          "Phil Brooks",
+          "Ava Max"
+        ],
+        "crew": [
+          "Elizabeth Allen Rosenbaum",
+          "Erin Cardillo",
+          "Richard Keith"
+        ],
+        "rating": 7.102,
+        "ratingScale": 10,
+        "votes": 59,
+        "poster": "https://image.tmdb.org/t/p/w780/5bsXFYXOlbzHBpl9mPaxmOPIQJ9.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/qHvap0vpfTBIbv7cnR0OyBRqQHG.jpg"
+      },
+      "sections": [],
+      "article": null,
+      "lastError": "Publishing blocked: evidence supports neither a scored review nor an explicit pre-release preview"
+    },
+    "movie:1543469": {
+      "key": "movie:1543469",
+      "type": "movie",
+      "id": "1543469",
+      "title": "Heartland",
+      "item": {
+        "type": "movie",
+        "id": "1543469",
+        "name": "Heartland",
+        "date": "2026-11-13",
+        "preview": false,
+        "popularity": 97.2522,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-22T00:02:17.884Z",
+      "updatedAt": "2026-11-22T00:02:18.265Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "Independent source is too thin after full lead-section fallback"
+    },
+    "movie:1185344": {
+      "key": "movie:1185344",
+      "type": "movie",
+      "id": "1185344",
+      "title": "The Beast",
+      "item": {
+        "type": "movie",
+        "id": "1185344",
+        "name": "The Beast",
+        "date": "2026-10-08",
+        "preview": false,
+        "popularity": 83.161,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-22T00:02:19.139Z",
+      "updatedAt": "2026-11-22T00:02:19.565Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "Independent source is too thin after full lead-section fallback"
+    },
+    "movie:1765072": {
+      "key": "movie:1765072",
+      "type": "movie",
+      "id": "1765072",
+      "title": "You Can See Everything",
+      "item": {
+        "type": "movie",
+        "id": "1765072",
+        "name": "You Can See Everything",
+        "date": "2026-10-16",
+        "preview": false,
+        "popularity": 70.0408,
+        "source": "TMDB"
+      },
+      "status": "waiting",
+      "stage": 0,
+      "attempts": 1,
+      "createdAt": "2026-11-22T00:02:20.370Z",
+      "updatedAt": "2026-11-22T00:02:20.507Z",
+      "nextAttemptAt": "2026-11-22T01:02:20.507Z",
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "Source HTTP 429 (en.wikipedia.org)",
+      "resumeStatus": "queued"
     }
   },
   "providers": {},
@@ -787,6 +905,11 @@
       "articles": 6,
       "requests": 12,
       "tokens": 32849
+    },
+    "2026-11-22": {
+      "articles": 0,
+      "requests": 0,
+      "tokens": 0
     }
   },
   "history": []
