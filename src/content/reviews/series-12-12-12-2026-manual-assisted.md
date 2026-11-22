@@ -1,7 +1,7 @@
 ---
 title: "12 12 12"
 originalTitle: "12 12 12"
-youtubeVideoTitle: "12 12 12 — Date Announcement | Apple TV"
+youtubeVideoTitle: "12 12 12 — Official Teaser | Apple TV"
 youtubeVideoId: "T6fXf4PmVVc"
 poster: "https://img.youtube.com/vi/T6fXf4PmVVc/maxresdefault.jpg"
 headline: "سرقة بثلاث ساعات زمنية وفكرة جذابة، لكن الحكم على المسلسل ما زال مبكراً بعد عرض حلقتين فقط"
