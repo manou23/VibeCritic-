@@ -84,7 +84,7 @@ if(grid){
   if(empty)empty.hidden=filteredCards.length!==0;
  };
  const update=()=>{
-  const normalize=value=>String(value||'').toLocaleLowerCase('ar').normalize('NFKD').replace(/\p{M}/gu,'').replace(/[أإآٱ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/ؤ/g,'و').replace(/ئ/g,'ي').replace(/[^\p{L}\p{N}\\s]/gu,' ').trim().replace(/\\s+/g,' ');
+  const normalize=value=>String(value||'').toLocaleLowerCase('ar').normalize('NFKD').replace(/\p{M}/gu,'').replace(/[أإآٱ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/ؤ/g,'و').replace(/ئ/g,'ي').replace(/[^\p{L}\p{N}\s]/gu,' ').trim().replace(/\s+/g,' ');
   const term=normalize(search?.value||'');
   const selectedGenre=genre?.value||'all';
   const selectedPlatform=platform?.value||'all';
