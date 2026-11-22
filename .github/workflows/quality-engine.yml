@@ -23,6 +23,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22.23.4
+      - name: Validate and test analyzer
+        run: |
+          node --check scripts/quality-engine/run.mjs
+          node --check scripts/quality-engine/test.mjs
+          node scripts/quality-engine/test.mjs
       - name: Run report-only quality scan
         run: node scripts/quality-engine/run.mjs
       - name: Upload quality report
