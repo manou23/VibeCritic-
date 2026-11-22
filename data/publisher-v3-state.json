@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-22T23:47:09.113Z",
+  "updatedAt": "2026-11-22T23:47:44.163Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -1372,12 +1372,12 @@
         "popularity": 29.0957,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "waiting",
       "stage": 0,
-      "attempts": 0,
+      "attempts": 1,
       "createdAt": "2026-11-22T23:46:04.015Z",
-      "updatedAt": "2026-11-22T23:47:09.113Z",
-      "nextAttemptAt": null,
+      "updatedAt": "2026-11-22T23:47:44.162Z",
+      "nextAttemptAt": "2026-11-22T23:48:44.162Z",
       "evidence": {
         "title": "The Institute",
         "type": "series",
@@ -1514,11 +1514,12 @@
         "reviewMode": "review",
         "score": 6.3
       },
-      "lastError": null,
+      "lastError": "Article file exists, but the live site still returns HTTP 404; deployment verification will retry.",
       "provider": "openai",
       "tokens": 6005,
       "articlePath": "src/content/reviews/series-the-institute-253372.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-the-institute-253372/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-the-institute-253372/",
+      "resumeStatus": "verifying"
     }
   },
   "providers": {},
