@@ -161,7 +161,7 @@ globalThis.fetch = async (url, options) => {
   assert.equal(options.headers.authorization,"Bearer test-openai-key");
   const requestBody = JSON.parse(options.body);
   assert.equal(requestBody.model,"gpt-6-luna");
-  assert.equal(requestBody.max_output_tokens,7000);
+  assert.equal(requestBody.max_output_tokens,10000);
   assert.equal(typeof requestBody.input[0].content[0].text,"string");
   assert.equal(typeof requestBody.input[1].content[0].text,"string");
   assert.equal(requestBody.input[1].content[0].text,openAIFetchCalls === 1 ? "test" : "retry");
