@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-22T16:16:12.992Z",
+  "updatedAt": "2026-11-22T19:16:53.709Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -1316,16 +1316,161 @@
         "popularity": 42.4685,
         "source": "TMDB"
       },
-      "status": "queued",
+      "status": "verifying",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-22T16:16:12.992Z",
-      "updatedAt": "2026-11-22T16:16:12.992Z",
+      "updatedAt": "2026-11-22T19:16:53.709Z",
       "nextAttemptAt": null,
-      "evidence": null,
+      "evidence": {
+        "title": "Hexed",
+        "type": "movie",
+        "collectedAt": "2026-11-22T19:16:02.119Z",
+        "sourceId": "movie:1538497",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1538497",
+        "overview": "An impulsive and unconventional teenage girl named Billie discovers secret magical abilities which, once unleashed, hurtle her into a spectacle-filled journey out of suburbia and into a vast witch realm called Hexe. Forced to team up with her cautious mother, Alice, they uncover family mysteries that could change the world of witches forever.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1538497",
+            "extract": "An impulsive and unconventional teenage girl named Billie discovers secret magical abilities which, once unleashed, hurtle her into a spectacle-filled journey out of suburbia and into a vast witch realm called Hexe. Forced to team up with her cautious mother, Alice, they uncover family mysteries that could change the world of witches forever.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Hexed",
+            "extract": "Hexed may refer to:Hexed , a 1993 romantic comedy film Hexed , a 2026 animated fantasy film produced by Walt Disney Animation Studios Hexed (album) by Children of Bodom Hexed (novel) by Kevin Hearne \"Hexed\", an episode from the fifth season of the TV series Medical Center \"Hexed\", an episode from the fifth season of the TV series Swamp People",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Walt Disney Studios Philippines",
+            "url": "https://www.youtube.com/watch?v=SVirX5zqK7s",
+            "extract": "Verified public, embeddable promotional trailer: Disney's Hexed ✨ | Official Trailer | November 25, 2026",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "preview",
+        "reviewReadinessReason": "Verified pre-release item; preview only, no final rating.",
+        "youtubeVideoId": "SVirX5zqK7s",
+        "youtubeVideoTitle": "Disney's Hexed ✨ | Official Trailer | November 25, 2026",
+        "youtubeChannel": "Walt Disney Studios Philippines",
+        "releaseDate": "2026-11-25",
+        "genres": [
+          "Adventure",
+          "Animation",
+          "Family",
+          "Fantasy",
+          "Comedy"
+        ],
+        "platforms": [],
+        "cast": [
+          "Hailee Steinfeld",
+          "Rashida Jones",
+          "Jodie Foster",
+          "Walton Goggins",
+          "Tracey Ullman",
+          "Stephen Fry",
+          "Henry Winkler",
+          "Dan Stevens"
+        ],
+        "crew": [
+          "Jason Hand",
+          "Fawn Veerasunthorn"
+        ],
+        "rating": 5,
+        "ratingScale": 10,
+        "votes": 1,
+        "poster": "https://image.tmdb.org/t/p/w780/yykeYKbDBM9eUMJUucaaDo2mi1p.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/eMcrgrIyeAgMHS5R9LltDnuxB5R.jpg"
+      },
       "sections": [],
-      "article": null,
-      "lastError": null
+      "article": {
+        "headline": "«Hexed»: حكاية سحرية تبدأ من ضواحي مألوفة وتتجه إلى عالم الساحرات",
+        "summary": "تقدّم «Hexed» نفسها، وفق الملخص المنشور، بوصفها مغامرة رسوم متحركة وفانتازيا عائلية تنطلق حين تكتشف المراهقة بيلي قدرات سحرية سرية، فتقودها إلى عالم الساحرات «Hexe» برفقة أمها الحذرة أليس. وتشير المعلومات المتاحة إلى أن خلافات الأم والابنة وأسرار العائلة ستكون جزءاً من مسار الحكاية، فيما تُدرج بيانات الفيلم أنواع المغامرة والرسوم المتحركة والعائلة والفانتازيا والكوميديا. موعد الإصدار المعلن هو 25 نوفمبر 2026. لذلك تظل هذه معاينة لما توحي به الفكرة والمعلومات المنشورة، لا تقييماً للتنفيذ أو حكماً على الفيلم قبل مشاهدته.",
+        "verdict": "قبل صدوره، تبدو «Hexed» مشروعاً يضع في مركزه انتقالاً من حياة ضواحي إلى عالم ساحرات، مع علاقة أم وابنتها بوصفها نقطة ارتكاز واضحة في الملخص. أما ما إذا كان الفيلم سيمنح هذه العناصر توازناً مؤثراً، أو سيجعل أسرار العائلة والتحول إلى «Hexe» جزءاً متماسكاً من مغامرة واحدة، فلا يمكن حسمه من البيانات المتاحة. لا تتضمن الأدلة تفاصيل عن أدوار الممثلين أو مشاهد المقطع الترويجي، ولا تتيح اختبار الإيقاع أو الرسوم أو النبرة. موعد الإصدار المحدد في 25 نوفمبر 2026 يجعل تلك الجوانب أسئلة تنتظر العرض، لا أسباباً لنتيجة مسبقة.",
+        "body": "تأتي «Hexed» إلى موعدها المرتقب في 25 نوفمبر 2026 بفكرة تجمع بين اكتشاف الذات والسحر والمغامرة العائلية. ووفق الملخص المنشور، تبدأ الحكاية مع بيلي، مراهقة اندفاعية وغير تقليدية، تكتشف قدرات سحرية سرية. ثم تقودها تلك القدرات، بعد انطلاقها، بعيداً عن الضواحي إلى عالم واسع للساحرات اسمه «Hexe». هذه هي نقطة الانطلاق المعلنة؛ أما كيفية ظهور السحر على الشاشة، وما إذا كانت الرحلة تميل إلى الكوميديا أو التوتر أو الدراما في لحظات بعينها، فليس مما توضحه المعلومات المتاحة. لذا تتعامل هذه المعاينة مع الوعد القصصي بوصفه أساساً للأسئلة، لا دليلاً على جودة التنفيذ.\n\n### من الضواحي إلى «Hexe»: اتساع الفكرة\n\nيضع الانتقال المكاني مسافة واضحة بين عالم مألوف وآخر تصفه المادة التعريفية بأنه مملكة واسعة للساحرات. ويمكن لهذا التباين، من حيث الفكرة، أن يمنح الحكاية خطاً بصرياً وسردياً يصل بين اكتشاف بيلي لقدراتها وبين اكتشاف قواعد عالم جديد. لكن الملخص لا يشرح طبيعة «Hexe»، ولا نظام السحر فيها، ولا مقدار الاختلاف بينها وبين حياة الضواحي. لذلك يبقى السؤال المفتوح هو كيف سيقدم الفيلم هذا العالم: هل سيكون خلفية للمغامرة فحسب، أم مساحة ترتبط مباشرة بأسرار الأسرة وبالتحول الذي تمر به الشخصيات؟ لا توجد في الأدلة تفاصيل تسمح بالإجابة، ومن الأفضل إبقاء التوقع عند حدود إمكانات الفكرة.\n\nوصف رحلة بيلي بأنها «مليئة بالاستعراض» أو بالمشاهد المبهرة، كما يرد في الملخص الإنجليزي، يوحي بطموح مغامراتي واسع، لكنه لا يحدد شكل المشاهد أو حجمها أو جودتها. ولا يصح تحويل العبارة التسويقية وحدها إلى تأكيد بشأن مستوى الرسوم المتحركة أو تصميم العالم. ما يمكن استنتاجه بحذر هو أن الرحلة لن تظل محصورة في نقطة البداية، وأن الوصول إلى «Hexe» عنصر أساسي في تقديم القصة. عند الإصدار، سيكون مهماً أن نرى كيف يربط الفيلم بين ذلك الاتساع وبين تجربة بيلي الشخصية، بدلاً من الاكتفاء بتغيير المكان بوصفه غاية مستقلة.\n\n### بيلي وأليس: علاقة في قلب المغامرة\n\nلا تسافر بيلي وحدها بحسب الملخص؛ إذ تُجبر على التعاون مع أمها الحذرة أليس. هذا التفصيل يمنح المغامرة محوراً عائلياً واضحاً، ويضع اندفاع الابنة وحذر الأم في مواجهة يمكن أن تنتج اختلافاً في القرارات والاستجابة للمجهول. لكنه لا يكشف طبيعة علاقتهما قبل الرحلة، ولا يشرح سبب حذر أليس أو الطريقة التي ستتطور بها الثقة بينهما. لذلك فإن توقع حضور شد وجذب بين الشخصيتين يظل قراءة للفكرة المعلنة، لا وصفاً لمشاهد شاهدناها. نجاح هذا المحور، إن تحقق، سيتوقف على ما يقدمه الفيلم فعلياً من بناء للشخصيتين، وهي معلومة لا توفرها البيانات الحالية.\n\nكذلك تربط الحبكة بين رحلة الأم والابنة وأسرار عائلية يُقال إنها قد تغيّر عالم الساحرات إلى الأبد. صياغة الملخص تضع الرهان على نطاق يتجاوز الأسرة، فتجمع بين اكتشاف شخصي واحتمال أثر أوسع داخل عالم «Hexe». هذه مساحة تحمل أسئلة مثيرة للاهتمام: كيف ستُكشف الأسرار؟ وما صلتها بقدرات بيلي؟ وهل ستبقى العلاقة العائلية مركز الحكاية عندما تتسع العواقب؟ لا تجيب المعلومات المنشورة عن ذلك، ولا تحدد طبيعة التغيير المقصود. من هنا، ما ننتظره ليس مفاجأة بعينها، بل وضوح الصلة بين سر الأسرة ومصير عالم الساحرات، من دون افتراض أحداث لم تُعلن.\n\n### الأنواع والنبرة: ما تقوله البيانات وما لا تقوله\n\nتُدرج بيانات الفيلم المغامرة والرسوم المتحركة والعائلة والفانتازيا والكوميديا ضمن تصنيفاته. يوفر هذا المزيج إطاراً عاماً لما يُسوّق له العمل، لكنه لا يخبرنا كيف ستتوزع النبرة بين الأنواع، أو مقدار حضور الفكاهة مقارنة بالمغامرة، أو ما إذا كانت الأسرار العائلية ستمنح القصة جانباً أكثر جدية. لا توجد في الأدلة تفاصيل عن الفئة العمرية المستهدفة أو عن محتوى المشاهد أو عن أسلوب المزاح. لذلك لا ينبغي التعامل مع التصنيفات كضمان لتجربة معينة؛ إنها أوصاف للنوع، بينما الحكم على التوازن والنبرة يظل مؤجلاً إلى المشاهدة.\n\nوتسرد المعلومات أسماء هايلي ستاينفيلد ورشيدة جونز وجودي فوستر ووالتون غوغينز وترايسي أولمان وستيفن فراي وهنري وينكلر ودان ستيفنز ضمن طاقم التمثيل. كما تورد جايسون هاند وفاون فيراسونثورَن ضمن أسماء الطاقم، من دون تفصيل الأدوار الوظيفية في الملف المتاح. وجود هذه الأسماء معلومة رسمية واردة في البيانات، لكنه لا يتيح تحديد الشخصية التي يؤديها كل ممثل، ولا مقدار مشاركته، ولا أثر الأداء الصوتي. وعليه، فالأفضل تسجيل الأسماء بوصفها جزءاً من صورة المشروع، لا استنتاج طبيعة الشخصيات أو مستوى الأداء قبل توفر معلومات أو مشاهدة فعلية.\n\n### ما الذي ننتظره عند الإصدار؟\n\nيوجد مقطع ترويجي رسمي موثق على قناة «Walt Disney Studios Philippines»، ويحمل عنواناً يعلن المقطع الرسمي وموعد 25 نوفمبر 2026. لكن البيانات المقدمة لا تتضمن وصفاً لمحتوى المقطع أو تفاصيل مشاهده، ولذلك لا تنسب هذه المعاينة إليه لقطات أو حوارات أو تصاميم بعينها. وتبقى الأسئلة العملية عند الإصدار متصلة بما لا تكشفه الملخصات: كيف تُقدَّم قدرات بيلي؟ ما القواعد التي تحكم عالم الساحرات؟ وكيف تتداخل الكوميديا مع الخطر العائلي والمغامرة؟ هذه ليست نقاط ضعف مثبتة، بل محاور متابعة يمكن أن تحدد مقدار اكتمال الفكرة على الشاشة.\n\nوبما أن موعد الإصدار ما زال مستقبلياً عند إعداد هذه المعاينة، فالمتاح حالياً يرسم ملامح الحكاية والأنواع والأسماء، ولا يمنح أساساً للحديث عن جودة الرسوم أو الإيقاع أو الموسيقى أو أثر الفيلم بعد المشاهدة. لا تتوافر كذلك معلومات عن منصات العرض ضمن الملف. ما يمكن انتظاره بثقة هو قصة تبدأ باكتشاف بيلي لقدراتها، وتضعها إلى جانب أليس في رحلة إلى «Hexe» تتصل بأسرار العائلة ومصير عالم الساحرات. أما تحقق التوازن بين هذا الاتساع وبين العلاقة الشخصية، فسيظل سؤالاً مفتوحاً حتى صدور «Hexed» في 25 نوفمبر 2026.",
+        "pros": [
+          "الفكرة المعلنة تجمع اكتشاف قدرات بيلي مع رحلة إلى عالم ساحرات، وتوفر نقطة انطلاق واضحة للمغامرة.",
+          "وجود الأم أليس إلى جانب بيلي يضع علاقة عائلية في قلب الحبكة بحسب الملخص.",
+          "البيانات تذكر موعد إصدار محدداً، وطاقم تمثيل، ومقطعاً ترويجياً رسمياً موثقاً."
+        ],
+        "cons": [
+          "لا تكشف المعلومات المتاحة تفاصيل قواعد عالم «Hexe» أو طبيعة أسرار الأسرة، لذا تظل هذه العناصر أسئلة مفتوحة.",
+          "لا تتضمن الأدلة وصفاً لمشاهد المقطع الترويجي أو أدوار الممثلين، ولا تسمح بتقييم الرسوم أو الإيقاع أو الأداء.",
+          "التصنيفات وحدها لا توضح كيف سيتوازن جانب الكوميديا مع الفانتازيا والمغامرة والمحور العائلي."
+        ],
+        "title": "Hexed",
+        "type": "movie",
+        "sourceId": "movie:1538497",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1538497",
+        "sourceRating": 5,
+        "sourceRatingScale": 10,
+        "sourceVoteCount": 1,
+        "sourceRatingCheckedAt": "2026-11-22T19:16:02.119Z",
+        "audienceScore": 5,
+        "releaseDate": "2026-11-25",
+        "poster": "https://image.tmdb.org/t/p/w780/yykeYKbDBM9eUMJUucaaDo2mi1p.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/eMcrgrIyeAgMHS5R9LltDnuxB5R.jpg",
+        "genres": [
+          "Adventure",
+          "Animation",
+          "Family",
+          "Fantasy",
+          "Comedy"
+        ],
+        "platforms": [],
+        "cast": [
+          "Hailee Steinfeld",
+          "Rashida Jones",
+          "Jodie Foster",
+          "Walton Goggins",
+          "Tracey Ullman",
+          "Stephen Fry",
+          "Henry Winkler",
+          "Dan Stevens"
+        ],
+        "crew": [
+          "Jason Hand",
+          "Fawn Veerasunthorn"
+        ],
+        "tags": [
+          "Adventure",
+          "Animation",
+          "Family",
+          "Fantasy",
+          "Comedy"
+        ],
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1538497",
+            "extract": "An impulsive and unconventional teenage girl named Billie discovers secret magical abilities which, once unleashed, hurtle her into a spectacle-filled journey out of suburbia and into a vast witch realm called Hexe. Forced to team up with her cautious mother, Alice, they uncover family mysteries that could change the world of witches forever.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Hexed",
+            "extract": "Hexed may refer to:Hexed , a 1993 romantic comedy film Hexed , a 2026 animated fantasy film produced by Walt Disney Animation Studios Hexed (album) by Children of Bodom Hexed (novel) by Kevin Hearne \"Hexed\", an episode from the fifth season of the TV series Medical Center \"Hexed\", an episode from the fifth season of the TV series Swamp People",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Walt Disney Studios Philippines",
+            "url": "https://www.youtube.com/watch?v=SVirX5zqK7s",
+            "extract": "Verified public, embeddable promotional trailer: Disney's Hexed ✨ | Official Trailer | November 25, 2026",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "SVirX5zqK7s",
+        "youtubeVideoTitle": "Disney's Hexed ✨ | Official Trailer | November 25, 2026",
+        "reviewMode": "preview"
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 7037,
+      "articlePath": "src/content/reviews/movie-hexed-1538497.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-hexed-1538497/"
     }
   },
   "providers": {},
@@ -1346,9 +1491,9 @@
       "tokens": 32849
     },
     "2026-11-22": {
-      "articles": 5,
-      "requests": 18,
-      "tokens": 37597
+      "articles": 6,
+      "requests": 21,
+      "tokens": 44634
     }
   },
   "history": []
