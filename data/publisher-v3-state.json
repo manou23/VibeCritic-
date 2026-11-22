@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-22T01:00:32.502Z",
+  "updatedAt": "2026-11-22T01:05:55.477Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -878,17 +878,150 @@
         "popularity": 70.0408,
         "source": "TMDB"
       },
-      "status": "waiting",
+      "status": "verifying",
       "stage": 0,
       "attempts": 1,
       "createdAt": "2026-11-22T00:02:20.370Z",
-      "updatedAt": "2026-11-22T00:02:20.507Z",
-      "nextAttemptAt": "2026-11-22T01:02:20.507Z",
-      "evidence": null,
+      "updatedAt": "2026-11-22T01:05:55.477Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "You Can See Everything",
+        "type": "movie",
+        "collectedAt": "2026-11-22T01:04:39.180Z",
+        "sourceId": "movie:1765072",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1765072",
+        "overview": "Thirty-four days before she's sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1765072",
+            "extract": "Thirty-four days before she's sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/You_Can_See_Everything",
+            "extract": "You Can See Everything is a 2026 American experimental documentary film directed by Nathan Fielder and Lance Oppenheim. It follows Elizabeth Holmes, the founder of the defunct health technology company Theranos, and her partner Billy Evans, who invited a film crew to document them beginning in the weeks before Holmes began serving a United States federal prison sentence for defrauding investors.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Sony Pictures India",
+            "url": "https://www.youtube.com/watch?v=ixhjb6ooaO8",
+            "extract": "Verified public, embeddable promotional trailer: You Can See Everything - Official Trailer | Exclusively In Cinemas November 27",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 145 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "ixhjb6ooaO8",
+        "youtubeVideoTitle": "You Can See Everything - Official Trailer | Exclusively In Cinemas November 27",
+        "youtubeChannel": "Sony Pictures India",
+        "releaseDate": "2026-10-16",
+        "genres": [
+          "Documentary"
+        ],
+        "platforms": [],
+        "cast": [
+          "Elizabeth Holmes",
+          "Nathan Fielder",
+          "Billy Evans",
+          "Amanda Seyfried",
+          "Christopher Abbott",
+          "Lance Oppenheim",
+          "Christian Rasmus Holmes IV",
+          "Noel Anne Holmes"
+        ],
+        "crew": [
+          "Nathan Fielder",
+          "Lance Oppenheim"
+        ],
+        "rating": 8.8,
+        "ratingScale": 10,
+        "votes": 145,
+        "poster": "https://image.tmdb.org/t/p/w780/mVh3qkw2NUFxWWyF0G1hg2Wh0K5.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/rrbbzCyS45yooXpUGJatfptlHYI.jpg"
+      },
       "sections": [],
-      "article": null,
+      "article": {
+        "headline": "You Can See Everything: قراءة حذرة لتقييم جمهور TMDB البالغ 8.8/10 من 145 صوتاً",
+        "summary": "تعرض هذه المراجعة بيانات جمهور TMDB عن الفيلم الوثائقي You Can See Everything، لا حكماً تحريرياً من VibeCritic. المتوسط المسجل هو 8.8/10 من 145 صوتاً؛ وهو مؤشر على استجابة إيجابية بين المستخدمين الذين أدلوا بأصواتهم، لكنه لا يثبت جودة العمل ولا يمثل إجماعاً عالمياً أو تقييماً مستقلاً. وتدور الفكرة الموثقة حول إليزابيث هولمز، التي تدعو فريق تصوير متشككاً إلى متابعة تحركاتها قبل دخولها السجن، ثم يتسع الوصف إلى رحلة تمتد ثلاث سنوات. تتيح هذه المعطيات مناقشة الفرضية والسياق، لا ادعاء مشاهدة الفيلم أو إصدار أحكام على تنفيذه الفني.",
+        "verdict": "الخلاصة أن الرقم المتاح يمنح إشارة إيجابية محدودة المصدر: مستخدمو TMDB المسجلون في العينة أعطوا الفيلم متوسطاً قدره 8.8/10 من 145 صوتاً، لكن ذلك لا يضمن الجودة ولا يساوي رأياً مستقلاً لـ VibeCritic. ما يمكن وصفه بثقة أكبر هو مركزية إليزابيث هولمز، وفكرة توثيق حياتها في الفترة السابقة لدخول السجن، وفق ملخص TMDB والمعلومات التعريفية المتاحة. أما مدى نجاح الفيلم في تحويل هذه الفرضية إلى تجربة مؤثرة أو متماسكة، فلا تحسمه البيانات المقدمة. لذلك يصلح المتوسط بوصفه نقطة بداية للفضول، لا بديلاً عن مشاهدة العمل أو عن نقد مستقل موثق.",
+        "body": "### ما الذي يقوله الرقم، وما الذي لا يقوله؟\nيظهر في TMDB متوسط مستخدمين مقداره 8.8/10، مستنداً إلى 145 صوتاً. هذه حقيقة عن البيانات المسجلة في المنصة، وليست درجة منحتها هيئة تحرير VibeCritic، ولا نتيجة مراجعة مستقلة لتجربة مشاهدة. ارتفاع المتوسط يوحي بأن المشاركين الذين قيّموا الفيلم مالوا إلى استجابة إيجابية، لكنه لا يكشف وحده أسباب إعجابهم، ولا يبيّن توزيع الأصوات أو مدى اختلاف الآراء بينهم. كذلك لا يجوز تحويله إلى حكم على جميع المشاهدين؛ فالمصوتون عينة محدودة ذاتية الاختيار، ولا تتوافر هنا معلومات عن خصائصها أو عن مدى تمثيلها للجمهور الأوسع.\n\nومن المهم ألا يُفهم الرقم كضمان للجودة. فالتقييم الجماهيري قد يتأثر بتوقيت التصويت، وبمن يختار المشاركة، وباهتمامات جمهور المنصة، كما أن قيمة المتوسط لا تشرح ما إذا كان التقدير منصباً على الموضوع أو على طريقة تقديمه. لا تحتوي الأدلة المتاحة على مراجعات مكتوبة من المصوتين أو على تحليل يربط أصواتهم بعناصر محددة. لذلك ينبغي قراءة الرقم بوصفه مؤشراً وصفياً لما سجله TMDB، لا تعويضاً عن نقد تفصيلي، ولا دليلاً على اتفاق عام بشأن الفيلم.\n\n### فرضية وثائقية ذات سياق معروف\nبحسب وصف TMDB، يبدأ العمل قبل 34 يوماً من إرسال إليزابيث هولمز إلى السجن، حين تدعو مؤسسة وادي السيليكون السابقة فريقاً سينمائياً متشككاً إلى توثيق تحركاتها. ويصف الملخص انتقال المشروع من صورة حميمة لشخصية موصوفة بأنها غامضة ومدانة إلى رحلة تمتد ثلاث سنوات. هذه هي الفرضية التي يمكن تحليلها من النص التعريفي، لا وصفاً مؤكداً لكل ما يظهر على الشاشة. وهي تجمع بين متابعة شخصية بعينها وامتداد زمني يتجاوز اللحظة الأولى التي يحددها الملخص، ما يطرح أسئلة عن حدود التوثيق وعن كيفية تغيّر موضوع الفيلم خلال التصوير.\n\nوتضيف المعلومات الموسوعية أن الفيلم وثائقي تجريبي أمريكي من عام 2026، من إخراج ناثان فيلدر ولانس أوبنهايم، وأنه يتناول هولمز وشريكها بيلي إيفانز، اللذين دعوا فريق تصوير في الأسابيع السابقة لبدء تنفيذ عقوبتها الفدرالية. ينبغي إبقاء هذا الوصف منفصلاً عن بيانات TMDB: الأول وارد في مصدر موسوعي، بينما ملخص الفكرة والتقييم منسوبان إلى المنصة. لا تسمح هذه المعلومات وحدها بتحديد مقدار حضور إيفانز أو غيره، ولا شكل المونتاج أو درجة تدخل صانعي الفيلم؛ وأي تفصيل من هذا النوع سيكون تجاوزاً لما هو موثق هنا.\n\n### ما الذي تسمح به المعطيات عن توجه الجمهور؟\nالقراءة المتحفظة للمتوسط هي أن مجموعة المصوتين المسجلة لدى TMDB استقبلت الفيلم بإيجابية واضحة نسبياً، لا أن الجمهور كله اتفق عليه. وعدد الأصوات، 145، يوفر أساساً أوسع من رأي فرد واحد، لكنه يظل محدوداً مقارنة بجمهور محتمل أوسع، ولا نعرف متى أدلى كل مستخدم بصوته أو إن كان قد شاهد العمل كاملاً. كما لا يتيح الرقم استنتاج أن الجمهور انجذب إلى موضوع هولمز تحديداً، أو إلى صناع الفيلم، أو إلى خصائص وثائقية بعينها. لا توجد تعليقات جمهور ضمن الأدلة المقدمة يمكن الاستشهاد بها لتفسير المتوسط.\n\nومع ذلك، تفيد النسبة بوصفها إشارة أولية للباحث عن الفيلم: هناك مستوى تقدير مرتفع في بيانات المنصة يستحق الملاحظة، مع ضرورة التحقق من سياقه قبل اتخاذه معياراً نهائياً. لا يصح وصف ذلك بالإجماع، لأن المتوسط يخفي تفاوت الدرجات ولا يقدم عدد الأصوات المنخفضة أو المرتفعة كلّاً على حدة. كذلك لا يمكن معرفة إن كان الاهتمام بالاسم المعروف لهولمز قد جذب مصوتين أكثر من المعتاد. هذه احتمالات تفسر حدود القراءة، وليست ادعاءات بشأن سلوك المصوتين أو دوافعهم الفعلية.\n\n### حدود السجل المتاح ومصادره\nتتضمن البيانات تاريخ إصدار مسجلاً في TMDB هو 16 أكتوبر 2026، كما تعرض صفحة المقطع الدعائي الرسمي لدى Sony Pictures India عبارة تفيد بعرض حصري في دور السينما في 27 نوفمبر. لا تكفي هاتان المعلومتان وحدهما لتفسير العلاقة بين التاريخين؛ فقد تختلف دلالة التاريخ أو نطاق الحملة، ولا ينبغي الجزم بسبب التباين من دون توثيق إضافي. وجود مقطع دعائي ترويجي يؤكد وجود مادة دعائية منشورة، لكنه لا يثبت مضمون الفيلم الكامل أو كيفية استقبال الجمهور له. ولا تورد البيانات منصات مشاهدة متاحة، لذا لا يمكن تقديم إرشاد موثوق حول توفره خارج ما ورد.\n\nوتسجل قائمة الممثلين أسماء من بينها إليزابيث هولمز وناثان فيلدر وبيلي إيفانز وأماندا سيفريد وكريستوفر أبوت، بينما تسرد بيانات الطاقم فيلدر وأوبنهايم. هذه معلومات تعريفية، لكنها لا تشرح طبيعة ظهور كل اسم أو دوره في الفيلم، ولذلك لا يصح بناء تحليل للأداء أو للمشاركة على القائمة وحدها. كما أن وصف العمل بأنه وثائقي لا يتيح إصدار أحكام على دقته أو نزاهته أو توازنه. لا تتضمن حزمة الأدلة مشاهدة مستقلة أو مراجعات نقدية كافية، وهو سبب جوهري لتقديم قراءة قائمة على البيانات بدلاً من ادعاء تجربة مباشرة.\n\n### خلاصة القراءة\nعلى مستوى ما يمكن إثباته، يمتلك الفيلم موضوعاً وثائقياً محدداً وفرضية تقوم على فريق تصوير متشكك يتابع هولمز قبل دخولها السجن، ثم على امتداد زمني يصفه ملخص TMDB بثلاث سنوات. هذه عناصر كافية لشرح سبب قابلية المشروع للاهتمام، لكنها لا تكشف إن كان البناء النهائي يفي بوعوده أو كيف يعالج العلاقة بين الشخصية والكاميرا. لا نملك هنا أساساً لمنح درجات للقصة أو الصورة أو الصوت أو الإيقاع، ولا لتسمية عيوب فنية. وأي موازنة من هذا النوع تتطلب مشاهدة موثقة ومصادر نقدية مستقلة غير متاحة في ملف الأدلة.\n\nوعليه، فإن قيمة المراجعة تكمن في وضع تقييم الجمهور في حجمه الصحيح: 8.8/10 من 145 صوتاً على TMDB، لا درجة VibeCritic ولا ضماناً لجودة الفيلم. يمكن للقارئ اعتبار الرقم إشارة إلى استجابة إيجابية لدى عينة المستخدمين، ثم موازنته مع محدودية حجمها ومع غياب تفسيرات مكتوبة لأصواتها. أما وصف العمل نفسه فيبقى مستنداً إلى بيانات تعريفية وملخصات منسوبة إلى مصادرها، لا إلى مشاهدة شخصية. هذه المسافة بين الإشارة الجماهيرية والحكم النقدي ضرورية كي لا يتحول رقم لافت إلى استنتاج أكبر مما تسمح به الأدلة.",
+        "pros": [
+          "تقييم TMDB المسجل مرتفع نسبياً: 8.8/10 من 145 صوتاً، مع التنبيه إلى أنه متوسط مستخدمين لا تقييم تحريري.",
+          "ملخص TMDB يقدم فرضية واضحة عن فريق تصوير متشكك يتابع إليزابيث هولمز، ويذكر امتداد الرحلة ثلاث سنوات.",
+          "تتوافر معلومات تعريفية منسوبة إلى مصادر محددة، منها بيانات النوع الوثائقي وأسماء المخرجين في المصدر الموسوعي."
+        ],
+        "cons": [
+          "145 صوتاً عينة محدودة، ولا تتوافر معلومات عن توزيع الأصوات أو خصائص المصوتين.",
+          "لا تتضمن الأدلة تعليقات مكتوبة تفسر أسباب التقييم أو مراجعات مستقلة كافية عن التجربة المباشرة.",
+          "لا تحسم البيانات العلاقة بين تاريخ الإصدار المسجل في TMDB وموعد العرض الوارد في المقطع الترويجي، ولا تثبت توفر الفيلم على منصات."
+        ],
+        "title": "You Can See Everything",
+        "type": "movie",
+        "sourceId": "movie:1765072",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1765072",
+        "sourceRating": 8.8,
+        "sourceRatingScale": 10,
+        "sourceVoteCount": 145,
+        "sourceRatingCheckedAt": "2026-11-22T01:04:39.180Z",
+        "audienceScore": 8.8,
+        "releaseDate": "2026-10-16",
+        "poster": "https://image.tmdb.org/t/p/w780/mVh3qkw2NUFxWWyF0G1hg2Wh0K5.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/rrbbzCyS45yooXpUGJatfptlHYI.jpg",
+        "genres": [
+          "Documentary"
+        ],
+        "platforms": [],
+        "cast": [
+          "Elizabeth Holmes",
+          "Nathan Fielder",
+          "Billy Evans",
+          "Amanda Seyfried",
+          "Christopher Abbott",
+          "Lance Oppenheim",
+          "Christian Rasmus Holmes IV",
+          "Noel Anne Holmes"
+        ],
+        "crew": [
+          "Nathan Fielder",
+          "Lance Oppenheim"
+        ],
+        "tags": [
+          "Documentary"
+        ],
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1765072",
+            "extract": "Thirty-four days before she's sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/You_Can_See_Everything",
+            "extract": "You Can See Everything is a 2026 American experimental documentary film directed by Nathan Fielder and Lance Oppenheim. It follows Elizabeth Holmes, the founder of the defunct health technology company Theranos, and her partner Billy Evans, who invited a film crew to document them beginning in the weeks before Holmes began serving a United States federal prison sentence for defrauding investors.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Sony Pictures India",
+            "url": "https://www.youtube.com/watch?v=ixhjb6ooaO8",
+            "extract": "Verified public, embeddable promotional trailer: You Can See Everything - Official Trailer | Exclusively In Cinemas November 27",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "ixhjb6ooaO8",
+        "youtubeVideoTitle": "You Can See Everything - Official Trailer | Exclusively In Cinemas November 27",
+        "reviewMode": "audience"
+      },
       "lastError": "Source HTTP 429 (en.wikipedia.org)",
-      "resumeStatus": "queued"
+      "resumeStatus": null,
+      "provider": "openai",
+      "tokens": 6904,
+      "articlePath": "src/content/reviews/movie-you-can-see-everything-1765072.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-you-can-see-everything-1765072/"
     },
     "movie:1339713": {
       "key": "movie:1339713",
@@ -1335,9 +1468,9 @@
       "tokens": 32849
     },
     "2026-11-22": {
-      "articles": 1,
-      "requests": 7,
-      "tokens": 6419
+      "articles": 2,
+      "requests": 10,
+      "tokens": 13323
     }
   },
   "history": []
