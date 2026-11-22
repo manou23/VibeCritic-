@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-22T23:49:25.384Z",
+  "updatedAt": "2026-11-22T23:59:16.420Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -1471,6 +1471,31 @@
       "sections": [],
       "article": null,
       "lastError": "Publishing blocked: evidence supports neither a scored review nor an explicit pre-release preview"
+    },
+    "movie:791523": {
+      "key": "movie:791523",
+      "type": "movie",
+      "id": "791523",
+      "title": "Wildwood",
+      "item": {
+        "type": "movie",
+        "id": "791523",
+        "name": "Wildwood",
+        "date": "2026-10-19",
+        "preview": false,
+        "popularity": 71.6351,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-22T23:59:16.149Z",
+      "updatedAt": "2026-11-22T23:59:16.419Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "Independent source is too thin after full lead-section fallback"
     }
   },
   "providers": {},
