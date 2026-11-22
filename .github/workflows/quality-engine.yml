@@ -1,6 +1,9 @@
 name: VibeCritic Quality Engine
 
 on:
+  pull_request:
+    branches:
+      - main
   schedule:
     - cron: '30 8 * * *'
   workflow_dispatch:
