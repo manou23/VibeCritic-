@@ -30,7 +30,7 @@ tags: ["Neuromancer", "Apple TV", "William Gibson", "Cyberpunk", "Science Fictio
 genres: ["خيال علمي", "سايبربانك", "إثارة", "جريمة"]
 creator: "Graham Roland / JD Dillard"
 cast: ["Callum Turner", "Briana Middleton", "Mark Strong", "Joseph Lee", "Peter Sarsgaard", "Clémence Poésy", "Max Irons", "Dane DeHaan"]
-crew: ["Graham Roland", "JD Dillard", "William Gibson"]
+crew: ["Graham Roland — مبتكر المسلسل والمشرف على العرض", "JD Dillard — مبتكر المسلسل ومخرج الحلقات الثلاث الأولى", "William Gibson — منتج تنفيذي"]
 sourceName: "Apple TV Press"
 sourceId: "neuromancer-apple-tv-2027-preview"
 sourceUrl: "https://www.apple.com/tv-pr/news/2026/07/apple-tvs-highly-anticipated-cyberpunk-series-neuromancer-hacks-into-san-diego-comic-con-with-first-ever-teaser/"
