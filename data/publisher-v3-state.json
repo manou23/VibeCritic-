@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-22T00:35:03.208Z",
+  "updatedAt": "2026-11-22T00:40:25.069Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -889,6 +889,115 @@
       "article": null,
       "lastError": "Source HTTP 429 (en.wikipedia.org)",
       "resumeStatus": "queued"
+    },
+    "movie:1339713": {
+      "key": "movie:1339713",
+      "type": "movie",
+      "id": "1339713",
+      "title": "Obsession",
+      "item": {
+        "type": "movie",
+        "id": "1339713",
+        "name": "Obsession",
+        "date": "2026-05-13",
+        "preview": false,
+        "popularity": 76.3102,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-22T00:39:43.499Z",
+      "updatedAt": "2026-11-22T00:39:43.985Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "Independent source is too thin after full lead-section fallback"
+    },
+    "movie:1400940": {
+      "key": "movie:1400940",
+      "type": "movie",
+      "id": "1400940",
+      "title": "Clayface",
+      "item": {
+        "type": "movie",
+        "id": "1400940",
+        "name": "Clayface",
+        "date": "2026-10-19",
+        "preview": false,
+        "popularity": 69.3939,
+        "source": "TMDB"
+      },
+      "status": "waiting",
+      "stage": 0,
+      "attempts": 1,
+      "createdAt": "2026-11-22T00:39:44.627Z",
+      "updatedAt": "2026-11-22T00:40:25.066Z",
+      "nextAttemptAt": "2026-11-22T01:40:25.066Z",
+      "evidence": {
+        "title": "Clayface",
+        "type": "movie",
+        "collectedAt": "2026-11-22T00:39:45.206Z",
+        "sourceId": "movie:1400940",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1400940",
+        "overview": "Matt Hagen's meteoric rise from Gotham street kid to Hollywood leading man is tragically cut short when a local crime boss's actions leave him horribly disfigured. Abandoned by his team and with nothing left, Matt seeks out a cutting edge treatment that miraculously returns him to his former self… but also unexpectedly affects his grip on reality, spiraling him down a destructive path of all-consuming revenge.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1400940",
+            "extract": "Matt Hagen's meteoric rise from Gotham street kid to Hollywood leading man is tragically cut short when a local crime boss's actions leave him horribly disfigured. Abandoned by his team and with nothing left, Matt seeks out a cutting edge treatment that miraculously returns him to his former self… but also unexpectedly affects his grip on reality, spiraling him down a destructive path of all-consuming revenge.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Clayface",
+            "extract": "Clayface is an alias used by several characters appearing in American comic books published by DC Comics. Most incarnations of the character possess clay-like bodies and shapeshifting abilities, and almost all of them are adversaries of the superhero Batman. In 2009, Clayface was ranked as IGN's 73rd-greatest comic book villain of all time.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Warner Bros. Pictures International",
+            "url": "https://www.youtube.com/watch?v=W9bNA42dPgQ",
+            "extract": "Verified public, embeddable promotional trailer: Clayface | Official Trailer",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 467 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "W9bNA42dPgQ",
+        "youtubeVideoTitle": "Clayface | Official Trailer",
+        "youtubeChannel": "Warner Bros. Pictures International",
+        "releaseDate": "2026-10-19",
+        "genres": [
+          "Horror",
+          "Thriller",
+          "Science Fiction"
+        ],
+        "platforms": [],
+        "cast": [
+          "Tom Rhys Harries",
+          "Naomi Ackie",
+          "Eddie Marsan",
+          "Max Minghella",
+          "David Dencik",
+          "Francesca Corney",
+          "Ruby Sear",
+          "Wil Coban"
+        ],
+        "crew": [
+          "James Watkins"
+        ],
+        "rating": 7.398,
+        "ratingScale": 10,
+        "votes": 467,
+        "poster": "https://image.tmdb.org/t/p/w780/9l1NuFjel2j89hiuiJbsxfblqjy.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/f1TVhqJJdxMvUsUDuKHS0ekgYkk.jpg"
+      },
+      "sections": [],
+      "article": null,
+      "lastError": "Article is too short: 465 words",
+      "resumeStatus": "queued"
     }
   },
   "providers": {},
@@ -910,7 +1019,7 @@
     },
     "2026-11-22": {
       "articles": 0,
-      "requests": 2,
+      "requests": 4,
       "tokens": 0
     }
   },
