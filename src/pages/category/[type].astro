@@ -3,9 +3,10 @@ import Base from '../../layouts/Base.astro';
 import ReviewCard from '../../components/ReviewCard.astro';
 import { getCollection } from 'astro:content';
 import { TYPE_LABEL, TYPE_PLURAL, type ReviewType, url, optimizeImage } from '../../consts';
+import { isPublicReview } from '../../lib/review-visibility.mjs';
 export function getStaticPaths(){return ['game','movie','series'].map(type=>({params:{type}}));}
 const type=Astro.params.type as ReviewType;
-const all=await getCollection('reviews',({data})=>data.type===type);
+const all=await getCollection('reviews',({data})=>data.type===type&&isPublicReview(data));
 const reviews=all.sort((a,b)=>(b.data.publishedAt??b.data.date).valueOf()-(a.data.publishedAt??a.data.date).valueOf());
 const normalizeArabic=value=>String(value||'').toLocaleLowerCase('ar').normalize('NFKD').replace(/\p{M}/gu,'').replace(/[أإآٱ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/ؤ/g,'و').replace(/ئ/g,'ي').replace(/[^\p{L}\p{N}\s]/gu,' ').trim().replace(/\s+/g,' ');
 const featured=reviews[0];
