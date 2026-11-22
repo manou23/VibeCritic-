@@ -52,6 +52,9 @@ genres:
 sourceName: "Rotten Tomatoes"
 sourceId: "the-altruists-2026"
 sourceUrl: "https://www.rottentomatoes.com/tv/the_altruists"
+backdrop: "https://dnm.nflximg.net/api/v6/s0XAg4q_jvYbSSbLvySyUsliNSg/AAAAQS3bDqmQRwcEKpUEfOqJDwyJeymGUU1o_PdeNf4bhRyMIl8cxFb7IP39FC19Ggi1rTGkUs3CYhYxa-ol0lq0nlHb7rEoGDwm8cVQR_RqQRjXWCOZYiRnULy02saNjeIMBbBKvJKYnACZne-lWSgfzGYS5lQ.jpg?r=154"
+youtubeVideoId: "9aGeKSSyuhk"
+youtubeVideoTitle: "The Altruists | Official Trailer | Netflix"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
 ---
@@ -137,6 +140,20 @@ The Guardian قدمت قراءة إيجابية حذرة، مشيدة بالأد
 لكن كثافة المعلومات قد تربك من يدخل القصة بلا خلفية، وبعض الشخصيات والخطوط تحتاج إلى مساحة أكبر. لذلك ينجح المسلسل أكثر كدراما نفسية عن السلطة والثقة منه كشرح مبسط لعالم العملات المشفرة.
 
 **الخلاصة:** مسلسل محدود جيد، بأداءات قوية وموضوع مهم، لكنه ليس خفيفاً ولا يخلو من الازدحام. تقييم VibeCritic التحريري: **7.3/10**.
+
+## صور من المسلسل والإعلان الرسمي
+
+![The Altruists – صورة ترويجية رسمية من Netflix](https://dnm.nflximg.net/api/v6/s0XAg4q_jvYbSSbLvySyUsliNSg/AAAAQa1yAucE5IWI2veqcGLXgrG9eAPNMBEhJ8D41wjmjwJryMMudjlG17Z6S42ZcVdIHHHZnbOyDWyLUp5zR_nHkQcZM5tucsdstXii3CCAxiDc44BcGUpb7QNtQqp0TR1HxEWzsm8iz-n9x88LfT4L7dozkVw.jpg?r=154)
+
+![The Altruists – لقطة ترويجية من Netflix](https://dnm.nflximg.net/api/v6/s0XAg4q_jvYbSSbLvySyUsliNSg/AAAAQZ1MhHTJlMEDpsL1az6nSyo5hjOTdG-rO4-PpCe4zmFUU-FZbVmobzUIGvKkOOV5Vm7dF7elk1meMNlt7-QTNYGqyOLsa7zY4UxPAIWxh1F77gmCOJ_xKmBvVTLwuVcuo6u7-LEzgr933Mcqqi1oGiB37as.jpg?r=154)
+
+![The Altruists – صورة من مواد Netflix الترويجية](https://dnm.nflximg.net/api/v6/a01MIaQTUgSJoLaS_OCn68Eg3hU/AAAAQexdAQClVbIVRaILJaS5p-ju8_fdw4qWN5Y-z-PBxeYZC943rCDas4--M2R3tRqeCKYrbO--82qnjP1uCxODM-FQJRgylAToR1V-uTzAPkSlES1n2rOn1dht918ok0tk_FG8-bMu_4tB-b3tn4kAse0a.jpg?r=2e1)
+
+### الإعلان الرسمي
+
+[مشاهدة الإعلان الرسمي لـ The Altruists على YouTube](https://www.youtube.com/watch?v=9aGeKSSyuhk)
+
+الصور الترويجية: Netflix، تصوير Ricardo Hubbs/Netflix ومواد Netflix الرسمية. [مصدر الصور](https://www.netflix.com/tudum/articles/the-altruists-cast-release-date-news). الإعلان: [Netflix](https://www.netflix.com/tudum/articles/the-altruists-trailer-julia-garner-anthony-boyle).
 
 ## المصادر والمشاهدة
 
