@@ -13,6 +13,7 @@ releaseDate: "2026-11-20"
 platforms:
   - "Cinema"
 poster: "https://es.web.img3.acsta.net/img/f8/0f/f80f9cb38f5aab3ff2d2fb4ed5281b23.jpg"
+backdrop: "https://images.squarespace-cdn.com/content/v1/61d3a1dc960d41134f8ac264/1794373147561-OJ1QWHT5DKVES5O8REUP/i-play-rocky-film-still-12.jpg"
 mediaVerified: true
 youtubeVideoId: "V_g_Ut0jO-0"
 youtubeVideoTitle: "I Play Rocky | Official Trailer | Amazon MGM Studios"
