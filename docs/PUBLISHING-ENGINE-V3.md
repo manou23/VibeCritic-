@@ -3,7 +3,7 @@
 V3 is a clean, isolated publishing engine. It does not import V2 runtime modules.
 
 ## Pipeline
-1. Discover one released, unpublished candidate from TMDB or RAWG.
+1. Discover one unpublished candidate from TMDB or RAWG with a verified release date in 2024 or later; reject pre-2024, missing, and invalid dates. Future-dated candidates remain eligible only when explicitly marked as a near-term preview.
 2. Collect catalog evidence plus a separate encyclopedia source.
 3. Validate identity, source domains, and evidence completeness.
 4. Generate one complete Arabic critical review using explicitly enabled free-only providers.
