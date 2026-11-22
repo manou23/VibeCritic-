@@ -18,8 +18,8 @@ for (const file of files) {
 
   const frontmatter = match[1];
   const body = match[2] || '';
-  const modeMatch = frontmatter.match(/^reviewMode:\s*(review|audience|preview|limited)\s*$/m);
-  const reviewMode = modeMatch?.[1] || 'review';
+  const modeMatch = frontmatter.match(/^reviewMode:\s*(["']?)(review|audience|preview|limited)\1\s*$/m);
+  const reviewMode = modeMatch?.[2] || 'review';
   if (frontmatter.match(/^reviewMode:/m) && !modeMatch) {
     failures.push(file + ': reviewMode must be review, audience, preview or limited');
     continue;
