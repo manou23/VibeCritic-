@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-22T00:40:25.069Z",
+  "updatedAt": "2026-11-22T01:00:32.502Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -998,6 +998,323 @@
       "article": null,
       "lastError": "Article is too short: 465 words",
       "resumeStatus": "queued"
+    },
+    "movie:1131943": {
+      "key": "movie:1131943",
+      "type": "movie",
+      "id": "1131943",
+      "title": "Madden",
+      "item": {
+        "type": "movie",
+        "id": "1131943",
+        "name": "Madden",
+        "date": "2026-11-18",
+        "preview": false,
+        "popularity": 66.0386,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-22T00:59:18.884Z",
+      "updatedAt": "2026-11-22T00:59:19.492Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "Independent source is too thin after full lead-section fallback"
+    },
+    "movie:1286656": {
+      "key": "movie:1286656",
+      "type": "movie",
+      "id": "1286656",
+      "title": "I Play Rocky",
+      "item": {
+        "type": "movie",
+        "id": "1286656",
+        "name": "I Play Rocky",
+        "date": "2026-11-06",
+        "preview": false,
+        "popularity": 54.6296,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-22T00:59:20.133Z",
+      "updatedAt": "2026-11-22T00:59:20.545Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "I Play Rocky",
+        "type": "movie",
+        "collectedAt": "2026-11-22T00:59:20.544Z",
+        "sourceId": "movie:1286656",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1286656",
+        "overview": "The electrifying true story about an unknown actor with an unshakable belief that he wasn't just meant to write Rocky—he was meant to be Rocky Balboa. Told \"no\" at every turn, Sylvester Stallone bets everything on himself, holding the line on playing the lead against seemingly impossible odds.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1286656",
+            "extract": "The electrifying true story about an unknown actor with an unshakable belief that he wasn't just meant to write Rocky—he was meant to be Rocky Balboa. Told \"no\" at every turn, Sylvester Stallone bets everything on himself, holding the line on playing the lead against seemingly impossible odds.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/I_Play_Rocky",
+            "extract": "I Play Rocky is a 2026 American biographical drama film directed by Peter Farrelly and written by Peter Gamble. It follows the development and production of the film Rocky (1976). Anthony Ippolito stars as Sylvester Stallone, alongside AnnaSophia Robb, Toby Kebbell, P. J. Byrne, Jay Duplass, Matt Dillon, Stephan James, and Tracy Letts.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — FilmSpot Trailer",
+            "url": "https://www.youtube.com/watch?v=Bu_gJs_l_Fc",
+            "extract": "Verified public, embeddable promotional trailer: I PLAY ROCKY Official Trailer 2 (NEW 2026)",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "limited",
+        "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
+        "youtubeVideoId": "Bu_gJs_l_Fc",
+        "youtubeVideoTitle": "I PLAY ROCKY Official Trailer 2 (NEW 2026)",
+        "youtubeChannel": "FilmSpot Trailer",
+        "releaseDate": "2026-11-06",
+        "genres": [
+          "Drama",
+          "History"
+        ],
+        "platforms": [],
+        "cast": [
+          "Anthony Ippolito",
+          "AnnaSophia Robb",
+          "P.J. Byrne",
+          "Toby Kebbell",
+          "Jay Duplass",
+          "Tracy Letts",
+          "Matt Dillon",
+          "Stephan James"
+        ],
+        "crew": [
+          "Peter Farrelly",
+          "Peter Gamble"
+        ],
+        "rating": 8.409,
+        "ratingScale": 10,
+        "votes": 55,
+        "poster": "https://image.tmdb.org/t/p/w780/jKW6b89n5EGbJXtxTZYBcDHLpYg.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/1lnnjBCRLZzKRhQipK5zm61YkPe.jpg"
+      },
+      "sections": [],
+      "article": null,
+      "lastError": "Publishing blocked: evidence supports neither a scored review nor an explicit pre-release preview"
+    },
+    "movie:1595124": {
+      "key": "movie:1595124",
+      "type": "movie",
+      "id": "1595124",
+      "title": "Steps",
+      "item": {
+        "type": "movie",
+        "id": "1595124",
+        "name": "Steps",
+        "date": "2026-11-20",
+        "preview": false,
+        "popularity": 50.8216,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-22T00:59:21.084Z",
+      "updatedAt": "2026-11-22T00:59:21.428Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "No exact independent encyclopedia match for Steps"
+    },
+    "movie:1518204": {
+      "key": "movie:1518204",
+      "type": "movie",
+      "id": "1518204",
+      "title": "Allen",
+      "item": {
+        "type": "movie",
+        "id": "1518204",
+        "name": "Allen",
+        "date": "2026-11-12",
+        "preview": false,
+        "popularity": 46.4054,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-22T00:59:21.903Z",
+      "updatedAt": "2026-11-22T00:59:22.361Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "Independent source is too thin after full lead-section fallback"
+    },
+    "movie:1170608": {
+      "key": "movie:1170608",
+      "type": "movie",
+      "id": "1170608",
+      "title": "Dune: Part Three",
+      "item": {
+        "type": "movie",
+        "id": "1170608",
+        "name": "Dune: Part Three",
+        "date": "2026-12-15",
+        "preview": true,
+        "popularity": 37.9289,
+        "source": "TMDB"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-22T00:59:22.918Z",
+      "updatedAt": "2026-11-22T01:00:32.502Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Dune: Part Three",
+        "type": "movie",
+        "collectedAt": "2026-11-22T00:59:23.391Z",
+        "sourceId": "movie:1170608",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1170608",
+        "overview": "Nearly two decades after he seized control of the Imperium, Paul Atreides is now a ruthless Emperor, and must face the consequences of his reign as old allies return, terrifying new threats emerge, and betrayal lurks in every shadow. Haunted by visions of Imperial collapse and the reappearance of his long-lost love, Paul is drawn into a sweeping conspiracy, with Chani at the heart of its unfolding mystery. As enemies close in, Paul must confront the true cost of power and the fate of those he loves the most.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1170608",
+            "extract": "Nearly two decades after he seized control of the Imperium, Paul Atreides is now a ruthless Emperor, and must face the consequences of his reign as old allies return, terrifying new threats emerge, and betrayal lurks in every shadow. Haunted by visions of Imperial collapse and the reappearance of his long-lost love, Paul is drawn into a sweeping conspiracy, with Chani at the heart of its unfolding mystery. As enemies close in, Paul must confront the true cost of power and the fate of those he loves the most.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Dune%3A_Part_Three",
+            "extract": "Dune: Part Three is an upcoming American epic space opera film directed by Denis Villeneuve, from a screenplay he wrote with Brian K. Vaughan. Based on the 1969 novel Dune Messiah by Frank Herbert, it is the sequel to Dune: Part Two (2024) and the final installment of a trilogy of films developed by Legendary Pictures. Villeneuve produced the film with his wife and business partner Tanya Lapointe, Legendary's Mary Parent and Cale Boyter, and Joseph M. Caracciolo Jr. Timothée Chalamet leads an ensemble cast as Paul Atreides, a despotic emperor forced to contend with the fallout of his ascent to the throne, including threats of an insurgency and visions of widespread pandemonium.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Warner Bros. India",
+            "url": "https://www.youtube.com/watch?v=okkQl4_nkRs",
+            "extract": "Verified public, embeddable promotional trailer: Dune: Part Three | Official Trailer",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "preview",
+        "reviewReadinessReason": "Verified pre-release item; preview only, no final rating.",
+        "youtubeVideoId": "okkQl4_nkRs",
+        "youtubeVideoTitle": "Dune: Part Three | Official Trailer",
+        "youtubeChannel": "Warner Bros. India",
+        "releaseDate": "2026-12-15",
+        "genres": [
+          "Science Fiction",
+          "Adventure"
+        ],
+        "platforms": [],
+        "cast": [
+          "Timothée Chalamet",
+          "Zendaya",
+          "Jason Momoa",
+          "Florence Pugh",
+          "Rebecca Ferguson",
+          "Isaach de Bankolé",
+          "Charlotte Rampling",
+          "Anya Taylor-Joy"
+        ],
+        "crew": [
+          "Denis Villeneuve"
+        ],
+        "rating": null,
+        "ratingScale": 10,
+        "votes": 0,
+        "poster": "https://image.tmdb.org/t/p/w780/gknAq4pAuToh1Aq5CJfVkGQkExT.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/i5E9H7Ik0u61ylDDTbmUpTL3Yw.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "Dune: Part Three — معاينة استباقية لصراع بول أتريدس مع عواقب العرش",
+        "summary": "تعود السلسلة في Dune: Part Three إلى عالم أراكس، لكن الملخص المتاح ينقل مركز الحكاية إلى ما بعد صعود بول أتريدس إلى الحكم. بعد مرور ما يقارب عقدين على استيلائه على الإمبراطورية، يواجه بول تبعات حكمه، فيما تعود شخصيات من ماضيه وتلوح أخطار جديدة ومؤامرة تتصل بتشاني. الفيلم، وفق بيانات الملف، من إخراج دينيس فيلنوف، ويستند إلى رواية Dune Messiah لفرانك هربرت، مع تيموثي شالاميه في الدور الرئيسي. موعد الإصدار المسجل هو 15 ديسمبر 2026. هذه معاينة لما توحي به المعلومات المنشورة، لا تقييم لتجربة لم تُتح بعد.",
+        "verdict": "قبل الإصدار، تبدو النقطة الأوضح في Dune: Part Three هي انتقال الحكاية من صعود بول إلى مواجهة كلفة السلطة التي نالها. يضع الملخص الإمبراطور أمام رؤى لانهيار وشيك، وعودة حب قديم، ومؤامرة تتشابك فيها تشاني، بينما يصفه مصدر آخر بأنه حاكم مستبد يواجه تداعيات وصوله إلى العرش. هذه مداخل سردية قابلة لأن تمنح الجزء الجديد توجهاً مختلفاً عن مجرد استكمال انتصار سابق، لكنها لا تكفي للتنبؤ بنجاح المعالجة أو إيقاعها. حتى موعد 15 ديسمبر 2026، يبقى الحكم على الأداء والتنفيذ والتوازن بين عناصر القصة مؤجلاً إلى المشاهدة.",
+        "body": "### من صعود بول إلى تبعات الحكم\n\nيضع الملخص المتاح Dune: Part Three في مرحلة تلي استيلاء بول أتريدس على الإمبراطورية بنحو عقدين. لم يعد السؤال المركزي، وفق هذا الوصف، كيف يصل إلى العرش، بل ماذا يعني أن يحكمه، وما الثمن الذي يدفعه هو ومن حوله. يصف الملخص بول بأنه إمبراطور قاسٍ، فيما يورد مصدر آخر أنه حاكم مستبد يواجه نتائج صعوده. هذان الوصفان يقدمان صورة أولية عن اتجاه الصراع، لكنهما لا يكشفان تفاصيل الأحداث ولا يحددان كيف ستُعرض شخصية بول على الشاشة. لذلك ينبغي التعامل مع التحول في موقعه بوصفه حقيقة من مواد التعريف، لا حكماً مسبقاً على الفيلم أو شخصيته.\n\n### مؤامرة تحيط بالإمبراطورية\n\nتتجمع في الملخص عناصر تهدد استقرار الحكم من أكثر من جهة: حلفاء قدامى يعودون، وأخطار جديدة تظهر، وخيانة تتربص، فيما يواجه بول مؤامرة واسعة. كما ترد رؤى عن انهيار الإمبراطورية واضطراب شامل، فتبدو السلطة هنا محاطة بالخطر بدلاً من أن تكون ضماناً للأمان. هذه العناصر تتيح قراءة استباقية لصراع قد يتصل بقدرة الحاكم على التمييز بين التهديد الحقيقي وما يراه في رؤاه، لكن ذلك يظل احتمالاً تحليلياً لا تفصيلاً مؤكداً للحبكة. لا يحدد الملف هوية المتآمرين أو طبيعة الأخطار، ولا يشرح كيف تتصل عودة الحلفاء بمسار المؤامرة؛ وما ننتظره عند الإصدار هو معرفة كيفية جمع هذه الخيوط في حكاية واحدة.\n\n### تشاني في قلب الغموض\n\nيمنح الملخص تشاني موقعاً مهماً حين يذكر أنها في قلب اللغز المتكشف، ويربط أزمة بول بعودة حب قديم طويل الغياب. لا يشرح الوصف ماهية هذا اللغز، ولا يوضح إن كانت عودة الحب القديم مرتبطة مباشرة بتشاني أو بمسار آخر؛ لذا لا يصح حسم طبيعة العلاقة بين الفكرتين من المعلومات الحالية. المؤكد فقط أن حياة بول الشخصية ليست منفصلة عن الصراع السياسي كما يعرضه الملخص، وأن مصائر المقربين منه تدخل ضمن ما يواجهه. ومن هنا يأتي أحد أسئلة الانتظار: هل ستظل تشاني طرفاً في الأحداث المحيطة بالحاكم، أم ستصبح محوراً أساسياً في كشف المؤامرة؟ الإجابة ليست متاحة قبل مشاهدة العمل.\n\n### خلفية الرواية وموقع الفيلم في السلسلة\n\nبحسب بيانات الملف، يستند الفيلم إلى رواية Dune Messiah الصادرة عام 1969 لفرانك هربرت، ويأتي بعد Dune: Part Two الصادر عام 2024. ويصفه المصدر الموسوعي بأنه الجزء الختامي من ثلاثية سينمائية طورتها Legendary Pictures. يوفر ذلك إطاراً لفهم المشروع بوصفه امتداداً لقصة بول، مع انتقال زمني كبير بين مرحلتين من حياته، لكنه لا يكشف مقدار الاقتباس من الرواية ولا التغييرات التي قد تدخلها النسخة السينمائية. كما لا توضح المواد المتاحة إن كان الفيلم سيغلق جميع خطوط الشخصيات أو يكتفي بإتمام قوس محدد. ما يمكن توقعه بحذر هو أن موقعه كجزء ختامي يجعل طريقة ربطه بما سبقه أمراً يستحق المتابعة، لا ضماناً لنهاية بعينها.\n\n### فريق العمل وما نعرفه عن الإنتاج\n\nيورد الملف أن دينيس فيلنوف يتولى الإخراج، وأنه كتب السيناريو مع براين ك. فوغان. ويذكر تيموثي شالاميه في دور بول أتريدس، إلى جانب زندايا وجيسون موموا وفلورنس بيو وريبيكا فيرغسون وإسحاق دي بانكولي وشارلوت رامبلينغ وأنيا تايلور-جوي ضمن طاقم التمثيل. هذه أسماء مرتبطة بالمشروع وفق المعلومات المدرجة، لكنها لا تكشف وحدها مساحة كل ممثل أو طبيعة أدواره في الجزء الجديد. لا يقدم الملف تفاصيل عن مواقع التصوير أو الموسيقى أو تصميم الإنتاج، ولذلك لا ينبغي استنتاجها أو وصفها كما لو كانت معلومة مؤكدة. ما ننتظره هو اتضاح كيفية توزيع الأدوار بين الشخصيات العائدة، وما إذا كانت الشخصيات الجديدة أو القديمة ستدفع الحبكة السياسية والعاطفية في اتجاهات متوازنة.\n\n### المقطع الترويجي وحدود ما يكشفه\n\nيتضمن الملف إشارة إلى مقطع ترويجي بعنوان «Dune: Part Three | Official Trailer» منشور عبر قناة Warner Bros. India، ويصفه بأنه مقطع ترويجي عام موثق وقابل للتضمين. غير أن الأدلة المقدمة هنا لا تتضمن وصفاً لمشاهده أو حواره أو تفاصيله البصرية، ولذلك لا يمكن بناء تحليل لمحتواه أو استخلاص معلومات قصصية منه. وجود المقطع يثبت توافر مادة ترويجية ضمن البيانات، لكنه لا يثبت وحده تفاصيل إضافية عن الفيلم. ومن المفيد عند متابعة أي مواد لاحقة التمييز بين ما تقوله صراحةً وما يظل مجرد توقعات، وخصوصاً أن الملخص المنشور لا يحدد هوية التهديدات أو مآلات الشخصيات. هذه المسافة بين المعلومة والتخمين مهمة في معاينة عمل لم يصدر بعد.\n\n### أسئلة الإصدار المقبل\n\nموعد الإصدار المسجل في الملف هو 15 ديسمبر 2026، وهو تاريخ مستقبلي بالنسبة إلى هذه المعاينة. حتى ذلك الموعد، تتمثل الأسئلة المفتوحة في كيفية تصوير آثار حكم بول، وفي طبيعة الرؤى التي تطارده، وفي الدور الذي تؤديه تشاني داخل المؤامرة. كذلك لا تتضح بعد درجة حضور الحلفاء القدامى أو الأخطار الجديدة، ولا كيفية انتقال الفيلم بين صراع الإمبراطورية ومصير الأشخاص الذين يحبهم بول. هذه ليست عيوباً مثبتة ولا وعوداً بجودة محددة، بل نقاط لا يمكن حسمها اعتماداً على الوصف وحده. عند الإصدار ستكون المشاهدة هي ما يسمح بتقييم الإجابات، وإيقاع السرد، ومدى اتساق الجزء مع ما سبقه؛ أما الآن فالمتاح هو تحديد اتجاه الحكاية ومجموعة الأسئلة التي يثيرها.",
+        "pros": [
+          "المعلومات المتاحة تحدد محوراً قصصياً واضحاً: مواجهة بول عواقب الحكم بعد مرور سنوات على صعوده.",
+          "يذكر الملخص تشاني والمؤامرة والرؤى بوصفها عناصر مترابطة تستحق المتابعة، من دون أن يكشف حلها مسبقاً.",
+          "وجود مخرج وكاتب وطاقم تمثيل مسجلين يمنح المعاينة إطاراً موثقاً للمشروع."
+        ],
+        "cons": [
+          "لا تكشف الأدلة تفاصيل هوية الأخطار أو المتآمرين، ولا كيفية تطور الأحداث.",
+          "لا تتوافر ضمن الملف معلومات تفصيلية عن أدوار معظم أفراد الطاقم أو الجوانب الفنية والإنتاجية.",
+          "لا يمكن استنتاج مستوى التنفيذ أو الحكم على الفيلم قبل الإصدار والمشاهدة."
+        ],
+        "title": "Dune: Part Three",
+        "type": "movie",
+        "sourceId": "movie:1170608",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1170608",
+        "sourceRating": null,
+        "sourceRatingScale": 10,
+        "sourceVoteCount": 0,
+        "sourceRatingCheckedAt": "2026-11-22T00:59:23.391Z",
+        "audienceScore": 0,
+        "releaseDate": "2026-12-15",
+        "poster": "https://image.tmdb.org/t/p/w780/gknAq4pAuToh1Aq5CJfVkGQkExT.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/i5E9H7Ik0u61ylDDTbmUpTL3Yw.jpg",
+        "genres": [
+          "Science Fiction",
+          "Adventure"
+        ],
+        "platforms": [],
+        "cast": [
+          "Timothée Chalamet",
+          "Zendaya",
+          "Jason Momoa",
+          "Florence Pugh",
+          "Rebecca Ferguson",
+          "Isaach de Bankolé",
+          "Charlotte Rampling",
+          "Anya Taylor-Joy"
+        ],
+        "crew": [
+          "Denis Villeneuve"
+        ],
+        "tags": [
+          "Science Fiction",
+          "Adventure"
+        ],
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1170608",
+            "extract": "Nearly two decades after he seized control of the Imperium, Paul Atreides is now a ruthless Emperor, and must face the consequences of his reign as old allies return, terrifying new threats emerge, and betrayal lurks in every shadow. Haunted by visions of Imperial collapse and the reappearance of his long-lost love, Paul is drawn into a sweeping conspiracy, with Chani at the heart of its unfolding mystery. As enemies close in, Paul must confront the true cost of power and the fate of those he loves the most.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Dune%3A_Part_Three",
+            "extract": "Dune: Part Three is an upcoming American epic space opera film directed by Denis Villeneuve, from a screenplay he wrote with Brian K. Vaughan. Based on the 1969 novel Dune Messiah by Frank Herbert, it is the sequel to Dune: Part Two (2024) and the final installment of a trilogy of films developed by Legendary Pictures. Villeneuve produced the film with his wife and business partner Tanya Lapointe, Legendary's Mary Parent and Cale Boyter, and Joseph M. Caracciolo Jr. Timothée Chalamet leads an ensemble cast as Paul Atreides, a despotic emperor forced to contend with the fallout of his ascent to the throne, including threats of an insurgency and visions of widespread pandemonium.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Warner Bros. India",
+            "url": "https://www.youtube.com/watch?v=okkQl4_nkRs",
+            "extract": "Verified public, embeddable promotional trailer: Dune: Part Three | Official Trailer",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "okkQl4_nkRs",
+        "youtubeVideoTitle": "Dune: Part Three | Official Trailer",
+        "reviewMode": "preview"
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 6419,
+      "articlePath": "src/content/reviews/movie-dune-part-three-1170608.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-dune-part-three-1170608/"
     }
   },
   "providers": {},
@@ -1018,9 +1335,9 @@
       "tokens": 32849
     },
     "2026-11-22": {
-      "articles": 0,
-      "requests": 4,
-      "tokens": 0
+      "articles": 1,
+      "requests": 7,
+      "tokens": 6419
     }
   },
   "history": []
