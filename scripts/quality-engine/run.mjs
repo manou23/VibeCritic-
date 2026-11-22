@@ -51,6 +51,7 @@ const analyze = article => {
   const headings = [...body.matchAll(/^#{2,4}\s+(.+)$/gmu)].map(match => clean(match[1]));
   const urls = [...body.matchAll(/https?:\/\/[^\s)\]]+/giu)].map(match => match[0]);
   const links = [...body.matchAll(/\[[^\]]+\]\((https?:\/\/[^)]+)\)/giu)].map(match => match[1]);
+  const sourceLinkCount = new Set([...urls, ...links]).size;
   const flags = [];
   const repeatedParagraphs = [];
   for (let i = 0; i < paragraphs.length; i++) {
