@@ -181,8 +181,8 @@ for (const file of reviewFiles) {
     if (poster && !containsRenderedUrl(poster)) reviewFailures.push(file + ': poster URL is missing from the built page');
     if (backdrop && !containsRenderedUrl(backdrop)) reviewFailures.push(file + ': backdrop URL is missing from the built page');
   }
-  const modeMatch = frontmatter.match(/^reviewMode:\s*(review|audience|preview|limited)\s*$/m);
-  const reviewMode = modeMatch?.[1] || 'review';
+  const modeMatch = frontmatter.match(/^reviewMode:\s*(["']?)(review|audience|preview|limited)\1\s*$/m);
+  const reviewMode = modeMatch?.[2] || 'review';
   if (frontmatter.match(/^reviewMode:/m) && !modeMatch) reviewFailures.push(file + ': invalid reviewMode');
   const scoreMatch = frontmatter.match(/^score:\s*["']?(-?\d+(?:\.\d+)?)["']?\s*$/m);
   const scoreFields = ['score', 'storyScore', 'visualsScore', 'soundScore', 'pacingScore'];
