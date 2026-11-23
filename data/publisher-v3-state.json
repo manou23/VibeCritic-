@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-23T00:10:31.898Z",
+  "updatedAt": "2026-11-23T07:17:36.324Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -1346,153 +1346,22 @@
         "popularity": 77.192,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-22T21:02:26.284Z",
-      "updatedAt": "2026-11-23T00:10:31.898Z",
+      "updatedAt": "2026-11-23T07:15:59.124Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "Dragon Ball Super: Beerus",
-        "type": "series",
-        "collectedAt": "2026-11-23T00:09:47.685Z",
-        "sourceId": "series:312359",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/312359",
-        "overview": "When Beerus, the God of Destruction, awakens in search of a worthy rival, Goku and his friends face an epic battle to stop him from destroying Earth. Remastered and re-edited version of Dragon Ball Super.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/312359",
-            "extract": "When Beerus, the God of Destruction, awakens in search of a worthy rival, Goku and his friends face an epic battle to stop him from destroying Earth. Remastered and re-edited version of Dragon Ball Super.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Dragon_Ball_Super%3A_Beerus",
-            "extract": "Dragon Ball Super: Beerus is a Japanese anime television series produced by Toei Animation, made in commemoration of the studio's 70th anniversary. Serving as an \"enhanced edition\" remake / remaster of the 2015 Dragon Ball Super anime series, it features a reconstructed narrative, updated visual composition, and revised animation direction. It premiered on Fuji Television and its FNS affiliates on October 11, 2026.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Netflix Philippines",
-            "url": "https://www.youtube.com/watch?v=eCIfElRiChY",
-            "extract": "Verified public, embeddable promotional trailer: Dragon Ball Super: Beerus | Official Trailer | Netflix",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 428 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "eCIfElRiChY",
-        "youtubeVideoTitle": "Dragon Ball Super: Beerus | Official Trailer | Netflix",
-        "youtubeChannel": "Netflix Philippines",
-        "releaseDate": "2026-10-11",
-        "genres": [
-          "Animation",
-          "Action & Adventure",
-          "Sci-Fi & Fantasy"
-        ],
-        "platforms": [],
-        "cast": [
-          "Masako Nozawa",
-          "Ryo Horikawa",
-          "Naoko Watanabe",
-          "Unsho Ishizuka",
-          "Koichi Yamadera"
-        ],
-        "crew": [],
-        "rating": 9.613,
-        "ratingScale": 10,
-        "votes": 428,
-        "poster": "https://image.tmdb.org/t/p/w780/AojgldgsOlzZV8ahyOzaiAjJWvV.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/8phLVFEXOe02JgFmH9ldn3j4tXW.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "Dragon Ball Super: Beerus — إعادة صياغة واعدة تصطدم بحدود ما تثبته المعلومات المتاحة",
-        "summary": "تعود Dragon Ball Super: Beerus إلى مادة مسلسل Dragon Ball Super الصادر عام 2015، في نسخة موصوفة بأنها محسّنة ومعاد تحريرها، مع سرد معاد بناؤه وتحديث في التكوين البصري وتوجيه التحريك. وتظل نواة الحكاية واضحة: يستيقظ بيروس، إله الدمار، باحثاً عن خصم جدير، فيواجه غوكو وأصدقاءه خطر تدمير الأرض. تمنح هذه الفكرة العمل نقطة انطلاق قوية، كما تجعل النسخة الجديدة أكثر من مجرد إعادة عرض اسمية، على الأقل وفق وصفها المنشور. لكن الأدلة المتاحة لا تكشف تفاصيل التنفيذ، أو مقدار التغيير، أو جودة الموسيقى والأداء والإيقاع؛ لذلك تأتي هذه المراجعة حكماً تحريرياً نهائياً حذراً، لا ادعاءً بمشاهدة مباشرة، ولا بديلاً عن تلك المعلومات المفقودة.",
-        "verdict": "تملك Dragon Ball Super: Beerus أساساً جذاباً ومفهوماً: صدام غوكو مع بيروس، الذي يهدد الأرض بحثاً عن خصم يستحق المواجهة، داخل نسخة جديدة تعيد تحرير مادة Dragon Ball Super وتعلن تحديثاً بصرياً وتوجيهاً مختلفاً للتحريك. هذه عناصر كافية لتبرير الاهتمام، لكنها لا تكفي وحدها لإثبات أن إعادة البناء حسّنت السرد أو أن التحديث ارتقى فعلياً بالصورة. لذلك يميل الحكم إلى الإيجابية الحذرة، لا إلى الاحتفاء غير المشروط. تصلح التوصية لمحبي السلسلة الراغبين في متابعة معالجة جديدة، وللمهتمين بمعرفة ما تضيفه النسخة المحررة؛ أما من يبحث عن تجربة مستقلة تماماً أو يريد حكماً موثقاً على الموسيقى والإيقاع والأداء، فلا تقدم الأدلة المتاحة أساساً كافياً لتوصية حاسمة. الدرجة النهائية التحريرية هنا تعكس الإمكانات المثبتة وحدود التحقق معاً.",
-        "body": "## مقدمة وسياق العمل\nتُقدَّم Dragon Ball Super: Beerus بوصفها مسلسلاً تلفزيونياً أنيمياً يابانياً من إنتاج Toei Animation، ونسخة محسّنة ومعاد تحريرها من Dragon Ball Super الصادر عام 2015. ووفق البيانات الموسوعية المتاحة، أُعد العمل احتفاءً بالذكرى السبعين للاستوديو، وبدأ عرضه في 11 أكتوبر 2026. هذه المعلومات تضعه في سياق إعادة تقديم مادة معروفة، لا في سياق حكاية منفصلة بالكامل أو استمرار مستقل يمكن تقييمه بمعزل عن أصلها. وتوجد مادة دعائية رسمية منشورة على قناة Netflix Philippines، إلا أن وجود الإعلان لا يثبت بذاته جودة الحلقات أو تفاصيل إتاحتها على منصة بعينها؛ فالمنصات غير محددة في بيانات العمل. هذه مراجعة تحريرية نهائية مبنية على المعلومات الموثقة المتاحة، وليست انطباعاً ناتجاً عن مشاهدة مباشرة. ومن المهم التصريح بذلك، لأن ما يمكن الحكم عليه هنا هو الفكرة المعلنة وطبيعة إعادة الصياغة، لا التفاصيل الدقيقة للتنفيذ.\n\n## الفكرة والقصة أو التجربة\nتختصر قاعدة القصة صراعاً واضحاً: يستيقظ بيروس، إله الدمار، بحثاً عن خصم جدير، ثم يواجه غوكو وأصدقاءه خطر تدمير الأرض. هذه المواجهة تمنح الحكاية رهانات واسعة منذ البداية، وتجمع بين شخصية ذات قوة استثنائية ودافع معلن، وبين مجموعة مألوفة تحاول منع الكارثة. الوصف المتاح لا يحدد كيف تتطور المواجهة، ولا ما إذا كانت النسخة الجديدة تغيّر دوافع الشخصيات أو ترتيب الأحداث، لذلك لا يصح اختراع تفاصيل عن محطات القصة أو نهايتها. القيمة المؤكدة في الفكرة هي سهولة إدراك مركز الصراع، بينما تبقى فرادته وعمقه رهينين بطريقة التنفيذ التي لا توثقها المواد المتاحة. وبما أن العمل إعادة تحرير لمادة سابقة، فإن السؤال النقدي ليس فقط إن كانت الحكاية جذابة، بل أيضاً إن كان البناء الجديد يمنحها وضوحاً أو قوة إضافية. لا توجد تفاصيل كافية للإجابة القاطعة عن الشق الثاني.\n\n## السرد والشخصيات أو تصميم اللعب\nلأن العمل مسلسل أنيمي، لا ينطبق عليه تقييم تصميم اللعب. أما سردياً، فالمعلومات تؤكد وجود إعادة بناء للسرد، لكنها لا تحدد المشاهد المحذوفة أو المضافة، ولا طريقة توزيع التركيز بين غوكو وبيروس وبقية الشخصيات. لذلك يمكن تقييم اتجاه المشروع لا نجاح كل قرار فيه: إعادة تنظيم مادة معروفة تتيح، من حيث المبدأ، تقوية الترابط وتقديم الحكاية بصورة أكثر تماسكا، لكنها قد تغيّر أيضاً إيقاع العرض أو مقدار المساحة الممنوحة للشخصيات. هذان احتمالان نقديان لا حقيقتان موثقتان عن النتيجة. تظهر الأسماء المعتمدة في طاقم التمثيل، ومنها ماساكو نوزاوا وريو هوريكاوا وناوكو واتانابي وكويتشي ياماديرا، لكنها لا تثبت وحدها مقدار حضور كل شخصية أو جودة كتابتها. لذا تبقى نقطة القوة المؤكدة هي وضوح محور الصراع، فيما يظل الحكم على تطور الشخصيات وطبيعة الحوار محدوداً.\n\n## الإخراج والجوانب الفنية\nتذكر المعلومات المنشورة أن النسخة تقدم سرداً معاد البناء، وتكويناً بصرياً محدّثاً، واتجاهاً منقحاً للتحريك. هذه عبارات تشير إلى تدخل إبداعي في المادة، لا إلى مجرد تغيير عنوان أو إعادة بث النسخة السابقة؛ وهي ترفع سقف التوقعات، لأن إعادة التقديم يفترض أن تبرر وجودها بتجربة أكثر تماسكاً أو صياغة فنية أوضح. لكن الوصف لا يشرح منهج المخرجين، ولا يورد تفاصيل عن الإشراف الفني أو كيفية توزيع العمل بين الحلقات، كما لا تتوفر أسماء طاقم الإخراج في البيانات. ومن ثم لا يمكن نسبة خيارات إخراجية بعينها إلى العمل، ولا تأكيد أن التنقيح متجانس. الحكم المنضبط هو أن المشروع يعلن تحديثاً في أكثر من مستوى، وهي إشارة إيجابية إلى طموحه، لكن قياس دقة التنفيذ أو أثره الدرامي يتجاوز الأدلة المنشورة هنا.\n\n## الصورة والهوية البصرية\nتتمثل المعلومة المحددة عن الصورة في تحديث التكوين البصري وتنقيح توجيه التحريك، بحسب الوصف الموسوعي. وهذان عنصران مهمان في نسخة تعيد تقديم أنيمي معروف، لأنهما يمسان طريقة ترتيب الصورة وحركة الشخصيات، لا مجرد هوية الملصق أو المواد الترويجية. مع ذلك، لا تتضمن الأدلة مقارنة بين النسخة الأصلية والجديدة، ولا أمثلة موثقة على اختلاف تصميم اللقطات أو مستوى التحريك. ولا يكفي الملصق أو الخلفية الدعائية للحكم على جودة الصورة داخل الحلقات؛ فالمواد الثابتة ليست بديلاً عن العمل المتحرك. لذا تستحق الصورة تقديراً حذراً: اتجاه التحديث معلن، وهو ما يمنح النسخة سبباً فنياً مفهوماً لإعادة المشاهدة، لكن مقدار التحسن ومدى اتساقه يظلان غير محسومين. لا يصح تحويل عبارة «محدّث» تلقائياً إلى حكم بأن الصورة أجمل أو أكثر سلاسة؛ فذلك يحتاج إلى شواهد لا يوفرها الملف.\n\n## الصوت والموسيقى والأداء\nلا تقدم المصادر وصفاً للموسيقى أو تصميم المؤثرات أو المزج الصوتي، ولا تورد تسجيلات أو نقداً مستقلاً للأداء. المتاح هو قائمة أسماء من بينها ماساكو نوزاوا وريو هوريكاوا وناوكو واتانابي وأونشو إيشيزوكا وكويتشي ياماديرا. وجود هذه الأسماء يثبت معلومات عن الطاقم الوارد في السجل، لكنه لا يبرهن على جودة الأداء في النسخة المعاد تحريرها، ولا يوضح إن كانت التسجيلات جديدة أو مأخوذة من المادة السابقة. كما أن الإعلان الرسمي المنشور لا يكفي وحده لتقييم الصوت في الحلقات كاملة. لذلك لا تنسب المراجعة للموسيقى لحناً أو وظيفة درامية، ولا تفترض وجود مشكلة أو نجاح في المؤثرات. الدرجة هنا محافظة عمداً، وتعبر عن ضيق الشواهد المتاحة أكثر مما تعبر عن ادعاء بأن الجانب الصوتي ضعيف. يحتاج الحكم الفني الواثق إلى معلومات مباشرة عن المادة نفسها.\n\n## الإيقاع والبناء وتنوع المحتوى\nإعادة تحرير مسلسل قائم وإعادة بناء سرده تجعلان الإيقاع محوراً أساسياً للحكم على النسخة: هل أصبحت الحكاية أكثر إحكاماً، وهل تخدم إعادة الترتيب تصاعد المواجهة؟ لكن الأدلة لا تذكر عدد الحلقات أو مدتها أو تفاصيل الفروق بينها وبين إصدار 2015، ولا تقدم وصفاً لتوزيع الأحداث. لذلك لا يمكن القول إن الإيقاع سريع أو بطيء، أو إن العمل يكرر مشاهد بعينها، أو إن المحتوى متنوع على نحو محدد. المتاح يسمح باستنتاج أضيق: ثمة محاولة معلنة لإعادة تشكيل طريقة تقديم القصة، ومن ثم فإن نجاح النسخة يرتبط بقدرتها على جعل هذه التغييرات ذات أثر محسوس لا شكلي. أما تنوع المحتوى، فلا تتوفر تفاصيل تسمح بقياسه؛ فالمعلومات تثبت النوع العام، وهو الأنيمي والحركة والمغامرة والخيال العلمي والفانتازيا، لكنها لا تصف تنوع الحلقات أو طبيعة الانتقالات بينها. لهذا تبقى درجة الإيقاع وسطية وحذرة، لا اتهاماً بخلل غير مثبت.\n\n## نقاط القوة\nتجمع النسخة بين مادة معروفة وتدخل معلن في السرد والتكوين البصري وتوجيه التحريك، وهذا يمنحها مبرراً واضحاً لجذب جمهور السلسلة، شرط أن تكون التغييرات ذات قيمة فعلية. كما أن وجود صراع مركزي سهل الفهم، يجمع بيروس الباحث عن منافس وغوكو وأصدقاءه المدافعين عن الأرض، يوفر أساساً درامياً مباشراً. ويُضاف إلى ذلك وضوح هوية العمل بوصفه إنتاج أنيمي تلفزيونياً مرتبطاً باسم Toei Animation، مع طاقم تمثيل موثق وأسماء مألوفة في السجل. هذه ميزات مثبتة في مستوى الفكرة والسياق، لا أحكام على جودة مشاهد لم تتوفر تفاصيلها. وما يجعلها نقاط قوة تحريرية هو أنها تتيح تصور ما تحاول النسخة تحقيقه: إعادة تقديم مواجهة مركزية في صياغة جديدة، لا الاكتفاء بتسويقها كمنتج يحمل اسماً معروفاً.\n\n## نقاط الضعف\nالقصور الأوضح في التقييم هو غياب معلومات تفصيلية عن مقدار إعادة البناء، ما يصعّب التمييز بين تغيير جوهري وتنقيح محدود. كذلك لا تتوافر مادة كافية للحكم على الأداء الصوتي أو الموسيقى أو الإيقاع الفعلي، ولا توجد مقارنة موثقة تبيّن قيمة تحديث الصورة. وهذه حدود في قاعدة الأدلة المتاحة، وليست اتهامات مثبتة للعمل نفسه. كما أن الاعتماد على موجز قصير وبيانات موسوعية وإعلان رسمي لا يعوّض مصادر نقدية مستقلة تفحص الحلقات، ولذلك تظل الثقة في الأحكام الفنية أقل من الثقة في الحقائق الأساسية. على المتلقي أن يضع هذا الفارق في الحسبان: قد تكون النسخة ناجحة في عناصر لا يكشفها الملف، وقد لا يبرر التحديث نفسه إعادة المشاهدة؛ لا تسمح الأدلة المتاحة بحسم أي من الاحتمالين.\n\n## لمن يناسب هذا العمل؟\nتبدو Dragon Ball Super: Beerus خياراً منطقياً لمحبي Dragon Ball الذين يريدون متابعة طريقة إعادة تقديم مادة 2015، وللمهتمين برؤية أثر إعادة التحرير والتحديث المعلن في عمل ذي شخصيات معروفة. وقد تجذب أيضاً المشاهد الذي يفضل قصص المواجهات ذات الرهان الواضح، وفق الملخص المنشور. لكن من يريد عملاً جديداً بالكامل لا يعتمد على مادة سابقة، أو حكماً تفصيلياً على الموسيقى والتحريك والإيقاع قبل اتخاذ قرار المشاهدة، لن يجد في المعلومات المتاحة ما يكفي لضمان هذه التوقعات. لا تتوفر بيانات موثقة عن المنصات سوى إعلان ترويجي من قناة Netflix Philippines، لذلك لا ينبغي اعتبار ذلك إثباتاً لمكان العرض الفعلي. التوصية هنا مشروطة بالاهتمام بالسلسلة نفسها وبالفضول تجاه النسخة المحررة، لا بادعاء أنها تتفوق على الأصل في كل جانب.\n\n## الحكم النهائي\nتنجح المعلومات الموثقة في رسم صورة مشروع واضح الطموح: إعادة تقديم Dragon Ball Super عبر سرد معاد البناء وتحديث معلن للصورة والتحريك، حول مواجهة بيروس وغوكو التي تهدد الأرض. وهذا أساس كافٍ لحكم يميل إلى الإيجابية الحذرة، لكنه لا يسمح باحتفاء شامل؛ فالتفاصيل الضرورية لتقييم جودة التنفيذ، ولا سيما الأداء والموسيقى والإيقاع، غير متاحة في ملف الأدلة. بناءً على ذلك، تعكس الدرجات تقديراً محافظاً لما تثبته المعلومات لا انطباعاً بمشاهدة لم تحدث، كما أن الدرجة الصوتية والإيقاعية لا تعني وجود عيوب مؤكدة. أوصي بالعمل لمحبي السلسلة الراغبين في متابعة إعادة صياغة مادتها، مع إبقاء الحكم على مقدار التحسن مفتوحاً إلى أن تتوافر مراجعات مستقلة تفحص النسخة نفسها. أما من يطلب تجربة جديدة تماماً أو ضماناً فنياً مفصلاً، فالتوصية أقل حسماً.",
-        "scores": {
-          "story": 7.4,
-          "visuals": 7.2,
-          "sound": 6,
-          "pacing": 6.2
-        },
-        "pros": [
-          "صراع مركزي واضح وذو رهانات مباشرة: بيروس يبحث عن خصم جدير وغوكو وأصدقاؤه يواجهون خطر تدمير الأرض.",
-          "إعادة بناء السرد تمنح النسخة غرضاً تحريرياً يتجاوز إعادة عرض العمل السابق، وفق وصفها المنشور.",
-          "تحديث التكوين البصري وتنقيح توجيه التحريك معلنان ضمن خصائص النسخة الجديدة.",
-          "العمل مرتبط بسياق إنتاج واضح: مسلسل أنيمي ياباني من إنتاج Toei Animation، مع قائمة طاقم تمثيل موثقة."
-        ],
-        "cons": [
-          "لا تتوفر تفاصيل كافية لتحديد مقدار التغيير السردي أو أثره الفعلي مقارنة بإصدار 2015.",
-          "المعلومات المتاحة لا تسمح بحكم موثوق على الموسيقى أو تصميم الصوت أو أداء طاقم التمثيل في النسخة.",
-          "لا توجد مقارنة موثقة أو أمثلة من الحلقات تثبت مدى التحسن البصري أو اتساقه.",
-          "غياب بيانات الحلقات ومدتها وتفاصيل بنائها يجعل تقييم الإيقاع وتنوع المحتوى محدوداً."
-        ],
-        "title": "Dragon Ball Super: Beerus",
-        "type": "series",
-        "sourceId": "series:312359",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/312359",
-        "sourceRating": 9.613,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 428,
-        "sourceRatingCheckedAt": "2026-11-23T00:09:47.685Z",
-        "audienceScore": 9.6,
-        "releaseDate": "2026-10-11",
-        "poster": "https://image.tmdb.org/t/p/w780/AojgldgsOlzZV8ahyOzaiAjJWvV.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/8phLVFEXOe02JgFmH9ldn3j4tXW.jpg",
-        "genres": [
-          "Animation",
-          "Action & Adventure",
-          "Sci-Fi & Fantasy"
-        ],
-        "platforms": [],
-        "cast": [
-          "Masako Nozawa",
-          "Ryo Horikawa",
-          "Naoko Watanabe",
-          "Unsho Ishizuka",
-          "Koichi Yamadera"
-        ],
-        "crew": [],
-        "tags": [
-          "Animation",
-          "Action & Adventure",
-          "Sci-Fi & Fantasy"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/312359",
-            "extract": "When Beerus, the God of Destruction, awakens in search of a worthy rival, Goku and his friends face an epic battle to stop him from destroying Earth. Remastered and re-edited version of Dragon Ball Super.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Dragon_Ball_Super%3A_Beerus",
-            "extract": "Dragon Ball Super: Beerus is a Japanese anime television series produced by Toei Animation, made in commemoration of the studio's 70th anniversary. Serving as an \"enhanced edition\" remake / remaster of the 2015 Dragon Ball Super anime series, it features a reconstructed narrative, updated visual composition, and revised animation direction. It premiered on Fuji Television and its FNS affiliates on October 11, 2026.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Netflix Philippines",
-            "url": "https://www.youtube.com/watch?v=eCIfElRiChY",
-            "extract": "Verified public, embeddable promotional trailer: Dragon Ball Super: Beerus | Official Trailer | Netflix",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "eCIfElRiChY",
-        "youtubeVideoTitle": "Dragon Ball Super: Beerus | Official Trailer | Netflix",
-        "reviewMode": "review",
-        "score": 6.8
-      },
+      "article": null,
       "lastError": null,
       "resumeStatus": null,
       "provider": "openai",
       "tokens": 6048,
       "articlePath": "src/content/reviews/series-dragon-ball-super-beerus-312359.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-dragon-ball-super-beerus-312359/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-dragon-ball-super-beerus-312359/",
+      "publishedAt": "2026-11-23T07:15:59.124Z"
     },
     "series:253372": {
       "key": "series:253372",
@@ -1632,6 +1501,287 @@
       "sections": [],
       "article": null,
       "lastError": "Independent source is too thin after full lead-section fallback"
+    },
+    "series:293607": {
+      "key": "series:293607",
+      "type": "series",
+      "id": "293607",
+      "title": "100 Days of Deception",
+      "item": {
+        "type": "series",
+        "id": "293607",
+        "name": "100 Days of Deception",
+        "date": "2026-10-10",
+        "preview": false,
+        "popularity": 46.3468,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-23T07:16:00.579Z",
+      "updatedAt": "2026-11-23T07:16:01.134Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "100 Days of Deception",
+        "type": "series",
+        "collectedAt": "2026-11-23T07:16:01.133Z",
+        "sourceId": "series:293607",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/293607",
+        "overview": "Hoping for freedom, Gyeongseong's top pickpocket infiltrates the Japanese colonial government to steal secrets — only to fall for her target's son.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/293607",
+            "extract": "Hoping for freedom, Gyeongseong's top pickpocket infiltrates the Japanese colonial government to steal secrets — only to fall for her target's son.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/100_Days_of_Deception",
+            "extract": "100 Days of Deception is an ongoing South Korean television series written by Ryu Bo-ri and directed by Yoo In-shik and Kim Yoon-jin, as a special project commemorating the 20th anniversary of tvN. The series stars Kim You-jung, Park Jin-young, Kim Hyun-joo, Lee Moo-saeng, and Jin Seon-kyu. Set in 1932 Gyeongseong during the Japanese colonial period, it premiered on tvN on October 10, 2026, and airs every Saturday and Sunday at 21:10 (KST). It is also available for streaming on TVING in South Korea and Netflix globally.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Netflix K-Content",
+            "url": "https://www.youtube.com/watch?v=P0ElxnFyfXY",
+            "extract": "Verified public, embeddable promotional trailer: 100 Days of Deception | Official Trailer | Netflix [ENG SUB]",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "limited",
+        "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
+        "youtubeVideoId": "P0ElxnFyfXY",
+        "youtubeVideoTitle": "100 Days of Deception | Official Trailer | Netflix [ENG SUB]",
+        "youtubeChannel": "Netflix K-Content",
+        "releaseDate": "2026-10-10",
+        "genres": [
+          "Action & Adventure",
+          "Drama"
+        ],
+        "platforms": [],
+        "cast": [
+          "Kim You-jung",
+          "Jinyoung",
+          "Kim Hyun-joo",
+          "Lee Mu-saeng",
+          "Jin Sun-kyu",
+          "Seo Jeong-yeon",
+          "Kiko Oi",
+          "Park Jung-yeon"
+        ],
+        "crew": [
+          "Yoo In-sik",
+          "Ryu Bo-ri"
+        ],
+        "rating": 8.8,
+        "ratingScale": 10,
+        "votes": 20,
+        "poster": "https://image.tmdb.org/t/p/w780/nzZRLsIPf4545w2vwvBz5xTdp3.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/yeMmiOzXkAdbbRgy2W41H3c2lLQ.jpg"
+      },
+      "sections": [],
+      "article": null,
+      "lastError": "Publishing blocked: evidence supports neither a scored review nor an explicit pre-release preview"
+    },
+    "series:203483": {
+      "key": "series:203483",
+      "type": "series",
+      "id": "203483",
+      "title": "River of No Return",
+      "item": {
+        "type": "series",
+        "id": "203483",
+        "name": "River of No Return",
+        "date": "2026-11-20",
+        "preview": false,
+        "popularity": 19.6441,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-23T07:16:03.027Z",
+      "updatedAt": "2026-11-23T07:16:03.525Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "No verified official YouTube trailer found for River of No Return"
+    },
+    "movie:1058424": {
+      "key": "movie:1058424",
+      "type": "movie",
+      "id": "1058424",
+      "title": "Hope",
+      "item": {
+        "type": "movie",
+        "id": "1058424",
+        "name": "Hope",
+        "date": "2026-07-15",
+        "preview": false,
+        "popularity": 227.605,
+        "source": "TMDB"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-23T07:16:04.143Z",
+      "updatedAt": "2026-11-23T07:17:36.324Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Hope",
+        "type": "movie",
+        "collectedAt": "2026-11-23T07:16:04.582Z",
+        "sourceId": "movie:1058424",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1058424",
+        "overview": "In the remote South Korean village of Hope Harbor, police chief Bum-seok and officer Sung-ae are called to investigate a mysterious creature wreaking havoc on the community. But all is not as it seems, and perceptions can be misleading. What begins as ignorance plants the seed of disaster, escalating through human conflict into a tragedy of cosmic proportions.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1058424",
+            "extract": "In the remote South Korean village of Hope Harbor, police chief Bum-seok and officer Sung-ae are called to investigate a mysterious creature wreaking havoc on the community. But all is not as it seems, and perceptions can be misleading. What begins as ignorance plants the seed of disaster, escalating through human conflict into a tragedy of cosmic proportions.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Hope",
+            "extract": "Hope is an optimistic state of mind that is based on an expectation of desirable outcomes with respect to events and circumstances in one's own life, or the world at large. As a verb, Merriam-Webster defines hope as \"to expect with confidence\" or \"to cherish a desire with anticipation\".",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Universal Pictures South Africa",
+            "url": "https://www.youtube.com/watch?v=jxDpTy4E6c4",
+            "extract": "Verified public, embeddable promotional trailer: HOPE Official Trailer (2026)",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 767 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "jxDpTy4E6c4",
+        "youtubeVideoTitle": "HOPE Official Trailer (2026)",
+        "youtubeChannel": "Universal Pictures South Africa",
+        "releaseDate": "2026-07-15",
+        "genres": [
+          "Science Fiction",
+          "Mystery",
+          "Action"
+        ],
+        "platforms": [],
+        "cast": [
+          "Hwang Jung-min",
+          "Zo In-sung",
+          "Hoyeon",
+          "Alicia Vikander",
+          "Michael Fassbender",
+          "Taylor Russell",
+          "Cameron Britton",
+          "Lee Sang-hee"
+        ],
+        "crew": [
+          "Na Hong-jin",
+          "Na Hong-jin"
+        ],
+        "rating": 6.864,
+        "ratingScale": 10,
+        "votes": 767,
+        "poster": "https://image.tmdb.org/t/p/w780/6VY1ZKgpsc8CfGsQcCGiYEgHdH0.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/qqHFLg90IUSoTmSMpKOOW5RyqN3.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "Hope: فرضية غامضة واعدة، لكن الأدلة المتاحة لا تكشف إن كان تنفيذها يرتقي إليها",
+        "summary": "تملك Hope نقطة انطلاق واضحة الجاذبية: مخلوق غامض يظهر في قرية كورية نائية، وتحقيق تقوده الشرطة يتحول، وفق الملخص المنشور، إلى صراع بشري ومأساة ذات أبعاد كونية. غير أن هذه المعلومات لا تكفي وحدها لإثبات نجاح الفيلم في بناء الغموض أو تطوير شخصياته أو ضبط تصاعده. المواد المتاحة توثق بيانات الإنتاج والطاقم والأنواع، إلى جانب وجود إعلان رسمي، لكنها لا توفر مراجعات مستقلة تفصيلية أو وصفاً موثقاً للصورة والصوت والأداء. لذلك تفصل هذه المراجعة بين ما يقوله الملخص وما يمكن استنتاجه بحذر، ولا تنسب للفيلم مشاهد أو إنجازات غير مثبتة. النتيجة حكم تحريري متحفظ على العمل كما تسمح الأدلة، لا ادعاء مشاهدة مباشرة.",
+        "verdict": "تبدو Hope مشروعاً ذا فرضية نوعية مثيرة للاهتمام: تحقيق محلي في ظهور كائن غامض يتسع، بحسب الوصف الرسمي، إلى أزمة إنسانية وكونية. لكن جاذبية الفكرة ليست برهاناً على جودة الفيلم، ولا تكشف البيانات المتاحة ما إذا كان السيناريو يمنح شخصياته عمقاً أو يوازن بين الغموض والحركة أو ينجح تقنياً. لذلك تأتي التوصية مشروطة: قد يناسب الفيلم محبي الخيال العلمي والغموض الذين يفضلون اكتشاف العمل بأنفسهم، لكن لا تتوفر هنا أدلة كافية لتزكية قوية مبنية على التنفيذ. الدرجات تعكس هذا التحفظ ونطاق المعلومات المحدود، ولا ينبغي قراءتها كبديل عن تقييم مشاهدة موثق.",
+        "body": "## مقدمة وسياق العمل\n\nHope فيلم كوري جنوبي مصنف ضمن الخيال العلمي والغموض والحركة، وتحدد بيانات TMDB تاريخ صدوره في 15 يوليو 2026. تذكر قاعدة البيانات أن نا هونغ جين هو المخرج، كما تسرد طاقماً يضم هوانغ جونغ مين، جو إن سونغ، هو يون، أليسيا فيكاندر، مايكل فاسبندر، تايلور راسل، كاميرون بريتون، ولي سانغ هي. هذه معلومات إنتاجية محددة، لكنها لا تثبت وحدها طبيعة توزيع الأدوار أو مقدار حضور كل ممثل. ويوجد إعلان رسمي بعنوان HOPE Official Trailer (2026) على قناة Universal Pictures South Africa. لا أتعامل مع وجود الإعلان باعتباره دليلاً على نجاح الصورة أو الصوت، ولا أدعي مشاهدة الفيلم. ما يلي قراءة تحريرية نهائية لما توثقه المصادر، مع إبقاء الحكم على التنفيذ ضمن حدودها.\n\n## الفكرة والقصة أو التجربة\n\nيضع الملخص المتاح الأحداث في قرية هوب هاربور الكورية النائية، حيث يُستدعى رئيس الشرطة بوم سيوك والضابطة سونغ إيه للتحقيق في مخلوق غامض يثير الفوضى. ثم يضيف الملخص قيداً مهماً: ليس كل شيء كما يبدو، وقد تكون التصورات مضللة؛ وما يبدأ بالجهل يزرع بذور كارثة تتصاعد عبر نزاع بشري إلى مأساة كونية. من هذه العناصر يمكن استنتاج أن الفيلم يريد وصل لغز خارق أو غير مألوف بعواقب اجتماعية، لا الاكتفاء بسؤال ماهية المخلوق. هذه بنية تصلح لتوليد توتر بين تفسير الوقائع والخوف منها، لكنها تظل إمكاناً سردياً لا حكماً على نجاح الكتابة. لا يقدم المصدر تفاصيل عن طبيعة الكائن أو قواعد العالم أو مسار التحقيق، ولذلك لا يصح اختراع إجابات أو وصف مفاجآت بعينها.\n\n## السرد والشخصيات أو تصميم اللعب\n\nبما أن العمل فيلم، فالمحور الملائم هنا هو بناء السرد والشخصيات، لا تصميم اللعب. يتيح الملخص تسمية شخصيتين مركزيتين ووظيفتيهما: رئيس شرطة وضابطة يباشران التحقيق. تلك نقطة ارتكاز عملية لحكاية غموض، لأن التحقيق يتيح من حيث المبدأ جمع المعلومات ومواجهة التأويلات المتضاربة. لكن لا توجد في الأدلة أوصاف لشخصيتيهما أو دوافعهما أو علاقتهما، ولا معلومات عن بقية الأدوار التي يؤديها طاقم كبير ومتعدد الجنسيات. لذلك لا يمكن تقرير ما إذا كانت الشخصيات تتجاوز وظائفها الإجرائية، أو ما إذا كان الفيلم يمنحها مسارات مقنعة. كذلك لا تتوافر مادة موثقة تشرح كيفية توزيع المعلومات على المشاهد أو مقدار اعتماد السرد على المفاجآت. تقدير القصة هنا متوسط مائل إلى الاهتمام بفضل وضوح الفرضية واتساعها، لا شهادة على تماسك الحبكة المكتملة.\n\n## الإخراج والجوانب الفنية\n\nتُنسب مهمة الإخراج إلى نا هونغ جين في بيانات الطاقم، ويظهر اسمه مرتين في القائمة نفسها؛ لا يوضح المصدر سبب التكرار، لذا لا أستنتج منه وظيفة إضافية. وجود اسم مخرج محدد حقيقة، أما وصف أسلوبه في هذا الفيلم أو القول إنه اختار معالجة بعينها فيحتاج إلى مشاهدة موثقة أو نقد مستقل مفصل، وهو غير متاح ضمن ملف الأدلة. وينطبق التحفظ نفسه على كتابة السيناريو، المونتاج، المؤثرات، تصميم الإنتاج، وجودة تنفيذ مشاهد الحركة. التصنيف يجمع الخيال العلمي والغموض والحركة، لكنه لا يثبت توازن هذه الأنواع أو جودة انتقال الفيلم بينها. وعليه لا يمكن تحويل حجم الفكرة إلى مديح للإخراج، ولا تحويل غياب التفاصيل إلى اتهام بضعفه. الدرجة الاحترازية المنخفضة هنا تسجل محدودية ما يمكن التحقق منه أكثر مما تصدر حكماً واثقاً على الصناعة الفنية.\n\n## الصورة والهوية البصرية\n\nتتضمن البيانات رابطاً لملصق الفيلم وصورة خلفية، فضلاً عن الإشارة إلى إعلان رسمي منشور. هذه قرائن تثبت وجود مواد ترويجية، لكنها لا تقدم وصفاً نصياً موثوقاً لتكوين الصور أو الألوان أو تصميم الكائن أو حركة الكاميرا. كما أن مجرد عنوان الإعلان لا يسمح بوصف لقطاته، ولم أستند إلى انطباع مشاهدة مباشر كي أملأ هذا الفراغ. يمكن القول إن القرية النائية والمخلوق الغامض يوفران أساساً تصورياً يسمح بهوية بصرية مميزة، لكن ذلك توقع متعلق بالموضوع لا نتيجة تخص التنفيذ. لا نملك كذلك بيانات عن المؤثرات البصرية أو وضوح الصورة أو ثبات مستواها، ولذلك لا يصح وصفها بالمبهرة أو المتعثرة. درجة هذا المحور تحفظية لغياب ما يكفي لتقييم الصورة، وليست ادعاء بأن الصور نفسها متوسطة الجودة.\n\n## الصوت والموسيقى والأداء\n\nيسجل المصدر أسماء ممثلين من كوريا الجنوبية وخارجها، ومن بينهم هوانغ جونغ مين وأليسيا فيكاندر ومايكل فاسبندر. وجودهم في قائمة الطاقم لا يكشف أدوارهم أو مقدار مشاركة كل منهم، ولا يبرر حكماً على الأداء أو الكيمياء أو حضور الشخصيات. لا توجد أيضاً معلومات موثقة عن الملحن، الموسيقى، تصميم المؤثرات الصوتية، اللغة المستخدمة في النسخة المعروضة، أو جودة المزج. وبما أن الفيلم قائم على لغز ومخلوق يثير اضطراباً في مجتمع صغير، فمن المعقول أن يكون للصوت دور محتمل في بناء الترقب، لكن هذا استنتاج عن إمكانات النوع، لا وصف لما أنجزه الفيلم. لا أستطيع نسبة لحظات صمت أو أصوات أو أداء بعينه إليه. لذلك تبقى درجة الصوت تحفظية، وتبقى فاعلية التمثيل والموسيقى غير محسومة في هذا التقييم.\n\n## الإيقاع والبناء وتنوع المحتوى\n\nيوحي الملخص بتصاعد يبدأ من حادثة محلية، يمر بسوء الفهم أو الجهل، ثم يتفاقم إلى صراع بشري ومأساة كونية. هذا التسلسل يقدم خطاً عاماً للتصعيد، لكنه لا يخبرنا بمدته أو بإيقاع انتقالاته أو بمدى اتساع مساحة التحقيق مقارنة بالحركة والخيال العلمي. لا توجد معلومات عن طول الفيلم أو بنيته الفصلية أو مشاهد قد تبطئ السرد، ولا ينبغي اختلاقها. ومن ناحية تنوع المحتوى، تجمع التصنيفات المسجلة بين ثلاثة أنواع، فيما يجمع الملخص بين التحقيق والكائن الغامض والعواقب الاجتماعية؛ وهذا يمنح المشروع أكثر من مسار محتمل للاهتمام. لكنه قد يخلق أيضاً تحدياً في الموازنة، لا عيباً مثبتاً. أضع تقديراً متحفظاً للإيقاع لأن فكرة التصاعد موثقة، فيما نجاح التنفيذ وتنوعه الفعلي غير موصوفين في المصادر.\n\n## نقاط القوة\n\nأبرز نقطة قوة موثقة هي وضوح المحرك الدرامي: تحقيق للشرطة في مخلوق يخلخل حياة قرية نائية. تضاف إليه فكرة أن الإدراك قد يكون مضللاً، بما يمنح الغموض صلة بقرارات البشر لا بمجرد تفسير ظاهرة مجهولة. واتساع النتيجة الموصوفة من نزاع بشري إلى مأساة كونية يمنح الفرضية رهانات تتجاوز حادثة محلية. كما أن إدراج الفيلم ضمن الخيال العلمي والغموض والحركة يشير إلى تعدد اتجاهاته النوعية، وإن لم يثبت جودة الجمع بينها. وأخيراً، تضم قائمة الطاقم أسماء معروفة دولياً، إلى جانب ممثلين كوريين؛ وهذه قرينة على تشكيلة لافتة، لا دليل على جودة الأداء. تظل هذه مزايا في المادة المعلنة والفرضية، وينبغي عدم الخلط بينها وبين حكم مؤكد على تجربة المشاهدة.\n\n## نقاط الضعف\n\nالمشكلة الأساسية في تقييم Hope من ملف الأدلة هذا ليست عيباً فنياً مثبتاً، بل نقص المعلومات التي تسمح بإثبات مزاياه أو عيوبه التنفيذية. لا يوجد تحليل مستقل مفصل للسيناريو أو الإخراج أو الأداء، ولا وصف موثق للصورة والموسيقى والإيقاع. كذلك يترك الملخص تفاصيل الشخصيات والعالم وقواعد الغموض غير محددة؛ وهذا لا يعني أن الفيلم نفسه غامض على نحو سيئ، بل يعني أن المصدر لا يتيح فحص تلك الجوانب. التصنيفات الثلاثة قد تنسجم، وقد تتنافس على وقت الفيلم، ولا توجد أدلة تسمح بالحسم. من ثم فإن القصور في هذا الحكم معرفي قبل أن يكون نقداً للعمل: أي تقرير جازم عن إيقاع مترهل أو مؤثرات ضعيفة أو نهايات ناجحة سيكون اختلاقاً. هذه الحدود تخفض الثقة في التوصية ولا تُسجل كاتهامات للفيلم.\n\n## لمن يناسب هذا العمل؟\n\nبحسب الفكرة المعلنة، قد يجذب الفيلم من يفضلون قصص الغموض التي تبدأ بتحقيق، وأعمال الخيال العلمي التي تربط الظاهرة غير المألوفة بردود فعل المجتمع، وكذلك من يتقبلون مزيجاً من الحركة والرهان الكوني. أما من يبحثون عن ضمانات محددة بشأن عمق الشخصيات، أو جودة المؤثرات، أو مستوى الموسيقى والتمثيل، فلن يجدوا في الأدلة المتاحة ما يكفي لبناء توقع دقيق. لا أوصي به توصية جازمة على أساس أسماء الممثلين وحدها، ولا أستبعده لأن تفاصيل التنفيذ غائبة عن الملف. الأنسب هو التعامل مع الفرضية بوصفها سبباً للاهتمام، ثم طلب مراجعات مستقلة أكثر تفصيلاً قبل اتخاذ قرار مبني على الذوق أو الحساسية تجاه العنف والتوتر؛ فالمصادر هنا لا توضح مقدار أي منهما.\n\n## الحكم النهائي\n\nتقدم Hope أساساً سردياً واضحاً وقابلاً للاهتمام: مخلوق غامض، تحقيق في قرية نائية، ثم تصعيد يصل إلى عواقب بشرية وكونية. تلك العناصر تبرر فضول محبي الخيال العلمي والغموض، لكنها لا تكفي لإثبات أن الفيلم يحقق وعدها على مستوى الشخصيات أو الصورة أو الصوت أو الإيقاع. البيانات المتاحة توثق تاريخ الإصدار والأنواع والطاقم وملخص الحكاية، كما توثق وجود إعلان رسمي؛ لكنها لا توفر مراجعات مستقلة تفصيلية تسد فجوة تقييم التنفيذ. لذلك حكمي إيجابي بحذر تجاه الفكرة، ومتحفظ تجاه العمل ككل، والتوصية محدودة لمن يقبل استكشاف فيلم لا تتوفر هنا عنه قراءة فنية موثقة كافية. متوسط TMDB، البالغ 6.864 من 10 استناداً إلى 767 صوتاً، مؤشر جماهيري ثانوي فقط، ولا يحل محل هذا الحكم التحريري أو درجات محاوره.",
+        "scores": {
+          "story": 6.5,
+          "visuals": 5,
+          "sound": 5,
+          "pacing": 5.5
+        },
+        "pros": [
+          "فرضية تحقيق واضحة تبدأ بمخلوق غامض في قرية كورية نائية.",
+          "الملخص يربط الغموض بردود الفعل البشرية، ويذكر أن التصورات قد تكون مضللة.",
+          "تصعيد معلن من صراع محلي إلى مأساة ذات أبعاد كونية.",
+          "مزيج موثق من الخيال العلمي والغموض والحركة، مع طاقم يضم ممثلين من كوريا الجنوبية وخارجها."
+        ],
+        "cons": [
+          "لا تتوفر أدلة مستقلة تفصيلية تكفي للحكم على تنفيذ السيناريو والشخصيات.",
+          "المعلومات المتاحة لا تصف الصورة أو المؤثرات البصرية بما يسمح بتقييم جودتها.",
+          "لا توجد بيانات موثقة كافية عن الموسيقى أو تصميم الصوت أو أداء الممثلين.",
+          "لا يتيح الملخص أو بيانات الإصدار التحقق من إيقاع الفيلم أو نجاح موازنته بين الأنواع."
+        ],
+        "title": "Hope",
+        "type": "movie",
+        "sourceId": "movie:1058424",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1058424",
+        "sourceRating": 6.864,
+        "sourceRatingScale": 10,
+        "sourceVoteCount": 767,
+        "sourceRatingCheckedAt": "2026-11-23T07:16:04.582Z",
+        "audienceScore": 6.9,
+        "releaseDate": "2026-07-15",
+        "poster": "https://image.tmdb.org/t/p/w780/6VY1ZKgpsc8CfGsQcCGiYEgHdH0.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/qqHFLg90IUSoTmSMpKOOW5RyqN3.jpg",
+        "genres": [
+          "Science Fiction",
+          "Mystery",
+          "Action"
+        ],
+        "platforms": [],
+        "cast": [
+          "Hwang Jung-min",
+          "Zo In-sung",
+          "Hoyeon",
+          "Alicia Vikander",
+          "Michael Fassbender",
+          "Taylor Russell",
+          "Cameron Britton",
+          "Lee Sang-hee"
+        ],
+        "crew": [
+          "Na Hong-jin",
+          "Na Hong-jin"
+        ],
+        "tags": [
+          "Science Fiction",
+          "Mystery",
+          "Action"
+        ],
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1058424",
+            "extract": "In the remote South Korean village of Hope Harbor, police chief Bum-seok and officer Sung-ae are called to investigate a mysterious creature wreaking havoc on the community. But all is not as it seems, and perceptions can be misleading. What begins as ignorance plants the seed of disaster, escalating through human conflict into a tragedy of cosmic proportions.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Hope",
+            "extract": "Hope is an optimistic state of mind that is based on an expectation of desirable outcomes with respect to events and circumstances in one's own life, or the world at large. As a verb, Merriam-Webster defines hope as \"to expect with confidence\" or \"to cherish a desire with anticipation\".",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Universal Pictures South Africa",
+            "url": "https://www.youtube.com/watch?v=jxDpTy4E6c4",
+            "extract": "Verified public, embeddable promotional trailer: HOPE Official Trailer (2026)",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "jxDpTy4E6c4",
+        "youtubeVideoTitle": "HOPE Official Trailer (2026)",
+        "reviewMode": "review",
+        "score": 5.6
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 11603,
+      "articlePath": "src/content/reviews/movie-hope-1058424.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-hope-1058424/"
     }
   },
   "providers": {},
@@ -1657,9 +1807,9 @@
       "tokens": 50639
     },
     "2026-11-23": {
-      "articles": 1,
-      "requests": 2,
-      "tokens": 6048
+      "articles": 2,
+      "requests": 5,
+      "tokens": 17651
     }
   },
   "history": []
