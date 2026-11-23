@@ -4,7 +4,8 @@ import { withRunLock } from "./lock.mjs";
 import { publishArticle, articleFilePath, renderMarkdown } from "./publisher.mjs";
 import { loadState, saveState } from "./store.mjs";
 import { normalizeFinalRating, normalizeBodyFinalRating, assemble, buildPrompt } from "./writer.mjs";
-import { publishedIdentityKeys, isEligibleReleaseDate } from "./sources.mjs";
+import { publishedIdentityKeys, isEligibleReleaseDate, selectEligibleCandidate } from "./sources.mjs";
+import { DAILY_ARTICLE_LIMIT } from "./policy.mjs";
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
@@ -54,6 +55,29 @@ assert.equal(isEligibleReleaseDate("2013-09-17","2026-11-22"),false);
 assert.equal(isEligibleReleaseDate("","2026-11-22"),false);
 assert.equal(isEligibleReleaseDate("unknown","2026-11-22"),false);
 assert.equal(isEligibleReleaseDate("2024-02-30","2026-11-22"),false);
+assert.equal(DAILY_ARTICLE_LIMIT,6);
+// Candidate discovery moves past rejected/used candidates without relaxing release-date rules.
+const discoveryCandidates = [
+  {type:"movie",id:"791523",name:"Rejected title",date:"2026-10-19",popularity:100},
+  {type:"movie",id:"2024",name:"Already published",date:"2026-05-01",popularity:90},
+  {type:"movie",id:"2025",name:"Too old",date:"2023-12-31",popularity:80},
+  {type:"movie",id:"3030",name:"Alternative title",date:"2026-09-10",popularity:70},
+  {type:"series",id:"4040",name:"Series alternative",date:"2026-08-10",popularity:60}
+];
+const fallbackCandidate = selectEligibleCandidate(discoveryCandidates,{
+  used:new Set(["movie:2024"]),
+  jobs:{"movie:791523":{status:"rejected"}},
+  counts:{movie:0,series:1,game:0},
+  today:"2026-11-22"
+});
+assert.equal(fallbackCandidate.id,"3030");
+assert.equal(selectEligibleCandidate(discoveryCandidates,{
+  used:new Set(["movie:2024","movie:3030","series:4040"]),
+  jobs:{"movie:791523":{status:"rejected"}},
+  counts:{movie:0,series:0,game:0},
+  today:"2026-11-22"
+}),null);
+
 assert.ok(publishedIdentityKeys("series","279246","الإمبراطورة المتزوجة مجدداً").includes("series:279246"));
 assert.ok(publishedIdentityKeys("series","series:279246","The Remarried Empress").includes("series:279246"));
 const body = ["## تحليل السرد والبناء\n\n"+("تحليل نقدي مفصل يشرح البناء الفني والسردي ويوازن بين نقاط القوة والقيود في هذا القسم. ").repeat(45),"## قراءة العناصر الفنية\n\n"+("تفصيل نقدي يربط الخيارات الفنية بالأثر الدرامي ويشرح حدود الأدلة المتاحة للقارئ. ").repeat(45),"## الإيقاع والحكم النهائي\n\n"+("تقييم متوازن يوضح عناصر النجاح ومواطن القصور دون تكرار أو ادعاء تجربة مباشرة. ").repeat(45)].join("\n\n");
