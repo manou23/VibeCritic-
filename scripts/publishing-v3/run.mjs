@@ -3,6 +3,7 @@ import { withRunLock } from "./lock.mjs";
 import { loadState, saveState } from "./store.mjs";
 import { enqueue, transition, chooseJob, validateEvidence, redirectedToDifferentPath } from "./core.mjs";
 import { discoverCandidate, collectEvidence } from "./sources.mjs";
+import { DAILY_ARTICLE_LIMIT } from "./policy.mjs";
 import { writeArticle } from "./writer.mjs";
 import { publishArticle, articleFilePath } from "./publisher.mjs";
 
@@ -11,7 +12,7 @@ const result = await withRunLock(async () => {
   state.usage ||= {};
   const day = new Date().toISOString().slice(0,10);
   const daily = state.usage[day] ||= { articles:0, requests:0, tokens:0 };
-  const dailyLimit = 9; // Hard ceiling: never exceed six AI-generated articles per UTC day; manual articles are not counted.
+  const dailyLimit = DAILY_ARTICLE_LIMIT; // Hard ceiling: six AI-generated articles per UTC day; manual articles are not counted.
   const tomorrow = () => new Date(Date.UTC(new Date().getUTCFullYear(),new Date().getUTCMonth(),new Date().getUTCDate()+1,0,5)).toISOString();
   let job = null;
   try {
