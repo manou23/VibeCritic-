@@ -117,26 +117,62 @@ export function isEligibleReleaseDate(date, today = new Date().toISOString().sli
   if (Number(value.slice(0,4)) < 2024) return false;
   return value <= today || preview === true;
 }
+export function selectEligibleCandidate(candidates, { used = new Set(), jobs = {}, counts = { game:0, movie:0, series:0 }, today = new Date().toISOString().slice(0,10) } = {}) {
+  const unique = new Map();
+  for (const candidate of candidates || []) {
+    if (!candidate?.id || !candidate?.name) continue;
+    const key = candidate.type + ":" + candidate.id;
+    const previous = unique.get(key);
+    if (!previous || Number(candidate.popularity || 0) > Number(previous.popularity || 0)) unique.set(key,candidate);
+  }
+  const eligible = [...unique.values()].filter(x =>
+    ["game","movie","series"].includes(x.type) &&
+    isEligibleReleaseDate(x.date,today,x.preview) &&
+    !used.has(x.type + ":" + x.id) &&
+    !used.has("title:" + String(x.name).toLowerCase().replace(/[^\p{L}\p{N}]+/gu,"")) &&
+    !jobs[x.type + ":" + x.id]
+  );
+  eligible.sort((a,b) => (counts[a.type] ?? 0) - (counts[b.type] ?? 0) || Number(b.popularity || 0) - Number(a.popularity || 0));
+  return eligible[0] || null;
+}
 export async function discoverCandidate(state) {
   const [used,counts] = await Promise.all([publishedKeys(),publishedTypeCounts()]);
   const candidates = [];
+  const now = new Date().toISOString().slice(0,10);
+  const previewLimit = new Date(Date.now()+120*86400000).toISOString().slice(0,10);
+  const addCatalogItems = (items,type) => {
+    for (const x of items || []) {
+      const date = type === "movie" ? x.release_date || "" : x.first_air_date || "";
+      candidates.push({
+        type,
+        id:String(x.id),
+        name:type === "movie" ? x.title : x.name,
+        date,
+        preview:Boolean(date && date > now && date <= previewLimit),
+        popularity:Number(x.popularity)||0,
+        source:"TMDB"
+      });
+    }
+  };
   if (env.TMDB_API_KEY) {
-    const [movies,series] = await Promise.all([
+    // Trending supplies timely discoveries; popular supplies a wider fallback pool when trending
+    // titles have already been published or rejected for insufficient evidence.
+    const [trendingMovies,trendingSeries,popularMovies,popularSeries] = await Promise.all([
       get(tmdb("trending/movie/week")).catch(()=>({results:[]})),
-      get(tmdb("trending/tv/week")).catch(()=>({results:[]}))
+      get(tmdb("trending/tv/week")).catch(()=>({results:[]})),
+      get(tmdb("movie/popular",{page:1})).catch(()=>({results:[]})),
+      get(tmdb("tv/popular",{page:1})).catch(()=>({results:[]}))
     ]);
-    for (const x of movies.results || []) candidates.push({ type:"movie", id:String(x.id), name:x.title, date:x.release_date || "", preview:Boolean(x.release_date && x.release_date > new Date().toISOString().slice(0,10) && x.release_date <= new Date(Date.now()+120*86400000).toISOString().slice(0,10)), popularity:Number(x.popularity)||0, source:"TMDB" });
-    for (const x of series.results || []) candidates.push({ type:"series", id:String(x.id), name:x.name, date:x.first_air_date || "", preview:Boolean(x.first_air_date && x.first_air_date > new Date().toISOString().slice(0,10) && x.first_air_date <= new Date(Date.now()+120*86400000).toISOString().slice(0,10)), popularity:Number(x.popularity)||0, source:"TMDB" });
+    addCatalogItems(trendingMovies.results,"movie");
+    addCatalogItems(popularMovies.results,"movie");
+    addCatalogItems(trendingSeries.results,"series");
+    addCatalogItems(popularSeries.results,"series");
   }
   if (env.RAWG_API_KEY) {
-    const data = await get("https://api.rawg.io/api/games?key=" + encodeURIComponent(env.RAWG_API_KEY) + "&ordering=-added&page_size=30").catch(()=>({results:[]}));
+    const data = await get("https://api.rawg.io/api/games?key=" + encodeURIComponent(env.RAWG_API_KEY) + "&ordering=-added&page_size=40").catch(()=>({results:[]}));
     for (const x of data.results || []) candidates.push({ type:"game", id:String(x.id), name:x.name, date:x.released || "", popularity:Number(x.added)||0, source:"RAWG" });
   }
-  const now = new Date().toISOString().slice(0,10);
-  const eligible = candidates.filter(x => x.id && x.name && isEligibleReleaseDate(x.date, now, x.preview) && !used.has(x.type + ":" + x.id) && !used.has("title:" + x.name.toLowerCase().replace(/[^\p{L}\p{N}]+/gu,"")) && !state.jobs[x.type + ":" + x.id]);
-  if (!eligible.length) return null;
-  eligible.sort((a,b) => counts[a.type]-counts[b.type] || b.popularity-a.popularity);
-  return eligible[0];
+  return selectEligibleCandidate(candidates,{used,jobs:state.jobs||{},counts,today:now});
 }
 export async function collectEvidence(candidate) {
   let primary;
