@@ -17,11 +17,11 @@ releaseDate: "2026-07-15"
 type: movie
 sourceName: "KOFIC / Cannes Film Festival"
 sourceId: "movie:1058424"
-sourceUrl: "https://www.koreanfilm.or.kr/eng/films/index/filmsView.jsp?movieCd=20233219"
+sourceUrl: "https://m.koreanfilm.or.kr/eng/films/index/filmsView.jsp?movieCd=20233219"
 aiGenerated: true
 editorialWorkflow: automated
-poster: "https://image.tmdb.org/t/p/w780/6VY1ZKgpsc8CfGsQcCGiYEgHdH0.jpg"
-backdrop: "https://image.tmdb.org/t/p/w1280/qqHFLg90IUSoTmSMpKOOW5RyqN3.jpg"
+poster: "https://image.tmdb.org/t/p/w342/6VY1ZKgpsc8CfGsQcCGiYEgHdH0.jpg"
+backdrop: "https://image.tmdb.org/t/p/w780/qqHFLg90IUSoTmSMpKOOW5RyqN3.jpg"
 youtubeVideoId: "DrNM5QhAr_M"
 youtubeVideoTitle: "[HOPE] International Main Trailer | Plus M Entertainment"
 mediaVerified: true
@@ -109,7 +109,7 @@ tags:
 
 ## استقبال النقاد وحدود التقييم
 
-عند التحقق في 23 نوفمبر 2026، يعرض Rotten Tomatoes نسبة إيجابية قدرها 80% من 190 مراجعة نقدية، بمتوسط 7.1/10. هذا مؤشر على استقبال يميل إلى الإيجابية، لكنه لا يعني اتفاق النقاد على كل عناصر الفيلم؛ فالإشادة بالطاقة الإخراجية وتصميم الإنتاج تتجاور مع تحفظات على طول البناء والمؤثرات الرقمية وتطور الشخصيات.
+عند التحقق في 23 نوفمبر 2026، يعرض Rotten Tomatoes نسبة إيجابية قدرها 80% من 190 مراجعة نقدية. هذا مؤشر على استقبال يميل إلى الإيجابية، لكنه لا يعني اتفاق النقاد على كل عناصر الفيلم؛ فالإشادة بالطاقة الإخراجية وتصميم الإنتاج تتجاور مع تحفظات على طول البناء والمؤثرات الرقمية وتطور الشخصيات.
 
 تستند هذه القراءة إلى بيانات KOFIC ومهرجان كان ومراجعات RogerEbert.com وThe Irish Times وCNN Indonesia، مع استخدام Rotten Tomatoes بوصفه مؤشراً تجميعياً لا بديلاً عن النقد التفصيلي. درجة VibeCritic تقدير تحريري مركّب من الأدلة المنشورة وفق أوزان التقييم المعتمدة؛ ولا تدّعي مشاهدة شخصية أو اختباراً مباشراً للفيلم.
 
