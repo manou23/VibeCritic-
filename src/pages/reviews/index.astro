@@ -1,0 +1,62 @@
+---
+import Base from '../../layouts/Base.astro';
+import ReviewCard from '../../components/ReviewCard.astro';
+import { getCollection } from 'astro:content';
+import { TYPE_LABEL } from '../../consts';
+
+const reviews = (await getCollection('reviews'))
+  .sort((a, b) => (b.data.publishedAt ?? b.data.date).valueOf() - (a.data.publishedAt ?? a.data.date).valueOf());
+
+const games = reviews.filter((review) => review.data.type === 'game').length;
+const movies = reviews.filter((review) => review.data.type === 'movie').length;
+const series = reviews.filter((review) => review.data.type === 'series').length;
+---
+<Base
+  title="جميع المراجعات"
+  description="تصفح جميع مراجعات VibeCritic المنشورة للألعاب والأفلام والمسلسلات، مرتبة من الأحدث إلى الأقدم."
+>
+  <main class="wrap reviews-index" dir="rtl">
+    <header class="reviews-hero">
+      <p class="reviews-eyebrow">VIBECRITIC / REVIEW LIBRARY</p>
+      <h1>جميع المراجعات</h1>
+      <p>كل قراءاتنا النقدية للألعاب والأفلام والمسلسلات في مكان واحد، مرتبة حسب تاريخ النشر.</p>
+      <div class="reviews-stats" aria-label="إحصائيات المراجعات">
+        <span><strong>{reviews.length}</strong> مراجعة منشورة</span>
+        <span><strong>{games}</strong> ألعاب</span>
+        <span><strong>{movies}</strong> أفلام</span>
+        <span><strong>{series}</strong> مسلسلات</span>
+      </div>
+    </header>
+
+    {reviews.length > 0 ? (
+      <section class="reviews-grid" aria-label="المراجعات المنشورة">
+        {reviews.map((review) => <ReviewCard review={review} />)}
+      </section>
+    ) : (
+      <section class="reviews-empty">
+        <h2>لا توجد مراجعات منشورة حالياً</h2>
+        <p>ستظهر المقالات هنا تلقائياً بعد نشرها.</p>
+        <a href="/">العودة إلى الصفحة الرئيسية</a>
+      </section>
+    )}
+  </main>
+</Base>
+
+<style>
+  .reviews-index{padding:48px 0 76px}
+  .reviews-hero{padding:12px 0 30px;margin-bottom:28px;border-bottom:1px solid var(--vc-border)}
+  .reviews-eyebrow{margin:0 0 10px;color:var(--vc-accent);font-size:11px;font-weight:950;letter-spacing:.12em}
+  .reviews-hero h1{margin:0 0 12px;font-size:clamp(30px,5vw,48px);font-weight:950;line-height:1.2}
+  .reviews-hero>p:not(.reviews-eyebrow){max-width:680px;margin:0;color:var(--vc-muted);font-size:14px;line-height:2}
+  .reviews-stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .reviews-stats span{display:flex;align-items:center;gap:7px;padding:9px 13px;border:1px solid var(--vc-border);background:var(--vc-surface-muted);font-size:12px;color:var(--vc-muted)}
+  .reviews-stats strong{color:var(--vc-text);font-size:16px;font-variant-numeric:tabular-nums}
+  .reviews-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:22px 15px}
+  .reviews-empty{padding:70px 20px;text-align:center;border:1px solid var(--vc-border);background:var(--vc-surface-muted)}
+  .reviews-empty h2{margin:0 0 10px;font-size:22px}
+  .reviews-empty p{color:var(--vc-muted)}
+  .reviews-empty a{display:inline-block;margin-top:12px;color:var(--vc-accent);font-weight:850}
+  @media(max-width:1000px){.reviews-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+  @media(max-width:700px){.reviews-index{padding:30px 0 52px}.reviews-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 10px}.reviews-stats{gap:7px}.reviews-stats span{padding:8px 9px;font-size:10px}.reviews-stats strong{font-size:14px}}
+  @media(max-width:390px){.reviews-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
