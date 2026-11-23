@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-23T14:10:31.589Z",
+  "updatedAt": "2026-11-23T16:16:58.602Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -2360,6 +2360,150 @@
       "sections": [],
       "article": null,
       "lastError": "Publishing blocked: evidence supports neither a scored review nor an explicit pre-release preview"
+    },
+    "series:171802": {
+      "key": "series:171802",
+      "type": "series",
+      "id": "171802",
+      "title": "Blade Runner 2099",
+      "item": {
+        "type": "series",
+        "id": "171802",
+        "name": "Blade Runner 2099",
+        "date": "2026-11-24",
+        "preview": true,
+        "popularity": 17.4232,
+        "source": "TMDB"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-23T16:16:05.418Z",
+      "updatedAt": "2026-11-23T16:16:58.602Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Blade Runner 2099",
+        "type": "series",
+        "collectedAt": "2026-11-23T16:16:05.945Z",
+        "sourceId": "series:171802",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/171802",
+        "overview": "Fifty years after the events of Blade Runner 2049, Los Angeles has been reborn, just not by humanity. Cora, a fugitive in a final bid to stop running, takes on one last identity: a Blade Runner. Forced to partner with Olwen, a Replicant days from dying, she hunts down a runaway hiding a truth that could collapse their fragile city.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/171802",
+            "extract": "Fifty years after the events of Blade Runner 2049, Los Angeles has been reborn, just not by humanity. Cora, a fugitive in a final bid to stop running, takes on one last identity: a Blade Runner. Forced to partner with Olwen, a Replicant days from dying, she hunts down a runaway hiding a truth that could collapse their fragile city.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Blade_Runner_2099",
+            "extract": "Blade Runner 2099 is an upcoming American science fiction television miniseries created by Silka Luisa for Amazon Prime Video. It is an installment in the Blade Runner franchise, serving as a sequel to the films Blade Runner (1982) and Blade Runner 2049 (2017). The franchise is based on Philip K. Dick's 1968 novel Do Androids Dream of Electric Sheep?.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Amazon Prime Video UK & IE",
+            "url": "https://www.youtube.com/watch?v=vfTiEyJTcjU",
+            "extract": "Verified public, embeddable promotional trailer: Blade Runner 2099 - Official Trailer | Prime Video",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "preview",
+        "reviewReadinessReason": "Verified pre-release item; preview only, no final rating.",
+        "youtubeVideoId": "vfTiEyJTcjU",
+        "youtubeVideoTitle": "Blade Runner 2099 - Official Trailer | Prime Video",
+        "youtubeChannel": "Amazon Prime Video UK & IE",
+        "releaseDate": "2026-11-24",
+        "genres": [
+          "Sci-Fi & Fantasy"
+        ],
+        "platforms": [],
+        "cast": [
+          "Hunter Schafer",
+          "Michelle Yeoh",
+          "Dimitri Abold",
+          "Lewis Gribben"
+        ],
+        "crew": [],
+        "rating": null,
+        "ratingScale": 10,
+        "votes": 0,
+        "poster": "https://image.tmdb.org/t/p/w780/qAcXaAoJiYry9nGEyxTirnJ82Jj.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/rACaCUxa8WAxkqdpZl0vGqBmIJg.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "Blade Runner 2099: عودة إلى لوس أنجلوس بعد خمسين عاماً من أحداث 2049",
+        "summary": "تأتي Blade Runner 2099 بوصفها عملاً تلفزيونياً مقبلاً من امتياز الخيال العلمي، وتضع قصتها بعد خمسين عاماً من أحداث Blade Runner 2049، وفق الملخص المتاح. في لوس أنجلوس التي «أُعيد بناؤها» من دون أن تكون البشرية صاحبة هذا التحول، تصبح كورا، وهي هاربة، مطاردةً بهوية جديدة: متعقبةً للنسخ المتماثلة. وتُجبر على العمل مع أولين، وهي نسخة متماثلة لا يفصلها عن الموت سوى أيام، لملاحقة هارب يخفي حقيقة قد تهدد المدينة الهشة. الموعد المدرج للإصدار هو 24 نوفمبر 2026. لذلك تظل هذه معاينة لما تعد به الفكرة والمعلومات المنشورة، لا حكماً على التنفيذ أو التجربة النهائية.",
+        "verdict": "لا يصح إصدار حكم نهائي على Blade Runner 2099 قبل عرضها؛ المتاح هنا يحدد نقطة انطلاق قصصية، وموعداً مستقبلياً، وأسماء من طاقم التمثيل، لكنه لا يكشف تفاصيل كافية عن البناء الدرامي أو الإيقاع أو الصورة أو الأداء. ما يستحق المتابعة هو تلاقي مطاردة كورا مع شراكتها القسرية مع أولين، وما قد تعنيه الحقيقة التي يخفيها الهارب لمستقبل المدينة. هذه احتمالات وأسئلة تفرضها الحبكة المعلنة، وليست نتائج مؤكدة. الموعد المسجل هو 24 نوفمبر 2026، ومن المنتظر عند الإصدار أن تتضح كيفية تحويل هذه العناصر إلى مسلسل؛ أما التقييم النهائي فيبقى مؤجلاً.",
+        "body": "## عودة إلى عالم الامتياز من نقطة زمنية جديدة\n\nتستعد Blade Runner 2099 للظهور بوصفها عملاً تلفزيونياً جديداً في امتياز Blade Runner، بعد الفيلمين Blade Runner الصادر عام 1982 وBlade Runner 2049 الصادر عام 2017، بحسب المعلومات التعريفية المتاحة. وتصفها مادة موسوعية بأنها مسلسل قصير من الخيال العلمي، أنشأته سيلكا لويزا لصالح Amazon Prime Video. أما موعد الإصدار المسجل في ملف العمل فهو 24 نوفمبر 2026، أي موعد مستقبلي بالنسبة إلى تاريخ جمع المعلومات، 23 نوفمبر 2026. لا يقدم الملف تفاصيل عن عدد الحلقات أو مدتها، ولا ينبغي استنتاجها من وصف العمل بأنه مسلسل قصير.\n\nتضع الحبكة أحداثها بعد خمسين عاماً من أحداث Blade Runner 2049، وتنقل مركز الاهتمام إلى لوس أنجلوس أُعيد بناؤها، لكن ليس على يد البشر، وفق الملخص المنشور. هذه العبارة تقدم تحولاً في وضع المدينة من دون أن تشرح من أعاد تشكيلها أو كيف حدث ذلك. لذا فهي تفتح مجالاً لأسئلة عن المجتمع الذي نشأ فيها، لكنها لا تمنح أساساً لتقرير طبيعة نظامه أو شكل حياته اليومية. المؤكد أن المدينة ليست مجرد خلفية زمنية محايدة في الوصف: هشاشتها المحتملة مرتبطة مباشرة بالحقيقة التي يخفيها أحد الشخصيات المطاردة.\n\n## كورا: هوية جديدة ومحاولة أخيرة للفرار\n\nتقدم المعلومات كورا بوصفها هاربة، تحاول في مسعى أخير أن تتوقف عن الركض، فتتبنى هوية جديدة وتصبح Blade Runner. هذا التحول هو المدخل الأوضح إلى صراعها؛ فالشخصية لا تبدأ، بحسب الملخص، في موقع مطاردة الآخرين من دون ماضٍ، بل تأتي من حالة فرار، ثم تجد نفسها في دور جديد. لكن التفاصيل المتاحة لا تحدد سبب هروبها، ولا تشرح ما الذي يجعل هذه المحاولة الأخيرة مختلفة عن سابقاتها. كذلك لا توضح إن كانت الهوية الجديدة اختياراً حراً بالكامل أم نتيجة ضغط الظروف. هذه أسئلة تبقى مفتوحة، ولا يمكن ملؤها بتخمينات عن دوافع كورا أو تاريخها.\n\nينتج من هذا التقديم توقع محدد، لا أكثر: سيكون من المهم عند المشاهدة معرفة كيف تتغير علاقة كورا بفعل الدور الذي تتخذه، وكيف تتداخل المطاردة مع محاولتها إنهاء حياة الهروب. أما ما إذا كان العمل سيجعل هذا التوتر محوراً مستمراً أو سيمنحه مساحة محدودة، فلا تثبته خلاصة القصة. المتاح يصف خطوة انتقالية في هوية الشخصية، ولا يكشف مسارها الكامل أو مآلها. ومن ثم تبدو متابعة تطور كورا أحد الأسئلة العملية التي يمكن أن يختبرها المسلسل عند صدوره، بدلاً من اعتبار تحولها دليلاً مسبقاً على نتيجة درامية بعينها.\n\n## أولين والشراكة التي تفرضها المهمة\n\nتُجبر كورا على العمل مع أولين، وهي نسخة متماثلة لا يفصلها عن الموت سوى أيام. تضع هذه المعلومة شريكتها في ظرف زمني شديد الوضوح، لكنها لا تشرح سبب قرب وفاتها أو ما تعرفه عن المهمة. كما لا تحدد طبيعة العلاقة بين الشخصيتين قبل الشراكة، أو إن كان بينهما اتفاق أو خلاف سابق. الثابت هو أن المهمة تجمع شخصيتين في وضعين مختلفين: كورا هاربة تتبنى هوية Blade Runner، وأولين تواجه نهاية وشيكة. ومن هنا يأتي سؤال المتابعة: كيف سيؤثر هذا التفاوت في الوقت والمخاطر على التعاون بينهما؟\n\nلا تكفي هذه العناصر وحدها للحكم على عمق العلاقة أو طريقة كتابتها. لكنها تمنح القصة رابطاً واضحاً بين المسار الشخصي والمطاردة: عمل كورا الجديد لا يجري منفصلاً عن شراكتها مع أولين، كما أن اقتراب موت أولين ليس تفصيلاً هامشياً في تعريفها. ينتظر المشاهد أن يعرف إن كانت المهمة ستكشف مزيداً عن الشخصيتين، أو ستبقيهما في إطار التعاون الضروري لإنجازها. ولا يحدد الملخص أيّاً من هذه الاتجاهات، ولا يذكر ما إذا كانت أولين ستنجو أو كيف تنتهي شراكتهما؛ لذلك تظل النتيجة خارج ما تسمح به الأدلة.\n\n## مطاردة تتجاوز هدفها المباشر\n\nتتجه كورا وأولين إلى مطاردة هارب يخفي حقيقة قد تؤدي إلى انهيار المدينة الهشة. هنا ترفع الخلاصة رهانات المهمة من تعقب شخص واحد إلى احتمال تأثير أوسع، لكن صياغتها لا تكشف ماهية الحقيقة ولا تثبت أن انهيار المدينة سيقع فعلاً. الفارق مهم في معاينة ما قبل الإصدار: وجود تهديد محتمل عنصر معلن في الفكرة، أما تحقق ذلك التهديد وشكله فجزء من أحداث لم تُعرض بعد. ولا تقدم المعلومات أسماء إضافية مرتبطة بالهارب أو وصفاً لطبيعة المطاردة، لذا لا يصح تحديد خصوم أو مؤسسات أو أحداث بعينها.\n\nما يمكن انتظاره بصورة منضبطة هو أن تكشف الحلقات، عند صدورها، الصلة بين سر الهارب وهشاشة المدينة، وأن توضح ما إذا كانت كورا وأولين تتعاملان مع المهمة كعمل تعقب محدود أم كقضية تمس المجتمع الأوسع. هذه صياغة لأسئلة تثيرها الحبكة، وليست تنبؤاً بأن المسلسل سيجيب عنها بطريقة معينة. وبالمثل، لا تكفي عبارة «حقيقة قد تنهار معها المدينة» لتحديد نبرة العمل، أو مقدار حضوره السياسي، أو طبيعة لغزه. الملف المتاح يثبت رهانات قصصية عامة، ولا يقدم تفاصيل تسمح بوصف معالجة المسلسل لها.\n\n## ما تؤكده المعلومات وما يبقى قيد الانتظار\n\nتتضمن بيانات العمل أسماء Hunter Schafer وMichelle Yeoh وDimitri Abold وLewis Gribben ضمن طاقم التمثيل، لكنها لا تربط هذه الأسماء بالشخصيات المذكورة في الملخص. لذلك لا يمكن الجزم بمن يؤدي دور كورا أو أولين، ولا استنتاج حجم أدوار بقية الممثلين. كما أن الملف لا يسرد أسماء أفراد الطاقم الإبداعي في خانة فريق العمل، باستثناء وصف موسوعي ينسب إنشاء المسلسل إلى سيلكا لويزا. وعلى الرغم من وجود مقطع ترويجي موثق بعنوان «Blade Runner 2099 - Official Trailer | Prime Video» منشور عبر قناة Amazon Prime Video UK & IE، فإن المعلومات المرفقة لا تتضمن وصفاً لمشاهده؛ فلا تُبنى هنا ادعاءات عن لقطاته أو أسلوبه البصري.\n\nوعند الإصدار، ستتضح أمور لا تجيب عنها البيانات الحالية: كيف تترابط حكاية كورا وأولين مع أثر الأفلام السابقة، وما التفاصيل التي تفسر حال لوس أنجلوس بعد مرور خمسين عاماً، وكيف يتطور سر الهارب ومصير الشخصيات. هذه نقاط متابعة، لا وعود مؤكدة بجودة أو اتجاه فني بعينه. حتى ذلك الحين، تقدم Blade Runner 2099 إطاراً معلناً يقوم على زمن لاحق، وهوية جديدة، وشراكة مرتبطة بالموت الوشيك، ومطاردة ذات تبعات محتملة على المدينة. يظل الحكم على تنفيذ هذا الإطار مؤجلاً إلى ما بعد المشاهدة، بينما يبقى التاريخ المسجل للإصدار 24 نوفمبر 2026.",
+        "pros": [
+          "الحبكة المعلنة تجمع بين تحول كورا إلى Blade Runner، وشراكتها مع أولين، ومطاردة ذات خطر محتمل على المدينة.",
+          "تحدد القصة نقطة زمنية جديدة: بعد خمسين عاماً من أحداث Blade Runner 2049.",
+          "تضم قائمة التمثيل أسماء Hunter Schafer وMichelle Yeoh وDimitri Abold وLewis Gribben."
+        ],
+        "cons": [
+          "المعلومات المتاحة لا تكشف دوافع كورا أو تفاصيل ماضيها.",
+          "لا يوضح الملخص طبيعة الحقيقة التي يخفيها الهارب أو كيفية تهديدها للمدينة.",
+          "لا تتضمن البيانات تفاصيل عن عدد الحلقات أو مدتها، ولا تربط أسماء الممثلين بالشخصيات."
+        ],
+        "title": "Blade Runner 2099",
+        "type": "series",
+        "sourceId": "series:171802",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/171802",
+        "sourceRating": null,
+        "sourceRatingScale": 10,
+        "sourceVoteCount": 0,
+        "sourceRatingCheckedAt": "2026-11-23T16:16:05.945Z",
+        "audienceScore": 0,
+        "releaseDate": "2026-11-24",
+        "poster": "https://image.tmdb.org/t/p/w780/qAcXaAoJiYry9nGEyxTirnJ82Jj.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/rACaCUxa8WAxkqdpZl0vGqBmIJg.jpg",
+        "genres": [
+          "Sci-Fi & Fantasy"
+        ],
+        "platforms": [],
+        "cast": [
+          "Hunter Schafer",
+          "Michelle Yeoh",
+          "Dimitri Abold",
+          "Lewis Gribben"
+        ],
+        "crew": [],
+        "tags": [
+          "Sci-Fi & Fantasy"
+        ],
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/171802",
+            "extract": "Fifty years after the events of Blade Runner 2049, Los Angeles has been reborn, just not by humanity. Cora, a fugitive in a final bid to stop running, takes on one last identity: a Blade Runner. Forced to partner with Olwen, a Replicant days from dying, she hunts down a runaway hiding a truth that could collapse their fragile city.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Blade_Runner_2099",
+            "extract": "Blade Runner 2099 is an upcoming American science fiction television miniseries created by Silka Luisa for Amazon Prime Video. It is an installment in the Blade Runner franchise, serving as a sequel to the films Blade Runner (1982) and Blade Runner 2049 (2017). The franchise is based on Philip K. Dick's 1968 novel Do Androids Dream of Electric Sheep?.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Amazon Prime Video UK & IE",
+            "url": "https://www.youtube.com/watch?v=vfTiEyJTcjU",
+            "extract": "Verified public, embeddable promotional trailer: Blade Runner 2099 - Official Trailer | Prime Video",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "vfTiEyJTcjU",
+        "youtubeVideoTitle": "Blade Runner 2099 - Official Trailer | Prime Video",
+        "reviewMode": "preview"
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 6563,
+      "articlePath": "src/content/reviews/series-blade-runner-2099-171802.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-blade-runner-2099-171802/"
     }
   },
   "providers": {},
@@ -2385,9 +2529,9 @@
       "tokens": 50639
     },
     "2026-11-23": {
-      "articles": 4,
-      "requests": 10,
-      "tokens": 35286
+      "articles": 5,
+      "requests": 13,
+      "tokens": 41849
     }
   },
   "history": []
