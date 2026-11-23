@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-23T13:17:35.993Z",
+  "updatedAt": "2026-11-23T14:10:31.589Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -2074,161 +2074,292 @@
         "popularity": 81.1664,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-23T13:16:15.873Z",
-      "updatedAt": "2026-11-23T13:17:35.993Z",
+      "updatedAt": "2026-11-23T14:10:26.643Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "Project Hail Mary",
-        "type": "movie",
-        "collectedAt": "2026-11-23T13:16:16.336Z",
-        "sourceId": "movie:687163",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/movie/687163",
-        "overview": "Science teacher Ryland Grace wakes up on a spaceship light years from home with no recollection of who he is or how he got there. As his memory returns, he begins to uncover his mission: solve the riddle of the mysterious substance causing the sun to die out. He must call on his scientific knowledge and unorthodox ideas to save everything on Earth from extinction.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/movie/687163",
-            "extract": "Science teacher Ryland Grace wakes up on a spaceship light years from home with no recollection of who he is or how he got there. As his memory returns, he begins to uncover his mission: solve the riddle of the mysterious substance causing the sun to die out. He must call on his scientific knowledge and unorthodox ideas to save everything on Earth from extinction.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Project_Hail_Mary",
-            "extract": "Project Hail Mary is a 2021 hard science fiction novel by American writer Andy Weir. It is about a science teacher and former biologist named Ryland Grace, who wakes up aboard a spacecraft, afflicted with amnesia.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Amazon MGM Studios",
-            "url": "https://www.youtube.com/watch?v=5VYsnngkS_U",
-            "extract": "Verified public, embeddable promotional trailer: Project Hail Mary | Official Trailer 2",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 8998 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "5VYsnngkS_U",
-        "youtubeVideoTitle": "Project Hail Mary | Official Trailer 2",
-        "youtubeChannel": "Amazon MGM Studios",
-        "releaseDate": "2026-03-15",
-        "genres": [
-          "Science Fiction",
-          "Adventure"
-        ],
-        "platforms": [],
-        "cast": [
-          "Ryan Gosling",
-          "Sandra Hüller",
-          "James Ortiz",
-          "Lionel Boyce",
-          "Milana Vayntrub",
-          "Ken Leung",
-          "Priya Kansara",
-          "Mia Soteriou"
-        ],
-        "crew": [
-          "Phil Lord",
-          "Christopher Miller"
-        ],
-        "rating": 8.621,
-        "ratingScale": 10,
-        "votes": 8998,
-        "poster": "https://image.tmdb.org/t/p/w780/iOb2fjXLbpJgyQXe46n1WtGCnaa.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/2I1OFQJ0L9T0dpU6FobKFWV2PxX.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "Project Hail Mary: فرضية واعدة، لكن ملف الأدلة لا يكفي لإصدار حكم على الفيلم",
-        "summary": "تتناول هذه المراجعة Project Hail Mary بوصفه فيلماً صدر وفق تاريخ الإصدار المسجل في 15 مارس 2026، لكنها تلتزم بما تثبته المواد المتاحة: مدرس علوم يستيقظ على سفينة فضائية فاقداً ذاكرته، ثم يكتشف أن عليه حل لغز مادة غامضة تهدد الشمس، فيما تتكشف مهمته مع عودة ذاكرته. هذه قاعدة سردية واضحة وذات رهانات كونية، ويُسجل الفيلم باسم فيل لورد وكريستوفر ميلر وبمشاركة رايان غوسلينغ وساندرا هولر وآخرين. لكن الملف لا يقدم وصفاً موثقاً للصورة أو الصوت أو الأداء أو الإيقاع، ولا مراجعات مستقلة كافية لتقييم تنفيذ الفيلم. لذلك يميز الحكم بين إمكانات الفكرة والنتائج التي لا يمكن إثباتها، ويتعامل مع درجات المحاور بوصفها تقديراً احترازياً محدود الثقة لا حكماً جمالياً راسخاً.",
-        "verdict": "يمتلك Project Hail Mary نقطة انطلاق مشوقة على مستوى الفكرة: بطل منفرد في الفضاء، ذاكرة تتعافى تدريجياً، ومهمة مرتبطة بخطر يهدد الأرض. كما أن بيانات العمل الرسمية تسجل أسماء معروفة في طاقم التمثيل والإخراج، وهو ما يتيح تعريفاً واضحاً بإنتاجه لا حكماً مسبقاً على جودته. لكن لا يجوز تحويل هذه العناصر وحدها إلى ثناء على أداء أو إخراج أو صورة أو موسيقى لم توثقها الأدلة المقدمة. لذلك فالنتيجة هنا حذرة عمداً: الفيلم يبدو مرشحاً لمن يفضل الخيال العلمي ذي المسألة العلمية والرهان الكوني، لكن التوصية تبقى مشروطة، ولا يمكن تثبيت تفوقه أو عيوب تنفيذه على هذا الملف وحده. الأرقام أدناه درجات احترازية مرتبطة بحدود التحقق، وليست بديلاً صادقاً عن تقييم مشاهدة ومصادر نقدية مستقلة.",
-        "body": "## مقدمة وسياق العمل\n\nتتناول هذه المراجعة Project Hail Mary بعد تاريخ الإصدار المسجل له، 15 مارس 2026، لا بوصفه مشروعاً مستقبلياً أو معاينة مبنية على توقعات. لكن وصف «مراجعة نهائية» لا يبيح تجاوز حدود الدليل: الملف المتاح يضم ملخصاً قصصياً من TMDB، بيانات تعريفية عن الفيلم، مدخلاً موسوعياً عن الرواية الأصلية، وإشارة إلى إعلان رسمي ثانٍ من Amazon MGM Studios. ولا يضم مراجعات نقدية مستقلة تصف الفيلم بعد عرضه، ولا معلومات موثقة كافية عن تفاصيل إنجازه. لذا فالمراجعة النهائية الممكنة هنا نهائية في موقفها من الأدلة المتاحة، لا ادعاء بأنها مشاهدة مباشرة أو حصيلة مصادر لا تظهر في الملف.\n\nالفيلم مصنف خيالاً علمياً ومغامرة، ومنسوب إخراجه إلى فيل لورد وكريستوفر ميلر. ويسجل الملف رايان غوسلينغ وساندرا هولر وجيمس أورتيز وليونيل بويس وميلانا فاينتروب وكين ليونغ وبريا كانسارا وميا سوتيريو ضمن طاقم التمثيل، من دون تحديد أدوارهم أو وصف مساهماتهم. ينبغي التعامل مع هذه الأسماء كمعلومات تعريفية، لا كدليل على جودة التمثيل أو طبيعة الشخصيات. كما أن وجود مقطع ترويجي موثق بعنوان Official Trailer 2 يثبت وجود مادة دعائية رسمية، لكنه لا يمنح وحده أساساً كافياً لوصف مشاهدها أو استخلاص حكم تفصيلي على الصورة والصوت.\n\n## الفكرة والقصة أو التجربة\n\nبحسب ملخص TMDB، يستيقظ مدرس العلوم رايلاند غريس على متن سفينة فضائية بعيدة سنوات ضوئية عن موطنه، من دون أن يتذكر هويته أو كيفية وصوله. ومع عودة ذاكرته، يبدأ في اكتشاف مهمته: حل لغز مادة غامضة تتسبب في احتضار الشمس، ومحاولة إنقاذ الأرض من الانقراض مستنداً إلى معرفته العلمية وأفكاره غير التقليدية. هذه هي الوقائع القصصية التي يمكن تثبيتها؛ وما وراءها، من أحداث أو تحولات أو نتائج، لا يرد في المادة المتاحة، ولذلك لا يصح اختراعه أو تقديمه كأنه معلوم.\n\nتمنح الفرضية الفيلم ثلاثة محاور سردية ظاهرة على مستوى الملخص: لغز الذاكرة، ومسألة علمية مركزية، وخطر كوني يتجاوز البطل إلى سكان الأرض. هذا تداخل قادر من حيث المبدأ على الجمع بين التشويق المعرفي والرحلة الشخصية، لكنه لا يثبت أن الفيلم يوازن بينها بنجاح. من الممكن أن يكون كشف الماضي دافعاً منظماً للسرد، كما يمكن أن يكون مركز الثقل هو حل المشكلة العلمية؛ غير أن تحديد أيهما يتقدم فعلياً يحتاج إلى مشاهدة أو وصف مستقل موثق. لذلك تستحق الفكرة تقديراً مبدئياً لوضوح رهاناتها، فيما يظل الحكم على عمق معالجتها مفتوحاً.\n\nويذكر المدخل الموسوعي أن الفيلم مقتبس من رواية خيال علمي صادرة عام 2021 لأندي وير، وأن بطلها مدرس علوم وعالم أحياء سابق يستيقظ في مركبة فضائية مصاباً بفقدان الذاكرة. تفيد هذه المعلومة في وضع العمل ضمن سياق اقتباس روائي، لكنها لا تسمح بمقارنة الفيلم بالكتاب أو بتحديد ما احتفظ به أو غيّره. لا توجد في الأدلة تفاصيل عن بنية الاقتباس، أو مقدار حضور البيولوجيا، أو كيفية تبسيط المفاهيم العلمية، ومن ثم فإن أي حكم بشأن الأمانة أو التكييف سيكون تخميناً.\n\n## السرد والشخصيات أو تصميم اللعب\n\nلأن هذا فيلم، لا تنطبق عليه أسئلة تصميم اللعب. أما سردياً، فيشير الملخص إلى بطل تُبنى معرفته بالمهمة بالتوازي مع استعادة ذاكرته. هذه آلية معلوماتية مفهومة: المتلقي، بحسب بنية الفكرة، لا يبدأ بمعرفة كاملة عن سبب وجود الشخصية في الفضاء. غير أن الملخص لا يبين مقدار ما يكشفه الفيلم ومتى، ولا ما إذا كان الغموض منتجاً للتوتر أو يتحول إلى تأجيل للمعلومات. لذلك يمكن وصف الترتيب المفترض في الفكرة، لا تقييم نجاح تنفيذه أو إيقاع كشفه.\n\nرايلاند غريس هو الشخصية الوحيدة التي يحددها الملخص بوضوح، ويصفه بأنه مدرس علوم يعتمد على معرفته العلمية وأفكاره غير التقليدية. هذه الصفة توفر أساساً معقولاً لربط حل الأزمة بشخصية البطل لا بمجرد مصادفة خارجية. لكنها لا تكفي لإثبات أنه شخصية مرسومة بتعقيد أو أن رحلته العاطفية مقنعة. لا نملك معلومات عن دوافعه قبل المهمة، أو علاقاته، أو تحولات شخصيته، كما لا يحدد الملف وظيفة بقية أعضاء الطاقم. ولهذا لا يمكن منح أداء غوسلينغ أو هولر أو غيرهما حكماً فردياً، إيجابياً كان أم سلبياً.\n\n## الإخراج والجوانب الفنية\n\nتسجيل لورد وميلر كمخرجين حقيقة إنتاجية، وليس تحليلاً لقراراتهما. لا يصف الملف أسلوب المونتاج أو حركة الكاميرا أو تصميم المشاهد، ولا يقدم تصريحاً موثقاً من صناع الفيلم يمكن أن يوضح تصورهم. كذلك لا توجد تفاصيل عن كتابة السيناريو أو الاستشارات العلمية أو المؤثرات. وعليه لا يمكن نسب نجاح الفكرة إلى إخراج بعينه، ولا الادعاء بأن العمل يبتكر بصرياً أو يعتمد معالجة مألوفة. هذه ليست ملاحظة سلبية عن الفيلم نفسه، بل حد فاصل بين المعلومة المتاحة والانطباع الذي يتطلب دليلاً.\n\n## الصورة والهوية البصرية\n\nالمادة المقدمة لا تحتوي وصفاً تحليلياً للصورة، ولا لقطات موصوفة يمكن الاستناد إليها في تقييم تصميم السفينة أو الفضاء أو المؤثرات. وجود رابط لملصق وخلفية ضمن بيانات TMDB لا يساوي توثيقاً نقدياً للهوية البصرية، كما أن إثبات وجود إعلان رسمي لا يكشف وحده تفاصيل بناء الفيلم الكامل. لذا لا يمكن الجزم بأن الفيلم يقدم عالماً بصرياً مميزاً، أو أن مؤثراته مقنعة، أو أن التباين بين المكان المغلق والفضاء الخارجي مستخدم بفاعلية. درجة هذا المحور أدناه لا تعني أن الصورة متوسطة فعلاً؛ إنها علامة احترازية على غياب مادة تسمح بتقدير منصف.\n\n## الصوت والموسيقى والأداء\n\nلا يورد الملف اسم مؤلف موسيقي، أو وصفاً للموسيقى، أو معلومات عن المكساج والمؤثرات الصوتية. ولا يتضمن شهادات أو مراجعات للأداء، ولا يحدد أدوار معظم الممثلين. لذلك لا توجد قاعدة تتيح وصف نبرة غوسلينغ أو كيمياء الشخصيات أو جودة الصوت، حتى لو بدت هذه الجوانب أساسية في قصة يغلب على ملخصها وجود بطل على متن مركبة فضائية. لا يصح استنتاج عزلة صوتية مؤثرة أو موسيقى ملحمية من النوع وحده؛ فهذه احتمالات لا أدلة. نتيجة ذلك أن درجة الصوت لا ينبغي قراءتها كحكم على جودة التسجيل أو الموسيقى، بل كتقدير لا يمكن دعمه فنياً بالمواد الحالية.\n\n## الإيقاع والبناء وتنوع المحتوى\n\nيجمع الملخص بين عودة الذاكرة وحل لغز علمي وإنقاذ الأرض، وهي عناصر قد تمنح السرد أكثر من مسار للترقب. لكن لا توجد معلومات عن مدة الفيلم، أو تقسيمه، أو تتابع أجزائه، أو عن مدى تنوع مراحله. كما لا توضح البيانات إن كان يعتمد على حوار تفسيري مكثف، أو انتقالات زمنية، أو مواقف متكررة. لذلك لا يمكن وصفه بالبطيء أو المتوازن أو المتسارع. التقييم السردي يقتصر هنا على قابلية الفرضية لتوليد حركة قصصية، لا على إيقاع الفيلم المحقق أو طريقة توزيع أحداثه.\n\n## نقاط القوة\n\nأول ما يمكن تسجيله لصالح المشروع هو وضوح مركز حكايته في الملخص: مهمة محددة ترتبط بمادة غامضة تهدد الشمس. وثانيه أن المخاطر شخصية وكونية في آن؛ فالبطل يواجه فقدان ذاكرته بينما تمتد عواقب المهمة، وفق الملخص، إلى الأرض. وثالثه أن صفة رايلاند كمدرس علوم تجعل المعرفة العلمية جزءاً معلناً من الفرضية، لا مجرد خلفية فضائية عامة. ورابعاً، يتيح وجود رواية أصلية معروفة البيانات، إلى جانب إعلان رسمي وقائمة طاقم وإخراج محددة، تعريفاً موثقاً بسياق الفيلم. هذه نقاط قوة في التأسيس والمعلومات المتاحة، وليست شهادات بأن التنفيذ السينمائي يحققها كلها.\n\n## نقاط الضعف\n\nأبرز قصور يمكن إثباته يتعلق بملف التقييم لا بالفيلم: لا توجد فيه مصادر نقدية مستقلة كافية لتثبيت استقبال العمل أو جودته. كما أن وصف الشخصيات مقتصر عملياً على البطل، فلا يمكن تقييم عمق الشخصيات الثانوية أو توزيع الأدوار. وثالثاً، تغيب المعلومات الفنية اللازمة للحكم على الصورة والصوت والإيقاع، ما يجعل الدرجات في هذه الجوانب ضعيفة الثقة. لا ينبغي تحويل هذه الفجوات إلى اتهامات للعمل بسطحية الشخصيات أو ضعف المؤثرات؛ لكنها تمنع إصدار تزكية نقدية حاسمة. وتوجد لدى TMDB درجة جمهور قدرها 8.621 من 10 مبنية على 8998 صوتاً، وهي مؤشر جماهيري ثانوي منسوب للمنصة، لا بديلاً عن تحليل مستقل ولا دليلاً يملأ تلك الفجوات.\n\n## لمن يناسب هذا العمل؟\n\nعلى مستوى الفكرة الموثقة، قد يجذب الفيلم المشاهد الذي يبحث عن خيال علمي قائم على لغز علمي، وبطل يتعلم تفاصيل مهمته مع عودة ذاكرته، ورهان تتجاوز نتائجه حدود الشخص الواحد. كما أن تصنيفه مغامرة وخيالاً علمياً يجعله مرشحاً لمن يفضل هذا الإطار النوعي. لكن لا يمكن من الأدلة المتاحة تحديد ملاءمته لمن يفضل إيقاعاً سريعاً، أو عالماً بصرياً واسعاً، أو معالجة دقيقة للشخصيات، لأن هذه الصفات لم توثق. التوصية إذن مبدئية ومشروطة بالاهتمام بالفرضية، لا وعداً بأن التنفيذ يرضي ذوقاً بعينه.\n\n## الحكم النهائي\n\nProject Hail Mary يملك، وفق المعلومات الموثقة، نواة قصصية جذابة تجمع فقدان الذاكرة بمسألة علمية وخطر يهدد الأرض، وسياقاً إنتاجياً محدداً من حيث المخرجين والطاقم والرواية التي يستند إليها. لكن لا تتوافر هنا أدلة تسمح بتحويل ذلك إلى حكم نهائي موثوق على جودة الإخراج أو التمثيل أو الصورة أو الصوت أو الإيقاع. لذلك لا تصنف هذه المراجعة الفيلم على أنه نجاح فني أو إخفاق؛ بل توصي به بحذر لمن تستوقفه فكرته، وتترك الحكم على التجربة المنجزة مفتوحاً إلى أن تتوفر مصادر مشاهدة ونقد مستقلة. أما درجات المحاور فهي تقديرات احترازية محدودة الثقة، وليست نتيجة مشاهدة مباشرة أو خلاصة مراجعات مستقلة غير موجودة في ملف الأدلة.",
-        "scores": {
-          "story": 6,
-          "visuals": 6,
-          "sound": 6,
-          "pacing": 6
-        },
-        "pros": [
-          "فرضية محددة تربط لغز مادة تهدد الشمس بمهمة إنقاذ الأرض.",
-          "استعادة ذاكرة البطل توفر محوراً واضحاً لاكتشاف تفاصيل المهمة تدريجياً، بحسب الملخص.",
-          "المعرفة العلمية والأفكار غير التقليدية جزء معلن من طريقة مواجهة الأزمة.",
-          "الملف يحدد المخرجين والطاقم والرواية الأصلية وتاريخ الإصدار، ما يتيح سياقاً تعريفياً موثقاً."
-        ],
-        "cons": [
-          "المواد المتاحة لا تضم مراجعات نقدية مستقلة كافية للحكم على جودة الفيلم بعد صدوره.",
-          "لا تتوفر تفاصيل موثقة عن الشخصيات الثانوية أو أدوار أفراد طاقم التمثيل.",
-          "غياب المعلومات الفنية يمنع تقييماً مستنداً إلى دليل للصورة والصوت والموسيقى.",
-          "لا يوضح الملخص مدة الفيلم أو توزيع أحداثه، لذلك لا يمكن الجزم بإيقاعه أو تنوع بنائه."
-        ],
-        "title": "Project Hail Mary",
-        "type": "movie",
-        "sourceId": "movie:687163",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/movie/687163",
-        "sourceRating": 8.621,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 8998,
-        "sourceRatingCheckedAt": "2026-11-23T13:16:16.336Z",
-        "audienceScore": 8.6,
-        "releaseDate": "2026-03-15",
-        "poster": "https://image.tmdb.org/t/p/w780/iOb2fjXLbpJgyQXe46n1WtGCnaa.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/2I1OFQJ0L9T0dpU6FobKFWV2PxX.jpg",
-        "genres": [
-          "Science Fiction",
-          "Adventure"
-        ],
-        "platforms": [],
-        "cast": [
-          "Ryan Gosling",
-          "Sandra Hüller",
-          "James Ortiz",
-          "Lionel Boyce",
-          "Milana Vayntrub",
-          "Ken Leung",
-          "Priya Kansara",
-          "Mia Soteriou"
-        ],
-        "crew": [
-          "Phil Lord",
-          "Christopher Miller"
-        ],
-        "tags": [
-          "Science Fiction",
-          "Adventure"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/movie/687163",
-            "extract": "Science teacher Ryland Grace wakes up on a spaceship light years from home with no recollection of who he is or how he got there. As his memory returns, he begins to uncover his mission: solve the riddle of the mysterious substance causing the sun to die out. He must call on his scientific knowledge and unorthodox ideas to save everything on Earth from extinction.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Project_Hail_Mary",
-            "extract": "Project Hail Mary is a 2021 hard science fiction novel by American writer Andy Weir. It is about a science teacher and former biologist named Ryland Grace, who wakes up aboard a spacecraft, afflicted with amnesia.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Amazon MGM Studios",
-            "url": "https://www.youtube.com/watch?v=5VYsnngkS_U",
-            "extract": "Verified public, embeddable promotional trailer: Project Hail Mary | Official Trailer 2",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "5VYsnngkS_U",
-        "youtubeVideoTitle": "Project Hail Mary | Official Trailer 2",
-        "reviewMode": "review",
-        "score": 6
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 11433,
       "articlePath": "src/content/reviews/movie-project-hail-mary-687163.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-project-hail-mary-687163/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-project-hail-mary-687163/",
+      "publishedAt": "2026-11-23T14:10:26.643Z"
+    },
+    "series:324502": {
+      "key": "series:324502",
+      "type": "series",
+      "id": "324502",
+      "title": "Overgeared",
+      "item": {
+        "type": "series",
+        "id": "324502",
+        "name": "Overgeared",
+        "date": "2026-10-02",
+        "preview": false,
+        "popularity": 28.6873,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-23T14:10:27.874Z",
+      "updatedAt": "2026-11-23T14:10:28.339Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Overgeared",
+        "type": "series",
+        "collectedAt": "2026-11-23T14:10:28.339Z",
+        "sourceId": "series:324502",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/324502",
+        "overview": "Escape everyday life in SATISFY, a VR game where players earn real-world fame and fortune. One player, Grid, can't seem to catch a break in the game or in real life. That all changes when a challenging quest leads him to becoming the heir to a legendary blacksmith. His stats are reset to zero, but he's leveling up and crafting some seriously god-tier goods.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/324502",
+            "extract": "Escape everyday life in SATISFY, a VR game where players earn real-world fame and fortune. One player, Grid, can't seem to catch a break in the game or in real life. That all changes when a challenging quest leads him to becoming the heir to a legendary blacksmith. His stats are reset to zero, but he's leveling up and crafting some seriously god-tier goods.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Overgeared",
+            "extract": "Overgeared (Korean: 템빨) is a South Korean web novel series written by Saenal. It was serialized on Kakao's web novel platform KakaoPage from November 2014 to April 2024. A manhwa adaptation, which was released as a webtoon, adapted by Monohumbug and illustrated by Team Argo, began serialization on KakaoPage in April 2020. A Japanese anime television series adaptation produced by J.C.Staff premiered in October 2026.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Anime Officials Trailer",
+            "url": "https://www.youtube.com/watch?v=9-hHZfQa_eg",
+            "extract": "Verified public, embeddable promotional trailer: Overgeared Anime - Official Trailer ",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "limited",
+        "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
+        "youtubeVideoId": "9-hHZfQa_eg",
+        "youtubeVideoTitle": "Overgeared Anime - Official Trailer ",
+        "youtubeChannel": "Anime Officials Trailer",
+        "releaseDate": "2026-10-02",
+        "genres": [
+          "Animation",
+          "Sci-Fi & Fantasy",
+          "Action & Adventure"
+        ],
+        "platforms": [],
+        "cast": [
+          "Tatsumaru Tachibana",
+          "Asami Seto",
+          "Saya Fukuzumi",
+          "Shuntaro Takayama",
+          "Riho Sugiyama",
+          "Masaaki Mizunaka",
+          "Ko Bonkobara",
+          "Masaya Fukunishi"
+        ],
+        "crew": [],
+        "rating": 7.7,
+        "ratingScale": 10,
+        "votes": 15,
+        "poster": "https://image.tmdb.org/t/p/w780/94GLmulA9qVGsuo9kLpVKi01E2Z.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/745xqHbiUWwO51TM60MXRCR4Onm.jpg"
+      },
+      "sections": [],
+      "article": null,
+      "lastError": "Publishing blocked: evidence supports neither a scored review nor an explicit pre-release preview"
+    },
+    "series:290826": {
+      "key": "series:290826",
+      "type": "series",
+      "id": "290826",
+      "title": "Dig",
+      "item": {
+        "type": "series",
+        "id": "290826",
+        "name": "Dig",
+        "date": "2026-11-23",
+        "preview": false,
+        "popularity": 7.2653,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-23T14:10:29.130Z",
+      "updatedAt": "2026-11-23T14:10:29.595Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "Independent source is too thin after full lead-section fallback"
+    },
+    "movie:1561834": {
+      "key": "movie:1561834",
+      "type": "movie",
+      "id": "1561834",
+      "title": "Last Meal",
+      "item": {
+        "type": "movie",
+        "id": "1561834",
+        "name": "Last Meal",
+        "date": "2026-11-18",
+        "preview": false,
+        "popularity": 35.7739,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-23T14:10:30.018Z",
+      "updatedAt": "2026-11-23T14:10:30.470Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Last Meal",
+        "type": "movie",
+        "collectedAt": "2026-11-23T14:10:30.470Z",
+        "sourceId": "movie:1561834",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1561834",
+        "overview": "The passionate love between pianist Sebahat and Bekir is cut short when he vanishes without a trace. Years later, when fate reunites them, they realize that neither time, distance, nor the life Sebahat has built could ever break their bond. Together, they embark on a journey that pushes the very limits of love, loyalty, and sacrifice because some loves are worth fighting for, no matter what.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1561834",
+            "extract": "The passionate love between pianist Sebahat and Bekir is cut short when he vanishes without a trace. Years later, when fate reunites them, they realize that neither time, distance, nor the life Sebahat has built could ever break their bond. Together, they embark on a journey that pushes the very limits of love, loyalty, and sacrifice because some loves are worth fighting for, no matter what.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Last_meal",
+            "extract": "In criminal justice systems, a condemned prisoner's last meal is a customary ritual preceding execution. In many countries, the prisoner may, within reason, select what the last meal will be.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Cargo Film & Releasing",
+            "url": "https://www.youtube.com/watch?v=c6NwqEPvDc8",
+            "extract": "Verified public, embeddable promotional trailer: LAST MEAL (2021) OFFICIAL TRAILER. Narrated by Hugh Ross. Tribeca Official Selection.",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "limited",
+        "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
+        "youtubeVideoId": "c6NwqEPvDc8",
+        "youtubeVideoTitle": "LAST MEAL (2021) OFFICIAL TRAILER. Narrated by Hugh Ross. Tribeca Official Selection.",
+        "youtubeChannel": "Cargo Film & Releasing",
+        "releaseDate": "2026-11-18",
+        "genres": [
+          "Romance",
+          "Drama"
+        ],
+        "platforms": [],
+        "cast": [
+          "Öykü Karayel",
+          "Özcan Deniz",
+          "Nejat İşler",
+          "Helin Kandemir",
+          "Gonca Vuslateri",
+          "Tilbe Saran",
+          "Özgür Emre Yıldırım",
+          "Ceyda Düvenci"
+        ],
+        "crew": [
+          "Özcan Deniz",
+          "Özcan Deniz"
+        ],
+        "rating": 8,
+        "ratingScale": 10,
+        "votes": 10,
+        "poster": "https://image.tmdb.org/t/p/w780/kdz0fHndmpFKb0iwJvauyPHRAh7.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/u3riq0UYL2aowB6u1xScMfDUFmr.jpg"
+      },
+      "sections": [],
+      "article": null,
+      "lastError": "Publishing blocked: evidence supports neither a scored review nor an explicit pre-release preview"
+    },
+    "movie:1050981": {
+      "key": "movie:1050981",
+      "type": "movie",
+      "id": "1050981",
+      "title": "Being Heumann",
+      "item": {
+        "type": "movie",
+        "id": "1050981",
+        "name": "Being Heumann",
+        "date": "2026-11-06",
+        "preview": false,
+        "popularity": 17.6162,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-23T14:10:31.180Z",
+      "updatedAt": "2026-11-23T14:10:31.589Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Being Heumann",
+        "type": "movie",
+        "collectedAt": "2026-11-23T14:10:31.589Z",
+        "sourceId": "movie:1050981",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1050981",
+        "overview": "Scrappy, defiant, and done being treated like a burden, Judy Heumann turns her outrage into a revolution. In 1977, she and more than 100 disability rights protestors send a very loud message: The system is broken—not us.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1050981",
+            "extract": "Scrappy, defiant, and done being treated like a burden, Judy Heumann turns her outrage into a revolution. In 1977, she and more than 100 disability rights protestors send a very loud message: The system is broken—not us.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Being_Heumann",
+            "extract": "Being Heumann is a 2026 American biographical drama film directed by Sian Heder, starring Ruth Madeley as disability rights activist Judith Heumann, and Mark Ruffalo as United States Secretary of Health and Human Services Joseph A. Califano Jr., who opposed the movement, led by Heumann, for the first U.S. federal civil rights protection for people with disabilities. The film is an adaptation of Heumann's memoir Being Heumann: An Unrepentant Memoir of a Disability Rights Activist along with being informed by interviews with 30 people who had been involved in the protests and an oral history document with Kitty Cone.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — FilmSelect+",
+            "url": "https://www.youtube.com/watch?v=Frc6qK1j_w0",
+            "extract": "Verified public, embeddable promotional trailer: BEING HEUMANN Official Trailer 2 (2026) Mark Ruffalo",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "limited",
+        "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
+        "youtubeVideoId": "Frc6qK1j_w0",
+        "youtubeVideoTitle": "BEING HEUMANN Official Trailer 2 (2026) Mark Ruffalo",
+        "youtubeChannel": "FilmSelect+",
+        "releaseDate": "2026-11-06",
+        "genres": [
+          "Drama",
+          "History"
+        ],
+        "platforms": [],
+        "cast": [
+          "Ruth Madeley",
+          "Mark Ruffalo",
+          "Dylan O'Brien",
+          "Madeline Delp",
+          "Roberta Colindrez",
+          "Jon Beavers",
+          "Antwan Tolliver",
+          "Ray Fisher"
+        ],
+        "crew": [
+          "Sian Heder"
+        ],
+        "rating": 6.915,
+        "ratingScale": 10,
+        "votes": 41,
+        "poster": "https://image.tmdb.org/t/p/w780/ouGH1PS0xjDyfTQOhppn7QzJqQZ.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/25aB8RXP4mfQLFRSuEEhk0d0sTC.jpg"
+      },
+      "sections": [],
+      "article": null,
+      "lastError": "Publishing blocked: evidence supports neither a scored review nor an explicit pre-release preview"
     }
   },
   "providers": {},
