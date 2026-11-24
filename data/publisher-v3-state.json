@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-24T10:36:53.240Z",
+  "updatedAt": "2026-11-24T10:38:44.069Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -3081,12 +3081,12 @@
         "popularity": 5008,
         "source": "RAWG"
       },
-      "status": "verifying",
+      "status": "waiting",
       "stage": 0,
-      "attempts": 0,
+      "attempts": 1,
       "createdAt": "2026-11-24T10:36:08.366Z",
-      "updatedAt": "2026-11-24T10:36:53.240Z",
-      "nextAttemptAt": null,
+      "updatedAt": "2026-11-24T10:38:44.068Z",
+      "nextAttemptAt": "2026-11-24T10:39:44.068Z",
       "evidence": {
         "title": "Valheim",
         "type": "game",
@@ -3217,11 +3217,12 @@
         "reviewMode": "review",
         "score": 6.5
       },
-      "lastError": null,
+      "lastError": "Article file exists, but the live site still returns HTTP 404; deployment verification will retry.",
       "provider": "openai",
       "tokens": 6148,
       "articlePath": "src/content/reviews/game-valheim-248521.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-valheim-248521/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-valheim-248521/",
+      "resumeStatus": "verifying"
     }
   },
   "providers": {},
