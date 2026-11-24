@@ -265,6 +265,41 @@ globalThis.fetch = async () => ({
   json:async()=>({candidates:[{content:{parts:[{text:JSON.stringify({approved:false,score:5,factualRisk:"high",repetition:"low",exaggeration:"medium",issues:["ادعاء غير مدعوم"],notes:"مرفوض"})}]}}]})
 });
 await assert.rejects(geminiReviewer.reviewArticle({title:"Test",body:"مقال"}, {title:"Test",sources:[]}),/Gemini editorial review rejected article/);
+
+// A malformed/truncated Gemini response gets exactly one fresh review attempt; it never bypasses approval.
+let repairCalls = 0;
+globalThis.fetch = async () => {
+  repairCalls++;
+  return { ok:true, json:async()=>({candidates:[{finishReason: repairCalls === 1 ? "MAX_TOKENS" : "STOP",content:{parts:[{text:repairCalls === 1 ? '{"approved":true,"notes":"truncated' : JSON.stringify({approved:true,score:8.1,factualRisk:"low",repetition:"low",exaggeration:"low",issues:[],notes:"مقبول بعد إعادة المحاولة"})}]}}],usageMetadata:{promptTokenCount:10,candidatesTokenCount:5}}) };
+};
+const repairedReview = await geminiReviewer.reviewArticle({title:"Test",body:"مقال"}, {title:"Test",sources:[]});
+assert.equal(repairedReview.skipped,false);
+assert.equal(repairedReview.requests,2);
+assert.equal(repairedReview.tokens,30);
+assert.equal(repairCalls,2);
+
+// If both responses are malformed, the quality gate fails closed.
+let malformedCalls = 0;
+globalThis.fetch = async () => {
+  malformedCalls++;
+  return { ok:true, json:async()=>({candidates:[{finishReason:"STOP",content:{parts:[{text:'{"approved":true,"notes":"unfinished'}]}}]}) };
+};
+await assert.rejects(geminiReviewer.reviewArticle({title:"Test",body:"مقال"}, {title:"Test",sources:[]}),/invalid or incomplete JSON after retry/);
+assert.equal(malformedCalls,2);
+
+// A syntactically valid but structurally invalid response is retried, not approved.
+let schemaCalls = 0;
+globalThis.fetch = async () => {
+  schemaCalls++;
+  const review = schemaCalls === 1
+    ? {approved:true,score:8,factualRisk:"unknown",repetition:"low",exaggeration:"low",issues:[],notes:""}
+    : {approved:true,score:8,factualRisk:"low",repetition:"low",exaggeration:"low",issues:[],notes:"مقبول"};
+  return {ok:true,json:async()=>({candidates:[{finishReason:"STOP",content:{parts:[{text:JSON.stringify(review)}]}}]})};
+};
+const schemaRetry = await geminiReviewer.reviewArticle({title:"Test",body:"مقال"}, {title:"Test",sources:[]});
+assert.equal(schemaRetry.requests,2);
+assert.equal(schemaCalls,2);
+
 process.env.GEMINI_API_KEY = "";
 const optionalReviewer = await geminiReviewer.reviewArticle({title:"Test"}, {});
 assert.equal(optionalReviewer.skipped,true);
