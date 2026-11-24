@@ -123,6 +123,10 @@ assert.match(limitedMarkdown,/reviewMode: limited/);
 assert.doesNotMatch(limitedMarkdown,/^score:/m);
 assert.match(limitedMarkdown,/قراءة معلوماتية محدودة/);
 assert.doesNotMatch(limitedMarkdown,/قيد التقييم/);
+const limitedPrompt = buildPrompt(limitedEvidence);
+assert.match(limitedPrompt,/قراءة معلوماتية عربية محدودة الأدلة/);
+assert.match(limitedPrompt,/لا تضف scores أو score/);
+assert.match(limitedPrompt,/ما الذي لا نعرفه بعد/);
 const previewEvidence = { ...limitedEvidence, releaseDate:"2099-01-01", reviewReadiness:"preview" };
 const previewDraft = { ...limitedDraft, headline:"معاينة استباقية قبل الإصدار", summary:"هذه معاينة استباقية للعمل قبل صدوره، تستعرض المعلومات الرسمية المتاحة وتفصل الحقائق عن التوقعات، ولا تمثل مراجعة نهائية ولا تمنح درجة رقمية أو حكماً على جودة التجربة.", verdict:"هذه معاينة استباقية قبل الإصدار، وليست مراجعة نهائية. نستعرض المعلومات المؤكدة وما يمكن توقعه بحذر، ونترك الحكم على الجودة والتقييم الرقمي إلى ما بعد صدور العمل وتوفر أدلة نقدية كافية.", reviewMode:undefined };
 const previewResult = assemble(previewDraft,previewEvidence);
@@ -263,6 +267,22 @@ assert.equal(acceptedReview.provider,"gemini");
 assert.equal(acceptedReview.requests,1);
 assert.equal(acceptedReview.tokens,120);
 assert.equal(geminiCalls,1);
+let limitedReviewPrompt = "";
+globalThis.fetch = async (url, options) => {
+  const request = JSON.parse(options.body);
+  limitedReviewPrompt = request.contents[0].parts[0].text;
+  return {
+    ok:true,
+    json:async()=>({
+      candidates:[{content:{parts:[{text:JSON.stringify({approved:true,score:8.1,factualRisk:"low",repetition:"low",exaggeration:"low",issues:[],notes:"قراءة معلوماتية دقيقة"})}]}}],
+      usageMetadata:{promptTokenCount:100,candidatesTokenCount:20}
+    })
+  };
+};
+const checkedLimited = await geminiReviewer.reviewArticle({title:"Test",body:"مقال",reviewMode:"limited"}, {title:"Test",sources:[]});
+assert.equal(checkedLimited.skipped,false);
+assert.match(limitedReviewPrompt,/قراءة معلوماتية محدودة الأدلة/);
+assert.match(limitedReviewPrompt,/لا ترفض لمجرد أن الأدلة لا تسمح بتحليل الجودة الفنية/);
 globalThis.fetch = async () => { throw new DOMException("simulated Gemini timeout","TimeoutError"); };
 const timeoutReview = await geminiReviewer.reviewArticle({title:"Test",body:"مقال"}, {title:"Test",sources:[]});
 assert.equal(timeoutReview.skipped,true);
