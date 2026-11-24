@@ -115,7 +115,14 @@ const limitedDraft = {
 };
 const limitedResult = assemble(limitedDraft,limitedEvidence);
 assert.equal(limitedResult.article.reviewMode,"limited");
-assert.equal(limitedResult.article.score,undefined);\nassert.equal(limitedResult.article.scores,undefined);\nassert.ok(validateArticle(limitedResult.article,{minWords:650,minCharacters:3200}).words >= 650);\nconst limitedMarkdown = renderMarkdown(limitedResult.article);\nassert.match(limitedMarkdown,/reviewMode: limited/);\nassert.doesNotMatch(limitedMarkdown,/^score:/m);\nassert.match(limitedMarkdown,/قراءة معلوماتية محدودة/);\nassert.doesNotMatch(limitedMarkdown,/قيد التقييم/);
+assert.equal(limitedResult.article.score,undefined);
+assert.equal(limitedResult.article.scores,undefined);
+assert.ok(validateArticle(limitedResult.article,{minWords:650,minCharacters:3200}).words >= 650);
+const limitedMarkdown = renderMarkdown(limitedResult.article);
+assert.match(limitedMarkdown,/reviewMode: limited/);
+assert.doesNotMatch(limitedMarkdown,/^score:/m);
+assert.match(limitedMarkdown,/قراءة معلوماتية محدودة/);
+assert.doesNotMatch(limitedMarkdown,/قيد التقييم/);
 const previewEvidence = { ...limitedEvidence, releaseDate:"2099-01-01", reviewReadiness:"preview" };
 const previewDraft = { ...limitedDraft, headline:"معاينة استباقية قبل الإصدار", summary:"هذه معاينة استباقية للعمل قبل صدوره، تستعرض المعلومات الرسمية المتاحة وتفصل الحقائق عن التوقعات، ولا تمثل مراجعة نهائية ولا تمنح درجة رقمية أو حكماً على جودة التجربة.", verdict:"هذه معاينة استباقية قبل الإصدار، وليست مراجعة نهائية. نستعرض المعلومات المؤكدة وما يمكن توقعه بحذر، ونترك الحكم على الجودة والتقييم الرقمي إلى ما بعد صدور العمل وتوفر أدلة نقدية كافية.", reviewMode:undefined };
 const previewResult = assemble(previewDraft,previewEvidence);
