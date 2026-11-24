@@ -179,9 +179,7 @@ const lock = path.join(dir, "run.lock");
 const reviewRoot = path.join(dir,"reviews");
 const createdPath = await publishArticle(article,reviewRoot);
 assert.equal(createdPath,articleFilePath(article,reviewRoot));
-const renderedPreview = renderMarkdown({ ...article, verdict:"The final rating is 6/10.", body:body+"
-
-**التقييم النهائي: 6/10**" });
+const renderedPreview = renderMarkdown({ ...article, verdict:"The final rating is 6/10.", body:body+"\n\n**التقييم النهائي: 6/10**" });
 assert.ok(renderedPreview.includes('verdict: "The final rating is 7.0/10."'));
 assert.ok(renderedPreview.includes("**التقييم النهائي: 7.0/10**"));
 assert.match(renderedPreview,/reviewMode: review/);
