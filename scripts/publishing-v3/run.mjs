@@ -95,7 +95,7 @@ const result = await withRunLock(async () => {
         try {
           job.evidence = await collectEvidence(job.item);
           validateEvidence(job.evidence);
-          if (!["review","audience","preview"].includes(job.evidence.reviewReadiness)) throw new Error("Publishing blocked: evidence supports neither a scored review nor an explicit pre-release preview");
+          if (!["review","audience","preview","limited"].includes(job.evidence.reviewReadiness)) throw new Error("Publishing blocked: evidence supports neither a scored review, a limited information article, nor an explicit pre-release preview");
           if (job.evidence.reviewReadiness === "preview" && (!job.evidence.releaseDate || !(job.evidence.releaseDate > new Date().toISOString().slice(0,10)))) throw new Error("Publishing blocked: preview requires a verified future release date");
           if (job.evidence.reviewReadiness === "audience" && (!Number.isFinite(Number(job.evidence.rating)) || !Number.isFinite(Number(job.evidence.ratingScale)) || Number(job.evidence.ratingScale) <= 0 || !Number.isInteger(Number(job.evidence.votes)) || Number(job.evidence.votes) < 100)) throw new Error("Publishing blocked: audience rating requires a verified source average and at least 100 votes");
           evidenceReady = true;
