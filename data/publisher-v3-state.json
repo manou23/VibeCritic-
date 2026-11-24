@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-24T14:39:42.356Z",
+  "updatedAt": "2026-11-24T16:08:12.887Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -3300,149 +3300,47 @@
         "popularity": 2489,
         "source": "RAWG"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-24T14:38:53.527Z",
-      "updatedAt": "2026-11-24T14:39:42.356Z",
+      "updatedAt": "2026-11-24T16:08:09.697Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "Vampire: The Masquerade – Bloodlines 2",
-        "type": "game",
-        "collectedAt": "2026-11-24T14:38:54.234Z",
-        "sourceId": "game:303576",
-        "sourceName": "RAWG",
-        "sourceUrl": "https://rawg.io/games/vampire-the-masquerade-bloodlines-2",
-        "overview": "Sired in an act of vampire insurrection, your existence ignites the war for Seattle's blood trade. Enter uneasy alliances with the creatures who control the city and uncover the sprawling conspiracy which plunged Seattle into a bloody civil war between powerful vampire factions. ♞Become the Ultimate Vampire Immerse yourself in the World of Darkness and live out your vampire fantasy in a city filled with intriguing characters that react to your choices. You and your unique disciplines are a weapon in our forward-driving, fast-moving, melee-focussed combat system. Your power will grow as you advance, but remember to uphold the Masquerade and guard your humanity... or face the consequences. ♝Descend into Seattle’s Dark Heart and Survive the Vampire Elite Seattle has always been run by vampires. Hunt your prey across Seattle locations faithfully reimagined in the World of Darkness. Meet the old blood founders present since the city’s birth and the new blood steering the tech money redefining the city. Everyone has hidden agendas - so choose your allies wisely. ♚Enter into Uneasy Alliances Choose a side among competing factions, each with their own unique traits and stories, in the war for Seattle’s blood trade. The world will judge you by the company you keep, but remember no one’s hands stay clean forever. ♛Experience the Story Written by the creative mind behind the original Bloodlines, Vampire: The Masquerade® - Bloodlines™ 2 brings the ambitions of the first game to life and sees the return of a few fan favorite characters.",
-        "sources": [
-          {
-            "name": "RAWG",
-            "url": "https://rawg.io/games/vampire-the-masquerade-bloodlines-2",
-            "extract": "Sired in an act of vampire insurrection, your existence ignites the war for Seattle's blood trade. Enter uneasy alliances with the creatures who control the city and uncover the sprawling conspiracy which plunged Seattle into a bloody civil war between powerful vampire factions. ♞Become the Ultimate Vampire Immerse yourself in the World of Darkness and live out your vampire fantasy in a city filled with intriguing characters that react to your choices. You and your unique disciplines are a weapon in our forward-driving, fast-moving, melee-focussed combat system. Your power will grow as you advance, but remember to uphold the Masquerade and guard your humanity... or face the consequences. ♝Descend into Seattle’s Dark Heart and Survive the Vampire Elite Seattle has always been run by vampires. Hunt your prey across Seattle locations faithfully reimagined in the World of Darkness. Meet the old blood founders present since the city’s birth and the new blood steering the tech money redefining the city. Everyone has hidden agendas - so choose your allies wisely. ♚Enter into Uneasy Alliances Choose a side among competing factions, each with their own unique traits and stories, in the war for Seattle’s blood trade. The world will judge you by the company you keep, but remember no one’s hands stay clean forever. ♛Experience the Story Written by the creative mind behind the original Bloodlines, Vampire: The Masquerade® - Bloodlines™ 2 brings the ambitions of the first game to life and sees the return of a few fan favorite characters.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Vampire%3A_The_Masquerade_%E2%80%93_Bloodlines_2",
-            "extract": "Vampire: The Masquerade – Bloodlines 2 is a 2025 action role-playing video game developed by The Chinese Room and published by Paradox Interactive and White Wolf Publishing. A sequel to Vampire: The Masquerade – Bloodlines (2004), it is set in the World of Darkness and follows an original narrative focused on the Elder vampire Phyre, who awakens in early 21st-century Seattle during a historic snowstorm. As the city's Camarilla struggles in the aftermath of a failed coup and a renewed inquisition, Phyre becomes entangled in the conflict between factions of vampires, hunters, and the resurgent Sabbat while uncovering the truth behind a mysterious brand suppressing their powers.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — XBOX",
-            "url": "https://www.youtube.com/watch?v=P7CP-X_8Y6Q",
-            "extract": "Verified public, embeddable promotional trailer: Vampire the Masquerade: Bloodlines 2 - Official Gameplay Trailer",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from RAWG with 359 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "P7CP-X_8Y6Q",
-        "youtubeVideoTitle": "Vampire the Masquerade: Bloodlines 2 - Official Gameplay Trailer",
-        "youtubeChannel": "XBOX",
-        "releaseDate": "2025-10-21",
-        "genres": [
-          "Action",
-          "RPG"
-        ],
-        "platforms": [
-          "PC",
-          "PlayStation 5",
-          "Xbox Series S/X",
-          "Xbox One",
-          "PlayStation 4"
-        ],
-        "developers": [
-          "Hardsuit Labs"
-        ],
-        "rating": 3.82,
-        "ratingScale": 5,
-        "votes": 359,
-        "poster": "https://media.rawg.io/media/games/fb5/fb5e0fdb1f6bb0e8b5da5d08bb83a5fc.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "Vampire: The Masquerade – Bloodlines 2: عالم واعد، وحكم تحجبه فجوات التوثيق",
-        "summary": "تملك Bloodlines 2 أساساً سردياً جذاباً على الورق: مصاص دماء قديم يستيقظ في سياتل، وصراع على تجارة الدم تتداخل فيه فصائل ومؤامرة تهدد المدينة. وتعد اللعبة بتفاعل مع اختيارات اللاعب، وقدرات خاصة، وقتال قريب سريع، مع ضرورة صون السرية والإنسانية. لكن ملف الأدلة المتاح لا يثبت كيف تنفذ هذه الوعود فعلياً، ولا يقدم مراجعات مستقلة أو وصفاً موثقاً كافياً للصورة والصوت والإيقاع. لذلك يأتي هذا الحكم التحريري واضحاً في تحفظه: الفكرة واعدة، أما جودة التجربة المنجزة فلا يمكن الجزم بها من المواد المتاحة وحدها.",
-        "verdict": "تبدو Bloodlines 2، وفق المعلومات الموثقة هنا، لعبة تقمص أدوار ذات premise قوية ومناسبة لعالم مصاصي الدماء: صراع فصائل، مؤامرة في سياتل، واختيارات يُفترض أن تؤثر في نظرة العالم إلى اللاعب. لكن هذه الوعود لا تكفي وحدها لإثبات نجاح القصة أو الشخصيات أو نظام القتال، كما لا يتضمن الملف مراجعات مستقلة أو بيانات ملموسة تسمح بالحكم على الأداء الفني والصوتي والإيقاع. النتيجة إيجابية بحذر تجاه الفكرة، ومتحفظة تجاه التنفيذ؛ وهي توصية مشروطة لمن ينجذب إلى العالم والإعداد، لا تزكية مؤكدة للعبة كاملة. الدرجات تعكس حدود الأدلة المتاحة، لا تجربة لعب مباشرة.",
-        "body": "## مقدمة وسياق العمل\nصدرت Vampire: The Masquerade – Bloodlines 2 في 21 أكتوبر 2025، وتُصنّف في البيانات المتاحة لعبة تقمص أدوار وحركة على الحاسوب وأجهزة PlayStation وXbox. هذا نص نقدي تحريري مبني حصراً على ملف الأدلة، لا شهادة لعب مباشرة. وتتكون مادته من وصف RAWG، ومدخل موسوعي، وإشارة إلى مقطع لعب رسمي منشور عبر قناة XBOX؛ لكن الملف لا يورد مضموناً مشهديّاً للمقطع ولا مراجعات مستقلة للعبة. لذلك يمكن مناقشة الفكرة والوعود المعلنة ومقدار ما يسنده الدليل، لا الادعاء بمعرفة تفاصيل التجربة المنجزة. هذا التمييز ضروري، لأن وصف لعبة طموحة ليس برهاناً على نجاحها.\n\nتوجد أيضاً فجوة في نسبة التطوير: بيانات RAWG تسمي Hardsuit Labs، بينما يصف المدخل الموسوعي اللعبة بأنها من تطوير The Chinese Room. لا يوفر الملف ما يحسم سبب الاختلاف أو يفسره، لذا لا يصح بناء استنتاج عن مسؤولية فريق بعينه على أساسه. المؤكد في الحزمة أنها تتمة للعبة Bloodlines الصادرة عام 2004، وأنها تعود إلى عالم الظلام وشخصياته وصراعاته. أما تقييمها بوصفها تتمة فعلية ناجحة فيتطلب مقارنة تفصيلية لا تتيحها هذه المواد.\n\n## الفكرة والقصة أو التجربة\nتضع الحكاية اللاعب في دور Phyre، مصاص دماء من الشيوخ يستيقظ في سياتل مطلع القرن الحادي والعشرين أثناء عاصفة ثلجية تاريخية، بحسب المدخل الموسوعي. وتربط صفحة RAWG وجود الشخصية بتمرد لمصاصي الدماء، وبحرب على تجارة الدم ومؤامرة أوقعت المدينة في صراع أهلي بين فصائل قوية. يضيف المصدر الموسوعي سياقاً سياسياً أوسع: تداعيات انقلاب فاشل، ومحققين يعودون إلى الواجهة، وصراعاً يشمل الصيادين والسبات. هذه عناصر تمنح الإعداد توتراً واضحاً، لكنها لا تكشف كيف تتطور الحبكة أو ما إذا كانت أسرارها مقنعة عند انكشافها.\n\nالأكثر جاذبية في الفكرة هو اجتماع أزمة المدينة مع وضع بطل يخضع لقوى تكبحها علامة غامضة، كما يذكر المدخل الموسوعي. يتيح ذلك أساساً لصراع بين القدرة والقيود، وهو ملائم لموضوعات السلطة والانضباط في عالم مصاصي الدماء. غير أن الأدلة لا تفصل أثر العلامة في مجريات اللعب أو في قرارات Phyre، ولا تحدد بنية النهايات أو مساحة الاختيار السردي. لذلك تظل الإشادة هنا منصبة على هندسة الفرضية، لا على جودة كتابة بعينها. لا توجد شواهد كافية للحكم على الحوار أو عمق المعالجة أو اكتمال الخاتمة.\n\n## السرد والشخصيات أو تصميم اللعب\nتعد RAWG بأن شخصيات سياتل ستتفاعل مع اختيارات اللاعب، وأن التحالفات مع الفصائل المتنافسة ستكون غير مريحة ومحفوفة بتعارض المصالح. وتذكر كذلك عودة بعض الشخصيات المحبوبة من الجزء الأول، من دون تسمية تلك الشخصيات أو بيان حجم أدوارها. هذه الوعود تضع الاختيار والعلاقات في قلب التجربة المعلنة، لكنها لا تثبت أن القرارات تُحدث عواقب محسوسة أو أن الشخصيات تتجاوز وظائفها داخل الصراع. لذلك لا يمكن وصف الحوار أو الأداء التمثيلي أو بناء الشخصيات على نحو تفصيلي.\n\nعلى مستوى اللعب، يحدد الوصف القتال بأنه سريع، متمحور حول الاشتباك القريب، وتسانده قدرات خاصة تتطور مع التقدم. كما يربط البقاء في عالم اللعبة بحفظ السرية وصون الإنسانية، مع عواقب محتملة للإخلال بذلك. هذه ملامح تصميمية محددة، لكن الملف لا يقدم أمثلة على قدرات بعينها، أو تنوع الأعداء، أو كيفية توازن القتال مع التخفي والاختيارات. ومن ثم يمكن اعتبارها مواصفات واعدة، لا حكماً بأن النظام عميق أو ممتع أو متماسك. هذا نقص في الأدلة المتاحة، وليس إثباتاً لقصور اللعبة نفسها.\n\n## الإخراج والجوانب الفنية\nلا يتضمن الملف معلومات موثوقة عن معدل الإطارات، أو الدقة، أو التحميل، أو الاستقرار التقني، ولا نتائج اختبار على أي منصة. كما أن وجود مقطع رسمي بعنوان «Official Gameplay Trailer» يثبت توفر مادة ترويجية رسمية، لكنه لا يكفي وحده لإصدار حكم على أداء النسخة النهائية. لذلك لا يصح وصف اللعبة بأنها مصقولة أو كثيرة المشكلات، ولا تقدير الفروق بين إصدارات الحاسوب والأجهزة المنزلية. ومع صدورها على منصات متعددة، تبقى مقارنة الأداء مسألة تحتاج إلى قياسات ومصادر مستقلة لم ترد هنا.\n\nأما من ناحية الإخراج، فالمتاح يثبت اختيار سياتل مسرحاً للأحداث، ويشير إلى إعادة تخيل مواقع منها ضمن عالم الظلام. ويصف النص المدينة بأنها تجمع بين مؤسسين قدامى وقوى جديدة مرتبطة بأموال التقنية، وهي مقابلة تحمل إمكانات درامية وبصرية. لكن لا توجد تفاصيل موثقة عن تصميم المناطق أو حجمها أو بنية التنقل بينها، ولا عن مدى تميّزها بصرياً. النقد المنضبط لا يحوّل تصور المدينة إلى ثناء على تنفيذها؛ لذا يظل الحكم على الإخراج العام معلقاً إلى أن تتوفر شواهد مباشرة ومراجعات موثوقة.\n\n## الصورة والهوية البصرية\nينتمي العمل إلى عالم الظلام، وتصف مصادره سياتل بأنها مدينة أعيد تصور مواقعها بما يلائم هذا العالم، مع حضور عاصفة ثلجية تاريخية في خلفية استيقاظ البطل وفق المدخل الموسوعي. تكفي هذه المعطيات لتحديد اتجاه مكاني ومناخي، لكنها لا تكشف جودة النماذج أو الإضاءة أو واجهة الاستخدام أو قراءة الحركة أثناء القتال. كذلك لا يتضمن ملف الأدلة وصفاً لقطات محددة من المقطع الرسمي، ولذلك لن أنسب إليه مشاهد أو مؤثرات لم يرد توثيقها.\n\nالهوية البصرية المعلنة تستند أساساً إلى التباين بين تاريخ المدينة وسلطة مصاصي الدماء القديمة وبين المال التقني والقوى الجديدة. هذا التوتر قد يمنح سياتل طابعاً يميزها عن خلفية حضرية عامة، غير أن الحكم يتوقف على تحويل الفكرة إلى بيئات وشخصيات مرئية متمايزة. لا تكفي عبارة «مواقع أعيد تصورها» لإثبات ذلك، ولا تسمح المواد بتقييم وضوح المشهد أو تنوعه أو ثبات الجودة بين المنصات. لهذا تحمل درجة الصورة تحفظاً صريحاً: إنها لا تعاقب اللعبة على مظهر ثبت ضعفه، بل تسجل ضآلة الأدلة المتاحة عن مظهرها الفعلي.\n\n## الصوت والموسيقى والأداء\nلا يقدم الملف أي بيانات عن الموسيقى أو المؤثرات أو التمثيل الصوتي، ولا أسماء مؤدين أو وصفاً لمشاهد حوارية. كما أن مجرد توفر مقطع دعائي رسمي لا يثبت وحده كيف يعمل الصوت في النسخة الكاملة أو مدى اتساقه مع أجواء عالم الظلام. لهذا لا يمكن الثناء على بناء موسيقي بعينه، أو انتقاد مزج صوتي، أو وصف أداء شخصية Phyre. من غير المنصف اختلاق انطباعات سمعية اعتماداً على نوع اللعبة أو موضوعها؛ والحكم هنا محدود بوضوح بما هو موثق، لا بما قد يتوقعه الجمهور من لعبة ذات طابع قوطي.\n\n## الإيقاع والبناء وتنوع المحتوى\nتصف RAWG القتال بأنه سريع، وتشير إلى أن القوة تتنامى مع التقدم، وإلى مواقع متعددة في سياتل وتحالفات بين فصائل متنافسة. هذه المعلومات توحي بتنوع محتمل بين المواجهات والتطور والصراع السياسي، لكنها لا تحدد طول اللعبة أو تواتر القتال أو مقدار الاستكشاف أو وجود مهام جانبية. لذلك لا يمكن الجزم بأن الإيقاع متوازن أو أن المحتوى يتجدد باستمرار. حتى عبارة «تقدم سريع» مرتبطة بوصف نظام القتال، ولا ينبغي تعميمها على وتيرة الحملة كاملة.\n\nكذلك لا يوضح الملف إن كانت اختيارات الفصائل تغير مسار الفصول أو تفتح مسارات منفصلة، ولا يشرح العلاقة بين الحفاظ على السرية والإنسانية وبين بنية المهمات. هذه أسئلة جوهرية لأنها تحدد ما إذا كانت الأنظمة السردية والعملية متشابكة، أم أنها وعود متجاورة فحسب. ما يمكن قوله بثقة هو أن اللعبة تقدم مزيجاً معلناً من الحركة وتقمص الأدوار والصراع بين الفصائل. أما جودة توزيع هذا المزيج، وقيمة إعادة اللعب، فتظل خارج نطاق ما تثبته المصادر الحالية.\n\n## نقاط القوة\nأول عناصر القوة الموثقة هو وضوح الصراع المركزي: حرب على تجارة الدم داخل مدينة تتنازعها فصائل مصاصي الدماء، بما يوفر دافعاً درامياً مباشراً. وثانيها أن وضع Phyre، مصاص الدماء القديم الذي يستيقظ في زمن حديث وتكبله علامة غامضة وفق المصدر الموسوعي، يفتح مجالاً لتوتر بين القوة والحدود. وثالثها الجمع المعلن بين التحالفات والاختيارات وبين واجب صون السرية والإنسانية، وهي عناصر يمكن أن تربط الأخلاق بالتقدم والقتال إذا نُفذت بفاعلية. ورابعها توظيف سياتل بما تتضمنه الفكرة من صدام بين النخب القديمة والمال التقني الجديد. كل نقطة هنا إمكان مدعوم بوصف المصادر، لا نتيجة مثبتة بالتجربة.\n\n## نقاط الضعف\nأبرز التحفظات أن وعود التفاعل والاختيارات والتحالفات لا تصحبها في ملف الأدلة أمثلة موثقة على عواقب قرارات اللاعب؛ لذا تبقى مساحة الوكالة غير قابلة للتقدير. وثانيها أن وصف القتال يحدد سرعته وتركيزه القريب، لكنه لا يقدم ما يكفي للحكم على عمقه أو تنوعه أو توازنه. وثالثها غياب مادة كافية لتقييم عناصر أساسية في مراجعة لعبة منشورة: الصوت، والإخراج المرئي، والإيقاع الفعلي، والحالة التقنية. ويضاف إلى ذلك اختلاف اسمي فريق التطوير بين RAWG والمدخل الموسوعي. هذه فجوات في ملف المصادر، ولا يجوز تحويلها آلياً إلى عيوب مؤكدة في اللعبة؛ لكنها تمنع حكماً نهائياً واثقاً على جودة التنفيذ.\n\n## لمن يناسب هذا العمل؟\nيمكن أن تجذب الفكرة محبي عالم Vampire: The Masquerade، ومن يفضلون قصص الفصائل والمكائد الحضرية وشخصية مصاص دماء ذات قوة مقيدة، وكذلك من يبحثون عن لعبة حركة وتقمص أدوار تضع القتال القريب والتحالفات ضمن وعودها الأساسية. وقد يهم الجزء جمهور اللعبة الأصلية بسبب الإشارة إلى عودة شخصيات محبوبة، مع أن الأدلة لا تسميها ولا توضح مقدار حضورها. أما من يشترطون نظاماً قتالياً موثق العمق، أو قرارات ذات نتائج مثبتة، أو أداءً تقنياً مستقراً على منصة بعينها، فالأفضل لهم الرجوع إلى مراجعات مستقلة مفصلة قبل اتخاذ قرار الشراء.\n\n## الحكم النهائي\nتستحق Bloodlines 2 اهتماماً مبدئياً بسبب فرضيتها المحددة، وصلتها بعالم معروف، والصراع السياسي الذي ترسمه حول سياتل وفصائل مصاصي الدماء. كما أن الجمع بين سلطات قديمة وقوى اقتصادية حديثة، وبين قدرات اللاعب وقيود السرية والإنسانية، يمنح المشروع أساساً قادراً على استقطاب جمهوره. لكن ملف الأدلة لا يكفي لإثبات أن القصة أو القتال أو الصورة والصوت قد ارتقت إلى هذا الأساس. لا توجد هنا مراجعات مستقلة أو تفاصيل تجريبية تكفي لتأكيد ذلك، لذا فالخلاصة إعجاب مشروط بالتصميم المعلن وتحفظ واضح على التنفيذ غير الموثق. التوصية لمن ينجذب إلى الإعداد، لا بوصفها ضماناً لتجربة متقنة.",
-        "scores": {
-          "story": 7.1,
-          "visuals": 5,
-          "sound": 5,
-          "pacing": 6
-        },
-        "pros": [
-          "صراع واضح على تجارة الدم ومؤامرة تربط مصير سياتل بتنافس الفصائل.",
-          "فرضية Phyre، مصاص الدماء القديم المقيد بعلامة غامضة، تتيح توتراً سردياً بين القوة والحدود.",
-          "وعود باختيارات وتحالفات تتصل بصون السرية والإنسانية، بما يتيح ربط القرار الأخلاقي باللعب.",
-          "تصوير سياتل بوصفها ساحة تلتقي فيها النخب القديمة والقوى الجديدة المرتبطة بأموال التقنية."
-        ],
-        "cons": [
-          "لا يقدم ملف الأدلة أمثلة تثبت مدى تأثير اختيارات اللاعب أو اختلاف نتائج التحالفات.",
-          "وصف القتال القريب السريع لا يكفي لتقييم عمقه أو تنوعه أو توازنه.",
-          "المعلومات المتاحة لا تسمح بحكم موثوق على الصورة والصوت والإيقاع أو الأداء التقني.",
-          "تختلف نسبة فريق التطوير بين RAWG والمدخل الموسوعي، ولا يحسم الملف هذا التباين."
-        ],
-        "title": "Vampire: The Masquerade – Bloodlines 2",
-        "type": "game",
-        "sourceId": "game:303576",
-        "sourceName": "RAWG",
-        "sourceUrl": "https://rawg.io/games/vampire-the-masquerade-bloodlines-2",
-        "sourceRating": 3.82,
-        "sourceRatingScale": 5,
-        "sourceVoteCount": 359,
-        "sourceRatingCheckedAt": "2026-11-24T14:38:54.234Z",
-        "audienceScore": 7.6,
-        "releaseDate": "2025-10-21",
-        "poster": "https://media.rawg.io/media/games/fb5/fb5e0fdb1f6bb0e8b5da5d08bb83a5fc.jpg",
-        "backdrop": "https://media.rawg.io/media/games/fb5/fb5e0fdb1f6bb0e8b5da5d08bb83a5fc.jpg",
-        "genres": [
-          "Action",
-          "RPG"
-        ],
-        "platforms": [
-          "PC",
-          "PlayStation 5",
-          "Xbox Series S/X",
-          "Xbox One",
-          "PlayStation 4"
-        ],
-        "cast": [],
-        "crew": [],
-        "tags": [
-          "Action",
-          "RPG"
-        ],
-        "sources": [
-          {
-            "name": "RAWG",
-            "url": "https://rawg.io/games/vampire-the-masquerade-bloodlines-2",
-            "extract": "Sired in an act of vampire insurrection, your existence ignites the war for Seattle's blood trade. Enter uneasy alliances with the creatures who control the city and uncover the sprawling conspiracy which plunged Seattle into a bloody civil war between powerful vampire factions. ♞Become the Ultimate Vampire Immerse yourself in the World of Darkness and live out your vampire fantasy in a city filled with intriguing characters that react to your choices. You and your unique disciplines are a weapon in our forward-driving, fast-moving, melee-focussed combat system. Your power will grow as you advance, but remember to uphold the Masquerade and guard your humanity... or face the consequences. ♝Descend into Seattle’s Dark Heart and Survive the Vampire Elite Seattle has always been run by vampires. Hunt your prey across Seattle locations faithfully reimagined in the World of Darkness. Meet the old blood founders present since the city’s birth and the new blood steering the tech money redefining the city. Everyone has hidden agendas - so choose your allies wisely. ♚Enter into Uneasy Alliances Choose a side among competing factions, each with their own unique traits and stories, in the war for Seattle’s blood trade. The world will judge you by the company you keep, but remember no one’s hands stay clean forever. ♛Experience the Story Written by the creative mind behind the original Bloodlines, Vampire: The Masquerade® - Bloodlines™ 2 brings the ambitions of the first game to life and sees the return of a few fan favorite characters.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Vampire%3A_The_Masquerade_%E2%80%93_Bloodlines_2",
-            "extract": "Vampire: The Masquerade – Bloodlines 2 is a 2025 action role-playing video game developed by The Chinese Room and published by Paradox Interactive and White Wolf Publishing. A sequel to Vampire: The Masquerade – Bloodlines (2004), it is set in the World of Darkness and follows an original narrative focused on the Elder vampire Phyre, who awakens in early 21st-century Seattle during a historic snowstorm. As the city's Camarilla struggles in the aftermath of a failed coup and a renewed inquisition, Phyre becomes entangled in the conflict between factions of vampires, hunters, and the resurgent Sabbat while uncovering the truth behind a mysterious brand suppressing their powers.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — XBOX",
-            "url": "https://www.youtube.com/watch?v=P7CP-X_8Y6Q",
-            "extract": "Verified public, embeddable promotional trailer: Vampire the Masquerade: Bloodlines 2 - Official Gameplay Trailer",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "P7CP-X_8Y6Q",
-        "youtubeVideoTitle": "Vampire the Masquerade: Bloodlines 2 - Official Gameplay Trailer",
-        "reviewMode": "review",
-        "score": 5.9
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 6281,
       "articlePath": "src/content/reviews/game-vampire-the-masquerade-bloodlines-2-303576.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-vampire-the-masquerade-bloodlines-2-303576/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-vampire-the-masquerade-bloodlines-2-303576/",
+      "publishedAt": "2026-11-24T16:08:09.697Z"
+    },
+    "series:127532": {
+      "key": "series:127532",
+      "type": "series",
+      "id": "127532",
+      "title": "Solo Leveling",
+      "item": {
+        "type": "series",
+        "id": "127532",
+        "name": "Solo Leveling",
+        "date": "2024-01-07",
+        "preview": false,
+        "popularity": 44.7252,
+        "source": "TMDB"
+      },
+      "status": "waiting",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-24T16:08:12.884Z",
+      "updatedAt": "2026-11-24T16:08:12.887Z",
+      "nextAttemptAt": "2026-11-25T00:05:00.000Z",
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": null,
+      "resumeStatus": "queued"
     }
   },
   "providers": {},
