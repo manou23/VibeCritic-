@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-24T10:17:09.409Z",
+  "updatedAt": "2026-11-24T10:36:53.240Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -3052,156 +3052,176 @@
         "popularity": 54.5941,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-24T10:16:11.951Z",
-      "updatedAt": "2026-11-24T10:17:09.409Z",
+      "updatedAt": "2026-11-24T10:36:07.054Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "High Potential",
-        "type": "series",
-        "collectedAt": "2026-11-24T10:16:12.524Z",
-        "sourceId": "series:226637",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/226637",
-        "overview": "Morgan is a single mom with an exceptional mind, whose unconventional knack for solving crimes leads to an unusual and unstoppable partnership with a by-the-book seasoned detective.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/226637",
-            "extract": "Morgan is a single mom with an exceptional mind, whose unconventional knack for solving crimes leads to an unusual and unstoppable partnership with a by-the-book seasoned detective.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/High_Potential",
-            "extract": "High Potential is an American crime comedy drama television series created by Drew Goddard for ABC. It is based on the 2021 Franco-Belgian television series HPI. The series stars Kaitlin Olson as Morgan Gillory, an intellectually gifted cleaning woman who becomes a police consultant. Also starring are Daniel Sunjata as Morgan's partner Adam Karadec and Judy Reyes as Selena Soto, the head of their unit. The series premiered on September 17, 2024. In January 2025, the series was renewed for a second season which premiered on September 16, 2025. In March 2026, the series was renewed for a third season which is slated to premiere on January 5, 2027. A new special episode is scheduled to air on February 14, 2027, right after Super Bowl LXI.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Disney Plus UK",
-            "url": "https://www.youtube.com/watch?v=NU7stLwMtlY",
-            "extract": "Verified public, embeddable promotional trailer: High Potential Season 2 | Official Trailer | Disney+ UK",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 721 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "NU7stLwMtlY",
-        "youtubeVideoTitle": "High Potential Season 2 | Official Trailer | Disney+ UK",
-        "youtubeChannel": "Disney Plus UK",
-        "releaseDate": "2024-09-17",
-        "genres": [
-          "Drama",
-          "Crime",
-          "Mystery"
-        ],
-        "platforms": [],
-        "cast": [
-          "Kaitlin Olson",
-          "Daniel Sunjata",
-          "Judy Reyes",
-          "Javicia Leslie",
-          "Deniz Akdeniz",
-          "Amirah J",
-          "Matthew Lamb"
-        ],
-        "crew": [],
-        "rating": 8.243,
-        "ratingScale": 10,
-        "votes": 721,
-        "poster": "https://image.tmdb.org/t/p/w780/xCtaUDBUP1iKqtoqpHfeH1T2pWF.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/yVP12H81dwaay5B7GVqgO893q2c.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "High Potential: فكرة تلفت الانتباه، لكن الأدلة المتاحة لا تكفي لحكم فني مكتمل",
-        "summary": "تقدّم High Potential فرضية واضحة: مورغان، أم عزباء ذات قدرة استثنائية على الاستدلال، تدخل عالم التحقيقات وتكوّن شراكة غير مألوفة مع محقق متمرس يلتزم بالإجراءات. يتيح هذا التقابل أساساً واعداً لمزج الجريمة بالغموض والكوميديا الدرامية، لكنه يصف نقطة الانطلاق ولا يثبت جودة الكتابة أو تطور الشخصيات أو نجاح التنفيذ. والمواد المتاحة هنا لا تتجاوز ملخصاً تعريفياً وبيانات عن المسلسل ومعلومات موسوعية، إلى جانب إثبات وجود إعلان رسمي للموسم الثاني؛ فلا تتضمن مراجعات مستقلة مفصلة أو وصفاً موثقاً للحلقات والعناصر الفنية. لذلك فإن هذا التقييم يميّز بين جاذبية الفكرة وما يمكن إثباته عن العمل، ولا يدّعي مشاهدة المسلسل أو الإعلان.",
-        "verdict": "تملك High Potential مدخلاً درامياً يسهل فهم جاذبيته: بطلة ذات عقل استثنائي تعمل خارج القوالب المهنية، وشريك محقق يمثّل النظام الذي تصطدم به، ضمن إطار جرائم وغموض. هذه عناصر تمنح المسلسل وعداً واضحاً، كما أن تجديده لمواسم إضافية يثبت استمرار المشروع، لا تفوقه الفني. لكن الملف المتاح لا يقدّم شواهد كافية على جودة الحلقات أو نمو الشخصيات أو الصورة والصوت والإيقاع؛ لذلك لا يمكن تحويل الوعد إلى حكم نهائي موثوق على التنفيذ. الدرجة الإجمالية هنا احترازية وليست بديلاً عن مشاهدة موثقة أو نقد مستقل مفصل. أوصي به مبدئياً لمن تجذبه فرضية التحقيقات والشراكة المتضادة، مع ضرورة اعتبار هذا التقييم محدوداً لا مراجعة مشاهدة مكتملة.",
-        "body": "## مقدمة وسياق العمل\n\nHigh Potential مسلسل تلفزيوني أمريكي في مجالات الدراما والجريمة والغموض، وتذكر صفحة TMDB أن عرضه بدأ في 17 سبتمبر 2024. وتصفه المعلومات الموسوعية المتاحة بأنه مقتبس من المسلسل الفرنسي البلجيكي HPI، وأن Drew Goddard ابتكره للتلفزيون الأمريكي. كما تسمي Kaitlin Olson في دور مورغان غيلوري، وDaniel Sunjata في دور آدم كاراديك، وJudy Reyes في دور سيلينا سوتو. هذه حقائق تعريفية مفيدة لفهم هوية المشروع، لكنها لا تكشف بذاتها مدى نجاح الاقتباس أو قيمة أداء الممثلين.\n\nيجب تحديد حدود هذه المراجعة منذ البداية: المواد المقدمة لا تحتوي على مراجعات مستقلة مفصلة، أو ملخصات حلقات، أو وصف موثق للتصوير والمونتاج والموسيقى، أو تحليلات لتطور الشخصيات. ويتوفر إثبات لوجود إعلان رسمي للموسم الثاني من Disney+ UK، بعنوانه ورابطه، لكن لا يتوفر نص الإعلان أو تحليل لمحتواه؛ لذلك لا يصح التعامل معه كما لو أن مشاهده قد فُحصت. ما يلي قراءة نقدية للفرضية والسياق وما تسمح به الأدلة، لا ادعاء بمشاهدة المسلسل أو معاينة موسمه الثاني.\n\n## الفكرة والقصة أو التجربة\n\nتضع الفرضية مورغان، وهي أم عزباء ذات عقل استثنائي، في موقع يساعدها فيه ميل غير تقليدي إلى حل الجرائم على العمل مع الشرطة. ويقوم التوتر الأساسي المعلن على شراكتها مع محقق متمرس يلتزم بالقواعد؛ أي إن المسلسل يوازن بين حدس فردي غير مألوف وإجراء مؤسسي منظم. هذه نقطة انطلاق عملية لنوع الجريمة الإجرائية، لأنها تمنح التحقيقات المفترضة رابطاً شخصياً مستمراً بدلاً من الاقتصار على اللغز وحده. هذا استنتاج عن إمكانات التصميم الدرامي، وليس إثباتاً بأن كل قضية تنجح أو بأن الحلقات تطور الفكرة بعمق.\n\nتضيف صفة مورغان بوصفها أماً عزباء بعداً حياتياً واضحاً إلى تعريف الشخصية، لكن الملف لا يشرح كيف يوزع المسلسل اهتمامه بين مسؤولياتها المنزلية وعملها، ولا يحدد مقدار حضور ذلك في السرد. وبالمثل، فإن وصف الشراكة بأنها غير مألوفة أو لا يمكن إيقافها يعبّر عن صياغة تعريفية، لا عن برهان على كيمياء الشخصيتين. لذا تبدو الفكرة قابلة لجذب من يفضلون ألغاز الجرائم وشخصيات تحل المشكلات بطرق خارجة عن المعتاد، فيما تظل جودة تحويلها إلى قصص فعلية غير قابلة للحسم هنا.\n\n## السرد والشخصيات أو تصميم اللعب\n\nلأن العمل مسلسل، فالمعيار المناسب هو بناء الشخصيات والحلقات، لا تصميم اللعب. المعلومات المتاحة تتيح تمييز ثلاثة مواقع سردية على الأقل: مورغان صاحبة القدرة الاستثنائية، كاراديك المحقق المنضبط، وسيلينا سوتو التي تصفها المادة الموسوعية بأنها رئيسة الوحدة. ويمكن لهذه المواقع أن تخلق اختلافاً في طرائق التعامل مع التحقيق، لكنها لا تكفي لاستنتاج طبيعة العلاقات أو مقدار تطورها أو مدى تعقيد الشخصيات. لا توجد في الملف أمثلة على حوار أو قرار أو تحول بعينه، ولذلك سيكون اختراع مشاهد أو وصف أداء محدد تجاوزاً للأدلة.\n\nكما أن كون العمل مقتبساً يفتح سؤالاً مشروعاً عن علاقته بالمصدر الفرنسي البلجيكي: هل يترجم الفرضية إلى سياق أمريكي على نحو يضيف إليها، أم يكتفي بنقل بنيتها؟ لا تقدم المصادر جواباً، ولا يصح اعتبار مجرد وجود الاقتباس دليلاً على نجاحه أو إخفاقه. لذلك يمكن وصف البناء المعلن بأنه قائم على بطلة مميزة وشريك مقابل لها وفريق شرطي، لكن لا يمكن تقييم تماسك الأقواس الدرامية أو جودة كتابة الحلقات من الملخص وحده. هذه فجوة مركزية تمنع إعطاء السرد درجة عالية على أساس مضمون غير موثق.\n\n## الإخراج والجوانب الفنية\n\nلا تتضمن الأدلة أسماء مخرجين أو معلومات إنتاجية تفصيلية، ولا نقداً مستقلاً يصف طريقة توجيه المشاهد أو تنظيم مواقع التصوير أو استخدام المونتاج. ولهذا لا يمكن إصدار حكم موثوق على الإخراج، سواء أكان متماسكاً أو رتيباً أو مبتكراً. كون صفحة البيانات تصنف العمل ضمن الجريمة والغموض والدراما يحدد الإطار النوعي فقط، ولا يخبرنا كيف حُولت هذه الأنواع إلى معالجة تلفزيونية ملموسة. ومن غير المنهجي استنتاج جودة الإخراج من شهرة عضو في فريق العمل أو من استمرار المسلسل لموسم آخر.\n\n## الصورة والهوية البصرية\n\nتتضمن البيانات روابط لصورة ملصق وخلفية تعريفية، لكنها لا تقدم وصفاً موثقاً لأسلوب التصوير أو الألوان أو تصميم المواقع، كما لا يكفي وجود هذه الصور للحكم على الصورة المتحركة. لذلك لا أصف المسلسل بأنه أنيق بصرياً أو تقليدي أو مميز؛ فكل واحدة من هذه الصفات تحتاج إلى مادة يمكن فحصها أو مصدر نقدي يشرحها. يمكن فقط القول إن الهوية النوعية المعلنة هي هوية مسلسل جريمة وغموض، وهي لا تحدد وحدها أسلوبه البصري. هذا المحور غير محسوم، لا لأن عيباً بصرياً مثبتاً، بل لأن الدليل المطلوب غير موجود في الملف.\n\n## الصوت والموسيقى والأداء\n\nيسرد الملف أسماء عدد من الممثلين، وفي مقدمتهم Kaitlin Olson وDaniel Sunjata وJudy Reyes، لكنه لا يقدم تقويماً مستقلاً لأدائهم أو تسجيلات حوار أو معلومات عن الموسيقى والتصميم الصوتي. ومن ثم لا يمكن مدح الأداء الكوميدي أو الدرامي، أو وصف التفاعل بين الممثلين، أو الحكم على فاعلية الموسيقى في بناء التوتر. وجود إعلان رسمي للموسم الثاني لا يغير هذا النقص ما دام المتاح هو بياناته التعريفية لا تحليلاً لمادته. في التقييم المنضبط، غياب الشاهد ليس دليلاً على ضعف الصوت أو التمثيل، لكنه يمنع رفع الدرجة بناء على تخمين.\n\n## الإيقاع والبناء وتنوع المحتوى\n\nلا يشرح الملخص عدد الحلقات أو إيقاع كل حلقة أو علاقة القضايا المنفردة بالقصة الممتدة، ولا تتوافر تفاصيل عن تكرار الصيغ أو تنوعها. وعليه لا يمكن الجزم بأن المسلسل سريع أو بطيء، أو أن قضاياه متجددة، أو أن بنيته تحافظ على التشويق. الفرضية تسمح نظرياً بتناوب التحقيقات مع تطور الشراكة، لكن ذلك يظل احتمالاً مستنتجاً من نوع العمل، لا وصفاً لمشاهدة موثقة. تقدم بيانات ويكيبيديا المتاحة معلومة سياقية مفادها أن الموسم الثاني بدأ في 16 سبتمبر 2025، وأن موسماً ثالثاً جُدد له في مارس 2026 مع موعد معلن في يناير 2027؛ استمرار العمل خبر عن مساره الإنتاجي، وليس مقياساً فنياً لإيقاعه أو جودته.\n\n## نقاط القوة\n\nأقوى ما يمكن إثباته نقدياً هو وضوح الخطاف المركزي: شخصية ذات قدرة استثنائية تدخل شراكة شرطية، مع تضاد معلن بينها وبين محقق ملتزم بالقواعد. ويوفر هذا التكوين مجالاً محتملاً للتوتر بين الحدس والإجراءات، من دون أن يثبت تحقق هذا المجال على الشاشة. كذلك تمنح خلفية مورغان بوصفها أماً عزباء الشخصية تعريفاً يتجاوز مهنتها، وإن لم تتوافر تفاصيل عن كيفية استثمار ذلك. ويمثل تحديد المسلسل ضمن الجريمة والغموض والدراما، مع وصفه في المصدر الموسوعي بأنه كوميديا درامية جريمة، إشارة واضحة إلى المزج النوعي المقصود. وأخيراً، فإن وجود موسم ثانٍ وثالث معلن يبين أن المسلسل لم يكن عملاً منفرداً قصير الأمد، لكنه ليس برهاناً على تفوقه.\n\n## نقاط الضعف\n\nلا توجد في الأدلة عيوب تنفيذية مؤكدة يمكن نسبتها إلى المسلسل، ولذلك ينبغي عدم اختلاق شكاوى عن الحلقات أو التقنية. لكن الفرضية نفسها تحمل خطراً سردياً مألوفاً: إذا جعلت القدرة الاستثنائية تحل الألغاز بسهولة، فقد تضعف مساحة التحدي؛ وهذا احتمال نقدي مشروط، لا وصف لما يحدث فعلاً. كما أن تقابل الشخصية الخارجة عن المألوف مع المحقق النظامي قد ينزلق إلى تكرار نمطي إن لم يتطور، ولا يتيح الملف معرفة إن كان ذلك قد حدث. أما النقص الحاسم في هذا الحكم فهو نقص الأدلة على الكتابة والأداء والصورة والصوت والإيقاع، وهو قصور في قاعدة التقييم لا عيب مثبت في العمل.\n\n## لمن يناسب هذا العمل؟\n\nوفقاً للفرضية الموثقة، قد يناسب المسلسل من ينجذبون إلى قصص التحقيق والجريمة التي تتمحور حول شخصية ذات مهارة استثنائية وشراكة بين أسلوبين متعارضين. كما قد يهم من يفضلون المزج بين الدراما والغموض والكوميديا، بحسب التصنيف والوصف الموسوعي المتاحين. لكن لا تكفي هذه المعلومات لتقديم توصية أقوى بشأن مستوى العنف أو طبيعة الفكاهة أو مدى ملاءمة العمل لأذواق محددة، ولا لتأكيد أن من يحبون مسلسلات تحقيق أخرى سيجدون هنا الجودة نفسها. التوصية إذن توصية بالفرضية لا ضمان بتجربة فنية بعينها.\n\n## الحكم النهائي\n\nتملك High Potential أساساً قابلاً للجذب، وتحديداً في جمعها بين بطلة ذات قدرة غير مألوفة وشراكة مع محقق يمثل النظام، ضمن إطار الجريمة والغموض. لكن الملف لا يوفر مادة مستقلة كافية للحكم على جودة تحويل هذا الأساس إلى مسلسل ناجح فنياً. كذلك لا يمكن تقييم الجوانب البصرية أو السمعية أو الإيقاعية من بيانات التعريف وحدها. لذلك تعكس الدرجات المرفقة تقديراً احترازياً للفرضية حيث تسمح الأدلة، وتضع درجات حيادية مؤقتة للمحاور التي لا يمكن التحقق منها؛ ولا ينبغي قراءتها كتقويم نهائي قائم على مشاهدة كاملة. الحكم التحريري الصريح هو أن المشروع يبدو واعداً على مستوى الفكرة، لكن إصدار توصية نهائية قوية بشأن العمل نفسه يتطلب مصادر مستقلة أكثر تفصيلاً.",
-        "scores": {
-          "story": 6.5,
-          "visuals": 5,
-          "sound": 5,
-          "pacing": 5
-        },
-        "pros": [
-          "فرضية مركزية واضحة تجمع قدرة مورغان الاستثنائية بعملها مع محقق ملتزم بالقواعد.",
-          "خلفية مورغان بوصفها أماً عزباء تضيف عنصراً تعريفياً يتجاوز دورها في التحقيق.",
-          "إطار معلن يجمع الجريمة والغموض والدراما، مع وصف موسوعي يضيف الكوميديا الدرامية.",
-          "استمرار المسلسل إلى موسم ثانٍ وثالث معلن يمنح المهتمين بالفرضية مادة سردية ممتدة، من دون أن يعد ذلك دليلاً على الجودة."
-        ],
-        "cons": [
-          "المصادر لا تقدم وصفاً للحلقات أو مراجعات مستقلة مفصلة تسمح بالحكم على جودة الكتابة وتطور الشخصيات.",
-          "لا تتوفر أدلة كافية لتقييم الصورة أو الموسيقى أو الأداء أو الإيقاع؛ لذلك تظل هذه المحاور غير محسومة.",
-          "تعتمد الفرضية على تقابل معروف بين الشخصية غير التقليدية والمحقق المنضبط؛ وقد يصبح هذا مألوفاً إذا لم يتطور، لكن الأدلة لا تثبت وقوع ذلك.",
-          "لا يتيح الملف التحقق من مقدار التوازن بين التحقيقات وخلفية البطلة الشخصية أو من تنوع القضايا."
-        ],
-        "title": "High Potential",
-        "type": "series",
-        "sourceId": "series:226637",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/226637",
-        "sourceRating": 8.243,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 721,
-        "sourceRatingCheckedAt": "2026-11-24T10:16:12.524Z",
-        "audienceScore": 8.2,
-        "releaseDate": "2024-09-17",
-        "poster": "https://image.tmdb.org/t/p/w780/xCtaUDBUP1iKqtoqpHfeH1T2pWF.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/yVP12H81dwaay5B7GVqgO893q2c.jpg",
-        "genres": [
-          "Drama",
-          "Crime",
-          "Mystery"
-        ],
-        "platforms": [],
-        "cast": [
-          "Kaitlin Olson",
-          "Daniel Sunjata",
-          "Judy Reyes",
-          "Javicia Leslie",
-          "Deniz Akdeniz",
-          "Amirah J",
-          "Matthew Lamb"
-        ],
-        "crew": [],
-        "tags": [
-          "Drama",
-          "Crime",
-          "Mystery"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/226637",
-            "extract": "Morgan is a single mom with an exceptional mind, whose unconventional knack for solving crimes leads to an unusual and unstoppable partnership with a by-the-book seasoned detective.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/High_Potential",
-            "extract": "High Potential is an American crime comedy drama television series created by Drew Goddard for ABC. It is based on the 2021 Franco-Belgian television series HPI. The series stars Kaitlin Olson as Morgan Gillory, an intellectually gifted cleaning woman who becomes a police consultant. Also starring are Daniel Sunjata as Morgan's partner Adam Karadec and Judy Reyes as Selena Soto, the head of their unit. The series premiered on September 17, 2024. In January 2025, the series was renewed for a second season which premiered on September 16, 2025. In March 2026, the series was renewed for a third season which is slated to premiere on January 5, 2027. A new special episode is scheduled to air on February 14, 2027, right after Super Bowl LXI.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Disney Plus UK",
-            "url": "https://www.youtube.com/watch?v=NU7stLwMtlY",
-            "extract": "Verified public, embeddable promotional trailer: High Potential Season 2 | Official Trailer | Disney+ UK",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "NU7stLwMtlY",
-        "youtubeVideoTitle": "High Potential Season 2 | Official Trailer | Disney+ UK",
-        "reviewMode": "review",
-        "score": 5.5
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 6420,
       "articlePath": "src/content/reviews/series-high-potential-226637.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-high-potential-226637/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-high-potential-226637/",
+      "publishedAt": "2026-11-24T10:36:07.054Z"
+    },
+    "game:248521": {
+      "key": "game:248521",
+      "type": "game",
+      "id": "248521",
+      "title": "Valheim",
+      "item": {
+        "type": "game",
+        "id": "248521",
+        "name": "Valheim",
+        "date": "2026-09-09",
+        "popularity": 5008,
+        "source": "RAWG"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-24T10:36:08.366Z",
+      "updatedAt": "2026-11-24T10:36:53.240Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Valheim",
+        "type": "game",
+        "collectedAt": "2026-11-24T10:36:08.942Z",
+        "sourceId": "game:248521",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/valheim",
+        "overview": "Prove your worth! Are you worthy of entering Valhalla? You have been sent to Valheim, the 10th Norse world. Only by defeating the mighty beasts of these lands will you win the favor of the gods. This quest will take you to the far reaches of this world, from the deepest forest to the highest mountain peak. You will craft powerful weapons, build unyielding castles and sail longships towards the horizon. Description Valheim is a game about exploring a huge fantasy world inspired by norse mythology and viking culture. You start your adventure at the relatively peaceful center of Valheim. The further from the center you travel, the more challenging the world becomes. But you will also find more valuable materials that you can use to craft deadlier weapons and sturdier armor. You will also build your own viking strongholds and outposts all over the world. Eventually you will build a mighty longship and sail the great oceans in search of exotic lands … but be wary of sailing too far... Features: Flexible house and base building system. Intuitive item crafting (weapons, armor, food etc). Huge procedural world. Dodge & block based combat system with a wide range of weapons. Defeat bosses & collect trophies. Engaging food & health system. Build & sail ships. Multiplayer (with focus on cooperation). Dedicated server.",
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/valheim",
+            "extract": "Prove your worth! Are you worthy of entering Valhalla? You have been sent to Valheim, the 10th Norse world. Only by defeating the mighty beasts of these lands will you win the favor of the gods. This quest will take you to the far reaches of this world, from the deepest forest to the highest mountain peak. You will craft powerful weapons, build unyielding castles and sail longships towards the horizon. Description Valheim is a game about exploring a huge fantasy world inspired by norse mythology and viking culture. You start your adventure at the relatively peaceful center of Valheim. The further from the center you travel, the more challenging the world becomes. But you will also find more valuable materials that you can use to craft deadlier weapons and sturdier armor. You will also build your own viking strongholds and outposts all over the world. Eventually you will build a mighty longship and sail the great oceans in search of exotic lands … but be wary of sailing too far... Features: Flexible house and base building system. Intuitive item crafting (weapons, armor, food etc). Huge procedural world. Dodge & block based combat system with a wide range of weapons. Defeat bosses & collect trophies. Engaging food & health system. Build & sail ships. Multiplayer (with focus on cooperation). Dedicated server.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Valheim",
+            "extract": "Valheim is a survival game by the Swedish developer Iron Gate Studio and published by Coffee Stain Publishing. It was released in early access for Linux and Microsoft Windows via Steam on 2 February 2021, and for Xbox One and Xbox Series X/S on 14 March 2023. The full version was released on 9 September 2026 alongside versions for the PlayStation 5 and Nintendo Switch 2.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — XBOX",
+            "url": "https://www.youtube.com/watch?v=SeHBisLYnbM",
+            "extract": "Verified public, embeddable promotional trailer: Valheim 1.0 Launch Trailer",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from RAWG with 659 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "SeHBisLYnbM",
+        "youtubeVideoTitle": "Valheim 1.0 Launch Trailer",
+        "youtubeChannel": "XBOX",
+        "releaseDate": "2026-09-09",
+        "genres": [
+          "Action",
+          "Adventure",
+          "Indie"
+        ],
+        "platforms": [
+          "Linux",
+          "PC"
+        ],
+        "developers": [
+          "Dvoid",
+          "Richard Svensson"
+        ],
+        "rating": 3.99,
+        "ratingScale": 5,
+        "votes": 659,
+        "poster": "https://media.rawg.io/media/games/adb/adb59be81367b19c2544457424bcf086.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "Valheim: مغامرة بقاء تتسع مع الاستكشاف، لكن الأدلة المتاحة لا تكشف كل ما يلزم لحكم فني مكتمل",
+        "summary": "تقوم Valheim على حلقة بقاء واستكشاف واضحة: عالم إسكندنافي خيالي مولّد إجرائياً، ومناطق تزداد خطورتها كلما ابتعد اللاعب عن المركز، وموارد تفتح مجالاً لصناعة العتاد وبناء المساكن والإبحار ومواجهة الزعماء. هذا الترابط يمنح الفكرة أساساً متيناً، ويجعل التعاون جزءاً معلناً من التصميم لا إضافة هامشية. لكن المصادر المتاحة هنا تصف الأنظمة والعالم أكثر مما توثق جودة التنفيذ الفعلية؛ فلا تقدم تحليلاً مستقلاً للصورة أو الموسيقى أو الإيقاع في اللعب. لذلك تمثل هذه المراجعة حكماً تحريرياً نهائياً على ما تثبته الأدلة، لا انطباعاً شخصياً عن تجربة مباشرة، وتظل درجة بعض المحاور متحفظة بسبب محدودية التوثيق.",
+        "verdict": "تستند Valheim إلى تصور متماسك للبقاء: التقدم إلى مناطق أخطر يعد بموارد أفضل، وهذه الموارد تدعم صناعة معدات أقوى وبناء قواعد وسفن تتيح مواصلة الرحلة. كما أن نظام القتال الموصوف، ومواجهات الزعماء، والتعاون الجماعي تمنح الاستكشاف أهدافاً تتجاوز جمع المواد لذاته. هذه نقاط قوة حقيقية على مستوى التصميم الموثق، وتبرر توصية مشروطة لمن يحب ألعاب البقاء والبناء والاستكشاف، ولا سيما بصحبة آخرين. لكن الحكم لا يمكن أن يتحول بأمانة إلى شهادة على جودة التنفيذ الفني أو الإيقاع التفصيلي؛ فالأدلة لا تتناول هذه العناصر بما يكفي، ولا تتيح اختبار توازن الأنظمة أو مشكلاتها. النتيجة إيجابية بحذر: فكرة قوية وبنية واعدة، مع تحفظ واضح على مقدار ما يمكن إثباته عن التجربة الكاملة.",
+        "body": "## مقدمة وسياق العمل\n\nValheim لعبة بقاء ومغامرة مستقلة مستوحاة من الأساطير الإسكندنافية وثقافة الفايكنغ. وبحسب المصدر الموسوعي الوارد في ملف الأدلة، بدأت بإصدار الوصول المبكر في 2021، ثم صدر الإصدار الكامل في 9 سبتمبر 2026 بالتزامن مع نسخ PlayStation 5 وNintendo Switch 2. ويعرض ملف RAWG اللعبة على Linux والحاسوب، بينما تذكر المادة الموسوعية إصدارات Xbox أيضاً، كما يوجد مقطع إطلاق رسمي بعنوان Valheim 1.0 من قناة XBOX. هذا اختلاف في نطاق بيانات المنصات، لذا لا يصح اختزاله إلى قائمة واحدة مؤكدة من هذه المواد وحدها.\n\nالمراجعة هنا تحريرية نهائية، لكنها ليست ادعاءً بتجربة اللعب أو مشاهدة المقطع؛ إنها تقويم لما يمكن إثباته من وصف اللعبة والبيانات المتاحة. وهذه نقطة مهمة لأن الملف يقدم معلومات نافعة عن الفكرة والأنظمة، لكنه لا يضم مراجعات مستقلة مفصلة أو اختبارات للجوانب الفنية. لذلك سيكون الحكم أكثر ثقة حين يتعلق ببنية التصميم المعلنة، وأكثر تحفظاً حين يتعلق بجودة التنفيذ التي لا تكشفها الملخصات.\n\n## الفكرة والقصة أو التجربة\n\nتضع الفكرة اللاعب في عالم Valheim، العالم العاشر في تصور أسطوري، وتربط النجاة بإثبات الاستحقاق لنيل رضى الآلهة. أما وصف التجربة العملي فيبدأ من منطقة مركزية هادئة نسبياً، ثم يجعل الابتعاد عنها مدخلاً إلى تحديات أكبر وموارد أعلى قيمة. هنا تنشأ غاية مفهومة من داخل اللعب: التوسع ليس تجوالاً بلا اتجاه، بل مخاطرة محتملة العائد، إذ يمكن تحويل المكتسبات إلى أسلحة ودروع أقوى.\n\nهذا إطار مغامرة واضح أكثر مما هو حبكة درامية موثقة. لا يقدم ملف الأدلة أسماء شخصيات محورية أو تفاصيل تطور سردي أو وصفاً لمشاهد قصصية، ولذلك لا يمكن تقييم عمق الحكاية أو كتابتها. الميزة التي يمكن استنتاجها بحذر هي أن الأسطورة تمنح الرحلة غرضاً عاماً، فيما يتولى الاستكشاف والتقدم العملي حمل التجربة. وقد يناسب ذلك من يفضّل صناعة حكايته عبر الترحال والبناء، لكنه لا يثبت أن اللعبة تقدم سرداً شخصياً غنياً أو حواراً بارزاً.\n\n## السرد والشخصيات أو تصميم اللعب\n\nالأدلة تتيح تحليلاً أوضح لتصميم اللعب من تحليل الشخصيات. فهناك صناعة للأسلحة والدروع والطعام، وبناء مرن للمنازل والقواعد ونقاط الاستيطان، وقتال يعتمد المراوغة والصد مع مجموعة من الأسلحة، فضلاً عن زعماء يمكن هزيمتهم وجمع جوائزهم. وتدخل السفن والإبحار في الصورة بوصفهما وسيلة للوصول إلى أراضٍ جديدة، لا مجرد تفصيل تجميلي. تتصل هذه الأنظمة في حلقة مفهومة: الاستكشاف يوفر المواد، والصناعة والبناء يدعمان قدرة اللاعب على التقدم، ثم تفتح الرحلة تحديات وموارد إضافية.\n\nكذلك يصف المصدر اللعب الجماعي بأنه تعاوني، ويذكر الخوادم المخصصة. هذه حقيقة تصميمية ذات وزن؛ فهي تعني أن المشاركة مع آخرين جزء معلن من العرض، لا استنتاجاً من وجود اللعبة على الإنترنت. مع ذلك، لا تتوفر معلومات تشرح توزيع الأدوار بين اللاعبين أو مدى تغير القتال والبناء في المجموعة. ولا يوجد ما يسوغ اختراع شخصيات أو مهارات أو تفاصيل للأعداء. التقييم الإيجابي هنا منصب على وضوح الترابط بين الأنظمة وتعدد أغراضها، لا على ادعاء أن كل عنصر متوازن أو ممتع في الممارسة.\n\n## الإخراج والجوانب الفنية\n\nيمكن وصف الإخراج على مستوى تنظيم التجربة: تدرج مكاني من مركز أهدأ إلى أطراف أشد خطراً، ومكافآت مادية تحفز التوسع، وأنشطة تمتد من البناء إلى القتال والإبحار. هذا يمنح العالم وظيفة تصميمية، إذ تبدو المناطق مرتبطة بمستوى المخاطرة والتقدم بدلاً من كونها خلفية محايدة. لكنه لا يكفي لإصدار حكم على جودة الإخراج المرئي، أو وضوح الواجهات، أو سلاسة الأداء، أو الاستقرار التقني. لا يحتوي ملف الأدلة على قياسات أداء أو اختبارات منصات أو رصد لمشكلات تقنية، ومن ثم سيكون وصف اللعبة بأنها مصقولة تقنياً أو مضطربة ادعاء بلا سند.\n\nالإشارة إلى وجود مقطع إطلاق رسمي تثبت توفر مادة ترويجية، لكنها ليست بديلاً عن مراجعة مستقلة لمشهد اللعب أو تحليلاً فنياً له. لهذا يظل التقدير في هذا المحور محدوداً: بنية العالم والأنشطة الموثقة توحي بإخراج يخدم الاستكشاف، بينما تظل جودة التنفيذ نفسها غير محسومة بالمصادر المقدمة.\n\n## الصورة والهوية البصرية\n\nتحدد المعلومات المتاحة نطاقاً بصرياً عاماً: عالم خيالي مستلهم من الميثولوجيا الإسكندنافية، يمتد من غابات عميقة إلى قمم جبلية ومحيطات وأراضٍ غريبة، مع توليد إجرائي للعالم. كما أن صورة الملصق ورابط المقطع الترويجي لا يقدمان، في ملف الأدلة، تحليلاً يمكن الاستناد إليه لتقييم التكوين أو الإضاءة أو حركة الصورة أو اتساق الأسلوب. لذا يمكن القول إن الهوية مستمدة موضوعياً من البيئة الإسكندنافية واتساع الرحلة، لا وصف شكلها الفني بالتفصيل.\n\nوجود مناطق متباينة في الوصف يوحي بإمكان تنويع المشاهد، لكنه لا يثبت أن التمييز البصري بينها ناجح أو أن التوليد الإجرائي ينتج لقطات متماسكة. الدرجة هنا متحفظة تحديداً لهذا السبب: ليست حكماً بأن الصورة ضعيفة، بل تقديراً محدود الثقة لما لا تكفي الأدلة لتوثيقه. ولا ينبغي قراءة هذا التحفظ على أنه عيب مثبت في اللعبة.\n\n## الصوت والموسيقى والأداء\n\nلا تتضمن المواد المقدمة معلومات عن الموسيقى أو المؤثرات أو الأداء الصوتي، ولا تنقل تقييماً مستقلاً لهذه العناصر. لا توجد، لذلك، قاعدة مسؤولة للحديث عن ألحان بعينها، أو جودة تسجيل، أو تمثيل صوتي، أو دور للصمت والصوت في بناء التوتر. كذلك لا يجوز اتخاذ وجود مقطع إطلاق دليلاً على جودة صوت اللعبة؛ فالمقطع الترويجي مادة ترويجية، ولا يثبت وحده ما يسمعه اللاعب خلال التجربة.\n\nتظهر هذه الفجوة مباشرة في الدرجة: الرقم المدرج لمحور الصوت تحفظي ومحايد بسبب غياب الشواهد، وليس استنتاجاً بأن الصوت متوسط الجودة. وهذا أقل إرضاءً من مراجعة مكتملة المصادر، لكنه أدق من اختلاق تحليل تفصيلي. يحتاج الحكم الحقيقي على هذا الجانب إلى مواد موثوقة تصف الصوت داخل اللعب، وهو ما لا يوفره الملف.\n\n## الإيقاع والبناء وتنوع المحتوى\n\nتدعم الأنظمة الموثقة تصوراً لتقدم يتكرر على مراحل: استكشاف منطقة، تحصيل مواد، تحسين العتاد أو القاعدة، ثم الاستعداد لمخاطر أبعد. ويضاف إلى ذلك تنوع وظيفي بين القتال، وصناعة الطعام والمعدات، والبناء، ومواجهة الزعماء، والسفر البحري. هذا الاتساع يرجح أن التجربة لا تعتمد على نشاط واحد فقط، كما أن تغير مستوى الخطر مع المسافة يمنح التوسع منطقاً واضحاً. أما مقدار الوقت المطلوب لكل مرحلة، وسرعة فتح الأنظمة، وتوازن العودة إلى الموارد، فلا توثقه المصادر بما يسمح بحكم قاطع على الإيقاع الفعلي.\n\nومن هنا تأتي درجة الإيقاع متوسطة إلى جيدة، لا لأنها تكشف عيباً مؤكداً، بل لأن بنية التقدم تبدو متماسكة على الورق بينما تظل وتيرتها الحقيقية مجهولة. لا نعرف من الأدلة إن كان جمع المواد يتكرر بإفراط، أو إن كانت الرحلات البحرية طويلة على نحو مرهق، ولا يصح تأكيد أي من ذلك. التنوع المعلن نقطة قوة؛ أما سلاسة الانتقال بين الأنشطة فمسألة تحتاج مراجعة لعب مستقلة.\n\n## نقاط القوة\n\nأقوى ما تثبته المواد هو اتصال التقدم بالاستكشاف: المناطق الأبعد أشد تحدياً لكنها تعد بموارد أفضل. وتخدم الصناعة هذا المسار بوضوح، إذ تحول المواد إلى أسلحة ودروع وطعام، بينما يمنح البناء للاعب سبباً إضافياً للاستثمار في العالم بدلاً من المرور به سريعاً. ثم توسع السفن نطاق المغامرة إلى ما وراء اليابسة، وتضيف مواجهات الزعماء أهدافاً ملموسة إلى جانب الاستكشاف الحر. ويحسب للعبة أيضاً إعلانها الصريح عن تعاون جماعي وخوادم مخصصة، ما يجعلها مناسبة لمشاركة مشروع البقاء والبناء. هذه مزايا في تصور التجربة، وتبقى قوتها التنفيذية التفصيلية خارج ما تثبته المصادر الحالية.\n\n## نقاط الضعف\n\nالتحفظ الأول ليس عيباً مثبتاً في اللعبة، بل نقص في الأدلة: لا توجد مراجعات مستقلة مفصلة تسمح بالتحقق من جودة الصورة والصوت والأداء. وثانياً، قد يكون اعتماد التقدم على جمع الموارد والصناعة أقل جاذبية لمن لا يستمتع بتكرار دورة التحضير والتوسع، لكن هذا استنتاج متعلق بتصميم البقاء الموصوف، لا شكوى موثقة من طول أو تكرار فعلي. وثالثاً، يقدم الملف وصفاً عاماً للقصة ولا يوثق شخصيات أو تطوراً درامياً، لذلك لا يمكن ترشيح اللعبة لمن يبحث تحديداً عن حبكة مفصلة بناء على هذه الأدلة. وأخيراً، يثير اختلاف بيانات المنصات حاجة إلى التحقق قبل اتخاذ قرار شراء لمنصة بعينها.\n\n## لمن يناسب هذا العمل؟\n\nتبدو Valheim خياراً مناسباً لمن يفضل البقاء والاستكشاف وصناعة الأدوات، ولمن يجد متعة في تحويل الموارد إلى قواعد ومساكن ثم توسيع مجال الرحلة بالسفن. كما أن التركيز المعلن على التعاون يجعلها مرشحة لمن يريد مشروعاً جماعياً طويل النفس، وإن كانت المصادر لا توضح تفاصيل تجربة المجموعة. أما من يضع السرد الشخصي أو الأداء الصوتي أو التميز البصري في مقدمة أولوياته، فلن يجد في المعلومات المتاحة ما يكفي لاتخاذ قرار واثق على هذه الأسس. وينبغي للاعب المهتم بمنصة محددة أن يراجع توفر النسخة محلياً، لأن قوائم المنصات في المواد لا تتطابق تماماً.\n\n## الحكم النهائي\n\nعلى مستوى التصميم الموثق، تقدم Valheim أساساً جذاباً ومتماسكاً: عالم تتصاعد مخاطره، ومكافآت تدعم الصناعة، وأنشطة تمتد من القتال والبناء إلى الإبحار، مع تعاون معلن. هذه العناصر تكفي لحكم إيجابي مشروط وتوصية لمحبي ألعاب البقاء التي تتيح لهم تشكيل رحلتهم، لكنها لا تكفي لتزكية شاملة لجودة التنفيذ. لا يثبت الملف مستوى الرسم أو الصوت أو سلاسة الأداء، كما لا يوثق الإيقاع بالتجربة أو عمق السرد. لذلك تستند الدرجات إلى ما يمكن تقييمه فعلاً، وتبقى بعض المحاور تحفظية بسبب نقص الأدلة لا بسبب عيوب مؤكدة. متوسط RAWG البالغ 3.99 من 5، من 659 صوتاً، مؤشر جماهيري ثانوي فحسب، وليس بديلاً عن هذا الحكم التحريري أو عن مراجعات مستقلة مكتملة.",
+        "scores": {
+          "story": 7.4,
+          "visuals": 6,
+          "sound": 5,
+          "pacing": 7
+        },
+        "pros": [
+          "تدرج واضح في المخاطر والمكافآت: الابتعاد عن المركز يفتح تحديات أكبر وموارد أعلى قيمة.",
+          "ترابط عملي بين الاستكشاف وصناعة الأسلحة والدروع والطعام، بما يدعم التقدم المعلن.",
+          "تنوع موثق بين البناء والقتال ومواجهة الزعماء والإبحار إلى أراضٍ جديدة.",
+          "التعاون الجماعي والخوادم المخصصة جزء معلن من تصميم التجربة."
+        ],
+        "cons": [
+          "المصادر المتاحة لا توثق جودة الصورة أو الموسيقى أو الأداء التقني، ما يحد من الثقة في الحكم الفني الشامل.",
+          "وصف القصة عام ولا يقدم أدلة كافية على شخصيات بارزة أو تطور درامي مفصل.",
+          "اعتماد التقدم على الموارد والصناعة قد لا يناسب من لا يفضل دورة البقاء والتجهيز؛ ولا تثبت المصادر مقدار التكرار الفعلي.",
+          "بيانات المنصات في الملف غير متطابقة تماماً، لذا يلزم التحقق من النسخة المتاحة قبل الشراء."
+        ],
+        "title": "Valheim",
+        "type": "game",
+        "sourceId": "game:248521",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/valheim",
+        "sourceRating": 3.99,
+        "sourceRatingScale": 5,
+        "sourceVoteCount": 659,
+        "sourceRatingCheckedAt": "2026-11-24T10:36:08.942Z",
+        "audienceScore": 8,
+        "releaseDate": "2026-09-09",
+        "poster": "https://media.rawg.io/media/games/adb/adb59be81367b19c2544457424bcf086.jpg",
+        "backdrop": "https://media.rawg.io/media/games/adb/adb59be81367b19c2544457424bcf086.jpg",
+        "genres": [
+          "Action",
+          "Adventure",
+          "Indie"
+        ],
+        "platforms": [
+          "Linux",
+          "PC"
+        ],
+        "cast": [],
+        "crew": [],
+        "tags": [
+          "Action",
+          "Adventure",
+          "Indie"
+        ],
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/valheim",
+            "extract": "Prove your worth! Are you worthy of entering Valhalla? You have been sent to Valheim, the 10th Norse world. Only by defeating the mighty beasts of these lands will you win the favor of the gods. This quest will take you to the far reaches of this world, from the deepest forest to the highest mountain peak. You will craft powerful weapons, build unyielding castles and sail longships towards the horizon. Description Valheim is a game about exploring a huge fantasy world inspired by norse mythology and viking culture. You start your adventure at the relatively peaceful center of Valheim. The further from the center you travel, the more challenging the world becomes. But you will also find more valuable materials that you can use to craft deadlier weapons and sturdier armor. You will also build your own viking strongholds and outposts all over the world. Eventually you will build a mighty longship and sail the great oceans in search of exotic lands … but be wary of sailing too far... Features: Flexible house and base building system. Intuitive item crafting (weapons, armor, food etc). Huge procedural world. Dodge & block based combat system with a wide range of weapons. Defeat bosses & collect trophies. Engaging food & health system. Build & sail ships. Multiplayer (with focus on cooperation). Dedicated server.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Valheim",
+            "extract": "Valheim is a survival game by the Swedish developer Iron Gate Studio and published by Coffee Stain Publishing. It was released in early access for Linux and Microsoft Windows via Steam on 2 February 2021, and for Xbox One and Xbox Series X/S on 14 March 2023. The full version was released on 9 September 2026 alongside versions for the PlayStation 5 and Nintendo Switch 2.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — XBOX",
+            "url": "https://www.youtube.com/watch?v=SeHBisLYnbM",
+            "extract": "Verified public, embeddable promotional trailer: Valheim 1.0 Launch Trailer",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "SeHBisLYnbM",
+        "youtubeVideoTitle": "Valheim 1.0 Launch Trailer",
+        "reviewMode": "review",
+        "score": 6.5
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 6148,
+      "articlePath": "src/content/reviews/game-valheim-248521.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-valheim-248521/"
     }
   },
   "providers": {},
@@ -3232,9 +3252,9 @@
       "tokens": 47590
     },
     "2026-11-24": {
-      "articles": 4,
-      "requests": 10,
-      "tokens": 23680
+      "articles": 5,
+      "requests": 12,
+      "tokens": 29828
     }
   },
   "history": []
