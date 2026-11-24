@@ -113,8 +113,20 @@ const limitedDraft = {
   verdict:"تظل هذه الصفحة قراءة معلوماتية محدودة لأن المصادر المتاحة تصف العمل وتقدم معلومات عامة ومواد ترويجية، لكنها لا توفر شواهد كافية على تجربة اللعب أو جودة التنفيذ. لذلك نعرض الحقائق المؤكدة ونوضح الأسئلة التي لا تزال مفتوحة، ولا نحول نقص المعلومات إلى عيوب مختلقة أو درجة رقمية قد تضلل القارئ.",
   reviewMode:undefined
 };
-assert.throws(() => assemble(limitedDraft,limitedEvidence), /Publishing blocked: VibeCritic publishes scored reviews or explicitly pre-release previews only/);
-assert.throws(() => renderMarkdown({ ...article, reviewMode:"limited", score:undefined, scores:undefined }), /limited-evidence article/);
+const limitedResult = assemble(limitedDraft,limitedEvidence);
+assert.equal(limitedResult.article.reviewMode,"limited");
+assert.equal(limitedResult.article.score,undefined);
+assert.equal(limitedResult.article.scores,undefined);
+assert.ok(validateArticle(limitedResult.article,{minWords:650,minCharacters:3200}).words >= 650);
+const limitedMarkdown = renderMarkdown(limitedResult.article);
+assert.match(limitedMarkdown,/reviewMode: limited/);
+assert.doesNotMatch(limitedMarkdown,/^score:/m);
+assert.match(limitedMarkdown,/قراءة معلوماتية محدودة/);
+assert.doesNotMatch(limitedMarkdown,/قيد التقييم/);
+const limitedPrompt = buildPrompt(limitedEvidence);
+assert.match(limitedPrompt,/قراءة معلوماتية عربية محدودة الأدلة/);
+assert.match(limitedPrompt,/لا تضف scores أو score/);
+assert.match(limitedPrompt,/ما الذي لا نعرفه بعد/);
 const previewEvidence = { ...limitedEvidence, releaseDate:"2099-01-01", reviewReadiness:"preview" };
 const previewDraft = { ...limitedDraft, headline:"معاينة استباقية قبل الإصدار", summary:"هذه معاينة استباقية للعمل قبل صدوره، تستعرض المعلومات الرسمية المتاحة وتفصل الحقائق عن التوقعات، ولا تمثل مراجعة نهائية ولا تمنح درجة رقمية أو حكماً على جودة التجربة.", verdict:"هذه معاينة استباقية قبل الإصدار، وليست مراجعة نهائية. نستعرض المعلومات المؤكدة وما يمكن توقعه بحذر، ونترك الحكم على الجودة والتقييم الرقمي إلى ما بعد صدور العمل وتوفر أدلة نقدية كافية.", reviewMode:undefined };
 const previewResult = assemble(previewDraft,previewEvidence);
@@ -151,7 +163,7 @@ assert.doesNotMatch(audiencePrompt,/لا تمنح درجات فرعية/);
 assert.throws(() => validateArticle({ ...article, scores:{...article.scores,story:11} }), /Invalid score/);
 assert.equal(normalizeFinalRating("الحكم النهائي: 6/10",5.3),"الحكم النهائي: 5.3/10");
 assert.equal(normalizeFinalRating("التقييم النهائي 8 من 10",7.4),"التقييم النهائي 7.4/10");
-assert.equal(normalizeBodyFinalRating("**التقييم النهائي: 6/10**\\nالقصة: 8.5/10",5.3),"**التقييم النهائي: 5.3/10**\\nالقصة: 8.5/10");
+assert.equal(normalizeBodyFinalRating("**التقييم النهائي: 6/10**\nالقصة: 8.5/10",5.3),"**التقييم النهائي: 5.3/10**\nالقصة: 8.5/10");
 const interrupted = enqueue(state,{type:"movie",id:"77",name:"Interrupted"}).job;
 transition(interrupted,"researching");
 transition(interrupted,"queued");
@@ -167,7 +179,7 @@ const lock = path.join(dir, "run.lock");
 const reviewRoot = path.join(dir,"reviews");
 const createdPath = await publishArticle(article,reviewRoot);
 assert.equal(createdPath,articleFilePath(article,reviewRoot));
-const renderedPreview = renderMarkdown({ ...article, verdict:"The final rating is 6/10.", body:body+"\\n\\n**التقييم النهائي: 6/10**" });
+const renderedPreview = renderMarkdown({ ...article, verdict:"The final rating is 6/10.", body:body+"\n\n**التقييم النهائي: 6/10**" });
 assert.ok(renderedPreview.includes('verdict: "The final rating is 7.0/10."'));
 assert.ok(renderedPreview.includes("**التقييم النهائي: 7.0/10**"));
 assert.match(renderedPreview,/reviewMode: review/);
@@ -251,6 +263,22 @@ assert.equal(acceptedReview.provider,"gemini");
 assert.equal(acceptedReview.requests,1);
 assert.equal(acceptedReview.tokens,120);
 assert.equal(geminiCalls,1);
+let limitedReviewPrompt = "";
+globalThis.fetch = async (url, options) => {
+  const request = JSON.parse(options.body);
+  limitedReviewPrompt = request.contents[0].parts[0].text;
+  return {
+    ok:true,
+    json:async()=>({
+      candidates:[{content:{parts:[{text:JSON.stringify({approved:true,score:8.1,factualRisk:"low",repetition:"low",exaggeration:"low",issues:[],notes:"قراءة معلوماتية دقيقة"})}]}}],
+      usageMetadata:{promptTokenCount:100,candidatesTokenCount:20}
+    })
+  };
+};
+const checkedLimited = await geminiReviewer.reviewArticle({title:"Test",body:"مقال",reviewMode:"limited"}, {title:"Test",sources:[]});
+assert.equal(checkedLimited.skipped,false);
+assert.match(limitedReviewPrompt,/قراءة معلوماتية محدودة الأدلة/);
+assert.match(limitedReviewPrompt,/لا ترفض لمجرد أن الأدلة لا تسمح بتحليل الجودة الفنية/);
 globalThis.fetch = async () => { throw new DOMException("simulated Gemini timeout","TimeoutError"); };
 const timeoutReview = await geminiReviewer.reviewArticle({title:"Test",body:"مقال"}, {title:"Test",sources:[]});
 assert.equal(timeoutReview.skipped,true);
