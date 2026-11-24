@@ -72,11 +72,15 @@ export function validateArticle(article, { minWords = 650, minCharacters = 3200 
     if (article.score != null || article.scores != null) throw new Error("Audience article must not contain an editorial score");
     if (!Number.isFinite(article.audienceScore) || article.audienceScore < 0 || article.audienceScore > 10) throw new Error("Invalid normalized audience score");
     if (!Number.isFinite(article.sourceRating) || !Number.isFinite(article.sourceRatingScale) || article.sourceRatingScale <= 0 || !Number.isInteger(article.sourceVoteCount) || article.sourceVoteCount < 100 || !article.sourceName) throw new Error("Audience rating source or vote threshold is invalid");
-  } else {
+  } else if (reviewMode === "preview") {
     if (article.score != null || article.scores != null) throw new Error("Preview article must not contain numeric score metadata");
     if (!article.releaseDate || !(article.releaseDate > new Date().toISOString().slice(0,10))) throw new Error("Unrated preview must have a verified future release date");
     const publicText = [article.headline,article.summary,article.verdict,article.body].join("\n").replace(/https?:\/\/[^\s)\]>]+/gi,"");
     if (/(?<![0-9])\d{1,2}(?:[.,]\d+)?\s*(?:\/\s*10|من\s*10)(?![0-9])/i.test(publicText)) throw new Error("Preview article must not contain a numeric final rating");
+  } else {
+    if (article.score != null || article.scores != null) throw new Error("Limited article must not contain editorial score metadata");
+    const publicText = [article.headline,article.summary,article.verdict,article.body].join("\n").replace(/https?:\/\/[^\s)\]>]+/gi,"");
+    if (/(?<![0-9])\d{1,2}(?:[.,]\d+)?\s*(?:\/\s*10|من\s*10)(?![0-9])/i.test(publicText)) throw new Error("Limited article must not contain a numeric rating");
   }
   if (!Array.isArray(article.sources) || article.sources.length < 2) throw new Error("Article sources are missing");
   return { words, characters: String(article.body).length };
