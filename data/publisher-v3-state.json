@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-24T01:08:14.049Z",
+  "updatedAt": "2026-11-24T01:13:24.168Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -2775,6 +2775,90 @@
       "article": null,
       "lastError": "Gemini editorial review returned invalid JSON: Unterminated string in JSON at position 153 (line 8 column 28)",
       "resumeStatus": "queued"
+    },
+    "movie:1611767": {
+      "key": "movie:1611767",
+      "type": "movie",
+      "id": "1611767",
+      "title": "Clashing Through the Snow",
+      "item": {
+        "type": "movie",
+        "id": "1611767",
+        "name": "Clashing Through the Snow",
+        "date": "2026-11-23",
+        "preview": false,
+        "popularity": 5.612,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-24T01:13:23.558Z",
+      "updatedAt": "2026-11-24T01:13:24.168Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Clashing Through the Snow",
+        "type": "movie",
+        "collectedAt": "2026-11-24T01:13:24.167Z",
+        "sourceId": "movie:1611767",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1611767",
+        "overview": "Rival publishing editors Ryan Mitchell and Hannah Hendricks are stranded by a holiday snowstorm and forced to share a rental car to New York, where a career-saving deal awaits them both. As roadside mishaps and small-town detours pile up, the holiday spirit begins to melt their fierce rivalry into something unexpected.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1611767",
+            "extract": "Rival publishing editors Ryan Mitchell and Hannah Hendricks are stranded by a holiday snowstorm and forced to share a rental car to New York, where a career-saving deal awaits them both. As roadside mishaps and small-town detours pile up, the holiday spirit begins to melt their fierce rivalry into something unexpected.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Clashing_Through_the_Snow",
+            "extract": "Clashing Through the Snow is a 2026 American Christmas comedy film directed by Carlson Young and written by Daniel Mackey and Rebecca Ewing. It stars Christopher Briney, Michelle Randolph, Lukas Gage, Paris Hilton, Julia Fox, and PJ Byrne.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Prime Video",
+            "url": "https://www.youtube.com/watch?v=nOyT9RkGRn4",
+            "extract": "Verified public, embeddable promotional trailer: Clashing Through The Snow - Official Trailer | Prime Video",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "limited",
+        "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
+        "youtubeVideoId": "nOyT9RkGRn4",
+        "youtubeVideoTitle": "Clashing Through The Snow - Official Trailer | Prime Video",
+        "youtubeChannel": "Prime Video",
+        "releaseDate": "2026-11-23",
+        "genres": [
+          "Romance",
+          "Comedy"
+        ],
+        "platforms": [],
+        "cast": [
+          "Christopher Briney",
+          "Michelle Randolph",
+          "Lukas Gage",
+          "Paris Hilton",
+          "Julia Fox",
+          "P.J. Byrne",
+          "Andrew Schulz",
+          "Jake Shane"
+        ],
+        "crew": [
+          "Carlson Young",
+          "Daniel Mackey",
+          "Rebecca Ewing"
+        ],
+        "rating": 7.111,
+        "ratingScale": 10,
+        "votes": 9,
+        "poster": "https://image.tmdb.org/t/p/w780/95K1Y96ELBDL3M8kyTVb5wocCtX.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/x6kwEsxxqLIoqpIrZOXRV0LORqm.jpg"
+      },
+      "sections": [],
+      "article": null,
+      "lastError": "Publishing blocked: evidence supports neither a scored review nor an explicit pre-release preview"
     }
   },
   "providers": {},
