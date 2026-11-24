@@ -163,9 +163,7 @@ assert.doesNotMatch(audiencePrompt,/لا تمنح درجات فرعية/);
 assert.throws(() => validateArticle({ ...article, scores:{...article.scores,story:11} }), /Invalid score/);
 assert.equal(normalizeFinalRating("الحكم النهائي: 6/10",5.3),"الحكم النهائي: 5.3/10");
 assert.equal(normalizeFinalRating("التقييم النهائي 8 من 10",7.4),"التقييم النهائي 7.4/10");
-assert.equal(normalizeBodyFinalRating("**التقييم النهائي: 6/10**
-القصة: 8.5/10",5.3),"**التقييم النهائي: 5.3/10**
-القصة: 8.5/10");
+assert.equal(normalizeBodyFinalRating("**التقييم النهائي: 6/10**\nالقصة: 8.5/10",5.3),"**التقييم النهائي: 5.3/10**\nالقصة: 8.5/10");
 const interrupted = enqueue(state,{type:"movie",id:"77",name:"Interrupted"}).job;
 transition(interrupted,"researching");
 transition(interrupted,"queued");
