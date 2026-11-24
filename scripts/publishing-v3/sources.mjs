@@ -155,22 +155,47 @@ export async function discoverCandidate(state) {
     }
   };
   if (env.TMDB_API_KEY) {
-    // Trending supplies timely discoveries; popular supplies a wider fallback pool when trending
-    // titles have already been published or rejected for insufficient evidence.
-    const [trendingMovies,trendingSeries,popularMovies,popularSeries] = await Promise.all([
+    // Keep trending/popular for timely discovery, then scan several release-date pages so
+    // already-published or rejected trending titles cannot exhaust the candidate pool.
+    const tmdbRequests = [
       get(tmdb("trending/movie/week")).catch(()=>({results:[]})),
       get(tmdb("trending/tv/week")).catch(()=>({results:[]})),
       get(tmdb("movie/popular",{page:1})).catch(()=>({results:[]})),
       get(tmdb("tv/popular",{page:1})).catch(()=>({results:[]}))
-    ]);
+    ];
+    for (const page of [1,2,3]) {
+      tmdbRequests.push(
+        get(tmdb("discover/movie",{page,sort_by:"popularity.desc",include_adult:false,"primary_release_date.gte":"2024-01-01","primary_release_date.lte":previewLimit})).catch(()=>({results:[]})),
+        get(tmdb("discover/tv",{page,sort_by:"popularity.desc","first_air_date.gte":"2024-01-01","first_air_date.lte":previewLimit})).catch(()=>({results:[]}))
+      );
+    }
+    const [trendingMovies,trendingSeries,popularMovies,popularSeries,...releasePages] = await Promise.all(tmdbRequests);
     addCatalogItems(trendingMovies.results,"movie");
     addCatalogItems(popularMovies.results,"movie");
     addCatalogItems(trendingSeries.results,"series");
     addCatalogItems(popularSeries.results,"series");
+    for (let index=0; index<releasePages.length; index++) {
+      addCatalogItems(releasePages[index].results,index % 2 === 0 ? "movie" : "series");
+    }
   }
   if (env.RAWG_API_KEY) {
-    const data = await get("https://api.rawg.io/api/games?key=" + encodeURIComponent(env.RAWG_API_KEY) + "&ordering=-added&page_size=40").catch(()=>({results:[]}));
-    for (const x of data.results || []) candidates.push({ type:"game", id:String(x.id), name:x.name, date:x.released || "", popularity:Number(x.added)||0, source:"RAWG" });
+    // RAWG's added ordering alone can be dominated by older releases. Bound results to
+    // eligible release years and inspect multiple pages for a broader, fresher game pool.
+    const gamePages = await Promise.all([1,2,3].map(page =>
+      get("https://api.rawg.io/api/games?"+new URLSearchParams({
+        key:env.RAWG_API_KEY,
+        ordering:"-added",
+        page_size:"40",
+        page:String(page),
+        dates:"2024-01-01,"+now
+      })).catch(()=>({results:[]} ))
+    ));
+    for (const data of gamePages) {
+      for (const x of data.results || []) candidates.push({
+        type:"game", id:String(x.id), name:x.name, date:x.released || "",
+        popularity:Number(x.added)||0, source:"RAWG"
+      });
+    }
   }
   return selectEligibleCandidate(candidates,{used,jobs:state.jobs||{},counts,today:now});
 }
