@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-24T10:43:41.762Z",
+  "updatedAt": "2026-11-24T13:17:01.749Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -3241,147 +3241,187 @@
         "popularity": 2945,
         "source": "RAWG"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-24T10:42:32.205Z",
-      "updatedAt": "2026-11-24T10:43:41.762Z",
+      "updatedAt": "2026-11-24T13:16:01.484Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "Satisfactory",
-        "type": "game",
-        "collectedAt": "2026-11-24T10:42:32.842Z",
-        "sourceId": "game:58806",
-        "sourceName": "RAWG",
-        "sourceUrl": "https://rawg.io/games/satisfactory",
-        "overview": "FICSIT - AN INTRODUCTION Welcome to FICSIT Incorporated! A company specialised in the research, development and application of new technology and science, anything to find short-term solutions to long-term problems! As part of our brand-new Save The Day program, you’ll be sent to one of many alien planets in an effort to contribute to Project Assembly, a project I am legally bound to not tell you anything about for fear of our lives. And my job. As an engineer and pioneer, you won’t only be constructing and automating the very factory that will contribute to Project Assembly, but also explore and exploit the planet and its inhabitants as you expand. Don’t worry, we’re super inclusive when it comes to alien lifeforms! We’ll even allow for pets, how cool is that!? Just don’t tell R&D. Below you can find the three main pillars of your mission! Time to get to work, and Stay Effective!* *This motto is FICSIT Inc. property. Please do not use ironically. CONSTRUCT To achieve company milestones according to satisfaction we expect you to construct your FICSIT Inc. factory in such a way that it allows for easy expansion and complexion. Not only will buildings grow more complex over time, so will the parts they produce. Project Assembly isn’t your average high-school science project. We’re making history here! Go big or go home!* Of course, this requires both high-level and low-level power management, good luck getting to nuclear! We even support stuff like multi-floor warehouses so you can stack your buildings, and a whole bunch of navigational constructs like jump pads and walkways! Walkways are the best. They’re attached to the ground and everything. *Employee will be expected to fund their own travel expenses AUTOMATE So you know how your FICSIT Inc. factory can be turned into this incredibly intricate maze of conveyor belts in every direction, merging, splitting, crossing each other above and below? Conveyor belts carry, after all, the life-blood of our company! Well, since you’ll be in a pretty big area you’re going to need outposts. To make your life easier, we’ve developed self-driving trucks and trains so you can set up your very own transport system between any point in your area! EXPLORE & EXPLOIT R&D hasn’t figured out how to clone materials yet, weirdly enough, so you’re going to have to go out and use our patented method of extraterrestrial pioneering! This means exploring to find more or new stuff to exploit, to help expand your FICSIT Inc. factory. You’re on an uncharted alien planet, so try to be careful, don’t go alone if you don’t have to, and use protection! Who knows what kind of organisms have made this place their home? Or who knows what awesome treasures you’ll find? Don’t worry, this is why we assigned you your very own FICSIT Inc. handler.",
-        "sources": [
-          {
-            "name": "RAWG",
-            "url": "https://rawg.io/games/satisfactory",
-            "extract": "FICSIT - AN INTRODUCTION Welcome to FICSIT Incorporated! A company specialised in the research, development and application of new technology and science, anything to find short-term solutions to long-term problems! As part of our brand-new Save The Day program, you’ll be sent to one of many alien planets in an effort to contribute to Project Assembly, a project I am legally bound to not tell you anything about for fear of our lives. And my job. As an engineer and pioneer, you won’t only be constructing and automating the very factory that will contribute to Project Assembly, but also explore and exploit the planet and its inhabitants as you expand. Don’t worry, we’re super inclusive when it comes to alien lifeforms! We’ll even allow for pets, how cool is that!? Just don’t tell R&D. Below you can find the three main pillars of your mission! Time to get to work, and Stay Effective!* *This motto is FICSIT Inc. property. Please do not use ironically. CONSTRUCT To achieve company milestones according to satisfaction we expect you to construct your FICSIT Inc. factory in such a way that it allows for easy expansion and complexion. Not only will buildings grow more complex over time, so will the parts they produce. Project Assembly isn’t your average high-school science project. We’re making history here! Go big or go home!* Of course, this requires both high-level and low-level power management, good luck getting to nuclear! We even support stuff like multi-floor warehouses so you can stack your buildings, and a whole bunch of navigational constructs like jump pads and walkways! Walkways are the best. They’re attached to the ground and everything. *Employee will be expected to fund their own travel expenses AUTOMATE So you know how your FICSIT Inc. factory can be turned into this incredibly intricate maze of conveyor belts in every direction, merging, splitting, crossing each other above and below? Conveyor belts carry, after all, the life-blood of our company! Well, since you’ll be in a pretty big area you’re going to need outposts. To make your life easier, we’ve developed self-driving trucks and trains so you can set up your very own transport system between any point in your area! EXPLORE & EXPLOIT R&D hasn’t figured out how to clone materials yet, weirdly enough, so you’re going to have to go out and use our patented method of extraterrestrial pioneering! This means exploring to find more or new stuff to exploit, to help expand your FICSIT Inc. factory. You’re on an uncharted alien planet, so try to be careful, don’t go alone if you don’t have to, and use protection! Who knows what kind of organisms have made this place their home? Or who knows what awesome treasures you’ll find? Don’t worry, this is why we assigned you your very own FICSIT Inc. handler.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Satisfactory",
-            "extract": "Satisfactory is a factory simulation game by Coffee Stain Studios for Windows, Xbox Series X/S, and PlayStation 5. The player is dropped onto an alien planet with a handful of tools and must use the planet's natural resources to construct increasingly complex factories. The initial goal is to construct a space elevator, through which the Pioneer begins supplying the megacorp the player works for with increasingly numerous and complex components for their unknown, but stated to be prudent, purposes. These exports unlock access to new technology that in turn unlocks a new tier of manufacturing and refinement machines to support the production of the next phase of parts to be delivered to FICSIT.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — XBOX",
-            "url": "https://www.youtube.com/watch?v=CMq9LGe7FM4",
-            "extract": "Verified public, embeddable promotional trailer: Satisfactory: Core Values Reveal Trailer",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from RAWG with 364 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "CMq9LGe7FM4",
-        "youtubeVideoTitle": "Satisfactory: Core Values Reveal Trailer",
-        "youtubeChannel": "XBOX",
-        "releaseDate": "2024-09-11",
-        "genres": [
-          "Action",
-          "Adventure",
-          "Strategy",
-          "Indie"
-        ],
-        "platforms": [
-          "PC"
-        ],
-        "developers": [
-          "Coffee Stain Studios"
-        ],
-        "rating": 4.3,
-        "ratingScale": 5,
-        "votes": 364,
-        "poster": "https://media.rawg.io/media/games/9b0/9b03581c1ba7df63e221eb0828f8bb52.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "Satisfactory: متعة هندسة المصنع أقوى من الحكاية التي تحيط به",
-        "summary": "تقوم Satisfactory على فكرة واضحة وواعدة: إرسال اللاعب إلى كوكب فضائي ليجمع الموارد، ويبني مصنعاً قابلاً للتوسع، ويؤتمت إنتاج مكوّنات تزداد تعقيداً مع تقدم العمل. وتكمن جاذبيتها التصميمية في تداخل البناء وإدارة الطاقة والنقل والاستكشاف، وفي انتقالها من خطوط إنتاج بسيطة إلى شبكة صناعية أوسع. لكن المعلومات الموثقة المتاحة تشرح هذه الأنظمة أكثر مما تكشف عن عمق الشخصيات أو جودة التنفيذ الفني والصوتي، لذلك يركّز هذا الحكم على تصميم التجربة المعلن لا على ادعاء تجربة مباشرة. النتيجة لعبة تبدو مناسبة لمحبي التخطيط والتحسين المتواصل، مع تحفظ واضح بشأن ما لا تسمح الأدلة المتاحة بتقييمه.",
-        "verdict": "تستند قيمة Satisfactory، وفق ما تثبته المواد المتاحة، إلى دورة لعب مترابطة تجعل جمع الموارد والبناء والأتمتة وسائل متبادلة لدفع المشروع إلى الأمام. وتمنحها فكرة المصنع القابل للتمدد، مع النقل بين المواقع وفتح مراحل إنتاج أكثر تعقيداً، أساساً قوياً لتجربة استراتيجية طويلة النفس. في المقابل، لا تكفي المعلومات الموثقة هنا لإثبات قوة السرد والشخصيات أو الحكم على الموسيقى والأداء والجودة التقنية، كما أن الحكاية تبدو إطاراً للمهمة أكثر من كونها محوراً مثبت العمق. لذلك فالتوصية موجهة بوضوح إلى من يستمتع بتحويل الموارد إلى أنظمة إنتاج منظمة، لا إلى من يبحث أساساً عن دراما شخصيات أو عرض صوتي يمكن تقييمه من هذه الأدلة. الدرجة الإجمالية التحريرية إيجابية بحذر: تصميمها المعلن واعد ومتماسك، لكن بعض جوانب الحكم تظل محدودة بغياب أدلة مباشرة كافية.",
-        "body": "## مقدمة وسياق العمل\n\nتُقدّم Satisfactory نفسها بوصفها لعبة محاكاة مصانع ذات عناصر استراتيجية ومغامرة، طورتها Coffee Stain Studios، وصدرت في 11 سبتمبر 2024 بحسب البيانات المرفقة. ويضع وصفها المنشور اللاعب في دور مهندس ورائد يعمل لصالح شركة FICSIT على كوكب غير معروف. هذه مراجعة تحريرية مبنية على وصف اللعبة في RAWG، والمعلومات الموسوعية الواردة عن هدفها وأنظمة تقدمها، ووجود مادة ترويجية رسمية من قناة XBOX بعنوان «Core Values Reveal Trailer». لا أدّعي اللعب أو مشاهدة المادة بنفسي؛ لذا تنصب القراءة على ما يمكن توثيقه عن بنية التجربة، وتفصل بين خصائصها المعلنة والاستنتاج النقدي منها.\n\nوهذا التفريق ضروري لأن الملف يصف الأنظمة والأهداف بتفصيل أكبر من وصفه للصورة والصوت أو التجربة الفعلية أثناء اللعب. كما أن بيانات المنصات ليست متطابقة بين الإدخالات المتاحة، فلا أبني عليها حكماً. كذلك يورد RAWG متوسطاً جماهيرياً قدره 4.3 من 5 استناداً إلى 364 صوتاً؛ وهو مؤشر ثانوي منسوب إلى المنصة، لا بديل عن التقييم التحريري هنا ولا دليل مستقل على جودة كل محور.\n\n## الفكرة والقصة أو التجربة\n\nالفكرة الأساسية واضحة: تنزل الشخصية على كوكب فضائي بموارد طبيعية وأدوات محدودة، ثم تستخدم ما تجمعه لبناء مصنع ينتج أجزاء متزايدة التعقيد. ويحدد الوصف الموسوعي هدفاً مرحلياً بارزاً هو إنشاء مصعد فضائي، عبره تُرسل المكونات المطلوبة إلى الشركة، فيما تفتح التسليمات مراحل تصنيع وتقنيات جديدة. أما وصف RAWG فيقسم المهمة إلى ثلاثة أعمدة: البناء، والأتمتة، والاستكشاف والاستغلال. هذا يجعل التقدم مرتبطاً بتوسيع القدرة الإنتاجية، لا بمجرد إتمام سلسلة منفصلة من المهام.\n\nتمنح الفكرة مساحة لتخطيط شخصي: أين يوضع الإنتاج، وكيف تتصل مراحله، وما المواد التي ينبغي جلبها من مناطق أخرى. ويضيف الإطار المؤسسي نبرة ساخرة في صياغة الشركة لمهمتها، إذ تعرض استخراج موارد الكوكب وخدمة مشروع غامض بلغة إدارية مرحة. يمكن قراءة هذه المفارقة بوصفها تعليقاً على خطاب الشركات الذي يلطّف أهدافه، لكن الأدلة لا تثبت أن السخرية تتحول إلى حبكة متطورة أو إلى نقد سردي عميق. قوتها المؤكدة هنا أنها تمنح الأنظمة إطاراً مفهوماً، لا أنها تقود دراما ذات مسارات وشخصيات موثقة.\n\n## السرد والشخصيات أو تصميم اللعب\n\nالمعلومات المتاحة ترجّح أن تصميم اللعب هو مركز العمل، بينما تظل الشخصية والمهمة القصصية في الخلفية. فالرائد يعمل تحت توجيه مسؤول اتصال من FICSIT، لكن لا تتوفر تفاصيل موثقة عن تطور تلك العلاقة أو عن شخصيات أخرى أو تحولات سردية. لذلك لا يصح منح القصة عمقاً يتجاوز ما تكشفه المقدمة: شركة، كوكب غير مستكشف، ومشروع لا يُفصح عن غايته كاملة.\n\nفي المقابل، تظهر ملامح التصميم بوضوح أكبر. البناء لا يقتصر على وضع آلات منفردة؛ فالوصف يشدد على خطوط ناقلة تتفرع وتتلاقى، وعلى إدارة الطاقة، والمباني متعددة الطوابق، ووسائل الحركة والبنية المساندة. كما تزداد تعقيدات المنشآت والأجزاء المنتجة مع التقدم. والاستنتاج النقدي أن المتعة المقصودة تنبع من حل مشكلات التنظيم والتدفق: كيف تتحول الموارد الخام إلى مكونات، وكيف يظل المصنع قابلاً للتوسعة. لكن لا تتاح أدلة تكفي للحكم على سهولة الواجهة، أو دقة أدوات البناء، أو مقدار الاحتكاك العملي أثناء التخطيط، ولذلك لا ينبغي تحويل وصف الأنظمة إلى ادعاء عن سلاسة تنفيذها.\n\n## الإخراج والجوانب الفنية\n\nعلى مستوى الإخراج التصميمي، يجمع تصور اللعبة بين مصنع ثابت يتوسع على مراحل، وحاجة إلى مغادرة موقعه لاستكشاف مواد جديدة أو تأمينها. وتُذكر الشاحنات ذاتية القيادة والقطارات بوصفها وسائل لإقامة النقل بين المواقع، ما يوحي بأن المساحة ليست مجرد خلفية للمصنع، بل تدخل في تنظيم الإنتاج نفسه. كما أن الجسور والممرات ووسائل التنقل المذكورة تكشف اهتماماً ببنية الحركة حول المنشآت. هذه عناصر ذات دلالة على اتساع التصميم، لكنها لا تثبت وحدها جودة التنفيذ أو وضوحه.\n\nلا يتضمن ملف الأدلة اختبارات أداء أو معلومات عن الأخطاء أو الاستقرار، ولا تفاصيل كافية عن واجهة الاستخدام أو خيارات الإتاحة. لهذا لا أصف اللعبة بأنها خالية من المشكلات التقنية أو أقرر العكس. والحكم المنضبط هو أن الفكرة الفنية لأنظمة البناء والنقل موثقة، أما مستوى الصقل العملي فيحتاج إلى أدلة لا يوفرها هذا الملف. هذا التحفظ لا ينتقص من طموح التصميم، لكنه يمنع مساواة الطموح المعلن بإتقان محقق.\n\n## الصورة والهوية البصرية\n\nيوفر الوصف أساساً محدوداً لتصور الهوية البصرية: بيئة كوكبية غريبة، موارد طبيعية، منشآت صناعية متنامية، وأحزمة نقل تمتد وتتقاطع أفقياً وعمودياً، مع إمكان بناء مخازن متعددة الطوابق. وتتيح هذه العناصر، من حيث التصميم، مقابلة بين الطبيعة التي يُستخرج منها المورد والهندسة التي يعيد اللاعب تشكيلها. كما أن تكوين المصنع نفسه مرشح لأن يكون أبرز عنصر بصري متغير، لأنه يتوسع تبعاً لقرارات البناء والإنتاج.\n\nلكن ذلك استنتاج عن التكوين الذي تسمح به الأنظمة، لا وصف لمشاهد أو ألوان أو جودة نماذج لم تثبتها المواد. وجود مقطع رسمي بعنوان «Core Values Reveal Trailer» يؤكد وجود مادة ترويجية، لكنه لا يتيح وحده، ومن دون فحص محتواها، إصدار حكم تفصيلي على الإضاءة أو التحريك أو وضوح الصورة. لذلك تستند الدرجة إلى إمكانات الهوية المكانية والبنائية الموثقة، مع ثقة أقل من ثقتي في تقييم الفكرة نفسها؛ ولا أزعم أن الأدلة تثبت جمالاً بصرياً استثنائياً أو مشكلات مرئية بعينها.\n\n## الصوت والموسيقى والأداء\n\nلا يقدم الملف معلومات عن الموسيقى أو المؤثرات الصوتية أو الأداء الصوتي، ولا يتضمن أوصافاً مستقلة لهذه الجوانب. وبناء عليه لا يمكنني أن أنسب إلى اللعبة ألحاناً معينة، أو جودة في تسجيل الأصوات، أو أداءً لشخصية المسؤول الذي تشير إليه المقدمة. كما لا تكفي نبرة النص الترويجي المكتوب للاستدلال على كيفية تقديمه داخل اللعبة. الدرجة هنا تحفظية ومحدودة بالأدلة، ولا تعني أن الصوت ضعيف أو متوسط فعلياً؛ إنها تعلن بوضوح أن هذا المحور لا يمكن حسمه بالمادة المتاحة، وأن أي وصف أكثر تحديداً سيكون تخميناً.\n\n## الإيقاع والبناء وتنوع المحتوى\n\nيوحي نظام التقدم الموثق ببناء تراكمي طويل النفس: يبدأ اللاعب بأدوات وموارد محدودة، ثم يوسع الإنتاج لتصنيع مكونات أكثر تعقيداً، وتفتح التسليمات تقنيات ومراحل تصنيع لاحقة. وتضيف الحاجة إلى البحث عن مواد جديدة، وإقامة نقاط إنتاج خارجية وربطها بالنقل، تنوعاً وظيفياً داخل الحلقة الأساسية. فالبناء والإدارة والاستكشاف ليست موضوعات متجاورة فحسب؛ بحسب الوصف، يدعم كل منها استمرار الآخر، لأن التوسع يحتاج موارد ونقلاً، والموارد تتيح رفع مستوى الإنتاج.\n\nهذا الترابط يمنح الإيقاع منطقاً تصميمياً جيداً: التقدم يستدعي إعادة تنظيم ما سبق بدلاً من الاكتفاء بتكرار المهمة نفسها على نطاق صغير. ومع ذلك لا تكشف الأدلة مقدار الوقت المطلوب لكل مرحلة، ولا مدى انتظام المكافآت، ولا ما إذا كانت وتيرة فتح التقنيات تتغير على نحو مُرضٍ أو مرهق. لذلك أقيّم بنية التدرج المعلنة إيجابياً، لكن لا أخلط بين وضوح سلم التقدم الموصوف وبين معرفة الإحساس الفعلي بإيقاع اللعب. أما تنوع المحتوى، فالمؤكد هو تنوع أدوار البناء والطاقة والنقل والاستكشاف، لا عدد المناطق أو الأنشطة أو مقدار اختلافها.\n\n## نقاط القوة\n\nتنجح الفكرة، على مستوى التصميم المعلن، في جعل التوسع نتيجة مباشرة لفهم علاقات الإنتاج والنقل، لا إضافة شكلية إلى المحاكاة. كما أن تعدد طبقات المصنع وخطوطه يفتح باباً للتخطيط المكاني، فيما يمنح الانتقال بين الموقع الرئيسي والنقاط الخارجية معنى عملياً للاستكشاف. ويخدم الإطار الساخر هوية الشركة من دون أن يحتاج إلى ادعاء أن القصة هي العنصر الأبرز. هذه نقاط قوة محددة في بنية العمل كما تصفها المصادر، لا شهادة على جودة كل تفصيل في التنفيذ.\n\n## نقاط الضعف\n\nأبرز حدود الحكم أن المواد المتاحة لا تقدم ما يكفي لإثبات عمق السرد أو جودة الشخصيات، وأن معظم القيمة الموثقة تتركز في أنظمة المصانع. كما أن غياب معلومات موثوقة عن الصوت والصورة والأداء التقني يجعل التقييم في تلك المحاور أقل حسماً. ويظل سلم التقدم، رغم وضوح فكرته، غير قابل للحكم من حيث إيقاعه الفعلي أو ما إذا كان يفرض تكراراً مرهقاً؛ فهذه أسئلة مهمة لمحبّي هذا النوع، ولا تجيب عنها الأوصاف وحدها.\n\n## لمن يناسب هذا العمل؟\n\nيبدو العمل موجهاً إلى من يستمتع بالتخطيط المنهجي، ومراقبة اعتماد مراحل الإنتاج بعضها على بعض، وبناء منشآت يمكن توسيعها مع ظهور حاجات جديدة. وسيجد فيه اهتماماً محتملاً من يفضل تحويل الموارد الخام إلى سلاسل تصنيع، وربط المصانع بوسائل نقل، واستكشاف البيئة بحثاً عن مواد تدعم التقدم. أما من يضع الشخصيات والحوار الدرامي في مقدمة اهتمامه، أو يريد حكماً مؤكداً على الموسيقى والأداء والجودة التقنية، فلن يجد في الأدلة الحالية ضماناً كافياً لذلك. ليست هذه دعوة إلى تجاهل تلك الجوانب، بل توصيف لما تثبته هوية اللعبة المنشورة وما لا تثبته.\n\n## الحكم النهائي\n\nتستحق Satisfactory تقييماً تحريرياً إيجابياً بحذر، لأن أساسها الموثق متماسك: جمع الموارد يغذي التصنيع، والتصنيع يفتح تقنيات ومراحل جديدة، فيما يتيح النقل والاستكشاف توسيع نطاق العمل. هذا الترابط يمنحها هوية واضحة ويبرر توصيتها لمحبي المحاكاة الصناعية والتخطيط. غير أن الحكم لا ينبغي أن يتجاوز الأدلة: لا تتوافر هنا مادة كافية لإثبات قصة غنية، أو جودة صوتية محددة، أو مستوى الإتقان التقني، كما أن الإيقاع الفعلي يظل غير محسوم. لذلك تنبع قيمة المراجعة من تقييم التصميم المعلن بإنصاف، لا من ادعاء تجربة شخصية. إنها توصية لمن يجد متعته في بناء نظام إنتاج مترابط، مع تحفظ صريح لمن ينتظر تجربة سردية أو تقييماً فنياً كاملاً.",
-        "scores": {
-          "story": 7.4,
-          "visuals": 7.2,
-          "sound": 6,
-          "pacing": 7.8
-        },
-        "pros": [
-          "حلقة لعب مترابطة بين جمع الموارد والبناء والتصنيع المتدرج.",
-          "إمكانات تخطيط مكاني موثقة تشمل المصانع متعددة الطوابق وخطوط النقل المتقاطعة.",
-          "وسائل نقل بين المواقع تدعم توسيع الإنتاج خارج المصنع الرئيسي.",
-          "إطار مؤسسي ساخر يمنح المهمة هوية مميزة من دون أن يطغى على أنظمة اللعب."
-        ],
-        "cons": [
-          "المعلومات المتاحة لا تثبت عمق الحبكة أو تطور الشخصيات.",
-          "لا توجد أدلة كافية للحكم بثقة على الموسيقى أو المؤثرات أو الأداء الصوتي.",
-          "الصورة موصوفة عبر عناصر البيئة والبناء، لا عبر تفاصيل تسمح بتقييم الإخراج البصري بدقة.",
-          "وتيرة التقدم والتكرار المحتمل والجودة التقنية الفعلية غير محسومة في المصادر المتاحة."
-        ],
-        "title": "Satisfactory",
-        "type": "game",
-        "sourceId": "game:58806",
-        "sourceName": "RAWG",
-        "sourceUrl": "https://rawg.io/games/satisfactory",
-        "sourceRating": 4.3,
-        "sourceRatingScale": 5,
-        "sourceVoteCount": 364,
-        "sourceRatingCheckedAt": "2026-11-24T10:42:32.842Z",
-        "audienceScore": 8.6,
-        "releaseDate": "2024-09-11",
-        "poster": "https://media.rawg.io/media/games/9b0/9b03581c1ba7df63e221eb0828f8bb52.jpg",
-        "backdrop": "https://media.rawg.io/media/games/9b0/9b03581c1ba7df63e221eb0828f8bb52.jpg",
-        "genres": [
-          "Action",
-          "Adventure",
-          "Strategy",
-          "Indie"
-        ],
-        "platforms": [
-          "PC"
-        ],
-        "cast": [],
-        "crew": [],
-        "tags": [
-          "Action",
-          "Adventure",
-          "Strategy",
-          "Indie"
-        ],
-        "sources": [
-          {
-            "name": "RAWG",
-            "url": "https://rawg.io/games/satisfactory",
-            "extract": "FICSIT - AN INTRODUCTION Welcome to FICSIT Incorporated! A company specialised in the research, development and application of new technology and science, anything to find short-term solutions to long-term problems! As part of our brand-new Save The Day program, you’ll be sent to one of many alien planets in an effort to contribute to Project Assembly, a project I am legally bound to not tell you anything about for fear of our lives. And my job. As an engineer and pioneer, you won’t only be constructing and automating the very factory that will contribute to Project Assembly, but also explore and exploit the planet and its inhabitants as you expand. Don’t worry, we’re super inclusive when it comes to alien lifeforms! We’ll even allow for pets, how cool is that!? Just don’t tell R&D. Below you can find the three main pillars of your mission! Time to get to work, and Stay Effective!* *This motto is FICSIT Inc. property. Please do not use ironically. CONSTRUCT To achieve company milestones according to satisfaction we expect you to construct your FICSIT Inc. factory in such a way that it allows for easy expansion and complexion. Not only will buildings grow more complex over time, so will the parts they produce. Project Assembly isn’t your average high-school science project. We’re making history here! Go big or go home!* Of course, this requires both high-level and low-level power management, good luck getting to nuclear! We even support stuff like multi-floor warehouses so you can stack your buildings, and a whole bunch of navigational constructs like jump pads and walkways! Walkways are the best. They’re attached to the ground and everything. *Employee will be expected to fund their own travel expenses AUTOMATE So you know how your FICSIT Inc. factory can be turned into this incredibly intricate maze of conveyor belts in every direction, merging, splitting, crossing each other above and below? Conveyor belts carry, after all, the life-blood of our company! Well, since you’ll be in a pretty big area you’re going to need outposts. To make your life easier, we’ve developed self-driving trucks and trains so you can set up your very own transport system between any point in your area! EXPLORE & EXPLOIT R&D hasn’t figured out how to clone materials yet, weirdly enough, so you’re going to have to go out and use our patented method of extraterrestrial pioneering! This means exploring to find more or new stuff to exploit, to help expand your FICSIT Inc. factory. You’re on an uncharted alien planet, so try to be careful, don’t go alone if you don’t have to, and use protection! Who knows what kind of organisms have made this place their home? Or who knows what awesome treasures you’ll find? Don’t worry, this is why we assigned you your very own FICSIT Inc. handler.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Satisfactory",
-            "extract": "Satisfactory is a factory simulation game by Coffee Stain Studios for Windows, Xbox Series X/S, and PlayStation 5. The player is dropped onto an alien planet with a handful of tools and must use the planet's natural resources to construct increasingly complex factories. The initial goal is to construct a space elevator, through which the Pioneer begins supplying the megacorp the player works for with increasingly numerous and complex components for their unknown, but stated to be prudent, purposes. These exports unlock access to new technology that in turn unlocks a new tier of manufacturing and refinement machines to support the production of the next phase of parts to be delivered to FICSIT.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — XBOX",
-            "url": "https://www.youtube.com/watch?v=CMq9LGe7FM4",
-            "extract": "Verified public, embeddable promotional trailer: Satisfactory: Core Values Reveal Trailer",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "CMq9LGe7FM4",
-        "youtubeVideoTitle": "Satisfactory: Core Values Reveal Trailer",
-        "reviewMode": "review",
-        "score": 7.2
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 6941,
       "articlePath": "src/content/reviews/game-satisfactory-58806.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-satisfactory-58806/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-satisfactory-58806/",
+      "publishedAt": "2026-11-24T13:16:01.484Z"
+    },
+    "series:289517": {
+      "key": "series:289517",
+      "type": "series",
+      "id": "289517",
+      "title": "Dead-End Job",
+      "item": {
+        "type": "series",
+        "id": "289517",
+        "name": "Dead-End Job",
+        "date": "2026-10-30",
+        "preview": false,
+        "popularity": 45.9376,
+        "source": "TMDB"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-24T13:16:02.908Z",
+      "updatedAt": "2026-11-24T13:17:01.749Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Dead-End Job",
+        "type": "series",
+        "collectedAt": "2026-11-24T13:16:03.386Z",
+        "sourceId": "series:289517",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/289517",
+        "overview": "Drowning in debt, a young man takes lucrative part-time jobs from a mysterious agency — only to find his hustle for more money turning nightmarish.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/289517",
+            "extract": "Drowning in debt, a young man takes lucrative part-time jobs from a mysterious agency — only to find his hustle for more money turning nightmarish.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Dead-End_Job",
+            "extract": "Dead-End Job is a 2026 South Korean mystery horror fantasy television series written by Kyeong Min-sun and Lee Shin-ji, directed by Kim Da-min, and starring Lee Jae-wook, Go Min-si, Kim Min-ha, and Lee Hee-joon. The first four episodes of the series premiered at the 31st Busan International Film Festival in the 'On Screen' section on October 7, 2026. It was released globally on Netflix on October 30.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — TrailerLuxe Official",
+            "url": "https://www.youtube.com/watch?v=8cNER6J615o",
+            "extract": "Verified public, embeddable promotional trailer: Dead-End Job | Official Hindi Trailer | Netflix Original Series",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 125 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "8cNER6J615o",
+        "youtubeVideoTitle": "Dead-End Job | Official Hindi Trailer | Netflix Original Series",
+        "youtubeChannel": "TrailerLuxe Official",
+        "releaseDate": "2026-10-30",
+        "genres": [
+          "Mystery",
+          "Drama"
+        ],
+        "platforms": [],
+        "cast": [
+          "Lee Jae-wook",
+          "Go Min-si",
+          "Kim Min-ha",
+          "Lee Hee-jun"
+        ],
+        "crew": [
+          "Kim Da-min",
+          "Lee Sin-ji",
+          "Gyeong Min-seon"
+        ],
+        "rating": 7.556,
+        "ratingScale": 10,
+        "votes": 125,
+        "poster": "https://image.tmdb.org/t/p/w780/wUvzMC7EToPgci31ZZRCeqCmQ6d.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/gWedDgBsZkuOho2qe3q2sTQmbpO.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "Dead-End Job: فكرة واعدة، لكن الأدلة المتاحة لا تكشف إن كانت الدراما تفي بوعدها",
+        "summary": "تبدأ Dead-End Job من فرضية واضحة الجاذبية: شاب غارق في الديون يقبل أعمالاً جزئية مربحة عبر وكالة غامضة، ثم يتحول سعيه إلى المال إلى تجربة كابوسية. وتمنحها بيانات العمل وتصنيفه المتباين بين الغموض والدراما، وبين الرعب والفانتازيا، مجالاً لخلط التوتر بالحكاية الاجتماعية. لكن المعلومات المنشورة هنا لا تفصّل تطور الحبكة أو الشخصيات أو شكل التنفيذ الفني، لذلك لا يصح تحويل إمكانات الفكرة إلى مديح مؤكد. هذه مراجعة تحريرية للمادة الموثقة، لا ادعاء بمشاهدة المسلسل؛ وحكمها متحفظ لأن الأدلة تثبت نقطة انطلاق مثيرة ولا تكفي لإثبات نجاحها الدرامي أو البصري.",
+        "verdict": "تملك Dead-End Job أساساً حكائياً صالحاً لدراما غموض ذات رهانات إنسانية: الحاجة إلى المال تدفع البطل نحو وكالة مجهولة، والعمل المربح ينقلب إلى كابوس. هذا التوتر بين المنفعة والخطر، مع حضور أسماء معروفة في طاقم التمثيل وكتابة العمل وإخراجه، يمنح المسلسل سبباً وجيهاً للاهتمام. غير أن الحكم النهائي على جودة التنفيذ يظل محدوداً بما تثبته المعلومات المتاحة؛ فلا تفاصيل موثقة هنا عن مسار الشخصيات أو التصوير أو الصوت أو إيقاع الحلقات. لذلك نوصي به بحذر لمن تجذبه الفرضية وأجواء الغموض والرعب، لا بوصفه نجاحاً مضموناً أو عملاً فنياً حُسم تفوقه.",
+        "body": "## مقدمة وسياق العمل\nتُقدَّم Dead-End Job بوصفها سلسلة تلفزيونية كورية جنوبية صدرت عالمياً على Netflix في 30 أكتوبر 2026، بعد عرض الحلقات الأربع الأولى ضمن قسم On Screen في مهرجان بوسان السينمائي الدولي في 7 أكتوبر من العام نفسه، وفق المعلومات المتاحة. هذه التواريخ تثبت مساراً من العرض المهرجاني إلى الإتاحة العالمية، لكنها لا تكفي وحدها دليلاً على الجودة أو على حجم الاستجابة النقدية. كما أن البيانات تسمي العمل Mystery وDrama، في حين تصفه المادة الموسوعية بأنه يجمع الغموض والرعب والفانتازيا؛ وهذا اختلاف في التأطير النوعي يستحق الانتباه، لا دليلاً على تناقض داخل المسلسل.\n\nهذه مراجعة تحريرية مبنية على بيانات العمل وملخصه ومعلومات إنتاجه والمادة الترويجية المحددة، وليست شهادة مشاهدة مباشرة. والمصادر المتاحة لا تعرض مراجعات مستقلة مفصلة أو وصفاً مشهدياً موثقاً يمكن أن يسند حكماً قاطعاً على التنفيذ. لذلك نفرق هنا بين حقيقة الفرضية المعروفة وبين الاستنتاج النقدي بشأن ما قد تمنحه من إمكانات. أما إعلان التريلر الموثق فيحمل عنوان «Official Hindi Trailer» وينشره حساب TrailerLuxe Official؛ لا تكفي هذه المعلومة وحدها لإثبات أن القناة هي الحساب الرسمي لـNetflix، ولا نعاملها كبديل عن الاطلاع على المسلسل.\n\n## الفكرة والقصة أو التجربة\nيضع الملخص الرسمي المتاح مركز الثقل في وضع اجتماعي مباشر: شاب غارق في الديون يقبل أعمالاً جزئية مربحة تعرضها وكالة غامضة، ثم يتحول سعيه إلى المال إلى كابوس. الفكرة تربط الحاجة الاقتصادية بمصدر خطر غير واضح، وتمنح كل وظيفة محتملة وظيفة سردية مزدوجة: وسيلة لتخفيف الأزمة، ومدخل إلى مزيد من التهديد. هذه نقطة انطلاق محددة أكثر من مجرد لغز منفصل عن حياة الشخصية، لأن الدافع المالي يفسر لماذا يقبل البطل أصلاً الاقتراب من جهة مجهولة.\n\nلكن الملخص لا يذكر طبيعة الوظائف، ولا آلية اختيارها، ولا ما إذا كانت الحلقات تتبع مهمات منفصلة أو حبكة متصلة. ومن ثم لا يمكن الجزم بمدى تنوع الحكايات أو بقدرة المسلسل على تصعيد المخاطر من دون تكرار. كذلك لا نعرف شكل الوكالة أو حدود ما تخفيه؛ أي تفصيل من هذا النوع سيكون اختراعاً لا تسنده المادة. تقديرنا الإيجابي هنا يخص وضوح المحرك الدرامي وتعارضه المنتج بين الربح والخطر، لا نجاح كل منعطف أو حل اللغز.\n\n## السرد والشخصيات أو تصميم اللعب\nلا ينطبق تحليل تصميم اللعب على هذا العمل التلفزيوني؛ العنصر المناسب للنقاش هو السرد والشخصيات. المعروف أن الشخصية المحورية شاب يعاني الديون، وأن قصته تبدأ بقبول وظائف من وكالة غامضة. هذا يكشف دافعاً عملياً قابلاً للفهم، ويتيح للحكاية ربط القرارات بعواقبها بدلاً من تقديم الخطر بوصفه حادثاً عشوائياً. لكنه لا يخبرنا كيف كُتبت الشخصية، أو إن كانت الأزمة المالية تمنحها تناقضات وتحولات تتجاوز الحاجة المباشرة إلى المال.\n\nتُنسب كتابة المسلسل إلى كيونغ مين-سون ولي شين-جي، ويُذكر ضمن طاقم التمثيل لي جاي-ووك، وغو مين-سي، وكيم مين-ها، ولي هي-جون. هذه أسماء إنتاجية موثقة يمكنها أن تساعد القارئ في التعرف إلى المشروع، لكنها لا تثبت بمفردها جودة السيناريو أو الأداء، ولا تسمح بتوزيع أدوار بعينها أو تحليل علاقات الشخصيات. وبغياب وصف موثق للشخصيات المساندة والحوار وتطور الحلقات، تظل النتيجة المنضبطة أن المسلسل يملك نقطة ارتكاز درامية واضحة، بينما يبقى عمق بنائها غير محسوم في ملف الأدلة.\n\n## الإخراج والجوانب الفنية\nيُنسب الإخراج إلى كيم دا-مين، وهي معلومة أساسية لفهم فريق العمل، لكنها لا تقدم وصفاً لقرارات الإخراج أو لطريقة تنظيم المشاهد. لا يتوفر في الأدلة تحليل لتكوين اللقطات، أو إدارة التوتر، أو استخدام المواقع، ولا يصح استنتاج هذه العناصر من تصنيف المسلسل أو من عنوانه. كذلك لا تتضمن المادة تقارير موثقة عن المؤثرات أو المونتاج أو مشكلات تقنية؛ لذا سيكون من غير الدقيق مدحها أو انتقادها على أساس التخمين.\n\nيمكن مع ذلك تقييم طريقة تقديم الفكرة على مستوى المعلومات: الملخص موجز ويجمع بين الحاجة الاقتصادية والوكالة الغامضة والانقلاب الكابوسي، فيوصل نوع الصراع سريعاً من دون كشف تفاصيل الحبكة. هذه فعالية في تعريف المشروع، وليست حكماً على إخراجه. وعرض أربع حلقات أولى في مهرجان بوسان يثبت أن جزءاً من العمل عُرض ضمن برنامج المهرجان، لكنه لا يكشف وحده عن استقبال تلك الحلقات أو عن مستواها الفني. لذلك يبقى محور الإخراج موضع تحفظ حقيقي، لا مساحة لملء الفراغ بعبارات مديح عامة.\n\n## الصورة والهوية البصرية\nلا تتضمن المعلومات المتاحة وصفاً موثقاً للتصوير أو الألوان أو تصميم الإنتاج أو أسلوب الانتقال بين أجواء الغموض والرعب. وجود ملصق وخلفية ترويجية في بيانات العمل لا يسمح بتحليل الصورة المتحركة، كما أن عنوان التريلر وحده لا يكشف تفاصيل اللقطات. ولأن مراجعة بصرية مسؤولة تحتاج إلى مادة قابلة للفحص، لا يمكن نسبة أسلوب بصري محدد إلى المسلسل أو الادعاء بأنه يستخدم ظلالاً أو مواقع أو مؤثرات بعينها.\n\nما يمكن قوله هو أن تعدد التصنيفات المعلنة يضع تحدياً بصرياً محتملاً أمام العمل: الجمع بين الدراما والغموض والرعب والفانتازيا يحتاج عادة إلى هوية متماسكة كي لا تبدو النبرات متنافرة. لكن ذلك سؤال نقدي عن متطلبات الفكرة، لا استنتاج بأن المسلسل نجح أو فشل في تلبيتها. لذا فالدرجة الواردة لهذا المحور احترازية بسبب غياب الدليل البصري الكافي، ولا ينبغي قراءتها كحكم بأن الصورة متوسطة فعلياً.\n\n## الصوت والموسيقى والأداء\nلا تسجل المادة المتاحة معلومات عن الموسيقى التصويرية أو تصميم المؤثرات الصوتية أو أسماء الملحنين أو تفاصيل الأداء التمثيلي. لذلك لا يمكن إصدار أحكام على جودة الموسيقى، أو وضوح الحوار، أو قدرة الممثلين على بناء التوتر. معرفة أسماء الممثلين الأربعة المشار إليهم تثبت حضورهم في الطاقم، لكنها ليست دليلاً على طبيعة أدوارهم ولا على مستوى أدائهم. كما لا تكفي الإشارة إلى تريلر ترويجي ذي عنوان هندي لنسب خيارات صوتية محددة إلى النسخة الأصلية من المسلسل.\n\nللصوت والأداء أهمية خاصة في عمل يقدم نفسه عبر الغموض والانقلاب إلى أجواء كابوسية؛ فقد يكون الصمت أو الإيقاع الصوتي أو ردود الشخصيات مؤثراً في بناء الخوف، لكن لا شيء في الأدلة يحدد ما إذا كان المسلسل يعتمد أياً من هذه الوسائل. ومن ثم نعامل هذا الجانب بوصفه غير قابل للتقييم الموضوعي هنا، لا بوصفه نقصاً ثبت وجوده في العمل. الدرجة الرقمية تحفظية لتلبية بنية التقييم المطلوبة، ولا تعوض غياب مراجعة موثقة للصوت أو مشاهدة مباشرة للأداء.\n\n## الإيقاع والبناء وتنوع المحتوى\nلا توجد معلومات عن عدد الحلقات الكلي أو مدتها أو توزيع الوقائع بينها. والمثبت فقط أن الحلقات الأربع الأولى عُرضت في بوسان قبل الإطلاق العالمي. لذلك لا يمكن الحكم على سرعة السرد أو توازن الموسم، ولا على ما إذا كانت الوظائف التي تقدمها الوكالة تنتج حكايات مختلفة أو تعيد الصيغة نفسها. حتى وصف العمل بأنه مسلسل لا يكفي لاستنتاج إيقاعه أو بنيته الداخلية.\n\nمع ذلك تطرح الفرضية سؤالاً واضحاً عن البناء: هل يتيح العمل لكل وظيفة أن تكشف جانباً جديداً من الوكالة أو البطل، أم تصبح الوظائف مجرد حلقات خطر منفصلة؟ وهل يتصاعد الكابوس بما يبرر قرارات الشخصية؟ هذه أسئلة تحليلية مستمدة من ملخص القصة، وليست إجابات عن أحداث شاهدناها. النتيجة أن للمسلسل محركاً قابلاً للتصعيد والتنوع، لكن نجاحه في استثماره لا تثبته البيانات. ولهذا لا نمنح الإيقاع حكماً مرتفعاً أو منخفضاً على أساس توقعات النوع وحدها.\n\n## نقاط القوة\nأقوى ما تثبته المادة هو وضوح الرهان المركزي: الديون تفسر بحث البطل عن المال، والوكالة الغامضة تحول الحل المؤقت إلى مصدر خطر. هذا الرابط يمنح الحبكة أساساً مفهوماً بدلاً من الاعتماد على الغرابة وحدها. كذلك يتيح الجمع المعلن بين الغموض والدراما، مع وصف موسوعي يضيف الرعب والفانتازيا، مجالاً لخلط التهديد الخارجي بالأزمة الشخصية؛ وهي إمكانية جذابة إذا حافظ التنفيذ على وحدة النبرة.\n\nومن النقاط الإيجابية الموثقة وجود فريق معروف الأسماء في التمثيل والكتابة والإخراج، إلى جانب مسار إصدار واضح شمل عرضاً مبكراً لأربع حلقات في مهرجان بوسان ثم الإتاحة العالمية على Netflix. هذه عناصر تجعل العمل قابلاً للاكتشاف وتوضح سياقه الإنتاجي، من دون أن نخلط بين المكانة أو الانتشار وبين التفوق الفني. كما أن الملخص لا يفرط في كشف تفاصيل القصة، فيمنح المشاهد المحتمل صورة عن نقطة الانطلاق مع إبقاء طبيعة الكابوس مجهولة.\n\n## نقاط الضعف\nالمأخذ الأهم على العمل كما يمكن تقييمه من الأدلة هو محدودية ما نعرفه عن التنفيذ، لا عيب فني مثبت داخل الحلقات. فالمعلومات لا تعرض تطور الشخصية، ولا طبيعة الوظائف، ولا آلية الغموض أو مسار التصعيد؛ وهذا يمنع التحقق من أن الفكرة تتجاوز ملخصاً تسويقياً جذاباً. كما أن غياب البيانات الموثقة عن الصورة والصوت والإيقاع يجعل أي حكم حاسم على هذه المحاور غير مسؤول، ويضع سقفاً واضحاً لدرجة الثقة بهذه المراجعة.\n\nوثمة تفاوت في التصنيف بين بيانات TMDB التي تذكر الغموض والدراما والمصدر الموسوعي الذي يضيف الرعب والفانتازيا. قد يكون ذلك اختلافاً في طريقة وصف خليط الأنواع، ولا يكفي لإثبات ارتباك المسلسل نفسه، لكنه يترك هوية العمل النوعية أقل تحديداً للقارئ. كذلك لا يوفر الملف آراء نقدية مستقلة مفصلة توازن المادة الترويجية أو تحسم استقبال الحلقات. أما متوسط TMDB البالغ 7.556 من 10، استناداً إلى 125 صوتاً، فهو مؤشر جماهيري ثانوي منسوب إلى المنصة لا بديل عن حكم تحريري، ولا دليل مستقل على جودة عنصر بعينه.\n\n## لمن يناسب هذا العمل؟\nقد يناسب المسلسل من ينجذب إلى حكايات تبدأ بضائقة مادية ثم تكشف وجهاً مقلقاً لمؤسسة غامضة، ومن يفضل أن يتعرف إلى الفكرة عبر فرضية واضحة من دون معرفة تفاصيل الحبكة سلفاً. كذلك قد يجذب من يتابع أعمال الغموض الكورية أو يراقب مشروعات الممثلين والكتّاب والمخرج المذكورين، مع التنبيه إلى أن أسماء الطاقم لا تكفي وحدها للتوصية الفنية. وجود تصنيف للرعب والفانتازيا في مصدر وتصنيف الغموض والدراما في آخر يعني أن توقعات النبرة ينبغي أن تبقى مرنة.\n\nأما من يبحث عن تقييم موثق لجودة التصوير أو الموسيقى أو بناء الشخصيات، فلن يجد في المعلومات المتاحة ما يكفي لاتخاذ قرار على أساس هذه العناصر. توصيتنا هنا مشروطة بالاهتمام بالفرضية، لا بضمان تجربة متماسكة أو مخيفة أو مؤثرة. يمكن للمشاهد المحتمل أن يعد العمل خياراً للاستكشاف إذا كان سؤال «إلى أي حد يقود الاحتياج المالي إلى خطر أكبر؟» يثير فضوله، مع إدراك أن الإجابة الفعلية لا يمكن استنتاجها من الملخص وحده.\n\n## الحكم النهائي\nتنجح Dead-End Job، على مستوى الفكرة الموثقة، في إقامة تعارض جذاب بين الحاجة إلى المال والارتياب من الجهة التي تعرضه. وهذه قاعدة درامية تمنح المسلسل فرصة لبناء غموض ذي صلة بضغط الحياة اليومية، كما أن الطاقم وتاريخ العرض يقدمان سياقاً واضحاً للمشروع. لكن لا ينبغي أن تتحول الفرصة إلى شهادة نجاح: لا تكشف الأدلة المتاحة ما إذا كانت الكتابة تعمق الشخصية، أو ما إذا كان الإخراج والصوت والصورة يرفعون التوتر، أو إن كان الإيقاع يحافظ على تنوع الوظائف.\n\nحكمنا النهائي إيجابي بحذر تجاه الفرضية، ومتحفظ تجاه العمل المنجز لأن تفاصيل التنفيذ غير موثقة في ملف الأدلة. لذلك نوصي به لمن يجد في مدخل الديون والوكالة المجهولة ما يستحق التجربة، مع عدم تقديمه بوصفه ترشيحاً مؤكداً لعشاق الرعب أو الدراما قبل التحقق من طبيعة نبرته. الدرجات أدناه تقديرات احترازية منخفضة الثقة، وبخاصة في المحاور التي لا تسندها أوصاف فنية أو مراجعات مستقلة مفصلة؛ إنها لا تدعي مشاهدة لم تحدث، ولا تجعل المؤشر الجماهيري بديلاً عن النقد.",
+        "scores": {
+          "story": 6.5,
+          "visuals": 6,
+          "sound": 6,
+          "pacing": 6
+        },
+        "pros": [
+          "فرضية محددة تربط ديون البطل بقبوله أعمالاً مربحة من وكالة غامضة، ثم تقلب المنفعة إلى خطر.",
+          "الدافع الاقتصادي يمنح الشخصية المحورية سبباً مفهوماً للاقتراب من مصدر التهديد.",
+          "التصنيفات المتاحة تفتح مجالاً لمزج الدراما والغموض، مع ورود الرعب والفانتازيا في وصف مستقل.",
+          "طاقم موثق يضم لي جاي-ووك وغو مين-سي وكيم مين-ها ولي هي-جون، مع كتابة كيونغ مين-سون ولي شين-جي وإخراج كيم دا-مين.",
+          "مسار إصدار واضح: عرض أول أربع حلقات في مهرجان بوسان قبل الإطلاق العالمي على Netflix."
+        ],
+        "cons": [
+          "المعلومات المتاحة لا توضح تطور الحبكة أو الشخصيات أو طبيعة الوظائف، لذلك لا يمكن التحقق من عمق البناء الدرامي.",
+          "لا توجد أدلة موثقة كافية لتقييم التصوير أو الهوية البصرية أو الموسيقى أو الأداء.",
+          "لا تتوفر تفاصيل عن عدد الحلقات أو مدتها أو بنائها، ما يمنع حكماً واثقاً على الإيقاع والتنوع.",
+          "يختلف التأطير النوعي بين بيانات TMDB والوصف الموسوعي، من دون تفاصيل إضافية تحسم طبيعة النبرة.",
+          "مؤشر الجمهور في TMDB محدود بـ125 صوتاً ولا يصلح بديلاً عن تقييم مستقل للتنفيذ."
+        ],
+        "title": "Dead-End Job",
+        "type": "series",
+        "sourceId": "series:289517",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/289517",
+        "sourceRating": 7.556,
+        "sourceRatingScale": 10,
+        "sourceVoteCount": 125,
+        "sourceRatingCheckedAt": "2026-11-24T13:16:03.386Z",
+        "audienceScore": 7.6,
+        "releaseDate": "2026-10-30",
+        "poster": "https://image.tmdb.org/t/p/w780/wUvzMC7EToPgci31ZZRCeqCmQ6d.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/gWedDgBsZkuOho2qe3q2sTQmbpO.jpg",
+        "genres": [
+          "Mystery",
+          "Drama"
+        ],
+        "platforms": [],
+        "cast": [
+          "Lee Jae-wook",
+          "Go Min-si",
+          "Kim Min-ha",
+          "Lee Hee-jun"
+        ],
+        "crew": [
+          "Kim Da-min",
+          "Lee Sin-ji",
+          "Gyeong Min-seon"
+        ],
+        "tags": [
+          "Mystery",
+          "Drama"
+        ],
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/289517",
+            "extract": "Drowning in debt, a young man takes lucrative part-time jobs from a mysterious agency — only to find his hustle for more money turning nightmarish.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Dead-End_Job",
+            "extract": "Dead-End Job is a 2026 South Korean mystery horror fantasy television series written by Kyeong Min-sun and Lee Shin-ji, directed by Kim Da-min, and starring Lee Jae-wook, Go Min-si, Kim Min-ha, and Lee Hee-joon. The first four episodes of the series premiered at the 31st Busan International Film Festival in the 'On Screen' section on October 7, 2026. It was released globally on Netflix on October 30.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — TrailerLuxe Official",
+            "url": "https://www.youtube.com/watch?v=8cNER6J615o",
+            "extract": "Verified public, embeddable promotional trailer: Dead-End Job | Official Hindi Trailer | Netflix Original Series",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "8cNER6J615o",
+        "youtubeVideoTitle": "Dead-End Job | Official Hindi Trailer | Netflix Original Series",
+        "reviewMode": "review",
+        "score": 6.2
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 7292,
+      "articlePath": "src/content/reviews/series-dead-end-job-289517.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-dead-end-job-289517/"
     }
   },
   "providers": {},
@@ -3412,9 +3452,9 @@
       "tokens": 47590
     },
     "2026-11-24": {
-      "articles": 7,
-      "requests": 17,
-      "tokens": 48710
+      "articles": 8,
+      "requests": 19,
+      "tokens": 56002
     }
   },
   "history": []
