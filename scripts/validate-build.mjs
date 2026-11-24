@@ -100,7 +100,7 @@ if (!seen.has(new URL(canonicalPath, site).href)) {
 // Every review must ship its own share metadata and structured review/article data.
 const reviewOutput = path.join(dist, 'reviews');
 const reviewHtmlPaths = await fs.readdir(reviewOutput, { recursive: true }).catch(() => []);
-const reviewPages = reviewHtmlPaths.filter(file => String(file).endsWith('index.html'));
+const reviewPages = reviewHtmlPaths.filter(file => String(file).endsWith('index.html') && String(file) !== 'index.html');
 if (!reviewPages.length) throw new Error('لم يتم العثور على صفحات مراجعات HTML لفحص SEO.');
 for (const relative of reviewPages) {
   const html = await fs.readFile(path.join(reviewOutput, relative), 'utf8');
