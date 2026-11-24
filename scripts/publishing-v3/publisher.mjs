@@ -17,7 +17,9 @@ export function renderMarkdown(article) {
   validateArticle(article, reviewMode !== "review" ? { minWords:650, minCharacters:3200 } : { minWords:1000, minCharacters:5200 });
   if (!/^[A-Za-z0-9_-]{11}$/.test(article.youtubeVideoId || "")) throw new Error("V3 article requires a verified YouTube video ID");
   const list = values => (values||[]).map(x=>"  - "+quote(x)).join("\n") || " []";
-  const finalVerdict = hasScore\n    ? normalizeFinalRating(article.verdict, article.score)\n    : String(article.verdict || (isAudience ? "يعرض هذا المقال تقييم الجمهور من المصدر المحدد، وليس تقييماً تحريرياً من VibeCritic." : isPreview ? "هذه معاينة استباقية قبل الإصدار، ولا تتضمن حكماً نهائياً أو درجة." : "هذه قراءة معلوماتية محدودة الأدلة، ولا تتضمن تقييماً رقمياً أو حكماً نهائياً."));
+  const finalVerdict = hasScore
+    ? normalizeFinalRating(article.verdict, article.score)
+    : String(article.verdict || (isAudience ? "يعرض هذا المقال تقييم الجمهور من المصدر المحدد، وليس تقييماً تحريرياً من VibeCritic." : isPreview ? "هذه معاينة استباقية قبل الإصدار، ولا تتضمن حكماً نهائياً أو درجة." : "هذه قراءة معلوماتية محدودة الأدلة، ولا تتضمن تقييماً رقمياً أو حكماً نهائياً."));
   const finalBody = hasScore ? normalizeBodyFinalRating(article.body, article.score) : String(article.body || "");
   const scoreFields = !hasScore ? [] : [
     "score: "+Number(article.score).toFixed(2),
@@ -30,7 +32,9 @@ export function renderMarkdown(article) {
     ? "> معاينة استباقية قبل الإصدار، وليست مراجعة نهائية ولا تتضمن تقييماً رقمياً."
     : isAudience
       ? "> تقييم الجمهور: الدرجة المعروضة متوسط المستخدمين في المصدر المذكور وعدد أصواته، وليست درجة تحريرية صادرة عن VibeCritic."
-      : "> مراجعة تحريرية نهائية مبنية على مصادر موثوقة ومواد رسمية متاحة. لا تدّعي تجربة لعب أو مشاهدة مباشرة لم ينفذها المحرر.";
+      : reviewMode === "limited"
+        ? "> قراءة معلوماتية محدودة: تعرض المعلومات التي تسندها المصادر المتاحة، ولا تمثل مراجعة نهائية أو تقييماً رقمياً لجودة التنفيذ."
+        : "> مراجعة تحريرية نهائية مبنية على مصادر موثوقة ومواد رسمية متاحة. لا تدّعي تجربة لعب أو مشاهدة مباشرة لم ينفذها المحرر.";
   const fm = [
     "---",
     "title: "+quote(article.title),
