@@ -71,6 +71,15 @@ const fallbackCandidate = selectEligibleCandidate(discoveryCandidates,{
   today:"2026-11-22"
 });
 assert.equal(fallbackCandidate.id,"3030");
+// Candidates repeated across trending, popular and paginated discovery results are deduplicated,
+// while the strongest catalog popularity signal is retained.
+const paginatedCandidate = selectEligibleCandidate([
+  {type:"movie",id:"5050",name:"Paged Release",date:"2025-06-01",popularity:12,source:"TMDB"},
+  {type:"movie",id:"5050",name:"Paged Release",date:"2025-06-01",popularity:42,source:"TMDB"},
+  {type:"series",id:"6060",name:"Series Page Two",date:"2024-09-01",popularity:30,source:"TMDB"}
+],{today:"2026-11-24"});
+assert.equal(paginatedCandidate.id,"5050");
+assert.equal(paginatedCandidate.popularity,42);
 assert.equal(selectEligibleCandidate(discoveryCandidates,{
   used:new Set(["movie:2024","movie:3030","series:4040"]),
   jobs:{"movie:791523":{status:"rejected"}},
