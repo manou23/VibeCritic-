@@ -43,7 +43,6 @@ tags:
   - "Animation"
   - "Mystery"
   - "Drama"
-mediaVerified: true
 ---
 ## نطاق القراءة
 
