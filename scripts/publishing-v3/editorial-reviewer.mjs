@@ -7,6 +7,18 @@ function parseReview(raw) {
   return value;
 }
 
+function validateReview(review) {
+  const allowed = ["low","medium","high"];
+  if (typeof review.approved !== "boolean" || !Number.isFinite(Number(review.score)) ||
+      Number(review.score) < 0 || Number(review.score) > 10 ||
+      !allowed.includes(review.factualRisk) || !allowed.includes(review.repetition) ||
+      !allowed.includes(review.exaggeration) || !Array.isArray(review.issues) ||
+      !review.issues.every(issue => typeof issue === "string") ||
+      (review.notes !== undefined && typeof review.notes !== "string")) {
+    throw new Error("Gemini editorial review schema validation failed");
+  }
+}
+
 export async function reviewArticle(article, evidence) {
   const apiKey = env.GEMINI_API_KEY;
   if (!apiKey) return { skipped:true, reason:"GEMINI_API_KEY is not configured", provider:null, tokens:0, requests:0 };
@@ -18,13 +30,13 @@ export async function reviewArticle(article, evidence) {
     "أنت محرر تدقيق مستقل لموقع VibeCritic. راجع المقال العربي قبل النشر، ولا تعِد كتابته.",
     "نوع المقال: " + (isPreview ? "معاينة استباقية قبل الإصدار بلا درجة نهائية" : isAudience ? "تحليل مبني على تقييم الجمهور من مصدر موثق، وليس درجة تحريرية" : "مراجعة نقدية كاملة ذات درجة نهائية"),
     "قارن كل ادعاء واقعي في المقال بملف الأدلة المرفق. لا تعتبر وجود رابط مصدر دليلاً على أن كل ما في المقال صحيح.",
-    "افحص: اختلاق التفاصيل، الخلط بين الحقائق والاستنتاجات، الادعاء الكاذب بتجربة مباشرة، التكرار والحشو، وضوح حدود الأدلة، ودقة وصف المصادر.",
+    "افحص اختلاق التفاصيل، والخلط بين الحقائق والاستنتاجات، والادعاء الكاذب بتجربة مباشرة، والتكرار والحشو، وحدود الأدلة ودقة وصف المصادر.",
     isPreview
-      ? "لأن المقال معاينة قبل الإصدار، يجب ألا يحتوي على درجة رقمية أو حكم نهائي. تحقق من أن تاريخ الإصدار مستقبلي وأن الحقائق منفصلة عن التوقعات."
+      ? "تحقق من أن تاريخ الإصدار مستقبلي وأن الحقائق منفصلة عن التوقعات، ولا تسمح بدرجة رقمية أو حكم نهائي."
       : isAudience
-        ? "تحقق من تطابق متوسط الجمهور وعدد الأصوات واسم المنصة مع الأدلة. يجب نسب الدرجة للمصدر بوضوح، وعدم عرضها كتقييم VibeCritic أو اختراع درجات فرعية."
-        : "لأن المقال مراجعة كاملة، افحص أن كل درجة ومحور نقدي مدعوم بأدلة فعلية كافية، وارفض أي محور لا تسمح الأدلة بتقييمه.",
-    "أخرج JSON فقط بهذه المفاتيح: approved (boolean), score (number 0..10), factualRisk (low|medium|high), repetition (low|medium|high), exaggeration (low|medium|high), issues (array of short Arabic strings), notes (short Arabic string).",
+        ? "تحقق من تطابق متوسط الجمهور وعدد الأصوات واسم المنصة مع الأدلة، وانسب الدرجة للمصدر ولا تعرضها كتقييم VibeCritic أو تخترع درجات فرعية."
+        : "تحقق من أن كل درجة ومحور نقدي مدعوم بأدلة فعلية كافية، وارفض أي محور لا تسمح الأدلة بتقييمه.",
+    "أخرج JSON صالحاً فقط بهذه المفاتيح: approved (boolean), score (number 0..10), factualRisk (low|medium|high), repetition (low|medium|high), exaggeration (low|medium|high), issues (array of short Arabic strings), notes (short Arabic string). لا تضف Markdown أو نصاً خارج JSON.",
     isPreview
       ? "ارفض إذا كان تاريخ الإصدار غير مستقبلي، أو عرض المقال توقعات كحقائق، أو تضمن تقييماً نهائياً."
       : isAudience
@@ -34,54 +46,57 @@ export async function reviewArticle(article, evidence) {
     "المقال: " + JSON.stringify({title:article.title,summary:article.summary,verdict:article.verdict,body:article.body,pros:article.pros,cons:article.cons,sources:article.sources,youtubeVideoId:article.youtubeVideoId,youtubeVideoTitle:article.youtubeVideoTitle})
   ].join("\n\n");
 
-  let response;
-  try {
-    response = await fetch("https://generativelanguage.googleapis.com/v1beta/models/" + encodeURIComponent(model) + ":generateContent", {
-      method:"POST",
-      headers:{ "content-type":"application/json", "x-goog-api-key":apiKey },
-      body:JSON.stringify({
-        contents:[{role:"user",parts:[{text:prompt}]}],
-        generationConfig:{temperature:0.1,responseMimeType:"application/json",maxOutputTokens:1600}
-      }),
-      signal:AbortSignal.timeout(25000)
-    });
-  } catch (error) {
-    if (error?.name === "TimeoutError" || error?.name === "AbortError") {
-      return { skipped:true, reason:"Gemini editorial review timed out; local article validation remains required", provider:"gemini", model, tokens:0, requests:1 };
+  let totalTokens = 0;
+  let lastFormatError;
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    const retryInstruction = attempt === 2
+      ? "\n\nهذه إعادة محاولة لأن الرد السابق لم يكن JSON كاملاً وصالحاً. أعد إجراء التدقيق نفسه من البداية، وأخرج كائن JSON واحداً مكتملاً مطابقاً للمفاتيح والأنواع المطلوبة. اختصر issues وnotes عند الحاجة، ولا تحذف أي مفتاح."
+      : "";
+    let response;
+    try {
+      response = await fetch("https://generativelanguage.googleapis.com/v1beta/models/" + encodeURIComponent(model) + ":generateContent", {
+        method:"POST",
+        headers:{ "content-type":"application/json", "x-goog-api-key":apiKey },
+        body:JSON.stringify({
+          contents:[{role:"user",parts:[{text:prompt + retryInstruction}]}],
+          generationConfig:{temperature:0.1,responseMimeType:"application/json",maxOutputTokens:2400}
+        }),
+        signal:AbortSignal.timeout(25000)
+      });
+    } catch (error) {
+      if (error?.name === "TimeoutError" || error?.name === "AbortError") {
+        if (attempt === 1) return { skipped:true, reason:"Gemini editorial review timed out; local article validation remains required", provider:"gemini", model, tokens:totalTokens, requests:attempt };
+      }
+      throw error;
     }
-    throw error;
-  }
-  if ([404,429,500,502,503,504].includes(response.status)) {
-    const category = response.status === 404 ? "configured model is unavailable" : response.status === 429 ? "quota or rate limit reached" : "service temporarily unavailable";
-    return { skipped:true, reason:"Gemini editorial review skipped: " + category + " (HTTP " + response.status + "); local article validation remains required", provider:"gemini", model, tokens:0, requests:1 };
-  }
-  if (!response.ok) throw new Error("Gemini editorial review HTTP " + response.status + ": " + (await response.text()).slice(0,400));
-  const data = await response.json();
-  const raw = (data.candidates?.[0]?.content?.parts || []).map(part=>part.text || "").join("");
-  if (!raw) throw new Error("Gemini editorial review returned no JSON");
-  let review;
-  try { review = parseReview(raw); }
-  catch (error) { throw new Error("Gemini editorial review returned invalid JSON: " + error.message); }
+    if ([404,429,500,502,503,504].includes(response.status)) {
+      const category = response.status === 404 ? "configured model is unavailable" : response.status === 429 ? "quota or rate limit reached" : "service temporarily unavailable";
+      if (attempt === 1) return { skipped:true, reason:"Gemini editorial review skipped: " + category + " (HTTP " + response.status + "); local article validation remains required", provider:"gemini", model, tokens:totalTokens, requests:attempt };
+      throw new Error("Gemini editorial review unavailable after retry (HTTP " + response.status + ")");
+    }
+    if (!response.ok) throw new Error("Gemini editorial review HTTP " + response.status + ": " + (await response.text()).slice(0,400));
 
-  const allowed = ["low","medium","high"];
-  if (typeof review.approved !== "boolean" || !Number.isFinite(Number(review.score)) ||
-      !allowed.includes(review.factualRisk) || !allowed.includes(review.repetition) ||
-      !allowed.includes(review.exaggeration) || !Array.isArray(review.issues)) {
-    throw new Error("Gemini editorial review schema validation failed");
+    const data = await response.json();
+    const usage = data.usageMetadata || {};
+    totalTokens += (Number(usage.promptTokenCount)||0)+(Number(usage.candidatesTokenCount)||0);
+    const candidate = data.candidates?.[0];
+    const raw = (candidate?.content?.parts || []).map(part=>part.text || "").join("");
+    try {
+      if (!raw || candidate?.finishReason === "MAX_TOKENS") throw new Error(candidate?.finishReason === "MAX_TOKENS" ? "Gemini response was truncated (MAX_TOKENS)" : "Gemini editorial review returned no JSON");
+      const review = parseReview(raw);
+      validateReview(review);
+      const rejected = !review.approved || Number(review.score) < 7 ||
+        review.factualRisk === "high" || review.repetition === "high" || review.exaggeration === "high";
+      if (rejected) {
+        const reasons = (review.issues || []).slice(0,5).join("; ") || review.notes || "Editorial quality gate rejected the article";
+        throw new Error("Gemini editorial review rejected article (score " + review.score + "/10): " + reasons);
+      }
+      return { skipped:false, provider:"gemini", model, review, tokens:totalTokens, requests:attempt };
+    } catch (error) {
+      if (String(error.message).startsWith("Gemini editorial review rejected article")) throw error;
+      lastFormatError = error;
+      if (attempt === 2) throw new Error("Gemini editorial review returned invalid or incomplete JSON after retry: " + error.message);
+    }
   }
-  const rejected = !review.approved || Number(review.score) < 7 ||
-    review.factualRisk === "high" || review.repetition === "high" || review.exaggeration === "high";
-  if (rejected) {
-    const reasons = (review.issues || []).slice(0,5).join("; ") || review.notes || "Editorial quality gate rejected the article";
-    throw new Error("Gemini editorial review rejected article (score " + review.score + "/10): " + reasons);
-  }
-  const usage = data.usageMetadata || {};
-  return {
-    skipped:false,
-    provider:"gemini",
-    model,
-    review,
-    tokens:(Number(usage.promptTokenCount)||0)+(Number(usage.candidatesTokenCount)||0),
-    requests:1
-  };
+  throw new Error("Gemini editorial review failed: " + (lastFormatError?.message || "unknown error"));
 }
