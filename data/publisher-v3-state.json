@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-24T13:17:01.749Z",
+  "updatedAt": "2026-11-24T14:39:42.356Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -3271,157 +3271,178 @@
         "popularity": 45.9376,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-24T13:16:02.908Z",
-      "updatedAt": "2026-11-24T13:17:01.749Z",
+      "updatedAt": "2026-11-24T14:38:51.756Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "Dead-End Job",
-        "type": "series",
-        "collectedAt": "2026-11-24T13:16:03.386Z",
-        "sourceId": "series:289517",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/289517",
-        "overview": "Drowning in debt, a young man takes lucrative part-time jobs from a mysterious agency — only to find his hustle for more money turning nightmarish.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/289517",
-            "extract": "Drowning in debt, a young man takes lucrative part-time jobs from a mysterious agency — only to find his hustle for more money turning nightmarish.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Dead-End_Job",
-            "extract": "Dead-End Job is a 2026 South Korean mystery horror fantasy television series written by Kyeong Min-sun and Lee Shin-ji, directed by Kim Da-min, and starring Lee Jae-wook, Go Min-si, Kim Min-ha, and Lee Hee-joon. The first four episodes of the series premiered at the 31st Busan International Film Festival in the 'On Screen' section on October 7, 2026. It was released globally on Netflix on October 30.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — TrailerLuxe Official",
-            "url": "https://www.youtube.com/watch?v=8cNER6J615o",
-            "extract": "Verified public, embeddable promotional trailer: Dead-End Job | Official Hindi Trailer | Netflix Original Series",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 125 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "8cNER6J615o",
-        "youtubeVideoTitle": "Dead-End Job | Official Hindi Trailer | Netflix Original Series",
-        "youtubeChannel": "TrailerLuxe Official",
-        "releaseDate": "2026-10-30",
-        "genres": [
-          "Mystery",
-          "Drama"
-        ],
-        "platforms": [],
-        "cast": [
-          "Lee Jae-wook",
-          "Go Min-si",
-          "Kim Min-ha",
-          "Lee Hee-jun"
-        ],
-        "crew": [
-          "Kim Da-min",
-          "Lee Sin-ji",
-          "Gyeong Min-seon"
-        ],
-        "rating": 7.556,
-        "ratingScale": 10,
-        "votes": 125,
-        "poster": "https://image.tmdb.org/t/p/w780/wUvzMC7EToPgci31ZZRCeqCmQ6d.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/gWedDgBsZkuOho2qe3q2sTQmbpO.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "Dead-End Job: فكرة واعدة، لكن الأدلة المتاحة لا تكشف إن كانت الدراما تفي بوعدها",
-        "summary": "تبدأ Dead-End Job من فرضية واضحة الجاذبية: شاب غارق في الديون يقبل أعمالاً جزئية مربحة عبر وكالة غامضة، ثم يتحول سعيه إلى المال إلى تجربة كابوسية. وتمنحها بيانات العمل وتصنيفه المتباين بين الغموض والدراما، وبين الرعب والفانتازيا، مجالاً لخلط التوتر بالحكاية الاجتماعية. لكن المعلومات المنشورة هنا لا تفصّل تطور الحبكة أو الشخصيات أو شكل التنفيذ الفني، لذلك لا يصح تحويل إمكانات الفكرة إلى مديح مؤكد. هذه مراجعة تحريرية للمادة الموثقة، لا ادعاء بمشاهدة المسلسل؛ وحكمها متحفظ لأن الأدلة تثبت نقطة انطلاق مثيرة ولا تكفي لإثبات نجاحها الدرامي أو البصري.",
-        "verdict": "تملك Dead-End Job أساساً حكائياً صالحاً لدراما غموض ذات رهانات إنسانية: الحاجة إلى المال تدفع البطل نحو وكالة مجهولة، والعمل المربح ينقلب إلى كابوس. هذا التوتر بين المنفعة والخطر، مع حضور أسماء معروفة في طاقم التمثيل وكتابة العمل وإخراجه، يمنح المسلسل سبباً وجيهاً للاهتمام. غير أن الحكم النهائي على جودة التنفيذ يظل محدوداً بما تثبته المعلومات المتاحة؛ فلا تفاصيل موثقة هنا عن مسار الشخصيات أو التصوير أو الصوت أو إيقاع الحلقات. لذلك نوصي به بحذر لمن تجذبه الفرضية وأجواء الغموض والرعب، لا بوصفه نجاحاً مضموناً أو عملاً فنياً حُسم تفوقه.",
-        "body": "## مقدمة وسياق العمل\nتُقدَّم Dead-End Job بوصفها سلسلة تلفزيونية كورية جنوبية صدرت عالمياً على Netflix في 30 أكتوبر 2026، بعد عرض الحلقات الأربع الأولى ضمن قسم On Screen في مهرجان بوسان السينمائي الدولي في 7 أكتوبر من العام نفسه، وفق المعلومات المتاحة. هذه التواريخ تثبت مساراً من العرض المهرجاني إلى الإتاحة العالمية، لكنها لا تكفي وحدها دليلاً على الجودة أو على حجم الاستجابة النقدية. كما أن البيانات تسمي العمل Mystery وDrama، في حين تصفه المادة الموسوعية بأنه يجمع الغموض والرعب والفانتازيا؛ وهذا اختلاف في التأطير النوعي يستحق الانتباه، لا دليلاً على تناقض داخل المسلسل.\n\nهذه مراجعة تحريرية مبنية على بيانات العمل وملخصه ومعلومات إنتاجه والمادة الترويجية المحددة، وليست شهادة مشاهدة مباشرة. والمصادر المتاحة لا تعرض مراجعات مستقلة مفصلة أو وصفاً مشهدياً موثقاً يمكن أن يسند حكماً قاطعاً على التنفيذ. لذلك نفرق هنا بين حقيقة الفرضية المعروفة وبين الاستنتاج النقدي بشأن ما قد تمنحه من إمكانات. أما إعلان التريلر الموثق فيحمل عنوان «Official Hindi Trailer» وينشره حساب TrailerLuxe Official؛ لا تكفي هذه المعلومة وحدها لإثبات أن القناة هي الحساب الرسمي لـNetflix، ولا نعاملها كبديل عن الاطلاع على المسلسل.\n\n## الفكرة والقصة أو التجربة\nيضع الملخص الرسمي المتاح مركز الثقل في وضع اجتماعي مباشر: شاب غارق في الديون يقبل أعمالاً جزئية مربحة تعرضها وكالة غامضة، ثم يتحول سعيه إلى المال إلى كابوس. الفكرة تربط الحاجة الاقتصادية بمصدر خطر غير واضح، وتمنح كل وظيفة محتملة وظيفة سردية مزدوجة: وسيلة لتخفيف الأزمة، ومدخل إلى مزيد من التهديد. هذه نقطة انطلاق محددة أكثر من مجرد لغز منفصل عن حياة الشخصية، لأن الدافع المالي يفسر لماذا يقبل البطل أصلاً الاقتراب من جهة مجهولة.\n\nلكن الملخص لا يذكر طبيعة الوظائف، ولا آلية اختيارها، ولا ما إذا كانت الحلقات تتبع مهمات منفصلة أو حبكة متصلة. ومن ثم لا يمكن الجزم بمدى تنوع الحكايات أو بقدرة المسلسل على تصعيد المخاطر من دون تكرار. كذلك لا نعرف شكل الوكالة أو حدود ما تخفيه؛ أي تفصيل من هذا النوع سيكون اختراعاً لا تسنده المادة. تقديرنا الإيجابي هنا يخص وضوح المحرك الدرامي وتعارضه المنتج بين الربح والخطر، لا نجاح كل منعطف أو حل اللغز.\n\n## السرد والشخصيات أو تصميم اللعب\nلا ينطبق تحليل تصميم اللعب على هذا العمل التلفزيوني؛ العنصر المناسب للنقاش هو السرد والشخصيات. المعروف أن الشخصية المحورية شاب يعاني الديون، وأن قصته تبدأ بقبول وظائف من وكالة غامضة. هذا يكشف دافعاً عملياً قابلاً للفهم، ويتيح للحكاية ربط القرارات بعواقبها بدلاً من تقديم الخطر بوصفه حادثاً عشوائياً. لكنه لا يخبرنا كيف كُتبت الشخصية، أو إن كانت الأزمة المالية تمنحها تناقضات وتحولات تتجاوز الحاجة المباشرة إلى المال.\n\nتُنسب كتابة المسلسل إلى كيونغ مين-سون ولي شين-جي، ويُذكر ضمن طاقم التمثيل لي جاي-ووك، وغو مين-سي، وكيم مين-ها، ولي هي-جون. هذه أسماء إنتاجية موثقة يمكنها أن تساعد القارئ في التعرف إلى المشروع، لكنها لا تثبت بمفردها جودة السيناريو أو الأداء، ولا تسمح بتوزيع أدوار بعينها أو تحليل علاقات الشخصيات. وبغياب وصف موثق للشخصيات المساندة والحوار وتطور الحلقات، تظل النتيجة المنضبطة أن المسلسل يملك نقطة ارتكاز درامية واضحة، بينما يبقى عمق بنائها غير محسوم في ملف الأدلة.\n\n## الإخراج والجوانب الفنية\nيُنسب الإخراج إلى كيم دا-مين، وهي معلومة أساسية لفهم فريق العمل، لكنها لا تقدم وصفاً لقرارات الإخراج أو لطريقة تنظيم المشاهد. لا يتوفر في الأدلة تحليل لتكوين اللقطات، أو إدارة التوتر، أو استخدام المواقع، ولا يصح استنتاج هذه العناصر من تصنيف المسلسل أو من عنوانه. كذلك لا تتضمن المادة تقارير موثقة عن المؤثرات أو المونتاج أو مشكلات تقنية؛ لذا سيكون من غير الدقيق مدحها أو انتقادها على أساس التخمين.\n\nيمكن مع ذلك تقييم طريقة تقديم الفكرة على مستوى المعلومات: الملخص موجز ويجمع بين الحاجة الاقتصادية والوكالة الغامضة والانقلاب الكابوسي، فيوصل نوع الصراع سريعاً من دون كشف تفاصيل الحبكة. هذه فعالية في تعريف المشروع، وليست حكماً على إخراجه. وعرض أربع حلقات أولى في مهرجان بوسان يثبت أن جزءاً من العمل عُرض ضمن برنامج المهرجان، لكنه لا يكشف وحده عن استقبال تلك الحلقات أو عن مستواها الفني. لذلك يبقى محور الإخراج موضع تحفظ حقيقي، لا مساحة لملء الفراغ بعبارات مديح عامة.\n\n## الصورة والهوية البصرية\nلا تتضمن المعلومات المتاحة وصفاً موثقاً للتصوير أو الألوان أو تصميم الإنتاج أو أسلوب الانتقال بين أجواء الغموض والرعب. وجود ملصق وخلفية ترويجية في بيانات العمل لا يسمح بتحليل الصورة المتحركة، كما أن عنوان التريلر وحده لا يكشف تفاصيل اللقطات. ولأن مراجعة بصرية مسؤولة تحتاج إلى مادة قابلة للفحص، لا يمكن نسبة أسلوب بصري محدد إلى المسلسل أو الادعاء بأنه يستخدم ظلالاً أو مواقع أو مؤثرات بعينها.\n\nما يمكن قوله هو أن تعدد التصنيفات المعلنة يضع تحدياً بصرياً محتملاً أمام العمل: الجمع بين الدراما والغموض والرعب والفانتازيا يحتاج عادة إلى هوية متماسكة كي لا تبدو النبرات متنافرة. لكن ذلك سؤال نقدي عن متطلبات الفكرة، لا استنتاج بأن المسلسل نجح أو فشل في تلبيتها. لذا فالدرجة الواردة لهذا المحور احترازية بسبب غياب الدليل البصري الكافي، ولا ينبغي قراءتها كحكم بأن الصورة متوسطة فعلياً.\n\n## الصوت والموسيقى والأداء\nلا تسجل المادة المتاحة معلومات عن الموسيقى التصويرية أو تصميم المؤثرات الصوتية أو أسماء الملحنين أو تفاصيل الأداء التمثيلي. لذلك لا يمكن إصدار أحكام على جودة الموسيقى، أو وضوح الحوار، أو قدرة الممثلين على بناء التوتر. معرفة أسماء الممثلين الأربعة المشار إليهم تثبت حضورهم في الطاقم، لكنها ليست دليلاً على طبيعة أدوارهم ولا على مستوى أدائهم. كما لا تكفي الإشارة إلى تريلر ترويجي ذي عنوان هندي لنسب خيارات صوتية محددة إلى النسخة الأصلية من المسلسل.\n\nللصوت والأداء أهمية خاصة في عمل يقدم نفسه عبر الغموض والانقلاب إلى أجواء كابوسية؛ فقد يكون الصمت أو الإيقاع الصوتي أو ردود الشخصيات مؤثراً في بناء الخوف، لكن لا شيء في الأدلة يحدد ما إذا كان المسلسل يعتمد أياً من هذه الوسائل. ومن ثم نعامل هذا الجانب بوصفه غير قابل للتقييم الموضوعي هنا، لا بوصفه نقصاً ثبت وجوده في العمل. الدرجة الرقمية تحفظية لتلبية بنية التقييم المطلوبة، ولا تعوض غياب مراجعة موثقة للصوت أو مشاهدة مباشرة للأداء.\n\n## الإيقاع والبناء وتنوع المحتوى\nلا توجد معلومات عن عدد الحلقات الكلي أو مدتها أو توزيع الوقائع بينها. والمثبت فقط أن الحلقات الأربع الأولى عُرضت في بوسان قبل الإطلاق العالمي. لذلك لا يمكن الحكم على سرعة السرد أو توازن الموسم، ولا على ما إذا كانت الوظائف التي تقدمها الوكالة تنتج حكايات مختلفة أو تعيد الصيغة نفسها. حتى وصف العمل بأنه مسلسل لا يكفي لاستنتاج إيقاعه أو بنيته الداخلية.\n\nمع ذلك تطرح الفرضية سؤالاً واضحاً عن البناء: هل يتيح العمل لكل وظيفة أن تكشف جانباً جديداً من الوكالة أو البطل، أم تصبح الوظائف مجرد حلقات خطر منفصلة؟ وهل يتصاعد الكابوس بما يبرر قرارات الشخصية؟ هذه أسئلة تحليلية مستمدة من ملخص القصة، وليست إجابات عن أحداث شاهدناها. النتيجة أن للمسلسل محركاً قابلاً للتصعيد والتنوع، لكن نجاحه في استثماره لا تثبته البيانات. ولهذا لا نمنح الإيقاع حكماً مرتفعاً أو منخفضاً على أساس توقعات النوع وحدها.\n\n## نقاط القوة\nأقوى ما تثبته المادة هو وضوح الرهان المركزي: الديون تفسر بحث البطل عن المال، والوكالة الغامضة تحول الحل المؤقت إلى مصدر خطر. هذا الرابط يمنح الحبكة أساساً مفهوماً بدلاً من الاعتماد على الغرابة وحدها. كذلك يتيح الجمع المعلن بين الغموض والدراما، مع وصف موسوعي يضيف الرعب والفانتازيا، مجالاً لخلط التهديد الخارجي بالأزمة الشخصية؛ وهي إمكانية جذابة إذا حافظ التنفيذ على وحدة النبرة.\n\nومن النقاط الإيجابية الموثقة وجود فريق معروف الأسماء في التمثيل والكتابة والإخراج، إلى جانب مسار إصدار واضح شمل عرضاً مبكراً لأربع حلقات في مهرجان بوسان ثم الإتاحة العالمية على Netflix. هذه عناصر تجعل العمل قابلاً للاكتشاف وتوضح سياقه الإنتاجي، من دون أن نخلط بين المكانة أو الانتشار وبين التفوق الفني. كما أن الملخص لا يفرط في كشف تفاصيل القصة، فيمنح المشاهد المحتمل صورة عن نقطة الانطلاق مع إبقاء طبيعة الكابوس مجهولة.\n\n## نقاط الضعف\nالمأخذ الأهم على العمل كما يمكن تقييمه من الأدلة هو محدودية ما نعرفه عن التنفيذ، لا عيب فني مثبت داخل الحلقات. فالمعلومات لا تعرض تطور الشخصية، ولا طبيعة الوظائف، ولا آلية الغموض أو مسار التصعيد؛ وهذا يمنع التحقق من أن الفكرة تتجاوز ملخصاً تسويقياً جذاباً. كما أن غياب البيانات الموثقة عن الصورة والصوت والإيقاع يجعل أي حكم حاسم على هذه المحاور غير مسؤول، ويضع سقفاً واضحاً لدرجة الثقة بهذه المراجعة.\n\nوثمة تفاوت في التصنيف بين بيانات TMDB التي تذكر الغموض والدراما والمصدر الموسوعي الذي يضيف الرعب والفانتازيا. قد يكون ذلك اختلافاً في طريقة وصف خليط الأنواع، ولا يكفي لإثبات ارتباك المسلسل نفسه، لكنه يترك هوية العمل النوعية أقل تحديداً للقارئ. كذلك لا يوفر الملف آراء نقدية مستقلة مفصلة توازن المادة الترويجية أو تحسم استقبال الحلقات. أما متوسط TMDB البالغ 7.556 من 10، استناداً إلى 125 صوتاً، فهو مؤشر جماهيري ثانوي منسوب إلى المنصة لا بديل عن حكم تحريري، ولا دليل مستقل على جودة عنصر بعينه.\n\n## لمن يناسب هذا العمل؟\nقد يناسب المسلسل من ينجذب إلى حكايات تبدأ بضائقة مادية ثم تكشف وجهاً مقلقاً لمؤسسة غامضة، ومن يفضل أن يتعرف إلى الفكرة عبر فرضية واضحة من دون معرفة تفاصيل الحبكة سلفاً. كذلك قد يجذب من يتابع أعمال الغموض الكورية أو يراقب مشروعات الممثلين والكتّاب والمخرج المذكورين، مع التنبيه إلى أن أسماء الطاقم لا تكفي وحدها للتوصية الفنية. وجود تصنيف للرعب والفانتازيا في مصدر وتصنيف الغموض والدراما في آخر يعني أن توقعات النبرة ينبغي أن تبقى مرنة.\n\nأما من يبحث عن تقييم موثق لجودة التصوير أو الموسيقى أو بناء الشخصيات، فلن يجد في المعلومات المتاحة ما يكفي لاتخاذ قرار على أساس هذه العناصر. توصيتنا هنا مشروطة بالاهتمام بالفرضية، لا بضمان تجربة متماسكة أو مخيفة أو مؤثرة. يمكن للمشاهد المحتمل أن يعد العمل خياراً للاستكشاف إذا كان سؤال «إلى أي حد يقود الاحتياج المالي إلى خطر أكبر؟» يثير فضوله، مع إدراك أن الإجابة الفعلية لا يمكن استنتاجها من الملخص وحده.\n\n## الحكم النهائي\nتنجح Dead-End Job، على مستوى الفكرة الموثقة، في إقامة تعارض جذاب بين الحاجة إلى المال والارتياب من الجهة التي تعرضه. وهذه قاعدة درامية تمنح المسلسل فرصة لبناء غموض ذي صلة بضغط الحياة اليومية، كما أن الطاقم وتاريخ العرض يقدمان سياقاً واضحاً للمشروع. لكن لا ينبغي أن تتحول الفرصة إلى شهادة نجاح: لا تكشف الأدلة المتاحة ما إذا كانت الكتابة تعمق الشخصية، أو ما إذا كان الإخراج والصوت والصورة يرفعون التوتر، أو إن كان الإيقاع يحافظ على تنوع الوظائف.\n\nحكمنا النهائي إيجابي بحذر تجاه الفرضية، ومتحفظ تجاه العمل المنجز لأن تفاصيل التنفيذ غير موثقة في ملف الأدلة. لذلك نوصي به لمن يجد في مدخل الديون والوكالة المجهولة ما يستحق التجربة، مع عدم تقديمه بوصفه ترشيحاً مؤكداً لعشاق الرعب أو الدراما قبل التحقق من طبيعة نبرته. الدرجات أدناه تقديرات احترازية منخفضة الثقة، وبخاصة في المحاور التي لا تسندها أوصاف فنية أو مراجعات مستقلة مفصلة؛ إنها لا تدعي مشاهدة لم تحدث، ولا تجعل المؤشر الجماهيري بديلاً عن النقد.",
-        "scores": {
-          "story": 6.5,
-          "visuals": 6,
-          "sound": 6,
-          "pacing": 6
-        },
-        "pros": [
-          "فرضية محددة تربط ديون البطل بقبوله أعمالاً مربحة من وكالة غامضة، ثم تقلب المنفعة إلى خطر.",
-          "الدافع الاقتصادي يمنح الشخصية المحورية سبباً مفهوماً للاقتراب من مصدر التهديد.",
-          "التصنيفات المتاحة تفتح مجالاً لمزج الدراما والغموض، مع ورود الرعب والفانتازيا في وصف مستقل.",
-          "طاقم موثق يضم لي جاي-ووك وغو مين-سي وكيم مين-ها ولي هي-جون، مع كتابة كيونغ مين-سون ولي شين-جي وإخراج كيم دا-مين.",
-          "مسار إصدار واضح: عرض أول أربع حلقات في مهرجان بوسان قبل الإطلاق العالمي على Netflix."
-        ],
-        "cons": [
-          "المعلومات المتاحة لا توضح تطور الحبكة أو الشخصيات أو طبيعة الوظائف، لذلك لا يمكن التحقق من عمق البناء الدرامي.",
-          "لا توجد أدلة موثقة كافية لتقييم التصوير أو الهوية البصرية أو الموسيقى أو الأداء.",
-          "لا تتوفر تفاصيل عن عدد الحلقات أو مدتها أو بنائها، ما يمنع حكماً واثقاً على الإيقاع والتنوع.",
-          "يختلف التأطير النوعي بين بيانات TMDB والوصف الموسوعي، من دون تفاصيل إضافية تحسم طبيعة النبرة.",
-          "مؤشر الجمهور في TMDB محدود بـ125 صوتاً ولا يصلح بديلاً عن تقييم مستقل للتنفيذ."
-        ],
-        "title": "Dead-End Job",
-        "type": "series",
-        "sourceId": "series:289517",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/289517",
-        "sourceRating": 7.556,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 125,
-        "sourceRatingCheckedAt": "2026-11-24T13:16:03.386Z",
-        "audienceScore": 7.6,
-        "releaseDate": "2026-10-30",
-        "poster": "https://image.tmdb.org/t/p/w780/wUvzMC7EToPgci31ZZRCeqCmQ6d.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/gWedDgBsZkuOho2qe3q2sTQmbpO.jpg",
-        "genres": [
-          "Mystery",
-          "Drama"
-        ],
-        "platforms": [],
-        "cast": [
-          "Lee Jae-wook",
-          "Go Min-si",
-          "Kim Min-ha",
-          "Lee Hee-jun"
-        ],
-        "crew": [
-          "Kim Da-min",
-          "Lee Sin-ji",
-          "Gyeong Min-seon"
-        ],
-        "tags": [
-          "Mystery",
-          "Drama"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/289517",
-            "extract": "Drowning in debt, a young man takes lucrative part-time jobs from a mysterious agency — only to find his hustle for more money turning nightmarish.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Dead-End_Job",
-            "extract": "Dead-End Job is a 2026 South Korean mystery horror fantasy television series written by Kyeong Min-sun and Lee Shin-ji, directed by Kim Da-min, and starring Lee Jae-wook, Go Min-si, Kim Min-ha, and Lee Hee-joon. The first four episodes of the series premiered at the 31st Busan International Film Festival in the 'On Screen' section on October 7, 2026. It was released globally on Netflix on October 30.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — TrailerLuxe Official",
-            "url": "https://www.youtube.com/watch?v=8cNER6J615o",
-            "extract": "Verified public, embeddable promotional trailer: Dead-End Job | Official Hindi Trailer | Netflix Original Series",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "8cNER6J615o",
-        "youtubeVideoTitle": "Dead-End Job | Official Hindi Trailer | Netflix Original Series",
-        "reviewMode": "review",
-        "score": 6.2
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 7292,
       "articlePath": "src/content/reviews/series-dead-end-job-289517.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-dead-end-job-289517/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-dead-end-job-289517/",
+      "publishedAt": "2026-11-24T14:38:51.755Z"
+    },
+    "game:303576": {
+      "key": "game:303576",
+      "type": "game",
+      "id": "303576",
+      "title": "Vampire: The Masquerade – Bloodlines 2",
+      "item": {
+        "type": "game",
+        "id": "303576",
+        "name": "Vampire: The Masquerade – Bloodlines 2",
+        "date": "2025-10-21",
+        "popularity": 2489,
+        "source": "RAWG"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-24T14:38:53.527Z",
+      "updatedAt": "2026-11-24T14:39:42.356Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Vampire: The Masquerade – Bloodlines 2",
+        "type": "game",
+        "collectedAt": "2026-11-24T14:38:54.234Z",
+        "sourceId": "game:303576",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/vampire-the-masquerade-bloodlines-2",
+        "overview": "Sired in an act of vampire insurrection, your existence ignites the war for Seattle's blood trade. Enter uneasy alliances with the creatures who control the city and uncover the sprawling conspiracy which plunged Seattle into a bloody civil war between powerful vampire factions. ♞Become the Ultimate Vampire Immerse yourself in the World of Darkness and live out your vampire fantasy in a city filled with intriguing characters that react to your choices. You and your unique disciplines are a weapon in our forward-driving, fast-moving, melee-focussed combat system. Your power will grow as you advance, but remember to uphold the Masquerade and guard your humanity... or face the consequences. ♝Descend into Seattle’s Dark Heart and Survive the Vampire Elite Seattle has always been run by vampires. Hunt your prey across Seattle locations faithfully reimagined in the World of Darkness. Meet the old blood founders present since the city’s birth and the new blood steering the tech money redefining the city. Everyone has hidden agendas - so choose your allies wisely. ♚Enter into Uneasy Alliances Choose a side among competing factions, each with their own unique traits and stories, in the war for Seattle’s blood trade. The world will judge you by the company you keep, but remember no one’s hands stay clean forever. ♛Experience the Story Written by the creative mind behind the original Bloodlines, Vampire: The Masquerade® - Bloodlines™ 2 brings the ambitions of the first game to life and sees the return of a few fan favorite characters.",
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/vampire-the-masquerade-bloodlines-2",
+            "extract": "Sired in an act of vampire insurrection, your existence ignites the war for Seattle's blood trade. Enter uneasy alliances with the creatures who control the city and uncover the sprawling conspiracy which plunged Seattle into a bloody civil war between powerful vampire factions. ♞Become the Ultimate Vampire Immerse yourself in the World of Darkness and live out your vampire fantasy in a city filled with intriguing characters that react to your choices. You and your unique disciplines are a weapon in our forward-driving, fast-moving, melee-focussed combat system. Your power will grow as you advance, but remember to uphold the Masquerade and guard your humanity... or face the consequences. ♝Descend into Seattle’s Dark Heart and Survive the Vampire Elite Seattle has always been run by vampires. Hunt your prey across Seattle locations faithfully reimagined in the World of Darkness. Meet the old blood founders present since the city’s birth and the new blood steering the tech money redefining the city. Everyone has hidden agendas - so choose your allies wisely. ♚Enter into Uneasy Alliances Choose a side among competing factions, each with their own unique traits and stories, in the war for Seattle’s blood trade. The world will judge you by the company you keep, but remember no one’s hands stay clean forever. ♛Experience the Story Written by the creative mind behind the original Bloodlines, Vampire: The Masquerade® - Bloodlines™ 2 brings the ambitions of the first game to life and sees the return of a few fan favorite characters.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Vampire%3A_The_Masquerade_%E2%80%93_Bloodlines_2",
+            "extract": "Vampire: The Masquerade – Bloodlines 2 is a 2025 action role-playing video game developed by The Chinese Room and published by Paradox Interactive and White Wolf Publishing. A sequel to Vampire: The Masquerade – Bloodlines (2004), it is set in the World of Darkness and follows an original narrative focused on the Elder vampire Phyre, who awakens in early 21st-century Seattle during a historic snowstorm. As the city's Camarilla struggles in the aftermath of a failed coup and a renewed inquisition, Phyre becomes entangled in the conflict between factions of vampires, hunters, and the resurgent Sabbat while uncovering the truth behind a mysterious brand suppressing their powers.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — XBOX",
+            "url": "https://www.youtube.com/watch?v=P7CP-X_8Y6Q",
+            "extract": "Verified public, embeddable promotional trailer: Vampire the Masquerade: Bloodlines 2 - Official Gameplay Trailer",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from RAWG with 359 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "P7CP-X_8Y6Q",
+        "youtubeVideoTitle": "Vampire the Masquerade: Bloodlines 2 - Official Gameplay Trailer",
+        "youtubeChannel": "XBOX",
+        "releaseDate": "2025-10-21",
+        "genres": [
+          "Action",
+          "RPG"
+        ],
+        "platforms": [
+          "PC",
+          "PlayStation 5",
+          "Xbox Series S/X",
+          "Xbox One",
+          "PlayStation 4"
+        ],
+        "developers": [
+          "Hardsuit Labs"
+        ],
+        "rating": 3.82,
+        "ratingScale": 5,
+        "votes": 359,
+        "poster": "https://media.rawg.io/media/games/fb5/fb5e0fdb1f6bb0e8b5da5d08bb83a5fc.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "Vampire: The Masquerade – Bloodlines 2: عالم واعد، وحكم تحجبه فجوات التوثيق",
+        "summary": "تملك Bloodlines 2 أساساً سردياً جذاباً على الورق: مصاص دماء قديم يستيقظ في سياتل، وصراع على تجارة الدم تتداخل فيه فصائل ومؤامرة تهدد المدينة. وتعد اللعبة بتفاعل مع اختيارات اللاعب، وقدرات خاصة، وقتال قريب سريع، مع ضرورة صون السرية والإنسانية. لكن ملف الأدلة المتاح لا يثبت كيف تنفذ هذه الوعود فعلياً، ولا يقدم مراجعات مستقلة أو وصفاً موثقاً كافياً للصورة والصوت والإيقاع. لذلك يأتي هذا الحكم التحريري واضحاً في تحفظه: الفكرة واعدة، أما جودة التجربة المنجزة فلا يمكن الجزم بها من المواد المتاحة وحدها.",
+        "verdict": "تبدو Bloodlines 2، وفق المعلومات الموثقة هنا، لعبة تقمص أدوار ذات premise قوية ومناسبة لعالم مصاصي الدماء: صراع فصائل، مؤامرة في سياتل، واختيارات يُفترض أن تؤثر في نظرة العالم إلى اللاعب. لكن هذه الوعود لا تكفي وحدها لإثبات نجاح القصة أو الشخصيات أو نظام القتال، كما لا يتضمن الملف مراجعات مستقلة أو بيانات ملموسة تسمح بالحكم على الأداء الفني والصوتي والإيقاع. النتيجة إيجابية بحذر تجاه الفكرة، ومتحفظة تجاه التنفيذ؛ وهي توصية مشروطة لمن ينجذب إلى العالم والإعداد، لا تزكية مؤكدة للعبة كاملة. الدرجات تعكس حدود الأدلة المتاحة، لا تجربة لعب مباشرة.",
+        "body": "## مقدمة وسياق العمل\nصدرت Vampire: The Masquerade – Bloodlines 2 في 21 أكتوبر 2025، وتُصنّف في البيانات المتاحة لعبة تقمص أدوار وحركة على الحاسوب وأجهزة PlayStation وXbox. هذا نص نقدي تحريري مبني حصراً على ملف الأدلة، لا شهادة لعب مباشرة. وتتكون مادته من وصف RAWG، ومدخل موسوعي، وإشارة إلى مقطع لعب رسمي منشور عبر قناة XBOX؛ لكن الملف لا يورد مضموناً مشهديّاً للمقطع ولا مراجعات مستقلة للعبة. لذلك يمكن مناقشة الفكرة والوعود المعلنة ومقدار ما يسنده الدليل، لا الادعاء بمعرفة تفاصيل التجربة المنجزة. هذا التمييز ضروري، لأن وصف لعبة طموحة ليس برهاناً على نجاحها.\n\nتوجد أيضاً فجوة في نسبة التطوير: بيانات RAWG تسمي Hardsuit Labs، بينما يصف المدخل الموسوعي اللعبة بأنها من تطوير The Chinese Room. لا يوفر الملف ما يحسم سبب الاختلاف أو يفسره، لذا لا يصح بناء استنتاج عن مسؤولية فريق بعينه على أساسه. المؤكد في الحزمة أنها تتمة للعبة Bloodlines الصادرة عام 2004، وأنها تعود إلى عالم الظلام وشخصياته وصراعاته. أما تقييمها بوصفها تتمة فعلية ناجحة فيتطلب مقارنة تفصيلية لا تتيحها هذه المواد.\n\n## الفكرة والقصة أو التجربة\nتضع الحكاية اللاعب في دور Phyre، مصاص دماء من الشيوخ يستيقظ في سياتل مطلع القرن الحادي والعشرين أثناء عاصفة ثلجية تاريخية، بحسب المدخل الموسوعي. وتربط صفحة RAWG وجود الشخصية بتمرد لمصاصي الدماء، وبحرب على تجارة الدم ومؤامرة أوقعت المدينة في صراع أهلي بين فصائل قوية. يضيف المصدر الموسوعي سياقاً سياسياً أوسع: تداعيات انقلاب فاشل، ومحققين يعودون إلى الواجهة، وصراعاً يشمل الصيادين والسبات. هذه عناصر تمنح الإعداد توتراً واضحاً، لكنها لا تكشف كيف تتطور الحبكة أو ما إذا كانت أسرارها مقنعة عند انكشافها.\n\nالأكثر جاذبية في الفكرة هو اجتماع أزمة المدينة مع وضع بطل يخضع لقوى تكبحها علامة غامضة، كما يذكر المدخل الموسوعي. يتيح ذلك أساساً لصراع بين القدرة والقيود، وهو ملائم لموضوعات السلطة والانضباط في عالم مصاصي الدماء. غير أن الأدلة لا تفصل أثر العلامة في مجريات اللعب أو في قرارات Phyre، ولا تحدد بنية النهايات أو مساحة الاختيار السردي. لذلك تظل الإشادة هنا منصبة على هندسة الفرضية، لا على جودة كتابة بعينها. لا توجد شواهد كافية للحكم على الحوار أو عمق المعالجة أو اكتمال الخاتمة.\n\n## السرد والشخصيات أو تصميم اللعب\nتعد RAWG بأن شخصيات سياتل ستتفاعل مع اختيارات اللاعب، وأن التحالفات مع الفصائل المتنافسة ستكون غير مريحة ومحفوفة بتعارض المصالح. وتذكر كذلك عودة بعض الشخصيات المحبوبة من الجزء الأول، من دون تسمية تلك الشخصيات أو بيان حجم أدوارها. هذه الوعود تضع الاختيار والعلاقات في قلب التجربة المعلنة، لكنها لا تثبت أن القرارات تُحدث عواقب محسوسة أو أن الشخصيات تتجاوز وظائفها داخل الصراع. لذلك لا يمكن وصف الحوار أو الأداء التمثيلي أو بناء الشخصيات على نحو تفصيلي.\n\nعلى مستوى اللعب، يحدد الوصف القتال بأنه سريع، متمحور حول الاشتباك القريب، وتسانده قدرات خاصة تتطور مع التقدم. كما يربط البقاء في عالم اللعبة بحفظ السرية وصون الإنسانية، مع عواقب محتملة للإخلال بذلك. هذه ملامح تصميمية محددة، لكن الملف لا يقدم أمثلة على قدرات بعينها، أو تنوع الأعداء، أو كيفية توازن القتال مع التخفي والاختيارات. ومن ثم يمكن اعتبارها مواصفات واعدة، لا حكماً بأن النظام عميق أو ممتع أو متماسك. هذا نقص في الأدلة المتاحة، وليس إثباتاً لقصور اللعبة نفسها.\n\n## الإخراج والجوانب الفنية\nلا يتضمن الملف معلومات موثوقة عن معدل الإطارات، أو الدقة، أو التحميل، أو الاستقرار التقني، ولا نتائج اختبار على أي منصة. كما أن وجود مقطع رسمي بعنوان «Official Gameplay Trailer» يثبت توفر مادة ترويجية رسمية، لكنه لا يكفي وحده لإصدار حكم على أداء النسخة النهائية. لذلك لا يصح وصف اللعبة بأنها مصقولة أو كثيرة المشكلات، ولا تقدير الفروق بين إصدارات الحاسوب والأجهزة المنزلية. ومع صدورها على منصات متعددة، تبقى مقارنة الأداء مسألة تحتاج إلى قياسات ومصادر مستقلة لم ترد هنا.\n\nأما من ناحية الإخراج، فالمتاح يثبت اختيار سياتل مسرحاً للأحداث، ويشير إلى إعادة تخيل مواقع منها ضمن عالم الظلام. ويصف النص المدينة بأنها تجمع بين مؤسسين قدامى وقوى جديدة مرتبطة بأموال التقنية، وهي مقابلة تحمل إمكانات درامية وبصرية. لكن لا توجد تفاصيل موثقة عن تصميم المناطق أو حجمها أو بنية التنقل بينها، ولا عن مدى تميّزها بصرياً. النقد المنضبط لا يحوّل تصور المدينة إلى ثناء على تنفيذها؛ لذا يظل الحكم على الإخراج العام معلقاً إلى أن تتوفر شواهد مباشرة ومراجعات موثوقة.\n\n## الصورة والهوية البصرية\nينتمي العمل إلى عالم الظلام، وتصف مصادره سياتل بأنها مدينة أعيد تصور مواقعها بما يلائم هذا العالم، مع حضور عاصفة ثلجية تاريخية في خلفية استيقاظ البطل وفق المدخل الموسوعي. تكفي هذه المعطيات لتحديد اتجاه مكاني ومناخي، لكنها لا تكشف جودة النماذج أو الإضاءة أو واجهة الاستخدام أو قراءة الحركة أثناء القتال. كذلك لا يتضمن ملف الأدلة وصفاً لقطات محددة من المقطع الرسمي، ولذلك لن أنسب إليه مشاهد أو مؤثرات لم يرد توثيقها.\n\nالهوية البصرية المعلنة تستند أساساً إلى التباين بين تاريخ المدينة وسلطة مصاصي الدماء القديمة وبين المال التقني والقوى الجديدة. هذا التوتر قد يمنح سياتل طابعاً يميزها عن خلفية حضرية عامة، غير أن الحكم يتوقف على تحويل الفكرة إلى بيئات وشخصيات مرئية متمايزة. لا تكفي عبارة «مواقع أعيد تصورها» لإثبات ذلك، ولا تسمح المواد بتقييم وضوح المشهد أو تنوعه أو ثبات الجودة بين المنصات. لهذا تحمل درجة الصورة تحفظاً صريحاً: إنها لا تعاقب اللعبة على مظهر ثبت ضعفه، بل تسجل ضآلة الأدلة المتاحة عن مظهرها الفعلي.\n\n## الصوت والموسيقى والأداء\nلا يقدم الملف أي بيانات عن الموسيقى أو المؤثرات أو التمثيل الصوتي، ولا أسماء مؤدين أو وصفاً لمشاهد حوارية. كما أن مجرد توفر مقطع دعائي رسمي لا يثبت وحده كيف يعمل الصوت في النسخة الكاملة أو مدى اتساقه مع أجواء عالم الظلام. لهذا لا يمكن الثناء على بناء موسيقي بعينه، أو انتقاد مزج صوتي، أو وصف أداء شخصية Phyre. من غير المنصف اختلاق انطباعات سمعية اعتماداً على نوع اللعبة أو موضوعها؛ والحكم هنا محدود بوضوح بما هو موثق، لا بما قد يتوقعه الجمهور من لعبة ذات طابع قوطي.\n\n## الإيقاع والبناء وتنوع المحتوى\nتصف RAWG القتال بأنه سريع، وتشير إلى أن القوة تتنامى مع التقدم، وإلى مواقع متعددة في سياتل وتحالفات بين فصائل متنافسة. هذه المعلومات توحي بتنوع محتمل بين المواجهات والتطور والصراع السياسي، لكنها لا تحدد طول اللعبة أو تواتر القتال أو مقدار الاستكشاف أو وجود مهام جانبية. لذلك لا يمكن الجزم بأن الإيقاع متوازن أو أن المحتوى يتجدد باستمرار. حتى عبارة «تقدم سريع» مرتبطة بوصف نظام القتال، ولا ينبغي تعميمها على وتيرة الحملة كاملة.\n\nكذلك لا يوضح الملف إن كانت اختيارات الفصائل تغير مسار الفصول أو تفتح مسارات منفصلة، ولا يشرح العلاقة بين الحفاظ على السرية والإنسانية وبين بنية المهمات. هذه أسئلة جوهرية لأنها تحدد ما إذا كانت الأنظمة السردية والعملية متشابكة، أم أنها وعود متجاورة فحسب. ما يمكن قوله بثقة هو أن اللعبة تقدم مزيجاً معلناً من الحركة وتقمص الأدوار والصراع بين الفصائل. أما جودة توزيع هذا المزيج، وقيمة إعادة اللعب، فتظل خارج نطاق ما تثبته المصادر الحالية.\n\n## نقاط القوة\nأول عناصر القوة الموثقة هو وضوح الصراع المركزي: حرب على تجارة الدم داخل مدينة تتنازعها فصائل مصاصي الدماء، بما يوفر دافعاً درامياً مباشراً. وثانيها أن وضع Phyre، مصاص الدماء القديم الذي يستيقظ في زمن حديث وتكبله علامة غامضة وفق المصدر الموسوعي، يفتح مجالاً لتوتر بين القوة والحدود. وثالثها الجمع المعلن بين التحالفات والاختيارات وبين واجب صون السرية والإنسانية، وهي عناصر يمكن أن تربط الأخلاق بالتقدم والقتال إذا نُفذت بفاعلية. ورابعها توظيف سياتل بما تتضمنه الفكرة من صدام بين النخب القديمة والمال التقني الجديد. كل نقطة هنا إمكان مدعوم بوصف المصادر، لا نتيجة مثبتة بالتجربة.\n\n## نقاط الضعف\nأبرز التحفظات أن وعود التفاعل والاختيارات والتحالفات لا تصحبها في ملف الأدلة أمثلة موثقة على عواقب قرارات اللاعب؛ لذا تبقى مساحة الوكالة غير قابلة للتقدير. وثانيها أن وصف القتال يحدد سرعته وتركيزه القريب، لكنه لا يقدم ما يكفي للحكم على عمقه أو تنوعه أو توازنه. وثالثها غياب مادة كافية لتقييم عناصر أساسية في مراجعة لعبة منشورة: الصوت، والإخراج المرئي، والإيقاع الفعلي، والحالة التقنية. ويضاف إلى ذلك اختلاف اسمي فريق التطوير بين RAWG والمدخل الموسوعي. هذه فجوات في ملف المصادر، ولا يجوز تحويلها آلياً إلى عيوب مؤكدة في اللعبة؛ لكنها تمنع حكماً نهائياً واثقاً على جودة التنفيذ.\n\n## لمن يناسب هذا العمل؟\nيمكن أن تجذب الفكرة محبي عالم Vampire: The Masquerade، ومن يفضلون قصص الفصائل والمكائد الحضرية وشخصية مصاص دماء ذات قوة مقيدة، وكذلك من يبحثون عن لعبة حركة وتقمص أدوار تضع القتال القريب والتحالفات ضمن وعودها الأساسية. وقد يهم الجزء جمهور اللعبة الأصلية بسبب الإشارة إلى عودة شخصيات محبوبة، مع أن الأدلة لا تسميها ولا توضح مقدار حضورها. أما من يشترطون نظاماً قتالياً موثق العمق، أو قرارات ذات نتائج مثبتة، أو أداءً تقنياً مستقراً على منصة بعينها، فالأفضل لهم الرجوع إلى مراجعات مستقلة مفصلة قبل اتخاذ قرار الشراء.\n\n## الحكم النهائي\nتستحق Bloodlines 2 اهتماماً مبدئياً بسبب فرضيتها المحددة، وصلتها بعالم معروف، والصراع السياسي الذي ترسمه حول سياتل وفصائل مصاصي الدماء. كما أن الجمع بين سلطات قديمة وقوى اقتصادية حديثة، وبين قدرات اللاعب وقيود السرية والإنسانية، يمنح المشروع أساساً قادراً على استقطاب جمهوره. لكن ملف الأدلة لا يكفي لإثبات أن القصة أو القتال أو الصورة والصوت قد ارتقت إلى هذا الأساس. لا توجد هنا مراجعات مستقلة أو تفاصيل تجريبية تكفي لتأكيد ذلك، لذا فالخلاصة إعجاب مشروط بالتصميم المعلن وتحفظ واضح على التنفيذ غير الموثق. التوصية لمن ينجذب إلى الإعداد، لا بوصفها ضماناً لتجربة متقنة.",
+        "scores": {
+          "story": 7.1,
+          "visuals": 5,
+          "sound": 5,
+          "pacing": 6
+        },
+        "pros": [
+          "صراع واضح على تجارة الدم ومؤامرة تربط مصير سياتل بتنافس الفصائل.",
+          "فرضية Phyre، مصاص الدماء القديم المقيد بعلامة غامضة، تتيح توتراً سردياً بين القوة والحدود.",
+          "وعود باختيارات وتحالفات تتصل بصون السرية والإنسانية، بما يتيح ربط القرار الأخلاقي باللعب.",
+          "تصوير سياتل بوصفها ساحة تلتقي فيها النخب القديمة والقوى الجديدة المرتبطة بأموال التقنية."
+        ],
+        "cons": [
+          "لا يقدم ملف الأدلة أمثلة تثبت مدى تأثير اختيارات اللاعب أو اختلاف نتائج التحالفات.",
+          "وصف القتال القريب السريع لا يكفي لتقييم عمقه أو تنوعه أو توازنه.",
+          "المعلومات المتاحة لا تسمح بحكم موثوق على الصورة والصوت والإيقاع أو الأداء التقني.",
+          "تختلف نسبة فريق التطوير بين RAWG والمدخل الموسوعي، ولا يحسم الملف هذا التباين."
+        ],
+        "title": "Vampire: The Masquerade – Bloodlines 2",
+        "type": "game",
+        "sourceId": "game:303576",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/vampire-the-masquerade-bloodlines-2",
+        "sourceRating": 3.82,
+        "sourceRatingScale": 5,
+        "sourceVoteCount": 359,
+        "sourceRatingCheckedAt": "2026-11-24T14:38:54.234Z",
+        "audienceScore": 7.6,
+        "releaseDate": "2025-10-21",
+        "poster": "https://media.rawg.io/media/games/fb5/fb5e0fdb1f6bb0e8b5da5d08bb83a5fc.jpg",
+        "backdrop": "https://media.rawg.io/media/games/fb5/fb5e0fdb1f6bb0e8b5da5d08bb83a5fc.jpg",
+        "genres": [
+          "Action",
+          "RPG"
+        ],
+        "platforms": [
+          "PC",
+          "PlayStation 5",
+          "Xbox Series S/X",
+          "Xbox One",
+          "PlayStation 4"
+        ],
+        "cast": [],
+        "crew": [],
+        "tags": [
+          "Action",
+          "RPG"
+        ],
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/vampire-the-masquerade-bloodlines-2",
+            "extract": "Sired in an act of vampire insurrection, your existence ignites the war for Seattle's blood trade. Enter uneasy alliances with the creatures who control the city and uncover the sprawling conspiracy which plunged Seattle into a bloody civil war between powerful vampire factions. ♞Become the Ultimate Vampire Immerse yourself in the World of Darkness and live out your vampire fantasy in a city filled with intriguing characters that react to your choices. You and your unique disciplines are a weapon in our forward-driving, fast-moving, melee-focussed combat system. Your power will grow as you advance, but remember to uphold the Masquerade and guard your humanity... or face the consequences. ♝Descend into Seattle’s Dark Heart and Survive the Vampire Elite Seattle has always been run by vampires. Hunt your prey across Seattle locations faithfully reimagined in the World of Darkness. Meet the old blood founders present since the city’s birth and the new blood steering the tech money redefining the city. Everyone has hidden agendas - so choose your allies wisely. ♚Enter into Uneasy Alliances Choose a side among competing factions, each with their own unique traits and stories, in the war for Seattle’s blood trade. The world will judge you by the company you keep, but remember no one’s hands stay clean forever. ♛Experience the Story Written by the creative mind behind the original Bloodlines, Vampire: The Masquerade® - Bloodlines™ 2 brings the ambitions of the first game to life and sees the return of a few fan favorite characters.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Vampire%3A_The_Masquerade_%E2%80%93_Bloodlines_2",
+            "extract": "Vampire: The Masquerade – Bloodlines 2 is a 2025 action role-playing video game developed by The Chinese Room and published by Paradox Interactive and White Wolf Publishing. A sequel to Vampire: The Masquerade – Bloodlines (2004), it is set in the World of Darkness and follows an original narrative focused on the Elder vampire Phyre, who awakens in early 21st-century Seattle during a historic snowstorm. As the city's Camarilla struggles in the aftermath of a failed coup and a renewed inquisition, Phyre becomes entangled in the conflict between factions of vampires, hunters, and the resurgent Sabbat while uncovering the truth behind a mysterious brand suppressing their powers.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — XBOX",
+            "url": "https://www.youtube.com/watch?v=P7CP-X_8Y6Q",
+            "extract": "Verified public, embeddable promotional trailer: Vampire the Masquerade: Bloodlines 2 - Official Gameplay Trailer",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "P7CP-X_8Y6Q",
+        "youtubeVideoTitle": "Vampire the Masquerade: Bloodlines 2 - Official Gameplay Trailer",
+        "reviewMode": "review",
+        "score": 5.9
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 6281,
+      "articlePath": "src/content/reviews/game-vampire-the-masquerade-bloodlines-2-303576.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-vampire-the-masquerade-bloodlines-2-303576/"
     }
   },
   "providers": {},
@@ -3452,9 +3473,9 @@
       "tokens": 47590
     },
     "2026-11-24": {
-      "articles": 8,
-      "requests": 19,
-      "tokens": 56002
+      "articles": 9,
+      "requests": 21,
+      "tokens": 62283
     }
   },
   "history": []
