@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-24T10:40:54.639Z",
+  "updatedAt": "2026-11-24T10:43:41.762Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -3081,148 +3081,22 @@
         "popularity": 5008,
         "source": "RAWG"
       },
-      "status": "waiting",
+      "status": "published",
       "stage": 0,
       "attempts": 1,
       "createdAt": "2026-11-24T10:36:08.366Z",
-      "updatedAt": "2026-11-24T10:38:44.068Z",
-      "nextAttemptAt": "2026-11-24T10:39:44.068Z",
-      "evidence": {
-        "title": "Valheim",
-        "type": "game",
-        "collectedAt": "2026-11-24T10:36:08.942Z",
-        "sourceId": "game:248521",
-        "sourceName": "RAWG",
-        "sourceUrl": "https://rawg.io/games/valheim",
-        "overview": "Prove your worth! Are you worthy of entering Valhalla? You have been sent to Valheim, the 10th Norse world. Only by defeating the mighty beasts of these lands will you win the favor of the gods. This quest will take you to the far reaches of this world, from the deepest forest to the highest mountain peak. You will craft powerful weapons, build unyielding castles and sail longships towards the horizon. Description Valheim is a game about exploring a huge fantasy world inspired by norse mythology and viking culture. You start your adventure at the relatively peaceful center of Valheim. The further from the center you travel, the more challenging the world becomes. But you will also find more valuable materials that you can use to craft deadlier weapons and sturdier armor. You will also build your own viking strongholds and outposts all over the world. Eventually you will build a mighty longship and sail the great oceans in search of exotic lands … but be wary of sailing too far... Features: Flexible house and base building system. Intuitive item crafting (weapons, armor, food etc). Huge procedural world. Dodge & block based combat system with a wide range of weapons. Defeat bosses & collect trophies. Engaging food & health system. Build & sail ships. Multiplayer (with focus on cooperation). Dedicated server.",
-        "sources": [
-          {
-            "name": "RAWG",
-            "url": "https://rawg.io/games/valheim",
-            "extract": "Prove your worth! Are you worthy of entering Valhalla? You have been sent to Valheim, the 10th Norse world. Only by defeating the mighty beasts of these lands will you win the favor of the gods. This quest will take you to the far reaches of this world, from the deepest forest to the highest mountain peak. You will craft powerful weapons, build unyielding castles and sail longships towards the horizon. Description Valheim is a game about exploring a huge fantasy world inspired by norse mythology and viking culture. You start your adventure at the relatively peaceful center of Valheim. The further from the center you travel, the more challenging the world becomes. But you will also find more valuable materials that you can use to craft deadlier weapons and sturdier armor. You will also build your own viking strongholds and outposts all over the world. Eventually you will build a mighty longship and sail the great oceans in search of exotic lands … but be wary of sailing too far... Features: Flexible house and base building system. Intuitive item crafting (weapons, armor, food etc). Huge procedural world. Dodge & block based combat system with a wide range of weapons. Defeat bosses & collect trophies. Engaging food & health system. Build & sail ships. Multiplayer (with focus on cooperation). Dedicated server.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Valheim",
-            "extract": "Valheim is a survival game by the Swedish developer Iron Gate Studio and published by Coffee Stain Publishing. It was released in early access for Linux and Microsoft Windows via Steam on 2 February 2021, and for Xbox One and Xbox Series X/S on 14 March 2023. The full version was released on 9 September 2026 alongside versions for the PlayStation 5 and Nintendo Switch 2.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — XBOX",
-            "url": "https://www.youtube.com/watch?v=SeHBisLYnbM",
-            "extract": "Verified public, embeddable promotional trailer: Valheim 1.0 Launch Trailer",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from RAWG with 659 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "SeHBisLYnbM",
-        "youtubeVideoTitle": "Valheim 1.0 Launch Trailer",
-        "youtubeChannel": "XBOX",
-        "releaseDate": "2026-09-09",
-        "genres": [
-          "Action",
-          "Adventure",
-          "Indie"
-        ],
-        "platforms": [
-          "Linux",
-          "PC"
-        ],
-        "developers": [
-          "Dvoid",
-          "Richard Svensson"
-        ],
-        "rating": 3.99,
-        "ratingScale": 5,
-        "votes": 659,
-        "poster": "https://media.rawg.io/media/games/adb/adb59be81367b19c2544457424bcf086.jpg"
-      },
+      "updatedAt": "2026-11-24T10:42:30.130Z",
+      "nextAttemptAt": null,
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "Valheim: مغامرة بقاء تتسع مع الاستكشاف، لكن الأدلة المتاحة لا تكشف كل ما يلزم لحكم فني مكتمل",
-        "summary": "تقوم Valheim على حلقة بقاء واستكشاف واضحة: عالم إسكندنافي خيالي مولّد إجرائياً، ومناطق تزداد خطورتها كلما ابتعد اللاعب عن المركز، وموارد تفتح مجالاً لصناعة العتاد وبناء المساكن والإبحار ومواجهة الزعماء. هذا الترابط يمنح الفكرة أساساً متيناً، ويجعل التعاون جزءاً معلناً من التصميم لا إضافة هامشية. لكن المصادر المتاحة هنا تصف الأنظمة والعالم أكثر مما توثق جودة التنفيذ الفعلية؛ فلا تقدم تحليلاً مستقلاً للصورة أو الموسيقى أو الإيقاع في اللعب. لذلك تمثل هذه المراجعة حكماً تحريرياً نهائياً على ما تثبته الأدلة، لا انطباعاً شخصياً عن تجربة مباشرة، وتظل درجة بعض المحاور متحفظة بسبب محدودية التوثيق.",
-        "verdict": "تستند Valheim إلى تصور متماسك للبقاء: التقدم إلى مناطق أخطر يعد بموارد أفضل، وهذه الموارد تدعم صناعة معدات أقوى وبناء قواعد وسفن تتيح مواصلة الرحلة. كما أن نظام القتال الموصوف، ومواجهات الزعماء، والتعاون الجماعي تمنح الاستكشاف أهدافاً تتجاوز جمع المواد لذاته. هذه نقاط قوة حقيقية على مستوى التصميم الموثق، وتبرر توصية مشروطة لمن يحب ألعاب البقاء والبناء والاستكشاف، ولا سيما بصحبة آخرين. لكن الحكم لا يمكن أن يتحول بأمانة إلى شهادة على جودة التنفيذ الفني أو الإيقاع التفصيلي؛ فالأدلة لا تتناول هذه العناصر بما يكفي، ولا تتيح اختبار توازن الأنظمة أو مشكلاتها. النتيجة إيجابية بحذر: فكرة قوية وبنية واعدة، مع تحفظ واضح على مقدار ما يمكن إثباته عن التجربة الكاملة.",
-        "body": "## مقدمة وسياق العمل\n\nValheim لعبة بقاء ومغامرة مستقلة مستوحاة من الأساطير الإسكندنافية وثقافة الفايكنغ. وبحسب المصدر الموسوعي الوارد في ملف الأدلة، بدأت بإصدار الوصول المبكر في 2021، ثم صدر الإصدار الكامل في 9 سبتمبر 2026 بالتزامن مع نسخ PlayStation 5 وNintendo Switch 2. ويعرض ملف RAWG اللعبة على Linux والحاسوب، بينما تذكر المادة الموسوعية إصدارات Xbox أيضاً، كما يوجد مقطع إطلاق رسمي بعنوان Valheim 1.0 من قناة XBOX. هذا اختلاف في نطاق بيانات المنصات، لذا لا يصح اختزاله إلى قائمة واحدة مؤكدة من هذه المواد وحدها.\n\nالمراجعة هنا تحريرية نهائية، لكنها ليست ادعاءً بتجربة اللعب أو مشاهدة المقطع؛ إنها تقويم لما يمكن إثباته من وصف اللعبة والبيانات المتاحة. وهذه نقطة مهمة لأن الملف يقدم معلومات نافعة عن الفكرة والأنظمة، لكنه لا يضم مراجعات مستقلة مفصلة أو اختبارات للجوانب الفنية. لذلك سيكون الحكم أكثر ثقة حين يتعلق ببنية التصميم المعلنة، وأكثر تحفظاً حين يتعلق بجودة التنفيذ التي لا تكشفها الملخصات.\n\n## الفكرة والقصة أو التجربة\n\nتضع الفكرة اللاعب في عالم Valheim، العالم العاشر في تصور أسطوري، وتربط النجاة بإثبات الاستحقاق لنيل رضى الآلهة. أما وصف التجربة العملي فيبدأ من منطقة مركزية هادئة نسبياً، ثم يجعل الابتعاد عنها مدخلاً إلى تحديات أكبر وموارد أعلى قيمة. هنا تنشأ غاية مفهومة من داخل اللعب: التوسع ليس تجوالاً بلا اتجاه، بل مخاطرة محتملة العائد، إذ يمكن تحويل المكتسبات إلى أسلحة ودروع أقوى.\n\nهذا إطار مغامرة واضح أكثر مما هو حبكة درامية موثقة. لا يقدم ملف الأدلة أسماء شخصيات محورية أو تفاصيل تطور سردي أو وصفاً لمشاهد قصصية، ولذلك لا يمكن تقييم عمق الحكاية أو كتابتها. الميزة التي يمكن استنتاجها بحذر هي أن الأسطورة تمنح الرحلة غرضاً عاماً، فيما يتولى الاستكشاف والتقدم العملي حمل التجربة. وقد يناسب ذلك من يفضّل صناعة حكايته عبر الترحال والبناء، لكنه لا يثبت أن اللعبة تقدم سرداً شخصياً غنياً أو حواراً بارزاً.\n\n## السرد والشخصيات أو تصميم اللعب\n\nالأدلة تتيح تحليلاً أوضح لتصميم اللعب من تحليل الشخصيات. فهناك صناعة للأسلحة والدروع والطعام، وبناء مرن للمنازل والقواعد ونقاط الاستيطان، وقتال يعتمد المراوغة والصد مع مجموعة من الأسلحة، فضلاً عن زعماء يمكن هزيمتهم وجمع جوائزهم. وتدخل السفن والإبحار في الصورة بوصفهما وسيلة للوصول إلى أراضٍ جديدة، لا مجرد تفصيل تجميلي. تتصل هذه الأنظمة في حلقة مفهومة: الاستكشاف يوفر المواد، والصناعة والبناء يدعمان قدرة اللاعب على التقدم، ثم تفتح الرحلة تحديات وموارد إضافية.\n\nكذلك يصف المصدر اللعب الجماعي بأنه تعاوني، ويذكر الخوادم المخصصة. هذه حقيقة تصميمية ذات وزن؛ فهي تعني أن المشاركة مع آخرين جزء معلن من العرض، لا استنتاجاً من وجود اللعبة على الإنترنت. مع ذلك، لا تتوفر معلومات تشرح توزيع الأدوار بين اللاعبين أو مدى تغير القتال والبناء في المجموعة. ولا يوجد ما يسوغ اختراع شخصيات أو مهارات أو تفاصيل للأعداء. التقييم الإيجابي هنا منصب على وضوح الترابط بين الأنظمة وتعدد أغراضها، لا على ادعاء أن كل عنصر متوازن أو ممتع في الممارسة.\n\n## الإخراج والجوانب الفنية\n\nيمكن وصف الإخراج على مستوى تنظيم التجربة: تدرج مكاني من مركز أهدأ إلى أطراف أشد خطراً، ومكافآت مادية تحفز التوسع، وأنشطة تمتد من البناء إلى القتال والإبحار. هذا يمنح العالم وظيفة تصميمية، إذ تبدو المناطق مرتبطة بمستوى المخاطرة والتقدم بدلاً من كونها خلفية محايدة. لكنه لا يكفي لإصدار حكم على جودة الإخراج المرئي، أو وضوح الواجهات، أو سلاسة الأداء، أو الاستقرار التقني. لا يحتوي ملف الأدلة على قياسات أداء أو اختبارات منصات أو رصد لمشكلات تقنية، ومن ثم سيكون وصف اللعبة بأنها مصقولة تقنياً أو مضطربة ادعاء بلا سند.\n\nالإشارة إلى وجود مقطع إطلاق رسمي تثبت توفر مادة ترويجية، لكنها ليست بديلاً عن مراجعة مستقلة لمشهد اللعب أو تحليلاً فنياً له. لهذا يظل التقدير في هذا المحور محدوداً: بنية العالم والأنشطة الموثقة توحي بإخراج يخدم الاستكشاف، بينما تظل جودة التنفيذ نفسها غير محسومة بالمصادر المقدمة.\n\n## الصورة والهوية البصرية\n\nتحدد المعلومات المتاحة نطاقاً بصرياً عاماً: عالم خيالي مستلهم من الميثولوجيا الإسكندنافية، يمتد من غابات عميقة إلى قمم جبلية ومحيطات وأراضٍ غريبة، مع توليد إجرائي للعالم. كما أن صورة الملصق ورابط المقطع الترويجي لا يقدمان، في ملف الأدلة، تحليلاً يمكن الاستناد إليه لتقييم التكوين أو الإضاءة أو حركة الصورة أو اتساق الأسلوب. لذا يمكن القول إن الهوية مستمدة موضوعياً من البيئة الإسكندنافية واتساع الرحلة، لا وصف شكلها الفني بالتفصيل.\n\nوجود مناطق متباينة في الوصف يوحي بإمكان تنويع المشاهد، لكنه لا يثبت أن التمييز البصري بينها ناجح أو أن التوليد الإجرائي ينتج لقطات متماسكة. الدرجة هنا متحفظة تحديداً لهذا السبب: ليست حكماً بأن الصورة ضعيفة، بل تقديراً محدود الثقة لما لا تكفي الأدلة لتوثيقه. ولا ينبغي قراءة هذا التحفظ على أنه عيب مثبت في اللعبة.\n\n## الصوت والموسيقى والأداء\n\nلا تتضمن المواد المقدمة معلومات عن الموسيقى أو المؤثرات أو الأداء الصوتي، ولا تنقل تقييماً مستقلاً لهذه العناصر. لا توجد، لذلك، قاعدة مسؤولة للحديث عن ألحان بعينها، أو جودة تسجيل، أو تمثيل صوتي، أو دور للصمت والصوت في بناء التوتر. كذلك لا يجوز اتخاذ وجود مقطع إطلاق دليلاً على جودة صوت اللعبة؛ فالمقطع الترويجي مادة ترويجية، ولا يثبت وحده ما يسمعه اللاعب خلال التجربة.\n\nتظهر هذه الفجوة مباشرة في الدرجة: الرقم المدرج لمحور الصوت تحفظي ومحايد بسبب غياب الشواهد، وليس استنتاجاً بأن الصوت متوسط الجودة. وهذا أقل إرضاءً من مراجعة مكتملة المصادر، لكنه أدق من اختلاق تحليل تفصيلي. يحتاج الحكم الحقيقي على هذا الجانب إلى مواد موثوقة تصف الصوت داخل اللعب، وهو ما لا يوفره الملف.\n\n## الإيقاع والبناء وتنوع المحتوى\n\nتدعم الأنظمة الموثقة تصوراً لتقدم يتكرر على مراحل: استكشاف منطقة، تحصيل مواد، تحسين العتاد أو القاعدة، ثم الاستعداد لمخاطر أبعد. ويضاف إلى ذلك تنوع وظيفي بين القتال، وصناعة الطعام والمعدات، والبناء، ومواجهة الزعماء، والسفر البحري. هذا الاتساع يرجح أن التجربة لا تعتمد على نشاط واحد فقط، كما أن تغير مستوى الخطر مع المسافة يمنح التوسع منطقاً واضحاً. أما مقدار الوقت المطلوب لكل مرحلة، وسرعة فتح الأنظمة، وتوازن العودة إلى الموارد، فلا توثقه المصادر بما يسمح بحكم قاطع على الإيقاع الفعلي.\n\nومن هنا تأتي درجة الإيقاع متوسطة إلى جيدة، لا لأنها تكشف عيباً مؤكداً، بل لأن بنية التقدم تبدو متماسكة على الورق بينما تظل وتيرتها الحقيقية مجهولة. لا نعرف من الأدلة إن كان جمع المواد يتكرر بإفراط، أو إن كانت الرحلات البحرية طويلة على نحو مرهق، ولا يصح تأكيد أي من ذلك. التنوع المعلن نقطة قوة؛ أما سلاسة الانتقال بين الأنشطة فمسألة تحتاج مراجعة لعب مستقلة.\n\n## نقاط القوة\n\nأقوى ما تثبته المواد هو اتصال التقدم بالاستكشاف: المناطق الأبعد أشد تحدياً لكنها تعد بموارد أفضل. وتخدم الصناعة هذا المسار بوضوح، إذ تحول المواد إلى أسلحة ودروع وطعام، بينما يمنح البناء للاعب سبباً إضافياً للاستثمار في العالم بدلاً من المرور به سريعاً. ثم توسع السفن نطاق المغامرة إلى ما وراء اليابسة، وتضيف مواجهات الزعماء أهدافاً ملموسة إلى جانب الاستكشاف الحر. ويحسب للعبة أيضاً إعلانها الصريح عن تعاون جماعي وخوادم مخصصة، ما يجعلها مناسبة لمشاركة مشروع البقاء والبناء. هذه مزايا في تصور التجربة، وتبقى قوتها التنفيذية التفصيلية خارج ما تثبته المصادر الحالية.\n\n## نقاط الضعف\n\nالتحفظ الأول ليس عيباً مثبتاً في اللعبة، بل نقص في الأدلة: لا توجد مراجعات مستقلة مفصلة تسمح بالتحقق من جودة الصورة والصوت والأداء. وثانياً، قد يكون اعتماد التقدم على جمع الموارد والصناعة أقل جاذبية لمن لا يستمتع بتكرار دورة التحضير والتوسع، لكن هذا استنتاج متعلق بتصميم البقاء الموصوف، لا شكوى موثقة من طول أو تكرار فعلي. وثالثاً، يقدم الملف وصفاً عاماً للقصة ولا يوثق شخصيات أو تطوراً درامياً، لذلك لا يمكن ترشيح اللعبة لمن يبحث تحديداً عن حبكة مفصلة بناء على هذه الأدلة. وأخيراً، يثير اختلاف بيانات المنصات حاجة إلى التحقق قبل اتخاذ قرار شراء لمنصة بعينها.\n\n## لمن يناسب هذا العمل؟\n\nتبدو Valheim خياراً مناسباً لمن يفضل البقاء والاستكشاف وصناعة الأدوات، ولمن يجد متعة في تحويل الموارد إلى قواعد ومساكن ثم توسيع مجال الرحلة بالسفن. كما أن التركيز المعلن على التعاون يجعلها مرشحة لمن يريد مشروعاً جماعياً طويل النفس، وإن كانت المصادر لا توضح تفاصيل تجربة المجموعة. أما من يضع السرد الشخصي أو الأداء الصوتي أو التميز البصري في مقدمة أولوياته، فلن يجد في المعلومات المتاحة ما يكفي لاتخاذ قرار واثق على هذه الأسس. وينبغي للاعب المهتم بمنصة محددة أن يراجع توفر النسخة محلياً، لأن قوائم المنصات في المواد لا تتطابق تماماً.\n\n## الحكم النهائي\n\nعلى مستوى التصميم الموثق، تقدم Valheim أساساً جذاباً ومتماسكاً: عالم تتصاعد مخاطره، ومكافآت تدعم الصناعة، وأنشطة تمتد من القتال والبناء إلى الإبحار، مع تعاون معلن. هذه العناصر تكفي لحكم إيجابي مشروط وتوصية لمحبي ألعاب البقاء التي تتيح لهم تشكيل رحلتهم، لكنها لا تكفي لتزكية شاملة لجودة التنفيذ. لا يثبت الملف مستوى الرسم أو الصوت أو سلاسة الأداء، كما لا يوثق الإيقاع بالتجربة أو عمق السرد. لذلك تستند الدرجات إلى ما يمكن تقييمه فعلاً، وتبقى بعض المحاور تحفظية بسبب نقص الأدلة لا بسبب عيوب مؤكدة. متوسط RAWG البالغ 3.99 من 5، من 659 صوتاً، مؤشر جماهيري ثانوي فحسب، وليس بديلاً عن هذا الحكم التحريري أو عن مراجعات مستقلة مكتملة.",
-        "scores": {
-          "story": 7.4,
-          "visuals": 6,
-          "sound": 5,
-          "pacing": 7
-        },
-        "pros": [
-          "تدرج واضح في المخاطر والمكافآت: الابتعاد عن المركز يفتح تحديات أكبر وموارد أعلى قيمة.",
-          "ترابط عملي بين الاستكشاف وصناعة الأسلحة والدروع والطعام، بما يدعم التقدم المعلن.",
-          "تنوع موثق بين البناء والقتال ومواجهة الزعماء والإبحار إلى أراضٍ جديدة.",
-          "التعاون الجماعي والخوادم المخصصة جزء معلن من تصميم التجربة."
-        ],
-        "cons": [
-          "المصادر المتاحة لا توثق جودة الصورة أو الموسيقى أو الأداء التقني، ما يحد من الثقة في الحكم الفني الشامل.",
-          "وصف القصة عام ولا يقدم أدلة كافية على شخصيات بارزة أو تطور درامي مفصل.",
-          "اعتماد التقدم على الموارد والصناعة قد لا يناسب من لا يفضل دورة البقاء والتجهيز؛ ولا تثبت المصادر مقدار التكرار الفعلي.",
-          "بيانات المنصات في الملف غير متطابقة تماماً، لذا يلزم التحقق من النسخة المتاحة قبل الشراء."
-        ],
-        "title": "Valheim",
-        "type": "game",
-        "sourceId": "game:248521",
-        "sourceName": "RAWG",
-        "sourceUrl": "https://rawg.io/games/valheim",
-        "sourceRating": 3.99,
-        "sourceRatingScale": 5,
-        "sourceVoteCount": 659,
-        "sourceRatingCheckedAt": "2026-11-24T10:36:08.942Z",
-        "audienceScore": 8,
-        "releaseDate": "2026-09-09",
-        "poster": "https://media.rawg.io/media/games/adb/adb59be81367b19c2544457424bcf086.jpg",
-        "backdrop": "https://media.rawg.io/media/games/adb/adb59be81367b19c2544457424bcf086.jpg",
-        "genres": [
-          "Action",
-          "Adventure",
-          "Indie"
-        ],
-        "platforms": [
-          "Linux",
-          "PC"
-        ],
-        "cast": [],
-        "crew": [],
-        "tags": [
-          "Action",
-          "Adventure",
-          "Indie"
-        ],
-        "sources": [
-          {
-            "name": "RAWG",
-            "url": "https://rawg.io/games/valheim",
-            "extract": "Prove your worth! Are you worthy of entering Valhalla? You have been sent to Valheim, the 10th Norse world. Only by defeating the mighty beasts of these lands will you win the favor of the gods. This quest will take you to the far reaches of this world, from the deepest forest to the highest mountain peak. You will craft powerful weapons, build unyielding castles and sail longships towards the horizon. Description Valheim is a game about exploring a huge fantasy world inspired by norse mythology and viking culture. You start your adventure at the relatively peaceful center of Valheim. The further from the center you travel, the more challenging the world becomes. But you will also find more valuable materials that you can use to craft deadlier weapons and sturdier armor. You will also build your own viking strongholds and outposts all over the world. Eventually you will build a mighty longship and sail the great oceans in search of exotic lands … but be wary of sailing too far... Features: Flexible house and base building system. Intuitive item crafting (weapons, armor, food etc). Huge procedural world. Dodge & block based combat system with a wide range of weapons. Defeat bosses & collect trophies. Engaging food & health system. Build & sail ships. Multiplayer (with focus on cooperation). Dedicated server.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Valheim",
-            "extract": "Valheim is a survival game by the Swedish developer Iron Gate Studio and published by Coffee Stain Publishing. It was released in early access for Linux and Microsoft Windows via Steam on 2 February 2021, and for Xbox One and Xbox Series X/S on 14 March 2023. The full version was released on 9 September 2026 alongside versions for the PlayStation 5 and Nintendo Switch 2.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — XBOX",
-            "url": "https://www.youtube.com/watch?v=SeHBisLYnbM",
-            "extract": "Verified public, embeddable promotional trailer: Valheim 1.0 Launch Trailer",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "SeHBisLYnbM",
-        "youtubeVideoTitle": "Valheim 1.0 Launch Trailer",
-        "reviewMode": "review",
-        "score": 6.5
-      },
+      "article": null,
       "lastError": "Article file exists, but the live site still returns HTTP 404; deployment verification will retry.",
       "provider": "openai",
       "tokens": 6148,
       "articlePath": "src/content/reviews/game-valheim-248521.md",
       "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-valheim-248521/",
-      "resumeStatus": "verifying"
+      "resumeStatus": null,
+      "publishedAt": "2026-11-24T10:42:30.130Z"
     },
     "series:242965": {
       "key": "series:242965",
@@ -3338,148 +3212,176 @@
         "popularity": 46.7866,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-24T10:39:13.218Z",
-      "updatedAt": "2026-11-24T10:40:54.639Z",
+      "updatedAt": "2026-11-24T10:42:30.301Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "Georgie & Mandy's First Marriage",
-        "type": "series",
-        "collectedAt": "2026-11-24T10:39:13.661Z",
-        "sourceId": "series:243875",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/243875",
-        "overview": "Georgie and Mandy raise their young family in Texas while navigating the challenges of adulthood, parenting, and marriage.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/243875",
-            "extract": "Georgie and Mandy raise their young family in Texas while navigating the challenges of adulthood, parenting, and marriage.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Georgie_%26_Mandy's_First_Marriage",
-            "extract": "Georgie & Mandy's First Marriage is an American television sitcom created by Chuck Lorre, Steven Molaro, and Steve Holland. It premiered on CBS on October 17, 2024, and is the third installment in The Big Bang Theory franchise, serving as a direct sequel to Young Sheldon.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Screen Explain TV",
-            "url": "https://www.youtube.com/watch?v=O_kcQiW7zsg",
-            "extract": "Verified public, embeddable promotional trailer: GEORGIE & MANDY’S FIRST MARRIAGE (2026) | OFFICIAL TRAILER – History Repeats | CBS",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 290 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "O_kcQiW7zsg",
-        "youtubeVideoTitle": "GEORGIE & MANDY’S FIRST MARRIAGE (2026) | OFFICIAL TRAILER – History Repeats | CBS",
-        "youtubeChannel": "Screen Explain TV",
-        "releaseDate": "2024-10-17",
-        "genres": [
-          "Comedy"
-        ],
-        "platforms": [],
-        "cast": [
-          "Montana Jordan",
-          "Emily Osment",
-          "Rachel Bay Jones",
-          "Will Sasso",
-          "Dougie Baldwin",
-          "Jessie Prez"
-        ],
-        "crew": [],
-        "rating": 8.002,
-        "ratingScale": 10,
-        "votes": 290,
-        "poster": "https://image.tmdb.org/t/p/w780/3z2mYFxUkzanb2eeIcVyfJq0G3q.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/h927CLfeAjiy0MNKRxWZgEq7bHR.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "Georgie & Mandy’s First Marriage: فرضية عائلية واعدة، لكن الأدلة المتاحة لا تكفي لحسم نجاحها",
-        "summary": "تضع Georgie & Mandy’s First Marriage أسرة شابة في تكساس أمام مسؤوليات البلوغ وتربية الأطفال والزواج، وتأتي بوصفها امتداداً مباشراً لـYoung Sheldon وثالثةً في امتياز The Big Bang Theory. هذه المعطيات تمنح المسلسل نقطة انطلاق واضحة، وتحدد مجالاً كوميدياً عائلياً قابلاً للتطور، لكنها لا تكشف وحدها طريقة كتابة الحلقات أو بناء الشخصيات أو جودة التنفيذ. لذلك تميّز هذه المراجعة بين ما تثبته المصادر وما يمكن استنتاجه بحذر: ثمة وعد في الموضوع والارتباط بعالم سابق، لكن لا تتوافر تفاصيل موثقة كافية عن الصورة أو الموسيقى أو الإيقاع لإصدار أحكام جازمة عليها. النتيجة تقدير تحريري متحفظ، لا ادعاء بمشاهدة مباشرة.",
-        "verdict": "تبدو Georgie & Mandy’s First Marriage امتداداً ذا أساس درامي مفهوم: زوجان شابان وأسرة في طور التكوين يواجهان الزواج والأبوة ومتطلبات الاستقلال، ضمن سلسلة لها صلة مباشرة بعالم تلفزيوني معروف. هذه فرضية تمنح العمل مجالاً للتوازن بين الكوميديا والمسؤوليات اليومية، لكنها لا تبرهن بذاتها على نجاح النص أو الأداء أو الإخراج. ولأن ملف الأدلة لا يقدم وصفاً لحلقات أو مراجعات مستقلة أو معلومات فنية تفصيلية، فإن الحكم الإيجابي هنا محدود إلى صلاحية الفكرة ووضوح موقع المسلسل، بينما تبقى جودة التنفيذ غير محسومة. التقدير النهائي متوسط بحذر، والتوصية موجهة أساساً إلى متابعي السلسلة والمهتمين بكوميديا الأسرة، مع التنبيه إلى أن المواد المتاحة لا تكفي لضمان توافقه مع أذواقهم.",
-        "body": "## مقدمة وسياق العمل\n\nGeorgie & Mandy’s First Marriage مسلسل كوميدي أمريكي بدأ عرضه، وفق البيانات المتاحة، في 17 أكتوبر 2024 على شبكة CBS. ويصفه سجل TMDB بأنه يتابع جورجي وماندي وهما يربيان أسرة صغيرة في تكساس، فيما يواجهان تحديات البلوغ وتربية الأطفال والزواج. أما المصدر الموسوعي المرفق فيضعه بوصفه ثالث أعمال امتياز The Big Bang Theory، وتكملة مباشرة لمسلسل Young Sheldon، وينسب إنشاءه إلى Chuck Lorre وSteven Molaro وSteve Holland. هذه معلومات تصلح لتحديد هوية المشروع وسياقه، لا للحكم على نجاح الحلقات. المراجعة هنا تحريرية مبنية حصراً على هذه البيانات وعلى وجود مادة ترويجية مسجلة؛ لم أشاهد المسلسل، ولا أستنتج من الملخص ما لا يقوله.\n\nيهم هذا السياق لأن العمل لا يبدأ في فراغ: اسم جورجي وعلاقته بماندي يربطان المسلسل بعالم سابق، بينما يشير عنوانه إلى الزواج بوصفه محوراً مركزياً. لكن وجود إرث تلفزيوني قد يكون ميزة للمتابع الذي يعرف الشخصيات، وقد يثير سؤالاً مشروعاً لدى القادم الجديد عن مقدار ما يحتاجه من معرفة سابقة. لا يقدم ملف الأدلة إجابة عن هذا السؤال، ولا يحدد مقدار استقلال الحكاية عن المسلسل السابق. لذلك يصح اعتبار الارتباط جزءاً ثابتاً من موقع العمل، لا دليلاً كافياً على أن الانتقال بين السلسلتين ناجح أو سهل.\n\n## الفكرة والقصة أو التجربة\n\nالمعطى القصصي الموثق موجز لكنه واضح: أسرة شابة في تكساس تحاول الجمع بين تربية الأطفال ومسؤوليات الزواج والانتقال إلى حياة البالغين. هذه نقطة انطلاق قابلة لتوليد صراعات يومية، لأن الموضوعات المذكورة متداخلة بطبيعتها: قرارات الأسرة لا تنفصل عن العلاقة الزوجية، والبلوغ ليس حدثاً ينتهي في لحظة واحدة. ومن هذه العناصر يمكن استنتاج أن المسلسل يملك إطاراً يسمح بتناول تغيّر الأدوار داخل المنزل. لكن ذلك استنتاج عن الإمكان الدرامي، وليس وصفاً لأحداث محددة أو ضماناً بأن النص يستثمره بعمق.\n\nلا تسرد المصادر حبكة موسم أو حلقات، ولا تحدد العقبات التي تواجهها الشخصيات، ولا تشرح إن كان التركيز موزعاً بالتساوي بين جورجي وماندي والأسرة الأوسع. لذلك لا يصح اختراع مواقف أو اعتبار الزواج سعيداً أو متوتراً على نحو بعينه، كما لا يمكن الحكم على مفاجآت السرد أو أصالته. النقطة الإيجابية التي يمكن تثبيتها هي وضوح السؤال المركزي: كيف يدير زوجان شابان الحياة الأسرية فيما يتعاملان مع متطلبات النضج؟ أما مقدار التجديد في الإجابة، وطبيعة الكوميديا الناتجة عنها، فهما خارج ما تثبته الأدلة.\n\n## السرد والشخصيات أو تصميم اللعب\n\nلأنه مسلسل تلفزيوني كوميدي، فإن تقييم السرد والشخصيات أهم من تحليل أنظمة لعب لا صلة لها بهذا النوع. الأسماء المثبتة في قائمة الطاقم تشمل Montana Jordan وEmily Osment وRachel Bay Jones وWill Sasso وDougie Baldwin وJessie Prez. وجود هذه القائمة يثبت مشاركة هؤلاء في العمل بحسب المصدر، لكنه لا يثبت حجم أدوارهم أو جودة أدائهم أو طبيعة العلاقات التي يجسدونها. ويمكن القول إن وجود جورجي وماندي في قلب الملخص يجعل علاقتهما محوراً متوقعاً، إلا أن وصف كيفية كتابتها يحتاج إلى نصوص حلقات أو مراجعات موثوقة غير متاحة هنا.\n\nتسمح الفرضية بتوقع أن يعتمد المسلسل على التفاعل بين أفراد الأسرة، لكن لا يجوز تحويل هذا التوقع إلى ادعاء بأنه يقدم شخصيات متوازنة أو نكات ناجحة أو تطوراً متدرجاً. لا توجد في المواد المرفقة معلومات عن بنية الحلقات، أو وجهات النظر السردية، أو مساحات الشخصيات المساندة، ولا مراجعات مستقلة تفصل في تلك الجوانب. لذلك تظل درجة محور القصة حكماً منخفض الثقة على أساس وضوح الصراع العام وإمكاناته، لا حكماً موثقاً على جودة كتابة الشخصيات في التنفيذ.\n\n## الإخراج والجوانب الفنية\n\nلا يتضمن ملف الأدلة أسماء طاقم الإخراج أو تفاصيل التصوير أو مواقع الإنتاج أو أسلوب تنفيذ الحلقات. كما أن وجود مقطع ترويجي لا يكفي، بحد ذاته، لتحليل بناء المشهد أو حركة الكاميرا أو إدارة الإيقاع داخل الحلقة؛ فالمقطع المختصر مادة دعائية منتقاة، وليس بديلاً عن مشاهدة العمل أو الاطلاع على نقد فني مفصل. لذلك لا أنسب إلى المسلسل أسلوباً إخراجياً بعينه، ولا أصفه بأنه تقليدي أو مبتكر، لأن أيّاً من ذلك سيكون تخميناً غير مسند.\n\nالمعلومة الواضحة هنا هي التصنيف العام بوصفه كوميديا تلفزيونية، إلى جانب سياق إنتاجه ضمن امتياز قائم. هذا يحدد الإطار فقط، ولا يحسم ما إذا كان الإخراج يمنح الكوميديا توقيتاً فعالاً أو يترك مساحة للحظات العائلية الجادة. وبالمثل، لا تتوافر شواهد عن مستوى الإنتاج أو ثباته بين الحلقات، ولا عن مشكلات تقنية. لهذا لا أتعامل مع نقص المعلومات بوصفه عيباً فنياً في المسلسل نفسه؛ إنه قيد على إمكان إصدار حكم نقدي موثوق عن هذا الجانب.\n\n## الصورة والهوية البصرية\n\nالمتاح بصرياً في ملف البيانات هو رابط ملصق ورابط صورة خلفية، لكن لا توجد أوصاف موثقة للألوان أو تصميم الديكور أو الملابس أو أسلوب التصوير. وجود صورة دعائية لا يسمح وحده باستنتاج هوية بصرية متماسكة، كما لا يكفي لتقرير أن العمل يكرر شكل Young Sheldon أو يبتعد عنه. ولا تتضمن المصادر نقاشاً مستقلاً للصورة أو مقارنة بين المواسم أو الأعمال المتصلة، ولذلك ستكون أي ملاحظة عن تكوين المشاهد أو جودتها ادعاءً بلا أساس.\n\nتظل نقطة التقييم المنصفة هي الفصل بين شكل مادة الترويج وبين شكل المسلسل الكامل. حتى لو أتاح المقطع الترويجي صوراً متحركة، فإن المصدر لا يقدم تحليلاً لمحتواها، ولا يثبت أن اختياراته البصرية تمثل جميع الحلقات. لهذا لا أستخرج منه حكم جودة. الدرجة المدرجة لهذا المحور تقدير محايد احترازي بسبب غياب الشواهد التفصيلية، وليست إشارة إلى أن الصورة متوسطة فعلاً أو إلى وجود خلل بصري. ومن يريد حكماً حاسماً يحتاج إلى مشاهدة الحلقات أو إلى مصادر نقدية تدرس تنفيذها.\n\n## الصوت والموسيقى والأداء\n\nلا يذكر ملف الأدلة مؤلف موسيقى أو تفاصيل عن الموسيقى التصويرية أو المؤثرات أو المكساج، ولا يوفر مراجعة مستقلة للأداء. أسماء الممثلين وحدها لا تبرر القول إن الأداء مقنع أو متفاوت، كما أن تصنيف المسلسل كوميدياً لا يثبت نوع الإلقاء أو نجاح التوقيت الكوميدي. لذلك لا أنسب إلى أي ممثل سمة أدائية محددة، ولا أصف موسيقى أو ثيمة صوتية لم ترد معلومات عنها. هذا الامتناع ليس انتقاصاً من العمل، بل التزام بالفصل بين بيانات التمثيل وبين تقييم التمثيل.\n\nعلى مستوى المتاح، يمكن تثبيت مشاركة طاقم تمثيل محدد في العمل، لكن لا نملك شواهد تسمح بتقييم التناغم بين أفراده أو أثر الأداء في بناء العلاقة المركزية. كذلك لا تتوافر معلومات تتيح المفاضلة بين الحوار والموسيقى أو تحديد ما إذا كان الصوت يؤدي وظيفة كوميدية أو عاطفية. لهذا تبقى الدرجة هنا محايدة ومنخفضة الثقة، ويجب ألا تُقرأ بوصفها شهادة بأن الصوت أو الأداء متوسطان. إنها إشارة إلى حدود الملف، لا بديل عن مراجعة سمعية وبصرية مباشرة.\n\n## الإيقاع والبناء وتنوع المحتوى\n\nلا يحدد السجل مدة الحلقات، أو عددها، أو طريقة توزيعها، ولا يشرح إن كانت الحبكات متصلة أو مستقلة. ولا توجد أدلة على كيفية تنويع المسلسل بين موضوعات الزواج والأبوة والبلوغ، أو على سرعة الانتقال بين الكوميديا والدراما العائلية. ومن ثم لا يمكن الجزم بأن الإيقاع سريع أو بطيء، أو أن المحتوى يتكرر، أو أن الموسم يحافظ على تصاعد درامي. كل هذه أحكام تتطلب الاطلاع على حلقات أو مصادر تتناولها صراحة.\n\nمع ذلك، توفر الموضوعات الثلاثة الواردة في الملخص نطاقاً محتملاً للتنوع: مسؤوليات الأطفال، وتغير العلاقة الزوجية، والتعامل مع مرحلة الرشد. هذا تنوع على مستوى محاور الفكرة فقط، وليس دليلاً على أن كل محور يحصل على معالجة متوازنة في الحلقات. الدرجة المخصصة للإيقاع، لذلك، ليست حكماً على انتظام الموسم، بل تقدير احترازي لا يرفع العمل ولا يخفضه بسبب غياب المعلومات. وعلى المشاهد المحتمل ألا يفهمها توصية بشأن سرعة المسلسل أو مقدار ما يقدمه من أحداث.\n\n## نقاط القوة\n\nأبرز ما يمكن اعتباره نقاط قوة مؤكدة في تصميم المشروع هو وضوح محوره الأسري: الزواج وتربية الأطفال والانتقال إلى البلوغ موضوعات مفهومة وقابلة لأن تهم جمهوراً واسعاً. وثمة أساس سردي محدد في جمع جورجي وماندي داخل أسرة شابة في تكساس، بدلاً من الاكتفاء بوسم كوميدي عام. كذلك يمنح الارتباط المباشر بـYoung Sheldon وامتياز The Big Bang Theory العمل هوية سياقية معلومة، وقد يسهّل عودة المتابعين إلى شخصيات وعالم يعرفونه. وأخيراً، يوفر تعدد أسماء الطاقم المعلنة دليلاً على وجود مجموعة تمثيل مسماة، وإن لم يكن دليلاً مستقلاً على جودة أدائها. هذه مزايا في الوعد والتموضع، لا أحكام على مستوى التنفيذ.\n\n## نقاط الضعف\n\nالتحفظ الأهم ليس عيباً مثبتاً في المسلسل، بل نقصاً جوهرياً في الأدلة المتاحة للحكم عليه: لا توجد مراجعات مستقلة تفصيلية أو ملخصات حلقات أو معلومات فنية عن الإخراج والصوت والصورة. كما أن وصف القصة عام، فلا يتيح اختبار أصالة الحبكات أو عمق تطور الشخصيات. وتبقى صلة العمل بامتياز سابق سلاحاً ذا حدين؛ فهي تمنح سياقاً للمتابع، لكن البيانات لا توضح إن كان القادم الجديد يستطيع دخوله بسهولة أو إن كان الاعتماد على المعرفة السابقة عائقاً. ينبغي عدم تحويل هذه الحدود المعرفية إلى اتهامات للمسلسل بالتكرار أو الضعف؛ هي أسباب مباشرة لتقييد الثقة في التقييم.\n\n## لمن يناسب هذا العمل؟\n\nوفق المعلومات الموثقة، يبدو المسلسل مرشحاً للاهتمام لدى متابعي Young Sheldon وThe Big Bang Theory، خصوصاً من يريدون متابعة جورجي وماندي في سياق أسري يركز على الزواج وتربية الأطفال. وقد تلائم فرضيته أيضاً من يفضل الكوميديا التي تتناول الأسرة والحياة اليومية، لكن لا يمكن ضمان نبرة العمل أو مقدار اعتماده على الدراما من الملخص وحده. أما المشاهد الذي يبحث عن كوميديا ذات شكل بصري مبتكر، أو أداء موسيقي لافت، أو إيقاع سريع، فلا يملك الملف الحالي ما يكفي ليقرر إن كان سيجد ذلك هنا. التوصية إذن مرتبطة بالاهتمام بالموضوع والامتياز، لا بادعاء معرفة تجربة المشاهدة.\n\n## الحكم النهائي\n\nتقدم Georgie & Mandy’s First Marriage فرضية واضحة وموقعاً معروفاً داخل امتياز تلفزيوني قائم، وتجمع في وصفها بين الأسرة والزواج والأبوة والنضج. هذه عناصر تمنحها أساساً معقولاً وتبرر اهتمام جمهور السلسلة، لكنها ليست كافية وحدها لإثبات نجاح كتابة الحلقات أو جودة تنفيذها. لذلك يكون الحكم التحريري متحفظاً: الفكرة واعدة على مستوى الإطار، أما الأداء الفعلي في السرد والصورة والصوت والإيقاع فلا تسمح الأدلة المتاحة بحسمه. الدرجات الرقمية أدناه تقديرات احترازية منخفضة الثقة؛ والدرجات المحايدة في الجوانب غير الموثقة لا تعني قياساً مؤكداً لجودتها. أوصي به بوصفه خياراً محتملاً لمتابعي العالم السابق والمهتمين بالكوميديا الأسرية، لا بوصفه نجاحاً مثبتاً لكل جمهور.",
-        "scores": {
-          "story": 6.2,
-          "visuals": 6,
-          "sound": 6,
-          "pacing": 6
-        },
-        "pros": [
-          "محور أسري واضح يجمع الزواج وتربية الأطفال والانتقال إلى حياة البالغين.",
-          "وجود جورجي وماندي كأساس محدد لفرضية المسلسل في تكساس.",
-          "صلة مباشرة موثقة بمسلسل Young Sheldon وامتياز The Big Bang Theory، ما يمنح العمل سياقاً معروفاً لمتابعيهما.",
-          "قائمة طاقم معلنة تضم Montana Jordan وEmily Osment وRachel Bay Jones وآخرين."
-        ],
-        "cons": [
-          "المصادر المتاحة لا تقدم تفاصيل كافية عن الحبكات أو تطور الشخصيات للحكم على جودة الكتابة.",
-          "لا توجد شواهد مستقلة كافية لتقييم الإخراج أو الصورة أو الموسيقى أو الأداء.",
-          "غياب معلومات موثقة عن مدة الحلقات وبنائها يجعل تقييم الإيقاع وتنوع المحتوى غير محسوم.",
-          "لا يوضح الملف مقدار اعتماد المسلسل على معرفة المشاهد بالأعمال السابقة، ما يترك سهولة دخوله للقادمين الجدد سؤالاً مفتوحاً."
-        ],
-        "title": "Georgie & Mandy's First Marriage",
-        "type": "series",
-        "sourceId": "series:243875",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/243875",
-        "sourceRating": 8.002,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 290,
-        "sourceRatingCheckedAt": "2026-11-24T10:39:13.661Z",
-        "audienceScore": 8,
-        "releaseDate": "2024-10-17",
-        "poster": "https://image.tmdb.org/t/p/w780/3z2mYFxUkzanb2eeIcVyfJq0G3q.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/h927CLfeAjiy0MNKRxWZgEq7bHR.jpg",
-        "genres": [
-          "Comedy"
-        ],
-        "platforms": [],
-        "cast": [
-          "Montana Jordan",
-          "Emily Osment",
-          "Rachel Bay Jones",
-          "Will Sasso",
-          "Dougie Baldwin",
-          "Jessie Prez"
-        ],
-        "crew": [],
-        "tags": [
-          "Comedy"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/243875",
-            "extract": "Georgie and Mandy raise their young family in Texas while navigating the challenges of adulthood, parenting, and marriage.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Georgie_%26_Mandy's_First_Marriage",
-            "extract": "Georgie & Mandy's First Marriage is an American television sitcom created by Chuck Lorre, Steven Molaro, and Steve Holland. It premiered on CBS on October 17, 2024, and is the third installment in The Big Bang Theory franchise, serving as a direct sequel to Young Sheldon.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Screen Explain TV",
-            "url": "https://www.youtube.com/watch?v=O_kcQiW7zsg",
-            "extract": "Verified public, embeddable promotional trailer: GEORGIE & MANDY’S FIRST MARRIAGE (2026) | OFFICIAL TRAILER – History Repeats | CBS",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "O_kcQiW7zsg",
-        "youtubeVideoTitle": "GEORGIE & MANDY’S FIRST MARRIAGE (2026) | OFFICIAL TRAILER – History Repeats | CBS",
-        "reviewMode": "review",
-        "score": 6.1
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 11941,
       "articlePath": "src/content/reviews/series-georgie-mandy-s-first-marriage-243875.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-georgie-mandy-s-first-marriage-243875/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-georgie-mandy-s-first-marriage-243875/",
+      "publishedAt": "2026-11-24T10:42:30.301Z"
+    },
+    "game:58806": {
+      "key": "game:58806",
+      "type": "game",
+      "id": "58806",
+      "title": "Satisfactory",
+      "item": {
+        "type": "game",
+        "id": "58806",
+        "name": "Satisfactory",
+        "date": "2024-09-11",
+        "popularity": 2945,
+        "source": "RAWG"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-24T10:42:32.205Z",
+      "updatedAt": "2026-11-24T10:43:41.762Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Satisfactory",
+        "type": "game",
+        "collectedAt": "2026-11-24T10:42:32.842Z",
+        "sourceId": "game:58806",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/satisfactory",
+        "overview": "FICSIT - AN INTRODUCTION Welcome to FICSIT Incorporated! A company specialised in the research, development and application of new technology and science, anything to find short-term solutions to long-term problems! As part of our brand-new Save The Day program, you’ll be sent to one of many alien planets in an effort to contribute to Project Assembly, a project I am legally bound to not tell you anything about for fear of our lives. And my job. As an engineer and pioneer, you won’t only be constructing and automating the very factory that will contribute to Project Assembly, but also explore and exploit the planet and its inhabitants as you expand. Don’t worry, we’re super inclusive when it comes to alien lifeforms! We’ll even allow for pets, how cool is that!? Just don’t tell R&D. Below you can find the three main pillars of your mission! Time to get to work, and Stay Effective!* *This motto is FICSIT Inc. property. Please do not use ironically. CONSTRUCT To achieve company milestones according to satisfaction we expect you to construct your FICSIT Inc. factory in such a way that it allows for easy expansion and complexion. Not only will buildings grow more complex over time, so will the parts they produce. Project Assembly isn’t your average high-school science project. We’re making history here! Go big or go home!* Of course, this requires both high-level and low-level power management, good luck getting to nuclear! We even support stuff like multi-floor warehouses so you can stack your buildings, and a whole bunch of navigational constructs like jump pads and walkways! Walkways are the best. They’re attached to the ground and everything. *Employee will be expected to fund their own travel expenses AUTOMATE So you know how your FICSIT Inc. factory can be turned into this incredibly intricate maze of conveyor belts in every direction, merging, splitting, crossing each other above and below? Conveyor belts carry, after all, the life-blood of our company! Well, since you’ll be in a pretty big area you’re going to need outposts. To make your life easier, we’ve developed self-driving trucks and trains so you can set up your very own transport system between any point in your area! EXPLORE & EXPLOIT R&D hasn’t figured out how to clone materials yet, weirdly enough, so you’re going to have to go out and use our patented method of extraterrestrial pioneering! This means exploring to find more or new stuff to exploit, to help expand your FICSIT Inc. factory. You’re on an uncharted alien planet, so try to be careful, don’t go alone if you don’t have to, and use protection! Who knows what kind of organisms have made this place their home? Or who knows what awesome treasures you’ll find? Don’t worry, this is why we assigned you your very own FICSIT Inc. handler.",
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/satisfactory",
+            "extract": "FICSIT - AN INTRODUCTION Welcome to FICSIT Incorporated! A company specialised in the research, development and application of new technology and science, anything to find short-term solutions to long-term problems! As part of our brand-new Save The Day program, you’ll be sent to one of many alien planets in an effort to contribute to Project Assembly, a project I am legally bound to not tell you anything about for fear of our lives. And my job. As an engineer and pioneer, you won’t only be constructing and automating the very factory that will contribute to Project Assembly, but also explore and exploit the planet and its inhabitants as you expand. Don’t worry, we’re super inclusive when it comes to alien lifeforms! We’ll even allow for pets, how cool is that!? Just don’t tell R&D. Below you can find the three main pillars of your mission! Time to get to work, and Stay Effective!* *This motto is FICSIT Inc. property. Please do not use ironically. CONSTRUCT To achieve company milestones according to satisfaction we expect you to construct your FICSIT Inc. factory in such a way that it allows for easy expansion and complexion. Not only will buildings grow more complex over time, so will the parts they produce. Project Assembly isn’t your average high-school science project. We’re making history here! Go big or go home!* Of course, this requires both high-level and low-level power management, good luck getting to nuclear! We even support stuff like multi-floor warehouses so you can stack your buildings, and a whole bunch of navigational constructs like jump pads and walkways! Walkways are the best. They’re attached to the ground and everything. *Employee will be expected to fund their own travel expenses AUTOMATE So you know how your FICSIT Inc. factory can be turned into this incredibly intricate maze of conveyor belts in every direction, merging, splitting, crossing each other above and below? Conveyor belts carry, after all, the life-blood of our company! Well, since you’ll be in a pretty big area you’re going to need outposts. To make your life easier, we’ve developed self-driving trucks and trains so you can set up your very own transport system between any point in your area! EXPLORE & EXPLOIT R&D hasn’t figured out how to clone materials yet, weirdly enough, so you’re going to have to go out and use our patented method of extraterrestrial pioneering! This means exploring to find more or new stuff to exploit, to help expand your FICSIT Inc. factory. You’re on an uncharted alien planet, so try to be careful, don’t go alone if you don’t have to, and use protection! Who knows what kind of organisms have made this place their home? Or who knows what awesome treasures you’ll find? Don’t worry, this is why we assigned you your very own FICSIT Inc. handler.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Satisfactory",
+            "extract": "Satisfactory is a factory simulation game by Coffee Stain Studios for Windows, Xbox Series X/S, and PlayStation 5. The player is dropped onto an alien planet with a handful of tools and must use the planet's natural resources to construct increasingly complex factories. The initial goal is to construct a space elevator, through which the Pioneer begins supplying the megacorp the player works for with increasingly numerous and complex components for their unknown, but stated to be prudent, purposes. These exports unlock access to new technology that in turn unlocks a new tier of manufacturing and refinement machines to support the production of the next phase of parts to be delivered to FICSIT.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — XBOX",
+            "url": "https://www.youtube.com/watch?v=CMq9LGe7FM4",
+            "extract": "Verified public, embeddable promotional trailer: Satisfactory: Core Values Reveal Trailer",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from RAWG with 364 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "CMq9LGe7FM4",
+        "youtubeVideoTitle": "Satisfactory: Core Values Reveal Trailer",
+        "youtubeChannel": "XBOX",
+        "releaseDate": "2024-09-11",
+        "genres": [
+          "Action",
+          "Adventure",
+          "Strategy",
+          "Indie"
+        ],
+        "platforms": [
+          "PC"
+        ],
+        "developers": [
+          "Coffee Stain Studios"
+        ],
+        "rating": 4.3,
+        "ratingScale": 5,
+        "votes": 364,
+        "poster": "https://media.rawg.io/media/games/9b0/9b03581c1ba7df63e221eb0828f8bb52.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "Satisfactory: متعة هندسة المصنع أقوى من الحكاية التي تحيط به",
+        "summary": "تقوم Satisfactory على فكرة واضحة وواعدة: إرسال اللاعب إلى كوكب فضائي ليجمع الموارد، ويبني مصنعاً قابلاً للتوسع، ويؤتمت إنتاج مكوّنات تزداد تعقيداً مع تقدم العمل. وتكمن جاذبيتها التصميمية في تداخل البناء وإدارة الطاقة والنقل والاستكشاف، وفي انتقالها من خطوط إنتاج بسيطة إلى شبكة صناعية أوسع. لكن المعلومات الموثقة المتاحة تشرح هذه الأنظمة أكثر مما تكشف عن عمق الشخصيات أو جودة التنفيذ الفني والصوتي، لذلك يركّز هذا الحكم على تصميم التجربة المعلن لا على ادعاء تجربة مباشرة. النتيجة لعبة تبدو مناسبة لمحبي التخطيط والتحسين المتواصل، مع تحفظ واضح بشأن ما لا تسمح الأدلة المتاحة بتقييمه.",
+        "verdict": "تستند قيمة Satisfactory، وفق ما تثبته المواد المتاحة، إلى دورة لعب مترابطة تجعل جمع الموارد والبناء والأتمتة وسائل متبادلة لدفع المشروع إلى الأمام. وتمنحها فكرة المصنع القابل للتمدد، مع النقل بين المواقع وفتح مراحل إنتاج أكثر تعقيداً، أساساً قوياً لتجربة استراتيجية طويلة النفس. في المقابل، لا تكفي المعلومات الموثقة هنا لإثبات قوة السرد والشخصيات أو الحكم على الموسيقى والأداء والجودة التقنية، كما أن الحكاية تبدو إطاراً للمهمة أكثر من كونها محوراً مثبت العمق. لذلك فالتوصية موجهة بوضوح إلى من يستمتع بتحويل الموارد إلى أنظمة إنتاج منظمة، لا إلى من يبحث أساساً عن دراما شخصيات أو عرض صوتي يمكن تقييمه من هذه الأدلة. الدرجة الإجمالية التحريرية إيجابية بحذر: تصميمها المعلن واعد ومتماسك، لكن بعض جوانب الحكم تظل محدودة بغياب أدلة مباشرة كافية.",
+        "body": "## مقدمة وسياق العمل\n\nتُقدّم Satisfactory نفسها بوصفها لعبة محاكاة مصانع ذات عناصر استراتيجية ومغامرة، طورتها Coffee Stain Studios، وصدرت في 11 سبتمبر 2024 بحسب البيانات المرفقة. ويضع وصفها المنشور اللاعب في دور مهندس ورائد يعمل لصالح شركة FICSIT على كوكب غير معروف. هذه مراجعة تحريرية مبنية على وصف اللعبة في RAWG، والمعلومات الموسوعية الواردة عن هدفها وأنظمة تقدمها، ووجود مادة ترويجية رسمية من قناة XBOX بعنوان «Core Values Reveal Trailer». لا أدّعي اللعب أو مشاهدة المادة بنفسي؛ لذا تنصب القراءة على ما يمكن توثيقه عن بنية التجربة، وتفصل بين خصائصها المعلنة والاستنتاج النقدي منها.\n\nوهذا التفريق ضروري لأن الملف يصف الأنظمة والأهداف بتفصيل أكبر من وصفه للصورة والصوت أو التجربة الفعلية أثناء اللعب. كما أن بيانات المنصات ليست متطابقة بين الإدخالات المتاحة، فلا أبني عليها حكماً. كذلك يورد RAWG متوسطاً جماهيرياً قدره 4.3 من 5 استناداً إلى 364 صوتاً؛ وهو مؤشر ثانوي منسوب إلى المنصة، لا بديل عن التقييم التحريري هنا ولا دليل مستقل على جودة كل محور.\n\n## الفكرة والقصة أو التجربة\n\nالفكرة الأساسية واضحة: تنزل الشخصية على كوكب فضائي بموارد طبيعية وأدوات محدودة، ثم تستخدم ما تجمعه لبناء مصنع ينتج أجزاء متزايدة التعقيد. ويحدد الوصف الموسوعي هدفاً مرحلياً بارزاً هو إنشاء مصعد فضائي، عبره تُرسل المكونات المطلوبة إلى الشركة، فيما تفتح التسليمات مراحل تصنيع وتقنيات جديدة. أما وصف RAWG فيقسم المهمة إلى ثلاثة أعمدة: البناء، والأتمتة، والاستكشاف والاستغلال. هذا يجعل التقدم مرتبطاً بتوسيع القدرة الإنتاجية، لا بمجرد إتمام سلسلة منفصلة من المهام.\n\nتمنح الفكرة مساحة لتخطيط شخصي: أين يوضع الإنتاج، وكيف تتصل مراحله، وما المواد التي ينبغي جلبها من مناطق أخرى. ويضيف الإطار المؤسسي نبرة ساخرة في صياغة الشركة لمهمتها، إذ تعرض استخراج موارد الكوكب وخدمة مشروع غامض بلغة إدارية مرحة. يمكن قراءة هذه المفارقة بوصفها تعليقاً على خطاب الشركات الذي يلطّف أهدافه، لكن الأدلة لا تثبت أن السخرية تتحول إلى حبكة متطورة أو إلى نقد سردي عميق. قوتها المؤكدة هنا أنها تمنح الأنظمة إطاراً مفهوماً، لا أنها تقود دراما ذات مسارات وشخصيات موثقة.\n\n## السرد والشخصيات أو تصميم اللعب\n\nالمعلومات المتاحة ترجّح أن تصميم اللعب هو مركز العمل، بينما تظل الشخصية والمهمة القصصية في الخلفية. فالرائد يعمل تحت توجيه مسؤول اتصال من FICSIT، لكن لا تتوفر تفاصيل موثقة عن تطور تلك العلاقة أو عن شخصيات أخرى أو تحولات سردية. لذلك لا يصح منح القصة عمقاً يتجاوز ما تكشفه المقدمة: شركة، كوكب غير مستكشف، ومشروع لا يُفصح عن غايته كاملة.\n\nفي المقابل، تظهر ملامح التصميم بوضوح أكبر. البناء لا يقتصر على وضع آلات منفردة؛ فالوصف يشدد على خطوط ناقلة تتفرع وتتلاقى، وعلى إدارة الطاقة، والمباني متعددة الطوابق، ووسائل الحركة والبنية المساندة. كما تزداد تعقيدات المنشآت والأجزاء المنتجة مع التقدم. والاستنتاج النقدي أن المتعة المقصودة تنبع من حل مشكلات التنظيم والتدفق: كيف تتحول الموارد الخام إلى مكونات، وكيف يظل المصنع قابلاً للتوسعة. لكن لا تتاح أدلة تكفي للحكم على سهولة الواجهة، أو دقة أدوات البناء، أو مقدار الاحتكاك العملي أثناء التخطيط، ولذلك لا ينبغي تحويل وصف الأنظمة إلى ادعاء عن سلاسة تنفيذها.\n\n## الإخراج والجوانب الفنية\n\nعلى مستوى الإخراج التصميمي، يجمع تصور اللعبة بين مصنع ثابت يتوسع على مراحل، وحاجة إلى مغادرة موقعه لاستكشاف مواد جديدة أو تأمينها. وتُذكر الشاحنات ذاتية القيادة والقطارات بوصفها وسائل لإقامة النقل بين المواقع، ما يوحي بأن المساحة ليست مجرد خلفية للمصنع، بل تدخل في تنظيم الإنتاج نفسه. كما أن الجسور والممرات ووسائل التنقل المذكورة تكشف اهتماماً ببنية الحركة حول المنشآت. هذه عناصر ذات دلالة على اتساع التصميم، لكنها لا تثبت وحدها جودة التنفيذ أو وضوحه.\n\nلا يتضمن ملف الأدلة اختبارات أداء أو معلومات عن الأخطاء أو الاستقرار، ولا تفاصيل كافية عن واجهة الاستخدام أو خيارات الإتاحة. لهذا لا أصف اللعبة بأنها خالية من المشكلات التقنية أو أقرر العكس. والحكم المنضبط هو أن الفكرة الفنية لأنظمة البناء والنقل موثقة، أما مستوى الصقل العملي فيحتاج إلى أدلة لا يوفرها هذا الملف. هذا التحفظ لا ينتقص من طموح التصميم، لكنه يمنع مساواة الطموح المعلن بإتقان محقق.\n\n## الصورة والهوية البصرية\n\nيوفر الوصف أساساً محدوداً لتصور الهوية البصرية: بيئة كوكبية غريبة، موارد طبيعية، منشآت صناعية متنامية، وأحزمة نقل تمتد وتتقاطع أفقياً وعمودياً، مع إمكان بناء مخازن متعددة الطوابق. وتتيح هذه العناصر، من حيث التصميم، مقابلة بين الطبيعة التي يُستخرج منها المورد والهندسة التي يعيد اللاعب تشكيلها. كما أن تكوين المصنع نفسه مرشح لأن يكون أبرز عنصر بصري متغير، لأنه يتوسع تبعاً لقرارات البناء والإنتاج.\n\nلكن ذلك استنتاج عن التكوين الذي تسمح به الأنظمة، لا وصف لمشاهد أو ألوان أو جودة نماذج لم تثبتها المواد. وجود مقطع رسمي بعنوان «Core Values Reveal Trailer» يؤكد وجود مادة ترويجية، لكنه لا يتيح وحده، ومن دون فحص محتواها، إصدار حكم تفصيلي على الإضاءة أو التحريك أو وضوح الصورة. لذلك تستند الدرجة إلى إمكانات الهوية المكانية والبنائية الموثقة، مع ثقة أقل من ثقتي في تقييم الفكرة نفسها؛ ولا أزعم أن الأدلة تثبت جمالاً بصرياً استثنائياً أو مشكلات مرئية بعينها.\n\n## الصوت والموسيقى والأداء\n\nلا يقدم الملف معلومات عن الموسيقى أو المؤثرات الصوتية أو الأداء الصوتي، ولا يتضمن أوصافاً مستقلة لهذه الجوانب. وبناء عليه لا يمكنني أن أنسب إلى اللعبة ألحاناً معينة، أو جودة في تسجيل الأصوات، أو أداءً لشخصية المسؤول الذي تشير إليه المقدمة. كما لا تكفي نبرة النص الترويجي المكتوب للاستدلال على كيفية تقديمه داخل اللعبة. الدرجة هنا تحفظية ومحدودة بالأدلة، ولا تعني أن الصوت ضعيف أو متوسط فعلياً؛ إنها تعلن بوضوح أن هذا المحور لا يمكن حسمه بالمادة المتاحة، وأن أي وصف أكثر تحديداً سيكون تخميناً.\n\n## الإيقاع والبناء وتنوع المحتوى\n\nيوحي نظام التقدم الموثق ببناء تراكمي طويل النفس: يبدأ اللاعب بأدوات وموارد محدودة، ثم يوسع الإنتاج لتصنيع مكونات أكثر تعقيداً، وتفتح التسليمات تقنيات ومراحل تصنيع لاحقة. وتضيف الحاجة إلى البحث عن مواد جديدة، وإقامة نقاط إنتاج خارجية وربطها بالنقل، تنوعاً وظيفياً داخل الحلقة الأساسية. فالبناء والإدارة والاستكشاف ليست موضوعات متجاورة فحسب؛ بحسب الوصف، يدعم كل منها استمرار الآخر، لأن التوسع يحتاج موارد ونقلاً، والموارد تتيح رفع مستوى الإنتاج.\n\nهذا الترابط يمنح الإيقاع منطقاً تصميمياً جيداً: التقدم يستدعي إعادة تنظيم ما سبق بدلاً من الاكتفاء بتكرار المهمة نفسها على نطاق صغير. ومع ذلك لا تكشف الأدلة مقدار الوقت المطلوب لكل مرحلة، ولا مدى انتظام المكافآت، ولا ما إذا كانت وتيرة فتح التقنيات تتغير على نحو مُرضٍ أو مرهق. لذلك أقيّم بنية التدرج المعلنة إيجابياً، لكن لا أخلط بين وضوح سلم التقدم الموصوف وبين معرفة الإحساس الفعلي بإيقاع اللعب. أما تنوع المحتوى، فالمؤكد هو تنوع أدوار البناء والطاقة والنقل والاستكشاف، لا عدد المناطق أو الأنشطة أو مقدار اختلافها.\n\n## نقاط القوة\n\nتنجح الفكرة، على مستوى التصميم المعلن، في جعل التوسع نتيجة مباشرة لفهم علاقات الإنتاج والنقل، لا إضافة شكلية إلى المحاكاة. كما أن تعدد طبقات المصنع وخطوطه يفتح باباً للتخطيط المكاني، فيما يمنح الانتقال بين الموقع الرئيسي والنقاط الخارجية معنى عملياً للاستكشاف. ويخدم الإطار الساخر هوية الشركة من دون أن يحتاج إلى ادعاء أن القصة هي العنصر الأبرز. هذه نقاط قوة محددة في بنية العمل كما تصفها المصادر، لا شهادة على جودة كل تفصيل في التنفيذ.\n\n## نقاط الضعف\n\nأبرز حدود الحكم أن المواد المتاحة لا تقدم ما يكفي لإثبات عمق السرد أو جودة الشخصيات، وأن معظم القيمة الموثقة تتركز في أنظمة المصانع. كما أن غياب معلومات موثوقة عن الصوت والصورة والأداء التقني يجعل التقييم في تلك المحاور أقل حسماً. ويظل سلم التقدم، رغم وضوح فكرته، غير قابل للحكم من حيث إيقاعه الفعلي أو ما إذا كان يفرض تكراراً مرهقاً؛ فهذه أسئلة مهمة لمحبّي هذا النوع، ولا تجيب عنها الأوصاف وحدها.\n\n## لمن يناسب هذا العمل؟\n\nيبدو العمل موجهاً إلى من يستمتع بالتخطيط المنهجي، ومراقبة اعتماد مراحل الإنتاج بعضها على بعض، وبناء منشآت يمكن توسيعها مع ظهور حاجات جديدة. وسيجد فيه اهتماماً محتملاً من يفضل تحويل الموارد الخام إلى سلاسل تصنيع، وربط المصانع بوسائل نقل، واستكشاف البيئة بحثاً عن مواد تدعم التقدم. أما من يضع الشخصيات والحوار الدرامي في مقدمة اهتمامه، أو يريد حكماً مؤكداً على الموسيقى والأداء والجودة التقنية، فلن يجد في الأدلة الحالية ضماناً كافياً لذلك. ليست هذه دعوة إلى تجاهل تلك الجوانب، بل توصيف لما تثبته هوية اللعبة المنشورة وما لا تثبته.\n\n## الحكم النهائي\n\nتستحق Satisfactory تقييماً تحريرياً إيجابياً بحذر، لأن أساسها الموثق متماسك: جمع الموارد يغذي التصنيع، والتصنيع يفتح تقنيات ومراحل جديدة، فيما يتيح النقل والاستكشاف توسيع نطاق العمل. هذا الترابط يمنحها هوية واضحة ويبرر توصيتها لمحبي المحاكاة الصناعية والتخطيط. غير أن الحكم لا ينبغي أن يتجاوز الأدلة: لا تتوافر هنا مادة كافية لإثبات قصة غنية، أو جودة صوتية محددة، أو مستوى الإتقان التقني، كما أن الإيقاع الفعلي يظل غير محسوم. لذلك تنبع قيمة المراجعة من تقييم التصميم المعلن بإنصاف، لا من ادعاء تجربة شخصية. إنها توصية لمن يجد متعته في بناء نظام إنتاج مترابط، مع تحفظ صريح لمن ينتظر تجربة سردية أو تقييماً فنياً كاملاً.",
+        "scores": {
+          "story": 7.4,
+          "visuals": 7.2,
+          "sound": 6,
+          "pacing": 7.8
+        },
+        "pros": [
+          "حلقة لعب مترابطة بين جمع الموارد والبناء والتصنيع المتدرج.",
+          "إمكانات تخطيط مكاني موثقة تشمل المصانع متعددة الطوابق وخطوط النقل المتقاطعة.",
+          "وسائل نقل بين المواقع تدعم توسيع الإنتاج خارج المصنع الرئيسي.",
+          "إطار مؤسسي ساخر يمنح المهمة هوية مميزة من دون أن يطغى على أنظمة اللعب."
+        ],
+        "cons": [
+          "المعلومات المتاحة لا تثبت عمق الحبكة أو تطور الشخصيات.",
+          "لا توجد أدلة كافية للحكم بثقة على الموسيقى أو المؤثرات أو الأداء الصوتي.",
+          "الصورة موصوفة عبر عناصر البيئة والبناء، لا عبر تفاصيل تسمح بتقييم الإخراج البصري بدقة.",
+          "وتيرة التقدم والتكرار المحتمل والجودة التقنية الفعلية غير محسومة في المصادر المتاحة."
+        ],
+        "title": "Satisfactory",
+        "type": "game",
+        "sourceId": "game:58806",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/satisfactory",
+        "sourceRating": 4.3,
+        "sourceRatingScale": 5,
+        "sourceVoteCount": 364,
+        "sourceRatingCheckedAt": "2026-11-24T10:42:32.842Z",
+        "audienceScore": 8.6,
+        "releaseDate": "2024-09-11",
+        "poster": "https://media.rawg.io/media/games/9b0/9b03581c1ba7df63e221eb0828f8bb52.jpg",
+        "backdrop": "https://media.rawg.io/media/games/9b0/9b03581c1ba7df63e221eb0828f8bb52.jpg",
+        "genres": [
+          "Action",
+          "Adventure",
+          "Strategy",
+          "Indie"
+        ],
+        "platforms": [
+          "PC"
+        ],
+        "cast": [],
+        "crew": [],
+        "tags": [
+          "Action",
+          "Adventure",
+          "Strategy",
+          "Indie"
+        ],
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/satisfactory",
+            "extract": "FICSIT - AN INTRODUCTION Welcome to FICSIT Incorporated! A company specialised in the research, development and application of new technology and science, anything to find short-term solutions to long-term problems! As part of our brand-new Save The Day program, you’ll be sent to one of many alien planets in an effort to contribute to Project Assembly, a project I am legally bound to not tell you anything about for fear of our lives. And my job. As an engineer and pioneer, you won’t only be constructing and automating the very factory that will contribute to Project Assembly, but also explore and exploit the planet and its inhabitants as you expand. Don’t worry, we’re super inclusive when it comes to alien lifeforms! We’ll even allow for pets, how cool is that!? Just don’t tell R&D. Below you can find the three main pillars of your mission! Time to get to work, and Stay Effective!* *This motto is FICSIT Inc. property. Please do not use ironically. CONSTRUCT To achieve company milestones according to satisfaction we expect you to construct your FICSIT Inc. factory in such a way that it allows for easy expansion and complexion. Not only will buildings grow more complex over time, so will the parts they produce. Project Assembly isn’t your average high-school science project. We’re making history here! Go big or go home!* Of course, this requires both high-level and low-level power management, good luck getting to nuclear! We even support stuff like multi-floor warehouses so you can stack your buildings, and a whole bunch of navigational constructs like jump pads and walkways! Walkways are the best. They’re attached to the ground and everything. *Employee will be expected to fund their own travel expenses AUTOMATE So you know how your FICSIT Inc. factory can be turned into this incredibly intricate maze of conveyor belts in every direction, merging, splitting, crossing each other above and below? Conveyor belts carry, after all, the life-blood of our company! Well, since you’ll be in a pretty big area you’re going to need outposts. To make your life easier, we’ve developed self-driving trucks and trains so you can set up your very own transport system between any point in your area! EXPLORE & EXPLOIT R&D hasn’t figured out how to clone materials yet, weirdly enough, so you’re going to have to go out and use our patented method of extraterrestrial pioneering! This means exploring to find more or new stuff to exploit, to help expand your FICSIT Inc. factory. You’re on an uncharted alien planet, so try to be careful, don’t go alone if you don’t have to, and use protection! Who knows what kind of organisms have made this place their home? Or who knows what awesome treasures you’ll find? Don’t worry, this is why we assigned you your very own FICSIT Inc. handler.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Satisfactory",
+            "extract": "Satisfactory is a factory simulation game by Coffee Stain Studios for Windows, Xbox Series X/S, and PlayStation 5. The player is dropped onto an alien planet with a handful of tools and must use the planet's natural resources to construct increasingly complex factories. The initial goal is to construct a space elevator, through which the Pioneer begins supplying the megacorp the player works for with increasingly numerous and complex components for their unknown, but stated to be prudent, purposes. These exports unlock access to new technology that in turn unlocks a new tier of manufacturing and refinement machines to support the production of the next phase of parts to be delivered to FICSIT.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — XBOX",
+            "url": "https://www.youtube.com/watch?v=CMq9LGe7FM4",
+            "extract": "Verified public, embeddable promotional trailer: Satisfactory: Core Values Reveal Trailer",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "CMq9LGe7FM4",
+        "youtubeVideoTitle": "Satisfactory: Core Values Reveal Trailer",
+        "reviewMode": "review",
+        "score": 7.2
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 6941,
+      "articlePath": "src/content/reviews/game-satisfactory-58806.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-satisfactory-58806/"
     }
   },
   "providers": {},
@@ -3510,9 +3412,9 @@
       "tokens": 47590
     },
     "2026-11-24": {
-      "articles": 6,
-      "requests": 15,
-      "tokens": 41769
+      "articles": 7,
+      "requests": 17,
+      "tokens": 48710
     }
   },
   "history": []
