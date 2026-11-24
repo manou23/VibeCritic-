@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/workflows/publishing-v3.yml'
       - 'scripts/publishing-v3/**'
+      - 'scripts/validate-build.mjs'
   workflow_dispatch:
   schedule:
     - cron: '0 4 * * *'
