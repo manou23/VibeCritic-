@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-24T16:16:55.131Z",
+  "updatedAt": "2026-11-24T16:28:51.239Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -3356,150 +3356,179 @@
         "popularity": 44.9737,
         "source": "TMDB"
       },
-      "status": "waiting",
+      "status": "published",
       "stage": 0,
       "attempts": 1,
       "createdAt": "2026-11-24T16:15:56.075Z",
-      "updatedAt": "2026-11-24T16:16:55.130Z",
-      "nextAttemptAt": "2026-11-24T16:17:55.130Z",
-      "evidence": {
-        "title": "Mission: Yozakura Family",
-        "type": "series",
-        "collectedAt": "2026-11-24T16:15:56.592Z",
-        "sourceId": "series:216467",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/216467",
-        "overview": "Taiyo Asano has been on his own ever since his parents died and the only one who seems to care for him is his childhood friend and classmate, Mutsumi Yozakura. But Mutsumi has a secret—she is the head of a family of spies! And on top of that, her brother Kyoichiro is dangerously protective of her! To stop Kyoichiro from killing him, Taiyo and Mutsumi must take the ultimate leap—marriage! Because in the Yozakura family, family cannot kill family.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/216467",
-            "extract": "Taiyo Asano has been on his own ever since his parents died and the only one who seems to care for him is his childhood friend and classmate, Mutsumi Yozakura. But Mutsumi has a secret—she is the head of a family of spies! And on top of that, her brother Kyoichiro is dangerously protective of her! To stop Kyoichiro from killing him, Taiyo and Mutsumi must take the ultimate leap—marriage! Because in the Yozakura family, family cannot kill family.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Mission%3A_Yozakura_Family",
-            "extract": "Mission: Yozakura Family is a Japanese manga series written and illustrated by Hitsuji Gondaira. It has been serialized in Shueisha's shōnen manga magazine Weekly Shōnen Jump from August 2019 to January 2025, with its chapters collected in 29 tankōbon volumes. An anime television series adaptation produced by Silver Link aired from April to October 2024. A second season is set to air in two cours; the first cours from April to June 2026, and the second cours in October 2026.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — AnimeVibe Official",
-            "url": "https://www.youtube.com/watch?v=P6jjVkEiM0s",
-            "extract": "Verified public, embeddable promotional trailer: Mission: Yozakura Family Season 2 Part 2 Official Trailer",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "limited",
-        "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
-        "youtubeVideoId": "P6jjVkEiM0s",
-        "youtubeVideoTitle": "Mission: Yozakura Family Season 2 Part 2 Official Trailer",
-        "youtubeChannel": "AnimeVibe Official",
-        "releaseDate": "2024-04-07",
-        "genres": [
-          "Animation",
-          "Comedy",
-          "Action & Adventure"
-        ],
-        "platforms": [],
-        "cast": [
-          "Reiji Kawashima",
-          "Kaede Hondo",
-          "Katsuyuki Konishi",
-          "Akari Kito",
-          "Aoi Yuki",
-          "Kazuyuki Okitsu",
-          "Yumi Uchiyama",
-          "Kazuhiko Inoue"
-        ],
-        "crew": [],
-        "rating": 7.5,
-        "ratingScale": 10,
-        "votes": 75,
-        "poster": "https://image.tmdb.org/t/p/w780/dTtXbR0DenriganfBidZxFLk4Xx.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/xlMVEbNl7ZBGFyhX2WEhQ8Kifm4.jpg"
-      },
+      "updatedAt": "2026-11-24T16:28:04.985Z",
+      "nextAttemptAt": null,
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "Mission: Yozakura Family — قراءة معلوماتية محدودة الأدلة",
-        "summary": "Mission: Yozakura Family مسلسل أنمي مقتبس من مانغا يابانية كتبها ورسمها هيتسوجي غونديرا. تصف قاعدة البيانات تايو أسانو، الذي يعيش وحيداً بعد وفاة والديه، وعلاقته بصديقة طفولته ميوتسومي يوزاكورا، التي يتضح أنها ترأس عائلة من الجواسيس. ويقود خطر شقيقها كيوئيتشيرو إلى زواج تايو وميوتسومي بوصفه وسيلة تمنع قتلهما وفق الفكرة المعلنة. تذكر المادة الموسوعية عرض الموسم الأول في 2024، وتورد معلومات عن موسم ثانٍ، كما يظهر إعلان ترويجي بعنوان الجزء الثاني من الموسم الثاني. هذه البيانات تثبت الإطار العام وبعض معلومات الإنتاج، لكنها لا تكفي للحكم على التنفيذ أو تجربة المشاهدة.",
-        "verdict": "هذه قراءة محدودة بما تورده قاعدة بيانات وصفية ومادة موسوعية وإشارة إلى إعلان ترويجي، وليست مراجعة مشاهدة أو حكماً نهائياً على Mission: Yozakura Family. يمكن تأكيد نوع العمل وإطاره القصصي المعلن وبعض المعلومات عن المانغا والاقتباس التلفزيوني وقائمة أسماء الممثلين. لكن الأدلة المتاحة لا تقدم فحصاً مستقلاً للحلقات، ولا معلومات كافية لتقدير الإخراج أو الصورة أو الصوت أو الإيقاع أو أداء الطاقم. كما أن بيانات الجمهور لا تبلغ الحد المطلوب للاعتماد عليها بوصفها مؤشراً كافياً. لذلك يظل الحكم على جودة العمل وتجربته مفتوحاً، ولا يصح تحويل الوصف الترويجي أو بيانات التصنيف إلى تقييم تحريري.",
-        "body": "## ما الذي نعرفه عن العمل؟\n\nMission: Yozakura Family مسلسل أنمي ياباني، وتضعه قاعدة البيانات ضمن فئات الرسوم المتحركة والكوميديا والحركة والمغامرة. هذه تسميات تصنيفية تساعد على تحديد الإطار العام للعمل، لكنها لا تشرح مقدار حضور كل عنصر، ولا تثبت كيف تمتزج الأنواع داخل الحلقات. لذلك ينبغي التعامل معها باعتبارها بيانات تعريفية، لا حكماً على النبرة أو مستوى التنفيذ.\n\nالمادة الموسوعية المتاحة تصف المسلسل بأنه اقتباس تلفزيوني من مانغا يابانية تحمل الاسم نفسه، كتبها ورسمها هيتسوجي غونديرا. وتقول إن المانغا نُشرت تسلسلياً في مجلة Weekly Shōnen Jump بين أغسطس 2019 ويناير 2025، وجُمعت فصولها في 29 مجلداً. هذه معلومات عن العمل الأصلي ومساره النشري، ولا تكشف وحدها مدى وفاء الاقتباس له أو طريقة تحويله إلى حلقات.\n\n## القصة أو الفكرة المعلنة\n\nبحسب ملخص قاعدة البيانات، تايو أسانو يعيش وحده منذ وفاة والديه، ولا يجد من يهتم به كما تفعل صديقة طفولته وزميلته ميوتسومي يوزاكورا. ثم تنكشف حقيقة ميوتسومي: إنها رئيسة عائلة من الجواسيس. ويُقدَّم شقيقها كيوئيتشيرو بوصفه شديد الحماية لها وخطراً على تايو. والحل الذي يعرضه الملخص هو زواج تايو وميوتسومي، لأن أفراد عائلة يوزاكورا لا يستطيعون قتل بعضهم بعضاً.\n\nهذا وصف موجز للفكرة المعلنة، وليس عرضاً كاملاً للأحداث. لا تكشف المواد المتاحة تفاصيل تطور الشخصيات أو مسار القصة بعد نقطة الانطلاق، ولا تتيح تحديد كيفية معالجة العمل لمزيج العلاقات العائلية والتجسس والكوميديا والحركة. كما لا يصح التعامل مع الملخص بوصفه دليلاً على أن هذه الفكرة نُفذت بنجاح أو أن نبرتها متوازنة.\n\n## معلومات الإنتاج والطاقم\n\nتذكر المادة الموسوعية أن المسلسل التلفزيوني من إنتاج Silver Link، وأن عرضه الأول امتد من أبريل إلى أكتوبر 2024. وتورد قاعدة البيانات تاريخ بدء في 7 أبريل 2024. وتشير المادة الموسوعية أيضاً إلى موسم ثانٍ موزع على جزأين، مع مواعيد معلنة للأول بين أبريل ويونيو 2026، وللثاني في أكتوبر 2026. كما يسجل الملف إعلاناً ترويجياً منشوراً لدى قناة AnimeVibe Official بعنوان الجزء الثاني من الموسم الثاني. لا يثبت عنوان الإعلان وحده محتوى مشاهده أو تفاصيل الحلقات.\n\nتسجل قاعدة البيانات أسماء ضمن قائمة الممثلين، من بينهم ريجي كاواشيما، وكايدي هوندو، وكاتسيوكي كونشي، وأكاري كيتو، وآوي يوكي، وكازويوكي أوكيتسو، ويومي أوتشياما، وكازوهيكو إينوي. ولا توفر المواد أدواراً مفصلة لهذه الأسماء، لذلك لا يمكن ربط كل ممثل بشخصية اعتماداً على الملف وحده. كما أن خانة الطاقم الإبداعي خالية؛ فلا تتوفر هنا معلومات موثقة عن المخرج أو الكاتب أو فريق الموسيقى.\n\n## ما الذي يمكن تأكيده؟\n\nيمكن تأكيد أن العمل مسلسل أنمي مقتبس من مانغا، وأن ملخصه المنشور يدور حول تايو وميوتسومي وعائلة من الجواسيس، وأن قاعدة البيانات تصنفه ضمن الرسوم المتحركة والكوميديا والحركة والمغامرة. ويمكن كذلك نقل معلومات النشر والعرض المذكورة في المادة الموسوعية، مع نسبتها إليها، وتسجيل أسماء الممثلين كما وردت في قاعدة البيانات. ويثبت وجود مادة ترويجية معلنة بعنوان متعلق بالجزء الثاني من الموسم الثاني، لا مضمونها التفصيلي.\n\nأما قاعدة البيانات فتتضمن بيانات تفاعل للجمهور، لكن حجم التصويت المسجل لا يبلغ الحد الأدنى المطلوب، وهو مئة صوت، فلا يصلح هنا لتقديم انطباع جماهيري ثابت. كذلك لا تتضمن الحزمة دليلاً مستقلاً ناتجاً عن مشاهدة أو فحص مباشر. ومن ثم لا ينبغي الخلط بين الأوصاف المنشورة، والتصنيف، وأي مؤشر جماهيري محدود، وبين حكم تحريري مستقل.\n\n## ما الذي لا نعرفه بعد؟\n\nلا تسمح الأدلة المتاحة بحسم جودة الإخراج أو الصورة أو الصوت أو تصميم الحركة أو الإيقاع. ولا تقدم وصفاً تفصيلياً للحلقات، أو معلومات كافية عن بناء الشخصيات، أو طريقة توزيع الكوميديا والحركة، أو مدى اكتمال الاقتباس مقارنة بالمانغا. لا يعني غياب هذه المعلومات أن العمل يفتقر إلى تلك العناصر؛ بل يعني ببساطة أن الملف لا يتيح تقييمها.\n\nكذلك لا نملك أساساً لتقدير أداء الممثلين من مجرد ورود أسمائهم، ولا لاستخلاص جودة السرد من تصنيف النوع أو من فكرة الزواج والتجسس. والإعلان الترويجي مسجل بوصفه مادة متاحة، لكن بيانات الملف لا تصف مشاهده بما يكفي لإعادة سردها. تبقى أيضاً تفاصيل الإتاحة والمنصات غير مثبتة في الملف، إذ لا يسجل أسماء منصات للمشاهدة.\n\n## لمن قد يهم هذا العمل؟\n\nقد يلفت وصف العمل انتباه من يبحث عن أنمي يجمع، بحسب التصنيفات والملخص المنشور، بين الكوميديا والحركة والمغامرة، أو يهتم بحكاية عائلية ذات خلفية تجسس. وقد تكون معلومات المانغا مفيدة لمن يريد معرفة أن للمسلسل مادة أصلية منشورة على امتداد سنوات، فيما تمنح بيانات العرض والطاقم نقاطاً أولية لمن يتتبع الاقتباس التلفزيوني. هذه احتمالات مبنية على عناصر الوصف، وليست توصية مبنية على تجربة مشاهدة أو ضماناً بأن النتيجة ستناسب تفضيلات شخص بعينه.\n\n## خلاصة حدود الأدلة\n\nالمتاح يقدم تعريفاً أساسياً بالمسلسل، وملخصاً لفكرته، ومعلومات محدودة عن أصل المانغا وعرض الأنمي وأسماء في قائمة الممثلين. لكنه لا يقدم مشاهدة مستقلة أو مادة نقدية تفصيلية، ولا يثبت جودة التنفيذ. كما أن بيانات التصويت أقل من المستوى المحدد للاعتماد عليها كمؤشر كافٍ. بناءً على ذلك، يمكن وصف العمل وسياقه المعلن، لكن لا يمكن إصدار حكم نهائي على قيمته الفنية أو تجربة متابعته من هذه الأدلة وحدها.",
-        "pros": [
-          "الفكرة القصصية الأساسية موضحة في ملخص قاعدة البيانات، وتشمل تايو وميوتسومي وعائلة الجواسيس.",
-          "المادة الموسوعية توثق أن المسلسل اقتباس من مانغا لهيتسوجي غونديرا، وتورد معلومات عن نشرها.",
-          "تتوفر بيانات أساسية عن موعد عرض المسلسل وقائمة من أسماء الممثلين."
-        ],
-        "cons": [
-          "لا تتضمن الأدلة فحصاً مستقلاً للحلقات أو تجربة مشاهدة مباشرة.",
-          "لا توجد معلومات كافية لحسم الإخراج أو الصورة أو الصوت أو الإيقاع أو جودة الأداء.",
-          "بيانات تصويت الجمهور دون الحد الأدنى المطلوب، ولا تسجل قاعدة البيانات منصات للمشاهدة."
-        ],
-        "title": "Mission: Yozakura Family",
-        "type": "series",
-        "sourceId": "series:216467",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/216467",
-        "sourceRating": 7.5,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 75,
-        "sourceRatingCheckedAt": "2026-11-24T16:15:56.592Z",
-        "audienceScore": 7.5,
-        "releaseDate": "2024-04-07",
-        "poster": "https://image.tmdb.org/t/p/w780/dTtXbR0DenriganfBidZxFLk4Xx.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/xlMVEbNl7ZBGFyhX2WEhQ8Kifm4.jpg",
-        "genres": [
-          "Animation",
-          "Comedy",
-          "Action & Adventure"
-        ],
-        "platforms": [],
-        "cast": [
-          "Reiji Kawashima",
-          "Kaede Hondo",
-          "Katsuyuki Konishi",
-          "Akari Kito",
-          "Aoi Yuki",
-          "Kazuyuki Okitsu",
-          "Yumi Uchiyama",
-          "Kazuhiko Inoue"
-        ],
-        "crew": [],
-        "tags": [
-          "Animation",
-          "Comedy",
-          "Action & Adventure"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/216467",
-            "extract": "Taiyo Asano has been on his own ever since his parents died and the only one who seems to care for him is his childhood friend and classmate, Mutsumi Yozakura. But Mutsumi has a secret—she is the head of a family of spies! And on top of that, her brother Kyoichiro is dangerously protective of her! To stop Kyoichiro from killing him, Taiyo and Mutsumi must take the ultimate leap—marriage! Because in the Yozakura family, family cannot kill family.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Mission%3A_Yozakura_Family",
-            "extract": "Mission: Yozakura Family is a Japanese manga series written and illustrated by Hitsuji Gondaira. It has been serialized in Shueisha's shōnen manga magazine Weekly Shōnen Jump from August 2019 to January 2025, with its chapters collected in 29 tankōbon volumes. An anime television series adaptation produced by Silver Link aired from April to October 2024. A second season is set to air in two cours; the first cours from April to June 2026, and the second cours in October 2026.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — AnimeVibe Official",
-            "url": "https://www.youtube.com/watch?v=P6jjVkEiM0s",
-            "extract": "Verified public, embeddable promotional trailer: Mission: Yozakura Family Season 2 Part 2 Official Trailer",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "P6jjVkEiM0s",
-        "youtubeVideoTitle": "Mission: Yozakura Family Season 2 Part 2 Official Trailer",
-        "reviewMode": "limited"
-      },
+      "article": null,
       "lastError": "Article file exists, but the live site still returns HTTP 404; deployment verification will retry.",
       "provider": "openai",
       "tokens": 3709,
       "articlePath": "src/content/reviews/series-mission-yozakura-family-216467.md",
       "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-mission-yozakura-family-216467/",
-      "resumeStatus": "verifying"
+      "resumeStatus": null,
+      "publishedAt": "2026-11-24T16:28:04.985Z"
+    },
+    "game:58386": {
+      "key": "game:58386",
+      "type": "game",
+      "id": "58386",
+      "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+      "item": {
+        "type": "game",
+        "id": "58386",
+        "name": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+        "date": "2024-11-20",
+        "popularity": 2223,
+        "source": "RAWG"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-24T16:28:06.690Z",
+      "updatedAt": "2026-11-24T16:28:51.239Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+        "type": "game",
+        "collectedAt": "2026-11-24T16:28:07.456Z",
+        "sourceId": "game:58386",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/stalker-2",
+        "overview": "S.T.A.L.K.E.R. 2 is a brand-new entry in the legendary series, enjoyed by millions of players worldwide. The explosive combination of first-person shooter, immersive sim and horror is back. It’s the ultimate S.T.A.L.K.E.R. experience of unprecedented scale, advanced graphics, freedom of choices and the thickest atmosphere of a deadly adventure. Welcome to The Zone — an area of exclusion around the Chernobyl Nuclear Power Plant. Full of radiation, mutants and anomalies, it keeps drawing adventurers from beyond the perimeter. Bounty hunters dwell deep into the Zone, driven by its treasures and mysteries. These people are known as stalkers. Are you ready to become one of them?",
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/stalker-2",
+            "extract": "S.T.A.L.K.E.R. 2 is a brand-new entry in the legendary series, enjoyed by millions of players worldwide. The explosive combination of first-person shooter, immersive sim and horror is back. It’s the ultimate S.T.A.L.K.E.R. experience of unprecedented scale, advanced graphics, freedom of choices and the thickest atmosphere of a deadly adventure. Welcome to The Zone — an area of exclusion around the Chernobyl Nuclear Power Plant. Full of radiation, mutants and anomalies, it keeps drawing adventurers from beyond the perimeter. Bounty hunters dwell deep into the Zone, driven by its treasures and mysteries. These people are known as stalkers. Are you ready to become one of them?",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/S.T.A.L.K.E.R._2%3A_Heart_of_Chornobyl",
+            "extract": "S.T.A.L.K.E.R. 2: Heart of Chornobyl is a 2024 first-person shooter video game developed and published by GSC Game World. It is the fourth main game released in the S.T.A.L.K.E.R. video game series, as well as the first S.T.A.L.K.E.R. game in 15 years since the release of Call of Pripyat in 2009.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — PlayStation Canada",
+            "url": "https://www.youtube.com/watch?v=xKtsw4kqZFs",
+            "extract": "Verified public, embeddable promotional trailer: S.T.A.L.K.E.R. 2: Heart of Chornobyl - Cost of Hope Launch Trailer | PS5 Games",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from RAWG with 334 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "xKtsw4kqZFs",
+        "youtubeVideoTitle": "S.T.A.L.K.E.R. 2: Heart of Chornobyl - Cost of Hope Launch Trailer | PS5 Games",
+        "youtubeChannel": "PlayStation Canada",
+        "releaseDate": "2024-11-20",
+        "genres": [
+          "Action",
+          "Shooter",
+          "Adventure",
+          "RPG"
+        ],
+        "platforms": [
+          "PC",
+          "Xbox Series S/X"
+        ],
+        "developers": [
+          "GSC Game World"
+        ],
+        "rating": 3.76,
+        "ratingScale": 5,
+        "votes": 334,
+        "poster": "https://media.rawg.io/media/games/3e8/3e81585ecda204d4f4b80a041b069adb.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "S.T.A.L.K.E.R. 2: Heart of Chornobyl — طموح المنطقة المحظورة وحدود ما تثبته الأدلة",
+        "summary": "تعود S.T.A.L.K.E.R. 2: Heart of Chornobyl إلى منطقة تشيرنوبل المحظورة في لعبة تصنفها المصادر بوصفها مزيجاً من التصويب بمنظور الشخص الأول، والمحاكاة الغامرة، والرعب، مع مساحة للاختيار ومغامرة تدور حول مطاردي الكنوز والأسرار. هذه عناصر تمنح العمل هوية واضحة وطموحاً يستحق الاهتمام، لكنها لا تكفي وحدها لإثبات جودة تنفيذ القصة أو توازن اللعب أو نجاح الصوت والإيقاع. لذلك تتعامل هذه المراجعة مع الحقائق المتاحة بوصفها أساساً محدوداً للحكم، لا بديلاً عن تجربة مباشرة أو مراجعات مستقلة تفصيلية غير موجودة في ملف الأدلة. ودرجة RAWG الجماهيرية، 3.76 من 5 من 334 صوتاً، مؤشر ثانوي فقط وليست حكماً تحريرياً.",
+        "verdict": "تملك S.T.A.L.K.E.R. 2: Heart of Chornobyl مقومات مشروع لافت: موقعاً ذا دلالة، ومزيج أنواع يَعِد بتوتر يتجاوز التصويب التقليدي، وفكرة عن الاستكشاف والاختيار داخل منطقة خطرة. لكن المواد المتاحة هنا لا توثق بما يكفي كيف تحولت هذه الوعود إلى قصة متماسكة أو أنظمة لعب متوازنة، ولا تقدم أساساً مسؤولاً للحكم على الصوت أو الإيقاع كما يظهران فعلياً أثناء اللعب. لذلك فالحكم الإيجابي الممكن يظل حكماً على وضوح الفكرة وطموحها، لا شهادة على نجاح التنفيذ بكل أبعاده. أوصي بالاهتمام بها لمن تجذبه ألعاب التصويب والرعب والعوالم المحظورة، مع اعتبار هذا التقييم تحريرياً محدود الأدلة، لا بديلاً عن مراجعة مستقلة تفصيلية أو تجربة شخصية.",
+        "body": "## مقدمة وسياق العمل\n\nصدرت S.T.A.L.K.E.R. 2: Heart of Chornobyl في 20 نوفمبر 2024، وطورتها ونشرتها GSC Game World، وفق البيانات التي يجمعها ملف الأدلة من RAWG ومصدر موسوعي. تضعها البيانات ضمن ألعاب الحركة والتصويب والمغامرة وتقمص الأدوار، بينما يصفها ملخص RAWG بأنها عودة لمزيج التصويب بمنظور الشخص الأول والمحاكاة الغامرة والرعب. هذا الوصف يرسم طموحاً واضحاً، لكنه لا يثبت وحده أن الأنواع تتكامل بنجاح. ومن المهم ضبط نطاق هذه المراجعة: لا أدعي أنني لعبت العمل، ولا أملك في الملف مراجعات مستقلة مفصلة أو توثيقاً لمشاهد بعينها أو لأداء تقني. لذا أميز بين وقائع المصدر، وما يمكن استنتاجه بحذر من الفكرة، وما لا تسمح الأدلة بالحكم عليه.\n\n## الفكرة والقصة أو التجربة\n\nالمكان هو المنطقة المحظورة حول محطة تشيرنوبل للطاقة النووية؛ منطقة يصفها الملخص بأنها مشعة، وتضم طفرات وشذوذات، وتجذب مغامرين يبحثون عن الكنوز والأسرار. ويقدم مطاردي هذه المنطقة، أو الـstalkers، بوصفهم محور التجربة. هذه الخلفية تصلح أساساً لصراع بين المخاطرة والمنفعة، وتمنح الاستكشاف معنى يتصل مباشرة بالمكان بدلاً من كونه انتقالاً جغرافياً محايداً. كما يذكر الملخص حرية الاختيار، وهي إشارة إلى أن خيارات اللاعب جزء من الوعد التصميمي. لكن الملف لا يسمي شخصيات أو خطوطاً قصصية أو نتائج اختيارات، ولا يشرح مقدار أثرها؛ لذلك لا يصح أن أنسب إلى اللعبة حبكة بعينها أو عمقاً سردياً مثبتاً. التقييم العادل هنا هو أن الفكرة غنية بالإمكانات، فيما تظل جودة تحويلها إلى دراما غير موثقة بما يكفي.\n\n## السرد والشخصيات أو تصميم اللعب\n\nالجمع المعلن بين التصويب والمحاكاة الغامرة والرعب يوحي بتجربة تريد أن تتجاوز المواجهة المباشرة، وأن تجعل الخطر والمكان والقرار عناصر متداخلة. هذا استنتاج من تصنيف اللعبة ووصفها، لا تقرير عن آليات محددة؛ لا تتضمن الأدلة تفاصيل عن إدارة الموارد أو أنظمة التخفي أو سلوك الأعداء، ولذلك لن أصف أياً منها كما لو كان مؤكداً. كذلك لا تتوافر معلومات كافية عن بناء الشخصيات أو الحوار أو كيفية توزيع الاختيارات على الحملة. نقطة القوة المفهومية أن هذا المزج ينسجم مع منطقة توصف بأنها خطرة ومليئة بالأسرار، إذ يمكن أن يجعل التقدم فيها ذا رهانات تتجاوز إصابة الخصم. أما الاختبار الحاسم، أي مقدار انسجام الأنظمة فعلياً، فلا تجيب عنه المواد المتاحة. ولهذا تبقى درجة هذا المحور متحفظة، مرتبطة بوضوح الوعد لا بإنجاز سردي شاهدته بنفسي.\n\n## الإخراج والجوانب الفنية\n\nتصف صفحة RAWG المشروع بأنه واسع النطاق، ويعد ملخصها بحرية الاختيار ورسوم متقدمة، إلى جانب أجواء شديدة الكثافة. هذه أوصاف تسويقية أو تعريفية في المصدر، وليست قياسات مستقلة لجودة الإخراج؛ لا يقدم الملف تحليلاً لمستوى التفاصيل أو ثبات الأداء أو تصميم المهمات، ولا يورد نتائج اختبار على منصة بعينها. بناءً على ذلك، يمكن القول إن طموح النطاق والحضور المكاني جزء من هوية العمل المعلنة، لكن لا يمكنني تحويل الطموح إلى حكم قاطع على نجاحه الفني. كما أن ذكر المنصات يقتصر في بيانات اللعبة على PC وXbox Series S/X، بينما يوجد في الملف مقطع رسمي من PlayStation Canada يحمل عنوان إطلاق مرتبطاً بـPS5. وجود عنوان المقطع وحده لا يكفي لإثبات تفاصيل الإتاحة أو الأداء، لذا لا أبني عليهما استنتاجاً.\n\n## الصورة والهوية البصرية\n\nالمنطقة المحظورة هي أقوى مرتكز بصري يمكن استخلاصه من المصادر، لا لأن الملف يقدم وصفاً تفصيلياً لمشهد، بل لأن الإشعاع والطفرات والشذوذات والبحث عن الأسرار تحدد عالماً ذا سمات واضحة. ويذكر RAWG «الرسوم المتقدمة» ضمن وصفه، كما يؤكد وجود طموح إلى نطاق واسع؛ لكن هذه العبارات لا تثبت وحدها جودة التنفيذ أو وضوح الصورة أو اتساق الهوية الفنية. لذلك تستند الدرجة هنا إلى قوة الاتجاه المعلن وإلى ملاءمة المكان لفكرة الرعب والاستكشاف، لا إلى تقييم تقني مباشر. لا تتوفر أدلة تسمح بمقارنة الإضاءة أو تصميم الكائنات أو تنوع البيئات، ولا يصح اختلاق أمثلة عنها. النتيجة أن الهوية المفهومية واعدة، أما الحكم على مستوى الصورة الفعلي فمحدود الثقة.\n\n## الصوت والموسيقى والأداء\n\nلا يحتوي ملف الأدلة على معلومات موثقة عن الموسيقى أو المؤثرات أو التمثيل الصوتي أو لغات الأداء. ومن ثم لن أزعم أن الموسيقى ترفع التوتر، أو أن الأصوات تميز البيئة، أو أن أداء الشخصيات ناجح أو ضعيف؛ كل ذلك يحتاج إلى مادة لا يقدمها الملف. هذه ليست ملاحظة جانبية، لأن الصوت عنصر أساسي في لعبة تصف نفسها ضمن الرعب وتراهن على أجواء مكان خطر. غياب المعلومات لا يثبت وجود مشكلة في اللعبة، لكنه يمنع إصدار حكم إيجابي أو سلبي مسؤول على هذا المحور. لذلك تحمل الدرجة رقماً تحفظياً إلزامياً ضمن بنية التقييم، مع التنبيه إلى أنها تعكس نقص الشواهد المتاحة أكثر مما تعكس قياساً موثوقاً لجودة الصوت الفعلية.\n\n## الإيقاع والبناء وتنوع المحتوى\n\nلا يحدد المصدر مدة الحملة أو وتيرة المهمات أو شكل التقدم أو مقدار التنوع بين الأنشطة. ما نعرفه هو أن العمل يقدم مغامرة واسعة النطاق في منطقة تستقطب الباحثين عن الكنوز والأسرار، وأن الاختيار حاضر في وصفه. من هذه المعطيات يمكن توقع أن الاستكشاف والقرار عنصران مهمان في تصوره، لكن لا يمكن الجزم بأن الإيقاع متوازن أو أن المحتوى يتجدد، كما لا يصح اختراع لحظات بطء أو تكرار. هنا يظهر الفرق بين تقييم الفكرة وتقييم التنفيذ: الوعد بمساحة كبيرة قد يفتح مجالاً للتنوع، لكنه قد يثير أيضاً سؤالاً مشروعاً عن تماسك البناء، لا إجابة موثقة عنه. ولذلك تبقى درجة الإيقاع محايدة تحفظياً، لا حكماً بأن اللعبة بطيئة أو متسارعة.\n\n## نقاط القوة\n\nأبرز ما يدعم العمل في حدود الأدلة هو وضوح مركزه: منطقة تشيرنوبل المحظورة ليست خلفية عامة، بل أساس للمخاطر والأسرار التي يعلنها الملخص. وثانياً، يملك المشروع هوية نوعية مركبة تجمع التصويب والرعب والمحاكاة الغامرة، وهي صيغة قد تخاطب من يريد أكثر من لعبة إطلاق نار مجردة، من دون أن يعني ذلك أن المزج ناجح تلقائياً. وثالثاً، تذكر البيانات حرية الاختيار، ما يمنح الفكرة رهانات محتملة على مستوى القرار. ورابعاً، يتلاءم وجود مطاردي الكنوز والأسرار مع عالم يفترض أن الخطر فيه مرتبط بما يبحث عنه اللاعب. هذه نقاط قوة في التصور الموثق؛ لا أقدمها كشهادات عن أنظمة لعب اختبرتها، ولا أخلط بينها وبين إثبات جودة كل عنصر في التطبيق.\n\n## نقاط الضعف\n\nأهم تحفظ تحريري ليس عيباً تقنياً مثبتاً، بل فجوة بين حجم الوعود وبين مقدار ما تثبته المصادر المتاحة. فعبارات مثل «الرسوم المتقدمة» و«النطاق غير المسبوق» لا تصحبها هنا أدلة مقارنة أو مراجعة مستقلة تفصل جودتها. كما أن وصف حرية الاختيار لا يشرح أثر الخيارات أو تنوع نتائجها، لذلك لا يمكن اعتباره برهاناً على سرد تفاعلي قوي. ومزج ثلاثة اتجاهات، التصويب والمحاكاة الغامرة والرعب، يطرح سؤالاً عن توازنها؛ إلا أن الأدلة لا تثبت وجود خلل، فيبقى ذلك خطراً تصميمياً ينبغي عدم تحويله إلى اتهام. وأخيراً، غياب بيانات الصوت والإيقاع والشخصيات يجعل الحكم الشامل على العمل أضعف مما تتطلبه مراجعة نهائية تقليدية. هذه قيود حقيقية على الثقة في التقييم، لا ادعاءات بأن اللعبة نفسها تعاني تلك العيوب.\n\n## لمن يناسب هذا العمل؟\n\nبحسب الهوية المعلنة، قد يجذب العمل محبي ألعاب التصويب من منظور الشخص الأول الذين يفضلون أن يقترن القتال بمكان خطر واستكشاف وأجواء رعب، وكذلك من يلفتهم تصور المحاكاة الغامرة والاختيار. وقد تهم خلفية تشيرنوبل من يبحث عن عوالم خيالية تستثمر موقعاً محدداً بدلاً من إعداد عام. لكن لا أستطيع أن أوصي به بوصفه مضموناً لمن يريد قصة محكمة، أو شخصيات بارزة، أو إيقاعاً سريعاً، لأن الملف لا يوثق هذه الجوانب. ومن الأفضل للقارئ أن يتعامل مع التوصية بوصفها ترشيحاً مبنياً على النوع والفكرة، لا ضماناً لتجربة متطابقة مع تفضيلاته. متوسط RAWG البالغ 3.76 من 5، المستند إلى 334 صوتاً، يظل مؤشراً جماهيرياً ثانوياً لا يحسم هذه الملاءمة.\n\n## الحكم النهائي\n\nS.T.A.L.K.E.R. 2: Heart of Chornobyl تبدو، من وصفها الموثق، مشروعاً ذا تصور قوي: منطقة ذات هوية، ومزيج أنواع واعد، ووعد بالاختيار والاستكشاف. لكن المراجعة المنصفة لا تساوي بين الوعد والإنجاز؛ تفاصيل القصة والشخصيات والصوت والإيقاع والأداء غير متاحة هنا بما يكفي لإصدار أحكام نهائية موثوقة عنها. لذلك أميل إلى تقييم إيجابي متحفظ للفكرة، مع خفض الثقة في التقدير الشامل، لا اختلاق عيوب أو مزايا لم تثبتها المصادر. الدرجات المرفقة تقديرية ومقيدة بهذه الأدلة، ولا سيما في الصوت والإيقاع؛ وليست ادعاءً بتجربة مباشرة أو بوجود مراجعات مستقلة تفصيلية في الملف. التوصية مناسبة لمن تجذبه هوية العمل وأنواعه، مع إبقاء الحكم النهائي على جودة التنفيذ مفتوحاً لما تثبته معلومات أشمل.",
+        "scores": {
+          "story": 7.2,
+          "visuals": 7,
+          "sound": 5,
+          "pacing": 5
+        },
+        "pros": [
+          "إطار مكاني واضح ومحدد: المنطقة المحظورة حول محطة تشيرنوبل، بما تتضمنه وفق المصدر من إشعاع وطفرات وشذوذات.",
+          "مزيج أنواع معلن يجمع التصويب بمنظور الشخص الأول والمحاكاة الغامرة والرعب.",
+          "وعد صريح بحرية الاختيار، بما يمنح الفكرة احتمالاً لربط القرار بتجربة اللاعب.",
+          "ربط البحث عن الكنوز والأسرار بمطاردي المنطقة، وهو تصور ينسجم مع هوية العالم المعلنة."
+        ],
+        "cons": [
+          "لا توثق الأدلة المتاحة تفاصيل القصة أو الشخصيات أو نتائج الاختيارات بما يكفي للحكم على قوتها.",
+          "وصف الرسوم والنطاق الطموح لا يصحبه تحليل مستقل أو معلومات تقنية تسمح بتقييم التنفيذ.",
+          "لا تتوفر معلومات موثقة عن الموسيقى أو المؤثرات أو الأداء الصوتي.",
+          "لا يشرح الملف بناء الحملة أو وتيرة المحتوى، ما يجعل تقييم الإيقاع والتنوع محدود الثقة."
+        ],
+        "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+        "type": "game",
+        "sourceId": "game:58386",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/stalker-2",
+        "sourceRating": 3.76,
+        "sourceRatingScale": 5,
+        "sourceVoteCount": 334,
+        "sourceRatingCheckedAt": "2026-11-24T16:28:07.456Z",
+        "audienceScore": 7.5,
+        "releaseDate": "2024-11-20",
+        "poster": "https://media.rawg.io/media/games/3e8/3e81585ecda204d4f4b80a041b069adb.jpg",
+        "backdrop": "https://media.rawg.io/media/games/3e8/3e81585ecda204d4f4b80a041b069adb.jpg",
+        "genres": [
+          "Action",
+          "Shooter",
+          "Adventure",
+          "RPG"
+        ],
+        "platforms": [
+          "PC",
+          "Xbox Series S/X"
+        ],
+        "cast": [],
+        "crew": [],
+        "tags": [
+          "Action",
+          "Shooter",
+          "Adventure",
+          "RPG"
+        ],
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/stalker-2",
+            "extract": "S.T.A.L.K.E.R. 2 is a brand-new entry in the legendary series, enjoyed by millions of players worldwide. The explosive combination of first-person shooter, immersive sim and horror is back. It’s the ultimate S.T.A.L.K.E.R. experience of unprecedented scale, advanced graphics, freedom of choices and the thickest atmosphere of a deadly adventure. Welcome to The Zone — an area of exclusion around the Chernobyl Nuclear Power Plant. Full of radiation, mutants and anomalies, it keeps drawing adventurers from beyond the perimeter. Bounty hunters dwell deep into the Zone, driven by its treasures and mysteries. These people are known as stalkers. Are you ready to become one of them?",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/S.T.A.L.K.E.R._2%3A_Heart_of_Chornobyl",
+            "extract": "S.T.A.L.K.E.R. 2: Heart of Chornobyl is a 2024 first-person shooter video game developed and published by GSC Game World. It is the fourth main game released in the S.T.A.L.K.E.R. video game series, as well as the first S.T.A.L.K.E.R. game in 15 years since the release of Call of Pripyat in 2009.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — PlayStation Canada",
+            "url": "https://www.youtube.com/watch?v=xKtsw4kqZFs",
+            "extract": "Verified public, embeddable promotional trailer: S.T.A.L.K.E.R. 2: Heart of Chornobyl - Cost of Hope Launch Trailer | PS5 Games",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "xKtsw4kqZFs",
+        "youtubeVideoTitle": "S.T.A.L.K.E.R. 2: Heart of Chornobyl - Cost of Hope Launch Trailer | PS5 Games",
+        "reviewMode": "review",
+        "score": 6.2
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 6090,
+      "articlePath": "src/content/reviews/game-s-t-a-l-k-e-r-2-heart-of-chornobyl-58386.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-s-t-a-l-k-e-r-2-heart-of-chornobyl-58386/"
     }
   },
   "providers": {},
@@ -3530,9 +3559,9 @@
       "tokens": 47590
     },
     "2026-11-24": {
-      "articles": 10,
-      "requests": 23,
-      "tokens": 65992
+      "articles": 11,
+      "requests": 25,
+      "tokens": 72082
     }
   },
   "history": []
