@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-24T16:08:12.887Z",
+  "updatedAt": "2026-11-24T16:16:23.896Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -3341,6 +3341,164 @@
       "article": null,
       "lastError": null,
       "resumeStatus": "queued"
+    },
+    "series:216467": {
+      "key": "series:216467",
+      "type": "series",
+      "id": "216467",
+      "title": "Mission: Yozakura Family",
+      "item": {
+        "type": "series",
+        "id": "216467",
+        "name": "Mission: Yozakura Family",
+        "date": "2024-04-07",
+        "preview": false,
+        "popularity": 44.9737,
+        "source": "TMDB"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-24T16:15:56.075Z",
+      "updatedAt": "2026-11-24T16:16:23.896Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Mission: Yozakura Family",
+        "type": "series",
+        "collectedAt": "2026-11-24T16:15:56.592Z",
+        "sourceId": "series:216467",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/216467",
+        "overview": "Taiyo Asano has been on his own ever since his parents died and the only one who seems to care for him is his childhood friend and classmate, Mutsumi Yozakura. But Mutsumi has a secret—she is the head of a family of spies! And on top of that, her brother Kyoichiro is dangerously protective of her! To stop Kyoichiro from killing him, Taiyo and Mutsumi must take the ultimate leap—marriage! Because in the Yozakura family, family cannot kill family.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/216467",
+            "extract": "Taiyo Asano has been on his own ever since his parents died and the only one who seems to care for him is his childhood friend and classmate, Mutsumi Yozakura. But Mutsumi has a secret—she is the head of a family of spies! And on top of that, her brother Kyoichiro is dangerously protective of her! To stop Kyoichiro from killing him, Taiyo and Mutsumi must take the ultimate leap—marriage! Because in the Yozakura family, family cannot kill family.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Mission%3A_Yozakura_Family",
+            "extract": "Mission: Yozakura Family is a Japanese manga series written and illustrated by Hitsuji Gondaira. It has been serialized in Shueisha's shōnen manga magazine Weekly Shōnen Jump from August 2019 to January 2025, with its chapters collected in 29 tankōbon volumes. An anime television series adaptation produced by Silver Link aired from April to October 2024. A second season is set to air in two cours; the first cours from April to June 2026, and the second cours in October 2026.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — AnimeVibe Official",
+            "url": "https://www.youtube.com/watch?v=P6jjVkEiM0s",
+            "extract": "Verified public, embeddable promotional trailer: Mission: Yozakura Family Season 2 Part 2 Official Trailer",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "limited",
+        "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
+        "youtubeVideoId": "P6jjVkEiM0s",
+        "youtubeVideoTitle": "Mission: Yozakura Family Season 2 Part 2 Official Trailer",
+        "youtubeChannel": "AnimeVibe Official",
+        "releaseDate": "2024-04-07",
+        "genres": [
+          "Animation",
+          "Comedy",
+          "Action & Adventure"
+        ],
+        "platforms": [],
+        "cast": [
+          "Reiji Kawashima",
+          "Kaede Hondo",
+          "Katsuyuki Konishi",
+          "Akari Kito",
+          "Aoi Yuki",
+          "Kazuyuki Okitsu",
+          "Yumi Uchiyama",
+          "Kazuhiko Inoue"
+        ],
+        "crew": [],
+        "rating": 7.5,
+        "ratingScale": 10,
+        "votes": 75,
+        "poster": "https://image.tmdb.org/t/p/w780/dTtXbR0DenriganfBidZxFLk4Xx.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/xlMVEbNl7ZBGFyhX2WEhQ8Kifm4.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "Mission: Yozakura Family — قراءة معلوماتية محدودة الأدلة",
+        "summary": "Mission: Yozakura Family مسلسل أنمي مقتبس من مانغا يابانية كتبها ورسمها هيتسوجي غونديرا. تصف قاعدة البيانات تايو أسانو، الذي يعيش وحيداً بعد وفاة والديه، وعلاقته بصديقة طفولته ميوتسومي يوزاكورا، التي يتضح أنها ترأس عائلة من الجواسيس. ويقود خطر شقيقها كيوئيتشيرو إلى زواج تايو وميوتسومي بوصفه وسيلة تمنع قتلهما وفق الفكرة المعلنة. تذكر المادة الموسوعية عرض الموسم الأول في 2024، وتورد معلومات عن موسم ثانٍ، كما يظهر إعلان ترويجي بعنوان الجزء الثاني من الموسم الثاني. هذه البيانات تثبت الإطار العام وبعض معلومات الإنتاج، لكنها لا تكفي للحكم على التنفيذ أو تجربة المشاهدة.",
+        "verdict": "هذه قراءة محدودة بما تورده قاعدة بيانات وصفية ومادة موسوعية وإشارة إلى إعلان ترويجي، وليست مراجعة مشاهدة أو حكماً نهائياً على Mission: Yozakura Family. يمكن تأكيد نوع العمل وإطاره القصصي المعلن وبعض المعلومات عن المانغا والاقتباس التلفزيوني وقائمة أسماء الممثلين. لكن الأدلة المتاحة لا تقدم فحصاً مستقلاً للحلقات، ولا معلومات كافية لتقدير الإخراج أو الصورة أو الصوت أو الإيقاع أو أداء الطاقم. كما أن بيانات الجمهور لا تبلغ الحد المطلوب للاعتماد عليها بوصفها مؤشراً كافياً. لذلك يظل الحكم على جودة العمل وتجربته مفتوحاً، ولا يصح تحويل الوصف الترويجي أو بيانات التصنيف إلى تقييم تحريري.",
+        "body": "## ما الذي نعرفه عن العمل؟\n\nMission: Yozakura Family مسلسل أنمي ياباني، وتضعه قاعدة البيانات ضمن فئات الرسوم المتحركة والكوميديا والحركة والمغامرة. هذه تسميات تصنيفية تساعد على تحديد الإطار العام للعمل، لكنها لا تشرح مقدار حضور كل عنصر، ولا تثبت كيف تمتزج الأنواع داخل الحلقات. لذلك ينبغي التعامل معها باعتبارها بيانات تعريفية، لا حكماً على النبرة أو مستوى التنفيذ.\n\nالمادة الموسوعية المتاحة تصف المسلسل بأنه اقتباس تلفزيوني من مانغا يابانية تحمل الاسم نفسه، كتبها ورسمها هيتسوجي غونديرا. وتقول إن المانغا نُشرت تسلسلياً في مجلة Weekly Shōnen Jump بين أغسطس 2019 ويناير 2025، وجُمعت فصولها في 29 مجلداً. هذه معلومات عن العمل الأصلي ومساره النشري، ولا تكشف وحدها مدى وفاء الاقتباس له أو طريقة تحويله إلى حلقات.\n\n## القصة أو الفكرة المعلنة\n\nبحسب ملخص قاعدة البيانات، تايو أسانو يعيش وحده منذ وفاة والديه، ولا يجد من يهتم به كما تفعل صديقة طفولته وزميلته ميوتسومي يوزاكورا. ثم تنكشف حقيقة ميوتسومي: إنها رئيسة عائلة من الجواسيس. ويُقدَّم شقيقها كيوئيتشيرو بوصفه شديد الحماية لها وخطراً على تايو. والحل الذي يعرضه الملخص هو زواج تايو وميوتسومي، لأن أفراد عائلة يوزاكورا لا يستطيعون قتل بعضهم بعضاً.\n\nهذا وصف موجز للفكرة المعلنة، وليس عرضاً كاملاً للأحداث. لا تكشف المواد المتاحة تفاصيل تطور الشخصيات أو مسار القصة بعد نقطة الانطلاق، ولا تتيح تحديد كيفية معالجة العمل لمزيج العلاقات العائلية والتجسس والكوميديا والحركة. كما لا يصح التعامل مع الملخص بوصفه دليلاً على أن هذه الفكرة نُفذت بنجاح أو أن نبرتها متوازنة.\n\n## معلومات الإنتاج والطاقم\n\nتذكر المادة الموسوعية أن المسلسل التلفزيوني من إنتاج Silver Link، وأن عرضه الأول امتد من أبريل إلى أكتوبر 2024. وتورد قاعدة البيانات تاريخ بدء في 7 أبريل 2024. وتشير المادة الموسوعية أيضاً إلى موسم ثانٍ موزع على جزأين، مع مواعيد معلنة للأول بين أبريل ويونيو 2026، وللثاني في أكتوبر 2026. كما يسجل الملف إعلاناً ترويجياً منشوراً لدى قناة AnimeVibe Official بعنوان الجزء الثاني من الموسم الثاني. لا يثبت عنوان الإعلان وحده محتوى مشاهده أو تفاصيل الحلقات.\n\nتسجل قاعدة البيانات أسماء ضمن قائمة الممثلين، من بينهم ريجي كاواشيما، وكايدي هوندو، وكاتسيوكي كونشي، وأكاري كيتو، وآوي يوكي، وكازويوكي أوكيتسو، ويومي أوتشياما، وكازوهيكو إينوي. ولا توفر المواد أدواراً مفصلة لهذه الأسماء، لذلك لا يمكن ربط كل ممثل بشخصية اعتماداً على الملف وحده. كما أن خانة الطاقم الإبداعي خالية؛ فلا تتوفر هنا معلومات موثقة عن المخرج أو الكاتب أو فريق الموسيقى.\n\n## ما الذي يمكن تأكيده؟\n\nيمكن تأكيد أن العمل مسلسل أنمي مقتبس من مانغا، وأن ملخصه المنشور يدور حول تايو وميوتسومي وعائلة من الجواسيس، وأن قاعدة البيانات تصنفه ضمن الرسوم المتحركة والكوميديا والحركة والمغامرة. ويمكن كذلك نقل معلومات النشر والعرض المذكورة في المادة الموسوعية، مع نسبتها إليها، وتسجيل أسماء الممثلين كما وردت في قاعدة البيانات. ويثبت وجود مادة ترويجية معلنة بعنوان متعلق بالجزء الثاني من الموسم الثاني، لا مضمونها التفصيلي.\n\nأما قاعدة البيانات فتتضمن بيانات تفاعل للجمهور، لكن حجم التصويت المسجل لا يبلغ الحد الأدنى المطلوب، وهو مئة صوت، فلا يصلح هنا لتقديم انطباع جماهيري ثابت. كذلك لا تتضمن الحزمة دليلاً مستقلاً ناتجاً عن مشاهدة أو فحص مباشر. ومن ثم لا ينبغي الخلط بين الأوصاف المنشورة، والتصنيف، وأي مؤشر جماهيري محدود، وبين حكم تحريري مستقل.\n\n## ما الذي لا نعرفه بعد؟\n\nلا تسمح الأدلة المتاحة بحسم جودة الإخراج أو الصورة أو الصوت أو تصميم الحركة أو الإيقاع. ولا تقدم وصفاً تفصيلياً للحلقات، أو معلومات كافية عن بناء الشخصيات، أو طريقة توزيع الكوميديا والحركة، أو مدى اكتمال الاقتباس مقارنة بالمانغا. لا يعني غياب هذه المعلومات أن العمل يفتقر إلى تلك العناصر؛ بل يعني ببساطة أن الملف لا يتيح تقييمها.\n\nكذلك لا نملك أساساً لتقدير أداء الممثلين من مجرد ورود أسمائهم، ولا لاستخلاص جودة السرد من تصنيف النوع أو من فكرة الزواج والتجسس. والإعلان الترويجي مسجل بوصفه مادة متاحة، لكن بيانات الملف لا تصف مشاهده بما يكفي لإعادة سردها. تبقى أيضاً تفاصيل الإتاحة والمنصات غير مثبتة في الملف، إذ لا يسجل أسماء منصات للمشاهدة.\n\n## لمن قد يهم هذا العمل؟\n\nقد يلفت وصف العمل انتباه من يبحث عن أنمي يجمع، بحسب التصنيفات والملخص المنشور، بين الكوميديا والحركة والمغامرة، أو يهتم بحكاية عائلية ذات خلفية تجسس. وقد تكون معلومات المانغا مفيدة لمن يريد معرفة أن للمسلسل مادة أصلية منشورة على امتداد سنوات، فيما تمنح بيانات العرض والطاقم نقاطاً أولية لمن يتتبع الاقتباس التلفزيوني. هذه احتمالات مبنية على عناصر الوصف، وليست توصية مبنية على تجربة مشاهدة أو ضماناً بأن النتيجة ستناسب تفضيلات شخص بعينه.\n\n## خلاصة حدود الأدلة\n\nالمتاح يقدم تعريفاً أساسياً بالمسلسل، وملخصاً لفكرته، ومعلومات محدودة عن أصل المانغا وعرض الأنمي وأسماء في قائمة الممثلين. لكنه لا يقدم مشاهدة مستقلة أو مادة نقدية تفصيلية، ولا يثبت جودة التنفيذ. كما أن بيانات التصويت أقل من المستوى المحدد للاعتماد عليها كمؤشر كافٍ. بناءً على ذلك، يمكن وصف العمل وسياقه المعلن، لكن لا يمكن إصدار حكم نهائي على قيمته الفنية أو تجربة متابعته من هذه الأدلة وحدها.",
+        "pros": [
+          "الفكرة القصصية الأساسية موضحة في ملخص قاعدة البيانات، وتشمل تايو وميوتسومي وعائلة الجواسيس.",
+          "المادة الموسوعية توثق أن المسلسل اقتباس من مانغا لهيتسوجي غونديرا، وتورد معلومات عن نشرها.",
+          "تتوفر بيانات أساسية عن موعد عرض المسلسل وقائمة من أسماء الممثلين."
+        ],
+        "cons": [
+          "لا تتضمن الأدلة فحصاً مستقلاً للحلقات أو تجربة مشاهدة مباشرة.",
+          "لا توجد معلومات كافية لحسم الإخراج أو الصورة أو الصوت أو الإيقاع أو جودة الأداء.",
+          "بيانات تصويت الجمهور دون الحد الأدنى المطلوب، ولا تسجل قاعدة البيانات منصات للمشاهدة."
+        ],
+        "title": "Mission: Yozakura Family",
+        "type": "series",
+        "sourceId": "series:216467",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/216467",
+        "sourceRating": 7.5,
+        "sourceRatingScale": 10,
+        "sourceVoteCount": 75,
+        "sourceRatingCheckedAt": "2026-11-24T16:15:56.592Z",
+        "audienceScore": 7.5,
+        "releaseDate": "2024-04-07",
+        "poster": "https://image.tmdb.org/t/p/w780/dTtXbR0DenriganfBidZxFLk4Xx.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/xlMVEbNl7ZBGFyhX2WEhQ8Kifm4.jpg",
+        "genres": [
+          "Animation",
+          "Comedy",
+          "Action & Adventure"
+        ],
+        "platforms": [],
+        "cast": [
+          "Reiji Kawashima",
+          "Kaede Hondo",
+          "Katsuyuki Konishi",
+          "Akari Kito",
+          "Aoi Yuki",
+          "Kazuyuki Okitsu",
+          "Yumi Uchiyama",
+          "Kazuhiko Inoue"
+        ],
+        "crew": [],
+        "tags": [
+          "Animation",
+          "Comedy",
+          "Action & Adventure"
+        ],
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/216467",
+            "extract": "Taiyo Asano has been on his own ever since his parents died and the only one who seems to care for him is his childhood friend and classmate, Mutsumi Yozakura. But Mutsumi has a secret—she is the head of a family of spies! And on top of that, her brother Kyoichiro is dangerously protective of her! To stop Kyoichiro from killing him, Taiyo and Mutsumi must take the ultimate leap—marriage! Because in the Yozakura family, family cannot kill family.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Mission%3A_Yozakura_Family",
+            "extract": "Mission: Yozakura Family is a Japanese manga series written and illustrated by Hitsuji Gondaira. It has been serialized in Shueisha's shōnen manga magazine Weekly Shōnen Jump from August 2019 to January 2025, with its chapters collected in 29 tankōbon volumes. An anime television series adaptation produced by Silver Link aired from April to October 2024. A second season is set to air in two cours; the first cours from April to June 2026, and the second cours in October 2026.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — AnimeVibe Official",
+            "url": "https://www.youtube.com/watch?v=P6jjVkEiM0s",
+            "extract": "Verified public, embeddable promotional trailer: Mission: Yozakura Family Season 2 Part 2 Official Trailer",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "P6jjVkEiM0s",
+        "youtubeVideoTitle": "Mission: Yozakura Family Season 2 Part 2 Official Trailer",
+        "reviewMode": "limited"
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 3709,
+      "articlePath": "src/content/reviews/series-mission-yozakura-family-216467.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-mission-yozakura-family-216467/"
     }
   },
   "providers": {},
@@ -3371,9 +3529,9 @@
       "tokens": 47590
     },
     "2026-11-24": {
-      "articles": 9,
-      "requests": 21,
-      "tokens": 62283
+      "articles": 10,
+      "requests": 23,
+      "tokens": 65992
     }
   },
   "history": []
