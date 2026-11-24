@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-24T16:28:51.239Z",
+  "updatedAt": "2026-11-24T19:16:58.702Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -3386,149 +3386,234 @@
         "popularity": 2223,
         "source": "RAWG"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-24T16:28:06.690Z",
-      "updatedAt": "2026-11-24T16:28:51.239Z",
+      "updatedAt": "2026-11-24T19:16:03.234Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
-        "type": "game",
-        "collectedAt": "2026-11-24T16:28:07.456Z",
-        "sourceId": "game:58386",
-        "sourceName": "RAWG",
-        "sourceUrl": "https://rawg.io/games/stalker-2",
-        "overview": "S.T.A.L.K.E.R. 2 is a brand-new entry in the legendary series, enjoyed by millions of players worldwide. The explosive combination of first-person shooter, immersive sim and horror is back. It’s the ultimate S.T.A.L.K.E.R. experience of unprecedented scale, advanced graphics, freedom of choices and the thickest atmosphere of a deadly adventure. Welcome to The Zone — an area of exclusion around the Chernobyl Nuclear Power Plant. Full of radiation, mutants and anomalies, it keeps drawing adventurers from beyond the perimeter. Bounty hunters dwell deep into the Zone, driven by its treasures and mysteries. These people are known as stalkers. Are you ready to become one of them?",
-        "sources": [
-          {
-            "name": "RAWG",
-            "url": "https://rawg.io/games/stalker-2",
-            "extract": "S.T.A.L.K.E.R. 2 is a brand-new entry in the legendary series, enjoyed by millions of players worldwide. The explosive combination of first-person shooter, immersive sim and horror is back. It’s the ultimate S.T.A.L.K.E.R. experience of unprecedented scale, advanced graphics, freedom of choices and the thickest atmosphere of a deadly adventure. Welcome to The Zone — an area of exclusion around the Chernobyl Nuclear Power Plant. Full of radiation, mutants and anomalies, it keeps drawing adventurers from beyond the perimeter. Bounty hunters dwell deep into the Zone, driven by its treasures and mysteries. These people are known as stalkers. Are you ready to become one of them?",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/S.T.A.L.K.E.R._2%3A_Heart_of_Chornobyl",
-            "extract": "S.T.A.L.K.E.R. 2: Heart of Chornobyl is a 2024 first-person shooter video game developed and published by GSC Game World. It is the fourth main game released in the S.T.A.L.K.E.R. video game series, as well as the first S.T.A.L.K.E.R. game in 15 years since the release of Call of Pripyat in 2009.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — PlayStation Canada",
-            "url": "https://www.youtube.com/watch?v=xKtsw4kqZFs",
-            "extract": "Verified public, embeddable promotional trailer: S.T.A.L.K.E.R. 2: Heart of Chornobyl - Cost of Hope Launch Trailer | PS5 Games",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from RAWG with 334 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "xKtsw4kqZFs",
-        "youtubeVideoTitle": "S.T.A.L.K.E.R. 2: Heart of Chornobyl - Cost of Hope Launch Trailer | PS5 Games",
-        "youtubeChannel": "PlayStation Canada",
-        "releaseDate": "2024-11-20",
-        "genres": [
-          "Action",
-          "Shooter",
-          "Adventure",
-          "RPG"
-        ],
-        "platforms": [
-          "PC",
-          "Xbox Series S/X"
-        ],
-        "developers": [
-          "GSC Game World"
-        ],
-        "rating": 3.76,
-        "ratingScale": 5,
-        "votes": 334,
-        "poster": "https://media.rawg.io/media/games/3e8/3e81585ecda204d4f4b80a041b069adb.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "S.T.A.L.K.E.R. 2: Heart of Chornobyl — طموح المنطقة المحظورة وحدود ما تثبته الأدلة",
-        "summary": "تعود S.T.A.L.K.E.R. 2: Heart of Chornobyl إلى منطقة تشيرنوبل المحظورة في لعبة تصنفها المصادر بوصفها مزيجاً من التصويب بمنظور الشخص الأول، والمحاكاة الغامرة، والرعب، مع مساحة للاختيار ومغامرة تدور حول مطاردي الكنوز والأسرار. هذه عناصر تمنح العمل هوية واضحة وطموحاً يستحق الاهتمام، لكنها لا تكفي وحدها لإثبات جودة تنفيذ القصة أو توازن اللعب أو نجاح الصوت والإيقاع. لذلك تتعامل هذه المراجعة مع الحقائق المتاحة بوصفها أساساً محدوداً للحكم، لا بديلاً عن تجربة مباشرة أو مراجعات مستقلة تفصيلية غير موجودة في ملف الأدلة. ودرجة RAWG الجماهيرية، 3.76 من 5 من 334 صوتاً، مؤشر ثانوي فقط وليست حكماً تحريرياً.",
-        "verdict": "تملك S.T.A.L.K.E.R. 2: Heart of Chornobyl مقومات مشروع لافت: موقعاً ذا دلالة، ومزيج أنواع يَعِد بتوتر يتجاوز التصويب التقليدي، وفكرة عن الاستكشاف والاختيار داخل منطقة خطرة. لكن المواد المتاحة هنا لا توثق بما يكفي كيف تحولت هذه الوعود إلى قصة متماسكة أو أنظمة لعب متوازنة، ولا تقدم أساساً مسؤولاً للحكم على الصوت أو الإيقاع كما يظهران فعلياً أثناء اللعب. لذلك فالحكم الإيجابي الممكن يظل حكماً على وضوح الفكرة وطموحها، لا شهادة على نجاح التنفيذ بكل أبعاده. أوصي بالاهتمام بها لمن تجذبه ألعاب التصويب والرعب والعوالم المحظورة، مع اعتبار هذا التقييم تحريرياً محدود الأدلة، لا بديلاً عن مراجعة مستقلة تفصيلية أو تجربة شخصية.",
-        "body": "## مقدمة وسياق العمل\n\nصدرت S.T.A.L.K.E.R. 2: Heart of Chornobyl في 20 نوفمبر 2024، وطورتها ونشرتها GSC Game World، وفق البيانات التي يجمعها ملف الأدلة من RAWG ومصدر موسوعي. تضعها البيانات ضمن ألعاب الحركة والتصويب والمغامرة وتقمص الأدوار، بينما يصفها ملخص RAWG بأنها عودة لمزيج التصويب بمنظور الشخص الأول والمحاكاة الغامرة والرعب. هذا الوصف يرسم طموحاً واضحاً، لكنه لا يثبت وحده أن الأنواع تتكامل بنجاح. ومن المهم ضبط نطاق هذه المراجعة: لا أدعي أنني لعبت العمل، ولا أملك في الملف مراجعات مستقلة مفصلة أو توثيقاً لمشاهد بعينها أو لأداء تقني. لذا أميز بين وقائع المصدر، وما يمكن استنتاجه بحذر من الفكرة، وما لا تسمح الأدلة بالحكم عليه.\n\n## الفكرة والقصة أو التجربة\n\nالمكان هو المنطقة المحظورة حول محطة تشيرنوبل للطاقة النووية؛ منطقة يصفها الملخص بأنها مشعة، وتضم طفرات وشذوذات، وتجذب مغامرين يبحثون عن الكنوز والأسرار. ويقدم مطاردي هذه المنطقة، أو الـstalkers، بوصفهم محور التجربة. هذه الخلفية تصلح أساساً لصراع بين المخاطرة والمنفعة، وتمنح الاستكشاف معنى يتصل مباشرة بالمكان بدلاً من كونه انتقالاً جغرافياً محايداً. كما يذكر الملخص حرية الاختيار، وهي إشارة إلى أن خيارات اللاعب جزء من الوعد التصميمي. لكن الملف لا يسمي شخصيات أو خطوطاً قصصية أو نتائج اختيارات، ولا يشرح مقدار أثرها؛ لذلك لا يصح أن أنسب إلى اللعبة حبكة بعينها أو عمقاً سردياً مثبتاً. التقييم العادل هنا هو أن الفكرة غنية بالإمكانات، فيما تظل جودة تحويلها إلى دراما غير موثقة بما يكفي.\n\n## السرد والشخصيات أو تصميم اللعب\n\nالجمع المعلن بين التصويب والمحاكاة الغامرة والرعب يوحي بتجربة تريد أن تتجاوز المواجهة المباشرة، وأن تجعل الخطر والمكان والقرار عناصر متداخلة. هذا استنتاج من تصنيف اللعبة ووصفها، لا تقرير عن آليات محددة؛ لا تتضمن الأدلة تفاصيل عن إدارة الموارد أو أنظمة التخفي أو سلوك الأعداء، ولذلك لن أصف أياً منها كما لو كان مؤكداً. كذلك لا تتوافر معلومات كافية عن بناء الشخصيات أو الحوار أو كيفية توزيع الاختيارات على الحملة. نقطة القوة المفهومية أن هذا المزج ينسجم مع منطقة توصف بأنها خطرة ومليئة بالأسرار، إذ يمكن أن يجعل التقدم فيها ذا رهانات تتجاوز إصابة الخصم. أما الاختبار الحاسم، أي مقدار انسجام الأنظمة فعلياً، فلا تجيب عنه المواد المتاحة. ولهذا تبقى درجة هذا المحور متحفظة، مرتبطة بوضوح الوعد لا بإنجاز سردي شاهدته بنفسي.\n\n## الإخراج والجوانب الفنية\n\nتصف صفحة RAWG المشروع بأنه واسع النطاق، ويعد ملخصها بحرية الاختيار ورسوم متقدمة، إلى جانب أجواء شديدة الكثافة. هذه أوصاف تسويقية أو تعريفية في المصدر، وليست قياسات مستقلة لجودة الإخراج؛ لا يقدم الملف تحليلاً لمستوى التفاصيل أو ثبات الأداء أو تصميم المهمات، ولا يورد نتائج اختبار على منصة بعينها. بناءً على ذلك، يمكن القول إن طموح النطاق والحضور المكاني جزء من هوية العمل المعلنة، لكن لا يمكنني تحويل الطموح إلى حكم قاطع على نجاحه الفني. كما أن ذكر المنصات يقتصر في بيانات اللعبة على PC وXbox Series S/X، بينما يوجد في الملف مقطع رسمي من PlayStation Canada يحمل عنوان إطلاق مرتبطاً بـPS5. وجود عنوان المقطع وحده لا يكفي لإثبات تفاصيل الإتاحة أو الأداء، لذا لا أبني عليهما استنتاجاً.\n\n## الصورة والهوية البصرية\n\nالمنطقة المحظورة هي أقوى مرتكز بصري يمكن استخلاصه من المصادر، لا لأن الملف يقدم وصفاً تفصيلياً لمشهد، بل لأن الإشعاع والطفرات والشذوذات والبحث عن الأسرار تحدد عالماً ذا سمات واضحة. ويذكر RAWG «الرسوم المتقدمة» ضمن وصفه، كما يؤكد وجود طموح إلى نطاق واسع؛ لكن هذه العبارات لا تثبت وحدها جودة التنفيذ أو وضوح الصورة أو اتساق الهوية الفنية. لذلك تستند الدرجة هنا إلى قوة الاتجاه المعلن وإلى ملاءمة المكان لفكرة الرعب والاستكشاف، لا إلى تقييم تقني مباشر. لا تتوفر أدلة تسمح بمقارنة الإضاءة أو تصميم الكائنات أو تنوع البيئات، ولا يصح اختلاق أمثلة عنها. النتيجة أن الهوية المفهومية واعدة، أما الحكم على مستوى الصورة الفعلي فمحدود الثقة.\n\n## الصوت والموسيقى والأداء\n\nلا يحتوي ملف الأدلة على معلومات موثقة عن الموسيقى أو المؤثرات أو التمثيل الصوتي أو لغات الأداء. ومن ثم لن أزعم أن الموسيقى ترفع التوتر، أو أن الأصوات تميز البيئة، أو أن أداء الشخصيات ناجح أو ضعيف؛ كل ذلك يحتاج إلى مادة لا يقدمها الملف. هذه ليست ملاحظة جانبية، لأن الصوت عنصر أساسي في لعبة تصف نفسها ضمن الرعب وتراهن على أجواء مكان خطر. غياب المعلومات لا يثبت وجود مشكلة في اللعبة، لكنه يمنع إصدار حكم إيجابي أو سلبي مسؤول على هذا المحور. لذلك تحمل الدرجة رقماً تحفظياً إلزامياً ضمن بنية التقييم، مع التنبيه إلى أنها تعكس نقص الشواهد المتاحة أكثر مما تعكس قياساً موثوقاً لجودة الصوت الفعلية.\n\n## الإيقاع والبناء وتنوع المحتوى\n\nلا يحدد المصدر مدة الحملة أو وتيرة المهمات أو شكل التقدم أو مقدار التنوع بين الأنشطة. ما نعرفه هو أن العمل يقدم مغامرة واسعة النطاق في منطقة تستقطب الباحثين عن الكنوز والأسرار، وأن الاختيار حاضر في وصفه. من هذه المعطيات يمكن توقع أن الاستكشاف والقرار عنصران مهمان في تصوره، لكن لا يمكن الجزم بأن الإيقاع متوازن أو أن المحتوى يتجدد، كما لا يصح اختراع لحظات بطء أو تكرار. هنا يظهر الفرق بين تقييم الفكرة وتقييم التنفيذ: الوعد بمساحة كبيرة قد يفتح مجالاً للتنوع، لكنه قد يثير أيضاً سؤالاً مشروعاً عن تماسك البناء، لا إجابة موثقة عنه. ولذلك تبقى درجة الإيقاع محايدة تحفظياً، لا حكماً بأن اللعبة بطيئة أو متسارعة.\n\n## نقاط القوة\n\nأبرز ما يدعم العمل في حدود الأدلة هو وضوح مركزه: منطقة تشيرنوبل المحظورة ليست خلفية عامة، بل أساس للمخاطر والأسرار التي يعلنها الملخص. وثانياً، يملك المشروع هوية نوعية مركبة تجمع التصويب والرعب والمحاكاة الغامرة، وهي صيغة قد تخاطب من يريد أكثر من لعبة إطلاق نار مجردة، من دون أن يعني ذلك أن المزج ناجح تلقائياً. وثالثاً، تذكر البيانات حرية الاختيار، ما يمنح الفكرة رهانات محتملة على مستوى القرار. ورابعاً، يتلاءم وجود مطاردي الكنوز والأسرار مع عالم يفترض أن الخطر فيه مرتبط بما يبحث عنه اللاعب. هذه نقاط قوة في التصور الموثق؛ لا أقدمها كشهادات عن أنظمة لعب اختبرتها، ولا أخلط بينها وبين إثبات جودة كل عنصر في التطبيق.\n\n## نقاط الضعف\n\nأهم تحفظ تحريري ليس عيباً تقنياً مثبتاً، بل فجوة بين حجم الوعود وبين مقدار ما تثبته المصادر المتاحة. فعبارات مثل «الرسوم المتقدمة» و«النطاق غير المسبوق» لا تصحبها هنا أدلة مقارنة أو مراجعة مستقلة تفصل جودتها. كما أن وصف حرية الاختيار لا يشرح أثر الخيارات أو تنوع نتائجها، لذلك لا يمكن اعتباره برهاناً على سرد تفاعلي قوي. ومزج ثلاثة اتجاهات، التصويب والمحاكاة الغامرة والرعب، يطرح سؤالاً عن توازنها؛ إلا أن الأدلة لا تثبت وجود خلل، فيبقى ذلك خطراً تصميمياً ينبغي عدم تحويله إلى اتهام. وأخيراً، غياب بيانات الصوت والإيقاع والشخصيات يجعل الحكم الشامل على العمل أضعف مما تتطلبه مراجعة نهائية تقليدية. هذه قيود حقيقية على الثقة في التقييم، لا ادعاءات بأن اللعبة نفسها تعاني تلك العيوب.\n\n## لمن يناسب هذا العمل؟\n\nبحسب الهوية المعلنة، قد يجذب العمل محبي ألعاب التصويب من منظور الشخص الأول الذين يفضلون أن يقترن القتال بمكان خطر واستكشاف وأجواء رعب، وكذلك من يلفتهم تصور المحاكاة الغامرة والاختيار. وقد تهم خلفية تشيرنوبل من يبحث عن عوالم خيالية تستثمر موقعاً محدداً بدلاً من إعداد عام. لكن لا أستطيع أن أوصي به بوصفه مضموناً لمن يريد قصة محكمة، أو شخصيات بارزة، أو إيقاعاً سريعاً، لأن الملف لا يوثق هذه الجوانب. ومن الأفضل للقارئ أن يتعامل مع التوصية بوصفها ترشيحاً مبنياً على النوع والفكرة، لا ضماناً لتجربة متطابقة مع تفضيلاته. متوسط RAWG البالغ 3.76 من 5، المستند إلى 334 صوتاً، يظل مؤشراً جماهيرياً ثانوياً لا يحسم هذه الملاءمة.\n\n## الحكم النهائي\n\nS.T.A.L.K.E.R. 2: Heart of Chornobyl تبدو، من وصفها الموثق، مشروعاً ذا تصور قوي: منطقة ذات هوية، ومزيج أنواع واعد، ووعد بالاختيار والاستكشاف. لكن المراجعة المنصفة لا تساوي بين الوعد والإنجاز؛ تفاصيل القصة والشخصيات والصوت والإيقاع والأداء غير متاحة هنا بما يكفي لإصدار أحكام نهائية موثوقة عنها. لذلك أميل إلى تقييم إيجابي متحفظ للفكرة، مع خفض الثقة في التقدير الشامل، لا اختلاق عيوب أو مزايا لم تثبتها المصادر. الدرجات المرفقة تقديرية ومقيدة بهذه الأدلة، ولا سيما في الصوت والإيقاع؛ وليست ادعاءً بتجربة مباشرة أو بوجود مراجعات مستقلة تفصيلية في الملف. التوصية مناسبة لمن تجذبه هوية العمل وأنواعه، مع إبقاء الحكم النهائي على جودة التنفيذ مفتوحاً لما تثبته معلومات أشمل.",
-        "scores": {
-          "story": 7.2,
-          "visuals": 7,
-          "sound": 5,
-          "pacing": 5
-        },
-        "pros": [
-          "إطار مكاني واضح ومحدد: المنطقة المحظورة حول محطة تشيرنوبل، بما تتضمنه وفق المصدر من إشعاع وطفرات وشذوذات.",
-          "مزيج أنواع معلن يجمع التصويب بمنظور الشخص الأول والمحاكاة الغامرة والرعب.",
-          "وعد صريح بحرية الاختيار، بما يمنح الفكرة احتمالاً لربط القرار بتجربة اللاعب.",
-          "ربط البحث عن الكنوز والأسرار بمطاردي المنطقة، وهو تصور ينسجم مع هوية العالم المعلنة."
-        ],
-        "cons": [
-          "لا توثق الأدلة المتاحة تفاصيل القصة أو الشخصيات أو نتائج الاختيارات بما يكفي للحكم على قوتها.",
-          "وصف الرسوم والنطاق الطموح لا يصحبه تحليل مستقل أو معلومات تقنية تسمح بتقييم التنفيذ.",
-          "لا تتوفر معلومات موثقة عن الموسيقى أو المؤثرات أو الأداء الصوتي.",
-          "لا يشرح الملف بناء الحملة أو وتيرة المحتوى، ما يجعل تقييم الإيقاع والتنوع محدود الثقة."
-        ],
-        "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
-        "type": "game",
-        "sourceId": "game:58386",
-        "sourceName": "RAWG",
-        "sourceUrl": "https://rawg.io/games/stalker-2",
-        "sourceRating": 3.76,
-        "sourceRatingScale": 5,
-        "sourceVoteCount": 334,
-        "sourceRatingCheckedAt": "2026-11-24T16:28:07.456Z",
-        "audienceScore": 7.5,
-        "releaseDate": "2024-11-20",
-        "poster": "https://media.rawg.io/media/games/3e8/3e81585ecda204d4f4b80a041b069adb.jpg",
-        "backdrop": "https://media.rawg.io/media/games/3e8/3e81585ecda204d4f4b80a041b069adb.jpg",
-        "genres": [
-          "Action",
-          "Shooter",
-          "Adventure",
-          "RPG"
-        ],
-        "platforms": [
-          "PC",
-          "Xbox Series S/X"
-        ],
-        "cast": [],
-        "crew": [],
-        "tags": [
-          "Action",
-          "Shooter",
-          "Adventure",
-          "RPG"
-        ],
-        "sources": [
-          {
-            "name": "RAWG",
-            "url": "https://rawg.io/games/stalker-2",
-            "extract": "S.T.A.L.K.E.R. 2 is a brand-new entry in the legendary series, enjoyed by millions of players worldwide. The explosive combination of first-person shooter, immersive sim and horror is back. It’s the ultimate S.T.A.L.K.E.R. experience of unprecedented scale, advanced graphics, freedom of choices and the thickest atmosphere of a deadly adventure. Welcome to The Zone — an area of exclusion around the Chernobyl Nuclear Power Plant. Full of radiation, mutants and anomalies, it keeps drawing adventurers from beyond the perimeter. Bounty hunters dwell deep into the Zone, driven by its treasures and mysteries. These people are known as stalkers. Are you ready to become one of them?",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/S.T.A.L.K.E.R._2%3A_Heart_of_Chornobyl",
-            "extract": "S.T.A.L.K.E.R. 2: Heart of Chornobyl is a 2024 first-person shooter video game developed and published by GSC Game World. It is the fourth main game released in the S.T.A.L.K.E.R. video game series, as well as the first S.T.A.L.K.E.R. game in 15 years since the release of Call of Pripyat in 2009.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — PlayStation Canada",
-            "url": "https://www.youtube.com/watch?v=xKtsw4kqZFs",
-            "extract": "Verified public, embeddable promotional trailer: S.T.A.L.K.E.R. 2: Heart of Chornobyl - Cost of Hope Launch Trailer | PS5 Games",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "xKtsw4kqZFs",
-        "youtubeVideoTitle": "S.T.A.L.K.E.R. 2: Heart of Chornobyl - Cost of Hope Launch Trailer | PS5 Games",
-        "reviewMode": "review",
-        "score": 6.2
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 6090,
       "articlePath": "src/content/reviews/game-s-t-a-l-k-e-r-2-heart-of-chornobyl-58386.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-s-t-a-l-k-e-r-2-heart-of-chornobyl-58386/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-s-t-a-l-k-e-r-2-heart-of-chornobyl-58386/",
+      "publishedAt": "2026-11-24T19:16:03.234Z"
+    },
+    "series:219915": {
+      "key": "series:219915",
+      "type": "series",
+      "id": "219915",
+      "title": "As Beautiful As You",
+      "item": {
+        "type": "series",
+        "id": "219915",
+        "name": "As Beautiful As You",
+        "date": "2024-07-02",
+        "preview": false,
+        "popularity": 114.9483,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-24T19:16:07.230Z",
+      "updatedAt": "2026-11-24T19:16:07.681Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "No exact independent encyclopedia match for As Beautiful As You"
+    },
+    "series:257161": {
+      "key": "series:257161",
+      "type": "series",
+      "id": "257161",
+      "title": "Amazing Night",
+      "item": {
+        "type": "series",
+        "id": "257161",
+        "name": "Amazing Night",
+        "date": "2024-06-28",
+        "preview": false,
+        "popularity": 44.4099,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-24T19:16:09.020Z",
+      "updatedAt": "2026-11-24T19:16:09.313Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "No exact independent encyclopedia match for Amazing Night"
+    },
+    "series:200875": {
+      "key": "series:200875",
+      "type": "series",
+      "id": "200875",
+      "title": "IT: Welcome to Derry",
+      "item": {
+        "type": "series",
+        "id": "200875",
+        "name": "IT: Welcome to Derry",
+        "date": "2025-10-26",
+        "preview": false,
+        "popularity": 44.3688,
+        "source": "TMDB"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-24T19:16:10.137Z",
+      "updatedAt": "2026-11-24T19:16:58.702Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "IT: Welcome to Derry",
+        "type": "series",
+        "collectedAt": "2026-11-24T19:16:10.666Z",
+        "sourceId": "series:200875",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/200875",
+        "overview": "In 1962, amid a spate of unexplained disappearances of local children, a group of misfit friends begin to suspect a long-buried ancient evil lurking. As the kids set out to determine what's really going on, a rising unease prompts several townspeople to work together to restore peace – all while a U.S. military operation seeks to exploit Derry for its own objectives.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/200875",
+            "extract": "In 1962, amid a spate of unexplained disappearances of local children, a group of misfit friends begin to suspect a long-buried ancient evil lurking. As the kids set out to determine what's really going on, a rising unease prompts several townspeople to work together to restore peace – all while a U.S. military operation seeks to exploit Derry for its own objectives.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/It_%E2%80%93_Welcome_to_Derry",
+            "extract": "It: Welcome to Derry is an American supernatural horror television series based on Stephen King's 1986 novel It. Serving as a prequel to the films It (2017) and It Chapter Two (2019), the series was developed by Andy Muschietti, Barbara Muschietti and Jason Fuchs, all of whom were involved in the It films. The series stars a large ensemble cast including Bill Skarsgård, who serves as executive producer and reprises his role as Pennywise from the films.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — HBO Max Europe",
+            "url": "https://www.youtube.com/watch?v=LFEJ0pX9-OY",
+            "extract": "Verified public, embeddable promotional trailer: IT: Welcome to Derry | Official Red Band Trailer | HBO Max",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 1816 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "LFEJ0pX9-OY",
+        "youtubeVideoTitle": "IT: Welcome to Derry | Official Red Band Trailer | HBO Max",
+        "youtubeChannel": "HBO Max Europe",
+        "releaseDate": "2025-10-26",
+        "genres": [
+          "Drama",
+          "Mystery"
+        ],
+        "platforms": [],
+        "cast": [
+          "Taylour Paige",
+          "Jovan Adepo",
+          "James Remar",
+          "Stephen Rider",
+          "Matilda Lawler",
+          "Amanda Christine",
+          "Clara Stack",
+          "Blake Cameron James"
+        ],
+        "crew": [],
+        "rating": 8.262,
+        "ratingScale": 10,
+        "votes": 1816,
+        "poster": "https://image.tmdb.org/t/p/w780/nyy3BITeIjviv6PFIXtqvc8i6xi.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/2fOKVDoc2O3eZmBZesWPuE5kgPN.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "IT: Welcome to Derry: فرضية واعدة، لكن الأدلة المتاحة لا تكفي لحكم نهائي على التنفيذ",
+        "summary": "توسّع IT: Welcome to Derry عالم أفلام It إلى مسلسل تدور مقدمته في ديري عام 1962، وسط اختفاء أطفال، وشكوك مجموعة من الأصدقاء، وشرّ قديم، وعملية عسكرية تسعى إلى استغلال ما يجري. هذه العناصر تتيح قراءة واعدة لتوسيع الرعب إلى حكاية عن مجتمع كامل، لا عن تهديد منفرد؛ لكنها تظل عناصر في الملخص الرسمي، لا برهاناً على نجاح السرد أو الإخراج. ملف الأدلة يثبت تاريخ الإصدار، الصلة بالأفلام، أسماء من طاقم التمثيل، ومقطعاً ترويجياً رسمياً، لكنه لا يقدم مشاهدة موثقة للحلقات أو مراجعات مستقلة كافية. لذلك فالحكم هنا صريح ومحدود: الفكرة قابلة للاهتمام، أما جودة التنفيذ والإيقاع والصورة والصوت فلا يمكن تقريرها بثقة من هذه المواد وحدها.",
+        "verdict": "تملك IT: Welcome to Derry أساساً سردياً واضحاً: إعادة زيارة ديري في زمن سابق، وربط اختفاء الأطفال بشرّ متجذر وباستجابة مدنية وعسكرية، مع امتدادها إلى عالم أفلام It. هذا يمنحها إمكاناً درامياً يتجاوز تكرار مواجهة الوحش، لكنه لا يثبت أن المسلسل استثمره بنجاح. لا يحتوي ملف الأدلة على وصف للحلقات أو تحليل مستقل لأداء الممثلين أو الإخراج أو الإيقاع، ولا يصح تحويل الملخص والمقطع الترويجي إلى تجربة مشاهدة متخيلة. لذا فالدرجة الإجمالية الحاسوبية المقترحة لا ينبغي قراءتها بوصفها حكماً نهائياً راسخاً على جودة المسلسل؛ إنها تقدير شديد التحفظ لما تسمح به الوثائق، مع ثقة منخفضة في محاور التنفيذ. التوصية الأنسب هي اعتبار العمل خياراً لمن يهتم بعالم It وبالرعب المرتبط بالمكان، مع تعليق الحكم على نجاحه الفني إلى أن تتوفر أدلة نقدية ومشاهدة موثقة أوسع.",
+        "body": "## مقدمة وسياق العمل\n\nIT: Welcome to Derry مسلسل رعب ودراما وغموض، صدر في 26 أكتوبر 2025، وتدور مقدمته الموثقة في ديري سنة 1962. وهو مرتبط بأفلام It الصادرة عامي 2017 و2019، ويقدمه المصدر الموسوعي بوصفه عملاً سابقاً لأحداثها، طوّره آندي موسكيتي وباربرا موسكيتي وجيسون فوكس، المرتبطون أيضاً بالأفلام. كما يذكر المصدر نفسه أن بيل سكارسغارد منتج تنفيذي ويعود بدور بيني وايز. هذه حقائق سياقية مهمة، لكنها لا تعوّض معلومات عن بناء الحلقات أو مستوى التنفيذ. المراجعة هنا تحريرية ومبنية حصراً على ملف الأدلة: بيانات TMDB، والمعلومة الموسوعية الواردة فيه، ووجود إعلان رسمي من HBO Max Europe. لا أتعامل مع الإعلان كما لو كان مشاهدة للمسلسل، ولا أختلق انطباعات مشاهدة أو أحكاماً على مشاهد بعينها.\n\nيضع الإعلان الرسمي العمل في إطار رعب موجّه للبالغين بحسب وصفه «Red Band»، لكن عنوان المقطع وحده لا يكشف تفاصيل مضمونه أو جودة تصويره وصوته. أما TMDB فيصنف المسلسل ضمن الدراما والغموض، وهو توصيف ينسجم مع تعدد خيوط الملخص، لا شهادة على نجاح الجمع بينها. الفرق بين هذه الحقائق والاستنتاجات أساسي: يمكن تقييم ما تعد به الفكرة، لكن لا يمكن الجزم بما أنجزته الحلقات اعتماداً على سجل لا يصفها.\n\n## الفكرة والقصة أو التجربة\n\nبحسب ملخص TMDB، تبدأ الحكاية في 1962 مع موجة اختفاءات غير مفسرة لأطفال محليين. مجموعة من الأصدقاء المختلفين اجتماعياً تشتبه في وجود شر قديم مدفون، فيما يتعاون بعض سكان البلدة سعياً إلى استعادة الهدوء، وتعمل عملية عسكرية أمريكية على استغلال ديري لأهدافها. توزيع الفعل بين الأطفال والسكان والجيش يمنح الفرضية مجالاً لأكثر من زاوية: اكتشاف التهديد، أثره على الجماعة، ومحاولة مؤسسة نافذة تحويل الخطر إلى أداة. هذه قراءة لبنية الملخص، وليست تأكيداً أن المسلسل يمنح كل زاوية وزناً متوازناً.\n\nوتحمل العودة إلى زمن سابق وعداً بتوسيع تاريخ ديري، بدلاً من الاكتفاء بإعادة تقديم الحكاية السينمائية نفسها. لكن قيمة هذا الاختيار تعتمد على مقدار ما يضيفه الماضي إلى فهم المكان والشر، وعلى ما إذا كانت الشخصيات تملك مسارات تتجاوز مهمة كشف اللغز. لا يقدّم الملف تفاصيل تكفي للإجابة. لذلك تبدو الفكرة مثيرة للاهتمام على مستوى التصميم، مع مخاطرة واضحة: أن تتزاحم خطوط الأطفال والبلدة والجيش من دون أن تتماسك في دراما واحدة. لا دليل متاح هنا يثبت وقوع هذه المشكلة أو تجاوزها.\n\n## السرد والشخصيات أو تصميم اللعب\n\nلا ينطبق جانب تصميم اللعب على مسلسل تلفزيوني. أما سردياً، فيشير الملخص إلى مجموعة أصدقاء لا بطل منفرد، وإلى مشاركة سكان البلدة في محاولة احتواء الأزمة. هذا يفتح احتمال سرد جماعي يختبر اختلاف المواقف تجاه الخطر، ويمنح البلدة وظيفة تتجاوز كونها خلفية. غير أن الملف لا يورد أسماء الشخصيات أو علاقاتها أو قراراتها، ولذلك لا يمكن الحكم على تطورها أو الحوار أو جودة توزيع المنظور. قائمة الممثلين تضم تايلور بيج، وجوفان أديبو، وجيمس ريمار، وستيفن رايدر، وماتيلدا لولر، وأماندا كريستين، وكلارا ستاك، وبليك كاميرون جيمس؛ لكنها لا تحدد أدوارهم، باستثناء ما يذكره المصدر الموسوعي عن عودة سكارسغارد بدور بيني وايز.\n\nمن هنا تظل المسألة النقدية الأهم سؤالاً لا نتيجة: هل يجعل المسلسل اختفاء الأطفال مدخلاً إلى شخصيات لها حاجاتها وعلاقاتها، أم يستخدمها أساساً لتوليد الغموض؟ لا تقدم المصادر دليلاً يسمح بالحسم. وكذلك لا يمكن استنتاج جودة الأداء من أسماء الممثلين، ولا من ارتباط بعض فريق التطوير بالأفلام. الخبرة السابقة قد تفسر اتصال المشروع بالعالم المعروف، لكنها ليست بحد ذاتها ضماناً لتجدد السرد أو نجاحه.\n\n## الإخراج والجوانب الفنية\n\nلا تتضمن المواد المتاحة مقابلات مع فريق العمل، أو تفصيلاً لطريقة الإخراج، أو وصفاً مستقلاً للحلقات، أو معلومات إنتاجية تساعد على تقييم القرارات الفنية. ويثبت المصدر الموسوعي أسماء المطورين، لكنه لا يوفر في الملف بيانات عن بقية فريق الإخراج أو الكتابة. لذلك لا يصح أن أنسب إلى المسلسل أسلوباً بصرياً بعينه، أو أزعم أن التوتر يتصاعد بمهارة، أو أصف مشاهد لا يوردها أي مصدر. حتى كون صناع مرتبطين بأفلام It قد عادوا إلى هذا العالم لا يثبت أن المسلسل يحافظ على مستوى تلك الأفلام أو يختلف عنها.\n\nنقدياً، فإن غياب هذه الشواهد يحد من صلابة أي حكم على الصناعة، لا من إمكان الاهتمام بالمشروع. والتمييز مهم: نقص المعلومات في ملف المراجعة ليس عيباً فنياً مثبتاً في المسلسل، ولا يجوز تسجيله كإخفاق إخراجي. لكنه يمنع أيضاً منح تقدير مرتفع مبني على افتراضات عن جودة التنفيذ. الدرجة المتحفظة في هذا المحور تعكس محدودية ما يمكن توثيقه، ويجب ألا تُفهم على أنها تقرير مشاهدة يثبت ضعف الإخراج.\n\n## الصورة والهوية البصرية\n\nلا يصف ملف الأدلة تصميم المواقع أو الأزياء أو الإضاءة أو الألوان، ولا يقدم تحليلاً مستقلاً للصورة. وجود ملصق وخلفية ضمن بيانات TMDB يثبت توفر مواد تعريفية، لا يتيح وحده حكماً على اللغة البصرية للحلقات. كذلك فإن إعلاناً رسمياً يحمل عنواناً ترويجياً لا يكفي لوصف لقطاته أو القطع أو المؤثرات؛ فالمادة المتاحة تثبت وجوده فقط. وبما أن العمل يعود إلى ديري في 1962، يمكن استنتاج أن بناء إحساس زمني مقنع سيكون جزءاً مهماً من تحديه الفني، لكن لا يمكن القول إن المسلسل حققه أو أخفق فيه من دون شواهد مباشرة.\n\nلهذا لا أخلط بين هوية العمل التسويقية، المتصلة بعالم It، وبين هوية بصرية ثبتت على الشاشة. يستطيع القارئ معرفة الإطار التاريخي وعلاقة المسلسل بالأفلام، لكنه لا يجد في المواد الموثقة وصفاً يسمح بمقارنة تصميمه البصري بها. درجة هذا المحور محايدة تحفظياً، لا مديحاً للصورة ولا إدانة لها؛ إنها إشارة واضحة إلى أن البيانات لا تسند حكماً أكثر تحديداً.\n\n## الصوت والموسيقى والأداء\n\nتورد المصادر بعض أسماء طاقم التمثيل، وتذكر عودة بيل سكارسغارد إلى شخصية بيني وايز، لكنها لا تقدم تقييماً مستقلاً للأداء أو وصفاً للموسيقى أو المؤثرات الصوتية. لذلك لا أصف صوتاً بعينه، ولا أنسب للممثلين نجاحاً أو إخفاقاً، ولا أستنتج من اختيار ممثل معروف شكل حضوره في العمل. قد يكون الأداء عاملاً حاسماً في حكاية تجمع أطفالاً وسكاناً وعناصر عسكرية، لكن ذلك استنتاج عن متطلبات الفرضية، لا ملاحظة عن النتيجة.\n\nالمعلومة الصوتية الوحيدة ذات الصلة أن هناك مقطعاً ترويجياً رسمياً منشوراً على قناة HBO Max Europe، وهي لا تكفي لتقييم صوت المسلسل نفسه. ومن ثم فإن الدرجة المحدودة هنا لا تعني أن الموسيقى أو الأداء دون المستوى؛ بل تعني أن الأدلة لا تتيح تمييز ما إذا كانا نقطتي قوة أم ضعف. أي حكم قاطع في هذا الجانب سيتجاوز الملف، وهو ما لا تسمح به مراجعة موثقة.\n\n## الإيقاع والبناء وتنوع المحتوى\n\nلا يذكر الملف عدد الحلقات أو مددها أو طريقة توزيع أحداث الموسم، لذا لا يمكن تقييم إيقاعه الفعلي أو تماسك بنائه. لكن الملخص يوحي بتعدد مسارات: اختفاءات الأطفال، بحث الأصدقاء، تحركات بعض السكان، وأهداف العملية العسكرية. هذا التعدد يوفر إمكانية لتوسيع نطاق التوتر، وقد يساعد على جعل ديري مجتمعاً متفاعلاً مع الخطر؛ وفي المقابل يفرض عبئاً بنائياً يتمثل في ربط الخيوط ومنح كل منها وظيفة واضحة. هذان احتمالان تحليليان ناشئان من الوصف، وليسا تقريراً بأن العمل يحقق أحدهما.\n\nكما أن تقديم المسلسل بوصفه سابقاً للأفلام يثير سؤالاً عن التوازن بين معرفة الجمهور السابقة وبين الغموض المطلوب لحكاية جديدة. لا تذكر المصادر مقدار اعتماد الأحداث على الشخصيات أو الوقائع المعروفة من الأفلام، ولذلك لا يمكن اتهامه بالإفراط في التمهيد أو الثناء عليه لتجديد العالم. درجة الإيقاع متحفظة، والثقة بها منخفضة؛ فهي لا تستند إلى مشاهدة الحلقات، بل إلى تقييم محدود لما تكشفه بنية الفرضية، مع الاعتراف بأن المعلومات غير كافية لحكم نهائي.\n\n## نقاط القوة\n\nأبرز ما يمكن إثباته في صالح المشروع هو وضوح نقطة انطلاقه: اختفاء أطفال في زمن محدد ومكان يرتبط أصلاً بعالم It. كذلك يضيف الملخص أطرافاً تتجاوز مجموعة الأصدقاء، إذ يذكر سكاناً وعملية عسكرية ذات أهداف خاصة، ما يمنح الفكرة مساحة درامية أوسع من مطاردة تهديد واحد. العودة إلى سنة 1962 تتيح استكشاف مرحلة سابقة في تاريخ ديري، بينما تمنح الصلة بالأفلام إطاراً مفهوماً للجمهور العارف بها. وأخيراً، يجمع طاقم التمثيل أسماء معلنة متعددة، مع توثيق عودة سكارسغارد بدور بيني وايز. هذه نقاط قوة في التصور والسياق الموثق، لا أحكام مؤكدة على جودة الحلقات.\n\n## نقاط الضعف\n\nأوضح قيد في تقييم العمل أن ملف الأدلة لا يحتوي مراجعات مستقلة كافية أو وصفاً تفصيلياً للحلقات، الأمر الذي يمنع التحقق من نجاح عناصر الفكرة على الشاشة. كما أن تعدد مسارات الأطفال والسكان والجيش يخلق تحدياً محتملاً في التركيز، لكن لا تتوفر شواهد لتحديد إن كان المسلسل قد أدار هذا التحدي جيداً. ولا توجد معلومات مفصلة عن تطور الشخصيات أو الصورة أو الموسيقى أو الإيقاع، ما يجعل الثقة بأي درجة موضوعية منخفضة. هذه ليست اتهامات بعيوب فنية مثبتة؛ إنها حدود لما يمكن قوله بأمانة. وأي قائمة عيوب تزعم مشكلات أداء أو مؤثرات أو حلقات بعينها ستكون اختلاقاً لا يسنده الملف.\n\n## لمن يناسب هذا العمل؟\n\nمن حيث الفرضية الموثقة، قد يهم المسلسل من يتابع عالم It ويرغب في معرفة ما تتيحه ديري خارج نطاق الأفلام، أو من ينجذب إلى قصص الرعب التي تربط تهديداً خارقاً بجماعة محلية وبأهداف مؤسسية. أما من يبحث عن تقييم موثق للأداء أو التصوير أو الإيقاع قبل اتخاذ قرار المشاهدة، فلا توفر هذه المادة أساساً كافياً لتوصية حاسمة. ووفق TMDB، يبلغ متوسط الجمهور 8.262 من 10 استناداً إلى 1816 صوتاً؛ هذا مؤشر جماهيري ثانوي منسوب إلى المنصة، لا درجة VibeCritic ولا بديلاً عن تقييم مستقل. لا ينبغي اعتباره برهاناً على أن العمل سيناسب كل مشاهد.\n\n## الحكم النهائي\n\nتثبت المعلومات المتاحة أن IT: Welcome to Derry يملك فرضية مرتبطة بعالم معروف، وزمناً ومكاناً محددين، وعدة خطوط درامية واعدة على مستوى الملخص. لكنها لا تثبت جودة السرد المنجز أو الصورة أو الصوت أو الأداء، ولا تتضمن شواهد مستقلة كافية لتقديم مراجعة نهائية واثقة بالمعنى المعتاد. لذا فالحكم التحريري المسؤول هو أن الفكرة جديرة باهتمام محبي العالم، بينما يظل نجاح المسلسل نفسه غير قابل للتقرير من هذا الملف وحده. الدرجات أدناه تقديرات مؤقتة منخفضة الثقة وليست ادعاء مشاهدة؛ وخصوصاً درجات المحاور الفنية، فهي لا تعني أن تلك العناصر متوسطة فعلاً، بل أنها لا تتوفر لها أدلة كافية لتبرير مديح أو ذم قاطع.",
+        "scores": {
+          "story": 6.5,
+          "visuals": 5,
+          "sound": 5,
+          "pacing": 5.5
+        },
+        "pros": [
+          "تحدد المقدمة زمناً ومكاناً واضحين: ديري عام 1962.",
+          "تجمع الفرضية بين اختفاء الأطفال، ومجموعة الأصدقاء، وسكان البلدة، وعملية عسكرية ذات أهداف خاصة.",
+          "تتيح العودة إلى ما قبل أفلام It مجالاً لاستكشاف تاريخ ديري ضمن العالم المعروف.",
+          "تضم قائمة التمثيل أسماء متعددة، مع توثيق عودة بيل سكارسغارد بدور بيني وايز."
+        ],
+        "cons": [
+          "لا تتوفر في ملف الأدلة مراجعات مستقلة كافية أو معلومات تفصيلية عن الحلقات، ما يضعف الثقة في الحكم النهائي.",
+          "تعدد المسارات يطرح تحدياً محتملاً في تماسك البناء، لكن المصادر لا تثبت كيفية معالجته.",
+          "لا توجد شواهد موثقة كافية لتقييم الصورة أو الموسيقى أو الأداء أو الإيقاع الفعلي."
+        ],
+        "title": "IT: Welcome to Derry",
+        "type": "series",
+        "sourceId": "series:200875",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/200875",
+        "sourceRating": 8.262,
+        "sourceRatingScale": 10,
+        "sourceVoteCount": 1816,
+        "sourceRatingCheckedAt": "2026-11-24T19:16:10.666Z",
+        "audienceScore": 8.3,
+        "releaseDate": "2025-10-26",
+        "poster": "https://image.tmdb.org/t/p/w780/nyy3BITeIjviv6PFIXtqvc8i6xi.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/2fOKVDoc2O3eZmBZesWPuE5kgPN.jpg",
+        "genres": [
+          "Drama",
+          "Mystery"
+        ],
+        "platforms": [],
+        "cast": [
+          "Taylour Paige",
+          "Jovan Adepo",
+          "James Remar",
+          "Stephen Rider",
+          "Matilda Lawler",
+          "Amanda Christine",
+          "Clara Stack",
+          "Blake Cameron James"
+        ],
+        "crew": [],
+        "tags": [
+          "Drama",
+          "Mystery"
+        ],
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/200875",
+            "extract": "In 1962, amid a spate of unexplained disappearances of local children, a group of misfit friends begin to suspect a long-buried ancient evil lurking. As the kids set out to determine what's really going on, a rising unease prompts several townspeople to work together to restore peace – all while a U.S. military operation seeks to exploit Derry for its own objectives.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/It_%E2%80%93_Welcome_to_Derry",
+            "extract": "It: Welcome to Derry is an American supernatural horror television series based on Stephen King's 1986 novel It. Serving as a prequel to the films It (2017) and It Chapter Two (2019), the series was developed by Andy Muschietti, Barbara Muschietti and Jason Fuchs, all of whom were involved in the It films. The series stars a large ensemble cast including Bill Skarsgård, who serves as executive producer and reprises his role as Pennywise from the films.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — HBO Max Europe",
+            "url": "https://www.youtube.com/watch?v=LFEJ0pX9-OY",
+            "extract": "Verified public, embeddable promotional trailer: IT: Welcome to Derry | Official Red Band Trailer | HBO Max",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "LFEJ0pX9-OY",
+        "youtubeVideoTitle": "IT: Welcome to Derry | Official Red Band Trailer | HBO Max",
+        "reviewMode": "review",
+        "score": 5.6
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 6262,
+      "articlePath": "src/content/reviews/series-it-welcome-to-derry-200875.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-it-welcome-to-derry-200875/"
     }
   },
   "providers": {},
@@ -3559,9 +3644,9 @@
       "tokens": 47590
     },
     "2026-11-24": {
-      "articles": 11,
-      "requests": 25,
-      "tokens": 72082
+      "articles": 12,
+      "requests": 27,
+      "tokens": 78344
     }
   },
   "history": []
