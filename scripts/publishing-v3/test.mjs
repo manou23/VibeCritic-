@@ -55,7 +55,7 @@ assert.equal(isEligibleReleaseDate("2013-09-17","2026-11-22"),false);
 assert.equal(isEligibleReleaseDate("","2026-11-22"),false);
 assert.equal(isEligibleReleaseDate("unknown","2026-11-22"),false);
 assert.equal(isEligibleReleaseDate("2024-02-30","2026-11-22"),false);
-assert.equal(DAILY_ARTICLE_LIMIT,9);
+assert.equal(DAILY_ARTICLE_LIMIT,13);
 // Candidate discovery moves past rejected/used candidates without relaxing release-date rules.
 const discoveryCandidates = [
   {type:"movie",id:"791523",name:"Rejected title",date:"2026-10-19",popularity:100},
