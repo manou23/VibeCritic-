@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-24T01:04:15.372Z",
+  "updatedAt": "2026-11-24T01:08:14.049Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -2594,162 +2594,187 @@
         "popularity": 111.2382,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-24T00:53:26.950Z",
-      "updatedAt": "2026-11-24T01:04:15.372Z",
+      "updatedAt": "2026-11-24T01:07:11.915Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "Fall 2: Deadpoint",
-        "type": "movie",
-        "collectedAt": "2026-11-24T00:53:27.366Z",
-        "sourceId": "movie:1101412",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/movie/1101412",
-        "overview": "On a perilous climb across Thailand's Mount Kwan, two climbers become trapped thousands of feet above the ground, where vertigo-inducing heights, sheer exposure, and impossible odds turn every moment into a fight for survival.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/movie/1101412",
-            "extract": "On a perilous climb across Thailand's Mount Kwan, two climbers become trapped thousands of feet above the ground, where vertigo-inducing heights, sheer exposure, and impossible odds turn every moment into a fight for survival.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Fall_2%3A_Deadpoint",
-            "extract": "Fall 2: Deadpoint is a 2026 American survival thriller film directed by Peter and Michael Spierig and written by Jonathan Frank and Scott Mann. The sequel to Fall (2022), it stars Harriet Slater, Arsema Thomas, Tom Brittney, and Virginia Gardner.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Lionsgate Movies",
-            "url": "https://www.youtube.com/watch?v=tC2XpmJW89g",
-            "extract": "Verified public, embeddable promotional trailer: Fall 2: Deadpoint Official Trailer 2 - In Theaters September 2. #FallMovie",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 884 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "tC2XpmJW89g",
-        "youtubeVideoTitle": "Fall 2: Deadpoint Official Trailer 2 - In Theaters September 2. #FallMovie",
-        "youtubeChannel": "Lionsgate Movies",
-        "releaseDate": "2026-09-01",
-        "genres": [
-          "Thriller"
-        ],
-        "platforms": [],
-        "cast": [
-          "Harriet Slater",
-          "Arsema Thomas",
-          "Tom Brittney",
-          "Virginia Gardner",
-          "Sahajak Boonthanakit",
-          "Grace Caroline Currey",
-          "Korakod Yensuk",
-          "Jordan Coleman"
-        ],
-        "crew": [
-          "Jonathan Frank",
-          "Michael Spierig",
-          "Scott Mann",
-          "Peter Spierig"
-        ],
-        "rating": 7.236,
-        "ratingScale": 10,
-        "votes": 884,
-        "poster": "https://image.tmdb.org/t/p/w780/fgSm5ylwiXbIHn8UbUXDjk9RRu4.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/nGau0KBOaRILSK5MqFcuTfv7GMl.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "Fall 2: Deadpoint: فرضية نجاة واضحة، لكن الأدلة المتاحة لا تكفي للحكم على الفيلم",
-        "summary": "تعود Fall 2: Deadpoint إلى معادلة البقاء على ارتفاع شاهق، وتنقلها بحسب الملخص المتاح إلى جبل كوان في تايلاند، حيث يُحتجز متسلقان على علوّ خطير. هذه نقطة انطلاق محددة وملائمة لفيلم تشويق، كما أن وجودها بوصفها تتمة لفيلم Fall الصادر عام 2022 يضعها ضمن سلسلة ذات هوية نوعية معروفة. لكن المعلومات الموثقة هنا لا تتجاوز أساساً الملخص والبيانات الإنتاجية وإثبات وجود إعلان رسمي؛ ولا تتضمن مراجعات مستقلة أو وصفاً موثقاً للتنفيذ والمشاهد والأداء. لذلك لا يصح تحويل التوقعات إلى مديح أو ذمّ قاطع. الحكم التحريري هنا واضح في حدود ما تسمح به الأدلة: الفكرة قابلة للاهتمام، أما جودة الفيلم الفعلية فغير مثبتة في الملف.",
-        "verdict": "تملك Fall 2: Deadpoint أساساً درامياً قابلاً لصنع تشويق مباشر: متسلقان عالقان على ارتفاع شاهق في جبل تايلاندي، مع خطر واضح ومجال ضيق للنجاة. كما أن بيانات العمل تثبت صلته بفيلم Fall الصادر عام 2022 وتحدد مخرجيه وكتّابه وطاقمه. لكن هذه المعطيات لا تثبت أن الفيلم يطوّر الفكرة بذكاء، أو يمنح شخصياته عمقاً، أو ينجح بصرياً وصوتياً وإيقاعياً. لا توجد في الملف مراجعات مستقلة أو تفاصيل موثقة كافية عن تلك العناصر. لذا فالحكم النهائي الأمين هو أن المشروع يبدو واعداً على مستوى الفرضية، لكن لا تتوافر قاعدة نقدية كافية لمنح الفيلم تزكية نوعية مؤكدة. الدرجات أدناه تحفظية ومحدودة الثقة، ولا ينبغي قراءتها بوصفها بديلاً عن تقييم مستقل للتنفيذ.",
-        "body": "## مقدمة وسياق العمل\n\nFall 2: Deadpoint فيلم تشويق أمريكي صدر، وفق بيانات الملف، في الأول من سبتمبر 2026، ويُقدَّم بوصفه تتمة لفيلم Fall الصادر عام 2022. يذكر المصدر الموسوعي أن بيتر ومايكل سبيريغ أخرجا العمل، وأن جوناثان فرانك وسكوت مان كتبا نصه، فيما يسجل الملف مجموعة من الممثلين تضم هارييت سلاتر وأرسما توماس وتوم بريتني وفرجينيا غاردنر. هذه معلومات نافعة لتحديد هوية الإنتاج، لكنها ليست في حد ذاتها دليلاً على جودة الفيلم أو على طبيعة إسهام كل فرد فيه. تتطلب المراجعة النهائية حكماً على ما يظهر في العمل وكيفية بنائه، لا مجرد سرد أسماء المشاركين. والمادة المتاحة لا تقدم وصفاً تفصيلياً للمشاهد أو مراجعات نقدية مستقلة يمكن الاستناد إليها لهذا الغرض. لذلك تتناول هذه المراجعة ما يمكن إثباته، وتفصل بين مواصفات المشروع وبين النتائج الفنية التي لا يجوز افتراضها.\n\n## الفكرة والقصة أو التجربة\n\nالملخص المنشور لدى TMDB يضع متسلقين على جبل كوان في تايلاند، عالقين على ارتفاع آلاف الأقدام، ويصف الخطر بأنه نابع من الارتفاع المكشوف واستحالة النجاة الظاهرة. تلك هي النواة القصصية الموثقة: صراع بقاء في بيئة مرتفعة، ومأزق يجعل الحركة والقرار مسألتين حاسمتين بحسب الوصف. الفكرة واضحة، وتمنح الفيلم إطاراً ضيقاً يمكن أن يركز التوتر حول الخطر الجسدي والفرص المحدودة. لكن الوضوح لا يكفي لإثبات الأصالة أو التطور الدرامي؛ فلا نعرف من الملف كيف تبدأ الرحلة، ولماذا يصبح المتسلقان عالقين، وما طبيعة علاقتهما، أو كيف تتغير المخاطر عبر الأحداث. لا يصح ملء هذه الفجوات بتفاصيل متخيلة أو استنتاج أن الفيلم يكرر حبكة سابقة لمجرد كونه تتمة. النتيجة النقدية المنضبطة هي أن الفرضية جذابة في صورتها المجردة، بينما تظل جودة صياغتها القصصية غير قابلة للتقييم من المعلومات المنشورة هنا.\n\n## السرد والشخصيات أو تصميم اللعب\n\nهذا عمل سينمائي، لذا ينصب النظر على السرد والشخصيات لا على تصميم اللعب. وجود متسلقين اثنين في مركز الملخص يتيح، من حيث المبدأ، أن يتقاطع صراع النجاة مع العلاقة بين الشخصيتين، لكن هذا احتمال بنائي وليس وصفاً موثقاً لما يفعله الفيلم. لا تتوافر معلومات موثوقة عن خلفيتيهما أو دوافعهما أو مسار تغيرهما، كما لا توجد تفاصيل عن الشخصيات الأخرى أو مقدار حضورها. أسماء الممثلين في بيانات الطاقم لا تسمح وحدها باستنتاج طبيعة الأدوار، ولا يجوز تحويلها إلى أحكام على الأداء. كذلك لا نعرف إن كان السرد يلتزم منظوراً واحداً أو يتناوب بين الشخصيات، ولا إن كان يعتمد المفاجآت أو التدرج أو الكشف المتأخر. لذلك لا يمكن منح العمل نجاحاً في بناء الشخصيات أو اتهامه بسطحيتها. هذه نقطة نقص في الملف النقدي، لا حكم سلبي على الفيلم نفسه. والتمييز مهم، لأن مراجعة مسؤولة لا تنسب إلى الشاشة ما لا تثبته المصادر المتاحة.\n\n## الإخراج والجوانب الفنية\n\nتنسب البيانات الإخراج إلى بيتر ومايكل سبيريغ، لكنها لا تورد مقابلات أو ملاحظات إنتاجية أو تحليلات مستقلة تشرح اختياراتهما في هذا الفيلم. لا نملك وصفاً موثقاً لكيفية تنظيم مشاهد الخطر، أو استخدام المواقع، أو ضبط الانتقال بين الحوار والحركة، ولا معلومات عن التصوير في الموقع أو المؤثرات. وبذلك لا يمكن تقييم براعة الإخراج أو القول إن التنفيذ يخلق إحساساً مقنعاً بالخطر. العنوان الرسمي للإعلان الثاني يثبت وجود مادة ترويجية من قناة Lionsgate Movies، لكنه لا يصف محتوى الإعلان؛ لذلك لا أستند إليه لادعاء مشاهد أو أسلوب بصري بعينه. هذه المحدودية تمنع مراجعة فنية تفصيلية، لكنها لا تعني أن الفيلم يفتقر إلى تلك العناصر. المتاح يثبت فريقاً إخراجياً محدداً ونوعاً تشويقياً، ولا يثبت كيف تحولت هذه العناصر إلى تجربة سينمائية ناجحة أو متعثرة.\n\n## الصورة والهوية البصرية\n\nالارتفاع المكشوف وجبل كوان في تايلاند عنصران أساسيان في تعريف الفرضية، ومن الطبيعي أن تكون للصورة أهمية خاصة في عمل يعتمد على مأزق مرتفع. غير أن أهمية الصورة المتوقعة لا تعادل دليلاً على جودتها. لا يصف الملف التكوينات أو الألوان أو حركة الكاميرا أو تصميم المواقع، ولا يقدم تحليلاً مستقلاً للتصوير أو للمؤثرات. وجود ملصق وخلفية ضمن البيانات لا يتيح وحده إصدار حكم موثوق على الصورة المتحركة أو على كيفية استثمار المكان. كما لا يثبت الملخص أن الفيلم يخلق إحساساً بالدوار أو يوازن بين اتساع المنظر وضيق مأزق الشخصيتين؛ هذه أمور تتطلب مشاهدة أو مصدراً نقدياً يصفها بدقة. لذلك لا يمكن تقديم الهوية البصرية بوصفها نقطة قوة مؤكدة، ولا يصح وصفها بالضعف. ما يمكن قوله هو أن الفرضية تضع على الصورة عبئاً واضحاً، وأن الأدلة لا تكشف إن كان الفيلم يفي به.\n\n## الصوت والموسيقى والأداء\n\nلا يتضمن ملف الأدلة أسماء مؤلف موسيقي أو محرر صوت أو تفاصيل عن الموسيقى والمؤثرات، ولا يقدم وصفاً موثقاً للصمت أو الأصوات البيئية أو طريقة مزج الحوار. لذلك لا توجد قاعدة تسمح بتقييم الصوت بوصفه مصدراً للتوتر أو عنصراً مشتتاً. وبالمثل، يورد الملف أسماء من طاقم التمثيل، لكنه لا ينقل مراجعة للأداء أو مقابلة أو وصفاً لمشاهد محددة. لا يكفي ذكر هارييت سلاتر وأرسما توماس وتوم بريتني وفرجينيا غاردنر وغيرهم كي ننسب إليهم نجاحاً أو إخفاقاً، ولا يمكن تقدير الانسجام بينهم من قائمة أسماء. وهذا التحفظ لا يقلل من أهمية الأداء في قصة تعتمد على شخصيتين في مأزق؛ بل يوضح أن أهمية العنصر لا تمنحنا معلومات عن مستواه. تبقى الموسيقى والصوت والتمثيل جوانب غير محسومة تحريرياً ضمن الأدلة المقدمة.\n\n## الإيقاع والبناء وتنوع المحتوى\n\nيفتح الملخص احتمالاً لبناء متوتر قائم على استمرار الخطر في موقع محدود، لكن لا توجد معلومات عن مدة الفيلم أو تقسيمه أو سرعة تصاعد الأحداث. كما لا نعرف إن كان يوازن بين لحظات المواجهة والهدوء، أو إن كان يكرر وضعية الخطر، أو يوسع نطاق الحكاية خارج موقع التسلق. ومن دون هذه التفاصيل لا يمكن إصدار حكم مؤسس على الإيقاع أو تنوع المحتوى. لا ينبغي اعتبار وحدة المكان عيباً تلقائياً؛ فقد تصبح إطاراً مكثفاً، وقد تتحول إلى تكرار، والفصل بين الاحتمالين مرهون بالتنفيذ. كذلك فإن وصف العمل بأنه تشويق لا يكشف وحده عن مقدار الحركة أو الحوار أو التوتر النفسي. لذا فإن أي تأكيد على أن الفيلم سريع أو مترهل سيكون اختلاقاً لا تدعمه المصادر. الدرجة المتحفظة في هذا المحور تعكس نقص الشواهد، لا ملاحظة مباشرة لخلل في البناء.\n\n## نقاط القوة\n\nأبرز ما يمكن إثباته هو وضوح الفرضية: متسلقان عالقان على ارتفاع شاهق، بما يمنح الصراع هدفاً مباشراً ومخاطر مفهومة. ويحدد الملخص موقعاً بعينه، جبل كوان في تايلاند، بدلاً من الاكتفاء بوصف عام لمغامرة في الطبيعة. كما أن العمل مرتبط صراحة بفيلم Fall الصادر عام 2022، وهي معلومة تمنحه سياقاً داخل سلسلة، وإن لم تثبت بذاتها نجاح التتمة. وأخيراً، تتوافر بيانات تعريفية عن المخرجين والكتّاب والطاقم، إلى جانب إعلان رسمي منشور من Lionsgate Movies؛ وهذا يجعل هوية المشروع ووجود مادته الترويجية قابلين للتحقق. هذه نقاط قوة في وضوح التصور وتوثيق الأساس الإنتاجي، لا ادعاءات بأن كل عنصر فني في الفيلم ناجح.\n\n## نقاط الضعف\n\nأهم مأخذ على التقييم المتاح هو افتقار الملف إلى مصادر نقدية مستقلة تعرض جودة التنفيذ، ما يمنع حكماً متوازناً على جوانب الفيلم الفعلية. كما أن الملخص شديد العمومية بشأن الشخصيتين ومسار القصة؛ فهو يثبت المأزق ولا يوضح ما يميّز تطوره. ولا تتوافر بيانات عن الموسيقى أو التصوير أو المونتاج أو الأداء تسمح بمراجعة هذه المحاور على نحو تفصيلي. إضافة إلى ذلك، يوجد اختلاف يوم واحد بين تاريخ الإصدار المسجل في بيانات TMDB، وهو الأول من سبتمبر، وتاريخ العرض الوارد في عنوان الإعلان الرسمي، وهو الثاني من سبتمبر؛ اختلاف ينبغي التنبيه إليه لا حسمه من دون مصدر إضافي. هذه قيود على يقين المراجعة، وليست عيوباً مثبتة في الفيلم. ومن ثم لا أدرج التكرار أو ضعف التمثيل أو المشكلات التقنية ضمن عيوب العمل، لعدم وجود دليل عليها.\n\n## لمن يناسب هذا العمل؟\n\nعلى مستوى الفرضية وحدها، قد يجذب الفيلم محبي أفلام التشويق والبقاء التي تضع شخصيات قليلة أمام خطر جسدي واضح، وكذلك من تابعوا Fall ويرغبون في معرفة ما تقدمه تتمته. لكن هذه توصية مبنية على النوع والملخص والعلاقة المعلنة بالفيلم السابق، لا على تقييم مثبت لمدى نجاح التجربة. من يبحث عن تحليل موثق للأداء أو الابتكار البصري أو الإيقاع لن يجد في ملف الأدلة ما يحسم هذه الجوانب. لذلك لا أوصي به توصية قاطعة على أساس الجودة، ولا أحذر منه باعتباره عملاً فاشلاً. الأنسب هو اعتباره خياراً محتملاً لمن تهمه فرضية النجاة المرتفعة، مع إبقاء قرار المشاهدة مرتبطاً بتفضيلات المشاهد وبالحاجة إلى مراجعات مستقلة أوسع مما هو متاح هنا.\n\n## الحكم النهائي\n\nتبدو Fall 2: Deadpoint، وفق المعلومات الموثقة، تتمة تشويق ذات فرضية مباشرة ومحددة: متسلقان في مأزق على جبل تايلاندي، مع الخطر الناجم عن الارتفاع المكشوف. هذه نقطة انطلاق صالحة للاهتمام، ويضيف ارتباط الفيلم بعمل 2022 سياقاً واضحاً للمتابعين. لكن الملخص والبيانات الإنتاجية والإعلان الرسمي لا تثبت جودة الكتابة أو الإخراج أو الأداء أو الصورة والصوت، ولا توجد في الملف مراجعات مستقلة كافية لسد هذه الفجوة. لذلك فالحكم النهائي ليس أن الفيلم جيد أو رديء، بل إن إمكاناته المفهومية أوضح من إنجازه الفني المتاح للتحقق. توصيتي مشروطة لمحبي هذا النوع، مع تحفظ صريح: لا تتيح الأدلة الحالية تزكية نهائية لجودة الفيلم، والدرجات الرقمية تعبر عن تقييم حذر للمعلومات المتاحة لا عن مشاهدة شخصية.",
-        "scores": {
-          "story": 5.5,
-          "visuals": 5,
-          "sound": 5,
-          "pacing": 5
-        },
-        "pros": [
-          "فرضية بقاء واضحة ومحددة: متسلقان عالقان على ارتفاع شاهق في جبل كوان بتايلاند، وفق ملخص TMDB.",
-          "الخطر المركزي مفهوم منذ الوصف المنشور، ما يمنح المشروع إطاراً نوعياً مباشراً للتشويق.",
-          "صلة معلنة بفيلم Fall الصادر عام 2022 توفر سياقاً واضحاً للمتابعين، من دون افتراض جودة التتمة.",
-          "توفر بيانات تعريفية عن المخرجين والكتّاب والطاقم، وإعلان رسمي من قناة Lionsgate Movies."
-        ],
-        "cons": [
-          "المصادر المقدمة لا تتضمن مراجعات مستقلة كافية للحكم على جودة الفيلم النهائية.",
-          "الملخص لا يكشف تفاصيل تطور الحبكة أو عمق الشخصيات، فلا يمكن تقييم الكتابة على نحو موثوق.",
-          "لا توجد أدلة تفصيلية عن التصوير أو الموسيقى أو الصوت أو الأداء أو الإيقاع.",
-          "يختلف تاريخ العرض الوارد في عنوان الإعلان الرسمي، الثاني من سبتمبر، عن تاريخ الإصدار المسجل في TMDB، الأول من سبتمبر."
-        ],
-        "title": "Fall 2: Deadpoint",
-        "type": "movie",
-        "sourceId": "movie:1101412",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/movie/1101412",
-        "sourceRating": 7.236,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 884,
-        "sourceRatingCheckedAt": "2026-11-24T00:53:27.366Z",
-        "audienceScore": 7.2,
-        "releaseDate": "2026-09-01",
-        "poster": "https://image.tmdb.org/t/p/w780/fgSm5ylwiXbIHn8UbUXDjk9RRu4.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/nGau0KBOaRILSK5MqFcuTfv7GMl.jpg",
-        "genres": [
-          "Thriller"
-        ],
-        "platforms": [],
-        "cast": [
-          "Harriet Slater",
-          "Arsema Thomas",
-          "Tom Brittney",
-          "Virginia Gardner",
-          "Sahajak Boonthanakit",
-          "Grace Caroline Currey",
-          "Korakod Yensuk",
-          "Jordan Coleman"
-        ],
-        "crew": [
-          "Jonathan Frank",
-          "Michael Spierig",
-          "Scott Mann",
-          "Peter Spierig"
-        ],
-        "tags": [
-          "Thriller"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/movie/1101412",
-            "extract": "On a perilous climb across Thailand's Mount Kwan, two climbers become trapped thousands of feet above the ground, where vertigo-inducing heights, sheer exposure, and impossible odds turn every moment into a fight for survival.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Fall_2%3A_Deadpoint",
-            "extract": "Fall 2: Deadpoint is a 2026 American survival thriller film directed by Peter and Michael Spierig and written by Jonathan Frank and Scott Mann. The sequel to Fall (2022), it stars Harriet Slater, Arsema Thomas, Tom Brittney, and Virginia Gardner.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Lionsgate Movies",
-            "url": "https://www.youtube.com/watch?v=tC2XpmJW89g",
-            "extract": "Verified public, embeddable promotional trailer: Fall 2: Deadpoint Official Trailer 2 - In Theaters September 2. #FallMovie",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "tC2XpmJW89g",
-        "youtubeVideoTitle": "Fall 2: Deadpoint Official Trailer 2 - In Theaters September 2. #FallMovie",
-        "reviewMode": "review",
-        "score": 5.2
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 5909,
       "articlePath": "src/content/reviews/movie-fall-2-deadpoint-1101412.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-fall-2-deadpoint-1101412/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-fall-2-deadpoint-1101412/",
+      "publishedAt": "2026-11-24T01:07:11.915Z"
+    },
+    "movie:1400336": {
+      "key": "movie:1400336",
+      "type": "movie",
+      "id": "1400336",
+      "title": "Focker In-Law",
+      "item": {
+        "type": "movie",
+        "id": "1400336",
+        "name": "Focker In-Law",
+        "date": "2026-11-21",
+        "preview": false,
+        "popularity": 40.2611,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-24T01:07:13.455Z",
+      "updatedAt": "2026-11-24T01:07:13.997Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Focker In-Law",
+        "type": "movie",
+        "collectedAt": "2026-11-24T01:07:13.997Z",
+        "sourceId": "movie:1400336",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1400336",
+        "overview": "Henry, son of Greg and Pam Focker, aims to marry Olivia, a strong-willed former hostage negotiator who appears to be his complete mismatch. To Greg's shock, father-in-law Jack Byrnes takes a liking to Olivia, and her unprecedented rise into his Circle of Trust sparks chaos in the family before Jack's 80th birthday party.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1400336",
+            "extract": "Henry, son of Greg and Pam Focker, aims to marry Olivia, a strong-willed former hostage negotiator who appears to be his complete mismatch. To Greg's shock, father-in-law Jack Byrnes takes a liking to Olivia, and her unprecedented rise into his Circle of Trust sparks chaos in the family before Jack's 80th birthday party.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Focker-in-Law",
+            "extract": "Focker-in-Law is a 2026 American comedy film written and directed by John Hamburg from a story by Hamburg, Ilana Glazer, and Austen Earl. It is the fourth installment in the Fockers film series and the sequel to Little Fockers (2010). Robert De Niro, Ben Stiller, Owen Wilson, Blythe Danner, and Teri Polo reprise their roles from the previous films, with Ariana Grande, Skyler Gisondo, and Beanie Feldstein joining the cast.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — FilmSpot Trailer",
+            "url": "https://www.youtube.com/watch?v=0VNSm9AK3tc",
+            "extract": "Verified public, embeddable promotional trailer: FOCKER IN LAW Official Trailer 2 (NEW 2026)",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "limited",
+        "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
+        "youtubeVideoId": "0VNSm9AK3tc",
+        "youtubeVideoTitle": "FOCKER IN LAW Official Trailer 2 (NEW 2026)",
+        "youtubeChannel": "FilmSpot Trailer",
+        "releaseDate": "2026-11-21",
+        "genres": [
+          "Comedy",
+          "Romance"
+        ],
+        "platforms": [],
+        "cast": [
+          "Ben Stiller",
+          "Robert De Niro",
+          "Ariana Grande",
+          "Skyler Gisondo",
+          "Owen Wilson",
+          "Blythe Danner",
+          "Teri Polo",
+          "Beanie Feldstein"
+        ],
+        "crew": [
+          "John Hamburg"
+        ],
+        "rating": 7.3,
+        "ratingScale": 10,
+        "votes": 3,
+        "poster": "https://image.tmdb.org/t/p/w780/iHJhSfqFpDMOyeMc6h6BOeHxse2.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/nubnNXuMArUhiDW1nUevGsG65x9.jpg"
+      },
+      "sections": [],
+      "article": null,
+      "lastError": "Publishing blocked: evidence supports neither a scored review nor an explicit pre-release preview"
+    },
+    "movie:1281331": {
+      "key": "movie:1281331",
+      "type": "movie",
+      "id": "1281331",
+      "title": "The Social Reckoning",
+      "item": {
+        "type": "movie",
+        "id": "1281331",
+        "name": "The Social Reckoning",
+        "date": "2026-10-07",
+        "preview": false,
+        "popularity": 14.286,
+        "source": "TMDB"
+      },
+      "status": "waiting",
+      "stage": 0,
+      "attempts": 1,
+      "createdAt": "2026-11-24T01:07:14.896Z",
+      "updatedAt": "2026-11-24T01:08:14.049Z",
+      "nextAttemptAt": "2026-11-24T02:08:14.049Z",
+      "evidence": {
+        "title": "The Social Reckoning",
+        "type": "movie",
+        "collectedAt": "2026-11-24T01:07:15.352Z",
+        "sourceId": "movie:1281331",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1281331",
+        "overview": "Frances Haugen, a young Facebook engineer, enlists the help of Jeff Horwitz, a Wall Street Journal reporter, to go on a dangerous journey that ends up blowing the whistle on the social network's most guarded secrets.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1281331",
+            "extract": "Frances Haugen, a young Facebook engineer, enlists the help of Jeff Horwitz, a Wall Street Journal reporter, to go on a dangerous journey that ends up blowing the whistle on the social network's most guarded secrets.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/The_Social_Reckoning",
+            "extract": "The Social Reckoning is a 2026 American biographical legal thriller film written, co-produced, and directed by Aaron Sorkin. A follow-up to The Social Network (2010), it dramatizes the 2021 Facebook leak by the whistleblower Frances Haugen and Jeff Horwitz. It stars Mikey Madison, Jeremy Allen White, Jeremy Strong, Bill Burr, Wunmi Mosaku, Betty Gilpin, and Billy Magnussen.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Sony Pictures Malaysia",
+            "url": "https://www.youtube.com/watch?v=xiETa8R-2eE",
+            "extract": "Verified public, embeddable promotional trailer: THE SOCIAL RECKONING – Official New Trailer (HD)",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 150 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "xiETa8R-2eE",
+        "youtubeVideoTitle": "THE SOCIAL RECKONING – Official New Trailer (HD)",
+        "youtubeChannel": "Sony Pictures Malaysia",
+        "releaseDate": "2026-10-07",
+        "genres": [
+          "Drama",
+          "Thriller"
+        ],
+        "platforms": [],
+        "cast": [
+          "Mikey Madison",
+          "Jeremy Allen White",
+          "Jeremy Strong",
+          "Wunmi Mosaku",
+          "Betty Gilpin",
+          "Billy Magnussen",
+          "Bill Burr",
+          "Gbenga Akinnagbe"
+        ],
+        "crew": [
+          "Aaron Sorkin",
+          "Aaron Sorkin"
+        ],
+        "rating": 7,
+        "ratingScale": 10,
+        "votes": 150,
+        "poster": "https://image.tmdb.org/t/p/w780/vWbEuI3LuFOGYZIxESLAmwFwtvr.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/wXTaGcqX3jvdXSKCJAkl5jZyrKp.jpg"
+      },
+      "sections": [],
+      "article": null,
+      "lastError": "Gemini editorial review returned invalid JSON: Unterminated string in JSON at position 153 (line 8 column 28)",
+      "resumeStatus": "queued"
     }
   },
   "providers": {},
@@ -2781,7 +2806,7 @@
     },
     "2026-11-24": {
       "articles": 1,
-      "requests": 2,
+      "requests": 4,
       "tokens": 5909
     }
   },
