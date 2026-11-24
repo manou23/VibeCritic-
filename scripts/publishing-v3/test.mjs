@@ -150,7 +150,9 @@ assert.doesNotMatch(audiencePrompt,/لا تمنح درجات فرعية/);
 assert.throws(() => validateArticle({ ...article, scores:{...article.scores,story:11} }), /Invalid score/);
 assert.equal(normalizeFinalRating("الحكم النهائي: 6/10",5.3),"الحكم النهائي: 5.3/10");
 assert.equal(normalizeFinalRating("التقييم النهائي 8 من 10",7.4),"التقييم النهائي 7.4/10");
-assert.equal(normalizeBodyFinalRating("**التقييم النهائي: 6/10**\\nالقصة: 8.5/10",5.3),"**التقييم النهائي: 5.3/10**\\nالقصة: 8.5/10");
+assert.equal(normalizeBodyFinalRating("**التقييم النهائي: 6/10**
+القصة: 8.5/10",5.3),"**التقييم النهائي: 5.3/10**
+القصة: 8.5/10");
 const interrupted = enqueue(state,{type:"movie",id:"77",name:"Interrupted"}).job;
 transition(interrupted,"researching");
 transition(interrupted,"queued");
@@ -166,7 +168,9 @@ const lock = path.join(dir, "run.lock");
 const reviewRoot = path.join(dir,"reviews");
 const createdPath = await publishArticle(article,reviewRoot);
 assert.equal(createdPath,articleFilePath(article,reviewRoot));
-const renderedPreview = renderMarkdown({ ...article, verdict:"The final rating is 6/10.", body:body+"\\n\\n**التقييم النهائي: 6/10**" });
+const renderedPreview = renderMarkdown({ ...article, verdict:"The final rating is 6/10.", body:body+"
+
+**التقييم النهائي: 6/10**" });
 assert.ok(renderedPreview.includes('verdict: "The final rating is 7.0/10."'));
 assert.ok(renderedPreview.includes("**التقييم النهائي: 7.0/10**"));
 assert.match(renderedPreview,/reviewMode: review/);
