@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-24T07:16:41.356Z",
+  "updatedAt": "2026-11-24T10:17:09.409Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -2706,162 +2706,22 @@
         "popularity": 14.286,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 1,
       "createdAt": "2026-11-24T01:07:14.896Z",
-      "updatedAt": "2026-11-24T07:16:41.356Z",
+      "updatedAt": "2026-11-24T10:16:03.623Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "The Social Reckoning",
-        "type": "movie",
-        "collectedAt": "2026-11-24T07:16:00.181Z",
-        "sourceId": "movie:1281331",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/movie/1281331",
-        "overview": "Frances Haugen, a young Facebook engineer, enlists the help of Jeff Horwitz, a Wall Street Journal reporter, to go on a dangerous journey that ends up blowing the whistle on the social network's most guarded secrets.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/movie/1281331",
-            "extract": "Frances Haugen, a young Facebook engineer, enlists the help of Jeff Horwitz, a Wall Street Journal reporter, to go on a dangerous journey that ends up blowing the whistle on the social network's most guarded secrets.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/The_Social_Reckoning",
-            "extract": "The Social Reckoning is a 2026 American biographical legal thriller film written, co-produced, and directed by Aaron Sorkin. A follow-up to The Social Network (2010), it dramatizes the 2021 Facebook leak by the whistleblower Frances Haugen and Jeff Horwitz. It stars Mikey Madison, Jeremy Allen White, Jeremy Strong, Bill Burr, Wunmi Mosaku, Betty Gilpin, and Billy Magnussen.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Sony Pictures Malaysia",
-            "url": "https://www.youtube.com/watch?v=xiETa8R-2eE",
-            "extract": "Verified public, embeddable promotional trailer: THE SOCIAL RECKONING – Official New Trailer (HD)",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 155 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "xiETa8R-2eE",
-        "youtubeVideoTitle": "THE SOCIAL RECKONING – Official New Trailer (HD)",
-        "youtubeChannel": "Sony Pictures Malaysia",
-        "releaseDate": "2026-10-07",
-        "genres": [
-          "Drama",
-          "Thriller"
-        ],
-        "platforms": [],
-        "cast": [
-          "Mikey Madison",
-          "Jeremy Allen White",
-          "Jeremy Strong",
-          "Wunmi Mosaku",
-          "Betty Gilpin",
-          "Billy Magnussen",
-          "Bill Burr",
-          "Gbenga Akinnagbe"
-        ],
-        "crew": [
-          "Aaron Sorkin",
-          "Aaron Sorkin"
-        ],
-        "rating": 6.961,
-        "ratingScale": 10,
-        "votes": 155,
-        "poster": "https://image.tmdb.org/t/p/w780/vWbEuI3LuFOGYZIxESLAmwFwtvr.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/wXTaGcqX3jvdXSKCJAkl5jZyrKp.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "The Social Reckoning: قضية ذات وزن، لكن الأدلة المتاحة لا تحسم جودة الفيلم",
-        "summary": "يتناول The Social Reckoning تسريب فرانسيس هاوغن لوثائق فيسبوك عام 2021، ويربط مهندسة سابقة بالشركة بالصحفي جيف هورويتز من Wall Street Journal في رحلة تكشف أسراراً احتفظت بها المنصة. هذه مادة درامية واعدة، كما أن عودة آرون سوركين إلى عالم The Social Network تمنح المشروع امتداداً موضوعياً واضحاً. لكن ملف الأدلة المتاح يثبت الفكرة العامة والاعتمادات وطاقم التمثيل، ولا يقدم مراجعات مستقلة أو وصفاً تفصيلياً للتنفيذ يسمح بالحكم بثقة على الشخصيات أو الصورة أو الموسيقى أو الإيقاع. لذلك فهذه قراءة تحريرية نهائية لما يمكن إثباته، لا ادعاء بمشاهدة الفيلم ولا تعويض عن نقص المعلومات.",
-        "verdict": "The Social Reckoning يختار موضوعاً بالغ الأهمية، ويملك أساساً درامياً محدداً في تسريب فرانسيس هاوغن، وعلاقتها المهنية بالصحفي جيف هورويتز، ومواجهة أسرار منصة اجتماعية نافذة. كما أن كونه عملاً لاحقاً لـ The Social Network، من كتابة وإخراج آرون سوركين، يضعه ضمن حوار مفهوم عن سلطة التقنية ومسؤوليتها. لكن أهمية القضية والطاقم المعروف لا تثبت وحدها نجاح الفيلم؛ فالأدلة المتاحة لا تكشف بما يكفي عن بناء الشخصيات أو جودة الإخراج أو الصوت أو الإيقاع. التوصية هنا مشروطة: يناسب المهتمين بالدراما القانونية وبقضايا شركات التقنية، مع التنبيه إلى أن الحكم على التنفيذ الفني يظل محدود الثقة. الدرجة الإجمالية الآلية ينبغي أن تُقرأ في ضوء هذا النقص، لا كبديل عن مراجعة مشاهدة مستقلة.",
-        "body": "## مقدمة وسياق العمل\nصدر The Social Reckoning في 7 أكتوبر 2026، وفق بيانات TMDB، بوصفه فيلماً درامياً وإثارة أمريكياً. وتضعه المصادر المتاحة في سياق واضح: هو عمل لاحق لـ The Social Network، ويتناول تسريب فرانسيس هاوغن لوثائق فيسبوك عام 2021. هذه الحقائق تمنح الفيلم نقطة دخول إلى نقاش عام معروف عن قوة المنصات ومسؤوليتها، لكنها لا تكفي وحدها لوصف ما يفعله الفيلم بهذه المادة. ينبغي لذلك الفصل بين الموضوع الموثق والحكم على طريقة معالجته. لا يتضمن ملف الأدلة مراجعات نقدية مستقلة أو توثيقاً تفصيلياً لمشاهد الفيلم، ولذلك لا يصح أن ننسب إليه نجاحاً درامياً أو إخفاقاً فنياً لمجرد أن قضيته مهمة.\n\n## الفكرة والقصة أو التجربة\nوفق الملخص المنشور، تعمل فرانسيس هاوغن مهندسة لدى فيسبوك، وتستعين بجيف هورويتز، وهو مراسل في Wall Street Journal، في رحلة تنتهي بكشف أسرار محروسة للمنصة. ويصف مصدر موسوعي الفيلم بأنه يعيد تمثيل تسريب عام 2021. هذه هي نواة الحكاية التي يمكن تثبيتها، وهي تضع في قلبها تعاوناً بين موظفة تعرف المؤسسة من الداخل وصحفي يتولى تحويل المعلومات إلى كشف علني. درامياً، تتيح هذه الفرضية توتراً بين المعرفة التقنية والمسؤولية الصحفية، وبين مصلحة فردية ومؤسسة واسعة النفوذ. لكن ذلك استنتاج من بنية الفكرة، لا وصف لمشاهد أو لصراع بعينه؛ لا توضح الأدلة كيف تتدرج عملية التسريب، ولا مقدار المساحة الممنوحة لحياة هاوغن أو هورويتز، ولا ما إذا كان الفيلم يوازن بين التفسير والمساءلة.\n\n## السرد والشخصيات أو تصميم اللعب\nالفيلم ليس لعبة، لذا ينصب النظر هنا على السرد والشخصيات. تسمية هاوغن وهورويتز بوصفهما محورين تمنح الحكاية طرفين مهنيين مختلفين، وقد تسمح بقراءة القضية من زاويتين: من داخل الشركة ومن خارجها. غير أن قائمة الممثلين لا تحدد أدوار بقية المشاركين، ولا يورد الملف معلومات عن التحولات النفسية أو العلاقات أو بنية الحوار. لذلك لا يمكن الجزم بأن الشخصيات مرسومة بعمق، أو أن الفيلم يمنحها استقلالاً عن وظيفتها في شرح القضية. اختيار مادة واقعية حديثة يفرض تحدياً تحريرياً: أن يحافظ السرد على وضوح الوقائع من دون أن يحول أصحابها إلى أدوات لتلخيصها. هذه ملاحظة عن متطلبات الفكرة، لا ادعاء بشأن نجاح الفيلم أو إخفاقه فيها.\n\n## الإخراج والجوانب الفنية\nتسجل البيانات آرون سوركين كاتباً ومنتجاً مشاركاً ومخرجاً، وتصف العمل بأنه متابعة لـ The Social Network. هذا امتداد مهني وموضوعي ذو دلالة، لكنه لا يبرهن بحد ذاته على أن الفيلم يعيد الأسلوب السابق أو يطوره؛ لا تكفي أسماء الاعتمادات لإثبات النبرة أو جودة إدارة الممثلين أو تنظيم المشاهد. كذلك لا يقدم ملف الأدلة معلومات عن التصوير أو المونتاج أو تصميم الإنتاج، ولا تحليلاً مستقلاً للإخراج. ما يمكن قوله نقدياً هو أن جمع الكتابة والإخراج لدى سوركين يجعل قرارات ترتيب المعلومات وصياغة الحجة جزءاً أساسياً من التقييم المنتظر، لأن القصة تقوم على كشف منظم لمعلومات سرية. أما الحكم على كيفية تنفيذ هذه القرارات في الفيلم نفسه فيحتاج إلى مشاهدة موثقة أو مصادر نقدية لا تتوفر هنا.\n\n## الصورة والهوية البصرية\nيوفر الملف ملصقاً وخلفية ترويجية، كما يوثق وجود مقطع رسمي بعنوان THE SOCIAL RECKONING – Official New Trailer (HD) على قناة Sony Pictures Malaysia. لكنه لا يتضمن وصفاً لمحتوى اللقطات أو تحليل عناصرها، ولا يكفي وجود صورة دعائية وحده للحكم على لغة الفيلم البصرية. ومن ثم لا يمكن وصف الألوان أو حركة الكاميرا أو مواقع التصوير أو تصميم الشاشات الرقمية، ولا يصح استنتاجها من طبيعة الموضوع التقني. الصورة هنا مجال يحتاج إلى دليل مباشر على العمل لا إلى توقعات مسبقة عن شكل دراما شركات. ما يثبت فقط هو توفر مواد ترويجية رسمية؛ أما مدى تميز الهوية البصرية أو خدمتها للتوتر السردي فغير محسوم في المصادر المدرجة. لهذا تأتي درجة هذا المحور متحفظة، لا بوصفها حكماً بأن الصورة ضعيفة.\n\n## الصوت والموسيقى والأداء\nتضم قائمة التمثيل ميكي ماديسون، جيريمي ألن وايت، جيريمي سترونغ، وونمي موساكو، بيتي غيلبين، بيلي ماغنوسن، بيل بور، وغبينغا أكيناغبي. وتدل هذه القائمة على طاقم واسع، لكنها لا تحدد أدوار جميع أفراده، ولا تسمح بتقييم الأداء أو التفاعل بينهم. كذلك لا تورد الأدلة معلومات عن المؤلف الموسيقي أو تصميم الصوت أو التسجيل أو المزج، ولا مراجعة مستقلة لهذه الجوانب. لذلك لا أصف أداءً بعينه بأنه مقنع أو مبالغ فيه، ولا أنسب إلى الفيلم موسيقى أو مؤثرات محددة. وجود طاقم معروف قد يرفع التوقعات، لكنه ليس دليلاً على تحققها. ويظل هذا المحور، أكثر من غيره، خارج حدود ما يمكن تقييمه بثقة اعتماداً على البيانات المتاحة وحدها.\n\n## الإيقاع والبناء وتنوع المحتوى\nتضع المادة الموثقة الفيلم في نوعي الدراما والإثارة، وتصف الحكاية برحلة تنتهي بكشف أسرار فيسبوك. يتيح ذلك افتراض وجود مسار نحو الإفصاح، لكنه لا يكشف عدد مراحل هذا المسار أو توزيع زمن الفيلم أو كيفية التناوب بين العمل الصحفي وخلفية هاوغن. لذلك لا يمكن الجزم بأن الإيقاع متماسك أو متعثر، ولا أن الفيلم يوازن بنجاح بين الشرح والتشويق. ومن ناحية أخرى، فإن قضية التسريب نفسها تحمل طبقات مؤسسية وصحفية وشخصية، ما يجعل الاختزال إلى سلسلة اكتشافات خطراً بنيوياً محتملاً، لا عيباً ثبت وقوعه. درجة هذا الجانب لا ينبغي أن تُقرأ كقياس لمشاهد لم توصف؛ إنها تقدير حذر في ظل غياب تفاصيل البناء ومصادر نقدية مستقلة.\n\n## نقاط القوة\nأبرز ما يسنده ملف الأدلة هو وضوح الموضوع: تسريب هاوغن لوثائق فيسبوك عام 2021 حاضر في تعريف الفيلم، لا مجرد استنتاج من عنوانه. كما أن جمع هاوغن، المهندسة السابقة، بهورويتز، الصحفي في Wall Street Journal، يمنح الفرضية مركزاً إنسانياً ومهنياً محدداً. ويضيف ارتباط الفيلم بـ The Social Network سياقاً موضوعياً مفهوماً حول شركات التقنية وسلطتها، بينما يجمع اعتماد سوركين بين الكتابة والإخراج والإنتاج المشارك. وأخيراً، يتيح الطاقم المعلن أكثر من اسم بارز، وتوجد مادة ترويجية رسمية موثقة. هذه نقاط قوة في الاختيار والتأطير والإمكانات المعلنة؛ لا ينبغي الخلط بينها وبين برهان على جودة التنفيذ النهائي.\n\n## نقاط الضعف\nالقصور الأوضح في تقييم الفيلم هنا هو نقص الأدلة التفصيلية، لا ثبوت عيب فني محدد. لا توجد في الملف مراجعات مستقلة تناقش الكتابة أو الأداء أو الصورة، ولا شرح كافٍ لأدوار غالبية الممثلين أو لبناء الحبكة. كما لا تتوفر معلومات موثقة عن الموسيقى أو المونتاج أو الإيقاع، ما يجعل الأحكام القطعية في هذه الجوانب تخميناً. وهناك تحدٍ محتمل في تحويل واقعة قريبة زمنياً ومتشعبة مؤسسياً إلى دراما مفهومة من دون تسطيحها، لكن الأدلة لا تثبت أن الفيلم أخفق في ذلك. أما متوسط TMDB البالغ 6.961 من 10، المبني على 155 صوتاً، فهو مؤشر جماهيري ثانوي فقط؛ لا يعوض نقص المراجعات ولا يمثل حكم VibeCritic.\n\n## لمن يناسب هذا العمل؟\nبحسب موضوعه المعلن، يرجح أن يهم الفيلم من يتابعون قضايا المنصات الرقمية والتسريبات الصحفية والدراما القانونية أو السياسية، وكذلك من يرغبون في رؤية معالجة لاحقة لعالم The Social Network. وقد يجذب من تهمهم قصة هاوغن وهورويتز بوصفها تعاوناً بين خبرة داخلية وصحافة استقصائية. لكن التوصية ينبغي أن تبقى مشروطة: لا يقدم ملف الأدلة ما يكفي لإخبار المشاهد المحتمل إن كان الفيلم يعتمد على الحوار أو على الإثارة، أو إن كان ملائماً لمن يبحث عن دراما شخصية أكثر من معالجة مؤسسية. لذلك أُوصي به على أساس ملاءمة موضوعه واهتمام المشاهد بالقضية، لا على أساس ادعاء معرفة تجربة المشاهدة أو ضمان مستوى فني لم تثبته المصادر.\n\n## الحكم النهائي\nيمتلك The Social Reckoning موضوعاً ذا أهمية عامة، ونواة سردية واضحة تجمع فرانسيس هاوغن بجيف هورويتز في كشف أسرار فيسبوك، كما يحضر فيه سوركين امتداداً لفيلم سبق أن تناول عالم الشركة. هذه أسس واعدة، لكنها لا تحسم جودة الفيلم المكتمل. فالمصادر المتاحة تثبت بيانات الإنتاج والفرضية والطاقم والمواد الترويجية، ولا تقدم ما يكفي لتقييم التنفيذ التفصيلي أو لمقارنته بأحكام نقدية مستقلة. لذا فالحكم النهائي إيجابي بحذر تجاه اختيار الموضوع، ومتحفظ تجاه الإنجاز الفني الذي لا يمكن توثيقه من الأدلة الحالية. يناسب العمل المهتمين بقضايا التقنية والصحافة، أما التوصية القاطعة المبنية على الأداء والإيقاع والصورة فتحتاج إلى مصادر أكثر مباشرة. الدرجة الإجمالية الآلية تعكس هذا التوازن وحدود الثقة، لا مشاهدة شخصية.",
-        "scores": {
-          "story": 6.8,
-          "visuals": 5,
-          "sound": 5,
-          "pacing": 5.5
-        },
-        "pros": [
-          "يعالج تسريب فرانسيس هاوغن لوثائق فيسبوك عام 2021، وهي قضية موثقة وواضحة في أساس الفيلم.",
-          "يربط بين خبرة هاوغن داخل الشركة وعمل جيف هورويتز الصحفي، ما يوفر محوراً درامياً محدداً.",
-          "امتداد موضوعي معلن لـ The Social Network مع آرون سوركين كاتباً ومخرجاً ومنتجاً مشاركاً.",
-          "وجود طاقم تمثيل واسع ومواد ترويجية رسمية موثقة."
-        ],
-        "cons": [
-          "المصادر المتاحة لا تقدم مراجعات مستقلة كافية للحكم على جودة التنفيذ النهائي.",
-          "لا تتوفر تفاصيل موثقة عن تطور الشخصيات أو أدوار معظم أفراد الطاقم.",
-          "المعلومات عن الصورة والموسيقى وتصميم الصوت والإيقاع غير كافية لتقييمها بثقة.",
-          "تظل موازنة التشويق مع تعقيد القضية المؤسسية تحدياً محتملاً لا يمكن حسم نجاح الفيلم فيه من البيانات المنشورة هنا."
-        ],
-        "title": "The Social Reckoning",
-        "type": "movie",
-        "sourceId": "movie:1281331",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/movie/1281331",
-        "sourceRating": 6.961,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 155,
-        "sourceRatingCheckedAt": "2026-11-24T07:16:00.181Z",
-        "audienceScore": 7,
-        "releaseDate": "2026-10-07",
-        "poster": "https://image.tmdb.org/t/p/w780/vWbEuI3LuFOGYZIxESLAmwFwtvr.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/wXTaGcqX3jvdXSKCJAkl5jZyrKp.jpg",
-        "genres": [
-          "Drama",
-          "Thriller"
-        ],
-        "platforms": [],
-        "cast": [
-          "Mikey Madison",
-          "Jeremy Allen White",
-          "Jeremy Strong",
-          "Wunmi Mosaku",
-          "Betty Gilpin",
-          "Billy Magnussen",
-          "Bill Burr",
-          "Gbenga Akinnagbe"
-        ],
-        "crew": [
-          "Aaron Sorkin",
-          "Aaron Sorkin"
-        ],
-        "tags": [
-          "Drama",
-          "Thriller"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/movie/1281331",
-            "extract": "Frances Haugen, a young Facebook engineer, enlists the help of Jeff Horwitz, a Wall Street Journal reporter, to go on a dangerous journey that ends up blowing the whistle on the social network's most guarded secrets.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/The_Social_Reckoning",
-            "extract": "The Social Reckoning is a 2026 American biographical legal thriller film written, co-produced, and directed by Aaron Sorkin. A follow-up to The Social Network (2010), it dramatizes the 2021 Facebook leak by the whistleblower Frances Haugen and Jeff Horwitz. It stars Mikey Madison, Jeremy Allen White, Jeremy Strong, Bill Burr, Wunmi Mosaku, Betty Gilpin, and Billy Magnussen.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Sony Pictures Malaysia",
-            "url": "https://www.youtube.com/watch?v=xiETa8R-2eE",
-            "extract": "Verified public, embeddable promotional trailer: THE SOCIAL RECKONING – Official New Trailer (HD)",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "xiETa8R-2eE",
-        "youtubeVideoTitle": "THE SOCIAL RECKONING – Official New Trailer (HD)",
-        "reviewMode": "review",
-        "score": 5.7
-      },
+      "article": null,
       "lastError": "Gemini editorial review returned invalid JSON: Unterminated string in JSON at position 153 (line 8 column 28)",
       "resumeStatus": null,
       "provider": "openai",
       "tokens": 5664,
       "articlePath": "src/content/reviews/movie-the-social-reckoning-1281331.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-the-social-reckoning-1281331/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-the-social-reckoning-1281331/",
+      "publishedAt": "2026-11-24T10:16:03.623Z"
     },
     "movie:1611767": {
       "key": "movie:1611767",
@@ -3011,152 +2871,337 @@
         "popularity": 66.892,
         "source": "TMDB"
       },
-      "status": "waiting",
+      "status": "published",
       "stage": 0,
       "attempts": 1,
       "createdAt": "2026-11-24T01:31:42.295Z",
-      "updatedAt": "2026-11-24T01:32:51.236Z",
-      "nextAttemptAt": "2026-11-24T01:33:51.236Z",
-      "evidence": {
-        "title": "The Pitt",
-        "type": "series",
-        "collectedAt": "2026-11-24T01:31:42.795Z",
-        "sourceId": "series:250307",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/250307",
-        "overview": "The staff of Pittsburgh's Trauma Medical Center work around the clock to save lives in an overcrowded and underfunded emergency department.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/250307",
-            "extract": "The staff of Pittsburgh's Trauma Medical Center work around the clock to save lives in an overcrowded and underfunded emergency department.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/The_Pitt",
-            "extract": "The Pitt is an American medical drama television series created by R. Scott Gemmill and executive produced by John Wells and Noah Wyle. It is Gemmill, Wells, and Wyle's second collaboration; they previously worked together on ER (1994–2009). It stars Wyle, Tracy Ifeachor, Patrick Ball, Katherine LaNasa, Supriya Ganesh, Fiona Dourif, Taylor Dearden, Isa Briones, Gerran Howell, Shabana Azeez, and Sepideh Moafi. Each season follows emergency department staff at a fictional Pittsburgh Trauma Medical Center as they navigate a single 12-hour shift amid staff shortages, underfunding, and personal crises. Each episode is set in real time and depicts approximately one hour of the shift.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — HBO Max UK & Ireland",
-            "url": "https://www.youtube.com/watch?v=SDqcOVJfYLc",
-            "extract": "Verified public, embeddable promotional trailer: The Pitt | Season 1 Official Trailer",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 1078 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "SDqcOVJfYLc",
-        "youtubeVideoTitle": "The Pitt | Season 1 Official Trailer",
-        "youtubeChannel": "HBO Max UK & Ireland",
-        "releaseDate": "2025-01-09",
-        "genres": [
-          "Drama"
-        ],
-        "platforms": [],
-        "cast": [
-          "Noah Wyle",
-          "Patrick Ball",
-          "Katherine LaNasa",
-          "Supriya Ganesh",
-          "Fiona Dourif",
-          "Taylor Dearden",
-          "Isa Briones",
-          "Gerran Howell"
-        ],
-        "crew": [],
-        "rating": 8.7,
-        "ratingScale": 10,
-        "votes": 1078,
-        "poster": "https://image.tmdb.org/t/p/w780/kvFSpESyBZMjaeOJDx7RS3P1jey.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/z3BkMbCy5ajZPMyKEUwsPHuz2cV.jpg"
-      },
+      "updatedAt": "2026-11-24T10:16:03.492Z",
+      "nextAttemptAt": null,
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "The Pitt: دراما الطوارئ التي تجعل ضغط الوردية محور الحكاية",
-        "summary": "تقوم The Pitt على إطار درامي واضح: طاقم مركز بيتسبرغ الطبي للإصابات يحاول إنقاذ الأرواح داخل قسم طوارئ مكتظ، يعاني نقص التمويل والموظفين. وتضيف صيغة الموسم الموثقة قيداً بنائياً لافتاً؛ إذ يتابع وردية واحدة مدتها اثنتا عشرة ساعة، فيما تقارب كل حلقة ساعة من الزمن داخل الحكاية. يمنح هذا الاختيار العمل أساساً قوياً للتوتر واستكشاف ضغط الرعاية الصحية، لكنه لا يثبت وحده نجاح التنفيذ. لذلك يقدّر الحكم هنا قوة الفكرة والبناء المعلن، ويتحفظ في تقويم الصورة والصوت والأداء، إذ لا تقدم الأدلة المتاحة وصفاً تفصيلياً لها. النتيجة عمل ذو فرضية درامية واعدة، موصى به خصوصاً لمحبي دراما الطوارئ والقصص الجماعية.",
-        "verdict": "تملك The Pitt أساساً درامياً مقنعاً: مكاناً واحداً شديد الضغط، ووردية طويلة تتوزع على حلقات شبه متزامنة مع زمنها، ومؤسسة تعاني الاكتظاظ ونقص الموارد. هذه عناصر موثقة تمنح المسلسل هوية بنائية واضحة، وتفتح مجالاً لمعالجة التوتر المهني والقرارات الإنسانية ضمن عمل جماعي. لكنها لا تكفي وحدها لإثبات جودة الحوارات أو عمق الشخصيات أو تميز التنفيذ الفني؛ لذلك لا يصح تحويل إمكانات الصيغة إلى مديح مؤكد. حكمي إيجابي بحذر، لا ادعاء فيه بمشاهدة شخصية: العمل يبدو خياراً واعداً لمحبي دراما المستشفيات والقصص التي تراقب فريقاً تحت ضغط مستمر، فيما تبقى بعض أحكام الجودة أقل ثقة بسبب حدود الأدلة المتاحة.",
-        "body": "## مقدمة وسياق العمل\n\nThe Pitt مسلسل درامي أميركي صدر في 9 يناير 2025، وتدور مادته المعلنة حول العاملين في مركز بيتسبرغ الطبي للإصابات. وفق الملخص المنشور في TMDB، يحاول الطاقم إنقاذ الأرواح في قسم طوارئ مكتظ وضعيف التمويل. وتضيف المعلومات الموسوعية المتاحة أن المسلسل من ابتكار R. Scott Gemmill، وأن John Wells وNoah Wyle من المنتجين التنفيذيين، وأن الثلاثة سبق أن تعاونوا في ER. هذه صلة سياقية مفيدة لفهم موقع العمل ضمن دراما الطب التلفزيونية، لكنها لا تثبت بذاتها تشابهاً فنياً أو تفوقاً على العمل السابق.\n\nهذه مراجعة تحريرية نهائية مبنية على المعلومات الموثقة في ملف الأدلة، لا شهادة مشاهدة شخصية. تشمل مادته وصفاً تعريفياً، ومعلومات عن صيغة الحلقات والطاقم، وإعلاناً رسمياً للموسم الأول منشوراً على قناة HBO Max UK & Ireland. لا تتضمن الأدلة تحليلات مستقلة مفصلة للحلقات أو توثيقاً كافياً لمكونات الصورة والصوت؛ ومن ثم لا أنسب إلى المسلسل مشاهد أو اختيارات أداء غير مثبتة. هذا التحفظ لا يلغي إمكان إصدار حكم على الفكرة والبناء المعلن، لكنه يحدد مدى الثقة في تقويم التنفيذ.\n\n## الفكرة والقصة أو التجربة\n\nتنبع الفكرة من تعارض واضح بين حجم الحاجة والموارد المتاحة: قسم يستقبل حالات طارئة، وطاقم يحاول إنقاذ المرضى وسط اكتظاظ ونقص في التمويل والموظفين. لا يحدد الملخص حالات بعينها ولا مسارات مرضى محددين، لذلك لا يصح اختلاق حبكات فرعية أو وصف طريقة معالجة كل حالة. لكن على مستوى المفهوم، يتيح هذا المكان جمع رهانات العمل اليومية والمؤسسية في إطار واحد؛ فالتوتر المحتمل لا يأتي فقط من طارئ طبي، بل من محدودية قدرة المؤسسة على الاستجابة.\n\nوالأهم في صيغة القصة أن الموسم يتابع وردية واحدة مدتها اثنتا عشرة ساعة. هذا اختيار ذو دلالة: بدلاً من القفز عبر فترات زمنية طويلة، يربط التصور الدرامي الحكاية بوقت عمل محدد، ويمنح الضغط المؤسسي وحدة زمنية ملموسة. يمكن استنتاج أن الصيغة تهيئ للمقارنة بين تراكم المطالب وقدرة الفريق على مواصلة العمل، لكن لا يمكن الجزم من الأدلة وحدها بكيفية توزيع اللحظات المفصلية أو النتائج. قوة العمل الموثقة هنا تكمن في السؤال الذي يطرحه إطاره، لا في تفاصيل حبكة غير متاحة.\n\n## السرد والشخصيات أو تصميم اللعب\n\nتصف المعلومات الموسوعية كل حلقة بأنها تمثل قرابة ساعة من الوردية ذات الاثنتي عشرة ساعة. هذا يمنح السرد مبدأ تنظيمياً سهل القراءة، ويهيئ لتجربة متتابعة بدلاً من رواية تقفز بين أيام أو مواسم داخل الحكاية. وهو أيضاً قيد حقيقي: الاعتماد على وحدة مكانية وزمنية متصلة يحتاج إلى تنويع في الشخصيات والضغوط حتى لا تتحول الاستمرارية إلى تكرار. هذا استنتاج عن متطلبات الصيغة، وليس حكماً على أن المسلسل نجح أو أخفق في كل حلقة.\n\nالمصادر تسمي مجموعة من الممثلين، منهم Noah Wyle وPatrick Ball وKatherine LaNasa وSupriya Ganesh وFiona Dourif وTaylor Dearden وIsa Briones وGerran Howell. وجود طاقم جماعي يتناسب مع تصور عمل يركز على العاملين في قسم واحد، ويجعل توزيع الانتباه بين أفراد الفريق محوراً متوقعاً للتحليل. لكن لا يقدم الملف وصفاً لأدوارهم أو تطور الشخصيات أو طبيعة العلاقات بينهم؛ لذا سيكون من غير الدقيق نسبة سمات نفسية أو أقواس تحول محددة إليهم. ما يمكن تقييمه هو ملاءمة البناء الجماعي للفكرة، لا جودة كتابة كل شخصية على حدة.\n\n## الإخراج والجوانب الفنية\n\nتتطلب حكاية تدور خلال وردية محددة تنسيقاً واضحاً بين الزمن والمكان وتعدد الشخصيات. وقد يكون هذا التحدي أساساً إخراجياً مهماً: إبقاء الأحداث مفهومة مع التنقل بين أفراد الطاقم، وصون الإحساس باستمرار العمل. إلا أن ملف الأدلة لا يشرح أسلوب التصوير أو حركة الكاميرا أو تصميم مواقع العمل أو كيفية تنظيم الانتقالات. لذلك لا أستطيع وصف إخراج بعينه بأنه سريع أو حميم أو واقعي، ولا أنسب إليه معالجة جمالية محددة.\n\nوجود إعلان رسمي موثق يثبت توفر مادة ترويجية للموسم الأول، لكنه ليس بديلاً عن معلومات كافية لتقييم الإخراج في حلقات المسلسل. كذلك لا تورد المصادر تفاصيل عن المؤثرات أو الدقة التقنية أو ظروف الإنتاج. ومن الإنصاف، إذن، الفصل بين التصميم المفهومي الذي يمكن استنتاجه من الصيغة، وبين التنفيذ الفني الذي لا تسمح الأدلة بتقويمه بثقة. الدرجة المتحفظة في هذا الجانب لا تعني اكتشاف عيب بصري؛ إنها تعكس أن المعطيات لا تسند ادعاء تميز بصري أو قصور محدد.\n\n## الصورة والهوية البصرية\n\nتعرض بيانات العمل ملصقاً وصورة خلفية، كما يوجد إعلان رسمي منشور على يوتيوب. هذه شواهد على وجود مواد تعريفية بصرية، لا وصف موثوق للغة الصورة داخل الحلقات. لا يتضمن الملف معلومات عن لوحة الألوان أو الإضاءة أو تصميم الأزياء أو دقة إعادة بناء بيئة المستشفى، ولا يتيح أساساً لمقارنة هذه العناصر بأعمال أخرى. لذلك لا أصف أجواءً أو تكوينات لم ترد في المصدر، ولا أستنتج من صورة ترويجية وحدها أسلوب الموسم كله.\n\nمع ذلك، يضع المكان المعلن للمسلسل الهوية البصرية أمام اختبار واضح: هل تبدو بيئة الطوارئ مقنعة ومقروءة في عمل يتكرر فيه الفضاء المؤسسي؟ هذا سؤال نقدي مشروع، لكنه يظل سؤالاً لا إجابة مثبتة عنه في ملف الأدلة. وبناءً على هذا الحد، لا تُمنح الصورة ثناءً لمجرد أن الفكرة تقع في مستشفى، ولا تُدان لغياب وصفها. الدرجة هنا وسطية ومحافظة، وتعبّر عن محدودية ما يمكن توثيقه، لا عن رصد خلل بصري في العمل.\n\n## الصوت والموسيقى والأداء\n\nالأدلة تسمي الممثلين الرئيسيين، لكنها لا تتضمن مراجعات للأداء ولا أوصافاً للشخصيات أو مشاهد تمثيلية يمكن الاستناد إليها. لذلك لا أزعم أن أداء Noah Wyle أو بقية الطاقم متقن، أو أن أداءً بعينه يبرز على حساب الآخرين. كما لا توجد معلومات محددة عن الموسيقى أو تصميم الصوت أو المزج بين الحوار والأصوات المحيطة. وأي تفصيل من هذا النوع سيكون اختلاقاً لا يسمح به الملف.\n\nيمكن فقط الإشارة إلى أن موضوعاً جماعياً في قسم طوارئ يجعل وضوح الحوار وتمايز الأصوات تحديين مهمين من حيث المبدأ، لا إلى أن المسلسل عالج التحديين بطريقة معينة. التمييز مهم بين متطلبات النوع وبين ما تحقق فعلياً على الشاشة. لهذا لا تُعامل محدودية التوثيق بوصفها عيباً مسموعاً أو ضعفاً في التمثيل، بل سبباً لعدم رفع الدرجة إلى مستوى يفترض وجود شواهد إيجابية. تقييم الصوت والأداء هنا أقل يقيناً من تقييم الفكرة الزمنية، وهذا الفرق ظاهر في الحكم لا مخفي عنه.\n\n## الإيقاع والبناء وتنوع المحتوى\n\nصيغة الساعة الواحدة من الوردية في كل حلقة هي أكثر عناصر البناء تحديداً في المصادر. إنها تمنح الموسم إيقاعاً زمنياً متصلاً، وتعد المشاهد بتتبع يوم عمل بدلاً من الاكتفاء بعرض حالات طبية منفصلة بلا إطار رابط. ومن الناحية النقدية، يمكن لهذا الاختيار أن يضبط التصعيد ويجعل مرور الوقت جزءاً من التجربة. وفي المقابل، يحتاج هذا البناء إلى تغير ملموس في الضغوط والشخصيات كي لا يصبح تقسيم الاثنتي عشرة ساعة مجرد عدّ زمني. لا توجد تفاصيل كافية عن الحلقات للحسم في تحقق هذا التنوع.\n\nمن هنا تبدو الفكرة أكثر إقناعاً على مستوى التصميم من مستوى الإيقاع المنفذ. التسلسل المعلن يعد بانضباط بنائي، لكنه لا يضمن أن كل حلقة تحمل وزناً درامياً متوازناً أو أن الموسم يتجنب التكرار. أقيّم الإيقاع إيجابياً بدرجة حذرة لأن صيغة الزمن المحدود تمنحه أساساً واضحاً، لا لأن الملف يوثق نجاحاً تفصيلياً في كل انتقال أو ذروة. أما تنوع المحتوى، فيظل معياراً لا يمكن الجزم به من الملخص وحده.\n\n## نقاط القوة\n\nأبرز نقاط القوة المدعومة هي وضوح بؤرة العمل: قسم طوارئ، وفريق يسعى لإنقاذ الأرواح، ومؤسسة تواجه الاكتظاظ ونقص الموارد. ويمنح ذلك الدراما موضوعاً يتجاوز الحالات الفردية إلى ظروف الرعاية الصحية نفسها. وثانيها البناء الزمني المعلن؛ فالوردية الواحدة، الموزعة على حلقات تمثل كل منها نحو ساعة، تمنح الموسم مبدأ تنظيمياً مميزاً وقابلاً للتحليل. وثالثها ملاءمة الطاقم الجماعي لمكان العمل المشترك، مع مشاركة أسماء معروفة في البيانات التعريفية. ورابعها وجود صلة مهنية بين صناع المسلسل وعملهم السابق ER، وهي خلفية سياقية مفيدة، وإن لم تكن ضمان جودة. تبقى هذه نقاط قوة في الفكرة والتصميم، لا ادعاءً بأن كل عنصر نُفذ بنجاح مؤكد.\n\n## نقاط الضعف\n\nأول تحفظ نقدي هو أن المادة المتاحة لا تكفي للحكم على كتابة الشخصيات أو الحوار، وهما عنصران حاسمان في دراما جماعية. وثانيها أن المعلومات لا توثق تنوع الحالات أو طريقة تجنب التكرار عبر صيغة وردية واحدة؛ لذا لا يمكن تأكيد أن البناء الزمني يحافظ على التجدد. وثالثها غياب شواهد وصفية مستقلة عن الصورة والصوت والأداء، ما يجعل المقارنة الفنية أو التقويم التفصيلي غير مسؤول. هذه ليست مزاعم بوجود عيوب داخل المسلسل؛ بل حدود في الأدلة المتاحة ينبغي الإفصاح عنها بدلاً من تغطيتها بعبارات عامة. وهي تجعل الحكم النهائي أقل جزماً في التنفيذ من الحكم على premise العمل وبنائه المعلن.\n\n## لمن يناسب هذا العمل؟\n\nيبدو المسلسل مناسباً لمن يفضل دراما المستشفيات التي تركز على طاقم العمل والضغط المؤسسي، ولمن ينجذب إلى بناء زمني متصل يضع يوم عمل كامل في مركز الحكاية. وقد يهم أيضاً محبي أعمال R. Scott Gemmill وJohn Wells وNoah Wyle، مع التنبيه إلى أن تعاونهم السابق لا يثبت أن هذا المسلسل يكرر تجربة ER أو يطابقها. أما من يبحث عن حبكة محددة ذات مسارات موصوفة، أو يريد حكماً موثقاً على الأداء والصورة والموسيقى قبل الاختيار، فلن يجد ملف الأدلة هنا تفاصيل كافية لتلبية ذلك. التوصية إذن إيجابية لمن تثيره الفكرة وصيغتها، ومتحفظة لمن يعتمد على تقييمات تقنية دقيقة.\n\n## الحكم النهائي\n\nتقدم The Pitt تصوراً درامياً متماسك الملامح: طاقم طوارئ يعمل في قسم مكتظ ومحدود الموارد، وموسم يتتبع وردية واحدة عبر وحدات زمنية متقاربة من زمن الحكاية. يبرر ذلك حكماً إيجابياً على الفكرة والبناء المعلن، ويمنح المسلسل هوية واضحة ضمن دراما الطب الجماعية. لكن لا تتوافر هنا شواهد كافية لتأكيد جودة الحوار أو أداء الممثلين أو تميز العناصر السمعية والبصرية، ومن ثم لا يصح منحها ثناءً تفصيلياً غير مسند. هذه مراجعة نهائية تحريرية ضمن حدود ملف موثق، لا ادعاء مشاهدة شخصية ولا قراءة لمشاهد غير موصوفة. أوصي بالعمل لمحبي دراما الطوارئ وصيغ الزمن المحدود؛ أما قوة تنفيذه الكاملة فتحتاج إلى أدلة مستقلة أكثر تفصيلاً قبل الحكم عليها بثقة.",
-        "scores": {
-          "story": 8,
-          "visuals": 6,
-          "sound": 6,
-          "pacing": 7.8
-        },
-        "pros": [
-          "فرضية واضحة تربط إنقاذ الأرواح بالاكتظاظ ونقص التمويل والموظفين في قسم الطوارئ.",
-          "صيغة زمنية مميزة: وردية واحدة مدتها اثنتا عشرة ساعة، مع حلقة تقارب ساعة من زمن الحكاية.",
-          "الإطار الجماعي مناسب لمتابعة العاملين في مركز طبي واحد.",
-          "صلة صناع العمل بـ ER تمنح المسلسل سياقاً مفيداً داخل دراما الطب التلفزيونية، من دون أن تكون ضماناً للجودة."
-        ],
-        "cons": [
-          "المعلومات المتاحة لا تكفي للحكم على عمق الشخصيات أو جودة الحوارات والأداء.",
-          "لا توجد شواهد تفصيلية تثبت كيف يحافظ البناء الزمني على تنوع الحلقات ويتجنب التكرار.",
-          "الأدلة لا تسمح بتقييم موثوق للهوية البصرية أو الموسيقى أو تصميم الصوت؛ لذا تبقى الدرجات في هذه الجوانب متحفظة."
-        ],
-        "title": "The Pitt",
-        "type": "series",
-        "sourceId": "series:250307",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/250307",
-        "sourceRating": 8.7,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 1078,
-        "sourceRatingCheckedAt": "2026-11-24T01:31:42.795Z",
-        "audienceScore": 8.7,
-        "releaseDate": "2025-01-09",
-        "poster": "https://image.tmdb.org/t/p/w780/kvFSpESyBZMjaeOJDx7RS3P1jey.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/z3BkMbCy5ajZPMyKEUwsPHuz2cV.jpg",
-        "genres": [
-          "Drama"
-        ],
-        "platforms": [],
-        "cast": [
-          "Noah Wyle",
-          "Patrick Ball",
-          "Katherine LaNasa",
-          "Supriya Ganesh",
-          "Fiona Dourif",
-          "Taylor Dearden",
-          "Isa Briones",
-          "Gerran Howell"
-        ],
-        "crew": [],
-        "tags": [
-          "Drama"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/250307",
-            "extract": "The staff of Pittsburgh's Trauma Medical Center work around the clock to save lives in an overcrowded and underfunded emergency department.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/The_Pitt",
-            "extract": "The Pitt is an American medical drama television series created by R. Scott Gemmill and executive produced by John Wells and Noah Wyle. It is Gemmill, Wells, and Wyle's second collaboration; they previously worked together on ER (1994–2009). It stars Wyle, Tracy Ifeachor, Patrick Ball, Katherine LaNasa, Supriya Ganesh, Fiona Dourif, Taylor Dearden, Isa Briones, Gerran Howell, Shabana Azeez, and Sepideh Moafi. Each season follows emergency department staff at a fictional Pittsburgh Trauma Medical Center as they navigate a single 12-hour shift amid staff shortages, underfunding, and personal crises. Each episode is set in real time and depicts approximately one hour of the shift.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — HBO Max UK & Ireland",
-            "url": "https://www.youtube.com/watch?v=SDqcOVJfYLc",
-            "extract": "Verified public, embeddable promotional trailer: The Pitt | Season 1 Official Trailer",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "SDqcOVJfYLc",
-        "youtubeVideoTitle": "The Pitt | Season 1 Official Trailer",
-        "reviewMode": "review",
-        "score": 7.1
-      },
+      "article": null,
       "lastError": "Article file exists, but the live site still returns HTTP 404; deployment verification will retry.",
       "provider": "openai",
       "tokens": 5687,
       "articlePath": "src/content/reviews/series-the-pitt-250307.md",
       "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-the-pitt-250307/",
-      "resumeStatus": "verifying"
+      "resumeStatus": null,
+      "publishedAt": "2026-11-24T10:16:03.492Z"
+    },
+    "series:283428": {
+      "key": "series:283428",
+      "type": "series",
+      "id": "283428",
+      "title": "The Ramparts of Ice",
+      "item": {
+        "type": "series",
+        "id": "283428",
+        "name": "The Ramparts of Ice",
+        "date": "2026-04-02",
+        "preview": false,
+        "popularity": 62.38,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-24T10:16:05.369Z",
+      "updatedAt": "2026-11-24T10:16:05.910Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "The Ramparts of Ice",
+        "type": "series",
+        "collectedAt": "2026-11-24T10:16:05.910Z",
+        "sourceId": "series:283428",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/283428",
+        "overview": "Weighed down by memories she can't shake, high schooler Koyuki Hikawa keeps everyone at arm's length — until three schoolmates draw her out of her shell.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/283428",
+            "extract": "Weighed down by memories she can't shake, high schooler Koyuki Hikawa keeps everyone at arm's length — until three schoolmates draw her out of her shell.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/The_Ramparts_of_Ice",
+            "extract": "The Ramparts of Ice is a Japanese web manga series written and illustrated by Kōcha Agasawa. It was first published as a webtoon under the Line Manga Indies section, and after collaborating with the Margaret editorial team, it was picked up for official serialization through the Line Manga digital service from January 2020 to April 2022. Shueisha published its chapters in 14 tankōbon volumes from July 2023 to February 2025.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Netflix Anime",
+            "url": "https://www.youtube.com/watch?v=sWvfeHOkAOU",
+            "extract": "Verified public, embeddable promotional trailer: The Ramparts of Ice: Season 2 | Official Trailer | Netflix Anime",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "limited",
+        "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
+        "youtubeVideoId": "sWvfeHOkAOU",
+        "youtubeVideoTitle": "The Ramparts of Ice: Season 2 | Official Trailer | Netflix Anime",
+        "youtubeChannel": "Netflix Anime",
+        "releaseDate": "2026-04-02",
+        "genres": [
+          "Animation",
+          "Drama"
+        ],
+        "platforms": [],
+        "cast": [
+          "Anna Nagase",
+          "Fuka Izumi",
+          "Shoya Chiba",
+          "Satoshi Inomata"
+        ],
+        "crew": [],
+        "rating": 8.625,
+        "ratingScale": 10,
+        "votes": 84,
+        "poster": "https://image.tmdb.org/t/p/w780/7Vj92GlRvdZtzeRzJDHfr0JiP8Z.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/ht6WUmez8cFbwlrFmGdjbYyn3RG.jpg"
+      },
+      "sections": [],
+      "article": null,
+      "lastError": "Publishing blocked: evidence supports neither a scored review nor an explicit pre-release preview"
+    },
+    "series:262259": {
+      "key": "series:262259",
+      "type": "series",
+      "id": "262259",
+      "title": "Wandance",
+      "item": {
+        "type": "series",
+        "id": "262259",
+        "name": "Wandance",
+        "date": "2025-10-08",
+        "preview": false,
+        "popularity": 57.5426,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-24T10:16:06.648Z",
+      "updatedAt": "2026-11-24T10:16:07.147Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Wandance",
+        "type": "series",
+        "collectedAt": "2026-11-24T10:16:07.146Z",
+        "sourceId": "series:262259",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/262259",
+        "overview": "Kabo is a high school student with a stutter who struggles to express his feelings. He finds himself drawn to his classmate Wanda, who pursues dance without worrying about how others see her. Seeking a form of freestyle expression, Kabo takes on the unfamiliar world of dance.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/262259",
+            "extract": "Kabo is a high school student with a stutter who struggles to express his feelings. He finds himself drawn to his classmate Wanda, who pursues dance without worrying about how others see her. Seeking a form of freestyle expression, Kabo takes on the unfamiliar world of dance.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Wandance",
+            "extract": "Wandance is a Japanese manga series written and illustrated by Coffee. It has been serialized in Kodansha's seinen manga magazine Monthly Afternoon since January 2019, with its chapters collected in 16 tankōbon volumes as of November 2026. In North America, the manga is licensed for English release by Kodansha USA. An anime television series adaptation produced by Madhouse and Cyclone Graphics aired from October to December 2025. A live-action film adaptation is set to premiere in November 2026.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Disney+ Singapore",
+            "url": "https://www.youtube.com/watch?v=rMXCaF4FtxE",
+            "extract": "Verified public, embeddable promotional trailer: Wandance | Official Trailer #2 | Disney+ Singapore",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "limited",
+        "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
+        "youtubeVideoId": "rMXCaF4FtxE",
+        "youtubeVideoTitle": "Wandance | Official Trailer #2 | Disney+ Singapore",
+        "youtubeChannel": "Disney+ Singapore",
+        "releaseDate": "2025-10-08",
+        "genres": [
+          "Animation",
+          "Drama"
+        ],
+        "platforms": [],
+        "cast": [
+          "Koki Uchiyama",
+          "Hina Youmiya"
+        ],
+        "crew": [],
+        "rating": 7.4,
+        "ratingScale": 10,
+        "votes": 11,
+        "poster": "https://image.tmdb.org/t/p/w780/tb09vxLJ5yf7pMbmWqRvWE6bL5y.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/b6ZtSMxji30liJBCDViqqcK3gPD.jpg"
+      },
+      "sections": [],
+      "article": null,
+      "lastError": "Publishing blocked: evidence supports neither a scored review nor an explicit pre-release preview"
+    },
+    "series:226637": {
+      "key": "series:226637",
+      "type": "series",
+      "id": "226637",
+      "title": "High Potential",
+      "item": {
+        "type": "series",
+        "id": "226637",
+        "name": "High Potential",
+        "date": "2024-09-17",
+        "preview": false,
+        "popularity": 54.5941,
+        "source": "TMDB"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-24T10:16:11.951Z",
+      "updatedAt": "2026-11-24T10:17:09.409Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "High Potential",
+        "type": "series",
+        "collectedAt": "2026-11-24T10:16:12.524Z",
+        "sourceId": "series:226637",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/226637",
+        "overview": "Morgan is a single mom with an exceptional mind, whose unconventional knack for solving crimes leads to an unusual and unstoppable partnership with a by-the-book seasoned detective.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/226637",
+            "extract": "Morgan is a single mom with an exceptional mind, whose unconventional knack for solving crimes leads to an unusual and unstoppable partnership with a by-the-book seasoned detective.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/High_Potential",
+            "extract": "High Potential is an American crime comedy drama television series created by Drew Goddard for ABC. It is based on the 2021 Franco-Belgian television series HPI. The series stars Kaitlin Olson as Morgan Gillory, an intellectually gifted cleaning woman who becomes a police consultant. Also starring are Daniel Sunjata as Morgan's partner Adam Karadec and Judy Reyes as Selena Soto, the head of their unit. The series premiered on September 17, 2024. In January 2025, the series was renewed for a second season which premiered on September 16, 2025. In March 2026, the series was renewed for a third season which is slated to premiere on January 5, 2027. A new special episode is scheduled to air on February 14, 2027, right after Super Bowl LXI.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Disney Plus UK",
+            "url": "https://www.youtube.com/watch?v=NU7stLwMtlY",
+            "extract": "Verified public, embeddable promotional trailer: High Potential Season 2 | Official Trailer | Disney+ UK",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 721 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "NU7stLwMtlY",
+        "youtubeVideoTitle": "High Potential Season 2 | Official Trailer | Disney+ UK",
+        "youtubeChannel": "Disney Plus UK",
+        "releaseDate": "2024-09-17",
+        "genres": [
+          "Drama",
+          "Crime",
+          "Mystery"
+        ],
+        "platforms": [],
+        "cast": [
+          "Kaitlin Olson",
+          "Daniel Sunjata",
+          "Judy Reyes",
+          "Javicia Leslie",
+          "Deniz Akdeniz",
+          "Amirah J",
+          "Matthew Lamb"
+        ],
+        "crew": [],
+        "rating": 8.243,
+        "ratingScale": 10,
+        "votes": 721,
+        "poster": "https://image.tmdb.org/t/p/w780/xCtaUDBUP1iKqtoqpHfeH1T2pWF.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/yVP12H81dwaay5B7GVqgO893q2c.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "High Potential: فكرة تلفت الانتباه، لكن الأدلة المتاحة لا تكفي لحكم فني مكتمل",
+        "summary": "تقدّم High Potential فرضية واضحة: مورغان، أم عزباء ذات قدرة استثنائية على الاستدلال، تدخل عالم التحقيقات وتكوّن شراكة غير مألوفة مع محقق متمرس يلتزم بالإجراءات. يتيح هذا التقابل أساساً واعداً لمزج الجريمة بالغموض والكوميديا الدرامية، لكنه يصف نقطة الانطلاق ولا يثبت جودة الكتابة أو تطور الشخصيات أو نجاح التنفيذ. والمواد المتاحة هنا لا تتجاوز ملخصاً تعريفياً وبيانات عن المسلسل ومعلومات موسوعية، إلى جانب إثبات وجود إعلان رسمي للموسم الثاني؛ فلا تتضمن مراجعات مستقلة مفصلة أو وصفاً موثقاً للحلقات والعناصر الفنية. لذلك فإن هذا التقييم يميّز بين جاذبية الفكرة وما يمكن إثباته عن العمل، ولا يدّعي مشاهدة المسلسل أو الإعلان.",
+        "verdict": "تملك High Potential مدخلاً درامياً يسهل فهم جاذبيته: بطلة ذات عقل استثنائي تعمل خارج القوالب المهنية، وشريك محقق يمثّل النظام الذي تصطدم به، ضمن إطار جرائم وغموض. هذه عناصر تمنح المسلسل وعداً واضحاً، كما أن تجديده لمواسم إضافية يثبت استمرار المشروع، لا تفوقه الفني. لكن الملف المتاح لا يقدّم شواهد كافية على جودة الحلقات أو نمو الشخصيات أو الصورة والصوت والإيقاع؛ لذلك لا يمكن تحويل الوعد إلى حكم نهائي موثوق على التنفيذ. الدرجة الإجمالية هنا احترازية وليست بديلاً عن مشاهدة موثقة أو نقد مستقل مفصل. أوصي به مبدئياً لمن تجذبه فرضية التحقيقات والشراكة المتضادة، مع ضرورة اعتبار هذا التقييم محدوداً لا مراجعة مشاهدة مكتملة.",
+        "body": "## مقدمة وسياق العمل\n\nHigh Potential مسلسل تلفزيوني أمريكي في مجالات الدراما والجريمة والغموض، وتذكر صفحة TMDB أن عرضه بدأ في 17 سبتمبر 2024. وتصفه المعلومات الموسوعية المتاحة بأنه مقتبس من المسلسل الفرنسي البلجيكي HPI، وأن Drew Goddard ابتكره للتلفزيون الأمريكي. كما تسمي Kaitlin Olson في دور مورغان غيلوري، وDaniel Sunjata في دور آدم كاراديك، وJudy Reyes في دور سيلينا سوتو. هذه حقائق تعريفية مفيدة لفهم هوية المشروع، لكنها لا تكشف بذاتها مدى نجاح الاقتباس أو قيمة أداء الممثلين.\n\nيجب تحديد حدود هذه المراجعة منذ البداية: المواد المقدمة لا تحتوي على مراجعات مستقلة مفصلة، أو ملخصات حلقات، أو وصف موثق للتصوير والمونتاج والموسيقى، أو تحليلات لتطور الشخصيات. ويتوفر إثبات لوجود إعلان رسمي للموسم الثاني من Disney+ UK، بعنوانه ورابطه، لكن لا يتوفر نص الإعلان أو تحليل لمحتواه؛ لذلك لا يصح التعامل معه كما لو أن مشاهده قد فُحصت. ما يلي قراءة نقدية للفرضية والسياق وما تسمح به الأدلة، لا ادعاء بمشاهدة المسلسل أو معاينة موسمه الثاني.\n\n## الفكرة والقصة أو التجربة\n\nتضع الفرضية مورغان، وهي أم عزباء ذات عقل استثنائي، في موقع يساعدها فيه ميل غير تقليدي إلى حل الجرائم على العمل مع الشرطة. ويقوم التوتر الأساسي المعلن على شراكتها مع محقق متمرس يلتزم بالقواعد؛ أي إن المسلسل يوازن بين حدس فردي غير مألوف وإجراء مؤسسي منظم. هذه نقطة انطلاق عملية لنوع الجريمة الإجرائية، لأنها تمنح التحقيقات المفترضة رابطاً شخصياً مستمراً بدلاً من الاقتصار على اللغز وحده. هذا استنتاج عن إمكانات التصميم الدرامي، وليس إثباتاً بأن كل قضية تنجح أو بأن الحلقات تطور الفكرة بعمق.\n\nتضيف صفة مورغان بوصفها أماً عزباء بعداً حياتياً واضحاً إلى تعريف الشخصية، لكن الملف لا يشرح كيف يوزع المسلسل اهتمامه بين مسؤولياتها المنزلية وعملها، ولا يحدد مقدار حضور ذلك في السرد. وبالمثل، فإن وصف الشراكة بأنها غير مألوفة أو لا يمكن إيقافها يعبّر عن صياغة تعريفية، لا عن برهان على كيمياء الشخصيتين. لذا تبدو الفكرة قابلة لجذب من يفضلون ألغاز الجرائم وشخصيات تحل المشكلات بطرق خارجة عن المعتاد، فيما تظل جودة تحويلها إلى قصص فعلية غير قابلة للحسم هنا.\n\n## السرد والشخصيات أو تصميم اللعب\n\nلأن العمل مسلسل، فالمعيار المناسب هو بناء الشخصيات والحلقات، لا تصميم اللعب. المعلومات المتاحة تتيح تمييز ثلاثة مواقع سردية على الأقل: مورغان صاحبة القدرة الاستثنائية، كاراديك المحقق المنضبط، وسيلينا سوتو التي تصفها المادة الموسوعية بأنها رئيسة الوحدة. ويمكن لهذه المواقع أن تخلق اختلافاً في طرائق التعامل مع التحقيق، لكنها لا تكفي لاستنتاج طبيعة العلاقات أو مقدار تطورها أو مدى تعقيد الشخصيات. لا توجد في الملف أمثلة على حوار أو قرار أو تحول بعينه، ولذلك سيكون اختراع مشاهد أو وصف أداء محدد تجاوزاً للأدلة.\n\nكما أن كون العمل مقتبساً يفتح سؤالاً مشروعاً عن علاقته بالمصدر الفرنسي البلجيكي: هل يترجم الفرضية إلى سياق أمريكي على نحو يضيف إليها، أم يكتفي بنقل بنيتها؟ لا تقدم المصادر جواباً، ولا يصح اعتبار مجرد وجود الاقتباس دليلاً على نجاحه أو إخفاقه. لذلك يمكن وصف البناء المعلن بأنه قائم على بطلة مميزة وشريك مقابل لها وفريق شرطي، لكن لا يمكن تقييم تماسك الأقواس الدرامية أو جودة كتابة الحلقات من الملخص وحده. هذه فجوة مركزية تمنع إعطاء السرد درجة عالية على أساس مضمون غير موثق.\n\n## الإخراج والجوانب الفنية\n\nلا تتضمن الأدلة أسماء مخرجين أو معلومات إنتاجية تفصيلية، ولا نقداً مستقلاً يصف طريقة توجيه المشاهد أو تنظيم مواقع التصوير أو استخدام المونتاج. ولهذا لا يمكن إصدار حكم موثوق على الإخراج، سواء أكان متماسكاً أو رتيباً أو مبتكراً. كون صفحة البيانات تصنف العمل ضمن الجريمة والغموض والدراما يحدد الإطار النوعي فقط، ولا يخبرنا كيف حُولت هذه الأنواع إلى معالجة تلفزيونية ملموسة. ومن غير المنهجي استنتاج جودة الإخراج من شهرة عضو في فريق العمل أو من استمرار المسلسل لموسم آخر.\n\n## الصورة والهوية البصرية\n\nتتضمن البيانات روابط لصورة ملصق وخلفية تعريفية، لكنها لا تقدم وصفاً موثقاً لأسلوب التصوير أو الألوان أو تصميم المواقع، كما لا يكفي وجود هذه الصور للحكم على الصورة المتحركة. لذلك لا أصف المسلسل بأنه أنيق بصرياً أو تقليدي أو مميز؛ فكل واحدة من هذه الصفات تحتاج إلى مادة يمكن فحصها أو مصدر نقدي يشرحها. يمكن فقط القول إن الهوية النوعية المعلنة هي هوية مسلسل جريمة وغموض، وهي لا تحدد وحدها أسلوبه البصري. هذا المحور غير محسوم، لا لأن عيباً بصرياً مثبتاً، بل لأن الدليل المطلوب غير موجود في الملف.\n\n## الصوت والموسيقى والأداء\n\nيسرد الملف أسماء عدد من الممثلين، وفي مقدمتهم Kaitlin Olson وDaniel Sunjata وJudy Reyes، لكنه لا يقدم تقويماً مستقلاً لأدائهم أو تسجيلات حوار أو معلومات عن الموسيقى والتصميم الصوتي. ومن ثم لا يمكن مدح الأداء الكوميدي أو الدرامي، أو وصف التفاعل بين الممثلين، أو الحكم على فاعلية الموسيقى في بناء التوتر. وجود إعلان رسمي للموسم الثاني لا يغير هذا النقص ما دام المتاح هو بياناته التعريفية لا تحليلاً لمادته. في التقييم المنضبط، غياب الشاهد ليس دليلاً على ضعف الصوت أو التمثيل، لكنه يمنع رفع الدرجة بناء على تخمين.\n\n## الإيقاع والبناء وتنوع المحتوى\n\nلا يشرح الملخص عدد الحلقات أو إيقاع كل حلقة أو علاقة القضايا المنفردة بالقصة الممتدة، ولا تتوافر تفاصيل عن تكرار الصيغ أو تنوعها. وعليه لا يمكن الجزم بأن المسلسل سريع أو بطيء، أو أن قضاياه متجددة، أو أن بنيته تحافظ على التشويق. الفرضية تسمح نظرياً بتناوب التحقيقات مع تطور الشراكة، لكن ذلك يظل احتمالاً مستنتجاً من نوع العمل، لا وصفاً لمشاهدة موثقة. تقدم بيانات ويكيبيديا المتاحة معلومة سياقية مفادها أن الموسم الثاني بدأ في 16 سبتمبر 2025، وأن موسماً ثالثاً جُدد له في مارس 2026 مع موعد معلن في يناير 2027؛ استمرار العمل خبر عن مساره الإنتاجي، وليس مقياساً فنياً لإيقاعه أو جودته.\n\n## نقاط القوة\n\nأقوى ما يمكن إثباته نقدياً هو وضوح الخطاف المركزي: شخصية ذات قدرة استثنائية تدخل شراكة شرطية، مع تضاد معلن بينها وبين محقق ملتزم بالقواعد. ويوفر هذا التكوين مجالاً محتملاً للتوتر بين الحدس والإجراءات، من دون أن يثبت تحقق هذا المجال على الشاشة. كذلك تمنح خلفية مورغان بوصفها أماً عزباء الشخصية تعريفاً يتجاوز مهنتها، وإن لم تتوافر تفاصيل عن كيفية استثمار ذلك. ويمثل تحديد المسلسل ضمن الجريمة والغموض والدراما، مع وصفه في المصدر الموسوعي بأنه كوميديا درامية جريمة، إشارة واضحة إلى المزج النوعي المقصود. وأخيراً، فإن وجود موسم ثانٍ وثالث معلن يبين أن المسلسل لم يكن عملاً منفرداً قصير الأمد، لكنه ليس برهاناً على تفوقه.\n\n## نقاط الضعف\n\nلا توجد في الأدلة عيوب تنفيذية مؤكدة يمكن نسبتها إلى المسلسل، ولذلك ينبغي عدم اختلاق شكاوى عن الحلقات أو التقنية. لكن الفرضية نفسها تحمل خطراً سردياً مألوفاً: إذا جعلت القدرة الاستثنائية تحل الألغاز بسهولة، فقد تضعف مساحة التحدي؛ وهذا احتمال نقدي مشروط، لا وصف لما يحدث فعلاً. كما أن تقابل الشخصية الخارجة عن المألوف مع المحقق النظامي قد ينزلق إلى تكرار نمطي إن لم يتطور، ولا يتيح الملف معرفة إن كان ذلك قد حدث. أما النقص الحاسم في هذا الحكم فهو نقص الأدلة على الكتابة والأداء والصورة والصوت والإيقاع، وهو قصور في قاعدة التقييم لا عيب مثبت في العمل.\n\n## لمن يناسب هذا العمل؟\n\nوفقاً للفرضية الموثقة، قد يناسب المسلسل من ينجذبون إلى قصص التحقيق والجريمة التي تتمحور حول شخصية ذات مهارة استثنائية وشراكة بين أسلوبين متعارضين. كما قد يهم من يفضلون المزج بين الدراما والغموض والكوميديا، بحسب التصنيف والوصف الموسوعي المتاحين. لكن لا تكفي هذه المعلومات لتقديم توصية أقوى بشأن مستوى العنف أو طبيعة الفكاهة أو مدى ملاءمة العمل لأذواق محددة، ولا لتأكيد أن من يحبون مسلسلات تحقيق أخرى سيجدون هنا الجودة نفسها. التوصية إذن توصية بالفرضية لا ضمان بتجربة فنية بعينها.\n\n## الحكم النهائي\n\nتملك High Potential أساساً قابلاً للجذب، وتحديداً في جمعها بين بطلة ذات قدرة غير مألوفة وشراكة مع محقق يمثل النظام، ضمن إطار الجريمة والغموض. لكن الملف لا يوفر مادة مستقلة كافية للحكم على جودة تحويل هذا الأساس إلى مسلسل ناجح فنياً. كذلك لا يمكن تقييم الجوانب البصرية أو السمعية أو الإيقاعية من بيانات التعريف وحدها. لذلك تعكس الدرجات المرفقة تقديراً احترازياً للفرضية حيث تسمح الأدلة، وتضع درجات حيادية مؤقتة للمحاور التي لا يمكن التحقق منها؛ ولا ينبغي قراءتها كتقويم نهائي قائم على مشاهدة كاملة. الحكم التحريري الصريح هو أن المشروع يبدو واعداً على مستوى الفكرة، لكن إصدار توصية نهائية قوية بشأن العمل نفسه يتطلب مصادر مستقلة أكثر تفصيلاً.",
+        "scores": {
+          "story": 6.5,
+          "visuals": 5,
+          "sound": 5,
+          "pacing": 5
+        },
+        "pros": [
+          "فرضية مركزية واضحة تجمع قدرة مورغان الاستثنائية بعملها مع محقق ملتزم بالقواعد.",
+          "خلفية مورغان بوصفها أماً عزباء تضيف عنصراً تعريفياً يتجاوز دورها في التحقيق.",
+          "إطار معلن يجمع الجريمة والغموض والدراما، مع وصف موسوعي يضيف الكوميديا الدرامية.",
+          "استمرار المسلسل إلى موسم ثانٍ وثالث معلن يمنح المهتمين بالفرضية مادة سردية ممتدة، من دون أن يعد ذلك دليلاً على الجودة."
+        ],
+        "cons": [
+          "المصادر لا تقدم وصفاً للحلقات أو مراجعات مستقلة مفصلة تسمح بالحكم على جودة الكتابة وتطور الشخصيات.",
+          "لا تتوفر أدلة كافية لتقييم الصورة أو الموسيقى أو الأداء أو الإيقاع؛ لذلك تظل هذه المحاور غير محسومة.",
+          "تعتمد الفرضية على تقابل معروف بين الشخصية غير التقليدية والمحقق المنضبط؛ وقد يصبح هذا مألوفاً إذا لم يتطور، لكن الأدلة لا تثبت وقوع ذلك.",
+          "لا يتيح الملف التحقق من مقدار التوازن بين التحقيقات وخلفية البطلة الشخصية أو من تنوع القضايا."
+        ],
+        "title": "High Potential",
+        "type": "series",
+        "sourceId": "series:226637",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/226637",
+        "sourceRating": 8.243,
+        "sourceRatingScale": 10,
+        "sourceVoteCount": 721,
+        "sourceRatingCheckedAt": "2026-11-24T10:16:12.524Z",
+        "audienceScore": 8.2,
+        "releaseDate": "2024-09-17",
+        "poster": "https://image.tmdb.org/t/p/w780/xCtaUDBUP1iKqtoqpHfeH1T2pWF.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/yVP12H81dwaay5B7GVqgO893q2c.jpg",
+        "genres": [
+          "Drama",
+          "Crime",
+          "Mystery"
+        ],
+        "platforms": [],
+        "cast": [
+          "Kaitlin Olson",
+          "Daniel Sunjata",
+          "Judy Reyes",
+          "Javicia Leslie",
+          "Deniz Akdeniz",
+          "Amirah J",
+          "Matthew Lamb"
+        ],
+        "crew": [],
+        "tags": [
+          "Drama",
+          "Crime",
+          "Mystery"
+        ],
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/226637",
+            "extract": "Morgan is a single mom with an exceptional mind, whose unconventional knack for solving crimes leads to an unusual and unstoppable partnership with a by-the-book seasoned detective.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/High_Potential",
+            "extract": "High Potential is an American crime comedy drama television series created by Drew Goddard for ABC. It is based on the 2021 Franco-Belgian television series HPI. The series stars Kaitlin Olson as Morgan Gillory, an intellectually gifted cleaning woman who becomes a police consultant. Also starring are Daniel Sunjata as Morgan's partner Adam Karadec and Judy Reyes as Selena Soto, the head of their unit. The series premiered on September 17, 2024. In January 2025, the series was renewed for a second season which premiered on September 16, 2025. In March 2026, the series was renewed for a third season which is slated to premiere on January 5, 2027. A new special episode is scheduled to air on February 14, 2027, right after Super Bowl LXI.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Disney Plus UK",
+            "url": "https://www.youtube.com/watch?v=NU7stLwMtlY",
+            "extract": "Verified public, embeddable promotional trailer: High Potential Season 2 | Official Trailer | Disney+ UK",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "NU7stLwMtlY",
+        "youtubeVideoTitle": "High Potential Season 2 | Official Trailer | Disney+ UK",
+        "reviewMode": "review",
+        "score": 5.5
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 6420,
+      "articlePath": "src/content/reviews/series-high-potential-226637.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-high-potential-226637/"
     }
   },
   "providers": {},
@@ -3187,9 +3232,9 @@
       "tokens": 47590
     },
     "2026-11-24": {
-      "articles": 3,
-      "requests": 8,
-      "tokens": 17260
+      "articles": 4,
+      "requests": 10,
+      "tokens": 23680
     }
   },
   "history": []
