@@ -64,7 +64,7 @@ export function validateArticle(article, { minWords = 650, minCharacters = 3200 
   const paragraphs = String(article.body).split(/\n\s*\n/).map(x=>x.trim()).filter(x=>x.length>80);
   if (new Set(paragraphs).size < Math.min(3,paragraphs.length)) throw new Error("Article contains repeated paragraphs");
   const reviewMode = article.reviewMode || "review";
-  if (!["review","audience","preview"].includes(reviewMode)) throw new Error("Invalid review mode: " + reviewMode);
+  if (!["review","audience","preview","limited"].includes(reviewMode)) throw new Error("Invalid review mode: " + reviewMode);
   if (reviewMode === "review") {
     for (const k of ["story","visuals","sound","pacing"]) if (!Number.isFinite(article.scores?.[k]) || article.scores[k] < 0 || article.scores[k] > 10) throw new Error("Invalid score: " + k);
     if (!Number.isFinite(article.score) || article.score <= 0 || article.score > 10) throw new Error("Invalid weighted score");
