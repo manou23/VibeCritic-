@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-24T16:16:23.896Z",
+  "updatedAt": "2026-11-24T16:16:55.131Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -3356,12 +3356,12 @@
         "popularity": 44.9737,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "waiting",
       "stage": 0,
-      "attempts": 0,
+      "attempts": 1,
       "createdAt": "2026-11-24T16:15:56.075Z",
-      "updatedAt": "2026-11-24T16:16:23.896Z",
-      "nextAttemptAt": null,
+      "updatedAt": "2026-11-24T16:16:55.130Z",
+      "nextAttemptAt": "2026-11-24T16:17:55.130Z",
       "evidence": {
         "title": "Mission: Yozakura Family",
         "type": "series",
@@ -3494,11 +3494,12 @@
         "youtubeVideoTitle": "Mission: Yozakura Family Season 2 Part 2 Official Trailer",
         "reviewMode": "limited"
       },
-      "lastError": null,
+      "lastError": "Article file exists, but the live site still returns HTTP 404; deployment verification will retry.",
       "provider": "openai",
       "tokens": 3709,
       "articlePath": "src/content/reviews/series-mission-yozakura-family-216467.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-mission-yozakura-family-216467/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-mission-yozakura-family-216467/",
+      "resumeStatus": "verifying"
     }
   },
   "providers": {},
