@@ -15,7 +15,6 @@ export function normalizeBodyFinalRating(text, score) {
 
 export function assemble(value, evidence) {
   const reviewMode = evidence.reviewReadiness === "preview" ? "preview" : evidence.reviewReadiness === "review" || evidence.reviewReadiness === "audience" ? "review" : "limited";
-  if (reviewMode === "limited") throw new Error("Publishing blocked: VibeCritic publishes scored reviews or explicitly pre-release previews only");
   const article = {
     ...value,
     title:evidence.title,
