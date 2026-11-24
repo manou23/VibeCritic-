@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "lastUpdated": "2026-11-21",
-  "sourceMainSha": "44b1cd1e130904d790499011946967158032200a",
-  "previousAuditMainSha": "2802e29b078e53cd574880d6482248ee311bd8f6",
-  "articleCount": 229,
-  "previousArticleCount": 176,
-  "growthSincePreviousAudit": 53,
-  "reviewedUniqueCount": 24,
-  "pendingCount": 205,
+  "lastUpdated": "2026-11-24",
+  "sourceMainSha": "aa18dfc0b3c3e2b6f6407ca610ef02793ab2b78a",
+  "previousAuditMainSha": "44b1cd1e130904d790499011946967158032200a",
+  "articleCount": 258,
+  "previousArticleCount": 229,
+  "growthSincePreviousAudit": 29,
+  "reviewedUniqueCount": 33,
+  "pendingCount": 225,
   "currentRun": {
-    "articlesChecked": 8,
-    "newlyReviewed": 8,
+    "articlesChecked": 9,
+    "newlyReviewed": 9,
     "revalidated": 0,
-    "articleCorrections": 8,
+    "articleCorrections": 3,
     "sitePolicyPageUpdated": false
   },
   "reviewed": [
@@ -192,38 +192,113 @@
       "contentSha": "4ce66de619f928143b1ee6ac75f5561c490d951a",
       "status": "corrected",
       "note": "Removed repeated verdict and score from the body; retained research-based methodology note and verified weighted score. YouTube ID matches the official final-trailer title."
+    },
+    {
+      "path": "src/content/reviews/saros-2026.md",
+      "reviewedAt": "2026-11-24",
+      "verifiedAt": "2026-11-24",
+      "contentSha": "b571ae6f138fa2855c52dbc54e2073080e2a8dc3",
+      "status": "reviewed-no-change",
+      "note": "مراجعة بحثية بمصادر Sony وPlayStation ومراجعات مستقلة؛ لا ادعاء بتجربة لعب مباشرة."
+    },
+    {
+      "path": "src/content/reviews/series-12-12-12-2026-manual-assisted.md",
+      "reviewedAt": "2026-11-24",
+      "verifiedAt": "2026-11-24",
+      "contentSha": "a680429471e3a23265b99cff10e349d7bab0f4c7",
+      "status": "reviewed-no-change",
+      "note": "قراءة محدودة بعد حلقتين؛ لا درجة نهائية، ومعلومات العمل والمصادر متسقة."
+    },
+    {
+      "path": "src/content/reviews/series-2734.md",
+      "reviewedAt": "2026-11-24",
+      "verifiedAt": "2026-11-24",
+      "contentSha": "a5673589ab89ac5dc74cdc251751d25ec163e7b2",
+      "status": "corrected",
+      "note": "حذف رقم 602 غير المدعوم زمنياً، والإبقاء على 28 موسماً وبدء العرض في 1999 مع إضافة مصادر Peacock الرسمية."
+    },
+    {
+      "path": "src/content/reviews/series-alkhallat-2026-manual-assisted.md",
+      "reviewedAt": "2026-11-24",
+      "verifiedAt": "2026-11-24",
+      "contentSha": "658d6d18a88522dc365a858b3bd1bbe6b1e6da14",
+      "status": "reviewed-no-change",
+      "note": "قراءة محدودة مع مصادر Netflix الرسمية؛ لا درجة أو ادعاء مشاهدة."
+    },
+    {
+      "path": "src/content/reviews/series-blade-runner-2099-2026-preview.md",
+      "reviewedAt": "2026-11-24",
+      "verifiedAt": "2026-11-24",
+      "contentSha": "8fc7b60ace19dbcc28df347f6cdc901b40229d49",
+      "status": "reviewed-no-change",
+      "note": "معاينة بلا درجة؛ موعد 25 نوفمبر 2026 وعدد الحلقات مؤكدان من Amazon."
+    },
+    {
+      "path": "src/content/reviews/series-harry-potter-philosophers-stone-2026-preview.md",
+      "reviewedAt": "2026-11-24",
+      "verifiedAt": "2026-11-24",
+      "contentSha": "e4b2fefc3731601c983cb0215aa34990dc051e71",
+      "status": "corrected",
+      "note": "حذف تاريخ 25 ديسمبر الدقيق غير المعلن؛ أبقينا صياغة HBO الرسمية Christmas 2026."
+    },
+    {
+      "path": "src/content/reviews/series-invincible-season-5-2027-preview.md",
+      "reviewedAt": "2026-11-24",
+      "verifiedAt": "2026-11-24",
+      "contentSha": "80a9c92844f91794d1de090c301586a2945f15ab",
+      "status": "reviewed-no-change",
+      "note": "معاينة بلا درجة؛ Amazon يؤكد 17 فبراير 2027."
+    },
+    {
+      "path": "src/content/reviews/series-neuromancer-2027-preview.md",
+      "reviewedAt": "2026-11-24",
+      "verifiedAt": "2026-11-24",
+      "contentSha": "4a4e9fc116af3ceecf617058d75e6a974125d82f",
+      "status": "reviewed-no-change",
+      "note": "معاينة بلا درجة؛ Apple يؤكد 22 يناير 2027 و10 حلقات."
+    },
+    {
+      "path": "src/content/reviews/movie-the-social-reckoning-1281331.md",
+      "reviewedAt": "2026-11-24",
+      "verifiedAt": "2026-11-24",
+      "contentSha": "c11e71d2c113b9723b60b27efc4147e4093496ae",
+      "status": "corrected-to-limited",
+      "note": "إزالة الدرجة غير المدعومة، توضيح اختلاف الإصدار الإقليمي، فصل الملخص عن المدخل، إضافة الاستقبال النقدي ومصادر Sony/Rotten Tomatoes، وإصلاح تكرار اسم الكاتب."
     }
   ],
   "siteChecks": {
-    "about": "Reviewed; editorial purpose and AI-assisted content disclosure are present.",
-    "contact": "Reviewed; contact form uses FormSubmit and identifies the submitted fields.",
-    "privacy": "Uses the detailed FormSubmit disclosure first prepared in PR #148, mirrored exactly in this audit branch to avoid divergent privacy-page edits. Cloudflare preview build succeeded, but the rendered privacy page could not be independently opened from this environment.",
-    "consent": "No site CMP/consent banner found. Before personalized Google ads are served to EEA/UK/Switzerland users, use a Google-certified CMP integrated with IAB TCF; TCF v2.3 applies to new TC strings since 2026-03-01.",
-    "ads": "No publisher ID, ad code, ads.txt, verification setting, or AdSense application setting changed.",
-    "articles": "The review detail template renders a final-verdict card; this batch removes duplicated verdict/score sections from all 8 reviewed article bodies.",
-    "media": "All 8 articles retain a relevant video ID with a corroborating official/source reference; direct YouTube page fetch was throttled for some IDs. Murder in Galicia uses an AlloCiné-hosted official poster and an official Netflix CDN backdrop; Phantom Blade Zero store links and store-displayed dates were verified.",
-    "preview": "Cloudflare Pages preview deployment succeeded for commit 52a8766 (https://22c2322c.vibecritic.pages.dev). The preview URL and individual pages were not readable through the browser tool, so rendered appearance remains unverified."
+    "about": "Live page verified: VibeCritic explains its editorial purpose, scoring method, AI assistance disclosure, no-false-firsthand rule, and correction route.",
+    "contact": "Live contact page and /contact/form/ verified. The form describes correction and rights requests; actual submission was not tested to avoid sending a test message.",
+    "privacy": "Live privacy page verified; last updated 2026-11-18. It discloses FormSubmit, configured AI-provider possibilities, external media/data services, local theme storage, possible AdSense cookies, and explicitly says ads are not currently active.",
+    "consent": "No visible consent/CMP interface was found on sampled live pages. This is not recorded as an active ad-serving violation while ads are not currently active; before personalized Google ads are served to EEA/UK/Switzerland users, a Google-certified CMP integrated with IAB TCF is required.",
+    "ads": "Live ads.txt is accessible and contains a Google publisher record; robots.txt allows crawling and points to sitemap.xml; sitemap index and sitemap-0.xml are accessible (279 URLs). No publisher ID, ad code, ads.txt, verification setting, or AdSense application setting was changed.",
+    "articles": "Reviewed the eight articles in the previous nextBatch plus the newest The Social Reckoning article. Corrected three: The Social Reckoning is now limited/no-score because there was no documented direct viewing or sufficient basis for a VibeCritic score; Law & Order: SVU no longer states an unsupported 602-episode count and now cites Peacock; Harry Potter preview no longer presents December 25 as an officially confirmed exact date.",
+    "media": "Verified official source/date references for SAROS, Blade Runner 2099, Harry Potter, Invincible S5, Neuromancer, Alkhallat+, and The Social Reckoning. Direct playback of every embedded YouTube video was not tested.",
+    "preview": "Cloudflare Pages preview deployment succeeded for commit 52a8766 (https://22c2322c.vibecritic.pages.dev). The preview URL and individual pages were not readable through the browser tool, so rendered appearance remains unverified.",
+    "live": "Independent live fetch succeeded for the homepage, The Social Reckoning, The Pitt, The Altruists, The Institute, About, Contact, Contact form, Privacy, robots.txt, ads.txt, sitemap index, and sitemap-0.xml. Earlier V3 404 flags for The Pitt, The Altruists, and The Institute were not reproducible during this check.",
+    "ci": "VibeCritic Publishing V3 run 45346629680 succeeded, including V3 tests and its article build. Manual Editorial Publisher run 45324991742 failed at 'Run isolated manual publisher'; its isolated publisher test passed and later validation/build/commit steps were skipped. Quality checks run 45305650294 passed on earlier commit 3f967c44; the latest V3 run built its own article, but a separate full quality-check run for the new audit commit is still pending."
   },
   "policyReview": {
-    "reviewedAt": "2026-11-21",
+    "reviewedAt": "2026-11-24",
     "sources": [
-      "https://support.google.com/adsense/answer/10502938?hl=en",
-      "https://support.google.com/adsense/answer/9804260?hl=en",
-      "https://support.google.com/admanager/answer/13554116?hl=en",
+      "https://support.google.com/adsense/answer/48182?hl=en",
+      "https://support.google.com/publisherpolicies/answer/10502938?hl=en",
+      "https://support.google.com/adsense/answer/13554116?hl=en",
       "https://developers.google.com/search/docs/essentials",
-      "https://developers.google.com/search/docs/essentials/spam-policies"
+      "https://developers.google.com/search/docs/essentials/spam-policies",
+      "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
     ],
-    "summary": "Rechecked official Google Publisher Policies, AdSense policies, Search Essentials and scaled-content spam guidance on 2026-11-21. No material policy change identified. Google prohibits copied/low-value content and ads on screens without publisher content; scaled-content abuse applies regardless of whether content is produced by AI, automation or people. No fixed minimum word count or article count is stated in the reviewed guidance."
+    "summary": "Rechecked the official AdSense Program Policies (last updated August 4, 2026), Google Publisher Policies, Google Search Essentials, helpful-content guidance, and consent requirements on 2026-11-24. Confirmed restrictions on copyright infringement, misrepresentation, deceptive navigation, and ads on non-content pages. Google's Search guidance warns against scaled content made mainly for rankings, including automated or AI-produced pages that add little value; it explicitly states there is no preferred word count. A Google-certified CMP integrated with IAB TCF is required for personalized ads to users in the EEA, UK, and Switzerland. This is a compliance review, not an AdSense approval prediction."
   },
   "nextBatch": [
-    "src/content/reviews/saros-2026.md",
-    "src/content/reviews/series-12-12-12-2026-manual-assisted.md",
-    "src/content/reviews/series-2734.md",
-    "src/content/reviews/series-alkhallat-2026-manual-assisted.md",
-    "src/content/reviews/series-blade-runner-2099-2026-preview.md",
-    "src/content/reviews/series-harry-potter-philosophers-stone-2026-preview.md",
-    "src/content/reviews/series-invincible-season-5-2027-preview.md",
-    "src/content/reviews/series-neuromancer-2027-preview.md"
+    "src/content/reviews/series-the-altruists-308007.md",
+    "src/content/reviews/series-the-pitt-250307.md",
+    "src/content/reviews/series-the-institute-253372.md",
+    "src/content/reviews/series-the-apothecary-diaries-220542.md",
+    "src/content/reviews/movie-clayface-1400940.md",
+    "src/content/reviews/movie-street-fighter-1153576.md",
+    "src/content/reviews/movie-fall-2-deadpoint-1101412.md",
+    "src/content/reviews/movie-hope-1058424.md"
   ],
   "deferred": [
     {
@@ -249,6 +324,16 @@
       "newlyReviewed": 8,
       "revalidated": 0,
       "articleCorrections": 8,
+      "sitePolicyPageUpdated": false
+    },
+    {
+      "date": "2026-11-24",
+      "batch": "priority batch 3",
+      "sourceMainSha": "aa18dfc0b3c3e2b6f6407ca610ef02793ab2b78a",
+      "articlesChecked": 9,
+      "newlyReviewed": 9,
+      "revalidated": 0,
+      "articleCorrections": 3,
       "sitePolicyPageUpdated": false
     }
   ]

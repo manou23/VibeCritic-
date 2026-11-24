@@ -8,7 +8,6 @@ verdict: "تمنح صيغة المسلسل فرصة لإعادة تقديم تف
 reviewVersion: 1
 type: series
 date: 2026-11-20
-releaseDate: "2026-12-25"
 reviewMode: preview
 poster: "https://img.youtube.com/vi/SJVmeJaS44s/maxresdefault.jpg"
 backdrop: "https://img.youtube.com/vi/SJVmeJaS44s/sddefault.jpg"
