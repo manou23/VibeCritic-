@@ -34,6 +34,20 @@ export const fmtDate = (d: string | Date) =>
     return small.href + ' 500w, ' + large.href + ' 780w';
   } catch { return ''; }
 };
+export const responsivePosterSrcSet = (src?: string) => {
+  if (!src) return '';
+  try {
+    const image = new URL(src);
+    if (image.hostname !== 'image.tmdb.org') return '';
+    const pattern = new RegExp('/w(?:92|154|185|342|500|780|1280|original)/');
+    if (!pattern.test(image.pathname)) return '';
+    const small = new URL(image.href);
+    const medium = new URL(image.href);
+    small.pathname = small.pathname.replace(pattern, '/w185/');
+    medium.pathname = medium.pathname.replace(pattern, '/w342/');
+    return small.href + ' 185w, ' + medium.href + ' 342w';
+  } catch { return ''; }
+};
 export const optimizeImage = (src?: string, kind: 'poster' | 'backdrop' = 'poster') => {
    if (!src) return '';
    try {
