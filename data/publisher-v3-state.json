@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-25T13:17:03.044Z",
+  "updatedAt": "2026-11-25T14:00:03.335Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -3530,168 +3530,190 @@
         "popularity": 741.5328,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-25T13:16:23.775Z",
-      "updatedAt": "2026-11-25T13:17:03.044Z",
+      "updatedAt": "2026-11-25T13:59:18.209Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "Kalki 2898-AD",
-        "type": "movie",
-        "collectedAt": "2026-11-25T13:16:24.253Z",
-        "sourceId": "movie:801688",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/movie/801688",
-        "overview": "In the year 2898 AD, around 6000 years after Kurukshetra war, Ashwatthama gears up for his final battle of redemption at the sign of hope in a dystopian world and Bhairava, a wisecracking and self-interested bounty hunter, tired of the perilous life becomes the hurdle in the process.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/movie/801688",
-            "extract": "In the year 2898 AD, around 6000 years after Kurukshetra war, Ashwatthama gears up for his final battle of redemption at the sign of hope in a dystopian world and Bhairava, a wisecracking and self-interested bounty hunter, tired of the perilous life becomes the hurdle in the process.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Kalki_2898_AD",
-            "extract": "Kalki 2898 AD is a 2024 Indian Telugu-language epic mythological science fiction film written and directed by Nag Ashwin. Produced by Vyjayanthi Movies, it features an ensemble cast including Amitabh Bachchan, Kamal Haasan, Prabhas, Deepika Padukone, Shobana and Disha Patani. Inspired by Hindu scriptures, it serves as the first film in the Kalki Cinematic Universe. Set in a dystopian future in the year 2898 AD in the city of Kashi, the story follows a group on a mission to protect lab subject SUM-80's unborn child, believed to be Kalki, the final incarnation of Vishnu.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Netflix India",
-            "url": "https://www.youtube.com/watch?v=aninoDcPWo4",
-            "extract": "Verified public, embeddable promotional trailer: Kalki 2898 AD (HINDI) | Official Trailer | Prabhas, Deepika P, Kamal Haasan, Amitabh Bachchan",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 215 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "aninoDcPWo4",
-        "youtubeVideoTitle": "Kalki 2898 AD (HINDI) | Official Trailer | Prabhas, Deepika P, Kamal Haasan, Amitabh Bachchan",
-        "youtubeChannel": "Netflix India",
-        "releaseDate": "2024-06-26",
-        "genres": [
-          "Drama",
-          "Action",
-          "Fantasy",
-          "Science Fiction"
-        ],
-        "platforms": [],
-        "cast": [
-          "Amitabh Bachchan",
-          "Prabhas",
-          "Deepika Padukone",
-          "Kamal Haasan",
-          "Saswata Chatterjee",
-          "Shobana",
-          "Rajendra Prasad",
-          "Pasupathy"
-        ],
-        "crew": [
-          "Nag Ashwin",
-          "Nag Ashwin"
-        ],
-        "rating": 6.416,
-        "ratingScale": 10,
-        "votes": 215,
-        "poster": "https://image.tmdb.org/t/p/w780/rstcAnBeCkxNQjNp3YXrF6IP1tW.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/seAIZLEq2Il2psjMUREDbSdRmbu.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "Kalki 2898 AD: طموح أسطوري واسع، وحكم تحكمه حدود الأدلة المتاحة",
-        "summary": "يقدّم Kalki 2898 AD تصوراً يجمع المستقبل الديستوبي بالأسطورة الهندوسية، واضعاً كاشي عام 2898 في قلب حكاية تتقاطع فيها مهمة حماية طفل لم يولد بعد مع مسار أشواتاما نحو التكفير، ومصالح صائد الجوائز بهايرافا. تكمن جاذبية المشروع في هذا التقاء الأنواع وفي اتساع عالمه المعلن، كما تمنحه أسماء مثل أميتاب باتشان وبرابهاس وديبيكا بادوكوني وكمال حسن حضوراً جماعياً لافتاً. لكن الأدلة المتاحة توثق الفكرة والطاقم أكثر مما توثق جودة التنفيذ في الصورة والصوت والإيقاع؛ لذلك تأتي هذه المراجعة صريحة بشأن حدود ما يمكن الجزم به، وتمنح العمل تقديراً إيجابياً حذراً لا يحوّل الطموح إلى إنجاز مفترض.",
-        "verdict": "الحكم النهائي إيجابي بحذر: لدى Kalki 2898 AD أساس تخييلي جذاب، لأن وضع عناصر من الميثولوجيا الهندوسية داخل مستقبل ديستوبي يفتح مجالاً لصراع ذي أبعاد أخلاقية وعالمية، ولأن مسارات حماية الطفل وتكفير أشواتاما ومصلحة بهايرافا تمنح الحكاية أكثر من مدخل. غير أن الطموح الموصوف ليس دليلاً كافياً وحده على نجاح الكتابة أو الصورة أو الموسيقى؛ والمصادر المتاحة هنا لا تقدم تحليلاً مستقلاً مفصلاً لهذه الجوانب. لذا فالتوصية الأنسب هي لمحبي الفانتازيا والخيال العلمي الهندي ومشروعات العوالم الممتدة، مع توقع عمل مثير للاهتمام في فكرته، لا افتراض تفوق فني غير موثق.",
-        "body": "## مقدمة وسياق العمل\n\nصدر Kalki 2898 AD في 26 يونيو 2024، ويُصنّف في بيانات TMDB ضمن الدراما والحركة والفانتازيا والخيال العلمي. وتصفه الموسوعة بأنه فيلم هندي ناطق بالتيلوغو، كتبه وأخرجه ناغ أشوين، وأنه بداية عالم سينمائي يحمل اسم Kalki. هذه حقائق تمنح العمل سياقه، لكنها لا تكفي وحدها للحكم على نجاحه. تستند هذه المراجعة إلى الملخص المنشور، والبيانات الموسوعية، ووجود إعلان رسمي باللغة الهندية على قناة Netflix India؛ وليست ادعاءً بمشاهدة الفيلم أو اختبار تفاصيله مباشرة. لذلك سيكون الحكم واضحاً في تقييم الفكرة وبناء المشروع الموثق، وحذراً حين يتعلق الأمر بجودة تنفيذ لا تصفها المواد المتاحة وصفاً نقدياً مستقلاً.\n\nهذا التفريق مهم خصوصاً لفيلم يعلن من عنوانه عن قفزة زمنية ضخمة ومزج بين مرجع أسطوري ومستقبل متخيل. يمكن تحليل ما تعد به هذه العناصر وما تتيحه من إمكانات، لكن لا يصح استنتاج جودة المؤثرات أو أداء الممثلين أو نجاح المشاهد من مجرد وجود إعلان رسمي أو قائمة أسماء. كما أن متوسط TMDB البالغ 6.416 من عشرة، استناداً إلى 215 صوتاً وقت جمع البيانات، مؤشر جماهيري محدود ومنسوب إلى المنصة؛ لا يمثل تقييماً تحريرياً مستقلاً ولا يحل محل الحكم النقدي هنا.\n\n## الفكرة والقصة أو التجربة\n\nتدور الفكرة المعلنة عام 2898، بعد نحو ستة آلاف سنة من حرب كوروكشيترا، في عالم ديستوبي. ويضع الملخص أشواتاما أمام معركته الأخيرة طلباً للتكفير، عند ظهور أمل جديد، فيما يصبح بهايرافا، صائد الجوائز الذي أنهكته حياة المخاطر، عائقاً في طريق العملية. وتضيف المادة الموسوعية أن الأحداث تقع في كاشي، وأن مجموعة تسعى إلى حماية الجنين الذي تحمله موضوعات المختبر SUM-80، إذ يُعتقد أنه كالكِي، التجسد الأخير لفيشنو.\n\nفي هذه المعطيات نواة درامية غنية: ماضٍ أسطوري بعيد لا يُترك وراء الشخصيات، بل يعود ليؤثر في مستقبل متداعٍ؛ ومهمة حماية تمنح الرهان بعداً يتجاوز النجاة الفردية؛ وشخصية صائد جوائز تبدو مدفوعة بمصلحة ذاتية تقف عند مفترق يتصل بمصير أوسع. ومن هذه المقابلة يمكن استنتاج سؤال أخلاقي جذاب عن إمكان التحول من الانتهازية إلى المسؤولية، لكن ذلك يظل قراءة لاحتمال تتيحه الحبكة، لا تقريراً عن مسار مكتمل أو خاتمة بعينها. كذلك فإن فكرة «الأمل» المرتبط بطفل لم يولد بعد تتيح وصل الأسطورة بالمستقبل، من دون أن نعرف من الملخص وحده مدى تعقيد معالجة هذا الوصل أو وضوح قواعد العالم.\n\n## السرد والشخصيات أو تصميم اللعب\n\nلأنه فيلم، لا ينطبق عليه تحليل تصميم اللعب. أما سردياً، فالمعلومات المتاحة تحدد محوراً مركزياً وشخصيات ذات وظائف متباينة: أشواتاما يحمل عبء التكفير، وبهايرافا يدخل بوصفه صائد جوائز مصلحياً يعوق المهمة، وSUM-80 ترتبط بالطفل الذي تدور حوله الحماية. هذا توزيع يتيح مواجهة بين الدافع الشخصي والواجب، وبين ذاكرة الماضي واحتمال المستقبل. كما أن تعدد الشخصيات المذكورة في قائمة الطاقم يشير إلى عمل جماعي واسع، لكنه لا يثبت أن لكل شخصية مساحة درامية متوازنة.\n\nنقطة القوة المحتملة في هذا الترتيب هي أن الصراع لا يعتمد على لغز واحد؛ فثمة مهمة، وتاريخ أسطوري، وشخصية مترددة المصالح، ووعد بمستقبل جديد. أما موضع التحفظ فهو أن الملخص لا يوضح كيف تتطور دوافع الشخصيات أو كيف تتشابك خطوطها، ولا يقدم شواهد على الحوار أو عمق التحولات. لذلك لا يمكن الجزم بأن بهايرافا يتغير فعلاً، أو أن أشواتاما يحصل على قوس درامي مقنع، أو أن شخصية SUM-80 تتجاوز وظيفتها في تحريك الحبكة. التقييم المنصف هنا يثني على إمكانات البناء ولا ينسب إليها نجاحاً تفصيلياً غير موثق.\n\n## الإخراج والجوانب الفنية\n\nتنسب البيانات الموسوعية الكتابة والإخراج إلى ناغ أشوين، وهي معلومة ذات صلة لأن جمع المهمتين يجعل اتساق الرؤية بين القصة والعالم المتخيل سؤالاً مهماً. إلا أن وجود اسم المخرج لا يكشف وحده كيف أدار المشاهد أووازن بين المرجعيات الأسطورية والخيال العلمي. كما لا توفر الأدلة المتاحة مراجعات مستقلة تفصيلية أو وصفاً موثقاً لتقنيات التنفيذ. لذا لا يصح تحويل ضخامة الفكرة إلى حكم تلقائي بأن الإخراج متقن، مثلما لا يصح اعتبار غياب التفاصيل دليلاً على ضعف العمل. ما يمكن تقديره هو وضوح التحدي الإبداعي: صياغة عالم مستقبلي ذي جذور دينية وثقافية، والمحافظة على قابلية تتبع صراعه الإنساني وسط اتساعه.\n\n## الصورة والهوية البصرية\n\nيعد الجمع بين كاشي في المستقبل، والديستوبيا، والخيال العلمي، والمرجعية الميثولوجية أساساً لهوية بصرية محتملة ومميزة؛ فهو يفتح باب التباين بين الموروث والتقنية، وبين فكرة الأمل وواقع عالم قاسٍ. لكن هذه استنتاجات عن المفهوم، لا وصف لمشاهد أو ألوان أو تصميمات ظهرت فعلاً. وجود إعلان رسمي موثق يثبت توفر مادة ترويجية، ولا يكفي وحده لإثبات مستوى التصوير أو المؤثرات أو اتساق التصميم. لذلك تبدو الهوية على مستوى الفكرة واعدة، بينما يظل الحكم على إنجازها البصري الفعلي محدود الثقة. الدرجة تعكس هذا التحفظ، لا اتهاماً للفيلم بخلل بصري.\n\n## الصوت والموسيقى والأداء\n\nتضم قائمة الممثلين أميتاب باتشان وبرابهاس وديبيكا بادوكوني وكمال حسن وشوبانا وغيرهم، وهو حضور معروف ومتعدد يمنح العمل ثقلاً تمثيلياً على مستوى الاختيار. لكن أسماء الممثلين لا تثبت جودة الأداء، ولا تتضمن المصادر وصفاً لمشاهد محددة أو لطبيعة الشخصيات الصوتية. كذلك لا تتوافر هنا معلومات موثقة عن المؤلف الموسيقي أو تصميم الصوت أو الأغاني، ولذلك سيكون اختلاق انطباع عن الموسيقى أو وضوح الحوار تجاوزاً للأدلة. الدرجة المحافظة في هذا المحور تعني أن المادة المتاحة لا تسمح بتقييم حاسم، لا أن الصوت رديء. يستحق العمل حكماً أفضل توثيقاً حين تتوافر شواهد مستقلة على التنفيذ السمعي والأداء.\n\n## الإيقاع والبناء وتنوع المحتوى\n\nتجمع الحبكة المعلنة بين خط التكفير وخط حماية الطفل وخط بهايرافا المصلحي، فيما يضيف إطار العالم الديستوبي بعداً تاريخياً ومستقبلياً. هذا التنوع يمنح البناء مجالاً للتبدل بين الصراع الشخصي والرهان الجماعي، لكنه قد يضع على السرد عبئاً في تقديم قواعد العالم والشخصيات معاً. ذلك احتمال تحليلي نابع من كثافة العناصر، لا ادعاء بوجود حشو أو إيقاع متعثر. لا تتضمن البيانات مدة الفيلم أو وصفاً لبنية فصوله أو إيقاع مشاهده، لذا لا يمكن قياس التوازن بين التمهيد والتصعيد. التقدير هنا متوسط مائل إلى الإيجاب: الفكرة تعد بتنوع، لكن نجاح توزيع هذا التنوع غير مثبت في الأدلة المتاحة.\n\n## نقاط القوة\n\nأبرز قوة موثقة هي تركيب الفكرة: مستقبل بعيد متصل بحرب أسطورية سابقة، بدلاً من خيال علمي منفصل عن مرجعيته الثقافية. ويمنح ربط الطفل المنتظر بالأمل والحماية الحبكة رهانا واضح الاتجاه، فيما يضيف وضع صائد جوائز أناني في مسار المهمة احتمالاً لصراع بين المنفعة والواجب. كذلك فإن اجتماع الفانتازيا والدراما والحركة والخيال العلمي يحدد طموحاً نوعياً واسعاً، وتمنح قائمة الممثلين المشروع حضوراً جماعياً لافتاً. أما بدء عالم سينمائي، كما تذكر الموسوعة، فيفتح مجالاً للتوسع؛ وقيمته ستعتمد على استقلال الفيلم وقدرته على إغلاق قوسه، وهي أمور لا تحسمها حقيقة كونه بداية سلسلة.\n\n## نقاط الضعف\n\nالتحفظ الأهم ليس عيباً مثبتاً داخل الفيلم، بل محدودية الأدلة التفصيلية اللازمة للحكم على التنفيذ. لا نملك هنا أساساً موثقاً لتقييم جودة المؤثرات، أو تماسك الحوار، أو كفاءة الأداء، أو دقة تصميم الصوت. كما أن كثرة المرجعيات والشخصيات تطرح خطراً بنيوياً محتملاً: أن تزاحم صناعة العالم التطور العاطفي، أو أن تتحول الشخصيات إلى أدوات لشرح الأسطورة. لا يجوز القول إن ذلك حدث فعلاً بلا شواهد. ومن جهة أخرى، فإن الاعتماد على قصة تمهد لعالم سينمائي قد يثير سؤالاً مشروعاً عن اكتمال الحكاية داخل الفيلم نفسه، لكن المصادر لا تجيب عنه. هذه نقاط ضعف في إمكانية التحقق والتقييم، وليست أحكاماً مختلقة على مشاهد بعينها.\n\n## لمن يناسب هذا العمل؟\n\nيناسب الفيلم، بحسب فرضيته المعلنة، من ينجذبون إلى الفانتازيا الهندية والقصص التي تمزج الميثولوجيا بالخيال العلمي، وإلى العوالم الديستوبية ذات الرهانات الجماعية. وقد يجذب أيضاً من يفضلون أعمالاً تضم طاقماً جماعياً وتؤسس لعالم قابل للتوسع، مع التنبيه إلى أن هذا التوسع لا يضمن وحده إشباعاً سردياً. أما من يبحث عن مراجعة موثقة بالتفصيل لجودة الموسيقى أو المؤثرات أو الأداء، فلن يجد في الأدلة الحالية ما يكفي لتوصية مبنية على تلك الجوانب. التوصية إذن موجهة إلى المهتم بالفكرة والنوع، مع استعداد لتقييم التنفيذ بنفسه، لا إلى من يريد ضماناً مسبقاً بأن كل عناصر الإنتاج ناجحة.\n\n## الحكم النهائي\n\nKalki 2898 AD مشروع طموح تملك فكرته ما يكفي لإثارة الفضول: أسطورة تعود في مستقبل ديستوبي، وطفل يمثل أفقاً للخلاص، وشخصيات تتقاطع مصالحها مع مهمة أكبر منها. تلك عناصر تمنحه أساساً سردياً واعداً وتميزاً في المزج النوعي، لكنها لا تعوض نقص الشواهد المتاحة عن جودة الصورة والصوت والإيقاع أو اكتمال التحولات الدرامية. لذلك يأتي الحكم إيجابياً باعتدال، ودرجات المحاور تتجنب مكافأة الطموح على أنه إنجاز مكتمل. أوصي به لمن يستهويه هذا التلاقي بين الثقافة الهندية والخيال العلمي، مع إبقاء التوقعات النقدية مفتوحة حتى تتاح أدلة أو مراجعات تنفيذية أوسع.",
-        "scores": {
-          "story": 7.6,
-          "visuals": 7,
-          "sound": 5.5,
-          "pacing": 6.8
-        },
-        "pros": [
-          "يمزج بوضوح بين مستقبل ديستوبي ومرجعية أسطورية مرتبطة بحرب كوروكشيترا.",
-          "يمنح حماية الطفل الذي يُعتقد أنه كالكِي رهانا مركزياً مفهوماً، ويصلها بفكرة الأمل.",
-          "يقابل مهمة أشواتاما نحو التكفير بمصلحة بهايرافا الشخصية، ما يتيح صراعاً أخلاقياً واعداً.",
-          "يجمع بين الفانتازيا والدراما والحركة والخيال العلمي وفق تصنيف العمل الموثق.",
-          "يضم طاقماً جماعياً بارزاً، ويؤسس، بحسب المصدر الموسوعي، لعالم سينمائي قابل للتوسع."
-        ],
-        "cons": [
-          "المصادر المتاحة لا توثق بالتفصيل جودة المؤثرات أو التصوير، لذلك يبقى الحكم البصري محدود الثقة.",
-          "لا تتوفر معلومات كافية عن الموسيقى أو تصميم الصوت أو أداء الممثلين لتقييمها بثقة.",
-          "اتساع العالم وتعدد خطوطه يطرحان احتمال مزاحمة بناء الشخصيات، لكن لا توجد أدلة كافية لحسم ذلك.",
-          "لا توضح الملخصات المتاحة مدى اكتمال الحكاية داخل الفيلم أو توازن إيقاعها."
-        ],
-        "title": "Kalki 2898-AD",
-        "type": "movie",
-        "sourceId": "movie:801688",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/movie/801688",
-        "sourceRating": 6.416,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 215,
-        "sourceRatingCheckedAt": "2026-11-25T13:16:24.253Z",
-        "audienceScore": 6.4,
-        "releaseDate": "2024-06-26",
-        "poster": "https://image.tmdb.org/t/p/w780/rstcAnBeCkxNQjNp3YXrF6IP1tW.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/seAIZLEq2Il2psjMUREDbSdRmbu.jpg",
-        "genres": [
-          "Drama",
-          "Action",
-          "Fantasy",
-          "Science Fiction"
-        ],
-        "platforms": [],
-        "cast": [
-          "Amitabh Bachchan",
-          "Prabhas",
-          "Deepika Padukone",
-          "Kamal Haasan",
-          "Saswata Chatterjee",
-          "Shobana",
-          "Rajendra Prasad",
-          "Pasupathy"
-        ],
-        "crew": [
-          "Nag Ashwin",
-          "Nag Ashwin"
-        ],
-        "tags": [
-          "Drama",
-          "Action",
-          "Fantasy",
-          "Science Fiction"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/movie/801688",
-            "extract": "In the year 2898 AD, around 6000 years after Kurukshetra war, Ashwatthama gears up for his final battle of redemption at the sign of hope in a dystopian world and Bhairava, a wisecracking and self-interested bounty hunter, tired of the perilous life becomes the hurdle in the process.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Kalki_2898_AD",
-            "extract": "Kalki 2898 AD is a 2024 Indian Telugu-language epic mythological science fiction film written and directed by Nag Ashwin. Produced by Vyjayanthi Movies, it features an ensemble cast including Amitabh Bachchan, Kamal Haasan, Prabhas, Deepika Padukone, Shobana and Disha Patani. Inspired by Hindu scriptures, it serves as the first film in the Kalki Cinematic Universe. Set in a dystopian future in the year 2898 AD in the city of Kashi, the story follows a group on a mission to protect lab subject SUM-80's unborn child, believed to be Kalki, the final incarnation of Vishnu.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Netflix India",
-            "url": "https://www.youtube.com/watch?v=aninoDcPWo4",
-            "extract": "Verified public, embeddable promotional trailer: Kalki 2898 AD (HINDI) | Official Trailer | Prabhas, Deepika P, Kamal Haasan, Amitabh Bachchan",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "aninoDcPWo4",
-        "youtubeVideoTitle": "Kalki 2898 AD (HINDI) | Official Trailer | Prabhas, Deepika P, Kamal Haasan, Amitabh Bachchan",
-        "reviewMode": "review",
-        "score": 6.8
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 5821,
       "articlePath": "src/content/reviews/movie-kalki-2898-ad-801688.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-kalki-2898-ad-801688/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-kalki-2898-ad-801688/",
+      "publishedAt": "2026-11-25T13:59:18.209Z"
+    },
+    "game:292844": {
+      "key": "game:292844",
+      "type": "game",
+      "id": "292844",
+      "title": "Hollow Knight: Silksong",
+      "item": {
+        "type": "game",
+        "id": "292844",
+        "name": "Hollow Knight: Silksong",
+        "date": "2025-09-04",
+        "popularity": 1701,
+        "source": "RAWG"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-25T13:59:22.076Z",
+      "updatedAt": "2026-11-25T14:00:03.335Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Hollow Knight: Silksong",
+        "type": "game",
+        "collectedAt": "2026-11-25T13:59:22.708Z",
+        "sourceId": "game:292844",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/hollow-knight-silksong",
+        "overview": "Hollow Knight: Silksong is the epic sequel to Hollow Knight, the epic action-adventure of bugs and heroes. As the lethal hunter Hornet, journey to all-new lands, discover new powers, battle vast hordes of bugs and beasts and uncover ancient secrets tied to your nature and your past.",
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/hollow-knight-silksong",
+            "extract": "Hollow Knight: Silksong is the epic sequel to Hollow Knight, the epic action-adventure of bugs and heroes. As the lethal hunter Hornet, journey to all-new lands, discover new powers, battle vast hordes of bugs and beasts and uncover ancient secrets tied to your nature and your past.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Hollow_Knight%3A_Silksong",
+            "extract": "Hollow Knight: Silksong is a 2025 Metroidvania game developed and published by Australian independent developer Team Cherry. The sequel to Hollow Knight (2017), the story follows Hallownest's former princess-protector, Hornet—a major secondary character in Hollow Knight—after she is captured and transported to the unfamiliar land of Pharloom. Gameplay sees the player navigating through the interconnected areas of this kingdom, where they must battle enemies, traverse platforming challenges, and complete quests using various skills, tools, and movement mechanics.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — PlayStation Canada",
+            "url": "https://www.youtube.com/watch?v=-qTCMb7xhzc",
+            "extract": "Verified public, embeddable promotional trailer: Hollow Knight: Silksong - Release Trailer | PS5 & PS4 Games",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from RAWG with 267 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "-qTCMb7xhzc",
+        "youtubeVideoTitle": "Hollow Knight: Silksong - Release Trailer | PS5 & PS4 Games",
+        "youtubeChannel": "PlayStation Canada",
+        "releaseDate": "2025-09-04",
+        "genres": [
+          "Action",
+          "Adventure",
+          "Indie",
+          "Platformer"
+        ],
+        "platforms": [
+          "Xbox Series S/X",
+          "Xbox One",
+          "PlayStation 5",
+          "PlayStation 4",
+          "PC",
+          "Linux",
+          "macOS",
+          "Nintendo Switch"
+        ],
+        "developers": [
+          "Team Cherry"
+        ],
+        "rating": 4.37,
+        "ratingScale": 5,
+        "votes": 267,
+        "poster": "https://media.rawg.io/media/games/27c/27cd8b7dead05a870f8a514a9a1915ad.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "Hollow Knight: Silksong — طموح واضح، وحكم محدود بما تثبته الأدلة",
+        "summary": "تقدّم Hollow Knight: Silksong أساساً سردياً وتصميمياً واعداً: بطلة معروفة، أرض جديدة اسمها Pharloom، ومزيج موثّق من الاستكشاف والقتال وتحديات المنصات والمهام. صدرت اللعبة في 4 سبتمبر 2025، وطوّرتها ونشرتها Team Cherry بوصفها تتمةً لـ Hollow Knight. لكن ملف الأدلة المتاح يصف الفكرة ونوع اللعب ولا يقدّم مراجعات مستقلة تفصيلية أو توثيقاً كافياً لجودة التنفيذ البصري والصوتي أو إيقاع التجربة. لذلك تفصل هذه المراجعة بين الوقائع وما يمكن استنتاجه منها، ولا تتظاهر بخبرة لعب مباشرة. متوسط RAWG البالغ 4.37 من 5، بناءً على 267 صوتاً، مؤشر جماهيري ثانوي لا يحل محل الحكم التحريري. الخلاصة: مشروع ذو مقومات نوعية قوية، لكن الثقة في تقييم تفاصيله محدودة بسبب ضيق الأدلة.",
+        "verdict": "تبدو Hollow Knight: Silksong، وفق الوقائع المتاحة، تتمةً ذات أساس جذاب: تنقل Hornet إلى مملكة جديدة، وتبني التجربة حول الاستكشاف والقتال والمنصات والمهام، مع وعد بكشف أسرار مرتبطة بماضي البطلة وطبيعتها. هذه عناصر تمنح العمل هوية أوضح من مجرد تكرار عنوان سابق، لكنها لا تثبت وحدها أن السرد متماسك أو أن القتال والإيقاع متنوعان على امتداد اللعبة. وما ينقص ملف الأدلة ليس تفصيلاً هامشياً؛ إذ لا يحتوي وصفاً مستقلاً كافياً للصورة أو الموسيقى أو الأداء أو جودة التنفيذ. لذا فالحكم إيجابي بحذر، لا ادعاء بأنه تقييم نابع من تجربة مباشرة. نوصي بها مبدئياً لمحبي ألعاب المغامرة والمنصات ذات المناطق المترابطة، مع التنبيه إلى أن هذا الترشيح يستند إلى بنية النوع والملخص الموثق، لا إلى شهادة لعب شخصية. الدرجة النهائية متحفظة، وثقتها أقل خصوصاً في المحاور الفنية التي لا تسندها مواد وصفية كافية.",
+        "body": "## مقدمة وسياق العمل\nHollow Knight: Silksong لعبة مغامرة وحركة ومنصات مستقلة، طوّرتها ونشرتها Team Cherry، وصدرت في 4 سبتمبر 2025. وهي تتمة لـ Hollow Knight الصادرة عام 2017، لكن معلومات الملف لا تسمح بوصفها إعادة مباشرة لأحداث اللعبة الأولى أو الجزم بدرجة اعتماد قصتها على معرفة سابقتها. بطلتها Hornet، التي يعرّفها المصدر الموسوعي بأنها أميرة Hallownest السابقة وحاميتها، فيما يصفها ملخص RAWG بالصائدة الفتاكة. هذان توصيفان موثّقان للشخصية، لا حكم على أدائها داخل اللعبة. كذلك يثبت وجود مقطع ترويجي رسمي بعنوان Release Trailer على قناة PlayStation Canada، لكنه لا يقدّم بذاته تحليلاً مستقلاً للمحتوى. لذلك تتناول هذه المراجعة ما تثبته المصادر، وتفصل ذلك عن الاستنتاجات التي تتيحها بنية العمل المعلنة.\n\n## الفكرة والقصة أو التجربة\nالمحور السردي الموثق بسيط ومثير للاهتمام: تُختطف Hornet وتُنقل إلى Pharloom، أرض غير مألوفة، ثم تمضي في مملكة مترابطة، وتواجه أعداء وتخوض تحديات منصات ومهاماً باستخدام مهارات وأدوات وحركات متنوعة. ويضيف ملخص RAWG وعداً بكشف أسرار قديمة ترتبط بطبيعتها وماضيها. الانتقال من شخصية معروفة في الجزء الأول إلى بطلة تتصدر الحكاية يمنح التتمة مدخلاً واضحاً؛ فالمكان الجديد يتيح تقديم عالم مستقل، بينما يخلق ماضي Hornet صلة محتملة بما سبق. لكن كلمة «وعد» مهمة هنا: لا تتضمن الأدلة وصفاً لمسار الأحداث أو بنية المهام أو كيفية توزيع الأسرار، ولا تكشف إن كانت القصة تُروى بإحكام. يمكن تقدير وضوح الفرضية، لا الحكم على تحققها الدرامي.\n\n## السرد والشخصيات أو تصميم اللعب\nتسمح الوقائع برسم ملامح النوع، لا بتعداد أنظمة تفصيلية غير موثقة. اللعب يجمع التنقل بين مناطق متصلة، ومواجهات مع الأعداء، وتحديات منصات، ومهاماً، مع توظيف مهارات وأدوات وحركات. اجتماع هذه العناصر يضع الاستكشاف والحركة والقتال في قلب التصميم، ويتيح نظرياً أن تكون معرفة المكان وتطوير قدرات البطلة جزءاً من التقدم؛ إلا أن هذا الاحتمال استنتاج من الوصف العام وليس تأكيداً على آلية بعينها. كما أن اختيار Hornet، بدلاً من تقديم بطل غير مرتبط بالسلسلة، يمنح التتمة نقطة اتصال سردية مع جمهور الجزء السابق. لا توجد في الملف تفاصيل مستقلة عن شخصيات مساندة أو حواراتها، ولا عن توازن الأدوات أو صعوبة المواجهات. لذا لا يصح اختراع قراءة لشخصيات ثانوية أو وصف إحساس التحكم، ويمكن فقط القول إن أساس التجربة المعلن متماسك النوع والملامح.\n\n## الإخراج والجوانب الفنية\nيظهر من البيانات أن Team Cherry استوديو مستقل أسترالي، وأن المشروع صُمم كتتمة مغامرات وحركة ضمن عالم جديد. أما الحديث عن قرارات الإخراج في المشاهد، أو ترتيب لحظات الكشف، أو جودة الانتقال بين القصة واللعب، فلا تسنده تفاصيل كافية في المصادر. المقطع الرسمي الموثق يثبت وجود مادة ترويجية للإصدار، لكنه لا يورد وصفاً لمحتواها يسمح بتحليل تحريرها أو إيقاعها أو ما تكشفه من مشاهد. ومن ثم لا أستنتج من مجرد وجود إعلان أن التنفيذ الإخراجي ناجح، ولا أتعامل مع عبارة «ملحمي» في وصف RAWG بوصفها تقويماً نقدياً؛ فهي جزء من الصياغة التعريفية للمصدر. الحكم المنصف هنا أن الإطار الإبداعي واضح، بينما جودة إخراجه الفعلية تبقى غير قابلة للقياس بثقة من ملف الأدلة وحده.\n\n## الصورة والهوية البصرية\nلا يحتوي الملف على وصف تحليلي لتصميم الشخصيات أو الأعداء أو الألوان أو البيئات، ولا على مراجعة مستقلة تفصل جودة الرسوم أو وضوح الحركة على الشاشة. لذلك لا يمكنني أن أنسب إلى اللعبة مشاهد بعينها، أو أصف تنوعاً بصرياً، أو أقارن أسلوبها الفني بالجزء الأول كما لو أن هذه التفاصيل موثقة هنا. المتاح هو أن الرحلة تقع في Pharloom، وهي أرض جديدة بالنسبة إلى Hornet، وأن اللعبة تتضمن مناطق مترابطة وأعداء وتحديات منصات. يفتح ذلك مجالاً لتوقع هوية مكانية تتصل بالاستكشاف، لكنه لا يثبت كيف صُممت تلك المناطق بصرياً أو مدى تميزها. الدرجة الواردة لهذا المحور متحفظة ومنخفضة الثقة بسبب محدودية الشواهد، لا لأنها تقرير بأن الرسوم متوسطة الجودة. وهذه نقطة جوهرية: نقص الوصف ليس دليلاً على نقص الفن، لكنه يمنع مراجعاً أميناً من منحه إشادة محددة غير مسندة.\n\n## الصوت والموسيقى والأداء\nلا تتضمن الأدلة معلومات عن الملحنين أو الآلات أو المقاطع الموسيقية أو تصميم المؤثرات، ولا بيانات عن التمثيل الصوتي أو الأداء الحواري. وبناءً على ذلك، لا يصح القول إن الموسيقى تعزز أجواء Pharloom، أو إن المؤثرات تميز أنواع المواجهات، أو إن الأداء يمنح Hornet حضوراً معيناً؛ فكل واحدة من هذه العبارات تحتاج إلى مادة غير موجودة في الملف. حتى وجود مقطع إطلاق رسمي لا يكفي وحده لإسناد حكم على موسيقى اللعبة أو صوتها، ما دام الوصف المرفق لا يحدد محتواه الصوتي. لهذا تأتي درجة الصوت كتقدير شديد التحفظ لمستوى ما تسمح الأدلة بتقييمه، لا كادعاء بأن العمل أخفق في هذا الجانب. ويبقى هذا المحور تحديداً من أكثر جوانب المراجعة حاجةً إلى مصادر وصفية أو نقدية مستقلة قبل إصدار حكم واثق على الجودة الفنية.\n\n## الإيقاع والبناء وتنوع المحتوى\nالمعطيات الموثقة تشير إلى مناطق مترابطة، وقتال، وتحديات منصات، ومهام، واستخدام مهارات وأدوات وحركات. يبرر ذلك توقع تنوع في أنشطة اللعب، ويمنح البناء أكثر من وظيفة واحدة؛ فاللاعب، بحسب الوصف، لا يقتصر على القتال وحده. لكن وجود مكونات مختلفة لا يثبت حسن توزيعها أو تناسب صعوبتها أو خلوها من التكرار. لا تتوفر معلومات عن طول اللعبة، أو ترتيب المناطق، أو وتيرة فتح المهارات، أو كثافة المهام، ولذلك لا يمكن الحكم على منحنى التصاعد أو على مواضع التباطؤ. أقيّم فكرة البناء على أنها واعدة ومناسبة لنوع المغامرة والمنصات، مع تحفظ واضح بشأن التنفيذ الفعلي. ودرجة الإيقاع لا ينبغي أن تُقرأ بوصفها شهادة تجربة؛ إنها تقيس ما يمكن استنتاجه بحذر من تنوع الأنشطة المعلن، لا من اختبار عملي لتدفقها.\n\n## نقاط القوة\nأبرز ما يدعم المشروع في الأدلة هو وضوح ركائزه: بطلة ذات صلة بالجزء السابق، ومملكة جديدة تفتح مجالاً لاستكشاف مستقل، ومزيج معلن من الحركة والقتال والمنصات والمهام. كما أن ربط الأسرار بماضي Hornet وطبيعتها يهيئ محوراً سردياً يتجاوز مجرد الانتقال إلى مكان آخر، من دون أن يثبت مسبقاً نجاح كشفه. ويُحسب للفرضية أيضاً أنها تضع الشخصية في موقع مركزي، بدلاً من الاكتفاء بتقديم معلومات عامة عن العالم. هذه نقاط قوة في التصور والبناء المعلن؛ أما تحويلها إلى مشاهد مؤثرة أو أنظمة لعب متميزة فيظل مسألة لا تحسمها المصادر المتاحة.\n\n- بطلة محددة الصلة بعالم السلسلة، مع انتقال قصصي إلى Pharloom.\n- تنوع معلن بين الاستكشاف والقتال والمنصات والمهام.\n- لغز مرتبط بماضي Hornet وطبيعتها يمنح الفرضية اتجاهاً سردياً.\n- مناطق مترابطة تدعم تصوراً متماسكاً لتجربة مغامرة.\n\n## نقاط الضعف\nالتحفظ الأساسي لا يتعلق بعيب موثق في اللعبة، بل بما لا تتيحه الأدلة من تقييم تفصيلي لأدائها. لا نجد وصفاً مستقلاً يكفي للحكم على جودة السرد أو الشخصيات، ولا معلومات محددة عن الصوت والصورة، كما أن ذكر عناصر اللعب لا يكشف مدى تنوعها الفعلي أو إيقاعها. وهذا يحد من قدرة المراجعة على تقديم حكم نهائي دقيق في تلك الجوانب، حتى مع ضرورة إصدار تقييم تحريري. ينبغي عدم تحويل هذا النقص إلى اتهام للعبة بأنها ضعيفة؛ لكنه سبب وجيه لخفض الثقة في الدرجات وتجنب توصية قاطعة مبنية على صفات غير مثبتة.\n\n- لا توجد تفاصيل موثقة كافية لتقييم الموسيقى والمؤثرات والأداء الصوتي.\n- وصف الصورة لا يتجاوز تحديد المكان والأنشطة؛ لذا يصعب قياس الهوية البصرية فعلياً.\n- لا يقدم الملف شواهد عن جودة الحوار أو تطور الشخصيات أو نجاح كشف الأسرار.\n- تنوع الأنشطة المعلن لا يثبت توازنها أو جودة توزيعها على طول التجربة.\n\n## لمن يناسب هذا العمل؟\nيبدو العمل مرشحاً مناسباً لمن يبحث عن مغامرة وحركة ومنصات، ويستمتع بفكرة استكشاف مملكة مترابطة تجمع القتال والمهام وتحديات الحركة. كما أن من يعرف Hollow Knight قد يجد في عودة Hornet وارتباطها السابق مدخلاً سردياً ذا صلة، وإن كانت الأدلة لا تحدد مقدار المعرفة السابقة اللازمة لفهم القصة. أما من يطلب تقييماً موثقاً لتجربة الصوت أو عمق الشخصيات أو مستوى الصعوبة، فعليه التعامل مع هذه المراجعة بوصفها محدودة في تلك المحاور، لأن المعلومات المقدمة لا تحسمها. بيانات المنصات تشمل Xbox Series S/X وXbox One وPlayStation 5 وPlayStation 4 وPC وLinux وmacOS وNintendo Switch، ما يوضح نطاق الإتاحة المذكور في الملف من دون أن يثبت تفاوت الأداء بين الأجهزة.\n\n## الحكم النهائي\nHollow Knight: Silksong تملك، وفق ما يمكن التحقق منه، أساساً واضحاً ومقنعاً النوع: بطلة معروفة تنتقل إلى Pharloom، وعالم مترابط يجمع الاستكشاف والقتال والمنصات والمهام، مع أسرار مرتبطة بالماضي. هذه ركائز جيدة لتتمة مغامرات، لكنها ليست بديلاً عن تقييم جودة التنفيذ، الذي لا توفره الأدلة بالتفصيل. لذلك يأتي الحكم إيجابياً بحذر، مع درجة متوسطة إلى جيدة للمحاور التي يمكن استنتاجها، ودرجات فنية منخفضة الثقة حين تغيب الشواهد. نوصي بها مبدئياً لمحبي هذا النمط ولمن ينجذب إلى استكمال حكاية Hornet، لا بوصف ذلك ضماناً لتجربة مثالية أو ادعاءً بأننا لعبناها. متوسط RAWG البالغ 4.37 من 5، استناداً إلى 267 صوتاً، إشارة جماهيرية ثانوية فقط، ولا يحل محل هذا الحكم التحريري ولا يثبت جودة عنصر بعينه.",
+        "scores": {
+          "story": 7,
+          "visuals": 6,
+          "sound": 6,
+          "pacing": 7
+        },
+        "pros": [
+          "Hornet بطلة مرتبطة بالجزء السابق، وتنتقل قصتها إلى أرض جديدة هي Pharloom.",
+          "الفرضية تربط الأسرار بماضي البطلة وطبيعتها، بما يهيئ محوراً سردياً واضحاً.",
+          "اللعب الموصوف يجمع الاستكشاف والقتال وتحديات المنصات والمهام.",
+          "المناطق المترابطة تمنح تجربة المغامرة إطاراً مكانياً واضحاً."
+        ],
+        "cons": [
+          "المصادر لا تتيح حكماً موثوقاً على تطور الشخصيات أو جودة السرد الفعلي.",
+          "لا توجد أدلة تفصيلية كافية لتقييم الصورة أو الموسيقى أو المؤثرات والأداء الصوتي.",
+          "تنوع الأنشطة المعلن لا يثبت توازنها أو إيقاعها أو خلوها من التكرار.",
+          "الدرجات الفنية والإيقاعية منخفضة الثقة لغياب مراجعات مستقلة وصفية كافية."
+        ],
+        "title": "Hollow Knight: Silksong",
+        "type": "game",
+        "sourceId": "game:292844",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/hollow-knight-silksong",
+        "sourceRating": 4.37,
+        "sourceRatingScale": 5,
+        "sourceVoteCount": 267,
+        "sourceRatingCheckedAt": "2026-11-25T13:59:22.708Z",
+        "audienceScore": 8.7,
+        "releaseDate": "2025-09-04",
+        "poster": "https://media.rawg.io/media/games/27c/27cd8b7dead05a870f8a514a9a1915ad.jpg",
+        "backdrop": "https://media.rawg.io/media/games/27c/27cd8b7dead05a870f8a514a9a1915ad.jpg",
+        "genres": [
+          "Action",
+          "Adventure",
+          "Indie",
+          "Platformer"
+        ],
+        "platforms": [
+          "Xbox Series S/X",
+          "Xbox One",
+          "PlayStation 5",
+          "PlayStation 4",
+          "PC",
+          "Linux",
+          "macOS",
+          "Nintendo Switch"
+        ],
+        "cast": [],
+        "crew": [],
+        "tags": [
+          "Action",
+          "Adventure",
+          "Indie",
+          "Platformer"
+        ],
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/hollow-knight-silksong",
+            "extract": "Hollow Knight: Silksong is the epic sequel to Hollow Knight, the epic action-adventure of bugs and heroes. As the lethal hunter Hornet, journey to all-new lands, discover new powers, battle vast hordes of bugs and beasts and uncover ancient secrets tied to your nature and your past.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Hollow_Knight%3A_Silksong",
+            "extract": "Hollow Knight: Silksong is a 2025 Metroidvania game developed and published by Australian independent developer Team Cherry. The sequel to Hollow Knight (2017), the story follows Hallownest's former princess-protector, Hornet—a major secondary character in Hollow Knight—after she is captured and transported to the unfamiliar land of Pharloom. Gameplay sees the player navigating through the interconnected areas of this kingdom, where they must battle enemies, traverse platforming challenges, and complete quests using various skills, tools, and movement mechanics.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — PlayStation Canada",
+            "url": "https://www.youtube.com/watch?v=-qTCMb7xhzc",
+            "extract": "Verified public, embeddable promotional trailer: Hollow Knight: Silksong - Release Trailer | PS5 & PS4 Games",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "-qTCMb7xhzc",
+        "youtubeVideoTitle": "Hollow Knight: Silksong - Release Trailer | PS5 & PS4 Games",
+        "reviewMode": "review",
+        "score": 6.6
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 6270,
+      "articlePath": "src/content/reviews/game-hollow-knight-silksong-292844.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-hollow-knight-silksong-292844/"
     }
   },
   "providers": {},
@@ -3727,9 +3749,9 @@
       "tokens": 78344
     },
     "2026-11-25": {
-      "articles": 3,
-      "requests": 6,
-      "tokens": 18332
+      "articles": 4,
+      "requests": 8,
+      "tokens": 24602
     }
   },
   "history": []
