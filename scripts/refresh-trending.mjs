@@ -50,8 +50,8 @@ export function buildTrendingData({ tmdbItems = [], gameItems = [], now = new Da
   for (let position = 0; position < 3; position++) {
     for (const group of groups) if (group[position]) output.push({ ...group[position], trendRank: position + 1 });
   }
-  if (output.length < 3 || !movies.length || !series.length || !games.length) {
-    throw new Error('Weekly trend refresh refused: at least one of the three source categories returned insufficient valid records.');
+  if (movies.length !== 3 || series.length !== 3 || games.length !== 3 || output.length !== 9) {
+    throw new Error('Weekly trend refresh refused: expected exactly 3 valid movies, 3 valid series, and 3 valid games; existing snapshot was not changed.');
   }
   return output.map((item, index) => ({
     ...item, updatedAt: now, snapshotWindow: 'weekly', rank: index + 1

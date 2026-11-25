@@ -15,5 +15,6 @@ assert.deepEqual(data.map(x => x.rank), [1,2,3,4,5,6,7,8,9]);
 assert.ok(data.every(x => x.updatedAt === now && x.snapshotWindow === 'weekly'));
 assert.equal(data.find(x => x.type === 'game').trendConfidence, 'متوسط');
 assert.equal(data.find(x => x.type === 'game').sourceMetricName, 'RAWG added count (cumulative snapshot)');
-assert.throws(() => buildTrendingData({ tmdbItems: [], gameItems }), /insufficient valid records/);
+assert.throws(() => buildTrendingData({ tmdbItems: [], gameItems }), /expected exactly 3 valid movies, 3 valid series, and 3 valid games/);
+assert.throws(() => buildTrendingData({ tmdbItems, gameItems: gameItems.slice(0, 1) }), /expected exactly 3 valid movies, 3 valid series, and 3 valid games/);
 console.log('Weekly trending tests passed.');
