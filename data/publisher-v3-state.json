@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-25T07:16:50.170Z",
+  "updatedAt": "2026-11-25T10:17:07.346Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -3330,159 +3330,22 @@
         "popularity": 44.7252,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-24T16:08:12.884Z",
-      "updatedAt": "2026-11-25T07:16:50.170Z",
+      "updatedAt": "2026-11-25T10:16:05.646Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "Solo Leveling",
-        "type": "series",
-        "collectedAt": "2026-11-25T07:16:11.126Z",
-        "sourceId": "series:127532",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/127532",
-        "overview": "They say whatever doesn’t kill you makes you stronger, but that’s not the case for the world’s weakest hunter Sung Jinwoo. After being brutally slaughtered by monsters in a high-ranking dungeon, Jinwoo came back with the System, a program only he could see, that’s leveling him up in every way. Now, he’s inspired to discover the secrets behind his powers and the dungeon that spawned them.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/127532",
-            "extract": "They say whatever doesn’t kill you makes you stronger, but that’s not the case for the world’s weakest hunter Sung Jinwoo. After being brutally slaughtered by monsters in a high-ranking dungeon, Jinwoo came back with the System, a program only he could see, that’s leveling him up in every way. Now, he’s inspired to discover the secrets behind his powers and the dungeon that spawned them.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Solo_Leveling",
-            "extract": "Solo Leveling, also alternatively translated as Only I Level Up is a South Korean fantasy web novel written by Chugong. It was serialized in Kakao's digital comic and fiction platform KakaoPage beginning on July 25, 2016, and was later published by D&C Media under their Papyrus label since November 4, 2016. The novel has been licensed in English by Yen Press.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — IGN",
-            "url": "https://www.youtube.com/watch?v=Ho22YawHre8",
-            "extract": "Verified public, embeddable promotional trailer: Solo Leveling: Karma - Official Story Trailer",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 2104 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "Ho22YawHre8",
-        "youtubeVideoTitle": "Solo Leveling: Karma - Official Story Trailer",
-        "youtubeChannel": "IGN",
-        "releaseDate": "2024-01-07",
-        "genres": [
-          "Animation",
-          "Action & Adventure",
-          "Sci-Fi & Fantasy"
-        ],
-        "platforms": [],
-        "cast": [
-          "Taito Ban",
-          "Genta Nakamura",
-          "Haruna Mikawa",
-          "Reina Ueda",
-          "Daisuke Hirakawa",
-          "Hiroki Touchi",
-          "Banjo Ginga",
-          "Makoto Furukawa"
-        ],
-        "crew": [],
-        "rating": 8.689,
-        "ratingScale": 10,
-        "votes": 2104,
-        "poster": "https://image.tmdb.org/t/p/w780/geCRueV3ElhRTr0xtJuEWJt6dJ1.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/xMNH87maNLt9n2bMDYeI6db5VFm.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "Solo Leveling: فرضية جذابة، لكن الأدلة المتاحة لا تكفي لإصدار حكم فني مكتمل",
-        "summary": "تتناول هذه المراجعة مسلسل Solo Leveling بوصفها قراءة تحريرية مكتبية تستند حصراً إلى ملف الأدلة، لا إلى مشاهدة مباشرة. يقدّم الملخص الرسمي أساساً واضحاً: سونغ جينوو، الصياد الأضعف، ينجو من كارثة في زنزانة عالية الرتبة ويكتسب نظاماً يرفع قدراته، ثم يسعى إلى فهم مصدر قوته والزنزانة المرتبطة بها. هذه نقطة انطلاق قابلة لبناء حكاية عن التحول والقوة والغموض، لكن الملف لا يقدّم حلقات أو مراجعات مستقلة أو معلومات تفصيلية عن التنفيذ الفني. لذلك يمكن نقد الفكرة وحدود التوثيق، لا الجزم بجودة السرد والصورة والصوت والإيقاع كما تظهر على الشاشة.",
-        "verdict": "يملك Solo Leveling، وفق الملخص المتاح، مدخلاً قصصياً واضحاً ومشحوناً بوعد التحول: بطل يبدأ في موقع الضعف، ينجو من تجربة مدمرة، ثم يجد أمامه نظاماً غامضاً يغيّر قدراته ويفتح سؤالاً عن مصدر هذا التغيير. هذه عناصر تمنح المسلسل أساساً جذاباً لمحبي الفانتازيا والحركة، لكنها لا تثبت وحدها أن الحلقات تطوّر الفكرة بعمق أو تنفذها بإتقان. ملف الأدلة لا يتضمن مشاهدة موثقة أو وصفاً للحلقات أو تقييماً مستقلاً كافياً للحكم على الصورة والصوت والأداء والإيقاع. لذلك لا أقدّم العمل هنا بوصفه نجاحاً فنياً مثبتاً، ولا أختلق عيوباً لم توثقها المصادر. التوصية تظل مشروطة: قد يناسب أصحاب الاهتمام بفرضية الصيادين والأسرار والقوة المتصاعدة، أما من يريد حكماً نهائياً موثوقاً على جودة المسلسل، فيحتاج إلى مراجعة مواد أكثر اكتمالاً قبل اتخاذ قرار المشاهدة.",
-        "body": "## مقدمة وسياق العمل\n\nتتناول هذه المراجعة مسلسل Solo Leveling، وهو عمل مصنف في بيانات TMDB ضمن الرسوم المتحركة والحركة والمغامرة والخيال العلمي والفانتازيا، مع تاريخ إصدار مسجل هو السابع من يناير 2024. هذه معلومات تعريفية لا تكفي وحدها لتحديد نطاق الإصدار أو اختلافه باختلاف الأسواق، ولذلك لا أستنتج منها تفاصيل عن عدد الحلقات أو مواسم العمل. كما أن الملف يذكر طاقماً صوتياً يضم تايتو بان، وغينتا ناكامورا، وهارونا ميكاوا، ورينا أويدا، ودايسكي هيراكاوا، وهيروكي توتشي، وبانجو غينغا، وماكوتو فوروكاوا، لكنه لا يربط الأسماء بأدوار محددة.\n\nتُكتب القراءة هنا بأمانة بوصفها مراجعة تحريرية مكتبية لا انطباع مشاهدة؛ فلا يحتوي ملف الأدلة على مشاهدة مباشرة موثقة أو مراجعات نقدية مستقلة يمكن الاستناد إليها في تحليل التنفيذ حلقةً بحلقة. مصدر الملخص الأساسي هو TMDB، بينما تقدم مادة ويكيبيديا خلفية عن أصل أدبي كوري للعمل. أما الفيديو الرسمي المتاح من قناة IGN فعنوانه Solo Leveling: Karma - Official Story Trailer؛ لا يثبت هذا العنوان أن محتواه يخص المسلسل موضوع المراجعة، ولذلك لا أستخدمه دليلاً على أحداثه أو إخراجه. هذا التفريق مهم: وجود مادة ترويجية قريبة الاسم لا يعوض نقص المعلومات عن العمل نفسه.\n\n## الفكرة والقصة أو التجربة\n\nبحسب الملخص المنشور في TMDB، ينطلق العمل من سونغ جينوو، الموصوف بأنه أضعف صياد في عالمه. بعد أن تقتله الوحوش بعنف داخل زنزانة عالية الرتبة، يعود ومعه «النظام»، وهو برنامج لا يستطيع رؤيته سواه ويعمل على رفع قدراته بوجوه متعددة. ثم يتجه إلى استكشاف سر قوته الجديدة والزنزانة التي ارتبطت بظهورها. هذه هي الوقائع القصصية التي يمكن إثباتها من الملف، ولا ينبغي تحميلها أحداثاً لاحقة أو نتائج لم يوردها الملخص.\n\nفي مستوى الفكرة، تجمع المقدمة بين فجوة واضحة في القوة، ونجاة استثنائية، وآلية غامضة، وسؤال عن منشأ التحول. هذا يخلق مسارين سرديين محتملين: متابعة تغير البطل، والتحقيق في سر النظام والزنزانة. قوة التأسيس أنه يوضح دافعاً أولياً مفهوماً ولا يحصر الحكاية في وصف عالم فانتازي مجرد؛ فهناك شخصية تريد فهم ما حدث لها. لكن هذا تحليل لإمكانات الفرضية، لا شهادة بأن المسلسل يوازن بالفعل بين مساري التطور والتحقيق. الملخص لا يبين مقدار تعقيد العالم، ولا طبيعة المخاطر اللاحقة، ولا ما إذا كانت الأسئلة تُجاب بإيقاع مقنع. لذلك تبدو الفكرة واعدة ومباشرة، فيما تبقى جودة بنائها الدرامي غير محسومة بالأدلة المتاحة.\n\n## السرد والشخصيات أو تصميم اللعب\n\nهذا مسلسل رسوم متحركة، وليس لعبة ضمن بيانات المصدر؛ وعليه لا ينطبق عليه تقييم تصميم اللعب. مركز القصة المحدد هو جينوو، ويمكن قراءة وصفه الأولي بوصفه انتقالاً من الهشاشة إلى امتلاك وسيلة غير مألوفة للنمو. يحمل هذا الانتقال قابلية لصنع قوس شخصية واضح، لكن المعلومات لا تكشف كيف تُعرض دوافعه أو تناقضاته أو علاقاته، ولا تسمح بوصف الشخصيات المساندة أو تقدير حواراتها. وجود قائمة ممثلين لا يكشف توزيع الأدوار ولا مساحة كل شخصية، فلا يصح تحويلها إلى استنتاجات عن عمق طاقم الشخصيات.\n\nالسؤال النقدي الأهم الذي تطرحه الفرضية هو ما إذا كان «النظام» أداة لتوسيع رحلة الشخصية والعالم، أم مجرد وسيلة تضمن تقدماً متتابعاً في القوة. لا يجيب الملخص عن ذلك، ولا يقدم ملف الأدلة مشاهد أو مراجعات مستقلة تسمح باختبار الاحتمالين. يمكن القول إن المسلسل يضع سؤالاً سردياً صالحاً للمتابعة، لا إنه ينجح في الإجابة عنه. ومن ثم فإن أي حكم قاطع على تطور جينوو أو تماسك الحبكة أو جودة الحوار سيكون تجاوزاً لما تثبته المادة المتاحة.\n\n## الإخراج والجوانب الفنية\n\nلا يضم الملف أسماء مخرجين أو كتّاب أو معلومات إنتاجية تفصيلية، ولا تحليلاً للحلقات أو لأسلوب الانتقال بينها. بناء على ذلك، لا أستطيع نسبة خيار إخراجي بعينه إلى فريق المسلسل، أو تقييم إدارة المشاهد، أو الادعاء بأن العمل يحافظ على مستوى فني ثابت. حتى تصنيف العمل ضمن الرسوم المتحركة والحركة لا يثبت طريقة تنفيذ الحركة أو مقدار حضورها؛ فالتصنيف وصف للفئة وليس تقييماً للحرفة.\n\nالنتيجة التحريرية هنا ليست أن الإخراج ضعيف أو قوي، بل أنه غير قابل للتقويم المسؤول من هذا الملف. والتفريق بين غياب الدليل ووجود عيب فعلي ضروري في مراجعة نهائية: لا يصح تحويل نقص البيانات إلى اتهام للعمل، كما لا يصح ملء الفراغ بمديح عام. المطلوب لإصدار حكم أدق هو الاطلاع على الحلقات أو مصادر موثوقة تصف قراراتها الفنية على نحو محدد.\n\n## الصورة والهوية البصرية\n\nلا يقدم الملف تحليلاً للرسوم أو الألوان أو تصميم الشخصيات والوحوش أو الخلفيات، كما أن صورة الملصق ورابط الخلفية المسجلين في قاعدة البيانات لا يكفيان لتقييم الصورة المتحركة. لا يمكن منهما استنتاج جودة التحريك أو وضوح الحركة أو اتساق الهوية البصرية عبر المسلسل. لذلك لا أصف العمل بأنه مبهر بصرياً، ولا أختلق قصوراً في تفاصيله. المعلومة المؤكدة الوحيدة ذات الصلة هي تصنيفه عملاً رسومياً؛ أما الحكم على التنفيذ فيحتاج إلى مادة مشاهدة أو نقد موثق لا يوفره الملف.\n\n## الصوت والموسيقى والأداء\n\nتسمية ممثلين صوتيين في البيانات تثبت ورود أسمائهم ضمن الطاقم، لكنها لا تتيح حكماً على الأداء أو التوجيه الصوتي أو الموسيقى والمؤثرات. لا توجد في الأدلة أسماء مؤلف موسيقي أو وصف لمسارات صوتية أو إحالات إلى مشاهد يمكن تحليلها. لذلك لا أنسب للمسلسل نبرة موسيقية بعينها، ولا أصف أداء ممثل محدد بأنه ناجح أو متعثر. هذا الجانب، مثل الصورة، يحتاج إلى استماع مباشر أو مصدر نقدي مستقل. وجود قائمة أسماء مفيد للتعريف بالطاقم، لكنه ليس بديلاً من تقييم ما قدمه فعلياً.\n\n## الإيقاع والبناء وتنوع المحتوى\n\nالمعلومات المتاحة لا تتضمن عدد الحلقات أو ملخصاتها أو توزيع أحداثها، ومن ثم لا تسمح بالحكم على سرعة السرد أو انتظام التصاعد أو تكرار البنية. يمكن للفرضية، نظرياً، أن تجمع بين كشف أسرار الزنزانة ومتابعة نمو جينوو، لكن ذلك احتمال تحليلي لا دليل على أن البناء يحقق توازناً ناجحاً بينهما. لا أستطيع القول إن المسلسل يطيل المواجهات أو يختصر تطور الشخصيات أو يحافظ على تنوع محتواه؛ فكل واحدة من هذه الدعاوى تحتاج إلى شواهد غير موجودة هنا.\n\nوعليه فإن درجة هذا المحور لا ينبغي فهمها كحكم موثق على إيقاع الحلقات. أضعف ما يمكن قوله بأمان هو أن الملخص يقدم خطافاً سردياً واضحاً، لكنه لا يكشف كيف يتطور هذا الخطاف على امتداد العمل. وهذا فارق جوهري بين تقييم فكرة المسلسل وتقييم بنائه الفعلي.\n\n## نقاط القوة\n\nأبرز ما يمكن إثباته هو وضوح الفرضية المركزية: بطل يبدأ من موقع ضعف، يمر بكارثة، ثم يكتسب وسيلة خاصة للتطور. كما أن الملخص لا يكتفي بالقوة الجديدة، بل يربطها بسؤال عن مصدرها وعن الزنزانة، ما يتيح للحكاية بعداً استقصائياً إلى جانب التحول الشخصي. وتصنيف العمل يجعله قابلاً للتعريف بوضوح لدى جمهور الرسوم المتحركة والحركة والفانتازيا. هذه نقاط قوة في التأسيس والوعد، لا أحكام على جودة التنفيذ؛ ويجب أن تبقى حدودها واضحة كي لا تتحول إلى مديح غير مسند.\n\n## نقاط الضعف\n\nأبرز قيد نقدي هو أن سجل الأدلة لا يوفر مشاهد أو تفاصيل كافية لتقييم التنفيذ، فلا يمكن إثبات نجاح تطوير الشخصيات أو جودة التحريك أو الموسيقى أو الإيقاع. كذلك لا يتضمن الملف مراجعات مستقلة متعددة، ولا معلومات إنتاجية تساعد على وضع قرارات العمل في سياقها. أما الاستناد إلى فيديو Karma فغير مناسب بوصفه دليلاً على المسلسل، لأن عنوانه لا يطابق عنوان السلسلة. هذه نواقص في قاعدة المراجعة لا عيوب مثبتة في العمل نفسه، ولذلك لا أخلط بين التحفظ المنهجي والنقد السلبي.\n\n## لمن يناسب هذا العمل؟\n\nعلى مستوى الفرضية وحدها، قد يجذب Solo Leveling من يفضلون قصص الفانتازيا التي تبدأ ببطل ضعيف، وتضع أمامه نظاماً غامضاً للنمو، وتربط التحول بأسئلة عن مصدر القوة. كما قد يهم من يبحث عن مسلسل رسوم متحركة يجمع، وفق تصنيفه، بين الحركة والمغامرة والخيال. لكن هذه توصية أولية مبنية على الملخص والتصنيف، وليست ضماناً لملاءمة التجربة أو حكماً على مستوى محتواها. من يعطي أولوية لتطور الشخصيات، أو جودة التحريك والصوت، أو انتظام الإيقاع، يحتاج إلى مراجعة مستقلة أكثر تفصيلاً قبل اتخاذ قرار المشاهدة.\n\n## الحكم النهائي\n\nالملف يثبت أن للمسلسل مدخلاً قصصياً واضحاً، ويتيح قراءة أولية لفكرته وموقعه النوعي، لكنه لا يفي بمتطلبات مراجعة مكتملة للحرفة الفنية أو للتجربة الفعلية. لهذا السبب لا يصح تقديم حكم جازم بأن Solo Leveling ممتاز أو مخيب اعتماداً على هذه المواد وحدها. متوسط TMDB البالغ 8.689 من عشرة، المسجل مع 2104 أصوات، مؤشر جماهيري ثانوي منسوب إلى المنصة، وليس تقييماً تحريرياً مستقلاً ولا بديلاً من تحليل الحلقات. الدرجات المرفقة تقديرات تحفظية منخفضة الثقة، تعبّر عن سقف ما يمكن توثيقه هنا، لا عن إثبات ضعف العمل. الخلاصة: الفكرة تستحق اهتمام جمهورها المحتمل، لكن إصدار حكم نهائي موثوق على المسلسل يتطلب مصادر مشاهدة ونقد أكثر اكتمالاً.",
-        "scores": {
-          "story": 6,
-          "visuals": 5,
-          "sound": 5,
-          "pacing": 5
-        },
-        "pros": [
-          "فرضية مركزية مباشرة تجمع ضعف البطل والنجاة واكتساب وسيلة غامضة للتطور.",
-          "الملخص يطرح سؤالاً عن مصدر القوة والزنزانة، بما يفتح مساراً يتجاوز التحول وحده.",
-          "تصنيف النوع واضح ويحدد جمهوراً محتملاً من محبي الرسوم المتحركة والحركة والفانتازيا.",
-          "تتوفر بيانات تعريفية عن طاقم صوتي ومصدر أدبي سابق، وإن لم تكفِ لتقييم التنفيذ."
-        ],
-        "cons": [
-          "الأدلة لا تتضمن مراجعات مستقلة أو تفاصيل حلقات كافية للحكم على جودة السرد الفعلية.",
-          "لا توجد مادة موثقة تسمح بتقييم التحريك أو الهوية البصرية أو الإخراج.",
-          "لا تتوفر معلومات كافية عن الموسيقى والأداء الصوتي أو انتظام الإيقاع.",
-          "المقطع الترويجي المسجل يتناول Karma، ولا يصلح دليلاً مباشراً على مسلسل Solo Leveling."
-        ],
-        "title": "Solo Leveling",
-        "type": "series",
-        "sourceId": "series:127532",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/127532",
-        "sourceRating": 8.689,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 2104,
-        "sourceRatingCheckedAt": "2026-11-25T07:16:11.126Z",
-        "audienceScore": 8.7,
-        "releaseDate": "2024-01-07",
-        "poster": "https://image.tmdb.org/t/p/w780/geCRueV3ElhRTr0xtJuEWJt6dJ1.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/xMNH87maNLt9n2bMDYeI6db5VFm.jpg",
-        "genres": [
-          "Animation",
-          "Action & Adventure",
-          "Sci-Fi & Fantasy"
-        ],
-        "platforms": [],
-        "cast": [
-          "Taito Ban",
-          "Genta Nakamura",
-          "Haruna Mikawa",
-          "Reina Ueda",
-          "Daisuke Hirakawa",
-          "Hiroki Touchi",
-          "Banjo Ginga",
-          "Makoto Furukawa"
-        ],
-        "crew": [],
-        "tags": [
-          "Animation",
-          "Action & Adventure",
-          "Sci-Fi & Fantasy"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/127532",
-            "extract": "They say whatever doesn’t kill you makes you stronger, but that’s not the case for the world’s weakest hunter Sung Jinwoo. After being brutally slaughtered by monsters in a high-ranking dungeon, Jinwoo came back with the System, a program only he could see, that’s leveling him up in every way. Now, he’s inspired to discover the secrets behind his powers and the dungeon that spawned them.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Solo_Leveling",
-            "extract": "Solo Leveling, also alternatively translated as Only I Level Up is a South Korean fantasy web novel written by Chugong. It was serialized in Kakao's digital comic and fiction platform KakaoPage beginning on July 25, 2016, and was later published by D&C Media under their Papyrus label since November 4, 2016. The novel has been licensed in English by Yen Press.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — IGN",
-            "url": "https://www.youtube.com/watch?v=Ho22YawHre8",
-            "extract": "Verified public, embeddable promotional trailer: Solo Leveling: Karma - Official Story Trailer",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "Ho22YawHre8",
-        "youtubeVideoTitle": "Solo Leveling: Karma - Official Story Trailer",
-        "reviewMode": "review",
-        "score": 5.3
-      },
+      "article": null,
       "lastError": null,
       "resumeStatus": null,
       "provider": "openai",
       "tokens": 6017,
       "articlePath": "src/content/reviews/series-solo-leveling-127532.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-solo-leveling-127532/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-solo-leveling-127532/",
+      "publishedAt": "2026-11-25T10:16:05.646Z"
     },
     "series:216467": {
       "key": "series:216467",
@@ -3608,154 +3471,175 @@
         "popularity": 44.3688,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-24T19:16:10.137Z",
-      "updatedAt": "2026-11-24T19:16:58.702Z",
+      "updatedAt": "2026-11-25T10:16:05.412Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "IT: Welcome to Derry",
-        "type": "series",
-        "collectedAt": "2026-11-24T19:16:10.666Z",
-        "sourceId": "series:200875",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/200875",
-        "overview": "In 1962, amid a spate of unexplained disappearances of local children, a group of misfit friends begin to suspect a long-buried ancient evil lurking. As the kids set out to determine what's really going on, a rising unease prompts several townspeople to work together to restore peace – all while a U.S. military operation seeks to exploit Derry for its own objectives.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/200875",
-            "extract": "In 1962, amid a spate of unexplained disappearances of local children, a group of misfit friends begin to suspect a long-buried ancient evil lurking. As the kids set out to determine what's really going on, a rising unease prompts several townspeople to work together to restore peace – all while a U.S. military operation seeks to exploit Derry for its own objectives.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/It_%E2%80%93_Welcome_to_Derry",
-            "extract": "It: Welcome to Derry is an American supernatural horror television series based on Stephen King's 1986 novel It. Serving as a prequel to the films It (2017) and It Chapter Two (2019), the series was developed by Andy Muschietti, Barbara Muschietti and Jason Fuchs, all of whom were involved in the It films. The series stars a large ensemble cast including Bill Skarsgård, who serves as executive producer and reprises his role as Pennywise from the films.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — HBO Max Europe",
-            "url": "https://www.youtube.com/watch?v=LFEJ0pX9-OY",
-            "extract": "Verified public, embeddable promotional trailer: IT: Welcome to Derry | Official Red Band Trailer | HBO Max",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 1816 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "LFEJ0pX9-OY",
-        "youtubeVideoTitle": "IT: Welcome to Derry | Official Red Band Trailer | HBO Max",
-        "youtubeChannel": "HBO Max Europe",
-        "releaseDate": "2025-10-26",
-        "genres": [
-          "Drama",
-          "Mystery"
-        ],
-        "platforms": [],
-        "cast": [
-          "Taylour Paige",
-          "Jovan Adepo",
-          "James Remar",
-          "Stephen Rider",
-          "Matilda Lawler",
-          "Amanda Christine",
-          "Clara Stack",
-          "Blake Cameron James"
-        ],
-        "crew": [],
-        "rating": 8.262,
-        "ratingScale": 10,
-        "votes": 1816,
-        "poster": "https://image.tmdb.org/t/p/w780/nyy3BITeIjviv6PFIXtqvc8i6xi.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/2fOKVDoc2O3eZmBZesWPuE5kgPN.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "IT: Welcome to Derry: فرضية واعدة، لكن الأدلة المتاحة لا تكفي لحكم نهائي على التنفيذ",
-        "summary": "توسّع IT: Welcome to Derry عالم أفلام It إلى مسلسل تدور مقدمته في ديري عام 1962، وسط اختفاء أطفال، وشكوك مجموعة من الأصدقاء، وشرّ قديم، وعملية عسكرية تسعى إلى استغلال ما يجري. هذه العناصر تتيح قراءة واعدة لتوسيع الرعب إلى حكاية عن مجتمع كامل، لا عن تهديد منفرد؛ لكنها تظل عناصر في الملخص الرسمي، لا برهاناً على نجاح السرد أو الإخراج. ملف الأدلة يثبت تاريخ الإصدار، الصلة بالأفلام، أسماء من طاقم التمثيل، ومقطعاً ترويجياً رسمياً، لكنه لا يقدم مشاهدة موثقة للحلقات أو مراجعات مستقلة كافية. لذلك فالحكم هنا صريح ومحدود: الفكرة قابلة للاهتمام، أما جودة التنفيذ والإيقاع والصورة والصوت فلا يمكن تقريرها بثقة من هذه المواد وحدها.",
-        "verdict": "تملك IT: Welcome to Derry أساساً سردياً واضحاً: إعادة زيارة ديري في زمن سابق، وربط اختفاء الأطفال بشرّ متجذر وباستجابة مدنية وعسكرية، مع امتدادها إلى عالم أفلام It. هذا يمنحها إمكاناً درامياً يتجاوز تكرار مواجهة الوحش، لكنه لا يثبت أن المسلسل استثمره بنجاح. لا يحتوي ملف الأدلة على وصف للحلقات أو تحليل مستقل لأداء الممثلين أو الإخراج أو الإيقاع، ولا يصح تحويل الملخص والمقطع الترويجي إلى تجربة مشاهدة متخيلة. لذا فالدرجة الإجمالية الحاسوبية المقترحة لا ينبغي قراءتها بوصفها حكماً نهائياً راسخاً على جودة المسلسل؛ إنها تقدير شديد التحفظ لما تسمح به الوثائق، مع ثقة منخفضة في محاور التنفيذ. التوصية الأنسب هي اعتبار العمل خياراً لمن يهتم بعالم It وبالرعب المرتبط بالمكان، مع تعليق الحكم على نجاحه الفني إلى أن تتوفر أدلة نقدية ومشاهدة موثقة أوسع.",
-        "body": "## مقدمة وسياق العمل\n\nIT: Welcome to Derry مسلسل رعب ودراما وغموض، صدر في 26 أكتوبر 2025، وتدور مقدمته الموثقة في ديري سنة 1962. وهو مرتبط بأفلام It الصادرة عامي 2017 و2019، ويقدمه المصدر الموسوعي بوصفه عملاً سابقاً لأحداثها، طوّره آندي موسكيتي وباربرا موسكيتي وجيسون فوكس، المرتبطون أيضاً بالأفلام. كما يذكر المصدر نفسه أن بيل سكارسغارد منتج تنفيذي ويعود بدور بيني وايز. هذه حقائق سياقية مهمة، لكنها لا تعوّض معلومات عن بناء الحلقات أو مستوى التنفيذ. المراجعة هنا تحريرية ومبنية حصراً على ملف الأدلة: بيانات TMDB، والمعلومة الموسوعية الواردة فيه، ووجود إعلان رسمي من HBO Max Europe. لا أتعامل مع الإعلان كما لو كان مشاهدة للمسلسل، ولا أختلق انطباعات مشاهدة أو أحكاماً على مشاهد بعينها.\n\nيضع الإعلان الرسمي العمل في إطار رعب موجّه للبالغين بحسب وصفه «Red Band»، لكن عنوان المقطع وحده لا يكشف تفاصيل مضمونه أو جودة تصويره وصوته. أما TMDB فيصنف المسلسل ضمن الدراما والغموض، وهو توصيف ينسجم مع تعدد خيوط الملخص، لا شهادة على نجاح الجمع بينها. الفرق بين هذه الحقائق والاستنتاجات أساسي: يمكن تقييم ما تعد به الفكرة، لكن لا يمكن الجزم بما أنجزته الحلقات اعتماداً على سجل لا يصفها.\n\n## الفكرة والقصة أو التجربة\n\nبحسب ملخص TMDB، تبدأ الحكاية في 1962 مع موجة اختفاءات غير مفسرة لأطفال محليين. مجموعة من الأصدقاء المختلفين اجتماعياً تشتبه في وجود شر قديم مدفون، فيما يتعاون بعض سكان البلدة سعياً إلى استعادة الهدوء، وتعمل عملية عسكرية أمريكية على استغلال ديري لأهدافها. توزيع الفعل بين الأطفال والسكان والجيش يمنح الفرضية مجالاً لأكثر من زاوية: اكتشاف التهديد، أثره على الجماعة، ومحاولة مؤسسة نافذة تحويل الخطر إلى أداة. هذه قراءة لبنية الملخص، وليست تأكيداً أن المسلسل يمنح كل زاوية وزناً متوازناً.\n\nوتحمل العودة إلى زمن سابق وعداً بتوسيع تاريخ ديري، بدلاً من الاكتفاء بإعادة تقديم الحكاية السينمائية نفسها. لكن قيمة هذا الاختيار تعتمد على مقدار ما يضيفه الماضي إلى فهم المكان والشر، وعلى ما إذا كانت الشخصيات تملك مسارات تتجاوز مهمة كشف اللغز. لا يقدّم الملف تفاصيل تكفي للإجابة. لذلك تبدو الفكرة مثيرة للاهتمام على مستوى التصميم، مع مخاطرة واضحة: أن تتزاحم خطوط الأطفال والبلدة والجيش من دون أن تتماسك في دراما واحدة. لا دليل متاح هنا يثبت وقوع هذه المشكلة أو تجاوزها.\n\n## السرد والشخصيات أو تصميم اللعب\n\nلا ينطبق جانب تصميم اللعب على مسلسل تلفزيوني. أما سردياً، فيشير الملخص إلى مجموعة أصدقاء لا بطل منفرد، وإلى مشاركة سكان البلدة في محاولة احتواء الأزمة. هذا يفتح احتمال سرد جماعي يختبر اختلاف المواقف تجاه الخطر، ويمنح البلدة وظيفة تتجاوز كونها خلفية. غير أن الملف لا يورد أسماء الشخصيات أو علاقاتها أو قراراتها، ولذلك لا يمكن الحكم على تطورها أو الحوار أو جودة توزيع المنظور. قائمة الممثلين تضم تايلور بيج، وجوفان أديبو، وجيمس ريمار، وستيفن رايدر، وماتيلدا لولر، وأماندا كريستين، وكلارا ستاك، وبليك كاميرون جيمس؛ لكنها لا تحدد أدوارهم، باستثناء ما يذكره المصدر الموسوعي عن عودة سكارسغارد بدور بيني وايز.\n\nمن هنا تظل المسألة النقدية الأهم سؤالاً لا نتيجة: هل يجعل المسلسل اختفاء الأطفال مدخلاً إلى شخصيات لها حاجاتها وعلاقاتها، أم يستخدمها أساساً لتوليد الغموض؟ لا تقدم المصادر دليلاً يسمح بالحسم. وكذلك لا يمكن استنتاج جودة الأداء من أسماء الممثلين، ولا من ارتباط بعض فريق التطوير بالأفلام. الخبرة السابقة قد تفسر اتصال المشروع بالعالم المعروف، لكنها ليست بحد ذاتها ضماناً لتجدد السرد أو نجاحه.\n\n## الإخراج والجوانب الفنية\n\nلا تتضمن المواد المتاحة مقابلات مع فريق العمل، أو تفصيلاً لطريقة الإخراج، أو وصفاً مستقلاً للحلقات، أو معلومات إنتاجية تساعد على تقييم القرارات الفنية. ويثبت المصدر الموسوعي أسماء المطورين، لكنه لا يوفر في الملف بيانات عن بقية فريق الإخراج أو الكتابة. لذلك لا يصح أن أنسب إلى المسلسل أسلوباً بصرياً بعينه، أو أزعم أن التوتر يتصاعد بمهارة، أو أصف مشاهد لا يوردها أي مصدر. حتى كون صناع مرتبطين بأفلام It قد عادوا إلى هذا العالم لا يثبت أن المسلسل يحافظ على مستوى تلك الأفلام أو يختلف عنها.\n\nنقدياً، فإن غياب هذه الشواهد يحد من صلابة أي حكم على الصناعة، لا من إمكان الاهتمام بالمشروع. والتمييز مهم: نقص المعلومات في ملف المراجعة ليس عيباً فنياً مثبتاً في المسلسل، ولا يجوز تسجيله كإخفاق إخراجي. لكنه يمنع أيضاً منح تقدير مرتفع مبني على افتراضات عن جودة التنفيذ. الدرجة المتحفظة في هذا المحور تعكس محدودية ما يمكن توثيقه، ويجب ألا تُفهم على أنها تقرير مشاهدة يثبت ضعف الإخراج.\n\n## الصورة والهوية البصرية\n\nلا يصف ملف الأدلة تصميم المواقع أو الأزياء أو الإضاءة أو الألوان، ولا يقدم تحليلاً مستقلاً للصورة. وجود ملصق وخلفية ضمن بيانات TMDB يثبت توفر مواد تعريفية، لا يتيح وحده حكماً على اللغة البصرية للحلقات. كذلك فإن إعلاناً رسمياً يحمل عنواناً ترويجياً لا يكفي لوصف لقطاته أو القطع أو المؤثرات؛ فالمادة المتاحة تثبت وجوده فقط. وبما أن العمل يعود إلى ديري في 1962، يمكن استنتاج أن بناء إحساس زمني مقنع سيكون جزءاً مهماً من تحديه الفني، لكن لا يمكن القول إن المسلسل حققه أو أخفق فيه من دون شواهد مباشرة.\n\nلهذا لا أخلط بين هوية العمل التسويقية، المتصلة بعالم It، وبين هوية بصرية ثبتت على الشاشة. يستطيع القارئ معرفة الإطار التاريخي وعلاقة المسلسل بالأفلام، لكنه لا يجد في المواد الموثقة وصفاً يسمح بمقارنة تصميمه البصري بها. درجة هذا المحور محايدة تحفظياً، لا مديحاً للصورة ولا إدانة لها؛ إنها إشارة واضحة إلى أن البيانات لا تسند حكماً أكثر تحديداً.\n\n## الصوت والموسيقى والأداء\n\nتورد المصادر بعض أسماء طاقم التمثيل، وتذكر عودة بيل سكارسغارد إلى شخصية بيني وايز، لكنها لا تقدم تقييماً مستقلاً للأداء أو وصفاً للموسيقى أو المؤثرات الصوتية. لذلك لا أصف صوتاً بعينه، ولا أنسب للممثلين نجاحاً أو إخفاقاً، ولا أستنتج من اختيار ممثل معروف شكل حضوره في العمل. قد يكون الأداء عاملاً حاسماً في حكاية تجمع أطفالاً وسكاناً وعناصر عسكرية، لكن ذلك استنتاج عن متطلبات الفرضية، لا ملاحظة عن النتيجة.\n\nالمعلومة الصوتية الوحيدة ذات الصلة أن هناك مقطعاً ترويجياً رسمياً منشوراً على قناة HBO Max Europe، وهي لا تكفي لتقييم صوت المسلسل نفسه. ومن ثم فإن الدرجة المحدودة هنا لا تعني أن الموسيقى أو الأداء دون المستوى؛ بل تعني أن الأدلة لا تتيح تمييز ما إذا كانا نقطتي قوة أم ضعف. أي حكم قاطع في هذا الجانب سيتجاوز الملف، وهو ما لا تسمح به مراجعة موثقة.\n\n## الإيقاع والبناء وتنوع المحتوى\n\nلا يذكر الملف عدد الحلقات أو مددها أو طريقة توزيع أحداث الموسم، لذا لا يمكن تقييم إيقاعه الفعلي أو تماسك بنائه. لكن الملخص يوحي بتعدد مسارات: اختفاءات الأطفال، بحث الأصدقاء، تحركات بعض السكان، وأهداف العملية العسكرية. هذا التعدد يوفر إمكانية لتوسيع نطاق التوتر، وقد يساعد على جعل ديري مجتمعاً متفاعلاً مع الخطر؛ وفي المقابل يفرض عبئاً بنائياً يتمثل في ربط الخيوط ومنح كل منها وظيفة واضحة. هذان احتمالان تحليليان ناشئان من الوصف، وليسا تقريراً بأن العمل يحقق أحدهما.\n\nكما أن تقديم المسلسل بوصفه سابقاً للأفلام يثير سؤالاً عن التوازن بين معرفة الجمهور السابقة وبين الغموض المطلوب لحكاية جديدة. لا تذكر المصادر مقدار اعتماد الأحداث على الشخصيات أو الوقائع المعروفة من الأفلام، ولذلك لا يمكن اتهامه بالإفراط في التمهيد أو الثناء عليه لتجديد العالم. درجة الإيقاع متحفظة، والثقة بها منخفضة؛ فهي لا تستند إلى مشاهدة الحلقات، بل إلى تقييم محدود لما تكشفه بنية الفرضية، مع الاعتراف بأن المعلومات غير كافية لحكم نهائي.\n\n## نقاط القوة\n\nأبرز ما يمكن إثباته في صالح المشروع هو وضوح نقطة انطلاقه: اختفاء أطفال في زمن محدد ومكان يرتبط أصلاً بعالم It. كذلك يضيف الملخص أطرافاً تتجاوز مجموعة الأصدقاء، إذ يذكر سكاناً وعملية عسكرية ذات أهداف خاصة، ما يمنح الفكرة مساحة درامية أوسع من مطاردة تهديد واحد. العودة إلى سنة 1962 تتيح استكشاف مرحلة سابقة في تاريخ ديري، بينما تمنح الصلة بالأفلام إطاراً مفهوماً للجمهور العارف بها. وأخيراً، يجمع طاقم التمثيل أسماء معلنة متعددة، مع توثيق عودة سكارسغارد بدور بيني وايز. هذه نقاط قوة في التصور والسياق الموثق، لا أحكام مؤكدة على جودة الحلقات.\n\n## نقاط الضعف\n\nأوضح قيد في تقييم العمل أن ملف الأدلة لا يحتوي مراجعات مستقلة كافية أو وصفاً تفصيلياً للحلقات، الأمر الذي يمنع التحقق من نجاح عناصر الفكرة على الشاشة. كما أن تعدد مسارات الأطفال والسكان والجيش يخلق تحدياً محتملاً في التركيز، لكن لا تتوفر شواهد لتحديد إن كان المسلسل قد أدار هذا التحدي جيداً. ولا توجد معلومات مفصلة عن تطور الشخصيات أو الصورة أو الموسيقى أو الإيقاع، ما يجعل الثقة بأي درجة موضوعية منخفضة. هذه ليست اتهامات بعيوب فنية مثبتة؛ إنها حدود لما يمكن قوله بأمانة. وأي قائمة عيوب تزعم مشكلات أداء أو مؤثرات أو حلقات بعينها ستكون اختلاقاً لا يسنده الملف.\n\n## لمن يناسب هذا العمل؟\n\nمن حيث الفرضية الموثقة، قد يهم المسلسل من يتابع عالم It ويرغب في معرفة ما تتيحه ديري خارج نطاق الأفلام، أو من ينجذب إلى قصص الرعب التي تربط تهديداً خارقاً بجماعة محلية وبأهداف مؤسسية. أما من يبحث عن تقييم موثق للأداء أو التصوير أو الإيقاع قبل اتخاذ قرار المشاهدة، فلا توفر هذه المادة أساساً كافياً لتوصية حاسمة. ووفق TMDB، يبلغ متوسط الجمهور 8.262 من 10 استناداً إلى 1816 صوتاً؛ هذا مؤشر جماهيري ثانوي منسوب إلى المنصة، لا درجة VibeCritic ولا بديلاً عن تقييم مستقل. لا ينبغي اعتباره برهاناً على أن العمل سيناسب كل مشاهد.\n\n## الحكم النهائي\n\nتثبت المعلومات المتاحة أن IT: Welcome to Derry يملك فرضية مرتبطة بعالم معروف، وزمناً ومكاناً محددين، وعدة خطوط درامية واعدة على مستوى الملخص. لكنها لا تثبت جودة السرد المنجز أو الصورة أو الصوت أو الأداء، ولا تتضمن شواهد مستقلة كافية لتقديم مراجعة نهائية واثقة بالمعنى المعتاد. لذا فالحكم التحريري المسؤول هو أن الفكرة جديرة باهتمام محبي العالم، بينما يظل نجاح المسلسل نفسه غير قابل للتقرير من هذا الملف وحده. الدرجات أدناه تقديرات مؤقتة منخفضة الثقة وليست ادعاء مشاهدة؛ وخصوصاً درجات المحاور الفنية، فهي لا تعني أن تلك العناصر متوسطة فعلاً، بل أنها لا تتوفر لها أدلة كافية لتبرير مديح أو ذم قاطع.",
-        "scores": {
-          "story": 6.5,
-          "visuals": 5,
-          "sound": 5,
-          "pacing": 5.5
-        },
-        "pros": [
-          "تحدد المقدمة زمناً ومكاناً واضحين: ديري عام 1962.",
-          "تجمع الفرضية بين اختفاء الأطفال، ومجموعة الأصدقاء، وسكان البلدة، وعملية عسكرية ذات أهداف خاصة.",
-          "تتيح العودة إلى ما قبل أفلام It مجالاً لاستكشاف تاريخ ديري ضمن العالم المعروف.",
-          "تضم قائمة التمثيل أسماء متعددة، مع توثيق عودة بيل سكارسغارد بدور بيني وايز."
-        ],
-        "cons": [
-          "لا تتوفر في ملف الأدلة مراجعات مستقلة كافية أو معلومات تفصيلية عن الحلقات، ما يضعف الثقة في الحكم النهائي.",
-          "تعدد المسارات يطرح تحدياً محتملاً في تماسك البناء، لكن المصادر لا تثبت كيفية معالجته.",
-          "لا توجد شواهد موثقة كافية لتقييم الصورة أو الموسيقى أو الأداء أو الإيقاع الفعلي."
-        ],
-        "title": "IT: Welcome to Derry",
-        "type": "series",
-        "sourceId": "series:200875",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/200875",
-        "sourceRating": 8.262,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 1816,
-        "sourceRatingCheckedAt": "2026-11-24T19:16:10.666Z",
-        "audienceScore": 8.3,
-        "releaseDate": "2025-10-26",
-        "poster": "https://image.tmdb.org/t/p/w780/nyy3BITeIjviv6PFIXtqvc8i6xi.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/2fOKVDoc2O3eZmBZesWPuE5kgPN.jpg",
-        "genres": [
-          "Drama",
-          "Mystery"
-        ],
-        "platforms": [],
-        "cast": [
-          "Taylour Paige",
-          "Jovan Adepo",
-          "James Remar",
-          "Stephen Rider",
-          "Matilda Lawler",
-          "Amanda Christine",
-          "Clara Stack",
-          "Blake Cameron James"
-        ],
-        "crew": [],
-        "tags": [
-          "Drama",
-          "Mystery"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/200875",
-            "extract": "In 1962, amid a spate of unexplained disappearances of local children, a group of misfit friends begin to suspect a long-buried ancient evil lurking. As the kids set out to determine what's really going on, a rising unease prompts several townspeople to work together to restore peace – all while a U.S. military operation seeks to exploit Derry for its own objectives.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/It_%E2%80%93_Welcome_to_Derry",
-            "extract": "It: Welcome to Derry is an American supernatural horror television series based on Stephen King's 1986 novel It. Serving as a prequel to the films It (2017) and It Chapter Two (2019), the series was developed by Andy Muschietti, Barbara Muschietti and Jason Fuchs, all of whom were involved in the It films. The series stars a large ensemble cast including Bill Skarsgård, who serves as executive producer and reprises his role as Pennywise from the films.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — HBO Max Europe",
-            "url": "https://www.youtube.com/watch?v=LFEJ0pX9-OY",
-            "extract": "Verified public, embeddable promotional trailer: IT: Welcome to Derry | Official Red Band Trailer | HBO Max",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "LFEJ0pX9-OY",
-        "youtubeVideoTitle": "IT: Welcome to Derry | Official Red Band Trailer | HBO Max",
-        "reviewMode": "review",
-        "score": 5.6
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 6262,
       "articlePath": "src/content/reviews/series-it-welcome-to-derry-200875.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-it-welcome-to-derry-200875/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-it-welcome-to-derry-200875/",
+      "publishedAt": "2026-11-25T10:16:05.412Z"
+    },
+    "game:602224": {
+      "key": "game:602224",
+      "type": "game",
+      "id": "602224",
+      "title": "V Rising",
+      "item": {
+        "type": "game",
+        "id": "602224",
+        "name": "V Rising",
+        "date": "2024-05-08",
+        "popularity": 2112,
+        "source": "RAWG"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-25T10:16:08.499Z",
+      "updatedAt": "2026-11-25T10:17:07.345Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "V Rising",
+        "type": "game",
+        "collectedAt": "2026-11-25T10:16:09.251Z",
+        "sourceId": "game:602224",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/v-rising",
+        "overview": "A Vampire Survival Experience Awaken as a weakened vampire after centuries of slumber. Hunt for blood in nearby settlements to regain your strength while hiding from the scorching sun to survive. Rebuild your castle and convert humans into your loyal servants in a quest to raise your vampire empire. Make allies online, fend off holy soldiers, and wage war against other players in a world of conflict. Will you become the next Dracula? A Gothic Open-World Explore a vast world teeming with mythical beings and danger. Travel through lush forests, open countryside, and dark dungeons to discover valuable resources, meeting friends and foes alike along the way. Traverse the world with vampire comrades or hunt solo as you pillage villages, raid bandits, and wander into the domains of supernatural beasts. Fear the light - Rule the night Stick to the shadows during the daytime, or the burning sunlight will turn you to ashes. Roam the night and prey on your victims in the darkness. As a vampire, you must quench your bloodlust and plan your strategies around the day/night cycle. Raise your Castle Gather resources and discover ancient techniques to gain dark powers. Use your newly acquired knowledge to build a castle where you can store your loot and grow your army of vampires. Personalize your domain, exhibit your vampiric style and make sure to craft coffins for servants and friends. Strengthen your castle while the threat from other players is rising. Compete or Cooperate Travel alone or explore the world with friends. Fighting side by side with other vampires will give you an advantage in your battle against the strongest creatures and most powerful humans. Raid other players’ castles or play the diplomat in the game of blood, power, and betrayal. Compete or cooperate - the choice is yours. Master your Vampire Learn and master an arsenal of deadly weapons and unholy abilities. In V Rising, you aim skill-shots and dodge projectiles using​ precise​​ ​WASD controls ​and cursor-based​ ​aiming - no click to move. Tailor your play-style by combining melee or range weapons with a variety of powerful spell kits. Master your skills and unleash your wicked powers.",
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/v-rising",
+            "extract": "A Vampire Survival Experience Awaken as a weakened vampire after centuries of slumber. Hunt for blood in nearby settlements to regain your strength while hiding from the scorching sun to survive. Rebuild your castle and convert humans into your loyal servants in a quest to raise your vampire empire. Make allies online, fend off holy soldiers, and wage war against other players in a world of conflict. Will you become the next Dracula? A Gothic Open-World Explore a vast world teeming with mythical beings and danger. Travel through lush forests, open countryside, and dark dungeons to discover valuable resources, meeting friends and foes alike along the way. Traverse the world with vampire comrades or hunt solo as you pillage villages, raid bandits, and wander into the domains of supernatural beasts. Fear the light - Rule the night Stick to the shadows during the daytime, or the burning sunlight will turn you to ashes. Roam the night and prey on your victims in the darkness. As a vampire, you must quench your bloodlust and plan your strategies around the day/night cycle. Raise your Castle Gather resources and discover ancient techniques to gain dark powers. Use your newly acquired knowledge to build a castle where you can store your loot and grow your army of vampires. Personalize your domain, exhibit your vampiric style and make sure to craft coffins for servants and friends. Strengthen your castle while the threat from other players is rising. Compete or Cooperate Travel alone or explore the world with friends. Fighting side by side with other vampires will give you an advantage in your battle against the strongest creatures and most powerful humans. Raid other players’ castles or play the diplomat in the game of blood, power, and betrayal. Compete or cooperate - the choice is yours. Master your Vampire Learn and master an arsenal of deadly weapons and unholy abilities. In V Rising, you aim skill-shots and dodge projectiles using​ precise​​ ​WASD controls ​and cursor-based​ ​aiming - no click to move. Tailor your play-style by combining melee or range weapons with a variety of powerful spell kits. Master your skills and unleash your wicked powers.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/V_Rising",
+            "extract": "V Rising is a 2024 action role-playing survival game developed and published by Stunlock Studios. It was first released in early access for Windows in May 2022, and was officially released two years later, with a PlayStation 5 version released on June 11, 2024. Within a week, it had surpassed one million sales.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — PlayStation Canada",
+            "url": "https://www.youtube.com/watch?v=swRW780BGFg",
+            "extract": "Verified public, embeddable promotional trailer: V Rising - Invaders of Oakveil Launch Trailer | PS5 Games",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from RAWG with 182 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "swRW780BGFg",
+        "youtubeVideoTitle": "V Rising - Invaders of Oakveil Launch Trailer | PS5 Games",
+        "youtubeChannel": "PlayStation Canada",
+        "releaseDate": "2024-05-08",
+        "genres": [
+          "Action",
+          "Adventure",
+          "Massively Multiplayer"
+        ],
+        "platforms": [
+          "PC"
+        ],
+        "developers": [
+          "Stunlock Studios"
+        ],
+        "rating": 3.73,
+        "ratingScale": 5,
+        "votes": 182,
+        "poster": "https://media.rawg.io/media/games/bde/bdef96f7782fba0ff62dabc37ff4b1f0.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "V Rising: هوية مصاص الدماء تصنع وعداً قوياً، لكن الأدلة المتاحة لا تكفي للحكم على كل تفاصيل التنفيذ",
+        "summary": "تقدم V Rising تصوراً واضحاً للعبة بقاء وأكشن في عالم قوطي: مصاص دماء يستعيد قوته، يوازن بين الصيد والاختباء من الشمس، ويبني قلعة ويطوّر قدراته، مع إمكان التعاون أو التنافس عبر الإنترنت. تكمن جاذبية الفكرة في ربط موضوعها بأنظمة مترابطة، لا في الزينة القوطية وحدها. لكن ملف الأدلة يثبت ملامح التصميم العامة ولا يوثق تفاصيل كافية عن جودة السرد والشخصيات والصوت أو الأداء التقني؛ لذلك تميّز هذه المراجعة بين ما تؤكده المصادر وما يمكن استنتاجه بحذر، من دون ادعاء تجربة مباشرة. وتظل حصيلة RAWG الجماهيرية مؤشراً ثانوياً، لا بديلاً عن الحكم التحريري.",
+        "verdict": "V Rising تبدو، وفق المعلومات الموثقة، لعبة بقاء ذات تصور متماسك ومميز: تحوّل صفة مصاص الدماء إلى قواعد تؤثر في الحركة والصيد وإدارة الوقت وبناء القلعة، وتتيح للاعب اختيار التعاون أو التنافس. هذا الترابط يمنحها أساساً أقوى من مجرد إعداد جذاب، كما يجعلها مرشحة لأن تلائم من يستمتع بتطوير قاعدة والتقدم عبر أنظمة متداخلة. في المقابل، لا تتيح الأدلة المتاحة حكماً واثقاً على عمق الشخصيات، أو جودة الصوت، أو سلاسة الإيقاع الفعلية، ولا تبرر مدحاً تقنياً محدداً. حكمي إيجابي بتحفظ: أوصي بها لمن تجذبه دورة البقاء والبناء والقتال ذات الطابع القوطي، مع التنبيه إلى أن هذا تقييم تحريري مبني على مصادر موثقة لا شهادة لعب مباشرة.",
+        "body": "## مقدمة وسياق العمل\nتُقدَّم V Rising بوصفها لعبة أكشن وبقاء في عالم مفتوح ذي طابع قوطي، طورتها ونشرتها Stunlock Studios. تذكر المعلومات الموسوعية أنها دخلت الوصول المبكر على الحاسوب في مايو 2022، ثم صدرت رسمياً في 2024، ووصلت نسخة PlayStation 5 في 11 يونيو من العام نفسه. وتصف بيانات RAWG نوعها بأنها أكشن ومغامرة ومتعددة اللاعبين، بينما تشير معلومات المنصات في ملف الأدلة إلى الحاسوب. لذلك فهذه مراجعة تحريرية نهائية للعمل كما تصفه المواد المتاحة، وليست انطباعاً ناتجاً عن لعب مباشر. توجد مادة ترويجية رسمية موثقة بعنوان المقطع الإعلاني لإطلاق Invaders of Oakveil على PS5، لكن عنوان المقطع وحده لا يكفي لإثبات تفاصيل محتواه أو خصائص الإضافة. هذا الحد مهم: يمكن تقييم وضوح الفكرة وبنية الأنظمة المعلنة، لا اختلاق أحكام عن الأداء أو المشاهد أو جودة التنفيذ التي لا توثقها المصادر.\n\n## الفكرة والقصة أو التجربة\nتبدأ الفكرة بمصاص دماء ضعيف يستيقظ بعد قرون من السبات، ويحتاج إلى صيد الدم لاستعادة قوته، مع تجنب ضوء الشمس القاتل. ومن ثم تتسع الرحلة إلى جمع الموارد، واكتشاف تقنيات وقدرات، وبناء قلعة تتحول إلى مركز للتخزين وتطوير النفوذ، فضلاً عن تحويل البشر إلى خدم والسعي لتأسيس إمبراطورية مصاصي دماء. هذه العناصر موثقة في وصف RAWG، وهي تمنح التجربة خطاً مفهوماً: البقاء ليس هدفاً منفصلاً عن بناء السلطة، بل طريق إليها.\n\nالقصة، وفق المتاح، أقرب إلى إطار دافع للاستكشاف والتقدم منها إلى سرد شخصي مفصل. سؤال التحول إلى دراكولا يمنح الرحلة غاية أسطورية، لكن لا توجد معلومات كافية عن كتابة الحوارات، أو تعقيد الشخصيات، أو كيفية كشف العالم لحكايته. لذلك لا يصح تقديم العمل باعتباره دراما سردية عميقة؛ الأدق أن جاذبيته الموثقة تكمن في هوية اللاعب ومسار الصعود، فيما تظل قيمة الحكاية التفصيلية غير محسومة. وهذه نقطة تضع سقفاً للحكم على جانب القصة، لا دليلاً على غيابها أو ضعفها.\n\n## السرد والشخصيات أو تصميم اللعب\nتتضح خصوصية التصميم في تحويل صورة مصاص الدماء إلى قيود وفرص عملية. دورة الليل والنهار تجعل توقيت الخروج جزءاً من التخطيط: اللاعب يطلب الدم والموارد، لكنه يحتاج إلى الاحتماء من الشمس نهاراً. كما أن الصيد، وتطوير القلعة، وتجنيد الخدم، ومواجهة الجنود المقدسين والوحوش، تتصل كلها بفكرة استعادة النفوذ. هذا الربط يوحي بتصميم ذي محور واضح، إذ لا تبدو الأنظمة المعلنة قائمة عشوائية من أنشطة لا يجمعها موضوع.\n\nويصف المصدر القتال بأنه يعتمد التصويب بمهارات تتطلب الدقة، والمراوغة من المقذوفات، والتحكم بلوحة المفاتيح WASD والمؤشر، مع إمكان الجمع بين أسلحة قريبة أو بعيدة المدى ومجموعات متنوعة من القدرات السحرية. كما تتاح المغامرة منفرداً أو مع رفاق، إلى جانب مداهمة قلاع لاعبين آخرين أو اختيار الدبلوماسية والتعاون. يمكن استنتاج أن تعدد أساليب المواجهة واللعب الاجتماعي يوسع مجال القرار، لكن لا تتوفر تفاصيل موثقة تكفي لتقييم توازن الأسلحة أو ذكاء الخصوم أو جودة التقدم بين القدرات. كذلك لا يثبت وصف تعدد اللاعبين أن اللعب التعاوني أو التنافسي متساويان في المتعة أو الملاءمة لكل لاعب.\n\n## الإخراج والجوانب الفنية\nعلى مستوى التوجيه التصميمي، يظهر تصور متماسك يجمع البقاء والاستكشاف وبناء القاعدة والصراع بين اللاعبين تحت ثيمة واحدة. وصف العالم يذكر غابات وريفاً مفتوحاً وأبراجاً محصنة وأبراجاً؟ لا؛ لا حاجة إلى إضافة تفاصيل غير واردة: المؤكد هو الغابات والسهول والأبراج المحصنة، إلى جانب القرى وقطاعات تسكنها كائنات خارقة. ويحدد هذا التنوع الجغرافي إطاراً لتجوال تتخلله الموارد والأعداء ومناطق الخطر. غير أن ملف الأدلة لا يشرح طريقة توزيع المناطق أو بناء المهمات، ولا يوثق الإخراج السينمائي أو جودة الرسوم المتحركة أو الأداء التقني. لذلك فالتقدير هنا يخص وضوح الاتجاه العام، لا مستوى التنفيذ الذي لا يمكن استنتاجه من وصف تسويقي أو بيانات فهرسة.\n\n## الصورة والهوية البصرية\nالهوية القوطية واضحة في الوصف الرسمي المتاح: مصاص دماء، قلاع، قوى مظلمة، ومواجهة الجنود المقدسين والكائنات الأسطورية. كذلك ترد إشارات إلى الغابات والريف والأبراج المحصنة، وتتيح اللعبة تخصيص المجال الخاص وإظهار أسلوب اللاعب القوطي. هذه مكونات كافية للقول إن الإعداد يحمل تماسكاً موضوعياً وأن بناء القلعة ليس مجرد وظيفة عملية، بل مساحة مرتبطة بخيال امتلاك المجال والنفوذ.\n\nلكن لا تتضمن الأدلة تحليلاً بصرياً مباشراً للألوان أو الإضاءة أو وضوح التفاصيل أو ثبات معدل الإطارات، ولا يجوز التعامل مع وجود مقطع دعائي رسمي كأننا وثقنا مضمونه إطاراً بإطار. لذلك تستند درجة الصورة إلى قوة الهوية المعلنة وتنوع البيئات الموصوفة، لا إلى حكم تقني على جودة العرض. وهي نقطة قوة مفهومية أكثر مما هي شهادة على التفوق الفني.\n\n## الصوت والموسيقى والأداء\nلا يقدم ملف الأدلة وصفاً للموسيقى أو المؤثرات أو التمثيل الصوتي، ولا يحدد أسماء مؤدين أو مقطوعات أو اتجاهات في المزج الصوتي. ووجود إعلان إطلاق رسمي لا يتيح وحده استنتاج جودة موسيقاه، فضلاً عن أنه لا يعوض مراجعة الصوت داخل اللعبة. لذلك لا أنسب إلى العمل أجواء صوتية ناجحة أو أداءً تمثيلياً مميزاً، كما لا أعد غياب المعلومات عيباً مثبتاً في المنتج.\n\nالدرجة المدرجة لهذا المحور تحفظية ومحايدة إجرائياً بسبب نقص الأدلة القابلة للتقييم، وليست حكماً بأن الصوت متوسط فعلياً. هذا التحفظ يقلل من قوة الاستنتاج العام، لكنه أكثر أمانة من ملء الفراغ بوصف تخيلي. لا يمكن بناء توصية دقيقة على هذا الجانب إلا بتوافر مراجعة صوتية مستقلة أو مواد موثقة تشرح عناصره.\n\n## الإيقاع والبناء وتنوع المحتوى\nتضع الأنظمة المعلنة إيقاعاً محتملاً يتناوب بين استكشاف العالم، وجمع الموارد، والعودة إلى القلعة لتطويرها، ثم مواجهة تهديدات أقوى. ويضيف تعاقب الليل والنهار قيداً زمنياً يغير شروط الحركة، فيما يربط البحث عن الدم بالبقاء واستعادة القوة. ومن حيث التصميم، قد يمنح هذا التناوب الرحلة تنوعاً وظيفياً، لأن نشاط اللاعب لا يقتصر على القتال أو البناء وحده. كما أن اختيار اللعب الفردي أو الجماعي، والتعاون أو مداهمة الآخرين أو التفاوض، يوسع احتمالات التجربة بحسب تفضيل اللاعب.\n\nمع ذلك، لا توضح المصادر مقدار الوقت الذي يستغرقه كل نشاط، أو إن كان جمع الموارد متكرراً، أو كيف تتدرج المواجهات، أو ما إذا كانت الحلقات الطويلة تحافظ على زخمها. لذا فالحكم الإيجابي هنا متعلق بتنوع مكونات البناء، أما سلاسة الإيقاع الفعلي فتبقى غير مثبتة. لا ينبغي الخلط بين كثرة الأنظمة المعلنة وبين نجاح توزيعها؛ فقد تمنح الخيارات عمقاً، وقد تتطلب صبراً، ولا تكفي الأدلة للقطع بأي الاحتمالين.\n\n## نقاط القوة\nأبرز نقاط القوة المدعومة هي وحدة الفكرة: الشمس والدم والقلعة والصيد ليست عناصر منفصلة عن هوية مصاص الدماء، بل تدخل في تصور البقاء والصعود. ويعزز ذلك وضوح الغاية العامة، من استيقاظ شخصية ضعيفة إلى بناء نفوذها. كذلك يوفر وصف العالم بيئات وأنواع أخطار متعددة، من القرى واللصوص إلى الوحوش والجنود المقدسين، بما يوحي بمجالات مختلفة للاستكشاف والمواجهة من دون أن نبالغ في وصف محتواها الفعلي.\n\nويحسب للتصميم المعلن تنوع أدوات القتال بين الأسلحة القريبة والبعيدة والقدرات السحرية، مع خيارات للتصويب والمراوغة. كما يمنح اللعب منفرداً أو مع الأصدقاء، إلى جانب التنافس والتعاون، مرونة في اختيار العلاقة مع العالم واللاعبين الآخرين. وتمنح القلعة المشروع نقطة ارتكاز عملية وموضوعية معاً، إذ تحفظ الموارد وتتيح التطوير وتخدم صورة تأسيس إمبراطورية. هذه مزايا في بنية العمل كما تصفها المصادر، وليست ادعاءات حول جودة موازنتها أو متعة تنفيذها.\n\n## نقاط الضعف\nالقصور الأوضح في الحكم الحالي هو نقص المعلومات الموثقة عن عناصر حاسمة: الكتابة التفصيلية والشخصيات والصوت والأداء التقني. وهذا لا يثبت أنها ضعيفة داخل اللعبة، لكنه يمنع منحها رصيداً نقدياً بلا سند. كما أن وصف دورة التقدم لا يوضح إن كان جمع المواد وبناء القلعة يتطوران بعمق كافٍ، أو يتحولان إلى تكرار؛ ولذلك تبقى قابلية الإرهاق سؤالاً مشروعاً لا نتيجة مؤكدة.\n\nكذلك فإن تعدد اللعب الفردي والتعاوني والتنافسي لا يضمن توازناً جيداً بينها. لا يقدم الملف بيانات عن الخوادم، أو جودة الاتصال، أو أدوات إدارة اللعب الجماعي، أو الفروق العملية بين الخيارات. ومن غير المنصف تحويل هذه الثغرات المعلوماتية إلى اتهامات تقنية، لكن من المهم التنبيه إليها عند اتخاذ قرار الشراء. وأخيراً، لا تكفي فرضية صعود مصاص الدماء وحدها لإثبات عمق سردي؛ من يبحث عن شخصيات مكتوبة بعناية وحكاية موثقة التفاصيل لا يملك هنا أساساً كافياً للتأكد من ذلك.\n\n## لمن يناسب هذا العمل؟\nتبدو V Rising مرشحة لمن ينجذب إلى ألعاب البقاء التي تدمج جمع الموارد وبناء قاعدة والتقدم في القدرات، ولمن يستهويه إعداد مصاصي الدماء القوطي حين يتحول إلى قواعد لعب لا مجرد خلفية. وقد تناسب أيضاً من يبحث عن خيار بين اللعب الفردي ومشاركة الرحلة مع الأصدقاء، أو يفضل وجود التنافس على القلاع إلى جانب التعاون. أما اللاعب الذي يريد قصة وشخصيات في صدارة التجربة، أو يشترط معرفة دقيقة بمستوى الصوت والأداء قبل الاختيار، فقد يحتاج إلى مراجعات مستقلة أكثر تفصيلاً من ملف الأدلة المتاح. وتعرض RAWG متوسطاً جماهيرياً قدره 3.73 من 5 استناداً إلى 182 صوتاً؛ وهو مؤشر ثانوي منسوب للمنصة، لا يحل محل هذا الحكم التحريري ولا يمثل درجات محاورها.\n\n## الحكم النهائي\nتستحق V Rising اهتماماً نقدياً إيجابياً لأن فكرتها تجمع عناصر البقاء والتطور وبناء القلعة في هوية مفهومة ومتماسكة، ولأن خيارات القتال والتعاون والتنافس تمنحها تنوعاً ظاهراً في التصميم. لكن هذه الخلاصة محدودة بما تثبته المصادر: فهي لا تؤكد جودة السرد التفصيلي، ولا مستوى الصوت، ولا سلاسة التنفيذ أو الإيقاع عند اللعب. لذا أراها توصية مناسبة أساساً لمحبي أنظمة البقاء والبناء ذات الثيمة القوطية، لا حكماً مطلقاً يناسب كل الأذواق. الدرجات تعكس قوة الفكرة الموثقة مع التحفظ حيث تنقص الشواهد، ولا تدعي أنها بديل عن تجربة مباشرة أو عن مراجعة فنية متخصصة لكل جانب.",
+        "scores": {
+          "story": 7.2,
+          "visuals": 7.4,
+          "sound": 5,
+          "pacing": 7
+        },
+        "pros": [
+          "هوية مصاص الدماء مرتبطة بأنظمة موثقة مثل تجنب الشمس، وصيد الدم، وبناء القلعة.",
+          "تجمع البنية المعلنة بين الاستكشاف وجمع الموارد والتطوير ومواجهة أخطار متنوعة.",
+          "تصف المصادر خيارات قتال متعددة تشمل الأسلحة القريبة والبعيدة والقدرات السحرية.",
+          "إمكان اللعب منفرداً أو مع الأصدقاء، والتعاون أو التنافس، يوسع أساليب المشاركة.",
+          "القلعة تؤدي دوراً عملياً في التخزين والتطوير، وتخدم في الوقت نفسه فكرة بناء النفوذ."
+        ],
+        "cons": [
+          "الأدلة المتاحة لا تكفي للحكم على عمق الشخصيات أو جودة الكتابة السردية.",
+          "لا تتوفر معلومات موثقة تسمح بتقييم الموسيقى أو المؤثرات أو الأداء الصوتي.",
+          "لا توجد شواهد كافية على جودة الأداء التقني أو سلاسة الإيقاع الفعلي.",
+          "تفاصيل توازن القتال واللعب الجماعي وتدرج التحدي غير موضحة في ملف الأدلة.",
+          "احتمال تكرار جمع الموارد أو أنشطة البناء غير محسوم، ولا يمكن اعتباره عيباً مثبتاً."
+        ],
+        "title": "V Rising",
+        "type": "game",
+        "sourceId": "game:602224",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/v-rising",
+        "sourceRating": 3.73,
+        "sourceRatingScale": 5,
+        "sourceVoteCount": 182,
+        "sourceRatingCheckedAt": "2026-11-25T10:16:09.251Z",
+        "audienceScore": 7.5,
+        "releaseDate": "2024-05-08",
+        "poster": "https://media.rawg.io/media/games/bde/bdef96f7782fba0ff62dabc37ff4b1f0.jpg",
+        "backdrop": "https://media.rawg.io/media/games/bde/bdef96f7782fba0ff62dabc37ff4b1f0.jpg",
+        "genres": [
+          "Action",
+          "Adventure",
+          "Massively Multiplayer"
+        ],
+        "platforms": [
+          "PC"
+        ],
+        "cast": [],
+        "crew": [],
+        "tags": [
+          "Action",
+          "Adventure",
+          "Massively Multiplayer"
+        ],
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/v-rising",
+            "extract": "A Vampire Survival Experience Awaken as a weakened vampire after centuries of slumber. Hunt for blood in nearby settlements to regain your strength while hiding from the scorching sun to survive. Rebuild your castle and convert humans into your loyal servants in a quest to raise your vampire empire. Make allies online, fend off holy soldiers, and wage war against other players in a world of conflict. Will you become the next Dracula? A Gothic Open-World Explore a vast world teeming with mythical beings and danger. Travel through lush forests, open countryside, and dark dungeons to discover valuable resources, meeting friends and foes alike along the way. Traverse the world with vampire comrades or hunt solo as you pillage villages, raid bandits, and wander into the domains of supernatural beasts. Fear the light - Rule the night Stick to the shadows during the daytime, or the burning sunlight will turn you to ashes. Roam the night and prey on your victims in the darkness. As a vampire, you must quench your bloodlust and plan your strategies around the day/night cycle. Raise your Castle Gather resources and discover ancient techniques to gain dark powers. Use your newly acquired knowledge to build a castle where you can store your loot and grow your army of vampires. Personalize your domain, exhibit your vampiric style and make sure to craft coffins for servants and friends. Strengthen your castle while the threat from other players is rising. Compete or Cooperate Travel alone or explore the world with friends. Fighting side by side with other vampires will give you an advantage in your battle against the strongest creatures and most powerful humans. Raid other players’ castles or play the diplomat in the game of blood, power, and betrayal. Compete or cooperate - the choice is yours. Master your Vampire Learn and master an arsenal of deadly weapons and unholy abilities. In V Rising, you aim skill-shots and dodge projectiles using​ precise​​ ​WASD controls ​and cursor-based​ ​aiming - no click to move. Tailor your play-style by combining melee or range weapons with a variety of powerful spell kits. Master your skills and unleash your wicked powers.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/V_Rising",
+            "extract": "V Rising is a 2024 action role-playing survival game developed and published by Stunlock Studios. It was first released in early access for Windows in May 2022, and was officially released two years later, with a PlayStation 5 version released on June 11, 2024. Within a week, it had surpassed one million sales.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — PlayStation Canada",
+            "url": "https://www.youtube.com/watch?v=swRW780BGFg",
+            "extract": "Verified public, embeddable promotional trailer: V Rising - Invaders of Oakveil Launch Trailer | PS5 Games",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "swRW780BGFg",
+        "youtubeVideoTitle": "V Rising - Invaders of Oakveil Launch Trailer | PS5 Games",
+        "reviewMode": "review",
+        "score": 6.8
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 6494,
+      "articlePath": "src/content/reviews/game-v-rising-602224.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-v-rising-602224/"
     }
   },
   "providers": {},
@@ -3791,9 +3675,9 @@
       "tokens": 78344
     },
     "2026-11-25": {
-      "articles": 1,
-      "requests": 2,
-      "tokens": 6017
+      "articles": 2,
+      "requests": 4,
+      "tokens": 12511
     }
   },
   "history": []
