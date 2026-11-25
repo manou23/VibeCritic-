@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-25T10:17:07.346Z",
+  "updatedAt": "2026-11-25T13:17:03.044Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -3500,146 +3500,198 @@
         "popularity": 2112,
         "source": "RAWG"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-25T10:16:08.499Z",
-      "updatedAt": "2026-11-25T10:17:07.345Z",
+      "updatedAt": "2026-11-25T13:16:19.032Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 6494,
+      "articlePath": "src/content/reviews/game-v-rising-602224.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-v-rising-602224/",
+      "publishedAt": "2026-11-25T13:16:19.032Z"
+    },
+    "movie:801688": {
+      "key": "movie:801688",
+      "type": "movie",
+      "id": "801688",
+      "title": "Kalki 2898-AD",
+      "item": {
+        "type": "movie",
+        "id": "801688",
+        "name": "Kalki 2898-AD",
+        "date": "2024-06-26",
+        "preview": false,
+        "popularity": 741.5328,
+        "source": "TMDB"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-25T13:16:23.775Z",
+      "updatedAt": "2026-11-25T13:17:03.044Z",
       "nextAttemptAt": null,
       "evidence": {
-        "title": "V Rising",
-        "type": "game",
-        "collectedAt": "2026-11-25T10:16:09.251Z",
-        "sourceId": "game:602224",
-        "sourceName": "RAWG",
-        "sourceUrl": "https://rawg.io/games/v-rising",
-        "overview": "A Vampire Survival Experience Awaken as a weakened vampire after centuries of slumber. Hunt for blood in nearby settlements to regain your strength while hiding from the scorching sun to survive. Rebuild your castle and convert humans into your loyal servants in a quest to raise your vampire empire. Make allies online, fend off holy soldiers, and wage war against other players in a world of conflict. Will you become the next Dracula? A Gothic Open-World Explore a vast world teeming with mythical beings and danger. Travel through lush forests, open countryside, and dark dungeons to discover valuable resources, meeting friends and foes alike along the way. Traverse the world with vampire comrades or hunt solo as you pillage villages, raid bandits, and wander into the domains of supernatural beasts. Fear the light - Rule the night Stick to the shadows during the daytime, or the burning sunlight will turn you to ashes. Roam the night and prey on your victims in the darkness. As a vampire, you must quench your bloodlust and plan your strategies around the day/night cycle. Raise your Castle Gather resources and discover ancient techniques to gain dark powers. Use your newly acquired knowledge to build a castle where you can store your loot and grow your army of vampires. Personalize your domain, exhibit your vampiric style and make sure to craft coffins for servants and friends. Strengthen your castle while the threat from other players is rising. Compete or Cooperate Travel alone or explore the world with friends. Fighting side by side with other vampires will give you an advantage in your battle against the strongest creatures and most powerful humans. Raid other players’ castles or play the diplomat in the game of blood, power, and betrayal. Compete or cooperate - the choice is yours. Master your Vampire Learn and master an arsenal of deadly weapons and unholy abilities. In V Rising, you aim skill-shots and dodge projectiles using​ precise​​ ​WASD controls ​and cursor-based​ ​aiming - no click to move. Tailor your play-style by combining melee or range weapons with a variety of powerful spell kits. Master your skills and unleash your wicked powers.",
+        "title": "Kalki 2898-AD",
+        "type": "movie",
+        "collectedAt": "2026-11-25T13:16:24.253Z",
+        "sourceId": "movie:801688",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/801688",
+        "overview": "In the year 2898 AD, around 6000 years after Kurukshetra war, Ashwatthama gears up for his final battle of redemption at the sign of hope in a dystopian world and Bhairava, a wisecracking and self-interested bounty hunter, tired of the perilous life becomes the hurdle in the process.",
         "sources": [
           {
-            "name": "RAWG",
-            "url": "https://rawg.io/games/v-rising",
-            "extract": "A Vampire Survival Experience Awaken as a weakened vampire after centuries of slumber. Hunt for blood in nearby settlements to regain your strength while hiding from the scorching sun to survive. Rebuild your castle and convert humans into your loyal servants in a quest to raise your vampire empire. Make allies online, fend off holy soldiers, and wage war against other players in a world of conflict. Will you become the next Dracula? A Gothic Open-World Explore a vast world teeming with mythical beings and danger. Travel through lush forests, open countryside, and dark dungeons to discover valuable resources, meeting friends and foes alike along the way. Traverse the world with vampire comrades or hunt solo as you pillage villages, raid bandits, and wander into the domains of supernatural beasts. Fear the light - Rule the night Stick to the shadows during the daytime, or the burning sunlight will turn you to ashes. Roam the night and prey on your victims in the darkness. As a vampire, you must quench your bloodlust and plan your strategies around the day/night cycle. Raise your Castle Gather resources and discover ancient techniques to gain dark powers. Use your newly acquired knowledge to build a castle where you can store your loot and grow your army of vampires. Personalize your domain, exhibit your vampiric style and make sure to craft coffins for servants and friends. Strengthen your castle while the threat from other players is rising. Compete or Cooperate Travel alone or explore the world with friends. Fighting side by side with other vampires will give you an advantage in your battle against the strongest creatures and most powerful humans. Raid other players’ castles or play the diplomat in the game of blood, power, and betrayal. Compete or cooperate - the choice is yours. Master your Vampire Learn and master an arsenal of deadly weapons and unholy abilities. In V Rising, you aim skill-shots and dodge projectiles using​ precise​​ ​WASD controls ​and cursor-based​ ​aiming - no click to move. Tailor your play-style by combining melee or range weapons with a variety of powerful spell kits. Master your skills and unleash your wicked powers.",
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/801688",
+            "extract": "In the year 2898 AD, around 6000 years after Kurukshetra war, Ashwatthama gears up for his final battle of redemption at the sign of hope in a dystopian world and Bhairava, a wisecracking and self-interested bounty hunter, tired of the perilous life becomes the hurdle in the process.",
             "kind": "catalog-metadata"
           },
           {
             "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/V_Rising",
-            "extract": "V Rising is a 2024 action role-playing survival game developed and published by Stunlock Studios. It was first released in early access for Windows in May 2022, and was officially released two years later, with a PlayStation 5 version released on June 11, 2024. Within a week, it had surpassed one million sales.",
+            "url": "https://en.wikipedia.org/wiki/Kalki_2898_AD",
+            "extract": "Kalki 2898 AD is a 2024 Indian Telugu-language epic mythological science fiction film written and directed by Nag Ashwin. Produced by Vyjayanthi Movies, it features an ensemble cast including Amitabh Bachchan, Kamal Haasan, Prabhas, Deepika Padukone, Shobana and Disha Patani. Inspired by Hindu scriptures, it serves as the first film in the Kalki Cinematic Universe. Set in a dystopian future in the year 2898 AD in the city of Kashi, the story follows a group on a mission to protect lab subject SUM-80's unborn child, believed to be Kalki, the final incarnation of Vishnu.",
             "kind": "encyclopedia"
           },
           {
-            "name": "YouTube — PlayStation Canada",
-            "url": "https://www.youtube.com/watch?v=swRW780BGFg",
-            "extract": "Verified public, embeddable promotional trailer: V Rising - Invaders of Oakveil Launch Trailer | PS5 Games",
+            "name": "YouTube — Netflix India",
+            "url": "https://www.youtube.com/watch?v=aninoDcPWo4",
+            "extract": "Verified public, embeddable promotional trailer: Kalki 2898 AD (HINDI) | Official Trailer | Prabhas, Deepika P, Kamal Haasan, Amitabh Bachchan",
             "kind": "promotional"
           }
         ],
         "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from RAWG with 182 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "swRW780BGFg",
-        "youtubeVideoTitle": "V Rising - Invaders of Oakveil Launch Trailer | PS5 Games",
-        "youtubeChannel": "PlayStation Canada",
-        "releaseDate": "2024-05-08",
+        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 215 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "aninoDcPWo4",
+        "youtubeVideoTitle": "Kalki 2898 AD (HINDI) | Official Trailer | Prabhas, Deepika P, Kamal Haasan, Amitabh Bachchan",
+        "youtubeChannel": "Netflix India",
+        "releaseDate": "2024-06-26",
         "genres": [
+          "Drama",
           "Action",
-          "Adventure",
-          "Massively Multiplayer"
+          "Fantasy",
+          "Science Fiction"
         ],
-        "platforms": [
-          "PC"
+        "platforms": [],
+        "cast": [
+          "Amitabh Bachchan",
+          "Prabhas",
+          "Deepika Padukone",
+          "Kamal Haasan",
+          "Saswata Chatterjee",
+          "Shobana",
+          "Rajendra Prasad",
+          "Pasupathy"
         ],
-        "developers": [
-          "Stunlock Studios"
+        "crew": [
+          "Nag Ashwin",
+          "Nag Ashwin"
         ],
-        "rating": 3.73,
-        "ratingScale": 5,
-        "votes": 182,
-        "poster": "https://media.rawg.io/media/games/bde/bdef96f7782fba0ff62dabc37ff4b1f0.jpg"
+        "rating": 6.416,
+        "ratingScale": 10,
+        "votes": 215,
+        "poster": "https://image.tmdb.org/t/p/w780/rstcAnBeCkxNQjNp3YXrF6IP1tW.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/seAIZLEq2Il2psjMUREDbSdRmbu.jpg"
       },
       "sections": [],
       "article": {
-        "headline": "V Rising: هوية مصاص الدماء تصنع وعداً قوياً، لكن الأدلة المتاحة لا تكفي للحكم على كل تفاصيل التنفيذ",
-        "summary": "تقدم V Rising تصوراً واضحاً للعبة بقاء وأكشن في عالم قوطي: مصاص دماء يستعيد قوته، يوازن بين الصيد والاختباء من الشمس، ويبني قلعة ويطوّر قدراته، مع إمكان التعاون أو التنافس عبر الإنترنت. تكمن جاذبية الفكرة في ربط موضوعها بأنظمة مترابطة، لا في الزينة القوطية وحدها. لكن ملف الأدلة يثبت ملامح التصميم العامة ولا يوثق تفاصيل كافية عن جودة السرد والشخصيات والصوت أو الأداء التقني؛ لذلك تميّز هذه المراجعة بين ما تؤكده المصادر وما يمكن استنتاجه بحذر، من دون ادعاء تجربة مباشرة. وتظل حصيلة RAWG الجماهيرية مؤشراً ثانوياً، لا بديلاً عن الحكم التحريري.",
-        "verdict": "V Rising تبدو، وفق المعلومات الموثقة، لعبة بقاء ذات تصور متماسك ومميز: تحوّل صفة مصاص الدماء إلى قواعد تؤثر في الحركة والصيد وإدارة الوقت وبناء القلعة، وتتيح للاعب اختيار التعاون أو التنافس. هذا الترابط يمنحها أساساً أقوى من مجرد إعداد جذاب، كما يجعلها مرشحة لأن تلائم من يستمتع بتطوير قاعدة والتقدم عبر أنظمة متداخلة. في المقابل، لا تتيح الأدلة المتاحة حكماً واثقاً على عمق الشخصيات، أو جودة الصوت، أو سلاسة الإيقاع الفعلية، ولا تبرر مدحاً تقنياً محدداً. حكمي إيجابي بتحفظ: أوصي بها لمن تجذبه دورة البقاء والبناء والقتال ذات الطابع القوطي، مع التنبيه إلى أن هذا تقييم تحريري مبني على مصادر موثقة لا شهادة لعب مباشرة.",
-        "body": "## مقدمة وسياق العمل\nتُقدَّم V Rising بوصفها لعبة أكشن وبقاء في عالم مفتوح ذي طابع قوطي، طورتها ونشرتها Stunlock Studios. تذكر المعلومات الموسوعية أنها دخلت الوصول المبكر على الحاسوب في مايو 2022، ثم صدرت رسمياً في 2024، ووصلت نسخة PlayStation 5 في 11 يونيو من العام نفسه. وتصف بيانات RAWG نوعها بأنها أكشن ومغامرة ومتعددة اللاعبين، بينما تشير معلومات المنصات في ملف الأدلة إلى الحاسوب. لذلك فهذه مراجعة تحريرية نهائية للعمل كما تصفه المواد المتاحة، وليست انطباعاً ناتجاً عن لعب مباشر. توجد مادة ترويجية رسمية موثقة بعنوان المقطع الإعلاني لإطلاق Invaders of Oakveil على PS5، لكن عنوان المقطع وحده لا يكفي لإثبات تفاصيل محتواه أو خصائص الإضافة. هذا الحد مهم: يمكن تقييم وضوح الفكرة وبنية الأنظمة المعلنة، لا اختلاق أحكام عن الأداء أو المشاهد أو جودة التنفيذ التي لا توثقها المصادر.\n\n## الفكرة والقصة أو التجربة\nتبدأ الفكرة بمصاص دماء ضعيف يستيقظ بعد قرون من السبات، ويحتاج إلى صيد الدم لاستعادة قوته، مع تجنب ضوء الشمس القاتل. ومن ثم تتسع الرحلة إلى جمع الموارد، واكتشاف تقنيات وقدرات، وبناء قلعة تتحول إلى مركز للتخزين وتطوير النفوذ، فضلاً عن تحويل البشر إلى خدم والسعي لتأسيس إمبراطورية مصاصي دماء. هذه العناصر موثقة في وصف RAWG، وهي تمنح التجربة خطاً مفهوماً: البقاء ليس هدفاً منفصلاً عن بناء السلطة، بل طريق إليها.\n\nالقصة، وفق المتاح، أقرب إلى إطار دافع للاستكشاف والتقدم منها إلى سرد شخصي مفصل. سؤال التحول إلى دراكولا يمنح الرحلة غاية أسطورية، لكن لا توجد معلومات كافية عن كتابة الحوارات، أو تعقيد الشخصيات، أو كيفية كشف العالم لحكايته. لذلك لا يصح تقديم العمل باعتباره دراما سردية عميقة؛ الأدق أن جاذبيته الموثقة تكمن في هوية اللاعب ومسار الصعود، فيما تظل قيمة الحكاية التفصيلية غير محسومة. وهذه نقطة تضع سقفاً للحكم على جانب القصة، لا دليلاً على غيابها أو ضعفها.\n\n## السرد والشخصيات أو تصميم اللعب\nتتضح خصوصية التصميم في تحويل صورة مصاص الدماء إلى قيود وفرص عملية. دورة الليل والنهار تجعل توقيت الخروج جزءاً من التخطيط: اللاعب يطلب الدم والموارد، لكنه يحتاج إلى الاحتماء من الشمس نهاراً. كما أن الصيد، وتطوير القلعة، وتجنيد الخدم، ومواجهة الجنود المقدسين والوحوش، تتصل كلها بفكرة استعادة النفوذ. هذا الربط يوحي بتصميم ذي محور واضح، إذ لا تبدو الأنظمة المعلنة قائمة عشوائية من أنشطة لا يجمعها موضوع.\n\nويصف المصدر القتال بأنه يعتمد التصويب بمهارات تتطلب الدقة، والمراوغة من المقذوفات، والتحكم بلوحة المفاتيح WASD والمؤشر، مع إمكان الجمع بين أسلحة قريبة أو بعيدة المدى ومجموعات متنوعة من القدرات السحرية. كما تتاح المغامرة منفرداً أو مع رفاق، إلى جانب مداهمة قلاع لاعبين آخرين أو اختيار الدبلوماسية والتعاون. يمكن استنتاج أن تعدد أساليب المواجهة واللعب الاجتماعي يوسع مجال القرار، لكن لا تتوفر تفاصيل موثقة تكفي لتقييم توازن الأسلحة أو ذكاء الخصوم أو جودة التقدم بين القدرات. كذلك لا يثبت وصف تعدد اللاعبين أن اللعب التعاوني أو التنافسي متساويان في المتعة أو الملاءمة لكل لاعب.\n\n## الإخراج والجوانب الفنية\nعلى مستوى التوجيه التصميمي، يظهر تصور متماسك يجمع البقاء والاستكشاف وبناء القاعدة والصراع بين اللاعبين تحت ثيمة واحدة. وصف العالم يذكر غابات وريفاً مفتوحاً وأبراجاً محصنة وأبراجاً؟ لا؛ لا حاجة إلى إضافة تفاصيل غير واردة: المؤكد هو الغابات والسهول والأبراج المحصنة، إلى جانب القرى وقطاعات تسكنها كائنات خارقة. ويحدد هذا التنوع الجغرافي إطاراً لتجوال تتخلله الموارد والأعداء ومناطق الخطر. غير أن ملف الأدلة لا يشرح طريقة توزيع المناطق أو بناء المهمات، ولا يوثق الإخراج السينمائي أو جودة الرسوم المتحركة أو الأداء التقني. لذلك فالتقدير هنا يخص وضوح الاتجاه العام، لا مستوى التنفيذ الذي لا يمكن استنتاجه من وصف تسويقي أو بيانات فهرسة.\n\n## الصورة والهوية البصرية\nالهوية القوطية واضحة في الوصف الرسمي المتاح: مصاص دماء، قلاع، قوى مظلمة، ومواجهة الجنود المقدسين والكائنات الأسطورية. كذلك ترد إشارات إلى الغابات والريف والأبراج المحصنة، وتتيح اللعبة تخصيص المجال الخاص وإظهار أسلوب اللاعب القوطي. هذه مكونات كافية للقول إن الإعداد يحمل تماسكاً موضوعياً وأن بناء القلعة ليس مجرد وظيفة عملية، بل مساحة مرتبطة بخيال امتلاك المجال والنفوذ.\n\nلكن لا تتضمن الأدلة تحليلاً بصرياً مباشراً للألوان أو الإضاءة أو وضوح التفاصيل أو ثبات معدل الإطارات، ولا يجوز التعامل مع وجود مقطع دعائي رسمي كأننا وثقنا مضمونه إطاراً بإطار. لذلك تستند درجة الصورة إلى قوة الهوية المعلنة وتنوع البيئات الموصوفة، لا إلى حكم تقني على جودة العرض. وهي نقطة قوة مفهومية أكثر مما هي شهادة على التفوق الفني.\n\n## الصوت والموسيقى والأداء\nلا يقدم ملف الأدلة وصفاً للموسيقى أو المؤثرات أو التمثيل الصوتي، ولا يحدد أسماء مؤدين أو مقطوعات أو اتجاهات في المزج الصوتي. ووجود إعلان إطلاق رسمي لا يتيح وحده استنتاج جودة موسيقاه، فضلاً عن أنه لا يعوض مراجعة الصوت داخل اللعبة. لذلك لا أنسب إلى العمل أجواء صوتية ناجحة أو أداءً تمثيلياً مميزاً، كما لا أعد غياب المعلومات عيباً مثبتاً في المنتج.\n\nالدرجة المدرجة لهذا المحور تحفظية ومحايدة إجرائياً بسبب نقص الأدلة القابلة للتقييم، وليست حكماً بأن الصوت متوسط فعلياً. هذا التحفظ يقلل من قوة الاستنتاج العام، لكنه أكثر أمانة من ملء الفراغ بوصف تخيلي. لا يمكن بناء توصية دقيقة على هذا الجانب إلا بتوافر مراجعة صوتية مستقلة أو مواد موثقة تشرح عناصره.\n\n## الإيقاع والبناء وتنوع المحتوى\nتضع الأنظمة المعلنة إيقاعاً محتملاً يتناوب بين استكشاف العالم، وجمع الموارد، والعودة إلى القلعة لتطويرها، ثم مواجهة تهديدات أقوى. ويضيف تعاقب الليل والنهار قيداً زمنياً يغير شروط الحركة، فيما يربط البحث عن الدم بالبقاء واستعادة القوة. ومن حيث التصميم، قد يمنح هذا التناوب الرحلة تنوعاً وظيفياً، لأن نشاط اللاعب لا يقتصر على القتال أو البناء وحده. كما أن اختيار اللعب الفردي أو الجماعي، والتعاون أو مداهمة الآخرين أو التفاوض، يوسع احتمالات التجربة بحسب تفضيل اللاعب.\n\nمع ذلك، لا توضح المصادر مقدار الوقت الذي يستغرقه كل نشاط، أو إن كان جمع الموارد متكرراً، أو كيف تتدرج المواجهات، أو ما إذا كانت الحلقات الطويلة تحافظ على زخمها. لذا فالحكم الإيجابي هنا متعلق بتنوع مكونات البناء، أما سلاسة الإيقاع الفعلي فتبقى غير مثبتة. لا ينبغي الخلط بين كثرة الأنظمة المعلنة وبين نجاح توزيعها؛ فقد تمنح الخيارات عمقاً، وقد تتطلب صبراً، ولا تكفي الأدلة للقطع بأي الاحتمالين.\n\n## نقاط القوة\nأبرز نقاط القوة المدعومة هي وحدة الفكرة: الشمس والدم والقلعة والصيد ليست عناصر منفصلة عن هوية مصاص الدماء، بل تدخل في تصور البقاء والصعود. ويعزز ذلك وضوح الغاية العامة، من استيقاظ شخصية ضعيفة إلى بناء نفوذها. كذلك يوفر وصف العالم بيئات وأنواع أخطار متعددة، من القرى واللصوص إلى الوحوش والجنود المقدسين، بما يوحي بمجالات مختلفة للاستكشاف والمواجهة من دون أن نبالغ في وصف محتواها الفعلي.\n\nويحسب للتصميم المعلن تنوع أدوات القتال بين الأسلحة القريبة والبعيدة والقدرات السحرية، مع خيارات للتصويب والمراوغة. كما يمنح اللعب منفرداً أو مع الأصدقاء، إلى جانب التنافس والتعاون، مرونة في اختيار العلاقة مع العالم واللاعبين الآخرين. وتمنح القلعة المشروع نقطة ارتكاز عملية وموضوعية معاً، إذ تحفظ الموارد وتتيح التطوير وتخدم صورة تأسيس إمبراطورية. هذه مزايا في بنية العمل كما تصفها المصادر، وليست ادعاءات حول جودة موازنتها أو متعة تنفيذها.\n\n## نقاط الضعف\nالقصور الأوضح في الحكم الحالي هو نقص المعلومات الموثقة عن عناصر حاسمة: الكتابة التفصيلية والشخصيات والصوت والأداء التقني. وهذا لا يثبت أنها ضعيفة داخل اللعبة، لكنه يمنع منحها رصيداً نقدياً بلا سند. كما أن وصف دورة التقدم لا يوضح إن كان جمع المواد وبناء القلعة يتطوران بعمق كافٍ، أو يتحولان إلى تكرار؛ ولذلك تبقى قابلية الإرهاق سؤالاً مشروعاً لا نتيجة مؤكدة.\n\nكذلك فإن تعدد اللعب الفردي والتعاوني والتنافسي لا يضمن توازناً جيداً بينها. لا يقدم الملف بيانات عن الخوادم، أو جودة الاتصال، أو أدوات إدارة اللعب الجماعي، أو الفروق العملية بين الخيارات. ومن غير المنصف تحويل هذه الثغرات المعلوماتية إلى اتهامات تقنية، لكن من المهم التنبيه إليها عند اتخاذ قرار الشراء. وأخيراً، لا تكفي فرضية صعود مصاص الدماء وحدها لإثبات عمق سردي؛ من يبحث عن شخصيات مكتوبة بعناية وحكاية موثقة التفاصيل لا يملك هنا أساساً كافياً للتأكد من ذلك.\n\n## لمن يناسب هذا العمل؟\nتبدو V Rising مرشحة لمن ينجذب إلى ألعاب البقاء التي تدمج جمع الموارد وبناء قاعدة والتقدم في القدرات، ولمن يستهويه إعداد مصاصي الدماء القوطي حين يتحول إلى قواعد لعب لا مجرد خلفية. وقد تناسب أيضاً من يبحث عن خيار بين اللعب الفردي ومشاركة الرحلة مع الأصدقاء، أو يفضل وجود التنافس على القلاع إلى جانب التعاون. أما اللاعب الذي يريد قصة وشخصيات في صدارة التجربة، أو يشترط معرفة دقيقة بمستوى الصوت والأداء قبل الاختيار، فقد يحتاج إلى مراجعات مستقلة أكثر تفصيلاً من ملف الأدلة المتاح. وتعرض RAWG متوسطاً جماهيرياً قدره 3.73 من 5 استناداً إلى 182 صوتاً؛ وهو مؤشر ثانوي منسوب للمنصة، لا يحل محل هذا الحكم التحريري ولا يمثل درجات محاورها.\n\n## الحكم النهائي\nتستحق V Rising اهتماماً نقدياً إيجابياً لأن فكرتها تجمع عناصر البقاء والتطور وبناء القلعة في هوية مفهومة ومتماسكة، ولأن خيارات القتال والتعاون والتنافس تمنحها تنوعاً ظاهراً في التصميم. لكن هذه الخلاصة محدودة بما تثبته المصادر: فهي لا تؤكد جودة السرد التفصيلي، ولا مستوى الصوت، ولا سلاسة التنفيذ أو الإيقاع عند اللعب. لذا أراها توصية مناسبة أساساً لمحبي أنظمة البقاء والبناء ذات الثيمة القوطية، لا حكماً مطلقاً يناسب كل الأذواق. الدرجات تعكس قوة الفكرة الموثقة مع التحفظ حيث تنقص الشواهد، ولا تدعي أنها بديل عن تجربة مباشرة أو عن مراجعة فنية متخصصة لكل جانب.",
+        "headline": "Kalki 2898 AD: طموح أسطوري واسع، وحكم تحكمه حدود الأدلة المتاحة",
+        "summary": "يقدّم Kalki 2898 AD تصوراً يجمع المستقبل الديستوبي بالأسطورة الهندوسية، واضعاً كاشي عام 2898 في قلب حكاية تتقاطع فيها مهمة حماية طفل لم يولد بعد مع مسار أشواتاما نحو التكفير، ومصالح صائد الجوائز بهايرافا. تكمن جاذبية المشروع في هذا التقاء الأنواع وفي اتساع عالمه المعلن، كما تمنحه أسماء مثل أميتاب باتشان وبرابهاس وديبيكا بادوكوني وكمال حسن حضوراً جماعياً لافتاً. لكن الأدلة المتاحة توثق الفكرة والطاقم أكثر مما توثق جودة التنفيذ في الصورة والصوت والإيقاع؛ لذلك تأتي هذه المراجعة صريحة بشأن حدود ما يمكن الجزم به، وتمنح العمل تقديراً إيجابياً حذراً لا يحوّل الطموح إلى إنجاز مفترض.",
+        "verdict": "الحكم النهائي إيجابي بحذر: لدى Kalki 2898 AD أساس تخييلي جذاب، لأن وضع عناصر من الميثولوجيا الهندوسية داخل مستقبل ديستوبي يفتح مجالاً لصراع ذي أبعاد أخلاقية وعالمية، ولأن مسارات حماية الطفل وتكفير أشواتاما ومصلحة بهايرافا تمنح الحكاية أكثر من مدخل. غير أن الطموح الموصوف ليس دليلاً كافياً وحده على نجاح الكتابة أو الصورة أو الموسيقى؛ والمصادر المتاحة هنا لا تقدم تحليلاً مستقلاً مفصلاً لهذه الجوانب. لذا فالتوصية الأنسب هي لمحبي الفانتازيا والخيال العلمي الهندي ومشروعات العوالم الممتدة، مع توقع عمل مثير للاهتمام في فكرته، لا افتراض تفوق فني غير موثق.",
+        "body": "## مقدمة وسياق العمل\n\nصدر Kalki 2898 AD في 26 يونيو 2024، ويُصنّف في بيانات TMDB ضمن الدراما والحركة والفانتازيا والخيال العلمي. وتصفه الموسوعة بأنه فيلم هندي ناطق بالتيلوغو، كتبه وأخرجه ناغ أشوين، وأنه بداية عالم سينمائي يحمل اسم Kalki. هذه حقائق تمنح العمل سياقه، لكنها لا تكفي وحدها للحكم على نجاحه. تستند هذه المراجعة إلى الملخص المنشور، والبيانات الموسوعية، ووجود إعلان رسمي باللغة الهندية على قناة Netflix India؛ وليست ادعاءً بمشاهدة الفيلم أو اختبار تفاصيله مباشرة. لذلك سيكون الحكم واضحاً في تقييم الفكرة وبناء المشروع الموثق، وحذراً حين يتعلق الأمر بجودة تنفيذ لا تصفها المواد المتاحة وصفاً نقدياً مستقلاً.\n\nهذا التفريق مهم خصوصاً لفيلم يعلن من عنوانه عن قفزة زمنية ضخمة ومزج بين مرجع أسطوري ومستقبل متخيل. يمكن تحليل ما تعد به هذه العناصر وما تتيحه من إمكانات، لكن لا يصح استنتاج جودة المؤثرات أو أداء الممثلين أو نجاح المشاهد من مجرد وجود إعلان رسمي أو قائمة أسماء. كما أن متوسط TMDB البالغ 6.416 من عشرة، استناداً إلى 215 صوتاً وقت جمع البيانات، مؤشر جماهيري محدود ومنسوب إلى المنصة؛ لا يمثل تقييماً تحريرياً مستقلاً ولا يحل محل الحكم النقدي هنا.\n\n## الفكرة والقصة أو التجربة\n\nتدور الفكرة المعلنة عام 2898، بعد نحو ستة آلاف سنة من حرب كوروكشيترا، في عالم ديستوبي. ويضع الملخص أشواتاما أمام معركته الأخيرة طلباً للتكفير، عند ظهور أمل جديد، فيما يصبح بهايرافا، صائد الجوائز الذي أنهكته حياة المخاطر، عائقاً في طريق العملية. وتضيف المادة الموسوعية أن الأحداث تقع في كاشي، وأن مجموعة تسعى إلى حماية الجنين الذي تحمله موضوعات المختبر SUM-80، إذ يُعتقد أنه كالكِي، التجسد الأخير لفيشنو.\n\nفي هذه المعطيات نواة درامية غنية: ماضٍ أسطوري بعيد لا يُترك وراء الشخصيات، بل يعود ليؤثر في مستقبل متداعٍ؛ ومهمة حماية تمنح الرهان بعداً يتجاوز النجاة الفردية؛ وشخصية صائد جوائز تبدو مدفوعة بمصلحة ذاتية تقف عند مفترق يتصل بمصير أوسع. ومن هذه المقابلة يمكن استنتاج سؤال أخلاقي جذاب عن إمكان التحول من الانتهازية إلى المسؤولية، لكن ذلك يظل قراءة لاحتمال تتيحه الحبكة، لا تقريراً عن مسار مكتمل أو خاتمة بعينها. كذلك فإن فكرة «الأمل» المرتبط بطفل لم يولد بعد تتيح وصل الأسطورة بالمستقبل، من دون أن نعرف من الملخص وحده مدى تعقيد معالجة هذا الوصل أو وضوح قواعد العالم.\n\n## السرد والشخصيات أو تصميم اللعب\n\nلأنه فيلم، لا ينطبق عليه تحليل تصميم اللعب. أما سردياً، فالمعلومات المتاحة تحدد محوراً مركزياً وشخصيات ذات وظائف متباينة: أشواتاما يحمل عبء التكفير، وبهايرافا يدخل بوصفه صائد جوائز مصلحياً يعوق المهمة، وSUM-80 ترتبط بالطفل الذي تدور حوله الحماية. هذا توزيع يتيح مواجهة بين الدافع الشخصي والواجب، وبين ذاكرة الماضي واحتمال المستقبل. كما أن تعدد الشخصيات المذكورة في قائمة الطاقم يشير إلى عمل جماعي واسع، لكنه لا يثبت أن لكل شخصية مساحة درامية متوازنة.\n\nنقطة القوة المحتملة في هذا الترتيب هي أن الصراع لا يعتمد على لغز واحد؛ فثمة مهمة، وتاريخ أسطوري، وشخصية مترددة المصالح، ووعد بمستقبل جديد. أما موضع التحفظ فهو أن الملخص لا يوضح كيف تتطور دوافع الشخصيات أو كيف تتشابك خطوطها، ولا يقدم شواهد على الحوار أو عمق التحولات. لذلك لا يمكن الجزم بأن بهايرافا يتغير فعلاً، أو أن أشواتاما يحصل على قوس درامي مقنع، أو أن شخصية SUM-80 تتجاوز وظيفتها في تحريك الحبكة. التقييم المنصف هنا يثني على إمكانات البناء ولا ينسب إليها نجاحاً تفصيلياً غير موثق.\n\n## الإخراج والجوانب الفنية\n\nتنسب البيانات الموسوعية الكتابة والإخراج إلى ناغ أشوين، وهي معلومة ذات صلة لأن جمع المهمتين يجعل اتساق الرؤية بين القصة والعالم المتخيل سؤالاً مهماً. إلا أن وجود اسم المخرج لا يكشف وحده كيف أدار المشاهد أووازن بين المرجعيات الأسطورية والخيال العلمي. كما لا توفر الأدلة المتاحة مراجعات مستقلة تفصيلية أو وصفاً موثقاً لتقنيات التنفيذ. لذا لا يصح تحويل ضخامة الفكرة إلى حكم تلقائي بأن الإخراج متقن، مثلما لا يصح اعتبار غياب التفاصيل دليلاً على ضعف العمل. ما يمكن تقديره هو وضوح التحدي الإبداعي: صياغة عالم مستقبلي ذي جذور دينية وثقافية، والمحافظة على قابلية تتبع صراعه الإنساني وسط اتساعه.\n\n## الصورة والهوية البصرية\n\nيعد الجمع بين كاشي في المستقبل، والديستوبيا، والخيال العلمي، والمرجعية الميثولوجية أساساً لهوية بصرية محتملة ومميزة؛ فهو يفتح باب التباين بين الموروث والتقنية، وبين فكرة الأمل وواقع عالم قاسٍ. لكن هذه استنتاجات عن المفهوم، لا وصف لمشاهد أو ألوان أو تصميمات ظهرت فعلاً. وجود إعلان رسمي موثق يثبت توفر مادة ترويجية، ولا يكفي وحده لإثبات مستوى التصوير أو المؤثرات أو اتساق التصميم. لذلك تبدو الهوية على مستوى الفكرة واعدة، بينما يظل الحكم على إنجازها البصري الفعلي محدود الثقة. الدرجة تعكس هذا التحفظ، لا اتهاماً للفيلم بخلل بصري.\n\n## الصوت والموسيقى والأداء\n\nتضم قائمة الممثلين أميتاب باتشان وبرابهاس وديبيكا بادوكوني وكمال حسن وشوبانا وغيرهم، وهو حضور معروف ومتعدد يمنح العمل ثقلاً تمثيلياً على مستوى الاختيار. لكن أسماء الممثلين لا تثبت جودة الأداء، ولا تتضمن المصادر وصفاً لمشاهد محددة أو لطبيعة الشخصيات الصوتية. كذلك لا تتوافر هنا معلومات موثقة عن المؤلف الموسيقي أو تصميم الصوت أو الأغاني، ولذلك سيكون اختلاق انطباع عن الموسيقى أو وضوح الحوار تجاوزاً للأدلة. الدرجة المحافظة في هذا المحور تعني أن المادة المتاحة لا تسمح بتقييم حاسم، لا أن الصوت رديء. يستحق العمل حكماً أفضل توثيقاً حين تتوافر شواهد مستقلة على التنفيذ السمعي والأداء.\n\n## الإيقاع والبناء وتنوع المحتوى\n\nتجمع الحبكة المعلنة بين خط التكفير وخط حماية الطفل وخط بهايرافا المصلحي، فيما يضيف إطار العالم الديستوبي بعداً تاريخياً ومستقبلياً. هذا التنوع يمنح البناء مجالاً للتبدل بين الصراع الشخصي والرهان الجماعي، لكنه قد يضع على السرد عبئاً في تقديم قواعد العالم والشخصيات معاً. ذلك احتمال تحليلي نابع من كثافة العناصر، لا ادعاء بوجود حشو أو إيقاع متعثر. لا تتضمن البيانات مدة الفيلم أو وصفاً لبنية فصوله أو إيقاع مشاهده، لذا لا يمكن قياس التوازن بين التمهيد والتصعيد. التقدير هنا متوسط مائل إلى الإيجاب: الفكرة تعد بتنوع، لكن نجاح توزيع هذا التنوع غير مثبت في الأدلة المتاحة.\n\n## نقاط القوة\n\nأبرز قوة موثقة هي تركيب الفكرة: مستقبل بعيد متصل بحرب أسطورية سابقة، بدلاً من خيال علمي منفصل عن مرجعيته الثقافية. ويمنح ربط الطفل المنتظر بالأمل والحماية الحبكة رهانا واضح الاتجاه، فيما يضيف وضع صائد جوائز أناني في مسار المهمة احتمالاً لصراع بين المنفعة والواجب. كذلك فإن اجتماع الفانتازيا والدراما والحركة والخيال العلمي يحدد طموحاً نوعياً واسعاً، وتمنح قائمة الممثلين المشروع حضوراً جماعياً لافتاً. أما بدء عالم سينمائي، كما تذكر الموسوعة، فيفتح مجالاً للتوسع؛ وقيمته ستعتمد على استقلال الفيلم وقدرته على إغلاق قوسه، وهي أمور لا تحسمها حقيقة كونه بداية سلسلة.\n\n## نقاط الضعف\n\nالتحفظ الأهم ليس عيباً مثبتاً داخل الفيلم، بل محدودية الأدلة التفصيلية اللازمة للحكم على التنفيذ. لا نملك هنا أساساً موثقاً لتقييم جودة المؤثرات، أو تماسك الحوار، أو كفاءة الأداء، أو دقة تصميم الصوت. كما أن كثرة المرجعيات والشخصيات تطرح خطراً بنيوياً محتملاً: أن تزاحم صناعة العالم التطور العاطفي، أو أن تتحول الشخصيات إلى أدوات لشرح الأسطورة. لا يجوز القول إن ذلك حدث فعلاً بلا شواهد. ومن جهة أخرى، فإن الاعتماد على قصة تمهد لعالم سينمائي قد يثير سؤالاً مشروعاً عن اكتمال الحكاية داخل الفيلم نفسه، لكن المصادر لا تجيب عنه. هذه نقاط ضعف في إمكانية التحقق والتقييم، وليست أحكاماً مختلقة على مشاهد بعينها.\n\n## لمن يناسب هذا العمل؟\n\nيناسب الفيلم، بحسب فرضيته المعلنة، من ينجذبون إلى الفانتازيا الهندية والقصص التي تمزج الميثولوجيا بالخيال العلمي، وإلى العوالم الديستوبية ذات الرهانات الجماعية. وقد يجذب أيضاً من يفضلون أعمالاً تضم طاقماً جماعياً وتؤسس لعالم قابل للتوسع، مع التنبيه إلى أن هذا التوسع لا يضمن وحده إشباعاً سردياً. أما من يبحث عن مراجعة موثقة بالتفصيل لجودة الموسيقى أو المؤثرات أو الأداء، فلن يجد في الأدلة الحالية ما يكفي لتوصية مبنية على تلك الجوانب. التوصية إذن موجهة إلى المهتم بالفكرة والنوع، مع استعداد لتقييم التنفيذ بنفسه، لا إلى من يريد ضماناً مسبقاً بأن كل عناصر الإنتاج ناجحة.\n\n## الحكم النهائي\n\nKalki 2898 AD مشروع طموح تملك فكرته ما يكفي لإثارة الفضول: أسطورة تعود في مستقبل ديستوبي، وطفل يمثل أفقاً للخلاص، وشخصيات تتقاطع مصالحها مع مهمة أكبر منها. تلك عناصر تمنحه أساساً سردياً واعداً وتميزاً في المزج النوعي، لكنها لا تعوض نقص الشواهد المتاحة عن جودة الصورة والصوت والإيقاع أو اكتمال التحولات الدرامية. لذلك يأتي الحكم إيجابياً باعتدال، ودرجات المحاور تتجنب مكافأة الطموح على أنه إنجاز مكتمل. أوصي به لمن يستهويه هذا التلاقي بين الثقافة الهندية والخيال العلمي، مع إبقاء التوقعات النقدية مفتوحة حتى تتاح أدلة أو مراجعات تنفيذية أوسع.",
         "scores": {
-          "story": 7.2,
-          "visuals": 7.4,
-          "sound": 5,
-          "pacing": 7
+          "story": 7.6,
+          "visuals": 7,
+          "sound": 5.5,
+          "pacing": 6.8
         },
         "pros": [
-          "هوية مصاص الدماء مرتبطة بأنظمة موثقة مثل تجنب الشمس، وصيد الدم، وبناء القلعة.",
-          "تجمع البنية المعلنة بين الاستكشاف وجمع الموارد والتطوير ومواجهة أخطار متنوعة.",
-          "تصف المصادر خيارات قتال متعددة تشمل الأسلحة القريبة والبعيدة والقدرات السحرية.",
-          "إمكان اللعب منفرداً أو مع الأصدقاء، والتعاون أو التنافس، يوسع أساليب المشاركة.",
-          "القلعة تؤدي دوراً عملياً في التخزين والتطوير، وتخدم في الوقت نفسه فكرة بناء النفوذ."
+          "يمزج بوضوح بين مستقبل ديستوبي ومرجعية أسطورية مرتبطة بحرب كوروكشيترا.",
+          "يمنح حماية الطفل الذي يُعتقد أنه كالكِي رهانا مركزياً مفهوماً، ويصلها بفكرة الأمل.",
+          "يقابل مهمة أشواتاما نحو التكفير بمصلحة بهايرافا الشخصية، ما يتيح صراعاً أخلاقياً واعداً.",
+          "يجمع بين الفانتازيا والدراما والحركة والخيال العلمي وفق تصنيف العمل الموثق.",
+          "يضم طاقماً جماعياً بارزاً، ويؤسس، بحسب المصدر الموسوعي، لعالم سينمائي قابل للتوسع."
         ],
         "cons": [
-          "الأدلة المتاحة لا تكفي للحكم على عمق الشخصيات أو جودة الكتابة السردية.",
-          "لا تتوفر معلومات موثقة تسمح بتقييم الموسيقى أو المؤثرات أو الأداء الصوتي.",
-          "لا توجد شواهد كافية على جودة الأداء التقني أو سلاسة الإيقاع الفعلي.",
-          "تفاصيل توازن القتال واللعب الجماعي وتدرج التحدي غير موضحة في ملف الأدلة.",
-          "احتمال تكرار جمع الموارد أو أنشطة البناء غير محسوم، ولا يمكن اعتباره عيباً مثبتاً."
+          "المصادر المتاحة لا توثق بالتفصيل جودة المؤثرات أو التصوير، لذلك يبقى الحكم البصري محدود الثقة.",
+          "لا تتوفر معلومات كافية عن الموسيقى أو تصميم الصوت أو أداء الممثلين لتقييمها بثقة.",
+          "اتساع العالم وتعدد خطوطه يطرحان احتمال مزاحمة بناء الشخصيات، لكن لا توجد أدلة كافية لحسم ذلك.",
+          "لا توضح الملخصات المتاحة مدى اكتمال الحكاية داخل الفيلم أو توازن إيقاعها."
         ],
-        "title": "V Rising",
-        "type": "game",
-        "sourceId": "game:602224",
-        "sourceName": "RAWG",
-        "sourceUrl": "https://rawg.io/games/v-rising",
-        "sourceRating": 3.73,
-        "sourceRatingScale": 5,
-        "sourceVoteCount": 182,
-        "sourceRatingCheckedAt": "2026-11-25T10:16:09.251Z",
-        "audienceScore": 7.5,
-        "releaseDate": "2024-05-08",
-        "poster": "https://media.rawg.io/media/games/bde/bdef96f7782fba0ff62dabc37ff4b1f0.jpg",
-        "backdrop": "https://media.rawg.io/media/games/bde/bdef96f7782fba0ff62dabc37ff4b1f0.jpg",
+        "title": "Kalki 2898-AD",
+        "type": "movie",
+        "sourceId": "movie:801688",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/801688",
+        "sourceRating": 6.416,
+        "sourceRatingScale": 10,
+        "sourceVoteCount": 215,
+        "sourceRatingCheckedAt": "2026-11-25T13:16:24.253Z",
+        "audienceScore": 6.4,
+        "releaseDate": "2024-06-26",
+        "poster": "https://image.tmdb.org/t/p/w780/rstcAnBeCkxNQjNp3YXrF6IP1tW.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/seAIZLEq2Il2psjMUREDbSdRmbu.jpg",
         "genres": [
+          "Drama",
           "Action",
-          "Adventure",
-          "Massively Multiplayer"
+          "Fantasy",
+          "Science Fiction"
         ],
-        "platforms": [
-          "PC"
+        "platforms": [],
+        "cast": [
+          "Amitabh Bachchan",
+          "Prabhas",
+          "Deepika Padukone",
+          "Kamal Haasan",
+          "Saswata Chatterjee",
+          "Shobana",
+          "Rajendra Prasad",
+          "Pasupathy"
         ],
-        "cast": [],
-        "crew": [],
+        "crew": [
+          "Nag Ashwin",
+          "Nag Ashwin"
+        ],
         "tags": [
+          "Drama",
           "Action",
-          "Adventure",
-          "Massively Multiplayer"
+          "Fantasy",
+          "Science Fiction"
         ],
         "sources": [
           {
-            "name": "RAWG",
-            "url": "https://rawg.io/games/v-rising",
-            "extract": "A Vampire Survival Experience Awaken as a weakened vampire after centuries of slumber. Hunt for blood in nearby settlements to regain your strength while hiding from the scorching sun to survive. Rebuild your castle and convert humans into your loyal servants in a quest to raise your vampire empire. Make allies online, fend off holy soldiers, and wage war against other players in a world of conflict. Will you become the next Dracula? A Gothic Open-World Explore a vast world teeming with mythical beings and danger. Travel through lush forests, open countryside, and dark dungeons to discover valuable resources, meeting friends and foes alike along the way. Traverse the world with vampire comrades or hunt solo as you pillage villages, raid bandits, and wander into the domains of supernatural beasts. Fear the light - Rule the night Stick to the shadows during the daytime, or the burning sunlight will turn you to ashes. Roam the night and prey on your victims in the darkness. As a vampire, you must quench your bloodlust and plan your strategies around the day/night cycle. Raise your Castle Gather resources and discover ancient techniques to gain dark powers. Use your newly acquired knowledge to build a castle where you can store your loot and grow your army of vampires. Personalize your domain, exhibit your vampiric style and make sure to craft coffins for servants and friends. Strengthen your castle while the threat from other players is rising. Compete or Cooperate Travel alone or explore the world with friends. Fighting side by side with other vampires will give you an advantage in your battle against the strongest creatures and most powerful humans. Raid other players’ castles or play the diplomat in the game of blood, power, and betrayal. Compete or cooperate - the choice is yours. Master your Vampire Learn and master an arsenal of deadly weapons and unholy abilities. In V Rising, you aim skill-shots and dodge projectiles using​ precise​​ ​WASD controls ​and cursor-based​ ​aiming - no click to move. Tailor your play-style by combining melee or range weapons with a variety of powerful spell kits. Master your skills and unleash your wicked powers.",
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/801688",
+            "extract": "In the year 2898 AD, around 6000 years after Kurukshetra war, Ashwatthama gears up for his final battle of redemption at the sign of hope in a dystopian world and Bhairava, a wisecracking and self-interested bounty hunter, tired of the perilous life becomes the hurdle in the process.",
             "kind": "catalog-metadata"
           },
           {
             "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/V_Rising",
-            "extract": "V Rising is a 2024 action role-playing survival game developed and published by Stunlock Studios. It was first released in early access for Windows in May 2022, and was officially released two years later, with a PlayStation 5 version released on June 11, 2024. Within a week, it had surpassed one million sales.",
+            "url": "https://en.wikipedia.org/wiki/Kalki_2898_AD",
+            "extract": "Kalki 2898 AD is a 2024 Indian Telugu-language epic mythological science fiction film written and directed by Nag Ashwin. Produced by Vyjayanthi Movies, it features an ensemble cast including Amitabh Bachchan, Kamal Haasan, Prabhas, Deepika Padukone, Shobana and Disha Patani. Inspired by Hindu scriptures, it serves as the first film in the Kalki Cinematic Universe. Set in a dystopian future in the year 2898 AD in the city of Kashi, the story follows a group on a mission to protect lab subject SUM-80's unborn child, believed to be Kalki, the final incarnation of Vishnu.",
             "kind": "encyclopedia"
           },
           {
-            "name": "YouTube — PlayStation Canada",
-            "url": "https://www.youtube.com/watch?v=swRW780BGFg",
-            "extract": "Verified public, embeddable promotional trailer: V Rising - Invaders of Oakveil Launch Trailer | PS5 Games",
+            "name": "YouTube — Netflix India",
+            "url": "https://www.youtube.com/watch?v=aninoDcPWo4",
+            "extract": "Verified public, embeddable promotional trailer: Kalki 2898 AD (HINDI) | Official Trailer | Prabhas, Deepika P, Kamal Haasan, Amitabh Bachchan",
             "kind": "promotional"
           }
         ],
-        "youtubeVideoId": "swRW780BGFg",
-        "youtubeVideoTitle": "V Rising - Invaders of Oakveil Launch Trailer | PS5 Games",
+        "youtubeVideoId": "aninoDcPWo4",
+        "youtubeVideoTitle": "Kalki 2898 AD (HINDI) | Official Trailer | Prabhas, Deepika P, Kamal Haasan, Amitabh Bachchan",
         "reviewMode": "review",
         "score": 6.8
       },
       "lastError": null,
       "provider": "openai",
-      "tokens": 6494,
-      "articlePath": "src/content/reviews/game-v-rising-602224.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-v-rising-602224/"
+      "tokens": 5821,
+      "articlePath": "src/content/reviews/movie-kalki-2898-ad-801688.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-kalki-2898-ad-801688/"
     }
   },
   "providers": {},
@@ -3675,9 +3727,9 @@
       "tokens": 78344
     },
     "2026-11-25": {
-      "articles": 2,
-      "requests": 4,
-      "tokens": 12511
+      "articles": 3,
+      "requests": 6,
+      "tokens": 18332
     }
   },
   "history": []
