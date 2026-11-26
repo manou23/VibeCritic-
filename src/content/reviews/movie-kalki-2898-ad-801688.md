@@ -15,6 +15,7 @@ sourceId: "movie:801688"
 sourceUrl: "https://www.imdb.com/title/tt12735488/ratings/"
 sourceRating: 7.0
 sourceRatingScale: 10
+sourceVoteCount: 79000
 sourceRatingCheckedAt: "2026-11-26"
 aiGenerated: true
 editorialWorkflow: automated

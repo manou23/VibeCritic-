@@ -15,6 +15,7 @@ sourceId: "series:276161"
 sourceUrl: "https://www.imdb.com/title/tt34809853/ratings/"
 sourceRating: 8.4
 sourceRatingScale: 10
+sourceVoteCount: 23000
 sourceRatingCheckedAt: "2026-11-26"
 platforms:
   - "Netflix"

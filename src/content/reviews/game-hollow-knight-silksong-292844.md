@@ -15,6 +15,7 @@ sourceId: "game:292844"
 sourceUrl: "https://www.imdb.com/title/tt10323784/ratings/"
 sourceRating: 9.1
 sourceRatingScale: 10
+sourceVoteCount: 2100
 sourceRatingCheckedAt: "2026-11-26"
 aiGenerated: true
 editorialWorkflow: automated
