@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-26T13:17:23.594Z",
+  "updatedAt": "2026-11-26T13:39:15.221Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -3804,165 +3804,164 @@
         "popularity": 83.6997,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-26T13:16:18.337Z",
-      "updatedAt": "2026-11-26T13:17:23.594Z",
+      "updatedAt": "2026-11-26T13:38:47.137Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "Mutiny",
-        "type": "movie",
-        "collectedAt": "2026-11-26T13:16:18.937Z",
-        "sourceId": "movie:1288445",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/movie/1288445",
-        "overview": "After witnessing his billionaire boss' murder and being framed for the crime, Cole Reed boards a cargo ship on a one-man crusade to avenge his boss' death only to discover an international conspiracy.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/movie/1288445",
-            "extract": "After witnessing his billionaire boss' murder and being framed for the crime, Cole Reed boards a cargo ship on a one-man crusade to avenge his boss' death only to discover an international conspiracy.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Mutiny",
-            "extract": "Mutiny is a revolt among a group of people to oppose, change, or remove their superiors or orders. The term is commonly used for insubordination by members of the military against an officer or superior, but it can also sometimes mean any type of rebellion against any force. Mutiny does not necessarily need to refer to a military force and can describe a political, economic, or power structure in which subordinates defy superiors.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Roadshow Films",
-            "url": "https://www.youtube.com/watch?v=aDwDBc2DFzA",
-            "extract": "Verified public, embeddable promotional trailer: Mutiny | Official Trailer 2 | 2026 [HD]",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 1129 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "aDwDBc2DFzA",
-        "youtubeVideoTitle": "Mutiny | Official Trailer 2 | 2026 [HD]",
-        "youtubeChannel": "Roadshow Films",
-        "releaseDate": "2026-08-19",
-        "genres": [
-          "Action",
-          "Thriller"
-        ],
-        "platforms": [],
-        "cast": [
-          "Jason Statham",
-          "Annabelle Wallis",
-          "Roland Møller",
-          "Ramon Tikaram",
-          "Arnas Fedaravičius",
-          "Jason Wong",
-          "Adrian Lester",
-          "Chaneil Kular"
-        ],
-        "crew": [
-          "Jean-François Richet",
-          "Lindsay Michel",
-          "J.P. Davis"
-        ],
-        "rating": 7.612,
-        "ratingScale": 10,
-        "votes": 1129,
-        "poster": "https://image.tmdb.org/t/p/w780/pu2VxGlpGwffOx292w18b1tv96j.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/qDa0fqDqIBCovRp975RvtGPcuN3.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "Mutiny: فرضية مطاردة واضحة، لكن الأدلة المتاحة لا تكشف إن كان التنفيذ يرقى إليها",
-        "summary": "تدور Mutiny، وفق ملخص TMDB، حول كول ريد، الذي يشهد مقتل رئيسه الملياردير ثم يُتهم بالجريمة، فيصعد إلى سفينة شحن ساعياً إلى الانتقام قبل أن تقوده القضية إلى مؤامرة دولية. هذه نقطة انطلاق مفهومة لفيلم أكشن وإثارة، وتمنح القصة دافعاً شخصياً ومساراً أوسع من مطاردة فردية. لكن ملف الأدلة لا يتضمن سوى الملخص، وبيانات الإنتاج والطاقم، ووجود إعلان رسمي؛ ولا يورد تفاصيل موثقة عن المشاهد أو السيناريو أو الصورة أو الموسيقى أو الإيقاع. لذلك لا يمكن تقديم حكم نهائي موثوق على جودة التنفيذ أو أداء الممثلين. هذه قراءة تحريرية أمينة لما يمكن إثباته، لا ادعاء بمشاهدة الفيلم.",
-        "verdict": "تملك Mutiny، بحسب ملخصها المنشور، مدخلاً درامياً مباشراً: جريمة يشهدها البطل، اتهام يطارده، وسفينة شحن تصبح نقطة انطلاق لمهمة انتقام تتسع إلى مؤامرة دولية. هذا يكفي لإثبات وضوح الفرضية، لا لإثبات نجاح الفيلم. فالمصادر المقدمة لا تعرض تحليلاً مستقلاً للفيلم، ولا تمنح مادة قابلة للفحص بشأن بناء الشخصيات أو الإخراج أو الأداء أو الصوت والصورة والإيقاع. لذلك لا أستطيع أن أقدم حكماً نهائياً على العمل أو توصية مشاهدة مبنية على جودته الفعلية من دون اختلاق. الدرجات أدناه تقديرات تحفظية محدودة بما تسمح به البيانات، وليست بديلاً عن مشاهدة موثقة أو مراجعات مستقلة؛ ودرجات المحاور الفنية المحايدة لا تعني أن الفيلم متوسط، بل أن الأدلة لا تكفي لتقييمها.",
-        "body": "## مقدمة وسياق العمل\nتُعرّف البيانات Mutiny بوصفه فيلماً من نوعي الأكشن والإثارة، بتاريخ إصدار 19 أغسطس 2026، وتورد جايسون ستاثام ضمن طاقمه، مع أسماء أخرى منها أنابيل واليس ورولاند مولر وأدريان ليستر. ويظهر جان-فرانسوا ريشيه ضمن أسماء الطاقم الإبداعي المدرجة، لكن الملف لا يحدد أدوار جميع الأسماء المذكورة، لذلك لا أنسب وظيفة بعينها إلى من لم تُذكر وظيفته. هذه حقائق تعريفية تفيد في وضع الفيلم ضمن سوق أفلام الحركة، لكنها لا تكفي وحدها للحكم على مستواه. المراجعة هنا مبنية على ملف الأدلة المتاح، ولا أدعي مشاهدة الفيلم أو الإعلان. ومن المهم التنبيه إلى أن الملف لا يقدم مراجعات نقدية مستقلة أو وصفاً تفصيلياً لمحتوى العمل؛ لذا ينبغي الفصل بين ما يقرره الملخص وما لا يمكن استنتاجه عن التنفيذ.\n\n## الفكرة والقصة أو التجربة\nبحسب ملخص TMDB، يشهد كول ريد مقتل رئيسه الملياردير، ثم يُلفّق له اتهام بالجريمة، فيصعد إلى سفينة شحن ضمن مسعى فردي للانتقام، قبل أن يكتشف وجود مؤامرة دولية. الفرضية تجمع بين دافع شخصي مفهوم، وهو الانتقام، وضغط خارجي يتمثل في اتهامه، ثم توسع في نطاق الخطر من حادثة قتل إلى مؤامرة. هذا التسلسل يمنح القصة اتجاهاً أولياً واضحاً، ويقدم للمشاهد وعداً بنقل الصراع من حساب فردي إلى شبكة أوسع. لكن الملخص لا يوضح طبيعة الأدلة التي تدين البطل، أو دوافع الشخصيات الأخرى، أو كيف يُكشف الترابط بين الجريمة والمؤامرة. لذلك يمكن تقييم وضوح نقطة الانطلاق، لا تماسك الحبكة أو أصالتها أو طريقة حلها. كما لا يصح تقديم تفاصيل إضافية عن أحداث الفيلم لم ترد في المادة.\n\n## السرد والشخصيات أو تصميم اللعب\nلأن Mutiny فيلم، فإن تصميم اللعب غير ذي صلة؛ والمادة المتاحة لا تسمح باستبدال ذلك بتحليل تفصيلي للسرد. يحدد الملخص كول ريد بوصفه مركز الحكاية، ويمنحه دافعين معلنين: تبرئة نفسه من تهمة القتل والانتقام لرئيسه. وجود هذين الدافعين يتيح، من حيث الفرضية، مسارين دراميين قد يتقاطعان، لكنه لا يكشف إن كان الفيلم يطورهما معاً أو يجعل أحدهما مجرد وسيلة للآخر. كما لا تتوفر معلومات عن الشخصيات المقابلة أو علاقاتها بالبطل، ولا عن حواراتها أو تحولاتها. أسماء الممثلين المدرجة حقائق عن الطاقم وليست دليلاً على جودة كتابة الشخصيات أو كيمياء الأداء. لذا فإن الحكم المنصف يقتصر على أن مركز السرد محدد في الملخص، أما عمق الشخصيات وفاعلية بنائها فيبقيان غير قابلين للتحقق من هذا الملف.\n\n## الإخراج والجوانب الفنية\nينسب الملف أسماء Jean-François Richet وLindsay Michel وJ.P. Davis إلى قائمة الطاقم، لكنه لا يشرح الأدوار التي يؤديها كل اسم ولا يورد مقابلات أو مراجعات أو ملاحظات إنتاجية. لذلك لا أستطيع أن أنسب قراراً إخراجياً محدداً، أو أصف طريقة إدارة الحركة، أو أستنتج أسلوب التصوير والتحرير من اسم مخرج وحده. كذلك لا تتوافر معلومات موثقة عن المؤثرات أو ظروف التصوير أو المعالجة التقنية. يمكن القول إن تصنيف الفيلم أكشن وإثارة يحدد توقعاً نوعياً عاماً لدى الجمهور، لكنه لا يثبت أن مشاهد الحركة واضحة أو مبتكرة أو متوازنة مع الجانب التشويقي. هذه الفجوة مهمة لأن الحرفة الفنية لا تُستخلص من التصنيف أو قائمة الأسماء؛ بل تحتاج إلى مادة مشاهدة أو مصادر نقدية مستقلة تشرح ما يظهر فعلياً على الشاشة.\n\n## الصورة والهوية البصرية\nيتضمن ملف الأدلة رابطاً إلى ملصق ورابطاً إلى صورة خلفية، إضافة إلى بيانات إعلان رسمي، لكنه لا يصف محتوى الصور ولا يقدم تحليلاً موثقاً للألوان أو التكوين أو حركة الكاميرا. وجود مواد ترويجية يثبت أن للفيلم حملة رسمية، لا أن له هوية بصرية مميزة أو متماسكة. ومن غير المنصف وصف السفينة أو مواقع الأحداث أو الإضاءة أو تصميم الأزياء اعتماداً على ملخص الحبكة وحده؛ فهذه عناصر تحتاج إلى معاينة مباشرة أو وصف موثوق. كذلك لا يمكن استنتاج جودة المشاهد من عنوان الإعلان أو دقته المعلنة في بياناته. بناءً على ذلك، لا أقدم حكماً إيجابياً أو سلبياً على الصورة نفسها. النقطة التحريرية هنا ليست أن الجانب البصري ضعيف، بل أن الأدلة لا تسمح بقياسه، وهو فرق جوهري بين نقص التقييم ووجود عيب مثبت في الفيلم.\n\n## الصوت والموسيقى والأداء\nلا يتضمن الملف أسماء مؤلفي الموسيقى أو مهندسي الصوت، ولا وصفاً للموسيقى التصويرية أو تصميم المؤثرات أو الحوار. كما أن إدراج ممثلين في قائمة الطاقم لا يكفي للحكم على أدائهم، ولا يتيح إثبات أن حضوراً بعينه يحمل الفيلم أو أن الأداء متباين. لا أدعي سماع الإعلان أو مشاهدة الفيلم؛ المتاح هو عنوان إعلان رسمي من قناة Roadshow Films وتوثيق وجوده فقط. لذلك لا أصف نبرة الموسيقى، أو وضوح الحوار، أو جودة المزج، أو الإلقاء والانفعالات. ويمكن اعتبار هذه العناصر من أبرز المساحات التي يتعذر تقييمها هنا، لا لأنها هامشية، بل لأنها أساسية في فيلم أكشن وإثارة، وغيابها يمنع إصدار حكم متوازن على التجربة السمعية والتمثيلية. أي مديح أو انتقاد محدد لهذه الجوانب سيتجاوز ما تثبته الأدلة.\n\n## الإيقاع والبناء وتنوع المحتوى\nيتضمن الملخص انتقالاً من جريمة واتهام إلى رحلة انتقام على متن سفينة، ثم إلى اكتشاف مؤامرة دولية. هذا التوسع يوحي ببنية تتغير فيها رهانات القصة، لكنه لا يحدد متى يقع التحول أو كيف يُبنى، ولا إن كان يمنح الحبكة تصاعداً متماسكاً. لا تتوفر معلومات عن مدة الفيلم أو تقسيم فصوله أو توزيع مشاهد الحركة والحوار، ولذلك لا يمكن وصفه بالمندفع أو المترهل، ولا القول إن تنوعه يحافظ على الاهتمام. وصف سفينة الشحن في الملخص لا يكفي لإثبات أن معظم الأحداث تدور داخلها أو أن الفيلم يستثمر مكاناً محدوداً؛ فصياغة الملخص تقول إن البطل يصعد إليها، ولا تقدم تفاصيل أخرى عن مواقع الأحداث. بالتالي، لا يوجد أساس موثوق لتقييم الإيقاع الفعلي، وأي درجة في هذا المحور تعكس نقص البيانات لا حكماً على المونتاج.\n\n## نقاط القوة\nأوضح ما يثبته الملف هو أن فرضية الفيلم قابلة للشرح من دون التباس: بطل يشهد جريمة، يصبح متهماً، ويسعى إلى الانتقام قبل أن تتسع القضية إلى مؤامرة. كما أن الجمع بين خطر شخصي وتهديد أكبر يمنح الحكاية نقطة انطلاق ذات رهانات مفهومة، من دون أن يضمن نجاح تطورها. ويتيح تصنيف الأكشن والإثارة للجمهور معرفة الإطار النوعي المتوقع، بينما يقدم الإعلان الرسمي الموثق مدخلاً ترويجياً متاحاً لمن يريد التعرف إلى الفيلم مباشرة. كذلك تتضمن البيانات قائمة طاقم تضم أسماء معروفة، من بينها جايسون ستاثام، وهو عنصر تعريفي قد يجذب جمهور هذا النوع. غير أن هذه النقاط تتعلق بوضوح المشروع وملامحه المعلنة، لا بإنجاز فني ثبتت جودته من خلال أدلة مستقلة.\n\n## نقاط الضعف\nأكبر قيد نقدي ليس عيباً مثبتاً داخل الفيلم، بل نقص ملف الأدلة نفسه: لا توجد فيه مراجعات مستقلة كافية أو تحليل لمشاهدة العمل، ولا معلومات مفصلة عن السيناريو أو الإخراج أو الصورة أو الصوت أو الإيقاع. ويورد مصدر ويكيبيديا شرحاً عاماً لمصطلح «التمرد» لا معلومات عن هذا الفيلم، ولذلك لا يصلح سنداً لتحليل العنوان أو المعنى. أما وجود إعلان رسمي، من دون وصف لمشاهده أو مادة قابلة للفحص هنا، فلا يملأ هذه الفجوات. يذكر ملف TMDB متوسط جمهور قدره 7.612 من 10 مع 1129 صوتاً؛ وهذا مؤشر جماهيري ثانوي منسوب إلى المنصة، وليس تقييماً تحريرياً مستقلاً ولا دليلاً على جودة محور فني بعينه. لا أعد هذه القيود عيوباً للفيلم، لكن أثرها المباشر هو استحالة إصدار مراجعة نهائية حاسمة بأمانة.\n\n## لمن يناسب هذا العمل؟\nوفق المعلومات المتاحة، قد يلفت الفيلم انتباه من يفضل أفلام الأكشن والإثارة، أو من يجد في قصص اتهام البطل وملاحقته ثم توسيع النزاع إلى مؤامرة مدخلاً جذاباً. وقد يكون اسم جايسون ستاثام عاملاً تعريفياً لدى من يتابع أعماله، لكن الملف لا يثبت طبيعة أدائه هنا ولا مقدار حضوره في الفيلم. لا أستطيع أن أوصي به بوصفه تجربة ناجحة أو أن أحذر منه بوصفه مخيباً، لأن ذلك يتطلب معرفة التنفيذ. الأنسب للقارئ الذي يفكر في مشاهدته أن يتعامل مع الملخص بوصفه وصفاً للفرضية لا ضماناً للجودة، وأن يرجع إلى الإعلان الرسمي أو إلى مراجعات مستقلة بعد صدور العمل. كذلك لا تكفي بيانات الجمهور وحدها لاتخاذ القرار، إذ لا تكشف أسباب التقييمات أو توازنها بين عناصر الفيلم.\n\n## الحكم النهائي\nتثبت الأدلة أن Mutiny فيلم أكشن وإثارة صدر في 2026، وتقدم حبكة افتتاحية محددة وطاقماً معلناً وإعلاناً رسمياً. لكنها لا تثبت جودة السيناريو أو الشخصيات أو الإخراج أو الجوانب الفنية، ولا تتضمن مصادر نقدية مستقلة كافية تسند حكماً نهائياً على الفيلم. لذا فالتقييم الأكثر مهنية هنا هو عدم اختلاق تجربة مشاهدة أو تحويل الفرضية إلى مديح للتنفيذ. الدرجات الرقمية المرفقة تحفظية ومحدودة: درجة القصة تتصل بوضوح الفرضية كما صيغت في الملخص، أما الدرجات المحايدة للصورة والصوت والإيقاع فتعبر عن تعذر تقييمها، لا عن مستوى الفيلم. وبناءً على ذلك، لا أقدم توصية نهائية بالمشاهدة أو التجنب؛ يمكن فقط ترشيح الفيلم مبدئياً لمن تستهويه فرضيته ونوعه، مع انتظار مادة نقدية مستقلة أوسع.",
-        "scores": {
-          "story": 6,
-          "visuals": 5,
-          "sound": 5,
-          "pacing": 5
-        },
-        "pros": [
-          "ملخص يحدد بوضوح جريمة محورية واتهاماً ودافعاً للانتقام.",
-          "الفرضية المعلنة توسع النزاع من قضية شخصية إلى مؤامرة دولية.",
-          "تصنيف الفيلم أكشن وإثارة واضح في بيانات المصدر.",
-          "وجود إعلان رسمي موثق من قناة Roadshow Films.",
-          "قائمة طاقم تضم جايسون ستاثام وأسماء أخرى محددة."
-        ],
-        "cons": [
-          "لا تتوفر أدلة كافية للحكم على جودة تنفيذ الحبكة أو بناء الشخصيات.",
-          "الملف لا يقدم مادة موثقة لتقييم الصورة أو الصوت أو الموسيقى أو الأداء.",
-          "لا توجد معلومات كافية عن الإيقاع أو توزيع الأحداث أو مدة الفيلم.",
-          "المصادر المستقلة المقدمة لا توفر مراجعة نقدية تحليلية للفيلم.",
-          "متوسط TMDB مؤشر جمهور ثانوي ولا يعوض غياب التقييم التحريري المستقل."
-        ],
-        "title": "Mutiny",
-        "type": "movie",
-        "sourceId": "movie:1288445",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/movie/1288445",
-        "sourceRating": 7.612,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 1129,
-        "sourceRatingCheckedAt": "2026-11-26T13:16:18.937Z",
-        "audienceScore": 7.6,
-        "releaseDate": "2026-08-19",
-        "poster": "https://image.tmdb.org/t/p/w780/pu2VxGlpGwffOx292w18b1tv96j.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/qDa0fqDqIBCovRp975RvtGPcuN3.jpg",
-        "genres": [
-          "Action",
-          "Thriller"
-        ],
-        "platforms": [],
-        "cast": [
-          "Jason Statham",
-          "Annabelle Wallis",
-          "Roland Møller",
-          "Ramon Tikaram",
-          "Arnas Fedaravičius",
-          "Jason Wong",
-          "Adrian Lester",
-          "Chaneil Kular"
-        ],
-        "crew": [
-          "Jean-François Richet",
-          "Lindsay Michel",
-          "J.P. Davis"
-        ],
-        "tags": [
-          "Action",
-          "Thriller"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/movie/1288445",
-            "extract": "After witnessing his billionaire boss' murder and being framed for the crime, Cole Reed boards a cargo ship on a one-man crusade to avenge his boss' death only to discover an international conspiracy.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Mutiny",
-            "extract": "Mutiny is a revolt among a group of people to oppose, change, or remove their superiors or orders. The term is commonly used for insubordination by members of the military against an officer or superior, but it can also sometimes mean any type of rebellion against any force. Mutiny does not necessarily need to refer to a military force and can describe a political, economic, or power structure in which subordinates defy superiors.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Roadshow Films",
-            "url": "https://www.youtube.com/watch?v=aDwDBc2DFzA",
-            "extract": "Verified public, embeddable promotional trailer: Mutiny | Official Trailer 2 | 2026 [HD]",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "aDwDBc2DFzA",
-        "youtubeVideoTitle": "Mutiny | Official Trailer 2 | 2026 [HD]",
-        "reviewMode": "review",
-        "score": 5.3
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 6326,
       "articlePath": "src/content/reviews/movie-mutiny-1288445.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-mutiny-1288445/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-mutiny-1288445/",
+      "publishedAt": "2026-11-26T13:38:47.137Z"
+    },
+    "series:320909": {
+      "key": "series:320909",
+      "type": "series",
+      "id": "320909",
+      "title": "Firefly Wedding",
+      "item": {
+        "type": "series",
+        "id": "320909",
+        "name": "Firefly Wedding",
+        "date": "2026-10-09",
+        "preview": false,
+        "popularity": 42.0461,
+        "source": "TMDB"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-26T13:38:48.027Z",
+      "updatedAt": "2026-11-26T13:39:15.221Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Firefly Wedding",
+        "type": "series",
+        "collectedAt": "2026-11-26T13:38:48.556Z",
+        "sourceId": "series:320909",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/320909",
+        "overview": "Satoko Kirigaya has everything a noblewoman could want—except time. With her life running out, she’s determined to marry well and make her father proud. But when a ruthless assassin kidnaps her, she makes a desperate offer: “Marry me, and we’ll have it all.” Shinpei Goto accepts, only to become dangerously obsessed. Now Satoko must choose between duty and a love that could consume them both.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/320909",
+            "extract": "Satoko Kirigaya has everything a noblewoman could want—except time. With her life running out, she’s determined to marry well and make her father proud. But when a ruthless assassin kidnaps her, she makes a desperate offer: “Marry me, and we’ll have it all.” Shinpei Goto accepts, only to become dangerously obsessed. Now Satoko must choose between duty and a love that could consume them both.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Firefly_Wedding",
+            "extract": "Firefly Wedding is a Japanese manga series written and illustrated by Oreco Tachibana. It was serialized on Shogakukan's Ura Sunday manga website, under their \"Girl's Club\" label, and MangaONE app from January 2023 to February 2026. An anime television series adaptation produced by David Production premiered in October 2026. A television drama adaptation is set to premiere in 2027.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — A-Ronin",
+            "url": "https://www.youtube.com/watch?v=VuAyV1d-RJE",
+            "extract": "Verified public, embeddable promotional trailer: Firefly Wedding | Official Trailer ",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "limited",
+        "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
+        "youtubeVideoId": "VuAyV1d-RJE",
+        "youtubeVideoTitle": "Firefly Wedding | Official Trailer ",
+        "youtubeChannel": "A-Ronin",
+        "releaseDate": "2026-10-09",
+        "genres": [
+          "Animation",
+          "Drama"
+        ],
+        "platforms": [],
+        "cast": [
+          "Lynn",
+          "Koki Uchiyama"
+        ],
+        "crew": [],
+        "rating": 8.857,
+        "ratingScale": 10,
+        "votes": 35,
+        "poster": "https://image.tmdb.org/t/p/w780/954dt0dTqoUhIW0EvMFZ0KvVQmk.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/3zmB6PLnjf7rNNC2lnvinQtlJMx.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "Firefly Wedding: قراءة معلوماتية محدودة عن مسلسل الأنمي",
+        "summary": "Firefly Wedding مسلسل أنمي ياباني من نوعي الرسوم المتحركة والدراما، وتدور فكرته المعلنة حول ساتوكو كيريغايا، وهي امرأة نبيلة تسعى إلى الزواج قبل أن ينفد وقتها، ثم تعرض الزواج على شينبي غوتو بعد أن يختطفها قاتل مأجور. وتصف بيانات الموسوعة العمل بأنه اقتباس تلفزيوني من مانغا أوريكو تاتشيبانا، فيما تنسب إنتاج الأنمي إلى David Production. تسجل قاعدة البيانات تاريخ عرض في أكتوبر 2026، وتورد اسمَي Lynn وKoki Uchiyama ضمن الطاقم. هذه معلومات تعريفية لا تكفي لتقييم التنفيذ أو التجربة، ولا تثبت جودة الحلقات أو استقبال الجمهور على نحو موثوق.",
+        "verdict": "هذه قراءة محدودة بالأدلة المتاحة، وليست مراجعة مشاهدة أو حكماً نهائياً على Firefly Wedding. يمكن تأكيد نوع العمل وفكرته العامة وأصل اقتباسه وبعض بيانات الإنتاج والطاقم، لكن ذلك لا يبين كيف عولجت القصة فعلياً، ولا كيف تبدو الصورة أو يكون الصوت أو الإيقاع أو أداء الممثلين. وجود إعلان ترويجي لا يتيح وحده فحص المسلسل كاملاً، كما أن بيانات الجمهور المتاحة لا تستوفي الحد المطلوب لإسناد تقييم موثوق. لذلك لا تمنح هذه القراءة حكماً على الجودة؛ وما تقوله يظل وصفاً لما تسنده المصادر، مع ترك الأسئلة الفنية والسردية مفتوحة إلى حين توافر مشاهدة مستقلة ومعلومات أوسع.",
+        "body": "## ما الذي نعرفه عن العمل؟\n\nFirefly Wedding مسلسل تلفزيوني ياباني مصنف ضمن الرسوم المتحركة والدراما، بحسب بيانات قاعدة المعلومات المتاحة. تورد القاعدة تاريخاً للعرض في أكتوبر 2026، بينما تصف المادة الموسوعية اقتباس الأنمي بأنه بدأ عرضه في الشهر نفسه. لذلك يمكن تقديمه بوصفه عملاً تلفزيونياً مقتبساً، لا بوصفه فيلماً أو موسماً ذا تفاصيل موثقة هنا. ولا تتضمن الأدلة وصفاً لعدد الحلقات، أو مدة الحلقة، أو المنصة التي تعرضه؛ فحقل المنصات في البيانات لا يورد جهة مشاهدة. كما يوجد إعلان ترويجي موصوف بأنه رسمي، لكن وجود الإعلان لا يعني أن محتواه يثبت خصائص المسلسل كله.\n\n## القصة أو الفكرة المعلنة\n\nوفق الملخص المنشور في قاعدة البيانات، ساتوكو كيريغايا امرأة من طبقة النبلاء ترى أن لديها ما تتمناه، باستثناء الوقت: حياتها توشك على الانتهاء، وهي تريد أن تتزوج زواجاً مناسباً وأن تجعل أباها فخوراً بها. يختطفها قاتل مأجور، فتقدم عرضاً يربط الزواج بما قد يحققه الطرفان. يقبل شينبي غوتو، لكن الملخص يصفه لاحقاً بأنه يصبح مفرط التعلق بها، ويضع ساتوكو أمام اختيار بين الواجب وعلاقة قد تستهلكهما. هذه هي الفكرة كما صاغها المصدر، وليست وصفاً مستقلاً لمسار الحلقات أو نهايتها. لا نعرف من هذه المادة كيف تتطور الشخصيات أو كيف يوازن المسلسل بين الرومانسية والدراما والعناصر المرتبطة بالخطر.\n\n## معلومات الإنتاج والطاقم\n\nتقول المادة الموسوعية إن العمل مقتبس من مانغا يابانية كتبتها ورسمتها أوريكو تاتشيبانا، ونُشرت عبر موقع Ura Sunday التابع لشوغّاكوكان وتطبيق MangaONE، ضمن علامة Girl's Club. وتحدد المادة فترة تسلسل المانغا من يناير 2023 إلى فبراير 2026. كما تنسب إنتاج الأنمي التلفزيوني إلى David Production. وتذكر قاعدة البيانات اسمَي Lynn وKoki Uchiyama ضمن طاقم التمثيل الصوتي، لكنها لا توضح في المعلومات المتاحة الشخصيات التي يؤديانها. لا توجد قائمة موثقة بأسماء بقية الطاقم أو تفاصيل فريق الكتابة والإخراج، ولذلك لا يصح استكمال هذه الفراغات بالتخمين أو اعتبار الاسمين وحدهما دليلاً على مستوى الأداء.\n\n## ما الذي يمكن تأكيده؟\n\nيمكن تأكيد وجود اقتباس أنمي تلفزيوني عن مانغا تحمل الاسم نفسه، ووجود ملخص معلن يضع ساتوكو وشينبي في علاقة تنطلق من عرض زواج في ظرف قسري وخطر. ويمكن كذلك تأكيد تصنيف العمل في قاعدة البيانات ضمن الرسوم المتحركة والدراما، وورود David Production بوصفها جهة الإنتاج في المادة الموسوعية. وتثبت قائمة الطاقم المتاحة ورود اسمي Lynn وKoki Uchiyama، من دون تفاصيل أدوارهما. كذلك تشير المصادر إلى وجود إعلان ترويجي منشور على قناة A-Ronin. هذه حقائق تعريفية محدودة؛ لا تؤكد وحدها دقة الاقتباس أو جودة التنفيذ، ولا ينبغي تحويل وصف الناشر أو بيانات الفهرسة إلى حكم تحريري مستقل.\n\n## ما الذي لا نعرفه بعد؟\n\nلا تقدم الأدلة مشاهدة مستقلة للحلقات أو تحليلاً موثقاً لها، لذا لا يمكن الجزم بجودة الإخراج أو الصورة أو الصوت أو الإيقاع. ولا نملك وصفاً كافياً لبناء المشاهد، أو مستوى التحريك، أو طريقة توزيع المعلومات الدرامية. كذلك لا تحسم المصادر مقدار وفاء الأنمي للمانغا، أو ما إذا كان يغير ترتيب الأحداث أو يختصرها. لا تتوافر تفاصيل كافية عن عدد الحلقات، أو فريق العمل الإبداعي الكامل، أو خيارات العرض والإتاحة. أما الإعلان الترويجي، فالمتاح يثبت وجوده وعنوانه فقط؛ ولا يبرر الادعاء بأننا اطلعنا على كل مشاهده أو استخدمناه دليلاً على تجربة المسلسل. وتوجد في قاعدة البيانات بيانات جمهور، لكن حجم المشاركة لا يبلغ الحد الأدنى المعتمد هنا لإسناد تقييم موثوق، لذلك لا يصلح الوصف المسجل بديلاً عن مراجعات مستقلة.\n\n## لمن قد يهم هذا العمل؟\n\nقد تهم المعلومات المبدئية متابعي المانغا المقتبسة إلى الأنمي، أو من يستكشفون قصصاً تجمع في فكرتها المعلنة بين زواج تدفع إليه الظروف، وخطر الاختطاف، والتوتر العاطفي. وقد تكون صلة العمل بمانغا أوريكو تاتشيبانا وبجهة إنتاجه مفيدة لمن يريد متابعة أخبار الاقتباس أو البحث عن مصدره الأصلي. لكن هذه إشارة إلى موضوعات قد تجذب بعض القراء، لا توصية مبنية على تجربة، ولا ضمان بأن المسلسل يحقق توقعاتهم. لا تسمح المواد المتاحة بتحديد ملاءمته لفئة عمرية، أو الحكم على معالجة موضوعاته، أو القول إن جمهور المانغا سيجد اقتباساً أميناً.\n\n## خلاصة حدود الأدلة\n\nتمنحنا المصادر بطاقة تعريف أولية: مسلسل أنمي ودراما، مقتبس من مانغا يابانية، له ملخص معلن وأسماء محدودة للطاقم وجهة إنتاج مذكورة. لكنها لا توفر أساساً كافياً للانتقال من التعريف إلى النقد الفني. لا توجد هنا مشاهدة مستقلة، ولا تقييم جمهور مستند إلى عدد كافٍ من الأصوات، ولا معلومات تفصيلية عن معظم عناصر التنفيذ. وعليه، ينبغي قراءة ما سبق بوصفه عرضاً لما يمكن توثيقه فقط. تظل جودة التجربة، وقوة السرد، ومستوى الأداء والتحريك، مسائل غير محسومة تحتاج إلى مشاهدة ومصادر أوسع قبل إصدار حكم نهائي.",
+        "pros": [
+          "ملخص معلن يحدد شخصيتي ساتوكو كيريغايا وشينبي غوتو ومحور العلاقة بينهما.",
+          "المادة الموسوعية تحدد أصل العمل بوصفه اقتباساً من مانغا أوريكو تاتشيبانا.",
+          "تذكر المصادر David Production جهةً لإنتاج الأنمي، كما تورد اسمي Lynn وKoki Uchiyama ضمن الطاقم."
+        ],
+        "cons": [
+          "لا تتوافر مشاهدة مستقلة أو أدلة كافية للحكم على الإخراج أو الصورة أو الصوت أو الإيقاع.",
+          "لا توضح المعلومات المتاحة عدد الحلقات أو أدوار الممثلين المذكورين أو تفاصيل فريق الإبداع الكامل.",
+          "بيانات الجمهور المتاحة لا تستوفي الحد الأدنى المطلوب لإسناد تقييم موثوق، والإعلان الترويجي وحده لا يحسم جودة المسلسل."
+        ],
+        "title": "Firefly Wedding",
+        "type": "series",
+        "sourceId": "series:320909",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/320909",
+        "sourceRating": 8.857,
+        "sourceRatingScale": 10,
+        "sourceVoteCount": 35,
+        "sourceRatingCheckedAt": "2026-11-26T13:38:48.556Z",
+        "audienceScore": 8.9,
+        "releaseDate": "2026-10-09",
+        "poster": "https://image.tmdb.org/t/p/w780/954dt0dTqoUhIW0EvMFZ0KvVQmk.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/3zmB6PLnjf7rNNC2lnvinQtlJMx.jpg",
+        "genres": [
+          "Animation",
+          "Drama"
+        ],
+        "platforms": [],
+        "cast": [
+          "Lynn",
+          "Koki Uchiyama"
+        ],
+        "crew": [],
+        "tags": [
+          "Animation",
+          "Drama"
+        ],
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/320909",
+            "extract": "Satoko Kirigaya has everything a noblewoman could want—except time. With her life running out, she’s determined to marry well and make her father proud. But when a ruthless assassin kidnaps her, she makes a desperate offer: “Marry me, and we’ll have it all.” Shinpei Goto accepts, only to become dangerously obsessed. Now Satoko must choose between duty and a love that could consume them both.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Firefly_Wedding",
+            "extract": "Firefly Wedding is a Japanese manga series written and illustrated by Oreco Tachibana. It was serialized on Shogakukan's Ura Sunday manga website, under their \"Girl's Club\" label, and MangaONE app from January 2023 to February 2026. An anime television series adaptation produced by David Production premiered in October 2026. A television drama adaptation is set to premiere in 2027.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — A-Ronin",
+            "url": "https://www.youtube.com/watch?v=VuAyV1d-RJE",
+            "extract": "Verified public, embeddable promotional trailer: Firefly Wedding | Official Trailer ",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "VuAyV1d-RJE",
+        "youtubeVideoTitle": "Firefly Wedding | Official Trailer ",
+        "reviewMode": "limited"
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 3693,
+      "articlePath": "src/content/reviews/series-firefly-wedding-320909.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-firefly-wedding-320909/"
     }
   },
   "providers": {},
@@ -4003,9 +4002,9 @@
       "tokens": 30293
     },
     "2026-11-26": {
-      "articles": 3,
-      "requests": 6,
-      "tokens": 16083
+      "articles": 4,
+      "requests": 8,
+      "tokens": 19776
     }
   },
   "history": []
