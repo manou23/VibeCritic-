@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-26T07:16:26.297Z",
+  "updatedAt": "2026-11-26T10:16:59.392Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -3669,152 +3669,213 @@
         "popularity": 122.7525,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-26T07:16:02.439Z",
-      "updatedAt": "2026-11-26T07:16:26.297Z",
+      "updatedAt": "2026-11-26T10:16:05.091Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "Breeder",
-        "type": "movie",
-        "collectedAt": "2026-11-26T07:16:02.902Z",
-        "sourceId": "movie:1496696",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/movie/1496696",
-        "overview": "An eccentric poodle breeder lures a broke college student to her remote ranch with a promise of research funding. But, as he soon learns, there’s a catch.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/movie/1496696",
-            "extract": "An eccentric poodle breeder lures a broke college student to her remote ranch with a promise of research funding. But, as he soon learns, there’s a catch.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Breeder",
-            "extract": "A breeder is a person who selectively breeds carefully selected mates, normally of the same breed, to sexually reproduce offspring with specific, consistently replicable qualities and characteristics. This might be as a farmer, agriculturalist, or hobbyist, and can be practiced on a large or small scale, for food, fun, or profit.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — FilmSpot Trailer",
-            "url": "https://www.youtube.com/watch?v=sgTVtpJUegQ",
-            "extract": "Verified public, embeddable promotional trailer: BREEDER Official Trailer (NEW 2026)",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "limited",
-        "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
-        "youtubeVideoId": "sgTVtpJUegQ",
-        "youtubeVideoTitle": "BREEDER Official Trailer (NEW 2026)",
-        "youtubeChannel": "FilmSpot Trailer",
-        "releaseDate": "2026-10-28",
-        "genres": [
-          "Horror",
-          "Thriller"
-        ],
-        "platforms": [],
-        "cast": [
-          "Daniel Doheny",
-          "Dot-Marie Jones",
-          "Maddie Phillips",
-          "Tanaya Beatty",
-          "Lillian Doucet-Roche",
-          "Isla Spencer",
-          "Paige McGarvin",
-          "John Murphy"
-        ],
-        "crew": [
-          "Alex Goyette",
-          "Alex Goyette"
-        ],
-        "rating": 7.3,
-        "ratingScale": 10,
-        "votes": 28,
-        "poster": "https://image.tmdb.org/t/p/w780/alsb3UC17kxIcytLWvwkmL0STgU.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/l5gJE9xW1FFtub3gUezh1PjBbY5.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "Breeder: قراءة معلوماتية محدودة بما تثبته المصادر",
-        "summary": "Breeder فيلم مدرج ضمن نوعي الرعب والإثارة، وتدور فكرته المعلنة حول مربّية كلاب بودل غريبة الأطوار تستدرج طالباً جامعياً مفلساً إلى مزرعتها النائية، عارضةً تمويل أبحاثه، قبل أن يتبين أن للعرض شرطاً. يسجل ملف قاعدة البيانات تاريخ إصدار في 28 أكتوبر 2026، ويورد أسماء ممثلين وفريقاً مرتبطاً بالعمل، كما يثبت وجود إعلان ترويجي منشور على يوتيوب. لكن المعلومات المتاحة لا تقدم وصفاً موثقاً لتفاصيل التنفيذ، ولا تكفي لتقييم التمثيل أو الإخراج أو الصورة أو الصوت أو الإيقاع. كذلك لا يوجد ضمن الأدلة تقييم جماهيري مدعوم بعدد كافٍ من الأصوات، ولا مراجعة مستقلة قائمة على مشاهدة مباشرة؛ لذلك يظل هذا التعريف محدوداً بالبيانات المنشورة.",
-        "verdict": "هذه قراءة محدودة للمعلومات المتاحة عن Breeder، وليست مراجعة مشاهدة أو حكماً نهائياً على الفيلم. ما يمكن قوله هو أن سجل قاعدة البيانات يذكر تصنيفي الرعب والإثارة، ويعرض فرضية قصصية عن طالب جامعي ومربّية بودل ومزرعة نائية، إلى جانب تاريخ إصدار وأسماء طاقم وإعلان ترويجي. أما كيفية تحويل هذه العناصر إلى فيلم، ومدى نجاحها أو تأثيرها، فلا تحسمها المصادر المقدمة. ولا تتوافر أدلة مشاهدة مستقلة أو بيانات جمهور كافية لتأسيس حكم تحريري موثوق؛ لذا ينبغي التعامل مع هذا النص بوصفه تعريفاً أولياً، لا توصية مبنية على الجودة.",
-        "body": "## ما الذي نعرفه عن العمل؟\n\nBreeder مدرج في ملف الأدلة بوصفه فيلماً، ويظهر اسمه في قاعدة بيانات TMDB. ويورد الملف تاريخ إصدار هو 28 أكتوبر 2026، كما يضع العمل ضمن نوعي الرعب والإثارة. هذه معلومات تصنيفية وبيانات سجل، وليست بحد ذاتها وصفاً لتجربة المشاهدة أو دليلاً على مستوى الفيلم. ومن المهم هنا الفصل بين وجود هذه البيانات وبين أي استنتاج عن جودة العمل: فالتصنيف لا يثبت مقدار الرعب أو طبيعة الإثارة، وتاريخ الإصدار لا يخبرنا بما إذا كان الفيلم متاحاً على منصة بعينها.\n\nالمصادر المقدمة لا تتضمن مراجعة نقدية مستقلة أو تقريراً من مشاهدة مباشرة. ويوجد رابط إلى إعلان ترويجي منشور على يوتيوب بعنوان BREEDER Official Trailer (NEW 2026)، لكن وجود الإعلان يثبت توفر مادة ترويجية فقط. لا يتيح مقتطف المصدر وصف محتوى الإعلان أو مشاهده، ولذلك لن أتعامل معه كأنني شاهدته، ولن أستخرج منه تفاصيل غير واردة في الملف.\n\n## القصة أو الفكرة المعلنة\n\nيقدم ملخص قاعدة البيانات الفكرة على النحو الآتي: مربّية كلاب بودل غريبة الأطوار تستدرج طالباً جامعياً يعاني ضائقة مالية إلى مزرعتها النائية، بعد أن تعده بتمويل أبحاثه. ثم يتضح، وفق الملخص نفسه، أن العرض مشروط أو ينطوي على جانب لم يكن الطالب يتوقعه. هذه هي حدود المعلومات القصصية المتاحة؛ فلا يذكر الملف ماهية الشرط، ولا يشرح طبيعة الأبحاث، ولا يبين ما الذي يحدث بعد وصول الطالب إلى المزرعة.\n\nيمكن نقل هذه الفرضية كما وردت من دون تحويلها إلى سرد تفصيلي أو تأكيد لتطورات غير موثقة. وصف المربّية بأنها غريبة الأطوار والتلميح إلى وجود مقابل للتمويل جزءان من الملخص المنشور، لا استنتاجان مستقلان. كما لا يكفي هذا الوصف وحده لتحديد النبرة أو بنية الحبكة أو كيفية تداخل الرعب والإثارة. لذلك لا يمكن الجزم إن كان العمل يعتمد على الغموض أو المفاجأة أو عناصر أخرى، ولا يصح ملء تلك الفراغات بتوقعات مأخوذة من النوع السينمائي.\n\n## معلومات الإنتاج والطاقم\n\nيسجل الملف أسماء ضمن طاقم التمثيل: Daniel Doheny وDot-Marie Jones وMaddie Phillips وTanaya Beatty وLillian Doucet-Roche وIsla Spencer وPaige McGarvin وJohn Murphy. ورود هذه الأسماء يؤكد أن قاعدة البيانات تربطهم بالفيلم، لكنه لا يوضح أدوارهم أو حجم ظهور كل منهم أو طبيعة الشخصيات التي يؤدونها. لذلك لا يمكن استخدام قائمة الأسماء للحكم على الأداء أو على توازن الأدوار.\n\nأما خانة الطاقم الأخرى فتورد Alex Goyette مرتين، من دون تعريف واضح بالوظيفة المرتبطة بالاسم. ينبغي إبقاء هذه المعلومة كما هي وعدم استنتاج منصب إنتاجي أو فني لم يحدده المصدر. ولا يقدم الملف تفاصيل موثقة عن مواقع التصوير أو الميزانية أو شركة الإنتاج أو الموسيقى أو مراحل العمل. كذلك لا يذكر منصات مشاهدة؛ وخانة المنصات خالية في البيانات المتاحة. هذه حدود في المعلومات المقدمة، وليست دليلاً على غياب تلك العناصر من إنتاج الفيلم.\n\n## ما الذي يمكن تأكيده؟\n\nيمكن تأكيد أن العمل مسجل كفيلم بعنوان Breeder، وأن قاعدة البيانات تصنفه رعباً وإثارة، وتعرض له تاريخ إصدار محدداً. ويمكن أيضاً تأكيد وجود ملخص قصصي موجز، وقائمة أسماء ممثلين، واسم Alex Goyette في خانة الطاقم، إلى جانب رابط إعلان ترويجي من قناة FilmSpot Trailer. هذه نقاط وصفية محددة في الملف، ويمكن نقلها مع نسبتها إلى بياناته بدلاً من تقديمها كتحقق مستقل من كل تفاصيل الإنتاج.\n\nولا يعني تأكيد وجود الإعلان أننا نعرف ما يتضمنه، كما لا تعني الأسماء وحدها أننا نعرف جودة العمل أو أدوار أصحابها. كذلك لا يجوز مساواة تصنيف النوع بحكم على السرد أو التأثير. وظيفة هذه القراءة تنظيم المعلومات المؤكدة وبيان نطاقها، لا تحويلها إلى تقييم فني يتجاوز ما تثبته المصادر.\n\n## ما الذي لا نعرفه بعد؟\n\nلا تعرض الأدلة تفاصيل كافية عن الحبكة بعد الفرضية الأولية، أو عن الشخصيات وعلاقاتها، أو عن الطريقة التي يتطور بها الصراع. ولا تقدم مادة موثقة تسمح بتقييم الإخراج، أو الأداء، أو الصورة، أو الصوت، أو الإيقاع. لا توجد في الملف مشاهد موصوفة وصفاً مستقلاً، ولا تحليل نقدي، ولا شهادة مشاهدة يمكن الاستناد إليها في هذه المحاور. وعليه، سيكون أي حكم بشأنها تخميناً.\n\nكما لا تتوفر بيانات جمهور كافية لتكوين مؤشر موثوق على الاستقبال؛ فسبب محدودية الجاهزية التحريرية يذكر غياب تقييم مدعوم بما لا يقل عن مئة صوت، فضلاً عن عدم وجود أدلة مستقلة قائمة على المشاهدة. ولا نعرف من المواد المتاحة كيف استقبل الجمهور الفيلم، أو ما إذا كانت تفاصيل الإصدار والمنصات قد تغيرت بعد تسجيلها. كذلك لا يحسم الملف طبيعة الشرط الذي يلمح إليه الملخص، ولا يحدد أدوار الممثلين أو وظائف Alex Goyette. تبقى هذه أسئلة مفتوحة بدلاً من أن تكون عيوباً مثبتة.\n\n## لمن قد يهم هذا العمل؟\n\nقد يجد القارئ المهتم بأفلام الرعب والإثارة أو بالفرضيات التي تجمع بين طالب محتاج للتمويل ومزرعة نائية ومربّية كلاب سبباً أولياً للاطلاع على معلومات إضافية عن Breeder. هذا وصف للاهتمام المحتمل بالموضوع المعلن، وليس توصية بمشاهدة الفيلم أو ادعاء بأنه يناسب فئة بعينها. من يبحث عن تقييم للأداء أو عن تفاصيل فنية أو عن حكم على جودة التجربة لن يجد في ملف الأدلة ما يكفي للإجابة. الأنسب اعتبار الملخص مدخلاً للتعرف على الفكرة، ثم انتظار معلومات موثقة أكثر قبل تكوين رأي.\n\n## خلاصة حدود الأدلة\n\nتسمح المصادر بتقديم تعريف أساسي بالفيلم، ونقل فرضيته المعلنة، وذكر التصنيف والتاريخ والأسماء المسجلة ووجود إعلان ترويجي. لكنها لا توفر أساساً لمراجعة نهائية أو لتقدير جودة التنفيذ. كما أن المادة الموسوعية المدرجة تتناول معنى كلمة breeder عموماً، ولا تقدم معلومات عن الفيلم، لذلك لا توسع ما نعرفه عنه. هذه القراءة تلتزم بما يسنده ملف البيانات وحده، وتترك عناصر التجربة الفنية والاستقبال وأسئلة الحبكة غير المحسومة في نطاق المجهول إلى أن تتوفر مصادر أكثر مباشرة واستقلالاً.",
-        "pros": [
-          "ملخص قاعدة البيانات يحدد فرضية قصصية واضحة عن طالب جامعي ومربّية بودل ومزرعة نائية.",
-          "الفيلم مصنف في البيانات ضمن الرعب والإثارة.",
-          "يسجل الملف أسماء ممثلين ويربط العمل بإعلان ترويجي منشور على يوتيوب."
-        ],
-        "cons": [
-          "لا تتوفر مراجعة مستقلة أو أدلة مشاهدة مباشرة تسمح بتقييم التنفيذ الفني.",
-          "لا يحسم الملخص ماهية الشرط الذي يكتشفه الطالب أو تفاصيل تطور القصة.",
-          "أدوار الممثلين ووظيفة Alex Goyette غير موضحة، كما لا يقدم الملف معلومات عن منصات المشاهدة."
-        ],
-        "title": "Breeder",
-        "type": "movie",
-        "sourceId": "movie:1496696",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/movie/1496696",
-        "sourceRating": 7.3,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 28,
-        "sourceRatingCheckedAt": "2026-11-26T07:16:02.902Z",
-        "audienceScore": 7.3,
-        "releaseDate": "2026-10-28",
-        "poster": "https://image.tmdb.org/t/p/w780/alsb3UC17kxIcytLWvwkmL0STgU.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/l5gJE9xW1FFtub3gUezh1PjBbY5.jpg",
-        "genres": [
-          "Horror",
-          "Thriller"
-        ],
-        "platforms": [],
-        "cast": [
-          "Daniel Doheny",
-          "Dot-Marie Jones",
-          "Maddie Phillips",
-          "Tanaya Beatty",
-          "Lillian Doucet-Roche",
-          "Isla Spencer",
-          "Paige McGarvin",
-          "John Murphy"
-        ],
-        "crew": [
-          "Alex Goyette",
-          "Alex Goyette"
-        ],
-        "tags": [
-          "Horror",
-          "Thriller"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/movie/1496696",
-            "extract": "An eccentric poodle breeder lures a broke college student to her remote ranch with a promise of research funding. But, as he soon learns, there’s a catch.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Breeder",
-            "extract": "A breeder is a person who selectively breeds carefully selected mates, normally of the same breed, to sexually reproduce offspring with specific, consistently replicable qualities and characteristics. This might be as a farmer, agriculturalist, or hobbyist, and can be practiced on a large or small scale, for food, fun, or profit.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — FilmSpot Trailer",
-            "url": "https://www.youtube.com/watch?v=sgTVtpJUegQ",
-            "extract": "Verified public, embeddable promotional trailer: BREEDER Official Trailer (NEW 2026)",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "sgTVtpJUegQ",
-        "youtubeVideoTitle": "BREEDER Official Trailer (NEW 2026)",
-        "reviewMode": "limited"
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 3747,
       "articlePath": "src/content/reviews/movie-breeder-1496696.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-breeder-1496696/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-breeder-1496696/",
+      "publishedAt": "2026-11-26T10:16:05.091Z"
+    },
+    "series:270462": {
+      "key": "series:270462",
+      "type": "series",
+      "id": "270462",
+      "title": "La Revuelta",
+      "item": {
+        "type": "series",
+        "id": "270462",
+        "name": "La Revuelta",
+        "date": "2024-09-09",
+        "preview": false,
+        "popularity": 43.4382,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-26T10:16:07.199Z",
+      "updatedAt": "2026-11-26T10:16:07.661Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "No verified official YouTube trailer found for La Revuelta"
+    },
+    "series:202555": {
+      "key": "series:202555",
+      "type": "series",
+      "id": "202555",
+      "title": "Daredevil: Born Again",
+      "item": {
+        "type": "series",
+        "id": "202555",
+        "name": "Daredevil: Born Again",
+        "date": "2025-03-04",
+        "preview": false,
+        "popularity": 42.8248,
+        "source": "TMDB"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-26T10:16:09.576Z",
+      "updatedAt": "2026-11-26T10:16:59.392Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Daredevil: Born Again",
+        "type": "series",
+        "collectedAt": "2026-11-26T10:16:10.056Z",
+        "sourceId": "series:202555",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/202555",
+        "overview": "Matt Murdock, a blind lawyer with heightened abilities, is fighting for justice through his bustling law firm, while former mob boss Wilson Fisk pursues his own political endeavors in New York. When their past identities begin to emerge, both men find themselves on an inevitable collision course.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/202555",
+            "extract": "Matt Murdock, a blind lawyer with heightened abilities, is fighting for justice through his bustling law firm, while former mob boss Wilson Fisk pursues his own political endeavors in New York. When their past identities begin to emerge, both men find themselves on an inevitable collision course.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Daredevil%3A_Born_Again",
+            "extract": "Daredevil: Born Again is an American television series created by Dario Scardapane and Matt Corman & Chris Ord for the streaming service Disney+, based on Marvel Comics featuring the character Daredevil. It is the 13th television series in the Marvel Cinematic Universe (MCU) from Marvel Studios and was produced under its Marvel Television label. The series shares continuity with the films and television series of the MCU. Born Again is a revival and continuation of Daredevil (2015–2018), an earlier series produced by the previous Marvel Television production company and originally released on Netflix. Scardapane serves as showrunner with Justin Benson and Aaron Moorhead as lead directors.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Disney+ Philippines",
+            "url": "https://www.youtube.com/watch?v=0cNQzOdG-Vo",
+            "extract": "Verified public, embeddable promotional trailer: Marvel Television's Daredevil: Born Again | Official Trailer | Disney+ Philippines",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 1187 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "0cNQzOdG-Vo",
+        "youtubeVideoTitle": "Marvel Television's Daredevil: Born Again | Official Trailer | Disney+ Philippines",
+        "youtubeChannel": "Disney+ Philippines",
+        "releaseDate": "2025-03-04",
+        "genres": [
+          "Drama",
+          "Action & Adventure",
+          "Crime"
+        ],
+        "platforms": [],
+        "cast": [
+          "Charlie Cox",
+          "Vincent D'Onofrio",
+          "Wilson Bethel",
+          "Deborah Ann Woll",
+          "Margarita Levieva",
+          "Matthew Lillard",
+          "Lili Taylor",
+          "Michael Gandolfini"
+        ],
+        "crew": [],
+        "rating": 8.2,
+        "ratingScale": 10,
+        "votes": 1187,
+        "poster": "https://image.tmdb.org/t/p/w780/xDUoAsU8lQHOOoRkFiBuarmACDN.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/qrTAc0ZtQ859Qu5O8cixJzNJpQs.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "Daredevil: Born Again — عودة تحمل صراعاً واعداً، لكن الأدلة المتاحة لا تحسم جودة التنفيذ",
+        "summary": "تضع Daredevil: Born Again مات موردوك، المحامي الأعمى صاحب القدرات الحسية المعززة، في مواجهة ويلسون فيسك، زعيم الجريمة السابق الذي يتجه إلى العمل السياسي في نيويورك. هذا التوازي بين القانون والسلطة وماضٍ إجرامي يعود إلى السطح يمنح المسلسل أساساً درامياً محدداً، كما أن كونه امتداداً لمسلسل Daredevil السابق يضيف ثقلاً من الاستمرارية. لكن ملف الأدلة المتاح يثبت الفرضية والطاقم والسياق العام ولا يقدم مراجعات مستقلة أو معلومات تفصيلية عن الحلقات والصورة والصوت والإيقاع. لذلك يظل الحكم النهائي متحفظاً: الفكرة واعدة، أما مستوى تحقيقها الفني فلا يمكن الجزم به بأمانة من هذه المادة وحدها.",
+        "verdict": "Daredevil: Born Again يملك في أساسه مواجهة تلفزيونية ذات إمكانات واضحة: محامٍ يسعى إلى العدالة في نيويورك يقابله خصم ذو ماضٍ إجرامي يلاحق طموحاً سياسياً، فيما تتقاطع هويات الرجلين السابقة مع حاضرهما. كما تمنح صلته بمسلسل Daredevil الصادر بين 2015 و2018 موقعاً مهماً داخل استمرارية أوسع. غير أن هذه عناصر موثقة عن الفكرة والسياق، وليست برهاناً على نجاح الكتابة أو التمثيل أو الإخراج. لا تتضمن الأدلة مراجعات مستقلة أو وصفاً كافياً للحلقات كي يصدر حكم واثق على التنفيذ. الدرجة هنا متحفظة، وتوصيتي تتجه إلى محبي دراما الجريمة وصراعات القانون والسلطة، مع التنبيه إلى أن ملف المصادر لا يسمح بتوصية قطعية مبنية على جودة التجربة الفنية.",
+        "body": "## مقدمة وسياق العمل\n\nDaredevil: Born Again مسلسل درامي وأكشن وجريمة، صدر في 4 مارس 2025، وتعرض بياناته بوصفه عملاً من عالم Marvel التلفزيوني على Disney+. يستعيد شخصية مات موردوك، المحامي الأعمى ذي القدرات الحسية المعززة، ويضعها في مدينة نيويورك إلى جانب ويلسون فيسك، زعيم الجريمة السابق الذي يتجه إلى العمل السياسي. هذه المعلومات، الواردة في ملخص TMDB وبيانات العمل، تحدد نقطة الانطلاق بوضوح؛ لكنها لا تكفي وحدها لإثبات كيف عالج المسلسل الصراع حلقة بعد أخرى. وهذه مراجعة تحريرية نهائية بحدود ملف الأدلة المتاح، لا شهادة مشاهدة شخصية ولا وصفاً لمشاهد لم توثقها المصادر.\n\nللسياق أهمية خاصة: يعرّف المصدر الموسوعي المسلسل بأنه إحياء واستمرار لمسلسل Daredevil الذي عُرض بين 2015 و2018، كما يربطه باستمرارية عالم Marvel السينمائي. وتذكر البيانات داريو سكارداباني ومات كورمان وكريس أورد بوصفهم مبتكري العمل، وتشير إلى أن سكارداباني هو مدير العرض، فيما يتولى جاستن بنسون وآرون مورهيد الإخراج القيادي. هذه الصلة ترفع سقف التوقعات بشأن استمرارية الشخصيات، لكنها لا تثبت وحدها مقدار نجاح المسلسل في الوفاء بها. كذلك يتوفر إعلان رسمي موثق من Disney+ Philippines، لكن وجود الإعلان عنواناً ومصدراً ترويجياً لا يتيح استنتاج تفاصيل المشاهد أو الحكم على جودتها.\n\n## الفكرة والقصة أو التجربة\n\nالفكرة المركزية هي تقابل مسارين كانا مرتبطين بهويتين مختلفتين: موردوك يقاتل من أجل العدالة عبر مكتبه القانوني، وفيسك يلاحق طموحاً سياسياً بعد ماضٍ إجرامي. ويضيف الملخص أن الهويات السابقة تبدأ في الظهور مجدداً، وأن الرجلين يتجهان إلى تصادم حتمي. هنا تكمن مادة درامية ملموسة، لا في شعار عام عن الخير والشر، بل في إمكان اختبار العلاقة بين القانون الرسمي والسلطة السياسية والإرث الشخصي. هذا استنتاج عن بنية الفرضية الموثقة، وليس ادعاءً بأن المسلسل يقدم معالجة بعينها أو يحسم هذه الأسئلة بطريقة محددة.\n\nما لا تكشفه المعلومات هو طبيعة القضايا التي يتولاها مكتب موردوك، أو تفاصيل برنامج فيسك السياسي، أو حجم حضور الأكشن مقارنة بالدراما القانونية والجريمة. لذلك يصعب تقييم تعقيد الحبكة أو مفاجآتها أو طريقة توزيع المعلومات على الحلقات. نقطة القوة المتاحة هي وضوح التوتر الأساسي وقدرته على حمل أكثر من نوع درامي؛ أما نجاح تحويله إلى قصة متماسكة فيظل سؤالاً لا تجيب عنه بيانات الفهرسة. والمراجعة المسؤولة لا تستبدل هذا النقص بتخمين أحداث أو نهايات.\n\n## السرد والشخصيات أو تصميم اللعب\n\nلا ينطبق تحليل تصميم اللعب هنا، لأن العمل مسلسل تلفزيوني. أما من جهة السرد والشخصيات، فتسمح المصادر بتحديد مركز الثقل دون أكثر: موردوك محامٍ ذو قدرات حسية معززة، وفيسك شخصية ذات ماضٍ إجرامي وطموح سياسي، والتقاء ماضيهما هو المحرك المعلن للصراع. هذا التكوين يتيح قراءة المواجهة بوصفها صراعاً على تعريف العدالة والشرعية، لا مواجهة جسدية فحسب. لكنه يظل احتمالاً درامياً تستدعيه الفرضية، وليس وصفاً مثبتاً لكيفية كتابة الحوارات أو بناء التحولات.\n\nتضم قائمة التمثيل تشارلي كوكس وفنسنت دونوفريو، إلى جانب ويلسون بيثل وديبورا آن وول ومارغريتا ليفييفا وماثيو ليلارد وليلي تايلور ومايكل غاندولفيني. وجود هذه الأسماء حقيقة في بيانات الطاقم، لكنه لا يبرر نسبة أداء ناجح أو ضعيف لأي ممثل من دون نقد موثق أو مادة كافية للتحليل. وبالمثل، لا تتوافر هنا معلومات تفصيلية عن الشخصيات المساندة أو مساراتها. النتيجة أن العرض يملك شخصيتين مركزيتين واضحتين في تعريفه، بينما تبقى جودة التطوير الدرامي للعالم المحيط غير قابلة للحسم من المصادر الحالية.\n\n## الإخراج والجوانب الفنية\n\nتسمّي البيانات بنسون ومورهيد مخرجين قياديين، وتضع سكارداباني في موقع مدير العرض. هذه معلومة مفيدة لتحديد المسؤوليات العامة، لكنها لا تكشف قرارات الإخراج أو أسلوب إدارة المشاهد، ولا تشرح كيف توحّد العمل بصرياً وسردياً. لا يقدم ملف الأدلة تحليلاً مستقلاً للإنتاج، ولا تفاصيل موثقة عن تصميم مواقع التصوير أو المؤثرات أو المونتاج. لذلك لا يصح تحويل أسماء صناع العمل إلى حكم مسبق على الجودة، إيجاباً أو سلباً.\n\nيمكن القول إن مزج الدراما والجريمة والأكشن يفرض تحدياً فنياً: على المسلسل أن يجعل التحولات بين المجال القانوني والسياسي وماضي الشخصيات مفهومة ومتوازنة. لكن تقييم إنجاز هذا التحدي يحتاج إلى مشاهدة موثقة أو مراجعات مستقلة، وهما غير متاحين ضمن الملف. ولهذا لا أنسب إلى الإخراج سرعة أو قتامة أو ابتكاراً بصرياً لا تثبته الأدلة. الحكم الأكثر دقة هنا هو أن بيانات الصنعة الأساسية موجودة، أما أثرها الفعلي في التجربة فغير موصوف بما يكفي.\n\n## الصورة والهوية البصرية\n\nتثبت المواد وجود ملصق رسمي وصورة خلفية، إضافة إلى عنوان إعلان ترويجي رسمي. غير أن صور الفهرسة والملصق ليست أساساً كافياً لتقييم التصوير أو لوحة الألوان أو تصميم نيويورك داخل الحلقات. كما أن سجل الإعلان لا يتضمن وصفاً لمحتواه البصري، ولا يصح أن أتعامل مع عنوانه بوصفه مشاهدة نقدية له. بناءً على ذلك، لا يمكن وصف الهوية البصرية بأنها مميزة أو تقليدية أو متغيرة عبر الموسم من دون تجاوز الأدلة.\n\nهذا النقص مهم لأن الصورة في مسلسل عن شخصية معروفة قد تؤثر في الإحساس باستمرارية العالم، وفي التمييز بين فضاء القانون والسياسة والجريمة. لكن ذلك يشرح ما ينبغي أن يتناوله نقد بصري كامل، ولا يثبت ما فعله المسلسل بالفعل. الدرجة المخصصة لهذا المحور تعكس تحفظاً تحريرياً ناجماً عن قلة المادة القابلة للتحقق، لا اتهاماً للعمل بضعف التصوير أو الإنتاج.\n\n## الصوت والموسيقى والأداء\n\nلا يحتوي ملف المصادر على معلومات موثقة عن الموسيقى أو تصميم الصوت أو المزج، ولا يقدم اقتباسات نقدية عن أداء الممثلين. لذلك لا يمكنني تقييم حضور الموسيقى، أو وضوح الحوار، أو أثر المؤثرات، كما لا يمكن نسبة أداء بعينه إلى كوكس أو دونوفريو لمجرد ورودهما في قائمة الطاقم. هذا تمييز ضروري بين معرفة من يشارك في العمل وبين معرفة ما أنجزه على الشاشة.\n\nمن المفيد فقط تسجيل أن المسلسل دراما وأكشن وجريمة، وهي أنواع تجعل الصوت والأداء عنصرين مهمين في بناء التوتر والشخصية. لكن الأهمية النظرية لا تقوم مقام الدليل على النتيجة. لذا يظل هذا القسم محدوداً عمداً، وتبقى درجته تقديراً احترازياً لا خلاصة سماع أو مشاهدة مباشرة.\n\n## الإيقاع والبناء وتنوع المحتوى\n\nلا تتضمن الأدلة عدد الحلقات أو مددها أو وصفاً لمساراتها، ولا تشرح كيف يتوزع السرد بين قضايا القانون وطموح فيسك السياسي والمواجهة بين الشخصيتين. لذلك لا يمكن إصدار حكم موثوق على التمهيد أو التصاعد أو التكرار أو جودة الخاتمة. لا يكفي وصف الصراع بأنه يتجه إلى تصادم حتمي كي نستنتج أن الإيقاع متماسك؛ فالملخص يحدد وجهة عامة ولا يكشف طريقة الوصول إليها.\n\nمع ذلك، توحي الفرضية بتعدد مجالات الصراع، وهذا يمنح البناء إمكاناً للتنوع إذا وُزعت العناصر بحكمة. ويظل هذا احتمالاً مشروطاً لا مديحاً مؤكداً. أما الحكم على توازن الأكشن والدراما، أو ما إذا كان المسلسل يمنح مساراته وقتاً كافياً، فيحتاج إلى معلومات تفصيلية أو مراجعات مستقلة لا يوفرها الملف. لذلك لا أخلط بين ثراء الفكرة المحتمل وبين جودة إيقاعها المنفذ.\n\n## نقاط القوة\n\nأبرز ما يمكن إثباته هو صلابة نقطة الانطلاق: محامٍ يسعى إلى العدالة في مواجهة شخصية ذات ماضٍ إجرامي تتجه إلى السياسة، مع عودة الهويات السابقة إلى قلب العلاقة. كذلك يمنح امتداد العمل لمسلسل Daredevil السابق، واستمراره ضمن عالم Marvel، أساساً واضحاً للمتابعة لمن يهتم باستمرارية الشخصيات. ويتيح تصنيف العمل في الدراما والأكشن والجريمة إطاراً نوعياً متنوعاً، فيما تضم قائمة الطاقم أسماء معروفة في سياق المسلسل. هذه نقاط قوة في التصميم والسياق المتاحين، وليست ادعاءات بأن التنفيذ ينجح في كل جانب.\n\n## نقاط الضعف\n\nلا تسمح الأدلة بتحديد عيوب مؤكدة في كتابة الحلقات أو التمثيل أو الإخراج، ومن غير المنصف اختراعها. لكن توجد حدود واضحة في أساس التقييم: المصدر الأساسي ملخص فهرسة، والمصدر الموسوعي يشرح الهوية والاستمرارية، والإعلان مادة ترويجية لا مراجعة نقدية. لا يحتوي الملف على مراجعات مستقلة كافية، أو تحليل للحلقات، أو معلومات عملية عن الجوانب الفنية. لذلك تتعلق نقاط الضعف الممكنة هنا بحدود الحكم، لا بعيوب مثبتة في المسلسل نفسه. كما أن غياب وصف تفصيلي لمسارات الشخصيات يمنع التحقق من مقدار ما تضيفه الاستمرارية القديمة إلى القصة الجديدة.\n\n## لمن يناسب هذا العمل؟\n\nتبدو الفرضية مناسبة لمن يفضل دراما الجريمة التي تضع القانون والسلطة السياسية والماضي الشخصي في مواجهة واحدة، ولمن يتابع شخصية Daredevil أو يهتم بامتدادها داخل عالم Marvel. أما من يبحث عن مسلسل أكشن خالص، أو يريد معرفة مسبقة بتوازن الأنواع ومستوى العنف والإيقاع، فلن تمنحه البيانات الحالية إجابة كافية. يوجد على TMDB متوسط جمهور يبلغ 8.2 من 10 استناداً إلى 1187 صوتاً؛ وهو مؤشر جماهيري ثانوي منسوب إلى المنصة، وليس تقييماً تحريرياً مستقلاً ولا دليلاً بديلاً على جودة عناصر بعينها.\n\n## الحكم النهائي\n\nالنتيجة التحريرية المتوازنة أن Born Again يبدأ من صراع غني بالاحتمالات، ويستند إلى شخصيتين واضحتين وسياق استمرارية معروف، لكن ملف الأدلة لا يثبت مقدار ما حققه المسلسل من هذه الإمكانات على مستوى الكتابة والصورة والصوت والإيقاع. لذلك تستند درجة القصة إلى وضوح الفرضية واتساع محاورها، بينما تعبر الدرجات الفنية الأخرى عن تحفظ صريح بسبب غياب الشواهد، لا عن حكم سلبي على جودة التنفيذ. أوصي به مبدئياً لمتابعي دراما الجريمة ومحبي الشخصية، مع اعتبار التوصية مشروطة بالاهتمام بالفرضية والاستمرارية، لا ادعاءً بأن المواد المتاحة تكفي لإثبات تميز التجربة كاملة.",
+        "scores": {
+          "story": 7,
+          "visuals": 6,
+          "sound": 6,
+          "pacing": 6
+        },
+        "pros": [
+          "فرضية موثقة تجمع سعي مات موردوك إلى العدالة مع انتقال ويلسون فيسك من ماضٍ إجرامي إلى طموح سياسي.",
+          "عودة الهويات السابقة إلى واجهة الصراع تمنح العلاقة المركزية أساساً درامياً محدداً.",
+          "صلة واضحة بمسلسل Daredevil السابق وباستمرارية عالم Marvel، وفق المصدر الموسوعي.",
+          "قائمة طاقم تضم تشارلي كوكس وفنسنت دونوفريو وأسماء أخرى، وهي نقطة اهتمام سياقية لا حكم على الأداء."
+        ],
+        "cons": [
+          "المصادر المتاحة لا تقدم مراجعات مستقلة كافية أو تحليلاً تفصيلياً للحلقات.",
+          "لا توجد أدلة موثقة تسمح بحسم جودة التصوير أو الموسيقى أو تصميم الصوت.",
+          "غياب معلومات عن توزيع الحلقات ومساراتها يمنع تقييماً واثقاً للإيقاع والبناء.",
+          "هذه حدود في ملف الأدلة وليست عيوباً مؤكدة في المسلسل؛ لذلك تظل الدرجات الفنية منخفضة الثقة."
+        ],
+        "title": "Daredevil: Born Again",
+        "type": "series",
+        "sourceId": "series:202555",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/202555",
+        "sourceRating": 8.2,
+        "sourceRatingScale": 10,
+        "sourceVoteCount": 1187,
+        "sourceRatingCheckedAt": "2026-11-26T10:16:10.056Z",
+        "audienceScore": 8.2,
+        "releaseDate": "2025-03-04",
+        "poster": "https://image.tmdb.org/t/p/w780/xDUoAsU8lQHOOoRkFiBuarmACDN.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/qrTAc0ZtQ859Qu5O8cixJzNJpQs.jpg",
+        "genres": [
+          "Drama",
+          "Action & Adventure",
+          "Crime"
+        ],
+        "platforms": [],
+        "cast": [
+          "Charlie Cox",
+          "Vincent D'Onofrio",
+          "Wilson Bethel",
+          "Deborah Ann Woll",
+          "Margarita Levieva",
+          "Matthew Lillard",
+          "Lili Taylor",
+          "Michael Gandolfini"
+        ],
+        "crew": [],
+        "tags": [
+          "Drama",
+          "Action & Adventure",
+          "Crime"
+        ],
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/202555",
+            "extract": "Matt Murdock, a blind lawyer with heightened abilities, is fighting for justice through his bustling law firm, while former mob boss Wilson Fisk pursues his own political endeavors in New York. When their past identities begin to emerge, both men find themselves on an inevitable collision course.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Daredevil%3A_Born_Again",
+            "extract": "Daredevil: Born Again is an American television series created by Dario Scardapane and Matt Corman & Chris Ord for the streaming service Disney+, based on Marvel Comics featuring the character Daredevil. It is the 13th television series in the Marvel Cinematic Universe (MCU) from Marvel Studios and was produced under its Marvel Television label. The series shares continuity with the films and television series of the MCU. Born Again is a revival and continuation of Daredevil (2015–2018), an earlier series produced by the previous Marvel Television production company and originally released on Netflix. Scardapane serves as showrunner with Justin Benson and Aaron Moorhead as lead directors.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Disney+ Philippines",
+            "url": "https://www.youtube.com/watch?v=0cNQzOdG-Vo",
+            "extract": "Verified public, embeddable promotional trailer: Marvel Television's Daredevil: Born Again | Official Trailer | Disney+ Philippines",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "0cNQzOdG-Vo",
+        "youtubeVideoTitle": "Marvel Television's Daredevil: Born Again | Official Trailer | Disney+ Philippines",
+        "reviewMode": "review",
+        "score": 6.3
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 6010,
+      "articlePath": "src/content/reviews/series-daredevil-born-again-202555.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-daredevil-born-again-202555/"
     }
   },
   "providers": {},
@@ -3855,9 +3916,9 @@
       "tokens": 30293
     },
     "2026-11-26": {
-      "articles": 1,
-      "requests": 2,
-      "tokens": 3747
+      "articles": 2,
+      "requests": 4,
+      "tokens": 9757
     }
   },
   "history": []
