@@ -8,7 +8,7 @@ verdict: "تبدو La bola negra محاولة سردية طموحة تربط ث�
 reviewVersion: 1
 type: movie
 date: 2026-11-17
-releaseDate: "2026-10-02"
+releaseDate: "2026-09-25"
 poster: "https://www.elseptimoarte.net/carteles/la_bola_negra_109489.jpg"
 externalVideoUrl: "https://www.movistarplus.es/comunicacion/wp-content/uploads/2026/05/la-bola-negra-trailer-original-movistarplus.mp4"
 externalVideoTitle: "La bola negra — Official Trailer | Movistar Plus"
@@ -27,7 +27,7 @@ cast: ["Guitarricadelafuente", "Miguel Bernardeau", "Carlos González", "Milo Qu
 crew: ["Javier Calvo", "Javier Ambrossi", "Alberto Conejero"]
 sourceName: "Spanish Ministry of Culture / Movistar Plus / Elastica Films"
 sourceId: "manual-assisted-movie-la-bola-negra-2026"
-sourceUrl: "https://www.cultura.gob.es/cultura/areas/cine/mc/spanish-kaleidoscope/films/spring-summer-2026/la-bola-negra.html"
+sourceUrl: "https://www.movistarplus.es/comunicacion/notas-de-prensa/la-bola-negra-de-javier-calvo-y-javier-ambrossi-adelanta-su-estreno-al-25-de-septiembre/"
 aiGenerated: true
 editorialWorkflow: "manual-assisted"
 ---
@@ -58,5 +58,6 @@ editorialWorkflow: "manual-assisted"
 
 - [وزارة الثقافة الإسبانية — La bola negra](https://www.cultura.gob.es/cultura/areas/cine/mc/spanish-kaleidoscope/films/spring-summer-2026/la-bola-negra.html): سنة الإنتاج، البلدان، المدة، القصة والطاقم.
 - [Movistar Plus — صفحة الفيلم والإعلان](https://www.movistarplus.es/cine/la-bola-negra): وصف الفيلم والإعلان وطاقم التمثيل.
+- [Movistar Plus — تحديث موعد العرض الإسباني إلى 25 سبتمبر 2026](https://www.movistarplus.es/comunicacion/notas-de-prensa/la-bola-negra-de-javier-calvo-y-javier-ambrossi-adelanta-su-estreno-al-25-de-septiembre/): تأكيد أحدث موعد طرح سينمائي بعد تعديل التاريخ السابق.
 - [Movistar Plus — الفيديو الرسمي](https://www.movistarplus.es/comunicacion/wp-content/uploads/2026/05/la-bola-negra-trailer-original-movistarplus.mp4): ملف الإعلان الرسمي.
 - [Movistar Plus — الملصق الرسمي](https://www.movistarplus.es/comunicacion/notas-de-prensa/cartel-oficial-de-la-bola-negra-la-pelicula-original-movistar-plus-de-javier-calvo-y-javier-ambrossi/): تأكيد الملصق وبيانات التوزيع.
