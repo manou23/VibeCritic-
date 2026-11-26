@@ -63,13 +63,24 @@ const reviewKeywords = [...new Set([
 const reviewDescription = d.title + ' — ' + (isPreview ? 'قراءة استباقية لـ' : isAudience ? 'تقييم الجمهور لـ' : isGtaLaunchReading ? 'قراءة إطلاق أولية لـ' : isLimited ? 'قراءة محدودة الأدلة لـ' : 'مراجعة ') + typeKeyword + ' وتحليل نقدي للقصة والعناصر الفنية. ' + d.summary + (isPreview ? ' هذه قراءة قبل الإصدار ولا تتضمن تقييماً نهائياً.' : isAudience ? ' تقييم الجمهور في ' + d.sourceName + ': ' + Number(d.sourceRating).toFixed(1) + '/' + d.sourceRatingScale + ' استناداً إلى ' + d.sourceVoteCount + ' صوتاً.' : isGtaLaunchReading ? ' بدأ الإصدار، لكن الصفحة لا تمنح درجة نهائية قبل اختبار مستقل كافٍ.' : isLimited ? ' لا تمنح هذه الصفحة تقييماً نهائياً لأن الأدلة المنشورة غير كافية.' : ' تقييم VibeCritic: ' + d.score + '/10.');
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 const schemaType = d.type === 'game' ? 'Game' : d.type === 'series' ? 'CreativeWorkSeries' : 'Movie';
+const reviewedItem = {
+  '@type': schemaType,
+  name: d.title,
+  ...(d.originalTitle ? { alternateName: d.originalTitle } : {}),
+  ...(d.genres?.length ? { genre: d.genres } : {}),
+  ...(d.releaseDate ? { datePublished: d.releaseDate } : {}),
+  ...(d.poster ? { image: optimizeImage(d.poster) } : {}),
+};
+const reviewText = [d.summary, isLimited ? 'لا تتوفر أدلة كافية لمنح تقييم نهائي.' : d.verdict, d.hook].filter(Boolean).join(' ');
 const reviewStructuredData = {
   '@context': 'https://schema.org',
   '@type': hasFinalRating ? 'Review' : 'Article',
+  headline: d.headline,
   name: d.title + (isPreview ? ' — قراءة استباقية' : isAudience ? ' — تقييم الجمهور' : isGtaLaunchReading ? ' — قراءة إطلاق أولية' : isLimited ? ' — قراءة محدودة الأدلة' : ' — مراجعة وتقييم'),
+  description: d.summary,
   url: canonicalUrl,
   datePublished: (d.publishedAt ?? d.date).toISOString(),
-  reviewBody: [d.summary, isLimited ? 'لا تتوفر أدلة كافية لمنح تقييم نهائي.' : d.verdict, d.hook].filter(Boolean).join(' '),
+  ...(hasFinalRating ? { reviewBody: reviewText } : { articleBody: reviewText }),
   ...(hasFinalRating ? { reviewRating: {
     '@type': 'Rating',
     ratingValue: d.score,
@@ -77,16 +88,7 @@ const reviewStructuredData = {
     worstRating: 0,
   } } : {}),
   author: { '@type': 'Organization', name: SITE_NAME },
-  ...((hasFinalRating || isAudience) ? { itemReviewed: {
-    '@type': schemaType,
-    name: d.title,
-    ...(d.originalTitle ? { alternateName: d.originalTitle } : {}),
-    ...(d.genres?.length ? { genre: d.genres } : {}),
-    ...(d.releaseDate ? { datePublished: d.releaseDate } : {}),
-    ...(d.poster ? { image: optimizeImage(d.poster) } : {}),
-    ...(Number(d.sourceRating) > 0 && Number(d.sourceVoteCount) > 0 ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: d.sourceRating, bestRating: d.sourceRatingScale || 10, worstRating: 0, ratingCount: d.sourceVoteCount } } : {}),
-  } } : {}),
-
+  ...(hasFinalRating ? { itemReviewed: reviewedItem } : { about: reviewedItem }),
 };
 
 ---
