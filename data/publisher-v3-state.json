@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-26T10:16:59.392Z",
+  "updatedAt": "2026-11-26T13:17:23.594Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -3724,158 +3724,245 @@
         "popularity": 42.8248,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-26T10:16:09.576Z",
-      "updatedAt": "2026-11-26T10:16:59.392Z",
+      "updatedAt": "2026-11-26T13:16:03.782Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "Daredevil: Born Again",
-        "type": "series",
-        "collectedAt": "2026-11-26T10:16:10.056Z",
-        "sourceId": "series:202555",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/202555",
-        "overview": "Matt Murdock, a blind lawyer with heightened abilities, is fighting for justice through his bustling law firm, while former mob boss Wilson Fisk pursues his own political endeavors in New York. When their past identities begin to emerge, both men find themselves on an inevitable collision course.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/202555",
-            "extract": "Matt Murdock, a blind lawyer with heightened abilities, is fighting for justice through his bustling law firm, while former mob boss Wilson Fisk pursues his own political endeavors in New York. When their past identities begin to emerge, both men find themselves on an inevitable collision course.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Daredevil%3A_Born_Again",
-            "extract": "Daredevil: Born Again is an American television series created by Dario Scardapane and Matt Corman & Chris Ord for the streaming service Disney+, based on Marvel Comics featuring the character Daredevil. It is the 13th television series in the Marvel Cinematic Universe (MCU) from Marvel Studios and was produced under its Marvel Television label. The series shares continuity with the films and television series of the MCU. Born Again is a revival and continuation of Daredevil (2015–2018), an earlier series produced by the previous Marvel Television production company and originally released on Netflix. Scardapane serves as showrunner with Justin Benson and Aaron Moorhead as lead directors.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Disney+ Philippines",
-            "url": "https://www.youtube.com/watch?v=0cNQzOdG-Vo",
-            "extract": "Verified public, embeddable promotional trailer: Marvel Television's Daredevil: Born Again | Official Trailer | Disney+ Philippines",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 1187 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "0cNQzOdG-Vo",
-        "youtubeVideoTitle": "Marvel Television's Daredevil: Born Again | Official Trailer | Disney+ Philippines",
-        "youtubeChannel": "Disney+ Philippines",
-        "releaseDate": "2025-03-04",
-        "genres": [
-          "Drama",
-          "Action & Adventure",
-          "Crime"
-        ],
-        "platforms": [],
-        "cast": [
-          "Charlie Cox",
-          "Vincent D'Onofrio",
-          "Wilson Bethel",
-          "Deborah Ann Woll",
-          "Margarita Levieva",
-          "Matthew Lillard",
-          "Lili Taylor",
-          "Michael Gandolfini"
-        ],
-        "crew": [],
-        "rating": 8.2,
-        "ratingScale": 10,
-        "votes": 1187,
-        "poster": "https://image.tmdb.org/t/p/w780/xDUoAsU8lQHOOoRkFiBuarmACDN.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/qrTAc0ZtQ859Qu5O8cixJzNJpQs.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "Daredevil: Born Again — عودة تحمل صراعاً واعداً، لكن الأدلة المتاحة لا تحسم جودة التنفيذ",
-        "summary": "تضع Daredevil: Born Again مات موردوك، المحامي الأعمى صاحب القدرات الحسية المعززة، في مواجهة ويلسون فيسك، زعيم الجريمة السابق الذي يتجه إلى العمل السياسي في نيويورك. هذا التوازي بين القانون والسلطة وماضٍ إجرامي يعود إلى السطح يمنح المسلسل أساساً درامياً محدداً، كما أن كونه امتداداً لمسلسل Daredevil السابق يضيف ثقلاً من الاستمرارية. لكن ملف الأدلة المتاح يثبت الفرضية والطاقم والسياق العام ولا يقدم مراجعات مستقلة أو معلومات تفصيلية عن الحلقات والصورة والصوت والإيقاع. لذلك يظل الحكم النهائي متحفظاً: الفكرة واعدة، أما مستوى تحقيقها الفني فلا يمكن الجزم به بأمانة من هذه المادة وحدها.",
-        "verdict": "Daredevil: Born Again يملك في أساسه مواجهة تلفزيونية ذات إمكانات واضحة: محامٍ يسعى إلى العدالة في نيويورك يقابله خصم ذو ماضٍ إجرامي يلاحق طموحاً سياسياً، فيما تتقاطع هويات الرجلين السابقة مع حاضرهما. كما تمنح صلته بمسلسل Daredevil الصادر بين 2015 و2018 موقعاً مهماً داخل استمرارية أوسع. غير أن هذه عناصر موثقة عن الفكرة والسياق، وليست برهاناً على نجاح الكتابة أو التمثيل أو الإخراج. لا تتضمن الأدلة مراجعات مستقلة أو وصفاً كافياً للحلقات كي يصدر حكم واثق على التنفيذ. الدرجة هنا متحفظة، وتوصيتي تتجه إلى محبي دراما الجريمة وصراعات القانون والسلطة، مع التنبيه إلى أن ملف المصادر لا يسمح بتوصية قطعية مبنية على جودة التجربة الفنية.",
-        "body": "## مقدمة وسياق العمل\n\nDaredevil: Born Again مسلسل درامي وأكشن وجريمة، صدر في 4 مارس 2025، وتعرض بياناته بوصفه عملاً من عالم Marvel التلفزيوني على Disney+. يستعيد شخصية مات موردوك، المحامي الأعمى ذي القدرات الحسية المعززة، ويضعها في مدينة نيويورك إلى جانب ويلسون فيسك، زعيم الجريمة السابق الذي يتجه إلى العمل السياسي. هذه المعلومات، الواردة في ملخص TMDB وبيانات العمل، تحدد نقطة الانطلاق بوضوح؛ لكنها لا تكفي وحدها لإثبات كيف عالج المسلسل الصراع حلقة بعد أخرى. وهذه مراجعة تحريرية نهائية بحدود ملف الأدلة المتاح، لا شهادة مشاهدة شخصية ولا وصفاً لمشاهد لم توثقها المصادر.\n\nللسياق أهمية خاصة: يعرّف المصدر الموسوعي المسلسل بأنه إحياء واستمرار لمسلسل Daredevil الذي عُرض بين 2015 و2018، كما يربطه باستمرارية عالم Marvel السينمائي. وتذكر البيانات داريو سكارداباني ومات كورمان وكريس أورد بوصفهم مبتكري العمل، وتشير إلى أن سكارداباني هو مدير العرض، فيما يتولى جاستن بنسون وآرون مورهيد الإخراج القيادي. هذه الصلة ترفع سقف التوقعات بشأن استمرارية الشخصيات، لكنها لا تثبت وحدها مقدار نجاح المسلسل في الوفاء بها. كذلك يتوفر إعلان رسمي موثق من Disney+ Philippines، لكن وجود الإعلان عنواناً ومصدراً ترويجياً لا يتيح استنتاج تفاصيل المشاهد أو الحكم على جودتها.\n\n## الفكرة والقصة أو التجربة\n\nالفكرة المركزية هي تقابل مسارين كانا مرتبطين بهويتين مختلفتين: موردوك يقاتل من أجل العدالة عبر مكتبه القانوني، وفيسك يلاحق طموحاً سياسياً بعد ماضٍ إجرامي. ويضيف الملخص أن الهويات السابقة تبدأ في الظهور مجدداً، وأن الرجلين يتجهان إلى تصادم حتمي. هنا تكمن مادة درامية ملموسة، لا في شعار عام عن الخير والشر، بل في إمكان اختبار العلاقة بين القانون الرسمي والسلطة السياسية والإرث الشخصي. هذا استنتاج عن بنية الفرضية الموثقة، وليس ادعاءً بأن المسلسل يقدم معالجة بعينها أو يحسم هذه الأسئلة بطريقة محددة.\n\nما لا تكشفه المعلومات هو طبيعة القضايا التي يتولاها مكتب موردوك، أو تفاصيل برنامج فيسك السياسي، أو حجم حضور الأكشن مقارنة بالدراما القانونية والجريمة. لذلك يصعب تقييم تعقيد الحبكة أو مفاجآتها أو طريقة توزيع المعلومات على الحلقات. نقطة القوة المتاحة هي وضوح التوتر الأساسي وقدرته على حمل أكثر من نوع درامي؛ أما نجاح تحويله إلى قصة متماسكة فيظل سؤالاً لا تجيب عنه بيانات الفهرسة. والمراجعة المسؤولة لا تستبدل هذا النقص بتخمين أحداث أو نهايات.\n\n## السرد والشخصيات أو تصميم اللعب\n\nلا ينطبق تحليل تصميم اللعب هنا، لأن العمل مسلسل تلفزيوني. أما من جهة السرد والشخصيات، فتسمح المصادر بتحديد مركز الثقل دون أكثر: موردوك محامٍ ذو قدرات حسية معززة، وفيسك شخصية ذات ماضٍ إجرامي وطموح سياسي، والتقاء ماضيهما هو المحرك المعلن للصراع. هذا التكوين يتيح قراءة المواجهة بوصفها صراعاً على تعريف العدالة والشرعية، لا مواجهة جسدية فحسب. لكنه يظل احتمالاً درامياً تستدعيه الفرضية، وليس وصفاً مثبتاً لكيفية كتابة الحوارات أو بناء التحولات.\n\nتضم قائمة التمثيل تشارلي كوكس وفنسنت دونوفريو، إلى جانب ويلسون بيثل وديبورا آن وول ومارغريتا ليفييفا وماثيو ليلارد وليلي تايلور ومايكل غاندولفيني. وجود هذه الأسماء حقيقة في بيانات الطاقم، لكنه لا يبرر نسبة أداء ناجح أو ضعيف لأي ممثل من دون نقد موثق أو مادة كافية للتحليل. وبالمثل، لا تتوافر هنا معلومات تفصيلية عن الشخصيات المساندة أو مساراتها. النتيجة أن العرض يملك شخصيتين مركزيتين واضحتين في تعريفه، بينما تبقى جودة التطوير الدرامي للعالم المحيط غير قابلة للحسم من المصادر الحالية.\n\n## الإخراج والجوانب الفنية\n\nتسمّي البيانات بنسون ومورهيد مخرجين قياديين، وتضع سكارداباني في موقع مدير العرض. هذه معلومة مفيدة لتحديد المسؤوليات العامة، لكنها لا تكشف قرارات الإخراج أو أسلوب إدارة المشاهد، ولا تشرح كيف توحّد العمل بصرياً وسردياً. لا يقدم ملف الأدلة تحليلاً مستقلاً للإنتاج، ولا تفاصيل موثقة عن تصميم مواقع التصوير أو المؤثرات أو المونتاج. لذلك لا يصح تحويل أسماء صناع العمل إلى حكم مسبق على الجودة، إيجاباً أو سلباً.\n\nيمكن القول إن مزج الدراما والجريمة والأكشن يفرض تحدياً فنياً: على المسلسل أن يجعل التحولات بين المجال القانوني والسياسي وماضي الشخصيات مفهومة ومتوازنة. لكن تقييم إنجاز هذا التحدي يحتاج إلى مشاهدة موثقة أو مراجعات مستقلة، وهما غير متاحين ضمن الملف. ولهذا لا أنسب إلى الإخراج سرعة أو قتامة أو ابتكاراً بصرياً لا تثبته الأدلة. الحكم الأكثر دقة هنا هو أن بيانات الصنعة الأساسية موجودة، أما أثرها الفعلي في التجربة فغير موصوف بما يكفي.\n\n## الصورة والهوية البصرية\n\nتثبت المواد وجود ملصق رسمي وصورة خلفية، إضافة إلى عنوان إعلان ترويجي رسمي. غير أن صور الفهرسة والملصق ليست أساساً كافياً لتقييم التصوير أو لوحة الألوان أو تصميم نيويورك داخل الحلقات. كما أن سجل الإعلان لا يتضمن وصفاً لمحتواه البصري، ولا يصح أن أتعامل مع عنوانه بوصفه مشاهدة نقدية له. بناءً على ذلك، لا يمكن وصف الهوية البصرية بأنها مميزة أو تقليدية أو متغيرة عبر الموسم من دون تجاوز الأدلة.\n\nهذا النقص مهم لأن الصورة في مسلسل عن شخصية معروفة قد تؤثر في الإحساس باستمرارية العالم، وفي التمييز بين فضاء القانون والسياسة والجريمة. لكن ذلك يشرح ما ينبغي أن يتناوله نقد بصري كامل، ولا يثبت ما فعله المسلسل بالفعل. الدرجة المخصصة لهذا المحور تعكس تحفظاً تحريرياً ناجماً عن قلة المادة القابلة للتحقق، لا اتهاماً للعمل بضعف التصوير أو الإنتاج.\n\n## الصوت والموسيقى والأداء\n\nلا يحتوي ملف المصادر على معلومات موثقة عن الموسيقى أو تصميم الصوت أو المزج، ولا يقدم اقتباسات نقدية عن أداء الممثلين. لذلك لا يمكنني تقييم حضور الموسيقى، أو وضوح الحوار، أو أثر المؤثرات، كما لا يمكن نسبة أداء بعينه إلى كوكس أو دونوفريو لمجرد ورودهما في قائمة الطاقم. هذا تمييز ضروري بين معرفة من يشارك في العمل وبين معرفة ما أنجزه على الشاشة.\n\nمن المفيد فقط تسجيل أن المسلسل دراما وأكشن وجريمة، وهي أنواع تجعل الصوت والأداء عنصرين مهمين في بناء التوتر والشخصية. لكن الأهمية النظرية لا تقوم مقام الدليل على النتيجة. لذا يظل هذا القسم محدوداً عمداً، وتبقى درجته تقديراً احترازياً لا خلاصة سماع أو مشاهدة مباشرة.\n\n## الإيقاع والبناء وتنوع المحتوى\n\nلا تتضمن الأدلة عدد الحلقات أو مددها أو وصفاً لمساراتها، ولا تشرح كيف يتوزع السرد بين قضايا القانون وطموح فيسك السياسي والمواجهة بين الشخصيتين. لذلك لا يمكن إصدار حكم موثوق على التمهيد أو التصاعد أو التكرار أو جودة الخاتمة. لا يكفي وصف الصراع بأنه يتجه إلى تصادم حتمي كي نستنتج أن الإيقاع متماسك؛ فالملخص يحدد وجهة عامة ولا يكشف طريقة الوصول إليها.\n\nمع ذلك، توحي الفرضية بتعدد مجالات الصراع، وهذا يمنح البناء إمكاناً للتنوع إذا وُزعت العناصر بحكمة. ويظل هذا احتمالاً مشروطاً لا مديحاً مؤكداً. أما الحكم على توازن الأكشن والدراما، أو ما إذا كان المسلسل يمنح مساراته وقتاً كافياً، فيحتاج إلى معلومات تفصيلية أو مراجعات مستقلة لا يوفرها الملف. لذلك لا أخلط بين ثراء الفكرة المحتمل وبين جودة إيقاعها المنفذ.\n\n## نقاط القوة\n\nأبرز ما يمكن إثباته هو صلابة نقطة الانطلاق: محامٍ يسعى إلى العدالة في مواجهة شخصية ذات ماضٍ إجرامي تتجه إلى السياسة، مع عودة الهويات السابقة إلى قلب العلاقة. كذلك يمنح امتداد العمل لمسلسل Daredevil السابق، واستمراره ضمن عالم Marvel، أساساً واضحاً للمتابعة لمن يهتم باستمرارية الشخصيات. ويتيح تصنيف العمل في الدراما والأكشن والجريمة إطاراً نوعياً متنوعاً، فيما تضم قائمة الطاقم أسماء معروفة في سياق المسلسل. هذه نقاط قوة في التصميم والسياق المتاحين، وليست ادعاءات بأن التنفيذ ينجح في كل جانب.\n\n## نقاط الضعف\n\nلا تسمح الأدلة بتحديد عيوب مؤكدة في كتابة الحلقات أو التمثيل أو الإخراج، ومن غير المنصف اختراعها. لكن توجد حدود واضحة في أساس التقييم: المصدر الأساسي ملخص فهرسة، والمصدر الموسوعي يشرح الهوية والاستمرارية، والإعلان مادة ترويجية لا مراجعة نقدية. لا يحتوي الملف على مراجعات مستقلة كافية، أو تحليل للحلقات، أو معلومات عملية عن الجوانب الفنية. لذلك تتعلق نقاط الضعف الممكنة هنا بحدود الحكم، لا بعيوب مثبتة في المسلسل نفسه. كما أن غياب وصف تفصيلي لمسارات الشخصيات يمنع التحقق من مقدار ما تضيفه الاستمرارية القديمة إلى القصة الجديدة.\n\n## لمن يناسب هذا العمل؟\n\nتبدو الفرضية مناسبة لمن يفضل دراما الجريمة التي تضع القانون والسلطة السياسية والماضي الشخصي في مواجهة واحدة، ولمن يتابع شخصية Daredevil أو يهتم بامتدادها داخل عالم Marvel. أما من يبحث عن مسلسل أكشن خالص، أو يريد معرفة مسبقة بتوازن الأنواع ومستوى العنف والإيقاع، فلن تمنحه البيانات الحالية إجابة كافية. يوجد على TMDB متوسط جمهور يبلغ 8.2 من 10 استناداً إلى 1187 صوتاً؛ وهو مؤشر جماهيري ثانوي منسوب إلى المنصة، وليس تقييماً تحريرياً مستقلاً ولا دليلاً بديلاً على جودة عناصر بعينها.\n\n## الحكم النهائي\n\nالنتيجة التحريرية المتوازنة أن Born Again يبدأ من صراع غني بالاحتمالات، ويستند إلى شخصيتين واضحتين وسياق استمرارية معروف، لكن ملف الأدلة لا يثبت مقدار ما حققه المسلسل من هذه الإمكانات على مستوى الكتابة والصورة والصوت والإيقاع. لذلك تستند درجة القصة إلى وضوح الفرضية واتساع محاورها، بينما تعبر الدرجات الفنية الأخرى عن تحفظ صريح بسبب غياب الشواهد، لا عن حكم سلبي على جودة التنفيذ. أوصي به مبدئياً لمتابعي دراما الجريمة ومحبي الشخصية، مع اعتبار التوصية مشروطة بالاهتمام بالفرضية والاستمرارية، لا ادعاءً بأن المواد المتاحة تكفي لإثبات تميز التجربة كاملة.",
-        "scores": {
-          "story": 7,
-          "visuals": 6,
-          "sound": 6,
-          "pacing": 6
-        },
-        "pros": [
-          "فرضية موثقة تجمع سعي مات موردوك إلى العدالة مع انتقال ويلسون فيسك من ماضٍ إجرامي إلى طموح سياسي.",
-          "عودة الهويات السابقة إلى واجهة الصراع تمنح العلاقة المركزية أساساً درامياً محدداً.",
-          "صلة واضحة بمسلسل Daredevil السابق وباستمرارية عالم Marvel، وفق المصدر الموسوعي.",
-          "قائمة طاقم تضم تشارلي كوكس وفنسنت دونوفريو وأسماء أخرى، وهي نقطة اهتمام سياقية لا حكم على الأداء."
-        ],
-        "cons": [
-          "المصادر المتاحة لا تقدم مراجعات مستقلة كافية أو تحليلاً تفصيلياً للحلقات.",
-          "لا توجد أدلة موثقة تسمح بحسم جودة التصوير أو الموسيقى أو تصميم الصوت.",
-          "غياب معلومات عن توزيع الحلقات ومساراتها يمنع تقييماً واثقاً للإيقاع والبناء.",
-          "هذه حدود في ملف الأدلة وليست عيوباً مؤكدة في المسلسل؛ لذلك تظل الدرجات الفنية منخفضة الثقة."
-        ],
-        "title": "Daredevil: Born Again",
-        "type": "series",
-        "sourceId": "series:202555",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/202555",
-        "sourceRating": 8.2,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 1187,
-        "sourceRatingCheckedAt": "2026-11-26T10:16:10.056Z",
-        "audienceScore": 8.2,
-        "releaseDate": "2025-03-04",
-        "poster": "https://image.tmdb.org/t/p/w780/xDUoAsU8lQHOOoRkFiBuarmACDN.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/qrTAc0ZtQ859Qu5O8cixJzNJpQs.jpg",
-        "genres": [
-          "Drama",
-          "Action & Adventure",
-          "Crime"
-        ],
-        "platforms": [],
-        "cast": [
-          "Charlie Cox",
-          "Vincent D'Onofrio",
-          "Wilson Bethel",
-          "Deborah Ann Woll",
-          "Margarita Levieva",
-          "Matthew Lillard",
-          "Lili Taylor",
-          "Michael Gandolfini"
-        ],
-        "crew": [],
-        "tags": [
-          "Drama",
-          "Action & Adventure",
-          "Crime"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/202555",
-            "extract": "Matt Murdock, a blind lawyer with heightened abilities, is fighting for justice through his bustling law firm, while former mob boss Wilson Fisk pursues his own political endeavors in New York. When their past identities begin to emerge, both men find themselves on an inevitable collision course.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Daredevil%3A_Born_Again",
-            "extract": "Daredevil: Born Again is an American television series created by Dario Scardapane and Matt Corman & Chris Ord for the streaming service Disney+, based on Marvel Comics featuring the character Daredevil. It is the 13th television series in the Marvel Cinematic Universe (MCU) from Marvel Studios and was produced under its Marvel Television label. The series shares continuity with the films and television series of the MCU. Born Again is a revival and continuation of Daredevil (2015–2018), an earlier series produced by the previous Marvel Television production company and originally released on Netflix. Scardapane serves as showrunner with Justin Benson and Aaron Moorhead as lead directors.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Disney+ Philippines",
-            "url": "https://www.youtube.com/watch?v=0cNQzOdG-Vo",
-            "extract": "Verified public, embeddable promotional trailer: Marvel Television's Daredevil: Born Again | Official Trailer | Disney+ Philippines",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "0cNQzOdG-Vo",
-        "youtubeVideoTitle": "Marvel Television's Daredevil: Born Again | Official Trailer | Disney+ Philippines",
-        "reviewMode": "review",
-        "score": 6.3
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 6010,
       "articlePath": "src/content/reviews/series-daredevil-born-again-202555.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-daredevil-born-again-202555/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-daredevil-born-again-202555/",
+      "publishedAt": "2026-11-26T13:16:03.782Z"
+    },
+    "movie:1492566": {
+      "key": "movie:1492566",
+      "type": "movie",
+      "id": "1492566",
+      "title": "Dracula Eternal",
+      "item": {
+        "type": "movie",
+        "id": "1492566",
+        "name": "Dracula Eternal",
+        "date": "2026-01-16",
+        "preview": false,
+        "popularity": 102.2341,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-26T13:16:05.418Z",
+      "updatedAt": "2026-11-26T13:16:05.798Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "No exact independent encyclopedia match for Dracula Eternal"
+    },
+    "movie:1228834": {
+      "key": "movie:1228834",
+      "type": "movie",
+      "id": "1228834",
+      "title": "The Fix",
+      "item": {
+        "type": "movie",
+        "id": "1228834",
+        "name": "The Fix",
+        "date": "2026-09-10",
+        "preview": false,
+        "popularity": 88.3222,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-26T13:16:13.711Z",
+      "updatedAt": "2026-11-26T13:16:14.268Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "Independent source is too thin after full lead-section fallback"
+    },
+    "movie:1288445": {
+      "key": "movie:1288445",
+      "type": "movie",
+      "id": "1288445",
+      "title": "Mutiny",
+      "item": {
+        "type": "movie",
+        "id": "1288445",
+        "name": "Mutiny",
+        "date": "2026-08-19",
+        "preview": false,
+        "popularity": 83.6997,
+        "source": "TMDB"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-26T13:16:18.337Z",
+      "updatedAt": "2026-11-26T13:17:23.594Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Mutiny",
+        "type": "movie",
+        "collectedAt": "2026-11-26T13:16:18.937Z",
+        "sourceId": "movie:1288445",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1288445",
+        "overview": "After witnessing his billionaire boss' murder and being framed for the crime, Cole Reed boards a cargo ship on a one-man crusade to avenge his boss' death only to discover an international conspiracy.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1288445",
+            "extract": "After witnessing his billionaire boss' murder and being framed for the crime, Cole Reed boards a cargo ship on a one-man crusade to avenge his boss' death only to discover an international conspiracy.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Mutiny",
+            "extract": "Mutiny is a revolt among a group of people to oppose, change, or remove their superiors or orders. The term is commonly used for insubordination by members of the military against an officer or superior, but it can also sometimes mean any type of rebellion against any force. Mutiny does not necessarily need to refer to a military force and can describe a political, economic, or power structure in which subordinates defy superiors.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Roadshow Films",
+            "url": "https://www.youtube.com/watch?v=aDwDBc2DFzA",
+            "extract": "Verified public, embeddable promotional trailer: Mutiny | Official Trailer 2 | 2026 [HD]",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 1129 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "aDwDBc2DFzA",
+        "youtubeVideoTitle": "Mutiny | Official Trailer 2 | 2026 [HD]",
+        "youtubeChannel": "Roadshow Films",
+        "releaseDate": "2026-08-19",
+        "genres": [
+          "Action",
+          "Thriller"
+        ],
+        "platforms": [],
+        "cast": [
+          "Jason Statham",
+          "Annabelle Wallis",
+          "Roland Møller",
+          "Ramon Tikaram",
+          "Arnas Fedaravičius",
+          "Jason Wong",
+          "Adrian Lester",
+          "Chaneil Kular"
+        ],
+        "crew": [
+          "Jean-François Richet",
+          "Lindsay Michel",
+          "J.P. Davis"
+        ],
+        "rating": 7.612,
+        "ratingScale": 10,
+        "votes": 1129,
+        "poster": "https://image.tmdb.org/t/p/w780/pu2VxGlpGwffOx292w18b1tv96j.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/qDa0fqDqIBCovRp975RvtGPcuN3.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "Mutiny: فرضية مطاردة واضحة، لكن الأدلة المتاحة لا تكشف إن كان التنفيذ يرقى إليها",
+        "summary": "تدور Mutiny، وفق ملخص TMDB، حول كول ريد، الذي يشهد مقتل رئيسه الملياردير ثم يُتهم بالجريمة، فيصعد إلى سفينة شحن ساعياً إلى الانتقام قبل أن تقوده القضية إلى مؤامرة دولية. هذه نقطة انطلاق مفهومة لفيلم أكشن وإثارة، وتمنح القصة دافعاً شخصياً ومساراً أوسع من مطاردة فردية. لكن ملف الأدلة لا يتضمن سوى الملخص، وبيانات الإنتاج والطاقم، ووجود إعلان رسمي؛ ولا يورد تفاصيل موثقة عن المشاهد أو السيناريو أو الصورة أو الموسيقى أو الإيقاع. لذلك لا يمكن تقديم حكم نهائي موثوق على جودة التنفيذ أو أداء الممثلين. هذه قراءة تحريرية أمينة لما يمكن إثباته، لا ادعاء بمشاهدة الفيلم.",
+        "verdict": "تملك Mutiny، بحسب ملخصها المنشور، مدخلاً درامياً مباشراً: جريمة يشهدها البطل، اتهام يطارده، وسفينة شحن تصبح نقطة انطلاق لمهمة انتقام تتسع إلى مؤامرة دولية. هذا يكفي لإثبات وضوح الفرضية، لا لإثبات نجاح الفيلم. فالمصادر المقدمة لا تعرض تحليلاً مستقلاً للفيلم، ولا تمنح مادة قابلة للفحص بشأن بناء الشخصيات أو الإخراج أو الأداء أو الصوت والصورة والإيقاع. لذلك لا أستطيع أن أقدم حكماً نهائياً على العمل أو توصية مشاهدة مبنية على جودته الفعلية من دون اختلاق. الدرجات أدناه تقديرات تحفظية محدودة بما تسمح به البيانات، وليست بديلاً عن مشاهدة موثقة أو مراجعات مستقلة؛ ودرجات المحاور الفنية المحايدة لا تعني أن الفيلم متوسط، بل أن الأدلة لا تكفي لتقييمها.",
+        "body": "## مقدمة وسياق العمل\nتُعرّف البيانات Mutiny بوصفه فيلماً من نوعي الأكشن والإثارة، بتاريخ إصدار 19 أغسطس 2026، وتورد جايسون ستاثام ضمن طاقمه، مع أسماء أخرى منها أنابيل واليس ورولاند مولر وأدريان ليستر. ويظهر جان-فرانسوا ريشيه ضمن أسماء الطاقم الإبداعي المدرجة، لكن الملف لا يحدد أدوار جميع الأسماء المذكورة، لذلك لا أنسب وظيفة بعينها إلى من لم تُذكر وظيفته. هذه حقائق تعريفية تفيد في وضع الفيلم ضمن سوق أفلام الحركة، لكنها لا تكفي وحدها للحكم على مستواه. المراجعة هنا مبنية على ملف الأدلة المتاح، ولا أدعي مشاهدة الفيلم أو الإعلان. ومن المهم التنبيه إلى أن الملف لا يقدم مراجعات نقدية مستقلة أو وصفاً تفصيلياً لمحتوى العمل؛ لذا ينبغي الفصل بين ما يقرره الملخص وما لا يمكن استنتاجه عن التنفيذ.\n\n## الفكرة والقصة أو التجربة\nبحسب ملخص TMDB، يشهد كول ريد مقتل رئيسه الملياردير، ثم يُلفّق له اتهام بالجريمة، فيصعد إلى سفينة شحن ضمن مسعى فردي للانتقام، قبل أن يكتشف وجود مؤامرة دولية. الفرضية تجمع بين دافع شخصي مفهوم، وهو الانتقام، وضغط خارجي يتمثل في اتهامه، ثم توسع في نطاق الخطر من حادثة قتل إلى مؤامرة. هذا التسلسل يمنح القصة اتجاهاً أولياً واضحاً، ويقدم للمشاهد وعداً بنقل الصراع من حساب فردي إلى شبكة أوسع. لكن الملخص لا يوضح طبيعة الأدلة التي تدين البطل، أو دوافع الشخصيات الأخرى، أو كيف يُكشف الترابط بين الجريمة والمؤامرة. لذلك يمكن تقييم وضوح نقطة الانطلاق، لا تماسك الحبكة أو أصالتها أو طريقة حلها. كما لا يصح تقديم تفاصيل إضافية عن أحداث الفيلم لم ترد في المادة.\n\n## السرد والشخصيات أو تصميم اللعب\nلأن Mutiny فيلم، فإن تصميم اللعب غير ذي صلة؛ والمادة المتاحة لا تسمح باستبدال ذلك بتحليل تفصيلي للسرد. يحدد الملخص كول ريد بوصفه مركز الحكاية، ويمنحه دافعين معلنين: تبرئة نفسه من تهمة القتل والانتقام لرئيسه. وجود هذين الدافعين يتيح، من حيث الفرضية، مسارين دراميين قد يتقاطعان، لكنه لا يكشف إن كان الفيلم يطورهما معاً أو يجعل أحدهما مجرد وسيلة للآخر. كما لا تتوفر معلومات عن الشخصيات المقابلة أو علاقاتها بالبطل، ولا عن حواراتها أو تحولاتها. أسماء الممثلين المدرجة حقائق عن الطاقم وليست دليلاً على جودة كتابة الشخصيات أو كيمياء الأداء. لذا فإن الحكم المنصف يقتصر على أن مركز السرد محدد في الملخص، أما عمق الشخصيات وفاعلية بنائها فيبقيان غير قابلين للتحقق من هذا الملف.\n\n## الإخراج والجوانب الفنية\nينسب الملف أسماء Jean-François Richet وLindsay Michel وJ.P. Davis إلى قائمة الطاقم، لكنه لا يشرح الأدوار التي يؤديها كل اسم ولا يورد مقابلات أو مراجعات أو ملاحظات إنتاجية. لذلك لا أستطيع أن أنسب قراراً إخراجياً محدداً، أو أصف طريقة إدارة الحركة، أو أستنتج أسلوب التصوير والتحرير من اسم مخرج وحده. كذلك لا تتوافر معلومات موثقة عن المؤثرات أو ظروف التصوير أو المعالجة التقنية. يمكن القول إن تصنيف الفيلم أكشن وإثارة يحدد توقعاً نوعياً عاماً لدى الجمهور، لكنه لا يثبت أن مشاهد الحركة واضحة أو مبتكرة أو متوازنة مع الجانب التشويقي. هذه الفجوة مهمة لأن الحرفة الفنية لا تُستخلص من التصنيف أو قائمة الأسماء؛ بل تحتاج إلى مادة مشاهدة أو مصادر نقدية مستقلة تشرح ما يظهر فعلياً على الشاشة.\n\n## الصورة والهوية البصرية\nيتضمن ملف الأدلة رابطاً إلى ملصق ورابطاً إلى صورة خلفية، إضافة إلى بيانات إعلان رسمي، لكنه لا يصف محتوى الصور ولا يقدم تحليلاً موثقاً للألوان أو التكوين أو حركة الكاميرا. وجود مواد ترويجية يثبت أن للفيلم حملة رسمية، لا أن له هوية بصرية مميزة أو متماسكة. ومن غير المنصف وصف السفينة أو مواقع الأحداث أو الإضاءة أو تصميم الأزياء اعتماداً على ملخص الحبكة وحده؛ فهذه عناصر تحتاج إلى معاينة مباشرة أو وصف موثوق. كذلك لا يمكن استنتاج جودة المشاهد من عنوان الإعلان أو دقته المعلنة في بياناته. بناءً على ذلك، لا أقدم حكماً إيجابياً أو سلبياً على الصورة نفسها. النقطة التحريرية هنا ليست أن الجانب البصري ضعيف، بل أن الأدلة لا تسمح بقياسه، وهو فرق جوهري بين نقص التقييم ووجود عيب مثبت في الفيلم.\n\n## الصوت والموسيقى والأداء\nلا يتضمن الملف أسماء مؤلفي الموسيقى أو مهندسي الصوت، ولا وصفاً للموسيقى التصويرية أو تصميم المؤثرات أو الحوار. كما أن إدراج ممثلين في قائمة الطاقم لا يكفي للحكم على أدائهم، ولا يتيح إثبات أن حضوراً بعينه يحمل الفيلم أو أن الأداء متباين. لا أدعي سماع الإعلان أو مشاهدة الفيلم؛ المتاح هو عنوان إعلان رسمي من قناة Roadshow Films وتوثيق وجوده فقط. لذلك لا أصف نبرة الموسيقى، أو وضوح الحوار، أو جودة المزج، أو الإلقاء والانفعالات. ويمكن اعتبار هذه العناصر من أبرز المساحات التي يتعذر تقييمها هنا، لا لأنها هامشية، بل لأنها أساسية في فيلم أكشن وإثارة، وغيابها يمنع إصدار حكم متوازن على التجربة السمعية والتمثيلية. أي مديح أو انتقاد محدد لهذه الجوانب سيتجاوز ما تثبته الأدلة.\n\n## الإيقاع والبناء وتنوع المحتوى\nيتضمن الملخص انتقالاً من جريمة واتهام إلى رحلة انتقام على متن سفينة، ثم إلى اكتشاف مؤامرة دولية. هذا التوسع يوحي ببنية تتغير فيها رهانات القصة، لكنه لا يحدد متى يقع التحول أو كيف يُبنى، ولا إن كان يمنح الحبكة تصاعداً متماسكاً. لا تتوفر معلومات عن مدة الفيلم أو تقسيم فصوله أو توزيع مشاهد الحركة والحوار، ولذلك لا يمكن وصفه بالمندفع أو المترهل، ولا القول إن تنوعه يحافظ على الاهتمام. وصف سفينة الشحن في الملخص لا يكفي لإثبات أن معظم الأحداث تدور داخلها أو أن الفيلم يستثمر مكاناً محدوداً؛ فصياغة الملخص تقول إن البطل يصعد إليها، ولا تقدم تفاصيل أخرى عن مواقع الأحداث. بالتالي، لا يوجد أساس موثوق لتقييم الإيقاع الفعلي، وأي درجة في هذا المحور تعكس نقص البيانات لا حكماً على المونتاج.\n\n## نقاط القوة\nأوضح ما يثبته الملف هو أن فرضية الفيلم قابلة للشرح من دون التباس: بطل يشهد جريمة، يصبح متهماً، ويسعى إلى الانتقام قبل أن تتسع القضية إلى مؤامرة. كما أن الجمع بين خطر شخصي وتهديد أكبر يمنح الحكاية نقطة انطلاق ذات رهانات مفهومة، من دون أن يضمن نجاح تطورها. ويتيح تصنيف الأكشن والإثارة للجمهور معرفة الإطار النوعي المتوقع، بينما يقدم الإعلان الرسمي الموثق مدخلاً ترويجياً متاحاً لمن يريد التعرف إلى الفيلم مباشرة. كذلك تتضمن البيانات قائمة طاقم تضم أسماء معروفة، من بينها جايسون ستاثام، وهو عنصر تعريفي قد يجذب جمهور هذا النوع. غير أن هذه النقاط تتعلق بوضوح المشروع وملامحه المعلنة، لا بإنجاز فني ثبتت جودته من خلال أدلة مستقلة.\n\n## نقاط الضعف\nأكبر قيد نقدي ليس عيباً مثبتاً داخل الفيلم، بل نقص ملف الأدلة نفسه: لا توجد فيه مراجعات مستقلة كافية أو تحليل لمشاهدة العمل، ولا معلومات مفصلة عن السيناريو أو الإخراج أو الصورة أو الصوت أو الإيقاع. ويورد مصدر ويكيبيديا شرحاً عاماً لمصطلح «التمرد» لا معلومات عن هذا الفيلم، ولذلك لا يصلح سنداً لتحليل العنوان أو المعنى. أما وجود إعلان رسمي، من دون وصف لمشاهده أو مادة قابلة للفحص هنا، فلا يملأ هذه الفجوات. يذكر ملف TMDB متوسط جمهور قدره 7.612 من 10 مع 1129 صوتاً؛ وهذا مؤشر جماهيري ثانوي منسوب إلى المنصة، وليس تقييماً تحريرياً مستقلاً ولا دليلاً على جودة محور فني بعينه. لا أعد هذه القيود عيوباً للفيلم، لكن أثرها المباشر هو استحالة إصدار مراجعة نهائية حاسمة بأمانة.\n\n## لمن يناسب هذا العمل؟\nوفق المعلومات المتاحة، قد يلفت الفيلم انتباه من يفضل أفلام الأكشن والإثارة، أو من يجد في قصص اتهام البطل وملاحقته ثم توسيع النزاع إلى مؤامرة مدخلاً جذاباً. وقد يكون اسم جايسون ستاثام عاملاً تعريفياً لدى من يتابع أعماله، لكن الملف لا يثبت طبيعة أدائه هنا ولا مقدار حضوره في الفيلم. لا أستطيع أن أوصي به بوصفه تجربة ناجحة أو أن أحذر منه بوصفه مخيباً، لأن ذلك يتطلب معرفة التنفيذ. الأنسب للقارئ الذي يفكر في مشاهدته أن يتعامل مع الملخص بوصفه وصفاً للفرضية لا ضماناً للجودة، وأن يرجع إلى الإعلان الرسمي أو إلى مراجعات مستقلة بعد صدور العمل. كذلك لا تكفي بيانات الجمهور وحدها لاتخاذ القرار، إذ لا تكشف أسباب التقييمات أو توازنها بين عناصر الفيلم.\n\n## الحكم النهائي\nتثبت الأدلة أن Mutiny فيلم أكشن وإثارة صدر في 2026، وتقدم حبكة افتتاحية محددة وطاقماً معلناً وإعلاناً رسمياً. لكنها لا تثبت جودة السيناريو أو الشخصيات أو الإخراج أو الجوانب الفنية، ولا تتضمن مصادر نقدية مستقلة كافية تسند حكماً نهائياً على الفيلم. لذا فالتقييم الأكثر مهنية هنا هو عدم اختلاق تجربة مشاهدة أو تحويل الفرضية إلى مديح للتنفيذ. الدرجات الرقمية المرفقة تحفظية ومحدودة: درجة القصة تتصل بوضوح الفرضية كما صيغت في الملخص، أما الدرجات المحايدة للصورة والصوت والإيقاع فتعبر عن تعذر تقييمها، لا عن مستوى الفيلم. وبناءً على ذلك، لا أقدم توصية نهائية بالمشاهدة أو التجنب؛ يمكن فقط ترشيح الفيلم مبدئياً لمن تستهويه فرضيته ونوعه، مع انتظار مادة نقدية مستقلة أوسع.",
+        "scores": {
+          "story": 6,
+          "visuals": 5,
+          "sound": 5,
+          "pacing": 5
+        },
+        "pros": [
+          "ملخص يحدد بوضوح جريمة محورية واتهاماً ودافعاً للانتقام.",
+          "الفرضية المعلنة توسع النزاع من قضية شخصية إلى مؤامرة دولية.",
+          "تصنيف الفيلم أكشن وإثارة واضح في بيانات المصدر.",
+          "وجود إعلان رسمي موثق من قناة Roadshow Films.",
+          "قائمة طاقم تضم جايسون ستاثام وأسماء أخرى محددة."
+        ],
+        "cons": [
+          "لا تتوفر أدلة كافية للحكم على جودة تنفيذ الحبكة أو بناء الشخصيات.",
+          "الملف لا يقدم مادة موثقة لتقييم الصورة أو الصوت أو الموسيقى أو الأداء.",
+          "لا توجد معلومات كافية عن الإيقاع أو توزيع الأحداث أو مدة الفيلم.",
+          "المصادر المستقلة المقدمة لا توفر مراجعة نقدية تحليلية للفيلم.",
+          "متوسط TMDB مؤشر جمهور ثانوي ولا يعوض غياب التقييم التحريري المستقل."
+        ],
+        "title": "Mutiny",
+        "type": "movie",
+        "sourceId": "movie:1288445",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1288445",
+        "sourceRating": 7.612,
+        "sourceRatingScale": 10,
+        "sourceVoteCount": 1129,
+        "sourceRatingCheckedAt": "2026-11-26T13:16:18.937Z",
+        "audienceScore": 7.6,
+        "releaseDate": "2026-08-19",
+        "poster": "https://image.tmdb.org/t/p/w780/pu2VxGlpGwffOx292w18b1tv96j.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/qDa0fqDqIBCovRp975RvtGPcuN3.jpg",
+        "genres": [
+          "Action",
+          "Thriller"
+        ],
+        "platforms": [],
+        "cast": [
+          "Jason Statham",
+          "Annabelle Wallis",
+          "Roland Møller",
+          "Ramon Tikaram",
+          "Arnas Fedaravičius",
+          "Jason Wong",
+          "Adrian Lester",
+          "Chaneil Kular"
+        ],
+        "crew": [
+          "Jean-François Richet",
+          "Lindsay Michel",
+          "J.P. Davis"
+        ],
+        "tags": [
+          "Action",
+          "Thriller"
+        ],
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1288445",
+            "extract": "After witnessing his billionaire boss' murder and being framed for the crime, Cole Reed boards a cargo ship on a one-man crusade to avenge his boss' death only to discover an international conspiracy.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Mutiny",
+            "extract": "Mutiny is a revolt among a group of people to oppose, change, or remove their superiors or orders. The term is commonly used for insubordination by members of the military against an officer or superior, but it can also sometimes mean any type of rebellion against any force. Mutiny does not necessarily need to refer to a military force and can describe a political, economic, or power structure in which subordinates defy superiors.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Roadshow Films",
+            "url": "https://www.youtube.com/watch?v=aDwDBc2DFzA",
+            "extract": "Verified public, embeddable promotional trailer: Mutiny | Official Trailer 2 | 2026 [HD]",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "aDwDBc2DFzA",
+        "youtubeVideoTitle": "Mutiny | Official Trailer 2 | 2026 [HD]",
+        "reviewMode": "review",
+        "score": 5.3
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 6326,
+      "articlePath": "src/content/reviews/movie-mutiny-1288445.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-mutiny-1288445/"
     }
   },
   "providers": {},
@@ -3916,9 +4003,9 @@
       "tokens": 30293
     },
     "2026-11-26": {
-      "articles": 2,
-      "requests": 4,
-      "tokens": 9757
+      "articles": 3,
+      "requests": 6,
+      "tokens": 16083
     }
   },
   "history": []
