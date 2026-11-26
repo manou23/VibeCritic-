@@ -21,7 +21,6 @@ platforms:
   - "Netflix"
 poster: "https://image.tmdb.org/t/p/w780/fMECSPrTmRClSViMsXFYmiYIcWP.jpg"
 backdrop: "https://image.tmdb.org/t/p/w1280/sGitHICLzIQQBiwE67lZLy6W67u.jpg"
-mediaVerified: true
 youtubeVideoId: "qjm1LgM2El4"
 youtubeVideoTitle: "Teach You a Lesson | Official Trailer | Netflix"
 cast:
