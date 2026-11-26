@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-25T19:16:43.242Z",
+  "updatedAt": "2026-11-26T07:16:26.297Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -3639,154 +3639,182 @@
         "popularity": 44.2742,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-25T19:16:07.627Z",
-      "updatedAt": "2026-11-25T19:16:43.242Z",
+      "updatedAt": "2026-11-26T07:16:00.637Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "Teach You a Lesson",
-        "type": "series",
-        "collectedAt": "2026-11-25T19:16:08.243Z",
-        "sourceId": "series:276161",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/276161",
-        "overview": "An inspector from the Educational Rights Protection Bureau (ERPB) who is authorized by the government to use physical intervention and unconventional methods to discipline delinquent students and reform the educational system.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/276161",
-            "extract": "An inspector from the Educational Rights Protection Bureau (ERPB) who is authorized by the government to use physical intervention and unconventional methods to discipline delinquent students and reform the educational system.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Teach_You_a_Lesson",
-            "extract": "Teach You a Lesson (Korean: 참교육) is a 2026 South Korean action school drama television series written by Lee Nam-kyu, Kim Da-hee, and Moon Jong-ho, directed by Hong Jong-chan, and starring Kim Mu-yeol, Lee Sung-min, Jin Ki-joo, and Pyo Ji-hoon. Based on the Naver webtoon Get Schooled by Chae Yong-taek and Han Ga-ram, the series follows an inspector from the Educational Rights Protection Bureau (ERPB) who is authorized by the government to use physical intervention and unconventional methods to discipline delinquent students and reform the educational system. It was released on Netflix on June 5, 2026.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Netflix Philippines",
-            "url": "https://www.youtube.com/watch?v=qjm1LgM2El4",
-            "extract": "Verified public, embeddable promotional trailer: Teach You a Lesson | Official Trailer | Netflix",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 1030 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "qjm1LgM2El4",
-        "youtubeVideoTitle": "Teach You a Lesson | Official Trailer | Netflix",
-        "youtubeChannel": "Netflix Philippines",
-        "releaseDate": "2026-06-05",
-        "genres": [
-          "Action & Adventure",
-          "Drama",
-          "Comedy"
-        ],
-        "platforms": [],
-        "cast": [
-          "Kim Moo-yul",
-          "Lee Sung-min",
-          "Jin Ki-joo",
-          "P.O"
-        ],
-        "crew": [
-          "Hong Jong-chan"
-        ],
-        "rating": 9.338,
-        "ratingScale": 10,
-        "votes": 1030,
-        "poster": "https://image.tmdb.org/t/p/w780/fMECSPrTmRClSViMsXFYmiYIcWP.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/sGitHICLzIQQBiwE67lZLy6W67u.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "Teach You a Lesson: فرضية جريئة عن الانضباط المدرسي، وحكمٌ تحدّه ندرة الأدلة المنشورة",
-        "summary": "تدور Teach You a Lesson، وفق بيانات العمل المنشورة، حول مفتش حكومي مخوّل بالتدخل الجسدي واستخدام أساليب غير تقليدية لمعاقبة الطلاب المشاغبين وإصلاح النظام التعليمي. تمنح هذه الفرضية المسلسل مادة واضحة للصراع بين حماية الطلاب وفرض السلطة، وتضعه عند تقاطع الدراما المدرسية والحركة والكوميديا. لكن المعلومات المتاحة هنا لا توثق تفاصيل الحلقات أو بناء الشخصيات أو إنجاز الصورة والصوت، ولذلك لا يصح تحويل الفكرة وحدها إلى مديح لأداء التنفيذ. هذا حكم تحريري متحفظ: يقدّر إمكانات المفهوم، ويبيّن بوضوح ما لا تسمح الأدلة بإثباته، ولا يعامل متوسط TMDB بوصفه بديلاً عن التقييم النقدي.",
-        "verdict": "النتيجة التحريرية الأقوى التي تسندها المعلومات المتاحة هي أن Teach You a Lesson يملك محوراً درامياً مثيراً للجدل: جهاز رسمي يواجه الإخفاق المدرسي بأدوات تتضمن التدخل الجسدي، فيما تجمع هوية العمل المعلنة بين الحركة والدراما والكوميديا. هذا يمنحه إمكاناً للنقاش، لا ضماناً بنجاحه. لا تتوافر في ملف الأدلة أوصاف موثقة كافية للحلقات أو للشخصيات أو للمنجز الفني كي يصح الجزم بجودة التنفيذ، لذا جاءت الدرجات تحفظية ولا ينبغي قراءتها كأنها معاينة مباشرة. أوصي به مبدئياً لمن يهتم بالدراما المدرسية الكورية وبموضوع السلطة والانضباط، مع تنبيه واضح إلى أن الأدلة لا تتيح تأكيد ملاءمته لمن ينتظر معالجة متوازنة أو أداءً فنياً محدداً. تقييم جمهور TMDB مؤشر ثانوي فقط، وليس أساس الحكم.",
-        "body": "## مقدمة وسياق العمل\n\nTeach You a Lesson مسلسل كوري جنوبي صدر على Netflix في 5 يونيو 2026 بحسب البيانات المتاحة، ويصنف ضمن الحركة والمغامرة والدراما والكوميديا. يقوده إخراجياً Hong Jong-chan، وتُنسب كتابة العمل إلى Lee Nam-kyu وKim Da-hee وMoon Jong-ho وفق المصدر الموسوعي المدرج. هذه حقائق تعريفية مفيدة، لكنها لا تكفي وحدها للحكم على جودة الحلقات أو على كيفية توزيع الأنواع. المراجعة هنا نهائية في موقفها التحريري، لكنها لا تدّعي مشاهدة المسلسل؛ فهي تستند إلى وصفه المنشور، وإلى بياناته التعريفية، وإلى وجود إعلان رسمي على قناة Netflix Philippines. الإعلان موثق بوصفه مادة ترويجية، لكن الملف لا يورد وصفاً لمشاهده أو تحليلاً لمحتواه، فلا يصح اختلاق تفاصيل بصرية أو سردية منه.\n\n## الفكرة والقصة أو التجربة\n\nتتمحور الفكرة الموثقة حول مفتش في مكتب حماية الحقوق التعليمية، مخوّل من الحكومة بالتدخل الجسدي وباستخدام وسائل غير تقليدية لتأديب الطلاب المشاغبين وإصلاح النظام التعليمي. هذا الأساس يضع مفارقة أخلاقية في قلب المشروع: مؤسسة يفترض أن تحمي الحقوق تمنح موظفاً سلطة العقاب البدني باسم الإصلاح. ويمكن استنتاج أن المسلسل يتيح مساءلة معنى الانضباط وحدود سلطة الدولة والمدرسة، لكن ذلك يظل إمكاناً يتيحه الملخص، لا دليلاً على أن الحلقات تنفذه بعمق أو بإنصاف. لا تتوافر معلومات موثقة عن قضايا كل حلقة، أو عن نتائج تدخل المفتش، أو عن وجهة نظر الطلاب، ولذلك لا يمكن تقديم عرض تفصيلي للأحداث من دون تجاوز الأدلة.\n\n## السرد والشخصيات أو تصميم اللعب\n\nلأن العمل مسلسل درامي لا لعبة، ينصب السؤال على كيفية تحويل الفرضية إلى شخصيات وصراع ممتد. يثبت الملف أسماء الممثلين الرئيسيين: Kim Moo-yul وLee Sung-min وJin Ki-joo وP.O، لكنه لا يحدد أدوارهم أو علاقاتهم أو مساراتهم. لذلك لا يمكن نسب مواقف أو تحولات نفسية إلى أي منهم. ما يمكن قوله نقدياً إن نجاح هذا النوع من الحكايات يتوقف على ألا تصبح السلطة العنيفة حلاً تلقائياً لكل مشكلة، وأن يمنح الطلاب والمدرسون حضوراً يتجاوز كونهم ذريعة لتدخل المفتش. هذا معيار لقراءة العمل نابع من الفكرة نفسها، وليس ادعاءً بأن المسلسل أخفق فيه. غياب التفاصيل يمنع أيضاً المفاضلة بين سرد متصل وحكايات مدرسية منفصلة.\n\n## الإخراج والجوانب الفنية\n\nالمعلومة المحددة في هذا الجانب هي إسناد الإخراج إلى Hong Jong-chan. لا يقدم الملف وصفاً لأسلوبه في هذا المسلسل، ولا أمثلة موثقة على إدارة المشاهد أو بناء التوتر أو توجيه الممثلين. لذلك لا أنسب إليه اختيارات إخراجية بعينها ولا أستنتج من اسمه وحده نجاحاً أو تعثراً. مع ذلك، تفرض الفرضية تحدياً واضحاً على الإخراج: تصوير التدخل الجسدي بوصفه أداة درامية من دون تمجيده، مع إبقاء الفارق بين مساءلة المؤسسة وتبرير العقوبة مفهوماً. هذا استنتاج عن متطلبات المادة، لا تقرير عن الطريقة التي عالجها بها العمل. وفي غياب مراجعات مستقلة مفصلة أو أوصاف إنتاجية موثوقة، لا يمكن إصدار حكم أقوى على التنفيذ الفني.\n\n## الصورة والهوية البصرية\n\nتؤكد البيانات وجود ملصق وصورة خلفية رسمية، كما تؤكد وجود إعلان ترويجي منشور على قناة Netflix Philippines. لكنها لا تصف لوحة الألوان، أو تصميم المدارس والمكاتب، أو حركة الكاميرا، أو مستوى المؤثرات، ولا تتضمن دليلاً يسمح بتقييم جودة التصوير في الحلقات. مجرد توافر صورة ترويجية لا يثبت أن للمسلسل هوية بصرية متماسكة، كما أن عنوان الإعلان لا يكشف مضمون لقطاته. لذا فالحكم المسؤول هنا ليس اختراع أسلوب بصري، بل تحديد موضع النقص: لا يمكن ترجيح أن الصورة تخدم واقعية البيئة التعليمية أو أن الحركة تمنح المواجهات وضوحاً وإيقاعاً. درجة هذا المحور تحفظية، وتعبر عن قصور الأدلة لا عن اكتشاف عيب بصري بعينه.\n\n## الصوت والموسيقى والأداء\n\nوجود أسماء الممثلين في قائمة الطاقم حقيقة قابلة للتحقق، لكنه لا يبرر وصف الأداء بأنه قوي أو ضعيف، ولا يتيح تحليل الكيمياء بينهم أو طريقة تجسيد الطلاب والسلطة. كذلك لا يسجل الملف أسماء مؤلف الموسيقى أو تفاصيل المسار الصوتي أو تصميم المؤثرات، ولا يورد اقتباسات نقدية مستقلة عن هذه العناصر. ومن ثم لا يصح اختلاق مشاهد أداء أو لحظات موسيقية محددة. يمكن فقط الإشارة إلى أن المزج المعلن بين الحركة والدراما والكوميديا يجعل التوازن الصوتي والأدائي مهماً: المبالغة الكوميدية قد تغير وقع موضوع حساس، بينما تتطلب مشاهد الحركة وضوحاً في الإيقاع. لكننا لا نعرف، من هذه الأدلة، كيف تحقق المسلسل ذلك فعلياً.\n\n## الإيقاع والبناء وتنوع المحتوى\n\nلا يتضمن ملف الأدلة عدد الحلقات أو مدتها أو طريقة توزيع القصص، كما لا يحدد إن كانت الحبكة تتقدم عبر قضية مركزية أم عبر ملفات مدرسية متعاقبة. لذلك لا يمكن وصف الإيقاع بأنه سريع أو مترهل، ولا الجزم بأن الأنواع الثلاثة متوازنة. المؤكد أن التصنيف يجمع الحركة والدراما والكوميديا، وأن موضوع الإصلاح التعليمي يتيح أكثر من مستوى للصراع؛ أما نجاح الانتقال بين هذه المستويات فمسألة لا تحسمها بيانات التصنيف. هذه فجوة مهمة لأن استمرارية الحكاية تعتمد على وصل الحالات الفردية بسؤال الإصلاح المؤسسي، لا على تكرار نمط عقابي فقط. لا أعتبر غياب بيانات الإيقاع دليلاً على مشكلة في المسلسل، لكنه يمنع منحه إشادة غير مسندة في هذا المحور.\n\n## نقاط القوة\n\nأوضح عناصر القوة المثبتة هو وضوح الفرضية: مفتش حكومي يملك صلاحية تدخل جسدي، في إطار يعلن استهدافه تأديب الطلاب وإصلاح التعليم. التناقض بين حماية الحقوق والعقاب يوفر نقطة دخول للنقاش، ويمنح العمل موضوعاً يتجاوز مجرد وصفه بأنه دراما مدرسية. كذلك فإن الجمع المصنف بين الحركة والدراما والكوميديا يفتح مجالاً لتعدد النبرة، وإن لم يثبت نجاح هذا الجمع. وجود إعلان رسمي على قناة Netflix Philippines يثبت توافر مادة ترويجية أصلية، فيما تتيح أسماء الطاقم والمخرج والكتّاب تحديد المشاركين الرئيسيين. هذه مزايا في المشروع ووضوح هويته المعلنة، وليست شهادة على أن كل عنصر نُفذ بإتقان.\n\n## نقاط الضعف\n\nأبرز مأخذ تحريري لا يتعلق بعيب فني مؤكد، بل بحدود ما يمكن توثيقه: لا توجد هنا تفاصيل كافية عن كتابة الحلقات أو الشخصيات أو الصورة والصوت، ما يجعل الحكم على التنفيذ ناقص الأساس. كما أن الفرضية تحمل خطراً درامياً وأخلاقياً: إذا اختزل الإصلاح في العقاب الجسدي فقد تضعف مساءلة المؤسسة، لكن الأدلة لا تثبت أن المسلسل وقع في ذلك. ولا يقدم الملف معلومات عن مدة العمل أو بنيته أو استقبال نقدي مستقل مفصل، فلا يمكن تقدير مدى اتساع قصته أو ثبات مستواها. من المهم عدم تحويل هذه الفجوات إلى اتهامات للمسلسل؛ إنها أسباب مباشرة لتقييد الثقة في التقييم، لا عيوب مثبتة في المنتج نفسه.\n\n## لمن يناسب هذا العمل؟\n\nوفق هويته المعلنة، قد يثير المسلسل اهتمام من يبحث عن دراما مدرسية كورية تتناول السلطة والانضباط، أو من يفضل عملاً يخلط الحركة بالدراما والكوميديا. كما أن الفرضية وحدها تمنح المشاهد موضوعاً قابلاً للنقاش حول حدود تدخل الدولة في التعليم ومعنى حماية الحقوق. لكن لا أستطيع التوصية به بثقة لمن يشترط معالجة دقيقة للطلاب أو نقداً مؤسسياً متوازناً؛ فهذه أمور لا تكشفها المعلومات المتاحة. ولا تكفي شعبية جماهيرية معلنة لإثبات ملاءمته لفئة بعينها. الأفضل التعامل مع التوصية بوصفها مبدئية قائمة على الموضوع والتصنيف، لا ضماناً لتجربة محددة أو لتفضيل نبرة بعينها.\n\n## الحكم النهائي\n\nيمتلك Teach You a Lesson أساساً درامياً واضحاً وخصباً للنقاش: مفتش رسمي يستخدم صلاحيات استثنائية في بيئة تعليمية، ضمن مسلسل مصنف للحركة والدراما والكوميديا. يمنحه ذلك قيمة مفهومية أولية، لكنه لا يسمح وحده بإثبات جودة الكتابة أو الأداء أو الإخراج. الدرجات أدناه حذرة عمداً؛ فدرجة القصة تعكس قوة الفكرة الموثقة مع غياب تفاصيل تنفيذها، أما الدرجات المحايدة نسبياً للصورة والصوت والإيقاع فلا تعني رصد عيوب، بل تعكس أن الأدلة لا تكفي للحكم على هذه الجوانب. يذكر TMDB متوسطاً جماهيرياً قدره 9.338 من 10 استناداً إلى 1030 صوتاً؛ وهو مؤشر جمهور منسوب إلى المنصة، لا درجة VibeCritic ولا بديل عن تقييم مستقل. المحصلة: عمل ذو فرضية لافتة وتوصية مشروطة لمحبي موضوعه، مع تحفظ ضروري على ما لا تثبته المصادر.",
-        "scores": {
-          "story": 6.8,
-          "visuals": 6,
-          "sound": 6,
-          "pacing": 6
-        },
-        "pros": [
-          "فرضية محددة تجمع صلاحية حكومية استثنائية بهدف تأديب الطلاب وإصلاح التعليم.",
-          "مفارقة واضحة بين حماية الحقوق واستخدام التدخل الجسدي، تتيح نقاشاً أخلاقياً وسياسياً.",
-          "تصنيف معلن يجمع الحركة والدراما والكوميديا، بما يفتح المجال لتعدد النبرة.",
-          "توفر بيانات رسمية عن تاريخ الإصدار والطاقم والمخرج والكتّاب، إلى جانب إعلان Netflix الترويجي."
-        ],
-        "cons": [
-          "المعلومات المتاحة لا توثق مسارات الشخصيات أو تفاصيل الحلقات، فتحد من إمكان الحكم على نجاح السرد.",
-          "لا توجد أدلة كافية لتقييم الصورة أو الموسيقى أو الأداء أو الإيقاع، ولا يصح ملء هذا الفراغ بالتخمين.",
-          "الفرضية معرضة لأن تختزل الإصلاح في العقاب، لكن المصادر لا تكشف ما إذا كان المسلسل يتجنب هذا الخطر.",
-          "لا يتضمن ملف الأدلة مراجعات نقدية مستقلة مفصلة تسمح بموازنة استقبال العمل الفني."
-        ],
-        "title": "Teach You a Lesson",
-        "type": "series",
-        "sourceId": "series:276161",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/276161",
-        "sourceRating": 9.338,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 1030,
-        "sourceRatingCheckedAt": "2026-11-25T19:16:08.243Z",
-        "audienceScore": 9.3,
-        "releaseDate": "2026-06-05",
-        "poster": "https://image.tmdb.org/t/p/w780/fMECSPrTmRClSViMsXFYmiYIcWP.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/sGitHICLzIQQBiwE67lZLy6W67u.jpg",
-        "genres": [
-          "Action & Adventure",
-          "Drama",
-          "Comedy"
-        ],
-        "platforms": [],
-        "cast": [
-          "Kim Moo-yul",
-          "Lee Sung-min",
-          "Jin Ki-joo",
-          "P.O"
-        ],
-        "crew": [
-          "Hong Jong-chan"
-        ],
-        "tags": [
-          "Action & Adventure",
-          "Drama",
-          "Comedy"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/276161",
-            "extract": "An inspector from the Educational Rights Protection Bureau (ERPB) who is authorized by the government to use physical intervention and unconventional methods to discipline delinquent students and reform the educational system.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Teach_You_a_Lesson",
-            "extract": "Teach You a Lesson (Korean: 참교육) is a 2026 South Korean action school drama television series written by Lee Nam-kyu, Kim Da-hee, and Moon Jong-ho, directed by Hong Jong-chan, and starring Kim Mu-yeol, Lee Sung-min, Jin Ki-joo, and Pyo Ji-hoon. Based on the Naver webtoon Get Schooled by Chae Yong-taek and Han Ga-ram, the series follows an inspector from the Educational Rights Protection Bureau (ERPB) who is authorized by the government to use physical intervention and unconventional methods to discipline delinquent students and reform the educational system. It was released on Netflix on June 5, 2026.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Netflix Philippines",
-            "url": "https://www.youtube.com/watch?v=qjm1LgM2El4",
-            "extract": "Verified public, embeddable promotional trailer: Teach You a Lesson | Official Trailer | Netflix",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "qjm1LgM2El4",
-        "youtubeVideoTitle": "Teach You a Lesson | Official Trailer | Netflix",
-        "reviewMode": "review",
-        "score": 6.2
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 5691,
       "articlePath": "src/content/reviews/series-teach-you-a-lesson-276161.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-teach-you-a-lesson-276161/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-teach-you-a-lesson-276161/",
+      "publishedAt": "2026-11-26T07:16:00.636Z"
+    },
+    "movie:1496696": {
+      "key": "movie:1496696",
+      "type": "movie",
+      "id": "1496696",
+      "title": "Breeder",
+      "item": {
+        "type": "movie",
+        "id": "1496696",
+        "name": "Breeder",
+        "date": "2026-10-28",
+        "preview": false,
+        "popularity": 122.7525,
+        "source": "TMDB"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-26T07:16:02.439Z",
+      "updatedAt": "2026-11-26T07:16:26.297Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Breeder",
+        "type": "movie",
+        "collectedAt": "2026-11-26T07:16:02.902Z",
+        "sourceId": "movie:1496696",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1496696",
+        "overview": "An eccentric poodle breeder lures a broke college student to her remote ranch with a promise of research funding. But, as he soon learns, there’s a catch.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1496696",
+            "extract": "An eccentric poodle breeder lures a broke college student to her remote ranch with a promise of research funding. But, as he soon learns, there’s a catch.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Breeder",
+            "extract": "A breeder is a person who selectively breeds carefully selected mates, normally of the same breed, to sexually reproduce offspring with specific, consistently replicable qualities and characteristics. This might be as a farmer, agriculturalist, or hobbyist, and can be practiced on a large or small scale, for food, fun, or profit.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — FilmSpot Trailer",
+            "url": "https://www.youtube.com/watch?v=sgTVtpJUegQ",
+            "extract": "Verified public, embeddable promotional trailer: BREEDER Official Trailer (NEW 2026)",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "limited",
+        "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
+        "youtubeVideoId": "sgTVtpJUegQ",
+        "youtubeVideoTitle": "BREEDER Official Trailer (NEW 2026)",
+        "youtubeChannel": "FilmSpot Trailer",
+        "releaseDate": "2026-10-28",
+        "genres": [
+          "Horror",
+          "Thriller"
+        ],
+        "platforms": [],
+        "cast": [
+          "Daniel Doheny",
+          "Dot-Marie Jones",
+          "Maddie Phillips",
+          "Tanaya Beatty",
+          "Lillian Doucet-Roche",
+          "Isla Spencer",
+          "Paige McGarvin",
+          "John Murphy"
+        ],
+        "crew": [
+          "Alex Goyette",
+          "Alex Goyette"
+        ],
+        "rating": 7.3,
+        "ratingScale": 10,
+        "votes": 28,
+        "poster": "https://image.tmdb.org/t/p/w780/alsb3UC17kxIcytLWvwkmL0STgU.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/l5gJE9xW1FFtub3gUezh1PjBbY5.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "Breeder: قراءة معلوماتية محدودة بما تثبته المصادر",
+        "summary": "Breeder فيلم مدرج ضمن نوعي الرعب والإثارة، وتدور فكرته المعلنة حول مربّية كلاب بودل غريبة الأطوار تستدرج طالباً جامعياً مفلساً إلى مزرعتها النائية، عارضةً تمويل أبحاثه، قبل أن يتبين أن للعرض شرطاً. يسجل ملف قاعدة البيانات تاريخ إصدار في 28 أكتوبر 2026، ويورد أسماء ممثلين وفريقاً مرتبطاً بالعمل، كما يثبت وجود إعلان ترويجي منشور على يوتيوب. لكن المعلومات المتاحة لا تقدم وصفاً موثقاً لتفاصيل التنفيذ، ولا تكفي لتقييم التمثيل أو الإخراج أو الصورة أو الصوت أو الإيقاع. كذلك لا يوجد ضمن الأدلة تقييم جماهيري مدعوم بعدد كافٍ من الأصوات، ولا مراجعة مستقلة قائمة على مشاهدة مباشرة؛ لذلك يظل هذا التعريف محدوداً بالبيانات المنشورة.",
+        "verdict": "هذه قراءة محدودة للمعلومات المتاحة عن Breeder، وليست مراجعة مشاهدة أو حكماً نهائياً على الفيلم. ما يمكن قوله هو أن سجل قاعدة البيانات يذكر تصنيفي الرعب والإثارة، ويعرض فرضية قصصية عن طالب جامعي ومربّية بودل ومزرعة نائية، إلى جانب تاريخ إصدار وأسماء طاقم وإعلان ترويجي. أما كيفية تحويل هذه العناصر إلى فيلم، ومدى نجاحها أو تأثيرها، فلا تحسمها المصادر المقدمة. ولا تتوافر أدلة مشاهدة مستقلة أو بيانات جمهور كافية لتأسيس حكم تحريري موثوق؛ لذا ينبغي التعامل مع هذا النص بوصفه تعريفاً أولياً، لا توصية مبنية على الجودة.",
+        "body": "## ما الذي نعرفه عن العمل؟\n\nBreeder مدرج في ملف الأدلة بوصفه فيلماً، ويظهر اسمه في قاعدة بيانات TMDB. ويورد الملف تاريخ إصدار هو 28 أكتوبر 2026، كما يضع العمل ضمن نوعي الرعب والإثارة. هذه معلومات تصنيفية وبيانات سجل، وليست بحد ذاتها وصفاً لتجربة المشاهدة أو دليلاً على مستوى الفيلم. ومن المهم هنا الفصل بين وجود هذه البيانات وبين أي استنتاج عن جودة العمل: فالتصنيف لا يثبت مقدار الرعب أو طبيعة الإثارة، وتاريخ الإصدار لا يخبرنا بما إذا كان الفيلم متاحاً على منصة بعينها.\n\nالمصادر المقدمة لا تتضمن مراجعة نقدية مستقلة أو تقريراً من مشاهدة مباشرة. ويوجد رابط إلى إعلان ترويجي منشور على يوتيوب بعنوان BREEDER Official Trailer (NEW 2026)، لكن وجود الإعلان يثبت توفر مادة ترويجية فقط. لا يتيح مقتطف المصدر وصف محتوى الإعلان أو مشاهده، ولذلك لن أتعامل معه كأنني شاهدته، ولن أستخرج منه تفاصيل غير واردة في الملف.\n\n## القصة أو الفكرة المعلنة\n\nيقدم ملخص قاعدة البيانات الفكرة على النحو الآتي: مربّية كلاب بودل غريبة الأطوار تستدرج طالباً جامعياً يعاني ضائقة مالية إلى مزرعتها النائية، بعد أن تعده بتمويل أبحاثه. ثم يتضح، وفق الملخص نفسه، أن العرض مشروط أو ينطوي على جانب لم يكن الطالب يتوقعه. هذه هي حدود المعلومات القصصية المتاحة؛ فلا يذكر الملف ماهية الشرط، ولا يشرح طبيعة الأبحاث، ولا يبين ما الذي يحدث بعد وصول الطالب إلى المزرعة.\n\nيمكن نقل هذه الفرضية كما وردت من دون تحويلها إلى سرد تفصيلي أو تأكيد لتطورات غير موثقة. وصف المربّية بأنها غريبة الأطوار والتلميح إلى وجود مقابل للتمويل جزءان من الملخص المنشور، لا استنتاجان مستقلان. كما لا يكفي هذا الوصف وحده لتحديد النبرة أو بنية الحبكة أو كيفية تداخل الرعب والإثارة. لذلك لا يمكن الجزم إن كان العمل يعتمد على الغموض أو المفاجأة أو عناصر أخرى، ولا يصح ملء تلك الفراغات بتوقعات مأخوذة من النوع السينمائي.\n\n## معلومات الإنتاج والطاقم\n\nيسجل الملف أسماء ضمن طاقم التمثيل: Daniel Doheny وDot-Marie Jones وMaddie Phillips وTanaya Beatty وLillian Doucet-Roche وIsla Spencer وPaige McGarvin وJohn Murphy. ورود هذه الأسماء يؤكد أن قاعدة البيانات تربطهم بالفيلم، لكنه لا يوضح أدوارهم أو حجم ظهور كل منهم أو طبيعة الشخصيات التي يؤدونها. لذلك لا يمكن استخدام قائمة الأسماء للحكم على الأداء أو على توازن الأدوار.\n\nأما خانة الطاقم الأخرى فتورد Alex Goyette مرتين، من دون تعريف واضح بالوظيفة المرتبطة بالاسم. ينبغي إبقاء هذه المعلومة كما هي وعدم استنتاج منصب إنتاجي أو فني لم يحدده المصدر. ولا يقدم الملف تفاصيل موثقة عن مواقع التصوير أو الميزانية أو شركة الإنتاج أو الموسيقى أو مراحل العمل. كذلك لا يذكر منصات مشاهدة؛ وخانة المنصات خالية في البيانات المتاحة. هذه حدود في المعلومات المقدمة، وليست دليلاً على غياب تلك العناصر من إنتاج الفيلم.\n\n## ما الذي يمكن تأكيده؟\n\nيمكن تأكيد أن العمل مسجل كفيلم بعنوان Breeder، وأن قاعدة البيانات تصنفه رعباً وإثارة، وتعرض له تاريخ إصدار محدداً. ويمكن أيضاً تأكيد وجود ملخص قصصي موجز، وقائمة أسماء ممثلين، واسم Alex Goyette في خانة الطاقم، إلى جانب رابط إعلان ترويجي من قناة FilmSpot Trailer. هذه نقاط وصفية محددة في الملف، ويمكن نقلها مع نسبتها إلى بياناته بدلاً من تقديمها كتحقق مستقل من كل تفاصيل الإنتاج.\n\nولا يعني تأكيد وجود الإعلان أننا نعرف ما يتضمنه، كما لا تعني الأسماء وحدها أننا نعرف جودة العمل أو أدوار أصحابها. كذلك لا يجوز مساواة تصنيف النوع بحكم على السرد أو التأثير. وظيفة هذه القراءة تنظيم المعلومات المؤكدة وبيان نطاقها، لا تحويلها إلى تقييم فني يتجاوز ما تثبته المصادر.\n\n## ما الذي لا نعرفه بعد؟\n\nلا تعرض الأدلة تفاصيل كافية عن الحبكة بعد الفرضية الأولية، أو عن الشخصيات وعلاقاتها، أو عن الطريقة التي يتطور بها الصراع. ولا تقدم مادة موثقة تسمح بتقييم الإخراج، أو الأداء، أو الصورة، أو الصوت، أو الإيقاع. لا توجد في الملف مشاهد موصوفة وصفاً مستقلاً، ولا تحليل نقدي، ولا شهادة مشاهدة يمكن الاستناد إليها في هذه المحاور. وعليه، سيكون أي حكم بشأنها تخميناً.\n\nكما لا تتوفر بيانات جمهور كافية لتكوين مؤشر موثوق على الاستقبال؛ فسبب محدودية الجاهزية التحريرية يذكر غياب تقييم مدعوم بما لا يقل عن مئة صوت، فضلاً عن عدم وجود أدلة مستقلة قائمة على المشاهدة. ولا نعرف من المواد المتاحة كيف استقبل الجمهور الفيلم، أو ما إذا كانت تفاصيل الإصدار والمنصات قد تغيرت بعد تسجيلها. كذلك لا يحسم الملف طبيعة الشرط الذي يلمح إليه الملخص، ولا يحدد أدوار الممثلين أو وظائف Alex Goyette. تبقى هذه أسئلة مفتوحة بدلاً من أن تكون عيوباً مثبتة.\n\n## لمن قد يهم هذا العمل؟\n\nقد يجد القارئ المهتم بأفلام الرعب والإثارة أو بالفرضيات التي تجمع بين طالب محتاج للتمويل ومزرعة نائية ومربّية كلاب سبباً أولياً للاطلاع على معلومات إضافية عن Breeder. هذا وصف للاهتمام المحتمل بالموضوع المعلن، وليس توصية بمشاهدة الفيلم أو ادعاء بأنه يناسب فئة بعينها. من يبحث عن تقييم للأداء أو عن تفاصيل فنية أو عن حكم على جودة التجربة لن يجد في ملف الأدلة ما يكفي للإجابة. الأنسب اعتبار الملخص مدخلاً للتعرف على الفكرة، ثم انتظار معلومات موثقة أكثر قبل تكوين رأي.\n\n## خلاصة حدود الأدلة\n\nتسمح المصادر بتقديم تعريف أساسي بالفيلم، ونقل فرضيته المعلنة، وذكر التصنيف والتاريخ والأسماء المسجلة ووجود إعلان ترويجي. لكنها لا توفر أساساً لمراجعة نهائية أو لتقدير جودة التنفيذ. كما أن المادة الموسوعية المدرجة تتناول معنى كلمة breeder عموماً، ولا تقدم معلومات عن الفيلم، لذلك لا توسع ما نعرفه عنه. هذه القراءة تلتزم بما يسنده ملف البيانات وحده، وتترك عناصر التجربة الفنية والاستقبال وأسئلة الحبكة غير المحسومة في نطاق المجهول إلى أن تتوفر مصادر أكثر مباشرة واستقلالاً.",
+        "pros": [
+          "ملخص قاعدة البيانات يحدد فرضية قصصية واضحة عن طالب جامعي ومربّية بودل ومزرعة نائية.",
+          "الفيلم مصنف في البيانات ضمن الرعب والإثارة.",
+          "يسجل الملف أسماء ممثلين ويربط العمل بإعلان ترويجي منشور على يوتيوب."
+        ],
+        "cons": [
+          "لا تتوفر مراجعة مستقلة أو أدلة مشاهدة مباشرة تسمح بتقييم التنفيذ الفني.",
+          "لا يحسم الملخص ماهية الشرط الذي يكتشفه الطالب أو تفاصيل تطور القصة.",
+          "أدوار الممثلين ووظيفة Alex Goyette غير موضحة، كما لا يقدم الملف معلومات عن منصات المشاهدة."
+        ],
+        "title": "Breeder",
+        "type": "movie",
+        "sourceId": "movie:1496696",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1496696",
+        "sourceRating": 7.3,
+        "sourceRatingScale": 10,
+        "sourceVoteCount": 28,
+        "sourceRatingCheckedAt": "2026-11-26T07:16:02.902Z",
+        "audienceScore": 7.3,
+        "releaseDate": "2026-10-28",
+        "poster": "https://image.tmdb.org/t/p/w780/alsb3UC17kxIcytLWvwkmL0STgU.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/l5gJE9xW1FFtub3gUezh1PjBbY5.jpg",
+        "genres": [
+          "Horror",
+          "Thriller"
+        ],
+        "platforms": [],
+        "cast": [
+          "Daniel Doheny",
+          "Dot-Marie Jones",
+          "Maddie Phillips",
+          "Tanaya Beatty",
+          "Lillian Doucet-Roche",
+          "Isla Spencer",
+          "Paige McGarvin",
+          "John Murphy"
+        ],
+        "crew": [
+          "Alex Goyette",
+          "Alex Goyette"
+        ],
+        "tags": [
+          "Horror",
+          "Thriller"
+        ],
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1496696",
+            "extract": "An eccentric poodle breeder lures a broke college student to her remote ranch with a promise of research funding. But, as he soon learns, there’s a catch.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Breeder",
+            "extract": "A breeder is a person who selectively breeds carefully selected mates, normally of the same breed, to sexually reproduce offspring with specific, consistently replicable qualities and characteristics. This might be as a farmer, agriculturalist, or hobbyist, and can be practiced on a large or small scale, for food, fun, or profit.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — FilmSpot Trailer",
+            "url": "https://www.youtube.com/watch?v=sgTVtpJUegQ",
+            "extract": "Verified public, embeddable promotional trailer: BREEDER Official Trailer (NEW 2026)",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "sgTVtpJUegQ",
+        "youtubeVideoTitle": "BREEDER Official Trailer (NEW 2026)",
+        "reviewMode": "limited"
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 3747,
+      "articlePath": "src/content/reviews/movie-breeder-1496696.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-breeder-1496696/"
     }
   },
   "providers": {},
@@ -3825,6 +3853,11 @@
       "articles": 5,
       "requests": 10,
       "tokens": 30293
+    },
+    "2026-11-26": {
+      "articles": 1,
+      "requests": 2,
+      "tokens": 3747
     }
   },
   "history": []
