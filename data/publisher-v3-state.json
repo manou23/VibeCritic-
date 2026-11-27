@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-27T10:17:05.861Z",
+  "updatedAt": "2026-11-27T13:16:27.870Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -3976,149 +3976,181 @@
         "popularity": 1171,
         "source": "RAWG"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-27T10:16:10.581Z",
-      "updatedAt": "2026-11-27T10:17:05.860Z",
+      "updatedAt": "2026-11-27T13:16:01.715Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "Black Myth: Wukong",
-        "type": "game",
-        "collectedAt": "2026-11-27T10:16:11.884Z",
-        "sourceId": "game:481913",
-        "sourceName": "RAWG",
-        "sourceUrl": "https://rawg.io/games/black-myth-wu-kong",
-        "overview": "A world unseen, where new sights rise with every stride. Enter a fascinating realm filled with the wonders and discoveries of ancient Chinese mythology! As the Destined One, you shall venture through breathtaking landscapes in the classic tale of Journey to the West, creating a new epic of uncharted adventures. Heroic Monkey, might and fame, adversaries rise, to test his name. One of the major highlights of Journey to the West is its diverse cast of adversaries, each with unique strengths. As the Destined One, you shall encounter powerful foes and worthy rivals throughout your journey. Fearlessly engage them in epic battles that know no surrender. Spells unbound, knowledge's flight, infinite abilities take their height. Spells, transformations, and magic vessels in all manifestations, complementary yet adversarial, have long been iconic combat elements in Chinese mythology. As the Destined One, aside from mastering various staff techniques, you can also freely combine different spells, abilities, weapons, and equipment to find the winning formula that best suits your combat style. Within beings of every kind lies the story of a life. Beneath the ferocity and craftiness of your foes lies an engaging tapestry of their origins, personalities, and motivations waiting to be revealed. As the Destined One, you will uncover the stories behind a variety of characters, delving beyond your battles with them, to taste the love and hate, greed and fury they once had and still carry with them.",
-        "sources": [
-          {
-            "name": "RAWG",
-            "url": "https://rawg.io/games/black-myth-wu-kong",
-            "extract": "A world unseen, where new sights rise with every stride. Enter a fascinating realm filled with the wonders and discoveries of ancient Chinese mythology! As the Destined One, you shall venture through breathtaking landscapes in the classic tale of Journey to the West, creating a new epic of uncharted adventures. Heroic Monkey, might and fame, adversaries rise, to test his name. One of the major highlights of Journey to the West is its diverse cast of adversaries, each with unique strengths. As the Destined One, you shall encounter powerful foes and worthy rivals throughout your journey. Fearlessly engage them in epic battles that know no surrender. Spells unbound, knowledge's flight, infinite abilities take their height. Spells, transformations, and magic vessels in all manifestations, complementary yet adversarial, have long been iconic combat elements in Chinese mythology. As the Destined One, aside from mastering various staff techniques, you can also freely combine different spells, abilities, weapons, and equipment to find the winning formula that best suits your combat style. Within beings of every kind lies the story of a life. Beneath the ferocity and craftiness of your foes lies an engaging tapestry of their origins, personalities, and motivations waiting to be revealed. As the Destined One, you will uncover the stories behind a variety of characters, delving beyond your battles with them, to taste the love and hate, greed and fury they once had and still carry with them.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Black_Myth%3A_Wukong",
-            "extract": "Black Myth: Wukong‍ is a 2024 action role-playing game developed and published by the Chinese studio Game Science. The player assumes the role of the Destined One, a staff-wielding monkey, who embarks on a journey to recover six relics corresponding to Sun Wukong's six senses. The game is inspired by the classical Chinese novel Journey to the West. It is the first installment in the Black Myth series.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — PlayStation",
-            "url": "https://www.youtube.com/watch?v=Wl05yGSDpxY",
-            "extract": "Verified public, embeddable promotional trailer: Black Myth: Wukong - Launch Trailer | PS5 Games",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from RAWG with 201 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "Wl05yGSDpxY",
-        "youtubeVideoTitle": "Black Myth: Wukong - Launch Trailer | PS5 Games",
-        "youtubeChannel": "PlayStation",
-        "releaseDate": "2024-08-20",
-        "genres": [
-          "Action",
-          "Adventure",
-          "RPG"
-        ],
-        "platforms": [
-          "PC",
-          "Xbox Series S/X",
-          "PlayStation 5"
-        ],
-        "developers": [
-          "Game Science"
-        ],
-        "rating": 4.3,
-        "ratingScale": 5,
-        "votes": 201,
-        "poster": "https://media.rawg.io/media/games/779/77988e89f7862afeede524420aa251b0.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "Black Myth: Wukong: طموح أسطوري واضح، وحكم تحكمه حدود الأدلة المتاحة",
-        "summary": "تقدّم Black Myth: Wukong إطاراً لافتاً مستلهماً من «رحلة إلى الغرب»: بطل يُعرف بالمقدّر، ورحلة لاستعادة ستة آثار مرتبطة بحواس سون ووكونغ، ومواجهات مع خصوم تتجاوز قصصهم مجرد كونهم عقبات. وتعد اللعبة بتنوع قتالي عبر تقنيات العصا والتعاويذ والتحولات والأسلحة والمعدات، في صيغة أكشن ومغامرة وتقمص أدوار طورتها Game Science وصدرت عام 2024. لكن المعلومات المتاحة لا توثق بما يكفي تفاصيل الإخراج الفعلي أو الموسيقى أو إيقاع المراحل، لذلك يوازن هذا التقييم بين قوة الفكرة وما يمكن إثباته، من دون ادعاء تجربة مباشرة أو ملء الفراغات بالتخمين.",
-        "verdict": "تستحق Black Myth: Wukong حكماً إيجابياً مشروطاً: مادتها الموثقة تجمع بين مرجعية أدبية وثقافية غنية، وبطل ذي هدف محدد، ووعد قتالي تتعدد أدواته، فضلاً عن اهتمام معلن بخلفيات الخصوم ودوافعهم. هذه عناصر تمنحها شخصية تتجاوز لعبة مواجهات عامة، وتبرر التوصية بها لمن ينجذب إلى الأساطير الصينية وألعاب الأكشن ذات القتال والتقدم القائم على تنويع القدرات. لكن لا تسمح الأدلة المتاحة بإصدار حكم قوي على جودة التنفيذ السردي، أو الموسيقى والأداء، أو توازن الإيقاع، ولا يصح اعتبار غياب المعلومات دليلاً على عيب في اللعبة نفسها. لذلك تعكس النتيجة تقديراً تحريرياً متزناً لما تثبته المصادر، مع تحفظ واضح على الجوانب التي لم توثقها.",
-        "body": "## مقدمة وسياق العمل\nصدرت Black Myth: Wukong في 20 أغسطس 2024، وطورتها ونشرتها الاستوديو الصيني Game Science، وهي مصنفة لعبة أكشن ومغامرة وتقمص أدوار على الحاسوب وPlayStation 5 وXbox Series S/X. هذا يضعها في سياق عمل تجاري مكتمل الإصدار، لا مشروع قيد الترقب. وتستند المراجعة هنا إلى بيانات RAWG، ومعلومة موسوعية عن الحبكة، وإعلان إطلاق رسمي من PlayStation؛ لا إلى تجربة لعب مباشرة. هذا التمييز مهم: فالمصادر تثبت عناصر الفكرة والأنظمة المعلنة، لكنها لا توفر اختباراً مستقلاً لكل تفاصيل التنفيذ. لذلك يظل الحكم نقدياً ونهائياً في تقدير ما هو موثق، وصريحاً بشأن مواضع نقص الأدلة، بدلاً من تحويل الصمت إلى مديح أو اتهام.\n\n## الفكرة والقصة أو التجربة\nتضع اللعبة اللاعب في دور «المقدّر»، وهو قرد يحمل عصاً وينطلق لاستعادة ستة آثار تقابل حواس سون ووكونغ. الصلة المعلنة برواية «رحلة إلى الغرب» ليست زينة اسمية فحسب: إنها تمنح الرحلة جذراً في مادة أسطورية معروفة، فيما يصف العرض المرجعي مغامرة جديدة داخل ذلك العالم، لا إعادة سرد حرفية للرواية. يتيح هذا الاختيار مساحة للجمع بين التعرف إلى الموروث وإعادة تشكيله في قالب لعبة أكشن. لكن المصادر لا تشرح كيف تُروى الحكاية، أو ما مقدار حضور أحداث الرواية وشخصياتها، أو كيفية بناء هدف جمع الآثار درامياً. لذلك تبدو الفكرة واعدة ومحددة، بينما يظل الحكم على عمق حبكتها أو تماسك نهايتها خارج ما يمكن الجزم به.\n\n## السرد والشخصيات أو تصميم اللعب\nتتقاطع هنا نية سردية مع بنية قتالية معلنة. فالمعلومات المتاحة تصف خصوماً متنوعين، لكل منهم نقاط قوة، وتشير إلى أن خلفهم أصولاً وشخصيات ودوافع يمكن اكتشافها بعد المواجهة. هذه نقطة تصميم مهمة؛ إذ توحي بأن العدو ليس مجرد اختبار مهارة منفصل عن العالم، وأن القتال قد يكون مدخلاً إلى قصص عن الحب والكراهية والجشع والغضب. على مستوى اللعب، يستطيع البطل الجمع بين تقنيات مختلفة للعصا والتعاويذ والقدرات والأسلحة والمعدات، إلى جانب التحولات والأدوات السحرية. هذا التنوع يفتح مجالاً لاختيار أسلوب ملائم، لكنه لا يثبت وحده توازناً جيداً أو اختلافاً عملياً بين الخيارات. ولا توضح الأدلة مدى تأثير تلك القصص في مسار الحبكة، لذا يبقى هذا الجانب وعداً تصميمياً ذا أساس موثق، لا نتيجة يمكن تأكيدها.\n\n## الإخراج والجوانب الفنية\nليس في المواد المتاحة وصف موثق لإدارة المشاهد، أو بناء المناطق، أو طريقة الانتقال بين الاستكشاف والقتال، كما لا توجد بيانات كافية لتقييم الأداء التقني أو ثباته على المنصات المختلفة. ما يمكن قوله هو أن اللعبة صُممت لتجمع الأكشن والمغامرة وعناصر تقمص الأدوار، وأن عرضها الرسمي يحمل عنوان إعلان الإطلاق على PS5. العنوان يثبت وجود مادة ترويجية رسمية، لكنه لا يكفي بمفرده لإثبات جودة الإخراج داخل اللعبة أو تقييمها. ومن الخطأ استنتاج جودة التنفيذ من طموح المشروع أو من وجود إعلان سينمائي. لذا يتركز التقدير هنا على وضوح التصور العام، مع إبقاء الحكم على الصقل التقني، وإدارة الكاميرا، وتقديم المشاهد، مفتوحاً إلى أن تتوفر مصادر وصفية مستقلة أكثر تفصيلاً.\n\n## الصورة والهوية البصرية\nتعد المادة التعريفية بمناظر طبيعية آسرة، وبعالم مستمد من الأساطير الصينية، بينما يؤكد إعلان PlayStation الرسمي أن اللعبة حظيت بطرح ترويجي على المنصة. هذان معطيان يثبتان مكانة الصورة في تقديم هوية العمل، لكنهما لا يقدمان جرداً موثقاً لألوانه أو تصميم مخلوقاته أو تنوع بيئاته أو جودة الرسوم أثناء اللعب. لذلك لا يصح وصف مشهد بعينه أو نسبة تفاصيل فنية غير مذكورة إلى اللعبة. ما يبرز في الفكرة البصرية على مستوى التصور هو الجمع بين البطل القرد، والخصوم ذوي الطابع الأسطوري، ومواقع الرحلة؛ وهو إطار قادر على منح العالم تمايزاً عن الفانتازيا العامة إذا انعكس بثراء في التنفيذ. أما الدرجة فتعبر عن إيجابية محدودة تجاه هذا الوعد، لا عن مشاهدة مباشرة أو شهادة على تفاصيل الصورة.\n\n## الصوت والموسيقى والأداء\nلا يقدم ملف الأدلة معلومات محددة عن الموسيقى التصويرية، أو المؤثرات، أو اللغات المتاحة، أو أداء الممثلين، ولا يتضمن وصفاً مستقلاً لهذه الجوانب. وجود إعلان إطلاق رسمي لا يعوض هذا النقص؛ فالمعلومات المقدمة عنه تثبت عنوانه وقناته فقط، ولا تتيح وصف ما يسمع فيه أو نقل انطباع عنه. وبناءً عليه، لا يمكن الادعاء بأن الموسيقى توظف آلات تقليدية، أو أن أداء الشخصيات مؤثر، أو أن المؤثرات تضيف وزناً للقتال. هذا لا يعني أن الصوت ضعيف، بل يعني أن جودته غير قابلة للتقييم بثقة ضمن الأدلة المحددة. الدرجة المتحفظة أدناه تترجم محدودية ما يمكن إثباته، ولا ينبغي قراءتها كحكم على جودة الصوت الفعلية داخل اللعبة.\n\n## الإيقاع والبناء وتنوع المحتوى\nتوجد إشارات إلى رحلة طويلة بما يكفي لتتضمن استعادة ستة آثار، ومواجهة طيف من الخصوم، واستكشاف حكاياتهم، وإمكانية تعديل أسلوب القتال عبر أدوات متعددة. وهذا يمنح تصور المحتوى تنوعاً على مستويين: تقدم مرتبط بهدف سردي، وتبديل محتمل في خيارات المواجهة. إلا أن المصادر لا تحدد طول اللعبة، أو ترتيب فصولها، أو تواتر المعارك، أو مقدار الاستكشاف، ولا توضح إن كان تنوع الخصوم يتسع فعلياً مع تقدم الرحلة. لذلك لا يمكن الحكم على سرعة الإيقاع أو تكرار المهمات أو توزيع الصعوبة. المعيار النقدي هنا هو الاعتراف بأن بنية الفكرة تسمح بتنوع ذي معنى، مع عدم الخلط بين تعدد العناصر المعلنة وبين نجاح إيقاعها عند التنفيذ. يظل هذا المحور أقل يقيناً من وصف الفكرة والأنظمة.\n\n## نقاط القوة\nأول عناصر القوة الموثقة هو اختيار «رحلة إلى الغرب» أساساً ثقافياً يمنح العمل هوية قابلة للتعرف، مع ترك مساحة لمغامرة جديدة. وثانيها أن هدف استعادة الآثار الستة واضح ومترابط مع سون ووكونغ، بدلاً من الاكتفاء بإطار أسطوري بلا غاية محددة. وثالثها تنوع أدوات القتال المعلن، من تقنيات العصا إلى التعاويذ والتحولات والأسلحة والمعدات، بما يتيح احتمال بناء أساليب مختلفة. ورابعها الاهتمام بخلفيات الخصوم ودوافعهم، وهو توجه يمكن أن يجعل المواجهات جزءاً من بناء العالم لا نشاطاً معزولاً. وتضاف إلى ذلك هوية مطور صيني يقدم مادة من التراث الصيني في قالب لعبة أكشن عالمية الانتشار. هذه مزايا في التصور، مع التنبيه إلى أن الأدلة لا تكفي لإثبات جودة كل منها في التطبيق.\n\n## نقاط الضعف\nأبرز موضع تحفظ ليس عيباً مؤكداً في اللعبة، بل نقص واضح في الأدلة المتاحة: لا وصف مستقل لتفاصيل الإخراج والصورة والصوت، ولا معلومات كافية عن الإيقاع أو الأداء التقني. كما أن عبارة «اكتشاف قصص الخصوم» لا تشرح مدى عمق هذه القصص أو تأثيرها، وتعدد القدرات لا يثبت وحده توازنها أو اختلافها الحقيقي. لذلك يصعب على المراجعة أن تزن مقدار التكرار، أو عدالة المواجهات، أو جودة السرد الفعلي. ويجب أيضاً التعامل بحذر مع لغة RAWG الترويجية عن المناظر والمعارك؛ فهي تفيد في معرفة ما تعد به اللعبة، لا في إثبات أن كل وعد يتحقق بالمستوى نفسه. هذه حدود للحكم الحالي، لا اتهامات بمشكلات لم تذكرها المصادر.\n\n## لمن يناسب هذا العمل؟\nتبدو اللعبة مناسبة لمن يفضل ألعاب الأكشن والمغامرة، ويهتم بالتقاليد الأسطورية الصينية أو بإعادة توظيف الأدب الكلاسيكي في حكاية جديدة. كما قد تجذب من يستمتع بفكرة تبديل الأدوات والقدرات بحثاً عن أسلوب قتال ملائم، ومن يقدّر أن يكون للخصوم تاريخ ودوافع إلى جانب وظيفتهم القتالية. وهي أقل وضوحاً لمن يبحث عن سرد موثق التفاصيل قبل الشراء، أو يريد معرفة مسبقة مؤكدة عن مستوى الصوت، أو الإيقاع، أو الأداء التقني؛ فالمعلومات المتاحة هنا لا تحسم هذه المسائل. ولمن يستعين بمؤشرات الجمهور، يعرض RAWG متوسطاً قدره 4.3 من 5 استناداً إلى 201 صوتاً؛ وهو مؤشر ثانوي منسوب إلى المنصة، لا بديل عن هذا التقييم التحريري ولا عن حكم مستقل على المحاور.\n\n## الحكم النهائي\nتملك Black Myth: Wukong أساساً قوياً: مرجعاً أدبياً معروفاً، وبطلاً وغاية محددين، ونظام قتال معلناً متعدد الأدوات، ومحاولة لمنح الخصوم قصصاً تتجاوز المواجهة. هذه العناصر تبرر توصية واضحة لمحبي الأكشن والأساطير، وتدعم تقييماً إيجابياً للعمل بوصفه تصوراً متماسك الهوية. لكن لا يمكن، استناداً إلى ملف الأدلة وحده، رفع هذا الحكم إلى شهادة على تميز كل جوانب التنفيذ؛ فالصوت والإيقاع والتفاصيل الفنية لا تحظى بتوثيق كافٍ، كما أن جودة السرد الفعلي لا تستنتج من ملخص الفكرة. النتيجة إذن إيجابية مع تحفظ معرفي محدد: ما نعرفه مشجع ومميز، وما لا نعرفه يجب أن يبقى غير محسوم، لا أن يتحول إلى تفصيل مختلق.",
-        "scores": {
-          "story": 7.8,
-          "visuals": 7.5,
-          "sound": 6,
-          "pacing": 6.5
-        },
-        "pros": [
-          "استلهام معلن من «رحلة إلى الغرب» مع تقديم مغامرة جديدة بدلاً من الاكتفاء بإعادة سرد الرواية.",
-          "غاية سردية محددة تتمثل في استعادة ستة آثار مرتبطة بحواس سون ووكونغ.",
-          "تنوع قتالي موثق يشمل تقنيات العصا والتعاويذ والتحولات والأسلحة والمعدات.",
-          "اهتمام معلن بخلفيات الخصوم وشخصياتهم ودوافعهم إلى جانب قوتهم القتالية.",
-          "هوية ثقافية واضحة تستند إلى الأساطير الصينية وتقدمها في قالب أكشن ومغامرة."
-        ],
-        "cons": [
-          "الأدلة المتاحة لا تشرح عمق الحبكة أو كيفية تنفيذ السرد فعلياً.",
-          "لا توجد معلومات كافية للحكم على جودة الموسيقى أو المؤثرات أو الأداء الصوتي.",
-          "تفاصيل الإخراج والصورة والأداء التقني غير موثقة بما يكفي لتقييمها بثقة.",
-          "تنوع الأدوات والخصوم المعلن لا يثبت وحده توازن القتال أو جودة الإيقاع وتجنب التكرار."
-        ],
-        "title": "Black Myth: Wukong",
-        "type": "game",
-        "sourceId": "game:481913",
-        "sourceName": "RAWG",
-        "sourceUrl": "https://rawg.io/games/black-myth-wu-kong",
-        "sourceRating": 4.3,
-        "sourceRatingScale": 5,
-        "sourceVoteCount": 201,
-        "sourceRatingCheckedAt": "2026-11-27T10:16:11.884Z",
-        "audienceScore": 8.6,
-        "releaseDate": "2024-08-20",
-        "poster": "https://media.rawg.io/media/games/779/77988e89f7862afeede524420aa251b0.jpg",
-        "backdrop": "https://media.rawg.io/media/games/779/77988e89f7862afeede524420aa251b0.jpg",
-        "genres": [
-          "Action",
-          "Adventure",
-          "RPG"
-        ],
-        "platforms": [
-          "PC",
-          "Xbox Series S/X",
-          "PlayStation 5"
-        ],
-        "cast": [],
-        "crew": [],
-        "tags": [
-          "Action",
-          "Adventure",
-          "RPG"
-        ],
-        "sources": [
-          {
-            "name": "RAWG",
-            "url": "https://rawg.io/games/black-myth-wu-kong",
-            "extract": "A world unseen, where new sights rise with every stride. Enter a fascinating realm filled with the wonders and discoveries of ancient Chinese mythology! As the Destined One, you shall venture through breathtaking landscapes in the classic tale of Journey to the West, creating a new epic of uncharted adventures. Heroic Monkey, might and fame, adversaries rise, to test his name. One of the major highlights of Journey to the West is its diverse cast of adversaries, each with unique strengths. As the Destined One, you shall encounter powerful foes and worthy rivals throughout your journey. Fearlessly engage them in epic battles that know no surrender. Spells unbound, knowledge's flight, infinite abilities take their height. Spells, transformations, and magic vessels in all manifestations, complementary yet adversarial, have long been iconic combat elements in Chinese mythology. As the Destined One, aside from mastering various staff techniques, you can also freely combine different spells, abilities, weapons, and equipment to find the winning formula that best suits your combat style. Within beings of every kind lies the story of a life. Beneath the ferocity and craftiness of your foes lies an engaging tapestry of their origins, personalities, and motivations waiting to be revealed. As the Destined One, you will uncover the stories behind a variety of characters, delving beyond your battles with them, to taste the love and hate, greed and fury they once had and still carry with them.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Black_Myth%3A_Wukong",
-            "extract": "Black Myth: Wukong‍ is a 2024 action role-playing game developed and published by the Chinese studio Game Science. The player assumes the role of the Destined One, a staff-wielding monkey, who embarks on a journey to recover six relics corresponding to Sun Wukong's six senses. The game is inspired by the classical Chinese novel Journey to the West. It is the first installment in the Black Myth series.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — PlayStation",
-            "url": "https://www.youtube.com/watch?v=Wl05yGSDpxY",
-            "extract": "Verified public, embeddable promotional trailer: Black Myth: Wukong - Launch Trailer | PS5 Games",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "Wl05yGSDpxY",
-        "youtubeVideoTitle": "Black Myth: Wukong - Launch Trailer | PS5 Games",
-        "reviewMode": "review",
-        "score": 7
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 5582,
       "articlePath": "src/content/reviews/game-black-myth-wukong-481913.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-black-myth-wukong-481913/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-black-myth-wukong-481913/",
+      "publishedAt": "2026-11-27T13:16:01.715Z"
+    },
+    "movie:1458300": {
+      "key": "movie:1458300",
+      "type": "movie",
+      "id": "1458300",
+      "title": "The Mosquito Bowl",
+      "item": {
+        "type": "movie",
+        "id": "1458300",
+        "name": "The Mosquito Bowl",
+        "date": "2026-10-29",
+        "preview": false,
+        "popularity": 100.52,
+        "source": "TMDB"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-27T13:16:04.182Z",
+      "updatedAt": "2026-11-27T13:16:27.870Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "The Mosquito Bowl",
+        "type": "movie",
+        "collectedAt": "2026-11-27T13:16:04.723Z",
+        "sourceId": "movie:1458300",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1458300",
+        "overview": "In the aftermath of Pearl Harbor, four college football stars enlist in the US Marines, discovering the strength of brotherhood and the cost of war.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1458300",
+            "extract": "In the aftermath of Pearl Harbor, four college football stars enlist in the US Marines, discovering the strength of brotherhood and the cost of war.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/The_Mosquito_Bowl",
+            "extract": "The Mosquito Bowl is a 2026 American war film directed, co-written, and produced by Peter Berg for Netflix. Based on the 2022 Buzz Bissinger non-fiction novel The Mosquito Bowl: A Game of Life and Death in World War II, the film stars Nicholas Galitzine, Bill Skarsgård, Ray Nicholson, and Tom Francis in the leading roles.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — AfricaOnNetflix",
+            "url": "https://www.youtube.com/watch?v=4rg5uNJFNcU",
+            "extract": "Verified public, embeddable promotional trailer: The Mosquito Bowl | Official Trailer | Netflix",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "limited",
+        "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
+        "youtubeVideoId": "4rg5uNJFNcU",
+        "youtubeVideoTitle": "The Mosquito Bowl | Official Trailer | Netflix",
+        "youtubeChannel": "AfricaOnNetflix",
+        "releaseDate": "2026-10-29",
+        "genres": [
+          "War",
+          "Drama"
+        ],
+        "platforms": [],
+        "cast": [
+          "Nicholas Galitzine",
+          "Bill Skarsgård",
+          "Ray Nicholson",
+          "Tom Francis",
+          "Brent Comer",
+          "Jack Ingram",
+          "Ella Newton",
+          "Peter Berg"
+        ],
+        "crew": [
+          "Peter Berg"
+        ],
+        "rating": 7.6,
+        "ratingScale": 10,
+        "votes": 37,
+        "poster": "https://image.tmdb.org/t/p/w780/uxYs0bNTF4XzM8LThJk2x3AJ0Iv.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/nfcXn5yvBejpbljQIBrTlOMQZoC.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "The Mosquito Bowl: قراءة معلوماتية محدودة الأدلة",
+        "summary": "The Mosquito Bowl فيلم أمريكي من نوعي الحرب والدراما، وتدور فكرته المعلنة في أعقاب الهجوم على بيرل هاربر: أربعة نجوم في كرة القدم الجامعية يلتحقون بسلاح مشاة البحرية الأمريكية، ضمن حكاية تتناول الأخوّة وكلفة الحرب. تذكر المادة الموسوعية أن الفيلم من إخراج وكتابة وإنتاج بيتر بيرغ، وأنه مقتبس من كتاب لا روائي صدر عام 2022 لباز بيسينغر. ومن الأسماء المذكورة في الأدوار الرئيسية نيكولاس غاليتزين وبيل سكارسغارد وراي نيكلسون وتوم فرانسيس. هذه المعلومات تحدد الفكرة وبعض بيانات الإنتاج، لكنها لا تثبت جودة الفيلم أو تفاصيل تجربته؛ لذلك لا تمثل هذه القراءة مراجعة مشاهدة.",
+        "verdict": "المتاح يسمح بتعريف The Mosquito Bowl بوصفه فيلم حرب ودراما ذا فرضية معلنة تجمع بين لاعبي كرة قدم جامعية والتجنيد في مشاة البحرية، مع بيانات عن مصدره الأدبي ومخرجه وبعض ممثليه. لكنه لا يسمح بإصدار حكم نهائي على نجاح التنفيذ أو أثره، إذ لا تتضمن الأدلة مشاهدة مستقلة أو مراجعات نقدية موثقة، ولا يتوافر تقييم جماهيري مستند إلى عدد كافٍ من الأصوات وفق معيار الملف. لذلك فهذه خلاصة معلوماتية محدودة، لا مراجعة نهائية ولا توصية مبنية على تجربة شخصية. يبقى الحكم على الفيلم نفسه معلقاً إلى أن تتوفر أدلة أوسع.",
+        "body": "## ما الذي نعرفه عن العمل؟\n\nThe Mosquito Bowl فيلم أمريكي تصنفه بيانات TMDB ضمن الحرب والدراما، وتدرج له تاريخ إصدار في التاسع والعشرين من أكتوبر عام ألفين وستة وعشرين. هذه بيانات تعريفية عن العمل، وليست دليلاً على مستوى تنفيذه أو على توفره في مكان بعينه؛ فحقل المنصات في الملف لا يسجل منصة، وإن كانت المادة الموسوعية تصفه بأنه أُنجز لصالح نتفلكس. لذلك ينبغي التمييز بين معلومة الإنتاج وبين إثبات إتاحة الفيلم للمشاهدة حالياً.\n\nتصف المادة الموسوعية العمل بأنه فيلم حرب أمريكي، فيما يقدم سجل قاعدة البيانات ملخصاً قصيراً للفكرة. لا يتضمن الملف مراجعة نقدية، أو تقارير مشاهدة مستقلة، أو شهادة من شخص شاهد الفيلم؛ ومن ثم فإن ما يمكن عرضه هنا يقتصر على التعريف بما ورد في تلك المصادر، لا على تقييم النتيجة الفنية.\n\n## القصة أو الفكرة المعلنة\n\nبحسب ملخص TMDB، تقع الحكاية في أعقاب الهجوم على بيرل هاربر، وتتبع أربعة من نجوم كرة القدم الجامعية الذين يلتحقون بسلاح مشاة البحرية الأمريكية. ويشير الملخص إلى اكتشافهم قوة الأخوّة وإلى كلفة الحرب. هذه صياغة موجزة للفكرة المعلنة، وليست وصفاً تفصيلياً للأحداث أو للشخصيات؛ فلا يحدد الملف أسماء هؤلاء الأربعة، ولا يشرح مسارهم بعد التجنيد، ولا يوضح مقدار المساحة التي تحتلها كرة القدم أو الحرب في الحكاية.\n\nكما أن الملخص لا يقدم معلومات كافية لتحديد كيفية معالجة الفيلم لموضوعاته أو ما إذا كانت الوقائع والشخصيات مستندة إلى أحداث بعينها. ورود خلفية تاريخية في الوصف لا يكفي وحده للحكم على دقة المعالجة أو على طبيعة السرد. ولا يصح استكمال هذه الفجوات بتخمينات عن مشاهد الفيلم أو نهايته.\n\n## معلومات الإنتاج والطاقم\n\nتذكر المادة الموسوعية أن بيتر بيرغ أخرج الفيلم وشارك في كتابته وإنتاجه، وأن العمل مقتبس من كتاب لا روائي لباز بيسينغر صدر عام 2022 بعنوان The Mosquito Bowl: A Game of Life and Death in World War II. يحدد هذا الاقتباس صلة الفيلم بمصدر منشور، لكنه لا يشرح مدى التزام السيناريو به أو التغييرات التي أُدخلت عليه.\n\nوتسمي المادة الموسوعية نيكولاس غاليتزين وبيل سكارسغارد وراي نيكلسون وتوم فرانسيس ضمن الأدوار الرئيسية. كما يسرد ملف قاعدة البيانات أسماء برنت كومر وجاك إنغرام وإيلا نيوتن، ويورد بيتر بيرغ ضمن قائمة الطاقم. لا يوفر الملف توزيعاً مفصلاً للأدوار أو وصفاً للشخصيات، ولا يتيح استنتاج مستوى الأداء من شهرة الأسماء أو من ورودها في قوائم الممثلين. كذلك لا تتضمن المصادر المعروضة تفاصيل موثقة عن التصوير أو الموسيقى أو المونتاج.\n\n## ما الذي يمكن تأكيده؟\n\nيمكن تأكيد وجود وصف قصصي معلن عن أربعة لاعبين جامعيين ينضمون إلى مشاة البحرية بعد بيرل هاربر، وورود الأخوّة وكلفة الحرب في صياغة ذلك الوصف. ويمكن تأكيد تصنيفي الحرب والدراما في قاعدة البيانات، وارتباط الفيلم بكتاب بيسينغر الصادر عام 2022 بحسب المادة الموسوعية. كما يمكن تحديد بيتر بيرغ بوصفه المخرج والكاتب المشارك والمنتج وفق المصدر نفسه، وإثبات أن أسماء الممثلين المذكورة أعلاه واردة ضمن بيانات الطاقم أو الأدوار الرئيسية.\n\nويذكر الملف وجود إعلان ترويجي رسمي منشور على قناة AfricaOnNetflix بعنوان The Mosquito Bowl | Official Trailer | Netflix. وجود هذا الإعلان يثبت توفر مادة ترويجية بحسب الملف، لكنه لا يبرر وصف جميع مشاهده أو استخلاص حكم بصري أو سردي منها هنا. هذه حدود مهمة: المعلومات المؤكدة تتعلق بالهوية والفرضية وبعض بيانات الإنتاج، ولا تتعداها إلى جودة التنفيذ.\n\n## ما الذي لا نعرفه بعد؟\n\nلا توضح الأدلة كيف بُنيت الشخصيات، أو كيف تتطور العلاقة بين اللاعبين، أو كيف يوازن الفيلم بين الرياضة والحرب. ولا تتيح معرفة ما إذا كان السرد يلتزم بالمصدر اللا روائي أو يتصرف فيه، ولا مدى دقته التاريخية. كذلك لا تتوافر مادة مستقلة تسمح بتقييم الإخراج أو أداء الممثلين أو الصورة أو الصوت أو الإيقاع. غياب هذه المعلومات ليس إثباتاً لضعف تلك الجوانب؛ إنما يعني أن الحكم عليها غير مسند.\n\nولا يقدم الملف سجلاً كافياً لتكوين تقييم جماهيري موثوق وفق معيار الجاهزية المحدد فيه، كما لا يتضمن أدلة مستقلة ناتجة عن مشاهدة مباشرة. لذلك لا يصح تحويل التقييم المحدود الوارد في بيانات القاعدة إلى حكم تحريري، أو تقديمه بوصفه إجماعاً. كما لا نملك من المصادر تفاصيل مؤكدة عن مدة الفيلم أو تصنيفه العمري أو أماكن توفره.\n\n## لمن قد يهم هذا العمل؟\n\nقد تجذب الفكرة، بحسب وصفها فقط، من يهتمون بأفلام الحرب أو بالقصص التي تربط الرياضة بالتجنيد والعلاقات بين أفراد المجموعة. وقد يكون ارتباط الفيلم بكتاب لا روائي معروف لمن يريد معرفة نقطة انطلاقه الأدبية. هذه إشارات إلى موضوع العمل ومصدره، لا توصية بمشاهدته ولا ضمان بأن المعالجة ستلبي توقعات جمهور معين. لا تسمح الأدلة بتحديد الفئة التي ستستمتع به فعلاً، لأن ذلك يتطلب معرفة التنفيذ واستقبال المشاهدين.\n\n## خلاصة حدود الأدلة\n\nالمعلومات المتاحة ترسم إطاراً أولياً: عنوان، ونوعان، وفرضية موجزة، ومصدر أدبي، وبيانات أساسية عن المخرج وبعض الممثلين، وإشارة إلى إعلان ترويجي. لكنها لا تقدم أساساً لمراجعة مشاهدة أو لاستنتاج جودة فنية. تظل الأسئلة المتعلقة بالسرد والأداء والصورة والصوت والإيقاع والتلقي بلا جواب موثق في الملف. وعليه، ينبغي قراءة هذا النص بوصفه تعريفاً محدود الأدلة، لا حكماً نهائياً على الفيلم.",
+        "pros": [
+          "الفكرة المعلنة محددة: أربعة نجوم في كرة القدم الجامعية يلتحقون بمشاة البحرية بعد الهجوم على بيرل هاربر.",
+          "تذكر المادة الموسوعية أن الفيلم مقتبس من كتاب لا روائي صدر عام 2022 لباز بيسينغر.",
+          "تورد المصادر بيتر بيرغ مخرجاً وكاتباً مشاركاً ومنتجاً، وتسمي عدداً من الممثلين الرئيسيين."
+        ],
+        "cons": [
+          "لا يتوفر في الملف دليل مستقل ناتج عن مشاهدة مباشرة، لذلك لا يمكن حسم جودة التنفيذ.",
+          "لا تكفي بيانات التقييم الجماهيري المتاحة وفق معيار الملف لتكوين تقييم موثوق.",
+          "تبقى معالجة الشخصيات ودقة السياق التاريخي والتوازن بين الرياضة والحرب غير موضحة.",
+          "لا توجد معلومات موثقة تسمح بتقييم الإخراج أو الأداء أو الصورة أو الصوت أو الإيقاع."
+        ],
+        "title": "The Mosquito Bowl",
+        "type": "movie",
+        "sourceId": "movie:1458300",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1458300",
+        "sourceRating": 7.6,
+        "sourceRatingScale": 10,
+        "sourceVoteCount": 37,
+        "sourceRatingCheckedAt": "2026-11-27T13:16:04.723Z",
+        "audienceScore": 7.6,
+        "releaseDate": "2026-10-29",
+        "poster": "https://image.tmdb.org/t/p/w780/uxYs0bNTF4XzM8LThJk2x3AJ0Iv.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/nfcXn5yvBejpbljQIBrTlOMQZoC.jpg",
+        "genres": [
+          "War",
+          "Drama"
+        ],
+        "platforms": [],
+        "cast": [
+          "Nicholas Galitzine",
+          "Bill Skarsgård",
+          "Ray Nicholson",
+          "Tom Francis",
+          "Brent Comer",
+          "Jack Ingram",
+          "Ella Newton",
+          "Peter Berg"
+        ],
+        "crew": [
+          "Peter Berg"
+        ],
+        "tags": [
+          "War",
+          "Drama"
+        ],
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1458300",
+            "extract": "In the aftermath of Pearl Harbor, four college football stars enlist in the US Marines, discovering the strength of brotherhood and the cost of war.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/The_Mosquito_Bowl",
+            "extract": "The Mosquito Bowl is a 2026 American war film directed, co-written, and produced by Peter Berg for Netflix. Based on the 2022 Buzz Bissinger non-fiction novel The Mosquito Bowl: A Game of Life and Death in World War II, the film stars Nicholas Galitzine, Bill Skarsgård, Ray Nicholson, and Tom Francis in the leading roles.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — AfricaOnNetflix",
+            "url": "https://www.youtube.com/watch?v=4rg5uNJFNcU",
+            "extract": "Verified public, embeddable promotional trailer: The Mosquito Bowl | Official Trailer | Netflix",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "4rg5uNJFNcU",
+        "youtubeVideoTitle": "The Mosquito Bowl | Official Trailer | Netflix",
+        "reviewMode": "limited"
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 3618,
+      "articlePath": "src/content/reviews/movie-the-mosquito-bowl-1458300.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-the-mosquito-bowl-1458300/"
     }
   },
   "providers": {},
@@ -4164,9 +4196,9 @@
       "tokens": 29680
     },
     "2026-11-27": {
-      "articles": 2,
-      "requests": 4,
-      "tokens": 11955
+      "articles": 3,
+      "requests": 6,
+      "tokens": 15573
     }
   },
   "history": []
