@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-27T13:16:27.870Z",
+  "updatedAt": "2026-11-27T13:35:25.103Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -4006,151 +4006,260 @@
         "popularity": 100.52,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-27T13:16:04.182Z",
-      "updatedAt": "2026-11-27T13:16:27.870Z",
+      "updatedAt": "2026-11-27T13:34:23.831Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "The Mosquito Bowl",
-        "type": "movie",
-        "collectedAt": "2026-11-27T13:16:04.723Z",
-        "sourceId": "movie:1458300",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/movie/1458300",
-        "overview": "In the aftermath of Pearl Harbor, four college football stars enlist in the US Marines, discovering the strength of brotherhood and the cost of war.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/movie/1458300",
-            "extract": "In the aftermath of Pearl Harbor, four college football stars enlist in the US Marines, discovering the strength of brotherhood and the cost of war.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/The_Mosquito_Bowl",
-            "extract": "The Mosquito Bowl is a 2026 American war film directed, co-written, and produced by Peter Berg for Netflix. Based on the 2022 Buzz Bissinger non-fiction novel The Mosquito Bowl: A Game of Life and Death in World War II, the film stars Nicholas Galitzine, Bill Skarsgård, Ray Nicholson, and Tom Francis in the leading roles.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — AfricaOnNetflix",
-            "url": "https://www.youtube.com/watch?v=4rg5uNJFNcU",
-            "extract": "Verified public, embeddable promotional trailer: The Mosquito Bowl | Official Trailer | Netflix",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "limited",
-        "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
-        "youtubeVideoId": "4rg5uNJFNcU",
-        "youtubeVideoTitle": "The Mosquito Bowl | Official Trailer | Netflix",
-        "youtubeChannel": "AfricaOnNetflix",
-        "releaseDate": "2026-10-29",
-        "genres": [
-          "War",
-          "Drama"
-        ],
-        "platforms": [],
-        "cast": [
-          "Nicholas Galitzine",
-          "Bill Skarsgård",
-          "Ray Nicholson",
-          "Tom Francis",
-          "Brent Comer",
-          "Jack Ingram",
-          "Ella Newton",
-          "Peter Berg"
-        ],
-        "crew": [
-          "Peter Berg"
-        ],
-        "rating": 7.6,
-        "ratingScale": 10,
-        "votes": 37,
-        "poster": "https://image.tmdb.org/t/p/w780/uxYs0bNTF4XzM8LThJk2x3AJ0Iv.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/nfcXn5yvBejpbljQIBrTlOMQZoC.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "The Mosquito Bowl: قراءة معلوماتية محدودة الأدلة",
-        "summary": "The Mosquito Bowl فيلم أمريكي من نوعي الحرب والدراما، وتدور فكرته المعلنة في أعقاب الهجوم على بيرل هاربر: أربعة نجوم في كرة القدم الجامعية يلتحقون بسلاح مشاة البحرية الأمريكية، ضمن حكاية تتناول الأخوّة وكلفة الحرب. تذكر المادة الموسوعية أن الفيلم من إخراج وكتابة وإنتاج بيتر بيرغ، وأنه مقتبس من كتاب لا روائي صدر عام 2022 لباز بيسينغر. ومن الأسماء المذكورة في الأدوار الرئيسية نيكولاس غاليتزين وبيل سكارسغارد وراي نيكلسون وتوم فرانسيس. هذه المعلومات تحدد الفكرة وبعض بيانات الإنتاج، لكنها لا تثبت جودة الفيلم أو تفاصيل تجربته؛ لذلك لا تمثل هذه القراءة مراجعة مشاهدة.",
-        "verdict": "المتاح يسمح بتعريف The Mosquito Bowl بوصفه فيلم حرب ودراما ذا فرضية معلنة تجمع بين لاعبي كرة قدم جامعية والتجنيد في مشاة البحرية، مع بيانات عن مصدره الأدبي ومخرجه وبعض ممثليه. لكنه لا يسمح بإصدار حكم نهائي على نجاح التنفيذ أو أثره، إذ لا تتضمن الأدلة مشاهدة مستقلة أو مراجعات نقدية موثقة، ولا يتوافر تقييم جماهيري مستند إلى عدد كافٍ من الأصوات وفق معيار الملف. لذلك فهذه خلاصة معلوماتية محدودة، لا مراجعة نهائية ولا توصية مبنية على تجربة شخصية. يبقى الحكم على الفيلم نفسه معلقاً إلى أن تتوفر أدلة أوسع.",
-        "body": "## ما الذي نعرفه عن العمل؟\n\nThe Mosquito Bowl فيلم أمريكي تصنفه بيانات TMDB ضمن الحرب والدراما، وتدرج له تاريخ إصدار في التاسع والعشرين من أكتوبر عام ألفين وستة وعشرين. هذه بيانات تعريفية عن العمل، وليست دليلاً على مستوى تنفيذه أو على توفره في مكان بعينه؛ فحقل المنصات في الملف لا يسجل منصة، وإن كانت المادة الموسوعية تصفه بأنه أُنجز لصالح نتفلكس. لذلك ينبغي التمييز بين معلومة الإنتاج وبين إثبات إتاحة الفيلم للمشاهدة حالياً.\n\nتصف المادة الموسوعية العمل بأنه فيلم حرب أمريكي، فيما يقدم سجل قاعدة البيانات ملخصاً قصيراً للفكرة. لا يتضمن الملف مراجعة نقدية، أو تقارير مشاهدة مستقلة، أو شهادة من شخص شاهد الفيلم؛ ومن ثم فإن ما يمكن عرضه هنا يقتصر على التعريف بما ورد في تلك المصادر، لا على تقييم النتيجة الفنية.\n\n## القصة أو الفكرة المعلنة\n\nبحسب ملخص TMDB، تقع الحكاية في أعقاب الهجوم على بيرل هاربر، وتتبع أربعة من نجوم كرة القدم الجامعية الذين يلتحقون بسلاح مشاة البحرية الأمريكية. ويشير الملخص إلى اكتشافهم قوة الأخوّة وإلى كلفة الحرب. هذه صياغة موجزة للفكرة المعلنة، وليست وصفاً تفصيلياً للأحداث أو للشخصيات؛ فلا يحدد الملف أسماء هؤلاء الأربعة، ولا يشرح مسارهم بعد التجنيد، ولا يوضح مقدار المساحة التي تحتلها كرة القدم أو الحرب في الحكاية.\n\nكما أن الملخص لا يقدم معلومات كافية لتحديد كيفية معالجة الفيلم لموضوعاته أو ما إذا كانت الوقائع والشخصيات مستندة إلى أحداث بعينها. ورود خلفية تاريخية في الوصف لا يكفي وحده للحكم على دقة المعالجة أو على طبيعة السرد. ولا يصح استكمال هذه الفجوات بتخمينات عن مشاهد الفيلم أو نهايته.\n\n## معلومات الإنتاج والطاقم\n\nتذكر المادة الموسوعية أن بيتر بيرغ أخرج الفيلم وشارك في كتابته وإنتاجه، وأن العمل مقتبس من كتاب لا روائي لباز بيسينغر صدر عام 2022 بعنوان The Mosquito Bowl: A Game of Life and Death in World War II. يحدد هذا الاقتباس صلة الفيلم بمصدر منشور، لكنه لا يشرح مدى التزام السيناريو به أو التغييرات التي أُدخلت عليه.\n\nوتسمي المادة الموسوعية نيكولاس غاليتزين وبيل سكارسغارد وراي نيكلسون وتوم فرانسيس ضمن الأدوار الرئيسية. كما يسرد ملف قاعدة البيانات أسماء برنت كومر وجاك إنغرام وإيلا نيوتن، ويورد بيتر بيرغ ضمن قائمة الطاقم. لا يوفر الملف توزيعاً مفصلاً للأدوار أو وصفاً للشخصيات، ولا يتيح استنتاج مستوى الأداء من شهرة الأسماء أو من ورودها في قوائم الممثلين. كذلك لا تتضمن المصادر المعروضة تفاصيل موثقة عن التصوير أو الموسيقى أو المونتاج.\n\n## ما الذي يمكن تأكيده؟\n\nيمكن تأكيد وجود وصف قصصي معلن عن أربعة لاعبين جامعيين ينضمون إلى مشاة البحرية بعد بيرل هاربر، وورود الأخوّة وكلفة الحرب في صياغة ذلك الوصف. ويمكن تأكيد تصنيفي الحرب والدراما في قاعدة البيانات، وارتباط الفيلم بكتاب بيسينغر الصادر عام 2022 بحسب المادة الموسوعية. كما يمكن تحديد بيتر بيرغ بوصفه المخرج والكاتب المشارك والمنتج وفق المصدر نفسه، وإثبات أن أسماء الممثلين المذكورة أعلاه واردة ضمن بيانات الطاقم أو الأدوار الرئيسية.\n\nويذكر الملف وجود إعلان ترويجي رسمي منشور على قناة AfricaOnNetflix بعنوان The Mosquito Bowl | Official Trailer | Netflix. وجود هذا الإعلان يثبت توفر مادة ترويجية بحسب الملف، لكنه لا يبرر وصف جميع مشاهده أو استخلاص حكم بصري أو سردي منها هنا. هذه حدود مهمة: المعلومات المؤكدة تتعلق بالهوية والفرضية وبعض بيانات الإنتاج، ولا تتعداها إلى جودة التنفيذ.\n\n## ما الذي لا نعرفه بعد؟\n\nلا توضح الأدلة كيف بُنيت الشخصيات، أو كيف تتطور العلاقة بين اللاعبين، أو كيف يوازن الفيلم بين الرياضة والحرب. ولا تتيح معرفة ما إذا كان السرد يلتزم بالمصدر اللا روائي أو يتصرف فيه، ولا مدى دقته التاريخية. كذلك لا تتوافر مادة مستقلة تسمح بتقييم الإخراج أو أداء الممثلين أو الصورة أو الصوت أو الإيقاع. غياب هذه المعلومات ليس إثباتاً لضعف تلك الجوانب؛ إنما يعني أن الحكم عليها غير مسند.\n\nولا يقدم الملف سجلاً كافياً لتكوين تقييم جماهيري موثوق وفق معيار الجاهزية المحدد فيه، كما لا يتضمن أدلة مستقلة ناتجة عن مشاهدة مباشرة. لذلك لا يصح تحويل التقييم المحدود الوارد في بيانات القاعدة إلى حكم تحريري، أو تقديمه بوصفه إجماعاً. كما لا نملك من المصادر تفاصيل مؤكدة عن مدة الفيلم أو تصنيفه العمري أو أماكن توفره.\n\n## لمن قد يهم هذا العمل؟\n\nقد تجذب الفكرة، بحسب وصفها فقط، من يهتمون بأفلام الحرب أو بالقصص التي تربط الرياضة بالتجنيد والعلاقات بين أفراد المجموعة. وقد يكون ارتباط الفيلم بكتاب لا روائي معروف لمن يريد معرفة نقطة انطلاقه الأدبية. هذه إشارات إلى موضوع العمل ومصدره، لا توصية بمشاهدته ولا ضمان بأن المعالجة ستلبي توقعات جمهور معين. لا تسمح الأدلة بتحديد الفئة التي ستستمتع به فعلاً، لأن ذلك يتطلب معرفة التنفيذ واستقبال المشاهدين.\n\n## خلاصة حدود الأدلة\n\nالمعلومات المتاحة ترسم إطاراً أولياً: عنوان، ونوعان، وفرضية موجزة، ومصدر أدبي، وبيانات أساسية عن المخرج وبعض الممثلين، وإشارة إلى إعلان ترويجي. لكنها لا تقدم أساساً لمراجعة مشاهدة أو لاستنتاج جودة فنية. تظل الأسئلة المتعلقة بالسرد والأداء والصورة والصوت والإيقاع والتلقي بلا جواب موثق في الملف. وعليه، ينبغي قراءة هذا النص بوصفه تعريفاً محدود الأدلة، لا حكماً نهائياً على الفيلم.",
-        "pros": [
-          "الفكرة المعلنة محددة: أربعة نجوم في كرة القدم الجامعية يلتحقون بمشاة البحرية بعد الهجوم على بيرل هاربر.",
-          "تذكر المادة الموسوعية أن الفيلم مقتبس من كتاب لا روائي صدر عام 2022 لباز بيسينغر.",
-          "تورد المصادر بيتر بيرغ مخرجاً وكاتباً مشاركاً ومنتجاً، وتسمي عدداً من الممثلين الرئيسيين."
-        ],
-        "cons": [
-          "لا يتوفر في الملف دليل مستقل ناتج عن مشاهدة مباشرة، لذلك لا يمكن حسم جودة التنفيذ.",
-          "لا تكفي بيانات التقييم الجماهيري المتاحة وفق معيار الملف لتكوين تقييم موثوق.",
-          "تبقى معالجة الشخصيات ودقة السياق التاريخي والتوازن بين الرياضة والحرب غير موضحة.",
-          "لا توجد معلومات موثقة تسمح بتقييم الإخراج أو الأداء أو الصورة أو الصوت أو الإيقاع."
-        ],
-        "title": "The Mosquito Bowl",
-        "type": "movie",
-        "sourceId": "movie:1458300",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/movie/1458300",
-        "sourceRating": 7.6,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 37,
-        "sourceRatingCheckedAt": "2026-11-27T13:16:04.723Z",
-        "audienceScore": 7.6,
-        "releaseDate": "2026-10-29",
-        "poster": "https://image.tmdb.org/t/p/w780/uxYs0bNTF4XzM8LThJk2x3AJ0Iv.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/nfcXn5yvBejpbljQIBrTlOMQZoC.jpg",
-        "genres": [
-          "War",
-          "Drama"
-        ],
-        "platforms": [],
-        "cast": [
-          "Nicholas Galitzine",
-          "Bill Skarsgård",
-          "Ray Nicholson",
-          "Tom Francis",
-          "Brent Comer",
-          "Jack Ingram",
-          "Ella Newton",
-          "Peter Berg"
-        ],
-        "crew": [
-          "Peter Berg"
-        ],
-        "tags": [
-          "War",
-          "Drama"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/movie/1458300",
-            "extract": "In the aftermath of Pearl Harbor, four college football stars enlist in the US Marines, discovering the strength of brotherhood and the cost of war.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/The_Mosquito_Bowl",
-            "extract": "The Mosquito Bowl is a 2026 American war film directed, co-written, and produced by Peter Berg for Netflix. Based on the 2022 Buzz Bissinger non-fiction novel The Mosquito Bowl: A Game of Life and Death in World War II, the film stars Nicholas Galitzine, Bill Skarsgård, Ray Nicholson, and Tom Francis in the leading roles.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — AfricaOnNetflix",
-            "url": "https://www.youtube.com/watch?v=4rg5uNJFNcU",
-            "extract": "Verified public, embeddable promotional trailer: The Mosquito Bowl | Official Trailer | Netflix",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "4rg5uNJFNcU",
-        "youtubeVideoTitle": "The Mosquito Bowl | Official Trailer | Netflix",
-        "reviewMode": "limited"
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 3618,
       "articlePath": "src/content/reviews/movie-the-mosquito-bowl-1458300.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-the-mosquito-bowl-1458300/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-the-mosquito-bowl-1458300/",
+      "publishedAt": "2026-11-27T13:34:23.831Z"
+    },
+    "series:243117": {
+      "key": "series:243117",
+      "type": "series",
+      "id": "243117",
+      "title": "Plus belle la vie, encore plus belle",
+      "item": {
+        "type": "series",
+        "id": "243117",
+        "name": "Plus belle la vie, encore plus belle",
+        "date": "2024-01-08",
+        "preview": false,
+        "popularity": 42.3004,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-27T13:34:26.648Z",
+      "updatedAt": "2026-11-27T13:34:26.730Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "Primary catalog description is too thin"
+    },
+    "series:95350": {
+      "key": "series:95350",
+      "type": "series",
+      "id": "95350",
+      "title": "Lanterns",
+      "item": {
+        "type": "series",
+        "id": "95350",
+        "name": "Lanterns",
+        "date": "2026-08-16",
+        "preview": false,
+        "popularity": 41.3127,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-27T13:34:38.034Z",
+      "updatedAt": "2026-11-27T13:34:38.463Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "No exact independent encyclopedia match for Lanterns"
+    },
+    "series:259140": {
+      "key": "series:259140",
+      "type": "series",
+      "id": "259140",
+      "title": "Ranma1/2",
+      "item": {
+        "type": "series",
+        "id": "259140",
+        "name": "Ranma1/2",
+        "date": "2024-10-06",
+        "preview": false,
+        "popularity": 40.2343,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-27T13:34:43.884Z",
+      "updatedAt": "2026-11-27T13:34:44.204Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "No exact independent encyclopedia match for Ranma1/2"
+    },
+    "series:222766": {
+      "key": "series:222766",
+      "type": "series",
+      "id": "222766",
+      "title": "The Day of the Jackal",
+      "item": {
+        "type": "series",
+        "id": "222766",
+        "name": "The Day of the Jackal",
+        "date": "2024-11-07",
+        "preview": false,
+        "popularity": 40.1192,
+        "source": "TMDB"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-27T13:34:46.555Z",
+      "updatedAt": "2026-11-27T13:35:25.103Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "The Day of the Jackal",
+        "type": "series",
+        "collectedAt": "2026-11-27T13:34:47.039Z",
+        "sourceId": "series:222766",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/222766",
+        "overview": "An unrivalled and highly elusive lone assassin, the Jackal, makes his living carrying out hits for the highest fee. But following his latest kill, he meets his match in a tenacious British intelligence officer who starts to track down the Jackal in a thrilling cat-and-mouse chase across Europe, leaving destruction in its wake.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/222766",
+            "extract": "An unrivalled and highly elusive lone assassin, the Jackal, makes his living carrying out hits for the highest fee. But following his latest kill, he meets his match in a tenacious British intelligence officer who starts to track down the Jackal in a thrilling cat-and-mouse chase across Europe, leaving destruction in its wake.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/The_Day_of_the_Jackal",
+            "extract": "The Day of the Jackal is a 1971 political thriller novel by English author Frederick Forsyth about a professional assassin who is contracted by the OAS, a French dissident paramilitary organisation, to kill Charles de Gaulle, the president of France.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Paramount+ Global",
+            "url": "https://www.youtube.com/watch?v=HejGqY39nds",
+            "extract": "Verified public, embeddable promotional trailer: The Day | Official Trailer | Paramount+ UK & Ireland",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 1437 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "HejGqY39nds",
+        "youtubeVideoTitle": "The Day | Official Trailer | Paramount+ UK & Ireland",
+        "youtubeChannel": "Paramount+ Global",
+        "releaseDate": "2024-11-07",
+        "genres": [
+          "Drama",
+          "Action & Adventure",
+          "Mystery"
+        ],
+        "platforms": [],
+        "cast": [
+          "Eddie Redmayne",
+          "Lashana Lynch",
+          "Eleanor Matsuura",
+          "Chukwudi Iwuji",
+          "Úrsula Corberó",
+          "Adoney Díaz Barajas",
+          "David Gojković"
+        ],
+        "crew": [],
+        "rating": 8.234,
+        "ratingScale": 10,
+        "votes": 1437,
+        "poster": "https://image.tmdb.org/t/p/w780/tYLecM3WSEjlkKhkGiH5G68Dprm.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/enVrO8TRkdT8dmYXTfI4sEjR5Kp.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "The Day of the Jackal: مطاردة واعدة، وحكم تحكمه حدود الأدلة المتاحة",
+        "summary": "يقدّم The Day of the Jackal، وفق الوصف المنشور، مطاردة أوروبية بين قاتل مأجور بالغ المراوغة وضابطة استخبارات بريطانية تتعقبه بعد عملية قتل حديثة. هذه الفكرة تمنح المسلسل صراعاً واضحاً، وأسماء بطاقم تمثيل معروف، وتفتح مجالاً لدراما تشويق ومطاردة؛ لكنها لا تكفي وحدها لإثبات جودة الشخصيات أو التنفيذ البصري والصوتي أو ضبط الإيقاع. لذلك تتعامل هذه المراجعة مع المسلسل بوصفها تقييماً تحريرياً نهائياً لما تثبته حزمة الأدلة، لا ادعاءً بمشاهدة العمل أو فحص حلقاته. متوسط TMDB، البالغ 8.234 من 10 استناداً إلى 1437 صوتاً، مؤشر جماهيري ثانوي لا يحل محل حكم VibeCritic.",
+        "verdict": "يمتلك The Day of the Jackal أساساً درامياً واضحاً: قاتل محترف يعيش على تنفيذ الاغتيالات، ومحققة لا تتراجع عن تعقبه، ومطاردة عابرة لأوروبا تعد بتصعيد الخطر. هذه عناصر تصلح لمسلسل تشويق، ويمنحها الوصف الرسمي اتجاهاً مفهوماً، كما أن سجل الإصدار وأسماء الممثلين يثبتان أن الحديث عن عمل منشور لا مشروع قيد الانتظار. لكن الأدلة المتاحة لا تتجاوز الملخص والبيانات التعريفية ومعلومات المقطع الترويجي؛ لذلك لا تبرر حكماً جازماً على نجاح الإخراج أو الأداء أو الصورة أو الموسيقى أو الإيقاع. النتيجة إيجابية بحذر في الفكرة، ومتحفظة في المحاور التي لا يمكن التحقق منها. أوصي به مبدئياً لمن ينجذب إلى المطاردات التجسسية، مع التنبيه إلى أن هذه التوصية لا تقوم مقام تقييم مشاهدة تفصيلي.",
+        "body": "## مقدمة وسياق العمل\nصدر The Day of the Jackal في 7 نوفمبر 2024، ويصنفه سجل TMDB ضمن الدراما والحركة والمغامرة والغموض. الوصف المتاح يضع في المركز قاتلاً مأجوراً منفرداً يصعب تعقبه، ثم يقدّم ضابطة استخبارات بريطانية عنيدة بوصفها الطرف المقابل في مطاردة تنتقل عبر أوروبا. تلك معلومات تصلح لتحديد نوع العمل ورهانه الأساسي، لكنها لا تكشف كيف توزّع الحلقات أو كيف تتطور المطاردة فعلياً. لذلك فهذه مراجعة تحريرية نهائية لما يمكن إثباته من الملف، لا ادعاء بمشاهدة المسلسل أو فحص حلقاته. وتوجد مادة ترويجية رسمية بعنوان The Day | Official Trailer، منشورة على قناة Paramount+ Global، إلا أن بياناتها لا تتيح وحدها وصف لقطاتها أو الحكم على أسلوبها.\n\n## الفكرة والقصة أو التجربة\nتقوم الفكرة على مواجهة غير متكافئة ظاهرياً: رجل يتخذ القتل المأجور مهنة، ويعتمد على صعوبة الوصول إليه، في مقابل موظفة استخبارات تلاحقه بإصرار. ومن هنا ينشأ سؤال تشويقي مفهوم: هل تستطيع جهة التحقيق تضييق الخناق على شخص بنى عمله على الإفلات؟ يذكر الملخص أن المواجهة تبدأ بعد أحدث عملية قتل، وأن المطاردة تخلف دماراً في طريقها؛ لكنه لا يسمّي الضحية، ولا يوضح دوافع الطرفين أو تفاصيل التحقيق، فلا يجوز تحويل هذه الإشارات إلى أحداث محددة غير موثقة. قوة التصور في وضوح الصراع واتساع مسرحه الأوروبي، أما أصالته وعمقه فتبقيان غير محسومتين: فثنائية المطارد والمطارَد مألوفة في الإثارة، ولا تكفي الفكرة وحدها لمعرفة ما إذا كان المسلسل يطوّرها أو يكتفي بقواعدها المعتادة.\n\n## السرد والشخصيات أو تصميم اللعب\nلا يتعلق العمل بلعبة، لذا يتركز الحكم هنا على السرد والشخصيات. يقدم الملخص طرفين بوظيفتين دراميتين واضحتين: قاتل منفرد شديد المراوغة، وضابطة استخبارات مثابرة. هذه المقابلة تمنح القصة نقطة ارتكاز عملية، وتسمح من حيث البناء بتناوب محتمل بين التخطيط للجريمة وجهد تعقبها؛ غير أن ذلك احتمال تحليلي لا وصف مؤكد لما تعرضه الحلقات. لا تتوافر في الملف معلومات عن أسماء الشخصيات، أو ماضيها، أو علاقاتها، أو مسارات تطورها، ولا عن طريقة توزيع وجهات النظر. لذلك لا يمكن الجزم بأن الشخصيات معقدة أو أن دوافعها مقنعة، كما لا يصح اختزالها إلى أدوار مسطحة. وترد أسماء ممثلين، منهم إيدي ريدماين ولاشانا لينش وإليانور ماتسورا، لكن وجودهم في قائمة الطاقم لا يثبت وحده جودة الكتابة أو الأداء.\n\n## الإخراج والجوانب الفنية\nلا تتضمن الأدلة اسم مخرج أو كاتب أو معلومات عن فريق الإنتاج التفصيلي، ولا مراجعات مستقلة تصف قرارات الإخراج. وبناء عليه لا يصح نسبة أسلوب بعينه للمسلسل، أو الحديث عن معالجة ناجحة للتوتر، أو الادعاء بوجود خلل في المنطق أو التنفيذ. ما يمكن قوله هو أن فرضية المطاردة تضع أمام صناع العمل تحدياً معروفاً: الحفاظ على وضوح التحقيق مع إبقاء الطرف الهارب مقنعاً، ومنع تكرار المواجهة من إضعاف رهاناتها. ذلك معيار نقدي مناسب لهذا النوع، لا شهادة بأن المسلسل حققه. وعليه، تظل النتيجة في هذا المحور مفتوحة؛ فالمعلومات المتاحة ترسم المهمة الدرامية، لكنها لا تكشف القرارات التي اتخذها المخرجون أو أثرها الفعلي في المشاهدة.\n\n## الصورة والهوية البصرية\nتتسع المطاردة، وفق الوصف، عبر أوروبا، وهو ما يتيح للعمل نظرياً تنوعاً في الأمكنة وإمكانات لصنع هوية بصرية مرتبطة بالتنقل والملاحقة. لكن الاتساع الجغرافي في الملخص لا يثبت تنوع المواقع على الشاشة، ولا يخبرنا إن كانت الصورة تميز بين البيئات أو تستخدمها مجرد خلفيات. الملف يتضمن روابط لملصق وخلفية، إلا أن وجود مواد تعريفية ثابتة لا يكفي للحكم على التصوير أو الألوان أو تصميم الإنتاج في الحلقات. كما أن عنوان المقطع الترويجي لا يقدم وصفاً لمحتواه المرئي. لذا لا أنسب للمسلسل جماليات محددة، ولا أختلق ملاحظات عن الإضاءة أو المونتاج أو جودة الصورة. هذا نقص في قاعدة التقييم المتاحة، وليس دليلاً على أن الصورة ضعيفة؛ والحكم المنصف يتطلب مادة مرئية قابلة للفحص أو مصادر تصفها بوضوح.\n\n## الصوت والموسيقى والأداء\nيسجل الملف أسماء عدد من المشاركين في التمثيل، بينهم إيدي ريدماين ولاشانا لينش، لكنه لا يقدم معلومات عن طبيعة أدوارهم أو أداءهم، كما لا يورد أسماء ملحني الموسيقى أو مصممي الصوت. لذلك لا أساس للقول إن الأداء متقن أو متعثر، أو إن الموسيقى تضاعف التوتر، أو إن المؤثرات تعاني مشكلة. ويمكن فقط ملاحظة أن مركزية المطاردة تتيح نظرياً أهمية للصوت في التمييز بين الهدوء والخطر، لكن هذه ملاحظة عن إمكانات النوع لا وصف لما نسمعه في المسلسل. وحتى المقطع الرسمي، المتاح هنا بعنوانه وبيانات ناشره فقط، لا يوفر مادة موصوفة تكفي لتقييم الموسيقى أو الحوار. لذلك يبقى هذا المحور بلا حكم نوعي موثوق بدلاً من ملئه بانطباعات متخيلة.\n\n## الإيقاع والبناء وتنوع المحتوى\nتعد المطاردة الممتدة على نطاق أوروبي بامتداد سردي يتجاوز مواجهة واحدة، لكن الملف لا يذكر عدد الحلقات أو مددها أو بنية الموسم أو توزيع الأحداث. ولا يوضح إن كان السرد يتقدم بخط تصاعدي، أو يكرر دورة هروب وتعقب، أو يخصص مساحة متوازنة للطرفين. لذا لا يمكن وصف الإيقاع بالبطيء أو السريع، ولا الجزم بأن التنويع يحافظ على الاهتمام. مع ذلك، يمكن تحديد التحدي الذي يواجه هذا البناء: على مسلسل قائم على الترقب أن يقدم تطوراً ذا معنى في مسار المطاردة، لا مجرد تأجيل متكرر للحسم. هذه نقطة قياس نقدية لا اتهام بوقوع التكرار. درجتي هنا احترازية لأن المادة المتاحة لا تكشف الإيقاع الفعلي، ولا ينبغي تفسير التحفظ على أنه ملاحظة مشاهدة سلبية.\n\n## نقاط القوة\nأبرز ما يدعم العمل في حدود المعلومات المتاحة هو وضوح محركه الدرامي: خصم محترف ومتعقبة مصممة، بما يجعل طبيعة الصراع سهلة الفهم من دون حاجة إلى تفاصيل مخترعة. ثانياً، يمنح امتداد المطاردة عبر أوروبا الفكرة مجالاً جغرافياً أوسع من مواجهة محلية، وإن كان ذلك لا يثبت تنوعاً بصرياً في التنفيذ. ثالثاً، تصنيف المسلسل ضمن الدراما والحركة والمغامرة والغموض ينسجم مع مزيج المطاردة والتحقيق الذي يقدمه الملخص، ويحدد توقعات نوعية قابلة للفهم. رابعاً، تتضمن قائمة الطاقم أسماء معروفة مثل ريدماين ولينش، وهي معلومة ذات صلة باهتمام الجمهور، لا برهان مسبق على جودة الأداء. وأخيراً، يتيح وجود إعلان رسمي موثق التحقق من وجود مادة ترويجية صادرة عن جهة النشر، وإن لم يكن ذلك بديلاً عن تحليل محتواها.\n\n## نقاط الضعف\nأول تحفظ نقدي أن الفرضية، كما صيغت في الملخص، تستخدم قالب مطاردة معروفاً؛ لذا يقع على التنفيذ عبء تقديم ما يتجاوز التوتر الأساسي بين القاتل وملاحقته، ولا تكشف الأدلة إن كان قد فعل. وثانيها أن المعلومات المتاحة لا تمنح صورة عن دوافع الشخصيات أو تطورها، ما يجعل الحكم على عمقها غير ممكن، ويترك جانباً مهماً من قيمة الدراما بلا توثيق. وثالثها أن غياب بيانات تفصيلية عن الإخراج والصورة والصوت والإيقاع يمنع اختبار جودة التنفيذ عبر هذه المحاور. هذه النقاط لا تعني أن المسلسل يعاني فعلاً من عيوب إنتاجية أو سردية مؤكدة؛ إنها حدود نقدية لما يمكن نسبته إليه بأمانة. والخلط بين عدم توافر دليل على الجودة وبين ثبوت رداءة الجودة سيكون ظلماً للعمل مثلما أن مدحه بلا سند سيكون تضليلاً للقارئ.\n\n## لمن يناسب هذا العمل؟\nبحسب وصفه وتصنيفه، قد يناسب المسلسل من يبحث عن دراما جريمة وتشويق تتمحور حول مطاردة بين قاتل محترف وضابطة استخبارات، أو يفضل قصص المواجهة بين شخص يراوغ وجهة تحاول كشفه. كما أن الإشارة إلى مطاردة عابرة لأوروبا قد تجذب من يفضل الرهانات المتحركة على مكان واحد، لكن لا يمكن تقديم ذلك بوصفه ضماناً لتنوع المواقع أو الأحداث. أما من يريد توصية مبنية على تحليل مفصل للأداء، أو إخراج الحلقات، أو جودة الموسيقى والإيقاع، فلن يجد في هذه الحزمة ما يكفي لاتخاذ قرار حاسم. متوسط TMDB البالغ 8.234 من 10، مع 1437 صوتاً، يعكس استجابة مستخدمي المنصة فحسب؛ إنه مؤشر جماهيري ثانوي، لا درجة VibeCritic ولا بديلاً عن الحكم النقدي.\n\n## الحكم النهائي\nيقدم The Day of the Jackal نقطة انطلاق تشويقية واضحة ومفهومة، وتمنحه مواجهة القاتل المراوغ وضابطة الاستخبارات المتعقبة أساساً صالحاً لمسلسل مطاردة، مع نطاق أوروبي يوسع إطار الفكرة. لكن وضوح الفرضية لا يثبت فرادة الكتابة أو نجاح الأداء، ولا يكشف الملف المتاح ما إذا كان الإخراج والصورة والصوت والإيقاع يرفعون المادة أو يحدون منها. لهذا يأتي الحكم إيجابياً بحذر على التصور، ومتحفظاً على التنفيذ الذي لا تسنده معلومات كافية. الدرجات المرفقة تعكس هذا التفاوت: تقييم القصة يستند إلى الملخص الموثق، أما الدرجات المحايدة في الجوانب التي لم توصف فهي احتراز لغياب الدليل، وليست ادعاءً بأن تلك العناصر متوسطة الجودة بعد المشاهدة. التوصية الأنسب هي اعتباره خياراً محتملاً لمحبي التشويق التجسسي، مع عدم تقديم هذا التقييم بديلاً عن مراجعة مشاهدة مباشرة.",
+        "scores": {
+          "story": 7,
+          "visuals": 5,
+          "sound": 5,
+          "pacing": 5
+        },
+        "pros": [
+          "صراع مركزي واضح بين قاتل مأجور مراوغ وضابطة استخبارات تتعقبه.",
+          "مطاردة موصوفة بأنها تمتد عبر أوروبا، بما يوسّع إطار الفكرة الجغرافي.",
+          "تصنيف موثق يجمع الدراما والحركة والمغامرة والغموض، ومتسق مع أساس المطاردة والتحقيق.",
+          "قائمة طاقم تضم إيدي ريدماين ولاشانا لينش وإليانور ماتسورا، وهي أسماء موثقة للجمهور المهتم بالتمثيل."
+        ],
+        "cons": [
+          "الفرضية، كما تظهر في الملخص وحده، تعتمد قالب المطاردة المألوف، ولا تتوافر أدلة تثبت مقدار تجديد المسلسل له.",
+          "لا يقدم ملف الأدلة تفاصيل كافية عن دوافع الشخصيات أو تطورها للحكم على عمق الكتابة.",
+          "لا تتوافر أوصاف موثوقة تكفي لتقييم الصورة أو الموسيقى أو الأداء أو الإيقاع؛ لذا تبقى جوانب أساسية من التنفيذ غير محسومة."
+        ],
+        "title": "The Day of the Jackal",
+        "type": "series",
+        "sourceId": "series:222766",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/222766",
+        "sourceRating": 8.234,
+        "sourceRatingScale": 10,
+        "sourceVoteCount": 1437,
+        "sourceRatingCheckedAt": "2026-11-27T13:34:47.039Z",
+        "audienceScore": 8.2,
+        "releaseDate": "2024-11-07",
+        "poster": "https://image.tmdb.org/t/p/w780/tYLecM3WSEjlkKhkGiH5G68Dprm.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/enVrO8TRkdT8dmYXTfI4sEjR5Kp.jpg",
+        "genres": [
+          "Drama",
+          "Action & Adventure",
+          "Mystery"
+        ],
+        "platforms": [],
+        "cast": [
+          "Eddie Redmayne",
+          "Lashana Lynch",
+          "Eleanor Matsuura",
+          "Chukwudi Iwuji",
+          "Úrsula Corberó",
+          "Adoney Díaz Barajas",
+          "David Gojković"
+        ],
+        "crew": [],
+        "tags": [
+          "Drama",
+          "Action & Adventure",
+          "Mystery"
+        ],
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/222766",
+            "extract": "An unrivalled and highly elusive lone assassin, the Jackal, makes his living carrying out hits for the highest fee. But following his latest kill, he meets his match in a tenacious British intelligence officer who starts to track down the Jackal in a thrilling cat-and-mouse chase across Europe, leaving destruction in its wake.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/The_Day_of_the_Jackal",
+            "extract": "The Day of the Jackal is a 1971 political thriller novel by English author Frederick Forsyth about a professional assassin who is contracted by the OAS, a French dissident paramilitary organisation, to kill Charles de Gaulle, the president of France.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Paramount+ Global",
+            "url": "https://www.youtube.com/watch?v=HejGqY39nds",
+            "extract": "Verified public, embeddable promotional trailer: The Day | Official Trailer | Paramount+ UK & Ireland",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "HejGqY39nds",
+        "youtubeVideoTitle": "The Day | Official Trailer | Paramount+ UK & Ireland",
+        "reviewMode": "review",
+        "score": 5.6
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 6041,
+      "articlePath": "src/content/reviews/series-the-day-of-the-jackal-222766.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-the-day-of-the-jackal-222766/"
     }
   },
   "providers": {},
@@ -4196,9 +4305,9 @@
       "tokens": 29680
     },
     "2026-11-27": {
-      "articles": 3,
-      "requests": 6,
-      "tokens": 15573
+      "articles": 4,
+      "requests": 8,
+      "tokens": 21614
     }
   },
   "history": []
