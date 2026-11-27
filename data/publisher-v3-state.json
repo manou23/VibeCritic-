@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-27T16:16:44.162Z",
+  "updatedAt": "2026-11-27T19:17:10.625Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -4140,139 +4140,177 @@
         "popularity": 1034,
         "source": "RAWG"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-27T16:15:59.850Z",
-      "updatedAt": "2026-11-27T16:16:44.162Z",
+      "updatedAt": "2026-11-27T19:16:02.135Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 3483,
+      "articlePath": "src/content/reviews/game-synergy-802181.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-synergy-802181/",
+      "publishedAt": "2026-11-27T19:16:02.135Z"
+    },
+    "movie:1280115": {
+      "key": "movie:1280115",
+      "type": "movie",
+      "id": "1280115",
+      "title": "Way of the Warrior Kid",
+      "item": {
+        "type": "movie",
+        "id": "1280115",
+        "name": "Way of the Warrior Kid",
+        "date": "2026-11-24",
+        "preview": false,
+        "popularity": 80.9769,
+        "source": "TMDB"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-27T19:16:04.614Z",
+      "updatedAt": "2026-11-27T19:17:10.625Z",
       "nextAttemptAt": null,
       "evidence": {
-        "title": "Synergy",
-        "type": "game",
-        "collectedAt": "2026-11-27T16:16:00.619Z",
-        "sourceId": "game:802181",
-        "sourceName": "RAWG",
-        "sourceUrl": "https://rawg.io/games/synergy-2",
-        "overview": "Humans live on a hostile planet. To ensure their survival, they must learn to survive in extreme weather conditions and in an environment that is not conducive to their development. Careful and pragmatic management of resources has become essential to the survival of human race, as has the morale of the population. Main Features Manage weather, seasons, extreme conditions and natural disasters. Build a city with the happiness of its inhabitants as its main goal. Explore and analyze their world in order to adapt the evolution of their city. Additional Features Respect the physical and mental needs of the inhabitants. Live in harmony with fauna and flora. Make short or long-term choices. Play different scenarios to enjoy various experiences. Sandbox mode: experiment with different combinations by yourself.",
+        "title": "Way of the Warrior Kid",
+        "type": "movie",
+        "collectedAt": "2026-11-27T19:16:05.249Z",
+        "sourceId": "movie:1280115",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1280115",
+        "overview": "Jake is an injured Navy SEAL who becomes a mentor for his shy, struggling nephew Marc. Using the principles of his military training, Jake teaches Marc how to be a Warrior Kid as he enters high school.",
         "sources": [
           {
-            "name": "RAWG",
-            "url": "https://rawg.io/games/synergy-2",
-            "extract": "Humans live on a hostile planet. To ensure their survival, they must learn to survive in extreme weather conditions and in an environment that is not conducive to their development. Careful and pragmatic management of resources has become essential to the survival of human race, as has the morale of the population. Main Features Manage weather, seasons, extreme conditions and natural disasters. Build a city with the happiness of its inhabitants as its main goal. Explore and analyze their world in order to adapt the evolution of their city. Additional Features Respect the physical and mental needs of the inhabitants. Live in harmony with fauna and flora. Make short or long-term choices. Play different scenarios to enjoy various experiences. Sandbox mode: experiment with different combinations by yourself.",
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1280115",
+            "extract": "Jake is an injured Navy SEAL who becomes a mentor for his shy, struggling nephew Marc. Using the principles of his military training, Jake teaches Marc how to be a Warrior Kid as he enters high school.",
             "kind": "catalog-metadata"
           },
           {
             "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Synergy",
-            "extract": "Synergy is the concept that a combined effect of two or more entities is greater than the sum of their individual effects. The term synergy comes from the Attic Greek word συνεργία synergia from synergos, συνεργός, meaning \"working together\". Synergy is similar in concept to emergence.",
+            "url": "https://en.wikipedia.org/wiki/Way_of_the_Warrior_Kid",
+            "extract": "Way of the Warrior Kid is a 2026 American drama film directed by McG and written by Will Staples. It is based on the 2017 children's novel of the same name by Jocko Willink. It stars Chris Pratt, who also serves as a producer, alongside Jude Hill and Linda Cardellini. In the film, a bullied 13-year-old named Marc (Hill) learns to find his inner warrior over one summer with the help of his Navy SEAL uncle Jake (Pratt).",
             "kind": "encyclopedia"
           },
           {
-            "name": "YouTube — Goblinz Publishing",
-            "url": "https://www.youtube.com/watch?v=oiy0z5ibUGU",
-            "extract": "Verified public, embeddable promotional trailer: Synergy - Official Full Release Trailer",
+            "name": "YouTube — New Movie Trailers ",
+            "url": "https://www.youtube.com/watch?v=j1B3r3v6cLg",
+            "extract": "Verified public, embeddable promotional trailer: Way of the Warrior Kid (2026) || Official Trailer HD, Chris Pratt, Jude Hill, Linda Cardellini ",
             "kind": "promotional"
           }
         ],
         "reviewReadiness": "limited",
         "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
-        "youtubeVideoId": "oiy0z5ibUGU",
-        "youtubeVideoTitle": "Synergy - Official Full Release Trailer",
-        "youtubeChannel": "Goblinz Publishing",
-        "releaseDate": "",
+        "youtubeVideoId": "j1B3r3v6cLg",
+        "youtubeVideoTitle": "Way of the Warrior Kid (2026) || Official Trailer HD, Chris Pratt, Jude Hill, Linda Cardellini ",
+        "youtubeChannel": "New Movie Trailers ",
+        "releaseDate": "2026-11-24",
         "genres": [
-          "Strategy",
-          "Simulation",
-          "Indie"
+          "Drama"
         ],
-        "platforms": [
-          "macOS",
-          "PC",
-          "Linux"
+        "platforms": [],
+        "cast": [
+          "Chris Pratt",
+          "Jude Hill",
+          "Linda Cardellini",
+          "Jocko Willink",
+          "Ava Torres",
+          "Levi McConaughey",
+          "Darien Sills-Evans",
+          "Carl McDowell"
         ],
-        "developers": [
-          "Leikir Studio"
+        "crew": [
+          "McG"
         ],
-        "rating": 2.04,
-        "ratingScale": 5,
-        "votes": 23,
-        "poster": "https://media.rawg.io/media/screenshots/68b/68bcfe02c9b9b7123edab7ecce3f2660.jpg"
+        "rating": 7.422,
+        "ratingScale": 10,
+        "votes": 45,
+        "poster": "https://image.tmdb.org/t/p/w780/atI81xXKNVah7PJFBo3aXqQKtnG.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/vOByLZRhCIIItlSlCT7bYbI9MYL.jpg"
       },
       "sections": [],
       "article": {
-        "headline": "Synergy: ملامح لعبة إدارة وبقاء وحدود ما تثبته الأدلة",
-        "summary": "Synergy لعبة مصنفة ضمن الاستراتيجية والمحاكاة والألعاب المستقلة، وتعرض بياناتها التعريفية عالماً يعيش فيه البشر على كوكب قاسٍ، حيث ترتبط استمرارية المجتمع بإدارة الموارد ومواجهة الظروف المناخية والاهتمام بمعنويات السكان. وتشير المادة المتاحة إلى بناء مدينة، واستكشاف البيئة وتحليلها، ومراعاة احتياجات السكان والتفاعل مع الحياة الطبيعية، مع سيناريوهات متعددة ونمط لعب حر. تذكر البيانات الحاسوب الشخصي وmacOS وLinux، وتسمّي Leikir Studio مطوراً. لكن المتاح هنا أوصاف قاعدة بيانات ومادة موسوعية وإشارة إلى إعلان ترويجي فقط؛ لا يقدم ذلك تجربة مستقلة للعب أو أدلة كافية على جودة التنفيذ، ولا يحسم تفاصيل الإصدار أو الأداء أو عمق الأنظمة.",
-        "verdict": "هذه قراءة محدودة لما تتيحه البيانات المنشورة، وليست مراجعة لعب ولا حكماً نهائياً على Synergy. يمكن تأكيد الإطار العام المعلن: لعبة استراتيجية ومحاكاة عن بقاء البشر على كوكب معادٍ، وإدارة مدينة ومواردها، مع اهتمام معلن بمعنويات السكان واحتياجاتهم وبالبيئة المحيطة. كما تتوفر معلومات عن المطور والمنصات، وإشارة إلى إعلان ترويجي رسمي. لكن لا توجد ضمن الأدلة تجربة مستقلة مباشرة، ولا معلومات كافية لتقييم كيفية تنفيذ هذه الأفكار أو مدى توازنها ووضوحها واستمراريتها. لذلك لا يصح تحويل الوصف التسويقي أو بيانات التصنيف إلى حكم على جودة اللعبة، وتبقى الخلاصة مؤقتة ومشروطة بظهور أدلة أوسع.",
-        "body": "## ما الذي نعرفه عن العمل؟\n\nSynergy لعبة، وتضعها البيانات المتاحة ضمن فئات الاستراتيجية والمحاكاة والألعاب المستقلة. ويصفها سجل قاعدة البيانات RAWG بوصفها تجربة تدور حول بشر يعيشون على كوكب معادٍ، ويحتاجون إلى تدبير مواردهم والتكيف مع ظروف صعبة كي يضمنوا بقاء مجتمعهم. هذا هو الإطار العام الذي يمكن نقله بأمان؛ أما تفاصيل العالم والشخصيات وتسلسل اللعب فلا تظهر في المواد المقدمة بما يسمح بوصفها على نحو أوسع.\n\nالمعلومات التعريفية تذكر الحاسوب الشخصي وmacOS وLinux ضمن المنصات، وتسمّي Leikir Studio مطوراً. لا يحدد ملف الأدلة تاريخ إصدار، ولا يورد معلومات تفصيلية عن النسخ أو متطلبات التشغيل. كما أن وجود إعلان ترويجي رسمي كامل الإصدار من قناة Goblinz Publishing يثبت وجود مادة ترويجية بهذا الوصف، لكنه لا يثبت وحده محتوى اللعبة الكامل أو خصائصها العملية.\n\n## القصة أو الفكرة المعلنة\n\nالفكرة المعلنة تضع إدارة المجتمع في بيئة قاسية في مركز التجربة. وفق وصف قاعدة البيانات، يتطلب البقاء التعامل مع الطقس والفصول والظروف الشديدة والكوارث الطبيعية، إلى جانب إدارة الموارد ومراعاة معنويات السكان. ويتصل بذلك بناء مدينة يكون هدفها المعلن سعادة سكانها، واستكشاف العالم وتحليله كي يتكيف تطور المدينة معه.\n\nويضيف الوصف عناصر تتعلق بالاحتياجات الجسدية والنفسية للسكان، والعيش بانسجام مع النباتات والحيوانات، واتخاذ خيارات قصيرة أو طويلة المدى. كما يذكر سيناريوهات مختلفة ونمطاً حراً يتيح تجربة تركيبات متنوعة. ينبغي فهم هذه النقاط باعتبارها خصائص واردة في وصف قاعدة البيانات، لا باعتبارها نتائج تحقق منها محرر عبر اللعب. ولا تكفي المادة لتحديد كيفية تفاعل الأنظمة فعلياً أو مدى اتساع الخيارات أو أثرها في مجريات كل تجربة.\n\n## معلومات الإنتاج والطاقم\n\nالمعلومة الإنتاجية المحددة في الملف هي اسم المطور Leikir Studio. ويُذكر Goblinz Publishing بوصفه القناة التي نشرت الإعلان الترويجي المسمى Official Full Release Trailer؛ ولا يقدم الملف تفاصيل إضافية عن أدوار الناشر أو فريق التطوير، لذا لا ينبغي توسيع تلك المعلومة إلى وصف غير موثق لمسؤوليات الإنتاج.\n\nلا يتضمن الملف تاريخ إصدار، أو أسماء أفراد من فريق العمل، أو معلومات عن مراحل التطوير. وترد المنصات الثلاث في البيانات التعريفية، لكن لا توجد تفاصيل موثقة هنا عن اختلاف النسخ بينها أو خصائص كل نسخة. كذلك لا يوفر الإعلان، بمجرد الإشارة إلى وجوده، أساساً للحديث عن جودة الصورة أو الصوت أو الإخراج؛ ولم تُقدَّم مادته بوصفها مشاهدة تحريرية مستقلة.\n\n## ما الذي يمكن تأكيده؟\n\nيمكن تأكيد أن Synergy معرّفة كلعبة استراتيجية ومحاكاة، وأن وصفها المنشور يربط البقاء بإدارة الموارد والمدينة والظروف البيئية ومعنويات السكان. ويمكن تأكيد ورود عناصر مثل استكشاف العالم، وتحليل البيئة، ومراعاة حاجات السكان، والسيناريوهات المتعددة والنمط الحر في الوصف نفسه. ويمكن أيضاً تأكيد اسم المطور والمنصات المسجلة ووجود إعلان ترويجي رسمي موصوف بأنه إعلان الإطلاق الكامل.\n\nهذه التأكيدات تخص ما تقوله المواد المتاحة عن اللعبة، ولا تعني أن كل خاصية اختُبرت بصورة مستقلة أو أن وصف الناشر أو قاعدة البيانات يمثل حكماً نقدياً. وتحتوي المادة الموسوعية المرفقة على تعريف عام لمفهوم التآزر، لا معلومات موثقة عن اللعبة نفسها. لذلك لا يصح استخدامها لإضافة قصة أو موضوعات أو تفاصيل إنتاجية إلى ملف العمل.\n\n## ما الذي لا نعرفه بعد؟\n\nلا تتيح الأدلة حسم جودة التنفيذ، أو مدى عمق أنظمة الإدارة، أو وضوح واجهات اللعب، أو توازن الموارد والخيارات، أو تنوع السيناريوهات فعلياً. ولا تتضمن شهادة لعب مستقلة يمكن الاستناد إليها للحكم على الصعوبة أو الإيقاع أو مقدار التكرار أو استقرار الأداء. ولا توجد معلومات كافية عن أسلوب العرض البصري أو تصميم الصوت، ولذلك لا يجوز استنتاج جودتهما من صورة الملصق أو من وجود إعلان ترويجي.\n\nكما لا يثبت وصف النوع وحده أن اللعبة تنجح في تقديم تجربة استراتيجية متماسكة، ولا يثبت الحديث عن سعادة السكان أن أثرها قابل للقياس أو مؤثر في اللعب على نحو معين. لا تتوافر هنا أدلة كافية على استقبال الجمهور؛ والبيانات المحدودة عن الآراء لا تشكل عينة مسنودة تسمح بتعميم حكم. ولا يحسم الملف تاريخ الإصدار أو تفاصيل المحتوى المتاح في النسخة النهائية.\n\n## لمن قد يهم هذا العمل؟\n\nقد يلفت Synergy انتباه من يبحثون عن ألعاب استراتيجية أو محاكاة تتمحور فكرتها المعلنة حول بناء مدينة في بيئة صعبة، وإدارة مواردها مع مراعاة السكان والظروف الطبيعية. كذلك قد يجد المهتمون بألعاب البقاء ذات القرارات بعيدة الأثر أو بالنمط الحر سبباً لمتابعة معلومات موثقة إضافية عن اللعبة. هذا وصف للفئات التي قد تجد الفكرة ذات صلة باهتماماتها، وليس توصية مبنية على تجربة أو ادعاء بأن اللعبة تلبي توقعاتها.\n\n## خلاصة حدود الأدلة\n\nالمتاح يرسم تصوراً أولياً لموضوع Synergy وبعض خصائصها المعلنة، ويحدد مطورها ومنصاتها، لكنه لا يتجاوز ذلك إلى تقييم مستقل. ومن ثم تبقى المسائل الأهم لمن يفكر في اللعب، ومنها جودة التنفيذ والتوازن والأداء والتجربة الفعلية، بلا حسم في ملف الأدلة الحالي.",
+        "headline": "Way of the Warrior Kid: ما تثبته المعلومات المتاحة وما يبقى مفتوحاً",
+        "summary": "Way of the Warrior Kid فيلم درامي أمريكي صدر، وفق بيانات قاعدة الأفلام، في 24 نوفمبر 2026. تدور فكرته المعلنة حول جيك، وهو فرد سابق في قوات البحرية الخاصة مصاب، يصبح مرشداً لابن أخيه مارك، الذي يواجه الخجل وصعوبات في المدرسة. وتضيف المادة الموسوعية أن مارك في الثالثة عشرة ويتعرض للتنمر، وأن الأحداث تمتد خلال صيف واحد، كما تربط الفيلم برواية أطفال صدرت عام 2017. تذكر المصادر ماك جي مخرجاً، وويل ستابلز كاتباً، وكريس برات وجود هيل وليندا كارديليني ضمن الممثلين. لكن المعلومات المتاحة لا تكفي لتقييم التنفيذ أو حسم تفاصيل التجربة، ولا تشكل مراجعة مشاهدة أو حكماً نهائياً.",
+        "verdict": "هذه قراءة معلوماتية محدودة، مبنية حصراً على وصف قاعدة بيانات ومادة موسوعية وإشارة إلى إعلان ترويجي. يمكن تأكيد الفرضية العامة، وبعض أسماء الطاقم، ونسبة العمل إلى رواية سابقة، لكن ذلك لا يثبت جودة الفيلم أو يتيح حكماً نهائياً عليه. لا تتضمن المواد المتاحة مشاهدة مستقلة أو شواهد موثقة كافية عن الإخراج والصورة والصوت والإيقاع والأداء، كما لا يتوفر تقييم جماهيري مسنود بما يكفي للاعتماد عليه. لذلك لا تمنح هذه الخلاصة حكماً نهائياً؛ إنها تحدد ما ورد في المصادر وما يلزم تركه بلا حسم إلى حين توافر أدلة أوسع.",
+        "body": "## ما الذي نعرفه عن العمل؟\n\nWay of the Warrior Kid فيلم أمريكي مصنف ضمن الدراما في بيانات قاعدة الأفلام المرفقة. تسجل القاعدة تاريخ إصدار هو 24 نوفمبر 2026، وتعرّف العمل بأنه فيلم، من دون أن تقدم في الملف معلومات عن منصة عرض أو توزيع يمكن اعتمادها هنا. لذلك يمكن نقل التاريخ بوصفه تاريخاً مسجلاً في المصدر، لا إضافة تفاصيل عن أماكن العرض أو نطاقه لم ترد في الأدلة. وتوفر المادة الموسوعية وصفاً للعمل بوصفه مقتبساً من رواية أطفال تحمل الاسم نفسه، فيما يقدم وصف قاعدة البيانات مدخلاً موجزاً إلى علاقة الشخصيتين الرئيسيتين.\n\nالمعلومات الأساسية ترسم إطاراً درامياً حول قريبين، أحدهما يوجه الآخر خلال مرحلة انتقالية صعبة. لكن التعريف المختصر لا يبين شكل الحبكة كاملة، ولا يشرح كيف تتطور العلاقة أو ما الأحداث التي تقع بين بدايتها ونهايتها. كما أن تصنيف «دراما» معلومة تصنيفية فحسب، وليس دليلاً على نبرة الفيلم أو مقدار الجدية أو نجاح السرد. ومن المهم إبقاء هذا الفرق واضحاً: لدينا وصف معلن للفكرة وبعض بيانات الإنتاج، لا وصف موثق لكل ما يظهر في الفيلم.\n\n## القصة أو الفكرة المعلنة\n\nوفق قاعدة البيانات، جيك فرد مصاب من قوات البحرية الخاصة يصبح مرشداً لابن أخيه مارك، الذي تصفه بأنه خجول ويكافح لمواجهة صعوباته. ويقول الوصف إن جيك يستخدم مبادئ من تدريبه العسكري لمساعدة مارك على أن يصبح «طفل محارب» مع دخوله المرحلة الثانوية. أما المادة الموسوعية فتقدم تفاصيل إضافية: مارك فتى في الثالثة عشرة يتعرض للتنمر، ويتعلم إيجاد «محاربه الداخلي» بمساعدة عمه جيك خلال صيف واحد. هذان الوصفان متقاربان في الفكرة العامة، لكنهما ليسا متطابقين في مقدار التفاصيل أو طريقة صياغة التحدي.\n\nهذه العناصر تسمح بتحديد موضوعات معلنة مثل الإرشاد العائلي، والتعامل مع التنمر، وبناء الثقة بالنفس، والاستفادة من خبرة عسكرية في سياق مدني. لكنها لا تثبت كيف يعالج الفيلم تلك الموضوعات، ولا ما إذا كانت النتيجة واقعية أو مبسطة أو ساخرة أو جادة. ولا نعرف من الملخصين وحدهما ماهية التدريبات التي يتلقاها مارك، أو طبيعة العقبات المدرسية والاجتماعية التي يواجهها، أو الطريقة التي يصف بها العمل إصابة جيك. الأفضل التعامل مع هذه العناصر كإطار للقصة كما تقدمه المصادر، لا كملخص شامل للأحداث.\n\n## معلومات الإنتاج والطاقم\n\nتنسب المادة الموسوعية الإخراج إلى ماك جي، والكتابة إلى ويل ستابلز، وتذكر أن الفيلم مقتبس من رواية الأطفال التي كتبها جوكو ويلينك ونشرت عام 2017. وتذكر كريس برات في دور جيك، وجود هيل في دور مارك، وليندا كارديليني ضمن الأسماء الرئيسية. كما يورد ملف قاعدة البيانات قائمة أوسع تضم جوكو ويلينك، وآفا توريس، وليفي ماكونهي، ودارين سيلز-إيفانز، وكارل ماكدويل. لا يحدد الملف أدوار جميع هذه الأسماء، لذا لا يصح إسناد شخصيات إليها من دون مصدر إضافي. ويشير المصدر الموسوعي كذلك إلى أن برات منتج مشارك، لكن المواد المقدمة لا تسرد تفاصيل أخرى عن فريق الإنتاج أو مواقع التصوير.\n\nذكر أسماء معروفة أو الإشارة إلى رواية سابقة لا يكفي لاستخلاص حكم على جودة الأداء أو الإخراج أو الاقتباس. كما أن وجود إعلان ترويجي رسمي، وفق توصيف ملف الأدلة، يثبت توفر مادة ترويجية قابلة للتضمين، لكنه لا يقدم وحده معلومات مستقلة عن جودة الفيلم. لا نصف مشاهده أو نحدد محتواه البصري هنا، لأن المقتطف المتاح لا يسجل وصفاً لمشاهدة تفصيلية، ولا ينبغي التعامل مع عنوان الإعلان كأنه دليل على تجربة كاملة.\n\n## ما الذي يمكن تأكيده؟\n\nيمكن تأكيد أن المصادر تصف العمل بأنه فيلم درامي أمريكي لعام 2026، وأنه يحمل عنوان Way of the Warrior Kid، وأن فكرته المركزية تربط بين جيك ومارك من خلال علاقة إرشاد عائلية. ويمكن تأكيد نسبة الإخراج إلى ماك جي والكتابة إلى ويل ستابلز بحسب المادة الموسوعية، ووجود كريس برات وجود هيل وليندا كارديليني في الأدوار المذكورة فيها. كذلك تؤكد المادة نفسها أن العمل يستند إلى رواية أطفال منشورة عام 2017 لجوكو ويلينك. هذه معلومات تعريفية قابلة للنقل، مع مراعاة أن بعض التفاصيل تأتي من مصدر واحد لا من تقاطع مصادر متعددة.\n\nأما وصف القاعدة والإشارة الموسوعية فيتفقان على وجود عم عسكري وابن أخ يواجه صعوبات، لكن التفاصيل الإضافية عن العمر والتنمر والصيف وردت في المادة الموسوعية وحدها. يمكن تسجيل هذا الاختلاف في مقدار التفصيل من دون اعتباره تناقضاً حاسماً. كما أن وصف قاعدة البيانات يتحدث عن دخول المرحلة الثانوية، بينما تصوغ المادة الموسوعية الفترة على أنها صيف واحد؛ لا توضح الأدلة العلاقة الزمنية الدقيقة بين العبارتين. لذلك يظل المؤكد هو الإطار العام، لا التسلسل الكامل أو جميع عناصر الحبكة.\n\n## ما الذي لا نعرفه بعد؟\n\nلا تسمح هذه المواد بالحكم على جودة الإخراج أو أداء الممثلين، ولا بتقييم الكتابة أو مدى وفائها للرواية. ولا توجد فيها مشاهدة مستقلة توثق الصورة أو تصميم الصوت أو الموسيقى أو المونتاج أو الإيقاع، ولذلك لا يصح ملء هذه المحاور بتوقعات مستمدة من أسماء الطاقم أو من النوع الدرامي. كذلك لا تتوافر تفاصيل موثقة عن استقبال النقاد، أو آراء جمهور واسعة، أو ظروف الإنتاج والتوزيع. وجود حقل تقييم في قاعدة البيانات لا يحول المعلومات المتاحة إلى إجماع جماهيري مسنود؛ وملف الأدلة نفسه يوضح أن الشواهد لا تبلغ مستوى كافياً لهذا الغرض.\n\nتبقى أسئلة أخرى مفتوحة: كيف يصور الفيلم التنمر؟ ما مساحة المدرسة والأسرة في الحكاية؟ وهل يتعامل مع التدريب العسكري بوصفه استعارة تربوية أم محوراً عملياً للأحداث؟ لا تجيب الملخصات عن ذلك. كذلك لا نعرف مقدار الاختلاف بين الرواية والفيلم، أو إن كانت الشخصيات الثانوية تؤثر في تطور القصة، أو كيف تنتهي رحلة مارك. طرح هذه الأسئلة ليس انتقاداً للعمل، بل بيان لما لا تتيحه الأدلة الحالية من استنتاجات.\n\n## لمن قد يهم هذا العمل؟\n\nقد تهم الفكرة المعلنة من يبحث عن قصص تركز على علاقة العم بابن أخيه، أو الإرشاد، أو مواجهة التنمر وبناء الثقة، كما قد تهم القراء المهتمين باقتباس رواية أطفال منشورة سابقاً. وقد يكون اسم الرواية ومؤلفها مدخلاً لمن يريد مقارنة العمل المقتبس بمصدره الأدبي، لكن هذه المقارنة تحتاج إلى مشاهدة الفيلم وقراءة الرواية، ولا تقدمها المواد الحالية. هذه إشارات إلى جمهور محتمل بحسب موضوعات القصة المعلنة، لا توصية مشاهدة ولا تأكيداً بأن الفيلم ينجح في تلبية توقعات أي فئة.\n\n## خلاصة حدود الأدلة\n\nالمتاح يكفي لتعريف عنوان الفيلم وسنته وتصنيفه العام وفكرته الأساسية وبعض أسماء الطاقم ومصدر الاقتباس. لكنه لا يكفي لإصدار مراجعة نهائية أو وصف تجربة مشاهدة أو اللعب؛ والعمل هنا فيلم لا لعبة. وبغياب فحص مستقل ومعلومات موثوقة أوسع عن التلقي والتنفيذ، تظل أي أحكام على الجودة أو التأثير تخميناً. لذا تقتصر هذه القراءة على الفصل بين الوقائع الواردة والأسئلة التي ما زالت مفتوحة.",
         "pros": [
-          "وصف معلن واضح لمحور اللعبة: بقاء مجتمع بشري وإدارة مدينة ومواردها في بيئة قاسية.",
-          "تذكر البيانات عناصر محددة تشمل التعامل مع الطقس والفصول والظروف الشديدة، ومراعاة معنويات السكان واحتياجاتهم.",
-          "تسجل قاعدة البيانات المطور Leikir Studio والمنصات: الحاسوب الشخصي وmacOS وLinux."
+          "الفكرة المعلنة تحدد بوضوح علاقة إرشاد بين جيك وابن أخيه مارك.",
+          "تذكر المادة الموسوعية أن الفيلم مقتبس من رواية أطفال منشورة عام 2017 لجوكو ويلينك.",
+          "تتوافر أسماء المخرج والكاتب وعدد من الممثلين الرئيسيين في المصادر."
         ],
         "cons": [
-          "لا تتضمن الأدلة تجربة لعب مستقلة تكفي للحكم على جودة التنفيذ أو توازن أنظمة الإدارة.",
-          "لا توجد معلومات موثقة كافية عن الأداء أو الإيقاع أو الصورة أو الصوت أو عمق السيناريوهات.",
-          "تاريخ الإصدار وتفاصيل النسخ والمحتوى النهائي غير محسومة في الملف المتاح."
+          "لا تتوافر مشاهدة مستقلة أو معلومات موثقة تسمح بتقييم الإخراج أو الصورة أو الصوت أو الإيقاع.",
+          "تفاصيل معالجة التنمر وتطور العلاقة ونهاية القصة غير محسومة في الملخصات المتاحة.",
+          "لا توجد أدلة كافية لاعتماد تقييم جماهيري أو استخلاص حكم نهائي على جودة الفيلم."
         ],
-        "title": "Synergy",
-        "type": "game",
-        "sourceId": "game:802181",
-        "sourceName": "RAWG",
-        "sourceUrl": "https://rawg.io/games/synergy-2",
-        "sourceRating": 2.04,
-        "sourceRatingScale": 5,
-        "sourceVoteCount": 23,
-        "sourceRatingCheckedAt": "2026-11-27T16:16:00.619Z",
-        "audienceScore": 4.1,
-        "releaseDate": "",
-        "poster": "https://media.rawg.io/media/screenshots/68b/68bcfe02c9b9b7123edab7ecce3f2660.jpg",
-        "backdrop": "https://media.rawg.io/media/screenshots/68b/68bcfe02c9b9b7123edab7ecce3f2660.jpg",
+        "title": "Way of the Warrior Kid",
+        "type": "movie",
+        "sourceId": "movie:1280115",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1280115",
+        "sourceRating": 7.422,
+        "sourceRatingScale": 10,
+        "sourceVoteCount": 45,
+        "sourceRatingCheckedAt": "2026-11-27T19:16:05.249Z",
+        "audienceScore": 7.4,
+        "releaseDate": "2026-11-24",
+        "poster": "https://image.tmdb.org/t/p/w780/atI81xXKNVah7PJFBo3aXqQKtnG.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/vOByLZRhCIIItlSlCT7bYbI9MYL.jpg",
         "genres": [
-          "Strategy",
-          "Simulation",
-          "Indie"
+          "Drama"
         ],
-        "platforms": [
-          "macOS",
-          "PC",
-          "Linux"
+        "platforms": [],
+        "cast": [
+          "Chris Pratt",
+          "Jude Hill",
+          "Linda Cardellini",
+          "Jocko Willink",
+          "Ava Torres",
+          "Levi McConaughey",
+          "Darien Sills-Evans",
+          "Carl McDowell"
         ],
-        "cast": [],
-        "crew": [],
+        "crew": [
+          "McG"
+        ],
         "tags": [
-          "Strategy",
-          "Simulation",
-          "Indie"
+          "Drama"
         ],
         "sources": [
           {
-            "name": "RAWG",
-            "url": "https://rawg.io/games/synergy-2",
-            "extract": "Humans live on a hostile planet. To ensure their survival, they must learn to survive in extreme weather conditions and in an environment that is not conducive to their development. Careful and pragmatic management of resources has become essential to the survival of human race, as has the morale of the population. Main Features Manage weather, seasons, extreme conditions and natural disasters. Build a city with the happiness of its inhabitants as its main goal. Explore and analyze their world in order to adapt the evolution of their city. Additional Features Respect the physical and mental needs of the inhabitants. Live in harmony with fauna and flora. Make short or long-term choices. Play different scenarios to enjoy various experiences. Sandbox mode: experiment with different combinations by yourself.",
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1280115",
+            "extract": "Jake is an injured Navy SEAL who becomes a mentor for his shy, struggling nephew Marc. Using the principles of his military training, Jake teaches Marc how to be a Warrior Kid as he enters high school.",
             "kind": "catalog-metadata"
           },
           {
             "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Synergy",
-            "extract": "Synergy is the concept that a combined effect of two or more entities is greater than the sum of their individual effects. The term synergy comes from the Attic Greek word συνεργία synergia from synergos, συνεργός, meaning \"working together\". Synergy is similar in concept to emergence.",
+            "url": "https://en.wikipedia.org/wiki/Way_of_the_Warrior_Kid",
+            "extract": "Way of the Warrior Kid is a 2026 American drama film directed by McG and written by Will Staples. It is based on the 2017 children's novel of the same name by Jocko Willink. It stars Chris Pratt, who also serves as a producer, alongside Jude Hill and Linda Cardellini. In the film, a bullied 13-year-old named Marc (Hill) learns to find his inner warrior over one summer with the help of his Navy SEAL uncle Jake (Pratt).",
             "kind": "encyclopedia"
           },
           {
-            "name": "YouTube — Goblinz Publishing",
-            "url": "https://www.youtube.com/watch?v=oiy0z5ibUGU",
-            "extract": "Verified public, embeddable promotional trailer: Synergy - Official Full Release Trailer",
+            "name": "YouTube — New Movie Trailers ",
+            "url": "https://www.youtube.com/watch?v=j1B3r3v6cLg",
+            "extract": "Verified public, embeddable promotional trailer: Way of the Warrior Kid (2026) || Official Trailer HD, Chris Pratt, Jude Hill, Linda Cardellini ",
             "kind": "promotional"
           }
         ],
-        "youtubeVideoId": "oiy0z5ibUGU",
-        "youtubeVideoTitle": "Synergy - Official Full Release Trailer",
+        "youtubeVideoId": "j1B3r3v6cLg",
+        "youtubeVideoTitle": "Way of the Warrior Kid (2026) || Official Trailer HD, Chris Pratt, Jude Hill, Linda Cardellini ",
         "reviewMode": "limited"
       },
       "lastError": null,
       "provider": "openai",
-      "tokens": 3483,
-      "articlePath": "src/content/reviews/game-synergy-802181.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-synergy-802181/"
+      "tokens": 7589,
+      "articlePath": "src/content/reviews/movie-way-of-the-warrior-kid-1280115.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-way-of-the-warrior-kid-1280115/"
     }
   },
   "providers": {},
@@ -4318,9 +4356,9 @@
       "tokens": 29680
     },
     "2026-11-27": {
-      "articles": 5,
-      "requests": 10,
-      "tokens": 25097
+      "articles": 6,
+      "requests": 13,
+      "tokens": 32686
     }
   },
   "history": []
