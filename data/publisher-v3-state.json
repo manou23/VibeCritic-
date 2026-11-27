@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-27T13:35:25.103Z",
+  "updatedAt": "2026-11-27T16:16:44.162Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -4111,155 +4111,168 @@
         "popularity": 40.1192,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-27T13:34:46.555Z",
-      "updatedAt": "2026-11-27T13:35:25.103Z",
+      "updatedAt": "2026-11-27T16:15:58.258Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "The Day of the Jackal",
-        "type": "series",
-        "collectedAt": "2026-11-27T13:34:47.039Z",
-        "sourceId": "series:222766",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/222766",
-        "overview": "An unrivalled and highly elusive lone assassin, the Jackal, makes his living carrying out hits for the highest fee. But following his latest kill, he meets his match in a tenacious British intelligence officer who starts to track down the Jackal in a thrilling cat-and-mouse chase across Europe, leaving destruction in its wake.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/222766",
-            "extract": "An unrivalled and highly elusive lone assassin, the Jackal, makes his living carrying out hits for the highest fee. But following his latest kill, he meets his match in a tenacious British intelligence officer who starts to track down the Jackal in a thrilling cat-and-mouse chase across Europe, leaving destruction in its wake.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/The_Day_of_the_Jackal",
-            "extract": "The Day of the Jackal is a 1971 political thriller novel by English author Frederick Forsyth about a professional assassin who is contracted by the OAS, a French dissident paramilitary organisation, to kill Charles de Gaulle, the president of France.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Paramount+ Global",
-            "url": "https://www.youtube.com/watch?v=HejGqY39nds",
-            "extract": "Verified public, embeddable promotional trailer: The Day | Official Trailer | Paramount+ UK & Ireland",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 1437 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "HejGqY39nds",
-        "youtubeVideoTitle": "The Day | Official Trailer | Paramount+ UK & Ireland",
-        "youtubeChannel": "Paramount+ Global",
-        "releaseDate": "2024-11-07",
-        "genres": [
-          "Drama",
-          "Action & Adventure",
-          "Mystery"
-        ],
-        "platforms": [],
-        "cast": [
-          "Eddie Redmayne",
-          "Lashana Lynch",
-          "Eleanor Matsuura",
-          "Chukwudi Iwuji",
-          "Úrsula Corberó",
-          "Adoney Díaz Barajas",
-          "David Gojković"
-        ],
-        "crew": [],
-        "rating": 8.234,
-        "ratingScale": 10,
-        "votes": 1437,
-        "poster": "https://image.tmdb.org/t/p/w780/tYLecM3WSEjlkKhkGiH5G68Dprm.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/enVrO8TRkdT8dmYXTfI4sEjR5Kp.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "The Day of the Jackal: مطاردة واعدة، وحكم تحكمه حدود الأدلة المتاحة",
-        "summary": "يقدّم The Day of the Jackal، وفق الوصف المنشور، مطاردة أوروبية بين قاتل مأجور بالغ المراوغة وضابطة استخبارات بريطانية تتعقبه بعد عملية قتل حديثة. هذه الفكرة تمنح المسلسل صراعاً واضحاً، وأسماء بطاقم تمثيل معروف، وتفتح مجالاً لدراما تشويق ومطاردة؛ لكنها لا تكفي وحدها لإثبات جودة الشخصيات أو التنفيذ البصري والصوتي أو ضبط الإيقاع. لذلك تتعامل هذه المراجعة مع المسلسل بوصفها تقييماً تحريرياً نهائياً لما تثبته حزمة الأدلة، لا ادعاءً بمشاهدة العمل أو فحص حلقاته. متوسط TMDB، البالغ 8.234 من 10 استناداً إلى 1437 صوتاً، مؤشر جماهيري ثانوي لا يحل محل حكم VibeCritic.",
-        "verdict": "يمتلك The Day of the Jackal أساساً درامياً واضحاً: قاتل محترف يعيش على تنفيذ الاغتيالات، ومحققة لا تتراجع عن تعقبه، ومطاردة عابرة لأوروبا تعد بتصعيد الخطر. هذه عناصر تصلح لمسلسل تشويق، ويمنحها الوصف الرسمي اتجاهاً مفهوماً، كما أن سجل الإصدار وأسماء الممثلين يثبتان أن الحديث عن عمل منشور لا مشروع قيد الانتظار. لكن الأدلة المتاحة لا تتجاوز الملخص والبيانات التعريفية ومعلومات المقطع الترويجي؛ لذلك لا تبرر حكماً جازماً على نجاح الإخراج أو الأداء أو الصورة أو الموسيقى أو الإيقاع. النتيجة إيجابية بحذر في الفكرة، ومتحفظة في المحاور التي لا يمكن التحقق منها. أوصي به مبدئياً لمن ينجذب إلى المطاردات التجسسية، مع التنبيه إلى أن هذه التوصية لا تقوم مقام تقييم مشاهدة تفصيلي.",
-        "body": "## مقدمة وسياق العمل\nصدر The Day of the Jackal في 7 نوفمبر 2024، ويصنفه سجل TMDB ضمن الدراما والحركة والمغامرة والغموض. الوصف المتاح يضع في المركز قاتلاً مأجوراً منفرداً يصعب تعقبه، ثم يقدّم ضابطة استخبارات بريطانية عنيدة بوصفها الطرف المقابل في مطاردة تنتقل عبر أوروبا. تلك معلومات تصلح لتحديد نوع العمل ورهانه الأساسي، لكنها لا تكشف كيف توزّع الحلقات أو كيف تتطور المطاردة فعلياً. لذلك فهذه مراجعة تحريرية نهائية لما يمكن إثباته من الملف، لا ادعاء بمشاهدة المسلسل أو فحص حلقاته. وتوجد مادة ترويجية رسمية بعنوان The Day | Official Trailer، منشورة على قناة Paramount+ Global، إلا أن بياناتها لا تتيح وحدها وصف لقطاتها أو الحكم على أسلوبها.\n\n## الفكرة والقصة أو التجربة\nتقوم الفكرة على مواجهة غير متكافئة ظاهرياً: رجل يتخذ القتل المأجور مهنة، ويعتمد على صعوبة الوصول إليه، في مقابل موظفة استخبارات تلاحقه بإصرار. ومن هنا ينشأ سؤال تشويقي مفهوم: هل تستطيع جهة التحقيق تضييق الخناق على شخص بنى عمله على الإفلات؟ يذكر الملخص أن المواجهة تبدأ بعد أحدث عملية قتل، وأن المطاردة تخلف دماراً في طريقها؛ لكنه لا يسمّي الضحية، ولا يوضح دوافع الطرفين أو تفاصيل التحقيق، فلا يجوز تحويل هذه الإشارات إلى أحداث محددة غير موثقة. قوة التصور في وضوح الصراع واتساع مسرحه الأوروبي، أما أصالته وعمقه فتبقيان غير محسومتين: فثنائية المطارد والمطارَد مألوفة في الإثارة، ولا تكفي الفكرة وحدها لمعرفة ما إذا كان المسلسل يطوّرها أو يكتفي بقواعدها المعتادة.\n\n## السرد والشخصيات أو تصميم اللعب\nلا يتعلق العمل بلعبة، لذا يتركز الحكم هنا على السرد والشخصيات. يقدم الملخص طرفين بوظيفتين دراميتين واضحتين: قاتل منفرد شديد المراوغة، وضابطة استخبارات مثابرة. هذه المقابلة تمنح القصة نقطة ارتكاز عملية، وتسمح من حيث البناء بتناوب محتمل بين التخطيط للجريمة وجهد تعقبها؛ غير أن ذلك احتمال تحليلي لا وصف مؤكد لما تعرضه الحلقات. لا تتوافر في الملف معلومات عن أسماء الشخصيات، أو ماضيها، أو علاقاتها، أو مسارات تطورها، ولا عن طريقة توزيع وجهات النظر. لذلك لا يمكن الجزم بأن الشخصيات معقدة أو أن دوافعها مقنعة، كما لا يصح اختزالها إلى أدوار مسطحة. وترد أسماء ممثلين، منهم إيدي ريدماين ولاشانا لينش وإليانور ماتسورا، لكن وجودهم في قائمة الطاقم لا يثبت وحده جودة الكتابة أو الأداء.\n\n## الإخراج والجوانب الفنية\nلا تتضمن الأدلة اسم مخرج أو كاتب أو معلومات عن فريق الإنتاج التفصيلي، ولا مراجعات مستقلة تصف قرارات الإخراج. وبناء عليه لا يصح نسبة أسلوب بعينه للمسلسل، أو الحديث عن معالجة ناجحة للتوتر، أو الادعاء بوجود خلل في المنطق أو التنفيذ. ما يمكن قوله هو أن فرضية المطاردة تضع أمام صناع العمل تحدياً معروفاً: الحفاظ على وضوح التحقيق مع إبقاء الطرف الهارب مقنعاً، ومنع تكرار المواجهة من إضعاف رهاناتها. ذلك معيار نقدي مناسب لهذا النوع، لا شهادة بأن المسلسل حققه. وعليه، تظل النتيجة في هذا المحور مفتوحة؛ فالمعلومات المتاحة ترسم المهمة الدرامية، لكنها لا تكشف القرارات التي اتخذها المخرجون أو أثرها الفعلي في المشاهدة.\n\n## الصورة والهوية البصرية\nتتسع المطاردة، وفق الوصف، عبر أوروبا، وهو ما يتيح للعمل نظرياً تنوعاً في الأمكنة وإمكانات لصنع هوية بصرية مرتبطة بالتنقل والملاحقة. لكن الاتساع الجغرافي في الملخص لا يثبت تنوع المواقع على الشاشة، ولا يخبرنا إن كانت الصورة تميز بين البيئات أو تستخدمها مجرد خلفيات. الملف يتضمن روابط لملصق وخلفية، إلا أن وجود مواد تعريفية ثابتة لا يكفي للحكم على التصوير أو الألوان أو تصميم الإنتاج في الحلقات. كما أن عنوان المقطع الترويجي لا يقدم وصفاً لمحتواه المرئي. لذا لا أنسب للمسلسل جماليات محددة، ولا أختلق ملاحظات عن الإضاءة أو المونتاج أو جودة الصورة. هذا نقص في قاعدة التقييم المتاحة، وليس دليلاً على أن الصورة ضعيفة؛ والحكم المنصف يتطلب مادة مرئية قابلة للفحص أو مصادر تصفها بوضوح.\n\n## الصوت والموسيقى والأداء\nيسجل الملف أسماء عدد من المشاركين في التمثيل، بينهم إيدي ريدماين ولاشانا لينش، لكنه لا يقدم معلومات عن طبيعة أدوارهم أو أداءهم، كما لا يورد أسماء ملحني الموسيقى أو مصممي الصوت. لذلك لا أساس للقول إن الأداء متقن أو متعثر، أو إن الموسيقى تضاعف التوتر، أو إن المؤثرات تعاني مشكلة. ويمكن فقط ملاحظة أن مركزية المطاردة تتيح نظرياً أهمية للصوت في التمييز بين الهدوء والخطر، لكن هذه ملاحظة عن إمكانات النوع لا وصف لما نسمعه في المسلسل. وحتى المقطع الرسمي، المتاح هنا بعنوانه وبيانات ناشره فقط، لا يوفر مادة موصوفة تكفي لتقييم الموسيقى أو الحوار. لذلك يبقى هذا المحور بلا حكم نوعي موثوق بدلاً من ملئه بانطباعات متخيلة.\n\n## الإيقاع والبناء وتنوع المحتوى\nتعد المطاردة الممتدة على نطاق أوروبي بامتداد سردي يتجاوز مواجهة واحدة، لكن الملف لا يذكر عدد الحلقات أو مددها أو بنية الموسم أو توزيع الأحداث. ولا يوضح إن كان السرد يتقدم بخط تصاعدي، أو يكرر دورة هروب وتعقب، أو يخصص مساحة متوازنة للطرفين. لذا لا يمكن وصف الإيقاع بالبطيء أو السريع، ولا الجزم بأن التنويع يحافظ على الاهتمام. مع ذلك، يمكن تحديد التحدي الذي يواجه هذا البناء: على مسلسل قائم على الترقب أن يقدم تطوراً ذا معنى في مسار المطاردة، لا مجرد تأجيل متكرر للحسم. هذه نقطة قياس نقدية لا اتهام بوقوع التكرار. درجتي هنا احترازية لأن المادة المتاحة لا تكشف الإيقاع الفعلي، ولا ينبغي تفسير التحفظ على أنه ملاحظة مشاهدة سلبية.\n\n## نقاط القوة\nأبرز ما يدعم العمل في حدود المعلومات المتاحة هو وضوح محركه الدرامي: خصم محترف ومتعقبة مصممة، بما يجعل طبيعة الصراع سهلة الفهم من دون حاجة إلى تفاصيل مخترعة. ثانياً، يمنح امتداد المطاردة عبر أوروبا الفكرة مجالاً جغرافياً أوسع من مواجهة محلية، وإن كان ذلك لا يثبت تنوعاً بصرياً في التنفيذ. ثالثاً، تصنيف المسلسل ضمن الدراما والحركة والمغامرة والغموض ينسجم مع مزيج المطاردة والتحقيق الذي يقدمه الملخص، ويحدد توقعات نوعية قابلة للفهم. رابعاً، تتضمن قائمة الطاقم أسماء معروفة مثل ريدماين ولينش، وهي معلومة ذات صلة باهتمام الجمهور، لا برهان مسبق على جودة الأداء. وأخيراً، يتيح وجود إعلان رسمي موثق التحقق من وجود مادة ترويجية صادرة عن جهة النشر، وإن لم يكن ذلك بديلاً عن تحليل محتواها.\n\n## نقاط الضعف\nأول تحفظ نقدي أن الفرضية، كما صيغت في الملخص، تستخدم قالب مطاردة معروفاً؛ لذا يقع على التنفيذ عبء تقديم ما يتجاوز التوتر الأساسي بين القاتل وملاحقته، ولا تكشف الأدلة إن كان قد فعل. وثانيها أن المعلومات المتاحة لا تمنح صورة عن دوافع الشخصيات أو تطورها، ما يجعل الحكم على عمقها غير ممكن، ويترك جانباً مهماً من قيمة الدراما بلا توثيق. وثالثها أن غياب بيانات تفصيلية عن الإخراج والصورة والصوت والإيقاع يمنع اختبار جودة التنفيذ عبر هذه المحاور. هذه النقاط لا تعني أن المسلسل يعاني فعلاً من عيوب إنتاجية أو سردية مؤكدة؛ إنها حدود نقدية لما يمكن نسبته إليه بأمانة. والخلط بين عدم توافر دليل على الجودة وبين ثبوت رداءة الجودة سيكون ظلماً للعمل مثلما أن مدحه بلا سند سيكون تضليلاً للقارئ.\n\n## لمن يناسب هذا العمل؟\nبحسب وصفه وتصنيفه، قد يناسب المسلسل من يبحث عن دراما جريمة وتشويق تتمحور حول مطاردة بين قاتل محترف وضابطة استخبارات، أو يفضل قصص المواجهة بين شخص يراوغ وجهة تحاول كشفه. كما أن الإشارة إلى مطاردة عابرة لأوروبا قد تجذب من يفضل الرهانات المتحركة على مكان واحد، لكن لا يمكن تقديم ذلك بوصفه ضماناً لتنوع المواقع أو الأحداث. أما من يريد توصية مبنية على تحليل مفصل للأداء، أو إخراج الحلقات، أو جودة الموسيقى والإيقاع، فلن يجد في هذه الحزمة ما يكفي لاتخاذ قرار حاسم. متوسط TMDB البالغ 8.234 من 10، مع 1437 صوتاً، يعكس استجابة مستخدمي المنصة فحسب؛ إنه مؤشر جماهيري ثانوي، لا درجة VibeCritic ولا بديلاً عن الحكم النقدي.\n\n## الحكم النهائي\nيقدم The Day of the Jackal نقطة انطلاق تشويقية واضحة ومفهومة، وتمنحه مواجهة القاتل المراوغ وضابطة الاستخبارات المتعقبة أساساً صالحاً لمسلسل مطاردة، مع نطاق أوروبي يوسع إطار الفكرة. لكن وضوح الفرضية لا يثبت فرادة الكتابة أو نجاح الأداء، ولا يكشف الملف المتاح ما إذا كان الإخراج والصورة والصوت والإيقاع يرفعون المادة أو يحدون منها. لهذا يأتي الحكم إيجابياً بحذر على التصور، ومتحفظاً على التنفيذ الذي لا تسنده معلومات كافية. الدرجات المرفقة تعكس هذا التفاوت: تقييم القصة يستند إلى الملخص الموثق، أما الدرجات المحايدة في الجوانب التي لم توصف فهي احتراز لغياب الدليل، وليست ادعاءً بأن تلك العناصر متوسطة الجودة بعد المشاهدة. التوصية الأنسب هي اعتباره خياراً محتملاً لمحبي التشويق التجسسي، مع عدم تقديم هذا التقييم بديلاً عن مراجعة مشاهدة مباشرة.",
-        "scores": {
-          "story": 7,
-          "visuals": 5,
-          "sound": 5,
-          "pacing": 5
-        },
-        "pros": [
-          "صراع مركزي واضح بين قاتل مأجور مراوغ وضابطة استخبارات تتعقبه.",
-          "مطاردة موصوفة بأنها تمتد عبر أوروبا، بما يوسّع إطار الفكرة الجغرافي.",
-          "تصنيف موثق يجمع الدراما والحركة والمغامرة والغموض، ومتسق مع أساس المطاردة والتحقيق.",
-          "قائمة طاقم تضم إيدي ريدماين ولاشانا لينش وإليانور ماتسورا، وهي أسماء موثقة للجمهور المهتم بالتمثيل."
-        ],
-        "cons": [
-          "الفرضية، كما تظهر في الملخص وحده، تعتمد قالب المطاردة المألوف، ولا تتوافر أدلة تثبت مقدار تجديد المسلسل له.",
-          "لا يقدم ملف الأدلة تفاصيل كافية عن دوافع الشخصيات أو تطورها للحكم على عمق الكتابة.",
-          "لا تتوافر أوصاف موثوقة تكفي لتقييم الصورة أو الموسيقى أو الأداء أو الإيقاع؛ لذا تبقى جوانب أساسية من التنفيذ غير محسومة."
-        ],
-        "title": "The Day of the Jackal",
-        "type": "series",
-        "sourceId": "series:222766",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/222766",
-        "sourceRating": 8.234,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 1437,
-        "sourceRatingCheckedAt": "2026-11-27T13:34:47.039Z",
-        "audienceScore": 8.2,
-        "releaseDate": "2024-11-07",
-        "poster": "https://image.tmdb.org/t/p/w780/tYLecM3WSEjlkKhkGiH5G68Dprm.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/enVrO8TRkdT8dmYXTfI4sEjR5Kp.jpg",
-        "genres": [
-          "Drama",
-          "Action & Adventure",
-          "Mystery"
-        ],
-        "platforms": [],
-        "cast": [
-          "Eddie Redmayne",
-          "Lashana Lynch",
-          "Eleanor Matsuura",
-          "Chukwudi Iwuji",
-          "Úrsula Corberó",
-          "Adoney Díaz Barajas",
-          "David Gojković"
-        ],
-        "crew": [],
-        "tags": [
-          "Drama",
-          "Action & Adventure",
-          "Mystery"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/222766",
-            "extract": "An unrivalled and highly elusive lone assassin, the Jackal, makes his living carrying out hits for the highest fee. But following his latest kill, he meets his match in a tenacious British intelligence officer who starts to track down the Jackal in a thrilling cat-and-mouse chase across Europe, leaving destruction in its wake.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/The_Day_of_the_Jackal",
-            "extract": "The Day of the Jackal is a 1971 political thriller novel by English author Frederick Forsyth about a professional assassin who is contracted by the OAS, a French dissident paramilitary organisation, to kill Charles de Gaulle, the president of France.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Paramount+ Global",
-            "url": "https://www.youtube.com/watch?v=HejGqY39nds",
-            "extract": "Verified public, embeddable promotional trailer: The Day | Official Trailer | Paramount+ UK & Ireland",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "HejGqY39nds",
-        "youtubeVideoTitle": "The Day | Official Trailer | Paramount+ UK & Ireland",
-        "reviewMode": "review",
-        "score": 5.6
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 6041,
       "articlePath": "src/content/reviews/series-the-day-of-the-jackal-222766.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-the-day-of-the-jackal-222766/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-the-day-of-the-jackal-222766/",
+      "publishedAt": "2026-11-27T16:15:58.258Z"
+    },
+    "game:802181": {
+      "key": "game:802181",
+      "type": "game",
+      "id": "802181",
+      "title": "Synergy",
+      "item": {
+        "type": "game",
+        "id": "802181",
+        "name": "Synergy",
+        "date": "2024-05-21",
+        "popularity": 1034,
+        "source": "RAWG"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-27T16:15:59.850Z",
+      "updatedAt": "2026-11-27T16:16:44.162Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Synergy",
+        "type": "game",
+        "collectedAt": "2026-11-27T16:16:00.619Z",
+        "sourceId": "game:802181",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/synergy-2",
+        "overview": "Humans live on a hostile planet. To ensure their survival, they must learn to survive in extreme weather conditions and in an environment that is not conducive to their development. Careful and pragmatic management of resources has become essential to the survival of human race, as has the morale of the population. Main Features Manage weather, seasons, extreme conditions and natural disasters. Build a city with the happiness of its inhabitants as its main goal. Explore and analyze their world in order to adapt the evolution of their city. Additional Features Respect the physical and mental needs of the inhabitants. Live in harmony with fauna and flora. Make short or long-term choices. Play different scenarios to enjoy various experiences. Sandbox mode: experiment with different combinations by yourself.",
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/synergy-2",
+            "extract": "Humans live on a hostile planet. To ensure their survival, they must learn to survive in extreme weather conditions and in an environment that is not conducive to their development. Careful and pragmatic management of resources has become essential to the survival of human race, as has the morale of the population. Main Features Manage weather, seasons, extreme conditions and natural disasters. Build a city with the happiness of its inhabitants as its main goal. Explore and analyze their world in order to adapt the evolution of their city. Additional Features Respect the physical and mental needs of the inhabitants. Live in harmony with fauna and flora. Make short or long-term choices. Play different scenarios to enjoy various experiences. Sandbox mode: experiment with different combinations by yourself.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Synergy",
+            "extract": "Synergy is the concept that a combined effect of two or more entities is greater than the sum of their individual effects. The term synergy comes from the Attic Greek word συνεργία synergia from synergos, συνεργός, meaning \"working together\". Synergy is similar in concept to emergence.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Goblinz Publishing",
+            "url": "https://www.youtube.com/watch?v=oiy0z5ibUGU",
+            "extract": "Verified public, embeddable promotional trailer: Synergy - Official Full Release Trailer",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "limited",
+        "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
+        "youtubeVideoId": "oiy0z5ibUGU",
+        "youtubeVideoTitle": "Synergy - Official Full Release Trailer",
+        "youtubeChannel": "Goblinz Publishing",
+        "releaseDate": "",
+        "genres": [
+          "Strategy",
+          "Simulation",
+          "Indie"
+        ],
+        "platforms": [
+          "macOS",
+          "PC",
+          "Linux"
+        ],
+        "developers": [
+          "Leikir Studio"
+        ],
+        "rating": 2.04,
+        "ratingScale": 5,
+        "votes": 23,
+        "poster": "https://media.rawg.io/media/screenshots/68b/68bcfe02c9b9b7123edab7ecce3f2660.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "Synergy: ملامح لعبة إدارة وبقاء وحدود ما تثبته الأدلة",
+        "summary": "Synergy لعبة مصنفة ضمن الاستراتيجية والمحاكاة والألعاب المستقلة، وتعرض بياناتها التعريفية عالماً يعيش فيه البشر على كوكب قاسٍ، حيث ترتبط استمرارية المجتمع بإدارة الموارد ومواجهة الظروف المناخية والاهتمام بمعنويات السكان. وتشير المادة المتاحة إلى بناء مدينة، واستكشاف البيئة وتحليلها، ومراعاة احتياجات السكان والتفاعل مع الحياة الطبيعية، مع سيناريوهات متعددة ونمط لعب حر. تذكر البيانات الحاسوب الشخصي وmacOS وLinux، وتسمّي Leikir Studio مطوراً. لكن المتاح هنا أوصاف قاعدة بيانات ومادة موسوعية وإشارة إلى إعلان ترويجي فقط؛ لا يقدم ذلك تجربة مستقلة للعب أو أدلة كافية على جودة التنفيذ، ولا يحسم تفاصيل الإصدار أو الأداء أو عمق الأنظمة.",
+        "verdict": "هذه قراءة محدودة لما تتيحه البيانات المنشورة، وليست مراجعة لعب ولا حكماً نهائياً على Synergy. يمكن تأكيد الإطار العام المعلن: لعبة استراتيجية ومحاكاة عن بقاء البشر على كوكب معادٍ، وإدارة مدينة ومواردها، مع اهتمام معلن بمعنويات السكان واحتياجاتهم وبالبيئة المحيطة. كما تتوفر معلومات عن المطور والمنصات، وإشارة إلى إعلان ترويجي رسمي. لكن لا توجد ضمن الأدلة تجربة مستقلة مباشرة، ولا معلومات كافية لتقييم كيفية تنفيذ هذه الأفكار أو مدى توازنها ووضوحها واستمراريتها. لذلك لا يصح تحويل الوصف التسويقي أو بيانات التصنيف إلى حكم على جودة اللعبة، وتبقى الخلاصة مؤقتة ومشروطة بظهور أدلة أوسع.",
+        "body": "## ما الذي نعرفه عن العمل؟\n\nSynergy لعبة، وتضعها البيانات المتاحة ضمن فئات الاستراتيجية والمحاكاة والألعاب المستقلة. ويصفها سجل قاعدة البيانات RAWG بوصفها تجربة تدور حول بشر يعيشون على كوكب معادٍ، ويحتاجون إلى تدبير مواردهم والتكيف مع ظروف صعبة كي يضمنوا بقاء مجتمعهم. هذا هو الإطار العام الذي يمكن نقله بأمان؛ أما تفاصيل العالم والشخصيات وتسلسل اللعب فلا تظهر في المواد المقدمة بما يسمح بوصفها على نحو أوسع.\n\nالمعلومات التعريفية تذكر الحاسوب الشخصي وmacOS وLinux ضمن المنصات، وتسمّي Leikir Studio مطوراً. لا يحدد ملف الأدلة تاريخ إصدار، ولا يورد معلومات تفصيلية عن النسخ أو متطلبات التشغيل. كما أن وجود إعلان ترويجي رسمي كامل الإصدار من قناة Goblinz Publishing يثبت وجود مادة ترويجية بهذا الوصف، لكنه لا يثبت وحده محتوى اللعبة الكامل أو خصائصها العملية.\n\n## القصة أو الفكرة المعلنة\n\nالفكرة المعلنة تضع إدارة المجتمع في بيئة قاسية في مركز التجربة. وفق وصف قاعدة البيانات، يتطلب البقاء التعامل مع الطقس والفصول والظروف الشديدة والكوارث الطبيعية، إلى جانب إدارة الموارد ومراعاة معنويات السكان. ويتصل بذلك بناء مدينة يكون هدفها المعلن سعادة سكانها، واستكشاف العالم وتحليله كي يتكيف تطور المدينة معه.\n\nويضيف الوصف عناصر تتعلق بالاحتياجات الجسدية والنفسية للسكان، والعيش بانسجام مع النباتات والحيوانات، واتخاذ خيارات قصيرة أو طويلة المدى. كما يذكر سيناريوهات مختلفة ونمطاً حراً يتيح تجربة تركيبات متنوعة. ينبغي فهم هذه النقاط باعتبارها خصائص واردة في وصف قاعدة البيانات، لا باعتبارها نتائج تحقق منها محرر عبر اللعب. ولا تكفي المادة لتحديد كيفية تفاعل الأنظمة فعلياً أو مدى اتساع الخيارات أو أثرها في مجريات كل تجربة.\n\n## معلومات الإنتاج والطاقم\n\nالمعلومة الإنتاجية المحددة في الملف هي اسم المطور Leikir Studio. ويُذكر Goblinz Publishing بوصفه القناة التي نشرت الإعلان الترويجي المسمى Official Full Release Trailer؛ ولا يقدم الملف تفاصيل إضافية عن أدوار الناشر أو فريق التطوير، لذا لا ينبغي توسيع تلك المعلومة إلى وصف غير موثق لمسؤوليات الإنتاج.\n\nلا يتضمن الملف تاريخ إصدار، أو أسماء أفراد من فريق العمل، أو معلومات عن مراحل التطوير. وترد المنصات الثلاث في البيانات التعريفية، لكن لا توجد تفاصيل موثقة هنا عن اختلاف النسخ بينها أو خصائص كل نسخة. كذلك لا يوفر الإعلان، بمجرد الإشارة إلى وجوده، أساساً للحديث عن جودة الصورة أو الصوت أو الإخراج؛ ولم تُقدَّم مادته بوصفها مشاهدة تحريرية مستقلة.\n\n## ما الذي يمكن تأكيده؟\n\nيمكن تأكيد أن Synergy معرّفة كلعبة استراتيجية ومحاكاة، وأن وصفها المنشور يربط البقاء بإدارة الموارد والمدينة والظروف البيئية ومعنويات السكان. ويمكن تأكيد ورود عناصر مثل استكشاف العالم، وتحليل البيئة، ومراعاة حاجات السكان، والسيناريوهات المتعددة والنمط الحر في الوصف نفسه. ويمكن أيضاً تأكيد اسم المطور والمنصات المسجلة ووجود إعلان ترويجي رسمي موصوف بأنه إعلان الإطلاق الكامل.\n\nهذه التأكيدات تخص ما تقوله المواد المتاحة عن اللعبة، ولا تعني أن كل خاصية اختُبرت بصورة مستقلة أو أن وصف الناشر أو قاعدة البيانات يمثل حكماً نقدياً. وتحتوي المادة الموسوعية المرفقة على تعريف عام لمفهوم التآزر، لا معلومات موثقة عن اللعبة نفسها. لذلك لا يصح استخدامها لإضافة قصة أو موضوعات أو تفاصيل إنتاجية إلى ملف العمل.\n\n## ما الذي لا نعرفه بعد؟\n\nلا تتيح الأدلة حسم جودة التنفيذ، أو مدى عمق أنظمة الإدارة، أو وضوح واجهات اللعب، أو توازن الموارد والخيارات، أو تنوع السيناريوهات فعلياً. ولا تتضمن شهادة لعب مستقلة يمكن الاستناد إليها للحكم على الصعوبة أو الإيقاع أو مقدار التكرار أو استقرار الأداء. ولا توجد معلومات كافية عن أسلوب العرض البصري أو تصميم الصوت، ولذلك لا يجوز استنتاج جودتهما من صورة الملصق أو من وجود إعلان ترويجي.\n\nكما لا يثبت وصف النوع وحده أن اللعبة تنجح في تقديم تجربة استراتيجية متماسكة، ولا يثبت الحديث عن سعادة السكان أن أثرها قابل للقياس أو مؤثر في اللعب على نحو معين. لا تتوافر هنا أدلة كافية على استقبال الجمهور؛ والبيانات المحدودة عن الآراء لا تشكل عينة مسنودة تسمح بتعميم حكم. ولا يحسم الملف تاريخ الإصدار أو تفاصيل المحتوى المتاح في النسخة النهائية.\n\n## لمن قد يهم هذا العمل؟\n\nقد يلفت Synergy انتباه من يبحثون عن ألعاب استراتيجية أو محاكاة تتمحور فكرتها المعلنة حول بناء مدينة في بيئة صعبة، وإدارة مواردها مع مراعاة السكان والظروف الطبيعية. كذلك قد يجد المهتمون بألعاب البقاء ذات القرارات بعيدة الأثر أو بالنمط الحر سبباً لمتابعة معلومات موثقة إضافية عن اللعبة. هذا وصف للفئات التي قد تجد الفكرة ذات صلة باهتماماتها، وليس توصية مبنية على تجربة أو ادعاء بأن اللعبة تلبي توقعاتها.\n\n## خلاصة حدود الأدلة\n\nالمتاح يرسم تصوراً أولياً لموضوع Synergy وبعض خصائصها المعلنة، ويحدد مطورها ومنصاتها، لكنه لا يتجاوز ذلك إلى تقييم مستقل. ومن ثم تبقى المسائل الأهم لمن يفكر في اللعب، ومنها جودة التنفيذ والتوازن والأداء والتجربة الفعلية، بلا حسم في ملف الأدلة الحالي.",
+        "pros": [
+          "وصف معلن واضح لمحور اللعبة: بقاء مجتمع بشري وإدارة مدينة ومواردها في بيئة قاسية.",
+          "تذكر البيانات عناصر محددة تشمل التعامل مع الطقس والفصول والظروف الشديدة، ومراعاة معنويات السكان واحتياجاتهم.",
+          "تسجل قاعدة البيانات المطور Leikir Studio والمنصات: الحاسوب الشخصي وmacOS وLinux."
+        ],
+        "cons": [
+          "لا تتضمن الأدلة تجربة لعب مستقلة تكفي للحكم على جودة التنفيذ أو توازن أنظمة الإدارة.",
+          "لا توجد معلومات موثقة كافية عن الأداء أو الإيقاع أو الصورة أو الصوت أو عمق السيناريوهات.",
+          "تاريخ الإصدار وتفاصيل النسخ والمحتوى النهائي غير محسومة في الملف المتاح."
+        ],
+        "title": "Synergy",
+        "type": "game",
+        "sourceId": "game:802181",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/synergy-2",
+        "sourceRating": 2.04,
+        "sourceRatingScale": 5,
+        "sourceVoteCount": 23,
+        "sourceRatingCheckedAt": "2026-11-27T16:16:00.619Z",
+        "audienceScore": 4.1,
+        "releaseDate": "",
+        "poster": "https://media.rawg.io/media/screenshots/68b/68bcfe02c9b9b7123edab7ecce3f2660.jpg",
+        "backdrop": "https://media.rawg.io/media/screenshots/68b/68bcfe02c9b9b7123edab7ecce3f2660.jpg",
+        "genres": [
+          "Strategy",
+          "Simulation",
+          "Indie"
+        ],
+        "platforms": [
+          "macOS",
+          "PC",
+          "Linux"
+        ],
+        "cast": [],
+        "crew": [],
+        "tags": [
+          "Strategy",
+          "Simulation",
+          "Indie"
+        ],
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/synergy-2",
+            "extract": "Humans live on a hostile planet. To ensure their survival, they must learn to survive in extreme weather conditions and in an environment that is not conducive to their development. Careful and pragmatic management of resources has become essential to the survival of human race, as has the morale of the population. Main Features Manage weather, seasons, extreme conditions and natural disasters. Build a city with the happiness of its inhabitants as its main goal. Explore and analyze their world in order to adapt the evolution of their city. Additional Features Respect the physical and mental needs of the inhabitants. Live in harmony with fauna and flora. Make short or long-term choices. Play different scenarios to enjoy various experiences. Sandbox mode: experiment with different combinations by yourself.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Synergy",
+            "extract": "Synergy is the concept that a combined effect of two or more entities is greater than the sum of their individual effects. The term synergy comes from the Attic Greek word συνεργία synergia from synergos, συνεργός, meaning \"working together\". Synergy is similar in concept to emergence.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Goblinz Publishing",
+            "url": "https://www.youtube.com/watch?v=oiy0z5ibUGU",
+            "extract": "Verified public, embeddable promotional trailer: Synergy - Official Full Release Trailer",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "oiy0z5ibUGU",
+        "youtubeVideoTitle": "Synergy - Official Full Release Trailer",
+        "reviewMode": "limited"
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 3483,
+      "articlePath": "src/content/reviews/game-synergy-802181.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-synergy-802181/"
     }
   },
   "providers": {},
@@ -4305,9 +4318,9 @@
       "tokens": 29680
     },
     "2026-11-27": {
-      "articles": 4,
-      "requests": 8,
-      "tokens": 21614
+      "articles": 5,
+      "requests": 10,
+      "tokens": 25097
     }
   },
   "history": []
