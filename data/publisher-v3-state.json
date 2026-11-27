@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-26T19:16:47.948Z",
+  "updatedAt": "2026-11-27T07:17:19.681Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -3893,160 +3893,185 @@
         "popularity": 79.469,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-26T19:16:02.936Z",
-      "updatedAt": "2026-11-26T19:16:47.947Z",
+      "updatedAt": "2026-11-27T07:16:11.765Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "Wicker",
-        "type": "movie",
-        "collectedAt": "2026-11-26T19:16:03.770Z",
-        "sourceId": "movie:1195803",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/movie/1195803",
-        "overview": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/movie/1195803",
-            "extract": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Wicker",
-            "extract": "Wicker is a method of weaving used to make products such as furniture and baskets, as well as a descriptor to classify such products. It is the oldest furniture-making method, dating as far back as c. 3000 BC. Wicker was first documented in ancient Egypt, then having been made from pliable plant material, but in modern times it is made from any pliable, easily woven material. The word wicker or \"wisker\" is believed to be of Scandinavian origin: vika, which means \"to fold\" in Swedish. Wicker is traditionally made of plant-based material, such as willow, rattan, reed, and bamboo, though the term also applies to products woven from synthetic fibers. Wicker is light yet sturdy, making it suitable for items that will be moved often like porch and patio furniture. Rushwork and wickerwork are terms used in England. A typical braiding pattern is called Wiener Geflecht, Viennese braiding, as it was invented in 18th century Vienna and later most prominently used with the Thonet coffeehouse chair.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — EclipsePicturesIE",
-            "url": "https://www.youtube.com/watch?v=g1lW7ijSKBc",
-            "extract": "Verified public, embeddable promotional trailer: WICKER - Official Trailer - In Cinemas October 30",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "limited",
-        "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
-        "youtubeVideoId": "g1lW7ijSKBc",
-        "youtubeVideoTitle": "WICKER - Official Trailer - In Cinemas October 30",
-        "youtubeChannel": "EclipsePicturesIE",
-        "releaseDate": "2026-10-21",
-        "genres": [
-          "Romance",
-          "Fantasy",
-          "Comedy"
-        ],
-        "platforms": [],
-        "cast": [
-          "Olivia Colman",
-          "Alexander Skarsgård",
-          "Peter Dinklage",
-          "Elizabeth Debicki",
-          "Marli Siu",
-          "Nabhaan Rizwan",
-          "Richard E. Grant",
-          "Phil Daniels"
-        ],
-        "crew": [
-          "Eleanor Wilson",
-          "Alex Huston Fischer",
-          "Alex Huston Fischer",
-          "Eleanor Wilson"
-        ],
-        "rating": 7.6,
-        "ratingScale": 10,
-        "votes": 71,
-        "poster": "https://image.tmdb.org/t/p/w780/6FcBZOKvyrLCKGCyBG0ySCR4okt.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/r4DTGm1f1r23cyjRJ5kFMh7qYlj.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "Wicker: قراءة معلوماتية محدودة في قصة رومانسية خيالية",
-        "summary": "Wicker فيلم تدرجه قاعدة البيانات ضمن الرومانسية والخيال والكوميديا. وتعرض مادته التعريفية حكاية امرأة تعمل صيادة قرب قرية ساحلية، تواجه سخرية جيرانها ثم تطلب صنع زوج من الخوص، فيثير ذلك غضباً وغيرة وفوضى في البلدة. تسرد البيانات أسماء ممثلين، كما تورد اسمَي Eleanor Wilson وAlex Huston Fischer ضمن الطاقم من دون تحديد مهامهما. يوجد إعلان ترويجي رسمي بحسب وصف المصدر، لكن مادته لا تكفي هنا لوصف مشاهده أو الحكم على تنفيذ الفيلم. كذلك لا تتوفر أدلة مشاهدة مستقلة أو قاعدة تصويت جماهيري كافية؛ لذلك تظل هذه قراءة لما هو معلن ومسجل، لا مراجعة للتجربة.",
-        "verdict": "تقتصر الخلاصة الممكنة على أن Wicker يُقدَّم بوصفه فيلماً رومانسياً خيالياً كوميدياً، وأن فكرته المعلنة تجمع بين صيادة تتعرض للاستهزاء وطلب غير مألوف لصنع زوج من الخوص، ثم ردود فعل مضطربة في مجتمع محافظ. هذه عناصر موثقة في وصف قاعدة البيانات، لكنها لا تكشف كيف عولجت على الشاشة ولا ما إذا كانت القصة متماسكة أو مؤثرة. لا تتضمن المواد المتاحة مشاهدة نقدية مستقلة، ولا تصويتاً جماهيرياً كافياً لتأسيس حكم موثوق. لذا فهذه قراءة محدودة للمعلومات المنشورة، ولا تمنح حكماً نهائياً على جودة الفيلم أو ملاءمته الفنية.",
-        "body": "## ما الذي نعرفه عن العمل؟\n\nWicker فيلم تدرجه قاعدة البيانات المتاحة ضمن ثلاثة أنواع: الرومانسية والخيال والكوميديا. هذه تصنيفات وصفية من المصدر، وليست دليلاً مستقلاً على طبيعة التجربة أو نجاح مزج الأنواع. يقدم سجل قاعدة البيانات تاريخ إصدار هو 21 أكتوبر 2026، فيما يعلن عنوان المادة الترويجية عن عرض في دور السينما في 30 أكتوبر، من دون أن يوضح المقتطف سنة ذلك الموعد. لا تتيح الأدلة حسم سبب اختلاف التاريخين أو تحديد موعد العرض الفعلي اعتماداً عليهما وحدهما.\n\nالمتاح أيضاً وصف موجز للحكاية، وقائمة بأسماء ممثلين، وإشارة إلى إعلان رسمي ترويجي من قناة EclipsePicturesIE. لا يتضمن ذلك مراجعة مشاهدة أو شهادة مستقلة على التنفيذ. كما أن وجود عنوان إعلان لا يبرر وصف لقطاته أو استخلاص ملاحظات عن الصورة والمونتاج والأداء؛ فالمعلومات المتاحة هنا تثبت وجود مادة ترويجية فقط.\n\n## القصة أو الفكرة المعلنة\n\nبحسب الوصف المنشور في قاعدة البيانات، تعيش صيادة على أطراف قرية بمحاذاة البحر، ويصفها النص بأنها عفنة، عزباء، وموضع سخرية دائمة. وعندما تضيق ذرعاً بجيرانها الذين يصورهم الوصف بأنهم ضيقو الأفق ومحافظون، تطلب صنع زوج لها من الخوص. ثم تقول المادة إن هذه الرومانسية غير المألوفة تثير الغضب والغيرة والفوضى في البلدة.\n\nهذا ملخص للفكرة المعلنة، لا سرد كامل للأحداث. لا يشرح المصدر كيف يُصنع الزوج أو كيف تتطور العلاقة، ولا يحدد طبيعة الفوضى أو أسباب مواقف الشخصيات بالتفصيل. كما لا يبين إن كانت صياغة الوصف تستخدم عناصر حرفية أو مجازية، أو مقدار حضور الخيال والكوميديا في الحكاية. لذلك لا يصح تحويل الملخص إلى توقعات مؤكدة عن النبرة أو المعالجة أو خاتمة الفيلم.\n\n## معلومات الإنتاج والطاقم\n\nتسرد قاعدة البيانات أسماء Olivia Colman وAlexander Skarsgård وPeter Dinklage وElizabeth Debicki وMarli Siu وNabhaan Rizwan وRichard E. Grant وPhil Daniels ضمن الممثلين. تثبت القائمة ورود هذه الأسماء في السجل، لكنها لا تحدد أدوارهم أو حجم مشاركة كل منهم، ولا تسمح باستنتاج مستوى الأداء أو طبيعة الشخصيات.\n\nأما خانة الطاقم فتورد Eleanor Wilson وAlex Huston Fischer، ويظهر كل اسم مرتين في البيانات المقدمة. لا تُذكر المسميات الوظيفية المرتبطة بهما، ولذلك لا يمكن الجزم من هذه المادة وحدها بمن تولى الإخراج أو الكتابة أو غيرهما. كذلك لا تقدم الأدلة تفاصيل موثقة عن بلد الإنتاج أو مدته أو ميزانيته أو جهة توزيعه. ولا تسجل منصات مشاهدة متاحة؛ وغياب المنصات من هذا الملف لا يثبت أن الفيلم غير متاح عليها.\n\n## ما الذي يمكن تأكيده؟\n\nيمكن تأكيد أن عنوان الفيلم هو Wicker، وأن سجل قاعدة البيانات يصنفه ضمن الرومانسية والخيال والكوميديا، وأن وصفه المعلن يدور حول صيادة وطلب صنع زوج من الخوص ورد فعل مجتمعها. ويمكن تأكيد ورود قائمة الممثلين والأسماء المسجلة للطاقم، مع التحفظ على أن الأدوار الوظيفية غير محددة. كما يثبت المصدر الترويجي وجود إعلان رسمي منشور، لا محتواه التفصيلي ولا دلالته الفنية.\n\nوتتضمن البيانات رقماً لتقييم الجمهور وعدداً من الأصوات، لكن المشاركة المسجلة لا تبلغ الحد الأدنى المطلوب، وهو مئة صوت، كي تعد دليلاً جماهيرياً كافياً هنا. لذلك لا يُعامل ذلك الرقم بوصفه حكماً تحريرياً أو خلاصة موثوقة لتلقي الجمهور. أما الموسوعة الواردة ضمن ملف المصادر فتتناول معنى الخوص وصناعته عموماً، ولا تقدم معلومات عن الفيلم؛ لذا لا تُستخدم لإثبات تفاصيل إنتاجه أو أحداثه.\n\n## ما الذي لا نعرفه بعد؟\n\nلا تسمح المواد المتاحة بتقييم الإخراج أو جودة الصورة أو الصوت أو الإيقاع، ولا توضح كيف نُفذت عناصر الخيال أو كيف كُتبت الشخصيات والحوار. ولا توجد مشاهدة مستقلة يمكن الاستناد إليها للحديث عن تماسك الحبكة أو أثرها أو جودة الأداء. كذلك لا نعرف من هذه الأدلة ما إذا كان الوصف يطابق الفيلم كاملاً، أم يختصر جانباً واحداً من قصته.\n\nيبقى موعد العرض غير محسوم بسبب اختلاف التاريخ المسجل عن التاريخ الوارد في عنوان الإعلان، كما لا يوضح الملف تفاصيل الأدوار أو الاعتمادات الوظيفية للطاقم. ولا تتوفر معلومات كافية عن الاستقبال النقدي أو الجمهور، أو عن الإتاحة والمنصات. هذه فجوات في الأدلة، وليست عيوباً مثبتة في الفيلم.\n\n## لمن قد يهم هذا العمل؟\n\nقد يلفت وصف الفكرة انتباه من يبحثون عن حكاية رومانسية ذات فرضية خيالية، أو عن صدام بين رغبة شخصية وأعراف مجتمع محلي. وقد تهم قائمة الممثلين من يتابع أعمال الأسماء الواردة، لكن ورود الاسم وحده لا يثبت حجم الدور ولا طبيعة التجربة. هذه مؤشرات على نوع الاهتمام الممكن، وليست توصية مشاهدة أو ضماناً بأن الفيلم يحقق توقعات فئة بعينها.\n\n## خلاصة حدود الأدلة\n\nالمتاح يرسم تصوراً أولياً عن النوع والفكرة وبعض أسماء المشاركين، ولا يتجاوز ذلك إلى فحص الفيلم نفسه. لذلك ينبغي الفصل بين وصف قاعدة البيانات، والإعلان الترويجي، وأي حكم نقدي مستقل لم توفره المصادر. وحتى ظهور معلومات أو مراجعات موثوقة إضافية، تظل الأسئلة المتعلقة بالتنفيذ والتلقي والموعد الفعلي مفتوحة.",
-        "pros": [
-          "الفكرة المعلنة محددة: صيادة تطلب صنع زوج من الخوص.",
-          "تسجل قاعدة البيانات تصنيفات الرومانسية والخيال والكوميديا.",
-          "تورد المصادر قائمة بأسماء ممثلين، وتثبت وجود إعلان ترويجي رسمي."
-        ],
-        "cons": [
-          "لا تتوفر مشاهدة مستقلة تتيح تقييم الإخراج أو الصورة أو الصوت أو الإيقاع.",
-          "الأدوار الوظيفية لأسماء الطاقم غير موضحة، كما لا تحدد البيانات أدوار الممثلين.",
-          "تاريخ العرض غير محسوم بسبب اختلاف التاريخ المسجل عن التاريخ الوارد في عنوان الإعلان.",
-          "المعلومات المتاحة عن تصويت الجمهور غير كافية لتأسيس مؤشر موثوق."
-        ],
-        "title": "Wicker",
-        "type": "movie",
-        "sourceId": "movie:1195803",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/movie/1195803",
-        "sourceRating": 7.6,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 71,
-        "sourceRatingCheckedAt": "2026-11-26T19:16:03.770Z",
-        "audienceScore": 7.6,
-        "releaseDate": "2026-10-21",
-        "poster": "https://image.tmdb.org/t/p/w780/6FcBZOKvyrLCKGCyBG0ySCR4okt.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/r4DTGm1f1r23cyjRJ5kFMh7qYlj.jpg",
-        "genres": [
-          "Romance",
-          "Fantasy",
-          "Comedy"
-        ],
-        "platforms": [],
-        "cast": [
-          "Olivia Colman",
-          "Alexander Skarsgård",
-          "Peter Dinklage",
-          "Elizabeth Debicki",
-          "Marli Siu",
-          "Nabhaan Rizwan",
-          "Richard E. Grant",
-          "Phil Daniels"
-        ],
-        "crew": [
-          "Eleanor Wilson",
-          "Alex Huston Fischer",
-          "Alex Huston Fischer",
-          "Eleanor Wilson"
-        ],
-        "tags": [
-          "Romance",
-          "Fantasy",
-          "Comedy"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/movie/1195803",
-            "extract": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Wicker",
-            "extract": "Wicker is a method of weaving used to make products such as furniture and baskets, as well as a descriptor to classify such products. It is the oldest furniture-making method, dating as far back as c. 3000 BC. Wicker was first documented in ancient Egypt, then having been made from pliable plant material, but in modern times it is made from any pliable, easily woven material. The word wicker or \"wisker\" is believed to be of Scandinavian origin: vika, which means \"to fold\" in Swedish. Wicker is traditionally made of plant-based material, such as willow, rattan, reed, and bamboo, though the term also applies to products woven from synthetic fibers. Wicker is light yet sturdy, making it suitable for items that will be moved often like porch and patio furniture. Rushwork and wickerwork are terms used in England. A typical braiding pattern is called Wiener Geflecht, Viennese braiding, as it was invented in 18th century Vienna and later most prominently used with the Thonet coffeehouse chair.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — EclipsePicturesIE",
-            "url": "https://www.youtube.com/watch?v=g1lW7ijSKBc",
-            "extract": "Verified public, embeddable promotional trailer: WICKER - Official Trailer - In Cinemas October 30",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "g1lW7ijSKBc",
-        "youtubeVideoTitle": "WICKER - Official Trailer - In Cinemas October 30",
-        "reviewMode": "limited"
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 3881,
       "articlePath": "src/content/reviews/movie-wicker-1195803.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-wicker-1195803/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-wicker-1195803/",
+      "publishedAt": "2026-11-27T07:16:11.765Z"
+    },
+    "series:244447": {
+      "key": "series:244447",
+      "type": "series",
+      "id": "244447",
+      "title": "The Hunting Wives",
+      "item": {
+        "type": "series",
+        "id": "244447",
+        "name": "The Hunting Wives",
+        "date": "2025-07-21",
+        "preview": false,
+        "popularity": 44.5744,
+        "source": "TMDB"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-27T07:16:13.465Z",
+      "updatedAt": "2026-11-27T07:17:19.681Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "The Hunting Wives",
+        "type": "series",
+        "collectedAt": "2026-11-27T07:16:13.880Z",
+        "sourceId": "series:244447",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/244447",
+        "overview": "Sophie trades New England for East Texas and falls into a wealthy socialite's magnetic orbit — where a clique of housewives hide deadly secrets.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/244447",
+            "extract": "Sophie trades New England for East Texas and falls into a wealthy socialite's magnetic orbit — where a clique of housewives hide deadly secrets.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/The_Hunting_Wives",
+            "extract": "The Hunting Wives is an American drama television series based on the novel of the same name by May Cobb. It stars Brittany Snow, Malin Åkerman, Evan Jonigkeit, Katie Lowes, George Ferrier, Dermot Mulroney, Jaime Ray Newman, and Chrissy Metz. The series premiered on Netflix on July 21, 2025. In September 2025, the series was renewed for a second season which premiered on November 26, 2026. In October 2026, ahead of the second season premiere, the series was renewed for a third season.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — AfricaOnNetflix",
+            "url": "https://www.youtube.com/watch?v=iWwtXRz6edc",
+            "extract": "Verified public, embeddable promotional trailer: The Hunting Wives: Season 2 | Official Trailer | AfricaOnNetflix",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 119 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "iWwtXRz6edc",
+        "youtubeVideoTitle": "The Hunting Wives: Season 2 | Official Trailer | AfricaOnNetflix",
+        "youtubeChannel": "AfricaOnNetflix",
+        "releaseDate": "2025-07-21",
+        "genres": [
+          "Drama",
+          "Mystery"
+        ],
+        "platforms": [],
+        "cast": [
+          "Brittany Snow",
+          "Malin Akerman",
+          "Dermot Mulroney",
+          "Jaime Ray Newman",
+          "George Ferrier",
+          "Evan Jonigkeit",
+          "Alex Fitzalan",
+          "Jaime Ray Newman"
+        ],
+        "crew": [],
+        "rating": 7,
+        "ratingScale": 10,
+        "votes": 119,
+        "poster": "https://image.tmdb.org/t/p/w780/iKL02GmejLCGBJr7XHU82vvqA1C.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/6PerjrTmwTNiRcfn0SpjU8N9Nio.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "The Hunting Wives: Season 2 — تشويق اجتماعي واعد، وحكم تحدّه قلة التفاصيل الموثقة",
+        "summary": "تملك The Hunting Wives فرضية يسهل تمييزها: انتقال صوفي من نيو إنجلاند إلى شرق تكساس، ثم انجذابها إلى دائرة اجتماعية ثرية تخفي أسراراً قاتلة. هذا المزج بين الدراما والغموض يمنح المسلسل نقطة انطلاق واضحة، ويتيح قراءة التفاوت الطبقي والجاذبية الاجتماعية بوصفهما جزءاً من بنية التشويق، لا مجرد خلفية. لكن الأدلة المتاحة لا تعرض حبكة الموسم الثاني بالتفصيل، ولا تقدم معلومات موثقة عن بناء حلقاته أو إخراجه أو صورته أو موسيقاه. لذلك تأتي هذه المراجعة حكماً تحريرياً نهائياً على ما يمكن إثباته، لا ادعاءً بمشاهدة العمل ولا تعويضاً تخمينياً عن التفاصيل الغائبة. المحصلة: أساس سردي جذاب، فيما تظل جودة التنفيذ غير قابلة للتثبت بما يكفي.",
+        "verdict": "لدى The Hunting Wives أساس واضح يصلح لدراما غموض اجتماعية: وافدة إلى شرق تكساس تدخل مدار مجموعة ثرية، وفي قلب هذه الدائرة أسرار ذات عواقب قاتلة. هذه الفرضية تمنح العمل مجالاً لاستكشاف الإغراء والانتماء والسلطة، وتوفر سبباً مقنعاً لمتابعة ما قد ينكشف. إلا أن الملف لا يورد وقائع كافية عن أحداث الموسم الثاني أو تحولات شخصياته أو خيارات صانعيه كي يُنسب إليه نجاح درامي أو فني محدد. كما أن وجود إعلان رسمي وتجديد لموسم لاحق يثبتان نشاط العمل واستمراره، لا جودته. حكمي النهائي إيجابي بحذر تجاه الفكرة، ومتحفظ تجاه التنفيذ: أوصي به لمن تجذبه دراما الأسرار والعلاقات داخل جماعة مغلقة، مع التنبيه إلى أن هذه التوصية لا تقوم على تقييم موثق لأداء الموسم حلقةً حلقة.",
+        "body": "## مقدمة وسياق العمل\nThe Hunting Wives مسلسل درامي يتقاطع مع الغموض، مقتبس، وفق المعلومات الموسوعية الواردة في الملف، من رواية تحمل العنوان نفسه لماي كوب. بدأت السلسلة في يوليو 2025، ويذكر المصدر ذاته أن الموسم الثاني عُرض في نوفمبر 2026، بعد تجديد العمل لموسم ثالث قبل عرضه. ويتضمن الملف إعلاناً رسمياً للموسم الثاني منشوراً عبر قناة AfricaOnNetflix. هذه الوقائع تحدد موضع العمل زمنياً وتؤكد وجود موسم جديد، لكنها لا تكفي وحدها لتقييم جودته. لذلك أتعامل هنا مع الموسم الثاني بوصفه موضوع المراجعة، وأفصل بين ما تثبته المواد المتاحة وبين ما يمكن استنتاجه بحذر من فرضية السلسلة العامة.\n\nهذه مراجعة تحريرية نهائية في حدود الوثائق المتاحة، لا شهادة مشاهدة شخصية. لا يتضمن الملف ملخصاً تفصيلياً للموسم الثاني، أو مراجعات نقدية مستقلة لمشاهديه، أو معلومات عن فريق الإخراج والكتابة، ولا وصفاً موثقاً للحلقات. ومن ثم لا يصح اختراع محطات قصصية أو وصف أداء بعينه أو إصدار أحكام تقنية على الصورة والصوت. هذا القيد لا يلغي إمكان تحليل الفكرة، لكنه يضبط مدى الثقة في الحكم على التنفيذ؛ فالمراجعة المنصفة لا تحول غياب الأدلة إلى مديح أو ذم جازم.\n\n## الفكرة والقصة أو التجربة\nتتمحور الفرضية المنشورة حول صوفي، التي تنتقل من نيو إنجلاند إلى شرق تكساس، ثم تقع في مدار امرأة اجتماعية ثرية ومجموعة من ربات البيوت اللواتي يخفين أسراراً قاتلة. هذه نقطة انطلاق محددة جغرافياً واجتماعياً: انتقال بين منطقتين، واحتكاك وافدة بدائرة تملك نفوذاً وامتيازاً، ثم تهديد ينشأ من داخل تلك الدائرة. اجتماع الجاذبية الاجتماعية والخطر يهيئ لتوتر بين الرغبة في الانتماء والريبة من الأشخاص الذين يتيحون هذا الانتماء.\n\nلكن الوصف لا يوضح كيف تتطور صوفي، ولا ما إذا كان الموسم الثاني يواصل هذه الفرضية أو يغير اتجاهها، ولا طبيعة الأسرار أو نتائجها. لذلك يمكن الثناء على قابلية الفكرة لإنتاج أسئلة عن الثقة والسلطة والحدود، لا على حبكة محددة لم يوردها الملف. كما أن عناصر «الجماعة الثرية» و«الأسرار القاتلة» مألوفة في دراما الغموض؛ ويكمن التحدي في خصوصية المعالجة، وهي أمر لا تسمح الأدلة المتاحة بالحكم عليه.\n\n## السرد والشخصيات أو تصميم اللعب\nهذا مسلسل، ولذلك ينصب التقييم على السرد والشخصيات لا على آليات لعب. يورد الملف أسماء مجموعة من الممثلين، من بينهم بريتاني سنو ومالين أكيرمان وديرموت مولروني وجايمي راي نيومان وجورج فيرير وإيفان جونيكيت، لكنه لا يحدد أدوارهم ولا يشرح علاقاتهم أو مساراتهم في الموسم الثاني. كذلك يظهر اسم جايمي راي نيومان مكرراً في قائمة الطاقم؛ لذا لا ينبغي التعامل مع القائمة بوصفها خريطة موثوقة للشخصيات أو توزيعاً كاملاً للأدوار.\n\nيمكن استنتاج أن الفرضية تتيح شبكة علاقات تتجاوز بطلة واحدة، لأن الوصف يذكر جماعة وأسراراً مشتركة، إلا أن هذا لا يثبت جودة بناء الشخصيات أو توازن حضورها. لا تتوفر شواهد على تطور صوفي، أو على دوافع عضوات المجموعة، أو على مقدار ما يمنحه السرد للمشاهد من معلومات. وبناءً على ذلك، تبقى قوة المسلسل السردية احتمالاً تدعمه الفكرة، لا نتيجة مثبتة تدعمها تفاصيل الحلقات.\n\n## الإخراج والجوانب الفنية\nلا يسرد الملف أسماء المخرجين أو كتّاب الحلقات أو المنتجين، ولا يتضمن وصفاً موثقاً للقرارات الإخراجية. لذلك لا أستطيع نسبة أسلوب بصري بعينه إلى العمل، أو الادعاء بأن إدارة التوتر ناجحة أو متعثرة، أو تقييم كيفية انتقاله بين الدراما والغموض. وجود إعلان رسمي للموسم الثاني يثبت توافر مادة ترويجية منشورة، لكنه ليس بديلاً عن تحليل مشاهد محددة، كما أن عنوان الإعلان لا يكشف وحده طبيعة المونتاج أو الإيقاع أو بنية الحلقة.\n\nالحكم المنضبط هنا ليس أن الإخراج ضعيف، بل أن الدليل لا يكفي لوصفه. وهذا فارق جوهري: غياب المعلومات في الملف لا يثبت غياب الجودة في العمل. ومن منظور تحريري، تظل الهوية الدرامية واضحة على مستوى النوع والفرضية، أما ما إذا كان التنفيذ يمنحها نبرة خاصة أو يكتفي بمكونات مألوفة فلا يمكن حسمه بأمانة.\n\n## الصورة والهوية البصرية\nتحدد معلومات العمل بيئة القصة في شرق تكساس، وتورد مواد مصورة ترويجية، لكنها لا تقدم تحليلاً للألوان أو تصميم المواقع أو الأزياء أو التصوير. لا يصح، مثلاً، تحويل الموقع الجغرافي إلى وصف لصور المسلسل، أو الجزم بأن التباين بين نيو إنجلاند وتكساس يظهر بصرياً بطريقة معينة. المكان عنصر معلن في الفرضية؛ أما حضوره في الكادر وكيفية توظيفه فمسألتان تحتاجان إلى مشاهدة موثقة أو مصادر نقدية موثوقة غير موجودة هنا.\n\nلهذا لا أستطيع القول إن للمسلسل هوية بصرية مميزة، كما لا أستطيع اتهامه بالافتقار إليها. الملصق والخلفية المدرجان في البيانات مادتا تعريف، لا دليل كافٍ على جودة التصوير داخل الحلقات. والنتيجة أن هذا المحور يظل الأقل قابلية للتقييم: توجد خلفية مكانية يمكن أن تكون ذات قيمة درامية، لكن لا توجد تفاصيل تثبت أنها تحولت إلى اختيار فني فعّال.\n\n## الصوت والموسيقى والأداء\nتسجل البيانات أسماء الممثلين الرئيسيين، وهو ما يثبت وجود طاقم تمثيل معروف، لكنه لا يتيح حكماً على أدائهم. لا تتوفر أدوار مفصلة، أو مشاهد محددة، أو مراجعات مستقلة تناقش الانسجام بين الممثلين أو درجات الأداء. ومن غير الدقيق أن أصف حضور أي ممثل بأنه قوي أو ضعيف اعتماداً على الاسم وحده؛ فالتقييم يتطلب شواهد على ما يقدمه داخل العمل، لا على شهرته أو أعماله السابقة.\n\nولا يقدم الملف معلومات عن الموسيقى أو تصميم الصوت أو المزج أو الأداء الصوتي. لذلك لا يمكن نسبة توتر موسيقي أو استخدام مؤثرات أو خلل سمعي إلى المسلسل. الإعلان الرسمي لا يحل هذه الفجوة ما لم تتوفر مادة قابلة للتحليل التفصيلي، ولا يورد الملف وصفاً لها. النتيجة ليست انتقاصاً من الممثلين أو الفريق الصوتي، بل امتناع عن تحويل عناصر مجهولة إلى انطباعات مختلقة.\n\n## الإيقاع والبناء وتنوع المحتوى\nلا تتضمن الأدلة عدد حلقات الموسم الثاني أو مددها أو ملخصاتها، ولا تصف ترتيب الكشف عن الأسرار أو توزيع خطوط الحكاية. لذا لا يمكن تحديد ما إذا كان الإيقاع متسارعاً أو متراخياً، أو ما إذا كانت الحلقات تنتهي على نقاط جذب، أو ما إذا كان المسلسل يوازن بين العلاقات الاجتماعية والغموض. فرضية الجماعة وأسرارها تتيح، نظرياً، أكثر من مسار للشخصيات، لكن إمكان التنوع لا يثبت أن البناء يحققه فعلاً.\n\nاستمرار السلسلة إلى موسم ثانٍ وثالث معلومة عن مسار الإنتاج والاستقبال المؤسسي، لا ضمانة على أن كل موسم يجد إيقاعه أو يطوّر مادته. ومن ثم لا أتعامل مع التجديد بوصفه دليلاً نقدياً على الجودة. درجة هذا المحور تحفظية لأن السجل لا يعرض بنية يمكن فحصها؛ وأي ادعاء أدق عن التكرار أو التصاعد أو الحشو سيتجاوز ما تسمح به المعلومات.\n\n## نقاط القوة\n- فرضية سهلة التحديد تجمع انتقال صوفي إلى بيئة جديدة بدخولها دائرة اجتماعية ثرية تحيط بها أسرار قاتلة.\n- التقاء الدراما بالغموض يمنح الفكرة أكثر من مدخل: العلاقات والانتماء من جهة، والريبة وكشف المستور من جهة أخرى.\n- تحديد نيو إنجلاند وشرق تكساس يمنح نقطة التحول الجغرافي حضوراً واضحاً في تعريف العمل، حتى إن تفاصيل استخدام المكان غير متاحة.\n- وجود طاقم معلن يضم أسماء متعددة، إلى جانب إعلان رسمي للموسم الثاني، يجعل هوية المشروع وموقعه ضمن سلسلة مستمرة واضحين للقارئ.\n\n## نقاط الضعف\n- الوصف المتاح يثبت الفرضية العامة، لكنه لا يبين ما يميز حبكة الموسم الثاني عن القوالب المألوفة لدراما الأسرار داخل جماعة مغلقة.\n- لا توجد معلومات كافية عن الشخصيات أو أدوار الممثلين أو تحولات الموسم، ما يمنع إثبات عمق البناء الدرامي أو نجاحه.\n- لا يقدم الملف شواهد نقدية أو فنية على الإخراج والصورة والموسيقى والإيقاع؛ لذلك تظل جوانب أساسية من التجربة غير قابلة للتحقق.\n- التباس نطاق بعض البيانات، ومنها تكرار اسم في قائمة الطاقم وورود وصف عام للسلسلة بجوار إعلان الموسم الثاني، يفرض الحذر عند نقل التفاصيل إلى هذا الموسم تحديداً.\n\n## لمن يناسب هذا العمل؟\nقد يجذب المسلسل من يفضلون الدراما الاجتماعية الممزوجة بالغموض، وخصوصاً من تثير اهتمامهم العلاقات داخل دوائر ميسورة، وشخصية وافدة تحاول فهم بيئة جديدة، وأسرار تهدد تماسك جماعة. هذه توصية مبنية على الوصف الرسمي لا على ادعاء تجربة مباشرة؛ لذلك لا أستطيع أن أعد المشاهد بإيقاع سريع أو أداء مميز أو خاتمة مرضية. ومن يبحث عن تقييم تفصيلي لتطور الموسم الثاني حلقةً حلقة، أو يريد قرار مشاهدة قائماً على تحليل مستقل للأداء والإخراج، سيحتاج إلى مصادر إضافية موثقة. أما من تكفيه الفرضية بوصفها سبباً لاستكشاف العمل، فالعناصر المعلنة تمنحه نقطة بداية معقولة.\n\n## الحكم النهائي\nThe Hunting Wives يملك نواة درامية واضحة: صوفي تنتقل إلى مكان جديد، تنجذب إلى محيط اجتماعي مغلق، ثم تصطدم بأسرار ذات طابع قاتل. هذه النواة مناسبة للدراما والغموض وتفتح باباً لأسئلة عن النفوذ والانتماء والثقة. لكنها لا تكشف وحدها إن كان الموسم الثاني قد صاغ شخصيات مقنعة أو حافظ على توتر متماسك أو تميز فنياً. لذلك يستند الحكم الإيجابي الحذر إلى وضوح الفكرة واستمرار المشروع، بينما يظل تقدير التنفيذ محدوداً بسبب نقص الوقائع المنشورة في الملف. أوصي به لمحبّي هذا النوع بوصفه خياراً ذا فرضية جذابة، لا بوصفه إنجازاً مثبتاً في التمثيل أو الصورة أو الإيقاع. ويجب قراءة الدرجات أدناه على هذا الأساس التحريري المتحفظ، لا كادعاء مشاهدة مباشرة.",
+        "scores": {
+          "story": 6.2,
+          "visuals": 5.5,
+          "sound": 5.5,
+          "pacing": 5.5
+        },
+        "pros": [
+          "فرضية محددة تجمع انتقال صوفي إلى شرق تكساس بدخولها دائرة اجتماعية ثرية تخفي أسراراً قاتلة.",
+          "امتزاج الدراما بالغموض يتيح مساحة محتملة للتوتر بين العلاقات الاجتماعية وكشف الأسرار.",
+          "وجود انتقال جغرافي معلن بين نيو إنجلاند وشرق تكساس يمنح نقطة الانطلاق إطاراً واضحاً.",
+          "توثيق إعلان رسمي للموسم الثاني وقائمة بأسماء طاقم التمثيل يثبتان هوية المشروع واستمراره."
+        ],
+        "cons": [
+          "لا يقدم الملف حبكة الموسم الثاني أو تفاصيل أحداثه، لذلك لا يمكن إثبات تميز السرد أو تطور الشخصيات.",
+          "لا تتوفر معلومات كافية عن الإخراج أو التصوير أو الموسيقى أو الأداء تسمح بحكم إيجابي أو سلبي على هذه العناصر.",
+          "ترتكز الفرضية على مكونات مألوفة في دراما الأسرار، ولا توضح الأدلة ما الذي يجعل معالجتها خاصة.",
+          "تكرار اسم في قائمة الطاقم وغياب تحديد الأدوار يحدان من دقة الاستدلال على توزيع الشخصيات."
+        ],
+        "title": "The Hunting Wives",
+        "type": "series",
+        "sourceId": "series:244447",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/244447",
+        "sourceRating": 7,
+        "sourceRatingScale": 10,
+        "sourceVoteCount": 119,
+        "sourceRatingCheckedAt": "2026-11-27T07:16:13.880Z",
+        "audienceScore": 7,
+        "releaseDate": "2025-07-21",
+        "poster": "https://image.tmdb.org/t/p/w780/iKL02GmejLCGBJr7XHU82vvqA1C.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/6PerjrTmwTNiRcfn0SpjU8N9Nio.jpg",
+        "genres": [
+          "Drama",
+          "Mystery"
+        ],
+        "platforms": [],
+        "cast": [
+          "Brittany Snow",
+          "Malin Akerman",
+          "Dermot Mulroney",
+          "Jaime Ray Newman",
+          "George Ferrier",
+          "Evan Jonigkeit",
+          "Alex Fitzalan",
+          "Jaime Ray Newman"
+        ],
+        "crew": [],
+        "tags": [
+          "Drama",
+          "Mystery"
+        ],
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/244447",
+            "extract": "Sophie trades New England for East Texas and falls into a wealthy socialite's magnetic orbit — where a clique of housewives hide deadly secrets.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/The_Hunting_Wives",
+            "extract": "The Hunting Wives is an American drama television series based on the novel of the same name by May Cobb. It stars Brittany Snow, Malin Åkerman, Evan Jonigkeit, Katie Lowes, George Ferrier, Dermot Mulroney, Jaime Ray Newman, and Chrissy Metz. The series premiered on Netflix on July 21, 2025. In September 2025, the series was renewed for a second season which premiered on November 26, 2026. In October 2026, ahead of the second season premiere, the series was renewed for a third season.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — AfricaOnNetflix",
+            "url": "https://www.youtube.com/watch?v=iWwtXRz6edc",
+            "extract": "Verified public, embeddable promotional trailer: The Hunting Wives: Season 2 | Official Trailer | AfricaOnNetflix",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "iWwtXRz6edc",
+        "youtubeVideoTitle": "The Hunting Wives: Season 2 | Official Trailer | AfricaOnNetflix",
+        "reviewMode": "review",
+        "score": 5.7
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 6373,
+      "articlePath": "src/content/reviews/series-the-hunting-wives-244447.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-the-hunting-wives-244447/"
     }
   },
   "providers": {},
@@ -4090,6 +4115,11 @@
       "articles": 6,
       "requests": 12,
       "tokens": 29680
+    },
+    "2026-11-27": {
+      "articles": 1,
+      "requests": 2,
+      "tokens": 6373
     }
   },
   "history": []
