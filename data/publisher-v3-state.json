@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-28T07:16:48.808Z",
+  "updatedAt": "2026-11-28T07:37:03.265Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -4200,146 +4200,171 @@
         "popularity": 57.772,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-28T07:16:14.304Z",
-      "updatedAt": "2026-11-28T07:16:48.808Z",
+      "updatedAt": "2026-11-28T07:35:48.706Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "The Daily Life of a Part-time Torturer",
-        "type": "series",
-        "collectedAt": "2026-11-28T07:16:14.915Z",
-        "sourceId": "series:305163",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/305163",
-        "overview": "In a society where torture is legal—and big business—Spirytus dominates the industry with skill, style, and surprisingly cheerful teamwork. Part-timers Cero, Shiu, Mikke, and Hugh tackle “client sessions,” office shenanigans, and even the occasional in-house assassin…all with a smile! Life at Spirytus proves that even in a world of pain, work can still be surprisingly fun!",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/305163",
-            "extract": "In a society where torture is legal—and big business—Spirytus dominates the industry with skill, style, and surprisingly cheerful teamwork. Part-timers Cero, Shiu, Mikke, and Hugh tackle “client sessions,” office shenanigans, and even the occasional in-house assassin…all with a smile! Life at Spirytus proves that even in a world of pain, work can still be surprisingly fun!",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/The_Daily_Life_of_a_Part-time_Torturer",
-            "extract": "The Daily Life of a Part-time Torturer is a Japanese manga series written and illustrated by Yawora Tsugumi. It began serialization on Hakusensha's Manga Park and Young Animal Web services in December 2022. It has been compiled into eight volumes as of June 2026. An anime television series adaptation produced by Diomedéa aired from January to March 2026.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Crunchyroll",
-            "url": "https://www.youtube.com/watch?v=EIJOU7qjq6s",
-            "extract": "Verified public, embeddable promotional trailer: The Daily Life of a Part-Time Torturer | Official Trailer | Crunchyroll",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "limited",
-        "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
-        "youtubeVideoId": "EIJOU7qjq6s",
-        "youtubeVideoTitle": "The Daily Life of a Part-Time Torturer | Official Trailer | Crunchyroll",
-        "youtubeChannel": "Crunchyroll",
-        "releaseDate": "2026-01-05",
-        "genres": [
-          "Animation",
-          "Comedy",
-          "Sci-Fi & Fantasy"
-        ],
-        "platforms": [],
-        "cast": [
-          "Shunichi Toki",
-          "Takuma Terashima",
-          "Takuma Nagatsuka",
-          "Yohei Azakami",
-          "Kisho Taniyama",
-          "Rikuya Yasuda"
-        ],
-        "crew": [],
-        "rating": 6.929,
-        "ratingScale": 10,
-        "votes": 14,
-        "poster": "https://image.tmdb.org/t/p/w780/2oDNkS1JCIgQmX0aC6S67DgrG4w.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/gAwem2a2dFEpH8tKopWkqc9FwG9.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "The Daily Life of a Part-time Torturer: قراءة معلوماتية محدودة الأدلة",
-        "summary": "The Daily Life of a Part-time Torturer مسلسل أنمي مقتبس من مانغا يابانية بالعنوان نفسه، كتبها ورسمها ياوورا تسوغومي. تدور الفكرة المعلنة في مجتمع أصبح فيه التعذيب قانونياً ومجالاً تجارياً، وتتابع موظفين بدوام جزئي يعملون لدى شركة Spirytus. تصنف قاعدة البيانات العمل ضمن الرسوم المتحركة والكوميديا والخيال العلمي والفانتازيا، وتذكر أسماء ستة ممثلين صوتيين، من دون تحديد أدوارهم. وتفيد المادة الموسوعية بأن الأنمي عُرض بين يناير ومارس 2026، وأن المانغا بدأت تسلسلها في ديسمبر 2022. هذه معلومات وصفية محدودة؛ لا تتضمن المصادر مشاهدة نقدية مستقلة أو بيانات كافية لتقييم التنفيذ أو تجربة الجمهور.",
-        "verdict": "هذه قراءة معلوماتية محدودة، وليست مراجعة مشاهدة أو حكماً نهائياً على المسلسل. ما يمكن قوله بثقة هو أن العمل اقتباس أنمي لمانغا يابانية، وأن وصفه المعلن يجمع بين بيئة عمل تقوم على التعذيب القانوني وبين تقديم كوميدي لشخصيات موظفة بدوام جزئي. لكن ذلك يعرّف الفكرة والتصنيف، ولا يثبت نجاح المعالجة أو توازنها أو جودة عناصرها الفنية. لا تتيح الأدلة المتاحة حسم مستوى الإخراج أو الصورة أو الصوت أو الإيقاع أو الأداء، كما لا توفر تقييماً جماهيرياً مدعوماً بما يكفي. لذلك يظل الحكم على قيمة المشاهدة مؤجلاً إلى أن تتوفر مشاهدة مستقلة ومعلومات أوسع.",
-        "body": "## ما الذي نعرفه عن العمل؟\n\nThe Daily Life of a Part-time Torturer مسلسل رسوم متحركة تلفزيوني ياباني، وله أصل مانغا بالعنوان نفسه. تصفه قاعدة بيانات TMDB بأنه عمل يجمع الرسوم المتحركة والكوميديا والخيال العلمي والفانتازيا؛ وهذه تصنيفات مدرجة في قاعدة البيانات، وليست بحد ذاتها دليلاً على كيفية ظهور تلك الأنواع في الحلقات أو مدى نجاح المزج بينها. وتذكر المادة الموسوعية أن اقتباس الأنمي عُرض من يناير إلى مارس 2026. كما تسجل قاعدة البيانات تاريخ 5 يناير 2026، من دون تفاصيل إضافية تشرح المقصود بهذا التاريخ أو جدول العرض، لذا لا ينبغي استنتاج معلومات عن عدد الحلقات أو وتيرة صدورها.\n\nهذه القراءة تستند إلى وصف قاعدة بيانات، ومادة موسوعية، وإشارة إلى إعلان ترويجي رسمي من Crunchyroll. وجود الإعلان يثبت توفر مادة ترويجية، لكنه لا يجعلها بديلاً عن مشاهدة العمل كاملاً، ولا يسمح بوصف جميع مشاهده أو الحكم على مستوى تنفيذه. كذلك لا تتضمن المصادر المتاحة مراجعة مستقلة أو إفادات موثقة من مشاهدين يمكن الاستناد إليها لتقدير تجربة المتابعة.\n\n## القصة أو الفكرة المعلنة\n\nبحسب ملخص TMDB، تقع الأحداث في مجتمع صار فيه التعذيب قانونياً ونشاطاً تجارياً كبيراً. وتتمحور الفكرة حول شركة Spirytus، التي يصفها الملخص بأنها بارزة في هذا المجال، وحول عاملين بدوام جزئي هم Cero وShiu وMikke وHugh. وتشمل المهام الموصوفة جلسات مع العملاء، ومواقف مكتبية، واحتمال ظهور قاتل داخل الشركة. ويقدم الملخص هذه الحياة المهنية بلهجة مرحة، واضعاً التباين بين عالم قائم على الألم وبين أجواء العمل المبهجة في قلب الفكرة المعلنة.\n\nهذا عرض موجز صادر عن قاعدة بيانات، وليس سرداً تفصيلياً للحبكة. لا يوضح كيف تتطور الشخصيات أو ما إذا كانت الحلقات تتبع خطاً قصصياً متصلاً، كما لا يشرح طبيعة معالجة العنف أو حدود المزاح في العمل. لذلك يمكن نقل الفرضية العامة والتوصيف الوارد في الملخص، لكن لا يمكن التعامل معهما بوصفهما وصفاً كاملاً لكل ما يقدمه المسلسل أو حكماً مستقلاً على نبرته الفعلية.\n\n## معلومات الإنتاج والطاقم\n\nتقول المادة الموسوعية إن المانغا من كتابة ورسم ياوورا تسوغومي، وإن تسلسلها بدأ في ديسمبر 2022 على خدمتي Manga Park وYoung Animal Web التابعتين لـHakusensha. وتذكر المادة نفسها أن المانغا جُمعت في ثمانية مجلدات حتى يونيو 2026. أما مسلسل الأنمي فتذكر أنه من إنتاج Diomedéa. هذه بيانات عن الأصل والجهة المنتجة وتاريخ النشر كما وردت في المصدر، ولا تكفي وحدها لاستنتاج مدى أمانة الاقتباس أو اختياراته الفنية.\n\nتسجل قاعدة البيانات أسماء Shunichi Toki وTakuma Terashima وTakuma Nagatsuka وYohei Azakami وKisho Taniyama وRikuya Yasuda ضمن طاقم التمثيل. لا يربط الملف هذه الأسماء بشخصيات محددة، ولا يقدم معلومات تفصيلية عن بقية فريق الإنتاج؛ كما أن خانة الطاقم التقني خالية. لذا يقتصر الممكن على نقل أسماء الممثلين المذكورين، لا وصف أدائهم أو تحديد مسؤوليات لم ترد في الأدلة.\n\n## ما الذي يمكن تأكيده؟\n\nيمكن تأكيد أن العمل مسلسل أنمي مقتبس من مانغا، وأن المانغا يابانية وأن ياوورا تسوغومي كاتبها ورسّامها وفق المادة الموسوعية. ويمكن تأكيد وجود فكرة معلنة عن شركة تعمل في مجتمع يُعد فيه التعذيب قانونياً وتجارياً، مع شخصيات بدوام جزئي، استناداً إلى ملخص قاعدة البيانات. كما يمكن إثبات أن المصدر الموسوعي يذكر عرض الأنمي في الفترة من يناير إلى مارس 2026، وأن قاعدة البيانات تدرج تصنيفات نوعية وأسماء ممثلين صوتيين.\n\nويؤكد الملف كذلك وجود إعلان ترويجي رسمي منشور على قناة Crunchyroll. لا تتجاوز هذه النقاط حدود ما تقوله المصادر: فهي تثبت بيانات تعريفية ووصفاً ترويجياً، ولا تثبت رأياً تحريرياً حول جودة العمل. كما أن وصف الناشر أو قاعدة البيانات لطابع المسلسل لا ينبغي خلطه بتقييم مستقل؛ فالفكرة المرحة المعلنة لا تثبت أن الكوميديا ناجحة، كما أن تصنيف العمل لا يثبت جودة السرد.\n\n## ما الذي لا نعرفه بعد؟\n\nلا تقدم الأدلة وصفاً يمكن الاعتماد عليه للإخراج أو تصميم الصورة أو حركة الرسوم أو الموسيقى والمؤثرات الصوتية. ولا تسمح بتقدير الإيقاع، أو بنية الحلقات، أو جودة الحوار، أو كيفية موازنة العمل بين الكوميديا وموضوع التعذيب. ولا توجد معلومات تفصيلية عن عدد الحلقات أو مدة كل حلقة أو منصات الإتاحة؛ فغياب أسماء المنصات في الملف لا يثبت أن العمل غير متاح عليها، بل يعني فقط أن هذه البيانات غير متوفرة هنا.\n\nكذلك لا نملك أساساً للحكم على أداء الممثلين، لأن ذكر أسمائهم لا يثبت طبيعة أدائهم ولا يحدد أدوارهم. لا تكشف المصادر كيف يختلف الاقتباس عن المانغا، ولا ما إذا كانت الفكرة تتغير مع تقدم الحلقات، ولا ردود فعل نقدية مستقلة. ويشير سبب تصنيف الأدلة إلى عدم توافر تقييم جماهيري مسنود بما يكفي، أو دليل مستقل قائم على مشاهدة مباشرة. لذلك لا يصح تقديم خلاصة عن مستوى التجربة اعتماداً على هذه المواد وحدها.\n\n## لمن قد يهم هذا العمل؟\n\nقد يهم التعريف الأولي بالعمل من يبحث عن اقتباسات أنمي من المانغا، أو عن فرضية خيالية تجمع مكان العمل بالكوميديا في عالم يختلف عن الواقع المعتاد. كما قد تكون أسماء المؤلف والجهة المنتجة والممثلين مفيدة لمن يريد متابعة العمل أو التحقق من معلوماته الأساسية. هذه ملاءمة موضوعية مستمدة من وصف الفكرة والبيانات المتاحة، وليست توصية مشاهدة مبنية على تجربة أو قياس لجودة المسلسل.\n\n## خلاصة حدود الأدلة\n\nالمتاح يرسم صورة أولية عن عنوان العمل وأصله وفرضية قصته وفترة عرضه وبعض أسماء طاقمه. لكنه لا يتيح الانتقال من التعريف إلى التقييم؛ فلا مشاهدة مستقلة موثقة، ولا مادة كافية للحكم على عناصر التنفيذ، ولا سند جماهيري مستوفٍ للحد المطلوب. ينبغي قراءة الملخص بوصفه وصفاً للفرضية المعلنة، وقراءة التصنيفات بوصفها بيانات فهرسة، لا أحكاماً نقدية. وأي رأي نهائي بشأن ما إذا كان المسلسل ناجحاً أو مناسباً لمشاهد بعينه يحتاج إلى أدلة إضافية غير موجودة في الملف.",
-        "pros": [
-          "له أصل مانغا ياباني من كتابة ورسم ياوورا تسوغومي، وبدأ تسلسلها في ديسمبر 2022 بحسب المادة الموسوعية.",
-          "توضح البيانات فرضية أساسية محددة: شركة Spirytus وموظفون بدوام جزئي في مجتمع يصبح فيه التعذيب قانونياً ونشاطاً تجارياً.",
-          "تتوافر معلومات تعريفية عن الجهة المنتجة، Diomedéa، وعن ستة أسماء مدرجة ضمن طاقم التمثيل."
-        ],
-        "cons": [
-          "لا تتوافر مشاهدة نقدية مستقلة أو أدلة كافية للحكم على الإخراج والصورة والصوت والإيقاع.",
-          "لا يحدد الملف أدوار الممثلين أو تفاصيل الشخصيات خارج الأسماء الواردة في ملخص الفكرة.",
-          "لا تكفي المعلومات المتاحة لحسم طريقة معالجة المسلسل للعنف أو نجاح المزج بين الكوميديا والموضوع المعلن.",
-          "لا يتضمن الملف تقييماً جماهيرياً مسنوداً بما يكفي أو معلومات تفصيلية عن عدد الحلقات ومنصات الإتاحة."
-        ],
-        "title": "The Daily Life of a Part-time Torturer",
-        "type": "series",
-        "sourceId": "series:305163",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/305163",
-        "sourceRating": 6.929,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 14,
-        "sourceRatingCheckedAt": "2026-11-28T07:16:14.915Z",
-        "audienceScore": 6.9,
-        "releaseDate": "2026-01-05",
-        "poster": "https://image.tmdb.org/t/p/w780/2oDNkS1JCIgQmX0aC6S67DgrG4w.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/gAwem2a2dFEpH8tKopWkqc9FwG9.jpg",
-        "genres": [
-          "Animation",
-          "Comedy",
-          "Sci-Fi & Fantasy"
-        ],
-        "platforms": [],
-        "cast": [
-          "Shunichi Toki",
-          "Takuma Terashima",
-          "Takuma Nagatsuka",
-          "Yohei Azakami",
-          "Kisho Taniyama",
-          "Rikuya Yasuda"
-        ],
-        "crew": [],
-        "tags": [
-          "Animation",
-          "Comedy",
-          "Sci-Fi & Fantasy"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/305163",
-            "extract": "In a society where torture is legal—and big business—Spirytus dominates the industry with skill, style, and surprisingly cheerful teamwork. Part-timers Cero, Shiu, Mikke, and Hugh tackle “client sessions,” office shenanigans, and even the occasional in-house assassin…all with a smile! Life at Spirytus proves that even in a world of pain, work can still be surprisingly fun!",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/The_Daily_Life_of_a_Part-time_Torturer",
-            "extract": "The Daily Life of a Part-time Torturer is a Japanese manga series written and illustrated by Yawora Tsugumi. It began serialization on Hakusensha's Manga Park and Young Animal Web services in December 2022. It has been compiled into eight volumes as of June 2026. An anime television series adaptation produced by Diomedéa aired from January to March 2026.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Crunchyroll",
-            "url": "https://www.youtube.com/watch?v=EIJOU7qjq6s",
-            "extract": "Verified public, embeddable promotional trailer: The Daily Life of a Part-Time Torturer | Official Trailer | Crunchyroll",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "EIJOU7qjq6s",
-        "youtubeVideoTitle": "The Daily Life of a Part-Time Torturer | Official Trailer | Crunchyroll",
-        "reviewMode": "limited"
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 3864,
       "articlePath": "src/content/reviews/series-the-daily-life-of-a-part-time-torturer-305163.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-the-daily-life-of-a-part-time-torturer-305163/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-the-daily-life-of-a-part-time-torturer-305163/",
+      "publishedAt": "2026-11-28T07:35:48.705Z"
+    },
+    "game:993875": {
+      "key": "game:993875",
+      "type": "game",
+      "id": "993875",
+      "title": "Marvel Rivals",
+      "item": {
+        "type": "game",
+        "id": "993875",
+        "name": "Marvel Rivals",
+        "date": "2024-12-06",
+        "popularity": 1016,
+        "source": "RAWG"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-28T07:35:54.213Z",
+      "updatedAt": "2026-11-28T07:37:03.265Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Marvel Rivals",
+        "type": "game",
+        "collectedAt": "2026-11-28T07:35:54.872Z",
+        "sourceId": "game:993875",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/marvel-rivals",
+        "overview": "Marvel Rivals is a Super Hero Team-Based PVP Shooter! Assemble an all-star Marvel squad, devise countless strategies by combining powers to form unique Team-Up skills and fight in destructible, ever-changing battlefields across the continually evolving Marvel universe! A Deep and Varied Marvel RosterChoose from a vast array of fan-favorite and cult-classic Marvel Super Heroes and Super Villains from across the Avengers, Guardians of the Galaxy, X-Men, and many more from across the Marvel Multiverse. Fast and Fun 6v6 Action with Ever-Changing Game DynamicsWith intricate environments, fast-paced gameplay, and ever-changing battlefields, there's never a dull moment in Marvel Rivals! Battle as Super Heroes and Super Villains with incredible abilities and combine your powers to bring unexpected fun to the battlefield in a matter of seconds.Dynamic Hero SynergyCoordinate unique combinations between characters to ignite surprising Team-Up Skills! Unleash the synergy of combined superpowers and invent new tactics that can turn the tide of combat. Ride on Groot's back as Rocket Raccoon to take on your enemies as a dangerous duo, unleash Gamma energy as Hulk to charge Iron Man's armor for massive damage, and so much more! Creative Environment DestructionTear your way through iconic Marvel worlds across destructible environments! From Asgard to the Tokyo of 2099, use superpowers to alter these environments, reshape the terrain, and craft a strategic advantage on the battlefield! Take cover to dodge attacks or use makeshift weapons to strike down enemies. Players will find countless ways to utilize the environment to claim victory!Continually Evolving Universe and Robust Post-Launch UpdatesThe Marvel Multiverse brings infinite possibilities! Each seasonal drop will introduce new Super Heroes to the battlefield along with challenging and diverse maps! Unlock new content to implement across various gameplay strategies while experiencing thrilling action and endless possibilities in these adventurous team battles!",
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/marvel-rivals",
+            "extract": "Marvel Rivals is a Super Hero Team-Based PVP Shooter! Assemble an all-star Marvel squad, devise countless strategies by combining powers to form unique Team-Up skills and fight in destructible, ever-changing battlefields across the continually evolving Marvel universe! A Deep and Varied Marvel RosterChoose from a vast array of fan-favorite and cult-classic Marvel Super Heroes and Super Villains from across the Avengers, Guardians of the Galaxy, X-Men, and many more from across the Marvel Multiverse. Fast and Fun 6v6 Action with Ever-Changing Game DynamicsWith intricate environments, fast-paced gameplay, and ever-changing battlefields, there's never a dull moment in Marvel Rivals! Battle as Super Heroes and Super Villains with incredible abilities and combine your powers to bring unexpected fun to the battlefield in a matter of seconds.Dynamic Hero SynergyCoordinate unique combinations between characters to ignite surprising Team-Up Skills! Unleash the synergy of combined superpowers and invent new tactics that can turn the tide of combat. Ride on Groot's back as Rocket Raccoon to take on your enemies as a dangerous duo, unleash Gamma energy as Hulk to charge Iron Man's armor for massive damage, and so much more! Creative Environment DestructionTear your way through iconic Marvel worlds across destructible environments! From Asgard to the Tokyo of 2099, use superpowers to alter these environments, reshape the terrain, and craft a strategic advantage on the battlefield! Take cover to dodge attacks or use makeshift weapons to strike down enemies. Players will find countless ways to utilize the environment to claim victory!Continually Evolving Universe and Robust Post-Launch UpdatesThe Marvel Multiverse brings infinite possibilities! Each seasonal drop will introduce new Super Heroes to the battlefield along with challenging and diverse maps! Unlock new content to implement across various gameplay strategies while experiencing thrilling action and endless possibilities in these adventurous team battles!",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Marvel_Rivals",
+            "extract": "Marvel Rivals is a free-to-play hero shooter video game developed and published by NetEase Games in collaboration with Marvel Games. The game was released for PlayStation 5, Windows, and Xbox Series X/S on December 6, 2024, with a PlayStation 4 version released on September 12, 2025, and a Nintendo Switch 2 version currently in development. The game is free-to-play with a current lineup of 55 playable characters from Marvel Comics, and features cross-play across all supported platforms. As of November 2026, eleven seasons of playable storylines have been released to the game, based on various comic book series and events.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — PlayStation",
+            "url": "https://www.youtube.com/watch?v=YIhkib05VCo",
+            "extract": "Verified public, embeddable promotional trailer: Marvel Rivals - Rivals 'Til the End Launch Trailer | PS5 Games",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from RAWG with 126 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "YIhkib05VCo",
+        "youtubeVideoTitle": "Marvel Rivals - Rivals 'Til the End Launch Trailer | PS5 Games",
+        "youtubeChannel": "PlayStation",
+        "releaseDate": "2024-12-06",
+        "genres": [
+          "Action"
+        ],
+        "platforms": [
+          "Xbox Series S/X",
+          "PlayStation 5",
+          "PC"
+        ],
+        "developers": [
+          "NetEase Games"
+        ],
+        "rating": 3.69,
+        "ratingScale": 5,
+        "votes": 126,
+        "poster": "https://media.rawg.io/media/screenshots/3f0/3f0fdfc7c71655366aa83ab80ecab9b8.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "Marvel Rivals: جاذبية الأبطال تصنع أساساً تنافسياً واعداً، لكن الأدلة لا تبرر حكماً شاملاً على كل تفاصيله",
+        "summary": "تقدّم Marvel Rivals لعبة تصويب جماعية مجانية من منظور الأبطال، تقوم على مواجهات 6 ضد 6، وتستمد هويتها من قائمة واسعة من شخصيات مارفل ومن إمكانية تنسيق قدراتهم لتوليد مهارات مشتركة. وتضيف الخرائط القابلة للتدمير وتغيّر البيئة بعداً تكتيكياً موثقاً، فيما يشير استمرار المواسم وتوسّع المحتوى إلى تصميم يراد له أن يبقى حياً بعد الإطلاق. هذه عناصر تمنح الفكرة تميزاً واضحاً، لكنها لا تكفي وحدها لإثبات توازن التجربة أو جودة تنفيذها في كل تفصيل. لذلك يركّز الحكم على ما تسنده المصادر المتاحة، ويتحفظ خصوصاً في تقييم القصة والصوت، إذ لا تتوافر عنها معلومات نقدية مستقلة كافية.",
+        "verdict": "تستحق Marvel Rivals حكماً إيجابياً مشروطاً: تصورها التنافسي يجمع بوضوح بين جاذبية شخصيات مارفل، وتنسيق القدرات، والقتال الجماعي السريع، فيما تمنحها البيئات القابلة للتغيير والمواسم المستمرة أسباباً معقولة للتميّز والاستمرار. لكن المعلومات المتاحة لا تقدم أساساً كافياً للجزم بجودة التوازن الفعلية أو العمق السردي أو الموسيقى والأداء الصوتي، ولا يجوز تحويل وصف الناشر أو الكتالوج إلى ادعاء تجربة مباشرة. بناءً على ذلك، تبدو اللعبة خياراً مناسباً لمحبي المواجهات الجماعية والأبطال الخارقين المستعدين للتعلم والتنسيق، مع توصية حذرة لمن يبحث عن حملة قصصية متكاملة أو تقييم موثق لكل عناصر التنفيذ. الدرجة تعكس قوة الفكرة ووضوح تصميمها المعلن، مع تحفظ حقيقي تجاه الجوانب التي لا تغطيها الأدلة.",
+        "body": "## مقدمة وسياق العمل\nMarvel Rivals لعبة تصويب جماعية مجانية من تطوير NetEase Games، صدرت في 6 ديسمبر 2024 على الحاسب وPlayStation 5 وXbox Series X/S، وفق المعلومات الموسوعية الواردة في ملف الأدلة. ويعرّفها سجل RAWG بوصفها لعبة أبطال جماعية تعتمد مواجهات ستة ضد ستة. هذه مراجعة تحريرية لاحقة للإصدار، لا ادعاء فيها بأن الكاتب لعب اللعبة؛ لذلك يقتصر الحكم على الوقائع الموثقة، وعلى الاستنتاجات التي يمكن بناؤها منها من دون اختلاق انطباعات عن مباراة بعينها. كما أن ملف المصادر محدود: يتضمن وصفاً للعبة، ومعلومات موسوعية، ومقطعاً ترويجياً رسمياً من PlayStation، لكنه لا يضم مراجعات مستقلة مفصلة لأدائها أو توازنها.\n\nهذا القيد مهم لأن ألعاب الخدمة الحية تتغير مع تحديثاتها، ولا يكفي وصف إطلاقها للحكم على كل حالة لاحقة. مع ذلك، يتيح الملف تقييم الفكرة الأساسية، وبعض خصائص تصميمها، واتجاهها نحو التوسع الموسمي. المعلومات الموسوعية تسجل 55 شخصية قابلة للعب وصدور أحد عشر موسماً ذا خطوط قصصية حتى نوفمبر 2026؛ وهي مؤشرات على اتساع المشروع واستمراره، لا برهان تلقائي على أن كل موسم متساوٍ في الجودة. ويُذكر متوسط RAWG، 3.69 من 5 بناءً على 126 صوتاً، بصفته مؤشراً جماهيرياً ثانوياً فحسب، لا بديلاً عن هذا الحكم التحريري ولا عن درجات المحاور.\n\n## الفكرة والقصة أو التجربة\nجوهر اللعبة واضح ومباشر: تشكيل فريق من أبطال وأشرار مارفل، ثم خوض قتال تنافسي جماعي والاستفادة من قدرات الشخصيات منفردة أو مجتمعة. ويصف RAWG وجود شخصيات من مجموعات مثل Avengers وGuardians of the Galaxy وX-Men، إلى جانب أسماء أقل شيوعاً؛ ما يجعل التنوع جزءاً أصيلاً من العرض، لا مجرد إطار لمباراة تصويب عامة. أما الحكاية، فالأدلة لا تعرض حبكة رئيسية أو شخصيات مكتوبة ضمن مشاهد سردية مفصلة. المعلومة المتاحة أن المواسم تتضمن خطوطاً قصصية قابلة للعب، من دون شرح مضمونها أو أسلوب تقديمها. لذلك لا يمكن منح القصة تقييماً مرتفعاً اعتماداً على أسماء أحداث غير موصوفة.\n\nالاستنتاج الأكثر إنصافاً أن السرد هنا، بحسب ما توثقه المصادر، يؤدي وظيفة مرافقة لبنية تنافسية مستمرة أكثر مما يظهر بوصفه حملة تقليدية مستقلة. هذا ليس حكماً بأن القصة غائبة أو ضعيفة؛ إنه حد لما يمكن إثباته. أما التجربة المعلنة، فتعوّل على المعرفة السابقة بالشخصيات وعلى بناء فريق متكامل، فتقدم مدخلاً فورياً لمحبي عالم مارفل، مع وعد بقرارات جماعية تتغير بتغير التشكيلة. لهذا تبدو الفكرة أقوى من ملفها السردي الموثق: لها محور لعب محدد ومميز، لكن المادة المتاحة لا تسمح بتقدير جودة الكتابة أو مدى ترابط خطوط المواسم.\n\n## السرد والشخصيات أو تصميم اللعب\nأكثر عناصر التصميم تحديداً هو تفاعل القدرات. يذكر الوصف مهارات Team-Up تنشأ من تنسيق شخصيات بعينها، ويورد مثالين واضحين: ركوب Rocket على ظهر Groot، وتعاون Hulk مع Iron Man عبر طاقة غاما لتعزيز درع الأخير. هذه أمثلة موثقة على محاولة جعل اختيار الفريق ذا أثر يتجاوز جمع أبطال محبوبين. وهي توحي بأن معرفة التوافقات والتنسيق بين اللاعبين قد تصبح جزءاً من اتخاذ القرار، لا مجرد استعراض لقدرات فردية. لكننا لا نعرف من المصادر مقدار تأثير هذه التركيبات في التوازن، أو مدى سهولة تفعيلها، أو إن كانت بعض الخيارات أكثر جدوى من غيرها.\n\nوجود 55 شخصية بحسب المصدر الموسوعي يوحي باتساع مساحة الاختيار، ويجعل إدارة التفاوت بين الأدوار والقدرات تحدياً تصميمياً مستمراً. لا يثبت الرقم وحده أن الشخصيات متنوعة فعلاً في إحساس اللعب، كما لا يثبت أن كثرتها مربكة؛ تلك أحكام تتطلب اختباراً ومصادر متخصصة غير موجودة هنا. ما يمكن قوله هو أن الفكرة تضع بناء التشكيلة والتعاون في مركز التجربة، وتربطهما كذلك ببيئة قابلة للتبدل. أما تفاصيل الأدوار، وأنماط التحكم، والتقدم، وشروط الفوز، فلم يقدمها الملف بما يكفي لتحليلها، لذا لا تُنسب إلى اللعبة آليات إضافية غير مذكورة.\n\n## الإخراج والجوانب الفنية\nعلى مستوى التصور الإخراجي، تجمع اللعبة عناصر ذات قابلية عالية للقراءة التسويقية: أبطال معروفون، صدام جماعي واسع، ومواقع من عالم مارفل. المقطع الرسمي المنشور على قناة PlayStation يحمل عنوان إطلاق ترويجياً، لكنه لا يعوّض مراجعة مستقلة ولا يصلح وحده دليلاً على استقرار الأداء أو جودة تنفيذ كل مرحلة. لذلك ينبغي التفريق بين وضوح هوية المشروع وبين الحكم على تفاصيل إخراجه داخل اللعب. المصادر تثبت أن المواجهات مصممة لتكون سريعة، وأن الخرائط قابلة للتغير، لكنها لا توثق معدلات الإطارات أو جودة التحسين أو سهولة قراءة المؤثرات أثناء ازدحام القتال.\n\nوتُظهر المعلومات أيضاً أن المشروع يعمل كلعبة خدمة تتوسع عبر مواسم تضيف شخصيات وخرائط جديدة، وفق وصف RAWG، وأن أحد عشر موسماً ذا خطوط قصصية صدرت حتى نوفمبر 2026، وفق ويكيبيديا. هذا اتجاه إخراجي وتجاري يجعل العمل متجدداً من حيث المحتوى المخطط، لكنه يضع عليه عبء المحافظة على تماسك الهوية وعدم الاكتفاء بالتراكم. لا يتيح الملف قياس انتظام التحديثات أو استقبال كل إضافة، ولذلك يظل تقديرنا منصباً على طموح البنية المعلنة، لا على ضمان نجاحها العملي. هذا تحفظ جوهري في لعبة ترتبط قيمتها طويلة المدى بتطورها بعد الإطلاق.\n\n## الصورة والهوية البصرية\nالهوية البصرية تستند إلى مادة غنية سلفاً: شخصيات من فرق وأجيال مختلفة، وعوالم تشمل Asgard وطوكيو في عام 2099 بحسب وصف RAWG. الجمع بين مواقع مألوفة وأخرى مستقبلية يفتح مجالاً لتباين بصري يخدم وضوح الانتقال بين البيئات، بينما تمنح الشخصيات المعروفة اللعبة تمييزاً فورياً عن ألعاب التصويب ذات الأبطال الأصليين. لكن المصدر لا يقدم تحليلاً فنياً دقيقاً للتصميم أو الإضاءة أو جودة النماذج، ومن غير المسؤول اختلاق أوصاف لهذه العناصر. ما تدعمه الأدلة هو اتساع المرجعيات وتوظيفها في خرائط متعددة، لا تقييم كل صورة على الشاشة.\n\nالأكثر أهمية من مجرد استحضار المواقع هو أن البيئة موصوفة بأنها قابلة للتدمير والتغيير. يذكر سجل RAWG إمكان تعديل التضاريس، واستخدام الغطاء أو عناصر مرتجلة، وتوظيف التحول لصنع أفضلية تكتيكية. إذا نُفذ هذا الوعد كما تصفه المادة، فالصورة ليست خلفية ثابتة للقتال، بل مكوّن مرتبط بقرارات الفريق. لكن لا تتوافر أمثلة موثقة عن مقدار التدمير أو أثره الفعلي على مسارات اللعب، لذا لا ينبغي المبالغة في وصفه كنظام عميق أو ثوري. الدرجة هنا تكافئ وضوح الفكرة واتساع الهوية المعلنة، مع إبقاء الحكم على جودة التنفيذ أقل يقيناً من الحكم على التصميم النظري.\n\n## الصوت والموسيقى والأداء\nأضعف جوانب ملف الأدلة هو الصوت. لا يورد معلومات عن الموسيقى، أو المؤثرات، أو أداء الممثلين، أو لغات التسجيل، ولا يتضمن وصفاً مستقلاً يمكن الاستناد إليه لمقارنة هذه العناصر. لهذا لا يصح أن ننسب لشخصية صوتاً بعينه، أو نصف الموسيقى بالحماسية، أو نزعم أن المؤثرات تساعد على تمييز الهجمات. كذلك لا يصح تحويل غياب المعلومات إلى دليل على قصور اللعبة نفسها. التقييم هنا منخفض الثقة ومحافظ، ويعبر عن أن جودة الصوت غير قابلة للإثبات من المادة المتاحة، لا عن اكتشاف عيب سمعي أثناء اللعب.\n\nهذا النقص يؤثر في اكتمال الحكم العام؛ ففي مواجهة جماعية سريعة، قد تكون وضوح الإشارات الصوتية وتوازن الحوار والموسيقى عوامل مهمة، لكن أهميتها النظرية لا تخبرنا كيف عولجت فعلياً في Marvel Rivals. والمقطع الرسمي الموثق ترويجي، ولا يكفي وحده لتقييم مزيج الصوت في المباريات أو جودة الأداء التمثيلي. لذلك تظل النتيجة التحريرية في هذا المحور متحفظة بوضوح. يلزم مصدر نقدي مستقل أو بيانات تقنية موثوقة لتبرير حكم أقوى، إيجابياً كان أو سلبياً.\n\n## الإيقاع والبناء وتنوع المحتوى\nتستند اللعبة إلى مواجهات ستة ضد ستة توصف بأنها سريعة، وإلى ساحات متغيرة التكوين. هذا الجمع يمنح بنية المباراة احتمالاً معقولاً للتبدل: عدد كبير من المشاركين، وقدرات متقاطعة، وبيئة يمكن أن تتغير. لكن وصف الإيقاع بأنه سريع يظل حقيقة في العرض المتاح، لا شهادة على أن كل مباراة متوازنة أو أن الوتيرة مريحة لجميع اللاعبين. ولا يحدد الملف مدة الجولات أو أنماطها أو طريقة توزيع الأهداف؛ لذا لا نضيف تفاصيل غير موثقة. ما يمكن تقييمه هو أن الأساس يدعم تنوعاً تكتيكياً محتملاً، وأن هذا التنوع يعتمد على اختيار الفريق والتعاون لا على ساحة ثابتة وحدها.\n\nأما تنوع المحتوى، فتدعمه قائمة الشخصيات الواسعة، وتعدد المواقع، وخطة الإضافات الموسمية للشخصيات والخرائط. كما تشير المعلومة الموسوعية إلى أحد عشر موسماً قصصياً حتى نوفمبر 2026، ما يثبت استمرار التوسع في فترة لاحقة للإطلاق. غير أن كثرة المحتوى ليست مرادفاً للتوازن، ولا نملك بيانات عن جودة المواسم أو توزيع اللاعبين أو منحنى التعلم. لذلك تُحسب للعبة قابلية التجدد والتنوع المعلن، مع التحفظ عن الادعاء بأنها تحافظ حتماً على إيقاع مثالي أو أن كل إضافة تحسن التجربة. هذا محور جيد بفضل وضوح بنائه وتعدد موارده، لا ممتاز على أساس دليل غير متاح.\n\n## نقاط القوة\nأبرز مكسب هو أن هوية اللعب لا تختزل في ترخيص مارفل: مهارات Team-Up الموصوفة تمنح التعاون بين شخصيات محددة معنى تصميمياً ملموساً، وتقدم أمثلة يسهل فهمها من دون افتراضات. يضاف إلى ذلك اتساع القائمة الموثق، من شخصيات شهيرة إلى أخرى أقل حضوراً، وهو ما يوسع خيارات تشكيل الفرق. كما أن جعل الخرائط قابلة للتدمير والتغيير يربط المكان بالقرار التكتيكي بدلاً من اعتباره ديكوراً، وفق الوصف المنشور. وأخيراً، يشير استمرار المحتوى الموسمي إلى بنية مصممة لتتطور، لا إلى إصدار يتوقف عند يوم إطلاقه.\n\nهذه نقاط قوة في التصور والاتجاه، لا شهادة بأن كل عنصر بلغ أفضل تنفيذ ممكن. قيمة التعاون تتوقف على التوازن الفعلي، وقيمة الخرائط المتغيرة تتوقف على وضوح أثرها، وقيمة الإضافات تعتمد على جودتها وإيقاعها؛ وكلها مسائل لا تفصلها المصادر. لكن وجود هذه الروابط المحددة يمنح اللعبة أساساً أكثر تماسكاً من مجرد ضم أسماء معروفة إلى ساحة قتال. لذلك يمكن الدفاع عن تقييم إيجابي للفكرة مع حذر في تقييم جودة التجربة على المدى الطويل.\n\n## نقاط الضعف\nأول تحفظ هو ضيق السجل النقدي المتاح: لا توجد مراجعات مستقلة مفصلة في الأدلة، ولا قياسات للأداء أو التوازن، ما يمنع إصدار أحكام قاطعة على عناصر مركزية في لعبة تنافسية. ثانيها أن تفاصيل السرد غائبة تقريباً؛ نعرف أن المواسم تحمل خطوطاً قصصية، لكن لا نعرف كيف تُكتب أو تُعرض أو ترتبط بتجربة اللعب. ثالثها أن الصوت والموسيقى والأداء لا تحظى بأي توثيق ذي قيمة تقييمية، فتظل درجة هذا المحور احترازية. هذه حدود في إمكان الحكم، وليست ادعاءات بوجود عيوب مؤكدة داخل اللعبة.\n\nهناك أيضاً مخاطرة تصميمية يمكن استنتاجها، لا إثبات وقوعها: الجمع بين قائمة كبيرة، وقدرات مشتركة، وبيئات قابلة للتغيير يجعل موازنة المعارك ووضوحها تحدياً مستمراً. لا يجوز الجزم بأن اللعبة فشلت في ذلك، لكن وصف عناصر كثيرة متفاعلة يفسر لماذا تحتاج التجربة إلى متابعة مستقلة لا يوفرها ملفنا. كما أن الاعتماد على التوسع الموسمي يربط جزءاً من قيمة اللعبة بجودة محتوى مستقبلي، ولا يمكن ضمان هذه الجودة بمجرد معرفة عدد المواسم. هذه تحفظات نقدية لازمة كي لا يتحول الوعد التسويقي إلى حقيقة مفترضة.\n\n## لمن يناسب هذا العمل؟\nتبدو Marvel Rivals مناسبة لمحبي ألعاب التصويب التنافسية الجماعية الذين يستمتعون بتنسيق الأدوار والقدرات، ولمن تمنحهم شخصيات مارفل ومواقعها دافعاً إضافياً لاختيار فريق وتعلم تآزر أعضائه. وقد تجذب أيضاً اللاعبين الذين يفضلون لعبة قابلة للتوسع بالمواسم، مع تنوع متوقع في الشخصيات والخرائط. أما من يبحث عن حملة قصصية واضحة ومكتملة، أو يريد حكماً مسبقاً موثقاً على جودة الكتابة والصوت والأداء التقني، فلن يجد ملف الأدلة الحالي ضماناً كافياً لتلبية هذه التوقعات. وبالمثل، من يفضل تجربة منفردة على منافسة جماعية مستمرة قد لا تكون الفكرة الأساسية مصممة له.\n\nالتوصية هنا إيجابية ولكن واعية بحدودها: ادخلها من أجل القتال الجماعي وتآزر الأبطال، لا على أساس وعد غير مثبت بقصة عميقة أو تنفيذ صوتي استثنائي. ولأن اللعبة مجانية وفق المصادر، تنخفض كلفة التجربة المالية الأولية، لكن ذلك لا يلغي كلفة الوقت أو متطلبات التفاعل التنافسي. هذا اعتبار سياقي لا حكم على جودة المحتوى المدفوع، إذ لا تتضمن الأدلة تفاصيل عن الاقتصاد الداخلي أو المشتريات. من الأفضل التعامل مع نقاط الجذب الموثقة بوصفها أسباباً للاهتمام، لا ضماناً بأن كل لاعب سيجد التوازن أو الإيقاع اللذين يفضلهما.\n\n## الحكم النهائي\nتملك Marvel Rivals تصوراً جماعياً واضحاً: مواجهات 6 ضد 6، شخصيات كثيرة، تآزر محدد بين القدرات، وبيئات يعلن وصفها أنها قابلة للتغيير، ضمن لعبة مستمرة التوسع. هذه عناصر تمنحها أساساً جذاباً وتبرر حكماً إيجابياً على الفكرة والبناء المعلن. في المقابل، لا يسمح الملف المتاح بتوثيق جودة القصة أو الصوت، أو إصدار حكم واثق على توازن اللعب والأداء الفني؛ لذلك لا نخلط بين كثرة المحتوى وبين الإتقان، ولا بين المقطع الترويجي والتقييم النقدي المستقل. أوصي بها لمحبي التصويب الجماعي وعالم مارفل ممن يقدّرون التنسيق، مع تحفظ لمن يضع الحملة السردية أو التقييم الفني الشامل في المقدمة. الدرجة النهائية تعكس قوة الأساس وتنوعه، وتخفض سقف الثقة حيث تنقص الأدلة، لا حيث ثبت عيب بعينه.",
+        "scores": {
+          "story": 6.8,
+          "visuals": 8.1,
+          "sound": 6,
+          "pacing": 7.7
+        },
+        "pros": [
+          "مهارات Team-Up موصوفة بأمثلة محددة، ما يجعل تنسيق الشخصيات جزءاً واضحاً من الفكرة.",
+          "قائمة واسعة موثقة تضم 55 شخصية قابلة للعب وفق المصدر الموسوعي.",
+          "الخرائط القابلة للتدمير والتغيير تربط البيئة بالتكتيك، بحسب وصف RAWG.",
+          "خطة توسع موسمية للشخصيات والخرائط، مع أحد عشر موسماً ذا خطوط قصصية موثقاً حتى نوفمبر 2026."
+        ],
+        "cons": [
+          "المصادر المتاحة لا توثق عمق القصة أو جودة كتابة الخطوط الموسمية.",
+          "لا توجد أدلة نقدية كافية لتقييم الموسيقى أو المؤثرات أو الأداء الصوتي.",
+          "لا يقدم الملف تحليلاً مستقلاً لتوازن الشخصيات أو أداء اللعبة التقني.",
+          "كثرة الشخصيات والقدرات والبيئات المتغيرة تجعل التوازن والوضوح تحديين محتملين، لكن نجاح معالجتهما غير موثق."
+        ],
+        "title": "Marvel Rivals",
+        "type": "game",
+        "sourceId": "game:993875",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/marvel-rivals",
+        "sourceRating": 3.69,
+        "sourceRatingScale": 5,
+        "sourceVoteCount": 126,
+        "sourceRatingCheckedAt": "2026-11-28T07:35:54.872Z",
+        "audienceScore": 7.4,
+        "releaseDate": "2024-12-06",
+        "poster": "https://media.rawg.io/media/screenshots/3f0/3f0fdfc7c71655366aa83ab80ecab9b8.jpg",
+        "backdrop": "https://media.rawg.io/media/screenshots/3f0/3f0fdfc7c71655366aa83ab80ecab9b8.jpg",
+        "genres": [
+          "Action"
+        ],
+        "platforms": [
+          "Xbox Series S/X",
+          "PlayStation 5",
+          "PC"
+        ],
+        "cast": [],
+        "crew": [],
+        "tags": [
+          "Action"
+        ],
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/marvel-rivals",
+            "extract": "Marvel Rivals is a Super Hero Team-Based PVP Shooter! Assemble an all-star Marvel squad, devise countless strategies by combining powers to form unique Team-Up skills and fight in destructible, ever-changing battlefields across the continually evolving Marvel universe! A Deep and Varied Marvel RosterChoose from a vast array of fan-favorite and cult-classic Marvel Super Heroes and Super Villains from across the Avengers, Guardians of the Galaxy, X-Men, and many more from across the Marvel Multiverse. Fast and Fun 6v6 Action with Ever-Changing Game DynamicsWith intricate environments, fast-paced gameplay, and ever-changing battlefields, there's never a dull moment in Marvel Rivals! Battle as Super Heroes and Super Villains with incredible abilities and combine your powers to bring unexpected fun to the battlefield in a matter of seconds.Dynamic Hero SynergyCoordinate unique combinations between characters to ignite surprising Team-Up Skills! Unleash the synergy of combined superpowers and invent new tactics that can turn the tide of combat. Ride on Groot's back as Rocket Raccoon to take on your enemies as a dangerous duo, unleash Gamma energy as Hulk to charge Iron Man's armor for massive damage, and so much more! Creative Environment DestructionTear your way through iconic Marvel worlds across destructible environments! From Asgard to the Tokyo of 2099, use superpowers to alter these environments, reshape the terrain, and craft a strategic advantage on the battlefield! Take cover to dodge attacks or use makeshift weapons to strike down enemies. Players will find countless ways to utilize the environment to claim victory!Continually Evolving Universe and Robust Post-Launch UpdatesThe Marvel Multiverse brings infinite possibilities! Each seasonal drop will introduce new Super Heroes to the battlefield along with challenging and diverse maps! Unlock new content to implement across various gameplay strategies while experiencing thrilling action and endless possibilities in these adventurous team battles!",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Marvel_Rivals",
+            "extract": "Marvel Rivals is a free-to-play hero shooter video game developed and published by NetEase Games in collaboration with Marvel Games. The game was released for PlayStation 5, Windows, and Xbox Series X/S on December 6, 2024, with a PlayStation 4 version released on September 12, 2025, and a Nintendo Switch 2 version currently in development. The game is free-to-play with a current lineup of 55 playable characters from Marvel Comics, and features cross-play across all supported platforms. As of November 2026, eleven seasons of playable storylines have been released to the game, based on various comic book series and events.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — PlayStation",
+            "url": "https://www.youtube.com/watch?v=YIhkib05VCo",
+            "extract": "Verified public, embeddable promotional trailer: Marvel Rivals - Rivals 'Til the End Launch Trailer | PS5 Games",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "YIhkib05VCo",
+        "youtubeVideoTitle": "Marvel Rivals - Rivals 'Til the End Launch Trailer | PS5 Games",
+        "reviewMode": "review",
+        "score": 7.2
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 7004,
+      "articlePath": "src/content/reviews/game-marvel-rivals-993875.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-marvel-rivals-993875/"
     }
   },
   "providers": {},
@@ -4390,9 +4415,9 @@
       "tokens": 32686
     },
     "2026-11-28": {
-      "articles": 1,
-      "requests": 2,
-      "tokens": 3864
+      "articles": 2,
+      "requests": 4,
+      "tokens": 10868
     }
   },
   "history": []
