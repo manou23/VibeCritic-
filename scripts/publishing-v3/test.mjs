@@ -115,6 +115,8 @@ const limitedDraft = {
 };
 assert.throws(() => assemble(limitedDraft,limitedEvidence), /limited-evidence article is not publishable/);
 await assert.rejects(() => writeArticle(limitedEvidence), /limited-evidence article is not publishable/);
+assert.throws(() => renderMarkdown({ ...limitedDraft, reviewMode:"limited" }), /Refusing to render a limited-evidence article/);
+await assert.rejects(() => publishArticle({ ...limitedDraft, reviewMode:"limited" }, path.join(os.tmpdir(),"vibecritic-limited-guard")), /Refusing to publish a limited-evidence article/);
 const previewEvidence = { ...limitedEvidence, releaseDate:"2099-01-01", reviewReadiness:"preview" };
 const previewDraft = { ...limitedDraft, headline:"معاينة استباقية قبل الإصدار", summary:"هذه معاينة استباقية للعمل قبل صدوره، تستعرض المعلومات الرسمية المتاحة وتفصل الحقائق عن التوقعات، ولا تمثل مراجعة نهائية ولا تمنح درجة رقمية أو حكماً على جودة التجربة.", verdict:"هذه معاينة استباقية قبل الإصدار، وليست مراجعة نهائية. نستعرض المعلومات المؤكدة وما يمكن توقعه بحذر، ونترك الحكم على الجودة والتقييم الرقمي إلى ما بعد صدور العمل وتوفر أدلة نقدية كافية.", reviewMode:undefined };
 const previewResult = assemble(previewDraft,previewEvidence);
