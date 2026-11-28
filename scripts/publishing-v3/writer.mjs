@@ -15,6 +15,7 @@ export function normalizeBodyFinalRating(text, score) {
 
 export function assemble(value, evidence) {
   const reviewMode = evidence.reviewReadiness === "preview" ? "preview" : evidence.reviewReadiness === "review" || evidence.reviewReadiness === "audience" ? "review" : "limited";
+  if (reviewMode === "limited") throw new Error("Publishing blocked: limited-evidence article is not publishable; V3 requires a scored review or a verified pre-release preview");
   const article = {
     ...value,
     title:evidence.title,
@@ -108,6 +109,7 @@ export async function writeArticle(evidence) {
   if (evidence.releaseDate && evidence.releaseDate > today && evidence.reviewReadiness !== "preview") throw new Error("Candidate release date is still in the future");
   const isPreview = evidence.reviewReadiness === "preview";
   const isLimited = !isPreview && evidence.reviewReadiness !== "review" && evidence.reviewReadiness !== "audience";
+  if (isLimited) throw new Error("Publishing blocked: limited-evidence article is not publishable; V3 requires a scored review or a verified pre-release preview");
   const prompt = buildPrompt(evidence);
 
   const first = await generateJson(prompt, { maxTokens:10000 });
