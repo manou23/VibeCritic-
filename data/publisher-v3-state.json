@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-28T07:37:03.265Z",
+  "updatedAt": "2026-11-28T08:38:12.006Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -4229,142 +4229,354 @@
         "popularity": 1016,
         "source": "RAWG"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-28T07:35:54.213Z",
-      "updatedAt": "2026-11-28T07:37:03.265Z",
+      "updatedAt": "2026-11-28T08:36:45.089Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "Marvel Rivals",
-        "type": "game",
-        "collectedAt": "2026-11-28T07:35:54.872Z",
-        "sourceId": "game:993875",
-        "sourceName": "RAWG",
-        "sourceUrl": "https://rawg.io/games/marvel-rivals",
-        "overview": "Marvel Rivals is a Super Hero Team-Based PVP Shooter! Assemble an all-star Marvel squad, devise countless strategies by combining powers to form unique Team-Up skills and fight in destructible, ever-changing battlefields across the continually evolving Marvel universe! A Deep and Varied Marvel RosterChoose from a vast array of fan-favorite and cult-classic Marvel Super Heroes and Super Villains from across the Avengers, Guardians of the Galaxy, X-Men, and many more from across the Marvel Multiverse. Fast and Fun 6v6 Action with Ever-Changing Game DynamicsWith intricate environments, fast-paced gameplay, and ever-changing battlefields, there's never a dull moment in Marvel Rivals! Battle as Super Heroes and Super Villains with incredible abilities and combine your powers to bring unexpected fun to the battlefield in a matter of seconds.Dynamic Hero SynergyCoordinate unique combinations between characters to ignite surprising Team-Up Skills! Unleash the synergy of combined superpowers and invent new tactics that can turn the tide of combat. Ride on Groot's back as Rocket Raccoon to take on your enemies as a dangerous duo, unleash Gamma energy as Hulk to charge Iron Man's armor for massive damage, and so much more! Creative Environment DestructionTear your way through iconic Marvel worlds across destructible environments! From Asgard to the Tokyo of 2099, use superpowers to alter these environments, reshape the terrain, and craft a strategic advantage on the battlefield! Take cover to dodge attacks or use makeshift weapons to strike down enemies. Players will find countless ways to utilize the environment to claim victory!Continually Evolving Universe and Robust Post-Launch UpdatesThe Marvel Multiverse brings infinite possibilities! Each seasonal drop will introduce new Super Heroes to the battlefield along with challenging and diverse maps! Unlock new content to implement across various gameplay strategies while experiencing thrilling action and endless possibilities in these adventurous team battles!",
-        "sources": [
-          {
-            "name": "RAWG",
-            "url": "https://rawg.io/games/marvel-rivals",
-            "extract": "Marvel Rivals is a Super Hero Team-Based PVP Shooter! Assemble an all-star Marvel squad, devise countless strategies by combining powers to form unique Team-Up skills and fight in destructible, ever-changing battlefields across the continually evolving Marvel universe! A Deep and Varied Marvel RosterChoose from a vast array of fan-favorite and cult-classic Marvel Super Heroes and Super Villains from across the Avengers, Guardians of the Galaxy, X-Men, and many more from across the Marvel Multiverse. Fast and Fun 6v6 Action with Ever-Changing Game DynamicsWith intricate environments, fast-paced gameplay, and ever-changing battlefields, there's never a dull moment in Marvel Rivals! Battle as Super Heroes and Super Villains with incredible abilities and combine your powers to bring unexpected fun to the battlefield in a matter of seconds.Dynamic Hero SynergyCoordinate unique combinations between characters to ignite surprising Team-Up Skills! Unleash the synergy of combined superpowers and invent new tactics that can turn the tide of combat. Ride on Groot's back as Rocket Raccoon to take on your enemies as a dangerous duo, unleash Gamma energy as Hulk to charge Iron Man's armor for massive damage, and so much more! Creative Environment DestructionTear your way through iconic Marvel worlds across destructible environments! From Asgard to the Tokyo of 2099, use superpowers to alter these environments, reshape the terrain, and craft a strategic advantage on the battlefield! Take cover to dodge attacks or use makeshift weapons to strike down enemies. Players will find countless ways to utilize the environment to claim victory!Continually Evolving Universe and Robust Post-Launch UpdatesThe Marvel Multiverse brings infinite possibilities! Each seasonal drop will introduce new Super Heroes to the battlefield along with challenging and diverse maps! Unlock new content to implement across various gameplay strategies while experiencing thrilling action and endless possibilities in these adventurous team battles!",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Marvel_Rivals",
-            "extract": "Marvel Rivals is a free-to-play hero shooter video game developed and published by NetEase Games in collaboration with Marvel Games. The game was released for PlayStation 5, Windows, and Xbox Series X/S on December 6, 2024, with a PlayStation 4 version released on September 12, 2025, and a Nintendo Switch 2 version currently in development. The game is free-to-play with a current lineup of 55 playable characters from Marvel Comics, and features cross-play across all supported platforms. As of November 2026, eleven seasons of playable storylines have been released to the game, based on various comic book series and events.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — PlayStation",
-            "url": "https://www.youtube.com/watch?v=YIhkib05VCo",
-            "extract": "Verified public, embeddable promotional trailer: Marvel Rivals - Rivals 'Til the End Launch Trailer | PS5 Games",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from RAWG with 126 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "YIhkib05VCo",
-        "youtubeVideoTitle": "Marvel Rivals - Rivals 'Til the End Launch Trailer | PS5 Games",
-        "youtubeChannel": "PlayStation",
-        "releaseDate": "2024-12-06",
-        "genres": [
-          "Action"
-        ],
-        "platforms": [
-          "Xbox Series S/X",
-          "PlayStation 5",
-          "PC"
-        ],
-        "developers": [
-          "NetEase Games"
-        ],
-        "rating": 3.69,
-        "ratingScale": 5,
-        "votes": 126,
-        "poster": "https://media.rawg.io/media/screenshots/3f0/3f0fdfc7c71655366aa83ab80ecab9b8.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "Marvel Rivals: جاذبية الأبطال تصنع أساساً تنافسياً واعداً، لكن الأدلة لا تبرر حكماً شاملاً على كل تفاصيله",
-        "summary": "تقدّم Marvel Rivals لعبة تصويب جماعية مجانية من منظور الأبطال، تقوم على مواجهات 6 ضد 6، وتستمد هويتها من قائمة واسعة من شخصيات مارفل ومن إمكانية تنسيق قدراتهم لتوليد مهارات مشتركة. وتضيف الخرائط القابلة للتدمير وتغيّر البيئة بعداً تكتيكياً موثقاً، فيما يشير استمرار المواسم وتوسّع المحتوى إلى تصميم يراد له أن يبقى حياً بعد الإطلاق. هذه عناصر تمنح الفكرة تميزاً واضحاً، لكنها لا تكفي وحدها لإثبات توازن التجربة أو جودة تنفيذها في كل تفصيل. لذلك يركّز الحكم على ما تسنده المصادر المتاحة، ويتحفظ خصوصاً في تقييم القصة والصوت، إذ لا تتوافر عنها معلومات نقدية مستقلة كافية.",
-        "verdict": "تستحق Marvel Rivals حكماً إيجابياً مشروطاً: تصورها التنافسي يجمع بوضوح بين جاذبية شخصيات مارفل، وتنسيق القدرات، والقتال الجماعي السريع، فيما تمنحها البيئات القابلة للتغيير والمواسم المستمرة أسباباً معقولة للتميّز والاستمرار. لكن المعلومات المتاحة لا تقدم أساساً كافياً للجزم بجودة التوازن الفعلية أو العمق السردي أو الموسيقى والأداء الصوتي، ولا يجوز تحويل وصف الناشر أو الكتالوج إلى ادعاء تجربة مباشرة. بناءً على ذلك، تبدو اللعبة خياراً مناسباً لمحبي المواجهات الجماعية والأبطال الخارقين المستعدين للتعلم والتنسيق، مع توصية حذرة لمن يبحث عن حملة قصصية متكاملة أو تقييم موثق لكل عناصر التنفيذ. الدرجة تعكس قوة الفكرة ووضوح تصميمها المعلن، مع تحفظ حقيقي تجاه الجوانب التي لا تغطيها الأدلة.",
-        "body": "## مقدمة وسياق العمل\nMarvel Rivals لعبة تصويب جماعية مجانية من تطوير NetEase Games، صدرت في 6 ديسمبر 2024 على الحاسب وPlayStation 5 وXbox Series X/S، وفق المعلومات الموسوعية الواردة في ملف الأدلة. ويعرّفها سجل RAWG بوصفها لعبة أبطال جماعية تعتمد مواجهات ستة ضد ستة. هذه مراجعة تحريرية لاحقة للإصدار، لا ادعاء فيها بأن الكاتب لعب اللعبة؛ لذلك يقتصر الحكم على الوقائع الموثقة، وعلى الاستنتاجات التي يمكن بناؤها منها من دون اختلاق انطباعات عن مباراة بعينها. كما أن ملف المصادر محدود: يتضمن وصفاً للعبة، ومعلومات موسوعية، ومقطعاً ترويجياً رسمياً من PlayStation، لكنه لا يضم مراجعات مستقلة مفصلة لأدائها أو توازنها.\n\nهذا القيد مهم لأن ألعاب الخدمة الحية تتغير مع تحديثاتها، ولا يكفي وصف إطلاقها للحكم على كل حالة لاحقة. مع ذلك، يتيح الملف تقييم الفكرة الأساسية، وبعض خصائص تصميمها، واتجاهها نحو التوسع الموسمي. المعلومات الموسوعية تسجل 55 شخصية قابلة للعب وصدور أحد عشر موسماً ذا خطوط قصصية حتى نوفمبر 2026؛ وهي مؤشرات على اتساع المشروع واستمراره، لا برهان تلقائي على أن كل موسم متساوٍ في الجودة. ويُذكر متوسط RAWG، 3.69 من 5 بناءً على 126 صوتاً، بصفته مؤشراً جماهيرياً ثانوياً فحسب، لا بديلاً عن هذا الحكم التحريري ولا عن درجات المحاور.\n\n## الفكرة والقصة أو التجربة\nجوهر اللعبة واضح ومباشر: تشكيل فريق من أبطال وأشرار مارفل، ثم خوض قتال تنافسي جماعي والاستفادة من قدرات الشخصيات منفردة أو مجتمعة. ويصف RAWG وجود شخصيات من مجموعات مثل Avengers وGuardians of the Galaxy وX-Men، إلى جانب أسماء أقل شيوعاً؛ ما يجعل التنوع جزءاً أصيلاً من العرض، لا مجرد إطار لمباراة تصويب عامة. أما الحكاية، فالأدلة لا تعرض حبكة رئيسية أو شخصيات مكتوبة ضمن مشاهد سردية مفصلة. المعلومة المتاحة أن المواسم تتضمن خطوطاً قصصية قابلة للعب، من دون شرح مضمونها أو أسلوب تقديمها. لذلك لا يمكن منح القصة تقييماً مرتفعاً اعتماداً على أسماء أحداث غير موصوفة.\n\nالاستنتاج الأكثر إنصافاً أن السرد هنا، بحسب ما توثقه المصادر، يؤدي وظيفة مرافقة لبنية تنافسية مستمرة أكثر مما يظهر بوصفه حملة تقليدية مستقلة. هذا ليس حكماً بأن القصة غائبة أو ضعيفة؛ إنه حد لما يمكن إثباته. أما التجربة المعلنة، فتعوّل على المعرفة السابقة بالشخصيات وعلى بناء فريق متكامل، فتقدم مدخلاً فورياً لمحبي عالم مارفل، مع وعد بقرارات جماعية تتغير بتغير التشكيلة. لهذا تبدو الفكرة أقوى من ملفها السردي الموثق: لها محور لعب محدد ومميز، لكن المادة المتاحة لا تسمح بتقدير جودة الكتابة أو مدى ترابط خطوط المواسم.\n\n## السرد والشخصيات أو تصميم اللعب\nأكثر عناصر التصميم تحديداً هو تفاعل القدرات. يذكر الوصف مهارات Team-Up تنشأ من تنسيق شخصيات بعينها، ويورد مثالين واضحين: ركوب Rocket على ظهر Groot، وتعاون Hulk مع Iron Man عبر طاقة غاما لتعزيز درع الأخير. هذه أمثلة موثقة على محاولة جعل اختيار الفريق ذا أثر يتجاوز جمع أبطال محبوبين. وهي توحي بأن معرفة التوافقات والتنسيق بين اللاعبين قد تصبح جزءاً من اتخاذ القرار، لا مجرد استعراض لقدرات فردية. لكننا لا نعرف من المصادر مقدار تأثير هذه التركيبات في التوازن، أو مدى سهولة تفعيلها، أو إن كانت بعض الخيارات أكثر جدوى من غيرها.\n\nوجود 55 شخصية بحسب المصدر الموسوعي يوحي باتساع مساحة الاختيار، ويجعل إدارة التفاوت بين الأدوار والقدرات تحدياً تصميمياً مستمراً. لا يثبت الرقم وحده أن الشخصيات متنوعة فعلاً في إحساس اللعب، كما لا يثبت أن كثرتها مربكة؛ تلك أحكام تتطلب اختباراً ومصادر متخصصة غير موجودة هنا. ما يمكن قوله هو أن الفكرة تضع بناء التشكيلة والتعاون في مركز التجربة، وتربطهما كذلك ببيئة قابلة للتبدل. أما تفاصيل الأدوار، وأنماط التحكم، والتقدم، وشروط الفوز، فلم يقدمها الملف بما يكفي لتحليلها، لذا لا تُنسب إلى اللعبة آليات إضافية غير مذكورة.\n\n## الإخراج والجوانب الفنية\nعلى مستوى التصور الإخراجي، تجمع اللعبة عناصر ذات قابلية عالية للقراءة التسويقية: أبطال معروفون، صدام جماعي واسع، ومواقع من عالم مارفل. المقطع الرسمي المنشور على قناة PlayStation يحمل عنوان إطلاق ترويجياً، لكنه لا يعوّض مراجعة مستقلة ولا يصلح وحده دليلاً على استقرار الأداء أو جودة تنفيذ كل مرحلة. لذلك ينبغي التفريق بين وضوح هوية المشروع وبين الحكم على تفاصيل إخراجه داخل اللعب. المصادر تثبت أن المواجهات مصممة لتكون سريعة، وأن الخرائط قابلة للتغير، لكنها لا توثق معدلات الإطارات أو جودة التحسين أو سهولة قراءة المؤثرات أثناء ازدحام القتال.\n\nوتُظهر المعلومات أيضاً أن المشروع يعمل كلعبة خدمة تتوسع عبر مواسم تضيف شخصيات وخرائط جديدة، وفق وصف RAWG، وأن أحد عشر موسماً ذا خطوط قصصية صدرت حتى نوفمبر 2026، وفق ويكيبيديا. هذا اتجاه إخراجي وتجاري يجعل العمل متجدداً من حيث المحتوى المخطط، لكنه يضع عليه عبء المحافظة على تماسك الهوية وعدم الاكتفاء بالتراكم. لا يتيح الملف قياس انتظام التحديثات أو استقبال كل إضافة، ولذلك يظل تقديرنا منصباً على طموح البنية المعلنة، لا على ضمان نجاحها العملي. هذا تحفظ جوهري في لعبة ترتبط قيمتها طويلة المدى بتطورها بعد الإطلاق.\n\n## الصورة والهوية البصرية\nالهوية البصرية تستند إلى مادة غنية سلفاً: شخصيات من فرق وأجيال مختلفة، وعوالم تشمل Asgard وطوكيو في عام 2099 بحسب وصف RAWG. الجمع بين مواقع مألوفة وأخرى مستقبلية يفتح مجالاً لتباين بصري يخدم وضوح الانتقال بين البيئات، بينما تمنح الشخصيات المعروفة اللعبة تمييزاً فورياً عن ألعاب التصويب ذات الأبطال الأصليين. لكن المصدر لا يقدم تحليلاً فنياً دقيقاً للتصميم أو الإضاءة أو جودة النماذج، ومن غير المسؤول اختلاق أوصاف لهذه العناصر. ما تدعمه الأدلة هو اتساع المرجعيات وتوظيفها في خرائط متعددة، لا تقييم كل صورة على الشاشة.\n\nالأكثر أهمية من مجرد استحضار المواقع هو أن البيئة موصوفة بأنها قابلة للتدمير والتغيير. يذكر سجل RAWG إمكان تعديل التضاريس، واستخدام الغطاء أو عناصر مرتجلة، وتوظيف التحول لصنع أفضلية تكتيكية. إذا نُفذ هذا الوعد كما تصفه المادة، فالصورة ليست خلفية ثابتة للقتال، بل مكوّن مرتبط بقرارات الفريق. لكن لا تتوافر أمثلة موثقة عن مقدار التدمير أو أثره الفعلي على مسارات اللعب، لذا لا ينبغي المبالغة في وصفه كنظام عميق أو ثوري. الدرجة هنا تكافئ وضوح الفكرة واتساع الهوية المعلنة، مع إبقاء الحكم على جودة التنفيذ أقل يقيناً من الحكم على التصميم النظري.\n\n## الصوت والموسيقى والأداء\nأضعف جوانب ملف الأدلة هو الصوت. لا يورد معلومات عن الموسيقى، أو المؤثرات، أو أداء الممثلين، أو لغات التسجيل، ولا يتضمن وصفاً مستقلاً يمكن الاستناد إليه لمقارنة هذه العناصر. لهذا لا يصح أن ننسب لشخصية صوتاً بعينه، أو نصف الموسيقى بالحماسية، أو نزعم أن المؤثرات تساعد على تمييز الهجمات. كذلك لا يصح تحويل غياب المعلومات إلى دليل على قصور اللعبة نفسها. التقييم هنا منخفض الثقة ومحافظ، ويعبر عن أن جودة الصوت غير قابلة للإثبات من المادة المتاحة، لا عن اكتشاف عيب سمعي أثناء اللعب.\n\nهذا النقص يؤثر في اكتمال الحكم العام؛ ففي مواجهة جماعية سريعة، قد تكون وضوح الإشارات الصوتية وتوازن الحوار والموسيقى عوامل مهمة، لكن أهميتها النظرية لا تخبرنا كيف عولجت فعلياً في Marvel Rivals. والمقطع الرسمي الموثق ترويجي، ولا يكفي وحده لتقييم مزيج الصوت في المباريات أو جودة الأداء التمثيلي. لذلك تظل النتيجة التحريرية في هذا المحور متحفظة بوضوح. يلزم مصدر نقدي مستقل أو بيانات تقنية موثوقة لتبرير حكم أقوى، إيجابياً كان أو سلبياً.\n\n## الإيقاع والبناء وتنوع المحتوى\nتستند اللعبة إلى مواجهات ستة ضد ستة توصف بأنها سريعة، وإلى ساحات متغيرة التكوين. هذا الجمع يمنح بنية المباراة احتمالاً معقولاً للتبدل: عدد كبير من المشاركين، وقدرات متقاطعة، وبيئة يمكن أن تتغير. لكن وصف الإيقاع بأنه سريع يظل حقيقة في العرض المتاح، لا شهادة على أن كل مباراة متوازنة أو أن الوتيرة مريحة لجميع اللاعبين. ولا يحدد الملف مدة الجولات أو أنماطها أو طريقة توزيع الأهداف؛ لذا لا نضيف تفاصيل غير موثقة. ما يمكن تقييمه هو أن الأساس يدعم تنوعاً تكتيكياً محتملاً، وأن هذا التنوع يعتمد على اختيار الفريق والتعاون لا على ساحة ثابتة وحدها.\n\nأما تنوع المحتوى، فتدعمه قائمة الشخصيات الواسعة، وتعدد المواقع، وخطة الإضافات الموسمية للشخصيات والخرائط. كما تشير المعلومة الموسوعية إلى أحد عشر موسماً قصصياً حتى نوفمبر 2026، ما يثبت استمرار التوسع في فترة لاحقة للإطلاق. غير أن كثرة المحتوى ليست مرادفاً للتوازن، ولا نملك بيانات عن جودة المواسم أو توزيع اللاعبين أو منحنى التعلم. لذلك تُحسب للعبة قابلية التجدد والتنوع المعلن، مع التحفظ عن الادعاء بأنها تحافظ حتماً على إيقاع مثالي أو أن كل إضافة تحسن التجربة. هذا محور جيد بفضل وضوح بنائه وتعدد موارده، لا ممتاز على أساس دليل غير متاح.\n\n## نقاط القوة\nأبرز مكسب هو أن هوية اللعب لا تختزل في ترخيص مارفل: مهارات Team-Up الموصوفة تمنح التعاون بين شخصيات محددة معنى تصميمياً ملموساً، وتقدم أمثلة يسهل فهمها من دون افتراضات. يضاف إلى ذلك اتساع القائمة الموثق، من شخصيات شهيرة إلى أخرى أقل حضوراً، وهو ما يوسع خيارات تشكيل الفرق. كما أن جعل الخرائط قابلة للتدمير والتغيير يربط المكان بالقرار التكتيكي بدلاً من اعتباره ديكوراً، وفق الوصف المنشور. وأخيراً، يشير استمرار المحتوى الموسمي إلى بنية مصممة لتتطور، لا إلى إصدار يتوقف عند يوم إطلاقه.\n\nهذه نقاط قوة في التصور والاتجاه، لا شهادة بأن كل عنصر بلغ أفضل تنفيذ ممكن. قيمة التعاون تتوقف على التوازن الفعلي، وقيمة الخرائط المتغيرة تتوقف على وضوح أثرها، وقيمة الإضافات تعتمد على جودتها وإيقاعها؛ وكلها مسائل لا تفصلها المصادر. لكن وجود هذه الروابط المحددة يمنح اللعبة أساساً أكثر تماسكاً من مجرد ضم أسماء معروفة إلى ساحة قتال. لذلك يمكن الدفاع عن تقييم إيجابي للفكرة مع حذر في تقييم جودة التجربة على المدى الطويل.\n\n## نقاط الضعف\nأول تحفظ هو ضيق السجل النقدي المتاح: لا توجد مراجعات مستقلة مفصلة في الأدلة، ولا قياسات للأداء أو التوازن، ما يمنع إصدار أحكام قاطعة على عناصر مركزية في لعبة تنافسية. ثانيها أن تفاصيل السرد غائبة تقريباً؛ نعرف أن المواسم تحمل خطوطاً قصصية، لكن لا نعرف كيف تُكتب أو تُعرض أو ترتبط بتجربة اللعب. ثالثها أن الصوت والموسيقى والأداء لا تحظى بأي توثيق ذي قيمة تقييمية، فتظل درجة هذا المحور احترازية. هذه حدود في إمكان الحكم، وليست ادعاءات بوجود عيوب مؤكدة داخل اللعبة.\n\nهناك أيضاً مخاطرة تصميمية يمكن استنتاجها، لا إثبات وقوعها: الجمع بين قائمة كبيرة، وقدرات مشتركة، وبيئات قابلة للتغيير يجعل موازنة المعارك ووضوحها تحدياً مستمراً. لا يجوز الجزم بأن اللعبة فشلت في ذلك، لكن وصف عناصر كثيرة متفاعلة يفسر لماذا تحتاج التجربة إلى متابعة مستقلة لا يوفرها ملفنا. كما أن الاعتماد على التوسع الموسمي يربط جزءاً من قيمة اللعبة بجودة محتوى مستقبلي، ولا يمكن ضمان هذه الجودة بمجرد معرفة عدد المواسم. هذه تحفظات نقدية لازمة كي لا يتحول الوعد التسويقي إلى حقيقة مفترضة.\n\n## لمن يناسب هذا العمل؟\nتبدو Marvel Rivals مناسبة لمحبي ألعاب التصويب التنافسية الجماعية الذين يستمتعون بتنسيق الأدوار والقدرات، ولمن تمنحهم شخصيات مارفل ومواقعها دافعاً إضافياً لاختيار فريق وتعلم تآزر أعضائه. وقد تجذب أيضاً اللاعبين الذين يفضلون لعبة قابلة للتوسع بالمواسم، مع تنوع متوقع في الشخصيات والخرائط. أما من يبحث عن حملة قصصية واضحة ومكتملة، أو يريد حكماً مسبقاً موثقاً على جودة الكتابة والصوت والأداء التقني، فلن يجد ملف الأدلة الحالي ضماناً كافياً لتلبية هذه التوقعات. وبالمثل، من يفضل تجربة منفردة على منافسة جماعية مستمرة قد لا تكون الفكرة الأساسية مصممة له.\n\nالتوصية هنا إيجابية ولكن واعية بحدودها: ادخلها من أجل القتال الجماعي وتآزر الأبطال، لا على أساس وعد غير مثبت بقصة عميقة أو تنفيذ صوتي استثنائي. ولأن اللعبة مجانية وفق المصادر، تنخفض كلفة التجربة المالية الأولية، لكن ذلك لا يلغي كلفة الوقت أو متطلبات التفاعل التنافسي. هذا اعتبار سياقي لا حكم على جودة المحتوى المدفوع، إذ لا تتضمن الأدلة تفاصيل عن الاقتصاد الداخلي أو المشتريات. من الأفضل التعامل مع نقاط الجذب الموثقة بوصفها أسباباً للاهتمام، لا ضماناً بأن كل لاعب سيجد التوازن أو الإيقاع اللذين يفضلهما.\n\n## الحكم النهائي\nتملك Marvel Rivals تصوراً جماعياً واضحاً: مواجهات 6 ضد 6، شخصيات كثيرة، تآزر محدد بين القدرات، وبيئات يعلن وصفها أنها قابلة للتغيير، ضمن لعبة مستمرة التوسع. هذه عناصر تمنحها أساساً جذاباً وتبرر حكماً إيجابياً على الفكرة والبناء المعلن. في المقابل، لا يسمح الملف المتاح بتوثيق جودة القصة أو الصوت، أو إصدار حكم واثق على توازن اللعب والأداء الفني؛ لذلك لا نخلط بين كثرة المحتوى وبين الإتقان، ولا بين المقطع الترويجي والتقييم النقدي المستقل. أوصي بها لمحبي التصويب الجماعي وعالم مارفل ممن يقدّرون التنسيق، مع تحفظ لمن يضع الحملة السردية أو التقييم الفني الشامل في المقدمة. الدرجة النهائية تعكس قوة الأساس وتنوعه، وتخفض سقف الثقة حيث تنقص الأدلة، لا حيث ثبت عيب بعينه.",
-        "scores": {
-          "story": 6.8,
-          "visuals": 8.1,
-          "sound": 6,
-          "pacing": 7.7
-        },
-        "pros": [
-          "مهارات Team-Up موصوفة بأمثلة محددة، ما يجعل تنسيق الشخصيات جزءاً واضحاً من الفكرة.",
-          "قائمة واسعة موثقة تضم 55 شخصية قابلة للعب وفق المصدر الموسوعي.",
-          "الخرائط القابلة للتدمير والتغيير تربط البيئة بالتكتيك، بحسب وصف RAWG.",
-          "خطة توسع موسمية للشخصيات والخرائط، مع أحد عشر موسماً ذا خطوط قصصية موثقاً حتى نوفمبر 2026."
-        ],
-        "cons": [
-          "المصادر المتاحة لا توثق عمق القصة أو جودة كتابة الخطوط الموسمية.",
-          "لا توجد أدلة نقدية كافية لتقييم الموسيقى أو المؤثرات أو الأداء الصوتي.",
-          "لا يقدم الملف تحليلاً مستقلاً لتوازن الشخصيات أو أداء اللعبة التقني.",
-          "كثرة الشخصيات والقدرات والبيئات المتغيرة تجعل التوازن والوضوح تحديين محتملين، لكن نجاح معالجتهما غير موثق."
-        ],
-        "title": "Marvel Rivals",
-        "type": "game",
-        "sourceId": "game:993875",
-        "sourceName": "RAWG",
-        "sourceUrl": "https://rawg.io/games/marvel-rivals",
-        "sourceRating": 3.69,
-        "sourceRatingScale": 5,
-        "sourceVoteCount": 126,
-        "sourceRatingCheckedAt": "2026-11-28T07:35:54.872Z",
-        "audienceScore": 7.4,
-        "releaseDate": "2024-12-06",
-        "poster": "https://media.rawg.io/media/screenshots/3f0/3f0fdfc7c71655366aa83ab80ecab9b8.jpg",
-        "backdrop": "https://media.rawg.io/media/screenshots/3f0/3f0fdfc7c71655366aa83ab80ecab9b8.jpg",
-        "genres": [
-          "Action"
-        ],
-        "platforms": [
-          "Xbox Series S/X",
-          "PlayStation 5",
-          "PC"
-        ],
-        "cast": [],
-        "crew": [],
-        "tags": [
-          "Action"
-        ],
-        "sources": [
-          {
-            "name": "RAWG",
-            "url": "https://rawg.io/games/marvel-rivals",
-            "extract": "Marvel Rivals is a Super Hero Team-Based PVP Shooter! Assemble an all-star Marvel squad, devise countless strategies by combining powers to form unique Team-Up skills and fight in destructible, ever-changing battlefields across the continually evolving Marvel universe! A Deep and Varied Marvel RosterChoose from a vast array of fan-favorite and cult-classic Marvel Super Heroes and Super Villains from across the Avengers, Guardians of the Galaxy, X-Men, and many more from across the Marvel Multiverse. Fast and Fun 6v6 Action with Ever-Changing Game DynamicsWith intricate environments, fast-paced gameplay, and ever-changing battlefields, there's never a dull moment in Marvel Rivals! Battle as Super Heroes and Super Villains with incredible abilities and combine your powers to bring unexpected fun to the battlefield in a matter of seconds.Dynamic Hero SynergyCoordinate unique combinations between characters to ignite surprising Team-Up Skills! Unleash the synergy of combined superpowers and invent new tactics that can turn the tide of combat. Ride on Groot's back as Rocket Raccoon to take on your enemies as a dangerous duo, unleash Gamma energy as Hulk to charge Iron Man's armor for massive damage, and so much more! Creative Environment DestructionTear your way through iconic Marvel worlds across destructible environments! From Asgard to the Tokyo of 2099, use superpowers to alter these environments, reshape the terrain, and craft a strategic advantage on the battlefield! Take cover to dodge attacks or use makeshift weapons to strike down enemies. Players will find countless ways to utilize the environment to claim victory!Continually Evolving Universe and Robust Post-Launch UpdatesThe Marvel Multiverse brings infinite possibilities! Each seasonal drop will introduce new Super Heroes to the battlefield along with challenging and diverse maps! Unlock new content to implement across various gameplay strategies while experiencing thrilling action and endless possibilities in these adventurous team battles!",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Marvel_Rivals",
-            "extract": "Marvel Rivals is a free-to-play hero shooter video game developed and published by NetEase Games in collaboration with Marvel Games. The game was released for PlayStation 5, Windows, and Xbox Series X/S on December 6, 2024, with a PlayStation 4 version released on September 12, 2025, and a Nintendo Switch 2 version currently in development. The game is free-to-play with a current lineup of 55 playable characters from Marvel Comics, and features cross-play across all supported platforms. As of November 2026, eleven seasons of playable storylines have been released to the game, based on various comic book series and events.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — PlayStation",
-            "url": "https://www.youtube.com/watch?v=YIhkib05VCo",
-            "extract": "Verified public, embeddable promotional trailer: Marvel Rivals - Rivals 'Til the End Launch Trailer | PS5 Games",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "YIhkib05VCo",
-        "youtubeVideoTitle": "Marvel Rivals - Rivals 'Til the End Launch Trailer | PS5 Games",
-        "reviewMode": "review",
-        "score": 7.2
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 7004,
       "articlePath": "src/content/reviews/game-marvel-rivals-993875.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-marvel-rivals-993875/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-marvel-rivals-993875/",
+      "publishedAt": "2026-11-28T08:36:45.088Z"
+    },
+    "movie:1406492": {
+      "key": "movie:1406492",
+      "type": "movie",
+      "id": "1406492",
+      "title": "La venganza del Charro Negro",
+      "item": {
+        "type": "movie",
+        "id": "1406492",
+        "name": "La venganza del Charro Negro",
+        "date": "2026-10-22",
+        "preview": false,
+        "popularity": 79.101,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-28T08:36:47.331Z",
+      "updatedAt": "2026-11-28T08:36:47.850Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "No verified official YouTube trailer found for La venganza del Charro Negro"
+    },
+    "movie:755898": {
+      "key": "movie:755898",
+      "type": "movie",
+      "id": "755898",
+      "title": "War of the Worlds",
+      "item": {
+        "type": "movie",
+        "id": "755898",
+        "name": "War of the Worlds",
+        "date": "2025-07-29",
+        "preview": false,
+        "popularity": 75.8758,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-28T08:36:49.250Z",
+      "updatedAt": "2026-11-28T08:36:49.868Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "No exact independent encyclopedia match for War of the Worlds"
+    },
+    "movie:1615596": {
+      "key": "movie:1615596",
+      "type": "movie",
+      "id": "1615596",
+      "title": "Best Pancakes in the County",
+      "item": {
+        "type": "movie",
+        "id": "1615596",
+        "name": "Best Pancakes in the County",
+        "date": "2026-11-12",
+        "preview": false,
+        "popularity": 69.9476,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-28T08:36:50.680Z",
+      "updatedAt": "2026-11-28T08:36:51.146Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Best Pancakes in the County",
+        "type": "movie",
+        "collectedAt": "2026-11-28T08:36:51.145Z",
+        "sourceId": "movie:1615596",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1615596",
+        "overview": "Over the course of one explosive night, a small-town diner becomes the epicenter of a deadly standoff involving rogue federal agents, a fast-talking con man with a dangerous past, and a waitress harboring secrets of her own.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1615596",
+            "extract": "Over the course of one explosive night, a small-town diner becomes the epicenter of a deadly standoff involving rogue federal agents, a fast-talking con man with a dangerous past, and a waitress harboring secrets of her own.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Best_Pancakes_in_the_County",
+            "extract": "Best Pancakes in the County is a 2026 American action thriller film written and directed by Ken Sanzel. It stars Nicolas Cage, Justin Long, Shelley Hennig, and Ravi Patel.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — FilmSpot Trailer",
+            "url": "https://www.youtube.com/watch?v=_W-JaGimR_I",
+            "extract": "Verified public, embeddable promotional trailer: BEST PANCAKES IN THE COUNTY Official Trailer (NEW 2026)",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "limited",
+        "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
+        "youtubeVideoId": "_W-JaGimR_I",
+        "youtubeVideoTitle": "BEST PANCAKES IN THE COUNTY Official Trailer (NEW 2026)",
+        "youtubeChannel": "FilmSpot Trailer",
+        "releaseDate": "2026-11-12",
+        "genres": [
+          "Action",
+          "Thriller",
+          "Crime"
+        ],
+        "platforms": [],
+        "cast": [
+          "Nicolas Cage",
+          "Justin Long",
+          "Shelley Hennig",
+          "Ravi Patel",
+          "Brandon Mychal Smith",
+          "Kelly Greyson",
+          "Jaylen Moore",
+          "Michael Sirow"
+        ],
+        "crew": [
+          "Ken Sanzel",
+          "Ken Sanzel"
+        ],
+        "rating": 6,
+        "ratingScale": 10,
+        "votes": 15,
+        "poster": "https://image.tmdb.org/t/p/w780/wXVYDQl2ENk3NhT1ETS4C8cAEOC.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/34eWzsWpZa17DqT8KeL5InlvRK7.jpg"
+      },
+      "sections": [],
+      "article": null,
+      "lastError": "Publishing blocked: limited-evidence article is not publishable; V3 requires a scored review or a verified pre-release preview"
+    },
+    "movie:1514026": {
+      "key": "movie:1514026",
+      "type": "movie",
+      "id": "1514026",
+      "title": "Buddy",
+      "item": {
+        "type": "movie",
+        "id": "1514026",
+        "name": "Buddy",
+        "date": "2026-08-27",
+        "preview": false,
+        "popularity": 67.8391,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-28T08:36:52.092Z",
+      "updatedAt": "2026-11-28T08:36:52.606Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": "Independent source is too thin after full lead-section fallback"
+    },
+    "movie:1084244": {
+      "key": "movie:1084244",
+      "type": "movie",
+      "id": "1084244",
+      "title": "Toy Story 5",
+      "item": {
+        "type": "movie",
+        "id": "1084244",
+        "name": "Toy Story 5",
+        "date": "2026-06-17",
+        "preview": false,
+        "popularity": 62.5249,
+        "source": "TMDB"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-28T08:36:53.281Z",
+      "updatedAt": "2026-11-28T08:38:12.006Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Toy Story 5",
+        "type": "movie",
+        "collectedAt": "2026-11-28T08:36:53.736Z",
+        "sourceId": "movie:1084244",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1084244",
+        "overview": "When Bonnie receives a Lilypad tablet as a gift and becomes obsessed, Buzz, Woody, Jessie and the rest of the gang's jobs become exponentially harder when they have to go head to head with the all-new threat to playtime.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1084244",
+            "extract": "When Bonnie receives a Lilypad tablet as a gift and becomes obsessed, Buzz, Woody, Jessie and the rest of the gang's jobs become exponentially harder when they have to go head to head with the all-new threat to playtime.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Toy_Story_5",
+            "extract": "Toy Story 5 is a 2026 American animated comedy-drama film directed by Andrew Stanton, written by Stanton and Kenna Harris, and produced by Pixar Animation Studios for Walt Disney Pictures. Tom Hanks, Tim Allen, and Joan Cusack reprise their voice roles, joined by Conan O'Brien, Scarlett Spears, Greta Lee, Shelby Rabara, Mykal-Michelle Harris, and Craig Robinson. Set two years after Toy Story 4 (2019), it follows Jessie as she, Woody, Buzz Lightyear and the other toys deal with the presence of Lilypad, a tablet and Bonnie's new favorite plaything.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Walt Disney Studios Indonesia",
+            "url": "https://www.youtube.com/watch?v=yYjMaAwzrQE",
+            "extract": "Verified public, embeddable promotional trailer: Toy Story 5 | Official Trailer | Di Bioskop Juni 2026",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 2932 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "yYjMaAwzrQE",
+        "youtubeVideoTitle": "Toy Story 5 | Official Trailer | Di Bioskop Juni 2026",
+        "youtubeChannel": "Walt Disney Studios Indonesia",
+        "releaseDate": "2026-06-17",
+        "genres": [
+          "Animation",
+          "Family",
+          "Comedy",
+          "Adventure"
+        ],
+        "platforms": [],
+        "cast": [
+          "Joan Cusack",
+          "Tom Hanks",
+          "Tim Allen",
+          "Conan O'Brien",
+          "Scarlett Spears",
+          "Greta Lee",
+          "Shelby Rabara",
+          "Mykal-Michelle Harris"
+        ],
+        "crew": [
+          "Andrew Stanton"
+        ],
+        "rating": 8.233,
+        "ratingScale": 10,
+        "votes": 2932,
+        "poster": "https://image.tmdb.org/t/p/w780/sfQtVlIHljToOwYjhe21KPGzZWK.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/qjTqY5coNiz6sVtPng40IzltsoN.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "Toy Story 5: عودة إلى سؤال اللعب في عصر الشاشة، بفكرة واعدة وأدلة لا تتيح حكماً تقنياً كاملاً",
+        "summary": "يعيد Toy Story 5 شخصياته المعروفة إلى أزمة جديدة تتصل بمكان اللعب في حياة طفلة تنجذب إلى جهاز لوحي حديث. الفكرة، كما يقدمها ملخص TMDB والمعلومات المنشورة عن الفيلم، تمنح السلسلة مدخلاً معاصراً يمكن أن يجمع بين الكوميديا والمغامرة والتأمل في التغير، فيما تضع جيسي وودي وباز أمام تحدٍ يمس دور الألعاب نفسه. غير أن ملف الأدلة المتاح لا يضم مراجعات نقدية مستقلة أو تفاصيل إنتاجية كافية للحكم بثقة على جودة التنفيذ، ولا يثبت عناصر بصرية أو موسيقية بعينها. لذلك تأتي هذه القراءة حكماً تحريرياً نهائياً محدوداً بما يمكن توثيقه، لا ادعاءً بمشاهدة شخصية. نتيجتها: مشروع ذو محور قصصي واضح وشخصيات ذات تاريخ، لكن تقييمه التفصيلي يظل مقيداً بحدود المصادر.",
+        "verdict": "يملك Toy Story 5 أساساً قصصياً صالحاً للعودة: صراع الألعاب على انتباه بوني في مواجهة جهاز لوحي جديد يربط موضوع السلسلة القديم، أي معنى اللعب والرفقة، بتغير معاصر مفهوم. كما أن وجود أندرو ستانتون في الإخراج وعودة أصوات رئيسية يمنحان المشروع استمرارية معلومة، لا ضماناً مسبقاً للنجاح. حكمي النهائي يميل إلى الإيجابية الحذرة: الفكرة والشخصيات تمنحان الفيلم مبرراً واضحاً، لكن الأدلة المقدمة لا تكفي لإثبات أن التنفيذ يضيف فعلاً فصلاً ضرورياً أو يحقق تميزاً بصرياً وصوتياً. لا أدّعي مشاهدة الفيلم؛ لذا تعكس الدرجات تقديراً تحريرياً محافظاً لما تثبته المعلومات المتاحة، لا تقريراً عن تجربة مشاهدة. أوصي به مبدئياً لمحبي السلسلة والعائلات المهتمة بحكاية تجمع المغامرة والسؤال عن اللعب، مع التنبيه إلى أن تقييم الجودة الفنية التفصيلية هنا أقل يقيناً من تقييم الفكرة والسياق.",
+        "body": "## مقدمة وسياق العمل\nصدر Toy Story 5، وفق تاريخ الإصدار الوارد في ملف TMDB، في 17 يونيو 2026، وينتمي إلى الرسوم المتحركة والكوميديا العائلية والمغامرة. هذه قراءة تحريرية نهائية مبنية على المعلومات المنشورة والمواد الرسمية المحددة في ملف الأدلة، وليست انطباعاً ناتجاً عن مشاهدة شخصية. ومن المهم ضبط نطاق الحكم منذ البداية: المتاح يتضمن ملخصاً قصصياً، بيانات طاقم، مدخلاً موسوعياً، ومقطعاً ترويجياً رسمياً موثقاً من Walt Disney Studios Indonesia؛ لكنه لا يضم مراجعات نقدية مستقلة أو تفاصيل كافية عن صناعة الفيلم ومشاهده. لذلك يمكن فحص الفكرة وموقعها داخل السلسلة، أما الحكم التفصيلي على جودة التنفيذ فينبغي أن يبقى متحفظاً. هذا التمييز ليس تهرباً من التقييم، بل شرط لتجنب تحويل المعلومات المحدودة إلى ادعاءات عن تجربة لم تحدث.\n\n## الفكرة والقصة أو التجربة\nتضع المعلومات المتاحة نقطة الانطلاق في هدية تتلقاها بوني: جهاز Lilypad اللوحي، الذي يصبح محور اهتمامها. نتيجة ذلك، تواجه ألعابها صعوبة أكبر في أداء دورها، ويبرز الجهاز بوصفه تهديداً جديداً لوقت اللعب. هذه هي الوقائع القصصية التي يسندها ملخص TMDB؛ أما القول إن الفيلم يطرح صراعاً بين اللعب المادي والانجذاب إلى التكنولوجيا فهو استنتاج موضوعي من تركيب الفكرة، لا وصف لمشهد بعينه. قوة المدخل أنه يمنح السلسلة موضوعاً معاصراً يسهل فهمه من دون إلغاء مركزها العاطفي: العلاقة بين الطفل وألعابه. وفي الوقت نفسه، لا يكشف الملخص كيف يتطور الصراع أو ما إذا كان الجهاز يعامل خصماً حرفياً أو رمزاً لمنافسة الانتباه. هذا الغياب يمنع التوسع في تفاصيل الحبكة، لكنه يتيح حكماً أولياً بأن الفكرة واضحة وذات قابلية درامية. درجة القصة 7.4 من 10؛ وهي تعكس وضوح الصراع وارتباطه بمحور السلسلة، مع خصم التحفظ لعدم توافر أدلة تثبت عمق التطوير أو نجاح الحل.\n\n## السرد والشخصيات أو تصميم اللعب\nلا ينطبق تحليل تصميم اللعب هنا، لأن العمل فيلم، والتحليل الملائم يتركز على السرد والشخصيات. يذكر المدخل الموسوعي أن الأحداث تقع بعد عامين من Toy Story 4، وأن جيسي وودي وباز لايتير والألعاب الأخرى يتعاملون مع وجود Lilypad وكونه اللعبة الجديدة المفضلة لدى بوني. كما يصف ملخص TMDB مهمة الشخصيات بأنها أكثر صعوبة بعد انشغالها بالجهاز. هذان المصدران يدعمان مركزية جيسي وعودة وودي وباز إلى المجموعة، لكنهما لا يثبتان مقدار المساحة التي يحصل عليها كل منهم أو طبيعة أقواسهم الدرامية. اختيار جيسي في واجهة الوصف الموسوعي يمكن أن يلمح إلى توسيع مركز الثقل داخل المجموعة، غير أن اعتباره تحولاً سردياً ناجزاً سيكون سابقاً للأدلة. السيناريو منسوب إلى أندرو ستانتون وكينا هاريس في المدخل الموسوعي، فيما يرد ستانتون مخرجاً أيضاً. هذه معلومات إنتاجية مفيدة، لكنها لا تكفي وحدها لإثبات جودة الحوار أو تماسك البناء. ومن ثم يستند تقدير السرد إلى وضوح الوضع والشخصيات المذكورة، لا إلى اختلاق مواقف أو نتائج لا يوردها الملف.\n\n## الإخراج والجوانب الفنية\nينسب ملف الأدلة الإخراج إلى أندرو ستانتون، ويورد أن الفيلم من إنتاج Pixar Animation Studios لصالح Walt Disney Pictures. تمنح هذه البيانات العمل هوية إنتاجية واضحة، وتسمح بوضعه في تقليد فيلم رسوم متحركة استوديوي واسع الجمهور، لكنها لا تشكل بحد ذاتها برهاناً على نجاح الإخراج. لا يتضمن الملف وصفاً لتوزيع المشاهد أو إدارة الكوميديا أو تنظيم المغامرة، لذلك لا يصح أن أنسب إلى ستانتون اختيارات محددة أو أصف فعالية انتقالات بعينها. ما يمكن استنتاجه على مستوى التصميم العام هو أن الجمع بين مجموعة ألعاب مألوفة ومنافسة تقنية جديدة يحتاج إلى موازنة بين الشخصيات والموضوع، وأن نجاح الفيلم يتوقف على تحويل هذه الفكرة إلى دراما لا إلى شعار عن الأجهزة. هذا معيار نقدي للعمل، لا تقرير عن تحقق المعيار. بناءً على الأدلة المتاحة، يبدو التصور الإخراجي ذا أساس مفهوم، لكن الحكم على التنفيذ يظل محكوماً بنقص المعلومات التفصيلية. ولهذا لا تتحول سمعة جهة الإنتاج أو خبرة المخرج إلى نقاط مجانية في التقدير.\n\n## الصورة والهوية البصرية\nالمؤكد بصرياً في البيانات هو تصنيف الفيلم عملاً متحركاً، وارتباط إنتاجه بـPixar، مع توفر ملصق وخلفية ترويجية ورابط لمقطع رسمي موصوف بأنه إعلان دعائي موثق. لكن الملف لا يقدم تحليلاً للرسوم أو تصميم الشخصيات أو الألوان أو حركة الكاميرا، ولا يتيح وصف لقطات محددة يمكن الاستناد إليها. لذلك لا أزعم أن الفيلم يحقق قفزة تقنية، أو أنه يحافظ على مظهر الأجزاء السابقة، أو أن الإعلان يبرهن على مستوى الصورة؛ فوجود مادة ترويجية لا يغني عن فحصها نقدياً. الدرجة البصرية 6.8 من 10، وهي درجة احترازية محدودة الثقة، لا حكم بأن الصورة متوسطة فعلياً. سببها أن الدليل يثبت نوع الإنتاج والجهة المنتجة ووجود مادة رسمية، لكنه لا يقدم شواهد كافية لتبرير درجة مرتفعة عن جودة التنفيذ. ومن ثم ينبغي قراءة الرقم على أنه تقدير متحفظ ضمن شروط الملف، لا مقارنة تقنية موثقة بين هذا الفيلم وأعمال أخرى.\n\n## الصوت والموسيقى والأداء\nتضم قائمة الأصوات العائدة جوان كوساك وتوم هانكس وتيم ألين، وتضيف أسماء مثل كونان أوبراين وغريتا لي وسكارليت سبيرز وشيلبي ربارا ومايكال-ميشيل هاريس وكريغ روبنسون، بحسب المعلومات الواردة. عودة مؤدين ارتبطت أصواتهم بالشخصيات تمنح الفيلم استمرارية في التمثيل الصوتي على مستوى الاختيار، لكنها لا تخبرنا كيف جاءت الأداءات في النسخة النهائية. كذلك لا يذكر الملف اسم ملحن أو تفاصيل الموسيقى أو المزج أو المؤثرات الصوتية؛ لذلك لا يمكن إصدار أحكام عن اللحن أو جودة التسجيل أو توظيف الصمت. وجود مقطع دعائي رسمي لا يسمح وحده بتقييم صوت الفيلم الكامل، ولا سيما أن المادة المتاحة لا توضح مكوناته الفنية. درجة الصوت 6.5 من 10، وهي تقدير محافظ بسبب محدودية الشواهد، لا انتقاص من الممثلين ولا ادعاء بوجود خلل. ما يدعمها فعلياً هو ثبوت طاقم صوتي معروف وعودة أسماء رئيسية؛ وما يمنع رفعها هو غياب معلومات قابلة للتحقق عن الأداء والموسيقى والتصميم الصوتي.\n\n## الإيقاع والبناء وتنوع المحتوى\nلا يورد ملف الأدلة مدة الفيلم أو وصفاً لتقسيمه إلى مراحل، ولا معلومات موثقة عن إيقاع المشاهد أو تنوع المغامرات. لذلك لا يمكن الجزم بأنه سريع أو مترهل، ولا نسبة مشكلة تكرار إليه. المتاح يصف انتقالاً عاماً من تلقي بوني الجهاز إلى ازدياد صعوبة مهمة الألعاب، وهو تسلسل سببي بسيط يوفر نقطة انطلاق واضحة. كما أن وجود عدة شخصيات رئيسية يتيح، من حيث الإمكان، توزيع الحركة بينها، لكن هذا لا يثبت أن الفيلم يحقق تنوعاً فعلياً أو يمنح كل شخصية وقتاً متوازناً. درجة الإيقاع 6.8 من 10، وتعبّر عن تقييم احترازي للمعطيات لا عن قياس مباشر لسرعة الفيلم. وضوح الشرارة الدرامية يحسب للبناء، أما غياب معلومات المدة والتطورات فيمنع اعتبار الإيقاع نقطة قوة مؤكدة أو ضعفاً مثبتاً. وبذلك يظل هذا المحور أقل حسماً من تقييم الفكرة الأساسية.\n\n## نقاط القوة\nأبرز نقاط القوة التي تدعمها الوقائع هي وضوح الصراع المحوري: اهتمام بوني بجهاز جديد يضع الألعاب أمام منافسة ملموسة على وقت اللعب. ثانياً، تعود شخصيات محورية من السلسلة، وتظهر جيسي إلى جانب وودي وباز في وصف الأحداث، ما يوفر استمرارية معروفة للجمهور. ثالثاً، للموضوع قابلية عائلية مشتركة؛ فالاختلاف بين اللعب بالألعاب والانشغال بجهاز مفهوم للأطفال والبالغين، من دون الحاجة إلى افتراض مضمون لم يذكره الملخص. رابعاً، يثبت الملف حضور أندرو ستانتون في الإخراج والكتابة، مع كينا هاريس في الكتابة وفق المدخل الموسوعي، وهو أساس إنتاجي محدد لا مجرد تخمين. وأخيراً، وجود إعلان رسمي موثق وتاريخ إصدار معلوم يجعلان سياق العمل قابلاً للتحديد، وإن لم يثبتا جودته الفنية. هذه مزايا في التصور والهوية والسياق، وليست ادعاءً بأن كل واحدة منها تحولت بالضرورة إلى نجاح على الشاشة.\n\n## نقاط الضعف\nأهم تحفظ تحريري ليس عيباً مؤكداً في الفيلم، بل فجوة الأدلة: لا توجد في الملف مراجعات مستقلة أو مناقشات موثقة للأداء والإخراج والإيقاع. كذلك يظل الملخص عاماً؛ فهو يحدد الجهاز ومشكلة اللعب، لكنه لا يكشف كيف يتطور الصراع أو ما الذي يميز هذا الفصل درامياً عن عودة أخرى لشخصيات معروفة. ولا تتوافر بيانات عن الموسيقى أو تفاصيل تقنية للصورة، لذلك لا يمكن اختبار مدى التميز الفني. كما أن فكرة الشاشة بوصفها منافساً للعب قد تصبح مباشرة أو وعظية إذا لم تتوازن مع المغامرة والشخصيات؛ هذا خطر محتمل مستنتج من الفرضية، وليس عيباً أؤكد وقوعه. ويحتاج الحكم على توزيع الأدوار، خصوصاً مع حضور جيسي في وصف الحبكة، إلى معلومات أوسع مما يقدمه الملف. هذه القيود تحد من الثقة بالدرجة الإجمالية، لكنها لا تبرر اختراع مشكلات أو تحويل غياب البيانات إلى دليل على رداءة العمل.\n\n## لمن يناسب هذا العمل؟\nبحسب نوعه وفكرته المعلنة، يبدو الفيلم مناسباً لعائلات تبحث عن رسوم متحركة ومغامرة ذات مدخل قريب من تجربة الأطفال اليومية، ولمن يتابع شخصيات Toy Story ويرغب في معرفة كيفية عودتها إلى أزمة جديدة. وقد يجد فيه المشاهد المهتم بعلاقة اللعب بالتكنولوجيا موضوعاً قابلاً للنقاش، لأن هذا التوتر حاضر صراحة في الملخص. أما من ينتظر تحليلاً نفسياً تفصيلياً للشخصيات، أو تجديداً بصرياً محدداً، أو موسيقى مميزة، فلا تكفي الأدلة المتاحة لتقديم توصية مضمونة على هذه الأسس. يسجل TMDB متوسطاً جماهيرياً قدره 8.233 من 10 استناداً إلى 2932 صوتاً، وهو مؤشر استقبال جماهيري ثانوي منسوب إلى المنصة، لا نتيجة مستقلة لـVibeCritic ولا بديلاً عن التقييم التحريري. يمكن أخذه بوصفه إشارة إلى تفاعل جمهور المنصة، مع إبقاء معيار التوصية هنا قائماً على الفكرة الموثقة وحدود المعلومات.\n\n## الحكم النهائي\nيقدم Toy Story 5 عودة ذات مبرر قصصي مفهوم: جهاز جديد يستحوذ على اهتمام بوني ويجعل مهمة الألعاب أصعب، بما يعيد سؤال مكان اللعب في عالم متغير إلى قلب السلسلة. تكمن جاذبية المشروع، وفق الأدلة، في هذا التصادم الواضح وفي استعادة شخصيات مألوفة ضمن عمل متحرك عائلي، بينما تظل قيمته النهائية رهينة عناصر لا يشرحها الملف، من تطور الحكاية إلى جودة الصورة والصوت والإيقاع. لذلك حكمي إيجابي بحذر لا احتفائي: الفكرة كافية لتبرير الاهتمام، لكنها لا تكفي وحدها لإثبات أن الفيلم إضافة استثنائية أو أن تنفيذه يتجاوز المتوقع. الدرجات تعكس هذا التفاوت؛ القصة تستفيد من وضوح فرضيتها، أما المحاور الفنية والإيقاعية فتبقى درجاتها متحفظة لأن الشواهد التفصيلية غائبة. أوصي به لمحبي السلسلة والعائلات، مع قراءة هذا الحكم باعتباره مراجعة نهائية أمينة لما توثقه المصادر، لا ادعاء مشاهدة مباشرة أو معرفة غير متاحة.",
+        "scores": {
+          "story": 7.4,
+          "visuals": 6.8,
+          "sound": 6.5,
+          "pacing": 6.8
+        },
+        "pros": [
+          "صراع قصصي واضح يربط انشغال بوني بجهاز Lilypad بتراجع مساحة اللعب للألعاب.",
+          "عودة وودي وباز وجيسي تمنح الفيلم استمرارية مع شخصيات السلسلة المعروفة.",
+          "موضوع اللعب والتكنولوجيا قابل للفهم والنقاش لدى جمهور عائلي متنوع.",
+          "إخراج أندرو ستانتون وكتابته مع كينا هاريس مثبتان في بيانات العمل."
+        ],
+        "cons": [
+          "المعلومات المتاحة لا توضح تطور الحبكة أو ما يميز الفصل درامياً عن الأجزاء السابقة.",
+          "لا توجد شواهد تفصيلية كافية لتقييم جودة الصورة أو تصميم الحركة.",
+          "غياب بيانات الموسيقى والتصميم الصوتي يمنع حكماً موثوقاً على هذا الجانب.",
+          "لا تتوافر معلومات عن مدة الفيلم أو بنائه التفصيلي تسمح بتقييم الإيقاع بثقة."
+        ],
+        "title": "Toy Story 5",
+        "type": "movie",
+        "sourceId": "movie:1084244",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1084244",
+        "sourceRating": 8.233,
+        "sourceRatingScale": 10,
+        "sourceVoteCount": 2932,
+        "sourceRatingCheckedAt": "2026-11-28T08:36:53.736Z",
+        "audienceScore": 8.2,
+        "releaseDate": "2026-06-17",
+        "poster": "https://image.tmdb.org/t/p/w780/sfQtVlIHljToOwYjhe21KPGzZWK.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/qjTqY5coNiz6sVtPng40IzltsoN.jpg",
+        "genres": [
+          "Animation",
+          "Family",
+          "Comedy",
+          "Adventure"
+        ],
+        "platforms": [],
+        "cast": [
+          "Joan Cusack",
+          "Tom Hanks",
+          "Tim Allen",
+          "Conan O'Brien",
+          "Scarlett Spears",
+          "Greta Lee",
+          "Shelby Rabara",
+          "Mykal-Michelle Harris"
+        ],
+        "crew": [
+          "Andrew Stanton"
+        ],
+        "tags": [
+          "Animation",
+          "Family",
+          "Comedy",
+          "Adventure"
+        ],
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1084244",
+            "extract": "When Bonnie receives a Lilypad tablet as a gift and becomes obsessed, Buzz, Woody, Jessie and the rest of the gang's jobs become exponentially harder when they have to go head to head with the all-new threat to playtime.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Toy_Story_5",
+            "extract": "Toy Story 5 is a 2026 American animated comedy-drama film directed by Andrew Stanton, written by Stanton and Kenna Harris, and produced by Pixar Animation Studios for Walt Disney Pictures. Tom Hanks, Tim Allen, and Joan Cusack reprise their voice roles, joined by Conan O'Brien, Scarlett Spears, Greta Lee, Shelby Rabara, Mykal-Michelle Harris, and Craig Robinson. Set two years after Toy Story 4 (2019), it follows Jessie as she, Woody, Buzz Lightyear and the other toys deal with the presence of Lilypad, a tablet and Bonnie's new favorite plaything.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Walt Disney Studios Indonesia",
+            "url": "https://www.youtube.com/watch?v=yYjMaAwzrQE",
+            "extract": "Verified public, embeddable promotional trailer: Toy Story 5 | Official Trailer | Di Bioskop Juni 2026",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "yYjMaAwzrQE",
+        "youtubeVideoTitle": "Toy Story 5 | Official Trailer | Di Bioskop Juni 2026",
+        "reviewMode": "review",
+        "score": 6.9
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 12870,
+      "articlePath": "src/content/reviews/movie-toy-story-5-1084244.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-toy-story-5-1084244/"
     }
   },
   "providers": {},
@@ -4415,9 +4627,9 @@
       "tokens": 32686
     },
     "2026-11-28": {
-      "articles": 2,
-      "requests": 4,
-      "tokens": 10868
+      "articles": 3,
+      "requests": 7,
+      "tokens": 23738
     }
   },
   "history": []
