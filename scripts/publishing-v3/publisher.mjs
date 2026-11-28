@@ -11,6 +11,7 @@ export function articleFilePath(article, root="src/content/reviews") {
 }
 export function renderMarkdown(article) {
   const reviewMode = article.reviewMode || "review";
+  if (reviewMode === "limited") throw new Error("Refusing to render a limited-evidence article for publication");
   const isPreview = reviewMode === "preview";
   const isAudience = reviewMode === "audience";
   const hasScore = reviewMode === "review";
@@ -79,6 +80,7 @@ export function renderMarkdown(article) {
   return fm.join("\n")+"\n";
 }
 export async function publishArticle(article, root="src/content/reviews") {
+  if (article.reviewMode === "limited") throw new Error("Refusing to publish a limited-evidence article");
   const isLimited = article.reviewMode !== "review";
   validateArticle(article,isLimited ? {minWords:650,minCharacters:3200} : {minWords:1000,minCharacters:5200});
   await fs.mkdir(root,{recursive:true});

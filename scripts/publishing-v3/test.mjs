@@ -3,7 +3,7 @@ import { createState, enqueue, transition, chooseJob, validateEvidence, validate
 import { withRunLock } from "./lock.mjs";
 import { publishArticle, articleFilePath, renderMarkdown } from "./publisher.mjs";
 import { loadState, saveState } from "./store.mjs";
-import { normalizeFinalRating, normalizeBodyFinalRating, assemble, buildPrompt } from "./writer.mjs";
+import { normalizeFinalRating, normalizeBodyFinalRating, assemble, buildPrompt, writeArticle } from "./writer.mjs";
 import { publishedIdentityKeys, isEligibleReleaseDate, selectEligibleCandidate } from "./sources.mjs";
 import { DAILY_ARTICLE_LIMIT } from "./policy.mjs";
 import fs from "node:fs/promises";
@@ -93,7 +93,7 @@ const body = ["## تحليل السرد والبناء\n\n"+("تحليل نقد�
 const article = { title:"x", sourceId:"game:42", type:"game", body, verdict:"حكم نقدي", pros:["a","b","c"], cons:["a","b"], scores:{story:7,visuals:7,sound:7,pacing:7}, score:7, sources:evidence.sources, youtubeVideoId:"AbCdEfGhI_1", youtubeVideoTitle:"Official Test Trailer" };
 assert.ok(validateArticle(article).words >= 650);
 
-// Metadata + encyclopedia + promotional evidence must produce a limited article without a numeric rating.
+// Limited-evidence candidates must be rejected before any AI writing or publication.
 const limitedEvidence = {
   ...evidence,
   title:"Limited Evidence Test",
@@ -113,20 +113,10 @@ const limitedDraft = {
   verdict:"تظل هذه الصفحة قراءة معلوماتية محدودة لأن المصادر المتاحة تصف العمل وتقدم معلومات عامة ومواد ترويجية، لكنها لا توفر شواهد كافية على تجربة اللعب أو جودة التنفيذ. لذلك نعرض الحقائق المؤكدة ونوضح الأسئلة التي لا تزال مفتوحة، ولا نحول نقص المعلومات إلى عيوب مختلقة أو درجة رقمية قد تضلل القارئ.",
   reviewMode:undefined
 };
-const limitedResult = assemble(limitedDraft,limitedEvidence);
-assert.equal(limitedResult.article.reviewMode,"limited");
-assert.equal(limitedResult.article.score,undefined);
-assert.equal(limitedResult.article.scores,undefined);
-assert.ok(validateArticle(limitedResult.article,{minWords:650,minCharacters:3200}).words >= 650);
-const limitedMarkdown = renderMarkdown(limitedResult.article);
-assert.match(limitedMarkdown,/reviewMode: limited/);
-assert.doesNotMatch(limitedMarkdown,/^score:/m);
-assert.match(limitedMarkdown,/قراءة معلوماتية محدودة/);
-assert.doesNotMatch(limitedMarkdown,/قيد التقييم/);
-const limitedPrompt = buildPrompt(limitedEvidence);
-assert.match(limitedPrompt,/قراءة معلوماتية عربية محدودة الأدلة/);
-assert.match(limitedPrompt,/لا تضف scores أو score/);
-assert.match(limitedPrompt,/ما الذي لا نعرفه بعد/);
+assert.throws(() => assemble(limitedDraft,limitedEvidence), /limited-evidence article is not publishable/);
+await assert.rejects(() => writeArticle(limitedEvidence), /limited-evidence article is not publishable/);
+assert.throws(() => renderMarkdown({ ...limitedDraft, reviewMode:"limited" }), /Refusing to render a limited-evidence article/);
+await assert.rejects(() => publishArticle({ ...limitedDraft, reviewMode:"limited" }, path.join(os.tmpdir(),"vibecritic-limited-guard")), /Refusing to publish a limited-evidence article/);
 const previewEvidence = { ...limitedEvidence, releaseDate:"2099-01-01", reviewReadiness:"preview" };
 const previewDraft = { ...limitedDraft, headline:"معاينة استباقية قبل الإصدار", summary:"هذه معاينة استباقية للعمل قبل صدوره، تستعرض المعلومات الرسمية المتاحة وتفصل الحقائق عن التوقعات، ولا تمثل مراجعة نهائية ولا تمنح درجة رقمية أو حكماً على جودة التجربة.", verdict:"هذه معاينة استباقية قبل الإصدار، وليست مراجعة نهائية. نستعرض المعلومات المؤكدة وما يمكن توقعه بحذر، ونترك الحكم على الجودة والتقييم الرقمي إلى ما بعد صدور العمل وتوفر أدلة نقدية كافية.", reviewMode:undefined };
 const previewResult = assemble(previewDraft,previewEvidence);
