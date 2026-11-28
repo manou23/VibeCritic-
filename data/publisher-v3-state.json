@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-28T10:17:17.044Z",
+  "updatedAt": "2026-11-28T12:48:13.473Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -4556,151 +4556,196 @@
         "popularity": 1015,
         "source": "RAWG"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-28T10:16:11.927Z",
-      "updatedAt": "2026-11-28T10:17:17.044Z",
+      "updatedAt": "2026-11-28T12:46:55.708Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "Balatro",
-        "type": "game",
-        "collectedAt": "2026-11-28T10:16:12.672Z",
-        "sourceId": "game:977316",
-        "sourceName": "RAWG",
-        "sourceUrl": "https://rawg.io/games/balatro",
-        "overview": "Balatro is a poker-inspired roguelike deck builder all about creating powerful synergies and winning big. Combine valid poker hands with unique Joker cards in order to create varied synergies and builds. Earn enough chips to beat devious blinds, all while uncovering hidden bonus hands and decks as you progress. You’re going to need every edge you can get in order to reach the boss blind, beat the final ante and secure victory. The definitive poker roguelike experience. Endless possibilities - every pick-up, discard and joker can dramatically alter the course of your run. In-depth campaign mode complete with 8 difficulties, as well as challenge, daily and seeded runs. Deftly deploy an array of potent tools: different Decks, Jokers, Tarot cards, Planet cards, Spectral cards, and Vouchers. Use these versatile instruments to ignite a combo frenzy and turbocharge your poker hands, crafting electrifying, adrenaline-fueled synergies. 150 Jokers, each with their own unique abilities 15 Decks with distinct modifiers to choose from for each run 5 potential variants of each Joker which add further abilities 22 Tarot cards variants that can enhance your regular playing cards 11 Planet cards that help level up your possible poker hands 32 Voucher cards to help provide permanent buffs for your current run Immerse yourself in Balatro’s distinctive psychedelic world. Let the synthwave soundtrack wash over you - wind down, escape the daily grind and prepare to enter the ultimate roguelike flow state. Improve your collection and discover new cards and secrets with every single run. Make use of the in-depth stats screen to study your best hands, most used Jokers, and more! Immerse yourself in the CRT fuzz and enjoy detailed, hand-crafted pixel art.",
-        "sources": [
-          {
-            "name": "RAWG",
-            "url": "https://rawg.io/games/balatro",
-            "extract": "Balatro is a poker-inspired roguelike deck builder all about creating powerful synergies and winning big. Combine valid poker hands with unique Joker cards in order to create varied synergies and builds. Earn enough chips to beat devious blinds, all while uncovering hidden bonus hands and decks as you progress. You’re going to need every edge you can get in order to reach the boss blind, beat the final ante and secure victory. The definitive poker roguelike experience. Endless possibilities - every pick-up, discard and joker can dramatically alter the course of your run. In-depth campaign mode complete with 8 difficulties, as well as challenge, daily and seeded runs. Deftly deploy an array of potent tools: different Decks, Jokers, Tarot cards, Planet cards, Spectral cards, and Vouchers. Use these versatile instruments to ignite a combo frenzy and turbocharge your poker hands, crafting electrifying, adrenaline-fueled synergies. 150 Jokers, each with their own unique abilities 15 Decks with distinct modifiers to choose from for each run 5 potential variants of each Joker which add further abilities 22 Tarot cards variants that can enhance your regular playing cards 11 Planet cards that help level up your possible poker hands 32 Voucher cards to help provide permanent buffs for your current run Immerse yourself in Balatro’s distinctive psychedelic world. Let the synthwave soundtrack wash over you - wind down, escape the daily grind and prepare to enter the ultimate roguelike flow state. Improve your collection and discover new cards and secrets with every single run. Make use of the in-depth stats screen to study your best hands, most used Jokers, and more! Immerse yourself in the CRT fuzz and enjoy detailed, hand-crafted pixel art.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Balatro",
-            "extract": "Balatro is a 2024 poker-themed roguelike deck-building game developed by solo developer LocalThunk and published by Playstack. It was released for Nintendo Switch, PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S on February 20, 2024, with a port to macOS on March 1. Ports for Android and iOS were released on September 26, 2024. A dedicated Nintendo Switch 2 version was released on February 25, 2026. In the game, the player must score points by playing poker hands from a starting 52-card deck, with a limited number of hands and discards each round.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — XBOX",
-            "url": "https://www.youtube.com/watch?v=Xn4ft9u924I",
-            "extract": "Verified public, embeddable promotional trailer: Balatro - Game Pass Announcement Trailer",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from RAWG with 288 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "Xn4ft9u924I",
-        "youtubeVideoTitle": "Balatro - Game Pass Announcement Trailer",
-        "youtubeChannel": "XBOX",
-        "releaseDate": "2024-02-20",
-        "genres": [
-          "Strategy",
-          "Casual",
-          "Indie"
-        ],
-        "platforms": [
-          "iOS",
-          "PlayStation 5",
-          "PC",
-          "Nintendo Switch"
-        ],
-        "developers": [
-          "LocalThunk"
-        ],
-        "rating": 4.28,
-        "ratingScale": 5,
-        "votes": 288,
-        "poster": "https://media.rawg.io/media/games/821/821a40bd0cc0ac7dfb3fe97a7878dc1f.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "Balatro: لعبة ورق تتحول إلى مختبر للتوليفات — بذكاء تصميمي وهوية لا تخفي حدودها",
-        "summary": "Balatro لعبة مستقلة من تطوير LocalThunk، صدرت في 20 فبراير 2024، وتبني تجربتها على أوراق لعب مستوحاة من البوكر ضمن صيغة بناء مجموعات roguelike. جوهرها ليس سرد حكاية موثقة بقدر ما هو تركيب الأيدي، والتعامل مع الأعمى والزعماء، وتطوير المجموعة عبر الجوكر وبطاقات التاروت والكواكب وغيرها. تكشف المعلومات المتاحة عن وفرة خيارات وأنماط لعب، وعن هوية بصرية بكسلية مؤثرة بملمس CRT وموسيقى موصوفة بأنها synthwave. هذه مراجعة تحريرية تستند إلى البيانات المنشورة والمواد الرسمية المتاحة، لا إلى ادعاء تجربة مباشرة. وتخلص إلى أن قوة العمل الأساسية في عمق أنظمته وتوليد التوليفات، مع تحفظ على محدودية ما يمكن إثباته عن قصته وأدائه التقني.",
-        "verdict": "Balatro عمل قوي الفكرة ومتماسك في مركزه التصميمي: يحوّل قواعد أيدي البوكر إلى أساس لبناء مجموعة متغيرة، ثم يمنح قرارات الاختيار والتطوير وزناً عبر الجوكر وبطاقات التاروت والكواكب والقسائم، إلى جانب درجات صعوبة وأنماط متعددة. تتسق هويته المعلنة، من فن البكسل وملمس CRT إلى الموسيقى الإلكترونية، مع وعد تجربة تركّز على التوليفات وإعادة المحاولة. لكن هذا الحكم يظل تحريرياً مستنداً إلى الأدلة المنشورة، لا شهادة لعب مباشرة؛ لذلك لا ينسب إلى اللعبة جودة تقنية أو سرداً تفصيلياً لا تثبته المصادر. التوصية واضحة لمحبي ألعاب بناء المجموعات والاستراتيجية الخفيفة التي تكافئ التجريب، وأقل وضوحاً لمن يبحثون عن حكاية وشخصيات أو تنوع قائم على الاستكشاف. إنها تجربة ذات هوية وعمق نظامي ظاهرين، مع مساحة غير محسومة في جوانب لا تسجلها الأدلة.",
-        "body": "## مقدمة وسياق العمل\nBalatro لعبة مستقلة طوّرها LocalThunk ونشرتها Playstack، وصدرت في 20 فبراير 2024. تصنّفها البيانات المتاحة ضمن الاستراتيجية والألعاب المستقلة والعادية، بينما يصفها سجل RAWG بأنها لعبة بناء مجموعات roguelike مستوحاة من البوكر. هذه نقطة الانطلاق الأنسب للحكم عليها: ليست لدينا هنا مادة موثقة تتيح مراجعة تجربة شخصية أو فحصاً تقنياً، ولذلك تستند القراءة إلى وصف الأنظمة المنشور، والمعلومات الموسوعية، والمادة الترويجية الرسمية المتاحة من Xbox. يجب أن يبقى الفرق واضحاً بين الوقائع والاستنتاج النقدي: عدد البطاقات والأنماط حقائق معلنة، أما القول إن كثرتها تمنح اللعبة عمقاً أو تكراراً ممتداً فهو تقدير لما توحي به بنية التصميم، لا تقرير عن جلسة لعب بعينها. كذلك لا يثبت المقطع الرسمي، الذي نعرف عنوانه بوصفه إعلان Game Pass، وحده تفاصيل الأداء أو محتوى التجربة كاملة.\n\n## الفكرة والقصة أو التجربة\nتقوم الفكرة على لعب أيدي بوكر من مجموعة ابتدائية من 52 ورقة، مع عدد محدود من الأيدي والرميات في كل جولة، بحسب الوصف الموسوعي. الهدف هو تسجيل نقاط كافية لتجاوز الأعمى، ثم التقدم إلى مواجهة الأعمى الزعيم والمرحلة النهائية. تمنح هذه القواعد المألوفة إطاراً واضحاً، لكن اللعبة توسّعه بإضافة أدوات تؤثر في خيارات المجموعة وفي قيمة ما يمكن تكوينه. يصف RAWG الجوهر بأنه صنع توليفات قوية بين الأيدي وبطاقات الجوكر، مع كشف أيدٍ ومجموعات إضافية أثناء التقدم. لا تقدم الأدلة قصة ذات شخصيات أو حبكة يمكن تحليلها، ولا ينبغي اختراع واحدة لسد هذا الفراغ. لذلك تُقرأ التجربة هنا بوصفها سلسلة تحديات نظامية: اللاعب يواجه شروطاً متغيرة، ويحاول إعداد مجموعة قادرة على تجاوزها. هذا التحول من لعبة ورق معروفة إلى مسار تصاعدي قائم على إدارة الموارد هو أكثر عناصر المفهوم تميزاً، كما أنه يحدد نوع الجمهور الذي قد يجد فيه جاذبية.\n\n## السرد والشخصيات أو تصميم اللعب\nلا يتيح ملف الأدلة مادة كافية لتقييم سرد أو شخصيات، لذا ينصب التحليل على التصميم. تذكر المعلومات 150 جوكراً بقدرات مختلفة، و15 مجموعة أوراق ذات معدّلات مميزة، وخمس نسخ محتملة لكل جوكر تضيف قدرات أخرى. وتضم الأدوات كذلك 22 نوعاً من بطاقات التاروت لتحسين الأوراق العادية، و11 بطاقة كواكب لرفع مستوى الأيدي الممكنة، و32 قسيمة تقدم تحسينات دائمة للمسار الحالي. هذه الأرقام لا تضمن وحدها توازناً مثالياً، لكنها تشير بوضوح إلى تعدد طبقات القرار: اختيار أساس المجموعة، ثم انتقاء أدوات تغيرها، ثم تقدير ما يخدم اليد التي يسعى اللاعب إلى بنائها. والفكرة التصميمية الواعدة أن كل اختيار قد يغيّر اتجاه الجولة، لا أن تكون البطاقات إضافات تجميلية فحسب. مع ذلك، لا توضح الأدلة نسب الظهور أو أثر كل قدرة أو منحنى التعلم، لذلك لا يصح الجزم بأن جميع الخيارات متكافئة أو أن التوليفات لا تتكرر. الحكم الأقوى الممكن هو أن تصميمها يراهن على التفاعل بين عناصر عديدة، وهو رهان غني نظرياً لكنه يحتاج اختباراً مباشراً للحكم على اتزانه الفعلي.\n\n## الإخراج والجوانب الفنية\nيظهر الإخراج، وفق ما تصفه المصادر، في خدمة حلقة اللعب أكثر من اعتماده على عرض قصصي. فالمجموعة، والبطاقات، والأرقام، وشروط الجولات هي مركز التجربة المعلن؛ ومن ثم يمكن استنتاج أن وضوح المعلومات عنصر بالغ الأهمية في لعبة تقوم على اختيار أدوات ذات آثار مختلفة. لكن لا تتوافر لقطات مفصلة موصوفة أو تقارير مستقلة عن سهولة قراءة الواجهة، أو خيارات الوصول، أو استجابة التحكم، ولا يقدم عنوان المقطع الترويجي وحده أساساً كافياً لتقييم هذه الجوانب. لهذا لا ننسب إلى الإخراج نجاحاً تقنياً مؤكداً، ولا نختلق عيوباً فيه. ما يمكن تقديره هو وحدة النية الفنية: عالم نفسيّ الألوان، ورسوم بكسلية مصنوعة بعناية بحسب وصف RAWG، مع طبقة CRT معلنة، ينسجم مع لعبة تريد أن تجعل أوراق اللعب جزءاً من مزاج بصري مميز. أما تنفيذ هذه النية على الشاشات المختلفة واستقرار الأداء، فمسألتان لا تحسمهما الأدلة المتاحة.\n\n## الصورة والهوية البصرية\nتمنح اللعبة نفسها هوية موصوفة بأنها عالم نفسيّ الطابع، مع فن بكسلي مفصل وملمس تشويش شاشات CRT. هذه سمات أكثر تحديداً من وصف عام مثل «أسلوب ريترو»: فهي تربط مظهر الأوراق بإحساس شاشة قديمة، وتضع اللعبة ضمن مزاج بصري واضح بدلاً من السعي إلى محاكاة طاولة واقعية. هذا الاختيار مناسب لمفهوم يقوم على قراءة رموز وأوراق ثم جمعها في توليفات، إذ يتيح للبطاقات أن تكون عناصر النظام وملامح العالم في آن. لكن الأدلة لا تشرح لوحة الألوان أو حركة المؤثرات أو تنوع الخلفيات، ولا تسمح بمقارنة جودة التنفيذ عبر المنصات. لذلك تستند الدرجة إلى وضوح الهوية المعلنة وتماسك عناصرها، لا إلى ادعاء فحص كل صورة أو واجهة. ومن نقاط القوة المحتملة هنا أن مظهراً متمايزاً قد يساعد على تمييز اللعبة وسط ألعاب الورق، فيما يبقى نجاحه في القراءة الطويلة أو راحة العين غير محسوم من الوصف وحده.\n\n## الصوت والموسيقى والأداء\nيصف RAWG الموسيقى بأنها synthwave، ويقدمها بوصفها جزءاً من حالة استرخاء وانغماس في تدفق اللعب. يمنح ذلك الصوت وظيفة مزاجية منسجمة مع عالم CRT والهوية النفسية، بدلاً من أن يكون مجرد خلفية لا صلة لها بالمفهوم. غير أن الوصف لا يورد أسماء مؤلفين أو مقطوعات، ولا يشرح تنوع الموسيقى أو علاقتها بتصاعد الصعوبة، لذلك لا يمكن تقييم جودة التأليف التفصيلية أو الأداء الصوتي للشخصيات. كما لا تتضمن الأدلة معلومات موثقة عن التمثيل الصوتي، ولا ينبغي افتراض وجوده أو غيابه بما يتجاوز ما ورد. النتيجة حكم إيجابي متحفظ: الاختيار الموسيقي المعلن ملائم للهوية، لكن الدليل المتاح أضيق من أن يبرر وصفاً قاطعاً للمسار الصوتي كاملاً. لا تسند المصادر كذلك أحكاماً عن المزج أو خيارات الصوت أو الأداء التقني، وهي عناصر تظل خارج هذا التقييم.\n\n## الإيقاع والبناء وتنوع المحتوى\nتُبنى إعادة اللعب على أكثر من مسار: حملة تتضمن ثماني درجات صعوبة، وتحديات، وجولات يومية، وجولات ذات بذور محددة. وتضاف إلى ذلك 15 مجموعة بداية مختلفة، وأعداد كبيرة من الجوكر وبطاقات التاروت والكواكب والقسائم، فضلاً عن إمكانات كشف بطاقات وأسرار مع التقدم. هذا التنوع الموثق يجعل من المعقول توقع مسارات لعب متعددة بدلاً من تكرار ترتيب ثابت، خصوصاً أن وصف RAWG يشير إلى أن الاختيارات والرميات والجوكر قد تغير مسار الجولة. هنا تظهر نقطة تصميمية مهمة: الإيقاع لا يعتمد، وفق البنية المعلنة، على محتوى قصصي متتابع، بل على دورات قصيرة من تكوين اليد، ومواجهة شروط الجولة، وتعديل المجموعة. وقد يخلق ذلك إيقاعاً سريع التبدل لمن يستمتع بتحسين خطته، لكنه قد يتحول إلى تكرار لمن لا تجذبه إعادة المحاولة أو إدارة الاحتمالات. لا توجد بيانات زمنية عن طول الجولات أو الحملة، ولا تقييم مباشر لتوازن الصعوبة؛ لذا لا نزعم أن الإيقاع ناجح في كل مراحله. وجود شاشة إحصاءات مفصلة لمتابعة أفضل الأيدي والجوكر الأكثر استخداماً يضيف بعداً تأملياً، لكنه لا يثبت وحده جودة التقدم أو غياب فترات الركود.\n\n## نقاط القوة\n- مفهوم واضح يمزج أيدي البوكر ببناء المجموعات والتقدم roguelike، بدلاً من الاكتفاء بمحاكاة لعبة ورق تقليدية.\n- مخزون معلن واسع من الأدوات: 150 جوكراً، و15 مجموعة، وبطاقات تاروت وكواكب وقسائم، بما يفتح مجالاً لتوليفات مختلفة.\n- تعدد أنماط اللعب ودرجات الصعوبة، بما يشمل الحملة والتحديات والجولات اليومية والبذور المحددة.\n- هوية بصرية معلنة ومتماسكة تجمع فن البكسل وملمس CRT والعالم النفسيّ الطابع.\n- شاشة إحصاءات تساعد على مراجعة أنماط اللعب ومتابعة الأيدي والجوكر الأكثر استخداماً.\n\n## نقاط الضعف\n- لا تقدم الأدلة المتاحة أساساً لتحليل قصة أو شخصيات، ما يجعل التوصية أقل ملاءمة لمن يبحث عن تجربة سردية.\n- كثرة الأدوات والأعداد المعلنة لا تثبت وحدها توازن الخيارات أو سهولة فهمها؛ تفاصيل منحنى التعلم غير متاحة.\n- لا تتوافر معلومات كافية للحكم على الأداء التقني، ووضوح الواجهة، أو جودة التنفيذ على كل منصة.\n- وصف الموسيقى والهوية البصرية موجز، ولا يكفي لتقييم تنوع الصوت أو قابلية قراءة العناصر في اللعب الطويل.\n\n## لمن يناسب هذا العمل؟\nيبدو Balatro مناسباً لمن يفضل ألعاب الاستراتيجية وبناء المجموعات، ويستمتع بتجريب أدوات مختلفة بحثاً عن توليفات تحقق هدفاً رقمياً واضحاً. كما أن وجود درجات صعوبة وتحديات يومية وبذور محددة يوحي بإمكان تلبية رغبة من يريد إعادة اللعب بأطر متنوعة، وإن لم تثبت البيانات مقدار اختلاف كل مسار عملياً. وقد تجذب الهوية البكسلية وطبقة CRT من يفضلان أسلوباً بصرياً ذا طابع ريترو معلن. في المقابل، من يجعل القصة والشخصيات أو الاستكشاف المكاني محور اهتمامه قد لا يجد في المعلومات المنشورة ما يشير إلى أن اللعبة تقدم ذلك النوع من المحتوى. وكذلك لا يمكن ضمان ملاءمتها لمن ينفر من التكرار أو من بناء الخطط حول أرقام واحتمالات، فهذه هي طبيعة التجربة التي يصفها تصميمها. الأفضل أن يختارها اللاعب بسبب اهتمامه بالنظام والتوليفات، لا بناء على افتراضات غير موثقة عن السرد أو الأداء.\n\n## الحكم النهائي\nتستحق Balatro تقييماً إيجابياً لأن فكرتها محددة وقابلة للتوسع، ولأن منظومة الجوكر والمجموعات والبطاقات المساندة تمنح بناء المجموعة مركزاً حقيقياً في التجربة. تنوع أنماط اللعب والدرجات، مع الإحصاءات والهوية البصرية والصوتية المعلنة، يكوّن أساساً مقنعاً للعودة والتجريب. في المقابل، يجب ألا يتحول حجم المحتوى إلى برهان تلقائي على التوازن أو العمق المتحقق، كما أن الأدلة لا تسمح بإصدار حكم على الأداء التقني أو التفاصيل الدقيقة للإيقاع والسرد. الدرجة التحريرية تعكس قوة المفهوم والاتساق الظاهر في عناصره، مع تحفظ متناسب مع ما لم تثبته المصادر؛ وهي ليست متوسط الجمهور ولا ادعاء تجربة مباشرة. التوصية لمحبي بناء المجموعات والتخطيط المرن واضحة، أما من يريد حكاية وشخصيات أو تقييماً تقنياً شاملاً فالمعلومات الموثقة هنا لا تكفي لتلبية تلك التوقعات.",
-        "scores": {
-          "story": 6.5,
-          "visuals": 8.2,
-          "sound": 7.6,
-          "pacing": 8.1
-        },
-        "pros": [
-          "يمزج أيدي البوكر ببناء المجموعات والتقدم roguelike ضمن فكرة تصميمية مباشرة.",
-          "تنوع كبير معلن في الأدوات، من 150 جوكراً إلى مجموعات وبطاقات مساندة متعددة.",
-          "ثماني درجات صعوبة، إلى جانب الحملة والتحديات والجولات اليومية والبذور المحددة.",
-          "هوية بصرية موصوفة بفن بكسلي مفصل وملمس CRT وعالم نفسيّ الطابع.",
-          "شاشة إحصاءات تتيح متابعة أفضل الأيدي والجوكر الأكثر استخداماً."
-        ],
-        "cons": [
-          "لا توفر الأدلة المتاحة قصة أو شخصيات يمكن تقييمها، ما يحد من جاذبيتها لمن يبحث عن السرد.",
-          "عدد الأدوات الكبير لا يثبت وحده توازنها أو وضوح منحنى التعلم، وهذان جانبان غير موثقين هنا.",
-          "المعلومات المتاحة لا تكفي للحكم على الأداء التقني أو وضوح الواجهة عبر المنصات.",
-          "وصف الموسيقى والهوية البصرية لا يتيح تقييماً تفصيلياً للتنوع الصوتي أو راحة القراءة خلال اللعب الطويل."
-        ],
-        "title": "Balatro",
-        "type": "game",
-        "sourceId": "game:977316",
-        "sourceName": "RAWG",
-        "sourceUrl": "https://rawg.io/games/balatro",
-        "sourceRating": 4.28,
-        "sourceRatingScale": 5,
-        "sourceVoteCount": 288,
-        "sourceRatingCheckedAt": "2026-11-28T10:16:12.672Z",
-        "audienceScore": 8.6,
-        "releaseDate": "2024-02-20",
-        "poster": "https://media.rawg.io/media/games/821/821a40bd0cc0ac7dfb3fe97a7878dc1f.jpg",
-        "backdrop": "https://media.rawg.io/media/games/821/821a40bd0cc0ac7dfb3fe97a7878dc1f.jpg",
-        "genres": [
-          "Strategy",
-          "Casual",
-          "Indie"
-        ],
-        "platforms": [
-          "iOS",
-          "PlayStation 5",
-          "PC",
-          "Nintendo Switch"
-        ],
-        "cast": [],
-        "crew": [],
-        "tags": [
-          "Strategy",
-          "Casual",
-          "Indie"
-        ],
-        "sources": [
-          {
-            "name": "RAWG",
-            "url": "https://rawg.io/games/balatro",
-            "extract": "Balatro is a poker-inspired roguelike deck builder all about creating powerful synergies and winning big. Combine valid poker hands with unique Joker cards in order to create varied synergies and builds. Earn enough chips to beat devious blinds, all while uncovering hidden bonus hands and decks as you progress. You’re going to need every edge you can get in order to reach the boss blind, beat the final ante and secure victory. The definitive poker roguelike experience. Endless possibilities - every pick-up, discard and joker can dramatically alter the course of your run. In-depth campaign mode complete with 8 difficulties, as well as challenge, daily and seeded runs. Deftly deploy an array of potent tools: different Decks, Jokers, Tarot cards, Planet cards, Spectral cards, and Vouchers. Use these versatile instruments to ignite a combo frenzy and turbocharge your poker hands, crafting electrifying, adrenaline-fueled synergies. 150 Jokers, each with their own unique abilities 15 Decks with distinct modifiers to choose from for each run 5 potential variants of each Joker which add further abilities 22 Tarot cards variants that can enhance your regular playing cards 11 Planet cards that help level up your possible poker hands 32 Voucher cards to help provide permanent buffs for your current run Immerse yourself in Balatro’s distinctive psychedelic world. Let the synthwave soundtrack wash over you - wind down, escape the daily grind and prepare to enter the ultimate roguelike flow state. Improve your collection and discover new cards and secrets with every single run. Make use of the in-depth stats screen to study your best hands, most used Jokers, and more! Immerse yourself in the CRT fuzz and enjoy detailed, hand-crafted pixel art.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Balatro",
-            "extract": "Balatro is a 2024 poker-themed roguelike deck-building game developed by solo developer LocalThunk and published by Playstack. It was released for Nintendo Switch, PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S on February 20, 2024, with a port to macOS on March 1. Ports for Android and iOS were released on September 26, 2024. A dedicated Nintendo Switch 2 version was released on February 25, 2026. In the game, the player must score points by playing poker hands from a starting 52-card deck, with a limited number of hands and discards each round.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — XBOX",
-            "url": "https://www.youtube.com/watch?v=Xn4ft9u924I",
-            "extract": "Verified public, embeddable promotional trailer: Balatro - Game Pass Announcement Trailer",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "Xn4ft9u924I",
-        "youtubeVideoTitle": "Balatro - Game Pass Announcement Trailer",
-        "reviewMode": "review",
-        "score": 7.5
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 6231,
       "articlePath": "src/content/reviews/game-balatro-977316.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-balatro-977316/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-balatro-977316/",
+      "publishedAt": "2026-11-28T12:46:55.708Z"
+    },
+    "movie:1375646": {
+      "key": "movie:1375646",
+      "type": "movie",
+      "id": "1375646",
+      "title": "Colony",
+      "item": {
+        "type": "movie",
+        "id": "1375646",
+        "name": "Colony",
+        "date": "2026-05-21",
+        "preview": false,
+        "popularity": 58.6192,
+        "source": "TMDB"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-28T12:46:57.825Z",
+      "updatedAt": "2026-11-28T12:48:13.472Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Colony",
+        "type": "movie",
+        "collectedAt": "2026-11-28T12:46:58.395Z",
+        "sourceId": "movie:1375646",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1375646",
+        "overview": "Professor Se-jeong is thrust into a bloody nightmare when a rapidly mutating virus is released during a biotech conference causing authorities to seal the facility. Trapped inside with no escape, Se-jeong along with a small group of survivors must fight to stay alive while the infected undergo horrific transformations.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1375646",
+            "extract": "Professor Se-jeong is thrust into a bloody nightmare when a rapidly mutating virus is released during a biotech conference causing authorities to seal the facility. Trapped inside with no escape, Se-jeong along with a small group of survivors must fight to stay alive while the infected undergo horrific transformations.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Colony",
+            "extract": "A colony is a territory subject to a form of foreign rule, which rules the territory and its indigenous peoples separated from the foreign rulers, the colonizer, and their metropole. This separated rule was often organized into colonial empires, with their metropoles at their centers, making colonies neither annexed or even integrated territories, nor client states. Particularly new imperialism and its colonialism advanced this separated rule and its lasting coloniality.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — eOnefilms",
+            "url": "https://www.youtube.com/watch?v=kRfXdS2q08k",
+            "extract": "Verified public, embeddable promotional trailer: The Colony Official Movie Trailer [HD]",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 1649 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "kRfXdS2q08k",
+        "youtubeVideoTitle": "The Colony Official Movie Trailer [HD]",
+        "youtubeChannel": "eOnefilms",
+        "releaseDate": "2026-05-21",
+        "genres": [
+          "Horror",
+          "Action",
+          "Science Fiction"
+        ],
+        "platforms": [],
+        "cast": [
+          "Gianna Jun",
+          "Koo Kyo-hwan",
+          "Ji Chang-wook",
+          "Kim Shin-rock",
+          "Shin Hyun-been",
+          "Go Soo",
+          "Lee Joong-ok",
+          "Kim Jong-tae"
+        ],
+        "crew": [
+          "Yeon Sang-ho",
+          "Yeon Sang-ho",
+          "Choi Gyu-seok"
+        ],
+        "rating": 8.162,
+        "ratingScale": 10,
+        "votes": 1649,
+        "poster": "https://image.tmdb.org/t/p/w780/enz3WLx5QU1FUyhXZld04QWIc6N.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/iGViga8sDCET1S6GfwOlAbuhSGQ.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "«Colony»: فرضية احتجاز واعدَة، وحكم تحجبه محدودية الأدلة",
+        "summary": "«Colony» فيلم رعب وحركة وخيال علمي كوري جنوبي، تدور فكرته الموثقة حول تفشٍّ سريع التحور داخل مؤتمر للتقنية الحيوية، ثم إغلاق السلطات للموقع واحتجاز أستاذة ومجموعة من الناجين مع المصابين. تمنح هذه الفرضية العمل إطاراً واضحاً للصراع، لكنها لا تكفي وحدها لإثبات نجاح السيناريو أو الإخراج أو الأداء. ملف الأدلة يثبت تاريخ الإصدار، والتصنيفات، وبعض أسماء الممثلين، ووجود إعلان رسمي، لكنه لا يقدّم مراجعات مستقلة أو وصفاً موثوقاً لتفاصيل التنفيذ الفني. لذلك تتخذ هذه المراجعة حكماً تحريرياً نهائياً حذراً: الفكرة مشجعة، أما كثير من جوانب الفيلم فلا تسمح المواد المتاحة بتقييم جازم لها.",
+        "verdict": "يملك «Colony» أساساً قصصياً يسهل فهم جاذبيته: عدوى متحولة، مكان مغلق، وسلطة تقطع طريق النجاة، مع حضور مؤتمر للتقنية الحيوية بوصفه نقطة انطلاق للأزمة. هذه عناصر تمنح الفيلم إمكانات للرعب والتوتر، لكنها لا تثبت أن العمل يطوّرها بتميّز أو يحسن استثمار طاقمه. وبما أن الملف لا يتضمن مراجعات مستقلة أو تحليلاً موثقاً للمشاهد والصورة والصوت والإيقاع، فالحكم المنصف لا يستطيع تحويل الوعد إلى إشادة منجزة. النتيجة تحريرياً عمل ذو فرضية جذابة، لكن قيمته الفنية النهائية غير مثبتة بما يكفي في الأدلة المقدمة؛ لذا أوصي به مبدئياً لمن ينجذب إلى رعب العدوى والحصار، مع التحفظ عن اعتباره تجربة موصى بها بقوة قبل توافر نقد مستقل أكثر تفصيلاً.",
+        "body": "## مقدمة وسياق العمل\n«Colony» فيلم كوري جنوبي مصنف ضمن الرعب والحركة والخيال العلمي، ويذكر ملف البيانات أن تاريخ إصداره هو 21 مايو 2026. هذه مراجعة تحريرية نهائية مقيدة بما يمكن التحقق منه في الأدلة المقدمة، وليست ادعاءً بمشاهدة الفيلم أو اختبار تفاصيله مباشرة. يورد الملف ملخصاً قصصياً من TMDB، وأسماء طاقم، وبيانات إعلان ترويجي رسمي، لكنه لا يحتوي على مراجعات نقدية مستقلة أو وصف تحليلي موثق للصورة والمونتاج والأداء. من المهم لذلك الفصل بين ما يقرره الملخص وما يمكن استنتاجه منه: نعرف نقطة الانطلاق ونوع العمل، ولا نعرف من هذه المواد وحدها مدى نجاح التنفيذ. هذا القيد ليس تفصيلاً شكلياً؛ إنه يحدد مقدار الثقة الممكنة في أي حكم على التجربة الكاملة.\n\n## الفكرة والقصة أو التجربة\nبحسب الملخص المنشور، تبدأ الأزمة خلال مؤتمر للتقنية الحيوية حين ينتشر فيروس سريع التحور. تُغلق السلطات المنشأة، فتجد الأستاذة سي-جونغ نفسها محاصرة مع مجموعة صغيرة من الناجين، فيما يخضع المصابون لتحولات موصوفة بأنها مرعبة. يجمع هذا البناء بين مصدر خطر بيولوجي ومكان لا يتيح الخروج، وهما عنصران يهيئان لصراع بقاء مفهوم، ويمنحان الفيلم مسوغاً لتقاطع الرعب مع الحركة والخيال العلمي. كذلك يضع المؤتمر الأزمة في بيئة مرتبطة بالبحث والتقنية، لكن الملخص لا يشرح دور هذه البيئة في الحبكة بعد إطلاق الفيروس؛ لذلك لا يصح أن ننسب إلى الفيلم نقداً علمياً أو سياسياً محدداً. الجاذبية هنا كامنة في ترتيب الفرضية: حدث مفاجئ، احتجاز، وتهديد يتغير. أما فرادة القصة أو مفاجآتها أو خاتمتها، فلا تثبتها المعلومات المتاحة.\n\n## السرد والشخصيات أو تصميم اللعب\nلا تنطبق على هذا الفيلم قراءة تصميم اللعب، لذا يتركز التقييم على السرد والشخصيات. الشخصية التي يسميها الملخص هي الأستاذة سي-جونغ، ويصفها بأنها في قلب الأزمة، بينما لا يسمي سائر الناجين ولا يحدد علاقاتهم أو دوافعهم. يفيد ذلك في رسم مركز واضح للحكاية، لكنه لا يتيح الحكم على عمق الشخصية أو تطورها، ولا على توازن أدوار المجموعة. تتضمن قائمة الممثلين جيانا جون، كو كيو-هوان، جي تشانغ-ووك، كيم شين-روك، شين هيون-بين، كو سو، لي جونغ-أوك، وكيم جونغ-تاي. وجود هذه الأسماء حقيقة من بيانات العمل، وليس دليلاً كافياً على جودة الأداء أو طبيعة توزيع الأدوار. ومن ثم فإن السؤال النقدي الأهم يظل بلا جواب موثق: هل يحول السيناريو مجموعة الناجين إلى شخصيات متمايزة، أم يستخدمهم أساساً لتحريك خطر العدوى؟ لا تقدم الأدلة مشاهد أو مراجعات يمكن الاستناد إليها للحسم.\n\n## الإخراج والجوانب الفنية\nيسجل الملف اسم يون سانغ-هو ضمن الطاقم، لكنه لا يبيّن توزيع جميع الوظائف بين الأسماء المدرجة، ولا يرفق مادة نقدية تشرح اختيارات الإخراج. لذلك يمكن الإشارة إلى وجود اسم المخرج في البيانات، لا إلى أسلوب بصري أو طريقة إدارة للممثلين لا يسندها مصدر. وبالمثل، تصنيف الفيلم ضمن الرعب والحركة والخيال العلمي يصف موقعه النوعي ولا يثبت أنه يوازن الأنواع الثلاثة بإحكام. يمكن للفرضية أن تتيح توتراً بين الاستجابة العملية لخطر مباشر وبين رهبة التحول، غير أن ذلك إمكان تحليلي مستمد من الملخص، لا شهادة على بناء المشاهد أو جودة الانتقال بينها. لا تتوافر كذلك معلومات موثقة عن المؤثرات العملية أو الرقمية، أو تصميم مواقع التصوير، أو جودة التنفيذ التقني. لهذا لا أرفع الاستنتاج إلى حكم إيجابي أو سلبي على حرفة الإخراج؛ المعيار هنا هو ما تسمح الأدلة بإثباته، وهو محدود.\n\n## الصورة والهوية البصرية\nيحتوي الملف على رابط لملصق ورابط لصورة خلفية، كما يثبت وجود إعلان رسمي على قناة eOnefilms بعنوان «The Colony Official Movie Trailer [HD]». هذه بيانات ترويجية مفيدة لتحديد هوية العمل ومادته الرسمية، لكنها لا تكفي وحدها لتحليل التصوير السينمائي أو الألوان أو الإضاءة أو تصميم تحولات المصابين. كما أن عنوان الإعلان لا يبرهن على أسلوب المونتاج فيه، ولا يبيح وصف لقطاته؛ لذلك لا أنسب إليه تفاصيل لم يوردها الملف. الفرضية تضع القصة في منشأة مغلقة وتربط الخطر بتحولات جسدية، ومن المعقول أن تكون إدارة المساحة ومظهر المصابين عنصرين مهمين في صناعة الرهبة، لكن أهمية العنصر لا تعني نجاحه. الدرجة هنا متحفظة لأن أدلة الصورة تخص مواد تعريفية لا تحليلاً للفيلم نفسه، لا لأنها تثبت ضعف الصورة أو تفوقها.\n\n## الصوت والموسيقى والأداء\nلا يتضمن ملف الأدلة معلومات عن الموسيقى أو المؤثرات الصوتية أو تصميم الصمت، ولا يقدم وصفاً موثقاً لأداء ممثل بعينه. لذلك لا يمكن وصف الموسيقى بأنها مشوقة، أو الصوت بأنه غامر، أو الأداء بأنه مقنع، من دون اختلاق انطباعات. الأسماء المدرجة تثبت مشاركة طاقم تمثيل معروف في بيانات الفيلم، لكنها لا تثبت كيفية أدائهم أو مقدار المساحة التي يمنحها السيناريو لكل شخصية. وحتى كون العمل مصنفاً رعباً وحركة لا يكشف إن كان الصوت يستخدم التصعيد أو المفاجأة بفاعلية. أسجل لهذا المحور درجة محايدة منخفضة الثقة، باعتبارها تقديراً احترازياً لا حكماً بأن الصوت متوسط فعلاً. ينبغي للقارئ ألا يخلط بين نقص التوثيق ونقص الجودة: الأول ظاهر في الملف، أما الثاني فلا دليل عليه.\n\n## الإيقاع والبناء وتنوع المحتوى\nتقدم الفرضية مساراً أولياً واضحاً: انتشار فيروس في مؤتمر، إغلاق الموقع، ثم محاولة مجموعة من الناجين البقاء في الداخل. هذا التسلسل يصلح لبناء تصاعد، لأن مساحة الحركة محدودة والتهديد، وفق الملخص، سريع التحور. لكنه لا يحدد كم يستغرق كل طور، أو ما إذا كان الفيلم ينوّع مصادر التوتر، أو يكرر المواجهات، أو يخصص وقتاً كافياً للشخصيات. لا تتوافر مدة الفيلم أو مراجعة تصف إيقاعه أو بيانات عن بنائه المشهدي. وعليه، لا يصح وصفه بالمترهل أو السريع أو المتوازن. الدرجة تعكس أن الفكرة توفر قاعدة بنائية مفهومة، مع غياب الدليل على جودة التنفيذ وتنوعه. وهذا فارق أساسي: إمكان التوتر في الحكاية لا يساوي تحقق التوتر على الشاشة.\n\n## نقاط القوة\nأقوى ما يمكن تثبيته نقدياً هو وضوح المحرك القصصي؛ فالملخص يحدد سبب الأزمة ومكانها والعائق المباشر أمام النجاة، من دون حاجة إلى افتراضات إضافية. وتفيد صيغة الحصار في خلق رهانات مفهومة منذ البداية، بينما يتيح التحور السريع للفيروس احتمال تغير الخطر بدلاً من بقائه على صورة واحدة. كما يضع العمل أستاذة في مركز الأزمة، وهو اختيار يمنح الشخصية وظيفة محددة داخل الحدث، وإن لم يكشف عن عمقها. ويجمع التصنيف الرسمي بين الرعب والحركة والخيال العلمي، بما يشير إلى طموح نوعي متعدد المسارات. أتعامل مع هذه النقاط بوصفها نقاط قوة في تصميم الفكرة وإمكاناتها، لا شهادة على أن الفيلم أنجزها كلها بنجاح. هذا التحفظ يجعل الإشادة دقيقة ومتناسبة مع مصادرها، بدلاً من تحويل وصف القصة إلى مديح للنتيجة.\n\n## نقاط الضعف\nأوضح نقص في ملف العمل هو غياب مادة مستقلة تقيّم التنفيذ، وهو ما يمنع إصدار حكم واثق على الصورة والصوت والإيقاع والأداء. كذلك يظل الملخص عاماً بشأن الشخصيات الأخرى، ولا يبين كيف تتوزع المسؤولية أو الخلافات داخل مجموعة الناجين. لا توجد تفاصيل عن طبيعة التحولات أو أثرها الدرامي، لذلك لا يمكن تقييم توازن الرعب الجسدي مع الحركة. أما بيانات التصويت الجماهيري، فلا تعوض النقص النقدي ولا تفسر أسباب إعجاب الجمهور أو تحفظه. لا أعد هذه الأمور عيوباً مثبتة في الفيلم؛ إنها حدود موثقة في قاعدة الأدلة، وينبغي ألا تتحول إلى اتهامات فنية. غير أن أثرها التحريري حقيقي: تقل القدرة على منح الفيلم درجات مرتفعة مبررة، ويصبح التوصيف النهائي أقل حسماً من مراجعة تستند إلى تحليل مباشر ومصادر متعددة.\n\n## لمن يناسب هذا العمل؟\nتبدو الفرضية، وفق الملخص وحده، مناسبة لمن يبحث عن أفلام رعب العدوى، أو قصص الاحتجاز التي تجعل النجاة هدفاً مركزياً، ولمن يتقبل اجتماع الحركة والخيال العلمي في عمل واحد. وقد يهم محبي أفلام الوحوش والتحولات الجسدية أن يعرفوا أن الوصف الرسمي يركز على مصابين يمرون بتحولات مرعبة، لكن الملف لا يوضح مقدار حضور ذلك أو أسلوب عرضه. كذلك قد يجذب اسم طاقم التمثيل جمهوراً يتابع الممثلين المذكورين، من دون أن يكون ذلك ضماناً لجودة التجربة. أما من يريد حبكة موصوفة بتفصيل، أو تقييماً مؤكداً للأداء والإخراج، فلن يجد في الأدلة المتاحة ما يكفي لاتخاذ قرار مطمئن. التوصية هنا مبدئية ومشروطة بالميل إلى الفرضية، لا مبنية على تجربة مشاهدة أدعيها.\n\n## الحكم النهائي\nيمتلك «Colony» فرضية رعب واضحة ذات عناصر قابلة للتصعيد: فيروس سريع التحور، موقع مغلق، ومجموعة محاصرة تحاول البقاء. هذه قاعدة جذابة وتفسر إدراجه في الرعب والحركة والخيال العلمي، لكنها لا تكفي لإثبات تميز السيناريو أو الأداء أو الحرفة الفنية. ولذلك تأتي الدرجات أدناه محافظة؛ وهي تقدير لما تدعمه المواد المتاحة، لا ادعاء بقياس تجربة مشاهدة مباشرة. يسجل TMDB متوسطاً جماهيرياً قدره 8.162 من 10 استناداً إلى 1649 صوتاً؛ أذكره مؤشراً ثانوياً منسوباً إلى المنصة، لا بديلاً عن الحكم التحريري ولا عن تقييم المحاور. الخلاصة أن الفيلم يبدو مرشحاً للاهتمام لدى محبي فرضيته، لكن الحكم الفني الحاسم يظل غير ممكن من هذا الملف وحده، وأي توصية أقوى تحتاج إلى مصادر مستقلة تفصل في جودة التنفيذ.",
+        "scores": {
+          "story": 6.4,
+          "visuals": 5.5,
+          "sound": 5.5,
+          "pacing": 5.8
+        },
+        "pros": [
+          "فرضية محددة تجمع انتشار فيروس سريع التحور مع احتجاز الناجين في موقع مغلق.",
+          "مركز قصصي واضح في شخصية الأستاذة سي-جونغ بحسب الملخص المنشور.",
+          "إمكان نوعي يجمع الرعب والحركة والخيال العلمي دون الحاجة إلى افتراض تفاصيل غير موثقة.",
+          "قائمة تمثيل تضم أسماء متعددة، بما يوفر طاقماً واسعاً للحكاية وفق بيانات الفيلم."
+        ],
+        "cons": [
+          "الأدلة لا تتضمن مراجعات مستقلة أو تحليلاً موثقاً لجودة التنفيذ الفني.",
+          "المعلومات عن الناجين والشخصيات والعلاقات بينهم محدودة جداً.",
+          "لا تتوفر شواهد كافية لتقييم الصورة أو الموسيقى أو الأداء أو إيقاع المشاهد.",
+          "لا يمكن تحويل متوسط TMDB الجماهيري إلى بديل عن تقييم نقدي مستقل."
+        ],
+        "title": "Colony",
+        "type": "movie",
+        "sourceId": "movie:1375646",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/movie/1375646",
+        "sourceRating": 8.162,
+        "sourceRatingScale": 10,
+        "sourceVoteCount": 1649,
+        "sourceRatingCheckedAt": "2026-11-28T12:46:58.395Z",
+        "audienceScore": 8.2,
+        "releaseDate": "2026-05-21",
+        "poster": "https://image.tmdb.org/t/p/w780/enz3WLx5QU1FUyhXZld04QWIc6N.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/iGViga8sDCET1S6GfwOlAbuhSGQ.jpg",
+        "genres": [
+          "Horror",
+          "Action",
+          "Science Fiction"
+        ],
+        "platforms": [],
+        "cast": [
+          "Gianna Jun",
+          "Koo Kyo-hwan",
+          "Ji Chang-wook",
+          "Kim Shin-rock",
+          "Shin Hyun-been",
+          "Go Soo",
+          "Lee Joong-ok",
+          "Kim Jong-tae"
+        ],
+        "crew": [
+          "Yeon Sang-ho",
+          "Yeon Sang-ho",
+          "Choi Gyu-seok"
+        ],
+        "tags": [
+          "Horror",
+          "Action",
+          "Science Fiction"
+        ],
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/movie/1375646",
+            "extract": "Professor Se-jeong is thrust into a bloody nightmare when a rapidly mutating virus is released during a biotech conference causing authorities to seal the facility. Trapped inside with no escape, Se-jeong along with a small group of survivors must fight to stay alive while the infected undergo horrific transformations.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Colony",
+            "extract": "A colony is a territory subject to a form of foreign rule, which rules the territory and its indigenous peoples separated from the foreign rulers, the colonizer, and their metropole. This separated rule was often organized into colonial empires, with their metropoles at their centers, making colonies neither annexed or even integrated territories, nor client states. Particularly new imperialism and its colonialism advanced this separated rule and its lasting coloniality.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — eOnefilms",
+            "url": "https://www.youtube.com/watch?v=kRfXdS2q08k",
+            "extract": "Verified public, embeddable promotional trailer: The Colony Official Movie Trailer [HD]",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "kRfXdS2q08k",
+        "youtubeVideoTitle": "The Colony Official Movie Trailer [HD]",
+        "reviewMode": "review",
+        "score": 5.8
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 11665,
+      "articlePath": "src/content/reviews/movie-colony-1375646.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-colony-1375646/"
     }
   },
   "providers": {},
@@ -4751,9 +4796,9 @@
       "tokens": 32686
     },
     "2026-11-28": {
-      "articles": 5,
-      "requests": 11,
-      "tokens": 35849
+      "articles": 6,
+      "requests": 14,
+      "tokens": 47514
     }
   },
   "history": []
