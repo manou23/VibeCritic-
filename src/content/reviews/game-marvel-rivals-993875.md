@@ -25,10 +25,6 @@ poster: "https://media.rawg.io/media/screenshots/3f0/3f0fdfc7c71655366aa83ab80ec
 backdrop: "https://media.rawg.io/media/screenshots/3f0/3f0fdfc7c71655366aa83ab80ecab9b8.jpg"
 youtubeVideoId: "YIhkib05VCo"
 youtubeVideoTitle: "Marvel Rivals - Rivals 'Til the End Launch Trailer | PS5 Games"
-genres:
-  - "Action"
-  - "Shooter"
-  - "Third-Person"
 platforms:
   - "PC"
   - "PlayStation 4"
