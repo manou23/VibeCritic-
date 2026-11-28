@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-28T08:38:12.006Z",
+  "updatedAt": "2026-11-28T09:29:02.983Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -4418,165 +4418,254 @@
         "popularity": 62.5249,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-28T08:36:53.281Z",
-      "updatedAt": "2026-11-28T08:38:12.006Z",
+      "updatedAt": "2026-11-28T09:27:57.787Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "Toy Story 5",
-        "type": "movie",
-        "collectedAt": "2026-11-28T08:36:53.736Z",
-        "sourceId": "movie:1084244",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/movie/1084244",
-        "overview": "When Bonnie receives a Lilypad tablet as a gift and becomes obsessed, Buzz, Woody, Jessie and the rest of the gang's jobs become exponentially harder when they have to go head to head with the all-new threat to playtime.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/movie/1084244",
-            "extract": "When Bonnie receives a Lilypad tablet as a gift and becomes obsessed, Buzz, Woody, Jessie and the rest of the gang's jobs become exponentially harder when they have to go head to head with the all-new threat to playtime.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Toy_Story_5",
-            "extract": "Toy Story 5 is a 2026 American animated comedy-drama film directed by Andrew Stanton, written by Stanton and Kenna Harris, and produced by Pixar Animation Studios for Walt Disney Pictures. Tom Hanks, Tim Allen, and Joan Cusack reprise their voice roles, joined by Conan O'Brien, Scarlett Spears, Greta Lee, Shelby Rabara, Mykal-Michelle Harris, and Craig Robinson. Set two years after Toy Story 4 (2019), it follows Jessie as she, Woody, Buzz Lightyear and the other toys deal with the presence of Lilypad, a tablet and Bonnie's new favorite plaything.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Walt Disney Studios Indonesia",
-            "url": "https://www.youtube.com/watch?v=yYjMaAwzrQE",
-            "extract": "Verified public, embeddable promotional trailer: Toy Story 5 | Official Trailer | Di Bioskop Juni 2026",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 2932 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "yYjMaAwzrQE",
-        "youtubeVideoTitle": "Toy Story 5 | Official Trailer | Di Bioskop Juni 2026",
-        "youtubeChannel": "Walt Disney Studios Indonesia",
-        "releaseDate": "2026-06-17",
-        "genres": [
-          "Animation",
-          "Family",
-          "Comedy",
-          "Adventure"
-        ],
-        "platforms": [],
-        "cast": [
-          "Joan Cusack",
-          "Tom Hanks",
-          "Tim Allen",
-          "Conan O'Brien",
-          "Scarlett Spears",
-          "Greta Lee",
-          "Shelby Rabara",
-          "Mykal-Michelle Harris"
-        ],
-        "crew": [
-          "Andrew Stanton"
-        ],
-        "rating": 8.233,
-        "ratingScale": 10,
-        "votes": 2932,
-        "poster": "https://image.tmdb.org/t/p/w780/sfQtVlIHljToOwYjhe21KPGzZWK.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/qjTqY5coNiz6sVtPng40IzltsoN.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "Toy Story 5: عودة إلى سؤال اللعب في عصر الشاشة، بفكرة واعدة وأدلة لا تتيح حكماً تقنياً كاملاً",
-        "summary": "يعيد Toy Story 5 شخصياته المعروفة إلى أزمة جديدة تتصل بمكان اللعب في حياة طفلة تنجذب إلى جهاز لوحي حديث. الفكرة، كما يقدمها ملخص TMDB والمعلومات المنشورة عن الفيلم، تمنح السلسلة مدخلاً معاصراً يمكن أن يجمع بين الكوميديا والمغامرة والتأمل في التغير، فيما تضع جيسي وودي وباز أمام تحدٍ يمس دور الألعاب نفسه. غير أن ملف الأدلة المتاح لا يضم مراجعات نقدية مستقلة أو تفاصيل إنتاجية كافية للحكم بثقة على جودة التنفيذ، ولا يثبت عناصر بصرية أو موسيقية بعينها. لذلك تأتي هذه القراءة حكماً تحريرياً نهائياً محدوداً بما يمكن توثيقه، لا ادعاءً بمشاهدة شخصية. نتيجتها: مشروع ذو محور قصصي واضح وشخصيات ذات تاريخ، لكن تقييمه التفصيلي يظل مقيداً بحدود المصادر.",
-        "verdict": "يملك Toy Story 5 أساساً قصصياً صالحاً للعودة: صراع الألعاب على انتباه بوني في مواجهة جهاز لوحي جديد يربط موضوع السلسلة القديم، أي معنى اللعب والرفقة، بتغير معاصر مفهوم. كما أن وجود أندرو ستانتون في الإخراج وعودة أصوات رئيسية يمنحان المشروع استمرارية معلومة، لا ضماناً مسبقاً للنجاح. حكمي النهائي يميل إلى الإيجابية الحذرة: الفكرة والشخصيات تمنحان الفيلم مبرراً واضحاً، لكن الأدلة المقدمة لا تكفي لإثبات أن التنفيذ يضيف فعلاً فصلاً ضرورياً أو يحقق تميزاً بصرياً وصوتياً. لا أدّعي مشاهدة الفيلم؛ لذا تعكس الدرجات تقديراً تحريرياً محافظاً لما تثبته المعلومات المتاحة، لا تقريراً عن تجربة مشاهدة. أوصي به مبدئياً لمحبي السلسلة والعائلات المهتمة بحكاية تجمع المغامرة والسؤال عن اللعب، مع التنبيه إلى أن تقييم الجودة الفنية التفصيلية هنا أقل يقيناً من تقييم الفكرة والسياق.",
-        "body": "## مقدمة وسياق العمل\nصدر Toy Story 5، وفق تاريخ الإصدار الوارد في ملف TMDB، في 17 يونيو 2026، وينتمي إلى الرسوم المتحركة والكوميديا العائلية والمغامرة. هذه قراءة تحريرية نهائية مبنية على المعلومات المنشورة والمواد الرسمية المحددة في ملف الأدلة، وليست انطباعاً ناتجاً عن مشاهدة شخصية. ومن المهم ضبط نطاق الحكم منذ البداية: المتاح يتضمن ملخصاً قصصياً، بيانات طاقم، مدخلاً موسوعياً، ومقطعاً ترويجياً رسمياً موثقاً من Walt Disney Studios Indonesia؛ لكنه لا يضم مراجعات نقدية مستقلة أو تفاصيل كافية عن صناعة الفيلم ومشاهده. لذلك يمكن فحص الفكرة وموقعها داخل السلسلة، أما الحكم التفصيلي على جودة التنفيذ فينبغي أن يبقى متحفظاً. هذا التمييز ليس تهرباً من التقييم، بل شرط لتجنب تحويل المعلومات المحدودة إلى ادعاءات عن تجربة لم تحدث.\n\n## الفكرة والقصة أو التجربة\nتضع المعلومات المتاحة نقطة الانطلاق في هدية تتلقاها بوني: جهاز Lilypad اللوحي، الذي يصبح محور اهتمامها. نتيجة ذلك، تواجه ألعابها صعوبة أكبر في أداء دورها، ويبرز الجهاز بوصفه تهديداً جديداً لوقت اللعب. هذه هي الوقائع القصصية التي يسندها ملخص TMDB؛ أما القول إن الفيلم يطرح صراعاً بين اللعب المادي والانجذاب إلى التكنولوجيا فهو استنتاج موضوعي من تركيب الفكرة، لا وصف لمشهد بعينه. قوة المدخل أنه يمنح السلسلة موضوعاً معاصراً يسهل فهمه من دون إلغاء مركزها العاطفي: العلاقة بين الطفل وألعابه. وفي الوقت نفسه، لا يكشف الملخص كيف يتطور الصراع أو ما إذا كان الجهاز يعامل خصماً حرفياً أو رمزاً لمنافسة الانتباه. هذا الغياب يمنع التوسع في تفاصيل الحبكة، لكنه يتيح حكماً أولياً بأن الفكرة واضحة وذات قابلية درامية. درجة القصة 7.4 من 10؛ وهي تعكس وضوح الصراع وارتباطه بمحور السلسلة، مع خصم التحفظ لعدم توافر أدلة تثبت عمق التطوير أو نجاح الحل.\n\n## السرد والشخصيات أو تصميم اللعب\nلا ينطبق تحليل تصميم اللعب هنا، لأن العمل فيلم، والتحليل الملائم يتركز على السرد والشخصيات. يذكر المدخل الموسوعي أن الأحداث تقع بعد عامين من Toy Story 4، وأن جيسي وودي وباز لايتير والألعاب الأخرى يتعاملون مع وجود Lilypad وكونه اللعبة الجديدة المفضلة لدى بوني. كما يصف ملخص TMDB مهمة الشخصيات بأنها أكثر صعوبة بعد انشغالها بالجهاز. هذان المصدران يدعمان مركزية جيسي وعودة وودي وباز إلى المجموعة، لكنهما لا يثبتان مقدار المساحة التي يحصل عليها كل منهم أو طبيعة أقواسهم الدرامية. اختيار جيسي في واجهة الوصف الموسوعي يمكن أن يلمح إلى توسيع مركز الثقل داخل المجموعة، غير أن اعتباره تحولاً سردياً ناجزاً سيكون سابقاً للأدلة. السيناريو منسوب إلى أندرو ستانتون وكينا هاريس في المدخل الموسوعي، فيما يرد ستانتون مخرجاً أيضاً. هذه معلومات إنتاجية مفيدة، لكنها لا تكفي وحدها لإثبات جودة الحوار أو تماسك البناء. ومن ثم يستند تقدير السرد إلى وضوح الوضع والشخصيات المذكورة، لا إلى اختلاق مواقف أو نتائج لا يوردها الملف.\n\n## الإخراج والجوانب الفنية\nينسب ملف الأدلة الإخراج إلى أندرو ستانتون، ويورد أن الفيلم من إنتاج Pixar Animation Studios لصالح Walt Disney Pictures. تمنح هذه البيانات العمل هوية إنتاجية واضحة، وتسمح بوضعه في تقليد فيلم رسوم متحركة استوديوي واسع الجمهور، لكنها لا تشكل بحد ذاتها برهاناً على نجاح الإخراج. لا يتضمن الملف وصفاً لتوزيع المشاهد أو إدارة الكوميديا أو تنظيم المغامرة، لذلك لا يصح أن أنسب إلى ستانتون اختيارات محددة أو أصف فعالية انتقالات بعينها. ما يمكن استنتاجه على مستوى التصميم العام هو أن الجمع بين مجموعة ألعاب مألوفة ومنافسة تقنية جديدة يحتاج إلى موازنة بين الشخصيات والموضوع، وأن نجاح الفيلم يتوقف على تحويل هذه الفكرة إلى دراما لا إلى شعار عن الأجهزة. هذا معيار نقدي للعمل، لا تقرير عن تحقق المعيار. بناءً على الأدلة المتاحة، يبدو التصور الإخراجي ذا أساس مفهوم، لكن الحكم على التنفيذ يظل محكوماً بنقص المعلومات التفصيلية. ولهذا لا تتحول سمعة جهة الإنتاج أو خبرة المخرج إلى نقاط مجانية في التقدير.\n\n## الصورة والهوية البصرية\nالمؤكد بصرياً في البيانات هو تصنيف الفيلم عملاً متحركاً، وارتباط إنتاجه بـPixar، مع توفر ملصق وخلفية ترويجية ورابط لمقطع رسمي موصوف بأنه إعلان دعائي موثق. لكن الملف لا يقدم تحليلاً للرسوم أو تصميم الشخصيات أو الألوان أو حركة الكاميرا، ولا يتيح وصف لقطات محددة يمكن الاستناد إليها. لذلك لا أزعم أن الفيلم يحقق قفزة تقنية، أو أنه يحافظ على مظهر الأجزاء السابقة، أو أن الإعلان يبرهن على مستوى الصورة؛ فوجود مادة ترويجية لا يغني عن فحصها نقدياً. الدرجة البصرية 6.8 من 10، وهي درجة احترازية محدودة الثقة، لا حكم بأن الصورة متوسطة فعلياً. سببها أن الدليل يثبت نوع الإنتاج والجهة المنتجة ووجود مادة رسمية، لكنه لا يقدم شواهد كافية لتبرير درجة مرتفعة عن جودة التنفيذ. ومن ثم ينبغي قراءة الرقم على أنه تقدير متحفظ ضمن شروط الملف، لا مقارنة تقنية موثقة بين هذا الفيلم وأعمال أخرى.\n\n## الصوت والموسيقى والأداء\nتضم قائمة الأصوات العائدة جوان كوساك وتوم هانكس وتيم ألين، وتضيف أسماء مثل كونان أوبراين وغريتا لي وسكارليت سبيرز وشيلبي ربارا ومايكال-ميشيل هاريس وكريغ روبنسون، بحسب المعلومات الواردة. عودة مؤدين ارتبطت أصواتهم بالشخصيات تمنح الفيلم استمرارية في التمثيل الصوتي على مستوى الاختيار، لكنها لا تخبرنا كيف جاءت الأداءات في النسخة النهائية. كذلك لا يذكر الملف اسم ملحن أو تفاصيل الموسيقى أو المزج أو المؤثرات الصوتية؛ لذلك لا يمكن إصدار أحكام عن اللحن أو جودة التسجيل أو توظيف الصمت. وجود مقطع دعائي رسمي لا يسمح وحده بتقييم صوت الفيلم الكامل، ولا سيما أن المادة المتاحة لا توضح مكوناته الفنية. درجة الصوت 6.5 من 10، وهي تقدير محافظ بسبب محدودية الشواهد، لا انتقاص من الممثلين ولا ادعاء بوجود خلل. ما يدعمها فعلياً هو ثبوت طاقم صوتي معروف وعودة أسماء رئيسية؛ وما يمنع رفعها هو غياب معلومات قابلة للتحقق عن الأداء والموسيقى والتصميم الصوتي.\n\n## الإيقاع والبناء وتنوع المحتوى\nلا يورد ملف الأدلة مدة الفيلم أو وصفاً لتقسيمه إلى مراحل، ولا معلومات موثقة عن إيقاع المشاهد أو تنوع المغامرات. لذلك لا يمكن الجزم بأنه سريع أو مترهل، ولا نسبة مشكلة تكرار إليه. المتاح يصف انتقالاً عاماً من تلقي بوني الجهاز إلى ازدياد صعوبة مهمة الألعاب، وهو تسلسل سببي بسيط يوفر نقطة انطلاق واضحة. كما أن وجود عدة شخصيات رئيسية يتيح، من حيث الإمكان، توزيع الحركة بينها، لكن هذا لا يثبت أن الفيلم يحقق تنوعاً فعلياً أو يمنح كل شخصية وقتاً متوازناً. درجة الإيقاع 6.8 من 10، وتعبّر عن تقييم احترازي للمعطيات لا عن قياس مباشر لسرعة الفيلم. وضوح الشرارة الدرامية يحسب للبناء، أما غياب معلومات المدة والتطورات فيمنع اعتبار الإيقاع نقطة قوة مؤكدة أو ضعفاً مثبتاً. وبذلك يظل هذا المحور أقل حسماً من تقييم الفكرة الأساسية.\n\n## نقاط القوة\nأبرز نقاط القوة التي تدعمها الوقائع هي وضوح الصراع المحوري: اهتمام بوني بجهاز جديد يضع الألعاب أمام منافسة ملموسة على وقت اللعب. ثانياً، تعود شخصيات محورية من السلسلة، وتظهر جيسي إلى جانب وودي وباز في وصف الأحداث، ما يوفر استمرارية معروفة للجمهور. ثالثاً، للموضوع قابلية عائلية مشتركة؛ فالاختلاف بين اللعب بالألعاب والانشغال بجهاز مفهوم للأطفال والبالغين، من دون الحاجة إلى افتراض مضمون لم يذكره الملخص. رابعاً، يثبت الملف حضور أندرو ستانتون في الإخراج والكتابة، مع كينا هاريس في الكتابة وفق المدخل الموسوعي، وهو أساس إنتاجي محدد لا مجرد تخمين. وأخيراً، وجود إعلان رسمي موثق وتاريخ إصدار معلوم يجعلان سياق العمل قابلاً للتحديد، وإن لم يثبتا جودته الفنية. هذه مزايا في التصور والهوية والسياق، وليست ادعاءً بأن كل واحدة منها تحولت بالضرورة إلى نجاح على الشاشة.\n\n## نقاط الضعف\nأهم تحفظ تحريري ليس عيباً مؤكداً في الفيلم، بل فجوة الأدلة: لا توجد في الملف مراجعات مستقلة أو مناقشات موثقة للأداء والإخراج والإيقاع. كذلك يظل الملخص عاماً؛ فهو يحدد الجهاز ومشكلة اللعب، لكنه لا يكشف كيف يتطور الصراع أو ما الذي يميز هذا الفصل درامياً عن عودة أخرى لشخصيات معروفة. ولا تتوافر بيانات عن الموسيقى أو تفاصيل تقنية للصورة، لذلك لا يمكن اختبار مدى التميز الفني. كما أن فكرة الشاشة بوصفها منافساً للعب قد تصبح مباشرة أو وعظية إذا لم تتوازن مع المغامرة والشخصيات؛ هذا خطر محتمل مستنتج من الفرضية، وليس عيباً أؤكد وقوعه. ويحتاج الحكم على توزيع الأدوار، خصوصاً مع حضور جيسي في وصف الحبكة، إلى معلومات أوسع مما يقدمه الملف. هذه القيود تحد من الثقة بالدرجة الإجمالية، لكنها لا تبرر اختراع مشكلات أو تحويل غياب البيانات إلى دليل على رداءة العمل.\n\n## لمن يناسب هذا العمل؟\nبحسب نوعه وفكرته المعلنة، يبدو الفيلم مناسباً لعائلات تبحث عن رسوم متحركة ومغامرة ذات مدخل قريب من تجربة الأطفال اليومية، ولمن يتابع شخصيات Toy Story ويرغب في معرفة كيفية عودتها إلى أزمة جديدة. وقد يجد فيه المشاهد المهتم بعلاقة اللعب بالتكنولوجيا موضوعاً قابلاً للنقاش، لأن هذا التوتر حاضر صراحة في الملخص. أما من ينتظر تحليلاً نفسياً تفصيلياً للشخصيات، أو تجديداً بصرياً محدداً، أو موسيقى مميزة، فلا تكفي الأدلة المتاحة لتقديم توصية مضمونة على هذه الأسس. يسجل TMDB متوسطاً جماهيرياً قدره 8.233 من 10 استناداً إلى 2932 صوتاً، وهو مؤشر استقبال جماهيري ثانوي منسوب إلى المنصة، لا نتيجة مستقلة لـVibeCritic ولا بديلاً عن التقييم التحريري. يمكن أخذه بوصفه إشارة إلى تفاعل جمهور المنصة، مع إبقاء معيار التوصية هنا قائماً على الفكرة الموثقة وحدود المعلومات.\n\n## الحكم النهائي\nيقدم Toy Story 5 عودة ذات مبرر قصصي مفهوم: جهاز جديد يستحوذ على اهتمام بوني ويجعل مهمة الألعاب أصعب، بما يعيد سؤال مكان اللعب في عالم متغير إلى قلب السلسلة. تكمن جاذبية المشروع، وفق الأدلة، في هذا التصادم الواضح وفي استعادة شخصيات مألوفة ضمن عمل متحرك عائلي، بينما تظل قيمته النهائية رهينة عناصر لا يشرحها الملف، من تطور الحكاية إلى جودة الصورة والصوت والإيقاع. لذلك حكمي إيجابي بحذر لا احتفائي: الفكرة كافية لتبرير الاهتمام، لكنها لا تكفي وحدها لإثبات أن الفيلم إضافة استثنائية أو أن تنفيذه يتجاوز المتوقع. الدرجات تعكس هذا التفاوت؛ القصة تستفيد من وضوح فرضيتها، أما المحاور الفنية والإيقاعية فتبقى درجاتها متحفظة لأن الشواهد التفصيلية غائبة. أوصي به لمحبي السلسلة والعائلات، مع قراءة هذا الحكم باعتباره مراجعة نهائية أمينة لما توثقه المصادر، لا ادعاء مشاهدة مباشرة أو معرفة غير متاحة.",
-        "scores": {
-          "story": 7.4,
-          "visuals": 6.8,
-          "sound": 6.5,
-          "pacing": 6.8
-        },
-        "pros": [
-          "صراع قصصي واضح يربط انشغال بوني بجهاز Lilypad بتراجع مساحة اللعب للألعاب.",
-          "عودة وودي وباز وجيسي تمنح الفيلم استمرارية مع شخصيات السلسلة المعروفة.",
-          "موضوع اللعب والتكنولوجيا قابل للفهم والنقاش لدى جمهور عائلي متنوع.",
-          "إخراج أندرو ستانتون وكتابته مع كينا هاريس مثبتان في بيانات العمل."
-        ],
-        "cons": [
-          "المعلومات المتاحة لا توضح تطور الحبكة أو ما يميز الفصل درامياً عن الأجزاء السابقة.",
-          "لا توجد شواهد تفصيلية كافية لتقييم جودة الصورة أو تصميم الحركة.",
-          "غياب بيانات الموسيقى والتصميم الصوتي يمنع حكماً موثوقاً على هذا الجانب.",
-          "لا تتوافر معلومات عن مدة الفيلم أو بنائه التفصيلي تسمح بتقييم الإيقاع بثقة."
-        ],
-        "title": "Toy Story 5",
-        "type": "movie",
-        "sourceId": "movie:1084244",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/movie/1084244",
-        "sourceRating": 8.233,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 2932,
-        "sourceRatingCheckedAt": "2026-11-28T08:36:53.736Z",
-        "audienceScore": 8.2,
-        "releaseDate": "2026-06-17",
-        "poster": "https://image.tmdb.org/t/p/w780/sfQtVlIHljToOwYjhe21KPGzZWK.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/qjTqY5coNiz6sVtPng40IzltsoN.jpg",
-        "genres": [
-          "Animation",
-          "Family",
-          "Comedy",
-          "Adventure"
-        ],
-        "platforms": [],
-        "cast": [
-          "Joan Cusack",
-          "Tom Hanks",
-          "Tim Allen",
-          "Conan O'Brien",
-          "Scarlett Spears",
-          "Greta Lee",
-          "Shelby Rabara",
-          "Mykal-Michelle Harris"
-        ],
-        "crew": [
-          "Andrew Stanton"
-        ],
-        "tags": [
-          "Animation",
-          "Family",
-          "Comedy",
-          "Adventure"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/movie/1084244",
-            "extract": "When Bonnie receives a Lilypad tablet as a gift and becomes obsessed, Buzz, Woody, Jessie and the rest of the gang's jobs become exponentially harder when they have to go head to head with the all-new threat to playtime.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Toy_Story_5",
-            "extract": "Toy Story 5 is a 2026 American animated comedy-drama film directed by Andrew Stanton, written by Stanton and Kenna Harris, and produced by Pixar Animation Studios for Walt Disney Pictures. Tom Hanks, Tim Allen, and Joan Cusack reprise their voice roles, joined by Conan O'Brien, Scarlett Spears, Greta Lee, Shelby Rabara, Mykal-Michelle Harris, and Craig Robinson. Set two years after Toy Story 4 (2019), it follows Jessie as she, Woody, Buzz Lightyear and the other toys deal with the presence of Lilypad, a tablet and Bonnie's new favorite plaything.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Walt Disney Studios Indonesia",
-            "url": "https://www.youtube.com/watch?v=yYjMaAwzrQE",
-            "extract": "Verified public, embeddable promotional trailer: Toy Story 5 | Official Trailer | Di Bioskop Juni 2026",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "yYjMaAwzrQE",
-        "youtubeVideoTitle": "Toy Story 5 | Official Trailer | Di Bioskop Juni 2026",
-        "reviewMode": "review",
-        "score": 6.9
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 12870,
       "articlePath": "src/content/reviews/movie-toy-story-5-1084244.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-toy-story-5-1084244/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-toy-story-5-1084244/",
+      "publishedAt": "2026-11-28T09:27:57.787Z"
+    },
+    "series:326247": {
+      "key": "series:326247",
+      "type": "series",
+      "id": "326247",
+      "title": "Fool Night",
+      "item": {
+        "type": "series",
+        "id": "326247",
+        "name": "Fool Night",
+        "date": "2026-11-26",
+        "preview": false,
+        "popularity": 54.0047,
+        "source": "TMDB"
+      },
+      "status": "rejected",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-28T09:28:00.923Z",
+      "updatedAt": "2026-11-28T09:28:01.466Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Fool Night",
+        "type": "series",
+        "collectedAt": "2026-11-28T09:28:01.466Z",
+        "sourceId": "series:326247",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/326247",
+        "overview": "In a sunless future where humans become plants to make oxygen, a desperate young man begins the transformation — and unearths a deep-rooted conspiracy.",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/326247",
+            "extract": "In a sunless future where humans become plants to make oxygen, a desperate young man begins the transformation — and unearths a deep-rooted conspiracy.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Fool_Night",
+            "extract": "Fool Night is a Japanese manga series written and illustrated by Kasumi Yasuda. It has been serialized in Shogakukan's seinen manga magazine Big Comic Superior since November 2020. An original net animation (ONA) adaptation produced by Sunrise and Shaft premiered worldwide on Netflix in November 2026.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — AfricaOnNetflix",
+            "url": "https://www.youtube.com/watch?v=aOYW58HNF5Y",
+            "extract": "Verified public, embeddable promotional trailer: Fool Night | Official Trailer | AfricaOnNetflix",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "limited",
+        "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
+        "youtubeVideoId": "aOYW58HNF5Y",
+        "youtubeVideoTitle": "Fool Night | Official Trailer | AfricaOnNetflix",
+        "youtubeChannel": "AfricaOnNetflix",
+        "releaseDate": "2026-11-26",
+        "genres": [
+          "Animation",
+          "Drama",
+          "Sci-Fi & Fantasy",
+          "Mystery"
+        ],
+        "platforms": [],
+        "cast": [
+          "Koki Uchiyama",
+          "Minako Kotobuki",
+          "Junya Enoki",
+          "Aya Endo",
+          "Kiyomitsu Mizuuchi"
+        ],
+        "crew": [],
+        "rating": 8.813,
+        "ratingScale": 10,
+        "votes": 8,
+        "poster": "https://image.tmdb.org/t/p/w780/7kHLQwQZKbQOZJGx1mIDYIKeBYv.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/rumSTVTcuZj0khFXxXgwXouIMgg.jpg"
+      },
+      "sections": [],
+      "article": null,
+      "lastError": "Publishing blocked: limited-evidence article is not publishable; V3 requires a scored review or a verified pre-release preview"
+    },
+    "series:207347": {
+      "key": "series:207347",
+      "type": "series",
+      "id": "207347",
+      "title": "Blue Box",
+      "item": {
+        "type": "series",
+        "id": "207347",
+        "name": "Blue Box",
+        "date": "2024-10-03",
+        "preview": false,
+        "popularity": 40.6326,
+        "source": "TMDB"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-28T09:28:03.367Z",
+      "updatedAt": "2026-11-28T09:29:02.983Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Blue Box",
+        "type": "series",
+        "collectedAt": "2026-11-28T09:28:03.767Z",
+        "sourceId": "series:207347",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/207347",
+        "overview": "Taiki Inomata loves badminton, but he has a long way to go before he can reach nationals. When Taiki sees upperclassman Chinatsu Kano practicing her heart out on the girls’ basketball team, he falls for her hard. After an unexpected turn of events brings the two closer together, sports might not be the first thing on their minds anymore!",
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/207347",
+            "extract": "Taiki Inomata loves badminton, but he has a long way to go before he can reach nationals. When Taiki sees upperclassman Chinatsu Kano practicing her heart out on the girls’ basketball team, he falls for her hard. After an unexpected turn of events brings the two closer together, sports might not be the first thing on their minds anymore!",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Blue_box",
+            "extract": "A blue box is an electronic device that produces tones used to generate the in-band signaling tones formerly used within the North American long-distance telephone network to send line status and called number information over voice circuits. During that period, charges for long-distance calling were commonplace and could be significant, depending on the time, duration and destination of the call. A blue box device allowed illicit users to circumvent these charges, placing long-distance calls that would be billed to another number or dismissed entirely by the telecom company's billing system as an incomplete call. A number of similar \"color boxes\" were also created to control other aspects of the phone network, a practice called \"phreaking\".",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Netflix Anime",
+            "url": "https://www.youtube.com/watch?v=n0ugKku1fzc",
+            "extract": "Verified public, embeddable promotional trailer: Blue Box Season 2 | Official Trailer | Netflix",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 114 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "n0ugKku1fzc",
+        "youtubeVideoTitle": "Blue Box Season 2 | Official Trailer | Netflix",
+        "youtubeChannel": "Netflix Anime",
+        "releaseDate": "2024-10-03",
+        "genres": [
+          "Animation",
+          "Drama"
+        ],
+        "platforms": [],
+        "cast": [
+          "Shoya Chiba",
+          "Reina Ueda",
+          "Akari Kito"
+        ],
+        "crew": [],
+        "rating": 7.9,
+        "ratingScale": 10,
+        "votes": 114,
+        "poster": "https://image.tmdb.org/t/p/w780/mVAWCCNBxPX3EUf9XhcFff4wW5V.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/8p39Ud6ZKMixBQ7R4frg2o3idzc.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "Blue Box: فرضية تجمع الرياضة والرومانسية، وأدلة لا تكفي للحكم على التنفيذ",
+        "summary": "تقدّم Blue Box نقطة انطلاق واضحة: تايكي إينوماتا لاعب بادمنتون يطمح إلى بلوغ المنافسات الوطنية، ويقع في حب تشيناتسو كانو، لاعبة كرة سلة أكبر منه سنّاً، ثم تقرّبهما ظروف غير متوقعة. هذا التداخل بين الطموح الرياضي والانجذاب العاطفي يمنح المسلسل أساساً واعداً لصراع بين التركيز على الهدف الشخصي والانشغال بعلاقة ناشئة، من دون أن يثبت وحده جودة التنفيذ. الملف المتاح يورد بيانات تعريفية، وأسماء ثلاثة من المؤدين، ومقطعاً ترويجياً رسمياً للموسم الثاني، لكنه لا يقدم مراجعات مستقلة أو تفاصيل كافية عن الحلقات والصورة والصوت والإيقاع. لذلك فالحكم هنا نهائي من حيث تحرير المادة المتاحة، لكنه متحفظ في تقييم جوانب لا تسندها أدلة مباشرة.",
+        "verdict": "Blue Box يملك فرضية يسهل فهم جاذبيتها: رياضة مدرسية ذات هدف تنافسي ملموس تتقاطع مع قصة إعجاب، بما يسمح نظرياً بأن يختبر البطل طموحه ومشاعره في المسار نفسه. لكن المعطيات المتاحة تثبت الفكرة العامة فقط، ولا تكشف كيف تتطور الشخصيات، أو كيف تُبنى مباريات البادمنتون وكرة السلة، أو ما إذا كان المزج بين الرياضة والرومانسية متوازناً عبر الحلقات. لهذا لا يصح تقديم ثناء قاطع على الإخراج أو الأداء أو الموسيقى، ولا يصح تحويل نقص المعلومات إلى اتهام بوجود عيوب. التوصية الأقرب إلى الدقة هي اعتباره خياراً محتملاً لمن ينجذب إلى الرومانسية الرياضية، مع التنبيه إلى أن هذا الحكم لا يقوم مقام مراجعة مشاهدة موثقة. تقييم المحاور محافظ، ويشير بوضوح إلى تفاوت الأدلة لا إلى رصد عيوب فنية غير مثبتة.",
+        "body": "## مقدمة وسياق العمل\nBlue Box مسلسل رسوم متحركة مصنف ضمن الدراما، وتعود بياناته التعريفية في الملف إلى TMDB، مع تاريخ إصدار مسجل هو 3 أكتوبر 2024. الملخص المتاح يضع العمل عند تقاطع البادمنتون وكرة السلة والإعجاب بين طالبين؛ كما يسجل الملف أسماء شُويا تشيبا، ورينا أويدا، وأكاري كيتو ضمن طاقم الأداء. هذه حقائق تعريفية، لكنها لا تكفي وحدها لتحديد حجم الأدوار أو طبيعة الأداء. ويوثق الملف كذلك مقطعاً رسمياً عنوانه «Blue Box Season 2 | Official Trailer | Netflix»، منشوراً على قناة Netflix Anime. وجوده يؤكد مادة ترويجية للموسم الثاني، لا تفاصيل محتواه ولا جودة حلقاته. لذلك تقيّم هذه المراجعة الفكرة وما تسمح به الأدلة، ولا تدعي مشاهدة المسلسل أو الاطلاع على مادة تتجاوزها.\n\n## الفكرة والقصة أو التجربة\nيصف الملخص تايكي إينوماتا بأنه يحب البادمنتون، لكنه لا يزال بعيداً عن بلوغ المنافسات الوطنية. وتبدأ نقطة التحول العاطفية حين يرى تشيناتسو كانو، وهي طالبة أكبر منه، تتدرب بجد مع فريق كرة السلة للفتيات، فيقع في حبها. ثم تقرّبهما ظروف غير متوقعة، إلى حد احتمال ألا تبقى الرياضة وحدها في صدارة اهتمامهما. هذه البنية تمنح الحكاية مسارين واضحين: هدف رياضي يتطلب التقدم، وانجذاب قد يغيّر الأولويات. قوتها المحتملة أنها لا تفصل المجالين منذ البداية؛ فالشخصيتان مرتبطتان بالرياضة، لكنهما تمارسان لعبتين مختلفتين، ما يتيح اختلافاً في الخبرة والطموح. غير أن الملخص لا يشرح تلك الظروف ولا نتائجها، فلا يجوز اختراع منعطفات أو استنتاج شكل العلاقة النهائية. ما يمكن الحكم عليه هو وضوح المحرك الدرامي، لا اكتمال القصة أو أصالتها التنفيذية.\n\n## السرد والشخصيات أو تصميم اللعب\nالمادة المتاحة تتيح الحديث عن شخصيتين أساسيتين على مستوى التقديم فقط. تايكي مرتبط بهدف الوصول إلى المنافسات الوطنية، وتشيناتسو معرّفة بجدية تدريبها على كرة السلة؛ بذلك يرسم الملخص تقابلاً بين طموح يحتاج إلى تطوير وبين صورة مثابرة ينجذب إليها البطل. هذه بداية عملية لبناء دوافع الشخصيات، لكنها ليست برهاناً على عمقها أو تطورها. لا يقدم الملف معلومات عن بقية الشخصيات، أو الحوارات، أو توزيع وجهات النظر، أو كيفية معالجة التردد والتنافس، ولذلك لا يصح وصف السرد بأنه متماسك أو متعثر على امتداد الحلقات. كما أن العمل مسلسل درامي، لا لعبة؛ فلا ينطبق عليه تحليل تصميم اللعب أو الأنظمة التفاعلية. نقطة التقييم هنا أن فرضية الشخصيتين قابلة لتوليد صراع، فيما يظل نجاح الكتابة في تحويلها إلى مسارات إنسانية مقنعة سؤالاً مفتوحاً أمام هذا الملف.\n\n## الإخراج والجوانب الفنية\nلا تتضمن الأدلة أسماء المخرجين أو فريق الكتابة، ولا وصفاً موثقاً لبناء المشاهد، أو تحريك المنافسات، أو الانتقال بين خطوط الرياضة والعاطفة. لذلك لا يمكن نسبة خيار إخراجي محدد إلى العمل، ولا الجزم بأن المسلسل يوازن بصرياً بين لحظات التدريب والعلاقات. وجود إعلان رسمي للموسم الثاني لا يكفي لإجراء تحليل للمونتاج أو الإيقاع أو أسلوب التحريك؛ فالعنوان الموثق يثبت وجود الإعلان فحسب، ولا يقدم الملف وصفاً لمحتواه المشهدي. هذه فجوة مهمة لأن الرياضة في العمل ليست خلفية اسمية فقط: يضع الملخص البادمنتون وكرة السلة في قلب تعريفه. لكن من دون أدلة على تمثيل الحركة أو وضوحها أو وظيفتها الدرامية، سيكون وصف الإخراج بالمتميز أو الضعيف ادعاءً غير مسند. لذا يبقى الحكم على هذا الجانب محدوداً، لا سلبياً.\n\n## الصورة والهوية البصرية\nيصنف TMDB المسلسل ضمن الرسوم المتحركة، ويورد الملف رابطاً لملصق رسمي وصورة خلفية؛ غير أن البيانات المقدمة لا تصف تفاصيل تصميمهما، ولا تحدد أسلوب الرسم أو الألوان أو مستوى التحريك. ومن ثم لا يصح استخراج حكم فني من مجرد وجود رابط صورة، أو الزعم بأن للمسلسل هوية بصرية مميزة استناداً إلى عنوانه وموضوعه الرياضي. يمكن القول فقط إن الصيغة الرسومية تتسق، على مستوى التصنيف، مع تقديم قصة مدرسية رياضية ودرامية، لكن هذا استنتاج عن ملاءمة الوسيط للفكرة لا تقييم لجودة الصورة. لا توجد أيضاً معلومات موثقة عن ثبات التحريك بين الحلقات أو العناية بتصميم الملاعب والشخصيات. لهذا لا تتحول محدودية الأدلة إلى انتقاد للعمل نفسه؛ إنها تحدد ما يستطيع هذا التقييم إثباته، وتفسر تحفظ الدرجة المخصصة للمرئيات.\n\n## الصوت والموسيقى والأداء\nيسجل الملف ثلاثة أسماء في طاقم الأداء: شُويا تشيبا، ورينا أويدا، وأكاري كيتو. هذه معلومة مفيدة لتحديد بعض المشاركين، لكنها لا تحدد الشخصيات التي يؤدونها، ولا توفر أمثلة على الأداء أو اتجاه التمثيل الصوتي. كذلك لا يتضمن الملف أسماء الملحنين أو معلومات عن الأغاني أو الموسيقى المصاحبة أو المزج الصوتي. لذلك لا يمكن وصف الموسيقى بأنها مؤثرة، ولا انتقادها بأنها متكررة، ولا تقييم التفاوت بين أداء الشخصيات. حتى وجود مقطع ترويجي رسمي لا يعالج النقص هنا؛ إذ لم يرد في ملف الأدلة تحليل لمحتواه الصوتي أو كلمات الأغنية أو تفاصيل مقاطعه. الحكم المنضبط هو أن الجانب الصوتي غير موثق بما يكفي لتقييمه فنياً. الدرجة المنخفضة نسبياً لا تعني اكتشاف خلل، بل تعبر عن غياب الشواهد التي تسمح بمدح محدد أو نقد محدد.\n\n## الإيقاع والبناء وتنوع المحتوى\nالملخص يقدم تنافساً رياضياً ورومانسية ناشئة، وهما مصدران محتملان للتنوع: يمكن للأول أن يركز على التدريب والهدف، وللثاني على تقارب الشخصيات وتغير الأولويات. لكن كلمة «يمكن» أساسية هنا؛ فالأدلة لا تذكر عدد الحلقات أو مدتها، ولا ترتيب الأحداث، ولا مقدار الوقت الذي تخصصه القصة لكل مسار. كما لا تشرح ما إذا كانت المباريات تتكرر أو تتصاعد، أو كيف ينتقل السرد بين البادمنتون وكرة السلة والعلاقة العاطفية. لذلك لا يمكن منح المسلسل حكماً مؤكداً بشأن بطء الإيقاع أو توازنه أو تنوعه الفعلي. وجود إعلان للموسم الثاني لا يبرهن وحده على اتساع البناء أو نجاح الاستمرارية. ما يبدو واعداً هو توافر أكثر من محور قصصي، أما جودة توزيعها على الزمن فتحتاج إلى مشاهدة أو مصادر وصفية مستقلة غير موجودة في الملف.\n\n## نقاط القوة\nأبرز ما يثبته الملف هو وضوح الفكرة المركزية: بطل يسعى إلى بلوغ المنافسات الوطنية، وبطلة تمارس كرة السلة بجدية، وانجذاب يضع الرياضة والعاطفة في تماس. هذا التحديد يمنح القصة نقطة دخول سهلة من دون الحاجة إلى شرح عالم معقد. كذلك يوفر اختلاف اللعبتين مجالاً محتملاً لتباين الخبرات والأهداف، بدلاً من جعل الشخصيتين نسختين من المسار الرياضي نفسه؛ وهذه فرصة سردية، لا نتيجة مثبتة. ومن عناصر الجاذبية أيضاً أن الصراع المعلن لا يقتصر على سؤال الإعجاب، بل يرتبط باحتمال تغير أولويات تايكي الرياضية. وأخيراً، يثبت وجود عنوان رسمي لمقطع ترويجي للموسم الثاني استمرار حضور العمل ضمن مواد Netflix Anime الترويجية. لا تبرهن هذه النقاط على جودة التنفيذ، لكنها تحدد بدقة لماذا قد تستحق الفرضية اهتمام جمهور بعينه.\n\n## نقاط الضعف\nالتحفظ الأهم ليس عيباً مثبتاً في المسلسل، بل محدودية المادة المتاحة لتقييمه: لا توجد مراجعات مستقلة أو معلومات تفصيلية عن الحلقات، ولا بيانات تسمح بفحص أداء فريق العمل أو الإخراج أو الموسيقى. كما أن الملخص يضع هدفاً رياضياً ورومانسية في المسار نفسه، لكنه لا يوضح كيف يتوازن الاثنان؛ لذلك لا يمكن معرفة ما إذا كان أحدهما يطغى على الآخر. ولا يذكر الملف تفاصيل الظروف التي تقرب تايكي وتشيناتسو، ما يمنع اختبار مدى إقناع نقطة التحول أو تطور العلاقة. أما متوسط TMDB البالغ 7.9 من 10، المستند إلى 114 صوتاً بحسب البيانات، فهو مؤشر جماهيري محدود ومنسوب إلى منصته، وليس مراجعة نقدية مستقلة ولا دليلاً على جودة عنصر بعينه. هذه حدود المعرفة هنا، وليست اتهامات فنية للعمل.\n\n## لمن يناسب هذا العمل؟\nبحسب الفكرة الموثقة، قد يناسب Blue Box من يبحث عن دراما شبابية تمزج الرياضة بالإعجاب، أو يفضل قصصاً يكون لطموح الشخصيات العملي فيها حضور إلى جانب العلاقات. وقد يجد من يهتم بالبادمنتون وكرة السلة سبباً أولياً للاهتمام، لأن الملخص يربط اللعبتين مباشرة بالشخصيتين الرئيسيتين. لكن لا ينبغي فهم ذلك على أنه ضمان لتحليل رياضي مفصل أو وفرة مشاهد المنافسة؛ فالملف لا يثبت مقدار حضور الرياضة في الحلقات. كذلك يصعب تقديم توصية دقيقة لمن يطلب تقييماً لجودة التحريك أو الموسيقى أو البناء، لأن الأدلة لا تسمح بذلك. التوصية إذن مشروطة: الفرضية ملائمة لمحبي هذا المزج، أما قرار المشاهدة اعتماداً على جودة التنفيذ فيحتاج إلى مصادر إضافية أو معاينة فعلية.\n\n## الحكم النهائي\nBlue Box عمل تملك مقدمته عناصر جذب واضحة: طموح رياضي محدد، شخصيتان تنتميان إلى رياضتين مختلفتين، وإعجاب يهدد بإزاحة التركيز عن المنافسة. هذه العناصر تكفي لتبرير الاهتمام بالمسلسل، لكنها لا تكفي لإعلان نجاحه في تطوير الشخصيات أو تنويع المباريات أو صوغ هوية سمعية وبصرية متميزة. لذلك يتخذ الحكم موقفاً إيجابياً بحذر تجاه الفكرة، ومتحفظاً تجاه التنفيذ الذي لا تصفه الأدلة. الدرجات أدناه ليست ادعاء مشاهدة، ولا تعني أن الجوانب غير الموثقة معيبة؛ إنها تعكس مقدار ما يمكن تسويغه من الملف المتاح، مع اعتبار متوسط TMDB مؤشراً جماهيرياً ثانوياً فقط. أوصي به مبدئياً لمن تجذبه الرومانسية الرياضية، لا بوصفه عملاً ثبت تفوقه الفني، بل بوصفه فرضية واعدة لم تتوفر هنا شواهد كافية للحسم في نجاحها.",
+        "scores": {
+          "story": 7.2,
+          "visuals": 5,
+          "sound": 5,
+          "pacing": 5.5
+        },
+        "pros": [
+          "ملخص واضح يربط طموح تايكي في البادمنتون بهدف المنافسات الوطنية.",
+          "تقاطع الرومانسية والرياضة يمنح الفكرة محركاً درامياً مفهوماً.",
+          "اختلاف رياضتي الشخصيتين يتيح مجالاً محتملاً لتباين الخبرات والدوافع.",
+          "وجود مقطع ترويجي رسمي موثق للموسم الثاني على قناة Netflix Anime."
+        ],
+        "cons": [
+          "لا تتوفر تفاصيل كافية عن تطور الحبكة أو الشخصيات لتقييم نجاح السرد.",
+          "الأدلة لا تصف التحريك أو الإخراج أو الهوية البصرية وصفاً يسمح بحكم نوعي.",
+          "لا توجد معلومات موثقة كافية عن الموسيقى أو الأداء الصوتي.",
+          "لا يتيح الملف تقييم إيقاع الحلقات أو توازن المسارين الرياضي والعاطفي."
+        ],
+        "title": "Blue Box",
+        "type": "series",
+        "sourceId": "series:207347",
+        "sourceName": "TMDB",
+        "sourceUrl": "https://www.themoviedb.org/tv/207347",
+        "sourceRating": 7.9,
+        "sourceRatingScale": 10,
+        "sourceVoteCount": 114,
+        "sourceRatingCheckedAt": "2026-11-28T09:28:03.767Z",
+        "audienceScore": 7.9,
+        "releaseDate": "2024-10-03",
+        "poster": "https://image.tmdb.org/t/p/w780/mVAWCCNBxPX3EUf9XhcFff4wW5V.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/8p39Ud6ZKMixBQ7R4frg2o3idzc.jpg",
+        "genres": [
+          "Animation",
+          "Drama"
+        ],
+        "platforms": [],
+        "cast": [
+          "Shoya Chiba",
+          "Reina Ueda",
+          "Akari Kito"
+        ],
+        "crew": [],
+        "tags": [
+          "Animation",
+          "Drama"
+        ],
+        "sources": [
+          {
+            "name": "TMDB",
+            "url": "https://www.themoviedb.org/tv/207347",
+            "extract": "Taiki Inomata loves badminton, but he has a long way to go before he can reach nationals. When Taiki sees upperclassman Chinatsu Kano practicing her heart out on the girls’ basketball team, he falls for her hard. After an unexpected turn of events brings the two closer together, sports might not be the first thing on their minds anymore!",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Blue_box",
+            "extract": "A blue box is an electronic device that produces tones used to generate the in-band signaling tones formerly used within the North American long-distance telephone network to send line status and called number information over voice circuits. During that period, charges for long-distance calling were commonplace and could be significant, depending on the time, duration and destination of the call. A blue box device allowed illicit users to circumvent these charges, placing long-distance calls that would be billed to another number or dismissed entirely by the telecom company's billing system as an incomplete call. A number of similar \"color boxes\" were also created to control other aspects of the phone network, a practice called \"phreaking\".",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — Netflix Anime",
+            "url": "https://www.youtube.com/watch?v=n0ugKku1fzc",
+            "extract": "Verified public, embeddable promotional trailer: Blue Box Season 2 | Official Trailer | Netflix",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "n0ugKku1fzc",
+        "youtubeVideoTitle": "Blue Box Season 2 | Official Trailer | Netflix",
+        "reviewMode": "review",
+        "score": 5.8
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 5880,
+      "articlePath": "src/content/reviews/series-blue-box-207347.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-blue-box-207347/"
     }
   },
   "providers": {},
@@ -4627,9 +4716,9 @@
       "tokens": 32686
     },
     "2026-11-28": {
-      "articles": 3,
-      "requests": 7,
-      "tokens": 23738
+      "articles": 4,
+      "requests": 9,
+      "tokens": 29618
     }
   },
   "history": []
