@@ -5,16 +5,56 @@ const data = review.data;
 // Card timestamps represent editorial publication, never the work's original release date.
 const displayDate = data.publishedAt ?? data.date;
 const href = url(`reviews/${review.id}/`);
+const hasCriticApproval = Number.isFinite(data.criticApproval);
+const hasAudienceApproval = Number.isFinite(data.audienceApproval);
+const hasExternalRatings = hasCriticApproval || hasAudienceApproval;
+const ariaLabel = `${TYPE_LABEL[data.type]}: ${data.title}${data.reviewMode === 'preview' ? ' — قراءة استباقية قبل الإصدار' : data.reviewMode === 'audience' ? ' — تقييم الجمهور ' + Number(data.audienceScore ?? (Number(data.sourceRating) / Number(data.sourceRatingScale) * 10)).toFixed(1) + ' من 10' : data.reviewMode === 'limited' ? (hasExternalRatings ? ` — نقاد ${hasCriticApproval ? data.criticApproval + '%' : '—'} · جمهور ${hasAudienceApproval ? data.audienceApproval + '%' : '—'}` : ' — قراءة معلوماتية بلا تقييم نهائي') : ' — التقييم ' + data.score.toFixed(1) + ' من 10'}`;
 ---
-<a href={href} class="review-card group" aria-label={`${TYPE_LABEL[data.type]}: ${data.title}${data.reviewMode === 'preview' ? ' — قراءة استباقية قبل الإصدار' : data.reviewMode === 'audience' ? ' — تقييم الجمهور ' + Number(data.audienceScore ?? (Number(data.sourceRating) / Number(data.sourceRatingScale) * 10)).toFixed(1) + ' من 10' : data.reviewMode === 'limited' ? (Number.isFinite(data.criticApproval) || Number.isFinite(data.audienceApproval) ? ` — نقاد ${Number.isFinite(data.criticApproval) ? data.criticApproval + '%' : '—'} · جمهور ${Number.isFinite(data.audienceApproval) ? data.audienceApproval + '%' : '—'}` : ' — قراءة معلوماتية بلا تقييم نهائي') : ' — التقييم ' + data.score.toFixed(1) + ' من 10'}`}>
-<div class="review-poster-wrap">
-{data.poster ? <img src={optimizeImage(data.poster)} alt={data.title} loading="lazy" decoding="async" class="review-poster" width="600" height="900"/> : <div class="review-poster grid place-items-center text-5xl text-[#e45c38]">✦</div>}
-<span class="review-type">{TYPE_LABEL[data.type]}</span>
-{data.reviewMode === 'preview' ? <span class="review-score">استباقية</span> : data.reviewMode === 'audience' ? <span class="review-score">{Number(data.audienceScore ?? (Number(data.sourceRating) / Number(data.sourceRatingScale) * 10)).toFixed(1)} <small>/10 جمهور</small></span> : data.reviewMode === 'limited' ? <span class="review-score">{Number.isFinite(data.criticApproval) ? `${data.criticApproval}% <small>/ نقاد</small>` : Number.isFinite(data.audienceApproval) ? `${data.audienceApproval}% <small>/ جمهور</small>` : 'قراءة معلوماتية'}</span> : <span class="review-score">{data.score.toFixed(1)} <small>/10</small></span>}
-</div>
-<div class="review-content">
-<h3 class="review-title">{data.title}</h3>
-<p class="review-headline">{data.headline}</p>
-<time class="review-date" datetime={displayDate.toISOString()}>{fmtDate(displayDate)}</time>
-</div>
+<a href={href} class="review-card group" aria-label={ariaLabel}>
+  <div class="review-poster-wrap">
+    {data.poster ? <img src={optimizeImage(data.poster)} alt={data.title} loading="lazy" decoding="async" class="review-poster" width="600" height="900"/> : <div class="review-poster grid place-items-center text-5xl text-[#e45c38]">✦</div>}
+    <span class="review-type">{TYPE_LABEL[data.type]}</span>
+    {data.reviewMode === 'preview' ? <span class="review-score">استباقية</span> : data.reviewMode === 'audience' ? <span class="review-score">{Number(data.audienceScore ?? (Number(data.sourceRating) / Number(data.sourceRatingScale) * 10)).toFixed(1)} <small>/10 جمهور</small></span> : data.reviewMode === 'limited' ? (
+      hasExternalRatings ? (
+        <span class="review-score review-external-scores" aria-label={ariaLabel}>
+          {hasCriticApproval && <span class="external-rating-line"><strong>{data.criticApproval}%</strong><small>نقاد</small></span>}
+          {hasAudienceApproval && <span class="external-rating-line"><strong>{data.audienceApproval}%</strong><small>جمهور</small></span>}
+        </span>
+      ) : <span class="review-score">قراءة معلوماتية</span>
+    ) : <span class="review-score">{data.score.toFixed(1)} <small>/10</small></span>}
+  </div>
+  <div class="review-content">
+    <h3 class="review-title">{data.title}</h3>
+    <p class="review-headline">{data.headline}</p>
+    <time class="review-date" datetime={displayDate.toISOString()}>{fmtDate(displayDate)}</time>
+  </div>
 </a>
+
+<style>
+  .review-score.review-external-scores {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    min-width: 66px;
+    padding: 6px 8px;
+    line-height: 1.2;
+  }
+  .external-rating-line {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    white-space: nowrap;
+  }
+  .external-rating-line strong {
+    font-size: 12px;
+    font-weight: 950;
+  }
+  .external-rating-line small {
+    display: inline;
+    color: inherit;
+    font-size: 9px;
+    font-weight: 800;
+    opacity: .9;
+  }
+</style>
