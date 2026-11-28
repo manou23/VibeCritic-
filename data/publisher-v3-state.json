@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-28T09:29:02.983Z",
+  "updatedAt": "2026-11-28T10:17:17.044Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -4527,145 +4527,180 @@
         "popularity": 40.6326,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-28T09:28:03.367Z",
-      "updatedAt": "2026-11-28T09:29:02.983Z",
+      "updatedAt": "2026-11-28T10:16:09.705Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "Blue Box",
-        "type": "series",
-        "collectedAt": "2026-11-28T09:28:03.767Z",
-        "sourceId": "series:207347",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/207347",
-        "overview": "Taiki Inomata loves badminton, but he has a long way to go before he can reach nationals. When Taiki sees upperclassman Chinatsu Kano practicing her heart out on the girls’ basketball team, he falls for her hard. After an unexpected turn of events brings the two closer together, sports might not be the first thing on their minds anymore!",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/207347",
-            "extract": "Taiki Inomata loves badminton, but he has a long way to go before he can reach nationals. When Taiki sees upperclassman Chinatsu Kano practicing her heart out on the girls’ basketball team, he falls for her hard. After an unexpected turn of events brings the two closer together, sports might not be the first thing on their minds anymore!",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Blue_box",
-            "extract": "A blue box is an electronic device that produces tones used to generate the in-band signaling tones formerly used within the North American long-distance telephone network to send line status and called number information over voice circuits. During that period, charges for long-distance calling were commonplace and could be significant, depending on the time, duration and destination of the call. A blue box device allowed illicit users to circumvent these charges, placing long-distance calls that would be billed to another number or dismissed entirely by the telecom company's billing system as an incomplete call. A number of similar \"color boxes\" were also created to control other aspects of the phone network, a practice called \"phreaking\".",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Netflix Anime",
-            "url": "https://www.youtube.com/watch?v=n0ugKku1fzc",
-            "extract": "Verified public, embeddable promotional trailer: Blue Box Season 2 | Official Trailer | Netflix",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 114 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "n0ugKku1fzc",
-        "youtubeVideoTitle": "Blue Box Season 2 | Official Trailer | Netflix",
-        "youtubeChannel": "Netflix Anime",
-        "releaseDate": "2024-10-03",
-        "genres": [
-          "Animation",
-          "Drama"
-        ],
-        "platforms": [],
-        "cast": [
-          "Shoya Chiba",
-          "Reina Ueda",
-          "Akari Kito"
-        ],
-        "crew": [],
-        "rating": 7.9,
-        "ratingScale": 10,
-        "votes": 114,
-        "poster": "https://image.tmdb.org/t/p/w780/mVAWCCNBxPX3EUf9XhcFff4wW5V.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/8p39Ud6ZKMixBQ7R4frg2o3idzc.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "Blue Box: فرضية تجمع الرياضة والرومانسية، وأدلة لا تكفي للحكم على التنفيذ",
-        "summary": "تقدّم Blue Box نقطة انطلاق واضحة: تايكي إينوماتا لاعب بادمنتون يطمح إلى بلوغ المنافسات الوطنية، ويقع في حب تشيناتسو كانو، لاعبة كرة سلة أكبر منه سنّاً، ثم تقرّبهما ظروف غير متوقعة. هذا التداخل بين الطموح الرياضي والانجذاب العاطفي يمنح المسلسل أساساً واعداً لصراع بين التركيز على الهدف الشخصي والانشغال بعلاقة ناشئة، من دون أن يثبت وحده جودة التنفيذ. الملف المتاح يورد بيانات تعريفية، وأسماء ثلاثة من المؤدين، ومقطعاً ترويجياً رسمياً للموسم الثاني، لكنه لا يقدم مراجعات مستقلة أو تفاصيل كافية عن الحلقات والصورة والصوت والإيقاع. لذلك فالحكم هنا نهائي من حيث تحرير المادة المتاحة، لكنه متحفظ في تقييم جوانب لا تسندها أدلة مباشرة.",
-        "verdict": "Blue Box يملك فرضية يسهل فهم جاذبيتها: رياضة مدرسية ذات هدف تنافسي ملموس تتقاطع مع قصة إعجاب، بما يسمح نظرياً بأن يختبر البطل طموحه ومشاعره في المسار نفسه. لكن المعطيات المتاحة تثبت الفكرة العامة فقط، ولا تكشف كيف تتطور الشخصيات، أو كيف تُبنى مباريات البادمنتون وكرة السلة، أو ما إذا كان المزج بين الرياضة والرومانسية متوازناً عبر الحلقات. لهذا لا يصح تقديم ثناء قاطع على الإخراج أو الأداء أو الموسيقى، ولا يصح تحويل نقص المعلومات إلى اتهام بوجود عيوب. التوصية الأقرب إلى الدقة هي اعتباره خياراً محتملاً لمن ينجذب إلى الرومانسية الرياضية، مع التنبيه إلى أن هذا الحكم لا يقوم مقام مراجعة مشاهدة موثقة. تقييم المحاور محافظ، ويشير بوضوح إلى تفاوت الأدلة لا إلى رصد عيوب فنية غير مثبتة.",
-        "body": "## مقدمة وسياق العمل\nBlue Box مسلسل رسوم متحركة مصنف ضمن الدراما، وتعود بياناته التعريفية في الملف إلى TMDB، مع تاريخ إصدار مسجل هو 3 أكتوبر 2024. الملخص المتاح يضع العمل عند تقاطع البادمنتون وكرة السلة والإعجاب بين طالبين؛ كما يسجل الملف أسماء شُويا تشيبا، ورينا أويدا، وأكاري كيتو ضمن طاقم الأداء. هذه حقائق تعريفية، لكنها لا تكفي وحدها لتحديد حجم الأدوار أو طبيعة الأداء. ويوثق الملف كذلك مقطعاً رسمياً عنوانه «Blue Box Season 2 | Official Trailer | Netflix»، منشوراً على قناة Netflix Anime. وجوده يؤكد مادة ترويجية للموسم الثاني، لا تفاصيل محتواه ولا جودة حلقاته. لذلك تقيّم هذه المراجعة الفكرة وما تسمح به الأدلة، ولا تدعي مشاهدة المسلسل أو الاطلاع على مادة تتجاوزها.\n\n## الفكرة والقصة أو التجربة\nيصف الملخص تايكي إينوماتا بأنه يحب البادمنتون، لكنه لا يزال بعيداً عن بلوغ المنافسات الوطنية. وتبدأ نقطة التحول العاطفية حين يرى تشيناتسو كانو، وهي طالبة أكبر منه، تتدرب بجد مع فريق كرة السلة للفتيات، فيقع في حبها. ثم تقرّبهما ظروف غير متوقعة، إلى حد احتمال ألا تبقى الرياضة وحدها في صدارة اهتمامهما. هذه البنية تمنح الحكاية مسارين واضحين: هدف رياضي يتطلب التقدم، وانجذاب قد يغيّر الأولويات. قوتها المحتملة أنها لا تفصل المجالين منذ البداية؛ فالشخصيتان مرتبطتان بالرياضة، لكنهما تمارسان لعبتين مختلفتين، ما يتيح اختلافاً في الخبرة والطموح. غير أن الملخص لا يشرح تلك الظروف ولا نتائجها، فلا يجوز اختراع منعطفات أو استنتاج شكل العلاقة النهائية. ما يمكن الحكم عليه هو وضوح المحرك الدرامي، لا اكتمال القصة أو أصالتها التنفيذية.\n\n## السرد والشخصيات أو تصميم اللعب\nالمادة المتاحة تتيح الحديث عن شخصيتين أساسيتين على مستوى التقديم فقط. تايكي مرتبط بهدف الوصول إلى المنافسات الوطنية، وتشيناتسو معرّفة بجدية تدريبها على كرة السلة؛ بذلك يرسم الملخص تقابلاً بين طموح يحتاج إلى تطوير وبين صورة مثابرة ينجذب إليها البطل. هذه بداية عملية لبناء دوافع الشخصيات، لكنها ليست برهاناً على عمقها أو تطورها. لا يقدم الملف معلومات عن بقية الشخصيات، أو الحوارات، أو توزيع وجهات النظر، أو كيفية معالجة التردد والتنافس، ولذلك لا يصح وصف السرد بأنه متماسك أو متعثر على امتداد الحلقات. كما أن العمل مسلسل درامي، لا لعبة؛ فلا ينطبق عليه تحليل تصميم اللعب أو الأنظمة التفاعلية. نقطة التقييم هنا أن فرضية الشخصيتين قابلة لتوليد صراع، فيما يظل نجاح الكتابة في تحويلها إلى مسارات إنسانية مقنعة سؤالاً مفتوحاً أمام هذا الملف.\n\n## الإخراج والجوانب الفنية\nلا تتضمن الأدلة أسماء المخرجين أو فريق الكتابة، ولا وصفاً موثقاً لبناء المشاهد، أو تحريك المنافسات، أو الانتقال بين خطوط الرياضة والعاطفة. لذلك لا يمكن نسبة خيار إخراجي محدد إلى العمل، ولا الجزم بأن المسلسل يوازن بصرياً بين لحظات التدريب والعلاقات. وجود إعلان رسمي للموسم الثاني لا يكفي لإجراء تحليل للمونتاج أو الإيقاع أو أسلوب التحريك؛ فالعنوان الموثق يثبت وجود الإعلان فحسب، ولا يقدم الملف وصفاً لمحتواه المشهدي. هذه فجوة مهمة لأن الرياضة في العمل ليست خلفية اسمية فقط: يضع الملخص البادمنتون وكرة السلة في قلب تعريفه. لكن من دون أدلة على تمثيل الحركة أو وضوحها أو وظيفتها الدرامية، سيكون وصف الإخراج بالمتميز أو الضعيف ادعاءً غير مسند. لذا يبقى الحكم على هذا الجانب محدوداً، لا سلبياً.\n\n## الصورة والهوية البصرية\nيصنف TMDB المسلسل ضمن الرسوم المتحركة، ويورد الملف رابطاً لملصق رسمي وصورة خلفية؛ غير أن البيانات المقدمة لا تصف تفاصيل تصميمهما، ولا تحدد أسلوب الرسم أو الألوان أو مستوى التحريك. ومن ثم لا يصح استخراج حكم فني من مجرد وجود رابط صورة، أو الزعم بأن للمسلسل هوية بصرية مميزة استناداً إلى عنوانه وموضوعه الرياضي. يمكن القول فقط إن الصيغة الرسومية تتسق، على مستوى التصنيف، مع تقديم قصة مدرسية رياضية ودرامية، لكن هذا استنتاج عن ملاءمة الوسيط للفكرة لا تقييم لجودة الصورة. لا توجد أيضاً معلومات موثقة عن ثبات التحريك بين الحلقات أو العناية بتصميم الملاعب والشخصيات. لهذا لا تتحول محدودية الأدلة إلى انتقاد للعمل نفسه؛ إنها تحدد ما يستطيع هذا التقييم إثباته، وتفسر تحفظ الدرجة المخصصة للمرئيات.\n\n## الصوت والموسيقى والأداء\nيسجل الملف ثلاثة أسماء في طاقم الأداء: شُويا تشيبا، ورينا أويدا، وأكاري كيتو. هذه معلومة مفيدة لتحديد بعض المشاركين، لكنها لا تحدد الشخصيات التي يؤدونها، ولا توفر أمثلة على الأداء أو اتجاه التمثيل الصوتي. كذلك لا يتضمن الملف أسماء الملحنين أو معلومات عن الأغاني أو الموسيقى المصاحبة أو المزج الصوتي. لذلك لا يمكن وصف الموسيقى بأنها مؤثرة، ولا انتقادها بأنها متكررة، ولا تقييم التفاوت بين أداء الشخصيات. حتى وجود مقطع ترويجي رسمي لا يعالج النقص هنا؛ إذ لم يرد في ملف الأدلة تحليل لمحتواه الصوتي أو كلمات الأغنية أو تفاصيل مقاطعه. الحكم المنضبط هو أن الجانب الصوتي غير موثق بما يكفي لتقييمه فنياً. الدرجة المنخفضة نسبياً لا تعني اكتشاف خلل، بل تعبر عن غياب الشواهد التي تسمح بمدح محدد أو نقد محدد.\n\n## الإيقاع والبناء وتنوع المحتوى\nالملخص يقدم تنافساً رياضياً ورومانسية ناشئة، وهما مصدران محتملان للتنوع: يمكن للأول أن يركز على التدريب والهدف، وللثاني على تقارب الشخصيات وتغير الأولويات. لكن كلمة «يمكن» أساسية هنا؛ فالأدلة لا تذكر عدد الحلقات أو مدتها، ولا ترتيب الأحداث، ولا مقدار الوقت الذي تخصصه القصة لكل مسار. كما لا تشرح ما إذا كانت المباريات تتكرر أو تتصاعد، أو كيف ينتقل السرد بين البادمنتون وكرة السلة والعلاقة العاطفية. لذلك لا يمكن منح المسلسل حكماً مؤكداً بشأن بطء الإيقاع أو توازنه أو تنوعه الفعلي. وجود إعلان للموسم الثاني لا يبرهن وحده على اتساع البناء أو نجاح الاستمرارية. ما يبدو واعداً هو توافر أكثر من محور قصصي، أما جودة توزيعها على الزمن فتحتاج إلى مشاهدة أو مصادر وصفية مستقلة غير موجودة في الملف.\n\n## نقاط القوة\nأبرز ما يثبته الملف هو وضوح الفكرة المركزية: بطل يسعى إلى بلوغ المنافسات الوطنية، وبطلة تمارس كرة السلة بجدية، وانجذاب يضع الرياضة والعاطفة في تماس. هذا التحديد يمنح القصة نقطة دخول سهلة من دون الحاجة إلى شرح عالم معقد. كذلك يوفر اختلاف اللعبتين مجالاً محتملاً لتباين الخبرات والأهداف، بدلاً من جعل الشخصيتين نسختين من المسار الرياضي نفسه؛ وهذه فرصة سردية، لا نتيجة مثبتة. ومن عناصر الجاذبية أيضاً أن الصراع المعلن لا يقتصر على سؤال الإعجاب، بل يرتبط باحتمال تغير أولويات تايكي الرياضية. وأخيراً، يثبت وجود عنوان رسمي لمقطع ترويجي للموسم الثاني استمرار حضور العمل ضمن مواد Netflix Anime الترويجية. لا تبرهن هذه النقاط على جودة التنفيذ، لكنها تحدد بدقة لماذا قد تستحق الفرضية اهتمام جمهور بعينه.\n\n## نقاط الضعف\nالتحفظ الأهم ليس عيباً مثبتاً في المسلسل، بل محدودية المادة المتاحة لتقييمه: لا توجد مراجعات مستقلة أو معلومات تفصيلية عن الحلقات، ولا بيانات تسمح بفحص أداء فريق العمل أو الإخراج أو الموسيقى. كما أن الملخص يضع هدفاً رياضياً ورومانسية في المسار نفسه، لكنه لا يوضح كيف يتوازن الاثنان؛ لذلك لا يمكن معرفة ما إذا كان أحدهما يطغى على الآخر. ولا يذكر الملف تفاصيل الظروف التي تقرب تايكي وتشيناتسو، ما يمنع اختبار مدى إقناع نقطة التحول أو تطور العلاقة. أما متوسط TMDB البالغ 7.9 من 10، المستند إلى 114 صوتاً بحسب البيانات، فهو مؤشر جماهيري محدود ومنسوب إلى منصته، وليس مراجعة نقدية مستقلة ولا دليلاً على جودة عنصر بعينه. هذه حدود المعرفة هنا، وليست اتهامات فنية للعمل.\n\n## لمن يناسب هذا العمل؟\nبحسب الفكرة الموثقة، قد يناسب Blue Box من يبحث عن دراما شبابية تمزج الرياضة بالإعجاب، أو يفضل قصصاً يكون لطموح الشخصيات العملي فيها حضور إلى جانب العلاقات. وقد يجد من يهتم بالبادمنتون وكرة السلة سبباً أولياً للاهتمام، لأن الملخص يربط اللعبتين مباشرة بالشخصيتين الرئيسيتين. لكن لا ينبغي فهم ذلك على أنه ضمان لتحليل رياضي مفصل أو وفرة مشاهد المنافسة؛ فالملف لا يثبت مقدار حضور الرياضة في الحلقات. كذلك يصعب تقديم توصية دقيقة لمن يطلب تقييماً لجودة التحريك أو الموسيقى أو البناء، لأن الأدلة لا تسمح بذلك. التوصية إذن مشروطة: الفرضية ملائمة لمحبي هذا المزج، أما قرار المشاهدة اعتماداً على جودة التنفيذ فيحتاج إلى مصادر إضافية أو معاينة فعلية.\n\n## الحكم النهائي\nBlue Box عمل تملك مقدمته عناصر جذب واضحة: طموح رياضي محدد، شخصيتان تنتميان إلى رياضتين مختلفتين، وإعجاب يهدد بإزاحة التركيز عن المنافسة. هذه العناصر تكفي لتبرير الاهتمام بالمسلسل، لكنها لا تكفي لإعلان نجاحه في تطوير الشخصيات أو تنويع المباريات أو صوغ هوية سمعية وبصرية متميزة. لذلك يتخذ الحكم موقفاً إيجابياً بحذر تجاه الفكرة، ومتحفظاً تجاه التنفيذ الذي لا تصفه الأدلة. الدرجات أدناه ليست ادعاء مشاهدة، ولا تعني أن الجوانب غير الموثقة معيبة؛ إنها تعكس مقدار ما يمكن تسويغه من الملف المتاح، مع اعتبار متوسط TMDB مؤشراً جماهيرياً ثانوياً فقط. أوصي به مبدئياً لمن تجذبه الرومانسية الرياضية، لا بوصفه عملاً ثبت تفوقه الفني، بل بوصفه فرضية واعدة لم تتوفر هنا شواهد كافية للحسم في نجاحها.",
-        "scores": {
-          "story": 7.2,
-          "visuals": 5,
-          "sound": 5,
-          "pacing": 5.5
-        },
-        "pros": [
-          "ملخص واضح يربط طموح تايكي في البادمنتون بهدف المنافسات الوطنية.",
-          "تقاطع الرومانسية والرياضة يمنح الفكرة محركاً درامياً مفهوماً.",
-          "اختلاف رياضتي الشخصيتين يتيح مجالاً محتملاً لتباين الخبرات والدوافع.",
-          "وجود مقطع ترويجي رسمي موثق للموسم الثاني على قناة Netflix Anime."
-        ],
-        "cons": [
-          "لا تتوفر تفاصيل كافية عن تطور الحبكة أو الشخصيات لتقييم نجاح السرد.",
-          "الأدلة لا تصف التحريك أو الإخراج أو الهوية البصرية وصفاً يسمح بحكم نوعي.",
-          "لا توجد معلومات موثقة كافية عن الموسيقى أو الأداء الصوتي.",
-          "لا يتيح الملف تقييم إيقاع الحلقات أو توازن المسارين الرياضي والعاطفي."
-        ],
-        "title": "Blue Box",
-        "type": "series",
-        "sourceId": "series:207347",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/207347",
-        "sourceRating": 7.9,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 114,
-        "sourceRatingCheckedAt": "2026-11-28T09:28:03.767Z",
-        "audienceScore": 7.9,
-        "releaseDate": "2024-10-03",
-        "poster": "https://image.tmdb.org/t/p/w780/mVAWCCNBxPX3EUf9XhcFff4wW5V.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/8p39Ud6ZKMixBQ7R4frg2o3idzc.jpg",
-        "genres": [
-          "Animation",
-          "Drama"
-        ],
-        "platforms": [],
-        "cast": [
-          "Shoya Chiba",
-          "Reina Ueda",
-          "Akari Kito"
-        ],
-        "crew": [],
-        "tags": [
-          "Animation",
-          "Drama"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/207347",
-            "extract": "Taiki Inomata loves badminton, but he has a long way to go before he can reach nationals. When Taiki sees upperclassman Chinatsu Kano practicing her heart out on the girls’ basketball team, he falls for her hard. After an unexpected turn of events brings the two closer together, sports might not be the first thing on their minds anymore!",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Blue_box",
-            "extract": "A blue box is an electronic device that produces tones used to generate the in-band signaling tones formerly used within the North American long-distance telephone network to send line status and called number information over voice circuits. During that period, charges for long-distance calling were commonplace and could be significant, depending on the time, duration and destination of the call. A blue box device allowed illicit users to circumvent these charges, placing long-distance calls that would be billed to another number or dismissed entirely by the telecom company's billing system as an incomplete call. A number of similar \"color boxes\" were also created to control other aspects of the phone network, a practice called \"phreaking\".",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Netflix Anime",
-            "url": "https://www.youtube.com/watch?v=n0ugKku1fzc",
-            "extract": "Verified public, embeddable promotional trailer: Blue Box Season 2 | Official Trailer | Netflix",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "n0ugKku1fzc",
-        "youtubeVideoTitle": "Blue Box Season 2 | Official Trailer | Netflix",
-        "reviewMode": "review",
-        "score": 5.8
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 5880,
       "articlePath": "src/content/reviews/series-blue-box-207347.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-blue-box-207347/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-blue-box-207347/",
+      "publishedAt": "2026-11-28T10:16:09.705Z"
+    },
+    "game:977316": {
+      "key": "game:977316",
+      "type": "game",
+      "id": "977316",
+      "title": "Balatro",
+      "item": {
+        "type": "game",
+        "id": "977316",
+        "name": "Balatro",
+        "date": "2024-02-20",
+        "popularity": 1015,
+        "source": "RAWG"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-28T10:16:11.927Z",
+      "updatedAt": "2026-11-28T10:17:17.044Z",
+      "nextAttemptAt": null,
+      "evidence": {
+        "title": "Balatro",
+        "type": "game",
+        "collectedAt": "2026-11-28T10:16:12.672Z",
+        "sourceId": "game:977316",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/balatro",
+        "overview": "Balatro is a poker-inspired roguelike deck builder all about creating powerful synergies and winning big. Combine valid poker hands with unique Joker cards in order to create varied synergies and builds. Earn enough chips to beat devious blinds, all while uncovering hidden bonus hands and decks as you progress. You’re going to need every edge you can get in order to reach the boss blind, beat the final ante and secure victory. The definitive poker roguelike experience. Endless possibilities - every pick-up, discard and joker can dramatically alter the course of your run. In-depth campaign mode complete with 8 difficulties, as well as challenge, daily and seeded runs. Deftly deploy an array of potent tools: different Decks, Jokers, Tarot cards, Planet cards, Spectral cards, and Vouchers. Use these versatile instruments to ignite a combo frenzy and turbocharge your poker hands, crafting electrifying, adrenaline-fueled synergies. 150 Jokers, each with their own unique abilities 15 Decks with distinct modifiers to choose from for each run 5 potential variants of each Joker which add further abilities 22 Tarot cards variants that can enhance your regular playing cards 11 Planet cards that help level up your possible poker hands 32 Voucher cards to help provide permanent buffs for your current run Immerse yourself in Balatro’s distinctive psychedelic world. Let the synthwave soundtrack wash over you - wind down, escape the daily grind and prepare to enter the ultimate roguelike flow state. Improve your collection and discover new cards and secrets with every single run. Make use of the in-depth stats screen to study your best hands, most used Jokers, and more! Immerse yourself in the CRT fuzz and enjoy detailed, hand-crafted pixel art.",
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/balatro",
+            "extract": "Balatro is a poker-inspired roguelike deck builder all about creating powerful synergies and winning big. Combine valid poker hands with unique Joker cards in order to create varied synergies and builds. Earn enough chips to beat devious blinds, all while uncovering hidden bonus hands and decks as you progress. You’re going to need every edge you can get in order to reach the boss blind, beat the final ante and secure victory. The definitive poker roguelike experience. Endless possibilities - every pick-up, discard and joker can dramatically alter the course of your run. In-depth campaign mode complete with 8 difficulties, as well as challenge, daily and seeded runs. Deftly deploy an array of potent tools: different Decks, Jokers, Tarot cards, Planet cards, Spectral cards, and Vouchers. Use these versatile instruments to ignite a combo frenzy and turbocharge your poker hands, crafting electrifying, adrenaline-fueled synergies. 150 Jokers, each with their own unique abilities 15 Decks with distinct modifiers to choose from for each run 5 potential variants of each Joker which add further abilities 22 Tarot cards variants that can enhance your regular playing cards 11 Planet cards that help level up your possible poker hands 32 Voucher cards to help provide permanent buffs for your current run Immerse yourself in Balatro’s distinctive psychedelic world. Let the synthwave soundtrack wash over you - wind down, escape the daily grind and prepare to enter the ultimate roguelike flow state. Improve your collection and discover new cards and secrets with every single run. Make use of the in-depth stats screen to study your best hands, most used Jokers, and more! Immerse yourself in the CRT fuzz and enjoy detailed, hand-crafted pixel art.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Balatro",
+            "extract": "Balatro is a 2024 poker-themed roguelike deck-building game developed by solo developer LocalThunk and published by Playstack. It was released for Nintendo Switch, PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S on February 20, 2024, with a port to macOS on March 1. Ports for Android and iOS were released on September 26, 2024. A dedicated Nintendo Switch 2 version was released on February 25, 2026. In the game, the player must score points by playing poker hands from a starting 52-card deck, with a limited number of hands and discards each round.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — XBOX",
+            "url": "https://www.youtube.com/watch?v=Xn4ft9u924I",
+            "extract": "Verified public, embeddable promotional trailer: Balatro - Game Pass Announcement Trailer",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from RAWG with 288 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "Xn4ft9u924I",
+        "youtubeVideoTitle": "Balatro - Game Pass Announcement Trailer",
+        "youtubeChannel": "XBOX",
+        "releaseDate": "2024-02-20",
+        "genres": [
+          "Strategy",
+          "Casual",
+          "Indie"
+        ],
+        "platforms": [
+          "iOS",
+          "PlayStation 5",
+          "PC",
+          "Nintendo Switch"
+        ],
+        "developers": [
+          "LocalThunk"
+        ],
+        "rating": 4.28,
+        "ratingScale": 5,
+        "votes": 288,
+        "poster": "https://media.rawg.io/media/games/821/821a40bd0cc0ac7dfb3fe97a7878dc1f.jpg"
+      },
+      "sections": [],
+      "article": {
+        "headline": "Balatro: لعبة ورق تتحول إلى مختبر للتوليفات — بذكاء تصميمي وهوية لا تخفي حدودها",
+        "summary": "Balatro لعبة مستقلة من تطوير LocalThunk، صدرت في 20 فبراير 2024، وتبني تجربتها على أوراق لعب مستوحاة من البوكر ضمن صيغة بناء مجموعات roguelike. جوهرها ليس سرد حكاية موثقة بقدر ما هو تركيب الأيدي، والتعامل مع الأعمى والزعماء، وتطوير المجموعة عبر الجوكر وبطاقات التاروت والكواكب وغيرها. تكشف المعلومات المتاحة عن وفرة خيارات وأنماط لعب، وعن هوية بصرية بكسلية مؤثرة بملمس CRT وموسيقى موصوفة بأنها synthwave. هذه مراجعة تحريرية تستند إلى البيانات المنشورة والمواد الرسمية المتاحة، لا إلى ادعاء تجربة مباشرة. وتخلص إلى أن قوة العمل الأساسية في عمق أنظمته وتوليد التوليفات، مع تحفظ على محدودية ما يمكن إثباته عن قصته وأدائه التقني.",
+        "verdict": "Balatro عمل قوي الفكرة ومتماسك في مركزه التصميمي: يحوّل قواعد أيدي البوكر إلى أساس لبناء مجموعة متغيرة، ثم يمنح قرارات الاختيار والتطوير وزناً عبر الجوكر وبطاقات التاروت والكواكب والقسائم، إلى جانب درجات صعوبة وأنماط متعددة. تتسق هويته المعلنة، من فن البكسل وملمس CRT إلى الموسيقى الإلكترونية، مع وعد تجربة تركّز على التوليفات وإعادة المحاولة. لكن هذا الحكم يظل تحريرياً مستنداً إلى الأدلة المنشورة، لا شهادة لعب مباشرة؛ لذلك لا ينسب إلى اللعبة جودة تقنية أو سرداً تفصيلياً لا تثبته المصادر. التوصية واضحة لمحبي ألعاب بناء المجموعات والاستراتيجية الخفيفة التي تكافئ التجريب، وأقل وضوحاً لمن يبحثون عن حكاية وشخصيات أو تنوع قائم على الاستكشاف. إنها تجربة ذات هوية وعمق نظامي ظاهرين، مع مساحة غير محسومة في جوانب لا تسجلها الأدلة.",
+        "body": "## مقدمة وسياق العمل\nBalatro لعبة مستقلة طوّرها LocalThunk ونشرتها Playstack، وصدرت في 20 فبراير 2024. تصنّفها البيانات المتاحة ضمن الاستراتيجية والألعاب المستقلة والعادية، بينما يصفها سجل RAWG بأنها لعبة بناء مجموعات roguelike مستوحاة من البوكر. هذه نقطة الانطلاق الأنسب للحكم عليها: ليست لدينا هنا مادة موثقة تتيح مراجعة تجربة شخصية أو فحصاً تقنياً، ولذلك تستند القراءة إلى وصف الأنظمة المنشور، والمعلومات الموسوعية، والمادة الترويجية الرسمية المتاحة من Xbox. يجب أن يبقى الفرق واضحاً بين الوقائع والاستنتاج النقدي: عدد البطاقات والأنماط حقائق معلنة، أما القول إن كثرتها تمنح اللعبة عمقاً أو تكراراً ممتداً فهو تقدير لما توحي به بنية التصميم، لا تقرير عن جلسة لعب بعينها. كذلك لا يثبت المقطع الرسمي، الذي نعرف عنوانه بوصفه إعلان Game Pass، وحده تفاصيل الأداء أو محتوى التجربة كاملة.\n\n## الفكرة والقصة أو التجربة\nتقوم الفكرة على لعب أيدي بوكر من مجموعة ابتدائية من 52 ورقة، مع عدد محدود من الأيدي والرميات في كل جولة، بحسب الوصف الموسوعي. الهدف هو تسجيل نقاط كافية لتجاوز الأعمى، ثم التقدم إلى مواجهة الأعمى الزعيم والمرحلة النهائية. تمنح هذه القواعد المألوفة إطاراً واضحاً، لكن اللعبة توسّعه بإضافة أدوات تؤثر في خيارات المجموعة وفي قيمة ما يمكن تكوينه. يصف RAWG الجوهر بأنه صنع توليفات قوية بين الأيدي وبطاقات الجوكر، مع كشف أيدٍ ومجموعات إضافية أثناء التقدم. لا تقدم الأدلة قصة ذات شخصيات أو حبكة يمكن تحليلها، ولا ينبغي اختراع واحدة لسد هذا الفراغ. لذلك تُقرأ التجربة هنا بوصفها سلسلة تحديات نظامية: اللاعب يواجه شروطاً متغيرة، ويحاول إعداد مجموعة قادرة على تجاوزها. هذا التحول من لعبة ورق معروفة إلى مسار تصاعدي قائم على إدارة الموارد هو أكثر عناصر المفهوم تميزاً، كما أنه يحدد نوع الجمهور الذي قد يجد فيه جاذبية.\n\n## السرد والشخصيات أو تصميم اللعب\nلا يتيح ملف الأدلة مادة كافية لتقييم سرد أو شخصيات، لذا ينصب التحليل على التصميم. تذكر المعلومات 150 جوكراً بقدرات مختلفة، و15 مجموعة أوراق ذات معدّلات مميزة، وخمس نسخ محتملة لكل جوكر تضيف قدرات أخرى. وتضم الأدوات كذلك 22 نوعاً من بطاقات التاروت لتحسين الأوراق العادية، و11 بطاقة كواكب لرفع مستوى الأيدي الممكنة، و32 قسيمة تقدم تحسينات دائمة للمسار الحالي. هذه الأرقام لا تضمن وحدها توازناً مثالياً، لكنها تشير بوضوح إلى تعدد طبقات القرار: اختيار أساس المجموعة، ثم انتقاء أدوات تغيرها، ثم تقدير ما يخدم اليد التي يسعى اللاعب إلى بنائها. والفكرة التصميمية الواعدة أن كل اختيار قد يغيّر اتجاه الجولة، لا أن تكون البطاقات إضافات تجميلية فحسب. مع ذلك، لا توضح الأدلة نسب الظهور أو أثر كل قدرة أو منحنى التعلم، لذلك لا يصح الجزم بأن جميع الخيارات متكافئة أو أن التوليفات لا تتكرر. الحكم الأقوى الممكن هو أن تصميمها يراهن على التفاعل بين عناصر عديدة، وهو رهان غني نظرياً لكنه يحتاج اختباراً مباشراً للحكم على اتزانه الفعلي.\n\n## الإخراج والجوانب الفنية\nيظهر الإخراج، وفق ما تصفه المصادر، في خدمة حلقة اللعب أكثر من اعتماده على عرض قصصي. فالمجموعة، والبطاقات، والأرقام، وشروط الجولات هي مركز التجربة المعلن؛ ومن ثم يمكن استنتاج أن وضوح المعلومات عنصر بالغ الأهمية في لعبة تقوم على اختيار أدوات ذات آثار مختلفة. لكن لا تتوافر لقطات مفصلة موصوفة أو تقارير مستقلة عن سهولة قراءة الواجهة، أو خيارات الوصول، أو استجابة التحكم، ولا يقدم عنوان المقطع الترويجي وحده أساساً كافياً لتقييم هذه الجوانب. لهذا لا ننسب إلى الإخراج نجاحاً تقنياً مؤكداً، ولا نختلق عيوباً فيه. ما يمكن تقديره هو وحدة النية الفنية: عالم نفسيّ الألوان، ورسوم بكسلية مصنوعة بعناية بحسب وصف RAWG، مع طبقة CRT معلنة، ينسجم مع لعبة تريد أن تجعل أوراق اللعب جزءاً من مزاج بصري مميز. أما تنفيذ هذه النية على الشاشات المختلفة واستقرار الأداء، فمسألتان لا تحسمهما الأدلة المتاحة.\n\n## الصورة والهوية البصرية\nتمنح اللعبة نفسها هوية موصوفة بأنها عالم نفسيّ الطابع، مع فن بكسلي مفصل وملمس تشويش شاشات CRT. هذه سمات أكثر تحديداً من وصف عام مثل «أسلوب ريترو»: فهي تربط مظهر الأوراق بإحساس شاشة قديمة، وتضع اللعبة ضمن مزاج بصري واضح بدلاً من السعي إلى محاكاة طاولة واقعية. هذا الاختيار مناسب لمفهوم يقوم على قراءة رموز وأوراق ثم جمعها في توليفات، إذ يتيح للبطاقات أن تكون عناصر النظام وملامح العالم في آن. لكن الأدلة لا تشرح لوحة الألوان أو حركة المؤثرات أو تنوع الخلفيات، ولا تسمح بمقارنة جودة التنفيذ عبر المنصات. لذلك تستند الدرجة إلى وضوح الهوية المعلنة وتماسك عناصرها، لا إلى ادعاء فحص كل صورة أو واجهة. ومن نقاط القوة المحتملة هنا أن مظهراً متمايزاً قد يساعد على تمييز اللعبة وسط ألعاب الورق، فيما يبقى نجاحه في القراءة الطويلة أو راحة العين غير محسوم من الوصف وحده.\n\n## الصوت والموسيقى والأداء\nيصف RAWG الموسيقى بأنها synthwave، ويقدمها بوصفها جزءاً من حالة استرخاء وانغماس في تدفق اللعب. يمنح ذلك الصوت وظيفة مزاجية منسجمة مع عالم CRT والهوية النفسية، بدلاً من أن يكون مجرد خلفية لا صلة لها بالمفهوم. غير أن الوصف لا يورد أسماء مؤلفين أو مقطوعات، ولا يشرح تنوع الموسيقى أو علاقتها بتصاعد الصعوبة، لذلك لا يمكن تقييم جودة التأليف التفصيلية أو الأداء الصوتي للشخصيات. كما لا تتضمن الأدلة معلومات موثقة عن التمثيل الصوتي، ولا ينبغي افتراض وجوده أو غيابه بما يتجاوز ما ورد. النتيجة حكم إيجابي متحفظ: الاختيار الموسيقي المعلن ملائم للهوية، لكن الدليل المتاح أضيق من أن يبرر وصفاً قاطعاً للمسار الصوتي كاملاً. لا تسند المصادر كذلك أحكاماً عن المزج أو خيارات الصوت أو الأداء التقني، وهي عناصر تظل خارج هذا التقييم.\n\n## الإيقاع والبناء وتنوع المحتوى\nتُبنى إعادة اللعب على أكثر من مسار: حملة تتضمن ثماني درجات صعوبة، وتحديات، وجولات يومية، وجولات ذات بذور محددة. وتضاف إلى ذلك 15 مجموعة بداية مختلفة، وأعداد كبيرة من الجوكر وبطاقات التاروت والكواكب والقسائم، فضلاً عن إمكانات كشف بطاقات وأسرار مع التقدم. هذا التنوع الموثق يجعل من المعقول توقع مسارات لعب متعددة بدلاً من تكرار ترتيب ثابت، خصوصاً أن وصف RAWG يشير إلى أن الاختيارات والرميات والجوكر قد تغير مسار الجولة. هنا تظهر نقطة تصميمية مهمة: الإيقاع لا يعتمد، وفق البنية المعلنة، على محتوى قصصي متتابع، بل على دورات قصيرة من تكوين اليد، ومواجهة شروط الجولة، وتعديل المجموعة. وقد يخلق ذلك إيقاعاً سريع التبدل لمن يستمتع بتحسين خطته، لكنه قد يتحول إلى تكرار لمن لا تجذبه إعادة المحاولة أو إدارة الاحتمالات. لا توجد بيانات زمنية عن طول الجولات أو الحملة، ولا تقييم مباشر لتوازن الصعوبة؛ لذا لا نزعم أن الإيقاع ناجح في كل مراحله. وجود شاشة إحصاءات مفصلة لمتابعة أفضل الأيدي والجوكر الأكثر استخداماً يضيف بعداً تأملياً، لكنه لا يثبت وحده جودة التقدم أو غياب فترات الركود.\n\n## نقاط القوة\n- مفهوم واضح يمزج أيدي البوكر ببناء المجموعات والتقدم roguelike، بدلاً من الاكتفاء بمحاكاة لعبة ورق تقليدية.\n- مخزون معلن واسع من الأدوات: 150 جوكراً، و15 مجموعة، وبطاقات تاروت وكواكب وقسائم، بما يفتح مجالاً لتوليفات مختلفة.\n- تعدد أنماط اللعب ودرجات الصعوبة، بما يشمل الحملة والتحديات والجولات اليومية والبذور المحددة.\n- هوية بصرية معلنة ومتماسكة تجمع فن البكسل وملمس CRT والعالم النفسيّ الطابع.\n- شاشة إحصاءات تساعد على مراجعة أنماط اللعب ومتابعة الأيدي والجوكر الأكثر استخداماً.\n\n## نقاط الضعف\n- لا تقدم الأدلة المتاحة أساساً لتحليل قصة أو شخصيات، ما يجعل التوصية أقل ملاءمة لمن يبحث عن تجربة سردية.\n- كثرة الأدوات والأعداد المعلنة لا تثبت وحدها توازن الخيارات أو سهولة فهمها؛ تفاصيل منحنى التعلم غير متاحة.\n- لا تتوافر معلومات كافية للحكم على الأداء التقني، ووضوح الواجهة، أو جودة التنفيذ على كل منصة.\n- وصف الموسيقى والهوية البصرية موجز، ولا يكفي لتقييم تنوع الصوت أو قابلية قراءة العناصر في اللعب الطويل.\n\n## لمن يناسب هذا العمل؟\nيبدو Balatro مناسباً لمن يفضل ألعاب الاستراتيجية وبناء المجموعات، ويستمتع بتجريب أدوات مختلفة بحثاً عن توليفات تحقق هدفاً رقمياً واضحاً. كما أن وجود درجات صعوبة وتحديات يومية وبذور محددة يوحي بإمكان تلبية رغبة من يريد إعادة اللعب بأطر متنوعة، وإن لم تثبت البيانات مقدار اختلاف كل مسار عملياً. وقد تجذب الهوية البكسلية وطبقة CRT من يفضلان أسلوباً بصرياً ذا طابع ريترو معلن. في المقابل، من يجعل القصة والشخصيات أو الاستكشاف المكاني محور اهتمامه قد لا يجد في المعلومات المنشورة ما يشير إلى أن اللعبة تقدم ذلك النوع من المحتوى. وكذلك لا يمكن ضمان ملاءمتها لمن ينفر من التكرار أو من بناء الخطط حول أرقام واحتمالات، فهذه هي طبيعة التجربة التي يصفها تصميمها. الأفضل أن يختارها اللاعب بسبب اهتمامه بالنظام والتوليفات، لا بناء على افتراضات غير موثقة عن السرد أو الأداء.\n\n## الحكم النهائي\nتستحق Balatro تقييماً إيجابياً لأن فكرتها محددة وقابلة للتوسع، ولأن منظومة الجوكر والمجموعات والبطاقات المساندة تمنح بناء المجموعة مركزاً حقيقياً في التجربة. تنوع أنماط اللعب والدرجات، مع الإحصاءات والهوية البصرية والصوتية المعلنة، يكوّن أساساً مقنعاً للعودة والتجريب. في المقابل، يجب ألا يتحول حجم المحتوى إلى برهان تلقائي على التوازن أو العمق المتحقق، كما أن الأدلة لا تسمح بإصدار حكم على الأداء التقني أو التفاصيل الدقيقة للإيقاع والسرد. الدرجة التحريرية تعكس قوة المفهوم والاتساق الظاهر في عناصره، مع تحفظ متناسب مع ما لم تثبته المصادر؛ وهي ليست متوسط الجمهور ولا ادعاء تجربة مباشرة. التوصية لمحبي بناء المجموعات والتخطيط المرن واضحة، أما من يريد حكاية وشخصيات أو تقييماً تقنياً شاملاً فالمعلومات الموثقة هنا لا تكفي لتلبية تلك التوقعات.",
+        "scores": {
+          "story": 6.5,
+          "visuals": 8.2,
+          "sound": 7.6,
+          "pacing": 8.1
+        },
+        "pros": [
+          "يمزج أيدي البوكر ببناء المجموعات والتقدم roguelike ضمن فكرة تصميمية مباشرة.",
+          "تنوع كبير معلن في الأدوات، من 150 جوكراً إلى مجموعات وبطاقات مساندة متعددة.",
+          "ثماني درجات صعوبة، إلى جانب الحملة والتحديات والجولات اليومية والبذور المحددة.",
+          "هوية بصرية موصوفة بفن بكسلي مفصل وملمس CRT وعالم نفسيّ الطابع.",
+          "شاشة إحصاءات تتيح متابعة أفضل الأيدي والجوكر الأكثر استخداماً."
+        ],
+        "cons": [
+          "لا توفر الأدلة المتاحة قصة أو شخصيات يمكن تقييمها، ما يحد من جاذبيتها لمن يبحث عن السرد.",
+          "عدد الأدوات الكبير لا يثبت وحده توازنها أو وضوح منحنى التعلم، وهذان جانبان غير موثقين هنا.",
+          "المعلومات المتاحة لا تكفي للحكم على الأداء التقني أو وضوح الواجهة عبر المنصات.",
+          "وصف الموسيقى والهوية البصرية لا يتيح تقييماً تفصيلياً للتنوع الصوتي أو راحة القراءة خلال اللعب الطويل."
+        ],
+        "title": "Balatro",
+        "type": "game",
+        "sourceId": "game:977316",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/balatro",
+        "sourceRating": 4.28,
+        "sourceRatingScale": 5,
+        "sourceVoteCount": 288,
+        "sourceRatingCheckedAt": "2026-11-28T10:16:12.672Z",
+        "audienceScore": 8.6,
+        "releaseDate": "2024-02-20",
+        "poster": "https://media.rawg.io/media/games/821/821a40bd0cc0ac7dfb3fe97a7878dc1f.jpg",
+        "backdrop": "https://media.rawg.io/media/games/821/821a40bd0cc0ac7dfb3fe97a7878dc1f.jpg",
+        "genres": [
+          "Strategy",
+          "Casual",
+          "Indie"
+        ],
+        "platforms": [
+          "iOS",
+          "PlayStation 5",
+          "PC",
+          "Nintendo Switch"
+        ],
+        "cast": [],
+        "crew": [],
+        "tags": [
+          "Strategy",
+          "Casual",
+          "Indie"
+        ],
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/balatro",
+            "extract": "Balatro is a poker-inspired roguelike deck builder all about creating powerful synergies and winning big. Combine valid poker hands with unique Joker cards in order to create varied synergies and builds. Earn enough chips to beat devious blinds, all while uncovering hidden bonus hands and decks as you progress. You’re going to need every edge you can get in order to reach the boss blind, beat the final ante and secure victory. The definitive poker roguelike experience. Endless possibilities - every pick-up, discard and joker can dramatically alter the course of your run. In-depth campaign mode complete with 8 difficulties, as well as challenge, daily and seeded runs. Deftly deploy an array of potent tools: different Decks, Jokers, Tarot cards, Planet cards, Spectral cards, and Vouchers. Use these versatile instruments to ignite a combo frenzy and turbocharge your poker hands, crafting electrifying, adrenaline-fueled synergies. 150 Jokers, each with their own unique abilities 15 Decks with distinct modifiers to choose from for each run 5 potential variants of each Joker which add further abilities 22 Tarot cards variants that can enhance your regular playing cards 11 Planet cards that help level up your possible poker hands 32 Voucher cards to help provide permanent buffs for your current run Immerse yourself in Balatro’s distinctive psychedelic world. Let the synthwave soundtrack wash over you - wind down, escape the daily grind and prepare to enter the ultimate roguelike flow state. Improve your collection and discover new cards and secrets with every single run. Make use of the in-depth stats screen to study your best hands, most used Jokers, and more! Immerse yourself in the CRT fuzz and enjoy detailed, hand-crafted pixel art.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Balatro",
+            "extract": "Balatro is a 2024 poker-themed roguelike deck-building game developed by solo developer LocalThunk and published by Playstack. It was released for Nintendo Switch, PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S on February 20, 2024, with a port to macOS on March 1. Ports for Android and iOS were released on September 26, 2024. A dedicated Nintendo Switch 2 version was released on February 25, 2026. In the game, the player must score points by playing poker hands from a starting 52-card deck, with a limited number of hands and discards each round.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — XBOX",
+            "url": "https://www.youtube.com/watch?v=Xn4ft9u924I",
+            "extract": "Verified public, embeddable promotional trailer: Balatro - Game Pass Announcement Trailer",
+            "kind": "promotional"
+          }
+        ],
+        "youtubeVideoId": "Xn4ft9u924I",
+        "youtubeVideoTitle": "Balatro - Game Pass Announcement Trailer",
+        "reviewMode": "review",
+        "score": 7.5
+      },
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 6231,
+      "articlePath": "src/content/reviews/game-balatro-977316.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/game-balatro-977316/"
     }
   },
   "providers": {},
@@ -4716,9 +4751,9 @@
       "tokens": 32686
     },
     "2026-11-28": {
-      "articles": 4,
-      "requests": 9,
-      "tokens": 29618
+      "articles": 5,
+      "requests": 11,
+      "tokens": 35849
     }
   },
   "history": []
