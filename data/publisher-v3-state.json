@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-28T16:16:37.740Z",
+  "updatedAt": "2026-11-28T19:16:03.619Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -4672,14 +4672,14 @@
       },
       "status": "waiting",
       "stage": 0,
-      "attempts": 1,
+      "attempts": 2,
       "createdAt": "2026-11-28T16:16:09.290Z",
-      "updatedAt": "2026-11-28T16:16:37.739Z",
-      "nextAttemptAt": "2026-11-28T17:16:37.739Z",
+      "updatedAt": "2026-11-28T19:16:03.617Z",
+      "nextAttemptAt": "2026-11-28T21:16:03.617Z",
       "evidence": {
         "title": "Grand Theft Auto VI",
         "type": "game",
-        "collectedAt": "2026-11-28T16:16:11.300Z",
+        "collectedAt": "2026-11-28T19:16:02.419Z",
         "sourceId": "game:972995",
         "sourceName": "RAWG",
         "sourceUrl": "https://rawg.io/games/grand-theft-aito-vi",
@@ -4727,7 +4727,7 @@
       },
       "sections": [],
       "article": null,
-      "lastError": "openai HTTP 429: {\n  \"error\": {\n    \"code\": \"rate_limit_exceeded\",\n    \"message\": \"Rate limit reached for gpt-6-luna in organization org-NZwHKQHwKjcQO1et2CLggVNX on tokens per min (TPM): Limit 100000, Used 99122, Requested 1737. Please try again in 6h11m5.28s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.\",\n    \"param\": null,\n    \"type\": \"tokens\"\n  }\n}",
+      "lastError": "openai HTTP 429: {\n  \"error\": {\n    \"code\": \"rate_limit_exceeded\",\n    \"message\": \"Rate limit reached for gpt-6-luna in organization org-NZwHKQHwKjcQO1et2CLggVNX on tokens per min (TPM): Limit 100000, Used 98707, Requested 1626. Please try again in 2h23m51.36s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.\",\n    \"param\": null,\n    \"type\": \"tokens\"\n  }\n}",
       "resumeStatus": "queued"
     }
   },
