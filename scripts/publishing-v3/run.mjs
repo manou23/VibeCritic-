@@ -95,14 +95,14 @@ const result = await withRunLock(async () => {
         try {
           job.evidence = await collectEvidence(job.item);
           validateEvidence(job.evidence);
-          if (!["review","audience","preview","limited"].includes(job.evidence.reviewReadiness)) throw new Error("Publishing blocked: evidence supports neither a scored review, a limited information article, nor an explicit pre-release preview");
+          if (!["review","audience","preview"].includes(job.evidence.reviewReadiness)) throw new Error("Publishing blocked: limited-evidence article is not publishable; V3 requires a scored review or a verified pre-release preview");
           if (job.evidence.reviewReadiness === "preview" && (!job.evidence.releaseDate || !(job.evidence.releaseDate > new Date().toISOString().slice(0,10)))) throw new Error("Publishing blocked: preview requires a verified future release date");
           if (job.evidence.reviewReadiness === "audience" && (!Number.isFinite(Number(job.evidence.rating)) || !Number.isFinite(Number(job.evidence.ratingScale)) || Number(job.evidence.ratingScale) <= 0 || !Number.isInteger(Number(job.evidence.votes)) || Number(job.evidence.votes) < 100)) throw new Error("Publishing blocked: audience rating requires a verified source average and at least 100 votes");
           evidenceReady = true;
           break;
         } catch (error) {
           const message = String(error?.message || error);
-          const candidateSpecific = /(Candidate release date is still in the future|Primary catalog description is too thin|Independent source is too thin|No exact independent encyclopedia match|Independent source title mismatch|At least two independent HTTPS source domains (?:are )?required|Evidence overview is too thin|No verified official YouTube trailer found|Publishing blocked: evidence supports neither|Publishing blocked: preview requires|Publishing blocked: audience rating requires)/.test(message);
+          const candidateSpecific = /(Candidate release date is still in the future|Primary catalog description is too thin|Independent source is too thin|No exact independent encyclopedia match|Independent source title mismatch|At least two independent HTTPS source domains (?:are )?required|Evidence overview is too thin|No verified official YouTube trailer found|Publishing blocked: evidence supports neither|Publishing blocked: limited-evidence article is not publishable|Publishing blocked: preview requires|Publishing blocked: audience rating requires)/.test(message);
           if (!candidateSpecific) throw error;
           transition(job,"rejected",{lastError:message});
           await saveState(state);
