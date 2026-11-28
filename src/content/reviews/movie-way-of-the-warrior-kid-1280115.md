@@ -20,8 +20,8 @@ aiGenerated: true
 editorialWorkflow: automated
 poster: "https://image.tmdb.org/t/p/w780/atI81xXKNVah7PJFBo3aXqQKtnG.jpg"
 backdrop: "https://image.tmdb.org/t/p/w1280/vOByLZRhCIIItlSlCT7bYbI9MYL.jpg"
-youtubeVideoId: "j1B3r3v6cLg"
-youtubeVideoTitle: "Way of the Warrior Kid (2026) || Official Trailer HD, Chris Pratt, Jude Hill, Linda Cardellini"
+youtubeVideoId: "R1ECMLrwDYQ"
+youtubeVideoTitle: "Way of the Warrior Kid — Official Trailer | Apple TV"
 genres:
   - "Drama"
 platforms:
@@ -116,7 +116,7 @@ tags:
 
 ### المصادر والمراجع
 
-- [Apple TV — Way of the Warrior Kid](https://tv.apple.com/)
+- [Apple TV Press — Way of the Warrior Kid](https://www.apple.com/tv-pr/originals/way-of-the-warrior-kid/)
 - [Rotten Tomatoes — Way of the Warrior Kid](https://www.rottentomatoes.com/m/way_of_the_warrior_kid)
 - [Forbes — Critics and audience reactions, November 27, 2026](https://www.forbes.com/sites/timlammers/2026/11/27/way-of-the-warrior-kid-rotten-tomatoes-critics-crush-chris-pratt-film-but-audiences-feel-differently/)
 - [RogerEbert.com — Film review](https://www.rogerebert.com/reviews/way-of-the-warrior-kid-chris-pratt-apple-tv-film-review-2026)
