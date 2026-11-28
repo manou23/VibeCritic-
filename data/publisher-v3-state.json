@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-28T13:17:13.664Z",
+  "updatedAt": "2026-11-28T16:16:37.740Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -4641,152 +4641,94 @@
         "popularity": 40.0561,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-28T13:16:08.639Z",
-      "updatedAt": "2026-11-28T13:17:13.664Z",
+      "updatedAt": "2026-11-28T16:15:59.683Z",
       "nextAttemptAt": null,
-      "evidence": {
-        "title": "Off Campus",
-        "type": "series",
-        "collectedAt": "2026-11-28T13:16:09.173Z",
-        "sourceId": "series:273240",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/273240",
-        "overview": "Hannah Wells tutors hockey captain Garrett Graham to win over her crush. Their deal becomes real connection as they face their pasts. Friends Logan, Dean, Tucker, and Allie navigate college life and love.",
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/273240",
-            "extract": "Hannah Wells tutors hockey captain Garrett Graham to win over her crush. Their deal becomes real connection as they face their pasts. Friends Logan, Dean, Tucker, and Allie navigate college life and love.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Off_Campus",
-            "extract": "Off Campus is an American romantic drama television series created by Louisa Levy for Amazon Prime Video. It is based on the Off-Campus book series by Elle Kennedy. Set at the fictional campus of Briar University, four close-knit college hockey players navigate the complexities of adulthood, relationships, and sex to ultimately find their true love. The first season centers on Hannah Wells and Garrett Graham, while introducing the core four college hockey players Garrett, Dean, Logan, and Tucker.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Amazon Prime Video UK & IE",
-            "url": "https://www.youtube.com/watch?v=4Vin2GSA4V0",
-            "extract": "Verified public, embeddable promotional trailer: Off Campus S1 | Official Trailer | Prime Video",
-            "kind": "promotional"
-          }
-        ],
-        "reviewReadiness": "audience",
-        "reviewReadinessReason": "A source-backed audience average is available from TMDB with 928 votes; this is not an independent VibeCritic score.",
-        "youtubeVideoId": "4Vin2GSA4V0",
-        "youtubeVideoTitle": "Off Campus S1 | Official Trailer | Prime Video",
-        "youtubeChannel": "Amazon Prime Video UK & IE",
-        "releaseDate": "2026-05-13",
-        "genres": [
-          "Drama"
-        ],
-        "platforms": [],
-        "cast": [
-          "Ella Bright",
-          "Belmont Cameli",
-          "Mika Abdalla",
-          "Stephen Kalyn",
-          "Jalen Thomas Brooks",
-          "Antonio Cipriano",
-          "Josh Heuston"
-        ],
-        "crew": [],
-        "rating": 8.835,
-        "ratingScale": 10,
-        "votes": 928,
-        "poster": "https://image.tmdb.org/t/p/w780/tcPc5ZMBO4y2BtCJMe3o2nwZb2B.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/cdD0InWMH4e6AxceQs93fQRYsfO.jpg"
-      },
+      "evidence": null,
       "sections": [],
-      "article": {
-        "headline": "Off Campus: فرضية رومانسية واضحة، وحكم تحكمه حدود الأدلة المتاحة",
-        "summary": "تقدّم Off Campus دراما رومانسية جامعية تتمحور في موسمها الأول حول هانا ويلز، التي تساعد قائد فريق الهوكي غاريت غراهام دراسياً كي يلفت انتباه الشخص الذي تعجب به، قبل أن يتحول الاتفاق إلى صلة عاطفية بينما يواجه الاثنان ماضيهما. وتحيط بهما حكايات أصدقائهما من لاعبي الهوكي وآلي في الحياة الجامعية والعلاقات. هذه مراجعة تحريرية نهائية مبنية على ملخصات موثقة ومعلومات رسمية متاحة، لا على مشاهدة شخصية للحلقات. لذلك يمكن تقييم وضوح الفكرة واتساع إطارها وملاءمتها لجمهورها، لكن لا يمكن الجزم بجودة التمثيل أو الصورة أو الموسيقى أو الإيقاع من دون شواهد مباشرة كافية. الحكم إيجابي بحذر تجاه الأساس الدرامي، ومتحفظ تجاه التفاصيل التنفيذية غير الموثقة.",
-        "verdict": "تملك Off Campus نقطة انطلاق مفهومة وفعالة تجارياً: اتفاق بين طالبة ولاعب هوكي يفتح باب علاقة تتجاوز الغرض الأول، ضمن حرم جامعي ومجموعة أصدقاء تتيح تعدد المسارات. كما أن استنادها إلى سلسلة روايات معروفة يوفّر إطاراً واضحاً لعشاق الرومانسية الجامعية والدراما العاطفية. لكن هذه المقومات تصف الوعد الدرامي لا إنجازه؛ فالمعلومات المتاحة لا تكفي للحكم على تطور الشخصيات عبر الحلقات، أو تماسك الاقتباس، أو جودة التنفيذ البصري والسمعي. لهذا تأتي التوصية لمن ينجذب إلى هذا النوع تحديداً، مع تنبيه صريح إلى أن التقييم لا يدّعي مشاهدة العمل ولا يمنح عناصره الفنية تفوقاً غير مثبت. الحكم النهائي: عمل ذو فرضية قابلة للجذب، لكن الأدلة المتاحة لا تبرر ثناءً حاسماً على موسمه.",
-        "body": "## مقدمة وسياق العمل\nOff Campus مسلسل درامي أمريكي صدر موسمه الأول في 2026، وتصفه المعلومات المتاحة بأنه مقتبس من سلسلة الكتب التي تحمل الاسم نفسه للكاتبة Elle Kennedy، ومن إنتاج Prime Video. تدور الحكاية في جامعة Briar الخيالية، وتربط الحياة الجامعية بفريق هوكي وعلاقات عاطفية. هذه حقائق سياقية تساعد على فهم موقع العمل ونوع جمهوره، لكنها لا تثبت بمفردها نجاحه الفني. أكتب هذه المراجعة بعد صدور الموسم، اعتماداً على الملخصات المنشورة والمواد الرسمية الموثقة، لا على مشاهدة شخصية أو مقابلات لم يوردها ملف الأدلة. وينبغي توضيح حدّ مهم منذ البداية: المتاح هنا لا يضم مراجعات مستقلة مفصلة للحلقات ولا بيانات كافية عن عناصر تنفيذها. لذلك سيكون الحكم نهائياً من حيث الموقف التحريري، لكنه متحفظ في كل ما يتطلب معاينة مباشرة.\n\n## الفكرة والقصة أو التجربة\nتتمحور الحبكة الموثقة حول هانا ويلز، التي تساعد غاريت غراهام، قائد فريق الهوكي، في الدراسة كي يحظى بفرصة لدى الشخص الذي تعجب به. ثم يتطور الاتفاق إلى صلة حقيقية، بالتوازي مع مواجهة الطرفين لماضيهما. في هذه البنية مفارقة رومانسية مألوفة لكنها عملية: يبدأ التقارب بوصفه ترتيباً ذا غرض، ثم يصبح اختباراً لما يريده كل طرف فعلاً. هذا استنتاج من الملخص لا وصف لمشاهد أو مسار حلقات بعينه. قوة الفكرة المحتملة أنها تمنح العلاقة نقطة بداية محددة، وتتيح وصل الانجذاب بمسائل الثقة والنضج والماضي. أما خطرها فهو أن تعتمد على سوء تفاهم أو مصادفات مألوفة في هذا النوع؛ ولا تسمح الأدلة المتاحة بمعرفة إن كان المسلسل يتجاوز ذلك أو يكرره. لذا تبدو الفرضية واضحة وقابلة للتسويق، بينما يظل نجاح بنائها الدرامي غير محسوم.\n\n## السرد والشخصيات أو تصميم اللعب\nلا ينطبق تحليل تصميم اللعب على مسلسل تلفزيوني. سردياً، يضع الملخص هانا وغاريت في مركز الموسم الأول، ويذكر أصدقاءهما لوغان ودين وتاكر وآلي بوصفهم أشخاصاً يتعاملون مع الجامعة والحب. وتفيد صفحة المعلومات الموسوعية بأن أربعة من لاعبي الهوكي يشكلون نواة المجموعة، لكن التفاصيل المتاحة لا تقدم أوصافاً موثوقة لشخصياتهم أو أقواسهم الدرامية. يمكن قراءة هذا الترتيب بوصفه محاولة للجمع بين رومانسية محورية وعالم جماعي، بما يتيح الانتقال إلى قصص أخرى أو توسيع صورة الحياة الجامعية. غير أن وجود أسماء كثيرة لا يكفي لإثبات أن لكل شخصية صوتاً مستقلاً أو أن المسارات الثانوية متوازنة. كذلك لا توجد مادة تثبت مقدار وفاء المسلسل للروايات أو طريقة تحويل السرد الأدبي إلى تلفزيوني. التقييم المنصف هنا يثمن وضوح مركز الحكاية، ولا ينسب عمقاً نفسياً أو نجاحاً في الحوار لم توثقه المصادر.\n\n## الإخراج والجوانب الفنية\nلا يورد ملف الأدلة أسماء مخرجين أو تفاصيل عن التصوير أو المونتاج أو تصميم الإنتاج، ولا يتضمن تحليلاً مستقلاً للحلقات. لذلك لا يمكنني وصف أسلوب إخراجي، أو القول إن المشاهد تتسم بالتماسك أو الابتكار، لأن ذلك سيكون اختلاقاً لانطباع مشاهدة. المؤكد فقط أن العمل مسلسل درامي لمنصة Prime Video، وأن إعلاناً رسمياً للموسم الأول منشور عبر قناة Amazon Prime Video UK & IE. وجود الإعلان يوثق الحملة الترويجية، لا جودة الإخراج في المسلسل. ومن زاوية تحريرية، يظل غياب بيانات التنفيذ عائقاً حقيقياً أمام تقييم العلاقة بين فضاء الجامعة والهوكي، أو كيفية ضبط النبرة بين الرومانسية والدراما. لا تنتقص هذه الملاحظة من العمل نفسه؛ إنها تحدد ما يمكن لهذا الملف إثباته. وبناء على ذلك لا يصح تقديم لغة تقنية حاسمة عن الكاميرا أو الإيقاع البصري.\n\n## الصورة والهوية البصرية\nتثبت المواد وجود ملصق رسمي وصورة خلفية للعمل، لكن ملف الأدلة لا يصف لوحة الألوان أو تصميم الأزياء أو التكوينات أو حركة الكاميرا، ولا يوفر أساساً لمقارنة الهوية البصرية بين الحلقات. لذلك لا أستنتج من صور الترويج كيف يبدو المسلسل أثناء المشاهدة، ولا أتعامل مع الملصق دليلاً على جودة الصورة. ما يمكن قوله على مستوى الفكرة أن البيئة الجامعية وفريق الهوكي يوفران إطاراً مكانياً يسهل تمييزه عن رومانسية تدور في فضاء منزلي أو مهني، وأن الجمع بينهما يتيح بصرياً تنويع مواقع الحكاية؛ لكنه احتمال نابع من طبيعة الإعداد لا معلومة مؤكدة عن المشاهد. ومن ثم لا يمكن منح المسلسل ثناءً على تصميم إنتاجه أو أصالة هويته. على القارئ أن يفهم أن التحفظ هنا ليس حكماً سلبياً على الصورة، بل امتناع عن اختراع تقييم لا تسنده معاينة أو وصف موثق.\n\n## الصوت والموسيقى والأداء\nتسرد بيانات العمل مجموعة ممثلين تضم Ella Bright وBelmont Cameli وMika Abdalla وStephen Kalyn وJalen Thomas Brooks وAntonio Cipriano وJosh Heuston. وهذه معلومة موثقة عن التمثيل، لكنها لا تبرر وحدها حكماً على الانسجام أو الأداء الفردي، ولا تحدد أي ممثل يؤدي كل دور في المواد المتاحة هنا. كذلك لا يتضمن الملف معلومات عن الملحن أو الأغاني أو تصميم الصوت أو جودة المزج. وعليه، لا يصح أن أنسب للمسلسل موسيقى مميزة أو أداءً مقنعاً أو افتعالاً تمثيلياً. الإعلان الرسمي يمكن أن يكون مصدراً لمادة صوتية ترويجية، لكن اسم الفيديو وحده لا يكشف محتواه ولا يتيح تحليله. يبقى الحكم على هذه المحاور مؤجلاً إلى مراجعة مشاهدة موثقة أو مصادر مستقلة تناقشها بالتفصيل. هذه فجوة مهمة لأن الرومانسية التلفزيونية تعتمد كثيراً على الإقناع العاطفي، وهو أمر لا تثبته قائمة أسماء الممثلين.\n\n## الإيقاع والبناء وتنوع المحتوى\nالمعلومات المنشورة تشير إلى مركز رومانسي واضح وإلى مجموعة أصدقاء يعيشون تعقيدات الجامعة والعلاقات، ما يوحي بإمكان بناء الموسم على تداخل قصة رئيسية مع خطوط جماعية. لكن لا يحدد ملف الأدلة عدد الحلقات أو مدتها أو طريقة توزيع الأحداث، ولا يصف منحنى الموسم أو نهايته. لهذا لا يمكن تقييم سرعة التصاعد، مقدار المساحة الممنوحة لكل علاقة، أو وجود حلقات حشو. ما يمكن فحصه هو نطاق الفكرة: الجمع بين علاقة هانا وغاريت وحياة أصدقائهما يوفر مجالاً لتنوع موضوعي أكبر من قصة ثنائية معزولة، وقد يتيح للموسم أن يوازن بين الرومانسية والانتقال إلى الرشد. هذا إمكان بنائي لا شهادة على نجاح التنفيذ. إن كان المشاهد يبحث عن عمل ذي إيقاع محكم أو حبكة متماسكة، فلن تقدم هذه الأدلة ضماناً بذلك؛ وهي نقطة تستدعي التواضع في الدرجة بدلاً من ملء الفراغ بتوقعات.\n\n## نقاط القوة\nأبرز ما يمكن إثباته هو وضوح الفرضية: علاقة تبدأ باتفاق دراسي ذي هدف اجتماعي، ثم تتغير طبيعتها. يمنح هذا المدخل الحكاية محركاً مباشراً، ويجعل نقطة التحول العاطفية مفهومة منذ الملخص. ثانياً، يضع العمل قصته في محيط جامعي وفريق هوكي، وهو إطار محدد يسهل على الجمهور إدراك هويته النوعية. ثالثاً، يضيف وجود أصدقاء هانا وغاريت مساحة محتملة لعالم أوسع من الثنائي، مع أن نجاح هذا الاتساع غير مثبت. رابعاً، الاقتباس من سلسلة كتب يمنح المشروع أساساً سابقاً وجمهوراً محتملاً، من دون أن يعني ذلك أن التكييف ناجح تلقائياً. وأخيراً، تتوفر مادة ترويجية رسمية وبيانات منشورة عن العمل وطاقمه، بما يسمح بتحديد نوعه وسياقه. هذه مزايا في تصميم المشروع ووضوح عرضه، وليست مديحاً مؤكداً لجودة حلقاته.\n\n## نقاط الضعف\nأوضح قيد في التقييم هو نقص الشواهد المستقلة المفصلة؛ إذ تقتصر المادة المتاحة على بيانات تعريفية وملخص قصصي وإشارة موسوعية وإعلان رسمي. لذلك لا يمكن اتخاذ قرار موثوق بشأن مستوى الحوار أو تطور الشخصيات أو جودة التنفيذ، وهي عناصر مركزية في هذا النوع. ثانياً، الفرضية تستند إلى ترتيب رومانسي مألوف، ما يجعل أصالة المعالجة أمراً يتوقف على الكتابة الفعلية التي لا توصف في الأدلة. ثالثاً، اتساع المجموعة قد يؤدي نظرياً إلى توزيع غير متوازن للانتباه، لكن لا توجد معلومات تسمح بإثبات حدوث ذلك في الموسم؛ لذا يُذكر بوصفه مخاطرة بنائية لا عيباً محققاً. كذلك لا تتيح الأدلة تقييماً للصورة والصوت والإيقاع. هذا النقص لا يصح تحويله إلى اتهام للمسلسل، لكنه يقلل الثقة في أي حكم مدح حاسم ويجعل التوصية مشروطة بتوقعات المشاهد.\n\n## لمن يناسب هذا العمل؟\nبحسب الفرضية والسياق الموثقين، قد يناسب المسلسل من يفضل الدراما الرومانسية الجامعية، وقصص العلاقات التي تبدأ بمصلحة عملية ثم تتبدل، أو الأعمال التي تضع مجموعة أصدقاء في قلب الحياة العاطفية. كما قد يجذب قراء سلسلة Elle Kennedy الراغبين في رؤية معالجة تلفزيونية للعالم والشخصيات، مع التنبيه إلى أن مدى الوفاء للمصدر غير مثبت هنا. أما من يبحث عن تقييم موثق لجودة التمثيل أو الإخراج، أو عن حكم على معالجة حساسة لموضوعات بعينها، فلن يجد في ملف الأدلة ما يكفي لضمان ذلك. لا أوصي به بوصفه تجربة استثنائية مؤكدة، ولا أستبعده بسبب غياب المعلومات. الأنسب هو التعامل معه كخيار محتمل لمحبي نوعه، مع مراجعة مواد إضافية أو مشاهدة عينة قبل الالتزام بالموسم إذا كانت جودة التنفيذ هي معيار الاختيار الأساسي.\n\n## الحكم النهائي\nتنجح Off Campus، وفق ما يمكن التحقق منه، في تقديم هوية سهلة الفهم: رومانسية جامعية تربط هانا ويلز وغاريت غراهام باتفاق دراسي يتحول إلى تقارب، وتضع قصتهما ضمن مجموعة أصدقاء وبيئة هوكي. هذا أساس واضح يمنح المسلسل فرصة لمخاطبة جمهور محدد، لكنه لا يكفي وحده لإثبات أن الشخصيات عميقة أو أن الاقتباس متماسك أو أن الجوانب الفنية متميزة. لم تتوفر في ملف الأدلة مراجعات مستقلة كافية أو تفاصيل عن الحلقات، لذلك سيكون إصدار حكم قطعي على التنفيذ ادعاءً يتجاوز المعلومات. النتيجة مراجعة إيجابية بحذر تجاه الفكرة والسياق، ومتحفظة بوضوح تجاه الجودة التي لا يمكن فحصها هنا. أوصي به مبدئياً لمحبي الرومانسية الجامعية، لا بوصفه اختياراً مضموناً للجميع، وبشرط ألا يُفهم هذا الحكم على أنه مشاهدة شخصية.",
-        "scores": {
-          "story": 6.5,
-          "visuals": 6,
-          "sound": 6,
-          "pacing": 6
-        },
-        "pros": [
-          "فرضية مركزية واضحة: مساعدة دراسية تتحول إلى صلة عاطفية بين هانا وغاريت.",
-          "إطار جامعي وفريق هوكي يمنحان العمل سياقاً نوعياً محدداً.",
-          "وجود مجموعة أصدقاء يتيح مجالاً لتوسيع الحكاية خارج العلاقة الرئيسية.",
-          "اقتباس العمل من سلسلة Elle Kennedy يوفر أساساً معروفاً لجمهور الكتب.",
-          "توفر إعلان رسمي وبيانات موثقة عن العمل وطاقمه."
-        ],
-        "cons": [
-          "المصادر المتاحة لا تكفي للحكم على جودة الكتابة أو تطور الشخصيات عبر الحلقات.",
-          "لا تتوفر شواهد كافية لتقييم الإخراج أو الصورة أو تصميم الإنتاج.",
-          "لا توجد معلومات موثقة عن الموسيقى أو تصميم الصوت أو جودة الأداء التمثيلي.",
-          "إيقاع الموسم وتوازن خطوطه وعدد حلقاته غير موضح في ملف الأدلة.",
-          "الفرضية تستخدم مدخلاً رومانسياً مألوفاً، ولا يمكن إثبات مدى ابتكار المعالجة."
-        ],
-        "title": "Off Campus",
-        "type": "series",
-        "sourceId": "series:273240",
-        "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/tv/273240",
-        "sourceRating": 8.835,
-        "sourceRatingScale": 10,
-        "sourceVoteCount": 928,
-        "sourceRatingCheckedAt": "2026-11-28T13:16:09.173Z",
-        "audienceScore": 8.8,
-        "releaseDate": "2026-05-13",
-        "poster": "https://image.tmdb.org/t/p/w780/tcPc5ZMBO4y2BtCJMe3o2nwZb2B.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/cdD0InWMH4e6AxceQs93fQRYsfO.jpg",
-        "genres": [
-          "Drama"
-        ],
-        "platforms": [],
-        "cast": [
-          "Ella Bright",
-          "Belmont Cameli",
-          "Mika Abdalla",
-          "Stephen Kalyn",
-          "Jalen Thomas Brooks",
-          "Antonio Cipriano",
-          "Josh Heuston"
-        ],
-        "crew": [],
-        "tags": [
-          "Drama"
-        ],
-        "sources": [
-          {
-            "name": "TMDB",
-            "url": "https://www.themoviedb.org/tv/273240",
-            "extract": "Hannah Wells tutors hockey captain Garrett Graham to win over her crush. Their deal becomes real connection as they face their pasts. Friends Logan, Dean, Tucker, and Allie navigate college life and love.",
-            "kind": "catalog-metadata"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Off_Campus",
-            "extract": "Off Campus is an American romantic drama television series created by Louisa Levy for Amazon Prime Video. It is based on the Off-Campus book series by Elle Kennedy. Set at the fictional campus of Briar University, four close-knit college hockey players navigate the complexities of adulthood, relationships, and sex to ultimately find their true love. The first season centers on Hannah Wells and Garrett Graham, while introducing the core four college hockey players Garrett, Dean, Logan, and Tucker.",
-            "kind": "encyclopedia"
-          },
-          {
-            "name": "YouTube — Amazon Prime Video UK & IE",
-            "url": "https://www.youtube.com/watch?v=4Vin2GSA4V0",
-            "extract": "Verified public, embeddable promotional trailer: Off Campus S1 | Official Trailer | Prime Video",
-            "kind": "promotional"
-          }
-        ],
-        "youtubeVideoId": "4Vin2GSA4V0",
-        "youtubeVideoTitle": "Off Campus S1 | Official Trailer | Prime Video",
-        "reviewMode": "review",
-        "score": 6.2
-      },
+      "article": null,
       "lastError": null,
       "provider": "openai",
       "tokens": 5812,
       "articlePath": "src/content/reviews/series-off-campus-273240.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-off-campus-273240/"
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-off-campus-273240/",
+      "publishedAt": "2026-11-28T16:15:59.683Z"
+    },
+    "game:972995": {
+      "key": "game:972995",
+      "type": "game",
+      "id": "972995",
+      "title": "Grand Theft Auto VI",
+      "item": {
+        "type": "game",
+        "id": "972995",
+        "name": "Grand Theft Auto VI",
+        "date": "2026-11-19",
+        "popularity": 1000,
+        "source": "RAWG"
+      },
+      "status": "waiting",
+      "stage": 0,
+      "attempts": 1,
+      "createdAt": "2026-11-28T16:16:09.290Z",
+      "updatedAt": "2026-11-28T16:16:37.739Z",
+      "nextAttemptAt": "2026-11-28T17:16:37.739Z",
+      "evidence": {
+        "title": "Grand Theft Auto VI",
+        "type": "game",
+        "collectedAt": "2026-11-28T16:16:11.300Z",
+        "sourceId": "game:972995",
+        "sourceName": "RAWG",
+        "sourceUrl": "https://rawg.io/games/grand-theft-aito-vi",
+        "overview": "Grand Theft Auto VI is an upcoming action-adventure game developed and published by Rockstar Games. It is due to be the eighth main Grand Theft Auto game, following Grand Theft Auto V (2013), and the sixteenth entry overall. Set within the fictional US state of Leonida, based on Florida, the story follows the romantic criminal duo of Jason Duval and Lucia Caminos. Players will be able to freely roam Leonida's open world, which features the Miami-inspired Vice City.",
+        "sources": [
+          {
+            "name": "RAWG",
+            "url": "https://rawg.io/games/grand-theft-aito-vi",
+            "extract": "Grand Theft Auto VI is an upcoming action-adventure game developed and published by Rockstar Games. It is due to be the eighth main Grand Theft Auto game, following Grand Theft Auto V (2013), and the sixteenth entry overall. Set within the fictional US state of Leonida, based on Florida, the story follows the romantic criminal duo of Jason Duval and Lucia Caminos. Players will be able to freely roam Leonida's open world, which features the Miami-inspired Vice City.",
+            "kind": "catalog-metadata"
+          },
+          {
+            "name": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Grand_Theft_Auto_VI",
+            "extract": "Grand Theft Auto VI is a 2026 action-adventure game developed and published by Rockstar Games. It is the eighth main entry in the Grand Theft Auto series, following 2013's Grand Theft Auto V, and the sixteenth entry overall. Set in the fictional US state of Leonida, based on Florida, the story follows Jason Duval and Lucia Caminos as they lead a life of crime to secure a better life. Along the way, they uncover a state-wide criminal conspiracy involving corrupt police officers. The game's open world allows players to freely roam Leonida and its Miami-inspired Vice City and engage in various side activities.",
+            "kind": "encyclopedia"
+          },
+          {
+            "name": "YouTube — PlayStation",
+            "url": "https://www.youtube.com/watch?v=8L0CzL2V72c",
+            "extract": "Verified public, embeddable promotional trailer: Grand Theft Auto VI - Features Trailer | PS5 Games",
+            "kind": "promotional"
+          }
+        ],
+        "reviewReadiness": "audience",
+        "reviewReadinessReason": "A source-backed audience average is available from RAWG with 115 votes; this is not an independent VibeCritic score.",
+        "youtubeVideoId": "8L0CzL2V72c",
+        "youtubeVideoTitle": "Grand Theft Auto VI - Features Trailer | PS5 Games",
+        "youtubeChannel": "PlayStation",
+        "releaseDate": "2026-11-19",
+        "genres": [
+          "Action"
+        ],
+        "platforms": [
+          "Xbox Series S/X",
+          "PlayStation 5"
+        ],
+        "developers": [
+          "Rockstar Games"
+        ],
+        "rating": 3.87,
+        "ratingScale": 5,
+        "votes": 115,
+        "poster": "https://media.rawg.io/media/games/734/7342a1cd82c8997ec620084ae4c2e7e4.jpg"
+      },
+      "sections": [],
+      "article": null,
+      "lastError": "openai HTTP 429: {\n  \"error\": {\n    \"code\": \"rate_limit_exceeded\",\n    \"message\": \"Rate limit reached for gpt-6-luna in organization org-NZwHKQHwKjcQO1et2CLggVNX on tokens per min (TPM): Limit 100000, Used 99122, Requested 1737. Please try again in 6h11m5.28s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.\",\n    \"param\": null,\n    \"type\": \"tokens\"\n  }\n}",
+      "resumeStatus": "queued"
     }
   },
   "providers": {},
