@@ -127,6 +127,11 @@ const result = await withRunLock(async () => {
       transition(job,"ready");
     }
     if (job.status === "ready") {
+      if (job.article?.reviewMode === "limited") {
+        transition(job,"rejected",{lastError:"Refusing to publish a previously queued limited-evidence article."});
+        await saveState(state);
+        return { action:"rejected", key:job.key, reason:job.lastError };
+      }
       // Migrate a previously generated audience-only draft to the established VibeCritic editorial review format.
       // Reuse its saved evidence and replace only the draft; do not enqueue or count a second article.
       if (job.article?.reviewMode === "audience") {
@@ -164,7 +169,7 @@ const result = await withRunLock(async () => {
     if (Number(error?.requests)>0) daily.requests += Number(error.requests);
     if (job && !["published","rejected"].includes(job.status)) {
       const message = String(error.message||error).slice(0,800);
-      if (/Candidate release date is still in the future|Primary catalog description is too thin|Independent source is too thin|No exact independent encyclopedia match|Independent source title mismatch|At least two independent HTTPS source domains|No verified official YouTube trailer found|Publishing blocked: evidence supports neither|Publishing blocked: preview requires|Publishing blocked: audience rating requires/.test(message)) {
+      if (/Candidate release date is still in the future|Primary catalog description is too thin|Independent source is too thin|No exact independent encyclopedia match|Independent source title mismatch|At least two independent HTTPS source domains|No verified official YouTube trailer found|Publishing blocked: evidence supports neither|Publishing blocked: limited-evidence article is not publishable|Publishing blocked: preview requires|Publishing blocked: audience rating requires/.test(message)) {
         transition(job,"rejected",{lastError:message});
       } else {
         const resumeStatus = ["researching","writing"].includes(job.status) ? "queued" : job.status === "reviewing" ? "ready" : job.status === "publishing" ? "ready" : job.status;
