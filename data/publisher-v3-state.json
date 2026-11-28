@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-27T19:17:10.625Z",
+  "updatedAt": "2026-11-28T07:16:48.808Z",
   "jobs": {
     "game:3498": {
       "key": "game:3498",
@@ -4170,147 +4170,176 @@
         "popularity": 80.9769,
         "source": "TMDB"
       },
-      "status": "verifying",
+      "status": "published",
       "stage": 0,
       "attempts": 0,
       "createdAt": "2026-11-27T19:16:04.614Z",
-      "updatedAt": "2026-11-27T19:17:10.625Z",
+      "updatedAt": "2026-11-28T07:16:03.682Z",
+      "nextAttemptAt": null,
+      "evidence": null,
+      "sections": [],
+      "article": null,
+      "lastError": null,
+      "provider": "openai",
+      "tokens": 7589,
+      "articlePath": "src/content/reviews/movie-way-of-the-warrior-kid-1280115.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-way-of-the-warrior-kid-1280115/",
+      "publishedAt": "2026-11-28T07:16:03.681Z"
+    },
+    "series:305163": {
+      "key": "series:305163",
+      "type": "series",
+      "id": "305163",
+      "title": "The Daily Life of a Part-time Torturer",
+      "item": {
+        "type": "series",
+        "id": "305163",
+        "name": "The Daily Life of a Part-time Torturer",
+        "date": "2026-01-05",
+        "preview": false,
+        "popularity": 57.772,
+        "source": "TMDB"
+      },
+      "status": "verifying",
+      "stage": 0,
+      "attempts": 0,
+      "createdAt": "2026-11-28T07:16:14.304Z",
+      "updatedAt": "2026-11-28T07:16:48.808Z",
       "nextAttemptAt": null,
       "evidence": {
-        "title": "Way of the Warrior Kid",
-        "type": "movie",
-        "collectedAt": "2026-11-27T19:16:05.249Z",
-        "sourceId": "movie:1280115",
+        "title": "The Daily Life of a Part-time Torturer",
+        "type": "series",
+        "collectedAt": "2026-11-28T07:16:14.915Z",
+        "sourceId": "series:305163",
         "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/movie/1280115",
-        "overview": "Jake is an injured Navy SEAL who becomes a mentor for his shy, struggling nephew Marc. Using the principles of his military training, Jake teaches Marc how to be a Warrior Kid as he enters high school.",
+        "sourceUrl": "https://www.themoviedb.org/tv/305163",
+        "overview": "In a society where torture is legal—and big business—Spirytus dominates the industry with skill, style, and surprisingly cheerful teamwork. Part-timers Cero, Shiu, Mikke, and Hugh tackle “client sessions,” office shenanigans, and even the occasional in-house assassin…all with a smile! Life at Spirytus proves that even in a world of pain, work can still be surprisingly fun!",
         "sources": [
           {
             "name": "TMDB",
-            "url": "https://www.themoviedb.org/movie/1280115",
-            "extract": "Jake is an injured Navy SEAL who becomes a mentor for his shy, struggling nephew Marc. Using the principles of his military training, Jake teaches Marc how to be a Warrior Kid as he enters high school.",
+            "url": "https://www.themoviedb.org/tv/305163",
+            "extract": "In a society where torture is legal—and big business—Spirytus dominates the industry with skill, style, and surprisingly cheerful teamwork. Part-timers Cero, Shiu, Mikke, and Hugh tackle “client sessions,” office shenanigans, and even the occasional in-house assassin…all with a smile! Life at Spirytus proves that even in a world of pain, work can still be surprisingly fun!",
             "kind": "catalog-metadata"
           },
           {
             "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Way_of_the_Warrior_Kid",
-            "extract": "Way of the Warrior Kid is a 2026 American drama film directed by McG and written by Will Staples. It is based on the 2017 children's novel of the same name by Jocko Willink. It stars Chris Pratt, who also serves as a producer, alongside Jude Hill and Linda Cardellini. In the film, a bullied 13-year-old named Marc (Hill) learns to find his inner warrior over one summer with the help of his Navy SEAL uncle Jake (Pratt).",
+            "url": "https://en.wikipedia.org/wiki/The_Daily_Life_of_a_Part-time_Torturer",
+            "extract": "The Daily Life of a Part-time Torturer is a Japanese manga series written and illustrated by Yawora Tsugumi. It began serialization on Hakusensha's Manga Park and Young Animal Web services in December 2022. It has been compiled into eight volumes as of June 2026. An anime television series adaptation produced by Diomedéa aired from January to March 2026.",
             "kind": "encyclopedia"
           },
           {
-            "name": "YouTube — New Movie Trailers ",
-            "url": "https://www.youtube.com/watch?v=j1B3r3v6cLg",
-            "extract": "Verified public, embeddable promotional trailer: Way of the Warrior Kid (2026) || Official Trailer HD, Chris Pratt, Jude Hill, Linda Cardellini ",
+            "name": "YouTube — Crunchyroll",
+            "url": "https://www.youtube.com/watch?v=EIJOU7qjq6s",
+            "extract": "Verified public, embeddable promotional trailer: The Daily Life of a Part-Time Torturer | Official Trailer | Crunchyroll",
             "kind": "promotional"
           }
         ],
         "reviewReadiness": "limited",
         "reviewReadinessReason": "Available evidence does not include a sufficiently supported audience rating (minimum 100 votes) or independent hands-on evidence.",
-        "youtubeVideoId": "j1B3r3v6cLg",
-        "youtubeVideoTitle": "Way of the Warrior Kid (2026) || Official Trailer HD, Chris Pratt, Jude Hill, Linda Cardellini ",
-        "youtubeChannel": "New Movie Trailers ",
-        "releaseDate": "2026-11-24",
+        "youtubeVideoId": "EIJOU7qjq6s",
+        "youtubeVideoTitle": "The Daily Life of a Part-Time Torturer | Official Trailer | Crunchyroll",
+        "youtubeChannel": "Crunchyroll",
+        "releaseDate": "2026-01-05",
         "genres": [
-          "Drama"
+          "Animation",
+          "Comedy",
+          "Sci-Fi & Fantasy"
         ],
         "platforms": [],
         "cast": [
-          "Chris Pratt",
-          "Jude Hill",
-          "Linda Cardellini",
-          "Jocko Willink",
-          "Ava Torres",
-          "Levi McConaughey",
-          "Darien Sills-Evans",
-          "Carl McDowell"
+          "Shunichi Toki",
+          "Takuma Terashima",
+          "Takuma Nagatsuka",
+          "Yohei Azakami",
+          "Kisho Taniyama",
+          "Rikuya Yasuda"
         ],
-        "crew": [
-          "McG"
-        ],
-        "rating": 7.422,
+        "crew": [],
+        "rating": 6.929,
         "ratingScale": 10,
-        "votes": 45,
-        "poster": "https://image.tmdb.org/t/p/w780/atI81xXKNVah7PJFBo3aXqQKtnG.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/vOByLZRhCIIItlSlCT7bYbI9MYL.jpg"
+        "votes": 14,
+        "poster": "https://image.tmdb.org/t/p/w780/2oDNkS1JCIgQmX0aC6S67DgrG4w.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/gAwem2a2dFEpH8tKopWkqc9FwG9.jpg"
       },
       "sections": [],
       "article": {
-        "headline": "Way of the Warrior Kid: ما تثبته المعلومات المتاحة وما يبقى مفتوحاً",
-        "summary": "Way of the Warrior Kid فيلم درامي أمريكي صدر، وفق بيانات قاعدة الأفلام، في 24 نوفمبر 2026. تدور فكرته المعلنة حول جيك، وهو فرد سابق في قوات البحرية الخاصة مصاب، يصبح مرشداً لابن أخيه مارك، الذي يواجه الخجل وصعوبات في المدرسة. وتضيف المادة الموسوعية أن مارك في الثالثة عشرة ويتعرض للتنمر، وأن الأحداث تمتد خلال صيف واحد، كما تربط الفيلم برواية أطفال صدرت عام 2017. تذكر المصادر ماك جي مخرجاً، وويل ستابلز كاتباً، وكريس برات وجود هيل وليندا كارديليني ضمن الممثلين. لكن المعلومات المتاحة لا تكفي لتقييم التنفيذ أو حسم تفاصيل التجربة، ولا تشكل مراجعة مشاهدة أو حكماً نهائياً.",
-        "verdict": "هذه قراءة معلوماتية محدودة، مبنية حصراً على وصف قاعدة بيانات ومادة موسوعية وإشارة إلى إعلان ترويجي. يمكن تأكيد الفرضية العامة، وبعض أسماء الطاقم، ونسبة العمل إلى رواية سابقة، لكن ذلك لا يثبت جودة الفيلم أو يتيح حكماً نهائياً عليه. لا تتضمن المواد المتاحة مشاهدة مستقلة أو شواهد موثقة كافية عن الإخراج والصورة والصوت والإيقاع والأداء، كما لا يتوفر تقييم جماهيري مسنود بما يكفي للاعتماد عليه. لذلك لا تمنح هذه الخلاصة حكماً نهائياً؛ إنها تحدد ما ورد في المصادر وما يلزم تركه بلا حسم إلى حين توافر أدلة أوسع.",
-        "body": "## ما الذي نعرفه عن العمل؟\n\nWay of the Warrior Kid فيلم أمريكي مصنف ضمن الدراما في بيانات قاعدة الأفلام المرفقة. تسجل القاعدة تاريخ إصدار هو 24 نوفمبر 2026، وتعرّف العمل بأنه فيلم، من دون أن تقدم في الملف معلومات عن منصة عرض أو توزيع يمكن اعتمادها هنا. لذلك يمكن نقل التاريخ بوصفه تاريخاً مسجلاً في المصدر، لا إضافة تفاصيل عن أماكن العرض أو نطاقه لم ترد في الأدلة. وتوفر المادة الموسوعية وصفاً للعمل بوصفه مقتبساً من رواية أطفال تحمل الاسم نفسه، فيما يقدم وصف قاعدة البيانات مدخلاً موجزاً إلى علاقة الشخصيتين الرئيسيتين.\n\nالمعلومات الأساسية ترسم إطاراً درامياً حول قريبين، أحدهما يوجه الآخر خلال مرحلة انتقالية صعبة. لكن التعريف المختصر لا يبين شكل الحبكة كاملة، ولا يشرح كيف تتطور العلاقة أو ما الأحداث التي تقع بين بدايتها ونهايتها. كما أن تصنيف «دراما» معلومة تصنيفية فحسب، وليس دليلاً على نبرة الفيلم أو مقدار الجدية أو نجاح السرد. ومن المهم إبقاء هذا الفرق واضحاً: لدينا وصف معلن للفكرة وبعض بيانات الإنتاج، لا وصف موثق لكل ما يظهر في الفيلم.\n\n## القصة أو الفكرة المعلنة\n\nوفق قاعدة البيانات، جيك فرد مصاب من قوات البحرية الخاصة يصبح مرشداً لابن أخيه مارك، الذي تصفه بأنه خجول ويكافح لمواجهة صعوباته. ويقول الوصف إن جيك يستخدم مبادئ من تدريبه العسكري لمساعدة مارك على أن يصبح «طفل محارب» مع دخوله المرحلة الثانوية. أما المادة الموسوعية فتقدم تفاصيل إضافية: مارك فتى في الثالثة عشرة يتعرض للتنمر، ويتعلم إيجاد «محاربه الداخلي» بمساعدة عمه جيك خلال صيف واحد. هذان الوصفان متقاربان في الفكرة العامة، لكنهما ليسا متطابقين في مقدار التفاصيل أو طريقة صياغة التحدي.\n\nهذه العناصر تسمح بتحديد موضوعات معلنة مثل الإرشاد العائلي، والتعامل مع التنمر، وبناء الثقة بالنفس، والاستفادة من خبرة عسكرية في سياق مدني. لكنها لا تثبت كيف يعالج الفيلم تلك الموضوعات، ولا ما إذا كانت النتيجة واقعية أو مبسطة أو ساخرة أو جادة. ولا نعرف من الملخصين وحدهما ماهية التدريبات التي يتلقاها مارك، أو طبيعة العقبات المدرسية والاجتماعية التي يواجهها، أو الطريقة التي يصف بها العمل إصابة جيك. الأفضل التعامل مع هذه العناصر كإطار للقصة كما تقدمه المصادر، لا كملخص شامل للأحداث.\n\n## معلومات الإنتاج والطاقم\n\nتنسب المادة الموسوعية الإخراج إلى ماك جي، والكتابة إلى ويل ستابلز، وتذكر أن الفيلم مقتبس من رواية الأطفال التي كتبها جوكو ويلينك ونشرت عام 2017. وتذكر كريس برات في دور جيك، وجود هيل في دور مارك، وليندا كارديليني ضمن الأسماء الرئيسية. كما يورد ملف قاعدة البيانات قائمة أوسع تضم جوكو ويلينك، وآفا توريس، وليفي ماكونهي، ودارين سيلز-إيفانز، وكارل ماكدويل. لا يحدد الملف أدوار جميع هذه الأسماء، لذا لا يصح إسناد شخصيات إليها من دون مصدر إضافي. ويشير المصدر الموسوعي كذلك إلى أن برات منتج مشارك، لكن المواد المقدمة لا تسرد تفاصيل أخرى عن فريق الإنتاج أو مواقع التصوير.\n\nذكر أسماء معروفة أو الإشارة إلى رواية سابقة لا يكفي لاستخلاص حكم على جودة الأداء أو الإخراج أو الاقتباس. كما أن وجود إعلان ترويجي رسمي، وفق توصيف ملف الأدلة، يثبت توفر مادة ترويجية قابلة للتضمين، لكنه لا يقدم وحده معلومات مستقلة عن جودة الفيلم. لا نصف مشاهده أو نحدد محتواه البصري هنا، لأن المقتطف المتاح لا يسجل وصفاً لمشاهدة تفصيلية، ولا ينبغي التعامل مع عنوان الإعلان كأنه دليل على تجربة كاملة.\n\n## ما الذي يمكن تأكيده؟\n\nيمكن تأكيد أن المصادر تصف العمل بأنه فيلم درامي أمريكي لعام 2026، وأنه يحمل عنوان Way of the Warrior Kid، وأن فكرته المركزية تربط بين جيك ومارك من خلال علاقة إرشاد عائلية. ويمكن تأكيد نسبة الإخراج إلى ماك جي والكتابة إلى ويل ستابلز بحسب المادة الموسوعية، ووجود كريس برات وجود هيل وليندا كارديليني في الأدوار المذكورة فيها. كذلك تؤكد المادة نفسها أن العمل يستند إلى رواية أطفال منشورة عام 2017 لجوكو ويلينك. هذه معلومات تعريفية قابلة للنقل، مع مراعاة أن بعض التفاصيل تأتي من مصدر واحد لا من تقاطع مصادر متعددة.\n\nأما وصف القاعدة والإشارة الموسوعية فيتفقان على وجود عم عسكري وابن أخ يواجه صعوبات، لكن التفاصيل الإضافية عن العمر والتنمر والصيف وردت في المادة الموسوعية وحدها. يمكن تسجيل هذا الاختلاف في مقدار التفصيل من دون اعتباره تناقضاً حاسماً. كما أن وصف قاعدة البيانات يتحدث عن دخول المرحلة الثانوية، بينما تصوغ المادة الموسوعية الفترة على أنها صيف واحد؛ لا توضح الأدلة العلاقة الزمنية الدقيقة بين العبارتين. لذلك يظل المؤكد هو الإطار العام، لا التسلسل الكامل أو جميع عناصر الحبكة.\n\n## ما الذي لا نعرفه بعد؟\n\nلا تسمح هذه المواد بالحكم على جودة الإخراج أو أداء الممثلين، ولا بتقييم الكتابة أو مدى وفائها للرواية. ولا توجد فيها مشاهدة مستقلة توثق الصورة أو تصميم الصوت أو الموسيقى أو المونتاج أو الإيقاع، ولذلك لا يصح ملء هذه المحاور بتوقعات مستمدة من أسماء الطاقم أو من النوع الدرامي. كذلك لا تتوافر تفاصيل موثقة عن استقبال النقاد، أو آراء جمهور واسعة، أو ظروف الإنتاج والتوزيع. وجود حقل تقييم في قاعدة البيانات لا يحول المعلومات المتاحة إلى إجماع جماهيري مسنود؛ وملف الأدلة نفسه يوضح أن الشواهد لا تبلغ مستوى كافياً لهذا الغرض.\n\nتبقى أسئلة أخرى مفتوحة: كيف يصور الفيلم التنمر؟ ما مساحة المدرسة والأسرة في الحكاية؟ وهل يتعامل مع التدريب العسكري بوصفه استعارة تربوية أم محوراً عملياً للأحداث؟ لا تجيب الملخصات عن ذلك. كذلك لا نعرف مقدار الاختلاف بين الرواية والفيلم، أو إن كانت الشخصيات الثانوية تؤثر في تطور القصة، أو كيف تنتهي رحلة مارك. طرح هذه الأسئلة ليس انتقاداً للعمل، بل بيان لما لا تتيحه الأدلة الحالية من استنتاجات.\n\n## لمن قد يهم هذا العمل؟\n\nقد تهم الفكرة المعلنة من يبحث عن قصص تركز على علاقة العم بابن أخيه، أو الإرشاد، أو مواجهة التنمر وبناء الثقة، كما قد تهم القراء المهتمين باقتباس رواية أطفال منشورة سابقاً. وقد يكون اسم الرواية ومؤلفها مدخلاً لمن يريد مقارنة العمل المقتبس بمصدره الأدبي، لكن هذه المقارنة تحتاج إلى مشاهدة الفيلم وقراءة الرواية، ولا تقدمها المواد الحالية. هذه إشارات إلى جمهور محتمل بحسب موضوعات القصة المعلنة، لا توصية مشاهدة ولا تأكيداً بأن الفيلم ينجح في تلبية توقعات أي فئة.\n\n## خلاصة حدود الأدلة\n\nالمتاح يكفي لتعريف عنوان الفيلم وسنته وتصنيفه العام وفكرته الأساسية وبعض أسماء الطاقم ومصدر الاقتباس. لكنه لا يكفي لإصدار مراجعة نهائية أو وصف تجربة مشاهدة أو اللعب؛ والعمل هنا فيلم لا لعبة. وبغياب فحص مستقل ومعلومات موثوقة أوسع عن التلقي والتنفيذ، تظل أي أحكام على الجودة أو التأثير تخميناً. لذا تقتصر هذه القراءة على الفصل بين الوقائع الواردة والأسئلة التي ما زالت مفتوحة.",
+        "headline": "The Daily Life of a Part-time Torturer: قراءة معلوماتية محدودة الأدلة",
+        "summary": "The Daily Life of a Part-time Torturer مسلسل أنمي مقتبس من مانغا يابانية بالعنوان نفسه، كتبها ورسمها ياوورا تسوغومي. تدور الفكرة المعلنة في مجتمع أصبح فيه التعذيب قانونياً ومجالاً تجارياً، وتتابع موظفين بدوام جزئي يعملون لدى شركة Spirytus. تصنف قاعدة البيانات العمل ضمن الرسوم المتحركة والكوميديا والخيال العلمي والفانتازيا، وتذكر أسماء ستة ممثلين صوتيين، من دون تحديد أدوارهم. وتفيد المادة الموسوعية بأن الأنمي عُرض بين يناير ومارس 2026، وأن المانغا بدأت تسلسلها في ديسمبر 2022. هذه معلومات وصفية محدودة؛ لا تتضمن المصادر مشاهدة نقدية مستقلة أو بيانات كافية لتقييم التنفيذ أو تجربة الجمهور.",
+        "verdict": "هذه قراءة معلوماتية محدودة، وليست مراجعة مشاهدة أو حكماً نهائياً على المسلسل. ما يمكن قوله بثقة هو أن العمل اقتباس أنمي لمانغا يابانية، وأن وصفه المعلن يجمع بين بيئة عمل تقوم على التعذيب القانوني وبين تقديم كوميدي لشخصيات موظفة بدوام جزئي. لكن ذلك يعرّف الفكرة والتصنيف، ولا يثبت نجاح المعالجة أو توازنها أو جودة عناصرها الفنية. لا تتيح الأدلة المتاحة حسم مستوى الإخراج أو الصورة أو الصوت أو الإيقاع أو الأداء، كما لا توفر تقييماً جماهيرياً مدعوماً بما يكفي. لذلك يظل الحكم على قيمة المشاهدة مؤجلاً إلى أن تتوفر مشاهدة مستقلة ومعلومات أوسع.",
+        "body": "## ما الذي نعرفه عن العمل؟\n\nThe Daily Life of a Part-time Torturer مسلسل رسوم متحركة تلفزيوني ياباني، وله أصل مانغا بالعنوان نفسه. تصفه قاعدة بيانات TMDB بأنه عمل يجمع الرسوم المتحركة والكوميديا والخيال العلمي والفانتازيا؛ وهذه تصنيفات مدرجة في قاعدة البيانات، وليست بحد ذاتها دليلاً على كيفية ظهور تلك الأنواع في الحلقات أو مدى نجاح المزج بينها. وتذكر المادة الموسوعية أن اقتباس الأنمي عُرض من يناير إلى مارس 2026. كما تسجل قاعدة البيانات تاريخ 5 يناير 2026، من دون تفاصيل إضافية تشرح المقصود بهذا التاريخ أو جدول العرض، لذا لا ينبغي استنتاج معلومات عن عدد الحلقات أو وتيرة صدورها.\n\nهذه القراءة تستند إلى وصف قاعدة بيانات، ومادة موسوعية، وإشارة إلى إعلان ترويجي رسمي من Crunchyroll. وجود الإعلان يثبت توفر مادة ترويجية، لكنه لا يجعلها بديلاً عن مشاهدة العمل كاملاً، ولا يسمح بوصف جميع مشاهده أو الحكم على مستوى تنفيذه. كذلك لا تتضمن المصادر المتاحة مراجعة مستقلة أو إفادات موثقة من مشاهدين يمكن الاستناد إليها لتقدير تجربة المتابعة.\n\n## القصة أو الفكرة المعلنة\n\nبحسب ملخص TMDB، تقع الأحداث في مجتمع صار فيه التعذيب قانونياً ونشاطاً تجارياً كبيراً. وتتمحور الفكرة حول شركة Spirytus، التي يصفها الملخص بأنها بارزة في هذا المجال، وحول عاملين بدوام جزئي هم Cero وShiu وMikke وHugh. وتشمل المهام الموصوفة جلسات مع العملاء، ومواقف مكتبية، واحتمال ظهور قاتل داخل الشركة. ويقدم الملخص هذه الحياة المهنية بلهجة مرحة، واضعاً التباين بين عالم قائم على الألم وبين أجواء العمل المبهجة في قلب الفكرة المعلنة.\n\nهذا عرض موجز صادر عن قاعدة بيانات، وليس سرداً تفصيلياً للحبكة. لا يوضح كيف تتطور الشخصيات أو ما إذا كانت الحلقات تتبع خطاً قصصياً متصلاً، كما لا يشرح طبيعة معالجة العنف أو حدود المزاح في العمل. لذلك يمكن نقل الفرضية العامة والتوصيف الوارد في الملخص، لكن لا يمكن التعامل معهما بوصفهما وصفاً كاملاً لكل ما يقدمه المسلسل أو حكماً مستقلاً على نبرته الفعلية.\n\n## معلومات الإنتاج والطاقم\n\nتقول المادة الموسوعية إن المانغا من كتابة ورسم ياوورا تسوغومي، وإن تسلسلها بدأ في ديسمبر 2022 على خدمتي Manga Park وYoung Animal Web التابعتين لـHakusensha. وتذكر المادة نفسها أن المانغا جُمعت في ثمانية مجلدات حتى يونيو 2026. أما مسلسل الأنمي فتذكر أنه من إنتاج Diomedéa. هذه بيانات عن الأصل والجهة المنتجة وتاريخ النشر كما وردت في المصدر، ولا تكفي وحدها لاستنتاج مدى أمانة الاقتباس أو اختياراته الفنية.\n\nتسجل قاعدة البيانات أسماء Shunichi Toki وTakuma Terashima وTakuma Nagatsuka وYohei Azakami وKisho Taniyama وRikuya Yasuda ضمن طاقم التمثيل. لا يربط الملف هذه الأسماء بشخصيات محددة، ولا يقدم معلومات تفصيلية عن بقية فريق الإنتاج؛ كما أن خانة الطاقم التقني خالية. لذا يقتصر الممكن على نقل أسماء الممثلين المذكورين، لا وصف أدائهم أو تحديد مسؤوليات لم ترد في الأدلة.\n\n## ما الذي يمكن تأكيده؟\n\nيمكن تأكيد أن العمل مسلسل أنمي مقتبس من مانغا، وأن المانغا يابانية وأن ياوورا تسوغومي كاتبها ورسّامها وفق المادة الموسوعية. ويمكن تأكيد وجود فكرة معلنة عن شركة تعمل في مجتمع يُعد فيه التعذيب قانونياً وتجارياً، مع شخصيات بدوام جزئي، استناداً إلى ملخص قاعدة البيانات. كما يمكن إثبات أن المصدر الموسوعي يذكر عرض الأنمي في الفترة من يناير إلى مارس 2026، وأن قاعدة البيانات تدرج تصنيفات نوعية وأسماء ممثلين صوتيين.\n\nويؤكد الملف كذلك وجود إعلان ترويجي رسمي منشور على قناة Crunchyroll. لا تتجاوز هذه النقاط حدود ما تقوله المصادر: فهي تثبت بيانات تعريفية ووصفاً ترويجياً، ولا تثبت رأياً تحريرياً حول جودة العمل. كما أن وصف الناشر أو قاعدة البيانات لطابع المسلسل لا ينبغي خلطه بتقييم مستقل؛ فالفكرة المرحة المعلنة لا تثبت أن الكوميديا ناجحة، كما أن تصنيف العمل لا يثبت جودة السرد.\n\n## ما الذي لا نعرفه بعد؟\n\nلا تقدم الأدلة وصفاً يمكن الاعتماد عليه للإخراج أو تصميم الصورة أو حركة الرسوم أو الموسيقى والمؤثرات الصوتية. ولا تسمح بتقدير الإيقاع، أو بنية الحلقات، أو جودة الحوار، أو كيفية موازنة العمل بين الكوميديا وموضوع التعذيب. ولا توجد معلومات تفصيلية عن عدد الحلقات أو مدة كل حلقة أو منصات الإتاحة؛ فغياب أسماء المنصات في الملف لا يثبت أن العمل غير متاح عليها، بل يعني فقط أن هذه البيانات غير متوفرة هنا.\n\nكذلك لا نملك أساساً للحكم على أداء الممثلين، لأن ذكر أسمائهم لا يثبت طبيعة أدائهم ولا يحدد أدوارهم. لا تكشف المصادر كيف يختلف الاقتباس عن المانغا، ولا ما إذا كانت الفكرة تتغير مع تقدم الحلقات، ولا ردود فعل نقدية مستقلة. ويشير سبب تصنيف الأدلة إلى عدم توافر تقييم جماهيري مسنود بما يكفي، أو دليل مستقل قائم على مشاهدة مباشرة. لذلك لا يصح تقديم خلاصة عن مستوى التجربة اعتماداً على هذه المواد وحدها.\n\n## لمن قد يهم هذا العمل؟\n\nقد يهم التعريف الأولي بالعمل من يبحث عن اقتباسات أنمي من المانغا، أو عن فرضية خيالية تجمع مكان العمل بالكوميديا في عالم يختلف عن الواقع المعتاد. كما قد تكون أسماء المؤلف والجهة المنتجة والممثلين مفيدة لمن يريد متابعة العمل أو التحقق من معلوماته الأساسية. هذه ملاءمة موضوعية مستمدة من وصف الفكرة والبيانات المتاحة، وليست توصية مشاهدة مبنية على تجربة أو قياس لجودة المسلسل.\n\n## خلاصة حدود الأدلة\n\nالمتاح يرسم صورة أولية عن عنوان العمل وأصله وفرضية قصته وفترة عرضه وبعض أسماء طاقمه. لكنه لا يتيح الانتقال من التعريف إلى التقييم؛ فلا مشاهدة مستقلة موثقة، ولا مادة كافية للحكم على عناصر التنفيذ، ولا سند جماهيري مستوفٍ للحد المطلوب. ينبغي قراءة الملخص بوصفه وصفاً للفرضية المعلنة، وقراءة التصنيفات بوصفها بيانات فهرسة، لا أحكاماً نقدية. وأي رأي نهائي بشأن ما إذا كان المسلسل ناجحاً أو مناسباً لمشاهد بعينه يحتاج إلى أدلة إضافية غير موجودة في الملف.",
         "pros": [
-          "الفكرة المعلنة تحدد بوضوح علاقة إرشاد بين جيك وابن أخيه مارك.",
-          "تذكر المادة الموسوعية أن الفيلم مقتبس من رواية أطفال منشورة عام 2017 لجوكو ويلينك.",
-          "تتوافر أسماء المخرج والكاتب وعدد من الممثلين الرئيسيين في المصادر."
+          "له أصل مانغا ياباني من كتابة ورسم ياوورا تسوغومي، وبدأ تسلسلها في ديسمبر 2022 بحسب المادة الموسوعية.",
+          "توضح البيانات فرضية أساسية محددة: شركة Spirytus وموظفون بدوام جزئي في مجتمع يصبح فيه التعذيب قانونياً ونشاطاً تجارياً.",
+          "تتوافر معلومات تعريفية عن الجهة المنتجة، Diomedéa، وعن ستة أسماء مدرجة ضمن طاقم التمثيل."
         ],
         "cons": [
-          "لا تتوافر مشاهدة مستقلة أو معلومات موثقة تسمح بتقييم الإخراج أو الصورة أو الصوت أو الإيقاع.",
-          "تفاصيل معالجة التنمر وتطور العلاقة ونهاية القصة غير محسومة في الملخصات المتاحة.",
-          "لا توجد أدلة كافية لاعتماد تقييم جماهيري أو استخلاص حكم نهائي على جودة الفيلم."
+          "لا تتوافر مشاهدة نقدية مستقلة أو أدلة كافية للحكم على الإخراج والصورة والصوت والإيقاع.",
+          "لا يحدد الملف أدوار الممثلين أو تفاصيل الشخصيات خارج الأسماء الواردة في ملخص الفكرة.",
+          "لا تكفي المعلومات المتاحة لحسم طريقة معالجة المسلسل للعنف أو نجاح المزج بين الكوميديا والموضوع المعلن.",
+          "لا يتضمن الملف تقييماً جماهيرياً مسنوداً بما يكفي أو معلومات تفصيلية عن عدد الحلقات ومنصات الإتاحة."
         ],
-        "title": "Way of the Warrior Kid",
-        "type": "movie",
-        "sourceId": "movie:1280115",
+        "title": "The Daily Life of a Part-time Torturer",
+        "type": "series",
+        "sourceId": "series:305163",
         "sourceName": "TMDB",
-        "sourceUrl": "https://www.themoviedb.org/movie/1280115",
-        "sourceRating": 7.422,
+        "sourceUrl": "https://www.themoviedb.org/tv/305163",
+        "sourceRating": 6.929,
         "sourceRatingScale": 10,
-        "sourceVoteCount": 45,
-        "sourceRatingCheckedAt": "2026-11-27T19:16:05.249Z",
-        "audienceScore": 7.4,
-        "releaseDate": "2026-11-24",
-        "poster": "https://image.tmdb.org/t/p/w780/atI81xXKNVah7PJFBo3aXqQKtnG.jpg",
-        "backdrop": "https://image.tmdb.org/t/p/w1280/vOByLZRhCIIItlSlCT7bYbI9MYL.jpg",
+        "sourceVoteCount": 14,
+        "sourceRatingCheckedAt": "2026-11-28T07:16:14.915Z",
+        "audienceScore": 6.9,
+        "releaseDate": "2026-01-05",
+        "poster": "https://image.tmdb.org/t/p/w780/2oDNkS1JCIgQmX0aC6S67DgrG4w.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/w1280/gAwem2a2dFEpH8tKopWkqc9FwG9.jpg",
         "genres": [
-          "Drama"
+          "Animation",
+          "Comedy",
+          "Sci-Fi & Fantasy"
         ],
         "platforms": [],
         "cast": [
-          "Chris Pratt",
-          "Jude Hill",
-          "Linda Cardellini",
-          "Jocko Willink",
-          "Ava Torres",
-          "Levi McConaughey",
-          "Darien Sills-Evans",
-          "Carl McDowell"
+          "Shunichi Toki",
+          "Takuma Terashima",
+          "Takuma Nagatsuka",
+          "Yohei Azakami",
+          "Kisho Taniyama",
+          "Rikuya Yasuda"
         ],
-        "crew": [
-          "McG"
-        ],
+        "crew": [],
         "tags": [
-          "Drama"
+          "Animation",
+          "Comedy",
+          "Sci-Fi & Fantasy"
         ],
         "sources": [
           {
             "name": "TMDB",
-            "url": "https://www.themoviedb.org/movie/1280115",
-            "extract": "Jake is an injured Navy SEAL who becomes a mentor for his shy, struggling nephew Marc. Using the principles of his military training, Jake teaches Marc how to be a Warrior Kid as he enters high school.",
+            "url": "https://www.themoviedb.org/tv/305163",
+            "extract": "In a society where torture is legal—and big business—Spirytus dominates the industry with skill, style, and surprisingly cheerful teamwork. Part-timers Cero, Shiu, Mikke, and Hugh tackle “client sessions,” office shenanigans, and even the occasional in-house assassin…all with a smile! Life at Spirytus proves that even in a world of pain, work can still be surprisingly fun!",
             "kind": "catalog-metadata"
           },
           {
             "name": "Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Way_of_the_Warrior_Kid",
-            "extract": "Way of the Warrior Kid is a 2026 American drama film directed by McG and written by Will Staples. It is based on the 2017 children's novel of the same name by Jocko Willink. It stars Chris Pratt, who also serves as a producer, alongside Jude Hill and Linda Cardellini. In the film, a bullied 13-year-old named Marc (Hill) learns to find his inner warrior over one summer with the help of his Navy SEAL uncle Jake (Pratt).",
+            "url": "https://en.wikipedia.org/wiki/The_Daily_Life_of_a_Part-time_Torturer",
+            "extract": "The Daily Life of a Part-time Torturer is a Japanese manga series written and illustrated by Yawora Tsugumi. It began serialization on Hakusensha's Manga Park and Young Animal Web services in December 2022. It has been compiled into eight volumes as of June 2026. An anime television series adaptation produced by Diomedéa aired from January to March 2026.",
             "kind": "encyclopedia"
           },
           {
-            "name": "YouTube — New Movie Trailers ",
-            "url": "https://www.youtube.com/watch?v=j1B3r3v6cLg",
-            "extract": "Verified public, embeddable promotional trailer: Way of the Warrior Kid (2026) || Official Trailer HD, Chris Pratt, Jude Hill, Linda Cardellini ",
+            "name": "YouTube — Crunchyroll",
+            "url": "https://www.youtube.com/watch?v=EIJOU7qjq6s",
+            "extract": "Verified public, embeddable promotional trailer: The Daily Life of a Part-Time Torturer | Official Trailer | Crunchyroll",
             "kind": "promotional"
           }
         ],
-        "youtubeVideoId": "j1B3r3v6cLg",
-        "youtubeVideoTitle": "Way of the Warrior Kid (2026) || Official Trailer HD, Chris Pratt, Jude Hill, Linda Cardellini ",
+        "youtubeVideoId": "EIJOU7qjq6s",
+        "youtubeVideoTitle": "The Daily Life of a Part-Time Torturer | Official Trailer | Crunchyroll",
         "reviewMode": "limited"
       },
       "lastError": null,
       "provider": "openai",
-      "tokens": 7589,
-      "articlePath": "src/content/reviews/movie-way-of-the-warrior-kid-1280115.md",
-      "verifiedUrl": "https://vibecritic.pages.dev/reviews/movie-way-of-the-warrior-kid-1280115/"
+      "tokens": 3864,
+      "articlePath": "src/content/reviews/series-the-daily-life-of-a-part-time-torturer-305163.md",
+      "verifiedUrl": "https://vibecritic.pages.dev/reviews/series-the-daily-life-of-a-part-time-torturer-305163/"
     }
   },
   "providers": {},
@@ -4359,6 +4388,11 @@
       "articles": 6,
       "requests": 13,
       "tokens": 32686
+    },
+    "2026-11-28": {
+      "articles": 1,
+      "requests": 2,
+      "tokens": 3864
     }
   },
   "history": []
